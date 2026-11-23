@@ -235,7 +235,7 @@
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-067.txt`, score AACODS `12.0/12`)
 - **URL d'origine :** https://publications.europa.eu/resource/cellar/05805dc1-c76c-11f1-a77b-01aa75ed71a1.0010.01/DOC_1
 - **Empreinte SHA-256 (LF) :** `3d1dcffce8aeb8fa2cf340feb94c21e084800bf21c7249940c0fa51000b37f33` (`5154` octets, `733` mots)
-- **Synthèse factuelle vérifiée :** Décision d'exécution (UE) 2026/2274 du 12 octobre 2026 publiant au JOUE la référence de la norme harmonisée EN 18286:2026 comme moyen de présomption de conformité QMS à l'article 17 de l'EU AI Act.
+- **Synthèse factuelle vérifiée :** Décision d'exécution (UE) 2026/2274 du 12 octobre 2026 publiant au JOUE la référence de la norme harmonisée EN 18286:2026 relative aux systèmes de gestion de la qualité pour le règlement (UE) 2024/1689 (présomption de conformité au titre de l'article 40 ; portée sur l'article 17 explicitée dans SRC-069).
 
 ### [22] SRC-068 — Guideline B-10: Third-Party Risk Management
 

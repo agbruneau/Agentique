@@ -4,8 +4,8 @@
 - **Agent auditeur :** `auditeur-wyvern-ch00` (contexte indépendant de rédaction, barrière `G2` selon `contrat-aq.md` § 2.2 ; révision indépendante complète après première passe)
 - **Base fermée autorisée :** `8 - Manuel/sources/ch00-sources.md` (`[1]`–`[15]`), textes intégraux bruts `8 - Manuel/recherche/corpus_l_plus/*.txt`, registres `8 - Manuel/registre/*.json`, manifestes `8 - Manuel/recherche/{manifeste-sources-sha256.json,registre-statut-f.json}`, rapport `8 - Manuel/aq/rapports-g0.json`, spécifications `8 - Manuel/specs/*.md`, sources amont des renvois prospectifs (`sources/ch01..ch04-sources.md`) et mesures directes sur le dépôt (`0 - PDF-MD/`, `8 - Trousse/`, `8 - Manuel/{manuscrit,diagrammes,outils}/`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
-- **Passe G2 initiale** (pré-rectification consolidée, passes 1 et 2) : **89** affirmations atomiques auditées (`61` `supporté`, `26` `imprécis`, `2` `non supporté` dont `1` réancrée et `1` supprimée)
-- **Actions appliquées dans `00 - Liminaire.md` :** `1` affirmation supprimée en passe 1 (`CH00-058`, *EU Data Act* art. `29(1)` absent de la base `L+`), `1` affirmation réancrée par mesure directe sur le dépôt en passe 1 (`CH00-003`, `3 181` pages PDF / `3 177` numérotées), `26` affirmations `imprécis` rectifiées (dont `6` en passe 1, `8` complétées en passe 2 et `12` détectées/rectifiées en passe 2 après décomposition atomique stricte)
+- **Passe G2 initiale + révision G3 P1** : **89** affirmations atomiques auditées (`61` `supporté`, `25` `imprécis`, `3` `non supporté` dont `2` réancrées et `1` supprimée)
+- **Actions appliquées dans `00 - Liminaire.md` :** `1` affirmation supprimée en passe 1 (`CH00-058`, *EU Data Act* art. `29(1)` absent de la base `L+`), `2` affirmations réancrées (`CH00-003` en passe 1 : `3 181` pages PDF / `3 177` numérotées ; `CH00-012` en G3 P1 : surreprésentation des firmes `< 20` employés selon `SRC-016`), `25` affirmations `imprécis` rectifiées
 - **Verdict final — supportés** : **88** / **88** affirmations actives (`100 % supporté`, `0` `imprécis` résiduel, `0` `non supporté`)
 
 ---
@@ -15,13 +15,13 @@
 | Section (`00 - Liminaire.md`) | Affirmations initiales | `supporté` initiaux | `imprécis` rectifiés | `non supporté` (réancrés / supprimés) | Actives finales (`100 % supporté`) |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | En-tête & scénario illustratif (`L1–L11`) | 9 | 7 | 1 (`CH00-005`) | 1 réancré (`CH00-003`) | 9 |
-| `0.1` Du référentiel normatif à l'exigence de preuve (`L13–L23`) | 14 | 7 | 7 (`CH00-010..013, 018..020`) | 0 | 14 |
+| `0.1` Du référentiel normatif à l'exigence de preuve (`L13–L23`) | 14 | 7 | 6 (`CH00-010, 011, 013, 018..020`) | 1 réancré (`CH00-012` G3 P1) | 14 |
 | `0.2` Table canonique et cinq discordances (`L25–L41`) | 8 | 4 | 4 (`CH00-024, 028..030`) | 0 | 8 |
 | `0.3` Architecture bicéphale et `8 - Trousse/` (`L43–L53`) | 13 | 12 | 1 (`CH00-042`) | 0 | 13 |
 | `0.4` Logique des parties, modules et parcours (`L55–L70`) | 12 | 9 | 3 (`CH00-050, 054, 056`) | 0 | 12 |
 | `0.5` Hygiène probatoire `2026-12-02` et `DC-P12` (`L72–L94`) | 21 | 12 | 8 (`CH00-061, 063, 066, 069..072, 076`) | 1 supprimé (`CH00-058`) | 20 |
 | `0.6` Colophon `G0–G5` et clause `non-avis` (`L96–L110`) | 12 | 10 | 2 (`CH00-081, 082`) | 0 | 12 |
-| **Total** | **89** | **61** | **26** | **2** (`1` réancré, `1` supprimé) | **88** |
+| **Total** | **89** | **61** | **25** | **3** (`2` réancrés, `1` supprimé) | **88** |
 
 ---
 
@@ -47,7 +47,7 @@
 | --- | :---: | --- | :---: | --- | --- |
 | `CH00-010` | `L15` | Statistique Canada T2 2026 (`[5]`) : `19,2 %` au Canada et `20,1 %` au Québec des entreprises ou organismes déclaraient avoir recouru à l'IA sur les 12 mois précédents pour produire des biens ou fournir des services. | `imprécis` | `SRC-014.txt` (`33101167.csv L2, L3, L6703` : *entreprises ou les organismes ... pour produire des biens ou fournir des services*, non *fabriquer des biens ou livrer des services* ni *entreprises* seules). | **Rectifié passe 2 (`L15`)** : libellé calqué sur `SRC-014.txt` · **`supporté`** |
 | `CH00-011` | `L15` | Statistique Canada T3 2026 (`[6]`) : `25,2 %` au Canada et `27,4 %` au Québec prévoyaient d'y recourir sur les 12 mois suivants. | `imprécis` | `SRC-015.txt` (`33101207.csv L2, L3, L7143` : *prévoit d'utiliser l'intelligence artificielle ... pour produire des biens ou fournir des services*). | **Rectifié passe 2 (`L15`)** : *prévoyaient d'y recourir* calqué sur `SRC-015.txt` · **`supporté`** |
-| `CH00-012` | `L17` | Note Banque du Canada de juin 2026 (Chanya Chawla et Crystal Arnburg, `[7]`) sur `314` répondants du *Business Leaders' Pulse* de décembre 2025, recrutés par quotas de PIB sans représentativité populationnelle ni firmes `< 20` employés. | `imprécis` | `SRC-016.txt` (`L39, L80–90, L104–105` : *rather than to produce population-representative estimates*, *GDP quotas*, *Firms with fewer than 20 employees are also [excluded]*). | **Rectifié passe 2 (`L17`)** : ajout explicite du *BLP* déc. 2025, des quotas de PIB, du seuil `< 20` employés et de la non-représentativité populationnelle · **`supporté`** |
+| `CH00-012` | `L17` | Note Banque du Canada de juin 2026 (Chanya Chawla et Crystal Arnburg, `[7]`) sur `314` répondants du *Business Leaders' Pulse* de décembre 2025, recrutés par quotas de PIB sans représentativité populationnelle et surreprésentant les firmes `< 20` employés face à leur part du PIB. | `non supporté` (G3 P1) | `SRC-016.txt` (`L39, L80–90, L104–108` : *rather than to produce population-representative estimates*, *GDP quotas*, *Firms with fewer than 20 employees are also over-represented relative to their contribution to GDP*). | **Rectifié passe 2 (`L17`) + G3 P1** : remplacé « ni firmes de moins de 20 employés » (contresens relevé hors échantillon en G3 P1) par « surreprésentant les firmes de moins de 20 employés face à leur part du PIB » · **`supporté`** |
 | `CH00-013` | `L17` | Banque du Canada (`[7]`) : `70 %` des répondants utilisent personnellement l'IA chaque semaine au travail, contre `8 %` des firmes en usage opérationnel marqué, `21 %` modéré et `29 %` peu fréquent en exploitation. | `imprécis` | `SRC-016.txt` (`L94` *70% of respondents*, `L158–160` *8% ... significant use*, *21% ... moderate use*, *29% ... infrequent use for operations*, plutôt que *dirigeants* / *essais ponctuels*). | **Rectifié passe 2 (`L17`)** : *70 % des répondants* et *29 % peu fréquent en exploitation* · **`supporté`** |
 | `CH00-014` | `L19` | MAP (`[1]`, Pan *et al.*, décembre 2025) : `68 %` des agents en production exécutent au plus `10` étapes avant intervention humaine. | `supporté` | `SRC-027.txt L25` (`68% execute at most 10 steps before human intervention`). | Aucune · **`supporté`** |
 | `CH00-015` | `L19` | MAP (`[1]`) : `80 %` (`16` sur `20`) obéissent à un flux structuré fixe. | `supporté` | `SRC-027.txt` (`Eighty percent (16/20) of case studies use structured workflows`). | Aucune · **`supporté`** |

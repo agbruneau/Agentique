@@ -191,7 +191,7 @@
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-089.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://raw.githubusercontent.com/open-telemetry/semantic-conventions/e018fe6f91862f5ed63c082f87697cddac596784/docs/registry/attributes/gen-ai.md
 - **Empreinte SHA-256 (LF) :** `74e99ecc4e35c6c7c7541dd310d1bd2f9e9c24f26e35338a332901cce43993da` (`39330` octets, `3715` mots)
-- **Synthèse factuelle vérifiée :** Registre stable v1.41.0 des conventions sémantiques OpenTelemetry GenAI (60 attributs recensés incluant gen_ai.usage.cache_creation.input_tokens et cache_read).
+- **Synthèse factuelle vérifiée :** Registre v1.41.0 des conventions sémantiques OpenTelemetry GenAI (60 attributs recensés dont 50 en statut Development, 10 en statut Deprecated et aucun Stable, incluant gen_ai.usage.cache_creation.input_tokens et cache_read).
 
 ### [18] SRC-090 — OpenTelemetry semantic-conventions-genai (commit 244465e9 — 85 attributs Development incluant cache_write)
 
@@ -290,7 +290,7 @@
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-077.txt`, score AACODS `11.0/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8785.txt
 - **Empreinte SHA-256 (LF) :** `be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642` (`36840` octets, `5011` mots)
-- **Synthèse factuelle vérifiée :** RFC 8785 Standards Track (JSON Canonicalization Scheme, JCS) fixant la canonisation déterministe (ordre UTF-16 des clés, formatage ECMAScript des nombres) préalable à tout hachage SHA-256.
+- **Synthèse factuelle vérifiée :** RFC 8785 (Independent Submission, statut Informational — JSON Canonicalization Scheme, JCS) fixant la canonisation déterministe (ordre UTF-16 des clés, formatage ECMAScript des nombres) préalable à tout hachage SHA-256.
 
 ---
 

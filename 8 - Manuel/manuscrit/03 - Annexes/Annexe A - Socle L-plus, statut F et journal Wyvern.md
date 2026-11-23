@@ -209,7 +209,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - `SPEC-DRAFT-AGENT-REVOC-01` — OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft) (`draft-chen-oauth-agent-revocation-01`, IETF_INDIVIDUAL_DRAFT, `SPDX: IETF-Trust`, `SRC-017`, `SHA-256: 25d9788ca0cb...`).
 - `SPEC-DRAFT-WIMSE-PRAC-08` — WIMSE Workload Identity Practices (Internet-Draft) (`draft-ietf-wimse-workload-identity-practices-08`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-047`, `SHA-256: 863cee96178b...`).
 - `SPEC-DRAFT-WIMSE-AIMS-01` — WIMSE AI Identity Management System (Internet-Draft) (`draft-ietf-wimse-aims-01`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-048`, `SHA-256: ab53c74913dd...`).
-- `SPEC-DRAFT-IDEMPOTENCY-KEY` — The Idempotency-Key HTTP Header Field (Internet-Draft) (`draft-ietf-httpapi-idempotency-key-header-07`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-036`, `SHA-256: d737453f458f...`).
+- `SPEC-DRAFT-IDEMPOTENCY-KEY` — The Idempotency-Key HTTP Header Field (Internet-Draft) (`draft-ietf-httpapi-idempotency-key-header-09`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-036`, `SHA-256: d737453f458f...`).
 - `SPEC-NIST-FIPS-203` — NIST FIPS 203: ML-KEM Key-Encapsulation Mechanism (`FIPS 203`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-049`, `SHA-256: bb840af1e6a3...`).
 - `SPEC-NIST-FIPS-204` — NIST FIPS 204: ML-DSA Digital Signature Standard (`FIPS 204`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-050`, `SHA-256: 14b6c1706d2c...`).
 - `SPEC-NIST-FIPS-205` — NIST FIPS 205: SLH-DSA Stateless Hash-Based Signature Standard (`FIPS 205`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-018`, `SHA-256: c27445a0f736...`).
@@ -246,8 +246,8 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - **Agent auditeur :** `auditeur-wyvern-ch00` (contexte indépendant de rédaction, barrière `G2` selon `contrat-aq.md` § 2.2 ; révision indépendante complète après première passe)
 - **Base fermée autorisée :** `8 - Manuel/sources/ch00-sources.md` (`[1]`–`[15]`), textes intégraux bruts `8 - Manuel/recherche/corpus_l_plus/*.txt`, registres `8 - Manuel/registre/*.json`, manifestes `8 - Manuel/recherche/{manifeste-sources-sha256.json,registre-statut-f.json}`, rapport `8 - Manuel/aq/rapports-g0.json`, spécifications `8 - Manuel/specs/*.md`, sources amont des renvois prospectifs (`sources/ch01..ch04-sources.md`) et mesures directes sur le dépôt (`0 - PDF-MD/`, `8 - Trousse/`, `8 - Manuel/{manuscrit,diagrammes,outils}/`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
-- **Passe G2 initiale** (pré-rectification consolidée, passes 1 et 2) : **89** affirmations atomiques auditées (`61` `supporté`, `26` `imprécis`, `2` `non supporté` dont `1` réancrée et `1` supprimée)
-- **Actions appliquées dans `00 - Liminaire.md` :** `1` affirmation supprimée en passe 1 (`CH00-058`, *EU Data Act* art. `29(1)` absent de la base `L+`), `1` affirmation réancrée par mesure directe sur le dépôt en passe 1 (`CH00-003`, `3 181` pages PDF / `3 177` numérotées), `26` affirmations `imprécis` rectifiées (dont `6` en passe 1, `8` complétées en passe 2 et `12` détectées/rectifiées en passe 2 après décomposition atomique stricte)
+- **Passe G2 initiale + révision G3 P1** : **89** affirmations atomiques auditées (`61` `supporté`, `25` `imprécis`, `3` `non supporté` dont `2` réancrées et `1` supprimée)
+- **Actions appliquées dans `00 - Liminaire.md` :** `1` affirmation supprimée en passe 1 (`CH00-058`, *EU Data Act* art. `29(1)` absent de la base `L+`), `2` affirmations réancrées (`CH00-003` en passe 1 : `3 181` pages PDF / `3 177` numérotées ; `CH00-012` en G3 P1 : surreprésentation des firmes `< 20` employés selon `SRC-016`), `25` affirmations `imprécis` rectifiées
 - **Verdict final — supportés** : **88** / **88** affirmations actives (`100 % supporté`, `0` `imprécis` résiduel, `0` `non supporté`)
 
 ---
@@ -257,13 +257,13 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | Section (`00 - Liminaire.md`) | Affirmations initiales | `supporté` initiaux | `imprécis` rectifiés | `non supporté` (réancrés / supprimés) | Actives finales (`100 % supporté`) |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | En-tête & scénario illustratif (`L1–L11`) | 9 | 7 | 1 (`CH00-005`) | 1 réancré (`CH00-003`) | 9 |
-| `0.1` Du référentiel normatif à l'exigence de preuve (`L13–L23`) | 14 | 7 | 7 (`CH00-010..013, 018..020`) | 0 | 14 |
+| `0.1` Du référentiel normatif à l'exigence de preuve (`L13–L23`) | 14 | 7 | 6 (`CH00-010, 011, 013, 018..020`) | 1 réancré (`CH00-012` G3 P1) | 14 |
 | `0.2` Table canonique et cinq discordances (`L25–L41`) | 8 | 4 | 4 (`CH00-024, 028..030`) | 0 | 8 |
 | `0.3` Architecture bicéphale et `8 - Trousse/` (`L43–L53`) | 13 | 12 | 1 (`CH00-042`) | 0 | 13 |
 | `0.4` Logique des parties, modules et parcours (`L55–L70`) | 12 | 9 | 3 (`CH00-050, 054, 056`) | 0 | 12 |
 | `0.5` Hygiène probatoire `2026-12-02` et `DC-P12` (`L72–L94`) | 21 | 12 | 8 (`CH00-061, 063, 066, 069..072, 076`) | 1 supprimé (`CH00-058`) | 20 |
 | `0.6` Colophon `G0–G5` et clause `non-avis` (`L96–L110`) | 12 | 10 | 2 (`CH00-081, 082`) | 0 | 12 |
-| **Total** | **89** | **61** | **26** | **2** (`1` réancré, `1` supprimé) | **88** |
+| **Total** | **89** | **61** | **25** | **3** (`2` réancrés, `1` supprimé) | **88** |
 
 ---
 
@@ -289,7 +289,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | --- | :---: | --- | :---: | --- | --- |
 | `CH00-010` | `L15` | Statistique Canada T2 2026 (`[5]`) : `19,2 %` au Canada et `20,1 %` au Québec des entreprises ou organismes déclaraient avoir recouru à l'IA sur les 12 mois précédents pour produire des biens ou fournir des services. | `imprécis` | `SRC-014.txt` (`33101167.csv L2, L3, L6703` : *entreprises ou les organismes ... pour produire des biens ou fournir des services*, non *fabriquer des biens ou livrer des services* ni *entreprises* seules). | **Rectifié passe 2 (`L15`)** : libellé calqué sur `SRC-014.txt` · **`supporté`** |
 | `CH00-011` | `L15` | Statistique Canada T3 2026 (`[6]`) : `25,2 %` au Canada et `27,4 %` au Québec prévoyaient d'y recourir sur les 12 mois suivants. | `imprécis` | `SRC-015.txt` (`33101207.csv L2, L3, L7143` : *prévoit d'utiliser l'intelligence artificielle ... pour produire des biens ou fournir des services*). | **Rectifié passe 2 (`L15`)** : *prévoyaient d'y recourir* calqué sur `SRC-015.txt` · **`supporté`** |
-| `CH00-012` | `L17` | Note Banque du Canada de juin 2026 (Chanya Chawla et Crystal Arnburg, `[7]`) sur `314` répondants du *Business Leaders' Pulse* de décembre 2025, recrutés par quotas de PIB sans représentativité populationnelle ni firmes `< 20` employés. | `imprécis` | `SRC-016.txt` (`L39, L80–90, L104–105` : *rather than to produce population-representative estimates*, *GDP quotas*, *Firms with fewer than 20 employees are also [excluded]*). | **Rectifié passe 2 (`L17`)** : ajout explicite du *BLP* déc. 2025, des quotas de PIB, du seuil `< 20` employés et de la non-représentativité populationnelle · **`supporté`** |
+| `CH00-012` | `L17` | Note Banque du Canada de juin 2026 (Chanya Chawla et Crystal Arnburg, `[7]`) sur `314` répondants du *Business Leaders' Pulse* de décembre 2025, recrutés par quotas de PIB sans représentativité populationnelle et surreprésentant les firmes `< 20` employés face à leur part du PIB. | `non supporté` (G3 P1) | `SRC-016.txt` (`L39, L80–90, L104–108` : *rather than to produce population-representative estimates*, *GDP quotas*, *Firms with fewer than 20 employees are also over-represented relative to their contribution to GDP*). | **Rectifié passe 2 (`L17`) + G3 P1** : remplacé « ni firmes de moins de 20 employés » (contresens relevé hors échantillon en G3 P1) par « surreprésentant les firmes de moins de 20 employés face à leur part du PIB » · **`supporté`** |
 | `CH00-013` | `L17` | Banque du Canada (`[7]`) : `70 %` des répondants utilisent personnellement l'IA chaque semaine au travail, contre `8 %` des firmes en usage opérationnel marqué, `21 %` modéré et `29 %` peu fréquent en exploitation. | `imprécis` | `SRC-016.txt` (`L94` *70% of respondents*, `L158–160` *8% ... significant use*, *21% ... moderate use*, *29% ... infrequent use for operations*, plutôt que *dirigeants* / *essais ponctuels*). | **Rectifié passe 2 (`L17`)** : *70 % des répondants* et *29 % peu fréquent en exploitation* · **`supporté`** |
 | `CH00-014` | `L19` | MAP (`[1]`, Pan *et al.*, décembre 2025) : `68 %` des agents en production exécutent au plus `10` étapes avant intervention humaine. | `supporté` | `SRC-027.txt L25` (`68% execute at most 10 steps before human intervention`). | Aucune · **`supporté`** |
 | `CH00-015` | `L19` | MAP (`[1]`) : `80 %` (`16` sur `20`) obéissent à un flux structuré fixe. | `supporté` | `SRC-027.txt` (`Eighty percent (16/20) of case studies use structured workflows`). | Aucune · **`supporté`** |
@@ -526,6 +526,20 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - **Synchronisation et hygiène (`CA-02..CA-08`, `CA-20`) :** `4 / 4` blocs `CA-G0-SYNC` (`G0-EX-CH01-01` à `G0-EX-CH01-04`) intacts et concordants octet pour octet, `0` symbole dollar non échappé dans le chapitre et dans `ch01-ancrage.md`, `0` collision `12-grammes`, `3` tableaux (`Tableau 1.1` à `Tableau 1.3`), `2` figures (`Fig-01`, `Fig-02`), `5` vedettes du glossaire présentes (`Harnais déterministe`, `Partition 80/20`, `Dérive silencieuse`, `Épinglage cryptographique`, `Carte d'agent`).
 - **Verdict final — supportés** : **58** (`100 % supporté`, `0` non supporté).
 
+
+---
+
+## 4. Rejeu `G2` différentiel post-G4 (`9563b136`)
+
+- **Périmètre contrôlé :** paragraphes modifiés en `G4` dans `Chapitre 01` (`L19`, `L21`, `L25`, `L31`, `L37–L42`, `L76`, `L80`, `L83`, `L85`, `L87`, `L89`, `Tableau 1.1`, `L102`) ainsi que `Fig-01.puml` / `Fig-01.svg` et `sources/ch01-sources.md`.
+- **Rectifications appliquées suite au contre-audit différentiel :**
+  1. `L19` : attribution exacte du modèle multiplicatif des risques concurrents à `SRC-024` (`[1]`) et équivalence mathématique avec la loi en série / exemple `0,94^{10}` posés hors citation `[1]`.
+  2. `L31` : rôle explicite de `RFC 8785` (`[12]`) dans `1.1`, `1.2` et `1.4` (`a2a_card.py` : `canonicalize_jcs` et `card_etag`), en complément de `RFC 7515` (`[13]`) pour la signature en `1.4`.
+  3. `L80`, `L85`, `L87`, `Tableau 1.1` (`L96–L100`) : trace `step_trace` (`8` jalons après admission, trace courte terminée par `*_fail` sur `VALIDATION_FAILED`), court-circuit `5_schema or 6_grounding`, facteur `3×` vs surcoût `+2` appels, `validate_strict_schema` couvrant méta-validation + instance `Draft202012Validator`, et scellement `8_seal` (`{"status", "payload", "trace"}`) incluant `ESCALADED`.
+  4. `Fig-01.puml` (`L44`, `L65–L74`) : libellé `SCH` combiné (`_INPUT_SCHEMA` + `HarnessExtraction`), arc `E6 --> E7 : écart d'ancrage`, transition `E7 --> E8 : ESCALADED (plafond atteint)` et `ESC --> E8`, recompilés via `compile_figures.py --strict` (`exit 0`, `12` nœuds).
+  5. `sources/ch01-sources.md` (`L9`, `L18`, `L139`) : alignement de `[1] SRC-024` (`Competing Risk Model`) et `[12] SRC-077` (`RFC 8785` *Independent Submission* / *Informational*).
+- **Verdict final post-G4 (`ch01`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
 #### `ch02-ancrage.md`
 
 # Audit d'ancrage atomique Wyvern — Chapitre 02 (`ch02`)
@@ -653,8 +667,8 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - **C28 (`L087`)** — Approbation hors bande (*backchannel*) par `OpenID Connect CIBA Core 1.0` `[8]` (`auth_req_id`, `SBB-SIGNED-HUMAN-APPROVAL`, `SRC-045.txt` l. 1, 22, 374, 518) combinée au tableau `authorization_details` de `RFC 9396` `[7]` (`SRC-042.txt` l. 164–178).
   - Constat initial : supporté.
   - Verdict final : supporté
-- **C29 (`L089`)** — Contrat `C.6` (`approval_token_c6.schema.json`, `R-07`, `S-15`, `C24`, `EXIG-SEC-25`), séparation entre les règles `RFC 7493` `I-JSON` (*Standards Track*, `[9]`, `SRC-004.txt` § 2.1–2.2 sur surrogates UTF-8 isolés et plage entière `±(2^53 - 1)`) et le durcissement `C.6` dans `validate_ijson_strict` rejetant tout `float` (`NaN`, `Infinity`) via `IJsonError`, puis canonisation `RFC 8785` `JCS` (`utf-16-be`, `[26]`) et SHA-256.
-  - Constat initial : imprécis (confondait l'interdiction `C.6` de tout `float` avec les exigences générales de `RFC 7493`, qui accepte les flottants double précision ; rectifié pour distinguer les deux niveaux).
+- **C29 (`L089`)** — Contrat `C.6` (`approval_token_c6.schema.json`, `R-07`, `S-15`, `C24`, bloc `SBB-SIGNED-HUMAN-APPROVAL`), séparation entre les règles `RFC 7493` `I-JSON` (*Standards Track*, `[9]`, `SRC-004.txt` § 2.1–2.2 sur surrogates UTF-8 isolés et plage entière `±(2^53 - 1)`) et le durcissement `C.6` dans `validate_ijson_strict` rejetant tout `float` (`NaN`, `Infinity`) via `IJsonError`, puis canonisation `RFC 8785` `JCS` (`utf-16-be`, `[26]`) et SHA-256.
+  - Constat initial : imprécis (confondait l'interdiction `C.6` de tout `float` avec les exigences générales de `RFC 7493`, qui accepte les flottants double précision ; rectifié en G2, puis attribution fautive d'`EXIG-SEC-25` déplacée vers `Ch03 / OpaPolicyEngine.run_coverage` suite à l'écart `Item 26` en G3 Passe 1).
   - Verdict final : supporté
 - **C30 (`L091`–`L107`)** — Bloc synchronisé `G0-EX-CH02-02` (`compute_action_hash_h`, `ciba_approval.py` l. 106–117, empreinte `sha256` vérifiée dans `aq/rapports-g0.json`).
   - Constat initial : supporté.
@@ -737,8 +751,8 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - **C54 (`L219`)** — Double défi d'observabilité en aval : exposition de PII par journalisation brute des invites et absence de jointure vérifiable au mandat ou à l'approbation.
   - Constat initial : supporté.
   - Verdict final : supporté
-- **C55 (`L223`)** — Retrait des attributs `gen_ai.*` du dépôt central `open-telemetry/semantic-conventions` après l'étiquette `v1.41.0` du `28 avril 2026` `[17]` (laissant `v1.44+` sans référence `gen_ai.*`, comme documenté au *Cadre de Référence* Vol. 2 l. 8357, 8768) vers le dépôt dédié `open-telemetry/semantic-conventions-genai` `[18, 19]`.
-  - Constat initial : imprécis (citait `v1.44+` sans renvoyer au *Cadre de Référence* qui établit la dernière étiquette `v1.44.0` ; rectifié).
+- **C55 (`L223`)** — Dissociation observée dans les instantanés `L+` entre le registre `v1.41.0` du dépôt central `open-telemetry/semantic-conventions` (`28 avril 2026`, `SRC-089.txt`, `[17]`) et le dépôt spécialisé `open-telemetry/semantic-conventions-genai` (`@244465e9`, `31 octobre 2026`, `SRC-090.txt`, `[18]`), alors que les fiches de spans du `5 novembre 2026` (`SRC-037.txt` l. 50–60, `[19]`) renvoient à `v1.45.0` du dépôt central pour les erreurs générales et vers `/docs/registry/attributes/gen-ai.md` pour `gen_ai.*`.
+  - Constat initial : écart relevé en G3 Passe 1 (`Item 31`) sur la mention non archivée de `v1.44+` et du retrait post-`v1.41.0` via *Cadre de Référence* ; réancré exclusivement sur `SRC-089 [17]`, `SRC-090 [18]` et `SRC-037 [19]`.
   - Verdict final : supporté
 - **C56 (`L227`)** — Décompte exact et statut des attributs dans les deux `gen-ai.md` : `SRC-089.txt` (`v1.41.0`, commit `e018fe6f`, `[17]`) recense `60` entrées `gen_ai.*` dont **`50` actifs en statut `Development` (incluant déjà les quatre attributs `gen_ai.agent.*`) et `10` en statut `Deprecated`** (`5` GenAI + `5` OpenAI, **`0` `Stable`**), contre **`85` attributs tous en statut `Development`** (`0` `Stable`, `0` `Deprecated`) dans `SRC-090.txt` (`@244465e9`, `31 octobre 2026`, `[18]`, ajouts couvrant notamment `gen_ai.main_agent.*`, `gen_ai.skill.*`, `gen_ai.memory.*`, les modalités multimodales, les références `*_ref` et `gen_ai.transfer.*`).
   - Constat initial : imprécis (qualifiait `v1.41.0` de « registre stable `v1.41.0` » puis attribuait à tort aux ajouts `@244465e9` les attributs `gen_ai.agent.*` déjà présents en `v1.41.0` ; rectifié avec le décompte exact `50 Development` + `10 Deprecated` et les ajouts réels `@244465e9`).
@@ -877,6 +891,15 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - **Contrôles numériques et schémas `G0` en séance** : exécution directe de `pqc_http431.evaluate_http_431` (concordance bit à bit du Tableau 2.2), `ciba_approval.compute_action_hash_h` (`92be40835a73023d117ebb4965da82dfa05e2e6d647d0919d53461289bbc6e81`), métadonnées `dilithium-py 1.5.1` (`MIT`) et `cbor2 6.3.0` (`MIT`), `aq/rapports-g0.json` (`overall_status = PASS`, `exit_code = 0`, `spdx_check.passed = true`, `SHA-256` exacts pour `G0-EX-CH02-01` à `G0-EX-CH02-04`).
 - **Re-vérification `G1` finale post-rectification (`C:\Python314\python.exe -B "8 - Manuel/outils/verifie_manuscrit.py" --unit ch02 --strict`)** : `exit 0` (`OK : Barriere deterministe G1 passee avec 0 erreur.`, `8 898` mots lexicaux `CA-03` / `9 847` `split()`).
 
+
+---
+
+## Contrôle `G2` différentiel post-G4 (`9563b136`)
+
+- **Périmètre contrôlé :** retouches `G4` de `Chapitre 02` (`L21`, `L27`, `L29`, `L71`, `L73`, `L75`), vérifiées contre `8 - Trousse/authz_pqc_audit/obo_dpop.py`, `schemas/delegated_token_claims.schema.json`, `tests/test_authz_pqc_audit.py` (`23/23`), `SRC-009`, `SRC-010`, `SRC-042` et `SRC-043`.
+- **Rectification appliquée à `L73` :** sens exact `access_token` fourni *par* l'appelant, rétablissement de « au *champ interne* `jwk_thumbprint` ou `x5t#S256` de `dpop_proof` » (distinct de `jwk` JWT dans `RFC 9449`) et qualification « cache partagé à *fenêtre temporelle bornée* » conforme à `RFC 9449 § 11.1` (`SRC-043.txt L1324–1336`).
+- **Verdict final post-G4 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
 #### `ch03-ancrage.md`
 
 # Journal d'ancrage atomique Wyvern — Chapitre 03 (`G2` · `CA-10`, `CA-12`)
@@ -935,7 +958,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH03-030` | § 3.1 (`L45`) | Sémantique Rego : requête sans règle vraie évalue à `undefined` ; expression ou comparaison d'inégalité comme `!=` sur `undefined` donne `undefined` ; mot-clé `default` `[3]` | `SRC-087.txt` (`L79-101`, `L1006-1007`) | `imprécis` | Passe 2 : remplacé « par négation ou inégalité » (car `not` en Rego réussit sur `undefined`) par « lors de comparaisons d'inégalité comme `!=` » (`SRC-087.txt L92`). | `supporté` |
 | `CH03-031` | § 3.1 (`L47`) | `verify_rego_default_deny` dans `opa_runner.py` : ignore commentaires, exige `package` avant le défaut, tolère `import` et `default` préliminaires, exige `default allow := false` / `default decision := "deny"` (`:=` ou `=`) avant toute autre règle, lève `OpaStaticCheckError`, testé par `test_opa_static_check_rejects_missing_default_deny` | `policy_saga/opa_runner.py` (`L15-66`), `tests/test_policy_saga.py` (`L132-144`) | `imprécis` | Passe 2 : précisé l'antériorité de `package`, la tolérance des autres déclarations `default` préliminaires et l'acceptation `:=` ou `=`. | `supporté` |
 | `CH03-032` | § 3.1 (`L49`) | `OpaPolicyEngine.evaluate` : `subprocess.run(..., shell=False)`, `--fail`, `--format=json`, délai `30` s, JSON sur stdin, exige `returncode == 0` et `val is True` | `policy_saga/opa_runner.py` (`L107-142`) | `supporté` | Aucune. | `supporté` |
-| `CH03-033` | § 3.1 (`L51`) | `OpaPolicyEngine.run_coverage` : `opa test --coverage --format=json` `[4]`, `OpaCoverageReport` validé ssi `tests_failed == 0`, `tests_passed > 0`, `not_covered_lines == 0`, `100.0 %` | `SRC-088.txt`, `policy_saga/opa_runner.py` (`L144-203`) | `supporté` | Aucune. | `supporté` |
+| `CH03-033` | § 3.1 (`L51`) | `OpaPolicyEngine.run_coverage` : `opa test --coverage --format=json` `[4]` (`EXIG-SEC-25`), `OpaCoverageReport` validé ssi `tests_failed == 0`, `tests_passed > 0`, `not_covered_lines == 0`, `100.0 %` | `SRC-088.txt`, `policy_saga/opa_runner.py` (`L137-196`), `matrice-exig-prr-c40.json` (`L594-603`) | `imprécis` (G3 P1) | Attribution explicite d'`EXIG-SEC-25` déplacée de `Ch02/ciba_approval` vers `OpaPolicyEngine.run_coverage` ; plage `opa_runner.py` ajustée à `L137-196`. | `supporté` |
 | `CH03-034` | § 3.1 (`L51`) | Verdict `aq/rapports-g0.json` au `2 décembre 2026` : `45/45` tests `.rego` réussis, `0` échec, couverture `100,0 %` sur `3` fichiers | `aq/rapports-g0.json` (`opa_check`) | `supporté` | Aucune. | `supporté` |
 | `CH03-035` | § 3.1 (`L53`) | Scénarios négatifs `.rego` sur `{}` vide, `null` et erreurs de typage (ex. `"false"` pour booléen, `0` pour `"P0"`) | `policies_opa/rule_of_two_test.rego`, `camel_taint_test.rego`, `sandbox_confinement_test.rego` | `supporté` | Aucune. | `supporté` |
 | `CH03-036` | § 3.1 (`L57`) | Règle de deux mise en œuvre dans `8 - Trousse/` pour `EXIG-SEC-06` (*Retrait déterministe des capacités d'exfiltration*, `S-06`, `S-09`, `C03`, `C28`, `SBB-GUARDRAILS-ENGINE`) et paliers `P0`–`P3` | `2 - Cadre de Référence.md` (`L3504-3512`, `L4385-4391`), `policies_opa/rule_of_two.rego`, `matrice-exig-prr-c40.json` | `imprécis` | Passe 1 : précisé que la Règle de deux répond à `EXIG-SEC-06` (*Retrait déterministe des capacités d'exfiltration*). | `supporté` |
@@ -1270,7 +1293,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `C04-186` | `L219` | L'article `14` de l'EU AI Act impose un contrôle humain prévenant le biais d'automatisation [15]. | `SRC-060` `L3842–3867` | `supporté` | — | `supporté` |
 | `C04-187` | `L219` | Limites pratiques de la supervision humaine sous art. `14` documentées par Dhanorkar et al. [26]. | `SRC-075` `L37`, `L635–639` | `supporté` | — | `supporté` |
 | `C04-188` | `L219` | L'article `17` de l'EU AI Act impose un système de gestion de la qualité (`QMS`) [15]. | `SRC-060` `L3937`, `L3953` | `supporté` | — | `supporté` |
-| `C04-189` | `L219` | La Décision d'exécution `(UE) 2026/2274` du `12 octobre 2026` publie au JOUE la référence d'`EN 18286:2026` donnant présomption de conformité à l'art. `17` [21]. | `SRC-067` `L1–4`, `L28–39` | `supporté` | — | `supporté` |
+| `C04-189` | `L219` | La Décision d'exécution `(UE) 2026/2274` du `12 octobre 2026` publie au JOUE la référence d'`EN 18286:2026`, ouvrant selon l'art. `40` une présomption de conformité QMS pour l'art. `17` [15, 21, 23]. | `SRC-060` `L3953–3965`, `L4706–4713`, `SRC-067` `L1–4`, `L15–39`, `SRC-069` `L3–9` | `imprécis` (G3 P1) | Rectifié `Item 58` (`L219`) : précisé l'art. `40`, cité `[15, 21, 23]` et complété les plages `SRC-060`. | `supporté` |
 | `C04-190` | `L219` | Le communiqué CE du `21 octobre 2026` précise l'intégration par couches d'`EN 18286:2026` sur `ISO/IEC 42001`, `ISO 9001` ou un QMS sectoriel existant [23]. | `SRC-069` `L7–9`, `L21` | `imprécis` | Mention explicite d'ISO/IEC 42001, ISO 9001 ou d'un QMS sectoriel selon `SRC-069`. | `supporté` |
 | `C04-191` | `L219` | Portail CEN/CENELEC (`HTTP 500`) et norme payante ISO/IEC 42001 (`HTTP 403`) exclus en statut F. | `registre-statut-f.json` `L51–59`, `L84–93` | `supporté` | — | `supporté` |
 | `C04-192` | `L221` | Règlement DORA `(UE) 2022/2554`, article `24` : programme de tests de résilience opérationnelle numérique [17]. | `SRC-062` `L2499–2527` | `supporté` | — | `supporté` |

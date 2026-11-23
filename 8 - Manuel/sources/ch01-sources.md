@@ -6,7 +6,7 @@
 
 ---
 
-### [1] SRC-024 — NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Series Model (Lusser Reliability Law)
+### [1] SRC-024 — NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Competing Risk Model
 
 - **Auteurs / Émetteur :** National Institute of Standards and Technology (NIST) / SEMATECH
 - **Date de publication :** `2012-04`
@@ -15,7 +15,7 @@
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-024.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.itl.nist.gov/div898/handbook/apr/section1/apr181.htm
 - **Empreinte SHA-256 (LF) :** `8734d2a7119029ec0a3459f4c9f33332967e14e2742b40938f3c53a2e94c01da` (`3049` octets, `467` mots)
-- **Synthèse factuelle vérifiée :** Section 8.1.8.1 du manuel statistique NIST/SEMATECH établissant la loi multiplicative de fiabilité des composants en série (0,94 exposant 10 = 53,9 %), justifiant la partition déterministe 80/20.
+- **Synthèse factuelle vérifiée :** Section 8.1.8.1 du manuel statistique NIST/SEMATECH établissant le modèle multiplicatif des risques concurrents (k mécanismes indépendants en concurrence pour la fiabilité d'un composant).
 
 ### [2] SRC-027 — Measuring Agents in Production (MAP)
 
@@ -136,7 +136,7 @@
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-077.txt`, score AACODS `11.0/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8785.txt
 - **Empreinte SHA-256 (LF) :** `be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642` (`36840` octets, `5011` mots)
-- **Synthèse factuelle vérifiée :** RFC 8785 Standards Track (JSON Canonicalization Scheme, JCS) fixant la canonisation déterministe (ordre UTF-16 des clés, formatage ECMAScript des nombres) préalable à tout hachage SHA-256.
+- **Synthèse factuelle vérifiée :** RFC 8785 (Independent Submission, statut Informational — JSON Canonicalization Scheme, JCS) fixant la canonisation déterministe (ordre UTF-16 des clés, formatage ECMAScript des nombres) préalable à tout hachage SHA-256.
 
 ### [13] SRC-005 — RFC 7515: JSON Web Signature (JWS)
 

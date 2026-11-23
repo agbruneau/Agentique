@@ -49,8 +49,8 @@ Cette annexe rassemble de façon déterministe la matrice de traçabilité relia
 | `G0` — Banc logiciel `execute_g0.py` | `auteur-tests-oracle` ≠ `batisseur-code`, `OPA 100 %`, `4` vecteurs | `CA-19`, `CA-20` | PASS (`exit 0`) |
 | `G1` — Garde déterministe sans modèle | Script `verifie_manuscrit.py --strict` (`CA-G0-SYNC`) | `CA-01`..`CA-11`, `CA-17`, `CA-20` | Contrôle actif |
 | `G2` — Ancrage atomique Wyvern | Cinq `auditeur-wyvern` neufs (`00`–`04`) | `CA-10`, `CA-12` | 5 / 5 journaux (580 -> 577, 100 % supportées) |
-| `G3` — Recollation passe 1 (`20270801`) | Agent `recollateur-1` (`4` strates × `15`, `≥ 8`/unité) | `CA-07`, `CA-13` | En attente d'exécution |
-| `G4` — Critique à l'aveugle (`gauntlet-loop`) | Duels A/B vs étalons français + rejeu `G0+G1+G2` diff | `CA-15` | En attente d'exécution |
+| `G3` — Recollation passe 1 (`20270801`) | Agent `recollateur-1` (`4` strates × `15`, `≥ 8`/unité) | `CA-07`, `CA-13` | Initial `57/60` (95 %) -> final `60/60` (100 %) |
+| `G4` — Critique à l'aveugle (`gauntlet-loop`) | Duels A/B vs étalons français + rejeu `G0+G1+G2` diff | `CA-15` | Journal complété |
 | `G5` — Lissage transversal (`CA-16`) | `lisseur-editorial` neuf + rejeu `G0+G1+G2` diff | `CA-16` | En attente d'exécution |
 | `G3` — Recollation finale à froid (`20270802`) | `recollateur-2` disjoint sur texte et code finaux | `CA-14` | En attente d'exécution |
 | `G5` — Annexes SSOT, rendu & visuel | `genere_annexes.py`, `assemble_livre.py`, `100 %` pages PDF | `CA-17`, `CA-18` | Contrôle actif |

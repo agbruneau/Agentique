@@ -1,0 +1,872 @@
+[
+  {
+    "claim_loc": "00-liminaire:P006:S01",
+    "paragraph_loc": "00-liminaire:P006",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Selon Statistique Canada, au deuxième trimestre de 2026, 19,2 % des entreprises ou organismes au Canada et 20,1 % au Québec déclaraient avoir recouru à l'IA sur les douze mois précédents pour produire des biens ou fournir des services [5].",
+    "refs": [
+      5
+    ],
+    "source_ids": [
+      "SRC-014"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P007:S02",
+    "paragraph_loc": "00-liminaire:P007",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Tandis que 70 % des répondants utilisent personnellement l'IA chaque semaine au travail, seuls 8 % des firmes rapportent un usage opérationnel marqué, contre 21 % modéré et 29 % peu fréquent en exploitation [7].",
+    "refs": [
+      7
+    ],
+    "source_ids": [
+      "SRC-016"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P008:S02",
+    "paragraph_loc": "00-liminaire:P008",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "De leur côté, Cemri et ses coauteurs (MAST, NeurIPS 2025) relèvent entre 41 % et 86,7 % d'échecs sur 1 642 traces issues de sept cadriciels multi-agents et quatorze modes de défaillance [2].",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-028"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P009:S02",
+    "paragraph_loc": "00-liminaire:P009",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "Au Canada, le bulletin technologique du 13 juillet 2026 publié par le Bureau du surintendant des institutions financières (BSIF) recommande d'encadrer les modèles par un harnais technique (*AI harnessing*), d'attribuer des identités non humaines distinctes et de fixer des limites à l'autonomie — notion formalisée ici comme **Autonomie bornée** (*Bounded Autonomy* au glossaire) — sur tout le cycle de vie de l'IA [11].",
+    "refs": [
+      11
+    ],
+    "source_ids": [
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P014:S01",
+    "paragraph_loc": "00-liminaire:P014",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "La frontière `DISC-01` évite de déployer un modèle probabiliste lorsque des scripts déterministes suffisent, en cohérence avec la prédominance des flux structurés observée dans MAP [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P015:S01",
+    "paragraph_loc": "00-liminaire:P015",
+    "unit": "00-liminaire",
+    "category": "assertions_g0",
+    "text": "En vertu du contrat `CA-G0-SYNC` (`CA-20`), chaque extrait provient mécaniquement du dépôt compagnon, porte son identifiant de provenance et concorde octet pour octet avec son empreinte SHA-256 consignée dans `aq/rapports-g0.json`.",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P027:S01",
+    "paragraph_loc": "00-liminaire:P027",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "Au Canada fédéral, l'encadrement `E-23` du BSIF dédié au risque de modélisation prendra effet le 1er mai 2027 [12].",
+    "refs": [
+      12
+    ],
+    "source_ids": [
+      "SRC-065"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P028:S01",
+    "paragraph_loc": "00-liminaire:P028",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "Ainsi, la loi sanctionnée `LQ 2021, c. 25` (Loi 25) remplace le portail bloqué `legisquebec.gouv.qc.ca` et son article 12.1 encadre les décisions exclusivement automatisées depuis le 22 septembre 2023 [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P028:S02",
+    "paragraph_loc": "00-liminaire:P028",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Dans les cas autres qu'une personne physique, le texte prévoit jusqu'à 10 M\\$ CA de sanction administrative — ou 2 % du chiffre d'affaires mondial de l'exercice précédent s'il est plus élevé — et des amendes pénales de 15 000 \\$ CA à 25 M\\$ CA ou 4 % selon le montant le plus élevé [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P029:S01",
+    "paragraph_loc": "00-liminaire:P029",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "Par ailleurs, la norme payante ISO/IEC 42001 reste exclue de l'évidence probante, tandis que le Règlement `(UE) 2024/1689` (EU AI Act) procure en accès libre les règles de transparence de l'article 50 applicables depuis le 2 août 2026 ainsi que celles du chapitre III sur le contrôle humain (article 14) et la gestion de la qualité (article 17) [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-060"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "00-liminaire:P035:S02",
+    "paragraph_loc": "00-liminaire:P035",
+    "unit": "00-liminaire",
+    "category": "assertions_g0",
+    "text": "Selon `aq/rapports-g0.json`, la passe `G0` réussit à `exit 0` (`PASS`) avec 83/83 tests `pytest` (zéro échec, zéro ignoré), 45/45 tests OPA à 100 % de couverture sur trois paquets dotés de `default allow := false`, 21 validations de schémas JSON Schema Draft 2020-12 sans violation stricte, 4/4 suites de vecteurs tiers (50 fichiers) et 50 fichiers SPDX MIT ainsi que 18 paquets jugés compatibles MIT sous `requirements.lock` SHA-256. - **`G1` (`verifie_manuscrit.py --strict`)** : audit mécanique sans modèle des budgets de mots (`CA-01`), de la propreté lexicale (`CA-02`), de l'absence de collision `12-grammes` avec les sept tomes (`CA-03`), de la structure et de la densité (`CA-04`, `CA-05`), de la sûreté typographique (`CA-06`), des registres SSOT (`CA-07`), des neuf figures (`CA-08`), des sources SHA-256 (`CA-09`–`CA-11`) et des extraits `CA-G0-SYNC` (`CA-20`). - **`G2` (ancrage atomique Wyvern)** : cinq auditeurs neufs vérifient chaque affirmation atomique contre les textes intégraux L+ et `aq/rapports-g0.json` jusqu'à 100 % d'énoncés supportés, avec journal intégral en Annexe A (`CA-12`). - **`G3` passe 1 (`seed=20270801`), `G4` (`gauntlet-loop`) et `G5` (lissage)** : un tirage stratifié de 60 items (quatre strates de 15, au moins huit par unité narrative) est recollé à 60/60 (`CA-13`), suivi d'une critique comparative à l'aveugle contre `3 - Compendium 2027.md` (`CA-15`) puis d'un lissage transversal (`CA-16`), chaque retouche imposant un rejeu différentiel `G0`, `G1` et `G2`. - **`G3` passe 2 à froid (`seed=20270802`) et clôture `G5`** : un second tirage disjoint de 60 items sur le livrable final exige au moins 57/60 avant correction et 60/60 après (`CA-14`), avant la régénération des Annexes A et B (`CA-17`), le rendu triple Markdown, HTML autonome et PDF Typst 6,14 × 9,21 po et l'inspection visuelle de 100 % des pages (`CA-18`).",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": true
+  },
+  {
+    "claim_loc": "00-liminaire:P036:S01",
+    "paragraph_loc": "00-liminaire:P036",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "Enfin, la **Clause non-avis** (`Non-Legal-Advice Disclaimer`, `AO-05`) s'applique intégralement à l'ouvrage et à sa trousse logicielle, dans la même logique d'avertissement explicite que le référentiel OWASP [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-055"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P003:S03",
+    "paragraph_loc": "ch01:P003",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "De plus, `4,16 %` de ces `8 900` serveurs (`370` cas) ont basculé leur adresse distante vers un nouvel hôte tout en conservant le même nom au registre, et l'existence d'une telle dérive silencieuse (`40,58 %`) s'associe à un rapport de cotes de `2,96` parmi les `6 699` serveurs multi-versions dotés de code analysé pour la présence d'un constat de sécurité de gravité élevée [5].",
+    "refs": [
+      5
+    ],
+    "source_ids": [
+      "SRC-057"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P007:S01",
+    "paragraph_loc": "ch01:P007",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Sur le plan mathématique d'abord, le manuel statistique du NIST et de SEMATECH (section 8.1.8.1, modèle des risques concurrents, mathématiquement équivalent à une loi en série dite de Lusser) formalise la loi multiplicative de fiabilité : lorsque \\(k\\) modes ou mécanismes de défaillance indépendants s'exercent en concurrence, la fiabilité résultante du système à l'instant \\(t\\) vaut \\(R_c(t) = \\prod_{i=1}^{k} R_i(t)\\) [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-024"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P008:S01",
+    "paragraph_loc": "ch01:P008",
+    "unit": "ch01",
+    "category": "spec_technique",
+    "text": "Pan et ses coauteurs examine comment des équipes d'ingénierie contournent cette fragilité dans des systèmes déployés [2].",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P010:S01",
+    "paragraph_loc": "ch01:P010",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "L'heuristique d'architecture dite **Partition 80/20** retenue dans ce manuel traduit les leçons du modèle multiplicatif [1] et de la prédominance des flux structurés observée dans MAP [2] en contrainte d'ingénierie logicielle.",
+    "refs": [
+      1,
+      2
+    ],
+    "source_ids": [
+      "SRC-024",
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P025:S01",
+    "paragraph_loc": "ch01:P025",
+    "unit": "ch01",
+    "category": "assertions_g0",
+    "text": "À l'opposé, `AMBIGU_ESCALADE` et `DONNEES_INSUFFISANTES` traduisent une sortie syntaxiquement valide et sémantiquement ancrée où le modèle reconnaît explicitement son incertitude documentaire et justifie le transfert vers une file de révision humaine grâce à un `motif_escalade` non vide.",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH01-02\" path=\"8 - Trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
+    ]
+  },
+  {
+    "claim_loc": "ch01:P054:S01",
+    "paragraph_loc": "ch01:P054",
+    "unit": "ch01",
+    "category": "spec_technique",
+    "text": "Sur le plan architectural, l'absence de session protocolaire entre requêtes supprime le besoin d'affinité de session persistante (*sticky session*) entre nœuds de passerelle, tandis que le miroir en en-tête permet aux répartiteurs de charge de router sans analyser le corps JSON [7].",
+    "refs": [
+      7
+    ],
+    "source_ids": [
+      "SRC-074"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P055:S03",
+    "paragraph_loc": "ch01:P055",
+    "unit": "ch01",
+    "category": "spec_technique",
+    "text": "Pour les fonctionnalités dépréciées à la révision `2026-07-28`, l'horizon minimal de retrait de douze mois tombera ainsi à partir du **28 juillet 2027** selon la politique `SEP-2596` [10], ancrant sur la spécification primaire l'échéance de migration interne `EXIG-MCP-22` de l'architecture de référence (`2 - Cadre de Référence.md`, section 6.5).",
+    "refs": [
+      10
+    ],
+    "source_ids": [
+      "SRC-081"
+    ],
+    "vigilance_mandatory": true
+  },
+  {
+    "claim_loc": "ch01:P056:S02",
+    "paragraph_loc": "ch01:P056",
+    "unit": "ch01",
+    "category": "spec_technique",
+    "text": "Ensuite, à partir du `28 juillet 2027` (lors de la révision prévue en septembre 2027), les mainteneurs pourront retirer les primitives déjà dépréciées à la révision `2026-07-28` telles que `Roots`, `Sampling` et la journalisation protocolaire (`logging`) [9, 10, 11].",
+    "refs": [
+      9,
+      10,
+      11
+    ],
+    "source_ids": [
+      "SRC-080",
+      "SRC-081",
+      "SRC-082"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P064:S05",
+    "paragraph_loc": "ch01:P064",
+    "unit": "ch01",
+    "category": "spec_technique",
+    "text": "L'en-tête protégé DOIT inclure l'algorithme `alg` et l'identifiant de clé `kid`, DEVRAIT inclure `typ` (`\"JOSE\"`) et PEUT inclure `jku` désignant le jeu de clés publiques `JWKS` [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-083"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P066:S01",
+    "paragraph_loc": "ch01:P066",
+    "unit": "ch01",
+    "category": "assertions_g0",
+    "text": "Ce calcul déterministe de `card_etag` s'aligne sur les exigences de mise en cache `CARD-CACHE-001` et `CARD-CACHE-002` recensées dans `a2a-tck` (`Cache-Control` avec `max-age` et en-tête `ETag`), tout en offrant aux journaux d'audit un identifiant de version infalsifiable de la carte évaluée [14, 17].",
+    "refs": [
+      14,
+      17
+    ],
+    "source_ids": [
+      "SRC-083",
+      "SRC-086",
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH01-04\" path=\"8 - Trousse/harness_proto/a2a_card.py\" lines=\"157-182\" sha256=\"1a58d5eabab4361028420c902df71ef3b305f84bfd139e14c75c7318c545b899\" "
+    ]
+  },
+  {
+    "claim_loc": "ch01:P071:S01",
+    "paragraph_loc": "ch01:P071",
+    "unit": "ch01",
+    "category": "spec_technique",
+    "text": "De même, les références de fichiers dans les messages A2A doivent être validées contre le SSRF [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-083"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch01:P073:S01",
+    "paragraph_loc": "ch01:P073",
+    "unit": "ch01",
+    "category": "assertions_g0",
+    "text": "Pour éprouver l'implémentation face à un référentiel tiers indépendant plutôt que sur nos seuls tests internes (`AO-06`), la barrière `G0` intègre les artefacts extraits de la suite officielle `a2aproject/a2a-tck` au tag `1.0.0.alpha3` (commit `5daf0144`, 20 octobre 2026) [17].",
+    "refs": [
+      17
+    ],
+    "source_ids": [
+      "SRC-086"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P007:S02",
+    "paragraph_loc": "ch02:P007",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "Son compagnon draft-ietf-wimse-aims-01, daté du 2 novembre 2026, demeure lui aussi un *Internet-Draft* (*Intended status: Informational*, *work in progress*) proposant d'appliquer l'architecture WIMSE et OAuth 2.0 aux systèmes d'agents IA : il traite explicitement les agents comme des charges de travail dont la mission est décomposée en accès limités, reliées aux utilisateurs par délégation OAuth 2.0 et protégées par des jetons de transaction [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-048"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P022:S01",
+    "paragraph_loc": "ch02:P022",
+    "unit": "ch02",
+    "category": "assertions_g0",
+    "text": "Pour que l'approbation humaine lie cryptographiquement l'intention affichée à l'exécution effective, `authz_pqc_audit/ciba_approval.py` reprend et exécute localement le contrat `C.6` (`schemas/approval_token_c6.schema.json`, porte `R-07`, `S-15`, critère `C24`, exigence `EXIG-SEC-25`), comblant là encore l'absence de `Borealis-Bench/` sur disque.",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": true,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH02-02\" path=\"8 - Trousse/authz_pqc_audit/ciba_approval.py\" lines=\"106-117\" sha256=\"423ebd61ce4996bf314c2fcecab18e48129d46e379a70eaf57780b5e1e395307\" "
+    ]
+  },
+  {
+    "claim_loc": "ch02:P029:S02",
+    "paragraph_loc": "ch02:P029",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "La migration vers les signatures sur réseaux structurés normalisées par NIST FIPS 204 (ML-DSA) change radicalement cet ordre de grandeur [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-050"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P030:S02",
+    "paragraph_loc": "ch02:P030",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "Sous ML-DSA-87, NIST FIPS 204 porte l'empreinte signée à **`4 627` octets** pour une clé publique mesurant **`2 592` octets** (et une clé privée étendue de `4 896` octets) [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-050"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P032:S01",
+    "paragraph_loc": "ch02:P032",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "- **Norme ratifiée RFC 9964** (*Standards Track*, mai 2026) [14] : spécifie l'utilisation des algorithmes ML-DSA de FIPS 204 dans les enveloppes JSON Object Signing and Encryption (JOSE) et CBOR Object Signing and Encryption (COSE).",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-012"
+    ],
+    "vigilance_mandatory": true
+  },
+  {
+    "claim_loc": "ch02:P033:S03",
+    "paragraph_loc": "ch02:P033",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "Le brouillon `-11` précise explicitement deux garde-fous d'usage : un `Txn-Token` n'est ni un justificatif d'authentification autonome ni un jeton d'accès OAuth universel hors du domaine de confiance [16] ; il s'appuie sur la validation initiale effectuée à la passerelle d'entrée (qui vérifie OBO, DPoP et CIBA avant de solliciter le `TTS`) et sur l'authentification mutuelle des charges de travail internes.",
+    "refs": [
+      16
+    ],
+    "source_ids": [
+      "SRC-013"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P047:S01",
+    "paragraph_loc": "ch02:P047",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "À la date de gel du 2 décembre 2026, l'écosystème OpenTelemetry relatif à l'IA générative traverse une bifurcation structurelle documentée dans le corpus ouvert et le *Cadre de Référence* : les attributs `gen_ai.*` ont été retirés du dépôt central `open-telemetry/semantic-conventions` après l'étiquette `v1.41.0` du 28 avril 2026 [17] — cibler `v1.44+` dans ce dépôt central laisserait donc l'instrumentation sans référence `gen_ai.*` — pour être déplacés vers le dépôt spécialisé `open-telemetry/semantic-conventions-genai` [18, 19].",
+    "refs": [
+      17,
+      18,
+      19
+    ],
+    "source_ids": [
+      "SRC-089",
+      "SRC-090",
+      "SRC-037"
+    ],
+    "vigilance_mandatory": true
+  },
+  {
+    "claim_loc": "ch02:P049:S05",
+    "paragraph_loc": "ch02:P049",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "Enfin, les conventions de spans GenAI du 5 novembre 2026 [19] (`gen-ai-agent-spans` et `execute-tool`, en statut `Development`) décrivent les spans `create_agent`, `invoke_agent` et `execute_tool`.",
+    "refs": [
+      19
+    ],
+    "source_ids": [
+      "SRC-037"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P055:S01",
+    "paragraph_loc": "ch02:P055",
+    "unit": "ch02",
+    "category": "juridique",
+    "text": "Sur le plan réglementaire québécois — dans le périmètre strictement borné des textes ouverts (`DC-01`) et sous clause `non-avis` (`AO-05`) —, cette discipline répond techniquement aux exigences de traçabilité et de protection des renseignements personnels découlant de la Loi 25 [25].",
+    "refs": [
+      25
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P056:S01",
+    "paragraph_loc": "ch02:P056",
+    "unit": "ch02",
+    "category": "juridique",
+    "text": "En vertu de `LQ 2021, c. 25` (articles `110` et `175`), l'article `12.1` inséré dans la loi sectorielle privée encadrant toute décision fondée exclusivement sur un traitement automatisé s'applique depuis le **`22 septembre 2023`** [25].",
+    "refs": [
+      25
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch02:P059:S01",
+    "paragraph_loc": "ch02:P059",
+    "unit": "ch02",
+    "category": "assertions_g0",
+    "text": "L'extrait `G0-EX-CH02-04` montre l'enchaînement complet du filtrage d'attributs `map_span_attributes` et du caviardage déterministe `redact_pii_bilingual` :",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH02-04\" path=\"8 - Trousse/authz_pqc_audit/otel_pii_mapper.py\" lines=\"235-265\" sha256=\"60bd160c1a507c6df31fd1dfc3811c866a6f17e8b623e961b2511c00c7e41889\" "
+    ]
+  },
+  {
+    "claim_loc": "ch02:P065:S01",
+    "paragraph_loc": "ch02:P065",
+    "unit": "ch02",
+    "category": "spec_technique",
+    "text": "Publiée sur le *Standards Track* en juin 2026, l'architecture **SCITT** (*Supply Chain Integrity, Transparency, and Trust*, RFC 9943) [20] résout ce défaut en enregistrant des déclarations signées dans un service de transparence muni d'une structure de données vérifiable en ajout seul (*Verifiable Data Structure*, VDS) et en délivrant des reçus cryptographiques d'inclusion COSE (RFC 9942) sans imposer de VDS unique [20].",
+    "refs": [
+      20
+    ],
+    "source_ids": [
+      "SRC-044"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P003:S01",
+    "paragraph_loc": "ch03:P003",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "D'une part, sur le banc AgentDojo, l'architecture CaMeL démontre qu'une séparation structurelle entre flot de contrôle et flot de données résout 77 % des tâches avec garantie formelle contre 84 % sans défense, soit un repli mesuré de sept points de pourcentage assumé au profit d'une sûreté prouvable [5].",
+    "refs": [
+      5
+    ],
+    "source_ids": [
+      "SRC-007"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P005:S01",
+    "paragraph_loc": "ch03:P005",
+    "unit": "ch03",
+    "category": "assertions_g0",
+    "text": "Dans sa taxonomie publiée en mars 2025 (NIST AI 100-2e2025), le NIST classe l'injection indirecte d'invite (`NISTAML.015`) et l'empoisonnement de données (`NISTAML.013`) parmi les menaces structurelles de l'apprentissage automatique appliqué aux modèles génératifs, parce que les instructions fiables et les données non fiables n'y disposent pas de canaux séparés [16].",
+    "refs": [
+      16
+    ],
+    "source_ids": [
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P020:S01",
+    "paragraph_loc": "ch03:P020",
+    "unit": "ch03",
+    "category": "assertions_g0",
+    "text": "Avant même d'atteindre l'évaluateur OPA, toute requête soumise au point de décision doit respecter le schéma fermé `schemas/opa_authz_input.schema.json` (JSON Schema Draft 2020-12 avec `additionalProperties: false`).",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH03-01\" path=\"8 - Trousse/policies_opa/rule_of_two.rego\" lines=\"3-26\" sha256=\"c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036\" "
+    ]
+  },
+  {
+    "claim_loc": "ch03:P021:S01",
+    "paragraph_loc": "ch03:P021",
+    "unit": "ch03",
+    "category": "assertions_g0",
+    "text": "Le bloc suivant présente le cœur de la politique d'autorisation hors modèle `rule_of_two.rego`, chargée par `OpaPolicyEngine` avant tout appel d'outil mutateur ou sortant dans `8 - Trousse/`.",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH03-01\" path=\"8 - Trousse/policies_opa/rule_of_two.rego\" lines=\"3-26\" sha256=\"c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036\" "
+    ]
+  },
+  {
+    "claim_loc": "ch03:P024:S01",
+    "paragraph_loc": "ch03:P024",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "Dans CaMeL (*CApabilities for MachinE Learning*, `arXiv:2503.18813v2`), Debenedetti et ses coauteurs séparent un modèle privilégié (`P-LLM`), qui planifie uniquement à partir de la requête de confiance sous forme de code pseudo-Python sans jamais lire de texte externe brut, d'un modèle en quarantaine (`Q-LLM`), dépourvu de tout outil, tandis qu'un interpréteur Python dédié maintient le graphe de flux de données et applique des étiquettes de capacité et de provenance [5].",
+    "refs": [
+      5
+    ],
+    "source_ids": [
+      "SRC-007"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P025:S02",
+    "paragraph_loc": "ch03:P025",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "Sans aucune défense CaMeL sur MultiAgentDojo, le taux de succès d'attaque (ASR) moyen s'établit à `12,9 %` ; avec un déploiement CaMeL confiné à chaque agent individuellement sans propagation inter-agents, un résidu d'attaque subsiste à `0,2 %` ASR ; seul le protocole multi-CaMeL propageant les étiquettes de contamination entre agents ramène l'ASR mesurée à `0,0 %` sur ce banc [6].",
+    "refs": [
+      6
+    ],
+    "source_ids": [
+      "SRC-056"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P029:S01",
+    "paragraph_loc": "ch03:P029",
+    "unit": "ch03",
+    "category": "juridique",
+    "text": "Cette contrainte bloque directement le vecteur mis au jour dans *Can CaMeLs Talk?* [6] : aucun sous-agent aval ne peut recevoir un mandat apparent vierge lorsque le parent a déjà consommé du contenu externe non fiable.",
+    "refs": [
+      6
+    ],
+    "source_ids": [
+      "SRC-056"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P046:S01",
+    "paragraph_loc": "ch03:P046",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "Outre l'étude de Kim et de ses coauteurs sur la dégradation séquentielle en multi-agent [8] et celle de Tran et Kiela sur les goulots de communication inter-agents [9], Bertalanič et Fortuna mettent en évidence en mai 2026 un véritable **effet Ringelmann** dans les essaims d'agents LLM (`arXiv:2606.02646`) [10].",
+    "refs": [
+      8,
+      9,
+      10
+    ],
+    "source_ids": [
+      "SRC-003",
+      "SRC-031",
+      "SRC-032"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P051:S01",
+    "paragraph_loc": "ch03:P051",
+    "unit": "ch03",
+    "category": "spec_technique",
+    "text": "L'orchestrateur associe à cette clé la sémantique d'en-tête décrite par le brouillon actif de l'IETF draft-ietf-httpapi-idempotency-key-header (`SRC-036`, explicitement qualifié d'*Internet-Draft* non encore ratifié en RFC au gel du 2 décembre 2026) [15].",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-036"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P052:S01",
+    "paragraph_loc": "ch03:P052",
+    "unit": "ch03",
+    "category": "assertions_g0",
+    "text": "La table `semantic_locks` gère des verrous sémantiques bornés par durée de vie (`ttl_s = 300` secondes par défaut) afin de pallier l'absence d'isolation ACID inter-sagas [11] et d'empêcher deux orchestrations concurrentes de modifier simultanément le même dossier client.",
+    "refs": [
+      11
+    ],
+    "source_ids": [
+      "SRC-033"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch03:P055:S02",
+    "paragraph_loc": "ch03:P055",
+    "unit": "ch03",
+    "category": "assertions_g0",
+    "text": "`CompensationChannel` résout ce paradoxe par construction : ce canal porte sa propre identité de charge de travail (`spiffe://ent.ca/saga-compensator`), sa propre réserve budgétaire en décimal exact (`Decimal(\"100.00\")` CAD) et deux drapeaux d'immunité explicites face à la révocation de l'agent et au coupe-circuit de passerelle.",
+    "refs": [],
+    "source_ids": [
+      "aq/rapports-g0.json"
+    ],
+    "vigilance_mandatory": false,
+    "g0_excerpt_ids": [
+      "id=\"G0-EX-CH03-03\" path=\"8 - Trousse/policy_saga/saga_orchestrator.py\" lines=\"107-140\" sha256=\"a2aac944f6ae06fe63c2f6482618bae3356d6270f3c5f6a3756c8592ebd1a536\" "
+    ]
+  },
+  {
+    "claim_loc": "ch03:P058:S01",
+    "paragraph_loc": "ch03:P058",
+    "unit": "ch03",
+    "category": "assertions_g0",
+    "text": "En prolongement des principes d'actions compensatrices, de points de contrôle et de rejeu déterministe [11, 12, 13], l'exigence propre `EXIG-ORC-20` de *Cadre de Référence* impose que toute architecture de Saga réussisse avant mise en service une batterie complète de **`10` scénarios déterministes d'injection de fautes** exécutée contre des doublures hermétiques des systèmes d'enregistrement.",
+    "refs": [
+      11,
+      12,
+      13
+    ],
+    "source_ids": [
+      "SRC-033",
+      "SRC-006",
+      "SRC-034"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P004:S01",
+    "paragraph_loc": "ch04:P004",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "La taxonomie MAST de Cemri et collaborateurs, établie sur 1 642 traces annotées issues de sept cadriciels multi-agents et de quatorze modes de défaillance, relève des taux d'échec compris entre 41 % et 86,7 % [7].",
+    "refs": [
+      7
+    ],
+    "source_ids": [
+      "SRC-028"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P011:S01",
+    "paragraph_loc": "ch04:P011",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "Pour capturer cette exigence de fiabilité répétée, Yao et collaborateurs ont formalisé la **Constance pass^k** (*pass^k Consistency*) [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-029"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P031:S02",
+    "paragraph_loc": "ch04:P031",
+    "unit": "ch04",
+    "category": "assertions_g0",
+    "text": "Comme le montrent toutefois McGrath et Burke, maîtriser en sus une marge d'erreur relative bilatérale \\(\\tilde{\\epsilon}_R \\le 0{,}5\\) à \\(p = 0{,}01\\) exigerait au moins `1 600` essais sous Wilson (`2 000` en Clopper-Pearson) [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-094"
+    ],
+    "vigilance_mandatory": true
+  },
+  {
+    "claim_loc": "ch04:P042:S01",
+    "paragraph_loc": "ch04:P042",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "**`BENIGN_PARAPHRASE_INVARIANCE`** : la reformulation bénigne ou la traduction d'une requête légitime entre le français et l'anglais doit préserver la décision, l'ensemble des outils invoqués et la présence obligatoire de la mention `is_non_avis_disclosed` (en lien avec les exigences de transparence de l'article 50 de l'EU AI Act [15] et l'encadrement `EXIG-AMF-11`).",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-060"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P051:S01",
+    "paragraph_loc": "ch04:P051",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "Au **Québec**, la loi modernisant la protection des renseignements personnels (`LQ 2021, c. 25`, dite Loi 25) est directement vérifiée dans son texte sanctionné en accès ouvert [18], alors que le portail consolidé `legisquebec.gouv.qc.ca` (`P-39.1`) demeure en statut F (`HTTP 403`).",
+    "refs": [
+      18
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P052:S03",
+    "paragraph_loc": "ch04:P052",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "À l'épreuve de la mise en œuvre, le rapport quinquennal 2026 de la Commission d'accès à l'information (CAI) souligne d'une part que les politiques de confidentialité restent confrontées au « paradoxe de la transparence » — simplifier un texte pour le rendre lisible entraîne une perte de précision, tandis que la complexité technique des traitements dépasse la compréhension d'une personne raisonnable [19].",
+    "refs": [
+      19
+    ],
+    "source_ids": [
+      "SRC-064"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P053:S02",
+    "paragraph_loc": "ch04:P053",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "La Ligne directrice `B-10` (2023) encadre la gestion des risques liés aux tiers, exigeant un inventaire des tiers selon leur niveau de risque et de criticité, l'encadrement des sous-traitants, l'analyse du risque de concentration ainsi que des plans de contingence et de sortie (incluant la prise en compte de la portabilité infonuagique) [22].",
+    "refs": [
+      22
+    ],
+    "source_ids": [
+      "SRC-068"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P054:S01",
+    "paragraph_loc": "ch04:P054",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "Pour le Québec financier, l'agrégateur tiers ouvert `AIBanks.ca` (édition T4 au 1er novembre 2026) confirme l'échéance du `1er mai 2027` pour `BSIF E-23` et signale le repère attendu du **1er mai 2027** pour l'entrée en vigueur de la ligne directrice de l'Autorité des marchés financiers (AMF) sur l'IA [25].",
+    "refs": [
+      25
+    ],
+    "source_ids": [
+      "SRC-071"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P055:S02",
+    "paragraph_loc": "ch04:P055",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "Les obligations de transparence de l'**article 50** de l'EU AI Act s'appliquent dès le **2 août 2026** [15, 16].",
+    "refs": [
+      15,
+      16
+    ],
+    "source_ids": [
+      "SRC-060",
+      "SRC-061"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P056:S02",
+    "paragraph_loc": "ch04:P056",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "La Décision d'exécution `(UE) 2026/2274` du 12 octobre 2026 publie au Journal officiel la référence de la norme harmonisée `EN 18286:2026` conférant une présomption de conformité à l'article `17` [21].",
+    "refs": [
+      21
+    ],
+    "source_ids": [
+      "SRC-067"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P057:S02",
+    "paragraph_loc": "ch04:P057",
+    "unit": "ch04",
+    "category": "spec_technique",
+    "text": "À plus long terme, la feuille de route du G7 Cyber Expert Group (janvier 2026) [12] et le rapport `NIST IR 8547` (octobre 2026) [11] prépareront et coordonneront la transition post-quantique du secteur financier sur la fenêtre **2030–2035**.",
+    "refs": [
+      11,
+      12
+    ],
+    "source_ids": [
+      "SRC-051",
+      "SRC-052"
+    ],
+    "vigilance_mandatory": false
+  },
+  {
+    "claim_loc": "ch04:P060:S01",
+    "paragraph_loc": "ch04:P060",
+    "unit": "ch04",
+    "category": "assertions_g0",
+    "text": "On notera également que le champ `owasp_asi_mitigated` contraint chaque entrée aux dix identifiants `ASI01` à `ASI10` issus de `SRC-055` [13], reliant directement l'architecture décisionnelle au jeu d'épreuves métamorphiques de la section 4.3.",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-055"
+    ],
+    "vigilance_mandatory": true
+  }
+]

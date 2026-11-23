@@ -169,7 +169,7 @@
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-036.txt`, score AACODS `10.5/12`)
 - **URL d'origine :** https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
 - **Empreinte SHA-256 (LF) :** `d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb` (`24607` octets, `3668` mots)
-- **Synthèse factuelle vérifiée :** Brouillon IETF HTTPAPI (draft-ietf-httpapi-idempotency-key-header-07) spécifiant l'en-tête Idempotency-Key et les rejets HTTP 409 (requête en cours) et 422 (réutilisation avec charge différente).
+- **Synthèse factuelle vérifiée :** Brouillon IETF HTTPAPI (draft-ietf-httpapi-idempotency-key-header-09) spécifiant l'en-tête Idempotency-Key et les rejets HTTP 409 (requête en cours) et 422 (réutilisation avec charge différente).
 
 ### [16] SRC-054 — NIST AI 100-2e2025: Adversarial Machine Learning — A Taxonomy and Terminology of Attacks and Mitigations
 
@@ -187,4 +187,4 @@
 ## Exclusions documentaires et statut F (`AO-01`)
 
 - `https://genai.owasp.org/` (`HTTP 403`) — compensé par l'archive officielle CC BY-SA 4.0 `SRC-055` et le Crosswalk ouvert `SRC-059`.
-- `draft-ietf-httpapi-idempotency-key-header-07` (`SRC-036`) est un brouillon IETF en cours de normalisation.
+- `draft-ietf-httpapi-idempotency-key-header-09` (`SRC-036`) est un brouillon IETF en cours de normalisation.

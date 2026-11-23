@@ -478,7 +478,7 @@
     {
       "spec_id": "SPEC-DRAFT-IDEMPOTENCY-KEY",
       "title": "The Idempotency-Key HTTP Header Field (Internet-Draft)",
-      "version_or_tag": "draft-ietf-httpapi-idempotency-key-header-07",
+      "version_or_tag": "draft-ietf-httpapi-idempotency-key-header-09",
       "maturity_status": "IETF_WORKING_GROUP_DRAFT",
       "license_spdx": "IETF-Trust",
       "source_l_plus_id": "SRC-036",

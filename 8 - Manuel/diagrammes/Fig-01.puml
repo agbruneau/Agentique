@@ -41,7 +41,7 @@ skinparam ranksep 24
 skinparam padding 6
 
 rectangle "Entrée externe brute\n(requête non vérifiée)" as RAW <<prob>>
-rectangle "Contrat harness_extraction.schema.json\n(Draft 2020-12, strict: true)" as SCH <<det>>
+rectangle "Contrats JSON Schema stricts\n(_INPUT_SCHEMA & HarnessExtraction)" as SCH <<det>>
 
 package "Harnais déterministe 80/20 (harness_proto/pipeline.py)" {
   rectangle "1. Contrôle taille & UTF-8\n(plafond 64 Kio)" as E1 <<det>>
@@ -62,16 +62,17 @@ E1 --> E2
 E2 --> E3
 E3 --> E4 : contexte filtré
 E4 ..> E5 : jetons bruts
-SCH --> E2 : valide entrée
-SCH --> E5 : valide sortie
+SCH --> E2 : valide _INPUT_SCHEMA
+SCH --> E5 : valide HarnessExtraction
 E5 --> E6 : schéma conforme
 E5 --> E7 : écart schéma
 E6 --> E8 : ancrage vérifié
+E6 --> E7 : écart d'ancrage
 E6 --> ESC : ambiguïté / manque
 E7 ..> E4 : réessai ≤ 2
-E7 --> ESC : plafond atteint
+E7 --> E8 : ESCALADED (plafond atteint)
+ESC --> E8 : passe par _seal_outcome
 E8 --> LOG
-ESC --> LOG
 
 RAW -[hidden]right-> SCH
 E1 -[hidden]right-> E8

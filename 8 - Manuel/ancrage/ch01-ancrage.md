@@ -118,3 +118,17 @@
 - **Base fermée citée (`CA-09`, `CA-10`) :** `18 / 18` sources (`[1]`–`[18]`) citées, `0` référence orpheline, `0` source Statut F non qualifiée (`CA-11`).
 - **Synchronisation et hygiène (`CA-02..CA-08`, `CA-20`) :** `4 / 4` blocs `CA-G0-SYNC` (`G0-EX-CH01-01` à `G0-EX-CH01-04`) intacts et concordants octet pour octet, `0` symbole dollar non échappé dans le chapitre et dans `ch01-ancrage.md`, `0` collision `12-grammes`, `3` tableaux (`Tableau 1.1` à `Tableau 1.3`), `2` figures (`Fig-01`, `Fig-02`), `5` vedettes du glossaire présentes (`Harnais déterministe`, `Partition 80/20`, `Dérive silencieuse`, `Épinglage cryptographique`, `Carte d'agent`).
 - **Verdict final — supportés** : **58** (`100 % supporté`, `0` non supporté).
+
+
+---
+
+## 4. Rejeu `G2` différentiel post-G4 (`9563b136`)
+
+- **Périmètre contrôlé :** paragraphes modifiés en `G4` dans `Chapitre 01` (`L19`, `L21`, `L25`, `L31`, `L37–L42`, `L76`, `L80`, `L83`, `L85`, `L87`, `L89`, `Tableau 1.1`, `L102`) ainsi que `Fig-01.puml` / `Fig-01.svg` et `sources/ch01-sources.md`.
+- **Rectifications appliquées suite au contre-audit différentiel :**
+  1. `L19` : attribution exacte du modèle multiplicatif des risques concurrents à `SRC-024` (`[1]`) et équivalence mathématique avec la loi en série / exemple `0,94^{10}` posés hors citation `[1]`.
+  2. `L31` : rôle explicite de `RFC 8785` (`[12]`) dans `1.1`, `1.2` et `1.4` (`a2a_card.py` : `canonicalize_jcs` et `card_etag`), en complément de `RFC 7515` (`[13]`) pour la signature en `1.4`.
+  3. `L80`, `L85`, `L87`, `Tableau 1.1` (`L96–L100`) : trace `step_trace` (`8` jalons après admission, trace courte terminée par `*_fail` sur `VALIDATION_FAILED`), court-circuit `5_schema or 6_grounding`, facteur `3×` vs surcoût `+2` appels, `validate_strict_schema` couvrant méta-validation + instance `Draft202012Validator`, et scellement `8_seal` (`{"status", "payload", "trace"}`) incluant `ESCALADED`.
+  4. `Fig-01.puml` (`L44`, `L65–L74`) : libellé `SCH` combiné (`_INPUT_SCHEMA` + `HarnessExtraction`), arc `E6 --> E7 : écart d'ancrage`, transition `E7 --> E8 : ESCALADED (plafond atteint)` et `ESC --> E8`, recompilés via `compile_figures.py --strict` (`exit 0`, `12` nœuds).
+  5. `sources/ch01-sources.md` (`L9`, `L18`, `L139`) : alignement de `[1] SRC-024` (`Competing Risk Model`) et `[12] SRC-077` (`RFC 8785` *Independent Submission* / *Informational*).
+- **Verdict final post-G4 (`ch01`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).

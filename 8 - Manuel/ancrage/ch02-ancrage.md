@@ -123,8 +123,8 @@
 - **C28 (`L087`)** — Approbation hors bande (*backchannel*) par `OpenID Connect CIBA Core 1.0` `[8]` (`auth_req_id`, `SBB-SIGNED-HUMAN-APPROVAL`, `SRC-045.txt` l. 1, 22, 374, 518) combinée au tableau `authorization_details` de `RFC 9396` `[7]` (`SRC-042.txt` l. 164–178).
   - Constat initial : supporté.
   - Verdict final : supporté
-- **C29 (`L089`)** — Contrat `C.6` (`approval_token_c6.schema.json`, `R-07`, `S-15`, `C24`, `EXIG-SEC-25`), séparation entre les règles `RFC 7493` `I-JSON` (*Standards Track*, `[9]`, `SRC-004.txt` § 2.1–2.2 sur surrogates UTF-8 isolés et plage entière `±(2^53 - 1)`) et le durcissement `C.6` dans `validate_ijson_strict` rejetant tout `float` (`NaN`, `Infinity`) via `IJsonError`, puis canonisation `RFC 8785` `JCS` (`utf-16-be`, `[26]`) et SHA-256.
-  - Constat initial : imprécis (confondait l'interdiction `C.6` de tout `float` avec les exigences générales de `RFC 7493`, qui accepte les flottants double précision ; rectifié pour distinguer les deux niveaux).
+- **C29 (`L089`)** — Contrat `C.6` (`approval_token_c6.schema.json`, `R-07`, `S-15`, `C24`, bloc `SBB-SIGNED-HUMAN-APPROVAL`), séparation entre les règles `RFC 7493` `I-JSON` (*Standards Track*, `[9]`, `SRC-004.txt` § 2.1–2.2 sur surrogates UTF-8 isolés et plage entière `±(2^53 - 1)`) et le durcissement `C.6` dans `validate_ijson_strict` rejetant tout `float` (`NaN`, `Infinity`) via `IJsonError`, puis canonisation `RFC 8785` `JCS` (`utf-16-be`, `[26]`) et SHA-256.
+  - Constat initial : imprécis (confondait l'interdiction `C.6` de tout `float` avec les exigences générales de `RFC 7493`, qui accepte les flottants double précision ; rectifié en G2, puis attribution fautive d'`EXIG-SEC-25` déplacée vers `Ch03 / OpaPolicyEngine.run_coverage` suite à l'écart `Item 26` en G3 Passe 1).
   - Verdict final : supporté
 - **C30 (`L091`–`L107`)** — Bloc synchronisé `G0-EX-CH02-02` (`compute_action_hash_h`, `ciba_approval.py` l. 106–117, empreinte `sha256` vérifiée dans `aq/rapports-g0.json`).
   - Constat initial : supporté.
@@ -207,8 +207,8 @@
 - **C54 (`L219`)** — Double défi d'observabilité en aval : exposition de PII par journalisation brute des invites et absence de jointure vérifiable au mandat ou à l'approbation.
   - Constat initial : supporté.
   - Verdict final : supporté
-- **C55 (`L223`)** — Retrait des attributs `gen_ai.*` du dépôt central `open-telemetry/semantic-conventions` après l'étiquette `v1.41.0` du `28 avril 2026` `[17]` (laissant `v1.44+` sans référence `gen_ai.*`, comme documenté au *Cadre de Référence* Vol. 2 l. 8357, 8768) vers le dépôt dédié `open-telemetry/semantic-conventions-genai` `[18, 19]`.
-  - Constat initial : imprécis (citait `v1.44+` sans renvoyer au *Cadre de Référence* qui établit la dernière étiquette `v1.44.0` ; rectifié).
+- **C55 (`L223`)** — Dissociation observée dans les instantanés `L+` entre le registre `v1.41.0` du dépôt central `open-telemetry/semantic-conventions` (`28 avril 2026`, `SRC-089.txt`, `[17]`) et le dépôt spécialisé `open-telemetry/semantic-conventions-genai` (`@244465e9`, `31 octobre 2026`, `SRC-090.txt`, `[18]`), alors que les fiches de spans du `5 novembre 2026` (`SRC-037.txt` l. 50–60, `[19]`) renvoient à `v1.45.0` du dépôt central pour les erreurs générales et vers `/docs/registry/attributes/gen-ai.md` pour `gen_ai.*`.
+  - Constat initial : écart relevé en G3 Passe 1 (`Item 31`) sur la mention non archivée de `v1.44+` et du retrait post-`v1.41.0` via *Cadre de Référence* ; réancré exclusivement sur `SRC-089 [17]`, `SRC-090 [18]` et `SRC-037 [19]`.
   - Verdict final : supporté
 - **C56 (`L227`)** — Décompte exact et statut des attributs dans les deux `gen-ai.md` : `SRC-089.txt` (`v1.41.0`, commit `e018fe6f`, `[17]`) recense `60` entrées `gen_ai.*` dont **`50` actifs en statut `Development` (incluant déjà les quatre attributs `gen_ai.agent.*`) et `10` en statut `Deprecated`** (`5` GenAI + `5` OpenAI, **`0` `Stable`**), contre **`85` attributs tous en statut `Development`** (`0` `Stable`, `0` `Deprecated`) dans `SRC-090.txt` (`@244465e9`, `31 octobre 2026`, `[18]`, ajouts couvrant notamment `gen_ai.main_agent.*`, `gen_ai.skill.*`, `gen_ai.memory.*`, les modalités multimodales, les références `*_ref` et `gen_ai.transfer.*`).
   - Constat initial : imprécis (qualifiait `v1.41.0` de « registre stable `v1.41.0` » puis attribuait à tort aux ajouts `@244465e9` les attributs `gen_ai.agent.*` déjà présents en `v1.41.0` ; rectifié avec le décompte exact `50 Development` + `10 Deprecated` et les ajouts réels `@244465e9`).
@@ -346,3 +346,12 @@
 - **Tests OPA complets (`8 - Trousse/.tools/opa.exe test "8 - Trousse/policies_opa" -v` et `--coverage`)** : `PASS: 45/45` et `covered_lines = 585`, `not_covered_lines = 0`, `coverage = 100`.
 - **Contrôles numériques et schémas `G0` en séance** : exécution directe de `pqc_http431.evaluate_http_431` (concordance bit à bit du Tableau 2.2), `ciba_approval.compute_action_hash_h` (`92be40835a73023d117ebb4965da82dfa05e2e6d647d0919d53461289bbc6e81`), métadonnées `dilithium-py 1.5.1` (`MIT`) et `cbor2 6.3.0` (`MIT`), `aq/rapports-g0.json` (`overall_status = PASS`, `exit_code = 0`, `spdx_check.passed = true`, `SHA-256` exacts pour `G0-EX-CH02-01` à `G0-EX-CH02-04`).
 - **Re-vérification `G1` finale post-rectification (`C:\Python314\python.exe -B "8 - Manuel/outils/verifie_manuscrit.py" --unit ch02 --strict`)** : `exit 0` (`OK : Barriere deterministe G1 passee avec 0 erreur.`, `8 898` mots lexicaux `CA-03` / `9 847` `split()`).
+
+
+---
+
+## Contrôle `G2` différentiel post-G4 (`9563b136`)
+
+- **Périmètre contrôlé :** retouches `G4` de `Chapitre 02` (`L21`, `L27`, `L29`, `L71`, `L73`, `L75`), vérifiées contre `8 - Trousse/authz_pqc_audit/obo_dpop.py`, `schemas/delegated_token_claims.schema.json`, `tests/test_authz_pqc_audit.py` (`23/23`), `SRC-009`, `SRC-010`, `SRC-042` et `SRC-043`.
+- **Rectification appliquée à `L73` :** sens exact `access_token` fourni *par* l'appelant, rétablissement de « au *champ interne* `jwk_thumbprint` ou `x5t#S256` de `dpop_proof` » (distinct de `jwk` JWT dans `RFC 9449`) et qualification « cache partagé à *fenêtre temporelle bornée* » conforme à `RFC 9449 § 11.1` (`SRC-043.txt L1324–1336`).
+- **Verdict final post-G4 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
