@@ -1,0 +1,666 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "specs": [
+    {
+      "spec_id": "SPEC-MCP-2026-07-28-TOOLS",
+      "title": "Model Context Protocol (MCP) Server Tools",
+      "version_or_tag": "2026-07-28@5f5440bb",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "MIT",
+      "source_l_plus_id": "SRC-072",
+      "sha256": "ed550806a58eb7744b858fb9f26001aa5e55dac9e2babe88317cc81d9d4c490d",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": "Épinglage normatif outils MCP 2026-07-28 (tools/list et annotations traitées comme non fiables)."
+    },
+    {
+      "spec_id": "SPEC-MCP-2026-07-28-HTTP",
+      "title": "Model Context Protocol (MCP) Streamable HTTP Transport",
+      "version_or_tag": "2026-07-28@5f5440bb",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "MIT",
+      "source_l_plus_id": "SRC-074",
+      "sha256": "22574bf11e004068493787203ce92be1162107cad717bcb805a15780d4fa69c9",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto",
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Streamable HTTP stateless par défaut ; transport historique HTTP+SSE (2025-11-25, SRC-038) isolé en adaptateur et refusé en G0."
+    },
+    {
+      "spec_id": "SPEC-MCP-2026-07-28-SEC",
+      "title": "Model Context Protocol (MCP) Authorization Security Considerations",
+      "version_or_tag": "2026-07-28@5f5440bb",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "MIT",
+      "source_l_plus_id": "SRC-078",
+      "sha256": "71dd5f0f236cfa26fb33a3cebf6fc71d4797f1225a06c9cae85bdda54ae50bf8",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto",
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-MCP-2026-07-28-SCHEMA",
+      "title": "Model Context Protocol (MCP) TypeScript Schema",
+      "version_or_tag": "2026-07-28@5f5440bb",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "MIT",
+      "source_l_plus_id": "SRC-080",
+      "sha256": "742750af0bb8c716e7030c4977c992b55d1adc4407e9e66997db5846baedc2cd",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-MCP-SEP-2596",
+      "title": "MCP SEP-2596: Feature Lifecycle and Deprecation Policy",
+      "version_or_tag": "Final@862397ce",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "MIT",
+      "source_l_plus_id": "SRC-081",
+      "sha256": "6608969be1213cafd12edc27269519be54b3fadb0443ff0f1b5fc76f75752de4",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": "Fenêtre minimale de dépréciation >= 12 mois jusqu'au 2027-07-28 à compter de la révision 2026-07-28."
+    },
+    {
+      "spec_id": "SPEC-MCP-SEP-3398",
+      "title": "MCP SEP-3398: Release Cycle Updates",
+      "version_or_tag": "Accepted@862397ce",
+      "maturity_status": "SPEC_DEVELOPMENT",
+      "license_spdx": "MIT",
+      "source_l_plus_id": "SRC-082",
+      "sha256": "64aee02f2717dc1b290c079a012c470baccd53f6299103b6713a545ccae03be5",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": "Cadence semestrielle mars/septembre reportant la cible de déc. 2026 au 30 mars 2027 (post-gel, gérée par McpTransportAdapter)."
+    },
+    {
+      "spec_id": "SPEC-A2A-V1-0-1-SPEC",
+      "title": "Agent2Agent (A2A) Protocol Specification",
+      "version_or_tag": "v1.0.1@33035925",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-083",
+      "sha256": "627ccfe6ffb1be2c56811c3dcc18780deb419f41cdc98248095c939b2d9dc9cb",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": "Version normative gelée au 2026-12-02 ; évolution v1.1.0-rc confinée derrière adaptateur."
+    },
+    {
+      "spec_id": "SPEC-A2A-V1-0-1-PROTO",
+      "title": "Agent2Agent (A2A) Protobuf Contract",
+      "version_or_tag": "v1.0.1@33035925",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-084",
+      "sha256": "e195bf96ab630c69797851970203e1b2b6b19528f2e9803b7d904b91a5104016",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-A2A-V1-1-0-RC",
+      "title": "Agent2Agent (A2A) Specification Release Candidate",
+      "version_or_tag": "v1.1.0-rc@78e1d6a1",
+      "maturity_status": "RC_OR_ALPHA",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-085",
+      "sha256": "25a940c30c00482eac0572714022c310ea2f37189e7d9bde67d62b8a56783c63",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto"
+      ],
+      "adapter_boundary": "Release candidate v1.1.0-rc (2026-10-29) non normative ; traitée exclusivement en adaptateur post-gel."
+    },
+    {
+      "spec_id": "SPEC-A2A-TCK-ALPHA3",
+      "title": "A2A Technology Compatibility Kit (a2a-tck)",
+      "version_or_tag": "1.0.0.alpha3@5daf0144",
+      "maturity_status": "RC_OR_ALPHA",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-086",
+      "sha256": "4889ec96433ae5f2a09c0332d9e1ff96bf3533bcd6ff41fc35a5106ffd59e44d",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto",
+        "evalops_prr"
+      ],
+      "adapter_boundary": "À ce tag 1.0.0.alpha3, conformance-vectors/a2a-jcs-v01 est ABSENT du dépôt et CARD-SIGN-001..004 sont marqués NOT_AUTOMATABLE dans tck/requirements/agent_card.py ; vérifiés localement en G0 sur 8 - Trousse/vectors/a2a_tck et rfc8785."
+    },
+    {
+      "spec_id": "SPEC-OPA-REGO-V1-22-4",
+      "title": "Open Policy Agent (OPA) Rego Language Reference",
+      "version_or_tag": "v1.22.4@ba39415d",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-087",
+      "sha256": "4b242f9eee53ae85cdb9e073e8fd8addfe60177b0d33c7de371a0c0f2cbbb7fc",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "policies_opa",
+        "policy_saga"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-OPA-TEST-V1-22-4",
+      "title": "Open Policy Agent (OPA) Policy Testing & Coverage",
+      "version_or_tag": "v1.22.4@ba39415d",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-088",
+      "sha256": "4e566ce11e03cf89bba835e3ab35a54b21b980d5b1661951d8b82278c4fab291",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "policies_opa",
+        "evalops_prr"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-OTEL-V1-41-0",
+      "title": "OpenTelemetry Semantic Conventions GenAI Registry",
+      "version_or_tag": "v1.41.0@e018fe6f",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-089",
+      "sha256": "74e99ecc4e35c6c7c7541dd310d1bd2f9e9c24f26e35338a332901cce43993da",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Table v1.41.0 ; nécessite pont vers semantic-conventions-genai@244465e9 pour attributs Development et cache_write."
+    },
+    {
+      "spec_id": "SPEC-OTEL-GENAI-DEV-85",
+      "title": "OpenTelemetry semantic-conventions-genai (85 attributs Development)",
+      "version_or_tag": "244465e9@2026-10-31",
+      "maturity_status": "SPEC_DEVELOPMENT",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-090",
+      "sha256": "b05fc94233aa5bf1dea4d7d5b60abf65b0255f49443f08ce9502a6bea7a18c75",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "85 attributs Development incluant cache_creation/cache_write mappés par otel_pii_mapper.py."
+    },
+    {
+      "spec_id": "SPEC-OTEL-AGENT-SPANS",
+      "title": "OpenTelemetry GenAI Agent and Framework Spans",
+      "version_or_tag": "2026-11-05@main",
+      "maturity_status": "SPEC_DEVELOPMENT",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-037",
+      "sha256": "1b2526202e8aef9b15819b89cd1c34eefd8d10be3dac7b05f714597c34d5549c",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Conventions de spans agents encore au statut Development au gel ; encapsulées dans otel_pii_mapper.py."
+    },
+    {
+      "spec_id": "SPEC-FOCUS-V1-4",
+      "title": "FinOps Open Cost and Usage Specification (FOCUS)",
+      "version_or_tag": "v1.4",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "CC-BY-4.0",
+      "source_l_plus_id": "SRC-023",
+      "sha256": "67f651d7a5b0bd9103b5cffaa3617edaec6fb7f1aa9ebd2b7d3f122a422a5f5e",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit",
+        "evalops_prr"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-JSON-SCHEMA-2020-12",
+      "title": "JSON Schema Draft 2020-12 Core (draft-bhutton-json-schema-01)",
+      "version_or_tag": "2020-12",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "BSD-3-Clause",
+      "source_l_plus_id": "SRC-021",
+      "sha256": "ece40a12059837b62bc4867673924eafd5845d73223d3f04ff3b99254b6c9875",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto",
+        "evalops_prr"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-CLOUDEVENTS-1-0-2",
+      "title": "CloudEvents Specification",
+      "version_or_tag": "v1.0.2",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "Apache-2.0",
+      "source_l_plus_id": "SRC-035",
+      "sha256": "8f4d59dd27f8807741321b3145c5c9c2f22bba5bf9a9299b0c2020d769dc92ae",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit",
+        "policy_saga"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-7493-IJSON",
+      "title": "RFC 7493: The I-JSON Message Format",
+      "version_or_tag": "RFC 7493",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-004",
+      "sha256": "79cf90d87551d63e750c72b383876c2617311a31fb5a9e0f72dc69f3dcb9600e",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-7515-JWS",
+      "title": "RFC 7515: JSON Web Signature (JWS)",
+      "version_or_tag": "RFC 7515",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-005",
+      "sha256": "d5c3662fb6fe9c5b80d449af96143b94157ac5e85d7978074702a382b8a50460",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto",
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-8032-EDDSA",
+      "title": "RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)",
+      "version_or_tag": "RFC 8032",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-076",
+      "sha256": "29c43d9f68a78933e16355eba485ce654fb7256858b69f8d1f02af9ea40e25cc",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-8693-OBO",
+      "title": "RFC 8693: OAuth 2.0 Token Exchange",
+      "version_or_tag": "RFC 8693",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-041",
+      "sha256": "22f271006669060ee5142350371ee70ed30bba6db93a9d8b43d897d462586a6f",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-8707-RESIND",
+      "title": "RFC 8707: Resource Indicators for OAuth 2.0",
+      "version_or_tag": "RFC 8707",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-009",
+      "sha256": "7fb70d66034ad271cda08ff66a791627b774e81a121be798165c0ea70ec81b01",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-8785-JCS",
+      "title": "RFC 8785: JSON Canonicalization Scheme (JCS)",
+      "version_or_tag": "RFC 8785",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-077",
+      "sha256": "be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "harness_proto",
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-9334-RATS",
+      "title": "RFC 9334: Remote ATtestation procedureS (RATS) Architecture",
+      "version_or_tag": "RFC 9334 (Informational)",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-010",
+      "sha256": "9cf8aa2510befad61a50b4808a031e37e6ac1658b0d3efd7df940a07770325b1",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Publié en catégorie Informational (et non Standards Track) ; cadre Attester/Verifier conceptuel sans format de fil normatif."
+    },
+    {
+      "spec_id": "SPEC-RFC-9396-RAR",
+      "title": "RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR)",
+      "version_or_tag": "RFC 9396",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-042",
+      "sha256": "e334d06f14081317caf9d457dcbffeae877c5e5009f2452d2f11adcd47d68f6b",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit",
+        "policy_saga"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-9449-DPOP",
+      "title": "RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
+      "version_or_tag": "RFC 9449",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-043",
+      "sha256": "5e0267f9b8801cc882ec1dcb1d1d220cbe8cb38bbe428362cd1c8a2b33ef30e0",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-9943-SCITT",
+      "title": "RFC 9943: Supply Chain Integrity, Transparency, and Trust (SCITT) Architecture",
+      "version_or_tag": "RFC 9943",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-044",
+      "sha256": "1ed0ffb4007b7986d5d3ff4da1a0489d5b9d71c5eae4cd89a7f48ae650a19fef",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-RFC-9964-MLDSA",
+      "title": "RFC 9964: ML-DSA for JOSE and COSE",
+      "version_or_tag": "RFC 9964",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-012",
+      "sha256": "a7c42dac175c3a9c95d2e36fe43afaddc35c7586d16cfe15e71ff67f47479c8b",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "En-têtes OBO ML-DSA-65 (3 309 o) / ML-DSA-87 (4 627 o) : provoquent HTTP 431 (8 192 o) dès le saut 1-2, résolus par Transaction Tokens O(1)."
+    },
+    {
+      "spec_id": "SPEC-DRAFT-TXTOKENS-11",
+      "title": "OAuth Transaction Tokens (Internet-Draft)",
+      "version_or_tag": "draft-ietf-oauth-transaction-tokens-11",
+      "maturity_status": "IETF_WORKING_GROUP_DRAFT",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-013",
+      "sha256": "64447dddda3a5d9fe7440a2f9ff84b5c14c9e55c23f936963f98e37fad483f9c",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Brouillon du groupe OAuth IETF (exp. 2027-01-31), non encore RFC au 2026-12-02."
+    },
+    {
+      "spec_id": "SPEC-DRAFT-AGENT-REVOC-01",
+      "title": "OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft)",
+      "version_or_tag": "draft-chen-oauth-agent-revocation-01",
+      "maturity_status": "IETF_INDIVIDUAL_DRAFT",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-017",
+      "sha256": "25d9788ca0cb574ff0c4bbc3215ad4094bb8f9cde660e2e15a184c7a81bd9a22",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Brouillon individuel non adopté par un WG (exp. 2027-05-03) ; marqué IETF_INDIVIDUAL_DRAFT_AGENT_REVOCATION_01 dans revocation_fsm.py."
+    },
+    {
+      "spec_id": "SPEC-DRAFT-WIMSE-PRAC-08",
+      "title": "WIMSE Workload Identity Practices (Internet-Draft)",
+      "version_or_tag": "draft-ietf-wimse-workload-identity-practices-08",
+      "maturity_status": "IETF_WORKING_GROUP_DRAFT",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-047",
+      "sha256": "863cee96178b93722999cbceee5ff74cb7b6203356af2ae571e289c6e72b408b",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Brouillon du groupe de travail IETF WIMSE."
+    },
+    {
+      "spec_id": "SPEC-DRAFT-WIMSE-AIMS-01",
+      "title": "WIMSE AI Identity Management System (Internet-Draft)",
+      "version_or_tag": "draft-ietf-wimse-aims-01",
+      "maturity_status": "IETF_WORKING_GROUP_DRAFT",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-048",
+      "sha256": "ab53c74913dd1337f6183a03825d985dc1f39bc613721a54e9a3d3092231045e",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Brouillon du groupe de travail IETF WIMSE."
+    },
+    {
+      "spec_id": "SPEC-DRAFT-IDEMPOTENCY-KEY",
+      "title": "The Idempotency-Key HTTP Header Field (Internet-Draft)",
+      "version_or_tag": "draft-ietf-httpapi-idempotency-key-header-07",
+      "maturity_status": "IETF_WORKING_GROUP_DRAFT",
+      "license_spdx": "IETF-Trust",
+      "source_l_plus_id": "SRC-036",
+      "sha256": "d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "policy_saga"
+      ],
+      "adapter_boundary": "Brouillon du groupe de travail IETF HTTPAPI ; aligné sur idem-v1 et statuts HTTP 409/422."
+    },
+    {
+      "spec_id": "SPEC-NIST-FIPS-203",
+      "title": "NIST FIPS 203: ML-KEM Key-Encapsulation Mechanism",
+      "version_or_tag": "FIPS 203",
+      "maturity_status": "FIPS_STANDARD",
+      "license_spdx": "NIST-PD",
+      "source_l_plus_id": "SRC-049",
+      "sha256": "bb840af1e6a3e1df10862cf3a8f26e435cbdc7502248a809ba1caba205a3574c",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-NIST-FIPS-204",
+      "title": "NIST FIPS 204: ML-DSA Digital Signature Standard",
+      "version_or_tag": "FIPS 204",
+      "maturity_status": "FIPS_STANDARD",
+      "license_spdx": "NIST-PD",
+      "source_l_plus_id": "SRC-050",
+      "sha256": "14b6c1706d2c4a1645a7c285e37e9e7e33dd98348302c84c11db9613c0f1d267",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-NIST-FIPS-205",
+      "title": "NIST FIPS 205: SLH-DSA Stateless Hash-Based Signature Standard",
+      "version_or_tag": "FIPS 205",
+      "maturity_status": "FIPS_STANDARD",
+      "license_spdx": "NIST-PD",
+      "source_l_plus_id": "SRC-018",
+      "sha256": "c27445a0f736858615b4625c234e30c8a222b2ea61cd5bfef18b7e45e53aad37",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-OPENID-CIBA-1-0",
+      "title": "OpenID Connect Client-Initiated Backchannel Authentication Core 1.0",
+      "version_or_tag": "1.0",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "OIDF-Spec",
+      "source_l_plus_id": "SRC-045",
+      "sha256": "fb983307e736a3747a1dfa27f4e698f41cd45f4854f129c7cfc3c4a24c3d8020",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit",
+        "policy_saga"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-OPENID-SSF-1-0",
+      "title": "OpenID Shared Signals Framework Specification 1.0",
+      "version_or_tag": "1.0",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "OIDF-Spec",
+      "source_l_plus_id": "SRC-019",
+      "sha256": "68263a1cbe315de9ae3519ff2321053aa92ca72096ae3f0872b289d0d046c6a7",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-OPENID-CAEP-1-0",
+      "title": "OpenID Continuous Access Evaluation Profile (CAEP) 1.0",
+      "version_or_tag": "1.0",
+      "maturity_status": "FINAL_STANDARD",
+      "license_spdx": "OIDF-Spec",
+      "source_l_plus_id": "SRC-020",
+      "sha256": "f3114cfa038f095958641996c432193e843cb2395a2b0cd3ba13ca31f8a2345f",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-REG-EU-AI-ACT-2024-1689",
+      "title": "Règlement (UE) 2024/1689 sur l'intelligence artificielle (EU AI Act)",
+      "version_or_tag": "(UE) 2024/1689 + (UE) 2026/1744",
+      "maturity_status": "REGULATION_IN_FORCE",
+      "license_spdx": "EU-Public-Domain",
+      "source_l_plus_id": "SRC-060",
+      "sha256": "e0a79e4f278c88177206c60458fad1f06c74fc80d6b23e404ef523c290346477",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "evalops_prr",
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Art. 50 applicable dès 2026-08-02 ; Annexe III au 2027-12-02 ; Annexe I au 2028-08-02 — mention non-avis juridique requise."
+    },
+    {
+      "spec_id": "SPEC-REG-EN-18286-2026",
+      "title": "Décision d'exécution (UE) 2026/2274 — Norme harmonisée EN 18286:2026 (QMS Art. 17)",
+      "version_or_tag": "(UE) 2026/2274",
+      "maturity_status": "REGULATION_IN_FORCE",
+      "license_spdx": "EU-Public-Domain",
+      "source_l_plus_id": "SRC-067",
+      "sha256": "3d1dcffce8aeb8fa2cf340feb94c21e084800bf21c7249940c0fa51000b37f33",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "evalops_prr"
+      ],
+      "adapter_boundary": "Référence harmonisée officielle en L+ ; portail CEN/CENELEC bloqué en statut F."
+    },
+    {
+      "spec_id": "SPEC-REG-DORA-2022-2554",
+      "title": "Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique (DORA)",
+      "version_or_tag": "(UE) 2022/2554",
+      "maturity_status": "REGULATION_IN_FORCE",
+      "license_spdx": "EU-Public-Domain",
+      "source_l_plus_id": "SRC-062",
+      "sha256": "6e4b138de7f05c440c3b1c3b590545dc0cd3f1c793e4c12c733f8736a2ecfb9e",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "policy_saga",
+        "evalops_prr"
+      ],
+      "adapter_boundary": null
+    },
+    {
+      "spec_id": "SPEC-REG-QC-LOI25-2021-C25",
+      "title": "LQ 2021, c. 25 — Loi modernisant la protection des renseignements personnels (Loi 25)",
+      "version_or_tag": "LQ 2021, c. 25",
+      "maturity_status": "REGULATION_IN_FORCE",
+      "license_spdx": "QC-Public-Domain",
+      "source_l_plus_id": "SRC-063",
+      "sha256": "829e67f777ca0645b5b51a2ec4d8ec94739232c5a33ef76b7944d2bb81b61d87",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "authz_pqc_audit",
+        "evalops_prr"
+      ],
+      "adapter_boundary": "Art. 12.1 en vigueur depuis 2023-09-22 ; portail LégisQuébec P-39.1 en statut F."
+    },
+    {
+      "spec_id": "SPEC-REG-BSIF-E23-2027",
+      "title": "BSIF / OSFI Ligne directrice E-23 — Gestion du risque de modélisation",
+      "version_or_tag": "E-23 (eff. 2027-05-01)",
+      "maturity_status": "REGULATION_ADOPTED_FUTURE",
+      "license_spdx": "Canada-OGL",
+      "source_l_plus_id": "SRC-065",
+      "sha256": "60ef80b531aaa0ac26d2180a14bd1c295297dabe7ddf8c4260f37c90b2ecda3e",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "evalops_prr",
+        "authz_pqc_audit"
+      ],
+      "adapter_boundary": "Prise en application attendue le 1er mai 2027 (non en vigueur au 2026-12-02)."
+    },
+    {
+      "spec_id": "SPEC-REG-BSIF-B10-2023",
+      "title": "BSIF / OSFI Guideline B-10 — Third-Party Risk Management",
+      "version_or_tag": "B-10 (2023)",
+      "maturity_status": "REGULATION_IN_FORCE",
+      "license_spdx": "Canada-OGL",
+      "source_l_plus_id": "SRC-068",
+      "sha256": "db7ccc401ea3b392f22b42c75b63d657eb95cd1c6ab5ccf2d55551bf9be01625",
+      "statut_preuve": "l_plus",
+      "modules_trousse": [
+        "evalops_prr"
+      ],
+      "adapter_boundary": null
+    }
+  ]
+}

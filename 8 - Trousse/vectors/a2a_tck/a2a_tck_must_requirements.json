@@ -1,0 +1,1898 @@
+{
+  "upstream_repo": "https://github.com/a2aproject/a2a-tck",
+  "upstream_tag": "1.0.0.alpha3",
+  "upstream_commit": "5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+  "upstream_status": "alpha3",
+  "a2a_jcs_v01_present": false,
+  "a2a_jcs_v01_note": "conformance-vectors/a2a-jcs-v01 is not present in a2aproject/a2a-tck at tag 1.0.0.alpha3 (nor on main). JCS/JWS AgentCard signing requirements CARD-SIGN-001..004 are defined in tck/requirements/agent_card.py (tagged NOT_AUTOMATABLE in 1.0.0.alpha3), and canonicalization/JWS examples are extracted from specification/specification.md § 8.4-8.5.",
+  "total_requirements": 129,
+  "must_requirements_count": 114,
+  "agent_card_requirements_count": 13,
+  "must_requirements": [
+    {
+      "id": "CARD-DISC-001",
+      "module": "agent_card.py",
+      "section": "8.1",
+      "level": "MUST",
+      "title": "Agent Card must be available",
+      "description": "A2A Servers MUST make an Agent Card available describing the server's identity, capabilities, skills, and interaction requirements.",
+      "expected_behavior": "Agent Card retrievable by clients",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#81-purpose",
+      "tags": [
+        "agent_card",
+        "discovery"
+      ]
+    },
+    {
+      "id": "CARD-PROTO-001",
+      "module": "agent_card.py",
+      "section": "8.3",
+      "level": "MUST",
+      "title": "AgentCard must properly declare supported protocols",
+      "description": "The AgentCard MUST properly declare supported protocols.",
+      "expected_behavior": "Supported protocols declared in AgentCard",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#83-protocol-declaration-requirements",
+      "tags": [
+        "agent_card",
+        "protocol"
+      ]
+    },
+    {
+      "id": "CARD-PROTO-002",
+      "module": "agent_card.py",
+      "section": "8.3.1",
+      "level": "MUST",
+      "title": "Each interface must declare transport and URL",
+      "description": "Each interface in supportedInterfaces MUST accurately declare its transport protocol and URL.",
+      "expected_behavior": "Each interface has accurate transport and URL",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#831-supported-interfaces-declaration",
+      "tags": [
+        "agent_card",
+        "protocol",
+        "interface"
+      ]
+    },
+    {
+      "id": "CARD-STRUCT-001",
+      "module": "agent_card.py",
+      "section": "4.4.1",
+      "level": "MUST",
+      "title": "AgentCard contains required fields",
+      "description": "An AgentCard MUST contain all required fields as defined in the Protocol Buffer definition including name, description, supportedInterfaces, capabilities, and skills.",
+      "expected_behavior": "All required AgentCard fields present",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#441-agentcard",
+      "tags": [
+        "agent_card",
+        "structure"
+      ]
+    },
+    {
+      "id": "CARD-EXT-001",
+      "module": "agent_card.py",
+      "section": "3.1.11",
+      "level": "MUST",
+      "title": "Extended Agent Card requires authentication",
+      "description": "The client MUST authenticate the GetExtendedAgentCard request using one of the schemes declared in the public AgentCard.",
+      "expected_behavior": "Authenticated request returns extended card",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#3111-get-extended-agent-card",
+      "tags": [
+        "agent_card",
+        "extended",
+        "auth"
+      ]
+    },
+    {
+      "id": "CARD-EXT-002",
+      "module": "agent_card.py",
+      "section": "3.1.11",
+      "level": "MUST",
+      "title": "Extended card not configured returns specific error",
+      "description": "If the agent declares support but has not configured an extended card, it MUST return ExtendedAgentCardNotConfiguredError.",
+      "expected_behavior": "ExtendedAgentCardNotConfiguredError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#3111-get-extended-agent-card",
+      "tags": [
+        "agent_card",
+        "extended",
+        "error"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-001",
+      "module": "agent_card.py",
+      "section": "8.4.1",
+      "level": "MUST",
+      "title": "Agent Card canonicalized with JCS before signing",
+      "description": "Before signing, the Agent Card content MUST be canonicalized using the JSON Canonicalization Scheme (JCS) as defined in RFC 8785.",
+      "expected_behavior": "Agent Card canonicalized per RFC 8785 before signing",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#841-canonicalization-requirements",
+      "tags": [
+        "agent_card",
+        "signing",
+        "jcs",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-002",
+      "module": "agent_card.py",
+      "section": "8.4.1",
+      "level": "MUST",
+      "title": "Signatures field excluded from signed content",
+      "description": "The signatures field itself MUST be excluded from the content being signed to avoid circular dependencies.",
+      "expected_behavior": "Signatures field excluded from signing payload",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#841-canonicalization-requirements",
+      "tags": [
+        "agent_card",
+        "signing",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-003",
+      "module": "agent_card.py",
+      "section": "8.4.2",
+      "level": "MUST",
+      "title": "Signature protected header includes required parameters",
+      "description": "The JWS protected header MUST include alg (algorithm) and kid (key ID) parameters.",
+      "expected_behavior": "Protected header contains alg and kid",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#842-signature-format",
+      "tags": [
+        "agent_card",
+        "signing",
+        "jws",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-004",
+      "module": "agent_card.py",
+      "section": "8.4.3",
+      "level": "MUST",
+      "title": "Expired or revoked keys must not be used for verification",
+      "description": "Expired or revoked keys MUST NOT be used for signature verification.",
+      "expected_behavior": "Expired/revoked keys rejected during verification",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#843-signature-verification",
+      "tags": [
+        "agent_card",
+        "signing",
+        "security",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "AUTH-TLS-001",
+      "module": "auth.py",
+      "section": "7.1",
+      "level": "MUST",
+      "title": "Production deployments must use encrypted communication",
+      "description": "Production deployments MUST use encrypted communication (HTTPS for HTTP-based bindings, TLS for gRPC).",
+      "expected_behavior": "All production traffic encrypted via TLS",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#71-protocol-security",
+      "tags": [
+        "auth",
+        "tls",
+        "security",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "AUTH-SERVER-002",
+      "module": "auth.py",
+      "section": "7.4",
+      "level": "MUST",
+      "title": "Server must authenticate every incoming request",
+      "description": "The A2A Server MUST authenticate every incoming request based on the provided credentials and its declared authentication requirements.",
+      "expected_behavior": "Every request authenticated",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#74-server-authentication-responsibilities",
+      "tags": [
+        "auth",
+        "server"
+      ]
+    },
+    {
+      "id": "AUTH-INTASK-001",
+      "module": "auth.py",
+      "section": "7.6.1",
+      "level": "MUST",
+      "title": "Agent MUST use a Task to track operation requiring authorization",
+      "description": "To request that a client fulfills an authorization request, the agent MUST use a Task to track the operation it is performing.",
+      "expected_behavior": "Task used to track authorization-requiring operation",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#761-in-task-authorization-agent-responsibilities",
+      "tags": [
+        "auth",
+        "in_task"
+      ]
+    },
+    {
+      "id": "AUTH-INTASK-002",
+      "module": "auth.py",
+      "section": "7.6.1",
+      "level": "MUST",
+      "title": "Agent MUST transition to auth_required state",
+      "description": "To request that a client fulfills an authorization request, the agent MUST transition the TaskState to TASK_STATE_AUTH_REQUIRED.",
+      "expected_behavior": "Task transitions to auth_required for authorization",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#761-in-task-authorization-agent-responsibilities",
+      "tags": [
+        "auth",
+        "in_task"
+      ]
+    },
+    {
+      "id": "AUTH-INTASK-003",
+      "module": "auth.py",
+      "section": "7.6.1",
+      "level": "MUST",
+      "title": "Agent MUST include status message explaining authorization",
+      "description": "The agent MUST include a TaskStatus message explaining the required authorization, unless the details have been negotiated out-of-band or via an extension.",
+      "expected_behavior": "TaskStatus message explains required authorization",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#761-in-task-authorization-agent-responsibilities",
+      "tags": [
+        "auth",
+        "in_task"
+      ]
+    },
+    {
+      "id": "AUTH-INTASK-004",
+      "module": "auth.py",
+      "section": "7.6.1",
+      "level": "MUST",
+      "title": "Agent MUST arrange to receive credentials out-of-band",
+      "description": "Agents MUST arrange to receive credentials via an out-of-band means, unless an in-band mechanism has been negotiated out-of-band or via an extension.",
+      "expected_behavior": "Credentials received out-of-band",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#761-in-task-authorization-agent-responsibilities",
+      "tags": [
+        "auth",
+        "in_task"
+      ]
+    },
+    {
+      "id": "AUTH-SCOPE-001",
+      "module": "auth.py",
+      "section": "13.1",
+      "level": "MUST",
+      "title": "Authorization checks on every operation request",
+      "description": "Servers MUST implement authorization checks on every A2A Protocol Operations request.",
+      "expected_behavior": "Authorization verified for every request",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#131-data-access-and-authorization-scoping",
+      "tags": [
+        "auth",
+        "authorization",
+        "scope"
+      ]
+    },
+    {
+      "id": "AUTH-SCOPE-002",
+      "module": "auth.py",
+      "section": "13.1",
+      "level": "MUST",
+      "title": "Results scoped to caller's authorization boundaries",
+      "description": "Implementations MUST scope results to the caller's authorized access boundaries as defined by the agent's authorization model.",
+      "expected_behavior": "Results limited to authorized scope",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#131-data-access-and-authorization-scoping",
+      "tags": [
+        "auth",
+        "authorization",
+        "scope"
+      ]
+    },
+    {
+      "id": "AUTH-SCOPE-003",
+      "module": "auth.py",
+      "section": "3.3.2",
+      "level": "MUST",
+      "title": "Server must not reveal existence of unauthorized resources",
+      "description": "Servers MUST NOT reveal the existence of resources the client is not authorized to access.",
+      "expected_behavior": "Unauthorized resources invisible to client",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#332-error-handling",
+      "tags": [
+        "auth",
+        "authorization",
+        "security"
+      ]
+    },
+    {
+      "id": "GRPC-SVC-001",
+      "module": "binding_grpc.py",
+      "section": "10.1",
+      "level": "MUST",
+      "title": "Implement A2AService gRPC service",
+      "description": "gRPC binding implementations MUST implement the A2AService gRPC service as defined in the normative a2a.proto file.",
+      "expected_behavior": "A2AService gRPC service fully implemented",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#101-protocol-requirements",
+      "tags": [
+        "grpc",
+        "service"
+      ]
+    },
+    {
+      "id": "GRPC-SVC-002",
+      "module": "binding_grpc.py",
+      "section": "10.1",
+      "level": "MUST",
+      "title": "Use Protocol Buffers version 3 serialization",
+      "description": "gRPC binding MUST use Protocol Buffers version 3 for serialization.",
+      "expected_behavior": "Proto3 serialization used",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#101-protocol-requirements",
+      "tags": [
+        "grpc",
+        "protobuf"
+      ]
+    },
+    {
+      "id": "GRPC-SVC-003",
+      "module": "binding_grpc.py",
+      "section": "10.1",
+      "level": "MUST",
+      "title": "gRPC over HTTP/2 with TLS",
+      "description": "gRPC binding MUST use gRPC over HTTP/2 with TLS.",
+      "expected_behavior": "Communication over HTTP/2 with TLS",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#101-protocol-requirements",
+      "tags": [
+        "grpc",
+        "transport",
+        "tls"
+      ]
+    },
+    {
+      "id": "GRPC-META-001",
+      "module": "binding_grpc.py",
+      "section": "10.2",
+      "level": "MUST",
+      "title": "Service parameters transmitted as gRPC metadata",
+      "description": "A2A service parameters MUST be transmitted using gRPC metadata (headers). Service parameter names MUST be transmitted as gRPC metadata keys.",
+      "expected_behavior": "A2A-Version and A2A-Extensions sent as gRPC metadata",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#102-service-parameter-transmission",
+      "tags": [
+        "grpc",
+        "metadata",
+        "service_params"
+      ]
+    },
+    {
+      "id": "GRPC-ERR-001",
+      "module": "binding_grpc.py",
+      "section": "10.6",
+      "level": "MUST",
+      "title": "A2A errors include ErrorInfo in status details",
+      "description": "For A2A-specific errors, implementations MUST include a google.rpc.ErrorInfo message in the status.details array with reason (UPPER_SNAKE_CASE without Error suffix) and domain set to 'a2a-protocol.org'.",
+      "expected_behavior": "ErrorInfo with reason and domain in status details",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#106-error-handling",
+      "tags": [
+        "grpc",
+        "error",
+        "errorinfo"
+      ]
+    },
+    {
+      "id": "GRPC-ERR-002",
+      "module": "binding_grpc.py",
+      "section": "5.4",
+      "level": "MUST",
+      "title": "A2A error types mapped to correct gRPC status codes",
+      "description": "All A2A-specific error types MUST be mapped to their specified gRPC status codes: TaskNotFoundError=NOT_FOUND, TaskNotCancelableError=FAILED_PRECONDITION, PushNotificationNotSupportedError=UNIMPLEMENTED, UnsupportedOperationError=UNIMPLEMENTED, ContentTypeNotSupportedError=INVALID_ARGUMENT, InvalidAgentResponseError=INTERNAL, ExtendedAgentCardNotConfiguredError=FAILED_PRECONDITION, ExtensionSupportRequiredError=FAILED_PRECONDITION, VersionNotSupportedError=UNIMPLEMENTED.",
+      "expected_behavior": "Each A2A error mapped to correct gRPC status",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#54-error-code-mappings",
+      "tags": [
+        "grpc",
+        "error",
+        "mapping"
+      ]
+    },
+    {
+      "id": "GRPC-ERR-003",
+      "module": "binding_grpc.py",
+      "section": "10.7",
+      "level": "MUST",
+      "title": "gRPC streaming uses server streaming RPCs",
+      "description": "gRPC streaming MUST use server streaming RPCs for real-time updates with StreamResponse messages.",
+      "expected_behavior": "Server streaming RPC delivers StreamResponse messages",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#107-streaming",
+      "tags": [
+        "grpc",
+        "streaming"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-URL-001",
+      "module": "binding_http_json.py",
+      "section": "11.3",
+      "level": "MUST",
+      "title": "RESTful resource-based URL patterns",
+      "description": "HTTP+JSON/REST binding MUST use the specified RESTful resource-based URL patterns for all operations.",
+      "expected_behavior": "Correct URL patterns used for each operation",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#113-url-patterns-and-http-methods",
+      "tags": [
+        "rest",
+        "url"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-URL-002",
+      "module": "binding_http_json.py",
+      "section": "11.3",
+      "level": "MUST",
+      "title": "Standard HTTP methods for each operation",
+      "description": "HTTP+JSON/REST binding MUST use standard HTTP verbs: GET for retrieval, POST for creation/actions, DELETE for removal.",
+      "expected_behavior": "Correct HTTP methods used per operation",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#113-url-patterns-and-http-methods",
+      "tags": [
+        "rest",
+        "method"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-SVC-001",
+      "module": "binding_http_json.py",
+      "section": "11.1",
+      "level": "MUST",
+      "title": "Content-Type is application/json",
+      "description": "HTTP+JSON/REST binding MUST use Content-Type application/json for requests and responses.",
+      "expected_behavior": "Content-Type header is application/json",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#111-protocol-requirements",
+      "tags": [
+        "rest",
+        "content_type"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-SVC-002",
+      "module": "binding_http_json.py",
+      "section": "11.2",
+      "level": "MUST",
+      "title": "Service parameters transmitted as HTTP headers",
+      "description": "A2A service parameters MUST be transmitted using standard HTTP request headers for the REST binding.",
+      "expected_behavior": "A2A-Version and A2A-Extensions sent as HTTP headers",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#112-service-parameter-transmission",
+      "tags": [
+        "rest",
+        "service_params"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-QP-001",
+      "module": "binding_http_json.py",
+      "section": "11.5",
+      "level": "MUST",
+      "title": "Query parameter names use camelCase",
+      "description": "Query parameter names MUST use camelCase to match the JSON serialization of Protocol Buffer field names.",
+      "expected_behavior": "Query params like contextId, pageSize, pageToken",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#115-query-parameter-naming-for-request-parameters",
+      "tags": [
+        "rest",
+        "query_params"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-ERR-001",
+      "module": "binding_http_json.py",
+      "section": "11.6",
+      "level": "MUST",
+      "title": "Error responses use AIP-193 format",
+      "description": "HTTP error responses MUST use the AIP-193 representation with Content-Type application/json containing an error object with code, status, message, and details fields.",
+      "expected_behavior": "Error responses conform to AIP-193 structure",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#116-error-handling",
+      "tags": [
+        "rest",
+        "error",
+        "aip193"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-ERR-002",
+      "module": "binding_http_json.py",
+      "section": "11.6",
+      "level": "MUST",
+      "title": "A2A errors include ErrorInfo in details array",
+      "description": "For A2A-specific errors, implementations MUST include a google.rpc.ErrorInfo message in the details array with reason (UPPER_SNAKE_CASE), domain (a2a-protocol.org), and optional metadata.",
+      "expected_behavior": "Error details array contains ErrorInfo with correct reason and domain",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#116-error-handling",
+      "tags": [
+        "rest",
+        "error",
+        "errorinfo",
+        "mapping"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-STATUS-001",
+      "module": "binding_http_json.py",
+      "section": "5.4",
+      "level": "MUST",
+      "title": "A2A errors map to correct HTTP status codes",
+      "description": "Each A2A error type MUST map to the HTTP status code specified in the error code mappings table (e.g., TaskNotFoundError to 404, ContentTypeNotSupportedError to 415).",
+      "expected_behavior": "HTTP status code matches the spec-defined mapping for each error",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#54-error-code-mappings",
+      "tags": [
+        "rest",
+        "error",
+        "status",
+        "mapping"
+      ]
+    },
+    {
+      "id": "HTTP_JSON-SSE-001",
+      "module": "binding_http_json.py",
+      "section": "11.7",
+      "level": "MUST",
+      "title": "REST streaming uses Server-Sent Events",
+      "description": "REST streaming MUST use Server-Sent Events with the data field containing JSON serializations of StreamResponse objects.",
+      "expected_behavior": "SSE stream with StreamResponse JSON in data field",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#117-streaming",
+      "tags": [
+        "rest",
+        "streaming",
+        "sse"
+      ]
+    },
+    {
+      "id": "JSONRPC-FMT-001",
+      "module": "binding_jsonrpc.py",
+      "section": "9.1",
+      "level": "MUST",
+      "title": "Requests use JSON-RPC 2.0 format",
+      "description": "All JSON-RPC requests MUST follow the standard JSON-RPC 2.0 format with jsonrpc, id, method, and params fields.",
+      "expected_behavior": "Requests conform to JSON-RPC 2.0 structure",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#91-protocol-requirements",
+      "tags": [
+        "jsonrpc",
+        "format"
+      ]
+    },
+    {
+      "id": "JSONRPC-FMT-002",
+      "module": "binding_jsonrpc.py",
+      "section": "9.1",
+      "level": "MUST",
+      "title": "Content-Type is application/json",
+      "description": "JSON-RPC requests and responses MUST use Content-Type application/json.",
+      "expected_behavior": "Content-Type header is application/json",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#91-protocol-requirements",
+      "tags": [
+        "jsonrpc",
+        "format",
+        "content_type"
+      ]
+    },
+    {
+      "id": "JSONRPC-SVC-001",
+      "module": "binding_jsonrpc.py",
+      "section": "9.1",
+      "level": "MUST",
+      "title": "Method names use PascalCase matching gRPC conventions",
+      "description": "JSON-RPC method names MUST use PascalCase matching gRPC conventions (e.g., SendMessage, GetTask).",
+      "expected_behavior": "Methods named in PascalCase",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#91-protocol-requirements",
+      "tags": [
+        "jsonrpc",
+        "method"
+      ]
+    },
+    {
+      "id": "JSONRPC-SVC-002",
+      "module": "binding_jsonrpc.py",
+      "section": "9.2",
+      "level": "MUST",
+      "title": "Service parameters transmitted as HTTP headers",
+      "description": "A2A service parameters MUST be transmitted using standard HTTP request headers for JSON-RPC binding.",
+      "expected_behavior": "A2A-Version and A2A-Extensions sent as HTTP headers",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#92-service-parameter-transmission",
+      "tags": [
+        "jsonrpc",
+        "service_params"
+      ]
+    },
+    {
+      "id": "JSONRPC-ERR-001",
+      "module": "binding_jsonrpc.py",
+      "section": "9.5",
+      "level": "MUST",
+      "title": "Error responses use JSON-RPC 2.0 error object structure",
+      "description": "JSON-RPC error responses MUST use the standard JSON-RPC 2.0 error object structure with code, message, and optional data. The data field, when present, MUST be an array containing google.protobuf.Any messages in ProtoJSON representation.",
+      "expected_behavior": "Errors include numeric code, message, and data array",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#95-error-handling",
+      "tags": [
+        "jsonrpc",
+        "error"
+      ]
+    },
+    {
+      "id": "JSONRPC-ERR-002",
+      "module": "binding_jsonrpc.py",
+      "section": "9.5",
+      "level": "MUST",
+      "title": "A2A-specific errors use codes -32001 to -32099",
+      "description": "A2A-specific errors MUST use error codes in the range -32001 to -32099 as defined in the error code mappings.",
+      "expected_behavior": "A2A error codes within specified range",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#95-error-handling",
+      "tags": [
+        "jsonrpc",
+        "error",
+        "code"
+      ]
+    },
+    {
+      "id": "JSONRPC-ERR-003",
+      "module": "binding_jsonrpc.py",
+      "section": "9.5",
+      "level": "MUST",
+      "title": "A2A errors include ErrorInfo in data array",
+      "description": "For A2A-specific errors, implementations MUST include a google.rpc.ErrorInfo message in the data array with reason (UPPER_SNAKE_CASE), domain (a2a-protocol.org), and optional metadata.",
+      "expected_behavior": "Error data array contains ErrorInfo with correct reason and domain",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#95-error-handling",
+      "tags": [
+        "jsonrpc",
+        "error",
+        "errorinfo",
+        "mapping"
+      ]
+    },
+    {
+      "id": "JSONRPC-SSE-001",
+      "module": "binding_jsonrpc.py",
+      "section": "9.4.2",
+      "level": "MUST",
+      "title": "Streaming uses Server-Sent Events with text/event-stream",
+      "description": "JSON-RPC streaming responses MUST use Server-Sent Events with Content-Type text/event-stream. Each SSE data line contains a JSON-RPC response wrapping a StreamResponse object.",
+      "expected_behavior": "SSE stream with JSON-RPC wrapped StreamResponse events",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#942-sendstreamingmessage",
+      "tags": [
+        "jsonrpc",
+        "streaming",
+        "sse"
+      ]
+    },
+    {
+      "id": "JSONRPC-SSE-002",
+      "module": "binding_jsonrpc.py",
+      "section": "5.4",
+      "level": "MUST",
+      "title": "A2A error types mapped to correct JSON-RPC error codes",
+      "description": "All A2A-specific error types MUST be mapped to their specified JSON-RPC error codes: TaskNotFoundError=-32001, TaskNotCancelableError=-32002, PushNotificationNotSupportedError=-32003, UnsupportedOperationError=-32004, ContentTypeNotSupportedError=-32005, InvalidAgentResponseError=-32006, ExtendedAgentCardNotConfiguredError=-32007, ExtensionSupportRequiredError=-32008, VersionNotSupportedError=-32009.",
+      "expected_behavior": "Each A2A error mapped to correct numeric code",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#54-error-code-mappings",
+      "tags": [
+        "jsonrpc",
+        "error",
+        "mapping"
+      ]
+    },
+    {
+      "id": "CORE-SEND-001",
+      "module": "core_operations.py",
+      "section": "3.1.1",
+      "level": "MUST",
+      "title": "SendMessage returns Task or Message",
+      "description": "The SendMessage operation MUST return immediately with either task information or a response message.",
+      "expected_behavior": "Response contains either a Task object or a Message object",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#311-send-message",
+      "tags": [
+        "core",
+        "send_message"
+      ]
+    },
+    {
+      "id": "CORE-SEND-002",
+      "module": "core_operations.py",
+      "section": "3.1.1",
+      "level": "MUST",
+      "title": "SendMessage rejects messages to terminal tasks",
+      "description": "Messages sent to Tasks that are in a terminal state (completed, canceled, rejected) MUST return UnsupportedOperationError.",
+      "expected_behavior": "UnsupportedOperationError returned for terminal task",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#311-send-message",
+      "tags": [
+        "core",
+        "send_message",
+        "error",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "CORE-SEND-003",
+      "module": "core_operations.py",
+      "section": "3.1.1",
+      "level": "MUST",
+      "title": "SendMessage returns ContentTypeNotSupportedError for unsupported media",
+      "description": "A Media Type provided in the request's message parts that is not supported by the agent MUST result in ContentTypeNotSupportedError.",
+      "expected_behavior": "ContentTypeNotSupportedError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#311-send-message",
+      "tags": [
+        "core",
+        "send_message",
+        "error"
+      ]
+    },
+    {
+      "id": "CORE-STREAM-001",
+      "module": "core_operations.py",
+      "section": "3.1.2",
+      "level": "MUST",
+      "title": "SendStreamingMessage establishes streaming connection",
+      "description": "The SendStreamingMessage operation MUST establish a streaming connection for real-time updates.",
+      "expected_behavior": "Streaming connection established with real-time events",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#312-send-streaming-message",
+      "tags": [
+        "core",
+        "streaming"
+      ]
+    },
+    {
+      "id": "CORE-STREAM-002",
+      "module": "core_operations.py",
+      "section": "3.1.2",
+      "level": "MUST",
+      "title": "Message-only stream contains exactly one Message then closes",
+      "description": "If the agent returns a Message, the stream MUST contain exactly one Message object and then close immediately.",
+      "expected_behavior": "Stream contains single Message then closes",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#312-send-streaming-message",
+      "tags": [
+        "core",
+        "streaming"
+      ]
+    },
+    {
+      "id": "CORE-STREAM-003",
+      "module": "core_operations.py",
+      "section": "3.1.2",
+      "level": "MUST",
+      "title": "Task lifecycle stream begins with Task and closes at terminal state",
+      "description": "If the agent returns a Task, the stream MUST begin with the Task object, followed by zero or more update events. The stream MUST close when the task reaches a terminal state.",
+      "expected_behavior": "Stream starts with Task, followed by events, closes at terminal state",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#312-send-streaming-message",
+      "tags": [
+        "core",
+        "streaming"
+      ]
+    },
+    {
+      "id": "CORE-GET-001",
+      "module": "core_operations.py",
+      "section": "3.1.3",
+      "level": "MUST",
+      "title": "GetTask returns current task state",
+      "description": "GetTask retrieves the current state of a previously initiated task including status, artifacts, and optionally history.",
+      "expected_behavior": "Current task state returned with status and artifacts",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#313-get-task",
+      "tags": [
+        "core",
+        "get_task",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "CORE-GET-002",
+      "module": "core_operations.py",
+      "section": "3.1.3",
+      "level": "MUST",
+      "title": "GetTask returns TaskNotFoundError for invalid task ID",
+      "description": "GetTask MUST return TaskNotFoundError when the task ID does not exist or is not accessible.",
+      "expected_behavior": "TaskNotFoundError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#313-get-task",
+      "tags": [
+        "core",
+        "get_task",
+        "error"
+      ]
+    },
+    {
+      "id": "CORE-LIST-001",
+      "module": "core_operations.py",
+      "section": "3.1.4",
+      "level": "MUST",
+      "title": "ListTasks returns only authorized tasks",
+      "description": "The ListTasks operation MUST return only tasks visible to the authenticated client.",
+      "expected_behavior": "Only authorized tasks returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#314-list-tasks",
+      "tags": [
+        "core",
+        "list_tasks",
+        "authorization"
+      ]
+    },
+    {
+      "id": "CORE-LIST-002",
+      "module": "core_operations.py",
+      "section": "3.1.4",
+      "level": "MUST",
+      "title": "ListTasks uses cursor-based pagination",
+      "description": "ListTasks MUST use cursor-based pagination via pageToken/nextPageToken.",
+      "expected_behavior": "Cursor-based pagination with pageToken/nextPageToken",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#314-list-tasks",
+      "tags": [
+        "core",
+        "list_tasks",
+        "pagination"
+      ]
+    },
+    {
+      "id": "CORE-LIST-003",
+      "module": "core_operations.py",
+      "section": "3.1.4",
+      "level": "MUST",
+      "title": "ListTasks sorts by status timestamp descending",
+      "description": "Implementations MUST return tasks sorted by their status timestamp in descending order (most recently updated first).",
+      "expected_behavior": "Tasks sorted by status timestamp descending",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#314-list-tasks",
+      "tags": [
+        "core",
+        "list_tasks"
+      ]
+    },
+    {
+      "id": "CORE-LIST-004",
+      "module": "core_operations.py",
+      "section": "3.1.4",
+      "level": "MUST",
+      "title": "ListTasks nextPageToken empty string on final page",
+      "description": "The nextPageToken field MUST always be present in the response. When there are no more results, it MUST be set to an empty string.",
+      "expected_behavior": "nextPageToken is empty string on final page",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#314-list-tasks",
+      "tags": [
+        "core",
+        "list_tasks",
+        "pagination"
+      ]
+    },
+    {
+      "id": "CORE-LIST-005",
+      "module": "core_operations.py",
+      "section": "3.1.4",
+      "level": "MUST",
+      "title": "ListTasks omits artifacts when includeArtifacts is false",
+      "description": "When includeArtifacts is false (the default), the artifacts field MUST be omitted entirely from each Task object in the response.",
+      "expected_behavior": "Artifacts field omitted entirely when includeArtifacts=false",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#314-list-tasks",
+      "tags": [
+        "core",
+        "list_tasks"
+      ]
+    },
+    {
+      "id": "CORE-CANCEL-001",
+      "module": "core_operations.py",
+      "section": "3.1.5",
+      "level": "MUST",
+      "title": "CancelTask returns updated task with cancellation status",
+      "description": "The CancelTask operation attempts to cancel the specified task and returns its updated state.",
+      "expected_behavior": "Updated Task with cancellation status returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#315-cancel-task",
+      "tags": [
+        "core",
+        "cancel_task",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "CORE-CANCEL-002",
+      "module": "core_operations.py",
+      "section": "3.1.5",
+      "level": "MUST",
+      "title": "CancelTask returns TaskNotCancelableError for terminal tasks",
+      "description": "CancelTask MUST return TaskNotCancelableError when the task is not in a cancelable state (already completed, failed, or canceled).",
+      "expected_behavior": "TaskNotCancelableError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#315-cancel-task",
+      "tags": [
+        "core",
+        "cancel_task",
+        "error",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "CORE-CANCEL-003",
+      "module": "core_operations.py",
+      "section": "3.1.5",
+      "level": "MUST",
+      "title": "CancelTask returns TaskNotFoundError for invalid task ID",
+      "description": "CancelTask MUST return TaskNotFoundError when the task ID does not exist or is not accessible.",
+      "expected_behavior": "TaskNotFoundError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#315-cancel-task",
+      "tags": [
+        "core",
+        "cancel_task",
+        "error"
+      ]
+    },
+    {
+      "id": "CORE-EXECUTION-MODE-001",
+      "module": "core_operations.py",
+      "section": "3.2.2",
+      "level": "MUST",
+      "title": "Blocking mode waits for terminal or interrupted state",
+      "description": "When return_immediately is false or unset, the operation MUST wait until the task reaches a terminal state (completed, failed, canceled, rejected) or an interrupted state (input_required, auth_required) before returning. This is the default behavior.",
+      "expected_behavior": "Response delayed until terminal or interrupted state",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#322-sendmessageconfiguration",
+      "tags": [
+        "core",
+        "execution_mode"
+      ]
+    },
+    {
+      "id": "CORE-EXECUTION-MODE-002",
+      "module": "core_operations.py",
+      "section": "3.2.2",
+      "level": "MUST",
+      "title": "Non-blocking mode returns immediately",
+      "description": "When return_immediately is true, the operation MUST return immediately after creating the task, even if processing is still in progress.",
+      "expected_behavior": "Response returned immediately with in-progress state",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#322-sendmessageconfiguration",
+      "tags": [
+        "core",
+        "execution_mode"
+      ]
+    },
+    {
+      "id": "CORE-ERR-001",
+      "module": "core_operations.py",
+      "section": "3.3.2",
+      "level": "MUST",
+      "title": "Server returns appropriate errors with actionable information",
+      "description": "Servers MUST return appropriate errors and SHOULD provide actionable information to help clients resolve issues.",
+      "expected_behavior": "Error responses include code, message, and optional details",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#332-error-handling",
+      "tags": [
+        "core",
+        "error"
+      ]
+    },
+    {
+      "id": "CORE-ERR-002",
+      "module": "core_operations.py",
+      "section": "3.3.2",
+      "level": "MUST",
+      "title": "Server validates all input parameters before processing",
+      "description": "Servers MUST validate all input parameters before processing.",
+      "expected_behavior": "Invalid parameters rejected with validation error",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#332-error-handling",
+      "tags": [
+        "core",
+        "error",
+        "validation"
+      ]
+    },
+    {
+      "id": "CORE-CAP-001",
+      "module": "core_operations.py",
+      "section": "3.3.4",
+      "level": "MUST",
+      "title": "Push notification operations return error when not supported",
+      "description": "If AgentCard.capabilities.pushNotifications is false or not present, push notification operations MUST return PushNotificationNotSupportedError.",
+      "expected_behavior": "PushNotificationNotSupportedError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#334-capability-validation",
+      "tags": [
+        "core",
+        "capability",
+        "push_notification"
+      ]
+    },
+    {
+      "id": "CORE-CAP-002",
+      "module": "core_operations.py",
+      "section": "3.3.4",
+      "level": "MUST",
+      "title": "Streaming operations return error when not supported",
+      "description": "If AgentCard.capabilities.streaming is false or not present, SendStreamingMessage and SubscribeToTask MUST return UnsupportedOperationError.",
+      "expected_behavior": "UnsupportedOperationError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#334-capability-validation",
+      "tags": [
+        "core",
+        "capability",
+        "streaming"
+      ]
+    },
+    {
+      "id": "CORE-CAP-003",
+      "module": "core_operations.py",
+      "section": "3.3.4",
+      "level": "MUST",
+      "title": "Extended agent card operations return error when not supported",
+      "description": "If AgentCard.capabilities.extendedAgentCard is false or not present, GetExtendedAgentCard MUST return UnsupportedOperationError.",
+      "expected_behavior": "UnsupportedOperationError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#334-capability-validation",
+      "tags": [
+        "core",
+        "capability",
+        "agent_card"
+      ]
+    },
+    {
+      "id": "CORE-CAP-004",
+      "module": "core_operations.py",
+      "section": "3.3.4",
+      "level": "MUST",
+      "title": "Required extension missing returns ExtensionSupportRequiredError",
+      "description": "When a client requests use of an extension marked as required=true but the client does not declare support, the agent MUST return ExtensionSupportRequiredError.",
+      "expected_behavior": "ExtensionSupportRequiredError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#334-capability-validation",
+      "tags": [
+        "core",
+        "capability",
+        "extension"
+      ]
+    },
+    {
+      "id": "CORE-MULTI-001a",
+      "module": "core_operations.py",
+      "section": "3.4.1",
+      "level": "MUST",
+      "title": "Generated contextId must be included in response",
+      "description": "If an agent generates a new contextId, it MUST be included in the response (either Task or Message).",
+      "expected_behavior": "Generated contextId present in response",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#341-context-identifier-semantics",
+      "tags": [
+        "core",
+        "multi_turn",
+        "context"
+      ]
+    },
+    {
+      "id": "CORE-MULTI-002a",
+      "module": "core_operations.py",
+      "section": "3.4.1",
+      "level": "MUST",
+      "title": "Agent rejects unacceptable client-provided contextId",
+      "description": "If an agent cannot accept a client-provided contextId, it MUST reject the request with an error and MUST NOT generate a new contextId for the response.",
+      "expected_behavior": "Error returned when client contextId not accepted",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#341-context-identifier-semantics",
+      "tags": [
+        "core",
+        "multi_turn",
+        "context",
+        "error"
+      ]
+    },
+    {
+      "id": "CORE-MULTI-003",
+      "module": "core_operations.py",
+      "section": "3.4.2",
+      "level": "MUST",
+      "title": "Agent generates unique taskId for new tasks",
+      "description": "Agents MUST generate a unique taskId for each new task they create. The generated taskId MUST be included in the Task object.",
+      "expected_behavior": "Task contains server-generated unique taskId",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#342-task-identifier-semantics",
+      "tags": [
+        "core",
+        "multi_turn",
+        "task_id"
+      ]
+    },
+    {
+      "id": "CORE-MULTI-004",
+      "module": "core_operations.py",
+      "section": "3.4.2",
+      "level": "MUST",
+      "title": "Agent returns TaskNotFoundError for invalid taskId in message",
+      "description": "When a client includes a taskId in a Message that does not correspond to an existing task, agents MUST return TaskNotFoundError.",
+      "expected_behavior": "TaskNotFoundError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#342-task-identifier-semantics",
+      "tags": [
+        "core",
+        "multi_turn",
+        "task_id",
+        "error"
+      ]
+    },
+    {
+      "id": "CORE-MULTI-005",
+      "module": "core_operations.py",
+      "section": "3.4.3",
+      "level": "MUST",
+      "title": "Agent infers contextId from task when only taskId provided",
+      "description": "Agents MUST infer contextId from the task if only taskId is provided.",
+      "expected_behavior": "contextId inferred from referenced task",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#343-multi-turn-conversation-patterns",
+      "tags": [
+        "core",
+        "multi_turn",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "CORE-MULTI-006",
+      "module": "core_operations.py",
+      "section": "3.4.3",
+      "level": "MUST",
+      "title": "Agent rejects mismatching contextId and taskId",
+      "description": "Agents MUST reject messages containing mismatching contextId and taskId (i.e., the provided contextId is different from that of the referenced Task).",
+      "expected_behavior": "Error returned for mismatching contextId/taskId",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#343-multi-turn-conversation-patterns",
+      "tags": [
+        "core",
+        "multi_turn",
+        "error",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "CORE-HIST-002",
+      "module": "core_operations.py",
+      "section": "3.2.4",
+      "level": "MUST",
+      "title": "History length does not exceed requested historyLength",
+      "description": "The server MUST NOT return more messages than the provided historyLength value.",
+      "expected_behavior": "History message count is at most historyLength",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#324-history-length-semantics",
+      "tags": [
+        "core",
+        "get_task",
+        "history",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "DM-TASK-001",
+      "module": "data_model.py",
+      "section": "4.1.1",
+      "level": "MUST",
+      "title": "Task object contains required fields",
+      "description": "A Task object MUST contain required fields: id and status as defined in the Protocol Buffer definition.",
+      "expected_behavior": "Task objects include all required fields",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#411-task",
+      "tags": [
+        "data_model",
+        "task"
+      ]
+    },
+    {
+      "id": "DM-TASK-002",
+      "module": "data_model.py",
+      "section": "4.1.3",
+      "level": "MUST",
+      "title": "TaskState uses valid enumeration values",
+      "description": "TaskState values MUST be one of the defined enumeration values: submitted, working, input_required, auth_required, completed, failed, canceled, rejected.",
+      "expected_behavior": "Only valid TaskState enum values used",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#413-taskstate",
+      "tags": [
+        "data_model",
+        "task",
+        "enum"
+      ]
+    },
+    {
+      "id": "DM-MSG-001",
+      "module": "data_model.py",
+      "section": "4.1.4",
+      "level": "MUST",
+      "title": "Message contains required fields",
+      "description": "A Message object MUST contain required fields: role, parts, and messageId as defined in the Protocol Buffer definition.",
+      "expected_behavior": "Message objects include all required fields",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#414-message",
+      "tags": [
+        "data_model",
+        "message"
+      ]
+    },
+    {
+      "id": "DM-MSG-002",
+      "module": "data_model.py",
+      "section": "4.1.5",
+      "level": "MUST",
+      "title": "Role uses valid enumeration values",
+      "description": "Role values MUST be one of the defined values: user or agent.",
+      "expected_behavior": "Only valid Role enum values used",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#415-role",
+      "tags": [
+        "data_model",
+        "message",
+        "enum"
+      ]
+    },
+    {
+      "id": "DM-PART-001",
+      "module": "data_model.py",
+      "section": "4.1.6",
+      "level": "MUST",
+      "title": "Part uses oneof semantics",
+      "description": "A Part object MUST contain exactly one of: text, file (raw bytes or URL reference), or data (structured JSON).",
+      "expected_behavior": "Part contains exactly one content type",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#416-part",
+      "tags": [
+        "data_model",
+        "part"
+      ]
+    },
+    {
+      "id": "DM-ART-001",
+      "module": "data_model.py",
+      "section": "4.1.7",
+      "level": "MUST",
+      "title": "Artifact contains required fields",
+      "description": "An Artifact object MUST contain required fields: artifactId and parts as defined in the Protocol Buffer definition.",
+      "expected_behavior": "Artifact objects include all required fields",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#417-artifact",
+      "tags": [
+        "data_model",
+        "artifact"
+      ]
+    },
+    {
+      "id": "DM-STATUS-001",
+      "module": "data_model.py",
+      "section": "4.1.2",
+      "level": "MUST",
+      "title": "TaskStatus contains required state field",
+      "description": "A TaskStatus object MUST contain the state field with a valid TaskState value.",
+      "expected_behavior": "TaskStatus includes state field",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#412-taskstatus",
+      "tags": [
+        "data_model",
+        "task",
+        "status"
+      ]
+    },
+    {
+      "id": "DM-SERIAL-001",
+      "module": "data_model.py",
+      "section": "5.5",
+      "level": "MUST",
+      "title": "JSON serialization uses camelCase field names",
+      "description": "All JSON serializations of the A2A protocol data model MUST use camelCase naming for field names, not snake_case.",
+      "expected_behavior": "All JSON field names use camelCase",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#55-json-field-naming-convention",
+      "tags": [
+        "data_model",
+        "serialization"
+      ]
+    },
+    {
+      "id": "DM-SERIAL-002",
+      "module": "data_model.py",
+      "section": "5.5",
+      "level": "MUST",
+      "title": "Enum values use ProtoJSON string representation",
+      "description": "Enum values MUST be represented according to the ProtoJSON specification as their string names as defined in the Protocol Buffer definition (typically SCREAMING_SNAKE_CASE).",
+      "expected_behavior": "Enum values serialized as proto string names",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#55-json-field-naming-convention",
+      "tags": [
+        "data_model",
+        "serialization",
+        "enum"
+      ]
+    },
+    {
+      "id": "DM-SERIAL-003",
+      "module": "data_model.py",
+      "section": "5.6.1",
+      "level": "MUST",
+      "title": "Timestamps use ISO 8601 format in UTC",
+      "description": "Timestamps MUST be represented as ISO 8601 formatted strings in UTC timezone. Timestamps MUST NOT include timezone offsets other than 'Z'.",
+      "expected_behavior": "Timestamps formatted as ISO 8601 with Z suffix",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#561-timestamps",
+      "tags": [
+        "data_model",
+        "serialization",
+        "timestamp"
+      ]
+    },
+    {
+      "id": "DM-SERIAL-004",
+      "module": "data_model.py",
+      "section": "5.7",
+      "level": "MUST",
+      "title": "Required fields must be present in messages",
+      "description": "Fields marked with REQUIRED field_behavior annotation MUST be present and set in valid messages. Arrays marked as required MUST contain at least one element.",
+      "expected_behavior": "Required fields present and set",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#57-field-presence-and-optionality",
+      "tags": [
+        "data_model",
+        "validation"
+      ]
+    },
+    {
+      "id": "BIND-EQUIV-001",
+      "module": "interop.py",
+      "section": "5.1",
+      "level": "MUST",
+      "title": "All supported protocols provide identical functionality",
+      "description": "When an agent supports multiple protocols, all supported protocols MUST provide the same set of operations and capabilities.",
+      "expected_behavior": "Same operations available across all bindings",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#51-functional-equivalence-requirements",
+      "tags": [
+        "interop",
+        "equivalence",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "BIND-EQUIV-002",
+      "module": "interop.py",
+      "section": "5.1",
+      "level": "MUST",
+      "title": "All bindings return semantically equivalent results",
+      "description": "All supported protocols MUST return semantically equivalent results for the same requests.",
+      "expected_behavior": "Same request produces equivalent results across bindings",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#51-functional-equivalence-requirements",
+      "tags": [
+        "interop",
+        "equivalence",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "BIND-EQUIV-003",
+      "module": "interop.py",
+      "section": "5.1",
+      "level": "MUST",
+      "title": "All bindings map errors consistently",
+      "description": "All supported protocols MUST map errors consistently using appropriate protocol-specific codes.",
+      "expected_behavior": "Errors mapped consistently across bindings",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#51-functional-equivalence-requirements",
+      "tags": [
+        "interop",
+        "equivalence",
+        "error",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "BIND-EQUIV-004",
+      "module": "interop.py",
+      "section": "5.1",
+      "level": "MUST",
+      "title": "All bindings support same authentication schemes",
+      "description": "All supported protocols MUST support the same authentication schemes declared in the AgentCard.",
+      "expected_behavior": "Same auth schemes across all bindings",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#51-functional-equivalence-requirements",
+      "tags": [
+        "interop",
+        "equivalence",
+        "auth",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "BIND-FIELD-001",
+      "module": "interop.py",
+      "section": "5.2",
+      "level": "MUST",
+      "title": "Agents must declare all supported protocols in AgentCard",
+      "description": "Agents MUST declare all supported protocols in their AgentCard.",
+      "expected_behavior": "All supported protocols listed in AgentCard",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#52-protocol-selection-and-negotiation",
+      "tags": [
+        "interop",
+        "declaration"
+      ]
+    },
+    {
+      "id": "PUSH-CREATE-001",
+      "module": "push_notifications.py",
+      "section": "3.1.7",
+      "level": "MUST",
+      "title": "CreatePushNotificationConfig establishes webhook endpoint",
+      "description": "The CreatePushNotificationConfig operation MUST establish a webhook endpoint for task update notifications.",
+      "expected_behavior": "Webhook endpoint created and config returned with ID",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#317-create-push-notification-config",
+      "tags": [
+        "push_notification",
+        "create",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-CREATE-002",
+      "module": "push_notifications.py",
+      "section": "3.1.7",
+      "level": "MUST",
+      "title": "Push config persists until task completion or deletion",
+      "description": "The push notification configuration MUST persist until task completion or explicit deletion.",
+      "expected_behavior": "Config persists across multiple task updates",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#317-create-push-notification-config",
+      "tags": [
+        "push_notification",
+        "create",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-GET-001",
+      "module": "push_notifications.py",
+      "section": "3.1.8",
+      "level": "MUST",
+      "title": "GetPushNotificationConfig returns configuration details",
+      "description": "The GetPushNotificationConfig operation MUST return configuration details including webhook URL and notification settings.",
+      "expected_behavior": "Full configuration details returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#318-get-push-notification-config",
+      "tags": [
+        "push_notification",
+        "get",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-GET-002",
+      "module": "push_notifications.py",
+      "section": "3.1.8",
+      "level": "MUST",
+      "title": "GetPushNotificationConfig fails for nonexistent config",
+      "description": "The GetPushNotificationConfig operation MUST fail if the configuration does not exist or the client lacks access.",
+      "expected_behavior": "Error returned for nonexistent config",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#318-get-push-notification-config",
+      "tags": [
+        "push_notification",
+        "get",
+        "error",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-LIST-001",
+      "module": "push_notifications.py",
+      "section": "3.1.9",
+      "level": "MUST",
+      "title": "ListPushNotificationConfigs returns all active configs",
+      "description": "The ListPushNotificationConfig operation MUST return all active push notification configurations for the specified task.",
+      "expected_behavior": "All active configs returned for task",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#319-list-push-notification-configs",
+      "tags": [
+        "push_notification",
+        "list",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-DEL-001",
+      "module": "push_notifications.py",
+      "section": "3.1.10",
+      "level": "MUST",
+      "title": "DeletePushNotificationConfig permanently removes config",
+      "description": "The DeletePushNotificationConfig operation MUST permanently remove the specified push notification configuration.",
+      "expected_behavior": "Config permanently removed, no further notifications",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#3110-delete-push-notification-config",
+      "tags": [
+        "push_notification",
+        "delete",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-DEL-002",
+      "module": "push_notifications.py",
+      "section": "3.1.10",
+      "level": "MUST",
+      "title": "DeletePushNotificationConfig is idempotent",
+      "description": "The DeletePushNotificationConfig operation MUST be idempotent - multiple deletions of the same config have the same effect.",
+      "expected_behavior": "Repeated deletions succeed without error",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#3110-delete-push-notification-config",
+      "tags": [
+        "push_notification",
+        "delete",
+        "idempotent",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "PUSH-DELIVER-001",
+      "module": "push_notifications.py",
+      "section": "4.3.3",
+      "level": "MUST",
+      "title": "Agent includes authentication in webhook requests",
+      "description": "The agent MUST include authentication credentials in the webhook request headers as specified in the PushNotificationConfig.authentication field.",
+      "expected_behavior": "Webhook requests include configured auth credentials",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#433-push-notification-payload",
+      "tags": [
+        "push_notification",
+        "delivery",
+        "auth"
+      ]
+    },
+    {
+      "id": "PUSH-DELIVER-002",
+      "module": "push_notifications.py",
+      "section": "4.3.3",
+      "level": "MUST",
+      "title": "Agent attempts delivery at least once per webhook",
+      "description": "Agents MUST attempt delivery at least once for each configured webhook.",
+      "expected_behavior": "At-least-once delivery attempted",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#433-push-notification-payload",
+      "tags": [
+        "push_notification",
+        "delivery"
+      ]
+    },
+    {
+      "id": "PUSH-DELIVER-003",
+      "module": "push_notifications.py",
+      "section": "4.3.3",
+      "level": "MUST",
+      "title": "Webhook payload uses StreamResponse format",
+      "description": "The webhook payload MUST use the StreamResponse format containing exactly one of: task, message, statusUpdate, or artifactUpdate.",
+      "expected_behavior": "Payload is valid StreamResponse with single field",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#433-push-notification-payload",
+      "tags": [
+        "push_notification",
+        "delivery",
+        "format"
+      ]
+    },
+    {
+      "id": "STREAM-ORDER-001",
+      "module": "streaming.py",
+      "section": "3.5.2",
+      "level": "MUST",
+      "title": "Events delivered in generation order",
+      "description": "All implementations MUST deliver events in the order they were generated. Events MUST NOT be reordered during transmission.",
+      "expected_behavior": "Events arrive in generation order",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#352-streaming-event-delivery",
+      "tags": [
+        "streaming",
+        "ordering",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-ORDER-002",
+      "module": "streaming.py",
+      "section": "3.5.2",
+      "level": "MUST",
+      "title": "Events broadcast to all active streams",
+      "description": "When multiple streams are active for a task, events MUST be broadcast to all active streams for that task.",
+      "expected_behavior": "All active streams receive the same events",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#352-streaming-event-delivery",
+      "tags": [
+        "streaming",
+        "multi_stream",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-ORDER-003",
+      "module": "streaming.py",
+      "section": "3.5.2",
+      "level": "MUST",
+      "title": "Each stream receives same events in same order",
+      "description": "Each stream MUST receive the same events in the same order.",
+      "expected_behavior": "Event ordering consistent across all streams",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#352-streaming-event-delivery",
+      "tags": [
+        "streaming",
+        "multi_stream",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-ORDER-004",
+      "module": "streaming.py",
+      "section": "3.5.2",
+      "level": "MUST",
+      "title": "Closing one stream does not affect others",
+      "description": "Closing one stream MUST NOT affect other active streams for the same task.",
+      "expected_behavior": "Other streams continue when one closes",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#352-streaming-event-delivery",
+      "tags": [
+        "streaming",
+        "multi_stream",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-SUB-001",
+      "module": "streaming.py",
+      "section": "3.1.6",
+      "level": "MUST",
+      "title": "SubscribeToTask returns Task as first event",
+      "description": "The SubscribeToTask operation MUST return a Task object as the first event in the stream, representing the current state of the task at the time of subscription.",
+      "expected_behavior": "First event is a Task object with current state",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#316-subscribe-to-task",
+      "tags": [
+        "streaming",
+        "subscribe",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-SUB-002",
+      "module": "streaming.py",
+      "section": "3.1.6",
+      "level": "MUST",
+      "title": "SubscribeToTask stream terminates at terminal state",
+      "description": "The SubscribeToTask stream MUST terminate when the task reaches a terminal state (completed, failed, canceled, or rejected).",
+      "expected_behavior": "Stream closes at terminal state",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#316-subscribe-to-task",
+      "tags": [
+        "streaming",
+        "subscribe",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-SUB-003",
+      "module": "streaming.py",
+      "section": "3.1.6",
+      "level": "MUST",
+      "title": "SubscribeToTask rejects terminal tasks",
+      "description": "SubscribeToTask MUST return UnsupportedOperationError when attempted on a task that is in a terminal state.",
+      "expected_behavior": "UnsupportedOperationError returned for terminal task",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#316-subscribe-to-task",
+      "tags": [
+        "streaming",
+        "subscribe",
+        "error",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "STREAM-SUB-004",
+      "module": "streaming.py",
+      "section": "3.1.6",
+      "level": "MUST",
+      "title": "SubscribeToTask returns TaskNotFoundError for invalid task",
+      "description": "SubscribeToTask MUST return TaskNotFoundError when the task ID does not exist or is not accessible.",
+      "expected_behavior": "TaskNotFoundError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#316-subscribe-to-task",
+      "tags": [
+        "streaming",
+        "subscribe",
+        "error"
+      ]
+    },
+    {
+      "id": "VER-CLIENT-001",
+      "module": "versioning.py",
+      "section": "3.6.1",
+      "level": "MUST",
+      "title": "Clients must send A2A-Version header with each request",
+      "description": "Clients MUST send the A2A-Version header with each request to maintain compatibility after an agent upgrades.",
+      "expected_behavior": "A2A-Version header present in every request",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#361-client-responsibilities",
+      "tags": [
+        "versioning",
+        "client"
+      ]
+    },
+    {
+      "id": "VER-SERVER-001",
+      "module": "versioning.py",
+      "section": "3.6.2",
+      "level": "MUST",
+      "title": "Agent processes requests using requested version semantics",
+      "description": "Agents MUST process requests using the semantics of the requested A2A-Version (matching Major.Minor).",
+      "expected_behavior": "Request processed per requested version",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#362-server-responsibilities",
+      "tags": [
+        "versioning",
+        "server",
+        "multi_operation"
+      ]
+    },
+    {
+      "id": "VER-SERVER-002",
+      "module": "versioning.py",
+      "section": "3.6.2",
+      "level": "MUST",
+      "title": "Agent returns VersionNotSupportedError for unsupported version",
+      "description": "If the version is not supported by the interface, agents MUST return a VersionNotSupportedError.",
+      "expected_behavior": "VersionNotSupportedError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#362-server-responsibilities",
+      "tags": [
+        "versioning",
+        "server",
+        "error"
+      ]
+    },
+    {
+      "id": "VER-SERVER-003",
+      "module": "versioning.py",
+      "section": "3.6.2",
+      "level": "MUST",
+      "title": "Agent interprets empty version header as 0.3",
+      "description": "Agents MUST interpret an empty A2A-Version value as version 0.3.",
+      "expected_behavior": "Empty version treated as 0.3",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#362-server-responsibilities",
+      "tags": [
+        "versioning",
+        "server",
+        "default"
+      ]
+    },
+    {
+      "id": "VER-CLIENT-002",
+      "module": "versioning.py",
+      "section": "3.6",
+      "level": "MUST",
+      "title": "Patch version numbers must not affect negotiation",
+      "description": "Patch version numbers MUST NOT be considered when clients and servers negotiate protocol versions. Patch version numbers SHOULD NOT be used in requests, responses and Agent Cards.",
+      "expected_behavior": "Patch versions ignored in negotiation",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#36-versioning",
+      "tags": [
+        "versioning"
+      ]
+    }
+  ],
+  "agent_card_all_requirements": [
+    {
+      "id": "CARD-DISC-001",
+      "module": "agent_card.py",
+      "section": "8.1",
+      "level": "MUST",
+      "title": "Agent Card must be available",
+      "description": "A2A Servers MUST make an Agent Card available describing the server's identity, capabilities, skills, and interaction requirements.",
+      "expected_behavior": "Agent Card retrievable by clients",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#81-purpose",
+      "tags": [
+        "agent_card",
+        "discovery"
+      ]
+    },
+    {
+      "id": "CARD-PROTO-001",
+      "module": "agent_card.py",
+      "section": "8.3",
+      "level": "MUST",
+      "title": "AgentCard must properly declare supported protocols",
+      "description": "The AgentCard MUST properly declare supported protocols.",
+      "expected_behavior": "Supported protocols declared in AgentCard",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#83-protocol-declaration-requirements",
+      "tags": [
+        "agent_card",
+        "protocol"
+      ]
+    },
+    {
+      "id": "CARD-PROTO-002",
+      "module": "agent_card.py",
+      "section": "8.3.1",
+      "level": "MUST",
+      "title": "Each interface must declare transport and URL",
+      "description": "Each interface in supportedInterfaces MUST accurately declare its transport protocol and URL.",
+      "expected_behavior": "Each interface has accurate transport and URL",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#831-supported-interfaces-declaration",
+      "tags": [
+        "agent_card",
+        "protocol",
+        "interface"
+      ]
+    },
+    {
+      "id": "CARD-STRUCT-001",
+      "module": "agent_card.py",
+      "section": "4.4.1",
+      "level": "MUST",
+      "title": "AgentCard contains required fields",
+      "description": "An AgentCard MUST contain all required fields as defined in the Protocol Buffer definition including name, description, supportedInterfaces, capabilities, and skills.",
+      "expected_behavior": "All required AgentCard fields present",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#441-agentcard",
+      "tags": [
+        "agent_card",
+        "structure"
+      ]
+    },
+    {
+      "id": "CARD-EXT-001",
+      "module": "agent_card.py",
+      "section": "3.1.11",
+      "level": "MUST",
+      "title": "Extended Agent Card requires authentication",
+      "description": "The client MUST authenticate the GetExtendedAgentCard request using one of the schemes declared in the public AgentCard.",
+      "expected_behavior": "Authenticated request returns extended card",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#3111-get-extended-agent-card",
+      "tags": [
+        "agent_card",
+        "extended",
+        "auth"
+      ]
+    },
+    {
+      "id": "CARD-EXT-002",
+      "module": "agent_card.py",
+      "section": "3.1.11",
+      "level": "MUST",
+      "title": "Extended card not configured returns specific error",
+      "description": "If the agent declares support but has not configured an extended card, it MUST return ExtendedAgentCardNotConfiguredError.",
+      "expected_behavior": "ExtendedAgentCardNotConfiguredError returned",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#3111-get-extended-agent-card",
+      "tags": [
+        "agent_card",
+        "extended",
+        "error"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-001",
+      "module": "agent_card.py",
+      "section": "8.4.1",
+      "level": "MUST",
+      "title": "Agent Card canonicalized with JCS before signing",
+      "description": "Before signing, the Agent Card content MUST be canonicalized using the JSON Canonicalization Scheme (JCS) as defined in RFC 8785.",
+      "expected_behavior": "Agent Card canonicalized per RFC 8785 before signing",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#841-canonicalization-requirements",
+      "tags": [
+        "agent_card",
+        "signing",
+        "jcs",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-002",
+      "module": "agent_card.py",
+      "section": "8.4.1",
+      "level": "MUST",
+      "title": "Signatures field excluded from signed content",
+      "description": "The signatures field itself MUST be excluded from the content being signed to avoid circular dependencies.",
+      "expected_behavior": "Signatures field excluded from signing payload",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#841-canonicalization-requirements",
+      "tags": [
+        "agent_card",
+        "signing",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-003",
+      "module": "agent_card.py",
+      "section": "8.4.2",
+      "level": "MUST",
+      "title": "Signature protected header includes required parameters",
+      "description": "The JWS protected header MUST include alg (algorithm) and kid (key ID) parameters.",
+      "expected_behavior": "Protected header contains alg and kid",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#842-signature-format",
+      "tags": [
+        "agent_card",
+        "signing",
+        "jws",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-SIGN-004",
+      "module": "agent_card.py",
+      "section": "8.4.3",
+      "level": "MUST",
+      "title": "Expired or revoked keys must not be used for verification",
+      "description": "Expired or revoked keys MUST NOT be used for signature verification.",
+      "expected_behavior": "Expired/revoked keys rejected during verification",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#843-signature-verification",
+      "tags": [
+        "agent_card",
+        "signing",
+        "security",
+        "not_automatable"
+      ]
+    },
+    {
+      "id": "CARD-CACHE-001",
+      "module": "agent_card.py",
+      "section": "8.6.1",
+      "level": "SHOULD",
+      "title": "Agent Card endpoint includes Cache-Control header",
+      "description": "Agent Card HTTP endpoints SHOULD include a Cache-Control response header with a max-age directive appropriate for the agent's expected update frequency.",
+      "expected_behavior": "Cache-Control header with max-age present in response",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#861-server-requirements",
+      "tags": [
+        "agent_card",
+        "caching",
+        "server"
+      ]
+    },
+    {
+      "id": "CARD-CACHE-002",
+      "module": "agent_card.py",
+      "section": "8.6.1",
+      "level": "SHOULD",
+      "title": "Agent Card endpoint includes ETag header",
+      "description": "Agent Card HTTP endpoints SHOULD include an ETag response header derived from the Agent Card's version field or a hash of the card content.",
+      "expected_behavior": "ETag header present in response",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#861-server-requirements",
+      "tags": [
+        "agent_card",
+        "caching",
+        "server"
+      ]
+    },
+    {
+      "id": "CARD-CACHE-003",
+      "module": "agent_card.py",
+      "section": "8.6.1",
+      "level": "MAY",
+      "title": "Agent Card endpoint may include Last-Modified header",
+      "description": "Agent Card HTTP endpoints MAY include a Last-Modified response header.",
+      "expected_behavior": "Last-Modified header present in response",
+      "spec_url": "https://a2a-protocol.org/latest/specification/#861-server-requirements",
+      "tags": [
+        "agent_card",
+        "caching",
+        "server"
+      ]
+    }
+  ]
+}

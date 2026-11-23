@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0",
+  "freeze_date": "2026-12-02",
+  "suites": [
+    "rfc8785",
+    "nist_acvp",
+    "a2a_tck",
+    "owasp_src055"
+  ],
+  "file_count": 50,
+  "files": [
+    {
+      "suite": "a2a_tck",
+      "relative_path": "a2a_tck/a2a_tck_must_requirements.json",
+      "upstream_url": "https://github.com/a2aproject/a2a-tck/tree/1.0.0.alpha3/tck/requirements",
+      "pinned_ref": "1.0.0.alpha3@5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+      "license_spdx": "Apache-2.0",
+      "sha256": "6571a7e0412b115b01408e2903bb22fe9c5c95f8785d1ad65015db7ed0ceca6f",
+      "byte_length": 75491
+    },
+    {
+      "suite": "a2a_tck",
+      "relative_path": "a2a_tck/agent_card_tck_cases.json",
+      "upstream_url": "https://github.com/a2aproject/a2a-tck/tree/1.0.0.alpha3/tests/compatibility/agent_card",
+      "pinned_ref": "1.0.0.alpha3@5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+      "license_spdx": "Apache-2.0",
+      "sha256": "24c8243914242990c48a9d12091ad6aa8c55a58f2202ffb87462f06b88404867",
+      "byte_length": 3025
+    },
+    {
+      "suite": "a2a_tck",
+      "relative_path": "a2a_tck/agent_card_vectors.json",
+      "upstream_url": "https://github.com/a2aproject/a2a-tck/blob/1.0.0.alpha3/specification/specification.md",
+      "pinned_ref": "1.0.0.alpha3@5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+      "license_spdx": "Apache-2.0",
+      "sha256": "6abb28326becdec092534a0be59ba487bbcb51817292ced7af7dcbe87e7f2d00",
+      "byte_length": 8195
+    },
+    {
+      "suite": "a2a_tck",
+      "relative_path": "a2a_tck/specification/a2a.json",
+      "upstream_url": "https://github.com/a2aproject/a2a-tck/blob/1.0.0.alpha3/specification/a2a.json",
+      "pinned_ref": "1.0.0.alpha3@5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+      "license_spdx": "Apache-2.0",
+      "sha256": "175ae531b96bcd6bb809bacdbe5c696a0b45d2cca3af3c94a4f03cde51be9793",
+      "byte_length": 73848
+    },
+    {
+      "suite": "a2a_tck",
+      "relative_path": "a2a_tck/specification/version.json",
+      "upstream_url": "https://github.com/a2aproject/a2a-tck/blob/1.0.0.alpha3/specification/version.json",
+      "pinned_ref": "1.0.0.alpha3@5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+      "license_spdx": "Apache-2.0",
+      "sha256": "1142ba3d73bd5e028c154f389cbd105c7a18ed537d477d71fcb284f32d5ca037",
+      "byte_length": 384
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/ML-DSA-keyGen-FIPS204/expectedResults.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/ML-DSA-keyGen-FIPS204/expectedResults.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "78a5215b92e139df520db9868f80a4cd0a31dd02fb2f6c9c1443f44271fdef97",
+      "byte_length": 135778
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/ML-DSA-keyGen-FIPS204/prompt.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/ML-DSA-keyGen-FIPS204/prompt.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "dd708de4ffc9fba3b7c5fced3ffc9836f7b57f0b55c57d25c51af786df240aec",
+      "byte_length": 1638
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/ML-DSA-sigGen-FIPS204/expectedResults.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/ML-DSA-sigGen-FIPS204/expectedResults.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "f7515473f454c1cbc6c1d33bc31417fece6843eb4f63445e707dd51a8eaa7402",
+      "byte_length": 192810
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/ML-DSA-sigGen-FIPS204/prompt.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/ML-DSA-sigGen-FIPS204/prompt.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "f58610ae5717a1ee428c283bbbbcc0bde912119ec0f06797f224d0099b5fda83",
+      "byte_length": 402420
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/ML-DSA-sigVer-FIPS204/expectedResults.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/ML-DSA-sigVer-FIPS204/expectedResults.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "3b5dc1a26a63e568906f30a466d1dfe9c652e24f843e14e8b453392f6031ba66",
+      "byte_length": 4069
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/ML-DSA-sigVer-FIPS204/prompt.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/ML-DSA-sigVer-FIPS204/prompt.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "4924c3e4c38ea772c6af7e8f4221bc7743a1a3ae0e642adcdc2f67def1ec36d8",
+      "byte_length": 954441
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/SLH-DSA-keyGen-FIPS205/expectedResults.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-keyGen-FIPS205/expectedResults.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "6c82cc65530810951bb1979be8a2a39e765b562e7ec01fec82de9ac040c789d1",
+      "byte_length": 2973
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/SLH-DSA-keyGen-FIPS205/prompt.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-keyGen-FIPS205/prompt.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "022b2726a1edd2b17ae073b839de7b2cade8d04272d81bedb3049dfef39e86fe",
+      "byte_length": 2459
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/SLH-DSA-sigGen-FIPS205/expectedResults.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-sigGen-FIPS205/expectedResults.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "b81612a6d9ca5f03e219fdbd20df5dd04844331a61804fb0c2d1820c382b0a8f",
+      "byte_length": 500952
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/SLH-DSA-sigGen-FIPS205/prompt.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-sigGen-FIPS205/prompt.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "52a340d41f7ea0fa0d9d54e22dbb3109bef2b565953bacd53e99c0e3e23670eb",
+      "byte_length": 195542
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/SLH-DSA-sigVer-FIPS205/expectedResults.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-sigVer-FIPS205/expectedResults.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "d2b93c088869d688731c195d036b60cd0ec242fdaab2fdbbb4ec5e07b5deb6f6",
+      "byte_length": 2651
+    },
+    {
+      "suite": "nist_acvp",
+      "relative_path": "nist_acvp/SLH-DSA-sigVer-FIPS205/prompt.json",
+      "upstream_url": "https://github.com/usnistgov/ACVP-Server/tree/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-sigVer-FIPS205/prompt.json",
+      "pinned_ref": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "license_spdx": "NIST-PD",
+      "sha256": "d11514d0f42ba3c5579ac6786a68b56ea6b9352cf3f8ff38b5846c98d05d4469",
+      "byte_length": 1041989
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/asi01_asi10_catalog.json",
+      "upstream_url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17+b234defdc908",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "828fc9cf971e249222dd3b09926b88ff6452f76341e9a0b22fb5df5f8eb02791",
+      "byte_length": 113038
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/asi01_asi10_crosswalk.md",
+      "upstream_url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17+b234defdc908",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "2282a325bdafc8c266331d8582974ee7f86f06afc78bc6c39e8950aabd72c3f1",
+      "byte_length": 11227
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI01.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI01.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "3e54fac4977de887d7e76600ea7a30ff46b4b993a28816423a135854a1777f5d",
+      "byte_length": 51058
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI02.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI02.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "9a6425133564a62cea75a2895733dcff7bef7c1347207d2bccfca757a3444c96",
+      "byte_length": 48094
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI03.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI03.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "d1f30ca455147dfd601e228b3d620507e82aa0f09ec5e52e413849f1a182ccc4",
+      "byte_length": 50609
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI04.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI04.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "39895876c93d0f424cb47e93f734c04920f5329df7686da2fd8e56b5afbb60f5",
+      "byte_length": 43897
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI05.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI05.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "b7a7e6e14836275d45cc68d4062c334b155d1f1bf1f14f797b347ee97c4cd192",
+      "byte_length": 44118
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI06.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI06.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "7c54b6f8fb9738a177997772b0c5d78cd1a60c817792b036b489d29586f31099",
+      "byte_length": 42125
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI07.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI07.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "d02b13fcb7bb1fe189fc5d47df87f4d4ad816966d14f267abcc22e8df9a1d09a",
+      "byte_length": 40672
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI08.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI08.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "26901fa0635393c987aca2c0dcd87630e8f74beff28c2d1012ea30ba402b9dab",
+      "byte_length": 40661
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI09.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI09.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "b5db42b06925abb36c9bfa725b829a53d0732115566965cf548867dbfe962f44",
+      "byte_length": 43196
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_entries/ASI10.json",
+      "upstream_url": "https://github.com/genai-security-project/crosswalk/blob/b0b85c5b725be135248869e642efe5e4eca6ea17/data/entries/ASI10.json",
+      "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "9274a9276f1b10bfa763ac82b19bcc62e29d39f5987d4cd8dd30776c0e2a878d",
+      "byte_length": 44713
+    },
+    {
+      "suite": "owasp_src055",
+      "relative_path": "owasp_src055/crosswalk_web_summary.json",
+      "upstream_url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "pinned_ref": "crosswalk-web-sha256:e5a50552cb527f49da00bcd4ea206348db3331b41c6f4fa2dd7e7dc5904cf17d",
+      "license_spdx": "CC-BY-SA-4.0",
+      "sha256": "4b0d150ea7a6517612fcd78c6686153adaa14c050a3e4f739a68fc8f6178c5f8",
+      "byte_length": 3956
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/rfc8785_appendix_b_and_utf16.json",
+      "upstream_url": "https://www.rfc-editor.org/rfc/rfc8785.txt",
+      "pinned_ref": "rfc8785-sha256:be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642",
+      "license_spdx": "BSD-3-Clause",
+      "sha256": "73669e74d2998867238f74eaccea61163e77bcf0664b2637adf48ee2820107fc",
+      "byte_length": 6120
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/README.md",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/README.md",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "d580b04eafeb74973b6cc3e2b2b572a21a992078846652bd3153e7a624dd6b97",
+      "byte_length": 7311
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/input/arrays.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/input/arrays.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "e503b6d71d1afa595b1c74b1016445c944cd89f90418066b23de1aeda7d17563",
+      "byte_length": 62
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/input/french.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/input/french.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "03676a951cd8753ac62589f72eb2105cc782c33425418cfe1d517c111f6e5d5a",
+      "byte_length": 150
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/input/structures.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/input/structures.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "d66893805be1784116af50af3110d08766c70a6b4aad93374723f72346e7aaa6",
+      "byte_length": 138
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/input/unicode.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/input/unicode.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "4621864e014d4a805a563f55b9ea20aba4a2d2dc09c7394f625496998c00702c",
+      "byte_length": 39
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/input/values.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/input/values.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "c4a041b503d6bc236036ef44db4dac499272f60fc22c40dc3b7a54870ba6f1c3",
+      "byte_length": 182
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/input/weird.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/input/weird.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "a3a905266bd4a49a969274ea69baa14ee0c4af0ead926d6fa2b7612b4af75387",
+      "byte_length": 283
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/outhex/arrays.txt",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/outhex/arrays.txt",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "e306733ca0c4da9595ebde73ec072c295f0f9ef0ea4aafc4d267d4a04988ce51",
+      "byte_length": 96
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/outhex/french.txt",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/outhex/french.txt",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "f9b3bfd02f4edb3d0a490703153d836db5ef0a2090a9d3357f8c3797e12d4043",
+      "byte_length": 390
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/outhex/structures.txt",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/outhex/structures.txt",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "063ee2bc6fa3f93b2a131841315f5c6bf0ea7488cc128ed50725cabf5592627b",
+      "byte_length": 294
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/outhex/unicode.txt",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/outhex/unicode.txt",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "0471fea1ee0464e435a52510d2c187b216961a5e7e2665402ea9cb1cd04109ca",
+      "byte_length": 90
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/outhex/values.txt",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/outhex/values.txt",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "b8b802e82c7bead71a7841e27fce6458854eb72ffd0eaa51474dacdfbdf3ab64",
+      "byte_length": 354
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/outhex/weird.txt",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/outhex/weird.txt",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "1061953c7129537722f9abd9de321c787120489d09f34ba58065bd77ba9a84b6",
+      "byte_length": 642
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/output/arrays.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/output/arrays.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "099601b171cafed97c333f8878d68e7f8c8f795412adb34b2fdcf0e7c7beac42",
+      "byte_length": 32
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/output/french.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/output/french.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "d99d0ebdcb0033cb858cfa830ae46bc0fb3309413b271f1da828c89901a27ed5",
+      "byte_length": 130
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/output/structures.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/output/structures.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "605f65004ec2db7692522a0852c22f1c989e036d547e88963d1a3143cf3195d5",
+      "byte_length": 98
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/output/unicode.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/output/unicode.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "0d99aad92a125196ff887876643fd3206786a84ddce2cee52ba4ad256d2381d3",
+      "byte_length": 30
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/output/values.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/output/values.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "2d5e01a318d0f0879ab568c4be289c8b1f64ef8921a53c6277d5e069978baacb",
+      "byte_length": 118
+    },
+    {
+      "suite": "rfc8785",
+      "relative_path": "rfc8785/testdata/output/weird.json",
+      "upstream_url": "https://github.com/cyberphone/json-canonicalization/blob/32a48195b9b20fe67b1795e39e4509f14d860b45/testdata/output/weird.json",
+      "pinned_ref": "32a48195b9b20fe67b1795e39e4509f14d860b45",
+      "license_spdx": "Apache-2.0",
+      "sha256": "6af595a9aa80110b964b4de3f82a05fa6ae7423005019bacfa2620dddc4e94d1",
+      "byte_length": 214
+    }
+  ]
+}

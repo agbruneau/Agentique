@@ -1,0 +1,159 @@
+{
+  "vsId": 53,
+  "algorithm": "SLH-DSA",
+  "mode": "sigVer",
+  "revision": "FIPS205",
+  "isSample": true,
+  "testGroups": [
+    {
+      "tgId": 1,
+      "tests": [
+        {
+          "tcId": 1,
+          "testPassed": false
+        },
+        {
+          "tcId": 2,
+          "testPassed": true
+        },
+        {
+          "tcId": 3,
+          "testPassed": false
+        },
+        {
+          "tcId": 4,
+          "testPassed": false
+        },
+        {
+          "tcId": 9,
+          "testPassed": true
+        }
+      ]
+    },
+    {
+      "tgId": 2,
+      "tests": [
+        {
+          "tcId": 15,
+          "testPassed": false
+        },
+        {
+          "tcId": 16,
+          "testPassed": false
+        },
+        {
+          "tcId": 17,
+          "testPassed": false
+        },
+        {
+          "tcId": 19,
+          "testPassed": true
+        },
+        {
+          "tcId": 25,
+          "testPassed": true
+        }
+      ]
+    },
+    {
+      "tgId": 13,
+      "tests": [
+        {
+          "tcId": 169,
+          "testPassed": false
+        },
+        {
+          "tcId": 170,
+          "testPassed": false
+        },
+        {
+          "tcId": 171,
+          "testPassed": false
+        },
+        {
+          "tcId": 174,
+          "testPassed": true
+        },
+        {
+          "tcId": 180,
+          "testPassed": true
+        }
+      ]
+    },
+    {
+      "tgId": 19,
+      "tests": [
+        {
+          "tcId": 253,
+          "testPassed": false
+        },
+        {
+          "tcId": 254,
+          "testPassed": false
+        },
+        {
+          "tcId": 255,
+          "testPassed": false
+        },
+        {
+          "tcId": 258,
+          "testPassed": true
+        },
+        {
+          "tcId": 266,
+          "testPassed": true
+        }
+      ]
+    },
+    {
+      "tgId": 20,
+      "tests": [
+        {
+          "tcId": 267,
+          "testPassed": false
+        },
+        {
+          "tcId": 268,
+          "testPassed": true
+        },
+        {
+          "tcId": 269,
+          "testPassed": false
+        },
+        {
+          "tcId": 270,
+          "testPassed": false
+        },
+        {
+          "tcId": 271,
+          "testPassed": true
+        }
+      ]
+    },
+    {
+      "tgId": 31,
+      "tests": [
+        {
+          "tcId": 421,
+          "testPassed": false
+        },
+        {
+          "tcId": 422,
+          "testPassed": true
+        },
+        {
+          "tcId": 423,
+          "testPassed": false
+        },
+        {
+          "tcId": 424,
+          "testPassed": true
+        },
+        {
+          "tcId": 425,
+          "testPassed": false
+        }
+      ]
+    }
+  ]
+}

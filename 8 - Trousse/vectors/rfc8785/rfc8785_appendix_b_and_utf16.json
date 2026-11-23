@@ -1,0 +1,193 @@
+{
+  "source": "RFC 8785: JSON Canonicalization Scheme (JCS), June 2020",
+  "src_077_sha256": "be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642",
+  "appendix_b_number_samples": [
+    {
+      "ieee754_hex": "0000000000000000",
+      "expected_json": "0",
+      "must_reject": false,
+      "comment": "Zero"
+    },
+    {
+      "ieee754_hex": "8000000000000000",
+      "expected_json": "0",
+      "must_reject": false,
+      "comment": "Minus zero"
+    },
+    {
+      "ieee754_hex": "0000000000000001",
+      "expected_json": "5e-324",
+      "must_reject": false,
+      "comment": "Min pos number"
+    },
+    {
+      "ieee754_hex": "8000000000000001",
+      "expected_json": "-5e-324",
+      "must_reject": false,
+      "comment": "Min neg number"
+    },
+    {
+      "ieee754_hex": "7fefffffffffffff",
+      "expected_json": "1.7976931348623157e+308",
+      "must_reject": false,
+      "comment": "Max pos number"
+    },
+    {
+      "ieee754_hex": "ffefffffffffffff",
+      "expected_json": "-1.7976931348623157e+308",
+      "must_reject": false,
+      "comment": "Max neg number"
+    },
+    {
+      "ieee754_hex": "4340000000000000",
+      "expected_json": "9007199254740992",
+      "must_reject": false,
+      "comment": "Max pos int (1)"
+    },
+    {
+      "ieee754_hex": "c340000000000000",
+      "expected_json": "-9007199254740992",
+      "must_reject": false,
+      "comment": "Max neg int (1)"
+    },
+    {
+      "ieee754_hex": "4430000000000000",
+      "expected_json": "295147905179352830000",
+      "must_reject": false,
+      "comment": "~2**68 (2)"
+    },
+    {
+      "ieee754_hex": "7fffffffffffffff",
+      "expected_json": null,
+      "must_reject": true,
+      "comment": "NaN (3)"
+    },
+    {
+      "ieee754_hex": "7ff0000000000000",
+      "expected_json": null,
+      "must_reject": true,
+      "comment": "Infinity (3)"
+    },
+    {
+      "ieee754_hex": "44b52d02c7e14af5",
+      "expected_json": "9.999999999999997e+22",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "44b52d02c7e14af6",
+      "expected_json": "1e+23",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "44b52d02c7e14af7",
+      "expected_json": "1.0000000000000001e+23",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "444b1ae4d6e2ef4e",
+      "expected_json": "999999999999999700000",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "444b1ae4d6e2ef4f",
+      "expected_json": "999999999999999900000",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "444b1ae4d6e2ef50",
+      "expected_json": "1e+21",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "3eb0c6f7a0b5ed8c",
+      "expected_json": "9.999999999999997e-7",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "3eb0c6f7a0b5ed8d",
+      "expected_json": "0.000001",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "41b3de4355555553",
+      "expected_json": "333333333.3333332",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "41b3de4355555554",
+      "expected_json": "333333333.33333325",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "41b3de4355555555",
+      "expected_json": "333333333.3333333",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "41b3de4355555556",
+      "expected_json": "333333333.3333334",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "41b3de4355555557",
+      "expected_json": "333333333.33333343",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "becbf647612f3696",
+      "expected_json": "-0.0000033333333333333333",
+      "must_reject": false,
+      "comment": ""
+    },
+    {
+      "ieee754_hex": "43143ff3c1cb0959",
+      "expected_json": "1424953923781206.2",
+      "must_reject": false,
+      "comment": "Round to even (4)"
+    }
+  ],
+  "section_3_2_2_and_3_2_4_sample": {
+    "note": "Matches RFC 8785 § 3.2.2/3.2.3 & cyberphone/json-canonicalization testdata/output/values.json + outhex/values.txt (RFC 8785 § 3.2.4 prose hex dump had one extra 0x33 byte typo).",
+    "input_json_text": "{\n\"numbers\": [333333333.33333329, 1E30, 4.50,\n2e-3, 0.000000000000000000000000001],\n\"string\": \"\\u20ac$\\u000F\\u000aA'\\u0042\\u0022\\u005c\\\\\\\"\\/\",\n\"literals\": [null, true, false]\n}",
+    "expected_canonical": "{\"literals\":[null,true,false],\"numbers\":[333333333.3333333,1e+30,4.5,0.002,1e-27],\"string\":\"€$\\u000f\\nA'B\\\"\\\\\\\\\\\"/\"}",
+    "expected_utf8_hex": "7b226c69746572616c73223a5b6e756c6c2c747275652c66616c73655d2c226e756d62657273223a5b3333333333333333332e333333333333332c31652b33302c342e352c302e3030322c31652d32375d2c22737472696e67223a22e282ac245c75303030665c6e4127425c225c5c5c5c5c222f227d"
+  },
+  "section_3_2_3_utf16_sorting": {
+    "input_json_text": "{\n\"\\u20ac\": \"Euro Sign\",\n\"\\r\": \"Carriage Return\",\n\"\\ufb33\": \"Hebrew Letter Dalet With Dagesh\",\n\"1\": \"One\",\n\"\\ud83d\\ude00\": \"Emoji: Grinning Face\",\n\"\\u0080\": \"Control\",\n\"\\u00f6\": \"Latin Small Letter O With Diaeresis\"\n}",
+    "expected_value_order": [
+      "Carriage Return",
+      "One",
+      "Control",
+      "Latin Small Letter O With Diaeresis",
+      "Euro Sign",
+      "Emoji: Grinning Face",
+      "Hebrew Letter Dalet With Dagesh"
+    ],
+    "expected_canonical": "{\"\\r\":\"Carriage Return\",\"1\":\"One\",\"\":\"Control\",\"ö\":\"Latin Small Letter O With Diaeresis\",\"€\":\"Euro Sign\",\"😀\":\"Emoji: Grinning Face\",\"דּ\":\"Hebrew Letter Dalet With Dagesh\"}"
+  },
+  "utf16_bmp_vs_astral_edge_case": {
+    "note": "UTF-16 code unit sorting puts U+1F600 (D83D DE00) BEFORE U+FF00 (FF00), unlike UTF-8/UTF-32.",
+    "input": {
+      "＀": "bmp-ff00",
+      "😀": "astral-1f600"
+    },
+    "expected_key_order": [
+      "😀",
+      "＀"
+    ],
+    "expected_canonical": "{\"😀\":\"astral-1f600\",\"＀\":\"bmp-ff00\"}"
+  }
+}

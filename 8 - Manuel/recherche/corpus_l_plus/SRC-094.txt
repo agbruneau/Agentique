@@ -1,0 +1,2838 @@
+Binomial confidence intervals for rare events:
+importance of defining margin of error relative to
+magnitude of proportion
+Owen McGrath ∗
+Kevin Burke†
+January 17, 2024
+Abstract
+Confidence interval performance is typically assessed in terms of two criteria: cov-
+erage probability and interval width (or margin of error). In this paper, we assess
+the performance of four common proportion interval estimators: the Wald, Clopper-
+Pearson (exact), Wilson and Agresti-Coull, in the context of rare-event probabilities.
+We define the interval precision in terms of a relative margin of error which en-
+sures consistency with the magnitude of the proportion. Thus, confidence interval
+estimators are assessed in terms of achieving a desired coverage probability whilst
+simultaneously satisfying the specified relative margin of error. We illustrate the im-
+portance of considering both coverage probability and relative margin of error when
+estimating rare-event proportions, and show that within this framework, all four in-
+terval estimators perform somewhat similarly for a given sample size and confidence
+level. We identify relative margin of error values that result in satisfactory coverage
+whilst being conservative in terms of sample size requirements, and hence suggest a
+range of values that can be adopted in practice. The proposed relative margin of
+error scheme is evaluated analytically, by simulation, and by application to a number
+of recent studies from the literature.
+Keywords: Binomial, confidence interval, proportion, rare event, coverage, margin
+of error.
+MSC 2010 subject classification: 62F25
+∗Corresponding author. University of Limerick, Ireland; owen.mcgrath@ul.ie
+†University of Limerick, Ireland; kevin.burke@ul.ie
+The corresponding author acknowledges the financial support of Limerick Institute of Technol-
+ogy.
+1
+arXiv:2109.02516v4 [stat.AP] 15 Jan 2024
+
+1
+Introduction
+A fundamental problem in applied statistics is the construction of a confidence interval (CI)
+for a binomial proportion, p. In many applications, one deals with a large population within
+which an event of interest is rare. For example, in clinical statistics, p could represent the
+proportion of patients exhibiting treatment side effects; such a scenario arose in the context
+of COVID-19 vaccination (Polack et al., 2020). In manufacturing, the number of defective
+components is often very small relative to the large number of components produced.
+Indeed, many manufacturers now achieve a defect rate of 3.4 in one million (Evans and
+Lindsay, 2015; Woodall and Montgomery, 2014). In the aviation industry, strict regulations
+ensure that safety incidents are deemed as a rare occurrence, for example, Boeing (2022)
+shows that very few incidents occur within a large sample of flights. (Note: we revisit
+the COVID-19 and aviation examples as case studies in Section 8, along with an ADHD
+medication example.)
+Ascertaining the order of magnitude of p is important in “large populations” such as
+the aforementioned. Indeed, with population sizes in the millions (or billions), there is a
+big practical difference between p = 10−4 and p = 10−6 (but such differences are much less
+important/detectable in smaller populations). For example, in high-throughput manufac-
+turing, a difference in the order of magnitude in the failure rate has significant implications
+for the number of defects and/or product returns. From a purely pragmatic perspective,
+note that ten thousand observations are needed to obtain, on average, one event when
+p = 10−4. However, while it is expected that relatively large samples will be required to
+adequately estimate the order of magnitude of a small proportion, p, practitioners will
+need more specific guidance on the sample size requirements; this is not well covered by
+the existing literature.
+The problem of constructing a CI for p has a wide literature, including several compar-
+ative studies, for example, Gon¸calves et al. (2012), Leemis and Trivedi (1996), Newcombe
+(1998) and Pires and Amado (2008). These works assess various proportion estimators,
+for example, Pires and Amado (2008) compare twenty different methods. However, these
+works, and the literature in general, focus primarily on situations where p is moderately
+large. As such, there is much less guidance in the existing literature regarding the scenario
+where p is small. Furthermore, there is little discussion of relative margin of error, which is
+needed in this small p setting. Whereas relative margin of error is not a prominent feature
+of CI assessment for moderately large proportions, it is essential that the margin of error
+scales with the magnitude of p for rare events. Therefore, we consider a valid CI estimator
+as one that achieves a desired coverage probability whilst also maintaining a specified rel-
+ative margin of error, and, in contrast to much of the existing literature, we focus on the
+small p regime of p ∈[10−6, 10−1], where relative margin of error is especially important.
+For our analysis, we consider the most widely used binomial confidence interval, the
+Wald interval, along with three other common intervals: Clopper-Pearson (exact), Wilson
+2
+
+(score) and Agresti-Coull (adjusted Wald) (Agresti and Coull, 1998; Clopper and Pearson,
+1934; Wilson, 1927). Despite its widespread use, the Wald interval is known to produce
+inadequate coverage when p is near 0 or 1, and/or the sample size, n, is small. It has
+also been well documented that this interval suffers from erratic coverage, even when p is
+moderate (Agresti and Coull, 1998; Blyth and Still, 1983; B¨ohning, 1994; Vollset, 1993).
+Brown et al. (2001) show that this coverage fluctuation occurs for large n and recommend
+against using the Wald interval in practice. Newcombe (1998) also discourages the use
+of the Wald interval and suggests that its use be restricted to sample size planning. In
+recent work, Andersson (2023) discusses the deficiencies of the Wald interval and examines
+its coverage and noncoverage performance relative to the Wilson interval.
+Whilst the
+criticisms of the Wald interval can be justified, particularly when n is small, it is worth
+noting that the issue of erratic coverage is not unique to the Wald interval; this behaviour
+is related to the binomial distribution and we illustrate (in Section 5) that it occurs for all
+four interval estimators.
+A common approach in determining sample sizes is to set the (Wald) CI margin of
+error equal to a specified value, ϵ, and then solve for n. In order to maintain consistency
+between ϵ and p, we consider the relative margin of error, ϵR = ϵ/p, and obtain sample sizes
+by setting ϵR to a specified value and solving each interval equation for n. Lwanga and
+Lemeshow (1991) provide (Wald) sample size calculations for fixed and relative margins
+of error in the range [0.01, 0.5] for p ∈[0.05, 0.95]. However, in our work, we focus on the
+small-p regime of p ∈[10−6, 10−1] and provide computed coverage probabilities relating to
+ϵR ∈[0.05, 0.75]. In this regime, it is important to consider relative precision over fixed
+precision (fixed ϵ value). For example, ϵ = 0.1 might be considered as reasonable precision
+for p = 0.4, but could equally be considered reasonable for p = 0.2.
+However, where
+ϵ = 0.05 could be considered as a valid margin of error for p = 10−1, it is far too large for
+a success probability of the order p = 10−3. Ultimately, we find that ϵR ∈[0.1, 0.5] yields
+a good compromise between estimation precision, coverage performance, and sample size
+requirements.
+In this work, we illustrate the importance of using relative margin of error in a small
+p regime, recommend practical tolerances for both relative margin of error and coverage
+probability, and provide comparisons in terms of sample size requirements. We show that
+when CI performance is assessed in terms of both coverage probability and relative margin
+of error, the four CI estimators perform similarly in many cases. Although the differences
+between the estimators is less pronounced when considering the relative margin of error, we
+show that the Wilson (score) interval provides the best overall performance. In addition, we
+provide practical guidance on the sample sizes required to attain reasonable CI performance
+for various (small) values of p. We anticipate that this guidance will be useful to researchers
+working in real-world small-p applications.
+The remainder of this article is organised as follows. In Section 2, we review some of
+the proportion estimators proposed in the literature, focusing, in particular, on the Wald,
+3
+
+Clopper-Pearson, Wilson and Agresti-Coull intervals. Section 3 provides details of the CI
+evaluation criteria used in the work. Section 4 briefly discusses the initial estimation of p
+for sample size planning, then moves on to using relative margin of error in such planning,
+and CI performance evaluation. Sections 5 and 6 illustrate the importance of employing
+a relative margin of error scheme in CI assessment. Section 7 presents the challenge of
+estimating a rare-event proportion using a small sample size. In Section 8, we present a
+number of case studies to demonstrate the relative margin of error schemes in assessing the
+validity of estimated intervals. Finally, the article concludes in Section 9 with a discussion.
+2
+Binomial Proportion Interval Estimators
+Several methods have been devised to estimate a binomial proportion, p, including the
+Wald, Clopper-Pearson, Wilson, Agresti-Coull, Jeffreys, arcsine transformation, Jeffreys’
+Prior and the likelihood ratio interval. A range of ensemble approaches have also been
+considered, for example, Kabaila et al. (2016), Park and Leemis (2019) and Turek and
+Fletcher (2012). In this work we assess the performance of the Wald, Clopper-Pearson,
+Wilson and Agresti-Coull intervals in standard form, i.e., without modification or applica-
+tion of continuity correction.
+2.1
+Details of the Intervals Considered in our Work
+The Wald interval is included in this study as it is the most widely known and used estima-
+tor. We assess the Clopper and Pearson (1934) interval as it is an exact method, i.e., unlike
+the other estimators used in this work, it is based directly on the cumulative probabilities
+of the binomial distribution. For this reason it is often regarded as the “gold standard”
+in binomial proportion estimation (Agresti and Coull, 1998; Gon¸calves et al., 2012; New-
+combe, 1998). Where the Wald interval is known to produce inadequate coverage for small
+n or p, the Clopper-Pearson interval is generally regarded as being overly conservative, un-
+less n is quite large (Agresti and Coull, 1998; Brown et al., 2001; Newcombe, 1998; Thulin,
+2014). The intervals proposed by Wilson (1927) and Agresti and Coull (1998) both offer a
+compromise between the (liberal) Wald interval, and the (conservative) Clopper-Pearson
+interval.
+We assess the performance of the Wilson and Agresti-Coull intervals in this work given
+their popularity within the literature. For example, Brown et al. (2001) recommend the
+Wilson or Jeffreys interval for small n. For larger n, they recommend the Wilson, Jeffreys
+or Agresti-Coull intervals, preferring the Agresti-Coull method for its simpler presentation.
+Agresti and Coull (1998) recommend the Wilson interval, and add that the 95% Wilson
+interval has similar performance to their method. Newcombe (1998) remarks on the mid-p
+method (an exact method closely related to the Clopper-Pearson method), and the Wilson
+method, noting the Wilson’s advantage of having a simple closed form. Vollset (1993)
+4
+
+too recommends the mid-p and Wilson (uncorrected and continuity corrected) intervals,
+along with the Clopper-Pearson interval, stating that those four intervals can be safely
+used at all times. Pires and Amado (2008) recommend the continuity corrected arcsine
+transformation or the Agresti-Coull method. Krishnamoorthy and Peng (2007) show that
+when controlling for Type I and Type II error rates in one-sided hypotheses, the Wilson
+(score) and exact (Clopper-Pearson) tests require the same sample size. However, for two-
+sided hypothesis applications, and for constructing confidence intervals, they recommend
+the Wilson method.
+Listed below are the Wald (W), Clopper-Pearson (CP), Wilson (WS) and Agresti-Coull
+(AC) interval formulas, where zα/2 denotes the 1 −α/2 quantile of the standard normal
+distribution and x is the number of successes in a sample size of size n.
+W:
+bp ± zα/2
+r
+bp(1 −bp)
+n
+, where bp = x/n.
+CP:
+Lower: Beta (α/2; nbp, n(1 −bp) + 1) , Upper: Beta (1 −α/2; nbp + 1, n(1 −bp)) ,
+where Beta(·) is the quantile function of the Beta distribution.
+WS:
+bp + z2
+α/2/2n ± zα/2
+q
+bp(1 −bp)/n + z2
+α/2/4n2
+1 + z2
+α/2/n
+.
+AC:
+ep ± zα/2
+r
+ep(1 −ep)
+en
+, where ep =
+nbp + z2
+α/2/2
+n + z2
+α/2
+and en = n + z2
+α/2.
+2.2
+Estimating Proportions when No Events are Observed
+To provide an initial flavour of the challenging nature of estimating rare-event probabilities,
+we first consider the situation where no events are observed in the sample. Letting x denote
+the number of observed events, for very small p, it will be quite likely in small samples
+that x = 0, and, hence, bp = 0/n = 0. For example, consider an event that occurs with
+probability p = 10−3, and consider the case where the sample size is n ≤100 such that
+Pr(X = 0) > 0.9, i.e., it is very likely that no events will be observed in this sample.
+In this scenario where no events are observed, the resulting intervals are very conser-
+vative for small n. For example, with a sample of size n = 100, the following intervals
+are obtained: W: [0, 0], CP: [0, 0.0362], WS: [0, 0.0370], AC:[−0.0074, 0.0444]. Clearly the
+Wald interval is degenerate, and the remaining intervals are far too wide to be useful in
+small p settings where a good estimate of magnitude is required; the issue is more acute
+for smaller proportions, e.g., the probability of observing no events is 0.99 if p = 10−4 and
+0.999 if p = 10−5. As it is clear that a sample size of n = 100 will not suffice, further
+guidance is required in these scenarios, which we provide in the sequel. Of course, the
+required precision is analysis specific: the above intervals would be perfectly adequate if
+one was only interested in assessing if p < 0.1, for example. However, for situations where
+5
+
+it is important to determine the order of magnitude, such as assessing the failure rate
+in high-volume manufacturing, then sufficiently large samples will be required to gain a
+reasonable estimate of the order of magnitude of p.
+3
+Evaluation Criteria
+The most commonly used CI evaluation criteria are coverage probability and expected
+width (Gon¸calves et al., 2012) — and these are the criteria that we consider in this work.
+However, other performance metrics have been proposed. For example, Vos and Hudson
+(2005) interpret an interval as the non-rejected parameter values in a hypothesis test and
+discuss the p-confidence and p-bias criteria; Newcombe (1998) presents a criterion using
+noncoverage as an indicator of location; and Park and Leemis (2019) adopt an ensemble
+approach and use root mean squared error and mean absolute deviation to measure CI
+performance.
+3.1
+Coverage Probability
+The coverage probability can be interpreted as the computed interval’s long-run percentage
+inclusion of the unknown parameter. Denoting Lx and Ux as the lower and upper CI bounds
+formed with x successes (suppressing the dependence on p and the significance level, α),
+the expected coverage probability, which we denote CPr, for a fixed parameter p, is given
+by
+CPr(n, p) =
+n
+X
+x=0
+n
+x
+
+px(1 −p)n−x1(Lx ≤p ≤Ux),
+(1)
+where 1(·) is an indicator function that takes the value 1 when its argument is true, and 0
+otherwise.
+3.2
+Expected Width
+The expected width, which we denote EW, is given by
+EW(n, p) =
+n
+X
+x=0
+n
+x
+
+px(1 −p)n−x(Ux −Lx),
+(2)
+and the expected margin of error, EMoE, is then given as EMoE(n, p) = EW(n, p)/2.
+6
+
+4
+Calculating Sample Size
+The first problem in CI estimation is determining the sample size required to achieve
+a desired estimation precision.
+There have been a range of sample size determination
+methods discussed in the literature, e.g., Gon¸calves et al. (2012), Korn (1986) and Liu and
+Bailey (2002), but here we adopt the common approach of deriving the sample size from
+the CI formula with fixed ϵR = ϵ/p. Used in conjunction with the Wald margin of error,
+one obtains
+n =
+&
+z2
+α/2(1 −p∗)
+ϵR2p∗
+'
+,
+(3)
+where ⌈·⌉denotes the ceiling function, and p∗denotes an anticipated value of p, i.e., an
+initial estimate. (Sample size formulas for the Clopper-Pearson, Wilson and Agresti-Coull
+intervals are given in Appendix A.)
+4.1
+Initial Estimate of p
+Selecting a value for p∗is required to make equation (3) operational, and this is an inherent
+practical challenge in any such sample size calculation. In some situations, it might be
+possible to overcome this problem by utilizing subject matter knowledge or results from a
+previous study. If no previous information is available, a common approach is to consider
+the value of p∗= 0.5, but we do not adopt this approach here given that the focus of this
+work is on small/rare-event probabilities.
+In some situations one might be able to gain a reasonable estimate of p. Consider
+a manufacturing environment where, for example, past experience or consultation with
+process experts could provide an analyst with information on the order of magnitude of p.
+One may be able to deduce that the true proportion is more likely to be of the order 1 in
+10,000 rather than 1 in 1,000. Such insight could be sufficient in setting a reasonable value
+for p∗and subsequently determining an appropriate sample size. Such initial estimation of
+an unknown parameter is a topic worthy of further discussion but is beyond the scope of
+this work. Here the focus is on the performance of the intervals after an initial estimate
+has been obtained.
+4.2
+Margin of Error Relative to p
+The required precision is largely analysis dependent; what could be considered reasonable
+accuracy in one setting might be completely inappropriate in another. Although a relative
+margin of error scheme cannot be rigidly prescribed, we suggest a general scheme to avoid
+intervals that are too wide to be practically useful, or indeed intervals that are too narrow,
+in the sense that a reasonable estimate could have been obtained using fewer resources.
+7
+
+To ensure that the margin of error is not larger than the order of magnitude of p∗, we
+impose ϵR ≤1. Thus, one could consider 0 ≤ϵR ≤1 as a plausible margin of error scheme.
+However, considering ϵR values too close to the bound of 1 results in very wide intervals,
+whilst considering ϵR values too close to the bound of 0 results in very narrow intervals. As
+ϵR approaches zero, an increasingly large sample size is required, and such high precision
+is not likely to be required for many studies. Therefore, we suggest ϵR ∈[0.1, 0.5] as a
+reasonable scheme. This scheme ensures that the interval is not impractically wide, nor
+excessively narrow (in terms of demanding very large sample sizes), and we show in Section
+6 that acceptable coverage is achieved for this range of ϵR values.
+A comparison of calculated sample sizes corresponding to ϵR = 0.4 is provided in Table
+1. (Sample size values in this and subsequent tables are rounded to 2 significant digits.)
+We can see from Table 1 that the Wald, Wilson and Agresti-Coull sample sizes are similar
+across the p∗range, but the Clopper-Pearson sample sizes are approximately 40% larger
+which is indicative of this method’s conservatism. Note that Table 1 is only intended to
+provide an initial sense of the sample size requirements. However, final results can be found
+in Tables 10 and 11, and these account for the fact that empirical coverage for binomial
+proportion interval estimators is non-monotonic in the sample size (see Sections 5 and 6).
+Table 1: Sample size comparison for ϵR = 0.4
+p∗
+ϵ
+W
+CP
+WS
+AC
+10−1
+4.0 · 10−2
+2.2 · 102
+3.0 · 102
+2.2 · 102
+2.3 · 102
+10−2
+4.0 · 10−3
+2.4 · 103
+3.3 · 103
+2.5 · 103
+2.5 · 103
+10−3
+4.0 · 10−4
+2.4 · 104
+3.4 · 104
+2.5 · 104
+2.6 · 104
+10−4
+4.0 · 10−5
+2.4 · 105
+3.4 · 105
+2.5 · 105
+2.6 · 105
+10−5
+4.0 · 10−6
+2.4 · 106
+3.4 · 106
+2.5 · 106
+2.6 · 106
+10−6
+4.0 · 10−7
+2.4 · 107
+3.4 · 107
+2.5 · 107
+2.6 · 107
+Given that ϵR is a function of p∗, the above calculated sample sizes are only applicable
+to each specific p∗. Even if the true proportion p equals p∗(i.e., the initial estimate is
+perfect), bp will of course vary from sample to sample and may not equal p; hence, the
+realized relative margin of error will typically differ from ϵR.
+4.3
+ϵ-p∗Compatibility
+Next we illustrate the importance of defining the margin of error in relation to the magni-
+tude of the proportion. Consider the following fixed margin of error schemes:
+•
+Scheme 1: ϵ = 4 · 10−2, p∗= p
+•
+Scheme 2: ϵ = 4 · 10−2, p∗= 0.5
+•
+Scheme 3: ϵ = 4 · 10−4, p∗= p
+•
+Scheme 4: ϵ = 4 · 10−4, p∗= 0.5
+8
+
+Table 2 displays the calculated Wald sample sizes and coverage probabilities corresponding
+to the above margin of error schemes. (A comparison of Wald, Clopper-Pearson, Wilson
+and Agresti-Coull coverage probabilities for the above ϵ schemes is given in Appendix B.)
+Referring to Table 2, fixing ϵ = 4 · 10−2 and considering p∗= p (Scheme 1) creates sample
+sizes that reduce dramatically as a function of p. This results in coverage probabilities
+that are completely inadequate for p ≤10−2. In Scheme 2, both ϵ and p∗are fixed and
+this creates a constant sample size of n = 6 · 102.
+This sample size is reasonable for
+p = 10−1, but is insufficient for the remaining p values, which is reflected in the poor
+coverage performance.
+Scheme 3 is similar to Scheme 1, but here, ϵ is reduced to 4·10−4. This ϵ-p combination
+produces sufficient coverage for p ≥10−2, but deteriorates for the smaller p values. In
+Scheme 4, p∗is fixed at 0.5 and ϵ = 4 · 10−4, this results in a constant sample size of
+n = 6·106, which produces good coverage throughout the p range, particularly for p ≥10−5.
+Whilst the coverage is satisfactory in this scheme, the magnitude of ϵ is not compatible
+with all p values, particularly p = 10−1 and p ≤10−5. For p = 10−1 the resulting interval
+is [0.0996, 0.1004] which is too narrow in the sense that a reasonable interval could be
+obtained with a significantly reduced sample size. For p = 10−6 the interval is truncated
+at [0, 0.000401]. Here, even though the coverage is reasonable, the interval is too wide to
+be practically useful since its width is two orders of magnitude larger than p.
+Table 2: Wald-based sample size comparison - fixed ϵ
+p
+Margin of Error Scheme
+1
+2
+3
+4
+ϵ = 4 · 10−2
+ϵ = 4 · 10−2
+ϵ = 4 · 10−4
+ϵ = 4 · 10−4
+p∗= p
+p∗= 0.5
+p∗= p
+p∗= 0.5
+10−1
+2.2 · 102
+6.0 · 102
+2.2 · 106
+6.0 · 106
+(93.8)
+(94.5)
+(95.0)
+(95.0)
+10−2
+2.4 · 101
+6.0 · 102
+2.4 · 105
+6.0 · 106
+(21.4)
+(93.1)
+(95.0)
+(95.0)
+10−3
+3.0 · 100
+6.0 · 102
+2.4 · 104
+6.0 · 106
+(0.3)
+(45.2)
+(93.1)
+(95.0)
+10−4
+1.0 · 100
+6.0 · 102
+2.4 · 103
+6.0 · 106
+(0)
+(5.8)
+(21.3)
+(94.9)
+10−5
+1.0 · 100
+6.0 · 102
+2.4 · 102
+6.0 · 106
+(0)
+(0.6)
+(0.2)
+(94.9)
+10−6
+1.0 · 100
+6.0 · 102
+2.5 · 101
+6.0 · 106
+(0)
+(0.1)
+(0)
+(93.4)
+Wald 95% CI coverage shown in parentheses
+Coverage computed with p = p∗
+The Wald sample sizes and coverage probabilities associated with the relative margin of
+error schemes: ϵR ∈{0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.75} are given in Table 3.
+From Table 3, we see that by considering ϵ in relation to the magnitude of p, the
+coverage probabilities are reasonable across the p range, but now, the analyst must choose
+9
+
+Table 3: Wald-based sample size comparison - variable ϵ
+p∗
+ϵR
+0.05
+0.1
+0.2
+0.3
+0.4
+0.5
+0.75
+10−1
+1.4 · 104
+3.5 · 103
+8.6 · 102
+3.8 · 102
+2.2 · 102
+1.4 · 102
+6.2 · 101
+(94.9)
+(94.9)
+(95.0)
+(94.3)
+(93.8)
+(93.3)
+(94.7)
+10−2
+1.5 · 105
+3.8 · 104
+9.5 · 103
+4.2 · 103
+2.4 · 103
+1.5 · 103
+6.8 · 102
+(94.9)
+(94.9)
+(95.2)
+(94.0)
+(95.2)
+(92.5)
+(90.2)
+10−3
+1.5 · 106
+3.8 · 105
+9.6 · 104
+4.3 · 104
+2.4 · 104
+1.5 · 104
+6.8 · 103
+(94.9)
+(95.0)
+(95.0)
+(94.7)
+(93.1)
+(93.3)
+(90.4)
+10−4
+1.5 · 107
+3.8 · 106
+9.6 · 105
+4.3 · 105
+2.4 · 105
+1.5 · 105
+6.8 · 104
+(95.0)
+(95.0)
+(95.0)
+(94.7)
+(93.1)
+(93.3)
+(90.4)
+10−5
+1.5 · 108
+3.8 · 107
+9.6 · 106
+4.3 · 106
+2.4 · 106
+1.5 · 106
+6.8 · 105
+(95.0)
+(95.0)
+(95.0)
+(94.7)
+(93.1)
+(93.3)
+(90.4)
+10−6
+1.5 · 109
+3.8 · 108
+9.6 · 107
+4.3 · 107
+2.4 · 107
+1.5 · 107
+6.8 · 106
+(95.0)
+(95.0)
+(95.0)
+(94.7)
+(93.1)
+(93.3)
+(90.4)
+Wald 95% CI coverage shown in parentheses
+a scheme such that the resulting interval’s width is appropriate. For example, consider
+p∗= p = 10−1 and ϵR = 0.05 where the resulting interval is [0.095, 0.105]. This interval
+is very narrow and the large sample size of 1.4 · 104 reflects this quite stringent margin
+of error.
+Moving to ϵR = 0.75 has the advantage of significantly reducing the sample
+size, but, of course, the interval is significantly wider at [0.025, 0.175]. To obtain intervals
+that are neither too liberal nor too conservative, that are reasonable in terms of coverage
+performance, and which avoid excessively large sample sizes, we recommend ϵR ∈[0.1, 0.5]
+as a reasonable scheme.
+The coverage values for the Clopper-Pearson, Wilson and Agresti-Coull intervals are
+similar to those shown in Table 3 for ϵR ≤0.5. A comparison of coverage probabilities for
+ϵR = 0.75 is given in Appendix B.
+4.4
+Suitability of ϵR Scheme
+A range of qualifications/criteria are often used to check the validity of using approximate
+CI estimators. Fleiss et al. (2003) state that the normal distribution provides excellent
+approximations to exact binomial procedures when np ≥5 and n(1 −p) ≥5. Leemis and
+Trivedi (1996) also discuss the np ≥5 (or 10) and n(1 −p) ≥5 (or 10) qualification.
+We examine the proposed ϵR scheme to assess its compatibility with the qualification
+np∗≥a and n(1−p∗) ≥a, where a ∈{5, 10}, in relation to the Wald sample size equation.
+Multiplying equation (3) by p∗gives
+np∗=
+z2
+α/2(1 −p∗)
+ϵR2
+≥a =⇒ϵR ≤
+s
+z2
+α/2(1 −p∗)
+a
+.
+(4)
+For a given n, np∗< n(1 −p∗) when p∗< 0.5 and, therefore, equation (4) is sufficient in
+the small-p regime to ensure both np∗and n(1 −p∗) are greater than a. An evaluation
+10
+
+of ϵR for p∗∈[10−6, 10−1] and α ∈{0.1, 0.05, 0.01} is provided in Table 4, which shows
+that our suggested relative margin of error scheme, ϵR ∈[0.1, 0.5], lies below the threshold
+of equation (4). (The case of ϵR = 0.5 negligibly exceeds the threshold of 0.493 for p∗=
+10−1, α = 0.1.)
+Table 4: ϵR thresholds as per equation (4) for a ∈{5, 10}
+p∗
+a = 5
+a = 10
+α = 0.1
+α = 0.05
+α = 0.01
+α = 0.1
+α = 0.05
+α = 0.01
+10−1
+0.698
+0.832
+1.093
+0.493
+0.588
+0.773
+10−2
+0.732
+0.872
+1.146
+0.518
+0.617
+0.810
+10−3
+0.735
+0.876
+1.151
+0.520
+0.619
+0.814
+10−4
+0.736
+0.876
+1.152
+0.520
+0.620
+0.815
+10−5
+0.736
+0.877
+1.152
+0.520
+0.620
+0.815
+10−6
+0.736
+0.877
+1.152
+0.520
+0.620
+0.815
+4.5
+Tolerances for Assessing CI Performance
+In this section we suggest suitable tolerances for assessing interval performance in terms of
+coverage probability and relative margin of error. In relation to achieving a desired coverage
+probability, one usually considers (1−α)100±ϵ∗%, where ϵ∗denotes a predefined coverage
+tolerance. The definition of such a tolerance is dependent on the individual researcher and
+particular study, and is thus difficult to quantify. In one study (1 −α)100 ± 4% might
+be acceptable, whilst in another, one might require (1 −α)100 ± 0.5%. We suggest that
+ϵ∗∈{1, 2, 3} would be reasonable tolerances for most analyses, and as such, consider
+acceptable expected coverage probabilities as CPr ∈(1 −α)100 ± 3%, where CPr is
+described in equation (1).
+A tolerance is also necessary with regard to the relative margin of error. As with the
+coverage, the desired margin of error is dependent on the particular research question and
+hence can not be rigidly prescribed. However, as previously discussed, it is important that
+the magnitude of the margin of error reflect the magnitude of the estimated proportion.
+Table 5 provides suggested tolerances for the assessment of ϵR and CPr for (1 −α)100%
+confidence intervals which could be considered reasonable in most settings.
+Table 5: Coverage & relative margin of error tolerances
+Tolerance
+Coverage
+Relative MoE
+Target
+CPr ∈(1 −α)100 ± 1%
+ϵR ≤0.5
+Acceptable
+CPr ∈(1 −α)100 ± 2%
+ϵR ≤0.75∗
+Minimally acceptable
+CPr ∈(1 −α)100 ± 3%
+ϵR ≤1
+Unacceptable
+CPr /∈(1 −α)100 ± 3%
+ϵR > 1
+∗Considered acceptable as a compromise between ϵR ≤0.5 (desired) and ϵR ≤1 (limit)
+11
+
+5
+Relative Margin of Error Central to Performance
+Next we illustrate how the relative margin of error is fundamental to CI performance
+evaluation. We show that when a valid confidence interval is defined as achieving a desired
+coverage probability whilst simultaneously satisfying a minimum relative margin of error,
+the four interval estimators perform similarly for a given n-p∗-α combination.
+To demonstrate CI performance we consider the expected relative margin of error, which
+we define as ˜ϵR = EMoE/p, where EMoE is half of the expected width (see equation (2)).
+As discussed in Section 4.2, a relative margin of error exceeding 1 is not acceptable from
+a practical perspective, and, as per Section 4.4, we suggest that it should not exceed 0.5.
+240
+260
+97
+98
+99
+100
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Wald Interval
+260
+97
+98
+99
+100
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Clopper−Pearson Interval
+240
+97
+98
+99
+100
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Wilson Interval
+260
+97
+98
+99
+100
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Agresti−Coull Interval
+Figure 1: CPr versus ˜ϵR for p∗= p = 10−1, α = 0.01. Dashed (grey) line represents the
+nominal CPr value. Dot-dashed (red) lines represent the target CPr and ˜ϵR tolerances
+from Table 5. Sample size range is from n = 100, to n = 800, in steps of 20. Labels
+shown adjacent to data points depict the first n where both CPr and ˜ϵR requirements are
+satisfied. Additional data labels are referred to within the text.
+Figure 1 provides a 99% CI performance comparison for p∗= p = 10−1, and shows that
+the Wilson, Agresti-Coull and Clopper-Pearson intervals all achieve satisfactory coverage
+across the sample size range, whereas for n ≤260, the coverage of the Wald interval
+12
+
+oscillates around the lower limit of 98%.
+For example, the coverage is satisfactory at
+n = 240, but then falls below 98% at n = 260. This phenomenon of coverage oscillation
+relates to the discreteness of the binomial distribution and has been previously discussed
+in the literature, e.g., Agresti and Coull (1998), Andersson (2023), Blyth and Still (1983),
+Brown et al. (2001), and Vollset (1993). For a given p, the empirical coverage does converge
+to the (1−α)100% level with n as one would expect, but it does so in an oscillatory fashion
+for neighbouring values of n. Figures 1 and 2 show that all four estimators suffer from this
+erratic behaviour.
+Whilst the coverage performance of the Wald interval is inferior to the other three in-
+tervals for n < 240, none of the intervals satisfy the ˜ϵR ≤0.5 requirement at these lower
+sample sizes. Thus, by stipulating a minimum requirement for ˜ϵR, the poor coverage at
+small n is rendered irrelevant and the performance of the Wald interval is more comparable
+to the other three intervals when ˜ϵR ≤0.5.
+1600
+92
+93
+94
+95
+96
+97
+98
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Wald Interval
+2000
+92
+93
+94
+95
+96
+97
+98
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Clopper−Pearson Interval
+1600
+92
+93
+94
+95
+96
+97
+98
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Wilson Interval
+1800
+2600
+92
+93
+94
+95
+96
+97
+98
+0.00
+0.25
+0.50
+0.75
+1.00
+ε~R
+CPr
+Agresti−Coull Interval
+Figure 2: CPr versus ˜ϵR for p∗= p = 10−2, α = 0.05. Dashed (grey) line represents the
+nominal CPr value. Dot-dashed (red) lines represent the target CPr and ˜ϵR tolerances
+from Table 5. Sample size range is from n = 1,000, to n = 8,000, in steps of 200. Labels
+shown adjacent to data points depict the first n where both CPr and ˜ϵR requirements are
+satisfied. Additional data labels are referred to within the text.
+13
+
+A comparison of the performance of a 95% CI for p∗= p = 10−2 is given in Figure 2
+which shows that the Wald interval achieves ˜ϵR ≤0.5 for n ≥1,600. For n ≥1,600 the
+Wald interval encounters five sample sizes where the coverage drops below the lower limit
+of 94%. The Clopper-Pearson interval requires a sample size of n = 2,000 to satisfy both
+˜ϵR ≤0.5 and CPr ∈[94%, 96%], with the coverage exceeding the upper limit of 96% on
+seven occasions for n > 2,000. The Agresti-Coull interval performs very well for n ≥1, 800,
+with just one value (n = 2,600), failing to satisfy both CPr and ˜ϵR thereafter. The Wilson
+interval provides the best performance, satisfying both CPr and ˜ϵR requirements ∀n ≥
+1,600.
+Figures 1 and 2 highlight the similarities in performance when one considers ˜ϵR. In gen-
+eral, moderate-to-large sample sizes are required to satisfy both CPr and ˜ϵR criteria, and
+at these sample sizes the performance across the four intervals is reasonably comparable.
+6
+CI Performance Tables
+Tables 6 through 9 provide a 95% CI comparison for p∗= p = 10−1 and p∗= p = 10−6,
+across a range of sample sizes and further illustrate the performance similarities among the
+estimators. The table cells are colour coded according to the tolerances discussed in Table
+5: target (green), acceptable (yellow), minimally acceptable (orange) and unacceptable
+(red).
+We first consider p∗= p = 10−1 and 10 ≤n ≤140, with Table 6 showing that none of
+the intervals satisfy the desired CPr and ˜ϵR requirements simultaneously. The importance
+of considering the relative margin of error in CI evaluation is clearly evident. In several
+cases the coverage probability lies within the desired tolerance but the excessive relative
+margin of error renders the estimate impractical. For example, referring to the Wilson
+interval, CPr(20, 10−1) = 95.7%, however, ˜ϵR = 1.32 which is not acceptable.
+Table 6: 95% CI performance - p∗= p = 10−1, “small” n
+n
+W
+CP
+WS
+AC
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+10
+65.0
+1.40
+98.7
+2.12
+93.0
+1.85
+93.0
+2.11
+20
+87.6
+1.17
+98.9
+1.46
+95.7
+1.32
+95.7
+1.46
+30
+80.9
+1.01
+99.2
+1.18
+97.4
+1.07
+97.4
+1.16
+40
+91.4
+0.89
+97.0
+1.01
+94.3
+0.93
+95.8
+0.99
+50
+87.9
+0.81
+97.0
+0.90
+97.0
+0.83
+97.0
+0.88
+60
+94.1
+0.74
+97.2
+0.82
+95.2
+0.76
+95.2
+0.80
+70
+92.0
+0.69
+95.5
+0.76
+93.2
+0.70
+97.4
+0.73
+80
+90.0
+0.65
+97.7
+0.71
+96.3
+0.66
+96.3
+0.68
+90
+94.6
+0.61
+96.7
+0.66
+95.0
+0.62
+95.0
+0.64
+100
+93.2
+0.58
+95.6
+0.63
+93.6
+0.59
+97.2
+0.61
+110
+91.9
+0.55
+97.6
+0.60
+96.3
+0.56
+96.3
+0.58
+120
+95.4
+0.53
+96.8
+0.57
+95.4
+0.54
+95.4
+0.55
+130
+94.4
+0.51
+96.0
+0.55
+94.5
+0.52
+94.5
+0.53
+140
+93.5
+0.49
+96.7
+0.53
+93.5
+0.50
+96.7
+0.51
+14
+
+We see from Table 7 that by increasing n, ˜ϵR ≤0.5 is satisfied (at n = 150, the Clopper-
+Pearson interval marginally exceeds 0.5, but is less than 0.5 thereafter). Each interval
+encounters sample sizes where CPr exceeds the bounds of ±1%, but overall, CPr is sat-
+isfactory.
+Table 7: 95% CI performance - p∗= p = 10−1, “large” n
+n
+W
+CP
+WS
+AC
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+150
+92.6
+0.48
+97.2
+0.51
+96.0
+0.48
+96.0
+0.49
+160
+95.5
+0.46
+96.6
+0.49
+95.4
+0.47
+95.4
+0.47
+170
+94.8
+0.45
+96.0
+0.48
+94.6
+0.45
+94.6
+0.46
+180
+94.1
+0.43
+95.4
+0.46
+93.9
+0.44
+96.6
+0.45
+190
+93.4
+0.42
+96.1
+0.45
+96.1
+0.43
+96.1
+0.43
+200
+92.7
+0.41
+96.7
+0.44
+95.6
+0.42
+95.6
+0.42
+210
+95.3
+0.40
+96.2
+0.43
+95.1
+0.41
+95.1
+0.41
+220
+94.8
+0.39
+95.7
+0.42
+94.5
+0.40
+94.5
+0.40
+230
+94.3
+0.39
+96.4
+0.41
+94.0
+0.39
+96.4
+0.39
+240
+93.7
+0.38
+96.0
+0.40
+96.0
+0.38
+96.0
+0.38
+250
+93.2
+0.37
+96.6
+0.39
+95.6
+0.37
+95.6
+0.38
+260
+95.5
+0.36
+96.2
+0.38
+95.1
+0.36
+95.1
+0.37
+270
+95.0
+0.36
+95.8
+0.37
+94.7
+0.36
+94.7
+0.36
+280
+94.6
+0.35
+95.4
+0.37
+94.3
+0.35
+94.3
+0.36
+290
+94.2
+0.34
+96.1
+0.36
+96.1
+0.35
+96.1
+0.35
+300
+93.8
+0.34
+96.6
+0.35
+95.7
+0.34
+95.7
+0.34
+310
+93.3
+0.33
+96.3
+0.35
+95.4
+0.33
+95.4
+0.34
+320
+95.4
+0.33
+96.0
+0.34
+95.0
+0.33
+95.0
+0.33
+330
+95.1
+0.32
+95.7
+0.34
+94.7
+0.32
+94.7
+0.33
+340
+94.7
+0.32
+95.4
+0.33
+94.3
+0.32
+94.3
+0.32
+350
+94.4
+0.31
+96.0
+0.33
+96.0
+0.31
+96.0
+0.32
+As per Table 8, none of the intervals satisfy CPr ∈[94%, 96%] and ˜ϵR ≤0.5 for p∗=
+p = 10−6 and n ≤14 · 106. The Wilson method performs best in this scheme, and if the
+tolerances of CPr ∈[93%, 97%] and ˜ϵR ≤0.75 were considered, it would produce a valid
+interval ∀n.
+Referring to Table 9, for 15 · 106 ≤n ≤25 · 106 and p∗= p = 10−6, the Wald interval has
+the worst coverage, with four CPr values exceeding 95 ± 2%. The Wilson and Agresti-
+Coull intervals perform the best, but overall, all four intervals perform well in this large
+sample size scheme, particularly if the coverage tolerance was considered as CPr ∈95±2%.
+The CPr and ˜ϵR performance across the p∗range is given in Tables 10 and 11. Shown
+is the performance of each CI estimator at a selection of sample sizes of interest. The
+Wald, Wilson and Agresti-Coull methods perform similarly for a given n-p∗combination,
+as shown in Table 10. The CPr and ˜ϵR values of the Clopper-Pearson slightly exceed the
+desired limits, but overall, the performance is quite reasonable.
+15
+
+Table 8: 95% CI performance - p∗= p = 10−6, “small” n
+n
+W
+CP
+WS
+AC
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+7.5 · 106
+93.6
+0.70
+95.8
+0.79
+93.7
+0.75
+97.4
+0.79
+8.0 · 106
+89.2
+0.68
+96.9
+0.76
+95.2
+0.72
+95.2
+0.76
+8.5 · 106
+91.9
+0.66
+97.7
+0.73
+96.3
+0.70
+96.3
+0.74
+9.0 · 106
+94.0
+0.64
+95.7
+0.71
+93.7
+0.68
+97.2
+0.71
+9.5 · 106
+90.3
+0.63
+96.7
+0.69
+95.2
+0.66
+95.2
+0.69
+10.0 · 106
+92.6
+0.61
+97.5
+0.67
+96.3
+0.64
+96.3
+0.67
+10.5 · 106
+94.4
+0.60
+95.7
+0.65
+93.9
+0.63
+97.1
+0.65
+11.0 · 106
+91.2
+0.58
+96.7
+0.64
+95.3
+0.61
+95.3
+0.64
+11.5 · 106
+93.2
+0.57
+97.5
+0.62
+96.3
+0.60
+96.3
+0.62
+12.0 · 106
+94.3
+0.56
+95.8
+0.61
+94.2
+0.58
+97.1
+0.60
+12.5 · 106
+92.1
+0.55
+96.8
+0.60
+95.5
+0.57
+95.5
+0.59
+13.0 · 106
+93.8
+0.54
+97.5
+0.58
+96.4
+0.56
+96.4
+0.58
+13.5 · 106
+94.7
+0.53
+96.0
+0.57
+94.6
+0.55
+94.6
+0.57
+14.0 · 106
+92.9
+0.52
+96.9
+0.56
+95.7
+0.54
+95.7
+0.55
+Table 9: 95% CI performance - p∗= p = 10−6, “large” n
+n
+W
+CP
+WS
+AC
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+15.0 · 106
+91.9
+0.50
+96.3
+0.54
+94.9
+0.52
+94.9
+0.53
+15.5 · 106
+93.6
+0.49
+97.1
+0.53
+96.0
+0.51
+96.0
+0.52
+16.0 · 106
+94.4
+0.49
+95.6
+0.52
+94.1
+0.50
+96.8
+0.52
+16.5 · 106
+92.7
+0.48
+96.5
+0.51
+95.3
+0.49
+95.3
+0.51
+17.0 · 106
+94.2
+0.47
+97.2
+0.51
+96.2
+0.49
+96.2
+0.50
+17.5 · 106
+94.9
+0.47
+95.9
+0.50
+94.6
+0.48
+94.6
+0.49
+18.0 · 106
+93.5
+0.46
+96.7
+0.49
+95.6
+0.47
+95.6
+0.48
+18.5 · 106
+94.8
+0.45
+95.3
+0.48
+93.9
+0.46
+96.5
+0.48
+19.0 · 106
+92.8
+0.45
+96.2
+0.48
+95.0
+0.46
+95.0
+0.47
+19.5 · 106
+94.1
+0.44
+97.0
+0.47
+96.0
+0.45
+96.0
+0.46
+20.0 · 106
+94.8
+0.44
+95.7
+0.46
+94.4
+0.45
+94.4
+0.46
+20.5 · 106
+93.5
+0.43
+96.5
+0.46
+95.5
+0.44
+95.5
+0.45
+21.0 · 106
+94.7
+0.43
+95.1
+0.45
+93.8
+0.43
+96.3
+0.44
+21.5 · 106
+92.9
+0.42
+96.0
+0.45
+94.9
+0.43
+94.9
+0.44
+22.0 · 106
+94.2
+0.42
+96.8
+0.44
+95.8
+0.42
+95.8
+0.43
+22.5 · 106
+94.7
+0.41
+95.6
+0.44
+94.4
+0.42
+94.4
+0.43
+23.0 · 106
+93.6
+0.41
+96.4
+0.43
+95.4
+0.41
+95.4
+0.42
+23.5 · 106
+94.8
+0.40
+95.1
+0.43
+96.2
+0.41
+96.2
+0.42
+24.0 · 106
+93.1
+0.40
+96.0
+0.42
+94.9
+0.41
+94.9
+0.41
+24.5 · 106
+94.3
+0.39
+96.7
+0.42
+95.8
+0.40
+95.8
+0.41
+25.0 · 106
+94.8
+0.39
+95.5
+0.41
+94.4
+0.40
+94.4
+0.40
+Table 11 gives the sample sizes required to maintain a desired level of CPr and ˜ϵR.
+Three performance schemes were investigated: (i) CPr ∈95 ± 3%, ˜ϵR ≤1, (ii) CPr ∈
+95±2%, ˜ϵR ≤0.75 and (iii) CPr = 95±1%, ˜ϵR ≤0.5. For each scheme, the Wilson interval
+required the smallest sample size to achieve (and maintain) the desired performance, thus
+providing further evidence of its overall superiority among the four estimators.
+16
+
+Table 10: 95% CI performance comparison - n
+p∗
+n
+W
+CP
+WS
+AC
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+10−1
+nA: 1.4 · 102
+93.3
+0.49
+96.8
+0.53
+95.2
+0.50
+95.2
+0.51
+nB: 1.6 · 102
+94.2
+0.47
+95.6
+0.50
+94.1
+0.47
+95.4
+0.48
+10−2
+nA: 1.6 · 103
+94.0
+0.49
+97.1
+0.52
+95.9
+0.50
+95.9
+0.52
+nB: 1.8 · 103
+94.1
+0.45
+95.4
+0.48
+95.4
+0.46
+95.4
+0.47
+10−3
+nA: 1.6 · 104
+94.0
+0.49
+97.0
+0.53
+95.7
+0.50
+95.7
+0.52
+nB: 1.7 · 104
+94.7
+0.47
+95.9
+0.50
+94.7
+0.48
+95.9
+0.49
+10−4
+nA: 1.6 · 105
+94.0
+0.49
+96.9
+0.53
+95.7
+0.51
+95.7
+0.52
+nB: 1.7 · 105
+94.7
+0.47
+95.9
+0.50
+94.7
+0.48
+95.8
+0.49
+10−5
+nA: 1.6 · 106
+94.0
+0.49
+96.9
+0.53
+95.7
+0.51
+95.7
+0.52
+nB: 1.7 · 106
+94.7
+0.47
+95.9
+0.50
+94.7
+0.48
+95.9
+0.49
+10−6
+nA: 1.6 · 107
+94.0
+0.49
+96.9
+0.53
+95.7
+0.51
+95.7
+0.52
+nB: 1.7 · 107
+94.7
+0.47
+95.9
+0.50
+94.7
+0.48
+95.8
+0.49
+nA: First n where at least one interval satisfies CPr ∈95 ± 1% and ˜ϵR ≤0.5
+nB: First n where all intervals satisfy CPr ∈95 ± 1% and ˜ϵR ≤0.5
+Table 11: 95% CI sample size comparison
+p∗
+n
+W
+CP
+WS
+AC
+10−1
+nC
+1.5 · 102
+5.4 · 101
+3.6 · 101
+4.2 · 101
+nD
+2.9 · 102
+1.9 · 102
+6.2 · 101
+1.0 · 102
+nE
+6.5 · 102
+1.2 · 103
+3.5 · 102
+3.5 · 102
+10−2
+nC
+1.5 · 103
+7.1 · 102
+4.4 · 102
+5.0 · 102
+nD
+2.8 · 103
+2.0 · 103
+7.4 · 102
+1.2 · 103
+nE
+8.0 · 103
+1.0 · 104
+2.6 · 103
+4.1 · 103
+10−3
+nC
+1.8 · 104
+7.0 · 103
+4.5 · 103
+5.1 · 103
+nD
+2.8 · 104
+1.7 · 104
+7.5 · 103
+1.2 · 104
+nE
+7.4 · 104
+1.0 · 105
+2.6 · 104
+3.7 · 104
+10−4
+nC
+1.8 · 105
+7.0 · 104
+4.5 · 104
+5.1 · 104
+nD
+2.8 · 105
+1.6 · 105
+7.5 · 104
+1.2 · 105
+nE
+7.4 · 105
+1.0 · 106
+2.9 · 105
+4.7 · 105
+10−5
+nC
+1.8 · 106
+7.0 · 105
+4.5 · 105
+5.1 · 105
+nD
+2.8 · 106
+1.7 · 106
+7.5 · 105
+1.2 · 106
+nE
+7.4 · 106
+1.0 · 107
+2.9 · 106
+4.7 · 106
+10−6
+nC
+1.8 · 107
+7.0 · 106
+4.5 · 106
+5.1 · 106
+nD
+2.8 · 107
+1.7 · 107
+7.5 · 106
+1.2 · 107
+nE
+7.4 · 107
+1.0 · 108
+2.9 · 107
+4.7 · 107
+nC: n1 where CPr ∈95 ± 3% and ˜ϵR ≤1 ∀n ≥n1
+nD: n1 where CPr ∈95 ± 2% and ˜ϵR ≤0.75 ∀n ≥n1
+nE: n1 where CPr ∈95 ± 1% and ˜ϵR ≤0.5 ∀n ≥n1
+Smallest sample size for each scheme shown in bold
+Table 12 shows the ˜ϵR values pertaining to the sample sizes displayed in Table 11 (ϵR
+values were found to be very similar to the given ˜ϵR values). It can be seen that in relation
+to a 95% CI, to ensure that the coverage remains within ±2%, the Wald interval requires
+˜ϵR ≤0.37, whereas the Wilson interval requires ˜ϵR = 0.75. The ˜ϵR values corresponding
+to maintaining the coverage within 95 ± 1% (green table cells) are in close agreement with
+17
+
+our recommendation to use ˜ϵR ∈[0.1, 0.5].
+Table 12: ˜ϵR values corresponding to maintained coverage
+CPr
+W
+CP
+WS
+AC
+95 ± 3%
+0.46 - 0.50
+0.80 - 0.87
+0.98 - 1.00
+0.97 - 1.00
+95 ± 2%
+0.34 - 0.37
+0.45 - 0.52
+0.75 - 0.75
+0.60 - 0.61
+95 ± 1%
+0.22 - 0.23
+0.17 - 0.20
+0.31 - 0.39
+0.29 - 0.33
+˜ϵR values observed across the p∗range displayed as minimum - maximum
+7
+Estimating a Rare Event with a Small Sample Size
+It is clear from the above results, that as expected a priori, quite large sample sizes are
+required to accurately estimate rare-event probabilities. Achieving accuracy on the order
+of magnitude for a small p is usually most relevant in large populations, where it will
+also be possible to collect large samples. For example, a quality engineer may have little
+problem in obtaining high-throughput process data of order n = 106 or greater, and, in
+this large-scale production setting, it will be critical to know whether the defect rate is,
+say, one in one thousand, or one in ten thousand. In Section 8, we assess three data-rich
+scenarios from the literature, i.e., cases that involve estimating a small proportion whilst
+utilizing large samples.
+Notwithstanding the fact that accurate estimation of a small p is most important in
+large populations, an analyst may be faced with the challenge of estimating a small p with
+a limited sample size. We touched on this problem in Section 2.2, but now consider CI
+performance in more detail using the approach of Section 6.
+Assume that the true proportion is of order 10−2. As we have seen previously in Table
+11, sample sizes of order n = 103 will be needed to accurately estimate p. However, here,
+we assume that the analyst is dealing with a hard-to-reach population where n ≤100; the
+performance of the four intervals is displayed in Table 13.
+Table 13: 95% CI performance - p∗= p = 10−2, small n
+n
+W
+CP
+WS
+AC
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+20
+18.2
+1.80
+98.3
+9.19
+98.3
+8.70
+98.3
+11.36
+40
+33.1
+1.73
+99.3
+5.22
+93.9
+5.08
+99.3
+6.57
+60
+45.2
+1.65
+97.8
+3.80
+97.8
+3.72
+97.8
+4.72
+80
+55.2
+1.57
+99.1
+3.07
+95.3
+3.00
+99.1
+3.74
+100
+63.3
+1.50
+98.2
+2.62
+92.1
+2.55
+98.2
+3.13
+It is clear that all four intervals perform quite poorly in this scenario both in terms
+of coverage and relative margin of error. The coverage of the Wilson interval is notably
+better than the others, and is reasonable for some sample sizes, albeit is still somewhat
+18
+
+erratic. This interval does achieve excellent coverage for n = 80 for example, but the
+relative margin of error is ˜ϵR ≈3, i.e., the margin of error of 0.03 is much larger than
+p = 0.01. If the analyst only requires a rough estimate of p, for example, to answer the
+question of whether or not it is less than 0.1, then such a large margin of error will be
+acceptable. On the other hand, if the aim to is accurately estimate the order of magnitude
+of p, this will not be achievable for such small sample sizes (and, clearly, performance will
+degrade further for even smaller p). This again highlights the importance of considering
+relative margin of error in the small p setting, and our suggestion is to use ˜ϵR ∈[0.1, 0.5].
+An anonymous reviewer advised us of two modern CI estimation approaches: an asymp-
+totic method based on generalized fiducial inference (GFI) (Hannig, 2009), and a recently-
+developed exact method known as the “repro samples” method (Xie and Wang, 2022).
+The GFI method is an extension of the fiducial argument proposed by Fisher (1930), and
+the repro method is a simulation-based method that provides a finite sample CI coverage
+guarantee, which is particularly useful in small samples. We have tested both of these more
+modern methods (see Appendix C), and have found that they provide reasonable coverage
+(starting from a conservative position akin to the exact Clopper-Pearson method). How-
+ever, when p and n are small, the methods experience the same issues as the classical
+methods we have considered; in particular, the relative margin of error is too large to be
+used in settings where the order of magnitude of a small p is of interest. (It is noteworthy,
+however, that the GFI and repro sampling methods are general inference procedures that
+provide good finite-sample performance in a wide range of problems beyond proportion
+estimation.) Ultimately, all of our work points to the fact that large samples are required
+in this small-p setting, and we have provided guidelines in Section 6.
+8
+Case Studies
+We now consider the use of the relative margin of error in the estimation of small/rare-
+event proportions using data from the literature.
+More specifically, we consider: (i) a
+study on the prevalence of ADHD prescriptions in adolescents, (ii) a clinical trial relating
+to COVID-19 vaccine efficacy, and (iii) accident data from commercial jet aircraft records.
+Using the values of n and bp reported in each of the aforementioned studies, we evaluate
+the validity of a 95% Wald CI in terms of the interval’s relative margin of error. We discuss
+the Wald interval as it is the most commonly used interval estimator, and for each of these
+case studies, it produces similar results to the Clopper-Pearson, Wilson and Agresti-Coull
+intervals. We also refer to our sample size calculations/CI performance analyses to assess
+the suitability of the sample size in terms of achieving the desired coverage.
+19
+
+8.1
+Assessing Prevalence of ADHD Medication
+The first study we consider is a study conducted by Sawyer et al. (2017) to assess the preva-
+lence of stimulant and antidepressant medication in Australian children and adolescents
+with symptoms of ADHD (Attention-Deficit/Hyperactivity Disorder) and major depressive
+disorder (MDD). A nationally representative sample of n = 6,310 children between the age
+of 4 and 17 was obtained, which found that 13.7% of those with symptoms meeting the
+criteria of ADHD had used stimulant medications.
+For a sample size of n = 6,310, and an estimated proportion of magnitude bp = 0.137,
+the 95% Wald CI is given as: [0.129, 0.145], with a realized relative margin of error of
+bϵR = bϵ/bp ≈0.062. Using the Delta method (see Appendix D), a 95% CI for ϵR is given as
+[0.060, 0.064]. (For each case study, a CI for ˜ϵR was obtained using Monte Carlo simulation
+in conjunction with the Delta method, and each was found to be in agreement with the
+corresponding CI estimate for ϵR.) For this study, the ϵR CI values fall outside of our
+recommended range of ϵR ∈[0.1, 0.5] meaning that the interval is somewhat narrower than
+what we recommend, i.e., one could achieve an acceptable result with fewer observations.
+Indeed, Table 14 displays the sample sizes for a selection of bϵR values in this range, and,
+note, for example, that bϵR = 0.4 leads to a sample size approximately forty times smaller
+than the sample size used in the study.
+Table 14: 95% Wald CI - bϵR comparison
+bp
+n
+bϵ
+c
+ϵR
+bp ± bϵ
+0.137
+6310
+0.008
+0.06
+[0.129, 0.145]
+605
+0.027
+0.20
+[0.110, 0.164]
+269
+0.041
+0.30
+[0.096, 0.178]
+152
+0.055
+0.40
+[0.082, 0.192]
+97
+0.068
+0.50
+[0.069, 0.205]
+It can also be seen from Table 14 that a relative margin of error of bϵR = 0.2 corresponds
+to a CI which is similar to that computed at bϵR = 0.06, but uses a sample size that is
+approximately ten times smaller. Had the order of magnitude of p been known in advance
+(e.g., if it was known that p ≈1/10, rather than p ≈1/100), then a smaller sample size
+would have sufficed. When p is of the order 10−2, very good coverage is achieved for n =
+1,800 (see Table 10), hence the study sample size of n = 6,310 is more than adequate for
+the scenarios where p = 10−1 and p = 10−2.
+8.2
+COVID-19 Vaccine Efficacy
+An efficacy trial of the BNT162b2 mRNA COVID-19 vaccine was conducted by Polack et al.
+(2020). In this placebo-controlled, observer-blind trial, 43,548 participants were randomly
+assigned either the BNT162b2 vaccine or a placebo treatment. Of the 21,720 participants
+who received the vaccine, there were 8 cases of COVID-19 after the second dose. This
+20
+
+leads to an estimated proportion of bp = x/n = 8/21,720 ≈3.7 · 10−4, and, therefore, the
+95% Wald CI is given by [1.1 · 10−4, 6.2 · 10−4], with bϵR ≈0.69, and a 95% CI for ϵR of
+[0.421, 0.875]. As per Section 4.2 we recommend ϵR ∈[0.1, 0.5], which is incorporated in the
+above interval. However, the CI lower bound is very close to our recommended ϵR upper
+bound, and thus, in our suggested scheme, the computed interval could be questioned with
+regard to its width.
+Aside from having a somewhat large margin of error (relative to bp), we need to consider
+the sample size in relation to the order of magnitude of bp. I.e., we must assess if the sample
+size is large enough to provide acceptable coverage. For example, if p were 10−4, Table
+11 indicates that a sample size of the order 105 is required, whereas, here, the sample
+size is of the order 104. Indeed, we have calculated that, with p = 3.7 · 10−4 and n =
+21,720, the expected coverage is just 89.2%. The Clopper-Pearson, Wilson and Agresti-
+Coull intervals perform better in this n-p scheme, achieving coverage of 96.9%, 95.2% and
+95.2% (respectively). However, for this n-p combination, all three intervals have bϵR > 0.72.
+Thus, to obtain a CI estimate where the margin of error is more consistent with bp, and/or
+to enhance the coverage probability, a larger sample size would be required.
+8.3
+Commercial Aircraft Accidents
+A summary of annual commercial jet aircraft flight hours, departures and accidents is
+provided by Boeing (2022). In the year 2021, there were 21.6 million aircraft departures
+with a total of 23 recorded incidents/accidents.
+Although all aircraft departures and
+accidents are recorded here, we may still view this as a sample from a larger population
+of flights that might have taken place (had demand been higher) or indeed for flights in
+upcoming years (provided that conditions such as aviation regulations and the composition
+of aircraft fleets remain similar). Therefore, it is still of interest to compute a confidence
+interval in this scenario, and, irrespective of the specific target population, the data still
+suffice for the purpose of demonstrating our proposed scheme.
+For this data, bp ≈1.1 · 10−6, which gives a 95% Wald CI of [0.66 · 10−6, 1.54 · 10−6],
+with bϵR ≈0.40 (95% CI for ϵR of [0.328, 0.494]). This relative margin of error is consistent
+with our recommendation of ϵR ∈[0.1, 0.5], and as discussed in Section 4.3, provides a
+satisfactory estimator. Indeed, following the approach of Table 10, we have found that,
+when p = 1.1 · 10−6, all four estimators satisfy CPr ∈95 ± 1% and ˜ϵR ≤0.5 when
+n = 21.6 · 106.
+In the context of estimating the proportion of aircraft accidents, the analyst has no
+control over the sample size. That is to say, had a larger sample size been required, one
+would simply have to wait for more aircraft departures to occur. However, our analysis
+provides us with reassurance that our computed interval will perform satisfactorily.
+21
+
+9
+Discussion
+When constructing confidence intervals for small success probabilities it is important that
+the margin or error, ϵ, be considered relative to the magnitude of the proportion, p. Incom-
+patibilities between ϵ and p can lead to completely unsatisfactory coverage or unnecessarily
+narrow intervals that require extremely large sample sizes. When dealing with moderate
+success probabilities, say p ≥0.2, this is less important, but in the context of small or
+rare-event success probabilities, the consideration of ϵ relative to p is crucial to reduce the
+possibility of substantial mismatching between ϵ and p. For example, ϵ = 0.05 might be
+considered as valid precision for p = 10−1, but such a margin of error is not compatible
+with a proportion of the order p = 10−3.
+To ensure ϵ is compatible with the order of magnitude of p, we recommend using a
+relative margin of error scheme, ϵR. We suggest restricting the range of values to ϵR ∈
+[0.1, 0.5] as higher values lead to imprecision and poor interval coverage, whereas lower
+values lead to sample sizes that are likely to be impractically large for many studies.
+Our recommendation of ϵR ∈[0.1, 0.5] avoids intervals that are impractically wide or
+restrictively narrow in terms of sample size requirements, and we show that adequate
+performance is achieved within this range. In contrast to the existing literature, we have
+highlighted the importance of the relative margin of error, ϵR, in conjunction with the
+empirical coverage, when assessing CI performance in the small-p setting.
+When both
+criterion are considered simultaneously the Wald, Clopper-Pearson (exact), Wilson and
+Agresti-Coull intervals perform similarly in many cases. In general, all four intervals fail
+to satisfy both criteria when the sample size is small, with improved performance at larger
+sample sizes as expected. For example, for a 95% confidence interval when p = 10−1, none
+of the methods produce a satisfactory interval for 10 ≤n ≤140. Each interval achieves
+the nominal coverage of 95% at some (albeit not all) sample sizes in this range, but in each
+case the desired limit of ϵR ≤0.5 is exceeded. Once the sample size is increased (n ≥150),
+and the ϵR requirement is satisfied, all four intervals perform well in terms of coverage.
+The coverage probabilities of the Wald and Clopper-Pearson intervals for small n are
+generally poor, particularly in comparison to the Wilson and Agresti-Coull intervals. How-
+ever, the considerable difference in coverage in such situations is rendered immaterial once
+the (we believe reasonable) requirement that ϵR ≤0.5 is considered. When satisfactory
+performance is defined as achieving a desired CPr and ϵR, the performance across these
+commonly-used intervals is much more comparable, particularly if one considers empirical
+coverage in the range (1 −α)100 ± 2%. In this relative margin of error framework the
+criticisms of inadequate coverage for the Wald interval, and excessive conservatism for the
+Clopper-Pearson interval, are somewhat alleviated, and all four intervals perform quite
+similarly. Although there are performance similarities, the Wilson and Agresti-Coull in-
+tervals are generally superior to the intervals of Wald and Clopper-Pearson. The Wilson
+and Agresti-Coull intervals achieve similar CPr and ϵR values for given n-p-α combina-
+22
+
+tions, however the Wilson interval is narrower and achieves favourable performance at lower
+sample sizes.
+When the success probability is small, failure to consider the margin of error relative
+to the order of magnitude of the estimated proportion can result in poor coverage, and/or
+intervals which are unnecessarily narrow or excessively wide. As shown in the case studies
+presented in Section 8, the relative margin of error criterion provides a simple and effective
+assessment of the validity of an estimated interval in terms of its width/margin of error.
+For example, we have shown that all of the interval estimators considered in this paper
+performed poorly for the COVID-19 study (Section 8.2) in terms of the relative margin
+or error, meaning that the confidence intervals were all impractically wide — and the
+Wald interval also had notably poor coverage. It is important to ensure that the interval
+precision is compatible with the order of magnitude of p. The relative margin of error
+serves as a useful evaluation criterion in this regard, and as such, we suggest that it should
+be considered when planning statistical studies.
+References
+Agresti, A. and Coull, B. A. (1998).
+Approximate is better than “exact” for interval
+estimation of binomial proportions. The American Statistician, 52(2):119–126.
+Andersson, P. G. (2023). The Wald confidence interval for a binomial p as an illuminating
+“bad” example. The American Statistician, 74(4):443–448.
+Blyth, C. R. and Still, H. A. (1983). Binomial confidence intervals. Journal of the American
+Statistical Association, 78(381):108–116.
+Boeing (2022). Statistical summary of commercial jet airplane accidents. https://www.
+boeing.com/resources/boeingdotcom/company/about_bca/pdf/statsum.pdf. [On-
+line] [Accessed on 04-December-2023].
+B¨ohning, D. (1994). Better approximate confidence intervals for a binomial parameter.
+The Canadian Journal of Statistics, 22(2):207–218.
+Brown, L. D., Cai, T. T., and DasGupta, A. (2001). Interval estimation for a binomial
+proportion. Statistical Science, 16(2):101–133.
+Clopper, C. J. and Pearson, E. S. (1934). The use of confidence or fiducial limits illustrated
+in the case of the binomial. Biometrika, 26(1):404–413.
+Evans, J. R. and Lindsay, W. M. (2015). An introduction to Six Sigma & process improve-
+ment. CENGAGE Learning, USA, 2nd edition.
+23
+
+Fisher, R. (1930). Inverse probability. Proceedings of the Cambridge philosophical society,
+xxvi:528–535.
+Fleiss, J. L., Levin, B., and Cho Paik, M. (2003). Statistical methods for rates and propor-
+tions. John Wiley & Sons, New Jersey, 3rd edition.
+Gon¸calves, L., De Oliveira, M. R., Pascoal, C., and Pires, A. (2012).
+Sample size for
+estimating a binomial proportion: comparison of different methods. Journal of Applied
+Statistics, 39(11):2453–2473.
+Hannig, J. (2009). On generalized fiducial inference. Statistica Sinica, 19(2):491–544.
+Kabaila, P., Welsh, A. H., and Abeysekera, W. (2016). Model-averaged confidence intervals.
+Scandinavian Journal of Statistics, 43(1):35–48.
+Korn, E. L. (1986).
+Sample size tables for bounding small proportions.
+Biometrics,
+42(1):213–216.
+Krishnamoorthy, K. and Peng, J. (2007). Some properties of the exact and score methods
+for binomial proportion and sample size calculation. Communications in Statistics -
+Simulation and Computation, 36(6):1171–1186.
+Leemis, L. M. and Trivedi, K. S. (1996). A comparison of approximate interval estimators
+for the bernoulli parameter. The American Statistician, 50(1):63–68.
+Liu, W. and Bailey, B. J. R. (2002). Sample size determination for constructing a constant
+width confidence interval for a binomial success probability.
+Statistics & Probability
+Letters, 56(1):1–5.
+Lwanga, S. K. and Lemeshow, S. (1991). Sample size determination in health studies: A
+practical manual. World Health Organisation, Geneva.
+Newcombe, R. G. (1998). Two-sided confidence intervals for the single proportion: com-
+parison of seven methods. Statistics in Medicine, 17(1):857–872.
+Park, H. and Leemis, L. M. (2019). Ensemble confidence intervals for binomial proportions.
+Statistics in Medicine, 38(1):3460–3475.
+Pires, A. M. and Amado, C. (2008). Interval estimators for a binomial proportion: com-
+parison of twenty methods. REVSTAT - Statistical Journal, 6(2):165–197.
+Polack, F. P., Thomas, S. J., Kitchin, N., Absalon, J., Gurtman, A., Lockhart, S., Perez,
+J. L., P´erez Marc, G., Moreira, E. D., Zerbini, C., Bailey, R., Swanson, K. A., Roychoud-
+hury, S., Koury, K., Li, P., Kalina, W. V., Cooper, D., Frenck, R. W., Hammitt, L. L.,
+and . . . Gruber, W. C. (2020). Safety and efficacy of the BNT162b2 mRNA Covid-19
+vaccine. The New England Journal of Medicine, 383(27):2603–2615.
+24
+
+Sawyer, M. G., Reece, C. E., Sawyer, A. C., Johnson, S., Lawrence, D., and Zubrick, S. R.
+(2017). The prevalence of stimulant and antidepressant use by Australian children and
+adolescents with attention-deficit/ hyperactivity disorder and major depressive disorder:
+a national survey. Journal of Child and Adolescent Psychopharmacology, 27(2):177–184.
+Thulin, M. (2014). Coverage-adjusted confidence intervals for a binomial proportion. Scan-
+dinavian Journal of Statistics, 41(1):291–300.
+Turek, D. and Fletcher, D. (2012). Model-averaged Wald confidence intervals. Computa-
+tional Statistics and Data Analysis, 56(1):2809–2815.
+Vollset, S. E. (1993). Confidence intervals for a binomial proportion. Statistics in Medicine,
+12(1):809–824.
+Vos, P. and Hudson, S. (2005). Evaluation criteria for discrete confidence intervals: beyond
+coverage and length. The American Statistician, 59(2):137–142.
+Wilson, E. (1927).
+Probable inference, the law of succession, and statistical inference.
+Journal of the American Statistical Association, 22(1):209–212.
+Woodall, W. H. and Montgomery, D. C. (2014). Some current directions in the theory and
+application of statistical process monitoring. Journal of Quality Technology, 46(1):78–94.
+Xie, M. and Wang, P. (2022). Repro samples method for finite- and large-sample inferences.
+arXiv preprint arXiv:2206.06421.
+25
+
+Appendix
+A
+Sample Size Formulae
+Clopper-Pearson Interval
+Letting nLB be the minimum n satisfying: p∗−Beta (α/2; np∗, n(1 −p∗) + 1) ≤ϵ and
+letting nUB be the minimum n satisfying: Beta (1 −α/2; np∗+ 1, n(1 −p∗)) −p∗≤ϵ, the
+sample size is given by:
+n = ⌈max{nLB, nUB}⌉
+Wilson Interval
+ϵ =
+zα/2
+q
+p(1 −p)/n + z2
+α/2/(4n2)
+1 + z2
+α/2/n
+=⇒
+n =
+&
+max
+(
+z2
+α/2
+2ϵ2
+
+p∗(1 −p∗) −2ϵ2 ±
+p
+ϵ2(1 −4p∗(1 −p∗)) + (p∗(1 −p∗))2
+)'
+Agresti-Coull Interval
+Letting ep = (np + z2
+α/2/2)/(n + z2
+α/2) and en = n + z2
+α/2:
+ϵ = zα/2
+r
+ep(1 −ep)
+en
+=⇒n =
+
+max
+
+−1
+3a
+
+b + ξkC + ∆0
+ξkC
+
+; k ∈{0, 1, 2}
+where
+a = 4ϵ2
+b = 4z2
+α/2(3ϵ2 −p∗(1 −p∗))
+ξ = (−1 + √−3)/2
+C =
+3
+r
+∆1 ±
+p
+∆2
+1 −4∆3
+0
+
+/2
+∆0 = 16z4
+α/2(3ϵ2 −p∗(1 −p∗))2 −24ϵ2z4
+α/2(6ϵ2 −1)
+∆1 = 128z6
+α/2(3ϵ2 −p∗(1 −p∗))3 + 432ϵ4z6
+α/2(4ϵ2 −1) −288ϵ2z6
+α/2(3ϵ2 −p∗(1 −p∗))(6ϵ2 −1)
+26
+
+B
+Fixed Margin of Error Schemes
+Table 15 shows that for the fixed margin of error scheme: ϵ = 4 · 10−4, p∗= 0.5, all four
+intervals produce coverage close to the nominal value. For the remaining three margin of
+error schemes the Wald interval produces very poor coverage in comparison to the other
+intervals. For example, in Scheme 1 (ϵ = 4 · 10−2, p∗= p), the Wald coverage for p = 10−2
+is just 21.4%, whereas the coverage of the Clopper-Pearson, Wilson and Agresti-Coull
+intervals is 97.7%.
+Whilst the Clopper-Pearson, Wilson and Agresti-Coull intervals achieve better cover-
+age, all four intervals fail to produce satisfactory coverage if the margin of error scheme is
+not compatible with the magnitude of p. For example, in Scheme 3 (ϵ = 4 · 10−4, p∗= p)
+the Wald interval produces a coverage of just 0.2% for p = 10−5. However, the Clopper-
+Pearson, Wilson and Agresti-Coull intervals achieve coverage of 99.8%, 99.8% and 100%
+respectively. Whilst these coverage probabilities are much closer to the desired 95% cover-
+age than the Wald’s 0.2%, they are too far from the nominal value to be of practical use.
+Table 15: Coverage comparison - fixed ϵ
+MoE Scheme
+p
+W
+CP
+WS
+AC
+1. ϵ = 4 · 10−2, p∗= p
+10−1
+93.8
+96.9
+94.7
+95.9
+10−2
+21.4
+97.6
+97.6
+97.6
+10−3
+00.3
+99.7
+99.7
+99.7
+10−4
+00.0
+100
+100
+100
+10−5
+00.0
+100
+100
+100
+10−6
+00.0
+100
+100
+100
+2. ϵ = 4 · 10−2, p∗= 0.5
+10−1
+94.5
+95.9
+95.2
+95.2
+10−2
+93.1
+96.3
+94.1
+97.8
+10−3
+45.2
+97.7
+97.7
+99.7
+10−4
+05.8
+99.8
+94.2
+100
+10−5
+00.6
+99.4
+99.4
+100
+10−6
+00.1
+99.9
+99.4
+100
+3. ϵ = 4 · 10−4, p∗= p
+10−1
+95.0
+95.0
+95.0
+95.0
+10−2
+95.0
+95.1
+95.0
+95.1
+10−3
+93.1
+96.0
+94.9
+94.9
+10−4
+21.3
+97.5
+97.5
+99.8
+10−5
+00.2
+99.8
+99.8
+100
+10−6
+00.0
+100
+100
+100
+4. ϵ = 4 · 10−4, p∗= 0.5
+10−1
+95.0
+95.0
+95.0
+95.0
+10−2
+95.0
+95.0
+95.0
+95.0
+10−3
+95.0
+95.1
+95.0
+95.0
+10−4
+94.9
+95.2
+95.0
+95.0
+10−5
+94.9
+96.1
+95.5
+95.5
+10−6
+93.4
+96.3
+94.0
+97.7
+27
+
+Referring to Table 16, for ϵR = 0.75 and p∗= p ≤10−2, the Wald coverage is considerably
+poorer than the other three intervals. Both the Clopper-Pearson and Agresti-Coull inter-
+vals produce reasonable coverage at approximately 97%. The Wilson interval performs the
+best, producing coverage very close to the nominal 95% ∀p.
+Table 16: Coverage comparison - ϵR = 0.75
+p∗
+W
+CP
+WS
+AC
+10−1
+94.7
+97.0
+94.6
+94.6
+10−2
+90.2
+97.0
+94.9
+97.0
+10−3
+90.4
+96.9
+94.6
+96.9
+10−4
+90.4
+96.9
+94.6
+96.9
+10−5
+90.4
+96.9
+94.6
+96.9
+10−6
+90.4
+96.9
+94.6
+96.9
+C
+CI Estimation using GFI and Repro Samples Method
+To compare the performance of the Wald, Clopper-Pearson, Wilson and Agresti-Coull
+methods against the more modern GFI (Hannig, 2009) and repro sampling (Xie and Wang,
+2022) methods, we consider p ∈[10−1, 10−4], with sample sizes ranging from n = 20 to
+n = 104. This covers a range of scenarios from the main paper, including larger samples
+as per Section 6 and smaller samples as per Section 7. As these more modern methods
+are simulation-based, this makes exact performance calculations more challenging (as were
+done in the main paper). Therefore, here, we have carried out a simulation study with a
+large number of replicates (5000). The results are presented in Table 17.
+We can see from Table 17, that, in terms of coverage, both of these methods converage
+towards the nominal 95% level with the sample size (starting from a conservative point
+akin to the exact Clopper-Pearson interval). Interestingly, in some of the more challenging
+scenarios presented here, e.g., p = 10−3 with n = 103 and p = 10−4 and n = 104, one or both
+of these methods provide the best empirical coverage (albeit still being a 2-3 percentage
+points out from the nominal level in these scenarios). In any case, these methods do not
+appear to offer dramatic improvements on the other methods considered, and, in particular,
+the key issue of ˜ϵR being large for small n is intrinsic to all of the methods. It is important
+to recognize, however, that the GFI and repro sampling methods are not limited only
+to proportion estimation, but, rather, are general inferential techniques that extend far
+beyond this to many other problems.
+28
+
+Table 17: Comparison of classical and modern CI methods
+p∗
+n
+W
+CP
+WS
+AC
+GFI
+Repro
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+CPr
+˜ϵR
+10−1
+20
+87.6
+1.17
+98.9
+1.46
+95.7
+1.32
+95.7
+1.46
+97.9
+1.31
+98.2
+1.42
+60
+94.1
+0.74
+97.2
+0.82
+95.2
+0.76
+95.2
+0.80
+95.7
+0.76
+97.1
+0.80
+102
+93.2
+0.58
+95.6
+0.63
+93.6
+0.59
+97.2
+0.61
+96.1
+0.59
+95.8
+0.61
+103
+95.3
+0.19
+95.5
+0.19
+94.9
+0.19
+94.9
+0.19
+94.8
+0.19
+94.6
+0.18
+104
+95.1
+0.06
+95.1
+0.06
+94.9
+0.06
+94.9
+0.06
+94.9
+0.06
+94.9
+0.06
+10−2
+20
+18.2
+1.80
+98.3
+9.19
+98.3
+8.70
+98.3
+11.36
+98.6
+7.84
+98.5
+9.02
+60
+45.2
+1.65
+97.8
+3.80
+97.8
+3.72
+97.8
+4.72
+97.5
+3.26
+98.3
+3.73
+102
+63.3
+1.50
+98.2
+2.62
+92.1
+2.55
+98.2
+3.13
+98.3
+2.27
+98.2
+2.57
+103
+92.7
+0.61
+97.6
+0.67
+96.4
+0.64
+96.4
+0.66
+94.4
+0.62
+96.2
+0.65
+104
+94.6
+0.19
+95.6
+0.20
+95.0
+0.20
+95.0
+0.20
+94.6
+0.19
+94.9
+0.19
+10−3
+20
+02.0
+1.90
+98.0
+85.01
+98.0
+81.22
+100
+>100
+98.2
+69.93
+98.2
+83.91
+60
+05.8
+1.91
+99.8
+30.69
+94.2
+30.84
+99.8
+42.46
+98.8
+25.05
+99.7
+30.26
+102
+09.5
+1.89
+99.5
+19.00
+90.5
+19.27
+99.5
+26.50
+99.4
+15.58
+99.5
+18.82
+103
+63.2
+1.51
+98.1
+2.67
+91.9
+2.65
+98.1
+3.29
+97.9
+2.35
+97.9
+2.63
+104
+92.6
+0.61
+97.5
+0.67
+96.3
+0.64
+96.3
+0.67
+94.4
+0.63
+96.5
+0.66
+10−4
+20
+00.2
+1.91
+99.8
+>100
+99.8
+>100
+100
+>100
+99.8
+>100
+99.8
+>100
+60
+00.6
+1.94
+99.4
+>100
+99.4
+>100
+100
+>100
+99.4
+>100
+99.4
+>100
+102
+01.0
+1.94
+99.0
+>100
+99.0
+>100
+100
+>100
+99.3
+>100
+98.9
+>100
+103
+09.5
+1.90
+99.5
+19.33
+90.5
+19.94
+100
+27.66
+99.6
+15.83
+99.4
+19.11
+104
+63.2
+1.52
+98.1
+2.68
+91.9
+2.66
+98.1
+3.29
+98.2
+2.34
+97.4
+2.65
+D
+CI For ϵR
+By the Delta method, f(bp) →N(f(p), f ′(p)2σ2
+bp) as n →∞. Given f(bp) = bϵR = bϵ/bp, and
+σbp =
+p
+bp(1 −bp)/n, a (1 −α)100% Wald CI for ϵR is given by
+˜z
+√n
+s
+1 −bp
+bp
+± zα/2
+˜z
+p
+4nbp4
+s
+bp
+1 −bp
+r
+bp(1 −bp)
+n
+,
+where ˜z is the (1 −˜α/2) quantile of the standard normal distribution, and ˜α is the signifi-
+cance level pertaining to bϵ.
+29

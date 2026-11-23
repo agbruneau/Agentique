@@ -1,0 +1,107 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "description": "Faits empiriques et grandeurs mathématiques vérifiés sur sources primaires L+ (SHA-256) au gel du 2 décembre 2026 pour le Volume 8.",
+  "facts": [
+    {
+      "id": "FACT-MCP-DRIFT-4058",
+      "metric": "Part des serveurs MCP multi-versions présentant une dérive sémantique silencieuse (sans changement de version sémantique déclaré)",
+      "value": "40,58 % des serveurs multi-versions (sur 8 900 serveurs multi-versions et 21 643 serveurs recensés)",
+      "source": "Obada Kraishan (2026-09-15), Same Name, Different Server: A Security Census of Silent Drift in MCP (arXiv:2609.14119)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-057",
+      "commentaire_annexe": "Vérifié dans SRC-057 (arXiv:2609.14119) : 21 643 serveurs, 72 606 enregistrements, 8 900 serveurs multi-versions, 51,09 % modifiés entre versions, 40,58 % dérive sémantique silencieuse, 4,16 % redirection d'hôte (OR = 2,96)."
+    },
+    {
+      "id": "FACT-MAP-STUDY",
+      "metric": "Complexité bornée et structure fixe des agents en production (étude MAP)",
+      "value": "68 % exécutent au plus 10 étapes avant intervention humaine et 80 % suivent un flux structuré fixe",
+      "source": "Pan et al. (2025-12-02), Measuring Agents in Production (arXiv:2512.04123)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-027",
+      "commentaire_annexe": "Vérifié dans SRC-027 (arXiv:2512.04123) : 68 % <= 10 étapes avant intervention humaine ; 16 cas sur 20 (80 %) suivent un flux structuré fixe."
+    },
+    {
+      "id": "FACT-MAST-FAILURES",
+      "metric": "Taux d'échec observés dans les systèmes multi-agents LLM (taxonomie MAST)",
+      "value": "41 % à 86,7 % d'échecs sur 1 642 traces annotées",
+      "source": "Cemri et al. (2025), Why Do Multi-Agent LLM Systems Fail? (arXiv:2503.13657)",
+      "owner_chapter": "ch04",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-028",
+      "commentaire_annexe": "Vérifié dans SRC-028 (arXiv:2503.13657) : 41 % à 86,7 % d'échecs sur 1 642 traces (7 cadriciels, 14 modes de défaillance)."
+    },
+    {
+      "id": "FACT-CAMEL-AGENTDOJO",
+      "metric": "Utilité préservée par la séparation CaMeL contrôle/données sur AgentDojo",
+      "value": "77 % des tâches résolues avec garantie structurelle contre 84 % sans défense",
+      "source": "Debenedetti et al. (2025), Defeating Prompt Injections by Design (arXiv:2503.18813v2)",
+      "owner_chapter": "ch03",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-007",
+      "commentaire_annexe": "Vérifié dans SRC-007 (arXiv:2503.18813v2)."
+    },
+    {
+      "id": "FACT-CAMEL-RESIDUAL",
+      "metric": "Taux de succès d'attaque (ASR) par réinterprétation inter-agents sous AgentDojo multi-agents",
+      "value": "0,2 % résiduel avec CaMeL mono-agent (12,9 % sans défense, réduit à 0,0 % par multi-CaMeL)",
+      "source": "Peters-Gill et al. (2026-10-05), Can CaMeLs Talk? (arXiv:2610.05640)",
+      "owner_chapter": "ch03",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-056",
+      "commentaire_annexe": "Vérifié dans SRC-056 (arXiv:2610.05640) : l'ASR atteint 12,9 % sans CaMeL, 0,2 % avec CaMeL mono-agent non propagé et 0,0 % sous multi-CaMeL."
+    },
+    {
+      "id": "FACT-PQC-SIGNATURE-SIZE",
+      "metric": "Tailles de signature ML-DSA (FIPS 204 / RFC 9964) comparées à Ed25519 (64 octets)",
+      "value": "ML-DSA-65 : 3 309 octets ; ML-DSA-87 : 4 627 octets",
+      "source": "NIST FIPS 204 (SRC-050) & IETF RFC 9964 (SRC-012) vs RFC 8032 EdDSA (SRC-076)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-050, SRC-012, SRC-076",
+      "commentaire_annexe": "Vérifié dans RFC 9964 § 2 / FIPS 204 Table 1 : ML-DSA-44 = 2 420 o, ML-DSA-65 = 3 309 o (~52x Ed25519 64 o), ML-DSA-87 = 4 627 o (~72x Ed25519 64 o), provoquant un dépassement HTTP 431 (8 192 o) en OBO JWT."
+    },
+    {
+      "id": "FACT-WILSON-3P",
+      "metric": "Dimensionnement statistique minimal à 0 échec pour borne supérieure de Wilson à 95 % < p (EXIG-EVA-03)",
+      "value": "Au moins 3/p essais indépendants sans échec (soit 300 scénarios indépendants distincts pour p = 1 % en unilatéral 95 %)",
+      "source": "2 - Cadre de Référence.md L5041; NIST/SEMATECH § 7.2.4.1 (SRC-022); McGrath & Burke arXiv:2109.02516 (SRC-094)",
+      "owner_chapter": "ch04",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-022, SRC-094",
+      "commentaire_annexe": "Règle EXIG-EVA-03 : n >= ceil(3/p) (= 300 pour p=0,01) donne borne unilatérale 95 % de 0,89 % < 1 % (note : l'intervalle bilatéral z=1,96 à 0 échec donne 1,26 % pour n=300 et impose ~381 essais)."
+    },
+    {
+      "id": "FACT-LUSSER-10-STEPS",
+      "metric": "Fiabilité composée en série sur 10 étapes probabilistes indépendantes à 94 % chacune",
+      "value": "53,9 % sur 10 étapes à 94 %",
+      "source": "NIST/SEMATECH e-Handbook § 8.1.8.1 (SRC-024)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-024",
+      "commentaire_annexe": "Loi multiplicative des composants en série : 0,94^10 = 0,5386 ≈ 53,9 %."
+    },
+    {
+      "id": "FACT-GARTNER-ABANDON-2027",
+      "metric": "Part des initiatives d'IA agentique exposées à l'abandon d'ici fin 2027 sans contrôles ni ROI",
+      "value": "Plus de 40 %",
+      "source": "Deloitte Insights TMT Predictions 2026 (SRC-011; communiqué primaire Gartner et Reuters consignés en statut F)",
+      "owner_chapter": "ch04",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-011",
+      "commentaire_annexe": "Source primaire gartner.com bloquée HTTP 403 (statut F) ; seuil documenté en L+ via Deloitte TMT 2026 (SRC-011)."
+    },
+    {
+      "id": "FACT-OTEL-GENAI-ATTRS",
+      "metric": "Évolution des attributs GenAI entre OpenTelemetry v1.41.0 et semantic-conventions-genai (244465e9)",
+      "value": "85 attributs en statut Development dans semantic-conventions-genai (contre 60 dans v1.41.0), incluant le passage de cache_creation à cache_write",
+      "source": "OpenTelemetry semantic-conventions v1.41.0 (SRC-089) et semantic-conventions-genai@244465e9 (SRC-090)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-089, SRC-090",
+      "commentaire_annexe": "Comptage exact vérifié dans gen-ai.md : 60 attributs dans v1.41.0 (gen_ai.usage.cache_creation.input_tokens) et 85 attributs Development dans semantic-conventions-genai@244465e9 (gen_ai.usage.cache_write.input_tokens)."
+    }
+  ]
+}

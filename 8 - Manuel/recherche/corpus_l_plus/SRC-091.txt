@@ -1,0 +1,773 @@
+HAL Id: hal-02526355
+https://inria.hal.science/hal-02526355v1
+Submitted on 31 Mar 2020
+HAL is a multi-disciplinary open access archive
+for the deposit and dissemination of scientific re-
+search documents, whether they are published or not.
+The documents may come from teaching and research
+institutions in France or abroad, or from public or pri-
+vate research centers.
+L’archive ouverte pluridisciplinaire HAL, est des-
+tinée au dépôt et à la diffusion de documents scien-
+tifiques de niveau recherche, publiés ou non, émanant
+des établissements d’enseignement et de recherche
+français ou étrangers, des laboratoires publics ou
+privés.
+Distributed under a Creative Commons CC BY 4.0 - Attribution - International License
+Testing Chatbots Using Metamorphic Relations
+Josip Bozic, Franz Wotawa
+To cite this version:
+Josip Bozic, Franz Wotawa. Testing Chatbots Using Metamorphic Relations. 31th IFIP International Confer-
+ence on Testing Software and Systems (ICTSS), Oct 2019, Paris, France. pp.41-55, ⟨10.1007/978-3-030-31280-
+0_3⟩. ⟨hal-02526355⟩
+
+Testing Chatbots using Metamorphic Relations
+Josip Bozic[0000−0001−6086−8846] and Franz Wotawa[0000−0002−0462−2283]
+Graz University of Technology
+Institute of Software Technology
+A-8010 Graz, Austria
+{jbozic,wotawa}@ist.tugraz.at
+Abstract. Modern-day demands for services often require an availabil-
+ity on a 24/7 basis as well as online accessibility around the globe. For
+this sake, personalized software systems, called chatbots, are applied.
+Chatbots oﬀer services, goods or information in natural language. These
+programs respond to the user in real-time and oﬀer an intuitive and
+simple interface to interact with. Advantages like these makes them in-
+creasingly popular. Chatbots can even act as substitutes for humans for
+speciﬁc purposes. Since the chatbot market is growing, chatbots might
+outperform and replace classical web applications in the future. For this
+reason, ensuring correct functionality of chatbots is of high and increasing
+importance. However, since diﬀerent implementations and user behavior
+result in unpredictable results, the chatbot’s output is diﬃcult to predict
+and classify as well. In fact, testing of chatbots represents a challenge be-
+cause of the unavailability of a test oracle. In this paper, we introduce
+a metamorphic testing approach for chatbots. In general, metamorphic
+testing can be applied to situations where no expected values are avail-
+able. In addition, we discuss how to obtain test cases for chatbots, i.e.
+sequences of interactions with a chatbot, in an according manner. We
+demonstrate our approach using a hotel booking system and discuss ﬁrst
+experimental results.
+Keywords: Metamorphic testing · functional testing · chatbots.
+1
+Introduction
+Virtual assistants are programs that realize the communication with a user in
+natural language. These programs, called chatbots [13], oﬀer the advantage to
+resemble a natural and intuitive way of interaction. Usually, these programs
+comprehend information from a certain domain. In such way, the chatbot pro-
+vides speciﬁc information in an often entertaining and anonymous manner [5].
+Natural language interfaces (NLI) handle the communication between chatbot
+and user. On the side of the chatbots, this is usually implemented either by a
+set of rules or by means of natural networks. Here pre-speciﬁed patterns deﬁne
+boundaries of possible user interaction [24, 20]. Since several studies predict the
+rise of the chatbot market in the future, addressing the functionality of these
+systems becomes essential [2]. Until now, only a few testing approaches exist
+that check the correctness of chatbots (e.g. [23, 22, 4]).
+
+2
+J. Bozic and F. Wotawa
+Since the behavior of a chatbot might be diﬃcult to predict, traditional
+testing approaches might not always provide an optimal solution. In testing, it’s
+common practice to rely on test oracles in order to obtain test verdicts. However,
+problems may arise due to non-testable programs or because of the high amount
+of manual eﬀort needed to draw a test conclusion. Diﬃculties with test oracles
+have been initially pointed to by Weyuker [25]. The author addressed the issue
+when test oracles are not available during testing. This can be due to multiple
+reasons, like high costs or complexity of implementations or the domain.
+Driven by the same motivation, the concept of metamorphic testing (MT) has
+been introduced by Chen et al. [7]. In MT, the output of a system is not checked
+against an expected value but a metamorphic relation (MR). These describe a
+relation between the input data and the corresponding output. New test cases
+are inferred from previous ones according to the speciﬁed MRs. These inferred
+test cases are meant to detect errors that the former ones failed to do. MT is not
+meant only to detect errors in cases where no expected values are deﬁned, but
+helps to reveal errors in the production phase as well. In addition to that, MT
+does not depend on a speciﬁc testing strategy; thus, it can be combined with
+other test selection approaches (see Section 4).
+In this paper, we introduce a metamorphic testing approach for chatbots. The
+approach is deﬁned by terms of MT and checks the functionality of a chatbot in
+an automated manner. Basically, the motivation of our approach is to guarantee
+functional correctness of a system under the absence of expected data. We pro-
+vide the theoretical background and elaborate the implementation on a chatbot
+from the tourism industry. To our knowledge, this is the ﬁrst adaptation of MT
+for testing of chatbots.
+The remainder of the paper is structured as follows: Section 2 introduces
+metamorphic testing and its adaptation to testing of chatbots. Then, Section 2.1
+describes the underlying test generation. Section 2.2 discusses the test execution
+as well as the underlying algorithm of the approach. The implementation is
+evaluated in Section 3, whereas related work is enumerated in Section 4. Finally,
+Section 5 concludes the work.
+2
+Metamorphic Testing for Chatbots
+The bulk of this paper addresses two major ﬁelds: Metamorphic testing and one
+concrete manifestation of AI systems, namely chatbots. In our previous work in
+[4] we introduced a functional testing approach for chatbots, where the expected
+values were known in advance. The chatbot, a hotel booking system, is checked
+whether valid reservations are processed correctly. However, due to unpredic-
+tive behavior of such systems, MT addresses situations where only sparse or no
+knowledge exist about a system.
+First, let’s denote the basic principles of MT, as initially described in [7]
+and [17]. In contrast to other testing techniques, the basic principle for test
+generation diﬀers in MT.
+
+Testing Chatbots using Metamorphic Relations
+3
+Deﬁnition 1. Let f be an implemented function of a program P. Rf deﬁnes a
+property that must be valid for all inputs x1, x2, ..., xn over f, and the correspond-
+ing outputs f(x1), f(x2), ..., f(xn). The relation Rf represents a metamorphic re-
+lation (MR) over the input-output pairs, thus Rf((x1, f(x1)), (x2, f(x2)), ..., (xn, f(xn))),
+where n > 1.
+Since no expected test value is available, properties have to be deﬁned that
+must hold for all test inputs against a program, regardless of their value. How-
+ever, conditions can be speciﬁed as part of a MR that put restrictions on test
+cases [17]. A metamorphic relation can represent any suitable type of relation,
+such as equalities, properties, constraints etc. The function of MR is twofold: 1)
+it serves as a guideline for generation of test inputs from existing data, and 2)
+acts as an output relation, which is checked after the test execution. In such way,
+MR replaces the test oracle by comparing the input-output pairs from test cases.
+We call this comparison a metamorphic check (MC). A metamorphic check fails
+in case that the input-output pair satisﬁes a metamorphic relation.
+Deﬁnition 2. An initial source test case x1 that does not trigger an error or
+vulnerability in P, is a successful test case. A follow-up test case x2 is inferred
+from x1 according to a selection criteria, as speciﬁed by Rf. The pair of the
+source and follow-up test case can be deﬁned as a metamorphic test case.
+Usually, the source test case represents a random value or is derived from
+partial knowledge about the domain of P. All new test cases are derived from
+the successful test cases. For the source test case x1 and its output f(x1), new
+test cases will be generated based on the input-output pair (x1, f(x1)). During
+test execution, the applied MRs must hold for input-output pairs of both, source
+and the follow-up, test cases. If the MR does not hold for a certain metamorphic
+test case [17], then we conclude that a fault or inconsistency is detected in P.
+In general, three tasks constitute a MT-based approach, regardless of the
+domain:
+1. Deﬁnition of metamorphic relations
+2. Test generation
+3. Test execution
+In the following sections, we will address each of the challenges individually.
+For all three cases, the adaptation of MT for chatbots has to be addressed in
+detail.
+2.1
+Metamorphic Test Generation
+We describe our MT approach for testing of chatbots and evaluate it on a real
+example. The tested chatbot is a hotel booking system that was introduced
+in [4]. In this paper, we will omit technical details about the implementation
+but provide a few details about its functionality. The agent is implemented in
+Dialogﬂow [1] and communicates with the user by sending and receiving messages
+
+4
+J. Bozic and F. Wotawa
+in natural language. Since the goal of the chatbot is to make a hotel booking,
+the chatbot demands some information in order to ﬁnalize a reservation. On the
+side of the chatbot, this information is hard coded in form of eight mandatory
+parameters. During communication, the chatbot will ask the user to provide this
+information. Also, we assume that the chatbot comprises the natural processing
+and necessary data. A typical communication ﬂow, initiated by the user, does
+look as follows.
+I want to book a room in Vienna.
+- Do you want a hotel, hostel or apartment?
+book a hotel
+- Which one do you prefer?
+Fairmont
+- When do you want to start your stay?
+I want to check-in today.
+- How many adults?
+1 adult
+- How many children?
+2 children
+- How many nights?
+1 night
+- How many stars do you prefer?
+i want 5 stars
+- Let me sum up! Location: Vienna, Name: Fairmont, Check-In:
+2019-05-20, Accommodation: hotel, People: 1 adults, 2 children,
+Nights: 1, Stars: 5 stars
+In case that the user does not provide a speciﬁc information, the chatbot
+will continue to ask for clariﬁcation. Thus, no reservation will be made. On the
+other hand, the behavior of the user can be unpredictable to a certain degree
+as well. For example, the user can make an inquiry by rephrasing sentences or
+providing multiple information in one message. This fact will play a role in the
+test generation process. The chatbot is expected to recognize diﬀerent types of
+input utterances. In fact, the chatbot understands additional messages (like exit
+or abort), but in our example, we ignore such situations. However, regardless of
+the user input, the chatbot demands information about the following parameters.
+$location, $venue-type, $venue-title, $checkin-date, $adult,
+$child, $night, $star
+In our previous work, we tested whether the chatbot makes a valid reserva-
+tion. However, in this paper, the functionality is tested from another perspective.
+From the starting point of view, the chatbot is unpredictable for the user. How-
+ever, the user is unpredictable in front of the chatbot as well. In fact, we assume
+that the user initially knows the information that she or he intends to submit.
+Also, the intention of the user is to make a valid reservation with this informa-
+tion. That is, the information in a reservation must not deviate from the provided
+
+Testing Chatbots using Metamorphic Relations
+5
+values. Additionally, according to practice in MT, we assume that some infor-
+mation about the domain is known in advance. One sequence of messages from
+the point of the user is considered to be one test case. We suppose that the input
+values for the source test case are denoted as Is, whereas the follow-up values
+are given as If. Also, their outputs are deﬁned as Os and Of, respectively. The
+obtained output serves as an indicator for the test verdict. The output diﬀers for
+individual inquiries and available information. For example, diﬀerent numerical
+inputs will result in diﬀerent registration information. The type of responses,
+however, will remain the same.
+As can be seen Table 1, Is consists of eight actions that will be submitted
+as individual requests. The individual actions themselves comprise several terms
+and numerical values that are considered keywords. As will be described below,
+these play an important role for further test generation. After every request,
+the chatbot is programmed to give a corresponding response. During testing, we
+record all responses for every submitted action. On the right side of the table
+the chatbot’s mandatory parameters are enumerated. The chatbot processes the
+individual actions and, if possible, assigns provided values to their parameter.
+Table 1. Source test case
+# Action
+Parameter
+0: I want to book a room in Vienna
+$location
+1: book a hotel
+$venue-type
+2: Fairmont
+$venue-title
+3: I want to check-in today.
+$checkin-date
+4: 1 adults
+$adult
+5: 2 children
+$child
+6: 1 night
+$night
+7: i want 5 stars
+$star
+Now, we deﬁne the following properties of the chatbot as MRs. As already
+mentioned, these relations must be valid for test inputs and outputs. The source
+test case from Table 1 encompasses sentences in natural language. However,
+several keywords are emphasized that will be addressed by the MRs. The MRs
+focus on input generation for chatbots, as follows:
+MR1: Replace keywords with synonyms: In order to infer If from Is,
+they keywords are replaced by synonyms. Although, for every follow-up test case,
+keywords are changed in only one action. The obtained Os serves as a reference
+that is compared to the obtained Of. When applying synonyms, we expect the
+same behavior from the chatbot, thus Os = Of must be valid.
+MR2: Change numerical values: This relation instructs to change numer-
+ical values for individual actions. The outputs of Os and Of should be equal,
+with the exception of the numerals from the ﬁnal reservation.
+MR3: Omit words: This relation demands that keywords are omitted, thus
+providing insuﬃcient information. The chatbot should recognize the diﬀerence,
+
+6
+J. Bozic and F. Wotawa
+thus resulting in diﬀerent responses. MR3 is valid in case that Os̸ = Of for every
+If.
+MR4: Replace keywords with unrelated terms: This relation is similar
+to MR1 but instead of synonyms, keywords are exchanged with unrelated terms.
+Therefore, the corresponding outputs must never resemble each other. Therefore,
+the expected outputs equal Os̸ = Of.
+MR5: Change order of actions: The order of actions in Is is changed
+in the follow-up test case If. Since the tester does not know about the SUT’s
+behavior, the obtained outputs are expected to diﬀer, thus Os̸ = Of. (Although,
+a valid reservation might still be accomplished accidentally by a valid random
+combination.)
+For every MR, a grammar is constructed that provides the building blocks for
+test generation. For example, the grammar for MR1 is deﬁned in the standard
+Backus-Naur form (BNF).
+<sentence >::= I want to <book > a <room > in <place >
+<book >::= book | order | take | prefer
+<room >::= room | place | hotel | hostel | apartment
+<place >::=
+Vienna | Prague | Madrid
+<accomodation >::=
+hotel | hostel | apartment
+<venue >::=
+Sacher | Fairmont | Elmhurst
+<days >::= in two days | yesterday | tomorrow | today
+<adults >::= <number > <guests >
+<guests >::=
+guests | people | humans | adults
+<youngling >::= <number > <children >
+<children >::=
+children | kids
+<nights >::= <number > <sleep >
+<sleep >::=
+nights | days
+<rating >::= <number > <points >
+<points >::=
+stars | ratings
+<number >::= 1 | 2 | 3 | 4 | 5
+Formal grammars are deﬁned by ﬁnite sets of terminal and nonterminal sym-
+bols. In the above example, nonterminal symbols resemble keywords in our ap-
+proach, whereas terminals represent concrete values. The expression, i.e. a se-
+quence of symbols, guides the generation of an action by assigning concrete
+values according to MR. Some terminals in the grammar are set manually by
+checking the supported library from Dialogﬂow. In order to generate meaningful
+inputs, we use a modiﬁed version of Grammar Solver [3]. The implementation
+applies MRs and traverses through the BNF structure, thereby constructing new
+user inputs. In fact, this process can be subtracted as a mutation process. MRs
+proscribe unique mutations to individual actions, thus generating modiﬁed, i.e.
+follow-up, test cases. So, the ﬁnal shape of a follow-up test cases is determined
+by the mutation operation and the source test case.
+For example, the follow-up test case If in Table 2 depicts the case where
+MR4 is applied to Is from Table 1. In fact, every inferred test case will diﬀer
+
+Testing Chatbots using Metamorphic Relations
+7
+Table 2. Follow-up test case for MR4
+# Action
+0: I want to book a room in nowhere
+1: book a hotel
+2: Fairmont
+3: I want to check-in today.
+4: 1 adults
+5: 2 children
+6: 1 night
+7: i want 5 stars
+from its original by adding one change. In such way, we want to check how
+minimal changes aﬀect the overall testing result. We obtain a diverse test case
+by applying mutations to just one initial test. By doing so, our intention is to
+obtain tests that are able to lead to states during execution that are not covered
+by the implementation or the speciﬁcation. After the mutations from all MRs
+have been applied to the source test case, we initiate the execution process.
+2.2
+Metamorphic Test Execution
+After the individual MRs have been speciﬁed, the test generation process can
+begin. The algorithm, BotMorph, as shown in Algorithm 1, implements our
+entire test generation and execution approach. The process starts with the initial
+source test case, Is, from Table 1. Its individual actions are manually deﬁned
+and represent a sequence that ultimately leads to a speciﬁc reservation. Is is
+executed and the chatbot’s source output, Os, is recorded. This represents an
+important step that substitutes the test oracle: The comparison of Os to the
+result from the follow-up test case, Of, will determine the test verdict.
+Then, the MRs are applied in optional order to derive follow-up test cases.
+The new test case is executed against the SUT and the output is recorded. From
+the technical point of view, obtained values from Grammar Solver are assigned
+to HTTP requests and submitted to the chatbot system on the ﬂy. In return,
+its HTTP responses are processed and handled accordingly. The MR checks are
+done after the ﬁnal Of of a test case is received. If no vulnerability is triggered,
+i.e. if the MC fails, then the test case is added to the list of successful tests V .
+Otherwise, in case that an issue has been detected, the test will be disregarded.
+The process continues until all MRs have been applied and checked. Afterwards,
+the same process is restarted but with new source tests from the successful ones.
+In theory, the process can continue until every symbol has occurred for every
+combination of values for all MRs. It remains the task of the tester to deﬁne the
+termination condition.
+
+8
+J. Bozic and F. Wotawa
+Algorithm 1 BotMorph – Metamorphic test generation and execution algo-
+rithm for chatbots
+Input: Program P, set of metamorphic relations MR = {mr1, . . . , mrn}, source test
+case Is = {a1, . . . , an}, grammar G and a function Φ = (MR, Is, G) 7→If that infers
+follow-up test cases.
+Output: Metamorphic test set TS = {If1, . . . , Ifi} where each Ifi = {a0, . . . , an}
+and a list with source test cases V = {v1, . . . , vn}.
+1: TS = ∅
+2: Os = exec(Is, P)
+3: V = V ∪{(Is, Os)}
+4: for v ∈V do
+5:
+while MR.hasNext() do
+6:
+If = generate(Φ, mrn, G, Is)
+▷Generate test case
+7:
+TS = TS ∪{If}
+8:
+for If ∈TS do
+9:
+res(If) = FAIL
+10:
+Of = exec(If, P)
+▷Execute test case
+11:
+if check((Is, Os), (If, Of), mrn) fails then
+▷Execute MC
+12:
+res(If) = PASS
+13:
+V = V ∪{(If, Of)}
+▷Save successful test case
+14:
+else
+15:
+res(If) = FAIL
+16:
+end if
+17:
+end for
+18:
+end while
+19: end for
+3
+Evaluation
+For the evaluation we generated several test sets from the initial test case. The
+source test case Is serves as the starting point for all inferred If’s. The deﬁned
+MRs serve as test guidelines as well as the basis for conducted metamorphic
+checks. We execute the procedure from M1 in a descending order. Since the
+individual actions from Is diﬀer from each other, the MRs will cause diﬀerent
+results with regard to number and shape of test cases. For example, a0 contains
+three keywords, whereas a1 comprehends just one. When applying MR1, syn-
+onyms will be created for every keyword separately (with the exception of the
+check-in date). For example, in case of a0, the mutation is applied only for one
+keyword at the time. Thus, the number of resulting follow-up’s is multiplied by
+each keyword and the grammar values. On the other hand, a1 will provide only
+one follow-up test case per mutation. Also, each MR is applied individually on
+just one action, so the new test case diﬀers only in one change from its orig-
+inal (the exception being MR5). In such way we want to observe the testing
+behaviour by adding just small changes.
+In total, we generated 104 test cases that were submitted against the booking
+chatbot. Table 3 depicts all results that have been achieved.
+
+Testing Chatbots using Metamorphic Relations
+9
+Table 3. Results for metamorphic test cases
+MR
+#total
+#pass
+#fail
+MR1
+60
+56
+4
+MR2
+16
+16
+0
+MR3
+10
+5
+5
+MR4
+10
+5
+5
+MR5
+8
+8
+0
+Since the SUT behaves diﬀerent for each input, we will analyse the results
+with regard to every MR.
+MR1: We added several synonyms for keywords and encountered a few dis-
+crepancies with Dialogﬂow. The initial booking request action was successful in
+all cases. Thus, the chatbot was able to recognize the intent and ﬁnalize the
+reservation even when the client reformulates the request. A failing test case
+was encountered with a4−6 and a8, where synonyms like “guests” instead of
+“adults”, “kids” instead of “children” and “ratings” could not be recognized by
+the chatbot.
+MR2: This MR is unique among the relations because it aﬀects only actions
+with numerical values. That is, only four out of eight inputs are addressed by
+the mutation. It can be concluded that changing the number in an action does
+not cause any failures. The chatbot succeeds with generating a reservation with
+diﬀerent values. Therefore, all tests have been successful.
+MR3: Omitting words causes a lot of confusion in the chatbot. Initiating a
+reservation with a0 is possible even without the explicit mentioning of “book” or
+“room”. However, if no city name is provided, the client cannot proceed further.
+We conclude that the explicit statement of a city name at the beginning of the
+communication is mandatory. Also, if no accommodation type, check-in dates
+and stars are provided, then the reservation fails. The chatbot keeps insisting
+for the information and ignores further user requests. For actions with numerals,
+we kept the numbers but omitted the words to their right. Interestingly, a valid
+information is made when providing just numerals without “adults”, “children”
+or “nights”. It seems that the chatbot assumes that a client always provides
+information in a strict order. Thus, it assigns the information to parameters
+without further clariﬁcation. However, this seems not to be the case when “stars”
+is omitted.
+MR4: Replacing keywords with nonrelated terms triggered strange behaviour
+on side of the chatbot. For example, formulating a0 into “I want to exchange
+a pod in nowhere” (three follow-up test cases, one for every keyword) resulted
+in a valid registration! If we compare the behaviour to MR3, the chatbot seems
+to accept every value for city name as a valid one. This is an important imple-
+mentation ﬂaw in the chatbot. Actions a2−4 are processed as expected by the
+SUT. On the other hand, “alien” and “kobolds” seem to be a valid substitute
+for “adults” and “children” in a5 and a6, for unknown reasons. However, a7 and
+a8 have been rejected, as demanded by the relation.
+
+10
+J. Bozic and F. Wotawa
+MR5: This MR is unique since it requests a reordering of actions in a test
+case. This means that concrete values will not diﬀer between Is and If. We
+adapted a randomized approach that resulted in eight test cases with diﬀerent
+sequences of actions. As expected, every Of from SUT diﬀers from Os. The
+chatbot’s response depends on the ﬁrst user inquiry. Usually the SUT keeps
+asking for a certain information and remains in a speciﬁc queue. If the requested
+information is received in the meanwhile, then it switches to another queue.
+Also, if the chatbot encountered unexpected input (from its point of view),
+then unexpected responses were sent. This included an empty text or unrelated
+sentences (e.g. “Talk to you soon!”).
+Since we applied MT for functional testing purposes, our intention was not
+to exploit a SUT. Since a tester does not know about the inner workings of
+a SUT and its available information, some guessing is needed. The tester can
+assume that some keywords will be understood by the chatbot, others can be
+completely avoided. In our approach, unintended behaviour indicates that 1)
+an implementation ﬂaw or oversight or 2) insuﬃcient information on side of
+the Dialogﬂow implementation. Actually, here both observations aﬃrm known
+advantages of MT, namely the detection of veriﬁcation and validation defects,
+respectively [8]. In the ﬁrst case, we can assume that the chatbot did behave to
+its implementation or incomplete speciﬁcation. However, it failed to cover cases,
+which it should be able to understand. Also, the assignment of information to
+a speciﬁc parameter without clear indication can be considered a drawback as
+well. Finalizing a reservation with unsuitable data (e.g. ﬁctional city names or
+substitutes) is even worse.
+On the other hand, the chatbot’s permanent insistence on a speciﬁc infor-
+mation at a certain point during the conversation indicates that a strict order
+must be followed. As already proven in [4], the hotel booking chatbot insists
+that the ﬁrst and last inquiries must be of a speciﬁc type. The sequence of other
+information is optional.
+$location
+$venue -type
+$venue -title
+$checkin -date
+$adult
+$child
+$night
+$star
+The approach in that work demonstrated that the chatbot concluded reserva-
+tions even with missing information in a nonintuitive manner. This means that
+the chatbot does something it should not. The same observation was proven
+when testing against MR3. On the other hand, MT detected that the SUT does
+not what it should do (e.g. with MR1). Also, meaningless input is wrongly asso-
+ciated with an intent with MR4. We assume that the reason why unrelated terms
+are still “understood” is due to the fact that the chatbot follows its strict order
+and ignores other information (“stars” being an exception). The recognition of
+
+Testing Chatbots using Metamorphic Relations
+11
+terms depends upon the pre-speciﬁed entries in the chatbot’s entity database.
+A diﬀerent set of values and intents would likely result in diﬀerent behaviour of
+the system. Interestingly, some natural language input does disturb the chatbot
+as well. Adding a “I want to” to mandatory information does not match the
+chatbot’s intent. It seems that the SUT follows a minimalistic approach.
+In general, we conclude that the use of metamorphic test cases succeeds
+to trigger defects in natural language systems. In addition to that, it provides
+some clariﬁcation about possible reasons with regard to diverse inputs. Also, it
+uncovers clues about inner workings of the chatbot by relying on a small set of
+metamorphic relations. For all these reasons, we consider the presented approach
+as a good starting concept for further actions.
+4
+Related Work
+Research that correlates with our work includes metamorphic testing and chat-
+bot testing. Works that focus on the ﬁrst topic are often conducted on industrial
+and online applications. Also, these approaches often interact with external im-
+plementations and resources. On the other hand, literature that focuses on test-
+ing of chatbots, is sparse. To our knowledge, no work deals with the adaptation
+of MT to chatbots.
+4.1
+Metamorphic Testing
+MT was introduced in [7] and the idea was elaborated on several examples of
+numerical problems. Comprehensive surveys about papers that deal with MT
+can be found in [17] and [8].
+The preliminary work that addressed oracle-free programs is discussed in [25].
+Here the notion of pseudo-oracles is used, i.e. external programs that substitute a
+real test oracle. Additional programs are implemented and tests are run against
+both the original and the substitute program. If the results match, then the
+results of the original program are considered to be valid.
+In [18] and [16] the authors elaborate a MT-based approach for testing of
+feature models (FM) and variability models (VM). Such models encompass the
+deﬁnition of speciﬁc products by means of features or conﬁgurations, respec-
+tively. MRs are deﬁned between models and their inferred products, and a test
+generator. New models are generated from previous ones by adding mandatory
+features. In this way, many models and valid conﬁgurations can be generated
+automatically.
+[26] addresses testing of implementations that use ML classiﬁcation algo-
+rithms. The authors derive MRs for the individual algorithms and test a real-
+world ML application framework. Individual MRs deﬁne properties that are
+necessary to be valid for a classiﬁer algorithm. Finally, they claim that their
+MT-based approach can be used against any SUT that uses ML. This work is
+evaluated further in [15].
+
+12
+J. Bozic and F. Wotawa
+In [28] a MT-based framework is proposed for testing of autonomous driving
+systems that rely on Deep Neural Networks (DNN). Another work that elabo-
+rates MT for testing of autonomous systems is given in [29]. Here MT relies on
+deep learning models and comes in combination with fuzzing. The authors eval-
+uate their approach on the mission-critical LiDAR Obstacle Perception system,
+with promising results.
+Additional adaptations of MT to AI systems that include autonomous sys-
+tems and DNN are elaborated in [12] and [21], respectively. Also, [10] discusses
+the use of MT for debugging of ML applications.
+The authors of [9] address the applicability of MT to cybersecurity. In this
+approach, MRs are deﬁned in order to test for web failures. Several real-world ob-
+fuscators have been tested by using a small test suite. The conducted evaluation
+indicates that several bugs were found.
+Additionally, [19] applies MT to test Web Application Programming Inter-
+faces (APIs).
+[6] discusses an implementation of MR for testing of event sequences for busi-
+ness processes. The approach, MTES, deﬁnes metamorphic relations for fault-
+detection purposes. The authors conclude that more diverse inputs result in
+higher detection capabilities.
+Also, works exist that address MT for machine translators (e.g. [27]). A MR
+applies translations to diﬀerent sentences and checks for semantic (dis)similarity
+between languages. Inputs are generated that are meant to be homologous in
+diﬀerent languages. The authors discuss the quality of translators and their
+translation errors. In contrast to our work, they validate the produced inputs
+from the translator and ignore the SUT that processes these inputs.
+4.2
+Testing of Chatbots
+In contrast to the plentiful number of MT-related papers, only a few papers
+address testing of chatbots.
+For example, [23] introduces PARADISE, a system that deals with the eval-
+uation of conversational systems. Diﬀerent dialogue strategies are compared and
+checked against a performance function. In this way, the correctness of an answer
+is determined. However, in our work, we concentrate on the user’s side without
+having an insight in expected results.
+[22] that deals with testing of conversational systems with regard to function-
+ality. A testing system emulates a user that interacts with the chatbot. A large
+amount of pre-deﬁned user inputs is submitted to the chatbot in an automated
+manner. The tested system itself, CognIA, represents a ﬁnancial advisor. During
+exhaustive communication, speciﬁc metrics are used that validate the chatbot’s
+responses with regard to submitted inputs.
+In our previous work [4], we introduced an approach for functional testing of
+a hotel booking chatbot. We applied AI planning for generation of test cases and
+compared the chatbot’s output to an expected result in an automated manner.
+Techniques that resemble our test case generation technique are given in [14]
+and [11]. They discuss a technique for conversational input generation for chat-
+
+Testing Chatbots using Metamorphic Relations
+13
+bots. The idea behind the proposed technique is to change valid user inputs by
+paraphrasing them. Diﬀerent techniques are used for this sake in order to retrieve
+a divergent input from the original one. The changes encompass lexical substi-
+tutions, as well as non-native preposition errors and native colloquial phrasing,
+respectively. An external source is used for retrieving original synonyms. Finally,
+the resulting framework tests the robustness of the system by checking on the in-
+put variations. The evaluations, based on a chatbot and a ﬂight booking system,
+indicate that several weaknesses have been encountered. The obtained results
+indicate that the SUT does not always recognize an intent when words are re-
+placed with synonyms. Consequently, it might be claimed that our results from
+MR1 complement the observations from their approach. However, the reasons
+for these observations should be investigated in more detail. On the other hand,
+the main diﬀerence represents the fact that their technique relies on known ex-
+pected values. This stands in stark contrast to a MT-based approach. In our
+case, the use of multiple MRs yield more insight into the inner workings of the
+SUT.
+5
+Conclusion and Future Work
+In this paper, we addressed an emerging issue in software testing, namely test-
+ing of AI systems. The nature of such systems often impedes a straight-forward
+approach. Especially systems that communicate in natural language might be-
+come more important in the future. Because of that, testing of these systems
+becomes an essential task to ensure correct functionality. In this paper we intro-
+duced a metamorphic testing approach for testing of chatbots. Instead of models
+of existing systems, it relies on metamorphic relations. Since the output of an
+AI system is diﬃcult to predict, the approach introduces metamorphic checks
+instead of traditional test oracles. We presented a program that combines meta-
+morphic test case generation and execution for functional testing of chatbots. In
+the aftermath, the approach is successfully evaluated on a chatbot system from
+the tourism industry.
+The obtained results indicate that the metamorphic approach is able to detect
+unexpected behaviour in a system. Although the chatbot did succeed to ensure
+functionality in some cases, other test cases triggered situations, which the SUT
+failed to handle correctly. Consequently, the reasons for these issues must be
+addressed separately.
+Finally, we claim that our approach can be used for functional testing of
+chatbots. In addition to that, metamorphic testing can be used for testing of
+non-functional properties as well. Precisely, MT-based approaches can be ap-
+plied under circumstances where expected behaviour is diﬃcult or impossible to
+determine. In the future, we plan to extend our approach by improving the test
+generation. MRs can be easily added to the existing ones. Thus, a more diverse
+test suite will be obtained. Also, using the MT approach against other chat-
+bot systems remains an open challenge. Eventually, it would be interesting to
+compare the MT-based approach to other chatbot testing techniques and tools.
+
+14
+J. Bozic and F. Wotawa
+Acknowledgement
+The research presented in the paper has been funded in part by the Cooper-
+ation Programme Interreg V-A Slovenia-Austria under the project AS-IT-IC
+(Austrian-Slovenian Intelligent Tourist Information Center). We thank our col-
+league Oliver A. Tazl, who helped us with the implementation of the SUT in
+[4], which was used in this work. In addition to that, we want to thank the
+anonymous reviewers for their constructive feedback, which we addressed in the
+paper.
+References
+1. Dialogﬂow. https://dialogflow.com/, accessed: 2018-12-11
+2. Gartner
+Top
+Strategic
+Predictions
+for
+2018
+and
+Be-
+yond.
+https://www.gartner.com/smarterwithgartner/
+gartner-top-strategic-predictions-for-2018-and-beyond/, accessed: 2018-
+05-07
+3. Grammar-solver. https://github.com/bd21/Grammar-Solver, accessed: 2018-07-
+13
+4. Bozic, J., Tazl, O.A., Wotawa, F.: Chatbot Testing Using AI Planning. In: Pro-
+ceedings of the International Conference on Artiﬁcial Intelligence Testing (AITest)
+(2019)
+5. Brandtzæg, P.B., Følstad, A.: Why People Use Chatbots. In: Proceedings of the
+4th International Conference on Internet Science (INSCI’17) (2017)
+6. Chen, J., Wang, Y., Guo, Y., Jiang, M.: A metamorphic testing approach for event
+sequences. In: PLoS ONE 14(2): e0212476 (2019)
+7. Chen, T.Y., Cheung, S.C., Yiu, S.M.: Metamorphic Testing: A New Approach for
+Generating Next Test Cases. In: Technical Report HKUST-CS98-01, Department
+of Computer Science, Hong Kong University of Science and Technology, Hong Kong
+(1998)
+8. Chen, T.Y., Kuo, F.C., Liu, H., Poon, P.L., Towey, D., Tse, T.H., Zhou, Z.Q.:
+Metamorphic Testing: A Review of Challenges and Opportunities. In: ACM Com-
+puting Surveys (CSUR), Vol. 51, Issue 1 (2018)
+9. Chen, T.Y., Kuo, F.C., Ma, W., Susilo, W., Towey, D., Voas, J., Zhou, Z.Q.:
+Metamorphic Testing for Cybersecurity. In: Computer, Vol. 49 , Issue 6 (2016)
+10. Dwarakanath, A., Ahuja, M., Sikand, S., Rao, R.M., Jagadeesh Chandra Bose,
+R.P., Dubash, N., Podder, S.: Identifying Implementation Bugs in Machine Learn-
+ing Based Image Classiﬁers using Metamorphic Testing. In: Proceedings of the
+27th ACM SIGSOFT International Symposium on Software Testing and Analysis
+(ISSTA’18) (2018)
+11. Guichard, J., Ruane, E., Smith, R., Bean, D., Ventresque, A.: Assessing the Ro-
+bustness of Conversational Agents using Paraphrases. In: IEEE, University College
+Dublin (2019)
+12. Lindvall, M., Porter, A., Magnusson, G., Schulze, C.: Metamorphic Model-based
+Testing of Autonomous Systems. In: Proceedings of the 2nd International Work-
+shop on Metamorphic Testing (MET’17) (2017)
+13. Mauldin, M.L.: ChatterBots, TinyMuds and the Turing Test: Entering the Loebner
+Prize Competition. In: AAAI ’94 Proceedings of the twelfth national conference
+on Artiﬁcial intelligence (vol. 1). pp. 16–21 (1994)
+
+Testing Chatbots using Metamorphic Relations
+15
+14. Ruane, E., Faure, T., Smith, R., Bean, D., Carson-Berndsen, J., Ventresque, A.:
+BoTest: a Framework to Test the Quality of Conversational Agents Using Di-
+vergent Input Examples. In: Proceedings of the 23rd International Conference on
+Intelligent User Interfaces Companion (IUI’18 Companion) (2018)
+15. Saha, P., Kanewala, U.: Fault Detection Eﬀectiveness of Metamorphic Relations
+Developed for Testing Supervised Classiﬁers. In: Proceedings of the International
+Conference on Artiﬁcial Intelligence Testing (AITest) (2019)
+16. Segura, S., Dur´an, A., S´anchez, A.B., Le Berre, D., Lonca, E., Ruiz-Cort´es, A.:
+Automated metamorphic testing of variability analysis tools. In: Software Testing,
+Veriﬁcation and Reliability, Vol. 25, Issue 2 (2015)
+17. Segura, S., Fraser, G., S´anchez, A.B., Ruiz-Cort´es, A.: A Survey on Metamorphic
+Testing. In: IEEE Transactions on Software Engineering 42, 9 (2016)
+18. Segura, S., Hierons, R.M., Benavides, D., Ruiz-Cort´es, A.: Automated Test Data
+Generation on the Analyses of Feature Models: A Metamorphic Testing Approach.
+In: Proceedings of the 2010 Third International Conference on Software Testing,
+Veriﬁcation and Validation (2010)
+19. Segura, S., Parejo, J.A., Troya, J., Ruiz-Cort´es, A.: Metamorphic Testing of REST-
+ful Web APIs. In: IEEE Transactions on Software Engineering, Vol. 44, Issue 11
+(2018)
+20. Shawar, B.A., Atwell, E.: Using corpora in machine-learning chatbot systems. In:
+International Journal of Corpus Linguistics, vol. 10 (2005)
+21. Tian, Y., Pei, K., Jana, S., Ray, B.: DeepTest: Automated Testing of Deep-Neural-
+Network-driven Autonomous Cars. In: Proceedings of the 40th International Con-
+ference on Software Engineering (2018)
+22. Vasconcelos, M., Candello, H., Pinhanez, C., dos Santos, T.: Bottester: Testing
+Conversational Systems with Simulated Users. In: Proceedings of the XVI Brazilian
+Symposium on Human Factors in Computing Systems (IHC 2017) (2017)
+23. Walker, M.A., Litman, D.J., Kamm, C.A., Abella, A.: PARADISE: A Framework
+for Evaluating Spoken Dialogue Agents. In: Proceedings of the 35th Annual General
+Meeting of the Association for Computational Linguistics, ACL/EACL’97 (1997)
+24. Wallace, R.S.: The Elements of AIML Style. In: ALICE A.I. Foundation (2003)
+25. Weyuker, E.: On Testing Non-Testable Programs. In: The Computer Journal, Vol.
+25, No. 4 (1982)
+26. Xie, X., Ho, J.W.K., Murphy, C., Kaiser, G., Xu, B., Chen, T.Y.: Testing and vali-
+dating machine learning classiﬁers by metamorphic testing. In: Journal of Systems
+and Software, Vol. 84, Issue 4 (2011)
+27. Yan, B., Yecies, B., Zhou, Z.Q.: Metamorphic Relations for Data Validation: A
+Case Study of Translated Text Messages. In: Proceedings of the 4th International
+Workshop on Metamorphic Testing (MET’19) (2019)
+28. Zhang, M., Zhang, Y., Zhang, L., Liu, C., Khurshid, S.: DeepRoad: GAN-Based
+Metamorphic Testing and Input Validation Framework for Autonomous Driving
+Systems. In: Proceedings of the 33rd ACM/IEEE International Conference on Au-
+tomated Software Engineering (ASE 2018) (2018)
+29. Zhou, Z.Q., Sun, L.: Metamorphic Testing of Driverless Cars. In: Communications
+of the ACM, 62 (3) (2019)

@@ -1,0 +1,117 @@
+{
+  "protocol_id": "MLR-PRISMA-SCR-MANUEL-VOL8-2027-V1.0",
+  "freeze_date": "2026-12-02",
+  "ao_01_policy": "ZERO contournement. Toute URL retournee avec HTTP 401/403/429/451, 202 PoW, WAF, CAPTCHA ou mur payant est arretee apres 1 requete et exclue de l'evidence.",
+  "blocked": [
+    {
+      "source_hint": "Chen et al. (2018), Metamorphic Testing: A Review of Challenges and Opportunities (ACM CSUR)",
+      "url": "https://dl.acm.org/doi/10.1145/3143561",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "HTTP 403 / mur payant ACM Digital Library (1 tentative AO-01) ; compensé en L+ par Bozic & Wotawa (hal-02526355, SRC-091), MORTAR co-signé par T.Y. Chen (arXiv:2412.15557, SRC-092) et Chen et al. (arXiv:2608.07076, SRC-093).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "EUR-Lex HTML direct (Règlement UE 2024/1689)",
+      "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202401689",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 200,
+      "block_reason": "WAF_OR_CHALLENGE:aws-waf",
+      "reason": "WAF_OR_CHALLENGE:aws-waf",
+      "note": "Coquille JS / défi AWS WAF sur eur-lex.europa.eu ; compensé par PDF officiel JOUE EUR-Lex Cellar (SRC-060, SRC-061, SRC-062, SRC-067).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "OWASP GenAI PDF portal",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "HTTP 403 sur genai.owasp.org (1 tentative AO-01) ; compensé intégralement en L+ par OWASP Top 10 v1.0 CC BY-SA 4.0 (SRC-055) et Crosswalk GitHub Pages (SRC-059).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "AMF Québec (Autorité des marchés financiers) & note QC-AMF-NOTE-2026 (CRE-IA-2026-01-QC)",
+      "url": "https://lautorite.qc.ca/",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "HTTP 403 Cloudflare WAF sur lautorite.qc.ca (1 tentative AO-01) et absence de l'archive locale 2026/documents/Note AMF IA.pdf ; date attendue du 1er mai 2027 corroborée sous réserve explicite via AIBanks.ca (SRC-071, L+).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "CEN/CENELEC Portal — EN 18286:2026 fiche projet",
+      "url": "https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:82555",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 500,
+      "block_reason": "HTTP_500",
+      "reason": "HTTP_500",
+      "note": "HTTP 500 sur portail CEN/CENELEC (norme EN 18286:2026 vendue par organismes nationaux) ; référence harmonisée officielle prouvée en L+ par Décision (UE) 2026/2274 (SRC-067) et Commission européenne (SRC-069).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "Gartner Communiqué 25 juin 2025 (> 40 % projets agentiques abandonnés d'ici 2027)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "HTTP 403 sur gartner.com ; exclu en source primaire selon AO-01 (cité secondairement dans Deloitte TMT 2026 SRC-011).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "GLEIF vLEI Ecosystem Governance Framework page directe",
+      "url": "https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 404,
+      "block_reason": "HTTP_404",
+      "reason": "HTTP_404",
+      "note": "HTTP 404 sur sous-page EGF ; compensé en L+ par page officielle vLEI et spécification ouverte GLEIF-IT/WebOfTrust (SRC-079).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "ISO/IEC 42001:2023 — Système de management de l'IA (norme payante)",
+      "url": "https://www.iso.org/standard/81230.html",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "HTTP 403 et norme payante sans texte intégral ouvert ; exclu de l'évidence probante L+ selon AO-01 (alignement SMIA couvert via EN 18286:2026 / UE 2026/2274, SRC-067).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "LégisQuébec — Loi P-39.1 consolidée",
+      "url": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "Portail consolidé bloqué HTTP 403 (1 tentative AO-01) ; compensé en L+ par LQ 2021, c. 25 sanctionnée (SRC-063) et Rapport quinquennal CAI 2026 (SRC-064).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    },
+    {
+      "source_hint": "Statistique Canada article HTML 11-621-m",
+      "url": "https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-fra.htm",
+      "status": "F",
+      "included_in_evidence": false,
+      "http_status": 403,
+      "block_reason": "HTTP_403",
+      "reason": "HTTP_403",
+      "note": "HTTP 403 sur la page HTML ; compensé par les archives CSV ouvertes StatCan 33101167-fra.zip (SRC-014) et 33101207-fra.zip (SRC-015).",
+      "checked_at": "2026-11-23T00:36:21Z"
+    }
+  ]
+}

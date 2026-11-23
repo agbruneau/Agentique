@@ -1,0 +1,63 @@
+{
+  "vsId": 42,
+  "algorithm": "ML-DSA",
+  "mode": "keyGen",
+  "revision": "FIPS204",
+  "isSample": false,
+  "testGroups": [
+    {
+      "tgId": 2,
+      "testType": "AFT",
+      "parameterSet": "ML-DSA-65",
+      "tests": [
+        {
+          "tcId": 26,
+          "seed": "A991FD42B071D49C48AE3E75C647459E0DAAD1E1BA356A04801912D3294BCFF8"
+        },
+        {
+          "tcId": 27,
+          "seed": "494F29AD1C93ABB2B9545BD14CC575A98ECD3062137B439B49EB1A8CC6652FC6"
+        },
+        {
+          "tcId": 28,
+          "seed": "C4EC434D7FEDDCBFF68B77A80E45935F3E363289A493E49ACBAE366E5C6B3D01"
+        },
+        {
+          "tcId": 29,
+          "seed": "37EB816D244578E6DE586AD200BCA1DA2ACFA6B0443E024B1A94E43AB08F8794"
+        },
+        {
+          "tcId": 30,
+          "seed": "F7BA5BEE3E1EF18905C788FC6F9FB838B3E346F4B2908E8585269297098CAFFB"
+        }
+      ]
+    },
+    {
+      "tgId": 3,
+      "testType": "AFT",
+      "parameterSet": "ML-DSA-87",
+      "tests": [
+        {
+          "tcId": 51,
+          "seed": "A16F5B0796703E2D1A0140A35CBF36EFABE70E752BA59B6A9A0E9C4B05302F73"
+        },
+        {
+          "tcId": 52,
+          "seed": "E46D458A660285930D9656A88D14E751730CAE7A4975B6E4FBE69E80E3F01E7F"
+        },
+        {
+          "tcId": 53,
+          "seed": "719BCE87E014ABDB6A0F77EA1C84EAC7DD674D5B03B27ECE154BA7FDDE8A0458"
+        },
+        {
+          "tcId": 54,
+          "seed": "0CC745C7F94D826EC3A5DB9F4B3C406DC717FFCACD83BB6156AEF69FF1DD3E68"
+        },
+        {
+          "tcId": 55,
+          "seed": "EC7CF913761B6A95C56B961B6A381E874F3CDAAE96C16D9308BFE77E14A053AD"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "upstream_repo": "https://github.com/a2aproject/a2a-tck",
+  "upstream_tag": "1.0.0.alpha3",
+  "upstream_commit": "5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+  "upstream_status": "alpha3",
+  "a2a_jcs_v01_present": false,
+  "spec_8_4_1_jcs_canonicalization": {
+    "requirement_ids": [
+      "CARD-SIGN-001",
+      "CARD-SIGN-002"
+    ],
+    "input_after_default_omission": {
+      "name": "Example Agent",
+      "description": "",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false
+      },
+      "skills": []
+    },
+    "raw_input_before_repeated_empty_omission": {
+      "name": "Example Agent",
+      "description": "",
+      "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "extensions": []
+      },
+      "skills": []
+    },
+    "expected_jcs_canonical": "{\"capabilities\":{\"pushNotifications\":false,\"streaming\":false},\"description\":\"\",\"name\":\"Example Agent\",\"skills\":[]}"
+  },
+  "spec_8_4_2_jws_format": {
+    "requirement_ids": [
+      "CARD-SIGN-003",
+      "CARD-SIGN-004"
+    ],
+    "signature_object": {
+      "protected": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpPU0UiLCJraWQiOiJrZXktMSIsImprdSI6Imh0dHBzOi8vZXhhbXBsZS5jb20vYWdlbnQvandrcy5qc29uIn0",
+      "signature": "QFdkNLNszlGj3z3u0YQGt_T9LixY3qtdQpZmsTdDHDe3fXV9y9-B3m2-XgCpzuhiLt8E0tV6HXoZKHv4GtHgKQ"
+    },
+    "expected_decoded_protected_header": {
+      "alg": "ES256",
+      "typ": "JOSE",
+      "kid": "key-1",
+      "jku": "https://example.com/agent/jwks.json"
+    }
+  },
+  "spec_8_5_sample_agent_card": {
+    "name": "GeoSpatial Route Planner Agent",
+    "description": "Provides advanced route planning, traffic analysis, and custom map generation services. This agent can calculate optimal routes, estimate travel times considering real-time traffic, and create personalized maps with points of interest.",
+    "supportedInterfaces": [
+      {
+        "url": "https://georoute-agent.example.com/a2a/v1",
+        "protocolBinding": "JSONRPC",
+        "protocolVersion": "1.0"
+      },
+      {
+        "url": "https://georoute-agent.example.com/a2a/grpc",
+        "protocolBinding": "GRPC",
+        "protocolVersion": "1.0"
+      },
+      {
+        "url": "https://georoute-agent.example.com/a2a/json",
+        "protocolBinding": "HTTP+JSON",
+        "protocolVersion": "1.0"
+      }
+    ],
+    "provider": {
+      "organization": "Example Geo Services Inc.",
+      "url": "https://www.examplegeoservices.com"
+    },
+    "iconUrl": "https://georoute-agent.example.com/icon.png",
+    "version": "1.2.0",
+    "documentationUrl": "https://docs.examplegeoservices.com/georoute-agent/api",
+    "capabilities": {
+      "streaming": true,
+      "pushNotifications": true,
+      "stateTransitionHistory": false,
+      "extendedAgentCard": true
+    },
+    "securitySchemes": {
+      "google": {
+        "openIdConnectSecurityScheme": {
+          "openIdConnectUrl": "https://accounts.google.com/.well-known/openid-configuration"
+        }
+      }
+    },
+    "security": [
+      {
+        "google": [
+          "openid",
+          "profile",
+          "email"
+        ]
+      }
+    ],
+    "defaultInputModes": [
+      "application/json",
+      "text/plain"
+    ],
+    "defaultOutputModes": [
+      "application/json",
+      "image/png"
+    ],
+    "skills": [
+      {
+        "id": "route-optimizer-traffic",
+        "name": "Traffic-Aware Route Optimizer",
+        "description": "Calculates the optimal driving route between two or more locations, taking into account real-time traffic conditions, road closures, and user preferences (e.g., avoid tolls, prefer highways).",
+        "tags": [
+          "maps",
+          "routing",
+          "navigation",
+          "directions",
+          "traffic"
+        ],
+        "examples": [
+          "Plan a route from '1600 Amphitheatre Parkway, Mountain View, CA' to 'San Francisco International Airport' avoiding tolls.",
+          "{\"origin\": {\"lat\": 37.422, \"lng\": -122.084}, \"destination\": {\"lat\": 37.7749, \"lng\": -122.4194}, \"preferences\": [\"avoid_ferries\"]}"
+        ],
+        "inputModes": [
+          "application/json",
+          "text/plain"
+        ],
+        "outputModes": [
+          "application/json",
+          "application/vnd.geo+json",
+          "text/html"
+        ]
+      },
+      {
+        "id": "custom-map-generator",
+        "name": "Personalized Map Generator",
+        "description": "Creates custom map images or interactive map views based on user-defined points of interest, routes, and style preferences. Can overlay data layers.",
+        "tags": [
+          "maps",
+          "customization",
+          "visualization",
+          "cartography"
+        ],
+        "examples": [
+          "Generate a map of my upcoming road trip with all planned stops highlighted.",
+          "Show me a map visualizing all coffee shops within a 1-mile radius of my current location."
+        ],
+        "inputModes": [
+          "application/json"
+        ],
+        "outputModes": [
+          "image/png",
+          "image/jpeg",
+          "application/json",
+          "text/html"
+        ]
+      }
+    ],
+    "signatures": [
+      {
+        "protected": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpPU0UiLCJraWQiOiJrZXktMSIsImprdSI6Imh0dHBzOi8vZXhhbXBsZS5jb20vYWdlbnQvandrcy5qc29uIn0",
+        "signature": "QFdkNLNszlGj3z3u0YQGt_T9LixY3qtdQpZmsTdDHDe3fXV9y9-B3m2-XgCpzuhiLt8E0tV6HXoZKHv4GtHgKQ"
+      }
+    ]
+  },
+  "sut_python_agent_card": {
+    "name": "A2A Python SDK System Under Test (SUT)",
+    "description": "Auto-generated System Under Test for A2A TCK conformance",
+    "version": "1.0.0",
+    "provider": {
+      "organization": "A2A Project",
+      "url": "https://github.com/a2aproject"
+    },
+    "supportedInterfaces": [
+      {
+        "url": "http://localhost:9999",
+        "protocolBinding": "JSONRPC",
+        "protocolVersion": "1.0"
+      },
+      {
+        "url": "http://localhost:9999/a2a/rest",
+        "protocolBinding": "HTTP+JSON",
+        "protocolVersion": "1.0"
+      },
+      {
+        "url": "localhost:10000",
+        "protocolBinding": "GRPC",
+        "protocolVersion": "1.0"
+      }
+    ],
+    "capabilities": {
+      "streaming": true,
+      "pushNotifications": false
+    },
+    "defaultInputModes": [
+      "text"
+    ],
+    "defaultOutputModes": [
+      "text"
+    ],
+    "skills": [
+      {
+        "id": "tck",
+        "name": "TCK Conformance",
+        "description": "Handles TCK conformance test messages",
+        "tags": [
+          "tck"
+        ]
+      }
+    ]
+  },
+  "derived_negative_cases": [
+    {
+      "case_id": "NEG-CARD-STRUCT-001",
+      "requirement_id": "CARD-STRUCT-001",
+      "reason": "Missing required top-level field 'skills' and 'supportedInterfaces'",
+      "payload": {
+        "name": "Broken Agent",
+        "description": "Missing fields",
+        "version": "1.0.0"
+      },
+      "expected_valid": false
+    },
+    {
+      "case_id": "NEG-CARD-PROTO-001",
+      "requirement_id": "CARD-PROTO-001",
+      "reason": "supportedInterfaces must be non-empty",
+      "payload": {
+        "name": "A2A Python SDK System Under Test (SUT)",
+        "description": "Auto-generated System Under Test for A2A TCK conformance",
+        "version": "1.0.0",
+        "provider": {
+          "organization": "A2A Project",
+          "url": "https://github.com/a2aproject"
+        },
+        "supportedInterfaces": [],
+        "capabilities": {
+          "streaming": true,
+          "pushNotifications": false
+        },
+        "defaultInputModes": [
+          "text"
+        ],
+        "defaultOutputModes": [
+          "text"
+        ],
+        "skills": [
+          {
+            "id": "tck",
+            "name": "TCK Conformance",
+            "description": "Handles TCK conformance test messages",
+            "tags": [
+              "tck"
+            ]
+          }
+        ]
+      },
+      "expected_valid": false
+    },
+    {
+      "case_id": "NEG-CARD-SIGN-003",
+      "requirement_id": "CARD-SIGN-003",
+      "reason": "JWS protected header missing mandatory 'kid' parameter",
+      "protected_header": {
+        "alg": "ES256",
+        "typ": "JOSE"
+      },
+      "expected_valid": false
+    }
+  ]
+}

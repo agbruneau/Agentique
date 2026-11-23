@@ -1,0 +1,2244 @@
+{
+  "protocol_id": "MLR-PRISMA-SCR-MANUEL-VOL8-2027-V1.0",
+  "freeze_date": "2026-12-02",
+  "api_discovery_probes": [
+    {
+      "api": "arxiv",
+      "axis": "RQ1",
+      "query": "all:\"Model Context Protocol\" AND all:\"silent drift\""
+    },
+    {
+      "api": "arxiv",
+      "axis": "RQ3",
+      "query": "all:\"CaMeL\" AND all:\"prompt injection\""
+    },
+    {
+      "api": "arxiv",
+      "axis": "RQ5",
+      "query": "all:\"MORTAR\" AND all:\"metamorphic testing\""
+    },
+    {
+      "api": "crossref",
+      "axis": "RQ5",
+      "query": "metamorphic testing without oracle Chen 10.1145/3143561"
+    },
+    {
+      "api": "hal",
+      "axis": "RQ5",
+      "query": "metamorphic testing chatbots"
+    },
+    {
+      "api": "ietf_datatracker",
+      "axis": "RQ2",
+      "query": "transaction-tokens"
+    },
+    {
+      "api": "ietf_datatracker",
+      "axis": "RQ2",
+      "query": "oauth-agent-revocation"
+    },
+    {
+      "api": "nist_csrc",
+      "axis": "RQ2",
+      "query": "FIPS 204"
+    }
+  ],
+  "blocked_candidates_status_f": [
+    {
+      "source_hint": "Chen et al. (2018), Metamorphic Testing: A Review of Challenges and Opportunities (ACM CSUR)",
+      "url": "https://dl.acm.org/doi/10.1145/3143561",
+      "note": "HTTP 403 / mur payant ACM Digital Library (1 tentative AO-01) ; compensé en L+ par Bozic & Wotawa (hal-02526355, SRC-091), MORTAR co-signé par T.Y. Chen (arXiv:2412.15557, SRC-092) et Chen et al. (arXiv:2608.07076, SRC-093)."
+    },
+    {
+      "source_hint": "EUR-Lex HTML direct (Règlement UE 2024/1689)",
+      "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202401689",
+      "note": "Coquille JS / défi AWS WAF sur eur-lex.europa.eu ; compensé par PDF officiel JOUE EUR-Lex Cellar (SRC-060, SRC-061, SRC-062, SRC-067)."
+    },
+    {
+      "source_hint": "OWASP GenAI PDF portal",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "note": "HTTP 403 sur genai.owasp.org (1 tentative AO-01) ; compensé intégralement en L+ par OWASP Top 10 v1.0 CC BY-SA 4.0 (SRC-055) et Crosswalk GitHub Pages (SRC-059)."
+    },
+    {
+      "source_hint": "AMF Québec (Autorité des marchés financiers) & note QC-AMF-NOTE-2026 (CRE-IA-2026-01-QC)",
+      "url": "https://lautorite.qc.ca/",
+      "note": "HTTP 403 Cloudflare WAF sur lautorite.qc.ca (1 tentative AO-01) et absence de l'archive locale 2026/documents/Note AMF IA.pdf ; date attendue du 1er mai 2027 corroborée sous réserve explicite via AIBanks.ca (SRC-071, L+)."
+    },
+    {
+      "source_hint": "CEN/CENELEC Portal — EN 18286:2026 fiche projet",
+      "url": "https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:82555",
+      "note": "HTTP 500 sur portail CEN/CENELEC (norme EN 18286:2026 vendue par organismes nationaux) ; référence harmonisée officielle prouvée en L+ par Décision (UE) 2026/2274 (SRC-067) et Commission européenne (SRC-069)."
+    },
+    {
+      "source_hint": "Gartner Communiqué 25 juin 2025 (> 40 % projets agentiques abandonnés d'ici 2027)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "note": "HTTP 403 sur gartner.com ; exclu en source primaire selon AO-01 (cité secondairement dans Deloitte TMT 2026 SRC-011)."
+    },
+    {
+      "source_hint": "GLEIF vLEI Ecosystem Governance Framework page directe",
+      "url": "https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/",
+      "note": "HTTP 404 sur sous-page EGF ; compensé en L+ par page officielle vLEI et spécification ouverte GLEIF-IT/WebOfTrust (SRC-079)."
+    },
+    {
+      "source_hint": "ISO/IEC 42001:2023 — Système de management de l'IA (norme payante)",
+      "url": "https://www.iso.org/standard/81230.html",
+      "note": "HTTP 403 et norme payante sans texte intégral ouvert ; exclu de l'évidence probante L+ selon AO-01 (alignement SMIA couvert via EN 18286:2026 / UE 2026/2274, SRC-067)."
+    },
+    {
+      "source_hint": "LégisQuébec — Loi P-39.1 consolidée",
+      "url": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1",
+      "note": "Portail consolidé bloqué HTTP 403 (1 tentative AO-01) ; compensé en L+ par LQ 2021, c. 25 sanctionnée (SRC-063) et Rapport quinquennal CAI 2026 (SRC-064)."
+    },
+    {
+      "source_hint": "Statistique Canada article HTML 11-621-m",
+      "url": "https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-fra.htm",
+      "note": "HTTP 403 sur la page HTML ; compensé par les archives CSV ouvertes StatCan 33101167-fra.zip (SRC-014) et 33101207-fra.zip (SRC-015)."
+    }
+  ],
+  "l_plus_catalog": [
+    {
+      "source_id": "SRC-001",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-001",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "From AGI to ASI",
+      "authors": "Tim Genewein, Matija Franklin, Alexander Lerchner, Laurent Orseau et al.",
+      "year": 2026,
+      "publication_date": "2026-11-10",
+      "venue_or_issuer": "arXiv (Google DeepMind)",
+      "identifier": "arXiv:2606.12683v3",
+      "url": "https://arxiv.org/pdf/2606.12683",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1",
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-002",
+      "seed_id": "SEED-V8-06",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Design Patterns for Securing LLM Agents against Prompt Injections",
+      "authors": "Luca Beurer-Kellner, Beat Buesser, Ana-Maria Creţu, Edoardo Debenedetti et al.",
+      "year": 2025,
+      "publication_date": "2025-06-27",
+      "venue_or_issuer": "arXiv (IBM / ETH Zurich / EPFL / Google DeepMind)",
+      "identifier": "arXiv:2506.08837v3",
+      "url": "https://arxiv.org/pdf/2506.08837",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-003",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-003",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Towards a Science of Scaling Agent Systems",
+      "authors": "Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park et al.",
+      "year": 2025,
+      "publication_date": "2025-12-09",
+      "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2512.08296",
+      "url": "https://arxiv.org/pdf/2512.08296",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-004",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 7493: The I-JSON Message Format",
+      "authors": "Tim Bray (Ed.)",
+      "year": 2015,
+      "publication_date": "2015-03",
+      "venue_or_issuer": "IETF Standards Track",
+      "identifier": "RFC 7493",
+      "url": "https://www.rfc-editor.org/rfc/rfc7493.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01",
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-005",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 7515: JSON Web Signature (JWS)",
+      "authors": "Michael B. Jones, John Bradley, Nat Sakimura",
+      "year": 2015,
+      "publication_date": "2015-05",
+      "venue_or_issuer": "IETF Standards Track",
+      "identifier": "RFC 7515",
+      "url": "https://www.rfc-editor.org/rfc/rfc7515.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01",
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-006",
+      "seed_id": "SEED-V8-08",
+      "origin_vol7_id": "SRC-006",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning",
+      "authors": "Edward Y. Chang, Longling Geng",
+      "year": 2025,
+      "publication_date": "2025-07-09",
+      "venue_or_issuer": "arXiv (prépublication, gabarit PVLDB)",
+      "identifier": "arXiv:2503.11951v3",
+      "url": "https://arxiv.org/pdf/2503.11951",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3"
+      ],
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-007",
+      "seed_id": "SEED-V8-06",
+      "origin_vol7_id": "SRC-007",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Defeating Prompt Injections by Design (CaMeL)",
+      "authors": "Edoardo Debenedetti, Ilia Shumailov, Tianqi Fan, Jamie Hayes et al.",
+      "year": 2025,
+      "publication_date": "2025-06-24",
+      "venue_or_issuer": "arXiv (prépublication)",
+      "identifier": "arXiv:2503.18813v2",
+      "url": "https://arxiv.org/pdf/2503.18813",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-008",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-008",
+      "category": "report",
+      "peer_reviewed": false,
+      "title": "Artificial Intelligence Index Report 2026",
+      "authors": "Sha Sajadieh, Loredana Fattorini, Raymond Perrault, Yolanda Gil et al.",
+      "year": 2026,
+      "publication_date": "2026-04-14",
+      "venue_or_issuer": "Stanford HAI / arXiv",
+      "identifier": "arXiv:2606.15708",
+      "url": "https://arxiv.org/pdf/2606.15708",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-009",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 8707: Resource Indicators for OAuth 2.0",
+      "authors": "Brian Campbell, John Bradley, Hannes Tschofenig",
+      "year": 2020,
+      "publication_date": "2020-02",
+      "venue_or_issuer": "IETF Standards Track",
+      "identifier": "RFC 8707",
+      "url": "https://www.rfc-editor.org/rfc/rfc8707.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-010",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 9334: Remote ATtestation procedureS (RATS) Architecture",
+      "authors": "Henk Birkholz, Dave Thaler, Michael Richardson, Ned Smith, Wei Pan",
+      "year": 2023,
+      "publication_date": "2023-01",
+      "venue_or_issuer": "IETF Informational RFC",
+      "identifier": "RFC 9334",
+      "url": "https://www.rfc-editor.org/rfc/rfc9334.txt",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02",
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-011",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-011",
+      "category": "industry_report",
+      "peer_reviewed": false,
+      "title": "Agentic AI orchestration: TMT Predictions 2026",
+      "authors": "Deloitte Insights",
+      "year": 2025,
+      "publication_date": "2025-11-18",
+      "venue_or_issuer": "Deloitte Center for Technology, Media & Telecommunications",
+      "identifier": "DELOITTE-TMT-2026-AGENTS",
+      "url": "https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html",
+      "aacods_score": 9.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire"
+      ]
+    },
+    {
+      "source_id": "SRC-012",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 9964: ML-DSA for JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and Encryption (COSE)",
+      "authors": "Mike Prorock, Orie Steele",
+      "year": 2026,
+      "publication_date": "2026-05",
+      "venue_or_issuer": "IETF Standards Track",
+      "identifier": "RFC 9964",
+      "url": "https://www.rfc-editor.org/rfc/rfc9964.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-013",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_draft",
+      "peer_reviewed": false,
+      "title": "Transaction Tokens (Internet-Draft draft-ietf-oauth-transaction-tokens-11 — brouillon IETF WG)",
+      "authors": "Atul Tulshibagwale, George Fletcher, Pieter Kasselman",
+      "year": 2026,
+      "publication_date": "2026-07-30",
+      "venue_or_issuer": "IETF OAuth Working Group (Internet-Draft)",
+      "identifier": "draft-ietf-oauth-transaction-tokens-11",
+      "url": "https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-11.txt",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-014",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-014",
+      "category": "official_statistics",
+      "peer_reviewed": false,
+      "title": "Utilisation de l'intelligence artificielle par les entreprises au Canada, deuxième trimestre de 2026 (Tableau 33-10-1167-01)",
+      "authors": "Statistique Canada",
+      "year": 2026,
+      "publication_date": "2026-06-30",
+      "venue_or_issuer": "Statistique Canada (API WDS CSV)",
+      "identifier": "STC-33-10-1167-01",
+      "url": "https://www150.statcan.gc.ca/n1/tbl/csv/33101167-fra.zip",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire"
+      ]
+    },
+    {
+      "source_id": "SRC-015",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-015",
+      "category": "official_statistics",
+      "peer_reviewed": false,
+      "title": "Utilisation de l'intelligence artificielle par les entreprises au Canada, troisième trimestre de 2026 (Tableau 33-10-1207-01)",
+      "authors": "Statistique Canada",
+      "year": 2026,
+      "publication_date": "2026-09-30",
+      "venue_or_issuer": "Statistique Canada (API WDS CSV)",
+      "identifier": "STC-33-10-1207-01",
+      "url": "https://www150.statcan.gc.ca/n1/tbl/csv/33101207-fra.zip",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire"
+      ]
+    },
+    {
+      "source_id": "SRC-016",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-016",
+      "category": "official_report",
+      "peer_reviewed": false,
+      "title": "Staff Analytical Paper 2026-22 : Survey Evidence on Firm AI Adoption and its Implications",
+      "authors": "Chanya Chawla, Crystal Arnburg",
+      "year": 2026,
+      "publication_date": "2026-06-02",
+      "venue_or_issuer": "Banque du Canada",
+      "identifier": "BoC-SAP-2026-22",
+      "url": "https://www.bankofcanada.ca/wp-content/uploads/2026/05/sap2026-22.pdf",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire"
+      ]
+    },
+    {
+      "source_id": "SRC-017",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_draft",
+      "peer_reviewed": false,
+      "title": "OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft draft-chen-oauth-agent-revocation-01 — brouillon individuel)",
+      "authors": "Meiling Chen, Li Su",
+      "year": 2026,
+      "publication_date": "2026-10-30",
+      "venue_or_issuer": "IETF Internet-Draft (Individual Submission)",
+      "identifier": "draft-chen-oauth-agent-revocation-01",
+      "url": "https://www.ietf.org/archive/id/draft-chen-oauth-agent-revocation-01.txt",
+      "aacods_score": 9.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-018",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_gov",
+      "peer_reviewed": true,
+      "title": "NIST FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA)",
+      "authors": "National Institute of Standards and Technology (NIST)",
+      "year": 2024,
+      "publication_date": "2024-08-13",
+      "venue_or_issuer": "NIST Federal Information Processing Standards",
+      "identifier": "NIST FIPS 205",
+      "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.205.pdf",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-019",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "OpenID Shared Signals Framework Specification 1.0",
+      "authors": "Atul Tulshibagwale, Tim Cappalli, Apoorva Deshpande et al.",
+      "year": 2025,
+      "publication_date": "2025-08-29",
+      "venue_or_issuer": "OpenID Foundation Shared Signals Working Group",
+      "identifier": "OpenID SSF 1.0",
+      "url": "https://openid.net/specs/openid-sharedsignals-framework-1_0.html",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-020",
+      "seed_id": "SEED-V8-04",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "OpenID Continuous Access Evaluation Profile (CAEP) 1.0",
+      "authors": "Tim Cappalli, Atul Tulshibagwale",
+      "year": 2025,
+      "publication_date": "2025-08-29",
+      "venue_or_issuer": "OpenID Foundation Shared Signals Working Group",
+      "identifier": "OpenID CAEP 1.0",
+      "url": "https://openid.net/specs/openid-caep-1_0.html",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-021",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": true,
+      "title": "JSON Schema: A Media Type for Describing JSON Documents (Draft 2020-12 Core, draft-bhutton-json-schema-01)",
+      "authors": "Austin Wright, Henry Andrews, Ben Hutton, Greg Dennis",
+      "year": 2022,
+      "publication_date": "2022-06-16",
+      "venue_or_issuer": "JSON Schema / IETF Internet-Draft 2020-12",
+      "identifier": "JSON Schema Draft 2020-12 Core",
+      "url": "https://json-schema.org/draft/2020-12/json-schema-core",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-022",
+      "seed_id": "SEED-V8-07",
+      "category": "standard_reference",
+      "peer_reviewed": true,
+      "title": "NIST/SEMATECH e-Handbook of Statistical Methods — Section 7.2.4.1 Confidence Intervals for a Binomial Proportion (Wilson / Exact)",
+      "authors": "NIST / SEMATECH",
+      "year": 2012,
+      "publication_date": "2012-04",
+      "venue_or_issuer": "NIST Engineering Statistics Handbook",
+      "identifier": "NIST-HANDBOOK-7.2.4.1",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-023",
+      "seed_id": "SEED-V8-05",
+      "origin_vol7_id": "SRC-023",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "FinOps Open Cost and Usage Specification (FOCUS) v1.4 — Spécification normative complète",
+      "authors": "FinOps Foundation",
+      "year": 2026,
+      "publication_date": "2026-06-04",
+      "venue_or_issuer": "Linux Foundation / FinOps Foundation (GitHub release v1.4)",
+      "identifier": "FINOPS-FOCUS-1.4",
+      "url": "https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases/download/v1.4/FOCUS_spec-v1_4.pdf",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ4",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-024",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-024",
+      "category": "standard_reference",
+      "peer_reviewed": false,
+      "title": "NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Series Model (Lusser Reliability Law)",
+      "authors": "National Institute of Standards and Technology (NIST) / SEMATECH",
+      "year": 2012,
+      "publication_date": "2012-04",
+      "venue_or_issuer": "NIST Information Technology Laboratory",
+      "identifier": "NIST-HANDBOOK-8.1.8.1",
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr181.htm",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-025",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-025",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Measuring AI Ability to Complete Long Software Tasks (arXiv:2503.14499v4)",
+      "authors": "Thomas Kwa, Ben West, Joel Becker, Amy Deng, Katharyn Garcia et al.",
+      "year": 2026,
+      "publication_date": "2026-07-10",
+      "venue_or_issuer": "arXiv / METR (v1 2025-03-18, v4 2026-07-10)",
+      "identifier": "arXiv:2503.14499v4",
+      "url": "https://arxiv.org/pdf/2503.14499",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-026",
+      "seed_id": "SEED-V8-06",
+      "origin_vol7_id": "SRC-026",
+      "category": "journal_article",
+      "peer_reviewed": true,
+      "title": "Cognitive Architectures for Language Agents (CoALA)",
+      "authors": "Theodore R. Sumers, Shunyu Yao, Karthik Narasimhan, Thomas L. Griffiths",
+      "year": 2024,
+      "publication_date": "2024-03-15",
+      "venue_or_issuer": "TMLR / arXiv",
+      "identifier": "arXiv:2309.02427",
+      "url": "https://arxiv.org/pdf/2309.02427",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ3"
+      ],
+      "chapters": [
+        "ch01",
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-027",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-027",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Measuring Agents in Production (MAP)",
+      "authors": "Melissa Z. Pan, Negar Arabzadeh, Riccardo Cogo, Yuxuan Zhu et al.",
+      "year": 2025,
+      "publication_date": "2025-12-02",
+      "venue_or_issuer": "arXiv (UC Berkeley)",
+      "identifier": "arXiv:2512.04123",
+      "url": "https://arxiv.org/pdf/2512.04123",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1",
+        "RQ5",
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-028",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-028",
+      "category": "conference_paper",
+      "peer_reviewed": true,
+      "title": "Why Do Multi-Agent LLM Systems Fail? (MAST)",
+      "authors": "Mert Cemri, Melissa Z. Pan, Shuyi Yang, Lakshya A. Agrawal et al.",
+      "year": 2025,
+      "publication_date": "2025-10-26",
+      "venue_or_issuer": "NeurIPS 2025 / arXiv",
+      "identifier": "arXiv:2503.13657v3",
+      "url": "https://arxiv.org/pdf/2503.13657",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch01",
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-029",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-029",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "authors": "Shunyu Yao, Noah Shinn, Pedram Razavi, Karthik Narasimhan",
+      "year": 2024,
+      "publication_date": "2024-06-17",
+      "venue_or_issuer": "arXiv (Princeton)",
+      "identifier": "arXiv:2406.12045",
+      "url": "https://arxiv.org/pdf/2406.12045",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-030",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-030",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (HAL)",
+      "authors": "Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir et al.",
+      "year": 2025,
+      "publication_date": "2025-10-13",
+      "venue_or_issuer": "arXiv (Princeton)",
+      "identifier": "arXiv:2510.11977",
+      "url": "https://arxiv.org/pdf/2510.11977",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-031",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-031",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+      "authors": "Dat Tran, Douwe Kiela",
+      "year": 2026,
+      "publication_date": "2026-04-11",
+      "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2604.02460v2",
+      "url": "https://arxiv.org/pdf/2604.02460",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-032",
+      "seed_id": "SEED-V8-07",
+      "origin_vol7_id": "SRC-032",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size",
+      "authors": "Blaž Bertalanič, Carolina Fortuna",
+      "year": 2026,
+      "publication_date": "2026-05-31",
+      "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2606.02646",
+      "url": "https://arxiv.org/pdf/2606.02646",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-033",
+      "seed_id": "SEED-V8-08",
+      "origin_vol7_id": "SRC-033",
+      "category": "conference_paper",
+      "peer_reviewed": true,
+      "title": "Sagas",
+      "authors": "Hector Garcia-Molina, Kenneth Salem",
+      "year": 1987,
+      "publication_date": "1987-05",
+      "venue_or_issuer": "ACM SIGMOD 1987 (Princeton Dept. CS OA)",
+      "identifier": "ACM-SIGMOD-1987-SAGAS",
+      "url": "https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ3"
+      ],
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-034",
+      "seed_id": "SEED-V8-08",
+      "origin_vol7_id": "SRC-034",
+      "category": "technical_spec",
+      "peer_reviewed": false,
+      "title": "Temporal SDKs — Durable Execution, Event History and Deterministic Replay",
+      "authors": "Temporal Technologies",
+      "year": 2026,
+      "publication_date": "2026",
+      "venue_or_issuer": "Temporal Documentation",
+      "identifier": "TEMPORAL-SDKS-2026",
+      "url": "https://docs.temporal.io/encyclopedia/temporal-sdks",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3"
+      ],
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-035",
+      "seed_id": "SEED-V8-05",
+      "origin_vol7_id": "SRC-035",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "CloudEvents Specification — Version 1.0.2",
+      "authors": "CNCF Serverless Working Group",
+      "year": 2022,
+      "publication_date": "2022-04",
+      "venue_or_issuer": "Cloud Native Computing Foundation (CNCF)",
+      "identifier": "CLOUDEVENTS-1.0.2",
+      "url": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ3",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02",
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-036",
+      "seed_id": "SEED-V8-08",
+      "origin_vol7_id": "SRC-036",
+      "category": "standard_draft",
+      "peer_reviewed": false,
+      "title": "The Idempotency-Key HTTP Header Field (draft-ietf-httpapi-idempotency-key-header)",
+      "authors": "Jayadeba Jena, Sanjay Dalal, Dmitrii Tishkin",
+      "year": 2026,
+      "publication_date": "2026-11-21",
+      "venue_or_issuer": "IETF Datatracker",
+      "identifier": "IETF-DRAFT-IDEMPOTENCY-KEY-09",
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3"
+      ],
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "source_id": "SRC-037",
+      "seed_id": "SEED-V8-05",
+      "origin_vol7_id": "SRC-037",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "OpenTelemetry Semantic Conventions for Generative AI Agent & Execute Tool Spans (gen_ai.operation.name)",
+      "authors": "OpenTelemetry GenAI SIG",
+      "year": 2026,
+      "publication_date": "2026-11-05",
+      "venue_or_issuer": "CNCF / OpenTelemetry Semantic Conventions (GenAI SIG — agent-spans, execute-tool & registry.yaml)",
+      "identifier": "OTEL-GENAI-AGENT-TOOL-SPANS",
+      "url": "https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-038",
+      "seed_id": "SEED-V8-01",
+      "origin_vol7_id": "SRC-038",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Model Context Protocol (MCP) Specification — Revision 2025-11-25 (corpus normatif complet)",
+      "authors": "Model Context Protocol Maintainers",
+      "year": 2025,
+      "publication_date": "2025-11-25",
+      "venue_or_issuer": "Model Context Protocol (GitHub modelcontextprotocol/modelcontextprotocol — spec 2025-11-25)",
+      "identifier": "MCP-SPEC-2025-11-25",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/docs/specification/2025-11-25",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01"
+      ]
+    },
+    {
+      "source_id": "SRC-039",
+      "seed_id": "SEED-V8-02",
+      "origin_vol7_id": "SRC-039",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Agent2Agent (A2A) Protocol Specification",
+      "authors": "Linux Foundation / A2A Project",
+      "year": 2026,
+      "publication_date": "2026-05-28",
+      "venue_or_issuer": "Linux Foundation / A2A Project (release v1.0.1)",
+      "identifier": "A2A-SPEC-2026",
+      "url": "https://a2a-protocol.org/latest/specification/",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ1"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01"
+      ]
+    },
+    {
+      "source_id": "SRC-040",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-040",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI",
+      "authors": "Margaret-Anne Storey",
+      "year": 2026,
+      "publication_date": "2026-03-23",
+      "venue_or_issuer": "arXiv (University of Victoria)",
+      "identifier": "arXiv:2603.22106",
+      "url": "https://arxiv.org/pdf/2603.22106",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ5",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-041",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-041",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 8693: OAuth 2.0 Token Exchange",
+      "authors": "Michael B. Jones, Anthony Nadalin, Brian Campbell, John Bradley, Chuck Mortimore",
+      "year": 2020,
+      "publication_date": "2020-01",
+      "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC8693",
+      "url": "https://www.rfc-editor.org/rfc/rfc8693.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-042",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-042",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR)",
+      "authors": "Torsten Lodderstedt, Justin Richer, Brian Campbell",
+      "year": 2023,
+      "publication_date": "2023-05",
+      "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC9396",
+      "url": "https://www.rfc-editor.org/rfc/rfc9396.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-043",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-043",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
+      "authors": "Daniel Fett, Brian Campbell, John Bradley, Torsten Lodderstedt et al.",
+      "year": 2023,
+      "publication_date": "2023-09",
+      "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC9449",
+      "url": "https://www.rfc-editor.org/rfc/rfc9449.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-044",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-044",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 9943: An Architecture for Trustworthy and Transparent Digital Supply Chains (SCITT)",
+      "authors": "Henk Birkholz, Antoine Delignat-Lavaud, Cedric Fournet, Yogesh Deshpande, Steve Lasker",
+      "year": 2026,
+      "publication_date": "2026-06",
+      "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC9943",
+      "url": "https://www.rfc-editor.org/rfc/rfc9943.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-045",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-045",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "OpenID Connect Client-Initiated Backchannel Authentication Flow — Core 1.0",
+      "authors": "Gonzalo Fernandez, Axel Nennker, Dave Tonge et al. (OpenID Foundation)",
+      "year": 2021,
+      "publication_date": "2021-09-01",
+      "venue_or_issuer": "OpenID Foundation",
+      "identifier": "OIDC-CIBA-1.0",
+      "url": "https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-046",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-046",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "SPIFFE Concepts — Workload Identity, SPIFFE ID and SVID",
+      "authors": "SPIFFE / Cloud Native Computing Foundation",
+      "year": 2026,
+      "publication_date": "2026",
+      "venue_or_issuer": "CNCF SPIFFE",
+      "identifier": "SPIFFE-CONCEPTS-2026",
+      "url": "https://spiffe.io/docs/latest/spiffe-about/spiffe-concepts/",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-047",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-047",
+      "category": "standard_draft",
+      "peer_reviewed": false,
+      "title": "Workload Identity Practices (draft-ietf-wimse-workload-identity-practices-08)",
+      "authors": "IETF WIMSE Working Group",
+      "year": 2026,
+      "publication_date": "2026-10-30",
+      "venue_or_issuer": "IETF Datatracker",
+      "identifier": "IETF-WIMSE-WIP-08",
+      "url": "https://www.ietf.org/archive/id/draft-ietf-wimse-workload-identity-practices-08.txt",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-048",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-048",
+      "category": "standard_draft",
+      "peer_reviewed": false,
+      "title": "AI Identity Management System (draft-ietf-wimse-aims-01)",
+      "authors": "IETF WIMSE Working Group",
+      "year": 2026,
+      "publication_date": "2026-11-02",
+      "venue_or_issuer": "IETF Datatracker",
+      "identifier": "IETF-WIMSE-AIMS-01",
+      "url": "https://www.ietf.org/archive/id/draft-ietf-wimse-aims-01.txt",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-049",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-049",
+      "category": "standard_gov",
+      "peer_reviewed": false,
+      "title": "NIST FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)",
+      "authors": "National Institute of Standards and Technology (NIST)",
+      "year": 2024,
+      "publication_date": "2024-08-13",
+      "venue_or_issuer": "NIST Computer Security Resource Center",
+      "identifier": "NIST-FIPS-203",
+      "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-050",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-050",
+      "category": "standard_gov",
+      "peer_reviewed": false,
+      "title": "NIST FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA)",
+      "authors": "National Institute of Standards and Technology (NIST)",
+      "year": 2024,
+      "publication_date": "2024-08-13",
+      "venue_or_issuer": "NIST Computer Security Resource Center",
+      "identifier": "NIST-FIPS-204",
+      "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-051",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-051",
+      "category": "standard_gov",
+      "peer_reviewed": false,
+      "title": "NIST IR 8547: Transition to Post-Quantum Cryptography Standards (Final, October 2026)",
+      "authors": "Dustin Moody, Ray Perlner, Andrew Regenscheid, Angela Robinson, David Cooper",
+      "year": 2026,
+      "publication_date": "2026-10-21",
+      "venue_or_issuer": "NIST (NIST IR 8547 Final)",
+      "identifier": "NIST-IR-8547",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ2",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-052",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-052",
+      "category": "official_report",
+      "peer_reviewed": false,
+      "title": "Advancing a Coordinated Roadmap for the Transition to Post-Quantum Cryptography in the Financial Sector",
+      "authors": "G7 Cyber Expert Group (CEG)",
+      "year": 2026,
+      "publication_date": "2026-01-14",
+      "venue_or_issuer": "G7 Cyber Expert Group / UK HM Treasury & Bank of England",
+      "identifier": "G7-CEG-PQC-ROADMAP-2026",
+      "url": "https://assets.publishing.service.gov.uk/media/6966149d8d599f4c09e1ffab/G7-CEG-Quantum-Roadmap.pdf",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-053",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-053",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates (incl. Ballot SC-081v3)",
+      "authors": "CA/Browser Forum Server Certificate Working Group",
+      "year": 2026,
+      "publication_date": "2026-10-04",
+      "venue_or_issuer": "CA/Browser Forum",
+      "identifier": "CABF-BR-SC081V3",
+      "url": "https://raw.githubusercontent.com/cabforum/servercert/main/docs/BR.md",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-054",
+      "seed_id": "SEED-V8-09",
+      "origin_vol7_id": "SRC-054",
+      "category": "standard_gov",
+      "peer_reviewed": false,
+      "title": "NIST AI 100-2e2025: Adversarial Machine Learning — A Taxonomy and Terminology of Attacks and Mitigations",
+      "authors": "Alina Oprea, Apostol Vassilev et al. (NIST)",
+      "year": 2025,
+      "publication_date": "2025-03-20",
+      "venue_or_issuer": "NIST",
+      "identifier": "NIST-AI-100-2E2025",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-055",
+      "seed_id": "SEED-V8-09",
+      "origin_vol7_id": "SRC-055",
+      "category": "industry_standard",
+      "peer_reviewed": false,
+      "title": "OWASP Top 10 for Agentic Applications 2026 (v1.0, December 2025 — document complet CC BY-SA 4.0)",
+      "authors": "OWASP GenAI Security Project",
+      "year": 2025,
+      "publication_date": "2025-12",
+      "venue_or_issuer": "OWASP GenAI Security Project (Agentic Security Initiative — GenAI-Security-Corpus)",
+      "identifier": "OWASP-AGENTIC-TOP10-2026",
+      "url": "https://raw.githubusercontent.com/genai-security-project/GenAI-Security-Corpus/main/corpus/agentic-top10/2026-final/OWASP-Top-10-for-Agentic-Applications-2026-v1.0.pdf",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-056",
+      "seed_id": "SEED-V8-06",
+      "origin_vol7_id": "SRC-056",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Can CaMeLs Talk? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks",
+      "authors": "James Peters-Gill, Avi Semler, Henning Bartsch, Ilia Shumailov et al.",
+      "year": 2026,
+      "publication_date": "2026-10-05",
+      "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2610.05640",
+      "url": "https://arxiv.org/pdf/2610.05640",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-057",
+      "seed_id": "SEED-V8-01",
+      "origin_vol7_id": "SRC-057",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem",
+      "authors": "Obada Kraishan",
+      "year": 2026,
+      "publication_date": "2026-09-15",
+      "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2609.14119",
+      "url": "https://arxiv.org/pdf/2609.14119",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ1",
+        "RQ5"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-058",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-058",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "STAMP/STPA Informed Characterization of Factors Leading to Loss of Control in AI Systems",
+      "authors": "Steve Barrett, Anna Bruvere, Sean P. Fillingham, Catherine Rhodes, Stefano Vergani",
+      "year": 2026,
+      "publication_date": "2026-02-03",
+      "venue_or_issuer": "arXiv (Centre for the Study of Existential Risk)",
+      "identifier": "arXiv:2512.17600v2",
+      "url": "https://arxiv.org/pdf/2512.17600",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ5",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-059",
+      "seed_id": "SEED-V8-09",
+      "category": "industry_standard",
+      "peer_reviewed": false,
+      "title": "OWASP Agentic AI Top 10 Crosswalk (GitHub Pages miroir ouvert CC BY-SA 4.0)",
+      "authors": "OWASP GenAI Security Project",
+      "year": 2026,
+      "publication_date": "2026",
+      "venue_or_issuer": "OWASP GenAI Security Project (genai-security-project.github.io)",
+      "identifier": "OWASP-AGENTIC-CROSSWALK",
+      "url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-060",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-060",
+      "category": "legislation",
+      "peer_reviewed": false,
+      "title": "Règlement (UE) 2024/1689 (EU AI Act)",
+      "authors": "Parlement européen et Conseil de l'Union européenne",
+      "year": 2024,
+      "publication_date": "2024-07-12",
+      "venue_or_issuer": "Journal officiel de l'Union européenne",
+      "identifier": "CELEX:32024R1689",
+      "url": "https://publications.europa.eu/resource/cellar/dc8116a1-3fe6-11ef-865a-01aa75ed71a1.0009.01/DOC_1",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-061",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-061",
+      "category": "legislation",
+      "peer_reviewed": false,
+      "title": "Règlement (UE) 2026/1744 du 8 juillet 2026 modifiant le règlement (UE) 2024/1689 (simplification / échéances IA)",
+      "authors": "Parlement européen et Conseil de l'Union européenne",
+      "year": 2026,
+      "publication_date": "2026-07-24",
+      "venue_or_issuer": "Journal officiel de l'Union européenne (JO L 24.7.2026)",
+      "identifier": "CELEX:32026R1744",
+      "url": "https://publications.europa.eu/resource/cellar/b459c07f-86fb-11f1-bf5e-01aa75ed71a1.0009.01/DOC_1",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-062",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-062",
+      "category": "legislation",
+      "peer_reviewed": false,
+      "title": "Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique du secteur financier (DORA)",
+      "authors": "Parlement européen et Conseil de l'Union européenne",
+      "year": 2022,
+      "publication_date": "2022-12-27",
+      "venue_or_issuer": "Journal officiel de l'Union européenne",
+      "identifier": "CELEX:32022R2554",
+      "url": "https://publications.europa.eu/resource/cellar/0caf473a-85bd-11ed-9887-01aa75ed71a1.0009.01/DOC_1",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch02",
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-063",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-063",
+      "category": "legislation",
+      "peer_reviewed": false,
+      "title": "Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25 / LQ 2021, c. 25, art. 12.1)",
+      "authors": "Assemblée nationale du Québec",
+      "year": 2021,
+      "publication_date": "2021-09-22",
+      "venue_or_issuer": "Publications du Québec",
+      "identifier": "LQ-2021-C25",
+      "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2021/2021C25F.PDF",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-064",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-064",
+      "category": "official_report",
+      "peer_reviewed": false,
+      "title": "Rapport quinquennal 2026 sur l'application de la Loi sur la protection des renseignements personnels dans le secteur privé",
+      "authors": "Commission d'accès à l'information du Québec (CAI)",
+      "year": 2026,
+      "publication_date": "2026-05",
+      "venue_or_issuer": "Commission d'accès à l'information du Québec",
+      "identifier": "CAI-RQ-2026",
+      "url": "https://www.cai.gouv.qc.ca/uploads/pdfs/CAI_RQ_2026.pdf",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-065",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-065",
+      "category": "regulatory_guideline",
+      "peer_reviewed": false,
+      "title": "Ligne directrice E-23 — Gestion du risque de modélisation à l'échelle de l'entreprise (édition 2027)",
+      "authors": "Bureau du surintendant des institutions financières (BSIF / OSFI)",
+      "year": 2025,
+      "publication_date": "2025-09-11",
+      "venue_or_issuer": "BSIF Canada",
+      "identifier": "BSIF-E23-2027",
+      "url": "https://www.osfi-bsif.gc.ca/fr/consignes/repertoire-consignes/ligne-directrice-e-23-gestion-du-risque-modelisation-2027",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch02",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-066",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-066",
+      "category": "regulatory_guideline",
+      "peer_reviewed": false,
+      "title": "Generative and Agentic Artificial Intelligence: Implications for Technology, Cyber Security and Operational Risk",
+      "authors": "Office of the Superintendent of Financial Institutions (OSFI / BSIF)",
+      "year": 2026,
+      "publication_date": "2026-07-13",
+      "venue_or_issuer": "OSFI Technology Risk Bulletin",
+      "identifier": "OSFI-BULLETIN-AGENTIC-2026",
+      "url": "http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ1",
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-067",
+      "seed_id": "SEED-V8-10",
+      "category": "legislation",
+      "peer_reviewed": true,
+      "title": "Décision d'exécution (UE) 2026/2274 de la Commission du 12 octobre 2026 concernant les normes harmonisées relatives aux systèmes d'IA à haut risque (EN 18286:2026)",
+      "authors": "Commission européenne",
+      "year": 2026,
+      "publication_date": "2026-10-12",
+      "venue_or_issuer": "Journal officiel de l'Union européenne (EUR-Lex Cellar)",
+      "identifier": "UE-2026-2274-EN18286",
+      "url": "https://publications.europa.eu/resource/cellar/05805dc1-c76c-11f1-a77b-01aa75ed71a1.0010.01/DOC_1",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-068",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-068",
+      "category": "regulatory_guideline",
+      "peer_reviewed": false,
+      "title": "Guideline B-10: Third-Party Risk Management",
+      "authors": "Office of the Superintendent of Financial Institutions (OSFI / BSIF)",
+      "year": 2023,
+      "publication_date": "2023-04-30",
+      "venue_or_issuer": "OSFI Canada",
+      "identifier": "OSFI-B10",
+      "url": "https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-069",
+      "seed_id": "SEED-V8-10",
+      "category": "official_report",
+      "peer_reviewed": true,
+      "title": "First harmonised standard supporting the AI Act published in the Official Journal (EN 18286:2026)",
+      "authors": "Commission européenne (DG CNECT)",
+      "year": 2026,
+      "publication_date": "2026-10-21",
+      "venue_or_issuer": "European Commission Digital Strategy",
+      "identifier": "EC-DIGITAL-EN18286-2026",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-070",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-070",
+      "category": "legislation",
+      "peer_reviewed": false,
+      "title": "Loi sur les banques (L.C. 1991, ch. 46 — révision statutaire au 30 juin 2033)",
+      "authors": "Parlement du Canada / Ministère de la Justice",
+      "year": 2026,
+      "publication_date": "2026-10-29",
+      "venue_or_issuer": "Justice Canada (Lois codifiées)",
+      "identifier": "LC-1991-C46",
+      "url": "https://laws-lois.justice.gc.ca/fra/lois/b-1.01/TexteComplet.html",
+      "aacods_score": 12.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-071",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-071",
+      "category": "third_party_aggregator",
+      "peer_reviewed": false,
+      "title": "AIBanks.ca — The Canadian Bank AI Index (2026 Q4 edition, agrégateur tiers indépendant)",
+      "authors": "AIBanks.ca",
+      "year": 2026,
+      "publication_date": "2026-11-01",
+      "venue_or_issuer": "AIBanks.ca (agrégateur tiers indépendant — index public de preuves)",
+      "identifier": "AIBANKS-CA-AMF-2026",
+      "url": "https://www.aibanks.ca/",
+      "aacods_score": 9.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-072",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Model Context Protocol (MCP) Revision 2026-07-28 — Server Tools (tools.mdx)",
+      "authors": "Model Context Protocol Maintainers",
+      "year": 2026,
+      "publication_date": "2026-07-28",
+      "venue_or_issuer": "GitHub modelcontextprotocol/modelcontextprotocol@5f5440bb",
+      "identifier": "MCP-2026-07-28-TOOLS",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/5f5440bb26a62e2cf3440b92da5a667efa03b267/docs/specification/2026-07-28/server/tools.mdx",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+        "ref_or_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+        "rel_path": "docs/specification/2026-07-28/server/tools.mdx",
+        "expected_sha256": "ed550806a58eb7744b858fb9f26001aa5e55dac9e2babe88317cc81d9d4c490d"
+      }
+    },
+    {
+      "source_id": "SRC-073",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-073",
+      "category": "journal_article",
+      "peer_reviewed": true,
+      "title": "Calibrated adaptive framework for trustworthy human and artificial intelligence decision systems",
+      "authors": "Maytha AL-Ali, Adam Marks, Abdallah A. Mohamed, Hossam Magdy Balaha, Mahmoud Badawy",
+      "year": 2026,
+      "publication_date": "2026-08-20",
+      "venue_or_issuer": "Scientific Reports (Nature Portfolio OA)",
+      "identifier": "DOI:10.1038/s41598-026-65730-y",
+      "url": "https://www.nature.com/articles/s41598-026-65730-y",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-074",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Model Context Protocol (MCP) Revision 2026-07-28 — Streamable HTTP Transport (streamable-http.mdx)",
+      "authors": "Model Context Protocol Maintainers",
+      "year": 2026,
+      "publication_date": "2026-07-28",
+      "venue_or_issuer": "GitHub modelcontextprotocol/modelcontextprotocol@5f5440bb",
+      "identifier": "MCP-2026-07-28-HTTP",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/5f5440bb26a62e2cf3440b92da5a667efa03b267/docs/specification/2026-07-28/basic/transports/streamable-http.mdx",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "00-liminaire",
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+        "ref_or_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+        "rel_path": "docs/specification/2026-07-28/basic/transports/streamable-http.mdx",
+        "expected_sha256": "22574bf11e004068493787203ce92be1162107cad717bcb805a15780d4fa69c9"
+      }
+    },
+    {
+      "source_id": "SRC-075",
+      "seed_id": "SEED-V8-10",
+      "origin_vol7_id": "SRC-075",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents",
+      "authors": "Shipi Dhanorkar, Samir Passi, Mihaela Vorvoreanu",
+      "year": 2026,
+      "publication_date": "2026-06-03",
+      "venue_or_issuer": "arXiv (Microsoft Research)",
+      "identifier": "arXiv:2606.05391",
+      "url": "https://arxiv.org/pdf/2606.05391",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ5",
+        "RQ6"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-076",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-076",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)",
+      "authors": "Simon Josefsson, Ilari Liusvaara",
+      "year": 2017,
+      "publication_date": "2017-01",
+      "venue_or_issuer": "IRTF / IETF RFC Editor",
+      "identifier": "RFC8032",
+      "url": "https://www.rfc-editor.org/rfc/rfc8032.txt",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch01",
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-077",
+      "seed_id": "SEED-V8-01",
+      "origin_vol7_id": "SRC-077",
+      "category": "standard_rfc",
+      "peer_reviewed": true,
+      "title": "RFC 8785: JSON Canonicalization Scheme (JCS)",
+      "authors": "Anders Rundgren, Bret Jordan, Samuel Erdtman",
+      "year": 2020,
+      "publication_date": "2020-06",
+      "venue_or_issuer": "IETF RFC Editor (Independent Submission)",
+      "identifier": "RFC8785",
+      "url": "https://www.rfc-editor.org/rfc/rfc8785.txt",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1",
+        "RQ2",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01",
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-078",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Model Context Protocol (MCP) Revision 2026-07-28 — Authorization Security Considerations (security-considerations.mdx)",
+      "authors": "Model Context Protocol Maintainers",
+      "year": 2026,
+      "publication_date": "2026-07-28",
+      "venue_or_issuer": "GitHub modelcontextprotocol/modelcontextprotocol@5f5440bb",
+      "identifier": "MCP-2026-07-28-SEC",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/5f5440bb26a62e2cf3440b92da5a667efa03b267/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ2"
+      ],
+      "chapters": [
+        "ch01",
+        "ch02"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+        "ref_or_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+        "rel_path": "docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+        "expected_sha256": "71dd5f0f236cfa26fb33a3cebf6fc71d4797f1225a06c9cae85bdda54ae50bf8"
+      }
+    },
+    {
+      "source_id": "SRC-079",
+      "seed_id": "SEED-V8-04",
+      "origin_vol7_id": "SRC-079",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "GLEIF verifiable LEI (vLEI) Trust Chain & WebOfTrust vLEI KERI/ACDC Ecosystem Specifications (ISO 17442-3)",
+      "authors": "Global Legal Entity Identifier Foundation (GLEIF) / WebOfTrust vLEI",
+      "year": 2026,
+      "publication_date": "2026-10-15",
+      "venue_or_issuer": "GLEIF & GitHub (GLEIF-IT/vlei-egf, WebOfTrust/vLEI)",
+      "identifier": "GLEIF-VLEI-ISO17442-3",
+      "url": "https://www.gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ2"
+      ],
+      "chapters": [
+        "ch02"
+      ]
+    },
+    {
+      "source_id": "SRC-080",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Model Context Protocol (MCP) Revision 2026-07-28 — TypeScript Schema (schema.ts)",
+      "authors": "Model Context Protocol Maintainers",
+      "year": 2026,
+      "publication_date": "2026-07-28",
+      "venue_or_issuer": "GitHub modelcontextprotocol/modelcontextprotocol@5f5440bb",
+      "identifier": "MCP-2026-07-28-SCHEMA-TS",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/5f5440bb26a62e2cf3440b92da5a667efa03b267/schema/2026-07-28/schema.ts",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+        "ref_or_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+        "rel_path": "schema/2026-07-28/schema.ts",
+        "expected_sha256": "742750af0bb8c716e7030c4977c992b55d1adc4407e9e66997db5846baedc2cd"
+      }
+    },
+    {
+      "source_id": "SRC-081",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "MCP SEP-2596: Specification Feature Lifecycle and Deprecation Policy (Status: Final)",
+      "authors": "Den Delimarsky (@localden)",
+      "year": 2026,
+      "publication_date": "2026-11-22",
+      "venue_or_issuer": "GitHub modelcontextprotocol/modelcontextprotocol@862397ce",
+      "identifier": "MCP-SEP-2596",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/862397cec702e8f828713071da501cf56158e8fc/seps/2596-spec-feature-lifecycle-and-deprecation.md",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+        "ref_or_commit": "862397cec702e8f828713071da501cf56158e8fc",
+        "rel_path": "seps/2596-spec-feature-lifecycle-and-deprecation.md",
+        "expected_sha256": "6608969be1213cafd12edc27269519be54b3fadb0443ff0f1b5fc76f75752de4"
+      }
+    },
+    {
+      "source_id": "SRC-082",
+      "seed_id": "SEED-V8-01",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "MCP SEP-3398: Release Cycle Updates (Status: Accepted)",
+      "authors": "Kurtis Van Gent (@kurtisvg)",
+      "year": 2026,
+      "publication_date": "2026-10-14",
+      "venue_or_issuer": "GitHub modelcontextprotocol/modelcontextprotocol@862397ce",
+      "identifier": "MCP-SEP-3398",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/862397cec702e8f828713071da501cf56158e8fc/seps/3398-release-cycle-updates.md",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+        "ref_or_commit": "862397cec702e8f828713071da501cf56158e8fc",
+        "rel_path": "seps/3398-release-cycle-updates.md",
+        "expected_sha256": "64aee02f2717dc1b290c079a012c470baccd53f6299103b6713a545ccae03be5"
+      }
+    },
+    {
+      "source_id": "SRC-083",
+      "seed_id": "SEED-V8-02",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Agent2Agent (A2A) Protocol Specification v1.0.1 (docs/specification.md)",
+      "authors": "A2A Project / Linux Foundation AAIF",
+      "year": 2026,
+      "publication_date": "2026-05-28",
+      "venue_or_issuer": "GitHub a2aproject/A2A@v1.0.1 (33035925)",
+      "identifier": "A2A-v1.0.1-SPEC",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/a2aproject/A2A",
+        "ref_or_commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+        "rel_path": "docs/specification.md",
+        "expected_sha256": "627ccfe6ffb1be2c56811c3dcc18780deb419f41cdc98248095c939b2d9dc9cb"
+      }
+    },
+    {
+      "source_id": "SRC-084",
+      "seed_id": "SEED-V8-02",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Agent2Agent (A2A) Protocol Protobuf Contract v1.0.1 (specification/a2a.proto)",
+      "authors": "A2A Project / Linux Foundation AAIF",
+      "year": 2026,
+      "publication_date": "2026-05-28",
+      "venue_or_issuer": "GitHub a2aproject/A2A@v1.0.1 (33035925)",
+      "identifier": "A2A-v1.0.1-PROTO",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/a2aproject/A2A",
+        "ref_or_commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+        "rel_path": "specification/a2a.proto",
+        "expected_sha256": "e195bf96ab630c69797851970203e1b2b6b19528f2e9803b7d904b91a5104016"
+      }
+    },
+    {
+      "source_id": "SRC-085",
+      "seed_id": "SEED-V8-02",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Agent2Agent (A2A) Protocol Specification v1.1.0-rc (Release Candidate post-gel adaptateur)",
+      "authors": "A2A Project / Linux Foundation AAIF",
+      "year": 2026,
+      "publication_date": "2026-10-29",
+      "venue_or_issuer": "GitHub a2aproject/A2A@v1.1.0-rc (78e1d6a1)",
+      "identifier": "A2A-v1.1.0-rc-SPEC",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/78e1d6a1f7f118c8e9bc830b04a8579c1119cb78/docs/specification.md",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "chapters": [
+        "ch01"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/a2aproject/A2A",
+        "ref_or_commit": "78e1d6a1f7f118c8e9bc830b04a8579c1119cb78",
+        "rel_path": "docs/specification.md",
+        "expected_sha256": "25a940c30c00482eac0572714022c310ea2f37189e7d9bde67d62b8a56783c63"
+      }
+    },
+    {
+      "source_id": "SRC-086",
+      "seed_id": "SEED-V8-02",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "A2A Technology Compatibility Kit (a2a-tck) v1.0.0.alpha3 — AgentCard Requirements (tck/requirements/agent_card.py)",
+      "authors": "A2A Project TCK Maintainers",
+      "year": 2026,
+      "publication_date": "2026-10-20",
+      "venue_or_issuer": "GitHub a2aproject/a2a-tck@1.0.0.alpha3 (5daf0144)",
+      "identifier": "A2A-TCK-1.0.0.alpha3",
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-tck/5daf0144b4a4adbdefb62180739b13c5bd7d8196/tck/requirements/agent_card.py",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ1",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch01",
+        "ch04"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/a2aproject/a2a-tck",
+        "ref_or_commit": "5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+        "rel_path": "tck/requirements/agent_card.py",
+        "expected_sha256": "4889ec96433ae5f2a09c0332d9e1ff96bf3533bcd6ff41fc35a5106ffd59e44d"
+      }
+    },
+    {
+      "source_id": "SRC-087",
+      "seed_id": "SEED-V8-03",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Open Policy Agent (OPA) v1.22.4 — Rego Policy Language Reference (policy-language.md)",
+      "authors": "Open Policy Agent / CNCF Maintainers",
+      "year": 2026,
+      "publication_date": "2026-11-12",
+      "venue_or_issuer": "GitHub open-policy-agent/opa@v1.22.4 (ba39415d)",
+      "identifier": "OPA-v1.22.4-LANG",
+      "url": "https://raw.githubusercontent.com/open-policy-agent/opa/ba39415db4b3c90cd68942a74b3cc2223ec2b23c/docs/docs/policy-language.md",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ3"
+      ],
+      "chapters": [
+        "ch03"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/open-policy-agent/opa",
+        "ref_or_commit": "ba39415db4b3c90cd68942a74b3cc2223ec2b23c",
+        "rel_path": "docs/docs/policy-language.md",
+        "expected_sha256": "4b242f9eee53ae85cdb9e073e8fd8addfe60177b0d33c7de371a0c0f2cbbb7fc"
+      }
+    },
+    {
+      "source_id": "SRC-088",
+      "seed_id": "SEED-V8-03",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "Open Policy Agent (OPA) v1.22.4 — Policy Testing & Coverage (policy-testing.md)",
+      "authors": "Open Policy Agent / CNCF Maintainers",
+      "year": 2026,
+      "publication_date": "2026-11-12",
+      "venue_or_issuer": "GitHub open-policy-agent/opa@v1.22.4 (ba39415d)",
+      "identifier": "OPA-v1.22.4-TEST",
+      "url": "https://raw.githubusercontent.com/open-policy-agent/opa/ba39415db4b3c90cd68942a74b3cc2223ec2b23c/docs/docs/policy-testing.md",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "chapters": [
+        "ch03",
+        "ch04"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/open-policy-agent/opa",
+        "ref_or_commit": "ba39415db4b3c90cd68942a74b3cc2223ec2b23c",
+        "rel_path": "docs/docs/policy-testing.md",
+        "expected_sha256": "4e566ce11e03cf89bba835e3ab35a54b21b980d5b1661951d8b82278c4fab291"
+      }
+    },
+    {
+      "source_id": "SRC-089",
+      "seed_id": "SEED-V8-05",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md)",
+      "authors": "OpenTelemetry Semantic Conventions Maintainers",
+      "year": 2026,
+      "publication_date": "2026-04-28",
+      "venue_or_issuer": "GitHub open-telemetry/semantic-conventions@v1.41.0 (e018fe6f)",
+      "identifier": "OTEL-v1.41.0-GENAI",
+      "url": "https://raw.githubusercontent.com/open-telemetry/semantic-conventions/e018fe6f91862f5ed63c082f87697cddac596784/docs/registry/attributes/gen-ai.md",
+      "aacods_score": 11.5,
+      "research_axes": [
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/open-telemetry/semantic-conventions",
+        "ref_or_commit": "e018fe6f91862f5ed63c082f87697cddac596784",
+        "rel_path": "docs/registry/attributes/gen-ai.md",
+        "expected_sha256": "74e99ecc4e35c6c7c7541dd310d1bd2f9e9c24f26e35338a332901cce43993da"
+      }
+    },
+    {
+      "source_id": "SRC-090",
+      "seed_id": "SEED-V8-05",
+      "category": "standard_spec",
+      "peer_reviewed": false,
+      "title": "OpenTelemetry semantic-conventions-genai (commit 244465e9 — 85 attributs Development incluant cache_write)",
+      "authors": "OpenTelemetry GenAI SIG Maintainers",
+      "year": 2026,
+      "publication_date": "2026-10-31",
+      "venue_or_issuer": "GitHub open-telemetry/semantic-conventions-genai@244465e9",
+      "identifier": "OTEL-GENAI-DEV-85",
+      "url": "https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/244465e94b9d7167fa5ed5c31a4b2b49ab6ddee5/docs/registry/attributes/gen-ai.md",
+      "aacods_score": 11.0,
+      "research_axes": [
+        "RQ4"
+      ],
+      "chapters": [
+        "ch02"
+      ],
+      "pinned_git": {
+        "repo_url": "https://github.com/open-telemetry/semantic-conventions-genai",
+        "ref_or_commit": "244465e94b9d7167fa5ed5c31a4b2b49ab6ddee5",
+        "rel_path": "docs/registry/attributes/gen-ai.md",
+        "expected_sha256": "b05fc94233aa5bf1dea4d7d5b60abf65b0255f49443f08ce9502a6bea7a18c75"
+      }
+    },
+    {
+      "source_id": "SRC-091",
+      "seed_id": "SEED-V8-08",
+      "category": "conference_paper",
+      "peer_reviewed": true,
+      "title": "Testing Chatbots Using Metamorphic Relations",
+      "authors": "Josip Bozic, Franz Wotawa",
+      "year": 2020,
+      "publication_date": "2020-03-31",
+      "venue_or_issuer": "31th IFIP ICTSS / HAL Id hal-02526355v1",
+      "identifier": "hal-02526355",
+      "url": "https://inria.hal.science/hal-02526355v1/document",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-092",
+      "seed_id": "SEED-V8-08",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "MORTAR: Multi-turn Metamorphic Testing for LLM-based Dialogue Systems",
+      "authors": "Aaron Guoxiang Guo, Aldeida Aleti, Neelofar Neelofar, Chakkrit Tantithamthavorn, Yuanyuan Qi, Tsong Yueh Chen",
+      "year": 2024,
+      "publication_date": "2024-12-20",
+      "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2412.15557",
+      "url": "https://arxiv.org/pdf/2412.15557",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-093",
+      "seed_id": "SEED-V8-08",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Explanation-Guided Metamorphic Testing of Specialized Language Models: An Empirical Study",
+      "authors": "Xingcheng Chen, Mehmet Besenk, Andrea Stocco",
+      "year": 2026,
+      "publication_date": "2026-08-07",
+      "venue_or_issuer": "arXiv (TU Munich / fortiss)",
+      "identifier": "arXiv:2608.07076",
+      "url": "https://arxiv.org/pdf/2608.07076",
+      "aacods_score": 10.0,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-094",
+      "seed_id": "SEED-V8-07",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Binomial confidence intervals for rare events: importance of defining margin of error relative to magnitude of proportion",
+      "authors": "Owen McGrath, Kevin Burke",
+      "year": 2024,
+      "publication_date": "2024-01-15",
+      "venue_or_issuer": "arXiv (University of Limerick)",
+      "identifier": "arXiv:2109.02516",
+      "url": "https://arxiv.org/pdf/2109.02516",
+      "aacods_score": 10.5,
+      "research_axes": [
+        "RQ5"
+      ],
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "source_id": "SRC-095",
+      "seed_id": "SEED-V8-01",
+      "category": "preprint",
+      "peer_reviewed": false,
+      "title": "Attested Tool-Server Admission: A Security Extension to the Model Context Protocol",
+      "authors": "Alfredo Metere",
+      "year": 2026,
+      "publication_date": "2026-06-02",
+      "venue_or_issuer": "arXiv (Enclawed LLC)",
+      "identifier": "arXiv:2605.24248",
+      "url": "https://arxiv.org/pdf/2605.24248",
+      "aacods_score": 9.5,
+      "research_axes": [
+        "RQ1",
+        "RQ2"
+      ],
+      "chapters": [
+        "ch01",
+        "ch02"
+      ]
+    }
+  ]
+}

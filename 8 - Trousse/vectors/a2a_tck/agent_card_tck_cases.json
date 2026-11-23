@@ -1,0 +1,96 @@
+{
+  "upstream_repo": "https://github.com/a2aproject/a2a-tck",
+  "upstream_tag": "1.0.0.alpha3",
+  "upstream_commit": "5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+  "source_files": [
+    "tests/compatibility/agent_card/test_agent_card.py",
+    "tests/compatibility/agent_card/test_agent_card_caching.py"
+  ],
+  "required_agent_card_fields": [
+    "name",
+    "description",
+    "version",
+    "capabilities",
+    "skills",
+    "supportedInterfaces",
+    "defaultInputModes",
+    "defaultOutputModes"
+  ],
+  "known_protocol_bindings": [
+    "JSONRPC",
+    "GRPC",
+    "HTTP+JSON"
+  ],
+  "test_cases": [
+    {
+      "test_class": "TestAgentCardDiscovery",
+      "test_name": "test_agent_card_retrievable",
+      "requirement_id": "CARD-DISC-001",
+      "level": "MUST",
+      "assertion": "Agent card is a non-null JSON object"
+    },
+    {
+      "test_class": "TestAgentCardStructure",
+      "test_name": "test_agent_card_validates_against_schema",
+      "requirement_id": "CARD-STRUCT-001",
+      "level": "MUST",
+      "assertion": "AgentCard validates against Agent Card schema (allow_additional=True)"
+    },
+    {
+      "test_class": "TestAgentCardStructure",
+      "test_name": "test_required_fields_present",
+      "requirement_id": "CARD-STRUCT-001",
+      "level": "MUST",
+      "assertion": "All 8 required AgentCard fields are present"
+    },
+    {
+      "test_class": "TestAgentCardProtocol",
+      "test_name": "test_supported_interfaces_non_empty",
+      "requirement_id": "CARD-PROTO-001",
+      "level": "MUST",
+      "assertion": "supportedInterfaces is a non-empty list"
+    },
+    {
+      "test_class": "TestAgentCardProtocol",
+      "test_name": "test_each_interface_validates_against_schema",
+      "requirement_id": "CARD-PROTO-002",
+      "level": "MUST",
+      "assertion": "Each interface validates against Agent Interface schema"
+    },
+    {
+      "test_class": "TestBindingFieldDeclaration",
+      "test_name": "test_all_protocols_declared",
+      "requirement_id": "BIND-FIELD-001",
+      "level": "MUST",
+      "assertion": "At least one protocolBinding declared in supportedInterfaces"
+    },
+    {
+      "test_class": "TestAgentCardCacheControl",
+      "test_name": "test_cache_control_present",
+      "requirement_id": "CARD-CACHE-001",
+      "level": "SHOULD",
+      "assertion": "Cache-Control header present"
+    },
+    {
+      "test_class": "TestAgentCardCacheControl",
+      "test_name": "test_cache_control_has_max_age",
+      "requirement_id": "CARD-CACHE-001",
+      "level": "SHOULD",
+      "assertion": "Cache-Control includes max-age directive"
+    },
+    {
+      "test_class": "TestAgentCardETag",
+      "test_name": "test_etag_present",
+      "requirement_id": "CARD-CACHE-002",
+      "level": "SHOULD",
+      "assertion": "ETag header present"
+    },
+    {
+      "test_class": "TestAgentCardLastModified",
+      "test_name": "test_last_modified_present",
+      "requirement_id": "CARD-CACHE-003",
+      "level": "MAY",
+      "assertion": "Last-Modified header present"
+    }
+  ]
+}

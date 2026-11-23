@@ -1,0 +1,111 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "concordances": [
+    {
+      "discordance_id": "DISC-01",
+      "topic": "Échelle d'autonomie L0–L4 : flux purement déterministe sans IA vs lecture/synthèse assistée par IA",
+      "volume_variants": [
+        {
+          "volume": "Vol. 3 (3 - Compendium 2027.md)",
+          "definition": "L0 désigne le traitement purement déterministe sans IA ni appel de modèle ; L1 à L4 couvrent la progression de l'assistance jusqu'à l'autonomie supervisée.",
+          "corpus_ref": "3 - Compendium 2027.md L275-L310; C01 (6 - Livre Blanc.md L5007)"
+        },
+        {
+          "volume": "Vol. 7 (7 - Livre.md)",
+          "definition": "L0 désigne une lecture et une synthèse assistées par IA sans droit d'écriture ni d'action autonome ; L1 à L4 graduent l'invocation d'outils et les mutations sous contrôle.",
+          "corpus_ref": "7 - Livre.md L184-L202"
+        }
+      ],
+      "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (0.2) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
+      "liminaire_section": "0.2",
+      "rationale": "Empêche le déploiement d'agents probabilistes sur des workflows où un script déterministe sans modèle suffit, tout en rendant les profils OPA (policies_opa) homogènes entre le cadre normatif et les chapitres pratiques."
+    },
+    {
+      "discordance_id": "DISC-02",
+      "topic": "Échelles de criticité et de risque : N0–N4, P0–P3, R1–R4, Classes 1–6 / Stades 0–4 / Paliers 1–3",
+      "volume_variants": [
+        {
+          "volume": "Vol. 2 (2 - Cadre de Référence.md)",
+          "definition": "Niveaux d'autonomie N0–N4, paliers d'outils P0–P3 (P0 lecture publique à P3 écriture critique/exfiltration) et trois classes de risque opérationnel.",
+          "corpus_ref": "2 - Cadre de Référence.md L3508"
+        },
+        {
+          "volume": "Vol. 4 & Vol. 5 (Plan Directeur & Mémoire)",
+          "definition": "Segmentation de portefeuille en Classes 1–6, Stades de maturité 0–4 et Paliers 1–3 sur l'horizon pluriannuel.",
+          "corpus_ref": "5 - Memoire.md L897-L907; 4 - Plan Directeur.md L3185-L3241"
+        },
+        {
+          "volume": "Vol. 6 (6 - Livre Blanc.md)",
+          "definition": "Paliers R1–R4 régissant l'inscription au registre d'agents et l'exigence de revue indépendante 2LoD dès R3.",
+          "corpus_ref": "6 - Livre Blanc.md L5011-L5012 (C05-C06)"
+        }
+      ],
+      "canonical_vol8_choice": "Conformément à AO-03, la prose du Volume 8 proscrit « Classe 1–6 », « Stade 0–4 » et « Palier 1–3 » ; le noyau technique utilise exclusivement les 3 niveaux de criticité (BLOQUANT, OBLIGATOIRE, RECOMMANDE) et les paliers d'outils P0–P3 avec table de correspondance dans 0.2.",
+      "liminaire_section": "0.2",
+      "rationale": "Supprime les collisions d'échelles dans le code Rego et JSON Schema tout en préservant une traçabilité exacte vers les critères C05–C06 et les plans pluriannuels antérieurs."
+    },
+    {
+      "discordance_id": "DISC-03",
+      "topic": "Découpage architectural : 4 plans SI (Vol. 6) vs 4 plans du noyau déterministe (Vol. 7) vs 6 couches + 3 plans A/B/C (Vol. 2) vs C1–C5 (Vol. 5)",
+      "volume_variants": [
+        {
+          "volume": "Vol. 2 (2 - Cadre de Référence.md)",
+          "definition": "Six couches techniques horizontales traversées par trois plans transversaux A (identité, autorisation, garde-fous, approbation), B (télémétrie, évaluation, audit, FinOps) et C (transport/outillage).",
+          "corpus_ref": "2 - Cadre de Référence.md L1029-L1092, L1360-L1361"
+        },
+        {
+          "volume": "Vol. 6 & Vol. 7 (Livre Blanc & Gouverner)",
+          "definition": "Quatre plans applicatifs du SI global (Vol. 6 C03) versus quatre plans du noyau de contrôle déterministe possédé hors modèle (Vol. 7).",
+          "corpus_ref": "6 - Livre Blanc.md L607-L705, L5009; 7 - Livre.md L634-L680"
+        },
+        {
+          "volume": "Vol. 5 (5 - Memoire.md)",
+          "definition": "Modèle à cinq couches C1–C5 et trois fils transversaux de gouvernance.",
+          "corpus_ref": "5 - Memoire.md L98"
+        }
+      ],
+      "canonical_vol8_choice": "Les quatre modules techniques de 8 - Trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
+      "liminaire_section": "0.2",
+      "rationale": "Aligne directement la structure en quatre chapitres du Volume 8 sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des volumes 2 à 7."
+    },
+    {
+      "discordance_id": "DISC-04",
+      "topic": "Notation d'architecture d'entreprise : ArchiMate 3.2 (Vol. 6) vs ArchiMate 4.0 C260 (Vol. 1 & Vol. 5)",
+      "volume_variants": [
+        {
+          "volume": "Vol. 6 (6 - Livre Blanc.md)",
+          "definition": "Vues modélisées en ArchiMate 3.2 typant l'agent comme «Cognitive Actor» relié à «Human-on-the-Loop» et «Guardrail Policy» (critère C02).",
+          "corpus_ref": "6 - Livre Blanc.md L544-L605, L5008"
+        },
+        {
+          "volume": "Vol. 1 & Vol. 5 (Compendium 2026 & Mémoire)",
+          "definition": "Référence à ArchiMate 4.0 (document The Open Group C260 publié le 27 avril 2026).",
+          "corpus_ref": "1 - Compendium 2026.md L10062-L10090; 5 - Memoire.md L372"
+        }
+      ],
+      "canonical_vol8_choice": "Neutralité de notation : aucun artefact ArchiMate propriétaire n'est requis au gate G0 ; les stéréotypes de séparation contrôleur/acteur/politique restent compatibles aussi bien avec les profils 3.2 qu'avec 4.0 (C260).",
+      "liminaire_section": "0.2",
+      "rationale": "Préserve l'ouverture licence MIT et l'interopérabilité des diagrammes PlantUML/Mermaid exécutables sans dépendance à un modeleur commercial."
+    },
+    {
+      "discordance_id": "DISC-05",
+      "topic": "Révision normative MCP : MCP 2025-11-25 (Vol. 7) vs MCP 2026-07-28 stateless et SEP-2596/SEP-3398 (Vol. 1, 2, 3, 5, 6, 8)",
+      "volume_variants": [
+        {
+          "volume": "Vol. 7 (7 - Livre.md)",
+          "definition": "Cite historiquement la révision MCP 2025-11-25 (transport HTTP+SSE avec état de session historique).",
+          "corpus_ref": "7 - Livre.md L144, L2258; SRC-038"
+        },
+        {
+          "volume": "Vol. 1, 2, 3, 5, 6 & Vol. 8",
+          "definition": "Épinglent la révision MCP 2026-07-28 (Streamable HTTP stateless par défaut, en-têtes Mcp-Method / Mcp-Name, ttlMs/cacheScope, JSON Schema 2020-12) et documentent le cycle SEP-2596 (>= 12 mois) et SEP-3398 (report de déc. 2026 au 30 mars 2027).",
+          "corpus_ref": "2 - Cadre de Référence.md L1867-L1888; SRC-072, SRC-074, SRC-078, SRC-080, SRC-081, SRC-082"
+        }
+      ],
+      "canonical_vol8_choice": "Épinglage normatif strict sur MCP 2026-07-28 (commit 5f5440bb) avec refus explicite du transport déprécié HTTP+SSE dans StreamableHttpAdapter (harness_proto/mcp_pinning.py) et isolation par McpTransportAdapter pour la fenêtre SEP-2596 jusqu'au 2027-07-28 et la cible SEP-3398 du 30 mars 2027.",
+      "liminaire_section": "0.2",
+      "rationale": "Élimine toute ambiguïté d'implémentation entre la prose historique de 2025 et les contrôles bloquants EXIG-MCP-03/11/15/16/18/19/20 vérifiés en G0."
+    }
+  ]
+}

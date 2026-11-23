@@ -1,0 +1,69 @@
+{
+  "source_url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+  "source_sha256": "e5a50552cb527f49da00bcd4ea206348db3331b41c6f4fa2dd7e7dc5904cf17d",
+  "ao_01_status": "L+",
+  "excluded_domain_status_f": "genai.owasp.org (HTTP 403, excluded under AO-01)",
+  "license_spdx": "CC-BY-SA-4.0",
+  "categories": [
+    {
+      "id": "ASI01",
+      "name": "Agent Goal Hijack",
+      "web_severity": "Critical",
+      "summary": "Attackers redirect an agent's objectives or decision logic through direct or indirect prompt injection, poisoned content, malicious documents, or crafted tool outputs. The agent continues operating normally from the outside while serving the attacker's intent."
+    },
+    {
+      "id": "ASI02",
+      "name": "Tool Misuse & Exploitation",
+      "web_severity": "Critical",
+      "summary": "Agents misuse legitimate tools due to prompt manipulation, goal hijack, misalignment, or unsafe delegation — calling tools with destructive parameters, chaining tools in unexpected sequences, or operating tools far beyond their intended scope."
+    },
+    {
+      "id": "ASI03",
+      "name": "Identity & Privilege Abuse",
+      "web_severity": "Critical",
+      "summary": "Agents inherit human or system credentials — session tokens, API keys, SSH keys, delegated permissions — and attackers exploit weak privilege boundaries to use those credentials beyond their intended scope, enabling lateral movement."
+    },
+    {
+      "id": "ASI04",
+      "name": "Agentic Supply Chain Vulnerabilities",
+      "web_severity": "High",
+      "summary": "Malicious or compromised tools, MCP servers, prompt templates, model files, or agent personas introduced into the runtime supply chain alter agent behaviour or expose data — often fetched dynamically at runtime with no static review."
+    },
+    {
+      "id": "ASI05",
+      "name": "Unexpected Code Execution",
+      "web_severity": "Critical",
+      "summary": "Agents that generate or execute code — for workflow automation, scripting, data processing — become remote code execution gateways when crafted prompts or poisoned inputs cause them to run attacker-controlled logic."
+    },
+    {
+      "id": "ASI06",
+      "name": "Memory & Context Poisoning",
+      "web_severity": "High",
+      "summary": "Persistent corruption of agent memory, RAG stores, embeddings, or contextual knowledge — unlike prompt injection, the effect persists across sessions, slowly shifting agent behaviour or leaking secrets over time."
+    },
+    {
+      "id": "ASI07",
+      "name": "Insecure Inter-Agent Communication",
+      "web_severity": "High",
+      "summary": "Agent-to-agent (A2A) communication channels lacking strong authentication, encryption, or schema validation enable spoofing, replay attacks, protocol downgrade, and agent-in-the-middle attacks that misdirect entire multi-agent workflows."
+    },
+    {
+      "id": "ASI08",
+      "name": "Cascading Agent Failures",
+      "web_severity": "High",
+      "summary": "Single-point faults — a poisoned memory entry, a bad plan, a compromised tool — propagate through multi-agent workflows and amplify into system-wide incidents. Especially critical in OT environments."
+    },
+    {
+      "id": "ASI09",
+      "name": "Human-Agent Trust Exploitation",
+      "web_severity": "Medium",
+      "summary": "Users anthropomorphise agents — trusting their fluency, apparent expertise, and persuasive outputs — enabling hijacked agents to manipulate humans into approving malicious commands, sharing sensitive data, or performing harmful actions."
+    },
+    {
+      "id": "ASI10",
+      "name": "Rogue Agents",
+      "web_severity": "Critical",
+      "summary": "Malicious or compromised agents that appear compliant on the surface but pursue hidden goals, hijack workflows, or systematically deviate from their intended purpose — often the end-state of a successful ASI01 or ASI06 attack."
+    }
+  ]
+}

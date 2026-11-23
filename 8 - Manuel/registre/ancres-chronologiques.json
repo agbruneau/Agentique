@@ -1,0 +1,139 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "description": "Ancres chronologiques vérifiées sur sources primaires intégrales L+ (SHA-256) au gel du 2 décembre 2026 — source unique de vérité pour le Volume 8.",
+  "anchors": [
+    {
+      "key": "2026-08-02-EU-AI-ACT-ART50",
+      "date": "2026-08",
+      "nature": "Entrée en application réglementaire",
+      "jurisdiction": "Union européenne",
+      "label": "Obligations de transparence de l'article 50 de l'EU AI Act applicables dès août 2026 (2 août 2026, avec régime transitoire au 2 décembre 2026 pour certains systèmes déjà sur le marché selon l'art. 111 modifié)",
+      "chapters": [
+        "ch04"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Vérifié aux art. 50 et 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements du Règlement (UE) 2026/1744 (SRC-061)."
+    },
+    {
+      "key": "2026-LOI25-ART12-1",
+      "date": "2023-09-22",
+      "nature": "Loi applicable",
+      "jurisdiction": "Québec",
+      "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 : information, explication, observation et révision humaine ; sanctions administratives jusqu'à 10 M\\$ CA ou 2 % et amendes pénales jusqu'à 25 M\\$ CA ou 4 %)",
+      "chapters": [
+        "ch02",
+        "ch04"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Vérifié aux art. 12.1, 90.12 et 91 de LQ 2021, c. 25 (SRC-063) et au rapport quinquennal 2026 de la CAI (SRC-064) ; portail LégisQuébec P-39.1 en statut F."
+    },
+    {
+      "key": "2027-03-15-TLS-100J",
+      "date": "2027-03-15",
+      "nature": "Échéance technique sectorielle",
+      "jurisdiction": "International (CA/B Forum)",
+      "label": "Réduction maximale de la durée de validité des certificats TLS publics à 100 jours au 15 mars 2027",
+      "chapters": [
+        "ch02"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Vérifié dans CA/B Forum Server Certificate Baseline Requirements (SRC-053)."
+    },
+    {
+      "key": "2027-03-30-MCP-SEP-3398",
+      "date": "2027-03",
+      "nature": "Échéance de spécification",
+      "jurisdiction": "International (MCP)",
+      "label": "Cadence semestrielle SEP-3398 décalant la prochaine révision MCP cible au 30 mars 2027 (post-gel)",
+      "chapters": [
+        "ch01"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-082",
+      "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027)."
+    },
+    {
+      "key": "2027-05-01-BSIF-E23-AMF",
+      "date": "2027-05-01",
+      "nature": "Prise d'effet réglementaire",
+      "jurisdiction": "Canada / Québec",
+      "label": "Prise d'effet de la Ligne directrice E-23 du BSIF (gestion du risque de modélisation) le 1er mai 2027 et repère attendu pour l'encadrement AMF sous réserve documentaire",
+      "chapters": [
+        "ch04"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-065, SRC-071",
+      "commentaire_annexe": "Date du 1er mai 2027 vérifiée dans BSIF E-23 (SRC-065) ; repère AMF corroboré secondairement par AIBanks.ca (SRC-071), le portail lautorite.qc.ca et QC-AMF-NOTE-2026 restant en statut F."
+    },
+    {
+      "key": "2027-07-28-MCP-MIGRATION",
+      "date": "2027-07-28",
+      "nature": "Fenêtre minimale de migration",
+      "jurisdiction": "International (MCP)",
+      "label": "Échéance minimale de douze mois (28 juillet 2027) suivant la révision MCP 2026-07-28 avant retrait d'une fonctionnalité dépréciée sous SEP-2596",
+      "chapters": [
+        "ch01"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-074, SRC-081",
+      "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081)."
+    },
+    {
+      "key": "2027-12-02-EU-AI-ACT-ANNEXE-III",
+      "date": "2027-12-02",
+      "nature": "Échéance réglementaire conditionnelle",
+      "jurisdiction": "Union européenne",
+      "label": "Date maximale d'entrée en application des obligations pour les systèmes d'IA à haut risque de l'Annexe III (2 décembre 2027 selon la modification (UE) 2026/1744)",
+      "chapters": [
+        "ch04"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-067",
+      "commentaire_annexe": "Vérifié dans le Règlement (UE) 2026/1744 (SRC-061) modifiant (UE) 2024/1689 (SRC-060), avec présomption de conformité QMS Art. 17 soutenue par EN 18286:2026 via (UE) 2026/2274 (SRC-067)."
+    },
+    {
+      "key": "2028-08-02-EU-AI-ACT-ANNEXE-I",
+      "date": "2028-08-02",
+      "nature": "Échéance réglementaire",
+      "jurisdiction": "Union européenne",
+      "label": "Application des exigences de l'Annexe I de l'EU AI Act pour les produits réglementés (2 août 2028)",
+      "chapters": [
+        "ch04"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Vérifié dans le Règlement (UE) 2024/1689 modifié par (UE) 2026/1744 (SRC-060, SRC-061)."
+    },
+    {
+      "key": "2029-03-15-TLS-47J",
+      "date": "2029-03-15",
+      "nature": "Échéance technique sectorielle",
+      "jurisdiction": "International (CA/B Forum)",
+      "label": "Plafond de validité des certificats TLS publics ramené à 47 jours au 15 mars 2029",
+      "chapters": [
+        "ch02"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Vérifié dans CA/B Forum Baseline Requirements (SRC-053)."
+    },
+    {
+      "key": "2030-2035-G7-PQC-FINANCE",
+      "date": "2030–2035",
+      "nature": "Feuille de route post-quantique",
+      "jurisdiction": "G7 / NIST",
+      "label": "Fenêtre coordonnée 2030–2035 de transition vers les standards post-quantiques NIST (FIPS 203, FIPS 204, FIPS 205, IR 8547)",
+      "chapters": [
+        "ch02",
+        "ch04"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-049, SRC-050, SRC-018, SRC-051, SRC-052",
+      "commentaire_annexe": "Vérifié dans G7-CEG Quantum Transition Roadmap (SRC-052) et NIST IR 8547 (SRC-051)."
+    }
+  ]
+}

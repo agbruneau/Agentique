@@ -1,0 +1,106 @@
+{
+  "protocol_id": "MLR-PRISMA-SCR-MANUEL-VOL8-2027-V1.0",
+  "freeze_date": "2026-12-02",
+  "executed_at": "2026-11-23T00:37:04Z",
+  "l_plus_count": 95,
+  "status_f_count": 10,
+  "unexpected_blocks": [],
+  "metadata_only_pct": 0.0,
+  "api_discovery_probes": [
+    {
+      "api": "arxiv",
+      "axis": "RQ1",
+      "query": "all:\"Model Context Protocol\" AND all:\"silent drift\"",
+      "http_status": 200,
+      "hits": 1,
+      "sample_ids": [
+        "arXiv:2609.14119"
+      ],
+      "elapsed_s": 0.14
+    },
+    {
+      "api": "arxiv",
+      "axis": "RQ3",
+      "query": "all:\"CaMeL\" AND all:\"prompt injection\"",
+      "http_status": 200,
+      "hits": 5,
+      "sample_ids": [
+        "arXiv:2610.05640",
+        "arXiv:2503.18813",
+        "arXiv:2505.22852"
+      ],
+      "elapsed_s": 0.09
+    },
+    {
+      "api": "arxiv",
+      "axis": "RQ5",
+      "query": "all:\"MORTAR\" AND all:\"metamorphic testing\"",
+      "http_status": 200,
+      "hits": 1,
+      "sample_ids": [
+        "arXiv:2412.15557"
+      ],
+      "elapsed_s": 0.18
+    },
+    {
+      "api": "crossref",
+      "axis": "RQ5",
+      "query": "metamorphic testing without oracle Chen 10.1145/3143561",
+      "http_status": 200,
+      "hits": 5,
+      "sample_ids": [
+        "10.1109/aitest70988.2026.00036",
+        "10.1007/978-3-032-23584-8_3",
+        "10.2139/ssrn.5380759"
+      ],
+      "elapsed_s": 0.31
+    },
+    {
+      "api": "hal",
+      "axis": "RQ5",
+      "query": "metamorphic testing chatbots",
+      "http_status": 200,
+      "hits": 1,
+      "sample_ids": [
+        "hal-02526355"
+      ],
+      "elapsed_s": 0.48
+    },
+    {
+      "api": "ietf_datatracker",
+      "axis": "RQ2",
+      "query": "transaction-tokens",
+      "http_status": 200,
+      "hits": 5,
+      "sample_ids": [
+        "slides-124-oauth-transaction-tokens",
+        "draft-oauth-transaction-tokens-for-agents",
+        "slides-125-oauth-a2a-profile-for-oauth-transaction-tokens"
+      ],
+      "elapsed_s": 0.33
+    },
+    {
+      "api": "ietf_datatracker",
+      "axis": "RQ2",
+      "query": "oauth-agent-revocation",
+      "http_status": 200,
+      "hits": 2,
+      "sample_ids": [
+        "draft-chen-oauth-agent-revocation",
+        "draft-watts-oauth-agent-revocation-closure"
+      ],
+      "elapsed_s": 0.29
+    },
+    {
+      "api": "nist_csrc",
+      "axis": "RQ2",
+      "query": "FIPS 204",
+      "http_status": 200,
+      "hits": 1,
+      "sample_ids": [
+        "nist_csrc_ok"
+      ],
+      "elapsed_s": 0.19
+    }
+  ]
+}

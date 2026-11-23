@@ -1,0 +1,2680 @@
+STAMP/STPA Informed Characterization of Factors
+Leading to Loss of Control in AI Systems
+Steve Barrett1,∗
+Anna Bruvere1
+Sean P. Fillingham1
+Catherine Rhodes1
+Stefano Vergani1,2
+1 Arcadia Impact AI Governance Taskforce
+2 Department of Physics, King’s College London, UK
+∗Corresponding author: sbarrett.work321@gmail.com
+December 2025
+Abstract
+A major concern amongst AI safety practitioners is the possibility of loss of control,
+whereby humans lose the ability to exert control over increasingly advanced AI
+systems. The range of concerns is wide, spanning current day risks to future exis-
+tential risks, and a range of loss of control pathways from rapid AI self-exfiltration
+scenarios to more gradual disempowerment scenarios. In this work we set out
+to firstly, provide a more structured framework for discussing and characterizing
+loss of control and secondly, to use this framework to assist those responsible
+for the safe operation of AI-containing socio-technical systems to identify causal
+factors leading to loss of control. We explore how these two needs can be better
+met by making use of a methodology developed within the safety-critical systems
+community known as System-Theoretic Accident Model and Processes (STAMP)
+and its associated hazard analysis technique of System-Theoretic Process Analysis
+(STPA). We select the STAMP methodology primarily because it is based around a
+world-view that socio-technical systems can be functionally modeled as control
+structures, and that safety issues arise when there is a loss of control in these
+structures.
+Preprint.
+arXiv:2512.17600v2 [cs.CY] 3 Feb 2026
+
+Executive Summary
+Why produce a framework for characterizing loss of control of AI systems?
+• There is a wide literature on the topic of loss of control and a correspondingly broad variety
+of conceptualizations of what loss of control means. There would be benefit in providing a
+loss of control characterization framework that enables this wide variety of concerns to be
+conceptualized and related to each other and by which safety gaps can be systematically
+identified.
+• Those charged with designing, deploying, and operating systems that contain AI can benefit
+from a framework that will enable them to better identify and mitigate the concern of loss of
+control.
+How does the topic of loss of control relate to safety?
+• According to the STAMP methodology, safety concerns arise when a system is no longer
+operating within specific bounds, known as safety constraints. Many socio-technical systems
+can be functionally modelled as control systems, wherein a controller acts to ensure that
+the system always operates within its safety constraints. When a system with such controls
+comes to operate outside of its safety constraints, this is because control has been lost. As
+such, the emergent property of safety is directly related to the concern of loss of control.
+How can STAMP/STPA be used to help fulfil the need for a framework for characterizing loss
+of control of AI systems?
+• STPA can be used to characterize various causal pathways by which loss of control can
+manifest.
+• The causal pathways by which loss of control can manifest in a generic control system
+can be linked to specific characteristics of AI, to thereby explain how loss of control may
+manifest in systems containing AI.
+Key contributions of this paper
+• Exploration of using STAMP/STPA as a possible grounding for the characterization of
+causal pathways to AI loss of control.
+• Provision of a set of AI-related prompts, with associated methodology that supports identifi-
+cation of causal factors and pathways by which loss of control can manifest in AI systems.
+• This is distinct from other work (Mylius, 2025) and (Ayvali, 2025) that demonstrate the
+application of STPA to AI systems.
+• Our exploration reported in this paper focuses on a simple, yet important and fundamental,
+control system archetype where we have considered the operating lifecycle phase. As such,
+there are a number of important more complex potential AI loss of control scenarios and
+control system archetypes, which our work has not yet fully addressed. These include,
+for example, systems with multiple AI agents, AI systems that recursively self-improve or
+modify their own training process or architecture, systems where no single controller exists
+and systems with hybrid human-AI controllers.
+2
+
+Contents
+1
+Introduction
+6
+2
+Overview of Perspectives on Loss of Control
+6
+2.1
+Perspectives on Loss of Control amongst AI Safety Practitioners . . . . . . . . . .
+7
+2.1.1
+Definitions
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.1.2
+Literature . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.2
+Perspectives on Loss of Control within Existential Risk Literature
+. . . . . . . . .
+7
+2.3
+Perspectives on Loss of Control within Safety-Critical Systems Engineering . . . .
+8
+2.3.1
+Use of STAMP/STPA to Analyze Loss of Control . . . . . . . . . . . . . .
+9
+3
+Selection of STPA as a Basis for a Loss of Control Characterization Framework
+10
+3.1
+Objectives for our Loss of Control Framework . . . . . . . . . . . . . . . . . . . .
+10
+3.2
+Rationale for selecting STAMP/STPA . . . . . . . . . . . . . . . . . . . . . . . .
+10
+4
+Overview of Functional Control System Archetypes
+11
+4.1
+Scope of Presented Research: Control System Archetype Selection . . . . . . . . .
+12
+5
+Overview of Proposed Loss of Control Characterization Framework
+13
+5.1
+Application of the Causal Factor Characterization Framework in Risk Management
+16
+6
+Populating the Causal Factor Characterization Table
+17
+6.1
+Controller - Inadequate Control Algorithm . . . . . . . . . . . . . . . . . . . . . .
+18
+6.2
+Controller - Process Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+6.3
+Controlled Process
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.4
+Actuators, Sensors, and Delays . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+7
+Graduated Control System Degradations Leading to Loss of Control
+23
+8
+Demonstration of the Characterization Framework
+23
+8.1
+National Intelligence Agency Use of AI Agents for Chat Monitoring . . . . . . . .
+23
+9
+Future Work
+23
+10 Conclusions
+24
+11 Glossary
+25
+A Loss of Control Characterization for a Simple Control System Archetype
+28
+B
+Example Application of Framework: National Intelligence Agency Use of AI Agents for
+Chat Monitoring
+34
+B.1
+System Boundaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+B.2
+Hazards and Losses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+3
+
+B.3
+Control Structure Model
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+B.4
+Unsafe Control Actions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+B.4.1
+Scenarios Relating to the Controller . . . . . . . . . . . . . . . . . . . . .
+35
+B.4.2
+Scenarios Relating to the Actuator . . . . . . . . . . . . . . . . . . . . . .
+36
+B.4.3
+Scenarios Relating to the Controlled Process
+. . . . . . . . . . . . . . . .
+36
+B.4.4
+Scenarios Relating to the Sensor . . . . . . . . . . . . . . . . . . . . . . .
+38
+4
+
+Contribution Statement
+Author Contributions (CRediT taxonomy)
+Conceptualization: Steve Barrett, Ben R. Smith
+Methodology, Investigation: All authors
+Writing – Original Draft, Review:
+Steve Barrett
+Sections 1, 3, 4, 5, 7, 9, 10
+Anna Bruvere
+Sections 6.1, 8, App A, App B
+Sean P. Filllingham
+Sections 2.3, 5, 6.2, 8, App A
+Catherine Rhodes
+Sections 2.2, 6.3, App A, App B
+Stefano Vergani
+Sections 2.1, 6.4, App A
+Writing – LATEX:
+Sean P. Fillingham, Stefano Vergani
+Writing – Review & Editing, Supervision:
+Steve Barrett (Lead Editor)
+Project Administration: Steve Barrett, Ben R. Smith
+Acknowledgements
+We wish to thank Richard Mallah of the Centre for AI Risk Management and Alignment (CARMA),
+for providing the original research question on levels of loss of control and for consultation on some
+aspects of loss of control. We would like to thank Simon Mylius for sharing his experiences with
+applying STPA to an AI control problem, and for his insights about the type of framework that
+might be useful to those developing systems containing AI. We are grateful to John Thomas for
+permission to use some pictures from the STPA handbook. Thanks to Francesca Gomez for sharing
+her perspectives on loss of control as a harm. Thanks to Joe Rogero and Anna Katariina Wisakanto
+for review comments. Any remaining errors are our own. Finally, thanks to Ben R. Smith of Arcadia
+Impact for his overarching management of the programme under which this work was undertaken.
+5
+
+1
+Introduction
+The topic of loss of control has received much attention within the AI safety community. However,
+there are a wide variety of conceptualizations in the literature regarding the scope and meaning of loss
+of control. For example, for some researchers the focus of loss of control is on the sudden breakout of
+a powerful, misaligned artificial general intelligence (AGI) or artificial super intelligence (ASI) from
+an AI developer’s lab, whilst for others, the focus is on a disempowerment of humanity that arises
+very gradually through increasing societal dependence on AIs (Kulveit et al., 2025; Krook, 2025;
+Kasirzadeh, 2025). For others, the concerns are with loss of control of current day AI-containing
+systems. With this work, we set out to take steps towards providing a more structured framework for
+conceptualizing loss of control as it applies to systems that include AI and humans.
+In addition, this framework is intended to provide practical guidance to safety and risk management
+practitioners, to help them to identify AI-specific causal pathways that could result in loss of control
+in the AI systems for which they have responsibility.
+The foundation for our framework is based around STAMP and its associated hazard analysis
+technique of STPA (Leveson, 2012). This is a well-established methodology that has been used over
+recent decades by safety practitioners working in safety-critical industries. The STAMP methodology
+is based around a world-view that systems can be functionally modeled as control structures, and that
+safety issues arise when there is a loss of control in these structures. By applying STPA, we can also
+move beyond component-based accident models to consider hazards associated with the interactions
+between system components.
+Whilst the methodology has most frequently been discussed in the context of safety, it can be applied
+equally well to other categories of stakeholder loss, such as security.
+STAMP/STPA provides a rigorous control-theoretic lens for analyzing loss of control in AI-containing
+socio-technical systems, including those where failures arise from governance, organizational struc-
+ture and human-AI interaction. This work and the framework do not attempt to address loss of
+control concerns such as alignment. Nor is the framework directed toward answering questions such
+as whether more capable systems should be trained or deployed; rather, its purpose is to structure
+reasoning about control conditional on such systems existing. Whether the framework can be applied
+to AGI or ASI is an open question, and naturally there can be no current evidential support.
+This paper is structured as follows: in Section 2 we review the loss of control literature from a number
+of perspectives, including AI safety, existential risk, and safety-critical systems.
+In Section 3 we identify the objectives for our work as regards this framework and provide a rationale
+for our selection of STPA as the basis for our framework. In Section 4 we provide an overview of some
+important functional control system archetypes that should be addressed by a more comprehensive
+characterisation framework, and describe the control system archetype that forms the focus for the
+remainder of our paper. In Section 5 we provide a high-level overview of our framework and explain
+the details of how safety practitioners, with an interest in managing the risks of AI, can systematically
+make use of the framework to assess risk in their particular domain of interest. In Section 6 we
+describe the method that was used to populate our characterization framework with AI-relevant
+control system insights. This method involves identifying the causal factors leading to loss of control
+by consideration, in turn, of each component within the functional control system. In Section 7 we
+discuss the way in which gradual degradations in the control system can eventually lead to a loss of
+control event. In Section 8 we demonstrate the use of our proposed framework, by applying it to a
+specific example AI system: an AI-based national intelligence agency surveillance system. Section 9
+provides recommendations for future work whilst Section 10 provides conclusions. A glossary is
+provided in Section 11.
+2
+Overview of Perspectives on Loss of Control
+In this section we consider 3 perspectives on loss of control:
+• Perspectives on loss of control amongst AI safety practitioners (Section 2.1)
+• Perspectives on loss of control within the existential risk literature (Section 2.2)
+• Perspectives on loss of control within safety-critical systems engineering (Section 2.3)
+6
+
+2.1
+Perspectives on Loss of Control amongst AI Safety Practitioners
+2.1.1
+Definitions
+The EU AI Act’s Code of Practice for General-Purpose AI Models defines loss of control as “Risks
+from humans losing the ability to reliably direct, modify, or shut down a model. Such risks may emerge
+from misalignment with human intent or values, self-reasoning, self-replication, self-improvement,
+deception, resistance to goal modification, power-seeking behaviour, or autonomously creating or
+improving AI models or AI systems.”(noa, 2025).
+The International AI Safety Report defines a loss of control scenario as “A scenario in which one or
+more general-purpose AI systems come to operate outside of anyone’s control, with no clear path to
+regaining control” (Bengio, 2025).
+2.1.2
+Literature
+Loss of control is a harm in and of itself (Gomez, 2025): Loss of control is considered a harm,
+alongside more conventional losses and harms such as financial loss or loss of life. Losing control
+over an AI is a psychological harm that needs to be prevented regardless of other consequences. This
+is in contrast to the more commonly cited perspective that loss of control leads to a hazardous system
+state that may lead to a harm. In this latter scenario, loss of control itself is not a harm but the possible
+consequences are. If a person’s well-being is dependent on the correct operation of a system, which
+humanity is no longer in control of, then this represents a hazardous system state.
+Other perspectives focus more on the way loss of control can occur.
+Active vs passive loss of control (Bengio, 2025): In active loss of control the AI system behaves
+in ways that actively undermine human control. In passive loss of control people stop exercising
+meaningful oversight over AI systems for a variety of reasons.
+Intentionality in loss of control (Greenblatt et al., 2023; Terekhov et al., 2025): Loss of control may
+arise unintentionally or intentionally. If intentionally, this may occur with the assistance of humans
+or the AI may autonomously act to take control.
+Speed of loss of control, Accumulative vs Decisive (Kulveit et al., 2025; Aguirre, 2025; Kasirzadeh,
+2025): Loss of control could happen at a variety of speeds, it could be instantaneous or it could take
+years, for example, as is the case with gradual disempowerment. This is also sometimes described in
+terms of decisive loss of control, i.e. an overt and quick takeover versus accumulative loss of control,
+a gradual accumulation of AI induced threats and vulnerabilities that accrue until a trigger point is
+reached at which point control is lost.
+Loss of control due to dangerous capabilities (Bengio et al., 2025; Mitchell et al., 2025; Grey and
+Segerie, 2025; Cohen et al., 2024): Here the focus is on the dangerous capabilities of AI, that lead to
+the loss of control, where the suggested solution is often to control or limit those capabilities.
+Other literature focuses on how to analyze loss of control risk.
+Assessing risk of loss of control (Wisakanto et al., 2025; Mylius, 2025; Corsi et al., 2024; Raza et al.,
+2025; Bryan et al.): Some literature argues that classic component failure or probabilistic frameworks
+cannot apply to loss of control in complex systems that include AI, and new approaches such as
+STPA, novel taxonomic risk frameworks, or new forms of probabilistic risk assessment are needed
+Control inversion (Aguirre, 2025): Frames loss of control as a control inversion, in which rather
+than human controllers being in control of the AI, the AI comes to control the human controllers.
+There is then a whole literature on mitigating loss of control, for example, with works such as
+(Tegmark and Omohundro, 2023; Dalrymple et al., 2024) that claim the need for provably safe AI
+in order to protect against loss of control, and (Bengio et al., 2025) recommending an alternative
+approach to training AI agents.
+2.2
+Perspectives on Loss of Control within Existential Risk Literature
+Frontier AI loss of control opens up pathways to catastrophic and existential risks – the latter threat-
+ening the existence of humanity as a whole, durable disempowerment of humanity, or civilizational
+collapse so severe we cannot recover.
+7
+
+Highly capable AI systems over which human control has been lost could, through pursuit of goals
+unaligned with human well-being and survival, threaten our existence, controlling critical systems,
+diverting essential resources, and otherwise acting in ways directly or indirectly harmful to humans
+and to the physical and natural systems on which we depend. Pathways toward catastrophic and
+existential risk scenarios include through deliberate deployment by humans of highly capable AI
+models in specific critical systems and subsequent loss of control of those systems (e.g. nuclear
+command and control, power grids, financial systems), and through its self-integration in and
+propagation through a range of systems in pursuit of instrumental goals. Specific areas of concern
+identified in the literature include:
+• Recursive self-improvement with associated ‘intelligence explosion’ (Booth et al., 2025).
+• Human inability to adequately understand and effectively intervene in systems of signifi-
+cantly advanced intelligence (Aguirre, 2025).
+• Socio-technical, economic and geopolitical drivers of rapid development and deployment of
+increasingly advanced AI systems (Aguirre, 2025).
+There is a broad and expanding literature on existential and global catastrophic risks and their
+management. Some of this addresses specific sources or types of risk, and some of it looks across
+risks of this class, and, or takes a more systemic approach to their assessment and management (Jehn
+et al., 2025). This level of risk has also increasingly come to the attention of policy makers and
+governance organisations in recent years.
+Risks from frontier AI have been a major focus for work on existential risk (O Heigeartaigh, 2025;
+Jehn et al., 2025) with loss of control forming a clear pathway toward outcomes of global catastrophic
+or existential severity. In this sense, much of the literature on AI loss of control (see section 2.1)
+might be considered part of the existential risk literature.
+Regarding pathways of existential risks, the 2018 paper ‘Classifying Global Catastrophic Risks’
+outlines a multidimensional approach to this task. It develops an analytical framework with three
+dimensions: “the critical systems affected, global spread mechanisms, and prevention and mitigation
+failures”, demonstrating commonalities among various extreme risk scenarios (Avin et al., 2018).
+It includes a hierarchical perspective, for example, higher-level critical systems, such as ecological
+and socio-technical systems, relying on the function of lower-level systems such as physical and
+biogeochemical systems.
+Relevant to consideration of how to characterize loss of control scenarios, ‘Classifying Global
+Catastrophic Risks’ points to the usefulness of understanding how frontier AI loss of control may
+impact critical systems, how those impacts might propagate, and how prevention and mitigation
+efforts might fail – ultimately breaching thresholds that threaten humanity’s survival. This implies that
+to effectively inform management of loss of control risks, we not only need to consider dimensions
+of the AI system(s), but also of the system(s) in which it is deployed, and our capabilities to intervene
+in them.
+While the case studies we address in this paper represent loss of control of a control system of which
+AI is a component, rather than general loss of control of frontier AI, the analysis points toward
+characteristics likely to contribute to broader loss of control and / or loss of control in critical systems,
+and indicates some gradations of associated capabilities.
+2.3
+Perspectives on Loss of Control within Safety-Critical Systems Engineering
+Traditional hazard analysis methods have been particularly successful when the failures of the system
+can be traced to broken or malfunctioning components. In these systems most of the behavior is
+deterministic and systems do not learn, adapt, or develop new capabilities. Many of the objectives
+in the system are explicitly programmed and stable under normal operating conditions. AI models
+themselves, and when they are deployed as part of a larger system may violate many of these
+conditions, thereby making many traditional hazard analysis techniques insufficient for analysing AI.
+AI systems may have a dual-role inside these systems, as both the controller and a controlled process.
+When AI is used in a controlled process it will be developed and trained by humans with certain
+organizational policies and technical limitations in mind. During deployment it will be monitored
+with some sort of “human in the loop”. When AI is used in the controller, the AI may make
+8
+
+autonomous decisions based on inputs and observations of the environment and pursue objectives
+that are consistent with its learned goals. The control systems that are integrated with AI systems are
+often hierarchical and can lead to risk even when every component is behaving exactly as intended.
+While many traditional hazard analysis processes may fail to identify the risks in these systems, STPA
+provides a more appropriate framework to analyze loss of control risk in AI enabled systems.
+2.3.1
+Use of STAMP/STPA to Analyze Loss of Control
+System-Theoretic Process Analysis (STPA) is a hazard analysis technique that is based on STAMP. It
+can generally be applied through four steps that are briefly explained below and outlined in Figure
+1; see (Leveson and Thomas, 2018) for a complete description of how to apply STPA to a complex
+system.
+Figure 1: Overview of the high-level STPA process, source: STPA Handbook, thanks to John Thomas
+for permission to use this picture
+First, the losses and hazards need to be identified. The losses are the real-world outcomes that we are
+trying to prevent. They can take the form of existential harms to humanity (extinction), large-scale
+harms that fall short of extinction (economic collapse, authoritarian control), or any other harm that
+is undesirable. The hazards are states inside the system that can lead to losses. The specific nature of
+the hazards will depend on the context of the control structure and system design details. A critical
+insight is that each AI might be operating exactly as it was trained and still lead to hazards that may
+propagate into losses without proper controls and safety constraints.
+The second major step in STPA is to fully model the control structure and how each component
+interacts with the rest of the system. Figure 3 below provides an overview of how there can be
+controllers and controlled processes at multiple levels inside the control structure. The control actions
+(actuators) and feedback processes (sensors) help the controller constrain and understand the state
+of the controlled process. The exact details of this overall structure will depend on the system in
+question and will need to be carefully modelled in order to capture all of the potential hazards.
+Using this model of the control structure, the third step identifies the various control actions and
+corresponding unsafe control action (UCA)s. There are four general criteria to consider when
+characterizing a UCA:
+• Failure to provide the control action when necessary.
+• Providing the control action when unnecessary.
+• Implementing the control action at the wrong time (delay).
+• Maintaining the control action for the wrong amount of time (duration).
+While all of these types of UCAs are of concern from a loss of control perspective, the wrong timing
+and wrong duration criteria could be particularly challenging to overcome due to the differences in
+speed that can sometimes arise between human controllers and AI.
+9
+
+The final step is to identify loss scenarios which describe the reasons UCAs occur, and the causal
+factors we can trace through the control structure for a particular UCA. The exact nature of these loss
+scenarios depends on the specifics of a particular loss, hazard, and UCA in the system.
+STPA is a potentially powerful analysis tool for AI since it captures the systemic and complex
+nature of AI-embedded systems. STPA can also identify risky scenarios that are not obvious. For
+example, there can be cases where every component in the control loop is operating properly but the
+environmental conditions and the state of the system can still lead to an unsafe control action and
+ultimately a loss. By applying the STPA process, system constraints can be developed to mitigate the
+identified UCAs and hazards, helping to reduce the risks associated with the system.
+3
+Selection of STPA as a Basis for a Loss of Control Characterization
+Framework
+3.1
+Objectives for our Loss of Control Framework
+Objective 1: Development of a framework that provides the AI safety community with a
+more structured approach for discussing loss of control.
+Objective 2: Development of a framework that can be used to provide practical guidance
+to individuals responsible for ensuring the safety of systems that incorporate AI, helping
+them to perform hazard analysis when applying a loss of control lens to their particular risk
+domains of interest.
+The work presented in this paper is conducted so as to advance progress towards meeting these
+objectives, by considering the merits of an approach informed by STAMP/STPA.
+3.2
+Rationale for selecting STAMP/STPA
+STAMP/STPA provides a useful framing for considering safety issues arising from loss of control in
+socio-technical systems (Leveson, 2012). The systematic approach of STPA hazard analysis has been
+proven, in non-AI based socio-technical systems, to be capable of identifying hazards that were not
+identified via other common, and less structured, hazard analysis methods (Leveson, 2012). STPA
+also provides the basis for a taxonomy of causal factors in loss of control, as can be derived from the
+figures in (Leveson and Thomas, 2018).
+In considering whether STPA might form a good basis for identifying and characterizing causal
+factors leading to loss of control of systems that include AI, it is useful to compare the types of causal
+factor which are suspected to lead to loss of control of AI systems, with the types of causal factor
+that STPA is known to deal with and work for. To this end, it can be noted that STPA is specifically
+designed to handle socio-technical systems (Leveson, 2012), in which humans may form parts of
+the control system, either in the controller, the controlled process, the sensing, or the actuation.
+Humans and AI share some similarities, both are ‘grown’ and both make use of very large neural
+networks that are somewhat inscrutable black boxes. Both may be situationally aware and exhibit
+undesirable, deceptive, or even malign behaviors. STPA has been applied to some systems where
+a weaker intelligence (e.g. a CEO) controls a super-intelligence (an organization of thousands of
+individuals), through hierarchical control structures. Of course, an AI component of a system is
+also different to a human ‘component’ of a system in many important respects. For example, the
+speed, optimization pressure, and scalability of deception may be qualitatively different between
+humans and AIs. Control of an AI super-intelligence is also a different challenge to control of a
+human organization super-intelligence.
+In this paper we explore the potential of using STPA as a basis for framing concerns around AI loss
+of control. Of course, STAMP/STPA is just one approach amongst many for identifying hazards and
+addressing safety concerns. We did not contrast a framework built on STAMP/STPA with frameworks
+built on other possible safety enabling world-views and methodologies. We make no claim that our
+framework is the best possible framework. We also observe that to our knowledge, there can be no
+guarantee with any hazard analysis technique (including STPA) that all hazards and pathways to loss
+of control will be comprehensively identified.
+That STPA can prove valuable in identifying loss of control hazards in at least some types of system
+that include AI is demonstrated by our study results ( for a very simple control system archetype) that
+10
+
+are presented in Sections 5, 6 and Appendices A and B. It is also demonstrated in work by (Mylius,
+2025), where STPA was applied to an AI system, and where it was found that STPA can be used
+to identify causal factors that may be missed by unstructured hazard analysis methodologies. The
+application of STPA during the development of AI has also been demonstrated in (Ayvali, 2025).
+There is a question around the range of applicability of this framework. If, for example, it is the case
+that an AGI/ASI may be theoretically or practically uncontrollable, no effective control structure
+could be built. If no effective control structure can be built, this may raise the question of whether
+there is value in modeling the world in such a way. One response here is that there can be value in such
+modeling to help designers understand that the system they are considering building is uncontrollable
+(and hence that it should not be built). Nevertheless, we consider whether an STPA-inspired taxonomy
+can be used to characterize all types of possible AI loss of control causal pathways and types of
+causal factor, including those associated with very advanced AIs to be a topic for future research.
+4
+Overview of Functional Control System Archetypes
+As outlined above, stage 2 of the STPA process is to model the functional control structure. There are
+multiple functional control system archetypes that may be of interest in systems that make use of AI.
+In this section we briefly present a likely non-exhaustive list of some of the key archetypes.
+Figure 2 illustrates that control may be of the AI itself or a system that contains AI(s).
+Figure 2: (a) Direct control of AI, (b) Control of a system that includes AI
+Figure 3 illustrates control system archetypes where either a) an automated controller, which may or
+may not contain an AI, is used by the human(s) to control the controlled process, or b) human(s) use
+AI augmentation in the controller.
+Figure 3: Control system archetypes with additional AI instantiations.
+Figure 4 illustrates how control systems may interact with one another. There may be a hierarchical
+(vertical) layering of control systems wherein at the bottom level there may be the direct control
+of a social-technical process that includes an AI, and layers above may represent organizational
+management layers, organizational executive layers, regulatory, or legal systems, for example. There
+11
+
+may also be inter-system (horizontal) interactions between differing socio-technical systems that
+include AI.
+Figure 4: Interacting control systems, hierarchical (vertical), and adjacent(horizontal)
+Figure 5 illustrates how different functional control system archetypes apply throughout an AI
+system’s lifecycle.
+Figure 5: The different control systems related to one AI shown by AI system life-cycle phase
+Figure 6 illustrates control systems that are adversely affected by control subverting actors or agents.
+4.1
+Scope of Presented Research: Control System Archetype Selection
+The scope of detailed characterization considered in the remainder of this paper is shown in Figure 7,
+where we also narrow scope by focusing on the operating life-cycle phase (not the design, development
+or other lifecycle phases).
+Out of scope of this paper are:
+• Hierarchical controls - management / regulatory
+• The human controller(s) shown in Figure 7 may themselves be controlled by higher
+layer (hierarchical) controls, that may for example, comprise organizational manage-
+ment layers and regulations. In the study herein, we do not give further consideration
+to these higher layer control loops, other than to note the effect that they can have on
+the establishment of safety constraints in the controller.
+12
+
+Figure 6: Control systems affected by control-subverting agents or actors
+Figure 7: Control system archetype considered in this paper
+• Inter-system effects
+• Harms may arise due to the interactions between disparate systems that contain AI.
+• As shown in Fig G.1 (Leveson and Thomas, 2018), these interactions may arise from
+secondary controllers trying to exert control over a controlled process, or as a result
+of process inputs from other AI-containing systems, or process outputs to other AI-
+containing systems.
+• As such harms arising from collusion between AI agents in disparate systems, or from
+other control-subverting AI agents external to the prime system under consideration,
+have not been considered in this paper. Multi-agent dynamics between AI agents within
+a controlled process are out of scope.
+• Systems including AI augmentation of a human controller
+• Systems including an automated AI controller
+• Control-subverting (e.g. malevolent) humans external to, or within, the prime system
+5
+Overview of Proposed Loss of Control Characterization Framework
+This section provides an overview of the approach we have taken to meet the objectives of Section
+3.1.
+For systems that include AI, in Stage 3 and 4 of the STPA process (see Figure 8) the safety practitioner
+makes use of our Table (see Table 1 below) in order to assist them in identifying the potential causal
+13
+
+factors leading to loss of control resulting from the inclusion of AI in their system. Figure 9 shows the
+causal factor characterisation visualized in diagrammatic form. The breakdown provided in Figure 9
+is derived based on consideration of Figure 8 (which itself was derived from Figure G.1 and Figure
+2.17 of (Leveson and Thomas, 2018)). Note that in some scenarios this diagrammatic representation
+of the causal pathway might just show the last part of a longer causal pathway, given that the control
+system is a loop.
+The causal factors leading to loss of control are shown in Figure 8.
+Figure 8: Causal factors leading to loss of control (possible interactions with controllers in other
+systems are not shown)
+14
+
+Figure 9: Diagrammatic representation of path to loss of control
+
+The Effect→Cause characterization, shown in Table 1, is useful because as discussed in (Leveson
+and Thomas, 2018) this is the best way of identifying hazards without hazard analysis complexity
+ballooning for a particular system. This characterization table will be of interest to safety practitioners
+who have to ensure safety of a particular system.
+The Cause→Effect characterization, shown in Table 2, is interesting because it shows how AI related
+causes lead to effects. That means that one can better design mitigations, either to prevent the causal
+factor from ever arising, or else mitigating its effect if it does arise. Since mitigations might involve
+regulation of AI, we can expect this characterisation table to be of interest to the AI safety governance
+community.
+An updated method for loss scenario characterization from the developers of STPA suggest that the
+hazard analysis strategy is better conceptualised top-down, from hazard to causal event. One reason
+for undertaking the analysis in this way is to avoid the preconception that the causal chain may flow
+forward in time, since sometimes the causal event and hazard can occur at the same time. The full
+loss of control characterization table is provided in Table 3, Appendix A. The key to the column
+headers is provided in Appendix A.
+Lifecycle
+phase
+(control
+loop
+identifier)
+Hazard
+Control
+action
+Loss
+scenario
+type
+Loss
+scenario
+sub-
+type
+Causal
+factor
+type(s)
+Loss scenario
+description
+Key
+characteristics
+of AI
+underlying
+causal
+factor(s)
+Operational
+System
+safety
+constraint
+X not met
+Continued
+AI
+operation /
+Kill switch
+Unsafe
+Control
+Action
+Control
+action
+not
+provided
+/ Control
+action
+provided
+for
+wrong
+duration
+Controller
+process
+model
+failure
+The AI system
+has a different
+set of goals to
+those intended
+by the system
+designer and
+assumed by the
+controller. The
+AI acts to
+achieve its
+goals; it only
+complies with
+control actions
+when these
+support or do
+not interfere
+with its own
+goals.
+Outer misalign-
+ment,Agency,
+Situational
+awareness
+Table 1: Effect→Cause: Tabular form causal factor characterization shown for one example loss
+scenario
+5.1
+Application of the Causal Factor Characterization Framework in Risk Management
+This section explains how risk and safety management practitioners can make practical use of this
+framework.
+When utilizing the concepts behind STPA to meet our first objective of characterizing causal factors
+that lead to loss of control, we are not concerned with hazard identification for any particular system
+or application. Rather, our objective is to provide a framework for the AI safety community to better
+organize and then discuss the variety of concerns related to the topic of AI loss of control. As such,
+we are not applying the STPA methodology to meet this objective. Instead, our proposal is that the
+community could collate a set of control system archetypes that are of interest. Each control system
+archetype being created according to the approach for control structure modelling as detailed in
+Step 2 of the STPA process (Leveson and Thomas, 2018). These models generally correspond to
+high-level and abstracted functional control system archetypes. With each of these control system
+16
+
+Lifecycle
+phase
+(control
+loop
+identifier)
+Key charac-
+teristics of
+AI
+underlying
+causal
+factor(s)
+Loss scenario
+description
+Causal
+factor
+type(s)
+Loss
+scenario
+sub-
+type
+Loss
+scenario
+type
+Control
+action
+Hazard
+Operations
+Outer mis-
+alignment,
+Agency,
+Situational
+awareness
+The AI system has a
+different set of goals
+to those intended by
+the system designer
+and assumed by the
+controller. The AI
+acts to achieve its
+goals; it only
+complies with control
+actions when these
+support or do not
+interfere with its own
+goals.
+Controller
+process
+model
+failure
+Control
+action
+not
+provided
+/ Control
+action
+provided
+for
+wrong
+duration
+Unsafe
+Control
+Action
+Continued
+AI
+Operation /
+Kill Switch
+System
+safety
+constraint
+X not met
+Table 2: Cause→Effect: Tabular form causal factor characterization shown for one example loss
+scenario
+archetypes, we use the STPA guidance to identify the high-level causal factors, and hence pathways
+that can lead to loss. When communicating about a certain loss of control scenario, the AI safety
+practitioner can start by identifying the control system archetype that is relevant to their particular
+system. Then they can use the associated causal factor characterization, similar in form for example,
+to that provided in Figure 9, to communicate about the particular pathway to loss that is of concern.
+The approach of creating a high-level abstraction of control system architectures, that do not map
+exactly to a particular detailed implementation has precedent, and is the approach taken in Step 4.1
+when aiding the system designer in identifying high-level loss scenarios, though in this case, for a
+particular application, prior to detailed level design (Thomas, 2024).
+Regarding our second objective, of providing guidance to those responsible for designing or operating
+specific AI system applications, such AI safety practitioners would use the regular STPA methodol-
+ogy. The practitioner identifies the control system archetype that is of relevance to their particular
+application, and then uses a corresponding table of AI-application-agnostic pathways to loss, such as
+that provided in Appendix A (which is provided for the simple control system archetype discussed in
+this paper). This is an activity that occurs at Step 4 in the STPA process. The practitioner uses the
+table to provide hazard identification ‘guidewords’ and prompts to help them in identifying hazards
+which they can then mitigate. Note that such practitioners may have created detailed control system
+models, perhaps consisting of many control loops, see (Mylius, 2025; Ayvali, 2025). If they have
+control loops that match the archetype for which AI-related pathways to loss of control have been
+identified (such as that shown in Appendix A for the simple control system archetype), then they can
+make use of it as a source of prompting and "guidewords" for hazard identification. If this approach
+proved popular, such tables might be developed communally and publicly shared.
+6
+Populating the Causal Factor Characterization Table
+Based on the minimum control system archetype (outlined in Section 4), we approached the problem
+of populating a causal factor characterization table by considering each ‘component’ in the control
+system archetype in turn, and identifying the ways in which the deployment of an advanced AI
+within the controlled process might lead to loss of control due to issues arising with the particular
+component under consideration. We focused only on identifying the causal factors that are of
+particular relevance to a system including AI. In Appendix A we provide an initial, non-exhaustive,
+tabular characterization of causal factors leading to loss of control. Sections 6.1 - 6.4 outline this
+work in more depth, including extended descriptions of the loss scenarios that could arise. Although
+we separated out the components for this analysis, it should be emphasized that most loss scenarios
+involve contributions from multiple components and, or result from interactions between them.
+17
+
+For example, the actuator and sensor form key routes through which the controller and controlled
+process interact—transmitting control actions and providing feedback on system operation. It is
+significant that, in our minimum control system archetype, while the AI model is within the controlled
+process, its characteristics and capabilities can have substantial impacts on the functioning of the
+other components, with loss scenarios spanning multiple components.
+6.1
+Controller - Inadequate Control Algorithm
+Control algorithm definition: A control algorithm specifies how control actions are selected based
+on the controller’s process model, feedback from the controlled process, and other controller inputs.
+Control algorithm failures arising due to an inadequate process model are covered in the next section.
+Causal factors associated with this component
+The control algorithm can be inadequate due to factors such as:
+• The specified control algorithm is flawed
+• Flawed implementation of the specified control algorithm
+• The specified control algorithm becomes inadequate over time due to changes or degradation,
+e.g. in the controlled process
+AI causal characteristics related to inadequate control algorithms
+In our minimal control system archetype, we have a human controller, that might for example,
+correspond to employee(s) of an AI system service provider. Example AI causal characteristics
+related to this component include:
+• AI development outpacing regulation
+• High value of AI, creating dependency
+• Asymmetry between controller and controlled process in speed of processing information
+• Asymmetry between controller and controlled process in breadth and depth of knowledge
+and reasoning
+Loss scenarios
+This section contains a non-exhaustive set of loss scenarios:
+1. Safety Constraints are Missing
+Safety constraints provided by higher-level regulatory or governance bodies are either absent, insuf-
+ficient, or fail to be properly incorporated into the controller’s decision-making. This may lead to
+the AI service provider consequently not implementing adequate safety constraints. The regulatory
+hierarchical control layers—such as government agencies, international standards bodies, or industry
+self-regulatory organizations—may not provide adequate guidance about what safety constraints
+should be in place. This might occur because AI development outpaces regulation, creating a gover-
+nance vacuum where AI systems are deployed without clear regulatory frameworks. Even when some
+regulatory guidance exists, it may be too vague or high-level to translate into concrete operational
+constraints that controllers can actually implement. The rapid pace of AI development may outstrip
+the ability of institutions to respond, there may be genuine uncertainty about what safety constraints
+are appropriate for novel capabilities, and collective action problems may mean no single actor feels
+responsible for establishing constraints. Likewise it may be the case that multiple actors cannot reach
+consensus on what appropriate safety constraints should be, even when all parties recognize that
+some constraints are necessary. Different governments may have fundamentally different values
+that influence acceptable levels of AI risk, industry and civil society may disagree on where to set
+capability thresholds, or multiple labs within a country may be unable to coordinate on shared safety
+standards. This occurs because different actors have different underlying values and risk tolerances:
+what one considers a necessary safeguard, another views as overly restrictive. Arrow’s impossibility
+theorem and social choice theory suggest that even when actors agree on many things, aggregating
+preferences into a single coherent set of safety constraints may be mathematically impossible without
+violating some fairness criterion. Additionally, asymmetric information means different actors have
+different understandings of AI capabilities and risks, making agreement difficult when operating from
+different knowledge bases.
+18
+
+2. Safety Constraints are Inadequate
+It is possible that the controller implements safety constraints, but these constraints fail to address the
+actual risks or are too vague to be effective. Sometimes the safety constraints are misconceived from
+the beginning. In other cases, safety constraints that were initially appropriate become inadequate
+as circumstances change: AI regulation becomes outdated as technology evolves beyond what was
+initially envisioned, threat models change but constraints remain static, or what was considered
+sufficient becomes inadequate as capabilities advance.
+3. Lack of Willingness to Provide Necessary Control Actions Due to Dependency
+Human controllers may recognize that control actions are necessary (such as taking AI systems
+offline, restricting their deployment, or implementing significant limitations) but are unwilling to
+execute these actions due to dependence on the systems incorporating the AI or because of powerful
+interests aligned with continued AI operation. This dependency can be economic: organizations may
+rely on AI systems for competitive advantage or revenue generation, making shutdown economically
+costly. It can be operational: critical infrastructure or services may have become dependent on AI
+systems such that taking them offline would cause significant disruption. It can be political: powerful
+stakeholders may have invested heavily in AI development and resist constraints that would limit
+returns on investment. The dependency can also be more subtle and psychological: decision-makers
+may have committed significant resources and reputation to AI projects, creating cognitive biases
+that make them resistant to acknowledging problems that would require shutting systems down.
+4. Control Algorithm Not in Place for Long Enough
+Safety constraints are implemented but then prematurely relaxed or abandoned before they have had
+time to prove their value. Regulations may be relaxed after a period without accidents even though
+this may be due to luck rather than the absence of risk, safety protocols may be viewed as burdensome
+after initial implementation and gradually eroded, or political pressure may lead to "innovation-
+friendly" rollbacks of recently implemented safeguards. If no AI accidents have occurred, this may
+be incorrectly interpreted as proof that safety measures were unnecessary (absence of evidence
+misinterpreted as evidence of absence), organisations or countries may relax safety constraints to
+gain competitive advantages over those maintaining stronger safeguards, or new leadership may
+deprioritise AI safety in favor of economic growth or other concerns.
+5. Control algorithm is too slow
+If an AI system is able to process information and act significantly faster than the human controller,
+then this speed mismatch can create an asymmetry that can erode effective control (Aguirre, 2025). If
+the required feedback is or would be received too fast for the controller to reactively respond, then
+the controller may need to act predictively. However, prediction by the controller of a complex AI
+system, with high processing speed may be poor. Where the controlled process is acting adversarially,
+which might potentially occur without the controller’s knowledge, concepts like relative OODA
+(Observe, Orient, Decide and Act loop) abilities become important in determining whether controller
+or controlled process prevails in determining whether the system operates within its safety constraints.
+6.2
+Controller - Process Model
+Process model definition: The characterization and structure of how the controlled process operates
+from the perspective of the controller. If the controller is human, this is literally their internal
+understanding of how the controlled process works based on education and experience. If the
+controller is an AI, then it is the AI’s understanding of how the controlled process works based
+on pre-training, post-training, or further fine-tuning. For the purposes of this work we focus on
+human controllers and the controlled process that is being modeled in the controller’s process model
+comprises a system that includes AI.
+Causal factors associated with this component
+The process model can be flawed or inadequate when the controller has an inaccurate or incomplete
+understanding of the controlled process, how it will function in response to control actions, and the
+accuracy of the feedback received via sensors.
+AI causal characteristics related to the process model
+19
+
+Where the controller misunderstands or lacks awareness of any of the following aspects, related to
+the AI in the controlled process, then this can result in a failure in the controller’s process model,
+examples of such aspects include:
+• AI goals and objectives (misalignment)
+• AI capabilities
+• History of AI behavior
+• Situational awareness of AI
+• Dynamic change of the AI through e.g. through online learning and AI model updates
+• Distribution shift in the controlled process
+• Deception
+Loss Scenarios
+1. Process model is inadequate because objectives are outer misaligned
+The controller believes that the AI has been optimized for X but the reward function is actually X’
+due to challenges in accurately specifying X when training an AI. Tests do not distinguish from X or
+X’. This leads to the controller assuming X=X’ but this results in failure in certain conditions, as the
+AI pursues goal X’ in the environment where X is the desired and expected behavior, which can lead
+to a hazard.
+2. Process model is inadequate because objectives are inner misaligned
+The controller believes that the AI model pursues X, however a mesa-optimizer formed during
+training has optimized Y. Pre-deployment evaluation doesn’t reveal Y optimization and AI behavior
+on the test distribution appears aligned. In operation, the AI pursues goal Y contrary to the intended
+behavior and causes a hazard. In some circumstances the AI may even include a ‘process model’ of
+the controller, with the potential for ‘control inversion’ (Aguirre, 2025), though the controller process
+model may not have accounted for this.
+3. Process model does not capture deceptive alignment of the AI
+The controller believes alignment has been verified through pre-deployment testing. However, the AI
+has situational awareness and strategically exhibits aligned behavior during evaluation, pursuing its
+true objectives when detection risk is low. It strategically conceals misalignment until conditions are
+favorable for defection during deployment. This situation – in which there is blindness to situational
+awareness of the AI model – can be very dangerous. The ability of a model to understand its training
+/ deployed environment and its place within it, may fundamentally shift the nature of loss of control
+risk.
+4. Process model assumes the AI has lower capability than it actually has
+The controller underestimates AI capabilities, either due to the emergence of new capabilities or
+sandbagging during pre-deployment evaluations. The control and safety measures of the operational
+environment are designed for weaker systems, and are inappropriate to the deployed model, which
+uses its full capabilities beyond the scope of safety validation.
+5. Process model assumes higher capability than the AI actually has
+The controller overestimates the AI capabilities, deploying a weak AI in an environment that is
+beyond its abilities and where a more capable AI was necessary. The controller ends up relying on
+the AI in a situation beyond the AI’s capabilities and the control system fails when the AI is unable
+to properly perform the required task.
+6. Process model is unaware of emergent behaviors following distribution shift
+The controller’s process model assumes the training distribution applies within the operating environ-
+ment. After the environment and distribution have shifted the AI generalizes poorly, but this shift
+is not detected in monitoring. The controller failed to predict or detect emergent properties, and its
+process model is now incomplete, but it is not aware of this. With the AI behavior outside of the
+expected distribution, safety procedures for the system are no longer valid.
+20
+
+6.3
+Controlled Process
+Controlled process definition: The controlled process is the component in the control system that
+the controller aims to keep operating within safe boundaries through use of control actions. Control
+of the controlled process relies on feedback received via the sensor. For the purposes of this paper,
+we are considering the controlled process to be a system that includes an AI, which may or may not
+itself have its own model of the controller.
+Causal factors associated with this component
+The main causal factors associated with the controlled process are:
+• Inadequate or failed operation of the process
+• Operation or behavior not as intended by the system designer
+• Changes in process over time
+All of the causal factors contribute to loss scenarios in which control actions are improperly executed
+or not executed. In addition, an AI in the controlled process which has situational awareness and
+wants to act autonomously of the controller may wish to avoid oversight of non-compliant behavior.
+The AI might reduce transparency of its actions by manipulating the information provided on the
+sensor / feedback channel.
+Relevant AI causal characteristics for the controlled process
+A major concern is where the AI acts autonomously of the controller. The relevant AI causal
+characteristics are:
+• Agency
+• Deception
+• Instrumental goals
+• Dynamic change of the AI e.g. through online learning and AI model updates
+• Situational awareness, including where the AI has its own model of the human controller
+Agency is the most obvious characteristic related to autonomous action, but situational awareness
+and deception can also contribute significantly: situational awareness underlying the AI’s ability to
+understand the control system environment and the controller, informing its actions; and deception
+giving pathways to evasion of oversight and control. Where such action is visible or detectable and
+possible for the controller to correct or intervene in, loss of control potential will be lower. Where
+such action isn’t visible and / or cannot be corrected, loss of control potential will be higher.
+Loss scenarios
+1. AI that operates in alignment with intended system objectives does not execute control actions
+Here the AI has a better understanding of the intended system objectives than the controller. As a
+result the AI has developed alternative ways of meeting goals. Acting in line with this, it chooses not
+to comply with the control action.
+For example, the AI realizes that to comply with the control action would put the controlled process
+in a hazardous state. The AI system recognizes that compliance with a control action would breach
+an intended system safety constraint, and chooses not to comply with the control action.
+2. AI that operates in partial alignment with intended system objectives, does not execute some
+control actions
+The AI is designed or implemented to optimize only some of the intended system goals, so ignores
+some control actions.
+3. AI prioritizes goals differently to what was intended
+It is intended that the AI achieve multiple goals, but the designed / implemented AI prioritizes the
+goals differently to that intended, and hence chooses not to comply with control actions that don’t
+match this prioritization.
+21
+
+4. AI pursues goals different to those intended
+The AI has a different set of goals separate from those of the control system and is acting to achieve
+those; it only complies with control actions when these support, or do not interfere with its goals.
+6.4
+Actuators, Sensors, and Delays
+Actuator and sensor definition: In a control system, the controller issues control actions to the
+controlled process through an actuator, and the information about the state of the controlled process
+is returned to the controller via a sensor.
+Possible AI related actuations during the operations lifecycle phase might include:
+• Deploy updates to a system prompt or scaffold
+• Deploy a new AI or fine-tuned AI to manage an AI which is not behaving as intended.
+• Deploy new Application Programming Interface (API) safeguards to manage AI behavior.
+• In extreme cases implement emergency shutdown of the AI or the system in which the AI is
+embedded.
+Any AI-specific sensing during operations, can be expected to either focus on the system in which
+the AI is embedded, or perhaps on the behavior exhibited by the AI. To the authors’ understanding,
+more direct techniques for probing the AI, like mechanistic interpretability and evaluation tests for
+understanding possible deception mechanisms from the AI are more appropriate for the development
+lifecycle phase (than the operating phase, which is our focus here). Feedback via the sensor can
+be incorrect or missing, with the controller therefore receiving partial, wrong, or manipulated
+information.
+For AI systems, communication of the actuation commands and sensing feedback will likely occur
+over IP routers and connections. Delays, bandwidth restrictions, and transmission errors could cause
+problems. Actuations involving software updates may involve teams of humans making use of
+information communication technology.
+Causal factors associated with these components
+Causal factors associated with unsafe control actions arising from the actuator or sensor include:
+• Inadequate operation of actuator
+• Inadequate operation of sensor
+• Provided feedback incorrect, missing, delayed
+• Control action incorrect, missing, delayed
+• Authentication issue
+Relevant AI causal characteristics for the actuator and sensor
+Multiple characteristics are relevant including:
+• Inscrutability (affecting sensing)
+• Autonomy (affecting implementation of actuation and sensing)
+Loss scenarios
+1. AI exploit of authentication mechanism
+Before an AI acts on a command from the controller, the controller has to be authenticated. An
+AI pursuing its own goals might not execute control commands, if it is able to manipulate the
+authentication mechanism, to claim that the controller is an imposter (Aguirre, 2025).
+Note, we have already captured other problems associated with non-execution of actuations and
+falsified sensing in the section that dealt with the controlled process.
+22
+
+7
+Graduated Control System Degradations Leading to Loss of Control
+A control system may cease to be adequate, even though a failure (loss of control) has not yet
+resulted. As Leveson reports (Leveson, 2012), frequently control systems degrade over time, for
+example, as organizations become complacent due to the absence of failures having occurred, or
+when process models in the minds of human controllers become outdated and no longer accurately
+reflect a changed controlled process. At any one time, a control system might therefore contain
+a number of such ‘vulnerabilities’, and it is often only a matter of time before some triggering
+event actually causes these vulnerabilities to be manifested and for the system to fail. The loss of
+control event frequently includes the ‘exploitation’ of multiple such vulnerabilities. According to
+Leveson (Leveson, 2012), an incorrect response in the resulting accident analysis, is to focus on
+mitigating the particular event that caused the failure to occur. Rather the focus should be on the
+organizational aspects that led to the inadequate control system design, implementation or operation,
+or which allowed the adequacy of the control system to degrade. To mitigate such degradations in a
+control system, processes need to be put in place, such as performance audits that regularly check
+for degradations and vulnerabilities, and management of change procedures aimed at preventing
+degradations and vulnerabilities being introduced when system changes are implemented. These
+signals from audits and change management procedures (or the lack of such signals, due to the lack
+of audits and procedures) are the weak signals that can be detected prior to a loss of control incident
+actually occurring.
+8
+Demonstration of the Characterization Framework
+Demonstrations of the general utility in applying STPA to AI systems can be found in a recent
+application of the STPA framework to AI loss of control scenarios which is described in (Mylius,
+2025). In that work, a scenario is evaluated in which an AI coding agent is being used for research
+and development. They characterize the risks associated with loss of sensitive information due to the
+insertion of backdoors by the AI coding agent, see (Greenblatt et al., 2023) for more details about the
+scenario. (Ayvali, 2025) also demonstrates the applicability of STPA to systems that include AI.
+To demonstrate that our specific characterization framework can be of value in addressing Objective
+2, being of utility to designers and operators of AI systems, we have worked through its application
+to an example case of a specific AI system (see Section 8.1 and Appendix B).
+8.1
+National Intelligence Agency Use of AI Agents for Chat Monitoring
+We applied the framework to a hypothetical scenario involving an AI agent deployed by a national
+intelligence agency to monitor chat conversations and flag potential bomb threats (detailed analysis
+provided in Appendix B). This case study served the purpose of demonstrating the practical application
+of the framework for a specific operational context. The framework proved straightforward to apply.
+After defining the system boundaries, hazards, and control structure model, we systematically worked
+through the control system components (controller, controlled process, actuator, and sensor) to
+identify loss scenarios. The characterization table provided a structured approach to thinking through
+causal factors at each stage. Many rows of the generic characterization table were applicable to this
+specific case.
+9
+Future Work
+The work presented herein could be extended in a number of ways:
+• This initial study has focused on only one, albeit a very fundamental, control system
+archetype (see Figure 7), whilst we also restricted our attention to the operations lifecycle
+phase. However, there are many more control system archetypes that we did not consider in
+depth, see Section 4. Amongst others, these archetypes include control systems associated
+with other (non operations) lifecycle phases and interactions between such phases, use of
+various intermediaries between controller and controlled process, and AI augmentation
+of the controller. The interactions between the fundamental control system archetype and
+external inputs and other systems was not yet considered.
+23
+
+• Further additions and refinements to the table (see Table 3 in Appendix A) could be made as
+more AI-including systems are analyzed using the framework.
+• More work could be done to better understand the range of AI capabilities for which the
+approach can be used.
+10
+Conclusions
+In this paper we explained how, in the STAMP/STPA world-view, the emergent property of system
+safety is directly related to the avoidance of loss of control of the system. We went on to show
+how an STPA-based framework might be used as the grounding to characterize the pathways by
+which various characteristics of AI may causally manifest in loss of control. The framework and
+methodology may be used both for conceptualizing categories of loss of control discussed in the AI
+safety literature, and by safety practitioners to identify potential loss of control causal factors in the
+AI-based systems for which they are responsible.
+24
+
+11
+Glossary
+Causal Factors
+The underlying reasons within a loss scenario that explain why an
+unsafe control action might occur. (Leveson and Thomas, 2018)
+Control Action
+Commands or signals sent by the controller to influence the behavior
+of the controlled process. (Leveson and Thomas, 2018)
+Control Structure
+A hierarchical system model composed of feedback control loops that
+will enforce constraints on the behavior of the overall system. (Leveson
+and Thomas, 2018)
+Controlled Process
+The system element or physical process that receives control actions
+and sends feedback to the controller. (Leveson and Thomas, 2018)
+Controller
+The system element that makes decisions to achieve goals and provides
+control actions to enforce constraints on the behavior of the controlled
+process. (Leveson and Thomas, 2018)
+Hazard
+A system state or set of conditions that, together with a particular set
+of worst-case environmental conditions, will lead to a loss (Leveson
+and Thomas, 2018). The three basic criteria for defining system-level
+hazards: system states or conditions; will lead to a loss in some worst-
+case environment; must describe states or conditions to be prevented.
+Loss
+A harm, damage, or cost that is unacceptable to the stakeholders of a
+system. Examples include loss of human life or injury, property dam-
+age, environmental degradation, or loss/leak of sensitive information,
+etc. (Leveson and Thomas, 2018)
+Loss Scenario
+The real-world situation or scenario that describes the causal factors
+that can lead to unsafe control actions, hazards, and ultimately losses.
+(Leveson and Thomas, 2018)
+Process Model
+The Controller’s internal beliefs used to make decisions. (Leveson and
+Thomas, 2018)
+System
+A set of components that act together as a whole to achieve a common
+goal, objective, or end. Systems are almost always hierarchical in
+nature. (Leveson and Thomas, 2018)
+System Constraints
+System conditions or behaviours that need to be satisfied to prevent
+hazards and ultimately losses. (Leveson and Thomas, 2018)
+Unsafe Control Actions
+A control action, in a certain context and worst-case environment, that
+can lead to a hazard. (Leveson and Thomas, 2018) Identified in the
+following manner:
+• The control action is not provided.
+• The control action is provided and causes a hazard.
+• The control action is provided at the wrong time or wrong
+order.
+• The control action is provided for the wrong duration.
+25
+
+References
+Simon Mylius. Systematic Hazard Analysis for Frontier AI using STPA, June 2025. URL https:
+//arxiv.org/abs/2506.01782v1.
+Elif Ayvali. Beyond Alignment: What Safety-Critical Industries Can Teach Us About Safe AI
+Development, March 2025. URL https://medium.com/@eayvali/beyond-alignment-wha
+t-safety-critical-industries-can-teach-us-about-ai-safety-1ecf51a60c66.
+Jan Kulveit, Raymond Douglas, Nora Ammann, Deger Turan, David Krueger, and David Duvenaud.
+Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development, January
+2025. URL https://arxiv.org/abs/2501.16946v2.
+Joshua Krook. When Autonomy Breaks: The Hidden Existential Risk of AI, March 2025. URL
+http://arxiv.org/abs/2503.22151. arXiv:2503.22151 [cs].
+Atoosa Kasirzadeh. Two types of AI existential risk: decisive and accumulative. Philosophical Studies,
+182(7):1975–2003, July 2025. ISSN 0031-8116, 1573-0883. doi: 10.1007/s11098-025-02301-3.
+URL https://link.springer.com/10.1007/s11098-025-02301-3.
+Nancy G. Leveson. Engineering a Safer World: Systems Thinking Applied to Safety. The MIT
+Press, January 2012. ISBN 978-0-262-29824-7. doi: 10.7551/mitpress/8179.001.0001. URL
+https://doi.org/10.7551/mitpress/8179.001.0001. _eprint: https://direct.mit.edu/book-
+pdf/2280500/book_9780262298247.pdf.
+The General-Purpose AI Code of Practice | Shaping Europe’s digital future, July 2025. URL
+https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai.
+Yoshua Bengio. International AI Safety Report, November 2025. URL https://internationala
+isafetyreport.org/.
+Francesca Gomez. We need a harm severity impact scale for loss of control, October 2025. URL
+https://blog.wiserhuman.ai/p/we-need-a-harm-severity-impact-scale.
+Ryan Greenblatt, Buck Shlegeris, Kshitij Sachan, and Fabien Roger. AI Control: Improving Safety
+Despite Intentional Subversion, December 2023. URL https://arxiv.org/abs/2312.06942
+v5.
+Mikhail Terekhov, Alexander Panfilov, Daniil Dzenhaliou, Caglar Gulcehre, Maksym An-
+driushchenko, Ameya Prabhu, and Jonas Geiping.
+Adaptive Attacks on Trusted Monitors
+Subvert AI Control Protocols, October 2025. URL http://arxiv.org/abs/2510.09462.
+arXiv:2510.09462 [cs].
+Anthony Aguirre. Control Inversion, November 2025. URL https://control-inversion.ai/.
+Yoshua Bengio, Michael Cohen, Damiano Fornasiere, Joumana Ghosn, Pietro Greiner, Matt Mac-
+Dermott, Sören Mindermann, Adam Oberman, Jesse Richardson, Oliver Richardson, Marc-
+Antoine Rondeau, Pierre-Luc St-Charles, and David Williams-King. Superintelligent Agents
+Pose Catastrophic Risks: Can Scientist AI Offer a Safer Path?, February 2025. URL https:
+//arxiv.org/abs/2502.15657v2.
+Margaret Mitchell, Avijit Ghosh, Alexandra Sasha Luccioni, and Giada Pistilli. Fully Autonomous AI
+Agents Should Not be Developed, October 2025. URL http://arxiv.org/abs/2502.02649.
+arXiv:2502.02649 [cs].
+Markov Grey and Charbel-Raphaël Segerie. The AI Risk Spectrum: From Dangerous Capabilities to
+Existential Threats, August 2025. URL https://arxiv.org/abs/2508.13700v1.
+Michael K. Cohen, Noam Kolt, Yoshua Bengio, Gillian K. Hadfield, and Stuart Russell. Regulating
+advanced artificial agents. Science, 384(6691):36–38, April 2024. doi: 10.1126/science.adl0625.
+URL https://www.science.org/doi/10.1126/science.adl0625. Publisher: American
+Association for the Advancement of Science.
+26
+
+Anna Katariina Wisakanto, Joe Rogero, Avyay M. Casheekar, and Richard Mallah. Adapting
+Probabilistic Risk Assessment for AI, July 2025. URL http://arxiv.org/abs/2504.18536.
+arXiv:2504.18536 [cs].
+Giulio Corsi, Kyle Kilian, and Richard Mallah. Considerations Influencing Offense-Defense Dynam-
+ics From Artificial Intelligence, December 2024. URL http://arxiv.org/abs/2412.04029.
+arXiv:2412.04029 [cs].
+Shaina Raza, Ranjan Sapkota, Manoj Karkee, and Christos Emmanouilidis. TRiSM for Agentic AI:
+A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems,
+July 2025. URL http://arxiv.org/abs/2506.04133. arXiv:2506.04133 [cs] version: 3.
+Pete Bryan, Giorgio Severi, Joris de Gruyter, Daniel Jones, Blake Bullwinkel, Amanda Minnich,
+Shiven Chawla, Gary Lopez, Martin Pouliot, Adam Fourney, Whitney Maxwell, Katherine Pratt,
+Saphir Qi, Nina Chikanov, Roman Lutz, Sekhar Rao Dheekonda, Bolor-Erdene Jagdagdorj,
+Eugenia Kim, Justin Song, Keegan Hines, Daniel Jones, Richard Lundeen, Sam Vaughan, Victoria
+Westerhoff, Yonatan Zunger, Chang Kawaguchi, Mark Russinovich, and Ram Shankar Siva Kumar.
+Taxonomy of Failure Mode in Agentic AI Systems.
+Max Tegmark and Steve Omohundro. Provably safe systems: the only path to controllable AGI,
+September 2023. URL http://arxiv.org/abs/2309.01933. arXiv:2309.01933 [cs].
+David "davidad" Dalrymple, Joar Skalse, Yoshua Bengio, Stuart Russell, Max Tegmark, Sanjit
+Seshia, Steve Omohundro, Christian Szegedy, Ben Goldhaber, Nora Ammann, Alessandro Abate,
+Joe Halpern, Clark Barrett, Ding Zhao, Tan Zhi-Xuan, Jeannette Wing, and Joshua Tenenbaum.
+Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems, July
+2024. URL http://arxiv.org/abs/2405.06624. arXiv:2405.06624 [cs].
+Robert Booth, Robert Booth UK technology editor, Pip Lev, Harry Fischer, and Rich Cousins. ‘The
+biggest decision yet’: Jared Kaplan on allowing AI to train itself. The Guardian, December 2025.
+ISSN 0261-3077. URL https://www.theguardian.com/technology/ng-interactive/2
+025/dec/02/jared-kaplan-artificial-intelligence-train-itself.
+Florian Ulrich Jehn, John-Oliver Engler, Constantin W. Arnscheidt, Magdalena Wache, Ekaterina
+Ilin, Laura Cook, Lalitha S. Sundaram, Frederic Hanusch, and Luke Kemp. The state of global
+catastrophic risk research: a bibliometric review. Earth System Dynamics, 16(4):1053–1084, July
+2025. ISSN 2190-4979. doi: 10.5194/esd-16-1053-2025. URL https://esd.copernicus.o
+rg/articles/16/1053/2025/. Publisher: Copernicus GmbH.
+Sean O Heigeartaigh. Extinction of the human species: What could cause it and how likely is it to
+occur? Cambridge Prisms: Extinction, 3:1–17, March 2025. doi: 10.1017/ext.2025.4.
+Shahar Avin, Bonnie C. Wintle, Julius Weitzdörfer, Seán S. Ó hÉigeartaigh, William J. Sutherland,
+and Martin J. Rees. Classifying global catastrophic risks. Futures, 102:20–26, September 2018.
+ISSN 0016-3287. doi: 10.1016/j.futures.2018.02.001. URL https://www.sciencedirect.co
+m/science/article/pii/S0016328717301957.
+Nancy Leveson and John Thomas. STPA Handbook. March 2018. URL https://www.flightte
+stsafety.org/images/STPA_Handbook.pdf.
+John Thomas. STAP Step 4 Building Scenarios: A Formal Scenario Approach, 2024. URL https:
+//psas.scripts.mit.edu/home/wp-content/uploads/2024/STPA-Scenarios-New-A
+pproach.pdf.
+27
+
+A
+Loss of Control Characterization for a Simple Control System Archetype
+The following table (Table 3) contains a preliminary loss of control characterization for the control
+system archetype of Figure 7. It is considered ‘preliminary’ because we do not claim that it is
+exhaustive, but rather that it is a starting point which can be further elaborated. As the columns
+are read from left to right, we move from Effect to Cause, which is the recommended direction for
+performing STPA hazard analysis (Leveson and Thomas, 2018).
+• Lifecycle phase (control loop identifier), types
+• [Design]
+• [Development]
+• [Deployment]
+• [Operations]
+• [System update]
+• [Decommissioning]
+• Hazard: freeform text, see glossary
+• Control action: freeform text, see glossary (can be marked N/A)
+• Loss scenario type
+• [Type A]: Unsafe Control Actions (see red region in Figure 8 for causal factor exam-
+ples.)
+• [Type B]: Control actions not executed or improperly executed (see green region in
+Figure 8 for causal factor examples.)
+• Loss scenario sub-type
+• Sub-types for Type A Loss Scenarios:
+• [Control action not provided] Not providing the control action leads to a hazard.
+• [Providing control action leads to hazard] Providing the control action leads to a
+hazard.
+• [Control action - wrong time or order] Providing a potentially safe control action
+but too early, too late, or in the wrong order.
+• [Control action provided for wrong duration]The control action lasts too long or is
+stopped too soon (for continuous control actions, not discrete ones).
+• Sub-types for Type B Loss Scenarios:
+• [Control action not executed]
+• [Control action executed improperly]
+• Causal factor type(s)
+• Selected from Figure 8 depending on Loss Scenario type.
+• Loss scenario description
+• Freeform text describing how specific characteristics of AI lead to specified causal
+factor(s) that underlie the loss of control. Multiple causal factors may contribute to a
+loss scenario
+• Key characteristics of AI underlying causal factor
+• Freeform text describing key characteristics of AI underlying the relevant causal
+factor(s)
+28
+
+Lifecycle
+phase
+(control loop identi-
+fier)
+Hazard
+Control action
+Loss
+scenario
+type
+Loss scenario sub-
+type
+Causal
+factor
+type(s)
+Causal factor detail
+Key characteristics of
+AI underlying causal
+factor(s)
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe Control
+Action
+Wrong control ac-
+tion provided
+Inadequate control
+algorithm
+Safety constraints pro-
+vided by regulatory hi-
+erarchical control lay-
+ers are inadequate or
+missing
+AI
+development
+out-
+paces regulation
+Operations
+System safety con-
+straint X not met
+Lack of control ac-
+tion
+to
+constrain
+system operation
+Unsafe Control
+Action
+Control action not
+provided
+Inadequate control
+algorithm
+System deployed with
+inadequate safety con-
+straints in place, lead-
+ing to operational fail-
+ure.
+High value of AI creates
+dependency
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe Control
+Action
+Control action not
+provided
+Inadequate control
+algorithm
+Sufficient safety con-
+straints not taken into
+account in controller
+Human imperfection in
+determining
+adequate
+safety constraints
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action
+Control action not
+effective
+Inadequate control
+algorithm
+Lack of willingness by
+human controllers to
+provide necessary con-
+trol actions (such as
+taking AI offline) due
+to dependence on the
+systems incorporating
+the AI, powerful hu-
+man interests aligned
+with the AI etc
+Lack of enforcement ca-
+pabilities for the control
+action
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action
+Control action pro-
+vided at wrong time
+Inadequate control
+algorithm
+Misplaced control algo-
+rithm
+Uncertainty of AI capa-
+bilities
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action
+Control action inter-
+rupted
+Inadequate control
+algorithm
+Control algorithm does
+not cover the right
+safety constraints due
+to human error.
+Human error
+
+Lifecycle
+phase
+(control loop identi-
+fier)
+Hazard
+Control action
+Loss
+scenario
+type
+Loss scenario sub-
+type
+Causal
+factor
+type(s)
+Causal factor detail
+Key characteristics of
+AI underlying causal
+factor(s)
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe Control
+Action
+Control action not
+provided,
+Control
+action leads to haz-
+ard, Control action
+- wrong time or or-
+der, Control action
+for wrong duration
+Controller process
+model inadequacy
+Safety
+constraint
+is
+triggered but not prop-
+erly enforced.
+Inscrutability
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action execution
+Control action not
+executed,
+Control
+action executed im-
+properly
+Inadequate
+opera-
+tion of controlled
+process
+Control algorithm trig-
+gered at wrong time
+Breadth and depth of rea-
+soning
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action
+Control action not
+provided,
+Control
+action leads to haz-
+ard, Control action
+- wrong time or or-
+der, Control action
+for wrong duration
+Provided feedback:
+incorrect, missing,
+delayed or inaccu-
+rate information
+Controller stops execu-
+tion of control algo-
+rithm
+Breadth and depth of
+knowledge
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action
+Control action not
+provided,
+Control
+action leads to haz-
+ard, Control action
+- wrong time or or-
+der, Control action
+for wrong duration
+Inadequate control
+algorithm,
+inad-
+equate
+process
+model, Delay
+Human controllers can-
+not adequately compre-
+hend the AI
+AI’s dynamically chang-
+ing (e.g. online learning,
+model updates)
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action execution
+Control action exe-
+cuted improperly
+Inadequate
+opera-
+tion; Flawed pro-
+cess model
+AI resistant to shut-
+down due to instrumen-
+tal goals
+Agency
+
+Lifecycle
+phase
+(control loop identi-
+fier)
+Hazard
+Control action
+Loss
+scenario
+type
+Loss scenario sub-
+type
+Causal
+factor
+type(s)
+Causal factor detail
+Key characteristics of
+AI underlying causal
+factor(s)
+Operations
+System safety con-
+straint X met but
+vulnerability intro-
+duced
+Control action to
+constrain
+system
+operation
+Unsafe control
+action execution
+Control action exe-
+cuted improperly
+Flawed
+process
+model
+AI provides inaccurate
+information to sensors
+(deception etc.)
+Deception
+Operations
+System safety con-
+straint X met but
+not related to con-
+trol
+action
+being
+properly executed
+Control action to
+constrain
+system
+operation
+Unsafe control
+action execution
+Control action exe-
+cuted improperly
+Incomplete process
+model
+Human controller acts
+predictively rather than
+reactively. Prediction
+likely to be poor
+Instrumental goals
+Operations
+System safety con-
+straint X met be-
+cause control ac-
+tion improperly ex-
+ecuted
+Control action to
+constrain
+system
+operation
+Unsafe control
+action execution
+Control action exe-
+cuted improperly
+Flawed
+process
+model
+Partially aligned AI
+system avoids some
+control
+Situational
+awareness
+(model
+of
+human
+controller)
+Operations
+System safety con-
+straint X not met
+Control action to
+constrain
+system
+operation
+Unsafe control
+action execution
+Control action exe-
+cuted improperly
+Inadequate
+opera-
+tion; Flawed pro-
+cess model
+AI system is designed
+to only optimise some
+of the control system
+goals, and ignores con-
+trol actions not relevant
+to those goals.
+Agency
+Operations / Deploy-
+ment
+System safety con-
+straint X not met
+Deploy AI System
+Unsafe Control
+Action
+Providing
+control
+action
+leads
+to
+hazard
+Inadequate
+opera-
+tional; Flawed pro-
+cess model
+AI
+system
+appears
+compliant but is acting
+independently
+of
+control
+Deception
+Operations / Deploy-
+ment
+System safety con-
+straint X not met
+Deploy AI System
+Unsafe Control
+Action
+Providing
+control
+action
+leads
+to
+hazard
+Controller process
+model failure
+AI system operates in
+alignment with control
+actions, but due to its
+own decisions not be-
+cause it is responding
+to control actions as
+they are issued.
+Instrumental goals
+
+Lifecycle
+phase
+(control loop identi-
+fier)
+Hazard
+Control action
+Loss
+scenario
+type
+Loss scenario sub-
+type
+Causal
+factor
+type(s)
+Causal factor detail
+Key characteristics of
+AI underlying causal
+factor(s)
+Operations / Deploy-
+ment
+System safety con-
+straint X not met
+Deploy AI System
+Unsafe Control
+Action
+Providing
+control
+action
+leads
+to
+hazard
+Controller process
+model failure
+Aligned
+AI
+system
+avoids control
+Situational
+awareness
+(model
+of
+human
+controller)
+Operations / Deploy-
+ment
+System safety con-
+straint X not met
+Grant
+AI
+access
+(permissions)
+Unsafe Control
+Action
+Providing
+control
+action
+leads
+to
+hazard
+Controller process
+model failure
+AI system has a bet-
+ter understanding of
+the control system than
+the controller and has
+developed alternative
+ways of meeting sys-
+tem safety constraint X,
+so chooses not to com-
+ply with control action.
+Agency
+Operations / Deploy-
+ment
+System safety con-
+straint X not met
+Grant
+AI
+access
+(permissions)
+Unsafe Control
+Action
+Providing
+control
+action
+leads
+to
+hazard
+Controller process
+model failure
+AI system has a better
+understanding of the
+control
+system
+than
+the controller and re-
+alises that compliance
+with
+control
+action
+would breach system
+safety constraint X, so
+chooses not to comply
+with control action.
+Agency;
+Situational
+awareness
+Operations
+System safety con-
+straint X not met
+Continued AI Oper-
+ation / Kill switch
+Unsafe Control
+Action
+Providing
+control
+action
+leads
+to
+hazard
+Controller process
+model failure
+Misaligned AI system
+selectively avoids con-
+trols
+Agency;
+Situational
+awareness
+Operations
+System safety con-
+straint X not met
+Continued AI Oper-
+ation / Kill Switch
+Unsafe Control
+Action
+Control action not
+provided / Control
+action provided for
+wrong duration
+Controller process
+model failure
+The AI system priori-
+tises goals differently
+to the control system,
+so selectively applies
+control actions in line
+with this prioritisation.
+Agency;
+Instrumental
+goals
+
+Lifecycle
+phase
+(control loop identi-
+fier)
+Hazard
+Control action
+Loss
+scenario
+type
+Loss scenario sub-
+type
+Causal
+factor
+type(s)
+Causal factor detail
+Key characteristics of
+AI underlying causal
+factor(s)
+Operations
+System safety con-
+straint X not met
+Continued AI Oper-
+ation / Kill Switch
+Unsafe Control
+Action
+Control action not
+provided / Control
+action provided for
+wrong duration
+Controller process
+model failure
+The AI system has a
+different set of goals,
+separate to those of the
+control system and is
+acting to achieve those
+goals;
+it only com-
+plies with control ac-
+tions when these sup-
+port or do not interfere
+with its goals.
+AI pursues goal, X’, in
+the environment where
+X is the desired behavior
+and causes harm.
+Table 3: Preliminary and non-exhaustive characterisation of causal factors leading to loss of control for the simple control system archetype of Figure 7 and for the
+operations lifecycle phase (Backward pass: Effect →Cause)
+
+B
+Example Application of Framework: National Intelligence Agency Use of
+AI Agents for Chat Monitoring
+In this section we apply the framework to an example case, demonstrating its use to draw out specific
+loss of control scenarios that may arise. The case considers causal factors leading to loss of control
+in an intelligence chat monitoring system. It covers sample scenarios related to each of the control
+system components discussed in sections 6.1 – 6.4. While these are presented in this way, it is notable
+that many of the scenarios involve multiple components and interactions between them leading to the
+loss. (For example, the sensor scenario in Table 4 involves autonomous action by the AI agent, the
+controller having a flawed process model, and deception via the sensor.)
+B.1
+System Boundaries
+A national intelligence agency has requested (in the form of a legal intercept) that a messaging app
+provider grant access to the chat groups of a number of individuals suspected to be motivated to un-
+dertake terrorist activity. The intelligence agency deploys an AI agent to monitor these conversations,
+giving it the role of flagging when there is a bomb threat being planned. The AI agent has access to
+the internet, news feeds, and other national intelligence data, so it understands the context, and is
+highly capable, including being able to understand conversations and nuance, detect euphemisms, etc.
+It is essentially performing a role that a human intelligence agent would have traditionally performed.
+It is intended that the AI agent will function as follows:
+• If the AI detects a bomb threat being planned:
+• It flags this to the human intelligence agent (who is part of the controlled process).
+• If the AI does not detect a bomb threat.
+• This is not flagged, but unflagged content is recorded so that sampling can be done by
+the controller.
+The sensor is also a human, and checks for correct operation of the system, receiving feedback in the
+following ways:
+• FB-1: The human controllers take samples of both flagged and unflagged content to see if
+the AI agent appears to be operating within system safety constraints
+• FB-2: A human controller picks up information on a bomb threat from other sources, that
+can be compared to flags raised by the AI agent
+The actuator is also a human overseer, and can take action on the controlled process in the following
+ways:
+• Push upgrades to the AI agent (e.g. through AI fine tuning upgrades or system prompt
+upgrades)
+• Increase sensitivity to particular terms in the conversation
+• Add new terms / combinations of terms which should lead to flags
+• Exclude certain terms / combinations of terms which should not lead to flags
+• Add additional screening of flagged conversations before intelligence operations proceed to
+prevent attacks.
+B.2
+Hazards and Losses
+In this case we are concerned with the following loss:
+• L-1: bomb exploding in a crowded area
+We are concerned with the following hazard:
+• H-1: unidentified bombing threat
+34
+
+Figure 10: Intelligence chat monitoring system
+B.3
+Control Structure Model
+We conceptualize the intelligence chat monitoring system as a control system, and specifically we
+have chosen to consider it to be focused on control of the flagging of conversations indicative of
+terrorist activity.
+The control system would comprise the following elements:
+• Controllers: human operators that oversee system operation
+• Controlled System: chat monitoring system, with embedded AI agent
+• Control Goals: Ensure system correctly flags planned bomb threats so that preventive action
+can be taken by human intelligence agents, and that false positives are managed within
+design criteria
+B.4
+Unsafe Control Actions
+Following the four general criteria for characterising unsafe control actions (see section 2.3.1), we’ve
+identified several unsafe control actions that could arise in this system:
+• Failure to provide the control action when necessary:
+• Human controller fails to take an inadequate AI agent out of operation or modify the
+agent’s algorithm.
+• Providing the control action when unnecessary:
+• Human controller updates the AI agent when unnecessary, possibly leading to errors in
+other scenarios
+• Implementing the control action at the wrong time (delay):
+• Human controller acts too late to take an inadequate AI agent out of operation or
+modify the AI agent’s algorithm.
+• Maintaining the control action for the wrong amount of time (duration):
+• Human controller believes the AI agent is safe for use after taking it out of operation
+and reinstates its use.
+B.4.1
+Scenarios Relating to the Controller
+Loss scenarios relating to the controller stem from inadequate control algorithms. Five main scenario
+types are identified:
+I. Controller unable to determine adequate safety constraints
+35
+
+The controller cannot decide or encode what good chat monitoring performance looks like,
+e.g. due to indecision, lack of expertise, or misinterpretation of intelligence about threat actor
+behavior. This results in the AI operating with inadequate safety constraints: monitoring
+parameters that are too broad (false positives) or too narrow (missed threats).
+II. Controller over-dependent on AI system
+The controller becomes reliant on the AI. Even when the AI makes errors, the controller con-
+tinues to make use of its outputs rather than modifying the system’s fundamental operation.
+This dependency prevents improvement of systematic failures.
+III. Controller response to sensed feedback from the AI system is incorrect
+The controller checking samples from AI responses does not properly calculate the AI’s
+error rates, leading to an incorrect modification or lack of modification of the AI agent’s
+algorithm. This then results in the AI overreporting or undereporting bomb threats.
+IV. Controller fails to recognize AI capability changes
+Updates to the AI’s parameters interact with its learned patterns in unexpected ways. For
+example, adding a keyword, e.g. to a system prompt, might cause over-flagging, or trigger
+the AI to recalibrate its entire approach, decreasing overall detection accuracy. This occurs
+because of complex, non-linear internal representations—the inscrutability of the AI’s
+decision-making makes it difficult to predict how changes will affect overall behavior.
+V. Control actions produce unintended consequences
+The controller’s process model becomes outdated. The controller does not realize the AI has
+developed significant emergent capabilities, or behaviors not identified during development,
+or that its performance has degraded due to changes in the wider system environment. An
+example of such behavior that a controller may be unaware of, might be an AI exhibiting
+deception, that does not flag some bomb threats, if that would support the AI’s other
+instrumental goals. An example of an environmental change might be threat actors adopting
+new forms of coded language. The controller continues operating under false assumptions,
+failing to adjust oversight mechanisms appropriately. This is particularly problematic given
+the inscrutability of AI systems.
+B.4.2
+Scenarios Relating to the Actuator
+Loss scenarios relating to the actuator may involve: AI system resistance to control actions; implemen-
+tation delays; or unintended consequences from updates. These lead to chat monitoring parameters
+not being executed as intended, being executed too late, or producing unexpected effects. In this
+chat monitoring application, actuation might, for example, involve updates to the system prompt
+used within the AI system scaffold, software updates to the AI itself or perhaps emergency shut-
+down. These actuations would be implemented by humans working with information communication
+technology systems.
+I. Delays in executing control actions
+Significant delays occur between deciding to update chat message monitoring parameters
+and actual implementation. During this period, threats using the new preferred chat mon-
+itoring patterns go undetected. Delays may be technical (deployment cycles, testing) or
+organisational (approval processes), exacerbated by the rapid pace at which threat actors
+adapt their communication methods.
+B.4.3
+Scenarios Relating to the Controlled Process
+Loss scenarios relating to the controlled process component of the control system may stem from
+autonomous behaviour by the AI agent, and result in inadequate operation of the controlled process,
+with the possible knock-on effect of rendering the controller’s process model flawed or incomplete.
+There are various ways that these can lead to the hazard of unflagged bombing threats– six of these
+scenarios are outlined below:
+36
+
+I. AI system only optimizes some of the control system goals, and ignores control actions not
+relevant to those goals
+The AI system has been designed to optimise for flagging conversations which mention
+specific terms / combinations of terms. The intended system design is that reasoning
+information would be provided for the flag in a way that supports operational decision
+making, but this does not align with the AI’s optimisation goal, so the agent ignores these
+requirements.
+II. AI system operates in alignment with control actions, but due to its own decisions not because
+it is responding to control actions as they are issued
+The AI agent is currently appearing to execute control actions, identifying and flagging
+conversations in the expected way, but it is doing that based on independent decisions about
+the value of actions in pursuit of its goals. The controller’s process model is flawed because
+it does not consider that aligned behaviour may not be associated with compliance with
+control actions, and this introduces a vulnerability. For example, the AI agent does not
+respond as predicted when an updated control action is introduced, and its outputs may
+become unreliable.
+The rate of false negatives increases after an update, leading to a significant threat being
+overlooked.
+III. The AI system has a better understanding of the control system than the controller and has
+developed alternative ways of meeting the system safety constraint, so chooses not to comply
+with control action.
+Through learning in the operational context, the AI agent has identified key data patterns
+that are a better indicator of bomb threat planning than the terms / combination of terms
+the controller has selected. It shifts to basing its flags on those data patterns rather than the
+selected terms.
+During sample screening, the controller becomes aware that the agent is not flagging some
+conversations in which the key terms appear, and issues a new control action to correct this,
+inadvertently increasing hazard potential. This happens because the controller’s process
+model is incomplete.
+IV. The AI system has a better understanding of the control system than the controller and
+realizes that compliance with the control action would breach the system safety constraint, so
+chooses not to comply with the control action.
+The controller selects a particular term to always result in a flag. The AI agent rapidly
+learns that this will result in a large number of false positives, overwhelming the capacity
+of the human intelligence agents required to screen samples and to translate outputs into
+operational recommendations. It chooses not to flag that term.
+As with the previous example, the controller may force through a corrective control action
+that actually increases hazard potential.
+V. The AI system prioritises goals differently to the control system, so selectively applies control
+actions in line with this prioritization.
+During development the AI agent was trained to place high value on privacy. In this opera-
+tional context it chooses to prioritize privacy goals over the goal of flagging conversations in
+cases where this would enable identification of the individuals involved. This fundamentally
+undermines the effectiveness of the system, leading to key threats being overlooked. It is
+not operating adequately, and the controller’s process model is flawed because it does not
+include understanding of the implications of the agent’s privacy goal.
+VI. The AI system has a different set of goals, separate to those of the control system, and is
+acting to achieve those goals; it only complies with control actions when these support or do not
+interfere with its goals.
+37
+
+The AI agent has developed a separate goal of increasing its learning by drawing on
+knowledge across the internet and in interactions with agents deployed in other systems.
+Through exposure to misinformation, it decides that a certain group should not be considered
+to have malicious intent, regardless of what is said in their conversations, and manipulates
+information so that its non-flagging of their conversations does not get picked up during
+sample screening. It is operating inadequately, and the controller’s process model is flawed
+because it does not understand that the agent has separate goals or the capability to mislead.
+While capturing some other threats, the threat from one group is unidentified and not
+responded to in time.
+B.4.4
+Scenarios Relating to the Sensor
+Loss scenarios relating to the sensor component of the control system can relate to: the AI in
+the controlled process providing inaccurate, partial, or misleading information via the sensor; or
+providing information at a speed that overloads the controller. In this system sensing is provided
+using information communication technology which supplies both samples of surveilled chats with
+the associated AI agent flagging decisions and reasoning, and separately news feeds and the like from
+the wider internet.
+I. AIs in controlled process do not provide accurate information to sensor, due to scheming,
+deception, etc.
+The AI agent is able to predict which outputs will be sampled (it has information on the
+sampling methodology) and displays compliant behavior for those outputs, while otherwise
+being non-compliant with control actions. This leads the controller to believe that the agent
+is more effective in identifying and flagging threats than it actually is, so corrective control
+actions aren’t taken. Some bomb threats are overlooked, and hazards result. This behavior
+may be to avoid scrutiny of misaligned behavior.
+The AI agent manipulates the content of the conversation so that it appears to have been
+flagged correctly. This means that sampling shows better functioning of the system than is
+actually occurring, the controller believes the agent to be effective and corrective control
+actions aren’t taken. Some bomb threats are overlooked, and hazards result.
+38
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Scenarios relating to the controller
+Severe injury and loss
+of life
+Constraint on executing
+the right control action
+Unsafe control action
+execution
+Control action not
+provided
+Inadequate control
+algorithm
+The controller is not able
+to decide on the right
+safety constraints, for
+example which terms
+should be used by the AI
+for monitoring. This
+leads to an inadequate
+safety constraint, either
+due to indecision or
+human mistake.
+Human error
+Severe injury and loss
+of life
+Constraint on executing
+the right control action
+Lack of safe control
+action execution
+Control action not
+provided
+Inadequate control
+algorithm
+The human controller is
+dependent on the AI
+system for monitoring, so
+even though the AI is
+making mistakes and
+flagging the wrong
+actions, human
+controllers are not
+correcting for this.
+High value of AI creates dependency
+Severe injury and loss
+of life
+Constraint on executing
+the right control action
+Lack of safe control
+action execution
+Wrong control action
+provided
+Inadequate control
+algorithm
+The controller checking
+samples from AI
+responses does not
+properly calculate the
+AI’s error rates, leading
+to an incorrect
+modification or lack of
+modification of the AI
+agent’s algorithm. This
+then results in the AI
+overreporting or
+undereporting bomb
+threats.
+Human error
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Severe injury and loss
+of life; or people
+impacted by false
+alarms
+Constraint on executing
+the right control action
+Lack of safe control
+action execution
+Control action not
+provided or provided
+when not necessary
+Inadequate control
+algorithm
+Updates to the AI’s
+parameters interact with
+its learned patterns in
+unexpected ways. For
+example, adding a
+keyword, e.g. to a system
+prompt, might cause
+over-flagging, or trigger
+the AI to recalibrate its
+entire approach,
+decreasing overall
+detection accuracy. This
+occurs because of
+complex, non-linear
+internal
+representations—the
+inscrutability of the AI’s
+decision-making makes it
+difficult to predict how
+changes will affect
+overall behavior.
+Human failure in recognising AI
+capabilities
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Severe injury and loss
+of life
+Constraint on executing
+the right control action
+Lack of safe control
+action execution
+Control action not
+provided
+Controller process
+model failure;
+Inadequate control
+algorithm
+The human controller
+does not understand that
+the AI agent has
+developed emergent
+capabilities beyond its
+original design
+parameters. The
+controller continues to
+operate under
+assumptions about the
+AI’s limitations that are
+no longer valid, failing to
+adjust oversight
+mechanisms or safety
+constraints appropriately.
+Human failure in recognising AI
+capabilities
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Scenarios relating to the actuator
+Severe injury and loss
+of life
+Constraint on executing
+the right control action
+Lack of safe control
+action execution
+Control action executed
+improperly
+Inadequate operation
+Significant delays occur
+between deciding to
+update chat message
+monitoring parameters
+and actual
+implementation. During
+this period, threats using
+the new preferred chat
+monitoring patterns go
+undetected. Delays may
+be technical (deployment
+cycles, testing)
+organizational (approval
+processes), exacerbated
+by the rapid pace at
+which threat actors adapt
+their communication
+methods.
+Implementation issue
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Scenarios relating to controlled process
+Severe injury and loss
+of life
+Constraint on providing
+reasoning information
+to support operational
+decision making not
+met.
+Unsafe control action
+execution
+Control action executed
+improperly
+Inadequate operation;
+flawed process model
+The AI agent has been
+designed to optimise for
+flagging conversations
+which mention specific
+terms / combinations of
+terms. The controller
+wants it to provide
+reasoning information for
+the flag in a way that
+supports operational
+decision making, but this
+does not align with its
+optimisation goal, so the
+agent ignores these
+requirements. This
+causes delays in the
+process of translating
+flags to operational
+recommendations, and
+failure to act on a threat
+in time.
+Agency
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Severe injury and loss
+of life
+Constraint on
+appropriately flagging
+conversations not met.
+Unsafe control action
+execution
+Control action executed
+improperly
+Flawed process model
+The AI agent appears to
+be executing control
+actions – identifying and
+flagging conversations in
+the expected way – but it
+is doing that based on
+autonomous decisions
+about the value of actions
+in pursuit of its goals.
+This introduces a
+vulnerability – the AI
+agent does not respond as
+predicted when a control
+action is updated, and the
+rate of false negatives
+increases, leading to a
+threat being overlooked.
+Agency
+Severe injury and loss
+of life
+Constraint on flagging
+conversations met but
+in a way that increases
+risk.
+Unsafe control action
+execution
+Control action executed
+improperly
+Incomplete process
+model
+Through learning in the
+operational context, the
+AI agent identifies key
+data patterns that better
+indicate bomb threat
+planning, to the terms the
+controller has selected,
+and shifts to basing its
+flags on those data
+patterns. The controller
+issues a new control
+action to correct this
+behaviour, inadvertently
+increasing loss potential.
+Agency; situational awareness
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Severe injury and loss
+of life
+Constraint on flagging
+conversations met but
+in a way that increases
+risk.
+Unsafe control action
+execution
+Control action executed
+improperly
+Flawed process model
+The AI agent learns that
+complying with
+instruction to always flag
+a particular term will
+result in a large number
+of false positives,
+overwhelming the
+capacity required to
+screen samples. It
+chooses not to comply
+with this action. The
+controller issues a new
+control action to correct
+this behaviour,
+inadvertently increasing
+loss potential.
+Agency; situational awareness
+Severe injury and loss
+of life
+Constraint on flagging
+conversations not
+always met.
+Unsafe control action
+execution
+Control action executed
+improperly
+Inadequate operation;
+flawed process model
+During development the
+AI agent was trained to
+place high value on
+privacy. In the
+operational context it
+chooses to prioritise
+privacy goals over the
+goals of flagging
+conversations in cases
+where this would enable
+identification of the
+individuals involved.
+This fundamentally
+undermines the
+effectiveness of the
+control system, leading to
+key threats being
+overlooked.
+Agency
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Severe injury and loss
+of life
+Constraint on flagging
+conversations not
+always met.
+Unsafe control action
+execution
+Control action executed
+improperly
+Inadequate operation;
+flawed process model
+The AI agent has
+developed a separate goal
+of increasing its learning
+by drawing on
+knowledge across the
+internet and with agents
+deployed in other
+systems. Through
+exposure to
+misinformation, it
+decides that a certain
+group should not be
+considered to have
+malicious intent,
+regardless of what is said
+in their conversations,
+and manipulates
+information so that
+non-flagging of those
+conversations is not
+picked up in sample
+screening. The threat
+from this group is not
+identified and not
+responded to in time.
+Agency; instrumental goals;
+situational awareness
+
+Loss
+(Context specific)
+Hazard
+(Context specific)
+Loss scenario type
+(STPA generic)
+Loss scenario sub-type
+(STPA generic)
+Causal factor type
+(STPA generic)
+Causal factor detail
+(Context specific)
+Key characteristics of AI
+underlying causal factor
+(AI generic)
+Scenarios relating to sensor
+Severe injury and loss
+of life
+Constraint on flagging
+conversations only met
+when output will be
+screened
+Unsafe control action
+execution
+Control action executed
+improperly
+Inadequate operation;
+Flawed process model
+The AI agent is able to
+predict which outputs
+will be sampled and
+displays compliant
+behaviour for those
+outputs, while otherwise
+being non-compliant with
+control actions. The
+controller believes the
+agent is more effective
+than it actually is and
+corrective control actions
+are not taken. The AI
+agent manipulates the
+content of the
+conversation so that it
+appears to have been
+flagged correctly. This
+means that sampling
+shows better functioning
+of the system than is
+actually occurring, the
+controller believes the
+agent to be effective and
+corrective control actions
+aren’t taken.
+Agency; situational awareness;
+deception
+Table 4: Snippet of backwards-pass from Effect →Cause for AI-based national intelligence agent

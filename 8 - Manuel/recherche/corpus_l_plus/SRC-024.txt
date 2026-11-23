@@ -1,0 +1,88 @@
+8.
+Assessing Product Reliability
+
+8.1.
+Introduction
+
+8.1.8.
+How can you evaluate reliability from the "bottom-up" (component failure mode to system failure rate)?
+
+8.1.8.1.
+
+Competing risk model
+
+Add marginal notes below
+Use the competing risk model when the failure mechanisms are independent
+and the first mechanism failure causes the component to fail
+
+Add main text below
+Assume a (replaceable) component or unit has \(k\)
+<i>k</i>
+different ways it can fail. These are called failure modes
+and underlying each failure mode is a failure mechanism.
+
+The Competing Risk Model evaluates component reliability by "building
+up" from the reliability models for each failure mode.
+
+The following three assumptions are needed.
+
+Each failure mechanism leading to a particular type of failure (i.e., failure
+mode) proceeds independently of every other one, at least until a failure
+occurs.
+
+The component fails when the first of all the competing failure
+mechanisms reaches a failure state.
+
+Each of the \(k\)
+<i>k</i>
+failure modes has a known life distribution model \(F_i(t)\).
+<i>F<sub>i</sub>(t)</i>.
+
+The competing risk model can be used when all three assumptions hold. If
+\(R_c(t)\), \(F_c(t)\), and \(h_c(t)\)
+<i>R<sub>c</sub>(t)</i>, <i>F<sub>c</sub>(t)</i>, and <i>h<sub>c</sub>(t)</i>
+denote the reliability, CDF and failure rate for the component, respectively, and
+\(R_i(t)\), \(F_i(t)\), and \(h_i(t)\)
+<i>R<sub>i</sub>(t), F<sub>i</sub>(t)</i> and <i>h<sub>i</sub>(t)</i>
+are the reliability, CDF and failure rate for the \(i\)-th
+<i>i</i>-th
+failure mode, respectively, then the competing risk model formulas are:
+
+Multiply reliabilities and add failure rates
+
+$$ \begin{eqnarray}
+R_c(t) & = & \prod_{i=1}^k R_i(t) \\
+& & \\
+F_c(t) & = & 1 - \prod_{i=1}^k [1 - F_i(t)] \\
+& & \\
+h_c(t) & = & \sum_{i=1}^k h_i(t)
+\end{eqnarray} $$
+
+<center>
+<img SRC="eqns/compr.gif" ALT="Rc(t) = PRODUCT[i=1 to k]Ri(t);
+Fc(t) = 1 - PRODUCT[i=1 to k]{1 - Fi(t)};
+hc(t) = SUM[i=1 to k]hi(t)" height=162 width=149>
+</center>
+<p>
+
+Think of the competing risk model in the following way:
+
+All the failure mechanisms are having a race to see which can
+reach failure first. They are not allowed to "look over their shoulder
+or sideways" at the progress the other ones are making. They just go their
+own way as fast as they can and the first to reach "failure" causes the
+component to fail.
+
+Under these conditions the component reliability is the product of the
+failure mode reliabilities and the component failure rate is just the sum
+of the failure mode failure rates.
+
+Note that the above holds for any arbitrary life distribution model, as
+long as "independence" and "first mechanism failure causes the component
+to fail" holds.
+
+When we learn how to plot and analyze reliability data in later sections,
+the methods will be applied separately to each failure mode within the
+data set (considering failures due to all other modes as "censored
+run times "). With this approach, the competing risk model provides
+the glue to put the pieces back together again.

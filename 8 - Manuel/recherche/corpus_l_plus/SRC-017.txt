@@ -1,0 +1,413 @@
+OAuth Working Group M. Chen
+Internet-Draft L. Su
+Intended status: Standards Track China Mobile
+Expires: 3 May 2027 30 October 2026
+
+OAuth 2.0 Agent Authorization Explicit Revocation
+draft-chen-oauth-agent-revocation-01
+
+Abstract
+
+The OAuth 2.0 Token Revocation mechanism defined in RFC 7009 enables
+clients to notify authorization servers that a token is no longer
+needed. However, that mechanism is limited to single-token
+operations and does not support batch revocation, cascade
+propagation, or context-aware semantics at the agent level. With the
+emergence of autonomous systems and cross-domain agent networks,
+authorization servers require more granular, traceable revocation
+semantics.
+
+This document defines an agent-based explicit revocation extension,
+introducing new endpoints, request/response formats, and coordination
+protocols to support batch revocation based on agent IDs, cascade
+propagation, conditional revocation, and verifiable audit trails.
+
+Status of This Memo
+
+This Internet-Draft is submitted in full conformance with the
+provisions of BCP 78 and BCP 79.
+
+Internet-Drafts are working documents of the Internet Engineering
+Task Force (IETF). Note that other groups may also distribute
+working documents as Internet-Drafts. The list of current Internet-
+Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+Internet-Drafts are draft documents valid for a maximum of six months
+and may be updated, replaced, or obsoleted by other documents at any
+time. It is inappropriate to use Internet-Drafts as reference
+material or to cite them other than as "work in progress."
+
+This Internet-Draft will expire on 3 May 2027.
+
+Copyright Notice
+
+Copyright (c) 2026 IETF Trust and the persons identified as the
+document authors. All rights reserved.
+
+Chen & Su Expires 3 May 2027 [Page 1]
+
+Internet-Draft Authorization revocation October 2026
+
+This document is subject to BCP 78 and the IETF Trust's Legal
+Provisions Relating to IETF Documents (https://trustee.ietf.org/
+license-info) in effect on the date of publication of this document.
+Please review these documents carefully, as they describe your rights
+and restrictions with respect to this document. Code Components
+extracted from this document must include Revised BSD License text as
+described in Section 4.e of the Trust Legal Provisions and are
+provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . 2
+2. Terminology . . . . . . . . . . . . . . . . . . . . . . . . . 3
+3. Agent Revocation Endpoint . . . . . . . . . . . . . . . . . . 3
+3.1. Endpoint Definition . . . . . . . . . . . . . . . . . . . 3
+3.2. Request Format . . . . . . . . . . . . . . . . . . . . . 3
+3.3. Response Format . . . . . . . . . . . . . . . . . . . . . 5
+4. Security Considerations . . . . . . . . . . . . . . . . . . . 8
+5. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 9
+6. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . 9
+7. Informative References . . . . . . . . . . . . . . . . . . . 9
+Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . 10
+
+1. Introduction
+
+RFC 7009 defines the standard OAuth 2.0 token revocation flow, which
+operates at the granularity of individual tokens (access tokens or
+refresh tokens). This design works well in traditional client-server
+architectures but reveals significant limitations in emerging
+scenarios:
+
+* *Agent Networks:* Multiple agent proxies form delegation chains
+through authorization topology
+
+* *Autonomous Systems:* Agents can dynamically generate sub-agents
+and distribute permissions
+
+* *Cross-Domain Collaboration:* Agents migrate across different
+trust domains In these scenarios, revoking access for an upstream
+agent typically requires simultaneously revoking all its delegated
+sub-agents. RFC 7009 lacks mechanisms to support such cascade
+revocation.
+
+Existing RFC 7009 exhibits the following core deficiencies:
+
+* *Single Granularity:* Supports only per-token revocation, cannot
+batch process by agent ID
+
+Chen & Su Expires 3 May 2027 [Page 2]
+
+Internet-Draft Authorization revocation October 2026
+
+* *No Cascade Propagation:* After upstream agent revocation,
+downstream sub-agent tokens remain valid
+
+* *Insufficient Response Information:* 200 OK status does not
+provide revocation confirmation, execution results, or failure
+details
+
+* *No Audit Context:* Cannot convey revocation reasons, operator
+identity, or other critical audit information
+
+* *No Event Notification:* No standard mechanism to notify relevant
+parties (e.g., resource servers, downstream agents) of token
+status changes
+
+* *Missing Conditional Revocation:* Does not support suspension,
+partial permission revocation, or other fine-grained policies
+
+2. Terminology
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in BCP
+14 RFC2119 [RFC8174].
+
+Readers are expected to be familiar with the terms and concepts
+described in the core OAuth 2.0 Framework [RFC6749] and [RFC7009].
+
+3. Agent Revocation Endpoint
+
+3.1. Endpoint Definition
+
+To support agent-based explicit revocation, a new endpoint is
+defined:
+
+POST /agent/revoke
+
+This endpoint accepts a JSON request body containing the revocation
+target, reason, and propagation strategy.
+
+3.2. Request Format
+
+The request MUST include the following parameters:
+
+Chen & Su Expires 3 May 2027 [Page 3]
+
+Internet-Draft Authorization revocation October 2026
+
++===============+=========+=============+========================+
+| Metadata | Type | Required | Description |
+| Field | | | |
++===============+=========+=============+========================+
+| agent_id | String | Yes | Identifier of the |
+| | | | agent to be revoked. |
++---------------+---------+-------------+------------------------+
+| reason | Object | Yes | Revocation reason, |
+| | | | containing code and |
+| | | | description. |
++---------------+---------+-------------+------------------------+
+| cascade_depth | integer | Yes | Cascade depth, -1 for |
+| | | | unlimited, 0 for this |
+| | | | agent only. |
++---------------+---------+-------------+------------------------+
+| context | Object | Recommended | Operation context |
+| | | | including operator, |
+| | | | source_ip, request_id. |
++---------------+---------+-------------+------------------------+
+
+Table 1
+
+Status Parameters:
+
++=====================+=========+==========+======================+
+| Parameter | Type | Required | Description |
++=====================+=========+==========+======================+
+| revoke_all_tokens | boolean | No | Whether to revoke |
+| | | | all tokens for this |
+| | | | agent, default true. |
++---------------------+---------+----------+----------------------+
+| revoke_for_duration | integer | No | Temporary suspension |
+| | | | duration in seconds, |
+| | | | absent means |
+| | | | permanent. |
++---------------------+---------+----------+----------------------+
+| revoke_scopes | array | No | List of scopes to be |
+| | | | removed. |
++---------------------+---------+----------+----------------------+
+| retain_scopes | array | No | List of scopes to be |
+| | | | retained. |
++---------------------+---------+----------+----------------------+
+
+Table 2
+
+Example Requst:
+
+Chen & Su Expires 3 May 2027 [Page 4]
+
+Internet-Draft Authorization revocation October 2026
+
+POST /agent/revoke HTTP/1.1
+Host: authorization-server.example.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIs...
+
+{
+"agent_id": "urn:agent:root:12345",
+"reason": {
+"code": "SECURITY_INCIDENT",
+"description": "Agent exhibited anomalous behavior pattern"
+},
+"cascade_depth": -1,
+"context": {
+"operator": "urn:user:admin:security",
+"source_ip": "10.0.0.1",
+"request_id": "req-abc-123"
+},
+"revoke_all_tokens": true
+}
+
+3.3. Response Format
+
+The server MUST return a JSON response containing execution status
+and detailed statistics.
+
+Example Successful Response (HTTP 200):
+
+Chen & Su Expires 3 May 2027 [Page 5]
+
+Internet-Draft Authorization revocation October 2026
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+"status": "completed",
+"transaction_id": "tx-uuid-001",
+"timestamp": "2026-03-25T10:30:00Z",
+"summary": {
+"direct_agents_revoked": 1,
+"cascade_agents_revoked": 3,
+"tokens_revoked": 15,
+"events_emitted": 15,
+"failures": []
+},
+"affected_agents": [
+{"agent_id": "urn:agent:root:12345", "status": "revoked"},
+{"agent_id": "urn:agent:sub:child_1", "status": "revoked"},
+{"agent_id": "urn:agent:sub:child_2", "status": "revoked"},
+{"agent_id": "urn:agent:sub:child_3", "status": "revoked"}
+],
+"audit_reference": "urn:audit:log:entry-98765"
+}
+
+Example Failure Response (HTTP 400)
+
+Chen & Su Expires 3 May 2027 [Page 6]
+
+Internet-Draft Authorization revocation October 2026
+
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+"status": "failed",
+"transaction_id": "tx-uuid-002",
+"timestamp": "2026-03-25T10:31:00Z",
+"error": {
+"code": "INVALID_AGENT_ID",
+"description": "The specified agent_id does not exist or has already been revoked."
+},
+"summary": {
+"direct_agents_revoked": 0,
+"cascade_agents_revoked": 0,
+"tokens_revoked": 0,
+"events_emitted": 0,
+"failures": [
+{
+"agent_id": "urn:agent:root:99999",
+"reason": "Agent not found"
+}
+]
+},
+"audit_reference": "urn:audit:log:entry-98766"
+}
+
+Response Status Codes
+
+Chen & Su Expires 3 May 2027 [Page 7]
+
+Internet-Draft Authorization revocation October 2026
+
++=================+=================================================+
+| HTTP Status | Description |
++=================+=================================================+
+| 200 OK | Revocation completed successfully |
++-----------------+-------------------------------------------------+
+| 400 Bad | Invalid request parameters (e.g., missing |
+| Request | required fields, malformed agent_id) |
++-----------------+-------------------------------------------------+
+| 401 | Missing or invalid authentication credentials |
+| Unauthorized | |
++-----------------+-------------------------------------------------+
+| 403 | Authenticated client lacks permission to revoke |
+| Forbidden | the specified agent |
++-----------------+-------------------------------------------------+
+| 404 Not | Agent ID not recognized |
+| Found | |
++-----------------+-------------------------------------------------+
+| 409 Conflict | Revocation conflicts with an existing operation |
+| | (e.g., partial revocation already in progress) |
++-----------------+-------------------------------------------------+
+| 429 Too Many | Rate limit exceeded |
+| Requests | |
++-----------------+-------------------------------------------------+
+| 500 Internal | Unexpected server error |
+| Server Error | |
++-----------------+-------------------------------------------------+
+
+Table 3
+
+4. Security Considerations
+
+The agent revocation endpoint introduces significant capabilities
+and, consequently, significant security risks if not properly
+secured. Its misuse can lead to widespread service disruptions.
+Implementers MUST address the following points.
+
+* *Strict Authorization:* The ability to revoke an agent's access is
+a highly privileged operation. Authorization servers MUST enforce
+strict access control, for example, by requiring a specific OAuth
+2.0 scope (e.g., agent.revoke). Policies MUST also ensure a
+client can only revoke agents it is authorized to manage (e.g.,
+based on ownership or hierarchy), and MUST NOT be able to revoke
+arbitrary agents. Critical system agents SHOULD have additional
+protections, such as requiring multi-party approval before
+revocation.
+
+Chen & Su Expires 3 May 2027 [Page 8]
+
+Internet-Draft Authorization revocation October 2026
+
+* *Denial of Service (DoS) Mitigation:* The cascade_depth parameter
+can be used as an amplification vector for DoS attacks. A single
+request could trigger a massive, resource-intensive operation.
+Servers MUST implement rate limiting on this endpoint. It is also
+RECOMMENDED that servers enforce a configurable maximum
+cascade_depth and process large-scale revocations asynchronously
+to prevent server overload.
+
+* *Information Disclosure:* The detailed response, particularly the
+affected_agents list, could leak the internal structure of an
+agent hierarchy to an unauthorized party. The server MUST filter
+the response to ensure it only contains information that the
+requesting client is permitted to see.
+
+* *Auditing and Non-Repudiation:* All revocation attempts, whether
+successful or failed, MUST be logged in a secure, tamper-evident
+audit trail. These logs are critical for forensic analysis and
+holding operators accountable. The context object in the request
+is intended to facilitate this.
+
+* *Transport Security:* As with all OAuth 2.0 endpoints,
+communication between the client and the agent revocation endpoint
+MUST be protected using Transport Layer Security (TLS) to ensure
+confidentiality and integrity.
+
+5. IANA Considerations
+
+TBD
+
+6. Acknowledgements
+
+This document based on RFC7009
+
+7. Informative References
+
+[RFC2119] Bradner, S., "Key words for use in RFCs to Indicate
+Requirement Levels", BCP 14, RFC 2119,
+DOI 10.17487/RFC2119, March 1997,
+<https://www.rfc-editor.org/rfc/rfc2119>.
+
+[RFC8174] Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+[RFC7009] Lodderstedt, T., Ed., Dronia, S., and M. Scurtescu, "OAuth
+2.0 Token Revocation", RFC 7009, DOI 10.17487/RFC7009,
+August 2013, <https://www.rfc-editor.org/rfc/rfc7009>.
+
+Chen & Su Expires 3 May 2027 [Page 9]
+
+Internet-Draft Authorization revocation October 2026
+
+[RFC6749] Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+RFC 6749, DOI 10.17487/RFC6749, October 2012,
+<https://www.rfc-editor.org/rfc/rfc6749>.
+
+Authors' Addresses
+
+Meiling Chen
+China Mobile
+BeiJing
+China
+Email: chenmeiling@chinamobile.com
+
+Li Su
+China Mobile
+BeiJing
+China
+Email: suli@chinamobile.com
+
+Chen & Su Expires 3 May 2027 [Page 10]
