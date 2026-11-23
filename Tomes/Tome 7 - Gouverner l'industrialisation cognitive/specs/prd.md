@@ -1,8 +1,8 @@
-# Cahier des charges (PRD) — 7 - Livre (v1.3)
+# Cahier des charges (PRD) — Tome 7 (v1.3)
 
 ## 1. Identité et vocation de l'ouvrage
 
-- **Titre de travail** : *Gouverner l'industrialisation cognitive*
+- **Titre** : *Tome 7 — Gouverner l'industrialisation cognitive*
 - **Sous-titre** : *Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique*
 - **Millésime de parution visé** : janvier 2027
 - **Crédit d'auteur** : **André-Guy Bruneau, M.Sc IT** — reproduit à l'identique en couverture et en page de titre. Aucun agent ne modifie ce crédit. La rédaction et la vérification par agents d'IA sont déclarées au colophon du liminaire (`0.6`), conformément à `AO-05`.

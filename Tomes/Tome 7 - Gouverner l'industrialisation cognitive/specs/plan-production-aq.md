@@ -1,4 +1,4 @@
-# Usine de Production et d'AQ du 7 - Livre — Implementation Plan
+# Usine de Production et d'AQ du Tome 7 — Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task **uniquement lorsque l'utilisateur donnera le feu vert de lancement après validation de `specs/`**. Steps use checkbox (`- [ ]`) syntax for tracking.
 

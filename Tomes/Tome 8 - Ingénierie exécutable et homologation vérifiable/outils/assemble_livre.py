@@ -348,6 +348,7 @@ def compile_html(root: Path, md_path: Path) -> Path:
             "markdown-tex_math_dollars+tex_math_single_backslash-implicit_figures-citations",
             "--standalone",
             "--embed-resources",
+            "--eol=lf",
             "--toc",
             "--toc-depth=2",
             "--mathml",

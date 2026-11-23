@@ -4,13 +4,13 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf](../../Corpus/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `16 194 080` octets / `~16,19 Mo`)
+- **Source PDF** : [Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf](../../Corpus/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `16 194 891` octets / `~16,19 Mo`)
 - **Fichier Markdown complet** : [Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md](../../Corpus/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.md)
 - **Pages** : 1 287 (dont 5 liminaires couverture/notice/TDM et p. PDF 6–1 287 = pagination imprimée p. 1–1 282)
 - **Parties / Sections** : 11
 - **Unités extraites** : 73 (62 unités de contenu — 4 liminaires, 50 chapitres, 8 annexes — et 11 sommaires de section)
 - **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (68 diagrammes — 68 PlantUML rendus en `.svg` dans `Diagrammes/rendus/`, 0 Mermaid)
-- **Statistiques du texte complet** : 440 977 mots · 28 594 lignes
+- **Statistiques du texte complet** : 441 004 mots · 28 594 lignes
 
 ## Table des matières
 

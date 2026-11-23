@@ -1,4 +1,4 @@
-# Prompt de lancement — Usine de production et d'AQ du 7 - Livre
+# Prompt de lancement — Usine de production et d'AQ du Tome 7
 
 > **Mode d'emploi** : ouvrir une **nouvelle session** dans le dépôt `c:\Github\Agentique`, activer `/goal` (et `/boost` si souhaité), puis coller le bloc ci-dessous. Ajuster au besoin la date exacte de gel et le plafond budgétaire de la barrière `G4` avant l'envoi.
 

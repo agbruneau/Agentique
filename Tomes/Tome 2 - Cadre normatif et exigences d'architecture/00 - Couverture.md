@@ -1,12 +1,12 @@
-CADRE DE RÉFÉRENCE D’ARCHITECTURE D’ENTREPRISE
+COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · TOME 2
 
-# Interopérabilité et orchestration en entreprise agentique
+# Tome 2 — Cadre normatif et exigences d'architecture
 
-Architecture normative, standards d’interopérabilité, patrons d’orchestration, autonomie et supervision humaine, identité et sécurité, observabilité et FinOps, gouvernance et conformité pour concevoir, déployer et superviser des agents d’IA à l’échelle de l’organisation.
+Architecture en six couches, standards d'interopérabilité, patrons d'orchestration, supervision humaine, sécurité Zero-Trust, observabilité, FinOps et 305 exigences opposables
 
 André-Guy Bruneau M.Sc. IT · Version 1.2 · 19 novembre 2026
 
-Titre | Interopérabilité et Orchestration en Entreprise Agentique — cadre de référence d’architecture d’entreprise
+Titre | Tome 2 — Cadre normatif et exigences d'architecture
 
 Identifiant normatif | CRE-IA-2026-01
 

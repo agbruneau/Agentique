@@ -4,13 +4,13 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [Tome 6 - Architecture multisectorielle et patrons de référence.pdf](../../Corpus/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `6 433 794` octets / `~6,43 Mo`)
+- **Source PDF** : [Tome 6 - Architecture multisectorielle et patrons de référence.pdf](../../Corpus/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `6 435 027` octets / `~6,44 Mo`)
 - **Fichier Markdown complet** : [Tome 6 - Architecture multisectorielle et patrons de référence.md](../../Corpus/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.md)
 - **Pages** : 305 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–305 = pagination imprimée p. 1–301)
 - **Parties / Sections** : 6
 - **Unités extraites** : 28 (22 unités de contenu — 3 liminaires, 15 chapitres, 4 annexes — et 6 sommaires de section)
 - **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (59 diagrammes — 56 PlantUML rendus en `.svg` et 3 Mermaid rendus en `.png` dans `Diagrammes/rendus/`)
-- **Statistiques du texte complet** : 95 924 mots · 5 487 lignes
+- **Statistiques du texte complet** : 95 931 mots · 5 491 lignes
 
 ## Table des matières
 

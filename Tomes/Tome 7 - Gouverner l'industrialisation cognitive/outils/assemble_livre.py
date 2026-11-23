@@ -313,6 +313,7 @@ def compile_html(root: Path, md_path: Path) -> Path:
             "markdown-tex_math_dollars+tex_math_single_backslash-implicit_figures",
             "--standalone",
             "--embed-resources",
+            "--eol=lf",
             "--toc",
             "--toc-depth=2",
             "--mathml",
@@ -730,7 +731,7 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
             "license_badge": meta["license_text"],
             "diffusion_note": (
                 f"*Régime de diffusion* : {lic_escaped} (textes et figures); "
-                f"scripts d'assurance qualité sous licence MIT (`{_OFFICIAL_BOOK_DIR_NAME}`)."
+                f"scripts d'assurance qualité sous licence MIT (`Tomes/{_OFFICIAL_BOOK_DIR_NAME}`)."
             ),
             "integrity_note": (
                 "*Note d'intégrité (`AO-05`)* : ouvrage conçu sur cahier des charges humain, "

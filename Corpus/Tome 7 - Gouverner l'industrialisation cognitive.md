@@ -1,5 +1,5 @@
 ---
-title: "Gouverner l'industrialisation cognitive"
+title: "Tome 7 — Gouverner l'industrialisation cognitive"
 subtitle: "Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique"
 author: "André-Guy Bruneau, M.Sc IT"
 date: "Parution : janvier 2027 (gel des faits : 2 décembre 2026)"

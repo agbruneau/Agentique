@@ -1,4 +1,4 @@
-# Table des matières contractuelle (TOC) — 7 - Livre (v1.3)
+# Table des matières contractuelle (TOC) — Tome 7 (v1.3)
 
 > **Règle d'étanchéité inter-unités** : le liminaire et chaque chapitre sont seuls propriétaires des concepts listés sous **Propriétaire exclusif**. Lorsqu'une autre unité mobilise l'un de ces concepts, elle l'invoque en une ou deux phrases et renvoie à l'unité propriétaire sans redéfinir le mécanisme, l'étude ou le texte de loi. Le liminaire peut annoncer un concept détenu par un chapitre (renvoi prospectif), sans le développer.
 

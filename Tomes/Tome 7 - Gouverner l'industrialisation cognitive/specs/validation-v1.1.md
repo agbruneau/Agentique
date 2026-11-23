@@ -1,4 +1,4 @@
-# Journal de validation des spécifications — v1.0 → v1.1 (22 novembre 2026)
+# Journal de validation des spécifications — Tome 7 (v1.0 → v1.1, 22 novembre 2026)
 
 Revue intégrale de `prd.md`, `toc.md`, `charte-editoriale.md`, `contrat-aq.md`, `plan-production-aq.md`, `manifest.json`, `protocole-mlr-2027.json` et des trois registres. **Régime : production.** Les totaux de mots, plages ± 8 %, figures et concepts possédés étaient déjà cohérents en v1.0; les constats ci-dessous portent sur la rigueur probatoire, la cohérence entre documents et la faisabilité technique.
 

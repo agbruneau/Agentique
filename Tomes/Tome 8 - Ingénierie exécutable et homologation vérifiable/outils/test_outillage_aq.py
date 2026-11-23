@@ -839,10 +839,18 @@ def test_cli_echantillon_assemble_and_check_deliverables_end_to_end(tmp_vol8: Pa
 
     livrables = tmp_vol8 / "livrables"
     consolidated_dir = tmp_vol8.parent.parent / "Corpus"
-    assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.md").is_file()
+    md_out = consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.md"
+    html_out = livrables / "Tome 8 - Ingénierie exécutable et homologation vérifiable.html"
+    assert md_out.is_file()
+    assert 'title: "Tome 8 — Ingénierie exécutable et homologation vérifiable"' in md_out.read_text(encoding="utf-8")
     assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf").read_bytes().startswith(b"%PDF-")
     assert [p.name for p in livrables.iterdir()] == ["Tome 8 - Ingénierie exécutable et homologation vérifiable.html"]
-    assert "<figcaption>" not in (livrables / "Tome 8 - Ingénierie exécutable et homologation vérifiable.html").read_text(encoding="utf-8")
+    html_txt = html_out.read_text(encoding="utf-8")
+    html_flat = " ".join(html_txt.split())
+    assert "<figcaption>" not in html_txt
+    assert "<title>Tome 8 — Ingénierie exécutable et homologation vérifiable</title>" in html_flat
+    assert '<h1 class="title">Tome 8 — Ingénierie exécutable et homologation vérifiable</h1>' in html_flat
+    assert "Tome 8 — Tome 8" not in html_flat
 
     r_chk = _run_tool_script(
         TOOLS_DIR / "verifie_manuscrit.py",

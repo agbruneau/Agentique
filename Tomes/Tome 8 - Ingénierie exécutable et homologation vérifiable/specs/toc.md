@@ -1,6 +1,6 @@
-# Table des matières contractuelle (TOC) — Volume 8 (v1.0)
+# Table des matières contractuelle (TOC) — Tome 8 (v1.0)
 
-- **Titre** : *Ingénierie exécutable de l'entreprise agentique*
+- **Titre** : *Tome 8 — Ingénierie exécutable et homologation vérifiable*
 - **Sous-titre** : *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
 - **Crédit d'auteur** : André-Guy Bruneau, M.Sc IT · **Date de gel des faits** : 2 décembre 2026 (`2026-12-02`) · **Parution** : janvier 2027
 - **Licences** : `CC BY 4.0` (manuel `6,14 × 9,21 po` et figures `Fig-00` à `Fig-08`) · `MIT` (trousse exécutable `8 - Manuel/trousse/` et outillage)

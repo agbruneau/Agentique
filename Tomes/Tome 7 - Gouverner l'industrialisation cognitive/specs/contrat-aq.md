@@ -1,4 +1,4 @@
-# Contrat d'assurance qualité 100 % agentique — 7 - Livre (v1.2)
+# Contrat d'assurance qualité 100 % agentique — Tome 7 (v1.2)
 
 Ce contrat définit le protocole de contrôle indépendant auquel est soumis l'intégralité du manuscrit avant publication. **Principe d'étanchéité cardinal** : aucun agent ayant rédigé une unité, généré une figure ou assemblé une bibliographie n'est autorisé à auditer, recoller ou noter son propre livrable.
 

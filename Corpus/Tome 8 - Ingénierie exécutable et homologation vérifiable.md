@@ -1,5 +1,5 @@
 ---
-title: "Ingénierie exécutable de l'entreprise agentique"
+title: "Tome 8 — Ingénierie exécutable et homologation vérifiable"
 subtitle: "Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)"
 author: "André-Guy Bruneau, M.Sc IT"
 date: "Parution : janvier 2027 (gel des faits : 2 décembre 2026)"

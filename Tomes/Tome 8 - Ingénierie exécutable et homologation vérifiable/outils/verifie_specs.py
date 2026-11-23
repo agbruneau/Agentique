@@ -731,7 +731,7 @@ def main() -> int:
             print(f"  - {err}", file=sys.stderr)
         return 1
     print(
-        "OK : Specifications amont Volume 8 valides (7 unites = 38 000 mots, Liminaire 0.1-0.6 + 4 chapitres "
+        "OK : Specifications amont Tome 8 valides (7 unites = 38 000 mots, Liminaire 0.1-0.6 + 4 chapitres "
         "[22 sous-sections], 9 figures Fig-00..Fig-08, RQ1-RQ6, AO-01..AO-08, CA-01..CA-20, G0..G5, "
         "4 schemas SSOT verifies, 0 symbole $ non echappe)."
     )

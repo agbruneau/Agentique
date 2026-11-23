@@ -4,13 +4,13 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf](../../Corpus/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `9 408 515` octets / `~9,41 Mo`)
+- **Source PDF** : [Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf](../../Corpus/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `9 410 655` octets / `~9,41 Mo`)
 - **Fichier Markdown complet** : [Tome 4 - Prospective stratégique et trajectoire 2028-2035.md](../../Corpus/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.md)
 - **Pages** : 537 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–537 = pagination imprimée p. 1–533)
 - **Parties / Sections** : 7
 - **Unités extraites** : 45 (38 unités de contenu — 4 liminaires, 26 chapitres, 8 annexes — et 7 sommaires de section)
 - **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (6 diagrammes — 6 PlantUML rendus en `.svg` dans `Diagrammes/rendus/`, 0 Mermaid)
-- **Statistiques du texte complet** : 175 685 mots · 5 934 lignes
+- **Statistiques du texte complet** : 175 698 mots · 5 934 lignes
 
 ## Table des matières
 

@@ -4,13 +4,13 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [Tome 5 - Synthèse exécutive et concordance architecturale.pdf](../../Corpus/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `4 913 012` octets / `~4,91 Mo`)
+- **Source PDF** : [Tome 5 - Synthèse exécutive et concordance architecturale.pdf](../../Corpus/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `4 914 149` octets / `~4,91 Mo`)
 - **Fichier Markdown complet** : [Tome 5 - Synthèse exécutive et concordance architecturale.md](../../Corpus/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.md)
 - **Pages** : 175 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–175 = pagination imprimée p. 1–171)
 - **Parties / Sections** : 5
 - **Unités extraites** : 27 (22 unités de contenu — 4 liminaires, 12 chapitres, 6 annexes — et 5 sommaires de section)
 - **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (8 diagrammes — 8 PlantUML rendus en `.svg` dans `Diagrammes/rendus/`, 0 Mermaid)
-- **Statistiques du texte complet** : 62 285 mots · 2 523 lignes
+- **Statistiques du texte complet** : 62 280 mots · 2 523 lignes
 
 ## Table des matières
 

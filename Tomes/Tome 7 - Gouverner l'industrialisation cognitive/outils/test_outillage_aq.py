@@ -619,11 +619,18 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
     md_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.md"
     html_out = livrables / "Tome 7 - Gouverner l'industrialisation cognitive.html"
     pdf_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
+    md_txt = md_out.read_text(encoding="utf-8")
+    html_txt = html_out.read_text(encoding="utf-8")
+    html_flat = " ".join(html_txt.split())
     assert md_out.is_file() and md_out.stat().st_size > 1000
-    assert html_out.is_file() and "<html" in html_out.read_text(encoding="utf-8")
+    assert 'title: "Tome 7 — Gouverner l\'industrialisation cognitive"' in md_txt
+    assert html_out.is_file() and "<html" in html_txt
+    assert "<title>Tome 7 — Gouverner l’industrialisation cognitive</title>" in html_flat
+    assert '<h1 class="title">Tome 7 — Gouverner l’industrialisation cognitive</h1>' in html_flat
+    assert "Tome 7 — Tome 7" not in html_flat
     assert pdf_out.is_file() and pdf_out.read_bytes().startswith(b"%PDF-")
     assert [p.name for p in livrables.iterdir()] == ["Tome 7 - Gouverner l'industrialisation cognitive.html"]
-    assert "<figcaption>" not in html_out.read_text(encoding="utf-8")
+    assert "<figcaption>" not in html_txt
 
 
 def test_12gram_rejects_long_quote_over_40_words_and_matches_real_corpus(tmp_book: Path) -> None:

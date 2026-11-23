@@ -1,8 +1,8 @@
-# Cahier des charges (PRD) — Volume 8 (v1.0)
+# Cahier des charges (PRD) — Tome 8 (v1.0)
 
 ## 1. Identité et vocation de l'ouvrage
 
-- **Titre** : *Ingénierie exécutable de l'entreprise agentique*
+- **Titre** : *Tome 8 — Ingénierie exécutable et homologation vérifiable*
 - **Sous-titre** : *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
 - **Millésime de parution visé** : janvier 2027
 - **Crédit d'auteur** : **André-Guy Bruneau, M.Sc IT** — reproduit à l'identique en couverture et en page de titre. Aucun agent ne modifie ce crédit. La conception du cahier des charges par l'auteur et la production intégrale par agents d'IA sont déclarées au colophon du liminaire (`0.6`), conformément à `AO-05`.

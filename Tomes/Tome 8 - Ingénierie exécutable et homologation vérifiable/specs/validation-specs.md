@@ -1,8 +1,8 @@
-# Journal de validation des spécifications — Volume 8 (`v1.0` → `v1.1`, 22 novembre 2026)
+# Journal de validation des spécifications — Tome 8 (`v1.0` → `v1.1`, 22 novembre 2026)
 
 Revue indépendante intégrale du dossier `specs/` (issu de `specs-volume-8/`) (sommaire du volume : [`README.md`](../README.md)) : [`prd.md`](prd.md), [`charte-editoriale.md`](charte-editoriale.md), [`toc.md`](toc.md), [`architecture-trousse-g0.md`](architecture-trousse-g0.md), [`contrat-aq.md`](contrat-aq.md), [`plan-production-aq.md`](plan-production-aq.md) et [`prompt-lancement.md`](prompt-lancement.md). **Régime : Production.**
 
-- **Ouvrage spécifié :** *Ingénierie exécutable de l'entreprise agentique* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
+- **Ouvrage spécifié :** *Tome 8 — Ingénierie exécutable et homologation vérifiable* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
 - **Crédit d'auteur :** **André-Guy Bruneau, M.Sc IT** · **Date de gel des faits :** `2 décembre 2026` (`2026-12-02`) · **Parution visée :** `janvier 2027`
 - **Licences :** `CC BY 4.0` (manuel `6,14 × 9,21 po` et figures `Fig-00` à `Fig-08`) · `MIT` (`8 - Manuel/trousse/` et outillage `outils/`)
 - **Source de vérité arbitrée :** `RECOMMANDATION-FINALE.md` (§ 4, lauréat `A'` MVP strict + `OPA / Rego` unique) et `recommandation-finale/propositions-A-B-revisees.md` (§ 1) *(documents préparatoires hors dépôt)*.

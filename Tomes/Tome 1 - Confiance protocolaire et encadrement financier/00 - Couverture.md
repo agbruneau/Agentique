@@ -1,8 +1,8 @@
-COMPENDIUM · INFORMATIQUE ET INGÉNIERIE DES SYSTÈMES
+COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · TOME 1
 
-# Interopérabilité et orchestration en entreprise agentique
+# Tome 1 — Confiance protocolaire et encadrement financier
 
-Autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032)
+Autonomie encadrée, protocoles d'interopérabilité, chaîne de mandat et déploiement d'agents en services financiers réglementés (2024–2032)
 
 André-Guy Bruneau M.Sc. IT · Novembre 2026
 

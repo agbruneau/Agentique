@@ -1,6 +1,8 @@
-# Couverture
+COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · TOME 6
 
-OUVRAGE DE RÉFÉRENCE ARCHITECTURALE Interopérabilité et Orchestration en Entreprise Agentique Architecture de référence, protocoles ouverts et gouvernance d’exécution pour architectes d’entreprise et de solutions
+# Tome 6 — Architecture multisectorielle et patrons de référence
+
+Règle hybride 80/20, protocoles ouverts, coexistence patrimoniale, trois blueprints instanciables et gouvernance d'exécution
 
 Cellule d’architecture automatisée — Pipeline Gemini / Wyvern
 

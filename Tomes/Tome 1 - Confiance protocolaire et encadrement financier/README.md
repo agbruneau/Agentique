@@ -4,13 +4,13 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [Tome 1 - Confiance protocolaire et encadrement financier.pdf](../../Corpus/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `17 132 203` octets / `~17,13 Mo`)
+- **Source PDF** : [Tome 1 - Confiance protocolaire et encadrement financier.pdf](../../Corpus/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../../gabarit-pdf/README.md) · `17 133 204` octets / `~17,13 Mo`)
 - **Fichier Markdown complet** : [Tome 1 - Confiance protocolaire et encadrement financier.md](../../Corpus/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.md)
 - **Pages** : 1 135 (dont 5 liminaires couverture/notice/TDM et p. PDF 6–1 135 = pagination imprimée p. 1–1 130)
 - **Parties / Sections** : 6
 - **Unités extraites** : 62 (56 unités de contenu — 3 liminaires, 50 chapitres, 3 annexes — et 6 sommaires de section)
 - **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (118 diagrammes — 63 PlantUML rendus en `.svg` et 55 Mermaid rendus en `.png` dans `Diagrammes/rendus/`)
-- **Statistiques du texte complet** : 405 462 mots · 13 017 lignes
+- **Statistiques du texte complet** : 405 465 mots · 13 017 lignes
 
 ## Table des matières
 

@@ -1,6 +1,6 @@
-# Charte éditoriale, narrative et typographique — Volume 8 (v1.0)
+# Charte éditoriale, narrative et typographique — Tome 8 (v1.0)
 
-Cette charte gouverne tous les agents rédacteurs, réviseurs, illustrateurs et lisseurs du manuel *Ingénierie exécutable de l'entreprise agentique* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)* (crédit d'auteur : **André-Guy Bruneau, M.Sc IT** ; parution visée : **janvier 2027** ; date de gel des faits : **2 décembre 2026**, `2026-12-02`). Son objectif est de produire un **manuel d'ingénierie analytique concis, rigoureux, fluide et directement actionnable**, articulé autour de contrats exécutables sans jamais dégénérer en déversement de code brut ni en catalogue bureaucratique d'exigences.
+Cette charte gouverne tous les agents rédacteurs, réviseurs, illustrateurs et lisseurs du manuel *Tome 8 — Ingénierie exécutable et homologation vérifiable* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)* (crédit d'auteur : **André-Guy Bruneau, M.Sc IT** ; parution visée : **janvier 2027** ; date de gel des faits : **2 décembre 2026**, `2026-12-02`). Son objectif est de produire un **manuel d'ingénierie analytique concis, rigoureux, fluide et directement actionnable**, articulé autour de contrats exécutables sans jamais dégénérer en déversement de code brut ni en catalogue bureaucratique d'exigences.
 
 ---
 
