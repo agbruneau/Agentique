@@ -1,0 +1,185 @@
+{
+  "protocol_id": "MLR-PRISMA-SCR-MANUEL-VOL8-2027-V1.0",
+  "freeze_date": "2026-12-02",
+  "inherits_from": "MLR-PRISMA-SCR-LIVRE-2027-V1.2",
+  "strict_access_policy": {
+    "rule": "AO-01",
+    "bypass_forbidden": [
+      "HTTP_401",
+      "HTTP_403",
+      "HTTP_429",
+      "HTTP_451",
+      "WAF",
+      "CAPTCHA",
+      "Turnstile",
+      "Anubis",
+      "Paywall"
+    ],
+    "on_blocked": "record_as_status_F_and_exclude_from_evidentiary_corpus",
+    "max_metadata_only_pct_in_included_corpus": 0.0,
+    "require_fulltext_sha256": true
+  },
+  "open_apis": [
+    "arxiv",
+    "crossref",
+    "hal",
+    "doaj",
+    "europepmc",
+    "ietf_datatracker",
+    "nist_csrc",
+    "github_pinned"
+  ],
+  "time_window": {
+    "primary": "2023-01-01/2026-12-02",
+    "foundational_classics_allowed_in_open_access": true,
+    "freeze_rule": "Aucune source postérieure à la date de gel arrêtée au 2 décembre 2026 (2026-12-02)."
+  },
+  "aacods_threshold": {
+    "scale_max": 12,
+    "min_score_for_inclusion": 9.0
+  },
+  "priority_open_seeds": [
+    {
+      "id": "SEED-V8-01",
+      "citation": "Model Context Protocol Specification (2026-07-28), SEP-2596 & SEP-3398",
+      "identifier": "github:modelcontextprotocol/specification@2026-07-28",
+      "target_axes": [
+        "RQ1",
+        "RQ4"
+      ]
+    },
+    {
+      "id": "SEED-V8-02",
+      "citation": "A2A Project Specification v1.0.1 & TCK v1.0.0.alpha3",
+      "identifier": "github:a2aproject/a2a-tck@1.0.0.alpha3",
+      "target_axes": [
+        "RQ1"
+      ]
+    },
+    {
+      "id": "SEED-V8-03",
+      "citation": "IETF RFC 8785 (JCS), RFC 7493 (I-JSON), RFC 7515 (JWS), RFC 8693, RFC 8707, RFC 9449, RFC 9943 (SCITT), RFC 9964 (ML-DSA JOSE/COSE)",
+      "identifier": "ietf:rfc8785,rfc8693,rfc8707,rfc9449,rfc9943,rfc9964",
+      "target_axes": [
+        "RQ2",
+        "RQ4"
+      ]
+    },
+    {
+      "id": "SEED-V8-04",
+      "citation": "NIST FIPS 204 (ML-DSA), NIST FIPS 205 (SLH-DSA), NIST IR 8547 Final & ACVP-Server",
+      "identifier": "nist:fips204,fips205,ir8547",
+      "target_axes": [
+        "RQ2",
+        "RQ4"
+      ]
+    },
+    {
+      "id": "SEED-V8-05",
+      "citation": "OpenTelemetry semantic-conventions v1.41.0 & semantic-conventions-genai (Development, 85 attributs)",
+      "identifier": "github:open-telemetry/semantic-conventions-genai",
+      "target_axes": [
+        "RQ4"
+      ]
+    },
+    {
+      "id": "SEED-V8-06",
+      "citation": "Debenedetti et al. (2025/2026), Defeating Prompt Injections by Design (CaMeL) & Can CaMeLs Talk?",
+      "identifier": "arXiv:2503.18813v2",
+      "target_axes": [
+        "RQ3",
+        "RQ5"
+      ]
+    },
+    {
+      "id": "SEED-V8-07",
+      "citation": "Cemri et al. (NeurIPS 2025), Why Do Multi-Agent LLM Systems Fail? (MAST) & Pan et al. (2025), MAP",
+      "identifier": "arXiv:2503.13657,arXiv:2512.04123",
+      "target_axes": [
+        "RQ1",
+        "RQ5"
+      ]
+    },
+    {
+      "id": "SEED-V8-08",
+      "citation": "Chang & Geng (2025), SagaLLM & Chen et al. (2018), Metamorphic Testing",
+      "identifier": "DOI:10.1145/3143561",
+      "target_axes": [
+        "RQ3",
+        "RQ5"
+      ]
+    },
+    {
+      "id": "SEED-V8-09",
+      "citation": "OWASP Agentic AI Top 10 Crosswalk (SRC-055 L+, hors genai.owasp.org)",
+      "identifier": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "target_axes": [
+        "RQ5"
+      ]
+    },
+    {
+      "id": "SEED-V8-10",
+      "citation": "BSIF E-23, LQ-2021-C25, EU AI Act (UE) 2024/1689 & (UE) 2026/1744, EN 18286:2026",
+      "identifier": "reg:bsif-e23,lq-2021-c25,eu-ai-act",
+      "target_axes": [
+        "RQ6"
+      ]
+    }
+  ],
+  "research_questions_and_queries": [
+    {
+      "id": "RQ1",
+      "theme": "Harnais déterministes 80/20 sous schémas JSON Schema Draft 2020-12 stricts, épinglage MCP 2026-07-28 et médiation A2A v1.0.1",
+      "min_included_studies": 6,
+      "queries": [
+        "\"Model Context Protocol\" tool pinning schema validation silent drift rug pull",
+        "\"Agent2Agent\" AgentCard JWS JSON Schema strict deterministic harness LLM"
+      ]
+    },
+    {
+      "id": "RQ2",
+      "theme": "Identité non humaine, délégation OAuth 2.0 OBO à deux sauts, DPoP/CIBA et dimensionnement HTTP 431 sous ML-DSA-65/87",
+      "min_included_studies": 6,
+      "queries": [
+        "OAuth \"on-behalf-of\" RFC 8693 DPoP CIBA \"Transaction Tokens\" AI agent delegation",
+        "\"ML-DSA\" JOSE COSE HTTP 431 header size post-quantum token delegation"
+      ]
+    },
+    {
+      "id": "RQ3",
+      "theme": "Politiques OPA/Rego hors modèle (default allow := false), Règle de deux, contamination CaMeL, confinement sans KVM et Sagas compensables",
+      "min_included_studies": 5,
+      "queries": [
+        "\"Open Policy Agent\" Rego default deny \"Rule of Two\" prompt injection CaMeL taint",
+        "\"Saga\" \"Transactional Outbox\" idempotency key deterministic fault injection LLM agents"
+      ]
+    },
+    {
+      "id": "RQ4",
+      "theme": "Adaptateurs de transport post-gel et double couloir probatoire (OTel GenAI v1.41.0, caviardage PII, JCS, SCITT, SLH-DSA, FOCUS v1.4)",
+      "min_included_studies": 5,
+      "queries": [
+        "OpenTelemetry \"semantic-conventions-genai\" PII redaction trace mandate correlation",
+        "SCITT RFC 9943 \"SLH-DSA\" FIPS 205 \"FOCUS\" FinOps audit chain"
+      ]
+    },
+    {
+      "id": "RQ5",
+      "theme": "Bancs EvalOps hermétiques, constance pass^k, bornes de Wilson (>= 3/p), tests métamorphiques sans oracle et menaces OWASP SRC-055",
+      "min_included_studies": 6,
+      "queries": [
+        "\"pass^k\" Wilson confidence interval LLM agent consistency reliability benchmark",
+        "\"metamorphic testing\" without oracle LLM agents OWASP agentic AI top 10"
+      ]
+    },
+    {
+      "id": "RQ6",
+      "theme": "Traçabilité exécutable des portes bloquantes PRR/C01–C40/5 SBB, ancrage réglementaire CA/QC/UE borné et clause non-avis",
+      "min_included_studies": 5,
+      "queries": [
+        "\"OSFI E-23\" OR \"BSIF E-23\" OR \"Loi 25\" OR \"EU AI Act\" automated decision auditability",
+        "production readiness review autonomous AI agents deterministic control verification"
+      ]
+    }
+  ]
+}

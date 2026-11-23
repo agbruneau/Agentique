@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "freeze_date": "2026-12-02",
+  "tool": "opa",
+  "version": "1.22.4",
+  "tag": "v1.22.4",
+  "release_date": "2026-11-12",
+  "url": "https://github.com/open-policy-agent/opa/releases/download/v1.22.4/opa_windows_amd64.exe",
+  "sha256": "4cd179b95041aa50c44241324da3becf35d0b28dca92bf10a07f32d002724d5e",
+  "license": "Apache-2.0",
+  "relative_path": ".tools/opa.exe",
+  "platforms": {
+    "windows_amd64": {
+      "url": "https://github.com/open-policy-agent/opa/releases/download/v1.22.4/opa_windows_amd64.exe",
+      "sha256": "4cd179b95041aa50c44241324da3becf35d0b28dca92bf10a07f32d002724d5e",
+      "relative_path": ".tools/opa.exe"
+    },
+    "linux_amd64": {
+      "url": "https://github.com/open-policy-agent/opa/releases/download/v1.22.4/opa_linux_amd64_static",
+      "sha256": "35e3b352e715e80624ead6c89930d8585f6f7d94cdc409eb2a9fe36620dcccba",
+      "relative_path": ".tools/opa"
+    }
+  }
+}

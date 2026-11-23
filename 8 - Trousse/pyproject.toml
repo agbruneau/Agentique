@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentique-trousse-vol8"
+version = "1.0.0"
+description = "Dépôt compagnon exécutable du manuel Ingénierie exécutable de l'entreprise agentique (référence figée au 2026-12-02, non-avis)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+  { name = "André-Guy Bruneau, M.Sc IT" },
+]
+keywords = ["agentic", "mcp", "a2a", "opa", "rego", "pqc", "ml-dsa", "slh-dsa", "saga", "evalops"]
+dependencies = [
+  "jsonschema>=4.26.0",
+  "PyYAML>=6.0.4",
+  "cbor2>=6.3.0",
+  "cryptography>=50.0.2",
+  "dilithium-py>=1.5.1",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=9.2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+  "harness_proto*",
+  "authz_pqc_audit*",
+  "policy_saga*",
+  "evalops_prr*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = ["-q", "--tb=short"]

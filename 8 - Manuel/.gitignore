@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+livrables/*.tmp
+
+# Copies locales sous droit d'auteur : jamais versionnees (seul le README l'est)
+sources-locales/*
+!sources-locales/README.md

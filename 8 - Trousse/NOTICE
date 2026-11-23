@@ -1,0 +1,27 @@
+AVIS DE PROPRIÉTÉ INTELLECTUELLE ET ATTRIBUTIONS — `8 - Trousse/`
+====================================================================
+
+1. Dépôt logiciel exécutable (`8 - Trousse/`) et outillage de validation (`8 - Manuel/outils/`)
+   - Auteur / Concepteur : André-Guy Bruneau, M.Sc IT (2026–2027)
+   - Licence : MIT (voir le fichier `LICENSE` à la racine de `8 - Trousse/`)
+   - Identifiant SPDX des fichiers sources : `# SPDX-License-Identifier: MIT`
+
+2. Manuel compagnon et figures (`8 - Manuel/`)
+   - Ouvrage : *Ingénierie exécutable de l'entreprise agentique* — *Manuel de spécifications testables,
+     harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle,
+     sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
+   - Auteur / Concepteur : André-Guy Bruneau, M.Sc IT (2026–2027)
+   - Licence : Creative Commons Attribution 4.0 International (`CC BY 4.0`) pour la prose du manuel
+     et les 9 figures (`Fig-00` à `Fig-08`).
+
+3. Outil binaire tiers épinglé : Open Policy Agent (`OPA`) CLI
+   - Projet : Open Policy Agent (https://github.com/open-policy-agent/opa)
+   - Version épinglée : `v1.22.4` (chemin relatif `.tools/opa.exe` sous Windows amd64, verrouillé dans `tools-lock.json`)
+   - Licence : Apache License 2.0 (`Apache-2.0`)
+
+4. Dépendances Python et vecteurs tiers hors ligne
+   - Les dépendances Python verrouillées dans `requirements.lock` sont strictement limitées aux licences
+     permissives compatibles MIT énumérées dans `spdx-allowlist.json` (`MIT`, `Apache-2.0`,
+     `BSD-2-Clause`, `BSD-3-Clause`, `ISC`, `PSF-2.0`, `MPL-2.0`, `CC0-1.0`).
+   - Les 4 suites de vecteurs de référence sous `vectors/` conservent leurs références amont et
+     licences SPDX respectives dans `vectors/vectors-manifest.json`.
