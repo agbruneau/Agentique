@@ -1,6 +1,6 @@
 # Annexe B — Matrice de traçabilité (EXIG-* / CAP-* / PRR-75 / C01–C40 / 5 SBB), catalogue des vecteurs tiers, rapports CI G0 et bilan d'assurance qualité G0–G5 & CA-16
 
-Cette annexe rassemble de façon déterministe la matrice de traçabilité reliant l'architecture de référence aux composants exécutables de `8 - Trousse/`, la table canonique de passage des cinq discordances inter-volumes, le bilan des quatre suites officielles de vecteurs tiers, les compteurs d'exécution de la barrière logicielle `G0` et le rapport consolidé des six barrières d'assurance qualité (`G0` à `G5` et lissage `CA-16`) arrêtés à la date de gel du 2 décembre 2026.
+Cette annexe rassemble de façon déterministe la matrice de traçabilité reliant l'architecture de référence aux composants exécutables de `8 - Manuel/trousse/`, la table canonique de passage des cinq discordances inter-volumes, le bilan des quatre suites officielles de vecteurs tiers, les compteurs d'exécution de la barrière logicielle `G0` et le rapport consolidé des six barrières d'assurance qualité (`G0` à `G5` et lissage `CA-16`) arrêtés à la date de gel du 2 décembre 2026.
 
 ## Concordance des cinq discordances inter-volumes (`concordance-taxonomies.json`)
 
@@ -8,13 +8,13 @@ Cette annexe rassemble de façon déterministe la matrice de traçabilité relia
 |---|---|---|---|
 | `DISC-01` | Échelle d'autonomie L0–L4 : flux purement déterministe sans IA vs lecture/synthèse assistée par IA | Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (0.2) et profil L0–L1 en lecture seule sans écriture ni exfiltration. | 0.2 |
 | `DISC-02` | Échelles de criticité et de risque : N0–N4, P0–P3, R1–R4, Classes 1–6 / Stades 0–4 / Paliers 1–3 | Conformément à AO-03, la prose du Volume 8 proscrit « Classe 1–6 », « Stade 0–4 » et « Palier 1–3 » ; le noyau technique utilise exclusivement les 3 niveaux de criticité (BLOQUANT, OBLIGATOIRE, RECOMMANDE) et les paliers d'outils P0–P3 avec table de correspondance dans 0.2. | 0.2 |
-| `DISC-03` | Découpage architectural : 4 plans SI (Vol. 6) vs 4 plans du noyau déterministe (Vol. 7) vs 6 couches + 3 plans A/B/C (Vol. 2) vs C1–C5 (Vol. 5) | Les quatre modules techniques de 8 - Trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables. | 0.2 |
+| `DISC-03` | Découpage architectural : 4 plans SI (Vol. 6) vs 4 plans du noyau déterministe (Vol. 7) vs 6 couches + 3 plans A/B/C (Vol. 2) vs C1–C5 (Vol. 5) | Les quatre modules techniques de 8 - Manuel/trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables. | 0.2 |
 | `DISC-04` | Notation d'architecture d'entreprise : ArchiMate 3.2 (Vol. 6) vs ArchiMate 4.0 C260 (Vol. 1 & Vol. 5) | Neutralité de notation : aucun artefact ArchiMate propriétaire n'est requis au gate G0 ; les stéréotypes de séparation contrôleur/acteur/politique restent compatibles aussi bien avec les profils 3.2 qu'avec 4.0 (C260). | 0.2 |
 | `DISC-05` | Révision normative MCP : MCP 2025-11-25 (Vol. 7) vs MCP 2026-07-28 stateless et SEP-2596/SEP-3398 (Vol. 1, 2, 3, 5, 6, 8) | Épinglage normatif strict sur MCP 2026-07-28 (commit 5f5440bb) avec refus explicite du transport déprécié HTTP+SSE dans StreamableHttpAdapter (harness_proto/mcp_pinning.py) et isolation par McpTransportAdapter pour la fenêtre SEP-2596 jusqu'au 2027-07-28 et la cible SEP-3398 du 30 mars 2027. | 0.2 |
 
 ## Synthèse de la matrice de traçabilité (`matrice-exig-prr-c40.json`)
 
-| Famille contractuelle | Entrées mappées | Modules cibles (`8 - Trousse/`) |
+| Famille contractuelle | Entrées mappées | Modules cibles (`8 - Manuel/trousse/`) |
 |---|---:|---|
 | `ADR_TEMPLATE` | 1 | `evalops_prr` |
 | `C40` | 40 | `authz_pqc_audit, evalops_prr, harness_proto, policies_opa, policy_saga` |
@@ -57,15 +57,15 @@ Cette annexe rassemble de façon déterministe la matrice de traçabilité relia
 
 ## Étanchéité double aveugle et reproductibilité des livrables
 
-Le manuel intègre **9 figures originales (7 schémas vectoriels `PlantUML` `-failfast2` et 2 organigrammes `Mermaid` à `300 DPI`)**, chacune bornée entre dix et quatorze nœuds. Aucun bloc de code n'est rédigé à la main dans la prose : les quatorze extraits d'au plus quarante lignes sont injectés depuis `8 - Trousse/` et contrôlés octet pour octet par empreinte `SHA-256` (`CA-G0-SYNC`) dès que `verifie_manuscrit.py` lève son masquage.
+Le manuel intègre **9 figures originales (7 schémas vectoriels `PlantUML` `-failfast2` et 2 organigrammes `Mermaid` à `300 DPI`)**, chacune bornée entre dix et quatorze nœuds. Aucun bloc de code n'est rédigé à la main dans la prose : les quatorze extraits d'au plus quarante lignes sont injectés depuis `8 - Manuel/trousse/` et contrôlés octet pour octet par empreinte `SHA-256` (`CA-G0-SYNC`) dès que `verifie_manuscrit.py` lève son masquage.
 
 La séparation entre l'agent concepteur des tests (`auteur-tests-oracle`) et l'agent implémenteur (`batisseur-code`) en barrière `G0`, renforcée par l'exécution hors ligne des quatre suites de vecteurs tiers (`RFC 8785`, `NIST ACVP FIPS 204/205`, `a2aproject/a2a-tck 1.0.0.alpha3` et `OWASP SRC-055 L+`), élimine le risque d'auto-validation circulaire intra-essaim. De même, les recollations à l'aveugle `G3` garantissent une couverture équilibrée de `60` énoncés répartis en quatre strates de `15` items (`empiriques`, `juridiques`, `spécifications techniques datées` et `assertions CI G0`) avec un plancher de huit affirmations vérifiées par unité narrative.
 
-Les deux annexes demeurent régénérées mécaniquement depuis les registres JSON SSOT, le rapport `aq/rapports-g0.json` et les journaux d'assurance qualité `G2`–`G5`, interdisant toute divergence entre les chiffres annoncés dans les chapitres, les résultats exécutés dans `8 - Trousse/` et les éditions assemblées finale Markdown, HTML autonome et PDF Typst (`6,14 × 9,21 po` à `10,6 pt`).
+Les deux annexes demeurent régénérées mécaniquement depuis les registres JSON SSOT, le rapport `aq/rapports-g0.json` et les journaux d'assurance qualité `G2`–`G5`, interdisant toute divergence entre les chiffres annoncés dans les chapitres, les résultats exécutés dans `8 - Manuel/trousse/` et les éditions assemblées finale Markdown, HTML autonome et PDF Typst (`6,14 × 9,21 po` à `10,6 pt`).
 
 ## Catalogue des quatre suites officielles de vecteurs tiers
 
-L'intégrité hors ligne de chaque vecteur est contrôlée par `execute_g0.py` contre `8 - Trousse/vectors/vectors-manifest.json` avant toute exécution de test :
+L'intégrité hors ligne de chaque vecteur est contrôlée par `execute_g0.py` contre `8 - Manuel/trousse/vectors/vectors-manifest.json` avant toute exécution de test :
 
 1. **`RFC 8785` (`JCS`)** : vecteurs de canonisation IEEE-754 ECMAScript et tri UTF-16 (`Appendices A/B` et `cyberphone/json-canonicalization`) face à `harness_proto/jcs.py`.
 2. **`NIST FIPS 204 / 205` (`ACVP`)** : jeux officiels `usnistgov/ACVP-Server` pour `ML-DSA-65`, `ML-DSA-87` et `SLH-DSA-SHA2-128s/128f` face à `authz_pqc_audit/`.
@@ -80,7 +80,7 @@ Aucune publication n'est acceptée tant que `execute_g0.py` ne retourne pas `0` 
 
 ## Gouvernance des vingt-quatre portes `PRR` et des cinq `SBB`
 
-La matrice de traçabilité `matrice-exig-prr-c40.json` relie chaque exigence opérationnelle de la famille `EXIG-*`, les vingt-quatre portes bloquantes de mise en production (`PRR-75`) ainsi que la fiche architecturale bloquante `2027-B001` à au moins un symbole exécutable et un nœud de test vérifié en barrière `G0`. L'objectif de cette liaison stricte consiste à supprimer toute prescription déclarative dépourvue de mécanisme d'essai : aucun principe architectural ne figure dans la matrice sans correspondance directe dans `8 - Trousse/` ni ancrage explicite vers le corpus de référence.
+La matrice de traçabilité `matrice-exig-prr-c40.json` relie chaque exigence opérationnelle de la famille `EXIG-*`, les vingt-quatre portes bloquantes de mise en production (`PRR-75`) ainsi que la fiche architecturale bloquante `2027-B001` à au moins un symbole exécutable et un nœud de test vérifié en barrière `G0`. L'objectif de cette liaison stricte consiste à supprimer toute prescription déclarative dépourvue de mécanisme d'essai : aucun principe architectural ne figure dans la matrice sans correspondance directe dans `8 - Manuel/trousse/` ni ancrage explicite vers le corpus de référence.
 
 En parallèle, la correspondance avec les cinq blocs fonctionnels normalisés (`5 SBB`, Tableau 12 du cadre de référence) et les trois plans types `C01` à `C40` garantit que les quatre couches d'exécution — harnais typé, identité et couloir probatoire, politiques hors modèle avec sémantique Saga et banc statistique `EvalOps` — couvrent l'ensemble de la surface de contrôle sans zone grise.
 
@@ -92,7 +92,7 @@ Les deux passes de recollation à froid `G3` s'appuient sur des graines pseudo-a
 
 ## Intégrité visuelle, portabilité multi-plateforme et archivage
 
-L'assemblage final génère simultanément l'édition Markdown consolidée, la page HTML autonome et le volume PDF mis en page par `Typst` sans coupure de tableau orpheline, ni débordement de code, ni figure tronquée. Les scripts d'outillage normalisent les fins de lignes Unix (`LF`) avant le calcul de chaque empreinte `SHA-256` et résolvent les binaires de vérification dans l'environnement épinglé de `8 - Trousse/` afin qu'un audit tiers puisse rejouer intégralement la validation hors ligne avec un résultat strictement identique.
+L'assemblage final génère simultanément l'édition Markdown consolidée, la page HTML autonome et le volume PDF mis en page par `Typst` sans coupure de tableau orpheline, ni débordement de code, ni figure tronquée. Les scripts d'outillage normalisent les fins de lignes Unix (`LF`) avant le calcul de chaque empreinte `SHA-256` et résolvent les binaires de vérification dans l'environnement épinglé de `8 - Manuel/trousse/` afin qu'un audit tiers puisse rejouer intégralement la validation hors ligne avec un résultat strictement identique.
 
 <!-- BIBLIOGRAPHIE_BRUTE_DEBUT -->
 ## Matrice détaillée `EXIG` / `PRR` / `C01–C40` / `5 SBB`
@@ -195,18 +195,18 @@ L'assemblage final génère simultanément l'édition Markdown consolidée, la p
 
 ## Catalogue vérifié des extraits `CA-G0-SYNC`
 
-- `G0-EX-CH01-01` (`ch01`) : `8 - Trousse/schemas/harness_extraction.schema.json` L1-24 (24 L) — `SHA-256: 6b4428a1f8a6abcd2029280cded86b0e983ddb349d0f05c6ba0192c010f95aac`.
-- `G0-EX-CH01-02` (`ch01`) : `8 - Trousse/harness_proto/pipeline.py` L204-232 (29 L) — `SHA-256: 75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275`.
-- `G0-EX-CH01-03` (`ch01`) : `8 - Trousse/harness_proto/mcp_pinning.py` L227-260 (34 L) — `SHA-256: 350e1959e6f0c54ce549afc77b4ef14959851bc9e45ad1a2eee52b9b36f4fc95`.
-- `G0-EX-CH01-04` (`ch01`) : `8 - Trousse/harness_proto/a2a_card.py` L157-182 (26 L) — `SHA-256: 1a58d5eabab4361028420c902df71ef3b305f84bfd139e14c75c7318c545b899`.
-- `G0-EX-CH02-01` (`ch02`) : `8 - Trousse/authz_pqc_audit/obo_dpop.py` L85-114 (30 L) — `SHA-256: d3c2d0ce031a283ba8b3e85fc230c51f6fa036a46942a573dfd77351922d2991`.
-- `G0-EX-CH02-02` (`ch02`) : `8 - Trousse/authz_pqc_audit/ciba_approval.py` L106-117 (12 L) — `SHA-256: 423ebd61ce4996bf314c2fcecab18e48129d46e379a70eaf57780b5e1e395307`.
-- `G0-EX-CH02-03` (`ch02`) : `8 - Trousse/authz_pqc_audit/pqc_http431.py` L149-177 (29 L) — `SHA-256: c5c72e27a3932180e70ba9ebd63c109c5cc146c3af50d1327aed293f0e614855`.
-- `G0-EX-CH02-04` (`ch02`) : `8 - Trousse/authz_pqc_audit/otel_pii_mapper.py` L235-265 (31 L) — `SHA-256: 60bd160c1a507c6df31fd1dfc3811c866a6f17e8b623e961b2511c00c7e41889`.
-- `G0-EX-CH03-01` (`ch03`) : `8 - Trousse/policies_opa/rule_of_two.rego` L3-26 (24 L) — `SHA-256: c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036`.
-- `G0-EX-CH03-02` (`ch03`) : `8 - Trousse/policies_opa/camel_taint.rego` L3-25 (23 L) — `SHA-256: bd873cf677b35787f6054b97b6a2de30c0cb7c6a5a52375c8bce7275ab03637b`.
-- `G0-EX-CH03-03` (`ch03`) : `8 - Trousse/policy_saga/saga_orchestrator.py` L107-140 (34 L) — `SHA-256: a2aac944f6ae06fe63c2f6482618bae3356d6270f3c5f6a3756c8592ebd1a536`.
-- `G0-EX-CH04-01` (`ch04`) : `8 - Trousse/evalops_prr/wilson_bounds.py` L43-70 (28 L) — `SHA-256: 3e685cbef8dea03f3c2c217d37c25e292295858505eae0769706570955f913ba`.
-- `G0-EX-CH04-02` (`ch04`) : `8 - Trousse/evalops_prr/metamorphic.py` L38-63 (26 L) — `SHA-256: 31ad0df04f1930471a8cec511d897834f72c35851e98f9c7cae1aa82002c1472`.
-- `G0-EX-CH04-03` (`ch04`) : `8 - Trousse/schemas/adr_2027_b001.schema.json` L1-32 (32 L) — `SHA-256: 4f0a41e7280851ce1413efeb6accb3632bb3ee6a0bfefc4fa7d92338156e36ae`.
+- `G0-EX-CH01-01` (`ch01`) : `8 - Manuel/trousse/schemas/harness_extraction.schema.json` L1-24 (24 L) — `SHA-256: 6b4428a1f8a6abcd2029280cded86b0e983ddb349d0f05c6ba0192c010f95aac`.
+- `G0-EX-CH01-02` (`ch01`) : `8 - Manuel/trousse/harness_proto/pipeline.py` L204-232 (29 L) — `SHA-256: 75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275`.
+- `G0-EX-CH01-03` (`ch01`) : `8 - Manuel/trousse/harness_proto/mcp_pinning.py` L227-260 (34 L) — `SHA-256: 350e1959e6f0c54ce549afc77b4ef14959851bc9e45ad1a2eee52b9b36f4fc95`.
+- `G0-EX-CH01-04` (`ch01`) : `8 - Manuel/trousse/harness_proto/a2a_card.py` L157-182 (26 L) — `SHA-256: 1a58d5eabab4361028420c902df71ef3b305f84bfd139e14c75c7318c545b899`.
+- `G0-EX-CH02-01` (`ch02`) : `8 - Manuel/trousse/authz_pqc_audit/obo_dpop.py` L85-114 (30 L) — `SHA-256: d3c2d0ce031a283ba8b3e85fc230c51f6fa036a46942a573dfd77351922d2991`.
+- `G0-EX-CH02-02` (`ch02`) : `8 - Manuel/trousse/authz_pqc_audit/ciba_approval.py` L106-117 (12 L) — `SHA-256: 423ebd61ce4996bf314c2fcecab18e48129d46e379a70eaf57780b5e1e395307`.
+- `G0-EX-CH02-03` (`ch02`) : `8 - Manuel/trousse/authz_pqc_audit/pqc_http431.py` L149-177 (29 L) — `SHA-256: c5c72e27a3932180e70ba9ebd63c109c5cc146c3af50d1327aed293f0e614855`.
+- `G0-EX-CH02-04` (`ch02`) : `8 - Manuel/trousse/authz_pqc_audit/otel_pii_mapper.py` L235-265 (31 L) — `SHA-256: 60bd160c1a507c6df31fd1dfc3811c866a6f17e8b623e961b2511c00c7e41889`.
+- `G0-EX-CH03-01` (`ch03`) : `8 - Manuel/trousse/policies_opa/rule_of_two.rego` L3-26 (24 L) — `SHA-256: c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036`.
+- `G0-EX-CH03-02` (`ch03`) : `8 - Manuel/trousse/policies_opa/camel_taint.rego` L3-25 (23 L) — `SHA-256: bd873cf677b35787f6054b97b6a2de30c0cb7c6a5a52375c8bce7275ab03637b`.
+- `G0-EX-CH03-03` (`ch03`) : `8 - Manuel/trousse/policy_saga/saga_orchestrator.py` L107-140 (34 L) — `SHA-256: a2aac944f6ae06fe63c2f6482618bae3356d6270f3c5f6a3756c8592ebd1a536`.
+- `G0-EX-CH04-01` (`ch04`) : `8 - Manuel/trousse/evalops_prr/wilson_bounds.py` L43-70 (28 L) — `SHA-256: 3e685cbef8dea03f3c2c217d37c25e292295858505eae0769706570955f913ba`.
+- `G0-EX-CH04-02` (`ch04`) : `8 - Manuel/trousse/evalops_prr/metamorphic.py` L38-63 (26 L) — `SHA-256: 31ad0df04f1930471a8cec511d897834f72c35851e98f9c7cae1aa82002c1472`.
+- `G0-EX-CH04-03` (`ch04`) : `8 - Manuel/trousse/schemas/adr_2027_b001.schema.json` L1-32 (32 L) — `SHA-256: 4f0a41e7280851ce1413efeb6accb3632bb3ee6a0bfefc4fa7d92338156e36ae`.
 <!-- BIBLIOGRAPHIE_BRUTE_FIN -->

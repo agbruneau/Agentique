@@ -178,7 +178,7 @@
     #set text(size: 8.4pt, fill: rgb("#334155"), hyphenate: true)
     #set par(leading: 0.52em, spacing: 0.45em)
     *Édition de référence* : #livre-pub. *Date de gel des faits* : #livre-freeze.\
-    *Régime de diffusion* : #livre-license (manuel et figures); dépôt compagnon `8 - Trousse/` et outillage sous licence MIT.\
+    *Régime de diffusion* : #livre-license (manuel et figures); trousse exécutable `8 - Manuel/trousse/` et outillage sous licence MIT.\
     *Note d'intégrité (`AO-05` & `DC-P12`)* : ouvrage conçu sur cahier des charges humain, rédigé et vérifié intégralement en six barrières `G0–G5` sur corpus ouvert haché `SHA-256` et doublures synthétiques hors modèle. Référence figée et vérifiée à la date de gel; ne constitue ni un avis juridique, ni une certification, ni une homologation sur système réel.
   ]
 ]

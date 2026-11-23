@@ -3,7 +3,7 @@
 **Unité auditée :** `8 - Manuel/manuscrit/02 - Partie II/Chapitre 04 - Banc EvalOps hermetique et 24 portes PRR.md`  
 **Agent auditeur :** `auditeur-wyvern-ch04` (contexte isolé et indépendant du rédacteur)  
 **Date de gel :** `2026-12-02` (2 décembre 2026)  
-**Base documentaire fermée :** `8 - Manuel/sources/ch04-sources.md` (`26` sources `L+` : `[1]` à `[26]`), `8 - Manuel/recherche/corpus_l_plus/*.txt`, `8 - Manuel/recherche/registre-statut-f.json`, `8 - Manuel/aq/rapports-g0.json`, `8 - Manuel/registre/*.json`, `8 - Trousse/{evalops_prr,schemas,tests,policies_opa,policy_saga,authz_pqc_audit}/` (lecture seule).
+**Base documentaire fermée :** `8 - Manuel/sources/ch04-sources.md` (`26` sources `L+` : `[1]` à `[26]`), `8 - Manuel/recherche/corpus_l_plus/*.txt`, `8 - Manuel/recherche/registre-statut-f.json`, `8 - Manuel/aq/rapports-g0.json`, `8 - Manuel/registre/*.json`, `8 - Manuel/trousse/{evalops_prr,schemas,tests,policies_opa,policy_saga,authz_pqc_audit}/` (lecture seule).
 
 ## Bilan synthétique de la barrière G2 (`ch04`)
 
@@ -15,7 +15,7 @@
 - **Verdict final — supportés** : **255** / **255** (`100 %` supportés ; `0` imprécis ; non supportés : `0`)
 - **Intégrité `CA-G0-SYNC` et `G1` :** les `3` extraits synchronisés (`G0-EX-CH04-01`, `G0-EX-CH04-02`, `G0-EX-CH04-03`) et leurs balises SHA-256 demeurent intacts octet pour octet ; `verifie_manuscrit.py --unit ch04 --strict` retourne `exit 0` (`7 440` mots dans `[6 440, 7 560]`, `0` dollar non échappé, `26/26` sources citées, `0` collision `12-grammes`).
 
-> **Note d'audit sur les artefacts amont hors périmètre d'écriture `G2` (`ch04`) :** (1) `sources/ch04-sources.md` `[16]` résume encore `(UE) 2026/1744` par « au plus tard au 2 décembre 2027 » alors que `SRC-061.txt` (`L1850–1854`) stipule **à partir du 2 décembre 2027**, et `[5]` retient la date initiale `2024-12-20` face au filigrane `v4` du `17 Jun 2026` dans `SRC-092.txt` (`L116`) ; (2) `registre/ancres-chronologiques.json` (`2027-12-02-EU-AI-ACT-ANNEXE-III`) libelle encore « Date maximale » ; (3) dans `8 - Trousse/evalops_prr/prr_validators.py` (`L47–51`), `REQUIRED_BLUEPRINT_IDS` renomme `§ 14.1` en `bp1_assistant_interne` et inverse les libellés de `§ 14.2` et `§ 14.3` (`bp2_rag_entreprise_acl` / `bp3_orchestration_multi_agents_b2b`). Le Chapitre 04 aligne chaque point sur les textes primaires `L+` et le code vérifié.
+> **Note d'audit sur les artefacts amont hors périmètre d'écriture `G2` (`ch04`) :** (1) `sources/ch04-sources.md` `[16]` résume encore `(UE) 2026/1744` par « au plus tard au 2 décembre 2027 » alors que `SRC-061.txt` (`L1850–1854`) stipule **à partir du 2 décembre 2027**, et `[5]` retient la date initiale `2024-12-20` face au filigrane `v4` du `17 Jun 2026` dans `SRC-092.txt` (`L116`) ; (2) `registre/ancres-chronologiques.json` (`2027-12-02-EU-AI-ACT-ANNEXE-III`) libelle encore « Date maximale » ; (3) dans `8 - Manuel/trousse/evalops_prr/prr_validators.py` (`L47–51`), `REQUIRED_BLUEPRINT_IDS` renomme `§ 14.1` en `bp1_assistant_interne` et inverse les libellés de `§ 14.2` et `§ 14.3` (`bp2_rag_entreprise_acl` / `bp3_orchestration_multi_agents_b2b`). Le Chapitre 04 aligne chaque point sur les textes primaires `L+` et le code vérifié.
 
 ## Registre complet des rectifications et réancrages (36 écarts corrigés)
 
@@ -79,7 +79,7 @@
 | `C04-013` | `L009` | Facteurs et modalité future : « pourraient être abandonnées d'ici la fin de 2027 » pour coûts imprévus, complexité de mise à l'échelle ou risques inattendus [9]. | `SRC-011` `L443` | `imprécis` | Remplacé « risquent l'abandon... complexités d'industrialisation... risques mal maîtrisés ». | `supporté` |
 | `C04-014` | `L011` | Synthèse des acquis Ch.01 (`harnais 8 étapes`, médiation) et Ch.02 (`délégation PQC`, double couloir probatoire). | `manifest.json` (`ch01`, `ch02`) | `supporté` | — | `supporté` |
 | `C04-015` | `L011` | Synthèse des acquis Ch.03 (`OPA hors modèle`, sagas compensables). | `manifest.json` (`ch03`), `policies_opa/`, `policy_saga/` | `supporté` | — | `supporté` |
-| `C04-016` | `L011` | Présentation du module `evalops_prr/` de `8 - Trousse/` dans le régime hors modèle sur doublures synthétiques (`DC-P12`). | `8 - Trousse/evalops_prr/`, `specs/contrat-aq.md` | `supporté` | — | `supporté` |
+| `C04-016` | `L011` | Présentation du module `evalops_prr/` de `8 - Manuel/trousse/` dans le régime hors modèle sur doublures synthétiques (`DC-P12`). | `8 - Manuel/trousse/evalops_prr/`, `specs/contrat-aq.md` | `supporté` | — | `supporté` |
 | `C04-017` | `L011` | Clause `non-avis` : dépourvu de valeur d'avis juridique ou de certification réelle. | `specs/contrat-aq.md`, `specs/prd.md` (`AO-05`) | `supporté` | — | `supporté` |
 
 ### Section 4.1 — Banc hermétique à mock MCP servers et métrique de constance `pass^k` (`L013`–`L058` : `C04-018`–`C04-073`)
@@ -236,7 +236,7 @@
 
 | ID | Loc. | Affirmation atomique | Témoin primaire (`L+` / `G0` / SSOT) | Verdict initial | Rectification / Re-ancrage | Verdict final |
 |---|---|---|---|---|---|---|
-| `C04-153` | `L207` | Clause `DC-01` / `AO-05` : `8 - Trousse/` ne vaut ni avis juridique, ni opinion de conformité, ni certification d'audit ou actuarielle, ni homologation sur `SoR` réel (`DC-P12`). | `specs/prd.md`, `specs/contrat-aq.md` | `supporté` | — | `supporté` |
+| `C04-153` | `L207` | Clause `DC-01` / `AO-05` : `8 - Manuel/trousse/` ne vaut ni avis juridique, ni opinion de conformité, ni certification d'audit ou actuarielle, ni homologation sur `SoR` réel (`DC-P12`). | `specs/prd.md`, `specs/contrat-aq.md` | `supporté` | — | `supporté` |
 | `C04-154` | `L207` | Les rattachements normatifs de `matrice-exig-prr-c40.json` sont bornés aux textes ouverts `L+` au `2 décembre 2026`. | `matrice-exig-prr-c40.json`, `ch04-sources.md` | `supporté` | — | `supporté` |
 | `C04-155` | `L207` | Trois espaces juridictionnels retenus : Québec, Canada fédéral et Union européenne (`DC-01`). | `specs/charte-editoriale.md`, `specs/contrat-aq.md` | `supporté` | — | `supporté` |
 | `C04-156` | `L207` | Toute échéance postérieure au `2 décembre 2026` est présentée au futur comme jalon ou obligation à venir. | `specs/charte-editoriale.md`, `contrat-aq.md` | `supporté` | — | `supporté` |
@@ -320,7 +320,7 @@
 | `C04-234` | `L284` | `Tableau 4.3` ligne 2 : `24 [BLOQUANT] PRR`, rejets sur `F-14`, `FAIL`, doublon `prr_id`, `prr_24_evidence.schema.json`. | `prr_validators.py` `L92–128`, `test_evalops_prr.py` `L455–480` | `supporté` | — | `supporté` |
 | `C04-235` | `L285` | `Tableau 4.3` ligne 3 : `5 SBB` Plans A/B, retrait `immutable_audit_ledger`, OPA `100 %` (`45` tests), `policy_saga` et `authz_pqc_audit`. | `rapports-g0.json` `L34–35`, `test_evalops_prr.py` `L487–490`, `policy_saga/`, `authz_pqc_audit/` | `imprécis` | Ajouté `policy_saga` (`decimal_money.py` et `opa_runner.py`) dans la colonne de traçabilité. | `supporté` |
 | `C04-236` | `L286` | `Tableau 4.3` ligne 4 : `3 blueprints` & `C01–C40`, `10` tests `test_evalops_prr.py`, `83/83` `pytest`, `50/50` vecteurs tiers. | `rapports-g0.json` `L38–75`, `test_evalops_prr.py` | `supporté` | — | `supporté` |
-| `C04-237` | `L290` | Au `2026-12-02`, `aq/rapports-g0.json` atteste le passage complet de `8 - Trousse/` à `exit 0` (`overall_status: "PASS"`). | `aq/rapports-g0.json` `L11–12` | `supporté` | — | `supporté` |
+| `C04-237` | `L290` | Au `2026-12-02`, `aq/rapports-g0.json` atteste le passage complet de `8 - Manuel/trousse/` à `exit 0` (`overall_status: "PASS"`). | `aq/rapports-g0.json` `L11–12` | `supporté` | — | `supporté` |
 | `C04-238` | `L290` | Total `pytest` : `83` tests réussis, `0` échec, `0` omission (`10` dans `test_evalops_prr.py`, `7` dans `test_third_party_vectors.py`). | `aq/rapports-g0.json` `L38–49` | `supporté` | — | `supporté` |
 | `C04-239` | `L290` | `50/50` fichiers de vecteurs tiers validés (`20` `rfc8785`, `12` `nist_acvp`, `5` `a2a_tck`, `13` `owasp_src055`). | `aq/rapports-g0.json` `L51–75` | `supporté` | — | `supporté` |
 | `C04-240` | `L290` | `21` schémas JSON stricts validés sans violation (`strict_violations: []`). | `aq/rapports-g0.json` `L26–30` | `supporté` | — | `supporté` |

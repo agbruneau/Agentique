@@ -185,7 +185,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH01-01\" path=\"8 - Trousse/schemas/harness_extraction.schema.json\" lines=\"1-24\" sha256=\"6b4428a1f8a6abcd2029280cded86b0e983ddb349d0f05c6ba0192c010f95aac\" "
+      "id=\"G0-EX-CH01-01\" path=\"8 - Manuel/trousse/schemas/harness_extraction.schema.json\" lines=\"1-24\" sha256=\"6b4428a1f8a6abcd2029280cded86b0e983ddb349d0f05c6ba0192c010f95aac\" "
     ]
   },
   {
@@ -200,7 +200,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH01-02\" path=\"8 - Trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
+      "id=\"G0-EX-CH01-02\" path=\"8 - Manuel/trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
     ]
   },
   {
@@ -215,7 +215,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH01-02\" path=\"8 - Trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
+      "id=\"G0-EX-CH01-02\" path=\"8 - Manuel/trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
     ]
   },
   {
@@ -362,7 +362,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH02-01\" path=\"8 - Trousse/authz_pqc_audit/obo_dpop.py\" lines=\"85-114\" sha256=\"d3c2d0ce031a283ba8b3e85fc230c51f6fa036a46942a573dfd77351922d2991\" "
+      "id=\"G0-EX-CH02-01\" path=\"8 - Manuel/trousse/authz_pqc_audit/obo_dpop.py\" lines=\"85-114\" sha256=\"d3c2d0ce031a283ba8b3e85fc230c51f6fa036a46942a573dfd77351922d2991\" "
     ]
   },
   {
@@ -482,7 +482,7 @@
     "paragraph_loc": "ch02:P069",
     "unit": "ch02",
     "category": "assertions_g0",
-    "text": "Pour respecter intégralement l'hygiène de licence `SPDX MIT` de `8 - Trousse/` en barrière `G0`, `execute_g0.py` interdit tout recours au paquet PyPI *slh-dsa* distribué sous licence copyleft `LGPL-3.0-or-later`.",
+    "text": "Pour respecter intégralement l'hygiène de licence `SPDX MIT` de `8 - Manuel/trousse/` en barrière `G0`, `execute_g0.py` interdit tout recours au paquet PyPI *slh-dsa* distribué sous licence copyleft `LGPL-3.0-or-later`.",
     "refs": [],
     "source_ids": [
       "aq/rapports-g0.json"
@@ -843,7 +843,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH04-03\" path=\"8 - Trousse/schemas/adr_2027_b001.schema.json\" lines=\"1-32\" sha256=\"4f0a41e7280851ce1413efeb6accb3632bb3ee6a0bfefc4fa7d92338156e36ae\" "
+      "id=\"G0-EX-CH04-03\" path=\"8 - Manuel/trousse/schemas/adr_2027_b001.schema.json\" lines=\"1-32\" sha256=\"4f0a41e7280851ce1413efeb6accb3632bb3ee6a0bfefc4fa7d92338156e36ae\" "
     ]
   },
   {

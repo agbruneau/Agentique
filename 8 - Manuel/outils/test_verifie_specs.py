@@ -20,7 +20,7 @@ def _clone_specs_book(tmp_path: Path, with_trousse: bool = True) -> Path:
     shutil.copytree(REAL_BOOK_DIR / "sources-locales", clone / "sources-locales")
     shutil.copytree(REAL_BOOK_DIR / "specs", clone / "specs")
     if with_trousse:
-        (tmp_path / "8 - Trousse").mkdir(exist_ok=True)
+        (clone / "trousse").mkdir(exist_ok=True)
     return clone
 
 
@@ -48,7 +48,7 @@ def test_detects_missing_trousse_and_word_budget_drift(tmp_path: Path) -> None:
     manifest_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     errors = validate_specs(clone)
-    assert any("8 - Trousse" in e for e in errors)
+    assert any("trousse" in e.lower() for e in errors)
     assert any("Somme des unites" in e for e in errors)
 
 

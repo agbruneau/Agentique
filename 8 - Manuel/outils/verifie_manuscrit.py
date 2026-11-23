@@ -266,7 +266,7 @@ def _check_ca_g0_sync(
             )
         return errors
 
-    trousse_root = (root.parent / "8 - Trousse").resolve()
+    trousse_root = (root / "trousse").resolve()
     synced_map = (g0_report or {}).get("synced_excerpts", {}) if isinstance(g0_report, dict) else {}
 
     for open_idx, _, block_lines in fenced_blocks:
@@ -301,13 +301,13 @@ def _check_ca_g0_sync(
         lines_spec = anchor_attrs["lines"].strip()
         declared_sha = anchor_attrs["sha256"].strip().lower()
 
-        if not rel_path_raw.startswith("8 - Trousse/"):
+        if not rel_path_raw.startswith("8 - Manuel/trousse/"):
             errors.append(
-                f"[CA-G0-SYNC] [CA-20] Chemin CA-G0-SYNC invalide pour {anchor_id} (doit debuter par '8 - Trousse/') : {rel_path_raw!r}"
+                f"[CA-G0-SYNC] [CA-20] Chemin CA-G0-SYNC invalide pour {anchor_id} (doit debuter par '8 - Manuel/trousse/') : {rel_path_raw!r}"
             )
             continue
 
-        rel_inside = rel_path_raw[len("8 - Trousse/") :]
+        rel_inside = rel_path_raw[len("8 - Manuel/trousse/") :]
         src_path = (trousse_root / rel_inside).resolve()
         if not src_path.is_relative_to(trousse_root) or not src_path.is_file():
             errors.append(

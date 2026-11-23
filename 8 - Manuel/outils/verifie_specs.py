@@ -384,7 +384,7 @@ def validate_specs(book_dir: Path) -> list[str]:
     book_dir = Path(book_dir)
     specs_dir = book_dir / "specs"
     reg_dir = book_dir / "registre"
-    trousse_dir = book_dir.parent / "8 - Trousse"
+    trousse_dir = book_dir / "trousse"
 
     required_files = [
         book_dir / "README.md",
@@ -406,7 +406,7 @@ def validate_specs(book_dir: Path) -> list[str]:
     if errors:
         return errors
     if not trousse_dir.is_dir():
-        errors.append(f"Repertoire compagnon requis manquant : {trousse_dir}")
+        errors.append(f"Sous-repertoire executable requis manquant : {trousse_dir}")
 
     try:
         manifest_raw = (specs_dir / "manifest.json").read_text(encoding="utf-8")

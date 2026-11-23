@@ -1,18 +1,18 @@
-# Architecture logicielle de « 8 - Trousse/ », barrière `G0` et adaptation de l'outillage — Volume 8
+# Architecture logicielle de « 8 - Manuel/trousse/ », barrière `G0` et adaptation de l'outillage — Volume 8
 
 - **Régime et langue :** **Production** · Français canadien (termes techniques, noms de commandes et identifiants de code en anglais).
 - **Ouvrage de référence :** *Ingénierie exécutable de l'entreprise agentique* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)* (`André-Guy Bruneau, M.Sc IT`).
-- **Calendrier et licences :** Date de gel des faits arrêtée au **2 décembre 2026** (`2026-12-02`) ; parution visée en **janvier 2027** (toutes échéances 2027 et ultérieures formulées au futur). Manuel imprimé `6,14 × 9,21 po` (`38 000` mots ± 8 %, soit `34 960`–`41 040` mots) et `9` figures (`Fig-00` à `Fig-08`) sous licence **CC BY 4.0** ; dépôt compagnon exécutable **`8 - Trousse/`** et outillage **`outils/`** sous licence **MIT**.
+- **Calendrier et licences :** Date de gel des faits arrêtée au **2 décembre 2026** (`2026-12-02`) ; parution visée en **janvier 2027** (toutes échéances 2027 et ultérieures formulées au futur). Manuel imprimé `6,14 × 9,21 po` (`38 000` mots ± 8 %, soit `34 960`–`41 040` mots) et `9` figures (`Fig-00` à `Fig-08`) sous licence **CC BY 4.0** ; dépôt compagnon exécutable **`8 - Manuel/trousse/`** et outillage **`outils/`** sous licence **MIT**.
 - **Socle décisionnel :** `RECOMMANDATION-FINALE.md` § 4 (lauréat **`A'` MVP strict** + moteur unique **`OPA / Rego`**) et `recommandation-finale/propositions-A-B-revisees.md` § 1 *(documents préparatoires hors dépôt)*.
-- **Portée probatoire (`AO-05` + `DC-P12`) :** `8 - Trousse/` est publié comme **référence figée et vérifiée à la date de gel (`2026-12-02`)** sur doublures hors modèle hermétiques. Son exécution conforme (`G0 exit 0`) ne constitue **ni un avis juridique, ni une certification d'audit ou actuarielle, ni une homologation `BSIF E-23`, `AMF`, `ISO/IEC 42001` ou `Loi 25` sur un `SoR` réel** (`non-avis`).
+- **Portée probatoire (`AO-05` + `DC-P12`) :** `8 - Manuel/trousse/` est publié comme **référence figée et vérifiée à la date de gel (`2026-12-02`)** sur doublures hors modèle hermétiques. Son exécution conforme (`G0 exit 0`) ne constitue **ni un avis juridique, ni une certification d'audit ou actuarielle, ni une homologation `BSIF E-23`, `AMF`, `ISO/IEC 42001` ou `Loi 25` sur un `SoR` réel** (`non-avis`).
 
 ---
 
-## 1. Arborescence normative du Volume 8 et de `8 - Trousse/`
+## 1. Arborescence normative du Volume 8 et de `8 - Manuel/trousse/`
 
-### 1.1 Séparation stricte entre le manuel (`8 - Livre 2027/`) et le dépôt exécutable (`8 - Trousse/`)
+### 1.1 Séparation stricte entre le manuel (`8 - Livre 2027/`) et le dépôt exécutable (`8 - Manuel/trousse/`)
 
-Conformément au resserrement `P0` (`AO-08`), le code exécutable et la prose narrative vivent dans deux arbres matériellement distincts. Aucun bloc de code rédigé à la main n'est toléré dans `manuscrit/` : tout extrait affiché dans les chapitres `01` à `04` (`≤ 40` lignes) est prélevé mécaniquement depuis `8 - Trousse/` et verrouillé octet pour octet par empreinte `SHA-256` sous `CA-G0-SYNC` (`CA-20`).
+Conformément au resserrement `P0` (`AO-08`), le code exécutable et la prose narrative vivent dans deux arbres matériellement distincts. Aucun bloc de code rédigé à la main n'est toléré dans `manuscrit/` : tout extrait affiché dans les chapitres `01` à `04` (`≤ 40` lignes) est prélevé mécaniquement depuis `8 - Manuel/trousse/` et verrouillé octet pour octet par empreinte `SHA-256` sous `CA-G0-SYNC` (`CA-20`).
 
 ```text
 Prospection/ (ou Agentique/)
@@ -70,7 +70,7 @@ Prospection/ (ou Agentique/)
 │   ├── livrables/                            # Contient UNIQUEMENT 8 - Livre 2027.html autonome (CA-18)
 │   └── sources-locales/                      # Non versionné (README.md uniquement)
 │
-└── 8 - Trousse/                              # Dépôt compagnon exécutable autonome (licence MIT)
+└── 8 - Manuel/trousse/                              # Dépôt compagnon exécutable autonome (licence MIT)
     ├── LICENSE                               # Texte intégral licence MIT
     ├── NOTICE                                # Attribution CC BY 4.0 (manuel/figures) et Apache-2.0 (OPA)
     ├── README.md                             # Bandeau non-avis AO-05 + mention archive figée 2026-12-02
@@ -88,16 +88,16 @@ Prospection/ (ou Agentique/)
     └── tests/                                # Harnais pytest découplé (tests unitaires, négatifs, vecteurs)
 ```
 
-> **Correspondance de nommage :** Dans la prose éditoriale et `toc.md`, les quatre modules sont nommés avec tirets (`harness-proto/`, `authz-pqc-audit/`, `policy-saga/`, `evalops-prr/`). Dans `8 - Trousse/`, leurs paquets Python importables portent le trait de soulignement conforme à PEP 8 (`harness_proto/`, `authz_pqc_audit/`, `policy_saga/`, `evalops_prr/`).
+> **Correspondance de nommage :** Dans la prose éditoriale et `toc.md`, les quatre modules sont nommés avec tirets (`harness-proto/`, `authz-pqc-audit/`, `policy-saga/`, `evalops-prr/`). Dans `8 - Manuel/trousse/`, leurs paquets Python importables portent le trait de soulignement conforme à PEP 8 (`harness_proto/`, `authz_pqc_audit/`, `policy_saga/`, `evalops_prr/`).
 
 ### 1.2 Contrôle `requirements.lock` `SHA-256` et hygiène `SPDX MIT`
 
 Pour garantir la reproductibilité hors ligne et la compatibilité stricte de licence sous `MIT` :
 
-1. **Verrouillage cryptographique `requirements.lock` :** généré au format `pip --require-hashes` (`paquet==x.y.z --hash=sha256:...`) incluant toutes les dépendances directes et transitives. Toute installation en CI utilise `python -m pip install --require-hashes --no-deps -r "8 - Trousse/requirements.lock"`.
+1. **Verrouillage cryptographique `requirements.lock` :** généré au format `pip --require-hashes` (`paquet==x.y.z --hash=sha256:...`) incluant toutes les dépendances directes et transitives. Toute installation en CI utilise `python -m pip install --require-hashes --no-deps -r "8 - Manuel/trousse/requirements.lock"`.
 2. **Périmètre minimal portable Windows/Linux (zéro compilateur C/Rust/Go requis) :**
 
-| Composant | Rôle dans `8 - Trousse/` | Licence SPDX vérifiée | Statut `SPDX MIT` |
+| Composant | Rôle dans `8 - Manuel/trousse/` | Licence SPDX vérifiée | Statut `SPDX MIT` |
 | --- | --- | --- | :---: |
 | `jsonschema` (+ `attrs`, `referencing`, `rpds-py`, `jsonschema-specifications`) | Validation `Draft 2020-12` `strict: true` | `MIT` | **Admis** |
 | `PyYAML` | Lecture/validation des fiches ADR `2027-B001` | `MIT` | **Admis** |
@@ -110,14 +110,14 @@ Pour garantir la reproductibilité hors ligne et la compatibilité stricte de li
 | *Paquet PyPI `slh-dsa`* *(exclusion documentée)* | — | `LGPL-3.0-or-later` | **Rejeté (`G0 FAIL`)** |
 
 3. **Contrôle automatisé `SPDX` exécuté en `G0` (`execute_g0.py`) :**
-   - Vérifie la présence de l'en-tête `# SPDX-License-Identifier: MIT` sur 100 % des fichiers `.py` et `.rego` de `8 - Trousse/` et `8 - Livre 2027/outils/`, ainsi que la propriété `"x-license": "MIT"` dans `schemas/*.schema.json`.
+   - Vérifie la présence de l'en-tête `# SPDX-License-Identifier: MIT` sur 100 % des fichiers `.py` et `.rego` de `8 - Manuel/trousse/` et `8 - Livre 2027/outils/`, ainsi que la propriété `"x-license": "MIT"` dans `schemas/*.schema.json`.
    - Inspecte les métadonnées `importlib.metadata` de chaque paquet installé contre `spdx-allowlist.json` (`allowed`: `["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "PSF-2.0", "MPL-2.0", "CC0-1.0"]` ; `forbidden_substrings`: `["GPL", "AGPL", "LGPL", "SSPL", "Proprietary"]`). Tout paquet absent de la liste blanche ou portant un motif interdit fait échouer `G0` (`exit 1`).
 
 ---
 
 ## 2. Spécification technique des 4 modules Python 3.12+ et du moteur `OPA / Rego`
 
-> **Convention typographique (`CA-06`) :** Conformément à la règle interdisant tout symbole dollar non échappé dans `specs/`, `\$` note le symbole dollar dans le présent fichier Markdown tant en préfixe de mot-clé JSON Schema (`\$schema`, `\$id`, `\$ref`, `\$defs`) qu'en ancre de fin d'expression régulière JSON Schema (`^SRC-\d{3}\$`, `^[0-9a-f]{64}\$`, `^DISC-0[1-5]\$`, `^\d+-\d+\$`) ; les fichiers `.schema.json` réels dans `8 - Trousse/schemas/` utilisent bien entendu le caractère dollar non échappé.
+> **Convention typographique (`CA-06`) :** Conformément à la règle interdisant tout symbole dollar non échappé dans `specs/`, `\$` note le symbole dollar dans le présent fichier Markdown tant en préfixe de mot-clé JSON Schema (`\$schema`, `\$id`, `\$ref`, `\$defs`) qu'en ancre de fin d'expression régulière JSON Schema (`^SRC-\d{3}\$`, `^[0-9a-f]{64}\$`, `^DISC-0[1-5]\$`, `^\d+-\d+\$`) ; les fichiers `.schema.json` réels dans `8 - Manuel/trousse/schemas/` utilisent bien entendu le caractère dollar non échappé.
 
 Tous les modules exigent **Python 3.12+**, utilisent `from __future__ import annotations`, des structures typées immuables (`@dataclass(frozen=True, slots=True)` ou `TypedDict`), l'arithmétique `Decimal` pour tout montant monétaire et des horodatages `UTC` normalisés en `ISO 8601`.
 
@@ -327,10 +327,10 @@ Résout le problème d'oracle (`C26 L10854-L10856`), encode `EXIG-EVA-03` (`>= 3
 ### 2.5 Catalogue exact des `14` extraits courts (`≤ 40` L) exposés en `Ch. 01`–`Ch. 04` (`CA-G0-SYNC`)
 
 Chaque bloc de code clôturé dans `manuscrit/` doit être immédiatement précédé d'une balise HTML de liaison :
-`<!-- CA-G0-SYNC id="<ANCHOR_ID>" path="8 - Trousse/<chemin_relatif>" lines="<debut>-<fin>" sha256="<64_hex>" -->`
+`<!-- CA-G0-SYNC id="<ANCHOR_ID>" path="8 - Manuel/trousse/<chemin_relatif>" lines="<debut>-<fin>" sha256="<64_hex>" -->`
 Dans les fichiers `.py` et `.rego`, les tranches sont encadrées par `# CA-G0-SYNC-BEGIN:<ANCHOR_ID>` et `# CA-G0-SYNC-END:<ANCHOR_ID>` ; dans les fichiers `.schema.json` (dépourvus de commentaires JSON), la tranche `1-N` couvre le fichier complet (`≤ 40` L). Chaque ligne d'un extrait exposé vise une largeur maximale de `78–80` caractères afin de ne pas déborder dans la colonne `4,46 po` de `gabarit-livre.typ`.
 
-| Ancre `CA-G0-SYNC` | Unité | Fichier source dans `8 - Trousse/` | Lignes max | Contrat exposé dans le manuel |
+| Ancre `CA-G0-SYNC` | Unité | Fichier source dans `8 - Manuel/trousse/` | Lignes max | Contrat exposé dans le manuel |
 | --- | :---: | --- | :---: | --- |
 | `G0-EX-CH01-01` | `Ch. 01` | `schemas/harness_extraction.schema.json` | `24` L | Schéma `Draft 2020-12 strict: true` avec porte `AMBIGU_ESCALADE` |
 | `G0-EX-CH01-02` | `Ch. 01` | `harness_proto/pipeline.py` | `32` L | Boucle 8 étapes de `DeterministicHarness.run` et validation sémantique |
@@ -351,11 +351,11 @@ Dans les fichiers `.py` et `.rego`, les tranches sont encadrées par `# CA-G0-SY
 
 ## 3. Intégration des `4` suites de vecteurs officiels tiers en `G0` et séparation étanche
 
-### 3.1 Protocole d'intégration des `4` suites officielles dans `8 - Trousse/vectors/`
+### 3.1 Protocole d'intégration des `4` suites officielles dans `8 - Manuel/trousse/vectors/`
 
 Afin de briser la circularité des tests auto-écrits par une même famille de modèles (`P1`), `G0` exige l'exécution hors ligne et sans exception des **4 suites de vecteurs publics officiels** épinglées à la collecte `MLR` (`AO-01` `L+`, `SHA-256` vérifié dans `vectors/vectors-manifest.json`) :
 
-| Suite officielle | Dépôt / Référence épinglée (`L+`) | Répertoire `8 - Trousse/vectors/` | Objets testés et critère de réussite `G0` |
+| Suite officielle | Dépôt / Référence épinglée (`L+`) | Répertoire `8 - Manuel/trousse/vectors/` | Objets testés et critère de réussite `G0` |
 | --- | --- | --- | --- |
 | **1. `RFC 8785` (`JCS`)** | Appendices A & B de `RFC 8785` + `cyberphone/json-canonicalization` (vecteurs de référence `testdata/`) | `vectors/rfc8785/` | Sérialisation IEEE-754 ECMAScript, tri UTF-16 (`\uFF00` vs surrogates), unicode/échappements : **100 % concordance octet pour octet** avec `harness_proto/jcs.py`. |
 | **2. `NIST FIPS 204 / 205` (`ACVP`)** | `usnistgov/ACVP-Server` (`ML-DSA-*-FIPS204` et `SLH-DSA-*-FIPS205` : `prompt.json` / `expectedResults.json`) | `vectors/nist_acvp/` | Échantillons officiels `keyGen` / `sigGen` / `sigVer` pour `ML-DSA-65`, `ML-DSA-87` (`dilithium-py`) et `SLH-DSA-SHA2-128s/128f` (`slh_dsa_fips205.py`) : **100 % concordance** avec `expectedResults.json`. |
@@ -363,16 +363,16 @@ Afin de briser la circularité des tests auto-écrits par une même famille de m
 | **4. `OWASP SRC-055` (`L+`)** | `https://genai-security-project.github.io/crosswalk/agentic-ai-top10/` (`SRC-055`, `7 - Livre.md L2084`, complété par `github.com/genai-security-project/GenAI-Security-Corpus` `CC BY-SA 4.0`). **Exclusion stricte de `genai.owasp.org` (`HTTP 403`, `statut F` `7 - Livre.md L2110`).** | `vectors/owasp_src055/` | Cartographie des 10 menaces agentiques (`ASI01`–`ASI10`) vers les jeux d'attaques `evalops_prr/metamorphic.py`, les règles `policies_opa/` (`rule_of_two.rego`, `camel_taint.rego`) et les garde-fous `2027-B001` : **100 % couverture `ASI01`–`ASI10`**. |
 
 **Règles d'exécution hermétique des vecteurs :**
-- Aucun téléchargement dynamique n'est permis pendant `execute_g0.py` : tous les fichiers JSON/vecteurs sont archivés localement sous `8 - Trousse/vectors/`, indexés dans `vectors/vectors-manifest.json` avec `upstream_url`, `pinned_ref`, `license_spdx`, `sha256` et `byte_length`.
+- Aucun téléchargement dynamique n'est permis pendant `execute_g0.py` : tous les fichiers JSON/vecteurs sont archivés localement sous `8 - Manuel/trousse/vectors/`, indexés dans `vectors/vectors-manifest.json` avec `upstream_url`, `pinned_ref`, `license_spdx`, `sha256` et `byte_length`.
 - En cas de divergence entre un fichier sur disque et `vectors-manifest.json`, `execute_g0.py` échoue immédiatement (`exit 1`) avant même de lancer `pytest`.
 
 ### 3.2 Séparation étanche `auteur-tests-oracle` ≠ `batisseur-code`
 
-Pour éliminer le biais corrélé entre spécification des tests et écriture du code applicatif, le développement de `8 - Trousse/` (Task 3 de `plan-production-aq.md`) impose un cloisonnement strict en deux contextes isolés :
+Pour éliminer le biais corrélé entre spécification des tests et écriture du code applicatif, le développement de `8 - Manuel/trousse/` (Task 3 de `plan-production-aq.md`) impose un cloisonnement strict en deux contextes isolés :
 
 1. **Rôle `auteur-tests-oracle` (étape TDD Rouge) :**
    - *Entrées autorisées :* `specs-volume-8/architecture-trousse-g0.md`, `registre/*.json`, `vectors/*`.
-   - *Propriété exclusive :* `8 - Trousse/schemas/*.schema.json`, `8 - Trousse/tests/*.py`, `8 - Trousse/policies_opa/*_test.rego`, et les stubs de signatures typées (sans logique métier).
+   - *Propriété exclusive :* `8 - Manuel/trousse/schemas/*.schema.json`, `8 - Manuel/trousse/tests/*.py`, `8 - Manuel/trousse/policies_opa/*_test.rego`, et les stubs de signatures typées (sans logique métier).
    - *Livrable :* suite complète d'assertions positives, négatives et de vecteurs tiers échouant légitimement (`pytest` et `opa test` en échec rouge initial).
 2. **Rôle `batisseur-code` (étape TDD Vert) :**
    - *Entrées autorisées :* les stubs, schémas et tests écrits par `auteur-tests-oracle` + `architecture-trousse-g0.md`.
@@ -386,8 +386,8 @@ Pour éliminer le biais corrélé entre spécification des tests et écriture du
 
 ### 4.1 Les `4` nouveaux registres SSOT du Volume 8
 
-1. **`registre/specifications-lplus.json`** : source unique de vérité de toutes les normes, RFC, FIPS, protocoles, brouillons IETF et textes légaux `L+` cités au manuel et implémentés dans `8 - Trousse/`. Distingue explicitement le statut normatif (`FINAL_STANDARD`, `FIPS_STANDARD`, `IETF_WORKING_GROUP_DRAFT`, `IETF_INDIVIDUAL_DRAFT`, `SPEC_DEVELOPMENT`, `RC_OR_ALPHA`, `REGULATION_IN_FORCE`, `REGULATION_ADOPTED_FUTURE`).
-2. **`registre/matrice-exig-prr-c40.json`** : table de traçabilité exhaustive reliant chaque identifiant technique (`EXIG-*`, `CAP-046`, `2027-B001`, `5 SBB`, `24 [BLOQUANT] PRR`, `C01–C40`) au module `8 - Trousse/`, au symbole Python ou à la règle `.rego`, au nœud de test `pytest`, à la suite de vecteurs tiers et au chapitre propriétaire (`ch01..ch04`). Consommé par `genere_annexes.py` pour produire l'**Annexe B**.
+1. **`registre/specifications-lplus.json`** : source unique de vérité de toutes les normes, RFC, FIPS, protocoles, brouillons IETF et textes légaux `L+` cités au manuel et implémentés dans `8 - Manuel/trousse/`. Distingue explicitement le statut normatif (`FINAL_STANDARD`, `FIPS_STANDARD`, `IETF_WORKING_GROUP_DRAFT`, `IETF_INDIVIDUAL_DRAFT`, `SPEC_DEVELOPMENT`, `RC_OR_ALPHA`, `REGULATION_IN_FORCE`, `REGULATION_ADOPTED_FUTURE`).
+2. **`registre/matrice-exig-prr-c40.json`** : table de traçabilité exhaustive reliant chaque identifiant technique (`EXIG-*`, `CAP-046`, `2027-B001`, `5 SBB`, `24 [BLOQUANT] PRR`, `C01–C40`) au module `8 - Manuel/trousse/`, au symbole Python ou à la règle `.rego`, au nœud de test `pytest`, à la suite de vecteurs tiers et au chapitre propriétaire (`ch01..ch04`). Consommé par `genere_annexes.py` pour produire l'**Annexe B**.
 3. **`registre/concordance-taxonomies.json`** : table canonique des **`5` discordances inter-volumes** relevées dans `analyse-essaim/audit-aval.md L49` (`L0–L4`, `N0–N4`/`P0–P3`/`R1–R4`/`Classes 1–6`, homonymie des « `4 plans` », `ArchiMate 3.2 ↔ 4.0`, `MCP 2025-11-25 ↔ 2026-07-28`) fixant la convention retenue par le Volume 8 (`Liminaire 0.2`) et empêchant toute divergence entre chapitres.
 4. **`aq/rapports-g0.json`** : journal mécanique généré de façon atomique par `outils/execute_g0.py`, contenant le verdict global `G0`, le contrôle `SPDX MIT`, le hash du `requirements.lock`, les statuts `opa test --coverage 100 %` et `pytest`, les résultats des `4` suites tiers et la table `synced_excerpts` consommée par `CA-G0-SYNC` (`verifie_manuscrit.py`) et `genere_annexes.py` (`Annexe B`).
 
@@ -671,11 +671,11 @@ Les quatre registres hérités conservent la compatibilité structurelle avec `v
 | 5 | `test_collecte_mlr.py` | `308` / *209* | **Étendre** | Conserver les `11` tests `AO-01`/`WAF`/`SHA-256` et ajouter les tests unitaires du connecteur Git épinglé (acceptation sur tag/commit exact `SHA-256`, rejet sur dérive de hash ou HTTP `403`/`429`). |
 | 6 | `assemble_livre.py` | `759` / *582* | **Ajuster** *(G5)* | Externaliser `_PART_TITLES` (`L25-L30` → Parties `I` et `II` du Vol. 8), fixer l'`image_prefix` du Markdown consolidé à `8 - Livre 2027/diagrammes/rendus` (`L148, L186, L258` — et `--resource-path` / `--embed-resources` pour l'HTML dans `livrables/`) et placer les livrables consolidés directement à la racine du dépôt (`L262, L272, L668, L707` → `8 - Livre.md`, `8 - Livre.pdf`, comme `1..7 - Livre.md`, plus `8 - Livre 2027/livrables/8 - Livre 2027.html`) en barrière **`G5`** (`CA-18`). |
 | 7 | `gabarit-livre.typ` | `369` / *369* | **Ajuster** | Conserver `6.14in × 9.21in`, `10.6pt` (`L73-L86`) et la note `AO-05` (`L171-L182`). Ajuster `#show raw.where(block: true)` (`L324-L330`) : ajouter `breakable: false` (pour préserver la lisibilité des extraits `≤ 40` L sur une seule page) et régler la taille à `7.6pt` / interligne serré sur `4,46 po` utiles. |
-| 8 | `verifie_specs.py` | `559` / *559* | **Adapter** | Paramétrer `_validate_toc_concordance` (`L93-L253`) et `validate_specs` (`L256-L539`) sur `manifest.json` Vol. 8 : `5` unités narratives (`00-liminaire` + `ch01..ch04`), `2` Annexes (`A` et `B`), `22` sous-sections (`0.1..0.6`, `1.1..4.4`), `9` figures (`Fig-00..Fig-08`), budget `38 000` mots `[34 960, 41 040]`, `AO-01..AO-08`, `CA-01..CA-20`, barrières `G0..G5`, nouveaux registres (`specifications-lplus.json`, `matrice-exig-prr-c40.json`, `concordance-taxonomies.json`), `architecture-trousse-g0.md`, existence de `8 - Trousse/`, et contrôle regex dollar sur les `9` fichiers `specs/`. |
+| 8 | `verifie_specs.py` | `559` / *559* | **Adapter** | Paramétrer `_validate_toc_concordance` (`L93-L253`) et `validate_specs` (`L256-L539`) sur `manifest.json` Vol. 8 : `5` unités narratives (`00-liminaire` + `ch01..ch04`), `2` Annexes (`A` et `B`), `22` sous-sections (`0.1..0.6`, `1.1..4.4`), `9` figures (`Fig-00..Fig-08`), budget `38 000` mots `[34 960, 41 040]`, `AO-01..AO-08`, `CA-01..CA-20`, barrières `G0..G5`, nouveaux registres (`specifications-lplus.json`, `matrice-exig-prr-c40.json`, `concordance-taxonomies.json`), `architecture-trousse-g0.md`, existence de `8 - Manuel/trousse/`, et contrôle regex dollar sur les `9` fichiers `specs/`. |
 | 9 | `test_verifie_specs.py` | `170` / *122* | **Adapter** | Mettre à jour les fixtures de test (`7` unités, `9` figures, `AO-01..08`, `CA-01..20`, `3` nouveaux registres SSOT, règle dollar globale en `specs/`). |
 | 10 | `echantillon_aq.py` | `421` / *421* | **Adapter** *(G3)* | Outillage officiel de la barrière **`G3`** (passes 1 et 2 à froid, graines `20270801` / `20270802`). Remplacer `CATEGORY_QUOTAS` (`L31-L35`) par **`4` strates × `15` items = `60`** (`"empirique"`, `"juridique"`, `"spec_technique"`, **`"assertions_g0"`**). Porter le plancher par unité narrative (`L344`) de `2` à **`>= 8` items/unité** (`5 × 8 = 40` planchers). Charger `_UNIT_CATEGORY_PRIOR` (`L177-L191`) et `_VIGILANCE_MATCHERS` (`L193-L199`) depuis `manifest.json` (vigilances Vol. 8). Extraire aussi les assertions de la `4e` strate `G0` liées aux balises `CA-G0-SYNC` et seuils `G0`. |
 | 11 | `genere_annexes.py` | `632` / *632* | **Adapter** *(G5)* | Conserver `_parse_ancrage_claims` (`L274-L299`, journaux **`G2`** Wyvern), `_parse_g3_scores` (`L302-L327`, bilans **`G3`**), `_collect_qa_metrics` (`L330-L398`, synthétisant `G0`–`G5` et **`G4`** `gauntlet-loop`), `_fit_word_budget` (`L52-L75`) et le bloc `BIBLIOGRAPHIE_BRUTE` (`L556-L589`). Remplacer les 3 renderers (`L78-L271`, `L405-L590`) par les **2 renderers `annexe-a` et `annexe-b`** (`1 500` mots `[1 380–1 620]` chacun, barrière **`G5`**) consommant les `4` registres SSOT + `rapports-g0.json` + `ancrage/*.md` + `aq/*`. |
-| 12 | `verifie_manuscrit.py` | `1 694` / *983* | **Adapter impérativement** *(G1)* | Outillage de la barrière **`G1`** (et rejeu obligatoire avec **`G0`** + **`G2` différentiel** après **`G4`** [`gauntlet-loop`] et **`G5`** [lissage]). **(1) `CA-02` (`_check_ca02_unit L491-L520`, `manifest.json L30-L57`) :** retirer `\bEXIG-[A-Z]+-\d{2}\b`, `\bCAP-\d{3}\b`, `\bADR-\d{3}\b`, `\bPOR-\d{3}\b` et `\bPRR\b` de `forbidden_prose_regexes` ; conserver l'interdiction des marqueurs `[S]`, `[D]`, `[A]`, `[M]`, `[N]`, `[L+]`, `Classe/Stade/Palier`, `ANC-*`, `INI-*`, `PEX-*`, `SIG-*`, `DIV-*` et formules creuses. **(2) `CA-G0-SYNC` (`CA-20`) :** conserver `_mask_fenced_code_preserving_lines` (`L117-L137`) sur ses `8` appels (`L154` décompte mots, `L350` 12-grammes, `L494` `CA-02`, `L583` `CA-04`, `L731` `CA-05`, `L862` `CA-06`, `L908` `CA-10`, `L1184` `CA-07`) et ajouter `_check_ca_g0_sync()` **qui lève ce masquage** pour contrôler chaque bloc clôturé (`≤ 40` L, balise `<!-- CA-G0-SYNC ... -->` valide, chemin résolu dans `8 - Trousse/`, concordance octet pour octet et `SHA-256` contre `aq/rapports-g0.json`). **(3) `CA-04`/`CA-05` (`L575-L819`) :** encadrés `> **Cinq critères permanents d'évaluation et de preuve exécutable**` (`L613`) et `> **Trois invariants exécutables — Chapitre X**` (`L626`), `max_tables_per_chapter = 3` (`L740`), `max_bullet_line_ratio = 0.25` (`L752`). **(4) `CA-13/14/18/19` (`L1420-L1581`) :** graines `20270801`/`20270802`, `8 - Livre 2027.html` / `8 - Livre.md` / `8 - Livre.pdf`, `9` figures, `Annexes A–B`, et validation de `aq/rapports-g0.json` (`exit_code == 0`). |
+| 12 | `verifie_manuscrit.py` | `1 694` / *983* | **Adapter impérativement** *(G1)* | Outillage de la barrière **`G1`** (et rejeu obligatoire avec **`G0`** + **`G2` différentiel** après **`G4`** [`gauntlet-loop`] et **`G5`** [lissage]). **(1) `CA-02` (`_check_ca02_unit L491-L520`, `manifest.json L30-L57`) :** retirer `\bEXIG-[A-Z]+-\d{2}\b`, `\bCAP-\d{3}\b`, `\bADR-\d{3}\b`, `\bPOR-\d{3}\b` et `\bPRR\b` de `forbidden_prose_regexes` ; conserver l'interdiction des marqueurs `[S]`, `[D]`, `[A]`, `[M]`, `[N]`, `[L+]`, `Classe/Stade/Palier`, `ANC-*`, `INI-*`, `PEX-*`, `SIG-*`, `DIV-*` et formules creuses. **(2) `CA-G0-SYNC` (`CA-20`) :** conserver `_mask_fenced_code_preserving_lines` (`L117-L137`) sur ses `8` appels (`L154` décompte mots, `L350` 12-grammes, `L494` `CA-02`, `L583` `CA-04`, `L731` `CA-05`, `L862` `CA-06`, `L908` `CA-10`, `L1184` `CA-07`) et ajouter `_check_ca_g0_sync()` **qui lève ce masquage** pour contrôler chaque bloc clôturé (`≤ 40` L, balise `<!-- CA-G0-SYNC ... -->` valide, chemin résolu dans `8 - Manuel/trousse/`, concordance octet pour octet et `SHA-256` contre `aq/rapports-g0.json`). **(3) `CA-04`/`CA-05` (`L575-L819`) :** encadrés `> **Cinq critères permanents d'évaluation et de preuve exécutable**` (`L613`) et `> **Trois invariants exécutables — Chapitre X**` (`L626`), `max_tables_per_chapter = 3` (`L740`), `max_bullet_line_ratio = 0.25` (`L752`). **(4) `CA-13/14/18/19` (`L1420-L1581`) :** graines `20270801`/`20270802`, `8 - Livre 2027.html` / `8 - Livre.md` / `8 - Livre.pdf`, `9` figures, `Annexes A–B`, et validation de `aq/rapports-g0.json` (`exit_code == 0`). |
 | 13 | `test_outillage_aq.py` | `993` / *757* | **Adapter** | Adapter les fixtures au Volume 8 (`5` unités narratives, `9` figures, `2` Annexes) et ajouter les tests critiques : `CA-G0-SYNC` (bloc `> 40` L bloqué, bloc sans ancre bloqué, 1 octet divergent bloqué), `CA-02` (`EXIG-*`/`PRR` autorisés, `[S]`/`[L+]` bloqués), `CA-05` (`3` tableaux / `25 %` puces), `4e` strate `G0` (`15×4 = 60`, `>= 8`/unité, graines `20270801`/`20270802` disjointes). |
 | **14** | **`execute_g0.py` *(création unique + `test_execute_g0.py`)*** | *Nouveau (~380–450 L)* | **Créer** | Orchestrateur unique de la barrière **`G0` (`CA-19`)** et sa suite `pytest` dédiée `test_execute_g0.py`, décrits ci-dessous (`§ 5.2`). |
 
@@ -687,21 +687,21 @@ Les quatre registres hérités conservent la compatibilité structurelle avec `v
 
 **Pipeline séquentiel bloquant en `7` étapes (`exit 0` uniquement si 100 % des étapes réussissent) :**
 
-1. **Résolution portable de l'environnement :** vérifie Python `>= 3.12`, localise l'exécutable `opa` (`opa.exe` sous Windows, `opa` sous Linux via `PATH` ou chemin configuré dans `tools-lock.json`), vérifie son condensat `SHA-256` contre `8 - Trousse/tools-lock.json` et capture `opa version`. Échec immédiat (`exit 1`) si absent ou modifié.
+1. **Résolution portable de l'environnement :** vérifie Python `>= 3.12`, localise l'exécutable `opa` (`opa.exe` sous Windows, `opa` sous Linux via `PATH` ou chemin configuré dans `tools-lock.json`), vérifie son condensat `SHA-256` contre `8 - Manuel/trousse/tools-lock.json` et capture `opa version`. Échec immédiat (`exit 1`) si absent ou modifié.
 2. **Contrôle `requirements.lock` `SHA-256` et hygiène `SPDX MIT` :**
-   - Analyse `8 - Trousse/requirements.lock` : vérifie qu'aucune dépendance n'est flottante et que chaque paquet porte `--hash=sha256:...`.
+   - Analyse `8 - Manuel/trousse/requirements.lock` : vérifie qu'aucune dépendance n'est flottante et que chaque paquet porte `--hash=sha256:...`.
    - Vérifie via `importlib.metadata` toutes les licences installées contre `spdx-allowlist.json` (`MIT`, `Apache-2.0`, `BSD-*`, `ISC`, `PSF-2.0`, `MPL-2.0`, `CC0-1.0` admis ; `GPL`/`AGPL`/`LGPL` rejetés).
-   - Scanne 100 % des fichiers `.py` et `.rego` de `8 - Trousse/` et `8 - Livre 2027/outils/` pour confirmer l'en-tête `# SPDX-License-Identifier: MIT` et `schemas/*.schema.json` pour `"x-license": "MIT"`.
+   - Scanne 100 % des fichiers `.py` et `.rego` de `8 - Manuel/trousse/` et `8 - Livre 2027/outils/` pour confirmer l'en-tête `# SPDX-License-Identifier: MIT` et `schemas/*.schema.json` pour `"x-license": "MIT"`.
 3. **Validation `JSON Schema Draft 2020-12 strict: true` et registres SSOT :**
-   - Vérifie la validité méta-schéma (`Draft202012Validator.check_schema`) sur tous les fichiers `8 - Trousse/schemas/*.schema.json` et impose statiquement `additionalProperties: false`, présence de tous les champs de `properties` dans `required`, absence d'`allOf`/`if-then-else` racine et absence de `\$ref` HTTP/HTTPS.
+   - Vérifie la validité méta-schéma (`Draft202012Validator.check_schema`) sur tous les fichiers `8 - Manuel/trousse/schemas/*.schema.json` et impose statiquement `additionalProperties: false`, présence de tous les champs de `properties` dans `required`, absence d'`allOf`/`if-then-else` racine et absence de `\$ref` HTTP/HTTPS.
    - Valide les `4` nouveaux registres SSOT + `4` registres hérités de `8 - Livre 2027/registre/` et `recherche/`.
 4. **Contrôle statique et couverture `OPA / Rego` (`100 %`) :**
    - Inspecte chaque fichier `policies_opa/*.rego` (hors `*_test.rego`) et échoue si `default allow := false` (ou `default decision := "deny"`) ne figure pas explicitement en tête de paquet après `package ...`.
    - Exécute `[opa_bin, "test", str(policies_dir), "--coverage", "--format=json"]` (`shell=False`), parse le JSON de couverture et exige `coverage == 100.0` et `0` échec.
-5. **Intégrité hors ligne des `4` suites de vecteurs officiels tiers :** vérifie l'empreinte `SHA-256` et la taille en octets de chaque fichier déclaré dans `8 - Trousse/vectors/vectors-manifest.json` (`rfc8785`, `nist_acvp`, `a2a_tck` `1.0.0.alpha3`, `owasp_src055`).
+5. **Intégrité hors ligne des `4` suites de vecteurs officiels tiers :** vérifie l'empreinte `SHA-256` et la taille en octets de chaque fichier déclaré dans `8 - Manuel/trousse/vectors/vectors-manifest.json` (`rfc8785`, `nist_acvp`, `a2a_tck` `1.0.0.alpha3`, `owasp_src055`).
 6. **Exécution `pytest` complète :** exécute `[sys.executable, "-m", "pytest", str(trousse_tests_dir), "-q", "--tb=short"]` (`shell=False`) avec capture structurée des compteurs par module et par suite de vecteurs ; exige `failed == 0`, `errors == 0` et `skipped == 0`.
 7. **Calcul des empreintes `CA-G0-SYNC` et écriture atomique de `aq/rapports-g0.json` :**
-   - Lit le catalogue des `14` extraits `G0-EX-CH01-01` .. `G0-EX-CH04-03` (`§ 2.5`), extrait les tranches normalisées LF (`\n`) depuis `8 - Trousse/`, vérifie `1 <= line_count <= 40` et calcule leur `SHA-256`.
+   - Lit le catalogue des `14` extraits `G0-EX-CH01-01` .. `G0-EX-CH04-03` (`§ 2.5`), extrait les tranches normalisées LF (`\n`) depuis `8 - Manuel/trousse/`, vérifie `1 <= line_count <= 40` et calcule leur `SHA-256`.
    - Écrit `aq/rapports-g0.json` (atomiquement via fichier temporaire + `replace`) conforme au schéma `RapportsG0Output` (`§ 4.1`) et retourne `0` si `overall_status == "PASS"`, sinon `1`.
 
 ---
@@ -710,15 +710,15 @@ Les quatre registres hérités conservent la compatibilité structurelle avec `v
 
 ### 6.1 Politique de gel et clause d'archive figée (`P2`)
 
-1. **Date de gel canonique (`2026-12-02`) :** toutes les versions de protocoles, normes, dépôts Git, vecteurs tiers et dépendances Python de `8 - Trousse/` sont figées au plus tard le **2 décembre 2026** (`verifie_specs.py L64` rejette toute ancienne date ou dérive de gel).
-2. **Mention d'archive figée :** le `README.md` de `8 - Trousse/`, la page de titre du manuel et l'Annexe A affichent explicitement que `8 - Trousse/` constitue une **« référence figée et vérifiée à la date de gel (`2026-12-02`) — archive pédagogique non maintenue en production sans équipe d'exploitation dédiée »** et relève du régime consultatif `non-avis` (`AO-05` + `DC-P12`).
+1. **Date de gel canonique (`2026-12-02`) :** toutes les versions de protocoles, normes, dépôts Git, vecteurs tiers et dépendances Python de `8 - Manuel/trousse/` sont figées au plus tard le **2 décembre 2026** (`verifie_specs.py L64` rejette toute ancienne date ou dérive de gel).
+2. **Mention d'archive figée :** le `README.md` de `8 - Manuel/trousse/`, la page de titre du manuel et l'Annexe A affichent explicitement que `8 - Manuel/trousse/` constitue une **« référence figée et vérifiée à la date de gel (`2026-12-02`) — archive pédagogique non maintenue en production sans équipe d'exploitation dédiée »** et relève du régime consultatif `non-avis` (`AO-05` + `DC-P12`).
 3. **Observatoire post-gel dissocié :** les évolutions survenues après le 2 décembre 2026 (dès T1 2027) relèvent exclusivement du service compagnon périodique **`E'`**, sans altération rétroactive de l'archive figée du Volume 8.
 
 ### 6.2 Adaptateurs versionnés contre les dérives T1–T2 2027
 
-Trois points d'instabilité documentés à la date de gel (`2 - Cadre de Référence.md L8667-8680`) sont isolés derrière des interfaces dédiées dans `8 - Trousse/` :
+Trois points d'instabilité documentés à la date de gel (`2 - Cadre de Référence.md L8667-8680`) sont isolés derrière des interfaces dédiées dans `8 - Manuel/trousse/` :
 
-| Évolution attendue T1–T2 2027 | Risque sur le code épinglé au `2026-12-02` | Interface d'isolation dans `8 - Trousse/` | Contrat de migration sans refonte |
+| Évolution attendue T1–T2 2027 | Risque sur le code épinglé au `2026-12-02` | Interface d'isolation dans `8 - Manuel/trousse/` | Contrat de migration sans refonte |
 | --- | --- | --- | --- |
 | **`MCP SEP-3398`** *(révision attendue le `30 mars 2027`)* & **`SEP-2596`** *(finale 3 juin 2026, retrait possible de `HTTP+SSE`)* | Changement d'en-têtes de routage, promotion `Tasks` (`Beta` → cœur), suppression définitive de `HTTP+SSE` | `McpTransportAdapter` + `expected_revision` dans `harness_proto/mcp_pinning.py` | Nouvel adaptateur pour la révision `2027-03-30` ; les calculs `JCS SHA-256`, les schémas `2020-12` et `Streamable HTTP` restent inchangés ; `HTTP+SSE` déjà interdit par défaut. |
 | **`A2A v1.1.0-rc`** *(tag du 29 oct. 2026)* & **`a2a-tck`** *(`v1.0.0.alpha3`)* | Nouveaux champs mineurs dans `AgentCard` ou réorganisation de `a2a-tck` à la sortie `1.0.0` / `1.1.0` finale | `AgentCardAdapter` + sélecteur `protocolVersion` dans `harness_proto/a2a_card.py` | Projection des nouveaux champs optionnels vers le schéma `v1.0.1` validé ; conservation stricte du mécanisme `JWS` sur `JCS RFC 8785` et épinglage `jku`/`kid`. |

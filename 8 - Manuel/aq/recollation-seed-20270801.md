@@ -22,10 +22,10 @@
 - **Nettoyages annexes appliqués :** `sources/ch02-sources.md#L194` (`Registre v1.41.0` au lieu de `Registre stable`, car `0` attribut `Stable` dans `SRC-089`) et `L293` (`RFC 8785` `Independent Submission` / `Informational` au lieu de `Standards Track`).
 - **Points consignés pour la suite du pipeline :**
   1. Coquille grammaticale mineure sur `Item 15` (`Chapitre 01.md#L21` : « Pan et ses coauteurs examine ») à corriger en phase de lissage `G5`.
-  2. Mention résiduelle d'`EXIG-SEC-25` sous `ASI03`/`ASI09` dans `8 - Trousse/vectors/owasp_src055/{asi01_asi10_catalog.json,asi01_asi10_crosswalk.md}` (condensats scellés dans `vectors-manifest.json`, laissés intacts hors périmètre manuscrit conformément à la matrice SSOT `matrice-exig-prr-c40.json`) ainsi que dans l'archive en lecture seule `specs-volume-8/`.
+  2. Mention résiduelle d'`EXIG-SEC-25` sous `ASI03`/`ASI09` dans `8 - Manuel/trousse/vectors/owasp_src055/{asi01_asi10_catalog.json,asi01_asi10_crosswalk.md}` (condensats scellés dans `vectors-manifest.json`, laissés intacts hors périmètre manuscrit conformément à la matrice SSOT `matrice-exig-prr-c40.json`) ainsi que dans l'archive en lecture seule `specs-volume-8/`.
 
 ## Contre-vérification et barrières déterministes
 
-- Les `57` items non modifiés de `recollation-seed-20270801.json` ont également été contre-vérifiés directement par le recollateur contre `corpus_l_plus/*.txt`, `8 - Trousse/`, `aq/rapports-g0.json` et `registre/`.
+- Les `57` items non modifiés de `recollation-seed-20270801.json` ont également été contre-vérifiés directement par le recollateur contre `corpus_l_plus/*.txt`, `8 - Manuel/trousse/`, `aq/rapports-g0.json` et `registre/`.
 - Barrières exécutées après rectification : `G0` (`execute_g0.py --verify-sync-manifest`) -> `exit 0` (`83/83` `pytest`, `45/45` `OPA` à `100,0 %`, `14/14` extraits `CA-G0-SYNC`) ; `G1` (`verifie_manuscrit.py --strict`) -> `exit 0` (`0` erreur).
 - **Verdict consolidé `G3` Passe 1 :** **`60/60`** (`CONFORME`).

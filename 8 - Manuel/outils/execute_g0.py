@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Orchestres les 7 verifications bloquantes de la barriere G0 dans 8 - Trousse/."""
+"""Orchestres les 7 verifications bloquantes de la barriere G0 dans 8 - Manuel/trousse/."""
 
 from __future__ import annotations
 
@@ -1070,8 +1070,10 @@ def _check_synced_excerpts(
             expected_ids.add(aid)
             unit = str(item["unit"])
             rel = str(item["source_path"])
-            if rel.startswith("8 - Trousse/"):
-                rel = rel[len("8 - Trousse/") :]
+            if rel.startswith("8 - Manuel/trousse/"):
+                rel = rel[len("8 - Manuel/trousse/") :]
+            elif rel.startswith("trousse/"):
+                rel = rel[len("trousse/") :]
             max_lines = min(40, int(item.get("max_lines", 40)))
             is_full = bool(item.get("is_full_file", False))
             target = trousse_dir / rel
@@ -1101,7 +1103,7 @@ def _check_synced_excerpts(
 
             synced[aid] = {
                 "unit": unit,
-                "source_path": f"8 - Trousse/{rel}",
+                "source_path": f"8 - Manuel/trousse/{rel}",
                 "lines": f"{start_ln}-{end_ln}",
                 "line_count": len(slice_lines),
                 "sha256": compute_excerpt_sha256(slice_lines),
@@ -1120,7 +1122,7 @@ def _check_synced_excerpts(
                 continue
             synced[aid] = {
                 "unit": _infer_unit_from_anchor(aid),
-                "source_path": f"8 - Trousse/{blk['source_path']}",
+                "source_path": f"8 - Manuel/trousse/{blk['source_path']}",
                 "lines": f"{blk['start_ln']}-{blk['end_ln']}",
                 "line_count": len(slice_lines),
                 "sha256": compute_excerpt_sha256(slice_lines),
@@ -1231,14 +1233,14 @@ def run_g0(
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Execute les 7 etapes bloquantes G0 sur 8 - Trousse/.")
+    parser = argparse.ArgumentParser(description="Execute les 7 etapes bloquantes G0 sur 8 - Manuel/trousse/.")
     default_book = Path(__file__).resolve().parent.parent
     parser.add_argument("--book-dir", type=Path, default=default_book, help="Repertoire 8 - Manuel")
     parser.add_argument(
         "--trousse-dir",
         type=Path,
         default=None,
-        help="Repertoire 8 - Trousse (defaut : <book-dir>/../8 - Trousse)",
+        help="Repertoire trousse executable (defaut : <book-dir>/trousse)",
     )
     parser.add_argument(
         "--output",
@@ -1253,7 +1255,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     book_dir = args.book_dir.resolve()
-    trousse_dir = (args.trousse_dir if args.trousse_dir is not None else book_dir.parent / "8 - Trousse").resolve()
+    trousse_dir = (args.trousse_dir if args.trousse_dir is not None else book_dir / "trousse").resolve()
     out_report = (args.output if args.output is not None else book_dir / "aq" / "rapports-g0.json").resolve()
     return run_g0(trousse_dir, out_report, book_dir=book_dir, verify_sync_manifest=args.verify_sync_manifest)
 

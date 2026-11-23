@@ -742,7 +742,7 @@ def _wrap_inline_raw_tokens_typst(inner: str) -> str:
     """Deseschappe \\$ et ajoute des points de cesure discrets (\\u200b) dans le code inline hors tableaux."""
     fixed = inner.replace(r"\$", "$")
     fixed = re.sub(r"(\d)\s+%", lambda x: x.group(1) + "\u00a0%", fixed)
-    fixed = re.sub(r"\b8\s+-\s+(Trousse|Manuel)", lambda x: f"8\u00a0-\u00a0{x.group(1)}", fixed)
+    fixed = re.sub(r"\b8\s+-\s+Manuel", "8\u00a0-\u00a0Manuel", fixed)
     fixed = fixed.replace("->", "-\u2060>")
     fixed = fixed.replace("-*", "-\u2060*")
     fixed = re.sub(r"(?<![A-Za-z0-9])(--?)(?=[A-Za-z0-9*])", lambda x: "".join(c + "\u2060" for c in x.group(1)), fixed)
@@ -800,7 +800,7 @@ def _apply_prose_nbsp_segment(seg: str) -> str:
     seg = re.sub(r"(\d)\s+(s|ms|min|h|o|Kio|Mio|po|pt)\b", lambda m: m.group(1) + "\u00a0" + m.group(2), seg)
     seg = re.sub(r"(§{1,2})\s+(?=\d)", lambda m: m.group(1) + "\u00a0", seg)
     seg = re.sub(r"([−–])\s+(?=\d)", lambda m: m.group(1) + "\u00a0", seg)
-    seg = re.sub(r"\b8\s+-\s+(Trousse|Manuel)", lambda m: "8\u00a0-\u00a0" + m.group(1), seg)
+    seg = re.sub(r"\b8\s+-\s+Manuel", "8\u00a0-\u00a0Manuel", seg)
     seg = re.sub(r"(?<!-) -> (?!-)", " → ", seg)
     return seg
 

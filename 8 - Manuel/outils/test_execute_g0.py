@@ -25,7 +25,7 @@ from verifie_specs import extract_ssot_schemas_from_arch
 
 _MANUEL_DIR = _TOOLS_DIR.parent
 _REPO_ROOT = _MANUEL_DIR.parent
-_REAL_TROUSSE = _REPO_ROOT / "8 - Trousse"
+_REAL_TROUSSE = _MANUEL_DIR / "trousse"
 _REAL_OPA = next(
     (
         p

@@ -74,7 +74,7 @@
     "paragraph_loc": "00-liminaire:P015",
     "unit": "00-liminaire",
     "category": "assertions_g0",
-    "text": "En vertu du contrat `CA-G0-SYNC` (`CA-20`), chaque extrait provient mécaniquement du dépôt compagnon, porte son identifiant de provenance et concorde octet pour octet avec son empreinte SHA-256 consignée dans `aq/rapports-g0.json`.",
+    "text": "En vertu du contrat `CA-G0-SYNC` (`CA-20`), chaque extrait provient mécaniquement de la trousse, porte son identifiant de provenance et concorde octet pour octet avec son empreinte SHA-256 consignée dans `aq/rapports-g0.json`.",
     "refs": [],
     "source_ids": [
       "aq/rapports-g0.json"
@@ -233,7 +233,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH01-02\" path=\"8 - Trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
+      "id=\"G0-EX-CH01-02\" path=\"8 - Manuel/trousse/harness_proto/pipeline.py\" lines=\"204-232\" sha256=\"75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275\" "
     ]
   },
   {
@@ -313,7 +313,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH01-04\" path=\"8 - Trousse/harness_proto/a2a_card.py\" lines=\"157-182\" sha256=\"1a58d5eabab4361028420c902df71ef3b305f84bfd139e14c75c7318c545b899\" "
+      "id=\"G0-EX-CH01-04\" path=\"8 - Manuel/trousse/harness_proto/a2a_card.py\" lines=\"157-182\" sha256=\"1a58d5eabab4361028420c902df71ef3b305f84bfd139e14c75c7318c545b899\" "
     ]
   },
   {
@@ -370,7 +370,7 @@
     ],
     "vigilance_mandatory": true,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH02-02\" path=\"8 - Trousse/authz_pqc_audit/ciba_approval.py\" lines=\"106-117\" sha256=\"423ebd61ce4996bf314c2fcecab18e48129d46e379a70eaf57780b5e1e395307\" "
+      "id=\"G0-EX-CH02-02\" path=\"8 - Manuel/trousse/authz_pqc_audit/ciba_approval.py\" lines=\"106-117\" sha256=\"423ebd61ce4996bf314c2fcecab18e48129d46e379a70eaf57780b5e1e395307\" "
     ]
   },
   {
@@ -501,7 +501,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH02-04\" path=\"8 - Trousse/authz_pqc_audit/otel_pii_mapper.py\" lines=\"235-265\" sha256=\"60bd160c1a507c6df31fd1dfc3811c866a6f17e8b623e961b2511c00c7e41889\" "
+      "id=\"G0-EX-CH02-04\" path=\"8 - Manuel/trousse/authz_pqc_audit/otel_pii_mapper.py\" lines=\"235-265\" sha256=\"60bd160c1a507c6df31fd1dfc3811c866a6f17e8b623e961b2511c00c7e41889\" "
     ]
   },
   {
@@ -558,7 +558,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH03-01\" path=\"8 - Trousse/policies_opa/rule_of_two.rego\" lines=\"3-26\" sha256=\"c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036\" "
+      "id=\"G0-EX-CH03-01\" path=\"8 - Manuel/trousse/policies_opa/rule_of_two.rego\" lines=\"3-26\" sha256=\"c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036\" "
     ]
   },
   {
@@ -566,14 +566,14 @@
     "paragraph_loc": "ch03:P021",
     "unit": "ch03",
     "category": "assertions_g0",
-    "text": "Le bloc suivant présente le cœur de la politique d'autorisation hors modèle `rule_of_two.rego`, chargée par `OpaPolicyEngine` avant tout appel d'outil mutateur ou sortant dans `8 - Trousse/`.",
+    "text": "Le bloc suivant présente le cœur de la politique d'autorisation hors modèle `rule_of_two.rego`, chargée par `OpaPolicyEngine` avant tout appel d'outil mutateur ou sortant dans `8 - Manuel/trousse/`.",
     "refs": [],
     "source_ids": [
       "aq/rapports-g0.json"
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH03-01\" path=\"8 - Trousse/policies_opa/rule_of_two.rego\" lines=\"3-26\" sha256=\"c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036\" "
+      "id=\"G0-EX-CH03-01\" path=\"8 - Manuel/trousse/policies_opa/rule_of_two.rego\" lines=\"3-26\" sha256=\"c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036\" "
     ]
   },
   {
@@ -676,7 +676,7 @@
     ],
     "vigilance_mandatory": false,
     "g0_excerpt_ids": [
-      "id=\"G0-EX-CH03-03\" path=\"8 - Trousse/policy_saga/saga_orchestrator.py\" lines=\"107-140\" sha256=\"a2aac944f6ae06fe63c2f6482618bae3356d6270f3c5f6a3756c8592ebd1a536\" "
+      "id=\"G0-EX-CH03-03\" path=\"8 - Manuel/trousse/policy_saga/saga_orchestrator.py\" lines=\"107-140\" sha256=\"a2aac944f6ae06fe63c2f6482618bae3356d6270f3c5f6a3756c8592ebd1a536\" "
     ]
   },
   {

@@ -49,7 +49,7 @@ skinparam padding 7
 rectangle "Modèles substituables (~20 %)\net entrées externes non fiables" as MOD <<prob>>
 rectangle "Table des 5 discordances (0.2)\n(L0–L4, plans, ArchiMate, MCP)" as TAB <<det>>
 
-package "Dépôt compagnon 8 - Trousse/ (MIT · Python 3.12+)" {
+package "Trousse exécutable 8 - Manuel/trousse/ (MIT · Python 3.12+)" {
   rectangle "harness_proto/\n(Ch. 01 : harnais, MCP, A2A)" as M1 <<det>>
   rectangle "authz_pqc_audit/\n(Ch. 02 : OBO, ML-DSA, OTel)" as M2 <<det>>
   rectangle "policy_saga/\n(Ch. 03 : Règle de deux, Sagas)" as M3 <<det>>

@@ -1,23 +1,23 @@
-# `8 - Trousse/` — Dépôt compagnon exécutable du Volume 8
+# `8 - Manuel/trousse/` — Trousse logicielle exécutable du Volume 8
 
-> [Retour à l'index principal du dépôt](../README.md) · Manuel compagnon : [`8 - Manuel`](../8%20-%20Manuel/README.md) · Rapport `G0` : [`aq/rapports-g0.json`](../8%20-%20Manuel/aq/rapports-g0.json)
+> [Retour au sommaire du manuel](../README.md) · [Index principal du dépôt](../../README.md) · Rapport `G0` : [`aq/rapports-g0.json`](../aq/rapports-g0.json)
 
 > **AVIS IMPORTANT (`non-avis` · `AO-05` / `DC-P12`) :**  
-> Ce dépôt constitue une **référence figée et vérifiée à la date de gel (`2026-12-02`) — archive pédagogique non maintenue en production sans équipe d'exploitation dédiée**.  
+> Ce répertoire constitue une **référence figée et vérifiée à la date de gel (`2026-12-02`) — archive pédagogique non maintenue en production sans équipe d'exploitation dédiée**.  
 > Toute exécution conforme (`G0 exit 0`) repose exclusivement sur des doublures hors modèle hermétiques et des vecteurs déterministes. Elle ne constitue **ni un avis juridique, ni un conseil réglementaire personnalisé, ni une certification d'audit ou actuarielle, ni une homologation `BSIF E-23`, `AMF`, `ISO/IEC 42001` ou `Loi 25` sur un *System of Record* (`SoR`) réel**.
 
 ---
 
 ## Vue d'ensemble
 
-`8 - Trousse/` regroupe les contrats exécutables, politiques `OPA / Rego`, schémas `JSON Schema Draft 2020-12` (`strict: true`), vecteurs officiels tiers et suites `pytest` associés au manuel [*Ingénierie exécutable de l'entreprise agentique*](../8%20-%20Manuel/README.md) (André-Guy Bruneau, M.Sc IT — édition de référence : janvier 2027, gel des faits : `2 décembre 2026`).
+`8 - Manuel/trousse/` regroupe les contrats exécutables, politiques `OPA / Rego`, schémas `JSON Schema Draft 2020-12` (`strict: true`), vecteurs officiels tiers et suites `pytest` intégrés au manuel [*Ingénierie exécutable de l'entreprise agentique*](../README.md) (André-Guy Bruneau, M.Sc IT — édition de référence : janvier 2027, gel des faits : `2 décembre 2026`).
 
-- **Licence du code (`8 - Trousse/`) :** [`MIT`](LICENSE)
+- **Licence du code (`8 - Manuel/trousse/`) :** [`MIT`](LICENSE)
 - **Licence du manuel et des figures (`8 - Manuel/`) :** `CC BY 4.0` (voir [`NOTICE`](NOTICE))
 - **Moteur de politiques hors modèle :** `OPA` CLI `v1.22.4` (`Apache-2.0`, condensat vérifié dans [`tools-lock.json`](tools-lock.json))
-- **Bilan `G0` vérifié (`aq/rapports-g0.json`) :** `PASS` (`exit_code: 0`) — `83/83` tests `pytest` réussis (`0` échec, `0` ignoré), `45/45` tests `OPA` réussis à `100,0 %` de couverture, `21` validations de schémas/registres, `4/4` suites de vecteurs tiers (`50/50` fichiers), `17` paquets verrouillés dans [`requirements.lock`](requirements.lock) et `50` fichiers / `18` paquets conformes `MIT` contre [`spdx-allowlist.json`](spdx-allowlist.json).
+- **Bilan `G0` vérifié ([`../aq/rapports-g0.json`](../aq/rapports-g0.json)) :** `PASS` (`exit_code: 0`) — `83/83` tests `pytest` réussis (`0` échec, `0` ignoré), `45/45` tests `OPA` réussis à `100,0 %` de couverture, `21` validations de schémas/registres, `4/4` suites de vecteurs tiers (`50/50` fichiers), `17` paquets verrouillés dans [`requirements.lock`](requirements.lock) et `50` fichiers / `18` paquets conformes `MIT` contre [`spdx-allowlist.json`](spdx-allowlist.json).
 
-### Arborescence du dépôt
+### Arborescence de la trousse
 
 #### Modules applicatifs et bancs exécutables (`4` paquets Python)
 
@@ -40,8 +40,7 @@
 - [`tools-lock.json`](tools-lock.json) — Épinglage `SHA-256` multiplateforme de `OPA CLI v1.22.4` (`Apache-2.0`, Windows `.tools/opa.exe` et Linux `.tools/opa`)
 - [`spdx-allowlist.json`](spdx-allowlist.json) — Liste blanche des `8` licences permissives compatibles `MIT`
 - [`LICENSE`](LICENSE) — Texte officiel de la licence `MIT`
-- [`NOTICE`](NOTICE) — Attributions, frontière `MIT` (`8 - Trousse/`, `8 - Manuel/outils/`) / `CC BY 4.0` (`8 - Manuel/`) et notice `OPA`
-- [`.gitignore`](.gitignore) — Exclusions locales (`.venv/`, `.tools/`, `__pycache__/`, `.pytest_cache/`, `*.py[cod]`)
+- [`NOTICE`](NOTICE) — Attributions, frontière `MIT` (`8 - Manuel/trousse/`, `8 - Manuel/outils/`) / `CC BY 4.0` (`8 - Manuel/`) et notice `OPA` (les exclusions locales `trousse/.venv/`, `trousse/.tools/`, `__pycache__/` et `.pytest_cache/` sont centralisées dans [`../.gitignore`](../.gitignore))
 
 ---
 
@@ -54,14 +53,14 @@
 
 ### 1. Création et restauration reproductible de `.venv`
 
-Sous **Windows (PowerShell)** depuis `8 - Trousse/` :
+Sous **Windows (PowerShell)** depuis `8 - Manuel/trousse/` :
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --require-hashes --no-deps -r requirements.lock
 ```
 
-Sous **Linux / macOS (bash)** depuis `8 - Trousse/` :
+Sous **Linux / macOS (bash)** depuis `8 - Manuel/trousse/` :
 
 ```bash
 python3 -m venv .venv
@@ -70,14 +69,14 @@ python3 -m venv .venv
 
 ### 2. Vérification d'`OPA CLI` et des politiques Rego
 
-Sous **Windows (PowerShell)** depuis `8 - Trousse/` :
+Sous **Windows (PowerShell)** depuis `8 - Manuel/trousse/` :
 
 ```powershell
 .\.tools\opa.exe version
 .\.tools\opa.exe test policies_opa --coverage --format=json
 ```
 
-Sous **Linux** depuis `8 - Trousse/` (après téléchargement du binaire `opa_linux_amd64_static` vérifié contre [`tools-lock.json`](tools-lock.json)) :
+Sous **Linux** depuis `8 - Manuel/trousse/` (après téléchargement du binaire `opa_linux_amd64_static` vérifié contre [`tools-lock.json`](tools-lock.json)) :
 
 ```bash
 ./.tools/opa version
@@ -89,15 +88,15 @@ Sous **Linux** depuis `8 - Trousse/` (après téléchargement du binaire `opa_li
 Depuis la racine du dépôt (`Agentique/`), sous **Windows (PowerShell)** :
 
 ```powershell
-& "8 - Trousse\.venv\Scripts\python.exe" -B -m pytest -p no:cacheprovider "8 - Trousse\tests" -q --tb=short
-& "8 - Trousse\.venv\Scripts\python.exe" -B "8 - Manuel\outils\execute_g0.py" --verify-sync-manifest
+& "8 - Manuel\trousse\.venv\Scripts\python.exe" -B -m pytest -p no:cacheprovider "8 - Manuel\trousse\tests" -q --tb=short
+& "8 - Manuel\trousse\.venv\Scripts\python.exe" -B "8 - Manuel\outils\execute_g0.py" --verify-sync-manifest
 ```
 
 Sous **Linux / macOS (bash)** depuis la racine du dépôt :
 
 ```bash
-"8 - Trousse/.venv/bin/python" -B -m pytest -p no:cacheprovider "8 - Trousse/tests" -q --tb=short
-"8 - Trousse/.venv/bin/python" -B "8 - Manuel/outils/execute_g0.py" --verify-sync-manifest
+"8 - Manuel/trousse/.venv/bin/python" -B -m pytest -p no:cacheprovider "8 - Manuel/trousse/tests" -q --tb=short
+"8 - Manuel/trousse/.venv/bin/python" -B "8 - Manuel/outils/execute_g0.py" --verify-sync-manifest
 ```
 
-Pour exécuter `execute_g0.py` en lecture seule sans réécrire l'horodatage de [`8 - Manuel/aq/rapports-g0.json`](../8%20-%20Manuel/aq/rapports-g0.json), ajouter `--output <chemin-temporaire.json>`. Les licences de toutes les dépendances installées sont contrôlées mécaniquement via `importlib.metadata` contre [`spdx-allowlist.json`](spdx-allowlist.json).
+Pour exécuter `execute_g0.py` en lecture seule sans réécrire l'horodatage de [`8 - Manuel/aq/rapports-g0.json`](../aq/rapports-g0.json), ajouter `--output <chemin-temporaire.json>`. Les licences de toutes les dépendances installées sont contrôlées mécaniquement via `importlib.metadata` contre [`spdx-allowlist.json`](spdx-allowlist.json).

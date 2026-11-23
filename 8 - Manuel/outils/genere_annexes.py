@@ -303,7 +303,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict) -> str:
         status_counts = Counter(str(s.get("maturity_status", "INCONNU")) for s in specs_list)
         spec_lines = [
             "## Synthèse des spécifications techniques et normatives (`specifications-lplus.json`)\n",
-            "| Statut de maturité normative | Nombre de références | Régime d'isolement dans `8 - Trousse/` |",
+            "| Statut de maturité normative | Nombre de références | Régime d'isolement dans `8 - Manuel/trousse/` |",
             "|---|---:|---|",
         ]
         regime_notes = {
@@ -378,7 +378,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict) -> str:
             "Lorsque des spécifications techniques connaissent des chantiers ouverts au lendemain de la date de "
             "gel — tels que la prochaine publication semestrielle de la spécification MCP (`SEP-3398`) attendue en mars 2027, la stabilisation des attributs "
             "`semantic-conventions-genai` ou la sortie finale d'`A2A v1.1.0` — les contrats du dépôt compagnon "
-            "`8 - Trousse/` isolent la couche de transport et les tables de correspondance derrière des "
+            "`8 - Manuel/trousse/` isolent la couche de transport et les tables de correspondance derrière des "
             "adaptateurs dédiés. Le présent ouvrage fige les preuves vérifiées au "
             f"{freeze_fr} et formule toute échéance ultérieure au futur comme jalons à venir.\n\n"
             "L'audit atomique Wyvern complète les garde-fous mécaniques de `G1` en vérifiant l'exactitude "
@@ -394,7 +394,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict) -> str:
             "exclusivement sur les textes primaires accessibles au Canada fédéral (`BSIF E-23`, `B-10`, `B-15`, "
             "`Loi sur les banques`), au Québec (`LQ-2021-C25`, rapports de la `CAI`, note documentée `AMF`) "
             "et dans l'Union européenne (`EU AI Act`, règlement `(UE) 2026/1744`, `DORA`, `EN 18286:2026`). "
-            "Ni le texte du manuel, ni les scripts et politiques `OPA / Rego` de `8 - Trousse/` ne constituent "
+            "Ni le texte du manuel, ni les scripts et politiques `OPA / Rego` de `8 - Manuel/trousse/` ne constituent "
             "un avis juridique, une certification d'audit ou une homologation sur un système de production réel.\n\n"
             "La séparation étanche entre les agents rédacteurs des unités narratives et les cinq auditeurs "
             "`auditeur-wyvern` garantit qu'aucune hypothèse implicite ne traverse la barrière `G2` sans appui "
@@ -545,7 +545,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
     intro = (
         f"# {unit_meta['title']}\n\n"
         "Cette annexe rassemble de façon déterministe la matrice de traçabilité reliant l'architecture de "
-        "référence aux composants exécutables de `8 - Trousse/`, la table canonique de passage des cinq "
+        "référence aux composants exécutables de `8 - Manuel/trousse/`, la table canonique de passage des cinq "
         "discordances inter-volumes, le bilan des quatre suites officielles de vecteurs tiers, les compteurs "
         "d'exécution de la barrière logicielle `G0` et le rapport consolidé des six barrières d'assurance "
         f"qualité (`G0` à `G5` et lissage `CA-16`) arrêtés à la date de gel du {freeze_fr}."
@@ -580,7 +580,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
         fam_counts = Counter(str(m.get("family", "AUTRE")) for m in mappings)
         mat_rows = [
             "## Synthèse de la matrice de traçabilité (`matrice-exig-prr-c40.json`)\n",
-            "| Famille contractuelle | Entrées mappées | Modules cibles (`8 - Trousse/`) |",
+            "| Famille contractuelle | Entrées mappées | Modules cibles (`8 - Manuel/trousse/`) |",
             "|---|---:|---|",
         ]
         for fam, cnt in sorted(fam_counts.items()):
@@ -621,7 +621,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
     else:
         g0_block = (
             "## Bilan exécutable de la barrière logicielle `G0` (`aq/rapports-g0.json`)\n\n"
-            "La barrière `G0` exécute `execute_g0.py` sur `8 - Trousse/` en vérifiant `requirements.lock` "
+            "La barrière `G0` exécute `execute_g0.py` sur `8 - Manuel/trousse/` en vérifiant `requirements.lock` "
             "`SHA-256`, l'audit `SPDX MIT`, la validation `JSON Schema Draft 2020-12` (`strict: true`), la clause "
             "`default allow := false` et `opa test --coverage 100\u00a0%`, les quatre suites officielles de vecteurs "
             "tiers (`RFC 8785`, `NIST ACVP FIPS 204/205`, `a2a-tck 1.0.0.alpha3`, `OWASP SRC-055 L+`), "
@@ -679,7 +679,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
             f"Le manuel intègre **{n_figs} figures originales ({n_puml} schémas vectoriels `PlantUML` "
             f"`-failfast2` et {n_mmd} organigrammes `Mermaid` à `300 DPI`)**, chacune bornée entre dix et "
             "quatorze nœuds. Aucun bloc de code n'est rédigé à la main dans la prose : les quatorze extraits "
-            "d'au plus quarante lignes sont injectés depuis `8 - Trousse/` et contrôlés octet pour octet par "
+            "d'au plus quarante lignes sont injectés depuis `8 - Manuel/trousse/` et contrôlés octet pour octet par "
             "empreinte `SHA-256` (`CA-G0-SYNC`) dès que `verifie_manuscrit.py` lève son masquage.\n\n"
             "La séparation entre l'agent concepteur des tests (`auteur-tests-oracle`) et l'agent implémenteur "
             "(`batisseur-code`) en barrière `G0`, renforcée par l'exécution hors ligne des quatre suites de "
@@ -690,13 +690,13 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
             "`assertions CI G0`) avec un plancher de huit affirmations vérifiées par unité narrative.\n\n"
             "Les deux annexes demeurent régénérées mécaniquement depuis les registres JSON SSOT, le rapport "
             "`aq/rapports-g0.json` et les journaux d'assurance qualité `G2`–`G5`, interdisant toute divergence "
-            "entre les chiffres annoncés dans les chapitres, les résultats exécutés dans `8 - Trousse/` et les "
+            "entre les chiffres annoncés dans les chapitres, les résultats exécutés dans `8 - Manuel/trousse/` et les "
             "éditions assemblées finale Markdown, HTML autonome et PDF Typst (`6,14 × 9,21 po` à `10,6 pt`)."
         ),
         (
             "## Catalogue des quatre suites officielles de vecteurs tiers\n\n"
             "L'intégrité hors ligne de chaque vecteur est contrôlée par `execute_g0.py` contre "
-            "`8 - Trousse/vectors/vectors-manifest.json` avant toute exécution de test :\n\n"
+            "`8 - Manuel/trousse/vectors/vectors-manifest.json` avant toute exécution de test :\n\n"
             "1. **`RFC 8785` (`JCS`)** : vecteurs de canonisation IEEE-754 ECMAScript et tri UTF-16 "
             "(`Appendices A/B` et `cyberphone/json-canonicalization`) face à `harness_proto/jcs.py`.\n"
             "2. **`NIST FIPS 204 / 205` (`ACVP`)** : jeux officiels `usnistgov/ACVP-Server` pour `ML-DSA-65`, "
@@ -723,7 +723,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
             "fiche architecturale bloquante `2027-B001` à au moins un symbole exécutable et un nœud de test "
             "vérifié en barrière `G0`. L'objectif de cette liaison stricte consiste à supprimer toute prescription "
             "déclarative dépourvue de mécanisme d'essai : aucun principe architectural ne figure dans la matrice "
-            "sans correspondance directe dans `8 - Trousse/` ni ancrage explicite vers le corpus de référence.\n\n"
+            "sans correspondance directe dans `8 - Manuel/trousse/` ni ancrage explicite vers le corpus de référence.\n\n"
             "En parallèle, la correspondance avec les cinq blocs fonctionnels normalisés (`5 SBB`, Tableau 12 du "
             "cadre de référence) et les trois plans types `C01` à `C40` garantit que les quatre couches d'exécution "
             "— harnais typé, identité et couloir probatoire, politiques hors modèle avec sémantique Saga et banc "
@@ -748,7 +748,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
             "volume PDF mis en page par `Typst` sans coupure de tableau orpheline, ni débordement de code, ni "
             "figure tronquée. Les scripts d'outillage normalisent les fins de lignes Unix (`LF`) avant le calcul "
             "de chaque empreinte `SHA-256` et résolvent les binaires de vérification dans l'environnement épinglé "
-            "de `8 - Trousse/` afin qu'un audit tiers puisse rejouer intégralement la validation hors ligne avec "
+            "de `8 - Manuel/trousse/` afin qu'un audit tiers puisse rejouer intégralement la validation hors ligne avec "
             "un résultat strictement identique."
         ),
         (

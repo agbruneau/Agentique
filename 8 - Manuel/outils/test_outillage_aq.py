@@ -113,7 +113,7 @@ def _build_valid_unit_text(
             "|---|---|---|\n"
             "| MCP | 2025-11-25 | 2026-07-28 |\n\n"
             "*Tableau 0.1 — Synthèse canonique des discordances [1].*\n\n"
-            f"## 0.3 {subs_map.get('0.3', 'Architecture bicéphale du Volume 8 : manuel concis et dépôt compagnon 8 - Trousse/')}\n\n"
+            f"## 0.3 {subs_map.get('0.3', 'Architecture bicéphale du Volume 8 : manuel concis et trousse exécutable 8 - Manuel/trousse/')}\n\n"
             "> **Cinq critères permanents d'évaluation et de preuve exécutable**\n"
             "> 1. Fidélité à la source ouverte épinglée.\n\n"
             f"## 0.4 {subs_map.get('0.4', 'Logique des deux parties, quatre modules Python/OPA et parcours de lecture par rôle')}\n\n"
@@ -207,9 +207,9 @@ def _create_populated_vol8(
     include_vigilance: bool = True,
     book_name: str = "8 - Manuel",
 ) -> Path:
-    """Cree un depot Volume 8 complet valide (8 - Manuel + 8 - Trousse) dans tmp_path."""
+    """Cree un depot Volume 8 complet valide (8 - Manuel avec sous-repertoire trousse/) dans tmp_path."""
     book_dir = tmp_path / book_name
-    trousse_dir = tmp_path / "8 - Trousse"
+    trousse_dir = book_dir / "trousse"
     corpus_dir = tmp_path / "0 - PDF-MD"
     corpus_dir.mkdir(parents=True)
     corpus_file = corpus_dir / "1 - Compendium 2026.md"
@@ -304,7 +304,7 @@ def _create_populated_vol8(
         "synced_excerpts": {
             "G0-EX-CH01-02": {
                 "unit": "ch01",
-                "source_path": "8 - Trousse/harness_proto/pipeline.py",
+                "source_path": "8 - Manuel/trousse/harness_proto/pipeline.py",
                 "lines": "3-7",
                 "line_count": 5,
                 "sha256": ex_sha,
@@ -582,7 +582,7 @@ def _create_populated_vol8(
 
     toc_expectations = _parse_toc_expectations(book_dir)
     synced_block_ch01 = (
-        f'<!-- CA-G0-SYNC id="G0-EX-CH01-02" path="8 - Trousse/harness_proto/pipeline.py" lines="3-7" sha256="{ex_sha}" -->\n'
+        f'<!-- CA-G0-SYNC id="G0-EX-CH01-02" path="8 - Manuel/trousse/harness_proto/pipeline.py" lines="3-7" sha256="{ex_sha}" -->\n'
         "```python\n"
         + "\n".join(excerpt_lines)
         + "\n```\n\n"

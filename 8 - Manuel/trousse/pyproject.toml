@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agentique-trousse-vol8"
 version = "1.0.0"
-description = "Dépôt compagnon exécutable du manuel Ingénierie exécutable de l'entreprise agentique (référence figée au 2026-12-02, non-avis)"
+description = "Trousse logicielle exécutable intégrée du manuel Ingénierie exécutable de l'entreprise agentique (référence figée au 2026-12-02, non-avis)"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"

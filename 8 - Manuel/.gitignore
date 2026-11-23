@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 livrables/*.tmp
+trousse/.venv/
+trousse/.tools/
 
 # Copies locales sous droit d'auteur : jamais versionnees (seul le README l'est)
 sources-locales/*

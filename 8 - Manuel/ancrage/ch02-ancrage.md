@@ -3,7 +3,7 @@
 - **Unité auditée** : `manuscrit/01 - Partie I/Chapitre 02 - Identite non humaine, PQC et double couloir.md`
 - **Dossier fermé de sources** : `sources/ch02-sources.md` (`26` sources `L+` numérotées `[1]` à `[26]` : `SRC-046`, `SRC-047`, `SRC-048`, `SRC-041`, `SRC-009`, `SRC-043`, `SRC-042`, `SRC-045`, `SRC-004`, `SRC-019`, `SRC-020`, `SRC-017`, `SRC-050`, `SRC-012`, `SRC-076`, `SRC-013`, `SRC-089`, `SRC-090`, `SRC-037`, `SRC-044`, `SRC-018`, `SRC-023`, `SRC-010`, `SRC-053`, `SRC-063`, `SRC-077`)
 - **Sources `L+` complémentaires du manifeste (`manifeste-sources-sha256.json`) et `statut F` (`registre-statut-f.json`)** : `SRC-051` (`NIST IR 8547`), `SRC-052` (`G7 Cyber Expert Group`), `SRC-078` (`MCP 2026-07-28 Authorization Security Considerations`) ; `P-39.1` consigné en `statut F` (`HTTP 403`) compensé par `SRC-063` (`LQ 2021, c. 25`)
-- **Preuves `G0` et registres vérifiés** : `aq/rapports-g0.json`, `8 - Trousse/authz_pqc_audit/` (`7` modules), `8 - Trousse/schemas/` (`4` schémas `ch02`), `8 - Trousse/tests/` (`test_authz_pqc_audit.py`, `test_third_party_vectors.py`), `registre/ancres-chronologiques.json`, `registre/faits-empiriques.json`, `registre/glossaire-termes.json`, `registre/matrice-exig-prr-c40.json`
+- **Preuves `G0` et registres vérifiés** : `aq/rapports-g0.json`, `8 - Manuel/trousse/authz_pqc_audit/` (`7` modules), `8 - Manuel/trousse/schemas/` (`4` schémas `ch02`), `8 - Manuel/trousse/tests/` (`test_authz_pqc_audit.py`, `test_third_party_vectors.py`), `registre/ancres-chronologiques.json`, `registre/faits-empiriques.json`, `registre/glossaire-termes.json`, `registre/matrice-exig-prr-c40.json`
 - **Date de gel des faits** : 2 décembre 2026 (`2026-12-02`)
 - **Volume final vérifié (`G1`)** : `8 898` mots lexicaux `CA-03` (`9 847` `split()`, cible `[7 820, 9 180]`)
 - **Barrière** : `G2` (`CA-10`, `CA-12`, protocole d'ancrage atomique Wyvern `specs/contrat-aq.md` § 2.2)
@@ -88,7 +88,7 @@
   - Constat initial : supporté.
   - Verdict final : supporté
 - **C19 (`L031`)** — `RFC 8707` (*Standards Track*, `[5]`) et `EXIG-MCP-11` : le paramètre `resource` lie chaque jeton à son audience `aud` (`SRC-009.txt` l. 54, 194–197), de sorte qu'un relais vers un autre service rompt cette liaison `[5]` et caractérise un *passage de jeton* interdit par `EXIG-MCP-11` (`MCP 2026-07-28`, `SRC-078.txt`, Chapitre 1) sous le code `TOKEN_PASSTHROUGH_AUD_MISMATCH`.
-  - Constat initial : imprécis (plaçait `[5]` après `TOKEN_PASSTHROUGH_AUD_MISMATCH` comme si `RFC 8707` énonçait `EXIG-MCP-11` et ce code ; rectifié pour attribuer exactement la liaison d'audience à `[5]`, l'interdiction *passthrough* à `MCP` / `EXIG-MCP-11` et le code d'erreur à `8 - Trousse/`).
+  - Constat initial : imprécis (plaçait `[5]` après `TOKEN_PASSTHROUGH_AUD_MISMATCH` comme si `RFC 8707` énonçait `EXIG-MCP-11` et ce code ; rectifié pour attribuer exactement la liaison d'audience à `[5]`, l'interdiction *passthrough* à `MCP` / `EXIG-MCP-11` et le code d'erreur à `8 - Manuel/trousse/`).
   - Verdict final : supporté
 - **C20 (`L033`)** — `RFC 9449` `DPoP` (*Standards Track*, `[6]`) : liaison cryptographique du jeton d'accès via l'empreinte de clé publique dans `cnf` (`jkt`) et présentation par requête d'un en-tête `dpop+jwt` contenant `htm`, `htu`, `ath` (SHA-256 Base64url du jeton) et `jti` à usage unique (`SRC-043.txt` l. 5, 397–466, 701–707).
   - Constat initial : supporté.
@@ -97,7 +97,7 @@
   - Constat initial : supporté.
   - Verdict final : supporté
 - **C22 (`L071`)** — Implémentation des portes `S-01`, `S-03`, `SBB-SECRETS-VAULT` et du volet OBO de `C27` (`matrice-exig-prr-c40.json` où `C27` pointe d'abord sur `pqc_http431`), rejet `MISSING_NHI_ACTOR`, séparation entre la garde logicielle `isinstance(exp, bool)` dans `obo_dpop.py` contre `True == 1` en Python et les assertions effectivement couvertes par `test_authz_pqc_audit.py` (`TOKEN_EXPIRED`, `EXP_EXTENSION_FORBIDDEN`).
-  - Constat initial : imprécis (prêtait à `test_authz_pqc_audit.py` un vecteur de test sur un booléen dans `exp` alors que `8 - Trousse/tests/` n'en contient aucun et que `isinstance(exp, bool)` relève d'une garde d'implémentation de `obo_dpop.py`, tout en omettant que `C27` vise prioritairement `pqc_http431` ; rectifié).
+  - Constat initial : imprécis (prêtait à `test_authz_pqc_audit.py` un vecteur de test sur un booléen dans `exp` alors que `8 - Manuel/trousse/tests/` n'en contient aucun et que `isinstance(exp, bool)` relève d'une garde d'implémentation de `obo_dpop.py`, tout en omettant que `C27` vise prioritairement `pqc_http431` ; rectifié).
   - Verdict final : supporté
 - **C23 (`L073`)** — `_check_dpop_binding` : contrôle des champs `cnf` (`jkt` ou `x5t#S256`) confrontés au champ interne `jwk_thumbprint` ou `x5t#S256` de `dpop_proof`, vérification de `typ`, `htm`, `htu`, `ath`, et enregistrement différé du `jti` dans `used_dpop_jtis` après réussite complète (`DPOP_JTI_REPLAY`, `obo_dpop.py` l. 24–68).
   - Constat initial : imprécis (mentionnait `jwk_thumbprint` ou `x5t#S256` sans distinguer le membre `cnf.jkt` de `RFC 9449` du champ Python interne `dpop_proof["jwk_thumbprint"]` ; rectifié).
@@ -168,7 +168,7 @@
 - **C42 (`L138`)** — Passage de `O(sauts)` à `O(1)` via `txn` et `tctx` : `[16]` définit `tctx` comme un objet JSON de contexte transactionnel immuable (`SRC-013.txt` l. 559, 607–620) et ne spécifie que le format JWT (`typ: "txntoken+jwt"`, l. 511, `0` occurrence CBOR/COSE), tandis que `pqc_http431.py` (l. 82–90, 120–145) modélise `TRANSACTION_TOKEN_JWT` sous `"typ": "txn+jwt"` avec une durée de vie de `300` s et un condensat `jcs_sha256_hex` dans `tctx`, et transpose ce motif `O(1)` en `COSE_Sign1` ML-DSA (`RFC 9964` `[14]`) pour `TRANSACTION_TOKEN_CBOR` ; garde-fous de `[16]` (`SRC-013.txt` § 13.12).
   - Constat initial : imprécis (attribuait à `[16]` la notion de condensat cryptographique dans `tctx` et ne séparait pas la spécification purement JWT de `-11` de la transposition `COSE_Sign1` opérée par `pqc_http431.py` ; rectifié).
   - Verdict final : supporté
-- **C43 (`L142`)** — Implémentation `pqc_http431.py` en Python pur reposant sur `dilithium-py` (licence `MIT`) et `cbor2` (licence `MIT`), confrontée hors ligne aux vecteurs officiels `NIST FIPS 204 ACVP` (`ML-DSA-keyGen-FIPS204`, `ML-DSA-sigGen-FIPS204`, `ML-DSA-sigVer-FIPS204` dans `8 - Trousse/vectors/nist_acvp/`).
+- **C43 (`L142`)** — Implémentation `pqc_http431.py` en Python pur reposant sur `dilithium-py` (licence `MIT`) et `cbor2` (licence `MIT`), confrontée hors ligne aux vecteurs officiels `NIST FIPS 204 ACVP` (`ML-DSA-keyGen-FIPS204`, `ML-DSA-sigGen-FIPS204`, `ML-DSA-sigVer-FIPS204` dans `8 - Manuel/trousse/vectors/nist_acvp/`).
   - Constat initial : imprécis (mentionnait à tort `MIT OR Apache-2.0` pour `dilithium-py`, contredit par `dilithium_py-1.5.1.dist-info/METADATA` et `LICENSE` indiquant uniquement `MIT` ; rectifié).
   - Verdict final : supporté
 - **C44 (`L144`)** — Équité algorithmique entre les six `PqcProfile` tous signés en `ML-DSA-65` ou `ML-DSA-87` (`RFC 9964`), encodage Base64url de `pub` dans `JWT_EMBEDDED_JWK`, séparation des `4` profils `O(sauts)` (`~` en JOSE ou liste CBOR) et `2` profils `O(1)` (`tctx` sur `64` hex constants), et modélisation dans `JWT_X5C_CHAIN` de l'encodage Base64 (`base64.b64encode`) d'un gabarit DER minimal (clé publique, signature ML-DSA et `4` octets de gabarit dans `pqc_http431.py` l. 127–130).
@@ -342,8 +342,8 @@
 
 ### Vérification directe des preuves `G0` exécutées en session d'audit
 
-- **`pytest` complet (`8 - Trousse/.venv/Scripts/python.exe -B -m pytest "8 - Trousse/tests" -v`)** : `83 passed in 18.79s` (`0 failed`, `0 skipped` sur `test_authz_pqc_audit.py`, `test_evalops_prr.py`, `test_harness_proto.py`, `test_policy_saga.py`, `test_saga_10_faults.py`, `test_third_party_vectors.py`).
-- **Tests OPA complets (`8 - Trousse/.tools/opa.exe test "8 - Trousse/policies_opa" -v` et `--coverage`)** : `PASS: 45/45` et `covered_lines = 585`, `not_covered_lines = 0`, `coverage = 100`.
+- **`pytest` complet (`8 - Manuel/trousse/.venv/Scripts/python.exe -B -m pytest "8 - Manuel/trousse/tests" -v`)** : `83 passed in 18.79s` (`0 failed`, `0 skipped` sur `test_authz_pqc_audit.py`, `test_evalops_prr.py`, `test_harness_proto.py`, `test_policy_saga.py`, `test_saga_10_faults.py`, `test_third_party_vectors.py`).
+- **Tests OPA complets (`8 - Manuel/trousse/.tools/opa.exe test "8 - Manuel/trousse/policies_opa" -v` et `--coverage`)** : `PASS: 45/45` et `covered_lines = 585`, `not_covered_lines = 0`, `coverage = 100`.
 - **Contrôles numériques et schémas `G0` en séance** : exécution directe de `pqc_http431.evaluate_http_431` (concordance bit à bit du Tableau 2.2), `ciba_approval.compute_action_hash_h` (`92be40835a73023d117ebb4965da82dfa05e2e6d647d0919d53461289bbc6e81`), métadonnées `dilithium-py 1.5.1` (`MIT`) et `cbor2 6.3.0` (`MIT`), `aq/rapports-g0.json` (`overall_status = PASS`, `exit_code = 0`, `spdx_check.passed = true`, `SHA-256` exacts pour `G0-EX-CH02-01` à `G0-EX-CH02-04`).
 - **Re-vérification `G1` finale post-rectification (`C:\Python314\python.exe -B "8 - Manuel/outils/verifie_manuscrit.py" --unit ch02 --strict`)** : `exit 0` (`OK : Barriere deterministe G1 passee avec 0 erreur.`, `8 898` mots lexicaux `CA-03` / `9 847` `split()`).
 
@@ -352,7 +352,7 @@
 
 ## Contrôle `G2` différentiel post-G4 (`9563b136`)
 
-- **Périmètre contrôlé :** retouches `G4` de `Chapitre 02` (`L21`, `L27`, `L29`, `L71`, `L73`, `L75`), vérifiées contre `8 - Trousse/authz_pqc_audit/obo_dpop.py`, `schemas/delegated_token_claims.schema.json`, `tests/test_authz_pqc_audit.py` (`23/23`), `SRC-009`, `SRC-010`, `SRC-042` et `SRC-043`.
+- **Périmètre contrôlé :** retouches `G4` de `Chapitre 02` (`L21`, `L27`, `L29`, `L71`, `L73`, `L75`), vérifiées contre `8 - Manuel/trousse/authz_pqc_audit/obo_dpop.py`, `schemas/delegated_token_claims.schema.json`, `tests/test_authz_pqc_audit.py` (`23/23`), `SRC-009`, `SRC-010`, `SRC-042` et `SRC-043`.
 - **Rectification appliquée à `L73` :** sens exact `access_token` fourni *par* l'appelant, rétablissement de « au *champ interne* `jwk_thumbprint` ou `x5t#S256` de `dpop_proof` » (distinct de `jwk` JWT dans `RFC 9449`) et qualification « cache partagé à *fenêtre temporelle bornée* » conforme à `RFC 9449 § 11.1` (`SRC-043.txt L1324–1336`).
 - **Verdict final post-G4 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
 

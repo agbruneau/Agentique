@@ -177,8 +177,8 @@
       "upstream_url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
       "pinned_ref": "b0b85c5b725be135248869e642efe5e4eca6ea17+b234defdc908",
       "license_spdx": "CC-BY-SA-4.0",
-      "sha256": "2282a325bdafc8c266331d8582974ee7f86f06afc78bc6c39e8950aabd72c3f1",
-      "byte_length": 11227
+      "sha256": "f817c27010e7bb867b58a660654541d3be12cf2a5f345a9f137e59b92070c10f",
+      "byte_length": 11304
     },
     {
       "suite": "owasp_src055",

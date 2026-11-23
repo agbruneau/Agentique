@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task **uniquement lorsque l'utilisateur donnera le feu vert de lancement après validation de `specs-volume-8/`**. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Produire, coder, tester en double aveugle, illustrer, vérifier par six barrières indépendantes (`G0` à `G5`) et assembler en triple édition (`.md`, `.html` autonome, `.pdf` Typst `6,14 × 9,21 po`) l'ouvrage complet *Ingénierie exécutable de l'entreprise agentique* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)* (`38 000` mots ± 8 % = `34 960–41 040` mots : liminaire `3 500` mots + `4` chapitres `31 500` mots + Annexes `A`–`B` `3 000` mots, `9` figures `Fig-00` à `Fig-08`) ainsi que son dépôt logiciel compagnon exécutable `8 - Trousse/` (`MIT`, `4` modules `Python 3.12+` et paquets `OPA / Rego`) à partir du dossier normatif `specs-volume-8/`.
+**Goal:** Produire, coder, tester en double aveugle, illustrer, vérifier par six barrières indépendantes (`G0` à `G5`) et assembler en triple édition (`.md`, `.html` autonome, `.pdf` Typst `6,14 × 9,21 po`) l'ouvrage complet *Ingénierie exécutable de l'entreprise agentique* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)* (`38 000` mots ± 8 % = `34 960–41 040` mots : liminaire `3 500` mots + `4` chapitres `31 500` mots + Annexes `A`–`B` `3 000` mots, `9` figures `Fig-00` à `Fig-08`) ainsi que son dépôt logiciel compagnon exécutable `8 - Manuel/trousse/` (`MIT`, `4` modules `Python 3.12+` et paquets `OPA / Rego`) à partir du dossier normatif `specs-volume-8/`.
 
-**Architecture:** Pipeline séquentiel en sept tâches découplées par fichiers versionnés et journaux cryptographiques `SHA-256` : (1) adaptation ciblée des `13` fichiers d'outillage existants de `C:\Github\Agentique\7 - Livre 2027\outils` (`7 897` lignes sur base `2f129b4`) + création unique de `execute_g0.py` et instanciation de `manifest.json`/`protocole-mlr-2027.json`, (2) collecte scientifique et technique ouverte `L+` hachée `SHA-256` (specs Git épinglées, RFC, NIST, arXiv, `4` suites de vecteurs tiers) et constitution des `4` registres JSON SSOT + `5` bases fermées `sources/ch00..ch04-sources.md`, (3) développement TDD en double aveugle (`auteur-tests-oracle` puis `batisseur-code`) des `4` modules Python et règles `OPA/Rego` dans `8 - Trousse/` avec validation `G0` (`exit 0`), (4) génération et compilation stricte des `9` figures (`7` `PlantUML .svg -failfast2` + `2` `Mermaid .png 300 DPI`, `≤ 14` nœuds), (5) rédaction cloisonnée des `5` unités narratives avec injection mécanique des extraits `≤ 40` L depuis `8 - Trousse/` et passage `G0` + `G1` (`CA-G0-SYNC`), (6) exécution étanche de `G2` (`5` auditeurs Wyvern neufs), `G3` passe 1 (`seed=20270801`) et `G4` (`gauntlet-loop` A/B + rejeu `G0`+`G1`+`G2` différentiel), puis (7) lissage `G5`, recollation à froid `G3` passe 2 (`seed=20270802`), régénération déterministe des Annexes `A`–`B`, compilation triple et inspection visuelle de `100 %` des pages.
+**Architecture:** Pipeline séquentiel en sept tâches découplées par fichiers versionnés et journaux cryptographiques `SHA-256` : (1) adaptation ciblée des `13` fichiers d'outillage existants de `C:\Github\Agentique\7 - Livre 2027\outils` (`7 897` lignes sur base `2f129b4`) + création unique de `execute_g0.py` et instanciation de `manifest.json`/`protocole-mlr-2027.json`, (2) collecte scientifique et technique ouverte `L+` hachée `SHA-256` (specs Git épinglées, RFC, NIST, arXiv, `4` suites de vecteurs tiers) et constitution des `4` registres JSON SSOT + `5` bases fermées `sources/ch00..ch04-sources.md`, (3) développement TDD en double aveugle (`auteur-tests-oracle` puis `batisseur-code`) des `4` modules Python et règles `OPA/Rego` dans `8 - Manuel/trousse/` avec validation `G0` (`exit 0`), (4) génération et compilation stricte des `9` figures (`7` `PlantUML .svg -failfast2` + `2` `Mermaid .png 300 DPI`, `≤ 14` nœuds), (5) rédaction cloisonnée des `5` unités narratives avec injection mécanique des extraits `≤ 40` L depuis `8 - Manuel/trousse/` et passage `G0` + `G1` (`CA-G0-SYNC`), (6) exécution étanche de `G2` (`5` auditeurs Wyvern neufs), `G3` passe 1 (`seed=20270801`) et `G4` (`gauntlet-loop` A/B + rejeu `G0`+`G1`+`G2` différentiel), puis (7) lissage `G5`, recollation à froid `G3` passe 2 (`seed=20270802`), régénération déterministe des Annexes `A`–`B`, compilation triple et inspection visuelle de `100 %` des pages.
 
 **Tech Stack:** Python 3.12+ (`pytest`, `jsonschema`, `pymupdf`, `hashlib`, `decimal`, `json`, `re`), `OPA` CLI (`opa test --coverage`, `Apache 2.0`), `PlantUML` (`.svg` `-failfast2`), `Mermaid CLI` (`.png` `300 DPI`), `Pandoc` (`-f markdown-tex_math_dollars+tex_math_single_backslash`), `Typst` (`6,14 × 9,21 po`), orchestration multi-agents isolée via `invoke_subagent`.
 
@@ -17,7 +17,7 @@
 - Propreté lexicale adaptée (`AO-03` / `CA-02`) et anti-auto-plagiat (`AO-04` / `CA-03`) : identifiants techniques (`EXIG-*`, `CAP-*`, `ADR-*`, `POR-*`, `PRR`, `C01–C40`, `SBB`) autorisés ; marqueurs bruts (`[S]`, `[D]`, `[A]`, `[M]`, `[N]`, `[L+]`), classifications internes non définies (`Classe`, `Stade`, `Palier`), codes hors périmètre `A'` (`ANC-*`, `INI-*`, `PEX-*`, `SIG-*`, `DIV-*`) et formules creuses bannis ; `0` collision `12-grammes` face aux `7` volumes consolidés (`1 - Compendium 2026.md` à `7 - Livre.md`), hors citations courtes `≤ 40` mots entre guillemets français `« … » [n]` et extraits validés `CA-G0-SYNC`.
 - Sûreté typographique (`CA-06`) : aucun caractère dollar non échappé dans aucun fichier `.md` ; montants échappés en `\$`, formules écrites uniquement en `\(...\)` ou `\[...\]`, `Pandoc` invoqué avec `-f markdown-tex_math_dollars+tex_math_single_backslash`.
 - Zéro preuve circulaire (`AO-02`) : les `7` volumes consolidés du dépôt (`1 - Compendium 2026.md`..`7 - Livre.md`) demeurent en lecture seule absolue et servent uniquement de carte de repérage ; tout fait issu de ces volumes est réancré sur sa source primaire `L+` hachée `SHA-256`.
-- Portée `non-avis` (`AO-05` & `DC-P12`) et séparation livre / code (`AO-08` & `CA-G0-SYNC`) : bandeau explicite `non-avis` (hors modèle, sans avis juridique, certification ni homologation `SoR` réel), licences `CC BY 4.0` (manuel) / `MIT` (`8 - Trousse/`), aucun bloc de code écrit à la main en prose (extraits `≤ 40` L injectés mécaniquement et scellés par `SHA-256`), et exclusion en `G0` de `Cedar`, `Rust`, `Go`, `Firecracker`/KVM, `PostgreSQL RLS`, `OpenFGA` et `Nginx`/`Envoy` live.
+- Portée `non-avis` (`AO-05` & `DC-P12`) et séparation livre / code (`AO-08` & `CA-G0-SYNC`) : bandeau explicite `non-avis` (hors modèle, sans avis juridique, certification ni homologation `SoR` réel), licences `CC BY 4.0` (manuel) / `MIT` (`8 - Manuel/trousse/`), aucun bloc de code écrit à la main en prose (extraits `≤ 40` L injectés mécaniquement et scellés par `SHA-256`), et exclusion en `G0` de `Cedar`, `Rust`, `Go`, `Firecracker`/KVM, `PostgreSQL RLS`, `OpenFGA` et `Nginx`/`Envoy` live.
 - Ordre chronologique des barrières (`contrat-aq.md`) : `G0` → `G1` → `G2` → `G3` passe 1 (`seed=20270801`) → `G4` (`gauntlet-loop` + `G0`+`G1`+`G2` diff) → `G5` lissage (+ `G0`+`G1`+`G2` diff) → `G3` passe 2 à froid (`seed=20270802`) → `G5` Annexes `A`–`B`, rendu triple et inspection visuelle `100 %` des pages.
 - Calendrier et étanchéité : date de gel des faits arrêtée par l'auteur (**André-Guy Bruneau, M.Sc IT**) au **2 décembre 2026** (`2026-12-02`), parution visée en **janvier 2027** (toutes les échéances `2027+` rédigées au futur comme échéances à venir). Double aveugle `auteur-tests-oracle` ≠ `batisseur-code` en `G0`, et aucun sous-agent rédacteur n'exécute `G2`, `G3`, `G4` ou `G5` sur son propre texte ; `gauntlet-loop` utilise exclusivement `invoke_subagent`, jamais `swarm`.
 
@@ -25,7 +25,7 @@
 
 - Risque d'auto-validation corrélée intra-essaim entre `auteur-tests-oracle` et `batisseur-code` en `G0` : exiger l'exécution des `4` suites de vecteurs officiels tiers (`RFC 8785`, `NIST FIPS 204/205 ACVP`, `a2aproject/a2a-tck 1.0.0.alpha3`, `OWASP SRC-055 L+`) et verrouiller par `SHA-256` les oracles avant implémentation.
 - Risque d'absence de refus par défaut dans `OPA / Rego` (qui évalue à *indéfini* sans clause par défaut) : imposer en `execute_g0.py` le contrôle syntaxique `default allow := false` (ou `default decision := "deny"`) en tête de paquet et `opa test --coverage 100 %` sur vecteurs négatifs et mal typés.
-- Dérive entre le code exécuté dans `8 - Trousse/` et les extraits affichés dans le manuel : lever le masquage `_mask_fenced_code_preserving_lines` (`verifie_manuscrit.py` `L117-L137`, `8` appels `L154, L350, L494, L583, L731, L862, L908, L1184`) pour valider chaque bloc clôturé sous `CA-G0-SYNC` (`≤ 40` L, chemin source valide, concordance octet et `SHA-256` contre `aq/rapports-g0.json`).
+- Dérive entre le code exécuté dans `8 - Manuel/trousse/` et les extraits affichés dans le manuel : lever le masquage `_mask_fenced_code_preserving_lines` (`verifie_manuscrit.py` `L117-L137`, `8` appels `L154, L350, L494, L583, L731, L862, L908, L1184`) pour valider chaque bloc clôturé sous `CA-G0-SYNC` (`≤ 40` L, chemin source valide, concordance octet et `SHA-256` contre `aq/rapports-g0.json`).
 - Blocage de `CA-02` sur les identifiants d'ingénierie du Volume 8 : retirer `EXIG-*`, `CAP-*`, `ADR-*`, `POR-*`, `PRR` de `forbidden_prose_regexes` (`manifest.json` et `_check_ca02_unit`) tout en maintenant bannis `[S]`, `[D]`, `[A]`, `[M]`, `[N]`, `[L+]`, `Classe`/`Stade`/`Palier` et les formules creuses.
 - Régression factuelle, altération de `\$` ou désynchronisation de `CA-G0-SYNC` lors de `G4` (`gauntlet-loop`) et `G5` (`lisseur-editorial`) : imposer le rejeu complet de `execute_g0.py`, `verifie_manuscrit.py --strict` et d'une passe Wyvern `G2` différentielle sur le `git diff`.
 
@@ -47,7 +47,7 @@
 - Create: `8 - Livre 2027/outils/execute_g0.py` et `8 - Livre 2027/outils/test_execute_g0.py`
 
 **Interfaces:**
-- Consumes: `specs-volume-8/*.md`, `8 - Livre 2027/specs/{manifest.json, protocole-mlr-2027.json}`, `8 - Livre 2027/registre/*.json`, `8 - Trousse/**`
+- Consumes: `specs-volume-8/*.md`, `8 - Livre 2027/specs/{manifest.json, protocole-mlr-2027.json}`, `8 - Livre 2027/registre/*.json`, `8 - Manuel/trousse/**`
 - Produces:
   - `execute_g0.run_g0(trousse_dir: Path, out_report: Path, book_dir: Path | None = None) -> int` (exécute `pytest`, `opa test --coverage`, contrôle syntaxique `default allow := false`, `jsonschema`, contrôle `requirements.lock` `SHA-256` et audit `SPDX MIT`, écrit `aq/rapports-g0.json`)
   - `verifie_manuscrit.check_manuscrit(root: Path, strict: bool = True) -> list[str]` (retourne `[]` si `CA-01`..`CA-11`, `CA-17`, `CA-20` `CA-G0-SYNC` passent)
@@ -113,7 +113,7 @@ git commit -m "Adapter les 13 outils AQ de Vol. 7 et creer execute_g0.py pour le
 - Create: `8 - Livre 2027/recherche/corpus_l_plus/*.txt`
 - Create: `8 - Livre 2027/recherche/manifeste-sources-sha256.json`
 - Create: `8 - Livre 2027/recherche/registre-statut-f.json`
-- Create: `8 - Trousse/vectors/{rfc8785,nist_acvp,a2a_tck,owasp_src055}/` (vecteurs épinglés et condensats `SHA-256`)
+- Create: `8 - Manuel/trousse/vectors/{rfc8785,nist_acvp,a2a_tck,owasp_src055}/` (vecteurs épinglés et condensats `SHA-256`)
 - Create: `8 - Livre 2027/registre/{specifications-lplus.json, matrice-exig-prr-c40.json, concordance-taxonomies.json, ancres-chronologiques.json, faits-empiriques.json, glossaire-termes.json}`
 - Create: `8 - Livre 2027/sources/ch00-sources.md` .. `ch04-sources.md`
 
@@ -146,7 +146,7 @@ Expected: FAIL sur les nouveaux cas d'épinglage Git si non encore alimentés, p
 - [ ] **Step 3: Exécuter la collecte ouverte `L+`, importer les `4` suites de vecteurs tiers et bâtir les `4` registres JSON SSOT + `5` bases `sources/`**
 
 1. Collecter et hacher `SHA-256` les sources ouvertes `L+` antérieures ou égales au `2 décembre 2026` : spécifications Git épinglées (`MCP 2026-07-28`, `SEP-2596`/`SEP-3398`, `A2A v1.0.1`, `OPA`, `OTel v1.41.0` & `semantic-conventions-genai` `85` attr. `Development`, `FOCUS v1.4`), `RFC` (`7493`, `7515`, `8693`, `8707`, `8785`, `9449`, `9943`, `9964` et *Internet-Drafts* qualifiés comme tels : `draft-ietf-oauth-transaction-tokens-11`, `draft-chen-oauth-agent-revocation-01`), `NIST` (`FIPS 204`, `FIPS 205`, `IR 8547 Final`), `arXiv` (`2503.18813v2` `CaMeL`, `Can CaMeLs Talk?`, `2606.12683`, études `pass^k`, `tests métamorphiques`), textes juridiques ouverts (`BSIF E-23`, `EU AI Act`, `LQ-2021-C25`, `QC-AMF-NOTE-2026.txt`), et `OWASP SRC-055 L+`. Consigner tout blocage (`lautorite.qc.ca`, `legisquebec.gouv.qc.ca`, `genai.owasp.org`, `ISO/IEC 42001`) dans `registre-statut-f.json`.
-2. Importer les `4` jeux tiers officiels dans `8 - Trousse/vectors/` : `RFC 8785` Appendices A/B & `cyberphone/json-canonicalization`, `NIST FIPS 204/205 ACVP` (`usnistgov/ACVP-Server`), `a2aproject/a2a-tck` (`1.0.0.alpha3`) et `OWASP SRC-055`.
+2. Importer les `4` jeux tiers officiels dans `8 - Manuel/trousse/vectors/` : `RFC 8785` Appendices A/B & `cyberphone/json-canonicalization`, `NIST FIPS 204/205 ACVP` (`usnistgov/ACVP-Server`), `a2aproject/a2a-tck` (`1.0.0.alpha3`) et `OWASP SRC-055`.
 3. Constituer les `4` registres JSON SSOT (`specifications-lplus.json`, `matrice-exig-prr-c40.json`, `concordance-taxonomies.json`, structure initiale pour `aq/rapports-g0.json`) et les `5` dossiers fermés `sources/ch00-sources.md` à `sources/ch04-sources.md`.
 
 - [ ] **Step 4: Valider `CA-09`, `CA-10` et `CA-11`**
@@ -157,7 +157,7 @@ Expected: PASS (`0 %` de `METADATA_ONLY`, `0` entrée `a_reancrer`, `100 %` `SHA
 - [ ] **Step 5: Commit de la base documentaire `L+` et des vecteurs tiers**
 
 ```powershell
-git add "8 - Livre 2027/recherche" "8 - Livre 2027/registre" "8 - Livre 2027/sources" "8 - Trousse/vectors"
+git add "8 - Livre 2027/recherche" "8 - Livre 2027/registre" "8 - Livre 2027/sources" "8 - Manuel/trousse/vectors"
 git commit -m "Constituer le socle L+ SHA-256, les 4 registres JSON SSOT, les 5 bases sources et les 4 vecteurs tiers"
 ```
 
@@ -167,20 +167,20 @@ git commit -m "Constituer le socle L+ SHA-256, les 4 registres JSON SSOT, les 5 
 
 **Files:**
 - Create (par `auteur-tests-oracle`, via `invoke_subagent`):
-  - `8 - Trousse/schemas/*.schema.json` (`JSON Schema Draft 2020-12`, `strict: true`)
-  - `8 - Trousse/tests/test_harness_proto.py`, `test_authz_pqc_audit.py`, `test_policy_saga.py`, `test_evalops_prr.py`, `test_third_party_vectors.py`, `policies_opa/*_test.rego`
+  - `8 - Manuel/trousse/schemas/*.schema.json` (`JSON Schema Draft 2020-12`, `strict: true`)
+  - `8 - Manuel/trousse/tests/test_harness_proto.py`, `test_authz_pqc_audit.py`, `test_policy_saga.py`, `test_evalops_prr.py`, `test_third_party_vectors.py`, `policies_opa/*_test.rego`
 - Create (par `batisseur-code` distinct, via `invoke_subagent`):
-  - `8 - Trousse/pyproject.toml`, `8 - Trousse/requirements.lock` (empreintes `SHA-256`), `8 - Trousse/LICENSE` (`MIT`), `8 - Trousse/README.md` (avec bandeau `non-avis` & politique de gel)
-  - `8 - Trousse/harness_proto/` (module `harness-proto/`)
-  - `8 - Trousse/authz_pqc_audit/` (module `authz-pqc-audit/`)
-  - `8 - Trousse/policy_saga/` (module `policy-saga/`)
-  - `8 - Trousse/evalops_prr/` (module `evalops-prr/`)
-  - `8 - Trousse/policies_opa/*.rego` (paquets `OPA/Rego` avec `default allow := false`)
+  - `8 - Manuel/trousse/pyproject.toml`, `8 - Manuel/trousse/requirements.lock` (empreintes `SHA-256`), `8 - Manuel/trousse/LICENSE` (`MIT`), `8 - Manuel/trousse/README.md` (avec bandeau `non-avis` & politique de gel)
+  - `8 - Manuel/trousse/harness_proto/` (module `harness-proto/`)
+  - `8 - Manuel/trousse/authz_pqc_audit/` (module `authz-pqc-audit/`)
+  - `8 - Manuel/trousse/policy_saga/` (module `policy-saga/`)
+  - `8 - Manuel/trousse/evalops_prr/` (module `evalops-prr/`)
+  - `8 - Manuel/trousse/policies_opa/*.rego` (paquets `OPA/Rego` avec `default allow := false`)
 - Create (sortie `G0`): `8 - Livre 2027/aq/rapports-g0.json`
 
 **Interfaces:**
-- Consumes: `specs-volume-8/architecture-trousse-g0.md`, `8 - Livre 2027/registre/*.json`, `8 - Trousse/vectors/**`
-- Produces: trousse `8 - Trousse/` exécutable à `exit 0` sous Windows/Linux et rapport scellé `8 - Livre 2027/aq/rapports-g0.json` (incluant les condensats `SHA-256` des extraits `≤ 40` L exposables au manuel)
+- Consumes: `specs-volume-8/architecture-trousse-g0.md`, `8 - Livre 2027/registre/*.json`, `8 - Manuel/trousse/vectors/**`
+- Produces: trousse `8 - Manuel/trousse/` exécutable à `exit 0` sous Windows/Linux et rapport scellé `8 - Livre 2027/aq/rapports-g0.json` (incluant les condensats `SHA-256` des extraits `≤ 40` L exposables au manuel)
 
 - [ ] **Step 1: Dépêcher l'agent isolé `auteur-tests-oracle` pour rédiger les schémas, tests `pytest` et tests `.rego` négatifs**
 
@@ -198,7 +198,7 @@ Expected: FAIL (`exit != 0`, tests rouges sur les `4` modules et paquets `.rego`
 
 - [ ] **Step 3: Dépêcher l'agent isolé `batisseur-code` pour implémenter les `4` modules Python, les règles `OPA/Rego` et `requirements.lock`**
 
-L'agent `batisseur-code` travaille en lecture seule sur `8 - Trousse/tests/` et `8 - Trousse/vectors/`, implémente les `4` modules et les paquets `.rego` avec `default allow := false`, fige les dépendances dans `requirements.lock` avec `SHA-256` et vérifie la compatibilité `SPDX MIT`.
+L'agent `batisseur-code` travaille en lecture seule sur `8 - Manuel/trousse/tests/` et `8 - Manuel/trousse/vectors/`, implémente les `4` modules et les paquets `.rego` avec `default allow := false`, fige les dépendances dans `requirements.lock` avec `SHA-256` et vérifie la compatibilité `SPDX MIT`.
 
 - [ ] **Step 4: Valider la barrière `G0` complète (`CA-19`)**
 
@@ -208,8 +208,8 @@ Expected: PASS (`exit 0`, `100 %` `pytest`, `opa test --coverage 100 %`, `defaul
 - [ ] **Step 5: Commit du jalon `G0`**
 
 ```powershell
-git add "8 - Trousse" "8 - Livre 2027/aq/rapports-g0.json"
-git commit -m "Livrer 8 - Trousse/ (4 modules Python, OPA/Rego, 4 vecteurs tiers) valide G0"
+git add "8 - Manuel/trousse" "8 - Livre 2027/aq/rapports-g0.json"
+git commit -m "Livrer 8 - Manuel/trousse/ (4 modules Python, OPA/Rego, 4 vecteurs tiers) valide G0"
 ```
 
 ---
@@ -259,12 +259,12 @@ git commit -m "Produire et compiler les 9 figures vectorielles et Mermaid 300 DP
 - Create (jet initial): `8 - Livre 2027/manuscrit/03 - Annexes/Annexe A ... .md`, `Annexe B ... .md` (chemins exacts de `manifest.json`)
 
 **Interfaces:**
-- Consumes: `specs-volume-8/{prd.md, toc.md, charte-editoriale.md}`, `8 - Livre 2027/specs/manifest.json`, `registre/*.json`, `sources/ch00..ch04-sources.md`, `diagrammes/rendus/*`, `8 - Trousse/**`, `aq/rapports-g0.json`
-- Produces: `5` fichiers Markdown narratifs totalisant `35 000` mots ± 8 % (avec extraits de contrats `≤ 40` L injectés mécaniquement depuis `8 - Trousse/`) + premier jet des Annexes `A`–`B` (`3 000` mots ± 8 %)
+- Consumes: `specs-volume-8/{prd.md, toc.md, charte-editoriale.md}`, `8 - Livre 2027/specs/manifest.json`, `registre/*.json`, `sources/ch00..ch04-sources.md`, `diagrammes/rendus/*`, `8 - Manuel/trousse/**`, `aq/rapports-g0.json`
+- Produces: `5` fichiers Markdown narratifs totalisant `35 000` mots ± 8 % (avec extraits de contrats `≤ 40` L injectés mécaniquement depuis `8 - Manuel/trousse/`) + premier jet des Annexes `A`–`B` (`3 000` mots ± 8 %)
 
 - [ ] **Step 1: Rédiger les `5` unités narratives en parallèle via `invoke_subagent` (fichiers disjoints)**
 
-Chaque agent rédacteur reçoit exclusivement : son contrat d'unité dans `toc.md` et `manifest.json` (`owned_concepts` vs renvois), `charte-editoriale.md`, `registre/*.json`, sa base fermée `sources/chNN-sources.md`, ses figures assignées et les extraits scellés `≤ 40` L de `8 - Trousse/` issus de `aq/rapports-g0.json`. Interdiction absolue d'écrire un bloc de code à la main ; bandeau `non-avis` (`AO-05`) et gel `2 décembre 2026` respectés ; aucun symbole dollar non échappé (`CA-06`).
+Chaque agent rédacteur reçoit exclusivement : son contrat d'unité dans `toc.md` et `manifest.json` (`owned_concepts` vs renvois), `charte-editoriale.md`, `registre/*.json`, sa base fermée `sources/chNN-sources.md`, ses figures assignées et les extraits scellés `≤ 40` L de `8 - Manuel/trousse/` issus de `aq/rapports-g0.json`. Interdiction absolue d'écrire un bloc de code à la main ; bandeau `non-avis` (`AO-05`) et gel `2 décembre 2026` respectés ; aucun symbole dollar non échappé (`CA-06`).
 
 - [ ] **Step 2: Générer une première version des Annexes `A`–`B` et valider `G0` + `G1` (`CA-G0-SYNC`)**
 
@@ -326,7 +326,7 @@ git commit -m "Valider les barrieres G2 (Wyvern), G3 passe 1 (seed 20270801) et 
 - Create: `8 - Livre.md`, `8 - Livre.pdf` (à la racine du dépôt), `8 - Livre 2027/livrables/8 - Livre 2027.html`
 
 **Interfaces:**
-- Consumes: `manuscrit/**`, `registre/**`, `ancrage/**`, `aq/**`, `diagrammes/rendus/**`, `8 - Trousse/**`
+- Consumes: `manuscrit/**`, `registre/**`, `ancrage/**`, `aq/**`, `diagrammes/rendus/**`, `8 - Manuel/trousse/**`
 - Produces: éditions intégrales `.md`, `.html` autonome et `.pdf` (`Typst 6,14 × 9,21 po`) inspectées visuellement à `100 %` (`CA-14`, `CA-16` à `CA-18`)
 
 - [ ] **Step 1: Exécuter le lissage transversal `G5` par un agent `lisseur-editorial` neuf (`CA-16`)**
@@ -355,5 +355,5 @@ Expected: PASS (`CA-01` à `CA-20` validés à `100 %`, `0` erreur)
 
 ```powershell
 git add "8 - Livre 2027" "8 - Livre.md" "8 - Livre.pdf"
-git commit -m "Livrer le Volume 8 (MD, HTML autonome, PDF Typst) et 8 - Trousse/ valides G0-G5"
+git commit -m "Livrer le Volume 8 (MD, HTML autonome, PDF Typst) et 8 - Manuel/trousse/ valides G0-G5"
 ```

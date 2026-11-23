@@ -15,7 +15,7 @@
 
 ## Synthèse de contrôle des 60 items et stabilité du tirage
 
-- **Contre-vérification des `59` autres items (`Items 1–6`, `8–60`) :** tous vérifiés **`CONFORME`** dès la passe à froid contre `recherche/corpus_l_plus/SRC-*.txt`, `sources/ch00..ch04-sources.md`, `8 - Trousse/**`, `registre/*.json` et `aq/rapports-g0.json`. La stabilité du tirage `draw_stratified_sample(..., seed=20270802)` après retouche de l'Item `7` a été confirmée (`59/60` items identiques champ pour champ ; seul l'Item `7` inclut désormais `[10, 16]` → `["SRC-072", "SRC-082"]`).
+- **Contre-vérification des `59` autres items (`Items 1–6`, `8–60`) :** tous vérifiés **`CONFORME`** dès la passe à froid contre `recherche/corpus_l_plus/SRC-*.txt`, `sources/ch00..ch04-sources.md`, `8 - Manuel/trousse/**`, `registre/*.json` et `aq/rapports-g0.json`. La stabilité du tirage `draw_stratified_sample(..., seed=20270802)` après retouche de l'Item `7` a été confirmée (`59/60` items identiques champ pour champ ; seul l'Item `7` inclut désormais `[10, 16]` → `["SRC-072", "SRC-082"]`).
 - **Observations annexes consignées hors statut d'écart :**
   1. En `00 - Liminaire.md#L41` (`Tableau 0.1` / commentaire), le paragraphe `00-liminaire:P014` reste non retouché car exclu par la passe 1 (`seed=20270801`).
   2. Sur `Item 58` (`ch04:P059:S01`), `SRC-067` (`[21]`) vise l'art. `40` pour les QMS tandis que le rattachement explicite à l'art. `17` provient de `SRC-060` (`[15]`) et de `SRC-069` (`[23]`, déjà cité au paragraphe `L219`).

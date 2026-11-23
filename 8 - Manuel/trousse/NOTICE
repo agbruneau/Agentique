@@ -1,9 +1,9 @@
-AVIS DE PROPRIÉTÉ INTELLECTUELLE ET ATTRIBUTIONS — `8 - Trousse/`
+AVIS DE PROPRIÉTÉ INTELLECTUELLE ET ATTRIBUTIONS — `8 - Manuel/trousse/`
 ====================================================================
 
-1. Dépôt logiciel exécutable (`8 - Trousse/`) et outillage de validation (`8 - Manuel/outils/`)
+1. Trousse logicielle exécutable (`8 - Manuel/trousse/`) et outillage de validation (`8 - Manuel/outils/`)
    - Auteur / Concepteur : André-Guy Bruneau, M.Sc IT (2026–2027)
-   - Licence : MIT (voir le fichier `LICENSE` à la racine de `8 - Trousse/`)
+   - Licence : MIT (voir le fichier `LICENSE` à la racine de `8 - Manuel/trousse/`)
    - Identifiant SPDX des fichiers sources : `# SPDX-License-Identifier: MIT`
 
 2. Manuel compagnon et figures (`8 - Manuel/`)

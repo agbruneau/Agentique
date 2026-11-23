@@ -36,7 +36,7 @@
 4. **`ch03` (Tour 1 — Gagné en `B` face à `A`)**
    - Critique `8e075ec8`. Victoire nette sur l'instrumentation déterministe hors modèle (`NISTAML.015/013`, `ASI01/02/06`, piège `undefined` Rego, `verify_rego_default_deny`, `OpaPolicyEngine.evaluate`/`run_coverage`). Coquille `le modèle privilège` (`L17`), cadrage transparent du choix `OPA / Rego` (`L23–41`) et précision « couverture de lignes à `100 %` » consignés pour le lissage `G5`.
 5. **`ch04` (Tour 1 — Gagné en `A` face à `B`)**
-   - Critique `35bfb9bc`. Victoire nette sur les relations métamorphiques sans oracle et le schéma `2027-B001` ; vérification sur disque confirmant l'intégrité du chemin `8 - Trousse/schemas/adr_2027_b001.schema.json` à `L225`.
+   - Critique `35bfb9bc`. Victoire nette sur les relations métamorphiques sans oracle et le schéma `2027-B001` ; vérification sur disque confirmant l'intégrité du chemin `8 - Manuel/trousse/schemas/adr_2027_b001.schema.json` à `L225`.
 
 ---
 

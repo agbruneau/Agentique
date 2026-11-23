@@ -1,6 +1,6 @@
 # Rapport consolidé de lissage transversal (`G5`), recollation `G3` et inspection visuelle PDF
 
-**Ouvrage :** *Ingénierie exécutable de l'entreprise agentique* (Volume 8 — `8 - Manuel/` et `8 - Trousse/`)  
+**Ouvrage :** *Ingénierie exécutable de l'entreprise agentique* (Volume 8 — `8 - Manuel/` et `8 - Manuel/trousse/`)  
 **Date de gel documentaire :** `2026-12-02` (`2 décembre 2026`)  
 **Critères couverts :** `CA-14`, `CA-16`, `CA-17`, `CA-18`
 
@@ -10,7 +10,7 @@
 
 Le lissage éditorial transversal a unifié le français canadien technique, les conventions typographiques et la cohérence terminologique entre le liminaire, les quatre chapitres analytiques et les journaux d'ancrage :
 
-- Alignement uniforme des intitulés de normalisation et de régulation (`BSIF`, `ACVM NC 31-103`), de la distinction typographique entre les paquets Python (`snake_case` dans `8 - Trousse/`) et les modules en prose (`harness-proto/`, `authz-pqc-audit/`, `policy-saga/`, `evalops-prr/`), ainsi que de la modalité prospective au futur pour les jalons postérieurs au `2 décembre 2026` (`30 mars 2027`, `28 juillet 2027`, `2 décembre 2027`).
+- Alignement uniforme des intitulés de normalisation et de régulation (`BSIF`, `ACVM NC 31-103`), de la distinction typographique entre les paquets Python (`snake_case` dans `8 - Manuel/trousse/`) et les modules en prose (`harness-proto/`, `authz-pqc-audit/`, `policy-saga/`, `evalops-prr/`), ainsi que de la modalité prospective au futur pour les jalons postérieurs au `2 décembre 2026` (`30 mars 2027`, `28 juillet 2027`, `2 décembre 2027`).
 - Validation par rejeu différentiel `G2` (`e9982661`) après lissage sans reliquat `imprécis` ni `non supporté`, suivie de micro-retouches localisées vérifiées hors dérive factuelle (`Chapitre 02#L335-341`, `Chapitre 04#L7`, `ancrage/ch00-ancrage.md#L90`, `ancrage/ch01-ancrage.md#L45,54,70,101,129`, `ancrage/ch04-ancrage.md#L3-6,23`).
 
 ---
@@ -33,7 +33,7 @@ L'intégralité du premier tirage PDF (`0 - PDF-MD/8 - Manuel.pdf`, `314` pages)
    - Les longs identifiants CamelCase ou accentués en code inline (`OpaStaticCheckError`, `SessionTaintTracker`, `CompensationChannel`, `SimulatedCrashError`, `OpaPolicyEngine`, `rétrocompatibilité`) ainsi que les mots français longs après élision (`d’approvisionnement`) provoquaient des débordements de cellules ; en sens inverse, un découpage arbitraire tranchait des identifiants courts hors tableaux (`DeterministicHarness`, `StreamableHttpAdapter`) et certains nombres décimaux (`0.0089`).
    - `Tableau 2.2` était détaché de sa légende entre deux pages (`p. 64` → `p. 65`).
 3. **Blocs de code et encadrés `#quote` :** quelques blocs d'au plus `40` lignes comportant des lignes de `74–78` caractères (dont `G0-EX-CH04-03`) subissaient des retours forcés sur largeur `4,46 po`, et les pastilles de code inline (`#F1F5F9`) se confondaient avec le fond `#F1F5F9` des encadrés `#quote`.
-4. **Espaces insécables, flèches et césures :** séparations orphelines sur `%`, `\$ CA` / `\$ US`, séparateurs de milliers, unités (`o`, `s`, `Kio`), `§`, signes `−`, dépôts (`8 - Trousse/`), flèches `- / >`, tirets de drapeaux (`-failfast2`, `EXIG-*`), `#divider()` précédant immédiatement un titre, et justification trop étirée dans les listes d'Annexe A/B.
+4. **Espaces insécables, flèches et césures :** séparations orphelines sur `%`, `\$ CA` / `\$ US`, séparateurs de milliers, unités (`o`, `s`, `Kio`), `§`, signes `−`, dépôts (`8 - Manuel/trousse/`), flèches `- / >`, tirets de drapeaux (`-failfast2`, `EXIG-*`), `#divider()` précédant immédiatement un titre, et justification trop étirée dans les listes d'Annexe A/B.
 5. **Figures (`Fig-00` à `Fig-08`) :** flèche probabiliste non ambrée et croisement de légende sur `Fig-00` ; rognage en bordure sur `Fig-01` ; collisions flèche/bordure sur `Fig-02`, `Fig-05`, `Fig-06` et `Fig-07` ; largeur excessive (`1 222 px`) sur `Fig-03` ; orientation verticale inverse de la prose et omission de `cost_center` / citation `EXIG-OBS-13` inexistante sur `Fig-04` ; étiquettes `Oui`/`Non` sans fond blanc opaque et `pass^k` littéral sur `Fig-08`.
 6. **Micro-coquilles rédactionnelles :** absence de ligne vide avant `*Figure 4*` et de ligne `>` après le titre de l'encadré final au Chapitre 2 (`L335-341`), répétition de `*Scénario illustratif.*` en `Chapitre 04#L7`, mise en forme LaTeX brute résiduelle dans `ancrage/ch01-ancrage.md`, retours à la ligne en en-tête de `ancrage/ch04-ancrage.md`, coquille `aucune contournement` et parenthèses doubles `((UE)` dans `genere_annexes.py`.
 

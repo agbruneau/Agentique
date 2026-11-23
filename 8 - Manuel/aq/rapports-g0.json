@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "executed_at": "2026-11-23T07:00:45Z",
+  "executed_at": "2026-11-23T09:59:48Z",
   "freeze_date": "2026-12-02",
   "platform": {
     "os": "windows-amd64",
@@ -19,7 +19,7 @@
   },
   "lockfile_check": {
     "path": "requirements.lock",
-    "sha256": "bcd9bb74f24c46541cdb5d32b0459a7cab8b49f03645b1aaba0eeb8d4c062f7e",
+    "sha256": "23fbf87662b933fc6d49690213b7bca3228a8912a5bc144dffb8252a65f26fa6",
     "all_hashes_pinned": true,
     "passed": true
   },
@@ -77,98 +77,98 @@
   "synced_excerpts": {
     "G0-EX-CH01-01": {
       "unit": "ch01",
-      "source_path": "8 - Trousse/schemas/harness_extraction.schema.json",
+      "source_path": "8 - Manuel/trousse/schemas/harness_extraction.schema.json",
       "lines": "1-24",
       "line_count": 24,
       "sha256": "6b4428a1f8a6abcd2029280cded86b0e983ddb349d0f05c6ba0192c010f95aac"
     },
     "G0-EX-CH01-02": {
       "unit": "ch01",
-      "source_path": "8 - Trousse/harness_proto/pipeline.py",
+      "source_path": "8 - Manuel/trousse/harness_proto/pipeline.py",
       "lines": "204-232",
       "line_count": 29,
       "sha256": "75110799d751ee4b93c58c7aff4e2b6ce0c2c8d29c50b6d1668b4bf895dfc275"
     },
     "G0-EX-CH01-03": {
       "unit": "ch01",
-      "source_path": "8 - Trousse/harness_proto/mcp_pinning.py",
+      "source_path": "8 - Manuel/trousse/harness_proto/mcp_pinning.py",
       "lines": "227-260",
       "line_count": 34,
       "sha256": "350e1959e6f0c54ce549afc77b4ef14959851bc9e45ad1a2eee52b9b36f4fc95"
     },
     "G0-EX-CH01-04": {
       "unit": "ch01",
-      "source_path": "8 - Trousse/harness_proto/a2a_card.py",
+      "source_path": "8 - Manuel/trousse/harness_proto/a2a_card.py",
       "lines": "157-182",
       "line_count": 26,
       "sha256": "1a58d5eabab4361028420c902df71ef3b305f84bfd139e14c75c7318c545b899"
     },
     "G0-EX-CH02-01": {
       "unit": "ch02",
-      "source_path": "8 - Trousse/authz_pqc_audit/obo_dpop.py",
+      "source_path": "8 - Manuel/trousse/authz_pqc_audit/obo_dpop.py",
       "lines": "85-114",
       "line_count": 30,
       "sha256": "d3c2d0ce031a283ba8b3e85fc230c51f6fa036a46942a573dfd77351922d2991"
     },
     "G0-EX-CH02-02": {
       "unit": "ch02",
-      "source_path": "8 - Trousse/authz_pqc_audit/ciba_approval.py",
+      "source_path": "8 - Manuel/trousse/authz_pqc_audit/ciba_approval.py",
       "lines": "106-117",
       "line_count": 12,
       "sha256": "423ebd61ce4996bf314c2fcecab18e48129d46e379a70eaf57780b5e1e395307"
     },
     "G0-EX-CH02-03": {
       "unit": "ch02",
-      "source_path": "8 - Trousse/authz_pqc_audit/pqc_http431.py",
+      "source_path": "8 - Manuel/trousse/authz_pqc_audit/pqc_http431.py",
       "lines": "149-177",
       "line_count": 29,
       "sha256": "c5c72e27a3932180e70ba9ebd63c109c5cc146c3af50d1327aed293f0e614855"
     },
     "G0-EX-CH02-04": {
       "unit": "ch02",
-      "source_path": "8 - Trousse/authz_pqc_audit/otel_pii_mapper.py",
+      "source_path": "8 - Manuel/trousse/authz_pqc_audit/otel_pii_mapper.py",
       "lines": "235-265",
       "line_count": 31,
       "sha256": "60bd160c1a507c6df31fd1dfc3811c866a6f17e8b623e961b2511c00c7e41889"
     },
     "G0-EX-CH03-01": {
       "unit": "ch03",
-      "source_path": "8 - Trousse/policies_opa/rule_of_two.rego",
+      "source_path": "8 - Manuel/trousse/policies_opa/rule_of_two.rego",
       "lines": "3-26",
       "line_count": 24,
       "sha256": "c0adc5553c040a592151fbcff54a27e85412764f82815220c5297e79ba652036"
     },
     "G0-EX-CH03-02": {
       "unit": "ch03",
-      "source_path": "8 - Trousse/policies_opa/camel_taint.rego",
+      "source_path": "8 - Manuel/trousse/policies_opa/camel_taint.rego",
       "lines": "3-25",
       "line_count": 23,
       "sha256": "bd873cf677b35787f6054b97b6a2de30c0cb7c6a5a52375c8bce7275ab03637b"
     },
     "G0-EX-CH03-03": {
       "unit": "ch03",
-      "source_path": "8 - Trousse/policy_saga/saga_orchestrator.py",
+      "source_path": "8 - Manuel/trousse/policy_saga/saga_orchestrator.py",
       "lines": "107-140",
       "line_count": 34,
       "sha256": "a2aac944f6ae06fe63c2f6482618bae3356d6270f3c5f6a3756c8592ebd1a536"
     },
     "G0-EX-CH04-01": {
       "unit": "ch04",
-      "source_path": "8 - Trousse/evalops_prr/wilson_bounds.py",
+      "source_path": "8 - Manuel/trousse/evalops_prr/wilson_bounds.py",
       "lines": "43-70",
       "line_count": 28,
       "sha256": "3e685cbef8dea03f3c2c217d37c25e292295858505eae0769706570955f913ba"
     },
     "G0-EX-CH04-02": {
       "unit": "ch04",
-      "source_path": "8 - Trousse/evalops_prr/metamorphic.py",
+      "source_path": "8 - Manuel/trousse/evalops_prr/metamorphic.py",
       "lines": "38-63",
       "line_count": 26,
       "sha256": "31ad0df04f1930471a8cec511d897834f72c35851e98f9c7cae1aa82002c1472"
     },
     "G0-EX-CH04-03": {
       "unit": "ch04",
-      "source_path": "8 - Trousse/schemas/adr_2027_b001.schema.json",
+      "source_path": "8 - Manuel/trousse/schemas/adr_2027_b001.schema.json",
       "lines": "1-32",
       "line_count": 32,
       "sha256": "4f0a41e7280851ce1413efeb6accb3632bb3ee6a0bfefc4fa7d92338156e36ae"

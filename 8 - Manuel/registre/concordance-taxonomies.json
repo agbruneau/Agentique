@@ -65,7 +65,7 @@
           "corpus_ref": "5 - Memoire.md L98"
         }
       ],
-      "canonical_vol8_choice": "Les quatre modules techniques de 8 - Trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
+      "canonical_vol8_choice": "Les quatre modules techniques de 8 - Manuel/trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
       "liminaire_section": "0.2",
       "rationale": "Aligne directement la structure en quatre chapitres du Volume 8 sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des volumes 2 à 7."
     },
