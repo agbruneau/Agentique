@@ -1462,7 +1462,7 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
     book_stem = root.name
     html_name = f"{book_stem}.html"
     liv_dir = root / "livrables"
-    consolidated_dir = root.parent / "0 - PDF-MD"
+    consolidated_dir = root.parent / "Corpus"
     html_out = liv_dir / html_name
     deliv = manifest.get("deliverables", {})
     official_dir = "Tome 7 - Gouverner l'industrialisation cognitive"
@@ -1497,9 +1497,9 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
         except json.JSONDecodeError:
             has_open_sources = False
 
-    # 1. Markdown consolide 0 - PDF-MD/<book_stem>.md
+    # 1. Markdown consolide Corpus/<book_stem>.md
     if not consolidated_md.is_file() or consolidated_md.stat().st_size == 0:
-        errors.append(f"[CA-18] Livrable Markdown consolide manquant : ../0 - PDF-MD/{md_name}")
+        errors.append(f"[CA-18] Livrable Markdown consolide manquant : ../Corpus/{md_name}")
     else:
         md_actual = consolidated_md.read_text(encoding="utf-8").replace("\r\n", "\n")
         try:
@@ -1511,7 +1511,7 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
             )
             if md_actual.rstrip() != md_expected.replace("\r\n", "\n").rstrip():
                 errors.append(
-                    f"[CA-18] ../0 - PDF-MD/{md_name} desynchronise de l'assemblage du manuscrit"
+                    f"[CA-18] ../Corpus/{md_name} desynchronise de l'assemblage du manuscrit"
                 )
         except Exception as exc:
             errors.append(f"[CA-18] Impossible de comparer {md_name} a l'assemblage : {exc}")
@@ -1564,9 +1564,9 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
             if has_open_sources and not parser.annexe_c_links:
                 errors.append("[CA-18] Aucun hyperlien cliquable (<a href=...>) en Annexe C du HTML")
 
-    # 3. PDF consolide 0 - PDF-MD/<book_stem>.pdf via pymupdf
+    # 3. PDF consolide Corpus/<book_stem>.pdf via pymupdf
     if not _has_valid_pdf((consolidated_pdf,)):
-        errors.append(f"[CA-18] Livrable PDF consolide manquant ou invalide : ../0 - PDF-MD/{pdf_name}")
+        errors.append(f"[CA-18] Livrable PDF consolide manquant ou invalide : ../Corpus/{pdf_name}")
     else:
         try:
             with pymupdf.open(consolidated_pdf) as doc:

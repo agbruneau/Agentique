@@ -55,7 +55,7 @@ def test_catalog_covers_all_eight_volumes_and_sources_exist() -> None:
     assert [v["id"] for v in vols] == [str(i) for i in range(1, 9)]
 
     assert (REPO_ROOT / catalog["reference_pdf"]).is_file()
-    assert catalog["reference_pdf"] == "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf"
+    assert catalog["reference_pdf"] == "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf"
 
     for v in vols:
         src = REPO_ROOT / v["source_md"]
@@ -146,7 +146,7 @@ def test_inject_rendered_diagrams_inserts_without_duplication(tmp_path: Path) ->
 def test_normalize_image_paths_handles_parentheses_and_angle_brackets(tmp_path: Path) -> None:
     rendus = tmp_path / "Vol" / "Diagrammes" / "rendus"
     rendus.mkdir(parents=True)
-    md_dir = tmp_path / "0 - PDF-MD"
+    md_dir = tmp_path / "Corpus"
     md_dir.mkdir(parents=True)
     md_path = md_dir / "Tome 5 - Synthèse exécutive et concordance architecturale.md"
 

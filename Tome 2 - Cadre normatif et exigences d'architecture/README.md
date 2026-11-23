@@ -4,8 +4,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [Tome 2 - Cadre normatif et exigences d'architecture.pdf](../0%20-%20PDF-MD/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `7 027 142` octets / `~7,03 Mo`)
-- **Fichier Markdown complet** : [Tome 2 - Cadre normatif et exigences d'architecture.md](../0%20-%20PDF-MD/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md)
+- **Source PDF** : [Tome 2 - Cadre normatif et exigences d'architecture.pdf](../Corpus/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `7 027 142` octets / `~7,03 Mo`)
+- **Fichier Markdown complet** : [Tome 2 - Cadre normatif et exigences d'architecture.md](../Corpus/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md)
 - **Pages** : 534 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–534 = pagination imprimée p. 1–530)
 - **Parties / Sections** : 5
 - **Unités extraites** : 35 (30 unités de contenu — 7 liminaires, 15 chapitres, 8 annexes — et 5 sommaires de section)

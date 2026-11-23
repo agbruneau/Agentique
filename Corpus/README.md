@@ -1,4 +1,4 @@
-# Suite intégrale du corpus (`0 - PDF-MD`)
+# Suite intégrale du corpus (`Corpus`)
 
 [Retour à l'index principal du dépôt](../README.md)
 
@@ -10,7 +10,7 @@ Ce répertoire regroupe les **16 fichiers intégraux consolidés** des **huit ou
 
 ## Index de la suite thématique (Tomes 1 à 8)
 
-| Tome | PDF intégral (`0 - PDF-MD/`) | Markdown complet (`0 - PDF-MD/`) | Édition structurée | Horizon | Pages | Taille PDF |
+| Tome | PDF intégral (`Corpus/`) | Markdown complet (`Corpus/`) | Édition structurée | Horizon | Pages | Taille PDF |
 |---|---|---|---|---|---:|---:|
 | **Tome 1** | [`Tome 1 - Confiance protocolaire et encadrement financier.pdf`](Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) | [`.md`](Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.md) | [Dossier](../Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier/README.md) | 2024–2032 | 1 135 | 17,13 Mo |
 | **Tome 2** | [`Tome 2 - Cadre normatif et exigences d'architecture.pdf`](Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.pdf) | [`.md`](Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md) | [Dossier](../Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture/README.md) | 2026–2030 | 534 | 7,03 Mo |

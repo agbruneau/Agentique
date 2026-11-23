@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "reference_pdf": "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
+  "reference_pdf": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
   "template": "gabarit-pdf/gabarit-collection.typ",
   "defaults": {
     "collection": "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE",
@@ -26,8 +26,8 @@
     {
       "id": "1",
       "slug": "Tome 1 - Confiance protocolaire et encadrement financier",
-      "source_md": "0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md",
-      "default_pdf": "0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.pdf",
+      "source_md": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+      "default_pdf": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.pdf",
       "diagrams_dir": "Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes",
       "rendered_diagrams_dir": "Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus",
       "inject_diagrams": true,
@@ -49,8 +49,8 @@
     {
       "id": "2",
       "slug": "Tome 2 - Cadre normatif et exigences d'architecture",
-      "source_md": "0 - PDF-MD/Tome 2 - Cadre normatif et exigences d'architecture.md",
-      "default_pdf": "0 - PDF-MD/Tome 2 - Cadre normatif et exigences d'architecture.pdf",
+      "source_md": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+      "default_pdf": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.pdf",
       "diagrams_dir": "Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes",
       "rendered_diagrams_dir": "Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus",
       "inject_diagrams": true,
@@ -72,8 +72,8 @@
     {
       "id": "3",
       "slug": "Tome 3 - Ingénierie du tissu conjonctif et état de l'art",
-      "source_md": "0 - PDF-MD/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-      "default_pdf": "0 - PDF-MD/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf",
+      "source_md": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+      "default_pdf": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf",
       "diagrams_dir": "Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes",
       "rendered_diagrams_dir": "Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus",
       "inject_diagrams": true,
@@ -95,8 +95,8 @@
     {
       "id": "4",
       "slug": "Tome 4 - Prospective stratégique et trajectoire 2028-2035",
-      "source_md": "0 - PDF-MD/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-      "default_pdf": "0 - PDF-MD/Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf",
+      "source_md": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+      "default_pdf": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf",
       "diagrams_dir": "Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes",
       "rendered_diagrams_dir": "Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus",
       "inject_diagrams": true,
@@ -118,8 +118,8 @@
     {
       "id": "5",
       "slug": "Tome 5 - Synthèse exécutive et concordance architecturale",
-      "source_md": "0 - PDF-MD/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-      "default_pdf": "0 - PDF-MD/Tome 5 - Synthèse exécutive et concordance architecturale.pdf",
+      "source_md": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+      "default_pdf": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.pdf",
       "diagrams_dir": "Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes",
       "rendered_diagrams_dir": "Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus",
       "inject_diagrams": true,
@@ -141,8 +141,8 @@
     {
       "id": "6",
       "slug": "Tome 6 - Architecture multisectorielle et patrons de référence",
-      "source_md": "0 - PDF-MD/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-      "default_pdf": "0 - PDF-MD/Tome 6 - Architecture multisectorielle et patrons de référence.pdf",
+      "source_md": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+      "default_pdf": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.pdf",
       "diagrams_dir": "Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes",
       "rendered_diagrams_dir": "Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus",
       "inject_diagrams": true,
@@ -165,8 +165,8 @@
     {
       "id": "7",
       "slug": "Tome 7 - Gouverner l'industrialisation cognitive",
-      "source_md": "0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.md",
-      "default_pdf": "0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.pdf",
+      "source_md": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+      "default_pdf": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.pdf",
       "diagrams_dir": "Tome 7 - Gouverner l'industrialisation cognitive/diagrammes",
       "rendered_diagrams_dir": "Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus",
       "inject_diagrams": false,
@@ -187,8 +187,8 @@
     {
       "id": "8",
       "slug": "Tome 8 - Ingénierie exécutable et homologation vérifiable",
-      "source_md": "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-      "default_pdf": "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
+      "source_md": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+      "default_pdf": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
       "diagrams_dir": "Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes",
       "rendered_diagrams_dir": "Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus",
       "inject_diagrams": false,

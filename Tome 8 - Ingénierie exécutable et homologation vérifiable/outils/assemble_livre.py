@@ -183,8 +183,8 @@ def _resolve_deliverable_paths(root: Path, manifest: dict) -> tuple[Path, Path, 
     book_stem = root.name
     deliv = manifest.get("deliverables", {})
     if book_stem == _OFFICIAL_BOOK_DIR_NAME and isinstance(deliv, dict):
-        md_rel = str(deliv.get("md") or deliv.get("markdown") or f"../0 - PDF-MD/{book_stem}.md")
-        pdf_rel = str(deliv.get("pdf") or f"../0 - PDF-MD/{book_stem}.pdf")
+        md_rel = str(deliv.get("md") or deliv.get("markdown") or f"../Corpus/{book_stem}.md")
+        pdf_rel = str(deliv.get("pdf") or f"../Corpus/{book_stem}.pdf")
         html_rel = str(deliv.get("html") or f"livrables/{book_stem}.html")
         img_pref = str(deliv.get("image_prefix") or f"../{book_stem}/diagrammes/rendus")
         return (
@@ -194,8 +194,8 @@ def _resolve_deliverable_paths(root: Path, manifest: dict) -> tuple[Path, Path, 
             img_pref,
         )
     return (
-        (root.parent / "0 - PDF-MD" / f"{book_stem}.md").resolve(),
-        (root.parent / "0 - PDF-MD" / f"{book_stem}.pdf").resolve(),
+        (root.parent / "Corpus" / f"{book_stem}.md").resolve(),
+        (root.parent / "Corpus" / f"{book_stem}.pdf").resolve(),
         (root / "livrables" / f"{book_stem}.html").resolve(),
         f"../{book_stem}/diagrammes/rendus",
     )
@@ -302,7 +302,7 @@ def build_consolidated_markdown(
 
 
 def assemble_markdown(root: Path) -> tuple[Path, str, dict]:
-    """Assemble le fichier consolide (../0 - PDF-MD/<livrable>.md) et retourne (path, body_sans_yaml, meta)."""
+    """Assemble le fichier consolide (../Corpus/<livrable>.md) et retourne (path, body_sans_yaml, meta)."""
     root = _resolve_book_root(root)
     manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))
     md_out, _, html_out, img_prefix = _resolve_deliverable_paths(root, manifest)
@@ -366,7 +366,7 @@ def compile_html(root: Path, md_path: Path) -> Path:
 
 
 def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
-    """Convertit en Typst via Pandoc, injecte dans gabarit-pdf/gabarit-collection.typ et compile en ../0 - PDF-MD/<livrable>.pdf."""
+    """Convertit en Typst via Pandoc, injecte dans gabarit-pdf/gabarit-collection.typ et compile en ../Corpus/<livrable>.pdf."""
     root = _resolve_book_root(root)
 
     manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))

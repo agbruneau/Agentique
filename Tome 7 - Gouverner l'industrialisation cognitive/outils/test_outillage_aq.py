@@ -201,7 +201,7 @@ def _create_populated_book(
 ) -> Path:
     """Cree un depot complet valide en memoire sur disque dans tmp_path."""
     book_dir = tmp_path / book_name
-    corpus_dir = tmp_path / "0 - PDF-MD"
+    corpus_dir = tmp_path / "Corpus"
     corpus_dir.mkdir(parents=True)
     corpus_file = corpus_dir / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     corpus_file.write_text(
@@ -216,7 +216,7 @@ def _create_populated_book(
 
     manifest_path = book_dir / "specs" / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md"]
+    manifest["internal_corpus_paths"] = ["../Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md"]
     manifest["stylistic_benchmarks_for_gauntlet"] = []
     manifest["stylistic_benchmark_sections"] = {}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -613,7 +613,7 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
     res = _run_tool_script(TOOLS_DIR / "assemble_livre.py", "--root", str(tmp_book), "--all")
     assert res.returncode == 0, f"STDERR:\n{res.stderr}\nSTDOUT:\n{res.stdout}"
     livrables = tmp_book / "livrables"
-    consolidated_dir = tmp_book.parent / "0 - PDF-MD"
+    consolidated_dir = tmp_book.parent / "Corpus"
     md_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.md"
     html_out = livrables / "Tome 7 - Gouverner l'industrialisation cognitive.html"
     pdf_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
@@ -626,7 +626,7 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
 
 def test_12gram_rejects_long_quote_over_40_words_and_matches_real_corpus(tmp_book: Path) -> None:
     # Un segment > 40 mots entre guillemets meme suivi de [1] reste rejete
-    corpus_file = tmp_book.parent / "0 - PDF-MD" / "Tome 1 - Confiance protocolaire et encadrement financier.md"
+    corpus_file = tmp_book.parent / "Corpus" / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     long_50 = " ".join(f"termeunique{i}" for i in range(50))
     corpus_file.write_text(
         corpus_file.read_text(encoding="utf-8") + f"\n{long_50}.\n",
@@ -640,7 +640,7 @@ def test_12gram_rejects_long_quote_over_40_words_and_matches_real_corpus(tmp_boo
     errors = check_manuscrit(tmp_book, strict=True, unit_id="ch03")
     assert any("CA-03" in e for e in errors)
 
-    # Verification directe sur le vrai corpus 0 - PDF-MD du depot
+    # Verification directe sur le vrai dossier Corpus du depot
     from verifie_manuscrit import _CorpusIndex
 
     real_manifest = json.loads((REAL_BOOK_DIR / "specs" / "manifest.json").read_text(encoding="utf-8"))
@@ -791,7 +791,7 @@ def test_check_deliverables_accepts_consolidated_pdf_md(tmp_book: Path) -> None:
 
     outputs = build_deliverables(tmp_book, make_md=True, make_html=True, make_pdf=True)
     livrables = tmp_book / "livrables"
-    consolidated_dir = tmp_book.parent / "0 - PDF-MD"
+    consolidated_dir = tmp_book.parent / "Corpus"
     html_out = livrables / "Tome 7 - Gouverner l'industrialisation cognitive.html"
     consolidated_md = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.md"
     consolidated_pdf = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
@@ -873,7 +873,7 @@ def test_ca02_ca03_ca04_ca05_ca06_ca07_ca10_remediations(tmp_book: Path) -> None
     ch08.write_text(txt8, encoding="utf-8")
 
     # 4. CA-03 : renvoi [2] au milieu d'un 12-gramme et 2 collisions distinctes sur la meme ligne
-    compendium = tmp_book.parent / "0 - PDF-MD" / "Tome 1 - Confiance protocolaire et encadrement financier.md"
+    compendium = tmp_book.parent / "Corpus" / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     compendium.write_text(
         compendium.read_text(encoding="utf-8")
         + "\nPremiere suite exacte de douze mots consecutifs distincts pour verifier le decoupage interne.\n"
@@ -1041,7 +1041,7 @@ def test_dynamic_book_stem_purges_residual_html_and_aligns_deliverables(tmp_path
 
     outputs = build_deliverables(custom_book, make_md=True, make_html=True, make_pdf=True)
 
-    consolidated_dir = custom_book.parent / "0 - PDF-MD"
+    consolidated_dir = custom_book.parent / "Corpus"
     expected_md = consolidated_dir / "7 - Titre Test.md"
     expected_pdf = consolidated_dir / "7 - Titre Test.pdf"
     expected_html = livrables / "7 - Titre Test.html"

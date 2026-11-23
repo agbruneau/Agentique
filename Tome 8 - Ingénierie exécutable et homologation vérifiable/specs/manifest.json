@@ -32,8 +32,8 @@
     "II": "Partie II — Politiques hors modèle, sémantique d'effet et homologation vérifiable"
   },
   "deliverables": {
-    "md": "../0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-    "pdf": "../0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
+    "md": "../Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+    "pdf": "../Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
     "html": "livrables/Tome 8 - Ingénierie exécutable et homologation vérifiable.html",
     "image_prefix": "../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus",
     "pdf_title": "Tome 8 — Ingénierie exécutable et homologation vérifiable",
@@ -67,13 +67,13 @@
     "En conclusion, nous avons vu que"
   ],
   "internal_corpus_paths": [
-    "../0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md",
-    "../0 - PDF-MD/Tome 2 - Cadre normatif et exigences d'architecture.md",
-    "../0 - PDF-MD/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-    "../0 - PDF-MD/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-    "../0 - PDF-MD/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-    "../0 - PDF-MD/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-    "../0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.md",
+    "../Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+    "../Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+    "../Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+    "../Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+    "../Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+    "../Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+    "../Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
     "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/00 - Ouverture - Architecture et gouvernance du tissu conjonctif agentique.md",
     "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/10 - Partie X - Recherche scientifique/Chapitre 48 - Revue de littérature.md"
   ],

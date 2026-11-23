@@ -249,7 +249,7 @@ def compile_volume(
     repo_root: Path = REPO_ROOT,
     catalog_path: Path = CATALOG_PATH,
 ) -> Path:
-    """Compile un volume du catalogue (`1`..`8`) vers `output_path` (ou `0 - PDF-MD/` si `in_place=True`)."""
+    """Compile un volume du catalogue (`1`..`8`) vers `output_path` (ou `Corpus/` si `in_place=True`)."""
     cfg = get_volume_config(volume_ref, catalog_path=catalog_path)
     src_md = repo_root / cfg["source_md"]
     if not src_md.is_file():
@@ -259,7 +259,7 @@ def compile_volume(
         if not in_place:
             raise ValueError(
                 "Par securite, specifiez --output / --output-dir, ou ajoutez --in-place "
-                "pour ecraser le PDF dans 0 - PDF-MD/."
+                "pour ecraser le PDF dans Corpus/."
             )
         pdf_out = repo_root / cfg["default_pdf"]
     else:
@@ -296,7 +296,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--in-place",
         action="store_true",
-        help="Autoriser l'écrasement des PDF cibles (Tome 1 à Tome 8) dans 0 - PDF-MD/",
+        help="Autoriser l'écrasement des PDF cibles (Tome 1 à Tome 8) dans Corpus/",
     )
     parser.add_argument(
         "--inject-diagrams",

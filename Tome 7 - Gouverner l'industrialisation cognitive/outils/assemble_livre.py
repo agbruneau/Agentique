@@ -270,14 +270,14 @@ def build_consolidated_markdown(
 
 
 def assemble_markdown(root: Path) -> tuple[Path, str, dict]:
-    """Assemble le fichier consolide ../0 - PDF-MD/<livrable>.md et retourne (path, body_sans_yaml, meta)."""
+    """Assemble le fichier consolide ../Corpus/<livrable>.md et retourne (path, body_sans_yaml, meta)."""
     root = _resolve_book_root(root)
     manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))
     deliv = manifest.get("deliverables", {}) if root.name == _OFFICIAL_BOOK_DIR_NAME else {}
     full_md, body_only, meta = build_consolidated_markdown(
         root, image_prefix=f"../{root.name}/diagrammes/rendus"
     )
-    consolidated_dir = root.parent / "0 - PDF-MD"
+    consolidated_dir = root.parent / "Corpus"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
     if root.name == _OFFICIAL_BOOK_DIR_NAME and isinstance(deliv, dict) and deliv.get("md"):
         md_out = (root / str(deliv["md"])).resolve()
@@ -689,7 +689,7 @@ def _postprocess_typst_body(typst_src: str) -> str:
 
 
 def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
-    """Convertit en Typst via Pandoc, injecte dans gabarit-pdf/gabarit-collection.typ et compile en ../0 - PDF-MD/<livrable>.pdf."""
+    """Convertit en Typst via Pandoc, injecte dans gabarit-pdf/gabarit-collection.typ et compile en ../Corpus/<livrable>.pdf."""
     root = _resolve_book_root(root)
 
     manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))
@@ -739,7 +739,7 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
         typst_root=root,
     )
 
-    consolidated_dir = root.parent / "0 - PDF-MD"
+    consolidated_dir = root.parent / "Corpus"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
     if root.name == _OFFICIAL_BOOK_DIR_NAME and isinstance(deliv, dict) and deliv.get("pdf"):
         pdf_out = (root / str(deliv["pdf"])).resolve()

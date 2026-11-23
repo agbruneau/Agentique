@@ -210,7 +210,7 @@ def _create_populated_vol8(
     """Cree un depot Tome 8 complet valide (avec sous-repertoire trousse/) dans tmp_path."""
     book_dir = tmp_path / book_name
     trousse_dir = book_dir / "trousse"
-    corpus_dir = tmp_path / "0 - PDF-MD"
+    corpus_dir = tmp_path / "Corpus"
     corpus_dir.mkdir(parents=True)
     corpus_file = corpus_dir / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     corpus_file.write_text(
@@ -227,7 +227,7 @@ def _create_populated_vol8(
 
     manifest_path = book_dir / "specs" / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md"]
+    manifest["internal_corpus_paths"] = ["../Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md"]
     manifest["stylistic_benchmarks_for_gauntlet"] = []
     manifest["stylistic_benchmark_sections"] = {}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -836,7 +836,7 @@ def test_cli_echantillon_assemble_and_check_deliverables_end_to_end(tmp_vol8: Pa
     assert r_asm.returncode == 0, r_asm.stderr
 
     livrables = tmp_vol8 / "livrables"
-    consolidated_dir = tmp_vol8.parent / "0 - PDF-MD"
+    consolidated_dir = tmp_vol8.parent / "Corpus"
     assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.md").is_file()
     assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf").read_bytes().startswith(b"%PDF-")
     assert [p.name for p in livrables.iterdir()] == ["Tome 8 - Ingénierie exécutable et homologation vérifiable.html"]
@@ -950,7 +950,7 @@ def test_dynamic_book_stem_purges_residual_html_and_aligns_deliverables(tmp_path
     stray_ancien.write_text("<html><body>ancien</body></html>", encoding="utf-8")
 
     outputs = build_deliverables(custom_book, make_md=True, make_html=True, make_pdf=True)
-    consolidated_dir = custom_book.parent / "0 - PDF-MD"
+    consolidated_dir = custom_book.parent / "Corpus"
     expected_md = consolidated_dir / "8 - Titre Test.md"
     expected_pdf = consolidated_dir / "8 - Titre Test.pdf"
     expected_html = livrables / "8 - Titre Test.html"

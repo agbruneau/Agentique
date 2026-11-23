@@ -1677,14 +1677,14 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
             has_open_sources = False
 
     if not consolidated_md.is_file() or consolidated_md.stat().st_size == 0:
-        errors.append(f"[CA-18] Livrable Markdown consolide manquant : ../0 - PDF-MD/{md_name}")
+        errors.append(f"[CA-18] Livrable Markdown consolide manquant : ../Corpus/{md_name}")
     else:
         md_actual = consolidated_md.read_text(encoding="utf-8").replace("\r\n", "\n")
         try:
             md_expected, _, _ = build_consolidated_markdown(root, image_prefix=expected_prefix)
             if md_actual.rstrip() != md_expected.replace("\r\n", "\n").rstrip():
                 errors.append(
-                    f"[CA-18] ../0 - PDF-MD/{md_name} desynchronise de l'assemblage du manuscrit"
+                    f"[CA-18] ../Corpus/{md_name} desynchronise de l'assemblage du manuscrit"
                 )
         except Exception as exc:
             errors.append(f"[CA-18] Impossible de comparer {md_name} a l'assemblage : {exc}")
@@ -1737,7 +1737,7 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
                 errors.append("[CA-18] Aucun hyperlien cliquable (<a href=...>) en Annexe A du HTML")
 
     if not _has_valid_pdf((consolidated_pdf,)):
-        errors.append(f"[CA-18] Livrable PDF consolide manquant ou invalide : ../0 - PDF-MD/{pdf_name}")
+        errors.append(f"[CA-18] Livrable PDF consolide manquant ou invalide : ../Corpus/{pdf_name}")
     else:
         try:
             with pymupdf.open(consolidated_pdf) as doc:
