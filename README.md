@@ -1,6 +1,6 @@
 # Interopérabilité et Orchestration en Entreprise Agentique
 
-*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du corpus ([`Corpus/`](Corpus/README.md) · [`Tomes/`](Tomes/README.md) · [`Cartographie/`](Cartographie/README.md) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · 8 ouvrages · 4 542 pages · horizon 2024–2035)*
+*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du corpus ([`Corpus/`](Corpus/README.md) · [`Tomes/`](Tomes/README.md) · [`Cartographie/`](Cartographie/README.md) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [`prd.md`](prd.md) · 8 ouvrages · 4 542 pages · horizon 2024–2035)*
 
 ---
 
@@ -169,6 +169,7 @@ Les huit ouvrages forment une suite thématique de huit tomes (`PDF` au format u
 - [`Tomes/`](Tomes/README.md) : les `8` dossiers structurés ([`Tomes/Tome 1 - Confiance protocolaire et encadrement financier/`](Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier/README.md) à [`Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/`](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/README.md)) contenant les chapitres découpés, les sources des `319` diagrammes (et leurs rendus `.svg`/`.png`), ainsi que les éditions `HTML` des tomes 7 et 8.
 - [`Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) : le code exécutable de référence (`4` modules `Python 3.12+`, `3` politiques `OPA / Rego`, `13` schémas `JSON Schema`, vecteurs de test officiels et `83` tests automatisés `pytest`).
 - [`Cartographie/`](Cartographie/README.md) : cartographie thématique et structurelle interactive du corpus complet (**4 vues dynamiques** dans [`MindMap - Cartographie thématique du Corpus.html`](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html), 100 % autonome hors ligne sous `file://`).
+- [`prd.md`](prd.md) : PRD maître exhaustif consolidant l'architecture du corpus (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `616` interrelations et `4` annexes normatives, compilé par [`compiler_prd.py`](Cartographie/outils/compiler_prd.py)).
 - [`gabarit-pdf/`](gabarit-pdf/README.md) : le gabarit `Typst` commun et les scripts permettant de recompiler les diagrammes et les huit PDF de la collection.
 
 ---

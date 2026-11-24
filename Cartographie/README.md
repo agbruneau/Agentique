@@ -1,6 +1,6 @@
 # Cartographie thématique et structurelle du Corpus (`Cartographie`)
 
-[Retour à l'index principal](../README.md) · [Suite intégrale (`Corpus/`)](../Corpus/README.md) · [Ouvrir la MindMap interactive](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html)
+[Retour à l'index principal](../README.md) · [Suite intégrale (`Corpus/`)](../Corpus/README.md) · [Ouvrir la MindMap interactive](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [PRD maître (`prd.md`)](../prd.md)
 
 Application HTML autonome hors ligne (`file://`, sans CDN ni requête réseau externe) cartographiant l'ensemble des **9 fichiers Markdown** du corpus ([`Corpus/README.md`](../Corpus/README.md) et `Tome 1` à `Tome 8`).
 
@@ -12,6 +12,7 @@ Application HTML autonome hors ligne (`file://`, sans CDN ni requête réseau ex
 - **Couverture & interrelations** : `616` interrelations typées sur les `8` types canoniques (`0` arête cassée, `0` auto-boucle), `290 / 290` chapitres/liminaires/annexes mappés (`0` orphelin) et `1 636` unités structurelles liées directement aux thèmes.
 - **Pivots de concordance** : `5` discordances résolues (`DISC-01`..`DISC-05`, Tome 8 §0.2) + fermeture `DIV-02` (Tome 5), `100` jalons chronologiques (`2023–2035`) et `267` entrées de traçabilité (`EXIG / CAP / PRR-75 / C01–C40 / 5 SBB`).
 - **Livrable autonome** : [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) (`4 061 419` octets, thèmes `Auto / Clair / Sombre`).
+- **PRD maître compilé** : [`../prd.md`](../prd.md) (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `4` annexes normatives `A–D`, `4 512` lignes, `134 709` mots).
 
 ## Les 4 vues dynamiques
 
@@ -27,16 +28,20 @@ La barre d'outils supérieure offre une recherche plein-texte instantanée (`Ctr
 | Fichier | Rôle |
 |---|---|
 | [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) | Application interactive autonome hors ligne (`file://`) |
+| [`../prd.md`](../prd.md) | PRD maître exhaustif (`12` domaines, `36` chapitres, `71` familles, `260` thèmes, `4` annexes) |
 | [`outils/extraire_structure.py`](outils/extraire_structure.py) | Parseur CommonMark strict des 9 `.md` → `structure-integrale.json` |
 | [`outils/synthetiser_graphe.py`](outils/synthetiser_graphe.py) | Fusion des shards et pivots → `synthese-transversale.json` |
 | [`outils/compiler_mindmap.py`](outils/compiler_mindmap.py) | Assemble `corpus-mindmap-data.json` et injecte le JSON échappé dans `template_mindmap.html` |
+| [`outils/compiler_prd.py`](outils/compiler_prd.py) | Compile les 7 shards PRD et `corpus-mindmap-data.json` vers `../prd.md` |
 | [`outils/template_mindmap.html`](outils/template_mindmap.html) | Gabarit HTML/CSS/JS autonome (`light-dark`, SVG, Node-testable) |
 | [`donnees/schema-cartographie.json`](donnees/schema-cartographie.json) | Schéma formel des 12 domaines, 8 relations et structures JSON |
+| [`donnees/schema-prd-shard.json`](donnees/schema-prd-shard.json) | Schéma JSON Schema 2020-12 des shards de rédaction du PRD |
 | [`donnees/pivots-concordance.json`](donnees/pivots-concordance.json) | Tables pivots (chronologie, `DISC-01..05`, `DIV-02`, `EXIG/CAP/PRR/C40/SBB`) |
 | [`donnees/structure-integrale.json`](donnees/structure-integrale.json) | Arbre intégral `H1–H6` des 9 fichiers (`4 434` titres) |
 | [`donnees/synthese-transversale.json`](donnees/synthese-transversale.json) | Graphe thématique unifié (`380` nœuds, `616` relations) |
 | [`donnees/corpus-mindmap-data.json`](donnees/corpus-mindmap-data.json) | Bundle unifié injecté dans la MindMap HTML |
 | [`tests/test_cartographie.py`](tests/test_cartographie.py) | Suite `pytest` + validation syntaxique et fonctionnelle `Node.js` |
+| [`tests/test_prd.py`](tests/test_prd.py) | Suite `pytest` vérifiant couverture, ancres `CommonMark` et liens de `prd.md` |
 
 ## Commandes de régénération et de vérification
 
@@ -50,6 +55,9 @@ python Cartographie/outils/synthetiser_graphe.py
 # 3. Compiler le bundle JSON et la MindMap HTML autonome
 python Cartographie/outils/compiler_mindmap.py
 
-# 4. Exécuter la suite complète de tests (structure, intégrité, autonomie HTML, Node.js)
-python -m pytest Cartographie/tests/test_cartographie.py -v
+# 4. Compiler le PRD maître à la racine du dépôt (prd.md)
+python Cartographie/outils/compiler_prd.py
+
+# 5. Exécuter les suites complètes de tests (Cartographie + Node.js + PRD)
+python -m pytest Cartographie/tests/test_cartographie.py Cartographie/tests/test_prd.py -v
 ```
