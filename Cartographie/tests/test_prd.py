@@ -14,6 +14,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import re
+import shutil
+import subprocess
 import sys
 from urllib.parse import unquote
 
@@ -24,6 +26,8 @@ CARTO_DIR = REPO_ROOT / "Cartographie"
 DONNEES_DIR = CARTO_DIR / "donnees"
 OUTILS_DIR = CARTO_DIR / "outils"
 PRD_PATH = REPO_ROOT / "prd.md"
+PRD_WEB_DATA_PATH = DONNEES_DIR / "prd-web-data.json"
+PRD_WEB_HTML_PATH = CARTO_DIR / "PRD - Référentiel directeur de l'entreprise agentique.html"
 
 sys.path.insert(0, str(OUTILS_DIR))
 import compiler_prd as cp  # noqa: E402
@@ -281,6 +285,7 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
 def test_prd_links_in_readmes_valid() -> None:
     if not PRD_PATH.is_file():
         pytest.skip("prd.md pas encore compilé")
+    assert "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" in PRD_PATH.read_text(encoding="utf-8")
     for md_path in (REPO_ROOT / "README.md", CARTO_DIR / "README.md"):
         content = md_path.read_text(encoding="utf-8")
         assert "prd.md" in content, f"Lien vers prd.md manquant dans {md_path}"
@@ -289,3 +294,124 @@ def test_prd_links_in_readmes_valid() -> None:
                 continue
             target_path = (md_path.parent / unquote(raw_target)).resolve()
             assert target_path.exists(), f"Lien cassé dans {md_path}: {raw_target}"
+
+
+def test_prd_web_data_json_and_parity() -> None:
+    assert PRD_WEB_DATA_PATH.is_file()
+    data = json.loads(PRD_WEB_DATA_PATH.read_text(encoding="utf-8"))
+    assert len(data["executive_summary"]["sections"]) == 5
+    assert data["executive_summary"]["sections"][3]["kpi_table"] is not None
+    assert len(data["parties"]) == 12
+    assert len(data["chapters"]) == 36
+    assert len(data["annexes"]) == 4
+
+    fams = [f for ch in data["chapters"] for f in ch["targeted_content"]["families_and_themes"]]
+    thms = [t for f in fams for t in f["themes_targeted"]]
+    assert len(fams) == 71
+    assert len(thms) == 260
+
+    ann_b = next(a for a in data["annexes"] if a["annexe_code"] == "B")
+    ann_c = next(a for a in data["annexes"] if a["annexe_code"] == "C")
+    ann_d = next(a for a in data["annexes"] if a["annexe_code"] == "D")
+    assert len(ann_b["tensions"]) == 62
+    assert len(ann_c["reconciliations"]) == 5
+    assert len(ann_c["timeline"]) == 100
+    assert len(ann_d["matrix_all"]) == 267
+    assert ann_d["blueprints_c40"]["c40_breakdown"] == {
+        "total": 40,
+        "BLOQUANT": 18,
+        "OBLIGATOIRE": 15,
+        "RECOMMANDE": 7,
+    }
+    assert len(data["lookup"]["node_id_to_prd"]) == 379
+    assert len(data["lookup"]["slug_to_chapter"]) == 260
+    assert len(data["lookup"]["domain_to_part"]) == 12
+    assert len(data["lookup"]["unit_id_to_chapter"]) >= 250
+
+
+def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
+    assert PRD_WEB_HTML_PATH.is_file()
+    html = PRD_WEB_HTML_PATH.read_text(encoding="utf-8")
+    assert "__PRD_DATA_JSON__" not in html
+
+    json_match = re.search(
+        r'<script[^>]*id="prd-web-data"[^>]*>([\s\S]*?)</script>', html
+    )
+    assert json_match is not None
+    embedded_raw = json_match.group(1)
+    assert "</" not in embedded_raw
+    assert "<!--" not in embedded_raw
+    assert "\u2028" not in embedded_raw
+    assert "\u2029" not in embedded_raw
+    parsed = json.loads(embedded_raw)
+    assert len(parsed["chapters"]) == 36
+
+    html_without_json = html[: json_match.start(1)] + html[json_match.end(1) :]
+    assert not re.search(r"<script[^>]+src\s*=", html_without_json, re.IGNORECASE)
+    assert not re.search(r"@import\s+url\(", html_without_json, re.IGNORECASE)
+    assert not re.search(r"\bfetch\s*\(", html_without_json)
+    assert "http://" not in html_without_json
+    assert "https://" not in html_without_json
+
+    node_exe = shutil.which("node")
+    if node_exe is None:
+        pytest.skip("Node.js non disponible dans l'environnement")
+
+    node_script = """
+    const fs = require("fs");
+    const vm = require("vm");
+    const html = fs.readFileSync(process.argv[1], "utf8");
+    const jsonMatch = html.match(/<script[^>]*id="prd-web-data"[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsMatch = html.match(/<script(?![^>]*type="application\\/json")[^>]*>([\\s\\S]*?)<\\/script>/);
+    if (!jsonMatch || !jsMatch) throw new Error("Blocs JSON/JS introuvables dans PRD Web HTML");
+
+    const sandbox = {
+      console, Set, Map, Object, Array, Math, String, Number, Boolean, Date, RegExp, JSON,
+      encodeURIComponent, decodeURIComponent, globalThis: {}
+    };
+    sandbox.globalThis = sandbox;
+    new vm.Script(jsMatch[1], { filename: "prd_web_runtime.js" }).runInNewContext(sandbox);
+
+    const eng = sandbox.PrdWebEngine;
+    if (!eng) throw new Error("PrdWebEngine non exposé");
+    const data = JSON.parse(jsonMatch[1]);
+    const idx = eng.buildIndexes(data);
+    if (idx.parties.length !== 12 || idx.chapters.length !== 36 || idx.annexes.length !== 4) {
+      throw new Error("Cardinaux index PrdWebEngine invalides");
+    }
+
+    const sHits = eng.searchPrd(idx, "Lusser", 10);
+    if (sHits.length === 0) throw new Error("searchPrd('Lusser') vide");
+    const fRes = eng.filterPrd(idx, { domain: "D07" });
+    if (!fRes.active || fRes.counts.chapters !== 3) {
+      throw new Error("filterPrd D07 invalide: " + JSON.stringify(fRes.counts));
+    }
+    const mmUrl = eng.mindmapHref("mindmap", "THM_loi-de-lusser");
+    if (!mmUrl.includes("MindMap%20-") || !mmUrl.includes("#view=mindmap&node=THM_loi-de-lusser")) {
+      throw new Error("mindmapHref invalide: " + mmUrl);
+    }
+    const parsedThm = eng.parseHash("#thm=loi-de-lusser", idx);
+    if (!parsedThm || parsedThm.kind !== "chapter" || Number(parsedThm.chapterNumber) !== 2) {
+      throw new Error("parseHash #thm=loi-de-lusser invalide: " + JSON.stringify(parsedThm));
+    }
+    const corpUrl = eng.corpusHref("Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md", 709);
+    if (!corpUrl.includes("%27") || !corpUrl.endsWith("#L709")) {
+      throw new Error("corpusHref PRD Web invalide: " + corpUrl);
+    }
+
+    const toc = eng.renderTocHtml(idx, "", { tocExpanded: new Set(), target: { kind: "exec" } }, { active: false });
+    if (!toc.html || toc.count < 12) throw new Error("renderTocHtml insuffisant");
+    const fullHtml = eng.renderContentHtml(idx, { mode: "full", target: { kind: "exec" }, filters: {}, highlightQuery: "" }, { active: false, counts: { themes: 260, chapters: 36, parties: 12 } });
+    for (const marker of ["Partie I", "Partie XII", "Chapitre 01", "Chapitre 36", "Annexe A", "Annexe D", "THM_loi-de-lusser"]) {
+      if (!fullHtml.includes(marker)) throw new Error("Contenu mode intégral PrdWebEngine incomplet: " + marker);
+    }
+    """
+
+    proc = subprocess.run(
+        [node_exe, "-e", node_script, str(PRD_WEB_HTML_PATH)],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    assert proc.returncode == 0, f"Échec Node.js PRD Web:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"

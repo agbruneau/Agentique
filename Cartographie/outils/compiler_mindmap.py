@@ -19,6 +19,7 @@ import argparse
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import sys
 from typing import Any
 
 PAGE_TITLE = "MindMap — Cartographie thématique du Corpus Agentique (Tomes 1 à 8)"
@@ -285,6 +286,13 @@ def compile_mindmap(repo_root: Path) -> tuple[Path, Path, dict[str, Any]]:
 
     bundle = build_mindmap_bundle(schema, structure, pivots, synthese)
 
+    outils_str = str(outils_dir)
+    if outils_str not in sys.path:
+        sys.path.insert(0, outils_str)
+    from preparer_donnees_prd_web import build_prd_web_payload  # noqa: E402
+
+    bundle["prd"] = build_prd_web_payload(repo_root, bundle=bundle)
+
     data_out = donnees_dir / "corpus-mindmap-data.json"
     data_out.write_text(
         json.dumps(bundle, ensure_ascii=False, indent=2) + "\n",
@@ -322,12 +330,14 @@ def main() -> int:
 
     data_out, html_out, bundle = compile_mindmap(args.repo_root.resolve())
     t = bundle["totals"]
+    prd_c = len((bundle.get("prd") or {}).get("chapters") or [])
     print(
         f"Compilation réussie : {t['theme_nodes']} thèmes ({t['nodes']} nœuds), "
         f"{t['relations']} interrelations, {t['headings']} titres H1–H6, "
         f"{len(bundle['pivots']['reconciliations'])} discordances, "
         f"{len(bundle['pivots']['timeline'])} jalons, "
-        f"{len(bundle['pivots']['traceability_matrix'])} entrées traçabilité -> "
+        f"{len(bundle['pivots']['traceability_matrix'])} entrées traçabilité, "
+        f"{prd_c} chapitres PRD -> "
         f"{data_out} & {html_out} ({html_out.stat().st_size} octets)"
     )
     return 0

@@ -219,6 +219,17 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     assert len(pivots["timeline"]) >= 20
     assert len(pivots["traceability_matrix"]) >= 100
 
+    # Intégration PRD Web (Vue 5 & lookup 379 nœuds + 290 unit_id)
+    prd = bundle.get("prd") or {}
+    assert len(prd.get("parties", [])) == 12
+    assert len(prd.get("chapters", [])) == 36
+    assert len(prd.get("annexes", [])) == 4
+    lookup = prd.get("lookup") or {}
+    assert len(lookup.get("node_id_to_prd", {})) == 379
+    assert len(lookup.get("slug_to_chapter", {})) == 260
+    assert len(lookup.get("domain_to_part", {})) == 12
+    assert len(lookup.get("unit_id_to_chapter", {})) >= 250
+
 
 # ---------------------------------------------------------------------------
 # 4. Tests du fichier HTML autonome et des liens relatifs Markdown
@@ -237,8 +248,11 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert json_match is not None
     embedded_raw = json_match.group(1)
     assert "</" not in embedded_raw
+    assert "<!--" not in embedded_raw
     assert "\u2028" not in embedded_raw
     assert "\u2029" not in embedded_raw
+    assert 'data-view="prd"' in html
+    assert "5 · PRD Maître" in html
     parsed = json.loads(embedded_raw)
     assert parsed["totals"]["files"] == 9
 
@@ -342,6 +356,39 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     }
     if (eng.filterNodesAndRelations(idx, { horizon: "2023–2035" }).matchingNodeIds.size === 0) {
       throw new Error("Filtre 2023–2035 (en-dash) vide");
+    }
+
+    // Fonctions pures Vue 5 PRD & indexation recherche PRD
+    const pHash = eng.parseLocationHash("#view=prd&ch=05&thm=loi-de-lusser");
+    if (pHash.view !== "prd" || pHash.ch !== "05" || pHash.thm !== "loi-de-lusser") {
+      throw new Error("parseLocationHash invalide: " + JSON.stringify(pHash));
+    }
+    const prdHit = eng.resolveNodeToPrdTarget(idx, "THM_loi-de-lusser");
+    if (!prdHit || Number(prdHit.chapter_number) !== 2) {
+      throw new Error("resolveNodeToPrdTarget THM_loi-de-lusser invalide: " + JSON.stringify(prdHit));
+    }
+    const unitHit = eng.resolveStructUnitToPrdTarget(idx, "r-u0001");
+    if (!unitHit || !unitHit.chapter_number) {
+      throw new Error("resolveStructUnitToPrdTarget r-u0001 vide");
+    }
+    const prdFilt = eng.computePrdFilterState(idx, { domain: "D07" });
+    if (!prdFilt.active || prdFilt.matchingChapters.size !== 3) {
+      throw new Error("computePrdFilterState D07 != 3 chapitres: " + prdFilt.matchingChapters.size);
+    }
+    const sPrdCh = eng.searchCorpus(idx, "Chapitre 05", 15);
+    if (!sPrdCh.some(d => d.kind === "prd-chapter")) {
+      throw new Error("searchCorpus ne remonte aucun prd-chapter");
+    }
+    const sPrdAnn = eng.searchCorpus(idx, "Annexe B", 15);
+    if (!sPrdAnn.some(d => d.kind === "prd-annexe")) {
+      throw new Error("searchCorpus ne remonte aucune prd-annexe");
+    }
+    const d07Themes = eng.collectDescendantThemeIds(idx, "DOM_D07");
+    if (d07Themes.length < 15 || !d07Themes.every(tid => idx.nodeById[tid].domain_id === "D07")) {
+      throw new Error("collectDescendantThemeIds DOM_D07 invalide: " + d07Themes.length);
+    }
+    if (eng.normalizePrdExecId("1") !== "exec-01" || eng.normalizePrdExecId("sec-3") !== "exec-03") {
+      throw new Error("normalizePrdExecId invalide");
     }
     """
 
@@ -495,3 +542,186 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
         check=False,
     )
     assert proc.returncode == 0, f"Échec DOM smoke Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
+
+
+def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
+    node_exe = shutil.which("node")
+    if node_exe is None:
+        pytest.skip("Node.js non disponible dans l'environnement")
+
+    node_script = """
+    const fs = require("fs");
+    const vm = require("vm");
+    const html = fs.readFileSync(process.argv[1], "utf8");
+    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsMatch = html.match(/<script(?![^>]*type="application\\/json")[^>]*>([\\s\\S]*?)<\\/script>/);
+
+    function makeEl(tag, id) {
+      const listeners = {};
+      const attrs = {};
+      const children = [];
+      const classes = new Set();
+      return {
+        tagName: (tag || "DIV").toUpperCase(),
+        id: id || "",
+        textContent: "",
+        innerHTML: "",
+        value: "",
+        checked: false,
+        disabled: false,
+        scrollTop: 0,
+        style: {},
+        children,
+        classList: {
+          add: c => classes.add(c),
+          remove: c => classes.delete(c),
+          toggle: (c, f) => { if (f === undefined) { if (classes.has(c)) classes.delete(c); else classes.add(c); } else if (f) classes.add(c); else classes.delete(c); },
+          contains: c => classes.has(c),
+        },
+        setAttribute: (k, v) => { attrs[k] = String(v); },
+        getAttribute: k => attrs[k] ?? null,
+        appendChild: c => { children.push(c); return c; },
+        removeChild: c => { const i = children.indexOf(c); if (i >= 0) children.splice(i, 1); },
+        get firstChild() { return children[0] || null; },
+        addEventListener: (ev, fn) => { (listeners[ev] = listeners[ev] || []).push(fn); },
+        click: () => { (listeners.click || []).forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: this, target: this })); },
+        dispatch: (ev) => { (listeners[ev] = listeners[ev] || []); listeners[ev].forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: this, target: this })); },
+        querySelector: () => null,
+        querySelectorAll: () => [],
+        getBoundingClientRect: () => ({ width: 1200, height: 800, left: 0, top: 0 }),
+        getBBox: () => ({ x: 0, y: 0, width: 600, height: 400 }),
+        closest: () => null,
+        cloneNode: () => makeEl(tag, id),
+        insertBefore: (n) => { children.unshift(n); },
+        scrollIntoView() {},
+        focus() {}, select() {}, setSelectionRange() {}
+      };
+    }
+
+    const allIds = [
+      "corpus-mindmap-data", "mm-svg", "mm-stage", "mm-zoom-label", "st-svg", "st-stage", "st-zoom-label",
+      "sy-svg", "sy-stage", "sy-zoom-label", "canvas-tooltip", "kpi-strip", "f-tome", "st-file-select",
+      "f-domain", "f-autonomy", "f-role", "f-horizon", "f-rel", "mm-legend-grid", "path-start", "path-end",
+      "filter-summary", "inspector", "inspector-body", "mm-stats-pill", "st-list-pane", "st-stats-pill",
+      "sy-stats-pill", "path-results", "c4-content", "global-search", "search-dropdown", "export-svg-btn",
+      "export-json-btn", "theme-toggle-btn", "reset-filters-btn", "mm-expand-all-btn", "mm-collapse-all-btn",
+      "mm-toggle-edges-btn", "mm-xray-btn", "mm-expand-linked-btn", "st-toggle-list-btn",
+      "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
+      "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle",
+      "prd-toc-pane", "prd-toc-filter", "prd-toc-count", "prd-toc-list", "prd-reader", "prd-stats-pill",
+      "prd-toggle-toc-btn", "prd-print-btn"
+    ];
+    const byId = {};
+    for (const id of allIds) byId[id] = makeEl(id.endsWith("-svg") ? "svg" : "div", id);
+    byId["corpus-mindmap-data"].textContent = jsonMatch[1];
+
+    const viewTabs = ["mindmap", "structure", "synaptic", "concordance", "prd"].map(v => {
+      const b = makeEl("button");
+      b.setAttribute("data-view", v);
+      return b;
+    });
+
+    const documentStub = {
+      readyState: "complete",
+      documentElement: makeEl("html"),
+      body: makeEl("body"),
+      activeElement: null,
+      getElementById: id => byId[id] || null,
+      createElement: tag => makeEl(tag),
+      createElementNS: (ns, tag) => makeEl(tag),
+      addEventListener() {},
+      querySelectorAll: sel => sel === ".view-tab" ? viewTabs : []
+    };
+    const sandbox = {
+      console, Set, Map, Object, Array, Math, String, Number, Boolean, Date, RegExp, JSON,
+      encodeURIComponent, decodeURIComponent, document: documentStub,
+      window: { innerWidth: 1400, innerHeight: 900, location: { hash: "" }, addEventListener() {}, print() {} },
+      globalThis: {}
+    };
+    sandbox.globalThis = sandbox;
+    new vm.Script(jsMatch[1], { filename: "view5_dom_smoke.js" }).runInNewContext(sandbox);
+
+    const app = sandbox.CartographieApp;
+    if (!app) throw new Error("CartographieApp non exposé");
+
+    // 1. Export SVG désactivé sur concordance ET prd, réactivé sur mindmap
+    app.switchView("concordance");
+    if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en concordance");
+    app.switchView("prd");
+    if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en prd");
+    if (!byId["prd-stats-pill"].textContent.includes("260 thèmes")) {
+      throw new Error("Statistiques Vue 5 incomplètes: " + byId["prd-stats-pill"].textContent);
+    }
+    if (!byId["prd-toc-list"].innerHTML.includes("Partie XII")) {
+      throw new Error("TDM Vue 5 incomplète");
+    }
+
+    // 2. Mode Document intégral : 12 parties, 36 chapitres, 71 familles, 260 thèmes, 4 annexes
+    app.getState().prdMode = "full";
+    app.switchView("prd");
+    const fullHtml = byId["prd-reader"].innerHTML;
+    for (const marker of [
+      "Partie I — D01", "Partie XII — D12", "Chapitre 01 —", "Chapitre 36 —",
+      "Annexe A —", "Annexe B —", "Annexe C —", "Annexe D —",
+      "THM_loi-de-lusser", "Tensions d'arbitrage structurantes (62 relations tension_arbitrage)"
+    ]) {
+      if (!fullHtml.includes(marker)) throw new Error("Marqueur absent en Vue 5 mode intégral: " + marker);
+    }
+
+    // 3. Filtres multi-facettes sur Vue 5
+    byId["f-domain"].value = "D07";
+    byId["f-domain"].dispatch("change");
+    if (!byId["prd-stats-pill"].textContent.includes("3 / 36 chapitres")) {
+      throw new Error("Filtrage D07 inopérant en Vue 5: " + byId["prd-stats-pill"].textContent);
+    }
+    byId["f-domain"].value = "";
+    byId["f-domain"].dispatch("change");
+
+    // 4. Pont bidirectionnel Inspecteur -> PRD & hash deep-linking
+    app.getState().prdMode = "targeted";
+    app.selectThemeNode("THM_loi-de-lusser", true);
+    if (!byId["inspector-body"].innerHTML.includes("insp-goto-prd")) {
+      throw new Error("Bouton 'Lire dans le PRD' absent de l'inspecteur thème");
+    }
+    app.jumpToPrdByNodeId("THM_loi-de-lusser");
+    if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 2 || app.getState().prdHighlightId !== "THM_loi-de-lusser") {
+      throw new Error("Saut thème -> PRD défaillant");
+    }
+
+    app.applyHashNavigation("#view=prd&sec=1");
+    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "exec" || app.getState().prdHighlightId !== "exec-01") {
+      throw new Error("Hash #view=prd&sec=1 non normalisé: " + app.getState().prdHighlightId);
+    }
+    if (!byId["prd-reader"].innerHTML.includes('prd-highlight" data-prd-eid="exec-01"')) {
+      throw new Error("Section exec-01 non mise en surbrillance sur #view=prd&sec=1");
+    }
+    app.applyHashNavigation("#view=prd&annexe=B");
+    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "annexe" || app.getState().prdFocusId !== "B") {
+      throw new Error("Hash #view=prd&annexe=B défaillant");
+    }
+    app.getState().syEgo = "1";
+    app.applyHashNavigation("#view=synaptic&node=DOM_D07");
+    const d07CenterId = app.getState().syLastCenterId;
+    const d07Domain = (JSON.parse(jsonMatch[1]).nodes.find(n => n.node_id === d07CenterId) || {}).domain_id;
+    if (d07Domain !== "D07") {
+      throw new Error("Hash #view=synaptic&node=DOM_D07 centré hors D07: " + d07CenterId + " (" + d07Domain + ")");
+    }
+    const d07SyText = byId["sy-stats-pill"].textContent;
+    if (!byId["sy-stats-pill"].textContent.includes("thèmes") || d07SyText.startsWith("11 thèmes")) {
+      throw new Error("Vue synaptique ego DOM_D07 invalide: " + d07SyText);
+    }
+    app.applyHashNavigation("#view=synaptic&node=THM_loi-de-lusser");
+    if (app.getState().activeView !== "synaptic" || app.getState().selectedId !== "THM_loi-de-lusser") {
+      throw new Error("Hash #view=synaptic&node=... défaillant");
+    }
+    if (byId["export-svg-btn"].disabled) throw new Error("export-svg-btn resté désactivé en synaptic");
+    """
+
+    proc = subprocess.run(
+        [node_exe, "-e", node_script, str(HTML_PATH)],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    assert proc.returncode == 0, f"Échec Vue 5 DOM smoke Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"

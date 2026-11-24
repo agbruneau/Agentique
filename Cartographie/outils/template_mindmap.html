@@ -155,6 +155,7 @@
     .view-tabs {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 4px;
       background: var(--bg-surface-2);
       padding: 3px;
@@ -890,6 +891,203 @@
       .struct-list-pane {
         width: 240px;
       }
+      .prd-toc-pane {
+        width: 240px;
+      }
+      .prd-reader {
+        padding: 12px 14px;
+      }
+    }
+
+    /* View 5 PRD Maître */
+    .prd-view {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .prd-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 8px 12px;
+      background: var(--bg-surface-2);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .prd-body {
+      flex: 1 1 auto;
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .prd-toc-pane {
+      width: 340px;
+      max-width: 40%;
+      border-right: 1px solid var(--border);
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      flex-shrink: 0;
+    }
+    .prd-toc-pane.hidden {
+      display: none;
+    }
+    .prd-toc-filter-wrap {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface-2);
+      flex-shrink: 0;
+    }
+    .prd-toc-list {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .prd-toc-group {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-2);
+      overflow: hidden;
+    }
+    .prd-toc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 5px 8px;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      line-height: 1.35;
+    }
+    .prd-toc-item:hover {
+      background: var(--bg-surface-3);
+    }
+    .prd-toc-item.active {
+      background: var(--accent-soft);
+      color: var(--accent-text);
+      font-weight: 650;
+    }
+    .prd-toc-item.prd-dimmed {
+      opacity: 0.45;
+    }
+    .prd-toc-sub {
+      padding-left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-bottom: 4px;
+    }
+    .prd-toc-sub .prd-toc-item {
+      font-size: 11.5px;
+      padding: 3px 6px;
+    }
+    .prd-toc-fam {
+      padding-left: 14px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .prd-reader {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: 18px 24px 36px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+    .prd-hero {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .prd-hero h1 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+    .prd-section-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+      scroll-margin-top: 12px;
+    }
+    .prd-section-card.prd-highlight,
+    .prd-theme-card.prd-highlight,
+    .prd-family-block.prd-highlight {
+      outline: 2.5px solid var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+    .prd-section-card.prd-match,
+    .prd-theme-card.prd-match {
+      border-color: var(--accent);
+    }
+    .prd-section-card.prd-dimmed,
+    .prd-theme-card.prd-dimmed {
+      opacity: 0.36;
+    }
+    .prd-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .prd-card-actions {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .prd-family-block {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--accent);
+      background: var(--bg-surface-2);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      scroll-margin-top: 12px;
+    }
+    .prd-theme-card {
+      margin-top: 8px;
+      padding: 10px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      scroll-margin-top: 12px;
+    }
+    .prd-list {
+      margin: 6px 0 8px 18px;
+      padding: 0;
+    }
+    .prd-list li {
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+    @media print {
+      .topbar, .inspector, .prd-toolbar, .prd-toc-pane, .canvas-tooltip, .prd-card-actions {
+        display: none !important;
+      }
+      .app-shell, .workspace, .main-canvas-area, .view-panel.active, .prd-view, .prd-body, .prd-reader {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+        position: static !important;
+      }
+      .prd-section-card, .prd-theme-card, .prd-hero {
+        break-inside: avoid;
+        box-shadow: none !important;
+      }
     }
   </style>
 </head>
@@ -909,6 +1107,7 @@
           <button class="view-tab" role="tab" data-view="structure" aria-selected="false">2 · Structure Intégrale</button>
           <button class="view-tab" role="tab" data-view="synaptic" aria-selected="false">3 · Graphe Synaptique &amp; Chemins</button>
           <button class="view-tab" role="tab" data-view="concordance" aria-selected="false">4 · Concordance &amp; Réconciliations</button>
+          <button class="view-tab" role="tab" data-view="prd" aria-selected="false">5 · PRD Maître</button>
         </nav>
 
         <div class="topbar-actions">
@@ -1079,6 +1278,33 @@
             <div id="c4-content"></div>
           </div>
         </section>
+
+        <!-- VUE 5 : PRD Maître interactif -->
+        <section id="view-prd" class="view-panel" aria-label="PRD Maître du Corpus Agentique">
+          <div class="prd-view">
+            <div class="prd-toolbar">
+              <div class="seg-group" role="group" aria-label="Mode de lecture PRD">
+                <button class="seg-btn active" data-prd-mode="targeted">Chapitre ciblé</button>
+                <button class="seg-btn" data-prd-mode="full">Document intégral</button>
+              </div>
+              <button id="prd-toggle-toc-btn" class="btn btn-sm active" title="Afficher ou masquer la table des matières PRD">TDM latérale</button>
+              <button id="prd-print-btn" class="btn btn-sm" title="Imprimer ou exporter en PDF">Imprimer / PDF</button>
+              <a id="prd-standalone-link" class="btn btn-sm" href="PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" target="_blank" rel="noopener">Page PRD autonome ↗</a>
+              <a id="prd-source-md-link" class="btn btn-sm" href="../prd.md" target="_blank" rel="noopener">prd.md ↗</a>
+              <span id="prd-stats-pill" class="stats-pill" style="margin-left:auto;"></span>
+            </div>
+            <div class="prd-body">
+              <aside id="prd-toc-pane" class="prd-toc-pane" aria-label="Table des matières du PRD">
+                <div class="prd-toc-filter-wrap">
+                  <input id="prd-toc-filter" class="search-input" type="search" placeholder="Filtrer TDM (Partie, Ch., Famille, Annexe…)" autocomplete="off" aria-label="Filtrer la table des matières PRD" />
+                  <div id="prd-toc-count" style="font-size:11px;color:var(--text-muted);margin-top:4px;"></div>
+                </div>
+                <div id="prd-toc-list" class="prd-toc-list"></div>
+              </aside>
+              <div id="prd-reader" class="prd-reader" tabindex="0"></div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <!-- Inspecteur latéral -->
@@ -1144,6 +1370,37 @@
     function truncate(str, maxLen) {
       var s = String(str || "");
       return s.length > maxLen ? s.slice(0, maxLen - 1) + "…" : s;
+    }
+
+    function pad2(n) {
+      var num = Number(n) || 0;
+      return num < 10 ? "0" + String(num) : String(num);
+    }
+
+    function prdInlineHtml(text) {
+      var esc = escapeHtml(text || "");
+      esc = esc.replace(/`([^`]+)`/g, '<code class="mono">$1</code>');
+      esc = esc.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+      esc = esc.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+      return esc;
+    }
+
+    function parseLocationHash(hashStr) {
+      var raw = String(hashStr || "").replace(/^#/, "").trim();
+      var res = {};
+      if (!raw) return res;
+      raw.split("&").forEach(function (pair) {
+        if (!pair) return;
+        var eq = pair.indexOf("=");
+        var k = eq >= 0 ? pair.slice(0, eq) : pair;
+        var v = eq >= 0 ? pair.slice(eq + 1) : "";
+        try {
+          res[decodeURIComponent(k)] = decodeURIComponent(v.replace(/\+/g, " "));
+        } catch (err) {
+          res[k] = v;
+        }
+      });
+      return res;
     }
 
     var SVG_NS = "http" + "://www.w3.org/2000/svg";
@@ -1320,6 +1577,91 @@
         });
       });
 
+      // Index PRD Web (Vue 5 & pont bidirectionnel)
+      var prd = data.prd && typeof data.prd === "object" ? data.prd : null;
+      var prdPartyByDom = Object.create(null);
+      var prdChapterByNum = Object.create(null);
+      var prdAnnexeByCode = Object.create(null);
+      var prdLookup = (prd && prd.lookup) ? prd.lookup : { node_id_to_prd: {}, slug_to_chapter: {}, domain_to_part: {} };
+
+      if (prd) {
+        var execSum = prd.executive_summary || {};
+        (execSum.sections || []).forEach(function (sec, sIdx) {
+          var sid = sec.id || ("exec-" + (sIdx + 1));
+          searchDocs.push({
+            kind: "prd-exec",
+            id: sid,
+            title: sec.heading || ("Section " + (sIdx + 1)),
+            subtitle: "PRD · Sommaire exécutif global",
+            norm: normalizeText([sec.heading, sec.body_md, (sec.paragraphs || []).join(" ")].join(" "))
+          });
+        });
+
+        (prd.parties || []).forEach(function (p) {
+          prdPartyByDom[p.domain_id] = p;
+          if (p.part_number != null) prdPartyByDom[String(p.part_number)] = p;
+          var pTitle = "Partie " + (p.part_roman || p.part_number) + " — " + (p.representative_part_title || "");
+          searchDocs.push({
+            kind: "prd-part",
+            id: p.domain_id,
+            title: pTitle,
+            subtitle: "PRD · " + p.domain_id + " · " + (p.chapter_numbers || []).length + " chapitres",
+            domain_id: p.domain_id,
+            norm: normalizeText([pTitle, p.domain_id, p.part_summary, p.domain_node_id].join(" "))
+          });
+        });
+
+        (prd.chapters || []).forEach(function (ch) {
+          var cnum = Number(ch.chapter_number);
+          prdChapterByNum[cnum] = ch;
+          var tc = ch.targeted_content || {};
+          var chTitle = "Chapitre " + pad2(cnum) + " — " + (ch.representative_title || "");
+          var hayCh = [
+            chTitle,
+            ch.chapter_code,
+            ch.domain_id,
+            ch.subdomain_node_id,
+            ch.executive_summary,
+            tc.scope_and_objectives,
+            (tc.key_requirements_and_objectives || []).join(" "),
+            (tc.deliverables_and_verification || []).join(" ")
+          ].join(" ");
+          searchDocs.push({
+            kind: "prd-chapter",
+            id: String(cnum),
+            chapter_number: cnum,
+            title: chTitle,
+            subtitle: "PRD · " + (ch.chapter_code || ("CH-" + pad2(cnum))) + " · " + (ch.domain_id || ""),
+            domain_id: ch.domain_id,
+            norm: normalizeText(hayCh)
+          });
+
+          (tc.families_and_themes || []).forEach(function (fam) {
+            searchDocs.push({
+              kind: "prd-family",
+              id: fam.family_node_id,
+              chapter_number: cnum,
+              title: fam.family_title,
+              subtitle: "PRD · Ch. " + pad2(cnum) + " · Famille " + (fam.family_code || fam.family_node_id),
+              domain_id: ch.domain_id,
+              norm: normalizeText([fam.family_title, fam.family_node_id, fam.family_code, fam.family_overview].join(" "))
+            });
+          });
+        });
+
+        (prd.annexes || []).forEach(function (ann) {
+          prdAnnexeByCode[ann.annexe_code] = ann;
+          var aTitle = "Annexe " + ann.annexe_code + " — " + (ann.representative_title || "").replace(/^Annexe\s+[A-D]\s*[—–:-]?\s*/i, "");
+          searchDocs.push({
+            kind: "prd-annexe",
+            id: ann.annexe_code,
+            title: aTitle,
+            subtitle: "PRD · Annexe normée",
+            norm: normalizeText([aTitle, ann.annexe_code, ann.executive_summary, ann.targeted_content_description].join(" "))
+          });
+        });
+      }
+
       // Valeurs de facettes uniques (hors nœud racine depth === 0, horizons normalisés)
       var facetAutonomy = new Set();
       var facetRoles = new Set();
@@ -1361,6 +1703,11 @@
         themesByStructUnit: themesByStructUnit,
         searchDocs: searchDocs,
         pivots: pivots,
+        prd: prd,
+        prdPartyByDom: prdPartyByDom,
+        prdChapterByNum: prdChapterByNum,
+        prdAnnexeByCode: prdAnnexeByCode,
+        prdLookup: prdLookup,
         facets: {
           autonomy: Array.from(facetAutonomy).sort(),
           roles: Array.from(facetRoles).sort(),
@@ -1387,7 +1734,11 @@
         }
         if (!ok) continue;
         var titleNorm = normalizeText(doc.title);
-        var score = doc.kind === "theme" ? 20 : 5;
+        var score = doc.kind === "theme" ? 20
+          : (doc.kind === "prd-chapter" ? 18
+          : (doc.kind === "prd-part" ? 17
+          : (doc.kind === "prd-family" ? 15
+          : (doc.kind && doc.kind.indexOf("prd-") === 0 ? 14 : 5))));
         if (titleNorm.indexOf(q) !== -1) score += 40;
         if (titleNorm.indexOf(terms[0]) === 0) score += 15;
         scored.push({ doc: doc, score: score });
@@ -1837,6 +2188,164 @@
       return positions;
     }
 
+    function resolveNodeToPrdTarget(indexes, nodeId) {
+      if (!indexes || !nodeId) return null;
+      var lookupMap = (indexes.prdLookup && indexes.prdLookup.node_id_to_prd) || {};
+      if (lookupMap[nodeId]) return Object.assign({}, lookupMap[nodeId]);
+      var n = indexes.nodeById ? indexes.nodeById[nodeId] : null;
+      if (!n) return null;
+      if (n.node_kind === "domain") {
+        return { kind: "domain", domain_id: n.domain_id, section_id: "part-" + n.domain_id };
+      }
+      var slugToCh = (indexes.prdLookup && indexes.prdLookup.slug_to_chapter) || {};
+      if (n.canonical_slug && slugToCh[n.canonical_slug]) {
+        return {
+          kind: "theme",
+          domain_id: n.domain_id,
+          chapter_number: Number(slugToCh[n.canonical_slug]),
+          theme_node_id: nodeId
+        };
+      }
+      var chs = (indexes.prd && indexes.prd.chapters) || [];
+      for (var i = 0; i < chs.length; i++) {
+        var ch = chs[i];
+        if (ch.subdomain_node_id === nodeId) {
+          return { kind: "subdomain", domain_id: ch.domain_id, chapter_number: Number(ch.chapter_number) };
+        }
+        var fams = (ch.targeted_content && ch.targeted_content.families_and_themes) || [];
+        for (var j = 0; j < fams.length; j++) {
+          if (fams[j].family_node_id === nodeId) {
+            return {
+              kind: "family",
+              domain_id: ch.domain_id,
+              chapter_number: Number(ch.chapter_number),
+              family_node_id: nodeId
+            };
+          }
+        }
+      }
+      return null;
+    }
+
+    function resolveStructUnitToPrdTarget(indexes, unitId) {
+      if (!indexes || !unitId) return null;
+      var directThemes = (indexes.themesByStructUnit && indexes.themesByStructUnit[unitId]) || [];
+      for (var i = 0; i < directThemes.length; i++) {
+        var hit = resolveNodeToPrdTarget(indexes, directThemes[i]);
+        if (hit) return hit;
+      }
+      var chapMeta = indexes.chapterByUnitId && indexes.chapterByUnitId[unitId];
+      if (chapMeta && Array.isArray(chapMeta.themes_addressed)) {
+        for (var j = 0; j < chapMeta.themes_addressed.length; j++) {
+          var tn = indexes.nodeBySlug && indexes.nodeBySlug[chapMeta.themes_addressed[j]];
+          if (tn) {
+            var hit2 = resolveNodeToPrdTarget(indexes, tn.node_id);
+            if (hit2) return hit2;
+          }
+        }
+      }
+      var u2ch = (indexes.prdLookup && indexes.prdLookup.unit_id_to_chapter) || {};
+      if (u2ch[unitId] != null) {
+        var chNum = Number(u2ch[unitId]);
+        var chObj = indexes.prdChapterByNum && indexes.prdChapterByNum[chNum];
+        return {
+          kind: "subdomain",
+          domain_id: chObj ? chObj.domain_id : null,
+          chapter_number: chNum,
+          section_id: "ch-" + pad2(chNum)
+        };
+      }
+      var u = indexes.structUnitById && indexes.structUnitById[unitId];
+      if (u && indexes.nodes) {
+        for (var k = 0; k < indexes.nodes.length; k++) {
+          var n = indexes.nodes[k];
+          if (n.node_kind !== "theme" || !Array.isArray(n.occurrences)) continue;
+          for (var m = 0; m < n.occurrences.length; m++) {
+            var occ = n.occurrences[m];
+            if (occ.tome_id === u.tome_id && occ.line_start <= u.line_end && (occ.line_end || occ.line_start) >= u.line_start) {
+              var hit3 = resolveNodeToPrdTarget(indexes, n.node_id);
+              if (hit3) return hit3;
+            }
+          }
+        }
+      }
+      return null;
+    }
+
+    function computePrdFilterState(indexes, filters) {
+      var filtered = filterNodesAndRelations(indexes, filters || {});
+      var active = filtered.active;
+      var matchingChapters = new Set();
+      var matchingDomains = new Set();
+      var matchingThemes = new Set();
+      var matchingRels = new Set();
+      filtered.relations.forEach(function (r) { matchingRels.add(r.type); });
+
+      var chs = (indexes.prd && indexes.prd.chapters) || [];
+      chs.forEach(function (ch) {
+        var cnum = Number(ch.chapter_number);
+        var tc = ch.targeted_content || {};
+        var chHasMatch = !active || filtered.matchingNodeIds.has(ch.subdomain_node_id);
+        (tc.families_and_themes || []).forEach(function (fam) {
+          (fam.themes_targeted || []).forEach(function (th) {
+            if (!active || filtered.matchingNodeIds.has(th.theme_node_id)) {
+              matchingThemes.add(th.theme_node_id);
+              chHasMatch = true;
+            }
+          });
+        });
+        if (active && filters && filters.relationType && !chHasMatch) {
+          (tc.cross_chapter_interrelations || []).forEach(function (rel) {
+            if (rel.relation_type === filters.relationType) chHasMatch = true;
+          });
+        }
+        if (chHasMatch) {
+          matchingChapters.add(cnum);
+          matchingDomains.add(ch.domain_id);
+        }
+      });
+
+      return {
+        active: active,
+        matchingNodeIds: filtered.matchingNodeIds,
+        matchingChapters: matchingChapters,
+        matchingDomains: matchingDomains,
+        matchingThemes: matchingThemes
+      };
+    }
+
+    function collectDescendantThemeIds(indexes, nodeId) {
+      if (!indexes || !nodeId || !indexes.nodeById) return [];
+      var root = indexes.nodeById[nodeId];
+      if (!root) return [];
+      if (root.node_kind === "theme") return [nodeId];
+      var out = [];
+      var seen = new Set([nodeId]);
+      var queue = [nodeId];
+      while (queue.length) {
+        var cur = queue.shift();
+        var kids = (indexes.childrenByParent && indexes.childrenByParent[cur]) || [];
+        for (var i = 0; i < kids.length; i++) {
+          var cid = kids[i];
+          if (seen.has(cid)) continue;
+          seen.add(cid);
+          var cn = indexes.nodeById[cid];
+          if (!cn) continue;
+          if (cn.node_kind === "theme") out.push(cid);
+          else queue.push(cid);
+        }
+      }
+      return out;
+    }
+
+    function normalizePrdExecId(secId) {
+      var raw = String(secId || "").trim();
+      if (!raw || raw === "exec") return "exec";
+      var m = raw.match(/^(?:exec-|sec-)?(\d{1,2})$/i);
+      if (m) return "exec-" + pad2(Number(m[1]));
+      return raw;
+    }
+
     // =========================================================================
     // 4. Exposition globale pour tests & audit Node.js
     // =========================================================================
@@ -1844,6 +2353,13 @@
       normalizeText: normalizeText,
       normalizeHorizon: normalizeHorizon,
       corpusHref: corpusHref,
+      prdInlineHtml: prdInlineHtml,
+      parseLocationHash: parseLocationHash,
+      collectDescendantThemeIds: collectDescendantThemeIds,
+      normalizePrdExecId: normalizePrdExecId,
+      resolveNodeToPrdTarget: resolveNodeToPrdTarget,
+      resolveStructUnitToPrdTarget: resolveStructUnitToPrdTarget,
+      computePrdFilterState: computePrdFilterState,
       buildIndexes: buildIndexes,
       searchCorpus: searchCorpus,
       filterNodesAndRelations: filterNodesAndRelations,
@@ -1911,7 +2427,15 @@
         c4Tab: "heatmap",
         c4GroupBy: "domain",
         c4Metric: "occurrences",
-        c4SelectedCell: null
+        c4SelectedCell: null,
+        // Vue 5 PRD
+        prdMode: "targeted",
+        prdFocusKind: "exec",
+        prdFocusId: "exec",
+        prdHighlightId: null,
+        prdTocFilter: "",
+        prdShowToc: true,
+        prdAnnDShowAll: false
       };
 
       // Expansion initiale Vue 1 (Niv. 2 : Racine + Domaines dépliés)
@@ -2191,9 +2715,13 @@
             centerOnPoint("mm", state.mmLastPositions[nodeId].x, state.mmLastPositions[nodeId].y);
           }
         } else if (state.activeView === "synaptic") {
-          renderSynapticGraph(false);
-          if (centerCanvas && state.syPositions && state.syPositions[nodeId]) {
-            centerOnPoint("sy", state.syPositions[nodeId].x, state.syPositions[nodeId].y);
+          var needEgoRecompute = state.syEgo !== "all" && state.syLastSeedId !== nodeId;
+          if (needEgoRecompute) state.syPositions = null;
+          state.syLastSeedId = nodeId;
+          renderSynapticGraph(needEgoRecompute);
+          var centerPos = state.syPositions && (state.syPositions[nodeId] || (state.syLastCenterId && state.syPositions[state.syLastCenterId]));
+          if (centerCanvas && centerPos) {
+            centerOnPoint("sy", centerPos.x, centerPos.y);
           }
         }
       }
@@ -2249,6 +2777,7 @@
         html.push('</div>');
 
         html.push('<div class="chip-row">');
+        html.push('<button class="btn btn-sm primary" id="insp-goto-prd">Lire dans le PRD →</button>');
         html.push('<button class="btn btn-sm" id="insp-goto-mm">Voir MindMap</button>');
         html.push('<button class="btn btn-sm" id="insp-goto-sy">Voir Graphe (1 saut)</button>');
         html.push('<button class="btn btn-sm" id="insp-set-a">Départ A</button>');
@@ -2357,6 +2886,10 @@
             selectThemeNode(el.getAttribute("data-jump-node"), true);
           });
         });
+        var bPrd = document.getElementById("insp-goto-prd");
+        if (bPrd) bPrd.addEventListener("click", function () {
+          jumpToPrdByNodeId(n.node_id);
+        });
         var bMm = document.getElementById("insp-goto-mm");
         if (bMm) bMm.addEventListener("click", function () {
           switchView("mindmap");
@@ -2411,7 +2944,11 @@
         if (chapMeta && chapMeta.summary) {
           html.push('<p style="margin:4px 0;font-size:12.5px;color:var(--text-muted);">' + escapeHtml(chapMeta.summary) + '</p>');
         }
-        html.push('<div><a class="btn btn-sm primary" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">Ouvrir ' + escapeHtml(truncate(u.filename || u.file, 26)) + ' #L' + u.line_start + '</a></div>');
+        var prdStructTarget = resolveStructUnitToPrdTarget(idx, u.unit_id);
+        html.push('<div class="chip-row">');
+        html.push('<a class="btn btn-sm primary" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">Ouvrir ' + escapeHtml(truncate(u.filename || u.file, 26)) + ' #L' + u.line_start + '</a>');
+        html.push('<button class="btn btn-sm" id="insp-struct-goto-prd">Lire dans le PRD →</button>');
+        html.push('</div>');
 
         html.push('<div><div class="section-label">Thèmes associés (' + linkedIds.length + ')</div>');
         if (linkedIds.length === 0) {
@@ -2438,6 +2975,10 @@
 
         body.innerHTML = html.join("");
         document.getElementById("inspector").classList.remove("collapsed");
+        var bStructPrd = document.getElementById("insp-struct-goto-prd");
+        if (bStructPrd) bStructPrd.addEventListener("click", function () {
+          jumpToPrdTarget(prdStructTarget || { kind: "exec" });
+        });
         body.querySelectorAll("[data-jump-theme]").forEach(function (el) {
           el.addEventListener("click", function () {
             switchView("mindmap");
@@ -3013,20 +3554,42 @@
           themeNodes = idx.nodes.filter(function (n) { return n.node_kind === "theme"; });
         }
 
-        // Filtrage par ego-réseau si 1 ou 2 sauts
-        var activeCenter = (state.selectedKind === "theme" && idx.nodeById[state.selectedId] && idx.nodeById[state.selectedId].node_kind === "theme")
-          ? state.selectedId
-          : (themeNodes[0] ? themeNodes[0].node_id : null);
+        // Résolution du ou des thèmes centraux (supporte THM_*, DOM_*, SUB_* et FAM_*)
+        var rawSel = (state.selectedKind === "theme" && state.selectedId) ? idx.nodeById[state.selectedId] : null;
+        var themeNodeIdSet = new Set(themeNodes.map(function (n) { return n.node_id; }));
+        var seedIds = rawSel
+          ? collectDescendantThemeIds(idx, rawSel.node_id).filter(function (tid) { return themeNodeIdSet.has(tid); })
+          : [];
+        var seedSet = new Set(seedIds);
+        var activeCenter = null;
+        if (seedIds.length === 1) {
+          activeCenter = seedIds[0];
+        } else if (seedIds.length > 1) {
+          var bestDeg = -1;
+          seedIds.forEach(function (tid) {
+            var tn = idx.nodeById[tid];
+            var d = tn ? (tn.relation_degree || ((idx.outRelations[tid] || []).length + (idx.inRelations[tid] || []).length)) : 0;
+            if (d > bestDeg) {
+              bestDeg = d;
+              activeCenter = tid;
+            }
+          });
+        } else {
+          activeCenter = themeNodes[0] ? themeNodes[0].node_id : null;
+          if (activeCenter) seedSet = new Set([activeCenter]);
+        }
+        state.syLastCenterId = activeCenter;
+        state.syLastSeedId = rawSel ? rawSel.node_id : null;
 
-        var visibleIds = new Set(themeNodes.map(function (n) { return n.node_id; }));
+        var visibleIds = themeNodeIdSet;
         var visibleRels = filtered.relations.filter(function (r) {
           return visibleIds.has(r.source) && visibleIds.has(r.target);
         });
 
-        if (state.syEgo !== "all" && activeCenter) {
+        if (state.syEgo !== "all" && seedSet.size > 0) {
           var maxHops = Number(state.syEgo);
-          var egoSet = new Set([activeCenter]);
-          var frontier = [activeCenter];
+          var egoSet = new Set(seedSet);
+          var frontier = Array.from(seedSet);
           for (var step = 0; step < maxHops; step++) {
             var nextF = [];
             visibleRels.forEach(function (r) {
@@ -3075,7 +3638,7 @@
           if (!p1 || !p2) return;
           var rt = idx.relTypeById[r.type] || { color: "#64748b", label: r.type };
           var isPath = pathRelSet.has(r.relation_id);
-          var touchesSel = activeCenter && (r.source === activeCenter || r.target === activeCenter);
+          var touchesSel = seedSet.size > 0 && (seedSet.has(r.source) || seedSet.has(r.target));
 
           var line = document.createElementNS(SVG_NS, "line");
           line.setAttribute("x1", p1.x.toFixed(1));
@@ -3106,7 +3669,7 @@
           var deg = n.relation_degree || ((idx.outRelations[n.node_id] || []).length + (idx.inRelations[n.node_id] || []).length);
           var rad = Math.max(7, Math.min(20, 6 + Math.sqrt(deg) * 2.2));
           var isPath = pathNodeSet.has(n.node_id);
-          var isSel = state.selectedKind === "theme" && state.selectedId === n.node_id;
+          var isSel = state.selectedKind === "theme" && seedSet.has(n.node_id);
 
           var g = document.createElementNS(SVG_NS, "g");
           g.setAttribute("class", "mm-node" + (pathNodeSet.size > 0 && !isPath ? " dimmed" : ""));
@@ -3388,6 +3951,698 @@
       }
 
       // =========================================================================
+      // VUE 5 : PRD Maître interactif & Pont bidirectionnel MindMap <-> PRD
+      // =========================================================================
+      function jumpToPrdTarget(target) {
+        if (!target) {
+          state.prdFocusKind = "exec";
+          state.prdFocusId = "exec";
+          state.prdHighlightId = null;
+          switchView("prd");
+          return;
+        }
+        var chNum = target.chapter_number != null ? Number(target.chapter_number) : null;
+        if (target.kind === "annexe" || target.annexe_code) {
+          state.prdFocusKind = "annexe";
+          state.prdFocusId = target.annexe_code || "A";
+          state.prdHighlightId = "ann-" + state.prdFocusId;
+        } else if (target.kind === "exec" || (!chNum && target.section_id)) {
+          state.prdFocusKind = "exec";
+          state.prdFocusId = "exec";
+          state.prdHighlightId = target.section_id ? normalizePrdExecId(target.section_id) : null;
+        } else if (chNum && idx.prdChapterByNum[chNum]) {
+          state.prdFocusKind = "chapter";
+          state.prdFocusId = chNum;
+          state.prdHighlightId = target.theme_node_id || target.family_node_id || ("ch-" + pad2(chNum));
+        } else if (target.domain_id && idx.prdPartyByDom[target.domain_id]) {
+          state.prdFocusKind = "part";
+          state.prdFocusId = target.domain_id;
+          state.prdHighlightId = "part-" + target.domain_id;
+        } else {
+          state.prdFocusKind = "exec";
+          state.prdFocusId = "exec";
+          state.prdHighlightId = null;
+        }
+        switchView("prd");
+      }
+
+      function jumpToPrdByNodeId(nodeId) {
+        var target = resolveNodeToPrdTarget(idx, nodeId);
+        jumpToPrdTarget(target || { kind: "exec" });
+      }
+
+      function renderPrdBridgeButtons(nodeId, compact) {
+        if (!nodeId || !idx.nodeById[nodeId]) return "";
+        var cls = compact ? "btn btn-sm" : "btn btn-sm";
+        return (
+          '<span class="prd-card-actions">' +
+            '<button class="' + cls + '" data-prd-jump-mm="' + escapeHtml(nodeId) + '" title="Ouvrir et centrer dans la MindMap">MindMap</button>' +
+            '<button class="' + cls + '" data-prd-jump-sy="' + escapeHtml(nodeId) + '" title="Ouvrir dans le Graphe Synaptique (1 saut)">Graphe</button>' +
+          '</span>'
+        );
+      }
+
+      function renderPrdExecHtml(prd) {
+        var meta = prd.meta || {};
+        var exec = prd.executive_summary || {};
+        var sections = exec.sections || [];
+        var html = [];
+        html.push(
+          '<div class="prd-hero">' +
+            '<div class="chip-row" style="margin-bottom:8px;">' +
+              '<span class="chip">Version ' + escapeHtml(meta.version || "1.0.0") + '</span>' +
+              '<span class="chip mono">' + escapeHtml(meta.date || "2026-11-24") + '</span>' +
+              '<span class="chip">' + escapeHtml(meta.domains_count || 12) + ' domaines</span>' +
+              '<span class="chip">' + escapeHtml(meta.chapters_count || 36) + ' chapitres</span>' +
+              '<span class="chip">' + escapeHtml(meta.families_count || 71) + ' familles</span>' +
+              '<span class="chip">' + escapeHtml(meta.themes_count || 260) + ' thèmes</span>' +
+              '<span class="chip">' + escapeHtml(meta.relations_count || 616) + ' interrelations</span>' +
+              '<span class="chip">' + escapeHtml(meta.annexes_count || 4) + ' annexes</span>' +
+            '</div>' +
+            '<h1>' + escapeHtml(meta.prd_title || "Référentiel directeur") + '</h1>' +
+            '<p style="margin:0 0 6px 0;color:var(--text-muted);">' + escapeHtml(meta.prd_subtitle || "") + '</p>' +
+            '<div style="font-size:11.5px;color:var(--text-muted);">Statut : ' + escapeHtml(meta.status || "") + ' · Source : <span class="mono">' + escapeHtml(meta.source_md || "../prd.md") + '</span> (' + Number(meta.line_count || 4512).toLocaleString("fr-CA") + ' lignes, ' + Number(meta.word_count || 134709).toLocaleString("fr-CA") + ' mots)</div>' +
+          '</div>'
+        );
+
+        html.push('<div class="prd-section-card" data-prd-eid="exec">');
+        html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">' + escapeHtml(exec.title || "Sommaire exécutif global") + '</h2>');
+        if (exec.lead) html.push('<p style="margin:0 0 10px 0;line-height:1.55;">' + prdInlineHtml(exec.lead) + '</p>');
+        sections.forEach(function (sec, i) {
+          var sid = sec.id || ("exec-" + (i + 1));
+          var isHl = state.prdHighlightId === sid;
+          html.push('<div class="prd-family-block' + (isHl ? " prd-highlight" : "") + '" data-prd-eid="' + escapeHtml(sid) + '">');
+          html.push('<h3 style="margin:0 0 6px 0;font-size:14.5px;">' + escapeHtml(sec.heading || "") + '</h3>');
+          var paras = Array.isArray(sec.paragraphs) && sec.paragraphs.length ? sec.paragraphs : String(sec.body_md || "").split(/\n\n+/);
+          paras.forEach(function (pTxt) {
+            var trimmed = String(pTxt || "").trim();
+            if (!trimmed || trimmed.charAt(0) === "|") return;
+            html.push('<p style="margin:4px 0 6px 0;line-height:1.5;">' + prdInlineHtml(trimmed) + '</p>');
+          });
+          if (sec.kpi_table && Array.isArray(sec.kpi_table.headers) && Array.isArray(sec.kpi_table.rows)) {
+            html.push('<div style="overflow-x:auto;margin-top:8px;"><table class="data-table"><thead><tr>');
+            sec.kpi_table.headers.forEach(function (h) { html.push('<th>' + prdInlineHtml(h) + '</th>'); });
+            html.push('</tr></thead><tbody>');
+            sec.kpi_table.rows.forEach(function (row) {
+              html.push('<tr>');
+              row.forEach(function (cell) { html.push('<td>' + prdInlineHtml(cell) + '</td>'); });
+              html.push('</tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          html.push('</div>');
+        });
+        html.push('</div>');
+
+        if (state.prdMode === "targeted") {
+          html.push('<div class="prd-section-card"><h3 style="margin:0 0 10px 0;font-size:15px;">Accès rapide aux 12 Parties &amp; 4 Annexes</h3><div class="cards-grid">');
+          (prd.parties || []).forEach(function (p) {
+            html.push(
+              '<div class="card" style="padding:10px 12px;">' +
+                '<div class="chip-row" style="margin-bottom:4px;"><span class="chip mono">' + escapeHtml(p.domain_id) + '</span><span class="chip">Partie ' + escapeHtml(p.part_roman) + '</span><span class="chip">' + (p.chapter_numbers || []).length + ' ch.</span></div>' +
+                '<div style="font-weight:700;font-size:13px;margin-bottom:4px;">' + escapeHtml(p.representative_part_title) + '</div>' +
+                '<p style="margin:0 0 8px 0;font-size:12px;color:var(--text-muted);">' + escapeHtml(truncate(p.part_summary, 150)) + '</p>' +
+                '<div class="chip-row">' +
+                  '<button class="btn btn-sm primary" data-prd-jump-part="' + escapeHtml(p.domain_id) + '">Ouvrir Partie ' + escapeHtml(p.part_roman) + '</button>' +
+                  renderPrdBridgeButtons(p.domain_node_id, true) +
+                '</div>' +
+              '</div>'
+            );
+          });
+          html.push('</div></div>');
+        }
+        return html.join("");
+      }
+
+      function renderPrdPartyCardHtml(p, fState) {
+        var dim = fState.active && !fState.matchingDomains.has(p.domain_id) ? " prd-dimmed" : (fState.active ? " prd-match" : "");
+        var hl = state.prdHighlightId === ("part-" + p.domain_id) ? " prd-highlight" : "";
+        var cleanTitle = String(p.representative_part_title || "").replace(/^Partie\s+[IVXLCDM]+\s*[—–:-]?\s*/i, "");
+        var html = [];
+        html.push('<div class="prd-section-card' + dim + hl + '" data-prd-eid="part-' + escapeHtml(p.domain_id) + '" style="border-left:4px solid var(--accent);">');
+        html.push('<div class="prd-card-head"><div>');
+        html.push('<div class="chip-row" style="margin-bottom:5px;"><span class="chip mono">' + escapeHtml(p.domain_id) + '</span><span class="chip mono">' + escapeHtml(p.domain_node_id || ("DOM_" + p.domain_id)) + '</span><span class="chip">Partie ' + escapeHtml(p.part_roman) + '</span></div>');
+        html.push('<h2 style="margin:0;font-size:17px;">Partie ' + escapeHtml(p.part_roman) + ' — ' + escapeHtml(p.domain_id) + ' : ' + escapeHtml(cleanTitle) + '</h2>');
+        html.push('</div>' + renderPrdBridgeButtons(p.domain_node_id, false) + '</div>');
+        html.push('<p style="margin:4px 0 8px 0;line-height:1.5;">' + prdInlineHtml(p.part_summary || "") + '</p>');
+        if (Array.isArray(p.key_identifiers) && p.key_identifiers.length) {
+          html.push('<div class="chip-row" style="margin-bottom:8px;">');
+          p.key_identifiers.forEach(function (k) { html.push('<span class="chip mono">' + escapeHtml(k) + '</span>'); });
+          html.push('</div>');
+        }
+        if (state.prdMode === "targeted" && state.prdFocusKind === "part") {
+          html.push('<div class="chip-row">');
+          (p.chapter_numbers || []).forEach(function (cn) {
+            var chObj = idx.prdChapterByNum[Number(cn)];
+            html.push('<button class="btn btn-sm" data-prd-jump-ch="' + cn + '">Ch. ' + pad2(cn) + (chObj ? " · " + escapeHtml(truncate(chObj.representative_title, 42)) : "") + '</button>');
+          });
+          html.push('</div>');
+        }
+        html.push('</div>');
+        return html.join("");
+      }
+
+      function renderPrdChapterHtml(ch, fState) {
+        var cnum = Number(ch.chapter_number);
+        var tc = ch.targeted_content || {};
+        var fams = tc.families_and_themes || [];
+        var eid = "ch-" + pad2(cnum);
+        var chDim = fState.active && !fState.matchingChapters.has(cnum) ? " prd-dimmed" : (fState.active ? " prd-match" : "");
+        var chHl = state.prdHighlightId === eid ? " prd-highlight" : "";
+        var cleanTitle = String(ch.representative_title || "").replace(/^Chapitre\s+0?\d+\s*[—–:-]?\s*/i, "");
+
+        var html = [];
+        html.push('<article class="prd-section-card' + chDim + chHl + '" data-prd-eid="' + escapeHtml(eid) + '">');
+        html.push('<div class="prd-card-head"><div>');
+        html.push(
+          '<div class="chip-row" style="margin-bottom:5px;">' +
+            '<span class="chip mono">' + escapeHtml(ch.chapter_code || ("CH-" + pad2(cnum))) + '</span>' +
+            '<span class="chip mono">' + escapeHtml(ch.domain_id) + '</span>' +
+            '<span class="chip mono">' + escapeHtml(ch.subdomain_node_id) + '</span>' +
+            ((ch.tomes_present || []).map(function (t) { return '<span class="chip">' + escapeHtml(t) + '</span>'; }).join("")) +
+            ((ch.autonomy_levels || []).map(function (a) { return '<span class="chip mono">' + escapeHtml(a) + '</span>'; }).join("")) +
+          '</div>'
+        );
+        html.push('<h2 style="margin:0;font-size:17px;">Chapitre ' + pad2(cnum) + ' — ' + escapeHtml(cleanTitle) + '</h2>');
+        html.push('</div><div class="prd-card-actions">');
+        if (state.prdMode === "targeted") {
+          if (cnum > 1) html.push('<button class="btn btn-sm" data-prd-jump-ch="' + (cnum - 1) + '">← Ch. ' + pad2(cnum - 1) + '</button>');
+          if (cnum < 36) html.push('<button class="btn btn-sm" data-prd-jump-ch="' + (cnum + 1) + '">Ch. ' + pad2(cnum + 1) + ' →</button>');
+        }
+        html.push(renderPrdBridgeButtons(ch.subdomain_node_id, false) + '</div></div>');
+
+        // XX.1 Résumé
+        html.push('<div style="margin-top:8px;"><h3 style="margin:0 0 4px 0;font-size:14.5px;">' + pad2(cnum) + '.1 Résumé</h3>');
+        html.push('<p style="margin:0;line-height:1.55;">' + prdInlineHtml(ch.executive_summary || "") + '</p></div>');
+
+        // XX.2 Descriptif du contenu ciblé
+        html.push('<div style="margin-top:12px;"><h3 style="margin:0 0 4px 0;font-size:14.5px;">' + pad2(cnum) + '.2 Descriptif du contenu ciblé</h3>');
+        if (tc.scope_and_objectives) {
+          html.push('<p style="margin:4px 0 6px 0;line-height:1.5;">' + prdInlineHtml(tc.scope_and_objectives) + '</p>');
+        }
+        if (Array.isArray(tc.key_requirements_and_objectives) && tc.key_requirements_and_objectives.length) {
+          html.push('<div class="section-label" style="margin-top:8px;">Exigences et objectifs vérifiables (' + tc.key_requirements_and_objectives.length + ')</div><ul class="prd-list">');
+          tc.key_requirements_and_objectives.forEach(function (req) {
+            html.push('<li>' + prdInlineHtml(req) + '</li>');
+          });
+          html.push('</ul>');
+        }
+
+        // Familles & Thèmes
+        fams.forEach(function (fam, k) {
+          var famHl = state.prdHighlightId === fam.family_node_id ? " prd-highlight" : "";
+          html.push('<div class="prd-family-block' + famHl + '" data-prd-eid="' + escapeHtml(fam.family_node_id) + '">');
+          html.push('<div class="prd-card-head" style="margin-bottom:4px;"><div>');
+          html.push('<h4 style="margin:0;font-size:14px;">' + pad2(cnum) + '.2.' + (k + 1) + ' ' + escapeHtml(fam.family_title || "") + '</h4>');
+          html.push('<div style="font-size:11.5px;color:var(--text-muted);"><span class="mono">' + escapeHtml(fam.family_node_id) + '</span></div>');
+          html.push('</div>' + renderPrdBridgeButtons(fam.family_node_id, true) + '</div>');
+          if (fam.family_overview) html.push('<p style="margin:4px 0 8px 0;font-size:12.5px;color:var(--text-muted);line-height:1.45;">' + prdInlineHtml(fam.family_overview) + '</p>');
+
+          (fam.themes_targeted || []).forEach(function (th) {
+            var thMatch = !fState.active || fState.matchingThemes.has(th.theme_node_id);
+            var thCls = (fState.active ? (thMatch ? " prd-match" : " prd-dimmed") : "") + (state.prdHighlightId === th.theme_node_id ? " prd-highlight" : "");
+            html.push('<div class="prd-theme-card' + thCls + '" data-prd-eid="' + escapeHtml(th.theme_node_id) + '">');
+            html.push('<div class="prd-card-head" style="margin-bottom:4px;"><div>');
+            html.push('<strong style="font-size:13.5px;">' + escapeHtml(th.theme_title || "") + '</strong> ');
+            html.push('<span class="chip mono">' + escapeHtml(th.theme_node_id) + '</span> <span class="chip mono">' + escapeHtml(th.canonical_slug || "") + '</span>');
+            html.push('</div>' + renderPrdBridgeButtons(th.theme_node_id, true) + '</div>');
+            html.push('<p style="margin:4px 0 6px 0;line-height:1.5;">' + prdInlineHtml(th.content_specification || "") + '</p>');
+
+            html.push('<div class="chip-row" style="margin-bottom:5px;">');
+            if ((th.autonomy_levels || []).length) html.push('<span class="chip mono">Autonomie : ' + escapeHtml(th.autonomy_levels.join(", ")) + '</span>');
+            if ((th.roles || []).length) html.push('<span class="chip">Rôles : ' + escapeHtml(th.roles.join(", ")) + '</span>');
+            if (th.horizon) html.push('<span class="chip">Horizon : ' + escapeHtml(th.horizon) + '</span>');
+            if ((th.tomes_present || []).length) html.push('<span class="chip">Tomes : ' + escapeHtml(th.tomes_present.join(", ")) + '</span>');
+            (th.identifiers_and_norms || []).slice(0, 10).forEach(function (idStr) {
+              html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
+            });
+            html.push('</div>');
+
+            if (Array.isArray(th.direct_anchors) && th.direct_anchors.length) {
+              html.push('<div class="chip-row">');
+              th.direct_anchors.forEach(function (anc) {
+                var href = corpusHref(anc.file, anc.line_start);
+                var lbl = anc.label || (anc.tome_id + " L" + anc.line_start + (anc.line_end ? "–L" + anc.line_end : ""));
+                html.push('<a class="chip clickable mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(lbl) + '</a>');
+              });
+              html.push('</div>');
+            }
+            html.push('</div>');
+          });
+          html.push('</div>');
+        });
+
+        // Livrables
+        if (Array.isArray(tc.deliverables_and_verification) && tc.deliverables_and_verification.length) {
+          html.push('<div class="section-label" style="margin-top:12px;">Livrables et critères d\'acceptation</div><ul class="prd-list">');
+          tc.deliverables_and_verification.forEach(function (d) { html.push('<li>' + prdInlineHtml(d) + '</li>'); });
+          html.push('</ul>');
+        }
+
+        // Interrelations systémiques
+        if (Array.isArray(tc.cross_chapter_interrelations) && tc.cross_chapter_interrelations.length) {
+          html.push('<div class="section-label" style="margin-top:12px;">Interrelations systémiques (' + tc.cross_chapter_interrelations.length + ')</div><div style="display:flex;flex-direction:column;gap:5px;">');
+          tc.cross_chapter_interrelations.forEach(function (rel) {
+            var arrow = rel.direction === "entrante" ? "←" : "→";
+            var rt = idx.relTypeById[rel.relation_type] || { label: rel.relation_type, color: "#2563eb" };
+            html.push(
+              '<div class="rel-card" data-prd-jump-ch="' + escapeHtml(rel.target_chapter_number) + '" data-prd-hl="' + escapeHtml(rel.target_node_id || "") + '" style="border-left-color:' + escapeHtml(rt.color) + ';margin:0;">' +
+                '<div style="display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap;">' +
+                  '<span style="color:' + escapeHtml(rt.color) + ';font-weight:700;font-size:11.5px;">' + arrow + ' ' + escapeHtml(rel.relation_type) + ' — Ch. ' + pad2(rel.target_chapter_number) + ' · ' + escapeHtml(rel.target_chapter_title || "") + '</span>' +
+                  '<span class="chip mono">' + escapeHtml(rel.target_slug || "") + '</span>' +
+                '</div>' +
+                '<div style="color:var(--text-muted);font-size:12px;">' + prdInlineHtml(rel.synthesis || rel.label || "") + '</div>' +
+              '</div>'
+            );
+          });
+          html.push('</div>');
+        }
+
+        // Ancrages dans le Corpus
+        if (Array.isArray(tc.corpus_anchors) && tc.corpus_anchors.length) {
+          html.push('<div class="section-label" style="margin-top:12px;">Ancrages dans le Corpus (' + tc.corpus_anchors.length + ')</div>');
+          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Tome</th><th>Fichier source (Corpus/)</th><th>Référence</th></tr></thead><tbody>');
+          tc.corpus_anchors.forEach(function (anc) {
+            var href = corpusHref(anc.file, anc.line_start);
+            var fname = String(anc.file || "").split("/").pop();
+            html.push(
+              '<tr>' +
+                '<td class="mono"><strong>' + escapeHtml(anc.tome_id || "") + '</strong></td>' +
+                '<td><a class="mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(fname) + (anc.line_start ? "#L" + anc.line_start : "") + '</a></td>' +
+                '<td>' + escapeHtml(anc.reference || "") + '</td>' +
+              '</tr>'
+            );
+          });
+          html.push('</tbody></table></div>');
+        }
+
+        html.push('</div></article>');
+        return html.join("");
+      }
+
+      function renderPrdAnnexeHtml(ann) {
+        var ac = ann.annexe_code;
+        var cleanTitle = String(ann.representative_title || "").replace(/^Annexe\s+[A-D]\s*[—–:-]?\s*/i, "");
+        var eid = "ann-" + ac;
+        var html = [];
+        html.push('<article class="prd-section-card' + (state.prdHighlightId === eid ? " prd-highlight" : "") + '" data-prd-eid="' + escapeHtml(eid) + '">');
+        html.push('<div class="chip-row" style="margin-bottom:5px;"><span class="chip mono">Annexe ' + escapeHtml(ac) + '</span></div>');
+        html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">Annexe ' + escapeHtml(ac) + ' — ' + escapeHtml(cleanTitle) + '</h2>');
+        html.push('<h3 style="margin:6px 0 4px 0;font-size:14.5px;">Annexe ' + escapeHtml(ac) + '.1 Résumé</h3>');
+        html.push('<p style="margin:0 0 8px 0;line-height:1.5;">' + prdInlineHtml(ann.executive_summary || "") + '</p>');
+        html.push('<h3 style="margin:6px 0 4px 0;font-size:14.5px;">Annexe ' + escapeHtml(ac) + '.2 Descriptif du contenu ciblé</h3>');
+        html.push('<p style="margin:0 0 10px 0;line-height:1.5;">' + prdInlineHtml(ann.targeted_content_description || "") + '</p>');
+
+        if (ac === "A" && Array.isArray(ann.traceability_table)) {
+          html.push('<h4 style="margin:10px 0 6px 0;">Table maîtresse MindMap (12 Domaines / 36 Chapitres / 71 Familles / 260 Thèmes)</h4>');
+          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Ch.</th><th>Domaine</th><th>Sous-domaine</th><th>Titre du chapitre PRD</th><th>Fam.</th><th>Thèmes</th><th>Occ.</th><th>Tomes</th></tr></thead><tbody>');
+          ann.traceability_table.forEach(function (r) {
+            html.push(
+              '<tr>' +
+                '<td><button class="btn btn-sm" data-prd-jump-ch="' + r.chapter_number + '">' + pad2(r.chapter_number) + '</button></td>' +
+                '<td class="mono">' + escapeHtml(r.domain_id) + '</td>' +
+                '<td class="mono">' + escapeHtml(r.subdomain_node_id) + '</td>' +
+                '<td>' + escapeHtml(r.representative_title) + '</td>' +
+                '<td>' + r.families_count + '</td>' +
+                '<td>' + r.themes_count + '</td>' +
+                '<td>' + r.occurrence_count + '</td>' +
+                '<td>' + escapeHtml((r.tomes_present || []).join(", ")) + '</td>' +
+              '</tr>'
+            );
+          });
+          html.push('</tbody></table></div>');
+        } else if (ac === "B") {
+          if (Array.isArray(ann.relation_types_stats)) {
+            html.push('<h4 style="margin:10px 0 6px 0;">Répartition des interrelations par type canonique</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Type</th><th>Libellé</th><th>Total</th><th>Direction</th><th>Règle sémantique</th></tr></thead><tbody>');
+            ann.relation_types_stats.forEach(function (rt) {
+              html.push('<tr><td class="mono">' + escapeHtml(rt.type_id) + '</td><td>' + escapeHtml(rt.label) + '</td><td><strong>' + rt.count + '</strong></td><td>' + escapeHtml(rt.directionality || "") + '</td><td>' + escapeHtml(rt.semantic_rule || "") + '</td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          if (Array.isArray(ann.top_hubs)) {
+            html.push('<h4 style="margin:12px 0 6px 0;">Top 20 des nœuds carrefours</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>#</th><th>Nœud</th><th>Domaine</th><th>Ch.</th><th>Degré</th><th>Actions</th></tr></thead><tbody>');
+            ann.top_hubs.forEach(function (h) {
+              html.push(
+                '<tr>' +
+                  '<td>' + h.rank + '</td>' +
+                  '<td><strong>' + escapeHtml(h.title) + '</strong> <span class="mono">(' + escapeHtml(h.canonical_slug) + ')</span></td>' +
+                  '<td class="mono">' + escapeHtml(h.domain_id) + '</td>' +
+                  '<td><button class="btn btn-sm" data-prd-jump-ch="' + h.chapter_number + '" data-prd-hl="' + escapeHtml(h.node_id) + '">Ch. ' + pad2(h.chapter_number) + '</button></td>' +
+                  '<td><strong>' + h.relation_degree + '</strong></td>' +
+                  '<td>' + renderPrdBridgeButtons(h.node_id, true) + '</td>' +
+                '</tr>'
+              );
+            });
+            html.push('</tbody></table></div>');
+          }
+          if (Array.isArray(ann.tensions)) {
+            html.push('<h4 style="margin:12px 0 6px 0;">Tensions d\'arbitrage structurantes (' + ann.tensions.length + ' relations tension_arbitrage)</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Source</th><th>Cible</th><th>Intitulé</th><th>Justification</th></tr></thead><tbody>');
+            ann.tensions.forEach(function (t) {
+              html.push(
+                '<tr>' +
+                  '<td><button class="btn btn-sm mono" data-prd-jump-ch="' + t.source_chapter_number + '" data-prd-hl="' + escapeHtml(t.source_node_id) + '">' + escapeHtml(t.source_slug) + '</button></td>' +
+                  '<td><button class="btn btn-sm mono" data-prd-jump-ch="' + t.target_chapter_number + '" data-prd-hl="' + escapeHtml(t.target_node_id) + '">' + escapeHtml(t.target_slug) + '</button></td>' +
+                  '<td>' + escapeHtml(t.label) + '</td>' +
+                  '<td>' + escapeHtml(t.justification) + '</td>' +
+                '</tr>'
+              );
+            });
+            html.push('</tbody></table></div>');
+          }
+        } else if (ac === "C") {
+          if (ann.div_02) {
+            var d2 = ann.div_02;
+            html.push('<div class="card" style="border-left:4px solid #7c3aed;margin:8px 0;"><div class="chip-row"><span class="chip mono">DIV-02</span><span class="chip">' + escapeHtml(d2.statut || "Fermée") + '</span></div><h4 style="margin:6px 0 4px 0;">' + escapeHtml(d2.title || "") + '</h4>');
+            if (Array.isArray(d2.rectifications)) {
+              html.push('<ul class="prd-list">' + d2.rectifications.map(function (r) { return '<li>' + escapeHtml(r) + '</li>'; }).join("") + '</ul>');
+            }
+            if (d2.file) html.push('<a class="mono" href="' + escapeHtml(corpusHref(d2.file, d2.line_start || 19)) + '" target="_blank" rel="noopener">Tome 5 #L' + (d2.line_start || 19) + '</a>');
+            html.push('</div>');
+          }
+          if (Array.isArray(ann.reconciliations)) {
+            html.push('<h4 style="margin:10px 0 6px 0;">Cinq discordances inter-volumes (DISC-01 à DISC-05)</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Sujet</th><th>Choix canonique (Tome 8)</th><th>Source</th></tr></thead><tbody>');
+            ann.reconciliations.forEach(function (rec) {
+              html.push('<tr><td class="mono">' + escapeHtml(rec.id) + '</td><td>' + escapeHtml(rec.title) + '</td><td>' + escapeHtml(rec.resolution) + '</td><td><a class="mono" href="' + escapeHtml(corpusHref(rec.file, rec.line_start || 34)) + '" target="_blank" rel="noopener">' + escapeHtml(rec.section || "T8 §0.2") + '</a></td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          if (Array.isArray(ann.timeline)) {
+            html.push('<h4 style="margin:12px 0 6px 0;">Chronologie consolidée 2023–2035 (' + ann.timeline.length + ' jalons)</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Tomes</th></tr></thead><tbody>');
+            ann.timeline.forEach(function (ev) {
+              html.push('<tr><td class="mono" style="white-space:nowrap;">' + escapeHtml(ev.date) + '</td><td><strong>' + escapeHtml(ev.cadre) + '</strong></td><td>' + escapeHtml(ev.impact) + '</td><td>' + escapeHtml((ev.tomes || []).join(", ")) + '</td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+        } else if (ac === "D") {
+          var bil = ann.bilans_aq || {};
+          var t8g = bil.tome_8_g0_g5 || {};
+          var t7g = bil.tome_7_g1_g5 || {};
+          var t5c = bil.tome_5_ca16 || {};
+          var col = ann.collection_metrics || {};
+          var wyv = t7g.wyvern_g2;
+          var wyvStr = (wyv && typeof wyv === "object")
+            ? ("Wyvern G2 : " + wyv.unites + " unités, " + wyv.initiales + " -> " + wyv.finales_supportees + " assertions (" + wyv.taux + ")")
+            : String(wyv || "");
+          var lic = col.licences;
+          var licStr = (lic && typeof lic === "object")
+            ? (lic.texte_figures_registres + " / " + lic.code_scripts_trousse)
+            : String(lic || "");
+          html.push('<ul class="prd-list">');
+          html.push('<li><strong>Tome 8 (G0–G5)</strong> : ' + escapeHtml(t8g.g0_pytest || "83/83") + ' · ' + escapeHtml(t8g.g0_opa || "45/45") + ' · ' + escapeHtml(t8g.g0_schemas || "21/21") + '</li>');
+          html.push('<li><strong>Tome 7 (G1–G5)</strong> : ' + escapeHtml(t7g.sources_l_plus || 79) + ' sources L+, ' + escapeHtml(wyvStr) + '</li>');
+          html.push('<li><strong>Tome 5 (CA-16)</strong> : échantillon ' + escapeHtml(t5c.echantillon_stratifie || "40") + ', passe finale ' + escapeHtml(t5c.passe_2_finale || "100 %") + '</li>');
+          html.push('<li><strong>Licences &amp; statut</strong> : ' + escapeHtml(licStr) + ' · ' + escapeHtml(col.statut_juridique || "non-avis") + '</li>');
+          html.push('</ul>');
+
+          if (Array.isArray(ann.matrix_distribution)) {
+            html.push('<h4 style="margin:10px 0 6px 0;">Distribution complète des ' + ((ann.matrix_all || []).length || 267) + ' entrées de traçabilité</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Famille</th><th>Entrées</th><th>Détail par criticité / catégorie</th></tr></thead><tbody>');
+            ann.matrix_distribution.forEach(function (d) {
+              var subTxt = (d.subfamilies || []).map(function (s) { return s.name + " (" + s.count + ")"; }).join(", ");
+              html.push('<tr><td class="mono"><strong>' + escapeHtml(d.family) + '</strong></td><td><strong>' + d.count + '</strong></td><td>' + escapeHtml(subTxt) + '</td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          var allMat = Array.isArray(ann.matrix_all) ? ann.matrix_all : [];
+          var sampleMat = Array.isArray(ann.matrix_sample) ? ann.matrix_sample : [];
+          var shownMat = (state.prdAnnDShowAll && allMat.length) ? allMat : sampleMat;
+          if (shownMat.length) {
+            html.push(
+              '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0 6px 0;flex-wrap:wrap;">' +
+                '<h4 style="margin:0;">Matrice de traçabilité (' + shownMat.length + ' / ' + (allMat.length || sampleMat.length) + ' entrées)</h4>' +
+                (allMat.length > sampleMat.length
+                  ? '<button class="btn btn-sm" id="prd-annd-toggle-btn">' + (state.prdAnnDShowAll ? "Revenir à l'extrait stratifié (" + sampleMat.length + ")" : "Afficher les " + allMat.length + " entrées") + '</button>'
+                  : '') +
+              '</div>'
+            );
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Famille</th><th>Intitulé / Règle / Test</th><th>Module</th><th>Ancrage</th></tr></thead><tbody>');
+            shownMat.forEach(function (m) {
+              html.push('<tr><td class="mono"><strong>' + escapeHtml(m.id) + '</strong></td><td>' + escapeHtml(m.family) + '</td><td>' + escapeHtml(m.title) + '</td><td class="mono">' + escapeHtml(m.module) + '</td><td>' + escapeHtml(m.anchor) + '</td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          if (ann.exig_cre_ia && Array.isArray(ann.exig_cre_ia.familles)) {
+            html.push('<h4 style="margin:12px 0 6px 0;">16 familles normatives ' + escapeHtml(ann.exig_cre_ia.code_norme || "CRE-IA-2026-01") + ' (' + (ann.exig_cre_ia.total || 305) + ' EXIG-*)</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Préfixe</th><th>Famille</th><th>Emplacement Tome 2</th><th>Nombre</th></tr></thead><tbody>');
+            ann.exig_cre_ia.familles.forEach(function (f) {
+              html.push('<tr><td class="mono">' + escapeHtml(f.prefixe) + '</td><td>' + escapeHtml(f.titre) + '</td><td>' + escapeHtml(f.emplacement_t2) + '</td><td><strong>' + f.nombre + '</strong></td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          if (Array.isArray(ann.five_sbb)) {
+            html.push('<h4 style="margin:12px 0 6px 0;">Cinq blocs normalisés (5 SBB) et trois blueprints (C01–C40)</h4>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Bloc SBB</th><th>Rôle</th><th>Plan</th><th>Module Tome 8</th></tr></thead><tbody>');
+            ann.five_sbb.forEach(function (s) {
+              html.push('<tr><td class="mono">' + escapeHtml(s.sbb_id) + '</td><td class="mono">' + escapeHtml(s.slot) + '</td><td>' + escapeHtml(s.plan) + '</td><td class="mono">' + escapeHtml(s.module_t8) + '</td></tr>');
+            });
+            html.push('</tbody></table></div>');
+          }
+          if (ann.blueprints_c40) {
+            var bps = ann.blueprints_c40.blueprints || [];
+            var brk = ann.blueprints_c40.c40_breakdown || {};
+            html.push('<ul class="prd-list" style="margin-top:8px;">');
+            bps.forEach(function (b) { html.push('<li><strong class="mono">' + escapeHtml(b.blueprint_id) + '</strong> : ' + escapeHtml(b.ref_tome6) + '</li>'); });
+            html.push('<li><strong>Répartition des ' + (brk.total || 40) + ' critères C01–C40</strong> : BLOQUANT ' + (brk.BLOQUANT || 18) + ', OBLIGATOIRE ' + (brk.OBLIGATOIRE || 15) + ', RECOMMANDE ' + (brk.RECOMMANDE || 7) + '</li>');
+            html.push('</ul>');
+          }
+        }
+        html.push('</article>');
+        return html.join("");
+      }
+
+      function renderPrdToc(fState) {
+        var tocPane = document.getElementById("prd-toc-pane");
+        var tocList = document.getElementById("prd-toc-list");
+        var tocCount = document.getElementById("prd-toc-count");
+        if (!tocList || !idx.prd) return;
+        if (tocPane) tocPane.classList.toggle("hidden", !state.prdShowToc);
+
+        var q = normalizeText(state.prdTocFilter || "").trim();
+        var prd = idx.prd;
+        var html = [];
+        var shown = 0;
+
+        function matchQ(txt) {
+          return !q || normalizeText(txt).indexOf(q) !== -1;
+        }
+
+        // Sommaire exécutif
+        var exec = prd.executive_summary || {};
+        var execSecs = exec.sections || [];
+        var matchedExecSecs = execSecs.filter(function (s) { return matchQ(s.heading); });
+        if (matchQ(exec.title || "Sommaire exécutif global") || matchedExecSecs.length) {
+          shown++;
+          html.push('<div class="prd-toc-group">');
+          html.push('<div class="prd-toc-item' + (state.prdFocusKind === "exec" ? " active" : "") + '" data-toc-exec="exec"><strong>Sommaire exécutif global</strong></div>');
+          html.push('<div class="prd-toc-sub">');
+          (q ? matchedExecSecs : execSecs).forEach(function (s, i) {
+            var sid = s.id || ("exec-" + (i + 1));
+            shown++;
+            html.push('<div class="prd-toc-item' + (state.prdHighlightId === sid ? " active" : "") + '" data-toc-exec="' + escapeHtml(sid) + '">' + escapeHtml(s.heading) + '</div>');
+          });
+          html.push('</div></div>');
+        }
+
+        // 12 Parties -> 36 Chapitres -> 71 Familles
+        (prd.parties || []).forEach(function (p) {
+          var pLabel = "Partie " + p.part_roman + " — " + p.domain_id + " : " + String(p.representative_part_title || "").replace(/^Partie\s+[IVXLCDM]+\s*[—–:-]?\s*/i, "");
+          var pSelfMatch = matchQ(pLabel);
+          var chRows = [];
+          (p.chapter_numbers || []).forEach(function (cnum) {
+            var ch = idx.prdChapterByNum[Number(cnum)];
+            if (!ch) return;
+            var chLabel = "Ch. " + pad2(cnum) + " — " + String(ch.representative_title || "").replace(/^Chapitre\s+0?\d+\s*[—–:-]?\s*/i, "");
+            var fams = (ch.targeted_content && ch.targeted_content.families_and_themes) || [];
+            var matchedFams = fams.filter(function (f) { return matchQ(f.family_title + " " + f.family_node_id); });
+            if (pSelfMatch || matchQ(chLabel + " " + ch.domain_id + " " + ch.subdomain_node_id) || matchedFams.length) {
+              chRows.push({ ch: ch, label: chLabel, fams: q && !matchQ(chLabel) && !pSelfMatch ? matchedFams : fams });
+            }
+          });
+          if (pSelfMatch || chRows.length) {
+            shown++;
+            html.push('<div class="prd-toc-group">');
+            html.push('<div class="prd-toc-item' + (state.prdFocusKind === "part" && state.prdFocusId === p.domain_id ? " active" : "") + '" data-toc-part="' + escapeHtml(p.domain_id) + '"><strong>' + escapeHtml(pLabel) + '</strong></div>');
+            html.push('<div class="prd-toc-sub">');
+            chRows.forEach(function (row) {
+              var cnum = Number(row.ch.chapter_number);
+              var isChActive = state.prdFocusKind === "chapter" && Number(state.prdFocusId) === cnum;
+              var dimCls = fState.active && !fState.matchingChapters.has(cnum) ? " prd-dimmed" : "";
+              shown++;
+              html.push('<div class="prd-toc-item' + (isChActive ? " active" : "") + dimCls + '" data-toc-ch="' + cnum + '">' + escapeHtml(row.label) + '</div>');
+              row.fams.forEach(function (fam) {
+                shown++;
+                html.push('<div class="prd-toc-item prd-toc-fam' + (state.prdHighlightId === fam.family_node_id ? " active" : "") + '" data-toc-ch="' + cnum + '" data-toc-hl="' + escapeHtml(fam.family_node_id) + '">└ ' + escapeHtml(fam.family_title) + '</div>');
+              });
+            });
+            html.push('</div></div>');
+          }
+        });
+
+        // 4 Annexes A..D
+        var annRows = (prd.annexes || []).filter(function (ann) {
+          return matchQ("Annexe " + ann.annexe_code + " " + (ann.representative_title || ""));
+        });
+        if (annRows.length) {
+          html.push('<div class="prd-toc-group">');
+          annRows.forEach(function (ann) {
+            shown++;
+            var cleanA = String(ann.representative_title || "").replace(/^Annexe\s+[A-D]\s*[—–:-]?\s*/i, "");
+            var isAct = state.prdFocusKind === "annexe" && state.prdFocusId === ann.annexe_code;
+            html.push('<div class="prd-toc-item' + (isAct ? " active" : "") + '" data-toc-ann="' + escapeHtml(ann.annexe_code) + '"><strong>Annexe ' + escapeHtml(ann.annexe_code) + '</strong> — ' + escapeHtml(cleanA) + '</div>');
+          });
+          html.push('</div>');
+        }
+
+        tocList.innerHTML = html.length ? html.join("") : '<div class="empty-state">Aucune entrée TDM correspondante.</div>';
+        if (tocCount) tocCount.textContent = shown + " entrées TDM affichées";
+
+        tocList.querySelectorAll("[data-toc-exec]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            var sid = el.getAttribute("data-toc-exec");
+            jumpToPrdTarget({ kind: "exec", section_id: sid });
+          });
+        });
+        tocList.querySelectorAll("[data-toc-part]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            jumpToPrdTarget({ kind: "domain", domain_id: el.getAttribute("data-toc-part") });
+          });
+        });
+        tocList.querySelectorAll("[data-toc-ch]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            var cn = Number(el.getAttribute("data-toc-ch"));
+            var hl = el.getAttribute("data-toc-hl");
+            state.prdFocusKind = "chapter";
+            state.prdFocusId = cn;
+            state.prdHighlightId = hl || ("ch-" + pad2(cn));
+            renderPrdView(true);
+          });
+        });
+        tocList.querySelectorAll("[data-toc-ann]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            jumpToPrdTarget({ kind: "annexe", annexe_code: el.getAttribute("data-toc-ann") });
+          });
+        });
+      }
+
+      function renderPrdView(scrollToHighlight) {
+        var reader = document.getElementById("prd-reader");
+        var statsPill = document.getElementById("prd-stats-pill");
+        if (!reader) return;
+
+        if (!idx.prd) {
+          reader.innerHTML = '<div class="empty-state">Données PRD non présentes dans ce bundle.</div>';
+          if (statsPill) statsPill.textContent = "PRD indisponible";
+          return;
+        }
+
+        var prd = idx.prd;
+        var fState = computePrdFilterState(idx, state.filters);
+        updateFilterStatus(filterNodesAndRelations(idx, state.filters));
+        if (statsPill) {
+          statsPill.textContent = fState.active
+            ? (fState.matchingChapters.size + " / 36 chapitres · " + fState.matchingThemes.size + " / 260 thèmes actifs")
+            : ("12 parties · 36 chapitres · 71 familles · 260 thèmes · 4 annexes");
+        }
+
+        renderPrdToc(fState);
+
+        var bodyParts = [];
+        if (state.prdMode === "full") {
+          bodyParts.push(renderPrdExecHtml(prd));
+          (prd.parties || []).forEach(function (p) {
+            bodyParts.push(renderPrdPartyCardHtml(p, fState));
+            (p.chapter_numbers || []).forEach(function (cnum) {
+              var ch = idx.prdChapterByNum[Number(cnum)];
+              if (ch) bodyParts.push(renderPrdChapterHtml(ch, fState));
+            });
+          });
+          (prd.annexes || []).forEach(function (ann) {
+            bodyParts.push(renderPrdAnnexeHtml(ann));
+          });
+        } else {
+          if (state.prdFocusKind === "part" && idx.prdPartyByDom[state.prdFocusId]) {
+            var partObj = idx.prdPartyByDom[state.prdFocusId];
+            bodyParts.push(renderPrdPartyCardHtml(partObj, fState));
+            (partObj.chapter_numbers || []).forEach(function (cnum) {
+              var chP = idx.prdChapterByNum[Number(cnum)];
+              if (chP) bodyParts.push(renderPrdChapterHtml(chP, fState));
+            });
+          } else if (state.prdFocusKind === "chapter" && idx.prdChapterByNum[Number(state.prdFocusId)]) {
+            var chTarget = idx.prdChapterByNum[Number(state.prdFocusId)];
+            var parentPart = idx.prdPartyByDom[chTarget.domain_id];
+            if (parentPart) bodyParts.push(renderPrdPartyCardHtml(parentPart, fState));
+            bodyParts.push(renderPrdChapterHtml(chTarget, fState));
+          } else if (state.prdFocusKind === "annexe" && idx.prdAnnexeByCode[state.prdFocusId]) {
+            bodyParts.push(renderPrdAnnexeHtml(idx.prdAnnexeByCode[state.prdFocusId]));
+          } else {
+            bodyParts.push(renderPrdExecHtml(prd));
+          }
+        }
+
+        reader.innerHTML = bodyParts.join("");
+
+        reader.querySelectorAll("[data-prd-jump-mm]").forEach(function (btn) {
+          btn.addEventListener("click", function (ev) {
+            ev.stopPropagation();
+            var nid = btn.getAttribute("data-prd-jump-mm");
+            switchView("mindmap");
+            selectThemeNode(nid, true);
+          });
+        });
+        reader.querySelectorAll("[data-prd-jump-sy]").forEach(function (btn) {
+          btn.addEventListener("click", function (ev) {
+            ev.stopPropagation();
+            var nid = btn.getAttribute("data-prd-jump-sy");
+            state.syEgo = "1";
+            state.syPositions = null;
+            state.selectedKind = "theme";
+            state.selectedId = nid;
+            document.querySelectorAll("[data-sy-ego]").forEach(function (b) {
+              b.classList.toggle("active", b.getAttribute("data-sy-ego") === "1");
+            });
+            switchView("synaptic");
+            selectThemeNode(nid, true);
+          });
+        });
+        reader.querySelectorAll("[data-prd-jump-ch]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            var cn = Number(el.getAttribute("data-prd-jump-ch"));
+            var hl = el.getAttribute("data-prd-hl");
+            state.prdFocusKind = "chapter";
+            state.prdFocusId = cn;
+            state.prdHighlightId = hl || ("ch-" + pad2(cn));
+            renderPrdView(true);
+          });
+        });
+        reader.querySelectorAll("[data-prd-jump-part]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            jumpToPrdTarget({ kind: "domain", domain_id: el.getAttribute("data-prd-jump-part") });
+          });
+        });
+        var annDToggleBtn = document.getElementById("prd-annd-toggle-btn");
+        if (annDToggleBtn) {
+          annDToggleBtn.addEventListener("click", function () {
+            state.prdAnnDShowAll = !state.prdAnnDShowAll;
+            renderPrdView(false);
+          });
+        }
+
+        if (scrollToHighlight && state.prdHighlightId) {
+          var targetEl = reader.querySelector('[data-prd-eid="' + state.prdHighlightId + '"]');
+          if (targetEl && typeof targetEl.scrollIntoView === "function") {
+            targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        } else if (scrollToHighlight) {
+          reader.scrollTop = 0;
+        }
+      }
+
+      // =========================================================================
       // Recherche plein-texte (Ctrl+K) & Export SVG / JSON
       // =========================================================================
       var searchInput = document.getElementById("global-search");
@@ -3407,9 +4662,10 @@
           return;
         }
         searchDropdown.innerHTML = results.map(function (r, i) {
+          var icon = r.kind === "theme" ? "◆" : (r.kind && r.kind.indexOf("prd-") === 0 ? "▣" : "§");
           return (
             '<div class="search-item' + (i === 0 ? " active" : "") + '" data-res-kind="' + escapeHtml(r.kind) + '" data-res-id="' + escapeHtml(r.id) + '">' +
-              '<div class="search-item-head"><span>' + escapeHtml(r.kind === "theme" ? "◆" : "§") + '</span><span>' + escapeHtml(r.title) + '</span></div>' +
+              '<div class="search-item-head"><span>' + escapeHtml(icon) + '</span><span>' + escapeHtml(r.title) + '</span></div>' +
               '<div class="search-item-meta">' + escapeHtml(r.subtitle) + '</div>' +
             '</div>'
           );
@@ -3424,6 +4680,16 @@
             if (kind === "theme") {
               switchView("mindmap");
               selectThemeNode(rid, true);
+            } else if (kind === "prd-exec") {
+              jumpToPrdTarget({ kind: "exec", section_id: rid });
+            } else if (kind === "prd-part") {
+              jumpToPrdTarget({ kind: "domain", domain_id: rid });
+            } else if (kind === "prd-chapter") {
+              jumpToPrdTarget({ kind: "subdomain", chapter_number: Number(rid) });
+            } else if (kind === "prd-family") {
+              jumpToPrdByNodeId(rid);
+            } else if (kind === "prd-annexe") {
+              jumpToPrdTarget({ kind: "annexe", annexe_code: rid });
             } else {
               switchView("structure");
               selectStructUnit(rid, true);
@@ -3461,7 +4727,7 @@
       }
 
       document.getElementById("export-svg-btn").addEventListener("click", function () {
-        if (state.activeView === "concordance") return;
+        if (state.activeView === "concordance" || state.activeView === "prd") return;
         var svgId = state.activeView === "structure" ? "st-svg" : (state.activeView === "synaptic" ? "sy-svg" : "mm-svg");
         var svg = document.getElementById(svgId);
         if (!svg) return;
@@ -3522,7 +4788,7 @@
       function switchView(viewName) {
         state.activeView = viewName;
         var expSvgBtn = document.getElementById("export-svg-btn");
-        if (expSvgBtn) expSvgBtn.disabled = (viewName === "concordance");
+        if (expSvgBtn) expSvgBtn.disabled = (viewName === "concordance" || viewName === "prd");
         document.querySelectorAll(".view-tab").forEach(function (t) {
           var isA = t.getAttribute("data-view") === viewName;
           t.classList.toggle("active", isA);
@@ -3535,6 +4801,7 @@
         else if (viewName === "structure") renderStructureView(!state.stLastPositions || Object.keys(state.stLastPositions).length === 0);
         else if (viewName === "synaptic") renderSynapticGraph(!state.syPositions);
         else if (viewName === "concordance") renderConcordanceView();
+        else if (viewName === "prd") renderPrdView(true);
       }
 
       document.querySelectorAll(".view-tab").forEach(function (btn) {
@@ -3569,6 +4836,7 @@
         }
         if (state.activeView === "mindmap") renderMindMap(false);
         else if (state.activeView === "synaptic") renderSynapticGraph(true);
+        else if (state.activeView === "prd") renderPrdView(false);
         else updateFilterStatus(filtered);
       }
 
@@ -3705,6 +4973,38 @@
         });
       });
 
+      // Contrôles Vue 5 (PRD Maître)
+      document.querySelectorAll("[data-prd-mode]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          state.prdMode = btn.getAttribute("data-prd-mode") || "targeted";
+          document.querySelectorAll("[data-prd-mode]").forEach(function (b) { b.classList.toggle("active", b === btn); });
+          renderPrdView(true);
+        });
+      });
+      var prdTocToggleBtn = document.getElementById("prd-toggle-toc-btn");
+      if (prdTocToggleBtn) {
+        prdTocToggleBtn.addEventListener("click", function () {
+          state.prdShowToc = !state.prdShowToc;
+          prdTocToggleBtn.classList.toggle("active", state.prdShowToc);
+          renderPrdToc(computePrdFilterState(idx, state.filters));
+        });
+      }
+      var prdPrintBtn = document.getElementById("prd-print-btn");
+      if (prdPrintBtn) {
+        prdPrintBtn.addEventListener("click", function () {
+          if (typeof window !== "undefined" && typeof window.print === "function") {
+            window.print();
+          }
+        });
+      }
+      var prdTocFilterEl = document.getElementById("prd-toc-filter");
+      if (prdTocFilterEl) {
+        prdTocFilterEl.addEventListener("input", function (e) {
+          state.prdTocFilter = e.target.value || "";
+          renderPrdToc(computePrdFilterState(idx, state.filters));
+        });
+      }
+
       // Zoom HUD & Inspecteur toggle & Légende toggle
       document.querySelectorAll("[data-zoom]").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -3766,10 +5066,92 @@
         }
       });
 
+      function applyHashNavigation(hashStr) {
+        var p = parseLocationHash(hashStr);
+        if (!p || Object.keys(p).length === 0) return false;
+        if (p.view === "prd" || (!p.view && (p.ch || p.thm || p.fam || p.part || p.annexe || p.sec))) {
+          if (p.mode === "full" || p.mode === "targeted") {
+            state.prdMode = p.mode;
+            document.querySelectorAll("[data-prd-mode]").forEach(function (b) {
+              b.classList.toggle("active", b.getAttribute("data-prd-mode") === state.prdMode);
+            });
+          }
+          if (p.thm) {
+            var tn = idx.nodeById[p.thm] || idx.nodeBySlug[p.thm];
+            jumpToPrdByNodeId(tn ? tn.node_id : p.thm);
+          } else if (p.fam) {
+            jumpToPrdByNodeId(p.fam);
+          } else if (p.ch) {
+            jumpToPrdTarget({ kind: "subdomain", chapter_number: Number(String(p.ch).replace(/^CH-/i, "")) });
+          } else if (p.part) {
+            var domArg = /^\d+$/.test(String(p.part)) ? ("D" + pad2(Number(p.part))) : String(p.part).toUpperCase();
+            jumpToPrdTarget({ kind: "domain", domain_id: domArg });
+          } else if (p.annexe) {
+            jumpToPrdTarget({ kind: "annexe", annexe_code: String(p.annexe).toUpperCase() });
+          } else if (p.sec) {
+            jumpToPrdTarget({ kind: "exec", section_id: normalizePrdExecId(p.sec) });
+          } else {
+            jumpToPrdTarget({ kind: "exec" });
+          }
+          return true;
+        }
+        if (p.view === "synaptic") {
+          if (p.ego && (p.ego === "all" || p.ego === "1" || p.ego === "2")) {
+            state.syEgo = p.ego;
+            document.querySelectorAll("[data-sy-ego]").forEach(function (b) {
+              b.classList.toggle("active", b.getAttribute("data-sy-ego") === state.syEgo);
+            });
+          }
+          if (p.node) {
+            state.selectedKind = "theme";
+            state.selectedId = p.node;
+            state.syPositions = null;
+          }
+          switchView("synaptic");
+          if (p.node) selectThemeNode(p.node, true);
+          return true;
+        }
+        if (p.view === "mindmap") {
+          switchView("mindmap");
+          if (p.node) selectThemeNode(p.node, true);
+          return true;
+        }
+        if (p.view === "structure") {
+          switchView("structure");
+          if (p.unit) selectStructUnit(p.unit, true);
+          return true;
+        }
+        if (p.view === "concordance") {
+          switchView("concordance");
+          return true;
+        }
+        return false;
+      }
+
+      if (typeof globalThis !== "undefined") {
+        globalThis.CartographieApp = {
+          switchView: switchView,
+          selectThemeNode: selectThemeNode,
+          selectStructUnit: selectStructUnit,
+          jumpToPrdTarget: jumpToPrdTarget,
+          jumpToPrdByNodeId: jumpToPrdByNodeId,
+          applyHashNavigation: applyHashNavigation,
+          getState: function () { return state; }
+        };
+      }
+
       // Démarrage initial
       renderKpis();
       populateFilters();
-      renderMindMap(true);
+      var initHash = (typeof window !== "undefined" && window.location && window.location.hash) ? window.location.hash : "";
+      if (!applyHashNavigation(initHash)) {
+        renderMindMap(true);
+      }
+      if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
+        window.addEventListener("hashchange", function () {
+          if (window.location && window.location.hash) applyHashNavigation(window.location.hash);
+        });
+      }
     }
 
     if (typeof document !== "undefined") {

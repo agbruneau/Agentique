@@ -877,6 +877,7 @@ def build_prd_markdown(
             "> **Navigation rapide** : "
             f"[Table des matières](#{toc_anchor}) · "
             f"[Sommaire exécutif global](#{exec_anchor}) · "
+            f"[PRD Web]({encode_rel_url('Cartographie/PRD - Référentiel directeur de l\'entreprise agentique.html')}) · "
             f"[MindMap HTML]({encode_rel_url('Cartographie/MindMap - Cartographie thématique du Corpus.html')}) · "
             f"[Cartographie (`Cartographie/`)](Cartographie/README.md) · "
             f"[Corpus (`Corpus/`)](Corpus/README.md) · "

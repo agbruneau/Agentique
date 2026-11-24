@@ -4,7 +4,7 @@
 
 > **Version** : `1.0.0` · **Date** : `2026-11-24` · **Statut** : Référentiel d'exigences produit et architecture (non-avis)  
 > **Couverture vérifiée du MindMap** : `380` nœuds sur `5` niveaux (`12` domaines `D01–D12`, `36` sous-domaines / chapitres, `71` familles, `260` thèmes), `616` interrelations typées, `9` fichiers `.md` (`4434` titres `H1–H6`).  
-> **Navigation rapide** : [Table des matières](#plan-directeur-et-table-des-matières-exhaustive--des-fondements-épistémiques-à-lhomologation-exécutable) · [Sommaire exécutif global](#sommaire-exécutif-global) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [Cartographie (`Cartographie/`)](Cartographie/README.md) · [Corpus (`Corpus/`)](Corpus/README.md) · [Index dépôt](README.md)
+> **Navigation rapide** : [Table des matières](#plan-directeur-et-table-des-matières-exhaustive--des-fondements-épistémiques-à-lhomologation-exécutable) · [Sommaire exécutif global](#sommaire-exécutif-global) · [PRD Web](Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [Cartographie (`Cartographie/`)](Cartographie/README.md) · [Corpus (`Corpus/`)](Corpus/README.md) · [Index dépôt](README.md)
 
 ---
 
