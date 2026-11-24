@@ -6,9 +6,10 @@ Assemble :
 - ``Cartographie/outils/template_prd_web.html``
 
 Valide le contrat JSON minimal attendu (12 parties, 36 chapitres, 71 familles,
-260 thèmes, 4 annexes A–D, table ``lookup``), échappe de façon sûre le JSON
-embarqué pour ``<script type="application/json">``, vérifie l'autonomie hors ligne
-stricte (zéro URL ``http://`` ou ``https://`` hors bloc JSON) et génère :
+260 thèmes, 5 annexes A–E, 115 schémas de vulgarisation, 319 figures Tomes),
+échappe de façon sûre le JSON embarqué pour ``<script type="application/json">``,
+vérifie l'autonomie hors ligne stricte (zéro URL ``http://`` ou ``https://`` hors
+bloc JSON) et génère :
 - ``Cartographie/PRD - Référentiel directeur de l'entreprise agentique.html``
 """
 
@@ -47,7 +48,9 @@ def validate_prd_web_payload(payload: dict[str, Any]) -> dict[str, int]:
     if missing:
         raise ValueError(f"Clés racine manquantes dans prd-web-data.json : {missing}")
 
-    exec_sections = (payload.get("executive_summary") or {}).get("sections") or []
+    exec_obj = payload.get("executive_summary") or {}
+    exec_sections = exec_obj.get("sections") or []
+    exec_schemas = exec_obj.get("vulgarization_schemas") or []
     parties = payload.get("parties") or []
     chapters = payload.get("chapters") or []
     annexes = payload.get("annexes") or []
@@ -55,16 +58,21 @@ def validate_prd_web_payload(payload: dict[str, Any]) -> dict[str, int]:
 
     if len(exec_sections) != 5:
         raise ValueError(f"executive_summary.sections attendu=5, trouvé={len(exec_sections)}")
+    if len(exec_schemas) != 4:
+        raise ValueError(
+            f"executive_summary.vulgarization_schemas attendu=4, trouvé={len(exec_schemas)}"
+        )
     if len(parties) != 12:
         raise ValueError(f"parties attendu=12, trouvé={len(parties)}")
     if len(chapters) != 36:
         raise ValueError(f"chapters attendu=36, trouvé={len(chapters)}")
-    if [a.get("annexe_code") for a in annexes] != ["A", "B", "C", "D"]:
-        raise ValueError("annexes doit contenir exactement A, B, C, D dans l'ordre.")
+    if [a.get("annexe_code") for a in annexes] != ["A", "B", "C", "D", "E"]:
+        raise ValueError("annexes doit contenir exactement A, B, C, D, E dans l'ordre.")
 
     family_count = 0
     theme_count = 0
     interrelation_count = 0
+    chapter_schemas_count = 0
     for ch in chapters:
         tc = ch.get("targeted_content") or {}
         fams = tc.get("families_and_themes") or []
@@ -72,11 +80,32 @@ def validate_prd_web_payload(payload: dict[str, Any]) -> dict[str, int]:
         for fam in fams:
             theme_count += len(fam.get("themes_targeted") or [])
         interrelation_count += len(tc.get("cross_chapter_interrelations") or [])
+        ch_schemas = ch.get("vulgarization_schemas") or []
+        if not ch_schemas:
+            raise ValueError(
+                f"Chapitre {ch.get('chapter_number')} sans vulgarization_schemas."
+            )
+        chapter_schemas_count += len(ch_schemas)
 
     if family_count != 71:
         raise ValueError(f"Nombre de familles attendu=71, trouvé={family_count}")
     if theme_count != 260:
         raise ValueError(f"Nombre de thèmes attendu=260, trouvé={theme_count}")
+    if chapter_schemas_count != 111:
+        raise ValueError(
+            f"Nombre de schémas de chapitre attendu=111, trouvé={chapter_schemas_count}"
+        )
+
+    total_schemas = len(exec_schemas) + chapter_schemas_count
+    ann_e = annexes[4]
+    ann_e_cat = ann_e.get("catalogue_all") or []
+    if len(ann_e_cat) != 115:
+        raise ValueError(f"Annexe E catalogue_all attendu=115, trouvé={len(ann_e_cat)}")
+    inv_figures = ((ann_e.get("tome_inventory_summary") or {}).get("figures") or [])
+    if len(inv_figures) != 319:
+        raise ValueError(
+            f"Annexe E tome_inventory_summary.figures attendu=319, trouvé={len(inv_figures)}"
+        )
 
     node_map = lookup.get("node_id_to_prd") or {}
     if not node_map:
@@ -89,6 +118,8 @@ def validate_prd_web_payload(payload: dict[str, Any]) -> dict[str, int]:
         "families": family_count,
         "themes": theme_count,
         "annexes": len(annexes),
+        "schemas": total_schemas,
+        "tome_figures": len(inv_figures),
         "chapter_interrelations": interrelation_count,
         "lookup_nodes": len(node_map),
     }
@@ -211,7 +242,8 @@ def main() -> int:
         f"Compilation PRD Web réussie -> {out_path} ({metrics['html_bytes']} octets) : "
         f"{metrics['parties']} parties, {metrics['chapters']} chapitres, "
         f"{metrics['families']} familles, {metrics['themes']} thèmes, "
-        f"{metrics['annexes']} annexes, {metrics['lookup_nodes']} nœuds indexés."
+        f"{metrics['annexes']} annexes, {metrics['schemas']} schémas, "
+        f"{metrics['tome_figures']} figures Tomes, {metrics['lookup_nodes']} nœuds indexés."
     )
     return 0
 

@@ -253,7 +253,7 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     prd = bundle.get("prd") or {}
     assert len(prd.get("parties", [])) == 12
     assert len(prd.get("chapters", [])) == 36
-    assert len(prd.get("annexes", [])) == 4
+    assert len(prd.get("annexes", [])) == 5
     lookup = prd.get("lookup") or {}
     assert len(lookup.get("node_id_to_prd", {})) == 379
     assert len(lookup.get("slug_to_chapter", {})) == 260
@@ -783,6 +783,85 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
       throw new Error("Hash #view=synaptic&node=... défaillant");
     }
     if (byId["export-svg-btn"].disabled) throw new Error("export-svg-btn resté désactivé en synaptic");
+
+    // 5. Phase C2.c : 115 schémas, Panorama SCH-00, 01.3..36.3, Annexe E, Inspecteur & recherche SCH-* + liens ../Tomes/
+    const prdData = JSON.parse(jsonMatch[1]).prd;
+    if (!prdData || !prdData.meta || prdData.meta.annexes_count !== 5 || prdData.meta.schemas_count !== 115) {
+      throw new Error("Méta PRD schémas/annexes invalide dans MindMap");
+    }
+    app.getState().prdMode = "full";
+    app.switchView("prd");
+    const fullWithSchemas = byId["prd-reader"].innerHTML;
+    for (const marker of [
+      "Panorama visuel directeur", "01.3 Schémas de vulgarisation à intégrer",
+      "36.3 Schémas de vulgarisation à intégrer", "Annexe E —",
+      "Inventaire complet des 319 figures des Tomes 1 à 8"
+    ]) {
+      if (!fullWithSchemas.includes(marker)) throw new Error("Marqueur C2.c manquant en Vue 5 MindMap: " + marker);
+    }
+    const mmSchemas = (prdData.executive_summary.vulgarization_schemas || []).map(s => s.schema_id)
+      .concat(prdData.chapters.flatMap(c => (c.vulgarization_schemas || []).map(s => s.schema_id)));
+    if (mmSchemas.length !== 115) throw new Error("MindMap != 115 schémas");
+    for (const sid of mmSchemas) {
+      if (!fullWithSchemas.includes(sid)) throw new Error("Schéma manquant en Vue 5 MindMap: " + sid);
+    }
+    const mmTomeHrefs = Array.from(fullWithSchemas.matchAll(/href="(\.\.\/Tomes\/[^"#]+)"/g), m => m[1]);
+    if (mmTomeHrefs.length < 600) throw new Error("Liens ../Tomes/ insuffisants en Vue 5 MindMap: " + mmTomeHrefs.length);
+    const fsPath = require("path");
+    for (const rawHref of new Set(mmTomeHrefs)) {
+      const diskPath = fsPath.resolve(fsPath.dirname(process.argv[1]), decodeURIComponent(rawHref));
+      if (!fs.existsSync(diskPath)) throw new Error("Lien ../Tomes/ cassé en Vue 5 MindMap: " + diskPath);
+    }
+
+    // Inspecteur latéral : Schémas de vulgarisation PRD rattachés
+    app.selectThemeNode("THM_loi-de-lusser", true);
+    if (!byId["inspector-body"].innerHTML.includes("Schémas de vulgarisation PRD") || !byId["inspector-body"].innerHTML.includes("SCH-02-")) {
+      throw new Error("Section Schémas PRD absente de l'inspecteur thème");
+    }
+
+    // Recherche Ctrl+K sur SCH-15-03 + hash #sch=SCH-15-03
+    const mmIdx = eng.buildIndexes(JSON.parse(jsonMatch[1]));
+    const schHits = eng.searchCorpus(mmIdx, "SCH-15-03", 10);
+    if (!schHits.some(h => h.kind === "prd-schema" && h.id === "SCH-15-03")) {
+      throw new Error("searchCorpus('SCH-15-03') n'a pas retourné prd-schema");
+    }
+    app.applyHashNavigation("#sch=SCH-15-03");
+    if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 15 || app.getState().prdHighlightId !== "SCH-15-03") {
+      throw new Error("Hash #sch=SCH-15-03 défaillant dans MindMap");
+    }
+    if (!String(byId["prd-standalone-link"].getAttribute("href") || "").includes("#sch=SCH-15-03")) {
+      throw new Error("prd-standalone-link non synchronisé sur #sch=SCH-15-03");
+    }
+
+    // #138 : 0 'Synthetise', virgules décimales françaises et boutons GLOBAL/Panorama -> exec-panorama en Vue 5 Annexe E
+    if (/\bsynthetise\b/i.test(fullWithSchemas)) {
+      throw new Error("Synthetise sans accent détecté en Vue 5 MindMap");
+    }
+    app.applyHashNavigation("#view=prd&annexe=E");
+    const annEHtml = byId["prd-reader"].innerHTML;
+    if (/\bsynthetise\b/i.test(annEHtml)) {
+      throw new Error("Synthetise sans accent détecté dans Annexe E Vue 5 MindMap");
+    }
+    if (!annEHtml.includes('data-prd-jump-exec="exec-panorama">GLOBAL</button>') ||
+        !annEHtml.includes('data-prd-jump-exec="exec-panorama">Panorama</button>')) {
+      throw new Error("Boutons GLOBAL/Panorama Annexe E ne pointent pas vers exec-panorama");
+    }
+    const annEDistSlice = annEHtml.split("Répartition par Domaine")[1].split("Catalogue directeur intégral")[0];
+    if (annEDistSlice.includes('data-prd-jump-sch="SCH-00-01">GLOBAL</button>') ||
+        annEDistSlice.includes('data-prd-jump-sch="SCH-00-01">Panorama</button>')) {
+      throw new Error("Boutons GLOBAL/Panorama de Répartition pointent encore vers SCH-00-01");
+    }
+    const annEStatsSlice = annEHtml.split("Synthèse statistique des 115 schémas")[1].split("Répartition par Domaine")[0];
+    if (/\d+\.\d+\s*%/.test(annEStatsSlice)) {
+      throw new Error("Pourcentage avec point décimal anglais détecté dans Annexe E Vue 5 MindMap");
+    }
+    if ((annEStatsSlice.match(/\d+,\d+\s+%/g) || []).length < 27) {
+      throw new Error("Pourcentages avec virgule française incomplets dans Annexe E Vue 5 MindMap");
+    }
+    app.applyHashNavigation("#view=prd&sec=exec-panorama");
+    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "exec" || app.getState().prdHighlightId !== "exec-panorama") {
+      throw new Error("Navigation exec-panorama défaillante en Vue 5 MindMap");
+    }
     """
 
     proc = subprocess.run(

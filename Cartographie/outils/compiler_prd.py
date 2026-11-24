@@ -63,6 +63,14 @@ ROMAN_NUMERALS: dict[int, str] = {
     12: "XII",
 }
 
+REUSE_STATUS_LABELS: dict[str, str] = {
+    "reemploi_direct": "Réemploi direct",
+    "adaptation_vulgarisee": "Adaptation vulgarisée",
+    "creation_originale": "Création originale",
+}
+
+PANORAMA_HEADING = "Panorama visuel directeur — Schémas de vulgarisation transversaux"
+
 
 def strip_md_inline(text: str) -> str:
     """Retire les marqueurs inline Markdown (liens, backticks, astérisques)."""
@@ -200,8 +208,8 @@ def load_and_validate_inputs(
         _assert_non_empty(p.get("part_summary"), f"partie {p.get('domain_id')}.part_summary")
 
     annexes = global_shard.get("annexes") or []
-    if [a.get("annexe_code") for a in annexes] != ["A", "B", "C", "D"]:
-        raise ValueError("Les 4 annexes doivent être A, B, C, D dans l'ordre.")
+    if [a.get("annexe_code") for a in annexes] != ["A", "B", "C", "D", "E"]:
+        raise ValueError("Les 5 annexes doivent être A, B, C, D, E dans l'ordre.")
     for a in annexes:
         code = a.get("annexe_code")
         _assert_non_empty(a.get("representative_title"), f"annexe {code}.representative_title")
@@ -296,14 +304,92 @@ def load_and_validate_inputs(
     return bundle, global_shard, all_chapters
 
 
+def _render_schema_block(schema: dict[str, Any]) -> list[str]:
+    """Rend un bloc Markdown détaillé pour un schéma ``SCH-*`` sans émettre de titre ``H5``."""
+    lines: list[str] = []
+    sid = str(schema.get("schema_id", "")).strip()
+    title = _clean_prd_prose(schema.get("title", ""))
+    reuse_raw = str(schema.get("reuse_status", "")).strip()
+    reuse_lbl = REUSE_STATUS_LABELS.get(reuse_raw, reuse_raw)
+    arch = _clean_prd_prose(schema.get("visual_archetype", ""))
+    notation = _clean_prd_prose(schema.get("recommended_notation", ""))
+    audiences = ", ".join(_clean_prd_prose(a) for a in (schema.get("target_audiences") or []))
+    insertion = _clean_prd_prose(schema.get("insertion_point", ""))
+    fams = [str(f).strip() for f in (schema.get("families_covered") or []) if str(f).strip()]
+    themes = [str(t).strip() for t in (schema.get("themes_vulgarized") or []) if str(t).strip()]
+    ped_obj = _clean_prd_prose(schema.get("pedagogical_objective", ""))
+    vulg_angle = _clean_prd_prose(schema.get("vulgarization_angle", ""))
+    vb = schema.get("visual_blueprint") or {}
+
+    lines.append(f"- **`{sid}` — {title}**")
+    lines.append(
+        f"  - **Statut** : `{reuse_lbl}` (`{reuse_raw}`) · **Archétype visuel** : {arch} · "
+        f"**Notation recommandée** : `{notation}`"
+    )
+    lines.append(f"  - **Publics cibles** : {audiences} · **Point d'insertion** : {insertion}")
+    if fams:
+        lines.append(f"  - **Familles couvertes** : {', '.join(f'`{f}`' for f in fams)}")
+    if themes:
+        lines.append(f"  - **Thèmes vulgarisés** : {', '.join(f'`{t}`' for t in themes)}")
+    lines.append(f"  - **Objectif pédagogique** : {ped_obj}")
+    lines.append(f"  - **Angle de vulgarisation** : {vulg_angle}")
+    lines.append("  - **Maquette visuelle** :")
+    zones = vb.get("zones") or []
+    if zones:
+        zones_txt = " ; ".join(
+            f"**`{z.get('zone_id', '')}` — {_clean_prd_prose(z.get('label', ''))}** : "
+            f"{_clean_prd_prose(z.get('content', ''))}"
+            for z in zones
+        )
+        lines.append(f"    - **Zones** : {zones_txt}")
+    flows = vb.get("numbered_flows") or []
+    if flows:
+        lines.append("    - **Flux numérotés** :")
+        for fl in flows:
+            lines.append(f"      - {_clean_prd_prose(fl)}")
+    legend = vb.get("color_legend") or []
+    if legend:
+        leg_txt = " ; ".join(
+            f"**{_clean_prd_prose(c.get('color_token', ''))}** = {_clean_prd_prose(c.get('meaning', ''))}"
+            for c in legend
+        )
+        lines.append(f"    - **Légende couleur** : {leg_txt}")
+    takeaway = _clean_prd_prose(vb.get("key_takeaway_box", ""))
+    if takeaway:
+        lines.append(f"    - **Encadré « À retenir »** : {takeaway}")
+
+    figs = schema.get("linked_tome_figures") or []
+    if not figs:
+        lines.append(
+            "  - **Figures sources des Tomes rattachées** : Aucune figure préexistante "
+            "(création originale pure sans équivalent dans les Tomes 1–8)."
+        )
+    else:
+        lines.append(f"  - **Figures sources des Tomes rattachées ({len(figs)})** :")
+        for fig in figs:
+            tome_id = str(fig.get("tome_id", "")).strip()
+            fig_id = _clean_prd_prose(fig.get("fig_id", ""))
+            ftitle = _clean_prd_prose(fig.get("title", ""))
+            r_url = encode_rel_url(str(fig.get("rendered_path", "")))
+            s_url = encode_rel_url(str(fig.get("source_path", "")))
+            role_note = _clean_prd_prose(fig.get("role_note", ""))
+            lines.append(
+                f"    - `{tome_id} · {fig_id}` — *{ftitle}* : "
+                f"[Rendu]({r_url}) · [Source]({s_url}) — {role_note}"
+            )
+    return lines
+
+
 def render_annexe_tables(
     code: str,
     bundle: dict[str, Any],
     chapters_by_num: dict[int, dict[str, Any]],
     chapter_anchors: dict[int, str],
     raw_pivots: dict[str, Any] | None = None,
+    schemas_catalog: dict[str, Any] | None = None,
+    extra_anchors: dict[str, Any] | None = None,
 ) -> list[str]:
-    """Génère les tables de référence vérifiables des Annexes A à D depuis le bundle."""
+    """Génère les tables de référence vérifiables des Annexes A à E depuis le bundle."""
     lines: list[str] = []
     nodes = bundle["nodes"]
     relations = bundle["relations"]
@@ -600,6 +686,168 @@ def render_annexe_tables(
                 )
             lines.append("")
 
+    elif code == "E" and schemas_catalog:
+        g_schemas = schemas_catalog.get("global_schemas") or []
+        c_schemas = schemas_catalog.get("chapter_schemas") or []
+        all_schemas = list(g_schemas) + list(c_schemas)
+        s_stats = schemas_catalog.get("summary_stats") or {}
+        tc_cov = schemas_catalog.get("tome_figures_coverage") or {}
+        ann_e_spec = schemas_catalog.get("annexe_e") or {}
+        x_anc = extra_anchors or {}
+        exec_anc = x_anc.get("exec_anchor", "sommaire-exécutif-global")
+        pan_anc = x_anc.get("exec_panorama_anchor", "panorama-visuel-directeur--schémas-de-vulgarisation-transversaux")
+        sch_sec_anc = x_anc.get("schema_section_anchors") or {}
+        total_sch = int(s_stats.get("total_schemas") or len(all_schemas) or 115)
+
+        guidelines = ann_e_spec.get("editorial_guidelines") or []
+        for g_rule in guidelines:
+            lines.append(f"- {_clean_prd_prose(g_rule)}")
+        if guidelines:
+            lines.append("")
+
+        # Table E.1 : Synthèse méthodologique & répartitions (115 schémas)
+        lines.append(
+            f"#### Synthèse méthodologique et répartition des {total_sch} schémas par statut, "
+            "archétype visuel, notation et public"
+        )
+        lines.append("")
+        lines.append(f"| Dimension | Catégorie | Schémas (`SCH-*`) | Part (sur {total_sch}) |")
+        lines.append("|---|---|---:|---:|")
+        dim_groups = [
+            (
+                "Statut de réutilisation",
+                [
+                    (REUSE_STATUS_LABELS.get(k, k), v)
+                    for k, v in (s_stats.get("by_reuse_status") or {}).items()
+                ],
+            ),
+            (
+                "Archétype visuel",
+                list((s_stats.get("by_visual_archetype") or {}).items()),
+            ),
+            (
+                "Notation recommandée",
+                list((s_stats.get("by_recommended_notation") or {}).items()),
+            ),
+            (
+                "Public cible (multi-public)",
+                list((s_stats.get("by_target_audience") or {}).items()),
+            ),
+        ]
+        for dim_name, pairs in dim_groups:
+            for cat_label, cnt in pairs:
+                pct = f"{(100.0 * int(cnt) / max(1, total_sch)):.1f} %".replace(".", ",")
+                lines.append(f"| {_md_cell(dim_name)} | {_md_cell(cat_label)} | **{int(cnt)}** | {pct} |")
+        lines.append("")
+
+        # Table E.2 : Couverture des 319 figures des Tomes 1 à 8
+        total_inv = int(tc_cov.get("total_inventory_figures") or 319)
+        inv_puml = int(tc_cov.get("inventory_plantuml_svg") or 253)
+        inv_mmd = int(tc_cov.get("inventory_mermaid_png") or 66)
+        lines.append(
+            f"#### Couverture des {total_inv} figures des Tomes 1 à 8 "
+            f"({inv_puml} PlantUML / SVG et {inv_mmd} Mermaid / PNG)"
+        )
+        lines.append("")
+        lines.append(
+            "| Tome | Figures inventaire | PlantUML / SVG | Mermaid / PNG | Figures uniques liées | "
+            "Non liées | Liens totaux (`SCH-*`) | Taux de couverture |"
+        )
+        lines.append("|---|---:|---:|---:|---:|---:|---:|---:|")
+        by_tome = tc_cov.get("by_tome") or {}
+        for tid in ("T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"):
+            tstat = by_tome.get(tid) or {}
+            cov_pct = f"{float(tstat.get('coverage_percent', 0.0)):.2f} %".replace(".", ",")
+            lines.append(
+                f"| `{tid}` | {int(tstat.get('inventory_total', 0))} | {int(tstat.get('inventory_plantuml', 0))} | "
+                f"{int(tstat.get('inventory_mermaid', 0))} | **{int(tstat.get('unique_linked_count', 0))}** | "
+                f"{int(tstat.get('unlinked_count', 0))} | {int(tstat.get('total_links_count', 0))} | "
+                f"{cov_pct} |"
+            )
+        tot_cov_pct = f"{float(tc_cov.get('coverage_percent', 0.0)):.2f} %".replace(".", ",")
+        lines.append(
+            f"| **Total (`T1–T8`)** | **{total_inv}** | **{inv_puml}** | **{inv_mmd}** | "
+            f"**{int(tc_cov.get('unique_linked_figures_count', 0))}** | "
+            f"**{int(tc_cov.get('unlinked_figures_count', 0))}** | "
+            f"**{int(tc_cov.get('total_figure_links_count', 0))}** | "
+            f"**{tot_cov_pct}** |"
+        )
+        lines.append("")
+
+        # Table E.3 : Répartition par Partie (D01–D12) et Chapitre (01–36)
+        lines.append("#### Répartition des schémas de vulgarisation par Partie (D01–D12) et Chapitre (01–36)")
+        lines.append("")
+        lines.append(
+            "| Portée | Domaine / Chapitre PRD | Section schémas | Familles | "
+            "Schémas (`SCH-*`) | Réemploi / Adaptation / Création | Identifiants de schémas |"
+        )
+        lines.append("|---|---|---|---:|---:|---|---|")
+
+        def _status_triplet(items: list[dict[str, Any]]) -> str:
+            rc = Counter(str(it.get("reuse_status", "")) for it in items)
+            return f"{rc.get('reemploi_direct', 0)} / {rc.get('adaptation_vulgarisee', 0)} / {rc.get('creation_originale', 0)}"
+
+        g_ids_str = ", ".join(f"`{s['schema_id']}`" for s in g_schemas)
+        lines.append(
+            f"| `GLOBAL` | [Sommaire exécutif global](#{exec_anc}) | [Panorama visuel directeur](#{pan_anc}) | "
+            f"0 (transversal) | **{len(g_schemas)}** | {_status_triplet(g_schemas)} | {g_ids_str} |"
+        )
+        ch_sch_map: dict[int, list[dict[str, Any]]] = {}
+        for cs in c_schemas:
+            ch_sch_map.setdefault(int(cs["chapter_number"]), []).append(cs)
+        for cnum in range(1, 37):
+            ch_obj = chapters_by_num[cnum]
+            items = sorted(ch_sch_map.get(cnum, []), key=lambda x: x["schema_id"])
+            c_anc = chapter_anchors[cnum]
+            s_anc = sch_sec_anc.get(cnum, c_anc)
+            fams_n = len(ch_obj["targeted_content"]["families_and_themes"])
+            s_ids = ", ".join(f"`{it['schema_id']}`" for it in items) or "—"
+            lines.append(
+                f"| `{_md_cell(ch_obj['domain_id'])}` (`CH-{cnum:02d}`) | "
+                f"[{_md_cell(ch_obj['representative_title'])}](#{c_anc}) | "
+                f"[{cnum:02d}.3 Schémas](#{s_anc}) | {fams_n} | **{len(items)}** | "
+                f"{_status_triplet(items)} | {s_ids} |"
+            )
+        lines.append("")
+
+        # Table E.4 : Catalogue directeur intégral des 115 schémas
+        lines.append(f"#### Catalogue directeur intégral des {len(all_schemas)} schémas de vulgarisation (SCH-00 et SCH-01 à SCH-36)")
+        lines.append("")
+        lines.append(
+            "| Identifiant schéma (`SCH-*`) | Portée (`GLOBAL` / `CH-XX` et `FAM_*`) | "
+            "Titre et point d'insertion dans `prd.md` | Archétype visuel et notation recommandée | "
+            "Publics cibles et statut de réutilisation | Figures Tomes 1–8 associées (`.puml`/`.mmd` et rendus) |"
+        )
+        lines.append("|---|---|---|---|---|---|")
+        for sc in all_schemas:
+            sid = str(sc.get("schema_id", "")).strip()
+            cnum = int(sc.get("chapter_number", 0))
+            if cnum == 0:
+                scope_cell = f"[`GLOBAL`](#{exec_anc}) · [Panorama](#{pan_anc})"
+            else:
+                c_anc = chapter_anchors[cnum]
+                s_anc = sch_sec_anc.get(cnum, c_anc)
+                fams_txt = ", ".join(f"`{_md_cell(f)}`" for f in (sc.get("families_covered") or []))
+                scope_cell = f"[`CH-{cnum:02d}`](#{c_anc}) · [§{cnum:02d}.3](#{s_anc}) ({fams_txt})"
+            title_ins = f"**{_md_cell(sc.get('title', ''))}** — *{_md_cell(sc.get('insertion_point', ''))}*"
+            arch_not = f"{_md_cell(sc.get('visual_archetype', ''))} · `{_md_cell(sc.get('recommended_notation', ''))}`"
+            aud_stat = (
+                f"{_md_cell(', '.join(sc.get('target_audiences') or []))} · "
+                f"`{REUSE_STATUS_LABELS.get(str(sc.get('reuse_status', '')), str(sc.get('reuse_status', '')))}`"
+            )
+            figs = sc.get("linked_tome_figures") or []
+            if not figs:
+                figs_cell = "Création originale pure (aucune figure Tome)"
+            else:
+                figs_cell = " ; ".join(
+                    f"`{_md_cell(fg.get('tome_id', ''))} · {_md_cell(fg.get('fig_id', ''))}` "
+                    f"([Rendu]({encode_rel_url(str(fg.get('rendered_path', '')))}), "
+                    f"[Source]({encode_rel_url(str(fg.get('source_path', '')))}))"
+                    for fg in figs
+                )
+            lines.append(f"| `{sid}` | {scope_cell} | {title_ins} | {arch_not} | {aud_stat} | {figs_cell} |")
+        lines.append("")
+
     return lines
 
 
@@ -608,8 +856,23 @@ def build_prd_markdown(
     bundle: dict[str, Any],
     global_shard: dict[str, Any],
     chapters: list[dict[str, Any]],
+    schemas_catalog: dict[str, Any] | None = None,
 ) -> tuple[str, dict[str, Any]]:
     """Construit le texte complet de ``prd.md`` en deux passes pour garantir 100 % d'ancres exactes."""
+    if schemas_catalog is None:
+        cat_path = repo_root / "Cartographie" / "donnees" / "catalogue-schemas-prd.json"
+        if cat_path.is_file():
+            schemas_catalog = json.loads(cat_path.read_text(encoding="utf-8"))
+        else:
+            schemas_catalog = {}
+
+    global_schemas: list[dict[str, Any]] = list(schemas_catalog.get("global_schemas") or [])
+    chapter_schemas_list: list[dict[str, Any]] = list(schemas_catalog.get("chapter_schemas") or [])
+    schemas_by_chapter: dict[int, list[dict[str, Any]]] = {}
+    for sc in chapter_schemas_list:
+        schemas_by_chapter.setdefault(int(sc["chapter_number"]), []).append(sc)
+    for c_items in schemas_by_chapter.values():
+        c_items.sort(key=lambda x: str(x.get("schema_id", "")))
     nodes = bundle["nodes"]
     relations = bundle["relations"]
     domains_by_id = {d["domain_id"]: d for d in bundle["domains"]}
@@ -648,6 +911,19 @@ def build_prd_markdown(
         body_lines.append(f"### {_clean_prd_prose(sec['heading'])}")
         body_lines.append("")
         body_lines.append(_clean_prd_prose(sec["body"]))
+        body_lines.append("")
+    if global_schemas:
+        body_lines.append(f"### {PANORAMA_HEADING}")
+        body_lines.append("")
+        body_lines.append(
+            f"Ce panorama directeur réunit les **{len(global_schemas)} schémas de vulgarisation transversaux "
+            "(`SCH-00-01` à `SCH-00-04`)** destinés à offrir en dix secondes une lecture visuelle de l'architecture "
+            "`80/20`, de la chaîne de confiance protocolaire et juridique, de la trajectoire `2026–2035` (`L0–L4`) et "
+            "de l'équation économique `FinOps` / homologation `G0–G5`."
+        )
+        body_lines.append("")
+        for g_sch in sorted(global_schemas, key=lambda x: str(x.get("schema_id", ""))):
+            body_lines.extend(_render_schema_block(g_sch))
         body_lines.append("")
     body_lines.append("---")
     body_lines.append("")
@@ -859,13 +1135,42 @@ def build_prd_markdown(
                 )
             body_lines.append("")
 
+            ch_schemas = schemas_by_chapter.get(ch_num, [])
+            if ch_schemas:
+                body_lines.append(f"#### {ch_num:02d}.3 Schémas de vulgarisation à intégrer")
+                body_lines.append("")
+                covered_fams = sorted(
+                    {
+                        str(f).strip()
+                        for sc in ch_schemas
+                        for f in (sc.get("families_covered") or [])
+                        if str(f).strip()
+                    }
+                )
+                rc = Counter(str(sc.get("reuse_status", "")) for sc in ch_schemas)
+                stat_parts = [
+                    f"`{rc[k]}` {REUSE_STATUS_LABELS[k]}"
+                    for k in ("reemploi_direct", "adaptation_vulgarisee", "creation_originale")
+                    if rc.get(k)
+                ]
+                fams_list = ", ".join(f"`{f}`" for f in covered_fams)
+                body_lines.append(
+                    f"Ce chapitre intègre **{len(ch_schemas)} schéma(s) de vulgarisation** couvrant "
+                    f"**{len(covered_fams)} / {len(fams)} famille(s)** ({fams_list}) : "
+                    f"{', '.join(stat_parts)}."
+                )
+                body_lines.append("")
+                for sc in ch_schemas:
+                    body_lines.extend(_render_schema_block(sc))
+                body_lines.append("")
+
         body_lines.append("---")
         body_lines.append("")
 
     pivots_path = repo_root / "Cartographie" / "donnees" / "pivots-concordance.json"
     raw_pivots = json.loads(pivots_path.read_text(encoding="utf-8")) if pivots_path.is_file() else {}
 
-    # 4 Annexes (A..D)
+    # 5 Annexes (A..E)
     ann_heading_by_code: dict[str, str] = {}
     for ann in annexes:
         acode = ann["annexe_code"]
@@ -887,14 +1192,22 @@ def build_prd_markdown(
         body_lines.append("")
         body_lines.append(_clean_prd_prose(ann["targeted_content_description"]))
         body_lines.append("")
-        if acode in ("A", "B"):
-            # Marqueurs différés résolus en Passe 2 via {{CH_ANC_XX}}
+        if acode in ("A", "B", "E"):
+            # Marqueurs différés résolus en Passe 2 via {{CH_ANC_XX}}, {{CH_SCH_ANC_XX}}, {{EXEC_ANC}}, {{EXEC_PAN_ANC}}
             raw_tbl = render_annexe_tables(
                 acode,
                 bundle,
                 chapters_by_num,
                 {cnum: f"{{{{CH_ANC_{cnum:02d}}}}}" for cnum in range(1, 37)},
                 raw_pivots,
+                schemas_catalog=schemas_catalog,
+                extra_anchors={
+                    "exec_anchor": "{{EXEC_ANC}}",
+                    "exec_panorama_anchor": "{{EXEC_PAN_ANC}}",
+                    "schema_section_anchors": {
+                        cnum: f"{{{{CH_SCH_ANC_{cnum:02d}}}}}" for cnum in range(1, 37)
+                    },
+                },
             )
             body_lines.extend(raw_tbl)
         else:
@@ -919,15 +1232,23 @@ def build_prd_markdown(
             anchor_by_level_title[(lvl, h_text)] = anc
 
     exec_anchor = anchor_by_level_title[(2, exec_title)]
+    exec_panorama_anchor = anchor_by_level_title.get((3, PANORAMA_HEADING), exec_anchor)
     chapter_anchors = {
         cnum: anchor_by_level_title[(3, chapter_heading_texts[cnum])]
         for cnum in range(1, 37)
     }
+    schema_section_anchors = {
+        cnum: anchor_by_level_title.get((4, f"{cnum:02d}.3 Schémas de vulgarisation à intégrer"), chapter_anchors[cnum])
+        for cnum in range(1, 37)
+    }
 
-    # Remplacement des marqueurs {{CH_ANC_XX}} dans le corps
+    # Remplacement des marqueurs {{CH_ANC_XX}}, {{CH_SCH_ANC_XX}}, {{EXEC_ANC}}, {{EXEC_PAN_ANC}} dans le corps
     body_text = "\n".join(body_lines)
+    body_text = body_text.replace("{{EXEC_ANC}}", exec_anchor).replace("{{EXEC_PAN_ANC}}", exec_panorama_anchor)
     for cnum, anc in chapter_anchors.items():
         body_text = body_text.replace(f"{{{{CH_ANC_{cnum:02d}}}}}", anc)
+    for cnum, sanc in schema_section_anchors.items():
+        body_text = body_text.replace(f"{{{{CH_SCH_ANC_{cnum:02d}}}}}", sanc)
 
     # Construction de la Table des matières exhaustive avec ancres vérifiées
     toc_lines: list[str] = [f"## {toc_title}", ""]
@@ -938,6 +1259,8 @@ def build_prd_markdown(
     for sec in exec_sum["sections"]:
         sh = _clean_prd_prose(sec["heading"])
         toc_lines.append(f"  - [{sh}](#{anchor_by_level_title[(3, sh)]})")
+    if (3, PANORAMA_HEADING) in anchor_by_level_title:
+        toc_lines.append(f"  - [{PANORAMA_HEADING}](#{exec_panorama_anchor})")
 
     for p in parties:
         dom_id = p["domain_id"]
@@ -962,6 +1285,9 @@ def build_prd_markdown(
                 toc_lines.append(
                     f"      - [{f_head}](#{f_anc}) — *Thèmes ({len(fam['themes_targeted'])})* : {t_labels}"
                 )
+            h_sch = f"{ch_num:02d}.3 Schémas de vulgarisation à intégrer"
+            if (4, h_sch) in anchor_by_level_title:
+                toc_lines.append(f"    - [{h_sch}](#{schema_section_anchors[ch_num]})")
 
     for ann in annexes:
         acode = ann["annexe_code"]
@@ -1006,6 +1332,7 @@ def build_prd_markdown(
     markdown_text = escape_markdown_dollars(
         "\n".join(header_lines + toc_lines) + "\n" + body_text.rstrip() + "\n"
     )
+    total_schemas = len(global_schemas) + len(chapter_schemas_list)
     metrics = {
         "domains": len(parties),
         "chapters": len(chapters),
@@ -1016,6 +1343,7 @@ def build_prd_markdown(
             for f in c["targeted_content"]["families_and_themes"]
         ),
         "annexes": len(annexes),
+        "schemas": total_schemas,
         "lines": len(markdown_text.splitlines()),
         "words": len(markdown_text.split()),
     }
@@ -1052,8 +1380,8 @@ def main() -> int:
     print(
         f"Compilation PRD réussie -> {out_path} : {metrics['domains']} domaines, "
         f"{metrics['chapters']} chapitres, {metrics['families']} familles, "
-        f"{metrics['themes']} thèmes, {metrics['annexes']} annexes "
-        f"({metrics['lines']} lignes, {metrics['words']} mots)"
+        f"{metrics['themes']} thèmes, {metrics['annexes']} annexes, "
+        f"{metrics['schemas']} schémas ({metrics['lines']} lignes, {metrics['words']} mots)"
     )
     return 0
 

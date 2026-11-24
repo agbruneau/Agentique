@@ -110,7 +110,8 @@ def test_unit_build_prd_markdown_end_to_end_on_real_bundle() -> None:
         "chapters": 36,
         "families": 71,
         "themes": 260,
-        "annexes": 4,
+        "annexes": 5,
+        "schemas": 115,
         "lines": metrics["lines"],
         "words": metrics["words"],
     }
@@ -164,15 +165,16 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
         elif lvl == 5:
             h5_titles.append(title)
 
-    # 12 Parties + 4 Annexes + TDM + Sommaire exécutif
+    # 12 Parties + 5 Annexes + TDM + Sommaire exécutif
     parties_h2 = [t for t in h2_titles if t.startswith("Partie ")]
     annexes_h2 = [t for t in h2_titles if t.startswith("Annexe ")]
     assert len(parties_h2) == 12
-    assert len(annexes_h2) == 4
+    assert len(annexes_h2) == 5
     assert len(set(parties_h2)) == 12
-    assert len(set(annexes_h2)) == 4
+    assert len(set(annexes_h2)) == 5
 
-    # 36 Chapitres uniques + 36 Résumés + 36 Descriptifs + 71 Familles
+    # Panorama + 36 Chapitres uniques + 36 Résumés + 36 Descriptifs + 36 Sections XX.3 + 71 Familles H5
+    assert cp.PANORAMA_HEADING in h3_titles
     chapters_h3 = [t for t in h3_titles if re.match(r"^Chapitre \d{2} — ", t)]
     assert len(chapters_h3) == 36
     assert len(set(chapters_h3)) == 36
@@ -180,8 +182,10 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
         assert any(t.startswith(f"Chapitre {i:02d} — ") for t in chapters_h3)
         assert f"{i:02d}.1 Résumé" in h4_titles
         assert f"{i:02d}.2 Descriptif du contenu ciblé" in h4_titles
+        assert f"{i:02d}.3 Schémas de vulgarisation à intégrer" in h4_titles
 
     fam_h5 = [t for t in h5_titles if re.match(r"^\d{2}\.2\.\d+ ", t)]
+    assert len(h5_titles) == 71
     assert len(fam_h5) == 71
 
     # Couverture 100 % des 12 domaines, 36 sous-domaines, 71 familles et 260 thèmes du MindMap
@@ -336,6 +340,79 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert len(ann_d_ids) == 237
     assert len(set(ann_d_ids)) == 237
 
+    # Annexe E : 115 schémas de vulgarisation et couverture des 319 figures Tomes/
+    assert "## Annexe E — " in prd_text
+    assert any(ln.startswith("#### Catalogue directeur intégral des 115 schémas") for ln in prd_lines)
+    ann_e_cat_idx = next(i for i, ln in enumerate(prd_lines) if ln.startswith("#### Catalogue directeur intégral des 115 schémas"))
+    ann_e_sch_ids: list[str] = []
+    for ln in prd_lines[ann_e_cat_idx + 4 :]:
+        if not ln.startswith("|"):
+            break
+        ann_e_sch_ids.append(ln.split("|")[1].strip().strip("`"))
+    assert len(ann_e_sch_ids) == 115
+    assert len(set(ann_e_sch_ids)) == 115
+    tomes_file_links = [
+        lnk for lnk in re.findall(r"\]\((Tomes/[^)#]+)", prd_text)
+    ]
+    assert len(tomes_file_links) >= 1400
+    for rel_tome in set(tomes_file_links):
+        assert (PRD_PATH.parent / unquote(rel_tome)).is_file(), f"Lien Tomes/ cassé dans prd.md : {rel_tome}"
+
+    # #138 : 0 'Synthetise' sans accent et pourcentages Annexe E (E.1 + E.2) au format virgule française
+    assert not re.search(r"\bsynthetise\b", prd_text, re.IGNORECASE), "Synthetise sans accent détecté dans prd.md"
+    ann_e_block = prd_text.split("## Annexe E — ", 1)[1]
+    ann_e_stats = ann_e_block.split("#### Répartition des schémas de vulgarisation", 1)[0]
+    assert not re.findall(r"\d+\.\d+\s*%", ann_e_stats), f"Point décimal anglais dans Annexe E : {re.findall(r'\d+\.\d+\s*%', ann_e_stats)}"
+    assert len(re.findall(r"\d+,\d+\s+%", ann_e_stats)) >= 27
+
+
+def test_inventaire_319_diagrammes_et_catalogue_115_schemas() -> None:
+    import jsonschema
+
+    inv_path = DONNEES_DIR / "inventaire-319-diagrammes.json"
+    cat_path = DONNEES_DIR / "catalogue-schemas-prd.json"
+    schema_path = DONNEES_DIR / "schema-prd-vulgarisation.json"
+    shards_dir = DONNEES_DIR / "prd_schemas_shards"
+    assert inv_path.is_file() and cat_path.is_file() and schema_path.is_file()
+    for p in (inv_path, cat_path, schema_path):
+        assert b"\r\n" not in p.read_bytes(), f"CRLF dans {p}"
+
+    inv = json.loads(inv_path.read_text(encoding="utf-8"))
+    figs = inv.get("figures") or []
+    assert len(figs) == 319
+    assert sum(1 for f in figs if f.get("notation") == "PlantUML") == 253
+    assert sum(1 for f in figs if f.get("notation") == "Mermaid") == 66
+    for fg in figs:
+        assert (REPO_ROOT / fg["source_path"]).is_file(), f"Source absente : {fg['source_path']}"
+        assert (REPO_ROOT / fg["rendered_path"]).is_file(), f"Rendu absent : {fg['rendered_path']}"
+
+    val_schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    validator = jsonschema.Draft202012Validator(val_schema)
+    shard_files = sorted(shards_dir.glob("schemas-*.json"))
+    assert len(shard_files) == 7
+    for sf in shard_files:
+        assert b"\r\n" not in sf.read_bytes(), f"CRLF dans {sf}"
+        sdata = json.loads(sf.read_text(encoding="utf-8"))
+        errs = list(validator.iter_errors(sdata))
+        assert not errs, f"Erreur Draft202012Validator dans {sf}: {errs[0].message}"
+
+    cat_raw = cat_path.read_text(encoding="utf-8")
+    cat = json.loads(cat_raw)
+    assert r"\$" not in cat_raw
+    assert not re.search(r"\bsynthetise\b", cat_raw, re.IGNORECASE), "Synthetise sans accent détecté dans catalogue-schemas-prd.json"
+    all_sch = list(cat["global_schemas"]) + list(cat["chapter_schemas"])
+    assert len(cat["global_schemas"]) == 4
+    assert len(cat["chapter_schemas"]) == 111
+    assert len(all_sch) == 115
+    assert cat["summary_stats"]["chapters_covered_count"] == 36
+    assert cat["summary_stats"]["families_covered_count"] == 71
+    assert cat["summary_stats"]["unique_themes_vulgarized_count"] == 260
+    assert cat["tome_figures_coverage"]["unique_linked_figures_count"] == 267
+    for sc in all_sch:
+        for fg in sc.get("linked_tome_figures") or []:
+            assert (REPO_ROOT / fg["source_path"]).is_file()
+            assert (REPO_ROOT / fg["rendered_path"]).is_file()
+
 
 def test_prd_links_in_readmes_valid() -> None:
     if not PRD_PATH.is_file():
@@ -365,16 +442,29 @@ def test_prd_links_in_readmes_valid() -> None:
     assert f"`{pw_bytes:,}".replace(",", " ") in carto_readme
     assert "`86` jalons" in carto_readme
     assert "`237` entrées uniques" in carto_readme
+    assert "`115` schémas de vulgarisation" in carto_readme
+    assert "`5` annexes normatives `A–E`" in carto_readme
 
 
 def test_prd_web_data_json_and_parity() -> None:
     assert PRD_WEB_DATA_PATH.is_file()
     data = json.loads(PRD_WEB_DATA_PATH.read_text(encoding="utf-8"))
     assert len(data["executive_summary"]["sections"]) == 5
+    assert len(data["executive_summary"].get("vulgarization_schemas") or []) == 4
     assert data["executive_summary"]["sections"][3]["kpi_table"] is not None
     assert len(data["parties"]) == 12
     assert len(data["chapters"]) == 36
-    assert len(data["annexes"]) == 4
+    assert len(data["annexes"]) == 5
+    assert [a["annexe_code"] for a in data["annexes"]] == ["A", "B", "C", "D", "E"]
+    assert all(ch.get("schemas_anchor") and len(ch.get("vulgarization_schemas") or []) >= 1 for ch in data["chapters"])
+    assert sum(len(ch["vulgarization_schemas"]) for ch in data["chapters"]) == 111
+    assert data["meta"]["annexes_count"] == 5
+    assert data["meta"]["schemas_count"] == 115
+    assert data["meta"]["tome_figures_count"] == 319
+
+    ann_e = next(a for a in data["annexes"] if a["annexe_code"] == "E")
+    assert len(ann_e["catalogue_all"]) == 115
+    assert len(ann_e["tome_inventory_summary"]["figures"]) == 319
 
     fams = [f for ch in data["chapters"] for f in ch["targeted_content"]["families_and_themes"]]
     thms = [t for f in fams for t in f["themes_targeted"]]
@@ -462,7 +552,7 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     if (!eng) throw new Error("PrdWebEngine non exposé");
     const data = JSON.parse(jsonMatch[1]);
     const idx = eng.buildIndexes(data);
-    if (idx.parties.length !== 12 || idx.chapters.length !== 36 || idx.annexes.length !== 4) {
+    if (idx.parties.length !== 12 || idx.chapters.length !== 36 || idx.annexes.length !== 5) {
       throw new Error("Cardinaux index PrdWebEngine invalides");
     }
 
@@ -488,8 +578,30 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     const toc = eng.renderTocHtml(idx, "", { tocExpanded: new Set(), target: { kind: "exec" } }, { active: false });
     if (!toc.html || toc.count < 12) throw new Error("renderTocHtml insuffisant");
     const fullHtml = eng.renderContentHtml(idx, { mode: "full", target: { kind: "exec" }, filters: {}, highlightQuery: "" }, { active: false, counts: { themes: 260, chapters: 36, parties: 12 } });
-    for (const marker of ["Partie I", "Partie XII", "Chapitre 01", "Chapitre 36", "Annexe A", "Annexe D", "THM_loi-de-lusser"]) {
+    for (const marker of [
+      "Partie I", "Partie XII", "Chapitre 01", "Chapitre 36",
+      "Annexe A", "Annexe D", "Annexe E", "THM_loi-de-lusser",
+      "Panorama visuel directeur", "01.3 Schémas de vulgarisation à intégrer", "36.3 Schémas de vulgarisation à intégrer",
+      "SCH-00-01", "SCH-15-03", "SCH-36-03"
+    ]) {
       if (!fullHtml.includes(marker)) throw new Error("Contenu mode intégral PrdWebEngine incomplet: " + marker);
+    }
+    const allSchemaIds = (data.executive_summary.vulgarization_schemas || []).map(s => s.schema_id)
+      .concat(data.chapters.flatMap(c => (c.vulgarization_schemas || []).map(s => s.schema_id)));
+    if (allSchemaIds.length !== 115) throw new Error("Nombre de schémas != 115: " + allSchemaIds.length);
+    for (const sid of allSchemaIds) {
+      if (!fullHtml.includes(sid)) throw new Error("Schéma manquant dans PRD Web fullHtml: " + sid);
+    }
+    const tomeHrefs = Array.from(fullHtml.matchAll(/href="(\.\.\/Tomes\/[^"#]+)"/g), m => m[1]);
+    if (tomeHrefs.length < 600) throw new Error("Trop peu de liens ../Tomes/ dans PRD Web fullHtml: " + tomeHrefs.length);
+    const fsPath = require("path");
+    for (const rawHref of new Set(tomeHrefs)) {
+      const diskPath = fsPath.resolve(fsPath.dirname(process.argv[1]), decodeURIComponent(rawHref));
+      if (!fs.existsSync(diskPath)) throw new Error("Lien ../Tomes/ cassé sur disque: " + diskPath);
+    }
+    const hSch15 = eng.parseHash("#sch=SCH-15-03", idx);
+    if (!hSch15 || hSch15.kind !== "chapter" || Number(hSch15.chapterNumber) !== 15 || hSch15.focusId !== "SCH-15-03") {
+      throw new Error("parseHash #sch=SCH-15-03 invalide: " + JSON.stringify(hSch15));
     }
     // Phase 2 : Zéro backtick brut hors <code>, 0 **gras** brut, 0 \$ littéral, 0 <em> brisé sur gen_ai.*
     const noCodeTags = fullHtml.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
@@ -506,6 +618,13 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     const inlineSample = eng.renderInlineMd("attributs gen_ai.* et *Cost-per-Outcome* + `strict: true`");
     if (!inlineSample.includes("gen_ai.* et <em>Cost-per-Outcome</em>") || !inlineSample.includes("<code")) {
       throw new Error("renderInlineMd défaillant sur gen_ai.* : " + inlineSample);
+    }
+    if (/\bsynthetise\b/i.test(fullHtml)) {
+      throw new Error("Synthetise sans accent détecté dans PRD Web HTML");
+    }
+    const hSecPan = eng.parseHash("#sec=exec-panorama", idx);
+    if (!hSecPan || hSecPan.kind !== "exec" || hSecPan.sectionId !== "panorama") {
+      throw new Error("parseHash #sec=exec-panorama invalide: " + JSON.stringify(hSecPan));
     }
     const hSec02 = eng.parseHash("#sec=02", idx);
     if (!hSec02 || hSec02.kind !== "exec" || hSec02.sectionId !== "exec-02") {

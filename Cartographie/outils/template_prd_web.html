@@ -895,6 +895,93 @@
       border-radius: var(--radius-md);
     }
 
+    /* Cartes schémas de vulgarisation */
+    .schema-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .schema-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      break-inside: avoid;
+    }
+    .schema-card.focused-target {
+      border-color: var(--accent);
+      background: light-dark(#f0f7ff, #15223b);
+      box-shadow: var(--shadow-md);
+    }
+    .badge.reuse-direct {
+      background: var(--ok-soft);
+      color: var(--ok);
+      border-color: transparent;
+    }
+    .badge.reuse-adapt {
+      background: var(--accent-soft);
+      color: var(--accent-text);
+      border-color: transparent;
+    }
+    .badge.reuse-orig {
+      background: var(--warn-soft);
+      color: var(--warn);
+      border-color: transparent;
+    }
+    .schema-blueprint {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12.8px;
+    }
+    .schema-blueprint ul, .schema-blueprint ol {
+      margin: 4px 0 0 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .color-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1px solid var(--border-strong);
+      flex-shrink: 0;
+    }
+    .takeaway-box {
+      border-left: 4px solid var(--ok);
+      background: light-dark(#f0fdf4, #0f291e);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 550;
+    }
+    .tome-fig-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tome-fig-row {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12.2px;
+    }
+
     @media (max-width: 960px) {
       .toc-sidebar {
         position: absolute;
@@ -935,7 +1022,7 @@
       .topbar, .toc-sidebar, .reading-nav, .theme-actions, .inline-filter-row, .search-dropdown {
         display: none !important;
       }
-      .doc-card, .family-box, .theme-card, .section-card {
+      .doc-card, .family-box, .theme-card, .section-card, .schema-card {
         box-shadow: none !important;
         border-color: #cbd5e1 !important;
         break-inside: avoid;
@@ -962,7 +1049,7 @@
 
       <div class="topbar-row">
         <div class="search-wrap">
-          <input id="prd-search" class="search-input" type="search" placeholder="Rechercher thème, EXIG, CAP, chapitre, annexe…" autocomplete="off" aria-label="Recherche plein-texte dans le PRD" />
+          <input id="prd-search" class="search-input" type="search" placeholder="Rechercher thème, SCH-*, EXIG, CAP, annexe…" autocomplete="off" aria-label="Recherche plein-texte dans le PRD" />
           <span class="search-kbd">Ctrl+K</span>
           <div id="prd-search-dropdown" class="search-dropdown" role="listbox"></div>
         </div>
@@ -1087,6 +1174,24 @@
       return prefix + encoded + (lineStart ? "#L" + lineStart : "");
     }
 
+    function tomeAssetHref(assetPath) {
+      var clean = String(assetPath || "").replace(/\\/g, "/").replace(/^\.\.\//, "").replace(/^\/+/, "");
+      if (!clean) return "#";
+      return "../" + encodeRelPath(clean);
+    }
+
+    function formatReuseStatus(status) {
+      if (status === "reemploi_direct") return { label: "Réemploi direct", cls: "reuse-direct" };
+      if (status === "adaptation_vulgarisee") return { label: "Adaptation vulgarisée", cls: "reuse-adapt" };
+      if (status === "creation_originale") return { label: "Création originale", cls: "reuse-orig" };
+      return { label: String(status || "—"), cls: "" };
+    }
+
+    function formatDecimalFr(val) {
+      if (val == null) return "0";
+      return String(val).replace(/\./g, ",");
+    }
+
     function mindmapHref(view, nodeId) {
       var v = view === "synaptic" ? "synaptic" : "mindmap";
       var hash = "#view=" + v;
@@ -1197,16 +1302,56 @@
       var themeBySlug = Object.create(null);
       var themeChapterById = Object.create(null);
       var familyChapterById = Object.create(null);
+      var schemaById = Object.create(null);
 
       var autonomySet = new Set();
       var roleSet = new Set();
       var totalFamilies = 0;
       var totalThemes = 0;
       var totalInterrelations = 0;
+      var totalSchemas = 0;
 
       var searchDocs = [];
 
-      // Indexation Sommaire exécutif
+      function indexSchemaDoc(sch, cnum) {
+        if (!sch || !sch.schema_id) return;
+        schemaById[sch.schema_id] = sch;
+        totalSchemas += 1;
+        var vb = sch.visual_blueprint || {};
+        var reuseMeta = formatReuseStatus(sch.reuse_status);
+        var scopeLbl = cnum === 0 ? "Sommaire exécutif · Panorama" : ("Ch. " + pad2(cnum) + " · " + sch.domain_id);
+        var targetObj = cnum === 0
+          ? { kind: "exec", sectionId: "panorama", focusKind: "sch", focusId: sch.schema_id }
+          : { kind: "chapter", chapterNumber: cnum, focusKind: "sch", focusId: sch.schema_id };
+        searchDocs.push({
+          kind: "schema",
+          id: sch.schema_id,
+          chapterNumber: cnum,
+          domain_id: sch.domain_id,
+          title: sch.schema_id + " — " + sch.title,
+          subtitle: scopeLbl + " · " + sch.visual_archetype + " · " + reuseMeta.label,
+          target: targetObj,
+          norm: normalizeText([
+            sch.schema_id,
+            sch.title,
+            sch.domain_id,
+            sch.visual_archetype,
+            sch.recommended_notation,
+            sch.reuse_status,
+            reuseMeta.label,
+            sch.insertion_point,
+            sch.pedagogical_objective,
+            sch.vulgarization_angle,
+            vb.key_takeaway_box,
+            (sch.target_audiences || []).join(" "),
+            (sch.families_covered || []).join(" "),
+            (sch.themes_vulgarized || []).join(" "),
+            (sch.linked_tome_figures || []).map(function (f) { return f.tome_id + " " + f.fig_id + " " + f.title; }).join(" ")
+          ].join(" "))
+        });
+      }
+
+      // Indexation Sommaire exécutif + Panorama schémas SCH-00-*
       (execSummary.sections || []).forEach(function (sec, i) {
         var secId = sec.id || ("sec-" + (i + 1));
         var kpiTxt = "";
@@ -1221,6 +1366,9 @@
           target: { kind: "exec", sectionId: secId },
           norm: normalizeText([sec.heading, sec.body_md, kpiTxt].join(" "))
         });
+      });
+      (execSummary.vulgarization_schemas || []).forEach(function (sch) {
+        indexSchemaDoc(sch, 0);
       });
 
       // Indexation Parties
@@ -1331,6 +1479,10 @@
             });
           });
         });
+
+        (ch.vulgarization_schemas || []).forEach(function (sch) {
+          indexSchemaDoc(sch, cnum);
+        });
       });
 
       var annexeByCode = Object.create(null);
@@ -1375,6 +1527,7 @@
         themeBySlug: themeBySlug,
         themeChapterById: themeChapterById,
         familyChapterById: familyChapterById,
+        schemaById: schemaById,
         annexeByCode: annexeByCode,
         searchDocs: searchDocs,
         facets: {
@@ -1389,7 +1542,9 @@
           themes: totalThemes,
           relations: Number(meta.relations_count || 616),
           chapterInterrelations: totalInterrelations,
-          annexes: annexes.length
+          annexes: annexes.length,
+          schemas: totalSchemas || Number(meta.schemas_count || 0),
+          tomeFigures: Number(meta.tome_figures_count || 319)
         }
       };
     }
@@ -1495,13 +1650,23 @@
         }
       });
 
+      if (params.sch && idx && idx.schemaById) {
+        var sKey = String(params.sch).trim().toUpperCase();
+        var schObj = idx.schemaById[sKey];
+        if (schObj) {
+          var schCh = Number(schObj.chapter_number) || 0;
+          return schCh === 0
+            ? { kind: "exec", sectionId: "panorama", focusKind: "sch", focusId: schObj.schema_id }
+            : { kind: "chapter", chapterNumber: schCh, focusKind: "sch", focusId: schObj.schema_id };
+        }
+      }
       if (params.ch) {
         var chDigits = parseInt(String(params.ch).replace(/^CH-/i, ""), 10);
         if (idx && idx.chapterByNum && idx.chapterByNum[chDigits]) {
           return {
             kind: "chapter",
             chapterNumber: chDigits,
-            focusKind: params.fam ? "fam" : (params.thm ? "thm" : null),
+            focusKind: params.fam ? "fam" : (params.thm ? "thm" : (params.schemas ? "schemas" : null)),
             focusId: params.fam || params.thm || null
           };
         }
@@ -1540,6 +1705,10 @@
       }
       if (params.sec !== undefined && idx) {
         var sVal = String(params.sec).trim();
+        var sLow = sVal.toLowerCase();
+        if (sLow === "panorama" || sLow === "exec-panorama") {
+          return { kind: "exec", sectionId: "panorama" };
+        }
         var secs = (idx.execSummary && idx.execSummary.sections) || [];
         var found = secs.find(function (s, i) {
           return s.id === sVal || String(i) === sVal || String(i + 1) === sVal || s.slug === sVal;
@@ -1559,6 +1728,7 @@
     function targetToHash(target) {
       if (!target) return "#sec=1";
       if (target.kind === "exec") {
+        if (target.focusKind === "sch" && target.focusId) return "#sch=" + encodeURIComponent(target.focusId);
         return target.sectionId ? "#sec=" + encodeURIComponent(target.sectionId) : "#sec=1";
       }
       if (target.kind === "part") {
@@ -1571,6 +1741,8 @@
         var h = "#ch=" + pad2(target.chapterNumber);
         if (target.focusKind === "fam" && target.focusId) h += "&fam=" + encodeURIComponent(target.focusId);
         if (target.focusKind === "thm" && target.focusId) h += "&thm=" + encodeURIComponent(target.focusId);
+        if (target.focusKind === "sch" && target.focusId) h += "&sch=" + encodeURIComponent(target.focusId);
+        if (target.focusKind === "schemas") h += "&schemas=1";
         return h;
       }
       return "#sec=1";
@@ -1588,13 +1760,15 @@
 
       // 1) Sommaire exécutif global
       var execSecs = (idx.execSummary && idx.execSummary.sections) || [];
+      var execSchemas = (idx.execSummary && idx.execSummary.vulgarization_schemas) || [];
       var matchingExecSecs = execSecs.filter(function (s, i) {
         if (!q) return true;
         return normalizeText("sommaire executif " + (i + 1) + " " + s.heading).indexOf(q) !== -1;
       });
-      var showExec = !q || matchingExecSecs.length > 0 || normalizeText(idx.execSummary.title || "Sommaire exécutif global").indexOf(q) !== -1;
+      var execPanMatch = !q || normalizeText("panorama visuel directeur schemas vulgarisation transversaux " + execSchemas.map(function (s) { return s.schema_id + " " + s.title; }).join(" ")).indexOf(q) !== -1;
+      var showExec = !q || matchingExecSecs.length > 0 || (execSchemas.length > 0 && execPanMatch) || normalizeText(idx.execSummary.title || "Sommaire exécutif global").indexOf(q) !== -1;
       if (showExec) {
-        visibleEntries += 1 + matchingExecSecs.length;
+        visibleEntries += 1 + matchingExecSecs.length + (execSchemas.length > 0 && execPanMatch ? 1 : 0);
         var execOpen = q.length > 0 || expanded.has("TOC_EXEC");
         var execActive = activeTarget.kind === "exec" ? " active" : "";
         partsHtml.push('<div class="toc-group">');
@@ -1615,6 +1789,15 @@
               "</button>"
             );
           });
+          if (execSchemas.length > 0 && execPanMatch) {
+            var panAct = activeTarget.kind === "exec" && activeTarget.sectionId === "panorama" ? " active" : "";
+            partsHtml.push(
+              '<button type="button" class="toc-sub-link' + panAct + '" data-nav-kind="exec" data-nav-sec="panorama">' +
+                "<span>Panorama visuel directeur</span>" +
+                '<span class="badge mono">' + execSchemas.length + "</span>" +
+              "</button>"
+            );
+          }
           partsHtml.push("</div>");
         }
         partsHtml.push("</div>");
@@ -1645,7 +1828,12 @@
             }
           });
 
-          if (!q || chHay.indexOf(q) !== -1 || matchingFams.length > 0 || normalizeText(p.representative_part_title + " " + domId).indexOf(q) !== -1) {
+          var chSchemas = Array.isArray(ch.vulgarization_schemas) ? ch.vulgarization_schemas : [];
+          var schMatch = chSchemas.some(function (sch) {
+            return !q || normalizeText(sch.schema_id + " " + sch.title + " schemas vulgarisation").indexOf(q) !== -1;
+          });
+
+          if (!q || chHay.indexOf(q) !== -1 || matchingFams.length > 0 || schMatch || normalizeText(p.representative_part_title + " " + domId).indexOf(q) !== -1) {
             matchingChapters.push({
               ch: ch,
               fams: q ? (matchingFams.length > 0 ? matchingFams : fams.map(function (fam, fk) { return { fam: fam, index: fk + 1, code: fam.family_code || (pad2(cnum) + ".2." + (fk + 1)) }; })) : fams.map(function (fam, fk) { return { fam: fam, index: fk + 1, code: fam.family_code || (pad2(cnum) + ".2." + (fk + 1)) }; })
@@ -1710,6 +1898,17 @@
                 );
                 visibleEntries += 1;
               });
+              var chSchemasToc = Array.isArray(ch.vulgarization_schemas) ? ch.vulgarization_schemas : [];
+              if (chSchemasToc.length) {
+                var schAct = activeTarget.kind === "chapter" && Number(activeTarget.chapterNumber) === cnum && (activeTarget.focusKind === "schemas" || activeTarget.focusKind === "sch") ? " active" : "";
+                partsHtml.push(
+                  '<button type="button" class="toc-sub-link' + schAct + '" data-nav-kind="chapter" data-nav-ch="' + cnum + '" data-nav-focus-kind="schemas">' +
+                    "<span>" + pad2(cnum) + ".3 Schémas de vulgarisation à intégrer</span>" +
+                    '<span class="badge mono">' + chSchemasToc.length + "</span>" +
+                  "</button>"
+                );
+                visibleEntries += 1;
+              }
               partsHtml.push("</div>");
             }
           });
@@ -1718,7 +1917,7 @@
         partsHtml.push("</div>");
       });
 
-      // 3) 4 Annexes A–D
+      // 3) 5 Annexes A–E
       idx.annexes.forEach(function (ann) {
         var acode = ann.annexe_code;
         if (q && normalizeText("Annexe " + acode + " " + ann.representative_title).indexOf(q) === -1) {
@@ -1756,6 +1955,120 @@
         html: partsHtml.join("") || '<div class="empty-state">Aucune entrée TDM ne correspond à ce filtre.</div>',
         count: visibleEntries
       };
+    }
+
+    function renderVulgarizationSchemaCard(sch, idx, state) {
+      var q = state.highlightQuery || "";
+      var focusId = state.target && state.target.focusId;
+      var focused = (focusId && focusId === sch.schema_id) ? " focused-target" : "";
+      var reuse = formatReuseStatus(sch.reuse_status);
+      var domColor = sch.domain_id === "GLOBAL" ? "var(--accent)" : domainColor(sch.domain_id);
+      var vb = sch.visual_blueprint || {};
+      var zones = Array.isArray(vb.zones) ? vb.zones : [];
+      var flows = Array.isArray(vb.numbered_flows) ? vb.numbered_flows : [];
+      var legend = Array.isArray(vb.color_legend) ? vb.color_legend : [];
+      var audiences = Array.isArray(sch.target_audiences) ? sch.target_audiences : [];
+      var fams = Array.isArray(sch.families_covered) ? sch.families_covered : [];
+      var themes = Array.isArray(sch.themes_vulgarized) ? sch.themes_vulgarized : [];
+      var figures = Array.isArray(sch.linked_tome_figures) ? sch.linked_tome_figures : [];
+
+      var html = [];
+      html.push('<div class="schema-card' + focused + '" id="sch-' + escapeHtml(sch.schema_id) + '" style="border-left-color:' + domColor + ';">');
+      html.push('<div class="theme-head">');
+      html.push(
+        '<div>' +
+          '<div class="theme-title"><span class="badge mono">' + escapeHtml(sch.schema_id) + "</span> " + renderInlineMd(sch.title, q) + "</div>" +
+          '<div class="badge-row" style="margin-top:5px;">' +
+            '<span class="badge ' + reuse.cls + '">' + escapeHtml(reuse.label) + "</span>" +
+            '<span class="badge">' + escapeHtml(sch.visual_archetype) + "</span>" +
+            '<span class="badge mono">' + escapeHtml(sch.recommended_notation) + "</span>" +
+            (sch.domain_id ? '<span class="badge dom" style="background:' + (sch.domain_id === "GLOBAL" ? "#2563eb" : domainColor(sch.domain_id)) + ';">' + escapeHtml(sch.domain_id) + "</span>" : "") +
+          "</div>" +
+        "</div>"
+      );
+      html.push("</div>");
+
+      html.push('<div class="badge-row">');
+      if (audiences.length) {
+        html.push('<span class="badge">Publics : ' + escapeHtml(audiences.join(" · ")) + "</span>");
+      }
+      if (sch.insertion_point) {
+        html.push('<span class="badge">Insertion : ' + renderInlineMd(sch.insertion_point, q) + "</span>");
+      }
+      html.push("</div>");
+
+      if (sch.pedagogical_objective) {
+        html.push('<p class="theme-spec"><strong>Objectif pédagogique :</strong> ' + renderInlineMd(sch.pedagogical_objective, q) + "</p>");
+      }
+      if (sch.vulgarization_angle) {
+        html.push('<p class="theme-spec"><strong>Angle de vulgarisation :</strong> ' + renderInlineMd(sch.vulgarization_angle, q) + "</p>");
+      }
+
+      if (zones.length || flows.length || legend.length || vb.key_takeaway_box) {
+        html.push('<div class="schema-blueprint">');
+        html.push("<strong>Maquette visuelle</strong>");
+        if (zones.length) {
+          html.push("<div><em>Zones :</em><ul>" + zones.map(function (z) {
+            return "<li><code>" + escapeHtml(z.zone_id) + "</code> <strong>" + renderInlineMd(z.label, q) + " :</strong> " + renderInlineMd(z.content, q) + "</li>";
+          }).join("") + "</ul></div>");
+        }
+        if (flows.length) {
+          html.push("<div><em>Flux numérotés :</em><ul>" + flows.map(function (fl) {
+            return "<li>" + renderInlineMd(fl, q) + "</li>";
+          }).join("") + "</ul></div>");
+        }
+        if (legend.length) {
+          html.push('<div class="badge-row"><em>Légende :</em>' + legend.map(function (lg) {
+            var mHex = String(lg.color_token || "").match(/#[0-9A-Fa-f]{6}/);
+            var dot = mHex ? '<span class="color-dot" style="background:' + mHex[0] + ';"></span>' : "";
+            return '<span class="badge">' + dot + "<strong>" + escapeHtml(lg.color_token) + "</strong> : " + renderInlineMd(lg.meaning, q) + "</span>";
+          }).join("") + "</div>");
+        }
+        if (vb.key_takeaway_box) {
+          html.push('<div class="takeaway-box">' + renderInlineMd(vb.key_takeaway_box, q) + "</div>");
+        }
+        html.push("</div>");
+      }
+
+      if (fams.length || themes.length) {
+        html.push('<div class="badge-row">');
+        fams.forEach(function (fid) {
+          html.push('<span class="badge mono">' + escapeHtml(fid) + "</span>");
+        });
+        themes.forEach(function (slug) {
+          var thObj = idx.themeBySlug && idx.themeBySlug[slug];
+          var thCh = thObj ? idx.themeChapterById[thObj.theme_node_id] : null;
+          if (thObj && thCh) {
+            html.push('<button type="button" class="btn btn-sm mono" data-nav-kind="chapter" data-nav-ch="' + thCh + '" data-nav-focus-kind="thm" data-nav-focus-id="' + escapeHtml(thObj.theme_node_id) + '">' + escapeHtml(slug) + "</button>");
+          } else {
+            html.push('<span class="badge mono">' + escapeHtml(slug) + "</span>");
+          }
+        });
+        html.push("</div>");
+      }
+
+      if (figures.length) {
+        html.push('<div class="tome-fig-list"><strong style="font-size:12px;color:var(--text-muted);">Figures sources des Tomes rattachées (' + figures.length + ") :</strong>");
+        figures.forEach(function (fig) {
+          html.push(
+            '<div class="tome-fig-row">' +
+              '<div class="badge-row">' +
+                '<span class="badge mono">' + escapeHtml(fig.tome_id) + " · " + escapeHtml(fig.fig_id) + "</span>" +
+                "<strong>" + renderInlineMd(fig.title, q) + "</strong>" +
+              "</div>" +
+              (fig.role_note ? '<div style="color:var(--text-muted);">' + renderInlineMd(fig.role_note, q) + "</div>" : "") +
+              '<div class="theme-actions">' +
+                (fig.rendered_path ? '<a class="anchor-pill" href="' + escapeHtml(tomeAssetHref(fig.rendered_path)) + '">Rendu (' + escapeHtml(String(fig.rendered_path).split(".").pop()) + ") ↗</a>" : "") +
+                (fig.source_path ? '<a class="anchor-pill" href="' + escapeHtml(tomeAssetHref(fig.source_path)) + '">Source (' + escapeHtml(String(fig.source_path).split(".").pop()) + ") ↗</a>" : "") +
+              "</div>" +
+            "</div>"
+          );
+        });
+        html.push("</div>");
+      }
+
+      html.push("</div>");
+      return html.join("");
     }
 
     function renderExecSummaryCard(idx, state) {
@@ -1817,9 +2130,23 @@
         html.push("</div>");
       });
 
-      // Aperçu rapide des 12 Parties et 4 Annexes lorsque ciblé sur le sommaire
+      // Panorama visuel directeur (SCH-00-01..04)
+      var execSchemas = Array.isArray(es.vulgarization_schemas) ? es.vulgarization_schemas : [];
+      if (execSchemas.length) {
+        var panHlCls = activeSec === "panorama" ? " highlighted" : "";
+        html.push('<div class="section-card' + panHlCls + '" id="prd-exec-panorama">');
+        html.push("<h3>Panorama visuel directeur — Schémas de vulgarisation transversaux</h3>");
+        html.push("<p>Les quatre schémas directeurs transversaux ci-dessous vulgarisent l'ensemble de la doctrine (architecture 80/20, chaîne de confiance protocolaire et juridique, trajectoire 2026–2035 et équation économique FinOps / homologation G0–G5) avant d'entrer dans le détail des 12 Parties.</p>");
+        html.push('<div class="schema-grid">');
+        execSchemas.forEach(function (sch) {
+          html.push(renderVulgarizationSchemaCard(sch, idx, state));
+        });
+        html.push("</div></div>");
+      }
+
+      // Aperçu rapide des 12 Parties et 5 Annexes lorsque ciblé sur le sommaire
       if (state.mode === "targeted") {
-        html.push('<div class="doc-h4">Vue d\'ensemble des 12 Parties (D01–D12)</div>');
+        html.push('<div class="doc-h4">Vue d\'ensemble des 12 Parties (D01–D12) et des ' + idx.annexes.length + " Annexes (A–E)</div>");
         html.push('<div class="cards-grid">');
         idx.parties.forEach(function (p) {
           html.push(
@@ -2065,6 +2392,32 @@
           );
         });
         html.push("</tbody></table></div></div>");
+      }
+
+      // Schémas de vulgarisation à intégrer (XX.3)
+      var chSchemas = Array.isArray(ch.vulgarization_schemas) ? ch.vulgarization_schemas : [];
+      if (chSchemas.length) {
+        var schCls = focusKind === "schemas" ? "section-card highlighted" : "section-card";
+        var famsCoveredSet = new Set();
+        var reuseCounts = { reemploi_direct: 0, adaptation_vulgarisee: 0, creation_originale: 0 };
+        chSchemas.forEach(function (sch) {
+          (sch.families_covered || []).forEach(function (fid) { famsCoveredSet.add(fid); });
+          if (reuseCounts[sch.reuse_status] != null) reuseCounts[sch.reuse_status] += 1;
+        });
+        html.push('<div class="' + schCls + '" id="ch-' + pad2(cnum) + '-schemas">');
+        html.push('<div class="doc-h4" style="margin-top:0;">' + pad2(cnum) + ".3 Schémas de vulgarisation à intégrer (" + chSchemas.length + ")</div>");
+        html.push(
+          '<p style="margin:0;font-size:13px;">Ce chapitre intègre <strong>' + chSchemas.length + " schéma(s)</strong> couvrant <strong>" + famsCoveredSet.size + " famille(s)</strong> (" +
+            "Réemploi direct : <code>" + reuseCounts.reemploi_direct + "</code> · " +
+            "Adaptation vulgarisée : <code>" + reuseCounts.adaptation_vulgarisee + "</code> · " +
+            "Création originale : <code>" + reuseCounts.creation_originale + "</code>)." +
+          "</p>"
+        );
+        html.push('<div class="schema-grid">');
+        chSchemas.forEach(function (sch) {
+          html.push(renderVulgarizationSchemaCard(sch, idx, state));
+        });
+        html.push("</div></div>");
       }
 
       html.push("</article>");
@@ -2418,6 +2771,182 @@
           });
           html.push("</tbody></table></div></details>");
         }
+      } else if (acode === "E") {
+        var statsE = ann.summary_stats || {};
+        var covE = ann.tome_figures_coverage || {};
+        var domDistE = Array.isArray(ann.domain_chapter_distribution) ? ann.domain_chapter_distribution : [];
+        var guideE = Array.isArray(ann.editorial_guidelines) ? ann.editorial_guidelines : [];
+        var catE = Array.isArray(ann.catalogue_all) ? ann.catalogue_all : [];
+        var invObjE = ann.tome_inventory_summary || {};
+        var invFigsE = Array.isArray(invObjE.figures) ? invObjE.figures : [];
+
+        // 1. Tableau de bord de synthèse
+        html.push('<div class="doc-h4">Tableau de bord de synthèse (' + escapeHtml(statsE.total_schemas || catE.length) + " schémas directeurs et thématiques)</div>");
+        html.push('<div class="badge-row">');
+        html.push('<span class="badge mono">Total : ' + escapeHtml(statsE.total_schemas || catE.length) + " schémas (" + escapeHtml(statsE.global_schemas_count || 4) + " transversaux + " + escapeHtml(statsE.chapter_schemas_count || 111) + " de chapitres)</span>");
+        html.push('<span class="badge ok">Chapitres : ' + escapeHtml(statsE.chapters_covered_count || 36) + " / 36</span>");
+        html.push('<span class="badge ok">Familles : ' + escapeHtml(statsE.families_covered_count || 71) + " / " + escapeHtml(statsE.families_total_count || 71) + "</span>");
+        html.push('<span class="badge ok">Thèmes vulgarisés : ' + escapeHtml(statsE.unique_themes_vulgarized_count || 260) + " / " + escapeHtml(statsE.total_themes_count || 260) + "</span>");
+        html.push("</div>");
+
+        var brStat = statsE.by_reuse_status || {};
+        var brArch = statsE.by_visual_archetype || {};
+        var brNot = statsE.by_recommended_notation || {};
+        var brAud = statsE.by_target_audience || {};
+        html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Axe de répartition</th><th>Catégorie / Valeur</th><th class="num">Schémas</th></tr></thead><tbody>');
+        Object.keys(brStat).forEach(function (k) {
+          var meta = formatReuseStatus(k);
+          html.push('<tr><td>Statut de réutilisation</td><td><span class="badge ' + meta.cls + '">' + escapeHtml(meta.label) + "</span> (<code>" + escapeHtml(k) + '</code>)</td><td class="num"><strong>' + escapeHtml(brStat[k]) + "</strong></td></tr>");
+        });
+        Object.keys(brNot).forEach(function (k) {
+          html.push("<tr><td>Notation recommandée</td><td>" + escapeHtml(k) + '</td><td class="num"><strong>' + escapeHtml(brNot[k]) + "</strong></td></tr>");
+        });
+        Object.keys(brArch).forEach(function (k) {
+          html.push("<tr><td>Archétype visuel</td><td>" + escapeHtml(k) + '</td><td class="num"><strong>' + escapeHtml(brArch[k]) + "</strong></td></tr>");
+        });
+        Object.keys(brAud).forEach(function (k) {
+          html.push("<tr><td>Public cible (multi-mentions)</td><td>" + escapeHtml(k) + '</td><td class="num"><strong>' + escapeHtml(brAud[k]) + "</strong></td></tr>");
+        });
+        html.push("</tbody></table></div>");
+
+        // 2. Couverture des 319 figures des Tomes 1 à 8
+        var byTomeCov = covE.by_tome || {};
+        html.push('<div class="doc-h4">Couverture des ' + escapeHtml(covE.total_inventory_figures || invFigsE.length) + " figures des Tomes 1 à 8 (" + escapeHtml(covE.unique_linked_figures_count || 0) + " uniques liées · " + escapeHtml(covE.total_figure_links_count || 0) + " liens)</div>");
+        html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Tome</th><th class="num">Total</th><th class="num">PlantUML</th><th class="num">Mermaid</th><th class="num">Liées uniques</th><th class="num">Non liées</th><th class="num">Liens totaux</th><th class="num">Couverture</th><th>Figures non rattachées</th></tr></thead><tbody>');
+        ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"].forEach(function (tid) {
+          var row = byTomeCov[tid];
+          if (!row) return;
+          var unlinkedIds = Array.isArray(row.unlinked_fig_ids) ? row.unlinked_fig_ids : [];
+          html.push(
+            "<tr>" +
+              '<td><span class="badge mono">' + escapeHtml(tid) + "</span></td>" +
+              '<td class="num">' + escapeHtml(row.inventory_total) + "</td>" +
+              '<td class="num">' + escapeHtml(row.inventory_plantuml) + "</td>" +
+              '<td class="num">' + escapeHtml(row.inventory_mermaid) + "</td>" +
+              '<td class="num"><strong>' + escapeHtml(row.unique_linked_count) + "</strong></td>" +
+              '<td class="num">' + escapeHtml(row.unlinked_count) + "</td>" +
+              '<td class="num">' + escapeHtml(row.total_links_count) + "</td>" +
+              '<td class="num">' + escapeHtml(formatDecimalFr(row.coverage_percent)) + " %</td>" +
+              "<td>" + (unlinkedIds.length ? unlinkedIds.map(function (fid) { return "<code>" + escapeHtml(fid) + "</code>"; }).join(" ") : "<em>Toutes liées</em>") + "</td>" +
+            "</tr>"
+          );
+        });
+        html.push(
+          "<tr>" +
+            "<td><strong>Total</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(covE.total_inventory_figures) + "</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(covE.inventory_plantuml_svg) + "</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(covE.inventory_mermaid_png) + "</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(covE.unique_linked_figures_count) + "</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(covE.unlinked_figures_count) + "</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(covE.total_figure_links_count) + "</strong></td>" +
+            '<td class="num"><strong>' + escapeHtml(formatDecimalFr(covE.coverage_percent)) + " %</strong></td>" +
+            "<td>—</td>" +
+          "</tr>"
+        );
+        html.push("</tbody></table></div>");
+
+        // 3. Distribution par Domaine et Chapitre
+        if (domDistE.length) {
+          html.push('<div class="doc-h4">Répartition des schémas par Domaine et Chapitre</div>');
+          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Domaine</th><th>Intitulé</th><th>Chapitres</th><th class="num">Fam.</th><th class="num">Thèmes</th><th class="num">Schémas</th><th>Identifiants <code>SCH-*</code></th></tr></thead><tbody>');
+          domDistE.forEach(function (dd) {
+            var chLinks = (dd.chapters || []).map(function (cn) {
+              var num = Number(cn);
+              if (num === 0) return '<button type="button" class="btn btn-sm" data-nav-kind="exec" data-nav-sec="panorama">Panorama</button>';
+              return '<button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + num + '" data-nav-focus-kind="schemas">Ch. ' + pad2(num) + "</button>";
+            }).join(" ");
+            var sLinks = (dd.schema_ids || []).map(function (sid) {
+              var sObj = idx.schemaById && idx.schemaById[sid];
+              var scn = sObj ? (Number(sObj.chapter_number) || 0) : 0;
+              return scn === 0
+                ? '<button type="button" class="btn btn-sm mono" data-nav-kind="exec" data-nav-sec="panorama" data-nav-focus-kind="sch" data-nav-focus-id="' + escapeHtml(sid) + '">' + escapeHtml(sid) + "</button>"
+                : '<button type="button" class="btn btn-sm mono" data-nav-kind="chapter" data-nav-ch="' + scn + '" data-nav-focus-kind="sch" data-nav-focus-id="' + escapeHtml(sid) + '">' + escapeHtml(sid) + "</button>";
+            }).join(" ");
+            html.push(
+              "<tr>" +
+                '<td><span class="badge dom" style="background:' + (dd.domain_id === "GLOBAL" ? "#2563eb" : domainColor(dd.domain_id)) + ';">' + escapeHtml(dd.domain_id) + "</span></td>" +
+                "<td>" + renderInlineMd(dd.domain_title, q) + "</td>" +
+                "<td>" + chLinks + "</td>" +
+                '<td class="num">' + escapeHtml(dd.families_count) + "</td>" +
+                '<td class="num">' + escapeHtml(dd.themes_count) + "</td>" +
+                '<td class="num"><strong>' + escapeHtml(dd.schemas_count) + "</strong></td>" +
+                '<td><div class="badge-row">' + sLinks + "</div></td>" +
+              "</tr>"
+            );
+          });
+          html.push("</tbody></table></div>");
+        }
+
+        if (guideE.length) {
+          html.push('<div class="section-card"><div class="doc-h4" style="margin-top:0;">Lignes directrices éditoriales de vulgarisation</div><ul>' + guideE.map(function (g) { return "<li>" + renderInlineMd(g, q) + "</li>"; }).join("") + "</ul></div>");
+        }
+
+        // 4. Catalogue directeur intégral des 115 schémas (filtrable en direct)
+        if (catE.length) {
+          html.push('<div class="inline-filter-row"><div class="doc-h4" style="margin:0;">Catalogue directeur intégral des ' + catE.length + ' schémas (<code>SCH-00</code> à <code>SCH-36</code>)</div><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;"><input class="inline-filter-input" type="search" data-table-filter="ann-e-catalogue" placeholder="Filtrer les ' + catE.length + ' schémas…" aria-label="Filtrer le catalogue des schémas" /><select class="filter-select" data-table-select="status" data-table-target="ann-e-catalogue" aria-label="Filtrer par statut de réutilisation"><option value="">Tous statuts</option><option value="reemploi_direct">Réemploi direct</option><option value="adaptation_vulgarisee">Adaptation vulgarisée</option><option value="creation_originale">Création originale</option></select><select class="filter-select" data-table-select="audiences" data-table-target="ann-e-catalogue" aria-label="Filtrer par public cible"><option value="">Tous publics</option><option value="Direction / Métier">Direction / Métier</option><option value="Juridique / Conformité">Juridique / Conformité</option><option value="AE / AS">AE / AS</option><option value="Ingénierie / RSSI / SRE">Ingénierie / RSSI / SRE</option></select><span class="kpi-pill" data-table-count="ann-e-catalogue"><strong>' + catE.length + "</strong> / " + catE.length + "</span></div></div>");
+          html.push('<div class="table-wrap"><table class="data-table" id="ann-e-catalogue"><thead><tr><th>Identifiant</th><th>Portée</th><th>Titre &amp; insertion</th><th>Archétype &amp; notation</th><th>Publics &amp; statut</th><th>Figures Tomes associées</th></tr></thead><tbody>');
+          catE.forEach(function (sch) {
+            var cnumS = Number(sch.chapter_number) || 0;
+            var reuseMeta = formatReuseStatus(sch.reuse_status);
+            var audList = Array.isArray(sch.target_audiences) ? sch.target_audiences : [];
+            var jumpBtn = cnumS === 0
+              ? '<button type="button" class="btn btn-sm mono" data-nav-kind="exec" data-nav-sec="panorama" data-nav-focus-kind="sch" data-nav-focus-id="' + escapeHtml(sch.schema_id) + '">' + escapeHtml(sch.schema_id) + "</button>"
+              : '<button type="button" class="btn btn-sm mono" data-nav-kind="chapter" data-nav-ch="' + cnumS + '" data-nav-focus-kind="sch" data-nav-focus-id="' + escapeHtml(sch.schema_id) + '">' + escapeHtml(sch.schema_id) + "</button>";
+            var scopeHtml = (cnumS === 0 ? '<span class="badge">GLOBAL</span>' : '<button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + cnumS + '" data-nav-focus-kind="schemas">Ch. ' + pad2(cnumS) + "</button>") +
+              (Array.isArray(sch.families_covered) && sch.families_covered.length ? '<div class="badge-row" style="margin-top:4px;">' + sch.families_covered.map(function (fid) { return "<code>" + escapeHtml(fid) + "</code>"; }).join(" ") + "</div>" : "");
+            var figsHtml = Array.isArray(sch.linked_tome_figures) && sch.linked_tome_figures.length
+              ? sch.linked_tome_figures.map(function (fig) {
+                  return '<div style="margin-bottom:4px;"><code>' + escapeHtml(fig.tome_id + " " + fig.fig_id) + "</code> " +
+                    (fig.rendered_path ? '<a class="anchor-pill" href="' + escapeHtml(tomeAssetHref(fig.rendered_path)) + '">Rendu ↗</a> ' : "") +
+                    (fig.source_path ? '<a class="anchor-pill" href="' + escapeHtml(tomeAssetHref(fig.source_path)) + '">Source ↗</a>' : "") +
+                  "</div>";
+                }).join("")
+              : "<em>Création originale sans équivalent</em>";
+            html.push(
+              '<tr data-status="' + escapeHtml(sch.reuse_status) + '" data-audiences="' + escapeHtml(audList.join("|")) + '">' +
+                "<td>" + jumpBtn + "</td>" +
+                "<td>" + scopeHtml + "</td>" +
+                "<td><strong>" + renderInlineMd(sch.title, q) + '</strong><div style="font-size:11.5px;color:var(--text-muted);">' + renderInlineMd(sch.insertion_point, q) + "</div></td>" +
+                "<td><div>" + escapeHtml(sch.visual_archetype) + "</div><div><code>" + escapeHtml(sch.recommended_notation) + "</code></div></td>" +
+                '<td><div><span class="badge ' + reuseMeta.cls + '">' + escapeHtml(reuseMeta.label) + '</span></div><div style="font-size:11.5px;margin-top:4px;">' + escapeHtml(audList.join(" · ")) + "</div></td>" +
+                "<td>" + figsHtml + "</td>" +
+              "</tr>"
+            );
+          });
+          html.push("</tbody></table></div>");
+        }
+
+        // 5. Inventaire complet des 319 figures des Tomes
+        if (invFigsE.length) {
+          html.push('<div class="inline-filter-row"><div class="doc-h4" style="margin:0;">Inventaire complet des ' + invFigsE.length + ' figures des Tomes 1 à 8</div><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;"><input class="inline-filter-input" type="search" data-table-filter="ann-e-inventory" placeholder="Filtrer les ' + invFigsE.length + ' figures (T1..T8, Mermaid, PlantUML, SCH-*)…" aria-label="Filtrer l\'inventaire des 319 figures" /><span class="kpi-pill" data-table-count="ann-e-inventory"><strong>' + invFigsE.length + "</strong> / " + invFigsE.length + "</span></div></div>");
+          html.push('<div class="table-wrap"><table class="data-table" id="ann-e-inventory"><thead><tr><th>Tome</th><th>Figure</th><th>Titre &amp; section source</th><th>Notation</th><th>Schémas <code>SCH-*</code></th><th>Fichiers <code>Tomes/</code></th></tr></thead><tbody>');
+          invFigsE.forEach(function (fig) {
+            var schRefs = Array.isArray(fig.linked_schema_ids) && fig.linked_schema_ids.length
+              ? fig.linked_schema_ids.map(function (sid) {
+                  var sObj = idx.schemaById && idx.schemaById[sid];
+                  var scn = sObj ? (Number(sObj.chapter_number) || 0) : 0;
+                  return scn === 0
+                    ? '<button type="button" class="btn btn-sm mono" data-nav-kind="exec" data-nav-sec="panorama" data-nav-focus-kind="sch" data-nav-focus-id="' + escapeHtml(sid) + '">' + escapeHtml(sid) + "</button>"
+                    : '<button type="button" class="btn btn-sm mono" data-nav-kind="chapter" data-nav-ch="' + scn + '" data-nav-focus-kind="sch" data-nav-focus-id="' + escapeHtml(sid) + '">' + escapeHtml(sid) + "</button>";
+                }).join(" ")
+              : "<em>—</em>";
+            html.push(
+              "<tr>" +
+                '<td><span class="badge mono">' + escapeHtml(fig.tome_id) + "</span></td>" +
+                "<td><code>" + escapeHtml(fig.fig_id) + "</code></td>" +
+                "<td><strong>" + renderInlineMd(fig.title, q) + '</strong><div style="font-size:11.5px;color:var(--text-muted);">' + renderInlineMd(fig.source_section || "", q) + "</div></td>" +
+                "<td><code>" + escapeHtml(fig.notation) + "</code></td>" +
+                '<td><div class="badge-row">' + schRefs + "</div></td>" +
+                '<td>' +
+                  (fig.rendered_path ? '<a class="anchor-pill" href="' + escapeHtml(tomeAssetHref(fig.rendered_path)) + '">Rendu ↗</a> ' : "") +
+                  (fig.source_path ? '<a class="anchor-pill" href="' + escapeHtml(tomeAssetHref(fig.source_path)) + '">Source ↗</a>' : "") +
+                "</td>" +
+              "</tr>"
+            );
+          });
+          html.push("</tbody></table></div>");
+        }
       }
 
       html.push("</article>");
@@ -2455,7 +2984,7 @@
           ? '<button type="button" class="btn btn-sm primary" data-nav-kind="chapter" data-nav-ch="' + (cnum + 1) + '">Chapitre ' + pad2(cnum + 1) + " →</button>"
           : '<button type="button" class="btn btn-sm primary" data-nav-kind="annexe" data-nav-annexe="A">Annexe A →</button>';
       } else if (t.kind === "annexe") {
-        var order = ["A", "B", "C", "D"];
+        var order = ["A", "B", "C", "D", "E"];
         var pos = order.indexOf(t.annexeCode);
         label = "Annexe " + t.annexeCode;
         prevBtn = pos > 0
@@ -2638,7 +3167,8 @@
             '<span class="kpi-pill"><strong>' + idx.counts.families + "</strong> familles</span>" +
             '<span class="kpi-pill"><strong>' + idx.counts.themes + "</strong> thèmes</span>" +
             '<span class="kpi-pill"><strong>' + idx.counts.relations + "</strong> interrelations</span>" +
-            '<span class="kpi-pill"><strong>' + idx.counts.annexes + "</strong> annexes</span>";
+            '<span class="kpi-pill"><strong>' + idx.counts.annexes + "</strong> annexes</span>" +
+            '<span class="kpi-pill"><strong>' + idx.counts.schemas + "</strong> schémas</span>";
         }
         if (elFilterSummary) {
           elFilterSummary.textContent = fState.counts.themes + " / " + idx.counts.themes + " thèmes · " + fState.counts.chapters + " / " + idx.counts.chapters + " chapitres";
@@ -2651,20 +3181,28 @@
           }
         }
         if (elOpenMindmapLink && typeof elOpenMindmapLink.setAttribute === "function") {
-          var mmTargetNode = null;
+          var mmHref = "";
           var curT = state.target || {};
-          if (curT.kind === "part") {
-            var curP = idx.partyByDomain[curT.domainId];
-            mmTargetNode = curP && curP.domain_node_id ? curP.domain_node_id : null;
-          } else if (curT.kind === "chapter") {
-            if ((curT.focusKind === "thm" || curT.focusKind === "fam") && curT.focusId) {
-              mmTargetNode = curT.focusId;
-            } else {
-              var curCh = idx.chapterByNum[Number(curT.chapterNumber)];
-              mmTargetNode = curCh && curCh.subdomain_node_id ? curCh.subdomain_node_id : null;
+          if (curT.kind === "annexe" && curT.annexeCode) {
+            mmHref = MINDMAP_HTML + "#view=prd&annexe=" + encodeURIComponent(String(curT.annexeCode));
+          } else if (curT.kind === "exec" && curT.sectionId === "panorama") {
+            mmHref = MINDMAP_HTML + "#view=prd&sec=panorama";
+          } else {
+            var mmTargetNode = null;
+            if (curT.kind === "part") {
+              var curP = idx.partyByDomain[curT.domainId];
+              mmTargetNode = curP && curP.domain_node_id ? curP.domain_node_id : null;
+            } else if (curT.kind === "chapter") {
+              if ((curT.focusKind === "thm" || curT.focusKind === "fam") && curT.focusId) {
+                mmTargetNode = curT.focusId;
+              } else {
+                var curCh = idx.chapterByNum[Number(curT.chapterNumber)];
+                mmTargetNode = curCh && curCh.subdomain_node_id ? curCh.subdomain_node_id : null;
+              }
             }
+            mmHref = mindmapHref("mindmap", mmTargetNode);
           }
-          elOpenMindmapLink.setAttribute("href", mindmapHref("mindmap", mmTargetNode));
+          elOpenMindmapLink.setAttribute("href", mmHref);
         }
 
         var tocOut = renderTocHtml(idx, state.tocFilter, state, fState);
@@ -2680,6 +3218,12 @@
             focusEl = doc.getElementById("thm-" + t.focusId);
           } else if (t.focusKind === "fam" && t.focusId) {
             focusEl = doc.getElementById("fam-" + t.focusId);
+          } else if (t.focusKind === "sch" && t.focusId) {
+            focusEl = doc.getElementById("sch-" + t.focusId);
+          } else if (t.focusKind === "schemas" && t.chapterNumber) {
+            focusEl = doc.getElementById("ch-" + pad2(t.chapterNumber) + "-schemas");
+          } else if (t.kind === "exec" && t.sectionId === "panorama") {
+            focusEl = doc.getElementById("prd-exec-panorama");
           } else if (t.kind === "exec" && t.sectionId) {
             focusEl = doc.getElementById("prd-" + t.sectionId);
           } else if (t.kind === "chapter") {
@@ -2951,6 +3495,38 @@
         });
       }
 
+      function applyAnnexeTableFilter(tableId) {
+        if (!tableId || !elContent || !doc) return;
+        var table = doc.getElementById(tableId);
+        if (!table) return;
+        var textInput = elContent.querySelector ? elContent.querySelector('[data-table-filter="' + tableId + '"]') : null;
+        var statusSelect = elContent.querySelector ? elContent.querySelector('[data-table-select="status"][data-table-target="' + tableId + '"]') : null;
+        var audSelect = elContent.querySelector ? elContent.querySelector('[data-table-select="audiences"][data-table-target="' + tableId + '"]') : null;
+        var q = normalizeText(textInput ? textInput.value : "");
+        var statusVal = statusSelect ? String(statusSelect.value || "") : "";
+        var audVal = audSelect ? String(audSelect.value || "") : "";
+
+        var rows = table.querySelectorAll ? table.querySelectorAll("tbody tr") : [];
+        var shown = 0;
+        var total = 0;
+        Array.prototype.forEach.call(rows, function (tr) {
+          total += 1;
+          var txt = normalizeText(tr.textContent || "");
+          var rowStatus = tr.getAttribute ? (tr.getAttribute("data-status") || "") : "";
+          var rowAud = tr.getAttribute ? (tr.getAttribute("data-audiences") || "") : "";
+          var okText = !q || txt.indexOf(q) !== -1;
+          var okStatus = !statusVal || rowStatus === statusVal;
+          var okAud = !audVal || rowAud.split("|").indexOf(audVal) !== -1;
+          var vis = okText && okStatus && okAud;
+          tr.style.display = vis ? "" : "none";
+          if (vis) shown += 1;
+        });
+        var counterEl = elContent.querySelector ? elContent.querySelector('[data-table-count="' + tableId + '"]') : null;
+        if (counterEl) {
+          counterEl.innerHTML = "<strong>" + shown + "</strong> / " + total;
+        }
+      }
+
       if (elContent) {
         elContent.addEventListener("click", function (e) {
           var t = e.target;
@@ -2969,15 +3545,13 @@
           var inp = e.target;
           if (!inp || typeof inp.getAttribute !== "function") return;
           var tableId = inp.getAttribute("data-table-filter");
-          if (!tableId) return;
-          var table = doc.getElementById(tableId);
-          if (!table) return;
-          var q = normalizeText(inp.value || "");
-          var rows = table.querySelectorAll ? table.querySelectorAll("tbody tr") : [];
-          Array.prototype.forEach.call(rows, function (tr) {
-            var txt = normalizeText(tr.textContent || "");
-            tr.style.display = (!q || txt.indexOf(q) !== -1) ? "" : "none";
-          });
+          if (tableId) applyAnnexeTableFilter(tableId);
+        });
+        elContent.addEventListener("change", function (e) {
+          var sel = e.target;
+          if (!sel || typeof sel.getAttribute !== "function") return;
+          var tableId = sel.getAttribute("data-table-target");
+          if (tableId) applyAnnexeTableFilter(tableId);
         });
       }
 
@@ -3024,6 +3598,8 @@
       normalizeText: normalizeText,
       renderInlineMd: renderInlineMd,
       corpusHref: corpusHref,
+      tomeAssetHref: tomeAssetHref,
+      formatReuseStatus: formatReuseStatus,
       mindmapHref: mindmapHref,
       parseHash: parseHash,
       targetToHash: targetToHash,

@@ -26,6 +26,7 @@ if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
 import compiler_prd as cp  # noqa: E402
+import consolider_catalogue_schemas as ccs  # noqa: E402
 import extraire_structure as es  # noqa: E402
 
 TOME_RANK: dict[str, int] = {
@@ -72,7 +73,9 @@ def _clean_nested_strings(obj: Any, skip_keys: set[str] | None = None) -> Any:
     skip = skip_keys or {
         "file", "canonical_slug", "node_id", "unit_id", "id", "discordance_id",
         "pytest_nodeid", "implementation_symbol", "rego_rule", "type", "type_id",
-        "domain_id", "tome_id",
+        "domain_id", "tome_id", "schema_id", "subdomain_node_id", "families_covered",
+        "themes_vulgarized", "source_path", "rendered_path", "source_section_file",
+        "fig_id", "diagram_uid", "chapter_code", "reuse_status", "linked_schema_ids",
     }
     if isinstance(obj, str):
         return _clean_text(obj)
@@ -81,6 +84,12 @@ def _clean_nested_strings(obj: Any, skip_keys: set[str] | None = None) -> Any:
     if isinstance(obj, dict):
         return {k: (v if k in skip else _clean_nested_strings(v, skip)) for k, v in obj.items()}
     return obj
+
+
+def _clean_schema_entry(raw_item: dict[str, Any]) -> dict[str, Any]:
+    """Nettoie les chaînes éditoriales d'un schéma ``SCH-*`` sans altérer chemins ni identifiants."""
+    cleaned = _clean_nested_strings(raw_item)
+    return dict(cleaned)
 
 
 def _parse_markdown_section_body(body_md: str) -> tuple[list[str], dict[str, Any] | None]:
@@ -213,10 +222,15 @@ def _compute_gfm_anchors(
         cp.gfm_anchor(sec["heading"].strip(), seen)
         for sec in exec_sum["sections"]
     ]
+    exec_panorama_anchor = cp.gfm_anchor(
+        "Panorama visuel directeur — Schémas de vulgarisation transversaux",
+        seen,
+    )
 
     part_anchors: dict[str, str] = {}
     chapter_anchors: dict[int, str] = {}
     family_anchors: dict[str, str] = {}
+    schema_section_anchors: dict[int, str] = {}
 
     for p in global_shard["parties"]:
         dom_id = p["domain_id"]
@@ -246,6 +260,10 @@ def _compute_gfm_anchors(
             for k, fam in enumerate(ch["targeted_content"]["families_and_themes"], 1):
                 f_head = f"{ch_num:02d}.2.{k} {fam['family_title'].strip()}"
                 family_anchors[fam["family_node_id"]] = cp.gfm_anchor(f_head, seen)
+            schema_section_anchors[ch_num] = cp.gfm_anchor(
+                f"{ch_num:02d}.3 Schémas de vulgarisation à intégrer",
+                seen,
+            )
 
     annexe_anchors: dict[str, str] = {}
     for ann in global_shard["annexes"]:
@@ -264,9 +282,11 @@ def _compute_gfm_anchors(
     return {
         "exec_anchor": exec_anchor,
         "exec_section_anchors": exec_section_anchors,
+        "exec_panorama_anchor": exec_panorama_anchor,
         "part_anchors": part_anchors,
         "chapter_anchors": chapter_anchors,
         "family_anchors": family_anchors,
+        "schema_section_anchors": schema_section_anchors,
         "annexe_anchors": annexe_anchors,
     }
 
@@ -613,8 +633,9 @@ def _build_annexes_payload(
     chapters_out: list[dict[str, Any]],
     anchors: dict[str, Any],
     theme_to_chapter: dict[str, int],
+    schemas_catalogue: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    """Construit les 4 annexes A–D avec leurs tables analytiques exactes sans troncature."""
+    """Construit les 5 annexes A–E avec leurs tables analytiques exactes sans troncature."""
     nodes = bundle["nodes"]
     relations = bundle["relations"]
     rel_types = {rt["type_id"]: rt for rt in bundle["relation_types"]}
@@ -767,6 +788,94 @@ def _build_annexes_payload(
             entry["blueprints_c40"] = {
                 "blueprints": t8_exec.get("c01_a_c40_blueprints") or [],
                 "c40_breakdown": c40_breakdown,
+            }
+
+        elif acode == "E":
+            ann_e_spec = schemas_catalogue.get("annexe_e") or {}
+            s_stats = schemas_catalogue["summary_stats"]
+            tc_cov = schemas_catalogue["tome_figures_coverage"]
+            ch_out_by_num = {int(c["chapter_number"]): c for c in chapters_out}
+            schema_anchors = anchors["schema_section_anchors"]
+            exec_title_clean = _clean_text(
+                global_shard["executive_summary"].get("title", "Sommaire exécutif global")
+            )
+
+            all_raw_schemas = list(schemas_catalogue["global_schemas"]) + list(schemas_catalogue["chapter_schemas"])
+            catalogue_all: list[dict[str, Any]] = []
+            for s_raw in all_raw_schemas:
+                s_clean = _clean_schema_entry(s_raw)
+                cnum = int(s_clean["chapter_number"])
+                if cnum == 0:
+                    s_clean["chapter_code"] = "GLOBAL"
+                    s_clean["chapter_title"] = exec_title_clean
+                    s_clean["chapter_slug"] = anchors["exec_anchor"]
+                    s_clean["schemas_anchor"] = anchors["exec_panorama_anchor"]
+                else:
+                    ch_info = ch_out_by_num[cnum]
+                    s_clean["chapter_code"] = ch_info["chapter_code"]
+                    s_clean["chapter_title"] = ch_info["representative_title"]
+                    s_clean["chapter_slug"] = ch_info["slug"]
+                    s_clean["schemas_anchor"] = schema_anchors[cnum]
+                catalogue_all.append(s_clean)
+
+            domain_chapter_distribution: list[dict[str, Any]] = [
+                {
+                    "domain_id": "GLOBAL",
+                    "domain_title": "Sommaire exécutif global",
+                    "chapters": [0],
+                    "families_count": 0,
+                    "themes_count": len(
+                        {
+                            sl
+                            for s in schemas_catalogue["global_schemas"]
+                            for sl in s["themes_vulgarized"]
+                        }
+                    ),
+                    "schemas_count": s_stats["by_domain"]["GLOBAL"]["schemas_count"],
+                    "schema_ids": s_stats["by_domain"]["GLOBAL"]["schema_ids"],
+                }
+            ]
+            for dom in sorted(bundle["domains"], key=lambda d: d["domain_id"]):
+                did = dom["domain_id"]
+                d_chs = [c for c in chapters_out if c["domain_id"] == did]
+                d_fams = sum(len(c["targeted_content"]["families_and_themes"]) for c in d_chs)
+                d_thms = sum(
+                    len(f["themes_targeted"])
+                    for c in d_chs
+                    for f in c["targeted_content"]["families_and_themes"]
+                )
+                d_stat = s_stats["by_domain"][did]
+                domain_chapter_distribution.append(
+                    {
+                        "domain_id": did,
+                        "domain_title": _clean_text(dom["title"]),
+                        "chapters": [int(c["chapter_number"]) for c in d_chs],
+                        "families_count": d_fams,
+                        "themes_count": d_thms,
+                        "schemas_count": d_stat["schemas_count"],
+                        "schema_ids": d_stat["schema_ids"],
+                    }
+                )
+
+            entry["summary_stats"] = _clean_nested_strings(s_stats)
+            entry["tome_figures_coverage"] = _clean_nested_strings(
+                {k: v for k, v in tc_cov.items() if k != "figures_catalogue"}
+            )
+            entry["domain_chapter_distribution"] = domain_chapter_distribution
+            entry["editorial_guidelines"] = [
+                _clean_text(g) for g in (ann_e_spec.get("editorial_guidelines") or [])
+            ]
+            entry["catalogue_columns"] = [
+                _clean_text(col) for col in (ann_e_spec.get("catalogue_columns") or [])
+            ]
+            entry["catalogue_all"] = catalogue_all
+            entry["tome_inventory_summary"] = {
+                "total_inventory_figures": tc_cov["total_inventory_figures"],
+                "plantuml_svg_count": tc_cov["inventory_plantuml_svg"],
+                "mermaid_png_count": tc_cov["inventory_mermaid_png"],
+                "unique_linked_figures_count": tc_cov["unique_linked_figures_count"],
+                "by_tome": _clean_nested_strings(tc_cov["by_tome"]),
+                "figures": _clean_nested_strings(tc_cov["figures_catalogue"]),
             }
 
         annexes_out.append(entry)
@@ -947,6 +1056,16 @@ def build_prd_web_payload(
     pivots_path = donnees_dir / "pivots-concordance.json"
     raw_pivots = json.loads(pivots_path.read_text(encoding="utf-8")) if pivots_path.is_file() else {}
 
+    cat_path = donnees_dir / "catalogue-schemas-prd.json"
+    if cat_path.is_file():
+        schemas_catalogue = json.loads(cat_path.read_text(encoding="utf-8"))
+    else:
+        schemas_catalogue = ccs.build_catalogue_schemas_payload(repo_root, bundle=bundle)
+
+    chapter_schemas_by_num: dict[int, list[dict[str, Any]]] = {}
+    for s_item in schemas_catalogue["chapter_schemas"]:
+        chapter_schemas_by_num.setdefault(int(s_item["chapter_number"]), []).append(s_item)
+
     global_shard, chapters_raw = _load_and_validate_shards(repo_root, bundle)
     chapters_by_num = {int(c["chapter_number"]): c for c in chapters_raw}
     anchors = _compute_gfm_anchors(global_shard, chapters_by_num)
@@ -1000,6 +1119,8 @@ def build_prd_web_payload(
         "themes_count": len(theme_to_chapter),
         "relations_count": len(relations),
         "annexes_count": len(global_shard["annexes"]),
+        "schemas_count": schemas_catalogue["summary_stats"]["total_schemas"],
+        "tome_figures_count": schemas_catalogue["tome_figures_coverage"]["total_inventory_figures"],
     }
 
     exec_raw = global_shard["executive_summary"]
@@ -1022,6 +1143,10 @@ def build_prd_web_payload(
         "slug": anchors["exec_anchor"],
         "lead": _clean_text(exec_raw["lead"]),
         "sections": exec_sections,
+        "panorama_anchor": anchors["exec_panorama_anchor"],
+        "vulgarization_schemas": [
+            _clean_schema_entry(s) for s in schemas_catalogue["global_schemas"]
+        ],
     }
 
     parties_out: list[dict[str, Any]] = []
@@ -1167,6 +1292,10 @@ def build_prd_web_payload(
                 "autonomy_levels": sub_node.get("autonomy_levels") or [],
                 "roles": sub_node.get("roles") or [],
                 "horizons": sub_node.get("horizons") or [],
+                "schemas_anchor": anchors["schema_section_anchors"][cnum],
+                "vulgarization_schemas": [
+                    _clean_schema_entry(s) for s in chapter_schemas_by_num.get(cnum, [])
+                ],
                 "targeted_content": {
                     "scope_and_objectives": _clean_text(tc["scope_and_objectives"]),
                     "key_requirements_and_objectives": [_clean_text(x) for x in tc["key_requirements_and_objectives"]],
@@ -1185,6 +1314,7 @@ def build_prd_web_payload(
         chapters_out,
         anchors,
         theme_to_chapter,
+        schemas_catalogue,
     )
 
     node_id_to_prd: dict[str, dict[str, Any]] = {}
@@ -1251,6 +1381,34 @@ def build_prd_web_payload(
                 unit_id_to_chapter[uid] = slug_to_chapter[tslug]
                 break
 
+    ann_e = next(a for a in annexes_out if a["annexe_code"] == "E")
+    tc_cov = schemas_catalogue["tome_figures_coverage"]
+    vulgarization_summary = {
+        "summary_stats": _clean_nested_strings(schemas_catalogue["summary_stats"]),
+        "tome_figures_totals": _clean_nested_strings(
+            {k: v for k, v in tc_cov.items() if k not in ("by_tome", "figures_catalogue")}
+        ),
+        "tome_figures_coverage_by_tome": _clean_nested_strings(tc_cov["by_tome"]),
+        "schemas_overview": [
+            {
+                "schema_id": item["schema_id"],
+                "chapter_number": item["chapter_number"],
+                "chapter_code": item["chapter_code"],
+                "domain_id": item["domain_id"],
+                "title": item["title"],
+                "visual_archetype": item["visual_archetype"],
+                "recommended_notation": item["recommended_notation"],
+                "reuse_status": item["reuse_status"],
+                "target_audiences": item["target_audiences"],
+                "families_covered": item["families_covered"],
+                "linked_tome_figures_count": len(item["linked_tome_figures"]),
+                "chapter_slug": item["chapter_slug"],
+                "schemas_anchor": item["schemas_anchor"],
+            }
+            for item in ann_e["catalogue_all"]
+        ],
+    }
+
     payload = {
         "schema_version": "1.0.0",
         "lang": "fr-CA",
@@ -1260,6 +1418,7 @@ def build_prd_web_payload(
         "parties": parties_out,
         "chapters": chapters_out,
         "annexes": annexes_out,
+        "vulgarization_summary": vulgarization_summary,
         "lookup": {
             "node_id_to_prd": node_id_to_prd,
             "slug_to_chapter": slug_to_chapter,
@@ -1273,10 +1432,31 @@ def build_prd_web_payload(
     _check(len(chapters_out) == 36, f"Nombre de chapitres invalide : {len(chapters_out)}")
     _check(meta["families_count"] == 71, f"Nombre de familles invalide : {meta['families_count']}")
     _check(meta["themes_count"] == 260, f"Nombre de thèmes invalide : {meta['themes_count']}")
-    _check(len(annexes_out) == 4, f"Nombre d'annexes invalide : {len(annexes_out)}")
+    _check(meta["annexes_count"] == 5, f"meta.annexes_count invalide : {meta['annexes_count']}")
+    _check(meta["schemas_count"] == 115, f"meta.schemas_count invalide : {meta['schemas_count']}")
+    _check(meta["tome_figures_count"] == 319, f"meta.tome_figures_count invalide : {meta['tome_figures_count']}")
+    _check(len(annexes_out) == 5, f"Nombre d'annexes invalide : {len(annexes_out)}")
+    _check([a["annexe_code"] for a in annexes_out] == ["A", "B", "C", "D", "E"], "Ordre annexes != A..E")
     _check(len(executive_summary["sections"]) == 5, "Sommaire exécutif != 5 sections")
+    _check(bool(executive_summary.get("panorama_anchor")), "panorama_anchor manquant")
+    _check(len(executive_summary["vulgarization_schemas"]) == 4, "Schémas globaux != 4")
     _check(executive_summary["sections"][3]["kpi_table"] is not None, "Tableau KPI/SLO manquant")
     _check(len(executive_summary["sections"][3]["kpi_table"]["rows"]) == 8, "Tableau KPI/SLO != 8 lignes")
+    _check(
+        all(bool(c.get("schemas_anchor")) and len(c.get("vulgarization_schemas") or []) >= 1 for c in chapters_out),
+        "Au moins un chapitre n'a pas schemas_anchor ou vulgarization_schemas non vide",
+    )
+    _check(
+        sum(len(c["vulgarization_schemas"]) for c in chapters_out) == 111,
+        "Total schémas de chapitres != 111",
+    )
+    _check(len(ann_e["catalogue_all"]) == 115, f"Annexe E catalogue_all != 115 : {len(ann_e['catalogue_all'])}")
+    _check(
+        len(ann_e["tome_inventory_summary"]["figures"]) == 319,
+        f"Annexe E tome_inventory_summary != 319 : {len(ann_e['tome_inventory_summary']['figures'])}",
+    )
+    _check(ann_e["summary_stats"]["chapters_covered_count"] == 36, "Annexe E chapters_covered != 36")
+    _check(ann_e["summary_stats"]["families_covered_count"] == 71, "Annexe E families_covered != 71")
 
     ann_b = next(a for a in annexes_out if a["annexe_code"] == "B")
     _check(sum(rt["count"] for rt in ann_b["relation_types_stats"]) == 616, "Total relations Annexe B != 616")
@@ -1332,7 +1512,8 @@ def main() -> int:
     print(
         f"Données web PRD générées -> {out_path} : {m['domains_count']} domaines, "
         f"{m['chapters_count']} chapitres, {m['families_count']} familles, {m['themes_count']} thèmes, "
-        f"{m['relations_count']} relations, {len(ann_c['timeline'])} jalons chronologiques, "
+        f"{m['relations_count']} relations, {m['annexes_count']} annexes, {m['schemas_count']} schémas "
+        f"({m['tome_figures_count']} figures Tomes), {len(ann_c['timeline'])} jalons chronologiques, "
         f"{len(ann_d['matrix_all'])} entrées matrice uniques, {len(payload['lookup']['node_id_to_prd'])} nœuds indexés"
     )
     return 0
