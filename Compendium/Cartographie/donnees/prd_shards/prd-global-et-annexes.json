@@ -1,0 +1,217 @@
+{
+  "prd_title": "Référentiel directeur d'architecture, de gouvernance et d'homologation vérifiable pour l'entreprise agentique",
+  "prd_subtitle": "Document maître d'exigences produit et d'ingénierie consolidant le Corpus Agentique (8 tomes · 4 542 pages · 319 diagrammes) et le MindMap transversal (12 domaines, 36 chapitres, 71 familles, 260 thèmes, 616 interrelations)",
+  "toc_representative_title": "Plan directeur et table des matières exhaustive : des fondements épistémiques à l'homologation exécutable",
+  "toc_intro_note": "Cette table des matières suit fidèlement l'arbre à cinq niveaux du MindMap transversal : les 12 domaines D01–D12 (Parties I à XII), les 36 sous-domaines (Chapitres 01 à 36 avec Résumé, Descriptif du contenu ciblé et section XX.3 Schémas de vulgarisation), les 71 familles thématiques (avec l'intégralité des 260 thèmes canoniques), le Panorama visuel directeur (SCH-00-01 à SCH-00-04), les sections 01.3 à 36.3 regroupant les 115 schémas de vulgarisation raccordés aux 319 figures des Tomes 1 à 8, et les 5 annexes analytiques A à E. Chaque lien interne pointe vers une ancre GFM vérifiée du présent document et chaque chapitre renvoie vers ses occurrences exactes dans Corpus/*.md et Tomes/.",
+  "metadata": {
+    "version": "1.0.0",
+    "date": "2026-11-24",
+    "status": "Référentiel d'exigences produit et architecture (non-avis)",
+    "source_mindmap": "Compendium/Cartographie/MindMap - Cartographie thématique du Corpus.html",
+    "source_bundle": "Compendium/Cartographie/donnees/corpus-mindmap-data.json"
+  },
+  "executive_summary": {
+    "title": "Sommaire exécutif global",
+    "lead": "Ce document maître traduit l'intégralité du Corpus Agentique (8 ouvrages consolidés totalisant 4 542 pages PDF au gabarit Typst 6,14 × 9,21 po, 319 diagrammes, 69 821 lignes et 1 537 418 mots Markdown répartis en 4 434 titres H1–H6) et de son MindMap dynamique (380 nœuds dont 260 nœuds thématiques, 616 interrelations typées, 290 chapitres et 1 636 unités structurelles liées) en un référentiel unifié d'exigences produit et architecturales couvrant CRE-IA-2026-01 v1.2 (305 EXIG-*), la grille PRR-75 (24 portes bloquantes), le noyau de capacités possédé (52 CAP / 24 PEX), la trajectoire adaptative DAPP 2026–2035 et la trousse exécutable du Tome 8.",
+    "sections": [
+      {
+        "heading": "1. Problématique industrielle : rupture probabiliste, coûts de Coase et jardins clos",
+        "body": "Le passage des copilotes passifs aux Systems of Agency transforme des assistants consultatifs en systèmes d'exécution capables d'appeler des outils, d'écrire dans des systèmes d'enregistrement et de négocier entre pairs. Cette bascule expose toutefois l'entreprise à quatre ruptures structurelles démontrées dans les Tomes 1, 3 et 7. D'abord, la loi de Lusser (R = p^n) montre qu'une chaîne probabiliste non bornée se dégrade géométriquement : à 94 % de fiabilité par maillon sur 10 étapes, le taux de succès composé chute à 53,9 % (et à 46,3 % sur 15 étapes à 95 %), tandis que l'analyse de 1 642 traces dans la taxonomie MAST et la non-compositionnalité (H-24) révèlent que des agents individuellement valides syntaxiquement produisent des erreurs sémantiques silencieuses en cascade. Ensuite, l'industrie confond trop souvent le taux ponctuel pass@k avec la constance opérationnelle pass^k (τ-bench), alors même que 74 % des organisations citées dans MAP recourent encore à l'évaluation manuelle et que l'horizon des tâches doublant environ tous les sept mois (METR) accentue le compromis coût/précision (courbe HAL). Troisièmement, l'économie cognitive de Coase révèle que l'abaissement apparent du coût de coordination engendre une quadruple dette (technique, cognitive, dette d'intention et couplage global) accompagnée d'une inflation de jetons jusqu'à 15× en collectif multi-agents contre 4× en agent isolé (Hadfield). Enfin, le déploiement hâtif sur plateformes SaaS propriétaires enferme les flux, identités et mémoires dans des jardins clos opaques incompatibles avec l'auditabilité prudentielle et la portabilité réglementaire."
+      },
+      {
+        "heading": "2. Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et harnais déterministe",
+        "body": "Pour rendre l'entreprise agentique fiable, contrôlable et homologable, ce PRD impose la partition hybride 80/20 comme invariant fondamental : 80 % de l'architecture constituent un exosquelette déterministe possédé par l'entreprise (routage, machine à états, validation syntaxique, politiques d'accès, délégation cryptographique, idempotence, journalisation et coupe-circuit), encadrant strictement 20 % de nœuds cognitifs probabilistes cantonnés à la classification sémantique, la synthèse et la proposition d'actions. Chaque nœud opère sous l'échelle canonique d'autonomie L0–L4 consolidée au Tome 8 (DISC-01, distinguant strictement le contrôle déterministe de la lecture IA et articulant les paliers P0–P3 et 8 domaines D1–D8 × 5 stades × 6 classes), gouvernée par la règle du maillon le plus élevé : l'union la plus stricte des contraintes du flux s'applique à tout appel d'outil (règle d'or ≤ N2 en autonomie déléguée sans validation renforcée). Techniquement, toute invocation LLM traverse un harnais déterministe à huit étapes (Tome 8 ch. 01) imposant la validation stricte par JSON Schema Draft 2020-12 (`additionalProperties: false`, réparation bornée), le calcul monétaire exact en Decimal plutôt qu'en virgule flottante, le caviardage préalable des renseignements personnels et le devoir explicite d'abstention typée AMBIGU_ESCALADE : l'agent prépare, le vérificateur déterministe filtre, et seul un humain dûment informé libère toute action irréversible (H-31)."
+      },
+      {
+        "heading": "3. Architecture systémique des 12 domaines D01–D12 et des 616 interrelations",
+        "body": "Le référentiel organise l'ensemble des capacités cibles en 12 domaines orthogonaux (D01 à D12), découpés en 36 chapitres opérationnels (SUB_D01_01 à SUB_D12_03), 71 familles thématiques et 260 nœuds thématiques atomiques reliés par 616 interrelations vérifiées réparties sur les 8 types canoniques du schéma : 132 relations d'operationnalisation, 93 dependance_technique, 82 encadrement_normatif, 81 attenuation_risque, 63 amplification_synergie, 62 tension_arbitrage, 52 projection_temporelle et 51 concordance_inter_tomes. Cette topologie fait émerger dix carrefours structurants à plus fort degré relationnel : l'architecture prudentielle BSIF E-23 (degré 30, 23 occurrences), le protocole MCP 2026-07-28 sans état (degré 25), le pilotage FinOps FOCUS/CPO (degré 24), la passerelle bidirectionnelle PEP/AI Gateway à 9 contrôles (degré 24), la porte d'homologation CRE-IA 305 × PRR-75 (degré 23), la délégation OBO au deuxième saut (degré 21), la transition post-quantique ML-DSA/SLH-DSA (degré 21), la supervision anti-complaisance HITL/HOTL (degré 20), le confinement anti-verrouillage SaaS (degré 20) et l'atténuation des menaces OWASP ASI01–ASI10 / injection indirecte (degré 19). Aucune brique ne peut donc être spécifiée en silo : l'interopérabilité protocolaire (D03) et sémantique (D04) dépend de l'identité NHI et du mandat OBO (D06), du confinement OPA/Règle de deux (D07) et de l'orchestration durable Saga (D05), le tout sanctionné par l'observabilité EvalOps/FinOps (D08), la conformité juridique (D09) et les 24 portes bloquantes d'homologation (D12)."
+      },
+      {
+        "heading": "4. Gouvernance duale AE ↔ AS, rôles cibles et tableau directeur KPI / SLO",
+        "body": "L'industrialisation agentique requiert un contrat doctrinal continu entre l'Architecte d'entreprise (AE : portefeuille, trajectoire DAPP, 52 capacités CAP dont 42 invariantes du noyau possédé et 10 conditionnelles, arbitrage Acheter/Assembler/Construire, conformité prudentielle) et l'Architecte de solutions (AS : harnais 80/20, contrats MCP/A2A, OPA/Rego, temporalité Saga, EvalOps), formalisé au Tome 5 par les dix thèses T1–T10, six décisions conjointes AE ↔ AS et la matrice RACI en étoile à trois lignes (un seul A responsable). Ce dispositif engage six rôles cibles — AE, AS, RSSI, SRE, Juridique et Direction — incluant la séparation bâtisseur/vérificateur dans l'usine logicielle (PRR F-11) et s'appuie sur les huit indicateurs et SLO directeurs suivants :\n\n| Indicateur / SLO directeur | Cible / Seuil normatif vérifiable | Ancrage Corpus & Référentiel |\n|---|---|---|\n| Constance `pass^k` et dimensionnement de Wilson | `pass^k` avec `k >= 5` sur invariants critiques (`pass^5 >= 99 %` pour promotion SLM) ; borne unilatérale de Wilson à `95 % < p` exigeant `n >= ceil(3/p)` scénarios indépendants (ex. `n = 300` → `0,8938 % < 1 %`) | `EXIG-EVA-02`, `EXIG-EVA-03`, `PRR O-05`, `PRR F-15`, `G0-EX-CH04-01` |\n| Pilotage économique `CPO` & `FOCUS v1.4` | Suivi complet en `$ CA` par résultat métier conforme (`FOCUS v1.4`) ; alerte FinOps à `80 %` et arrêt atomique côté passerelle à `100 %` (`maxTotalCostCad`) | `EXIG-FIN-01..10`, `PRR O-09`, `PRR O-12`, `PRR O-13`, `C39–C40` |\n| Contrôle hors modèle, Règle de deux & CaMeL | `default allow := false` sur `100 %` des appels mutatifs (`45/45` cas OPA à `100,0 %` de couverture) ; retrait déterministe de la triade par session et séparation contrôle/données CaMeL | `EXIG-SEC-06`, `EXIG-SEC-07`, `PRR S-08`, `PRR S-09`, `T8 ch. 03` |\n| Portes bloquantes d'homologation `PRR-75` | `24` contrôles `[BLOQUANT]` sur `75` obligatoires avant mise en production (`S:8`, `R:5`, `O:2`, `G:7`, `F:2`) couplés aux `305 EXIG-*` et `40` critères blueprints `C01–C40` | `T2`, `T3 Annexe G`, `T8 Annexe B` (`EXIG-GOV-17`) |\n| Réactivité de confinement et retour arrière | Coupe-circuit centralisé SOC révoquant jetons/sessions en `< 10 s` ; rétrogradation de trajectoire DAPP en `< 60 s` ; retour arrière automatisé `N-1` en `< 2 min` | `PRR S-14`, `POR-015`, `PRR O-08` |\n| Cycle de vie PKI (`TLS 100 j -> 47 j`) | Automatisation ACME sans intervention humaine pour le passage à `100 jours` (15 mars 2027) puis `47 jours` et validation `10 jours` (15 mars 2029) | `CA/B Forum v2.3.1`, `T7 Annexe B`, `T8 §0.5`, `CAP-033` |\n| Transition post-quantique (`PQC` & `HTTP 431`) | Préparation cryptographique `FIPS 203/204/205` (`ML-KEM`, `ML-DSA`, `SLH-DSA`) selon `NIST IR 8547` et fenêtre `G7 2030–2035` ; mitigation `HTTP 431` par référence `kid` JWKS et Transaction Tokens | `POR-007`, `EXIG-SEC-27`, `C27`, `T8 ch. 02` |\n| Préservation du vivier junior et reprise manuelle | Quota obligatoire de dossiers formateurs dès `> 70 %` d'automatisation (`INI-043`) et exercices annuels attestés de reprise sans agent ; prévention du biais d'approbation `ASI09` | `INI-043`, `POR-009`, `POR-014`, `PRR G-11`, `PRR G-12` |"
+      },
+      {
+        "heading": "5. Cadre réglementaire, jalons 2023–2035 et statut probatoire non-avis",
+        "body": "L'architecture se conforme à un calendrier réglementaire et cryptographique vérifié contre sources primaires au gel du 2 décembre 2026 : au Québec, la Loi 25 encadre depuis le 22 septembre 2023 les décisions exclusivement automatisées (art. 12.1 : information, explication, révision humaine ; sanctions administratives jusqu'à 10 M$ CA / 2 % et pénales jusqu'à 25 M$ CA / 4 %), impose la portabilité depuis le 22 septembre 2024 (art. 27) et l'ÉFVP préalable (art. 17), tandis que la ligne directrice sur l'IA de l'AMF s'arrime au 1er mai 2027 sur la ligne directrice E-23 révisée du BSIF au palier fédéral canadien ; suivront le BSIF B-15 (portée 3, fin 2028), la révision ACVM / Norme canadienne 31-103 (1er octobre 2028) et la clause de temporisation des lois financières canadiennes (30 juin 2033). En Europe et à l'international s'ajoutent par effet extraterritorial l'EU AI Act (art. 50 depuis le 2 août 2026, Annexe III au 2 décembre 2027, Annexe I au 2 août 2028), EN 18286:2026 (SMQ), DORA, le Cyber Resilience Act, ISO/IEC 42001, NIST AI RMF et la feuille de route G7 PQC 2030–2035. Ces échéances cadencent la trajectoire DAPP (J1 90 j, J2 9 mois, J3 18 mois, Paliers P1 2028–2029, P2 2030–2032, P3 2033–2035 gouvernés par 15 portes POR et 27 signaux SIG). Sur le plan probatoire, le corpus applique le protocole Wyvern (sources ouvertes L+ hachées SHA-256, 24 exclusions statut F au T7 et 10 au T8) et la chaîne AQ G0–G5 (83/83 pytest, 45/45 OPA à 100 %, 21/21 validations sur 13 schémas JSON Schema 2020-12, 4/4 suites tierces / 50 fichiers, recollations CA-16/G3 à 100 %), sous licences duales CC-BY-4.0 (textes et figures) et MIT (code et trousse), avec clause formelle de non-avis juridique, prudentiel ou réglementaire (DC-P01 / DC-P12 / AO-05)."
+      }
+    ]
+  },
+  "parties": [
+    {
+      "part_number": 1,
+      "part_roman": "I",
+      "domain_id": "D01",
+      "representative_part_title": "Rupture épistémique, limites probabilistes et économie cognitive des Systems of Agency",
+      "part_summary": "Cette première partie pose les fondations analytiques justifiant pourquoi l'entreprise ne peut pas simplement greffer des agents autonomes sur ses processus existants. Elle relie le basculement conceptuel des copilotes vers les Systems of Agency (Chapitre 01, 8 thèmes) à la réalité mathématique de la dégradation en chaîne sous loi de Lusser, aux erreurs silencieuses en cascade et à l'exigence de constance multi-essais pass^k (Chapitre 02, 4 thèmes), puis chiffre le prix de la précipitation via l'économie cognitive de Coase et la quadruple dette technique, cognitive, d'intention et de couplage (Chapitre 03, 8 thèmes).",
+      "chapter_numbers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "part_number": 2,
+      "part_roman": "II",
+      "domain_id": "D02",
+      "representative_part_title": "Architecture d'entreprise hybride 80/20, autonomie graduée L0–L4 et noyau de contrôle possédé",
+      "part_summary": "Cette deuxième partie convertit le diagnostic épistémique en doctrine structurelle d'architecture d'entreprise et de solutions. Elle prescrit la séparation stricte entre 80 % d'exosquelette déterministe et 20 % de cognition encapsulée à travers le harnais à huit étapes (Chapitre 04, 7 thèmes), encadre la délégation d'action par l'échelle L0–L4, la règle du maillon le plus élevé et le devoir d'abstention sous ergonomie anti-complaisance HITL/HOTL (Chapitre 05, 4 thèmes), puis consolide le noyau possédé de 42 capacités invariantes (sur 52 CAP), les 31 ADR, les 4 plans TOGAF/ArchiMate et l'arbitrage Acheter/Assembler/Construire (Chapitre 06, 12 thèmes).",
+      "chapter_numbers": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "part_number": 3,
+      "part_roman": "III",
+      "domain_id": "D03",
+      "representative_part_title": "Tissu conjonctif protocolaire, découverte fédérée et prévention du verrouillage SaaS",
+      "part_summary": "Cette troisième partie spécifie la couche d'interopérabilité ouverte sur les quatre niveaux du cadre EIF afin d'éviter la fragmentation des intégrations point-à-point et l'enfermement propriétaire. Elle normalise l'accès outil-modèle via MCP 2026-07-28 (Streamable HTTP, façades d'intention ≤ 15 outils et épinglage cryptographique SHA-256 des schémas au Chapitre 07, 6 thèmes), distingue l'interopérabilité horizontale pair-à-pair A2A v1.0.1, AGNTCY/SLIM et mandats commerciaux AP2 (Chapitre 08, 8 thèmes), et verrouille la gouvernance opérationnelle autour des Agent Cards, des registres, de la passerelle PEP/AI Gateway à 9 contrôles et des mécanismes anti-verrouillage (Chapitre 09, 11 thèmes).",
+      "chapter_numbers": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "part_number": 4,
+      "part_roman": "IV",
+      "domain_id": "D04",
+      "representative_part_title": "Gouvernance sémantique, mémoire CoALA à quatre tiroirs et encapsulation patrimoniale ACL/OT",
+      "part_summary": "L'interopérabilité syntaxique ne suffisant pas à prévenir les contresens métier, cette quatrième partie traite de la vérité sémantique, de la mémoire persistante et du raccordement aux actifs patrimoniaux. Elle impose l'alignement ontologique (FIBO), les contrats de données ODCS v3.2.0 et la compilation déterministe du contexte RAG (Chapitre 10, 7 thèmes), structure les quatre tiroirs isolés de la mémoire CoALA avec bi-temporalité, filtrage ACL amont et effacement sélectif vérifiable (Chapitre 11, 5 thèmes), puis protège les systèmes d'enregistrement (ERP/SAP, mainframes, RPA, systèmes cyberphysiques IT/OT) via des couches anti-corruption ACL et le cloisonnement des six substrats d'état (Chapitre 12, 7 thèmes).",
+      "chapter_numbers": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "part_number": 5,
+      "part_roman": "V",
+      "domain_id": "D05",
+      "representative_part_title": "Orchestration sobre OO1–OO4, chorégraphie événementielle et exécution durable Saga",
+      "part_summary": "Cette cinquième partie répond aux échecs en cascade des chaînes multi-agents en soumettant la coordination à une discipline stricte de sobriété et de réversibilité transactionnelle. Elle impose l'arbre de décision OO1–OO4 et la sélection parcimonieuse parmi huit topologies multi-agents sous bornes de défaillance MAST (Chapitre 13, 10 thèmes), définit la dorsale asynchrone Event Mesh fondée sur CloudEvents et AsyncAPI avec négociation protocolaire découplée (Chapitre 14, 3 thèmes), et exige l'ancrage dans des moteurs durables (Temporal/Restate), l'idempotence canonisée JCS SHA-256 et la compensation Saga autour d'un point pivot avec canal isolé EXIG-ORC-28 (Chapitre 15, 7 thèmes).",
+      "chapter_numbers": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "part_number": 6,
+      "part_roman": "VI",
+      "domain_id": "D06",
+      "representative_part_title": "Identités non humaines (NHI), délégation OBO atténuée, PKI 47 jours et transition post-quantique",
+      "part_summary": "Cette sixième partie érige la confiance cryptographique sans secret statique en condition préalable à toute autonomie déléguée. Elle substitue aux clés partagées des identités non humaines (NHI) éphémères attestées par SPIFFE/SPIRE, passeports DID/VC et identifiants légaux vLEI sous OAuth 2.1/SCIM (Chapitre 16, 8 thèmes), résout la perte d'imputabilité au deuxième saut via RFC 8693 OBO, DPoP/mTLS, requêtes riches RAR, Transaction Tokens O(1), approbation hors bande CIBA+FIDO2 et révocation SSF/CAEP (Chapitre 17, 7 thèmes), et planifie l'automatisation ACME face à la réduction TLS 100 j / 47 j ainsi que la migration PQC ML-DSA/ML-KEM/SLH-DSA et le dimensionnement HTTP 431 (Chapitre 18, 4 thèmes).",
+      "chapter_numbers": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "part_number": 7,
+      "part_roman": "VII",
+      "domain_id": "D07",
+      "representative_part_title": "Défense hors modèle, politiques OPA/Rego, Règle de deux et confinement déterministe",
+      "part_summary": "Reconnaissant l'asymétrie structurelle entre la capacité générative et la sûreté intrinsèque des modèles, cette septième partie déplace tous les verrous critiques hors du LLM. Elle cartographie la surface d'attaque agentique — injection indirecte de consignes, tool poisoning, rug pull, mandataire confus et taxonomies OWASP ASI01–ASI10 / MITRE ATLAS (Chapitre 19, 7 thèmes) — impose les politiques déclaratives OPA/Rego en mode fermé (default allow := false), la Règle de deux par session et la séparation structurelle contrôle/données CaMeL (Chapitre 20, 9 thèmes), puis isole l'exécution de code, d'outils et d'interfaces graphiques dans des bacs à sable SHADI, microVM, WASI et enclaves TEE surveillés par le coupe-circuit SOC (Chapitre 21, 4 thèmes).",
+      "chapter_numbers": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "part_number": 8,
+      "part_roman": "VIII",
+      "domain_id": "D08",
+      "representative_part_title": "Observabilité probatoire, bancs EvalOps hermétiques et pilotage FinOps au résultat conforme",
+      "part_summary": "Cette huitième partie rend la performance, la sécurité et l'économie des agents continuellement mesurables et opposables. Elle instaure la télémétrie OpenTelemetry GenAI épinglée, le double couloir probatoire sans PII opérationnelle, la canonisation déterministe JCS (RFC 8785) et le scellage immuable SCITT/C.8 (Chapitre 22, 8 thèmes), remplace les évaluations manuelles par trois bancs hermétiques E1–E3 calibrés selon les bornes statistiques de Wilson, la constance pass^k et les tests métamorphiques bilingues FR/EN sans oracle (Chapitre 23, 7 thèmes), puis aligne la soutenabilité économique sur FinOps FOCUS v1.4, le coût par résultat conforme (CPO), la comptabilité carbone BSIF B-15, les disjoncteurs budgétaires et le volant de distillation SLM (Chapitre 24, 5 thèmes).",
+      "chapter_numbers": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "part_number": 9,
+      "part_roman": "IX",
+      "domain_id": "D09",
+      "representative_part_title": "Conformité juridique et prudentielle multi-juridictions (QC, CA, UE, int.) et réversibilité contractuelle",
+      "part_summary": "Cette neuvième partie ancre les spécifications techniques dans les obligations légales et réglementaires datées qui engagent la responsabilité des dirigeants. Elle décline les exigences québécoises et canadiennes — Loi 25 (art. 12.1, 17 ÉFVP, 23 effacement, 27 portabilité), ligne directrice AMF, BSIF E-23 / B-13 / B-10 / B-15 et encadrement des valeurs mobilières ACVM 11-348 / NI 31-103 (Chapitre 25, 10 thèmes) — harmonise l'empreinte extraterritoriale européenne et internationale sous EU AI Act, SMQ EN 18286:2026, DORA, CRA, ISO/IEC 42001, NIST AI RMF, IMDA, AICA et G7 CEG (Chapitre 26, 8 thèmes), et verrouille les clauses d'approvisionnement EXIG-APP contre le verrouillage fournisseur et l'extraterritorialité infonuagique (Chapitre 27, 5 thèmes).",
+      "chapter_numbers": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "part_number": 10,
+      "part_roman": "X",
+      "domain_id": "D10",
+      "representative_part_title": "Architectures sectorielles réglementées, trois blueprints C01–C40 et usine logicielle GitOps",
+      "part_summary": "Cette dixième partie démontre l'assemblage concret des couches précédentes dans des contextes opérationnels à forts enjeux. Elle spécifie les cinq profils financiers réglementés (M-14 Banque, M-15 Gestion de patrimoine, M-16 Assurance de personnes, M-17 Assurance de dommages, M-18 Retraite et paiements RTR/ISO 20022) ainsi que leurs 24 extensions PEX (Chapitre 28, 10 thèmes), matérialise les trois blueprints multisectoriels de référence — assistant SoR interne, enclave souveraine RAG ACL et maillage B2B — calibrés par les 40 critères d'acceptation C01–C40 sur le cas fil rouge du Groupe Boréal BEL (Chapitre 29, 8 thèmes), puis fixe les règles de l'usine logicielle ADLC GitOps et le catalogue des anti-patrons à proscrire (Chapitre 30, 6 thèmes).",
+      "chapter_numbers": [
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "part_number": 11,
+      "part_roman": "XI",
+      "domain_id": "D11",
+      "representative_part_title": "Prospective 2028–2035, trajectoires adaptatives DAPP, gouvernance AE/AS et capital humain",
+      "part_summary": "Cette onzième partie pilote l'évolution pluriannuelle du portefeuille agentique afin d'investir sans regret ni pari technologique prématuré. Elle déploie la planification adaptative dynamique DAPP sur les paliers P0–P3 (43 initiatives sans regret et conditionnelles, 15 portes sur preuves POR-001 à POR-016 et 27 signaux de bascule SIG-001 à SIG-110 sur les scénarios 2028–2035 au Chapitre 31, 11 thèmes), scelle la gouvernance conjointe AE ↔ AS autour des dix thèses T1–T10, de la matrice RACI à un seul A et de la prévention des sept pièges de gouvernance (Chapitre 32, 8 thèmes), et érige en exigence non négociable la sanctuarisation du vivier junior (INI-043 dès > 70 % d'automatisation), la reprise manuelle et la prise en compte des contraintes énergétiques (Chapitre 33, 3 thèmes).",
+      "chapter_numbers": [
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "part_number": 12,
+      "part_roman": "XII",
+      "domain_id": "D12",
+      "representative_part_title": "Homologation vérifiable, trousse exécutable du Tome 8, concordance inter-tomes et chaîne Wyvern G0–G5",
+      "part_summary": "Cette douzième et dernière partie ferme la boucle entre la norme rédigée, la preuve logicielle exécutable et la traçabilité éditoriale sans fissure. Elle unifie le socle opposable CRE-IA-2026-01 v1.2 (305 EXIG-*, 10 interdictions sans dérogation EXIG-GOV-17), la grille PRR-75 dont 24 portes bloquantes et la fiche d'homologation 2027-B001 (Chapitre 34, 6 thèmes), décrit l'implémentation de référence en Python 3.12+ / OPA Rego / JSON Schema Draft 2020-12 de la trousse MIT du Tome 8 comblant les 5 SBB du Tableau 12 sous barrière G0 et quatre suites officielles de vecteurs tiers (Chapitre 35, 5 thèmes), puis consigne la concordance inter-tomes (fermeture DIV-02 et résolution des cinq discordances DISC-01 à DISC-05), le protocole probatoire Wyvern, les barrières G0–G5 / CA-16, le gabarit Typst et la clause non-avis (Chapitre 36, 14 thèmes).",
+      "chapter_numbers": [
+        34,
+        35,
+        36
+      ]
+    }
+  ],
+  "annexes": [
+    {
+      "annexe_code": "A",
+      "representative_title": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes)",
+      "executive_summary": "Cette annexe garantit l'auditabilité intégrale entre la structure du MindMap interactif (corpus-mindmap-data.json) et les chapitres du présent PRD. Elle recense de manière exhaustive les 12 domaines, les 36 chapitres alignés sur les 36 sous-domaines canoniques, le décompte exact des 71 familles thématiques et des 260 nœuds thématiques rattachés aux 9 fichiers Markdown du corpus.",
+      "targeted_content_description": "Tableaux complets générés directement depuis corpus-mindmap-data.json exposant pour chaque domaine D01–D12 et chaque chapitre 01–36 : l'identifiant SUB_Dxx_yy, l'ancre GFM exacte dans prd.md, le nombre de familles (total 71), le nombre de thèmes (total 260), le cumul d'occurrences textuelles, la répartition par tome (R, T1–T8) et la liste complète des identifiants normatifs majeurs."
+    },
+    {
+      "annexe_code": "B",
+      "representative_title": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages",
+      "executive_summary": "Cette annexe synthétise la topologie complète des 616 interrelations typées extraites du Corpus et résume les principaux nœuds carrefours et tensions d'arbitrage structurant le système. Elle permet aux architectes d'entreprise et de solutions d'évaluer l'impact transversal d'une décision avant d'ouvrir une dérogation ou de modifier un bloc de solution.",
+      "targeted_content_description": "Tableaux analytiques issus de corpus-mindmap-data.json couvrant : (1) la distribution des 616 relations selon les 8 types canoniques (operationnalisation, dependance_technique, encadrement_normatif, attenuation_risque, amplification_synergie, tension_arbitrage, projection_temporelle, concordance_inter_tomes), (2) le palmarès des nœuds thématiques à plus fort degré relationnel (top 20 carrefours avec domaine, degré et occurrences), et (3) la synthèse des relations tension_arbitrage clés (62 tensions structurantes entre autonomie, latence, coût, confidentialité et conformité)."
+    },
+    {
+      "annexe_code": "C",
+      "representative_title": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035",
+      "executive_summary": "Cette annexe consigne l'ensemble des réconciliations doctrinales assurant l'unicité sémantique entre les Tomes 1 à 8 ainsi que l'échéancier réglementaire, normatif, cryptographique et adaptatif de 2023 à 2035. Elle sert de source unique de vérité temporelle et terminologique pour planifier les paliers J1–J3 et P1–P3.",
+      "targeted_content_description": "Reproduction structurée depuis pivots-concordance.json et corpus-mindmap-data.json : (1) la fermeture sur pièce de DIV-02 (52 CAP : 42 invariantes + 10 conditionnelles, 5 lacunes 2026 comblées par 11 PEX sur 24, 305 EXIG-* CRE-IA v1.2), (2) la table complète des 5 discordances inter-volumes DISC-01 à DISC-05 résolues au Tome 8 §0.2, et (3) la chronologie vérifiée 2023–2035 combinant jalons juridiques/PKI/PQC datés et jalons DAPP."
+    },
+    {
+      "annexe_code": "D",
+      "representative_title": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis",
+      "executive_summary": "Cette annexe rassemble l'outillage de vérification et de gouvernance permettant de passer des exigences du PRD à la mise en production homologuée. Elle présente les résultats des barrières logicielles et éditoriales G0–G5, la répartition des 24 portes bloquantes PRR-75, les 5 SBB du Tableau 12, les 3 blueprints C01–C40, le régime des licences duales CC-BY-4.0 / MIT et la clause de non-avis.",
+      "targeted_content_description": "Tableaux vérifiés issus des pivots et de corpus-mindmap-data.json : (1) bilan des six barrières AQ G0–G5 (83/83 pytest, 45/45 OPA 100 %, 21/21 validations sur 13 schémas 2020-12, 4/4 suites vecteurs tiers / 50 fichiers, Wyvern G2, recollations CA-16/G3, G4 et G5), (2) répartition des 16 familles CRE-IA (305 EXIG-*), des 75 points PRR (dont 24 bloquants S:8, R:5, O:2, G:7, F:2) et des 5 SBB / 3 blueprints C01–C40, et (3) texte de référence sur les licences CC-BY-4.0 / MIT et la délimitation non-avis DC-P01 / DC-P12 / AO-05."
+    },
+    {
+      "annexe_code": "E",
+      "representative_title": "Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus",
+      "executive_summary": "Cette cinquième annexe établit le plan directeur visuel permettant à tout lecteur — dirigeant métier, juriste, architecte d'entreprise, architecte de solutions ou ingénieur SRE/RSSI — de saisir en quelques secondes l'architecture, les risques, les obligations et les mécanismes de contrôle du PRD sans devoir décrypter d'emblée 164 000 mots de spécifications. Elle regroupe les 4 schémas directeurs du Sommaire exécutif global (SCH-00-01 à SCH-00-04) ainsi que les schémas de vulgarisation ciblés rattachés aux 36 chapitres (CH-01 à CH-36), en couvrant 100 % des 71 familles thématiques et en établissant une table de correspondance bidirectionnelle avec les 319 figures sources vérifiées sur disque dans Tomes/ (253 PlantUML/SVG et 66 Mermaid/PNG).",
+      "targeted_content_description": "Catalogue complet généré depuis Compendium/Cartographie/donnees/prd_schemas_shards/schemas-*.json et Compendium/Cartographie/donnees/inventaire-319-diagrammes.json exposant : (1) le tableau maître des 4 schémas transversaux SCH-00-01 à SCH-00-04 et de tous les schémas SCH-01-xx à SCH-36-xx (identifiant, chapitre, domaine, familles couvertes, archétype visuel, notation recommandée, publics cibles, statut de réutilisation, point d'insertion dans prd.md et fiche pédagogique complète : objectif en 10 s, angle de vulgarisation, blueprint par zones/flux ① ② ③/légende/encadré « À retenir »), et (2) la matrice d'inventaire et de concordance complète des 319 diagrammes d'origine des Tomes 1 à 8 avec liens vérifiés vers les sources .puml/.mmd et les rendus .svg/.png."
+    }
+  ]
+}
