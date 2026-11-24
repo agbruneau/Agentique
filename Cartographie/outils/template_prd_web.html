@@ -968,10 +968,10 @@
         </div>
 
         <div class="topbar-actions">
-          <button id="prd-toc-toggle-btn" class="btn active" title="Afficher ou masquer la table des matières">TDM</button>
-          <button id="prd-mode-btn" class="btn" title="Basculer entre Chapitre ciblé et Document intégral">Mode : Chapitre ciblé</button>
-          <button id="prd-theme-btn" class="btn" title="Basculer le thème Auto / Clair / Sombre">Thème : Auto</button>
-          <button id="prd-print-btn" class="btn" title="Imprimer ou exporter en PDF">Imprimer / PDF</button>
+          <button id="prd-toc-toggle-btn" class="btn active" type="button" aria-expanded="true" title="Afficher ou masquer la table des matières">TDM</button>
+          <button id="prd-mode-btn" class="btn" type="button" aria-pressed="false" title="Basculer entre Chapitre ciblé et Document intégral">Mode : Chapitre ciblé</button>
+          <button id="prd-theme-btn" class="btn" type="button" title="Basculer le thème Auto / Clair / Sombre">Thème : Auto</button>
+          <button id="prd-print-btn" class="btn" type="button" title="Imprimer ou exporter en PDF">Imprimer / PDF</button>
           <a id="prd-open-mindmap-link" class="btn primary" href="MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html#view=mindmap">Ouvrir dans la MindMap ↗</a>
           <a id="prd-source-md-link" class="btn" href="../prd.md">Source prd.md ↗</a>
         </div>
@@ -1004,7 +1004,7 @@
             <strong>Table des matières</strong>
             <div style="display:flex;align-items:center;gap:6px;">
               <span id="prd-toc-count" class="kpi-pill"></span>
-              <button id="prd-toc-expand-btn" class="btn btn-sm">Tout déplier</button>
+              <button id="prd-toc-expand-btn" class="btn btn-sm" type="button" aria-expanded="false">Tout déplier</button>
             </div>
           </div>
           <input id="prd-toc-filter" class="toc-filter-input" type="search" placeholder="Filtrer la TDM (chapitre, famille, thème)…" aria-label="Filtrer la table des matières" />
@@ -1107,11 +1107,16 @@
     }
 
     function renderInlineMd(rawText, query) {
-      var raw = String(rawText == null ? "" : rawText);
+      var raw = String(rawText == null ? "" : rawText).replace(/\\\$/g, "$");
       var tokens = [];
-      // Protège les liens Markdown [label](href) et le code inline `code`
-      var withPlaceholders = raw.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_m, label, href) {
+      function pushTok(htmlVal) {
         var idx = tokens.length;
+        tokens.push(htmlVal);
+        return "\u0000T" + idx + "\u0000";
+      }
+
+      // 1. Protège les liens Markdown [label](href)
+      var withPlaceholders = raw.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_m, label, href) {
         var cleanHref = String(href || "").trim();
         var safeUrl = "#";
         if (!/^(https?|javascript|data):/i.test(cleanHref) && cleanHref.indexOf("//") !== 0) {
@@ -1122,25 +1127,25 @@
             safeUrl = cleanHref.replace(/'/g, "%27");
           }
         }
-        tokens.push('<a href="' + escapeHtml(safeUrl) + '">' + highlightPlain(escapeHtml(label), query) + "</a>");
-        return "\u0000T" + idx + "\u0000";
+        return pushTok('<a href="' + escapeHtml(safeUrl) + '">' + highlightPlain(escapeHtml(label), query) + "</a>");
       });
 
+      // 2. Protège le code inline `code` AVANT **gras** et *italique*
       withPlaceholders = withPlaceholders.replace(/`([^`]+)`/g, function (_m, code) {
-        var idx = tokens.length;
-        tokens.push("<code>" + highlightPlain(escapeHtml(code), query) + "</code>");
-        return "\u0000T" + idx + "\u0000";
+        return pushTok("<code>" + highlightPlain(escapeHtml(code), query) + "</code>");
       });
 
       var safe = escapeHtml(withPlaceholders);
-      safe = safe.replace(/\*\*([^*]+)\*\*/g, function (_m, b) {
-        return "<strong>" + highlightPlain(b, query) + "</strong>";
+      // 3. Gras **...** restreint aux frontières sûres (exclut globs type specs/** et tests/**)
+      safe = safe.replace(/(^|[\s(\[«"'—–:;,\-]|>)\*\*([^\s*](?:[^*\n]*?[^\s*])?)\*\*(?=$|[\s.,;:!?)\]»"'—–<\-])/g, function (_m, p1, b) {
+        return p1 + "<strong>" + b + "</strong>";
       });
-      safe = safe.replace(/(^|[^*])\*([^*]+)\*/g, function (_m, p1, it) {
-        return p1 + "<em>" + highlightPlain(it, query) + "</em>";
+      // 4. Italique *...* restreint aux frontières sûres (exclut jokers type gen_ai.*)
+      safe = safe.replace(/(^|[\s(\[«"'—–:;,\-]|>)\*([^\s*](?:[^*]*[^\s*])?)\*(?=$|[\s.,;:!?)\]»"'—–<\-])/g, function (_m, p1, it) {
+        return p1 + "<em>" + it + "</em>";
       });
 
-      // Applique le surlignage hors balises HTML créées
+      // 5. Applique le surlignage hors balises HTML et jetons protégés
       if (query && String(query).trim().length >= 2) {
         safe = safe.split(/(<[^>]+>|\u0000T\d+\u0000)/g).map(function (seg) {
           if (!seg || seg.charAt(0) === "<" || seg.charAt(0) === "\u0000") return seg;
@@ -1148,6 +1153,7 @@
         }).join("");
       }
 
+      // 6. Restaure les liens et blocs <code> protégés
       return safe.replace(/\u0000T(\d+)\u0000/g, function (_m, idStr) {
         return tokens[Number(idStr)] || "";
       });
@@ -1517,21 +1523,34 @@
         }
       }
       if (params.part && idx) {
-        var pVal = String(params.part).toUpperCase();
+        var pRaw = String(params.part).trim();
+        var pVal = pRaw.toUpperCase();
         if (idx.partyByDomain[pVal]) return { kind: "part", domainId: pVal };
-        var pNum = parseInt(pVal, 10);
-        if (idx.partyByNumber[pNum]) return { kind: "part", domainId: idx.partyByNumber[pNum].domain_id };
+        var pMatch = pRaw.match(/^(?:PART[-_]?)?0?(\d+)$/i);
+        if (pMatch) {
+          var pNum = parseInt(pMatch[1], 10);
+          if (idx.partyByNumber[pNum]) return { kind: "part", domainId: idx.partyByNumber[pNum].domain_id };
+        }
+        var pByRoman = idx.parties.find(function (p) { return String(p.part_roman || "").toUpperCase() === pVal; });
+        if (pByRoman) return { kind: "part", domainId: pByRoman.domain_id };
       }
       if (params.annexe && idx) {
         var aCode = String(params.annexe).toUpperCase();
         if (idx.annexeByCode[aCode]) return { kind: "annexe", annexeCode: aCode };
       }
       if (params.sec !== undefined && idx) {
-        var sVal = String(params.sec);
+        var sVal = String(params.sec).trim();
         var secs = (idx.execSummary && idx.execSummary.sections) || [];
         var found = secs.find(function (s, i) {
           return s.id === sVal || String(i) === sVal || String(i + 1) === sVal || s.slug === sVal;
         });
+        if (!found) {
+          var sMatch = sVal.match(/^(?:exec|sec)[-_]?0?(\d+)$/i) || sVal.match(/^0?(\d+)$/);
+          if (sMatch) {
+            var sIdx = parseInt(sMatch[1], 10) - 1;
+            if (sIdx >= 0 && sIdx < secs.length) found = secs[sIdx];
+          }
+        }
         return { kind: "exec", sectionId: found ? (found.id || sVal) : null };
       }
       return null;
@@ -1580,8 +1599,8 @@
         var execActive = activeTarget.kind === "exec" ? " active" : "";
         partsHtml.push('<div class="toc-group">');
         partsHtml.push(
-          '<div class="toc-row' + execActive + '" data-nav-kind="exec">' +
-            '<button class="toc-expander" type="button" data-toc-toggle="TOC_EXEC" aria-label="Déplier le sommaire">' + (execOpen ? "−" : "+") + "</button>" +
+          '<div class="toc-row' + execActive + '" role="button" tabindex="0" data-nav-kind="exec">' +
+            '<button class="toc-expander" type="button" data-toc-toggle="TOC_EXEC" aria-expanded="' + String(Boolean(execOpen)) + '" aria-label="Déplier le sommaire">' + (execOpen ? "−" : "+") + "</button>" +
             '<span class="toc-label"><strong>' + escapeHtml(idx.execSummary.title || "Sommaire exécutif global") + "</strong></span>" +
           "</div>"
         );
@@ -1646,8 +1665,8 @@
 
         partsHtml.push('<div class="toc-group">');
         partsHtml.push(
-          '<div class="toc-row' + partActive + partDim + '" data-nav-kind="part" data-nav-domain="' + escapeHtml(domId) + '">' +
-            '<button class="toc-expander" type="button" data-toc-toggle="' + escapeHtml(partKey) + '" aria-label="Déplier la partie">' + (partOpen ? "−" : "+") + "</button>" +
+          '<div class="toc-row' + partActive + partDim + '" role="button" tabindex="0" data-nav-kind="part" data-nav-domain="' + escapeHtml(domId) + '">' +
+            '<button class="toc-expander" type="button" data-toc-toggle="' + escapeHtml(partKey) + '" aria-expanded="' + String(Boolean(partOpen)) + '" aria-label="Déplier la partie">' + (partOpen ? "−" : "+") + "</button>" +
             '<span class="toc-label"><span class="badge dom" style="background:' + domainColor(domId) + ';padding:1px 5px;font-size:10px;">' + escapeHtml(domId) + "</span> <strong>Partie " + escapeHtml(p.part_roman) + "</strong> — " + escapeHtml(p.representative_part_title) + "</span>" +
           "</div>"
         );
@@ -1662,8 +1681,8 @@
             var chAct = activeTarget.kind === "chapter" && Number(activeTarget.chapterNumber) === cnum && !activeTarget.focusId ? " active" : "";
             var chDim = (!filterState.active || filterState.matchingChapterNums.has(cnum)) ? "" : " dimmed";
             partsHtml.push(
-              '<div class="toc-row' + chAct + chDim + '" data-nav-kind="chapter" data-nav-ch="' + cnum + '">' +
-                '<button class="toc-expander" type="button" data-toc-toggle="' + escapeHtml(chKey) + '" aria-label="Déplier le chapitre">' + (chOpen ? "−" : "+") + "</button>" +
+              '<div class="toc-row' + chAct + chDim + '" role="button" tabindex="0" data-nav-kind="chapter" data-nav-ch="' + cnum + '">' +
+                '<button class="toc-expander" type="button" data-toc-toggle="' + escapeHtml(chKey) + '" aria-expanded="' + String(Boolean(chOpen)) + '" aria-label="Déplier le chapitre">' + (chOpen ? "−" : "+") + "</button>" +
                 '<span class="toc-label"><strong>Ch. ' + pad2(cnum) + "</strong> — " + escapeHtml(ch.representative_title) + "</span>" +
               "</div>"
             );
@@ -1711,8 +1730,8 @@
         var aAct = activeTarget.kind === "annexe" && activeTarget.annexeCode === acode ? " active" : "";
         partsHtml.push('<div class="toc-group">');
         partsHtml.push(
-          '<div class="toc-row' + aAct + '" data-nav-kind="annexe" data-nav-annexe="' + escapeHtml(acode) + '">' +
-            '<button class="toc-expander" type="button" data-toc-toggle="' + escapeHtml(aKey) + '" aria-label="Déplier l\'annexe">' + (aOpen ? "−" : "+") + "</button>" +
+          '<div class="toc-row' + aAct + '" role="button" tabindex="0" data-nav-kind="annexe" data-nav-annexe="' + escapeHtml(acode) + '">' +
+            '<button class="toc-expander" type="button" data-toc-toggle="' + escapeHtml(aKey) + '" aria-expanded="' + String(Boolean(aOpen)) + '" aria-label="Déplier l\'annexe">' + (aOpen ? "−" : "+") + "</button>" +
             '<span class="toc-label"><strong>' + escapeHtml(ann.representative_title) + "</strong></span>" +
           "</div>"
         );
@@ -1858,7 +1877,7 @@
       if (tomes.length) html.push('<span class="badge mono">Tomes : ' + escapeHtml(tomes.join(", ")) + "</span>");
       if (th.relation_degree != null) html.push('<span class="badge mono">Degré : ' + escapeHtml(th.relation_degree) + "</span>");
       ids.forEach(function (ident) {
-        html.push('<span class="badge mono">' + highlightPlain(escapeHtml(ident), q) + "</span>");
+        html.push('<span class="badge mono">' + highlightPlain(escapeHtml(String(ident).replace(/\\\$/g, "$")), q) + "</span>");
       });
       html.push("</div>");
 
@@ -1962,7 +1981,7 @@
         var famFocus = focusId === fam.family_node_id ? " focused-target" : "";
         html.push('<div class="family-box' + famFocus + '" id="fam-' + escapeHtml(fam.family_node_id) + '">');
         html.push('<div class="family-head">');
-        html.push('<div><h5>' + escapeHtml(fCode + " " + fam.family_title) + ' <span class="badge mono">' + escapeHtml(fam.family_node_id) + "</span></h5></div>");
+        html.push('<div><h5>' + renderInlineMd(fCode + " " + fam.family_title, q) + ' <span class="badge mono">' + escapeHtml(fam.family_node_id) + "</span></h5></div>");
         html.push(
           '<div class="theme-actions">' +
             '<a class="btn btn-sm" href="' + escapeHtml(mindmapHref("mindmap", fam.family_node_id)) + '">MindMap ↗</a>' +
@@ -2006,14 +2025,16 @@
           var tnum = Number(rel.target_chapter_number);
           var targetCh = idx.chapterByNum[tnum];
           var targetTitle = rel.target_chapter_title || (targetCh ? targetCh.representative_title : ("Chapitre " + pad2(tnum)));
+          var localSlugDisp = Array.isArray(rel.local_slugs) ? rel.local_slugs.join(", ") : (rel.local_slug || "");
+          var targetSlugDisp = Array.isArray(rel.target_slugs) ? rel.target_slugs.join(", ") : (rel.target_slug || "");
           html.push(
             '<div class="rel-item" style="border-left-color:' + rcol + ';">' +
               '<div class="badge-row">' +
                 '<span class="badge mono" style="border-color:' + rcol + ';color:' + rcol + ';">' + arrow + " " + escapeHtml(rel.relation_type) + "</span>" +
                 '<span style="color:var(--text-muted);">' + prep + "</span>" +
-                '<button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + tnum + '"' + (rel.target_node_id ? ' data-nav-focus-kind="thm" data-nav-focus-id="' + escapeHtml(rel.target_node_id) + '"' : "") + ">Ch. " + pad2(tnum) + " — " + escapeHtml(targetTitle) + "</button>" +
+                '<button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + tnum + '"' + (rel.target_node_id ? ' data-nav-focus-kind="thm" data-nav-focus-id="' + escapeHtml(rel.target_node_id) + '"' : "") + ">Ch. " + pad2(tnum) + " — " + renderInlineMd(targetTitle, "") + "</button>" +
               "</div>" +
-              (rel.target_slug ? '<div class="badge-row"><span class="badge mono">' + escapeHtml(rel.local_slug || "") + " ↔ " + escapeHtml(rel.target_slug) + "</span></div>" : "") +
+              (targetSlugDisp ? '<div class="badge-row"><span class="badge mono">' + escapeHtml(localSlugDisp) + " ↔ " + escapeHtml(targetSlugDisp) + "</span></div>" : "") +
               "<div>" + renderInlineMd(rel.synthesis || rel.label || "", q) + "</div>" +
             "</div>"
           );
@@ -2135,7 +2156,7 @@
       if (acode === "A") {
         var rowsA = Array.isArray(ann.traceability_table) ? ann.traceability_table : [];
         var totA = ann.totals || {};
-        html.push('<div class="doc-h4">Table maîtresse de traçabilité MindMap → PRD (' + escapeHtml(totA.domains || 12) + " domaines / " + escapeHtml(totA.chapters || 36) + " chapitres / " + escapeHtml(totA.families || 71) + " familles / " + escapeHtml(totA.themes || 260) + " thèmes)</div>");
+        html.push('<div class="doc-h4">Table maîtresse de traçabilité MindMap → PRD (' + escapeHtml(totA.domains || idx.counts.parties) + " domaines / " + escapeHtml(totA.chapters || idx.counts.chapters) + " chapitres / " + escapeHtml(totA.families || idx.counts.families) + " familles / " + escapeHtml(totA.themes || idx.counts.themes) + " thèmes)</div>");
         html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Ch.</th><th>Domaine</th><th>Sous-domaine MindMap</th><th>Chapitre PRD</th><th class="num">Fam.</th><th class="num">Thèmes</th><th class="num">Occ.</th><th>Tomes</th><th>Identifiants clés</th></tr></thead><tbody>');
         rowsA.forEach(function (r) {
           var cnum = Number(r.chapter_number);
@@ -2143,8 +2164,8 @@
             "<tr>" +
               '<td class="num"><button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + cnum + '">' + pad2(cnum) + "</button></td>" +
               '<td><span class="badge dom" style="background:' + domainColor(r.domain_id) + ';">' + escapeHtml(r.domain_id) + "</span></td>" +
-              '<td><code>' + escapeHtml(r.subdomain_node_id) + "</code> — " + escapeHtml(r.subdomain_title) + ' <a href="' + escapeHtml(mindmapHref("mindmap", r.subdomain_node_id)) + '">↗</a></td>' +
-              '<td><button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + cnum + '">' + escapeHtml(r.representative_title) + "</button></td>" +
+              '<td><code>' + escapeHtml(r.subdomain_node_id) + "</code> — " + renderInlineMd(r.subdomain_title, q) + ' <a href="' + escapeHtml(mindmapHref("mindmap", r.subdomain_node_id)) + '">↗</a></td>' +
+              '<td><button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + cnum + '">' + renderInlineMd(r.representative_title, "") + "</button></td>" +
               '<td class="num">' + escapeHtml(r.families_count) + "</td>" +
               '<td class="num">' + escapeHtml(r.themes_count) + "</td>" +
               '<td class="num">' + escapeHtml(r.occurrence_count) + "</td>" +
@@ -2156,14 +2177,15 @@
         html.push("</tbody></table></div>");
       } else if (acode === "B") {
         var rStats = Array.isArray(ann.relation_types_stats) ? ann.relation_types_stats : [];
-        html.push('<div class="doc-h4">Répartition des 616 interrelations par 8 types canoniques</div>');
+        var totalRelsB = rStats.reduce(function (acc, rt) { return acc + Number(rt.count || 0); }, 0) || idx.counts.relations;
+        html.push('<div class="doc-h4">Répartition des ' + totalRelsB + " interrelations par " + rStats.length + " types canoniques</div>");
         html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Type canonique</th><th>Libellé</th><th class="num">Cardinalité</th><th>Directionnalité</th><th>Règle sémantique</th></tr></thead><tbody>');
         rStats.forEach(function (rt) {
           var rc = relColor(rt.type_id);
           html.push(
             "<tr>" +
               '<td><span class="badge mono" style="border-color:' + rc + ";color:" + rc + ';">' + escapeHtml(rt.type_id) + "</span></td>" +
-              "<td>" + escapeHtml(rt.label) + "</td>" +
+              "<td>" + renderInlineMd(rt.label, q) + "</td>" +
               '<td class="num"><strong>' + escapeHtml(rt.count) + "</strong></td>" +
               "<td>" + escapeHtml(rt.directionality) + "</td>" +
               "<td>" + renderInlineMd(rt.semantic_rule, q) + "</td>" +
@@ -2173,14 +2195,14 @@
         html.push("</tbody></table></div>");
 
         var hubs = Array.isArray(ann.top_hubs) ? ann.top_hubs : [];
-        html.push('<div class="doc-h4">Top 20 des nœuds carrefours par degré d\'interrelations</div>');
+        html.push('<div class="doc-h4">Top ' + hubs.length + " des nœuds carrefours par degré d'interrelations</div>");
         html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th class="num">Rang</th><th>Nœud thématique</th><th>Domaine</th><th>Chapitre PRD</th><th class="num">Degré</th><th class="num">Occ.</th><th>Tomes</th></tr></thead><tbody>');
         hubs.forEach(function (h) {
           var cnum = Number(h.chapter_number);
           html.push(
             "<tr>" +
               '<td class="num">' + escapeHtml(h.rank) + "</td>" +
-              '<td><strong>' + escapeHtml(h.title) + '</strong> (<code>' + escapeHtml(h.canonical_slug) + '</code>) <a href="' + escapeHtml(mindmapHref("mindmap", h.node_id)) + '">↗</a></td>' +
+              '<td><strong>' + renderInlineMd(h.title, q) + '</strong> (<code>' + escapeHtml(h.canonical_slug) + '</code>) <a href="' + escapeHtml(mindmapHref("mindmap", h.node_id)) + '">↗</a></td>' +
               '<td><span class="badge dom" style="background:' + domainColor(h.domain_id) + ';">' + escapeHtml(h.domain_id) + "</span></td>" +
               '<td><button type="button" class="btn btn-sm" data-nav-kind="chapter" data-nav-ch="' + cnum + '" data-nav-focus-kind="thm" data-nav-focus-id="' + escapeHtml(h.node_id) + '">Ch. ' + pad2(cnum) + "</button></td>" +
               '<td class="num"><strong>' + escapeHtml(h.relation_degree) + "</strong></td>" +
@@ -2192,7 +2214,7 @@
         html.push("</tbody></table></div>");
 
         var tensions = Array.isArray(ann.tensions) ? ann.tensions : [];
-        html.push('<div class="inline-filter-row"><div class="doc-h4" style="margin:0;">Tensions d\'arbitrage structurantes (' + tensions.length + ' relations <code>tension_arbitrage</code>)</div><input class="inline-filter-input" type="search" data-table-filter="ann-b-tensions" placeholder="Filtrer les 62 tensions…" aria-label="Filtrer les tensions d\'arbitrage" /></div>');
+        html.push('<div class="inline-filter-row"><div class="doc-h4" style="margin:0;">Tensions d\'arbitrage structurantes (' + tensions.length + ' relations <code>tension_arbitrage</code>)</div><input class="inline-filter-input" type="search" data-table-filter="ann-b-tensions" placeholder="Filtrer les ' + tensions.length + ' tensions…" aria-label="Filtrer les tensions d\'arbitrage" /></div>');
         html.push('<div class="table-wrap"><table class="data-table" id="ann-b-tensions"><thead><tr><th>ID</th><th>Source</th><th>Cible</th><th>Intitulé</th><th>Justification d\'arbitrage</th></tr></thead><tbody>');
         tensions.forEach(function (tr) {
           html.push(
@@ -2230,7 +2252,7 @@
             );
           }
           if (Array.isArray(div02.coquilles) && div02.coquilles.length) {
-            html.push('<div style="font-size:12px;color:var(--text-muted);"><strong>Coquilles CAD26 v1.1 rectifiées :</strong> ' + div02.coquilles.map(function (c) { return escapeHtml(c); }).join(" · ") + "</div>");
+            html.push('<div style="font-size:12px;color:var(--text-muted);"><strong>Coquilles CAD26 v1.1 rectifiées :</strong> ' + div02.coquilles.map(function (c) { return renderInlineMd(c, q); }).join(" · ") + "</div>");
           }
           html.push("</div>");
         }
@@ -2242,7 +2264,7 @@
           recs.forEach(function (rec) {
             var varHtml = Array.isArray(rec.variants) && rec.variants.length
               ? '<div style="margin-top:4px;font-size:11.5px;color:var(--text-muted);">' + rec.variants.map(function (v) {
-                  return "<div><em>" + escapeHtml(v.volume) + " :</em> " + escapeHtml(v.definition) + "</div>";
+                  return "<div><em>" + renderInlineMd(v.volume, q) + " :</em> " + renderInlineMd(v.definition, q) + "</div>";
                 }).join("") + "</div>"
               : "";
             html.push(
@@ -2263,12 +2285,13 @@
           html.push('<div class="table-wrap"><table class="data-table" id="ann-c-timeline"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Source</th><th>Tomes</th></tr></thead><tbody>');
           tl.forEach(function (ev) {
             var srcHref = ev.file ? corpusHref(ev.file, ev.line_start) : "#";
+            var srcLabel = ev.source_group || (Array.isArray(ev.sources) ? ev.sources.join(" · ") : "Corpus");
             html.push(
               "<tr>" +
-                '<td><code>' + escapeHtml(ev.date) + "</code></td>" +
+                '<td><code>' + escapeHtml(String(ev.date || "").replace(/\\\$/g, "$")) + "</code></td>" +
                 "<td><strong>" + renderInlineMd(ev.cadre, q) + "</strong></td>" +
                 "<td>" + renderInlineMd(ev.impact, q) + "</td>" +
-                '<td><a href="' + escapeHtml(srcHref) + '">' + escapeHtml(ev.source_group || "Corpus") + " ↗</a></td>" +
+                '<td><a href="' + escapeHtml(srcHref) + '">' + renderInlineMd(srcLabel, q) + " ↗</a></td>" +
                 "<td>" + escapeHtml((ev.tomes || []).join(", ")) + "</td>" +
               "</tr>"
             );
@@ -2294,7 +2317,7 @@
             "Vecteurs tiers : <code>" + escapeHtml(t8.g0_vecteurs_tiers || "4/4 suites") + "</code> · " +
             "SPDX : <code>" + escapeHtml(t8.g0_spdx_mit || "MIT") + "</code>" +
             (t8.ca_g0_sync_extraits ? " · <code>" + escapeHtml(t8.ca_g0_sync_extraits) + "</code> extraits CA-G0-SYNC" : "") +
-            (w8.finales_supportees ? " · Wyvern G2 : <code>" + escapeHtml(w8.initiales) + " -> " + escapeHtml(w8.finales_supportees) + "</code> (" + escapeHtml(w8.taux || "100 %") + ")" : "") +
+            (w8.finales_supportees ? " · Wyvern G2 : <code>" + escapeHtml(w8.initiales) + " → " + escapeHtml(w8.finales_supportees) + "</code> (" + escapeHtml(w8.taux || "100 %") + ")" : "") +
             (g3_t8 ? " · Recollation G3 (" + escapeHtml(g3_t8) + ")" : "") +
             " · Recollation G4 : <code>" + escapeHtml(t8.g4_gauntlet_loop || "") + "</code> · " +
             "G5 : <code>" + escapeHtml(t8.g5_visuel || "") + "</code>.</li>"
@@ -2302,7 +2325,7 @@
         if (t7.sources_l_plus) {
           var w7 = t7.wyvern_g2 || {};
           var g3_t7 = Array.isArray(t7.recollation_g3) ? t7.recollation_g3.map(function (r) { return "seed " + r.seed + " : " + r.final; }).join(", ") : "";
-          html.push("<li><strong>Tome 7 (<code>G1–G5</code>) :</strong> <code>" + escapeHtml(t7.sources_l_plus) + "</code> sources <code>L+</code> (" + escapeHtml(t7.statut_f_exclus) + " statut F exclus), Wyvern G2 : <code>" + escapeHtml(w7.unites || 13) + "</code> unités, <code>" + escapeHtml(w7.initiales || 1084) + " -> " + escapeHtml(w7.finales_supportees || 1087) + "</code> assertions (<code>" + escapeHtml(w7.taux || "100 %") + "</code>)" + (g3_t7 ? ", recollation G3 (" + escapeHtml(g3_t7) + ")" : "") + ".</li>");
+          html.push("<li><strong>Tome 7 (<code>G1–G5</code>) :</strong> <code>" + escapeHtml(t7.sources_l_plus) + "</code> sources <code>L+</code> (" + escapeHtml(t7.statut_f_exclus) + " statut F exclus), Wyvern G2 : <code>" + escapeHtml(w7.unites || 13) + "</code> unités, <code>" + escapeHtml(w7.initiales || 1084) + " → " + escapeHtml(w7.finales_supportees || 1087) + "</code> assertions (<code>" + escapeHtml(w7.taux || "100 %") + "</code>)" + (g3_t7 ? ", recollation G3 (" + escapeHtml(g3_t7) + ")" : "") + ".</li>");
         }
         if (t5.echantillon_stratifie) {
           html.push("<li><strong>Tome 5 (<code>CA-16</code>) :</strong> échantillon stratifié <code>" + escapeHtml(t5.echantillon_stratifie) + "</code> items, passe 1 <code>" + escapeHtml(t5.passe_1 || "") + "</code>, passe finale <code>" + escapeHtml(t5.passe_2_finale || "100 %") + "</code>.</li>");
@@ -2319,9 +2342,20 @@
         }
 
         var dist = Array.isArray(ann.matrix_distribution) ? ann.matrix_distribution : [];
-        var totalDist = dist.reduce(function (a, d) { return a + Number(d.count || 0); }, 0);
+        var mall = Array.isArray(ann.matrix_all) ? ann.matrix_all : [];
+        var mtot = ann.matrix_totals || {};
+        var totalDist = Number(mtot.unique_entries) || mall.length || dist.reduce(function (a, d) { return a + Number(d.count || 0); }, 0);
         if (dist.length) {
-          html.push('<div class="doc-h4">Distribution des ' + totalDist + " entrées de la matrice de traçabilité par famille</div>");
+          html.push('<div class="doc-h4">Distribution des ' + totalDist + " entrées uniques de la matrice de traçabilité par famille</div>");
+          if (mtot.unique_entries) {
+            html.push(
+              '<div class="badge-row" style="margin-bottom:6px;">' +
+                '<span class="badge mono">' + escapeHtml(mtot.unique_entries) + " entrées uniques</span>" +
+                (mtot.tome8_executable_tests != null ? '<span class="badge ok">' + escapeHtml(mtot.tome8_executable_tests) + " tests exécutables Tome 8</span>" : "") +
+                (mtot.shared_ids_merged != null ? '<span class="badge">' + escapeHtml(mtot.shared_ids_merged) + " IDs partagés fusionnés sans double-comptage</span>" : "") +
+              "</div>"
+            );
+          }
           html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Famille principale</th><th class="num">Entrées</th><th>Détail par criticité / catégorie</th></tr></thead><tbody>');
           dist.forEach(function (d) {
             var subs = (d.subfamilies || []).map(function (s) { return "<code>" + escapeHtml(s.name) + "</code> (" + escapeHtml(s.count) + ")"; }).join(", ");
@@ -2335,7 +2369,7 @@
           html.push('<div class="doc-h4">Extrait stratifié multi-familles <code>EXIG / CAP / PRR-75 / C01–C40 / 5 SBB / PEX</code> (' + samp.length + " sur " + totalDist + ")</div>");
           html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Identifiant</th><th>Famille / Criticité</th><th>Intitulé / Règle / Test</th><th>Module / Preuve</th><th>Ancrage</th></tr></thead><tbody>');
           samp.forEach(function (item) {
-            html.push("<tr><td><code>" + escapeHtml(item.id) + "</code></td><td>" + escapeHtml(item.family) + "</td><td>" + escapeHtml(item.title) + "</td><td><code>" + escapeHtml(item.module) + "</code></td><td>" + escapeHtml(item.anchor) + "</td></tr>");
+            html.push("<tr><td><code>" + escapeHtml(item.id) + "</code></td><td>" + renderInlineMd(item.family, q) + "</td><td>" + renderInlineMd(item.title, q) + '</td><td><span class="mono">' + renderInlineMd(item.module, q) + "</span></td><td>" + renderInlineMd(item.anchor, q) + "</td></tr>");
           });
           html.push("</tbody></table></div>");
         }
@@ -2343,10 +2377,10 @@
         var exig = ann.exig_cre_ia || {};
         if (Array.isArray(exig.familles) && exig.familles.length) {
           var rf = exig.repartition_force || {};
-          html.push('<div class="doc-h4">Répartition des 16 familles normatives <code>' + escapeHtml(exig.code_norme || "CRE-IA-2026-01") + "</code> (" + escapeHtml(exig.total || 305) + " <code>EXIG-*</code> : <code>DOIT</code> " + escapeHtml(rf.DOIT || 255) + ", <code>NE_DOIT_PAS</code> " + escapeHtml(rf.NE_DOIT_PAS || 34) + ", <code>DEVRAIT</code> " + escapeHtml(rf.DEVRAIT || 16) + ")</div>");
+          html.push('<div class="doc-h4">Répartition des ' + exig.familles.length + " familles normatives <code>" + escapeHtml(exig.code_norme || "CRE-IA-2026-01") + "</code> (" + escapeHtml(exig.total || 305) + " <code>EXIG-*</code> : <code>DOIT</code> " + escapeHtml(rf.DOIT || 255) + ", <code>NE_DOIT_PAS</code> " + escapeHtml(rf.NE_DOIT_PAS || 34) + ", <code>DEVRAIT</code> " + escapeHtml(rf.DEVRAIT || 16) + ")</div>");
           html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Préfixe</th><th>Famille</th><th>Emplacement Tome 2</th><th class="num">Nombre</th></tr></thead><tbody>');
           exig.familles.forEach(function (f) {
-            html.push("<tr><td><code>" + escapeHtml(f.prefixe) + "</code></td><td>" + escapeHtml(f.titre) + "</td><td>" + escapeHtml(f.emplacement_t2) + '</td><td class="num">' + escapeHtml(f.nombre) + "</td></tr>");
+            html.push("<tr><td><code>" + escapeHtml(f.prefixe) + "</code></td><td>" + renderInlineMd(f.titre, q) + "</td><td>" + renderInlineMd(f.emplacement_t2, q) + '</td><td class="num">' + escapeHtml(f.nombre) + "</td></tr>");
           });
           html.push("</tbody></table></div>");
         }
@@ -2358,14 +2392,14 @@
           if (sbbs.length) {
             html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Bloc SBB</th><th>Rôle</th><th>Plan</th><th>Module trousse Tome 8</th></tr></thead><tbody>');
             sbbs.forEach(function (s) {
-              html.push("<tr><td><code>" + escapeHtml(s.sbb_id) + "</code></td><td><code>" + escapeHtml(s.slot) + "</code></td><td>" + escapeHtml(s.plan) + "</td><td><code>" + escapeHtml(s.module_t8) + "</code></td></tr>");
+              html.push("<tr><td><code>" + escapeHtml(s.sbb_id) + "</code></td><td><code>" + escapeHtml(s.slot) + "</code></td><td>" + renderInlineMd(s.plan, q) + "</td><td><code>" + escapeHtml(s.module_t8) + "</code></td></tr>");
             });
             html.push("</tbody></table></div>");
           }
           if (Array.isArray(bps.blueprints)) {
             html.push("<ul>");
             bps.blueprints.forEach(function (b) {
-              html.push("<li><strong><code>" + escapeHtml(b.blueprint_id) + "</code> :</strong> " + escapeHtml(b.ref_tome6) + "</li>");
+              html.push("<li><strong><code>" + escapeHtml(b.blueprint_id) + "</code> :</strong> " + renderInlineMd(b.ref_tome6, q) + "</li>");
             });
             var cb = bps.c40_breakdown || {};
             if (cb.total) {
@@ -2375,13 +2409,12 @@
           }
         }
 
-        var mall = Array.isArray(ann.matrix_all) ? ann.matrix_all : [];
         if (mall.length) {
-          html.push('<details class="ann-details"><summary>Matrice de traçabilité complète (' + mall.length + " entrées EXIG / CAP / PRR-75 / C01–C40 / PEX / 5 SBB)</summary>");
+          html.push('<details class="ann-details" open><summary>Matrice de traçabilité complète dédupliquée (' + mall.length + " entrées EXIG / CAP / PRR-75 / C01–C40 / PEX / 5 SBB)</summary>");
           html.push('<div class="inline-filter-row"><span style="font-size:12px;color:var(--text-muted);">Filtrer les ' + mall.length + ' entrées :</span><input class="inline-filter-input" type="search" data-table-filter="ann-d-matrix-all" placeholder="ex. PRR, BLOQUANT, C14, CAP-046, PEX…" aria-label="Filtrer la matrice complète" /></div>');
           html.push('<div class="table-wrap"><table class="data-table" id="ann-d-matrix-all"><thead><tr><th>Identifiant</th><th>Famille / Criticité</th><th>Intitulé / Règle / Test</th><th>Module / Preuve</th><th>Ancrage</th></tr></thead><tbody>');
           mall.forEach(function (item) {
-            html.push("<tr><td><code>" + escapeHtml(item.id) + "</code></td><td>" + escapeHtml(item.family) + "</td><td>" + escapeHtml(item.title) + "</td><td><code>" + escapeHtml(item.module) + "</code></td><td>" + escapeHtml(item.anchor) + "</td></tr>");
+            html.push("<tr><td><code>" + escapeHtml(item.id) + "</code></td><td>" + renderInlineMd(item.family, q) + "</td><td>" + renderInlineMd(item.title, q) + '</td><td><span class="mono">' + renderInlineMd(item.module, q) + "</span></td><td>" + renderInlineMd(item.anchor, q) + "</td></tr>");
           });
           html.push("</tbody></table></div></details>");
         }
@@ -2450,7 +2483,7 @@
         parts.push(
           '<div class="callout" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">' +
             "<span>Filtre actif : <strong>" + fState.counts.themes + "</strong> thème(s) dans <strong>" + fState.counts.chapters + "</strong> chapitre(s) et <strong>" + fState.counts.parties + "</strong> partie(s).</span>" +
-            '<button type="button" class="btn btn-sm" id="prd-banner-reset-btn">Afficher tout (260 thèmes)</button>' +
+            '<button type="button" class="btn btn-sm" id="prd-banner-reset-btn">Afficher tout (' + idx.counts.themes + " thèmes)</button>" +
           "</div>"
         );
       }
@@ -2560,6 +2593,7 @@
       var elPrintBtn = doc.getElementById("prd-print-btn");
       var elMain = doc.getElementById("prd-main");
       var elContent = doc.getElementById("prd-content");
+      var elOpenMindmapLink = doc.getElementById("prd-open-mindmap-link");
       var elSourceLink = doc.getElementById("prd-source-md-link");
 
       function populateStaticChrome() {
@@ -2612,6 +2646,25 @@
         if (elModeBtn) {
           elModeBtn.textContent = state.mode === "full" ? "Mode : Document intégral" : "Mode : Chapitre ciblé";
           elModeBtn.classList.toggle("active", state.mode === "full");
+          if (typeof elModeBtn.setAttribute === "function") {
+            elModeBtn.setAttribute("aria-pressed", String(state.mode === "full"));
+          }
+        }
+        if (elOpenMindmapLink && typeof elOpenMindmapLink.setAttribute === "function") {
+          var mmTargetNode = null;
+          var curT = state.target || {};
+          if (curT.kind === "part") {
+            var curP = idx.partyByDomain[curT.domainId];
+            mmTargetNode = curP && curP.domain_node_id ? curP.domain_node_id : null;
+          } else if (curT.kind === "chapter") {
+            if ((curT.focusKind === "thm" || curT.focusKind === "fam") && curT.focusId) {
+              mmTargetNode = curT.focusId;
+            } else {
+              var curCh = idx.chapterByNum[Number(curT.chapterNumber)];
+              mmTargetNode = curCh && curCh.subdomain_node_id ? curCh.subdomain_node_id : null;
+            }
+          }
+          elOpenMindmapLink.setAttribute("href", mindmapHref("mindmap", mmTargetNode));
         }
 
         var tocOut = renderTocHtml(idx, state.tocFilter, state, fState);
@@ -2726,13 +2779,19 @@
         var allOpen = state.tocExpanded.size >= (idx.parties.length + idx.chapters.length + 5);
         if (allOpen) {
           state.tocExpanded = new Set(["TOC_EXEC"]);
-          if (elTocExpand) elTocExpand.textContent = "Tout déplier";
+          if (elTocExpand) {
+            elTocExpand.textContent = "Tout déplier";
+            if (typeof elTocExpand.setAttribute === "function") elTocExpand.setAttribute("aria-expanded", "false");
+          }
         } else {
           state.tocExpanded.add("TOC_EXEC");
           idx.parties.forEach(function (p) { state.tocExpanded.add("TOC_PART_" + p.domain_id); });
           idx.chapters.forEach(function (c) { state.tocExpanded.add("TOC_CH_" + c.chapter_number); });
           idx.annexes.forEach(function (a) { state.tocExpanded.add("TOC_ANN_" + a.annexe_code); });
-          if (elTocExpand) elTocExpand.textContent = "Tout replier";
+          if (elTocExpand) {
+            elTocExpand.textContent = "Tout replier";
+            if (typeof elTocExpand.setAttribute === "function") elTocExpand.setAttribute("aria-expanded", "true");
+          }
         }
         renderAll(false);
       }
@@ -2778,14 +2837,14 @@
         var results = searchPrd(idx, q, 24);
         state.searchResults = results;
         if (!results.length) {
-          elSearchDrop.innerHTML = '<div class="search-item"><span class="search-item-meta">Aucun résultat pour « ' + escapeHtml(q) + " »</span></div>";
+          elSearchDrop.innerHTML = '<div class="search-empty" role="status" style="padding:8px 10px;"><span class="search-item-meta">Aucun résultat pour « ' + escapeHtml(q) + " »</span></div>";
           elSearchDrop.classList.add("open");
           renderAll(false);
           return;
         }
         elSearchDrop.innerHTML = results.map(function (r, idxItem) {
           return (
-            '<button type="button" class="search-item" data-search-idx="' + idxItem + '">' +
+            '<button type="button" class="search-item" role="option" data-search-idx="' + idxItem + '">' +
               '<span class="search-item-head"><span class="badge mono">' + escapeHtml(r.kind) + "</span> " + highlightPlain(escapeHtml(r.title), q) + "</span>" +
               '<span class="search-item-meta">' + escapeHtml(r.subtitle) + "</span>" +
             "</button>"
@@ -2827,6 +2886,9 @@
           var collapsed = !elTocSidebar.classList.contains("collapsed");
           elTocSidebar.classList.toggle("collapsed", collapsed);
           elTocToggle.classList.toggle("active", !collapsed);
+          if (typeof elTocToggle.setAttribute === "function") {
+            elTocToggle.setAttribute("aria-expanded", String(!collapsed));
+          }
         });
       }
       if (elPrintBtn) {
@@ -2876,6 +2938,16 @@
           }
           var navEl = e.target && typeof e.target.closest === "function" ? e.target.closest("[data-nav-kind]") : null;
           if (navEl) handleNavElement(navEl);
+        });
+        elTocTree.addEventListener("keydown", function (e) {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          var exp = e.target && typeof e.target.closest === "function" ? e.target.closest("[data-toc-toggle]") : null;
+          if (exp) return;
+          var navEl = e.target && typeof e.target.closest === "function" ? e.target.closest("[data-nav-kind]") : null;
+          if (navEl) {
+            e.preventDefault();
+            handleNavElement(navEl);
+          }
         });
       }
 

@@ -345,7 +345,7 @@
         "id": "T1",
         "titre": "Sobriété empirique et preuve",
         "chapitre_t5": "Ch. 1",
-        "resume": "Malgré 19,2 % d'usage IA au Canada (40,4 % en finance), 68 % des cas MAP ont <= 10 étapes (16/20 sur flux fixes), Lusser fait chuter 10 étapes à 94 % vers 53,9 %, MAST relève 41–86,7 % d'échecs sur 1 642 traces v3 et METR v1.1 chute de ~17,4 h (50 %) à ~3,1 h (80 %). Arbre : N0 -> flux déterministe -> agent unique -> multiagent sur gain mesuré."
+        "resume": "Malgré 19,2 % d'usage IA au Canada (40,4 % en finance), 68 % des cas MAP ont <= 10 étapes (16/20 sur flux fixes), Lusser fait chuter 10 étapes à 94 % vers 53,9 %, MAST relève 41–86,7 % d'échecs sur 1 642 traces v3 et METR v1.1 chute de ~17,4 h (50 %) à ~3,1 h (80 %). Arbre : N0 → flux déterministe → agent unique → multiagent sur gain mesuré."
       },
       {
         "id": "T2",
@@ -436,88 +436,100 @@
     ],
     "table_orientation_t5_vers_4_volumes": [
       {
+        "entree_t5": "",
+        "C26": "ch. 1, 7, 35, 42, 43, 49–50, Ann. B, N",
         "Chapitre": "**Ch. 1** — Preuve & thèse",
-        "`C26`": "ch. 1, 7, 35, 42, 43, 49–50, Ann. B, N",
-        "`CAD26`": "ch. 1, 2, 4, 7, 8, 10, Ann. H",
-        "`C27`": "§ 0.2, 0.5, ch. 1–4, 16, 17, 21, 40, 42, 48–50, Ann. E, F.3",
-        "`PD28`": "M-1, M-2, M-6 à M-8"
+        "CAD26": "ch. 1, 2, 4, 7, 8, 10, Ann. H",
+        "C27": "§ 0.2, 0.5, ch. 1–4, 16, 17, 21, 40, 42, 48–50, Ann. E, F.3",
+        "PD28": "M-1, M-2, M-6 à M-8"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 7, 41–44",
         "Chapitre": "**Ch. 2** — Modèles & `DIV-02`",
-        "`C26`": "ch. 7, 41–44",
-        "`CAD26`": "Sommaire, ch. 4, 5, 11, 13, 14, Ann. A, D, H",
-        "`C27`": "§ 0.1, 0.4, ch. 1, 20, 23, 26, 27, 43, Ann. F",
-        "`PD28`": "M-2, M-9 à M-13, Ann. E"
+        "CAD26": "Sommaire, ch. 4, 5, 11, 13, 14, Ann. A, D, H",
+        "C27": "§ 0.1, 0.4, ch. 1, 20, 23, 26, 27, 43, Ann. F",
+        "PD28": "M-2, M-9 à M-13, Ann. E"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 7–11, 37, 42, Ann. N.2",
         "Chapitre": "**Ch. 3** — Protocoles & `PEP`",
-        "`C26`": "ch. 7–11, 37, 42, Ann. N.2",
-        "`CAD26`": "ch. 6, § 9.4 (Fig. 18), § 11.7, Ann. H.2, H.4",
-        "`C27`": "ch. 5–11, 19, 24, 26, 27, § 49.7",
-        "`PD28`": "M-4, M-11, M-13"
+        "CAD26": "ch. 6, § 9.4 (Fig. 18), § 11.7, Ann. H.2, H.4",
+        "C27": "ch. 5–11, 19, 24, 26, 27, § 49.7",
+        "PD28": "M-4, M-11, M-13"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 2, 5, 34, 43 (`PC4` `[S]`)",
         "Chapitre": "**Ch. 4** — Contexte & `CoALA`",
-        "`C26`": "ch. 2, 5, 34, 43 (`PC4` `[S]`)",
-        "`CAD26`": "§ 5.2 (C5–C6), § 5.5 (Fig. 4, Tab. 13), ch. 12",
-        "`C27`": "§ 3.3, ch. 12–15, 25, 28",
-        "`PD28`": "M-4 (§ 4.5), M-10, M-13"
+        "CAD26": "§ 5.2 (C5–C6), § 5.5 (Fig. 4, Tab. 13), ch. 12",
+        "C27": "§ 3.3, ch. 12–15, 25, 28",
+        "PD28": "M-4 (§ 4.5), M-10, M-13"
       },
       {
+        "entree_t5": "",
+        "C26": "§ 1.5.2, ch. 22, 29, 31, 48",
         "Chapitre": "**Ch. 5** — Durable & sagas",
-        "`C26`": "§ 1.5.2, ch. 22, 29, 31, 48",
-        "`CAD26`": "§ 5.2, ch. 7 (Tab. 24 & 26)",
-        "`C27`": "ch. 16–21",
-        "`PD28`": "M-9, M-10, M-13"
+        "CAD26": "§ 5.2, ch. 7 (Tab. 24 & 26)",
+        "C27": "ch. 16–21",
+        "PD28": "M-9, M-10, M-13"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 14, 17, 27, 29, 31, 43, Ann. N.3",
         "Chapitre": "**Ch. 6** — Autonomie & `CIBA`",
-        "`C26`": "ch. 14, 17, 27, 29, 31, 43, Ann. N.3",
-        "`CAD26`": "ch. 8 (Fig. 16), ch. 11, § 12.2, ch. 14",
-        "`C27`": "§ 0.4, ch. 22, § 30.4/30.9, ch. 38, 41",
-        "`PD28`": "M-7, M-12, M-24, M-26"
+        "CAD26": "ch. 8 (Fig. 16), ch. 11, § 12.2, ch. 14",
+        "C27": "§ 0.4, ch. 22, § 30.4/30.9, ch. 38, 41",
+        "PD28": "M-7, M-12, M-24, M-26"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 14, 16–21, Ann. N.2",
         "Chapitre": "**Ch. 7** — Confiance & `PQC`",
-        "`C26`": "ch. 14, 16–21, Ann. N.2",
-        "`CAD26`": "ch. 9 (Tab. 39), Tab. 10, Ann. H.2, H.5",
-        "`C27`": "ch. 29–32, § 49.5–49.7",
-        "`PD28`": "M-5 (§ 5.1–5.5)"
+        "CAD26": "ch. 9 (Tab. 39), Tab. 10, Ann. H.2, H.5",
+        "C27": "ch. 29–32, § 49.5–49.7",
+        "PD28": "M-5 (§ 5.1–5.5)"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 38–40, Ann. N.2",
         "Chapitre": "**Ch. 8** — `OTel`, audit & `CPO`",
-        "`C26`": "ch. 38–40, Ann. N.2",
-        "`CAD26`": "ch. 10, Tab. 10, Ann. H.2",
-        "`C27`": "ch. 33, 34, 40",
-        "`PD28`": "M-7, M-24 (§ 24.4)"
+        "CAD26": "ch. 10, Tab. 10, Ann. H.2",
+        "C27": "ch. 33, 34, 40",
+        "PD28": "M-7, M-24 (§ 24.4)"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 47, 50",
         "Chapitre": "**Ch. 9** — Substrats & B2B",
-        "`C26`": "ch. 47, 50",
-        "`CAD26`": "§ 5.2–5.3, ch. 6, 9, 11–13",
-        "`C27`": "ch. 37, 44–46",
-        "`PD28`": "M-11, M-13"
+        "CAD26": "§ 5.2–5.3, ch. 6, 9, 11–13",
+        "C27": "ch. 37, 44–46",
+        "PD28": "M-11, M-13"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 25–36, Ann. N.3",
         "Chapitre": "**Ch. 10** — Droit & `24 PEX`",
-        "`C26`": "ch. 25–36, Ann. N.3",
-        "`CAD26`": "ch. 12, Ann. H.3, H.5",
-        "`C27`": "ch. 35–38",
-        "`PD28`": "M-3, M-14 à M-18, Ann. D"
+        "CAD26": "ch. 12, Ann. H.3, H.5",
+        "C27": "ch. 35–38",
+        "PD28": "M-3, M-14 à M-18, Ann. D"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 24, 36, 39, 41, 47",
         "Chapitre": "**Ch. 11** — 3 lignes & usine",
-        "`C26`": "ch. 24, 36, 39, 41, 47",
-        "`CAD26`": "ch. 11, 13",
-        "`C27`": "ch. 27, 37, 39, 41, 47",
-        "`PD28`": "M-11, M-20–M-24, M-26"
+        "CAD26": "ch. 11, 13",
+        "C27": "ch. 27, 37, 39, 41, 47",
+        "PD28": "M-11, M-20–M-24, M-26"
       },
       {
+        "entree_t5": "",
+        "C26": "ch. 46, 50",
         "Chapitre": "**Ch. 12** — Portes & `DAPP`",
-        "`C26`": "ch. 46, 50",
-        "`CAD26`": "ch. 14, 15, Ann. A",
-        "`C27`": "ch. 43, Ann. F.4, Ann. G",
-        "`PD28`": "M-19 à M-26"
+        "CAD26": "ch. 14, 15, Ann. A",
+        "C27": "ch. 43, Ann. F.4, Ann. G",
+        "PD28": "M-19 à M-26"
       }
     ]
   },
@@ -565,12 +577,12 @@
             {
               "volume": "Vol. 3 (3 - Compendium 2027.md)",
               "definition": "L0 désigne le traitement purement déterministe sans IA ni appel de modèle ; L1 à L4 couvrent la progression de l'assistance jusqu'à l'autonomie supervisée.",
-              "corpus_ref": "3 - Compendium 2027.md L275-L310; C01 (6 - Livre Blanc.md L5007)"
+              "corpus_ref": "3 - Compendium 2027.md L275–L310; C01 (6 - Livre Blanc.md L5007)"
             },
             {
               "volume": "Vol. 7 (7 - Livre.md)",
               "definition": "L0 désigne une lecture et une synthèse assistées par IA sans droit d'écriture ni d'action autonome ; L1 à L4 graduent l'invocation d'outils et les mutations sous contrôle.",
-              "corpus_ref": "7 - Livre.md L184-L202"
+              "corpus_ref": "7 - Livre.md L184–L202"
             }
           ],
           "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (0.2) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
@@ -589,12 +601,12 @@
             {
               "volume": "Vol. 4 & Vol. 5 (Plan Directeur & Mémoire)",
               "definition": "Segmentation de portefeuille en Classes 1–6, Stades de maturité 0–4 et Paliers 1–3 sur l'horizon pluriannuel.",
-              "corpus_ref": "5 - Memoire.md L897-L907; 4 - Plan Directeur.md L3185-L3241"
+              "corpus_ref": "5 - Memoire.md L897–L907; 4 - Plan Directeur.md L3185–L3241"
             },
             {
               "volume": "Vol. 6 (6 - Livre Blanc.md)",
               "definition": "Paliers R1–R4 régissant l'inscription au registre d'agents et l'exigence de revue indépendante 2LoD dès R3.",
-              "corpus_ref": "6 - Livre Blanc.md L5011-L5012 (C05-C06)"
+              "corpus_ref": "6 - Livre Blanc.md L5011–L5012 (C05-C06)"
             }
           ],
           "canonical_vol8_choice": "Conformément à AO-03, la prose du Volume 8 proscrit « Classe 1–6 », « Stade 0–4 » et « Palier 1–3 » ; le noyau technique utilise exclusivement les 3 niveaux de criticité (BLOQUANT, OBLIGATOIRE, RECOMMANDE) et les paliers d'outils P0–P3 avec table de correspondance dans 0.2.",
@@ -608,12 +620,12 @@
             {
               "volume": "Vol. 2 (2 - Cadre de Référence.md)",
               "definition": "Six couches techniques horizontales traversées par trois plans transversaux A (identité, autorisation, garde-fous, approbation), B (télémétrie, évaluation, audit, FinOps) et C (transport/outillage).",
-              "corpus_ref": "2 - Cadre de Référence.md L1029-L1092, L1360-L1361"
+              "corpus_ref": "2 - Cadre de Référence.md L1029–L1092, L1360–L1361"
             },
             {
               "volume": "Vol. 6 & Vol. 7 (Livre Blanc & Gouverner)",
               "definition": "Quatre plans applicatifs du SI global (Vol. 6 C03) versus quatre plans du noyau de contrôle déterministe possédé hors modèle (Vol. 7).",
-              "corpus_ref": "6 - Livre Blanc.md L607-L705, L5009; 7 - Livre.md L634-L680"
+              "corpus_ref": "6 - Livre Blanc.md L607–L705, L5009; 7 - Livre.md L634–L680"
             },
             {
               "volume": "Vol. 5 (5 - Memoire.md)",
@@ -632,12 +644,12 @@
             {
               "volume": "Vol. 6 (6 - Livre Blanc.md)",
               "definition": "Vues modélisées en ArchiMate 3.2 typant l'agent comme «Cognitive Actor» relié à «Human-on-the-Loop» et «Guardrail Policy» (critère C02).",
-              "corpus_ref": "6 - Livre Blanc.md L544-L605, L5008"
+              "corpus_ref": "6 - Livre Blanc.md L544–L605, L5008"
             },
             {
               "volume": "Vol. 1 & Vol. 5 (Compendium 2026 & Mémoire)",
               "definition": "Référence à ArchiMate 4.0 (document The Open Group C260 publié le 27 avril 2026).",
-              "corpus_ref": "1 - Compendium 2026.md L10062-L10090; 5 - Memoire.md L372"
+              "corpus_ref": "1 - Compendium 2026.md L10062–L10090; 5 - Memoire.md L372"
             }
           ],
           "canonical_vol8_choice": "Neutralité de notation : aucun artefact ArchiMate propriétaire n'est requis au gate G0 ; les stéréotypes de séparation contrôleur/acteur/politique restent compatibles aussi bien avec les profils 3.2 qu'avec 4.0 (C260).",
@@ -656,7 +668,7 @@
             {
               "volume": "Vol. 1, 2, 3, 5, 6 & Vol. 8",
               "definition": "Épinglent la révision MCP 2026-07-28 (Streamable HTTP stateless par défaut, en-têtes Mcp-Method / Mcp-Name, ttlMs/cacheScope, JSON Schema 2020-12) et documentent le cycle SEP-2596 (>= 12 mois) et SEP-3398 (report de déc. 2026 au 30 mars 2027).",
-              "corpus_ref": "2 - Cadre de Référence.md L1867-L1888; SRC-072, SRC-074, SRC-078, SRC-080, SRC-081, SRC-082"
+              "corpus_ref": "2 - Cadre de Référence.md L1867–L1888; SRC-072, SRC-074, SRC-078, SRC-080, SRC-081, SRC-082"
             }
           ],
           "canonical_vol8_choice": "Épinglage normatif strict sur MCP 2026-07-28 (commit 5f5440bb) avec refus explicite du transport déprécié HTTP+SSE dans StreamableHttpAdapter (harness_proto/mcp_pinning.py) et isolation par McpTransportAdapter pour la fenêtre SEP-2596 jusqu'au 2027-07-28 et la cible SEP-3398 du 30 mars 2027.",
@@ -701,37 +713,37 @@
     ],
     "rampe_et_paliers_dapp_t5": [
       {
-        "phase": "90 jours (J1 — Fondations)",
+        "phase": "90 jours — J1 : Fondations",
         "horizon": "Immédiat",
         "stade": "N0–N1 / Stade 1",
         "jalons": "Inventaire 5 j ouvrables, zéro clé fixe, passerelle modèles, ÉFVP, coupe-circuit."
       },
       {
-        "phase": "9 mois (J2 — Plateforme)",
+        "phase": "9 mois — J2 : Plateforme",
         "horizon": "2027",
         "stade": "Stade 2 partiel",
         "jalons": "PEP, JCS/CIBA, TLS 100 j (15 mars 2027 D), BSIF E-23 & AMF IA (1er mai 2027 D), MCP 2026-07-28 (28 juill. 2027 D)."
       },
       {
-        "phase": "18 mois (J3 — Industrialisation)",
+        "phase": "18 mois — J3 : Industrialisation",
         "horizon": "Fin 2027",
         "stade": "Niveau 3 Défini / Stade 2",
         "jalons": "EU AI Act Annexe III (2 déc. 2027 D), sagas compensatoires, bancs E1–E3."
       },
       {
-        "phase": "Palier 1 (P1)",
+        "phase": "Palier 1 : P1",
         "horizon": "2028–2029",
         "stade": "Stade 2 (14 s.r. + 1 cond. INI, POR-001..004)",
         "jalons": "6 substrats, showback CPO, fin rétrofacturations NI 31-103 (1er oct. 2028 D), BSIF B-15 portée 3 (fin 2028 D), TLS 1.3 hybride et TLS 47 j (15 mars 2029 D)."
       },
       {
-        "phase": "Palier 2 (P2)",
+        "phase": "Palier 2 : P2",
         "horizon": "2030–2032",
         "stade": "Stade 3 (9 s.r. + 7 cond. INI, POR-005..009)",
         "jalons": "Sémantique, bi-temporalité, repli bimodèle, API ouvertes, chargeback CPO et POR-007 (ML-DSA kid, SCITT) sur fenêtre G7 2030–2032 A."
       },
       {
-        "phase": "Palier 3 (P3)",
+        "phase": "Palier 3 : P3",
         "horizon": "2033–2035",
         "stade": "Stade 3 / Stade 4 sélectif (4 s.r. + 6 cond. INI, POR-011..014)",
         "jalons": "Post-temporisation lois financières Canada (30 juin 2033 D), mandats vLEI (POR-013), PQC financier G7 2035 A sous POR-015 (< 60 s) et POR-016."
@@ -771,7 +783,7 @@
         "date": "2023-09-22",
         "nature": "Loi applicable",
         "jurisdiction": "Québec",
-        "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 ; droit à la portabilité en vigueur depuis le 22 septembre 2024 : information, explication, observation et révision humaine effective ; sanctions administratives jusqu'à 10 M\\$ CA ou 2 % et amendes pénales jusqu'à 25 M\\$ CA ou 4 % du chiffre d'affaires mondial)",
+        "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 ; droit à la portabilité en vigueur depuis le 22 septembre 2024 : information, explication, observation et révision humaine effective ; sanctions administratives jusqu'à 10 M$ CA ou 2 % et amendes pénales jusqu'à 25 M$ CA ou 4 % du chiffre d'affaires mondial)",
         "chapters": [
           "ch05",
           "ch10",
@@ -779,7 +791,7 @@
         ],
         "statut_preuve": "l_plus",
         "source_l_plus_id": "SRC-063, SRC-064",
-        "commentaire_annexe": "Vérifié aux articles 12.1 (en vigueur depuis le 22 septembre 2023 ; portabilité depuis le 22 septembre 2024), 90.12 (SAP jusqu'à 10 M\\$ CA ou 2 %) et 91 (amende pénale jusqu'à 25 M\\$ CA ou 4 %) de la LQ 2021, c. 25 (SRC-063) et au rapport quinquennal 2026 de la CAI (SRC-064) ; la version consolidée LégisQuébec (P-39.1) est en statut F."
+        "commentaire_annexe": "Vérifié aux articles 12.1 (en vigueur depuis le 22 septembre 2023 ; portabilité depuis le 22 septembre 2024), 90.12 (SAP jusqu'à 10 M$ CA ou 2 %) et 91 (amende pénale jusqu'à 25 M$ CA ou 4 %) de la LQ 2021, c. 25 (SRC-063) et au rapport quinquennal 2026 de la CAI (SRC-064) ; la version consolidée LégisQuébec (P-39.1) est en statut F."
       },
       {
         "key": "2027-03-15-TLS-100J",
@@ -929,7 +941,7 @@
         "date": "2023-09-22",
         "nature": "Loi applicable",
         "jurisdiction": "Québec",
-        "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 : information, explication, observation et révision humaine ; sanctions administratives jusqu'à 10 M\\$ CA ou 2 % et amendes pénales jusqu'à 25 M\\$ CA ou 4 %)",
+        "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 : information, explication, observation et révision humaine ; sanctions administratives jusqu'à 10 M$ CA ou 2 % et amendes pénales jusqu'à 25 M$ CA ou 4 %)",
         "chapters": [
           "ch02",
           "ch04"
@@ -962,7 +974,7 @@
         ],
         "statut_preuve": "l_plus",
         "source_l_plus_id": "SRC-082",
-        "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027)."
+        "commentaire_annexe": "Vérifié dans SEP-3398 (`Status: Accepted`, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027)."
       },
       {
         "key": "2027-05-01-BSIF-E23-AMF",
@@ -988,7 +1000,7 @@
         ],
         "statut_preuve": "l_plus",
         "source_l_plus_id": "SRC-074, SRC-081",
-        "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081)."
+        "commentaire_annexe": "Vérifié dans SEP-2596 (`Status: Final`, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081)."
       },
       {
         "key": "2027-12-02-EU-AI-ACT-ANNEXE-III",
@@ -1048,7 +1060,7 @@
       {
         "id": "ANC-120",
         "echeance": "2018-06-13",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec",
         "cible": "institutions",
         "marque": "D",
@@ -1059,7 +1071,7 @@
       {
         "id": "ANC-119",
         "echeance": "2023-04-04",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec",
         "cible": "institutions",
         "marque": "D",
@@ -1070,7 +1082,7 @@
       {
         "id": "ANC-114",
         "echeance": "2023-09-22",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec",
         "cible": "institutions",
         "marque": "D",
@@ -1081,7 +1093,7 @@
       {
         "id": "ANC-115",
         "echeance": "2024-09-22",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec (CAI)",
         "cible": "institutions",
         "marque": "D",
@@ -1092,7 +1104,7 @@
       {
         "id": "ANC-121",
         "echeance": "2025-03-31",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec / Canada (ACVM — incl. AMF)",
         "cible": "institutions",
         "marque": "A",
@@ -1103,7 +1115,7 @@
       {
         "id": "ANC-117",
         "echeance": "2025-12-03",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec (MCN)",
         "cible": "administrations",
         "marque": "D",
@@ -1114,7 +1126,7 @@
       {
         "id": "ANC-101",
         "echeance": "2026-01-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (ACVM — provincial et territorial)",
         "cible": "institutions",
         "marque": "D",
@@ -1125,7 +1137,7 @@
       {
         "id": "ANC-116",
         "echeance": "2026-05-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec (CAI)",
         "cible": "tous",
         "marque": "A",
@@ -1136,7 +1148,7 @@
       {
         "id": "ANC-118",
         "echeance": "2026-09-15",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec (MCN)",
         "cible": "administrations",
         "marque": "A",
@@ -1147,7 +1159,7 @@
       {
         "id": "ANC-001",
         "echeance": "2026-12-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "tous",
         "marque": "D",
@@ -1158,7 +1170,7 @@
       {
         "id": "ANC-002",
         "echeance": "2026-12-09",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "fournisseurs",
         "marque": "D",
@@ -1191,7 +1203,7 @@
       {
         "id": "ANC-045",
         "echeance": "2027-01-01",
-        "axe": "marche",
+        "axe": "marché",
         "juridiction": "Canada (fédéral)",
         "cible": "tous",
         "marque": "A",
@@ -1202,7 +1214,7 @@
       {
         "id": "ANC-102",
         "echeance": "2027-01-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (ACVM — provincial et territorial)",
         "cible": "institutions",
         "marque": "D",
@@ -1213,7 +1225,7 @@
       {
         "id": "ANC-003",
         "echeance": "2027-01-12",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "fournisseurs",
         "marque": "D",
@@ -1257,7 +1269,7 @@
       {
         "id": "ANC-103",
         "echeance": "2027-05-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (fédéral)",
         "cible": "institutions",
         "marque": "D",
@@ -1268,7 +1280,7 @@
       {
         "id": "ANC-112",
         "echeance": "2027-05-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec (AMF — Note CRE-IA-2026-01-QC)",
         "cible": "institutions",
         "marque": "D",
@@ -1290,7 +1302,7 @@
       {
         "id": "ANC-004",
         "echeance": "2027-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "fournisseurs",
         "marque": "D",
@@ -1312,7 +1324,7 @@
       {
         "id": "ANC-005",
         "echeance": "2027-09-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1323,7 +1335,7 @@
       {
         "id": "ANC-113",
         "echeance": "2027-09-30",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Québec (AMF — Note CRE-IA-2026-01-QC)",
         "cible": "institutions",
         "marque": "A",
@@ -1334,7 +1346,7 @@
       {
         "id": "ANC-006",
         "echeance": "2027-10-17",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1345,7 +1357,7 @@
       {
         "id": "ANC-007",
         "echeance": "2027-12-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "institutions",
         "marque": "D",
@@ -1356,7 +1368,7 @@
       {
         "id": "ANC-008",
         "echeance": "2027-12-11",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "fournisseurs",
         "marque": "D",
@@ -1389,7 +1401,7 @@
       {
         "id": "ANC-104",
         "echeance": "2027-12-31",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (fédéral)",
         "cible": "institutions",
         "marque": "A",
@@ -1400,7 +1412,7 @@
       {
         "id": "ANC-009",
         "echeance": "2028-01-17",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1444,7 +1456,7 @@
       {
         "id": "ANC-010",
         "echeance": "2028-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "fournisseurs",
         "marque": "D",
@@ -1455,7 +1467,7 @@
       {
         "id": "ANC-011",
         "echeance": "2028-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1466,7 +1478,7 @@
       {
         "id": "ANC-012",
         "echeance": "2028-09-11",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1477,7 +1489,7 @@
       {
         "id": "ANC-105",
         "echeance": "2028-10-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (ACVM — provincial et territorial)",
         "cible": "institutions",
         "marque": "D",
@@ -1488,7 +1500,7 @@
       {
         "id": "ANC-106",
         "echeance": "2028-12-31",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (fédéral)",
         "cible": "institutions",
         "marque": "D",
@@ -1499,7 +1511,7 @@
       {
         "id": "ANC-107",
         "echeance": "2029-01-01",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (ACVM — provincial et territorial)",
         "cible": "institutions",
         "marque": "D",
@@ -1521,7 +1533,7 @@
       {
         "id": "ANC-013",
         "echeance": "2029-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1532,7 +1544,7 @@
       {
         "id": "ANC-108",
         "echeance": "2029-12-31",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (CCRRA — provincial et territorial)",
         "cible": "institutions",
         "marque": "A",
@@ -1554,7 +1566,7 @@
       {
         "id": "ANC-014",
         "echeance": "2030-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1565,7 +1577,7 @@
       {
         "id": "ANC-015",
         "echeance": "2030-10-17",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1576,7 +1588,7 @@
       {
         "id": "ANC-016",
         "echeance": "2030-12-09",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1587,7 +1599,7 @@
       {
         "id": "ANC-017",
         "echeance": "2030-12-11",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1598,7 +1610,7 @@
       {
         "id": "ANC-018",
         "echeance": "2030-12-31",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1631,7 +1643,7 @@
       {
         "id": "ANC-019",
         "echeance": "2031-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1664,7 +1676,7 @@
       {
         "id": "ANC-020",
         "echeance": "2032-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1686,7 +1698,7 @@
       {
         "id": "ANC-109",
         "echeance": "2033-06-30",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (fédéral)",
         "cible": "institutions",
         "marque": "D",
@@ -1697,7 +1709,7 @@
       {
         "id": "ANC-110",
         "echeance": "2033-06-30",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (fédéral)",
         "cible": "institutions",
         "marque": "D",
@@ -1708,7 +1720,7 @@
       {
         "id": "ANC-111",
         "echeance": "2033-06-30",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Canada (fédéral)",
         "cible": "institutions",
         "marque": "D",
@@ -1719,7 +1731,7 @@
       {
         "id": "ANC-021",
         "echeance": "2033-08-02",
-        "axe": "reglementation",
+        "axe": "réglementation",
         "juridiction": "Union européenne",
         "cible": "administrations",
         "marque": "D",
@@ -1730,7 +1742,7 @@
       {
         "id": "ANC-046",
         "echeance": "2034-12-31",
-        "axe": "marche",
+        "axe": "marché",
         "juridiction": "Canada (fédéral)",
         "cible": "tous",
         "marque": "A",
@@ -1924,387 +1936,387 @@
         {
           "Rubrique": "A.2.1",
           "Contrôle d’homologation": "Fiche registre et parrain actif",
-          "Exigences (`EXIG-*`)": "EXIG-GOV-01, EXIG-GOV-05, EXIG-GOV-06, EXIG-GOV-07, EXIG-GOV-08, EXIG-GOV-09, EXIG-GOV-10, EXIG-GOV-11, EXIG-GOV-13, EXIG-GOV-14",
-          "Codes `PRR`": "G-01\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND (9/10 ; hors DEVRAIT : GOV-06) · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-GOV-01, EXIG-GOV-05, EXIG-GOV-06, EXIG-GOV-07, EXIG-GOV-08, EXIG-GOV-09, EXIG-GOV-10, EXIG-GOV-11, EXIG-GOV-13, EXIG-GOV-14",
+          "Codes PRR": "G-01\\*",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND (9/10 ; hors DEVRAIT : GOV-06) · [BLOQUANT] (1/1)",
           "Preuve système": "Fiche signée, lien RH, rejet réseau",
           "Portes": "POR-001, POR-015"
         },
         {
           "Rubrique": "A.2.2",
           "Contrôle d’homologation": "Séparation des fonctions et RACI",
-          "Exigences (`EXIG-*`)": "EXIG-GOV-02, EXIG-GOV-03, EXIG-GOV-04",
-          "Codes `PRR`": "S-15\\*, F-11",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : GOV-02, GOV-04 · Mixte (1/2 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-GOV-02, EXIG-GOV-03, EXIG-GOV-04",
+          "Codes PRR": "S-15\\*, F-11",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : GOV-02, GOV-04 · Mixte (1/2 [BLOQUANT])",
           "Preuve système": "Protection dépôt, charte un seul A",
           "Portes": "POR-003, POR-015"
         },
         {
           "Rubrique": "A.2.3",
           "Contrôle d’homologation": "Classe de risque et plafonds",
-          "Exigences (`EXIG-*`)": "EXIG-CON-01, EXIG-CON-02, EXIG-AUT-01, EXIG-AUT-02, EXIG-AUT-03, EXIG-AUT-06, EXIG-AUT-07",
-          "Codes `PRR`": "G-03\\*, G-04",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : CON-02, AUT-01, AUT-02, AUT-03, AUT-07 · Mixte (1/2 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-CON-01, EXIG-CON-02, EXIG-AUT-01, EXIG-AUT-02, EXIG-AUT-03, EXIG-AUT-06, EXIG-AUT-07",
+          "Codes PRR": "G-03\\*, G-04",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : CON-02, AUT-01, AUT-02, AUT-03, AUT-07 · Mixte (1/2 [BLOQUANT])",
           "Preuve système": "Cote E-23 validée, blocage technique NX",
           "Portes": "POR-001, POR-014"
         },
         {
           "Rubrique": "A.2.4",
           "Contrôle d’homologation": "Domaine ODD et sobriété topologique",
-          "Exigences (`EXIG-*`)": "EXIG-AUT-04, EXIG-AUT-05, EXIG-ORC-01, EXIG-ORC-02, EXIG-ORC-03",
-          "Codes `PRR`": "G-02",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-AUT-04, EXIG-AUT-05, EXIG-ORC-01, EXIG-ORC-02, EXIG-ORC-03",
+          "Codes PRR": "G-02",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Contrat ODD borné, gain multiagent mesuré",
           "Portes": "POR-003, POR-006"
         },
         {
           "Rubrique": "A.2.5",
           "Contrôle d’homologation": "Réévaluation, dérogations et catalogue",
-          "Exigences (`EXIG-*`)": "EXIG-GOV-12, EXIG-GOV-15, EXIG-GOV-16, EXIG-GOV-17, EXIG-GOV-18, EXIG-GOV-19, EXIG-GOV-20, EXIG-CON-03",
-          "Codes `PRR`": "O-03",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : GOV-15 (méta-règle GOV-17 ; GOV-16 transitoire)",
+          "Exigences (EXIG-*)": "EXIG-GOV-12, EXIG-GOV-15, EXIG-GOV-16, EXIG-GOV-17, EXIG-GOV-18, EXIG-GOV-19, EXIG-GOV-20, EXIG-CON-03",
+          "Codes PRR": "O-03",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : GOV-15 (méta-règle GOV-17 ; GOV-16 transitoire)",
           "Preuve système": "Manifeste SemVer, dérogations bornées et revues",
           "Portes": "POR-001, POR-015"
         },
         {
           "Rubrique": "A.2.6",
           "Contrôle d’homologation": "Qualification SaaS et prérequis achat",
-          "Exigences (`EXIG-*`)": "EXIG-ARC-21, EXIG-APP-01, EXIG-APP-02, EXIG-APP-03, EXIG-APP-04, EXIG-APP-05, EXIG-APP-06",
-          "Codes `PRR`": "R-12",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-ARC-21, EXIG-APP-01, EXIG-APP-02, EXIG-APP-03, EXIG-APP-04, EXIG-APP-05, EXIG-APP-06",
+          "Codes PRR": "R-12",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Régime SaaS (erratum ARC-02 → ARC-21), arrêt propre",
           "Portes": "POR-004, POR-008"
         },
         {
           "Rubrique": "A.3.1",
           "Contrôle d’homologation": "Sémantique et contrats du catalogue",
-          "Exigences (`EXIG-*`)": "EXIG-INT-01, EXIG-INT-02, EXIG-INT-03, EXIG-INT-04, EXIG-INT-05, EXIG-INT-06, EXIG-INT-07, EXIG-INT-08, EXIG-INT-09, EXIG-INT-10, EXIG-INT-11",
-          "Codes `PRR`": "G-09, F-13",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : INT-05, INT-11",
+          "Exigences (EXIG-*)": "EXIG-INT-01, EXIG-INT-02, EXIG-INT-03, EXIG-INT-04, EXIG-INT-05, EXIG-INT-06, EXIG-INT-07, EXIG-INT-08, EXIG-INT-09, EXIG-INT-10, EXIG-INT-11",
+          "Codes PRR": "G-09, F-13",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : INT-05, INT-11",
           "Preuve système": "Schémas versionnés (G-09 écarté par DEC-003), sas WAP",
           "Portes": "POR-005"
         },
         {
           "Rubrique": "A.3.2",
           "Contrôle d’homologation": "Épinglage, coexistence et paiements tiers",
-          "Exigences (`EXIG-*`)": "EXIG-INT-12, EXIG-INT-13, EXIG-INT-14, EXIG-INT-15, EXIG-INT-16, EXIG-INT-17, EXIG-INT-18, EXIG-INT-19, EXIG-INT-20, EXIG-INT-21, EXIG-INT-22, EXIG-INT-23",
-          "Codes `PRR`": "G-13, F-01, F-03",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-INT-12, EXIG-INT-13, EXIG-INT-14, EXIG-INT-15, EXIG-INT-16, EXIG-INT-17, EXIG-INT-18, EXIG-INT-19, EXIG-INT-20, EXIG-INT-21, EXIG-INT-22, EXIG-INT-23",
+          "Codes PRR": "G-13, F-01, F-03",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Verrouillage SHA-256 et rapprochement tripartite",
           "Portes": "POR-001, POR-013"
         },
         {
           "Rubrique": "A.3.3",
           "Contrôle d’homologation": "Serveurs MCP sans état sécurisés",
-          "Exigences (`EXIG-*`)": "EXIG-MCP-01, EXIG-MCP-02, EXIG-MCP-03, EXIG-MCP-04, EXIG-MCP-08, EXIG-MCP-09, EXIG-MCP-10, EXIG-MCP-12, EXIG-MCP-13, EXIG-MCP-22",
-          "Codes `PRR`": "R-09",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-MCP-01, EXIG-MCP-02, EXIG-MCP-03, EXIG-MCP-04, EXIG-MCP-08, EXIG-MCP-09, EXIG-MCP-10, EXIG-MCP-12, EXIG-MCP-13, EXIG-MCP-22",
+          "Codes PRR": "R-09",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Transport HTTP sans état, sessions bornées",
           "Portes": "POR-001, POR-008"
         },
         {
           "Rubrique": "A.3.4",
           "Contrôle d’homologation": "Intention métier et hygiène MCP",
-          "Exigences (`EXIG-*`)": "EXIG-MCP-05, EXIG-MCP-06, EXIG-MCP-07, EXIG-MCP-14, EXIG-MCP-15, EXIG-MCP-16, EXIG-MCP-17, EXIG-MCP-18, EXIG-MCP-19, EXIG-MCP-20, EXIG-MCP-21",
-          "Codes `PRR`": "S-07",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : MCP-05",
+          "Exigences (EXIG-*)": "EXIG-MCP-05, EXIG-MCP-06, EXIG-MCP-07, EXIG-MCP-14, EXIG-MCP-15, EXIG-MCP-16, EXIG-MCP-17, EXIG-MCP-18, EXIG-MCP-19, EXIG-MCP-20, EXIG-MCP-21",
+          "Codes PRR": "S-07",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : MCP-05",
           "Preuve système": "Empreintes signées, alerte substitution schéma",
           "Portes": "POR-001"
         },
         {
           "Rubrique": "A.3.5",
           "Contrôle d’homologation": "Cartes signées et tâches A2A",
-          "Exigences (`EXIG-*`)": "EXIG-A2A-01, EXIG-A2A-02, EXIG-A2A-03, EXIG-A2A-04, EXIG-A2A-05, EXIG-A2A-06, EXIG-A2A-07, EXIG-A2A-08, EXIG-A2A-09, EXIG-A2A-10, EXIG-A2A-11, EXIG-A2A-12, EXIG-A2A-13, EXIG-A2A-14, EXIG-A2A-15",
-          "Codes `PRR`": "S-13, F-02, G-14",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : A2A-15",
+          "Exigences (EXIG-*)": "EXIG-A2A-01, EXIG-A2A-02, EXIG-A2A-03, EXIG-A2A-04, EXIG-A2A-05, EXIG-A2A-06, EXIG-A2A-07, EXIG-A2A-08, EXIG-A2A-09, EXIG-A2A-10, EXIG-A2A-11, EXIG-A2A-12, EXIG-A2A-13, EXIG-A2A-14, EXIG-A2A-15",
+          "Codes PRR": "S-13, F-02, G-14",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : A2A-15",
           "Preuve système": "Vérification JWS, mTLS, isolation diplomate externe",
           "Portes": "POR-006, POR-013"
         },
         {
           "Rubrique": "A.3.6",
           "Contrôle d’homologation": "Bus CloudEvents et anti-boucle",
-          "Exigences (`EXIG-*`)": "EXIG-EVT-01, EXIG-EVT-02, EXIG-EVT-03, EXIG-EVT-04, EXIG-EVT-05, EXIG-EVT-06, EXIG-EVT-07, EXIG-EVT-08, EXIG-EVT-09, EXIG-EVT-10",
-          "Codes `PRR`": "R-04, R-05",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : EVT-01",
+          "Exigences (EXIG-*)": "EXIG-EVT-01, EXIG-EVT-02, EXIG-EVT-03, EXIG-EVT-04, EXIG-EVT-05, EXIG-EVT-06, EXIG-EVT-07, EXIG-EVT-08, EXIG-EVT-09, EXIG-EVT-10",
+          "Codes PRR": "R-04, R-05",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : EVT-01",
           "Preuve système": "Arrêt compteur sauts et rejeu isolé",
           "Portes": "POR-006"
         },
         {
           "Rubrique": "A.4.1",
           "Contrôle d’homologation": "Couches et interfaces métier validantes",
-          "Exigences (`EXIG-*`)": "EXIG-ARC-02, EXIG-ARC-03, EXIG-ARC-04, EXIG-ARC-07, EXIG-ARC-13, EXIG-ARC-14, EXIG-ARC-15, EXIG-ARC-16, EXIG-ARC-17, EXIG-ARC-18, EXIG-ARC-19, EXIG-ARC-20",
-          "Codes `PRR`": "R-01\\*, R-13, F-12",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : ARC-15, ARC-18 · Mixte (1/3 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-ARC-02, EXIG-ARC-03, EXIG-ARC-04, EXIG-ARC-07, EXIG-ARC-13, EXIG-ARC-14, EXIG-ARC-15, EXIG-ARC-16, EXIG-ARC-17, EXIG-ARC-18, EXIG-ARC-19, EXIG-ARC-20",
+          "Codes PRR": "R-01\\*, R-13, F-12",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : ARC-15, ARC-18 · Mixte (1/3 [BLOQUANT])",
           "Preuve système": "Zéro SQL, miroir [S], sas OT",
           "Portes": "POR-004, POR-008"
         },
         {
           "Rubrique": "A.4.2",
           "Contrôle d’homologation": "Exécution durable et reprise d’état",
-          "Exigences (`EXIG-*`)": "EXIG-ARC-05, EXIG-ARC-06, EXIG-ORC-11, EXIG-ORC-12, EXIG-ORC-13, EXIG-ORC-14",
-          "Codes `PRR`": "R-02, O-08",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : ORC-14",
+          "Exigences (EXIG-*)": "EXIG-ARC-05, EXIG-ARC-06, EXIG-ORC-11, EXIG-ORC-12, EXIG-ORC-13, EXIG-ORC-14",
+          "Codes PRR": "R-02, O-08",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : ORC-14",
           "Preuve système": "Reprise panne, retour arrière 2 min [S] (O-08)",
           "Portes": "POR-003"
         },
         {
           "Rubrique": "A.4.3",
           "Contrôle d’homologation": "Clés d’idempotence et pré-engagement",
-          "Exigences (`EXIG-*`)": "EXIG-ORC-21, EXIG-ORC-22",
-          "Codes `PRR`": "R-03\\*, R-07\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "[BLOQUANT] (2/2)",
+          "Exigences (EXIG-*)": "EXIG-ORC-21, EXIG-ORC-22",
+          "Codes PRR": "R-03\\*, R-07\\*",
+          "Statut (GOV-17 / L3-L4)": "[BLOQUANT] (2/2)",
           "Preuve système": "Double envoi dédupliqué et tampon actif",
           "Portes": "POR-003"
         },
         {
           "Rubrique": "A.4.4",
           "Contrôle d’homologation": "Sagas, compensations et injection fautes",
-          "Exigences (`EXIG-*`)": "EXIG-ORC-15, EXIG-ORC-16, EXIG-ORC-17, EXIG-ORC-18, EXIG-ORC-19, EXIG-ORC-20",
-          "Codes `PRR`": "R-06\\*, R-15",
-          "Statut (`GOV-17` / `L3-L4`)": "Mixte (1/2 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-ORC-15, EXIG-ORC-16, EXIG-ORC-17, EXIG-ORC-18, EXIG-ORC-19, EXIG-ORC-20",
+          "Codes PRR": "R-06\\*, R-15",
+          "Statut (GOV-17 / L3-L4)": "Mixte (1/2 [BLOQUANT])",
           "Preuve système": "Journal préalable, chaos sans écriture orpheline",
           "Portes": "POR-003"
         },
         {
           "Rubrique": "A.4.5",
           "Contrôle d’homologation": "Gouvernance des patrons multiagents",
-          "Exigences (`EXIG-*`)": "EXIG-ORC-04, EXIG-ORC-05, EXIG-ORC-06, EXIG-ORC-07, EXIG-ORC-08, EXIG-ORC-09, EXIG-ORC-10, EXIG-ORC-23, EXIG-ORC-24, EXIG-ORC-25, EXIG-ORC-29, EXIG-ORC-30",
-          "Codes `PRR`": "O-06",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : ORC-10",
+          "Exigences (EXIG-*)": "EXIG-ORC-04, EXIG-ORC-05, EXIG-ORC-06, EXIG-ORC-07, EXIG-ORC-08, EXIG-ORC-09, EXIG-ORC-10, EXIG-ORC-23, EXIG-ORC-24, EXIG-ORC-25, EXIG-ORC-29, EXIG-ORC-30",
+          "Codes PRR": "O-06",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : ORC-10",
           "Preuve système": "Blocage troisième saut, coupure boucle sémantique",
           "Portes": "POR-006"
         },
         {
           "Rubrique": "A.4.6",
           "Contrôle d’homologation": "Plafonds, repli bimodèle et coupe-circuit",
-          "Exigences (`EXIG-*`)": "EXIG-ORC-26, EXIG-ORC-27, EXIG-ORC-28, EXIG-IAM-20, EXIG-SEC-26",
-          "Codes `PRR`": "S-14\\*, R-10, R-11, F-07, F-08, F-09",
-          "Statut (`GOV-17` / `L3-L4`)": "Mixte (1/6 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-ORC-26, EXIG-ORC-27, EXIG-ORC-28, EXIG-IAM-20, EXIG-SEC-26",
+          "Codes PRR": "S-14\\*, R-10, R-11, F-07, F-08, F-09",
+          "Statut (GOV-17 / L3-L4)": "Mixte (1/6 [BLOQUANT])",
           "Preuve système": "Arrêt < 10 s [S] (15 min CAD26), canal dédié",
           "Portes": "POR-003, POR-006, POR-015"
         },
         {
           "Rubrique": "A.5.1",
           "Contrôle d’homologation": "Paliers d’outils et union stricte",
-          "Exigences (`EXIG-*`)": "EXIG-AUT-08, EXIG-AUT-10, EXIG-AUT-11",
-          "Codes `PRR`": "S-09\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "[BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-AUT-08, EXIG-AUT-10, EXIG-AUT-11",
+          "Codes PRR": "S-09\\*",
+          "Statut (GOV-17 / L3-L4)": "[BLOQUANT] (1/1)",
           "Preuve système": "Évaluation déterministe hors modèle mode fermé",
           "Portes": "POR-001, POR-003"
         },
         {
           "Rubrique": "A.5.2",
           "Contrôle d’homologation": "Approbation hors bande liée P3",
-          "Exigences (`EXIG-*`)": "EXIG-AUT-09, EXIG-AUT-12, EXIG-AUT-13, EXIG-AUT-14",
-          "Codes `PRR`": "S-10",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND (3/4 ; hors DEVRAIT : AUT-14)",
+          "Exigences (EXIG-*)": "EXIG-AUT-09, EXIG-AUT-12, EXIG-AUT-13, EXIG-AUT-14",
+          "Codes PRR": "S-10",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND (3/4 ; hors DEVRAIT : AUT-14)",
           "Preuve système": "Jeton CIBA/FIDO2 lié au condensat JCS",
           "Portes": "POR-003"
         },
         {
           "Rubrique": "A.5.3",
           "Contrôle d’homologation": "Ergonomie fidèle et vigilance humaine",
-          "Exigences (`EXIG-*`)": "EXIG-AUT-15, EXIG-AUT-16, EXIG-AUT-19, EXIG-AUT-20, EXIG-AUT-21",
-          "Codes `PRR`": "G-11, G-12",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-AUT-15, EXIG-AUT-16, EXIG-AUT-19, EXIG-AUT-20, EXIG-AUT-21",
+          "Codes PRR": "G-11, G-12",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Écran I-JSON différentiel et dossiers témoins",
           "Portes": "POR-009, POR-014"
         },
         {
           "Rubrique": "A.5.4",
           "Contrôle d’homologation": "Agents ambiants et persistance pré-effet",
-          "Exigences (`EXIG-*`)": "EXIG-AUT-17, EXIG-AUT-18",
-          "Codes `PRR`": "R-08",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-AUT-17, EXIG-AUT-18",
+          "Codes PRR": "R-08",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Revalidation au réveil, réautorisation périodique",
           "Portes": "POR-015"
         },
         {
           "Rubrique": "A.5.5",
           "Contrôle d’homologation": "Décisions automatisées Loi 25",
-          "Exigences (`EXIG-*`)": "EXIG-AUT-22, EXIG-AUT-23, EXIG-CON-07, EXIG-CON-08, EXIG-CON-09",
-          "Codes `PRR`": "G-06\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND (5/5) · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-AUT-22, EXIG-AUT-23, EXIG-CON-07, EXIG-CON-08, EXIG-CON-09",
+          "Codes PRR": "G-06\\*",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND (5/5) · [BLOQUANT] (1/1)",
           "Preuve système": "Avis, facteurs explicables, dossier 1 an",
           "Portes": "POR-002, POR-014"
         },
         {
           "Rubrique": "A.6.1",
           "Contrôle d’homologation": "Identité NHI sans secret statique",
-          "Exigences (`EXIG-*`)": "EXIG-IAM-01, EXIG-IAM-02, EXIG-IAM-03, EXIG-IAM-04, EXIG-IAM-05, EXIG-IAM-06, EXIG-IAM-07",
-          "Codes `PRR`": "S-01\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "[BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-IAM-01, EXIG-IAM-02, EXIG-IAM-03, EXIG-IAM-04, EXIG-IAM-05, EXIG-IAM-06, EXIG-IAM-07",
+          "Codes PRR": "S-01\\*",
+          "Statut (GOV-17 / L3-L4)": "[BLOQUANT] (1/1)",
           "Preuve système": "Attestation SPIFFE SVID, zéro clé statique",
           "Portes": "POR-001, POR-011"
         },
         {
           "Rubrique": "A.6.2",
           "Contrôle d’homologation": "Échange RFC 8693 sans relais",
-          "Exigences (`EXIG-*`)": "EXIG-IAM-08, EXIG-IAM-09, EXIG-IAM-10, EXIG-IAM-11, EXIG-IAM-12, EXIG-MCP-11",
-          "Codes `PRR`": "S-03\\*, S-04",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : IAM-08, IAM-09, IAM-12, MCP-11 · Mixte (1/2 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-IAM-08, EXIG-IAM-09, EXIG-IAM-10, EXIG-IAM-11, EXIG-IAM-12, EXIG-MCP-11",
+          "Codes PRR": "S-03\\*, S-04",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : IAM-08, IAM-09, IAM-12, MCP-11 · Mixte (1/2 [BLOQUANT])",
           "Preuve système": "Jeton audience unique, rejet tout relais",
           "Portes": "POR-001, POR-011"
         },
         {
           "Rubrique": "A.6.3",
           "Contrôle d’homologation": "Profil OAuth et liaison expéditeur",
-          "Exigences (`EXIG-*`)": "EXIG-IAM-13, EXIG-IAM-14, EXIG-IAM-15, EXIG-IAM-16",
-          "Codes `PRR`": "S-05",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : IAM-15",
+          "Exigences (EXIG-*)": "EXIG-IAM-13, EXIG-IAM-14, EXIG-IAM-15, EXIG-IAM-16",
+          "Codes PRR": "S-05",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : IAM-15",
           "Preuve système": "Jeton court DPoP/mTLS, renouvellement 47 j",
           "Portes": "POR-007, POR-011"
         },
         {
           "Rubrique": "A.6.4",
           "Contrôle d’homologation": "Coupure passerelles d’agents et modèles",
-          "Exigences (`EXIG-*`)": "EXIG-ARC-01, EXIG-ARC-08, EXIG-ARC-09, EXIG-ARC-11, EXIG-ARC-12, EXIG-IAM-17, EXIG-IAM-18, EXIG-IAM-19, EXIG-IAM-21",
-          "Codes `PRR`": "S-06\\*, F-14\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : ARC-09, IAM-19 · [BLOQUANT] (2/2)",
+          "Exigences (EXIG-*)": "EXIG-ARC-01, EXIG-ARC-08, EXIG-ARC-09, EXIG-ARC-11, EXIG-ARC-12, EXIG-IAM-17, EXIG-IAM-18, EXIG-IAM-19, EXIG-IAM-21",
+          "Codes PRR": "S-06\\*, F-14\\*",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : ARC-09, IAM-19 · [BLOQUANT] (2/2)",
           "Preuve système": "Blocage réseau hors passerelle, zéro interpréteur",
           "Portes": "POR-001, POR-012"
         },
         {
           "Rubrique": "A.6.5",
           "Contrôle d’homologation": "Règle de deux anti-exfiltration",
-          "Exigences (`EXIG-*`)": "EXIG-SEC-01, EXIG-SEC-02, EXIG-SEC-03, EXIG-SEC-04, EXIG-SEC-05, EXIG-SEC-06, EXIG-SEC-07",
-          "Codes `PRR`": "S-08\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : SEC-06 · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-SEC-01, EXIG-SEC-02, EXIG-SEC-03, EXIG-SEC-04, EXIG-SEC-05, EXIG-SEC-06, EXIG-SEC-07",
+          "Codes PRR": "S-08\\*",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : SEC-06 · [BLOQUANT] (1/1)",
           "Preuve système": "Retrait déterministe outils sortants et P3",
           "Portes": "POR-003"
         },
         {
           "Rubrique": "A.6.6",
           "Contrôle d’homologation": "Bac à sable réseau fermé",
-          "Exigences (`EXIG-*`)": "EXIG-ARC-10, EXIG-SEC-08, EXIG-SEC-09, EXIG-SEC-10, EXIG-SEC-11, EXIG-SEC-12, EXIG-SEC-13, EXIG-SEC-14, EXIG-SEC-15, EXIG-SEC-16, EXIG-SEC-17",
-          "Codes `PRR`": "S-11\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : SEC-11 · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-ARC-10, EXIG-SEC-08, EXIG-SEC-09, EXIG-SEC-10, EXIG-SEC-11, EXIG-SEC-12, EXIG-SEC-13, EXIG-SEC-14, EXIG-SEC-15, EXIG-SEC-16, EXIG-SEC-17",
+          "Codes PRR": "S-11\\*",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : SEC-11 · [BLOQUANT] (1/1)",
           "Preuve système": "Sortie réseau/IMDS bloquée, isolation IOMMU/microVM",
           "Portes": "POR-003"
         },
         {
           "Rubrique": "A.6.7",
           "Contrôle d’homologation": "Provenance signée et tests adverses",
-          "Exigences (`EXIG-*`)": "EXIG-SEC-18, EXIG-SEC-19, EXIG-SEC-20, EXIG-SEC-21, EXIG-SEC-22, EXIG-SEC-23, EXIG-SEC-24, EXIG-SEC-25",
-          "Codes `PRR`": "S-02, F-10",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-SEC-18, EXIG-SEC-19, EXIG-SEC-20, EXIG-SEC-21, EXIG-SEC-22, EXIG-SEC-23, EXIG-SEC-24, EXIG-SEC-25",
+          "Codes PRR": "S-02, F-10",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Signatures artefacts vérifiées, suite attaques CI",
           "Portes": "POR-003, POR-007"
         },
         {
           "Rubrique": "A.6.8",
           "Contrôle d’homologation": "Agilité cryptographique et transition post-quantique (NIST IR 8547)",
-          "Exigences (`EXIG-*`)": "EXIG-SEC-27, EXIG-SEC-28",
-          "Codes `PRR`": "S-14",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-SEC-27, EXIG-SEC-28",
+          "Codes PRR": "S-14",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Inventaire crypto, TLS ≤ 47 j, signatures PQC/rescellement ≤ 5 ans, en-têtes ≤ 8 Ko",
           "Portes": "POR-002, POR-007"
         },
         {
           "Rubrique": "A.7.1",
           "Contrôle d’homologation": "Traces OpenTelemetry épinglées au collecteur",
-          "Exigences (`EXIG-*`)": "EXIG-OBS-01, EXIG-OBS-02, EXIG-OBS-03, EXIG-OBS-04, EXIG-OBS-05, EXIG-OBS-06",
-          "Codes `PRR`": "O-01",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-OBS-01, EXIG-OBS-02, EXIG-OBS-03, EXIG-OBS-04, EXIG-OBS-05, EXIG-OBS-06",
+          "Codes PRR": "O-01",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Trace causale complète normalisée au collecteur",
           "Portes": "POR-002"
         },
         {
           "Rubrique": "A.7.2",
           "Contrôle d’homologation": "Double couloir RP (PII) sans contenu",
-          "Exigences (`EXIG-*`)": "EXIG-OBS-07, EXIG-OBS-08, EXIG-OBS-09, EXIG-OBS-10",
-          "Codes `PRR`": "O-02\\*, F-15",
-          "Statut (`GOV-17` / `L3-L4`)": "Mixte (1/2 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-OBS-07, EXIG-OBS-08, EXIG-OBS-09, EXIG-OBS-10",
+          "Codes PRR": "O-02\\*, F-15",
+          "Statut (GOV-17 / L3-L4)": "Mixte (1/2 [BLOQUANT])",
           "Preuve système": "Zéro renseignement personnel (RP) index général, canaris [S]",
           "Portes": "POR-002"
         },
         {
           "Rubrique": "A.7.3",
           "Contrôle d’homologation": "Journal d’audit JCS chaîné ancré",
-          "Exigences (`EXIG-*`)": "EXIG-OBS-11, EXIG-OBS-12, EXIG-OBS-13",
-          "Codes `PRR`": "G-15\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : OBS-11 · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-OBS-11, EXIG-OBS-12, EXIG-OBS-13",
+          "Codes PRR": "G-15\\*",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : OBS-11 · [BLOQUANT] (1/1)",
           "Preuve système": "Audit 5 éléments, ancrage horaire, PQC",
           "Portes": "POR-002, POR-007, POR-011"
         },
         {
           "Rubrique": "A.7.4",
           "Contrôle d’homologation": "Évaluation E1–E3 pass^k et dérive",
-          "Exigences (`EXIG-*`)": "EXIG-EVA-01, EXIG-EVA-02, EXIG-EVA-03, EXIG-EVA-04, EXIG-EVA-05, EXIG-EVA-06",
-          "Codes `PRR`": "O-04, O-05, O-07, O-14",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-EVA-01, EXIG-EVA-02, EXIG-EVA-03, EXIG-EVA-04, EXIG-EVA-05, EXIG-EVA-06",
+          "Codes PRR": "O-04, O-05, O-07, O-14",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "CI pass^k (≥ 50 EXIG-EVA-02 vs ≥ 100 PRR O-04 [S])",
           "Portes": "POR-003, POR-014, POR-015"
         },
         {
           "Rubrique": "A.7.5",
           "Contrôle d’homologation": "Enveloppes FinOps, CPO et carbone",
-          "Exigences (`EXIG-*`)": "EXIG-FIN-01, EXIG-FIN-02, EXIG-FIN-03, EXIG-FIN-04, EXIG-FIN-05, EXIG-FIN-06, EXIG-FIN-07, EXIG-FIN-08, EXIG-FIN-09, EXIG-FIN-10",
-          "Codes `PRR`": "O-09\\*, O-10, O-11, O-12, O-13",
-          "Statut (`GOV-17` / `L3-L4`)": "DEVRAIT : FIN-08 · Mixte (1/5 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-FIN-01, EXIG-FIN-02, EXIG-FIN-03, EXIG-FIN-04, EXIG-FIN-05, EXIG-FIN-06, EXIG-FIN-07, EXIG-FIN-08, EXIG-FIN-09, EXIG-FIN-10",
+          "Codes PRR": "O-09\\*, O-10, O-11, O-12, O-13",
+          "Statut (GOV-17 / L3-L4)": "DEVRAIT : FIN-08 · Mixte (1/5 [BLOQUANT])",
           "Preuve système": "Disjoncteur coût, tableau CPO, portée 3",
           "Portes": "POR-004, POR-009, POR-016"
         },
         {
           "Rubrique": "A.8.1",
           "Contrôle d’homologation": "ÉFVP préalable et finalités vérifiées",
-          "Exigences (`EXIG-*`)": "EXIG-CON-04, EXIG-CON-06",
-          "Codes `PRR`": "G-05\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND (2/2) · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-CON-04, EXIG-CON-06",
+          "Codes PRR": "G-05\\*",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND (2/2) · [BLOQUANT] (1/1)",
           "Preuve système": "Dossier ÉFVP signé, consentement par entité",
           "Portes": "POR-002, POR-012"
         },
         {
           "Rubrique": "A.8.2",
           "Contrôle d’homologation": "Six substrats d’état et clés",
-          "Exigences (`EXIG-*`)": "EXIG-CON-05",
-          "Codes `PRR`": "F-04\\*, F-05, F-06",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND (1/1) · Mixte (1/3 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-CON-05",
+          "Codes PRR": "F-04\\*, F-05, F-06",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND (1/1) · Mixte (1/3 [BLOQUANT])",
           "Preuve système": "Matrice 6 substrats [S], clés souveraines, enclave",
           "Portes": "POR-002"
         },
         {
           "Rubrique": "A.8.3",
           "Contrôle d’homologation": "Isolation CoALA et effacement vérifiable",
-          "Exigences (`EXIG-*`)": "EXIG-ARC-22, EXIG-ARC-23, EXIG-ARC-24, EXIG-ARC-25, EXIG-CON-10",
-          "Codes `PRR`": "S-12, R-14\\*, G-10\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "Mixte (2/3 [BLOQUANT])",
+          "Exigences (EXIG-*)": "EXIG-ARC-22, EXIG-ARC-23, EXIG-ARC-24, EXIG-ARC-25, EXIG-CON-10",
+          "Codes PRR": "S-12, R-14\\*, G-10\\*",
+          "Statut (GOV-17 / L3-L4)": "Mixte (2/3 [BLOQUANT])",
           "Preuve système": "Étanchéité multilocataire et preuve de purge",
           "Portes": "POR-005"
         },
         {
           "Rubrique": "A.8.4",
           "Contrôle d’homologation": "Conformité multi-régimes E-23, AMF, RIA",
-          "Exigences (`EXIG-*`)": "EXIG-CON-11, EXIG-CON-12, EXIG-CON-13, EXIG-CON-14, EXIG-CON-15, EXIG-CON-16, EXIG-CON-17, EXIG-CON-18, EXIG-CON-21",
-          "Codes `PRR`": "G-08",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND (9/9)",
+          "Exigences (EXIG-*)": "EXIG-CON-11, EXIG-CON-12, EXIG-CON-13, EXIG-CON-14, EXIG-CON-15, EXIG-CON-16, EXIG-CON-17, EXIG-CON-18, EXIG-CON-21",
+          "Codes PRR": "G-08",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND (9/9)",
           "Preuve système": "Base de preuves unique, dossier RIA",
           "Portes": "POR-002, POR-012"
         },
         {
           "Rubrique": "A.8.5",
           "Contrôle d’homologation": "Transparence, incidents et impact unifié",
-          "Exigences (`EXIG-*`)": "EXIG-CON-19, EXIG-CON-20, EXIG-CON-22, EXIG-CON-23, EXIG-CON-24, EXIG-CON-25, EXIG-CON-26",
-          "Codes `PRR`": "G-07\\*",
-          "Statut (`GOV-17` / `L3-L4`)": "GOV-17 ND : CON-19, CON-20, CON-22 (art. 50 RIA ; légal CON-24..26 § A.1.3) · [BLOQUANT] (1/1)",
+          "Exigences (EXIG-*)": "EXIG-CON-19, EXIG-CON-20, EXIG-CON-22, EXIG-CON-23, EXIG-CON-24, EXIG-CON-25, EXIG-CON-26",
+          "Codes PRR": "G-07\\*",
+          "Statut (GOV-17 / L3-L4)": "GOV-17 ND : CON-19, CON-20, CON-22 (art. 50 RIA ; légal CON-24..26 § A.1.3) · [BLOQUANT] (1/1)",
           "Preuve système": "Divulgation active, impact unifié, gel preuves",
           "Portes": "POR-002"
         },
         {
           "Rubrique": "A.8.6",
           "Contrôle d’homologation": "Dix clauses contractuelles et sortie",
-          "Exigences (`EXIG-*`)": "EXIG-APP-07, EXIG-APP-08, EXIG-APP-09, EXIG-APP-10, EXIG-APP-11, EXIG-APP-12, EXIG-APP-13, EXIG-APP-14, EXIG-APP-15, EXIG-APP-16, EXIG-APP-17",
-          "Codes `PRR`": "O-15",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-APP-07, EXIG-APP-08, EXIG-APP-09, EXIG-APP-10, EXIG-APP-11, EXIG-APP-12, EXIG-APP-13, EXIG-APP-14, EXIG-APP-15, EXIG-APP-16, EXIG-APP-17",
+          "Codes PRR": "O-15",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Grille fournisseur signée, essai annuel d’extraction",
           "Portes": "POR-004, POR-016"
         },
         {
           "Rubrique": "A.8.7",
           "Contrôle d’homologation": "Secteurs financiers ACVM 11-348, RTR ISO 20022, EN 18286 et AMF",
-          "Exigences (`EXIG-*`)": "EXIG-CON-27, EXIG-CON-28, EXIG-CON-29, EXIG-CON-30, EXIG-AMF-01, EXIG-AMF-02, EXIG-AMF-03, EXIG-AMF-04, EXIG-AMF-05, EXIG-AMF-06, EXIG-AMF-07, EXIG-AMF-08, EXIG-AMF-09, EXIG-AMF-10, EXIG-AMF-11, EXIG-AMF-12",
-          "Codes `PRR`": "G-15",
-          "Statut (`GOV-17` / `L3-L4`)": "Standard",
+          "Exigences (EXIG-*)": "EXIG-CON-27, EXIG-CON-28, EXIG-CON-29, EXIG-CON-30, EXIG-AMF-01, EXIG-AMF-02, EXIG-AMF-03, EXIG-AMF-04, EXIG-AMF-05, EXIG-AMF-06, EXIG-AMF-07, EXIG-AMF-08, EXIG-AMF-09, EXIG-AMF-10, EXIG-AMF-11, EXIG-AMF-12",
+          "Codes PRR": "G-15",
+          "Statut (GOV-17 / L3-L4)": "Standard",
           "Preuve système": "Dossiers ACVM 7 ans, tampon RTR pacs.008, SMQ EN 18286 et répertoire AMF",
           "Portes": "POR-004, POR-009"
         }
@@ -4348,92 +4360,92 @@
     "principes_et_decisions": {
       "pri_15_vers_prin_12": [
         {
-          "Principe PD28 (`PRI`)": "PRI-001",
-          "Principes CAD26 (`PRIN`)": "PRIN-04, PRIN-10",
+          "Principe PD28 (PRI)": "PRI-001",
+          "Principes CAD26 (PRIN)": "PRIN-04, PRIN-10",
           "Décision structurante CAD26": "Décision 2 : Rien ne contourne les points d’application",
           "Règle directrice": "Registre, NHI, politiques et trace précèdent toute autonomie"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-002",
-          "Principes CAD26 (`PRIN`)": "PRIN-08",
+          "Principe PD28 (PRI)": "PRI-002",
+          "Principes CAD26 (PRIN)": "PRIN-08",
           "Décision structurante CAD26": "Décision 3 : La simplicité d’abord",
           "Règle directrice": "Machine à états déterministe autour des cellules probabilistes"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-003",
-          "Principes CAD26 (`PRIN`)": "PRIN-01, PRIN-02",
+          "Principe PD28 (PRI)": "PRI-003",
+          "Principes CAD26 (PRIN)": "PRIN-01, PRIN-02",
           "Décision structurante CAD26": "Décision 1 : Deux protocoles pivots, versions épinglées",
           "Règle directrice": "Séparation stricte entre outil MCP vertical et pair A2A"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-004",
-          "Principes CAD26 (`PRIN`)": "PRIN-03",
+          "Principe PD28 (PRI)": "PRI-004",
+          "Principes CAD26 (PRIN)": "PRIN-03",
           "Décision structurante CAD26": "Décision 5 : Une identité propre à chaque agent, des droits délégués et de courte durée",
           "Règle directrice": "Identité NHI distincte et jetons RFC 8693 atténués"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-005",
-          "Principes CAD26 (`PRIN`)": "PRIN-07",
+          "Principe PD28 (PRI)": "PRI-005",
+          "Principes CAD26 (PRIN)": "PRIN-07",
           "Décision structurante CAD26": "Décision 6 : Présomption d’injection",
           "Règle directrice": "Politiques hors modèle, règle de deux et retrait d’exfiltration"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-006",
-          "Principes CAD26 (`PRIN`)": "PRIN-04, PRIN-12",
+          "Principe PD28 (PRI)": "PRI-006",
+          "Principes CAD26 (PRIN)": "PRIN-04, PRIN-12",
           "Décision structurante CAD26": "Décision 4 : Une échelle d’autonomie unique",
           "Règle directrice": "Autonomie méritée par domaine × classe et rétrogradation immédiate"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-007",
-          "Principes CAD26 (`PRIN`)": "PRIN-05, PRIN-10",
+          "Principe PD28 (PRI)": "PRI-007",
+          "Principes CAD26 (PRIN)": "PRIN-05, PRIN-10",
           "Décision structurante CAD26": "Décision 9 : Une personne nommée répond de chaque agent",
           "Règle directrice": "Supervision liée à h, anti-complaisance et recours client effectif"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-008",
-          "Principes CAD26 (`PRIN`)": "PRIN-02, PRIN-09, PRIN-11",
+          "Principe PD28 (PRI)": "PRI-008",
+          "Principes CAD26 (PRIN)": "PRIN-02, PRIN-09, PRIN-11",
           "Décision structurante CAD26": "Décision 10 : Conformité dès la conception",
           "Règle directrice": "Sémantique versionnée, ACL amont et mémoire longue parcimonieuse"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-009",
-          "Principes CAD26 (`PRIN`)": "PRIN-05, PRIN-12",
+          "Principe PD28 (PRI)": "PRI-009",
+          "Principes CAD26 (PRIN)": "PRIN-05, PRIN-12",
           "Décision structurante CAD26": "Décision 7 : Réversibilité par conception",
           "Règle directrice": "Exécution durable, idempotence, Saga et canal de compensation dédié"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-010",
-          "Principes CAD26 (`PRIN`)": "PRIN-03, PRIN-10",
+          "Principe PD28 (PRI)": "PRI-010",
+          "Principes CAD26 (PRIN)": "PRIN-03, PRIN-10",
           "Décision structurante CAD26": "Décision 10 : Conformité dès la conception",
           "Règle directrice": "Cloisonnement étanche par personne morale, consentement et loi"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-011",
-          "Principes CAD26 (`PRIN`)": "PRIN-09, PRIN-11, PRIN-12",
+          "Principe PD28 (PRI)": "PRI-011",
+          "Principes CAD26 (PRIN)": "PRIN-09, PRIN-11, PRIN-12",
           "Décision structurante CAD26": "Décision 10 : Conformité dès la conception",
           "Règle directrice": "Maîtrise juridictionnelle des six substrats et continuité bimodèle"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-012",
-          "Principes CAD26 (`PRIN`)": "PRIN-03, PRIN-06",
+          "Principe PD28 (PRI)": "PRI-012",
+          "Principes CAD26 (PRIN)": "PRIN-03, PRIN-06",
           "Décision structurante CAD26": "Décision 5 : Une identité propre à chaque agent, des droits délégués et de courte durée",
           "Règle directrice": "Certificats courts automatisés et transition post-quantique sans couture"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-013",
-          "Principes CAD26 (`PRIN`)": "PRIN-06",
+          "Principe PD28 (PRI)": "PRI-013",
+          "Principes CAD26 (PRIN)": "PRIN-06",
           "Décision structurante CAD26": "Décision 8 : On ne gouverne que ce qu’on voit",
           "Règle directrice": "Corrélation OpenTelemetry sans renseignements personnels (RP) et voûte scellée"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-014",
-          "Principes CAD26 (`PRIN`)": "PRIN-06, PRIN-08",
+          "Principe PD28 (PRI)": "PRI-014",
+          "Principes CAD26 (PRIN)": "PRIN-06, PRIN-08",
           "Décision structurante CAD26": "Décision 8 : On ne gouverne que ce qu’on voit",
           "Règle directrice": "Modèle minimal suffisant, suivi carbone et pilotage au CPO"
         },
         {
-          "Principe PD28 (`PRI`)": "PRI-015",
-          "Principes CAD26 (`PRIN`)": "PRIN-01, PRIN-09",
+          "Principe PD28 (PRI)": "PRI-015",
+          "Principes CAD26 (PRIN)": "PRIN-01, PRIN-09",
           "Décision structurante CAD26": "Décision 2 : Rien ne contourne les points d’application",
           "Règle directrice": "Noyau de contrôle possédé, gravité des données et sortie"
         }
@@ -7044,7 +7056,7 @@
           "rego_rule": null,
           "pytest_nodeid": "tests/test_authz_pqc_audit.py::test_ciba_c6_action_hash_exact_match",
           "third_party_vector_suite": "rfc8785",
-          "corpus_anchor": "3 - Compendium 2027.md L28490 (2 - Cadre de Référence.md L7300-L7310)"
+          "corpus_anchor": "3 - Compendium 2027.md L28490 (2 - Cadre de Référence.md L7300–L7310)"
         },
         {
           "id": "R-14",
@@ -7260,7 +7272,7 @@
           "rego_rule": null,
           "pytest_nodeid": "tests/test_evalops_prr.py::test_adr_2027_b001_schema_validation",
           "third_party_vector_suite": null,
-          "corpus_anchor": "3 - Compendium 2027.md L28423-L28448 (schemas/adr_2027_b001.schema.json)"
+          "corpus_anchor": "3 - Compendium 2027.md L28423–L28448 (schemas/adr_2027_b001.schema.json)"
         },
         {
           "id": "CAP-046",
@@ -7572,7 +7584,7 @@
           "rego_rule": null,
           "pytest_nodeid": "tests/test_evalops_prr.py::test_blueprints_cover_c01_to_c40",
           "third_party_vector_suite": null,
-          "corpus_anchor": "6 - Livre Blanc.md L5007 (Tri L0-L4)"
+          "corpus_anchor": "6 - Livre Blanc.md L5007 (Tri L0–L4)"
         },
         {
           "id": "C02",

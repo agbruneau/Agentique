@@ -6,22 +6,22 @@ Application HTML autonome hors ligne (`file://`, sans CDN ni requête réseau ex
 
 ## Métriques vérifiées du graphe et du corpus
 
-- **Périmètre source** : `9` fichiers `.md`, `69 821` lignes, `1 537 418` mots (`split()`), `4 542` pages PDF et `319` diagrammes.
+- **Périmètre source** : `9` fichiers `.md`, `69 821` lignes, `1 537 423` mots (`split()`), `4 542` pages PDF et `319` diagrammes.
 - **Structure extraite (`CommonMark` strict)** : `4 434` titres `H1–H6` (hors `143` blocs de code clôturés filtrés), `564` identifiants normatifs et techniques uniques (`EXIG-*`, `CAP-*`, `PEX-*`, `OO1–OO4`, `T1–T10`, `PRR-75`, `C01–C40`, `L0–L4`, `DIV-02`, `SBB-*`, `G0–G5`).
 - **Arbre thématique (5 niveaux)** : `380` nœuds (`1` racine, `12` domaines `D01–D12`, `36` sous-domaines, `71` familles thématiques, `260` thèmes détaillés), `1 931` occurrences ancrées aux lignes exactes.
 - **Couverture & interrelations** : `616` interrelations typées sur les `8` types canoniques (`0` arête cassée, `0` auto-boucle), `290 / 290` chapitres/liminaires/annexes mappés (`0` orphelin) et `1 636` unités structurelles liées directement aux thèmes.
-- **Pivots de concordance** : `5` discordances résolues (`DISC-01`..`DISC-05`, Tome 8 §0.2) + fermeture `DIV-02` (Tome 5), `100` jalons chronologiques (`2023–2035`) et `267` entrées de traçabilité (`EXIG / CAP / PRR-75 / C01–C40 / 5 SBB`).
+- **Pivots de concordance** : `5` discordances résolues (`DISC-01`..`DISC-05`, Tome 8 §0.2) + fermeture `DIV-02` (Tome 5), `86` jalons chronologiques consolidés (`2018–2035`) et `237` entrées uniques de traçabilité (`0` doublon, couvrant `95` tests exécutables Tome 8 dont `30` identifiants fusionnés : `PRR-75`, `CAP`, `C01–C40`, `EXIG`, `PEX`, `CRE-IA`, `5 SBB`, `ADR_TEMPLATE`).
 - **Livrables HTML autonomes (`file://`)** :
-  - [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) (`5 944 724` octets, 5 vues dont le PRD intégré, thèmes `Auto / Clair / Sombre`).
-  - [`PRD - Référentiel directeur de l'entreprise agentique.html`](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) (`1 936 311` octets, lecteur web autonome du PRD avec pont `MindMap` / `Graphe`).
-- **PRD maître compilé** : [`../prd.md`](../prd.md) (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `4` annexes normatives `A–D`, `4 512` lignes, `134 712` mots).
+  - [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) (`6 056 679` octets, 5 vues dont le PRD intégré, thèmes `Auto / Clair / Sombre`).
+  - [`PRD - Référentiel directeur de l'entreprise agentique.html`](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) (`2 053 782` octets, lecteur web autonome du PRD avec pont `MindMap` / `Graphe`).
+- **PRD maître compilé** : [`../prd.md`](../prd.md) (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `4` annexes normatives `A–D`, `4 764` lignes, `164 431` mots, `223` titres `H1–H6`).
 
 ## Les 5 vues dynamiques
 
 1. **MindMap Thématique & Interrelations** *(vue par défaut)* : disposition **Horizontale (`G→D`)** ou **Radiale (`360°`)**, contrôle de profondeur (`Niv. 1` à `Niv. 5`), pastilles `(+N)`, projection intelligente des liens sur l'ancêtre visible, bouton **Déplier les cibles liées** et **Mode Rayon X** au clic/survol.
 2. **Structure Intégrale (`9 fichiers .md`)** : exploration hiérarchique de `Corpus/README.md` et des `Tomes 1..8` jusqu'aux `4 434` sections `H1–H6` avec plages de lignes, comptage de mots, liens directs `../Corpus/<fichier>.md#Lxxx` et pastilles cliquables vers les thèmes associés.
 3. **Graphe Synaptique & Explorateur de Chemins (`A → B`)** : vue réseau **Circulaire par domaine** ou **Force-directed**, filtrage d'ego-réseau (`1 saut`, `2 sauts`, `Complet`) et **calculateur de plus court chemin sémantique** détaillant chaque saut et sa justification.
-4. **Concordance & Réconciliations** : carte thermique interactive `Domaines / Sous-domaines × 9 fichiers (R, T1..T8)`, fiches `DISC-01..05` et `DIV-02`, chronologie filtrable `2023–2035` et matrice cherchable `EXIG / CAP / PRR-75 / C01–C40 / 5 SBB`.
+4. **Concordance & Réconciliations** : carte thermique interactive `Domaines / Sous-domaines × 9 fichiers (R, T1..T8)`, fiches `DISC-01..05` et `DIV-02`, chronologie consolidée filtrable `2018–2035` (`86` jalons) et matrice cherchable unifiée (`237` entrées uniques `EXIG / CAP / PRR-75 / C01–C40 / 5 SBB / PEX / ADR`).
 5. **PRD Maître** : lecteur complet du PRD (`Sommaire exécutif`, `12` Parties, `36` Chapitres, `71` Familles, `260` Thèmes, `4` Annexes `A–D`), bascule `Chapitre ciblé / Document intégral`, TDM latérale filtrable, filtres multi-facettes et pont bidirectionnel natif avec la MindMap, le Graphe et l'Inspecteur.
 
 La barre d'outils supérieure offre une recherche plein-texte instantanée (`Ctrl+K`), `6` filtres multi-facettes (`Tome`, `Domaine`, `Autonomie`, `Rôle`, `Horizon`, `Relation`), un inspecteur latéral détaillé ainsi que l'export `SVG` et `JSON` filtré.
@@ -37,7 +37,7 @@ La barre d'outils supérieure offre une recherche plein-texte instantanée (`Ctr
 | [`outils/synthetiser_graphe.py`](outils/synthetiser_graphe.py) | Fusion des shards et pivots → `synthese-transversale.json` |
 | [`outils/preparer_donnees_prd_web.py`](outils/preparer_donnees_prd_web.py) | Assemble la source web structurée du PRD → `prd-web-data.json` |
 | [`outils/compiler_mindmap.py`](outils/compiler_mindmap.py) | Assemble `corpus-mindmap-data.json` (incluant PRD) et compile `template_mindmap.html` |
-| [`outils/compiler_prd.py`](outils/compiler_prd.py) | Compile les 7 shards PRD et `corpus-mindmap-data.json` vers `../prd.md` |
+| [`outils/compiler_prd.py`](outils/compiler_prd.py) | Compile les 7 shards PRD, le schéma et les pivots vers `../prd.md` |
 | [`outils/compiler_prd_web.py`](outils/compiler_prd_web.py) | Compile `prd-web-data.json` dans `template_prd_web.html` → page PRD HTML |
 | [`outils/template_mindmap.html`](outils/template_mindmap.html) | Gabarit HTML/CSS/JS autonome 5 vues (`light-dark`, SVG, Node-testable) |
 | [`outils/template_prd_web.html`](outils/template_prd_web.html) | Gabarit HTML/CSS/JS autonome dédié PRD (`PrdWebEngine`, Node-testable) |

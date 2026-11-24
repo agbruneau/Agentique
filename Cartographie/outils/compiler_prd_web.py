@@ -159,9 +159,17 @@ def compile_prd_web(
     if m_json is None:
         raise ValueError("Bloc <script id='prd-web-data'> introuvable après compilation.")
     html_outside_json = compiled_html[: m_json.start(1)] + compiled_html[m_json.end(1) :]
-    for pat in ("http://", "https://"):
-        if pat in html_outside_json:
-            raise ValueError(f"URL externe interdite détectée hors bloc JSON : {pat}")
+    forbidden_patterns: tuple[tuple[str, str], ...] = (
+        (r"https?://", "URL http(s)://"),
+        (r"<script[^>]+src\s*=", "<script src=...>"),
+        (r"<link[^>]+href\s*=\s*['\"]?(?:https?:)?//", "<link href=//...>"),
+        (r"\b(?:src|href)\s*=\s*['\"]?\s*//", "attribut src/href relatif protocole //"),
+        (r"@import\s+(?:url\s*\(|['\"]\s*(?:https?:)?//)", "@import externe"),
+        (r"\bfetch\s*\(", "appel fetch()"),
+    )
+    for regex, label in forbidden_patterns:
+        if re.search(regex, html_outside_json, re.IGNORECASE):
+            raise ValueError(f"Référence réseau ou URL externe interdite détectée hors bloc JSON : {label}")
 
     html_out = output_html or (repo_root / "Cartographie" / DEFAULT_HTML_NAME)
     html_out.write_text(compiled_html, encoding="utf-8", newline="\n")

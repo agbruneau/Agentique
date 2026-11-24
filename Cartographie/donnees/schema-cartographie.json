@@ -309,11 +309,11 @@
       "domain_id": "D11",
       "order": 11,
       "title": "Prospective 2028–2035, trajectoires DAPP et capital humain",
-      "summary": "Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret vs conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90j/180j/18m et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE <-> AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines/vivier junior et contraintes énergétiques/marché.",
+      "summary": "Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret vs conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90j/180j/18m et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE ↔ AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines/vivier junior et contraintes énergétiques/marché.",
       "color": "#4f46e5",
       "subdomains_canonical": [
         "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
-        "Gouvernance duale AE <-> AS, thèses T1–T10 et pièges",
+        "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges",
         "Capital humain, atrophie des compétences et dynamique énergie/marché"
       ],
       "key_identifiers": ["DAPP", "CAP-001..052", "INI-001..054", "POR-001..016", "SIG-001..110", "T1–T10", "DEC-001..012"],

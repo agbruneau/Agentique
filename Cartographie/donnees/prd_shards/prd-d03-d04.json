@@ -1159,7 +1159,7 @@
         "scope_and_objectives": "Protéger l'intégrité arithmétique, la capacité transactionnelle et le contrôle juridictionnel des systèmes patrimoniaux IT (mainframe, ERP, iPaaS, BPM/RPA), des interfaces périphériques OT/Edge et des six substrats d'état face aux lois extraterritoriales.",
         "key_requirements_and_objectives": [
           "EXIG-ARC-14..18 / EXIG-MCP-06 / CAP-024 / DEC-008 : exposer les systèmes d'enregistrement par façades MCP orientées tâche sans miroir CRUD ni SQL direct, en exécutant hors modèle le transcodage EBCDIC (CP037/CP1147), la conversion exacte COMP-3 vers Decimal sans flottant IEEE 754, le lissage MIPS et la propagation de QSYS2.SET_CLIENT_INFO, trace et clé d'idempotence.",
-          "ADR-016 / CAP-025 / PEX-001 / INI-015 / POR-004 / POR-008 : appliquer la hiérarchie MCP (>= 92 %) -> RPA déterministe -> CUA confiné (<= 8 %), proscrire tout grattage d'écran client (LSAC art. 171), soumettre toute cellule CUA interne (5250/Citrix) au caviardage Loi 25 et bloquer les touches destructrices sous bail d'extinction <= 12 mois (zéro CUA résiduel à POR-008).",
+          "ADR-016 / CAP-025 / PEX-001 / INI-015 / POR-004 / POR-008 : appliquer la hiérarchie MCP (>= 92 %) → RPA déterministe → CUA confiné (<= 8 %), proscrire tout grattage d'écran client (LSAC art. 171), soumettre toute cellule CUA interne (5250/Citrix) au caviardage Loi 25 et bloquer les touches destructrices sous bail d'extinction <= 12 mois (zéro CUA résiduel à POR-008).",
           "C07 / C08 / AP-05 : préserver les moteurs BPMN 2.0 (Camunda/Zeebe) par sous-processus ad hoc bornés, étendre l'intégration par figure du Strangler Fig en quatre stades (ombre, recommandation, action bornée, autonomie) et réconcilier les pertes sémantiques sur médiation B2B EDI/ESB.",
           "CAP-028 / ADR-017 / ADR-028 : cantoner tout accès OT industriel (hors champ financier démontré) sous segmentation Purdue / IEC 62443-3-3 SL-3 via réplica lecture seule IDMZ 3.5 devant OPC UA/MQTT Sparkplug B, validation par jumeau FMI 3.0 / arbitre matériel Simplex et cellules Edge Local-First sur CRDT (cible 72 h sans WAN, repli L1 au-delà).",
           "PRI-011 / CAP-032 / POR-002 / EXIG-CON-05 / EXIG-APP-11 : inventorier, cloisonner et chiffrer sous clés exclusives (KMS/HSM/HYOK) les six substrats d'état — modèle, contexte volatil GPU/KV-cache, mémoire longue, état durable, traces/audit, secrets/clés — afin d'assurer un contrôle juridictionnel effectif face au CLOUD Act."
@@ -1205,7 +1205,7 @@
               {
                 "theme_node_id": "THM_confinement-cua-patrimoine-sans-api",
                 "canonical_slug": "confinement-cua-patrimoine-sans-api",
-                "theme_title": "Hiérarchie MCP -> RPA -> CUA et confinement des Computer-Use Agents (Citrix/5250)",
+                "theme_title": "Hiérarchie MCP → RPA → CUA et confinement des Computer-Use Agents (Citrix/5250)",
                 "content_specification": "Applique ADR-016 sur le patrimoine dépourvu d'API : >= 92 % via adaptateurs MCP, RPA déterministe orchestré, et <= 8 % en CUA visuels sur Citrix/5250 sous harnais confiné (caviardage PII Loi 25 avant capture écran, blocage des touches destructrices, double assertion OCR/vérification et bail d'extinction strict à 12 mois).",
                 "identifiers_and_norms": [
                   "ADR-016",

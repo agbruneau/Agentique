@@ -216,8 +216,38 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     pivots = bundle["pivots"]
     assert pivots["div_02"] is not None
     assert len(pivots["reconciliations"]) == 5
-    assert len(pivots["timeline"]) >= 20
-    assert len(pivots["traceability_matrix"]) >= 100
+    assert len(pivots["timeline"]) == 86
+    assert len(pivots["traceability_matrix"]) == 237
+    assert len({x["id"] for x in pivots["traceability_matrix"]}) == 237
+    assert pivots.get("matrix_totals") == {
+        "unique_entries": 237,
+        "tome8_executable_tests": 95,
+        "shared_ids_merged": 30,
+    }
+    bundle_raw = bundle_path.read_text(encoding="utf-8")
+    assert r"\$" not in bundle_raw
+    assert "AE <-> AS" not in bundle_raw
+    for jf in sorted(DONNEES_DIR.rglob("*.json")):
+        assert b"\r\n" not in jf.read_bytes(), f"CRLF résiduel dans {jf}"
+
+    def _has_backtick_key(obj: object) -> list[str]:
+        bad: list[str] = []
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                if "`" in str(k):
+                    bad.append(str(k))
+                bad.extend(_has_backtick_key(v))
+        elif isinstance(obj, list):
+            for it in obj:
+                bad.extend(_has_backtick_key(it))
+        return bad
+
+    pivots_raw = json.loads((DONNEES_DIR / "pivots-concordance.json").read_text(encoding="utf-8"))
+    assert not _has_backtick_key(pivots_raw), "Clé littérale avec backtick dans pivots-concordance.json"
+    prd_web_path = DONNEES_DIR / "prd-web-data.json"
+    if prd_web_path.is_file():
+        assert bundle["prd"] == json.loads(prd_web_path.read_text(encoding="utf-8"))
+    assert b"\r\n" not in HTML_PATH.read_bytes(), "CRLF détecté dans MindMap HTML"
 
     # Intégration PRD Web (Vue 5 & lookup 379 nœuds + 290 unit_id)
     prd = bundle.get("prd") or {}
@@ -420,12 +450,12 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
 
-    node_script = """
+    node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
     const html = fs.readFileSync(process.argv[1], "utf8");
-    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\\s\\S]*?)<\\/script>/);
-    const jsMatch = html.match(/<script(?![^>]*type="application\\/json")[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)<\/script>/);
+    const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
 
     function makeEl(tag, id) {
       const listeners = {};
@@ -549,12 +579,12 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
 
-    node_script = """
+    node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
     const html = fs.readFileSync(process.argv[1], "utf8");
-    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\\s\\S]*?)<\\/script>/);
-    const jsMatch = html.match(/<script(?![^>]*type="application\\/json")[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)<\/script>/);
+    const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
 
     function makeEl(tag, id) {
       const listeners = {};
@@ -609,7 +639,7 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
       "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
       "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle",
       "prd-toc-pane", "prd-toc-filter", "prd-toc-count", "prd-toc-list", "prd-reader", "prd-stats-pill",
-      "prd-toggle-toc-btn", "prd-print-btn"
+      "prd-toggle-toc-btn", "prd-print-btn", "prd-standalone-link"
     ];
     const byId = {};
     for (const id of allIds) byId[id] = makeEl(id.endsWith("-svg") ? "svg" : "div", id);
@@ -668,16 +698,51 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
       if (!fullHtml.includes(marker)) throw new Error("Marqueur absent en Vue 5 mode intégral: " + marker);
     }
 
-    // 3. Filtres multi-facettes sur Vue 5
+    // Phase 2 : Hygiène DOM Vue 5 (0 backtick hors <code>, 0 **gras**, 0 \$, 0 <em> brisé sur gen_ai.*, 237 entrées Annexe D)
+    const fullNoCode = fullHtml.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
+    if (fullNoCode.includes("`")) throw new Error("Backtick brut détecté hors <code> dans Vue 5");
+    if (/(^|[\s(>])\*\*[^\s*](?:[^*\n]*?[^\s*])?\*\*(?=[\s.,;:!?<)]|$)/.test(fullNoCode)) {
+      throw new Error("**gras** brut détecté dans Vue 5");
+    }
+    if (/<strong>\s*et tests\//i.test(fullHtml)) {
+      throw new Error("Glob specs/** transformé en <strong> par erreur");
+    }
+    if (fullHtml.includes("\\$")) throw new Error("Literal backslash-dollar dans Vue 5");
+    if (/<em>[^<]*gen_ai\.[^<]*<\/em>/i.test(fullHtml)) throw new Error("<em> brisé autour de gen_ai.* dans Vue 5");
+    if (!fullHtml.includes("237 entrées uniques")) throw new Error("Matrice Annexe D 237 entrées absente en Vue 5");
+    const eng = sandbox.CartographieEngine;
+    const inlineChk = eng.prdInlineHtml("gen_ai.* et *Cost-per-Outcome* + `strict: true` 10 M\\$ CA L10-L20 A -> B C <-> D");
+    if (!inlineChk.includes("gen_ai.* et <em>Cost-per-Outcome</em>") || !inlineChk.includes("10 M$ CA") || !inlineChk.includes("A → B") || !inlineChk.includes("C ↔ D")) {
+      throw new Error("prdInlineHtml MindMap défaillant: " + inlineChk);
+    }
+
+    // 3. Filtres multi-facettes sur Vue 5 & état vide D01+L0+RSSI (Vue 5 + Vue 3)
     byId["f-domain"].value = "D07";
     byId["f-domain"].dispatch("change");
     if (!byId["prd-stats-pill"].textContent.includes("3 / 36 chapitres")) {
       throw new Error("Filtrage D07 inopérant en Vue 5: " + byId["prd-stats-pill"].textContent);
     }
+    byId["f-domain"].value = "D01";
+    byId["f-autonomy"].value = "L0";
+    byId["f-role"].value = "RSSI";
+    byId["f-role"].dispatch("change");
+    if (!byId["prd-stats-pill"].textContent.startsWith("0 / 36 chapitres · 0 / 260 thèmes")) {
+      throw new Error("computePrdFilterState incohérent sur D01+L0+RSSI: " + byId["prd-stats-pill"].textContent);
+    }
+    if (!byId["prd-reader"].innerHTML.includes("empty-state")) {
+      throw new Error("Empty state manquant en Vue 5 sur filtre 0 thème");
+    }
+    app.switchView("synaptic");
+    if (byId["sy-stats-pill"].textContent !== "0 thème · 0 arête") {
+      throw new Error("Vue 3 devrait afficher '0 thème · 0 arête' sans fallback 260: " + byId["sy-stats-pill"].textContent);
+    }
     byId["f-domain"].value = "";
+    byId["f-autonomy"].value = "";
+    byId["f-role"].value = "";
     byId["f-domain"].dispatch("change");
+    app.switchView("prd");
 
-    // 4. Pont bidirectionnel Inspecteur -> PRD & hash deep-linking
+    // 4. Pont bidirectionnel Inspecteur -> PRD & hash deep-linking & lien dynamique #prd-standalone-link
     app.getState().prdMode = "targeted";
     app.selectThemeNode("THM_loi-de-lusser", true);
     if (!byId["inspector-body"].innerHTML.includes("insp-goto-prd")) {
@@ -686,6 +751,9 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
     app.jumpToPrdByNodeId("THM_loi-de-lusser");
     if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 2 || app.getState().prdHighlightId !== "THM_loi-de-lusser") {
       throw new Error("Saut thème -> PRD défaillant");
+    }
+    if (!String(byId["prd-standalone-link"].getAttribute("href") || "").includes("#thm=THM_loi-de-lusser")) {
+      throw new Error("Lien dynamique prd-standalone-link non synchronisé: " + byId["prd-standalone-link"].getAttribute("href"));
     }
 
     app.applyHashNavigation("#view=prd&sec=1");

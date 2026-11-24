@@ -17,7 +17,7 @@
         "key_requirements_and_objectives": [
           "EXIG-DAPP-01 : L'organisation DOIT éprouver tout investissement structurant contre les trois scénarios non probabilisés A, B et C et isoler les 29 initiatives sans regret des 14 capacités conditionnelles avant tout engagement pluriannuel.",
           "EXIG-DAPP-02 : Aucun agent NE DOIT obtenir de droit d'écriture en production avant le verrouillage des 6 priorités des 90 premiers jours (inventaire, propriétaire unique, coupe-circuits STPA, NHI sans secret statique, couloir lecture seule et journal unifié avant le 1er mai 2027).",
-          "EXIG-DAPP-03 : Tout franchissement de palier (P1 -> P2 -> P3) DOIT satisfaire aux preuves système des portes POR-001 à POR-014, tandis que POR-015 DOIT garantir une rétrogradation d'autonomie sous 60 secondes et POR-016 une revue trimestrielle du coût par résultat conforme (CPO).",
+          "EXIG-DAPP-03 : Tout franchissement de palier (P1 → P2 → P3) DOIT satisfaire aux preuves système des portes POR-001 à POR-014, tandis que POR-015 DOIT garantir une rétrogradation d'autonomie sous 60 secondes et POR-016 une revue trimestrielle du coût par résultat conforme (CPO).",
           "EXIG-DAPP-04 : L'observatoire de veille DOIT relier chacun des 27 signaux (SIG-001..017, SIG-101..110) à un seuil quantifié, à un délai d'anticipation et à une réallocation budgétaire exécutée sous 30 jours après déclenchement.",
           "EXIG-DAPP-05 : Toute analyse prospective DOIT étiqueter chaque norme, brouillon IETF ou jalon réglementaire selon le tri strict FAIT ÉTABLI, PROGRAMMÉ, PROJETÉ ou SPÉCULATIF afin d'éviter la péremption des feuilles de route.",
           "EXIG-DAPP-06 : La préparation cryptographique DOIT imposer l'automatisation ACME avant les échéances TLS 100 jours (15 mars 2027) et 47 jours (15 mars 2029) et planifier l'agilité ML-KEM/ML-DSA pour la fenêtre 2030–2035 (NIST IR 8547 et G7 CEG)."
@@ -72,7 +72,7 @@
                 "theme_node_id": "THM_trajectoire-90j-18m-p1-p3",
                 "canonical_slug": "trajectoire-90j-18m-p1-p3",
                 "theme_title": "Continuité entre rampe tactique 90 j–18 m et Paliers P1–P3 (2028–2035)",
-                "content_specification": "Soude la rampe tactique J1 (90 j Fondations N0–N1) -> J2 (9 m Plateforme) -> J3 (18 m Niveau 3 Défini / Stade 2) aux trois paliers DAPP : P1 (2028–2029, fonder le contrôle -> Stade 2), P2 (2030–2032, étendre sans perte probatoire et préparer la fenêtre PQC G7 -> Stade 3) et P3 (2033–2035, ouvrir les corridors B2B après la temporisation législative canadienne du 30 juin 2033 -> Stade 3/4 sélectif), alignés sur les dates fermes 2027–2035 et les 10 thèses T1–T10.",
+                "content_specification": "Soude la rampe tactique J1 (90 j Fondations N0–N1) → J2 (9 m Plateforme) → J3 (18 m Niveau 3 Défini / Stade 2) aux trois paliers DAPP : P1 (2028–2029, fonder le contrôle → Stade 2), P2 (2030–2032, étendre sans perte probatoire et préparer la fenêtre PQC G7 → Stade 3) et P3 (2033–2035, ouvrir les corridors B2B après la temporisation législative canadienne du 30 juin 2033 → Stade 3/4 sélectif), alignés sur les dates fermes 2027–2035 et les 10 thèses T1–T10.",
                 "identifiers_and_norms": [
                   "T1–T10",
                   "J1–J3",
@@ -86,7 +86,7 @@
                 "theme_node_id": "THM_feuille-de-route-phases-90-jours-indicateurs",
                 "canonical_slug": "feuille-de-route-phases-90-jours-indicateurs",
                 "theme_title": "Feuille de route 2027–2030 en quatre phases (J1–J5, J2a), plan 90 jours et 16 indicateurs",
-                "content_specification": "Séquencement normatif CRE-IA sur 4 phases (Fondations 0–3 m N0/N1 -> Plateforme 3–9 m N2/N3 bornés -> Industrialisation 9–18 m N3 interdomaines via passerelle -> Mise à l'échelle 18 m+ N4) arrimé aux dates externes incompressibles : BSIF E-23/AMF (1er mai 2027), migration MCP (28 juill. 2027, EXIG-MCP-22), jalon J2a (1er nov. 2027 avant RIA Annexe III au 2 déc. 2027, EN 18286:2026) et ISO/IEC 42001 (J4/J5), avec plan 13 semaines, 16 indicateurs mesurés à J3 et 11 risques de déploiement.",
+                "content_specification": "Séquencement normatif CRE-IA sur 4 phases (Fondations 0–3 m N0/N1 → Plateforme 3–9 m N2/N3 bornés → Industrialisation 9–18 m N3 interdomaines via passerelle → Mise à l'échelle 18 m+ N4) arrimé aux dates externes incompressibles : BSIF E-23/AMF (1er mai 2027), migration MCP (28 juill. 2027, EXIG-MCP-22), jalon J2a (1er nov. 2027 avant RIA Annexe III au 2 déc. 2027, EN 18286:2026) et ISO/IEC 42001 (J4/J5), avec plan 13 semaines, 16 indicateurs mesurés à J3 et 11 risques de déploiement.",
                 "identifiers_and_norms": [
                   "J1–J5",
                   "J2a",
@@ -133,7 +133,7 @@
                 "theme_node_id": "THM_tri-prospectif-peremption-feuilles-route",
                 "canonical_slug": "tri-prospectif-peremption-feuilles-route",
                 "theme_title": "Tri prospectif PROGRAMMÉ / PROJETÉ / SPÉCULATIF et péremption accélérée des feuilles de route",
-                "content_specification": "Impose une discipline temporelle stricte sur toute référence protocolaire ou réglementaire : sépare un fait daté contraignant (PROGRAMMÉ : 1er mai 2027 BSIF/AMF, 31 déc. 2030/2031 EO 14412, expirations à 6 mois des Internet-Drafts IETF) d'une intention non datée (PROJETÉ : travaux ANP, W3C Agent Trust, FIDO/AP2 sans livrable ferme) et d'un pari de recherche (SPÉCULATIF), illustré par l'obsolescence en moins de 4 mois d'Ehtesham et al. après la fusion ACP -> A2A.",
+                "content_specification": "Impose une discipline temporelle stricte sur toute référence protocolaire ou réglementaire : sépare un fait daté contraignant (PROGRAMMÉ : 1er mai 2027 BSIF/AMF, 31 déc. 2030/2031 EO 14412, expirations à 6 mois des Internet-Drafts IETF) d'une intention non datée (PROJETÉ : travaux ANP, W3C Agent Trust, FIDO/AP2 sans livrable ferme) et d'un pari de recherche (SPÉCULATIF), illustré par l'obsolescence en moins de 4 mois d'Ehtesham et al. après la fusion ACP → A2A.",
                 "identifiers_and_norms": [
                   "PROGRAMMÉ",
                   "PROJETÉ",
@@ -220,7 +220,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 18,
             "target_slug": "post-quantique-ml-dsa-slh-dsa",
-            "synthesis": "Cadence la migration PKI/PQC (TLS 100 j -> 47 j, ML-KEM hybride, signatures ML-DSA/SLH-DSA en POR-007/POR-011) selon la maturité des profils fournisseurs sans surinvestissement rigide avant 2030–2035."
+            "synthesis": "Cadence la migration PKI/PQC (TLS 100 j → 47 j, ML-KEM hybride, signatures ML-DSA/SLH-DSA en POR-007/POR-011) selon la maturité des profils fournisseurs sans surinvestissement rigide avant 2030–2035."
           },
           {
             "direction": "sortante",
@@ -260,6 +260,21 @@
         ],
         "corpus_anchors": [
           {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitres 10.6, 12.5, 49 — Tri prospectif et 40+ lacunes 2027–2032 (L2929–L2962, L10996–L11396)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Chapitres 14–15 — Modèle de maturité 5×5 et feuille de route J1–J5 (L6486–L6769)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitres 4, 11, 43, 49 — Trois horloges, scénarios 2027–2030 et horizon METR (L1717–L1735, L22287–L22383, L26700–L26998)"
+          },
+          {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
             "reference": "Section 8.3 & 8.6 — Scénarios A/B/C et modélisation EMA (`DC-P12`) (L1453–L1514)"
@@ -273,21 +288,6 @@
             "tome_id": "T7",
             "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
             "reference": "Chapitre 12 & Annexe B — 6 priorités des 90 jours, DAPP/STPA et chronologie 2026–2035 (L1718–L2162)"
-          },
-          {
-            "tome_id": "T2",
-            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Chapitres 14–15 — Modèle de maturité 5×5 et feuille de route J1–J5 (L6486–L6769)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitres 4, 11, 43, 49 — Trois horloges, scénarios 2027–2030 et horizon METR (L1717–L1735, L22287–L22383, L26700–L26998)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitres 10.6, 12.5, 49 — Tri prospectif et 40+ lacunes 2027–2032 (L2929–L2962, L10996–L11396)"
           }
         ]
       }
@@ -425,7 +425,7 @@
           }
         ],
         "deliverables_and_verification": [
-          "Contrat croisé AE <-> AS documentant les 10 thèses T1–T10, les 6 décisions conjointes et la matrice RACI à A unique.",
+          "Contrat croisé AE ↔ AS documentant les 10 thèses T1–T10, les 6 décisions conjointes et la matrice RACI à A unique.",
           "Registre d'entreprise à 7 états et 6 jalons doté d'un script de rapprochement mensuel détectant et isolant les agents non déclarés.",
           "Procédure de couloir rapide lecture seule (Classe 1) et formulaire de dérogation bornée contrôlant automatiquement les 10 interdits d'EXIG-GOV-17.",
           "Matrice active des 7 pièges endogènes (M-26 / Tableau 11.2) reliant chaque symptôme à un disjoncteur technique ou budgétaire vérifié annuellement par la 3e ligne.",
@@ -491,9 +491,9 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive & Ch. 11–12 — 10 thèses T1–T10, 6 décisions AE↔AS et 7 pièges (L95–L118, L1472–L1677)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Section 10.4 — Responsabilité, litiges et non-répudiation (L2834–L2867)"
           },
           {
             "tome_id": "T2",
@@ -501,9 +501,9 @@
             "reference": "Chapitre 11 — Rôles, RACI, modèle en étoile, registre à 7 états et dérogations (L5229–L5612)"
           },
           {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 11 (§ 11.1, § 11.4, Tableau 11.2) — Sept pièges endogènes et disjoncteurs (L1607–L1716)"
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Section 0.3 & Chapitre 41 — Hub-and-Spoke, CoE et propriétaires SIRH (L243–L281, L21356–L21950)"
           },
           {
             "tome_id": "T4",
@@ -511,14 +511,14 @@
             "reference": "Chapitre M-26 (§ 26.5) — Risques endogènes du plan et parades (L5115–L5126)"
           },
           {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Section 0.3 & Chapitre 41 — Hub-and-Spoke, CoE et propriétaires SIRH (L243–L281, L21356–L21950)"
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Synthèse exécutive & Ch. 11–12 — 10 thèses T1–T10, 6 décisions AE↔AS et 7 pièges (L95–L118, L1472–L1677)"
           },
           {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Section 10.4 — Responsabilité, litiges et non-répudiation (L2834–L2867)"
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 11 (§ 11.1, § 11.4, Tableau 11.2) — Sept pièges endogènes et disjoncteurs (L1607–L1716)"
           }
         ]
       }
@@ -641,9 +641,14 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 11 (§ 11.2–11.4, Fig-20, Tableau 11.1) — Approbation réflexe, relève et 4 parades (L1629–L1715)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Sections 24.9 & 49.8 — Déqualification, Dir. 2019/882 et prospective emploi (L5990–L6025, L11191–L11248)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 41 (§ 41.2–41.8) — Complémentarité humain-agent et reconversion RH-IT (L21388–L21760)"
           },
           {
             "tome_id": "T4",
@@ -656,14 +661,9 @@
             "reference": "Sections 6.4 & 12.3 — Ergonomie anti-complaisance ASI09 et préservation de la relève (L986–L1010, L1642–L1677)"
           },
           {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Sections 24.9 & 49.8 — Déqualification, Dir. 2019/882 et prospective emploi (L5990–L6025, L11191–L11248)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 41 (§ 41.2–41.8) — Complémentarité humain-agent et reconversion RH-IT (L21388–L21760)"
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 11 (§ 11.2–11.4, Fig-20, Tableau 11.1) — Approbation réflexe, relève et 4 parades (L1629–L1715)"
           }
         ]
       }
@@ -847,6 +847,11 @@
         ],
         "corpus_anchors": [
           {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Annexe N.3 — Reports CRE-IA-2026-01-QC de la Note AMF IA (L12937–L12968)"
+          },
+          {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
             "reference": "Historique v1.2, Chapitre 1 & Annexes A, B, D — 305 EXIG-*, portée RFC 2119 et fiches (L31–L544, L6788–L7804)"
@@ -860,11 +865,6 @@
             "tome_id": "T8",
             "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
             "reference": "Annexe B — Matrice EXIG / PRR_BLOCKING / C01–C40 / 2027-B001 (L2928–L3108)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Annexe N.3 — Reports CRE-IA-2026-01-QC de la Note AMF IA (L12937–L12968)"
           }
         ]
       }
@@ -1040,11 +1040,6 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Liminaire (§ 0.3–0.5) & Annexe B — Architecture bicéphale, G0, 5 SBB et CA-G0-SYNC (L52–L100, L2915–L3125)"
-          },
-          {
             "tome_id": "R",
             "file": "Corpus/README.md",
             "reference": "Repères éditoriaux Tome 8 — Compteurs G0, paquets et licences (L9–L29)"
@@ -1063,6 +1058,11 @@
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
             "reference": "Sections 10 & 12 — Unification des seuils [S] et synthèse FEDS (L1458–L1463, L1642–L1677)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Liminaire (§ 0.3–0.5) & Annexe B — Architecture bicéphale, G0, 5 SBB et CA-G0-SYNC (L52–L100, L2915–L3125)"
           }
         ]
       }
@@ -1088,12 +1088,12 @@
           {
             "family_node_id": "FAM_D12_03_01",
             "family_title": "Concordance inter-tomes (DIV-02), résolution DISC-01..05, glossaire et réconciliation interne",
-            "family_overview": "Élimine toute dissonance structurelle entre les 8 tomes : fermeture de DIV-02 (52 CAP + 24 PEX -> 305 EXIG-*), table canonique DISC-01 à DISC-05 du Tome 8, unification des couches et échelles au Tome 1 et glossaire normatif bilingue fr-CA/en.",
+            "family_overview": "Élimine toute dissonance structurelle entre les 8 tomes : fermeture de DIV-02 (52 CAP + 24 PEX → 305 EXIG-*), table canonique DISC-01 à DISC-05 du Tome 8, unification des couches et échelles au Tome 1 et glossaire normatif bilingue fr-CA/en.",
             "themes_targeted": [
               {
                 "theme_node_id": "THM_concordance-inter-tomes-div02",
                 "canonical_slug": "concordance-inter-tomes-div02",
-                "theme_title": "Fermeture de DIV-02 : soudure 52 CAP + 24 PEX -> 305 EXIG-* v1.2 et quatre découpages",
+                "theme_title": "Fermeture de DIV-02 : soudure 52 CAP + 24 PEX → 305 EXIG-* v1.2 et quatre découpages",
                 "content_specification": "Documente la fermeture vérifiée de la lacune `DIV-02` par inspection directe de CAD26 v1.2 et de la Note AMF IA (49 p.). Raccorde les quatre découpages architecturaux du corpus (rectifiant 3 suppositions d'Annexe E.1 de T4 : modèles/confinement en Couche 3, absence de Couche Connaissance, journalisation en Couche 6), relie 52/52 CAP et 24/24 PEX (13 spécialisations + 11 comblements de lacunes) aux 305 EXIG-* via `DC-P07`, corrige 4 coquilles de CAD26 v1.1 et note la dissonance D6/D7 M-12 vs M-15/M-18.",
                 "identifiers_and_norms": [
                   "DIV-02",
@@ -1287,7 +1287,7 @@
           }
         ],
         "deliverables_and_verification": [
-          "Table canonique de passage `concordance-taxonomies.json` (DISC-01..05) et tables de concordance DIV-02 (52 CAP + 24 PEX -> 305 EXIG-* v1.2).",
+          "Table canonique de passage `concordance-taxonomies.json` (DISC-01..05) et tables de concordance DIV-02 (52 CAP + 24 PEX → 305 EXIG-* v1.2).",
           "Registres vérifiés des sources ouvertes `L+` SHA-256, des exclusions `Statut F` (`registre-statut-f.json`), des 159 entrées Annexe B, 999 notices Annexe I et 449 sources Annexe G du Tome 2.",
           "Journaux d'assurance qualité Wyvern (`G2`), recollations stratifiées à froid `G3` / `CA-16` (`60/60` en T4/T7/T8, `40/40` en T5), critiques `G4` (`gauntlet-loop`) et rapports `G5`.",
           "Chaîne de production `gabarit-pdf/` (`volumes.json`, `compile_diagrams.py`, `compile_pdf.py`) délivrant les 8 PDF Typst (4 542 p., 319 diagrammes) et 2 HTML autonomes.",
@@ -1365,19 +1365,9 @@
             "reference": "Index et Repères éditoriaux — 8 tomes, 4 542 pages, 319 diagrammes et gabarit Typst (L1–L30)"
           },
           {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Liminaire, Chapitre 2 & Annexes A, D — Fermeture DIV-02 et matrices CAP/PEX->EXIG (L19–L53, L263–L332, L1748–L2033)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Section 0.2, 0.5 & Annexe B — DISC-01..05, Statut F, Wyvern G0–G5 et CA-16 (L34–L96, L2918–L3008)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Liminaire & Annexe D — DIV-02, recollations CA-16 (120 items) et traçabilité (L31–L68, L5446–L5476)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitres 43, 50 & Annexes B, I, N — Réconciliation interne, 14 événements de péremption et AN-1..27 (L9857–L9893, L11439–L13017)"
           },
           {
             "tome_id": "T2",
@@ -1385,14 +1375,24 @@
             "reference": "Annexes E, F, G, H — Glossaire, audit 121 réf./449 sources et v1.2 (L7805–L8780)"
           },
           {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitres 43, 50 & Annexes B, I, N — Réconciliation interne, 14 événements de péremption et AN-1..27 (L9857–L9893, L11439–L13017)"
-          },
-          {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
             "reference": "Liminaire, Ch. 38, 48.12 & Annexe E — Rapprochement éditions, statut F / A4 et 1 101 URLs (L11–L35, L26431–L26500, L28155–L28298)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Liminaire & Annexe D — DIV-02, recollations CA-16 (120 items) et traçabilité (L31–L68, L5446–L5476)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Liminaire, Chapitre 2 & Annexes A, D — Fermeture DIV-02 et matrices CAP/PEX→EXIG (L19–L53, L263–L332, L1748–L2033)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Section 0.2, 0.5 & Annexe B — DISC-01..05, Statut F, Wyvern G0–G5 et CA-16 (L34–L96, L2918–L3008)"
           }
         ]
       }

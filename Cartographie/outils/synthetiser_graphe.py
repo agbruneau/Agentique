@@ -100,7 +100,7 @@ SUBDOMAIN_OVERRIDE: dict[tuple[str, str], str] = {
     ("D09", "Droit européen et comparatif"): "Réglementation européenne et référentiels internationaux",
     # D11
     ("D11", "Prospective et péremption"): "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
-    ("D11", "Responsabilité et litiges"): "Gouvernance duale AE <-> AS, thèses T1–T10 et pièges",
+    ("D11", "Responsabilité et litiges"): "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges",
     # D12
     ("D12", "Épistémologie de vérification"): "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
     ("D12", "Structure de la somme"): "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
@@ -233,7 +233,7 @@ FAMILY_RULES: dict[tuple[str, str], list[tuple[str, list[str]]]] = {
         ("Trajectoires adaptatives DAPP, portes POR et signaux SIG", ["dapp", "portes", "signaux", "trajectoire-90j", "feuille-de-route", "priorites-90"]),
         ("Prospective, scénarios 2028–2035 et maturité", []),
     ],
-    ("D11", "Gouvernance duale AE <-> AS, thèses T1–T10 et pièges"): [
+    ("D11", "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges"): [
         ("Gouvernance duale AE ↔ AS, thèses T1–T10 et RACI", ["gouvernance-duale", "theses", "decisions-conjointes", "raci", "hub-and-spoke", "registre", "derogations"]),
         ("Sept pièges de gouvernance et responsabilité", []),
     ],
@@ -577,7 +577,7 @@ SPECIALIZED_NODES_SPEC: list[dict[str, Any]] = [
         "canonical_slug": "dix-theses-t1-t10-tome-5",
         "parent_pivot": "gouvernance-duale-ae-as",
         "domain_id": "D11",
-        "subdomain": "Gouvernance duale AE <-> AS, thèses T1–T10 et pièges",
+        "subdomain": "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges",
         "title": "Dix thèses structurantes (T1–T10) et six décisions conjointes AE ↔ AS",
         "summary": "Synthèse doctrinale du Tome 5 soudant les arbitrages portefeuille de l'Architecte d'entreprise (AE) et les spécifications techniques de l'Architecte de solutions (AS) sur l'horizon 2026–2035.",
         "autonomy_levels": ["L0", "L1", "L2", "L3", "L4"],

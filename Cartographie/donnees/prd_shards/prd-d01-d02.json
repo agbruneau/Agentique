@@ -71,7 +71,7 @@
                 "theme_node_id": "THM_systems-of-agency",
                 "canonical_slug": "systems-of-agency",
                 "theme_title": "Constat empirique fin 2026 : soutien vs production et déploiements bornés",
-                "content_specification": "Instituer la strate System of Action (SoA) entre Systems of Engagement (SoE) et Systems of Record (SoR) sous ADR-001 (zéro écriture SQL directe) afin de ramener N×M connecteurs propriétaires à N+M contrats réutilisables derrière une passerelle et un catalogue uniques, tout en satisfaisant sept critères vérifiables (action, limites, identité, imputabilité, inventaire, composition, mesure). Appliquer la règle « soutien n'est pas production » face à l'écart valeur/pilotes (MIT NANDA : 95 % sans retour chiffré), à l'explosion NHI (ratio 82:1 CyberArk), à la contrainte énergétique (AIE : 415 -> 945 TWh en 2030) et à la rareté de cas arbitrés en prod (Nubank KDD 2026 sur 5 agents ReAct sans MCP ni A2A).",
+                "content_specification": "Instituer la strate System of Action (SoA) entre Systems of Engagement (SoE) et Systems of Record (SoR) sous ADR-001 (zéro écriture SQL directe) afin de ramener N×M connecteurs propriétaires à N+M contrats réutilisables derrière une passerelle et un catalogue uniques, tout en satisfaisant sept critères vérifiables (action, limites, identité, imputabilité, inventaire, composition, mesure). Appliquer la règle « soutien n'est pas production » face à l'écart valeur/pilotes (MIT NANDA : 95 % sans retour chiffré), à l'explosion NHI (ratio 82:1 CyberArk), à la contrainte énergétique (AIE : 415 → 945 TWh en 2030) et à la rareté de cas arbitrés en prod (Nubank KDD 2026 sur 5 agents ReAct sans MCP ni A2A).",
                 "identifiers_and_norms": [
                   "SoE / SoA / SoR",
                   "ADR-001",
@@ -79,7 +79,7 @@
                   "PRIN-02",
                   "MIT NANDA",
                   "CyberArk 82:1",
-                  "AIE 415->945 TWh",
+                  "AIE 415→945 TWh",
                   "KDD-2026 (Nubank)",
                   "SIG-013",
                   "SIG-017"
@@ -110,7 +110,7 @@
                 "theme_node_id": "THM_hierarchie-preuves-etudes-cas",
                 "canonical_slug": "hierarchie-preuves-etudes-cas",
                 "theme_title": "Hiérarchie des preuves (6 niveaux) et bilan empirique des études de cas",
-                "content_specification": "Subordonner toute affirmation technique ou économique aux 6 niveaux de preuve : niveau 1 production évaluée par les pairs (Nubank KDD 2026, nécessitant réingénierie d'invites lors de GPT-4.1 -> GPT-5), niveau 2 étude de terrain (MAP v4), niveau 3 éditeur (ServiceNow), niveau 4 bancs contrôlés (10 000 dépôts SEC plafonnant à 0,758 ; ITBench 10–25 % ; ORCA-bench), niveau 5 registre public québécois MCN (432 initiatives sans isolation d'agents), niveau 6 déclaratif non audité. Consigner explicitement l'absence d'étude arbitrée démontrant MCP ou A2A en production à grande échelle au gel de novembre 2026.",
+                "content_specification": "Subordonner toute affirmation technique ou économique aux 6 niveaux de preuve : niveau 1 production évaluée par les pairs (Nubank KDD 2026, nécessitant réingénierie d'invites lors de GPT-4.1 → GPT-5), niveau 2 étude de terrain (MAP v4), niveau 3 éditeur (ServiceNow), niveau 4 bancs contrôlés (10 000 dépôts SEC plafonnant à 0,758 ; ITBench 10–25 % ; ORCA-bench), niveau 5 registre public québécois MCN (432 initiatives sans isolation d'agents), niveau 6 déclaratif non audité. Consigner explicitement l'absence d'étude arbitrée démontrant MCP ou A2A en production à grande échelle au gel de novembre 2026.",
                 "identifiers_and_norms": [
                   "Hiérarchie 6 niveaux",
                   "KDD-2026",
@@ -178,7 +178,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 3,
             "target_slug": "genealogie-eai-soa-fipa-llm",
-            "synthesis": "Thème local `systems-of-agency` — retrace l'évolution 2000–2027 vers les Systems of Agency à 3 générations : Les chapitres 1.6 et 2 montrent la transition historique EAI -> SOA -> API -> EDA et des copilotes synchrones 2023–2024 vers l'orchestration de spécialistes L2/L3 en 2026–2027."
+            "synthesis": "Thème local `systems-of-agency` — retrace l'évolution 2000–2027 vers les Systems of Agency à 3 générations : Les chapitres 1.6 et 2 montrent la transition historique EAI → SOA → API → EDA et des copilotes synchrones 2023–2024 vers l'orchestration de spécialistes L2/L3 en 2026–2027."
           },
           {
             "direction": "entrante",
@@ -255,7 +255,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 31,
             "target_slug": "frontiere-capacites-metr-veille",
-            "synthesis": "Thème local `revue-litterature-mlr-prisma` — Transfert recherche -> production d'ici 2030 : L'isolation par construction et la vérification formelle des politiques (niveaux 2–3 de maturité) présentent le chemin le plus court vers la production d'ici 2030 comparé aux mémoires et SLM autonomes (Ch. 48.12, 49.6)."
+            "synthesis": "Thème local `revue-litterature-mlr-prisma` — Transfert recherche → production d'ici 2030 : L'isolation par construction et la vérification formelle des politiques (niveaux 2–3 de maturité) présentent le chemin le plus court vers la production d'ici 2030 comparé aux mémoires et SLM autonomes (Ch. 48.12, 49.6)."
           },
           {
             "direction": "sortante",
@@ -269,72 +269,72 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.0.1 Du modèle conversationnel à l’agent qui agit sur le monde (L955-L970)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.0.1 Du modèle conversationnel à l’agent qui agit sur le monde (L955–L970)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.1 Qu’est-ce qu’un agent ? Définition canonique et débat terminologique (L985–L1000)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.2 Le cadre de l’agent rationnel : PEAS et typologies (L1001–L1012)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "2 Contexte et enjeux > 2.1 Où en est l’entreprise agentique en 2026 (L549-L600)"
+            "reference": "2 Contexte et enjeux > 2.1 Où en est l’entreprise agentique en 2026 (L549–L600)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "2 Contexte et enjeux > 2.3 Huit enjeux qui motivent le cadre (L637–L686)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique > 1.1 De l’assistant à l’agent (L405-L456)"
+            "reference": "Chapitre 1 — L’entreprise agentique > 1.1 De l’assistant à l’agent (L405–L456)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 1 — L’entreprise agentique > 1.2 Taxonomie (L457–L511)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur > 2.1 Bilan à l’entrée de 2028 : acquis stabilisés et chantiers ouverts (L383-L412)"
+            "reference": "Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur > 2.1 Bilan à l’entrée de 2028 : acquis stabilisés et chantiers ouverts (L383–L412)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur > 2.2 État détaillé des hypothèses `H1` à `H6` du Compendium 2027 (L413–L432)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 2. Les dix thèses structurantes (`T1` à `T10`) (L95-L107)"
+            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 2. Les dix thèses structurantes (`T1` à `T10`) (L95–L107)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.1 Adoption mesurée fin 2026 et règle « soutien n’est pas production » (L142–L151)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.1 Stratification du SI : Systems of Record, Systems of Engagement et Systems of Agency (L202-L265)"
+            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.1 Stratification du SI : Systems of Record, Systems of Engagement et Systems of Agency (L202–L265)"
           },
           {
             "tome_id": "T7",
             "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique > 0.2 L'interopérabilité au-delà du transport syntaxique (L38-L161)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.1 Qu’est-ce qu’un agent ? Définition canonique et débat terminologique (L985-L1000)"
-          },
-          {
-            "tome_id": "T2",
-            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "2 Contexte et enjeux > 2.3 Huit enjeux qui motivent le cadre (L637-L686)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique > 1.2 Taxonomie (L457-L511)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur > 2.2 État détaillé des hypothèses `H1` à `H6` du Compendium 2027 (L413-L432)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.1 Adoption mesurée fin 2026 et règle « soutien n’est pas production » (L142-L151)"
+            "reference": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique > 0.2 L'interopérabilité au-delà du transport syntaxique (L38–L161)"
           },
           {
             "tome_id": "T7",
             "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.2 Séparer les systèmes d'engagement, d'agence et d'autorité (L586-L605)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.2 Le cadre de l’agent rationnel : PEAS et typologies (L1001-L1012)"
+            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.2 Séparer les systèmes d'engagement, d'agence et d'autorité (L586–L605)"
           }
         ]
       }
@@ -552,72 +552,72 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.5 La frontière des capacités 2024-2026 : cadrage qualitatif (L1043-L1058)"
-          },
-          {
-            "tome_id": "T2",
-            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "6 Interopérabilité > 6.1 Quatre niveaux d’interopérabilité et gouvernance intégrée (L1534-L1545)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.2 Enjeux économiques et opérationnels de 2027 > 0.2 Enjeux économiques et opérationnels de 2027 (L221-L242)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert > 6.1 La capacité brute des modèles devenue variable non observée (L1152-L1165)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.2 Défaillances systémiques, loi de Lusser, bancs saturés et marché (L152-L159)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.2 Rupture épistémique : non-déterminisme, latence variable et effets de bord irréversibles (L266-L341)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique > 0.3 L'orchestration comme discipline de retenue et de contrôle déterministe (L162-L175)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) > 1.1 Pipeline typé en huit étapes (JSON Schema Draft 2020-12, strict: true) et porte AMBIGU_ESCALADE (L139-L148)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.5 La frontière des capacités 2024-2026 : cadrage qualitatif (L1043–L1058)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "6 · Systèmes multi-agents, évaluation et sûreté > 6.1.1 Gains, surcoût et fondements classiques (L1512-L1531)"
+            "reference": "6 · Systèmes multi-agents, évaluation et sûreté > 6.1.1 Gains, surcoût et fondements classiques (L1512–L1531)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "7 Orchestration > 7.1 Commencer simple : ce que disent les données probantes (L2744-L2750)"
+            "reference": "6 Interopérabilité > 6.1 Quatre niveaux d’interopérabilité et gouvernance intégrée (L1534–L1545)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "7 Orchestration > 7.1 Commencer simple : ce que disent les données probantes (L2744–L2750)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 12 — Couche sémantique et ontologies > 12.1 Pourquoi l’accord syntaxique ne suffit pas (L5693-L5734)"
+            "reference": "0.2 Enjeux économiques et opérationnels de 2027 > 0.2 Enjeux économiques et opérationnels de 2027 (L221–L242)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 12 — Couche sémantique et ontologies > 12.1 Pourquoi l’accord syntaxique ne suffit pas (L5693–L5734)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert > 6.2 Du plafond de capacité brute au prix de la fiabilité opérationnelle (L1166-L1183)"
+            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert > 6.1 La capacité brute des modèles devenue variable non observée (L1152–L1165)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert > 6.2 Du plafond de capacité brute au prix de la fiabilité opérationnelle (L1166–L1183)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.4 Sobriété agentique, hypothèses H1–H6 et parcours adaptatifs DAPP (L218-L239)"
+            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.2 Défaillances systémiques, loi de Lusser, bancs saturés et marché (L152–L159)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.4 Sobriété agentique, hypothèses H1–H6 et parcours adaptatifs DAPP (L218–L239)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) > 11.2.1 Trajectoire et état final : la divergence entre pass@k et pass^k (L3496-L3506)"
+            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.2 Rupture épistémique : non-déterminisme, latence variable et effets de bord irréversibles (L266–L341)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) > 11.2.1 Trajectoire et état final : la divergence entre pass@k et pass^k (L3496–L3506)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique > 0.3 L'orchestration comme discipline de retenue et de contrôle déterministe (L162–L175)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) > 1.1 Pipeline typé en huit étapes (JSON Schema Draft 2020-12, `strict: true`) et porte AMBIGU_ESCALADE (L139–L148)"
           }
         ]
       }
@@ -649,7 +649,7 @@
                 "theme_node_id": "THM_couts-transaction-coase",
                 "canonical_slug": "couts-transaction-coase",
                 "theme_title": "Coûts de transaction cognitifs de Coase et économies d'agents virtuels",
-                "content_specification": "Réinterpréter les frontières faire/faire-faire (Coase 1937, Williamson 1981, NBER w34468, Hadfield & Koh) sous l'effondrement des coûts de transaction cognitifs tout en contenant quatre limites structurelles : incomplétude des instructions du mandant, congestion et péages/obfuscation de marché, effondrement du ROI espéré à 3 ans (45 % -> 12 % dans l'enquête Deloitte Tech Value Survey 2025) et opacité des modèles de fondation fermés. À partir de la matrice 2×2 de Tomašev et coll. (arXiv:2509.10147), prévenir la dérive vers le quadrant « émergente × perméable » (monoculture façon Flash Crash 2010, HFN, agent traps, collusion RL, sagas rompues) et construire un espace « conçue × perméable » fondé sur DID/VC, plafonds financiers, moniteurs machine et imputation légale.",
+                "content_specification": "Réinterpréter les frontières faire/faire-faire (Coase 1937, Williamson 1981, NBER w34468, Hadfield & Koh) sous l'effondrement des coûts de transaction cognitifs tout en contenant quatre limites structurelles : incomplétude des instructions du mandant, congestion et péages/obfuscation de marché, effondrement du ROI espéré à 3 ans (45 % → 12 % dans l'enquête Deloitte Tech Value Survey 2025) et opacité des modèles de fondation fermés. À partir de la matrice 2×2 de Tomašev et coll. (arXiv:2509.10147), prévenir la dérive vers le quadrant « émergente × perméable » (monoculture façon Flash Crash 2010, HFN, agent traps, collusion RL, sagas rompues) et construire un espace « conçue × perméable » fondé sur DID/VC, plafonds financiers, moniteurs machine et imputation légale.",
                 "identifiers_and_norms": [
                   "NBER-w34468",
                   "arXiv:2509.10147",
@@ -787,7 +787,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 1,
             "target_slug": "systems-of-agency",
-            "synthesis": "Thème local `genealogie-eai-soa-fipa-llm` — retrace l'évolution 2000–2027 vers les Systems of Agency à 3 générations : Les chapitres 1.6 et 2 montrent la transition historique EAI -> SOA -> API -> EDA et des copilotes synchrones 2023–2024 vers l'orchestration de spécialistes L2/L3 en 2026–2027."
+            "synthesis": "Thème local `genealogie-eai-soa-fipa-llm` — retrace l'évolution 2000–2027 vers les Systems of Agency à 3 générations : Les chapitres 1.6 et 2 montrent la transition historique EAI → SOA → API → EDA et des copilotes synchrones 2023–2024 vers l'orchestration de spécialistes L2/L3 en 2026–2027."
           },
           {
             "direction": "sortante",
@@ -878,72 +878,72 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.0.1 Coût de la non-interopérabilité et dette d’intégration : l’enjeu économique et le périmètre du chapitre (L123-L130)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie > 2.1 EAI, SOA, API, EDA : quatre générations d’intégration (L1121-L1183)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude > 1.3 Discipline du temps et de la preuve : marques, sources et lettres probantes (L231-L278)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Liminaire — À propos de ce mémoire > Lexique des marques épistémiques et normatives (L35-L39)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.4 Dette technique contre dette cognitive : dérive silencieuse et couplage aux modèles (L401-L454)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents > 1.2 Les moteurs composés de l'industrialisation cognitive (L214-L294)"
+            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.0.1 Coût de la non-interopérabilité et dette d’intégration : l’enjeu économique et le périmètre du chapitre (L123–L130)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.0.2 L’invariant transversal — découplage, contrat, évolution (L131-L144)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie > Protocoles d’interaction et négociation (L1215-L1218)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-7 — Marché, coûts, énergie et compétences > 7.1 Lire les prévisions de marché comme des hypothèses datées en fourchette (L1308-L1315)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.3 Thèse centrale, fractures du corpus et économie de la preuve (L160-L217)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.4 Gouvernance du portefeuille : arbitrage Acheter (agents SaaS) vs Assembler vs Construire (L723-L778)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes > 3.1 Ronald Coase revisité : quand chercher, négocier et vérifier ne coûtent presque plus de temps humain (L426-L504)"
+            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.0.2 L’invariant transversal — découplage, contrat, évolution (L131–L144)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.1.3 Couplage, découplage et conception orientée contrat (L192-L215)"
+            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.1.3 Couplage, découplage et conception orientée contrat (L192–L215)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie > Ce que cela résout (L1256-L1261)"
+            "reference": "Chapitre 2 — Généalogie > 2.1 EAI, SOA, API, EDA : quatre générations d’intégration (L1121–L1183)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 2 — Généalogie > Protocoles d’interaction et négociation (L1215–L1218)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 2 — Généalogie > Ce que cela résout (L1256–L1261)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude > 1.3 Discipline du temps et de la preuve : marques, sources et lettres probantes (L231–L278)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-7 — Marché, coûts, énergie et compétences > 7.1 Lire les prévisions de marché comme des hypothèses datées en fourchette (L1308–L1315)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Liminaire — À propos de ce mémoire > Lexique des marques épistémiques et normatives (L35–L39)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.3 Thèse centrale, fractures du corpus et économie de la preuve (L160–L217)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.4 Dette technique contre dette cognitive : dérive silencieuse et couplage aux modèles (L401–L454)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.4 Gouvernance du portefeuille : arbitrage Acheter (agents SaaS) vs Assembler vs Construire (L723–L778)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents > 1.2 Les moteurs composés de l'industrialisation cognitive (L214–L294)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes > 3.1 Ronald Coase revisité : quand chercher, négocier et vérifier ne coûtent presque plus de temps humain (L426–L504)"
           }
         ]
       }
@@ -954,12 +954,12 @@
       "domain_id": "D02",
       "subdomain_node_id": "SUB_D02_01",
       "representative_title": "Partition hybride 80/20, harnais déterministe à 8 étapes et usine logicielle",
-      "executive_summary": "Ce chapitre opérationnalise le premier principe d'ingénierie du corpus : confiner l'inférence probabiliste dans un exosquelette déterministe possédé par l'institution. La partition 80/20 — heuristique de conception et non constante empirique universelle — maintient la totalité du contrôle d'entrée, des transitions d'état, de l'arithmétique financière exacte et des portes de politique en code déterministe, tout en réservant l'appel modèle à la seule incertitude sémantique. Sur le plan logiciel, le harnais déterministe à huit étapes (harness_proto/pipeline.py) encercle l'unique jalon 4_model entre validation UTF-8 stricte (<= 65 536 octets, allow_nan=False), contexte trié, décodage contraint JSON Schema Draft 2020-12 (strict: true, additionalProperties: false, zéro $ref réseau sous EXIG-MCP-19), ancrage référentiel (_check_grounding), boucle de réparation bornée à deux reprises (max 3 appels pire cas) et empreinte JCS SHA-256, avec issue typée d'abstention AMBIGU_ESCALADE. La même séparation régit le développement assisté par IA (AST, SCIP, tests de mutation, Golden Master et Shadow Mirroring à 0,00 $ d'écart) et traduit onze exigences réglementaires canadiennes en neuf contraintes exécutables sur les cadres.",
+      "executive_summary": "Ce chapitre opérationnalise le premier principe d'ingénierie du corpus : confiner l'inférence probabiliste dans un exosquelette déterministe possédé par l'institution. La partition 80/20 — heuristique de conception et non constante empirique universelle — maintient la totalité du contrôle d'entrée, des transitions d'état, de l'arithmétique financière exacte et des portes de politique en code déterministe, tout en réservant l'appel modèle à la seule incertitude sémantique. Sur le plan logiciel, le harnais déterministe à huit étapes (harness_proto/pipeline.py) encercle l'unique jalon 4_model entre validation UTF-8 stricte (<= 65 536 octets, allow_nan=False), contexte trié, décodage contraint JSON Schema Draft 2020-12 (`strict: true`, `additionalProperties: false`, zéro $ref réseau sous EXIG-MCP-19), ancrage référentiel (_check_grounding), boucle de réparation bornée à deux reprises (max 3 appels pire cas) et empreinte JCS SHA-256, avec issue typée d'abstention AMBIGU_ESCALADE. La même séparation régit le développement assisté par IA (AST, SCIP, tests de mutation, Golden Master et Shadow Mirroring à 0,00 $ d'écart) et traduit onze exigences réglementaires canadiennes en neuf contraintes exécutables sur les cadres.",
       "targeted_content": {
         "scope_and_objectives": "Prescrire l'anatomie exécutable du harnais déterministe à huit jalons (G0-EX-CH01-01/02), les contrats stricts JSON Schema Draft 2020-12, les patrons de boucle mono-agent (ReAct, ReWOO, Reflexion, CodeAct), la gouvernance des cinq horloges de versionnage, la traduction réglementaire du chapitre 29 et l'usine logicielle agentique à séparation des devoirs.",
         "key_requirements_and_objectives": [
           "EXIG-D02-01.1 (Harnais à 8 jalons et réparation bornée) : Chaque invocation cognitive critique DOIT s'exécuter dans un harnais déterministe à 8 jalons consignant step_trace (1_size_utf8 à 8_seal), limitant l'inférence au seul jalon 4_model sous plafond strict max_repair_retries = 2 (3 appels pire cas) et scellant output_sha256 en JCS SHA-256 (CAP-007, C09, R-01).",
-          "EXIG-D02-01.2 (Profil JSON Schema Draft 2020-12 strict: true et porte AMBIGU_ESCALADE) : Tout contrat d'entrée/sortie DOIT imposer additionalProperties: false à chaque niveau, lister 100 % des propriétés dans required (avec union null explicite), bannir allOf/if/then/else à la racine et toute $ref http(s):// (EXIG-MCP-19), utiliser des entiers en unités mineures (zéro float IEEE-754) et offrir les issues explicites AMBIGU_ESCALADE et DONNEES_INSUFFISANTES.",
+          "EXIG-D02-01.2 (Profil JSON Schema Draft 2020-12 `strict: true` et porte AMBIGU_ESCALADE) : Tout contrat d'entrée/sortie DOIT imposer `additionalProperties: false` à chaque niveau, lister 100 % des propriétés dans required (avec union null explicite), bannir allOf/if/then/else à la racine et toute $ref http(s):// (EXIG-MCP-19), utiliser des entiers en unités mineures (zéro float IEEE-754) et offrir les issues explicites AMBIGU_ESCALADE et DONNEES_INSUFFISANTES.",
           "EXIG-D02-01.3 (Minimisation de surface et séparation contrôleur/exécuteur) : Toute séquence anticipable DOIT être confiée à un flux déterministe ou code DMN (PRIN-08, EXIG-ORC-01), en évitant l'agentivité non justifiée comme le plan rigide; tout CodeAct DOIT s'exécuter en bac à sable sans réseau sortant.",
           "EXIG-D02-01.4 (Maîtrise des cinq horloges de versionnage) : L'exploitation DOIT versionner indépendamment modèle, invites, outils, politiques et code du harnais, et interdire tout retour arrière logiciel naïf ne restaurant ni les effets SoR commis ni la mémoire longue consolidée.",
           "EXIG-D02-01.5 (Traduction réglementaire vers frames OO3/OO4) : Tout processus satisfaisant les trois conditions cumulatives d'exigence réglementaire stricte (texte opposable de résultat, trace exigible par un tiers, préjudice non réparable par reprise) DOIT être orchestré de manière déterministe en OO3/OO4 par le cadre, jamais par un agent libre.",
@@ -1066,13 +1066,13 @@
           {
             "family_node_id": "FAM_D02_01_02",
             "family_title": "Harnais déterministe à 8 étapes",
-            "family_overview": "Cette famille fournit l'ancrage réglementaire et syntaxique immédiat du harnais à huit étapes. Elle relie d'une part la table de traduction du chapitre 29 (convertissant 11 dispositions de BSIF E-23, Loi 25 art. 12.1 et ACVM 11-348 en contraintes OO3/OO4 sous test cumulatif à trois conditions), et d'autre part le profil durci JSON Schema Draft 2020-12 strict: true et la porte explicite d'abstention AMBIGU_ESCALADE exécutée en Python devant l'adaptateur probabiliste.",
+            "family_overview": "Cette famille fournit l'ancrage réglementaire et syntaxique immédiat du harnais à huit étapes. Elle relie d'une part la table de traduction du chapitre 29 (convertissant 11 dispositions de BSIF E-23, Loi 25 art. 12.1 et ACVM 11-348 en contraintes OO3/OO4 sous test cumulatif à trois conditions), et d'autre part le profil durci JSON Schema Draft 2020-12 `strict: true` et la porte explicite d'abstention AMBIGU_ESCALADE exécutée en Python devant l'adaptateur probabiliste.",
             "themes_targeted": [
               {
                 "theme_node_id": "THM_pont-reglementation-frames-deterministes",
                 "canonical_slug": "pont-reglementation-frames-deterministes",
                 "theme_title": "Pont réglementaire : de BSIF E-23, AMF et Loi 25 aux frames déterministes",
-                "content_specification": "Appliquer la table de traduction réglementaire du chapitre 29 (11 entrées -> 9 contraintes architecturales : 5 issues des attentes BSIF E-23 [inventaire énumérable, cotation lisible à l'appel, mise hors service bloquante, usage opposable, émission télémétrique], 3 des obligations Loi 25 art. 12.1 [événement daté d'avis, trace d'instance du cadre, réversibilité pour révision], 1 d'ACVM 11-348 [séparation adaptation éphémère vs évolution persistante], et lacune AMF ouverte dans le socle Vol. II). Reconnaître la non-indépendance des trois sources fondatrices (Rinderle-Ma / IBM), l'imputabilité non transférable sur l'exploitant et imposer le test cumulatif à trois conditions (§29.4.1 : texte opposable sur résultat, trace exigible par tiers, dommage non réparable par reprise) pour commander en OO3/OO4.",
+                "content_specification": "Appliquer la table de traduction réglementaire du chapitre 29 (11 entrées → 9 contraintes architecturales : 5 issues des attentes BSIF E-23 [inventaire énumérable, cotation lisible à l'appel, mise hors service bloquante, usage opposable, émission télémétrique], 3 des obligations Loi 25 art. 12.1 [événement daté d'avis, trace d'instance du cadre, réversibilité pour révision], 1 d'ACVM 11-348 [séparation adaptation éphémère vs évolution persistante], et lacune AMF ouverte dans le socle Vol. II). Reconnaître la non-indépendance des trois sources fondatrices (Rinderle-Ma / IBM), l'imputabilité non transférable sur l'exploitant et imposer le test cumulatif à trois conditions (§29.4.1 : texte opposable sur résultat, trace exigible par tiers, dommage non réparable par reprise) pour commander en OO3/OO4.",
                 "identifiers_and_norms": [
                   "BSIF E-23",
                   "Loi 25 art. 12.1",
@@ -1211,72 +1211,72 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d’autonomie (L1027-L1042)"
-          },
-          {
-            "tome_id": "T2",
-            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "3 Concepts et définitions > 3.2 Flux de travail ou agent? (L772-L794)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 17 — Déterministe ou agentique > 17.1 Un spectre : workflow, étapes agentiques, agent borné, agent ouvert (L9032-L9084)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Synthèse exécutive — Sommaire pour décision > La thèse vérifiée : ce qui est daté porte sur la preuve, non sur l’autonomie (L127-L134)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 1. Thèse centrale et contrat de lecture croisé AE / AS (L86-L94)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Liminaire — Résumé exécutif à double entrée et conventions architecturales > Résumé exécutif — Direction de l’architecture d’entreprise (EA) (L120-L164)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.3 La règle d'ingénierie 80/20 (L606-L633)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) > 1.1 Pipeline typé en huit étapes (JSON Schema Draft 2020-12, strict: true) et porte AMBIGU_ESCALADE (L135-L272)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d’autonomie (L1027–L1042)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.2.1 Le modèle augmenté et la boucle perception-raisonnement-action-observation (L1063-L1074)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.2.1 Le modèle augmenté et la boucle perception-raisonnement-action-observation (L1063–L1074)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "4 Principes directeurs > 4.1 Les douze principes (L913-L920)"
+            "reference": "3 Concepts et définitions > 3.2 Flux de travail ou agent? (L772–L794)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "4 Principes directeurs > 4.1 Les douze principes (L913–L920)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 17 — Déterministe ou agentique > Extrait 17.1 — `[Exécuté en CI]` · Modèle quantitatif de fiabilité composée et de gain d’encapsulation hybride (L9385-L9422)"
+            "reference": "Chapitre 17 — Déterministe ou agentique > 17.1 Un spectre : workflow, étapes agentiques, agent borné, agent ouvert (L9032–L9084)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 17 — Déterministe ou agentique > Extrait 17.1 — `[Exécuté en CI]` · Modèle quantitatif de fiabilité composée et de gain d’encapsulation hybride (L9385–L9422)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604-L1643)"
+            "reference": "Synthèse exécutive — Sommaire pour décision > La thèse vérifiée : ce qui est daté porte sur la preuve, non sur l’autonomie (L127–L134)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02) > 2.3 Noyau de contrôle possédé, gravité des données et séparation des systèmes (L344-L351)"
+            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 1. Thèse centrale et contrat de lecture croisé AE / AS (L86–L94)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02) > 2.3 Noyau de contrôle possédé, gravité des données et séparation des systèmes (L344–L351)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20 > 3.3 Ingénierie de la partition 80/20 entre flux déterministes et nœuds cognitifs (L960-L997)"
+            "reference": "Liminaire — Résumé exécutif à double entrée et conventions architecturales > Résumé exécutif — Direction de l’architecture d’entreprise (EA) (L120–L164)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20 > 3.3 Ingénierie de la partition 80/20 entre flux déterministes et nœuds cognitifs (L960–L997)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.3 La règle d'ingénierie 80/20 (L606–L633)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) > 1.1 Pipeline typé en huit étapes (JSON Schema Draft 2020-12, `strict: true`) et porte AMBIGU_ESCALADE (L135–L272)"
           }
         ]
       }
@@ -1512,72 +1512,72 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d’autonomie (L1027-L1042)"
-          },
-          {
-            "tome_id": "T2",
-            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "3 Concepts et définitions > 3.1 Définitions normatives (L713-L771)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.4 Conventions, échelle d’autonomie et statut des affirmations > 0.4 Conventions, échelle d’autonomie et statut des affirmations (L282-L317)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604-L1643)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique > 6.1 Gouvernance matricielle de l’autonomie : domaines D1–D8, stades 0–4 et classes de décision 1–6 (L891-L916)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.3.1 Échelle graduée L0 à L4 : de la logique figée à l’autonomie bornée sous contrat (L342-L400)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents > 1.1 Une échelle commune pour un mot ambigu (L170-L213)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5 > 0.2 Table canonique de passage et résolution des cinq discordances inter-volumes (L34-L51)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d’autonomie (L1027–L1042)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "5 · Ancrage informationnel : mémoire, contexte, RAG agentique > 5.2.2 Consolidation, ancrage et évaluation de la mémoire (L1398-L1420)"
+            "reference": "5 · Ancrage informationnel : mémoire, contexte, RAG agentique > 5.2.2 Consolidation, ancrage et évaluation de la mémoire (L1398–L1420)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "3 Concepts et définitions > 3.1 Définitions normatives (L750-L771)"
+            "reference": "3 Concepts et définitions > 3.1 Définitions normatives (L713–L771)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "3 Concepts et définitions > 3.1 Définitions normatives (L750–L771)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique > 1.3 Niveaux d’autonomie : premier aperçu (L512-L547)"
+            "reference": "0.4 Conventions, échelle d’autonomie et statut des affirmations > 0.4 Conventions, échelle d’autonomie et statut des affirmations (L282–L317)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 1 — L’entreprise agentique > 1.3 Niveaux d’autonomie : premier aperçu (L512–L547)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-12 — Stades visés par domaine d’affaires et autonomie par classe de décision > 12.2 Les huit domaines d’affaires du référentiel commun (`D1` à `D8`) (L2896-L2912)"
+            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-12 — Stades visés par domaine d’affaires et autonomie par classe de décision > 12.2 Les huit domaines d’affaires du référentiel commun (`D1` à `D8`) (L2896–L2912)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique > 6.3 Point d’arrêt préventif (PC3) contre révision humaine a posteriori (Loi 25 art. 12.1) (L980-L985)"
+            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique > 6.1 Gouvernance matricielle de l’autonomie : domaines D1–D8, stades 0–4 et classes de décision 1–6 (L891–L916)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique > 6.3 Point d’arrêt préventif (PC3) contre révision humaine a posteriori (Loi 25 art. 12.1) (L980–L985)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.3.2 Modalités Human-in-the-Loop et Human-on-the-Loop face aux biais cognitifs (L377-L400)"
+            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.3.1 Échelle graduée L0 à L4 : de la logique figée à l’autonomie bornée sous contrat (L342–L400)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.3.2 Modalités Human-in-the-Loop et Human-on-the-Loop face aux biais cognitifs (L377–L400)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents > 1.1 Une échelle commune pour un mot ambigu (L170–L213)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5 > 0.2 Table canonique de passage et résolution des cinq discordances inter-volumes (L34–L51)"
           }
         ]
       }
@@ -1590,13 +1590,13 @@
       "representative_title": "Architecture de référence unifiée, noyau possédé (42 CAP) et 12 décisions neutres",
       "executive_summary": "Ce chapitre arrête l'ossature d'architecture d'entreprise permettant aux architectes d'entreprise et de solutions de gouverner un parc agentique sans captivité fournisseur. En fermant sur pièce DIV-02, le PRD soude les six couches normatives de 2026 aux cinq couches C1–C5 et trois volets A, B et C, puis réconcilie les quatre plans du noyau possédé (Registre/NHI, Passerelle/Routeur, Mémoire gouvernée, Journal durable) sous DISC-03 et ArchiMate 4.0 C260 (DISC-04). Face à l'obsolescence des SDK (< 12 mois) et aux suites SaaS fermées sur le contrôle, l'institution sanctuarise 42 capacités invariantes sans regret et réserve 10 capacités conditionnelles activées sur signal SIG-* vérifié. Elle impose le pont ABB vers SBB (EXIG-ARC-20/21), la hiérarchie normative des 12 PRIN et 15 PRI, les budgets QoS, les 9 clauses de sortie Data Act et B-10, la maturité N1–N5 avec score brownfield S_ready (c_sec >= 60), et convertit les 31 ADR en 8 invariants, 7 veilles et 12 contrats neutres DEC-001 à DEC-012.",
       "targeted_content": {
-        "scope_and_objectives": "Fournir le modèle architectural cible unifié (DIV-02, DISC-03, DISC-04), délimiter la frontière entre noyau de contrôle possédé (42 CAP invariantes) et briques substituables (ABB -> SBB / 10 CAP conditionnelles), fixer les principes d'arbitrage normatif (PRIN-01..12, PRI-001..015), généraliser les 31 ADR en 12 DEC et encadrer portabilité contractuelle et diagnostic patrimonial N1–N5.",
+        "scope_and_objectives": "Fournir le modèle architectural cible unifié (DIV-02, DISC-03, DISC-04), délimiter la frontière entre noyau de contrôle possédé (42 CAP invariantes) et briques substituables (ABB → SBB / 10 CAP conditionnelles), fixer les principes d'arbitrage normatif (PRIN-01..12, PRI-001..015), généraliser les 31 ADR en 12 DEC et encadrer portabilité contractuelle et diagnostic patrimonial N1–N5.",
         "key_requirements_and_objectives": [
           "EXIG-D02-03.1 (Effectivité du plan de contrôle et noyau possédé 42 CAP) : L'institution DOIT détenir en propre son noyau de contrôle (schémas, politiques, clés, registre, double couloir, passerelles : 42 CAP invariantes dont 17 au plan de contrôle et 25 points de coupure) sous trois conditions : chemin réseau obligé (PEP), registre unique faisant autorité (distinct du catalogue de découverte) et preuve immuable hors modèle (EXIG-ARC-01, EXIG-ARC-19, EXIG-GOV-07..08).",
-          "EXIG-D02-03.2 (Traçabilité ABB -> SBB et gravité des données) : Toute solution soumise à l'homologation DOIT documenter 100 % de ses ABB -> SBB conformes aux standards (révisés trimestriellement sous EXIG-GOV-18, dérogation <= 6 mois / 90 j sous EXIG-GOV-16), confiner tout agent SaaS mono-silo sous les contrôles cumulatifs EXIG-ARC-21 et rapatrier toute orchestration inter-silos dans le moteur durable possédé avec étiquette d'entité légale (EXIG-ARC-02, EXIG-CON-06).",
+          "EXIG-D02-03.2 (Traçabilité ABB → SBB et gravité des données) : Toute solution soumise à l'homologation DOIT documenter 100 % de ses ABB → SBB conformes aux standards (révisés trimestriellement sous EXIG-GOV-18, dérogation <= 6 mois / 90 j sous EXIG-GOV-16), confiner tout agent SaaS mono-silo sous les contrôles cumulatifs EXIG-ARC-21 et rapatrier toute orchestration inter-silos dans le moteur durable possédé avec étiquette d'entité légale (EXIG-ARC-02, EXIG-CON-06).",
           "EXIG-D02-03.3 (Ordre d'arbitrage normatif et modélisation ArchiMate 4) : Tout conflit entre principes DOIT être tranché selon la hiérarchie CAD26 §4.3 (Droit applicable > 10 interdits EXIG-GOV-17 > DOIT sur DEVRAIT > PRIN-03..07,10,12 > PRIN-01,02,08,09,11); tout modèle ArchiMate 4.0 (C260) DOIT typer l'agent en «Cognitive Actor» (Application Component, jamais Business Actor) sans aucun «regulatory-requirement» orphelin.",
           "EXIG-D02-03.4 (Neutralisation des 31 ADR en 12 DEC et séparation outil/pair) : L'architecture cible DOIT appliquer les 8 ADR invariants, surveiller les 7 ADR sous signal SIG-* et substituer aux 16 ADR liées à des produits les 12 contrats fonctionnels neutres DEC-001 à DEC-012, en maintenant la non-substituabilité entre appel d'outil vertical (MCP, erreurs actionnables) et délégation horizontale (A2A, PRI-003).",
-          "EXIG-D02-03.5 (Diagnostic patrimonial S_ready et portes N1–N5) : Aucun agent ne DOIT franchir vers N3/N4 ni contourner G2 (« aucun saut N1 -> N4 »); tout système d'enregistrement patrimonial DOIT obtenir S_ready >= 50 et c_sec >= 60 avant toute ouverture en écriture (sinon plafonnement L1 derrière façade MCP ACID + bulkhead).",
+          "EXIG-D02-03.5 (Diagnostic patrimonial S_ready et portes N1–N5) : Aucun agent ne DOIT franchir vers N3/N4 ni contourner G2 (« aucun saut N1 → N4 »); tout système d'enregistrement patrimonial DOIT obtenir S_ready >= 50 et c_sec >= 60 avant toute ouverture en écriture (sinon plafonnement L1 derrière façade MCP ACID + bulkhead).",
           "EXIG-D02-03.6 (Portabilité d'actifs en dépôt et 9 clauses de sortie vérifiées) : Tous les actifs portables (définitions d'agents, SKILL.md, invites, schémas, tests) DOIVENT vivre dans un dépôt Git interne versionné et être couverts dans les contrats tiers par les 9 clauses Data Act (UE) 2023/2854 / BSIF B-10, validées par essai de sortie périodique."
         ],
         "families_and_themes": [
@@ -1608,7 +1608,7 @@
               {
                 "theme_node_id": "THM_cadre-togaf-archimate-4-plans",
                 "canonical_slug": "cadre-togaf-archimate-4-plans",
-                "theme_title": "Modèle à 5 couches + 3 volets, séparation ABB -> SBB et règles ArchiMate 4",
+                "theme_title": "Modèle à 5 couches + 3 volets, séparation ABB → SBB et règles ArchiMate 4",
                 "content_specification": "Imposer l'ossature unifiée fermant `DIV-02` (5 couches `C1–C5` et 3 volets `Plans A/B/C` raccordés sur pièce aux 6 vraies couches de `CAD26 §5.2–5.3` : modèles/bacs en Couche 3, C3 contexte couvrant Couches 2/3/5, SoR en Couche 6) et le pont `TOGAF 10 ADM` `ABB -> SBB` révisé trimestriellement (`EXIG-ARC-20`, `EXIG-GOV-18`, dérogation <= 6 mois / 90 j sous `EXIG-GOV-16`; `TOGAF` demeurant en `statut F`). Modéliser en `ArchiMate 4.0` (`C260` `27 avr. 2026`, compatibilité 3.2 via `DISC-04`) avec `Specialization` et profils `W172` en typant l'agent `«Cognitive Actor»` comme `Application Component` (jamais `Business Actor`), sans `Flow` direct court-circuitant l'approbateur et avec zéro `«regulatory-requirement»` orphelin dans la chaîne `Driver -> Assessment -> Requirement -> Exécution`.",
                 "identifiers_and_norms": [
                   "DIV-02",
@@ -1802,7 +1802,7 @@
           }
         ],
         "deliverables_and_verification": [
-          "Matrice de concordance architecturale DIV-02 / ABB -> SBB vérifiée à chaque passage en comité d'architecture (ARB) et revue trimestrielle.",
+          "Matrice de concordance architecturale DIV-02 / ABB → SBB vérifiée à chaque passage en comité d'architecture (ARB) et revue trimestrielle.",
           "Modèles ArchiMate 4.0 (ou 3.2 compatibles via DISC-04) audités automatiquement pour zéro Requirement réglementaire orphelin et séparation proposeur/approbateur.",
           "Portefeuille de capacités `CAP-001..052` distinguant le financement immédiat des 42 invariantes (P1) et le suivi par signaux SIG-* des 10 conditionnelles.",
           "Registre interne de fiches ADR/DEC en YAML CI/CD conforme au gabarit PRR-75 et aux critères C01–C08.",
@@ -1891,7 +1891,7 @@
             "relation_type": "operationnalisation",
             "target_chapter_number": 32,
             "target_slug": "gouvernance-duale-ae-as",
-            "synthesis": "Thème local `noyau-controle-possede-cap` — Exploitation en étoile à 3 lignes du noyau possédé : Le modèle en étoile (plateforme centrale + parrain RH + 2e/3e lignes), le registre à 7 états et les 6 décisions conjointes AE <-> AS gouvernent les 52 capacités."
+            "synthesis": "Thème local `noyau-controle-possede-cap` — Exploitation en étoile à 3 lignes du noyau possédé : Le modèle en étoile (plateforme centrale + parrain RH + 2e/3e lignes), le registre à 7 états et les 6 décisions conjointes AE ↔ AS gouvernent les 52 capacités."
           },
           {
             "direction": "sortante",
@@ -1905,79 +1905,79 @@
             "relation_type": "concordance_inter_tomes",
             "target_chapter_number": 36,
             "target_slug": "concordance-inter-tomes-div02",
-            "synthesis": "Thème local `cadre-togaf-archimate-4-plans` — Soudure 5 couches+3 volets <-> 6 couches CAD26 §5.2 : La fermeture de DIV-02 réconcilie les quatre découpages du corpus (C26, CAD26, C27, PD28) et rectifie trois suppositions d'Annexe E.1 de T4."
+            "synthesis": "Thème local `cadre-togaf-archimate-4-plans` — Soudure 5 couches+3 volets ↔ 6 couches CAD26 §5.2 : La fermeture de DIV-02 réconcilie les quatre découpages du corpus (C26, CAD26, C27, PD28) et rectifie trois suppositions d'Annexe E.1 de T4."
           }
         ],
         "corpus_anchors": [
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.4.1 Appel de fonctions et apprentissage de l’usage d’outils (L1200-L1211)"
-          },
-          {
-            "tome_id": "T2",
-            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "4 Principes directeurs > 4.1 Les douze principes (L837-L964)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 > 0.1 Pourquoi ce compendium en 2027 (L152-L220)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604-L1643)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 4. Noyau possédé (`42 CAP` vs `10`) et trajectoire `90 j → 18 mois → P1–P3` (L119-L127)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.1–2.2 Extension du métamodèle TOGAF ADM et stéréotypes ArchiMate pour acteurs cognitifs (L465-L610)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.4 Le noyau possédé en quatre plans découplés (L634-L695)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5 > 0.2 Table canonique de passage et résolution des cinq discordances inter-volumes (L44-L44)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.4.1 Appel de fonctions et apprentissage de l’usage d’outils (L1200–L1211)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.4.2 Sélection, orchestration et conception d’outils fiables (L1212-L1229)"
+            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.4.2 Sélection, orchestration et conception d’outils fiables (L1212–L1229)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "4 Principes directeurs > 4.2 Application des principes (L965-L987)"
+            "reference": "4 Principes directeurs > 4.1 Les douze principes (L837–L964)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "4 Principes directeurs > 4.2 Application des principes (L965–L987)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.4 Conventions, échelle d’autonomie et statut des affirmations > Critères d’évaluation technologique utilisés dans l’ouvrage (L298-L308)"
+            "reference": "0.1 Pourquoi ce compendium en 2027 > 0.1 Pourquoi ce compendium en 2027 (L152–L220)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "0.4 Conventions, échelle d’autonomie et statut des affirmations > Critères d’évaluation technologique utilisés dans l’ouvrage (L298–L308)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.2 Le modèle de référence : cinq couches d’exécution et un plan de contrôle à trois volets (L1644-L1695)"
+            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.2 Le modèle de référence : cinq couches d’exécution et un plan de contrôle à trois volets (L1644–L1695)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02) > 2.4 Blocs ABB → SBB substituables (2026), arbitrage des principes et ArchiMate (L352-L387)"
+            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 4. Noyau possédé (`42 CAP` vs `10`) et trajectoire `90 j → 18 mois → P1–P3` (L119–L127)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02) > 2.4 Blocs ABB → SBB substituables (2026), arbitrage des principes et ArchiMate (L352–L387)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.3 Architecture cible de référence en quatre plans découplés (L611-L722)"
+            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.1–2.2 Extension du métamodèle TOGAF ADM et stéréotypes ArchiMate pour acteurs cognitifs (L465–L610)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.3 Architecture cible de référence en quatre plans découplés (L611–L722)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.4 Le noyau possédé en quatre plans découplés (L634–L695)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5 > 0.2 Table canonique de passage et résolution des cinq discordances inter-volumes (L44–L44)"
           }
         ]
       }

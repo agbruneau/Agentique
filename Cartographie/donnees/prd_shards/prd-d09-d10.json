@@ -64,7 +64,7 @@
               {
                 "theme_node_id": "THM_ligne-directrice-amf",
                 "canonical_slug": "ligne-directrice-amf",
-                "theme_title": "Encadrement AMF Québec : Note AMF IA (41 attentes -> 12 EXIG-AMF-01..12), lois d'assurance et statut F",
+                "theme_title": "Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F",
                 "content_specification": "Encadre l'application de la Ligne directrice sur l'utilisation de l'IA de l'AMF (avril 2026, prise d'effet le 1er mai 2027, statut PROGRAMMÉ), couvrant les systèmes à degrés variables d'autonomie et d'adaptabilité après déploiement. Résout la divergence des trois dates (Tableau 27.1), applique la grille des cinq questions (§27.5) et applique strictement le statut F sous AO-01 au PDF officiel bloqué en HTTP 403 : l'ancrage opposable se raccorde par condensat SHA-256 à CRE-IA-2026-01-QC (Note AMF IA.pdf et AIBanks.ca), convertissant 41 attentes en 12 exigences vérifiables EXIG-AMF-01 à EXIG-AMF-12 (dirigeant imputable, répertoire SIA centralisé, équité bilingue FR/EN, divulgation non-avis).",
                 "identifiers_and_norms": [
                   "Ligne directrice IA AMF (avr. 2026 / 1er mai 2027)",
@@ -347,52 +347,52 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "16 · Le passeport d’agent : synthèse d’un objet encore virtuel — 16.5 Le passeport par la grille du ch. 14 (L4114-4133)"
+            "reference": "16 · Le passeport d’agent : synthèse d’un objet encore virtuel — 16.5 Le passeport par la grille du ch. 14 (L4114–L4133)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "17 · La chaîne de mandat et le problème des deux sauts — 17.4 L’humain, premier et dernier maillon (L4226–L4247)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "17 · La chaîne de mandat et le problème des deux sauts — 17.5 Le biais d’automatisation et la supervision de façade (L4248–L4267)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "8 Autonomie et supervision humaine — 8.8 Décisions automatisées et droit à la révision (L3751-3778)"
+            "reference": "8 Autonomie et supervision humaine — 8.8 Décisions automatisées et droit à la révision (L3751–L3778)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 (L152-220)"
+            "reference": "0.1 Pourquoi ce compendium en 2027 (L152–L220)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-3 — Calendrier réglementaire et prudentiel — 3.3 Régimes sectoriels canadiens et québécois : banque, patrimoine, assurances et vie privée (L676-708)"
+            "reference": "Chapitre M-3 — Calendrier réglementaire et prudentiel — 3.3 Régimes sectoriels canadiens et québécois : banque, patrimoine, assurances et vie privée (L676–L708)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique — 6.3 Point d’arrêt préventif (PC3) contre révision humaine a posteriori (Loi 25 art. 12.1) (L980-985)"
+            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique — 6.3 Point d’arrêt préventif (PC3) contre révision humaine a posteriori (Loi 25 art. 12.1) (L980–L985)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.2.1 Québec (Loi 25) : RPRP, ÉFVP préalable et décisions exclusivement automatisées (L3790-3799)"
+            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.2.1 Québec (Loi 25) : RPRP, ÉFVP préalable et décisions exclusivement automatisées (L3790–L3799)"
           },
           {
             "tome_id": "T7",
             "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.1 Transparence, vie privée et contestation humaine : l'article 12.1 de la Loi 25 au Québec comme révélateur (L1472-1493)"
+            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.1 Transparence, vie privée et contestation humaine : l'article 12.1 de la Loi 25 au Québec comme révélateur (L1472–L1493)"
           },
           {
             "tome_id": "T8",
             "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Cadre juridique borné CA/QC/UE (L1384-1387)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "17 · La chaîne de mandat et le problème des deux sauts — 17.4 L’humain, premier et dernier maillon (L4226-4247)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "17 · La chaîne de mandat et le problème des deux sauts — 17.5 Le biais d’automatisation et la supervision de façade (L4248-4267)"
+            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Cadre juridique borné CA/QC/UE (L1384–L1387)"
           }
         ]
       }
@@ -683,52 +683,52 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise — 1.2.3 Le cadre européen : EIF, EIRA et l’*Interoperable Europe Act* (L276-285)"
+            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise — 1.2.3 Le cadre européen : EIF, EIRA et l’*Interoperable Europe Act* (L276–L285)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.3.2 Identité décentralisée, eIDAS 2.0 et cryptographie post-quantique (L829–L850)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.4.6 Auditabilité et conformité réglementaire des intégrations (L929–L940)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "12 Risques, conformité et réglementation — 12.4 Règlement européen sur l’IA (L5844-5916)"
+            "reference": "12 Risques, conformité et réglementation — 12.4 Règlement européen sur l’IA (L5844–L5916)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 (L152-220)"
+            "reference": "0.1 Pourquoi ce compendium en 2027 (L152–L220)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-3 — Calendrier réglementaire et prudentiel — 3.4 Droit européen applicable par effet extraterritorial : AI Act, Omnibus numérique 2026/1744 et cadres connexes (L709-731)"
+            "reference": "Chapitre M-3 — Calendrier réglementaire et prudentiel — 3.4 Droit européen applicable par effet extraterritorial : AI Act, Omnibus numérique 2026/1744 et cadres connexes (L709–L731)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers — 10.1 Empilement normatif 2026-2033 : une base de preuves unique contre les silos (L1388-1406)"
+            "reference": "Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers — 10.1 Empilement normatif 2026-2033 : une base de preuves unique contre les silos (L1388–L1406)"
           },
           {
             "tome_id": "T6",
             "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.2.3 & 12.4.3 EU AI Act, Digital Omnibus et réversibilité EU Data Act (L3808-3982)"
+            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.2.3 & 12.4.3 EU AI Act, Digital Omnibus et réversibilité EU Data Act (L3808–L3982)"
           },
           {
             "tome_id": "T7",
             "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.3 L'articulation transatlantique avec l'EU AI Act (août 2026 – août 2028) et le référentiel de gouvernance ISO/IEC 42001 (L1508-1542)"
+            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.3 L'articulation transatlantique avec l'EU AI Act (août 2026 – août 2028) et le référentiel de gouvernance ISO/IEC 42001 (L1508–L1542)"
           },
           {
             "tome_id": "T8",
             "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Union européenne, EN 18286:2026 et DORA (L1392-1396)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.3.2 Identité décentralisée, eIDAS 2.0 et cryptographie post-quantique (L829-850)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.4.6 Auditabilité et conformité réglementaire des intégrations (L929-940)"
+            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Union européenne, EN 18286:2026 et DORA (L1392–L1396)"
           }
         ]
       }
@@ -919,54 +919,54 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-051 — Gouvernance des tiers, clauses contractuelles de sortie, notification et réversibilité éprouvée (L2639-2653)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible — 11.3 Approvisionnement réversible et dix clauses contractuelles (`EXIG-APP-07..16`) (L1498-1528)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "31 · Le vertical financier : pourquoi l’agentique y est durcie — 31.5 Données, résidence et souveraineté en finance régulée (L7430–L7465)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "31 · Le vertical financier : pourquoi l’agentique y est durcie — 31.5 Données, résidence et souveraineté en finance régulée (L7430-7465)"
+            "reference": "49 · L’horizon 2027-2032 et la frontière de la connaissance vérifiable — 49.1 La grappe d’échéances 2027-2032 : le squelette daté (PROGRAMMÉ) et l’horloge visée (PROJETÉ) (L11027–L11082)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "13 Approvisionnement et clauses contractuelles — 13.3 Clauses contractuelles normatives (L6367-6456)"
+            "reference": "13 Approvisionnement et clauses contractuelles — 13.3 Clauses contractuelles normatives (L6367–L6456)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.1 L’état du droit : les humains et les entités derrière l’agent (L19398-19411)"
+            "reference": "Chapitre 36 — Responsabilité — 36.1 L’état du droit : les humains et les entités derrière l’agent (L19398–L19411)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 36 — Responsabilité — 36.2 Droit du mandat (L19412–L19458)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 36 — Responsabilité — 36.3 Formation des contrats (L19459–L19478)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 36 — Responsabilité — 36.4 Responsabilité du fait des produits (L19479–L19500)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-20 — Palier 1, 2028-2029 — 20.3 Initiatives sans regret et initiatives conditionnelles (L4300-4335)"
+            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-051 — Gouvernance des tiers, clauses contractuelles de sortie, notification et réversibilité éprouvée (L2639–L2653)"
           },
           {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "49 · L’horizon 2027-2032 et la frontière de la connaissance vérifiable — 49.1 La grappe d’échéances 2027-2032 : le squelette daté (PROGRAMMÉ) et l’horloge visée (PROJETÉ) (L11027-11082)"
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-20 — Palier 1, 2028-2029 — 20.3 Initiatives sans regret et initiatives conditionnelles (L4300–L4335)"
           },
           {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.2 Droit du mandat (L19412-19458)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.3 Formation des contrats (L19459-19478)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.4 Responsabilité du fait des produits (L19479-19500)"
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible — 11.3 Approvisionnement réversible et dix clauses contractuelles (`EXIG-APP-07..16`) (L1498–L1528)"
           }
         ]
       }
@@ -1271,52 +1271,52 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "34 · Les sous-domaines financiers : banque, assurance, patrimoine — 34.1 Bancaire : détail, gros, paiements, crédit, cœur de système (L7738-8207)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-18 — Groupe financier diversifié et synthèse comparative — 18.12 Synthèse comparative des sous-secteurs (L3931-4064)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers — 10.2 Fermeture de `DIV-02` et déclinaison des cinq profils financiers (`24 PEX`) (L1407-1420)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.4 Cinq frontières métier non délégables : banque ouverte, conseil en patrimoine, assurance de personnes, assurance de dommages et cloisons intra-groupe (L1543-1594)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ouverture — Architecture et gouvernance du tissu conjonctif agentique (L140-382)"
+            "reference": "34 · Les sous-domaines financiers : banque, assurance, patrimoine — 34.1 Bancaire : détail, gros, paiements, crédit, cœur de système (L7738–L8207)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "12 Risques, conformité et réglementation — 12.10 Exigences sectorielles financières, harmonisation EN 18286:2026 et profil québécois AMF (L6149-6156)"
+            "reference": "12 Risques, conformité et réglementation — 12.10 Exigences sectorielles financières, harmonisation EN 18286:2026 et profil québécois AMF (L6149–L6156)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ouverture — Architecture et gouvernance du tissu conjonctif agentique (L140–L382)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-19 — Analyse d’écarts — 19.1 Bilan de l’épreuve sectorielle et clôture de la carte des capacités (L4143-4151)"
+            "reference": "Chapitre M-17 — Assurance de dommages — 17.4 Stade visé en 2035 par domaine et autonomie maximale par classe (L3702–L3716)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Annexe C — Registre des principes, décisions, portes, initiatives et propositions d’exigence — C.5 Propositions d’exigence sectorielles (`PEX`) (L5417-5445)"
+            "reference": "Chapitre M-18 — Groupe financier diversifié et synthèse comparative — 18.12 Synthèse comparative des sous-secteurs (L3931–L4064)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitre M-19 — Analyse d’écarts — 19.1 Bilan de l’épreuve sectorielle et clôture de la carte des capacités (L4143–L4151)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Annexe C — Registre des principes, décisions, portes, initiatives et propositions d’exigence — C.5 Propositions d’exigence sectorielles (`PEX`) (L5417–L5445)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\\* — A.4 Raccordement des 24 propositions d’exigence sectorielles (`PEX`) (L1805-1833)"
+            "reference": "Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers — 10.2 Fermeture de `DIV-02` et déclinaison des cinq profils financiers (`24 PEX`) (L1407–L1420)"
           },
           {
-            "tome_id": "T4",
-            "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-17 — Assurance de dommages — 17.4 Stade visé en 2035 par domaine et autonomie maximale par classe (L3702-3716)"
+            "tome_id": "T5",
+            "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\\* — A.4 Raccordement des 24 propositions d’exigence sectorielles (`PEX`) (L1805–L1833)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.4 Cinq frontières métier non délégables : banque ouverte, conseil en patrimoine, assurance de personnes, assurance de dommages et cloisons intra-groupe (L1543–L1594)"
           }
         ]
       }
@@ -1564,52 +1564,52 @@
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.1 Les six principes directeurs (L10334-10439)"
+            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.1 Les six principes directeurs (L10334–L10439)"
           },
           {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables — 14.1–14.4 Trois blueprints sectoriels et synthèse comparative non fonctionnelle (L4311-4658)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.7 L’architecture de solutions Boréalis, résumée (L10440–L10559)"
           },
           {
-            "tome_id": "T8",
-            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Les 24 [BLOQUANT] PRR, les 5 SBB du Tableau 12 et les 3 blueprints (C01–C40) (L1442-1471)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.15 Confrontation : ce que l’épreuve vaut, et ce qu’elle ne vaut pas (L10560–L10580)"
           },
           {
             "tome_id": "T3",
             "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.5 Dossier initial du fil rouge : Groupe Boréal Inc. (L318-342)"
+            "reference": "0.5 Dossier initial du fil rouge : Groupe Boréal Inc. (L318–L342)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 1 — L’entreprise agentique — 1.10 Application au fil rouge : premier flux transversal chez Groupe Boréal (L1049–L1078)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 5 — MCP : le protocole agent-outil — 5.13 Application au fil rouge : connectivité verticale au Groupe Boréal (L2739–L2758)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude — 1.1 Positionnement de l’ouvrage et frontières du périmètre (L181-211)"
+            "reference": "Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude — 1.1 Positionnement de l’ouvrage et frontières du périmètre (L181–L211)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Liminaire — À propos de ce mémoire — Textes `statut F`, hygiène probatoire et démarcation sectorielle (L31-34)"
+            "reference": "Liminaire — À propos de ce mémoire — Textes `statut F`, hygiène probatoire et démarcation sectorielle (L31–L34)"
           },
           {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.15 Confrontation : ce que l’épreuve vaut, et ce qu’elle ne vaut pas (L10560-10580)"
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables — 14.1–14.4 Trois blueprints sectoriels et synthèse comparative non fonctionnelle (L4311–L4658)"
           },
           {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.7 L’architecture de solutions Boréalis, résumée (L10440-10559)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique — 1.10 Application au fil rouge : premier flux transversal chez Groupe Boréal (L1049-1078)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 5 — MCP : le protocole agent-outil — 5.13 Application au fil rouge : connectivité verticale au Groupe Boréal (L2739-2758)"
+            "tome_id": "T8",
+            "file": "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Les 24 [BLOQUANT] PRR, les 5 SBB du Tableau 12 et les 3 blueprints (C01–C40) (L1442–L1471)"
           }
         ]
       }
@@ -1827,54 +1827,54 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.1 Grille d’analyse (L13674-13695)"
+            "tome_id": "T1",
+            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "41 · La fabrique d’agents : produire, certifier et réémettre le parc — 41.1 Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer (L9578–L9674)"
           },
           {
             "tome_id": "T1",
             "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "41 · La fabrique d’agents : produire, certifier et réémettre le parc — 41.1 Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer (L9578-9674)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps) — 13.1, 13.3–13.4 Architecture IAP, GitOps cognitif et déploiement progressif (L3997-4306)"
+            "reference": "49 · L’horizon 2027-2032 et la frontière de la connaissance vérifiable — 49.14 Les frontières de la fabrique de confiance (L11397–L11418)"
           },
           {
             "tome_id": "T2",
             "file": "Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "7 Orchestration — 7.9 Anti-patrons proscrits (L3269-3295)"
+            "reference": "7 Orchestration — 7.9 Anti-patrons proscrits (L3269–L3295)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.1 Grille d’analyse (L13674–L13695)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.2 Microsoft (L13696–L13711)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 26 — Plateformes d’entreprise — IBM (L13795–L13800)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.9 Interopérabilité déclarée et interopérabilité constatée (L13829–L13871)"
           },
           {
             "tome_id": "T4",
             "file": "Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-11 — Cible invariante et cible conditionnelle — 11.5 Ce que l’architecture cible exclut délibérément (L2829-2838)"
+            "reference": "Chapitre M-11 — Cible invariante et cible conditionnelle — 11.5 Ce que l’architecture cible exclut délibérément (L2829–L2838)"
           },
           {
             "tome_id": "T5",
             "file": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 5 — Orchestration hybride (OO1–OO4, 8 patrons), exécution durable, sagas et sémantique d’effet — 5.2 Catalogue fermé des topologies autorisées (8 patrons + 1 variante) et proscription des antipatrons (L734-753)"
+            "reference": "Chapitre 5 — Orchestration hybride (OO1–OO4, 8 patrons), exécution durable, sagas et sémantique d’effet — 5.2 Catalogue fermé des topologies autorisées (8 patrons + 1 variante) et proscription des antipatrons (L734–L753)"
           },
           {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.2 Microsoft (L13696-13711)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — IBM (L13795-13800)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.9 Interopérabilité déclarée et interopérabilité constatée (L13829-13871)"
-          },
-          {
-            "tome_id": "T1",
-            "file": "Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "49 · L’horizon 2027-2032 et la frontière de la connaissance vérifiable — 49.14 Les frontières de la fabrique de confiance (L11397-11418)"
+            "tome_id": "T6",
+            "file": "Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps) — 13.1, 13.3–13.4 Architecture IAP, GitOps cognitif et déploiement progressif (L3997–L4306)"
           }
         ]
       }

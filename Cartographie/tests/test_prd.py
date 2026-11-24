@@ -281,19 +281,90 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert "`OBLIGATOIRE` : `15`" in ann_d_text
     assert "`RECOMMANDE` : `7`" in ann_d_text
 
+    # Phase 2 : Hygiène typographique, LF strict, 0 troncature, parité Annexe C & D
+    assert b"\r\n" not in PRD_PATH.read_bytes(), "Séquences CRLF détectées dans prd.md"
+    for bad_trunc in ("*(+", "28 autres non listées", "L'extrait ci-dessus"):
+        assert bad_trunc not in prd_text, f"Troncature résiduelle dans prd.md : {bad_trunc}"
+    assert r"\\$" not in prd_text, r"Double-échappement \\$ détecté dans prd.md"
+    assert "Thème local" not in prd_text, "Préfixe hétérogène 'Thème local' dans Interrelations"
+
+    bad_dollars: list[tuple[int, str]] = []
+    bad_arrows: list[tuple[int, str]] = []
+    bad_ranges: list[tuple[int, str]] = []
+    bad_backticks_tok: list[tuple[int, str]] = []
+    for lno, raw_ln in enumerate(prd_lines, 1):
+        if lno in code_lines:
+            continue
+        no_inline = re.sub(r"`[^`]+`", "", raw_ln)
+        if re.search(r"(?<!\\)\$", no_inline):
+            bad_dollars.append((lno, raw_ln[:80]))
+        if "<->" in no_inline or re.search(r"(?<![<=-])->(?![>=])", no_inline):
+            bad_arrows.append((lno, raw_ln[:80]))
+        if re.search(r"\bL\d+-L?\d+\b", no_inline):
+            bad_ranges.append((lno, raw_ln[:80]))
+        for kw in ("strict: true", "additionalProperties: false", "Status: Accepted", "Status: Final"):
+            if kw in no_inline:
+                bad_backticks_tok.append((lno, kw))
+        for bad_acc in ("(reglementation)", "(marche)"):
+            assert bad_acc not in no_inline, f"Accent manquant à L{lno} : {bad_acc}"
+    assert not bad_dollars, f"$ non échappé hors code dans prd.md : {bad_dollars[:3]}"
+    assert not bad_arrows, f"Flèche ASCII ->/<-> hors code dans prd.md : {bad_arrows[:3]}"
+    assert not bad_ranges, f"Plage Lxxx-Lyyy sans tiret demi-cadratin dans prd.md : {bad_ranges[:3]}"
+    assert not bad_backticks_tok, f"Jeton technique sans backticks dans prd.md : {bad_backticks_tok[:3]}"
+
+    # Annexe C : 86 jalons consolidés sans doubles parenthèses DAPP
+    ann_c_idx = next(i for i, ln in enumerate(prd_lines) if ln.startswith("#### Jalons chronologiques consolidés"))
+    assert "86 jalons" in prd_lines[ann_c_idx]
+    ann_c_rows = []
+    for ln in prd_lines[ann_c_idx + 4 :]:
+        if not ln.startswith("|"):
+            break
+        date_cell = ln.split("|")[1].strip().strip("`")
+        assert "((" not in date_cell and "))" not in date_cell, f"Parenthèses doubles DAPP dans date Annexe C : {ln}"
+        ann_c_rows.append(ln)
+    assert len(ann_c_rows) == 86
+
+    # Annexe D : 237 entrées uniques sans identifiant dupliqué
+    ann_d_mat_idx = next(i for i, ln in enumerate(prd_lines) if ln.startswith("#### Matrice intégrale de traçabilité"))
+    assert "237 entrées uniques" in prd_lines[ann_d_mat_idx]
+    ann_d_ids: list[str] = []
+    for ln in prd_lines[ann_d_mat_idx + 4 :]:
+        if not ln.startswith("|"):
+            break
+        first_cell = ln.split("|")[1].strip().strip("`")
+        ann_d_ids.append(first_cell)
+    assert len(ann_d_ids) == 237
+    assert len(set(ann_d_ids)) == 237
+
 
 def test_prd_links_in_readmes_valid() -> None:
     if not PRD_PATH.is_file():
         pytest.skip("prd.md pas encore compilé")
     assert "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" in PRD_PATH.read_text(encoding="utf-8")
-    for md_path in (REPO_ROOT / "README.md", CARTO_DIR / "README.md"):
+    for md_path in (REPO_ROOT / "README.md", CARTO_DIR / "README.md", REPO_ROOT / "Corpus" / "README.md"):
         content = md_path.read_text(encoding="utf-8")
+        assert b"\r\n" not in md_path.read_bytes(), f"CRLF détecté dans {md_path}"
         assert "prd.md" in content, f"Lien vers prd.md manquant dans {md_path}"
+        assert "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" in content, f"Lien PRD Web manquant dans {md_path}"
         for raw_target in re.findall(r"\[[^\]]+\]\(([^)#]+)(?:#[^)]*)?\)", content):
             if raw_target.startswith(("http://", "https://", "mailto:")):
                 continue
             target_path = (md_path.parent / unquote(raw_target)).resolve()
             assert target_path.exists(), f"Lien cassé dans {md_path}: {raw_target}"
+
+    # Parité exacte des métriques documentées dans Cartographie/README.md
+    carto_readme = (CARTO_DIR / "README.md").read_text(encoding="utf-8")
+    prd_text = PRD_PATH.read_text(encoding="utf-8")
+    prd_lines_cnt = len(prd_text.splitlines())
+    prd_words_cnt = len(prd_text.split())
+    mm_bytes = (CARTO_DIR / "MindMap - Cartographie thématique du Corpus.html").stat().st_size
+    pw_bytes = PRD_WEB_HTML_PATH.stat().st_size
+    assert f"`{prd_lines_cnt:,}".replace(",", " ") in carto_readme
+    assert f"`{prd_words_cnt:,}".replace(",", " ") in carto_readme
+    assert f"`{mm_bytes:,}".replace(",", " ") in carto_readme
+    assert f"`{pw_bytes:,}".replace(",", " ") in carto_readme
+    assert "`86` jalons" in carto_readme
+    assert "`237` entrées uniques" in carto_readme
 
 
 def test_prd_web_data_json_and_parity() -> None:
@@ -315,8 +386,22 @@ def test_prd_web_data_json_and_parity() -> None:
     ann_d = next(a for a in data["annexes"] if a["annexe_code"] == "D")
     assert len(ann_b["tensions"]) == 62
     assert len(ann_c["reconciliations"]) == 5
-    assert len(ann_c["timeline"]) == 100
-    assert len(ann_d["matrix_all"]) == 267
+    assert len(ann_c["timeline"]) == 86
+    assert len(ann_d["matrix_all"]) == 237
+    assert len({x["id"] for x in ann_d["matrix_all"]}) == 237
+    assert ann_d.get("matrix_totals") == {
+        "unique_entries": 237,
+        "tome8_executable_tests": 95,
+        "shared_ids_merged": 30,
+    }
+    raw_web_json = PRD_WEB_DATA_PATH.read_text(encoding="utf-8")
+    assert r"\$" not in raw_web_json
+    prd_text = PRD_PATH.read_text(encoding="utf-8")
+    prd_lines = prd_text.splitlines()
+    prd_headings, _, _ = es.parse_markdown_lines(prd_lines)
+    assert data["meta"]["line_count"] == len(prd_lines)
+    assert data["meta"]["word_count"] == len(prd_text.split())
+    assert data["meta"]["heading_count"] == len(prd_headings)
     assert ann_d["blueprints_c40"]["c40_breakdown"] == {
         "total": 40,
         "BLOQUANT": 18,
@@ -331,6 +416,7 @@ def test_prd_web_data_json_and_parity() -> None:
 
 def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     assert PRD_WEB_HTML_PATH.is_file()
+    assert b"\r\n" not in PRD_WEB_HTML_PATH.read_bytes(), "CRLF détecté dans PRD Web HTML"
     html = PRD_WEB_HTML_PATH.read_text(encoding="utf-8")
     assert "__PRD_DATA_JSON__" not in html
 
@@ -357,12 +443,12 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
 
-    node_script = """
+    node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
     const html = fs.readFileSync(process.argv[1], "utf8");
-    const jsonMatch = html.match(/<script[^>]*id="prd-web-data"[^>]*>([\\s\\S]*?)<\\/script>/);
-    const jsMatch = html.match(/<script(?![^>]*type="application\\/json")[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsonMatch = html.match(/<script[^>]*id="prd-web-data"[^>]*>([\s\S]*?)<\/script>/);
+    const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
     if (!jsonMatch || !jsMatch) throw new Error("Blocs JSON/JS introuvables dans PRD Web HTML");
 
     const sandbox = {
@@ -404,6 +490,55 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     const fullHtml = eng.renderContentHtml(idx, { mode: "full", target: { kind: "exec" }, filters: {}, highlightQuery: "" }, { active: false, counts: { themes: 260, chapters: 36, parties: 12 } });
     for (const marker of ["Partie I", "Partie XII", "Chapitre 01", "Chapitre 36", "Annexe A", "Annexe D", "THM_loi-de-lusser"]) {
       if (!fullHtml.includes(marker)) throw new Error("Contenu mode intégral PrdWebEngine incomplet: " + marker);
+    }
+    // Phase 2 : Zéro backtick brut hors <code>, 0 **gras** brut, 0 \$ littéral, 0 <em> brisé sur gen_ai.*
+    const noCodeTags = fullHtml.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
+    if (noCodeTags.includes("`")) throw new Error("Backtick brut détecté hors <code> dans PRD Web HTML");
+    if (/(^|[\s(>])\*\*[^\s*](?:[^*\n]*?[^\s*])?\*\*(?=[\s.,;:!?<)]|$)/.test(noCodeTags)) {
+      throw new Error("**gras** brut détecté dans PRD Web HTML");
+    }
+    if (/<strong>\s*et tests\//i.test(fullHtml)) {
+      throw new Error("Glob specs/** transformé en <strong> par erreur");
+    }
+    if (fullHtml.includes("\\$")) throw new Error("Literal backslash-dollar dans PRD Web HTML");
+    if (/<em>[^<]*gen_ai\.[^<]*<\/em>/i.test(fullHtml)) throw new Error("<em> brisé autour de gen_ai.* dans PRD Web HTML");
+
+    const inlineSample = eng.renderInlineMd("attributs gen_ai.* et *Cost-per-Outcome* + `strict: true`");
+    if (!inlineSample.includes("gen_ai.* et <em>Cost-per-Outcome</em>") || !inlineSample.includes("<code")) {
+      throw new Error("renderInlineMd défaillant sur gen_ai.* : " + inlineSample);
+    }
+    const hSec02 = eng.parseHash("#sec=02", idx);
+    if (!hSec02 || hSec02.kind !== "exec" || hSec02.sectionId !== "exec-02") {
+      throw new Error("parseHash #sec=02 invalide: " + JSON.stringify(hSec02));
+    }
+    const hPart07 = eng.parseHash("#part=part-07", idx);
+    if (!hPart07 || hPart07.kind !== "part" || hPart07.domainId !== "D07") {
+      throw new Error("parseHash #part=part-07 invalide: " + JSON.stringify(hPart07));
+    }
+
+    // Smoke mountApp avec stub DOM léger et hash #part=part-07
+    const stubEls = {};
+    const makeStubEl = (id) => ({
+      id, textContent: "", innerHTML: "", value: "", style: {},
+      classList: { add(){}, remove(){}, toggle(){}, contains(){ return false; } },
+      setAttribute(k, v) { this["attr_" + k] = v; },
+      getAttribute(k) { return this["attr_" + k] ?? null; },
+      appendChild(){}, addEventListener(){}, scrollIntoView(){}, focus(){}, querySelector: () => null, querySelectorAll: () => []
+    });
+    for (const k of ["prd-web-data", "prd-global-title", "prd-global-meta", "prd-kpi-strip", "prd-content", "prd-toc-tree", "prd-toc-count", "prd-open-mindmap-link", "prd-filter-summary"]) {
+      stubEls[k] = makeStubEl(k);
+    }
+    stubEls["prd-web-data"].textContent = jsonMatch[1];
+    const docStub = {
+      documentElement: makeStubEl("html"),
+      body: makeStubEl("body"),
+      getElementById: (id) => stubEls[id] || null,
+      createElement: (tag) => makeStubEl(tag),
+      addEventListener(){}, querySelector: () => null, querySelectorAll: () => []
+    };
+    const appInst = eng.mountApp(docStub, { location: { hash: "#part=part-07" }, addEventListener(){} });
+    if (!appInst || appInst.getState().target.domainId !== "D07" || !stubEls["prd-content"].innerHTML.includes("Partie VII")) {
+      throw new Error("mountApp smoke #part=part-07 échoué");
     }
     """
 

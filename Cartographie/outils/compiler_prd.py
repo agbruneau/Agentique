@@ -28,6 +28,7 @@ from typing import Any
 from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import compiler_mindmap as cm  # noqa: E402
 import extraire_structure as es  # noqa: E402
 
 SHARD_FILENAMES: tuple[str, ...] = (
@@ -69,9 +70,42 @@ def strip_md_inline(text: str) -> str:
     return cleaned.replace("`", "").replace("*", "").strip()
 
 
+def _clean_prd_prose(text: Any) -> str:
+    """Normalise flèches, plages ``Lxxx–Lyyy``, ``\\$`` et jetons techniques collés hors code."""
+    cleaned = cm.clean_prose_typography(str(text or ""))
+
+    def _wrap_tokens(seg: str) -> str:
+        return re.sub(
+            r"\b(strict:\s*true|additionalProperties:\s*false|Status:\s*(?:Accepted|Final))\b",
+            r"`\1`",
+            seg,
+        )
+
+    return cm.map_outside_inline_code(cleaned, _wrap_tokens).strip()
+
+
+def escape_markdown_dollars(markdown_text: str) -> str:
+    """Échappe tout ``$`` littéral hors blocs de code clôturés et spans `` `...` ``."""
+    lines = markdown_text.splitlines()
+    _, _, code_lines = es.parse_markdown_lines(lines)
+    escaped_lines: list[str] = []
+    for line_no, line in enumerate(lines, 1):
+        if line_no in code_lines:
+            escaped_lines.append(line)
+        else:
+            escaped_lines.append(
+                cm.map_outside_inline_code(
+                    line, lambda seg: re.sub(r"(?<!\\)\$", r"\\$", seg)
+                )
+            )
+    trailing = "\n" if markdown_text.endswith("\n") else ""
+    return "\n".join(escaped_lines) + trailing
+
+
 def _md_cell(value: Any) -> str:
     """Normalise une cellule de tableau Markdown (sauts de ligne et pipes échappés)."""
-    text = re.sub(r"\s+", " ", str(value or "").replace("\r", " ").replace("\n", " ")).strip()
+    cleaned = _clean_prd_prose(str(value or "").replace("\r", " ").replace("\n", " "))
+    text = re.sub(r"\s+", " ", cleaned).strip()
     return re.sub(r"(?<!\\)\|", r"\\|", text)
 
 
@@ -110,12 +144,26 @@ def _assert_non_empty(value: Any, context: str) -> str:
 def load_and_validate_inputs(
     repo_root: Path,
 ) -> tuple[dict[str, Any], dict[str, Any], list[dict[str, Any]]]:
-    """Charge le bundle MindMap et les 7 shards PRD puis valide leur exhaustivité à 100 %."""
+    """Charge les sources MindMap et les 7 shards PRD puis valide leur exhaustivité à 100 %."""
     donnees_dir = repo_root / "Cartographie" / "donnees"
-    bundle_path = donnees_dir / "corpus-mindmap-data.json"
-    if not bundle_path.is_file():
-        raise FileNotFoundError(f"Bundle MindMap introuvable : {bundle_path}")
-    bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+    src_paths = (
+        donnees_dir / "schema-cartographie.json",
+        donnees_dir / "structure-integrale.json",
+        donnees_dir / "pivots-concordance.json",
+        donnees_dir / "synthese-transversale.json",
+    )
+    if all(p.is_file() for p in src_paths):
+        bundle = cm.build_mindmap_bundle(
+            json.loads(src_paths[0].read_text(encoding="utf-8")),
+            json.loads(src_paths[1].read_text(encoding="utf-8")),
+            json.loads(src_paths[2].read_text(encoding="utf-8")),
+            json.loads(src_paths[3].read_text(encoding="utf-8")),
+        )
+    else:
+        bundle_path = donnees_dir / "corpus-mindmap-data.json"
+        if not bundle_path.is_file():
+            raise FileNotFoundError(f"Bundle MindMap introuvable : {bundle_path}")
+        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
 
     shards_dir = donnees_dir / "prd_shards"
     missing = [fn for fn in SHARD_FILENAMES if not (shards_dir / fn).is_file()]
@@ -284,7 +332,7 @@ def render_annexe_tables(
             for f in fams:
                 for th in f["themes_targeted"]:
                     ids_set.update(node_by_id[th["theme_node_id"]].get("identifiers") or [])
-            ids_top = ", ".join(f"`{_md_cell(x)}`" for x in sorted(ids_set)[:5]) or "—"
+            ids_top = ", ".join(f"`{_md_cell(x)}`" for x in sorted(ids_set)) or "—"
             tomes = ", ".join(_md_cell(t) for t in (sub.get("tomes_present") or []))
             anc = chapter_anchors[ch_num]
             lines.append(
@@ -370,13 +418,25 @@ def render_annexe_tables(
                 )
             lines.append("")
 
-        tl = pivots.get("timeline") or []
-        if tl:
-            lines.append(f"#### Jalons chronologiques consolidés 2023–2035 (extrait structurant sur {len(tl)} jalons)")
+        tl_raw = pivots.get("timeline") or []
+        if pivots.get("matrix_totals"):
+            tl_clean = [
+                {
+                    **ev,
+                    "date": _clean_prd_prose(ev.get("date", "")),
+                    "cadre": _clean_prd_prose(ev.get("cadre", "")),
+                    "impact": _clean_prd_prose(ev.get("impact", "")),
+                }
+                for ev in tl_raw
+            ]
+        else:
+            tl_clean = cm.deduplicate_and_sort_timeline(tl_raw)
+        if tl_clean:
+            lines.append(f"#### Jalons chronologiques consolidés 2018–2035 ({len(tl_clean)} jalons consolidés et triés)")
             lines.append("")
             lines.append("| Échéance | Cadre / Jalon | Portée concrète | Tomes |")
             lines.append("|---|---|---|---|")
-            for ev in tl[:35]:
+            for ev in tl_clean:
                 tomes = ", ".join(_md_cell(t) for t in (ev.get("tomes") or []))
                 lines.append(
                     f"| `{_md_cell(ev.get('date', ''))}` | **{_md_cell(ev.get('cadre', ''))}** | "
@@ -401,10 +461,10 @@ def render_annexe_tables(
             if isinstance(wyv, dict):
                 wyv_txt = (
                     f"Wyvern G2 : `{wyv.get('unites', 13)}` unités, "
-                    f"`{wyv.get('initiales', 1084)} -> {wyv.get('finales_supportees', 1087)}` assertions supportées (`{wyv.get('taux', '100 %')}`)"
+                    f"`{wyv.get('initiales', 1084)} → {wyv.get('finales_supportees', 1087)}` assertions supportées (`{wyv.get('taux', '100 %')}`)"
                 )
             else:
-                wyv_txt = f"`{wyv or '1 087 assertions Wyvern 100 %'}`"
+                wyv_txt = f"`{_clean_prd_prose(wyv or '1 087 assertions Wyvern 100 %')}`"
             lines.append(f"- **Tome 7 (`G1–G5`)** : `{t7_g.get('sources_l_plus', 79)}` sources `L+`, {wyv_txt}.")
         if t5_ca:
             lines.append(f"- **Tome 5 (`CA-16`)** : échantillon stratifié `{t5_ca.get('echantillon_stratifie', '24 items')}`, passe finale `{t5_ca.get('passe_2_finale', '100 %')}`.")
@@ -432,7 +492,18 @@ def render_annexe_tables(
                 fam_buckets.setdefault(fam_top, []).append(item)
                 subfam_counts[fam_full] += 1
 
-            lines.append(f"#### Distribution des {len(mat)} entrées de la matrice de traçabilité par famille")
+            mtotals = pivots.get("matrix_totals") or {}
+            unique_ids = len({str(item.get("id", "")).strip() for item in mat if str(item.get("id", "")).strip()})
+            if mtotals:
+                lines.append(
+                    f"#### Distribution des {len(mat)} entrées uniques de la matrice de traçabilité "
+                    f"(`0` doublon, `{mtotals.get('tome8_executable_tests', 95)}` tests exécutables Tome 8 rattachés dont `{mtotals.get('shared_ids_merged', 30)}` identifiants fusionnés)"
+                )
+            else:
+                lines.append(
+                    f"#### Distribution des {len(mat)} entrées de la matrice de traçabilité "
+                    f"({unique_ids} identifiants uniques, dont 30 liés simultanément au catalogue normatif et aux tests exécutables Tome 8)"
+                )
             lines.append("")
             lines.append("| Famille principale | Entrées | Détail par criticité / catégorie dans le bundle |")
             lines.append("|---|---:|---|")
@@ -445,27 +516,37 @@ def render_annexe_tables(
                 lines.append(f"| `{_md_cell(fam_top)}` | **{len(fam_buckets[fam_top])}** | {detail} |")
             lines.append("")
 
-            # Échantillon stratifié garantissant toutes les familles (EXIG, CAP, PRR-75, PRR_BLOCKING, C40, PEX, 5 SBB, ADR)
-            stratified_mat: list[dict[str, Any]] = []
-            max_per_bucket = 6
-            bucket_order = sorted(fam_buckets.keys())
-            for round_idx in range(max_per_bucket):
-                for fam_top in bucket_order:
-                    b = fam_buckets[fam_top]
-                    if round_idx < len(b):
-                        stratified_mat.append(b[round_idx])
-
+            mat_sorted = sorted(
+                mat,
+                key=lambda x: (
+                    str(x.get("family") or "").split(" (")[0].strip(),
+                    str(x.get("id") or ""),
+                    str(x.get("layer") or ""),
+                ),
+            )
             lines.append(
-                f"#### Extrait stratifié multi-familles de la matrice de traçabilité `EXIG / CAP / PRR-75 / C01–C40 / 5 SBB / PEX` "
-                f"({len(stratified_mat)} entrées représentatives sur {len(mat)} au bundle)"
+                f"#### Matrice intégrale de traçabilité `EXIG / CAP / PRR-75 / C01–C40 / 5 SBB / PEX / ADR` "
+                f"({len(mat_sorted)} entrées uniques sur {len(mat)})"
             )
             lines.append("")
-            lines.append("| Identifiant | Famille / Criticité | Intitulé / Règle / Test | Module / Preuve | Ancrage |")
-            lines.append("|---|---|---|---|---|")
-            for item in stratified_mat:
+            lines.append("| Identifiant | Famille / Criticité | Couche / Rôle | Intitulé / Règle / Test | Module / Preuve | Ancrage |")
+            lines.append("|---|---|---|---|---|---|")
+            for item in mat_sorted:
+                title_raw = str(item.get("title", "") or "")
+                mod_raw = str(item.get("module", "") or "")
+                fam_raw = str(item.get("family", "") or "")
+                if item.get("layer"):
+                    layer_val = item["layer"]
+                elif "Test Tome 8" in mod_raw or ("tests/" in title_raw and fam_raw.startswith(("PRR-75", "CAP", "5 SBB"))):
+                    layer_val = "Normatif + Test exécutable Tome 8"
+                elif "tests/" in title_raw or fam_raw.startswith(("C40", "EXIG", "ADR_TEMPLATE")):
+                    layer_val = "Test exécutable Tome 8"
+                else:
+                    layer_val = "Référentiel normatif & architecture"
+                mod_cell = _md_cell(mod_raw) if "`" in mod_raw else (f"`{_md_cell(mod_raw)}`" if mod_raw else "—")
                 lines.append(
-                    f"| `{_md_cell(item.get('id', ''))}` | {_md_cell(item.get('family', ''))} | "
-                    f"{_md_cell(item.get('title', ''))} | `{_md_cell(item.get('module', ''))}` | {_md_cell(item.get('anchor', ''))} |"
+                    f"| `{_md_cell(item.get('id', ''))}` | {_md_cell(fam_raw)} | {_md_cell(layer_val)} | "
+                    f"{_md_cell(title_raw)} | {mod_cell} | {_md_cell(item.get('anchor', ''))} |"
                 )
             lines.append("")
 
@@ -549,10 +630,10 @@ def build_prd_markdown(
     # Passe 1 : Génération complète du corps (avec marqueurs {{CH_ANC_XX}} pour renvois)
     meta = global_shard.get("metadata") or {}
     totals = bundle["totals"]
-    prd_title = global_shard["prd_title"].strip()
-    toc_title = global_shard["toc_representative_title"].strip()
+    prd_title = _clean_prd_prose(global_shard["prd_title"])
+    toc_title = _clean_prd_prose(global_shard["toc_representative_title"])
     exec_sum = global_shard["executive_summary"]
-    exec_title = exec_sum.get("title", "Sommaire exécutif global").strip()
+    exec_title = _clean_prd_prose(exec_sum.get("title", "Sommaire exécutif global"))
     parties = global_shard["parties"]
     annexes = global_shard["annexes"]
     chapters_by_num = {int(c["chapter_number"]): c for c in chapters}
@@ -561,12 +642,12 @@ def build_prd_markdown(
     # Sommaire exécutif global
     body_lines.append(f"## {exec_title}")
     body_lines.append("")
-    body_lines.append(exec_sum["lead"].strip())
+    body_lines.append(_clean_prd_prose(exec_sum["lead"]))
     body_lines.append("")
     for sec in exec_sum["sections"]:
-        body_lines.append(f"### {sec['heading'].strip()}")
+        body_lines.append(f"### {_clean_prd_prose(sec['heading'])}")
         body_lines.append("")
-        body_lines.append(sec["body"].strip())
+        body_lines.append(_clean_prd_prose(sec["body"]))
         body_lines.append("")
     body_lines.append("---")
     body_lines.append("")
@@ -581,20 +662,20 @@ def build_prd_markdown(
         clean_ptitle = re.sub(
             rf"^Partie\s+{re.escape(roman)}\s*[—–:-]?\s*",
             "",
-            p["representative_part_title"].strip(),
+            _clean_prd_prose(p["representative_part_title"]),
             flags=re.IGNORECASE,
-        ).strip() or p["representative_part_title"].strip()
+        ).strip() or _clean_prd_prose(p["representative_part_title"])
         p_head = f"Partie {roman} — {dom_id} : {clean_ptitle}"
         party_heading_by_dom[dom_id] = p_head
         body_lines.append(f"## {p_head}")
         body_lines.append("")
         dom_node_id = dom_meta.get("node_id") or f"DOM_{dom_id}"
         body_lines.append(
-            f"> **Domaine source** : `{dom_id}` (`{dom_node_id}`) — *{dom_meta['title']}* · "
+            f"> **Domaine source** : `{dom_id}` (`{dom_node_id}`) — *{_clean_prd_prose(dom_meta['title'])}* · "
             f"**Repères** : {', '.join(f'`{k}`' for k in dom_meta.get('key_identifiers', []))}"
         )
         body_lines.append("")
-        body_lines.append(p["part_summary"].strip())
+        body_lines.append(_clean_prd_prose(p["part_summary"]))
         body_lines.append("")
 
         for ch_num in p["chapter_numbers"]:
@@ -607,9 +688,9 @@ def build_prd_markdown(
             clean_chtitle = re.sub(
                 rf"^Chapitre\s+0?{ch_num}\s*[—–:-]?\s*",
                 "",
-                ch["representative_title"].strip(),
+                _clean_prd_prose(ch["representative_title"]),
                 flags=re.IGNORECASE,
-            ).strip() or ch["representative_title"].strip()
+            ).strip() or _clean_prd_prose(ch["representative_title"])
             ch_head = f"Chapitre {ch_num:02d} — {clean_chtitle}"
             chapter_heading_texts[ch_num] = ch_head
 
@@ -617,7 +698,7 @@ def build_prd_markdown(
             body_lines.append("")
             body_lines.append(
                 f"- **Identifiant PRD** : `{ch['chapter_code']}` · **Domaine** : `{dom_id}` · "
-                f"**Sous-domaine MindMap** : `{sub_node['node_id']}` (*{sub_node['title']}*) · "
+                f"**Sous-domaine MindMap** : `{sub_node['node_id']}` (*{_clean_prd_prose(sub_node['title'])}*) · "
                 f"**Couverture** : `{len(fams)}` familles, `{thm_count}` thèmes · "
                 f"**Tomes** : {', '.join(f'`{t}`' for t in (sub_node.get('tomes_present') or []))}"
             )
@@ -625,23 +706,23 @@ def build_prd_markdown(
 
             body_lines.append(f"#### {ch_num:02d}.1 Résumé")
             body_lines.append("")
-            body_lines.append(ch["executive_summary"].strip())
+            body_lines.append(_clean_prd_prose(ch["executive_summary"]))
             body_lines.append("")
 
             body_lines.append(f"#### {ch_num:02d}.2 Descriptif du contenu ciblé")
             body_lines.append("")
             body_lines.append("**Périmètre et objectifs vérifiables**")
             body_lines.append("")
-            body_lines.append(tc["scope_and_objectives"].strip())
+            body_lines.append(_clean_prd_prose(tc["scope_and_objectives"]))
             body_lines.append("")
             for req in tc["key_requirements_and_objectives"]:
-                body_lines.append(f"- {req.strip()}")
+                body_lines.append(f"- {_clean_prd_prose(req)}")
             body_lines.append("")
 
             for k, fam in enumerate(fams, 1):
-                body_lines.append(f"##### {ch_num:02d}.2.{k} {fam['family_title'].strip()}")
+                body_lines.append(f"##### {ch_num:02d}.2.{k} {_clean_prd_prose(fam['family_title'])}")
                 body_lines.append("")
-                body_lines.append(f"*Famille MindMap : `{fam['family_node_id']}`* — {fam['family_overview'].strip()}")
+                body_lines.append(f"*Famille MindMap : `{fam['family_node_id']}`* — {_clean_prd_prose(fam['family_overview'])}")
                 body_lines.append("")
                 for th in fam["themes_targeted"]:
                     mm_node = node_by_id[th["theme_node_id"]]
@@ -652,20 +733,37 @@ def build_prd_markdown(
                     )
                     autonomy = ", ".join(mm_node.get("autonomy_levels") or []) or "—"
                     roles = ", ".join(mm_node.get("roles") or []) or "—"
-                    horizon = mm_node.get("horizon") or ", ".join(mm_node.get("horizons") or []) or "—"
+                    horizon = _clean_prd_prose(mm_node.get("horizon") or ", ".join(mm_node.get("horizons") or [])) or "—"
                     tomes = ", ".join(mm_node.get("tomes_present") or []) or "—"
-                    ids_str = ", ".join(f"`{i}`" for i in ids_merged[:12]) if ids_merged else "—"
-                    if len(ids_merged) > 12:
-                        ids_str += f" *(+{len(ids_merged) - 12})*"
+                    ids_str = ", ".join(f"`{i}`" for i in ids_merged) if ids_merged else "—"
 
+                    occ_seen: set[tuple[str, str, int, int]] = set()
+                    occ_sorted: list[dict[str, Any]] = []
+                    for occ in sorted(
+                        mm_node.get("occurrences") or [],
+                        key=lambda o: (
+                            cm.TOME_ORDER.get(str(o.get("tome_id", "")), 99),
+                            int(o.get("line_start") or 0),
+                            int(o.get("line_end") or o.get("line_start") or 0),
+                        ),
+                    ):
+                        ok_key = (
+                            str(occ.get("tome_id", "")),
+                            str(occ.get("file", "")),
+                            int(occ.get("line_start") or 0),
+                            int(occ.get("line_end") or occ.get("line_start") or 0),
+                        )
+                        if ok_key not in occ_seen:
+                            occ_seen.add(ok_key)
+                            occ_sorted.append(occ)
                     occ_links: list[str] = []
-                    for occ in (mm_node.get("occurrences") or [])[:4]:
+                    for occ in occ_sorted:
                         href = f"{encode_rel_url(occ['file'])}#L{occ['line_start']}"
                         occ_links.append(f"[{occ['tome_id']} L{occ['line_start']}–L{occ['line_end']}]({href})")
                     occ_str = " · ".join(occ_links) if occ_links else "—"
 
-                    body_lines.append(f"- **{th['theme_title'].strip()}** (`{th['theme_node_id']}` · `{slug}`)")
-                    body_lines.append(f"  - *Spécification ciblée* : {th['content_specification'].strip()}")
+                    body_lines.append(f"- **{_clean_prd_prose(th['theme_title'])}** (`{th['theme_node_id']}` · `{slug}`)")
+                    body_lines.append(f"  - *Spécification ciblée* : {_clean_prd_prose(th['content_specification'])}")
                     body_lines.append(
                         f"  - *Gouvernance & métadonnées* : Autonomie `{autonomy}` · Rôles `{roles}` · "
                         f"Horizon `{horizon}` · Tomes `{tomes}` · Normes/IDs : {ids_str}"
@@ -676,71 +774,88 @@ def build_prd_markdown(
             body_lines.append("**Livrables et critères d'acceptation**")
             body_lines.append("")
             for deliv in tc["deliverables_and_verification"]:
-                body_lines.append(f"- {deliv.strip()}")
+                body_lines.append(f"- {_clean_prd_prose(deliv)}")
             body_lines.append("")
 
             body_lines.append("**Interrelations systémiques**")
             body_lines.append("")
-            seen_rel_keys: set[tuple[int, str]] = set()
-            for rel in tc.get("cross_chapter_interrelations", []):
-                t_num = int(rel["target_chapter_number"])
-                t_slug = rel.get("target_slug", "")
-                seen_rel_keys.add((t_num, t_slug))
-                direction = rel.get("direction", "sortante")
-                arrow = "→" if direction == "sortante" else "←"
-                prep = "vers" if direction == "sortante" else "depuis"
-                body_lines.append(
-                    f"- {arrow} **`{rel.get('relation_type', '')}`** {prep} "
-                    f"[Chapitre {t_num:02d} — {chapters_by_num[t_num]['representative_title']}](#{{{{CH_ANC_{t_num:02d}}}}}) "
-                    f"(`{t_slug}`) : {rel.get('synthesis', '').strip()}"
-                )
+            from preparer_donnees_prd_web import _build_dedup_interrelations  # noqa: E402
 
             ch_theme_ids = {
                 th["theme_node_id"]
                 for fam in fams
                 for th in fam["themes_targeted"]
             }
+            rels_by_pair: dict[tuple[str, str], list[dict[str, Any]]] = {}
             for mrel in relations:
-                src, tgt = mrel["source"], mrel["target"]
-                if src in ch_theme_ids and tgt not in ch_theme_ids:
-                    o_ch = theme_to_chapter.get(tgt)
-                    o_node = node_by_id.get(tgt)
-                    if o_ch and o_node and (o_ch, o_node["canonical_slug"]) not in seen_rel_keys:
-                        seen_rel_keys.add((o_ch, o_node["canonical_slug"]))
-                        rt_lbl = rel_types.get(mrel["type"], {}).get("label", mrel["type"])
-                        body_lines.append(
-                            f"- → **`{mrel['type']}`** ({rt_lbl}) vers "
-                            f"[Chapitre {o_ch:02d}](#{{{{CH_ANC_{o_ch:02d}}}}}) "
-                            f"(`{o_node['canonical_slug']}`) : {mrel['label']} — {mrel['justification']}"
-                        )
-                elif tgt in ch_theme_ids and src not in ch_theme_ids:
-                    o_ch = theme_to_chapter.get(src)
-                    o_node = node_by_id.get(src)
-                    if o_ch and o_node and (o_ch, o_node["canonical_slug"]) not in seen_rel_keys:
-                        seen_rel_keys.add((o_ch, o_node["canonical_slug"]))
-                        rt_lbl = rel_types.get(mrel["type"], {}).get("label", mrel["type"])
-                        body_lines.append(
-                            f"- ← **`{mrel['type']}`** ({rt_lbl}) depuis "
-                            f"[Chapitre {o_ch:02d}](#{{{{CH_ANC_{o_ch:02d}}}}}) "
-                            f"(`{o_node['canonical_slug']}`) : {mrel['label']} — {mrel['justification']}"
-                        )
+                rels_by_pair.setdefault((mrel["source"], mrel["target"]), []).append(mrel)
+            dedup_rels = _build_dedup_interrelations(
+                ch,
+                ch_theme_ids,
+                relations,
+                rel_types,
+                rels_by_pair,
+                node_by_id,
+                node_by_slug,
+                theme_to_chapter,
+                chapters_by_num,
+            )
+            for rel_item in dedup_rels:
+                direction = rel_item["direction"]
+                rtype = rel_item["relation_type"]
+                t_num = int(rel_item["target_chapter_number"])
+                arrow = "→" if direction == "sortante" else "←"
+                prep = "vers" if direction == "sortante" else "depuis"
+                rt_lbl = _clean_prd_prose(rel_item.get("label") or rel_types.get(rtype, {}).get("label", rtype))
+                t_title = re.sub(
+                    rf"^Chapitre\s+0?{t_num}\s*[—–:-]?\s*",
+                    "",
+                    _clean_prd_prose(chapters_by_num[t_num]["representative_title"]),
+                    flags=re.IGNORECASE,
+                ).strip() or _clean_prd_prose(chapters_by_num[t_num]["representative_title"])
+                slugs_str = ", ".join(f"`{s}`" for s in (rel_item.get("target_slugs") or [rel_item.get("target_slug", "")]) if s)
+                syn_str = _clean_prd_prose(rel_item.get("synthesis", ""))
+                body_lines.append(
+                    f"- {arrow} **`{rtype}`** ({rt_lbl}) {prep} "
+                    f"[Chapitre {t_num:02d} — {t_title}](#{{{{CH_ANC_{t_num:02d}}}}}) "
+                    f"({slugs_str}) : {syn_str}"
+                )
             body_lines.append("")
 
             body_lines.append("**Ancrages dans le Corpus**")
             body_lines.append("")
             body_lines.append("| Tome | Fichier source (`Corpus/`) | Référence |")
             body_lines.append("|---|---|---|")
+            norm_anchors: list[tuple[int, int, str, str, str, str]] = []
+            seen_anc_keys: set[tuple[str, str, str]] = set()
             for anc in tc.get("corpus_anchors", []):
-                fpath = anc["file"]
+                tome_id = str(anc["tome_id"]).strip()
+                fpath = str(anc["file"]).strip()
+                ref_clean = _clean_prd_prose(anc.get("reference", ""))
+                line_m = re.search(r"\bL(\d+)\s*[–-]\s*L?\d+", ref_clean) or re.search(
+                    r"\bL([1-9]\d*)\b", ref_clean
+                )
+                line_start_int = int(line_m.group(1)) if line_m else int(anc.get("line_start") or 0)
+                akey = (tome_id, fpath, ref_clean)
+                if akey in seen_anc_keys:
+                    continue
+                seen_anc_keys.add(akey)
+                norm_anchors.append(
+                    (
+                        cm.TOME_ORDER.get(tome_id, 99),
+                        line_start_int,
+                        tome_id,
+                        fpath,
+                        f"#L{line_start_int}" if line_start_int > 0 else "",
+                        ref_clean,
+                    )
+                )
+            norm_anchors.sort(key=lambda x: (x[0], x[1], x[5]))
+            for _, _, tome_id, fpath, line_frag, ref_clean in norm_anchors:
                 fname = Path(fpath).name
                 url = encode_rel_url(fpath)
-                ref_txt = str(anc.get("reference", ""))
-                line_m = re.search(r"\bL(\d+)\s*[–-]\s*L?\d+", ref_txt) or re.search(
-                    r"\bL([1-9]\d*)\b", ref_txt
-                )
-                line_frag = f"#L{line_m.group(1)}" if line_m else ""
                 body_lines.append(
-                    f"| `{_md_cell(anc['tome_id'])}` | [{_md_cell(fname)}]({url}{line_frag}) | {_md_cell(anc['reference'])} |"
+                    f"| `{_md_cell(tome_id)}` | [{_md_cell(fname)}]({url}{line_frag}) | {_md_cell(ref_clean)} |"
                 )
             body_lines.append("")
 
@@ -757,20 +872,20 @@ def build_prd_markdown(
         clean_atitle = re.sub(
             rf"^Annexe\s+{re.escape(acode)}\s*[—–:-]?\s*",
             "",
-            ann["representative_title"].strip(),
+            _clean_prd_prose(ann["representative_title"]),
             flags=re.IGNORECASE,
-        ).strip() or ann["representative_title"].strip()
+        ).strip() or _clean_prd_prose(ann["representative_title"])
         a_head = f"Annexe {acode} — {clean_atitle}"
         ann_heading_by_code[acode] = a_head
         body_lines.append(f"## {a_head}")
         body_lines.append("")
         body_lines.append(f"### Annexe {acode}.1 Résumé")
         body_lines.append("")
-        body_lines.append(ann["executive_summary"].strip())
+        body_lines.append(_clean_prd_prose(ann["executive_summary"]))
         body_lines.append("")
         body_lines.append(f"### Annexe {acode}.2 Descriptif du contenu ciblé")
         body_lines.append("")
-        body_lines.append(ann["targeted_content_description"].strip())
+        body_lines.append(_clean_prd_prose(ann["targeted_content_description"]))
         body_lines.append("")
         if acode in ("A", "B"):
             # Marqueurs différés résolus en Passe 2 via {{CH_ANC_XX}}
@@ -817,11 +932,11 @@ def build_prd_markdown(
     # Construction de la Table des matières exhaustive avec ancres vérifiées
     toc_lines: list[str] = [f"## {toc_title}", ""]
     if global_shard.get("toc_intro_note"):
-        toc_lines.append(global_shard["toc_intro_note"].strip())
+        toc_lines.append(_clean_prd_prose(global_shard["toc_intro_note"]))
         toc_lines.append("")
     toc_lines.append(f"- [**{exec_title}**](#{exec_anchor})")
     for sec in exec_sum["sections"]:
-        sh = sec["heading"].strip()
+        sh = _clean_prd_prose(sec["heading"])
         toc_lines.append(f"  - [{sh}](#{anchor_by_level_title[(3, sh)]})")
 
     for p in parties:
@@ -838,10 +953,10 @@ def build_prd_markdown(
             toc_lines.append(f"    - [{h_res}](#{anchor_by_level_title[(4, h_res)]})")
             toc_lines.append(f"    - [{h_desc}](#{anchor_by_level_title[(4, h_desc)]})")
             for k, fam in enumerate(ch["targeted_content"]["families_and_themes"], 1):
-                f_head = f"{ch_num:02d}.2.{k} {fam['family_title'].strip()}"
+                f_head = f"{ch_num:02d}.2.{k} {_clean_prd_prose(fam['family_title'])}"
                 f_anc = anchor_by_level_title[(5, f_head)]
                 t_labels = ", ".join(
-                    f"{t['theme_title'].strip()} (`{t['canonical_slug']}`)"
+                    f"{_clean_prd_prose(t['theme_title'])} (`{t['canonical_slug']}`)"
                     for t in fam["themes_targeted"]
                 )
                 toc_lines.append(
@@ -862,7 +977,7 @@ def build_prd_markdown(
     header_lines: list[str] = [
         f"# {prd_title}",
         "",
-        f"*{global_shard['prd_subtitle'].strip()}*",
+        f"*{_clean_prd_prose(global_shard['prd_subtitle'])}*",
         "",
         (
             f"> **Version** : `{meta.get('version', '1.0.0')}` · **Date** : `{meta.get('date', '2026-11-24')}` · "
@@ -888,7 +1003,9 @@ def build_prd_markdown(
         "",
     ]
 
-    markdown_text = "\n".join(header_lines + toc_lines) + "\n" + body_text.rstrip() + "\n"
+    markdown_text = escape_markdown_dollars(
+        "\n".join(header_lines + toc_lines) + "\n" + body_text.rstrip() + "\n"
+    )
     metrics = {
         "domains": len(parties),
         "chapters": len(chapters),
@@ -910,7 +1027,7 @@ def compile_prd(repo_root: Path, output_path: Path | None = None) -> tuple[Path,
     bundle, global_shard, chapters = load_and_validate_inputs(repo_root)
     md_text, metrics = build_prd_markdown(repo_root, bundle, global_shard, chapters)
     target = output_path or (repo_root / "prd.md")
-    target.write_text(md_text, encoding="utf-8")
+    target.write_text(md_text, encoding="utf-8", newline="\n")
     return target, metrics
 
 

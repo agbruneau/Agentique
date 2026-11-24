@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-24T10:45:53.055128+00:00",
+  "generated_at": "2026-11-24T17:15:32.707560+00:00",
   "generator": "Cartographie/outils/extraire_structure.py",
   "totals": {
     "files": 9,
     "lines": 69821,
-    "words": 1537418,
+    "words": 1537423,
     "headings": 4434,
     "headings_by_level": {
       "H1": 95,
@@ -25,7 +25,7 @@
       "filename": "README.md",
       "title": "Suite intégrale du corpus (`Corpus`)",
       "line_count": 30,
-      "word_count": 1204,
+      "word_count": 1209,
       "heading_count": 3,
       "headings_by_level": {
         "H1": 1,
@@ -56,8 +56,8 @@
           "title": "Suite intégrale du corpus (`Corpus`)",
           "line_start": 1,
           "line_end": 30,
-          "word_count": 1204,
-          "own_word_count": 278,
+          "word_count": 1209,
+          "own_word_count": 283,
           "part_title": null,
           "identifiers": [
             "CA-G0-SYNC",

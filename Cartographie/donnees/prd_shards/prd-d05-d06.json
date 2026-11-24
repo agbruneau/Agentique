@@ -31,8 +31,8 @@
               {
                 "theme_node_id": "THM_arbre-sobriete-oo1-oo4",
                 "canonical_slug": "arbre-sobriete-oo1-oo4",
-                "theme_title": "Arbre de sobriété (N0 -> flux -> agent unique -> multiagent) et bascule réglementaire OO2 -> OO3",
-                "content_specification": "Applique l'arbre décisionnel gradué N0/OO1 (règle DMN/code déterministe) -> OO2 (chaîne ou workflow structuré à appels typés) -> OO3 (agent unique outillé sous enveloppe) -> OO4 (collectif multi-agents). Localise « la main qui commande » selon APM et proscrit OO1–OO2 dès la réunion des trois conditions cumulatives de C26 §29.4.1 (texte opposable sur l'issue, trace exigible par un tiers, dommage non réparable par reprise). EXIG-ORC-01/02 imposent de démontrer l'insuffisance des paliers inférieurs et un gain mesuré en constance pass^k et CPO face à la saturation ~45 %, à l'effet Ringelmann et aux surcoûts de 15× jetons.",
+                "theme_title": "Arbre de sobriété (N0 → flux → agent unique → multiagent) et bascule réglementaire OO2 → OO3",
+                "content_specification": "Applique l'arbre décisionnel gradué N0/OO1 (règle DMN/code déterministe) → OO2 (chaîne ou workflow structuré à appels typés) → OO3 (agent unique outillé sous enveloppe) → OO4 (collectif multi-agents). Localise « la main qui commande » selon APM et proscrit OO1–OO2 dès la réunion des trois conditions cumulatives de C26 §29.4.1 (texte opposable sur l'issue, trace exigible par un tiers, dommage non réparable par reprise). EXIG-ORC-01/02 imposent de démontrer l'insuffisance des paliers inférieurs et un gain mesuré en constance pass^k et CPO face à la saturation ~45 %, à l'effet Ringelmann et aux surcoûts de 15× jetons.",
                 "identifiers_and_norms": [
                   "OO1",
                   "OO2",
@@ -54,7 +54,7 @@
                 "theme_node_id": "THM_enveloppes-bpmn-cas-routine",
                 "canonical_slug": "enveloppes-bpmn-cas-routine",
                 "theme_title": "Enveloppes BPMN ad hoc, gestion de cas CMMN, Routine et processus exposé comme outil",
-                "content_specification": "Encapsule les nœuds cognitifs dans quatre patrons hybrides déterministes : sous-processus ad hoc BPMN 2.0 (Camunda 8.11 fromAi plafonné à 10 appels), tâche agentique appelée comme activité typée sous contrat JSON (UiPath Maestro), gestion de cas adaptative à règles DMN préalables (CMMN / Case Manager) et planification structurée Routine (amélioration mesurée 41,1 % -> 96,3 %), avec exposition optionnelle d'un processus entier comme outil MCP gouverné.",
+                "content_specification": "Encapsule les nœuds cognitifs dans quatre patrons hybrides déterministes : sous-processus ad hoc BPMN 2.0 (Camunda 8.11 fromAi plafonné à 10 appels), tâche agentique appelée comme activité typée sous contrat JSON (UiPath Maestro), gestion de cas adaptative à règles DMN préalables (CMMN / Case Manager) et planification structurée Routine (amélioration mesurée 41,1 % → 96,3 %), avec exposition optionnelle d'un processus entier comme outil MCP gouverné.",
                 "identifiers_and_norms": [
                   "BPMN 2.0",
                   "DMN",
@@ -907,7 +907,7 @@
                 "theme_node_id": "THM_identite-non-humaine-nhi",
                 "canonical_slug": "identite-non-humaine-nhi",
                 "theme_title": "Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes",
-                "content_specification": "Documente le bris du modèle IAM classique (OAuth §4.1 orienté navigateur, SCIM RFC 7643 §4 sans type agent, extensions SCIM expirées/pré-normatives) et bascule vers la vérification continue de l'usage (OWASP ASI03, ratio NHI 82:1, OWASP NHI Top 10). Impose EXIG-IAM-01..07 : identité NHI parrainée au SIRH (séparation Blueprint/Instance, transfert < 72 h, non-réattribution perpétuelle), interdiction des comptes humains et secrets statiques, injection hors modèle via coffre-fort (SBB-SECRETS-VAULT) et cycle complet Naissance -> Vie -> Mort.",
+                "content_specification": "Documente le bris du modèle IAM classique (OAuth §4.1 orienté navigateur, SCIM RFC 7643 §4 sans type agent, extensions SCIM expirées/pré-normatives) et bascule vers la vérification continue de l'usage (OWASP ASI03, ratio NHI 82:1, OWASP NHI Top 10). Impose EXIG-IAM-01..07 : identité NHI parrainée au SIRH (séparation Blueprint/Instance, transfert < 72 h, non-réattribution perpétuelle), interdiction des comptes humains et secrets statiques, injection hors modèle via coffre-fort (SBB-SECRETS-VAULT) et cycle complet Naissance → Vie → Mort.",
                 "identifiers_and_norms": [
                   "RFC 6749",
                   "RFC 7643",
@@ -1009,7 +1009,7 @@
                 "theme_node_id": "THM_did-vc-passeport-agent",
                 "canonical_slug": "did-vc-passeport-agent",
                 "theme_title": "Identité légale vérifiable GLEIF vLEI, lacune KYA (0/9) et encadrement des agents externes",
-                "content_specification": "Analyse W3C VC Data Model v2.0, DID v1.0/v1.1, `did:wba` et le fossé financier (0 établissement financier relevé sur 10 cas). Assemble le passeport d'agent à quatre pièces (AgentCard, registre, mandat, attestations, plus 5e pièce candidate AIBOM/provenance) tout en imposant la posture « attendre » pour les normes DID inter-firmes jusqu'au consensus. Au Palier 3 (CAP-006, CAP-041, SIG-007/103), prépare l'authentification légale GLEIF vLEI (QVI -> LE -> OOR/ECR, ISO 17442-3) et les substituts provisoires devant l'échéance BSIF E-23 / AMF du 1er mai 2027.",
+                "content_specification": "Analyse W3C VC Data Model v2.0, DID v1.0/v1.1, `did:wba` et le fossé financier (0 établissement financier relevé sur 10 cas). Assemble le passeport d'agent à quatre pièces (AgentCard, registre, mandat, attestations, plus 5e pièce candidate AIBOM/provenance) tout en imposant la posture « attendre » pour les normes DID inter-firmes jusqu'au consensus. Au Palier 3 (CAP-006, CAP-041, SIG-007/103), prépare l'authentification légale GLEIF vLEI (QVI → LE → OOR/ECR, ISO 17442-3) et les substituts provisoires devant l'échéance BSIF E-23 / AMF du 1er mai 2027.",
                 "identifiers_and_norms": [
                   "W3C VC Data Model v2.0",
                   "DID v1.0",
@@ -1120,7 +1120,7 @@
             "relation_type": "operationnalisation",
             "target_chapter_number": 8,
             "target_slug": "protocole-a2a",
-            "synthesis": "[did-vc-passeport-agent] ancre l'identité légale des pairs A2A inter-firmes — L'écosystème GLEIF vLEI (QVI -> LE -> OOR/ECR, ISO 17442-3) et les justificatifs vérifiables VC permettent aux passerelles A2A d'authentifier la personne morale mandante au-delà du champ provider."
+            "synthesis": "[did-vc-passeport-agent] ancre l'identité légale des pairs A2A inter-firmes — L'écosystème GLEIF vLEI (QVI → LE → OOR/ECR, ISO 17442-3) et les justificatifs vérifiables VC permettent aux passerelles A2A d'authentifier la personne morale mandante au-delà du champ provider."
           },
           {
             "direction": "entrante",
@@ -1905,7 +1905,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 31,
             "target_slug": "trajectoire-90j-18m-p1-p3",
-            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Déploiement échelonné P1 (hybride) -> P2 (G7 2030–32) -> P3 (2035) — Cadence la transition cryptographique sur les trois paliers : préparation kid/tampons/TLS hybride en P1, signatures hybrides et SCITT à POR-007 en P2, et PQC natif complet à POR-011 en P3."
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Déploiement échelonné P1 (hybride) → P2 (G7 2030–32) → P3 (2035) — Cadence la transition cryptographique sur les trois paliers : préparation kid/tampons/TLS hybride en P1, signatures hybrides et SCITT à POR-007 en P2, et PQC natif complet à POR-011 en P3."
           },
           {
             "direction": "sortante",
