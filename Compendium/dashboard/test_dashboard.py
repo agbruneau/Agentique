@@ -198,6 +198,11 @@ def test_index_html_offline_and_nodejs_render_smoke() -> None:
     assert not re.search(r"<script[^>]+src\s*=", html, re.IGNORECASE)
     assert not re.search(r"<link[^>]+href\s*=\s*[\"']https?://", html, re.IGNORECASE)
     assert not re.search(r"@import\s+url\(", html, re.IGNORECASE)
+    # Thème par défaut Black Dark Burnt Orange et actualisation à 60 s
+    assert 'data-theme="dark"' in html
+    assert "#e05a17" in html
+    assert '<option value="60000" selected>Actualisation : 60 s</option>' in html
+    assert "pollMs: 60000" in html
 
     node_exe = shutil.which("node")
     if node_exe is None:

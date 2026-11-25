@@ -1,33 +1,34 @@
 <!DOCTYPE html>
-<html lang="fr-CA" data-theme="auto">
+<html lang="fr-CA" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compendium — Tableau de bord de progression (plan.md)</title>
   <style>
     :root {
-      color-scheme: light dark;
-      --bg-app: light-dark(#f4f7fb, #0b1120);
-      --bg-surface: light-dark(#ffffff, #111827);
-      --bg-surface-2: light-dark(#eef2f7, #1a2336);
-      --bg-surface-3: light-dark(#e2e8f0, #23304a);
-      --text-main: light-dark(#0f172a, #f1f5f9);
-      --text-muted: light-dark(#475569, #94a3b8);
-      --text-subtle: light-dark(#64748b, #64748b);
-      --border: light-dark(#cbd5e1, #2a3750);
-      --border-strong: light-dark(#94a3b8, #475569);
-      --navy: light-dark(#132238, #1e3a5f);
-      --accent: light-dark(#1b4f72, #60a5fa);
-      --accent-soft: light-dark(#dbeafe, #172c54);
-      --accent-text: light-dark(#1b4f72, #93c5fd);
+      color-scheme: dark light;
+      --bg-app: light-dark(#faf7f4, #070709);
+      --bg-surface: light-dark(#ffffff, #0f1014);
+      --bg-surface-2: light-dark(#f3eee8, #16181e);
+      --bg-surface-3: light-dark(#e7dfd6, #20232b);
+      --text-main: light-dark(#1a1614, #f4f1ec);
+      --text-muted: light-dark(#5c534b, #a39e96);
+      --text-subtle: light-dark(#7c7269, #757068);
+      --border: light-dark(#dfd5cb, #262320);
+      --border-strong: light-dark(#bfa995, #4d3729);
+      --navy: light-dark(#24130a, #1c0f08);
+      --accent: light-dark(#c2410c, #e05a17);
+      --accent-soft: light-dark(#ffedd5, #2d1408);
+      --accent-text: light-dark(#9a3412, #ff8442);
+      --accent-glow: light-dark(rgba(194, 65, 12, 0.14), rgba(224, 90, 23, 0.24));
       --ok: light-dark(#047857, #34d399);
-      --ok-soft: light-dark(#d1fae5, #064e3b);
-      --warn: light-dark(#d97706, #fbbf24);
-      --warn-soft: light-dark(#fef3c7, #78350f);
+      --ok-soft: light-dark(#d1fae5, #082f24);
+      --warn: light-dark(#b45309, #f59e0b);
+      --warn-soft: light-dark(#fef3c7, #332006);
       --danger: light-dark(#dc2626, #f87171);
-      --danger-soft: light-dark(#fee2e2, #7f1d1d);
-      --shadow-sm: light-dark(0 1px 2px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0, 0, 0, 0.45));
-      --shadow-md: light-dark(0 10px 26px rgba(15, 23, 42, 0.12), 0 12px 30px rgba(0, 0, 0, 0.55));
+      --danger-soft: light-dark(#fee2e2, #361013);
+      --shadow-sm: light-dark(0 1px 2px rgba(26, 22, 20, 0.08), 0 1px 4px rgba(0, 0, 0, 0.65));
+      --shadow-md: light-dark(0 10px 26px rgba(26, 22, 20, 0.12), 0 14px 34px rgba(0, 0, 0, 0.78));
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 14px;
@@ -37,6 +38,7 @@
 
     html[data-theme="light"] { color-scheme: light; }
     html[data-theme="dark"] { color-scheme: dark; }
+    html[data-theme="auto"] { color-scheme: light dark; }
 
     * { box-sizing: border-box; }
     html, body {
@@ -63,6 +65,7 @@
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 1px 5px;
+      color: var(--accent-text);
     }
 
     .topbar {
@@ -70,6 +73,7 @@
       top: 0;
       z-index: 40;
       background: var(--bg-surface);
+      border-top: 2px solid var(--accent);
       border-bottom: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
       padding: 12px 20px 0 20px;
@@ -93,14 +97,15 @@
       width: 36px;
       height: 36px;
       border-radius: 9px;
-      background: linear-gradient(135deg, #132238, #1b4f72);
-      color: #f8fafc;
+      background: linear-gradient(135deg, #1b0d06 0%, #b8420c 60%, #ea631c 100%);
+      color: #fff7ed;
       display: grid;
       place-items: center;
       font-weight: 700;
       font-size: 15px;
       letter-spacing: 0.04em;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255, 132, 66, 0.45);
+      box-shadow: 0 0 18px var(--accent-glow);
     }
     .brand h1 {
       margin: 0;
@@ -586,16 +591,17 @@
         <input class="search-input" id="global-search" type="search" placeholder="Filtrer (Ctrl+K)…" aria-label="Recherche globale" />
         <select class="select" id="poll-select" aria-label="Fréquence d'actualisation">
           <option value="0">Actualisation : Manuel</option>
-          <option value="5000" selected>Actualisation : 5 s</option>
           <option value="15000">Actualisation : 15 s</option>
+          <option value="60000" selected>Actualisation : 60 s</option>
+          <option value="300000">Actualisation : 5 min</option>
         </select>
         <button class="btn" id="btn-refresh" type="button">Actualiser</button>
         <button class="btn" id="btn-csv" type="button">CSV</button>
         <button class="btn" id="btn-json" type="button">JSON</button>
         <select class="select" id="theme-select" aria-label="Thème visuel">
+          <option value="dark" selected>Thème : Noir / Orange brûlé</option>
           <option value="auto">Thème : Auto</option>
           <option value="light">Thème : Clair</option>
-          <option value="dark">Thème : Sombre</option>
         </select>
       </div>
     </div>
@@ -1239,7 +1245,7 @@
         tab: "overview",
         query: "",
         editMode: false,
-        pollMs: 5000,
+        pollMs: 60000,
         pollTimer: null,
         unitFilters: { domain: "ALL", type: "ALL", status: "ALL" },
         schemaFilters: { domain: "ALL", reuse: "ALL", notation: "ALL", disk: "ALL" },
@@ -1258,7 +1264,7 @@
 
       function applyTheme(theme) {
         document.documentElement.setAttribute("data-theme", theme);
-        try { localStorage.setItem("compendium_dash_theme", theme); } catch (_) {}
+        try { localStorage.setItem("compendium_dash_theme_v2", theme); } catch (_) {}
       }
 
       function updateBadges(data) {
@@ -1400,7 +1406,7 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         try {
-          const savedTheme = localStorage.getItem("compendium_dash_theme") || "auto";
+          const savedTheme = localStorage.getItem("compendium_dash_theme_v2") || "dark";
           document.getElementById("theme-select").value = savedTheme;
           applyTheme(savedTheme);
         } catch (_) {}
