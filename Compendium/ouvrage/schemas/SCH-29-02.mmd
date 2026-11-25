@@ -1,0 +1,27 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Fédération multi-SaaS (ADR-015)"]
+    SAAS["① Spécialistes locaux ≥ 85 %<br/>(5 suites SaaS sous noyau Temporal/PEP)"]:::prob
+    LOOP["② Vecteur de trace signé RFC 8693<br/>Bloque webhooks circulaires"]:::det
+  end
+  subgraph Z2["Z2 : Continuité Cognitive DR (ADR-027)"]
+    MON{"Panne / retrait fournisseur ?"}:::det
+    DR["③ Bascule RTO < 15 min, RPO = 0<br/>Open Responses → vLLM/SGLang<br/>& resserrement HOTL 15–25 %"]:::ok
+  end
+  subgraph Z3["Z3 : Ouverture B2B P3 (POR-013)"]
+    B2B["④ 4 verrous cumulatifs (2033–2035) :<br/>vLEI, ODRL 2.2, Diplomate ↔ Évaluateur,<br/>rapprochement tripartite hors modèle"]:::ok
+  end
+  SAAS -.-> LOOP --> MON
+  MON -->|Oui| DR
+  MON -->|Nominal P3| B2B
+  DR -.->|Rétabli| SAAS
+  B2B -.->|Rétroaction| LOOP
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F8FAFC,stroke:#1D4ED8,stroke-width:1.2px
+  style Z2 fill:#FFFBEB,stroke:#D97706,stroke-width:1.2px
+  style Z3 fill:#ECFDF5,stroke:#047857,stroke-width:1.2px

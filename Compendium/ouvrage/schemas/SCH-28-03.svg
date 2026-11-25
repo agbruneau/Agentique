@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="820" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="74" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">SCH-28-03 — Terrain canadien vérifié (10 institutions) vs extrapolations FHIR et SIL 2/3</text>
+    <text x="38" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" fill="#CBD5E1">Frontière méthodologique stricte entre preuves financières et cas illustratifs · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#047857" stroke-width="1.8"/>
+    <rect x="20" y="104" width="374" height="38" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+    <text x="34" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#064E3B">Z1 · Périmètre démontré : Finance &amp; logiciel CA</text>
+    <line x1="396" y1="327" x2="410" y2="327" stroke="#475569" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="152" width="346" height="165" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+      <text x="46" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">10 institutions canadiennes (5+4+1)</text>
+      <text x="46" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">5 accès complets · 4 dégradés · 1 sec.</text>
+      <text x="46" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">5 invariants (§35.9) &amp; cas Sun Life ACP</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="34" y="329" width="346" height="165" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+      <text x="46" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">6 facteurs de durcissement vérifiés</text>
+      <text x="46" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Moffatt c. Air Canada · FSB/BoE/ESRB</text>
+      <text x="46" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">CRE-IA, Note AMF IA, Borealis-Bench</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="412" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="412" y="104" width="374" height="38" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="426" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Z2 · Frontière épistémique stricte (§28.9)</text>
+    <line x1="788" y1="327" x2="802" y2="327" stroke="#475569" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="426" y="152" width="346" height="165" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="438" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Sas de non-importation mécanique</text>
+      <text x="438" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Interdit d'importer sans preuve propre</text>
+      <text x="438" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">les hypothèses financières vers le soin/OT</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="804" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#64748B" stroke-width="1.8"/>
+    <rect x="804" y="104" width="374" height="38" rx="10" fill="#F3F4F6" stroke="#64748B" stroke-width="1.5"/>
+    <text x="818" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E293B">Z3 · Périmètre extrapolé : Santé &amp; IT/OT</text>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="818" y="152" width="346" height="165" rx="8" fill="#F3F4F6" stroke="#64748B" stroke-width="2"/>
+      <text x="830" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E293B">Santé HL7 FHIR R4 (illustratif)</text>
+      <text x="830" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Aucune validation clinique primaire</text>
+      <text x="830" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Revue humaine clinique intégrale</text>
+    </g>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="818" y="329" width="346" height="165" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="830" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#78350F">IT/OT IEC 62443 · NERC CIP · SIL 2/3</text>
+      <text x="830" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Jumeau numérique déterministe &amp; lecture</text>
+      <text x="830" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">seule : 0 actionnement sur automate</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="562" width="1160" height="108" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="582" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Classer chaque constat canadien 2025–2026 selon son accès (5+4+1).</text>
+    <text x="610" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Limiter l'opposabilité CRE-IA / Borealis-Bench à la finance et au génie</text>
+    <text x="610" y="620" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">logiciel.</text>
+    <text x="34" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ Étiqueter santé FHIR, manufacturier IEC 62443 et SIL 2/3 comme</text>
+    <text x="34" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">illustratifs.</text>
+    <text x="610" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Maintenir en IT/OT un sas lecture seule + jumeau déterministe sans</text>
+    <text x="610" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">écriture.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="680" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="692" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="60" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Périmètre démontré sur sources vérifiées (10 inst.)</text>
+    <rect x="411" y="692" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="437" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Séparation épistémique des preuves sectorielles</text>
+    <rect x="788" y="692" width="18" height="18" rx="4" fill="#F3F4F6" stroke="#64748B" stroke-width="2"/>
+    <text x="814" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Extrapolations illustratives (FHIR, IEC 62443, SIL 2/3)</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="734" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="756" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">La rigueur probante trace une ligne nette : la finance réglementée et le génie logiciel sont démontrés, tandis que santé FHIR et</text>
+    <text x="36" y="792" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">SIL 2/3 restent illustratifs.</text>
+  </g>
+</svg>

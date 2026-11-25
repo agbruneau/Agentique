@@ -1,0 +1,89 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Enclaves TEE, clés HYOK et continuité bimodèle malgré TEE.fail
+package "Z1 : Souveraineté des clés HYOK (entreprise)" {
+  actor "Organisation mandante\nContrôle exclusif & révocation" as ORG <<ext>>
+  rectangle "HSM HYOK hors nuage\nRTT ≤ 35 ms & déchiquetage" as HYOK <<det>>
+  rectangle "Routeur géofencé\nVérification d'attestation" as GEO <<det>>
+}
+package "Z2 : Enclave matérielle GPU/CPU partagée" {
+  rectangle "Enclave CPU/GPU TEE\nIntel TDX / AMD SEV-SNP / NVIDIA CC\n(CAP-033 sous signal SIG-016)" as TEE <<det>>
+  rectangle "Inférence confidentielle\nDonnées chiffrées en mémoire" as INF <<prob>>
+  rectangle "Risque physique DDR5\nLimite TEE.fail (< 1 000 USD)\nSecrets ultimes exclus" as FAIL <<danger>>
+}
+package "Z3 : Continuité cognitive bimodèle (POR-006)" {
+  rectangle "Grappe souveraine de repli\nModèles à poids ouverts (CAP-031)" as DR <<ok>>
+  rectangle "Exercice trimestriel POR-006\nBascule réelle des flux critiques" as TEST <<ok>>
+}
+ORG --> HYOK : gère clés
+ORG --> GEO : ① flux sensible
+GEO --> TEE : attestation distante
+HYOK --> TEE : ② clé si mesure PCR conforme
+TEE .[#B45309].> INF : exécution bornée
+FAIL .[#B45309].> TEE : ③ menace sonde hôte
+GEO --> DR : ④ bascule souveraine
+TEST --> DR : valide trimestriellement
+legend bottom
+  **Or / Ardoise** : clés HYOK sous contrôle exclusif client et révocation instantanée
+  **Bleu / Rouge** : calcul confidentiel TEE avec vigilance physique DDR5 TEE.fail
+  **Vert continuité** : grappe de secours bimodèle à poids ouverts exercée chaque trimestre
+end legend
+@enduml

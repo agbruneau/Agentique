@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 892" width="1200" height="892" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="892" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-00-03</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Frise chronologique et jalons</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Trajectoire adaptative 2026–2035 et paliers d'autonomie L0–L4 sous gouvernance</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">duale AE ↔ AS</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="152" rx="10" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="152" rx="4" fill="#1D4ED8"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1D4ED8">Z1 — Bande supérieure — Échéances externes opposables (2023–2035)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="268.5" height="102" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">2023–2026 · Socle initial</text>
+    <line x1="53.0" y1="194" x2="299.5" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Loi 25 (2023–2024 : art. 12.1, 27)</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">EU AI Act art. 50 (août 2026)</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="324.5" y="160" width="268.5" height="102" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="335.5" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">2027 · Arrimage prudentiel</text>
+    <line x1="335.5" y1="194" x2="582.0" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="335.5" y="208" font-size="11.8" fill="#1E293B">AMF / BSIF E-23 (1er mai 2027)</text>
+    <text x="335.5" y="224" font-size="11.8" fill="#1E293B">TLS 100 j (mars 2027) · AI Act Ann.</text>
+    <text x="335.5" y="240" font-size="11.8" fill="#1E293B">III</text>
+  </g>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="607.0" y="160" width="268.5" height="102" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">2028–2029 · Durcissement PKI</text>
+    <line x1="618.0" y1="194" x2="864.5" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">BSIF B-15 &amp; ACVM 31-103 (2028)</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">AI Act Ann. I (2028) · TLS 47 j</text>
+    <text x="618.0" y="240" font-size="11.8" fill="#1E293B">(2029)</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="889.5" y="160" width="268.5" height="102" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="900.5" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">2030–2035 · Horizon PQC</text>
+    <line x1="900.5" y1="194" x2="1147.0" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="900.5" y="208" font-size="11.8" fill="#1E293B">Fenêtre G7 PQC (ML-DSA / SLH-DSA)</text>
+    <text x="900.5" y="224" font-size="11.8" fill="#1E293B">Clause fédérale 2033</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="288" width="1144" height="152" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="28" y="288" width="8" height="152" rx="4" fill="#B45309"/>
+  <text x="46" y="310" font-size="13.5" font-weight="bold" fill="#B45309">Z2 — Bande médiane — Trajectoire adaptative DAPP (J1–J3 → Paliers P1–P3) et gouvernance AE ↔ AS</text>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="42.0" y="326" width="268.5" height="102" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="53.0" y="348" font-size="13" font-weight="bold" fill="#064E3B">Rampe sans regret (J1–J3)</text>
+    <line x1="53.0" y1="360" x2="299.5" y2="360" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">J1 90 j · J2 9 mois · J3 18 mois</text>
+    <text x="53.0" y="390" font-size="11.8" fill="#1E293B">42 CAP invariantes · ACME TLS</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="324.5" y="326" width="268.5" height="102" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="335.5" y="348" font-size="13" font-weight="bold" fill="#451A03">Palier P1 (2028–2029)</text>
+    <line x1="335.5" y1="360" x2="582.0" y2="360" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="335.5" y="374" font-size="11.8" fill="#1E293B">Ouverture conditionnelle sur portes</text>
+    <text x="335.5" y="390" font-size="11.8" fill="#1E293B">POR</text>
+    <text x="335.5" y="406" font-size="11.8" fill="#1E293B">Contrôle conjoint AE ↔ AS</text>
+  </g>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="607.0" y="326" width="268.5" height="102" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="618.0" y="348" font-size="13" font-weight="bold" fill="#451A03">Palier P2 (2030–2032)</text>
+    <line x1="618.0" y1="360" x2="864.5" y2="360" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Bascules SIG (migration PQC)</text>
+    <text x="618.0" y="390" font-size="11.8" fill="#1E293B">Rétrogradation de palier &lt; 60 s</text>
+  </g>
+  <g id="node-8" class="node" data-node="true">
+    <rect x="889.5" y="326" width="268.5" height="102" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="900.5" y="348" font-size="13" font-weight="bold" fill="#451A03">Palier P3 (2033–2035)</text>
+    <line x1="900.5" y1="360" x2="1147.0" y2="360" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="900.5" y="374" font-size="11.8" fill="#1E293B">15 portes POR sur preuves système</text>
+    <text x="900.5" y="390" font-size="11.8" fill="#1E293B">27 signaux de veille SIG</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="454" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="454" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="476" font-size="13.5" font-weight="bold" fill="#047857">Z3 — Bande inférieure — Échelle graduée L0–L4 et préservation du capital humain (INI-043)</text>
+  <g id="node-9" class="node" data-node="true">
+    <rect x="42.0" y="492" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="53.0" y="514" font-size="13" font-weight="bold" fill="#064E3B">L0–L1 · Lecture &amp; suggestion</text>
+    <line x1="53.0" y1="526" x2="393.7" y2="526" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="540" font-size="11.8" fill="#1E293B">Automatisation sans écriture</text>
+    <text x="53.0" y="556" font-size="11.8" fill="#1E293B">Rampe initiale sans regret</text>
+  </g>
+  <g id="node-10" class="node" data-node="true">
+    <rect x="418.7" y="492" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="429.7" y="514" font-size="13" font-weight="bold" fill="#064E3B">L2 · Plafond délégué courant</text>
+    <line x1="429.7" y1="526" x2="770.3" y2="526" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="540" font-size="11.8" fill="#1E293B">Règle du maillon le plus élevé</text>
+    <text x="429.7" y="556" font-size="11.8" fill="#1E293B">Approbation humaine requise au-delà</text>
+  </g>
+  <g id="node-11" class="node" data-node="true">
+    <rect x="795.3" y="492" width="362.7" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="806.3" y="514" font-size="13" font-weight="bold" fill="#451A03">L3–L4 &amp; préservation INI-043</text>
+    <line x1="806.3" y1="526" x2="1147.0" y2="526" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="540" font-size="11.8" fill="#1E293B">Porte humaine obligatoire</text>
+    <text x="806.3" y="556" font-size="11.8" fill="#1E293B">Quota formateur dès &gt; 70 % auto · reprise</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="604" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="626" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="644" font-size="11.5" fill="#334155">① Déployer le noyau invariant sans regret (J1 90 j → J3 18 mois) en L0–L1 pour</text>
+  <text x="42.0" y="659" font-size="11.5" fill="#334155">satisfaire aux échéances 2026–2027.</text>
+  <text x="609.0" y="644" font-size="11.5" fill="#334155">② N'autoriser chaque palier P1–P3 qu'à l'ouverture de sa porte POR sous contrôle</text>
+  <text x="609.0" y="659" font-size="11.5" fill="#334155">conjoint AE (portefeuille) ↔ AS (harnais).</text>
+  <text x="42.0" y="682" font-size="11.5" fill="#334155">③ Plafonner l'autonomie courante à ≤ L2 et activer le quota formateur INI-043 dès le</text>
+  <text x="42.0" y="697" font-size="11.5" fill="#334155">seuil de 70 % d'automatisation.</text>
+  <text x="609.0" y="682" font-size="11.5" fill="#334155">④ Déclencher les bascules conditionnelles (PQC sur signal SIG) ou rétrograder de</text>
+  <text x="609.0" y="697" font-size="11.5" fill="#334155">palier en &lt; 60 s en cas de dérive.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="736" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="747" width="14" height="14" rx="3" fill="#15803D"/>
+  <text x="62.0" y="758" font-size="11" fill="#1E293B">Socle invariant sans regret (90 j–18 m, 42 CAP, L0–L2</text>
+  <text x="62.0" y="773" font-size="11" fill="#1E293B">encadrés)</text>
+  <rect x="418.7" y="747" width="14" height="14" rx="3" fill="#B45309"/>
+  <text x="438.7" y="758" font-size="11" fill="#1E293B">Paliers adaptatifs P1–P3 régis par 15 portes POR et 27</text>
+  <text x="438.7" y="773" font-size="11" fill="#1E293B">signaux SIG</text>
+  <rect x="795.3" y="747" width="14" height="14" rx="3" fill="#1E3A8A"/>
+  <text x="815.3" y="758" font-size="11" fill="#1E293B">Jalons légaux, prudentiels et cryptographiques (Loi 25,</text>
+  <text x="815.3" y="773" font-size="11" fill="#1E293B">E-23, PQC)</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="806" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="806" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="826" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="844" font-size="11.5" fill="#1E293B">La trajectoire adaptative DAPP substitue aux feuilles de route rigides des options réversibles : l'élévation du niveau d'autonomie L0–L4</text>
+  <text x="44" y="860" font-size="11.5" fill="#1E293B">ne s'opère qu'à la lumière de preuves vérifiées, sans jamais sacrifier la relève ni la maîtrise humaine.</text>
+</g>
+</svg>

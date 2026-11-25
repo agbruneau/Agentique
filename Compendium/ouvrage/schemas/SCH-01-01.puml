@@ -1,0 +1,61 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Du copilote passif à la boucle System of Action (5 paliers et 5 archétypes)
+
+package "Z1 — Avant : Modèle conversationnel isolé (un tour)" {
+  actor "Utilisateur (SoE)" as N1 <<gray>>
+  rectangle "Assistant mono-tour\n(texte sans effet de bord)" as N2 <<gray>>
+  rectangle "Recopie manuelle\n(zéro actionneur ni trace)" as N3 <<gray>>
+  N1 --> N2 : Demande
+  N2 --> N3 : Réponse isolée
+}
+
+package "Z2 — Après : System of Action (SoA) en boucle PEAS / POMDP" {
+  rectangle "Intention structurée (SoE → SoA)\nClassement en 5 paliers" as N4 <<det>>
+  rectangle "Boucle PEAS / BDI / POMDP\n(optimalité bornée)" as N5 <<prob>>
+  rectangle "Outils bornés via PEP\n(ADR-001 : zéro SQL direct)" as N6 <<det>>
+  database "Systems of Record (SoR)\nprotégés" as N7 <<green>>
+  N4 --> N5 : ①② Intention & palier
+  N5 .[#D97706].> N6 : ③ Propose action
+  N6 --> N5 : Observation bornée
+  N6 --> N7 : Écriture contrôlée
+}
+
+package "Z3 — Cinq archétypes fonctionnels (sans super-agent)" {
+  rectangle "Interface · Spécialiste · Travailleur\nOrchestrateur (privilèges disjoints)" as N8 <<det>>
+  rectangle "Méta-gouverneur & registre\n(condition d'arrêt & trace scellée)" as N9 <<green>>
+  N5 --> N8 : Délégation typée
+  N8 --> N9 : ④ Arrêt & sceau
+}
+
+legend bottom
+  **Gris** : Assistant conversationnel mono-tour sans actionneur
+  **Bleu ardoise / pointillé ambre** : Strate System of Action (SoA) et boucle bornée
+  **Vert émeraude** : Systems of Record (SoR) protégés et critère d'arrêt vérifié
+end legend
+@enduml

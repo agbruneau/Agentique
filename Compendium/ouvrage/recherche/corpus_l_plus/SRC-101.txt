@@ -1,0 +1,929 @@
+Home Market Analysis Technology, Media and Telecom Research Technology Scouting Research Agentic AI Market
+
+Agentic AI Market Size & Share Analysis - Growth Trends and Forecast (2027 - 2032)
+
+The Agentic AI Market Report is segmented by Component (Solution and more), Deployment Mode (Cloud and more), Organization Size (Large Enterprises and more), End-user Industry (BFSI and more), Agent Architecture (Multi-Agent Systems and more), Application (Autonomous Process Automation and more), and Geography (North America and more). The market forecasts are provided in terms of value (USD), based on availability.
+
+About This Report
+Market Size & Share
+
+Market Analysis
+
+Trends and Insights
+
+Segment Analysis
+
+Geography Analysis
+
+Regulatory Landscape
+
+Value Chain Analysis
+
+Competitive Landscape
+
+Major Players
+
+Opportunities & Outlook
+
+Industry Developments
+
+Table of Contents
+
+Scope and Methodology
+
+Frequently Asked Questions
+
+Agentic AI Market Size and Share
+
+Market Overview
+Agentic AI Market Snapshot & Metrics Overview
+Study Period 2020 - 2032
+
+Market Size (2027) USD 14.06 Billion
+
+Market Size (2032) USD 82.27 Billion
+
+Growth Rate (2027 - 2032) 42.38 %
+
+Fastest Growing Market Asia-Pacific
+
+Largest Market North America
+
+Market Concentration Medium
+
+Major Players*
+
+Google LLC
+
+The AnyLogic Company
+
+Microsoft Corporation
+
+Amazon Web Services Inc.
+
+Ampcome Technologies Pvt Ltd
+
+*Disclaimer: Major Players sorted in no particular order
+
+Image © Mordor Intelligence. Reuse requires attribution under CC BY 4.0.
+
+Benchmark Agentic AI Against Other Technology, Media and Telecom Markets
+View Comparison Chart
+
+Agentic AI Market Analysis by Mordor Intelligence
+
+The Agentic AI market size is expected to grow from USD 9.89 billion in 2026 to USD 14.06 billion in 2027 and is forecast to reach USD 82.27 billion by 2032 at 42.38% CAGR over 2027-2032.
+
+Agent development and deployment in the United States create an implementation pipeline, and customer-service applications connect agent software to recurring operational work. Managed runtimes lower the work of operating agents, but skills and trust constrain the scope of tasks buyers can delegate. Suppliers can respond by combining workflow integration with governance controls, linking commercial value to reliable execution rather than the number of available agents. Vendors that make delegated actions governable can therefore compete for a wider set of customer-service tasks, while agent availability alone leaves the trust constraint unresolved.
+
+Key Report Takeaways
+
+By component, solutions held a 61.21% Agentic AI market share in 2026, while services are forecast to grow fastest at 44% CAGR over 2027-2032.
+
+Cloud led deployment modes with a 59.83% share of the Agentic AI market size in 2026, and hybrid is forecast to grow fastest at 44.85% CAGR over 2027-2032.
+
+Among organization sizes, large enterprises accounted for 64.7% of revenue in 2026, while SMEs are projected to grow fastest at 43.8% CAGR over 2027-2032.
+
+Across end-user industries, BFSI led with 19.03% of revenue in 2026, and automotive leads the growth forecast at 45.35% CAGR over 2027-2032.
+
+Agent architectures were led by multi-agent systems (MAS), with 53.81% of revenue in 2026, and this segment also leads forecast growth at 43.75% CAGR over 2027-2032.
+
+Autonomous process automation led applications with 23.03% of revenue in 2026, while intelligent virtual assistants are forecast to grow fastest at 44.45% CAGR over 2027-2032.
+
+Geographically, North America held 39.95% of revenue in 2026, with Asia-Pacific forecast to grow fastest at 45.2% CAGR over 2027-2032.
+
+Note: Market numbers in this report are based on Mordor Intelligence's proprietary estimation framework, which combines nine months of actuals with Q4 projections for base year 2026.
+
+Market Trends and Insights
+
+Drivers Impact Analysis of Agentic AI Market*
+Drivers Impact Analysis of Agentic AI Market
+Driver (~) % Impact on CAGR Forecast Geographic Relevance Impact Timeline
+
+Surge in demand for intelligent automation +18.5% North America, Europe, Asia-Pacific Short term (≤ 2 years)
+
+Proliferation of multi-agent systems for complex problem-solving +14% The United States Medium term (2-4 years)
+
+Advances in cloud-native AI infrastructure +16% North America, Europe, Asia-Pacific, South America Short term (≤ 2 years)
+
+Integration with spatial-computing/XR ecosystems +3% North America, Europe, Asia-Pacific Long term (≥ 4 years)
+
+Emergence of agentic AI performance benchmarks +2% North America, Europe, Asia-Pacific Short term (≤ 2 years)
+
+Open-source agent frameworks for SMEs +1.5% North America, Europe, Asia-Pacific Medium term (2-4 years)
+
+Source: Mordor Intelligence
+
+Surge in demand for intelligent automation
+
+Buyers seeking intelligent automation create demand for software that can repeat a useful task across many agent instances. In IBM's January-April 2026 survey, technology executives anticipated a 38% increase in deployed AI agents by 2027. The survey covered 2,000 senior executives responsible for IT, technology, or AI decisions across 33 geographies and 19 industries. An expanded agent population would increase the opportunity to supply software that carries a defined process through successive executions. Where the same task recurs, a supplier can separate reusable application logic from the configuration needed for individual agent instances. That division can support software licensing across deployments, with implementation services concentrated on work that cannot be standardized.
+
+Proliferation of multi-agent systems for complex problem-solving
+
+Organizations developing multiple agents must decide how those agents contribute to one business objective and where coordination belongs within the software. KPMG’s Q3 2026 US survey found that 25% of represented organizations were actively developing or implementing multi-agent systems, up from 6% in the prior quarter.[1] The survey covered 314 US executives and business leaders at organizations with annual revenue of at least USD 1 billion, surveyed from July 24 through August 25, 2026. As several agents contribute to one objective, coordinating their work becomes part of the value of the overall solution. A buyer commissioning several agents must also resolve which component carries each task and how responsibility passes between them. Suppliers that package coordination with implementation are therefore positioned to meet that growth in development activity.
+
+Advances in cloud-native AI infrastructure
+
+Managed cloud runtimes expand the addressable software opportunity by reducing the infrastructure work required to operate agents beyond a demonstration. AWS made its Amazon Bedrock AgentCore managed harness generally available on June 17, 2026, in AWS Commercial Regions where AgentCore is available.[2] The harness handles orchestration, tool execution, persistent session state, recovery from failures, and session isolation. Microsoft Foundry Hosted Agents are also generally available, with Microsoft operating containers, scaling, session lifecycle, and platform integration. These services let application suppliers concentrate more engineering effort on connecting agents to useful business actions rather than recreating execution infrastructure. For agent application vendors, the sale can center on workflow-specific software while the cloud operator supplies managed execution infrastructure.
+
+Integration with spatial-computing/XR ecosystems
+
+Spatial-computing integration can create demand when an agent must act on the object or task an employee is viewing. On September 16, 2026, Snap announced Salesforce was bringing Agentforce to SPECS AR glasses, where employees could identify objects, create issue cases, retrieve information, and update workflows. For a maintenance worker, the announced link from that view to an issue record would make the agent part of the job rather than a separate information tool. The commercial product is the connection between visual context and a business action, with software carrying the task across interfaces. That connection would require context recognition, a relevant workflow, and a bounded action before it could justify an organizational subscription. Adoption therefore depends on solving a complete work step, making application integration more consequential than adding an agent to a display.
+
+Restraints Impact Analysis of Agentic AI Market*
+Restraints Impact Analysis of Agentic AI Market
+Restraint (~) % Impact on CAGR Forecast Geographic Relevance Impact Timeline
+
+Organizational change-management and skill gaps -5.5% North America, Europe, Asia-Pacific Short term (≤ 2 years)
+
+Ethical, bias and transparency concerns -3.5% United States, Europe, India, Japan, Brazil Medium term (2-4 years)
+
+Escalating compute/resource costs for agent orchestration -2% Asia-Pacific and the United Kingdom Medium term (2-4 years)
+
+Lack of interoperability / vendor lock-in -1.5% North America, Europe, Asia-Pacific Medium term (2-4 years)
+
+Source: Mordor Intelligence
+
+Organizational change-management and skill gaps
+
+The ability to build an agent does not equip an organization to redesign the work around it. Harvard Business Review Analytic Services' July 2025 survey found that 48% of 623 respondents cited a lack of talent or skills as an agentic AI adoption barrier. Respondents were HBR audience members involved in data and technology decisions at organizations using or considering agentic AI. In the same survey, 31% cited difficulties adjusting work processes to accommodate agentic AI. These barriers can lengthen the path from a software decision to usable workflows, even when the agent itself functions. Longer implementation cycles can tie up supplier delivery capacity, limiting how quickly additional agent projects can become operating software.
+
+Ethical, bias and transparency concerns
+
+Ethical concerns constrain demand when buyers must defend the consequences of delegating decisions to agents. Capgemini Research Institute's July 2025 report identified trust and safety as among the most significant barriers to widespread adoption of AI agents.[3] Its April 2025 research surveyed 1,500 director-level or higher executives across 14 countries at organizations with more than USD 1 billion in annual revenue, all exploring agentic AI. A functioning agent can therefore leave a buyer unwilling to authorize consequential tasks without additional assurance about its decisions. Unresolved trust restricts the breadth of workflows vendors can convert into paid deployments, creating an adoption constraint even where technical capability is available.
+
+*Our forecasts treat driver/restraint impacts as directional, not additive. The impact forecasts reflect baseline growth, mix effects, and variable interactions.
+
+Agentic AI Market Segment Analysis
+
+By Component:
+Recurring Software Supports Solution Scale
+
+The solution segment accounted for a 61.21% share of the Agentic AI market size in 2026, making it the largest component segment. Salesforce's Agentforce annual recurring revenue exceeded USD 1.5 billion in Q2 FY2027, ended July 31, 2026, including Slackbot and Headless 360 AI offerings. Agentforce and Slack delivered 3.2 billion Agentic Work Units during the quarter, up 97% quarter over quarter. For solution providers, repeated execution can sustain an ongoing revenue relationship after the initial deployment, making service reliability and useful workflow coverage central to the software offering.
+
+Services are the fastest-growing segment, forecast at 44% CAGR over 2027-2032. In March 2026, SEI said it would work with IBM Consulting on enterprise transformation through agentic AI and automation. The engagement called for a data-driven review of operational systems and workflows to advance process redesign and modernization. Such work can translate an organization's existing operating model into specific agent tasks and review points, creating implementation and customization opportunities around the software. Service vendors can therefore earn from the process changes needed before large-scale use, with commercial value in defining the work an agent platform must carry.
+
+Image © Mordor Intelligence. Reuse requires attribution under CC BY 4.0.
+
+By Deployment Mode:
+Cloud Scale and Hybrid Integration
+
+Cloud represented a 59.83% Agentic AI market share in 2026, making it the largest deployment segment. IDC's AWS-commissioned 2026 custom survey of more than 900 organizations across 15 industries and 10 countries found that 63% tested and deployed agents in public cloud infrastructure. Operating an agent as a cloud-delivered service can bring repeated interactions onto the same application, placing continuous execution at the center of the offering. A provider operating that application can handle operational changes centrally, without a separate implementation for each user interaction. That makes service operation a commercial capability in its own right, with value extending beyond the initial configuration of an agent.
+
+Hybrid is the fastest-growing deployment segment, forecast at 44.85% CAGR over 2027-2032. In August 2026, AWS reported that Mobileye operated its production AI Support Agent on AgentCore's serverless runtime, with an on-premises ticket-management system supplying tickets and receiving AI-generated responses. Growth can come from implementing that connection as a governed workflow, with clear data access and a usable return path for completed actions. On-premises deployment plays a distinct role in regulated industries, where 63% of 413 AI practitioners and leaders surveyed by DataRobot in 2026 said their organizations required it for agentic AI. Hybrid creates an integration opportunity around retaining a local workflow while adding cloud agent execution, rather than making application replacement a prerequisite for automation.
+
+Image © Mordor Intelligence. Reuse requires attribution under CC BY 4.0.
+
+By Organization Size:
+Enterprise Deployment and SME Workflow Adoption
+
+Large enterprises were the largest organization-size segment, with a 64.7% share in 2026. On February 10, 2026, DXC Technology announced completing an enterprise-wide Amazon Quick deployment covering its workforce of 115,000 employees across 70 countries. Amazon Quick was deployed as an agentic AI-powered digital workspace, making a common application the foundation of this organization-wide program. A rollout of that reach can create implementation and support work around making the same software usable across many locations. Such buyers create revenue potential through the reach of a common platform, so implementation scope can matter as much as the number of distinct agent applications.
+
+Small and medium enterprises (SMEs) are the fastest-growing organization-size segment, forecast at 43.8% CAGR over 2027-2032. OpenAI's EU analysis defined small and medium businesses as those with 200 or fewer associated users. Weekly active users of Codex and ChatGPT Work in that group were 8.1 times their May 1-7, 2026 level in the week ending October 5, 2026. The increase identifies a larger active user base for those tools, creating room for services that connect them to a specific organizational task. Packaging that task into a manageable implementation and support offering can link growing tool use with a commercial service relationship.
+
+By End-user Industry:
+Financial Workflows and Automotive Procurement
+
+BFSI was the largest end-user segment, with a 19.03% share in 2026. Cambridge's 2026 global financial-services survey found 23% of industry respondents, including fintechs, at scaling or transforming stages of agentic AI adoption. Capgemini's June-July 2025 survey of 1,100 financial-services leaders across 14 markets found that 75% of bank respondents prioritized customer service for AI-agent adoption at scale. Customer service provides a specific route into such programs because the application can be attached to an identifiable recurring operating process. The path to sector revenue therefore runs through defined workflows, giving specialized software a clearer commercial opening than an undirected platform experiment.
+
+Automotive is the fastest-growing end-user segment, forecast at 45.35% CAGR over 2027-2032. BMW uses an agentic purchasing system to manage approximately 250,000 specialized tools used in component production and maintenance, including tools at supplier facilities. Its agents draft inventory requests, send them to suppliers, review responses, and approve uncomplicated cases, while specialists handle exceptions. Routine processing can scale through the software, but wider deployment can depend on specialist capacity for exceptions, so the automated purchasing workflow needs an explicit route for cases it cannot approve.
+
+By Agent Architecture:
+Coordination Reliability Shapes Design Choices
+
+Multi-agent systems (MAS) were the largest architecture segment, with a 53.81% share in 2026, and are forecast to be the fastest-growing segment at 43.75% CAGR over 2027-2032. Druva's DruAI coordinates 8 to 10 specialized agents in production depending on the workflow, supporting cyber investigation, remediation, and recovery. Dividing a complex objective into separate agent tasks can allow specialized execution, but the workflow must preserve a common understanding of what has been completed. For the organizational buyer, this places value in the handoffs, checks, and task boundaries that connect independent components to one business result. A failed handoff can undermine the whole process even when individual agents perform their own tasks correctly, so buyers need reliability across the recovery workflow as well as within each component.
+
+Building a larger agent network can add coordination choices, so a narrower task may justify a simpler architecture rather than more components. Single-agent systems were viewed by employees in a 2025 preliminary IT-support study as promising greater efficiency while risking reduced oversight. The trade-off suggests that the number of agents does not determine how work is checked. For bounded support tasks, a single execution path can simplify component coordination without resolving the perceived oversight risk. The commercial value of a simpler design therefore depends on preserving review and exception handling, rather than merely removing coordination between agents.
+
+By Application:
+Procurement Workflows and Customer Resolution
+
+Autonomous process automation was the largest application segment, with a 23.03% share in 2026. IBM and StarLink announced an agentic procurement solution on September 10, 2026, projected to save StarLink 11,500 hours annually. StarLink, an Infinigate Group company, was the first user of the solution built with IBM Bob and IBM watsonx Orchestrate. The projection allocated 6,000 hours to 9,000 purchase orders, 1,500 hours to 14,000 quotes, and 4,000 hours to quote comparison. Because the projection spans purchase orders, quotes, and quote comparison, agent software here is valued for carrying a procurement process across several steps rather than producing one document.
+
+Intelligent virtual assistants are the fastest-growing application segment, forecast at 44.45% CAGR over 2027-2032. By June 25, 2026, Salesforce's service agent had handled 4.3 million inquiries on its own help website and resolved 70% of them. That resolution measure gives a deployed assistant a commercial role beyond answer presentation, linking its value to the result achieved within a service workflow. A provider can design the application around the kinds of questions an agent can resolve, with unresolved work following a separately defined service path. Useful resolution gives a provider a concrete basis for expanding the assistant's role within support operations and related workflow services.
+
+Geography Analysis
+
+North America Agentic AI Market
+
+North America held 39.95% of the Agentic AI market size in 2026, making it the largest regional market. KPMG's Q3 2026 US survey found 62% of represented organizations with annual revenue of at least USD 1 billion building, deploying, or developing AI agents, up from 53% in Q2. Development-stage work can support implementation services before an agent enters production, while deployment creates an operating-software relationship, giving suppliers distinct ways to engage those buyers. Because the survey combines building, deploying, and developing, suppliers that carry projects from development into production can extend their role beyond the initial software build.
+
+Asia-Pacific Agentic AI Market
+
+Asia-Pacific is the fastest-growing geography, forecast at 45.2% CAGR over 2027-2032. Bank of Singapore, OCBC's private-banking subsidiary, rolled out an agentic source-of-wealth tool in 2025. The tool extracted, structured, and synthesized customer records and supporting documents, and prompted follow-ups for information gaps. Relationship managers' average report-preparation time fell from 10 days to 1 hour, while relationship managers and compliance teams retained judgment and final approval. The growth mechanism is the integration of agent-led preparation into a regulated customer-review workflow, where separating document work from final approval can expand useful automation without transferring the decision itself.
+
+Google Cloud's NVIDIA-powered G4 availability in São Paulo, Brazil, in September 2026 sits alongside Mibanco's October 2025 WhatsApp banking pilot in Peru, whose agents could open savings accounts after secret-key, facial-biometric, and identity-document checks. A 2026 report identified fragmented data, foreign technology dependence, and uneven national readiness as constraints on scaling agents in Europe. South Africa's Capitec operated agentic AI in business-banking credit processing during FY2026, ended February 28, 2026. The United Arab Emirates' Federal Authority for Identity, Citizenship, Customs & Port Security reported in August 2026 that it had formed agentic AI working teams and assigned responsibilities. Local compute availability and identity-checked consumer channels in South America therefore present different delivery requirements from Capitec's internal credit operation and the UAE authority's federal project.
+Image © Mordor Intelligence. Reuse requires attribution under CC BY 4.0.
+
+Regulatory Framework and Outlook
+
+This comparison considers selected jurisdictions from the perspective of organizational agentic software providers handling personal information or supplying covered generated-content services. Canada's federal privacy framework addresses consent for covered processing, while France's data-protection guidance explains roles and a legal basis for AI development using personal data. China's labeling measures concern covered synthetic-content services, while Brazil has named AI personal-data processing as a 2026-2027 supervisory priority. Regulatory work therefore attaches to the supplier's actual data and output uses, which determine the relevant compliance tasks.
+
+Regulatory Table of Agentic AI Market
+Regulatory Table of Agentic AI Market
+Decision factor Canada France China Brazil
+
+Primary authority Office of the Privacy Commissioner of Canada CNIL, the data-protection authority Cyberspace Administration of China ANPD, the data-protection authority
+
+Key instruments or direction PIPEDA meaningful-consent framework GDPR role and legal-basis duties, explained by CNIL guidance AI-generated synthetic-content labeling measures, effective September 1, 2025 AI personal-data processing in 2026-2027 enforcement priorities
+
+Commercial effect Consent design for covered personal-information collection, use, and disclosure Determine GDPR role and legal basis when AI development uses personal data Required labels for covered generated content, with distinct distributor and app-store checks AI-related personal-data processing is a stated supervisory priority
+
+Current policy attractiveness Medium Medium Low Medium
+
+Future direction of policy attractiveness No change No change No change No change
+
+Source: Mordor Intelligence
+
+Bill C-36, which proposes federal private-sector privacy reform, remained at second reading in the House of Commons on October 20, 2026, leaving Canada's PIPEDA consent framework as the operative compliance burden and supporting continuity. France retains Medium and No change because GDPR development duties remain the operative personal-data workload despite specified AI Act enforcement powers applying from August 2, 2026. China's covered-content labeling requirements warrant a lower rating because they add product-design and distribution checks, with their existing commencement supporting continuity of those duties. Brazil's published 2026-2027 supervisory priority keeps personal-data AI within regulatory attention through 2027, supporting a middle rating and continued focus.
+
+Value Chain Stages
+
+The value chain compares agent creation, business integration, and operation, which connect reusable software capabilities with client-specific services. Microsoft Foundry Agent Service supports creation, testing, deployment, and monitoring, with availability dependent on resource region, model, subscription, and enabled capabilities. In May 2026, IBM announced consulting capabilities through Enterprise Advantage to help clients build and operate their own hybrid AI platforms. These roles create different opportunities to earn software revenue and implementation fees as a functioning agent becomes part of a business process.
+
+Value Chain Analysis Table of Agentic AI Market
+Value Chain Analysis Table of Agentic AI Market
+Primary activity Key participants Value capture Bottleneck Resilience response
+
+Agent creation and testing Managed development service providers such as Microsoft Agent software and managed-service revenue Task-specific validation effort Define bounded acceptance tests before deployment
+
+Business integration Platform integration consultants such as IBM Consulting Implementation and integration fees Translating client workflows into platform requirements Build reusable integration assets around clearly defined tasks
+
+Deployment and operation Managed runtime providers such as Amazon Web Services and Microsoft Software subscriptions and operating-service fees Region, model, and feature availability conditions Match the deployment configuration to supported resources and monitor reliability
+
+Source: Mordor Intelligence
+
+Integration determines how much of a deployment can reuse platform functions and how much requires client-specific work. Standardizing that work can make subsequent deployments less dependent on repeating the same implementation effort. Runtime providers can earn from ongoing operation, while integration suppliers capture the adaptation work that connects those services to a client's processes. As integration assets become reusable, suppliers can shift delivery from bespoke implementation toward supported software and operating services.
+
+Competitive Landscape
+
+Market Concentration
+Image © Mordor Intelligence. Reuse requires attribution under CC BY 4.0.
+
+The competitive structure is moderately fragmented, with suppliers offering different combinations of agent development, data integration, simulation modeling, and workflow capabilities. Microsoft Corporation reported more than 17,000 customers using Foundry and Fabric together in FY2026 Q4, up 60% year over year, as enterprises connected agents to Fabric data. Google LLC supplies agent-platform software, and The AnyLogic Company supplies simulation-modeling software. Ampcome Technologies Pvt Ltd offers a conversational-code platform for businesses to build agents integrated with enterprise workflows. Amazon Web Services Inc. supplies AgentCore.
+
+In October 2025, Amazon Web Services made AgentCore generally available in 9 AWS Regions spanning the United States, Europe, and Asia-Pacific. The platform provides a foundation to build, deploy, and operate agents, connecting software development with an operating runtime under one provider. Specialist vendors can build workflow-specific applications on that foundation rather than supply every lifecycle service themselves. The resulting division of responsibility gives buyers separate choices about business-task functionality and the infrastructure used to run it.
+
+Managing agents from multiple developers creates a need for controls that span the buyer's deployed applications. Microsoft made Agent 365 generally available to commercial customers in May 2026 as a control plane for observing, governing, and securing agents. Its scope includes Microsoft-built and ecosystem-partner agents, using existing administrative and security workflows. This allows the buyer to organize oversight around existing administrative workflows instead of the origin of each agent. Governance can thus be bought at Microsoft's platform layer even for an ecosystem partner's application, giving Microsoft an administrative role without requiring it to build that agent.
+
+Agentic AI Industry Leaders
+
+Microsoft Corporation
+
+Google LLC
+
+The AnyLogic Company
+
+Ampcome Technologies Pvt Ltd
+
+Amazon Web Services Inc.
+
+*Disclaimer: Major Players sorted in no particular order
+
+Agentic AI Market Companies Covered in this Report
+
+Microsoft Corporation
+
+Amazon Web Services Inc.
+
+Google LLC
+
+IBM Corporation
+
+Oracle Corporation
+
+Salesforce Inc.
+
+SAP SE
+
+UiPath Inc.
+
+Epicor Software Corp.
+
+Coupa Software Inc.
+
+Zycus Inc.
+
+The AnyLogic Company
+
+Ampcome Technologies Pvt Ltd
+
+OpenAI Group PBC
+
+Anthropic PBC
+
+Adept AI Labs
+
+Cohere Inc.
+
+Rasa Technologies GmbH
+
+Pegasystems Inc.
+
+Baidu Inc.
+
+Key Opportunities for Market Participants
+
+These opportunities compare engineering, acquisition, and assurance approaches to the US Army's request for structured, auditable decision packages. The Army opened its governed agentic-AI decision-management solicitation on September 23, 2026, with proposals due October 21, 2026. Phase I is a proof of demonstration with funding of up to USD 300,000 over 1 to 6 months. Small businesses may propose through SBIR or STTR, with research-institution participation required for STTR.
+
+Market Opportunities Table of Agentic AI Market
+Market Opportunities Table of Agentic AI Market
+Opportunity Why now Buyer / lead segment Recommended play Main barrier Likely beneficiaries
+
+Agent-assisted engineering trade studies The request includes point trade studies Defense engineering teams Demonstrate a bounded workflow producing structured decision packages Proving robust analysis with traceable evidence Engineering-agent software developers
+
+Acquisition decision workflow services The request also covers long-horizon acquisition programs Government acquisition teams Connect decision requests to reviewable, signer-ready packages Preserving auditability across complex decision programs Agent workflow integrators
+
+Decision assurance components Traceability, robustness, and human control are explicit demonstration requirements Developers serving governed decision workflows Package validation and human-review controls as reusable software and services Demonstrating reliable controls alongside agent execution Agent governance and validation suppliers
+
+Source: Mordor Intelligence
+
+The central opening in this Army request is demonstrating a decision package that a responsible official can review. Reusable decision structures and validation components offer different ways for eligible proposers to meet its traceability and human-control requirements. A focused prototype can therefore compete on the quality of evidence connecting analysis to approval, within the Phase I funding and demonstration scope.
+
+Recent Industry Developments in Agentic AI Market
+
+Sep 2026: Salesforce introduced a portfolio of agents for sales, service, commerce, employee experience, and back-office work.
+
+Sep 2026: IBM and StarLink, an Infinigate Group company, announced an agentic procurement solution built with IBM Bob and IBM watsonx Orchestrate, with StarLink as its first user.
+
+Jul 2026: Salesforce announced general availability of Shopper Agent, Buyer Agent, and Merchant Agent through Agentforce Commerce, subject to regional availability and customer agreements.
+
+Table of Contents for Agentic AI Industry Report
+
+1. INTRODUCTION
+
+1.1 Study Assumptions and Market Definition
+
+1.2 Scope of the Study
+
+2. RESEARCH METHODOLOGY
+
+3. EXECUTIVE SUMMARY
+
+4. MARKET LANDSCAPE
+
+4.1 Market Overview
+
+4.2 Market Drivers
+4.2.1 Surge in demand for intelligent automation
+
+4.2.2 Proliferation of multi-agent systems for complex problem-solving
+
+4.2.3 Advances in cloud-native AI infrastructure
+
+4.2.4 Integration with spatial-computing/XR ecosystems
+
+4.2.5 Emergence of agentic AI performance benchmarks
+
+4.2.6 Open-source agent frameworks for SMEs
+
+4.3 Market Restraints
+4.3.1 Organizational change-management and skill gaps
+
+4.3.2 Ethical, bias and transparency concerns
+
+4.3.3 Escalating compute/resource costs for agent orchestration
+
+4.3.4 Lack of interoperability / vendor lock-in
+
+4.4 Industry Value Chain Analysis
+
+4.5 Regulatory Landscape
+
+4.6 Technological Outlook
+
+4.7 Porter's Five Forces Analysis
+4.7.1 Threat of New Entrants
+
+4.7.2 Bargaining Power of Suppliers
+
+4.7.3 Bargaining Power of Buyers
+
+4.7.4 Threat of Substitutes
+
+4.7.5 Competitive Rivalry
+
+4.8 Framework of Agentic AI System
+
+4.9 Impact of Macroeconomic Factors on the Market
+
+4.10 INVESTMENT ANALYSIS
+
+5. MARKET SIZE AND GROWTH FORECASTS (VALUE)
+
+5.1 By Component
+5.1.1 Solution
+
+5.1.2 Services
+
+5.1.2.1 Consulting and Integration Services
+
+5.1.2.2 Training and Support Services
+
+5.1.2.3 Other Services
+
+5.2 By Deployment Mode
+5.2.1 On-Premises
+
+5.2.2 Cloud
+
+5.2.3 Hybrid
+
+5.3 By Organization Size
+5.3.1 Small and Medium Enterprises (SMEs)
+
+5.3.2 Large Enterprises
+
+5.4 By End-user Industry
+5.4.1 Healthcare
+
+5.4.2 BFSI
+
+5.4.3 IT and Telecom
+
+5.4.4 Manufacturing
+
+5.4.5 Government and Public Sector
+
+5.4.6 Automotive
+
+5.4.7 Retail and E-commerce
+
+5.4.8 Other End-user Industries
+
+5.5 By Agent Architecture
+5.5.1 Single-Agent Systems
+
+5.5.2 Multi-Agent Systems (MAS)
+
+5.6 By Application
+5.6.1 Autonomous Process Automation
+
+5.6.2 Predictive Analytics and Decision Support
+
+5.6.3 Intelligent Virtual Assistants
+
+5.6.4 RPA Integration
+
+5.6.5 Smart Manufacturing and IIoT
+
+5.6.6 Other Applications
+
+5.7 By Geography
+5.7.1 North America
+
+5.7.1.1 United States
+
+5.7.1.2 Canada
+
+5.7.1.3 Mexico
+
+5.7.2 South America
+
+5.7.2.1 Brazil
+
+5.7.2.2 Argentina
+
+5.7.2.3 Chile
+
+5.7.2.4 Rest of South America
+
+5.7.3 Europe
+
+5.7.3.1 Germany
+
+5.7.3.2 United Kingdom
+
+5.7.3.3 France
+
+5.7.3.4 Italy
+
+5.7.3.5 Spain
+
+5.7.3.6 Rest of Europe
+
+5.7.4 Asia-Pacific
+
+5.7.4.1 China
+
+5.7.4.2 Japan
+
+5.7.4.3 India
+
+5.7.4.4 South Korea
+
+5.7.4.5 Australia
+
+5.7.4.6 Singapore
+
+5.7.4.7 Malaysia
+
+5.7.4.8 Rest of Asia-Pacific
+
+5.7.5 Middle East and Africa
+
+5.7.5.1 Middle East
+
+5.7.5.1.1 Saudi Arabia
+
+5.7.5.1.2 United Arab Emirates
+
+5.7.5.1.3 Turkey
+
+5.7.5.1.4 Rest of Middle East
+
+5.7.5.2 Africa
+
+5.7.5.2.1 South Africa
+
+5.7.5.2.2 Nigeria
+
+5.7.5.2.3 Egypt
+
+5.7.5.2.4 Rest of Africa
+
+6. COMPETITIVE LANDSCAPE
+
+6.1 Market Concentration
+
+6.2 Strategic Moves
+
+6.3 Market Share Analysis
+
+6.4 Company Profiles (includes Global level Overview, Market level overview, Core Segments, Financials as available, Strategic Information, Market Rank/Share for key companies, Products and Services, and Recent Developments)
+6.4.1 Microsoft Corporation
+
+6.4.2 Amazon Web Services Inc.
+
+6.4.3 Google LLC
+
+6.4.4 IBM Corporation
+
+6.4.5 Oracle Corporation
+
+6.4.6 Salesforce Inc.
+
+6.4.7 SAP SE
+
+6.4.8 UiPath Inc.
+
+6.4.9 Epicor Software Corp.
+
+6.4.10 Coupa Software Inc.
+
+6.4.11 Zycus Inc.
+
+6.4.12 The AnyLogic Company
+
+6.4.13 Ampcome Technologies Pvt Ltd
+
+6.4.14 OpenAI Group PBC
+
+6.4.15 Anthropic PBC
+
+6.4.16 Adept AI Labs
+
+6.4.17 Cohere Inc.
+
+6.4.18 Rasa Technologies GmbH
+
+6.4.19 Pegasystems Inc.
+
+6.4.20 Baidu Inc.
+
+7. MARKET OPPORTUNITIES AND FUTURE OUTLOOK
+
+7.1 White-Space and Unmet-Need Assessment
+
+Agentic AI Market Report Scope and Research Methodology
+
+Market Definition and Coverage
+
+The agentic AI market measures annual spending on agentic AI software solutions and related services sold to organizational customers in the Global market. The value covers license and subscription revenue and fees for related services, with sales classified by delivery mode, organization size, buyer industry, agent architecture, application, and region.
+
+Scope exclusions: Standalone foundation models, model APIs, and general AI platforms without an agentic AI solution, separately sold cloud computing, data-center, and networking services, separately sold hardware, sensors, robots, and other physical equipment, and general enterprise software and conventional robotic process automation without agentic AI functionality are excluded.
+
+Segments Covered in This Report
+
+By Component
+Solution
+
+Services
+Consulting and Integration Services
+
+Training and Support Services
+
+Other Services
+
+By Deployment Mode
+On-Premises
+
+Cloud
+
+Hybrid
+
+By Organization Size
+Small and Medium Enterprises (SMEs)
+
+Large Enterprises
+
+By End-user Industry
+Healthcare
+
+BFSI
+
+IT and Telecom
+
+Manufacturing
+
+Government and Public Sector
+
+Automotive
+
+Retail and E-commerce
+
+Other End-user Industries
+
+By Agent Architecture
+Single-Agent Systems
+
+Multi-Agent Systems (MAS)
+
+By Application
+Autonomous Process Automation
+
+Predictive Analytics and Decision Support
+
+Intelligent Virtual Assistants
+
+RPA Integration
+
+Smart Manufacturing and IIoT
+
+Other Applications
+
+By Geography
+North America
+United States
+
+Canada
+
+Mexico
+
+South America
+Brazil
+
+Argentina
+
+Chile
+
+Rest of South America
+
+Europe
+Germany
+
+United Kingdom
+
+France
+
+Italy
+
+Spain
+
+Rest of Europe
+
+Asia-Pacific
+China
+
+Japan
+
+India
+
+South Korea
+
+Australia
+
+Singapore
+
+Malaysia
+
+Rest of Asia-Pacific
+
+Middle East and Africa
+Middle East
+Saudi Arabia
+
+United Arab Emirates
+
+Turkey
+
+Rest of Middle East
+
+Africa
+South Africa
+
+Nigeria
+
+Egypt
+
+Rest of Africa
+
+Data Sources, Market Sizing, and Validation
+
+Desk Research
+
+Secondary research uses sources such as Google Cloud's 2026 infrastructure study to assess production readiness and deployment constraints, Stanford HAI's 2026 AI Index to track investment and organizational adoption, Eurostat's enterprise ICT survey for adoption by firm size and industry, and NIST's generative AI profile to identify governance and risk controls relevant to deployment. These indicators help interpret demand drivers and adoption conditions, while market revenue remains anchored to vendor sales of qualifying software and related services.
+
+Company filings, annual reports, investor materials, product disclosures, and reputable technology and business press can clarify vendor revenue, customer deployments, prices, and service offerings. Such sources are illustrative rather than exhaustive, and further sources inform collection, validation and clarification.
+
+Primary Interviews and Surveys
+
+Structured interviews and surveys with software vendors, implementation and integration service providers, and organizational buyers can clarify what transactions qualify, how software and related service revenue are separated, and how adoption differs by deployment, industry, organization size, and region. Respondents can review secondary evidence and the assumptions behind adoption, pricing, and service variables, while analysts reconcile their input with public company and market indicators. Conflicting or missing evidence is documented, tested against independent sources, and resolved through follow-up questions or conservative scenario ranges where a point estimate is not supported.
+
+Distribution of primary research fieldwork respondents
+Distribution of primary research fieldwork respondents for Agentic AI Market
+Company type Respondent position Region
+
+Top tier: 35% CXOs: 20% APAC: 40%
+
+Mid tier: 45% Functional/Unit leaders: 35% EMEA: 30%
+
+Smaller Players: 20% Managers: 45% Americas: 30%
+
+Market-Sizing & Forecasting
+
+The model estimates global annual qualifying software and service revenue from the top down, then checks selected totals with supplier roll-ups and sampled average selling price times customer or deployment volumes. Adoption by enterprise size and industry, software and service revenue mix, deployment patterns, and regional AI investment and infrastructure readiness provide indicators for the size and pace of the addressable spending base. Eurostat, Stanford HAI, and Google Cloud provide examples of relevant public evidence. Historical adoption and revenue indicators are extended with scenario analysis, which varies adoption speed, software pricing, and the pace at which implementation and support work follows deployments. Segment shares are built from evidence about the mix of vendor offerings, customer deployments, and qualifying use cases, with buyer industry and organization size assigned to the customer and architecture and application assigned to the solution. Analysts compare supplier checks with the wider estimate, investigate gaps in coverage or double counting, and use primary respondents to test the direction and plausibility of variable-level assumptions, while unsupported inputs remain ranges until corroborated.
+
+Data Validation & Update Cycle
+
+Analysts triangulate company disclosures, adoption statistics, supplier estimates, and respondent evidence, then check that segment and regional views reconcile with the global total. They investigate outliers, year-on-year changes, and differences between independent signals, trace discrepancies to scope, timing, or classification, and document the resolution before sign-off. A second analyst reviews source support, calculations, and boundary treatment, with re-contact triggered when material answers conflict or a key input remains unexplained. The evidence base is refreshed annually, reviewed between cycles after material market events, and checked again in a fresh pre-delivery pass.
+
+Mordor Intelligence's Agentic AI Market Sizing Compared With Other Published Estimates
+
+Published estimates can differ in the transactions and products they count and the inputs used to model demand. The agentic AI market measures annual spending on agentic AI software solutions and related services sold to organizational customers in the Global market.
+
+Key Gap Drivers include the study's defined coverage and market-specific modeling choices. Analysts compare supplier checks with the wider estimate, investigate gaps in coverage or double counting, and use primary respondents to test the direction and plausibility of variable-level assumptions, while unsupported inputs remain ranges until corroborated.
+
+Benchmark comparison
+Benchmark comparison for Agentic AI Market
+Source Market Size Gaps in Research Methodology
+
+Mordor Intelligence USD 14.06 B (2027)
+
+Global Consultancy A USD 121 B (2032) At its 2032 base, this estimate is 760.6% above this report's 2027 value of USD 14.06 B, 5 years earlier. Its model taxonomy includes multimodal, domain-specific, and edge-deployed model categories, which can widen the counted solution set.
+
+Global Consultancy B USD 19.33 B (2026) At its 2026 base, this estimate is 37.5% above this report's 2027 value of USD 14.06 B, 1 year later. Its enterprise-agent framing covers agent platforms and integration and deployment services alongside tool-using workflow systems.
+
+Mordor Intelligence's analysts triangulate company disclosures, adoption statistics, supplier estimates, and respondent evidence, then check that segment and regional views reconcile with the global total.
+
+Key Questions Answered in the Report
+
+What is the Agentic AI market size and growth outlook?
+
+The size is expected to reach USD 14.06 billion in 2027 and USD 82.27 billion by 2032, with 42.38% CAGR over 2027-2032.
+
+Which forces drive demand for enterprise AI agents?
+
+Intelligent automation, multi-agent coordination, and managed runtimes support demand. Microsoft Foundry Agent Service manages containers, scaling, session lifecycles, and platform integration for Hosted Agents.
+
+Which component has the largest share of agentic software and services revenue?
+
+The solution segment accounted for 61.21% in 2026. Services are forecast to grow fastest at 44% CAGR over 2027-2032.
+
+Who are the major companies in enterprise agent software and services?
+
+Major players include Microsoft Corporation, Google LLC, The AnyLogic Company, Ampcome Technologies Pvt Ltd, and Amazon Web Services Inc.
+
+How do skill gaps affect enterprise agent deployment?
+
+In HBR Analytic Services' July 2025 survey, 48% of 623 HBR audience respondents involved in data and technology decisions at organizations using or considering agentic AI cited skill gaps as an adoption barrier. These gaps can lengthen implementation.
+
+Which regions lead spending on agent software and related services?
+
+North America held 39.95% of revenue in 2026. Asia-Pacific is forecast to grow fastest at 45.2% CAGR over 2027-2032.
+
+Page last updated on: October 22, 2026
+
+Author: Technology & Telecom Practice
+
+Related Reports Explore More Reports Find Latest Data on
+
+AI Computing Hardware Market Analysis
+
+AI In Fintech Market Share
+
+AI In Video Surveillance Market Share
+
+Market Trends in Artificial Intelligence As A Service
+
+Market Report on Artificial Intelligence In Robotics
+
+Report on Autonomous Agents Industry
+
+Cloud AI Market Growth
+
+Market Analysis of Enterprise AI
+
+Explainable AI Market Share
+
+Market Report on Artificial Intelligence
+
+Middle East And Africa AI, Cyber Security And Big Data Analytics Market Size
+
+Artificial General Intelligence Industry
+
+✕
+
+Agentic AI Market
+
+Name
+
+Business Email
+
+Phone Speeds up your request.
+
+▼
+
+Tailor your sample Share more details to generate a relevant sample.
+
+Min 250 characters: 0/250
+
+Your data is secure and never sold or shared. Form will automatically close after 5 minutes of inactivity
+
+×
+Agentic AI Market
+
+Business Email
+
+Phone Speeds up your request.
+
++91
+
+Invalid input
+
+Customize Your Report
+
+Please enter your requirement
+Your data is secure and never sold or shared.
+
+×
+80% of our clients seek made-to-order reports. How do you want us to tailor yours?
+Your data is secure and never sold or shared.
+
+×
+
+Thank You!
+
+If you do not receive an email from us within 5 minutes, please contact us at info@mordorintelligence.com
+Check Report Pricing
+
+Book an Analyst's Slot
+
+Define Your Scope in 5 Mins
+
+DATE
+
+TIME ZONE IST (UTC +5:30) SGT (UTC +8:00) GST (UTC +4:00) GMT (UTC +0:00) CET (UTC +1:00) EST (UTC -5:00) CST (UTC -6:00) PST (UTC -8:00) AEST (UTC +10:00)
+
+TIME Select a slot
+
+We will confirm your appointment soon with a calendar invite.
+
+×
+
+×
+Want to use this image?
+
+Please copy & paste this embed code onto your site:
+
+Copy Code
+
+Images must be attributed to Mordor Intelligence. Learn more
+
+About The Embed Code X
+
+Mordor Intelligence's images may only be used with attribution back to Mordor Intelligence. Using the Mordor Intelligence's embed code renders the image with an attribution line that satisfies this requirement.
+
+In addition, by using the embed code, you reduce the load on your web server, because the image will be hosted on the same worldwide content delivery network Mordor Intelligence uses instead of your web server.
+
+Copied!
+
+×
+
+Share Content
+
+Facebook LinkedIn X Email
+
+Copy Link Embed Code
+
+Add Citation APA MLA Chicago
+
+Copy Citation
+
+Embed Code
+
+Get Embed Code
+
+Copy Code
+
+Copied!

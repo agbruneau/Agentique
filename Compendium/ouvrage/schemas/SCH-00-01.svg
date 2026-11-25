@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1010" width="1200" height="1010" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="1010" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-00-01</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Métaphore architecturale en couches</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Architecture de l'entreprise agentique : exosquelette déterministe à 80 %</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">encadrant 20 % de cognition probabiliste</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#047857">Z1 — Strate supérieure — Systems of Engagement (SoE) et autorités humaines</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#0F2942">Portails métier &amp; conseillers</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Interfaces usagers et déclencheurs normalisés</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Réception de propositions structurées</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#064E3B">Supervision HITL / HOTL</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Autorité humaine explicite (H-31)</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">Libération des actes irréversibles</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#1B4F72">Z2 — Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP et harnais à 8 étapes</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#0F2942">Harnais à 8 étapes</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">JSON Schema Draft 2020-12 strict</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Calculs financiers en type Decimal</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#0F2942">Caviardage PII &amp; contexte ACL</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Masquage préalable des données sensibles</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Assemblage borné autorisé en amont</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#064E3B">Passerelle PEP &amp; porte AMBIGU_ESCALADE</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Contrôle des paliers (≤ L2 ou visa humain)</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">Abstention typée sur incertitude</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#B45309"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#B45309">Z3 — Cœur cognitif encapsulé (20 %) — Modèles LLM/SLM substituables</text>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#451A03">Classification &amp; synthèse</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Composante probabiliste remplaçable</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Contrat de schéma strict en entrée/sortie</text>
+  </g>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#451A03">Planification proposée (sans écriture)</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Zéro accès direct aux écritures SoR</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Zéro secret statique dans le contexte</text>
+  </g>
+</g>
+<g id="zone-Z4" class="zone">
+  <rect x="28" y="572" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="572" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="594" font-size="13.5" font-weight="bold" fill="#1B4F72">Z4 — Strate inférieure — Systems of Record (SoR) protégés par couches anti-corruption (ACL)</text>
+  <g id="node-8" class="node" data-node="true">
+    <rect x="42.0" y="610" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="632" font-size="13" font-weight="bold" fill="#0F2942">Progiciels ERP, banque &amp; assurance</text>
+    <line x1="53.0" y1="644" x2="582.0" y2="644" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="658" font-size="11.8" fill="#1E293B">Accès exclusif par façades d'intention</text>
+    <text x="53.0" y="674" font-size="11.8" fill="#1E293B">Exécution idempotente via PEP</text>
+  </g>
+  <g id="node-9" class="node" data-node="true">
+    <rect x="607.0" y="610" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="618.0" y="632" font-size="13" font-weight="bold" fill="#0F2942">Bases CoALA &amp; automates IT/OT</text>
+    <line x1="618.0" y1="644" x2="1147.0" y2="644" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="658" font-size="11.8" fill="#1E293B">Couches anti-corruption (ACL)</text>
+    <text x="618.0" y="674" font-size="11.8" fill="#1E293B">Zéro requête SQL directe depuis l'agent</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="722" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="744" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="762" font-size="11.5" fill="#334155">① L'usager ou un événement métier déclenche une requête normalisée au sein du</text>
+  <text x="42.0" y="777" font-size="11.5" fill="#334155">harnais déterministe (SoE → noyau 80 %).</text>
+  <text x="609.0" y="762" font-size="11.5" fill="#334155">② Le noyau déterministe caviarde les PII, assemble le contexte autorisé (ACL en</text>
+  <text x="609.0" y="777" font-size="11.5" fill="#334155">amont) et sollicite le module cognitif (20 %).</text>
+  <text x="42.0" y="800" font-size="11.5" fill="#334155">③ La proposition du modèle subit une vérification mécanique (JSON Schema, règles,</text>
+  <text x="42.0" y="815" font-size="11.5" fill="#334155">Decimal) avec sortie AMBIGU_ESCALADE.</text>
+  <text x="609.0" y="800" font-size="11.5" fill="#334155">④ Toute écriture vers les Systems of Record (SoR) transite par le PEP et exige le</text>
+  <text x="609.0" y="815" font-size="11.5" fill="#334155">palier requis (≤ L2 ou visa humain).</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="854" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="865" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="62.0" y="876" font-size="11" fill="#1E293B">Noyau déterministe possédé (80 % : harnais, contrats,</text>
+  <text x="62.0" y="891" font-size="11" fill="#1E293B">PEP, SoR)</text>
+  <rect x="418.7" y="865" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="438.7" y="876" font-size="11" fill="#1E293B">Module cognitif probabiliste substituable (20 % :</text>
+  <text x="438.7" y="891" font-size="11" fill="#1E293B">LLM/SLM)</text>
+  <rect x="795.3" y="865" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="815.3" y="876" font-size="11" fill="#1E293B">Porte humaine et validation déterministe (HITL,</text>
+  <text x="815.3" y="891" font-size="11" fill="#1E293B">AMBIGU_ESCALADE)</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="924" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="924" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="944" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="962" font-size="11.5" fill="#1E293B">L'entreprise ne délègue jamais la souveraineté de ses actifs ni l'autorité d'exécution au modèle d'IA : les 80 % d'infrastructure</text>
+  <text x="44" y="978" font-size="11.5" fill="#1E293B">déterministe assurent la fiabilité, l'auditabilité et le remplacement des fournisseurs de modèles sans refonte du socle métier.</text>
+</g>
+</svg>

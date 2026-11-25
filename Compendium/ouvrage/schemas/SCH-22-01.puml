@@ -1,0 +1,86 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Enregistreur de vol OpenTelemetry GenAI (v1.41.0), jointure trace ↔ mandat et AIBOM
+package "Z1 : Émission OTLP et propagation W3C Trace Context" {
+  rectangle "Agent & passerelle MCP/A2A\nSpans invoke_workflow → execute_tool" as AGT <<prob>>
+  rectangle "Propagation _meta (SEP-414)\ntraceparent sans RP dans baggage" as META <<det>>
+  rectangle "5 SLI cognitifs\nTCR, TER, tours, amplification, HOTL" as SLI <<det>>
+}
+package "Z2 : Collecteur épinglé OTel v1.41.0 et jointure (lacune 21)" {
+  rectangle "Adaptateur bidirectionnel\nOTel v1.41.0 ↔ genai@244465e9\n(60 entrées → ca.entreprise.*)" as COL <<det>>
+  rectangle "Jointure trace ↔ mandat (4 clés)\ntask_id, niveau, approval.jti, cost_center" as JOIN <<ok>>
+  rectangle "Échantillonnage en queue\n100 % anomalies, budgets & désaveux" as TAIL <<det>>
+}
+package "Z3 : Provenance AIBOM (5+1 horloges)" {
+  database "Nomenclature AIBOM\nCycloneDX 1.7 / SPDX 3.0.1 / SLSA v1.2\n5 composants + horloge révision" as AIBOM <<ext>>
+}
+AGT .[#B45309].> META : ① émet spans OTLP
+META --> COL : ② valide aux frontières
+COL --> SLI : métriques normalisées
+COL --> JOIN : ③ lie trace au mandat NHI
+AIBOM --> JOIN : référence versions exactes
+JOIN --> TAIL : ④ rétention 100 % incidents
+legend bottom
+  **Trait plein ardoise** : collecteur épinglé v1.41.0 et propagation W3C sans PII
+  **Vert jointure** : liaison trace ↔ mandat à 4 clés (lacune 21) et rétention anomalies
+  **Gris provenance** : inventaire AIBOM sur les 5+1 horloges de changement
+end legend
+@enduml

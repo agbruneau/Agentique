@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-06-01</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Métaphore architecturale en couches</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets,</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">`ArchiMate 4.0` et points de contrôle `PC1–PC5`</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1B4F72">Z1 — Cinq couches pivot C1–C5 soudées aux six vraies couches CAD26 § 5.2 (DIV-02)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#064E3B">C1 Interaction → Canaux C1</text>
+    <line x1="53.0" y1="194" x2="393.7" y2="194" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Authentifiée, sans invite métier</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Point PC1 (avis Loi 25 art. 12.1)</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="418.7" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">C2 Agents &amp; C3 Contexte</text>
+    <line x1="429.7" y1="194" x2="770.3" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="208" font-size="11.8" fill="#1E293B">Soudés à C2/C3/C5 CAD26</text>
+    <text x="429.7" y="224" font-size="11.8" fill="#1E293B">Points PC2, PC3 (arrêt) et PC4 (gel)</text>
+  </g>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="795.3" y="160" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="182" font-size="13" font-weight="bold" fill="#064E3B">C4 Accès &amp; C5 Modèles</text>
+    <line x1="806.3" y1="194" x2="1147.0" y2="194" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="208" font-size="11.8" fill="#1E293B">C4 → Médiation/Outils/SoR (C4–C6)</text>
+    <text x="806.3" y="224" font-size="11.8" fill="#1E293B">C5 → Exécution confinée (PC5)</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#4338CA"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#4338CA">Z2 — Trois volets transversaux (Plans A, B, C) et points de contrôle PC1–PC5</text>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#312E81">Plan A · Identité &amp; défense</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">NHI SPIFFE, OBO, OPA hors modèle</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Agilité cryptographique PQC</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#312E81">Plan B · Observabilité &amp; FinOps</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Double couloir OTel, JCS/SCITT</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Bancs EvalOps E1–E3 et CPO</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#312E81">Plan C · Gouvernance &amp; sortie</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Registre à 7 états</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">Conformité B-10 / E-23 / Loi 25</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#047857">Z3 — Pont TOGAF ABB → SBB (EXIG-ARC-20) et règles ArchiMate 4.0 C260 (DISC-04)</text>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Révision trimestrielle ABB → SBB</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Dérogations ≤ 6 mois / 90 j (GOV-16)</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Composants logiciels substituables</text>
+  </g>
+  <g id="node-8" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#064E3B">Typage ArchiMate 4.0 C260</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">«Cognitive Actor» = Application Component</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Zéro «regulatory-requirement» orphelin</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Toute demande entre par C1 Interaction (sans logique métier) et déclenche PC1 si</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">une décision vise une personne.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② C2 Orchestration et C3 Contexte gèrent l'état durable et appliquent PC3 (arrêt) et</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">PC4 (gel procédural).</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Chaque appel transite par la passerelle de C4 Accès vers outils/SoR et sollicite</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">C5 Modèles confiné (PC5).</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Les Plans A, B et C tracent chaque exigence depuis le Driver ArchiMate jusqu'au</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">SBB homologué sans orphelin.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Cinq couches horizontales C1–C5 et blocs neutres ABB</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#4338CA"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Trois plans transversaux (A, B, C) et traçabilité</text>
+  <text x="438.7" y="741" font-size="11" fill="#1E293B">ArchiMate 4.0</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Points de contrôle PC1–PC5 et SBB substituables</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Tous les volumes convergent vers une carte unifiée à cinq couches et trois plans transversaux, assurant la traçabilité continue de chaque</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">obligation réglementaire jusqu'au composant logiciel substituable (SBB).</text>
+</g>
+</svg>

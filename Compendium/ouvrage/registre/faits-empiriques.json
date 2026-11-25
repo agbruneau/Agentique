@@ -1,0 +1,167 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "description": "Faits empiriques et grandeurs mathématiques vérifiés sur sources primaires intégrales L+ (SHA-256) au gel du 2 décembre 2026 pour le Compendium.",
+  "facts": [
+    {
+      "id": "FACT-MCP-DRIFT-4058",
+      "metric": "Part des serveurs MCP multi-versions présentant une dérive sémantique silencieuse (sans changement de version sémantique déclaré)",
+      "value": "40,58 % des serveurs multi-versions (sur 8 900 serveurs multi-versions et 21 643 serveurs recensés)",
+      "source": "Obada Kraishan (2026-09-15), Same Name, Different Server: A Security Census of Silent Drift in MCP (arXiv:2609.14119)",
+      "owner_chapter": "ch07",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-057",
+      "commentaire_annexe": "Vérifié dans SRC-057 (arXiv:2609.14119) : 21 643 serveurs, 72 606 enregistrements, 8 900 serveurs multi-versions, 51,09 % modifiés entre versions, 40,58 % dérive sémantique silencieuse, 4,16 % redirection d'hôte (OR = 2,96)."
+    },
+    {
+      "id": "FACT-MAP-STUDY",
+      "metric": "Complexité bornée et structure fixe des agents en production (étude MAP)",
+      "value": "68 % exécutent au plus 10 étapes avant intervention humaine et 80 % suivent un flux structuré fixe",
+      "source": "Pan et al. (2025-12-02), Measuring Agents in Production (arXiv:2512.04123)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-027",
+      "commentaire_annexe": "Vérifié dans SRC-027 (arXiv:2512.04123) : 68 % <= 10 étapes avant intervention humaine ; 16 cas sur 20 (80 %) suivent un flux structuré fixe."
+    },
+    {
+      "id": "FACT-MAST-FAILURES",
+      "metric": "Taux d'échec observés dans les systèmes multi-agents LLM (taxonomie MAST)",
+      "value": "41 % à 86,7 % d'échecs sur 1 642 traces annotées",
+      "source": "Cemri et al. (2025), Why Do Multi-Agent LLM Systems Fail? (arXiv:2503.13657)",
+      "owner_chapter": "ch13",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-028",
+      "commentaire_annexe": "Vérifié dans SRC-028 (arXiv:2503.13657) : 41 % à 86,7 % d'échecs sur 1 642 traces (7 cadriciels, 14 modes de défaillance)."
+    },
+    {
+      "id": "FACT-CAMEL-AGENTDOJO",
+      "metric": "Utilité préservée par la séparation CaMeL contrôle/données sur AgentDojo",
+      "value": "77 % des tâches résolues avec garantie structurelle contre 84 % sans défense",
+      "source": "Debenedetti et al. (2025), Defeating Prompt Injections by Design (arXiv:2503.18813v2)",
+      "owner_chapter": "ch20",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-007",
+      "commentaire_annexe": "Vérifié dans SRC-007 (arXiv:2503.18813v2)."
+    },
+    {
+      "id": "FACT-CAMEL-RESIDUAL",
+      "metric": "Taux de succès d'attaque (ASR) par réinterprétation inter-agents sous AgentDojo multi-agents",
+      "value": "0,2 % résiduel avec CaMeL mono-agent (12,9 % sans défense, réduit à 0,0 % par multi-CaMeL)",
+      "source": "Peters-Gill et al. (2026-10-05), Can CaMeLs Talk? (arXiv:2610.05640)",
+      "owner_chapter": "ch20",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-056",
+      "commentaire_annexe": "Vérifié dans SRC-056 (arXiv:2610.05640) : l'ASR atteint 12,9 % sans CaMeL, 0,2 % avec CaMeL mono-agent non propagé et 0,0 % sous multi-CaMeL."
+    },
+    {
+      "id": "FACT-PQC-SIGNATURE-SIZE",
+      "metric": "Tailles de signature ML-DSA (FIPS 204 / RFC 9964) comparées à Ed25519 (64 octets)",
+      "value": "ML-DSA-65 : 3 309 octets ; ML-DSA-87 : 4 627 octets",
+      "source": "NIST FIPS 204 (SRC-050) & IETF RFC 9964 (SRC-012) vs RFC 8032 EdDSA (SRC-076)",
+      "owner_chapter": "ch18",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-050, SRC-012, SRC-076",
+      "commentaire_annexe": "Vérifié dans RFC 9964 § 2 / FIPS 204 Table 1 : ML-DSA-44 = 2 420 o, ML-DSA-65 = 3 309 o (~52x Ed25519 64 o), ML-DSA-87 = 4 627 o (~72x Ed25519 64 o), provoquant un dépassement HTTP 431 (8 192 o) en OBO JWT."
+    },
+    {
+      "id": "FACT-WILSON-3P",
+      "metric": "Dimensionnement statistique minimal à 0 échec pour borne supérieure de Wilson à 95 % < p (EXIG-EVA-03)",
+      "value": "Au moins 3/p essais indépendants sans échec (soit 300 scénarios indépendants distincts pour p = 1 % en unilatéral 95 %)",
+      "source": "2 - Cadre de Référence.md L5041; NIST/SEMATECH § 7.2.4.1 (SRC-022); McGrath & Burke arXiv:2109.02516 (SRC-094)",
+      "owner_chapter": "ch23",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-022, SRC-094",
+      "commentaire_annexe": "Règle EXIG-EVA-03 : n >= ceil(3/p) (= 300 pour p=0,01) donne borne unilatérale 95 % de 0,89 % < 1 % (note : l'intervalle bilatéral z=1,96 à 0 échec donne 1,26 % pour n=300 et impose ~381 essais)."
+    },
+    {
+      "id": "FACT-LUSSER-10-STEPS",
+      "metric": "Fiabilité composée en série sur 10 étapes probabilistes indépendantes à 94 % chacune",
+      "value": "53,9 % sur 10 étapes à 94 %",
+      "source": "NIST/SEMATECH e-Handbook § 8.1.8.1 (SRC-024)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-024",
+      "commentaire_annexe": "Loi multiplicative des composants en série : 0,94^10 = 0,5386 ≈ 53,9 %."
+    },
+    {
+      "id": "FACT-GARTNER-ABANDON-2027",
+      "metric": "Part des initiatives d'IA agentique exposées à l'abandon d'ici fin 2027 sans contrôles ni ROI",
+      "value": "Plus de 40 %",
+      "source": "Deloitte Insights TMT Predictions 2026 (SRC-011; communiqué primaire Gartner et Reuters consignés en statut F)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-011",
+      "commentaire_annexe": "Source primaire gartner.com bloquée HTTP 403 (statut F) ; seuil documenté en L+ via Deloitte TMT 2026 (SRC-011)."
+    },
+    {
+      "id": "FACT-OTEL-GENAI-ATTRS",
+      "metric": "Évolution des attributs GenAI entre OpenTelemetry v1.41.0 et semantic-conventions-genai (244465e9)",
+      "value": "85 attributs en statut Development dans semantic-conventions-genai (contre 60 dans v1.41.0), incluant le passage de cache_creation à cache_write",
+      "source": "OpenTelemetry semantic-conventions v1.41.0 (SRC-089) et semantic-conventions-genai@244465e9 (SRC-090)",
+      "owner_chapter": "ch22",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-089, SRC-090",
+      "commentaire_annexe": "Comptage exact vérifié dans gen-ai.md : 60 attributs dans v1.41.0 (gen_ai.usage.cache_creation.input_tokens) et 85 attributs Development dans semantic-conventions-genai@244465e9 (gen_ai.usage.cache_write.input_tokens)."
+    },
+    {
+      "id": "FACT-COMPUTE-10X",
+      "metric": "Croissance annuelle composée du stock mondial de calcul effectif pour l'IA",
+      "value": "Environ 10× par an sur la dernière décennie (~1,5× matériel/dollar × ~3× algorithmes/inférence × ~2,5× dépenses matérielles = 11,25× arrondi prudemment à 10×)",
+      "source": "Genewein et al. (2026), From AGI to ASI (arXiv:2606.12683, note 2)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-001",
+      "commentaire_annexe": "Vérifié directement dans arXiv:2606.12683 (note 2, p. 4 : « 1.5 * 2.5 * 3 = 11.25, which we round down to 10× per year », SRC-001)."
+    },
+    {
+      "id": "FACT-HYPERSCALER-CAPEX-2026",
+      "metric": "Dépenses d'investissement (CapEx) 2026 d'Alphabet, Amazon, Meta et Microsoft",
+      "value": "496,7 G\\$ US décaissés en trésorerie sur 9 mois calendaires 2026 (132,0 Alphabet, 175,7 Amazon, 83,1 Meta, 106,0 Microsoft); fourchette annualisée 2026 strictement dérivée des dépôts SEC de 683,7 à 693,7 G\\$ US en trésorerie hors baux financiers Microsoft, ou environ 703 à 713 G\\$ US baux financiers Microsoft inclus (~220 G\\$ chez Amazon et 135 à 145 G\\$ chez Meta, location-financement incluse)",
+      "source": "Dépôts SEC EDGAR Q3 2026 / FY2026 : Alphabet 8-K (SRC-017), Amazon 8-K (SRC-018), Meta 8-K (SRC-019), Microsoft 10-Q/10-K (SRC-020..SRC-022)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-103, SRC-104, SRC-105, SRC-106, SRC-107, SRC-108",
+      "commentaire_annexe": "Somme exacte des achats d'immobilisations en trésorerie sur 9 mois calendaires 2026 vérifiée dans les 6 dépôts SEC EDGAR : 131 953 + 175 670 + 83 055 + 106 045 = 496 723 M\\$ US (496,7 G\\$ US); baux financiers Microsoft 9M = 14 323 M\\$ US (9 131 H1 + 5 192 T1 FY27), donnant 683,7–693,7 G\\$ US hors baux Microsoft ou 703,2–713,2 G\\$ US baux inclus selon T4=T3."
+    },
+    {
+      "id": "FACT-MARKET-ENVELOPE-2027-2030",
+      "metric": "Fourchette des études ouvertes L+ sur la taille du marché de l'IA agentique (2026–2030)",
+      "value": "2026 : 5,3 à 9,9 G\\$ US; 2027 : 7,8 (interpolé) à 14,1 G\\$ US; 2030 : 24,5 à 40,6 (interpolé) ou 45,0 G\\$ US (trois synthèses publiques ouvertes L+ : Grand View Enterprise, Deloitte TMT et Mordor Intelligence; Polaris, Fortune et IDC exclus en statut F)",
+      "source": "Deloitte TMT 2026 (SRC-011), synthèse publique Mordor Intelligence 2026 (SRC-012) et synthèse publique Grand View Research (SRC-013)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-011, SRC-101, SRC-102",
+      "commentaire_annexe": "Réancré exclusivement sur les séries L+ accessibles après exclusion AO-01 des portails bloqués Polaris, Fortune et IDC (statut F) : 5,3–9,89 G\\$ en 2026, 7,75 (interpolé à 46,2 % CAGR pour GVR)–14,06 G\\$ en 2027, 24,5–40,61 (interpolé à 30,38 % CAGR pour Mordor)–45,0 G\\$ en 2030 (82,27 G\\$ en 2032 chez Mordor)."
+    },
+    {
+      "id": "FACT-JUNIOR-DEV-CONTRACTION",
+      "metric": "Évolution de l'emploi des développeurs logiciels âgés de 22 à 25 ans aux États-Unis (synthèse depuis 2024 vs pic fin 2022 – sept. 2025)",
+      "value": "Recul de près de 20 % depuis le pic de fin 2022 jusqu'à septembre 2025 (formulé « depuis 2024 » en synthèse, ~16 % d'écart relatif et -11 % aux universités américaines de 4 ans au § 4.4)",
+      "source": "Stanford HAI, Artificial Intelligence Index Report 2026 (arXiv:2606.15708)",
+      "owner_chapter": "ch33",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-008",
+      "commentaire_annexe": "Vérifié dans l'AI Index Report 2026 de Stanford HAI (SRC-008) : le résumé exécutif indique « nearly 20% from 2024 », tandis que le § 4.4 mesure le repli de près de 20 % depuis le pic de fin 2022 jusqu'à septembre 2025 (~16 % d'écart relatif avec les développeurs plus âgés et -11 % d'inscriptions en informatique sur 4 ans)."
+    },
+    {
+      "id": "FACT-SLM-AGENTIC",
+      "metric": "Part des appels agentiques routables vers des petits modèles spécialisés (SLM) sous contrôle",
+      "value": "Positionnement SLM pour tâches agentiques répétitives et bornées (70 % à 78 % en routage frugal)",
+      "source": "Belcak et al. (2025-06-02), Small Language Models are the Future of Agentic AI (arXiv:2506.02153)",
+      "owner_chapter": "ch03",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-123",
+      "commentaire_annexe": "Vérifié dans SRC-123 (arXiv:2506.02153) : réduction des coûts d'inférence par spécialisation SLM dans les boucles agentiques."
+    },
+    {
+      "id": "FACT-STATCAN-IA-2026",
+      "metric": "Adoption de l'IA par les entreprises canadiennes (Statistique Canada, T2/T3 2026)",
+      "value": "Tableaux ouverts 33-10-1167-01 (T2 2026) et 33-10-1207-01 (T3 2026) : ~19,2 % global et 40,4 % en finance/assurance",
+      "source": "Statistique Canada, tableaux WDS CSV 33-10-1167-01 et 33-10-1207-01",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-014, SRC-015",
+      "commentaire_annexe": "Archives CSV ouvertes StatCan SRC-014 et SRC-015 ; article HTML 11-621-m consigné en statut F (HTTP 403)."
+    }
+  ]
+}

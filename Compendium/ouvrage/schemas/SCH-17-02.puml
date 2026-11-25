@@ -1,0 +1,32 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign center
+skinparam Padding 5
+
+title Approbation humaine hors bande CIBA + FIDO2 liée à l'empreinte JCS (h) : scellement de l'acte
+
+participant "Agent métier\n(propose action P3)" as N1 #FFF5E0
+participant "Passerelle PEP\n(I-JSON & JCS)" as N2 #EFF6FF
+participant "Service d'approbation\n(CIBA + SoD)" as N3 #F5F3FF
+participant "Approbateur(s) FIDO2\n(appareil tiers)" as N4 #ECFDF5
+database "Journal d'audit C.8\n& automate SSF/CAEP" as N5 #F5F3FF
+
+N1 -[#D97706]-> N2 : ① Appel P3 soumis à approbation (sans jeton)
+N2 -> N2 : Filtre strict I-JSON (RFC 7493, 0 flottant ambigu)\nh = SHA-256(JCS({outil, version, digest, agent, task, args}))
+N2 -> N3 : ② Suspend flux durable (awakeable) & émet CIBA
+N3 -[#047857]-> N4 : Demande hors bande FIDO2/WebAuthn\n(③ Vérifie SoD : approver != sub · double visa classe élevée)
+N4 -[#047857]-> N3 : Signature biométrique liée à h
+N3 -[#1D4ED8]-> N2 : ④ Jeton signé ≤ 15 min (jti unique) retenu au PEP\n(jamais transmis au contexte LLM)
+N2 -> N2 : Recalcule h sur octets transmis avant exécution
+N2 -[#6D28D9]-> N5 : Consigne jti, h et liaison SSF/CAEP
+
+legend bottom
+  **Bleu** : Calcul déterministe I-JSON/JCS et rétention du jeton hors du contexte LLM
+  **Vert émeraude** : Approbation humaine hors bande CIBA + biométrie FIDO2 et contrôle SoD
+  **Violet** : Consignation scellée du jti et du condensat h pour opposabilité juridique
+end legend
+@enduml

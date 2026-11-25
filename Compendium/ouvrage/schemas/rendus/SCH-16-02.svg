@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 845" width="1200" height="845" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="845" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-16-02</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Matrice visuelle de risques et garde-fous</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Cartes A2A, annuaires commerciaux et trois modèles de registres : distinguer</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">ce qui est signé de ce qui fait foi</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#B45309"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B45309">Z1 — Anatomie critique de l'Agent Card signée (A2A v1.0.0, JWS + JCS RFC 8785)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#451A03">Signature JWS + JCS optionnelle</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">MAY / SHOULD dans la spécification</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">En-tête à 4 champs (alg, typ, kid, jku)</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#451A03">Angles morts natifs de la carte</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Sans nbf/iat/exp ni révocation</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">Aucun magasin de clés dans SECURITY.md</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#1D4ED8"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#1D4ED8">Z2 — Trois modèles de registres non substituables</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#0F2942">1. Annuaire protocolaire (Q-A)</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Découverte A2A des points d'accès</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Ne confère aucune autorisation</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#1E3A8A">2. Registre d'entreprise (Q-D)</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Source de vérité : parrain, TTL, droits</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">toolAccessList imposée au PEP</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#0F2942">3. Registre fédéré (AGNTCY ADS)</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Exposition inter-domaines bornée</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">Masque les structures internes</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#475569"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#475569">Z3 — Encapsulation face aux annuaires commerciaux (Entra / GCP / AWS)</text>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#1E293B">Adaptateurs d'annuaires éditeurs</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#475569" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Entra Agent ID · GCP 24 h · AWS AgentCore</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Encapsulés derrière le registre interne</text>
+  </g>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#1E3A8A">Indépendance avant normalisation</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Prévention du standard de fait</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">En attente des normes IETF / W3C</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="105" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Canonicaliser par JCS (RFC 8785) et vérifier la signature JWS contre un magasin</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">d'ancrage gouverné hors protocole.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Compléter chaque carte par une durée de vie, une révocation et une liaison au</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">parrain au registre interne.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Dissocier l'annuaire de découverte (Q-A) de la politique exécutable au PEP (Q-D).</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Encapsuler les adaptateurs Entra, GCP et AWS derrière un registre interne neutre.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="689" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="700" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="62.0" y="711" font-size="11" fill="#1E293B">Angles morts de l'Agent Card (sans expiration ni</text>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">révocation)</text>
+  <rect x="418.7" y="700" width="14" height="14" rx="3" fill="#1D4ED8"/>
+  <text x="438.7" y="711" font-size="11" fill="#1E293B">Registre gouverné interne reliant découverte, droits</text>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">PEP et parrain</text>
+  <rect x="795.3" y="700" width="14" height="14" rx="3" fill="#475569"/>
+  <text x="815.3" y="711" font-size="11" fill="#1E293B">Annuaires éditeurs encapsulés contre le standard de</text>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">fait</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="759" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="759" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="779" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="797" font-size="11.5" fill="#1E293B">Une signature cryptographique atteste qu'une clé a signé un document, jamais qui détient cette clé ni si elle demeure valide : seul le</text>
+  <text x="44" y="813" font-size="11.5" fill="#1E293B">registre gouverné interne établit ces deux faits.</text>
+</g>
+</svg>

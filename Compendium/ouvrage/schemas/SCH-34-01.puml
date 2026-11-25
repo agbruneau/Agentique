@@ -1,0 +1,83 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Porte unique d'homologation : 305 exigences CRE-IA v1.2, 16 préfixes et 10 lignes rouges
+package "Z1 : Source unique exigences.json v1.2 (305 règles)" {
+  rectangle "305 EXIG-* sous 16 préfixes\n255 DOIT · 34 NE DOIT PAS · 16 DEVRAIT\n(+ 12 EXIG-AMF & 6 ajouts v1.2)" as EXIG <<det>>
+}
+package "Z2 : Socle multi-régulateurs unifié" {
+  rectangle "Table de correspondance unifiée\n305 EXIG-* × 75 PRR × 15 POR\nen 41 rubriques d'homologation" as MAP <<det>>
+  rectangle "Dossier probatoire unique\nAMF + BSIF E-23 + Loi 25 + EU AI Act" as DOSS <<ok>>
+}
+package "Z3 : Noyau dur non dérogeable — 10 interdits EXIG-GOV-17" {
+  rectangle "10 interdictions absolues (46 ND)\nNX proscrit, P3 sans CIBA, usurpation,\nRègle de deux, journal manquant, loi" as GOV17 <<danger>>
+  rectangle "Veto automatique sans appel\nBlocage de plein droit" as VETO <<danger>>
+}
+EXIG --> MAP : ① extrait sous-ensemble
+MAP --> DOSS : ③ archive unique
+EXIG --> GOV17 : ② filtre prioritaire
+GOV17 --> VETO : tout manquement bloque
+DOSS --> VETO : vérifie conformité
+legend bottom
+  **Bleu socle** : référentiel CRE-IA v1.2 (305 exigences, 16 préfixes) et matrice 41 rubriques
+  **Vert preuve** : dossier probatoire unique couvrant Loi 25, BSIF E-23, AMF et EU AI Act
+  **Rouge veto** : dix lignes rouges absolues d'EXIG-GOV-17 (zéro dérogation tolérée)
+end legend
+@enduml

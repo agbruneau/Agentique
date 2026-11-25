@@ -1,0 +1,48 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 26, 'padding': 12}}}%%
+flowchart TB
+  subgraph Z1["Z1 · Trois classes d'effet (Tome 1, chap. 48)"]
+    direction TB
+    N1{"① Classification de l'outil"}:::det
+    N2["Lecture (L0–L1)<br/>Répétable sans effet de bord"]:::gray
+    N3["Écriture compensable<br/>Clé idem-v1 (HTTP 409 / 422)"]:::det
+    N4["Engagement irréversible<br/>Tampon préalable et rapprochement"]:::purple
+    N1 --> N2
+    N1 --> N3
+    N1 --> N4
+  end
+
+  subgraph Z2["Z2 · Idempotence côté outil et UETR"]
+    direction TB
+    N5["② Calcul hors modèle :<br/>idem-v1 = SHA-256(JCS(...))"]:::det
+    N6["Déduplication côté adaptateur/outil<br/>+ jointure UETR ISO 20022 (RFC 9562)"]:::det
+    N5 --> N6
+  end
+
+  subgraph Z3["Z3 · Patron LAP sur actifs exclusifs (LAP v0.1)"]
+    direction TB
+    N7["③ Fiche signée InstrumentCard<br/>et bail exclusif à battement"]:::purple
+    N8["Jeton humain lié aux paramètres<br/>+ retour métrologique typé"]:::purple
+    N9["④ Réconciliation trace d'intention<br/>↔ effet comptable UETR / LAP"]:::det
+    N7 --> N8 --> N9
+  end
+
+  N3 --> N5
+  N4 --> N7
+  N6 --> N9
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : déduplication outil et réconciliation UETR"]:::det
+    L_PROB["Violet : engagement irréversible et bail physique LAP"]:::purple
+    L_DET ~~~ L_PROB
+  end
+
+  N9 ~~~ L_DET
+
+  classDef gray fill:#F1F5F9,stroke:#475569,stroke-width:2px,color:#1E293B
+  classDef det fill:#EFF6FF,stroke:#1D4ED8,stroke-width:2px,color:#1E3A8A,font-weight:bold
+  classDef purple fill:#F5F3FF,stroke:#6D28D9,stroke-width:2px,color:#4C1D95,font-weight:bold
+  style Z1 fill:#F8FAFC,stroke:#94A3B8,color:#1E293B
+  style Z2 fill:#EFF6FF,stroke:#93C5FD,color:#1D4ED8
+  style Z3 fill:#FAF5FF,stroke:#C4B5FD,color:#6D28D9
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

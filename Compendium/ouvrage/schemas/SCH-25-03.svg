@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="820" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="74" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">SCH-25-03 — Mosaïque canadienne en l'absence de loi générale</text>
+    <text x="38" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" fill="#CBD5E1">Vide C-27/C-36, ACVM 11-348, banque ouverte C-15 et registre à trois lignes IIA · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.8"/>
+    <rect x="20" y="104" width="374" height="38" rx="10" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.5"/>
+    <text x="34" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7F1D1D">Z1 · Sommet : Vide législatif fédéral</text>
+    <line x1="396" y1="327" x2="410" y2="327" stroke="#475569" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="152" width="346" height="165" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+      <text x="46" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7F1D1D">Échec de C-27 / LIAD (janv. 2025)</text>
+      <text x="46" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Aucune loi fédérale IA transversale</text>
+      <text x="46" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Portée C-36 limitée à la vie privée</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="34" y="329" width="346" height="165" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="46" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#78350F">Zéro exemption réglementaire</text>
+      <text x="46" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Application immédiate des régimes</text>
+      <text x="46" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">sectoriels et prudentiels en vigueur</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="412" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="412" y="104" width="374" height="38" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="426" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Z2 · Quatre versants actifs + enclave C-15</text>
+    <line x1="788" y1="327" x2="802" y2="327" stroke="#475569" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="426" y="152" width="346" height="117" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="438" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Loi 25 · BSIF E-23 · AMF</text>
+      <text x="438" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Vie privée, risque de modèle &amp;</text>
+      <text x="438" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">gouvernance IA au 1er mai 2027</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="426" y="281" width="346" height="117" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="438" y="305" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">ACVM 11-348 (écart CA-5)</text>
+      <text x="438" y="327" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Personne physique inscrite imputable</text>
+      <text x="438" y="346" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">EXIG-CON-27/28 · archive 7 ans</text>
+    </g>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="426" y="410" width="346" height="117" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+      <text x="438" y="434" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#4C1D95">Banque ouverte C-15 (Banque du Canada)</text>
+      <text x="438" y="456" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Maillon technique absent en Gazette I/II</text>
+      <text x="438" y="475" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Interface abstraite prête à adopter</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="804" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#047857" stroke-width="1.8"/>
+    <rect x="804" y="104" width="374" height="38" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+    <text x="818" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#064E3B">Z3 · Socle interne : Registre unique 3 lignes IIA</text>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="818" y="152" width="346" height="165" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+      <text x="830" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">Inventaire unifié &amp; 6 portes (G-01)</text>
+      <text x="830" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Cadre MCN Québec étendu à 6 portes</text>
+      <text x="830" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Agrégation annuaires &amp; serveurs MCP</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="818" y="329" width="346" height="165" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+      <text x="830" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Suspension RH &amp; 3e ligne d'audit</text>
+      <text x="830" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Coupe-circuit NHI sur départ SIRH</text>
+      <text x="830" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Audit indépendant de 3e ligne</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="562" width="1160" height="108" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="582" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Prendre acte du retrait de C-27 et ancrer la conformité dans le droit en</text>
+    <text x="34" y="620" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">vigueur.</text>
+    <text x="610" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Appliquer ACVM 11-348 : rattacher le conseil à un inscrit et archiver 7</text>
+    <text x="610" y="620" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">ans.</text>
+    <text x="34" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ Isoler C-15 derrière un adaptateur neutre en attente de la norme</text>
+    <text x="34" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">technique.</text>
+    <text x="610" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Centraliser chaque agent dans l'inventaire à 6 portes et 3 lignes IIA</text>
+    <text x="610" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">(arrêt RH).</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="680" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="692" width="18" height="18" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="60" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Absence normative vérifiée (retrait C-27, norme C-15)</text>
+    <rect x="411" y="692" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="437" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">4 instruments opposables (Loi 25, E-23, AMF, 11-348)</text>
+    <rect x="788" y="692" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="814" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Registre unique 3 lignes IIA &amp; adaptateur C-15</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="734" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="756" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">L'absence de loi fédérale générale n'ouvre aucune zone de tolérance : au Canada, quatre régimes actifs encadrent déjà les agents</text>
+    <text x="36" y="792" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">via un registre unifié.</text>
+  </g>
+</svg>

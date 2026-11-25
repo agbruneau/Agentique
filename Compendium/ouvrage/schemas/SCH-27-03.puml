@@ -1,0 +1,89 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Écart du mandat apparent B2B : responsabilité (Moffatt, AB-316), LCCJTI/LUCE et anti-collusion
+package "Z1 : Absence de personnalité et écart réel ↔ apparent" {
+  actor "Mandant (entreprise)\nDéploie et répond de l'agent" as MAND <<ext>>
+  rectangle "Autorité réelle configurée\nJeton OBO, politiques OPA, plafonds" as REEL <<ok>>
+  rectangle "Autorité apparente perçue\nCanal, marque, carte A2A sans réserve" as APP <<prob>>
+  rectangle "ÉCART JURIDIQUE (risque Moffatt)\nAB-316 & Dir. (UE) 2024/2853" as ECART <<danger>>
+  actor "Tiers / partenaire B2B\nCroit l'agent habilité" as TIERS <<ext>>
+}
+package "Z2 : Zone d'exposition B2B" {
+  rectangle "Contrats B2B (LCCJTI, LUCE, CNUDCI)\n& alignement tarifaire (anti-collusion)" as B2B <<prob>>
+  rectangle "Angles morts d'assurance\nExclusions IA Verisk/ISO (G-14)" as ASSUR <<danger>>
+}
+package "Z3 : Quatre garde-fous juridiques et architecturaux" {
+  rectangle "Mandats AP2 plafonnés, divulgation\nnon-avis, avenants & Diplomate/Évaluateur" as GUARD <<ok>>
+}
+MAND --> REEL : ① configure bornes
+TIERS .[#B45309].> APP : perçoit canal
+REEL --> ECART : ① mesure écart
+APP .[#B45309].> ECART : excède mandat réel
+ECART --> B2B : ③ engage entreprise
+ECART --> ASSUR : ④ découvert cyber/RC
+GUARD --> APP : ② réduit apparence (non-avis)
+GUARD --> B2B : encadre LCCJTI/LUCE
+legend bottom
+  **Rouge litige** : écart autorité réelle ↔ apparente, collusion tarifaire et exclusions Verisk/ISO
+  **Ambre apparent** : perception tiers et formation involontaire d'engagements B2B
+  **Vert garde-fou** : mandats AP2 plafonnés, divulgation non-avis et scission Diplomate/Évaluateur
+end legend
+@enduml

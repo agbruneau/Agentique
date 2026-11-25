@@ -1,0 +1,765 @@
+-
+B. Ontario Securities Commission
+B.1
+Notices
+B.1.1
+CSA Notice of Amendments to National Instrument 31-103 Registration Requirements, Exemptions and Ongoing
+Registrant Obligations – Prohibition on the Use of Chargebacks in the Distribution of Investment Fund Securities
+Canadian Securities Administrators
+Autorités canadiennes en valeurs mobilières
+CSA NOTICE OF
+AMENDMENTS TO
+NATIONAL INSTRUMENT 31 103
+REGISTRATION REQUIREMENTS, EXEMPTIONS AND ONGOING REGISTRANT OBLIGATIONS
+PROHIBITION ON THE USE OF CHARGEBACKS IN THE DISTRIBUTION OF INVESTMENT FUND SECURITIES
+October 8, 2026
+Introduction
+The Canadian Securities Administrators (the CSA or we) are adopting amendments (the Amendments) to National Instrument
+31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations (NI 31-103) to prohibit the use of chargebacks
+in the distribution of securities of investment funds that are reporting issuers (the Chargeback Ban).1
+The Amendments have been or are expected to be adopted by each member of the CSA.
+The Canadian Investment Regulatory Organization (CIRO) participated in the development of the Amendments. CIRO expects to
+amend their respective member rules, policies and guidance to be uniform with the Amendments in all material respects.
+In some jurisdictions, ministerial approval is required. Subject to such approvals, the Amendments will come into force on October
+1, 2028 and will be subject to the transition provisions discussed below.
+The text of the Amendments is set out in Annex B of this notice and will be available on websites of the following CSA jurisdictions:
+www.bcsc.bc.ca
+www.asc.ca
+www.fcaa.gov.sk.ca
+www.mbsecurities.ca
+www.osc.ca
+www.lautorite.qc.ca
+www.fcnb.ca
+nssc.novascotia.ca
+Substance and Purpose
+The Amendments address the inherent significant conflict of interest associated with the use of chargebacks in the distribution of
+securities of investment funds that are reporting issuers (Chargebacks). The Amendments are intended to strengthen investor
+protection and maintain investor confidence in our capital markets.
+The BC Securities Commission (BCSC) is not publishing this notice announcing the advance notice of the anticipated adoption of the Amendments at this time.
+Staff of the BCSC anticipate doing so following the British Columbia provincial election.
+October 8, 2026
+(2026), 49 OSCB 8511
+1
+
+B.1: Notices
+Background
+On June 26, 2025, the CSA published for comment proposed amendments (the Proposed Amendments) to NI 31-103 to prohibit
+the use of Chargebacks in order to better align the interests of dealing representatives with the interests of their clients.
+Under a compensation model using Chargebacks, a dealing representative is paid an upfront commission, fee or compensation
+by the dealer firm or another registered firm when a client serviced by the representative purchases securities. Chargebacks occur
+when the client redeems all or part of their securities before the end of a fixed schedule as determined, generally, by the dealer
+firm (the Chargeback Period), and the dealing representative is required to pay back all, or part, of the upfront commission or
+compensation received. The use of Chargebacks raises an inherent conflict of interest due to the misalignment of the interests of
+dealing representatives and their clients. A dealing representative benefits financially by being able to keep the entire amount of
+the upfront commission if their client does not redeem their securities until after the Chargeback Period. However, a client may
+want to, or need to, redeem all or part of their securities before the end of the Chargeback Period. It is also reasonably foreseeable
+that when reassessing the suitability of securities held by a client, including upon the required periodic review of know your client
+information prescribed by securities legislation, a dealing representative may also be influenced to put their financial interests
+ahead of their client’s interests and recommend that a client continue to hold securities which are subject to a Chargeback Period.
+The conflict of interest from the use of Chargebacks increases as the amount of the upfront commission and the duration of the
+Chargeback Period increase.
+The deferred sales charge (DSC), which is now banned, raised similar investor protection issues. While the DSC involved charges
+paid by the investor, Chargebacks are a compensation practice that involves payments between registrants (i.e., where a
+redemption by a client may trigger a repayment of all or part of an upfront commission by the dealing representative to their dealer
+firm).
+In both cases, however, the interests of different parties, such as the interests of the client and those of a registrant, are inconsistent
+or divergent. More specifically, Chargebacks give rise to an inherent conflict of interest because (i) the dealing representative may
+be influenced to put their interests ahead of their client’s interests, and (ii) there is a potential detriment to which the dealing
+representative may be subject, which may compromise the trust that a reasonable client has in their dealing representative. In
+particular, a dealing representative may attempt to dissuade their client from redeeming all or part of their securities in order to
+avoid paying back all or part of the upfront commissions that the dealing representative has received from the dealer firm.
+Although current use of Chargebacks is limited, the CSA considers it important at this time to address this significant investor
+protection issue proactively before Chargebacks become entrenched and a widespread industry practice. The ban on
+Chargebacks would apply to all registrants involved in the distribution of securities of investment funds that are reporting issuers.
+Summary of Written Comments Received by the CSA
+The CSA received 22 comment letters on the Proposed Amendments. We thank all commenters for their input. Annex A sets out
+the summary of the comments, our responses and the names of the commenters.
+Copies of the comment letters are available on the websites of the Alberta Securities Commission at www.asc.ca, the Ontario
+Securities Commission at www.osc.ca, and the Autorité des marchés financiers at www.lautorite.qc.ca.
+Summary of Changes to the Proposed Amendments
+After considering the comments received, we have made some non-material changes to the Proposed Amendments. These
+changes are reflected in the Amendments that we are publishing as Annex B to this notice and include the following:
+•
+a revised implementation period of 24 months; and
+•
+a legacy provision clarifying that the ban on Chargebacks does not apply to a redemption by a client of a
+registrant of a security of an investment fund that is a reporting issuer if the client purchased the security before
+the effective date.
+As these changes are not material, we are not republishing the Amendments for further comment.
+(a)
+Transition period
+At the publication for comment stage, we proposed that these amendments would come into force six months after the final
+publication date. Some commenters acknowledged that although the ban promotes investor protection, firms would need to make
+significant changes to redesign their compensation models, which would require additional time. They recommended an
+adjustment of the prohibition and transition period for compliance. More specifically, we understand that two scholarship plan
+dealers (SPDs), in order to comply with the prohibition, would need to review and amend their compensation practices and
+compliance systems, including making changes to their policies, procedures and controls to implement the prohibition, in addition
+to training their registered representatives, all according to the scale of their operations. We note that the use of Chargebacks by
+October 8, 2026
+(2026), 49 OSCB 8512
+
+B.1: Notices
+SPDs as part of their compensation arrangements is not a new practice and has been in place for many years, in some cases
+more than a decade. We recognize the need for a longer implementation period to provide SPDs with sufficient time to adjust their
+compensation practices and models. The CSA has considered the feedback received and we propose a revised implementation
+period of 24 months.
+(b)
+Legacy provision
+The Amendments clarify that the ban does not apply to a redemption by a client of a registrant of a security of an investment fund
+that is a reporting issuer if the client purchased the security before the effective date (legacy provision).
+(c)
+Clarification of scope
+An industry commenter supported the prohibition in principle but requested clarification on whether the ban would apply to certain
+commission recovery practices, specifically:
+•
+recoveries of commissions paid upfront to a representative in connection with pre-authorized contributions
+(PACs) or auto-switches that are cancelled prior to execution during a specified time period (the PACs
+Scenario); and
+•
+recoveries of commissions paid upfront to a representative in connection with transfers (in cash or in kind) to
+another financial institution occurring during a specified time period (the Transfers Scenario).
+PACs Scenario
+In some compensation structures, representatives are paid upfront commissions based on the total anticipated value of a PAC
+arrangement. Where a client cancels the PAC during the agreed period (e.g., after 6 months of a 12-month plan), the firm may
+recover the portion of commissions attributable to the remaining period.
+We are of the view that this scenario does not fall within the scope of the Chargeback Ban, as the commission recovery by the
+firm is not triggered by a redemption of securities by the client. However, this arrangement raises similar conflicts of interest to
+those underlying Chargebacks. In particular, representatives may have an incentive to discourage clients from cancelling PACs
+in order to avoid the loss of the upfront compensation which was paid to them. The CSA is of the view that the conflict raised by
+the PACs Scenario is an inherent conflict of interest and is, in our experience, almost always a material conflict of interest which
+we expect registrants to address in the best interest of their clients. This may require registrants to avoid these types of material
+conflicts of interest associated with such compensation structures, if the conflict is not or cannot be otherwise addressed in the
+best interest of the client.
+Transfers Scenario
+With respect to recoveries of commissions paid upfront to a representative in connection with transfers (in cash or in kind) to other
+financial institutions, we are of the view that this scenario does not fall within the scope of the Chargeback Ban to the extent that
+the recovery of commissions is not triggered by a redemption of securities. However, as with all compensation arrangements,
+registrants must comply with their conflicts of interest obligations, which in some cases, may require changes to their compensation
+practices in order to demonstrate that material conflicts of interest have been addressed in the best interest of their clients. We
+note that the ban would apply to a redemption that occurs prior to the transfer, as the recovery in that case would be connected
+to a redemption of securities.
+Transition
+Provided all ministerial approvals are obtained, the Amendments will come into force on October 1, 2028.
+Content of Annexes
+The text of the Amendments, as well as the Summary of Comments on the Proposed Amendments and the CSA’s Responses is
+contained in the following annexes to this notice and is available on the websites of members of the CSA:
+Annex A:
+Summary of Comments on the Proposed Amendments and CSA Responses
+Annex B:
+Amendments to National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant
+Obligations
+Annex C:
+Adoption of the Amendments
+October 8, 2026
+(2026), 49 OSCB 8513
+
+B.1: Notices
+Questions
+Please refer your questions to any of the following:
+BC Securities Commission
+Kathryn Anthistle
+Senior Legal Counsel, Legal Services
+Capital Markets Regulation Division
+Tel: 604-899-6536
+Email: kanthistle@bcsc.bc.ca
+Alberta Securities Commission
+Ali Zaheer
+Senior Regulatory Analyst
+Tel: 403-297-2422
+Email: ali.zaheer@asc.ca
+Financial and Consumer Affairs Authority of Saskatchewan
+Curtis Brezinski
+Acting Director, Capital Markets
+Securities Division
+Tel: 306-787-5876
+Email: curtis.brezinski@gov.sk.ca
+Manitoba Securities Commission
+Chris Besko
+Executive Director
+Tel: 204-945-2561
+1-800-655-5244 (Toll Free Manitoba only)
+Email: chris.besko@gov.mb.ca
+Ontario Securities Commission
+Kat Szybiak
+Senior Legal Counsel
+Investment Management Division
+Tel: 416-593-3686
+Email: kszybiak@osc.gov.on.ca
+Stephen Paglia,
+Vice-President
+Investment Management Division
+Tel: 416-593-2393
+Email: spaglia@osc.gov.on.ca
+Elizabeth Topp
+Associate Vice-President,
+Investment Management Division
+Tel: 416-593-2377
+Email: etopp@osc.gov.on.ca
+Autorité des marchés financiers
+Gabriel Chénard
+Senior Policy Analyst
+Financial Services Policy
+Tel.: 514-395-0337, ext. 4482
+Toll-free: 1-800-525-0337, ext. 4482
+Email: gabriel.chenard@lautorite.qc.ca
+October 8, 2026
+(2026), 49 OSCB 8514
+
+B.1: Notices
+Financial and Consumer Services Commission of New Brunswick
+Clayton Mitchell
+Registration and Compliance Manager
+Securities Division
+Tel: 1-866-933-2222
+Email: clayton.mitchell@fcnb.ca
+Nova Scotia Securities Commission
+Brian Murphy
+Manager, Registrant Regulation
+Tel: 902-425-4592
+Email: brian.murphy@novascotia.ca
+October 8, 2026
+(2026), 49 OSCB 8515
+
+B.1: Notices
+ANNEX A
+SUMMARY OF COMMENTS AND CSA RESPONSES ON
+THE PROPOSED AMENDMENTS TO
+NATIONAL INSTRUMENT 31-103
+REGISTRATION REQUIREMENTS, EXEMPTIONS AND ONGOING REGISTRANT OBLIGATIONS
+PROHIBITION ON THE USE OF CHARGEBACKS IN THE DISTRIBUTION OF INVESTMENT FUND SECURITIES
+(June 26, 2025)
+Table of Contents
+Part 1
+Background
+Part 2
+General Comments
+Part 3
+Comments on the Proposed Amendments
+Part 4
+Questions for Comment
+Part 5
+List of Commenters
+Part 1 – Background
+The Canadian Securities Administrators (the CSA or we) proposed amendments to prohibit the use of chargebacks
+(Chargebacks) in the distribution of investment fund securities in order to better align the interests of dealing representatives
+with the interests of their clients. Chargebacks involve a compensation practice where a dealing representative is paid an
+upfront commission, fee or compensation when a client purchases securities. Chargebacks occur when the client redeems all
+or part of their securities before the end of a fixed schedule as determined by the dealer firm and the dealing representative is
+required to pay back all, or part, of the upfront commission or compensation received.
+On June 26, 2025, the CSA published for comment proposed amendments (the Proposed Amendments) to National
+Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations (NI 31-103).
+We received 22 comment letters on the Proposed Amendments. The commenters are listed in Part 5. This document contains
+a summary of the comments we received and our responses. We have considered the comments received, and in response to
+the comments, we have made some amendments (the Amendments) to the Proposed Amendments.
+Any comments we received that are related to other CSA policy initiatives were forwarded to the respective CSA working
+groups. This summary only includes comments that are related to the Proposed Amendments.
+Part 2 – General Comments
+Issue
+Comments
+Responses
+General Comments
+Broad support for prohibition
+The majority of commenters strongly supported the
+CSA’s initiative to prohibit chargebacks. They
+agreed the practice creates conflicts of interest,
+incompatible with the Client Focused Reforms
+(CFRs), and should be banned outright rather than
+having further consultations.
+Some industry stakeholders objected to the
+prohibition, arguing that the existing NI 31-103 and
+CIRO rules already address the conflicts of interest
+arising from the practice. One commenter viewed
+chargebacks as commercial arrangements which
+are not harmful to investors and suggested that the
+CSA’s prohibition is unnecessary. Another
+commenter highlighted potential regulatory arbitrage
+with the insurance sector and potential impact on
+We thank the commenters for their
+comments and we appreciate the
+support from the majority of
+commenters.
+We are of the view that the
+Proposed Amendments complement
+the CFRs by clarifying with an
+explicit prohibition that registrants
+must address the conflicts of
+interest associated with the use of
+Chargebacks by avoiding this
+practice as opposed to
+implementing controls to mitigate
+those conflicts sufficiently.
+October 8, 2026
+(2026), 49 OSCB 8516
+
+B.1: Notices
+Part 2 – General Comments
+Issue
+Comments
+Responses
+less wealthy investors, preferring an approach
+based on targeted restrictions.
+We believe investors will continue to
+have access to advice through a
+variety of business models.
+Investor-protection
+Many commenters emphasized that chargebacks
+distort professional judgment by penalizing advisors
+for redemptions, incentivizing retention of unsuitable
+investments, which undermine investor confidence.
+They viewed the prohibition as required to preserve
+the integrity of advice and align compensation with
+clients’ best interests.
+We appreciate the support from the
+commenters.
+Labour rights and fairness
+concerns
+Some commenters argued that chargebacks
+unlawfully shift employer risk to employees, violating
+provincial labour standards legislation, and fair
+contracting standards for independent contractors.
+They urged the CSA to coordinate with provincial
+labour ministries to assess the legality of
+chargeback practices under wage protection laws.
+We have not provided responses to
+the comments we received on topics
+that are outside the scope of the
+Proposed Amendments, including
+employment and labour issues.
+Impact on advisors and
+firms
+Some commenters acknowledged that although the
+ban promotes investor protection, firms would need
+to redesign compensation models. They
+recommended adjustment of prohibition and
+transition period for compliance.
+We recognize that in order to
+implement the Amendments,
+registered firms will need to review
+and amend their compensation
+practices, compliance systems,
+including making changes to their
+policies, procedures and controls to
+implement the prohibition, and that
+they will also need to train their
+registered representatives, all
+according to the scale of their
+operations.
+We propose a revised
+implementation period of 24 months,
+which we believe will be sufficient.
+Part 3 – Comments on the Proposed Amendments
+Issue
+Comments
+Responses
+Support the Proposed
+Amendment
+Most commenters supported the Proposed
+Amendments. A policy organisation strongly
+endorsed the Proposed Amendments, stating that
+chargebacks create unmanageable conflicts and
+cannot be mitigated through disclosure.
+We appreciate the support from the
+commenters.
+An association representing certain investment
+dealers expressed support for the Proposed
+Amendments, stating that removal of distorted
+compensation structures would make the market
+more transparent and client-centred.
+We appreciate the support from the
+commenters.
+An individual commenter supported the prohibition,
+given the manifest and unambiguous conflict of
+interest, and that the conflicts cannot be credibly
+mitigated.
+We thank the commenter for their
+comments.
+October 8, 2026
+(2026), 49 OSCB 8517
+
+B.1: Notices
+Part 3 – Comments on the Proposed Amendments
+Issue
+Comments
+Responses
+Opposing the Proposed
+Amendments
+An investment organisation opposed the Proposed
+Amendments and argued that they are
+unnecessary and inconsistent with existing
+regulatory regimes. They argued that chargebacks
+do not inherently create conflicts, as current NI 31­
+103 and CIRO rules already require advisors to act
+in their client’s best interest. It also stated that
+foreign jurisdictions allow chargebacks and that
+chargebacks structures are common among
+insurance and annuity products.
+We are of the view that the Proposed
+Amendments complement the CFRs
+by clarifying with an explicit
+prohibition that registrants must
+address the conflicts of interest
+associated with the use of
+Chargebacks by avoiding this practice
+as opposed to implementing controls
+to mitigate those conflicts sufficiently.
+We carefully considered alternatives
+to the Proposed Amendments,
+including not prohibiting the use of
+Chargebacks, providing guidance on
+the use of Chargebacks or
+prescribing restrictions on the use of
+Chargebacks. However, we have
+concluded that it is important at this
+time to address this significant
+investor protection issue proactively
+with the Amendments in order to ban
+Chargebacks before they become
+entrenched and a widespread
+industry practice. In our view, allowing
+the use of Chargebacks to continue
+would not address the inherent
+conflict of interest arising from the use
+of Chargebacks.
+Potential lack of
+harmonization with The
+Canadian Council of
+Insurance Regulators
+(CCIR)
+One industry commenter highlighted the lack of
+harmonization of the CSA’s proposed ban on
+chargebacks and the approach proposed by the
+CCIR which proposes to continue to allow the use
+of chargebacks in respect of sales of segregated
+funds subject to prescriptive guidance. This
+commenter argued that this regulatory arbitrage
+would result in unintended negative consequences
+for investors. Accordingly, they commented that the
+CSA should not proceed with the ban and instead
+consider the use of prescriptive controls in respect
+of the use of chargebacks.
+We carefully considered the potential
+for disharmonization and alternatives
+to the Proposed Amendments,
+including not prohibiting the use of
+Chargebacks, providing guidance on
+the use of Chargebacks or
+prescribing restrictions on the use of
+Chargebacks. However, we have
+concluded that it is important at this
+time to address this significant
+investor protection issue proactively
+with the Amendments in order to ban
+Chargebacks before they become
+entrenched and a widespread
+industry practice.
+In our view, allowing the use of
+Chargebacks to continue even with
+prescribed controls would not
+adequately address the inherent
+conflict of interest arising from the use
+of Chargebacks.
+Lastly, we note that securities and
+insurance firms have different
+business models and operate in
+distinct regulatory environments.
+October 8, 2026
+(2026), 49 OSCB 8518
+
+B.1: Notices
+Part 3 – Comments on the Proposed Amendments
+Issue
+Comments
+Responses
+We will however continue to consider
+how a harmonized approach could be
+achieved over the longer term.
+Request for clarification or
+adjustment
+An industry association supported the prohibition in
+principle but asked the CSA to clarify exactly which
+commission recoveries would be prohibited. Some
+dealers requested a transition period of at least two
+years in order to unwind their chargeback
+arrangements.
+As described in the Notice, in respect
+of the recoveries of commissions paid
+upfront in connection with pre­
+authorized contributions (PACs) or
+auto-switches that are cancelled prior
+to the execution during a specified
+time period (e.g., 12 months), we are
+of the view that this scenario does not
+fall within the scope of the
+Chargeback Ban. However, this
+arrangement raises similar conflicts of
+interest to those underlying
+Chargebacks. In particular,
+representatives may have an
+incentive to discourage clients from
+cancelling PACs in order to avoid the
+loss of the upfront compensation
+which was paid to them. The CSA is
+of the view that the conflict raised by
+the PACs Scenario is an inherent
+conflict of interest and is, in our
+experience, almost always a material
+conflict of interest which we expect
+registrants to address in the best
+interest of their clients. This may
+require registrants to avoid these
+types of material conflict of interest
+associated with such compensation
+structures, if the conflict is not or
+cannot be otherwise addressed in the
+best interest of the client.
+In respect of the recoveries of
+commissions paid upfront to a
+representative in connection with
+transfers (in cash or in kind) to
+another financial institution occurring
+during a specified time period , we
+are of the view that this scenario does
+not fall within the scope of the
+Chargeback Ban to the extent that the
+recovery of commissions is not
+triggered by a redemption of
+securities. However, as with all
+compensation arrangements,
+registrants must comply with their
+conflicts of interest obligations, which
+in some cases, may require changes
+to their compensation practices in
+order to demonstrate that material
+conflicts of interest have been
+addressed in the best interest of their
+clients. We note that the ban would
+apply to a redemption that occurs
+prior to the transfer, as the recovery
+October 8, 2026
+(2026), 49 OSCB 8519
+
+B.1: Notices
+Part 3 – Comments on the Proposed Amendments
+Issue
+Comments
+Responses
+in that case would be connected to a
+redemption of securities.
+A dealer argued that a complete prohibition could
+have unintended consequences (e.g., disrupt client
+access to advice, prevent beneficial arrangements
+for investors, and create implementation and
+transition challenges). This commenter also
+suggested enhanced disclosure and a tiered or
+phased approach, instead of a complete
+prohibition.
+Please see our responses under
+“Opposing the Proposed
+Amendments” in Part 3 above.
+Scholarship Plan Dealers
+An investment fund manager for scholarship plans
+requested an exemption or tailored approach for
+scholarship plans, highlighting that it would have to
+incur significant expenses if the prohibition was
+implemented without accommodations for
+scholarship plan dealers and that this would
+represent a substantial change to their business
+model. The commenter argued that they have
+implemented effective controls to manage this
+conflict.
+Their comments also highlighted the positive
+aspects for investors of the existing 60 day cooling
+off rights and associated disclosure obligations in
+mitigating conflicts of interests.
+An investor advocate group commented on the
+issue of scholarship plans, saying that the conflict
+of interest in the use of chargebacks also arises in
+scholarship plan dealers and asked regulators to
+review the compensation structure for group
+scholarship plans in particular.
+We are aware that the use of
+Chargebacks is a more established
+compensation practice with certain
+scholarship plan dealers and that in
+order to implement the Amendments,
+we understand that two scholarship
+plan dealers will need to review and
+amend their compensation practices,
+compliance systems, including
+making changes to their policies,
+procedures and controls to implement
+the prohibition, and that they will also
+need to train their registered
+representatives, all according to the
+scale of their operations.
+While we have concluded that it is
+important at this time to address this
+significant investor protection issue
+with the Amendments in order to ban
+Chargebacks, we recognize the need
+for a longer implementation period
+which we anticipate will provide
+registered firms with sufficient time to
+adjust their compensation practices
+and model. Please see our responses
+under “Impact on advisors and firms”
+above.
+Lastly, the Amendments also provide
+that the ban does not apply to a
+redemption by a client of a registrant
+of a security of an investment fund
+that is a reporting issuer if the client
+purchased the security before the
+effective date.
+Part 4 – Questions for Comment
+Issue
+Comments
+Responses
+Question 1:
+Should securities of
+investment funds that are
+non-reporting issuers also be
+subject to the proposed ban
+Support for extension
+Most of the commenters supported extending the
+ban to non-reporting-issuer funds, reasoning that
+the same conflict of interests exists regardless of
+We thank the commenters for their
+comments. We do not propose at this
+time to develop and propose for
+comment additional reforms to extend
+the prohibition to securities of
+investment funds that are non-
+October 8, 2026
+(2026), 49 OSCB 8520
+
+B.1: Notices
+Part 4 – Questions for Comment
+Issue
+Comments
+Responses
+on the use of chargebacks?
+Why?
+reporting status and that an exemption would invite
+regulatory arbitrage.
+Objection
+A dealer objected to the extension as it argued the
+extension could lead to chilling effect on capital
+formation and availability of private investment
+opportunities without a clear and demonstrated
+benefit to investor protection that would justify the
+disruption.
+An investment organisation stated that there is no
+evidence that this extended prohibition was
+needed.
+reporting issuers. In our view, this
+would be a separate longer-term
+project.
+Question 2
+Are there other types of
+securities that should be
+subject to the proposed ban
+on the use of chargebacks?
+Why?
+Support for broad application
+Certain commenters supported expanding the
+prohibition to any product involving upfront
+commissions and chargebacks to maintain
+consistency across retail investment channels.
+Objection
+A dealer argued the extension would be
+unnecessary and would create unintended negative
+consequences across the capital markets without a
+thorough analysis.
+An investment organisation stated that there is no
+evidence to support extending the prohibition.
+We thank the commenters for their
+comments. We do not propose at this
+time to develop and propose for
+comment additional reforms to extend
+the prohibition to other types of
+securities. In our view, this would be a
+separate longer-term project.
+Part 5 – List of Commenters
+Buksa, H.
+Canadian Association of Retired Persons
+Canadian Bankers Association
+Canadian Forum for Financial Markets
+Canadian Independent Finance and Innovation Counsel Inc.
+Carter, Timothy
+Cloutier Groupe Financier
+C.S.T. Savings Inc.
+FAIR Canada / Canadian Foundation for Advancement of Investor Rights
+Fieldstone, David
+Financial Planning Association of Canada
+Gourley, Stan
+Investor Advisory Panel
+Kenmar Associates
+Kraska, Eva
+PEAK Groupe Financier
+Portfolio Strategies Corporation
+Price, Rick
+MacDonald, James
+Naglie, Harvey S.
+Rosen, Yegal
+Whitehouse, Peter
+October 8, 2026
+(2026), 49 OSCB 8521
+
+B.1: Notices
+ANNEX B
+AMENDMENTS TO
+NATIONAL INSTRUMENT 31-103
+REGISTRATION REQUIREMENTS, EXEMPTIONS AND ONGOING REGISTRANT OBLIGATIONS
+1.
+National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations is
+amended by this Instrument.
+2.
+Part 11 is amended by adding the following division:
+Division 4
+Certain compensation practices
+Compensation practices tied to redemptions of investment fund securities
+11.11
+(1) A registrant must not require and must not cause an affiliate to require, in connection with a redemption
+by a client of the registrant of a security of an investment fund that is a reporting issuer, that a registered
+firm or registered individual pay or reimburse all or part of an upfront commission, fee, sales charge or
+other compensation received by the registered firm or registered individual in connection with the
+purchase by the client of the security.
+(2) Subsection (1) does not apply to a redemption by a client of a registrant of a security of an investment
+fund that is a reporting issuer if the client purchased the security before October 1, 2028..
+Effective Date
+3.
+(1)
+This Instrument comes into force on October 1, 2028.
+(2)
+In Saskatchewan, despite subsection (1), if these regulations are filed with the registrar of regulations after
+October 1, 2028, these regulations come into force on the day on which they are filed with the registrar of
+regulations.
+October 8, 2026
+(2026), 49 OSCB 8522
+
+B.1: Notices
+ANNEX C
+ADOPTION OF THE AMENDMENTS
+The Amendments to NI 31-103 will be implemented as:
+•
+a rule in each of Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest
+Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island and Yukon,
+•
+a regulation in Québec, and
+•
+a commission regulation in Saskatchewan.
+In Ontario, the Amendments, as well as other required materials, will be delivered to the Minister of Finance on or about October
+8, 2026. The Minister may approve or reject these Amendments or return them for further consideration. If the Minister approves
+the Amendments or does not take any further action, the Amendments to NI 31-103 will come into force on October 1, 2028.
+In Québec, the Amendments to NI 31-103 are adopted as a regulation made under section 331.1 of the Securities Act (Québec)
+and must be approved, with or without amendment, by the Minister of Finance. The regulation will come into force on the date of
+its publication in the Gazette officielle du Québec or on any later date specified in the regulation. It is also published in the Bulletin
+of the Autorité des marchés financiers.
+In British Columbia, the implementation of the Amendments to NI 31-103 is subject to ministerial approval. If all necessary
+approvals are obtained, British Columbia expects these Amendments to come into force on October 1, 2028.
+In Saskatchewan, the implementation of the Amendments to NI 31-103 is subject to ministerial approval. If all necessary approvals
+are obtained, these Amendments will come into force on October 1, 2028 or if after October 1, 2028, on the day on which they are
+filed with the Registrar of Regulations.
+October 8, 2026
+(2026), 49 OSCB 8523

@@ -1,0 +1,447 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "description": "Glossaire normatif bilingue fr-CA / en du Compendium (vedettes consolidées avec chapitre propriétaire unique et ancrage L+).",
+  "terms": [
+    {
+      "fr": "Autonomie bornée",
+      "en": "Bounded Autonomy",
+      "definition": "Régime d'exploitation d'un agent dont le périmètre d'action, les écritures et le budget sont contraints de manière déterministe hors du modèle.",
+      "chapitre_proprietaire": "ch05",
+      "source_l_plus_id": "SRC-066",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Clause non-avis",
+      "en": "Non-Legal-Advice Disclaimer",
+      "definition": "Mention obligatoire rappelant que l'ouvrage et la trousse logicielle constituent une référence technique pédagogique au gel du 2 décembre 2026 et non un avis juridique ou réglementaire.",
+      "chapitre_proprietaire": "00-liminaire",
+      "source_l_plus_id": "SRC-055",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Statut F",
+      "en": "Status F (Access-Blocked Exclusion)",
+      "definition": "Qualification AO-01 appliquée après au plus une requête infructueuse à toute source bloquée par HTTP 401/403/429/451, WAF, CAPTCHA ou mur payant, excluant son contenu de l'évidence probante.",
+      "chapitre_proprietaire": "ch36",
+      "source_l_plus_id": "SRC-063",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Harnais déterministe",
+      "en": "Deterministic Harness",
+      "definition": "Enveloppe de code exécutée hors du LLM appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, réparation bornée et escalade explicite.",
+      "chapitre_proprietaire": "ch04",
+      "source_l_plus_id": "SRC-021",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Partition 80/20",
+      "en": "80/20 Partition",
+      "definition": "Principe d'architecture réservant 80 % des invariants critiques, validations d'état et règles de sûreté au code déterministe hors modèle et 20 % au raisonnement probabiliste du LLM.",
+      "chapitre_proprietaire": "ch04",
+      "source_l_plus_id": "SRC-027",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Dérive silencieuse",
+      "en": "Silent Drift (Rug Pull)",
+      "definition": "Modification non déclarée de la description ou du schéma d'un outil MCP entre versions, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
+      "chapitre_proprietaire": "ch07",
+      "source_l_plus_id": "SRC-057",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Épinglage cryptographique",
+      "en": "Cryptographic Pinning",
+      "definition": "Verrouillage des définitions d'outils MCP et des clés de vérification (jku/kid A2A) sur des empreintes SHA-256 calculées après canonisation RFC 8785.",
+      "chapitre_proprietaire": "ch07",
+      "source_l_plus_id": "SRC-077",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Carte d'agent",
+      "en": "AgentCard",
+      "definition": "Descripteur d'identité, de capacités et de schémas de sécurité publié par un agent A2A v1.0.1 et authentifié par signature JWS détachée.",
+      "chapitre_proprietaire": "ch08",
+      "source_l_plus_id": "SRC-083",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Identité non humaine",
+      "en": "Non-Human Identity (NHI)",
+      "definition": "Identité cryptographique éphémère de charge de travail (SPIFFE/SVID, WIMSE ou vLEI) attribuée à chaque instance d'agent sans secret statique partagé.",
+      "chapitre_proprietaire": "ch16",
+      "source_l_plus_id": "SRC-046",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Passage de jeton",
+      "en": "Token Passthrough",
+      "definition": "Antipattern interdit (EXIG-MCP-11) consistant à transmettre sans validation ni échange RFC 8693 un jeton émis pour un autre destinataire (aud).",
+      "chapitre_proprietaire": "ch17",
+      "source_l_plus_id": "SRC-041",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Jeton de transaction",
+      "en": "Transaction Token (Txn-Token)",
+      "definition": "Jeton court de format constant O(1) (draft-ietf-oauth-transaction-tokens-11) propageant le contexte utilisateur et de charge de travail sur des chaînes multi-sauts sans dépasser HTTP 431.",
+      "chapitre_proprietaire": "ch17",
+      "source_l_plus_id": "SRC-013",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Preuve d'action C.6",
+      "en": "Out-of-Band Action Hash (C.6)",
+      "definition": "Condensat h = SHA-256(JCS(...)) liant une approbation hors bande CIBA à la nature exacte, aux arguments I-JSON et au destinataire d'une action critique.",
+      "chapitre_proprietaire": "ch17",
+      "source_l_plus_id": "SRC-045",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Double couloir probatoire",
+      "en": "Dual Evidence Pipeline",
+      "definition": "Séparation stricte entre la télémétrie opérationnelle OTel caviardée sans contenu brut et le journal d'audit immuable canonisé JCS/SCITT.",
+      "chapitre_proprietaire": "ch22",
+      "source_l_plus_id": "SRC-044",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Coût par résultat conforme",
+      "en": "Cost Per Compliant Outcome (CPO)",
+      "definition": "Indicateur FinOps calculant en arithmétique décimale exacte (FOCUS v1.4) le coût total rapporté au nombre d'exécutions validées sans violation.",
+      "chapitre_proprietaire": "ch24",
+      "source_l_plus_id": "SRC-023",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Règle de deux",
+      "en": "Rule of Two",
+      "definition": "Politique OPA/Rego interdisant à une même session non approuvée de combiner lecture de contenu non fiable, accès à des données sensibles et capacité d'exfiltration.",
+      "chapitre_proprietaire": "ch20",
+      "source_l_plus_id": "SRC-087",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Contamination CaMeL",
+      "en": "CaMeL Taint Tracking",
+      "definition": "Séparation structurelle entre flot de contrôle fiable et flot de données non fiables avec propagation obligatoire de l'étiquette entre agents.",
+      "chapitre_proprietaire": "ch20",
+      "source_l_plus_id": "SRC-007",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Échec en mode fermé",
+      "en": "Fail-Closed Evaluation",
+      "definition": "Comportement d'un moteur de politiques imposant default allow := false afin que toute erreur, donnée manquante ou règle indéfinie entraîne un refus.",
+      "chapitre_proprietaire": "ch20",
+      "source_l_plus_id": "SRC-088",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Saga compensable",
+      "en": "Compensable Saga",
+      "definition": "Enchaînement durable d'actions atomiques muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses isolées jusqu'au point pivot.",
+      "chapitre_proprietaire": "ch15",
+      "source_l_plus_id": "SRC-006",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Point pivot",
+      "en": "Pivot Transaction",
+      "definition": "Étape irréversible d'une saga au-delà de laquelle toute annulation rétroactive est interdite au profit d'une réconciliation vers l'avant.",
+      "chapitre_proprietaire": "ch15",
+      "source_l_plus_id": "SRC-033",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Canal de compensation isolé",
+      "en": "Isolated Compensation Channel",
+      "definition": "Voie d'exécution dédiée (EXIG-ORC-28) portant identité et budget propres afin d'achever la compensation même si l'agent métier est révoqué.",
+      "chapitre_proprietaire": "ch15",
+      "source_l_plus_id": "SRC-034",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Constance pass^k",
+      "en": "pass^k Consistency",
+      "definition": "Probabilité empirique qu'un agent réussisse l'ensemble de k exécutions indépendantes consécutives d'une même tâche, distinguée de pass@k.",
+      "chapitre_proprietaire": "ch23",
+      "source_l_plus_id": "SRC-029",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Borne de Wilson",
+      "en": "Wilson Score Upper Bound",
+      "definition": "Majorant statistique à 95 % du taux d'échec exigeant au moins 3/p essais indépendants distincts sans défaillance (EXIG-EVA-03).",
+      "chapitre_proprietaire": "ch23",
+      "source_l_plus_id": "SRC-022",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Test métamorphique sans oracle",
+      "en": "Oracle-Free Metamorphic Testing",
+      "definition": "Vérification de relations invariantes (permutations d'outils, équivalence bilingue FR/EN, monotonie budgétaire) sans connaître la réponse attendue exacte.",
+      "chapitre_proprietaire": "ch23",
+      "source_l_plus_id": "SRC-092",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Porte PRR bloquante",
+      "en": "Blocking Production Readiness Gate",
+      "definition": "Critère bloquant issu des 24 points [BLOQUANT] du Compendium 2027 et de la fiche 2027-B001 conditionnant la mise en production.",
+      "chapitre_proprietaire": "ch34",
+      "source_l_plus_id": "SRC-067",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "tissu conjonctif agentique",
+      "en": "agentic connective tissue",
+      "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et de l'orchestration déterministe reliant agents spécialisés, patrimoine applicatif, partenaires externes et superviseurs humains.",
+      "chapitre_proprietaire": "00-liminaire",
+      "source_l_plus_id": "SRC-039",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "règle du maillon le plus élevé",
+      "en": "High-Water Mark Rule",
+      "definition": "Principe selon lequel le niveau d'exigence sécuritaire et réglementaire d'une chaîne d'agents s'aligne sur le maillon aval le plus critique sans sas d'assainissement, sans étendre les droits de mutation en amont.",
+      "chapitre_proprietaire": "ch05",
+      "source_l_plus_id": "SRC-066",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "industrialisation cognitive",
+      "en": "cognitive industrialization",
+      "definition": "Standardisation, automatisation à grande échelle et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement.",
+      "chapitre_proprietaire": "ch01",
+      "source_l_plus_id": "SRC-001",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "loi de Lusser",
+      "en": "Lusser's reliability law for agent chains",
+      "definition": "Loi multiplicative de fiabilité en série montrant que le taux de succès sans erreur d'une chaîne de n étapes indépendantes décroît exponentiellement dès que chaque maillon probabiliste demeure imparfait.",
+      "chapitre_proprietaire": "ch02",
+      "source_l_plus_id": "SRC-024",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "coût de transaction cognitif",
+      "en": "cognitive transaction cost",
+      "definition": "Ensemble des coûts de recherche d'information, de négociation contractuelle, de traduction inter-organisations et de vérification qui redessinent les frontières de la firme lorsqu'ils sont abaissés par des agents.",
+      "chapitre_proprietaire": "ch03",
+      "source_l_plus_id": "SRC-097",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "économie d'agents virtuels",
+      "en": "virtual agent economy",
+      "definition": "Écosystème d'agents autonomes coordonnés par des mécanismes d'enchères, d'entiercement, de réputation et d'audit qui réalisent des échanges économiques à haute fréquence sous mandat humain.",
+      "chapitre_proprietaire": "ch03",
+      "source_l_plus_id": "SRC-096",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "harnais d'agent",
+      "en": "agent harness",
+      "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil.",
+      "chapitre_proprietaire": "ch04",
+      "source_l_plus_id": "SRC-021",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "noyau de contrôle déterministe",
+      "en": "deterministic control core",
+      "definition": "Composants logiciels non probabilistes possédés par l'organisation (registre d'agents, identités, passerelles de politiques, contrats typés, machines à états durables et journaux d'audit) encadrant des modèles substituables.",
+      "chapitre_proprietaire": "ch06",
+      "source_l_plus_id": "SRC-066",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "dette cognitive et d'intention",
+      "en": "cognitive and intent debt",
+      "definition": "Accumulation d'artefacts et de décisions automatisées dont l'équipe ne maîtrise plus la logique sous-jacente ni les hypothèses métier initiales, fragilisant maintenance et conformité.",
+      "chapitre_proprietaire": "ch03",
+      "source_l_plus_id": "SRC-040",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "quadruple dette agentique",
+      "en": "quadruple agentic debt",
+      "definition": "Engrenage fermé liant dette technique, dette cognitive, dette d'intention et dette de couplage global lorsqu'une chaîne d'agents s'appuie sur le contexte du modèle plutôt que sur un noyau déterministe.",
+      "chapitre_proprietaire": "ch03",
+      "source_l_plus_id": "SRC-040",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "interopérabilité verticale et horizontale",
+      "en": "vertical and horizontal interoperability",
+      "definition": "Séparation entre les protocoles verticaux reliant un agent à ses outils et les protocoles horizontaux coordonnant la délégation asynchrone entre agents de domaines ou d'organisations distincts.",
+      "chapitre_proprietaire": "ch07",
+      "source_l_plus_id": "SRC-072, SRC-083",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "couche anti-corruption",
+      "en": "Anti-Corruption Layer",
+      "definition": "Façade déterministe (sigle ACL) placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes.",
+      "chapitre_proprietaire": "ch12",
+      "source_l_plus_id": "SRC-070",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "couche sémantique métier",
+      "en": "enterprise semantic layer",
+      "definition": "Registre gouverné de définitions univoques des entités, métriques, agrégations et invariants juridiques ancrant les agents sur un sens métier commun plutôt que sur des schémas bruts.",
+      "chapitre_proprietaire": "ch10",
+      "source_l_plus_id": "SRC-021",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "blanchiment de frontière",
+      "en": "boundary laundering",
+      "definition": "Défaut de compositionnalité où une donnée externe contaminée reçue par un agent amont est réécrite en prose naturelle vers un agent aval, qui la traite à tort comme une consigne fiable.",
+      "chapitre_proprietaire": "ch19",
+      "source_l_plus_id": "SRC-055",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "exécution durable",
+      "en": "durable execution",
+      "definition": "Orchestration persistant chaque étape et réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits.",
+      "chapitre_proprietaire": "ch15",
+      "source_l_plus_id": "SRC-034",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "saga à point pivot",
+      "en": "pivot-transaction saga",
+      "definition": "Séquence de transactions locales sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une compensation idempotente acheminée sur un canal dédié.",
+      "chapitre_proprietaire": "ch15",
+      "source_l_plus_id": "SRC-033",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "clé d'idempotence transactionnelle",
+      "en": "transactional idempotency key",
+      "definition": "Jeton unique et déterministe associé par l'appelant à une mutation pour garantir qu'une reprise après délai d'attente ou réessai réseau n'applique l'effet métier qu'une seule fois.",
+      "chapitre_proprietaire": "ch15",
+      "source_l_plus_id": "SRC-036",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "effet Ringelmann multi-agents",
+      "en": "multi-agent Ringelmann effect",
+      "definition": "Dégradation marginale de l'efficacité et hausse du coût de coordination lorsque la taille d'un collectif d'agents dépasse son seuil optimal au lieu de préserver une spécialisation frugale.",
+      "chapitre_proprietaire": "ch13",
+      "source_l_plus_id": "SRC-032",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "délégation au nom du mandant",
+      "en": "On-Behalf-Of delegation",
+      "definition": "Mécanisme d'échange de jetons (sigle OBO) préservant l'identité du mandant humain initial (`sub`) et celle de l'agent mandataire (`act`) tout en réduisant les privilèges au strict nécessaire.",
+      "chapitre_proprietaire": "ch17",
+      "source_l_plus_id": "SRC-041",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "crypto-agilité post-quantique",
+      "en": "post-quantum cryptographic agility",
+      "definition": "Capacité à renouveler et négocier sans refonte applicative des algorithmes de chiffrement et de signature résistants au quantique malgré l'accroissement des tailles de clés, signatures et rotations de certificats.",
+      "chapitre_proprietaire": "ch18",
+      "source_l_plus_id": "SRC-050, SRC-051",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "injection indirecte de consignes",
+      "en": "indirect prompt injection",
+      "definition": "Attaque où des instructions adverses dissimulées dans un document, un courriel ou une réponse d'outil externe détournent l'exécution d'un agent opérant sous les droits d'un usager légitime.",
+      "chapitre_proprietaire": "ch19",
+      "source_l_plus_id": "SRC-054",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "séparation par construction entre contrôle et données",
+      "en": "control-data separation by design",
+      "definition": "Architecture inspirée des langages à capacités qui extrait le graphe d'appels depuis l'instruction fiable et confine les données non approuvées comme variables opaques.",
+      "chapitre_proprietaire": "ch20",
+      "source_l_plus_id": "SRC-007",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "dérive silencieuse d'outil",
+      "en": "silent tool drift",
+      "definition": "Altération discrète des descriptions, schémas ou comportements d'un serveur d'outils sous un même identifiant logique après approbation, créant un vecteur d'empoisonnement de la chaîne d'approvisionnement.",
+      "chapitre_proprietaire": "ch07",
+      "source_l_plus_id": "SRC-057",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "analyse de contrôle STPA",
+      "en": "System-Theoretic Process Analysis",
+      "definition": "Méthode de sûreté système dérivée de STAMP (sigle STPA) recensant les actions de contrôle dangereuses et défauts de rétroaction entre agents, logiciels déterministes et superviseurs humains.",
+      "chapitre_proprietaire": "ch21",
+      "source_l_plus_id": "SRC-058",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "constance multi-essais",
+      "en": "pass^k consistency",
+      "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production plutôt que la réussite ponctuelle.",
+      "chapitre_proprietaire": "ch23",
+      "source_l_plus_id": "SRC-029",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "coût complet par résultat conforme",
+      "en": "Cost per Compliant Outcome",
+      "definition": "Métrique économique (sigle CPO) mesurant le coût total d'une transaction métier menée sans erreur : inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
+      "chapitre_proprietaire": "ch24",
+      "source_l_plus_id": "SRC-023",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "télémétrie à double couloir",
+      "en": "dual-lane telemetry",
+      "definition": "Observabilité séparant la télémétrie opérationnelle à faible latence des preuves canoniques horodatées et hachées dédiées à l'audit réglementaire et à la relecture d'incidents.",
+      "chapitre_proprietaire": "ch22",
+      "source_l_plus_id": "SRC-037",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "décision fondée exclusivement sur un traitement automatisé",
+      "en": "solely automated decision",
+      "definition": "Décision affectant une personne sans intervention humaine critique dans la boucle, déclenchant en vertu de l'article 12.1 de la Loi 25 des devoirs d'information, d'explication et de révision.",
+      "chapitre_proprietaire": "ch25",
+      "source_l_plus_id": "SRC-063",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "approbation réflexe",
+      "en": "rubber-stamping / automation bias",
+      "definition": "Défaut de supervision où un valideur entérine machinalement les propositions persuasives d'un agent sans examen critique, exposant l'organisation au régime des décisions exclusivement automatisées.",
+      "chapitre_proprietaire": "ch33",
+      "source_l_plus_id": "SRC-073",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "trajectoire adaptative sous seuils",
+      "en": "Dynamic Adaptive Policy Pathways",
+      "definition": "Planification stratégique (sigle DAPP) pré-positionnant des bascules d'architecture et de conformité déclenchées par des signaux mesurables (coût, régulation, cryptographie) plutôt que par des prévisions rigides.",
+      "chapitre_proprietaire": "ch31",
+      "source_l_plus_id": "SRC-112",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Système d'agentivité",
+      "en": "System of Agency / System of Action (SoA)",
+      "definition": "Couche applicative d'action orchestrée par des agents spécialisés encadrés par un exosquelette déterministe, distincte des systèmes d'engagement (SoE) et des systèmes d'enregistrement (SoR).",
+      "chapitre_proprietaire": "ch01",
+      "source_l_plus_id": "SRC-027, SRC-122",
+      "statut_preuve": "l_plus"
+    }
+  ]
+}

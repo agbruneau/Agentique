@@ -1,0 +1,640 @@
+i
+Category/Catégorie: Protected B/Protégé B
+
+Staff Analytical Paper/ Document analytique du personnel —2026-22
+Last updated: June 2, 2026
+Survey Evidence on Firm AI
+Adoption and its Implications
+Chanya Chawla
+Canadian Economic Analysis Department
+Bank of Canada
+CChawla@bank-banque-canada.ca
+
+Crystal Arnburg
+Canadian Economic Analysis Department
+Bank of Canada
+CArnburg@bank-banque-canada.ca
+
+Canadian Economic Analysis Department
+Bank of Canada staff analytical notes are short articles that focus on topical issues relevant to
+the current economic and financial context, produced independently from the Bank’s
+Governing Council. This work may support or challenge prevailing policy orthodoxy.
+Therefore, the views expressed in this note are solely those of the authors and may differ
+from official Bank of Canada views. No responsibility for them should be attributed to the
+Bank.
+DOI: https://doi.org/10.34989/san-2026-22 | ISSN 1-SAN 2-SDP 3-SWP 4-TR
+© 2026 Bank of Canada
+
+i
+
+Acknowledgements
+We would like to thank Calista Cheung, Marc-André Gosselin, Chris D’Souza, and Farrukh
+Suvankulov for their feedback and support in this project. Errors and omissions are the
+authors.
+
+ii
+Abstract
+This paper examines the adoption of artificial intelligence (AI) among firms in Canada
+and its expected effects on employment and capital spending. The analysis relies on
+special questions included in the December 2025 Business Leaders’ Pulse (BLP). The
+results show that while personal use of AI among business leaders is widespread,
+adoption for production purposes remains limited. On balance, firms anticipate AI to
+have a positive impact on their capital expenditures over the next 12 months and a
+slightly more positive impact over the next 3 years. Firms anticipate limited impacts to
+employment over the next year but expect modest net negative impacts on employment
+over the next 3 years. Overall, the findings suggest that AI adoption among Canadian
+firms remains at an early stage, with more material economic impacts expected to
+emerge over time.
+Topics: Artificial intelligence, Employment, Investment, Digitalization and productivity
+JEL codes: EO, E2, E22, E24, O33
+
+Résumé
+Cette étude s’intéresse à l’adoption de l’intelligence artificielle (IA) par les entreprises
+canadiennes et à ses effets attendus sur l’emploi et les dépenses d’investissement.
+L’analyse repose sur des questions spéciales incluses dans l’enquête Le Pouls des
+leaders d’entreprise de décembre 2025. Les résultats montrent que même si l’utilisation
+personnelle de l’IA est répandue chez les leaders d’entreprise, son adoption à des fins de
+production reste limitée. Dans l’ensemble, les entreprises s’attendent à ce que l’IA ait
+une incidence positive sur leurs dépenses d’investissement au cours des 12 prochains
+mois et une incidence un peu plus positive sur les trois prochaines années. Pour ce qui
+est de l’emploi, elles s’attendent à des effets limités au cours de la prochaine année,
+mais à de modestes effets négatifs nets sur les trois prochaines années. Globalement,
+les résultats donnent à penser que l’adoption de l’IA par les entreprises canadiennes en
+est encore à ses débuts et que des répercussions économiques plus importantes
+devraient se dégager au fil du temps
+Sujets : Intelligence artificielle, Emploi, Investissement, Numérisation et productivité
+Codes JEL : EO, E2, E22, E24, O33
+
+1
+Introduction
+AI adoption by businesses is expected to impact the economy, including productivity,
+labour markets, investment, inflation, and price‑setting behavior. As AI adoption grows,
+alongside the rapid introduction of new AI tools, monitoring firms’ adoption patterns and
+the impacts from AI on key economic variables is important for understanding possible
+macroeconomic implications for Canada.
+Statistics Canada’s Canadian Survey on Business Conditions (CSBC) included AI modules
+in 2024 and 2025 that provide early evidence on firms’ AI usage, intentions to adopt, and
+expected employment impacts over the next 12 months (Bryan, Sood and Johnston
+2025a; 2025b).
+As a complement to Statistics Canada’s efforts, special AI-related questions were added
+to the Bank of Canada’s December 2025 Business Leaders’ Pulse (BLP). The BLP collects
+information from Canadian business leaders on a range of core topics, including sales,
+current business conditions, employment, and inflation expectations. Each month, a
+subset of participating firms is also asked topical questions that address specific
+information needs of the Bank. The BLP is designed to be informative for assessing
+aggregate economic conditions relevant to Canadian gross domestic product (GDP),
+rather than to produce population‑representative estimates of firm‑level behaviour.1,2
+The BLP included questions on individual AI usage by firm leaders, operational adoption,
+primary applications (e.g., data processing using machine learning), reasons for
+non‑adoption, and the expected impact on firms’ employment and capital spending over
+the next 12 months and 3 years.3 The analysis presented here is based on 314 survey
+responses.4 The BLP defines AI broadly as the use of technologies including, but not
+limited to, text generation using large language models (for example, Microsoft Copilot),
+data or image processing using machine learning, and visual content creation.
+The results show that while 70% of respondents use AI for at least some time in a typical
+work week, adoption for production purposes is much less prevalent. More than half of
+BLP firms either do not use AI and do not plan to adopt it over the next 12 months or
+they infrequently use it in their business today. A lack of usefulness for operations was
+the most-cited reason firms are not adopting AI.
+Firms currently using or planning to use AI are more likely to expect impacts to their
+capital spending than their employment. On balance, firms anticipate AI to have a
+positive impact on their capital expenditures over the next 12 months and a slightly
+more positive impact over the next 3 years. However, among firms that are using AI,
+
+1 BLP firms are recruited using regional and industry quotas based on shares of Canadian gross domestic
+output rather than business population quotas. Firms with fewer than 20 employees are also
+over-represented relative to their contribution to GDP, reflecting the prevalence of smaller firms in the
+Canadian economy, where businesses with fewer than 20 employees account for approximately 91% of all
+firms (Palmer, Tam and Johnston, 2025).
+2 For more information on the BLP, see Chernis et al. (2022).
+3 See Appendix A for the full AI questionnaire.
+4 See Appendix B for more information on the region, size, and sectoral composition of these firms.
+
+2
+majority do not anticipate any impacts to employment over the next 12 months. Over
+the next 3 years, 18% of firms anticipate hiring less staff because of AI while 9% of firms
+anticipate hiring more staff as a result, with the remaining respondents anticipating no
+impacts to employment.
+Most decision-makers personally use AI
+More than two-thirds of BLP decision-makers report personal usage of AI technologies at
+work, though the majority use it for less than 5 hours a week (Chart 1). This broadly
+holds across firm size, region, and industry. The natural resources sector is an exception,
+where less than half of decision makers report using AI within a work week.5
+Canadian estimates of firm-level AI adoption vary widely, ranging from low adoption
+rates for production purposes in Statistics Canada’s CSBC (about 15%) to over 90%
+adoption rates in surveys capturing broader AI use, such as KPMG’s Generative AI
+Business Adoption Survey (Bryan, Sood and Johnston 2025a; 2025b; KPMG Canada
+2025). The high variation in adoption rates likely reflects differences in survey timing,
+question design, sample composition, and varying definitions of AI adoption, among
+other factors.
+Recent firm‑level survey evidence from the US, UK, Germany, and Australia indicates that
+approximately 70% of firms report using at least one AI technology (Yotzov et al. 2026).
+Estimates of firm‑level AI adoption also vary widely across the broader literature, ranging
+from single‑digit adoption rates in surveys such as the U.S. Annual Business Survey and
+the U.K. Management and Expectations Survey to nearly 88% of organizations in
+McKinsey’s 2025 Global Survey on AI.
+
+5 See Appendix C for additional charts by region and sector.
+0
+5
+10
+15
+20
+25
+30
+35
+More than 10 hours a
+week
+5-10 hours a week
+1-5 hours a week
+Up to 1 hour a week
+Not at all
+Chart 1: Majority of decision-makers are using AI at an individual level
+On average, how frequently do you personally use AI technologies in a typical working week?
+Share of firms (%)
+
+3
+AI adoption for operational use is limited
+AI adoption by firms for operations is more limited, with only 8% of businesses surveyed
+reporting significant use (Chart 2). Another 21% report moderate use and 29% report
+infrequent use for operations, with an additional 11% of BLP firms planning to use AI for
+production over the next year. These results broadly align with Statistics Canada’s CSBC
+findings, which show that 15% of firms plan to use AI for operations over the next 12
+months.6
+Uptake varies by region and sector. Accommodation, food and professional services
+firms, followed by finance, insurance, real estate, rental and leasing industry, report the
+highest AI usage for operations, while natural resources firms report the lowest. Notably,
+only around one‑quarter of manufacturing firms report using AI moderately or
+significantly for operations, though over a third of manufacturing businesses use AI
+infrequently or experimentally.
+Regionally, Quebec and Ontario lead adoption rates. Differences by firm size also exist.
+Micro firms lag small, medium and large (SML) firms in AI adoption— around two-fifths
+of micro firms report no current or anticipated usage over the next 12 months,
+compared to about one‑fifth of SML firms.7 However, this divergence is driven primarily
+by fewer experimental users among micro firms—the share of micro and SML firms
+reporting moderate or significant usage are broadly similar.
+
+6 Yotzov et al. (2026) did not ask firms about their intended use of AI over the next 12 months, they focused on
+the past 3 years and the next 3 years. We compare results where applicable.
+7 Micro firms are defined as firms with fewer than 20 employees. Small, medium, and large (SML) firms are
+defined as firms with 20 or more employees.
+0
+5
+10
+15
+20
+25
+30
+35
+Not currently in use,
+and no plans to use
+AI in the next year
+Plans to start using
+in the next year
+Very infrequent use,
+in use
+experimentally or in
+pilot projects
+Moderate use
+Significant use
+Chart 2: Most firms report little to no current use of AI in their operations
+To what extent does your firm use artificial intelligence (AI) in producing goods or delivering
+services?
+Share of firms (%)
+Note: The ‘I don’t know’ response category is not shown in this chart.
+
+4
+Lack of operational relevance is the primary reason for non-
+adoption
+Among firms that are not currently adopting AI and have no plans to do so in the next 12
+months, a majority cite a lack of relevance to their operations as the reason (Chart 3).
+Other reasons include lack of skilled staff and incompatibility with existing software or
+hardware. This is consistent with a majority of CSBC firms not adopting or planning to
+adopt, who also cite lack of relevance to operations as the main barrier to adoption.
+
+Firms use AI primarily for text generation
+Text generation is the most frequently-cited current use of AI by firms (Chart 4). Roughly
+a quarter of firms also report currently using AI for visual content creation and data
+processing, while robotics and autonomous vehicles are among the least commonly
+reported current uses of AI. Over the next 3 years, an additional quarter of firms expect
+to use machine‑learning‑based data processing, making it the most frequently cited
+future use. Firms also expect increased use of robotics and autonomous vehicles, with
+these anticipated gains primarily driven by manufacturing firms.
+0
+10
+20
+30
+40
+50
+60
+AI is not useful
+to my firm
+Lack of skilled
+staff
+Incompatibility
+with existing
+corporate
+hardware or
+software
+Ethical
+considerations
+Costs too high
+Regulatory
+obstacles (data
+protection,
+privacy)
+Difficulties with
+data availability
+or quality
+Chart 3: Many firms not adopting AI because of lack of relevance to
+operations
+You said that your firm does not use or plan to use any of the mentioned AI technologies in the
+short term. What do you attribute this to? Select all that apply.
+Share of firms not using/planning to use AI (%)
+
+5
+
+AI-related capital spending expected to increase over the
+next 3 years
+Capital spending associated with AI adoption is expected to remain modest over the
+next 12 months and increase over the next 3 years (Chart 5). Over the next year, 31% of
+firms do not anticipate AI will impact their capital spending, compared to only 16% over
+the next 3 years. About 20% of firms expect AI to have a minor positive impact on their
+capital expenditure in the next 3 years while 10% expect AI to have a major positive
+impact. Meanwhile, a much smaller share of firms anticipates minor (3%) or major (1%)
+negative impacts from AI adoption on their capital spending.
+Firms in accommodation, food and professional services, finance and insurance
+(excluding real estate/rental), and manufacturing report higher expected AI‑related
+capital expenditures over both the 12‑month and 3‑year horizons, while natural
+resource firms report the weakest expectations. More small, medium, and large firms
+compared to micro firms expect capital expenditures to increase because of AI, both in
+the near and medium term.
+0
+10
+20
+30
+40
+50
+60
+Text
+generation
+using Large
+Language
+Models
+Visual
+content
+creation
+Data
+processing
+using
+machine
+learning
+Other AI tech
+Image
+processing
+using
+machine
+learning
+Robotics
+Autonomous
+vehicles
+Currently using
+Expect to use in next 3 years
+Chart 4: Firms primarily using AI for text generation, visual content creation,
+and data processing
+Which of the following artificial intelligence (AI) technologies, if any, does your firm currently use? And
+which do you expect to make use of over the next three years? Select all that apply.
+Share of firms (%)
+
+6
+
+Near-term employment impacts from AI expected to remain
+limited
+Firms anticipate AI will have little net impact on their employment levels in 2026 but a
+slightly negative net impact over the next 3 years (Chart 6). Roughly 11% of firms
+anticipate employment declines and about 8% expect increases over the next 12
+months. Similarly, CSBC firms expect limited impacts of AI on employment levels over
+the next 12 months. Over the next 3 years, firms anticipate slightly larger impacts on
+employment, with 18% expecting AI to have a negative impact on their employment and
+9% anticipating a positive impact. These results are consistent with findings in the US,
+UK, Germany, and Australia, where 37% of firms expect employment effects over the
+next 3 years, with more firms expecting negative impacts (26%) than positive impacts
+(11%) (Yotzov et al. 2026). A mix of firms anticipating positive and negative impacts on
+employment is consistent with the broader literature, which suggests that employment-
+level impacts will depend on whether firms use AI for task augmentation or task
+automation (Brault et al. 2026).
+Perceived employment impacts differ by firm characteristics. A similar share of micro
+firms expects positive effects as negative effects over both the next 12 months and the
+next 3 years, suggesting little net expected impact on employment. By contrast, the
+proportion of small, medium, and large firms anticipating employment declines nearly
+doubles from 10% in 2026 to 21% over the next 3 years, while the share expecting
+0
+5
+10
+15
+20
+25
+30
+35
+A minor negative
+influence,
+subtracting less
+than 10%
+A large negative
+influence,
+subtracting 10%
+or more
+No material
+impact
+A minor positive
+influence, adding
+less than 10%
+A large positive
+influence, adding
+10% or more
+Next 12 months
+Next 3 years
+Chart 5: Firms expect AI to have little impact on capital spending in the
+near-term
+How do you expect this to affect the capital expenditure of your firm over the next 12 months and
+the next 3 years?
+Share of firms (%)
+
+7
+increases remains roughly unchanged. This suggests some downside risk to employment
+from AI over the next 3 years. By sector, accommodation, food and professional services
+firms and finance, insurance, real estate, rental and leasing firms expect net
+employment decreases at the 12-month and 3-year horizons. Construction firms expect
+little to no change at either horizon.
+
+Conclusion and Implications
+Taken together, the December 2025 BLP results suggest that AI adoption among
+Canadian firms remains at an early stage, with usage concentrated in experimentation
+and task‑level applications rather than broad integration into production processes.
+However, the results indicate that AI adoption and its perceived economic impacts are
+expected to intensify over time, pointing to a gradual adjustment process in which
+experimentation with AI precedes more material operational changes and a potential
+restructuring of the Canadian economy. The stronger expected impacts on employment
+and capital spending over the 3-year horizon are also consistent with theoretical
+perspectives that emphasize lags between adoption and economic effects for
+general‑purpose technologies, reflecting learning, adjustment costs, and the need for
+complementary investments before impacts become more pronounced.8
+
+8 See Brault et. Al (2026).
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+A minor negative
+influence,
+subtracting less
+than 10%
+A large negative
+influence,
+subtracting 10%
+or more
+No material
+impact
+A minor positive
+influence, adding
+less than 10%
+A large positive
+influence, adding
+10% or more
+Next 12 months
+Next 3 years
+Chart 6: Most BLP firms do not project near-term employment changes
+due to AI
+How do you expect this to affect the number of employees of your firm over the next 12 months
+and the next 3 years?
+Share of firms (%)
+
+8
+Appendix A: Business Leaders’ Pulse December
+2025 AI questionnaire
+
+Preamble: The Bank of Canada is interested in learning more about the use of
+artificial intelligence (AI) among firms in Canada.
+Among other things, AI technologies could include text generation using large
+language models (e.g., Microsoft Copilot), data or image processing using machine
+learning, and visual content creation.
+1. On average, how frequently do you personally use AI technologies in a
+typical working week?
+- More than 10 hours a week
+- 5-10 hours a week
+- 1-5 hours a week
+- Up to 1 hour a week
+- Not at all
+2. To what extent does your firm use artificial intelligence (AI) in producing
+goods or delivering services?
+- Not currently in use, and no plans to use AI in the next year
+- Not currently in use, but there are plans to start using it over the next 12 months
+- Very infrequent use, in use experimentally or in pilot projects
+- Moderate use
+- Significant use
+- I don’t know
+If Question 2 not "Not currently in use, and no plans to use AI in the next year" or "I
+don't know"
+3. Which of the following artificial intelligence (AI) technologies, if any, does
+your firm currently use? And which do you expect to make use of over the next
+three years?
+Select all that apply.
+
+Currently using / Expect to use in next 3 years
+- Autonomous vehicles
+- Image processing using machine learning
+- Data processing using machine learning
+- Robotics
+- Text generation using Large Language Models
+
+9
+- Visual content creation
+- Other AI technology
+IF Question 2 not "Not currently in use, and no plans to use AI in the next year" or "I
+don't know"
+4. How do you expect this to affect the capital expenditure of your firm over the
+next 12 months and the next 3 years?
+Next 12 months / Next 3 years
+- A large positive influence, adding 10% or more
+- A minor positive influence, adding less than 10%
+- No material impact
+- A minor negative influence, subtracting less than 10%
+- A large negative influence, subtracting 10% or more
+IF Question 2 not "Not currently in use, and no plans to use AI in the next year" or "I
+don't know"
+5. How do you expect this to affect the number of employees of your firm over
+the next 12 months and the next 3 years?
+Next 12 months / Next 3 years
+- A large positive influence, adding 5% or more
+- A minor positive influence, adding less than 5%
+- No material impact
+- A minor negative influence, subtracting less than 5%
+- A large negative influence, subtracting 5% or more
+If Question 2 "Not currently in use, and no plans to use AI in the next year"
+6. You said that your firm does not use or plan to use any of the mentioned AI
+technologies in the short term. What do you attribute this to?
+Select all that apply.
+- Lack of skilled staff
+- Costs too high
+- Difficulties with data availability or quality
+- Regulatory obstacles (data protection, privacy)
+- Incompatibility with existing corporate hardware or software
+- Ethical considerations
+- AI is not useful to my firm
+- Other
+- I don’t know
+Please feel free to provide any additional information you think may help us
+better understand how your firm is adopting AI.
+
+10
+Appendix B: Additional details on sample
+composition
+Table B1: Sample composition of the December 2025 AI survey by industry,
+firm size, and region
+
+Share of firms (%)
+Industry
+Accommodation, food and professional services
+23
+Manufacturing
+19
+TRADE
+16
+Real estate, rental and leasing
+11
+Construction
+11
+Finance and Insurance
+11
+Natural resources and utilities
+10
+Firm size
+Small, medium, and large
+59
+Micro
+41
+Region
+Ontario
+43
+Prairies
+24
+British Columbia
+17
+Quebec
+14
+Atlantic
+3
+
+11
+Appendix C: Additional results by region, firm
+size, and industry
+
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+All firms
+Micro
+SML
+AT
+BC
+ON
+PR
+QC
+AFR and professional services
+Construction
+Finance and Insurance
+Manufacturing
+Natural resources and utilities
+Real estate, rental and leasing
+TRADE
+Size
+Region
+Industry
+Not at all
+Up to 1 hour a week
+1-5 hours a week
+5-10 hours a week
+More than 10 hours a week
+Chart C1: Most decision makers use AI at an individual level
+On average, how frequently do you personally use AI technologies in a typical working week?
+Share of firms (%)
+
+12
+
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+All firms
+Micro
+SML
+AT
+BC
+ON
+PR
+QC
+AFR and professional services
+Construction
+Finance and Insurance
+Manufacturing
+Natural resources and utilities
+Real estate, rental and leasing
+TRADE
+Size
+Region
+Industry
+Not currently in use, and no plans to use AI in the next year
+Plans to start using in the next year
+Very infrequent use, in use experimentally or in pilot projects
+Moderate use
+Significant use
+Chart C2: Adoption of AI for operations varies by region and industry
+To what extent does your firm use artificial intelligence (AI) in producing goods or delivering
+services?
+Share of firms (%)
+
+13
+References
+Brault, J., J. Yang and M. Haghighi. 2025. “AI Paradox: Promise versus Reality—What It
+Means for Monetary Policy.” Bank of Canada Staff Analytical Paper No. 2026-4.
+Bryan, V., S. Sood and C. Johnston. 2025a. “Analysis on Artificial Intelligence Use by
+Businesses in Canada, Second Quarter of 2025.” Statistics Canada, June 16.
+https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2025008-eng.htm
+Bryan, V., S. Sood and C. Johnston. 2025b. “Analysis on Expected Use of Artificial
+Intelligence by Businesses in Canada, Third Quarter of 2025.” Statistics Canada,
+September 11. https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-
+m2025011-eng.htm
+Chernis, T., C. D’Souza, K. MacLean, T. Reader, J. Slive and F. Suvankulov. 2022. “The
+Business Leaders’ Pulse—An Online Business Survey.” Bank of Canada Staff
+Discussion Paper No. 2022-14.
+KPMG Canada. 2025. Generative AI Business Adoption Survey: Canadian Businesses Adopting
+AI, but Few Are Seeing ROI. November 19.
+kpmg.com/ca/en/media/2025/11/canadian-businesses-adopting-ai-but-few-are-
+seeing-roi.html
+Palmer, K., S. Tam and C. Johnston (2025). Analysis on Small Businesses in Canada, Fourth
+Quarter of 2025. Statistics Canada, Catalogue no. 11-621-M (December 11;
+corrected March 26, 2026).
+Yotzov, I., J. M. Barrero, N. Bloom, P. Bunn, S. J. Davis, K. M. Foster, A. Jalca et al. 2026.
+“Firm Data on AI.” NBER Working Paper No. 34836. National Bureau of Economic
+Research.

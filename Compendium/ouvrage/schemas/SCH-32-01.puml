@@ -1,0 +1,87 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Contrat dual AE ↔ AS et modèle opérationnel en étoile / Hub-and-Spoke à A unique
+package "Z1 : Moyeu central (Centre d'excellence / Plateforme en étoile)" {
+  rectangle "Plateforme agentique centrale\nPEP, registre, NHI, OTel, FinOps\n(mutualisée 1 seule fois EXIG-ARC-19)" as HUB <<det>>
+  rectangle "Usine Oracle ↔ Bâtisseur séparée\nMutation ≥ 85 %, Shadow 30 j, 0 shell SRE" as USINE <<det>>
+}
+package "Z2 : Contrat croisé AE ↔ AS (10 thèses T1–T10)" {
+  rectangle "Architecte d'entreprise (AE)\nPortefeuille 52 CAP, D1–D8, 15 POR/27 SIG" as AE <<ok>>
+  rectangle "Architecte de solutions (AS)\n5 SBB, PEP, CoALA, CIBA, PQC, E1–E3" as AS <<det>>
+  rectangle "6 décisions conjointes cosignées\nAutonomie, hébergement, sortie, budgets" as DEC6 <<ok>>
+}
+package "Z3 : Rayons métiers et trois lignes de défense" {
+  rectangle "Rayons métiers fédérés (Spokes)\nPropriétaire SIRH (retrait ≤ 72 h)\nRACI à A unique (EXIG-GOV-04)" as SPOKE <<ext>>
+  rectangle "2e ligne (E-23) & 3e ligne audit\nSéparation préparation / approbation" as LOD <<ok>>
+}
+SPOKE --> HUB : ① consomme gabarits conformes
+AE <--> AS : ② contrat T1–T10
+AE --> DEC6
+AS --> DEC6
+DEC6 --> HUB : gouverne socle
+SPOKE --> LOD : ③–④ contrôle indépendant
+USINE --> LOD : preuves non circulaires
+legend bottom
+  **Bleu moyeu** : Centre d'excellence et plateforme centrale mutualisée (EXIG-ARC-19)
+  **Vert contrat & contrôle** : accord AE ↔ AS (6 décisions), RACI à A unique et 2e/3e lignes
+  **Gris rayons** : propriétaires métiers rattachés au SIRH (rétrogradation ≤ 72 h au départ)
+end legend
+@enduml

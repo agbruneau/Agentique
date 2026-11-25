@@ -1,0 +1,45 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 26, 'padding': 12}}}%%
+flowchart LR
+  subgraph Z1["Z1 · Jalons fermes CA/Browser Forum SC-081v3"]
+    direction TB
+    N1["2026 : Plafond TLS 200 jours"]:::det
+    N2["15 mars 2027 (ANC-023) :<br/>Plafond TLS 100 jours"]:::warn
+    N3["15 mars 2029 (ANC-030) :<br/>Plafond 47 j · validation 10 j"]:::warn
+    N1 --> N2 --> N3
+  end
+
+  subgraph Z2["Z2 · Piège #7 — Collision cryptographique"]
+    direction TB
+    N4["① Inventaire 100 % passerelles MCP/A2A,<br/>courtiers et serveurs OAuth"]:::det
+    N5["Renouvellements manuels ×8 :<br/>pannes silencieuses et blocage Palier 2"]:::warn
+    N4 -.->|"Sans ACME"| N5
+  end
+
+  subgraph Z3["Z3 · Automatisation totale dès le Palier 1"]
+    direction TB
+    N6["② Déploiement ACME (RFC 8555)<br/>et Envoy SDS (INI-002 / EXIG-SEC-27)"]:::green
+    N7["③ Test continu de rotation sans coupure<br/>(cycle ≤ 47 j · validation ≤ 10 j)"]:::green
+    N8["④ Porte POR-001 / POR-007 :<br/>zéro renouvellement manuel résiduel"]:::det
+    N6 --> N7 --> N8
+  end
+
+  N2 --> N4
+  N4 -->|"Couverture 100 %"| N6
+  N3 -.->|"Exige"| N7
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : automation ACME / SDS et portes POR"]:::green
+    L_PROB["Trait pointillé : échéance CA/B et panne manuelle"]:::warn
+    L_DET ~~~ L_PROB
+  end
+
+  N8 ~~~ L_DET
+
+  classDef det fill:#EFF6FF,stroke:#1D4ED8,stroke-width:2px,color:#1E3A8A,font-weight:bold
+  classDef warn fill:#FEF2F2,stroke:#DC2626,stroke-width:2px,stroke-dasharray:6 4,color:#7F1D1D
+  classDef green fill:#ECFDF5,stroke:#047857,stroke-width:2px,color:#064E3B,font-weight:bold
+  style Z1 fill:#FEF2F2,stroke:#FCA5A5,color:#DC2626
+  style Z2 fill:#F8FAFC,stroke:#94A3B8,color:#1D4ED8
+  style Z3 fill:#F0FDF4,stroke:#86EFAC,color:#047857
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

@@ -1,0 +1,84 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Chaîne probatoire Wyvern (G0–G5), réconciliation CA-16, L+ / Statut F et degrés d'absence
+package "Z1 : Collecte conforme L+ SHA-256 et Statut F (AO-01)" {
+  rectangle "Sources primaires ouvertes L+\nTextes intégraux SHA-256 (95 T8, 79 T7,\n160 PRISMA, 449 sources T2, 1 101 URLs)" as LPLUS <<ok>>
+  rectangle "Quarantaine Statut F (AO-01 / A4)\n0 contournement WAF/403, 0 METADATA_ONLY" as STATF <<ext>>
+}
+package "Z2 : Appareil critique et trois degrés d'absence" {
+  rectangle "Qualification [A]/[B]/[C] & degrés 1–3\nDegré 1 vérifié · Degré 2 réserve · Degré 3 silence\nRéserve F-01 (« démontre » vs « promet »)" as DEGR <<det>>
+}
+package "Z3 : Pipeline G0–G5 et double recollation CA-16" {
+  rectangle "Barrières G0 → G1 → G2 Wyvern\n100 % assertions au verdict supporté" as G02 <<det>>
+  rectangle "Double recollation aveugle CA-16 (G3)\nInspecteurs disjoints (60/60 T4/7/8, 40/40 T5)" as CA16 <<ok>>
+  rectangle "G4 duel gauntlet-loop & G5 lissage\nAnnexes automatisées CA-17 & audit visuel" as G45 <<det>>
+}
+LPLUS --> DEGR : ① admet sources hachées
+STATF --> DEGR : ① consigne refus sans lisser
+DEGR --> G02 : ② qualifie chaque énoncé
+G02 --> CA16 : ③ contrôle atomique
+CA16 --> G45 : ④ double validation aveugle
+legend bottom
+  **Vert scellé** : sources ouvertes L+ SHA-256 et assertions soutenues à 100 % (G2 / CA-16)
+  **Gris transparent** : consignation rigoureuse en Statut F (AO-01) sans extrapolation
+  **Bleu barrière** : séparation des rôles et chaîne indépendante G0–G5
+end legend
+@enduml

@@ -1,0 +1,180 @@
+{
+  "protocol_id": "MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0",
+  "freeze_date": "2026-12-02",
+  "inherits_from": "MLR-PRISMA-SCR-MANUEL-VOL8-2027-V1.0",
+  "strict_access_policy": {
+    "rule": "AO-01",
+    "bypass_forbidden": [
+      "HTTP_401",
+      "HTTP_403",
+      "HTTP_429",
+      "HTTP_451",
+      "WAF",
+      "CAPTCHA",
+      "Turnstile",
+      "Anubis",
+      "Paywall"
+    ],
+    "on_blocked": "record_as_status_F_and_exclude_from_evidentiary_corpus",
+    "max_metadata_only_pct_in_included_corpus": 0.0,
+    "require_fulltext_sha256": true
+  },
+  "open_apis": [
+    "arxiv",
+    "crossref",
+    "hal",
+    "doaj",
+    "europepmc",
+    "ietf_datatracker",
+    "nist_csrc",
+    "github_pinned",
+    "eurlex",
+    "osfi_bsif",
+    "statcan"
+  ],
+  "time_window": {
+    "primary": "2023-01-01/2026-12-02",
+    "foundational_classics_allowed_in_open_access": true,
+    "freeze_rule": "Aucune source postérieure à la date de gel arrêtée au 2 décembre 2026 (2026-12-02)."
+  },
+  "aacods_threshold": {
+    "scale_max": 12,
+    "min_score_for_inclusion": 9.0
+  },
+  "priority_open_seeds": [
+    {
+      "id": "SEED-CMP-01",
+      "citation": "Model Context Protocol Specification (2026-07-28), SEP-2596 & SEP-3398",
+      "identifier": "github:modelcontextprotocol/specification@2026-07-28",
+      "target_axes": ["D03", "D12"]
+    },
+    {
+      "id": "SEED-CMP-02",
+      "citation": "A2A Project Specification v1.0.1 & TCK v1.0.0.alpha3",
+      "identifier": "github:a2aproject/a2a-tck@1.0.0.alpha3",
+      "target_axes": ["D03", "D12"]
+    },
+    {
+      "id": "SEED-CMP-03",
+      "citation": "IETF RFC 8785 (JCS), RFC 7493 (I-JSON), RFC 7515 (JWS), RFC 8693, RFC 8707, RFC 9449, RFC 9943 (SCITT), RFC 9964 (ML-DSA JOSE/COSE)",
+      "identifier": "ietf:rfc8785,rfc8693,rfc8707,rfc9449,rfc9943,rfc9964",
+      "target_axes": ["D05", "D06", "D08"]
+    },
+    {
+      "id": "SEED-CMP-04",
+      "citation": "NIST FIPS 204 (ML-DSA), NIST FIPS 205 (SLH-DSA), NIST IR 8547 Final & ACVP-Server",
+      "identifier": "nist:fips204,fips205,ir8547",
+      "target_axes": ["D06", "D09", "D12"]
+    },
+    {
+      "id": "SEED-CMP-05",
+      "citation": "OpenTelemetry semantic-conventions v1.41.0 & semantic-conventions-genai (Development, 85 attributs)",
+      "identifier": "github:open-telemetry/semantic-conventions-genai",
+      "target_axes": ["D08"]
+    },
+    {
+      "id": "SEED-CMP-06",
+      "citation": "Debenedetti et al. (2025/2026), Defeating Prompt Injections by Design (CaMeL) & Can CaMeLs Talk?",
+      "identifier": "arXiv:2503.18813v2",
+      "target_axes": ["D07"]
+    },
+    {
+      "id": "SEED-CMP-07",
+      "citation": "Cemri et al. (NeurIPS 2025), Why Do Multi-Agent LLM Systems Fail? (MAST) & Pan et al. (2025), MAP",
+      "identifier": "arXiv:2503.13657,arXiv:2512.04123",
+      "target_axes": ["D01", "D05"]
+    },
+    {
+      "id": "SEED-CMP-08",
+      "citation": "Sumers et al. (2024), CoALA; Coase (1937); Chang & Geng (2025), SagaLLM; Chen et al. (2018), Metamorphic Testing",
+      "identifier": "DOI:10.1145/3143561",
+      "target_axes": ["D01", "D04", "D05", "D08"]
+    },
+    {
+      "id": "SEED-CMP-09",
+      "citation": "OWASP Agentic AI Top 10 Crosswalk (SRC-055 L+, hors genai.owasp.org)",
+      "identifier": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "target_axes": ["D07", "D12"]
+    },
+    {
+      "id": "SEED-CMP-10",
+      "citation": "BSIF E-23, LQ-2021-C25, EU AI Act (UE) 2024/1689 & (UE) 2026/1744, EN 18286:2026, DORA",
+      "identifier": "reg:bsif-e23,lq-2021-c25,eu-ai-act,dora",
+      "target_axes": ["D02", "D09", "D10", "D11"]
+    }
+  ],
+  "research_questions_and_queries": [
+    {
+      "id": "D01",
+      "theme": "Rupture épistémique, loi de Lusser, constance pass^k, économie cognitive de Coase et quadruple dette agentique",
+      "min_included_studies": 3,
+      "queries": ["\"Lusser\" OR \"pass^k\" OR \"MAST\" LLM multi-agent failure rate", "Coase transaction costs AI agents cognitive debt"]
+    },
+    {
+      "id": "D02",
+      "theme": "Architecture hybride 80/20, autonomie graduée L0–L4, noyau de contrôle possédé et harnais déterministe",
+      "min_included_studies": 3,
+      "queries": ["deterministic harness JSON Schema LLM agentic control plane", "autonomous AI agent levels HITL HOTL supervision"]
+    },
+    {
+      "id": "D03",
+      "theme": "Protocoles MCP 2026-07-28, A2A v1.0.1, AGNTCY/SLIM, paiements AP2, passerelles PEP et anti-verrouillage SaaS",
+      "min_included_studies": 3,
+      "queries": ["\"Model Context Protocol\" tool pinning schema drift", "\"Agent2Agent\" A2A AgentCard AI gateway PEP"]
+    },
+    {
+      "id": "D04",
+      "theme": "Ontologies financières FIBO/ISO 20022, contrats ODCS, mémoire CoALA bi-temporelle, ACL et encapsulation patrimoniale IT/OT",
+      "min_included_studies": 3,
+      "queries": ["CoALA memory architecture temporal knowledge graph ACL RAG", "anti-corruption layer mainframe EBCDIC OT gateway AI agent"]
+    },
+    {
+      "id": "D05",
+      "theme": "Orchestration sobre OO1–OO4, chorégraphie Event Mesh CloudEvents, exécution durable et Sagas compensatoires",
+      "min_included_studies": 3,
+      "queries": ["\"Saga\" \"Transactional Outbox\" idempotency AI agent", "CloudEvents AsyncAPI event-driven multi-agent orchestration"]
+    },
+    {
+      "id": "D06",
+      "theme": "Identités non humaines (NHI), SPIFFE/SPIRE, délégation OBO, CIBA, PKI 47 jours et transition post-quantique ML-DSA/SLH-DSA",
+      "min_included_studies": 3,
+      "queries": ["OAuth RFC 8693 OBO DPoP CIBA SPIFFE AI agent identity", "\"ML-DSA\" \"SLH-DSA\" HTTP 431 Transaction Tokens post-quantum"]
+    },
+    {
+      "id": "D07",
+      "theme": "Menaces OWASP ASI01–10, politiques hors modèle OPA/Rego, Règle de deux, séparation CaMeL, confinement et coupe-circuit SOC",
+      "min_included_studies": 3,
+      "queries": ["\"Open Policy Agent\" Rego \"Rule of Two\" CaMeL prompt injection", "OWASP agentic AI top 10 microVM WASI sandbox"]
+    },
+    {
+      "id": "D08",
+      "theme": "Observabilité OpenTelemetry GenAI, double couloir PII, scellage JCS/SCITT, bancs EvalOps Wilson et FinOps FOCUS v1.4",
+      "min_included_studies": 3,
+      "queries": ["OpenTelemetry \"semantic-conventions-genai\" SCITT RFC 9943 audit", "\"metamorphic testing\" Wilson confidence interval FinOps FOCUS AI"]
+    },
+    {
+      "id": "D09",
+      "theme": "Droit québécois (Loi 25, AMF), cadre prudentiel canadien (BSIF E-23, ACVM), EU AI Act, DORA et réversibilité contractuelle",
+      "min_included_studies": 3,
+      "queries": ["\"OSFI E-23\" OR \"BSIF E-23\" OR \"Loi 25\" automated decision", "\"EU AI Act\" \"DORA\" \"EN 18286\" AI governance"]
+    },
+    {
+      "id": "D10",
+      "theme": "Architectures financières réglementées, trois blueprints C01–C40, GitOps cognitif et anti-patrons agentiques",
+      "min_included_studies": 3,
+      "queries": ["financial services AI agent reference architecture GitOps", "enterprise AI agent anti-patterns production blueprint"]
+    },
+    {
+      "id": "D11",
+      "theme": "Prospective 2027–2035, trajectoires adaptatives DAPP, gouvernance duale AE/AS et préservation du capital humain",
+      "min_included_studies": 3,
+      "queries": ["Dynamic Adaptive Policy Pathways AI governance human oversight", "automation bias junior talent erosion AI workplace"]
+    },
+    {
+      "id": "D12",
+      "theme": "Homologation CRE-IA-2026-01, grille PRR-75, trousse exécutable Python/OPA, concordance inter-tomes et régime Wyvern G0–G5",
+      "min_included_studies": 3,
+      "queries": ["production readiness review AI agents deterministic compliance verification", "RFC 8785 NIST ACVP FIPS 204 205 software verification"]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Interfaces humain-agent sûres : transport AG-UI (JSON Patch), catalogue fermé A2UI et zéro code libre
+
+package "Z1 — AVANT (OWASP ASI01/ASI09) : Interface générative libre HTML/JS" {
+  rectangle "Code HTML / JS généré par le LLM" as N1 <<red>>
+  rectangle "Exécution directe navigateur :\ninjections XSS, hameçonnage et dérive visuelle" as N2 <<red>>
+  N1 .[#B91C1C].> N2 : Risque non auditable
+}
+
+package "Z2 — APRÈS (EXIG-ARC-03) : Canal AG-UI et catalogue fermé A2UI / MCP-UI" {
+  rectangle "① Agent émet STATE_DELTA typé\n(JSON Patch RFC 6902 + test anti-concurrence)" as N3 <<det>>
+  rectangle "Canal SSE / AG-UI structuré" as N4 <<det>>
+  rectangle "② Moteur d'interface : liste plate A2UI\nhomologuée (zéro JS généré)" as N5 <<green>>
+  rectangle "③ Rendu tiers confiné en iframe\nMCP-UI dépourvue de privilèges" as N6 <<green>>
+  rectangle "④ Audio duplex WebRTC (UDP/SRTP < 200 ms)\nsans contournement de validation d'écriture" as N7 <<det>>
+  N3 --> N4
+  N4 --> N5
+  N4 --> N6
+  N4 --> N7
+}
+
+legend bottom
+  **Rouge** : Exécution de HTML ou JavaScript généré par modèle (proscrite par EXIG-ARC-03)
+  **Vert émeraude** : Composants déclaratifs homologués A2UI et iframe isolée MCP-UI
+  **Bleu ardoise** : Transport d'état typé AG-UI / SSE (JSON Patch RFC 6902)
+end legend
+@enduml

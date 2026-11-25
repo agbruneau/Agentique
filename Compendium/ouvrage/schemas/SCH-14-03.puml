@@ -1,0 +1,57 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Passerelle IA physique MCP ↔ ROS 2/DDS : missions discrètes LOTO et arbitre matériel Simplex (≤ 1 ms)
+
+package "Z1 — Domaine entreprise IT (0,5–5 s) : Saga MCP/A2A et artefacts signés" {
+  rectangle "① Orchestrateur métier MCP/A2A\n(soumet mission discrète typée, 0 ordre continu)" as N1 <<blue>>
+  rectangle "Déploiement hors ligne signé TUF / Sigstore\n(poids, politiques, Skills ADR-028)" as N2 <<blue>>
+  N1 --> N2
+}
+
+package "Z2 — Sas industriel IDMZ et registre LOTO" {
+  rectangle "② Vérification signature TUF/Sigstore\n& statut consignation humaine LOTO" as N3 <<amber>>
+  rectangle "Passerelle traductrice MCP ↔ ROS 2/DDS\n(proscrit commande continue de trajectoire LLM)" as N4 <<amber>>
+  N2 --> N3
+  N3 --> N4
+}
+
+package "Z3 — Domaine temps réel OT (10–30 ms) : Arbitre matériel Simplex ≤ 1 ms" {
+  rectangle "③ Bus temps réel ROS 2 / DDS\n(cycle 10–30 ms)" as N5 <<det>>
+  rectangle "④ Arbitre matériel Simplex ≤ 1 ms\n(IEC 61508 / ISO 10218-1:2025 / ISO 3691-4)" as N6 <<red>>
+  rectangle "Actionneur physique / repli sûr matériel\n(indépendant du LLM)" as N7 <<red>>
+  N4 --> N5
+  N5 --> N6 : Surveille enveloppes cinématiques
+  N6 --> N7 : Reprise ≤ 1 ms si dépassement
+}
+
+legend bottom
+  **Bleu IT** : Plan entreprise asynchrone MCP/A2A et artefacts signés TUF/Sigstore
+  **Or sécurité** : Sas de consignation humaine LOTO et filtrage en missions discrètes
+  **Rouge sûreté** : Arbitre déterministe Simplex ≤ 1 ms conforme IEC 61508 et ISO 10218-1
+end legend
+@enduml

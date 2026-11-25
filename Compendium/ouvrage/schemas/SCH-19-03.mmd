@@ -1,0 +1,29 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Boussole taxonomique unifiée"]
+    IN["Donnée externe ou mémoire<br/>non vérifiée"]:::prob
+    HMAC["① Sceau HMAC<br/>UNTRUSTED_EXTERNAL"]:::det
+    TAX["② Matrice OWASP ASI01–10 /<br/>MAESTRO × maillons Q-A..Q-D"]:::det
+  end
+  subgraph Z2["Z2 : Treillis HMAC et quarantaine (ASI06)"]
+    MEM["Mémoire ou outil d'écriture<br/>sous suivi de teinte"]:::prob
+    CEDAR{"③ Moteur de règles<br/>donnée teintée ?"}:::ok
+    BLOC["Refus fermé : blocage mutation<br/>& quarantaine mémorielle"]:::danger
+    EXEC["Exécution bornée autorisée<br/>(source fiable attestée)"]:::ok
+  end
+  subgraph Z3["Z3 : Harnais Red Team CI/CD"]
+    RT["④ Attaquant adaptatif CI/CD<br/>ASR_plan vs ASR_action = 0,0 %"]:::det
+  end
+  IN -.-> HMAC --> TAX --> MEM -.-> CEDAR
+  CEDAR -->|Oui| BLOC
+  CEDAR -->|Non| EXEC
+  RT -.->|Bloque PRR S si > 0,0 %| CEDAR
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F8FAFC,stroke:#7E22CE,stroke-width:1.2px
+  style Z2 fill:#F8FAFC,stroke:#BE185D,stroke-width:1.2px
+  style Z3 fill:#F8FAFC,stroke:#047857,stroke-width:1.2px

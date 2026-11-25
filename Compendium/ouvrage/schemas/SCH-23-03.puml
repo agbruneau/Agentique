@@ -1,0 +1,86 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Le volant de distillation DSPy → Multi-LoRA : petits modèles 10× plus sobres
+package "Z1 : Collecte qualifiée et sas Loi 25" {
+  rectangle "Sagas réussies & arbitrages HOTL\nTraces validées en production" as COLL <<prob>>
+  rectangle "Sas Loi 25 & canaris Carlini\nPurge irréversible RP + anti-mémorisation" as SAS <<det>>
+}
+package "Z2 : Compilation DSPy et affinage Multi-LoRA" {
+  rectangle "Compilateur DSPy / MIPROv2\nSignatures typées optimisées" as DSPY <<det>>
+  rectangle "Affinage SFT + DPO Multi-LoRA\nSLM spécialisés 3B–8B par domaine" as LORA <<prob>>
+}
+package "Z3 : Porte pass^5 et sentinelle 2 %" {
+  rectangle "Banc scellé E2 : porte pass^5\n& sentinelle régression ≤ 2 % (V_min)" as GATE <<ok>>
+  rectangle "Palier 1 du routeur frugal\nPromotion SLM (10× plus sobre)" as PROD <<ok>>
+  rectangle "Rejet / maintien modèle maître\nÉchec parité ou fuite canari" as REJ <<danger>>
+}
+COLL .[#B45309].> SAS : ① traces & corrections
+SAS --> DSPY : ② jeu assaini vérifié
+DSPY --> LORA : ③ signatures & poids
+LORA .[#B45309].> GATE : ④ examen probatoire
+GATE --> PROD : pass^5 & écart ≤ 2 %
+GATE --> REJ : dérive > 2 %
+legend bottom
+  **Bleu collecte** : traces validées assainies Loi 25 et contrôlées par canaris Carlini
+  **Ambre distillation** : compilation DSPy/MIPROv2 et adaptateurs SLM Multi-LoRA (3B–8B)
+  **Vert qualification** : barrière pass^5 et sentinelle V_min à 2 % avant routage palier 1
+end legend
+@enduml

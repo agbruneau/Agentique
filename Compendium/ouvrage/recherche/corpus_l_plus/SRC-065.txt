@@ -1,0 +1,589 @@
+Ligne directrice E-23 - Gestion du risque de modélisation (2027)
+
+Informations
+
+Type de publication
+
+Ligne directrice
+
+Catégorie
+
+Saines pratiques commerciales et financières
+
+Date
+
+11 septembre 2025
+
+Secteur
+
+Banques,
+
+Succursales de banques étrangères,
+
+Sociétés d'assurance vie et de secours mutuels,
+
+Sociétés des assurances multirisques,
+
+Sociétés de fiducie et de prêts
+
+Date d'entrée en vigueur
+
+Le 1 mai 2027
+
+No
+
+E-23
+
+Générer un PDF
+
+Table des matières
+
+Documents connexes
+
+Ligne directrice E-23, Gestion du risque de modélisation (2027) – Lettre
+
+Document d’information : Ligne directrice E-23, Gestion du risque de modélisation
+
+Déclaration du BSIF sur la publication par le Conseil de stabilité financière de saines pratiques à observer pour assurer une adoption responsable de l'intelligence artificielle
+
+A. Vue d’ensemble
+
+On observe une croissance rapide de la numérisation et de l’utilisation de modèles dans le secteur des services financiers, croissance qui est amplifiée par l’essor des modèles d’intelligence artificielle et d’apprentissage automatique (IANote de bas de page 1 et AA). De fait, les institutions se fient de plus en plus à des modèles pour appuyer ou orienter la prise de décisions, notamment dans des secteurs d’activité qui, traditionnellement, n’avaient pas recours à la modélisation. Les modèles exploitent désormais des sources de données plus variées et des techniques plus complexes, ce qui accentue différents aspects du risque de modélisation. Or, un risque de modélisation accru pourrait exposer les institutions à des pertes financières attribuables à des décisions erronées, à des pertes opérationnelles, à des conséquences juridiques ou à une atteinte à leur réputation. De surcroît, les modèles fondés sur des technologies en rapide évolution, comme l’IA, peuvent exacerber ce risque, mais aussi d’autres risques. Enfin, les modèles caractérisés par l’apprentissage automatique dynamique et la prise de décisions autonome pourraient devenir chose courante.
+
+À la lumière de ce qui précède, les institutions doivent être conscientes de l’influence que peut avoir l’utilisation de modèles dans l’exercice de leurs activités sur leur profil de risque et mettre en place des pratiques efficaces de gestion des risques pour atténuer ces derniers. Le risque de modélisation doit être géré en tout temps avec intégrité, en particulier dans un monde où de nouveaux cas d’utilisation, notamment ceux reposant sur l’IA, jouent un rôle de plus en plus important dans les activités quotidiennes.
+
+A.1 Objet
+
+La présente ligne directrice énonce, sous forme de principes, les attentes du BSIF à respecter pour assurer l’efficacité de la gestion du risque de modélisation (GRM) à l’échelle de l’entreprise selon une approche fondée sur le risque.
+
+A.2 Portée
+
+Cette ligne directrice s’applique à l’ensemble des institutions financières fédérales, y compris les succursales de banques étrangères et les succursales de sociétés d’assurance étrangères, dans la mesure où les attentes qui y sont énoncées concordent avec les exigences et les obligations légales applicables aux activités qu’elles exercent au Canada, telles qu’elles sont énoncées dans la ligne directrice E-4, Entités étrangères exploitant une succursale au Canada .
+
+A.3 Champ d’application
+
+L’application de la présente ligne directrice est fonction du risque et proportionnelle à différents facteurs propres à l’institution :
+
+sa taille;
+
+sa stratégie;
+
+son profil de risque;
+
+la nature, la portée et la complexité de ses activités;
+
+son interdépendance (autrement dit la probabilité que des perturbations la touchant puissent nuire à d’autres institutions financières, au système financier ou à l’économie en général).
+
+A.4 Termes clés
+
+Modèle/modélisation
+
+Application de techniques statistiques ou d’hypothèses théoriques, empiriques ou fondées sur un jugement, notamment des méthodes d’IA et d’AA, qui traite des données en entrée pour générer des résultats. Un modèle comporte trois volets distincts :
+
+les données d’entrée, qui peuvent aussi comprendre les hypothèses pertinentes;
+
+le traitement, qui permet d’établir des liens entre les données d’entrée;
+
+les résultats, qui permettent de présenter les données de sortie dans un format utile et pertinent pour les secteurs d’activité et les fonctions de contrôle.
+
+Risque de modélisation
+
+Risque de répercussions financières négatives (par exemple, insuffisance de fonds propres, pertes financières, insuffisance de liquidités, pertes opérationnelles ou atteinte à la réputation) découlant de la conception, du développement, du déploiement et/ou de l’utilisation d’un modèle. Le risque de modélisation est le risque inhérent à l’utilisation d’un modèle et a trait aux caractéristiques fondamentales de celui-ci et à son importance relative pour l’institution, autrement dit, ses répercussions potentielles sur les catégories de risque décrites dans le Cadre de surveillanceNote de bas de page 2 du BSIF.
+
+Risque de modélisation résiduel
+
+Pour l’application de la présente ligne directrice, risque qui subsiste après la mise en œuvre par l’institution de mécanismes de contrôle, de processus de validation, de mesures de suivi et d’autres mesures d’atténuation du risque. En d’autres termes, le risque de modélisation résiduel représente la part du risque qui subsiste malgré les efforts déployés par l’institution pour cerner, évaluer et atténuer le risque de modélisation.
+
+Nota : Dans le reste de la ligne directrice, risque de modélisation s’entend du risque de modélisation inhérent, sauf indication contraire.
+
+Cote de risque de modélisation
+
+Niveau de risque de modélisation catégoriel associé au niveau inhérent de risque de modélisation, d’après des critères quantitatifs et qualitatifs qui tiennent compte des vulnérabilités intrinsèques du modèle et de l’importance relative des répercussions découlant de son utilisation.
+
+Cycle de vie d’un modèle
+
+Éléments qui définissent la vie d’un modèle, ce qui comprend toutes les étapes intervenant dans la conception du modèle, son exploitation et sa tenue à jour, jusqu’à sa mise hors service. Plus précisément, les éléments du cycle de vie d’un modèle sont les suivants : conception (raison d’être, données, développement, etc.), validation, déploiement, suivi et mise hors service. Ces étapes ne sont pas nécessairement séquentielles et peuvent varier selon le type de modèle, la structure organisationnelle et le cas d’utilisation.
+
+Cadre de gestion du risque de modélisation (GRM)
+
+Ensemble de politiques et de procédures qui reflète la propension de l’institution à prendre des risques de modélisation et qui définit les exigences de gouvernance à l’égard de la gestion de ce type de risque. Le cadre de GRM énonce notamment les attributions des différentes parties prenantes et établit des processus pour cerner, évaluer, gérer et surveiller le risque de modélisation, et en rendre compte, à l’échelle de l’entreprise et tout au long du cycle de vie d’un modèle.
+
+Inventaire des modèles
+
+Système utilisé par une institution pour stocker des informations clés sur les modèles et qui sert de base à la production de rapports. Y sont consignés tous les modèles qui présentent un risque inhérent pour l’institution jugé non négligeable.
+
+Responsable de modèle
+
+Entité(s) ou personne(s) chargée(s) de coordonner le développement, la mise en œuvre, le déploiement et le suivi continu d’un modèle, et d’en assurer l’administration, notamment les documents et les rapports s’y rattachant. Il peut s’agir du développeur ou de l’utilisateur du modèle.
+
+Développeur de modèle
+
+Entité(s) ou personne(s) chargée(s) de concevoir, de développer et d’évaluer un modèle, et de consigner par écrit la méthode y afférente.
+
+Chargé de validation de modèle
+
+Entité(s) ou personne(s) chargée(s) de valider la rigueur conceptuelle, les données d’entrée, la méthode, les hypothèses et la performance du modèle. Il peut aussi lui incomber de présenter des recommandations au développeur et à l’utilisateur concernant l’adéquation d’un modèle au regard des objectifs qui ont été définis, et d’évaluer les résultats du suivi du modèle dans le cadre d’un processus de validation périodique ou continu.
+
+Approbateur de modèle
+
+Entité(s), personne(s) ou comité(s) habilité(s) à approuver l’utilisation d’un modèle au sein de l’institution, généralement après avoir pris en considération les constatations formulées par le chargé de validation du modèle et d’autres exigences en matière de gouvernance. Ce rôle fait souvent partie d’un organe de gouvernance de niveau supérieur (par exemple, un comité de gestion du risque de modélisation ou une fonction de la haute direction) qui veille à ce que chaque modèle soit conforme à la propension de l’institution à prendre des risques et à ses objectifs stratégiques.
+
+Utilisateur de modèle
+
+Entité(s) ou personne(s) qui se fient aux données de sortie d’un modèle pour éclairer des décisions opérationnelles.
+
+Intervenant de modèle
+
+Entité(s) ou personne(s) qui interviennent dans le cycle de vie d’un modèle, son utilisation et sa gouvernance (par exemple, toutes les parties définies ci-dessus, l’équipe juridique, la fonction de conformité).
+
+A.5 Résultats et attentes
+
+Voici les résultats attendus d’une GRM efficace :
+
+Le risque de modélisation est bien compris et bien géré dans l’ensemble de l’entreprise.
+
+Le risque de modélisation est géré selon une approche fondée sur le risque.
+
+La gouvernance des modèles couvre l’ensemble du cycle de vie des modèles.
+
+B. Gestion du risque de modélisation à l’échelle de l’entreprise
+
+Résultat attendu 1 : Le risque de modélisation est bien compris et bien géré dans l’ensemble de l’entreprise.
+
+L’institution est consciente que le risque de modélisation est de nature transversale, et la haute direction a une vision globale des risques à l’échelle de l’entreprise. Les intervenants de modèle connaissent l’usage prévu d’un modèle donné, les limites qui lui sont inhérentes et les possibles effets négatifs de son utilisation à l’égard de leurs activités. Une gouvernance adéquate est en place pour gérer et contrôler le risque de modélisation. L’institution est responsable de l’utilisation qu’elle fait des modèles.
+
+B.1 Facilitation organisationnelle
+
+Principe 1.1 : Des structures hiérarchiques efficaces et une dotation adéquate en ressources doivent permettre une saine gouvernance des modèles.
+
+Conformément à la ligne directrice Gouvernance d’entreprise du BSIF, la haute direction est responsable :
+
+de définir et de mettre en application les rôles, les responsabilités et les attentes de manière à assurer l’efficacité de la GRM dans l’ensemble de l’entreprise;
+
+de veiller à affecter le personnel qui convient à la GRM et de s’assurer que ce personnel possède les compétences et l’expérience nécessaires, en particulier dans le domaine des nouvelles technologies comme l’IA;
+
+de faire en sorte que le risque de modélisation soit bien communiqué et fasse l’objet de rapports appropriés au conseil d’administration.
+
+La GRM doit faire intervenir une équipe pluridisciplinaire représentant un large éventail de compétences techniques et de fonctions issues des différents secteurs de l’institution, y compris des professionnels du droit ou de l’éthique, s’il y a lieu. Cette approche globale est d’autant plus indispensable lorsqu’une institution adopte des technologies avancées comme l’IA et l’AA, car celles-ci peuvent accroître considérablement la complexité des modèles et leurs répercussions potentielles.
+
+Des ressources adéquates doivent être affectées à la GRM, et ces ressources doivent être allouées de façon optimale à la gestion des risques recensés. L’institution doit être en mesure de démontrer que sa structure et ses ressources contribuent à assurer la solidité du cadre de gouvernance.
+
+B.2 Cadre de gestion du risque de modélisation
+
+Principe 1.2 : Le cadre de GRM doit mettre en adéquation les activités de prise de risque de l’institution avec ses objectifs stratégiques et sa propension à prendre des risques.
+
+L’institution doit établir un cadre de GRM qui :
+
+s’inscrit dans le cadre de gestion du risque et de gouvernance plus large de l’institution, tel qu’il est décrit dans la ligne directrice Gouvernance d’entreprise du BSIF;
+
+tient compte de la propension de l’institution à prendre des risques de modélisation;
+
+définit les processus et les exigences à suivre pour cerner, évaluer, gérer et surveiller le risque de modélisation, et en rendre compte;
+
+comporte des principes directeurs clairs sur les principaux volets du cadre de GRM, notamment le recensement des modèles, l’inventaire des modèles, les cotes de risque de modélisation et les exigences relatives à la gouvernance du cycle de vie des modèles;
+
+définit les moyens utilisés par l’institution pour rendre compte du risque de modélisation de manière transparente et systématique à différents niveaux de l’entreprise;
+
+fait l’objet d’un examen périodique, en particulier lorsque de nouvelles technologies font leur apparition;
+
+englobe les modèles ou les données provenant de sources externes, comme des bureaux étrangers ou des tiers fournisseurs (conformément à la ligne directrice B-10, Gestion du risque lié aux tiers du BSIF).
+
+B.3 Utilisation des modèles
+
+Principe 1.3 : Les modèles doivent être adaptés à leurs objectifs opérationnels.
+
+L’institution ne doit mettre en service un modèle que si celui-ci contribue de manière significative à la prise de décisions, à l’évaluation du risque ou à la réalisation des objectifs opérationnels, et s’il génère des résultats fiables qui sont conformes à l’usage prévu. Une GRM efficace est utile à l’institution, car elle favorise l’adoption et l’utilisation sûres de modèles qui serviront les objectifs opérationnels.
+
+Pour développer, mettre en service et utiliser un modèle, l’institution doit avoir un objectif clair et disposer des données, des technologies et des systèmes adéquats. Ces éléments doivent par conséquent être pris en considération dans toute discussion sur le risque de modélisation.
+
+À mesure que les besoins organisationnels évoluent, les modèles qui ne sont plus adaptés à leur objectif doivent être modifiés, remplacés ou mis hors service.
+
+C. Gestion du risque de modélisation selon une approche fondée sur le risque
+
+Résultat attendu 2 : Le risque de modélisation est géré selon une approche fondée sur le risque.
+
+L’institution met en œuvre une approche fondée sur le risque qui garantit que les exigences en matière de GRM sont à la mesure du niveau de risque de modélisation qu’elle a déterminé. Elle consigne par écrit et met en œuvre un cadre de GRM fondé sur le risque de manière à assurer la cohérence entre les entités fonctionnelles et opérationnelles. L’institution détermine les sources de risques de modélisation et veille à ce que suffisamment de ressources soient affectées à la gestion, à l’atténuation ou à l’acceptationNote de bas de page 3 de ces risques, s’il y a lieu. Un inventaire des modèles permet de consigner efficacement les modèles comportant un risque non négligeable ainsi que des informations clés sur ces modèles, dont les cotes de risque de modélisation. La démarche de cotation du risque de modélisation tient compte de tous les aspects importants du risque de modélisation inhérent. La gouvernance des modèles et les autres éléments de la GRM sont proportionnés au niveau de risque de modélisation cerné.
+
+C.1 Recensement des modèles
+
+Principe 2.1 : L’institution doit recenser tous les modèles en usage ou récemment mis hors service et en effectuer le suivi.
+
+L’institution doit disposer de processus bien définis pour recenser périodiquement les modèles utilisés à l’échelle de l’entreprise, y compris ceux de fournisseurs et de tiers. Ces processus doivent comprendre :
+
+la réalisation d’inventaires au sein de l’institution pour recenser les nouveaux modèles utilisés et actualiser l’état des modèles existants;
+
+le triage des modèles, notamment pour déterminer si un modèle comporte un risque de modélisation inhérent non négligeable et s’il doit être soumis aux exigences de gouvernance du cycle de vie des modèles (nota : le BSIF est conscient que, parmi les modèles recensés, conformément à la section A.4 « Termes clés » ci-dessus, certains ne présentent pas de risque de modélisation et peuvent donc ne pas nécessiter une gouvernance de l’ensemble de leur cycle de vie);
+
+l’attribution d’une cote provisoire aux nouveaux modèles ou la révision de la cote de risque d’un modèle existant si l’objet ou l’usage de celui-ci a beaucoup changé;
+
+la consignation de tous les modèles considérés comme présentant un risque de modélisation inhérent non négligeable dans l’inventaire des modèles de l’institution.
+
+L’inventaire des modèles de l’institution doit :
+
+regrouper tous les modèles dont le risque inhérent pour l’institution est jugé non négligeable;
+
+être tenu à jour à l’échelle de l’entreprise, contenir des informations clés sur les modèles (voir l’annexe A) et servir de base à la gestion et aux déclarations réglementaires;
+
+être précis et évolutif, et faire l’objet de contrôles rigoureux;
+
+être mis à jour en temps utile, notamment pour tenir compte des modifications des modèles, des cotes de risque, ou de l’évolution de leur utilisation ou de leur performance;
+
+inclure les modèles mis hors service pendant une période que l’institution juge raisonnable.
+
+C.2 Cote de risque de modélisation
+
+Principe 2.2 : L’institution doit établir une démarche de cotation du risque de modélisation qui tient compte des principaux aspects de ce type de risque.
+
+Une démarche de cotation du risque qui repose sur le risque de modélisation inhérent doit être mise en œuvre, de manière à refléter les vulnérabilités du modèle et l’importance relative des répercussions qu’il peut avoir. L’institution s’assure ainsi que ses modèles les plus importants ou les plus complexes font l’objet d’une validation plus attentive, tandis que les modèles moins risqués sont soumis à des exigences moindres.
+
+La démarche de cotation du risque doit s’appuyer sur des critères clairs et mesurables pour chaque aspect du risque et intégrer des facteurs quantitatifs et qualitatifs :
+
+Les facteurs quantitatifs s’entendent notamment de l’importance, de la taille et de la croissance du portefeuille visé par le modèle (s’il y a lieu) ou des répercussions potentielles sur le plan opérationnel, financier ou de la sécurité.
+
+Les facteurs qualitatifs comprennent l’usage ou les objectifs opérationnels, la complexité ou le degré d’autonomie du modèle, la fiabilité des données d’entrée, les répercussions sur les clients ou le risque de non-conformité à la réglementation.
+
+L’institution peut classer les facteurs de risque en fonction d’autres aspects propres au contexte et aux pratiques de l’institution (par exemple, « vulnérabilité et importance relative » ou « incertitude et répercussions »).
+
+L’institution doit attribuer une cote de risque de modélisation à chaque modèle selon des processus bien définis. Ces processus peuvent inclure l’attribution d’une cote de risque temporaire qui est ensuite confirmée lors de la phase de validation ou d’approbation du cycle de vie du modèle. La cote de risque de modélisation doit être régulièrement réexaminée et actualisée au besoin, notamment lorsqu’un événement déclencheur survient (comme une baisse de performance ou une évolution importante de l’utilisation, des données ou de l’infrastructure du modèle).
+
+L’institution peut inclure une catégorie de cote de risque qui s’applique aux modèles présentant un risque de modélisation inhérent négligeable et qui, par conséquent, exempte ces modèles des exigences de gouvernance de l’ensemble de leur cycle de vie. Il convient alors de mettre en œuvre un processus rigoureux d’approbation et de suivi de ces exemptions.
+
+Les modèles développés à l’externe doivent faire l’objet d’une évaluation distincte avant de se voir attribuer une cote de risque de modélisation.
+
+Soulignons qu’il est quasiment impossible d’éliminer complètement le risque de modélisation, même avec un cadre de GRM bien structuré; des éléments d’incertitude ou des limites subsisteront même après l’application de mesures de contrôle et d’atténuation. Aussi, le BSIF ne s’attend pas à ce que le risque de modélisation résiduel détermine les principales activités de gouvernance et de supervision des modèles. Pour autant, le fait d’avoir une visibilité du risque de modélisation inhérent et résiduel donne une idée de l’ampleur des mesures d’atténuation nécessaires et est donc utile dans la communication d’informations à la haute direction.
+
+Si le risque de modélisation dépasse les limites de la propension à prendre des risques de l’institution, celle-ci doit mettre en œuvre les mesures correctives appropriées.
+
+C.3 Rigueur des activités de gestion du risque
+
+Principe 2.3 : La portée, l’échelle et la rigueur des activités de GRM doivent être à la mesure du risque introduit par le modèle.
+
+Le cadre de GRM de l’institution doit définir la portée, l’échelle et la rigueur des exigences de gouvernance des modèles tout au long de leur cycle de vie, en fonction de la cote de risque de modélisation inhérent.
+
+La cote de risque de modélisation inhérent doit dicter :
+
+la fréquence, la rigueur et la portée des activités de validation du modèle;
+
+les exigences documentaires;
+
+le niveau de responsabilité requis pour approuver le modèle et les exemptions, au besoin;
+
+la fréquence, la rigueur et la portée des activités de suivi du modèle;
+
+l’intervalle auquel la cote de risque est réévaluée.
+
+D’après l’évaluation qui a été faite après la validation du modèle, et selon la propension de l’institution à prendre des risques, la cote de risque de modélisation doit également déterminer :
+
+les limites ou contraintes quant à l’utilisation du modèle (par exemple, limiter la portée du modèle, mettre en œuvre des mesures de protection supplémentaires, voire modifier la démarche de modélisation);
+
+la rigueur de la démarche de suivi (par exemple, les modèles à risque élevé comportant des limites peuvent nécessiter une validation plus attentive lors des activités de suivi);
+
+les mesures de contrôle et d’atténuation utilisées pour gérer le risque de modélisation résiduel (par exemple, affecter des réserves de fonds propres pour couvrir les pertes potentielles, soumettre le modèle à un niveau de prudence plus important et établir des plans d’urgence).
+
+Des exigences de GRM distinctes peuvent également être appliquées en fonction d’autres critères (comme le type de modèle), mais elles doivent venir s’ajouter aux exigences principales fondées sur le risque. L’institution doit en outre s’assurer que ses capacités de GRM sont adaptées aux niveaux de complexité globaux. Par exemple, une utilisation importante de techniques d’IA et d’AA de pointe doit s’accompagner d’une gouvernance et d’une supervision plus évoluées.
+
+D. Gestion du cycle de vie des modèles
+
+Résultat attendu 3 : La gouvernance des modèles englobe l’ensemble du cycle de vie des modèles.
+
+L’institution gère les risques découlant de chaque élément du cycle de vie des modèles. Selon la nature du modèle et l’utilisation qui en est faite, son cycle de vie global peut varier. Les éléments du cycle de vie comprennent la conception (raison d’être du modèle, acquisition des données et développement du modèle), la validation, le déploiement et le suivi du modèle. L’institution doit disposer de processus, de procédures et de mécanismes de contrôle rigoureux et fiables tout au long du cycle de vie du modèle.
+
+D.1 Politiques, procédures et mécanismes de contrôle
+
+Principe 3.1 : Les politiques, procédures et mécanismes de contrôle relatifs à la GRM doivent être rigoureux et souples, et aboutir à des exigences efficaces qui sont appliquées tout au long du cycle de vie des modèles.
+
+Les politiques, procédures et mécanismes de contrôle d’une institution, qui s’appliquent à l’ensemble du cycle de vie des modèles, sont des éléments cruciaux du cadre de GRM. Ils doivent :
+
+s’appliquer à tous les modèles de manière proportionnée au risque;
+
+garantir que les structures et pratiques de gouvernance demeurent saines et cohérentes dans l’ensemble de l’entreprise;
+
+définir explicitement les responsabilités et l’obligation de rendre des comptes des intervenants de modèle (par exemple, les responsables, les chargés de validation et les utilisateurs);
+
+désigner et mobiliser les principaux intervenants (comme les entités opérationnelles et les équipes suivantes : science des données, conformité, éthique et questions juridiques, technologies de l’information et gestion du risque) dès le début du cycle de vie du modèle;
+
+garantir le maintien d’un niveau d’indépendance et d’objectivité approprié;
+
+être suffisamment souples pour s’adapter à l’évolution des technologies, aux différents types de modèles – ce qui est particulièrement crucial compte tenu de la nature opaque, ou « boîte noire », et autonome de nombreux modèles d’IA et d’AA – aux différents niveaux de risque de modélisation et aux changements organisationnels;
+
+être consignés par écrit de manière exhaustive et détaillée.
+
+D.2 Éléments du cycle de vie des modèles
+
+Conception des modèles
+
+La conception d’un modèle implique notamment :
+
+de définir clairement la raison d’être du modèle à l’échelle organisationnelle;
+
+de respecter des normes qui garantissent la qualité et l’exactitude des données;
+
+de suivre des processus de développement de modèle appropriés.
+
+Raison d’être du modèle
+
+Les responsables du modèle doivent définir clairement la raison pour laquelle un nouveau modèle est mis en service ou expliquer pourquoi un modèle existant est modifié. Ils doivent notamment :
+
+exposer précisément l’objectif du modèle, y compris son objet, les éléments auxquels il s’appliquent et l’utilisation qui sera faite des données de sortie (dans le cas d’une modification de modèle, il faut justifier les changements apportés);
+
+déterminer le cas d’utilisation opérationnelle spécifique du modèle et évaluer le risque lié à son usage prévu.
+
+Lorsqu’ils définissent la raison d’être d’un modèle faisant appel à des techniques de pointe, comme l’IA ou l’AA, les responsables doivent prendre en compte plusieurs autres facteurs qui tiennent à la nature même du modèle, notamment :
+
+le niveau de transparence et d’explicabilité nécessaire;
+
+la nécessité de mettre en place d’autres mécanismes de contrôle, en particulier dans le cas des « approches boîte noire » ou des modèles autonomes;
+
+la possibilité que le modèle génère des résultats biaisés, ait des répercussions sociales et éthiques néfastes ou engendre un risque d’atteinte à la vie privée.
+
+Données afférentes aux modèles
+
+Principe 3.2 : Les données utilisées pour développer un modèle doivent convenir à l’usage prévu.
+
+Les sources, les formats et les types de données peuvent varier. Les données peuvent être structurées, semi-structurées ou non structurées. De surcroît, elles peuvent être générées de façon synthétique ou calculées à partir de sources indirectes. Les conséquences de données erronées (par exemple, en raison d’inexactitudes, de biais ou d’enregistrements manquants) sont importantes, surtout dans le cas des modèles d’IA et d’AA, car ceux-ci peuvent facilement reproduire des relations de données qui n’ont pas lieu d’être et les conserver dans les données de sortie.
+
+L’institution doit adopter des pratiques rigoureuses de gouvernance des données qui comportent des normes concernant la collecte et le stockage des données utilisées dans les modèles, et l’accès à celles-ci. Ces normes doivent être intégrées aux pratiques de gouvernance, à la stratégie et à la gestion des données à l’échelle de l’entreprise. Les données exploitées aux fins du développement d’un modèle doivent être :
+
+exactes et adaptées à l’usage prévu (c’est-à-dire qu’elles sont exemptes d’erreurs significatives et que les biais sont compris et gérés);
+
+utiles et représentatives (c’est-à-dire qu’elles sont le reflet de la population cible prévue du modèle);
+
+conformes (c’est-à-dire qu’elles respectent les exigences législatives, réglementaires et internes relatives à l’éthique des données et à la protection de la vie privée des clients);
+
+traçables (c’est-à-dire que leur traçabilité et leur provenance sont consignées par écrit);
+
+actuelles (c’est-à-dire qu’elles sont mises à jour à une fréquence appropriée).
+
+Les critères susmentionnés ont notamment pour but d’améliorer l’explicabilité du modèle et les données de sortie connexes. Soulignons qu’il faut tenir compte du fait qu’il est possible que les données comportent des biais indésirables, qui peuvent se traduire par des données de sortie indues et donc un risque d’atteinte à la réputation.
+
+L’institution doit en outre :
+
+effectuer régulièrement des vérifications approfondies de la qualité des données (par exemple, détection des valeurs aberrantes, analyse des valeurs manquantes et évaluations de la cohérence);
+
+mettre en œuvre des mécanismes de contrôle pour assurer la qualité et consigner la provenance et l’usage des données synthétiques et des données indirectes;
+
+disposer de mécanismes de contrôle pour garantir des activités de nettoyage des données adéquates (par exemple, traitement des valeurs inexactes et manquantes).
+
+Développement des modèles
+
+Principe 3.3 : L’institution doit avoir défini des processus de développement de modèles qui établissent des normes claires en matière de performance et de consignation.
+
+Le développement d’un modèle suppose de choisir des méthodes, des données et des algorithmes fiables sur le plan conceptuel. Dans le cas des modèles d’IA et d’AA, le développement nécessite également une bonne formation et une optimisation des paramètres. L’institution doit établir des pratiques de développement de modèles qui sont claires, systématiques et reproductibles, et qui comprennent :
+
+des normes de consignation des caractéristiques du modèle, y compris des éléments comme :
+
+la configuration et l’exécution du modèle,
+
+les limites et les restrictions d’utilisation;
+
+des descriptions détaillées des processus de création et de tenue à jour des données utilisées pour développer le modèle, et d’accès à celles-ci;
+
+des descriptions détaillées des hypothèses et de la méthode afférentes au modèle;
+
+une définition du rôle qu’a le jugement des experts, qui précise notamment quels experts interviennent et quelle est l’influence de leur contribution sur les données de sortie;
+
+des analyses et des tests de performance effectués par les développeurs;
+
+des principes directeurs sur le choix de méthodes, de données (y compris l’application de transformations de variables) et d’algorithmes fiables sur le plan conceptuel;
+
+des exigences en matière d’explicabilité, qui peuvent varier en fonction du but du modèle, de son degré d’autonomie, des exigences réglementaires ou des répercussions potentielles sur les clients et les intervenants;
+
+des critères de performance et autres critères de sélection du modèle;
+
+des normes quant à la manière dont les données de sortie du modèle sont utilisées et déclarées;
+
+des critères de performance et autres critères de suivi du modèle.
+
+Validation des modèles
+
+Principe 3.4 : L’institution doit disposer d’un processus qui permet d’évaluer de manière indépendante la rigueur conceptuelle et la performance des modèles.
+
+Le processus de validation des modèles doit être indépendant du processus de développement. Il doit permettre de confirmer que les modèles sont bien définis, qu’ils fonctionnent comme prévu et qu’ils sont adaptés à leur objectif. L’institution peut faire appel à des chargés de validation internes ou à des tiers objectifs. La portée et la fréquence des validations des modèles doivent être proportionnées à la cote de risque de modélisation. Parmi les événements qui doivent entraîner la réalisation d’une du modèle, on peut citer :
+
+le développement de nouveaux modèles;
+
+des modifications du modèle (dont les changements apportés aux algorithmes, aux paramètres ou aux éléments opérationnels connexes);
+
+des défaillances du modèle (par exemple, lorsque les activités de suivi mettent en évidence des erreurs importantes, des dérives ou des violations des seuils);
+
+des changements importants dans les données (par exemple, nouvelles sources de données, définitions de données modifiées ou variations de la qualité des données);
+
+les validations périodiques prévues fondées sur le risque.
+
+Les validations de modèles peuvent comprendre les étapes suivantes :
+
+confirmer ou remettre en question la cote de risque de modélisation;
+
+réexaminer l’objet, la portée et la rigueur conceptuelle du modèle, ses limites, les mesures d’atténuation et le caractère raisonnable des données de sortie;
+
+valider la qualité et la pertinence des données;
+
+analyser les nouveautés, notamment au chapitre des méthodes, des algorithmes, des outils et des procédures, pour les modèles d’IA et d’AA;
+
+évaluer le niveau d’explicabilité des rouages du modèle au regard de l’usage prévu de celui-ci, modèles d’IA et d’AA compris (ce qui implique notamment de confirmer que les données de sortie du modèle sont convenablement explicables et conformes aux attentes en matière de performance);
+
+étudier les modèles et les plateformes ou sous-composants de tiers (y compris les données et les bibliothèques) utilisés pour développer le modèle;
+
+consigner par écrit les évaluations réalisées au cours de la validation et les mesures prises en conséquence;
+
+communiquer les résultats de la validation, dont une évaluation détaillant les constatations et les recommandations, ainsi qu’une recommandation globale concernant l’approbation à l’intention de l’approbateur du modèle.
+
+Approbation des modèles
+
+Les processus d’approbation doivent intervenir tout au long du cycle de vie d’un modèle. La décision d’approuver un modèle repose habituellement sur deux éléments :
+
+évaluer si le modèle est apte à être mis en œuvre dans un environnement de production (ou à continuer d’être utilisé) selon son usage prévu;
+
+confirmer la cote de risque de modélisation attribuée et l’évaluation du risque résiduel.
+
+Un modèle peut être approuvé même si des lacunes ou des limites ont été décelées, à condition que des mesures d’atténuation soient en place pour les contrebalancer ou que les intervenants du modèle justifient son utilisation en dépit des lacunes ou des limites connues.
+
+Déploiement des modèles
+
+Principe 3.5 : Les modèles doivent être mis en service dans un environnement qui est encadré par des processus de contrôle de la qualité et des changements.
+
+Le déploiement d’un modèle nécessite une coordination rigoureuse pour garantir que celui-ci a été bien configuré, testé et mis en productionNote de bas de page 4 . Le processus d’intégration d’un modèle dans un environnement opérationnel doit permettre de préserver son intégrité et sa fiabilité. Ce point est particulièrement important pour les modèles d’IA et d’AA qui peuvent dépendre de multiples composantes, de sources de données diverses et dynamiques, et d’éléments de tiers.
+
+Un déploiement de modèle efficace doit comprendre les éléments suivants, s’il y a lieu :
+
+une collaboration entre les développeurs, les responsables, les chargés de validation et les utilisateurs du modèle, et avec les équipes chargées des technologies ou des activités;
+
+une cohérence entre les données utilisées pour développer le modèle et l’ensemble de données de production;
+
+des tests démontrant que le modèle fonctionne comme prévu dans l’environnement de production;
+
+des procédures clairement consignées décrivant les étapes du déploiement, les responsabilités des intervenants, les hiérarchies d’approbation, le contrôle des changements, les cadres de suivi et le traitement des exceptions, y compris les superpositions;
+
+la réalisation d’évaluations des risques connexes avant le déploiement, comme le cyberrisque, les vulnérabilités de l’infrastructure et d’autres risques opérationnels potentiels (voir les lignes directrices B-13 et E-21 du BSIF);
+
+un examen des exigences en matière d’explicabilité et la communication des résultats explicatifs aux intervenants concernés.
+
+Suivi des modèles
+
+Principe 3.6 : L’institution doit avoir défini des normes concernant le suivi et la mise hors service des modèles.
+
+Le suivi des modèles garantit que ceux-ci demeurent adaptés à leur objectif et vise à détecter les problèmes de performance ou les manquements. Ceci peut s’avérer particulièrement difficile dans le cas des modèles complexes d’IA et d’AA, pour lesquels l’extensibilité, la performance et le suivi des dérives du modèle sont essentiels. Le suivi des modèles doit comprendre les éléments suivants, à consigner par écrit :
+
+des normes de suivi qui établissent la fréquence, la portée et les critères d’évaluation s’appliquant à différents niveaux de cote de risque et types de modèle;
+
+des critères d’évaluation qui comprennent des mesures quantitatives (par exemple, des indicateurs de performance) et des évaluations qualitatives (par exemple, une vérification permettant de déterminer si le champ d’application initial du modèle est respecté);
+
+le suivi et l’évaluation de facteurs opérationnels comme des changements touchant les éléments suivants : la performance du modèle, l’utilisation du modèle, les données d’entrée, les dépendances externes (par exemple, mises à jour des versions) ou les caractéristiques de ce qui est modélisé (par exemple, nouvelles fonctions du produit);
+
+la définition de seuils pour les manquements et de critères pour les modifications importantes du modèle, notamment les changements de facteurs opérationnels;
+
+l’établissement de plans de contingence et d’urgence en cas d’indisponibilité du modèle, de détérioration de sa performance ou de panne pure et simple, et des procédures de signalement aux échelons supérieurs pour remédier à la situation;
+
+la mise en œuvre de processus permettant de gérer les difficultés spécifiques que posent l’IA et l’AA, comme la prise de décision autonome, le reparamétrage autonome et les possibilités accrues de dérive du modèle;
+
+un processus permettant de garantir que les problèmes sont communiqués rapidement aux intervenants concernés, en suivant les procédures de signalement appropriées.
+
+Mise hors service des modèles
+
+La mise hors service consiste à mettre officiellement un terme à l’utilisation active d’un modèle. Plusieurs raisons peuvent justifier une mise hors service, dont :
+
+des problèmes de performance (par exemple, un grave défaut de performance, la détermination de défaillances répétées lors des activités de suivi, des dérogations excessives);
+
+des modifications opérationnelles, stratégiques ou de la réglementation;
+
+une obsolescence des données ou des méthodes, ou des considérations liées au rapport coûts-avantages.
+
+La mise hors service doit s’effectuer selon un processus rigoureux et comprendre les éléments suivants :
+
+Informer tous les intervenants concernés de la mise hors service prévue
+
+Conserver le modèle mis hors service et les documents connexes pendant une période déterminée à titre de référence ou de solution de rechange
+
+Déterminer les mesures supplémentaires à prendre pour la mise hors service de tout modèle de tiers
+
+Surveiller les effets en aval afin de s’assurer qu’il n’y a pas de répercussions résiduelles
+
+Annexe 1 : Suivi des informations sur les modèles
+
+L’institution doit, à tout le moins, tenir les informations suivantes à jour pour chaque modèle recensé :
+
+le numéro ou l’identifiant du modèle;
+
+le nom du modèle, et une description de ses principales caractéristiques et de son usage;
+
+la cote de risque de modélisation;
+
+le responsable du modèle;
+
+le développeur du modèle;
+
+l’origine du modèle (par exemple, développé en interne ou par un fournisseur).
+
+En outre, dans le cas des modèles dont le risque est jugé non négligeable et qui figurent donc dans l’inventaire des modèles, l’institution doit également tenir les informations suivantes à jour :
+
+la version du modèle;
+
+la date de la mise en production du modèle;
+
+le chargé de validation du modèle;
+
+l’approbateur du modèle;
+
+les dépendances du modèle;
+
+les sources des données accompagnées d’une description;
+
+les usages approuvés du modèle;
+
+les limites du modèle (y compris les exceptions et les exigences supplémentaires);
+
+la date de la dernière validation du modèle;
+
+le statut des activités de suivi (et les exceptions, s’il y a lieu);
+
+la date de la prochaine validation.
+
+Notes de bas de page
+
+Note de bas de page 1
+
+Bien qu’il n’existe pas à l’heure actuelle de définition universellement reconnue de l’IA, pour l’application de la présente ligne directrice, il convient de prendre en considération la définition qu’en donne l’Organisation de coopération et de développement économiques (OCDE) (selon laquelle un système d’IA peut être fondé sur un ou plusieurs modèles) : « Un système d’intelligence artificielle est un système automatisé qui, pour des objectifs explicites ou implicites, déduit, à partir d’entrées reçues, comment générer des résultats en sortie tels que des prévisions, des contenus, des recommandations ou des décisions qui peuvent influer sur des environnements physiques ou virtuels. Différents systèmes d’IA présentent des degrés variables d’autonomie et d’adaptabilité après déploiement. »
+
+Retour à la référence de la note de bas de page 1
+
+Note de bas de page 2
+
+Cadre de surveillance – Bureau du surintendant des institutions financières.
+
+Retour à la référence de la note de bas de page 2
+
+Note de bas de page 3
+
+Lorsque la propension à prendre des risques de l’institution le permet.
+
+Retour à la référence de la note de bas de page 3
+
+Note de bas de page 4
+
+Le terme « environnement de production » est utilisé ici comme un terme générique désignant la manière dont un modèle ou ses données de sortie sont accessibles une fois le modèle approuvé.
+
+Retour à la référence de la note de bas de page 4
+
+Signaler un problème ou une erreur sur cette page
+
+Veuillez sélectionner toutes les cases qui s'appliquent : (obligatoire)
+
+Un lien, un bouton ou une vidéo ne fonctionne pas
+
+Il y a une erreur d'orthographe ou de grammaire
+
+Les renseignements sont incomplets
+
+L'information n'est plus à jour ou est erronée
+
+Je n'arrive pas à trouver ce que je cherche
+
+Autre problème qui ne figure pas sur cette liste
+
+Information supplémentaire (obligatoire)
+
+Laisser ce champ vide
+
+Date de modification :
+
+2025-09-11

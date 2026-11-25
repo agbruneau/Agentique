@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 876" width="1200" height="876" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="876" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-03-02</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Boucle de rétroaction et contrôle</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Engrenage de la quadruple dette agentique, preuve N / M / É / S et économie</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">des jetons SLM/LLM</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="152" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="152" rx="4" fill="#B91C1C"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — Engrenage de la quadruple dette agentique (Tome 7, § 4.1 et Tableau 24.1)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="268.5" height="102" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">1. Dette technique</text>
+    <line x1="53.0" y1="194" x2="299.5" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Ratio NHI 82:1 · 40,58 % dérive MCP</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Obsolescence des SDK &lt; 2 ans</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="324.5" y="160" width="268.5" height="102" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="335.5" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">2. Dette cognitive</text>
+    <line x1="335.5" y1="194" x2="582.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="335.5" y="208" font-size="11.8" fill="#1E293B">Oubli contextuel et perte de</text>
+    <text x="335.5" y="224" font-size="11.8" fill="#1E293B">maîtrise</text>
+    <text x="335.5" y="240" font-size="11.8" fill="#1E293B">Capitulation critique (Storey)</text>
+  </g>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="607.0" y="160" width="268.5" height="102" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">3. Dette d'intention</text>
+    <line x1="618.0" y1="194" x2="864.5" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Règles métier figées en prose</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">d'invite</text>
+    <text x="618.0" y="240" font-size="11.8" fill="#1E293B">Comportement intestable en CI</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="889.5" y="160" width="268.5" height="102" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="900.5" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">4. Couplage global</text>
+    <line x1="900.5" y1="194" x2="1147.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="900.5" y="208" font-size="11.8" fill="#1E293B">Verrouillage inter-silos opaque</text>
+    <text x="900.5" y="224" font-size="11.8" fill="#1E293B">Violation directe de BSIF B-10</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="288" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="288" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="310" font-size="13.5" font-weight="bold" fill="#1B4F72">Z2 — Bouclier épistémique (N / M / É / S) et externalisation de l'intention</text>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="42.0" y="326" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="348" font-size="13" font-weight="bold" fill="#0F2942">Discipline probatoire à 4 niveaux</text>
+    <line x1="53.0" y1="360" x2="582.0" y2="360" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Séparation droit, pairs, specs, construits</text>
+    <text x="53.0" y="390" font-size="11.8" fill="#1E293B">Traçabilité des affirmations</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="607.0" y="326" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="618.0" y="348" font-size="13" font-weight="bold" fill="#0F2942">Externalisation hors prose</text>
+    <line x1="618.0" y1="360" x2="1147.0" y2="360" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Règles en schémas, ADR et tests BDD</text>
+    <text x="618.0" y="390" font-size="11.8" fill="#1E293B">Dépôt Git versionné et auditable</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="438" width="1144" height="136" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
+  <rect x="28" y="438" width="8" height="136" rx="4" fill="#0F766E"/>
+  <text x="46" y="460" font-size="13.5" font-weight="bold" fill="#0F766E">Z3 — Régulation économique : routage SLM/LLM, KV-cache et budget de réflexion</text>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="42.0" y="476" width="551.0" height="86" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="53.0" y="498" font-size="13" font-weight="bold" fill="#134E4A">Routage vers SLM spécialisés</text>
+    <line x1="53.0" y1="510" x2="582.0" y2="510" stroke="#0F766E" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Substitution aux modèles frontière</text>
+    <text x="53.0" y="540" font-size="11.8" fill="#1E293B">Réduction du coût marginal CPO</text>
+  </g>
+  <g id="node-8" class="node" data-node="true">
+    <rect x="607.0" y="476" width="551.0" height="86" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="618.0" y="498" font-size="13" font-weight="bold" fill="#134E4A">KV-cache &amp; plafond de réflexion</text>
+    <line x1="618.0" y1="510" x2="1147.0" y2="510" stroke="#0F766E" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Réutilisation des préfixes chauds</text>
+    <text x="618.0" y="540" font-size="11.8" fill="#1E293B">Plafonnement des jetons cachés</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="588" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="610" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="628" font-size="11.5" fill="#334155">① L'absence d'architecture robuste (N×M, MCP non épinglés) incite à compenser les</text>
+  <text x="42.0" y="643" font-size="11.5" fill="#334155">manques dans l'invite système.</text>
+  <text x="609.0" y="628" font-size="11.5" fill="#334155">② Les équipes perdent la maîtrise du système (dette cognitive) et rendent les règles</text>
+  <text x="609.0" y="643" font-size="11.5" fill="#334155">intestables en prose.</text>
+  <text x="42.0" y="666" font-size="11.5" fill="#334155">③ L'entreprise rompt l'engrenage en externalisant règles et schémas sous dépôt</text>
+  <text x="42.0" y="681" font-size="11.5" fill="#334155">versionné et preuve hiérarchisée.</text>
+  <text x="609.0" y="666" font-size="11.5" fill="#334155">④ Le routage dynamique oriente les tâches structurées vers des SLM sobres et</text>
+  <text x="609.0" y="681" font-size="11.5" fill="#334155">préserve le KV-cache.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="720" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="731" width="14" height="14" rx="3" fill="#DC2626"/>
+  <text x="62.0" y="742" font-size="11" fill="#1E293B">Engrenage cumulatif des quatre dettes (technique,</text>
+  <text x="62.0" y="757" font-size="11" fill="#1E293B">cognitive, intention, couplage)</text>
+  <rect x="418.7" y="731" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="438.7" y="742" font-size="11" fill="#1E293B">Externalisation de l'intention (ADR, schémas, tests</text>
+  <text x="438.7" y="757" font-size="11" fill="#1E293B">BDD)</text>
+  <rect x="795.3" y="731" width="14" height="14" rx="3" fill="#0F766E"/>
+  <text x="815.3" y="742" font-size="11" fill="#1E293B">Optimisation FinOps par routage SLM/LLM, KV-cache et</text>
+  <text x="815.3" y="757" font-size="11" fill="#1E293B">plafonds</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="790" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="790" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="810" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">Consigner des règles juridiques ou financières dans une invite engendre une quadruple dette qui entrave la réversibilité ; l'intention</text>
+  <text x="44" y="844" font-size="11.5" fill="#1E293B">doit être externalisée en contrats et les tâches bornées acheminées vers des SLM ciblés.</text>
+</g>
+</svg>

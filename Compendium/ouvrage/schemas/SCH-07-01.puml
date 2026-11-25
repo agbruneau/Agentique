@@ -1,0 +1,58 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title MCP 2026-07-28 sans état, adaptateur SEP-3398 et confinement des surfaces Web
+
+package "Z1 — Client agentique et adaptateur McpTransportAdapter" {
+  rectangle "Hôte agentique (1 client / serveur MCP)\nRequête JSON-RPC 2.0 sans session" as N1 <<det>>
+  rectangle "McpTransportAdapter neutre\nIsole SEP-3398 (mars 27) & SEP-2596 (juil. 27)" as N2 <<det>>
+  rectangle "Transports proscrits en production\n(HTTP+SSE DISC-05 et stdio à secrets)" as N3 <<red>>
+  N1 --> N2 : ① Requête métier
+  N2 .[#B91C1C].> N3 : ② Bloque repli obsolète
+}
+
+package "Z2 — Bus Streamable HTTP sans état et patron MRTR" {
+  rectangle "Passerelle PEP (Mcp-Method / Mcp-Name)\nTransport Streamable HTTP sans état" as N4 <<det>>
+  rectangle "Patron MRTR (input_required)\nReprise multi-tours sans requête inversée" as N5 <<green>>
+  N2 --> N4 : Achemine flux épinglé
+  N4 --> N5 : ③ Donnée complémentaire
+}
+
+package "Z3 — Frontière Web ouverte confinée sans confiance implicite" {
+  rectangle "WebMCP (document.modelContext)\n& NLWeb (/ask) en périphérie" as N6 <<prob>>
+  rectangle "Web Bot Auth (RFC 9421)\nPreuve d'origine HTTP uniquement" as N7 <<prob>>
+  N6 .[#D97706].> N4 : ④ Filtrée comme non fiable
+  N7 .[#D97706].> N4 : Zéro délégation interne
+}
+
+legend bottom
+  **Bleu ardoise** : Transport épinglé MCP 2026-07-28 sans état (Streamable HTTP)
+  **Vert émeraude** : Échange structuré MRTR et reprise asynchrone encadrée
+  **Ambre pointillé** : Surfaces Web émergentes confinées sans confiance implicite
+  **Rouge** : Transports proscrits en production (HTTP+SSE DISC-05, stdio à secrets)
+end legend
+@enduml

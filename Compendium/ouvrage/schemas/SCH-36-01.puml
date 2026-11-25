@@ -1,0 +1,84 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Fermeture de DIV-02 et pont unifié : 52 CAP + 24 PEX → 305 EXIG-*, Tome 1 et glossaire
+package "Z1 : Fermeture de DIV-02 par liens typés DC-P07" {
+  rectangle "Plan Directeur & Tome 5\n52 CAP + 24 PEX (13 spéc. + 11 lacunes)" as CAP <<det>>
+  rectangle "Pont typé DC-P07\ncouverture_directe / ancrage_extension /\ncomble_lacune_2026 (+ 3 rectif. E.1)" as PONT <<ok>>
+  rectangle "CAD26 v1.2 & Note AMF IA\n305 EXIG-* (+ 12 AMF) en 6 couches § 5.2" as CAD <<det>>
+}
+package "Z2 : Unification interne du Tome 1" {
+  rectangle "Cinq Livres réconciliés\nFusion 4+3 → 6 couches (Tableau 43.1)\nAlignement 3 échelles (Tableau 43.3)" as T1 <<det>>
+  rectangle "Levée homonymies (§ 37.0)\n& registre de gel (§ 50.4)" as GEL <<ext>>
+}
+package "Z3 : Glossaire normatif fr-CA/en" {
+  rectangle "Glossaire Tableau 65 (Tome 2)\nPréséance du corps normatif & Tableau 7" as GLOS <<prob>>
+}
+CAP --> PONT : ①–② raccorde CAP & PEX
+PONT --> CAD : ferme lacune DIV-02
+T1 --> PONT : ③ unifie strates Tome 1
+GEL --> T1
+GLOS .[#B45309].> CAD : ④ subordonné au corps normatif
+legend bottom
+  **Bleu architecture** : pont structurel DIV-02 unifiant les quatre découpages du corpus
+  **Vert concordance** : tables de correspondance typées DC-P07 (52 CAP + 24 PEX → 305 EXIG-*)
+  **Ambre glossaire** : définitions unifiées Tableau 65 subordonnées au texte normatif
+end legend
+@enduml

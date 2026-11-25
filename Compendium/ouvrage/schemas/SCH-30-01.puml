@@ -1,0 +1,85 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Chaîne d'industrialisation IAP, fabrique GitOps cognitif et asymétrie des 10 suites SaaS
+package "Z1 : Centre d'excellence CoE et Golden Paths IAP" {
+  rectangle "CoE Hub-and-Spoke (LCIM, 3 plans)\nGabarits pré-câblés (NHI, OTel, PEP)\nVoie conforme > voie ad hoc" as IAP <<det>>
+}
+package "Z2 : GitOps cognitif, certification et réémission (§41)" {
+  rectangle "OpenGitOps v1.0.0 co-versionné\nCode + prompts + MCP + OPA + EvalOps\nAttestation SLSA v1.2 & Sigstore" as GIT <<det>>
+  rectangle "Barrière d'admission (PC1–PC5)\n& livraison Shadow/Canary Temporal" as CERT <<ok>>
+  rectangle "Boucle de réémission sur dérive\nSurveillance risque SPOF (§41.6)" as REEM <<prob>>
+}
+package "Z3 : Asymétrie des 10 suites SaaS tierces (ch. 26)" {
+  rectangle "Suites SaaS tierces\nOuvertes sur fil (MCP/A2A)\nFermées sur plan de contrôle" as SAAS <<prob>>
+  rectangle "Noyau possédé souverain\nRegistre, politiques & FinOps\n(4 statuts, jamais plein droit)" as NOYAU <<ok>>
+}
+IAP --> GIT : ① amorce gabarit IAP
+GIT --> CERT : ② preuve SLSA & E1–E2
+CERT --> REEM : ③ dérive détectée
+REEM .[#B45309].> IAP : corrige gabarit
+SAAS .[#B45309].> NOYAU : ④ encadrées par PEP
+NOYAU --> CERT : gouvernance unique
+legend bottom
+  **Bleu plateforme** : Golden Paths IAP, GitOps cognitif co-versionné et Worker Versioning Temporal
+  **Vert certification** : barrière d'admission au maillage, SLSA/Sigstore et noyau possédé souverain
+  **Ambre asymétrie** : risque SPOF de la fabrique et plan de contrôle fermé des 10 suites SaaS
+end legend
+@enduml

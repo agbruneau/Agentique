@@ -1,0 +1,88 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Architecture bicéphale du Tome 8 : manuel CC BY 4.0, 4 modules MIT et barrière G0
+package "Z1 : Tête éditoriale CC BY 4.0" {
+  rectangle "Manuel concis & table DISC-01..05\n14 extraits ≤ 40 L scellés CA-G0-SYNC" as MAN <<prob>>
+}
+package "Z2 : Quatre modules exécutables MIT (Python 3.12+ & OPA v1.22.4)" {
+  rectangle "harness_proto/\nHarnais 80/20, MCP, A2A" as M1 <<det>>
+  rectangle "authz_pqc_audit/\nOBO, ML-DSA, OTel/PII, SCITT, FOCUS" as M2 <<det>>
+  rectangle "policy_saga/ & policies_opa/\nRègle de deux, CaMeL, Sagas (10 fautes)" as M3 <<det>>
+  rectangle "evalops_prr/\nWilson, métamorphique, PRR-24" as M4 <<det>>
+}
+package "Z3 : Barrière G0 (exit 0) et vecteurs tiers" {
+  rectangle "4 suites officielles tierces\nRFC 8785, NIST ACVP, a2a-tck, OWASP SRC-055" as VEC <<ext>>
+  rectangle "execute_g0.py → exit 0\n83 pytest, 45 OPA 100 %, 13 schémas, SPDX MIT" as G0 <<ok>>
+  rectangle "Scellé SHA-256 → G1–G5\nrapports-g0.json sans réseau" as G15 <<ok>>
+}
+VEC --> G0 : ① brise biais circulaire
+M1 --> G0
+M2 --> G0
+M3 --> G0
+M4 --> G0 : ② hors ligne (0 KVM/Postgres)
+G0 --> G15 : ③–④ scelle CA-G0-SYNC
+G15 .[#B45309].> MAN : vérifie octet par octet
+legend bottom
+  **Bleu ardoise** : noyau exécutable MIT possédé (4 modules Python/OPA sans dépendance propriétaire)
+  **Vert tiers & G0** : 4 suites officielles de vecteurs tiers et scellé CA-G0-SYNC (exit 0)
+  **Ambre édition** : manuel CC BY 4.0 vérifié par G1–G5 sans copie manuelle
+end legend
+@enduml

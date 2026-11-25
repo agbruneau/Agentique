@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-02-01</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Comparatif Avant / Après</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Loi de Lusser et piège du HTTP 200 OK : pourquoi 94 % de précision par étape</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">chute à 53,9 % sur dix pas</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — Panne franche classique (HTTP 500) par rapport à l'erreur sémantique silencieuse (OWASP ASI08)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#0F2942">Panne franche HTTP 500</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Microservice en erreur explicite</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Interrompt nettement le traitement</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Piège HTTP 200 OK (ASI08)</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">JSON valide mais sens erroné (HT vs TTC)</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">Non-compositionnalité H-24 invisible en syntaxe</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#B45309"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#B45309">Z2 — Courbe de décroissance multiplicative de Lusser (NIST/SEMATECH 8.1.8.1)</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#7F1D1D">Dégradation R = p^n sans contrôle</text>
+    <line x1="53.0" y1="344" x2="582.0" y2="344" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">0,94¹⁰ ≈ 53,9 % · 0,95¹⁵ ≈ 46,3 %</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Amplification d'erreurs jusqu'à 17,2×</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="607.0" y="310" width="551.0" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="618.0" y="332" font-size="13" font-weight="bold" fill="#451A03">Falaise d'horizon METR v1.1</text>
+    <line x1="618.0" y1="344" x2="1147.0" y2="344" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="358" font-size="11.8" fill="#1E293B">17,4 h à 50 % de réussite</text>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Chute 5–6× vers 3,1 h à 80 %</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#1B4F72">Z3 — Coupures anti-cascade et compteurs de sauts déterministes</text>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Assertions métier inter-étapes</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">EXIG-INT-02 &amp; machine à états ADR-002</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Vérification après chaque pas cognitif</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Compteurs de sauts &amp; disjoncteur</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">xagenthopcount / xagentmaxhops (EXIG-EVT-06)</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Amplification ramenée de 17,2× à ≤ 4,4×</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Une étape probabiliste émet une erreur plausible (JSON valide, HTTP 200 OK)</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">invisible au contrôle syntaxique.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Sans vérification intermédiaire, les étapes aval amplifient l'écart jusqu'à 17,2×</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">(tempêtes 429, livelocks).</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ L'enveloppe déterministe (ADR-002 / CAP-007) segmente la chaîne et applique une</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">assertion après chaque étape.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Le compteur de sauts et le disjoncteur interrompent la propagation avant</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">d'atteindre un System of Record.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#DC2626"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Cascade silencieuse sous HTTP 200 OK (ASI08) et R = p^n</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Cellule probabiliste isolée soumise à tolérance et</text>
+  <text x="438.7" y="741" font-size="11" fill="#1E293B">constance</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Assertion déterministe d'étape et compteur de sauts</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">En l'absence de contrôle déterministe entre les étapes, un agent fiable à 94 % échoue près d'une fois sur deux sur dix pas — et propage</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">ses défaillances les plus critiques en silence sous un statut HTTP 200 OK.</text>
+</g>
+</svg>

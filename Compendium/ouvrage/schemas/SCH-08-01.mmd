@@ -1,0 +1,48 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 26, 'padding': 12}}}%%
+flowchart TB
+  subgraph Z1["Z1 · Arbre de non-substituabilité (PRI-003)"]
+    direction TB
+    N1{"Appel déterministe sans LLM ?"}:::det
+    N2["① API classique / palier OO1<br/>(proscrire A2A et MCP libre)"]:::det
+    N3{"② Outil borné sous plan local<br/>ou pair opaque externe ?"}:::det
+    N4["Axe vertical : MCP 2026-07-28<br/>(≤ 15 outils d'intention)"]:::det
+    N1 -->|"Oui"| N2
+    N1 -->|"Non"| N3
+    N3 -->|"Outil local"| N4
+  end
+
+  subgraph Z2["Z2 · Cycle A2A v1.0.1 et rejet ANP"]
+    direction TB
+    N5["③ Délégation horizontale A2A v1.0.1<br/>(submitted → working → input-required)"]:::green
+    N6["Garde-fous Z1–Z5 obligatoires<br/>(signature JWS/JCS et anti-SSRF)"]:::green
+    N7["④ Rejet ANP v1.2 (méta-protocole<br/>négocié à la volée non auditable)"]:::warn
+    N5 --> N6
+  end
+
+  subgraph Z3["Z3 · Désambiguïsation ACP à quatre branches (Tableau 7.3)"]
+    direction TB
+    N8["ACP éteint (fusionné dans A2A)<br/>contre Agentic Control Plane"]:::amber
+    N9["Offre commerciale et module<br/>AGNTCY : sigle « ACP » nu proscrit"]:::warn
+  end
+
+  N3 -->|"Pair opaque"| N5
+  N3 -.->|"Non auditable"| N7
+  N6 ~~~ N8
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : routage normatif API / MCP / A2A"]:::green
+    L_PROB["Trait pointillé : protocole rejeté ou sigle ambigu"]:::warn
+    L_DET ~~~ L_PROB
+  end
+
+  N9 ~~~ L_DET
+
+  classDef det fill:#EBF2F7,stroke:#1B4F72,stroke-width:2px,color:#0F2942,font-weight:bold
+  classDef green fill:#ECFDF5,stroke:#047857,stroke-width:2px,color:#064E3B,font-weight:bold
+  classDef amber fill:#FFFBEB,stroke:#D97706,stroke-width:2px,color:#451A03
+  classDef warn fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px,stroke-dasharray:6 4,color:#7F1D1D
+  style Z1 fill:#F8FAFC,stroke:#94A3B8,color:#1B4F72
+  style Z2 fill:#F0FDF4,stroke:#86EFAC,color:#047857
+  style Z3 fill:#FFFBEB,stroke:#FCD34D,color:#B45309
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

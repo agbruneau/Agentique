@@ -118,6 +118,9 @@ def test_http_server_endpoints_and_step_toggle(tmp_path: Path) -> None:
     comp_dir.mkdir(parents=True)
     plan_copy = comp_dir / "plan.md"
     plan_copy.write_bytes(PLAN_PATH.read_bytes())
+    plan_text = plan_copy.read_text(encoding="utf-8")
+    plan_text = re.sub(r"^(\s*-\s*)\[[xX]\]", r"\1[ ]", plan_text, flags=re.MULTILINE)
+    plan_copy.write_bytes(plan_text.replace("\r\n", "\n").encode("utf-8"))
 
     srv = srv_mod.create_server(repo_root=tmp_path, host="127.0.0.1", port=0, plan_path=plan_copy)
     port = srv.server_address[1]

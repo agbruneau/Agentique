@@ -275,7 +275,7 @@ L'exécution du Compendium s'enchaîne strictement de `Task 1` à `Task 9`, chaq
   - `genere_annexes.build_annexes(root: Path, dry_run: bool = False) -> dict[Path, str]` (produit les `5` Annexes `A`–`E`)
   - `execute_g0.run_g0(trousse_dir: Path, out_report: Path, book_dir: Path | None = None, *, verify_sync_manifest: bool = False) -> int`
 
-- [ ] **Step 1: Écrire les tests unitaires échouants couvrant le calibrage `42` unités, la charte `fr-CA`, `CA-G0-SYNC` et `4` strates × `37` items**
+- [x] **Step 1: Écrire les tests unitaires échouants couvrant le calibrage `42` unités, la charte `fr-CA`, `CA-G0-SYNC` et `4` strates × `37` items**
 
 ```python
 def test_compendium_budget_and_owned_concepts(tmp_compendium):
@@ -296,16 +296,16 @@ def test_disjoint_148_item_stratified_samples(populated_compendium):
     assert all(sum(1 for x in s1 if x["category"] == c) == 37 for c in ("empirique", "juridique", "spec_technique", "assertions_g0"))
 ```
 
-- [ ] **Step 2: Exécuter `pytest` pour confirmer l'échec initial avant adaptation**
+- [x] **Step 2: Exécuter `pytest` pour confirmer l'échec initial avant adaptation**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_outillage_aq.py" "Compendium/ouvrage/outils/test_verifie_specs.py" -v`
 Expected: FAIL (`ModuleNotFoundError` / échec sur les seuils `42` unités et `148` items)
 
-- [ ] **Step 3: Instancier `manifest.json` et `protocole-mlr-compendium.json`, puis adapter les modules d'outillage**
+- [x] **Step 3: Instancier `manifest.json` et `protocole-mlr-compendium.json`, puis adapter les modules d'outillage**
 
 Externaliser dans `manifest.json` la table des `42` unités (`[min_words, max_words]`), la partition disjointe des `71` familles et `260` thèmes (`owned_concepts`), le catalogue des `115` schémas et les seuils `CA-01`..`CA-22`. Adapter `verifie_manuscrit.py` pour intégrer les contrôles `CA-21` (unicité thématique) et `CA-22` (proscription de `on`, `Systems of Agency`, comparateurs ASCII hors code, `$` nu), tout en conservant le contrôle octet par octet `CA-G0-SYNC` levant `_mask_fenced_code_preserving_lines`. Adapter `echantillon_aq.py` à `4 × 37 = 148` items (`≥ 4` par unité narrative) et `genere_annexes.py` aux `5` Annexes `A`–`E`.
 
-- [ ] **Step 4: Exécuter la suite complète des tests d'outillage et `verifie_specs.py`**
+- [x] **Step 4: Exécuter la suite complète des tests d'outillage et `verifie_specs.py`**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils" -v; python "Compendium/ouvrage/outils/verifie_specs.py"`
 Expected: PASS (`0` erreur)
@@ -323,7 +323,7 @@ Expected: PASS (`0` erreur)
 - Consumes: `Compendium/ouvrage/specs/protocole-mlr-compendium.json`, `../Tomes/Cartographie/donnees/*.json`, `../Tomes/Tome 7 - Gouverner l'industrialisation cognitive/recherche/`, `../Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/recherche/`
 - Produces: socle ouvert `L+` haché `SHA-256` (`gel 2026-12-02`), `registre-statut-f.json`, `7` registres JSON SSOT et `37` bases documentaires fermées `sources/ch00..ch36-sources.md`
 
-- [ ] **Step 1: Écrire les tests unitaires vérifiant l'arrêt `AO-01`, le réancrage `AO-02` et l'exhaustivité des `37` bases `sources/`**
+- [x] **Step 1: Écrire les tests unitaires vérifiant l'arrêt `AO-01`, le réancrage `AO-02` et l'exhaustivité des `37` bases `sources/`**
 
 ```python
 def test_ao01_blocks_restricted_urls_and_ao02_forbids_unanchored_tomes(tmp_compendium):
@@ -333,16 +333,16 @@ def test_ao01_blocks_restricted_urls_and_ao02_forbids_unanchored_tomes(tmp_compe
     assert any("CA-10" in e or "AO-02" in e for e in errors)
 ```
 
-- [ ] **Step 2: Exécuter `pytest` sur le module de collecte pour vérifier l'échec initial**
+- [x] **Step 2: Exécuter `pytest` sur le module de collecte pour vérifier l'échec initial**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_collecte_mlr.py" -v`
 Expected: FAIL tant que les répertoires `recherche/`, `registre/` et `sources/` ne sont pas peuplés
 
-- [ ] **Step 3: Réancrer les faits `L+` hachés `SHA-256`, consolider les registres SSOT et bâtir les `37` bases `sources/`**
+- [x] **Step 3: Réancrer les faits `L+` hachés `SHA-256`, consolider les registres SSOT et bâtir les `37` bases `sources/`**
 
 Importer et dédupliquer les textes intégraux ouverts `L+` des Tomes 7 et 8 (antérieurs ou égaux au `2026-12-02`), compléter les sources primaires manquantes pour `D01–D12` sans contournement (`AO-01`, toute URL bloquée inscrite à `registre-statut-f.json`), verrouiller `mindmap-complet.json` (`12/36/71/260` + `616` interrelations) et `matrice-exig-prr-c40.json` (`305 EXIG-*`, `52 CAP`, `24 PEX`, `PRR-75`, `C01–C40`, `5 SBB`), puis assembler les `37` dossiers fermés `sources/ch00-sources.md` à `ch36-sources.md` avec résumés factuels lus sur texte complet.
 
-- [ ] **Step 4: Valider `CA-09`, `CA-10` et `CA-11`**
+- [x] **Step 4: Valider `CA-09`, `CA-10` et `CA-11`**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_collecte_mlr.py" -v; python "Compendium/ouvrage/outils/verifie_manuscrit.py" --sources-only`
 Expected: PASS (`0,0 %` `METADATA_ONLY`, `0` fait non réancré `AO-02`, `37/37` bases conformes)
@@ -359,7 +359,7 @@ Expected: PASS (`0,0 %` `METADATA_ONLY`, `0` fait non réancré `AO-02`, `37/37`
 - Consumes: `../Tomes/Cartographie/donnees/catalogue-schemas-prd.json`, `../Tomes/Cartographie/donnees/inventaire-319-diagrammes.json`, `../Tomes/Tome 1..8/**/Diagrammes/*`
 - Produces: `115` schémas compilés et validés (`52` `PlantUML .svg` via `-failfast2`, `23` `Mermaid .png` `300 DPI`, `40` `Infographies SVG bilingues métier-tech`), chacun `≤ 14` nœuds
 
-- [ ] **Step 1: Écrire les tests unitaires vérifiant le quota `115`, la borne `≤ 14` nœuds et la répartition `24` / `80` / `11`**
+- [x] **Step 1: Écrire les tests unitaires vérifiant le quota `115`, la borne `≤ 14` nœuds et la répartition `24` / `80` / `11`**
 
 ```python
 def test_schema_factory_enforces_115_quota_and_14_nodes(tmp_schemas):
@@ -367,16 +367,16 @@ def test_schema_factory_enforces_115_quota_and_14_nodes(tmp_schemas):
     assert any("14" in e or "115" in e for e in errors)
 ```
 
-- [ ] **Step 2: Exécuter `pytest` sur `test_compile_schemas.py` pour confirmer l'échec initial**
+- [x] **Step 2: Exécuter `pytest` sur `test_compile_schemas.py` pour confirmer l'échec initial**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_compile_schemas.py" -v`
 Expected: FAIL (`ModuleNotFoundError` / absence des `115` fichiers sources)
 
-- [ ] **Step 3: Produire et compiler les `115` schémas (`24` réemplois directs, `80` adaptations depuis `267` figures `Tomes/`, `11` créations originales)**
+- [x] **Step 3: Produire et compiler les `115` schémas (`24` réemplois directs, `80` adaptations depuis `267` figures `Tomes/`, `11` créations originales)**
 
 Implémenter `compile_schemas_compendium.py` en réutilisant la logique d'extraction de nœuds et de validation de rendu de `Tome 8/outils/compile_figures.py` (`PlantUML -failfast2`, `Mermaid 300 DPI`, contrôle XML/dimensions des `40` infographies SVG bilingues `fr-CA`). Vérifier que l'union des champs `families_covered` couvre `100,0 %` des `71` familles thématiques et qu'aucun nom de produit interdit n'apparaît dans les `11` créations originales.
 
-- [ ] **Step 4: Exécuter les tests et la compilation stricte des `115` schémas (`CA-08`, `CA-22`)**
+- [x] **Step 4: Exécuter les tests et la compilation stricte des `115` schémas (`CA-08`, `CA-22`)**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_compile_schemas.py" -v; python "Compendium/ouvrage/outils/compile_schemas_compendium.py" --strict`
 Expected: PASS (`115/115` rendus générés sans avertissement, `≤ 14` nœuds chacun)
@@ -393,7 +393,7 @@ Expected: PASS (`115/115` rendus générés sans avertissement, `≤ 14` nœuds 
 - Consumes: `../Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`, `Compendium/ouvrage/specs/manifest.json`
 - Produces: rapport scellé `Compendium/ouvrage/aq/rapports-g0.json` exposant les `14` extraits `G0-EX-CH01-01`..`G0-EX-CH04-03` (`≤ 40` L) hachés `SHA-256`
 
-- [ ] **Step 1: Écrire un test unitaire vérifiant que `execute_g0.py` bloque toute dérive de vecteur tiers ou d'extrait `> 40` lignes**
+- [x] **Step 1: Écrire un test unitaire vérifiant que `execute_g0.py` bloque toute dérive de vecteur tiers ou d'extrait `> 40` lignes**
 
 ```python
 def test_g0_runner_seals_14_excerpts_and_blocks_over_40_lines(tmp_g0_env):
@@ -405,16 +405,16 @@ def test_g0_runner_seals_14_excerpts_and_blocks_over_40_lines(tmp_g0_env):
     assert all(1 <= v["line_count"] <= 40 for v in report["synced_excerpts"].values())
 ```
 
-- [ ] **Step 2: Exécuter `test_execute_g0.py` pour vérifier le comportement attendu avant exécution sur la trousse réelle**
+- [x] **Step 2: Exécuter `test_execute_g0.py` pour vérifier le comportement attendu avant exécution sur la trousse réelle**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_execute_g0.py" -v`
 Expected: FAIL puis PASS après branchement de l'extracteur `CA-G0-SYNC` sur la table des `14` extraits
 
-- [ ] **Step 3: Exécuter `execute_g0.py` contre `Tome 8/trousse/` et sceller `rapports-g0.json`**
+- [x] **Step 3: Exécuter `execute_g0.py` contre `Tome 8/trousse/` et sceller `rapports-g0.json`**
 
 Vérifier en environnement Python `3.12+` : `requirements.lock` `SHA-256`, conformité `SPDX MIT`, schémas `Draft 2020-12 strict: true`, `default allow := false` et `45/45` tests `OPA` à `100,0 %` de couverture, `4/4` suites de vecteurs tiers (`50` fichiers), `83/83` tests `pytest`, et sceller les `14` extraits `CA-G0-SYNC` (`≤ 40` L) consommés par `CH-04`, `CH-07`, `CH-09`, `CH-15`, `CH-17`, `CH-18`, `CH-20`, `CH-22`, `CH-23` et `CH-35`.
 
-- [ ] **Step 4: Confirmer la barrière `G0` (`CA-19`, `CA-20`)**
+- [x] **Step 4: Confirmer la barrière `G0` (`CA-19`, `CA-20`)**
 
 Run: `python "Compendium/ouvrage/outils/execute_g0.py" --trousse-dir "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse" --book-dir "Compendium/ouvrage" --output "Compendium/ouvrage/aq/rapports-g0.json" --verify-sync-manifest`
 Expected: PASS (`exit 0`, `83/83` `pytest`, `45/45` `OPA 100,0 %`, `4/4` vecteurs tiers, `14/14` extraits scellés)
@@ -431,16 +431,16 @@ Expected: PASS (`exit 0`, `83/83` `pytest`, `45/45` `OPA 100,0 %`, `4/4` vecteur
 - Consumes: `Compendium/ouvrage/specs/manifest.json`, `Compendium/ouvrage/registre/*.json`, `Compendium/ouvrage/sources/ch00..ch36-sources.md`, `Compendium/ouvrage/schemas/rendus/*`, `Compendium/ouvrage/aq/rapports-g0.json`
 - Produces: `37` fichiers Markdown narratifs totalisant `165 000` mots (`± 8 %`), conformes à `owned_concepts`, `CA-G0-SYNC` et la charte `fr-CA`
 
-- [ ] **Step 1: Exécuter un test de fumée `verifie_manuscrit.py --strict` avant complétion du manuscrit**
+- [x] **Step 1: Exécuter un test de fumée `verifie_manuscrit.py --strict` avant complétion du manuscrit**
 
 Run: `python "Compendium/ouvrage/outils/verifie_manuscrit.py" --strict`
 Expected: FAIL (`37` unités narratives manquantes)
 
-- [ ] **Step 2: Rédiger le Liminaire et les `12` Parties en `4` vagues cloisonnées**
+- [x] **Step 2: Rédiger le Liminaire et les `12` Parties en `4` vagues cloisonnées**
 
 Chaque rédacteur reçoit exclusivement la fiche opérationnelle de son lot (`Lots 01` à `06`), son contrat `owned_concepts` dans `manifest.json`, les registres SSOT, sa base fermée `sources/chXX-sources.md`, ses schémas `SCH-XX-*` et, le cas échéant, les extraits scellés `CA-G0-SYNC` (`≤ 40` L) issus de `rapports-g0.json`. Aucun bloc de code n'est rédigé à la main (`AO-08`).
 
-- [ ] **Step 3: Générer un premier jet des `5` Annexes `A`–`E` et passer la barrière déterministe `G1`**
+- [x] **Step 3: Générer un premier jet des `5` Annexes `A`–`E` et passer la barrière déterministe `G1`**
 
 Run: `python "Compendium/ouvrage/outils/genere_annexes.py"; python "Compendium/ouvrage/outils/verifie_manuscrit.py" --strict`
 Expected: PASS (`0` erreur sur `CA-01`..`CA-11`, `CA-17`, `CA-20` `CA-G0-SYNC`, `CA-21`, `CA-22`)
@@ -457,7 +457,7 @@ Expected: PASS (`0` erreur sur `CA-01`..`CA-11`, `CA-17`, `CA-20` `CA-G0-SYNC`, 
 - Consumes: `Compendium/ouvrage/manuscrit/**`, `Compendium/ouvrage/sources/ch00..ch36-sources.md`, `Compendium/ouvrage/recherche/corpus_l_plus/*.txt`, `Compendium/ouvrage/aq/rapports-g0.json`
 - Produces: `37` journaux d'ancrage `ancrage/ch00..ch36-ancrage.md` avec `100,0 %` d'affirmations atomiques au verdict `supporté` (`CA-12`)
 
-- [ ] **Step 1: Écrire un test vérifiant que `verifie_manuscrit.py` rejette tout journal `G2` comportant un verdict `imprécis` ou `non supporté` non résolu**
+- [x] **Step 1: Écrire un test vérifiant que `verifie_manuscrit.py` rejette tout journal `G2` comportant un verdict `imprécis` ou `non supporté` non résolu**
 
 ```python
 def test_g2_gate_rejects_unresolved_unsupported_claims(tmp_compendium):
@@ -465,11 +465,11 @@ def test_g2_gate_rejects_unresolved_unsupported_claims(tmp_compendium):
     assert any("CA-12" in e and "non supporté" in e for e in errors)
 ```
 
-- [ ] **Step 2: Dépêcher `37` auditeurs Wyvern neufs (étanchéité `AO-07` : aucun auditeur ne relit son propre texte)**
+- [x] **Step 2: Dépêcher `37` auditeurs Wyvern neufs (étanchéité `AO-07` : aucun auditeur ne relit son propre texte)**
 
 Chaque auditeur décompose chaque paragraphe en affirmations atomiques vérifiables, confronte chacune au résumé de `sources/chXX-sources.md`, au texte intégral `L+` dans `corpus_l_plus/*.txt` ou à `rapports-g0.json`, reformule tout énoncé `imprécis` et supprime ou réancre tout énoncé `non supporté` jusqu'à obtenir `100,0 %` de verdicts `supporté`.
 
-- [ ] **Step 3: Revalider `G1` après rectifications `G2`**
+- [x] **Step 3: Revalider `G1` après rectifications `G2`**
 
 Run: `python -B -m pytest "Compendium/ouvrage/outils/test_outillage_aq.py" -k "g2" -v; python "Compendium/ouvrage/outils/verifie_manuscrit.py" --strict`
 Expected: PASS (`37/37` journaux à `100,0 %` `supporté`, `0` erreur `G1`)
@@ -487,20 +487,20 @@ Expected: PASS (`37/37` journaux à `100,0 %` `supporté`, `0` erreur `G1`)
 - Consumes: `Compendium/ouvrage/manuscrit/**`, `Compendium/ouvrage/recherche/corpus_l_plus/*.txt`, `Compendium/ouvrage/aq/rapports-g0.json`, `Compendium/prd.md` (étalons `fr-CA`)
 - Produces: rapport `G3` passe 1 (`148/148` à `100,0 %`), journal `aq/gauntlet-log.md` (`CA-15`) et manuscrit revalidé par `G0` + `G1` + `G2` différentiel
 
-- [ ] **Step 1: Tirer l'échantillon stratifié `G3` passe 1 (`4` strates × `37` = `148` items, `≥ 4` par unité narrative)**
+- [x] **Step 1: Tirer l'échantillon stratifié `G3` passe 1 (`4` strates × `37` = `148` items, `≥ 4` par unité narrative)**
 
 Run: `python "Compendium/ouvrage/outils/echantillon_aq.py" --seed 20270901 -o "Compendium/ouvrage/aq/recollation-seed-20270901.json"`
 Expected: PASS (`148` items extraits couvrant `37/37` unités narratives)
 
-- [ ] **Step 2: Exécuter la recollation à l'aveugle par un agent `recollateur-1` neuf et rectifier à `148/148` (`100,0 %`, `CA-13`)**
+- [x] **Step 2: Exécuter la recollation à l'aveugle par un agent `recollateur-1` neuf et rectifier à `148/148` (`100,0 %`, `CA-13`)**
 
 L'agent `recollateur-1` contrôle mot à mot les `148` énoncés face aux `.txt` bruts `L+` et à `rapports-g0.json`. Tout écart est corrigé dans le manuscrit et revérifié jusqu'à `148/148` (`100,0 %`).
 
-- [ ] **Step 3: Exécuter `G4` (`gauntlet-loop`) en comparaison A/B à l'aveugle via `invoke_subagent` (jamais `swarm`)**
+- [x] **Step 3: Exécuter `G4` (`gauntlet-loop`) en comparaison A/B à l'aveugle via `invoke_subagent` (jamais `swarm`)**
 
 Présenter en aveugle (`Texte A` / `Texte B`, ordre alterné) chaque unité narrative face aux étalons français de `Compendium/prd.md` (§ `1`–`5` du Sommaire exécutif et § `01.2` / `36.2`) jusqu'à victoire A/B, gains marginaux sur `2` tours consécutifs ou plafond budgétaire (`15,0 %` de la session). Consigner chaque tour dans `aq/gauntlet-log.md`.
 
-- [ ] **Step 4: Rejouer obligatoirement `G0`, `G1` et `G2` différentiel sur le `git diff`**
+- [x] **Step 4: Rejouer obligatoirement `G0`, `G1` et `G2` différentiel sur le `git diff`**
 
 Run: `python "Compendium/ouvrage/outils/execute_g0.py" --verify-sync-manifest; python "Compendium/ouvrage/outils/verifie_manuscrit.py" --strict`
 Expected: PASS (`0` régression `\$`, `0` dérive `CA-G0-SYNC`, `100,0 %` `G2` différentiel)
@@ -517,16 +517,16 @@ Expected: PASS (`0` régression `\$`, `0` dérive `CA-G0-SYNC`, `100,0 %` `G2` d
 - Consumes: `Compendium/ouvrage/manuscrit/**`, `Compendium/ouvrage/aq/recollation-seed-20270901.json`, `Compendium/ouvrage/specs/manifest.json`
 - Produces: manuscrit lissé validé `G0` + `G1` + `G2` différentiel (`CA-16`) et recollation finale à froid `≥ 95,0 %` avant correction puis `100,0 %` (`CA-14`)
 
-- [ ] **Step 1: Dépêcher un agent `lisseur-editorial` neuf sur l'enchaînement continu des `37` unités (`CA-16`)**
+- [x] **Step 1: Dépêcher un agent `lisseur-editorial` neuf sur l'enchaînement continu des `37` unités (`CA-16`)**
 
 Harmoniser les transitions entre Parties `I`–`XII` et chapitres `CH-01`–`CH-36`, vérifier le respect des renvois `→`/`←` et purger toute redite enfreignant `owned_concepts`. Limiter strictement les retouches aux transitions et doublons sans altérer les faits sourcés.
 
-- [ ] **Step 2: Rejouer `G0`, `G1` et la passe Wyvern `G2` différentielle sur le `git diff` du lissage**
+- [x] **Step 2: Rejouer `G0`, `G1` et la passe Wyvern `G2` différentielle sur le `git diff` du lissage**
 
 Run: `python "Compendium/ouvrage/outils/execute_g0.py" --verify-sync-manifest; python "Compendium/ouvrage/outils/verifie_manuscrit.py" --strict`
 Expected: PASS (`0` erreur)
 
-- [ ] **Step 3: Exécuter `G3` passe 2 à froid sur graine disjointe (`seed=20270902`, `CA-14`)**
+- [x] **Step 3: Exécuter `G3` passe 2 à froid sur graine disjointe (`seed=20270902`, `CA-14`)**
 
 Run: `python "Compendium/ouvrage/outils/echantillon_aq.py" --seed 20270902 --exclude "Compendium/ouvrage/aq/recollation-seed-20270901.json" -o "Compendium/ouvrage/aq/recollation-seed-20270902.json"`
 Dépêcher un agent `recollateur-2` neuf, distinct de `recollateur-1`. Exiger un score initial `≥ 141/148` (`≥ 95,0 %`) avant correction et `148/148` (`100,0 %`) après rectification ; si le score initial est `< 95,0 %`, renvoyer les unités fautives en `G2` puis tirer une nouvelle graine disjointe (`20270903`).
@@ -544,17 +544,17 @@ Dépêcher un agent `recollateur-2` neuf, distinct de `recollateur-1`. Exiger un
 - Consumes: `Compendium/ouvrage/manuscrit/**`, `Compendium/ouvrage/registre/*.json`, `Compendium/ouvrage/ancrage/*.md`, `Compendium/ouvrage/aq/*.json`, `Compendium/ouvrage/schemas/rendus/*`, `../gabarit-pdf/gabarit-collection.typ`
 - Produces: éditions finales `.md`, `.html` autonome (`Pandoc --embed-resources`) et `.pdf` (`Typst 6,14 × 9,21 po`) inspectées visuellement à `100,0 %` (`CA-17`, `CA-18`)
 
-- [ ] **Step 1: Régénérer de façon déterministe les `5` Annexes `A`–`E` (`CA-17`)**
+- [x] **Step 1: Régénérer de façon déterministe les `5` Annexes `A`–`E` (`CA-17`)**
 
 Run: `python "Compendium/ouvrage/outils/genere_annexes.py"`
 Expected: PASS (`Annexe A` `3 000`, `Annexe B` `2 500`, `Annexe C` `3 000`, `Annexe D` `3 000`, `Annexe E` `3 500` mots `± 8 %`, zéro édition manuelle)
 
-- [ ] **Step 2: Compiler la triple édition (`.md`, `.html` et `.pdf` via `../gabarit-pdf/gabarit-collection.typ`)**
+- [x] **Step 2: Compiler la triple édition (`.md`, `.html` et `.pdf` via `../gabarit-pdf/gabarit-collection.typ`)**
 
 Run: `python "Compendium/ouvrage/outils/assemble_livre.py" --all`
 Expected: Génération sans erreur de `Compendium.md`, `Compendium.html` (`Pandoc -f markdown-tex_math_dollars+tex_math_single_backslash --embed-resources`) et `Compendium.pdf` (`Typst 6,14 × 9,21 po`, corps `10,6 pt`, marges `0,90 / 0,78 / 0,92 / 0,90 po`, gabarit décrit dans [gabarit-pdf/README.md](../gabarit-pdf/README.md)).
 
-- [ ] **Step 3: Inspecter visuellement `100,0 %` des pages du PDF et exécuter la barrière finale bloquante**
+- [x] **Step 3: Inspecter visuellement `100,0 %` des pages du PDF et exécuter la barrière finale bloquante**
 
 Convertir `Compendium.pdf` en images de pages, inspecter `100,0 %` des pages dans `aq/rapport-lissage-et-visuel.md` (tableaux larges, `115` schémas, blocs `CA-G0-SYNC` `≤ 40` L, formules `\(...\)`, montants `\$`, coupures de pages, liens internes et externes), corriger tout défaut de mise en page et relancer la validation complète :
 

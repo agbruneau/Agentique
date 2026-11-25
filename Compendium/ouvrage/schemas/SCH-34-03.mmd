@@ -1,0 +1,30 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Cinq grilles S/R/O/G/F (75 points)"]
+    SUB["① Fiche ADR 2027-B001 & preuves<br/>S-01..15 · R-01..15 · O-01..15 · G-01..15 · F-01..15"]:::prob
+  end
+  subgraph Z2["Z2 : 24 portes BLOQUANT (evalops_prr)"]
+    PRR24{"② 24 portes BLOQUANT à PASS<br/>(artefacts signés pytest & OPA) ?"}:::det
+    SBB{"③ 5 SBB Tableau 12 & niveau<br/>de preuve qualifié présents ?"}:::det
+  end
+  subgraph Z3["Z3 : Verdict mécanique 2027-B001"]
+    B001{"Schéma adr_2027_b001.schema.json<br/>& C01–C40 valides ?"}:::det
+    PASS["④ Passeport d'homologation (exit 0)<br/>Exploitation bornée L2–L4"]:::ok
+    FAIL["Blocage immédiat du déploiement<br/>(0 dérogation possible)"]:::danger
+  end
+  SUB -.-> PRR24
+  PRR24 -->|Oui| SBB
+  PRR24 -->|Non| FAIL
+  SBB -->|Oui| B001
+  SBB -->|Non| FAIL
+  B001 -->|Oui| PASS
+  B001 -->|Non| FAIL
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F8FAFC,stroke:#1D4ED8,stroke-width:1.2px
+  style Z2 fill:#FEF2F2,stroke:#DC2626,stroke-width:1.2px
+  style Z3 fill:#ECFDF5,stroke:#15803D,stroke-width:1.2px

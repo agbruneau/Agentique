@@ -1,0 +1,84 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Parcours Loi 25 complet : ÉFVP (art. 3.3, 17), art. 12.1 (PC3) et crypto-effacement (art. 23, 27)
+package "Z1 : Poste 1 — Avant le pilote (ÉFVP et transfert)" {
+  rectangle "ÉFVP préalable (art. 3.3)\nInventaire RP : outils, A2A, mémoire" as EFVP <<det>>
+  rectangle "Verrou transfert hors Québec (art. 17)\nBlocage 3 chemins (modèle, PEP, mémoire)\n& risque CLOUD Act" as XFER <<danger>>
+}
+package "Z2 : Poste 2 — Décision automatisée (art. 12.1)" {
+  rectangle "Décision « exclusivement automatisée »\nAvis légal immédiat & facteurs en voûte" as ART12 <<prob>>
+  rectangle "Point d'arrêt humain PC3\nRévision qualifiée & outillée\n(zéro validation mécanique)" as PC3 <<ok>>
+}
+package "Z3 : Poste 3 — Portabilité et crypto-effacement" {
+  rectangle "Portabilité structurée (art. 27)\nExport technologique couramment utilisé" as PORT <<det>>
+  database "KMS & clés DEK par client\nDestruction DEK → purge CoALA/RAG\n(art. 23, EXIG-CON-10, PRR G-10)" as DEK <<ok>>
+}
+EFVP --> XFER : ① cartographie & bloque
+XFER --> ART12 : ② pilote autorisé au Québec
+ART12 .[#B45309].> PC3 : ③ contestation / facteurs
+ART12 --> PORT : ④ demande d'accès client
+ART12 --> DEK : ④ demande d'effacement
+legend bottom
+  **Bleu juridique** : obligations Loi 25 (ÉFVP art. 3.3/17, portabilité art. 27)
+  **Ambre contrôle** : critère « exclusivement automatisée » (art. 12.1)
+  **Vert sécurité** : révision humaine qualifiée PC3 et crypto-effacement DEK (art. 23)
+end legend
+@enduml

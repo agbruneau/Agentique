@@ -1,0 +1,23 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart LR
+  subgraph Z1["Z1 : Déclencheur > 70 % & quota INI-043"]
+    TRIG["① Tableau de bord :<br/>automatisation > 70,0 % ?"]:::prob
+    QUOTA["② Quota formateur INI-043<br/>Dossiers bruts sans IA (juniors)<br/>& parcours RH-IT Hub-and-Spoke"]:::ok
+  end
+  subgraph Z2["Z2 : Game Days POR-009 / POR-014"]
+    GAME["③ Exercice à blanc annuel<br/>(semestriel si critique)<br/>Coupure complète sous B-10 / E-21"]:::det
+    CHK{"④ Débit dégradé & accessibilité<br/>(Dir. 2019/882) conformes ?"}:::det
+    VAL["Porte POR-009 / POR-014 validée<br/>Relève et repli maintenus"]:::ok
+    REM["Plan correctif obligatoire<br/>avant maintien d'autonomie"]:::danger
+  end
+  TRIG -.->|Oui| QUOTA --> GAME --> CHK
+  CHK -->|Oui| VAL
+  CHK -->|Non| REM
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F0FDFA,stroke:#0F766E,stroke-width:1.2px
+  style Z2 fill:#F8FAFC,stroke:#1D4ED8,stroke-width:1.2px

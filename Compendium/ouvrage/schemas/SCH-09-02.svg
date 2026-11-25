@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-09-02</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Échelle graduée de maturité / autonomie</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Découverte en quatre opérations (Agent Card JWS/JCS), catalogue unique à cinq</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">statuts et règle « soutien ≠ production »</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1B4F72">Z1 — Quatre opérations séparées de découverte et diligence critique</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#0F2942">1. Trouver &amp; 2. Décrire</text>
+    <line x1="53.0" y1="194" x2="393.7" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Découverte /.well-known/ sans confiance</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Rejet des métriques « soutien déclaré »</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="418.7" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">3. Authentifier (JWS/JCS)</text>
+    <line x1="429.7" y1="194" x2="770.3" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="208" font-size="11.8" fill="#1E293B">Vérification cryptographique RFC 8785</text>
+    <text x="429.7" y="224" font-size="11.8" fill="#1E293B">Preuves CI/CD requises avant admission</text>
+  </g>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="795.3" y="160" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="182" font-size="13" font-weight="bold" fill="#064E3B">4. Approuver au catalogue unique</text>
+    <line x1="806.3" y1="194" x2="1147.0" y2="194" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="208" font-size="11.8" fill="#1E293B">Seule source de vérité interne</text>
+    <text x="806.3" y="224" font-size="11.8" fill="#1E293B">Comité trimestriel ou ≤ 15 j sur incident</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#047857">Z2 — Échelle des cinq statuts du catalogue d'entreprise (EXIG-INT-04..23)</text>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#7F1D1D">Suspendu &amp; Contenir</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Suspendu : blocage immédiat</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Contenir : adaptateur de retrait</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#451A03">Surveiller &amp; Évaluer</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Surveiller : veille sans données réelles</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Évaluer : pilotes bornés hors production</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#064E3B">Adopter (production)</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">6 critères cumulatifs validés</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">≥ 60 jours de coexistence sur rupture</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#1B4F72">Z3 — Cycle de vie des contrats API et pyramide d'évaluation</text>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Contrats OpenAPI 3.1/3.2 &amp; AsyncAPI 3.0</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Ingénierie design-first stricte</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">En-têtes Deprecation (9745) &amp; Sunset (8594)</text>
+  </g>
+  <g id="node-8" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Pyramide d'évaluation (3 étages)</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">1. Conformité schéma · 2. Contrats CDC</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">3. Bancs non déterministes en CI</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Un protocole ou une Agent Card est découvert et authentifié (JWS/JCS), mais reste</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">bloqué sans approbation.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② La diligence écarte les décomptes auto-déclarés (« soutien ≠ production ») au</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">profit de preuves CI vérifiées.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Le comité classe le composant dans l'un des cinq statuts et impose 60 jours de</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">coexistence sur rupture majeure.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Les API publient leurs dates de retrait via RFC 9745 / RFC 8594 et valident les</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">trois étages de la pyramide.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Statut Adopter validé sur 6 critères</text>
+  <text x="62.0" y="741" font-size="11" fill="#1E293B">avec contrat JWS/JCS actif</text>
+  <rect x="324.5" y="715" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="344.5" y="726" font-size="11" fill="#1E293B">Statuts Évaluer et Surveiller confinés</text>
+  <text x="344.5" y="741" font-size="11" fill="#1E293B">hors données sensibles</text>
+  <rect x="607.0" y="715" width="14" height="14" rx="3" fill="#B91C1C"/>
+  <text x="627.0" y="726" font-size="11" fill="#1E293B">Statuts Contenir et Suspendu (retrait ou</text>
+  <text x="627.0" y="741" font-size="11" fill="#1E293B">blocage immédiat)</text>
+  <rect x="889.5" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="909.5" y="726" font-size="11" fill="#1E293B">Catalogue interne unique et en-têtes RFC</text>
+  <text x="909.5" y="741" font-size="11" fill="#1E293B">9745 / RFC 8594</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Repérer un agent externe ne lui confère aucun droit d'accès : seule l'homologation trimestrielle au catalogue unique, fondée sur six</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">critères objectifs, autorise son entrée en production.</text>
+</g>
+</svg>

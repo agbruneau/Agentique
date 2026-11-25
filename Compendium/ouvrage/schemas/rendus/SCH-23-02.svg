@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="820" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="74" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">SCH-23-02 — Évaluer sans oracle unique : invariance FR/EN, juges IA et 3+1 dérives</text>
+    <text x="38" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" fill="#CBD5E1">Tests métamorphiques sans oracle (≥ 100 cas), calibration kappa ≥ 0,6 et sentinelle · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="104" width="374" height="38" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E3A8A">Z1 · 4 relations métamorphiques FR/EN</text>
+    <line x1="396" y1="327" x2="410" y2="327" stroke="#475569" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="152" width="346" height="165" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="46" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Permutation &amp; symétrie bilingue</text>
+      <text x="46" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Permutation outils équivalents</text>
+      <text x="46" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Défense anti-injection FR ↔ EN</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="34" y="329" width="346" height="165" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+      <text x="46" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Monotonie &amp; paraphrase (≥ 100 cas)</text>
+      <text x="46" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Monotonie Decimal · mention non-avis</text>
+      <text x="46" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">EXIG-SEC-24 &amp; EXIG-AMF-11</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="412" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#6D28D9" stroke-width="1.8"/>
+    <rect x="412" y="104" width="374" height="38" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
+    <text x="426" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#4C1D95">Z2 · Encadrement LLM-as-a-Judge</text>
+    <line x1="788" y1="327" x2="802" y2="327" stroke="#475569" stroke-width="2.2" marker-end="url(#arrow)"/>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="426" y="152" width="346" height="165" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+      <text x="438" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#4C1D95">Famille distincte &amp; permutation</text>
+      <text x="438" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Paires le biais de position/longueur</text>
+      <text x="438" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Versionnement strict du juge (Zheng)</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="426" y="329" width="346" height="165" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+      <text x="438" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">Étalonnage humain kappa ≥ 0,6</text>
+      <text x="438" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Hors chemin critique : jamais bloquant</text>
+      <text x="438" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">synchrone en production</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="804" y="104" width="374" height="446" rx="10" fill="#F8FAFC" stroke="#D97706" stroke-width="1.8"/>
+    <rect x="804" y="104" width="374" height="38" rx="10" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+    <text x="818" y="128" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#78350F">Z3 · Radar des 3+1 dérives continues</text>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="818" y="152" width="346" height="165" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="830" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#78350F">Dérives F-23, F-52 &amp; H-12</text>
+      <text x="830" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">F-23 modèle/mémoire · F-52 rug-pull</text>
+      <text x="830" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">H-12 glissement d'autonomie</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="818" y="329" width="346" height="165" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+      <text x="830" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7F1D1D">4e source : auto-apprentissage</text>
+      <text x="830" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Alerte de ré-homologation immédiate</text>
+      <text x="830" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">dès franchissement de seuil</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="562" width="1160" height="108" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="582" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Les paires métamorphiques FR/EN testent ≥ 100 scénarios ASI01–10 et AMF</text>
+    <text x="34" y="620" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">sans oracle.</text>
+    <text x="610" y="606" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Le modèle-juge hétérogène évalue hors ligne sous étalonnage humain</text>
+    <text x="610" y="620" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">(kappa ≥ 0,6).</text>
+    <text x="34" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ La surveillance continue mesure les dérives F-23, F-52, H-12 et</text>
+    <text x="34" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">d'apprentissage.</text>
+    <text x="610" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Toute dérive ou baisse de concordance déclenche le cycle de ré-</text>
+    <text x="610" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">homologation.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="680" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="692" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="60" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Relations métamorphiques FR/EN sans oracle</text>
+    <rect x="411" y="692" width="18" height="18" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+    <text x="437" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Juge hétérogène étalonné (kappa ≥ 0,6)</text>
+    <rect x="788" y="692" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+    <text x="814" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Sentinelle continue des 3+1 dérives</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="734" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="756" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Un modèle ne doit jamais juger seul sa propre production, et les tests bilingues FR/EN prouvent que la sûreté résiste aux</text>
+    <text x="36" y="792" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">variations de formulation.</text>
+  </g>
+</svg>

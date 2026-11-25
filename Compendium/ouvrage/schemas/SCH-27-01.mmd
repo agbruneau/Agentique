@@ -1,0 +1,30 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Sas 1 — Règle d'exclusion EXIG-APP-04"]
+    CAND["① Soumissionnaire au cahier<br/>d'appel d'offres"]:::prob
+    DOIT{"Refus clause DOIT ou<br/>promesse sans banc ?"}:::det
+    OUT1["Élimination d'office<br/>(EXIG-APP-04)"]:::danger
+  end
+  subgraph Z2["Z2 : Sas 2 — Batterie technique reproductible"]
+    BANC["② Banc d'essai : a2a-tck, MCP 2026-07-28,<br/>OTLP, FOCUS 1.4+, OBO, arrêt"]:::det
+    LAT["③ Mesure P50/P99 sous politiques<br/>actives (jamais à vide)"]:::det
+  end
+  subgraph Z3["Z3 : Sas 3 — Grille pondérée Tableau 54"]
+    GATE{"④ 0 échec sur 7 critères<br/>éliminatoires / 8 ?"}:::det
+    WIN["Admis au classement pondéré<br/>(0 à 3) & négociation"]:::ok
+    OUT2["Rejet éliminatoire<br/>du soumissionnaire"]:::danger
+  end
+  CAND -.-> DOIT
+  DOIT -->|Oui| OUT1
+  DOIT -->|Non| BANC --> LAT --> GATE
+  GATE -->|Oui| WIN
+  GATE -->|Non| OUT2
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F8FAFC,stroke:#B91C1C,stroke-width:1.2px
+  style Z2 fill:#FFFBEB,stroke:#D97706,stroke-width:1.2px
+  style Z3 fill:#ECFDF5,stroke:#047857,stroke-width:1.2px

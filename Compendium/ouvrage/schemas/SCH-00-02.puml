@@ -1,0 +1,65 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Chaîne de confiance protocolaire et juridique de bout en bout
+
+package "Z1 — Identité et mandat sans secret statique (D06)" {
+  actor "Usager / service mandant" as N1 <<purple>>
+  rectangle "Identité NHI SPIFFE/SVID\n& OAuth 2.0 OBO/DPoP (≤ 2 sauts)" as N2 <<purple>>
+  rectangle "Approbation hors bande\nCIBA + FIDO2 (condensat JCS)" as N3 <<purple>>
+}
+
+package "Z2 — Passerelle PEP à 9 contrôles et séparation protocolaire (D03 + D07)" {
+  rectangle "Agent cognitif (MCP ≤ 15 outils\nou pair A2A v1.0.1 JWS/JCS)" as N4 <<blue>>
+  rectangle "Passerelle PEP bidirectionnelle\n(9 contrôles en échec fermé)" as N5 <<red>>
+  rectangle "Politique hors modèle OPA/Rego\n(default allow := false)" as N6 <<red>>
+  rectangle "Règle de deux & provenance CaMeL\n(coupe-circuit SOC < 10 s)" as N7 <<red>>
+}
+
+package "Z3 — Voûte probatoire et socle multi-juridictions (D08 + D09)" {
+  database "Double couloir OTel GenAI\n(zéro PII opérationnelle)" as N8 <<blue>>
+  database "Registre JCS / SCITT scellé\n(Loi 25, BSIF E-23, AMF, AI Act)" as N9 <<blue>>
+  rectangle "Système d'enregistrement (SoR)\n(écriture idempotente autorisée)" as N10 <<det>>
+}
+
+N1 --> N2 : ① Jeton de mandat borné (RAR)
+N2 --> N4 : ② Flux MCP vertical / A2A horizontal
+N4 --> N5 : ③ Requête avant effet externe
+N5 --> N6 : Vérifie refus par défaut
+N6 --> N7 : Contrôle triade & CaMeL
+N5 --> N3 : ④ Impact sensible (CIBA/FIDO2)
+N3 --> N5 : Jeton lié à h = SHA-256(JCS)
+N5 --> N10 : Exécution autorisée
+N5 --> N8 : ⑤ Trace OTel caviardée
+N8 --> N9 : Scellement probatoire unifié
+
+legend bottom
+  **Violet** : Identité cryptographique et mandat atténué (NHI, OBO, DPoP, CIBA)
+  **Rouge** : Verrous hors modèle à échec fermé (PEP, OPA, Règle de deux, coupe-circuit SOC)
+  **Bleu** : Preuve d'audit et traçabilité unifiée (OTel, JCS/SCITT, Loi 25, BSIF E-23)
+end legend
+@enduml

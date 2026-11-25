@@ -1,0 +1,52 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 26, 'padding': 12}}}%%
+flowchart TB
+  subgraph Z1["Z1 · Bascule coasienne et filtrage marché"]
+    direction TB
+    N1["Dispersion marché 1 à 59<br/>(1,5–88,2 G$ US sur 6 périmètres)"]:::prob
+    N2["Quadrant « Conçue × Perméable »<br/>(coûts Coase contre dérive émergente)"]:::det
+    N1 -.->|"① Filtrer par CPO"| N2
+  end
+
+  subgraph Z2["Z2 · Arbre à cinq portes Acheter / Assembler / Construire"]
+    direction TB
+    N3{"Portes 1–2 : Flux critique<br/>et transversal ?"}:::det
+    N4{"Porte 3 : Plan de contrôle<br/>et sortie B-10 ouverts ?"}:::det
+    N5["Acheter SaaS confiné<br/>(mono-silo, lecture seule)"]:::warn
+    N6{"Portes 4–5 : Différenciant<br/>souverain interne ?"}:::det
+    N7["ASSEMBLER (défaut 80/20)<br/>MCP, A2A, CloudEvents, Temporal"]:::green
+    N8["CONSTRUIRE (souverain)<br/>Actif métier cœur et secrets"]:::blue
+    N3 -->|"Non"| N4
+    N4 -->|"③ Fermé : confiner"| N5
+    N4 -->|"Ouvert"| N7
+    N3 -->|"② Oui"| N6
+    N6 -->|"④ Défaut"| N7
+    N6 -->|"Oui"| N8
+  end
+
+  subgraph Z3["Z3 · Cinq critères permanents (C04)"]
+    direction TB
+    N9["Neutralité · Déterminisme · Tolérance<br/>Coût marginal CPO · Coût de sortie"]:::det
+  end
+
+  N2 --> N3
+  N7 --> N9
+  N8 --> N9
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : décision et posture souveraine"]:::green
+    L_PROB["Trait pointillé : quadrant émergent / piège captif"]:::warn
+    L_DET ~~~ L_PROB
+  end
+
+  N9 ~~~ L_DET
+
+  classDef det fill:#EBF2F7,stroke:#1B4F72,stroke-width:2px,color:#0F2942,font-weight:bold
+  classDef prob fill:#FFF5E0,stroke:#D97706,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef warn fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px,stroke-dasharray:6 4,color:#7F1D1D
+  classDef green fill:#ECFDF5,stroke:#047857,stroke-width:2px,color:#064E3B,font-weight:bold
+  classDef blue fill:#EFF6FF,stroke:#1E3A8A,stroke-width:2px,color:#1E3A8A,font-weight:bold
+  style Z1 fill:#F8FAFC,stroke:#94A3B8,color:#1B4F72
+  style Z2 fill:#F0FDF4,stroke:#86EFAC,color:#047857
+  style Z3 fill:#EFF6FF,stroke:#93C5FD,color:#1E3A8A
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

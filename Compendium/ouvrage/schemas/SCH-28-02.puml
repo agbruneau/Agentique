@@ -1,0 +1,87 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Frontière d'irréversibilité financière : tampon déterministe RTR (pacs.008, EXIG-CON-29)
+package "Z1 : Zone amont — Agent cognitif (observation)" {
+  rectangle "Agent financier probabiliste\nAnalyse demande & prépare\nprojet d'ordre ISO 20022 pacs.008" as AGT <<prob>>
+  rectangle "Interdiction de soumission directe\nAucune écriture vers le rail RTR" as STOP <<danger>>
+}
+package "Z2 : Tampon déterministe hors modèle (EXIG-CON-29)" {
+  rectangle "Validation ISO 20022 & Decimal\npacs.008 / camt.* sans virgule flottante" as DEC <<det>>
+  rectangle "Idempotence UETR & antifraude\nContrôles synchrones de liquidité" as UETR <<det>>
+}
+package "Z3 : Sas humain P3 et rail irrévocable RTR" {
+  actor "Approbateur habilité (P3)\nSignature cryptographique sur condensat\nJCS (rétention ≥ 30 s)" as P3 <<ok>>
+  rectangle "Adaptateur bancaire déterministe\nÉmission vers Paiements Canada RTR\n(irrévocable, 0 compensation Saga)" as RTR <<danger>>
+  rectangle "Rejet propre (0 sortie réseau)\nSi tampon ou approbateur refuse" as REJ <<det>>
+}
+AGT .[#B45309].> DEC : ① dépose proposition structurée
+AGT -[hidden]down-> STOP
+DEC --> UETR : ② vérifie Decimal & UETR
+UETR --> P3 : ③ soumet au sas ≥ 30 s
+P3 --> RTR : ④ libère sur signature JCS
+UETR --> REJ : contrôle échoué
+P3 --> REJ : refus humain
+legend bottom
+  **Ambre proposition** : agent cognitif amont sans pouvoir d'émission directe
+  **Bleu tampon** : tampon déterministe EXIG-CON-29 (Decimal exact, UETR, antifraude, liquidité)
+  **Rouge irréversibilité** : sas P3/JCS ≥ 30 s vers rail RTR pacs.008 sans compensation a posteriori
+end legend
+@enduml

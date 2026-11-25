@@ -1,0 +1,568 @@
+Dynamic Adaptive Policy Pathways (DAPP)
+
+Download book PDF
+
+Download book EPUB
+
+Marjolijn Haasnoot 5 ,6 ,
+
+Andrew Warren 7 &
+
+Jan H. Kwakkel 8
+
+83k Accesses
+
+100 Citations
+
+7
+
+Altmetric
+
+Abstract
+
+Dynamic Adaptive Policy Pathways (DAPP) is a DMDU approach that explicitly includes decision making over time. The essence is proactive and dynamic planning in response to how the future actually unfolds.
+
+DAPP explores alternative sequences of decisions (adaptation pathways) for multiple futures and illuminates the path dependency of alternative strategies. It opens the decision space and helps to overcome policy paralysis due to deep uncertainty. There are different routes that can achieve the objectives under changing conditions (like ‘different roads leading to Rome’).
+
+Policy actions have an uncertain design life and might fail sooner or later to continue achieving objectives as the operating conditions change (i.e. they reach an adaptation tipping point (ATP)). Similarly, opportunity tipping points may occur.
+
+Multiple pathways are typically visualized in a metro map or decision tree, with time or changing conditions on one of the axes.
+
+DAPP supports the design of a dynamic adaptive strategy that includes initial actions, long-term options, and adaptation signals to identify when to implement the long-term options or revisit decisions.
+
+You have full access to this open access chapter,
+Download chapter PDF
+
+Similar content being viewed by others
+
+Dynamic and Partially Observable MAPF: An Extended Evaluation Integrating Informed Path Reuse and Context-Aware Planning
+
+Chapter
+
+© 2026
+
+AID: Agent Intent from Diffusion for Multi-agent Informative Path Planning
+
+Chapter
+
+© 2026
+
+Approximate Dynamic Programming and Reinforcement Learning for Discrete States
+
+Chapter
+
+© 2021
+
+Explore related subjects
+
+Discover the latest articles, books and news in related subjects, suggested using machine learning.
+
+Climate-Change Policy
+
+Dynamic Networks
+
+Stochastic Learning and Adaptive Control
+
+Policy Adoption
+
+Public-Private Partnership
+
+Policy Formulation
+
+Self-Adaptive Software Systems Engineering
+
+4.1 Introduction
+
+Nowadays, decision-makers face deep uncertainties about a myriad of external factors, such as climate change, population growth, new technologies, economic developments, and their impacts. Moreover, not only environmental conditions, but also societal perspectives and preferences may change over time, including stakeholders’ interests and their evaluation of plans (Offermans 2011 ; van der Brugge et al. 2005). For investments in infrastructure, where capital expenditures are high and asset lifespans long, decision-makers need to be confident that the decisions they take today will continue to apply, and that the actions are designed to be able to cope with the changing conditions. Traditional planning approaches are ill-equipped to take into account these uncertainties, resting as they do on approaches for handling Level 1, 2, and 3 uncertainties (see Table 1.1 ). This chapter describes an approach to planning under conditions of deep uncertainty called Dynamic Adaptive Policy Pathways (DAPP) (Haasnoot et al. 2013 ), which recognizes that decisions are made over time in dynamic interaction with the system of concern, and thus cannot be considered independently of each other. It explicitly considers the sequencing and path dependencies of decisions over time.
+
+DAPP integrates two partially overlapping and complementary adaptive planning approaches—Dynamic Adaptive Planning (Walker et al. 2001 , Chap. 3 ) and adaptation pathways (Haasnoot et al. 2012 ). Also central to the approach is the concept of Adaptation Tipping Points (Kwadijk et al. 2010 ). The Adaptation Tipping Point (ATP) approach was developed in the Netherlands in response to a desire of the national government for a planning approach less dependent on any particular set of scenarios. The publication of a new generation of national climate scenarios in 2006 (van den Hurk et al. 2007 ; Katsman et al. 2008 ) meant that regulations had to be changed, and that existing strategic plans based on the old scenarios all had to be updated to bring them into line with the new scenarios. ATP, and therefore also DAPP, address the need to be less scenario-dependent by refocusing the policy analysis process away from an assessment of what may happen when and towards identifying the general conditions under which a policy will fail (referred to as ‘adaptation tipping point conditions’ (Kwadijk et al. 2010 )). Scenarios are then used to assess when this may happen. After these ATPs, additional actions are needed to prevent missing the objectives, and pathways start to emerge. As alternatives are possible, multiple pathways can be explored. The DAPP approach has been adopted by, and further co-developed with, the Dutch Delta Programme (Chap. 14 ). The chair of the Delta Programme summarized the main challenge of the Programme as follows: “One of the biggest challenges is dealing with uncertainties in the future climate, but also in population, economy and society. This requires a new way of planning, which we call adaptive delta planning. It seeks to maximize flexibility, keeping options open and avoiding ‘lock-in’” (Kuijken 2010 ). In the UK, similar ideas were developed and applied in the Thames Estuary 2100 study (Reeder and Ranger 2010 ; Ranger et al. 2013 ) and applied in New Zealand in a flood risk management setting (see Chap. 9 ).
+
+The DAPP approach aims at building flexibility into an overall plan by sequencing the implementation of actions over time in such a way that the system can be adapted to changing conditions, with alternative sequences specified to deal with a range of plausible future conditions. Although originally developed for implementing climate-resilient pathways for water management, it is a generic approach that can be applied to other long-term strategic planning problems under uncertain changing conditions.
+
+4.2 The DAPP Approach
+
+Within the DAPP approach (Haasnoot et al. 2013 ), a plan is conceptualized as a series of actions over time (pathways), including initial actions and long-term options. The essence is the proactive planning for flexible adaptation over time, in response to how the future actually unfolds. The approach starts from the premise that policies/decisions have a design life and might fail when operating conditions change (Kwadijk et al. 2010 ). Once actions fail, additional or other actions are needed to ensure that the original objectives are still achieved, and a set of potential pathways emerges. Depending on how the future unfolds, the course can be changed when predetermined conditions occur, in order to ensure that the objectives are still achieved. The preference for specific pathways over others is actor specific and will depend on the trade-offs, such as the costs (including negative externalities) and benefits of the different pathways. Based on an evaluation of the various possible pathways, an adaptive plan that includes initial actions and long-term options can be designed. The plan is monitored for signals that indicate when the next step of a pathway should be implemented, or whether an overall reassessment of the plan is needed.
+
+Figure 4.1 shows the overall DAPP approach (Haasnoot et al. 2013 ). Based on a problem analysis for the current and future situations, policy actions are identified to address vulnerabilities and seize opportunities. The conditions and timing of ATPs are assessed based on their efficacy in achieving the desired outcomes over changing conditions or time. Once the set of policy actions is deemed adequate, pathways can be designed and evaluated. A (policy) pathway consists of a sequence of policy actions, where a new action is activated once its predecessor is no longer able to meet the specified objectives. Pathways can focus on adapting to changing conditions (adaptation pathways), enabling socio-economic developments (development pathways), or transitioning to a desired future (transition pathways). Based on the evaluation of the pathways, a plan can be made, which describes the initial actions, long-term options, the developments to monitor, and under what conditions the next actions on a pathway should be taken to stay on track. Initial actions include actions aimed at reaching the policy objectives and actions aimed at keeping long-term options open. In practice, Steps 1–5 are often first carried out qualitatively based on expert judgement, followed by a more detailed model-based assessment of these steps.
+
+Fig. 4.1
+
+Adapted from Haasnoot et al. (2013 )
+
+DAPP approach.
+
+Full size image
+
+Step 1: Participatory problem framing, describe the system, specify objectives, and identify uncertainties
+
+The first step is to describe the setting, including the system characteristics, objectives, constraints in the current situation, and potential constraints in future situations. The result is a definition of success, which is a specification of the desired outcomes in terms of indicators and targets. These are used in subsequent steps to evaluate the performance of actions and pathways, and to assess the conditions and timing of ATPs. This step also includes a specification of the major uncertainties or disagreements that play a role in the decision making, such as (changes in) external forces, system structure, and valuation of outcomes. The specified uncertainties are used to generate an ensemble of plausible futures in the form of scenarios. Such scenarios can be static scenarios (describing an end point into the future) or time-dependent transient scenarios (describing developments over time) (Haasnoot et al. 2015 ).
+
+Step 2: Assess system vulnerabilities and opportunities, and identify adaptation tipping points
+
+The second step is to assess the current situation against the ensemble of plausible futures, using the specified indicators and targets, in order to identify the conditions under which the system starts to perform unacceptably (ATPs)Footnote 1 . These are those conditions under which a specified indicator fails to meet its target. Each plausible future is treated as a ‘reference case’ assuming that no new policies are implemented. They consist of (transient) scenarios that span the uncertainties identified in Step 1. Both opportunities and vulnerabilities should be considered, with the former consisting of those developments that can help achieve the defined objectives, and the latter consisting of those developments that can prevent the objectives from being reached.
+
+Various approaches can be used to identify ATPs (Fig. 4.2 ). These include ‘bottom-up’ vulnerability assessments that establish unacceptable outcome thresholds before assessing the timing of tipping points using scenarios, as well as ‘top-down’ approaches that use traditional scenario analyses to determine the range and timing of these points. ‘Bottom-up’ approaches can rely on model-based assessments (e.g. stress tests, sensitivity analyses, Scenario Discovery) to establish the failure conditions (thresholds), or these can be specified via expert judgment or stakeholder consultation. Stakeholders could assess tipping point values in terms of absolute or relative values (Brown et al. 2016 ). The latter is especially useful when objectives cannot be translated into clear target indicators and values (e.g. see Chap. 9 on defining ATPs in practice). For example: absolute: Action A is sufficient to avoid flood damage at a sea level rise of 1 m, while Action B can do the same for a sea level rise of 2 m; relative: Action B can accommodate more change than Action A. Scenarios are then used to assess the timing of the tipping point conditions.
+
+Fig. 4.2
+
+Approaches for identifying tipping points
+
+Full size image
+
+‘Top-down’ approaches are largely dependent on model-based assessments and can use either multiple static scenarios (e.g. Bouwer et al. under review) or transient scenario inputs (e.g. Haasnoot et al. 2012 ) to represent the variety of relevant uncertainties and their development over time. The results of this analysis reveal if and when policy actions are needed to achieve the desired outcomes. Such an analysis can be useful in case of multiple and correlated uncertainties that can be represented in scenarios. The pathway maps then only show different time axes for the considered scenarios (and not the axes with changing conditions).
+
+Step 3: Identify contingent actions and assess their ATP conditions and timing
+
+Based on the problem analysis in Steps 1 and 2, alternative policy actions are identified to address vulnerabilities and seize opportunities. As in Step 2, the conditions and timing of the ATPs for each of the identified actions are assessed based on their efficacy in achieving the desired outcomes over changing conditions or time, using the same approach as before. Ineffective actions are screened out (Walker 1988 ), and only the promising actions are used in the next steps as the building blocks for the assembly of adaptation pathways.
+
+Step 4: Design and evaluate pathways
+
+Once the set of policy actions is deemed adequate, pathways can be designed and evaluated. Note that the alternatives not only may be single actions, but can also include portfolios of actions that are enacted simultaneously. The result is a pathway map (Fig. 4.3 ), which summarizes all policy actions and the logical potential pathways in which the specified objectives are reached under changing conditions. The map shows different axes—for example, for (multiple) changing conditions and for the assessed timing of these conditions for different scenarios. With the map, it is possible to identify opportunities, no-regret actions, lock-ins, and the timing of actions, in order to support decision making in a changing environment. Some sequences of actions may be impossible, undesirable, or are less likely (e.g. when they exclude a transfer to other actions or when it is very costly to add or shift actions), while other sequences will match well and enable an adaptive response to changing conditions.
+
+Fig. 4.3
+
+Adapted from Haasnoot et al. (2018 )
+
+A pathways map and a scorecard presenting the costs and benefits of the pathways presented in the map.
+
+Full size image
+
+Adaptation pathways can be assembled in different ways. For example, the ATPs established in Step 3 can be used to explore all the possible routes for all the alternative actions. The resulting pathways can then be drawn either manually or using an application specifically designed for this purpose (e.g. the Pathways Generator, which is available from http://pathways.deltares.nl ).
+
+Alternatively, pathways can be developed and explored directly using models (e.g. agent-based or multi-objective robust optimization models (Kwakkel et al. 2015 )), serious games (Lawrence and Haasnoot 2017 , and Chap. 9 ), or more qualitatively during stakeholder focus group discussions (e.g. Campos et al. 2016 ) or a combination of model-based and group discussions. In group discussions, stakeholders could identify initial actions and long-term options based on their expert judgment, possibly supported with modelling results, and then draw pathways (see Chap. 9 ). Developing ‘storylines’ that take into consideration the socio-economic and environmental conditions and specify the relevant adaptation triggers is another way of developing pathways directly together with stakeholders. Based on multiple storylines, a pathway map can be drawn (Haasnoot 2013 ). One must recognize that modelling the performance of multiple adaptation pathways across many futures can be computationally intensive. This has consequences for the design of models that are fit for this purpose (see also Haasnoot et al. (2014 ) for a more in-depth discussion on this topic). In practice, tipping points and pathways are often first defined and developed qualitatively according to expert judgment before more intensive model-based quantitative investigations are carried out.
+
+Each pathway is then evaluated (e.g. using scorecards, cost–benefit analysis, multi-criteria analysis, or engineering options analysis) on its performance, as well as on other fundamental criteria, such as the urgency of actions, the severity of impacts, the uncertainty involved, path dependency, and the desire to keep future options open. Note that costs and benefits can change over time, which can be considered by using separate scorecards for different periods. Based on this evaluation that illustrates the trade-offs among pathways, a manageable number of promising and preferred pathways can be identified and subjected to further economic analysis and evaluation. Such analyses need not only take into account the initial and recurrent costs for any actions, but also the costs associated with transferring from one action to another (e.g. for modifications or impacts due to the relocation, removal, or adjustments of the previous action (Haasnoot et al. under review).
+
+Figure 4.4 summarizes the process of generating pathways directly or via the identification of ATPs, either using expert judgment/group discussions, computational models, or both.
+
+Fig. 4.4
+
+Various approaches for generating adaptation pathways
+
+Full size image
+
+Step 5: Design the adaptive strategy
+
+The fifth step is to identify initial actions and long-term options for a set of preferred pathways that are selected based on the trade-offs. The robustness of the preferred pathways is improved through contingency planning. This requires the specification of enabling corrective, defensive, and capitalizing actions (Kwakkel et al. 2010 , Chap 3 ) to stay on track, and a set of preparatory actions to keep the preferred longer-term options open for as long as possible. Such an analysis can involve the identification of institutional and socio-cultural conditions that can enable preferred pathways, as was done by van der Brugge and Roosjen (2016 ).
+
+The adaptive plan also requires an associated monitoring system, describing signposts to monitor and related trigger points that indicate the necessity to implement the next actions. Ideally, a monitoring system gives signals before a decision needs to be taken to implement actions (thus before a decision point). The specification of the right signpost variables and how to analyze the information is important for ensuring that pathways do not evolve into maladaptation or leave preparations for the next actions until too late. The signal may be different from the related ATP, which is related to objectives (impacts). Signals could be related not only to impacts but also to driving forces, such as trends and events in the physical environment, human-driven impacts on the system, technological developments, or changes in societal values and perspectives. An example of how to design signposts for timely and reliable signals is given by Haasnoot et al. (2015 ), and a more extensive description is given by Haasnoot et al. (2018 ). ‘Timely’ means that there is enough time to have the actions performing effectively before an ATP is reached, thus taking into account a lead time for preparation, implementation, and activation of the action. Time needed for implementation of follow-up actions depends on both the existing situation and the action itself, and may thus vary over time and between actions (see also example in Fig. 4.3 ). ‘Reliable’ means no missed signal or false alarm. From a policy perspective, it may seem logical to select indicators and trigger points that are related to norm values, objectives, or acceptability values, as these are the values the policies are evaluated upon. However, Haasnoot et al. (2015 ) argue that these indicators may not give timely and reliable signals, since they are often linked to infrequently occurring extreme conditions, which makes them unsuitable for detecting (systematic) trends. Their results show that other trigger indicators—not necessarily policy related—can be used instead as signals for change. How to design the governance of such a monitoring effort (e.g. who should monitor what, when, and for whom) is described by Hermans et al. (2017 ).
+
+After producing the final pathway map, a plan for action is drawn up, specifying the actions to be taken immediately (initial actions), as well as an overview of longer-term options, the enabling measures needed to keep them open, the developments to monitor, and the conditions under which the next actions should be taken in order to remain on track to follow the preferred pathway(s). The plan should essentially summarize the results from all the previous steps, including all targets, problems, potential and preferred pathways, enabling actions, and the monitoring system.
+
+Step 6: Implement the strategy, and Step 7: Monitor the strategy
+
+Finally, the initial actions and the enabling actions needed to keep the long-term options open are implemented and the monitoring system is established. Then, time starts running, signpost information related to the triggers is collected, and actions are started, altered, stopped, or expanded in response to this information. After implementation of the initial actions, activation of other actions is suspended until a signal is given. A signal could trigger more research, preparation, or implementation of actions, further enabling actions, or reassessment of the plan.
+
+4.3 A DAPP Illustration: Navigation along the Waas River
+
+The Waas River is a fictitious river flowing through a typical lowland area (Fig. 4.5 ). Although the river and floodplain area have been highly schematized, they retain realistic characteristics. The river is bounded by embankments, and the floodplain is separated into five dike rings. A large city is situated on higher ground in the top left of the area. Smaller villages exist in the remaining area, which also includes greenhouses, industry, conservation areas, and pastures. The river serves important economic functions in terms of providing critical navigation services, as it is the principal mode of bulk transport from the upstream hinterland to the downstream coastal port.
+
+Fig. 4.5
+
+Waas River area
+
+Full size image
+
+The Waas River area has in the past had to contend with both high- and low-flow events. While flooding poses a greater risk to the general population, low flows present significant economic risks in terms of river navigation. Water levels regularly reach levels too low to permit navigation during dry spells. When this occurs, agricultural produce and other industrial goods cannot be transported into or out of the area. Climate change poses a significant risk to the navigation function of the River Waas. Although uncertain, the growing scientific consensus is that warmer temperatures will lead to reduced precipitation during summer months. This will likely further increase dry spells and reduce flows during these times.
+
+In the remainder of this section, we illustrate how each of the steps of DAPP might be applied to the Waas case, following a top-down analytical approach using transient scenarios.
+
+Step 1: Describe the system, specify objectives, and identify uncertainties
+
+Based on the preceding description, the Waas area is identified as a riverine environment vulnerable to both high and low flows (only low flows will be considered for the remainder of this example). Local industries are particularly exposed to these climate-related risks, as they are dependent on river navigation for goods transport. ‘Historical records’ (based on real-world Dutch data) indicate that over the past 25 years the average annual non-navigable duration was 29 days. Given this situation, the objective for the adaptive planning exercise could be to minimize the number of days that boats are unable to navigate the river channel each year. This could be expressed in terms of an annual non-navigable time indicator (%), with a target being less than 2% (equivalent to approximately 7 days). Policies could be assumed to fail when this target is exceeded for a certain number of years in a row, for example.
+
+The major uncertainty in this example relates to climate change and the extent to which this will affect future precipitation patterns and river discharges. An ensemble of plausible futures can then be set up to encompass this uncertainty for a time horizon of 2000–2100. For this example, three climate scenarios established by the Royal Dutch Meteorological Institute (KNMI) have been used: no climate change, G scenario (‘low end’), and W + scenario (‘high end’) (van den Hurk et al. 2007 ). These scenarios cover a range of possible future climates in the Netherlands. The low-end scenario reflects moderate climate change with small increases in mean summer precipitation, while the high-end scenario reflects higher climate change with large decreases in mean summer precipitation. These scenarios have been combined with ten synthetic realizations of 100 years of annual precipitation and evaporation events from the KNMI Rainfall Generator (Beersma 2002 ) to generate a total ensemble of 30 possible futures (ten futures for the current climate, and ten for each of the other two climate change scenarios).
+
+Step 2: Assess system vulnerabilities and opportunities, and establish adaptation tipping points
+
+Each of the identified futures is then analysed against the desired target indicator using a fast Integrated Assessment Meta-Model (IAMM) (Haasnoot et al. 2012 ) to determine if and when current policies reach an ATP. Given that the average annual non-navigable duration (29 days) greatly exceeds the specified 2% target of 7 days over four consecutive years, it is little surprise that the IAMM reveals the system to already be performing unacceptably, such that the ATP is reached straight away in 2003 under all three climate change scenarios, and new actions need to be taken immediately.
+
+Step 3: Identify alternative actions, and assess their adaptation tipping point conditions and timing
+
+The next step is to establish a set of actions to address this vulnerability. The actions considered have been based on existing plans and potential strategies for navigation (low-flow management) in the Netherlands (Table 4.1 ). Their performance is then assessed using the IAMM, in order to determine the timing range of the ATP for each action. Given that the assessment is being carried out against 30 plausible futures, the uncertainties in relation to this timing can be conveyed using box–whisker plots. Figure 4.6 and the summarized data provided in Table 4.2 illustrate that all the actions are relatively effective except for the medium-sized ships, which will only be effective in the short term (to 2004). They also demonstrate that there is little variation in the timing of the ATPs, except for the small-scale dredging option, which is much less effective in the high-end scenario.
+
+Table 4.1 Description of individual actions and their total costs for the next 100 years
+Full size table
+
+Fig. 4.6
+
+Box–whisker plots of the ATP of the strategies based on the results of all 30 plausible climate futures. Median values for each climate change scenario are also presented (smaller rectangle within each range)
+
+Full size image
+
+Table 4.2 (a) Median scenario-dependent timing of ATPs under the 10 climate realizations for each scenario and (b) minimum, median, and maximum timing for adaptation tipping points under all 30 climate futures
+Full size table
+
+Step 4: Design and evaluate adaptation pathways
+
+Median ATPs established in the previous step can be used to develop adaptation pathways. After a tipping point is reached, all the other relevant actions are considered. Figure 4.7 presents the possible adaptation pathways for low-flow management. Similar to a metro map, the circles indicate a transfer station to another policy; only here, it is not possible to go back, since the lines present a route through time. The blocks indicate a terminal station at which an ATP is reached. Starting from the current situation, targets begin to be not achieved after 4 years. Following the grey lines of the current policy, one can see that there are four possible options after this tipping point. With the small ships and large-scale dredging actions, targets are achieved for the next 100 years in all plausible futures. When medium ships are chosen, a second tipping point is soon reached, and a shift to one of the other three actions is needed to achieve the target by following the yellow lines. With small-scale dredging, a shift to other actions is needed much later in the century. The dashed yellow and green lines represent a combination of both small-scale dredging and medium ships, which when implemented together also achieves the target until the end of the century in the high-end scenario. Each of the possible pathway routes can then be evaluated on its performance and on other criteria.
+
+Fig. 4.7
+
+Adaptation pathways map for low-flow management based on the median values for ATP of actions for all plausible climate futures
+
+Full size image
+
+Table 4.3 presents a scorecard for this example for the high-end scenario. According to the scorecard, Pathways 6–8 would be the preferred pathways, given their relatively low costs, deferred investments, relative benefits, and limited negative co-benefits. One could also select Pathways 1 and 9; however, these both reduce the flexibility of the plan and lead to locked-in situations. Moreover, Pathway 1 has large upfront costs, and Pathway 9 implements a more intensive version of the dredging policy before it is needed. Pathways 2, 3, and 5 are all too expensive, and there is little value in implementing the medium ship policy in the short term.
+
+Table 4.3 Scorecard to evaluate the performance of each of the possible pathways for the high-end scenario
+Full size table
+
+Step 5: Design the adaptive strategy
+
+The preferred adaptive plan consists of undertaking small-scale dredging in the short term and leaving options open to shift to either large-scale dredging, small ships, or a combination of small-scale dredging and medium ships in future. Enabling actions that could be enacted to improve the robustness of this plan could include the establishment of a monitoring programme to measure the frequency of low flows; enacting the necessary environmental protections to mitigate any negative effects of dredging; identifying appropriate locations for dredging soil disposal; and (later) regulating shipping companies to replace aging vessels with smaller craft; should monitoring suggest the next tipping point is approaching (and if either Pathway 6 or 7 becomes the preferred longer-term plan).
+
+Step 6: Implement the plan, and Step 7: Monitor the plan
+
+With the completion of the plan, it can then be implemented. Small-scale dredging activities, along with any of the identified immediate enabling actions, are commenced, and the monitoring programme is set up to measure the trajectory of low flows in the region. This information is then collected, and the plan is periodically reviewed and revised as new information comes to light. Once the monitoring indicates the climate trajectory that is occurring, the enabling actions for the preferred long-term options can then start being implemented, and a shift to the preferred policy enacted when a trigger point is reached.
+
+4.4 Under What Conditions Is This Approach Useful?
+
+The strengths of the DAPP method are that it facilitates decision making by offering intuitively understandable visualizations of policy options, and that it stimulates planners preparing the decisions to acknowledge uncertainties and to include adaptation over time explicitly in their plans—to explicitly think about the actions that may need to be taken now to keep long-term options open, and the decisions that can be postponed until the situation becomes clearer. In doing so, the inevitable changes to plans become part of a larger, recognized process, and are not forced to be made repeatedly on an ad hoc basis. Similarly, the path dependencies among different actions are rendered explicit, which helps to limit the emergence of stranded assets and inflexible ‘lock-ins’—those situations where prior decisions severely limit the number of actions left open for future adaptations. Planners, through monitoring and corrective actions, can try to keep the system headed towards the original goals.
+
+By unravelling an initial plan (e.g. one derived from Dynamic Adaptive Planning (Chap. 3 ) or Robust Decision Making (Chap. 2 )) into adaptation or development pathways, DAPP can also serve as an enabler for action. The identification of adaptation and opportunity tipping points, and the development of pathways, stimulates planners, policymakers, and stakeholders to discuss and consider the possible limits of adaptation to uncertain changing conditions, as well as the potential longer-term impacts for future generations. They are encouraged to think more broadly than the traditional types of actions, and in particular to consider the possibilities for larger, transformative actions to cope with large changes to the system that go beyond the confines of present practices. The decision space can thus be widened and future difficulties anticipated. This helps to challenge societies to prepare for the future—potentially large—changes.
+
+Adaptive approaches such as DAPP are particularly useful when the degree of uncertainty over the planning horizon is relevant for decision making, when the implementation time is relatively short compared to the rate of change (i.e. there is time to implement the action and for the system to adapt); when there is flexibility in the solutions (Maier et al. 2016 ); when alternative decision/actions or staged decision making is possible; when the functional lifetime of the decision is shorter than the planning horizon (i.e. tipping points are reached); when there are relevant path dependencies; when the implications of the decisions cover a long lifetime; and when trends can be signalled. They are especially useful in complex coupled physical–technical–human systems, where there are large uncertainties and multiple management decisions to be taken over long time periods and where the path dependency of these decisions is high. In such systems, long-term investment decisions are particularly exposed to the uncertain drivers of change. Without considering the long term and path dependency, maladaptive actions can result, leaving assets stranded long before their design lives are reached. Adaptation pathways can help to limit
+these risks by helping to identify the most appropriate sequence of measures with
+flexibly to adapt to the changing conditions.
+
+Finally, over time and with other anthropogenic and environmental changes, problems and opportunities may become more visible or urgent than what is envisaged today, and alternative adaptation options to solve these issues may become available.
+
+4.5 Recent Advances
+
+The concept of adaptation pathways is relatively new. As such, the approach is constantly being elaborated further by scholars and practitioners alike. Some recent advances include the work of Kwakkel et al. (2015 ), who developed a model-driven multi-objective robust optimization approach to identify and evaluate the most promising adaptation pathways directly using an Integrated Assessment Meta-Model (IAMM). This approach establishes a computational technique for searching in a structured way for a diverse set of robust adaptation pathways. It substantially prunes the set of candidate pathways, yielding only those that can best cope with the multiplicity of futures that span the various uncertainties.
+
+Additional efforts have expanded the concept of tipping points. ATPs remain central to the DAPP method, but in some instances it may be useful to also consider the opportunity tipping points of actions (e.g. Bouwer et al. under review). These are points at which a particular action becomes feasible or attractive, for example because of lower costs of actions or technical developments. Also, certain actions can have required conditions on actions (e.g. successful pilot), on long lead times (e.g. the planning and construction of a reservoir). As a result, they cannot be considered as viable actions for the current conditions, but can be considered for implementation at a later point. For example, the implementation of a nature-based solution may require certain sediment and water depth conditions, or some actions may require a successful pilot before it is possible to implement it on a large scale.
+
+Accounting for transfer costs in the economic evaluation of pathways has been another recent development. Standard economic evaluation studies are skewed towards short-term returns on investment by using a short time horizon. Thus, these evaluations have severe limitations in assessing the economic impact of present-day decisions for long-lived infrastructure and its performance over time under significant uncertainty (OECD 2013 ). Traditional economic approaches focus on single decisions rather than sequences of decisions and are not well equipped to deal with deep uncertainty (i.e. uncertainty that cannot be quantified with probability distributions). An exception is Real Options Analysis (ROA); in its present applications, it does not take into account path dependency of decisions (Smet 2017 ), although a variation of ROA was used to evaluate pathways in the New Zealand case study (see Chap. 9, Sect. 9.4 ). The approach of Engineering Options Analysis (EOA) considers a path-dependent decision tree for different environmental changes (Smet 2017 and Chap. 6 ). Haasnoot et al. (under review) show that when transfer costs are taken into account the economic costs associated with certain pathways can increase significantly such that these become less attractive. They also show that these impacts are particularly sensitive to both the timing of the ATP and the discount rate.
+
+Research has also been carried out into the design of appropriate adaptation signals to include within DAPP monitoring plans (Haasnoot et al. 2018 ; Stephens et al. 2018 ). Haasnoot et al. (2015 , 2018 ) present a framework to ensure that pathways do not tend towards being maladaptive or leave action until too late. Similarly, they advocate for efforts being put into searching for strong signals (often different from the overarching performance condition) that indicate that an ATP is approaching. These are signals that exhibit little noise in relation to the ensemble of possible futures and that provide an early indication of the scenario trajectory being followed. Finally, a typology of adaptation pathways to sea level rise has been developed for six typical coastal archetypes (urban/rural open coasts, urban/rural deltas, and urban/rural estuaries), with a focus on how best to manage the challenges of rising sea levels (Brown et al. 2016 ). These recognize that the impacts of sea level rise could be potentially severe, and that adaptation will be essential and may require extensive transformative actions.
+
+4.6 Links with Other DMDU Approaches
+
+Since the original specification of DAPP, various researchers have contributed to its further development. A first line of work focuses on the model-based design of adaptation pathways. Kwakkel et al. (2015 ) present a many-objective robust optimization (MORO) approach and demonstrate this using the Waas case. In a follow-up study, they compare this optimization approach with robust decision-making (RDM) and conclude that the iterative stress testing of RDM is a complementary model-based approach for designing pathways (Kwakkel et al. 2016 ). Along a similar line, Zeff et al. (2016 ) combine MORDM and adaptation pathways, illustrating this using a water resource application in the USA. Along a different dimension, there is ongoing research aimed at combining Decision Scaling (DS) and DAPP. These are combined in the Collaborative Risk-Informed Decision Analysis (CRIDA) approach (http://agwaguide.org/CRIDA ). CRIDA is a risk-informed approach similar in its planning steps to DAPP (establish the decision context, perform a bottom-up vulnerability analysis, formulate actions, evaluate alternatives, and institutionalize decisions). Compared to DAPP, CRIDA offers scalable practical guidance depending on the outcome of the stress test: the plausibility of adverse impacts (termed future risks) and analytical uncertainty. Under higher risks and analytical uncertainty, deviations from existing planning practice are proposed, such as the development of staged flexible strategies.
+
+A second line of research is focused on comparing DAPP with other approaches. As noted above, Kwakkel et al. (2016 ) compare DAPP and RDM, highlighting their complementarity. Gersonius et al. (2015 ) and Buurman and Babovic (2016 ) both report on using DAPP with ROA.
+
+4.7 Future Challenges
+
+As detailed above, DAPP is a DMDU approach that is constantly evolving and being elaborated. Some of these advances have naturally emerged as it has been applied in different ways and in different jurisdictions and contexts. Several challenges in relation to the method remain, however, which can form the basis for future scholarly work. First, challenges remain in demonstrating to practitioners and policymakers the value of the approach. It demands a shift in mindset and practice away from more traditional planning procedures, so tools are needed that can encourage its wider application, for example using simulation games to embed a change in thinking. Chapter 9 offers a potential way forward in this regard, in relation to the adoption of DAPP in local government in New Zealand. Somewhat related to this point, much of the work related to DAPP has been carried out for large, well-resourced, national-scale planning studies (e.g. the Dutch Delta Programme and the Bangladesh Delta Plan). Practice has shown that the approach lends itself well for tailoring to context-specific conditions. Further application of the approach to more resource-constrained local planning challenges is needed, in particular with respect to the implementation and monitoring of the resulting plans.
+
+This chapter has also described several ways to identify ATPs and develop pathways. At present, many applications of the method have focused on computer-based approaches that demand large numbers of simulation runs. In many instances, this will not be feasible, in which case more qualitative, stakeholder-driven approaches are another area ripe for future development. Challenges also remain in relation to both the economic evaluation of pathways and the identification of appropriate monitoring signals. The work on the economic evaluation of pathways (outlined above) has revealed it is not a straightforward process and is one that will require further refinement, in particular due to the sensitivity of the evaluation to variation in the discount rate and the timing of tipping points. Likewise, studies into appropriate monitoring signals are very much at a nascent stage, particularly when one considers the myriad of external conditions for which signals may need to be found across the biophysical and socio-economic spheres.
+
+Another challenge is to support the design of adaptation pathways in complex multi-stakeholder contexts effectively. Different stakeholders are responsible for different actions and have different preferences. What is desirable or robust for one stakeholder might not be robust for another, giving rise to robustness conflicts (Herman et al. 2014 ; Bosomworth et al. 2017 ). At present, little attention has been given to these issues in the design of pathways. Addressing this challenge involves both a governance component, focused on the alignment of incentives among stakeholders and the establishment of trust, and a policy analytic component, aimed at identifying robustness conflicts. The emergence of robustness conflicts might be conditional on specific actions, driven by changing conditions, or be defined by individual preferences and culture. The overarching challenge is to bring into focus the societal robustness of pathways in addition to robustness with respect to the future.
+
+Notes
+
+1.
+
+This is essentially performing Scenario Discovery (see Chap. 2 ).
+
+References
+
+Beersma, J. J. (2002). Rainfall generator for the Rhine basin: Description of 1000-year simulations. De Bilt, The Netherlands: KNMI
+
+Google Scholar
+
+Bosomworth, K., Leith, P., Harwood, A., & Wallis, P. J. (2017). What’s the problem in adaptation pathways planning? The potential of a diagnostic problem-structuring approach. Environmental Science & Policy, 76, 23–28. https://doi.org/10.1016/j.envsci.2017.06.007 .
+
+Article
+
+Google Scholar
+
+Bouwer, L. M., Burzel, A., Winsemius, H. C., Ward, P. J., Jeuken, A., & M. Haasnoot. (under review). When to adapt: informing flood risk management by analysing adaptation opportunities in Europe.
+
+Google Scholar
+
+Brown, S., Haasnoot, M., Bucx, T., van de Brugge, R., Wadey, M., & Nicholls, R. J., et al. (2016). Report on generic adaptation roadmap with reduced impact uncertainty (per selected case studies and with an across scales component). RISES-AM EU research project, Deliverable 4.2.
+
+Google Scholar
+
+Buurman, J., & Babovic, V. (2016). Adaptation pathways and real options analysis—An approach to deep uncertainty in climate change adaptation policies. Policy and Society, 35(2), 137–150. https://doi.org/10.1016/j.polsoc.2016.05.002 .
+
+Article
+
+Google Scholar
+
+Campos, I. S., Alves, F., Dinas, J., Truninger, M., Vizinho A., & Penha-Lopes, G. (2016) Climate adaptation, transitions, and socially innovative action-research approaches. Ecology and Society, 21(13).
+
+Google Scholar
+
+Gersonius, B., Ashley, R., Jeuken, A., Pathinara, A., & Zevenbergen, C. (2015). Accounting for uncertainty and flexibility in flood risk management: Comparing Real-In-Options optimisation and Adaptation Tipping Points. Journal of Flood Risk Management, 8, 135–144.
+
+Article
+
+Google Scholar
+
+Haasnoot, M. (2013). Anticipating change—Sustainable water policy pathways for an uncertain future. Ph.D. dissertation, Twente University, Enschede, Netherlands. https://doi.org/10.3990/1.9789036535595 .
+
+Haasnoot, M., Kwakkel, J. H., Walker, W. E., & ter Maat, J. (2013). Dynamic adaptive policy pathways: A method for crafting robust decisions for a deeply uncertain world. Global Environmental Change, 23(2), 485–498.
+
+Article
+
+Google Scholar
+
+Haasnoot, M., Middelkoop, H., Offermans, A., van Beek, E., & van Deursen, W. P. A. (2012). Exploring pathways for sustainable water management in river deltas in a changing environment. Climatic Change, 115(3–4), 795–819.
+
+Article
+
+Google Scholar
+
+Haasnoot, M., Schellekens, J., Beersma, J. J., Middelkoop, H., & Kwadijk, J. C. J. (2015). Transient scenarios for robust climate change adaptation illustrated for water management in the Netherlands. Environmental Research Letters. https://doi.org/10.1088/1748-9326/10/10/105008 .
+
+Article
+
+Google Scholar
+
+Haasnoot, M., van Aalst, M., Rozenberg, J., Dominique, K., Matthews, J., & Bouwer, L. M., et al. (under review). Investments under non-stationarity: Economic evaluation of adaptation pathways.
+
+Google Scholar
+
+Haasnoot, M., van Klooster, S., & van’t Alphen, J. (2018). Designing a monitoring system to detect signals to adapt to uncertain climate change. Global Environmental Change, 52, 273–285. https://doi.org/10.1016/j.gloenvcha.2018.08.003 .
+
+Article
+
+Google Scholar
+
+Haasnoot, M., van Deursen, W. P. A., Guillaume, J. H. A., Kwakkel, J. H., van Beek, E., & Middelkoop, H. (2014). Fit for purpose? Building and evaluating a fast, integrated model for exploring water policy pathways. Environmental Modelling & Software, 60, 99–120.
+
+Google Scholar
+
+Hermans, L. M., Haasnoot, M., Kwakkel, J. H., & ter Maat, J. (2017). Designing monitoring arrangements for collaborative learning about adaptation pathways. Environmental Science & Policy, 69, 29–38.
+
+Article
+
+Google Scholar
+
+Herman, J. D., Zeff, H. B., Reed, P. M., & Characklis, G. (2014). Beyond optimality: Multistakeholder robustness tradeoffs for regional water portfolio planning under deep uncertainty. Water Resources Research, 50, 7692–7713.
+
+Article
+
+Google Scholar
+
+Katsman, C., Hazeleger, W., Drijfhout, S., van Oldenborgh, G., & Burgers, G. (2008). Climate scenarios of sea level rise for the northeast Atlantic ocean: A study including the effects of ocean dynamics and gravity changes induced by ice melt. Climatic Change, 91, 351–374. https://doi.org/10.1007/s10584-008-9442-9 .
+
+Article
+
+Google Scholar
+
+Kuijken, W. (2010). The Delta Programme in the Netherlands: The Delta Works of the Future. Retrieved January 18, 2013, from https://www.deltacommissaris.nl/documenten/toespraken/2010/09/29/the-delta-programme-in-the-netherlands-the-delta-works-of-the-future .
+
+Kwadijk, J. C. J., Haasnoot, M., Mulder, J. P. M., Hoogvliet, M., Jeuken, A., van der Krogt, R., et al. (2010). Using adaptation tipping points to prepare for climate change and sea level rise: A case study in the Netherlands. Wiley Interdisciplinary Review Climate Change, 1(5), 729–740. https://doi.org/10.1002/wcc.64 .
+
+Article
+
+Google Scholar
+
+Kwakkel, J. H., Haasnoot, M., & Walker, W. E. (2015). Developing dynamic adaptive policy pathways: A computer-assisted approach for developing adaptive strategies for a deeply uncertain world. Climatic Change, 132, 373–386. https://doi.org/10.1007/s10584-014-1210-4 .
+
+Article
+
+Google Scholar
+
+Kwakkel, J. H., Haasnoot, M., & Walker, W. E. (2016). Comparing robust decision-making and dynamic adaptive policy pathways for model-based decision support under deep uncertainty. Environmental Modelling and Software, 86, 168–183. https://doi.org/10.1016/j.envsoft.2016.09.017 .
+
+Article
+
+Google Scholar
+
+Kwakkel, J. H., Walker, W. E., & Marchau, V. A. W. J. (2010). Adaptive airport strategic planning. European Journal of Transport and Infrastructure Research, 10(3), 249–273.
+
+Google Scholar
+
+Lawrence, J., & Haasnoot, M. (2017). What it took to catalyse uptake of dynamic adaptive pathways planning to address climate change uncertainty. Environmental Science & Policy, 68, 47–57. https://doi.org/10.1016/j.envsci.2016.12.003 .
+
+Article
+
+Google Scholar
+
+Maier, H. R., Guillaume, J. H. A., van Delden, H., Riddell, G. A., Haasnoot, M., Kwakkel, J. H. (2016). An uncertain future, deep uncertainty, scenarios, robustness and adaptation: How do they fit together? Environmental Modelling & Software, 81. https://doi.org/10.1016/j.envsoft.2016.03.014 .
+
+Article
+
+Google Scholar
+
+OECD. (2013). Water and climate change adaptation: Policies to navigate uncharted waters. Paris: OECD Publishing.
+
+Book
+
+Google Scholar
+
+Offermans, A., Haasnoot, M., & Valkering, P. (2011). A method to explore social response for sustainable water management strategies under changing conditions. Sustainable Development, 19, 312–324. https://doi.org/10.1002/sd.439
+
+Article
+
+Google Scholar
+
+Ranger, N., Reeder, T., & Lowe, J. (2013). Addressing ‘deep’ uncertainty over long-term climate in major infrastructure projects: four innovations of the Thames estuary 2100 Project. EURO Journal on Decision Processes, 1, 233–262. https://doi.org/10.1007/s40070-013-0014-5 .
+
+Article
+
+Google Scholar
+
+Reeder, T., & Ranger, N. (2010). How do you adapt in an uncertain world? Lessons from the Thames Estuary 2100 project. World Resources Report, Washington DC. Available online at http://www.worldresourcesreport.org , pp. 16.
+
+Smet, K. (2017). Engineering options: A proactive planning approach for aging water resource infrastructure under uncertainty. Cambridge: Harvard University.
+
+Google Scholar
+
+Stephens, S., Bell, R., & Lawrence, J. (2018). Developing signals to trigger adaptation to sea-level rise. Environmental Research Letters, 13(10). https://doi.org/10.1088/1748-9326/aadf96 .
+
+Article
+
+Google Scholar
+
+Van den Hurk, B., Klein Tank, A., Lenderink, G., Van Ulden, A., Van Oldenborgh, G., Katsman, C., et al. (2007). New climate change scenarios for the Netherlands. Water Science and Technology, 56, 27–33.
+
+Article
+
+Google Scholar
+
+van der Brugge, R., & Roosjen, R. (2016). An institutional and sociocultural perspective on the adaptation pathways approach. Journal of Water and Climate Change, 6(4), 743–758. https://doi.org/10.2166/wcc.2015.001 .
+
+Article
+
+Google Scholar
+
+Walker, W. E. (1988). Generating and screening alternatives (Chap. 6). In H. J. Miser & E. S. Quade (Eds.), Handbook of systems analysis: Craft issues and procedural choices. North Holland, NY.
+
+Google Scholar
+
+Walker, W. E., Rahman, S. A., & Cave, J. (2001). Adaptive policies, policy analysis, and policymaking. European Journal of Operational Research, 128(2), 282–289.
+
+Article
+
+Google Scholar
+
+Zeff, H. B., Herman, J. D., Reed, P. M., & Characklis, G. (2016). Cooperative drought adaptation: Integrating infrastructure development, conservation, and water transfers into adaptive policy pathways. Water Resources Research, 52, 7327–7346. https://doi.org/10.1002/2016WR018771 .
+
+Article
+
+Google Scholar
+
+Download references
+
+Author information
+
+Authors and Affiliations
+
+Water Resources and Delta Management, Deltares, Delft, The Netherlands
+
+Marjolijn Haasnoot
+
+Faculty of Physical Geography, Utrecht University, Utrecht, The Netherlands
+
+Marjolijn Haasnoot
+
+Water Resources and Delta Management, Deltares, Delft, The Netherlands
+
+Andrew Warren
+
+Faculty of Technology, Policy and Management (TPM), Delft University of Technology, Delft, The Netherlands
+
+Jan H. Kwakkel
+
+Authors
+Marjolijn Haasnoot
+
+View author publications
+
+Search author on: PubMed   Google Scholar
+
+Andrew Warren
+
+View author publications
+
+Search author on: PubMed   Google Scholar
+
+Jan H. Kwakkel
+
+View author publications
+
+Search author on: PubMed   Google Scholar
+
+Corresponding author
+
+Correspondence to
+Marjolijn Haasnoot .
+
+Editor information
+
+Editors and Affiliations
+
+Nijmegen School of Management, Radboud University, Nijmegen, Gelderland, The Netherlands
+
+Vincent A. W. J. Marchau
+
+Faculty of Technology, Policy and Management, Delft University of Technology, Delft, Zuid-Holland, The Netherlands
+
+Warren E. Walker
+
+Staff Delta Programme Commissioner, Ministry of Infrastructure and Water Management, The Hague, The Netherlands
+
+Pieter J. T. M. Bloemen
+
+Pardee RAND Graduate School, RAND Corporation, Santa Monica, CA, USA
+
+Steven W. Popper
+
+Rights and permissions
+
+Open Access This chapter is licensed under the terms of the Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/), which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license and indicate if changes were made.
+
+The images or other third party material in this chapter are included in the chapter's Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the chapter's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.
+
+Reprints and permissions
+
+Copyright information
+
+© 2019 The Author(s)
+
+About this chapter
+
+Cite this chapter
+
+Haasnoot, M., Warren, A., Kwakkel, J.H. (2019). Dynamic Adaptive Policy Pathways (DAPP).
+
+In: Marchau, V., Walker, W., Bloemen, P., Popper, S. (eds) Decision Making under Deep Uncertainty. Springer, Cham. https://doi.org/10.1007/978-3-030-05252-2_4
+
+Download citation
+
+.RIS
+
+.ENW
+
+.BIB
+
+DOI: https://doi.org/10.1007/978-3-030-05252-2_4
+
+Published: 05 April 2019
+
+Publisher Name: Springer, Cham
+
+Print ISBN: 978-3-030-05251-5
+
+Online ISBN: 978-3-030-05252-2
+
+eBook Packages: Business and Management Business and Management (R0)
+
+Share this chapter
+
+Anyone you share the following link with will be able to read this content:
+Get shareable link
+
+Sorry, a shareable link is not currently available for this article.
+
+Copy shareable link to clipboard
+
+Provided by the Springer Nature SharedIt content-sharing initiative
+
+Publish with us
+
+Policies and ethics
+
+Profiles
+
+Marjolijn Haasnoot
+
+View author profile

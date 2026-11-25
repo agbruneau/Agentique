@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-14-01</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Métaphore architecturale en couches</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Dorsale Event Mesh et patron hybride : « le journal avant le cadre » sous</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">enveloppe CloudEvents/AsyncAPI</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#1D4ED8"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1D4ED8">Z1 — Strate macro inter-domaines — Orchestration réglementaire et gravité des données</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">Appel synchrone par défaut (DEC-005)</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Fédération asynchrone (CAP-011/013)</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">réservée aux pointes et diffusions</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">Rejeux audités multi-domaines</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Rétention ≥ 90 j (classe modérée)</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">et ≥ 1 an (classe élevée)</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#047857">Z2 — Dorsale Event Mesh — Journal immuable CloudEvents 1.0.2 / AsyncAPI 3.0.0</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="551.0" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#064E3B">Transactional Outbox + CDC</text>
+    <line x1="53.0" y1="344" x2="582.0" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Mutation métier &amp; événement atomiques</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Élimine toute double écriture</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="607.0" y="310" width="551.0" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="618.0" y="332" font-size="13" font-weight="bold" fill="#064E3B">Courtier PEP &amp; enveloppes ≤ 64 Ko</text>
+    <line x1="618.0" y1="344" x2="1147.0" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="358" font-size="11.8" fill="#1E293B">AsyncAPI 3.0.0 · zéro PII en en-têtes</text>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Claim-Check &gt; 64 Ko · traceparent W3C</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#B45309"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#B45309">Z3 — Strate intra-domaine — Réacteurs agentiques et tampon à fenêtre de grâce</text>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#451A03">Agents ambiants typés</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Abonnés aux événements validés</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Chorégraphie bornée locale</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#451A03">Compteur xagenthopcount &amp; tampon</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Plafond strict xagentmaxhops = 4</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Fenêtre de grâce avant sortie irréversible</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Enregistrer simultanément mutation métier et événement CloudEvents dans</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">Transactional Outbox + CDC.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Valider le contrat AsyncAPI 3.0.0 et l'absence de PII en en-têtes au courtier</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">agissant comme PEP.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Propager l'événement en chorégraphie locale en incrémentant xagenthopcount</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">jusqu'au plafond 4.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Exécuter le rejeu isolé ou la fédération sous contrôle de l'orchestrateur macro et</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">du tampon de grâce.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#1E40AF"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Macro-orchestration réglementaire inter-domaines</text>
+  <text x="62.0" y="741" font-size="11" fill="#1E293B">(DEC-005/007)</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Dorsale immuable Outbox à contrats CloudEvents et</text>
+  <text x="438.7" y="741" font-size="11" fill="#1E293B">AsyncAPI scellés</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Compteur xagentmaxhops = 4 et tampon à fenêtre de grâce</text>
+  <text x="815.3" y="741" font-size="11" fill="#1E293B">ADR-013</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Le journal immuable précède systématiquement l'inférence probabiliste : en cas de dérive d'un agent, le grand livre événementiel</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">interrompt la propagation à quatre sauts et autorise un rejeu déterministe.</text>
+</g>
+</svg>

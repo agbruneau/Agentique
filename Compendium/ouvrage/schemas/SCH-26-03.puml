@@ -1,0 +1,84 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Souveraineté cognitive et coffre matériel : géorepérage 6 couches, SEAL, HYOK et GPU TEE
+package "Z1 : Grille SEAL-0..4 et arbitrage juridictionnel" {
+  rectangle "Routeur géofencé & grille SEAL\nSEAL-1/2 (résidence) vs SEAL-3/4\n(immunité CLOUD Act, Gaia-X/SecNumCloud)" as SEAL <<det>>
+  rectangle "Profil d'arbitrage ADR-027\nCoût/latence vs exposition juridique" as ADR <<ext>>
+}
+package "Z2 : Géorepérage des 6 substrats d'état (F-04..F-06)" {
+  database "6 substrats verrouillés\nTemporal, CoALA, KV-cache,\ncourtiers, OTel, journaux fournisseur" as SUB6 <<det>>
+}
+package "Z3 : Boucliers matériels C2 (HYOK) et C3 (GPU TEE)" {
+  rectangle "Classe C2 : HYOK HMAC-FPE\nPseudonymisation réversible sous\nHSM détenu par l'entreprise" as HYOK <<det>>
+  rectangle "Classe C3 : CPU/GPU TEE\nEnclave attestée SEV-SNP / TDX / H100\nDéchiffrement si mesure PCR conforme" as TEE <<ok>>
+  rectangle "Bascule Cognitive DR\nGrappe souveraine poids ouverts" as DR <<ok>>
+}
+SEAL --> SUB6 : ① classe C1/C2/C3 & géorepère
+ADR --> SEAL : arbitre seuils
+SUB6 --> HYOK : ② flux C2 pseudonymisé
+SUB6 --> TEE : ③ flux C3 attesté à distance
+SEAL --> DR : ④ dégradation SEAL / juridique
+legend bottom
+  **Bleu souverain** : grille SEAL, géorepérage des 6 substrats et clés HSM HYOK maîtrisées
+  **Vert matériel** : enclaves attestées CPU/GPU TEE (C3) et bascule souveraine Cognitive DR
+  **Gris arbitrage** : compromis FinOps vs exposition extraterritoriale (ADR-027)
+end legend
+@enduml

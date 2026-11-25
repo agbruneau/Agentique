@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-13-02</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Comparatif Avant / Après</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Catalogue fermé des huit topologies autorisées et portabilité des cadriciels</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">aux frontières MCP/A2A</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — AVANT — Essaim libre et dépendance aux SDK périssables (10 anti-patrons)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Essaim libre en O(n²)</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Écritures concurrentes sur état partagé</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Contexte saturé (EXIG-ORC-29)</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Couplage aux SDK fragiles</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">24,7 % de bogues d'intégration SDK</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">Verrouillage dans un langage interne</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#0F766E"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#0F766E">Z2 — APRÈS — Catalogue fermé des 8 patrons homologués et 1 variante débat (ADR-011)</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#134E4A">Patrons séquentiels &amp; parallèles</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#0F766E" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Flux fixe · chaîne · routage</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Parallélisation à écrivain unique</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#134E4A">Superviseur, évaluateur &amp; chorégraphie</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#0F766E" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Superviseur ≤ 2 sauts · évaluateur ≤ 3 tours</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Agent étalon ≤ 15 outils · débat ≤ 3</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#134E4A">Goal Pinning &amp; Claim-Check URI</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#0F766E" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Objectif initial ancré en permanence</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">Artefacts volumineux hors contexte</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#4338CA"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#4338CA">Z3 — Frontière de portabilité — Protocoles MCP et A2A isolant les cadriciels</text>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#312E81">Moteurs d'orchestration substituables</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Cadriciels en disponibilité générale</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Aucune logique métier liée au SDK</text>
+  </g>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#312E81">Interfaces périphériques MCP &amp; A2A</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Échanges exclusifs par contrats ouverts</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Remplacement de cadriciel sans refonte</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Écarter dès la conception tout maillage libre, toute salle virtuelle et toute</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">écriture concurrente (EXIG-ORC-29).</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Sélectionner l'un des huit patrons fermés d'ADR-011 en plafonnant les sauts (≤ 2)</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">et itérations (≤ 3).</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Transmettre les documents volumineux par référence URI (Claim-Check) et ancrer</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">l'objectif (Goal Pinning).</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Exposer uniquement des interfaces MCP et A2A en périphérie pour préserver la</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">substituabilité des cadriciels.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#DC2626"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Anti-patrons EXIG-ORC-29 et boucles O(n²) proscrits</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#0F766E"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Huit patrons fermés ADR-011 bornés par écrivain unique</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#4338CA"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Frontières portables MCP et A2A contre l'obsolescence</text>
+  <text x="815.3" y="741" font-size="11" fill="#1E293B">SDK</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Les cadriciels évoluent rapidement, mais un catalogue fermé à huit patrons adossé aux frontières MCP et A2A préserve l'auditabilité et</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">l'indépendance technologique.</text>
+</g>
+</svg>

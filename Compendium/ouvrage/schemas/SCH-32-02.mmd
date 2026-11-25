@@ -1,0 +1,31 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Registre à 7 états et 6 jalons"]
+    REG["① Inscription registre central<br/>Proposition → Conception (0 secret avant fiche)"]:::det
+    EVAL{"② Étages EvalOps E1–E2<br/>& 6 jalons réussis ?"}:::det
+    PROD["Production homologuée<br/>(réattestation 6 ou 12 mois)"]:::ok
+    RET["Retiré (préavis ≥ 60 j<br/>& preuve révocation)"]:::ext
+  end
+  subgraph Z2["Z2 : Filet anti-fantômes"]
+    SCAN["③ Balayage mensuel multi-sources<br/>Agent fantôme ou non réattesté"]:::danger
+  end
+  subgraph Z3["Z3 : Dérogations & 10 interdits GOV-17"]
+    DER{"④ Demande dérogation<br/>≤ 6 mois (≤ 90 j faible) ?"}:::prob
+    GOV["Refus absolu 100 %<br/>10 lignes rouges EXIG-GOV-17"]:::danger
+  end
+  REG --> EVAL
+  EVAL -->|Oui| PROD --> RET
+  EVAL -->|Non| DER
+  SCAN --> PROD
+  SCAN -->|Non conforme| GOV
+  DER -.->|Compensée hors GOV-17| PROD
+  DER -.->|Touche GOV-17| GOV
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#ECFDF5,stroke:#15803D,stroke-width:1.2px
+  style Z2 fill:#FEF2F2,stroke:#DC2626,stroke-width:1.2px
+  style Z3 fill:#FFFBEB,stroke:#D97706,stroke-width:1.2px

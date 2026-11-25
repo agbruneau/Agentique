@@ -1,0 +1,57 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Posséder son noyau (42 CAP invariantes vs 10 sur signal), gravité et 9 clauses de sortie
+
+package "Z1 — Trois conditions du plan de contrôle et 42 CAP invariantes (DISC-03)" {
+  rectangle "3 conditions d'effectivité : PEP obligé,\nregistre à 7 états et preuve hors modèle" as N1 <<det>>
+  rectangle "42 capacités invariantes dès P1\n(17 plan de contrôle + 25 points de coupure)" as N2 <<det>>
+  N1 --> N2 : ① Financer sans regret
+}
+
+package "Z2 — Dix capacités conditionnelles sur signal SIG-*" {
+  rectangle "Interfaces légères en P1–P2\n(CAP-004,006,013,014,025,027,028,033,034,041)" as N3 <<amber>>
+  rectangle "Déploiement complet sur signal SIG-*\nselon scénarios A, B ou C" as N4 <<amber>>
+  N2 --> N3 : ② Maintenir en attente
+  N3 .[#B45309].> N4 : Signal SIG-* vérifié
+}
+
+package "Z3 — Gravité des données (EXIG-ARC-21) et 9 clauses de sortie" {
+  rectangle "Confinement mono-silo des suites SaaS\n(gravité ≥ 85 % local · zéro lien latéral)" as N5 <<det>>
+  rectangle "Dépôt Git des actifs (SKILL.md)\n(interchangeabilité ≠ transférabilité)" as N6 <<green>>
+  rectangle "9 clauses Data Act / BSIF B-10\n(test annuel de sortie prouvé)" as N7 <<green>>
+  N2 --> N5 : ③ Appliquer EXIG-ARC-21
+  N5 --> N6 : ④ Préserver actifs
+  N6 --> N7
+}
+
+legend bottom
+  **Bleu ardoise** : Noyau de contrôle possédé (42 CAP invariantes sous 3 conditions)
+  **Or ambré** : Dix capacités conditionnelles activées uniquement sur signal SIG-*
+  **Vert émeraude** : Actifs transférables sous Git et 9 clauses de sortie éprouvées
+end legend
+@enduml

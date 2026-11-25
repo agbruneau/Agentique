@@ -1,0 +1,57 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Prévenir l'approbation réflexe (ASI09) : circuit CIBA/JCS, vue différentielle et PC3 / Loi 25
+
+package "Z1 — Distinction identitaire (Tableau 7) et filtrage à la passerelle" {
+  rectangle "Agent interactif vs ambiant\n(triple exclusion identitaire · blocage < N4)" as N1 <<red>>
+  rectangle "Passerelle PEP : filtre I-JSON\nh = SHA-256(JCS(...)) & boîte persistante" as N2 <<purple>>
+  N1 --> N2 : ① Calculer condensat h
+}
+
+package "Z2 — Approbation hors bande CIBA/FIDO2 et ergonomie ASI09" {
+  rectangle "Console différentielle A2UI hors LLM\n(zéro texte persuasif · 93 % réflexe bloqué)" as N3 <<blue>>
+  rectangle "Dispositif distinct CIBA + FIDO2\n+ RFC 9396 (≤ 15 min · jti atomique)" as N4 <<purple>>
+  rectangle "Garde anti-saturation (≤ 33 cas/quart)\n3–5 % témoins POR-014 · INI-043 · repli < 60 s" as N5 <<blue>>
+  N2 --> N3 : ② Exposer pièces brutes
+  N3 --> N4 : Signature liée à h
+  N3 --> N5 : ③ Surveiller cadence
+}
+
+package "Z3 — Frontière juridique : arrêt préventif PC3 vs Loi 25 art. 12.1" {
+  rectangle "Arrêt préventif PC3 (H-31)\n(bloque ou libère avant acte irréversible P3)" as N6 <<purple>>
+  rectangle "Circuit Loi 25 art. 12.1 : avis PC1, facteurs PC2,\nrectification, révision humaine & archive ≥ 1 an" as N7 <<blue>>
+  N4 --> N6 : Libération P3 signée
+  N5 --> N7 : ④ Révision effective aval
+}
+
+legend bottom
+  **Corail / Rouge** : Supervision HITL de façade (93 % réflexe ASI09) et écriture ambiante bloquée
+  **Violet** : Jeton CIBA/FIDO2 retenu au PEP (≤ 15 min, jti atomique, lié à h)
+  **Bleu** : Console différentielle hors modèle, témoins POR-014 et dossier Loi 25 (≥ 1 an)
+end legend
+@enduml

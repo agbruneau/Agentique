@@ -1,0 +1,26 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Régime 1 — Pire cas EXIG-CON-02"]
+    CLASSE["① Cote max sans compensation<br/>Élevée ≤ N2 · Mod. ≤ N3 · Faible ≤ N3/N4"]:::det
+  end
+  subgraph Z2["Z2 : Régime 2 — Dorsale PDCA unique"]
+    PDCA["② Index unique EXIG-CON-18<br/>NIST RMF, IMDA v1.5, EN 18286:2026<br/>(substitue ISO 42001 statut F)"]:::ok
+  end
+  subgraph Z3["Z3 : Urgence S1–S4 en 5 temps (EXIG-CON-23..25)"]
+    CONT["③ 1. Contenir (coupe-circuit)<br/>canal Saga préservé"]:::danger
+    PRES["2. Préserver (gel bacs & mémoires)"]:::det
+    NOTIF["④ 3. Aviser au plus court délai :<br/>24 h BSIF · 2/10/15 j UE · 72 h CAI"]:::danger
+    LEARN["4. Corriger → 5. Apprendre (5 ans)<br/>& réévaluation EXIG-GOV-12"]:::ok
+  end
+  CLASSE --> PDCA
+  PDCA -.->|Incident S1–S4| CONT
+  CONT --> PRES --> NOTIF --> LEARN --> CLASSE
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F8FAFC,stroke:#1D4ED8,stroke-width:1.2px
+  style Z2 fill:#ECFDF5,stroke:#047857,stroke-width:1.2px
+  style Z3 fill:#FEF2F2,stroke:#DC2626,stroke-width:1.2px

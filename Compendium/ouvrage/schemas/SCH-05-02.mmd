@@ -1,0 +1,49 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 28, 'padding': 12}}}%%
+flowchart TB
+  subgraph Z1["Z1 · Propagation asymétrique amont (High-Water Mark)"]
+    direction TB
+    N1["Agent amont L1 (lecture seule)<br/>lit des sources externes"]:::prob
+    N2["Agent aval L3 (actions sensibles)<br/>reçoit la sortie sans sas"]:::det
+    N3["Inspection CI OPA sur<br/>deployment-footprint.yaml"]:::purple
+    N1 -.->|"Flux non assaini"| N2
+    N2 -->|"② Héritage contrôles L3 (sans droits L3)"| N3
+  end
+
+  subgraph Z2["Z2 · Règle d'or (EXIG-AUT-07 / CAP-048)"]
+    direction TB
+    N4{"Triple cumul : impact élevé +<br/>faible réversibilité + latence ?"}:::amber
+    N5["Plafond impératif ≤ N2<br/>(quel que soit le score banc)"]:::amber
+    N4 -->|"③ Oui ou incertain"| N5
+  end
+
+  subgraph Z3["Z3 · Calcul à la passerelle en mode fermé"]
+    direction TB
+    N6["① Qualification catalogue P0–P3<br/>(indices MCP ignorés)"]:::det
+    N7["Union la plus stricte :<br/>classe × P0–P3 ∪ maillon ∪ Règle de 2"]:::red
+    N8{"Critère manquant ou conflit ?"}:::red
+    N9["④ Refus fermé (EXIG-AUT-10/11)<br/>ou exécution bornée autorisée"]:::red
+    N6 --> N7 --> N8 --> N9
+  end
+
+  N3 --> N4
+  N4 -->|"Non"| N7
+  N5 --> N7
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : contrôle OPA / refus fermé"]:::red
+    L_PROB["Trait pointillé : flux probabiliste amont"]:::prob
+    L_DET ~~~ L_PROB
+  end
+
+  N9 ~~~ L_DET
+
+  classDef det fill:#EBF2F7,stroke:#1B4F72,stroke-width:2px,color:#0F2942,font-weight:bold
+  classDef prob fill:#FFF5E0,stroke:#D97706,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef purple fill:#F5F3FF,stroke:#6D28D9,stroke-width:2px,color:#4C1D95,font-weight:bold
+  classDef amber fill:#FFFBEB,stroke:#B45309,stroke-width:2px,color:#451A03,font-weight:bold
+  classDef red fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px,color:#7F1D1D,font-weight:bold
+  style Z1 fill:#FAF5FF,stroke:#C4B5FD,color:#6D28D9
+  style Z2 fill:#FFFBEB,stroke:#FCD34D,color:#B45309
+  style Z3 fill:#FEF2F2,stroke:#FCA5A5,color:#B91C1C
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

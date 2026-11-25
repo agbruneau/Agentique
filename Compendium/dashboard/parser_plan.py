@@ -93,6 +93,7 @@ def count_prose_words(markdown_text: str) -> int:
         end_fm = text.find("\n---\n", 4)
         if end_fm != -1:
             text = text[end_fm + 5 :]
+    text = re.sub(r"<!--\s*BIBLIOGRAPHIE_BRUTE_DEBUT\s*-->[\s\S]*?<!--\s*BIBLIOGRAPHIE_BRUTE_FIN\s*-->", " ", text)
     text = re.sub(r"<!--[\s\S]*?-->", " ", text)
     lines = text.splitlines()
     kept: list[str] = []

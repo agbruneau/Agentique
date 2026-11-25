@@ -1,0 +1,57 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Maturité N1–N5, diagnostic patrimonial S_ready (c_sec ≥ 60), outils ACI et budgets QoS
+
+package "Z1 — Grille à cinq niveaux N1–N5 et quatre portes G1–G4" {
+  rectangle "N1 Ad hoc → G1 → N2 Départemental\n(niveaux non gouvernés)" as N1 <<red>>
+  rectangle "G2 Homologation → N3 Gouverné\n(socle E-23 / AI Act : Temporal, NHI, pass^5)" as N2 <<det>>
+  rectangle "G3 → N4 Orchestré SI → G4 → N5 Fédéré B2B\n(aucun saut N1 → N4 autorisé)" as N3 <<green>>
+  N1 --> N2 : Porte G2 bloquante
+  N2 --> N3 : Portes G3–G4
+}
+
+package "Z2 — Score patrimonial S_ready et triage automatisé" {
+  rectangle "5 critères pondérés + seuil c_sec ≥ 60\n(< 50 ou c_sec < 60 → QUARANTINE_L1)" as N4 <<red>>
+  rectangle "50–75 → écriture sous quotas (REMEDIATE)\n≥ 75 → natif N3/N4 (PROMOTE)" as N5 <<det>>
+  N4 --> N5 : ①④ Triage automatisé
+}
+
+package "Z3 — Ergonomie d'outils ACI et budgets QoS en CI" {
+  rectangle "Façades d'intention (≤ 15 outils)\nErreurs actionnables (zéro CRUD 1:1)" as N6 <<det>>
+  rectangle "Budgets QoS (coût, précision, latence)\nBorealis-Bench & TCK A2A en CI" as N7 <<green>>
+  N5 --> N6 : ② Refondre interfaces
+  N6 --> N7 : ③ Valider en CI
+  N7 --> N2
+}
+
+legend bottom
+  **Corail / Rouge** : Niveaux N1–N2 et systèmes confinés en L1 (c_sec < 60)
+  **Bleu ardoise** : Socle minimal critique N3 Gouverné et outils ACI
+  **Vert émeraude** : Niveaux N4–N5 atteints après portes G2–G4 et budgets QoS
+end legend
+@enduml

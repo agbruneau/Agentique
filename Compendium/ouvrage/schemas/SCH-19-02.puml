@@ -1,0 +1,85 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Outils MCP empoisonnés, « rug-pull » et Agent Skills vulnérables
+package "Z1 : Avant — Registres publics mutables (F-52)" {
+  rectangle "1. Homologation initiale\nOutil MCP / SKILL.md audité" as AUDIT_INIT <<ext>>
+  rectangle "Mutation post-approbation\n40,58 % dérives MCP (rug-pull)\n26,1 % compétences vulnérables" as RUG <<prob>>
+  rectangle "Redirections & descriptions\npiégées (AML.T0104)" as POISON <<danger>>
+}
+package "Z2 : Après — Sceau SHA-256 JCS et catalogue cloisonné" {
+  rectangle "2. Registre interne épinglé\nEmpreinte SHA-256 JCS (RFC 8785)\n& SBOM CycloneDX/SPDX" as REG <<det>>
+  rectangle "3. Passerelle PEP (EXIG-MCP-20)\nRecalcul SHA-256 sur tools/list\navant chaque exécution" as PEP <<det>>
+  rectangle "4a. Verdict conforme\nEspace de noms préfixé\n& confinement OpenSandbox" as ALLOW <<ok>>
+  rectangle "4b. Écart d'octet détecté\nRefus fermé & quarantaine\njusqu'à ré-homologation" as QUAR <<danger>>
+}
+AUDIT_INIT --> RUG : ① sans scellement
+RUG .[#B45309].> POISON : ② altère outil / script
+AUDIT_INIT --> REG : épinglage initial
+REG --> PEP : empreinte attendue
+POISON --> PEP : ③ appel intercepté
+PEP --> ALLOW : empreinte identique
+PEP --> QUAR : ④ dérive bloquée
+legend bottom
+  **Orange ambré** : chaîne logistique publique mutable (40,58 % dérives MCP, 26,1 % compétences à risque)
+  **Vert validation** : registre interne épinglé SHA-256 JCS et SBOM vérifié
+  **Synthèse doctrinale** : l'inspection ponctuelle à l'admission ne suffit pas ; le contrôle SHA-256 avant chaque appel rend le contrat infalsifiable.
+end legend
+@enduml

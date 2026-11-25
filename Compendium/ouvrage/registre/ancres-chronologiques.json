@@ -1,0 +1,1411 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "description": "86 jalons chronologiques consolidés (2018–2035) : 13 ancres L+ T7/T8, 67 jalons réglementaires/normatifs T4 et 6 phases/paliers DAPP T5.",
+  "total_jalons": 86,
+  "anchors": [
+    {
+      "key": "2026-08-02-EU-AI-ACT-ART50",
+      "date": "2026-08",
+      "nature": "Entrée en application réglementaire",
+      "jurisdiction": "Union européenne",
+      "label": "Obligations de transparence de l'article 50 de l'EU AI Act applicables dès août 2026 (2 août 2026, avec régime transitoire au 2 décembre 2026 pour certains systèmes déjà sur le marché selon l'art. 111 modifié)",
+      "chapters": [
+        "ch23",
+        "ch25",
+        "ch26",
+        "ch34",
+        "ch35"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Vérifié aux art. 50 et 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements du Règlement (UE) 2026/1744 (SRC-061).",
+      "origin": "T8"
+    },
+    {
+      "key": "2026-LOI25-ART12-1",
+      "date": "2023-09-22",
+      "nature": "Loi applicable",
+      "jurisdiction": "Québec",
+      "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 : information, explication, observation et révision humaine ; sanctions administratives jusqu'à 10 M\\$ CA ou 2 % et amendes pénales jusqu'à 25 M\\$ CA ou 4 %)",
+      "chapters": [
+        "ch17",
+        "ch18",
+        "ch22",
+        "ch23",
+        "ch24",
+        "ch25",
+        "ch26",
+        "ch34",
+        "ch35"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Vérifié aux art. 12.1, 90.12 et 91 de LQ 2021, c. 25 (SRC-063) et au rapport quinquennal 2026 de la CAI (SRC-064) ; portail LégisQuébec P-39.1 en statut F.",
+      "origin": "T8"
+    },
+    {
+      "key": "2027-03-15-TLS-100J",
+      "date": "2027-03-15",
+      "nature": "Échéance technique sectorielle",
+      "jurisdiction": "International (CA/B Forum)",
+      "label": "Réduction maximale de la durée de validité des certificats TLS publics à 100 jours au 15 mars 2027",
+      "chapters": [
+        "ch17",
+        "ch18",
+        "ch22",
+        "ch24"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Vérifié dans CA/B Forum Server Certificate Baseline Requirements (SRC-053).",
+      "origin": "T8"
+    },
+    {
+      "key": "2027-03-30-MCP-SEP-3398",
+      "date": "2027-03",
+      "nature": "Échéance de spécification",
+      "jurisdiction": "International (MCP)",
+      "label": "Cadence semestrielle SEP-3398 décalant la prochaine révision MCP cible au 30 mars 2027 (post-gel)",
+      "chapters": [
+        "ch07",
+        "ch08",
+        "ch09"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-082",
+      "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027).",
+      "origin": "T8"
+    },
+    {
+      "key": "2027-05-01-BSIF-E23-AMF",
+      "date": "2027-05-01",
+      "nature": "Prise d'effet réglementaire",
+      "jurisdiction": "Canada / Québec",
+      "label": "Prise d'effet de la Ligne directrice E-23 du BSIF (gestion du risque de modélisation) le 1er mai 2027 et repère attendu pour l'encadrement AMF sous réserve documentaire",
+      "chapters": [
+        "ch23",
+        "ch25",
+        "ch26",
+        "ch34",
+        "ch35"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-065, SRC-071",
+      "commentaire_annexe": "Date du 1er mai 2027 vérifiée dans BSIF E-23 (SRC-065) ; repère AMF corroboré secondairement par AIBanks.ca (SRC-071), le portail lautorite.qc.ca et QC-AMF-NOTE-2026 restant en statut F.",
+      "origin": "T8"
+    },
+    {
+      "key": "2027-07-28-MCP-MIGRATION",
+      "date": "2027-07-28",
+      "nature": "Fenêtre minimale de migration",
+      "jurisdiction": "International (MCP)",
+      "label": "Échéance minimale de douze mois (28 juillet 2027) suivant la révision MCP 2026-07-28 avant retrait d'une fonctionnalité dépréciée sous SEP-2596",
+      "chapters": [
+        "ch07",
+        "ch08",
+        "ch09"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-074, SRC-081",
+      "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081).",
+      "origin": "T8"
+    },
+    {
+      "key": "2027-12-02-EU-AI-ACT-ANNEXE-III",
+      "date": "2027-12-02",
+      "nature": "Échéance réglementaire conditionnelle",
+      "jurisdiction": "Union européenne",
+      "label": "Date maximale d'entrée en application des obligations pour les systèmes d'IA à haut risque de l'Annexe III (2 décembre 2027 selon la modification (UE) 2026/1744)",
+      "chapters": [
+        "ch23",
+        "ch25",
+        "ch26",
+        "ch34",
+        "ch35"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-067",
+      "commentaire_annexe": "Vérifié dans le Règlement (UE) 2026/1744 (SRC-061) modifiant (UE) 2024/1689 (SRC-060), avec présomption de conformité QMS Art. 17 soutenue par EN 18286:2026 via (UE) 2026/2274 (SRC-067).",
+      "origin": "T8"
+    },
+    {
+      "key": "2028-08-02-EU-AI-ACT-ANNEXE-I",
+      "date": "2028-08-02",
+      "nature": "Échéance réglementaire",
+      "jurisdiction": "Union européenne",
+      "label": "Application des exigences de l'Annexe I de l'EU AI Act pour les produits réglementés (2 août 2028)",
+      "chapters": [
+        "ch23",
+        "ch25",
+        "ch26",
+        "ch34",
+        "ch35"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Vérifié dans le Règlement (UE) 2024/1689 modifié par (UE) 2026/1744 (SRC-060, SRC-061).",
+      "origin": "T8"
+    },
+    {
+      "key": "2029-03-15-TLS-47J",
+      "date": "2029-03-15",
+      "nature": "Échéance technique sectorielle",
+      "jurisdiction": "International (CA/B Forum)",
+      "label": "Plafond de validité des certificats TLS publics ramené à 47 jours au 15 mars 2029",
+      "chapters": [
+        "ch17",
+        "ch18",
+        "ch22",
+        "ch24"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Vérifié dans CA/B Forum Baseline Requirements (SRC-053).",
+      "origin": "T8"
+    },
+    {
+      "key": "2030-2035-G7-PQC-FINANCE",
+      "date": "2030–2035",
+      "nature": "Feuille de route post-quantique",
+      "jurisdiction": "G7 / NIST",
+      "label": "Fenêtre coordonnée 2030–2035 de transition vers les standards post-quantiques NIST (FIPS 203, FIPS 204, FIPS 205, IR 8547)",
+      "chapters": [
+        "ch17",
+        "ch18",
+        "ch22",
+        "ch23",
+        "ch24",
+        "ch25",
+        "ch26",
+        "ch34",
+        "ch35"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-049, SRC-050, SRC-018, SRC-051, SRC-052",
+      "commentaire_annexe": "Vérifié dans G7-CEG Quantum Transition Roadmap (SRC-052) et NIST IR 8547 (SRC-051).",
+      "origin": "T8"
+    },
+    {
+      "key": "2028-10-01-GESTION-PATRIMOINE-RETROFACTURATION",
+      "date": "2028-10-01",
+      "nature": "Échéance sectorielle financière (ACVM / Norme canadienne 31-103)",
+      "jurisdiction": "Canada",
+      "label": "Entrée en vigueur de l'interdiction des rétrofacturations de commissions liées à la distribution de titres de fonds d'investissement",
+      "chapters": [
+        "ch18",
+        "ch25",
+        "ch26",
+        "ch28",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-111",
+      "commentaire_annexe": "Vérifié dans l'avis des ACVM / OSC du 8 octobre 2026 modifiant la Norme canadienne 31-103 (« This Instrument comes into force on October 1, 2028 », SRC-069).",
+      "origin": "T7"
+    },
+    {
+      "key": "2028-12-31-BSIF-B15-PORTEE3",
+      "date": "Fin 2028",
+      "nature": "Échéance prudentielle climatique (exercice financier 2028)",
+      "jurisdiction": "Canada fédéral",
+      "label": "Exigences prudentielles de divulgation climatique du BSIF (ligne directrice B-15, annexe 2-2 : émissions absolues brutes de portée 3 incluant les émissions financées et assurées)",
+      "chapters": [
+        "ch18",
+        "ch22",
+        "ch24",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-110",
+      "commentaire_annexe": "Vérifié à l'élément b) ii de l'annexe 2-2 de la ligne directrice B-15 du BSIF (SRC-067), fixant à l'exercice financier 2028 la divulgation Scope 3 (catégorie 15 financée et assurée) ; le volet AUM b) iii demeure marqué TBD.",
+      "origin": "T7"
+    },
+    {
+      "key": "2033-06-30-LOIS-FINANCIERES-CANADA",
+      "date": "2033-06-30",
+      "nature": "Échéance législative statutaire",
+      "jurisdiction": "Canada fédéral",
+      "label": "Clause statutaire de temporisation et de révision des lois fédérales régissant les institutions financières canadiennes (Loi sur les banques, art. 21)",
+      "chapters": [
+        "ch18",
+        "ch25",
+        "ch26",
+        "ch28",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-070",
+      "commentaire_annexe": "Vérifié directement dans la codification officielle de la Loi sur les banques (L.C. 1991, ch. 46, art. 21 : « après le 30 juin 2033 », SRC-070).",
+      "origin": "T7"
+    },
+    {
+      "key": "ANC-120",
+      "date": "2018-06-13",
+      "nature": "réglementation",
+      "jurisdiction": "Québec",
+      "label": "Sanction le 13 juin 2018 de la Loi visant principalement à améliorer l’encadrement du secteur financier (L.Q. 2018, c. 23) édictant la Loi sur les assureurs (RLRQ, c. A-32.1, art. 67, 68, 71 et 463), réformant la Loi sur les coopératives de services financiers (c. C-67.3) et la LDPSF (c. D-9.2, art. 38 sur les trois soumissions hors groupe en courtage de dommages).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Jalon ANC-120 (Tome 4, code QC-03, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-119",
+      "date": "2023-04-04",
+      "nature": "réglementation",
+      "jurisdiction": "Québec",
+      "label": "Sanction le 4 avril 2023 de la Loi sur les renseignements de santé et de services sociaux (L.Q. 2023, c. 5, codifiée RLRQ, c. R-22.1), dont les Annexes I et II distinguent les organismes du secteur de la santé et cliniques liées des assureurs privés demeurant régis par RLRQ, c. P-39.1.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Jalon ANC-119 (Tome 4, code QC-02, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-114",
+      "date": "2023-09-22",
+      "nature": "réglementation",
+      "jurisdiction": "Québec",
+      "label": "Entrée en vigueur au 22 septembre 2023 des obligations de la Loi 25 (L.Q. 2021, c. 25, art. 110 / art. 12.1 RLRQ, c. P-39.1) applicables aux entreprises privées du Québec : avis contemporain, communication sur demande des principaux facteurs et paramètres et droit de révision humaine pour toute décision fondée exclusivement sur un traitement automatisé, ainsi que l’ÉFVP obligatoire avant transfert hors Québec (art. 17).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Jalon ANC-114 (Tome 4, code QC-01, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-115",
+      "date": "2024-09-22",
+      "nature": "réglementation",
+      "jurisdiction": "Québec (CAI)",
+      "label": "Entrée en vigueur au 22 septembre 2024 du droit à la portabilité des renseignements personnels informatisés (L.Q. 2021, c. 25, art. 27 RLRQ, c. P-39.1; page officielle de la Commission d’accès à l’information du Québec QC-CAI-LOI25.txt) imposant la communication dans un format technologique structuré et couramment utilisé.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Jalon ANC-115 (Tome 4, code QC-CAI-LOI25, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-121",
+      "date": "2025-03-31",
+      "nature": "réglementation",
+      "jurisdiction": "Québec / Canada (ACVM — incl. AMF)",
+      "label": "Clôture au 31 mars 2025 de la consultation publique sur l’Avis 11-348 du personnel des ACVM (version française officielle publiée le 5 décembre 2024 par les ACVM incluant l’Autorité des marchés financiers du Québec, ACVM-11-348.txt) précisant l’applicabilité du droit canadien des valeurs mobilières aux systèmes d’IA.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-071, SRC-065",
+      "commentaire_annexe": "Jalon ANC-121 (Tome 4, code ACVM-11-348, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-117",
+      "date": "2025-12-03",
+      "nature": "réglementation",
+      "jurisdiction": "Québec (MCN)",
+      "label": "Adoption par le ministère de la Cybersécurité et du Numérique du Québec de l’Arrêté 2025-02 du 3 décembre 2025 édictant l’Énoncé de principes pour une utilisation responsable de l’intelligence artificielle applicable aux organismes publics (administrations publiques du Québec, remplaçant l’Arrêté 2024-02 du 27 juin 2024; sans effet obligatoire sur les institutions financières privées).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-066",
+      "commentaire_annexe": "Jalon ANC-117 (Tome 4, code QC-MCN-ENONCE-IA, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-101",
+      "date": "2026-01-01",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (ACVM — provincial et territorial)",
+      "label": "Entrée en vigueur des modifications au Règlement 31-103 (NI 31-103, art. 14.1.1, 14.1.2, 14.17 et 14.17.1) imposant la déclaration annuelle du coût total des fonds d’investissement, incluant le ratio des frais de fonds quotidien et les frais directs payés par le client.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-111",
+      "commentaire_annexe": "Jalon ANC-101 (Tome 4, code N-06, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-116",
+      "date": "2026-05-01",
+      "nature": "réglementation",
+      "jurisdiction": "Québec (CAI)",
+      "label": "Publication en mai 2026 du Rapport quinquennal 2026 de la Commission d’accès à l’information du Québec (arrêté au 17 avril 2026, CAI_RQ_2026.pdf) recommandant notamment (Recommandation 45) que toute ÉFVP portant sur un système d’IA visant la prise de décision automatisée concernant des personnes s’accompagne d’une analyse d’impact algorithmique.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-064",
+      "commentaire_annexe": "Jalon ANC-116 (Tome 4, code QC-CAI-RAPPORT-2026, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-118",
+      "date": "2026-09-15",
+      "nature": "réglementation",
+      "jurisdiction": "Québec (MCN)",
+      "label": "Publication en 2026 par le ministère de la Cybersécurité et du Numérique du Québec du Guide sur l’utilisation responsable de l’intelligence artificielle agentique destiné aux organismes publics (administrations publiques du Québec; consacre le principe de proportionnalité d’autonomie sans lier les institutions financières privées).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-066",
+      "commentaire_annexe": "Jalon ANC-118 (Tome 4, code QC-MCN-GUIDE-AGENTIQUE, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-001",
+      "date": "2026-12-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act modifié par le règlement (UE) 2026/1744 : entrée en application des nouvelles interdictions de l’article 5 (points b bis et b ter) et de l’obligation de marquage des contenus synthétiques (art. 50 § 2) pour les systèmes d’IA mis sur le marché avant le 2 août 2026 (art. 111 § 4 et art. 113 al. 3 point a).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Jalon ANC-001 (Tome 4, code P-02, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-002",
+      "date": "2026-12-09",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Directive (UE) 2024/2853 relative à la responsabilité du fait des produits défectueux : échéance de transposition nationale et application du régime de responsabilité sans faute aux produits — incluant explicitement les logiciels et systèmes d’IA commerciaux (art. 4 point 1) — mis sur le marché ou en service après cette date (art. 2 § 1, art. 21 et art. 22).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-002 (Tome 4, code P-07, cible fournisseurs), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-022",
+      "date": "2026-12-31",
+      "nature": "normalisation",
+      "jurisdiction": "International (IETF)",
+      "label": "Groupe de travail OAuth de l’IETF : jalons annoncés de soumission à l’IESG des spécifications « OAuth 2.1 Authorization Framework » (draft-ietf-oauth-v2-1) et « Transaction Tokens » (draft-ietf-oauth-transaction-tokens).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-133, SRC-041",
+      "commentaire_annexe": "Jalon ANC-022 (Tome 4, code P-13, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-031",
+      "date": "2026-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "Union européenne",
+      "label": "Feuille de route coordonnée PQC du groupe de coopération SRI (NIS Cooperation Group) : jalon initial recommandé pour l’établissement des feuilles de route nationales PQC par tous les États membres et le lancement des inventaires et projets pilotes sur les cas d’usage à risque élevé et moyen (§ 4.1, Milestone 1).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-031 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-045",
+      "date": "2027-01-01",
+      "nature": "marché",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Statistique Canada (programme TechStat) : lancement annoncé à partir de 2027 de nouvelles statistiques commerciales dédiées à l’adoption, à la prévalence, aux avantages et aux défis des technologies d’IA auprès des entreprises, des particuliers et des employés (date conventionnelle de début d’année traduisant « À partir de 2027 »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-014, SRC-015",
+      "commentaire_annexe": "Jalon ANC-045 (Tome 4, code P-29, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-102",
+      "date": "2027-01-01",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (ACVM — provincial et territorial)",
+      "label": "Entrée en vigueur des modifications au Règlement 31-103 (NI 31-103, alinéa 14.17(1)(v), avis préalable du 11 juin 2026) obligeant les sociétés inscrites agissant comme distributeurs principaux d’organismes de placement collectif à divulguer leur avantage exclusif et le pourcentage maximal de rémunération perçu.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-111",
+      "commentaire_annexe": "Jalon ANC-102 (Tome 4, code N-07, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-003",
+      "date": "2027-01-12",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Règlement sur les données (Data Act, règlement (UE) 2023/2854) : interdiction complète pour les fournisseurs de services de traitement de données (infonuagique) d’imposer des frais de changement de fournisseur aux clients (art. 29 § 1).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-003 (Tome 4, code P-08, cible fournisseurs), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-023",
+      "date": "2027-03-15",
+      "nature": "normalisation",
+      "jurisdiction": "International (CA/Browser Forum)",
+      "label": "CA/Browser Forum TLS Baseline Requirements (Ballot SC-081v3, § 6.3.2 et § 4.2.1) : abaissement à 100 jours de la durée maximale de validité des certificats TLS publics d’abonnés et de la période maximale de réutilisation des validations de noms de domaine et d’adresses IP.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Jalon ANC-023 (Tome 4, code P-26, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-024",
+      "date": "2027-03-31",
+      "nature": "normalisation",
+      "jurisdiction": "International (IETF)",
+      "label": "Groupe de travail AGENTPROTO de l’IETF : adoption annoncée d’une architecture informationnelle (février 2027) puis des brouillons de protocole de gestion de dialogue agentique en tant que documents de groupe (mars 2027).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-133, SRC-041",
+      "commentaire_annexe": "Jalon ANC-024 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-032",
+      "date": "2027-04-01",
+      "nature": "post-quantique",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Avis de mise en œuvre de la Politique sur la sécurité (AMOPS) du Secrétariat du Conseil du Trésor du Canada : échéance obligeant les administrations fédérales (ministères, organismes et Services partagés Canada) à mettre à jour leur plan ministériel de migration vers la cryptographie post-quantique pour orienter la phase 2 (§ 6.2.1 et § 6.2.2).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-032 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-103",
+      "date": "2027-05-01",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF sur la gestion du risque lié aux modèles (2027), applicable à toutes les institutions financières fédérales et exigeant un inventaire des modèles à l’échelle de l’entreprise, une cote de risque inhérent intégrant le niveau d’autonomie, une revue indépendante et une surveillance continue de la prise de décision autonome et de la dérive.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-065, SRC-066",
+      "commentaire_annexe": "Jalon ANC-103 (Tome 4, code T-05, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-112",
+      "date": "2027-05-01",
+      "nature": "réglementation",
+      "jurisdiction": "Québec (AMF — Note CRE-IA-2026-01-QC)",
+      "label": "Prise d’effet au 1er mai 2027 (J-AMF) de la Ligne directrice sur l’utilisation de l’intelligence artificielle de l’Autorité des marchés financiers (mars/avril 2026, 17 p.), instruite attente par attente (41 attentes AMF-G/R/C/V/P et 10 exigences EXIG-AMF-01..08, 11..12 ainsi que la déclaration EXIG-AMF-10 exigibles au 1er mai 2027) dans le profil québécois décloisonné CRE-IA-2026-01-QC (2026/documents/Note AMF IA.pdf, 49 p.) visant les assureurs (RLRQ, c. A-32.1, art. 463), coopératives de services financiers (c. C-67.3, art. 565.1), sociétés de fiducie (c. S-29.02, art. 254) et institutions de dépôts (c. I-13.2.2, art. 42.2); le téléchargement HTTPS automatisé du PDF sur lautorite.qc.ca (T-01) demeure honnêtement classé au statut F (HTTP 403).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-071, SRC-065",
+      "commentaire_annexe": "Jalon ANC-112 (Tome 4, code QC-AMF-NOTE-2026, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-025",
+      "date": "2027-06-30",
+      "nature": "normalisation",
+      "jurisdiction": "International (IETF)",
+      "label": "Groupe de travail DAWN (Discovery of Agents With Names) de l’IETF : jalon annoncé pour la soumission optionnelle des documents de terminologie et de cas d’usage de découverte d’agents à l’IESG.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-133, SRC-041",
+      "commentaire_annexe": "Jalon ANC-025 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-004",
+      "date": "2027-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : date limite de mise en conformité des fournisseurs de modèles d’IA à usage général (GPAI) mis sur le marché de l’Union avant le 2 août 2025 (art. 111 § 3).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-004 (Tome 4, code P-01, cible fournisseurs), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-026",
+      "date": "2027-08-22",
+      "nature": "normalisation",
+      "jurisdiction": "International (MCP)",
+      "label": "Model Context Protocol (MCP) : borne haute de l’horizon annoncé de six à douze mois (février à août 2027) de la feuille de route du 22 août 2026 portant sur cinq chantiers prioritaires (primitives de messagerie agentique, transport HTTP sur stdio, identité d’agent avec DPoP/ID-JAG/RFC 8693, découverte progressive et génération de SDK; date conventionnelle déduite : 22 août 2026 + 12 mois selon l’horizon « six to twelve months »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-081, SRC-082",
+      "commentaire_annexe": "Jalon ANC-026 (Tome 4, code P-11, cible fournisseurs), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-005",
+      "date": "2027-09-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act modifié par le règlement (UE) 2026/1744 : échéance fixée à l’administration européenne (Commission européenne) pour adopter des orientations et un modèle volontaire de plan de surveillance après commercialisation des systèmes d’IA à haut risque (art. 72 § 3 modifié).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Jalon ANC-005 (Tome 4, code P-02, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-113",
+      "date": "2027-09-30",
+      "nature": "réglementation",
+      "jurisdiction": "Québec (AMF — Note CRE-IA-2026-01-QC)",
+      "label": "Jalon d’achèvement de la phase Plateforme du profil québécois CRE-IA-2026-01-QC (2026/documents/Note AMF IA.pdf, § 12.2 et annexe B) pour la validation fondée sur les neuf familles de risque de l’AMF (EXIG-AMF-09) et les normes de surveillance propres aux agents à calibrage dynamique (EXIG-AMF-10).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-071, SRC-065",
+      "commentaire_annexe": "Jalon ANC-113 (Tome 4, code QC-AMF-NOTE-2026, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-006",
+      "date": "2027-10-17",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Directive SRI 2 / NIS 2 (directive (UE) 2022/2555) : premier réexamen obligatoire du fonctionnement de la directive par l’administration européenne (Commission européenne) et rapport au Parlement européen et au Conseil, suivi d’un réexamen tous les 36 mois (art. 40).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-006 (Tome 4, code P-06, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-007",
+      "date": "2027-12-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act modifié par le règlement (UE) 2026/1744 : entrée en application des obligations du chapitre III (sections 1, 2 et 3) pour les systèmes d’IA à haut risque visés à l’article 6 § 2 et à l’Annexe III — incluant l’évaluation de la solvabilité et de la note de crédit (Annexe III, point 5 b) ainsi que l’évaluation des risques et la tarification en assurance-vie et maladie (Annexe III, point 5 c).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Jalon ANC-007 (Tome 4, code P-02, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-008",
+      "date": "2027-12-11",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Règlement sur la cyberrésilience (Cyber Resilience Act, règlement (UE) 2024/2847) : entrée en application générale des exigences essentielles de cybersécurité, de gestion des vulnérabilités et de nomenclature logicielle (SBOM) pour les produits comportant des éléments numériques mis sur le marché de l’Union (art. 71 § 2).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-008 (Tome 4, code P-05, cible fournisseurs), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-027",
+      "date": "2027-12-31",
+      "nature": "normalisation",
+      "jurisdiction": "International (IETF)",
+      "label": "Groupe de travail DAWN de l’IETF : jalon annoncé de soumission à l’IESG de la ou des spécifications protocolaires de découverte initiale d’agents et de ressources d’IA.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-133, SRC-041",
+      "commentaire_annexe": "Jalon ANC-027 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-033",
+      "date": "2027-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "États-Unis (fédéral)",
+      "label": "Décret présidentiel américain Executive Order 14412 : date limite d’achèvement du projet pilote de migration vers la cryptographie post-quantique mené par le NIST sur un sous-ensemble de systèmes d’information de l’administration fédérale (Sec. 4(c)).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-033 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-104",
+      "date": "2027-12-31",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Projet de Règlement sur les services bancaires axés sur les consommateurs publié dans la Gazette du Canada, Partie I (27 juin 2026) sous la supervision de la Banque du Canada (accréditation, norme technique unique, disponibilité mensuelle minimale de 99,5 % des points d’extrémité, registre de consentement exprès conservé cinq ans) : l’entrée en vigueur effective relève d’un décret à venir (art. 64 du projet de règlement et art. 181 de la Loi); la borne 2027-12-31 est déduite conventionnellement de l’année initiale de référence 2027 de la période d’analyse coûts-avantages de dix ans (« de 2027 à 2036 ») du Résumé de l’étude d’impact de la réglementation.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-070, SRC-114",
+      "commentaire_annexe": "Jalon ANC-104 (Tome 4, code T-20, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-009",
+      "date": "2028-01-17",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Règlement DORA (règlement (UE) 2022/2554) : clause de réexamen obligeant l’administration européenne (Commission européenne, après consultation des AES et du CERS) à remettre un rapport et, le cas échéant, une proposition législative portant notamment sur les prestataires tiers critiques TIC de pays tiers et les systèmes de vente automatisés (art. 58 § 1).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-062",
+      "commentaire_annexe": "Jalon ANC-009 (Tome 4, code P-04, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-028",
+      "date": "2028-01-31",
+      "nature": "normalisation",
+      "jurisdiction": "International (IETF)",
+      "label": "Groupe de travail DAWN de l’IETF : jalon annoncé de soumission du ou des documents d’architecture DAWN à l’IESG pour publication.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-133, SRC-041",
+      "commentaire_annexe": "Jalon ANC-028 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-029",
+      "date": "2028-03-31",
+      "nature": "normalisation",
+      "jurisdiction": "International (IETF)",
+      "label": "Groupe de travail AGENTPROTO de l’IETF : jalon annoncé de soumission à l’IESG du protocole de gestion de dialogue agentique en tant que norme proposée (Proposed Standard).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-133, SRC-041",
+      "commentaire_annexe": "Jalon ANC-029 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-034",
+      "date": "2028-04-01",
+      "nature": "post-quantique",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "AMOPS du Secrétariat du Trésor du Canada : échéance imposant aux administrations fédérales (ministères, organismes et SPC) de consigner l’inventaire cryptographique complet dans l’outil de gestion du portefeuille d’applications, d’identifier les systèmes hautement prioritaires et d’amorcer la migration de phase 3 vers la cryptographie post-quantique (§ 6.2.3–6.2.4 et § 6.3.2–6.3.5).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-034 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-010",
+      "date": "2028-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act modifié par le règlement (UE) 2026/1744 : entrée en application des obligations du chapitre III (sections 1, 2 et 3) pour les systèmes d’IA classés à haut risque en vertu de l’article 6 § 1 et de l’Annexe I (produits relevant de la législation d’harmonisation de l’Union, art. 113 al. 3 point c) ii)).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Jalon ANC-010 (Tome 4, code P-02, cible fournisseurs), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-011",
+      "date": "2028-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : premier rapport quadriennal d’évaluation par l’administration européenne (Commission européenne) sur la nécessité d’étendre ou de modifier les domaines de systèmes à haut risque de l’Annexe III et la liste de transparence de l’article 50 (art. 112 § 2).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-011 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-012",
+      "date": "2028-09-11",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Règlement sur la cyberrésilience (règlement (UE) 2024/2847) : rapport d’évaluation de l’administration européenne (Commission européenne, après consultation de l’ENISA et du réseau des CSIRT) sur l’efficacité de la plateforme unique de signalement des vulnérabilités (art. 70 § 2).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-012 (Tome 4, code P-05, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-105",
+      "date": "2028-10-01",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (ACVM — provincial et territorial)",
+      "label": "Entrée en vigueur (sous réserve des approbations ministérielles requises) des modifications au Règlement 31-103 publiées le 8 octobre 2026 interdisant le recours aux rétrofacturations de commissions (chargebacks) dans la distribution de titres de fonds d’investissement émetteurs assujettis.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-111",
+      "commentaire_annexe": "Jalon ANC-105 (Tome 4, code CAN-08, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-106",
+      "date": "2028-12-31",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Clôture de l’exercice financier 2028 (publication dans les 180 jours suivant la fin d’exercice) rendant obligatoire, en vertu de l’Annexe 2-2 (élément b ii) de la ligne directrice B-15 du BSIF sur la gestion des risques climatiques, la divulgation des émissions brutes de gaz à effet de serre de portée 3 (émissions financées pour les banques et émissions associées aux portefeuilles de souscription pour les assureurs de dommages) pour toutes les institutions financières fédérales assujetties.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-065, SRC-066",
+      "commentaire_annexe": "Jalon ANC-106 (Tome 4, code N-05, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-107",
+      "date": "2029-01-01",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (ACVM — provincial et territorial)",
+      "label": "Expiration, le 1er janvier 2029, de la disposition transitoire prévue à l’article 3 de l’instrument modificatif du 11 juin 2026 du Règlement 31-103 sur la divulgation des paiements versés aux distributeurs principaux de fonds communs de placement.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-111",
+      "commentaire_annexe": "Jalon ANC-107 (Tome 4, code N-07, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-030",
+      "date": "2029-03-15",
+      "nature": "normalisation",
+      "jurisdiction": "International (CA/Browser Forum)",
+      "label": "CA/Browser Forum TLS Baseline Requirements (Ballot SC-081v3, § 6.3.2 et § 4.2.1) : abaissement à 47 jours de la validité maximale des certificats TLS publics d’abonnés et à 10 jours de la réutilisation des données de validation de domaine et d’adresse IP, imposant de facto l’automatisation complète du cycle de vie PKI.",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Jalon ANC-030 (Tome 4, code P-26, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-013",
+      "date": "2029-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : remise par l’administration européenne (Commission européenne) au Parlement européen et au Conseil du premier rapport général d’évaluation et de réexamen du règlement, puis tous les quatre ans (art. 112 § 3).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-013 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-108",
+      "date": "2029-12-31",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (CCRRA — provincial et territorial)",
+      "label": "Terme de l’horizon triennal 2026-2029 (borne conventionnelle fixée au 2029-12-31 pour la fin de la période 2026-2029) du Plan stratégique du CCRRA 2026-2029 et du Bulletin du printemps 2026 du CCRRA, structurés autour du repérage concerté des risques émergents, de la convergence pancanadienne des attentes relatives au traitement équitable des clients et du cadre actualisé de surveillance des services de conciliation (OAP et SCAD).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-066",
+      "commentaire_annexe": "Jalon ANC-108 (Tome 4, code N-12, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-035",
+      "date": "2030-01-02",
+      "nature": "post-quantique",
+      "jurisdiction": "États-Unis (fédéral)",
+      "label": "Mémoire M-26-15 de l’OMB (en application de l’EO 14306 et de l’EO 14412) : date limite impérative pour que les administrations civiles fédérales américaines prennent en charge TLS 1.3 ou une version ultérieure comme socle d’échange de clés hybride post-quantique (Appendix A, § 4).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-035 (Tome 4, code P-21, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-014",
+      "date": "2030-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act modifié par le règlement (UE) 2026/1744 : date butoir de mise en conformité des fournisseurs et déployeurs de systèmes d’IA à haut risque déjà en service qui sont destinés à être utilisés par des administrations et autorités publiques (art. 111 § 2 in fine).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Jalon ANC-014 (Tome 4, code P-02, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-015",
+      "date": "2030-10-17",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Directive SRI 2 / NIS 2 (directive (UE) 2022/2555) : deuxième échéance périodique de réexamen par l’administration européenne (Commission européenne), déduite de la règle « au plus tard le 17 octobre 2027 et tous les 36 mois par la suite » (art. 40; troisième échéance déduite au 2033-10-17).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-015 (Tome 4, code P-06, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-016",
+      "date": "2030-12-09",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Directive (UE) 2024/2853 (responsabilité du fait des produits défectueux, incluant les logiciels) : premier rapport d’évaluation de l’application par l’administration européenne (Commission européenne), incluant la disponibilité d’une assurance responsabilité produits, puis tous les cinq ans (art. 20; échéance suivante déduite au 2035-12-09).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-016 (Tome 4, code P-07, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-017",
+      "date": "2030-12-11",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "Règlement sur la cyberrésilience (règlement (UE) 2024/2847) : premier rapport général d’évaluation et de réexamen par l’administration européenne (Commission européenne), puis tous les quatre ans (art. 70 § 1; échéance suivante déduite au 2034-12-11).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
+      "commentaire_annexe": "Jalon ANC-017 (Tome 4, code P-05, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-018",
+      "date": "2030-12-31",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : date limite de mise en conformité des systèmes d’IA composants des systèmes d’information à grande échelle des administrations de l’espace de liberté, de sécurité et de justice énumérés à l’Annexe X et mis en service avant le 2 août 2027 (art. 111 § 1).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-018 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-036",
+      "date": "2030-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "États-Unis (fédéral)",
+      "label": "Executive Order 14412 et mémoire M-26-15 de l’OMB : obligation pour les administrations civiles fédérales américaines d’achever la migration vers la cryptographie post-quantique pour l’établissement de clés sur tous les actifs de grande valeur (HVA) et systèmes à impact élevé, doublée d’une règle FAR visant la conformité FIPS PQC des fournisseurs sous contrat fédéral à la même date (EO 14412 Sec. 4(b)(ii) et Sec. 6(c); M-26-15 § 3.A et § 3.D Phase 3).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-036 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-037",
+      "date": "2030-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "Union européenne",
+      "label": "Feuille de route coordonnée PQC de l’Union européenne (NIS Cooperation Group) : fin recommandée de la transition vers la cryptographie post-quantique pour tous les cas d’usage à haut risque (administrations publiques et infrastructures critiques couvertes par SRI 2, interdiction des mécanismes asymétriques vulnérables utilisés seuls après fin 2030) et activation par défaut des mises à jour logicielles post-quantiques (§ 4.1).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-037 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-019",
+      "date": "2031-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : évaluation globale de la mise en application du règlement par l’administration européenne (Commission européenne), incluant la structure de contrôle de l’application et l’éventuelle nécessité d’une agence de l’Union (art. 112 § 13).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-019 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-038",
+      "date": "2031-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "États-Unis (fédéral)",
+      "label": "Executive Order 14412 et mémoire M-26-15 de l’OMB : obligation pour les administrations civiles fédérales américaines d’achever la migration vers la cryptographie post-quantique pour les signatures numériques sur tous les actifs de grande valeur (HVA) et systèmes à impact élevé (EO 14412 Sec. 4(b)(iii); M-26-15 § 3.D Phase 4).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-038 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-039",
+      "date": "2031-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "AMOPS du Secrétariat du Conseil du Trésor du Canada : échéance obligeant les administrations fédérales (ministères, organismes et Services partagés Canada) à terminer la migration vers la cryptographie post-quantique de leurs systèmes hautement prioritaires d’ici la fin de 2031 (§ 6.3.6; date conventionnelle de fin d’année traduisant « D’ici la fin de 2031 »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-039 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-020",
+      "date": "2032-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : deuxième évaluation quadriennale par l’administration européenne (Commission européenne) de la liste des domaines à haut risque de l’Annexe III et de l’article 50, déduite de la clause « au plus tard le 2 août 2028 et tous les quatre ans par la suite » (art. 112 § 2).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-020 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-040",
+      "date": "2032-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "International (G7)",
+      "label": "Déclaration du G7 Cyber Expert Group sur la feuille de route PQC du secteur financier : borne supérieure de la fenêtre cible recommandée et non contraignante (2030-2032) pour la transition prioritaire des systèmes et fonctions critiques des institutions financières et infrastructures de marchés vers la cryptographie post-quantique (p. 4; date conventionnelle de fin d’année traduisant la borne haute de « 2030-32 »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-052",
+      "commentaire_annexe": "Jalon ANC-040 (Tome 4, code P-24, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-109",
+      "date": "2033-06-30",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Échéance de temporisation fixée au 30 juin 2033 par le paragraphe 21(1) de la Loi sur les banques (L.C. 1991, ch. 46) au-delà de laquelle les banques et les banques étrangères autorisées ne peuvent exercer leurs activités au Canada sans renouvellement législatif (sous réserve d’une prorogation unique maximale de six mois par décret en vertu du paragraphe 21(2)).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-070, SRC-114",
+      "commentaire_annexe": "Jalon ANC-109 (Tome 4, code T-16, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-110",
+      "date": "2033-06-30",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Échéance de temporisation fixée au 30 juin 2033 par le paragraphe 21(1) de la Loi sur les sociétés d’assurances (L.C. 1991, ch. 47) au-delà de laquelle les sociétés d’assurances fédérales et les sociétés étrangères ne peuvent exercer leurs activités au Canada sans renouvellement législatif (prorogeable une seule fois d’au plus six mois par décret, par. 21(2)).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-070, SRC-114",
+      "commentaire_annexe": "Jalon ANC-110 (Tome 4, code CAN-01, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-111",
+      "date": "2033-06-30",
+      "nature": "réglementation",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Échéance de temporisation fixée au 30 juin 2033 par le paragraphe 20(1) de la Loi sur les sociétés de fiducie et de prêt (L.C. 1991, ch. 45) au-delà de laquelle les sociétés de fiducie et de prêt fédérales ne peuvent exercer leurs activités sans renouvellement législatif (prorogeable une seule fois d’au plus six mois par décret, par. 20(2)).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-070, SRC-114",
+      "commentaire_annexe": "Jalon ANC-111 (Tome 4, code CAN-04, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-021",
+      "date": "2033-08-02",
+      "nature": "réglementation",
+      "jurisdiction": "Union européenne",
+      "label": "AI Act (règlement (UE) 2024/1689) : deuxième rapport quadriennal d’évaluation et de réexamen général par l’administration européenne (Commission européenne), déduit de la clause « au plus tard le 2 août 2029 et tous les quatre ans par la suite » (art. 112 § 3).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060",
+      "commentaire_annexe": "Jalon ANC-021 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-046",
+      "date": "2034-12-31",
+      "nature": "marché",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "Stratégie nationale d’intelligence artificielle du Canada (« L’IA pour tous », ISDE, 2026) : cible stratégique fédérale annoncée visant à porter le taux d’adoption de l’IA par les entreprises canadiennes à 60 % d’ici 2034 (p. 12 et p. 25; date conventionnelle de fin d’année traduisant « d’ici 2034 »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-066",
+      "commentaire_annexe": "Jalon ANC-046 (Tome 4, code P-31, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-041",
+      "date": "2035-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "Canada (fédéral)",
+      "label": "AMOPS du Secrétariat du Conseil du Trésor du Canada : échéance obligeant les administrations fédérales (ministères, organismes et Services partagés Canada) à terminer la migration de tous leurs autres systèmes TI non classifiés (jusqu’à Protégé B) vers la cryptographie post-quantique d’ici la fin de 2035 (§ 6.3.7; date conventionnelle de fin d’année traduisant « D’ici la fin de 2035 »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-041 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-042",
+      "date": "2035-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "États-Unis (fédéral)",
+      "label": "Mémoire M-26-15 de l’OMB : Phase 5 (Full Migration — 2035) prescrivant aux administrations civiles fédérales américaines d’achever la migration des systèmes restants vers la cryptographie post-quantique d’ici 2035 en alignement avec le rapport NIST IR 8547 (§ 3.D Phase 5; date conventionnelle de fin d’année traduisant « Full Migration (2035) »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-042 (Tome 4, code P-21, cible administrations), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-043",
+      "date": "2035-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "International (G7)",
+      "label": "Déclaration du G7 Cyber Expert Group sur la feuille de route PQC du secteur financier : horizon cible global non contraignant fixé à 2035 pour l’achèvement de la migration de l’ensemble du secteur financier vers la cryptographie post-quantique (p. 4; date conventionnelle de fin d’année traduisant l’horizon annuel « 2035 »).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-052",
+      "commentaire_annexe": "Jalon ANC-043 (Tome 4, code P-24, cible institutions), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "ANC-044",
+      "date": "2035-12-31",
+      "nature": "post-quantique",
+      "jurisdiction": "Union européenne",
+      "label": "Feuille de route coordonnée PQC de l’Union européenne (NIS Cooperation Group) : fin recommandée de la transition vers la cryptographie post-quantique pour tous les cas d’usage à risque moyen et, dans toute la mesure du possible, à faible risque (§ 4.1).",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch31"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-051, SRC-052",
+      "commentaire_annexe": "Jalon ANC-044 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
+      "origin": "T4"
+    },
+    {
+      "key": "DAPP-T5-01",
+      "date": "90 jours — J1 : Fondations",
+      "nature": "Trajectoire adaptative DAPP",
+      "jurisdiction": "Entreprise (AE / AS)",
+      "label": "90 jours — J1 : Fondations (N0–N1 / Stade 1) : Inventaire en 5 jours ouvrables, zéro clé fixe, passerelle de modèles, ÉFVP et coupe-circuit.",
+      "chapters": [
+        "00-liminaire",
+        "ch31",
+        "ch32"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-112, SRC-065",
+      "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : Immédiat), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
+      "origin": "T5_DAPP"
+    },
+    {
+      "key": "DAPP-T5-02",
+      "date": "9 mois — J2 : Plateforme",
+      "nature": "Trajectoire adaptative DAPP",
+      "jurisdiction": "Entreprise (AE / AS)",
+      "label": "9 mois — J2 : Plateforme (Stade 2 partiel) : Passerelle PEP, JCS/CIBA, certificats TLS 100 jours (15 mars 2027 D), BSIF E-23 et AMF IA (1er mai 2027 D), MCP 2026-07-28 (28 juillet 2027 D).",
+      "chapters": [
+        "00-liminaire",
+        "ch31",
+        "ch32"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-112, SRC-065",
+      "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2027), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
+      "origin": "T5_DAPP"
+    },
+    {
+      "key": "DAPP-T5-03",
+      "date": "18 mois — J3 : Industrialisation",
+      "nature": "Trajectoire adaptative DAPP",
+      "jurisdiction": "Entreprise (AE / AS)",
+      "label": "18 mois — J3 : Industrialisation (Niveau 3 Défini / Stade 2) : EU AI Act Annexe III (2 décembre 2027 D), sagas compensatoires et bancs d'évaluation E1–E3.",
+      "chapters": [
+        "00-liminaire",
+        "ch31",
+        "ch32"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-112, SRC-065",
+      "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : Fin 2027), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
+      "origin": "T5_DAPP"
+    },
+    {
+      "key": "DAPP-T5-04",
+      "date": "Palier 1 : P1",
+      "nature": "Trajectoire adaptative DAPP",
+      "jurisdiction": "Entreprise (AE / AS)",
+      "label": "Palier 1 : P1 (Stade 2 (14 initiatives sans regret et 1 conditionnelle, POR-001..004)) : 6 substrats, showback CPO, fin des rétrofacturations NI 31-103 (1er octobre 2028 D), BSIF B-15 portée 3 (fin 2028 D), TLS 1.3 hybride et TLS 47 jours (15 mars 2029 D).",
+      "chapters": [
+        "00-liminaire",
+        "ch31",
+        "ch32"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-112, SRC-065",
+      "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2028–2029), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
+      "origin": "T5_DAPP"
+    },
+    {
+      "key": "DAPP-T5-05",
+      "date": "Palier 2 : P2",
+      "nature": "Trajectoire adaptative DAPP",
+      "jurisdiction": "Entreprise (AE / AS)",
+      "label": "Palier 2 : P2 (Stade 3 (9 initiatives sans regret et 7 conditionnelles, POR-005..009)) : Sémantique, bi-temporalité, repli bimodèle, API ouvertes, chargeback CPO et porte POR-007 (ML-DSA kid, SCITT) sur la fenêtre G7 2030–2032 A.",
+      "chapters": [
+        "00-liminaire",
+        "ch31",
+        "ch32"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-112, SRC-065",
+      "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2030–2032), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
+      "origin": "T5_DAPP"
+    },
+    {
+      "key": "DAPP-T5-06",
+      "date": "Palier 3 : P3",
+      "nature": "Trajectoire adaptative DAPP",
+      "jurisdiction": "Entreprise (AE / AS)",
+      "label": "Palier 3 : P3 (Stade 3 / Stade 4 sélectif (4 initiatives sans regret et 6 conditionnelles, POR-011..014)) : Post-temporisation des lois financières du Canada (30 juin 2033 D), mandats vLEI (POR-013), cryptographie post-quantique financière G7 2035 A sous POR-015 (< 60 s) et POR-016.",
+      "chapters": [
+        "00-liminaire",
+        "ch31",
+        "ch32"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-112, SRC-065",
+      "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2033–2035), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
+      "origin": "T5_DAPP"
+    }
+  ]
+}

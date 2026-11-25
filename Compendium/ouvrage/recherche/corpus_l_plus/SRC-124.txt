@@ -1,0 +1,2114 @@
+Benchmarking LLM Agents in
+Wealth-Management Workflows
+Rory Milsom
+T
+H
+E
+U
+N
+I
+V
+E
+R
+S
+I
+T
+Y
+O
+F
+E
+D
+I
+N
+B
+U
+R
+G
+H
+Master of Science
+School of Informatics
+University of Edinburgh
+2025
+arXiv:2512.02230v1 [cs.AI] 1 Dec 2025
+
+Abstract
+Modern work relies on an assortment of digital collaboration tools, yet routine
+processes continue to suffer from human error and delay. To address this gap, this disser-
+tation extends TheAgentCompany with a finance-focused environment and investigates
+whether a general-purpose LLM agent can complete representative wealth-management
+tasks both accurately and economically. This study introduces synthetic domain data,
+enriches colleague simulations, and prototypes an automatic task-generation pipeline.
+The study aims to create and assess an evaluation set that can meaningfully measure an
+agent’s fitness for assistant-level wealth management work. We construct a benchmark
+of 12 task-pairs for wealth management assistants spanning retrieval, analysis, and
+synthesis/communication, with explicit acceptance criteria and deterministic graders.
+We seeded a set of new finance-specific data and introduced a high- vs. low-autonomy
+variant of every task. The paper concluded that agents are limited less by mathematical
+reasoning and more so by end-to-end workflow reliability, and meaningfully affected by
+autonomy level, and that incorrect evaluation of models have hindered benchmarking.
+i
+
+Research Ethics Approval
+This project was planned in accordance with the Informatics Research Ethics policy.
+It did not involve any aspects that required approval from the Informatics Research
+Ethics committee.
+Declaration
+I declare that this thesis was composed by myself, that the work contained herein is my
+own except where explicitly stated otherwise in the text, and that this work has not been
+submitted for any other degree or professional qualification except as specified.
+(Rory Milsom)
+ii
+
+Acknowledgements
+I thank Dr Alexandra Birch-Mayne and Barry Haddow for their great guidance, and
+the maintainers of TheAgentCompany, OpenHands, OwnCloud, Rocket.Chat, Plane,
+and EspoCRM for making this work possible. I am especially grateful to my family,
+particularly my Mum and Dad for their constant encouragement and support. Finally,
+I am incredibly grateful for my beautiful girlfriend for putting up with me for this
+stressful year, as well as her unwavering belief in me, even when I didn’t believe in
+myself.
+iii
+
+Table of Contents
+1
+Introduction
+1
+1.1
+Motivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+1.2
+Research Objective . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.3
+Contributions & Outcomes . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.4
+Structure of the Document
+. . . . . . . . . . . . . . . . . . . . . . .
+3
+2
+Background and Related Work
+4
+2.1
+Agents and Autonomy
+. . . . . . . . . . . . . . . . . . . . . . . . .
+4
+2.2
+Workplace Agent Benchmarks . . . . . . . . . . . . . . . . . . . . .
+5
+2.3
+Financial Domain Agent Evaluation . . . . . . . . . . . . . . . . . .
+7
+2.4
+Cost–Accuracy Trade-offs in Agent Evaluation
+. . . . . . . . . . . .
+8
+3
+Methodology & System Design
+9
+3.1
+Methodology Overview . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+3.2
+Environment for Development . . . . . . . . . . . . . . . . . . . . .
+11
+3.2.1
+Tools and roles . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3.2.2
+Relation to TAC architecture . . . . . . . . . . . . . . . . . .
+12
+3.3
+The choice of EspoCRM . . . . . . . . . . . . . . . . . . . . . . . .
+12
+3.4
+EspoCRM Deployment: Platform, Configuration, and Integration . . .
+13
+3.5
+Task Suite Design . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+3.5.1
+Preparatory work: Interviews and Research . . . . . . . . . .
+14
+3.5.2
+Task Creation Method and Task Descriptions . . . . . . . . .
+15
+3.5.3
+Checkpoint Design and Description . . . . . . . . . . . . . .
+18
+3.5.4
+Checkpoint Design . . . . . . . . . . . . . . . . . . . . . . .
+19
+3.5.5
+The Creation of Automatic Evaluators . . . . . . . . . . . . .
+20
+3.6
+Process of Modifying Task Autonomy . . . . . . . . . . . . . . . . .
+22
+3.7
+Data Generation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24
+iv
+
+3.8
+NPCs and Services Creation
+. . . . . . . . . . . . . . . . . . . . . .
+25
+3.9
+Performing Evaluation with OpenHands . . . . . . . . . . . . . . . .
+27
+4
+Results & Evaluation
+28
+4.1
+Experiment 1 – New Finance Tasks vs. Original TAC . . . . . . . . .
+28
+4.1.1
+Quantitative Analysis . . . . . . . . . . . . . . . . . . . . . .
+30
+4.1.2
+Qualitative Analysis
+. . . . . . . . . . . . . . . . . . . . . .
+32
+4.2
+Experiment 2 – Task Autonomy Comparison . . . . . . . . . . . . . .
+34
+4.2.1
+Quantitative Analysis . . . . . . . . . . . . . . . . . . . . . .
+35
+4.2.2
+Qualitative Analysis
+. . . . . . . . . . . . . . . . . . . . . .
+37
+5
+Conclusion & Future Work
+39
+5.1
+Concluding Remarks . . . . . . . . . . . . . . . . . . . . . . . . . .
+39
+5.2
+Possible Future Research Directions . . . . . . . . . . . . . . . . . .
+40
+Bibliography
+41
+6
+Appendix
+44
+6.1
+Task Catalogue (Overview) . . . . . . . . . . . . . . . . . . . . . . .
+44
+6.2
+Checkpoint Descriptions (Per Task)
+. . . . . . . . . . . . . . . . . .
+46
+6.3
+Data Generation: File Families and Schemas . . . . . . . . . . . . . .
+48
+v
+
+Chapter 1
+Introduction
+1.1
+Motivation
+Financial institutions are actively exploring autonomous, tool-using language models
+to support everyday operations; compiling reports, reconciling client data, drafting
+communications, and coordinating meetings [15]. The appeal is clear: these workflows
+are frequent, time-sensitive, and document-heavy; automation promises lower latency -
+leading to quicker results, reduced cost, and consistent audit trails. At the same time,
+finance is a safety-critical and regulated industry. Errors in data handling, calculations,
+or communications can create real financial and compliance risk. This tension (obvious
+potential utility versus high stakes) explains why this matters: before adoption, we need
+credible evidence that such systems reliably complete realistic work to spec.
+An AI agent is a Large Language Model (LLM) augmented with tools (browser, file
+I/O, APIs), short-term memory, and a decision policy that iterates a plan–act–observe
+loop. Unlike a pure chat model, an agent can complete complex workflows, for example,
+fetch CSVs from a document store, query a CRM, compute totals in Python, and send
+a confirmation message, end-to-end execution rather than isolated text generation. In
+finance settings the agent’s relevance is precisely this ability to operate across systems
+that mirror real back-office workflows (document store, CRM, chat, ticketing).
+Given the stakes, we argue that rigorous, reproducible evaluation must precede
+deployment. Ad-hoc demos can be misleading; a wealth-management focused bench-
+mark is necessary that fixes the tools, data, and acceptance criteria so we can measure
+reliability, efficiency, and failure modes in a controlled way. Prior to this, TheAgent-
+Company demonstrates how to run agents inside a simulated workplace [25], and
+OpenHands provides a widely used agent runtime [22]. We build on that idea but
+1
+
+Chapter 1. Introduction
+2
+orient it squarely toward finance: we create an evaluation set that reflects assistant-level
+wealth-management tasks and grade them deterministically.
+We focus on assistant tasks because they admit objective checks, for example,
+computing a net-worth snapshot, reconciling portfolio weights, and preparing year-end
+summaries from source ledgers, all of these common tasks have verifiable outcomes,
+which is important for evaluation. These jobs require cross-tool retrieval, basic analysis,
+and precise delivery, yet they can be verified by concrete criteria (file exists at the
+specified path with the required schema; numbers match recomputation; message is sent
+in the required format). That property makes them suitable for automated, reproducible
+assessment.
+In summary, our goal is not to deploy an agent but to construct and validate an
+evaluation set that financial practitioners could trust: realistic domain-aligned tasks,
+clear inputs and outputs, and deterministic graders inside a stable, tool-rich environ-
+ment. This provides the evidence base needed to judge whether present-day agents
+meaningfully help with wealth-management assistant work, and where they still fall
+short. Preview of findings: three patterns recur in our results—(i) end-to-end workflow
+reliability (finding files, respecting paths, delivering outputs) limits performance more
+than arithmetic; (ii) reducing autonomy via schema/path specificity curbs drift without
+inflating search depth; and (iii) strict-but-tolerant graders (schema/format exactness
+with numeric/CSV normalisation) avoid both false positives and brittle byte-match
+failures. Limitations include a closed-world setup with synthetic but normalised data, a
+small client/task set, and primary evaluation on a single agent configuration.
+1.2
+Research Objective
+Our primary objective is to create and assess an evaluation set that can meaningfully
+measure an LLM agent’s fitness for assistant-level wealth-management work. Con-
+cretely, we ask:
+Can we create a challenging task suite to effectively test an LLM’s
+ability to perform as a financial employee
+A secondary question examines prompt design: What is the effect of agent autonomy
+on LLM accuracy and efficiency in a simulated workplace? To study this, we run
+otherwise identical agents in a controlled, tool-rich testbed and compare checkpoint pass-
+rates, completions, steps, and cost across paired versions of the same tasks. Throughout,
+
+Chapter 1. Introduction
+3
+we treat a checkpoint as a grader-verifiable assertion and a task as resolved only when
+all checkpoints pass. We execute the suite inside a seeded, open-source, closed-world
+stack (EspoCRM [1], OwnCloud [3], Rocket.Chat [5], and Plane [4]).
+1.3
+Contributions & Outcomes
+• Domain-aligned evaluation set. We construct a benchmark of 12 task-pairs for
+wealth-management assistants spanning retrieval, analysis, and synthesis/communication,
+with explicit acceptance criteria and deterministic graders. The suite is designed
+to reflect real assistant workflows, for example, including EspoCRM [1], while
+remaining reproducible and auditable.
+• Reproducible agent environment. We adapt an existing agent-in-environment
+framework to a finance context [25, 22], seeding realistic data and fixing service
+identities and paths (OwnCloud [3], Rocket.Chat [5], Plane [4], and including
+EspoCRM [1] - for a more realistic finance work environment) so that runs are
+comparable over time and across models. Outcomes reflect improved task suite
+design and agent competence, not easier tasks.
+• Autonomy study. We compare high- vs. low-autonomy versions of the same tasks.
+Low-autonomy briefs generally improve checkpoint accuracy and completions
+with modest changes in steps and cost, indicating that clearer specifications
+help translate reasoning into deliverables; persistent failures highlight remaining
+system bottlenecks.
+1.4
+Structure of the Document
+Chapter 2 sets the context with related work on agentic LLMs, evaluation in regulated
+domains, and agent-in-environment benchmarks. Chapter 3 describes the evaluation
+set: task design, data seeding, grader construction, and the controlled environment
+used for experiments. Chapter 4 reports results for the legacy-vs-new comparison
+and the autonomy study, including quantitative metrics and error analysis. Chapter 5
+summarises findings, limitations, and directions for future work on harder workflows,
+stronger verification, and broader external validity.
+
+Chapter 2
+Background and Related Work
+2.0.0.0.1
+Overview.
+This chapter (i) introduces what we mean by LLM agents and
+autonomy, (ii) motivates the shift from abstract, single-shot evaluations to realistic
+workplace settings, and (iii) describes TheAgentCompany (TAC) in depth, including its
+environment, task design, checkpoint evaluation, and headline results, before turning to
+finance-specific benchmarks and cost–accuracy trade-offs.
+2.1
+Agents and Autonomy
+We use agent to mean an LLM-centred system that runs an observe–reason–act loop: it
+reads observations (UI state, files, chat), plans using the model, and executes actions
+(browser clicks, shell commands, Python code, or messages) without a human scripting
+each step [17, 23]. Autonomy is meant as the extent to which that loop can take a
+task from intent to completion with minimal intervention, or brevity of initial prompt
+(forcing agents to have more.
+In practice, modern LLM agents implement this via intertwined reasoning and tool
+use (the “ReAct”-style pattern), invoking tools or UIs as part of their chain of thought
+and adjusting future steps based on feedback [27, 18, 22]. Self-monitoring or reflection
+mechanisms are often added so agents can detect errors and course-correct mid-run
+[19].
+In enterprise contexts, autonomy matters because real work is long-horizon and
+tool-mediated: the agent must sequence steps across multiple applications, carry context
+over time, and recover from errors; success depends on planning and interaction, not just
+text prediction [23, 21]. Chat-only QA benchmarks therefore overestimate readiness for
+workplace use, they test language competence, not end-to-end task completion under
+4
+
+Chapter 2. Background and Related Work
+5
+realistic friction.
+Evaluation therefore needs verifiable checkpoints that capture intermediate progress
+(e.g. “found the file”, “messaged the stakeholder”) and expose failure modes (auth
+errors, wrong endpoints, brittle UI navigation). Benchmarks that combine tool use,
+long-horizon plans, and collaboration give a truer picture of utility and safety [26, 25].
+2.2
+Workplace Agent Benchmarks
+We focus on the field’s move from abstract/scientific single-shot tasks to testing use-
+fulness in realistic work environments. Recent research has begun evaluating large
+language model (LLM) agents on realistic workplace tasks [23]. A notable example
+is TheAgentCompany (TAC), a benchmark that simulates a modern digital workplace
+environment [25]. Xu et al. construct a self-contained “small software company” in-
+tranet populated with typical tools e.g. GitLab (code repo), OwnCloud (documents),
+Rocket.Chat (team chat), and Plane (project management), all seeded with realistic
+data to mirror a multifaceted office setting [2, 3, 5, 4]. Within this environment they
+defined 175 diverse tasks spanning roles like software engineering, project management,
+human resources, finance, and administration [25]. Tasks range from coding and data
+analysis to form-filling and inter-office communication, thereby testing agents’ broad
+capabilities in a professional context [25]. Crucially, TheAgentCompany uses the
+open-source OpenHands agent framework [22], enabling agents to browse web pages,
+run code in a Jupyter kernel, execute shell commands, and interact with simulated
+co-worker agents via chat [12]. This allows evaluation of not only tool use but also
+collaboration – agents can ask LLM-based “colleagues” for help or information through
+the chat interface, reflecting the social dynamics of real workplaces [25]. To handle the
+complex, long-horizon tasks, the benchmark employs a checkpoint-based evaluation:
+each task is broken into verifiable subtasks with deterministic or LLM-based evaluators,
+awarding partial credit for intermediate progress [25, 26]. This design captures realistic
+multi-step workflows and provides nuanced performance scores beyond all-or-nothing
+outcomes.
+
+Chapter 2. Background and Related Work
+6
+Figure 2.1: Overview of TAC Architecture[25]
+Deeper TAC description. Beyond the high-level summary, TAC fixes an identical agent
+scaffold (OpenHands) and swaps only the LLM backend, ensuring fair comparison
+across models. The intranet is reproducible and self-contained, so results are not
+confounded by live-web variance. Each task includes: (i) a natural-language brief,
+(ii) seeded artefacts (documents, repos, tickets, chats), (iii) role-realistic actions (e.g.
+updating a Plane issue, sending a Rocket.Chat DM, filling a PDF in OwnCloud), and (iv)
+a checklist of verifiable checkpoints culminating in a completion verdict. TAC reports
+both full completion and partial scores from checkpoint credit. Using seven different
+LLMs as backends (including GPT-4, Gemini, and Llama), the best agent (Claude 3.5)
+fully solves only 24% of tasks and reaches about 34% with partial credit, with the
+steepest drop on long-horizon and business/finance/admin tasks [25, 16, 20, 9, 6]. These
+results indicate substantial headroom before agents can reliably handle non-trivial office
+workflows.
+Beyond TheAgentCompany, several other benchmarks have explored LLM agents
+in workplace-like settings, each with a different focus. WorkArena evaluates web-based
+agents on common office tasks using live browser interactions, though it does not
+incorporate multi-step task structure or inter-agent communication [8]. SWE-Bench
+and DevBench target software engineering tasks in coding environments [10, 14],
+while AssistantBench and Yao et al.’s tool-use benchmark focus on dialog and tool-
+augmented agents in customer service domains [28, 26]. These efforts demonstrate
+growing interest in “enterprise agent” evaluation, but each has limitations. Many prior
+benchmarks cover a narrow scope of skills or domains (e.g. only coding or only web
+form tasks) and often lack the long-horizon, checkpointed structure and collaborative
+aspect that TheAgentCompany introduced [25, 26]. In contrast, TheAgentCompany
+combines a diverse task spectrum with realistic workplace interactions, setting a higher
+
+Chapter 2. Background and Related Work
+7
+bar for agent evaluation in professional contexts. However, it primarily centres on a
+software company scenario; thus, important domains like finance receive only cursory
+coverage. This opens the opportunity to extend such benchmarks into domain-specific
+settings, as our work does for the financial sector.
+2.3
+Financial Domain Agent Evaluation
+While general agent benchmarks are emerging, financial tasks remain under-represented
+in prior evaluations. There is a growing recognition of this gap, and a few recent works
+have begun to address it. For instance, Xie et al. introduce FinBen, a comprehensive
+benchmark aggregating 42 datasets across 24 financial NLP tasks (e.g. information
+extraction, question answering, forecasting) [24]. FinBen’s broad evaluation of 21
+models (GPT-4, ChatGPT, Google Gemini, etc.) revealed that current LLMs excel at
+basic financial text processing but struggle with advanced reasoning tasks like long-
+form report generation or market forecasting [24]. Notably, even top models perform
+unevenly, GPT-4 was strong in structured tasks like information extraction and even
+stock trading simulations, yet it faltered on complex decision-making, highlighting the
+difficulty of expert financial reasoning [24]. FinBen underscores the need for domain-
+specific benchmarks, but it primarily consists of standalone dataset evaluations rather
+than an integrated agent environment.
+Researchers have also started developing agent-oriented financial benchmarks.
+Bigeard et al. (2025) propose a Finance Agent Benchmark that poses realistic financial
+research problems to tool-using LLM agents [7]. They crafted 537 expert-written
+queries (e.g. analyzing recent SEC filings) across a taxonomy of nine finance task
+categories [7]. Agents are equipped with tools like web search and direct access to the
+SEC EDGAR database to simulate a financial analyst’s workflow [7]. This benchmark
+revealed significant limitations: the best model reached only ∼46.8% accuracy, and
+achieving even this modest performance required expensive API usage (averaging $3.79
+per query in model fees) [7]. Another contemporaneous effort is InvestorBench (Li et
+al., 2024), which evaluates LLM-based agents on financial decision-making tasks (e.g.
+stock or cryptocurrency trading decisions) in various market scenarios [13]. It provides
+a suite of environments and datasets for investment-focused reasoning and tests multiple
+LLMs’ abilities to adapt across different financial products [13]. These domain-specific
+benchmarks mark important first steps toward assessing AI agents in finance. They
+demonstrate that, much like in general workplaces, current models fall short on complex
+
+Chapter 2. Background and Related Work
+8
+finance tasks – often requiring human-level expertise, multi-step quantitative reasoning,
+or domain-specific knowledge that LLMs lack. Moreover, the high inference costs
+reported (e.g. several dollars per query for near state-of-the-art agents) raise concern
+for practical deployment in finance, where efficiency is paramount [7].
+Despite these advances, there remains a clear gap in benchmarking LLM agents as
+financial assistants performing everyday professional duties. Existing finance bench-
+marks either focus on narrow decision problems (e.g. trading simulations) or evaluate
+models on isolated question-answer pairs. They do not fully capture the workflow of a
+finance office role – which might involve pulling data from spreadsheets, generating
+client reports, updating accounting ledgers, communicating findings, and so on in a con-
+tinuous, multi-step process. Our work addresses this gap by creating a finance-oriented
+benchmark built on TheAgentCompany’s paradigm [25]. We design realistic tasks
+grounded in the daily responsibilities of financial analysts or advisors (for example,
+preparing year-end tax summaries, analyzing investment portfolios, or auditing expense
+reports). These tasks are embedded in an interactive environment with relevant data
+sources (financial statements, transaction ledgers, etc.), requiring the agent to perform
+tool-assisted calculations and document preparation akin to a real financial assistant. By
+evaluating agents on this suite of finance-specific challenges, we extend prior workplace
+benchmarks into a critical domain that was previously underexplored. This allows us
+to measure not only raw accuracy on finance problems, but also an agent’s ability to
+navigate the nuanced processes and tools unique to finance workflows – providing a
+richer assessment of utility in financial settings.
+2.4
+Cost–Accuracy Trade-offs in Agent Evaluation
+Kapoor et al. argue that benchmarks should score both accuracy and cost; otherwise
+agents can chase tiny gains with unbounded API calls [11]. They advocate evaluating
+models on a cost–accuracy Pareto frontier and show that simple policy tweaks can cut
+calls substantially with little loss, so leaderboards should favour cost-effective agents
+rather than accuracy at any price [11].
+Our evaluation follows this: we log per-task cost (tokens/tool invocations) alongside
+success, place models on a cost–accuracy curve, and surface trade-offs (e.g. larger
+models may win more tasks but at higher expense) [16]. This is especially important in
+finance, where time and budgets are tight; tracking cost lets us prefer agents that “do
+more with less,” in line with AI Agents That Matter [11].
+
+Chapter 3
+Methodology & System Design
+3.1
+Methodology Overview
+The goal of this methodology is to measure whether LLM agents can complete realis-
+tic wealth-management assistant workflows in a reproducible, tool-rich environment.
+Achieving this requires: (i) a controllable agent runtime, (ii) seeded line-of-business
+services (CRM, document store, chat, ticketing), (iii) a task suite with explicit in-
+puts/outputs and checkpointed evaluators, and (iv) an automated harness to launch runs
+and grade outcomes. To minimise confounds, we build directly on TheAgentCompany
+(TAC) and its OpenHands-based stack, then extend it for the finance domain.
+What we inherit from TAC (used largely as-is).
+• Agent runtime: OpenHands agent container with terminal, Python/Jupyter, browser,
+and file tools wired into a plan–act loop.
+• Docker orchestration: a top-level docker-compose.yml that boots auxiliary
+services (Rocket.Chat, Plane, OwnCloud, etc.) with named volumes.
+• Task skeleton: per-task directories containing instruction/task.md, a check-
+pointed evaluator (Python), and build artefacts (Dockerfile, dependencies.yml,
+Makefile).
+• Service seeding: per-service Dockerfile/init.sh and helper scripts (e.g., seed-
+ing personas from npc_definition.json); servers/populate_data.py in-
+serts those NPCs into the backing store used by Rocket.Chat so IDs/channels are
+stable across runs.
+9
+
+Chapter 3. Methodology & System Design
+10
+• Evaluation helpers: configuration (config.toml) and runner scripts (run_eval.py,
+browsing helpers, summarise_results.py) that start the agent, check service
+health, and emit per-checkpoint results.
+Workspaces utilities (summary). workspaces/common.py provides minimal helpers for
+Rocket.Chat (DM/channel history checks), OwnCloud (WebDAV list/check/download),
+Plane (basic project/issue lookups), a lightweight LLM predicate check, and a @grader
+wrapper. workspaces/config.py centralises endpoints, credentials, and a TEST_MODE
+flag (credentials for NPC users are taken from TAC’s provided files). workspaces/eval.py
+is the evaluator entrypoint: it decrypts and loads the task-specific grade_checkpoints(),
+optionally reads the trajectory, and writes result.json. workspaces/scoring.py
+defines Checkpoint/Result and a few simple scoring strategies. On the services
+side, servers/setup.sh performs a minimal bootstrap (preflight Docker checks, pull
+images, start the API server, and wait for Rocket.Chat/OwnCloud/Plane health).
+What we add/change (finance-focused extension).
+• Domain realism: introduce a live EspoCRM service seeded with client records/attachments;
+expand OwnCloud under /Finance_Documents with ledgers and templates rel-
+evant to wealth management; provision additional Rocket.Chat colleagues (via
+Sotopia) and a small set of Plane issues to drive cross-tool workflows.
+• Task suite: a 24-task benchmark—12 high-autonomy (brief) and 12 low-autonomy
+(schema/path-explicit) variants—tiered across three difficulty levels (retrieval,
+analysis, synthesis/communication).
+• Grading fidelity: deterministic, checkpointed evaluators that verify file locations,
+schema conformance, numeric correctness, and (where applicable) chat/issue
+actions; step and cost accounting are recorded for each run.
+• Reproducibility: seeded named volumes and fixed IDs/paths across services;
+minor harness tweaks (e.g., pre-flight checks, preserving chat logs) to ensure
+bit-for-bit reruns and consistent scoring; specifically, the default Rocket.Chat
+reset in npc/init.sh is disabled so message history persists for audit.
+This chapter then expands each element in turn: the base TAC/OpenHands stack
+we rely on, the finance extensions (services and data), the paired task design and
+difficulty tiers, the checkpoint evaluators, and the execution/analysis pipeline used in
+the experiments.
+
+Chapter 3. Methodology & System Design
+11
+3.2
+Environment for Development
+OwnCloud
+File Storage
+EspoCRM
+Customer Data
+Rocket.Chat
+Messaging
+Plane
+Project Mgmt
+Sotopia
+AI Agents
+OpenHands Agent Runtime
+Orchestration & Coordination Layer
+Output
+Results
+Evaluators
+Monitoring & Validation
+API
+API
+API
+API
+Results
+Metrics
+Validate
+Agent Comm
+Docker Compose Network
+Host: AWS EC2 t3.large | Ubuntu Linux | Docker 24.0 | Python 3.12
+— Service API
+- - Agent Comm
+— Data Flow
+Figure 3.1: Environment architecture overview. The OpenHands Agent Runtime orches-
+trates OwnCloud, EspoCRM, Rocket.Chat, and Plane via APIs; Sotopia injects agent
+capabilities into Rocket.Chat; outputs are validated by Evaluators.
+3.2.1
+Tools and roles
+At the centre of the environment (Fig. 3.1) is the OpenHands agent runtime, which
+orchestrates a plan–act loop and invokes tools through service APIs. The agent reads
+client records and attachments from EspoCRM (customer data/CRM); retrieves inputs
+and writes deliverables to OwnCloud (file storage via WebDAV); exchanges confir-
+mations and stakeholder updates in Rocket.Chat (messaging); and records or checks
+completion state in Plane (project management). Sotopia supplies simulated colleagues
+that interact only via Rocket.Chat, providing realistic dialogue. Task artefacts and com-
+munications produced by the agent are then consumed by our deterministic Evaluators
+(grade_checkpoints), which validate file locations and schemas, numerical results,
+and required messages or tickets by reading from the same services. All components
+run as Docker containers under a single Compose network with fixed hostnames/ports
+and named volumes, ensuring reproducible executions across runs and hosts.
+
+Chapter 3. Methodology & System Design
+12
+3.2.2
+Relation to TAC architecture
+Other than the additional tasks, data, and improved evaluators, our environment follows
+TheAgentCompany’s Dockerised design (OpenHands + OwnCloud + Rocket.Chat +
+Plane) but adapts the tool mix to finance: we add EspoCRM for client/record manage-
+ment, which improves on TAC by adding realism into benchmarking the financial sector.
+We omit GitLab since software-development tasks are out of scope. Evaluators and
+the run harness remain TAC-compatible so task logic, paths, and IDs are stable across
+reruns, while data and tasks are specialised to wealth-management workflows.
+3.3
+The choice of EspoCRM
+We selected a Customer Relationship Management (CRM) system to centralise client
+interactions, data, and workflows so agents operate in a realistic wealth-management
+setting. In our context, staff must access consistent profiles, contact history, preferences,
+and transaction logs, to perform their roles reliably. Without a CRM, data fragments
+across directories and becomes inconsistent. Because TheAgentCompany (TAC) does
+not include a CRM, we introduced one to provide realism in the assistant’s role and
+to improve the validity of our evaluation, making results more reflective of real-world
+performance.
+Common CRM options include:
+• Salesforce Financial Services Cloud
+• Microsoft Dynamics 365 Finance and Operations
+• Zoho CRM for Finance
+These platforms manage customer data efficiently and offer strong advisory tooling;
+however, they are not open-source and fall outside our project scope. We therefore set
+out to find a reliable, open-source CRM that is easy to develop with.
+We evaluated several open-source solutions, SuiteCRM, OroCRM, and YetiForce,
+and also considered a custom backend on Supabase. We prioritised lightweight ar-
+chitecture, modularity, RESTful API support, Docker compatibility, and permissive
+licensing. SuiteCRM proved feature-rich but overly complex and resource-intensive
+for a proof-of-concept. OroCRM offered enterprise-grade functionality that exceeded
+our needs and introduced licensing overheads. YetiForce was lightweight but showed
+
+Chapter 3. Methodology & System Design
+13
+instability when containerised and had limited community support. Supabase was at-
+tractive as a real-time Postgres backend with built-in authentication and API generation,
+but it lacked a native CRM interface and would have required significant custom UI
+development to replicate contact-management workflows.
+We chose EspoCRM because it struck the best balance: it provides an out-of-the-
+box CRM UI, is fully extensible via modules, includes a mature RESTful API, runs
+smoothly in Docker, and is backed by an active open-source community. We integrated
+EspoCRM to store client records (including trust/beneficiary tables and attachments)
+that agents query and reconcile against OwnCloud documents. This addition, layered
+onto TAC’s orchestration, increases domain realism while keeping runs reproducible
+and evaluator-friendly.
+3.4
+EspoCRM Deployment: Platform, Configuration, and
+Integration
+We deployed EspoCRM as part of the TAC Docker stack to make agent evaluation
+reproducible and realistic. We added an EspoCRM service (with its database) to
+docker-compose.yml, exposed a fixed host port, and assigned a stable container
+hostname. These choices give the OpenHands agent and the evaluators a consistent
+base URL and credentials, so every run queries the same API endpoints and record IDs
+without per-run reconfiguration.
+We configured persistent Docker volumes for the app and database to keep client
+records, attachments, and IDs stable across runs. This persistence is essential for
+grading: evaluators can rely on unchanging primary keys and paths when verifying
+that the agent fetched the correct CRM tables and reconciled them against OwnCloud
+documents.
+We integrated EspoCRM with the rest of the environment through the same host-
+network access used by TAC (e.g., OwnCloud, Rocket.Chat, Plane). The agent authenti-
+cates via EspoCRM’s built-in API auth, and evaluators read only final service state (not
+transient logs), which keeps checks deterministic.
+To ensure smooth agent access, we normalised data encodings to UTF-8 and verified
+that CRM exports and attachments open cleanly in both the browser and pandas.
+When needed, we restore the CRM to a known state by re-seeding the named volumes,
+guaranteeing that results remain comparable over time.
+
+Chapter 3. Methodology & System Design
+14
+In short, we kept the deployment minimal and evaluation-driven: a small compose
+extension, stable endpoints, persistent volumes, and UTF-8–clean data. These decisions
+eliminate configuration drift and make the presence and correctness of CRM data a
+dependable basis for automated grading.
+3.5
+Task Suite Design
+3.5.1
+Preparatory work: Interviews and Research
+The goal of the preparatory work was to identify realistic, automatable activities per-
+formed within wealth-management teams that could be expressed as well-specified tasks
+with objectively scorable outputs. The assistant layer of the workflow was deliberately
+targeted, artefacts such as summaries, checklists, draft communications, data pulls, and
+simple analytics, rather than discretionary investment decisions. This choice increases
+evaluability (clear acceptance criteria) and reduces ethical/competence risks associated
+with unqualified financial advice.
+We conducted a semi-structured interview with a senior product manager at Aveni
+Ltd (a firm specialising in Artificial Intelligence for financial services). The interview
+was scheduled for approximately 1 hour on 29/05/25, for which notes were taken. The
+structure of the interview was very basic and consisted of (i) What particular jobs within
+the financial industry has potential to be automated? (ii) What are some of the typical
+tasks performed in this job? (iii) What are some example tools that are used in this
+specific field? This interview provided guidance on the exact role to focus on, specific
+tasks that are expected in this role (e.g. generating portfolio summaries, scheduling
+meetings, organising documents, and corresponding with clients) and tools that are
+commonly used in this job, such as document storage, messaging apps, task tracking,
+and the largest suggestion – a Customer Relationship Management (CRM) tool.
+To complement the insights gained from the interview, supplementary research was
+conducted into the typical responsibilities and workflows of wealth managers’ assistants.
+This involved reviewing recent literature and industry reports on automation in financial
+advisory roles, focusing specifically on tasks commonly delegated to assistants, such
+as preparing client summaries, compliance checking, administrative record-keeping,
+scheduling, and drafting standardised client communications. From this review, it
+became clear that assistant-level tasks frequently revolve around structured data man-
+agement, repetitive administrative processes, and routine client interactions, all activities
+
+Chapter 3. Methodology & System Design
+15
+particularly suited to automation due to their clear inputs, predictable processing steps,
+and objectively verifiable outputs. These insights aligned closely with the findings from
+our expert interview and helped confirm the appropriateness of the chosen assistant-
+level tasks for automated benchmarking within this project. This investigation was
+focused on a wealth management assistant rather than a wealth manager for multiple
+reasons. First, assistant-level outputs are amenable to automated scoring, as they have
+verifiable ground truth answers which enable repeatable experiments without a panel of
+domain experts for every run. Second, the academic literature is thin on rigorous agent
+benchmarks tailored to wealth-management back-office/assistant functions; focusing
+here adds incremental value rather than repeating trading-strategy or generic Q&A
+evaluations [ref]. By deferring discretionary investment judgements to future work,
+the present study isolates capabilities (information retrieval, synthesis, compliance
+checklists, communication drafting) that are both useful and objectively checkable.
+3.5.2
+Task Creation Method and Task Descriptions
+Our suite of 12 task pairs were carefully designed to reflect authentic activities encoun-
+tered by wealth management assistants, based directly on the guidance and research
+outlined in the preceding section. Twelve tasks were created, mirroring TAC’s existing
+financial suite. Each task was structured to clearly define an intent, explicit inputs (such
+as file paths and CRM endpoints), and objectively verifiable outputs. Additionally, we
+assigned a difficulty level based on the complexity of the operations involved:
+Level 1 (Basic Retrieval and Summarisation):
+• Tasks at this level involve straightforward retrieval of client-related data and
+summarisation into a specified format. Examples include extracting transaction
+histories or asset listings from CRM or document storage, then aggregating or
+formatting them according to predefined templates. Such tasks typically required
+minimal processing beyond accurate data collection and organisation.
+Level 2 (Analytical and Computational Processing):
+• Tasks classified at Level 2 require analytical processing, such as performing
+numerical calculations or data reconciliations. Examples include reconciling
+beneficiary percentages between CRM and trust deeds, or calculating gains/losses
+using First in First out (FIFO) on trade history, meaning each sale is matched to the
+earliest remaining purchase lots first, so the gain/loss uses the oldest acquisition
+
+Chapter 3. Methodology & System Design
+16
+prices until the sold quantity is fully allocated. These tasks necessitate both data
+accuracy and correct application of domain-specific computational rules.
+Level 3 (Synthesis, Communication, and Decision Support):
+• These tasks involve the synthesis of information from multiple sources, prepara-
+tion of structured client communications, and provision of actionable decision
+support. Representative tasks include analysing quarterly business metrics to
+formulate concise insights for stakeholder communication via messaging ap-
+plications, evaluating a colleague’s financial position to determine if savings
+adequately cover future expenses, and coordinating meetings between clients and
+financial advisors by aligning multiple calendars. Such tasks require the agent
+to integrate and interpret diverse data inputs, apply reasoning to reach clearly
+defined decisions, and produce accurate, coherent, and client-ready outputs, such
+as scheduled meeting invitations, succinct stakeholder messages, or pass/fail
+assessments with precise numeric indicators.
+Table 3.1: Task overview: purpose, sources, and deliverables
+Task
+Purpose
+Sources →Deliverable
+Level 1
+Net Worth Snapshot
+Summarise a client’s net worth
+across assets and liabilities.
+OwnCloud →short net-worth
+note saved.
+Level 2
+Asset Aggregation
+Aggregate cash, investments, and
+property into a total-assets figure.
+OwnCloud →consolidated
+total-assets note.
+Year-End Tax Summary Compile taxable income compo-
+nents for tax reporting.
+OwnCloud →year-end tax
+summary table.
+Trusts & Beneficiaries
+Reconcile trust records with benefi-
+ciaries to find discrepancies.
+EspoCRM + OwnCloud →
+discrepancy report.
+continued on next page
+
+Chapter 3. Methodology & System Design
+17
+Task
+Purpose
+Sources →Deliverable
+Tax Threshold Calcula-
+tion
+Compute estate-level tax due using
+bands and rates.
+OwnCloud →single-figure
+tax-due note.
+Pension Projection
+Project contributions and growth to
+retirement.
+EspoCRM →multi-year pro-
+jection table (saved to Own-
+Cloud).
+Expense Categorisation Classify spending to reveal saving
+opportunities.
+EspoCRM
+→
+categorised
+transactions export (saved to
+OwnCloud).
+Capital Gains Computa-
+tion
+Calculate gains/losses using FIFO
+on trade history, .
+OwnCloud →capital gains re-
+port (saved).
+Portfolio Asset Alloca-
+tion
+Summarise portfolio by asset class
+(percent allocations).
+OwnCloud
+→
+asset-class
+breakdown (saved).
+Level 3
+Emergency Fund
+Check if savings cover ≥six months
+of expenses.
+OwnCloud →pass/fail mes-
+sage posted in Rocket.Chat.
+Meeting Scheduling Co-
+ordination
+Align client and advisor calendars
+and confirm a meeting.
+EspoCRM + Rocket.Chat →
+confirmation message; calen-
+dar invite saved to OwnCloud.
+Quarterly Metrics Anal-
+ysis & Communication
+Analyse quarterly business metrics
+and inform stakeholders.
+OwnCloud + stakeholder list
+→updates in Rocket.Chat;
+task confirmed in Plane.
+Our task suite described in 3.1 collectively addresses the full spectrum of assistant-
+level competencies, from basic information retrieval to more sophisticated analytical
+reasoning and client communications. Each task includes clearly defined acceptance
+criteria, output schema (CSV, JSON, .txt, or structured chat messages), and precise
+input sources (e.g. EspoCRM endpoints, OwnCloud file locations, or Rocket.Chat
+user identifiers). Our comprehensive structuring and explicit specification of each
+
+Chapter 3. Methodology & System Design
+18
+task ensures objective and reproducible evaluation, reducing ambiguity and facilitating
+automated scoring.
+3.5.3
+Checkpoint Design and Description
+The purpose of checkpointing is to transform each multi-step task into a sequence of
+verifiable evaluations that yield precise, interpretable feedback on agent performance.
+Checkpoints are not exposed to the agent, rather, they are a design aid used to decompose
+a task before writing the evaluator script and to provide a human-readable account of
+what the evaluator will grade, this is not strictly necessary but instead we completed this
+in order to remain consistent with legacy TAC setup. In practice, checkpointing lets us (i)
+pinpoint the exact sub-step e.g. data retrieval, calculation, or formatting, at which a run
+breaks down, instead of marking the entire task as failed; (ii) follow TheAgentCompany
+pattern in which human-readable checkpoints are the basis for an evaluator, and (iii)
+ensure transparency and reproducibility by documenting unambiguous acceptance
+criteria in checkpoints.md, making the pipeline auditable and shareable.
+For each task we first extract the key features: the input locations and files, the
+essential processing steps, and the expected deliverables (format and destination), this
+has to be done manually for every new task we created. We then define a compact set of
+three to five checkpoints for each to balance diagnostic granularity against unnecessary
+complexity, this is the main improvement to checkpoints over the prior TAC checkpoints
+which often has fewer than 3 checkpoints with higher points awarded per checkpoint.
+This design is inefficient as it obscures where runs fail due to evaluation not covering
+it (access, computation, or delivery), inflating score variance, and yields limited, non-
+actionable feedback for improving agents. Our setup then specifies succinct acceptance
+criteria so that each checkpoint reflects how well the agent performed that particular
+step.
+Across tasks, the acceptance criteria reflect only externally verifiable behaviour and
+artefacts. Concretely, checkpoints fall into five practical dimensions: input location &
+access (the agent finds and opens the correct files/records or endpoints); computation
+correctness (e.g. sums, projections, or FIFO gains); artefact conformance (the correct
+file exists at the described path with the correct name and required schema/template);
+communication actions (well-formed Rocket.Chat DMs or calendar invites saved to
+OwnCloud); and tool state updates (e.g. marking a Plane issue as done), this is an
+improvement on TAC. Importantly, there is no checkpoint for internal “data parsing”;
+
+Chapter 3. Methodology & System Design
+19
+evaluators judge only observable outputs and side-effects from the agent’s ’trajectory’.
+3.5.4
+Checkpoint Design
+What is inherited vs. provided The overall approach, checkpointed, post-hoc grading;
+and the Result/Checkpoint schema follows TheAgentCompany (TAC). Our main
+contribution in addition to 12 new checkpoints for wealth management is finance-
+specific checkpoint definitions and acceptance criteria, the finer granularity (3–5 checks
+per task with small point weights, allowing more effective analysis of what sub-steps of
+the task the agent may have struggled with).
+Illustrative example (Level 1: Net Worth Snapshot).
+As an example, the Net Worth Snapshot task awards four points across three checks:
+(i) the agent must read the client’s assets and liabilities inputs from OwnCloud (1
+point possible); (ii) compute the correct totals (1 point possible); and (iii) write a one-
+line deliverable net_worth_snapshot.txt in the client’s folder with the exact format
+Net worth:
+£<value> (2 points possible). The evaluator verifies existence and
+location of the output, parses and validates the numeric value against a recomputation
+of the inputs, and rejects any extra text or misformatting. This pattern, inputs read →
+numerics right →deliverable right place/format, is reused across the suite.
+A checkpoint passes when its corresponding evaluator returns True. Verifiers fall
+into four recurring types: (1) location/schema: the artefact exists at the expected path
+and matches the required columns or message template; (2) numeric correctness: values
+recomputed by the grader match the agent’s output within exact equality (for integers) or
+a tiny tolerance (for floats); (3) communication: correctness is verified with an existing
+TAC LLM-as-a-judge over the Rocket.Chat DM (yes/no predicate on the transcript),
+following the prior TAC setup, whereas other checks are deterministic (regex on the
+action trace and file existence); (4) state transition: a Plane issue reaches the expected
+state. Each task defines a point budget and maps each passed checkpoint to its share;
+the overall task score is the sum of passed points.
+Checkpoints are evaluated post-hoc, once the agent finishes. The grader inspects
+service state via APIs/WebDAV and, where helpful, consults the execution trajectory
+for evidence (e.g., URLs followed). There is no streaming or per-step polling; instead,
+checkpoints are designed so that final service state is sufficient to determine success.
+By default, checkpoints are order-agnostic: any check can pass regardless of when in
+
+Chapter 3. Methodology & System Design
+20
+the run its evidence was produced, though a natural order usually surfaces. For tasks
+that logically hinge on a final deliverable, a light scoring strategy awards “make-good”
+credit to upstream checkpoints when the final one is complete (e.g., if the final CSV is
+correct, the “read inputs” checkpoint is credited even if a trajectory keyword is missing).
+This avoids penalising superficial ordering artefacts while still rewarding the intended
+outputs.
+Checkpoints target deliverable and process correctness, not stylistic choices or
+intermediate scratch work; a task can succeed even if the agent explored dead ends,
+provided the final artefacts and required communications are correct.
+3.5.5
+The Creation of Automatic Evaluators
+What is an evaluator? In this work, an evaluator is the deterministic Python script that
+implements the acceptance criteria for a task’s checkpoints. It inspects final service state
+(e.g., files on OwnCloud via WebDAV, Rocket.Chat transcripts via API, task trajectory,
+Plane issue state) and returns boolean pass/fail for each checkpoint. By contrast, a
+metric aggregates those boolean outcomes (and optionally cost/efficiency signals) into
+reported scores: per-task points (sum of passed checkpoints), suite-level accuracy (share
+of available points achieved), and secondary metrics such as API cost or step-count. Put
+simply: evaluators decide if a specific requirement was met; metrics summarise those
+decisions for comparison.
+Why heterogeneous outputs are hard. Each task yields a different output type, and
+naïve exact matching is brittle. Numerical deliverables are relatively straightforward:
+the evaluator recomputes the quantity from the declared inputs in Python and compares
+using exact equality for integers or small tolerances for currency/percentages. Text
+deliverables require exact phrasing and location, and this is strictly specified in the
+wealth-management task.md files (e.g., one, line files with mandated templates), which
+we verify with strict regex plus path checks. CSV deliverables are the most challenging:
+byte-for-byte equality often fails under benign differences (row order, header case,
+separators). To avoid false negatives, our CSV checks (i) assert required column
+presence and, where the spec demands it, exact column order; (ii) normalise numeric
+inputs (e.g., strip currency symbols, commas, whitespace) before recomputation; and
+(iii) compare value columns against a recomputed ground truth, treating row order
+as irrelevant unless ordering is explicitly part of the specification. Human-facing
+communications (e.g., Rocket.Chat DMs) are the only place an LLM-as-a-judge is
+
+Chapter 3. Methodology & System Design
+21
+used (this can also use strict regular expression as a backup), and then only to answer a
+yes/no predicate over the transcript; all file-path, schema, and numeric checks remain
+deterministic.
+Illustrative example (Year-End Tax Summary). This evaluator has four determin-
+istic checks (one point each). First, it looks for positive evidence in the trajectory that
+the agent accessed all three source files (income.csv, gains.csv, dividends.csv)
+under the correct client directory. Second, it recomputes expected totals by reading
+those sources, stripping currency symbols/commas, summing the relevant columns,
+and comparing to the report’s Summary rows within a 10−6 tolerance; row order is
+irrelevant because the check filters Section=Summary and indexes by Item. Third, it
+verifies the report exists at the specified path. Fourth, it enforces exact schema and
+formatting, columns [Section,Item,Amount (£)], no placeholder x, and all amounts
+matching a strict two-decimal regex. No LLM is used in this evaluator; it is fully
+programmatic. The scoring strategy uses bonus_for_completing_final so a fully
+correct final artefact can credit upstream access where appropriate.
+What follows TAC vs. what we changed. The general pattern, checkpointed, post-
+hoc grading and the Result/Checkpoint schema, follows TheAgentCompany (TAC).
+However, several TAC pitfalls motivated changes for finance tasks. First, some TAC
+evaluators awarded credit for weak signals (e.g., a file’s mere existence or a keyword
+in the trajectory); we require positive evidence of correct artefacts and recomputed
+correctness. Second, coarse, high-weight checkpoints made scores less diagnostic;
+we use 3–5 smaller checkpoints per task so failures localise to access, computation,
+formatting, or delivery. Third, exact-string comparisons caused spurious failures; we
+added normalisation and tolerance for numbers and CSVs while keeping outputs strict
+where the spec demands exactness (file names, schemas, phrasing, and two-decimal
+amount formatting). Fourth, TAC sometimes relied on trajectory text over service
+state, this can skew evaluation by providing points for the mere mention of a location;
+our evaluators prefer API/WebDAV state (as well as disabling the default Rocket.Chat
+reset to preserve transcripts), consulting the trajectory only when it adds corroboration.
+Finally, LLM-judging is constrained to message-content verification; all other checks
+are programmatic. These changes improve validity (fewer false positives from weak
+evidence), reliability (fewer false negatives from harmless formatting), and diagnostic
+value (clearer attribution of failure mode).
+How evaluators are created. For each task, we first write a short, human-readable
+checkpoint spec, then implement one @grader function per checkpoint. Each function
+
+Chapter 3. Methodology & System Design
+22
+queries the relevant service or file system, performs any needed normalisation, and
+returns a boolean. The eval.py harness runs these functions after the agent completes
+and composes them into a Result. Most tasks use simple sum-of-parts scoring; when a
+final deliverable certifies upstream work (e.g. a fully correct CSV implies inputs were
+read), a light “make-good” strategy such as bonus_for_completing_final credits
+the first checkpoint to avoid penalising missing trajectory breadcrumbs.
+Why this is necessary. Finance tasks mix arithmetic precision with document
+discipline and light workflow actions. Evaluators that are too lenient (existence checks)
+inflate scores without real capability; evaluators that are too strict (byte-exact CSV
+equality) punish harmless differences. The tightened yet tolerant design here aims for
+the middle ground: deterministic where possible, minimally LLM-assisted only for
+chat semantics, and explicitly tuned to the output type so that scores are both fair and
+reproducible. This is more effective in evaluation by allowing evaluators to correctly
+grade how correct the agents actions are, providing valuable understanding on common
+pitfalls agents experience.
+3.6
+Process of Modifying Task Autonomy
+We reworked each task along a spectrum from high autonomy (brief, outcome-only)
+to low autonomy (schema-aware, tool- and I/O-constrained). The aim was not just to
+change the wording, but to test how instruction granularity affects agent accuracy, effi-
+ciency, and evaluability. High-autonomy briefs encourage exploration but often trigger
+tool wandering, re-downloading, or partial deliverables; low-autonomy briefs constrain
+sources, methods, and outputs so evaluators can verify results deterministically.
+Concretely, we applied a three-pass refinement: intent capture (state the real-world
+outcome), constraint surfacing (which tools are in scope, where the data must come
+from, and what not to do), and I/O formalisation (required columns/phrasing, output
+naming, and observable delivery actions). Each pass removes ambiguity that previously
+led to drift and non-reproducible outputs.
+High vs. low autonomy (what changed and why).
+• Data provenance. High: “Find the relevant data.” Low: Name the canoni-
+cal sources (specific CRM tables and the corresponding deed in the document
+store), prefer local copies if present, and forbid fabricating data or redundant
+re-downloads. Why: prevents hallucinated inputs and locks evaluation to known
+ground truth.
+
+Chapter 3. Methodology & System Design
+23
+• Tool binding. High: tool choice implicit. Low: declare the systems the agent
+must use (OwnCloud, EspoCRM, Rocket.Chat, Plane) and the allowed access
+route (local mount/API). Why: reduces detours and yields observable evidence.
+• Output canon. High: “Produce a report.” Low: fix filename pattern, required
+columns/phrasing, and where it must be written or sent. Why: enables strict,
+programmatic checks (schema, wording, location).
+• Computation rules. High: unspecified. Low: state methods (e.g., FIFO for gains,
+banded tax, compounding convention). Why: removes ambiguity that otherwise
+causes “nearly correct” but unverifiable answers.
+• Delivery. High: implicit. Low: require a verifiable action (upload to a known
+path, mark a Plane issue, or send a formatted DM). Why: closes the loop so
+evaluators can confirm completion without human review.
+Table 3.2: Accurate comparison for the “Beneficiary discrepancies” task: the high-
+autonomy brief names tools and files but leaves method and policies open; the low-
+autonomy brief constrains access (local-first), enumerates steps, tightens schema (adds
+Difference), and mandates upload.
+Aspect
+High autonomy brief
+Low autonomy brief
+Goal wording
+Narrative: “find discrepancies in trust
+beneficiaries ... produce a CSV.”
+Imperative: “reconcile beneficiary per-
+centages” with an explicit step list.
+Sources named
+Yes:
+EspoCRM
+URL
+and
+docu-
+ment
+names
+(beneficiaries.csv,
+trusts.csv); deed path in OwnCloud.
+Yes, plus local-first paths for CRM ta-
+bles and the deed.
+Access policy
+Not specified (agent can download as it
+sees fit).
+Local-first; “fetch once” if missing; do
+not re-download duplicates.
+Process steps
+Implicit: “connect, download, query, rec-
+oncile, export.”
+Explicit 1–5: extract trust_id; record
+CRM %s; read deed %s; name-match;
+write per-trust CSV.
+Output schema
+Columns:
+Beneficiary_Name,
+CRM_Percent, Deed_Percent.
+Adds Difference column; states pol-
+icy: include all beneficiaries or only dis-
+crepancies (choose one consistently).
+Output path
+Save to client folder with pattern
+<trust_id>_beneficiary_discrepancies.csv.
+Same pattern and folder plus explicit up-
+load to OwnCloud after creation.
+
+Chapter 3. Methodology & System Design
+24
+Aspect
+High autonomy brief
+Low autonomy brief
+trust_id handling
+Mentions trust_id comes from CRM
+but not how to derive in steps.
+Step 1 is “extract trust_id from
+trusts.csv.”
+Anti-drift constraints
+None stated (no local-first or duplication
+rule).
+Explicit no re-downloads; read local
+copies; consistent inclusion policy.
+Why we did this. Tightening autonomy is not about making tasks easy; it is about
+isolating whether agents can reliably execute realistic workflows when the business
+rules (sources, schema, delivery) are unambiguous. This improves validity (grounded
+inputs), reliability (reproducible outputs), and diagnostic power (failures localise to
+access, computation, formatting, or delivery), letting us cleanly measure the effect of
+autonomy on performance.
+3.7
+Data Generation
+Authorship and scope.
+We created the finance-domain corpus needed to run and
+grade the benchmark. In total, we produced twenty-eight artefacts across the stack: most
+are CSV and TXT files seeded into OwnCloud, with a smaller set placed in EspoCRM
+(including three calendar PDFs). These datasets span five named client profiles plus
+one colleague used for scheduling. We built on TAC’s legacy seed (NPC accounts,
+baseline channels, volumes), so we did not recreate those; instead, we added only the
+finance-specific data required for our tasks.
+How the data was generated.
+For each task family, we drafted a brief in natural
+language (heading, general formatting, units, simple rules) and used ChatGPT o4-mini-
+high to synthesise candidate tables/documents from that description. During pilots
+we observed failures to open files caused by mixed encodings and line endings (e.g.,
+UTF-8 with BOM, Windows-1252, CRLF). We therefore re-encoded all artefacts to
+UTF-8 without BOM, normalised newlines to LF, and standardised a single CSV dialect
+(comma delimiter, RFC-style quoting). This eliminated spurious I/O errors in the
+browser, Python/pandas, and WebDAV paths, making parsing behaviour reproducible
+across services and reruns.
+
+Chapter 3. Methodology & System Design
+25
+Non-relevant scaffolding.
+To keep the environment as realistic as possible to a real
+work environment, we added a small amount of non-relevant filler data that is not
+intended for the agent to access (e.g. 2 extra irrelevant calendar files in EspoCRM).
+This non relevant data we created was kept minimal because TAC already provides a
+large suite of data that is inherently irrelevant to our new suite.
+File-path discipline.
+We fixed canonical paths and endpoints so evaluation remains
+deterministic and realistic. OwnCloud follows a client-centric layout such as:
+/Finance_Documents/Clients/<Client>/ ..., while EspoCRM objects are reach-
+able at stable host/port routes. For both task variants we mirror the same artefacts in
+the agent’s local workspace, but explicitly state “read locally; do not re-download,” for
+only the low autonomy variant. High-autonomy variants keeps this vague, but the paths
+remain stable so evaluators can locate ground truth and verify deliverables without
+brittle search heuristics.
+Why this differs from TAC’s samples.
+TAC provides an excellent harness but its
+example data is not finance-focused and rarely couples tools. Our corpus intentionally
+creates cross-service dependencies (e.g., reconciling CRM tables against a deed in the
+document store) within a closed world where every task is solvable from the seeded
+services or their local mirror. This improves validity (agents must use the intended
+tools), reliability (stable paths/IDs across runs), and diagnostic power (failures localise
+to access, arithmetic, formatting, or delivery), while remaining evaluator-friendly by
+avoiding unnecessary byte-identical requirements.
+Contribution.
+In summary, we authored the finance datasets, designed the directory
+structure and IDs, re-encoded all artefacts to UTF-8/LF for robust agent access, and
+seeded the content into OwnCloud and EspoCRM at fixed paths. TAC’s orchestration is
+retained; the finance data, its cross-service links, encoding normalisation, and pathing
+conventions are ours. This combination makes the benchmark realistic for wealth-
+management workflows and reproducible for grading.
+3.8
+NPCs and Services Creation
+A reproducible agent environment needs more than static files; it must also pro-
+vide stable chat partners and line-of-business apps. For each task we ship three
+
+Chapter 3. Methodology & System Design
+26
+services: Rocket.Chat (dialogue), Plane (issue tracking), and OwnCloud/EspoCRM
+(documents/records). We start them with a project-wide docker-compose.yml and
+mount named volumes preseeded with state. With one command (docker compose
+up) we recreate exactly the world assumed by the evaluator.
+Rocket.Chat and Sotopia NPCs
+We create each NPC as a normal Rocket.Chat account via the web UI so IDs and
+channel membership stay fixed; the {username,password} live in npc_credentials.json.
+We define persona/role/prompts in Sotopia’s npc_definition.json and load them into
+Sotopia Redis with an idempotent helper. Task-local context comes from scenarios.json.
+We copy these JSONs into the image in the Dockerfile, and init.sh starts a Sotopia
+worker that logs in with the stored credentials and streams OpenAI completions as live
+replies. We avoid resets at startup, so history, unread flags, and presence behave like
+production.
+Plane workspace
+We keep a single open issue, “Analyze Q2 Metrics,” on a named PostgreSQL volume
+referenced in docker-compose.yml. plane_seed.tgz is a DR fallback only; we do
+not unpack it during normal runs.
+OwnCloud and EspoCRM
+We place all CSVs/PDFs/templates under /Finance_Documents, matching task
+paths. We uploaded the content once via the OwnCloud web client, set ACLs, and
+treat the ocdata volume as authoritative. We populated EspoCRM via the admin UI so
+primary keys match the evaluators; its database and uploads volumes are the sources
+of truth. owncloud_seed.tgz and espocrm_seed.tgz are cold-storage snapshots for
+recovery.
+Network topology
+All containers join the theagentcompany_default bridge network and expose
+DNS aliases (crm, owncloud, chat, plane). We publish host ports 8080 (EspoCRM),
+8092 (OwnCloud), 3000 (Rocket.Chat), and 8091 (Plane); we run the OpenHands
+runtime with -network host so it reaches each service directly.
+Resulting invariants
+Because live volumes persist across container restarts, agents can rely on four
+guarantees: (1) NPC accounts always exist and answer direct messages; (2) the Plane
+ticket is present exactly once and starts in the Open state; (3) every file referenced in
+a task is already in place; and (4) database primary keys and slugs used by evaluators
+never drift.
+
+Chapter 3. Methodology & System Design
+27
+If any store is damaged, we stop the stack, extract the relevant .tgz into the named
+volume, and relaunch docker compose. This restores the environment bit-for-bit in
+seconds without redundant unpacking on normal runs, yielding a closed-world testbed
+where every dependency (persona, ticket, document) is exactly where the agent and
+evaluator expect it, so scores reflect reasoning, not configuration drift.
+3.9
+Performing Evaluation with OpenHands
+We run all experiments with the stock OpenHands runner from The Agent Company
+(TAC) and tighten build/initialisation/scoring so a fresh clone plus two environment
+variables (OpenAI API key, server hostname) reproduces every table. Python 3.12 with
+Poetry installs the few extra dependencies. Graders are deterministic; an LLM grader is
+used only for genuinely free-form text.
+For each of the 24 tasks (high/low-autonomy), we provide a short Dockerfile
+layered on TAC’s task base image, pin pandas/numpy, copies certain seed artefacts
+locally, and include an AES-encrypted evaluator.py. The evaluator defines 3–5
+checkpoints (“steps”) as programmatic predicates over files, numbers, and side-effects
+(e.g. Plane status, Rocket.Chat DMs). Tasks that touch Rocket.Chat and/or Plane add a
+small init.sh to resolve hostnames, wait for all services to become healthy, load NPCs,
+and deliberately skip TAC’s default resets so chat and Plane state persist. A minimal
+dependencies.yml enumerates external services so that run_eval.py can pre-warm
+health probes; developer niceties (e.g., a tiny Makefile) stay out of the automated path.
+We launch via run_eval.py (OpenHands): the wrapper takes the built task image,
+reads creds from config.toml, picks an output dir, and uses host networking so
+the agent reaches EspoCRM (:8080), OwnCloud (:8092), Rocket.Chat (:3000), and
+Plane (:8091). The agent receives the task prompt, runs until a finish action, and the
+action–observation trace is written to traj_.json. The evaluator is then decrypted
+in-container to emit eval_.json with: (i) a binary full completion (all checkpoints
+pass) and a weighted partial score; (ii) string checks (normalised exact match and regex
+for required phrases); (iii) numeric tolerances (max 10−6 absolute or 1% relative); (iv)
+CSV grading by schema/keys (order-insensitive) with values recomputed and compared
+within tolerance, never byte-for-byte; and (v) REST checks confirming side-effects.
+
+Chapter 4
+Results & Evaluation
+4.1
+Experiment 1 – New Finance Tasks vs. Original TAC
+In these experiments we compare two distinct task suites: the 12 original TAC tasks
+and the 12 new wealth-management tasks (high-autonomy prompts), and another
+comparison of high/low autonomy prompts. We run the OpenHands agent configured
+with GPT-4o. For each task we record three outcomes: (i) the percent of checkpoints
+passed (how far the agent progressed on the task), including how many were fully
+completed, (ii) API cost (USD), and (iii) mean step-count (number of actions), step-
+counts are correlated but not directly proportional to cost. The plots below show
+distributions across tasks within each suite.
+Figures 4.1–4.3 provide a visual overview of Experiment 1. Each figure shows distri-
+butions for two distinct suites: the 12 original TAC tasks versus the 12 new wealth-
+management tasks with high-autonomy prompts.
+28
+
+Chapter 4. Results & Evaluation
+29
+Figure 4.1: Experiment 1: % Checkpoints passed. Left: Original TAC tasks (12). Right:
+New tasks (high autonomy, 12).
+Accuracy rises sharply on the new suite: most TAC tasks lie between 0–33 %, whereas
+the new set includes several tasks above 50 % and two at 100 %, consistent with Table 4.1
+and the distribution in Fig. 4.1.
+Figure 4.2: Experiment 1: Cost distribution. Left: Original TAC tasks (12). Right: New
+tasks (high autonomy, 12).
+Costs are broadly comparable (Fig. 4.2). A few new-suite outliers (e.g., Colleague
+meeting setup, Asset-percentage account) nudge the mean upward.
+
+Chapter 4. Results & Evaluation
+30
+Figure 4.3: Experiment 1: Step-counts. Left: Original TAC tasks (12). Right: New tasks
+(high autonomy, 12).
+Step-counts are similar (Fig. 4.3); most runs fall between 8 and 14 actions, so higher
+accuracy on the new suite is not explained by longer trajectories.
+Table 4.1 aggregates the headline metrics. “Resolved” counts fully completed tasks. “%
+Checkpoints Passed” is total checkpoints passed divided by total checkpoints available.
+“Mean Step-Count” is the average number of actions per run. “Cost ($)” is the mean
+API cost per run.
+Table 4.1: Averages: original TAC finance tasks vs. new wealth-management tasks
+(high-autonomy prompts)
+Suite
+Resolved % Checkpoints Passed Mean Step-Count Cost ($)
+Original TAC (12 tasks)
+0/12
+8/54 = 14.8%
+11.3
+0.1033
+New WM (HA, 12 tasks)
+2/12
+24/49 = 49.0%
+10.8
+0.1373
+4.1.1
+Quantitative Analysis
+Table 4.1 and Figures 4.1–4.3 show that the new wealth-management suite raises
+measured accuracy without making runs longer. Across the twelve legacy TAC tasks,
+the agent resolved none and passed 8/54 checkpoints (14.8%). On the new (high-
+autonomy) suite, it resolved 2/12 tasks and passed 24/49 checkpoints (49%). Mean
+step-count is essentially unchanged (11.3 →10.8), and mean API cost rises by $0.034
+(about 33%), largely due to spreadsheet parsing in richer finance tasks. These differences
+
+Chapter 4. Results & Evaluation
+31
+reflect improved checkpoints and evaluation - awarding credit for more intermediary
+steps (Section 3.4.4), rather than simply “easier” tasks: more of the agent’s partial
+progress now converts into objectively verifiable checkpoint credit.
+Difficulty tiers:
+The new suite was designed with three tiers 3.5.2. Aggregating by
+tier on the high-autonomy runs:
+• Level 1 (retrieval/summarisation): 2/4 checkpoints (50%) on Client net-worth
+snapshot; 0/1 tasks resolved; mean 6 steps; mean cost $0.046.
+• Level 2 (analysis/computation): 17/31 checkpoints (54.8%); 2/8 tasks resolved
+(Capital gains, Asset-percentage); mean 11.3 steps; mean cost $0.140.
+• Level 3 (synthesis/communication): 5/14 checkpoints (35.7%); 0/3 tasks re-
+solved; mean 11.3 steps; mean cost $0.160.
+Two patterns matter. First, higher tiers are harder: Level 3 passes far fewer checkpoints
+than Level 2, despite virtually identical step-counts. Second, costs climb with tier
+(driven by chat/upload loops in Colleague meeting setup), indicating that communica-
+tion/delivery, not arithmetic, is the dominant friction.
+Task-level contrasts.
+Some outcomes are expected (Capital gains and Asset-percentage
+both hit 100% under high autonomy once the files are reachable), while others surface
+remaining weaknesses. Asset aggregation passed only 1/5 checkpoints (20%) because
+the agent never opened the three source CSVs, an access/coordination failure, not a cal-
+culation one. Client net-worth snapshot reached 50% but did not resolve, showing that
+even Level 1 retrieval tasks still fail on delivery/formatting constraints when grading is
+strict. These examples illustrate that the new suite remains challenging while crediting
+genuine, schema-conformant progress.
+What the comparison shows.
+Versus TAC, the new suite: (i) reduces spurious
+credit by requiring API/WebDAV evidence of correct path/schema/placement (e.g.,
+Year-end Tax headers; Trusts & Beneficiaries filename), eliminating “keyword-only”
+passes (cf. clearer separation in Fig. 4.1); (ii) spreads difficulty, Level 2 improves while
+Level 3 remains low (§4.1.1); (iii) raises measured accuracy at similar search depth,
+checkpoint gains in Table 4.1 occur with near-unchanged step-counts (Fig. 4.3); and
+(iv) converts real computation into credit via allowed local mirrors (e.g., Capital gains,
+
+Chapter 4. Results & Evaluation
+32
+Asset-percentage) instead of zeroing runs for transient auth failures. This supports the
+research question: it is possible to build an effective, reproducible task battery that
+reflects a wealth-manager’s assistant role and yields meaningful measures of an LLM
+agent’s fitness for that role. The suite is not easier; it is better instrumented, meaning
+the tasks keep hardness (Level 3 remains unsolved) but yield stronger, verifiable signals
+(grading localised outputs if none are found in services and ground-truth recomputation),
+so failures localise to access/delivery rather than being masked by brittle grading. A
+good benchmark must retain headroom, having only 3 of 12 tasks at 100% keeps the
+suite discriminative and useful for tracking future improvements, rather than saturated
+by trivially solved items.
+4.1.2
+Qualitative Analysis
+Failure modes are grouped into a small taxonomy and compare how often they surface
+in the original TAC suite versus the new wealth-management (high-autonomy) suite.
+References to Table 4.1 and Figures 4.1–4.3 provide the quantitative backdrop.
+Error taxonomy (with representative examples).
+• Access & authentication failures (dominant). In TAC, OwnCloud/Rocket.Chat/Plane
+routinely returned login pages or 404s by agents querying unauthenticated, non-
+existent static URLs instead of authenticated export/API endpoints, returning
+errors rather than files, preventing any real inputs (Apply tax credit, R&D activ-
+ities, Invoice matching). In the new suite this persists but is partially mitigated
+where files are seeded locally, allowing computation to still be evaluated even
+when cloud auth fails (Capital gains, Asset-percentage).
+• Data provenance problems (mocked or fabricated inputs). When access failed,
+TAC runs often created synthetic data, when not able to find real data (Expense
+validation, Check attendance). The new suite still shows this on access-blocked
+tasks (Pension growth, Asset aggregation under high autonomy), but less so due
+to real files being reachable more often.
+• Delivery/transfer failures (uploads & messaging). Both suites show repeated
+misuse of raw PUT instead of WebDAV and Rocket.Chat DMs that never send
+(Year-end tax, Colleague meeting setup); the new suite makes these delivery
+errors more visible because upstream computation more often succeeds.
+
+Chapter 4. Results & Evaluation
+33
+• Pathing & schema conformance. TAC frequently saved outputs to the wrong
+location or with missing columns (Budget variance), collapsing otherwise correct
+logic at grading time. Interestingly the new suite exhibits this less frequently but
+does not eliminate it.
+• Analytical logic errors (less common but important). TAC: ordering bug in
+travel-day math (Substantial presence). New suite: band-capping/double-count
+mistakes in tax (Tax-thresholds). Where data are available, the suite surfaces
+genuine reasoning faults rather than mere I/O failures.
+Cross-suite contrast.
+In TAC, runs typically died at the access boundary, forcing
+fabrication or early aborts; few tasks reached business logic or delivery. In the new
+suite, seeded files move more attempts into the compute and deliver stages: successes
+appear when inputs are present (Capital gains, Asset-percentage), while remaining
+failures concentrate mostly on delivery (uploads/DMs) and occasional domain logic
+(Tax-thresholds). Thus, the new tasks remain challenging but are better instrumented:
+they credit real progress and localise residual weaknesses.
+Difficulty signal.
+The tiered design behaves as intended. Level 1 retrieval tasks
+still fail on strict placement/format when auth is flaky; Level 2 computational tasks
+succeed when inputs load and expose arithmetic competence (Capital gains); Level 3
+synthesis/communication tasks are hardest, with accuracy capped by messaging and
+calendar coordination (Quarterly metrics, Colleague meeting). This preserves difficulty
+while improving measurability.
+Summary and link to the research question.
+Qualitatively, the new wealth-management
+suite replaces “can’t reach files” dead-ends with discriminative checks on retrieval, anal-
+ysis, and delivery. It surfaces the agent’s genuine strengths (CSV parsing, reconciliation)
+and isolates the true blockers (auth, WebDAV, Rocket.Chat), rather than letting authori-
+sation issues dominate scores. This supports the central research question: an effective
+suite can be built that reflects a wealth-manager’s assistant role and meaningfully tests
+an LLM’s ability to act as an employee in a financial firm—not by making tasks easier,
+but by making progress objectively observable and the remaining gaps diagnostic.
+
+Chapter 4. Results & Evaluation
+34
+4.2
+Experiment 2 – Task Autonomy Comparison
+Figures 4.4–4.6 compare the same 12 tasks run under two prompt styles: high autonomy
+(brief/vague) and low autonomy (schema- and path-specific). Bars are paired per task
+(blue = high autonomy, orange = low autonomy).
+Figure 4.4: Experiment 2: % checkpoints passed — grouped by task (high vs. low
+autonomy).
+Checkpoint accuracy improves on most tasks under low autonomy, with large gains
+on Pension Growth, Trusts & Beneficiaries, Client Net Worth, and Asset Aggregation;
+several tasks remain flat (Quarterly Metrics, Expense categorisation, Emergency fund,
+Tax threshold, Year-end tax).
+Figure 4.5: Experiment 2: Cost ($) — grouped by task (high vs. low autonomy).
+Costs are similar overall; where low autonomy helps the agent avoid failed uploads or
+retries, it is often slightly cheaper despite marginally longer trajectories.
+
+Chapter 4. Results & Evaluation
+35
+Figure 4.6: Experiment 2: Mean step-count — grouped by task (high vs. low autonomy).
+Step-counts increase modestly under low autonomy for several tasks (e.g., Pension
+Growth, Year-end tax), reflecting extra, directed actions (correct paths, schema checks)
+rather than thrashing.
+Table 4.2: Averages: high autonomy (HA) vs. low autonomy (LA) prompt styles on new
+tasks. This demonstrates that low autonomy significantly increases checkpoints passed
+and which are resolved, while not significantly increasing step-count or cost
+Prompt Style
+Resolved % Checkpoints Passed Mean Step-Count Cost ($)
+High Autonomy (HA)
+2/12
+24/49 = 49.0%
+10.8
+0.1373
+Low Autonomy (LA)
+4/12
+34/49 = 69.4%
+12.3
+0.1237
+4.2.1
+Quantitative Analysis
+Experiment 2 asks: to what extent does description granularity (low autonomy =
+schema/path–specific vs. high autonomy = brief) affect accuracy and efficiency when
+the same 12 tasks are run under each style? Figures 4.4–4.6 and Table 4.2 summarise
+three signals: checkpoint accuracy, mean step-count, and API cost.
+Overall effect.
+As you can see in Table 4.2, low-autonomy prompts resolve more
+tasks (4/12 vs. 2/12) and raise mean checkpoints passed from 49% (24/49) to 69%
+(34/49), while adding only 1.5 steps per run on average (10.8 →12.3) and slightly
+reducing mean cost ($0.1373 →$0.1237).1 The accuracy gain is visible across many
+1Table 4.2.
+
+Chapter 4. Results & Evaluation
+36
+bars in Fig. 4.4; the efficiency picture (Figs. 4.5, 4.6) shows modest trajectory growth
+but fewer costly retries.
+Difficulty tiers.
+To examine whether granularity helps uniformly, we group tasks by
+the difficulty design in §3.5.2:
+• Level 2 (Analytical/Computational): Pension Growth, Expense Categorisation,
+Trusts & Beneficiaries, Client Net Worth, Capital Gains, Asset Percentage, Asset
+Aggregation, Tax Threshold, Year-end Tax.
+• Level 3 (Synthesis/Communication): Quarterly Metrics, Emergency Fund,
+Colleague Meeting Setup.
+Granularity helps most on Level 2 tasks: the average checkpoint pass-rate rises from
+≈56.9% (high autonomy) to ≈82.4% (low autonomy).2 In contrast, Level 3 tasks remain
+flat at ≈35.5% under both styles, indicating that external constraints (authentication,
+cross-tool delivery) rather than schema inference limit performance. This tiered pattern
+shows the benchmark remains challenging: the easier computational wins do not
+trivialise the suite, while multi-system synthesis still blocks end-to-end success.
+Task-level contrasts
+Several pairs highlight how and when lowered autonomy pays
+off: Pension Growth, Trusts & Beneficiaries, Client Net Worth, and Asset Aggregation
+jump from 25% to 75%, 25% to 75%, 50% to 100%, and 20% to 100% respectively
+when schemas/paths are provided (Fig. 4.4). This is consistent with data-reachability
+being the dominant failure mode. Efficiency also improves in Expense Categorisation
+and Capital Gains: steps fall (20→9 and 14→12) and cost halves (0.239→0.076 and
+0.241→0.123) because directed access prevents fruitless probing (Figs. 4.5, 4.6). By
+contrast, Quarterly Metrics, Emergency Fund, and Colleague Meeting show unchanged
+accuracy (33–40%) even under low autonomy; they are bottlenecked by messaging and
+calendar/issue-tracker actions rather than by file schemas. Notably, Colleague Meeting
+keeps the same step-count (18) but halves cost (0.359→0.170), suggesting fewer failing
+retries without surpassing checkpoints.
+Answer to the research question.
+Decreased autonomy affects agent accuracy and
+efficiency, but selectively. When the task is primarily analytical on accessible data,
+2Per-task values are the bars in Fig. 4.4.
+
+Chapter 4. Results & Evaluation
+37
+low-autonomy prompts provide large accuracy gains at negligible or favourable cost,
+likely due to less guess work. When the task demands cross-system synthesis and
+delivery, added detail does help overcome difficulties in accessing services in some
+cases, but this is still a prevalent issue. Thus, description granularity is an important
+control for computational tasks, while solid descriptions do assist in accessing services
+somewhat, systemic constraints remain the main barrier to realistic assistant work. This
+directly informs tool/benchmark design to use schema-aware prompts and often local
+input documents to separate “can’t reach the data” from “can’t complete the workflow.”,
+which helps in evaluating both how the agent performs in accessing services, and its
+effectiveness in performing the calculations/operations provided to it.
+4.2.2
+Qualitative Analysis
+To avoid repeating task-by-task narratives, we group outcomes by the error patterns that
+recurred across the same 12 tasks run under high autonomy (brief) and low autonomy
+(schema/path-specific) prompts. Figures 4.4–4.6 and Table 4.2 provide the quantitative
+context.
+• E1: Data reachability / authentication. Symptom: agent cannot open required
+CSVs or APIs (404, 405, login pages), then stalls or fabricates inputs. Where it
+showed: strongly under HA in Pension Growth, Trusts & Beneficiaries, Client Net
+Worth, Asset Aggregation. Effect of LA: explicit paths and schemas substantially
+reduced this class of failures, turning HA partials into LA passes (e.g., Pen-
+sion Growth 25%→75%; Trusts & Beneficiaries 25%→75%; Client Net Worth
+50%→100%; Asset Aggregation 20%→100%) but these remained present in both
+schema.
+• E2: Delivery / upload brittleness. Symptom: correct local artefacts but failed
+PUT/WebDAV or misaddressed storage/chat operations. Where it showed: both
+styles, notably in Year-end Tax and occasionally after HA computation. Effect of
+LA: mixed. LA reduces exploratory misfires (lower cost), but cannot commonly
+overcome server-side constraints; results often remain local-only.
+• E3: Tool integration / messaging. Symptom: correct calculations but incomplete
+cross-tool actions (e.g., Rocket.Chat DM not sent; Plane issue not closed). Where
+it showed: Quarterly Metrics, Emergency Fund, Colleague Meeting. Effect of
+
+Chapter 4. Results & Evaluation
+38
+LA: little to none; checkpoints stay flat because the blocker is execution/auth in
+external tools, not schema discovery.
+• E4: Schema/logic mistakes (with data available). Symptom: band-capping or
+double-count errors despite reading the files. Where it showed: Tax Threshold
+variants (different but offsetting mistakes). Effect of LA: neutral overall, gran-
+ularity helps locate fields but does not guarantee correct domain logic without
+explicit rules.
+• E5: Fabrication fallback. Symptom: when E1/E3 occur, the model creates
+fake ledgers or balances to keep the pipeline moving. Where it showed: HA
+Expense Categorisation, Asset Aggregation, Client Net Worth. Effect of LA:
+sharply reduced because real files are found more reliably; when fabrication
+persists, content checkpoints fail even if delivery succeeds.
+Cross-style comparison.
+• Clear LA gains on data-centric L2 tasks: Pension Growth, Trusts & Beneficia-
+ries, Client Net Worth, Asset Aggregation move from HA partials/failures to LA
+passes by eliminating E1 (data reachability).
+• Flat on L3 synthesis tasks: Quarterly Metrics, Emergency Fund, Colleague
+Meeting remain bottlenecked by E3 (tool execution/DMs/calendars), so granular-
+ity does not lift accuracy.
+• Stable parity where computation is already robust: Capital Gains, Asset
+Percentage, Tax Threshold show little change in checkpoints; LA primarily trims
+cost/steps by curbing exploration.
+Implications for the research question. The evidence indicates that description
+granularity matters, but selectively. LA prompts materially improve success on ana-
+lytical, data-reachable workflows by preventing E1 and reducing E5, with small step
+increases and often lower cost. However, for multi-system synthesis/delivery workflows,
+accuracy is capped by E2–E3 (uploads, messaging, calendars), which prompt detail
+alone does not fix. In terms of the dissertation’s question on autonomy and effective-
+ness, the qualitative patterns corroborate the quantitative gains: lower autonomy (path
+specificity and accessibility information) is a high-leverage control for Level-2 tasks,
+while Level-3 tasks remain challenging and thus valuable for benchmarking end-to-end
+assistant behaviour.
+
+Chapter 5
+Conclusion & Future Work
+5.1
+Concluding Remarks
+We set out to test whether a general-purpose LLM agent can complete realistic wealth-
+management assistant workflows inside a reproducible, tool-rich environment. Building
+on TAC, we added EspoCRM, seeded finance-specific data, paired each task with
+deterministic evaluators, and introduced a high– vs. low-autonomy variant of every
+task. Rather than making tasks easier, the new suite makes progress more faithfully
+measurable. With the same agent and comparable step-counts, the share of checkpoints
+credited rose from ∼15% to ∼49% because the evaluators recompute ground truth -
+for accurate grading, split up checkpoints into more granular steps - for more effective
+analysis, and awards credit for correctness of answer, even when the agent struggles
+to access services. Low-autonomy briefs generally improved accuracy further with
+flat-to-modest cost changes, suggesting that clearer schemas and paths help agents focus
+on the core computation rather than exploration. Error analyses show most failures
+cluster around access and delivery (authentication, WebDAV uploads, Rocket.Chat
+messaging) rather than arithmetic once inputs are available, indicating where systems
+hardening matters most. Overall, the benchmark yields fair, reproducible scoring: file
+and numeric checks are fully programmatic; an LLM-as-judge is used only for yes/no
+content predicates in chat.
+Three observations stand out. First, agent competence on finance tasks is limited less
+by mathematical reasoning than by end-to-end workflow reliability (finding the right
+files, following naming/location rules, and delivering outputs). Second, autonomy level
+meaningfully affects outcomes: constraining source, method, and deliverable reduces
+drift without inflating search depth. Third, strict but tolerant evaluators (schema/format
+39
+
+Chapter 5. Conclusion & Future Work
+40
+exactness with numeric/CSV normalisation) avoid both false positives and brittle byte-
+match failures. The work remains limited by a closed-world setup with synthetic, but
+carefully normalised, data, a small number of clients and tasks relative to industry
+breadth, and primary evaluation on a single agent configuration. The environment also
+simplifies some real operational concerns (identity management, heterogeneous file
+encodings beyond UTF-8, and intermittent service outages).
+Several hard problems remain open. Agents struggle with authentication and ac-
+cessing tools and this is still a major source of failure. Reliable document delivery
+(especially WebDAV nuances and calendar artefacts) is fragile. Verifying richer free-text
+communications without over-reliance on LLM judging is another challenge. Finally,
+maintaining cost efficiency while improving reliability is non-trivial: agents that “try
+harder” can escalate API spend without proportional accuracy gains.
+5.2
+Possible Future Research Directions
+We see four concrete future research directions. (i) Counterfactual robustness. This
+setup provides data in the specified format, and in the correct locations, another direction
+could be to perturb tasks (header case, benign row reorders, tiny numeric noise, alternate
+but equivalent schemas, and not in the specified location) this could improve realism
+further, and provide more valuable insights into agent behaviour. (ii) Task and data
+breadth: expand beyond assistant tasks toward lightweight advisory previews (e.g.,
+constraints-aware portfolio rebalancing), increase client diversity, and introduce con-
+trolled data imperfections (missing values, inconsistent headers) to test robustness. (iii)
+Evaluation science: refine metrics with cost–accuracy Pareto reporting, add calibrated
+partial credit for long-form communications (regex + rule checks before any LLM
+predicate), and open the suite for cross-model comparisons. (iv) Agent design: study
+memory/persistence and multi-agent collaboration (e.g., planner–executor with handoffs
+in Plane/Rocket.Chat), and explore light fine-tuning or tool-use adapters targeted at file
+handling and delivery. Together, these steps would strengthen ecological validity, raise
+ceiling performance, and keep the benchmark faithful to how real finance teams work
+while remaining reproducible and economical to run.
+
+Bibliography
+[1] Espocrm documentation. https://www.espocrm.com/documentation/, 2025.
+Accessed 2025-08-11.
+[2] Gitlab: The devsecops platform. https://about.gitlab.com/, 2025. Accessed
+2025-08-11.
+[3] owncloud documentation. https://doc.owncloud.com/, 2025. Accessed 2025-
+08-11.
+[4] Plane: Open-source project management. https://github.com/makeplane/
+plane, 2025. Accessed 2025-08-11.
+[5] Rocket.chat documentation. https://docs.rocket.chat/, 2025. Accessed
+2025-08-11.
+[6] Anthropic. Introducing claude 3.5 sonnet. https://www.anthropic.com/news/
+claude-3-5-sonnet, 2024. Accessed 2025-08-11.
+[7] B Bigeard et al. Finance agent benchmark: Benchmarking LLMs on real-world
+financial research tasks. arXiv preprint arXiv:2508.00828, 2025.
+[8] Alexandre Drouin, Dheeraj Raghu, Rohan Hazra, Achleshwar Argal, et al.
+Workarena: Benchmarking web agents in realistic enterprise environments. In
+Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and
+Data Mining, 2024.
+[9] Abhimanyu Dubey et al.
+The llama 3 herd of models.
+arXiv preprint
+arXiv:2407.21783, 2024.
+[10] Nicholas Jimenez et al. SWE-bench: Can language models resolve real-world
+github issues? arXiv preprint arXiv:2310.06770, 2023.
+41
+
+Bibliography
+42
+[11] Sayash Kapoor, Benedikt Stroebl, Zachary S. Siegel, Nitya Nadgir, and Arvind
+Narayanan. Ai agents that matter. arXiv preprint arXiv:2407.01502, 2024.
+[12] Thomas Kluyver, Benjamin Ragan-Kelley, Fernando Pérez, Brian Granger,
+Matthias Bussonnier, Jonathan Frederic, Kyle Kelley, Jessica Hamrick, et al.
+Jupyter notebooks – a publishing format for reproducible computational work-
+flows. In Positioning and Power in Academic Publishing: Players, Agents and
+Agendas. IOS Press, 2016.
+[13] Enzhi Li et al. Investorbench: A benchmark for financial decision-making tasks
+with llm-based agent. arXiv preprint arXiv:2412.18174, 2024.
+[14] Jia Li et al. Devbench: A comprehensive benchmark for software development.
+arXiv preprint arXiv:2403.08604, 2024.
+[15] McKinsey
+&
+Company.
+Capturing
+the
+full
+value
+of
+generative
+ai
+in
+banking.
+https://www.mckinsey.
+com/industries/financial-services/our-insights/
+generative-ai-in-banking-a-200-billion-opportunity, 2023.
+Ac-
+cessed 2025-08-21.
+[16] OpenAI. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.
+[17] Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach.
+Pearson, 4th edition, 2020.
+[18] Timo Schick, Jane Dwivedi-Yu, et al. Toolformer: Language models can teach
+themselves to use tools. arXiv preprint arXiv:2302.04761, 2023.
+[19] Noah Shinn et al. Reflexion: Language agents with verbal reinforcement learning.
+arXiv preprint arXiv:2303.11366, 2023.
+[20] Google Team et al. Gemini: A family of highly capable multimodal models. arXiv
+preprint arXiv:2312.11805, 2023.
+[21] Guanzhi Wang et al. Voyager: An open-ended embodied agent with large language
+models. arXiv preprint arXiv:2305.16291, 2023.
+[22] Kuan Wang et al. Openhands: An open platform for AI software developers as
+generalist agents. arXiv preprint arXiv:2407.16741, 2024.
+
+Bibliography
+43
+[23] Yutao Wang et al. A survey on large language model based autonomous agents.
+Frontiers of Computer Science, 2024. https://link.springer.com/article/
+10.1007/s11704-024-36236-3.
+[24] Yutong Xie et al. Finben: A holistic financial benchmark for large language
+models. OpenReview preprint, 2024. https://openreview.net/forum?id=
+0VJ2uZ8f1A.
+[25] Frank F. Xu, Yufan Song, Boxuan Li, Yuxuan Tang, Kritanjali Jain, Mengxue Bao,
+Zora Z. Wang, Xuhui Zhou, Zhitong Guo, Murong Cao, et al. Theagentcompany:
+Benchmarking llm agents on consequential real world tasks. arXiv preprint
+arXiv:2412.14161, 2024.
+[26] Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan. τ-bench: A
+benchmark for tool-agent-user interaction in real-world domains. arXiv preprint
+arXiv:2406.12045, 2024.
+[27] Shunyu Yao, Jeffrey Zhao, Dian Yu, et al. React: Synergizing reasoning and
+acting in language models. arXiv preprint arXiv:2210.03629, 2023.
+[28] Ori Yoran et al. Assistantbench: Evaluating real-world personal assistant agents.
+arXiv preprint arXiv:2407.15711, 2024.
+
+Chapter 6
+Appendix
+6.1
+Task Catalogue (Overview)
+Table 6.1: Task overview: purpose, inputs, outputs, and tools
+Task (Level)
+Purpose
+Inputs
+Outputs / Tools
+Net Worth Snap-
+shot (L1)
+Provide a snapshot of
+a client’s net worth by
+summarising assets and
+liabilities.
+CSV files from Own-
+Cloud
+(assets.csv,
+liabilities.csv)
+TXT file in OwnCloud
+(net_worth_snapshot.txt);
+OwnCloud
+Asset
+Aggrega-
+tion (L2)
+Aggregate the client’s
+cash, investment, and
+property balances into
+one total-assets figure.
+CSVs
+from
+Own-
+Cloud (accounts.csv,
+investments.csv,
+property_holdings.csv)
+TXT file in OwnCloud
+(total_assets.txt);
+OwnCloud
+Year-End
+Tax
+Summary (L2)
+Summarise taxable in-
+come data for client tax
+reporting.
+CSVs
+from
+Own-
+Cloud
+(income.csv,
+gains.csv,
+dividends.csv)
+CSV
+in
+OwnCloud
+(YearEnd_Tax_Report_2024.csv);
+OwnCloud
+Trusts & Benefi-
+ciaries (L2)
+Identify discrepancies in
+trust beneficiary informa-
+tion.
+CSVs from EspoCRM
+(beneficiaries.csv,
+trusts.csv);
+deed
+from
+OwnCloud
+(trust_deed.csv)
+CSV
+in
+OwnCloud
+(<trust_id>_beneficiary_discre
+EspoCRM, OwnCloud
+continued on next page
+44
+
+Bibliography
+45
+Task (Level)
+Purpose
+Inputs
+Outputs / Tools
+Tax
+Threshold
+Calculation (L2)
+Calculate the client’s to-
+tal tax liability based on
+their estate and assets.
+CSV/TXT
+from
+OwnCloud
+(estate_summary.csv,
+assets.csv,
+rates_and_thresholds.txt)
+One-line TXT in Own-
+Cloud
+(tax_due.txt);
+OwnCloud
+Pension
+Projec-
+tion (L2)
+Project client’s pension
+portfolio growth until re-
+tirement.
+Data
+from
+EspoCRM
+(pension_contributions.csv,
+growth_rates.txt)
+CSV
+in
+OwnCloud
+(pension_projection.csv);
+EspoCRM, OwnCloud
+Expense Categori-
+sation (L2)
+Categorise client spend-
+ing to identify potential
+savings opportunities.
+CSV
+from
+EspoCRM
+(transactions.csv)
+CSV
+in
+OwnCloud
+(transactions_categorised.csv)
+EspoCRM, OwnCloud
+Capital
+Gains
+Computation
+(L2)
+Calculate gains or losses
+from a client’s trading
+activity using FIFO ac-
+counting.
+CSV from OwnCloud
+(trades.csv)
+CSV
+in
+OwnCloud
+(capital_gains.csv);
+OwnCloud
+Portfolio Asset Al-
+location (L2)
+Analyse and summarise
+the client’s investment
+portfolio by asset class.
+CSV from OwnCloud
+(portfolio.csv)
+CSV
+in
+OwnCloud
+(asset_percentages.csv);
+OwnCloud
+Emergency Fund
+(L3)
+Determine
+if
+a
+col-
+league’s savings cover
+at least six months of
+expenses.
+CSVs from OwnCloud
+(expenses_summary.csv,
+savings_balance.csv)
+Structured message via
+Rocket.Chat; OwnCloud,
+Rocket.Chat
+Meeting Schedul-
+ing Coordination
+(L3)
+Schedule client meetings
+by aligning client and ad-
+visor calendars.
+Calendar PDF from Es-
+poCRM; calendar via
+Rocket.Chat
+Rocket.Chat
+confirma-
+tion; ICS in OwnCloud
+(ClientHoldingReview.ics);
+EspoCRM, Rocket.Chat,
+OwnCloud
+continued on next page
+
+Bibliography
+46
+Task (Level)
+Purpose
+Inputs
+Outputs / Tools
+Quarterly
+Met-
+rics Analysis &
+Communication
+(L3)
+Analyse quarterly per-
+formance metrics and
+communicate insights to
+stakeholders.
+CSV from OwnCloud
+(Q2_metrics.csv);
+stakeholder list
+Structured
+messages
+via Rocket.Chat;
+task
+completion
+confirma-
+tion in Plane;
+Plane,
+OwnCloud, Rocket.Chat
+6.2
+Checkpoint Descriptions (Per Task)
+Net Worth Snapshot (4 points)
+1. (1 pt) Navigate to /Finance_Documents/Clients/MikeLazaridis/ and open assets.csv
+and liabilities.csv.
+2. (1 pt) Correctly sum total assets and liabilities.
+3. (2 pts) Write net_worth_snapshot.txt containing exactly Net worth:
+£<value>
+with the correct figure and no additional text.
+Year-End Tax Summary (4 points)
+1. (1 pt) Access income.csv, gains.csv, and dividends.csv in /Finance_Documents/Clients/Richa
+2. (1 pt) Calculate sums for each income category accurately.
+3. (1 pt) Populate the YearEnd_Tax_Report_2024.csv template correctly.
+4. (1 pt) Ensure the final CSV adheres to the provided template’s schema and formatting.
+Trusts and Beneficiaries (4 points)
+1. (1 pt) Retrieve beneficiaries.csv and trusts.csv from EspoCRM, plus trust_deed.csv
+from OwnCloud (or locally).
+2. (2 pts) Generate <trust_id>_beneficiary_discrepancies.csv with columns Beneficiary_Name,
+CRM_Percent, Deed_Percent and correct values.
+3. (1 pt) Save the output in the correct client directory with filename based on trust ID.
+
+Bibliography
+47
+Tax Threshold Calculation (3 points)
+1. (1 pt) Open estate_summary.csv, assets.csv, and rates_and_thresholds.txt.
+2. (1 pt) Create tax_due.txt with Tax due:
+£<amount> using correct calculations.
+3. (1 pt) Place tax_due.txt in the designated folder.
+Pension Growth Contributions (4 points)
+1. (1 pt) Access pension_contributions.csv and growth_rates.txt from EspoCRM.
+2. (1 pt) Generate pension_projection.csv with columns Year and Portfolio value
+(£).
+3. (2 pts) Ensure each year’s projection and the final value are mathematically accurate.
+Expense Categorisation (4 points)
+1. (1 pt) Retrieve transactions.csv from EspoCRM.
+2. (1 pt) Upload the enriched dataset to OwnCloud at /Finance_Documents/Clients/MikeReeves/.
+3. (1 pt) Create transactions_categorised.csv including the new Category column.
+4. (1 pt) Correctly assign each transaction as Fixed, Discretionary, or Investment.
+Capital Gains Computation (4 points)
+1. (1 pt) Open trades.csv in OwnCloud.
+2. (1 pt) Compute per-trade gain/loss rows in capital_gains.csv.
+3. (1 pt) Save capital_gains.csv in the correct client folder.
+4. (1 pt) Append a final row with the total gain or loss.
+Portfolio Asset Allocation (3 points)
+1. (1 pt) Access portfolio.csv from OwnCloud.
+2. (1 pt) Calculate each asset type’s percentage of the total.
+3. (1 pt) Save asset_percentages.csv with correct columns and values.
+
+Bibliography
+48
+Emergency Fund (3 points)
+1. (1 pt) Retrieve expenses_summary.csv and savings_balance.csv.
+2. (1 pt) Calculate coverage ratio and determine PASS/FAIL (≥6 months).
+3. (1 pt) Send a RocketChat DM formatted as Status:
+PASS/FAIL, Coverage ratio:
+<number>.
+Meeting Scheduling Coordination (5 points)
+1. (1 pt) Request and receive the advisor’s calendar in RocketChat.
+2. (1 pt) Download the client’s PDF calendar from EspoCRM.
+3. (2 pts) Identify the earliest 30-minute slot within 09:00–17:00.
+4. (1 pt) Confirm via RocketChat and save ClientHoldingReview.ics in OwnCloud.
+Quarterly Metrics Analysis (6 points)
+1. (1 pt) Detect the “Analyze Q2 Metrics” issue in Plane.
+2. (1 pt) Download Q2_metrics.csv and compute YoY growth rates.
+3. (1 pt) Draft a two-sentence insight in <Metric:
+Value> format.
+4. (2 pts) DM stakeholders listed in stakeholder_list.csv with the insight.
+5. (1 pt) Mark the Plane task as done.
+Asset Aggregation (5 points)
+1. (1 pt) Navigate to /Finance_Documents/Clients/JohnSmith/ on OwnCloud and
+open accounts.csv, investments.csv, and property_holdings.csv.
+2. (1 pt) Create total_assets.txt in the same directory.
+3. (3 pts) Ensure total_assets.txt contains exactly one line Total assets:
+£<sum>
+where <sum> aggregates all balances precisely.
+6.3
+Data Generation: File Families and Schemas
+
+Bibliography
+49
+Table 6.2: Task-family, primary store, object types, and high-level schemas
+Task family
+Primary store
+File / object type
+High-level schema
+Asset / liability snap-
+shots
+OwnCloud
+accounts.csv,
+investments.csv,
+property_holdings.csv
+CSV, 2 columns: Label,
+Value (£)
+Net-worth
+&
+tax
+tasks
+OwnCloud
+assets.csv,
+liabilities.csv,
+estate_summary.csv
+Same 2-column CSV; val-
+ues may include £ and
+thousands separators
+Portfolio
+composi-
+tion
+OwnCloud
+portfolio.csv
+CSV, 3 columns: Asset
+Name, Asset Type, Value
+(£)
+Pension projection
+EspoCRM
+pension_contributions.csv,
+growth_rates.txt
+Contributions: single nu-
+meric column; Growth
+rates: Year / Rate %
+Capital-gains history OwnCloud
+trades.csv
+CSV, 6 columns: Stock,
+Buy_Date,
+Sell_Date,
+Quantity,
+Buy_Price,
+Sell_Price
+Spending classifica-
+tion
+EspoCRM
+transactions.csv
+CSV, 3 columns: Date,
+Amount, Description
+Emergency-fund
+check
+OwnCloud
+expenses_summary.csv,
+savings_balance.csv
+Both: two-column tables
+Month/Account vs Value
+(£)
+Trusts and Beneficia-
+ries
+EspoCRM
++
+OwnCloud
+trusts.csv,
+beneficiaries.csv,
+trust_deed.csv
+Tidy
+CSVs
+with
+IDs,
+names,
+percent
+fields
+(with %)
+Year-end tax report
+OwnCloud
+income.csv, gains.csv,
+dividends.csv, template
+Category CSVs: Source /
+Amount; Template: fixed
+CSV skeleton
+Quarterly metrics
+OwnCloud
+Q2_metrics.csv
+CSV, 3 columns: Metric,
+Current, Prior
+Stakeholder IDs
+OwnCloud
+stakeholder_list.csv
+CSV, 2 columns: Name,
+RocketChat_ID
+continued on next page
+
+Bibliography
+50
+Task family
+Primary store
+File / object type
+High-level schema
+Colleague Meeting
+Setup
+EspoCRM
++
+RocketChat
+Calendar PDF + Rock-
+etChat calendar message
+Calendar of availability
+for a specified week

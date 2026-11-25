@@ -1,0 +1,30 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 30, 'padding': 18, 'subGraphTitleMargin': {'top': 8, 'bottom': 14}}}}%%
+flowchart TD
+  subgraph Z1["Z1 : Filtre 1 — Exclusions amont"]
+    REQ["Proposition d'architecture ARB"]:::prob
+    F1{"① Tâche déterministe,<br/>Swagger 1:1 ou super-agent ?"}:::det
+  end
+  subgraph Z2["Z2 : Filtre 2 — 10 antipatrons EXIG-ORC-29"]
+    F2{"② Violation AP-01..AP-12<br/>(état mutable, Prompt-as-Policy,<br/>Tool Sprawl, 0 EvalOps) ?"}:::det
+  end
+  subgraph Z3["Z3 : Filtre 3 — 9 défauts ArchiMate"]
+    F3{"③ Agent = Business Actor<br/>(Tableau 44.2) ou homonymie ?"}:::det
+    REJ["④ Rejet ARB bloquant sans dérogation<br/>(OWASP ASI02/03/08/09)"]:::danger
+    PASS["Patron conforme validé<br/>(écrivain unique, Saga, 5–12 façades)"]:::ok
+  end
+  REQ -.-> F1
+  F1 -->|Oui| REJ
+  F1 -->|Non| F2
+  F2 -->|Oui| REJ
+  F2 -->|Non| F3
+  F3 -->|Oui| REJ
+  F3 -->|Non| PASS
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef danger fill:#FEF2F2,stroke:#B91C1C,stroke-width:2.2px,color:#7F1D1D
+  classDef ok fill:#ECFDF5,stroke:#047857,stroke-width:2.2px,color:#064E3B
+  classDef ext fill:#F3F4F6,stroke:#4B5563,stroke-width:1.5px,color:#111827
+  style Z1 fill:#F8FAFC,stroke:#D97706,stroke-width:1.2px
+  style Z2 fill:#FEF2F2,stroke:#B91C1C,stroke-width:1.2px
+  style Z3 fill:#ECFDF5,stroke:#047857,stroke-width:1.2px

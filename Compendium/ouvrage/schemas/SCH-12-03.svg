@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 710" width="1200" height="710" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="710" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-12-03</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Matrice visuelle de risques et garde-fous</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Résidence physique ≠ souveraineté : maîtrise des six substrats d'état sous</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">clés HYOK face au CLOUD Act</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#6D28D9"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#6D28D9">Z1 — Substrats 1 à 3 — Modèle, contexte volatil GPU et mémoire longue</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#0F2942">1. Poids et invites signés</text>
+    <line x1="53.0" y1="194" x2="393.7" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Signature d'intégrité vérifiée</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Repli Open-Weights qualifié E2 (CAP-031)</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="418.7" y="160" width="362.7" height="86" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#4C1D95">2. KV-cache GPU volatil</text>
+    <line x1="429.7" y1="194" x2="770.3" y2="194" stroke="#6D28D9" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="208" font-size="11.8" fill="#1E293B">Zéro rétention / zéro entraînement</text>
+    <text x="429.7" y="224" font-size="11.8" fill="#1E293B">Effacement IOMMU et enclave TEE (CAP-033)</text>
+  </g>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="795.3" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="806.3" y="182" font-size="13" font-weight="bold" fill="#0F2942">3. Mémoire longue isolée</text>
+    <line x1="806.3" y1="194" x2="1147.0" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="208" font-size="11.8" fill="#1E293B">Chiffrement sous clés souveraines</text>
+    <text x="806.3" y="224" font-size="11.8" fill="#1E293B">Purge sélective conforme Loi 25</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#047857">Z2 — Substrats 4 à 6 — État durable, voûte d'audit et secrets/KMS/HSM</text>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#0F2942">4. État durable hors processus</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Chiffré sans jetons persistés</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Conformité EXIG-IAM-06</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#064E3B">5. Voûte d'audit JCS &amp; OTel</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Double couloir OTel caviardé</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Chaînage probatoire JCS scellé</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#064E3B">6. Clés KMS / HSM / SPIFFE</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Garde exclusive HYOK (POR-002)</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">RTT ≤ 35 ms · déchiquetage instantané</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="422" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="444" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="462" font-size="11.5" fill="#334155">① Classifier et inventorier l'ensemble des flux sur les six substrats lors de l'ÉFVP</text>
+  <text x="42.0" y="477" font-size="11.5" fill="#334155">préalable (Loi 25 art. 17).</text>
+  <text x="609.0" y="462" font-size="11.5" fill="#334155">② Maintenir les clés maîtresses KMS/HSM en séquestre exclusif HYOK (RTT ≤ 35 ms)</text>
+  <text x="609.0" y="477" font-size="11.5" fill="#334155">pour déchiquetage instantané.</text>
+  <text x="42.0" y="500" font-size="11.5" fill="#334155">③ Imposer zéro rétention et effacement IOMMU sur le contexte volatil GPU (substrat</text>
+  <text x="42.0" y="515" font-size="11.5" fill="#334155">2) sous enclaves TEE.</text>
+  <text x="609.0" y="500" font-size="11.5" fill="#334155">④ Éprouver chaque trimestre la bascule Cognitive DR vers un second profil</text>
+  <text x="609.0" y="515" font-size="11.5" fill="#334155">Open-Weights qualifié (CAP-031, POR-006).</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="554" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="565" width="14" height="14" rx="3" fill="#6D28D9"/>
+  <text x="62.0" y="576" font-size="11" fill="#1E293B">Zone juridique Loi 25 art. 17 et exposition</text>
+  <text x="62.0" y="591" font-size="11" fill="#1E293B">extraterritoriale</text>
+  <rect x="418.7" y="565" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="438.7" y="576" font-size="11" fill="#1E293B">Six substrats d'état inventoriés et chiffrés sous</text>
+  <text x="438.7" y="591" font-size="11" fill="#1E293B">contrôle</text>
+  <rect x="795.3" y="565" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="815.3" y="576" font-size="11" fill="#1E293B">Garde exclusive HYOK / HSM, double couloir JCS et</text>
+  <text x="815.3" y="591" font-size="11" fill="#1E293B">Open-Weights</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="624" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="624" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="644" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="662" font-size="11.5" fill="#1E293B">La localisation géographique d'un centre de données ne suffit plus : la souveraineté effective exige de maîtriser les six substrats où</text>
+  <text x="44" y="678" font-size="11.5" fill="#1E293B">séjourne l'information et d'en conserver exclusivement les clés maîtresses (HYOK).</text>
+</g>
+</svg>

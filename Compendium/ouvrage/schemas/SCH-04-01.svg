@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-04-01</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Parcours séquentiel illustré</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">`AMBIGU_ESCALADE`</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1B4F72">Z1 — Sas d'entrée déterministe (jalons 1_size_utf8 à 3_ctx)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#0F2942">1. 1_size_utf8 (≤ 64 Kio)</text>
+    <line x1="53.0" y1="194" x2="393.7" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Re-sérialisation UTF-8 stricte</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">allow_nan=False · rejet sans coût LLM</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="418.7" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">2. 2_input_schema</text>
+    <line x1="429.7" y1="194" x2="770.3" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="208" font-size="11.8" fill="#1E293B">Validation _INPUT_SCHEMA stricte</text>
+    <text x="429.7" y="224" font-size="11.8" fill="#1E293B">Sortie VALIDATION_FAILED précoce</text>
+  </g>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="795.3" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="806.3" y="182" font-size="13" font-weight="bold" fill="#0F2942">3. 3_ctx (contexte trié)</text>
+    <line x1="806.3" y1="194" x2="1147.0" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="208" font-size="11.8" fill="#1E293B">Assemblage déterministe borné</text>
+    <text x="806.3" y="224" font-size="11.8" fill="#1E293B">Pièces autorisées uniquement</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#B45309"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#B45309">Z2 — Enclave d'inférence bornée (jalon 4_model ~20 %) et réparation limitée</text>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="42.0" y="310" width="551.0" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#451A03">4. 4_model (appel cognitif)</text>
+    <line x1="53.0" y1="344" x2="582.0" y2="344" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Décodage contraint Draft 2020-12</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">strict: true (EXIG-MCP-19)</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="607.0" y="310" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="618.0" y="332" font-size="13" font-weight="bold" fill="#0F2942">7. 7_repair (≤ 2 reprises)</text>
+    <line x1="618.0" y1="344" x2="1147.0" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="358" font-size="11.8" fill="#1E293B">max_repair_retries = 2 (3 appels max)</text>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Rejet ESCALADED au plafond</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#047857">Z3 — Sas de sortie, porte d'abstention et sceau d'audit (jalons 5_schema à 8_seal)</text>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="42.0" y="460" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">5. 5_schema &amp; 6. _check_grounding</text>
+    <line x1="53.0" y1="494" x2="393.7" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Arithmétique Decimal exacte</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Vérification allowed_grounding_ids</text>
+  </g>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="418.7" y="460" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="429.7" y="482" font-size="13" font-weight="bold" fill="#064E3B">Porte AMBIGU_ESCALADE</text>
+    <line x1="429.7" y1="494" x2="770.3" y2="494" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="508" font-size="11.8" fill="#1E293B">Abstention typée explicite</text>
+    <text x="429.7" y="524" font-size="11.8" fill="#1E293B">Ou DONNEES_INSUFFISANTES</text>
+  </g>
+  <g id="node-8" class="node" data-node="true">
+    <rect x="795.3" y="460" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="482" font-size="13" font-weight="bold" fill="#064E3B">8. 8_seal (HarnessOutcome)</text>
+    <line x1="806.3" y1="494" x2="1147.0" y2="494" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="508" font-size="11.8" fill="#1E293B">Empreinte output_sha256 JCS</text>
+    <text x="806.3" y="524" font-size="11.8" fill="#1E293B">Zéro écriture SQL directe</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Valider l'entrée UTF-8 (≤ 65 536 o, zéro NaN) et trier les pièces justificatives</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">avant tout appel au modèle (jalons 1–3).</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Confiner le modèle au seul jalon 4_model sous grammaire JSON Schema Draft 2020-12</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">stricte.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Contrôler la sortie par schéma puis par _check_grounding (Decimal), avec au plus 2</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">reprises avant rejet (jalons 5–7).</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Autoriser l'abstention via AMBIGU_ESCALADE et sceller HarnessOutcome par</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">output_sha256 JCS (jalon 8).</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Sept jalons déterministes possédés (80 % : harnais hors</text>
+  <text x="62.0" y="741" font-size="11" fill="#1E293B">modèle)</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Jalon cognitif unique 4_model remplaçable (~20 %, 3</text>
+  <text x="438.7" y="741" font-size="11" fill="#1E293B">appels max)</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Abstention typée AMBIGU_ESCALADE et sceau d'audit JCS</text>
+  <text x="815.3" y="741" font-size="11" fill="#1E293B">SHA-256</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Le modèle propose, le harnais dispose : grâce aux sept étapes déterministes et à la porte AMBIGU_ESCALADE, aucune sortie invalide ou</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">fabriquée ne parvient aux systèmes financiers.</text>
+</g>
+</svg>

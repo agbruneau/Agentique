@@ -1,0 +1,84 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Anatomie comparée des 3 blueprints (bp1 SoR, bp2 enclave RAG, bp3 maillage B2B)
+package "Z1 : Blueprint 1 — bp1_assistant_interne (T6 Fig. 53)" {
+  rectangle "Transactionnel orienté SoR\nTemporal, MCP sans SQL direct,\nOBO et journal WORM" as BP1 <<det>>
+}
+package "Z2 : Blueprint 2 — bp2_rag_entreprise_acl (T6 Fig. 55)" {
+  rectangle "Enclave souveraine Zero-Egress\nAI Gateway locale, Qdrant + OpenFGA ACL\n& microVM sans sortie (C15, C16)" as BP2 <<det>>
+}
+package "Z3 : Blueprint 3 — bp3_orchestration_multi_agents_b2b (T6 Fig. 54)" {
+  rectangle "Maillage fédéré inter-entreprises\nA2A 1.0, AGNTCY/SLIM (OASF),\nEvent Mesh & OBO 2 sauts (C13, C20)" as BP3 <<det>>
+}
+package "Socle unifié C1–C8 (565 contrôles) et validation porte G0" {
+  rectangle "5 briques SBB du Tableau 12\nVault, OPA, CIBA, Audit WORM, FinOps" as SBB <<ok>>
+  rectangle "Batterie G0 : 40 critères C01–C40\nNote concordance : T6 Fig. 54 ↔ bp3\net T6 Fig. 55 ↔ bp2" as G0 <<ok>>
+}
+BP1 --> SBB : ①–② assemble sur C1–C8
+BP2 --> SBB : ①–② assemble sur C1–C8
+BP3 --> SBB : ①–② assemble sur C1–C8
+SBB --> G0 : ③–④ valide C01–C40
+legend bottom
+  **Bleu architecture** : trois blueprints normalisés couvrant SoR (bp1), enclave RAG (bp2) et B2B (bp3)
+  **Vert porte G0** : socle commun C1–C8 (565 contrôles), 5 SBB et validation mécanique C01–C40
+  **Synthèse doctrinale** : trois gabarits validés en G0 suffisent pour couvrir l'ensemble des besoins sans pile ad hoc.
+end legend
+@enduml

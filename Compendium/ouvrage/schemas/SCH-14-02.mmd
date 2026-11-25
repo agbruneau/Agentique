@@ -1,0 +1,50 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 28, 'padding': 12}}}%%
+flowchart TB
+  subgraph Z1["Z1 · Pathologies réactives (MAST, ASI08, ASI10)"]
+    direction TB
+    N1["Événement entrant CloudEvents<br/>(chorégraphie multi-agents)"]:::prob
+    N2["Effet flipper, tempêtes d'événements<br/>et boucles d'écho sémantiques"]:::warn
+    N3["Message poison bloquant partition<br/>ou saturation des quotas TPM"]:::warn
+    N1 -.-> N2
+    N2 -.-> N3
+  end
+
+  subgraph Z2["Z2 · Régulateurs en ligne"]
+    direction TB
+    N4{"① xagenthopcount > 4<br/>ou ce_ttl expiré ?"}:::amber
+    N5{"② Schéma invalide ou<br/>erreur sémantique ?"}:::amber
+    N6["Déport DLQ non bloquante<br/>(max.poll.interval.ms préservé)"]:::amber
+    N7["③ Rétro-pression progressive<br/>selon latence LLM et quotas TPM"]:::amber
+    N4 -->|"Non"| N5
+    N5 -->|"Oui"| N6
+    N5 -->|"Valide"| N7
+  end
+
+  subgraph Z3["Z3 · Soupape de repli ultime"]
+    direction TB
+    N8["④ État FORCED_OPEN du disjoncteur<br/>à 5 états → flux déterministe L0"]:::green
+    N9["Rejet borné et conservation<br/>des traces d'incident"]:::green
+  end
+
+  N1 --> N4
+  N4 -->|"Oui : couper"| N9
+  N3 -.->|"Déclenche seuil"| N8
+  N7 -->|"Sursaturation SLO"| N8
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : régulation et repli déterministe L0"]:::green
+    L_PROB["Trait pointillé : dérive et tempête événementielle"]:::warn
+    L_DET ~~~ L_PROB
+  end
+
+  N8 ~~~ L_DET
+
+  classDef prob fill:#FFF5E0,stroke:#D97706,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  classDef warn fill:#FEF2F2,stroke:#DC2626,stroke-width:2px,stroke-dasharray:6 4,color:#7F1D1D
+  classDef amber fill:#FFFBEB,stroke:#B45309,stroke-width:2px,color:#451A03,font-weight:bold
+  classDef green fill:#F0FDF4,stroke:#15803D,stroke-width:2px,color:#064E3B,font-weight:bold
+  style Z1 fill:#FEF2F2,stroke:#FCA5A5,color:#DC2626
+  style Z2 fill:#FFFBEB,stroke:#FCD34D,color:#B45309
+  style Z3 fill:#F0FDF4,stroke:#86EFAC,color:#15803D
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

@@ -1,0 +1,30 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign center
+skinparam Padding 5
+
+title Délégation OBO à deux sauts (RFC 8693), réduction RAR, DPoP/mTLS et profil RFC 9700 (≤ 15 min)
+
+actor "Alice (mandante)" as N1 #EFF6FF
+participant "Agent orchestrateur\n(SPIFFE SVID)" as N2 #EFF6FF
+participant "STS / IdP\n(RFC 8693 + RFC 9700)" as N3 #EFF6FF
+participant "Passerelle PEP\n(point d'application)" as N4 #FEF2F2
+participant "Serveur MCP cible\n(audience RFC 8707)" as N5 #ECFDF5
+
+N1 -> N2 : Demande + jeton mandant
+N2 -[#B91C1C]-> N4 : ① Rejet strict si relais direct\n(token passthrough EXIG-IAM-12)
+N2 -> N3 : ② Échange OBO RFC 8693 (PKCE S256, iss RFC 9207)\nsubject_token + actor_token SVID + RAR RFC 9396
+N3 -[#1D4ED8]-> N2 : ③ Jeton réduit : mandant ∩ agent ∩ tâche\n(TTL ≤ 15 min, ≤ 2 sauts, ou Tx Token O(1))
+N2 -[#047857]-> N4 : ④ Appel + preuve DPoP (cnf/jti RFC 9449)\nou mTLS (RFC 8705)
+N4 -[#047857]-> N5 : Second saut max (audience unique RFC 8707)\njusqu'aux dépôts (prévient bris ACL)
+
+legend bottom
+  **Rouge** : Relais direct de jeton porteur vulnérable au vol et au mandataire confus ASI03
+  **Bleu** : Échange RFC 8693 + RAR RFC 9396 réduisant la portée à chaque saut (≤ 2 niveaux)
+  **Vert émeraude** : Preuve DPoP/mTLS, audience RFC 8707 et TTL ≤ 15 min conforme RFC 9700
+end legend
+@enduml

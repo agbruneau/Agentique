@@ -1,0 +1,84 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Boussole prospective : tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF, falaise METR et maturité 5×5
+package "Z1 : Cône du tri épistémique (2027–2032)" {
+  rectangle "FAIT ÉTABLI & PROGRAMMÉ\nDates adoptées opposables\n(BSIF E-23, EO 14412, expir. IETF 6 mois)" as PROG <<det>>
+  rectangle "PROJETÉ & SPÉCULATIF\nIntentions sans date ferme (ANP, AP2)\n& > 40 lacunes ouvertes (dont C-15)" as PROJ <<prob>>
+}
+package "Z2 : Falaise de fiabilité METR" {
+  rectangle "Horizon METR 50 % : 17,4 heures\n& 219 failles sur 10 bancs publics" as M50 <<danger>>
+  rectangle "Horizon METR 80 % : 3,1 heures\nFacteur de chute 5× à 6×\nVérification formelle prioritaire" as M80 <<det>>
+}
+package "Z3 : Grille cumulative de maturité (5×5)" {
+  rectangle "5 niveaux : 1 Initial → 3 Défini (~18 m)\n→ 4 Géré → 5 Optimisé\nDouble évaluation kappa (100 % N4, 20 % éch.)" as MAT <<ok>>
+  rectangle "Règle du maillon le plus faible\nPlafond global = dimension la plus basse" as MIN <<ok>>
+}
+PROG --> M80 : ① jalon opposable
+PROJ .[#B45309].> M50 : annonces non datées
+M50 --> M80 : ② recalibrer 5×–6×
+M80 --> MAT : ③ cadence ambitions
+MAT --> MIN : ④ score minimal retient
+legend bottom
+  **Bleu solide** : faits établis, jalons PROGRAMMÉS et recalibrage METR à 80 % (3,1 h)
+  **Ambre / Rouge** : intentions PROJETÉES, > 40 lacunes et falaise METR 50 % vs 80 %
+  **Vert graduel** : niveaux cumulatifs de maturité 1–5 bornés par la dimension la plus faible
+end legend
+@enduml

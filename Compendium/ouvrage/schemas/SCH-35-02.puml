@@ -1,0 +1,88 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.danger {
+  BackgroundColor #FEF2F2
+  LineColor #B91C1C
+  LineThickness 2.0
+  FontColor #7F1D1D
+}
+.ok {
+  BackgroundColor #ECFDF5
+  LineColor #047857
+  LineThickness 2.2
+  FontColor #064E3B
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+title Les cinq blocs critiques du Tableau 12 (5 SBB) dans la trousse exécutable
+package "Z1 : Plan A (Contrôle préventif) — 3 SBB actifs" {
+  rectangle "SBB-SECRETS-VAULT\nobo_dpop.py (0 token passthrough)" as SBB1 <<danger>>
+  rectangle "SBB-GUARDRAILS-ENGINE\nOpaPolicyEngine (100 % default allow := false)" as SBB2 <<danger>>
+  rectangle "SBB-SIGNED-HUMAN-APPROVAL\nciba_approval.py (jeton unique sur JCS)" as SBB3 <<danger>>
+}
+package "Z2 : Plan B (Preuve et FinOps) — 2 SBB probatoires" {
+  rectangle "SBB-IMMUTABLE-AUDIT-LEDGER\nAuditChainLedger (SCITT + SLH-DSA)" as SBB4 <<det>>
+  rectangle "SBB-FINOPS-BUDGET-QUOTA\ndecimal_money.py (rejet strict float)" as SBB5 <<det>>
+}
+package "Z3 : Arrimage PRR-75 et ADR 2027-B001" {
+  rectangle "Validation mécanique G0\nmatrice-exig-prr-c40.json &\nvalidate_adr_2027_b001 (tests négatifs)" as VAL <<ok>>
+}
+SBB1 --> SBB2 : ① supprime secrets statiques
+SBB2 --> SBB3 : ② bloque combinaisons risquées
+SBB3 --> SBB4 : ③ signature P3 scellée
+SBB4 --> SBB5 : ④ trace & montant exact Decimal
+SBB1 --> VAL
+SBB2 --> VAL
+SBB3 --> VAL
+SBB4 --> VAL
+SBB5 --> VAL
+legend bottom
+  **Rouge garde-fou** : trois SBB du Plan A interceptant les fautes avant exécution
+  **Bleu preuve** : deux SBB du Plan B garantissant l'audit immuable et l'exactitude Decimal
+  **Vert validation** : vérification positive et négative en barrière G0 avec 2027-B001
+end legend
+@enduml

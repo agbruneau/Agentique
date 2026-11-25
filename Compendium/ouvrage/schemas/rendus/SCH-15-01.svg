@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-15-01</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Comparatif Avant / Après</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">De la boucle volatile au moteur durable (Temporal/Restate) : revalidation au</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">réveil et cinq plafonds EXIG-ORC-26</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — AVANT — Boucle agentique en mémoire volatile (anti-patron AP-08)</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Perte d'état sur incident</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Dépassement de délai, SIGTERM, HTTP 429</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Immobilisation active durant attente humaine</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Rejeu LLM onéreux &amp; doubles effets</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Appels déjà acquittés réexécutés</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">Risque de double paiement métier</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#1D4ED8"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#1D4ED8">Z2 — APRÈS — Exécution durable chiffrée, Worker Versioning et garde TOCTOU</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#1E3A8A">Journal persistant sans rejeu LLM</text>
+    <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Transitions chiffrées (EXIG-ORC-11..14)</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Worker Versioning Pinned / Rainbow</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#1E3A8A">Veille à CPU nul (awakeable)</text>
+    <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Suspension sans coût pendant CIBA</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Reprise déterministe exacte</text>
+  </g>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#064E3B">Garde TOCTOU au réveil (AUT-17)</text>
+    <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Revalidation mandat, rôles &amp; solde</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">Blocage si droits expirés</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#047857"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#047857">Z3 — Enveloppe de résilience PRIN-12 (EXIG-ORC-26..30)</text>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#064E3B">Cinq plafonds EXIG-ORC-26</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Étapes · appels d'outils · jetons</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Coût complet · durée totale</text>
+  </g>
+  <g id="node-7" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#064E3B">Disjoncteur &amp; mode de repli testé</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Temporisation exponentielle bornée</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">9 capacités validées en preuve</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Consigner chaque transition et résultat LLM dans le journal persistant chiffré</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">hors processus.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Suspendre la tâche à coût CPU nul (awakeable) lorsqu'une approbation humaine</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">prolongée est requise.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Exécuter au réveil la garde TOCTOU (EXIG-AUT-17) pour vérifier mandat, rôles et</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">solde métier.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Décrémenter les cinq plafonds EXIG-ORC-26 à chaque appel et basculer en repli dès</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">l'ouverture d'un seuil.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#DC2626"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">État en mémoire volatile exposé aux pannes et doubles</text>
+  <text x="62.0" y="741" font-size="11" fill="#1E293B">effets</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#1D4ED8"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Exécution durable, Worker Versioning et journal sans</text>
+  <text x="438.7" y="741" font-size="11" fill="#1E293B">rejeu LLM</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#047857"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Garde TOCTOU au réveil et cinq plafonds EXIG-ORC-26</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Aucune tâche multi-étapes à effet métier ne doit dépendre de la mémoire volatile d'un processus; le moteur durable reprend sans réexécuter</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">l'inférence déjà payée et revalide systématiquement les droits au réveil.</text>
+</g>
+</svg>

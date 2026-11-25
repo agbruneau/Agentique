@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect id="bg-canvas" x="0" y="0" width="1200" height="860" fill="#FFFFFF"/>
+<rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
+<rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-09-03</text>
+<rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Matrice visuelle de risques et garde-fous</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Asymétrie 0/15, zones compensatoires Z1–Z5, strates EIF/LCIM et bouclier</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">anti-verrouillage SaaS (EXIG-ARC-21)</text>
+<g id="zone-Z1" class="zone">
+  <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+  <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — Matrice 0/15 (Tableau 42.1) — Angles morts réglementaires des protocoles</text>
+  <g id="node-1" class="node" data-node="true">
+    <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">MCP, A2A &amp; AP2 face au droit</text>
+    <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Croisés avec E-23, AMF, ACVM, Loi 25, C-15</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">0 lien documenté sur 15 cellules</text>
+  </g>
+  <g id="node-2" class="node" data-node="true">
+    <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Asymétrie Q-A par rapport à Q-E</text>
+    <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">La conformité technique protocolaire</text>
+    <text x="618.0" y="224" font-size="11.8" fill="#1E293B">ne fonde pas la conformité juridique</text>
+  </g>
+</g>
+<g id="zone-Z2" class="zone">
+  <rect x="28" y="272" width="1144" height="136" rx="10" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="28" y="272" width="8" height="136" rx="4" fill="#6D28D9"/>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#6D28D9">Z2 — Cinq zones de compensation Z1–Z5 et grille EIF / LCIM</text>
+  <g id="node-3" class="node" data-node="true">
+    <rect x="42.0" y="310" width="551.0" height="86" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+    <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#4C1D95">Z1 Trace · Z2 Arrêt · Z3 Verrou</text>
+    <line x1="53.0" y1="344" x2="582.0" y2="344" stroke="#6D28D9" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Z1 trace d'instance · Z2 arrêt suspensif</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Z3 blocage d'auto-modification</text>
+  </g>
+  <g id="node-4" class="node" data-node="true">
+    <rect x="607.0" y="310" width="551.0" height="86" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+    <text x="618.0" y="332" font-size="13" font-weight="bold" fill="#4C1D95">Z4 Abstraction &amp; Z5 Maillage</text>
+    <line x1="618.0" y1="344" x2="1147.0" y2="344" stroke="#6D28D9" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="358" font-size="11.8" fill="#1E293B">Z4 abstraction bancaire (CAP-026)</text>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Z5 filtrage et couches EIF / LCIM</text>
+  </g>
+</g>
+<g id="zone-Z3" class="zone">
+  <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <rect x="28" y="422" width="8" height="136" rx="4" fill="#1B4F72"/>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#1B4F72">Z3 — Bouclier anti-verrouillage EXIG-ARC-21 sur les suites SaaS</text>
+  <g id="node-5" class="node" data-node="true">
+    <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Confinement des suites SaaS</text>
+    <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Transit obligé par passerelle PEP</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Identité dédiée · exportation OTel</text>
+  </g>
+  <g id="node-6" class="node" data-node="true">
+    <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Réversibilité &amp; standards ouverts</text>
+    <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Plafond N2 sans JCS · arrêt trimestriel</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Préavis sortie 12 mois · AAIF/WIMSE/CAISI</text>
+  </g>
+</g>
+<g id="flows-box">
+  <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Le constat 0/15 démontre que la conformité protocolaire MCP/A2A ne satisfait</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">aucune exigence E-23, AMF ou Loi 25.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② L'institution active les cinq zones Z1–Z5 hors du fil protocolaire pour couvrir</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">les couches EIF sémantique et juridique.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Toute suite SaaS « ouverte sur le fil, fermée sur le contrôle » est cantonnée par</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">les contrôles EXIG-ARC-21.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ L'alignement sur AAIF, WIMSE et CAISI garantit la portabilité neutre face aux</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">dépréciations brutales.</text>
+</g>
+<g id="legend-box">
+  <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#B91C1C"/>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Quinze croisements sans lien documenté (0/15) et risque</text>
+  <text x="62.0" y="741" font-size="11" fill="#1E293B">SaaS</text>
+  <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#6D28D9"/>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Cinq zones compensatoires Z1–Z5 et couche juridique EIF</text>
+  <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Contrôles anti-verrouillage EXIG-ARC-21 et noyau</text>
+  <text x="815.3" y="741" font-size="11" fill="#1E293B">possédé (CAP-013)</text>
+</g>
+<g id="takeaway-box">
+  <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
+  <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">L'adoption d'un protocole ouvert ne confère ni conformité au droit canadien ni indépendance envers un fournisseur : les zones Z1–Z5</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">assurent l'opposabilité juridique et EXIG-ARC-21 préserve la réversibilité.</text>
+</g>
+</svg>

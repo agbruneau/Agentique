@@ -1,0 +1,52 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.purple { BackgroundColor #F5F3FF; LineColor #6D28D9; LineThickness 2.2; FontColor #4C1D95; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.gray { BackgroundColor #F1F5F9; LineColor #475569; LineThickness 1.8; FontColor #1E293B; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam padding 7
+
+top to bottom direction
+title Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies FIBO et registres
+
+package "Z1 — AVANT (Piège syntaxe ≠ sens) : SQL libre et prose ambiguë" {
+  rectangle "Validation JSON Schema réussie\nmais calculs Ventes ≠ Finances" as N1 <<red>>
+  rectangle "SQL libre & prose ambiguë\n(détection écart ≤ 27,9 % · force illocutoire perdue)" as N2 <<red>>
+  N1 .[#B91C1C].> N2 : ① Erreur sémantique silencieuse
+}
+
+package "Z2 — APRÈS (PRI-008 / DEC-003) : Couche sémantique neutre et ontologies" {
+  rectangle "② Couche sémantique neutre (DEC-003)\nMétriques nommées versionnées (60 j coexistence)" as N3 <<det>>
+  rectangle "③ Validation fermée SHACL\n(distinguée d'OWL 2 monde ouvert)" as N4 <<green>>
+  rectangle "Ontologies établies\nFIBO, ISO 20022, BIAN, CDM/DRR, HL7 FHIR" as N5 <<green>>
+  rectangle "④ Registres de compatibilité schémas\nProtobuf, Avro, Arrow" as N6 <<det>>
+  N2 --> N3 : Interdit SQL libre
+  N3 --> N4
+  N4 --> N5
+  N3 --> N6
+}
+
+legend bottom
+  **Rouge** : Erreur sémantique silencieuse (message bien formé mais calcul erroné)
+  **Bleu ardoise** : Couche sémantique analytique neutre (DEC-003) et registres
+  **Vert émeraude** : Validation fermée SHACL sur ontologies établies (FIBO, ISO 20022)
+end legend
+@enduml

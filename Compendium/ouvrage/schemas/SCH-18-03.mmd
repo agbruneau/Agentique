@@ -1,0 +1,36 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 22, 'rankSpacing': 28, 'padding': 12}}}%%
+flowchart LR
+  subgraph Z1["Z1 · AVANT — Chaîne JWT/DPoP en O(sauts) (> 8 192 o)"]
+    direction TB
+    N1["Signatures ML-DSA-65 (3 309 o)<br/>et ML-DSA-87 (4 627 o)"]:::warn
+    N2["Chaîne à 2 sauts : 20–35 Ko<br/>5 sauts : jusqu'à 165 Ko (pqc_http431.py)"]:::warn
+    N3["Rejet HTTP 431 par mandataires<br/>inverses (> 8 192 octets)"]:::warn
+    N1 -.->|"① Banc HTTP 431"| N2 -.-> N3
+  end
+
+  subgraph Z2["Z2 · APRÈS — Transaction Tokens O(1) et kid/JWKS"]
+    direction TB
+    N4["② Retrait clés embarquées :<br/>références kid sur cache JWKS"]:::teal
+    N5["③ Tampons passerelles ≥ 32 Ko<br/>dès le Palier P1 (EXIG-SEC-27)"]:::det
+    N6["④ Transaction Tokens CBOR-COSE O(1)<br/>(RFC 9964 / -11 : 4 757–6 514 o)"]:::teal
+    N7["Porte POR-007 validée sans<br/>saturation HTTP 431"]:::det
+    N4 --> N5 --> N6 --> N7
+  end
+
+  N3 -.->|"Correction"| N4
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein : Transaction Tokens O(1) et tampons ≥ 32 Ko"]:::teal
+    L_PROB["Trait pointillé : dépassement HTTP 431 en O(sauts)"]:::warn
+    L_DET ~~~ L_PROB
+  end
+
+  N7 ~~~ L_DET
+
+  classDef warn fill:#FEF2F2,stroke:#DC2626,stroke-width:2px,stroke-dasharray:6 4,color:#7F1D1D
+  classDef teal fill:#F0FDFA,stroke:#0F766E,stroke-width:2px,color:#134E4A,font-weight:bold
+  classDef det fill:#EFF6FF,stroke:#1D4ED8,stroke-width:2px,color:#1E3A8A,font-weight:bold
+  style Z1 fill:#FEF2F2,stroke:#FCA5A5,color:#DC2626
+  style Z2 fill:#F0FDFA,stroke:#5EEAD4,color:#0F766E
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,color:#1E293B

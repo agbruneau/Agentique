@@ -1,0 +1,293 @@
+{
+  "registry_version": "1.0.0",
+  "freeze_date": "2026-12-02",
+  "div_02": {
+    "id": "DIV-02",
+    "source": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md (§ Liminaire, Ch. 2, Annexe A)",
+    "objet": "Résorption de la lacune corpus_2026_absent entre CAD26 (CRE-IA-2026-01 v1.2, 6 couches et 3 plans) et PD28 (5 couches C1–C5 et 3 volets Plans A–C)",
+    "statut": "Fermée sur pièce",
+    "trois_rectifications": [
+      "Rectification 1 : les modèles et le confinement siègent en Couche 3 de CAD26 (Agents et exécution cognitive, et non en Couche 6 supposée), soit C5 modeles.",
+      "Rectification 2 : aucune Couche 3 « Connaissance » n'existe dans CAD26 ; C3 contexte-connaissance couvre les Couches 2, 3 et 5.",
+      "Rectification 3 : les systèmes d'enregistrement siègent en Couche 6 de CAD26 (et non en C5), encapsulés sous C4 acces."
+    ],
+    "quatre_coquilles_cad26_v1_1_rectifiees": [
+      "Fantôme EXIG-APP-18 (p. 32)",
+      "Renvoi EXIG-APP-12 au lieu d'EXIG-APP-17 sous EXIG-APP-16 (p. 233)",
+      "Fantôme EXIG-MEM-01 au lieu d'EXIG-ARC-22 (p. 258 et 342)",
+      "Renvois EXIG-ARC-02 au lieu d'EXIG-ARC-21 (p. 195 [x2], 196, 229, 252, 257)"
+    ],
+    "bilan_chiffre": {
+      "capacites_cibles": 52,
+      "capacites_invariantes_noyau_possede": 42,
+      "capacites_conditionnelles": 10,
+      "lacunes_2026_sans_exig_direct": [
+        "CAP-025",
+        "CAP-028",
+        "CAP-033",
+        "CAP-046",
+        "CAP-052"
+      ],
+      "exigences_cad26_v1_2": 305,
+      "extensions_pex": 24,
+      "pex_specialisations": 13,
+      "pex_comblements_lacunes_2026": 11
+    }
+  },
+  "decoupages_architecturaux_t5_a1": [
+    {
+      "Modèle pivot (5 couches + 3 volets)": "C1. interaction (canaux, approbation, transparence)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 1 : Canaux et déclencheurs (zéro logique agent)",
+      "Écart DIV-02 corrigé": "Intitulé exact CAD26 § 5.2",
+      "C26 ch. 43": "Nulle couche UI (Tab. 43.1 [S]) ; Z2 → PC3 [S] en C3",
+      "C27 § 0.1": "C5 Interaction humain-agent (§ 0.1)",
+      "Rattachement CAP / EXIG": "CAP-001..006 ; EXIG-ARC-03, 04, EXIG-AUT-09, 12..16, 19..23"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "C2. agents-orchestration (durable, sagas, A2A)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 2 : Orchestration et état + volet Agents (C3)",
+      "Écart DIV-02 corrigé": "Sépare Orchestration (C2) et Agents (C3)",
+      "C26 ch. 43": "C3 Orchestration (OO1–OO4, PC1–PC3, Z2 [S]), C1 A2A",
+      "C27 § 0.1": "C4 durable + C3 horizontale",
+      "Rattachement CAP / EXIG": "CAP-007..014 ; EXIG-ARC-02, 05..07, 13, EXIG-INT-04, 05, 11, 22, EXIG-ORC-01..30, EXIG-A2A-01..15, EXIG-EVT-01..10, EXIG-AUT-17"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "C3. contexte-connaissance (sémantique, mémoire CoALA)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Travail (C2), procédurale (C3), Couche 5 : Outils et données",
+      "Écart DIV-02 corrigé": "Nulle C3 Connaissance (placée en C5)",
+      "C26 ch. 43": "Nulle couche dédiée (Tab. 43.1 [S]) ; ch. 2, Z5, PC4 [S]",
+      "C27 § 0.1": "C2 Sémantique, contexte, mémoire",
+      "Rattachement CAP / EXIG": "CAP-015..021 ; EXIG-ARC-16, 22..25, EXIG-INT-01, 02, 12..16, 19"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "C4. acces (passerelle PEP, patrimoine, OT)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "C4 Médiation et connectivité, C5 Outils et données, C6 Systèmes d’enregistrement",
+      "Écart DIV-02 corrigé": "C4 Médiation, C5 Outils, C6 Enregistrement",
+      "C26 ch. 43": "C4 Maillage (ch. 37), C1 MCP, Z4 [S]",
+      "C27 § 0.1": "C1 IT/OT + C3 fédération",
+      "Rattachement CAP / EXIG": "CAP-022..028 ; EXIG-ARC-01, 11, 12, 14, 15, 17, 18, 21, EXIG-INT-03, 06, 07, EXIG-MCP-01..22"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "C5. modeles (inférence, substrats, bacs)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 3 : Agents et exécution cognitive (passerelle modèles, confinement)",
+      "Écart DIV-02 corrigé": "Modèles et bacs en C3, non C6",
+      "C26 ch. 43": "Nulle couche modèles/bacs (Tab. 43.1 [S]) ; PC5/Z5 [S] en C4",
+      "C27 § 0.1": "Socle silicium, confinement, inférence",
+      "Rattachement CAP / EXIG": "CAP-029..034 ; EXIG-ARC-08..10, EXIG-SEC-08..17"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "Plan A. controle-identite-securite",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Plan transversal A : Identité et sécurité (ch. 9)",
+      "Écart DIV-02 corrigé": "Aligné sur CAD26 § 5.3",
+      "C26 ch. 43": "C2 Identité/registre (fabrique) + C4 Maillage (PC5, Z5 [S])",
+      "C27 § 0.1": "Pilier gauche Zero Trust, NHI",
+      "Rattachement CAP / EXIG": "CAP-035..041 ; EXIG-IAM-01..21, EXIG-SEC-01..07, 18..28, EXIG-AUT-03, 08, 10, 11, EXIG-INT-21"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "Plan B. controle-observabilite-finops",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Plan transversal B : Observabilité, évaluation et FinOps (ch. 10)",
+      "Écart DIV-02 corrigé": "Aligné sur CAD26 § 5.3",
+      "C26 ch. 43": "C5 Exploitation — AgentOps (ch. 38–40 ; Z1, Z3/PC4 [S])",
+      "C27 § 0.1": "Pilier droit AgentOps, FinOps",
+      "Rattachement CAP / EXIG": "CAP-042..046 ; EXIG-OBS-01..13, EXIG-EVA-01..06, EXIG-FIN-01..10"
+    },
+    {
+      "Modèle pivot (5 couches + 3 volets)": "Plan C. controle-gouvernance-registre",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Plan transversal C : Gouvernance et registre (ch. 11–13)",
+      "Écart DIV-02 corrigé": "Aligné (volet dédié par rapport à C27)",
+      "C26 ch. 43": "C6 Gouvernance (ch. 25–30), C2 registre, ch. 41 [S]",
+      "C27 § 0.1": "C6 gouvernance/B2B, deux piliers",
+      "Rattachement CAP / EXIG": "CAP-047..052 ; EXIG-ARC-19..20, EXIG-AUT-01..07, 18, EXIG-INT-08..10, 17..23, GOV-01..20, CON-01..30, AMF-01..12, APP-01..17"
+    }
+  ],
+  "echelles_maturite_t5_a2": [
+    {
+      "Stade (PD28 / C27)": "Stade 0 : Sans agents [S]",
+      "Maturité 5×5 (CAD26 ch. 14)": "Niveau 1 Initial (pré-agentique)",
+      "LCIM / ISO 11354 FEI (C26)": "Technique/Syntaxique ; FEI Intégrée [S]",
+      "Règle d’usage": "Référence N0 avant toute agentification"
+    },
+    {
+      "Stade (PD28 / C27)": "Stade 1 : Pilotes isolés [S]",
+      "Maturité 5×5 (CAD26 ch. 14)": "Niveau 1 Initial → 2 Reproductible",
+      "LCIM / ISO 11354 FEI (C26)": "Syntaxique ; FEI Intégrée/Unifiée [S]",
+      "Règle d’usage": "Transitoire 90 j (plafond N0–N1, POR-001)"
+    },
+    {
+      "Stade (PD28 / C27)": "Stade 2 : Usage encadré [S]",
+      "Maturité 5×5 (CAD26 ch. 14)": "Niveau 2 Reproductible → 3 Défini",
+      "LCIM / ISO 11354 FEI (C26)": "Sémantique (Tab. 7.1) ; FEI Unifiée [S]",
+      "Règle d’usage": "Seuil minimal production réglementée (POR-001..004)"
+    },
+    {
+      "Stade (PD28 / C27)": "Stade 3 : Orchestration prod. [S]",
+      "Maturité 5×5 (CAD26 ch. 14)": "Niveau 4 Géré par mesures",
+      "LCIM / ISO 11354 FEI (C26)": "Pragmatique (Tab. 7.1) ; FEI Unifiée [S]",
+      "Règle d’usage": "Cible suffisante majorité D1–D8 (sortie P2)"
+    },
+    {
+      "Stade (PD28 / C27)": "Stade 4 : Inter-organisations [S]",
+      "Maturité 5×5 (CAD26 ch. 14)": "Niveau 5 Optimisé fédéré",
+      "LCIM / ISO 11354 FEI (C26)": "Dynamique (Tab. 7.1) ; FEI Fédérée [S]",
+      "Règle d’usage": "Sélectif P3 (POR-013) ; proscrit D2, D6 = Stade 3 interne (M-12 contre 3–4 en M-15/M-18)"
+    }
+  ],
+  "echelles_autonomie_classes_t5_a2": [
+    {
+      "Classe d’acte (PD28)": "Hors classe (flux fixe)",
+      "Niveau × Palier (CAD26 ch. 8)": "N0 Déterministe sans choix modèle",
+      "C27 (L0–L4)": "L0 déterministe",
+      "C26 (OO / Q)": "OO3 pur / code [S]",
+      "Contrôle obligatoire": "Tests logiciels et revue de code"
+    },
+    {
+      "Classe d’acte (PD28)": "Classe 1 : Lire et analyser",
+      "Niveau × Palier (CAD26 ch. 8)": "N1 Consultatif outils P0–P1",
+      "C27 (L0–L4)": "L1 lecture filtrée",
+      "C26 (OO / Q)": "OO1/OO2, Q-A/Q-D [S]",
+      "Contrôle obligatoire": "Filtrage ACL amont, télémétrie sans contenu"
+    },
+    {
+      "Classe d’acte (PD28)": "Classe 2 : Réversible borné",
+      "Niveau × Palier (CAD26 ch. 8)": "N3 sous ODD (faible/modérée) ou N2, P2",
+      "C27 (L0–L4)": "L3 borné / L2",
+      "C26 (OO / Q)": "OO3/OO4 sous cadre [S]",
+      "Contrôle obligatoire": "Idempotence, compensation Saga, échantillonnage"
+    },
+    {
+      "Classe d’acte (PD28)": "Classe 3 : Matériel coûteux",
+      "Niveau × Palier (CAD26 ch. 8)": "N2 par défaut (N3 sous seuil), P2",
+      "C27 (L0–L4)": "L2 (L3 restreint)",
+      "C26 (OO / Q)": "OO3/OO4, arrêt PC3 [S]",
+      "Contrôle obligatoire": "Approbation JCS SHA-256 par action élevée"
+    },
+    {
+      "Classe d’acte (PD28)": "Classe 4 : Irréversible critique",
+      "Niveau × Palier (CAD26 ch. 8)": "Outil P3 jamais seul (même N4)",
+      "C27 (L0–L4)": "L2 hors bande",
+      "C26 (OO / Q)": "OO3/OO4 (§ 31.1) [S]",
+      "Contrôle obligatoire": "CIBA + FIDO2 lié à h (≤ 15 min)"
+    },
+    {
+      "Classe d’acte (PD28)": "Classe 5 : Décision visant personne",
+      "Niveau × Palier (CAD26 ch. 8)": "Classe élevée plafonnée N2 (EXIG-CON-02)",
+      "C27 (L0–L4)": "L2/L3 art. 12.1",
+      "C26 (OO / Q)": "OO3/OO4 (§ 29.4.1), Q-E [S]",
+      "Contrôle obligatoire": "Avis, facteurs, réexamen humain, dossier 1 an"
+    },
+    {
+      "Classe d’acte (PD28)": "Classe 6 : Hors mandat",
+      "Niveau × Palier (CAD26 ch. 8)": "NX interdit sans dérogation (EXIG-AUT-03, GOV-17)",
+      "C27 (L0–L4)": "Exclu L0–L4",
+      "C26 (OO / Q)": "Violation PC4 / Z3 [S]",
+      "Contrôle obligatoire": "Blocage hors modèle et coupe-circuit immédiat"
+    }
+  ],
+  "concordances": [
+    {
+      "discordance_id": "DISC-01",
+      "topic": "Échelle d'autonomie L0–L4 : flux purement déterministe sans IA vs lecture/synthèse assistée par IA",
+      "volume_variants": [
+        {
+          "volume": "Vol. 3 (3 - Compendium 2027.md)",
+          "definition": "L0 désigne le traitement purement déterministe sans IA ni appel de modèle ; L1 à L4 couvrent la progression de l'assistance jusqu'à l'autonomie supervisée.",
+          "corpus_ref": "3 - Compendium 2027.md L275-L310; C01 (6 - Livre Blanc.md L5007)"
+        },
+        {
+          "volume": "Vol. 7 (7 - Livre.md)",
+          "definition": "L0 désigne une lecture et une synthèse assistées par IA sans droit d'écriture ni d'action autonome ; L1 à L4 graduent l'invocation d'outils et les mutations sous contrôle.",
+          "corpus_ref": "7 - Livre.md L184-L202"
+        }
+      ],
+      "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (0.2) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
+      "liminaire_section": "0.2",
+      "rationale": "Empêche le déploiement d'agents probabilistes sur des workflows où un script déterministe sans modèle suffit, tout en rendant les profils OPA (policies_opa) homogènes entre le cadre normatif et les chapitres pratiques."
+    },
+    {
+      "discordance_id": "DISC-02",
+      "topic": "Échelles de criticité et de risque : N0–N4, P0–P3, R1–R4, Classes 1–6 / Stades 0–4 / Paliers 1–3",
+      "volume_variants": [
+        {
+          "volume": "Vol. 2 (2 - Cadre de Référence.md)",
+          "definition": "Niveaux d'autonomie N0–N4, paliers d'outils P0–P3 (P0 lecture publique à P3 écriture critique/exfiltration) et trois classes de risque opérationnel.",
+          "corpus_ref": "2 - Cadre de Référence.md L3508"
+        },
+        {
+          "volume": "Vol. 4 & Vol. 5 (Plan Directeur & Mémoire)",
+          "definition": "Segmentation de portefeuille en Classes 1–6, Stades de maturité 0–4 et Paliers 1–3 sur l'horizon pluriannuel.",
+          "corpus_ref": "5 - Memoire.md L897-L907; 4 - Plan Directeur.md L3185-L3241"
+        },
+        {
+          "volume": "Vol. 6 (6 - Livre Blanc.md)",
+          "definition": "Paliers R1–R4 régissant l'inscription au registre d'agents et l'exigence de revue indépendante 2LoD dès R3.",
+          "corpus_ref": "6 - Livre Blanc.md L5011-L5012 (C05-C06)"
+        }
+      ],
+      "canonical_vol8_choice": "Conformément à AO-03, la prose du Volume 8 proscrit « Classe 1–6 », « Stade 0–4 » et « Palier 1–3 » ; le noyau technique utilise exclusivement les 3 niveaux de criticité (BLOQUANT, OBLIGATOIRE, RECOMMANDE) et les paliers d'outils P0–P3 avec table de correspondance dans 0.2.",
+      "liminaire_section": "0.2",
+      "rationale": "Supprime les collisions d'échelles dans le code Rego et JSON Schema tout en préservant une traçabilité exacte vers les critères C05–C06 et les plans pluriannuels antérieurs."
+    },
+    {
+      "discordance_id": "DISC-03",
+      "topic": "Découpage architectural : 4 plans SI (Vol. 6) vs 4 plans du noyau déterministe (Vol. 7) vs 6 couches + 3 plans A/B/C (Vol. 2) vs C1–C5 (Vol. 5)",
+      "volume_variants": [
+        {
+          "volume": "Vol. 2 (2 - Cadre de Référence.md)",
+          "definition": "Six couches techniques horizontales traversées par trois plans transversaux A (identité, autorisation, garde-fous, approbation), B (télémétrie, évaluation, audit, FinOps) et C (transport/outillage).",
+          "corpus_ref": "2 - Cadre de Référence.md L1029-L1092, L1360-L1361"
+        },
+        {
+          "volume": "Vol. 6 & Vol. 7 (Livre Blanc & Gouverner)",
+          "definition": "Quatre plans applicatifs du SI global (Vol. 6 C03) versus quatre plans du noyau de contrôle déterministe possédé hors modèle (Vol. 7).",
+          "corpus_ref": "6 - Livre Blanc.md L607-L705, L5009; 7 - Livre.md L634-L680"
+        },
+        {
+          "volume": "Vol. 5 (5 - Memoire.md)",
+          "definition": "Modèle à cinq couches C1–C5 et trois fils transversaux de gouvernance.",
+          "corpus_ref": "5 - Memoire.md L98"
+        }
+      ],
+      "canonical_vol8_choice": "Les quatre modules techniques de 8 - Manuel/trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
+      "liminaire_section": "0.2",
+      "rationale": "Aligne directement la structure en quatre chapitres du Volume 8 sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des volumes 2 à 7."
+    },
+    {
+      "discordance_id": "DISC-04",
+      "topic": "Notation d'architecture d'entreprise : ArchiMate 3.2 (Vol. 6) vs ArchiMate 4.0 C260 (Vol. 1 & Vol. 5)",
+      "volume_variants": [
+        {
+          "volume": "Vol. 6 (6 - Livre Blanc.md)",
+          "definition": "Vues modélisées en ArchiMate 3.2 typant l'agent comme «Cognitive Actor» relié à «Human-on-the-Loop» et «Guardrail Policy» (critère C02).",
+          "corpus_ref": "6 - Livre Blanc.md L544-L605, L5008"
+        },
+        {
+          "volume": "Vol. 1 & Vol. 5 (Compendium 2026 & Mémoire)",
+          "definition": "Référence à ArchiMate 4.0 (document The Open Group C260 publié le 27 avril 2026).",
+          "corpus_ref": "1 - Compendium 2026.md L10062-L10090; 5 - Memoire.md L372"
+        }
+      ],
+      "canonical_vol8_choice": "Neutralité de notation : aucun artefact ArchiMate propriétaire n'est requis au gate G0 ; les stéréotypes de séparation contrôleur/acteur/politique restent compatibles aussi bien avec les profils 3.2 qu'avec 4.0 (C260).",
+      "liminaire_section": "0.2",
+      "rationale": "Préserve l'ouverture licence MIT et l'interopérabilité des diagrammes PlantUML/Mermaid exécutables sans dépendance à un modeleur commercial."
+    },
+    {
+      "discordance_id": "DISC-05",
+      "topic": "Révision normative MCP : MCP 2025-11-25 (Vol. 7) vs MCP 2026-07-28 stateless et SEP-2596/SEP-3398 (Vol. 1, 2, 3, 5, 6, 8)",
+      "volume_variants": [
+        {
+          "volume": "Vol. 7 (7 - Livre.md)",
+          "definition": "Cite historiquement la révision MCP 2025-11-25 (transport HTTP+SSE avec état de session historique).",
+          "corpus_ref": "7 - Livre.md L144, L2258; SRC-038"
+        },
+        {
+          "volume": "Vol. 1, 2, 3, 5, 6 & Vol. 8",
+          "definition": "Épinglent la révision MCP 2026-07-28 (Streamable HTTP stateless par défaut, en-têtes Mcp-Method / Mcp-Name, ttlMs/cacheScope, JSON Schema 2020-12) et documentent le cycle SEP-2596 (>= 12 mois) et SEP-3398 (report de déc. 2026 au 30 mars 2027).",
+          "corpus_ref": "2 - Cadre de Référence.md L1867-L1888; SRC-072, SRC-074, SRC-078, SRC-080, SRC-081, SRC-082"
+        }
+      ],
+      "canonical_vol8_choice": "Épinglage normatif strict sur MCP 2026-07-28 (commit 5f5440bb) avec refus explicite du transport déprécié HTTP+SSE dans StreamableHttpAdapter (harness_proto/mcp_pinning.py) et isolation par McpTransportAdapter pour la fenêtre SEP-2596 jusqu'au 2027-07-28 et la cible SEP-3398 du 30 mars 2027.",
+      "liminaire_section": "0.2",
+      "rationale": "Élimine toute ambiguïté d'implémentation entre la prose historique de 2025 et les contrôles bloquants EXIG-MCP-03/11/15/16/18/19/20 vérifiés en G0."
+    }
+  ]
+}
