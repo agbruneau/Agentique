@@ -70,6 +70,15 @@ EXPECTED_DELIVERABLES: tuple[tuple[str, str], ...] = (
     ("Compendium.pdf", "PDF Typst imprimable (6,14 × 9,21 po)"),
 )
 
+EXPECTED_REVISION_REPORTS: tuple[tuple[str, str], ...] = (
+    ("audit-references-viabilite.md", "Audit viabilité & fiabilité des références (REV-02)"),
+    ("audit-prd-lot1.md", "Audit PRD — Lot 1 (Liminaire + Parties I–III)"),
+    ("audit-prd-lot2.md", "Audit PRD — Lot 2 (Parties IV–VI)"),
+    ("audit-prd-lot3.md", "Audit PRD — Lot 3 (Parties VII–IX)"),
+    ("audit-prd-lot4.md", "Audit PRD — Lot 4 (Parties X–XII + Annexes + Schémas)"),
+    ("rapport-audit-revision-prd.md", "Rapport consolidé d'audit & révision PRD (REV-06)"),
+)
+
 
 def parse_int_fr(text: str) -> int:
     """Convertit un entier formaté en français (espaces fines/insécables, backticks)."""
@@ -595,6 +604,268 @@ def _read_git_head(repo_root: Path) -> dict[str, str]:
         return {"branch": "inconnu", "commit": "n/a", "subject": ""}
 
 
+def _normalize_finding_severity(raw: Any) -> str:
+    val = str(raw or "").strip().upper()
+    if val in ("BLOQUANT", "CRITIQUE", "CRITICAL", "BLOCKER", "HIGH"):
+        return "BLOQUANT"
+    if val in ("MAJEUR", "MAJOR", "MEDIUM"):
+        return "MAJEUR"
+    return "MINEUR"
+
+
+def _normalize_finding_status(raw: Any) -> str:
+    val = str(raw or "").strip().lower()
+    val = val.replace("é", "e").replace("è", "e").replace("ê", "e")
+    if val in ("corrige", "fixed", "resolved", "resolu"):
+        return "corrige"
+    if val in ("verifie", "verified", "valide", "validee", "ferme", "closed"):
+        return "verifie"
+    return "ouvert"
+
+
+def _normalize_finding(raw: dict[str, Any], fallback_id: str) -> dict[str, Any]:
+    fid = str(raw.get("id") or fallback_id).strip()
+    severity = _normalize_finding_severity(raw.get("severity") or raw.get("severite"))
+    status = _normalize_finding_status(raw.get("status") or raw.get("statut"))
+    axis = str(raw.get("axis") or raw.get("axe") or "couverture_prd").strip()
+    unit = str(raw.get("unit") or raw.get("unite") or raw.get("target") or raw.get("cible") or "").strip()
+    title = str(raw.get("title") or raw.get("titre") or raw.get("summary") or fid).strip()
+    detail = str(raw.get("detail") or raw.get("description") or raw.get("evidence") or "").strip()
+    return {
+        **raw,
+        "id": fid,
+        "severity": severity,
+        "status": status,
+        "axis": axis,
+        "unit": unit,
+        "title": title,
+        "detail": detail,
+    }
+
+
+def _probe_revision(ouvrage_dir: Path) -> dict[str, Any]:
+    """Sonde ``Compendium/ouvrage/aq/suivi-revision-prd.json`` et les fichiers ``findings-*.json``."""
+    aq_dir = ouvrage_dir / "aq"
+    suivi_path = aq_dir / "suivi-revision-prd.json"
+
+    reports: list[dict[str, Any]] = []
+    seen_reports: set[str] = set()
+    for fn, label in EXPECTED_REVISION_REPORTS:
+        p = aq_dir / fn
+        exists = p.is_file()
+        reports.append({
+            "filename": fn,
+            "label": label,
+            "path": f"Compendium/ouvrage/aq/{fn}",
+            "exists": exists,
+            "byte_size": p.stat().st_size if exists else 0,
+            "mtime_iso": datetime.fromtimestamp(p.stat().st_mtime, tz=timezone.utc).isoformat() if exists else "",
+        })
+        seen_reports.add(fn)
+    if aq_dir.is_dir():
+        for extra in sorted(aq_dir.glob("audit-*.md")):
+            if extra.name not in seen_reports:
+                reports.append({
+                    "filename": extra.name,
+                    "label": f"Rapport complémentaire ({extra.stem})",
+                    "path": f"Compendium/ouvrage/aq/{extra.name}",
+                    "exists": True,
+                    "byte_size": extra.stat().st_size,
+                    "mtime_iso": datetime.fromtimestamp(extra.stat().st_mtime, tz=timezone.utc).isoformat(),
+                })
+                seen_reports.add(extra.name)
+
+    reports_done = sum(1 for r in reports if r["exists"])
+    default_summary = {
+        "milestones_done": 0,
+        "milestones_total": 0,
+        "revision_pct": 0.0,
+        "findings_total": 0,
+        "open_count": 0,
+        "by_severity": {"BLOQUANT": 0, "MAJEUR": 0, "MINEUR": 0},
+        "by_status": {"ouvert": 0, "corrige": 0, "verifie": 0},
+        "open_blocking": 0,
+        "open_major": 0,
+        "open_minor": 0,
+        "reports_done": reports_done,
+        "reports_total": len(reports),
+    }
+
+    if not suivi_path.is_file():
+        return {
+            "active": False,
+            "campaign_id": "",
+            "title": "",
+            "updated_at": "",
+            "milestones": [],
+            "reference_metrics": {},
+            "prd_coverage": {},
+            "findings": [],
+            "findings_files": [],
+            "reports": reports,
+            "summary": default_summary,
+        }
+
+    try:
+        base_data = json.loads(suivi_path.read_text(encoding="utf-8"))
+        if not isinstance(base_data, dict):
+            base_data = {}
+    except Exception:
+        return {
+            "active": False,
+            "campaign_id": "",
+            "title": "",
+            "updated_at": "",
+            "milestones": [],
+            "reference_metrics": {},
+            "prd_coverage": {},
+            "findings": [],
+            "findings_files": [],
+            "reports": reports,
+            "summary": default_summary,
+        }
+
+    milestones = [m for m in (base_data.get("milestones") or []) if isinstance(m, dict)]
+    ref_metrics: dict[str, Any] = dict(base_data.get("reference_metrics") or {})
+    prd_cov: dict[str, Any] = {
+        "lots_completed": 0,
+        "lots_total": 4,
+        "units_audited": 0,
+        "units_total": 42,
+        **(base_data.get("prd_coverage") or {}),
+    }
+
+    findings_by_id: dict[str, dict[str, Any]] = {}
+    findings_files: list[str] = []
+    lots_done_ids: set[str] = set()
+    units_audited_sum = 0
+    units_audited_set: set[str] = set()
+
+    if aq_dir.is_dir():
+        for fpath in sorted(aq_dir.glob("findings-*.json")):
+            try:
+                raw_obj = json.loads(fpath.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            findings_files.append(fpath.name)
+            items: list[Any] = []
+            if isinstance(raw_obj, list):
+                items = raw_obj
+            elif isinstance(raw_obj, dict):
+                items = list(raw_obj.get("findings") or [])
+                f_ref = raw_obj.get("reference_metrics")
+                if isinstance(f_ref, dict):
+                    for k, v in f_ref.items():
+                        if v is None:
+                            continue
+                        if k == "audit_completed" and ref_metrics.get("audit_completed") is True and v is False:
+                            continue
+                        ref_metrics[k] = v
+                ld = raw_obj.get("lot_done")
+                if ld is True:
+                    lots_done_ids.add(str(raw_obj.get("lot_id") or raw_obj.get("lot") or fpath.stem))
+                elif isinstance(ld, (int, str)) and ld:
+                    lots_done_ids.add(str(ld))
+                elif isinstance(ld, dict):
+                    lots_done_ids.add(str(ld.get("lot_id") or ld.get("id") or fpath.stem))
+                    if isinstance(ld.get("units_audited"), int):
+                        units_audited_sum += ld["units_audited"]
+                    elif isinstance(ld.get("units_audited"), list):
+                        units_audited_set.update(str(u) for u in ld["units_audited"])
+                ua = raw_obj.get("units_audited")
+                if isinstance(ua, int):
+                    units_audited_sum += ua
+                elif isinstance(ua, list):
+                    units_audited_set.update(str(u) for u in ua)
+                f_cov = raw_obj.get("prd_coverage")
+                if isinstance(f_cov, dict):
+                    if isinstance(f_cov.get("lots_completed"), int):
+                        prd_cov["lots_completed"] = max(int(prd_cov.get("lots_completed") or 0), f_cov["lots_completed"])
+                    if isinstance(f_cov.get("units_audited"), int):
+                        prd_cov["units_audited"] = max(int(prd_cov.get("units_audited") or 0), f_cov["units_audited"])
+
+            for idx, item in enumerate(items, start=1):
+                if not isinstance(item, dict):
+                    continue
+                norm = _normalize_finding(item, f"{fpath.stem}-{idx}")
+                fid = norm["id"]
+                if fid in findings_by_id:
+                    findings_by_id[fid] = {**findings_by_id[fid], **norm}
+                else:
+                    findings_by_id[fid] = norm
+
+    # Les constats inscrits dans suivi-revision-prd.json ont préséance (consolidations / mises à jour de statut)
+    for idx, item in enumerate(base_data.get("findings") or [], start=1):
+        if not isinstance(item, dict):
+            continue
+        norm = _normalize_finding(item, f"suivi-{idx}")
+        fid = norm["id"]
+        if fid in findings_by_id:
+            findings_by_id[fid] = {**findings_by_id[fid], **norm}
+        else:
+            findings_by_id[fid] = norm
+
+    prd_cov["lots_completed"] = max(int(prd_cov.get("lots_completed") or 0), len(lots_done_ids))
+    units_from_files = max(units_audited_sum, len(units_audited_set))
+    prd_cov["units_audited"] = max(int(prd_cov.get("units_audited") or 0), units_from_files)
+
+    findings = list(findings_by_id.values())
+
+    milestones_total = len(milestones)
+    milestones_done = sum(
+        1
+        for m in milestones
+        if str(m.get("status") or "").strip().lower().replace("é", "e") in ("termine", "terminee", "valide", "validee", "done")
+    )
+    revision_pct = round((milestones_done / milestones_total) * 100.0, 1) if milestones_total else 0.0
+
+    by_severity = {"BLOQUANT": 0, "MAJEUR": 0, "MINEUR": 0}
+    by_status = {"ouvert": 0, "corrige": 0, "verifie": 0}
+    open_blocking = 0
+    open_major = 0
+    open_minor = 0
+
+    for f in findings:
+        sev = f["severity"]
+        st = f["status"]
+        by_severity[sev] = by_severity.get(sev, 0) + 1
+        by_status[st] = by_status.get(st, 0) + 1
+        if st == "ouvert":
+            if sev == "BLOQUANT":
+                open_blocking += 1
+            elif sev == "MAJEUR":
+                open_major += 1
+            else:
+                open_minor += 1
+
+    return {
+        "active": True,
+        "campaign_id": str(base_data.get("campaign_id") or ""),
+        "title": str(base_data.get("title") or ""),
+        "updated_at": str(base_data.get("updated_at") or ""),
+        "milestones": milestones,
+        "reference_metrics": ref_metrics,
+        "prd_coverage": prd_cov,
+        "findings": findings,
+        "findings_files": findings_files,
+        "reports": reports,
+        "summary": {
+            "milestones_done": milestones_done,
+            "milestones_total": milestones_total,
+            "revision_pct": revision_pct,
+            "findings_total": len(findings),
+            "open_count": by_status["ouvert"],
+            "by_severity": by_severity,
+            "by_status": by_status,
+            "open_blocking": open_blocking,
+            "open_major": open_major,
+            "open_minor": open_minor,
+            "reports_done": reports_done,
+            "reports_total": len(reports),
+        },
+    }
+
+
 def probe_ouvrage(repo_root: Path, parsed: dict[str, Any]) -> dict[str, Any]:
     """Sonde ``Compendium/ouvrage/`` et les fondations du dépôt pour calculer l'avancement réel."""
     root = repo_root.resolve()
@@ -859,6 +1130,8 @@ def probe_ouvrage(repo_root: Path, parsed: dict[str, Any]) -> dict[str, Any]:
         {"label": "Gabarit PDF Typst (gabarit-pdf/)", "ok": (root / "gabarit-pdf" / "gabarit-collection.typ").is_file()},
     ]
 
+    revision = _probe_revision(ouvrage_dir)
+
     return {
         "ouvrage_exists": ouvrage_exists,
         "directories": directories,
@@ -876,6 +1149,7 @@ def probe_ouvrage(repo_root: Path, parsed: dict[str, Any]) -> dict[str, Any]:
         "gates": gates_out,
         "deliverables": deliverables_out,
         "domains": domains_summary,
+        "revision": revision,
         "kpis": {
             "plan_steps_done": steps_done,
             "plan_steps_total": steps_total,
@@ -931,6 +1205,7 @@ def build_dashboard_payload(repo_root: Path, plan_path: Path | None = None) -> d
         "waves": parsed["waves"],
         "risks": parsed["risks"],
         "deliverables": probed["deliverables"],
+        "revision": probed["revision"],
     }
 
 

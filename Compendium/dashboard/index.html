@@ -271,6 +271,78 @@
     }
     .progress-fill.ok { background: var(--ok); }
     .progress-fill.warn { background: var(--warn); }
+    .progress-fill.danger { background: var(--danger); }
+
+    .rev-banner {
+      background: linear-gradient(90deg, color-mix(in srgb, var(--accent-soft) 55%, var(--bg-surface)) 0%, var(--bg-surface) 60%);
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .rev-banner-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .rev-milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+    .rev-milestone-card {
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-surface-2);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .rev-milestone-card.en_cours {
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    }
+    .rev-milestone-card.termine {
+      border-color: color-mix(in srgb, var(--ok) 45%, var(--border));
+    }
+    .rev-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 8px;
+    }
+    .rev-metric-tile {
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .rev-metric-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .rev-metric-val {
+      font-size: 19px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .rev-metric-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
 
     .grid-2 {
       display: grid;
@@ -612,6 +684,7 @@
       <button class="tab-btn" data-tab="schemas" role="tab">Schémas SCH-* <span class="tab-badge" id="badge-schemas">0/115</span></button>
       <button class="tab-btn" data-tab="aq" role="tab">AQ G0–G5 &amp; CA <span class="tab-badge" id="badge-aq">0/6</span></button>
       <button class="tab-btn" data-tab="factory" role="tab">Usine &amp; Livrables <span class="tab-badge" id="badge-factory">0/3</span></button>
+      <button class="tab-btn" data-tab="revision" role="tab">Révision &amp; Références <span class="tab-badge" id="badge-revision">0/6</span></button>
     </nav>
   </header>
 
@@ -671,11 +744,29 @@
         validee: ["Validée", "badge-ok"],
         en_cours: ["En cours", "badge-warn"],
         a_venir: ["À venir", "badge-muted"],
+        termine: ["Terminé", "badge-ok"],
         terminee: ["Terminée", "badge-ok"],
         a_faire: ["À faire", "badge-muted"],
         rendu: ["Rendu prêt", "badge-ok"],
         source: ["Source prête", "badge-warn"],
         a_produire: ["À produire", "badge-muted"],
+        ouvert: ["Ouvert", "badge-danger"],
+        corrige: ["Corrigé", "badge-warn"],
+        verifie: ["Vérifié", "badge-ok"],
+      };
+
+      const SEVERITY_LABELS = {
+        BLOQUANT: ["BLOQUANT", "badge-danger"],
+        MAJEUR: ["MAJEUR", "badge-warn"],
+        MINEUR: ["MINEUR", "badge-info"],
+      };
+
+      const AXIS_LABELS = {
+        references: "Références",
+        couverture_prd: "Couverture PRD",
+        coherence: "Cohérence",
+        edition: "Édition",
+        livrables: "Livrables",
       };
 
       const REUSE_LABELS = {
@@ -686,6 +777,12 @@
 
       function statusBadge(key) {
         const [label, cls] = STATUS_LABELS[key] || [String(key || "—"), "badge-muted"];
+        return `<span class="badge ${cls}">${escapeHtml(label)}</span>`;
+      }
+
+      function severityBadge(sev) {
+        const norm = String(sev || "MINEUR").toUpperCase();
+        const [label, cls] = SEVERITY_LABELS[norm] || [norm, "badge-muted"];
         return `<span class="badge ${cls}">${escapeHtml(label)}</span>`;
       }
 
@@ -777,8 +874,57 @@
         });
       }
 
+      function filterFindings(findings, filters) {
+        const q = (filters.query || "").trim().toLowerCase();
+        return (findings || []).filter((f) => {
+          if (filters.severity && filters.severity !== "ALL" && String(f.severity || "").toUpperCase() !== filters.severity) return false;
+          if (filters.axis && filters.axis !== "ALL" && String(f.axis || "") !== filters.axis) return false;
+          if (filters.status && filters.status !== "ALL" && String(f.status || "") !== filters.status) return false;
+          if (q) {
+            const hay = [f.id, f.severity, f.axis, f.unit, f.title, f.detail, f.status].join(" ").toLowerCase();
+            if (!hay.includes(q)) return false;
+          }
+          return true;
+        });
+      }
+
+      function renderRevisionBannerHtml(data) {
+        const rev = data.revision;
+        if (!rev || !rev.active) return "";
+        const s = rev.summary || {};
+        const ref = rev.reference_metrics || {};
+        const cov = rev.prd_coverage || {};
+        const openBlk = Number(s.open_blocking) || 0;
+        const openMaj = Number(s.open_major) || 0;
+        const openMin = Number(s.open_minor) || 0;
+        return `
+          <section class="rev-banner" aria-label="Campagne de révision PRD">
+            <div style="flex:1;min-width:260px;">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:4px;">
+                <span class="badge badge-info">${escapeHtml(rev.campaign_id || "RÉVISION PRD")}</span>
+                <strong style="font-size:14px;">${escapeHtml(rev.title || "Campagne d'audit et de révision vs prd.md")}</strong>
+              </div>
+              <div class="progress-track" style="max-width:460px;margin:6px 0;">
+                <div class="progress-fill ${(s.revision_pct || 0) >= 100 ? "ok" : ""}" style="width:${Math.min(100, Number(s.revision_pct) || 0)}%"></div>
+              </div>
+              <div class="kpi-sub">
+                Jalons : <strong>${s.milestones_done || 0}/${s.milestones_total || 0}</strong> (${formatPctFr(s.revision_pct || 0)}) ·
+                Références SHA-256 : <strong>${formatIntFr(ref.sha256_verified || 0)}/${formatIntFr(ref.l_plus_total || 135)}</strong> ·
+                Couverture PRD : <strong>${cov.units_audited || 0}/${cov.units_total || 42}</strong> unités (${cov.lots_completed || 0}/${cov.lots_total || 4} lots)
+              </div>
+            </div>
+            <div class="rev-banner-stats">
+              <span class="badge ${openBlk > 0 ? "badge-danger" : "badge-ok"}">${openBlk} bloquant(s)</span>
+              <span class="badge ${openMaj > 0 ? "badge-warn" : "badge-muted"}">${openMaj} majeur(s)</span>
+              <span class="badge badge-info">${openMin} mineur(s)</span>
+              <button class="btn btn-primary" type="button" data-goto-tab="revision">Révision &amp; Références</button>
+            </div>
+          </section>`;
+      }
+
       function renderOverviewHtml(data) {
         const k = data.kpis;
+        const revBannerHtml = renderRevisionBannerHtml(data);
         const foundationsHtml = (data.foundations || []).map((f) => `
           <div class="foundation-item">
             <span>${escapeHtml(f.label)}</span>
@@ -793,6 +939,7 @@
           </div>`).join("");
 
         return `
+          ${revBannerHtml}
           <section class="kpi-grid">
             <div class="kpi-card">
               <div class="kpi-label">Étapes du plan</div>
@@ -1170,6 +1317,207 @@
           </section>`;
       }
 
+      function renderRevisionHtml(data, filters) {
+        const rev = data.revision;
+        if (!rev || !rev.active) {
+          return `
+            <section class="card">
+              <div class="empty-state">
+                Aucune campagne de révision PRD active détectée (<code>Compendium/ouvrage/aq/suivi-revision-prd.json</code> absent).
+              </div>
+            </section>`;
+        }
+
+        const s = rev.summary || {};
+        const ref = rev.reference_metrics || {};
+        const cov = rev.prd_coverage || {};
+        const bySev = s.by_severity || { BLOQUANT: 0, MAJEUR: 0, MINEUR: 0 };
+        const bySt = s.by_status || { ouvert: 0, corrige: 0, verifie: 0 };
+        const fState = filters || { severity: "ALL", axis: "ALL", status: "ALL", query: "" };
+        const list = filterFindings(rev.findings || [], fState);
+
+        const milestonesHtml = (rev.milestones || []).map((m) => `
+          <article class="rev-milestone-card ${escapeHtml(m.status || "a_venir")}">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+              <code>${escapeHtml(m.id)}</code>
+              ${statusBadge(m.status)}
+            </div>
+            <div style="font-weight:700;font-size:13px;">${escapeHtml(m.title)}</div>
+            <div style="font-size:12px;color:var(--text-muted);">${escapeHtml(m.detail || "")}</div>
+          </article>`).join("");
+
+        const unitsPct = cov.units_total ? Math.min(100, (Number(cov.units_audited || 0) / Number(cov.units_total)) * 100) : 0;
+        const lotsPct = cov.lots_total ? Math.min(100, (Number(cov.lots_completed || 0) / Number(cov.lots_total)) * 100) : 0;
+        const shaPct = ref.l_plus_total ? Math.min(100, (Number(ref.sha256_verified || 0) / Number(ref.l_plus_total)) * 100) : 0;
+
+        const reportsRows = (rev.reports || []).map((r) => `
+          <tr>
+            <td><code>${escapeHtml(r.filename)}</code></td>
+            <td>${escapeHtml(r.label)}</td>
+            <td>${r.exists ? "<span class='badge badge-ok'>Présent</span>" : "<span class='badge badge-muted'>En attente</span>"}</td>
+            <td class="num">${r.exists ? formatBytes(r.byte_size) : "—"}</td>
+          </tr>`).join("");
+
+        const knownAxes = ["references", "couverture_prd", "coherence", "edition", "livrables"];
+        const extraAxes = Array.from(new Set((rev.findings || []).map((f) => f.axis).filter((a) => a && !knownAxes.includes(a))));
+        const allAxes = [...knownAxes, ...extraAxes];
+        const axisOpts = [
+          `<option value="ALL" ${fState.axis === "ALL" ? "selected" : ""}>Tous les axes</option>`,
+          ...allAxes.map((ax) => `<option value="${escapeHtml(ax)}" ${fState.axis === ax ? "selected" : ""}>${escapeHtml(AXIS_LABELS[ax] || ax)}</option>`),
+        ].join("");
+
+        const findingRows = list.map((f) => `
+          <tr>
+            <td><code>${escapeHtml(f.id)}</code></td>
+            <td>${severityBadge(f.severity)}</td>
+            <td><span class="badge badge-muted">${escapeHtml(AXIS_LABELS[f.axis] || f.axis || "—")}</span></td>
+            <td>${f.unit ? `<code>${escapeHtml(f.unit)}</code>` : "—"}</td>
+            <td>
+              <div style="font-weight:600;">${escapeHtml(f.title)}</div>
+              ${f.detail ? `<div style="font-size:12px;color:var(--text-muted);margin-top:2px;">${escapeHtml(f.detail)}</div>` : ""}
+            </td>
+            <td>${statusBadge(f.status)}</td>
+          </tr>`).join("");
+
+        const brokenCount = Number(ref.urls_broken_or_err) || 0;
+        const suspectCount = Number(ref.suspect_txt_files) || 0;
+        const mismatchCount = Number(ref.citation_mismatches) || 0;
+
+        return `
+          <section class="card">
+            <div class="card-head">
+              <div>
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
+                  <span class="badge badge-info">${escapeHtml(rev.campaign_id)}</span>
+                  <h2 class="card-title">${escapeHtml(rev.title)}</h2>
+                </div>
+                <div class="card-meta" style="margin-top:4px;">
+                  Jalons complétés : <strong>${s.milestones_done || 0} / ${s.milestones_total || 0}</strong> (${formatPctFr(s.revision_pct || 0)})
+                  ${rev.updated_at ? ` · Dernière mise à jour : <code>${escapeHtml(rev.updated_at)}</code>` : ""}
+                </div>
+              </div>
+              <div style="min-width:220px;flex:0 1 320px;">
+                <div class="progress-track"><div class="progress-fill ${(s.revision_pct || 0) >= 100 ? "ok" : ""}" style="width:${Math.min(100, Number(s.revision_pct) || 0)}%"></div></div>
+              </div>
+            </div>
+            <div class="rev-milestones-grid">${milestonesHtml}</div>
+          </section>
+
+          <div class="grid-2">
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">Viabilité &amp; fiabilité des références</h2>
+                <span class="badge ${ref.audit_completed ? "badge-ok" : "badge-warn"}">${ref.audit_completed ? "Audit complété" : "Audit en cours"}</span>
+              </div>
+              <div class="rev-metrics-grid" style="margin-bottom:12px;">
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">Corpus primaire L+</div>
+                  <div class="rev-metric-val">${formatIntFr(ref.l_plus_total || 0)}</div>
+                  <div class="rev-metric-sub">SHA-256 : ${formatIntFr(ref.sha256_verified || 0)} (${formatPctFr(shaPct)})</div>
+                </div>
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">Registre statut F</div>
+                  <div class="rev-metric-val">${formatIntFr(ref.statut_f_total || 0)}</div>
+                  <div class="rev-metric-sub">Normes fermées / paywall</div>
+                </div>
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">URLs sondées AO-01</div>
+                  <div class="rev-metric-val">${formatIntFr(ref.urls_total || 0)}</div>
+                  <div class="rev-metric-sub"><span style="color:var(--ok);font-weight:700;">${formatIntFr(ref.urls_ok || 0)} OK</span> · ${formatIntFr(ref.urls_redirect || 0)} redir.</div>
+                </div>
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">403 / bloqué</div>
+                  <div class="rev-metric-val" style="color:${(ref.urls_blocked_or_403 || 0) > 0 ? "var(--warn)" : "var(--text-main)"};">${formatIntFr(ref.urls_blocked_or_403 || 0)}</div>
+                  <div class="rev-metric-sub">Accès restreint / anti-bot</div>
+                </div>
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">Erreurs / 404</div>
+                  <div class="rev-metric-val" style="color:${brokenCount > 0 ? "var(--danger)" : "var(--ok)"};">${formatIntFr(brokenCount)}</div>
+                  <div class="rev-metric-sub">Liens cassés ou injoignables</div>
+                </div>
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">Qualité .txt &amp; citations</div>
+                  <div class="rev-metric-val" style="color:${(suspectCount + mismatchCount) > 0 ? "var(--warn)" : "var(--ok)"};">${formatIntFr(suspectCount)} / ${formatIntFr(mismatchCount)}</div>
+                  <div class="rev-metric-sub">${formatIntFr(suspectCount)} .txt suspect(s) · ${formatIntFr(mismatchCount)} écart(s)</div>
+                </div>
+              </div>
+              <div class="kpi-sub">Contrôle intégral des 135 sources L+, 27 entrées statut F et 37 fichiers <code>ch00..ch36-sources.md</code>.</div>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h2 class="card-title">Couverture PRD (42 unités · 4 lots) &amp; Rapports AQ</h2>
+                <span class="card-meta">${s.reports_done || 0} / ${s.reports_total || 0} rapports générés</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">Unités auditées vs prd.md</div>
+                  <div class="rev-metric-val">${cov.units_audited || 0} <span class="rev-metric-sub">/ ${cov.units_total || 42}</span></div>
+                  <div class="progress-track" style="margin-top:4px;"><div class="progress-fill ${unitsPct >= 100 ? "ok" : ""}" style="width:${unitsPct.toFixed(1)}%"></div></div>
+                </div>
+                <div class="rev-metric-tile">
+                  <div class="rev-metric-label">Lots d'audit terminés</div>
+                  <div class="rev-metric-val">${cov.lots_completed || 0} <span class="rev-metric-sub">/ ${cov.lots_total || 4}</span></div>
+                  <div class="progress-track" style="margin-top:4px;"><div class="progress-fill ${lotsPct >= 100 ? "ok" : "warn"}" style="width:${lotsPct.toFixed(1)}%"></div></div>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Rapport <code>aq/</code></th><th>Portée</th><th>État</th><th class="num">Taille</th></tr></thead>
+                  <tbody>${reportsRows}</tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <section class="card">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title">Registre consolidé des constats (${s.findings_total || 0})</h2>
+                <div class="card-meta" style="margin-top:3px;">
+                  Affiché : ${list.length} constat(s) · Sources agrégées : <code>suivi-revision-prd.json</code>${(rev.findings_files || []).length ? " + " + rev.findings_files.map((f) => `<code>${escapeHtml(f)}</code>`).join(", ") : ""}
+                </div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="badge badge-danger">BLOQUANT : ${s.open_blocking || 0} ouv. / ${bySev.BLOQUANT || 0}</span>
+                <span class="badge badge-warn">MAJEUR : ${s.open_major || 0} ouv. / ${bySev.MAJEUR || 0}</span>
+                <span class="badge badge-info">MINEUR : ${s.open_minor || 0} ouv. / ${bySev.MINEUR || 0}</span>
+                <span class="badge badge-ok">Corrigés : ${bySt.corrige || 0} · Vérifiés : ${bySt.verifie || 0}</span>
+              </div>
+            </div>
+            <div class="filter-bar">
+              <select class="select" id="f-rev-severity" aria-label="Filtrer par sévérité">
+                <option value="ALL" ${fState.severity === "ALL" ? "selected" : ""}>Toutes sévérités</option>
+                <option value="BLOQUANT" ${fState.severity === "BLOQUANT" ? "selected" : ""}>BLOQUANT</option>
+                <option value="MAJEUR" ${fState.severity === "MAJEUR" ? "selected" : ""}>MAJEUR</option>
+                <option value="MINEUR" ${fState.severity === "MINEUR" ? "selected" : ""}>MINEUR</option>
+              </select>
+              <select class="select" id="f-rev-axis" aria-label="Filtrer par axe">${axisOpts}</select>
+              <select class="select" id="f-rev-status" aria-label="Filtrer par statut">
+                <option value="ALL" ${fState.status === "ALL" ? "selected" : ""}>Tous les statuts</option>
+                <option value="ouvert" ${fState.status === "ouvert" ? "selected" : ""}>Ouvert</option>
+                <option value="corrige" ${fState.status === "corrige" ? "selected" : ""}>Corrigé</option>
+                <option value="verifie" ${fState.status === "verifie" ? "selected" : ""}>Vérifié</option>
+              </select>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Sévérité</th>
+                    <th>Axe</th>
+                    <th>Unité / Cible</th>
+                    <th>Constat &amp; Détail</th>
+                    <th>Statut</th>
+                  </tr>
+                </thead>
+                <tbody>${findingRows || "<tr><td colspan='6' class='empty-state'>Aucun constat enregistré pour les filtres sélectionnés.</td></tr>"}</tbody>
+              </table>
+            </div>
+          </section>`;
+      }
+
       function renderInspectorHtml(unit, data) {
         if (!unit) return "";
         const schemas = (data.schemas || []).filter((s) => s.scope === unit.unit_id);
@@ -1223,14 +1571,17 @@
         filterUnits,
         filterSchemas,
         filterCriteria,
+        filterFindings,
         renderSvgRing,
         renderDomainBarsSvg,
+        renderRevisionBannerHtml,
         renderOverviewHtml,
         renderTasksHtml,
         renderUnitsHtml,
         renderSchemasHtml,
         renderAqHtml,
         renderFactoryHtml,
+        renderRevisionHtml,
         renderInspectorHtml,
       };
 
@@ -1250,6 +1601,7 @@
         unitFilters: { domain: "ALL", type: "ALL", status: "ALL" },
         schemaFilters: { domain: "ALL", reuse: "ALL", notation: "ALL", disk: "ALL" },
         aqFilters: { gate: "ALL" },
+        revisionFilters: { severity: "ALL", axis: "ALL", status: "ALL" },
         selectedUnitId: null,
       };
 
@@ -1275,6 +1627,16 @@
         setTxt("badge-schemas", `${k.schemas_rendered_done}/${k.schemas_total}`);
         setTxt("badge-aq", `${k.gates_validated}/${k.gates_total}`);
         setTxt("badge-factory", `${k.deliverables_done}/${k.deliverables_total}`);
+        const rev = data.revision;
+        if (rev && rev.active && rev.summary) {
+          const rs = rev.summary;
+          const badgeTxt = rs.open_count > 0
+            ? `${rs.milestones_done}/${rs.milestones_total} · ${rs.open_count}`
+            : `${rs.milestones_done}/${rs.milestones_total}`;
+          setTxt("badge-revision", badgeTxt);
+        } else {
+          setTxt("badge-revision", "—");
+        }
         const dt = new Date(data.generated_at);
         setTxt("hdr-meta", `v${data.meta.version} · ${formatIntFr(data.meta.word_count)} mots dans plan.md · MàJ ${dt.toLocaleTimeString("fr-CA")}`);
       }
@@ -1343,6 +1705,19 @@
         bindSelect("f-sch-notation", state.schemaFilters, "notation");
         bindSelect("f-sch-disk", state.schemaFilters, "disk");
         bindSelect("f-ca-gate", state.aqFilters, "gate");
+        bindSelect("f-rev-severity", state.revisionFilters, "severity");
+        bindSelect("f-rev-axis", state.revisionFilters, "axis");
+        bindSelect("f-rev-status", state.revisionFilters, "status");
+
+        document.querySelectorAll("[data-goto-tab]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const targetTab = btn.dataset.gotoTab;
+            if (!targetTab) return;
+            state.tab = targetTab;
+            document.querySelectorAll(".tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.tab === targetTab));
+            render();
+          });
+        });
 
         document.querySelectorAll("tr[data-unit]").forEach((tr) => {
           tr.addEventListener("click", () => openDrawer(tr.dataset.unit));
@@ -1365,6 +1740,8 @@
           container.innerHTML = renderAqHtml(state.data, { ...state.aqFilters, query: state.query });
         } else if (state.tab === "factory") {
           container.innerHTML = renderFactoryHtml(state.data);
+        } else if (state.tab === "revision") {
+          container.innerHTML = renderRevisionHtml(state.data, { ...state.revisionFilters, query: state.query });
         }
         bindTabEvents();
         if (state.selectedUnitId) {

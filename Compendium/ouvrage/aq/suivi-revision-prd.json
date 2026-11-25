@@ -1,0 +1,63 @@
+{
+  "campaign_id": "REV-PRD-2026-11",
+  "title": "Audit, validation des références et révision finale vs Compendium/prd.md",
+  "updated_at": "2026-11-25T16:26:00Z",
+  "milestones": [
+    {
+      "id": "REV-01",
+      "title": "Diagnostic socle et déploiement du dashboard de révision",
+      "status": "termine",
+      "detail": "Dashboard mis à jour et republié pour le suivi en direct."
+    },
+    {
+      "id": "REV-02",
+      "title": "Audit viabilité et fiabilité des références (135 L+, 27 statut F, URLs, SHA-256)",
+      "status": "en_cours",
+      "detail": "Sondage HTTP AO-01, contrôle SHA-256, qualité L+ et cohérence 37 sources."
+    },
+    {
+      "id": "REV-03",
+      "title": "Audit contenu et couverture des 42 unités contre Compendium/prd.md",
+      "status": "en_cours",
+      "detail": "4 lots parallèles : Liminaire + Parties I–XII + Annexes A–E + 115 schémas."
+    },
+    {
+      "id": "REV-04",
+      "title": "Révision ciblée des écarts et mise à jour des ancrages G2",
+      "status": "a_venir",
+      "detail": "En attente de consolidation des constats REV-02 et REV-03."
+    },
+    {
+      "id": "REV-05",
+      "title": "Régénération SSOT Annexes, recompilation MD/HTML/PDF et contrôle visuel",
+      "status": "a_venir",
+      "detail": "En attente de clôture REV-04."
+    },
+    {
+      "id": "REV-06",
+      "title": "Validation finale G0–G5, pytest, rapport consolidé et poussée main",
+      "status": "a_venir",
+      "detail": "En attente de clôture REV-05."
+    }
+  ],
+  "reference_metrics": {
+    "l_plus_total": 135,
+    "statut_f_total": 27,
+    "urls_total": 151,
+    "sha256_verified": 0,
+    "urls_ok": 0,
+    "urls_redirect": 0,
+    "urls_blocked_or_403": 0,
+    "urls_broken_or_err": 0,
+    "suspect_txt_files": 0,
+    "citation_mismatches": 0,
+    "audit_completed": false
+  },
+  "prd_coverage": {
+    "lots_completed": 0,
+    "lots_total": 4,
+    "units_audited": 0,
+    "units_total": 42
+  },
+  "findings": []
+}

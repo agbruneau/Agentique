@@ -249,6 +249,10 @@ def test_index_html_offline_and_nodejs_render_smoke() -> None:
     if (!fa.includes("Compendium.pdf") || !fa.includes("AO-08")) {
       throw new Error("Vue Usine incomplète");
     }
+    const rv = eng.renderRevisionHtml(payload, { severity: "ALL", axis: "ALL", status: "ALL", query: "" });
+    if (!rv.includes("REV-01") || !rv.includes("REV-06") || !rv.includes("Viabilité")) {
+      throw new Error("Vue Révision & Références incomplète");
+    }
     const insp = eng.renderInspectorHtml(payload.units[1], payload);
     if (!insp.includes("FAM_D01_01_01") || !insp.includes("SCH-01-01")) {
       throw new Error("Inspecteur CH-01 incomplet");
@@ -264,3 +268,205 @@ def test_index_html_offline_and_nodejs_render_smoke() -> None:
         check=False,
     )
     assert proc.returncode == 0, f"Échec Node.js dashboard :\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
+
+
+def test_probe_revision_aggregation_and_http_exposure(tmp_path: Path) -> None:
+    comp_dir = tmp_path / "Compendium"
+    aq_dir = comp_dir / "ouvrage" / "aq"
+    aq_dir.mkdir(parents=True)
+    plan_copy = comp_dir / "plan.md"
+    plan_copy.write_bytes(PLAN_PATH.read_bytes())
+
+    # 1. Sans suivi-revision-prd.json : mode inactif par défaut sans erreur
+    empty_payload = pp.build_dashboard_payload(tmp_path, plan_copy)
+    assert empty_payload["revision"]["active"] is False
+    assert empty_payload["revision"]["findings"] == []
+    assert empty_payload["revision"]["summary"]["milestones_total"] == 0
+
+    # 2. Avec suivi-revision-prd.json + findings-*.json (liste et objet) + rapports aq/
+    suivi = {
+        "campaign_id": "REV-PRD-TEST",
+        "title": "Campagne test révision PRD",
+        "updated_at": "2026-11-25T16:30:00Z",
+        "milestones": [
+            {"id": "REV-01", "title": "Jalon 1", "status": "termine", "detail": "OK"},
+            {"id": "REV-02", "title": "Jalon 2", "status": "termine", "detail": "OK"},
+            {"id": "REV-03", "title": "Jalon 3", "status": "en_cours", "detail": "En cours"},
+            {"id": "REV-04", "title": "Jalon 4", "status": "a_venir", "detail": "Attente"},
+        ],
+        "reference_metrics": {
+            "l_plus_total": 135,
+            "statut_f_total": 27,
+            "urls_total": 151,
+            "sha256_verified": 0,
+            "urls_ok": 0,
+            "urls_redirect": 0,
+            "urls_blocked_or_403": 0,
+            "urls_broken_or_err": 0,
+            "suspect_txt_files": 0,
+            "citation_mismatches": 0,
+            "audit_completed": False,
+        },
+        "prd_coverage": {
+            "lots_completed": 0,
+            "lots_total": 4,
+            "units_audited": 0,
+            "units_total": 42,
+        },
+        "findings": [
+            {
+                "id": "F-REF-01",
+                "severity": "BLOQUANT",
+                "axis": "references",
+                "unit": "CH-01",
+                "title": "Lien cassé corrigé",
+                "detail": "Statut mis à jour dans suivi-revision-prd.json",
+                "status": "corrige",
+            }
+        ],
+    }
+    (aq_dir / "suivi-revision-prd.json").write_bytes(
+        (json.dumps(suivi, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    )
+
+    # Format objet avec reference_metrics, lot_done, units_audited et doublon F-REF-01
+    (aq_dir / "findings-references.json").write_bytes(
+        (json.dumps({
+            "reference_metrics": {
+                "sha256_verified": 135,
+                "urls_ok": 130,
+                "urls_redirect": 10,
+                "urls_blocked_or_403": 9,
+                "urls_broken_or_err": 2,
+                "suspect_txt_files": 1,
+                "citation_mismatches": 0,
+                "audit_completed": True,
+            },
+            "findings": [
+                {
+                    "id": "F-REF-01",
+                    "severity": "BLOQUANT",
+                    "axis": "references",
+                    "unit": "CH-01",
+                    "title": "Lien cassé initial",
+                    "detail": "Doit être dédupliqué au profit de suivi-revision-prd.json",
+                    "status": "ouvert",
+                },
+                {
+                    "id": "F-REF-02",
+                    "severity": "BLOQUANT",
+                    "axis": "references",
+                    "unit": "CH-05",
+                    "title": "URL 404 persistante",
+                    "detail": "Remplacement requis",
+                    "status": "ouvert",
+                },
+            ],
+        }, ensure_ascii=False) + "\n").encode("utf-8")
+    )
+
+    # Format objet lot 1 avec lot_done + units_audited
+    (aq_dir / "findings-lot1.json").write_bytes(
+        (json.dumps({
+            "lot_done": True,
+            "units_audited": 11,
+            "findings": [
+                {
+                    "id": "F-PRD-01",
+                    "severity": "MAJEUR",
+                    "axis": "couverture_prd",
+                    "unit": "CH-03",
+                    "title": "Exigence CAP-012 sous-traitée",
+                    "detail": "Ajouter encadré de synthèse",
+                    "status": "ouvert",
+                }
+            ],
+        }, ensure_ascii=False) + "\n").encode("utf-8")
+    )
+
+    # Format liste directe
+    (aq_dir / "findings-lot2.json").write_bytes(
+        (json.dumps([
+            {
+                "id": "F-ED-01",
+                "severity": "MINEUR",
+                "axis": "edition",
+                "unit": "CH-12",
+                "title": "Typographie guillemets",
+                "detail": "Harmoniser en guillemets français",
+                "status": "verifie",
+            },
+            {
+                "id": "F-COH-01",
+                "severity": "MINEUR",
+                "axis": "coherence",
+                "unit": "CH-14",
+                "title": "Renvoi interne à préciser",
+                "detail": "Pointer vers Annexe B",
+                "status": "ouvert",
+            },
+        ], ensure_ascii=False) + "\n").encode("utf-8")
+    )
+
+    (aq_dir / "audit-references-viabilite.md").write_text("# Audit références\n", encoding="utf-8")
+    (aq_dir / "audit-prd-lot1.md").write_text("# Audit Lot 1\n", encoding="utf-8")
+
+    payload = pp.build_dashboard_payload(tmp_path, plan_copy)
+    rev = payload["revision"]
+    assert rev["active"] is True
+    assert rev["campaign_id"] == "REV-PRD-TEST"
+    assert rev["reference_metrics"]["sha256_verified"] == 135
+    assert rev["reference_metrics"]["urls_ok"] == 130
+    assert rev["reference_metrics"]["audit_completed"] is True
+    assert rev["prd_coverage"]["lots_completed"] == 1
+    assert rev["prd_coverage"]["units_audited"] == 11
+
+    # Déduplication par id : 5 constats uniques (F-REF-01 dédupliqué avec statut 'corrige' issu de suivi)
+    assert len(rev["findings"]) == 5
+    f_ref01 = next(f for f in rev["findings"] if f["id"] == "F-REF-01")
+    assert f_ref01["status"] == "corrige"
+
+    s = rev["summary"]
+    assert s["milestones_done"] == 2
+    assert s["milestones_total"] == 4
+    assert s["revision_pct"] == 50.0
+    assert s["findings_total"] == 5
+    assert s["by_severity"] == {"BLOQUANT": 2, "MAJEUR": 1, "MINEUR": 2}
+    assert s["by_status"] == {"ouvert": 3, "corrige": 1, "verifie": 1}
+    assert s["open_blocking"] == 1
+    assert s["open_major"] == 1
+    assert s["open_minor"] == 1
+    assert s["open_count"] == 3
+    assert s["reports_done"] == 2
+
+    # Vérifier l'exposition HTTP (GET / et GET /api/dashboard)
+    srv = srv_mod.create_server(repo_root=tmp_path, host="127.0.0.1", port=0, plan_path=plan_copy)
+    port = srv.server_address[1]
+    thread = threading.Thread(target=srv.serve_forever, daemon=True)
+    thread.start()
+    base = f"http://127.0.0.1:{port}"
+    try:
+        with urlopen(f"{base}/") as resp:
+            html = resp.read().decode("utf-8")
+            assert 'data-tab="revision"' in html
+            assert "Révision &amp; Références" in html
+        with urlopen(f"{base}/api/dashboard") as resp:
+            api_data = json.loads(resp.read().decode("utf-8"))
+            assert api_data["revision"]["active"] is True
+            assert api_data["revision"]["summary"]["findings_total"] == 5
+    finally:
+        srv.shutdown()
+        srv.server_close()
+        thread.join(timeout=3)
+
+
+def test_real_suivi_revision_prd_json_valid() -> None:
+    suivi_path = REPO_ROOT / "Compendium" / "ouvrage" / "aq" / "suivi-revision-prd.json"
+    raw = suivi_path.read_bytes()
+    assert b"\r\n" not in raw, "CRLF détecté dans suivi-revision-prd.json"
+    payload = pp.build_dashboard_payload(REPO_ROOT, PLAN_PATH)
+    rev = payload["revision"]
+    assert rev["active"] is True
+    assert rev["campaign_id"] == "REV-PRD-2026-11"
+    assert rev["summary"]["milestones_total"] == 6
+    assert rev["summary"]["milestones_done"] >= 1
