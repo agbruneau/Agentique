@@ -332,9 +332,9 @@ def test_plan_structure_and_volume() -> None:
         _, _, _, task_block = matched[0]
         assert "**Files:**" in task_block, f"**Files:** manquant dans Task {task_num}"
         assert "**Interfaces:**" in task_block, f"**Interfaces:** manquant dans Task {task_num}"
-        checkboxes = re.findall(r"^\s*-\s+\[\s\]\s+", task_block, flags=re.MULTILINE)
+        checkboxes = re.findall(r"^\s*-\s+\[[ xX]\]\s+", task_block, flags=re.MULTILINE)
         assert len(checkboxes) >= 3, (
-            f"Moins de 3 cases '- [ ]' dans Task {task_num} ({len(checkboxes)})"
+            f"Moins de 3 cases '- [ ]'/'- [x]' dans Task {task_num} ({len(checkboxes)})"
         )
 
     parties_h3 = [t for t in h3_titles if re.match(r"^Partie [IVX]+\b", t)]
