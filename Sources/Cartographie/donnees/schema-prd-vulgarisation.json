@@ -1,0 +1,673 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentique.local/schemas/schema-prd-vulgarisation.json",
+  "schema_version": "1.0.0",
+  "lang": "fr-CA",
+  "title": "Schéma formel des shards de schémas de vulgarisation du PRD maître et de l'Annexe E",
+  "description": "Contrat JSON Schema Draft 2020-12 régissant Sources/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json et les six shards sectoriels schemas-d01-d02.json à schemas-d11-d12.json, raccordés aux 319 figures vérifiées de Sources/Cartographie/donnees/inventaire-319-diagrammes.json.",
+  "vulgarization_rules": {
+    "source_inventory": "Sources/Cartographie/donnees/inventaire-319-diagrammes.json",
+    "global_schemas_count": 4,
+    "chapters_covered_total": 36,
+    "per_chapter_schemas_range": {
+      "min": 1,
+      "max": 4
+    },
+    "families_covered_rule": "Pour chapter_number == 0 (SCH-00-01..04), families_covered=[] est explicitement permis afin de refléter la portée transversale racine (ROOT) sur D01–D12. Pour chapter_number 1..36, families_covered DOIT être non vide (liste d'identifiants FAM_Dxx_yy_zz) et l'union des families_covered d'un chapitre DOIT couvrir 100 % des familles de ce chapitre dans corpus-mindmap-data.json.",
+    "linked_tome_figures_rule": "Un tableau vide [] est autorisé uniquement lorsque reuse_status == 'creation_originale' (création originale pure sans équivalent direct dans les Tomes 1–8). Dans tous les cas 'reemploi_direct' ou 'adaptation_vulgarisee', linked_tome_figures DOIT contenir >= 1 figure existante issue de inventaire-319-diagrammes.json.",
+    "line_endings": "LF strict (\\n)",
+    "typography": "Français canadien (fr-CA), zéro flèche ASCII (`->` ou `<->`) hors backticks (utiliser → et ↔), zéro dollar échappé par barre oblique inverse en texte JSON."
+  },
+  "enums": {
+    "target_audiences": [
+      "Direction / Métier",
+      "Juridique / Conformité",
+      "AE / AS",
+      "Ingénierie / RSSI / SRE"
+    ],
+    "visual_archetype": [
+      "Comparatif Avant / Après",
+      "Métaphore architecturale en couches",
+      "Parcours séquentiel illustré",
+      "Arbre de décision opérationnel",
+      "Échelle graduée de maturité / autonomie",
+      "Matrice visuelle de risques et garde-fous",
+      "Boucle de rétroaction et contrôle",
+      "Frise chronologique et jalons"
+    ],
+    "recommended_notation": [
+      "Mermaid",
+      "PlantUML",
+      "Infographie SVG bilingue métier-tech"
+    ],
+    "reuse_status": [
+      "reemploi_direct",
+      "adaptation_vulgarisee",
+      "creation_originale"
+    ],
+    "domain_ids_with_global": [
+      "GLOBAL",
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07",
+      "D08",
+      "D09",
+      "D10",
+      "D11",
+      "D12"
+    ],
+    "tome_ids": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8"
+    ]
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/global_schemas_shard"
+    },
+    {
+      "$ref": "#/$defs/domain_schemas_shard"
+    }
+  ],
+  "$defs": {
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "domain_id": {
+      "type": "string",
+      "enum": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12"
+      ]
+    },
+    "global_schemas_shard": {
+      "type": "object",
+      "description": "Contrat de Sources/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json.",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "shard_id",
+        "lang",
+        "source_inventory",
+        "schemas",
+        "annexe_e"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "shard_id": {
+          "type": "string",
+          "const": "schemas-global-et-annexe-e"
+        },
+        "lang": {
+          "type": "string",
+          "const": "fr-CA"
+        },
+        "source_inventory": {
+          "type": "string",
+          "const": "Sources/Cartographie/donnees/inventaire-319-diagrammes.json"
+        },
+        "schemas": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/schema_item"
+              },
+              {
+                "properties": {
+                  "schema_id": {
+                    "pattern": "^SCH-00-0[1-4]$"
+                  },
+                  "chapter_number": {
+                    "const": 0
+                  },
+                  "domain_id": {
+                    "const": "GLOBAL"
+                  },
+                  "subdomain_node_id": {
+                    "const": "ROOT"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "annexe_e": {
+          "$ref": "#/$defs/annexe_e_spec"
+        }
+      }
+    },
+    "domain_schemas_shard": {
+      "type": "object",
+      "description": "Contrat des six shards thématiques schemas-d01-d02.json à schemas-d11-d12.json couvrant chacun 2 domaines et 6 chapitres.",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "shard_id",
+        "lang",
+        "domains_covered",
+        "chapters_covered",
+        "source_inventory",
+        "schemas"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "shard_id": {
+          "type": "string",
+          "enum": [
+            "schemas-d01-d02",
+            "schemas-d03-d04",
+            "schemas-d05-d06",
+            "schemas-d07-d08",
+            "schemas-d09-d10",
+            "schemas-d11-d12"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "const": "fr-CA"
+        },
+        "domains_covered": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/domain_id"
+          }
+        },
+        "chapters_covered": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 36
+          }
+        },
+        "source_inventory": {
+          "type": "string",
+          "const": "Sources/Cartographie/donnees/inventaire-319-diagrammes.json"
+        },
+        "schemas": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 24,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/schema_item"
+              },
+              {
+                "properties": {
+                  "chapter_number": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 36
+                  },
+                  "domain_id": {
+                    "$ref": "#/$defs/domain_id"
+                  },
+                  "subdomain_node_id": {
+                    "pattern": "^SUB_D(?:0[1-9]|1[0-2])_0[1-3]$"
+                  },
+                  "families_covered": {
+                    "minItems": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "schema_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_id",
+        "chapter_number",
+        "domain_id",
+        "subdomain_node_id",
+        "families_covered",
+        "themes_vulgarized",
+        "title",
+        "insertion_point",
+        "target_audiences",
+        "visual_archetype",
+        "recommended_notation",
+        "pedagogical_objective",
+        "vulgarization_angle",
+        "visual_blueprint",
+        "reuse_status",
+        "linked_tome_figures"
+      ],
+      "properties": {
+        "schema_id": {
+          "type": "string",
+          "pattern": "^SCH-(?:00|0[1-9]|[12][0-9]|3[0-6])-0[1-4]$"
+        },
+        "chapter_number": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 36
+        },
+        "domain_id": {
+          "type": "string",
+          "enum": [
+            "GLOBAL",
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "D06",
+            "D07",
+            "D08",
+            "D09",
+            "D10",
+            "D11",
+            "D12"
+          ]
+        },
+        "subdomain_node_id": {
+          "type": "string",
+          "pattern": "^(?:ROOT|SUB_D(?:0[1-9]|1[0-2])_0[1-3])$"
+        },
+        "families_covered": {
+          "type": "array",
+          "description": "[] explicitement permis uniquement pour chapter_number == 0 ; sinon liste non vide de FAM_Dxx_yy_zz couvrant à 100 % les familles du chapitre sur l'ensemble de ses schémas.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^FAM_D(?:0[1-9]|1[0-2])_0[1-3]_0[1-9]$"
+          }
+        },
+        "themes_vulgarized": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          }
+        },
+        "title": {
+          "type": "string",
+          "minLength": 10,
+          "pattern": "\\S"
+        },
+        "insertion_point": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "target_audiences": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Direction / Métier",
+              "Juridique / Conformité",
+              "AE / AS",
+              "Ingénierie / RSSI / SRE"
+            ]
+          }
+        },
+        "visual_archetype": {
+          "type": "string",
+          "enum": [
+            "Comparatif Avant / Après",
+            "Métaphore architecturale en couches",
+            "Parcours séquentiel illustré",
+            "Arbre de décision opérationnel",
+            "Échelle graduée de maturité / autonomie",
+            "Matrice visuelle de risques et garde-fous",
+            "Boucle de rétroaction et contrôle",
+            "Frise chronologique et jalons"
+          ]
+        },
+        "recommended_notation": {
+          "type": "string",
+          "enum": [
+            "Mermaid",
+            "PlantUML",
+            "Infographie SVG bilingue métier-tech"
+          ]
+        },
+        "pedagogical_objective": {
+          "type": "string",
+          "minLength": 80,
+          "pattern": "\\S"
+        },
+        "vulgarization_angle": {
+          "type": "string",
+          "minLength": 40,
+          "pattern": "\\S"
+        },
+        "visual_blueprint": {
+          "$ref": "#/$defs/visual_blueprint_spec"
+        },
+        "reuse_status": {
+          "type": "string",
+          "enum": [
+            "reemploi_direct",
+            "adaptation_vulgarisee",
+            "creation_originale"
+          ]
+        },
+        "linked_tome_figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/linked_tome_figure"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "chapter_number": {
+                "const": 0
+              }
+            },
+            "required": [
+              "chapter_number"
+            ]
+          },
+          "then": {
+            "properties": {
+              "schema_id": {
+                "pattern": "^SCH-00-0[1-4]$"
+              },
+              "domain_id": {
+                "const": "GLOBAL"
+              },
+              "subdomain_node_id": {
+                "const": "ROOT"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "schema_id": {
+                "pattern": "^SCH-(?:0[1-9]|[12][0-9]|3[0-6])-0[1-4]$"
+              },
+              "domain_id": {
+                "$ref": "#/$defs/domain_id"
+              },
+              "subdomain_node_id": {
+                "pattern": "^SUB_D(?:0[1-9]|1[0-2])_0[1-3]$"
+              },
+              "families_covered": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "reuse_status": {
+                "const": "creation_originale"
+              }
+            },
+            "required": [
+              "reuse_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "linked_tome_figures": {
+                "minItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "linked_tome_figures": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visual_blueprint_spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "zones",
+        "numbered_flows",
+        "color_legend",
+        "key_takeaway_box"
+      ],
+      "properties": {
+        "zones": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "zone_id",
+              "label",
+              "content"
+            ],
+            "properties": {
+              "zone_id": {
+                "$ref": "#/$defs/non_empty_string"
+              },
+              "label": {
+                "$ref": "#/$defs/non_empty_string"
+              },
+              "content": {
+                "type": "string",
+                "minLength": 20,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "numbered_flows": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "pattern": "^[①②③④⑤⑥⑦⑧⑨⑩]\\s+\\S"
+          }
+        },
+        "color_legend": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "color_token",
+              "meaning"
+            ],
+            "properties": {
+              "color_token": {
+                "$ref": "#/$defs/non_empty_string"
+              },
+              "meaning": {
+                "$ref": "#/$defs/non_empty_string"
+              }
+            }
+          }
+        },
+        "key_takeaway_box": {
+          "type": "string",
+          "minLength": 40,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "linked_tome_figure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tome_id",
+        "fig_id",
+        "title",
+        "source_path",
+        "rendered_path",
+        "role_note"
+      ],
+      "properties": {
+        "tome_id": {
+          "type": "string",
+          "enum": [
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5",
+            "T6",
+            "T7",
+            "T8"
+          ]
+        },
+        "fig_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "title": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "source_path": {
+          "type": "string",
+          "pattern": "^Sources/Tomes/.+\\.(?:puml|mmd)$"
+        },
+        "rendered_path": {
+          "type": "string",
+          "pattern": "^Sources/Tomes/.+/rendus/.+\\.(?:svg|png)$"
+        },
+        "role_note": {
+          "type": "string",
+          "minLength": 15,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "annexe_e_spec": {
+      "type": "object",
+      "description": "Bloc éditorial de l'Annexe E accompagnant les quatre schémas globaux SCH-00-01..04.",
+      "additionalProperties": false,
+      "required": [
+        "annexe_code",
+        "representative_title",
+        "executive_summary",
+        "targeted_content_description",
+        "editorial_guidelines",
+        "coverage_targets",
+        "catalogue_columns"
+      ],
+      "properties": {
+        "annexe_code": {
+          "type": "string",
+          "const": "E"
+        },
+        "representative_title": {
+          "type": "string",
+          "const": "Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus"
+        },
+        "executive_summary": {
+          "type": "string",
+          "minLength": 150,
+          "pattern": "\\S"
+        },
+        "targeted_content_description": {
+          "type": "string",
+          "minLength": 200,
+          "pattern": "\\S"
+        },
+        "editorial_guidelines": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          }
+        },
+        "coverage_targets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "global_schemas",
+            "chapters_covered",
+            "families_coverage_ratio",
+            "total_tome_figures",
+            "plantuml_svg_count",
+            "mermaid_png_count"
+          ],
+          "properties": {
+            "global_schemas": {
+              "type": "integer",
+              "const": 4
+            },
+            "chapters_covered": {
+              "type": "integer",
+              "const": 36
+            },
+            "families_coverage_ratio": {
+              "type": "number",
+              "const": 1.0
+            },
+            "total_tome_figures": {
+              "type": "integer",
+              "const": 319
+            },
+            "plantuml_svg_count": {
+              "type": "integer",
+              "const": 253
+            },
+            "mermaid_png_count": {
+              "type": "integer",
+              "const": 66
+            }
+          }
+        },
+        "catalogue_columns": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1378 @@
+{
+  "shard_id": "prd-d03-d04",
+  "domains_covered": [
+    "D03",
+    "D04"
+  ],
+  "chapters": [
+    {
+      "chapter_number": 7,
+      "chapter_code": "CH-07",
+      "domain_id": "D03",
+      "subdomain_node_id": "SUB_D03_01",
+      "representative_title": "Protocoles verticaux outil-modèle : épinglage MCP 2026-07-28, façades d'intention et intégrité SHA-256",
+      "executive_summary": "L'intégration verticale entre les modèles d'intelligence artificielle et les ressources de l'entreprise impose une séparation rigoureuse entre l'appel déterministe d'outil et la délégation pair-à-pair. Le présent chapitre normalise le protocole Model Context Protocol (MCP) sur la révision sans état 2026-07-28 transportée par Streamable HTTP, tout en proscrivant le transport HTTP+SSE déprécié (DISC-05) et en isolant la couche d'exécution derrière un adaptateur neutre McpTransportAdapter afin d'absorber sans rupture les jalons SEP-3398 (30 mars 2027) et SEP-2596 (28 juillet 2027). Afin de prévenir la saturation contextuelle et l'anti-patron Swagger-to-MCP (AP-04), chaque serveur MCP expose au plus 15 façades d'intention métier dotées de sorties structurées structuredContent, de pointeurs resource_link au-delà de 8 Ko et de clés d'idempotence. Sur le plan de la sécurité, les 102 fiches NVD recensées en quatre mois sur des implémentations tierces rappellent que la compatibilité de transport ne confère aucune garantie de sûreté : tout serveur MCP devient un serveur de ressources OAuth 2.1 sans relais de jeton, soumettant ses définitions JSON Schema 2020-12 et ses métadonnées à l'épinglage cryptographique SHA-256 canonisé selon JCS (RFC 8785) ainsi qu'à l'inscription au catalogue d'entreprise avant toute invocation en production.",
+      "targeted_content": {
+        "scope_and_objectives": "Ce chapitre spécifie l'architecture normative et exécutable de l'axe vertical agent-outil fondée sur MCP 2026-07-28 (JSON-RPC 2.0 sans état), depuis la conception ergonomique Agent-Computer Interface (ACI) jusqu'à l'authentification des serveurs de ressources, au confinement des surfaces Web agentiques et à l'épinglage cryptographique des schémas face aux dérives silencieuses de type rug-pull.",
+        "key_requirements_and_objectives": [
+          "EXIG-MCP-01 / EXIG-MCP-03 / EXIG-MCP-22 (DISC-05) : toute implémentation en production doit être épinglée sur la révision MCP 2026-07-28 en transport Streamable HTTP sans état d'ici le 28 juillet 2027, tandis que stdio demeure confiné au poste local sans secret et que HTTP+SSE est systématiquement rejeté derrière McpTransportAdapter.",
+          "EXIG-MCP-06 / EXIG-ORC-09 / ADR-005 (AP-04) : le catalogue de chaque serveur MCP est plafonné à ≤ 15 outils orientés vers l'intention métier (avec une cible optimale de 5 à 12 outils, resserrée à 10–12 en L3/L4), munis de schémas de sortie structuredContent, de pointeurs resource_link au-delà de 8 Ko et de messages d'erreur cognitifs guidant la reprise sans jamais générer de miroir CRUD OpenAPI 1:1.",
+          "EXIG-MCP-09 / EXIG-MCP-11 / EXIG-MCP-15 / EXIG-MCP-18 : tout serveur MCP applique OAuth 2.1 avec validation d'audience (RFC 8707), découverte (RFC 9728), vérification de l'émetteur iss (RFC 9207) et Client ID Metadata Documents (en remplacement de RFC 7591), tout en interdisant le relais de jeton et en exigeant la concordance exacte entre les en-têtes Mcp-Method/Mcp-Name et le corps JSON-RPC.",
+          "EXIG-MCP-14 / EXIG-MCP-19 / EXIG-MCP-20 / CAP-023 : les annotations (readOnlyHint, destructiveHint), descriptions, URL et icônes demeurent tenues pour des entrées non fiables, et chaque outil est épinglé par version SemVer et empreinte SHA-256 canonisée JCS (RFC 8785) soumise à une réapprobation intégrale au moindre écart.",
+          "EXIG-MCP-04 / EXIG-MCP-21 : les extensions Beta (Tasks SEP-3392, Skills, Server Cards) restent désactivées par défaut hors liste blanche explicite, et la collecte de secrets ou d'approbations réglementaires au moyen du mécanisme d'elicitation demeure formellement proscrite."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D03_01_01",
+            "family_title": "Spécification MCP et façades d'intention",
+            "family_overview": "Cette famille formalise les règles de versionnement sans état de MCP 2026-07-28, l'isolation par adaptateur de transport en vue de l'échéance de juillet 2027, l'ergonomie ACI anti-Swagger plafonnée à ≤ 15 outils métier ainsi que l'encadrement des surfaces Web agentiques.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_protocole-mcp",
+                "canonical_slug": "protocole-mcp",
+                "theme_title": "Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule de juillet 2027",
+                "content_specification": "Cette spécification impose le cœur sans état MCP 2026-07-28 sur JSON-RPC 2.0 (avec suppression des sessions et de la poignée de main), le patron MRTR (input_required) en remplacement des requêtes serveur-vers-client, ainsi que la borne stricte de ≤ 15 outils d'intention métier (ADR-005, CAP-023). Elle fixe la bascule intégrale au 28 juillet 2027 (EXIG-MCP-22), assure la veille sur SEP-3398 (30 mars 2027) et consacre la règle F-01 selon laquelle MCP demeure un cadre d'autorisation sans se substituer aux API transactionnelles.",
+                "identifiers_and_norms": [
+                  "MCP 2026-07-28",
+                  "JSON-RPC 2.0",
+                  "EXIG-MCP-01..22",
+                  "ADR-005",
+                  "CAP-023",
+                  "SEP-3398",
+                  "SEP-2596",
+                  "RFC 9728",
+                  "RFC 8707",
+                  "AAIF"
+                ]
+              },
+              {
+                "theme_node_id": "THM_web-agentique-webmcp-webbotauth",
+                "canonical_slug": "web-agentique-webmcp-webbotauth",
+                "theme_title": "Web agentique : WebMCP, NLWeb, Web Bot Auth (RFC 9421) et llms.txt",
+                "content_specification": "Ce volet cantonne les quatre protocoles émergents du Web agentique selon leur niveau de maturité et de confiance : l'exposition client document.modelContext (WebMCP) demeure au statut expérimental sans confiance implicite ; le point d'interrogation NLWeb (/ask) est filtré comme une entrée externe non fiable ; la signature HTTP Web Bot Auth (RFC 9421 et JWKS) est reconnue comme authentification d'origine sans constituer une preuve d'intention ni de délégant ; enfin, tout investissement sur llms.txt est exclu (97 % des sites observés n'enregistrent aucun trafic associé).",
+                "identifiers_and_norms": [
+                  "RFC 9421",
+                  "IETF draft-ietf-webbotauth-httpsig-protocol-01"
+                ]
+              },
+              {
+                "theme_node_id": "THM_facades-mcp-intention-metier",
+                "canonical_slug": "facades-mcp-intention-metier",
+                "theme_title": "Façades MCP orientées vers l'intention métier, structuredContent et resource_link",
+                "content_specification": "Les opérations atomiques doivent être regroupées en 5 à 12 façades métier orientées vers la tâche (avec un plafond absolu de 15), dotées de schémas de sortie JSON Schema 2020-12 (structuredContent), de clés d'idempotence obligatoires en écriture et d'une pagination bornée. Dès que la charge utile dépasse 8 Ko, le serveur émet un pointeur resource_link et retourne des messages d'erreur cognitifs actionnables permettant au modèle de corriger ses appels sans hallucination de paramètres.",
+                "identifiers_and_norms": [
+                  "ADR-005",
+                  "JSON Schema 2020-12"
+                ]
+              },
+              {
+                "theme_node_id": "THM_adaptateur-mcp-streamable-http-sep-3398",
+                "canonical_slug": "adaptateur-mcp-streamable-http-sep-3398",
+                "theme_title": "Transport Streamable HTTP MCP 2026-07-28, rejet HTTP+SSE et adaptateur SEP-3398",
+                "content_specification": "La décision DISC-05 proscrit le transport HTTP+SSE au profit de Streamable HTTP sans état, assorti d'une vérification stricte des en-têtes Mcp-Method, Mcp-Name et MCP-Protocol-Version. L'encapsulation de la couche de transport derrière l'adaptateur neutre McpTransportAdapter permet d'absorber sans réécriture applicative les retraits prévus par SEP-2596 (mars–septembre 2027) et la cible SEP-3398 (30 mars 2027).",
+                "identifiers_and_norms": [
+                  "EXIG-MCP-03",
+                  "EXIG-MCP-15",
+                  "EXIG-MCP-22",
+                  "DISC-05"
+                ]
+              },
+              {
+                "theme_node_id": "THM_ergonomie-aci-anti-swagger",
+                "canonical_slug": "ergonomie-aci-anti-swagger",
+                "theme_title": "Agent-Computer Interface (ACI), façades d'intention et Code Mode contre Swagger-to-MCP",
+                "content_specification": "La génération automatique OpenAPI-to-MCP 1:1 est proscrite, cet anti-patron (AP-04) entraînant une saturation contextuelle au-delà de 50 outils et une dégradation marquée de la précision de sélection. L'architecture privilégie la conception ergonomique ACI (contrats d'intention unifiés), le chargement différé au moyen de Dynamic Toolsets ainsi que le recours encadré au Code Mode en bac à sable pour enchaîner les requêtes analytiques sans alourdir le contexte du modèle.",
+                "identifiers_and_norms": [
+                  "AP-04",
+                  "C11",
+                  "EXIG-MCP-06"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D03_01_02",
+            "family_title": "Épinglage SHA-256 et sécurité MCP",
+            "family_overview": "Cette famille définit la défense déterministe contre la mutabilité des serveurs tiers (rug-pull), l'empoisonnement des descriptions d'outils et les failles de délégation de jetons sur les serveurs MCP.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_epinglage-schemas-mcp",
+                "canonical_slug": "epinglage-schemas-mcp",
+                "theme_title": "Épinglage cryptographique SHA-256 des outils MCP et analyse des 102 fiches NVD",
+                "content_specification": "Chaque définition JSON Schema 2020-12 et sa version SemVer font l'objet d'un épinglage cryptographique SHA-256 canonisé selon JCS (RFC 8785) au catalogue interne (EXIG-MCP-20, CAP-023, PRR S-07), complété par la vérification de concordance des en-têtes HTTP/JSON-RPC (EXIG-MCP-15). L'authentification OAuth repose sur les Client ID Metadata Documents avec validation iss (RFC 9207) afin de contrer le rug-pull et les vulnérabilités documentées dans 102 fiches NVD, dont 13 critiques de score ≥ 9,0.",
+                "identifiers_and_norms": [
+                  "MCP 2026-07-28",
+                  "RFC 8785",
+                  "RFC 9207",
+                  "EXIG-MCP-14..21",
+                  "EXIG-INT-13..19",
+                  "OWASP ASI04",
+                  "SHA-256",
+                  "PRR S-07"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Un catalogue interne des serveurs MCP approuvés consigne les empreintes SHA-256 JCS (RFC 8785), les versions SemVer, le statut d'épinglage 2026-07-28 et les paliers P0–P3, garantissant l'absence de tout serveur non homologué à la passerelle.",
+          "L'adaptateur McpTransportAdapter, validé en intégration continue, rejette toute requête HTTP+SSE (DISC-05) ainsi que toute divergence entre les en-têtes Mcp-Method/Mcp-Name et la charge utile JSON-RPC 2.0.",
+          "Une suite de tests automatisés vérifie le respect du plafond de ≤ 15 outils par serveur (seuil d'alerte EXIG-ORC-09), la conformité JSON Schema 2020-12 des sorties structuredContent et le basculement vers resource_link au-delà de 8 Ko.",
+          "Un plan de migration daté prépare l'échéance du 28 juillet 2027 (EXIG-MCP-22) et assure le suivi trimestriel des jalons SEP-3398 et SEP-2596 (ANC-026, SIG-005)."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 9,
+            "target_slug": "cadre-eif-4-couches",
+            "synthesis": "Le protocole MCP concrétise les paliers technique et syntaxique de l'interopérabilité verticale agent-outil au sein du modèle stratifié EIF/LCIM, tout en réservant la maîtrise du sens métier à la couche sémantique."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 9,
+            "target_slug": "passerelle-mcp-ai-gateway",
+            "synthesis": "Tout transport MCP sortant du poste local (hors fonction P0/P1) transite obligatoirement par la passerelle bidirectionnelle PEP, qui applique les neuf contrôles ordonnés et la liste d'admission."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 19,
+            "target_slug": "tool-poisoning-rug-pull",
+            "synthesis": "L'épinglage cryptographique SHA-256, le rejet des annotations non fiables et l'abandon du mappage Swagger-to-MCP (AP-04) neutralisent les vecteurs d'empoisonnement d'outils et les dérives rug-pull."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 12,
+            "target_slug": "couche-anti-corruption-acl",
+            "synthesis": "Les cœurs patrimoniaux (IBM i, z/OS, SAP) sont encapsulés derrière des façades MCP orientées vers l'intention métier (< 15 outils) assurant un transcodage exact sans exposition CRUD."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 22,
+            "target_slug": "observabilite-otel-genai",
+            "synthesis": "Le traçage distribué agent-outil s'appuie sur l'injection systématique du W3C Trace Context dans le champ _meta des messages JSON-RPC MCP."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "concordance_inter_tomes",
+            "target_chapter_number": 36,
+            "target_slug": "concordance-inter-tomes-div02",
+            "synthesis": "La décision DISC-05 tranche la divergence entre MCP 2025-11-25 (Tome 7 historique) et MCP 2026-07-28 sans état, ce dernier étant retenu comme norme exécutable dans les Tomes 6 et 8."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent), L1984–L2132"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Annexe N — Actualisation de novembre 2026 (SEP-3398), L12879–L12936"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Section 6 Interopérabilité (EXIG-MCP-01..22), L1751–L2134"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 5 — MCP : le protocole agent-outil (ADR-005, façades ACI, WebMCP), L1833–L2738"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 3 — Couche protocolaire MCP/A2A et passerelle 9 contrôles, L415–L583"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 4 — Interopérabilité verticale agent-outil MCP, L1176–L1246"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Chapitre 01 — Harnais 80/20 et adaptateur MCP 2026-07-28, L371–L393"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "chapter_code": "CH-08",
+      "domain_id": "D03",
+      "subdomain_node_id": "SUB_D03_02",
+      "representative_title": "Protocoles horizontaux pair-à-pair : A2A v1.0.1, pile AGNTCY/SLIM, paiements AP2 et fédération B2B",
+      "executive_summary": "La collaboration horizontale entre agents autonomes s'appuie sur Agent2Agent (A2A) v1.0.1 sous la gouvernance de l'Agentic AI Foundation (AAIF), à la suite de l'absorption formelle de l'ACP protocolaire le 29 août 2025 et de la désambiguïsation des quatre acceptions homonymes du sigle ACP (Tableau 7.3). En vertu de la loi de non-substituabilité (PRI-003), A2A encadre la délégation asynchrone de tâches à état entre pairs opaques, mais affiche une asymétrie réglementaire vérifiée de 0/15 au regard des cinq cadres financiers canadiens et omet nativement l'expiration, la révocation et la gouvernance des clés de l'Agent Card. L'architecture compense ces lacunes par la vérification systématique JWS/JCS (RFC 8785), l'inscription au catalogue interne (CAP-012) et les gardes anti-SSRF. Sur le front des spécifications émergentes, l'infrastructure AGNTCY (OASF/ADS à évaluer ; transport chiffré SLIM sur MLS RFC 9420 à surveiller), ANP/did:wba et les rails de commerce agentique (AP2 v0.2, ACP commercial, UCP, x402, MPP) demeurent confinés hors production sous le statut Surveiller — notamment en raison du transfert non matérialisé d'AP2 vers la FIDO Alliance (S-091) —, tandis que les interfaces utilisateur dissocient le flux événementiel AG-UI (RFC 6902) du rendu déclaratif sécurisé A2UI/MCP-UI et que les échanges B2B futurs reposent sur l'identité vLEI et les connecteurs Dataspace ODRL 2.2.",
+      "targeted_content": {
+        "scope_and_objectives": "Ce chapitre encadre les protocoles horizontaux d'agent à agent (A2A v1.0.1, AGNTCY/SLIM, ANP), la séparation stricte entre délégation de tâches opaques, flux d'interface humain-agent (AG-UI, A2UI, WebRTC), connecteurs B2B (EDC/ODRL/vLEI) et protocoles de commerce ou de paiement agentique (AP2, x402, MPP) jusqu'à l'atteinte de leur maturité réglementaire et cryptographique.",
+        "key_requirements_and_objectives": [
+          "PRI-003 / EXIG-INT-04 / EXIG-INT-05 / EXIG-A2A-01..15 : le protocole A2A v1.0.1 est strictement réservé à la délégation entre agents autonomes franchissant des domaines ou des équipes distincts (à l'exclusion de l'usage CRUD déguisé et de l'orchestration intra-workflow) ; il impose la vérification JWS/JCS (RFC 8785) de chaque Agent Card, des gardes anti-SSRF sur les notifications poussées et le bornage du blocage CI a2a-tck aux tests stables sur deux versions (EXIG-A2A-14).",
+          "EXIG-INT-20 / EXIG-INT-21 / CAP-012 : les composants OASF et ADS d'AGNTCY demeurent au statut Évaluer (strictement subordonnés au catalogue d'entreprise comme source de vérité) tandis que le transport SLIM (MLS RFC 9420) reste au statut Surveiller hors des flux réglementés jusqu'à ratification par l'AAIF.",
+          "EXIG-INT-22 / CAP-026 / P3 (S-090, S-091) : AP2 v0.2 (Intent/Cart/Payment Mandates SD-JWT), l'ACP commercial, UCP, x402 et MPP sont cantonnés au statut Surveiller hors données réelles et paiements irréversibles tant que l'ancrage normatif FIDO, le règlement sur les rails canadiens (Lynx/RTR) et le régime de responsabilité en cas de mandat détourné ne sont pas établis.",
+          "EXIG-ARC-03 / ADR-007 / CAP-001 : le transport d'état AG-UI (STATE_DELTA JSON Patch RFC 6902 avec test de révision) est dissocié de la projection visuelle en catalogue fermé déclaratif A2UI ou en iframe isolée MCP-UI, en interdisant toute génération de HTML/JavaScript libre et en réservant WebRTC (< 200 ms) à l'audio industriel encadré.",
+          "ADR-026 / CAP-014 / CAP-027 / CAP-041 (P3) : l'échange B2B inter-entreprises demeure proscrit dans les domaines du conseil et de la conformité, et toute fédération future est subordonnée à l'identité GLEIF vLEI/OOR, aux connecteurs Dataspace EDC/DSP régis par W3C ODRL 2.2 ainsi qu'à la scission entre Diplomate (externe sans secret) et Évaluateur (interne anti-collusion)."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D03_02_01",
+            "family_title": "Protocole pair-à-pair A2A et ANP",
+            "family_overview": "Cette famille couvre la délégation horizontale sous A2A v1.0.1, la désambiguïsation du sigle ACP, les protocoles décentralisés ANP/did:wba, les flux d'interface AG-UI/A2UI/WebRTC ainsi que l'écosystème transactionnel AP2 et du commerce agentique.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_protocole-a2a",
+                "canonical_slug": "protocole-a2a",
+                "theme_title": "Non-substituabilité outil par rapport à pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)",
+                "content_specification": "Ce thème précise l'emploi d'A2A v1.0.1 (v1.0.0 ratifiée le 12 mars 2026 sous l'AAIF ; v1.1.0-rc du 29 octobre 2026 non publiée) pour la délégation asynchrone de tâches à état (message/partie/artefact) préservant l'opacité du raisonnement interne. Il impose le déploiement des zones compensatoires Z1–Z5 afin de pallier l'asymétrie réglementaire de 0/15 ainsi que l'absence native d'expiration, de révocation et de gouvernance des clés (EXIG-A2A-01..15, CAP-012).",
+                "identifiers_and_norms": [
+                  "A2A v1.0.1",
+                  "A2A v1.1.0-rc",
+                  "AAIF",
+                  "EXIG-A2A-01..15",
+                  "PRI-003",
+                  "CAP-012",
+                  "DEC-001",
+                  "OWASP ASI07",
+                  "OWASP ASI08"
+                ]
+              },
+              {
+                "theme_node_id": "THM_protocole-ap2",
+                "canonical_slug": "protocole-ap2",
+                "theme_title": "Commerce agentique (AP2, ACP, UCP) au statut Surveiller et encadrement P3 des paiements",
+                "content_specification": "La chaîne cryptographique à trois mandats (Intent, Cart, Payment) repose sur des attestations SD-JWT à type vct versionné sur la pile à trois couches FMI 2026/004, tout en demeurant affectée par le litige de provenance FIDO entre S-090 et sa non-matérialisation S-091 au 1ᵉʳ novembre 2026. En conséquence, le statut Surveiller s'impose (EXIG-INT-22), avec approbation hors bande CIBA/FIDO2 sur tout palier P3 et découplage par interface abstraite devant les rails de paiement canadiens.",
+                "identifiers_and_norms": [
+                  "AP2 v0.2",
+                  "SD-JWT",
+                  "S-090",
+                  "S-091",
+                  "FMI 2026/004",
+                  "EXIG-INT-22",
+                  "FIDO2",
+                  "ADR-024"
+                ]
+              },
+              {
+                "theme_node_id": "THM_protocole-anp-did-wba",
+                "canonical_slug": "protocole-anp-did-wba",
+                "theme_title": "Protocole ANP, méthode did:wba et DMZ agentique inter-organisations",
+                "content_specification": "L'Agent Network Protocol (ANP v1.2, issu d'un groupe communautaire W3C sans aval normatif) combine la méthode did:wba ancrée DNS/TLS, des descriptions JSON-LD Schema.org (/.well-known/agent-descriptions) et une négociation dynamique de méta-protocole à la volée. Cette négociation dynamique est proscrite en production pour défaut d'auditabilité, et toute zone démilitarisée did:wba demeure subordonnée à la maturité des identifiants décentralisés projetée vers 2027.",
+                "identifiers_and_norms": [
+                  "ANP 1.2",
+                  "did:wba",
+                  "JSON-LD",
+                  "W3C AI Agent Protocol CG"
+                ]
+              },
+              {
+                "theme_node_id": "THM_protocoles-interfaces-agui-a2ui-webrtc",
+                "canonical_slug": "protocoles-interfaces-agui-a2ui-webrtc",
+                "theme_title": "Flux AG-UI (JSON Patch), interfaces déclaratives A2UI/MCP-UI et audio WebRTC",
+                "content_specification": "L'architecture dissocie le transport bidirectionnel d'événements AG-UI (StateSnapshot, STATE_DELTA JSON Patch RFC 6902 avec opération test anti-concurrence) du rendu déclaratif sécurisé A2UI (liste plate d'adjacence sur catalogue fermé homologué) et MCP-UI (iframe isolée). Toute génération de JavaScript arbitraire est proscrite (EXIG-ARC-03, OWASP ASI01/ASI09), tandis que WebRTC en duplex (UDP/SRTP, interruption < 200 ms) est cantonné aux usages vocaux de terrain.",
+                "identifiers_and_norms": [
+                  "RFC 6902",
+                  "ADR-007",
+                  "EXIG-ARC-03",
+                  "OWASP ASI01",
+                  "OWASP ASI09"
+                ]
+              },
+              {
+                "theme_node_id": "THM_fusion-acp-collision-terminologique",
+                "canonical_slug": "fusion-acp-collision-terminologique",
+                "theme_title": "Fusion de l'ACP protocolaire dans A2A et désambiguïsation « ACP / agentic control plane » à quatre branches",
+                "content_specification": "Le sigle « ACP » ne peut jamais être employé sans qualificatif explicite, conformément à l'analyse à quatre branches du Tableau 7.3 : (a) ACP protocolaire IBM/BeeAI fusionné dans A2A le 29 août 2025 (obsolète), (b) Agentic Control Plane de consortium, (c) offre commerciale IBM et (d) composante ACP non élucidée d'AGNTCY. Les dépendances existantes font l'objet d'une sortie ordonnée par adaptateurs.",
+                "identifiers_and_norms": [
+                  "ACP",
+                  "A2A",
+                  "AGNTCY",
+                  "Tableau 7.3"
+                ]
+              },
+              {
+                "theme_node_id": "THM_rails-paiement-commerce-agentique",
+                "canonical_slug": "rails-paiement-commerce-agentique",
+                "theme_title": "Commerce agentique, rails de cartes et paiements machine-natifs (ACP commercial, UCP, x402, MPP)",
+                "content_specification": "La rupture tripartite entre mandant absent, agent exécutant et commerçant s'exprime à travers l'ACP commercial (OpenAI/Stripe), l'UCP, les extensions de réseaux de cartes (TAP Visa/Cloudflare, Mastercard Agent Pay, Web Bot Auth) et les micro-paiements machine-natifs x402 (HTTP 402) et MPP. Ce modèle met en évidence le verrou critique Whispers of Wealth, selon lequel un agent compromis peut signer un mandat cryptographiquement valide à l'insu du mandant.",
+                "identifiers_and_norms": [
+                  "ACP commercial",
+                  "UCP",
+                  "TAP",
+                  "x402",
+                  "MPP",
+                  "HTTP 402"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D03_02_02",
+            "family_title": "Piles AGNTCY/SLIM et paiements AP2",
+            "family_overview": "Cette famille précise la gouvernance des annuaires fédérés AGNTCY, le chiffrement de groupe post-quantique SLIM/MLS et les connecteurs B2B inter-entreprises fondés sur Dataspace et vLEI.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_agntcy-slim",
+                "canonical_slug": "agntcy-slim",
+                "theme_title": "Infrastructure fédérée AGNTCY (OASF, ADS, SLIM/MLS RFC 9420) et paiements AP2",
+                "content_specification": "L'initiative AGNTCY (Linux Foundation, proposition AAIF n° 57 en attente à la fin de 2026) relève d'un double statut : Évaluer pour OASF et l'annuaire DHT ADS (draft-mp-agntcy-ads-02), tous deux strictement subordonnés au registre interne comme source de vérité (EXIG-INT-20/21), et Surveiller pour le transport SLIM chiffré de bout en bout au moyen d'IETF MLS (RFC 9420) et de la suite hybride X25519MLKEM768.",
+                "identifiers_and_norms": [
+                  "AGNTCY-1.0",
+                  "OASF",
+                  "draft-mp-agntcy-ads-02",
+                  "draft-mpsb-agntcy-slim-03",
+                  "RFC 9420",
+                  "EXIG-INT-20",
+                  "EXIG-INT-21"
+                ]
+              },
+              {
+                "theme_node_id": "THM_maillage-b2b-federe-edc-odrl",
+                "canonical_slug": "maillage-b2b-federe-edc-odrl",
+                "theme_title": "Connecteurs Dataspace (EDC/DSP), contrats d'usage ODRL 2.2 et identité vLEI",
+                "content_specification": "Quatre verrous structurent le Palier 3 (2033–2035, ADR-026) pour les réseaux B2B : la présentation obligatoire d'identifiants GLEIF vLEI/OOR rattachés à la personne morale (CAP-041), la négociation déterministe des politiques d'usage W3C ODRL 2.2 via des connecteurs EDC/DSP-2025-1 préalablement à tout échange A2A/SLIM (CAP-027, en coexistence avec EDI X12), ainsi que la scission entre Diplomate et Évaluateur sous contrôle anti-collusion.",
+                "identifiers_and_norms": [
+                  "ADR-026",
+                  "ODRL-2.2",
+                  "DSP-2025-1",
+                  "ISO/IEC 20151",
+                  "vLEI",
+                  "CAP-027",
+                  "CAP-041"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Les contrats A2A v1.0.1 sont vérifiés par signatures JWS canonisées JCS (RFC 8785), bornage anti-SSRF et porte d'intégration continue restreinte aux tests stables d'a2a-tck (EXIG-A2A-14).",
+          "Un registre de veille protocolaire maintient AP2 v0.2, SLIM, ANP, x402 et MPP aux statuts Surveiller ou Évaluer, sous révision trimestrielle et avec interdiction de tout trafic de production P3 (EXIG-INT-22).",
+          "Un catalogue fermé de composants A2UI/MCP-UI validé en intégration continue s'articule avec le moteur AG-UI JSON Patch (RFC 6902) afin de garantir une tolérance zéro envers le code exécutable arbitraire (EXIG-ARC-03).",
+          "Un dossier de désambiguïsation architecturale proscrit l'emploi de sigles ambigus (notamment les quatre branches d'ACP) et atteste la réversibilité des adaptateurs de sortie (DEC-001)."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 9,
+            "target_slug": "agent-card-decouverte",
+            "synthesis": "La découverte et la résolution des pairs A2A reposent sur des cartes Agent Card signées JWS/JCS et validées lors de la quatrième opération d'approbation au catalogue interne."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 9,
+            "target_slug": "cadre-eif-4-couches",
+            "synthesis": "Le protocole A2A concrétise la couche d'interopérabilité organisationnelle entre agents opaques issus de domaines distincts sans jamais exposer leur graphe cognitif interne."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 13,
+            "target_slug": "arbre-sobriete-oo1-oo4",
+            "synthesis": "La collaboration horizontale multi-agents A2A engendre un surcoût notable de latence et de consommation de jetons (-70 % à +80,8 % et jusqu'à 15× en collectif), qui doit être arbitré au moyen de l'arbre de sobriété OO1–OO4."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 16,
+            "target_slug": "spiffe-spire-attestation",
+            "synthesis": "Les sessions A2A et les canaux SLIM s'authentifient cryptographiquement au niveau de la charge de travail grâce aux certificats SVID SPIFFE/SPIRE sur mTLS."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 16,
+            "target_slug": "did-vc-passeport-agent",
+            "synthesis": "L'identité vérifiable vLEI/DID/VC ancre la personnalité juridique et les plafonds de mandat des pairs A2A ainsi que des connecteurs Dataspace inter-organisations."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 18,
+            "target_slug": "post-quantique-ml-dsa-slh-dsa",
+            "synthesis": "Le transport fédéré SLIM d'AGNTCY s'appuie sur IETF MLS (RFC 9420) et sur des échanges hybrides X25519MLKEM768 alignés sur la trajectoire post-quantique."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 10,
+            "target_slug": "iso-20022-lynx-rtr",
+            "synthesis": "Le déploiement opérationnel d'AP2 au Canada demeure conditionnel au lancement effectif du rail temps réel RTR et à la maturation du cadre réglementaire C-15."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitre 8 — A2A (agent-agent) et Chapitre 10 — AP2 et AGNTCY, L2133–L2928"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitre 36 — Prospective : AP2 sur les rails canadiens ? (S-090/S-091), L8528–L8699"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Section 6 Interopérabilité (EXIG-A2A-01..15, EXIG-INT-20..22), L2135–L2713"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitres 6, 7 et 10 — A2A, AG-UI/A2UI/WebRTC et Commerce agentique, L2804–L4723"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitre 45 — Réseaux B2B fédérés (EDC/DSP, ODRL 2.2, vLEI), L23375–L23429"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitres 3 et 9 — Non-substituabilité A2A/AP2 et réseaux B2B P3, L431–L582"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 5 — A2A, AGNTCY et fédération inter-agents, L1450–L1730"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "chapter_code": "CH-09",
+      "domain_id": "D03",
+      "subdomain_node_id": "SUB_D03_03",
+      "representative_title": "Passerelles PEP à neuf contrôles, découverte gouvernée, routage d'inférence et anti-verrouillage",
+      "executive_summary": "La gouvernance de l'interopérabilité exige de dissocier la découverte technique de l'autorité d'approbation, tout en comblant les angles morts réglementaires des protocoles ouverts. Ce chapitre scinde la découverte en quatre opérations distinctes — trouver, décrire, authentifier et approuver — et confie l'approbation au seul catalogue interne unique, révisé trimestriellement selon cinq statuts et assorti d'une coexistence minimale de 60 jours (EXIG-INT-14, EXIG-INT-17, EXIG-GOV-18). Face aux insuffisances d'A2A et de MCP (0/15 lien direct avec les cadres financiers canadiens et risque de cartes falsifiées), cinq zones de compensation Z1–Z5 opèrent à travers une passerelle d'agents bidirectionnelle (PEP) exécutant neuf contrôles ordonnés en échec fermé (CAP-022, EXIG-IAM-17 ; latence étalonnée à 52,85 µs p50 sur Borealis-Bench et coupure en moins de 10 s). Ce plan d'accès s'articule avec l'ordonnancement sensible au KV-cache via Endpoint Picker, le routage cognitif à trois paliers (SLM 70–78 %, LLM frontière, calcul réflexif), la discipline OpenAPI/AsyncAPI (RFC 9745/8594), le modèle LCIM à sept niveaux, le confinement anti-verrouillage SaaS (EXIG-ARC-21) ainsi que la lecture critique opposant le soutien déclaratif des consortiums aux déploiements prouvés.",
+      "targeted_content": {
+        "scope_and_objectives": "Ce chapitre définit l'architecture complète de médiation, de découverte et de souveraineté protocolaire : catalogue interne unique à cinq statuts, signature JWS/JCS des Agent Cards, plan de données d'inférence et routage hybride, passerelle PEP à neuf contrôles ordonnés, grille EIF/LCIM, matrice 0/15 (Z1–Z5) et confinement anti-verrouillage des suites SaaS.",
+        "key_requirements_and_objectives": [
+          "EXIG-INT-14 / EXIG-INT-17 / EXIG-GOV-18..20 : un catalogue d'entreprise unique exerce la quatrième opération (approuver) et classe chaque protocole selon cinq statuts (Adopter sur six critères cumulatifs, Évaluer, Surveiller, Contenir, Suspendu), avec révision trimestrielle (ou en ≤ 15 jours ouvrables sur incident) et ≥ 60 jours de coexistence lors d'une rupture majeure.",
+          "EXIG-A2A-02..06 / EXIG-GOV-18 : toute Agent Card exposée sous /.well-known/ doit porter une signature JWS canonisée JCS (RFC 8785) et être inscrite dans un cache à durée bornée au catalogue, en rejetant les déclarations d'annuaires publics non curatés ainsi que les métriques d'attention non probantes (« soutien déclaré ≠ production »).",
+          "CAP-022 / EXIG-ARC-01 / EXIG-IAM-17..19 / EXIG-SEC-04..06 / EXIG-OBS-11 : l'intégralité des flux MCP, A2A et des actions P2/P3 transite par la passerelle bidirectionnelle PEP en échec fermé, qui exécute les neuf contrôles ordonnés (sept à l'aller avec pré-audit P2/P3, deux au retour incluant le retrait P3/envoi sous la Règle de deux) dans un budget cible ≤ 35 ms p50 (étalonné à 52,85 µs en processus sur Borealis-Bench).",
+          "ADR-014 / O-10 / O-11 / EXIG-FIN-06..07 : le routage cognitif à trois paliers qualifié en E2 (70–78 % sur SLM 3B–14B) est couplé à l'ordonnancement Gateway API Inference Extension (Endpoint Picker / llm-d), qui exploite l'affinité de préfixe KV-cache tout en neutralisant les attaques d'éponge budgétaire.",
+          "EXIG-ARC-21 / PRI-015 / CAP-013 / DEC-007 : toute plateforme SaaS agentique est confinée sous des contrôles compensatoires trimestriels (transit par passerelle, identité dédiée, exportation OTel, test d'arrêt trimestriel, plafond N2 sans JCS) et les contrats d'API imposent les en-têtes RFC 9745/8594 afin de prévenir tout enfermement propriétaire."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D03_03_01",
+            "family_title": "Découverte Agent Card et registres",
+            "family_overview": "Cette famille structure l'appariement en quatre opérations, la signature JWS/JCS des Agent Cards, le catalogue d'entreprise unique à cinq statuts, la gouvernance OpenAPI/AsyncAPI ainsi que le routage d'inférence sensible au KV-cache.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_agent-card-decouverte",
+                "canonical_slug": "agent-card-decouverte",
+                "theme_title": "Découverte à quatre opérations, cartes JWS/JCS, catalogue à cinq statuts et veille DAWN/AGENTPROTO",
+                "content_specification": "L'architecture scinde les quatre opérations de découverte (trouver, décrire, authentifier, approuver), tire les enseignements de l'échec d'UDDI face aux annuaires ouverts non curatés et protège /.well-known/agent-card contre le typosquattage par signature JWS/JCS (RFC 8785, EXIG-A2A-02..06). Elle impose un recoupement systématique avec le catalogue gouverné et maintient une veille active sur les travaux IETF DAWN/AGENTPROTO (ANC-024..029).",
+                "identifiers_and_norms": [
+                  "EXIG-A2A-02..06",
+                  "RFC 8615",
+                  "RFC 7515",
+                  "RFC 8785",
+                  "EXIG-INT-17",
+                  "SEP-2127",
+                  "ARD v0.91",
+                  "ANC-024..029"
+                ]
+              },
+              {
+                "theme_node_id": "THM_contrats-interfaces-catalogue-entreprise",
+                "canonical_slug": "contrats-interfaces-catalogue-entreprise",
+                "theme_title": "Catalogue des protocoles (cinq statuts), matrice de sélection et catalogue d'entreprise unique",
+                "content_specification": "Le catalogue interne unique fait office de seule source de vérité pour l'approbation (EXIG-INT-17), sous le régime de cinq statuts formels (Adopter selon six critères cumulatifs, Évaluer, Surveiller, Contenir, Suspendu). Il s'appuie sur une matrice de sélection par flux, garantit une coexistence minimale de 60 jours lors des changements majeurs (EXIG-INT-14) et assure le suivi actif des consommateurs.",
+                "identifiers_and_norms": [
+                  "EXIG-INT-04..18",
+                  "EXIG-INT-23",
+                  "EXIG-GOV-18..20"
+                ]
+              },
+              {
+                "theme_node_id": "THM_contrats-api-versionnement-conformite",
+                "canonical_slug": "contrats-api-versionnement-conformite",
+                "theme_title": "Contrats d'API (OpenAPI/AsyncAPI), dépréciation HTTP et pyramide d'évaluation d'interopérabilité",
+                "content_specification": "L'ingénierie orientée contrat (design-first) sous OpenAPI 3.1.1/3.2.0 et AsyncAPI 3.0.0 normalise le cycle de vie au moyen des en-têtes HTTP Deprecation (RFC 9745) et Sunset (RFC 8594). La vérification dissocie la conformité isolée de l'interopérabilité relationnelle selon une pyramide d'essai à trois étages : conformité protocolaire, tests pilotés par le consommateur inter-implémentations et bancs de tâches non déterministes.",
+                "identifiers_and_norms": [
+                  "OpenAPI 3.1.1",
+                  "OpenAPI 3.2.0",
+                  "AsyncAPI 3.0.0",
+                  "RFC 9745",
+                  "RFC 8594"
+                ]
+              },
+              {
+                "theme_node_id": "THM_plan-donnees-inference-kv-cache",
+                "canonical_slug": "plan-donnees-inference-kv-cache",
+                "theme_title": "Gateway API Inference Extension (InferencePool/EPP) et affinité de KV-cache",
+                "content_specification": "L'ordonnancement Kubernetes Gateway API Inference Extension (Endpoint Picker EPP sur InferencePool, llm-d 1.0, SGLang RadixAttention) remplace le routage circulaire (round-robin) destructeur de localité en pondérant la charge VRAM et les préfixes chauds. Couplé à la désagrégation prefill/decode et à la hiérarchisation du KV-cache, ce mécanisme réduit sensiblement le temps jusqu'au premier jeton (TTFT) ainsi que le coût de relecture.",
+                "identifiers_and_norms": [
+                  "ADR-014",
+                  "O-11",
+                  "InferencePool",
+                  "EXIG-FIN-07"
+                ]
+              },
+              {
+                "theme_node_id": "THM_routage-cognitif-hybride-3-paliers",
+                "canonical_slug": "routage-cognitif-hybride-3-paliers",
+                "theme_title": "Routage cognitif à trois paliers (SLM, LLM frontière, calcul réflexif) et calibration",
+                "content_specification": "Les requêtes sont ventilées selon trois paliers qualifiés en E2 (ADR-014, EXIG-FIN-06) : les SLM spécialisés (3B–14B) traitent de 70 à 78 % des appels bornés, les LLM généralistes absorbent l'ambiguïté complexe et le calcul réflexif (test-time compute) traite les arbitrages ardus. Le dispositif exige une calibration sur log-probabilités, une protection contre les attaques d'éponge budgétaire et l'exclusion de tout routeur non éprouvé face aux reformulations.",
+                "identifiers_and_norms": [
+                  "ADR-014",
+                  "O-10",
+                  "TTFT",
+                  "EXIG-FIN-06"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D03_03_02",
+            "family_title": "Passerelles PEP / AI Gateway et anti-verrouillage",
+            "family_overview": "Cette famille spécifie la passerelle PEP bidirectionnelle à neuf contrôles ordonnés, la stratification EIF/LCIM, la matrice 0/15 croisant protocoles et régulation (Z1–Z5), la diligence métrique et le confinement anti-verrouillage.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_anti-verrouillage-standards",
+                "canonical_slug": "anti-verrouillage-standards",
+                "theme_title": "Confinement anti-verrouillage SaaS (EXIG-ARC-21), catalogues déclaratifs C1 et statut AP2/AGNTCY",
+                "content_specification": "Le noyau possédé par l'institution (PRI-015, CAP-013, DEC-007) est protégé contre les suites « ouvertes sur le fil, fermées sur le contrôle » au moyen du régime compensatoire EXIG-ARC-21 (corrigé depuis la coquille EXIG-ARC-02) : transit par passerelle, identité propre, télémétrie OTel exportée, arrêt trimestriel testé, plafond N2 sans JCS et préavis de dépréciation de 12 mois. Cette posture s'accompagne d'une participation à AAIF/WIMSE/CAISI et d'une vigilance envers le verrouillage inverse sur /v1/chat/completions consécutif au retrait d'Assistants API (26 août 2026).",
+                "identifiers_and_norms": [
+                  "EXIG-ARC-21",
+                  "PRIN-09",
+                  "PRI-015",
+                  "CAP-013",
+                  "DEC-007",
+                  "AAIF",
+                  "WIMSE",
+                  "NIST CAISI",
+                  "EU Data Act"
+                ]
+              },
+              {
+                "theme_node_id": "THM_passerelle-mcp-ai-gateway",
+                "canonical_slug": "passerelle-mcp-ai-gateway",
+                "theme_title": "Passerelle d'agents bidirectionnelle PEP à neuf contrôles ordonnés et budget Borealis-Bench",
+                "content_specification": "Une passerelle PEP bidirectionnelle en échec fermé (CAP-022, EXIG-ARC-01, EXIG-IAM-17..18) s'interpose sur tout flux MCP, A2A et P2/P3 pour exécuter neuf contrôles séquentiels : (1) AuthN SVID/mTLS/DPoP, (2) catalogue et empreinte SHA-256, (3) PDP N1–N4/P0–P3, (4) schéma I-JSON et garde anti-injection bilingue, (5) jeton jti lié à h=SHA-256(JCS), (6) quotas, (7) échange RFC 8693 et pré-audit EXIG-OBS-11 avant P2/P3, (8) masquage RP et retrait P3/envoi selon la Règle de deux (EXIG-SEC-06), et (9) émission d'un span OTel/JCS, l'ensemble étant étalonné à 52,85 µs p50 sous Borealis-Bench.",
+                "identifiers_and_norms": [
+                  "CAP-022",
+                  "EXIG-ARC-01",
+                  "EXIG-IAM-17..19",
+                  "EXIG-SEC-04..06",
+                  "EXIG-OBS-11",
+                  "RFC 8693",
+                  "agentgateway",
+                  "ContextForge"
+                ]
+              },
+              {
+                "theme_node_id": "THM_cadre-eif-4-couches",
+                "canonical_slug": "cadre-eif-4-couches",
+                "theme_title": "Interopérabilité stratifiée, modèle LCIM à sept niveaux et verrou sémantique-pragmatique",
+                "content_specification": "Ce cadre superpose la pile technique, syntaxique, sémantique et organisationnelle aux quatre couches EIF (juridique, organisationnelle, sémantique et technique, Règlement UE 2024/903) ainsi qu'à la typologie ISO 11354-1, situant les protocoles de 2026 au palier unifié malgré leur ambition fédérée. Il identifie les paliers pragmatique et dynamique du modèle LCIM à sept niveaux comme le principal verrou de mise à l'échelle.",
+                "identifiers_and_norms": [
+                  "EIF",
+                  "EIRA 6.1.0",
+                  "ISO 11354-1:2011",
+                  "Règlement (UE) 2024/903",
+                  "LCIM",
+                  "EXIG-INT-01..03"
+                ]
+              },
+              {
+                "theme_node_id": "THM_metriques-soutien-vs-production",
+                "canonical_slug": "metriques-soutien-vs-production",
+                "theme_title": "Lecture critique des métriques d'adoption protocolaire : « soutien déclaré ≠ production »",
+                "content_specification": "En vertu d'une règle stricte de diligence architecturale, les décomptes d'organisations de soutien (150+ pour A2A, 65+ pour AGNTCY, 60+ pour AP2) demeurent auto-déclarés, dépourvus d'unité normalisée et non comparables dans le temps. L'architecte d'entreprise dissocie systématiquement la notoriété publique des déploiements prouvés en production, en privilégiant la composition nommée et l'activité vérifiable des comités techniques.",
+                "identifiers_and_norms": [
+                  "S-004",
+                  "A2A",
+                  "AGNTCY",
+                  "AP2"
+                ]
+              },
+              {
+                "theme_node_id": "THM_maillage-agentique-trois-acceptions",
+                "canonical_slug": "maillage-agentique-trois-acceptions",
+                "theme_title": "Maillage agentique : trois acceptions (réseau, dorsale, confiance) et limites du service mesh",
+                "content_specification": "L'analyse dissipe l'ambiguïté éditoriale entre le maillage réseau (Istio/agentgateway Solo.io), la dorsale événementielle (Solace Agent Mesh) et la bibliothèque de confiance (AgentMesh). Elle démontre qu'un service mesh TCP/HTTP classique demeure insuffisant, car chaque action agentique lie trois identités distinctes, exige des politiques au grain de l'outil et suit des trajectoires dynamiques.",
+                "identifiers_and_norms": [
+                  "SPIFFE",
+                  "agentgateway",
+                  "AgentMesh"
+                ]
+              },
+              {
+                "theme_node_id": "THM_matrice-protocoles-exigences-reglementaires",
+                "canonical_slug": "matrice-protocoles-exigences-reglementaires",
+                "theme_title": "Matrice à 15 cellules protocoles × régulation et cinq zones de compensation (Z1–Z5)",
+                "content_specification": "Le croisement de MCP, A2A et AP2 avec les textes BSIF E-23, AMF, Loi 25 art. 12.1, C-15 et EU AI Act (Tableau 42.1) révèle 0/15 lien documenté (quatre absences vérifiées en source et onze lacunes au socle) ainsi que l'écart entre la question protocolaire Q-A (qui parle) et la question juridique Q-E (qui répond). Cinq zones compensatoires hors fil (Z1–Z5) y remédient : trace d'instance, arrêt humain, blocage d'auto-modification, abstraction bancaire ouverte (CAP-026) et filtrage par maillage.",
+                "identifiers_and_norms": [
+                  "Z1–Z5",
+                  "BSIF E-23",
+                  "AMF",
+                  "Loi 25 art. 12.1",
+                  "C-15",
+                  "EU AI Act",
+                  "CAP-026"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "La passerelle bidirectionnelle PEP est déployée en mode d'échec fermé et exécute les neuf contrôles ordonnés avec preuve d'étalonnage Borealis-Bench (cible p95 < 98 ms, exécution en microsecondes en processus et coupe-circuit en moins de 10 s).",
+          "Le catalogue interne trimestriel à cinq statuts est publié avec les preuves JWS/JCS des Agent Cards autorisées et garantit une coexistence minimale de 60 jours entre versions majeures (EXIG-INT-14, EXIG-INT-17).",
+          "Un tableau de bord de routage cognitif à trois paliers et d'affinité KV-cache Endpoint Picker valide le taux d'aiguillage SLM en E2 sans dégradation sous reformulation.",
+          "Une fiche de conformité compensatoire Z1–Z5 ainsi qu'un contrôle trimestriel EXIG-ARC-21 accompagnent chaque agent ou connecteur SaaS confiné."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 7,
+            "target_slug": "protocole-mcp",
+            "synthesis": "La passerelle PEP matérialise le point de coupure et de filtrage obligatoire sur tout transport MCP entrant et sortant."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-a2a",
+            "synthesis": "Le catalogue interne et la signature JWS/JCS des Agent Cards fondent la découverte et la quatrième opération d'approbation des pairs A2A."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 6,
+            "target_slug": "cadre-togaf-archimate-4-plans",
+            "synthesis": "L'architecture d'entreprise à quatre plans et six couches érige la passerelle PEP en passage obligé entre les plans d'orchestration cognitive et les ressources."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 17,
+            "target_slug": "approbation-ciba",
+            "synthesis": "Le cinquième contrôle de la passerelle PEP suspend l'exécution P2/P3 jusqu'à validation d'un jeton d'approbation hors bande CIBA lié au condensat h = SHA-256(JCS)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 21,
+            "target_slug": "confinement-opensandbox-firecracker-wasi",
+            "synthesis": "Le durcissement par confinement strict à la passerelle et en bac à sable s'inscrit en arbitrage direct avec la latence p95 et la complexité opérationnelle KVM."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "bsif-e-23",
+            "synthesis": "La diligence à l'égard des tiers imposée par BSIF E-23 et les cinq zones Z1–Z5 encadrent l'approbation au catalogue et les contrôles compensatoires hors protocole."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 27,
+            "target_slug": "clauses-contractuelles-normatives-app",
+            "synthesis": "Les exigences d'anti-verrouillage (EXIG-ARC-21) et les préavis de 60 jours à 12 mois s'intègrent aux clauses contractuelles de réversibilité et d'approvisionnement."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 32,
+            "target_slug": "pieges-gouvernance",
+            "synthesis": "La maîtrise du catalogue interne et du noyau possédé à la passerelle neutralise le risque de verrouillage par rente SaaS."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitre 9 — Découverte, registres, portabilité et Chapitre 42 — Matrice 0/15 Z1–Z5, L2305–L2633"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitre 42 — La matrice protocoles × exigences réglementaires (Tableau 42.1/42.2), L9725–L9838"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Sections 5 et 6 — Passerelle PEP et catalogue à 5 statuts (EXIG-ARC-01/21, EXIG-INT-01..23), L1106–L2662"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitres 8, 23, 24 et 44 — Découverte, AgentMesh, Passerelles et Routage KV-cache, L3818–L23318"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 3 — Passerelle à neuf contrôles, Borealis-Bench et anti-verrouillage, L437–L583"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 4 — Passerelle d'agents et contrôles ordonnés, L1247–L1329"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "chapter_code": "CH-10",
+      "domain_id": "D04",
+      "subdomain_node_id": "SUB_D04_01",
+      "representative_title": "Sémantique métier, ontologies financières, contrats de données ODCS et compilation du contexte",
+      "executive_summary": "La validité syntaxique d'un schéma JSON ou d'une enveloppe MCP ne garantit jamais la convergence sémantique : deux agents peuvent calculer différemment un même ratio réglementaire sans déclencher d'erreur technique, creusant un écart entre accord protocolaire et compréhension réelle (détection automatique plafonnant à 27,9 % en prépublication simulée). Pour résorber cette dette sémantique, l'architecture instaure une couche sémantique analytique déterministe neutre gouvernée comme du code (PRI-008, DEC-003 résolvant ADR-009 sur Apache Ossie 0.1.1 avec 60 jours de coexistence SIG-110), appuyée sur les ontologies financières établies (ISO 20022 — où Lynx est achevé tandis que RTR demeure reporté après quatre cibles et précédé par By-law No. 10 —, BIAN, FIBO, CDM, ACORD, HL7 FHIR) et distinguant l'inférence OWL 2 en monde ouvert de la validation SHACL en monde clos. En amont, les données prêtes pour les agents appliquent le patron Write-Audit-Publish sous contrat ODCS v3.2.0 (OpenLineage, héritage strict des ACL sans compte de service), tandis qu'en aval un compilateur déterministe du contexte (ADR-008) ordonne le préfixe chaud KV-cache, borne les jetons et encapsule les Agent Skills signés.",
+      "targeted_content": {
+        "scope_and_objectives": "Ce chapitre vise à éliminer les erreurs sémantiques silencieuses, le SQL libre non gouverné et la dégradation contextuelle (lost in the middle, context rot) grâce à l'instauration d'une couche sémantique neutre versionnée, de contrats de données ODCS v3.2.0 en sas Write-Audit-Publish, de formats d'échange à compatibilité contrôlée et d'un compilateur déterministe du contexte.",
+        "key_requirements_and_objectives": [
+          "PRI-008 / DEC-003 / EXIG-INT-02 / EXIG-INT-13..14 : les indicateurs financiers, formules et unités sont gouvernés au sein d'une couche sémantique déterministe neutre versionnée comme du code (60 jours de coexistence, SIG-110), qui résout ADR-009 sans couplage à Apache Ossie 0.1.1 en incubation et proscrit tout SQL libre sur les métriques réglementées.",
+          "ADR-030 / ODCS v3.2.0 / EXIG-ARC-16 / PRR F-13 : toute ingestion analytique est isolée derrière un sas Write-Audit-Publish (Iceberg/Nessie) qui vérifie l'intégrité statistique, la dérive PSI et le signal staleness, avec propriété identifiée des champs, lignage OpenLineage et propagation stricte de l'ACL du mandant sans repli vers un compte de service.",
+          "EXIG-FIN-07 / EXIG-ARC-22 / CAP-017 / ADR-008 : le contexte est compilé de manière déterministe en strates fixes afin d'optimiser le KV-cache (préfixe immuable en tête suivi des preuves filtrées par ACL), impose une compaction structurée au seuil et transmet les charges A2A par référence vérifiable plutôt que par copie brute.",
+          "CAP-018 / EXIG-INT-15..16 : chaque Agent Skill procédural (SkillsBench), rédigé et revu par des humains, est versionné, signé en SHA-256 et qualifié en intégration continue, l'autogénération aveugle de compétences en production demeurant interdite.",
+          "ISO 20022 / DORS/2026-133 / JSON Schema / Avro : les quatre régimes de compatibilité sont appliqués par registre de schémas (Protobuf, Avro, Arrow) et l'observation agentique demeure découplée des rails ISO 20022 (Lynx achevé ; RTR conditionnel au lancement et encadré juridiquement par By-law No. 10)."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D04_01_01",
+            "family_title": "Ontologies métier (FIBO) et contrats ODCS",
+            "family_overview": "Cette famille couvre la couche sémantique neutre (RDF/OWL/SHACL, FIBO, ISO 20022), la distinction entre syntaxe protocolaire et force illocutoire, les contrats ODCS v3.2.0 en quarantaine WAP, les registres de schémas ainsi que l'état des rails canadiens ISO 20022.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_dette-semantique-ontologies",
+                "canonical_slug": "dette-semantique-ontologies",
+                "theme_title": "Couche sémantique gouvernée neutre, médiation ISO 20022/FIBO et résolution ADR-009",
+                "content_specification": "Le partage de sens s'appuie sur RDF/RDFS/SKOS, sur une distinction stricte entre l'inférence OWL 2 en monde ouvert et la validation SHACL/ShEx en monde clos, sur les ontologies financières établies (ISO 20022, BIAN, FIBO, CDM/DRR, ACORD, MISMO, HL7 FHIR) ainsi que sur la médiation GAV/LAV/OBDA. La décision DEC-003 résout ADR-009 (Apache Ossie 0.1.1) en imposant un référentiel sémantique déclaratif neutre (CAP-015/016, 60 jours de coexistence SIG-110).",
+                "identifiers_and_norms": [
+                  "RDF",
+                  "OWL 2",
+                  "SHACL",
+                  "ISO 20022",
+                  "BIAN",
+                  "FIBO",
+                  "CDM",
+                  "ACORD",
+                  "HL7 FHIR",
+                  "DEC-003",
+                  "ADR-009",
+                  "CAP-015",
+                  "CAP-016"
+                ]
+              },
+              {
+                "theme_node_id": "THM_contrats-donnees-write-audit-publish",
+                "canonical_slug": "contrats-donnees-write-audit-publish",
+                "theme_title": "Contrats de données ODCS v3.2.0, patron Write-Audit-Publish et contrôleur sémantique",
+                "content_specification": "Les ingestions sont mises en quarantaine sur une branche transactionnelle isolée (Apache Iceberg / Project Nessie, ADR-030, PRR F-13) préalablement à toute exposition aux agents. Le contrôleur sémantique déterministe vérifie les contrats ODCS v3.2.0 (unités, dérive statistique PSI, pré-DDL) en assurant la propagation du signal staleness et l'arbitrage borné des écarts mineurs.",
+                "identifiers_and_norms": [
+                  "ADR-030",
+                  "ODCS-v3.2.0",
+                  "PRR F-13"
+                ]
+              },
+              {
+                "theme_node_id": "THM_donnees-pretes-agents-odcs-openlineage",
+                "canonical_slug": "donnees-pretes-agents-odcs-openlineage",
+                "theme_title": "Données prêtes pour agents : ODCS v3.2.0, OpenLineage, catalogues et héritage ACL",
+                "content_specification": "Quatre garanties cumulatives conditionnent toute exposition MCP d'un entrepôt : une gouvernance cataloguée assortie d'un lignage OpenLineage, une fraîcheur contractualisée sous ODCS v3.2.0 complétant ttlMs, une exécution stricte sous l'identité déléguée de l'utilisateur sans repli vers un compte de service (EXIG-ARC-16), et une validation sur bancs de requêtage borné (Spider 2.0, DAB, VAKRA).",
+                "identifiers_and_norms": [
+                  "ODCS v3.2.0",
+                  "OpenLineage",
+                  "ISO/IEC 25012",
+                  "EXIG-ARC-16"
+                ]
+              },
+              {
+                "theme_node_id": "THM_ecart-accord-protocolaire-comprehension",
+                "canonical_slug": "ecart-accord-protocolaire-comprehension",
+                "theme_title": "Écart entre accord de protocole et compréhension : sémantique lue par le modèle et force illocutoire",
+                "content_specification": "Cette analyse met en lumière une limite structurelle de MCP et d'A2A : les deux protocoles transportent la syntaxe mais présupposent l'accord sémantique (Yuan et coll., 2026) et perdent la force illocutoire explicite propre à FIPA-ACL SC00037J. Les outils décrits en prose exposent ainsi aux hallucinations d'alignement, la détection automatique des divergences d'intention plafonnant à 27,9 % de précision sur 600 cas simulés.",
+                "identifiers_and_norms": [
+                  "FIPA SC00037J",
+                  "KQML",
+                  "MCP",
+                  "A2A"
+                ]
+              },
+              {
+                "theme_node_id": "THM_formats-echange-registres-schemas",
+                "canonical_slug": "formats-echange-registres-schemas",
+                "theme_title": "Formats d'échange, registres de schémas, contrats de données (ODCS/Dataspace) et catalogues lakehouse",
+                "content_specification": "Les formats textuels (JSON/YAML), binaires gouvernés par registre (Protobuf, Avro), colonnaires (Parquet, ORC) et en mémoire (Apache Arrow, Flight SQL, ADBC) sont arbitrés selon quatre régimes de compatibilité (descendante, ascendante, complète et transitive). Ces régimes sont appliqués par registre de schémas et catalogues ouverts (Iceberg REST Catalog, Polaris, Unity Catalog OSS, Gravitino).",
+                "identifiers_and_norms": [
+                  "JSON Schema",
+                  "Protobuf",
+                  "Avro",
+                  "Apache Arrow",
+                  "ODCS",
+                  "Dataspace Protocol",
+                  "Iceberg REST Catalog"
+                ]
+              },
+              {
+                "theme_node_id": "THM_iso-20022-lynx-rtr",
+                "canonical_slug": "iso-20022-lynx-rtr",
+                "theme_title": "ISO 20022 au Canada : Lynx achevé, RTR reporté (T4 2026 visé) et By-law No. 10",
+                "content_specification": "L'état vérifié des rails canadiens s'établit comme suit : la migration de Lynx vers ISO 20022 a été achevée le 22 novembre 2025 (S-026), tandis que le rail temps réel RTR demeure visé (T4 2026 après quatre cibles en 2019, 2022, 2023 et 2026 sans lancement effectif, S-027 et Annexe N), précédé par l'entrée en vigueur du Règlement administratif n° 10 (DORS/2026-133, 24 août 2026). Dans le blueprint architectural, l'agent observe les flux sans exécuter directement sur Lynx (§45.12).",
+                "identifiers_and_norms": [
+                  "ISO 20022",
+                  "Lynx",
+                  "RTR",
+                  "DORS/2026-133",
+                  "S-026",
+                  "S-027"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D04_01_02",
+            "family_title": "Compilation de contexte et RAG agentique",
+            "family_overview": "Cette famille définit l'ingénierie déterministe de la fenêtre contextuelle (KV-cache, compaction, passage par référence), la boucle de récupération RAG agentique itérative sous ACL amont ainsi que la gouvernance des Agent Skills.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_rag-agentique-contexte",
+                "canonical_slug": "rag-agentique-contexte",
+                "theme_title": "Compilateur déterministe du contexte (ACL amont), Agent Skills signés et sas WAP ODCS v3",
+                "content_specification": "Afin de contrer le pourrissement contextuel (97 % de jetons relus, dégradation induite par un seul distracteur), l'architecture déploie un compilateur déterministe à stratification KV-cache (ADR-008, EXIG-FIN-07) et une boucle planifier-récupérer-critiquer (Self-RAG, Corrective RAG, GraphRAG à ontologie garde-fou, pile hybride Dense/BM25 + RRF + ColBERT). Elle y associe le text-to-SQL borné, l'application des ACL préalablement à la récupération (§24.4.2) ainsi que des Agent Skills rédigés par des humains et signés (SkillsBench, CAP-018).",
+                "identifiers_and_norms": [
+                  "ADR-008",
+                  "CAP-017",
+                  "CAP-018",
+                  "CAP-020",
+                  "EXIG-FIN-07",
+                  "EXIG-ARC-16",
+                  "EXIG-ARC-22",
+                  "GraphRAG",
+                  "SKILL.md",
+                  "AGENTS.md"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Un référentiel sémantique déclaratif versionné (DEC-003) couvre l'intégralité des ratios prudentiels et des ontologies métier (FIBO/ISO 20022) sans aucune génération de requête SQL libre en production.",
+          "Les pipelines d'ingestion intègrent le sas Write-Audit-Publish sous contrat ODCS v3.2.0 (PRR F-13) ainsi qu'un lignage OpenLineage vérifié sur des branches isolées.",
+          "Le compilateur déterministe de contexte est validé par des tests automatisés vérifiant l'affinité de préfixe KV-cache, le respect des plafonds de jetons, le passage par référence A2A (EXIG-ORC-23) et l'application des ACL en amont sans compte de service.",
+          "Un dépôt signé consigne les Agent Skills revus par des humains, dont les empreintes SHA-256 sont vérifiées avant tout chargement (CAP-018)."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 7,
+            "target_slug": "epinglage-schemas-mcp",
+            "synthesis": "Toute évolution de sens sémantique dans la couche de données impose un incrément de version majeure et une réapprobation de l'empreinte SHA-256 des outils MCP (EXIG-INT-13/16)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-ap2",
+            "synthesis": "La convergence d'AP2 avec les paiements canadiens demeure subordonnée au lancement opérationnel de RTR sous ISO 20022 et au Règlement n° 10."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 12,
+            "target_slug": "couche-anti-corruption-acl",
+            "synthesis": "La conversion déterministe en Decimal exact des zones COMP-3 patrimoniales garantit l'intégrité arithmétique des métriques financières exposées à la couche sémantique."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 11,
+            "target_slug": "memoire-coala-4-tiroirs",
+            "synthesis": "La pile de récupération hybride et la stratification contextuelle alimentent conjointement le compilateur RAG ainsi que les registres épisodique et sémantique CoALA."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 17,
+            "target_slug": "delegation-obo-deux-sauts",
+            "synthesis": "L'héritage des ACL en entrepôt et le filtrage RAG au niveau ligne ou fragment requièrent la propagation intacte de l'identité déléguée du mandant via OBO (RFC 8693)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 2,
+            "target_slug": "erreurs-silencieuses-cascade",
+            "synthesis": "Le remplacement du SQL libre et des descriptions ambiguës par des schémas typés, des contrats ODCS et des métriques versionnées prévient la propagation d'erreurs sémantiques silencieuses."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "efvp-transfert-hors-quebec",
+            "synthesis": "L'indexation RAG et les transferts de vecteurs ou de contextes vers des services d'inférence externes sont assujettis à une ÉFVP préalable conformément à l'article 17 de la Loi 25."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "concordance_inter_tomes",
+            "target_chapter_number": 6,
+            "target_slug": "catalogue-31-adr-12-dec",
+            "synthesis": "La décision DEC-003 réconcilie et généralise ADR-009 (tension entre Apache Ossie 0.1.1 et 1.0.0) sous la forme d'un référentiel déclaratif neutre gouverné comme du code."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitres 2, 5 et 33 — Ontologies, RAG agentique et ISO 20022 Lynx/RTR, L492–L7719"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Section 6 Interopérabilité (EXIG-INT-02/12..16), L1523–L1553"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitres 12, 13, 15 et 47 — Couche sémantique, Contexte, Données prêtes et WAP ODCS, L5729–L25760"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitres M-4 et M-10 — Standards de données sectoriels et capacités cibles, L919–L2174"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 4 — Sémantique métier, compilation du contexte et résolution ADR-009/DEC-003, L584–L611"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 6 — Ingénierie du contexte et souveraineté sémantique, L1733–L2044"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "chapter_code": "CH-11",
+      "domain_id": "D04",
+      "subdomain_node_id": "SUB_D04_02",
+      "representative_title": "Mémoire CoALA à quatre compartiments isolés, bi-temporalité auditable et filtrage ACL pré-récupération",
+      "executive_summary": "La mémoire longue agentique ne constitue jamais un simple cache technique : elle est gouvernée comme une base de données réglementée, désactivée par défaut en l'absence d'un besoin inter-sessions démontré (PRIN-11, DEC-004). Lorsqu'elle est activée, l'architecture cloisonne rigoureusement les quatre compartiments mémoriels issus du cadre CoALA (Sumers et coll., 2023) : mémoire de travail persistée hors processus et chiffrée, mémoire épisodique constituée de résumés typés et horodatés sans transcription brute, mémoire sémantique filtrée par ACL à la lecture et mémoire procédurale figée et signée sans auto-modification en production (PC4). Contre l'empoisonnement mémoriel (OWASP ASI06) et la fuite inter-locataires (OWASP LLM08:2025), aucun registre n'est partagé en écriture entre agents ou serveurs MCP (EXIG-ARC-25), tout souvenir relu demeure étiqueté comme contenu non fiable, les écritures concurrentes obéissent à un modèle à écrivain unique et les habilitations (OpenFGA, RLS) sont évaluées préalablement à l'indexation vectorielle (modes Silo, Bridge ou Pool). Enfin, un graphe bi-temporel (distinguant valid_from/valid_to de la date d'ingestion) assure la traçabilité BSIF E-23, répond au problème de l'agent apprenant (§39.5) et garantit la destruction sélective conforme à l'article 23 de la Loi 25.",
+      "targeted_content": {
+        "scope_and_objectives": "Ce chapitre spécifie la gouvernance, l'isolation et la conformité légale de la mémoire agentique persistante : séparation CoALA en quatre compartiments, contrôle d'accès pré-récupération (RBAC/ABAC, OpenFGA, RLS), gestion de la concurrence multi-agents, provenance HMAC anti-ASI06, graphe bi-temporel et effacement crypto-sélectif au titre de la Loi 25 et du RGPD.",
+        "key_requirements_and_objectives": [
+          "PRIN-11 / DEC-004 / EXIG-ARC-25 : la mémoire longue inter-sessions est désactivée par défaut et tout partage en écriture entre agents ou serveurs MCP demeure interdit, grâce au cloisonnement strict des quatre compartiments mémoriels CoALA (travail hors processus chiffré, épisodique typé avec TTL, sémantique filtré ACL et procédural immuable signé PC4).",
+          "ADR-010 / EXIG-CON-10 / CAP-019 / PRR G-10 : une structure bi-temporelle dissocie la validité métier (valid_from/valid_to) de l'ingestion système afin de reconstituer l'état exact connu lors d'une décision BSIF E-23, tout en permettant l'oubli ou l'anonymisation crypto-sélective (Loi 25 art. 23, RGPD art. 17) sans altérer les index adjacents.",
+          "OWASP ASI06 / EXIG-SEC-03..04 : chaque souvenir persisté porte une étiquette de contenu non fiable et une signature de provenance HMAC ; le texte brut externe est proscrit en mémoire épisodique et aucun souvenir relu ne peut autoriser seul une action sensible P2/P3.",
+          "OWASP LLM08:2025 / EXIG-ARC-16 / EXIG-ARC-23 : le filtrage RBAC/ABAC par document et par fragment s'exécute en amont de la recherche sémantique (OpenFGA, PostgreSQL RLS, Qdrant partitionné) selon le modèle d'isolation multi-locataires retenu (Silo, Bridge ou Pool), avec attribution énoncé par énoncé et abstention en cas de lacune.",
+          "T1 §39.5 / ADR-010 : la dérive d'apprentissage mémoriel est traitée comme la 4ᵉ dérive ouverte en réconciliant les écritures concurrentes par un écrivain unique, une concurrence optimiste et une supersession temporelle vérifiée à chaque lecture."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D04_02_01",
+            "family_title": "Architecture mémorielle CoALA à quatre compartiments",
+            "family_overview": "Cette famille formalise la compartimentation CoALA en quatre mémoires isolées sans écriture partagée, la résolution de la concurrence, la bi-temporalité à des fins d'audit et de purge sélective Loi 25, ainsi que l'isolation ACL multi-locataires.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_memoire-coala-4-tiroirs",
+                "canonical_slug": "memoire-coala-4-tiroirs",
+                "theme_title": "Séparation des quatre mémoires CoALA, bi-temporalité auditable et purge sélective Loi 25 art. 23",
+                "content_specification": "Le cadre CoALA (Sumers et coll., 2023 : mémoire de travail, épisodique, sémantique et procédurale) est décliné sous forme de registres chiffrés hors processus (EXIG-ARC-05/06/22..25, CAP-019, DEC-004). Cette spécification encadre les quatre opérations d'ingénierie (écrire, sélectionner, compacter, isoler), les architectures MemGPT/Letta et Zep/Graphiti bi-temporelles, les bancs d'évaluation LongMemEval/LoCoMo ainsi que la problématique ouverte de la 4ᵉ dérive d'un agent apprenant au-delà de son passeport initial (Tome 1 §39.5).",
+                "identifiers_and_norms": [
+                  "CoALA",
+                  "arXiv:2309.02427",
+                  "Letta",
+                  "Graphiti",
+                  "EXIG-ARC-22..25",
+                  "EXIG-CON-10",
+                  "ADR-010",
+                  "CAP-019",
+                  "DEC-004",
+                  "PRR S-12",
+                  "PRR G-10"
+                ]
+              },
+              {
+                "theme_node_id": "THM_memoire-partagee-concurrence-effacement",
+                "canonical_slug": "memoire-partagee-concurrence-effacement",
+                "theme_title": "Concurrence de mémoire partagée, portabilité et effacement crypto-sélectif",
+                "content_specification": "Les écritures concurrentes et contradictions sémantiques sont arbitrées au moyen du patron écrivain unique, du verrouillage optimiste, de la supersession temporelle et d'une vérification de portée à chaque lecture (ADR-010). Le dispositif pallie l'absence de standard d'exportation ou de portabilité mémorielle et déploie l'effacement crypto-sélectif (Crypto-Shredding) afin de concilier journaux immuables, faits dérivés et droit à l'oubli (RGPD art. 17, Loi 25).",
+                "identifiers_and_norms": [
+                  "RGPD art. 17",
+                  "Loi 25",
+                  "ADR-010",
+                  "OWASP ASI06"
+                ]
+              },
+              {
+                "theme_node_id": "THM_memoire-bi-temporelle-et-purge",
+                "canonical_slug": "memoire-bi-temporelle-et-purge",
+                "theme_title": "Mémoire hybride bi-temporelle (Graphiti/Letta), quarantaine et purge Loi 25",
+                "content_specification": "La mémoire procédurale étant qualifiée comme la plus vulnérable au détournement, l'architecture impose la double ligne temporelle (valid_from/valid_to par rapport à l'ingestion système) sur les graphes Graphiti/Letta (PRR G-10, ADR-010), l'authentification HMAC des entrées contre ASI06, la mise en quarantaine des faits contestés ainsi que l'anonymisation sélective conforme aux exigences légales québécoises.",
+                "identifiers_and_norms": [
+                  "ADR-010",
+                  "ASI06",
+                  "PRR G-10",
+                  "Loi 25"
+                ]
+              },
+              {
+                "theme_node_id": "THM_propagation-acl-memoire-silo",
+                "canonical_slug": "propagation-acl-memoire-silo",
+                "theme_title": "Propagation des ACL en amont (OpenFGA, RLS) et isolation multi-locataires (Silo/Bridge/Pool)",
+                "content_specification": "L'exfiltration vectorielle (OWASP LLM08:2025) et l'empoisonnement mémoriel (ASI06, AP-11) sont neutralisés en évaluant systématiquement les habilitations (OpenFGA, PostgreSQL Row-Level Security, Qdrant partitionné) préalablement au classement sémantique, et en structurant le cloisonnement multi-locataires (Silo, Bridge ou Pool) selon le profil réglementaire.",
+                "identifiers_and_norms": [
+                  "OWASP LLM08:2025",
+                  "OWASP ASI06",
+                  "AP-11",
+                  "C16"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D04_02_02",
+            "family_title": "Filtrage ACL amont et gouvernance RAG",
+            "family_overview": "Cette famille régit le filtrage granulaire par fragment avant la génération, l'attribution vérifiable affirmation par affirmation, la règle d'abstention en cas de lacune et l'évaluation dissociée.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_gouvernance-acces-rag-ancrage",
+                "canonical_slug": "gouvernance-acces-rag-ancrage",
+                "theme_title": "Gouvernance d'accès RBAC/ABAC par fragment, citation énoncé par énoncé et évaluation RAG",
+                "content_specification": "Afin de prévenir le mélange silencieux de documents à habilitations distinctes au sein d'un index vectoriel partagé, le filtrage RBAC/ABAC par fragment s'applique selon l'identité de l'utilisateur effectif avant toute génération. Le système exige une attribution traçable énoncé par énoncé, une abstention documentée lorsque la preuve fait défaut et une évaluation dissociant le rappel de récupération (Recall@K) de la fidélité générative (RAGAS, ARES, CRAG).",
+                "identifiers_and_norms": [
+                  "RBAC",
+                  "ABAC",
+                  "RAGAS",
+                  "ARES",
+                  "CRAG"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Le schéma d'isolation des quatre compartiments mémoriels CoALA est configuré avec la mémoire longue désactivée par défaut (PRIN-11, DEC-004), accompagné de tests automatisés vérifiant l'interdiction de toute écriture partagée (EXIG-ARC-25).",
+          "Le graphe bi-temporel est audité sur un jeu d'essai démontrant la reconstitution d'état à une date antérieure (BSIF E-23) et l'exécution de la purge sélective selon l'article 23 de la Loi 25 sans corruption d'index (PRR G-10).",
+          "Des tests d'intrusion et d'isolement multi-locataires valident l'application d'OpenFGA/RLS en amont de la récupération (zéro fuite inter-habilitations LLM08:2025) ainsi que le marquage HMAC anti-ASI06.",
+          "Une suite d'évaluation dissociée Recall@K et RAGAS/ARES vérifie l'application stricte de la règle d'abstention et la citation énoncé par énoncé."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 19,
+            "target_slug": "injection-indirecte-prompt",
+            "synthesis": "Le filtrage RBAC/ABAC en amont, l'isolation en écriture et le marquage non fiable/HMAC neutralisent l'empoisonnement persistant de la mémoire (OWASP ASI06)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "loi-25-article-12-1",
+            "synthesis": "La bi-temporalité et l'attribution énoncé par énoncé satisfont aux droits d'explication, de rectification et d'oubli sélectif prévus aux articles 12.1 et 23 de la Loi 25."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 25,
+            "target_slug": "efvp-transfert-hors-quebec",
+            "synthesis": "La localisation contrôlée, le Crypto-Shredding et la purge bi-temporelle assurent la maîtrise des renseignements personnels conservés en mémoire."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 16,
+            "target_slug": "did-vc-passeport-agent",
+            "synthesis": "L'accumulation continue de souvenirs et l'apprentissage d'un agent entrent en tension avec le périmètre figé et daté sur son passeport d'homologation."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 10,
+            "target_slug": "rag-agentique-contexte",
+            "synthesis": "Les registres épisodique et sémantique (Letta/Graphiti) alimentent directement le compilateur déterministe du contexte sous filtrage ACL."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 23,
+            "target_slug": "volant-distillation-dspy-multilora",
+            "synthesis": "La capitalisation des traces et des épisodes pour affiner ou distiller les modèles crée une tension directe avec les exigences d'isolation et de purge des données personnelles."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 4,
+            "target_slug": "patrons-boucle-mono-agent-codeact",
+            "synthesis": "Les boucles d'exécution mono-agent et CodeAct matérialisent le cycle cognitif de lecture, de planification et d'écriture sur les quatre compartiments mémoriels CoALA."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitres 5, 24 et 39 — CoALA, RAG ACL et agent qui apprend (§39.5), L1302–L9336"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Section 5 Architecture de référence (EXIG-ARC-22..25, PRIN-11), L1367–L1463"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitres 14, 31 et 38 — Mémoire partagée, bi-temporalité, ASI06 et Loi 25, L7172–L19919"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitres M-10 et M-13 — Capacité CAP-019 et décision DEC-004, L2130–L3085"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitre 4 §4.3 — Quatre mémoires CoALA et oubli sélectif, L612–L655"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 6 — Propagation ACL (OpenFGA/RLS) et Silo/Bridge/Pool, L1733–L2044"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "chapter_code": "CH-12",
+      "domain_id": "D04",
+      "subdomain_node_id": "SUB_D04_03",
+      "representative_title": "Encapsulation patrimoniale déterministe (EBCDIC/COMP-3), extinction CUA, sas OT et six substrats d'état",
+      "executive_summary": "La modernisation agentique préserve les cœurs transactionnels (IBM i, z/OS, SAP, moteurs BPMN 2.0 et progiciels d'assurance Guidewire/Majesco) sans réécriture massive, sans SQL direct et sans calcul en virgule flottante IEEE 754. Derrière des serveurs MCP opérant comme couche anticorruption (CAP-024, DEC-008), des adaptateurs hors modèle assurent le transcodage exact EBCDIC (CP037/CP1147) vers UTF-8, la conversion Packed Decimal COMP-3 en Decimal exact (PEX-015), le lissage des rafales (quotas MIPS) et l'alignement des trames COBOL/EDI avec relecture avant toute décision engageante (EXIG-ARC-14..18). Les Computer-Use Agents visuels (CUA) demeurent confinés à ≤ 8 % en dérogation interne (3270/Citrix) sous caviardage des renseignements personnels et budget d'extinction de ≤ 12 mois jusqu'à leur interdiction complète à POR-008, tandis que le grattage externe côté client tombe sous le coup de l'article 171 de la LSAC (PEX-001). À la périphérie OT marginale, l'accès passe par un réplica en lecture seule situé en IDMZ (Purdue / IEC 62443-3-3 SL-3), validé par un jumeau numérique FMI 3.0 et un arbitre matériel Simplex, ainsi que par des cellules Edge CRDT autonomes pendant 72 h hors connexion. Enfin, la souveraineté juridictionnelle impose l'inventaire et le chiffrement sous clés maîtrisées (HYOK/KMS) de l'ensemble des six substrats d'état (PRI-011, CAP-032, POR-002).",
+      "targeted_content": {
+        "scope_and_objectives": "Ce chapitre protège l'intégrité arithmétique, la capacité transactionnelle et le contrôle juridictionnel des systèmes patrimoniaux IT (mainframes, ERP, iPaaS, BPM/RPA), des interfaces périphériques OT/Edge ainsi que des six substrats d'état face aux lois extraterritoriales.",
+        "key_requirements_and_objectives": [
+          "EXIG-ARC-14..18 / EXIG-MCP-06 / CAP-024 / DEC-008 : les systèmes d'enregistrement sont exposés exclusivement par des façades MCP orientées vers la tâche, sans miroir CRUD ni SQL direct ; le transcodage EBCDIC (CP037/CP1147), la conversion exacte COMP-3 vers Decimal sans virgule flottante IEEE 754, le lissage MIPS ainsi que la propagation de QSYS2.SET_CLIENT_INFO, de la trace et de la clé d'idempotence s'exécutent hors modèle.",
+          "ADR-016 / CAP-025 / PEX-001 / INI-015 / POR-004 / POR-008 : la hiérarchie MCP (≥ 92 %) → RPA déterministe → CUA confiné (≤ 8 %) s'applique strictement ; tout grattage d'écran client demeure proscrit (LSAC art. 171), chaque cellule CUA interne (5250/Citrix) subit un caviardage Loi 25 et bloque les touches destructrices sous un bail d'extinction ≤ 12 mois menant à zéro CUA résiduel à POR-008.",
+          "C07 / C08 / AP-05 : les moteurs BPMN 2.0 (Camunda/Zeebe) sont préservés grâce à des sous-processus ad hoc bornés, l'intégration progresse selon le patron Strangler Fig en quatre stades (ombre, recommandation, action bornée, autonomie) et les pertes sémantiques sur la médiation B2B EDI/ESB sont explicitement réconciliées.",
+          "CAP-028 / ADR-017 / ADR-028 : tout accès OT industriel (hors champ financier démontré) est cantonné sous segmentation Purdue / IEC 62443-3-3 SL-3 via un réplica en lecture seule en IDMZ 3.5 devant OPC UA/MQTT Sparkplug B, validé par jumeau FMI 3.0 / arbitre matériel Simplex et complété par des cellules Edge Local-First sur CRDT (cible de 72 h sans WAN, avec repli L1 au-delà).",
+          "PRI-011 / CAP-032 / POR-002 / EXIG-CON-05 / EXIG-APP-11 : les six substrats d'état — modèle, contexte volatil GPU/KV-cache, mémoire longue, état durable, traces/audit et secrets/clés — sont inventoriés, cloisonnés et chiffrés sous clés exclusives (KMS/HSM/HYOK) afin d'assurer un contrôle juridictionnel effectif face au CLOUD Act."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D04_03_01",
+            "family_title": "Couche anti-corruption (ACL) et mainframes",
+            "family_overview": "Cette famille rassemble les façades MCP déterministes en Decimal exact devant EBCDIC/COMP-3/COBOL, l'intégration financière et industrielle sans duplication, le confinement et l'extinction des CUA, la médiation ESB/EDI ainsi que la coexistence BPMN/RPA sous patron Strangler Fig.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_couche-anti-corruption-acl",
+                "canonical_slug": "couche-anti-corruption-acl",
+                "theme_title": "Encapsulation patrimoniale déterministe : EBCDIC, COMP-3 Decimal exact et trames COBOL/EDI",
+                "content_specification": "L'autorité unique des grands livres IBM i, z/OS, CICS COMMAREA et SAP BAPI est préservée derrière une façade MCP anticorruption (EXIG-ARC-14..18, ADR-016, CAP-024, DEC-008). Celle-ci exécute hors modèle le transcodage EBCDIC CP037/1147, l'arithmétique COMP-3 en Decimal exact (excluant IEEE 754, PEX-015), la protection MIPS par CQRS/CDC, la propagation de QSYS2.SET_CLIENT_INFO et les tests de parité SOX/Golden Master.",
+                "identifiers_and_norms": [
+                  "EXIG-ARC-14..18",
+                  "EXIG-MCP-06",
+                  "ADR-016",
+                  "CAP-024",
+                  "DEC-008",
+                  "PEX-015",
+                  "SOX",
+                  "QSYS2.SET_CLIENT_INFO"
+                ]
+              },
+              {
+                "theme_node_id": "THM_encapsulation-patrimoine-it-ot",
+                "canonical_slug": "encapsulation-patrimoine-it-ot",
+                "theme_title": "Extinction des agents d'écran CUA (≤ 12 mois) et sas OT lecture seule devant OPC UA / Simplex",
+                "content_specification": "Les cœurs financiers (Guidewire, Majesco, ACE/CP4I) sont étendus par médiateurs sans duplication et l'extinction des automates CUA est planifiée sur 12 mois (INI-015, POR-008). Dans le domaine OT marginal, l'architecture impose la segmentation Purdue IEC 62443-3-3 SL-3, des réplicas IDMZ en lecture seule devant OPC UA (IEC 62541) / MQTT Sparkplug B, l'agrégation FFT/RMS en périphérie, le jumeau FMI 3.0 signé Ed25519 et l'arbitre matériel Simplex (ISO 10218-1/IEC 61508).",
+                "identifiers_and_norms": [
+                  "ADR-017",
+                  "IEC 62541",
+                  "IEC 62443-3-3",
+                  "IEC 61511",
+                  "CAP-025",
+                  "CAP-028",
+                  "INI-015",
+                  "POR-008"
+                ]
+              },
+              {
+                "theme_node_id": "THM_confinement-cua-patrimoine-sans-api",
+                "canonical_slug": "confinement-cua-patrimoine-sans-api",
+                "theme_title": "Hiérarchie MCP → RPA → CUA et confinement des Computer-Use Agents (Citrix/5250)",
+                "content_specification": "L'exigence ADR-016 régit le patrimoine dépourvu d'API : ≥ 92 % des flux passent par des adaptateurs MCP, suivis du RPA déterministe orchestré, puis de ≤ 8 % en CUA visuels sur Citrix/5250. Ces derniers opèrent sous harnais confiné assurant le caviardage des renseignements personnels (Loi 25) avant toute capture d'écran, le blocage des touches destructrices, la double assertion OCR/vérification et un bail d'extinction strict de 12 mois.",
+                "identifiers_and_norms": [
+                  "ADR-016",
+                  "Loi 25",
+                  "BSIF E-23",
+                  "OWASP ASI01"
+                ]
+              },
+              {
+                "theme_node_id": "THM_mediation-b2b-esb-traducteurs",
+                "canonical_slug": "mediation-b2b-esb-traducteurs",
+                "theme_title": "Médiation ESB/iPaaS, intégration B2B frontalière (EDI), Strangler Fig et pertes de traduction",
+                "content_specification": "La transition de l'ESB centralisé vers l'iPaaS et le patron Strangler Fig autorise une modernisation sans réécriture massive tout en maintenant l'interopérabilité frontalière sur EDIFACT et ASC X12 (AS2/AS4). Une réconciliation explicite compense les pertes sémantiques induites par les Message Translators entre modèles de richesse inégale.",
+                "identifiers_and_norms": [
+                  "EDIFACT",
+                  "ASC X12",
+                  "AS2",
+                  "AS4"
+                ]
+              },
+              {
+                "theme_node_id": "THM_coexistence-bpm-ipaas-rpa",
+                "canonical_slug": "coexistence-bpm-ipaas-rpa",
+                "theme_title": "Coexistence BPMN 2.0 / iPaaS, sortie maîtrisée du RPA fragile et Strangler Fig en quatre stades",
+                "content_specification": "L'investissement déterministe BPMN 2.0 (Camunda 8 / Zeebe) est préservé au moyen de sous-processus ad hoc bornés, les couches iPaaS/APIM s'élèvent en plans d'accès MCP/A2A, les scripts RPA fragiles (AP-05) sont confinés puis décommissionnés, et la bascule s'effectue par Strangler Fig en quatre stades (ombre, recommandation, action bornée, autonomie).",
+                "identifiers_and_norms": [
+                  "C07",
+                  "C08",
+                  "AP-05",
+                  "BPMN 2.0"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D04_03_02",
+            "family_title": "Encapsulation IT/OT et six substrats d'état",
+            "family_overview": "Cette famille traite de la maîtrise juridictionnelle des six substrats d'état face au CLOUD Act et de la continuité autonome Edge Local-First reposant sur les structures CRDT.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_six-substrats-etat-souverainete",
+                "canonical_slug": "six-substrats-etat-souverainete",
+                "theme_title": "Cartographie et maîtrise juridictionnelle des six substrats d'état (PRI-011, CAP-032, POR-002)",
+                "content_specification": "L'architecture distingue la résidence physique du contrôle juridictionnel (CLOUD Act) et prescrit l'inventaire, le cloisonnement et le chiffrement HYOK sous clés exclusives de l'institution sur l'ensemble des six substrats (ADR-027, PRI-011, CAP-032, POR-002) : (1) modèle et configuration, (2) contexte volatil KV-cache GPU, (3) mémoire longue, (4) état durable, (5) traces et voûte d'audit, et (6) secrets et clés KMS/HSM/SPIFFE.",
+                "identifiers_and_norms": [
+                  "PRI-011",
+                  "CAP-032",
+                  "POR-002",
+                  "INI-006",
+                  "ADR-027",
+                  "EXIG-CON-05",
+                  "EXIG-APP-11",
+                  "PRR F-04"
+                ]
+              },
+              {
+                "theme_node_id": "THM_synchronisation-edge-crdt",
+                "canonical_slug": "synchronisation-edge-crdt",
+                "theme_title": "Cellule Edge Local-First déconnectée, synchronisation CRDT et quotas de droits",
+                "content_specification": "La cible de conception prévoit 72 h d'autonomie hors réseau WAN (suivies d'un repli en palier L1) pour une cellule Edge autonome intégrant un SLM local, une attestation SPIRE/TPM 2.0 locale, des politiques Cedar embarquées et des structures CRDT sans conflit sous quotas en séquestre anti-sur-allocation avec resynchronisation priorisée au rétablissement du réseau.",
+                "identifiers_and_norms": [
+                  "ADR-028",
+                  "PRR F-08",
+                  "CRDT",
+                  "TPM 2.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Une suite de tests Golden Master et de parité arithmétique démontre la conversion exacte EBCDIC / COMP-3 → Decimal sur 100 % des transactions COBOL/IBM i encapsulées (EXIG-ARC-14, PEX-015).",
+          "Un registre des dérogations CUA internes atteste une couverture transitoire ≤ 8 %, le caviardage actif des renseignements personnels et une trajectoire budgétée d'extinction en ≤ 12 mois (INI-015, POR-008).",
+          "La cartographie documentée des six substrats d'état sous contrôle de clés KMS/HSM/HYOK est vérifiée à la porte POR-002 ainsi que lors des audits menés au titre de l'article 17 de la Loi 25 (PRR F-04).",
+          "L'architecture OT IDMZ de niveau 3.5 est validée sur jumeau numérique FMI 3.0 avec preuve de coupure de toute écriture directe vers les automates PLC/SCADA (CAP-028)."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 7,
+            "target_slug": "protocole-mcp",
+            "synthesis": "Les cœurs RPG/CICS/SAP s'exposent exclusivement par des façades MCP orientées vers la tâche assurant la propagation de QSYS2.SET_CLIENT_INFO, le lissage MIPS et l'idempotence."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 10,
+            "target_slug": "dette-semantique-ontologies",
+            "synthesis": "Le transcodage COMP-3 en Decimal exact supprime les erreurs d'arrondi IEEE 754 sur les montants et ratios réglementaires."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 15,
+            "target_slug": "execution-durable-temporal",
+            "synthesis": "La reprise durable des moteurs d'exécution (Temporal/Restate) devant les systèmes d'enregistrement dépend des clés d'idempotence portées par la couche anticorruption."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 21,
+            "target_slug": "confidentialite-materielle-tee-hyok",
+            "synthesis": "Le séquestre externe de clés HYOK et les enclaves matérielles TEE matérialisent la maîtrise juridictionnelle des six substrats d'état."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "bsif-e-23",
+            "synthesis": "Le cadre BSIF E-23 et les contrôles SOX imposent des tests de parité, la traçabilité des écritures patrimoniales et une révision rigoureuse des cellules CUA sur les Systems of Record."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "efvp-transfert-hors-quebec",
+            "synthesis": "Les articles 3.3 et 17 de la Loi 25 imposent de cartographier et de qualifier chacun des six substrats d'état au regard des lois extraterritoriales."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 29,
+            "target_slug": "fil-rouge-groupe-boreal-bel",
+            "synthesis": "Les quatre flux de bout en bout du blueprint Boréalis/IBM (crédit, Lynx, C-15, FHIR) s'appuient sur les médiateurs patrimoniaux ACE/CP4I sans duplication."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "trajectoire-90j-18m-p1-p3",
+            "synthesis": "La trajectoire cadencée planifie la mise sous bail des CUA au Palier 1 (INI-015), puis leur extinction intégrale au Palier 2 (POR-008)."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Chapitres 1, 34 et 45 — Médiation ESB/EDI, cœurs bancaires et intégration sans duplication, L308–L10425"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Section 5 Architecture de référence (EXIG-ARC-14..18) et Section 6 (EXIG-MCP-06), L1244–L1936"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Chapitres 25, 28 et 46 — Intégration patrimoine COMP-3/CUA, OT Purdue/OPC UA et Edge CRDT, L12983–L24812"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Chapitres M-9, M-10 et M-20 — Six substrats (PRI-011, CAP-032) et extinction CUA, L1604–L4346"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Chapitres 4 §4.4 et 9 §9.2 — Couche anticorruption COMP-3/CUA, OT et six substrats, L656–L1322"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Chapitre 15 — Coexistence BPMN 2.0 / iPaaS / RPA et Strangler Fig en 4 stades, L4669–L4805"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,3597 @@
+{
+  "manifest_version": "1.0.0",
+  "project_id": "COMPENDIUM-ENTREPRISE-AGENTIQUE-2027",
+  "title": "Compendium de l'entreprise agentique",
+  "subtitle": "Traité unifié d'architecture, de gouvernance et d'homologation vérifiable des Systèmes d'agentivité (non-avis)",
+  "author_credit": "André-Guy Bruneau, M.Sc IT",
+  "edition_year": 2027,
+  "freeze_date": "2026-12-02",
+  "language": "fr-CA",
+  "license_mode": {
+    "text_and_figures": "CC-BY-4.0",
+    "code_and_scripts": "MIT",
+    "commercial_override": false
+  },
+  "production_mode": {
+    "drafting": "100%_agentic",
+    "quality_assurance": "100%_agentic",
+    "human_role": "upstream_specs_and_gate_thresholds_only"
+  },
+  "word_budget": {
+    "total_target": 180000,
+    "tolerance_pct": 8,
+    "total_min": 165600,
+    "total_max": 194400,
+    "narrative_target": 165000,
+    "annexes_target": 15000,
+    "max_tables_per_chapter": 3,
+    "max_bullet_line_ratio": 0.25,
+    "max_verbatim_ngram_vs_corpus": 11
+  },
+  "part_titles": {
+    "I": "Partie I — D01 : Rupture épistémique, limites probabilistes et économie cognitive des Systèmes d'agentivité",
+    "II": "Partie II — D02 : Architecture d'entreprise hybride 80/20, autonomie graduée L0–L4 et noyau de contrôle possédé",
+    "III": "Partie III — D03 : Tissu conjonctif protocolaire, découverte fédérée et prévention du verrouillage SaaS",
+    "IV": "Partie IV — D04 : Gouvernance sémantique, mémoire CoALA à quatre tiroirs et encapsulation patrimoniale ACL/OT",
+    "V": "Partie V — D05 : Orchestration sobre OO1–OO4, chorégraphie événementielle et exécution durable Saga",
+    "VI": "Partie VI — D06 : Identités non humaines (NHI), délégation OBO atténuée, PKI 47 jours et transition post-quantique",
+    "VII": "Partie VII — D07 : Défense hors modèle, politiques OPA/Rego, Règle de deux et confinement déterministe",
+    "VIII": "Partie VIII — D08 : Observabilité probatoire, bancs EvalOps hermétiques et pilotage FinOps au résultat conforme",
+    "IX": "Partie IX — D09 : Conformité juridique et prudentielle multi-juridictions (QC, CA, UE, int.) et réversibilité contractuelle",
+    "X": "Partie X — D10 : Architectures sectorielles réglementées, trois blueprints C01–C40 et usine logicielle GitOps",
+    "XI": "Partie XI — D11 : Prospective 2028–2035, trajectoires adaptatives DAPP, gouvernance AE/AS et capital humain",
+    "XII": "Partie XII — D12 : Homologation vérifiable, trousse exécutable du Tome 8, concordance inter-tomes et chaîne Wyvern G0–G5"
+  },
+  "deliverables": {
+    "md": "../../../Compendium/Compendium.md",
+    "pdf": "../../../Compendium/Compendium.pdf",
+    "image_prefix": "../Sources/Compendium/ouvrage/schemas/rendus",
+    "pdf_title": "Compendium de l'entreprise agentique",
+    "pdf_collection": "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · COMPENDIUM"
+  },
+  "g3_seeds": {
+    "pass1": 20270901,
+    "pass2": 20270902
+  },
+  "forbidden_prose_regexes": [
+    "\\[S\\]",
+    "\\[D\\]",
+    "\\[A\\]",
+    "\\[M\\]",
+    "\\[N\\]",
+    "\\[L\\+\\]",
+    "Dans un monde en constante évolution",
+    "À l'ère du numérique",
+    "Il convient de souligner que",
+    "Force est de constater que",
+    "changement de paradigme révolutionnaire",
+    "synergie holistique",
+    "En conclusion, nous avons vu que"
+  ],
+  "internal_corpus_paths": [
+    "../../../Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+    "../../../Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+    "../../../Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+    "../../../Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+    "../../../Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+    "../../../Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+    "../../../Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+    "../../../Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md"
+  ],
+  "stylistic_benchmarks_for_gauntlet": [
+    "../prd.md"
+  ],
+  "stylistic_benchmark_sections": {
+    "../prd.md": [
+      "1",
+      "2",
+      "5"
+    ]
+  },
+  "units": [
+    {
+      "id": "00-liminaire",
+      "kind": "frontmatter",
+      "file": "manuscrit/00 - Liminaire.md",
+      "title": "Liminaire — Sommaire exécutif global, doctrine hybride 80/20, concordance inter-tomes et Panorama visuel directeur",
+      "target_words": 4000,
+      "min_words": 3680,
+      "max_words": 4320,
+      "figures": [
+        "SCH-00-01",
+        "SCH-00-02",
+        "SCH-00-03",
+        "SCH-00-04"
+      ],
+      "families": [],
+      "themes": [],
+      "owned_concepts": [
+        "liminaire_doctrine_80_20_et_lusser",
+        "liminaire_topologie_12_domaines_616_interrelations",
+        "liminaire_gouvernance_duale_ae_as_kpi_slo",
+        "liminaire_cadre_reglementaire_2023_2035_non_avis",
+        "liminaire_concordance_div02_disc_01_05",
+        "liminaire_panorama_visuel_sch_00_01_04"
+      ]
+    },
+    {
+      "id": "ch01",
+      "kind": "chapter",
+      "part": "I",
+      "domain_id": "D01",
+      "subdomain_id": "SUB_D01_01",
+      "file": "manuscrit/01 - Partie I/Chapitre 01.md",
+      "title": "Chapitre 01 — Rupture épistémique, Systèmes d'agentivité et fondements des acteurs autonomes",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-01-01",
+        "SCH-01-02",
+        "SCH-01-03"
+      ],
+      "families": [
+        "FAM_D01_01_01",
+        "FAM_D01_01_02"
+      ],
+      "themes": [
+        "THM_systems-of-agency",
+        "THM_echanges-intentions-contrats-probabilistes",
+        "THM_rupture-modele-conversationnel-agent-boucle",
+        "THM_etat-des-lieux-adoption-map-2027",
+        "THM_taxonomie-acteurs-agentiques",
+        "THM_hierarchie-preuves-etudes-cas",
+        "THM_raisonnement-inference-limites-planification",
+        "THM_revue-litterature-mlr-prisma"
+      ],
+      "owned_concepts": [
+        "systems-of-agency",
+        "echanges-intentions-contrats-probabilistes",
+        "rupture-modele-conversationnel-agent-boucle",
+        "etat-des-lieux-adoption-map-2027",
+        "taxonomie-acteurs-agentiques",
+        "hierarchie-preuves-etudes-cas",
+        "raisonnement-inference-limites-planification",
+        "revue-litterature-mlr-prisma"
+      ]
+    },
+    {
+      "id": "ch02",
+      "kind": "chapter",
+      "part": "I",
+      "domain_id": "D01",
+      "subdomain_id": "SUB_D01_02",
+      "file": "manuscrit/01 - Partie I/Chapitre 02.md",
+      "title": "Chapitre 02 — Fiabilité probabiliste, loi de Lusser, erreurs silencieuses et constance pass^k",
+      "target_words": 3860,
+      "min_words": 3552,
+      "max_words": 4168,
+      "figures": [
+        "SCH-02-01",
+        "SCH-02-02",
+        "SCH-02-03"
+      ],
+      "families": [
+        "FAM_D01_02_01",
+        "FAM_D01_02_02"
+      ],
+      "themes": [
+        "THM_erreurs-silencieuses-cascade",
+        "THM_loi-de-lusser",
+        "THM_surcout-multi-agent-debat-mast",
+        "THM_constance-pass-k"
+      ],
+      "owned_concepts": [
+        "erreurs-silencieuses-cascade",
+        "loi-de-lusser",
+        "surcout-multi-agent-debat-mast",
+        "constance-pass-k"
+      ]
+    },
+    {
+      "id": "ch03",
+      "kind": "chapter",
+      "part": "I",
+      "domain_id": "D01",
+      "subdomain_id": "SUB_D01_03",
+      "file": "manuscrit/01 - Partie I/Chapitre 03.md",
+      "title": "Chapitre 03 — Économie cognitive de Coase, matrices de portefeuille et quadruple dette agentique",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-03-01",
+        "SCH-03-02",
+        "SCH-03-03"
+      ],
+      "families": [
+        "FAM_D01_03_01",
+        "FAM_D01_03_02"
+      ],
+      "themes": [
+        "THM_dette-cognitive-vs-technique",
+        "THM_marche-ia-agentique-dispersion",
+        "THM_economie-industrialisation-cognitive",
+        "THM_economie-jetons-routage-slm",
+        "THM_couts-transaction-coase",
+        "THM_quadruple-dette-agentique",
+        "THM_cout-non-interop-dette-integration",
+        "THM_genealogie-eai-soa-fipa-llm"
+      ],
+      "owned_concepts": [
+        "dette-cognitive-vs-technique",
+        "marche-ia-agentique-dispersion",
+        "economie-industrialisation-cognitive",
+        "economie-jetons-routage-slm",
+        "couts-transaction-coase",
+        "quadruple-dette-agentique",
+        "cout-non-interop-dette-integration",
+        "genealogie-eai-soa-fipa-llm"
+      ]
+    },
+    {
+      "id": "ch04",
+      "kind": "chapter",
+      "part": "II",
+      "domain_id": "D02",
+      "subdomain_id": "SUB_D02_01",
+      "file": "manuscrit/02 - Partie II/Chapitre 04.md",
+      "title": "Chapitre 04 — Partition hybride 80/20, harnais déterministe à huit étapes et usine logicielle",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-04-01",
+        "SCH-04-02",
+        "SCH-04-03"
+      ],
+      "families": [
+        "FAM_D02_01_01",
+        "FAM_D02_01_02"
+      ],
+      "themes": [
+        "THM_partition-hybride-80-20",
+        "THM_harnais-deterministe-8-etapes",
+        "THM_usine-logicielle-agentic-sdlc",
+        "THM_patrons-boucle-mono-agent-codeact",
+        "THM_separation-controleur-executeur-determinisme",
+        "THM_validation-json-schema-ambigu-escalade",
+        "THM_pont-reglementation-frames-deterministes"
+      ],
+      "owned_concepts": [
+        "partition-hybride-80-20",
+        "harnais-deterministe-8-etapes",
+        "usine-logicielle-agentic-sdlc",
+        "patrons-boucle-mono-agent-codeact",
+        "separation-controleur-executeur-determinisme",
+        "validation-json-schema-ambigu-escalade",
+        "pont-reglementation-frames-deterministes"
+      ]
+    },
+    {
+      "id": "ch05",
+      "kind": "chapter",
+      "part": "II",
+      "domain_id": "D02",
+      "subdomain_id": "SUB_D02_02",
+      "file": "manuscrit/02 - Partie II/Chapitre 05.md",
+      "title": "Chapitre 05 — Échelle d'autonomie unifiée N0–N4/L0–L4, règle du maillon et supervision anti-complaisance",
+      "target_words": 3860,
+      "min_words": 3552,
+      "max_words": 4168,
+      "figures": [
+        "SCH-05-01",
+        "SCH-05-02",
+        "SCH-05-03"
+      ],
+      "families": [
+        "FAM_D02_02_01",
+        "FAM_D02_02_02"
+      ],
+      "themes": [
+        "THM_echelle-autonomie-l0-l4",
+        "THM_regle-maillon-plus-eleve",
+        "THM_supervision-hitl-hotl-abstention",
+        "THM_distinction-agent-flux-ambiant"
+      ],
+      "owned_concepts": [
+        "echelle-autonomie-l0-l4",
+        "regle-maillon-plus-eleve",
+        "supervision-hitl-hotl-abstention",
+        "distinction-agent-flux-ambiant"
+      ]
+    },
+    {
+      "id": "ch06",
+      "kind": "chapter",
+      "part": "II",
+      "domain_id": "D02",
+      "subdomain_id": "SUB_D02_03",
+      "file": "manuscrit/02 - Partie II/Chapitre 06.md",
+      "title": "Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP) et douze décisions neutres",
+      "target_words": 5380,
+      "min_words": 4950,
+      "max_words": 5810,
+      "figures": [
+        "SCH-06-01",
+        "SCH-06-02",
+        "SCH-06-03",
+        "SCH-06-04"
+      ],
+      "families": [
+        "FAM_D02_03_01",
+        "FAM_D02_03_02"
+      ],
+      "themes": [
+        "THM_noyau-controle-possede-cap",
+        "THM_cadre-togaf-archimate-4-plans",
+        "THM_catalogue-31-adr-12-dec",
+        "THM_clauses-sortie-portabilite-interchangeabilite",
+        "THM_decisions-architecture-adr-001-031",
+        "THM_grille-evaluation-maturite-n1-n5",
+        "THM_architecture-reference-6-couches-2-piliers",
+        "THM_principes-architecture-pri-001-015",
+        "THM_architecture-outils-fiables-erreurs-actionnables",
+        "THM_douze-principes-directeurs-prin",
+        "THM_criteres-qos-cout-precision-latence",
+        "THM_architecture-reference-six-couches-pc1-pc5"
+      ],
+      "owned_concepts": [
+        "noyau-controle-possede-cap",
+        "cadre-togaf-archimate-4-plans",
+        "catalogue-31-adr-12-dec",
+        "clauses-sortie-portabilite-interchangeabilite",
+        "decisions-architecture-adr-001-031",
+        "grille-evaluation-maturite-n1-n5",
+        "architecture-reference-6-couches-2-piliers",
+        "principes-architecture-pri-001-015",
+        "architecture-outils-fiables-erreurs-actionnables",
+        "douze-principes-directeurs-prin",
+        "criteres-qos-cout-precision-latence",
+        "architecture-reference-six-couches-pc1-pc5"
+      ]
+    },
+    {
+      "id": "ch07",
+      "kind": "chapter",
+      "part": "III",
+      "domain_id": "D03",
+      "subdomain_id": "SUB_D03_01",
+      "file": "manuscrit/03 - Partie III/Chapitre 07.md",
+      "title": "Chapitre 07 — Protocoles verticaux outil-modèle : épinglage MCP 2026-07-28, façades d'intention et intégrité SHA-256",
+      "target_words": 4240,
+      "min_words": 3901,
+      "max_words": 4579,
+      "figures": [
+        "SCH-07-01",
+        "SCH-07-02",
+        "SCH-07-03"
+      ],
+      "families": [
+        "FAM_D03_01_01",
+        "FAM_D03_01_02"
+      ],
+      "themes": [
+        "THM_protocole-mcp",
+        "THM_web-agentique-webmcp-webbotauth",
+        "THM_facades-mcp-intention-metier",
+        "THM_adaptateur-mcp-streamable-http-sep-3398",
+        "THM_ergonomie-aci-anti-swagger",
+        "THM_epinglage-schemas-mcp"
+      ],
+      "owned_concepts": [
+        "protocole-mcp",
+        "web-agentique-webmcp-webbotauth",
+        "facades-mcp-intention-metier",
+        "adaptateur-mcp-streamable-http-sep-3398",
+        "ergonomie-aci-anti-swagger",
+        "epinglage-schemas-mcp"
+      ]
+    },
+    {
+      "id": "ch08",
+      "kind": "chapter",
+      "part": "III",
+      "domain_id": "D03",
+      "subdomain_id": "SUB_D03_02",
+      "file": "manuscrit/03 - Partie III/Chapitre 08.md",
+      "title": "Chapitre 08 — Protocoles horizontaux pair-à-pair : A2A v1.0.1, pile AGNTCY/SLIM, paiements AP2 et fédération B2B",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-08-01",
+        "SCH-08-02",
+        "SCH-08-03"
+      ],
+      "families": [
+        "FAM_D03_02_01",
+        "FAM_D03_02_02"
+      ],
+      "themes": [
+        "THM_protocole-a2a",
+        "THM_protocole-ap2",
+        "THM_protocole-anp-did-wba",
+        "THM_protocoles-interfaces-agui-a2ui-webrtc",
+        "THM_fusion-acp-collision-terminologique",
+        "THM_rails-paiement-commerce-agentique",
+        "THM_agntcy-slim",
+        "THM_maillage-b2b-federe-edc-odrl"
+      ],
+      "owned_concepts": [
+        "protocole-a2a",
+        "protocole-ap2",
+        "protocole-anp-did-wba",
+        "protocoles-interfaces-agui-a2ui-webrtc",
+        "fusion-acp-collision-terminologique",
+        "rails-paiement-commerce-agentique",
+        "agntcy-slim",
+        "maillage-b2b-federe-edc-odrl"
+      ]
+    },
+    {
+      "id": "ch09",
+      "kind": "chapter",
+      "part": "III",
+      "domain_id": "D03",
+      "subdomain_id": "SUB_D03_03",
+      "file": "manuscrit/03 - Partie III/Chapitre 09.md",
+      "title": "Chapitre 09 — Passerelles PEP à neuf contrôles, découverte gouvernée, routage d'inférence et anti-verrouillage",
+      "target_words": 5190,
+      "min_words": 4775,
+      "max_words": 5605,
+      "figures": [
+        "SCH-09-01",
+        "SCH-09-02",
+        "SCH-09-03",
+        "SCH-09-04"
+      ],
+      "families": [
+        "FAM_D03_03_01",
+        "FAM_D03_03_02"
+      ],
+      "themes": [
+        "THM_agent-card-decouverte",
+        "THM_contrats-interfaces-catalogue-entreprise",
+        "THM_contrats-api-versionnement-conformite",
+        "THM_plan-donnees-inference-kv-cache",
+        "THM_routage-cognitif-hybride-3-paliers",
+        "THM_anti-verrouillage-standards",
+        "THM_passerelle-mcp-ai-gateway",
+        "THM_cadre-eif-4-couches",
+        "THM_metriques-soutien-vs-production",
+        "THM_maillage-agentique-trois-acceptions",
+        "THM_matrice-protocoles-exigences-reglementaires"
+      ],
+      "owned_concepts": [
+        "agent-card-decouverte",
+        "contrats-interfaces-catalogue-entreprise",
+        "contrats-api-versionnement-conformite",
+        "plan-donnees-inference-kv-cache",
+        "routage-cognitif-hybride-3-paliers",
+        "anti-verrouillage-standards",
+        "passerelle-mcp-ai-gateway",
+        "cadre-eif-4-couches",
+        "metriques-soutien-vs-production",
+        "maillage-agentique-trois-acceptions",
+        "matrice-protocoles-exigences-reglementaires"
+      ]
+    },
+    {
+      "id": "ch10",
+      "kind": "chapter",
+      "part": "IV",
+      "domain_id": "D04",
+      "subdomain_id": "SUB_D04_01",
+      "file": "manuscrit/04 - Partie IV/Chapitre 10.md",
+      "title": "Chapitre 10 — Sémantique métier, ontologies financières, contrats de données ODCS et compilation du contexte",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-10-01",
+        "SCH-10-02",
+        "SCH-10-03"
+      ],
+      "families": [
+        "FAM_D04_01_01",
+        "FAM_D04_01_02"
+      ],
+      "themes": [
+        "THM_dette-semantique-ontologies",
+        "THM_contrats-donnees-write-audit-publish",
+        "THM_donnees-pretes-agents-odcs-openlineage",
+        "THM_ecart-accord-protocolaire-comprehension",
+        "THM_formats-echange-registres-schemas",
+        "THM_iso-20022-lynx-rtr",
+        "THM_rag-agentique-contexte"
+      ],
+      "owned_concepts": [
+        "dette-semantique-ontologies",
+        "contrats-donnees-write-audit-publish",
+        "donnees-pretes-agents-odcs-openlineage",
+        "ecart-accord-protocolaire-comprehension",
+        "formats-echange-registres-schemas",
+        "iso-20022-lynx-rtr",
+        "rag-agentique-contexte"
+      ]
+    },
+    {
+      "id": "ch11",
+      "kind": "chapter",
+      "part": "IV",
+      "domain_id": "D04",
+      "subdomain_id": "SUB_D04_02",
+      "file": "manuscrit/04 - Partie IV/Chapitre 11.md",
+      "title": "Chapitre 11 — Mémoire CoALA à quatre compartiments isolés, bi-temporalité auditable et filtrage ACL pré-récupération",
+      "target_words": 4050,
+      "min_words": 3726,
+      "max_words": 4374,
+      "figures": [
+        "SCH-11-01",
+        "SCH-11-02",
+        "SCH-11-03"
+      ],
+      "families": [
+        "FAM_D04_02_01",
+        "FAM_D04_02_02"
+      ],
+      "themes": [
+        "THM_memoire-coala-4-tiroirs",
+        "THM_memoire-partagee-concurrence-effacement",
+        "THM_memoire-bi-temporelle-et-purge",
+        "THM_propagation-acl-memoire-silo",
+        "THM_gouvernance-acces-rag-ancrage"
+      ],
+      "owned_concepts": [
+        "memoire-coala-4-tiroirs",
+        "memoire-partagee-concurrence-effacement",
+        "memoire-bi-temporelle-et-purge",
+        "propagation-acl-memoire-silo",
+        "gouvernance-acces-rag-ancrage"
+      ]
+    },
+    {
+      "id": "ch12",
+      "kind": "chapter",
+      "part": "IV",
+      "domain_id": "D04",
+      "subdomain_id": "SUB_D04_03",
+      "file": "manuscrit/04 - Partie IV/Chapitre 12.md",
+      "title": "Chapitre 12 — Encapsulation patrimoniale déterministe (EBCDIC/COMP-3), extinction CUA, sas OT et six substrats d'état",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-12-01",
+        "SCH-12-02",
+        "SCH-12-03"
+      ],
+      "families": [
+        "FAM_D04_03_01",
+        "FAM_D04_03_02"
+      ],
+      "themes": [
+        "THM_couche-anti-corruption-acl",
+        "THM_encapsulation-patrimoine-it-ot",
+        "THM_confinement-cua-patrimoine-sans-api",
+        "THM_mediation-b2b-esb-traducteurs",
+        "THM_coexistence-bpm-ipaas-rpa",
+        "THM_six-substrats-etat-souverainete",
+        "THM_synchronisation-edge-crdt"
+      ],
+      "owned_concepts": [
+        "couche-anti-corruption-acl",
+        "encapsulation-patrimoine-it-ot",
+        "confinement-cua-patrimoine-sans-api",
+        "mediation-b2b-esb-traducteurs",
+        "coexistence-bpm-ipaas-rpa",
+        "six-substrats-etat-souverainete",
+        "synchronisation-edge-crdt"
+      ]
+    },
+    {
+      "id": "ch13",
+      "kind": "chapter",
+      "part": "V",
+      "domain_id": "D05",
+      "subdomain_id": "SUB_D05_01",
+      "file": "manuscrit/05 - Partie V/Chapitre 13.md",
+      "title": "Chapitre 13 — Sobriété d'orchestration OO1–OO4, catalogue fermé des topologies et maîtrise des défaillances MAST",
+      "target_words": 5000,
+      "min_words": 4600,
+      "max_words": 5400,
+      "figures": [
+        "SCH-13-01",
+        "SCH-13-02",
+        "SCH-13-03"
+      ],
+      "families": [
+        "FAM_D05_01_01",
+        "FAM_D05_01_02"
+      ],
+      "themes": [
+        "THM_arbre-sobriete-oo1-oo4",
+        "THM_enveloppes-bpmn-cas-routine",
+        "THM_paradigme-apm-autonomie-encadree",
+        "THM_topologies-patrons-orchestration",
+        "THM_cadriciels-orchestration-portabilite",
+        "THM_negociation-b2b-diplomate-evaluateur",
+        "THM_fiabilite-coordination-taxonomie-mast",
+        "THM_modes-echecs-emergents-frontiere",
+        "THM_contexte-minimal-delegation-interagents",
+        "THM_frameworks-orchestration-entreprise"
+      ],
+      "owned_concepts": [
+        "arbre-sobriete-oo1-oo4",
+        "enveloppes-bpmn-cas-routine",
+        "paradigme-apm-autonomie-encadree",
+        "topologies-patrons-orchestration",
+        "cadriciels-orchestration-portabilite",
+        "negociation-b2b-diplomate-evaluateur",
+        "fiabilite-coordination-taxonomie-mast",
+        "modes-echecs-emergents-frontiere",
+        "contexte-minimal-delegation-interagents",
+        "frameworks-orchestration-entreprise"
+      ]
+    },
+    {
+      "id": "ch14",
+      "kind": "chapter",
+      "part": "V",
+      "domain_id": "D05",
+      "subdomain_id": "SUB_D05_02",
+      "file": "manuscrit/05 - Partie V/Chapitre 14.md",
+      "title": "Chapitre 14 — Chorégraphie Event Mesh sur CloudEvents/AsyncAPI, contrôle des boucles et passerelle vers l'IA physique",
+      "target_words": 3670,
+      "min_words": 3377,
+      "max_words": 3963,
+      "figures": [
+        "SCH-14-01",
+        "SCH-14-02",
+        "SCH-14-03"
+      ],
+      "families": [
+        "FAM_D05_02_01",
+        "FAM_D05_02_02"
+      ],
+      "themes": [
+        "THM_choregraphie-event-mesh",
+        "THM_pathologies-reactives-backpressure",
+        "THM_pont-ia-physique-ros2-simplex"
+      ],
+      "owned_concepts": [
+        "choregraphie-event-mesh",
+        "pathologies-reactives-backpressure",
+        "pont-ia-physique-ros2-simplex"
+      ]
+    },
+    {
+      "id": "ch15",
+      "kind": "chapter",
+      "part": "V",
+      "domain_id": "D05",
+      "subdomain_id": "SUB_D05_03",
+      "file": "manuscrit/05 - Partie V/Chapitre 15.md",
+      "title": "Chapitre 15 — Exécution durable hors processus, idempotence JCS, sémantique d'effet et sagas à canal isolé",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-15-01",
+        "SCH-15-02",
+        "SCH-15-03"
+      ],
+      "families": [
+        "FAM_D05_03_01",
+        "FAM_D05_03_02"
+      ],
+      "themes": [
+        "THM_execution-durable-temporal",
+        "THM_resilience-orchestration-repli-plafonds",
+        "THM_protocoles-ressources-physiques-lap",
+        "THM_saga-compensatoire",
+        "THM_canal-compensation-isole-outbox",
+        "THM_saga-dix-scenarios-fautes",
+        "THM_semantique-effet-idempotence-uetr"
+      ],
+      "owned_concepts": [
+        "execution-durable-temporal",
+        "resilience-orchestration-repli-plafonds",
+        "protocoles-ressources-physiques-lap",
+        "saga-compensatoire",
+        "canal-compensation-isole-outbox",
+        "saga-dix-scenarios-fautes",
+        "semantique-effet-idempotence-uetr"
+      ]
+    },
+    {
+      "id": "ch16",
+      "kind": "chapter",
+      "part": "VI",
+      "domain_id": "D06",
+      "subdomain_id": "SUB_D06_01",
+      "file": "manuscrit/06 - Partie VI/Chapitre 16.md",
+      "title": "Chapitre 16 — Identités non humaines parrainées, attestations SPIFFE/SPIRE et fondations d'identité décentralisée",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-16-01",
+        "SCH-16-02",
+        "SCH-16-03"
+      ],
+      "families": [
+        "FAM_D06_01_01",
+        "FAM_D06_01_02"
+      ],
+      "themes": [
+        "THM_identite-non-humaine-nhi",
+        "THM_grille-cinq-questions-identite",
+        "THM_annuaires-commerciaux-risque-standard-de-fait",
+        "THM_socle-iam-federe-oauth-fapi",
+        "THM_registres-gouvernes-trois-modeles",
+        "THM_did-vc-passeport-agent",
+        "THM_spiffe-spire-attestation",
+        "THM_signature-agent-card-ancrage"
+      ],
+      "owned_concepts": [
+        "identite-non-humaine-nhi",
+        "grille-cinq-questions-identite",
+        "annuaires-commerciaux-risque-standard-de-fait",
+        "socle-iam-federe-oauth-fapi",
+        "registres-gouvernes-trois-modeles",
+        "did-vc-passeport-agent",
+        "spiffe-spire-attestation",
+        "signature-agent-card-ancrage"
+      ]
+    },
+    {
+      "id": "ch17",
+      "kind": "chapter",
+      "part": "VI",
+      "domain_id": "D06",
+      "subdomain_id": "SUB_D06_02",
+      "file": "manuscrit/06 - Partie VI/Chapitre 17.md",
+      "title": "Chapitre 17 — Chaîne de mandat OBO à deux sauts, approbation cryptographique CIBA, KYA tiers et asymétrie de révocation",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-17-01",
+        "SCH-17-02",
+        "SCH-17-03"
+      ],
+      "families": [
+        "FAM_D06_02_01",
+        "FAM_D06_02_02"
+      ],
+      "themes": [
+        "THM_delegation-obo-deux-sauts",
+        "THM_requetes-riches-rar-txn-tokens",
+        "THM_liaison-jetons-dpop-mtls",
+        "THM_profil-oauth-9700-et-liaison-expediteur",
+        "THM_approbation-ciba",
+        "THM_kya-verification-agent-tiers",
+        "THM_inventaire-revocation-asymetrie"
+      ],
+      "owned_concepts": [
+        "delegation-obo-deux-sauts",
+        "requetes-riches-rar-txn-tokens",
+        "liaison-jetons-dpop-mtls",
+        "profil-oauth-9700-et-liaison-expediteur",
+        "approbation-ciba",
+        "kya-verification-agent-tiers",
+        "inventaire-revocation-asymetrie"
+      ]
+    },
+    {
+      "id": "ch18",
+      "kind": "chapter",
+      "part": "VI",
+      "domain_id": "D06",
+      "subdomain_id": "SUB_D06_03",
+      "file": "manuscrit/06 - Partie VI/Chapitre 18.md",
+      "title": "Chapitre 18 — Agilité cryptographique, cycles TLS à 47 jours et transition post-quantique ML-DSA/SLH-DSA",
+      "target_words": 3860,
+      "min_words": 3552,
+      "max_words": 4168,
+      "figures": [
+        "SCH-18-01",
+        "SCH-18-02",
+        "SCH-18-03"
+      ],
+      "families": [
+        "FAM_D06_03_01",
+        "FAM_D06_03_02"
+      ],
+      "themes": [
+        "THM_certificats-tls-47-jours",
+        "THM_post-quantique-ml-dsa-slh-dsa",
+        "THM_crypto-agilite-migration-pqc",
+        "THM_saturation-http-431-ml-dsa-kid"
+      ],
+      "owned_concepts": [
+        "certificats-tls-47-jours",
+        "post-quantique-ml-dsa-slh-dsa",
+        "crypto-agilite-migration-pqc",
+        "saturation-http-431-ml-dsa-kid"
+      ]
+    },
+    {
+      "id": "ch19",
+      "kind": "chapter",
+      "part": "VII",
+      "domain_id": "D07",
+      "subdomain_id": "SUB_D07_01",
+      "file": "manuscrit/07 - Partie VII/Chapitre 19.md",
+      "title": "Chapitre 19 — Surface d'attaque protocolaire, menaces OWASP ASI01–10 et chaîne logistique d'outils",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-19-01",
+        "SCH-19-02",
+        "SCH-19-03"
+      ],
+      "families": [
+        "FAM_D07_01_01",
+        "FAM_D07_01_02"
+      ],
+      "themes": [
+        "THM_injection-indirecte-prompt",
+        "THM_tool-poisoning-rug-pull",
+        "THM_non-compositionnalite-surete-surface-attaques",
+        "THM_chaine-approvisionnement-agent-skills",
+        "THM_taxonomie-attaques-identite-mandataire-confus",
+        "THM_taxonomie-owasp-asi-mcp-maestro",
+        "THM_red-teaming-continu-empoisonnement-memoire"
+      ],
+      "owned_concepts": [
+        "injection-indirecte-prompt",
+        "tool-poisoning-rug-pull",
+        "non-compositionnalite-surete-surface-attaques",
+        "chaine-approvisionnement-agent-skills",
+        "taxonomie-attaques-identite-mandataire-confus",
+        "taxonomie-owasp-asi-mcp-maestro",
+        "red-teaming-continu-empoisonnement-memoire"
+      ]
+    },
+    {
+      "id": "ch20",
+      "kind": "chapter",
+      "part": "VII",
+      "domain_id": "D07",
+      "subdomain_id": "SUB_D07_02",
+      "file": "manuscrit/07 - Partie VII/Chapitre 20.md",
+      "title": "Chapitre 20 — Politiques hors modèle OPA/Rego/Cedar, Règle de deux et séparation contrôle/données CaMeL",
+      "target_words": 4810,
+      "min_words": 4426,
+      "max_words": 5194,
+      "figures": [
+        "SCH-20-01",
+        "SCH-20-02",
+        "SCH-20-03"
+      ],
+      "families": [
+        "FAM_D07_02_01",
+        "FAM_D07_02_02"
+      ],
+      "themes": [
+        "THM_politiques-opa-rego-hors-modele",
+        "THM_echec-ferme-opa-default-deny",
+        "THM_controle-surete-stamp-stpa",
+        "THM_maillage-agents-pep-pdp-zero-trust",
+        "THM_regle-de-deux-opa",
+        "THM_separation-controle-donnees-camel",
+        "THM_sre-autonome-rayon-impact-cedar",
+        "THM_defense-hors-modele-camel-confinement",
+        "THM_alignement-deceptif-red-teaming-adversarial"
+      ],
+      "owned_concepts": [
+        "politiques-opa-rego-hors-modele",
+        "echec-ferme-opa-default-deny",
+        "controle-surete-stamp-stpa",
+        "maillage-agents-pep-pdp-zero-trust",
+        "regle-de-deux-opa",
+        "separation-controle-donnees-camel",
+        "sre-autonome-rayon-impact-cedar",
+        "defense-hors-modele-camel-confinement",
+        "alignement-deceptif-red-teaming-adversarial"
+      ]
+    },
+    {
+      "id": "ch21",
+      "kind": "chapter",
+      "part": "VII",
+      "domain_id": "D07",
+      "subdomain_id": "SUB_D07_03",
+      "file": "manuscrit/07 - Partie VII/Chapitre 21.md",
+      "title": "Chapitre 21 — Confinement éphémère (SHADI/microVM/WASI), enclaves TEE/HYOK et coupe-circuit SOC/SOAR",
+      "target_words": 3860,
+      "min_words": 3552,
+      "max_words": 4168,
+      "figures": [
+        "SCH-21-01",
+        "SCH-21-02",
+        "SCH-21-03"
+      ],
+      "families": [
+        "FAM_D07_03_01",
+        "FAM_D07_03_02"
+      ],
+      "themes": [
+        "THM_confinement-shadi-sandbox",
+        "THM_confidentialite-materielle-tee-hyok",
+        "THM_confinement-opensandbox-firecracker-wasi",
+        "THM_soc-soar-coupe-circuit"
+      ],
+      "owned_concepts": [
+        "confinement-shadi-sandbox",
+        "confidentialite-materielle-tee-hyok",
+        "confinement-opensandbox-firecracker-wasi",
+        "soc-soar-coupe-circuit"
+      ]
+    },
+    {
+      "id": "ch22",
+      "kind": "chapter",
+      "part": "VIII",
+      "domain_id": "D08",
+      "subdomain_id": "SUB_D08_01",
+      "file": "manuscrit/08 - Partie VIII/Chapitre 22.md",
+      "title": "Chapitre 22 — Observabilité OpenTelemetry GenAI, double couloir PII et scellage probatoire JCS/SCITT + SLH-DSA",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-22-01",
+        "SCH-22-02",
+        "SCH-22-03"
+      ],
+      "families": [
+        "FAM_D08_01_01",
+        "FAM_D08_01_02"
+      ],
+      "themes": [
+        "THM_observabilite-otel-genai",
+        "THM_provenance-artefacts-aibom-5-horloges",
+        "THM_double-couloir-probatoire-pii",
+        "THM_scellage-jcs-scitt",
+        "THM_caviardage-pii-rp-bilingue",
+        "THM_canonisation-deterministe-jcs",
+        "THM_canonicalisation-jcs-rfc8785",
+        "THM_journalisation-probatoire-audit"
+      ],
+      "owned_concepts": [
+        "observabilite-otel-genai",
+        "provenance-artefacts-aibom-5-horloges",
+        "double-couloir-probatoire-pii",
+        "scellage-jcs-scitt",
+        "caviardage-pii-rp-bilingue",
+        "canonisation-deterministe-jcs",
+        "canonicalisation-jcs-rfc8785",
+        "journalisation-probatoire-audit"
+      ]
+    },
+    {
+      "id": "ch23",
+      "kind": "chapter",
+      "part": "VIII",
+      "domain_id": "D08",
+      "subdomain_id": "SUB_D08_02",
+      "file": "manuscrit/08 - Partie VIII/Chapitre 23.md",
+      "title": "Chapitre 23 — Banc EvalOps hermétique (E1–E3), bornes de Wilson, tests métamorphiques FR/EN et distillation contrôlée",
+      "target_words": 4430,
+      "min_words": 4076,
+      "max_words": 4784,
+      "figures": [
+        "SCH-23-01",
+        "SCH-23-02",
+        "SCH-23-03"
+      ],
+      "families": [
+        "FAM_D08_02_01",
+        "FAM_D08_02_02"
+      ],
+      "themes": [
+        "THM_banc-evalops-hermetique",
+        "THM_evaluation-agentique-bancs-capacite",
+        "THM_dimensionnement-wilson-evalops",
+        "THM_volant-distillation-dspy-multilora",
+        "THM_tests-metamorphiques-fr-en-sans-oracle",
+        "THM_evaluation-continue-derives",
+        "THM_modele-comme-juge-biais-calibration"
+      ],
+      "owned_concepts": [
+        "banc-evalops-hermetique",
+        "evaluation-agentique-bancs-capacite",
+        "dimensionnement-wilson-evalops",
+        "volant-distillation-dspy-multilora",
+        "tests-metamorphiques-fr-en-sans-oracle",
+        "evaluation-continue-derives",
+        "modele-comme-juge-biais-calibration"
+      ]
+    },
+    {
+      "id": "ch24",
+      "kind": "chapter",
+      "part": "VIII",
+      "domain_id": "D08",
+      "subdomain_id": "SUB_D08_03",
+      "file": "manuscrit/08 - Partie VIII/Chapitre 24.md",
+      "title": "Chapitre 24 — SRE agentique, FinOps FOCUS v1.4 au Cost-per-Outcome, routage frugal et comptabilité carbone",
+      "target_words": 4050,
+      "min_words": 3726,
+      "max_words": 4374,
+      "figures": [
+        "SCH-24-01",
+        "SCH-24-02",
+        "SCH-24-03"
+      ],
+      "families": [
+        "FAM_D08_03_01",
+        "FAM_D08_03_02"
+      ],
+      "themes": [
+        "THM_finops-focus-cpo",
+        "THM_plan-inference-routage-carbone",
+        "THM_comptabilite-carbone-cap-046-bsif-b15",
+        "THM_cycle-vie-operationnel-derives-gitops",
+        "THM_indicateurs-agentops-horizon-tache"
+      ],
+      "owned_concepts": [
+        "finops-focus-cpo",
+        "plan-inference-routage-carbone",
+        "comptabilite-carbone-cap-046-bsif-b15",
+        "cycle-vie-operationnel-derives-gitops",
+        "indicateurs-agentops-horizon-tache"
+      ]
+    },
+    {
+      "id": "ch25",
+      "kind": "chapter",
+      "part": "IX",
+      "domain_id": "D09",
+      "subdomain_id": "SUB_D09_01",
+      "file": "manuscrit/09 - Partie IX/Chapitre 25.md",
+      "title": "Chapitre 25 — Droit québécois et cadre prudentiel financier canadien",
+      "target_words": 5000,
+      "min_words": 4600,
+      "max_words": 5400,
+      "figures": [
+        "SCH-25-01",
+        "SCH-25-02",
+        "SCH-25-03"
+      ],
+      "families": [
+        "FAM_D09_01_01",
+        "FAM_D09_01_02"
+      ],
+      "themes": [
+        "THM_loi-25-article-12-1",
+        "THM_ligne-directrice-amf",
+        "THM_droit-effacement-portabilite-loi-25",
+        "THM_efvp-transfert-hors-quebec",
+        "THM_bsif-e-23",
+        "THM_avis-acvm-11-348",
+        "THM_gouvernance-interne-registre-trois-lignes",
+        "THM_services-bancaires-consommateurs-c15",
+        "THM_feuille-route-1er-mai-2027",
+        "THM_vide-federal-ia-c27-c36"
+      ],
+      "owned_concepts": [
+        "loi-25-article-12-1",
+        "ligne-directrice-amf",
+        "droit-effacement-portabilite-loi-25",
+        "efvp-transfert-hors-quebec",
+        "bsif-e-23",
+        "avis-acvm-11-348",
+        "gouvernance-interne-registre-trois-lignes",
+        "services-bancaires-consommateurs-c15",
+        "feuille-route-1er-mai-2027",
+        "vide-federal-ia-c27-c36"
+      ]
+    },
+    {
+      "id": "ch26",
+      "kind": "chapter",
+      "part": "IX",
+      "domain_id": "D09",
+      "subdomain_id": "SUB_D09_02",
+      "file": "manuscrit/09 - Partie IX/Chapitre 26.md",
+      "title": "Chapitre 26 — Réglementation européenne et référentiels internationaux",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-26-01",
+        "SCH-26-02",
+        "SCH-26-03"
+      ],
+      "families": [
+        "FAM_D09_02_01",
+        "FAM_D09_02_02"
+      ],
+      "themes": [
+        "THM_eu-ai-act",
+        "THM_systeme-qualite-en-18286-dora-cra",
+        "THM_maillage-reglementaire-international",
+        "THM_iso-iec-42001-nist",
+        "THM_souverainete-espaces-donnees-tee-hyok",
+        "THM_cadres-internationaux-imda-aica-g7",
+        "THM_classes-risque-agents-et-plafonds",
+        "THM_incidents-agentiques-et-notification-multiregime"
+      ],
+      "owned_concepts": [
+        "eu-ai-act",
+        "systeme-qualite-en-18286-dora-cra",
+        "maillage-reglementaire-international",
+        "iso-iec-42001-nist",
+        "souverainete-espaces-donnees-tee-hyok",
+        "cadres-internationaux-imda-aica-g7",
+        "classes-risque-agents-et-plafonds",
+        "incidents-agentiques-et-notification-multiregime"
+      ]
+    },
+    {
+      "id": "ch27",
+      "kind": "chapter",
+      "part": "IX",
+      "domain_id": "D09",
+      "subdomain_id": "SUB_D09_03",
+      "file": "manuscrit/09 - Partie IX/Chapitre 27.md",
+      "title": "Chapitre 27 — Approvisionnement réversible et clauses contractuelles",
+      "target_words": 4050,
+      "min_words": 3726,
+      "max_words": 4374,
+      "figures": [
+        "SCH-27-01",
+        "SCH-27-02",
+        "SCH-27-03"
+      ],
+      "families": [
+        "FAM_D09_03_01",
+        "FAM_D09_03_02"
+      ],
+      "themes": [
+        "THM_approvisionnement-reversible-contrats",
+        "THM_clauses-reversibilite-cloud-souverain",
+        "THM_clauses-contractuelles-normatives-app",
+        "THM_responsabilite-mandat-contrats-b2b",
+        "THM_criteres-evaluation-fournisseurs-grille"
+      ],
+      "owned_concepts": [
+        "approvisionnement-reversible-contrats",
+        "clauses-reversibilite-cloud-souverain",
+        "clauses-contractuelles-normatives-app",
+        "responsabilite-mandat-contrats-b2b",
+        "criteres-evaluation-fournisseurs-grille"
+      ]
+    },
+    {
+      "id": "ch28",
+      "kind": "chapter",
+      "part": "X",
+      "domain_id": "D10",
+      "subdomain_id": "SUB_D10_01",
+      "file": "manuscrit/10 - Partie X/Chapitre 28.md",
+      "title": "Chapitre 28 — Cinq profils financiers réglementés et 24 propositions PEX",
+      "target_words": 5000,
+      "min_words": 4600,
+      "max_words": 5400,
+      "figures": [
+        "SCH-28-01",
+        "SCH-28-02",
+        "SCH-28-03"
+      ],
+      "families": [
+        "FAM_D10_01_01",
+        "FAM_D10_01_02"
+      ],
+      "themes": [
+        "THM_profils-financiers-5-secteurs",
+        "THM_profil-assurance-dommages-m17",
+        "THM_profil-assurance-personnes-m16",
+        "THM_profil-banque-m14",
+        "THM_profil-gestion-patrimoine-m15",
+        "THM_profil-groupe-diversifie-m18",
+        "THM_eclats-sectoriels-extrapoles",
+        "THM_vertical-financier-durci",
+        "THM_tampon-deterministe-rtr-iso20022",
+        "THM_production-agentique-canadienne-2025-2026"
+      ],
+      "owned_concepts": [
+        "profils-financiers-5-secteurs",
+        "profil-assurance-dommages-m17",
+        "profil-assurance-personnes-m16",
+        "profil-banque-m14",
+        "profil-gestion-patrimoine-m15",
+        "profil-groupe-diversifie-m18",
+        "eclats-sectoriels-extrapoles",
+        "vertical-financier-durci",
+        "tampon-deterministe-rtr-iso20022",
+        "production-agentique-canadienne-2025-2026"
+      ]
+    },
+    {
+      "id": "ch29",
+      "kind": "chapter",
+      "part": "X",
+      "domain_id": "D10",
+      "subdomain_id": "SUB_D10_02",
+      "file": "manuscrit/10 - Partie X/Chapitre 29.md",
+      "title": "Chapitre 29 — Trois blueprints de référence et cas Groupe Boréal (BEL)",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-29-01",
+        "SCH-29-02",
+        "SCH-29-03"
+      ],
+      "families": [
+        "FAM_D10_02_01",
+        "FAM_D10_02_02"
+      ],
+      "themes": [
+        "THM_blueprints-reference-multisectoriels",
+        "THM_blueprint-1-assistant-sor",
+        "THM_blueprint-2-enclave-rag-acl",
+        "THM_blueprint-3-maillage-b2b",
+        "THM_fil-rouge-groupe-boreal-bel",
+        "THM_federation-multi-plateformes-gravite",
+        "THM_reprise-sinistre-cognitif-continuite",
+        "THM_reseaux-b2b-federes-p3"
+      ],
+      "owned_concepts": [
+        "blueprints-reference-multisectoriels",
+        "blueprint-1-assistant-sor",
+        "blueprint-2-enclave-rag-acl",
+        "blueprint-3-maillage-b2b",
+        "fil-rouge-groupe-boreal-bel",
+        "federation-multi-plateformes-gravite",
+        "reprise-sinistre-cognitif-continuite",
+        "reseaux-b2b-federes-p3"
+      ]
+    },
+    {
+      "id": "ch30",
+      "kind": "chapter",
+      "part": "X",
+      "domain_id": "D10",
+      "subdomain_id": "SUB_D10_03",
+      "file": "manuscrit/10 - Partie X/Chapitre 30.md",
+      "title": "Chapitre 30 — Usine logicielle GitOps et anti-patrons agentiques",
+      "target_words": 4240,
+      "min_words": 3901,
+      "max_words": 4579,
+      "figures": [
+        "SCH-30-01",
+        "SCH-30-02",
+        "SCH-30-03"
+      ],
+      "families": [
+        "FAM_D10_03_01",
+        "FAM_D10_03_02"
+      ],
+      "themes": [
+        "THM_plateformes-saas-et-asymetrie-tiers",
+        "THM_fabrique-agents-certification-reemission",
+        "THM_passage-echelle-parc-agents",
+        "THM_plateforme-iap-gitops-cognitif",
+        "THM_anti-patrons-agentiques",
+        "THM_modele-maturite-feuille-360j"
+      ],
+      "owned_concepts": [
+        "plateformes-saas-et-asymetrie-tiers",
+        "fabrique-agents-certification-reemission",
+        "passage-echelle-parc-agents",
+        "plateforme-iap-gitops-cognitif",
+        "anti-patrons-agentiques",
+        "modele-maturite-feuille-360j"
+      ]
+    },
+    {
+      "id": "ch31",
+      "kind": "chapter",
+      "part": "XI",
+      "domain_id": "D11",
+      "subdomain_id": "SUB_D11_01",
+      "file": "manuscrit/11 - Partie XI/Chapitre 31.md",
+      "title": "Chapitre 31 — Prospective stratégique 2027–2035, trajectoires adaptatives DAPP et portes d'homologation",
+      "target_words": 5190,
+      "min_words": 4775,
+      "max_words": 5605,
+      "figures": [
+        "SCH-31-01",
+        "SCH-31-02",
+        "SCH-31-03"
+      ],
+      "families": [
+        "FAM_D11_01_01",
+        "FAM_D11_01_02"
+      ],
+      "themes": [
+        "THM_trajectoires-adaptatives-dapp",
+        "THM_vingt-sept-signaux-veille-sig",
+        "THM_quinze-portes-homologation-por",
+        "THM_trajectoire-90j-18m-p1-p3",
+        "THM_feuille-de-route-phases-90-jours-indicateurs",
+        "THM_trajectoire-consolidation-standards-2027-2028",
+        "THM_priorites-90-jours-gouvernance",
+        "THM_tri-prospectif-peremption-feuilles-route",
+        "THM_frontiere-capacites-metr-veille",
+        "THM_modele-maturite-5-niveaux-dimensions",
+        "THM_horizon-2027-2032-tri-prospectif"
+      ],
+      "owned_concepts": [
+        "trajectoires-adaptatives-dapp",
+        "vingt-sept-signaux-veille-sig",
+        "quinze-portes-homologation-por",
+        "trajectoire-90j-18m-p1-p3",
+        "feuille-de-route-phases-90-jours-indicateurs",
+        "trajectoire-consolidation-standards-2027-2028",
+        "priorites-90-jours-gouvernance",
+        "tri-prospectif-peremption-feuilles-route",
+        "frontiere-capacites-metr-veille",
+        "modele-maturite-5-niveaux-dimensions",
+        "horizon-2027-2032-tri-prospectif"
+      ]
+    },
+    {
+      "id": "ch32",
+      "kind": "chapter",
+      "part": "XI",
+      "domain_id": "D11",
+      "subdomain_id": "SUB_D11_02",
+      "file": "manuscrit/11 - Partie XI/Chapitre 32.md",
+      "title": "Chapitre 32 — Gouvernance duale AE ↔ AS, modèle en étoile à trois lignes, cycle de vie et sept pièges endogènes",
+      "target_words": 4620,
+      "min_words": 4251,
+      "max_words": 4989,
+      "figures": [
+        "SCH-32-01",
+        "SCH-32-02",
+        "SCH-32-03"
+      ],
+      "families": [
+        "FAM_D11_02_01",
+        "FAM_D11_02_02"
+      ],
+      "themes": [
+        "THM_gouvernance-duale-ae-as",
+        "THM_modele-operationnel-hub-and-spoke",
+        "THM_dix-theses-t1-t10-tome-5",
+        "THM_gouvernance-raci-modele-en-etoile",
+        "THM_regime-derogations-et-transition-cohorte",
+        "THM_registre-agents-cycle-de-vie-et-attestations",
+        "THM_pieges-gouvernance",
+        "THM_responsabilite-litiges-commerce-agentique"
+      ],
+      "owned_concepts": [
+        "gouvernance-duale-ae-as",
+        "modele-operationnel-hub-and-spoke",
+        "dix-theses-t1-t10-tome-5",
+        "gouvernance-raci-modele-en-etoile",
+        "regime-derogations-et-transition-cohorte",
+        "registre-agents-cycle-de-vie-et-attestations",
+        "pieges-gouvernance",
+        "responsabilite-litiges-commerce-agentique"
+      ]
+    },
+    {
+      "id": "ch33",
+      "kind": "chapter",
+      "part": "XI",
+      "domain_id": "D11",
+      "subdomain_id": "SUB_D11_03",
+      "file": "manuscrit/11 - Partie XI/Chapitre 33.md",
+      "title": "Chapitre 33 — Préservation du capital humain, parade à l'approbation réflexe et maintien du repli manuel",
+      "target_words": 3670,
+      "min_words": 3377,
+      "max_words": 3963,
+      "figures": [
+        "SCH-33-01",
+        "SCH-33-02",
+        "SCH-33-03"
+      ],
+      "families": [
+        "FAM_D11_03_01"
+      ],
+      "themes": [
+        "THM_atrophie-competences-humaines",
+        "THM_sanctuarisation-vivier-junior-reprise",
+        "THM_approbation-reflexe-biais-automatisation"
+      ],
+      "owned_concepts": [
+        "atrophie-competences-humaines",
+        "sanctuarisation-vivier-junior-reprise",
+        "approbation-reflexe-biais-automatisation"
+      ]
+    },
+    {
+      "id": "ch34",
+      "kind": "chapter",
+      "part": "XII",
+      "domain_id": "D12",
+      "subdomain_id": "SUB_D12_01",
+      "file": "manuscrit/12 - Partie XII/Chapitre 34.md",
+      "title": "Chapitre 34 — Référentiel d'homologation unifié : 305 exigences CRE-IA-2026-01, interdits GOV-17 et grille PRR-75",
+      "target_words": 4240,
+      "min_words": 3901,
+      "max_words": 4579,
+      "figures": [
+        "SCH-34-01",
+        "SCH-34-02",
+        "SCH-34-03"
+      ],
+      "families": [
+        "FAM_D12_01_01",
+        "FAM_D12_01_02"
+      ],
+      "themes": [
+        "THM_exigences-cre-ia-305",
+        "THM_dix-interdictions-exig-gov-17",
+        "THM_portee-et-force-normative-cre-ia",
+        "THM_homologation-prr-75-points",
+        "THM_referentiel-annexes-protocoles-chronologie",
+        "THM_grille-homologation-et-fiche-agent"
+      ],
+      "owned_concepts": [
+        "exigences-cre-ia-305",
+        "dix-interdictions-exig-gov-17",
+        "portee-et-force-normative-cre-ia",
+        "homologation-prr-75-points",
+        "referentiel-annexes-protocoles-chronologie",
+        "grille-homologation-et-fiche-agent"
+      ]
+    },
+    {
+      "id": "ch35",
+      "kind": "chapter",
+      "part": "XII",
+      "domain_id": "D12",
+      "subdomain_id": "SUB_D12_02",
+      "file": "manuscrit/12 - Partie XII/Chapitre 35.md",
+      "title": "Chapitre 35 — Trousse exécutable (Python/OPA), 5 SBB du Tableau 12, vecteurs tiers et calibration FEDS/EMA",
+      "target_words": 4050,
+      "min_words": 3726,
+      "max_words": 4374,
+      "figures": [
+        "SCH-35-01",
+        "SCH-35-02",
+        "SCH-35-03"
+      ],
+      "families": [
+        "FAM_D12_02_01",
+        "FAM_D12_02_02"
+      ],
+      "themes": [
+        "THM_barriere-logicielle-g0-execute-g0",
+        "THM_trousse-executable-tome-8",
+        "THM_cinq-blocs-sbb-tableau-12",
+        "THM_calibration-feds-ema",
+        "THM_contrats-types-executes-ci-annexe-c"
+      ],
+      "owned_concepts": [
+        "barriere-logicielle-g0-execute-g0",
+        "trousse-executable-tome-8",
+        "cinq-blocs-sbb-tableau-12",
+        "calibration-feds-ema",
+        "contrats-types-executes-ci-annexe-c"
+      ]
+    },
+    {
+      "id": "ch36",
+      "kind": "chapter",
+      "part": "XII",
+      "domain_id": "D12",
+      "subdomain_id": "SUB_D12_03",
+      "file": "manuscrit/12 - Partie XII/Chapitre 36.md",
+      "title": "Chapitre 36 — Concordance inter-tomes (DIV-02, DISC-01 à DISC-05), régime probatoire Wyvern G0–G5 et clause non-avis",
+      "target_words": 5760,
+      "min_words": 5300,
+      "max_words": 6220,
+      "figures": [
+        "SCH-36-01",
+        "SCH-36-02",
+        "SCH-36-03",
+        "SCH-36-04"
+      ],
+      "families": [
+        "FAM_D12_03_01",
+        "FAM_D12_03_02"
+      ],
+      "themes": [
+        "THM_concordance-inter-tomes-div02",
+        "THM_architecture-collection-tome-1-preambule",
+        "THM_reconciliation-inter-volumes-tome1",
+        "THM_cinq-discordances-inter-volumes-tome-8",
+        "THM_glossaire-normatif-tome-2",
+        "THM_clause-non-avis-licences",
+        "THM_protocole-wyvern-g0-g5",
+        "THM_regime-preuve-trois-degres-absence",
+        "THM_gabarit-typst-edition-4542-pages",
+        "THM_protocole-probatoire-l-plus-statut-f",
+        "THM_audit-validation-sources-121-449",
+        "THM_actualisation-novembre-2026-unification-v1-2",
+        "THM_peremption-revalidation-annexe-n",
+        "THM_registre-sources-tracees-annexe-b"
+      ],
+      "owned_concepts": [
+        "concordance-inter-tomes-div02",
+        "architecture-collection-tome-1-preambule",
+        "reconciliation-inter-volumes-tome1",
+        "cinq-discordances-inter-volumes-tome-8",
+        "glossaire-normatif-tome-2",
+        "clause-non-avis-licences",
+        "protocole-wyvern-g0-g5",
+        "regime-preuve-trois-degres-absence",
+        "gabarit-typst-edition-4542-pages",
+        "protocole-probatoire-l-plus-statut-f",
+        "audit-validation-sources-121-449",
+        "actualisation-novembre-2026-unification-v1-2",
+        "peremption-revalidation-annexe-n",
+        "registre-sources-tracees-annexe-b"
+      ]
+    },
+    {
+      "id": "annexe-a",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/13 - Annexes/Annexe A - Tracabilite MindMap et socle probatoire.md",
+      "title": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes)",
+      "target_words": 3000,
+      "min_words": 2760,
+      "max_words": 3240,
+      "figures": []
+    },
+    {
+      "id": "annexe-b",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/13 - Annexes/Annexe B - Cartographie des 616 interrelations et arbitrages.md",
+      "title": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages",
+      "target_words": 2500,
+      "min_words": 2300,
+      "max_words": 2700,
+      "figures": []
+    },
+    {
+      "id": "annexe-c",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/13 - Annexes/Annexe C - Reconciliations inter-tomes et calendrier 2023-2035.md",
+      "title": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035",
+      "target_words": 3000,
+      "min_words": 2760,
+      "max_words": 3240,
+      "figures": []
+    },
+    {
+      "id": "annexe-d",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/13 - Annexes/Annexe D - Homologation G0-G5 et matrice EXIG-PRR-C40.md",
+      "title": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis",
+      "target_words": 3000,
+      "min_words": 2760,
+      "max_words": 3240,
+      "figures": []
+    },
+    {
+      "id": "annexe-e",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/13 - Annexes/Annexe E - Catalogue des 115 schemas et 319 figures.md",
+      "title": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus",
+      "target_words": 3500,
+      "min_words": 3220,
+      "max_words": 3780,
+      "figures": []
+    }
+  ],
+  "unit_category_prior": {
+    "00-liminaire": "spec_technique",
+    "ch01": "empirique",
+    "ch02": "empirique",
+    "ch03": "empirique",
+    "ch04": "spec_technique",
+    "ch05": "spec_technique",
+    "ch06": "spec_technique",
+    "ch07": "spec_technique",
+    "ch08": "spec_technique",
+    "ch09": "spec_technique",
+    "ch10": "spec_technique",
+    "ch11": "spec_technique",
+    "ch12": "spec_technique",
+    "ch13": "spec_technique",
+    "ch14": "spec_technique",
+    "ch15": "spec_technique",
+    "ch16": "spec_technique",
+    "ch17": "spec_technique",
+    "ch18": "spec_technique",
+    "ch19": "assertions_g0",
+    "ch20": "assertions_g0",
+    "ch21": "assertions_g0",
+    "ch22": "empirique",
+    "ch23": "empirique",
+    "ch24": "empirique",
+    "ch25": "juridique",
+    "ch26": "juridique",
+    "ch27": "juridique",
+    "ch28": "juridique",
+    "ch29": "juridique",
+    "ch30": "juridique",
+    "ch31": "juridique",
+    "ch32": "juridique",
+    "ch33": "juridique",
+    "ch34": "assertions_g0",
+    "ch35": "assertions_g0",
+    "ch36": "assertions_g0"
+  },
+  "vigilance_matchers": [
+    {
+      "id": "vig_mcp_sep_a2a",
+      "label": "Évolution MCP (SEP-3398 / SEP-2596) et A2A v1.1.0-rc / 1.0.0.alpha3",
+      "pattern": "(?:sep-3398|sep-2596|1\\.0\\.0\\.alpha3|v1\\.1\\.0-rc)"
+    },
+    {
+      "id": "vig_otel_genai",
+      "label": "Mappage OTel v1.41.0 <-> semantic-conventions-genai (85 attributs, cache_write)",
+      "pattern": "(?=.*v1\\.41\\.0)(?:.*semantic-conventions-genai|.*cache_write|.*85)"
+    },
+    {
+      "id": "vig_rfc9964_tx_tokens",
+      "label": "RFC 9964 (ML-DSA) vs Transaction Tokens -11 (HTTP 431 O(sauts) vs O(1))",
+      "pattern": "(?:rfc\\s*9964|transaction\\s+tokens?|http\\s*431)"
+    },
+    {
+      "id": "vig_wilson_3p",
+      "label": "Dimensionnement EXIG-EVA-03 (Wilson 95 % < p, >= 3/p essais indépendants)",
+      "pattern": "(?:exig-eva-03|wilson|3/p)"
+    },
+    {
+      "id": "vig_statut_f_src055",
+      "label": "Exclusions statut F (403 / payant) vs substituts L+ et OWASP SRC-055",
+      "pattern": "(?:src-055|lq-2021-c25|genai\\.owasp\\.org|lautorite\\.qc\\.ca|statut\\s+f)"
+    },
+    {
+      "id": "vig_aibom_rfc9334_c5c6",
+      "label": "Non-doublon AIBOM (Tableau 47.3), statut RFC 9334 Informational et reprise C.5/C.6",
+      "pattern": "(?:rfc\\s*9334|cyclonedx|aibom|tableau\\s*47\\.3|\\bc\\.5\\b|\\bc\\.6\\b)"
+    },
+    {
+      "id": "vig_opa_default_deny",
+      "label": "Parade OPA / Rego à l'évaluation indéfinie (default allow := false, couverture 100 %)",
+      "pattern": "(?:default\\s+allow\\s*:=\\s*false|ind[eé]finie?.*rego|opa\\s+test.*100\\s*%)"
+    }
+  ],
+  "synced_excerpts_catalog": [
+    {
+      "id": "G0-EX-CH01-01",
+      "unit": "ch04",
+      "source_path": "schemas/harness_extraction.schema.json",
+      "max_lines": 24,
+      "is_full_file": true,
+      "description": "Schéma Draft 2020-12 strict: true avec porte AMBIGU_ESCALADE"
+    },
+    {
+      "id": "G0-EX-CH01-02",
+      "unit": "ch04",
+      "source_path": "harness_proto/pipeline.py",
+      "max_lines": 32,
+      "is_full_file": false,
+      "description": "Boucle 8 étapes de DeterministicHarness.run et validation sémantique"
+    },
+    {
+      "id": "G0-EX-CH01-03",
+      "unit": "ch07",
+      "source_path": "harness_proto/mcp_pinning.py",
+      "max_lines": 34,
+      "is_full_file": false,
+      "description": "Épinglage JCS SHA-256 tools/list et rejet HeaderMismatch (-32020)"
+    },
+    {
+      "id": "G0-EX-CH01-04",
+      "unit": "ch08",
+      "source_path": "harness_proto/a2a_card.py",
+      "max_lines": 28,
+      "is_full_file": false,
+      "description": "Vérification JWS + JCS sur AgentCard et épinglage jku/kid"
+    },
+    {
+      "id": "G0-EX-CH02-01",
+      "unit": "ch17",
+      "source_path": "authz_pqc_audit/obo_dpop.py",
+      "max_lines": 30,
+      "is_full_file": false,
+      "description": "Validation OBO <= 2 sauts, rejet passthrough et liaison DPoP"
+    },
+    {
+      "id": "G0-EX-CH02-02",
+      "unit": "ch17",
+      "source_path": "authz_pqc_audit/ciba_approval.py",
+      "max_lines": 24,
+      "is_full_file": false,
+      "description": "Calcul exact h = SHA-256(JCS(...)) sur payload I-JSON (C.6)"
+    },
+    {
+      "id": "G0-EX-CH02-03",
+      "unit": "ch18",
+      "source_path": "authz_pqc_audit/pqc_http431.py",
+      "max_lines": 30,
+      "is_full_file": false,
+      "description": "Mesure exacte en octets ML-DSA-65/87 (O(sauts) vs Transaction Token O(1))"
+    },
+    {
+      "id": "G0-EX-CH02-04",
+      "unit": "ch22",
+      "source_path": "authz_pqc_audit/otel_pii_mapper.py",
+      "max_lines": 32,
+      "is_full_file": false,
+      "description": "Mappage OTel v1.41.0 <-> genai_dev (cache_write) et liste fermée PII"
+    },
+    {
+      "id": "G0-EX-CH03-01",
+      "unit": "ch20",
+      "source_path": "policies_opa/rule_of_two.rego",
+      "max_lines": 28,
+      "is_full_file": false,
+      "description": "Politique Rego Règle de deux (default allow := false, EXIG-SEC-06)"
+    },
+    {
+      "id": "G0-EX-CH03-02",
+      "unit": "ch20",
+      "source_path": "policies_opa/camel_taint.rego",
+      "max_lines": 24,
+      "is_full_file": false,
+      "description": "Propagation d'étiquettes de contamination CaMeL inter-agents"
+    },
+    {
+      "id": "G0-EX-CH03-03",
+      "unit": "ch15",
+      "source_path": "policy_saga/saga_orchestrator.py",
+      "max_lines": 34,
+      "is_full_file": false,
+      "description": "Dérivation idem-v1, Outbox et CompensationChannel isolé (EXIG-ORC-28)"
+    },
+    {
+      "id": "G0-EX-CH04-01",
+      "unit": "ch35",
+      "source_path": "evalops_prr/wilson_bounds.py",
+      "max_lines": 28,
+      "is_full_file": false,
+      "description": "Borne supérieure de Wilson à 95 % < p exigeant >= 3/p essais indépendants"
+    },
+    {
+      "id": "G0-EX-CH04-02",
+      "unit": "ch23",
+      "source_path": "evalops_prr/metamorphic.py",
+      "max_lines": 26,
+      "is_full_file": false,
+      "description": "Vérificateur de relations métamorphiques sans oracle (FR/EN)"
+    },
+    {
+      "id": "G0-EX-CH04-03",
+      "unit": "ch34",
+      "source_path": "schemas/adr_2027_b001.schema.json",
+      "max_lines": 32,
+      "is_full_file": true,
+      "description": "Schéma Draft 2020-12 strict: true de la fiche ADR bloquante 2027-B001"
+    }
+  ],
+  "figures": [
+    {
+      "id": "SCH-00-01",
+      "unit": "00-liminaire",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Architecture de l'entreprise agentique : exosquelette déterministe à 80 % encadrant 20 % de cognition probabiliste",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "systems-of-agency",
+        "partition-hybride-80-20",
+        "architecture-reference-6-couches-2-piliers",
+        "noyau-controle-possede-cap",
+        "harnais-deterministe-8-etapes"
+      ]
+    },
+    {
+      "id": "SCH-00-02",
+      "unit": "00-liminaire",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Chaîne de confiance protocolaire et juridique de bout en bout (MCP, A2A, OBO, OPA et conformité)",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "protocole-mcp",
+        "protocole-a2a",
+        "identite-non-humaine-nhi",
+        "delegation-obo-deux-sauts",
+        "politiques-opa-rego-hors-modele",
+        "bsif-e-23",
+        "loi-25-article-12-1",
+        "eu-ai-act"
+      ]
+    },
+    {
+      "id": "SCH-00-03",
+      "unit": "00-liminaire",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Trajectoire adaptative 2026–2035 et paliers d'autonomie L0–L4 sous gouvernance duale AE ↔ AS",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "echelle-autonomie-l0-l4",
+        "trajectoires-adaptatives-dapp",
+        "quinze-portes-homologation-por",
+        "vingt-sept-signaux-veille-sig",
+        "gouvernance-duale-ae-as",
+        "crypto-agilite-migration-pqc",
+        "sanctuarisation-vivier-junior-reprise"
+      ]
+    },
+    {
+      "id": "SCH-00-04",
+      "unit": "00-liminaire",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Équation économique FinOps (CPO / FOCUS v1.4) et chaîne d'homologation vérifiable G0–G5 (CRE-IA × PRR-75)",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "loi-de-lusser",
+        "constance-pass-k",
+        "finops-focus-cpo",
+        "banc-evalops-hermetique",
+        "dimensionnement-wilson-evalops",
+        "exigences-cre-ia-305",
+        "homologation-prr-75-points",
+        "protocole-wyvern-g0-g5"
+      ]
+    },
+    {
+      "id": "SCH-01-01",
+      "unit": "ch01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Du copilote passif à la boucle System of Action : cinq paliers d'autonomie de trajectoire et cinq archétypes sans super-agent",
+      "families_covered": [
+        "FAM_D01_01_01"
+      ],
+      "themes_vulgarized": [
+        "rupture-modele-conversationnel-agent-boucle",
+        "systems-of-agency",
+        "taxonomie-acteurs-agentiques"
+      ]
+    },
+    {
+      "id": "SCH-01-02",
+      "unit": "ch01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP 2027 et passage aux engagements observables",
+      "families_covered": [
+        "FAM_D01_01_01"
+      ],
+      "themes_vulgarized": [
+        "etat-des-lieux-adoption-map-2027",
+        "echanges-intentions-contrats-probabilistes",
+        "systems-of-agency"
+      ]
+    },
+    {
+      "id": "SCH-01-03",
+      "unit": "ch01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Tamiser la preuve : pyramide à six niveaux, filtre PRISMA-ScR W3.2 et vérificateur externe LLM-Modulo",
+      "families_covered": [
+        "FAM_D01_01_02"
+      ],
+      "themes_vulgarized": [
+        "hierarchie-preuves-etudes-cas",
+        "raisonnement-inference-limites-planification",
+        "revue-litterature-mlr-prisma"
+      ]
+    },
+    {
+      "id": "SCH-02-01",
+      "unit": "ch02",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Loi de Lusser et piège du HTTP 200 OK : pourquoi 94 % de précision par étape chute à 53,9 % sur dix pas",
+      "families_covered": [
+        "FAM_D01_02_01"
+      ],
+      "themes_vulgarized": [
+        "loi-de-lusser",
+        "erreurs-silencieuses-cascade"
+      ]
+    },
+    {
+      "id": "SCH-02-02",
+      "unit": "ch02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Autopsie des 14 pannes MAST (1 642 traces) et arbitrage : agent unique continu par rapport au collectif à 15× le coût",
+      "families_covered": [
+        "FAM_D01_02_01"
+      ],
+      "themes_vulgarized": [
+        "surcout-multi-agent-debat-mast",
+        "erreurs-silencieuses-cascade"
+      ]
+    },
+    {
+      "id": "SCH-02-03",
+      "unit": "ch02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "De l'essai ponctuel (`pass@1`) à la constance industrielle (`pass^k` ≥ 0,95 et borne de Wilson à 95 %)",
+      "families_covered": [
+        "FAM_D01_02_02"
+      ],
+      "themes_vulgarized": [
+        "constance-pass-k"
+      ]
+    },
+    {
+      "id": "SCH-03-01",
+      "unit": "ch03",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Économie coasienne, piège des jardins clos SaaS et arbre à cinq portes Acheter / Assembler / Construire",
+      "families_covered": [
+        "FAM_D01_03_01"
+      ],
+      "themes_vulgarized": [
+        "couts-transaction-coase",
+        "economie-industrialisation-cognitive",
+        "marche-ia-agentique-dispersion"
+      ]
+    },
+    {
+      "id": "SCH-03-02",
+      "unit": "ch03",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Engrenage de la quadruple dette agentique, preuve `[N]/[M]/[É]/[S]` et économie des jetons SLM/LLM",
+      "families_covered": [
+        "FAM_D01_03_01",
+        "FAM_D01_03_02"
+      ],
+      "themes_vulgarized": [
+        "dette-cognitive-vs-technique",
+        "quadruple-dette-agentique",
+        "economie-jetons-routage-slm"
+      ]
+    },
+    {
+      "id": "SCH-03-03",
+      "unit": "ch03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "De vingt connecteurs fragiles (`N×M`) à neuf contrats ouverts (`N+M`) : vingt ans d'intégration et l'invariant à quatre termes",
+      "families_covered": [
+        "FAM_D01_03_02"
+      ],
+      "themes_vulgarized": [
+        "cout-non-interop-dette-integration",
+        "genealogie-eai-soa-fipa-llm"
+      ]
+    },
+    {
+      "id": "SCH-04-01",
+      "unit": "ch04",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte `AMBIGU_ESCALADE`",
+      "families_covered": [
+        "FAM_D02_01_01",
+        "FAM_D02_01_02"
+      ],
+      "themes_vulgarized": [
+        "partition-hybride-80-20",
+        "harnais-deterministe-8-etapes",
+        "validation-json-schema-ambigu-escalade"
+      ]
+    },
+    {
+      "id": "SCH-04-02",
+      "unit": "ch04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Traduction réglementaire (Tableau 29.1), test à trois conditions et choix de boucle ReAct / ReWOO / CodeAct",
+      "families_covered": [
+        "FAM_D02_01_01",
+        "FAM_D02_01_02"
+      ],
+      "themes_vulgarized": [
+        "patrons-boucle-mono-agent-codeact",
+        "separation-controleur-executeur-determinisme",
+        "pont-reglementation-frames-deterministes"
+      ]
+    },
+    {
+      "id": "SCH-04-03",
+      "unit": "ch04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Usine logicielle agentique (AST/SCIP), muraille Oracle–Bâtisseur et bascule RPG/COBOL en Shadow Mirroring",
+      "families_covered": [
+        "FAM_D02_01_01"
+      ],
+      "themes_vulgarized": [
+        "usine-logicielle-agentic-sdlc"
+      ]
+    },
+    {
+      "id": "SCH-05-01",
+      "unit": "ch05",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`",
+      "families_covered": [
+        "FAM_D02_02_01"
+      ],
+      "themes_vulgarized": [
+        "echelle-autonomie-l0-l4"
+      ]
+    },
+    {
+      "id": "SCH-05-02",
+      "unit": "ch05",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Règle du maillon le plus élevé (`High-Water Mark`) et règle d'or `≤ N2` dans un graphe multi-agents",
+      "families_covered": [
+        "FAM_D02_02_01"
+      ],
+      "themes_vulgarized": [
+        "regle-maillon-plus-eleve"
+      ]
+    },
+    {
+      "id": "SCH-05-03",
+      "unit": "ch05",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Prévenir la validation réflexe à 93 % (ASI09) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25",
+      "families_covered": [
+        "FAM_D02_02_02"
+      ],
+      "themes_vulgarized": [
+        "distinction-agent-flux-ambiant",
+        "supervision-hitl-hotl-abstention"
+      ]
+    },
+    {
+      "id": "SCH-06-01",
+      "unit": "ch06",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`",
+      "families_covered": [
+        "FAM_D02_03_01",
+        "FAM_D02_03_02"
+      ],
+      "themes_vulgarized": [
+        "cadre-togaf-archimate-4-plans",
+        "architecture-reference-6-couches-2-piliers",
+        "architecture-reference-six-couches-pc1-pc5"
+      ]
+    },
+    {
+      "id": "SCH-06-02",
+      "unit": "ch06",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Posséder son noyau (42 capacités invariantes par rapport à 10 sur signal), gravité des données et neuf clauses de sortie",
+      "families_covered": [
+        "FAM_D02_03_01"
+      ],
+      "themes_vulgarized": [
+        "noyau-controle-possede-cap",
+        "clauses-sortie-portabilite-interchangeabilite"
+      ]
+    },
+    {
+      "id": "SCH-06-03",
+      "unit": "ch06",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit",
+      "families_covered": [
+        "FAM_D02_03_01",
+        "FAM_D02_03_02"
+      ],
+      "themes_vulgarized": [
+        "catalogue-31-adr-12-dec",
+        "decisions-architecture-adr-001-031",
+        "douze-principes-directeurs-prin",
+        "principes-architecture-pri-001-015"
+      ]
+    },
+    {
+      "id": "SCH-06-04",
+      "unit": "ch06",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Maturité `N1–N5`, diagnostic patrimonial `S_ready` (`c_sec ≥ 60`), ergonomie d'outils et budgets `QoS`",
+      "families_covered": [
+        "FAM_D02_03_02"
+      ],
+      "themes_vulgarized": [
+        "grille-evaluation-maturite-n1-n5",
+        "architecture-outils-fiables-erreurs-actionnables",
+        "criteres-qos-cout-precision-latence"
+      ]
+    },
+    {
+      "id": "SCH-07-01",
+      "unit": "ch07",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "MCP 2026-07-28 sans état, adaptateur SEP-3398 et confinement des surfaces Web agentiques",
+      "families_covered": [
+        "FAM_D03_01_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-mcp",
+        "adaptateur-mcp-streamable-http-sep-3398",
+        "web-agentique-webmcp-webbotauth"
+      ]
+    },
+    {
+      "id": "SCH-07-02",
+      "unit": "ch07",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Anti-patron Swagger-to-MCP 1:1 face aux façades d'intention ACI (≤ 15 outils métier et Code Mode)",
+      "families_covered": [
+        "FAM_D03_01_01"
+      ],
+      "themes_vulgarized": [
+        "facades-mcp-intention-metier",
+        "ergonomie-aci-anti-swagger",
+        "protocole-mcp"
+      ]
+    },
+    {
+      "id": "SCH-07-03",
+      "unit": "ch07",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Scellement SHA-256 et défense OAuth des outils MCP contre le rug-pull et les 102 failles NVD",
+      "families_covered": [
+        "FAM_D03_01_02"
+      ],
+      "themes_vulgarized": [
+        "epinglage-schemas-mcp",
+        "protocole-mcp"
+      ]
+    },
+    {
+      "id": "SCH-08-01",
+      "unit": "ch08",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches",
+      "families_covered": [
+        "FAM_D03_02_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-a2a",
+        "fusion-acp-collision-terminologique",
+        "protocole-anp-did-wba"
+      ]
+    },
+    {
+      "id": "SCH-08-02",
+      "unit": "ch08",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Commerce agentique (AP2, x402, MPP) face aux rails financiers et à la fédération B2B (AGNTCY / ODRL / vLEI)",
+      "families_covered": [
+        "FAM_D03_02_01",
+        "FAM_D03_02_02"
+      ],
+      "themes_vulgarized": [
+        "protocole-ap2",
+        "rails-paiement-commerce-agentique",
+        "agntcy-slim",
+        "maillage-b2b-federe-edc-odrl"
+      ]
+    },
+    {
+      "id": "SCH-08-03",
+      "unit": "ch08",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Interfaces humain-agent sûres : transport AG-UI (JSON Patch), catalogue fermé A2UI et exclusion du code libre",
+      "families_covered": [
+        "FAM_D03_02_01"
+      ],
+      "themes_vulgarized": [
+        "protocoles-interfaces-agui-a2ui-webrtc",
+        "protocole-a2a"
+      ]
+    },
+    {
+      "id": "SCH-09-01",
+      "unit": "ch09",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Passerelle d'agents bidirectionnelle (PEP) à neuf contrôles ordonnés et budget Borealis-Bench",
+      "families_covered": [
+        "FAM_D03_03_02"
+      ],
+      "themes_vulgarized": [
+        "passerelle-mcp-ai-gateway",
+        "maillage-agentique-trois-acceptions"
+      ]
+    },
+    {
+      "id": "SCH-09-02",
+      "unit": "ch09",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Découverte en quatre opérations (Agent Card JWS/JCS), catalogue unique à cinq statuts et règle « soutien ≠ production »",
+      "families_covered": [
+        "FAM_D03_03_01",
+        "FAM_D03_03_02"
+      ],
+      "themes_vulgarized": [
+        "agent-card-decouverte",
+        "contrats-interfaces-catalogue-entreprise",
+        "contrats-api-versionnement-conformite",
+        "metriques-soutien-vs-production"
+      ]
+    },
+    {
+      "id": "SCH-09-03",
+      "unit": "ch09",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Asymétrie 0/15, zones compensatoires Z1–Z5, strates EIF/LCIM et bouclier anti-verrouillage SaaS (EXIG-ARC-21)",
+      "families_covered": [
+        "FAM_D03_03_02"
+      ],
+      "themes_vulgarized": [
+        "matrice-protocoles-exigences-reglementaires",
+        "cadre-eif-4-couches",
+        "anti-verrouillage-standards"
+      ]
+    },
+    {
+      "id": "SCH-09-04",
+      "unit": "ch09",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Aiguillage cognitif à trois paliers (SLM 70–78 %) et ordonnancement KV-cache Endpoint Picker",
+      "families_covered": [
+        "FAM_D03_03_01"
+      ],
+      "themes_vulgarized": [
+        "plan-donnees-inference-kv-cache",
+        "routage-cognitif-hybride-3-paliers"
+      ]
+    },
+    {
+      "id": "SCH-10-01",
+      "unit": "ch10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies FIBO et registres",
+      "families_covered": [
+        "FAM_D04_01_01"
+      ],
+      "themes_vulgarized": [
+        "dette-semantique-ontologies",
+        "ecart-accord-protocolaire-comprehension",
+        "formats-echange-registres-schemas"
+      ]
+    },
+    {
+      "id": "SCH-10-02",
+      "unit": "ch10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) et observation ISO 20022 (Lynx et RTR)",
+      "families_covered": [
+        "FAM_D04_01_01"
+      ],
+      "themes_vulgarized": [
+        "contrats-donnees-write-audit-publish",
+        "donnees-pretes-agents-odcs-openlineage",
+        "iso-20022-lynx-rtr"
+      ]
+    },
+    {
+      "id": "SCH-10-03",
+      "unit": "ch10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Compilateur déterministe du contexte (KV-cache en tête, ACL amont), RAG itératif et Agent Skills signés",
+      "families_covered": [
+        "FAM_D04_01_02"
+      ],
+      "themes_vulgarized": [
+        "rag-agentique-contexte"
+      ]
+    },
+    {
+      "id": "SCH-11-01",
+      "unit": "ch11",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Architecture des quatre mémoires CoALA isolées (zéro écriture partagée) et échelle de risque",
+      "families_covered": [
+        "FAM_D04_02_01"
+      ],
+      "themes_vulgarized": [
+        "memoire-coala-4-tiroirs"
+      ]
+    },
+    {
+      "id": "SCH-11-02",
+      "unit": "ch11",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Mémoire bi-temporelle (BSIF E-23), concurrence multi-agents et effacement crypto-sélectif (Loi 25 art. 23)",
+      "families_covered": [
+        "FAM_D04_02_01"
+      ],
+      "themes_vulgarized": [
+        "memoire-bi-temporelle-et-purge",
+        "memoire-partagee-concurrence-effacement",
+        "memoire-coala-4-tiroirs"
+      ]
+    },
+    {
+      "id": "SCH-11-03",
+      "unit": "ch11",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Filtrage RBAC/ABAC pré-récupération (OpenFGA/RLS), modèles Silo/Bridge/Pool et évaluation RAG",
+      "families_covered": [
+        "FAM_D04_02_01",
+        "FAM_D04_02_02"
+      ],
+      "themes_vulgarized": [
+        "propagation-acl-memoire-silo",
+        "gouvernance-acces-rag-ancrage"
+      ]
+    },
+    {
+      "id": "SCH-12-01",
+      "unit": "ch12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Couche anticorruption MCP (EBCDIC/COMP-3 Decimal exact), médiation B2B/EDI et Strangler Fig en quatre stades",
+      "families_covered": [
+        "FAM_D04_03_01"
+      ],
+      "themes_vulgarized": [
+        "couche-anti-corruption-acl",
+        "mediation-b2b-esb-traducteurs",
+        "coexistence-bpm-ipaas-rpa"
+      ]
+    },
+    {
+      "id": "SCH-12-02",
+      "unit": "ch12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Hiérarchie MCP (≥ 92 %) → RPA → CUA confiné (bail 12 mois) et sas OT/Edge (Purdue, Simplex, CRDT)",
+      "families_covered": [
+        "FAM_D04_03_01",
+        "FAM_D04_03_02"
+      ],
+      "themes_vulgarized": [
+        "confinement-cua-patrimoine-sans-api",
+        "encapsulation-patrimoine-it-ot",
+        "synchronisation-edge-crdt"
+      ]
+    },
+    {
+      "id": "SCH-12-03",
+      "unit": "ch12",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Résidence physique ≠ souveraineté : maîtrise des six substrats d'état sous clés HYOK face au CLOUD Act",
+      "families_covered": [
+        "FAM_D04_03_02"
+      ],
+      "themes_vulgarized": [
+        "six-substrats-etat-souverainete"
+      ]
+    },
+    {
+      "id": "SCH-13-01",
+      "unit": "ch13",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "L'échelle de sobriété OO1–OO4 et l'encapsulation BPMN/APM : conditionner le multi-agents au gain démontré",
+      "families_covered": [
+        "FAM_D05_01_01"
+      ],
+      "themes_vulgarized": [
+        "arbre-sobriete-oo1-oo4",
+        "enveloppes-bpmn-cas-routine",
+        "paradigme-apm-autonomie-encadree"
+      ]
+    },
+    {
+      "id": "SCH-13-02",
+      "unit": "ch13",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Catalogue fermé des huit topologies autorisées et portabilité des cadriciels aux frontières MCP/A2A",
+      "families_covered": [
+        "FAM_D05_01_02"
+      ],
+      "themes_vulgarized": [
+        "topologies-patrons-orchestration",
+        "cadriciels-orchestration-portabilite",
+        "frameworks-orchestration-entreprise"
+      ]
+    },
+    {
+      "id": "SCH-13-03",
+      "unit": "ch13",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Parades aux 14 modes d'échec MAST : enveloppe de délégation minimale (EXIG-ORC-23..25) et scission B2B DMZ/TEE",
+      "families_covered": [
+        "FAM_D05_01_02"
+      ],
+      "themes_vulgarized": [
+        "fiabilite-coordination-taxonomie-mast",
+        "modes-echecs-emergents-frontiere",
+        "contexte-minimal-delegation-interagents",
+        "negociation-b2b-diplomate-evaluateur"
+      ]
+    },
+    {
+      "id": "SCH-14-01",
+      "unit": "ch14",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Dorsale Event Mesh et patron hybride : « le journal avant le cadre » sous enveloppe CloudEvents/AsyncAPI",
+      "families_covered": [
+        "FAM_D05_02_01"
+      ],
+      "themes_vulgarized": [
+        "choregraphie-event-mesh"
+      ]
+    },
+    {
+      "id": "SCH-14-02",
+      "unit": "ch14",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Boucle de rétroaction anti-tempête : endiguer « l'effet flipper », les boucles d'écho et les messages poisons DLQ",
+      "families_covered": [
+        "FAM_D05_02_01"
+      ],
+      "themes_vulgarized": [
+        "pathologies-reactives-backpressure",
+        "choregraphie-event-mesh"
+      ]
+    },
+    {
+      "id": "SCH-14-03",
+      "unit": "ch14",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Passerelle IA physique MCP ↔ ROS 2/DDS : missions discrètes LOTO et arbitre de sûreté matériel Simplex (≤ 1 ms)",
+      "families_covered": [
+        "FAM_D05_02_02"
+      ],
+      "themes_vulgarized": [
+        "pont-ia-physique-ros2-simplex"
+      ]
+    },
+    {
+      "id": "SCH-15-01",
+      "unit": "ch15",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "De la boucle volatile au moteur durable (Temporal/Restate) : revalidation au réveil et cinq plafonds EXIG-ORC-26",
+      "families_covered": [
+        "FAM_D05_03_01"
+      ],
+      "themes_vulgarized": [
+        "execution-durable-temporal",
+        "resilience-orchestration-repli-plafonds"
+      ]
+    },
+    {
+      "id": "SCH-15-02",
+      "unit": "ch15",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Orchestrateur Saga à point pivot, journal préalable Outbox et canal de compensation isolé EXIG-ORC-28",
+      "families_covered": [
+        "FAM_D05_03_02"
+      ],
+      "themes_vulgarized": [
+        "saga-compensatoire",
+        "canal-compensation-isole-outbox",
+        "saga-dix-scenarios-fautes"
+      ]
+    },
+    {
+      "id": "SCH-15-03",
+      "unit": "ch15",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Sémantique d'effet (Lecture / Écriture / Engagement), clé idem-v1 côté outil, UETR et bail exclusif LAP",
+      "families_covered": [
+        "FAM_D05_03_01",
+        "FAM_D05_03_02"
+      ],
+      "themes_vulgarized": [
+        "semantique-effet-idempotence-uetr",
+        "protocoles-ressources-physiques-lap",
+        "execution-durable-temporal"
+      ]
+    },
+    {
+      "id": "SCH-16-01",
+      "unit": "ch16",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Fin des secrets fixes (ratio 82:1) : identité NHI parrainée au SIRH et audit par les cinq questions (Q-A à Q-E)",
+      "families_covered": [
+        "FAM_D06_01_01"
+      ],
+      "themes_vulgarized": [
+        "identite-non-humaine-nhi",
+        "grille-cinq-questions-identite",
+        "socle-iam-federe-oauth-fapi"
+      ]
+    },
+    {
+      "id": "SCH-16-02",
+      "unit": "ch16",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Cartes A2A, annuaires commerciaux et trois modèles de registres : distinguer ce qui est signé de ce qui fait foi",
+      "families_covered": [
+        "FAM_D06_01_01",
+        "FAM_D06_01_02"
+      ],
+      "themes_vulgarized": [
+        "annuaires-commerciaux-risque-standard-de-fait",
+        "registres-gouvernes-trois-modeles",
+        "signature-agent-card-ancrage"
+      ]
+    },
+    {
+      "id": "SCH-16-03",
+      "unit": "ch16",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Attestations éphémères SPIFFE/SPIRE (1 h) en interne et trajectoire conditionnelle vLEI / passeport B2B",
+      "families_covered": [
+        "FAM_D06_01_02"
+      ],
+      "themes_vulgarized": [
+        "spiffe-spire-attestation",
+        "did-vc-passeport-agent"
+      ]
+    },
+    {
+      "id": "SCH-17-01",
+      "unit": "ch17",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Délégation OBO à deux sauts (RFC 8693), réduction monotone RAR, preuve DPoP/mTLS et profil RFC 9700 (≤ 15 min)",
+      "families_covered": [
+        "FAM_D06_02_01"
+      ],
+      "themes_vulgarized": [
+        "delegation-obo-deux-sauts",
+        "requetes-riches-rar-txn-tokens",
+        "liaison-jetons-dpop-mtls",
+        "profil-oauth-9700-et-liaison-expediteur"
+      ]
+    },
+    {
+      "id": "SCH-17-02",
+      "unit": "ch17",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Approbation humaine hors bande CIBA + FIDO2 liée à l'empreinte JCS (h) : scellement cryptographique de l'acte",
+      "families_covered": [
+        "FAM_D06_02_02"
+      ],
+      "themes_vulgarized": [
+        "approbation-ciba"
+      ]
+    },
+    {
+      "id": "SCH-17-03",
+      "unit": "ch17",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Angles morts B2B : 0/9 norme KYA ratifiée et asymétrie émission/révocation compensée par SSF/CAEP",
+      "families_covered": [
+        "FAM_D06_02_02"
+      ],
+      "themes_vulgarized": [
+        "kya-verification-agent-tiers",
+        "inventaire-revocation-asymetrie"
+      ]
+    },
+    {
+      "id": "SCH-18-01",
+      "unit": "ch18",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Compte à rebours TLS 2027–2029 (100 j → 47 j) : éradiquer la collision cryptographique par ACME dès le Palier 1",
+      "families_covered": [
+        "FAM_D06_03_01"
+      ],
+      "themes_vulgarized": [
+        "certificats-tls-47-jours"
+      ]
+    },
+    {
+      "id": "SCH-18-02",
+      "unit": "ch18",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Horloge post-quantique multi-sources (NIST IR 8547 2030/2035), fenêtre de Mosca 2026–2029 et rescellement SCITT",
+      "families_covered": [
+        "FAM_D06_03_02"
+      ],
+      "themes_vulgarized": [
+        "post-quantique-ml-dsa-slh-dsa",
+        "crypto-agilite-migration-pqc"
+      ]
+    },
+    {
+      "id": "SCH-18-03",
+      "unit": "ch18",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Choc d'en-têtes HTTP 431 sous ML-DSA (50–72×) : passer des chaînes O(sauts) aux Transaction Tokens O(1) et `kid`/JWKS",
+      "families_covered": [
+        "FAM_D06_03_02"
+      ],
+      "themes_vulgarized": [
+        "saturation-http-431-ml-dsa-kid",
+        "post-quantique-ml-dsa-slh-dsa"
+      ]
+    },
+    {
+      "id": "SCH-19-01",
+      "unit": "ch19",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "La triade létale et la non-compositionnalité de la sûreté : pourquoi assembler trois outils innocents crée une faille d'exfiltration",
+      "families_covered": [
+        "FAM_D07_01_01"
+      ],
+      "themes_vulgarized": [
+        "injection-indirecte-prompt",
+        "non-compositionnalite-surete-surface-attaques"
+      ]
+    },
+    {
+      "id": "SCH-19-02",
+      "unit": "ch19",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Outils MCP empoisonnés, « rug-pull » et Agent Skills vulnérables : le menu modifié en cuisine après l'inspection",
+      "families_covered": [
+        "FAM_D07_01_01"
+      ],
+      "themes_vulgarized": [
+        "tool-poisoning-rug-pull",
+        "chaine-approvisionnement-agent-skills"
+      ]
+    },
+    {
+      "id": "SCH-19-03",
+      "unit": "ch19",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Mandataire confus, matrice OWASP ASI01–10 / MAESTRO et suivi de teinte HMAC : verrouiller l'identité et teinter la donnée douteuse",
+      "families_covered": [
+        "FAM_D07_01_02"
+      ],
+      "themes_vulgarized": [
+        "taxonomie-attaques-identite-mandataire-confus",
+        "taxonomie-owasp-asi-mcp-maestro",
+        "red-teaming-continu-empoisonnement-memoire"
+      ]
+    },
+    {
+      "id": "SCH-20-01",
+      "unit": "ch20",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Le modèle n'est jamais juge et partie : politiques hors modèle OPA/Rego/Cedar à refus par défaut au poste-frontière PEP",
+      "families_covered": [
+        "FAM_D07_02_01",
+        "FAM_D07_02_02"
+      ],
+      "themes_vulgarized": [
+        "politiques-opa-rego-hors-modele",
+        "echec-ferme-opa-default-deny",
+        "maillage-agents-pep-pdp-zero-trust",
+        "sre-autonome-rayon-impact-cedar"
+      ]
+    },
+    {
+      "id": "SCH-20-02",
+      "unit": "ch20",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Pourquoi un filtre IA ne protège pas d'un attaquant adaptatif : sûreté système STAMP/STPA et comportements déviants mesurés",
+      "families_covered": [
+        "FAM_D07_02_01",
+        "FAM_D07_02_02"
+      ],
+      "themes_vulgarized": [
+        "controle-surete-stamp-stpa",
+        "alignement-deceptif-red-teaming-adversarial"
+      ]
+    },
+    {
+      "id": "SCH-20-03",
+      "unit": "ch20",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "La Règle de deux et le marquage CaMeL : retirer l'outil d'envoi dès que l'agent lit une source externe douteuse",
+      "families_covered": [
+        "FAM_D07_02_02"
+      ],
+      "themes_vulgarized": [
+        "regle-de-deux-opa",
+        "separation-controle-donnees-camel",
+        "defense-hors-modele-camel-confinement"
+      ]
+    },
+    {
+      "id": "SCH-21-01",
+      "unit": "ch21",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Du cloisonnement poreux au caisson étanche éphémère : exécution du code généré en microVM Firecracker / WASI sans réseau ni secrets",
+      "families_covered": [
+        "FAM_D07_03_01"
+      ],
+      "themes_vulgarized": [
+        "confinement-shadi-sandbox",
+        "confinement-opensandbox-firecracker-wasi"
+      ]
+    },
+    {
+      "id": "SCH-21-02",
+      "unit": "ch21",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Enclaves TEE, clés HYOK et continuité bimodèle : préserver la souveraineté sur GPU partagé malgré TEE.fail",
+      "families_covered": [
+        "FAM_D07_03_01"
+      ],
+      "themes_vulgarized": [
+        "confidentialite-materielle-tee-hyok"
+      ]
+    },
+    {
+      "id": "SCH-21-03",
+      "unit": "ch21",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Coupe-circuits hiérarchisés (< 10 s / 0,050 ms), révocation SSF/CAEP et repli < 60 s : stopper l'emballement sans briser les sagas",
+      "families_covered": [
+        "FAM_D07_03_02"
+      ],
+      "themes_vulgarized": [
+        "soc-soar-coupe-circuit"
+      ]
+    },
+    {
+      "id": "SCH-22-01",
+      "unit": "ch22",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Enregistreur de vol OpenTelemetry GenAI (v1.41.0 épinglée), jointure trace ↔ mandat et AIBOM à 5+1 horloges",
+      "families_covered": [
+        "FAM_D08_01_01"
+      ],
+      "themes_vulgarized": [
+        "observabilite-otel-genai",
+        "provenance-artefacts-aibom-5-horloges"
+      ]
+    },
+    {
+      "id": "SCH-22-02",
+      "unit": "ch22",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Le double couloir PII : diagnostiquer les pannes en production sans enfreindre la Loi 25 ni le RGPD",
+      "families_covered": [
+        "FAM_D08_01_02"
+      ],
+      "themes_vulgarized": [
+        "double-couloir-probatoire-pii",
+        "caviardage-pii-rp-bilingue"
+      ]
+    },
+    {
+      "id": "SCH-22-03",
+      "unit": "ch22",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Notaire cryptographique à 5 éléments : canonisation JCS (RFC 8785), ancrage Merkle SCITT et rescellement SLH-DSA",
+      "families_covered": [
+        "FAM_D08_01_02"
+      ],
+      "themes_vulgarized": [
+        "scellage-jcs-scitt",
+        "canonisation-deterministe-jcs",
+        "canonicalisation-jcs-rfc8785",
+        "journalisation-probatoire-audit"
+      ]
+    },
+    {
+      "id": "SCH-23-01",
+      "unit": "ch23",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Banc EvalOps hermétique E1–E3, constance pass^k et borne de Wilson (≥ 300 essais) : prouver la régularité plutôt qu'une réussite fortuite",
+      "families_covered": [
+        "FAM_D08_02_01"
+      ],
+      "themes_vulgarized": [
+        "banc-evalops-hermetique",
+        "dimensionnement-wilson-evalops",
+        "evaluation-agentique-bancs-capacite"
+      ]
+    },
+    {
+      "id": "SCH-23-02",
+      "unit": "ch23",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Évaluer sans oracle unique : invariance bilingue FR/EN, juges IA étalonnés (kappa ≥ 0,6) et sentinelle des 3+1 dérives",
+      "families_covered": [
+        "FAM_D08_02_02"
+      ],
+      "themes_vulgarized": [
+        "tests-metamorphiques-fr-en-sans-oracle",
+        "modele-comme-juge-biais-calibration",
+        "evaluation-continue-derives"
+      ]
+    },
+    {
+      "id": "SCH-23-03",
+      "unit": "ch23",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Le volant de distillation DSPy → Multi-LoRA : transformer les dossiers validés en petits modèles spécialisés 10× plus sobres",
+      "families_covered": [
+        "FAM_D08_02_02"
+      ],
+      "themes_vulgarized": [
+        "volant-distillation-dspy-multilora"
+      ]
+    },
+    {
+      "id": "SCH-24-01",
+      "unit": "ch24",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Du prix trompeur du jeton au Cost-per-Outcome (CPO FOCUS v1.4) : cascade frugale, disjoncteur 80 % / 100 % et carbone BSIF B-15",
+      "families_covered": [
+        "FAM_D08_03_01"
+      ],
+      "themes_vulgarized": [
+        "finops-focus-cpo",
+        "plan-inference-routage-carbone",
+        "comptabilite-carbone-cap-046-bsif-b15"
+      ]
+    },
+    {
+      "id": "SCH-24-02",
+      "unit": "ch24",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "GitOps agentique à trois objets indissociables (agent + outil + politique) : déployer et revenir en arrière sans altérer l'existant",
+      "families_covered": [
+        "FAM_D08_03_02"
+      ],
+      "themes_vulgarized": [
+        "cycle-vie-operationnel-derives-gitops"
+      ]
+    },
+    {
+      "id": "SCH-24-03",
+      "unit": "ch24",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Tableau de bord du conseil : traduire la grille minimale AgentOps (4 familles) en KPI de risque de modèle BSIF E-23 et AMF",
+      "families_covered": [
+        "FAM_D08_03_02",
+        "FAM_D08_03_01"
+      ],
+      "themes_vulgarized": [
+        "indicateurs-agentops-horizon-tache",
+        "plan-inference-routage-carbone"
+      ]
+    },
+    {
+      "id": "SCH-25-01",
+      "unit": "ch25",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Parcours Loi 25 complet : ÉFVP préalable (articles 3.3 et 17), décision selon l'article 12.1 (PC3) et crypto-effacement CoALA/RAG (articles 23 et 27)",
+      "families_covered": [
+        "FAM_D09_01_01"
+      ],
+      "themes_vulgarized": [
+        "loi-25-article-12-1",
+        "efvp-transfert-hors-quebec",
+        "droit-effacement-portabilite-loi-25"
+      ]
+    },
+    {
+      "id": "SCH-25-02",
+      "unit": "ch25",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Compte à rebours de 278 jours vers le 1er mai 2027 : convergence entre BSIF E-23 et Note AMF IA (EXIG-AMF-01..12 sous statut F)",
+      "families_covered": [
+        "FAM_D09_01_01",
+        "FAM_D09_01_02"
+      ],
+      "themes_vulgarized": [
+        "bsif-e-23",
+        "ligne-directrice-amf",
+        "feuille-route-1er-mai-2027"
+      ]
+    },
+    {
+      "id": "SCH-25-03",
+      "unit": "ch25",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Mosaïque canadienne en l'absence de loi générale : vide C-27/C-36, ACVM 11-348, banque ouverte C-15 et registre à trois lignes IIA",
+      "families_covered": [
+        "FAM_D09_01_02"
+      ],
+      "themes_vulgarized": [
+        "vide-federal-ia-c27-c36",
+        "avis-acvm-11-348",
+        "services-bancaires-consommateurs-c15",
+        "gouvernance-interne-registre-trois-lignes"
+      ]
+    },
+    {
+      "id": "SCH-26-01",
+      "unit": "ch26",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Triple qualification et calendrier européen : EU AI Act et Digital Omnibus 2026/1744, EN 18286:2026, DORA et CRA",
+      "families_covered": [
+        "FAM_D09_02_01"
+      ],
+      "themes_vulgarized": [
+        "eu-ai-act",
+        "maillage-reglementaire-international",
+        "systeme-qualite-en-18286-dora-cra"
+      ]
+    },
+    {
+      "id": "SCH-26-02",
+      "unit": "ch26",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Boucle de maîtrise PDCA : plafonds par pire cas (EXIG-CON-02), index unique NIST/ISO/IMDA et riposte aux incidents S1–S4",
+      "families_covered": [
+        "FAM_D09_02_02"
+      ],
+      "themes_vulgarized": [
+        "classes-risque-agents-et-plafonds",
+        "incidents-agentiques-et-notification-multiregime",
+        "iso-iec-42001-nist",
+        "cadres-internationaux-imda-aica-g7"
+      ]
+    },
+    {
+      "id": "SCH-26-03",
+      "unit": "ch26",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Souveraineté cognitive et coffre matériel : géorepérage des 6 couches d'état, grille SEAL, HYOK HMAC-FPE et GPU TEE",
+      "families_covered": [
+        "FAM_D09_02_02"
+      ],
+      "themes_vulgarized": [
+        "souverainete-espaces-donnees-tee-hyok"
+      ]
+    },
+    {
+      "id": "SCH-27-01",
+      "unit": "ch27",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54, MCP, A2A a2a-tck et export FOCUS 1.4+)",
+      "families_covered": [
+        "FAM_D09_03_02"
+      ],
+      "themes_vulgarized": [
+        "criteres-evaluation-fournisseurs-grille"
+      ]
+    },
+    {
+      "id": "SCH-27-02",
+      "unit": "ch27",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Bouclier d'approvisionnement réversible : les 10 clauses minimales EXIG-APP-07..16 et le droit de sortie annuel POR-016",
+      "families_covered": [
+        "FAM_D09_03_01"
+      ],
+      "themes_vulgarized": [
+        "approvisionnement-reversible-contrats",
+        "clauses-contractuelles-normatives-app",
+        "clauses-reversibilite-cloud-souverain"
+      ]
+    },
+    {
+      "id": "SCH-27-03",
+      "unit": "ch27",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Écart du mandat apparent B2B : responsabilité (Moffatt c. Air Canada, AB-316), contrats LCCJTI/LUCE et anti-collusion",
+      "families_covered": [
+        "FAM_D09_03_02"
+      ],
+      "themes_vulgarized": [
+        "responsabilite-mandat-contrats-b2b"
+      ]
+    },
+    {
+      "id": "SCH-28-01",
+      "unit": "ch28",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Carte des cinq profils financiers réglementés (M-14..M-18) et 24 verrous PEX : mutualiser le socle, cloisonner les données clients",
+      "families_covered": [
+        "FAM_D10_01_01"
+      ],
+      "themes_vulgarized": [
+        "profils-financiers-5-secteurs",
+        "profil-banque-m14",
+        "profil-gestion-patrimoine-m15",
+        "profil-assurance-personnes-m16",
+        "profil-assurance-dommages-m17",
+        "profil-groupe-diversifie-m18"
+      ]
+    },
+    {
+      "id": "SCH-28-02",
+      "unit": "ch28",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Frontière d'irréversibilité financière : tampon déterministe Paiements Canada RTR (pacs.008, EXIG-CON-29) face à la compensation impossible",
+      "families_covered": [
+        "FAM_D10_01_01",
+        "FAM_D10_01_02"
+      ],
+      "themes_vulgarized": [
+        "tampon-deterministe-rtr-iso20022",
+        "vertical-financier-durci",
+        "profil-banque-m14"
+      ]
+    },
+    {
+      "id": "SCH-28-03",
+      "unit": "ch28",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2/3",
+      "families_covered": [
+        "FAM_D10_01_02"
+      ],
+      "themes_vulgarized": [
+        "production-agentique-canadienne-2025-2026",
+        "eclats-sectoriels-extrapoles",
+        "vertical-financier-durci"
+      ]
+    },
+    {
+      "id": "SCH-29-01",
+      "unit": "ch29",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Anatomie comparée des trois blueprints de référence (`bp1` SoR, `bp2` enclave RAG ACL, `bp3` maillage B2B) sur C1–C8 et C01–C40",
+      "families_covered": [
+        "FAM_D10_02_01"
+      ],
+      "themes_vulgarized": [
+        "blueprint-1-assistant-sor",
+        "blueprint-2-enclave-rag-acl",
+        "blueprint-3-maillage-b2b",
+        "blueprints-reference-multisectoriels"
+      ]
+    },
+    {
+      "id": "SCH-29-02",
+      "unit": "ch29",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Fédération multi-SaaS par gravité (≥ 85 % local), reprise Cognitive DR (RTO < 15 minutes) et sas B2B Palier 3 (vLEI / Diplomate ↔ Évaluateur)",
+      "families_covered": [
+        "FAM_D10_02_02"
+      ],
+      "themes_vulgarized": [
+        "federation-multi-plateformes-gravite",
+        "reprise-sinistre-cognitif-continuite",
+        "reseaux-b2b-federes-p3"
+      ]
+    },
+    {
+      "id": "SCH-29-03",
+      "unit": "ch29",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Du fil rouge illustratif Groupe Boréal Inc. (BEL/BCA/BSN) au banc reproductible Borealis-Bench (108 blocs CI, DC-P11 et DC-P12)",
+      "families_covered": [
+        "FAM_D10_02_02"
+      ],
+      "themes_vulgarized": [
+        "fil-rouge-groupe-boreal-bel"
+      ]
+    },
+    {
+      "id": "SCH-30-01",
+      "unit": "ch30",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Chaîne d'industrialisation IAP et fabrique d'agents : Golden Paths GitOps cognitif, barrière d'admission et asymétrie des 10 suites SaaS",
+      "families_covered": [
+        "FAM_D10_03_01"
+      ],
+      "themes_vulgarized": [
+        "fabrique-agents-certification-reemission",
+        "passage-echelle-parc-agents",
+        "plateforme-iap-gitops-cognitif",
+        "plateformes-saas-et-asymetrie-tiers"
+      ]
+    },
+    {
+      "id": "SCH-30-02",
+      "unit": "ch30",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Verrou d'architecture : les 10 antipatrons bloquants (EXIG-ORC-29, AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
+      "families_covered": [
+        "FAM_D10_03_02"
+      ],
+      "themes_vulgarized": [
+        "anti-patrons-agentiques"
+      ]
+    },
+    {
+      "id": "SCH-30-03",
+      "unit": "ch30",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Échelle de maturité AAGMM (M1 → M5) et feuille de route à 90, 180 et 360 jours sous portes ARB 1–3 et sortie Strangler Fig du RPA",
+      "families_covered": [
+        "FAM_D10_03_01",
+        "FAM_D10_03_02"
+      ],
+      "themes_vulgarized": [
+        "modele-maturite-feuille-360j",
+        "passage-echelle-parc-agents"
+      ]
+    },
+    {
+      "id": "SCH-31-01",
+      "unit": "ch31",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Trajectoire DAPP 2028–2035 : parcours A/B/C, 15 portes POR et bifurcation sur 27 signaux SIG",
+      "families_covered": [
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "trajectoires-adaptatives-dapp",
+        "vingt-sept-signaux-veille-sig",
+        "quinze-portes-homologation-por",
+        "trajectoire-90j-18m-p1-p3"
+      ]
+    },
+    {
+      "id": "SCH-31-02",
+      "unit": "ch31",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Rampe des 90 premiers jours aux jalons J1–J5 face aux trois horloges et échéances 2027–2035",
+      "families_covered": [
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "priorites-90-jours-gouvernance",
+        "feuille-de-route-phases-90-jours-indicateurs",
+        "trajectoire-consolidation-standards-2027-2028"
+      ]
+    },
+    {
+      "id": "SCH-31-03",
+      "unit": "ch31",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Boussole prospective : tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF, falaise METR (50 % par rapport à 80 %) et maturité 5×5",
+      "families_covered": [
+        "FAM_D11_01_02",
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "tri-prospectif-peremption-feuilles-route",
+        "frontiere-capacites-metr-veille",
+        "modele-maturite-5-niveaux-dimensions",
+        "horizon-2027-2032-tri-prospectif"
+      ]
+    },
+    {
+      "id": "SCH-32-01",
+      "unit": "ch32",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Contrat dual AE ↔ AS et modèle opérationnel en étoile / Hub-and-Spoke à A unique",
+      "families_covered": [
+        "FAM_D11_02_01"
+      ],
+      "themes_vulgarized": [
+        "gouvernance-duale-ae-as",
+        "modele-operationnel-hub-and-spoke",
+        "dix-theses-t1-t10-tome-5",
+        "gouvernance-raci-modele-en-etoile"
+      ]
+    },
+    {
+      "id": "SCH-32-02",
+      "unit": "ch32",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Passeport d'existence : registre à sept états, détection mensuelle des agents fantômes et dérogations bornées",
+      "families_covered": [
+        "FAM_D11_02_01"
+      ],
+      "themes_vulgarized": [
+        "registre-agents-cycle-de-vie-et-attestations",
+        "regime-derogations-et-transition-cohorte"
+      ]
+    },
+    {
+      "id": "SCH-32-03",
+      "unit": "ch32",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Les sept pièges endogènes qui entravent la gouvernance et l'angle mort juridique des litiges AP2",
+      "families_covered": [
+        "FAM_D11_02_02"
+      ],
+      "themes_vulgarized": [
+        "pieges-gouvernance",
+        "responsabilite-litiges-commerce-agentique"
+      ]
+    },
+    {
+      "id": "SCH-33-01",
+      "unit": "ch33",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Boucle d'érosion cognitive : comment l'automatisation des tâches simples fragilise la relève et le repli manuel",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "atrophie-competences-humaines"
+      ]
+    },
+    {
+      "id": "SCH-33-02",
+      "unit": "ch33",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Écrans différentiels, CIBA et cas témoins à l'aveugle contre la validation réflexe (Loi 25 art. 12.1)",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "approbation-reflexe-biais-automatisation"
+      ]
+    },
+    {
+      "id": "SCH-33-03",
+      "unit": "ch33",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Sanctuarisation de la relève (quota > 70 % INI-043) et exercices périodiques de bascule sans agent",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "sanctuarisation-vivier-junior-reprise",
+        "atrophie-competences-humaines"
+      ]
+    },
+    {
+      "id": "SCH-34-01",
+      "unit": "ch34",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Porte unique d'homologation : 305 exigences CRE-IA v1.2, 16 préfixes et 10 lignes rouges sans dérogation",
+      "families_covered": [
+        "FAM_D12_01_01"
+      ],
+      "themes_vulgarized": [
+        "exigences-cre-ia-305",
+        "dix-interdictions-exig-gov-17"
+      ]
+    },
+    {
+      "id": "SCH-34-02",
+      "unit": "ch34",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Règle du doute, force RFC 2119 et parcours d'application : fiche d'agent, grille A.1–A.8 et sept protocoles",
+      "families_covered": [
+        "FAM_D12_01_01",
+        "FAM_D12_01_02"
+      ],
+      "themes_vulgarized": [
+        "portee-et-force-normative-cre-ia",
+        "grille-homologation-et-fiche-agent",
+        "referentiel-annexes-protocoles-chronologie"
+      ]
+    },
+    {
+      "id": "SCH-34-03",
+      "unit": "ch34",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Grille PRR-75 en cinq domaines (S/R/O/G/F) et arbre mécanique des 24 portes [BLOQUANT] + fiche 2027-B001",
+      "families_covered": [
+        "FAM_D12_01_02"
+      ],
+      "themes_vulgarized": [
+        "homologation-prr-75-points",
+        "exigences-cre-ia-305"
+      ]
+    },
+    {
+      "id": "SCH-35-01",
+      "unit": "ch35",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Architecture bicéphale du Tome 8 : manuel CC BY 4.0, quatre modules Python/OPA MIT et barrière G0 à exit 0",
+      "families_covered": [
+        "FAM_D12_02_01"
+      ],
+      "themes_vulgarized": [
+        "trousse-executable-tome-8",
+        "barriere-logicielle-g0-execute-g0"
+      ]
+    },
+    {
+      "id": "SCH-35-02",
+      "unit": "ch35",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Les cinq blocs critiques du Tableau 12 (5 SBB) matérialisés dans la trousse exécutable",
+      "families_covered": [
+        "FAM_D12_02_01"
+      ],
+      "themes_vulgarized": [
+        "cinq-blocs-sbb-tableau-12",
+        "trousse-executable-tome-8"
+      ]
+    },
+    {
+      "id": "SCH-35-03",
+      "unit": "ch35",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Preuve synthétique bornée DC-P12 (FEDS/EMA C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8",
+      "families_covered": [
+        "FAM_D12_02_02"
+      ],
+      "themes_vulgarized": [
+        "calibration-feds-ema",
+        "contrats-types-executes-ci-annexe-c"
+      ]
+    },
+    {
+      "id": "SCH-36-01",
+      "unit": "ch36",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Fermeture de DIV-02 et pont unifié : 52 CAP + 24 PEX → 305 EXIG-*, réconciliation Tome 1 et glossaire",
+      "families_covered": [
+        "FAM_D12_03_01"
+      ],
+      "themes_vulgarized": [
+        "concordance-inter-tomes-div02",
+        "architecture-collection-tome-1-preambule",
+        "reconciliation-inter-volumes-tome1",
+        "glossaire-normatif-tome-2"
+      ]
+    },
+    {
+      "id": "SCH-36-02",
+      "unit": "ch36",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "status": "",
+      "title": "Table canonique de passage des cinq discordances inter-volumes (DISC-01 à DISC-05)",
+      "families_covered": [
+        "FAM_D12_03_01"
+      ],
+      "themes_vulgarized": [
+        "cinq-discordances-inter-volumes-tome-8"
+      ]
+    },
+    {
+      "id": "SCH-36-03",
+      "unit": "ch36",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "status": "",
+      "title": "Chaîne probatoire Wyvern (G0–G5), réconciliation CA-16, hygiène L+ / Statut F et degrés d'absence",
+      "families_covered": [
+        "FAM_D12_03_02"
+      ],
+      "themes_vulgarized": [
+        "protocole-wyvern-g0-g5",
+        "protocole-probatoire-l-plus-statut-f",
+        "regime-preuve-trois-degres-absence",
+        "audit-validation-sources-121-449"
+      ]
+    },
+    {
+      "id": "SCH-36-04",
+      "unit": "ch36",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "status": "",
+      "title": "Usine éditoriale Typst (4 542 pages, 319 figures), cycle de péremption de 30 jours et clause non-avis",
+      "families_covered": [
+        "FAM_D12_03_02"
+      ],
+      "themes_vulgarized": [
+        "gabarit-typst-edition-4542-pages",
+        "clause-non-avis-licences",
+        "actualisation-novembre-2026-unification-v1-2",
+        "peremption-revalidation-annexe-n",
+        "registre-sources-tracees-annexe-b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1972 @@
+{
+  "shard_id": "prd-d05-d06",
+  "domains_covered": [
+    "D05",
+    "D06"
+  ],
+  "chapters": [
+    {
+      "chapter_number": 13,
+      "chapter_code": "CH-13",
+      "domain_id": "D05",
+      "subdomain_node_id": "SUB_D05_01",
+      "representative_title": "Sobriété d'orchestration OO1–OO4, catalogue fermé des topologies et maîtrise des défaillances MAST",
+      "executive_summary": "L'industrialisation des systèmes agentiques requiert d'abord la retenue architecturale avant toute multiplication de collaborateurs cognitifs. Ce chapitre encadre le choix de topologie selon l'arbre de sobriété OO1–OO4 (code déterministe, graphe structuré, agent unique outillé, puis collectif multi-agents), en imposant le déterminisme par défaut ainsi que la démonstration économique en constance pass^k et en coût par résultat conforme (CPO) face à des surcoûts de 3× à 15× en jetons. Lorsque le seuil réglementaire OO2→OO3 (C26, section 29.4.1) ou un gain mesuré justifient l'autonomie, l'orchestration demeure cantonnée au catalogue fermé des huit patrons autorisés et d'une variante débat plafonnée (≤ 3 agents), proscrivant sans dérogation les dix anti-patrons d'EXIG-ORC-29 et les maillages libres. Le chapitre intègre en outre l'encapsulation BPMN, CMMN et Routine, le paradigme APM (frames normatifs, opérationnels et locaux), le découplage Diplomate DMZ / Évaluateur TEE en négociation B2B, l'isolation stricte du contexte de délégation (EXIG-ORC-23..25), l'évaluation des cadriciels en disponibilité générale et la maîtrise empirique des 14 modes d'échec MAST (dont 44,2 % issus de la conception organisationnelle) ainsi que des sept défaillances de frontière.",
+      "targeted_content": {
+        "scope_and_objectives": "Encadrer la conception des architectures d'orchestration depuis la règle déterministe N0 jusqu'aux topologies multi-agents homologuées, en conciliant mesurabilité, auditabilité et portabilité aux frontières protocolaires MCP et A2A.",
+        "key_requirements_and_objectives": [
+          "Imposer l'arbre de sobriété OO1–OO4 (EXIG-ORC-01 et EXIG-ORC-02) : établir l'insuffisance des paliers plus simples et démontrer un gain net mesuré (intervalle de confiance à 95 % et valeur métier au regard d'un surcoût de 3× à 15× en jetons) avant tout déploiement multi-agents.",
+          "Restreindre les architectures de production au catalogue fermé de huit patrons autorisés complété par une variante débat (≤ 3 participants et gestionnaire, évaluateur-optimiseur ≤ 3 itérations, délégation ≤ 2 sauts, EXIG-ORC-03..10, ADR-011).",
+          "Appliquer l'encapsulation déterministe (sous-processus ad hoc BPMN plafonné à 10 appels, CMMN, Routine, frames locaux APM) et proscrire les dix anti-patrons d'EXIG-ORC-29 ainsi que les salles virtuelles en croissance quadratique O(n²).",
+          "Limiter toute délégation inter-agents à l'objet structuré minimal EXIG-ORC-23..25 (sous-objectif, critères d'acceptation, traceparent, palier maximal, budget résiduel, classe de risque la plus contraignante), sans historique conversationnel brut ni jeton d'accès.",
+          "Isoler les secrets commerciaux en négociation B2B par scission entre Diplomate DMZ (plafonné à 4 tours) et Évaluateur interne, avec calcul conjoint sur salle blanche TEE et rapprochement tripartite Cedar (ADR-026).",
+          "Adosser la vérification préalable à la mise en production aux 14 modes d'échec MAST v3 (FM-1.1..FM-3.3) et aux sept modes frontaliers afin d'obtenir une imputabilité architecturale explicite par contrat d'interface."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D05_01_01",
+            "family_title": "Arbre de sobriété OO1–OO4 et APM",
+            "family_overview": "Établit la règle de retenue structurelle : hiérarchiser le code déterministe (OO1), le graphe structuré (OO2), l'agent encadré (OO3) et le multi-agents (OO4), encapsuler le non-déterminisme dans BPMN, CMMN ou Routine et borner la responsabilité au moyen des frames du paradigme APM.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_arbre-sobriete-oo1-oo4",
+                "canonical_slug": "arbre-sobriete-oo1-oo4",
+                "theme_title": "Arbre de sobriété (N0 → flux → agent unique → multi-agents) et bascule réglementaire OO2 → OO3",
+                "content_specification": "Met en œuvre l'arbre décisionnel gradué allant de N0/OO1 (règle DMN ou code déterministe) à OO2 (chaîne ou flux structuré à appels typés), puis à OO3 (agent unique outillé sous enveloppe) et enfin à OO4 (collectif multi-agents). Le dispositif localise l'autorité de commandement selon APM et proscrit OO1–OO2 dès la réunion des trois conditions cumulatives C26 (section 29.4.1 : texte opposable sur l'issue, trace exigible par un tiers, dommage non réparable par reprise). Les exigences EXIG-ORC-01 et EXIG-ORC-02 imposent de prouver l'insuffisance des paliers inférieurs ainsi qu'un gain mesuré en constance pass^k et en CPO face à la saturation (~45 %), à l'effet Ringelmann et aux surcoûts atteignant 15× en jetons.",
+                "identifiers_and_norms": [
+                  "OO1",
+                  "OO2",
+                  "OO3",
+                  "OO4",
+                  "F-37",
+                  "PRI-002",
+                  "CAP-007",
+                  "EXIG-ORC-01",
+                  "EXIG-ORC-02",
+                  "ADR-002",
+                  "C17",
+                  "arXiv:2512.08296",
+                  "arXiv:2606.02646",
+                  "arXiv:2604.02460"
+                ]
+              },
+              {
+                "theme_node_id": "THM_enveloppes-bpmn-cas-routine",
+                "canonical_slug": "enveloppes-bpmn-cas-routine",
+                "theme_title": "Enveloppes BPMN ad hoc, gestion de cas CMMN, Routine et processus exposé comme outil",
+                "content_specification": "Encapsule les nœuds cognitifs dans quatre patrons hybrides déterministes : le sous-processus ad hoc BPMN 2.0 (Camunda 8.11 `fromAi` plafonné à 10 appels), la tâche agentique invoquée comme activité typée sous contrat JSON (UiPath Maestro), la gestion de cas adaptative à règles DMN préalables (CMMN / Case Manager) et la planification structurée Routine (amélioration mesurée de 41,1 % à 96,3 %), avec exposition optionnelle d'un processus entier comme outil MCP gouverné.",
+                "identifiers_and_norms": [
+                  "BPMN 2.0",
+                  "DMN",
+                  "ADR-002"
+                ]
+              },
+              {
+                "theme_node_id": "THM_paradigme-apm-autonomie-encadree",
+                "canonical_slug": "paradigme-apm-autonomie-encadree",
+                "theme_title": "Paradigme APM : frames normatifs, opérationnels et locaux et traitement de l'écart de responsabilité",
+                "content_specification": "Transcrit le manifeste APM (F-36) en traçant la frontière entre automatisation déterministe et autonomie encadrée : la spécification sépare explicitement les frames normatifs (règles et mandats), opérationnels (état métier) et locaux (enveloppes de garde exécutables), exige quatre capacités d'exécution, érige les frames locaux en périmètre de sécurité mécanique et formalise le traitement de l'écart de responsabilité juridique (section 22.10).",
+                "identifiers_and_norms": [
+                  "APM",
+                  "F-36"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D05_01_02",
+            "family_title": "Topologies multi-agents, cadriciels et MAST",
+            "family_overview": "Spécifie le catalogue fermé des topologies homologuées (huit patrons et une variante), la portabilité des cadriciels en disponibilité générale aux frontières MCP et A2A, la scission Diplomate/Évaluateur B2B, le contexte minimal de délégation et la maîtrise des défaillances MAST v3 et frontalières.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_topologies-patrons-orchestration",
+                "canonical_slug": "topologies-patrons-orchestration",
+                "theme_title": "Catalogue fermé des huit patrons autorisés et d'une variante, et proscription des dix anti-patrons",
+                "content_specification": "Verrouille l'orchestration autour du catalogue fermé des huit patrons autorisés (flux déterministe par défaut, chaîne séquentielle, routage/handoff, parallélisation à écrivain unique, orchestrateur-exécutants ≤ 2 sauts, évaluateur-optimiseur ≤ 3 itérations, chorégraphie événementielle, agent unique étalon ≤ 15 outils) complété par une variante débat bornée (≤ 3 agents et gestionnaire). Il proscrit les dix anti-patrons d'EXIG-ORC-29, les salles virtuelles en O(n²) et l'essaim conversationnel libre; il impose en outre Claim-Check (URI d'artefact), Goal Pinning contre la dérive d'objectif et l'arbitrage documenté face à l'opacité d'A2A devant un régulateur.",
+                "identifiers_and_norms": [
+                  "A2A v1.0",
+                  "types de session multipartites",
+                  "EXIG-ORC-*",
+                  "EXIG-ORC-01",
+                  "EXIG-ORC-02",
+                  "EXIG-ORC-03",
+                  "EXIG-ORC-04",
+                  "EXIG-ORC-05",
+                  "EXIG-ORC-06",
+                  "EXIG-ORC-07",
+                  "EXIG-ORC-08",
+                  "EXIG-ORC-09",
+                  "EXIG-ORC-10",
+                  "ADR-011",
+                  "OWASP ASI08",
+                  "R-04",
+                  "C.2",
+                  "CAP-010",
+                  "EXIG-ORC-29",
+                  "PRR O-06",
+                  "C18",
+                  "C19",
+                  "AP-07",
+                  "AP-09"
+                ]
+              },
+              {
+                "theme_node_id": "THM_cadriciels-orchestration-portabilite",
+                "canonical_slug": "cadriciels-orchestration-portabilite",
+                "theme_title": "Cadriciels d'orchestration (LangGraph, CrewAI, MAF, ADK, DSPy) et portabilité aux frontières",
+                "content_specification": "En distinguant la bibliothèque de primitives du harnais préconfiguré, cette analyse examine la convergence des cadriciels (LangGraph, CrewAI Flow, Microsoft Agent Framework, Google ADK 2.0, DSPy) vers une boucle d'agent couplée à un graphe d'état explicite. Appuyée sur l'étude empirique des bogues SDK (409 puis 5 669 rapports, dont 24,7 % liés à l'intégration modèle) et sur la périssabilité des cadriciels, l'architecture reporte la garantie de portabilité aux frontières normalisées MCP et A2A.",
+                "identifiers_and_norms": [
+                  "MIT",
+                  "MCP",
+                  "A2A 0.3 / 1.0"
+                ]
+              },
+              {
+                "theme_node_id": "THM_negociation-b2b-diplomate-evaluateur",
+                "canonical_slug": "negociation-b2b-diplomate-evaluateur",
+                "theme_title": "Scission Diplomate DMZ / Évaluateur interne, salles blanches TEE et règlement tripartite",
+                "content_specification": "Scinde physiquement l'agent négociateur B2B exposé en DMZ (Diplomate A2A plafonné à 4 tours) de l'Évaluateur interne détenteur des prix de réserve, des marges et des fonctions d'utilité multi-attributs, maintenus en isolation complète hors du contexte LLM. Lorsque la contrepartie l'exige, l'appariement s'exécute sur salle blanche TEE et le règlement AP2/x402 est verrouillé par un arbitre déterministe Cedar à rapprochement tripartite (ADR-026).",
+                "identifiers_and_norms": [
+                  "ADR-026",
+                  "F-02",
+                  "F-03",
+                  "AP2"
+                ]
+              },
+              {
+                "theme_node_id": "THM_fiabilite-coordination-taxonomie-mast",
+                "canonical_slug": "fiabilite-coordination-taxonomie-mast",
+                "theme_title": "Taxonomie MAST (14 modes d'échec), imputabilité architecturale et injection de fautes",
+                "content_specification": "Intègre la taxonomie empirique MAST v3 (1 642 traces multi-agents, κ = 0,88) classant 14 modes d'échec en trois familles : FM-1 conception et spécification (44,2 %), FM-2 désalignement (32,4 %) et FM-3 vérification (23,5 %), incluant la répétition d'étapes (15,7 %), l'écart raisonnement-action (13,2 %) et l'arrêt ignoré (12,4 %). Quatre remèdes sont évalués (vérificateur d'objectif, consensus simulé, imputabilité architecturale et fautes injectées), démontrant la primauté de la conception organisationnelle des rôles et des contrats.",
+                "identifiers_and_norms": [
+                  "MAST v2",
+                  "MAST v3",
+                  "FM-1.1..FM-3.3"
+                ]
+              },
+              {
+                "theme_node_id": "THM_modes-echecs-emergents-frontiere",
+                "canonical_slug": "modes-echecs-emergents-frontiere",
+                "theme_title": "Sept modes d'échec à la frontière interopérable (MAST), cascades d'erreurs et tolérance byzantine",
+                "content_specification": "Modélise sept modes de défaillance émergents aux interfaces inter-agents en l'absence d'attaquant actif (routage erroné, perte de contexte, incompatibilité sémantique de schéma, impasse de négociation, absence de clarification, dérive en chaîne et interblocage de délégation), ainsi que les cascades d'hallucinations (incident Replit #1152) et les limites de l'analogie avec la tolérance aux pannes byzantines.",
+                "identifiers_and_norms": [
+                  "MAST",
+                  "AI Incident Database #1152"
+                ]
+              },
+              {
+                "theme_node_id": "THM_contexte-minimal-delegation-interagents",
+                "canonical_slug": "contexte-minimal-delegation-interagents",
+                "theme_title": "Contexte de délégation minimal et structuré, validation des retours et filtrage de sécurité",
+                "content_specification": "Met en œuvre EXIG-ORC-23, EXIG-ORC-24 et EXIG-ORC-25 : toute délégation inter-agents transmet un objet JSON minimal strict (sous-objectif, critères d'acceptation, paramètres typés, URI d'artefacts, référence de délégation, identifiant de tâche racine, palier d'outils maximal autorisé, traceparent W3C, budget résiduel, niveau d'autonomie et classe de risque les plus contraignants). Ce mécanisme interdit le relais de l'historique conversationnel brut ou des jetons d'accès, impose le dépôt en magasin d'artefacts et filtre les retours selon les droits du mandant.",
+                "identifiers_and_norms": [
+                  "EXIG-ORC-23",
+                  "EXIG-ORC-24",
+                  "EXIG-ORC-25"
+                ]
+              },
+              {
+                "theme_node_id": "THM_frameworks-orchestration-entreprise",
+                "canonical_slug": "frameworks-orchestration-entreprise",
+                "theme_title": "Cadriciels d'orchestration en disponibilité générale : Microsoft Agent Framework, LangGraph, Confluent, Temporal et CrewAI",
+                "content_specification": "Consigne l'état vérifié en disponibilité générale (GA) des plateformes et cadriciels d'entreprise : Microsoft Agent Framework 1.0 (GA le 3 avril 2026, F-15), LangGraph Platform / LangSmith Deployment (GA le 14 mai 2025, frontière de licence ouverte/commerciale F-32), Confluent Kafka/Flink pour agents (GA le 19 mai 2026), ainsi que le positionnement de Temporal [C] et de CrewAI (A2A [B] / MCP [C]) sur l'échelle OO1–OO4.",
+                "identifiers_and_norms": [
+                  "F-15",
+                  "F-32",
+                  "F-33",
+                  "F-41"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Dossier d'arbitrage OO1–OO4 signé par l'architecte d'entreprise (AE) et l'architecte de solutions (AS), justifiant le passage au multi-agents au moyen des métriques pass^k, IC 95 % et CPO (EXIG-ORC-01, EXIG-ORC-02, PRR O-06).",
+          "Graphe d'orchestration homologué conforme au catalogue fermé d'ADR-011 (≤ 2 niveaux de délégation, écrivain unique par système et plafond `maxRemainingHops`).",
+          "Schéma JSON validé de l'enveloppe de délégation minimale EXIG-ORC-23..25 avec passage par URI et Claim-Check pour les artefacts volumineux.",
+          "Rapport d'essais d'injection de fautes couvrant les 14 modes MAST v3 ainsi que les sept modes de défaillance frontaliers préalablement à la mise en production."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 1,
+            "target_slug": "systems-of-agency",
+            "synthesis": "[topologies-patrons-orchestration] Les six topologies des sections 16.10 et 16.11 (superviseur ou routeur, Planificateur-Exécuteur-Critique, graphe DAG typé, tableau noir, Contract Net sur A2A et hybride BPMN/DMN) structurent la couche System of Action et en concrétisent l'exécution multi-étapes."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 2,
+            "target_slug": "erreurs-silencieuses-cascade",
+            "synthesis": "[topologies-patrons-orchestration] L'amplification d'erreur mesurée à 17,2× et les surcoûts de 3× à 10× justifient les exigences EXIG-ORC-01 et EXIG-ORC-02 avant le déploiement de toute topologie multi-agents (section 7.1)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 4,
+            "target_slug": "partition-hybride-80-20",
+            "synthesis": "[arbre-sobriete-oo1-oo4] La figure 43.2 et la section 22.1 matérialisent la frontière entre déterminisme et autonomie en imposant OO1 et OO2 partout où l'incertitude sémantique ne justifie pas OO3 ou OO4; les sous-processus ad hoc Camunda (`fromAi`, plafonnés à 10 appels), les tâches agent UiPath Maestro et les flux Routine concrétisent cette séparation en BPMN 2.0 et CMMN (sections 16.11 et 17.2–17.4), tandis que PRIN-08 et EXIG-ORC-01 établissent le flux déterministe à étapes agentiques comme patron par défaut dans l'arbre de décision (sections 7.2 et 7.3)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 5,
+            "target_slug": "supervision-hitl-hotl-abstention",
+            "synthesis": "[paradigme-apm-autonomie-encadree] Plutôt que d'exiger une relecture humaine exhaustive qui sature en volume (section 25.6), les frames locaux du paradigme APM bornent mécaniquement l'espace d'action de l'agent (section 22.9)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-a2a",
+            "synthesis": "[arbre-sobriete-oo1-oo4] L'orchestrateur multi-agents demeure autorisé uniquement sur gain net mesuré en pass^k et en CPO au regard du surcoût multi-agents (de −70 % à +80,8 %), la majorité des tâches séquentielles couplées se dégradant sous décomposition; par ailleurs, A2A masque délibérément le raisonnement interne de l'agent délégué, ce qui renforce le découplage mais heurte l'exigence d'auditabilité complète devant un régulateur tiers (chapitre 1, section 1.6.2.1; chapitre 8, section 8.4.3)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 9,
+            "target_slug": "anti-verrouillage-standards",
+            "synthesis": "[frameworks-orchestration-entreprise] Le chapitre 23 (sections 23.2 sur LangGraph Platform et 23.5) arbitre entre la commodité opérationnelle des plateformes managées et la portabilité sur des standards ouverts tels que MCP et A2A."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 14,
+            "target_slug": "choregraphie-event-mesh",
+            "synthesis": "[topologies-patrons-orchestration] La chorégraphie pure expose à l'anti-patron « flipper » et aux tempêtes d'événements; le Tome 6 (chapitre 8) arbitre cette tension entre autonomie événementielle et maîtrise transactionnelle par l'inversion hybride combinant orchestration macro et chorégraphie intra-domaine."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 14,
+            "target_slug": "pathologies-reactives-backpressure",
+            "synthesis": "[arbre-sobriete-oo1-oo4] L'arbre de sobriété privilégie la règle fixe et l'agent unique outillé avant toute décomposition et proscrit les essaims en débat libre, prévenant ainsi les défaillances MAST (41 % à 86,7 % d'échecs) et l'effet Ringelmann."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 15,
+            "target_slug": "saga-compensatoire",
+            "synthesis": "[modes-echecs-emergents-frontiere] La combinaison d'une livraison au-moins-une-fois, d'opérations idempotentes et de compensations de Saga contient les incohérences lors de pannes partielles ou de reprises d'appels d'outils (chapitre 1, sections 1.5.2 et 1.6.2.2; chapitre 4, section 4.4.2)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 19,
+            "target_slug": "non-compositionnalite-surete-surface-attaques",
+            "synthesis": "[modes-echecs-emergents-frontiere] Une erreur sémantique plausible émise en langage naturel par un agent amont franchit les contrôles syntaxiques et se mémorise en aval, amplifiant les cascades d'erreurs sur horizon long le long des délégations (chapitre 11, section 11.2.2)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 21,
+            "target_slug": "soc-soar-coupe-circuit",
+            "synthesis": "[modes-echecs-emergents-frontiere] L'insertion de disjoncteurs aux frontières protocolaires et la détection continue au sein du SOC agentique interrompent la propagation en cascade avant amplification (chapitre 11, section 11.2.2; chapitre 20, section 20.8); en outre, le coupe-circuit de passerelle (POR-003, arrêt < 10 s) et la rétrogradation automatique (POR-015, repli < 60 s) bornent l'impact d'une boucle ou d'une dérive multi-agents sans attendre d'intervention manuelle."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 24,
+            "target_slug": "finops-focus-cpo",
+            "synthesis": "[arbre-sobriete-oo1-oo4] Privilégier OO1 et OO2 lorsque cela suffit (sections 22.1 et 43.2) et éviter le multi-agents injustifié amplifie la performance FinOps CPO; Kulkarni (section 16.6) montre qu'une architecture hiérarchique atteint 98,5 % du score F1 réflexif pour 60,7 % du coût alors que la réflexion s'effondre sous 100 000 documents par jour, tandis que Kim et collaborateurs mesurent un recul de −70 % en tâches séquentielles. Un système multi-agents consommant jusqu'à 15× plus de jetons et ajoutant 8 % d'erreurs de coordination ne se justifie que si la valeur du gain dépasse ce surcoût (sections 40.1, 40.5 et 42.3)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 27,
+            "target_slug": "responsabilite-mandat-contrats-b2b",
+            "synthesis": "[negociation-b2b-diplomate-evaluateur] La scission Diplomate/Évaluateur protège le prix de réserve confidentiel en négociation B2B, tandis que le rapprochement tripartite Cedar et le plafond de tolérance bloquent les erreurs et les surfacturations (sections 45.9 et 45.10)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 30,
+            "target_slug": "anti-patrons-agentiques",
+            "synthesis": "[topologies-patrons-orchestration] Les exigences EXIG-ORC-06, EXIG-ORC-07 et EXIG-ORC-29 proscrivent les essaims non bornés et les écritures concurrentes en imposant un écrivain unique par système; face à la croissance quadratique O(n²) des échanges en « salle virtuelle » libre (sections 16.9 et 16.12), l'arbitrage impose l'agent unique ou une topologie hiérarchique ou DAG plafonnée."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 32,
+            "target_slug": "gouvernance-duale-ae-as",
+            "synthesis": "[fiabilite-coordination-taxonomie-mast] Les sections 21.1 à 21.7 établissent que 44,2 % des pannes multi-agents proviennent de la conception et de la spécification, reliant ainsi les 14 modes d'échec MAST à une gouvernance organisationnelle explicite des frontières de rôles et de vérification."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 22 §22.1–22.10 Taxonomie OO1–OO4 et paradigme APM (L5171–L5407)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 23 §23.1–23.5 Frameworks d'orchestration GA (L5428–L5543)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Ch. 7 §7.1–7.3 & §7.7 Sobriété, 8 patrons EXIG-ORC-01..10 et contexte minimal EXIG-ORC-23..25 (L2734–L2985, L3187–L3236)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 16–17 Topologies canoniques, ADR-011 et enveloppes BPMN/CMMN/Routine (L8089–L9238)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 20–21 Cadriciels, fiabilité de coordination et taxonomie MAST (L11440–L11949)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 45 §45.4–45.10 Scission Diplomate DMZ / Évaluateur TEE et règlement tripartite (L23430–L23916)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Ch. 5 §5.1–5.2 Continuum OO1–OO4 et catalogue fermé des topologies (L711–L753)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Ch. 7 Patrons d'orchestration, Claim-Check et Goal Pinning (L2059–L2383)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Ch. 06 §6.1–6.2 Arbre de sobriété opérationnelle et effet Ringelmann (L862–L933)"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 14,
+      "chapter_code": "CH-14",
+      "domain_id": "D05",
+      "subdomain_node_id": "SUB_D05_02",
+      "representative_title": "Chorégraphie Event Mesh sur CloudEvents/AsyncAPI, contrôle des boucles et passerelle vers l'IA physique",
+      "executive_summary": "Lorsque le découplage temporel, l'absorption de pointes ou la diffusion vers de multiples consommateurs l'exigent (CAP-011, DEC-005), la chorégraphie événementielle complète l'orchestration directe sans jamais céder la maîtrise transactionnelle. Ce chapitre normalise la dorsale Event Mesh sur Kafka, Solace PubSub+ et NATS JetStream sous enveloppe CloudEvents 1.0.2 (≤ 64 Ko, sans renseignement personnel direct) et contrats AsyncAPI 3.0.0 catalogués, en appliquant EXIG-EVT-01..10 : compteur de sauts anti-boucle `xagenthopcount` / `xagentmaxhops = 4`, patron Outbox transactionnel avec capture CDC, clé de partition d'ordre et rejeu isolé conservé ≥ 90 jours en classe modérée et ≥ 1 an en classe élevée. L'architecture hybride cible associe orchestration macro-réglementaire inter-domaines et chorégraphie intra-domaine, tout en érigeant des défenses contre les pathologies réactives (tempêtes d'événements, boucles d'écho, files DLQ non bloquantes, rétro-pression sous quotas TPM). En milieu industriel, le chapitre déploie la passerelle MCP ↔ ROS 2/DDS validée contre la consignation LOTO et protégée par un arbitre matériel Simplex conforme à IEC 61508 (≤ 1 ms).",
+      "targeted_content": {
+        "scope_and_objectives": "Gouverner les échanges asynchrones d'agents ambiants sur bus d'entreprise et étendre les contrats de chorégraphie aux boucles physiques temps réel sous enveloppe de sûreté matérielle vérifiable.",
+        "key_requirements_and_objectives": [
+          "Réserver la dorsale événementielle aux besoins démontrés de découplage, de rejeu ou de diffusion un-vers-N (DEC-005, CAP-011) et appliquer le patron hybride combinant orchestration macro inter-domaines et chorégraphie intra-domaine.",
+          "Normaliser chaque message agentique en CloudEvents v1.0.2 (≤ 64 Ko, type inversé versionné, dataschema, traceparent W3C, aucun renseignement personnel direct dans les attributs) sous contrat AsyncAPI 3.0.0 inscrit au catalogue (EXIG-EVT-01..04).",
+          "Imposer les garde-fous anti-tempête et de reprise : `xagenthopcount` / `xagentmaxhops = 4`, plafond de largeur par trace, Transactional Outbox avec CDC, déduplication idempotente, clé de partition et rejeu isolé conservé ≥ 90 j en classe modérée ou ≥ 1 an en classe élevée (EXIG-EVT-05..10).",
+          "Prévenir les pathologies réactives (tempêtes, boucles d'écho, messages poisons sémantiques, saturation TPM) au moyen de files DLQ non bloquantes, d'un TTL de corrélation (`ce_ttl`) et d'une rétro-pression adaptative.",
+          "Isoler l'IA physique (ROS 2/DDS à 10–30 ms) des sagas MCP/A2A (0,5–5 s) par exposition exclusive de missions discrètes vérifiées contre la consignation LOTO, d'un arbitre matériel Simplex (≤ 1 ms, IEC 61508) et d'artefacts signés TUF/Sigstore (ADR-028)."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D05_02_01",
+            "family_title": "Dorsale Event Mesh (CloudEvents / AsyncAPI)",
+            "family_overview": "Structure l'architecture événementielle sobre (EDAA) autour d'enveloppes CloudEvents 1.0.2 et de contrats AsyncAPI 3.0.0, lève l'homonymie autour du terme Agent Mesh et neutralise les pathologies réactives (boucles, files DLQ et rétro-pression LLM).",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_choregraphie-event-mesh",
+                "canonical_slug": "choregraphie-event-mesh",
+                "theme_title": "Dorsale événementielle sobre (CloudEvents/AsyncAPI, xagentmaxhops = 4) et fédération par gravité",
+                "content_specification": "Fonde la dorsale asynchrone sur AMQP 1.0 (ISO/IEC 19464), Kafka, Solace PubSub+, NATS JetStream et IBM MQ 9.4 PQC, en plaçant le journal immuable d'événements en amont de l'inférence (« le journal avant le cadre »). L'architecture exige l'enveloppe CloudEvents v1.0.2 (≤ 64 Ko, Claim-Check au-delà), les contrats AsyncAPI 3.0.0, l'absence de renseignement personnel direct dans les attributs, `xagentmaxhops = 4` (EXIG-EVT-06), le patron Outbox + CDC, un tampon à fenêtre de grâce avant tout effet irréversible (ADR-013), une rétention ≥ 90 j / ≥ 1 an et la levée d'ambiguïté entre courtage événementiel et maillage de mandataires. L'autonomie événementielle est réconciliée par le patron hybride combinant orchestration macro inter-domaines et chorégraphie intra-domaine.",
+                "identifiers_and_norms": [
+                  "AMQP 1.0",
+                  "ISO/IEC 19464:2014",
+                  "MQTT",
+                  "STOMP",
+                  "CloudEvents",
+                  "AsyncAPI 3.0.0",
+                  "F-72",
+                  "Kafka",
+                  "MQ 9.4 PQC",
+                  "EXIG-EVT-*",
+                  "EXIG-EVT-01",
+                  "EXIG-EVT-02",
+                  "EXIG-EVT-03",
+                  "EXIG-EVT-04",
+                  "EXIG-EVT-05",
+                  "EXIG-EVT-06",
+                  "EXIG-EVT-07",
+                  "EXIG-EVT-08",
+                  "EXIG-EVT-09",
+                  "EXIG-EVT-10",
+                  "ADR-013",
+                  "CloudEvents 1.0",
+                  "OWASP ASI08",
+                  "R-05",
+                  "F.2",
+                  "CAP-011",
+                  "CAP-012",
+                  "CAP-013",
+                  "DEC-005",
+                  "DEC-007",
+                  "ADR-015",
+                  "PRR R-04",
+                  "PRR R-05",
+                  "CloudEvents v1.0.2",
+                  "C20",
+                  "C21"
+                ]
+              },
+              {
+                "theme_node_id": "THM_pathologies-reactives-backpressure",
+                "canonical_slug": "pathologies-reactives-backpressure",
+                "theme_title": "Taxonomie MAST (14 modes), tempêtes d'événements, boucles d'écho, DLQ et rétro-pression LLM",
+                "content_specification": "Neutralise les quatre pathologies des agents réactifs (MAST 41 %–86,7 % d'échecs, ASI08/ASI10) : tempêtes d'événements déclenchées par réactions circulaires, boucles d'écho sémantiques (bornées par `ce_ttl`, `ce_correlationid` et compteur de sauts), messages poisons bloquant les partitions (déportés vers une DLQ non bloquante respectant `max.poll.interval.ms`) et épuisement de capacité LLM absorbé par rétro-pression (backpressure) sous quotas TPM et disjoncteurs de passerelle.",
+                "identifiers_and_norms": [
+                  "MAST",
+                  "ASI08",
+                  "ASI10",
+                  "C21",
+                  "arXiv:2503.13657v3"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D05_02_02",
+            "family_title": "Protocoles d'échange et négociation asynchrone",
+            "family_overview": "Établit l'interface asynchrone sûre entre orchestration cognitive d'entreprise et actionneurs physiques ROS 2/DDS grâce aux missions discrètes LOTO et à l'arbitre de repli matériel Simplex.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_pont-ia-physique-ros2-simplex",
+                "canonical_slug": "pont-ia-physique-ros2-simplex",
+                "theme_title": "Passerelle MCP ↔︎ ROS 2/DDS, vérification LOTO et arbitre matériel Simplex",
+                "content_specification": "Résout l'écart d'échelle temporelle entre sagas MCP/A2A (0,5–5 s) et boucles robotiques ROS 2/DDS (10–30 ms) selon ADR-028 : toute commande continue par LLM est proscrite, seules des missions discrètes de haut niveau validées contre le registre de consignation LOTO sont exposées, un contrôleur de sûreté matériel déterministe Simplex (bascule ≤ 1 ms, conforme IEC 61508 / ISO 10218-1:2025 / ISO 3691-4) est interposé, et les poids, politiques ainsi que Skills font l'objet d'un déploiement hors ligne signé TUF/Sigstore.",
+                "identifiers_and_norms": [
+                  "ADR-028",
+                  "F-09",
+                  "F-10",
+                  "IEC 61508",
+                  "ISO 10218-1:2025",
+                  "ISO 3691-4"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Spécifications AsyncAPI 3.0.0 et schémas CloudEvents v1.0.2 enregistrés au catalogue avec contrôle automatisé en intégration continue garantissant l'absence de renseignements personnels sur les en-têtes (EXIG-EVT-01..04).",
+          "Essais d'injection de boucle confirmant l'arrêt net à `xagenthopcount > 4` (EXIG-EVT-06) et le routage des messages poisons vers une DLQ non bloquante sans arrêt de partition.",
+          "Configuration Outbox transactionnel et CDC validée avec rejeu isolé en pré-production et continuité W3C Trace Context à travers Kafka et Solace.",
+          "Dossier de sûreté industrielle IEC 61508 / ISO 10218-1 attestant la coupure matérielle Simplex (≤ 1 ms) et le contrôle LOTO préalablement à toute commande ROS 2/DDS."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 2,
+            "target_slug": "erreurs-silencieuses-cascade",
+            "synthesis": "[choregraphie-event-mesh] L'architecture EDAA (ADR-013, Extrait 19.3) interpose un tampon à fenêtre de grâce révocable entre l'intention probabiliste de l'agent et le système externe (sections 19.9 et 19.11), complété par les extensions `xagenthopcount`/`xagentmaxhops` et le plafond par trace qui interrompent les tempêtes d'événements (EXIG-EVT-06), tandis que l'arbitre matériel Simplex isole la sécurité machine (≤ 1 ms) de la gigue et des hallucinations du contrôleur neuronal ou du LLM en entreprise (sections 46.7 et 46.15)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 3,
+            "target_slug": "cout-non-interop-dette-integration",
+            "synthesis": "[choregraphie-event-mesh] L'Event Mesh, CloudEvents et le patron Outbox concrétisent le découplage spatial et temporel complet entre producteurs et consommateurs à travers régions et organisations (chapitre 1, sections 1.3.4 et 1.5.3)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 9,
+            "target_slug": "passerelle-mcp-ai-gateway",
+            "synthesis": "[choregraphie-event-mesh] Dans les couches C3 du blueprint (section 45.2), l'intégration associe ContextForge et API Connect en synchrone avec IBM MQ 9.4 PQC et Kafka/Flink pour les traitements asynchrones prolongés."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 13,
+            "target_slug": "arbre-sobriete-oo1-oo4",
+            "synthesis": "[pathologies-reactives-backpressure] L'arbre de sobriété privilégie la règle fixe et l'agent unique outillé avant toute décomposition et proscrit les essaims en débat libre, prévenant ainsi les défaillances MAST (41 % à 86,7 % d'échecs) et l'effet Ringelmann."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 13,
+            "target_slug": "topologies-patrons-orchestration",
+            "synthesis": "[choregraphie-event-mesh] La chorégraphie pure expose à l'anti-patron « flipper » et aux tempêtes d'événements; le Tome 6 (chapitre 8) arbitre cette tension entre autonomie événementielle et maîtrise transactionnelle par l'inversion hybride combinant orchestration macro et chorégraphie intra-domaine."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 15,
+            "target_slug": "execution-durable-temporal",
+            "synthesis": "[choregraphie-event-mesh] Les pipelines agentiques découplés (sections 23.3–23.4 et 22.5) reposent sur des journaux durables et des moteurs de flux codés pour résister aux pannes; EXIG-EVT-08 impose la déduplication sur l'identité CloudEvents et la clé transmise au système cible, tandis que le couplage entre Temporal et Kafka/Solace + CloudEvents 1.0 (sections 18.12 et 19.8) permet des transactions inter-divisions à la fois durables et faiblement couplées."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 15,
+            "target_slug": "saga-compensatoire",
+            "synthesis": "[choregraphie-event-mesh] EXIG-ORC-08 impose à toute chorégraphie multisystème un propriétaire de bout en bout, un coordinateur de saga et les contrôles d'enveloppe, tout flux CloudEvents/AsyncAPI modifiant plusieurs systèmes d'enregistrement devant être encadré par une Saga compensatoire et `xagentmaxhops = 4`; en environnement asynchrone (sections 19.9–19.10, Extrait 19.2), un coordinateur LIFO déterministe persiste le `CompensationPlan` via Transactional Outbox et CloudEvents 1.0."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 21,
+            "target_slug": "soc-soar-coupe-circuit",
+            "synthesis": "[pathologies-reactives-backpressure] Le coupe-circuit à cinq états (`FORCED_OPEN`), les plafonds `max_turns`/budget et le repli automatique vers le flux déterministe L0 interrompent les boucles d'emballement, les tempêtes et l'épuisement LLM10/ASI08/ASI10."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 22,
+            "target_slug": "observabilite-otel-genai",
+            "synthesis": "[choregraphie-event-mesh] La reconstruction causale des sagas repose sur la propagation continue des en-têtes W3C Trace Context (`traceparent`, `baggage`) et de l'identifiant d'affaires à travers Kafka, Solace et Temporal (sections 33.3 et 33.9)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "frontiere-capacites-metr-veille",
+            "synthesis": "[pont-ia-physique-ros2-simplex] La convergence entre sagas d'entreprise et modèles Vision-Langage-Action (VLA) projetée à l'horizon 2028–2030 exige dès 2027 l'interposition de jumeaux numériques et d'enveloppes matérielles Simplex (sections 41.10 et 46.15)."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 1 §1.5, Ch. 23 §23.3 & Ch. 37 §37.0 Event Mesh, journal avant le cadre et homonymie (L326–L417, L5476–L5495, L8712–L8729)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Ch. 6 §6.7 Interopérabilité événementielle EXIG-EVT-01..10 (L2391–L2556)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 19 Architecture événementielle agentique EDAA et CloudEvents 1.0 ADR-013 (L10734–L11148)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 46 §46.6–46.8 & §46.15–46.18 Passerelle MCP ↔ ROS 2/DDS, LOTO et arbitre Simplex (L24043–L24110, L24657–L24812)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Ch. M-10 CAP-011..013 Dorsale événementielle et fédération selon gravité (L2002–L2047)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Ch. 8 Chorégraphie réactive, pathologies, DLQ, backpressure et patron hybride (L2396–L2718)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Ch. 06 §6.3 Pathologies des systèmes réactifs et multi-agents (L934–L963)"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 15,
+      "chapter_code": "CH-15",
+      "domain_id": "D05",
+      "subdomain_node_id": "SUB_D05_03",
+      "representative_title": "Exécution durable hors processus, idempotence JCS, sémantique d'effet et sagas à canal isolé",
+      "executive_summary": "Dans un système distribué soumis aux bornes CAP et FLP, la fiabilité transactionnelle ne peut reposer ni sur le verrouillage 2PC ni sur la mémoire volatile d'un processus d'agent. Ce chapitre impose l'exécution durable hors processus (Temporal, Restate, Dapr, Step Functions) pour toute tâche mutative, multi-étapes ou en attente humaine prolongée (`awakeable`), avec journalisation des appels de modèle comme effets non rejoués, Worker Versioning Pinned/Rainbow et revalidation obligatoire des droits ainsi que de l'état du monde au réveil contre les failles TOCTOU (EXIG-ARC-05/06, EXIG-ORC-11..14, EXIG-AUT-17). Chaque écriture dans ≥ 2 systèmes sans transaction commune est encadrée par une Saga compensatoire autour d'un point pivot précédé d'un tampon d'irréversibilité, exploitant la clé canonique `idem-v1` (SHA-256 JCS), un journal de compensation préalable en ajout seul (SQLite WAL / Transactional Outbox), un canal dédié EXIG-ORC-28 immunisé contre le coupe-circuit et les dix scénarios de fautes vérifiés (`test_saga_10_faults.py`), complétés par les plafonds EXIG-ORC-26..30, le bail exclusif LAP et la jointure comptable UETR.",
+      "targeted_content": {
+        "scope_and_objectives": "Garantir l'exactitude des effets métier malgré les pannes, les attentes humaines multi-jours et les dérives probabilistes grâce à la reprise durable, à l'idempotence déterministe côté outil et à la compensation isolée.",
+        "key_requirements_and_objectives": [
+          "Persister l'état de toute tâche à écriture, à attente prolongée ou multi-étapes hors de la mémoire volatile (Temporal, Restate ou Step Functions) après chaque transition, en journalisant les sorties LLM et en revalidant mandats et droits au réveil contre les dérives TOCTOU (EXIG-ARC-05/06, EXIG-ORC-11..14, EXIG-AUT-17).",
+          "Encadrer toute mutation multi-systèmes sans garantie ACID par une Saga à point pivot et tampon d'irréversibilité (niveau P3 au pivot ou au-delà), dotée d'un journal de compensation préalable et d'une escalade humaine automatique après 2 échecs (EXIG-ORC-15..20, ADR-012, ADR-013).",
+          "Calculer hors modèle la clé d'idempotence canonique `idem-v1 = hex(SHA-256(JCS([\"idem-v1\", task_id, step_id])))` vérifiée par l'outil ou son adaptateur durable, et assurer la traçabilité de l'effet réel par UETR ISO 20022 (RFC 9562) (EXIG-ORC-21, EXIG-ORC-22).",
+          "Isoler un canal de compensation dédié pourvu d'une identité NHI et d'un budget propres (EXIG-ORC-28) afin que l'arrêt vers l'avant par coupe-circuit ou révocation d'agent n'empêche jamais la compensation pré-pivot.",
+          "Respecter PRIN-12 et EXIG-ORC-26..30 : cinq plafonds déclarés (étapes, appels d'outils, jetons, coût, durée), temporisations exponentielles bornées, mode de repli testé, preuve de concept de neuf capacités et validation par les dix scénarios d'injection de fautes Saga (`test_saga_10_faults.py`).",
+          "Appliquer le patron LAP (fiche `InstrumentCard` signée, bail exclusif à battement, approbation liée aux paramètres) avant tout pilotage d'actif physique ou de ressource non partageable."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D05_03_01",
+            "family_title": "Exécution durable (Temporal) et résilience",
+            "family_overview": "Ancre les flux prolongés dans des moteurs d'exécution durable avec revalidation au réveil, impose les plafonds et les mécanismes de repli de PRIN-12 et EXIG-ORC-26..30, et protège les ressources physiques par bail exclusif LAP.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_execution-durable-temporal",
+                "canonical_slug": "execution-durable-temporal",
+                "theme_title": "Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)",
+                "content_specification": "Sépare la reprise de contrôle de l'unicité des effets externes (Temporal pour les sagas multi-jours, Restate ou Durable Task pour la micro-orchestration à haute cadence, LangGraph PostgresSaver ou Step Functions). Impose la persistance chiffrée des transitions hors processus (EXIG-ARC-05/06, EXIG-ORC-11..14), traite le magasin de points de contrôle comme frontière de confiance, enregistre les sorties LLM sans jamais les rejouer, gère les livraisons en vol par Worker Versioning (Pinned/Rainbow) et impose une garde de revalidation cryptographique des droits ainsi que de l'état du monde après mise en veille `awakeable` (TOCTOU, EXIG-AUT-17).",
+                "identifiers_and_norms": [
+                  "Temporal",
+                  "BPMN",
+                  "EXIG-ARC-05",
+                  "EXIG-ARC-06",
+                  "EXIG-ORC-11",
+                  "EXIG-ORC-12",
+                  "EXIG-ORC-13",
+                  "EXIG-ORC-14",
+                  "EXIG-ORC-21",
+                  "EXIG-ORC-22",
+                  "ADR-012",
+                  "L2",
+                  "L3",
+                  "L4",
+                  "R-02",
+                  "R-08",
+                  "CAP-008",
+                  "DEC-005",
+                  "EXIG-AUT-17",
+                  "PRR R-02",
+                  "PRR R-03",
+                  "PRR R-08",
+                  "C22",
+                  "C36",
+                  "AP-08",
+                  "TEMPORAL-SDKS-2026"
+                ]
+              },
+              {
+                "theme_node_id": "THM_resilience-orchestration-repli-plafonds",
+                "canonical_slug": "resilience-orchestration-repli-plafonds",
+                "theme_title": "Plafonds d'exécution, résilience par dépendance, canal de compensation et preuve de pile en POC",
+                "content_specification": "Opérationnalise PRIN-12 au moyen d'EXIG-ORC-26, EXIG-ORC-27, EXIG-ORC-28 et EXIG-ORC-30 : chaque agent porte cinq plafonds explicites (étapes, appels d'outils, jetons, coût financier, durée totale), des délais d'expiration par dépendance, des réessais à recul exponentiel avec gigue bornés (`maximumAttempts`), des disjoncteurs, un modèle ou une file de repli testé en pré-production, un arrêt vers l'avant préservant le canal de compensation et la validation en preuve de concept de neuf capacités d'orchestration avant homologation.",
+                "identifiers_and_norms": [
+                  "EXIG-ORC-26",
+                  "EXIG-ORC-27",
+                  "EXIG-ORC-28",
+                  "EXIG-ORC-30",
+                  "PRIN-12"
+                ]
+              },
+              {
+                "theme_node_id": "THM_protocoles-ressources-physiques-lap",
+                "canonical_slug": "protocoles-ressources-physiques-lap",
+                "theme_title": "Patron LAP : bail exclusif, barrière liée aux paramètres et résultats métrologiques typés",
+                "content_specification": "Adapte le protocole Lab Agent Protocol (LAP v0.1) aux actifs physiques et aux ressources exclusives à effet irréversible : fiche d'instrument signée (`InstrumentCard` décrivant capacités et bornes physiques), bail d'accès exclusif à battement prévenant toute collision multi-agents, jeton d'approbation humaine à usage unique scellé sur l'empreinte des paramètres et retour métrologique typé doté de sa provenance.",
+                "identifiers_and_norms": [
+                  "LAP v0.1"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D05_03_02",
+            "family_title": "Idempotence JCS et Saga compensatoire",
+            "family_overview": "Établit la sémantique d'effet (Lecture, Écriture, Engagement), la clé canonique `idem-v1` JCS SHA-256 ainsi que le patron Saga à point pivot et canal isolé EXIG-ORC-28, validés par les dix essais d'injection de fautes.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_saga-compensatoire",
+                "canonical_slug": "saga-compensatoire",
+                "theme_title": "Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28",
+                "content_specification": "Tire les conséquences des théorèmes CAP (Gilbert & Lynch) et FLP ainsi que du blocage 2PC : dès qu'une tâche écrit dans ≥ 2 systèmes sans transaction commune, le patron Saga s'impose (EXIG-ORC-15..20, ADR-012, ADR-013, PRR R-06/R-07). Les actions compensables — déclarées par le propriétaire d'outil et jamais inventées par le LLM — précèdent le tampon d'irréversibilité et le point pivot (obligatoire pour P3), consignées dans un journal en ajout seul avant exécution avec escalade humaine automatique après deux échecs.",
+                "identifiers_and_norms": [
+                  "CAP",
+                  "FLP",
+                  "Saga",
+                  "BPMN",
+                  "ISO/IEC 19510:2013",
+                  "DMN",
+                  "CMMN",
+                  "EXIG-ORC-15",
+                  "EXIG-ORC-16",
+                  "EXIG-ORC-17",
+                  "EXIG-ORC-18",
+                  "EXIG-ORC-19",
+                  "EXIG-ORC-20",
+                  "PRIN-05",
+                  "ADR-012",
+                  "ADR-013",
+                  "R-03",
+                  "R-06",
+                  "R-07",
+                  "PRI-009",
+                  "CAP-009",
+                  "DEC-005",
+                  "EXIG-ORC-28",
+                  "PRR R-06",
+                  "PRR R-07",
+                  "C23",
+                  "G0-EX-CH03-03"
+                ]
+              },
+              {
+                "theme_node_id": "THM_canal-compensation-isole-outbox",
+                "canonical_slug": "canal-compensation-isole-outbox",
+                "theme_title": "Point pivot, Transactional Outbox et canal de compensation isolé (EXIG-ORC-28)",
+                "content_specification": "Sécurise la réversibilité pré-pivot grâce à un canal de compensation dédié (EXIG-ORC-28) pourvu d'une identité NHI, de justificatifs et d'un budget propres à l'orchestrateur. Couplé au patron Transactional Outbox en base durable (SQLite WAL / PostgreSQL) et à la clé canonique `idem-v1` (JCS SHA-256), ce canal garantit l'aboutissement des compensations même lorsque l'agent métier initial a été révoqué ou interrompu par le SOC.",
+                "identifiers_and_norms": [
+                  "EXIG-ORC-18",
+                  "EXIG-ORC-20",
+                  "EXIG-ORC-21",
+                  "EXIG-ORC-28"
+                ]
+              },
+              {
+                "theme_node_id": "THM_saga-dix-scenarios-fautes",
+                "canonical_slug": "saga-dix-scenarios-fautes",
+                "theme_title": "Suite déterministe des dix scénarios d'injection de fautes Saga (EXIG-ORC-20)",
+                "content_specification": "Fournit la preuve exécutable requise par EXIG-ORC-20 au Tome 8 (`policy_saga/saga_orchestrator.py` et `tests/test_saga_10_faults.py`, 11/11 tests réussis en G0 sans assertion relâchée) : vérifie l'échec pré-pivot, le crash post-Outbox, la réponse perdue, la réponse tardive, le verrou sémantique concurrent (HTTP 409), le blocage post-pivot, la double compensation idempotente, le double échec de niveau C1 (EXIG-ORC-18), le crash à mi-compensation et la révocation de l'agent métier.",
+                "identifiers_and_norms": [
+                  "EXIG-ORC-20",
+                  "EXIG-ORC-18",
+                  "EXIG-ORC-28",
+                  "R-03",
+                  "R-06",
+                  "C22",
+                  "C23"
+                ]
+              },
+              {
+                "theme_node_id": "THM_semantique-effet-idempotence-uetr",
+                "canonical_slug": "semantique-effet-idempotence-uetr",
+                "theme_title": "Sémantique d'effet (Lecture / Écriture / Engagement), idempotence outil et jointure UETR",
+                "content_specification": "Fonde la taxonomie tripartite des effets (Lecture, Écriture compensable, Engagement irréversible) au chapitre 48 du Tome 1 : constate l'expiration du brouillon IETF Idempotency-Key (avril 2026) ainsi que l'absence de sémantique transactionnelle dans MCP et A2A, déplace la responsabilité de l'idempotence vers l'outil ou son adaptateur durable (`idem-v1`) et assure le bouclage comptable réel par jointure sur l'identifiant UETR ISO 20022 (RFC 9562).",
+                "identifiers_and_norms": [
+                  "UETR",
+                  "RFC 9562",
+                  "ISO 20022"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Flux durables Temporal et Restate dotés de `patched()` / Worker Versioning (Pinned/Rainbow), d'une garde TOCTOU au réveil et d'essais de reprise déterministe sans double effet.",
+          "Suite exécutable `test_saga_10_faults.py` réussissant 11/11 cas en G0 (crash post-Outbox, HTTP 409 concurrent, double échec C1 EXIG-ORC-18, agent révoqué avec canal EXIG-ORC-28 actif).",
+          "Fiche de preuve de concept démontrant les neuf capacités d'orchestration et les cinq plafonds EXIG-ORC-26 avant toute inscription d'un nouveau cadriciel au catalogue.",
+          "Adaptateur d'idempotence `idem-v1` (JCS SHA-256) et corrélation UETR ISO 20022 vérifiés en intégration continue sur les écritures de paliers P2 et P3."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "entrante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 1,
+            "target_slug": "systems-of-agency",
+            "synthesis": "[execution-durable-temporal] L'ancrage des systèmes d'action dans Temporal ou Restate avec idempotence transforme des appels probabilistes en processus métier auditables et reprenables de bout en bout (sections 34.11 et 47.22)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 2,
+            "target_slug": "erreurs-silencieuses-cascade",
+            "synthesis": "[saga-compensatoire] La combinaison `idem-v1`, Transactional Outbox, point pivot et canal de compensation isolé EXIG-ORC-28 répare les échecs partiels sans verrouillage 2PC et prévient les doubles écritures ainsi que les états comptables incohérents."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 5,
+            "target_slug": "supervision-hitl-hotl-abstention",
+            "synthesis": "[execution-durable-temporal] Les mécanismes Signals et Awakeables permettent de suspendre un flux durant plusieurs jours sous SLA pour révision humaine HOTL sans immobiliser de mémoire ni perdre l'état d'exécution."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 12,
+            "target_slug": "couche-anti-corruption-acl",
+            "synthesis": "[execution-durable-temporal] Les reprises par rejeu déterministe d'un moteur durable exigent des appels externes idempotents protégés par façades ACL/CQRS devant les systèmes d'enregistrement; EXIG-ARC-14 et EXIG-ORC-22 imposent qu'un adaptateur dispose d'un registre durable d'idempotence ou classe l'outil P3 sans réessai."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 13,
+            "target_slug": "modes-echecs-emergents-frontiere",
+            "synthesis": "[saga-compensatoire] La combinaison d'une livraison au-moins-une-fois, d'opérations idempotentes et de compensations de Saga contient les incohérences lors de pannes partielles ou de reprises d'outils (chapitre 1, sections 1.5.2 et 1.6.2.2; chapitre 4, section 4.4.2)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 14,
+            "target_slug": "choregraphie-event-mesh",
+            "synthesis": "[execution-durable-temporal] Le couplage entre Temporal et Kafka/Solace + CloudEvents 1.0 (sections 18.12 et 19.8) permet des sagas multi-jours à la fois durables et faiblement couplées, tandis qu'EXIG-EVT-08 impose la déduplication sur l'identité CloudEvents; par ailleurs, EXIG-ORC-08 exige un coordinateur, une saga compensatoire et `xagentmaxhops = 4` pour toute chorégraphie multisystème, avec persistance du `CompensationPlan` via Transactional Outbox (sections 19.9–19.10, Extrait 19.2)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 16,
+            "target_slug": "identite-non-humaine-nhi",
+            "synthesis": "[execution-durable-temporal] Dans Temporal (Extrait 18.4, sections 18.10–18.11), un flux réveillé après une hibernation multi-jours doit revalider cryptographiquement que le mandat utilisateur et l'identité NHI ne sont pas révoqués."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 17,
+            "target_slug": "approbation-ciba",
+            "synthesis": "[execution-durable-temporal] Dans les flux T3/T4 (Extrait 18.1, sections 18.10–18.12), la primitive `awakeable` de Temporal ou Restate suspend l'exécution à coût nul durant l'attente d'approbation CIBA (section 30.9) et revalide mandat et état du monde au réveil; la liaison du jeton CIBA au condensat JCS de la Saga au point pivot garantit l'imputabilité humaine tout en couvrant la compensation pré-enregistrée."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 21,
+            "target_slug": "soc-soar-coupe-circuit",
+            "synthesis": "[saga-compensatoire] L'interruption brutale de tout outil laisserait des écritures orphelines; le couplage entre EXIG-ORC-17 et EXIG-ORC-28 arbitre la tension entre arrêt d'urgence et intégrité comptable en bloquant la progression vers l'avant tout en maintenant ouvert le canal de compensation dédié."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 22,
+            "target_slug": "journalisation-probatoire-audit",
+            "synthesis": "[semantique-effet-idempotence-uetr] La corrélation de la trace probatoire (section 38.4) avec l'identifiant d'effet UETR (section 48.5) assure une réconciliation auditable complète entre l'intention d'appel et l'effet financier."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 24,
+            "target_slug": "finops-focus-cpo",
+            "synthesis": "[resilience-orchestration-repli-plafonds] Les cinq plafonds d'EXIG-ORC-26 (étapes, appels, jetons, coût, durée) forment les dimensions opérationnelles de l'enveloppe budgétaire appliquée par la passerelle de modèles (EXIG-FIN-04)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 28,
+            "target_slug": "production-agentique-canadienne-2025-2026",
+            "synthesis": "[semantique-effet-idempotence-uetr] L'idempotence côté outil (section 48.2) et la jointure UETR (section 48.5) préviennent les doubles exécutions financières et assurent la traçabilité comptable sur les flux bancaires asynchrones."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 28,
+            "target_slug": "tampon-deterministe-rtr-iso20022",
+            "synthesis": "[saga-compensatoire] La nature irrévocable en temps réel des virements RTR ISO 20022 exclut toute compensation a posteriori et impose un tampon déterministe préalable (EXIG-CON-29)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 30,
+            "target_slug": "plateforme-iap-gitops-cognitif",
+            "synthesis": "[execution-durable-temporal] Le déploiement progressif Canary ou Blue-Green sur une plateforme IAP dépend du mécanisme Worker Versioning (Pinned/Rainbow) afin de ne pas rompre le déterminisme du rejeu des sagas en cours."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 35,
+            "target_slug": "trousse-executable-tome-8",
+            "synthesis": "[saga-dix-scenarios-fautes] Les modules `policy_saga/saga_orchestrator.py` et `tests/test_saga_10_faults.py` vérifient EXIG-ORC-20 sur SQLite WAL en exécutant les dix scénarios d'injection de fautes et le canal isolé EXIG-ORC-28."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 1 §1.6.2 & Ch. 48 Sémantique d'effet, Saga et jointure UETR (L434–L467, L10898–L10983)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Ch. 7 §7.4–7.6 & §7.8–7.10 Exécution durable, Saga, idempotence et résilience EXIG-ORC-11..30 (L2986–L3186, L3237–L3323)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 7 §7.4 Protocole agent-instrument LAP v0.1 (L3702–L3715)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 18 & Ch. 34 §34.10–34.11 Temporal/Restate, garde TOCTOU au réveil et chaos agentique (L9749–L10623, L18878–L19030)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Ch. 5 §5.3–5.4 Reprise du programme, point pivot et canal isolé EXIG-ORC-28 (L754–L864)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Ch. 9 & Ch. 13 §13.4.3 Durable Execution, Worker Versioning et cohérence sans 2PC (L2731–L2969, L4251–L4290)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Ch. 06 §6.4 Machines à états durables et sagas à point pivot (L964–L1014)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Ch. 03 §3.3 Orchestrateur Saga durable et 10 scénarios de fautes EXIG-ORC-20 (L1034–L1175)"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 16,
+      "chapter_code": "CH-16",
+      "domain_id": "D06",
+      "subdomain_node_id": "SUB_D06_01",
+      "representative_title": "Identités non humaines parrainées, attestations SPIFFE/SPIRE et fondations d'identité décentralisée",
+      "executive_summary": "Face au ratio de 82 identités machines par employé et à l'inadéquation structurelle des protocoles conçus pour un navigateur humain (OAuth RFC 6749 § 4.1, SCIM RFC 7643 § 4 muet), aucun modèle de 2026–2027 ne satisfait pleinement aux cinq questions d'imputabilité (Q-A à Q-E). Ce chapitre érige l'identité non humaine (NHI) propre par agent et par environnement en socle non dérogeable : parrainage humain actif couplé au SIRH (transfert < 72 h sur départ), proscription des comptes humains et des secrets statiques, séparation entre Agent Identity Blueprint et Instance, et injection hors modèle via gestionnaire de secrets (EXIG-IAM-01..07, OWASP NHI Top 10, ASI03). Sur le plan cryptographique, l'architecture impose l'attestation de charge éphémère SPIFFE/SPIRE (X.509-SVID d'une heure / JWT-SVID de 15 min via Workload API et Envoy SDS, conduit IDMZ IEC 62443 SL-3, veille WIMSE), tout en analysant l'Agent Card signée JWS/JCS, les annuaires commerciaux (Entra Agent ID, Google Cloud, AWS), les registres gouvernés (CSA, AGNTCY ADS) et les fondations inter-entreprises W3C DID/VC 2.0 et GLEIF vLEI (ISO 17442-3).",
+      "targeted_content": {
+        "scope_and_objectives": "Doter chaque agent d'une identité non humaine cryptographiquement attestée, parrainée au registre et préparée à la fédération inter-organisations sans dépendance prématurée envers des brouillons instables.",
+        "key_requirements_and_objectives": [
+          "Attribuer une identité NHI propre à chaque agent et à chaque instance par environnement, rattachée au registre ainsi qu'à un double parrain humain SIRH (réaffectation < 72 h, non-réattribution perpétuelle), tout en bannissant les secrets statiques, les clés partagées et les comptes humains (EXIG-IAM-01..07, S-01).",
+          "Évaluer toute solution d'identité ou d'annuaire selon la grille falsifiable des cinq questions (Q-A identité vérifiable, Q-B créateur, Q-C mandant, Q-D bornes opposables, Q-E répondant juridique) avant toute admission en production.",
+          "Déployer l'attestation cryptographique sans secret zéro au moyen de SPIFFE/SPIRE (`ClusterSPIFFEID`, X.509-SVID et JWT-SVID renouvelés en mémoire par Envoy SDS, domaines de confiance isolés hors production et en production, et TPM 2.0 en Edge déconnecté) en convergence avec IETF WIMSE.",
+          "Consolider le socle IAM fédéré existant sur OAuth 2.1 / BCP 240 (RFC 9700, PKCE obligatoire), liaison mTLS/DPoP et FAPI 2.0, tout en prévenant le verrouillage dans les annuaires commerciaux propriétaires avant la ratification de normes neutres.",
+          "Encadrer la signature JWS/JCS des cartes AgentCard (A2A v1.0.0) au moyen d'un magasin d'ancrage et de métadonnées de cycle de vie hors protocole (en l'absence native de `nbf`, `iat` et `exp` dans A2A), et préparer l'identité légale vérifiable GLEIF vLEI / W3C VC 2.0 pour le Palier 3 B2B sans grattage d'écran (CAP-006, CAP-041)."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D06_01_01",
+            "family_title": "Identités NHI, OAuth 2.1 et registres",
+            "family_overview": "Diagnostique les limites d'OAuth et de SCIM au regard de la grille Q-A..Q-E, impose l'identité NHI parrainée sans secret fixe, situe le socle IAM fédéré (BCP 240 et FAPI 2.0) et compare annuaires commerciaux et registres gouvernés.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_identite-non-humaine-nhi",
+                "canonical_slug": "identite-non-humaine-nhi",
+                "theme_title": "Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes",
+                "content_specification": "Documente la rupture du modèle IAM classique (OAuth § 4.1 orienté navigateur, SCIM RFC 7643 § 4 dépourvu de type agent, extensions SCIM expirées ou pré-normatives) et opère le passage vers la vérification continue de l'usage (OWASP ASI03, ratio NHI 82:1, OWASP NHI Top 10). Met en œuvre EXIG-IAM-01..07 : identité NHI parrainée au SIRH (séparation Blueprint/Instance, transfert < 72 h, non-réattribution perpétuelle), proscription des comptes humains et des secrets statiques, injection hors modèle via le gestionnaire de secrets (`SBB-SECRETS-VAULT`) et gestion du cycle complet Naissance → Vie → Mort.",
+                "identifiers_and_norms": [
+                  "RFC 6749",
+                  "RFC 7643",
+                  "draft-abbey-scim-agent-extension-00",
+                  "draft-wzdk-scim-agent-resource-00",
+                  "ASI03",
+                  "OWASP NHI Top 10",
+                  "F-35",
+                  "EXIG-IAM-*",
+                  "EXIG-IAM-03",
+                  "EXIG-IAM-05",
+                  "EXIG-IAM-06",
+                  "EXIG-IAM-07",
+                  "EXIG-IAM-16",
+                  "NHI1",
+                  "NHI2",
+                  "NHI5",
+                  "NHI7",
+                  "NHI9",
+                  "NHI10",
+                  "PRIN-03",
+                  "IETF draft-ietf-wimse-aims-01",
+                  "BSIF E-23",
+                  "Loi 25",
+                  "ADR-018",
+                  "S-01",
+                  "WIMSE-AIMS",
+                  "PRI-004",
+                  "CAP-035",
+                  "EXIG-IAM-01",
+                  "EXIG-IAM-09",
+                  "PRR S-01",
+                  "SBB-SECRETS-VAULT",
+                  "C26",
+                  "IETF-WIMSE-WIP-08",
+                  "IETF-WIMSE-AIMS-01"
+                ]
+              },
+              {
+                "theme_node_id": "THM_grille-cinq-questions-identite",
+                "canonical_slug": "grille-cinq-questions-identite",
+                "theme_title": "La grille des cinq questions (Q-A à Q-E) : instrument falsifiable et dépendance d'imputabilité",
+                "content_specification": "Fournit l'instrument d'audit falsifiable du Volume III articulé autour de cinq questions séquentielles : Q-A (identité stable, vérifiable et révocable), Q-B (entité créatrice), Q-C (mandant à l'instant t), Q-D (bornes d'action opposables) et Q-E (personne morale répondante). Démontre que l'échec sur Q-A invalide Q-D et Q-E, qu'aucun des 15 mécanismes audités en 2026 (0/15) ne satisfait aux cinq critères et que le passeport virtuel du chapitre 16 n'obtient qu'une réponse pleine et quatre partielles.",
+                "identifiers_and_norms": [
+                  "Q-A",
+                  "Q-B",
+                  "Q-C",
+                  "Q-D",
+                  "Q-E"
+                ]
+              },
+              {
+                "theme_node_id": "THM_annuaires-commerciaux-risque-standard-de-fait",
+                "canonical_slug": "annuaires-commerciaux-risque-standard-de-fait",
+                "theme_title": "Annuaires commerciaux (Entra Agent ID, Google Cloud, AWS Bedrock) et risque de standard de fait",
+                "content_specification": "Compare Microsoft Entra Agent ID (disponibilité générale en avril 2026, `agentIdentityBlueprint`, deux plans sans recouvrement d'accès conditionnel F-35), Google Cloud Agent Identity (disponibilité générale le 22 avril 2026, SPIFFE 24 h) et AWS Bedrock AgentCore Identity (disponibilité générale le 13 octobre 2025). Met en garde contre la cristallisation de schémas commerciaux en standards de fait avant ratification IETF ou W3C et prescrit leur encapsulation derrière un registre interne.",
+                "identifiers_and_norms": [
+                  "Microsoft Entra Agent ID",
+                  "Google Cloud Agent Identity",
+                  "AWS Bedrock AgentCore Identity",
+                  "S-082"
+                ]
+              },
+              {
+                "theme_node_id": "THM_socle-iam-federe-oauth-fapi",
+                "canonical_slug": "socle-iam-federe-oauth-fapi",
+                "theme_title": "Confiance par message (AAA), SAML 2.0, OAuth 2.1 / BCP 240, OIDC, liaison mTLS/DPoP et FAPI 2.0",
+                "content_specification": "Établit le socle IAM éprouvé préalablement à toute délégation multi-agents : déplacement de la confiance du périmètre réseau vers le message signé (AAA), traits structurels de SAML 2.0 (authentification sans autorisation), alignement OAuth 2.0 vers BCP 240 / RFC 9700 (PKCE RFC 7636 obligatoire, OAuth 2.1 demeurant à l'état de projet), liaison cryptographique mTLS/DPoP, profil FAPI 2.0 (février 2025) et latence non bornée du provisionnement SCIM.",
+                "identifiers_and_norms": [
+                  "SAML 2.0",
+                  "RFC 7636",
+                  "RFC 9700",
+                  "BCP 240",
+                  "FAPI 2.0",
+                  "OIDC",
+                  "SCIM"
+                ]
+              },
+              {
+                "theme_node_id": "THM_registres-gouvernes-trois-modeles",
+                "canonical_slug": "registres-gouvernes-trois-modeles",
+                "theme_title": "Registres gouvernés d'agents : brouillon CSA (`toolAccessList`, `permissionBoundaries`) et modèles concurrents",
+                "content_specification": "Distingue trois régimes aux portées distinctes : l'annuaire protocolaire (Q-A, A2A déclinant toute interface normative), le registre d'entreprise (Q-D, brouillon CSA du 27 mars 2026 imposant `toolAccessList` et `permissionBoundaries` mais invalidé dès une extension dynamique) et le registre de fédération (AGNTCY ADS `draft-mp-agntcy-ads-02` masquant la topologie interne hors frontière), soulignant l'écart entre déclarer une limite et l'imposer au PEP.",
+                "identifiers_and_norms": [
+                  "CSA Agent Registry 2026-03-27",
+                  "toolAccessList",
+                  "permissionBoundaries",
+                  "draft-mp-agntcy-ads-02"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D06_01_02",
+            "family_title": "Attestation SPIFFE/SPIRE, DID/VC et vLEI",
+            "family_overview": "Ancre l'exécution dans les attestations éphémères SPIFFE/SPIRE, audite les limites effectives de l'Agent Card signée A2A v1.0.0 et prépare la fédération inter-entreprises W3C DID/VC 2.0 et GLEIF vLEI.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_did-vc-passeport-agent",
+                "canonical_slug": "did-vc-passeport-agent",
+                "theme_title": "Identité légale vérifiable GLEIF vLEI, lacune KYA (0/9) et encadrement des agents externes",
+                "content_specification": "Analyse W3C VC Data Model v2.0, DID v1.0/v1.1, `did:wba` et le déficit d'adoption bancaire (zéro établissement financier relevé sur dix cas). Assemble le passeport d'agent à quatre pièces (AgentCard, registre, mandat, attestations, complétées par une cinquième pièce candidate AIBOM/provenance) tout en maintenant la posture « attendre » pour les normes DID inter-firmes jusqu'à l'émergence d'un consensus. Au Palier 3 (CAP-006, CAP-041, SIG-007/103), prépare l'authentification légale GLEIF vLEI (QVI → LE → OOR/ECR, ISO 17442-3) et les substituts provisoires devant l'échéance BSIF E-23 / AMF du 1er mai 2027.",
+                "identifiers_and_norms": [
+                  "W3C VC Data Model v2.0",
+                  "DID v1.0",
+                  "DID v1.1",
+                  "vLEI GLEIF",
+                  "ISO 17442-3",
+                  "W3C VC",
+                  "DID",
+                  "vLEI",
+                  "W3C DID",
+                  "did:wba",
+                  "W3C-DID-v1.0",
+                  "W3C-VC-2.0",
+                  "F-01",
+                  "CAP-006",
+                  "CAP-041",
+                  "DEC-012",
+                  "EXIG-A2A-03",
+                  "EXIG-A2A-09",
+                  "EXIG-INT-21",
+                  "SIG-007",
+                  "SIG-103",
+                  "GLEIF-VLEI-ISO17442-3",
+                  "arXiv:2509.01063"
+                ]
+              },
+              {
+                "theme_node_id": "THM_spiffe-spire-attestation",
+                "canonical_slug": "spiffe-spire-attestation",
+                "theme_title": "Attestations cryptographiques éphémères SPIFFE X.509-SVID, OIDC et veille WIMSE / OAuth 2.1",
+                "content_specification": "Élimine le problème du secret zéro par attestation cryptographique matérielle et noyau (TPM 2.0, kubelet, condensat OCI SHA-256) et `ClusterSPIFFEID` SPIFFE/SPIRE : émission en mémoire via Workload API et Envoy SDS de certificats X.509-SVID (TTL 1 h, préféré au JWT-SVID rejouable à TTL 15 min), isolation par Trust Domains (hors production par rapport à en production), conduit IDMZ IEC 62443 SL-3, rotation Edge autonome de 72 h sur TPM et alignement sur les brouillons IETF WIMSE (WIP-08, arch-08, AIMS-00/01, zéro RFC au gel de novembre 2026).",
+                "identifiers_and_norms": [
+                  "NIST SP 800-207",
+                  "SPIFFE-ID",
+                  "SPIRE",
+                  "draft-ietf-wimse-workload-identity-practices-05",
+                  "draft-ietf-wimse-arch-08",
+                  "draft-ietf-wimse-aims-00",
+                  "SPIFFE",
+                  "SVID",
+                  "F-87",
+                  "F-88",
+                  "EXIG-IAM-04",
+                  "EXIG-IAM-14",
+                  "IEC 62443 SL-3",
+                  "ADR-018",
+                  "S-01",
+                  "S-02",
+                  "ClusterSPIFFEID",
+                  "CAP-035",
+                  "EXIG-IAM-15",
+                  "ANC-022",
+                  "SIG-003",
+                  "C26"
+                ]
+              },
+              {
+                "theme_node_id": "THM_signature-agent-card-ancrage",
+                "canonical_slug": "signature-agent-card-ancrage",
+                "theme_title": "Agent Card signée A2A v1.0.0 : intégrité par JWS/JCS, ancrage hors protocole et absence d'horloge",
+                "content_specification": "Audite sur pièce l'Agent Card signée A2A v1.0.0 (12 mars 2026) : signature JWS (RFC 7515) calculée après canonicalisation JCS (RFC 8785) hors champ `signatures`. Établit que cette signature prouve uniquement la détention d'une clé et jamais son appartenance juridique : signature MAY / vérification SHOULD, en-tête restreint à quatre clés (`alg`, `typ`, `kid`, `jku`) sans `nbf`, `iat` ni `exp`, 14 champs dépourvus de péremption et de révocation et absence de magasin de confiance dans `SECURITY.md`, imposant un ancrage externe gouverné.",
+                "identifiers_and_norms": [
+                  "A2A v1.0.0",
+                  "RFC 7515",
+                  "RFC 8785"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Registre IAM d'entreprise reliant chaque Agent Identity Blueprint et chaque instance active à un parrain SIRH, assorti d'un mécanisme automatisé de gel en moins de 72 h lors d'un départ (S-01, PRR S-01).",
+          "Contrôles automatisés en intégration continue et au SOC confirmant l'absence de tout secret statique dans le code ou les invites ainsi que le renouvellement en mémoire SPIFFE X.509-SVID via Envoy SDS (`SBB-SECRETS-VAULT`).",
+          "Matrice d'évaluation Q-A..Q-E documentant les écarts des annuaires retenus et le magasin hors protocole d'ancrage des clés AgentCard JWS/RFC 8785.",
+          "Plan de transition conditionnel vers GLEIF vLEI / OOR (ISO 17442-3) et W3C VC 2.0 déclenché sous les signaux SIG-007 et SIG-103 pour les canaux B2B du Palier 3."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 5,
+            "target_slug": "distinction-agent-flux-ambiant",
+            "synthesis": "[identite-non-humaine-nhi] La section 3.4 établit qu'un agent ne constitue ni un utilisateur humain, ni un principal partagé, ni un répondant, excluant les comptes humains ainsi que les secrets partagés et fondant EXIG-IAM-03 à EXIG-IAM-05."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 7,
+            "target_slug": "protocole-mcp",
+            "synthesis": "[socle-iam-federe-oauth-fapi] Le cadre d'autorisation MCP s'appuie sur la pile OAuth 2.x existante (serveur de ressources, métadonnées normalisées, émetteur `iss` RFC 9207) plutôt que de réinventer l'authentification (chapitre 8, section 8.2.2)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "agntcy-slim",
+            "synthesis": "[spiffe-spire-attestation] Les passerelles SLIM (Extrait 6.3) et les maillages inter-zones utilisent les identités cryptographiques SPIFFE/SPIRE afin d'établir des canaux mTLS sans secret statique (sections 6.10 et 28.6); en parallèle, l'Internet-Draft `draft-mp-agntcy-ads-02` d'AGNTCY spécifie le service d'annuaire fédéré par table de hachage distribuée (DHT) complétant la découverte A2A (chapitre 10, section 10.2.2; chapitre 15, section 15.3.2)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "maillage-b2b-federe-edc-odrl",
+            "synthesis": "[did-vc-passeport-agent] Le franchissement des frontières d'entreprise sans autorité SPIFFE partagée exige des justificatifs W3C VC et vLEI vérifiables par les connecteurs EDC/DSP sur canal B2B (sections 45.3 et 45.8)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-a2a",
+            "synthesis": "[did-vc-passeport-agent] L'écosystème GLEIF vLEI (QVI → LE → OOR/ECR, ISO 17442-3) et les justificatifs vérifiables VC permettent aux passerelles A2A d'authentifier la personne morale mandante au-delà du champ `provider`."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-anp-did-wba",
+            "synthesis": "[did-vc-passeport-agent] La couche d'identité du protocole ANP repose sur une méthode DID propre, ce qui subordonne son déploiement à la maturité de l'infrastructure DID (chapitre 8, section 8.5.2); dans l'Extrait 6.4 (sections 6.11 et 7.2), l'interopérabilité inter-organisations sans annuaire central s'appuie sur le document `did:wba` résolu par HTTPS et évalué par politique Cedar en DMZ."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-ap2",
+            "synthesis": "[did-vc-passeport-agent] La chaîne Intent, Cart et Payment Mandates d'AP2 v0.2 et Verifiable Intent (sections 10.1.4, 10.2, 10.11, Extrait 10.2; chapitre 17, section 17.1) s'appuie sur les formats W3C Verifiable Credentials 2.0, SD-JWT et sur des assertions FIDO2 exécutées sur une Trusted Surface non agentique."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 9,
+            "target_slug": "agent-card-decouverte",
+            "synthesis": "[signature-agent-card-ancrage] L'authenticité de la découverte inter-domaines repose sur la signature de l'Agent Card, dont la valeur probante dépend d'un magasin d'ancrage hors protocole (chapitre 15, section 15.1.2; chapitre 18, section 18.2)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 9,
+            "target_slug": "anti-verrouillage-standards",
+            "synthesis": "[annuaires-commerciaux-risque-standard-de-fait] Les organisations doivent arbitrer entre l'adoption immédiate d'annuaires commerciaux déjà en disponibilité générale (Entra, GCP et AWS étendant les RFC) et l'attente de normes ouvertes encore à l'état de brouillon (chapitre 15, section 15.2.3)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 11,
+            "target_slug": "memoire-coala-4-tiroirs",
+            "synthesis": "[did-vc-passeport-agent] La section 39.5 met en tension l'adaptation continue en production d'un agent apprenant avec le gel temporel certifié sur son passeport et dans le registre de conformité."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 12,
+            "target_slug": "encapsulation-patrimoine-it-ot",
+            "synthesis": "[spiffe-spire-attestation] Le modèle Purdue conforme à IEC 62443-3-3 SL-3 (section 28.6) impose des diodes logiques, des courtiers miroirs et des identités SPIFFE/SPIRE pour authentifier les conduits traversant l'IDMZ niveau 3.5 vers OPC UA et MES."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 12,
+            "target_slug": "synchronisation-edge-crdt",
+            "synthesis": "[spiffe-spire-attestation] En mode Edge déconnecté (coupure WAN de 72 h), la rotation des identités SVID et des politiques Cedar s'exécute localement sur la cellule via TPM 2.0 sans joindre l'infonuagique (section 46.14)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 15,
+            "target_slug": "execution-durable-temporal",
+            "synthesis": "[identite-non-humaine-nhi] Dans Temporal (Extrait 18.4, sections 18.10–18.11), tout flux réveillé après une hibernation multi-jours doit revalider cryptographiquement que le mandat utilisateur et l'identité NHI demeurent non révoqués."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 17,
+            "target_slug": "delegation-obo-deux-sauts",
+            "synthesis": "[spiffe-spire-attestation] L'association des SVID SPIFFE (section 37.2) aux jetons de délégation WIMSE/RFC 8693 (section 37.8) authentifie conjointement le conteneur exécutant et le mandant d'origine : l'identité propre de l'agent alimente `actor_token` et la revendication `act` (EXIG-IAM-08, EXIG-IAM-09), permettant l'authentification sans secret du STS par `client_assertion` JWT-SVID ou X.509-SVID mTLS (sections 30.8 et 30.9). Cette chaîne de mandat (AP2, RFC 8693, Transaction Tokens) constitue la troisième pièce du passeport virtuel pour répondre à Q-C (chapitre 16, section 16.1; chapitre 17), tandis que l'échange par saut sans relais de jeton, l'audience unique RFC 8707 et DPoP/mTLS préviennent la rupture au deuxième saut (RFC 8693 § 4.1)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 17,
+            "target_slug": "inventaire-revocation-asymetrie",
+            "synthesis": "[spiffe-spire-attestation] Raccourcir la validité d'un certificat (24 h sous Google Cloud) borne la fenêtre d'exposition mais ne permet ni la révocation immédiate dans cette fenêtre ni le remplacement d'un inventaire gouverné (chapitre 12, section 12.2; chapitre 20, section 20.5)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 17,
+            "target_slug": "kya-verification-agent-tiers",
+            "synthesis": "[identite-non-humaine-nhi] L'enregistrement, la rotation courte et la révocation en cascade (sections 45.8–45.10) réduisent la surface de compromission des identités non humaines (ratio 82:1, section 24.3), tandis que l'admission KYA d'un agent tiers inter-domaines exige l'assemblage d'attestations portables et de registres vérifiables formalisé dans le passeport d'agent (chapitre 16, section 16.3; chapitre 18, section 18.2)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 18,
+            "target_slug": "post-quantique-ml-dsa-slh-dsa",
+            "synthesis": "[spiffe-spire-attestation] La migration vers ML-DSA et SLH-DSA sous NIST IR 8547 (sections 45.9, 49.4 et Annexe N) impose le renouvellement des autorités SVID, des certificats et des signatures de passeport."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 19,
+            "target_slug": "taxonomie-attaques-identite-mandataire-confus",
+            "synthesis": "[socle-iam-federe-oauth-fapi] Lier cryptographiquement le jeton à une clé (mTLS ou DPoP) empêche le rejeu d'un jeton porteur dérobé (comme dans l'incident UNC6395, chapitre 3, section 3.2.2; chapitre 19, section 19.1), tandis que les SVID éphémères SPIFFE limitent la fenêtre d'exploitation (chapitre 3, section 3.3.1; chapitre 12, section 12.1) et que la grille des cinq questions sert d'axe de tri des attaques selon la défaillance Q-A..Q-D exploitée (chapitre 19, section 19.4, Tableau 19.1)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 20,
+            "target_slug": "maillage-agents-pep-pdp-zero-trust",
+            "synthesis": "[spiffe-spire-attestation] Le maillage Zero Trust (sections 37.2 et 37.7) s'appuie sur les identités SVID SPIFFE/SPIRE pour authentifier chaque nœud à l'arête indépendamment de son emplacement réseau."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 20,
+            "target_slug": "politiques-opa-rego-hors-modele",
+            "synthesis": "[identite-non-humaine-nhi] L'évaluation déterministe des politiques OPA et Cedar exige une identité NHI distincte rattachée au mandant et aux paliers P0–P3 inscrits au catalogue interne."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 21,
+            "target_slug": "soc-soar-coupe-circuit",
+            "synthesis": "[spiffe-spire-attestation] L'attribution d'un `ClusterSPIFFEID` par classe d'agent permet au playbook SOAR de révoquer chirurgicalement un Blueprint compromis sans paralyser les autres divisions (section 32.8); par symétrie attaque-défense, les agents défensifs du SOC traitant des alertes non fiables doivent porter une identité propre plutôt qu'un compte utilisateur permanent incompatible avec PIM/TAP (chapitre 20, section 20.9)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 22,
+            "target_slug": "canonicalisation-jcs-rfc8785",
+            "synthesis": "[signature-agent-card-ancrage] La spécification A2A v1.0.0 impose obligatoirement (`MUST`) la canonicalisation déterministe JCS (RFC 8785) avant d'apposer ou de vérifier la signature JWS RFC 7515, garantissant que le vérificateur reconstruit exactement les octets signés de l'Agent Card (chapitre 15, section 15.1.1)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 22,
+            "target_slug": "journalisation-probatoire-audit",
+            "synthesis": "[did-vc-passeport-agent] La section 38.5 établit que la trace OpenTelemetry n'acquiert une valeur probatoire d'imputation qu'en étant corrélée à l'identité du passeport mandataire et au mandat."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 22,
+            "target_slug": "observabilite-otel-genai",
+            "synthesis": "[identite-non-humaine-nhi] La traçabilité requise aux sections 23.2 et 24.2 corrèle l'identité utilisateur, l'identité NHI de l'agent et la chaîne de délégation aux attributs OpenTelemetry propagés via `_meta`."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 22,
+            "target_slug": "provenance-artefacts-aibom-5-horloges",
+            "synthesis": "[did-vc-passeport-agent] La section 47.5 propose d'ancrer une cinquième pièce candidate du passeport d'agent sur les attestations de provenance logicielle AIBOM et SLSA de ses composants afin de prévenir la fraude de composition."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "avis-acvm-11-348",
+            "synthesis": "[identite-non-humaine-nhi] L'avis ACVM 11-348 (5 décembre 2024) confirme l'application des lois sur les valeurs mobilières aux systèmes d'IA présentant des degrés variables d'autonomie et d'adaptativité sur les marchés de capitaux (chapitre 12, section 12.3; chapitre 15, section 15.3.3)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "bsif-e-23",
+            "synthesis": "[registres-gouvernes-trois-modeles] La ligne directrice E-23 du BSIF (en vigueur le 1er mai 2027, modalité au *should*) attend un inventaire complet des modèles incluant les comportements autonomes post-déploiement (chapitre 15, section 15.3.3); cette échéance PROGRAMMÉE devance la normalisation du passeport d'agent et contraint les institutions à recourir aux substituts provisoires de la section 16.1.1 (chapitre 16, sections 16.1.1 et 16.4)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 25,
+            "target_slug": "gouvernance-interne-registre-trois-lignes",
+            "synthesis": "[identite-non-humaine-nhi] L'inventaire de gouvernance relié aux Blueprints NHI et la suspension automatique sur départ RH rendent exécutoires les exigences d'imputabilité du MCN, de la directive E-23 et d'Entra Agent ID (sections 30.8, 39.1 et 39.3)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "ligne-directrice-amf",
+            "synthesis": "[registres-gouvernes-trois-modeles] La ligne directrice sur l'IA de l'AMF (prise d'effet le 1er mai 2027) attend des institutions financières qu'elles maîtrisent les systèmes d'IA à degrés variables d'autonomie et d'adaptabilité après déploiement (chapitre 15, section 15.3.3)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 29,
+            "target_slug": "reseaux-b2b-federes-p3",
+            "synthesis": "[did-vc-passeport-agent] Toute transaction inter-organisations au Palier 3 (POR-013) dépend de la vérification cryptographique de l'identité légale GLEIF vLEI et du rôle OOR (CAP-041)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "trajectoire-consolidation-standards-2027-2028",
+            "synthesis": "[did-vc-passeport-agent] Les sections 7.2 et 11.10 placent ANP, W3C Agent Trust CG et AGNTCY Agent Badge en posture « attendre » pour la production tant que le consensus inter-entreprises de l'horizon 2027–2030 demeure en construction."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "tri-prospectif-peremption-feuilles-route",
+            "synthesis": "[did-vc-passeport-agent] Aucun des trois scénarios de normalisation du passeport d'agent (IETF, fondation/FIDO, produit et régulateur) ne présente le statut PROGRAMMÉ à ce jour, leur échéance demeurant PROJETÉE ou SPÉCULATIVE sans date arrêtée (chapitre 16, section 16.4)."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 12–16 Héritage OAuth/SCIM, DID/VC, grille Q-A..Q-E, Agent Card et passeport (L3296–L4142)"
+          },
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 37 §37.2 & Ch. 45 §45.8 Maillage SPIFFE/SPIRE et naissance de l'agent (L8764–L8807, L10452–L10497)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Ch. 3 §3.4 & Ch. 9 §9.2 Identité NHI et justificatifs SPIFFE EXIG-IAM-01..07 (L813–L832, L3830–L3906)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 29 Identité agentique, Blueprint Entra, SPIFFE/SPIRE et DID/VC (L15241–L15458)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 45 §45.3 Identité légale GLEIF vLEI et rôles OOR/ECR (L23406–L23429)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Ch. M-10 §10.6 Plan de contrôle identité CAP-035..041 (L2382–L2493)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Ch. 10 §10.2 NHI, OWASP NHI Top 10 et SPIFFE/SPIRE/Envoy SDS (L3115–L3186)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Ch. 07 §7.1 & §7.4 Attestation éphémère et responsabilité inter-entreprises (L1029–L1056, L1130–L1157)"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 17,
+      "chapter_code": "CH-17",
+      "domain_id": "D06",
+      "subdomain_node_id": "SUB_D06_02",
+      "representative_title": "Chaîne de mandat OBO à deux sauts, approbation cryptographique CIBA, KYA tiers et asymétrie de révocation",
+      "executive_summary": "Lorsqu'un agent agit au nom d'un mandant humain à travers des outils et des sous-agents, la délégation dépourvue d'encadrement strict engendre la rupture du deuxième saut (RFC 8693 § 4.1 ne rendant la revendication `act` qu'informative) ainsi que l'attaque par mandataire confus (OWASP ASI03). Ce chapitre impose l'échange explicite OAuth OBO à chaque frontière de confiance (EXIG-IAM-08..15, EXIG-MCP-11), plafonné à ≤ 2 sauts sous intersection à trois termes (`mandant ∩ agent ∩ tâche`), audience unique RFC 8707, détails granulaires RAR (RFC 9396) et liaison cryptographique au détenteur par DPoP (RFC 9449) ou mTLS (RFC 8705) sous profil RFC 9700 (durée cible ≤ 15 min, interdiction du relais direct de jeton). Toute action P3 ou dépassant les seuils en classe élevée exige une approbation humaine hors bande OpenID Connect CIBA + FIDO2/WebAuthn retenue à la passerelle (jamais remise à l'agent), scellée par `h = SHA-256(JCS(...))` sous rejet strict non-I-JSON et séparation des tâches (`approver != sub`). Enfin, le chapitre examine la vérification KYA des agents tiers (0/9 normes ratifiées) et l'asymétrie structurelle de révocation sur dix mécanismes.",
+      "targeted_content": {
+        "scope_and_objectives": "Sécuriser l'exécution déléguée de bout en bout contre l'escalade de privilèges, la validation conversationnelle factice et les angles morts de révocation en cascade entre organisations.",
+        "key_requirements_and_objectives": [
+          "Bannir sans dérogation le relais brut de jetons (`token passthrough`, EXIG-IAM-12, EXIG-MCP-11) et exiger un échange OAuth RFC 8693 à chaque saut (`sub` pseudonymisé et chaîne `act` ≤ 2 niveaux, sans prolongation de durée).",
+          "Appliquer l'intersection monotone à trois termes (droits du mandant ∩ portée de l'agent ∩ portée de la tâche via RFC 9396 `authorization_details`), l'audience unique RFC 8707 et les Transaction Tokens O(1) intra-domaine.",
+          "Conformer tout serveur d'autorisation au profil OAuth RFC 9700 (zéro octroi implicite ou par mot de passe, PKCE S256, `iss` RFC 9207, métadonnées RFC 9728) avec liaison obligatoire DPoP/mTLS et durée de vie ≤ 15 min pour P2, P3 et la classe élevée (EXIG-IAM-13..15).",
+          "Subordonner toute action P3 (ou P2 hors seuil en classe élevée) à un jeton d'approbation hors bande OpenID Connect CIBA + FIDO2/WebAuthn lié à `h = SHA-256(JCS(...))` (rejet non-I-JSON RFC 7493, `jti` atomique ≤ 15 min, double approbateur indépendant, rétention au PEP hors modèle, EXIG-AUT-09/12..15).",
+          "Exiger l'automate de révocation temps réel SSF/CAEP, mesurer la fraîcheur CRL/OCSP et évaluer tout agent B2B externe selon la grille Q-A..Q-E face à l'absence de norme KYA ratifiée (0/9 chantiers)."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D06_02_01",
+            "family_title": "Délégation OBO (RFC 8693), DPoP et RAR",
+            "family_overview": "Traite la rupture RFC 8693 au deuxième saut grâce à l'échange OBO borné à deux niveaux, aux autorisations fines RAR (RFC 9396), aux Transaction Tokens O(1), à la liaison DPoP/mTLS et au profil durci RFC 9700.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_delegation-obo-deux-sauts",
+                "canonical_slug": "delegation-obo-deux-sauts",
+                "theme_title": "Rupture au deuxième saut (RFC 8693 § 4.1), délégation atténuée ≤ 2 sauts et DPoP/mTLS",
+                "content_specification": "Localise la rupture au deuxième saut dès qu'un vérificateur siège hors du domaine de confiance initial : la RFC 8693 § 4.1 rend `act` purement informatif et les Transaction Tokens se limitent à un domaine unique. Impose EXIG-IAM-08..12 et PRR S-03..S-05 : échange RFC 8693 par saut sans prolongation de TTL, audience stricte RFC 8707, profondeur ≤ 2 niveaux, atténuation monotone `mandant ∩ agent ∩ tâche`, propagation jusqu'aux dépôts (contre les cinq bris d'héritage ACL) et suivi des travaux IETF `agentproto`, `dawn` et ID-JAG.",
+                "identifiers_and_norms": [
+                  "RFC 8693",
+                  "draft-ietf-oauth-transaction-tokens-09",
+                  "AP2 v0.2.0",
+                  "RFC 9635",
+                  "Macaroons",
+                  "Biscuit",
+                  "WIMSE",
+                  "F-06",
+                  "F-07",
+                  "EXIG-IAM-08",
+                  "EXIG-IAM-09",
+                  "EXIG-IAM-10",
+                  "EXIG-IAM-11",
+                  "EXIG-IAM-12",
+                  "EXIG-ORC-04",
+                  "RFC 9449",
+                  "RFC 8707",
+                  "RFC 7523",
+                  "ADR-005",
+                  "ADR-015",
+                  "ADR-018",
+                  "RFC 9396",
+                  "RFC 8705",
+                  "S-03",
+                  "S-04",
+                  "S-05",
+                  "CAP-036",
+                  "EXIG-IAM-13",
+                  "EXIG-IAM-14",
+                  "PRR S-03",
+                  "PRR S-04",
+                  "PRR S-05",
+                  "EXIG-MCP-11",
+                  "C27",
+                  "C28",
+                  "G0-EX-CH02-01"
+                ]
+              },
+              {
+                "theme_node_id": "THM_requetes-riches-rar-txn-tokens",
+                "canonical_slug": "requetes-riches-rar-txn-tokens",
+                "theme_title": "Autorisations fines RAR (RFC 9396) et Transaction Tokens O(1)",
+                "content_specification": "Spécifie l'encodage précis des limites d'autorisation dans `authorization_details` (RFC 9396 : type d'action, montants, ressources cibles) et la propagation à taille constante O(1) via des Transaction Tokens IETF signés au fil des appels internes multi-sauts (C27, PRR S-03), évitant l'empilement linéaire de signatures et la troncature des revendications.",
+                "identifiers_and_norms": [
+                  "RFC 9396",
+                  "C27",
+                  "PRR S-03"
+                ]
+              },
+              {
+                "theme_node_id": "THM_liaison-jetons-dpop-mtls",
+                "canonical_slug": "liaison-jetons-dpop-mtls",
+                "theme_title": "Liaison cryptographique DPoP (RFC 9449), mTLS (RFC 8705) et rejet du token passthrough",
+                "content_specification": "Contraint chaque jeton délégué à la clé cryptographique privée de l'émetteur au moyen de DPoP (RFC 9449, preuve par requête `cnf` + `jti` anti-rejeu) ou de mTLS (RFC 8705) conformément à RFC 9700, rendant inutilisable tout jeton dérobé (incident UNC6395) et proscrivant le relais direct de jeton entrant sur MCP et A2A (EXIG-MCP-11).",
+                "identifiers_and_norms": [
+                  "RFC 9449",
+                  "RFC 8705",
+                  "RFC 9700",
+                  "EXIG-IAM-14",
+                  "EXIG-MCP-11"
+                ]
+              },
+              {
+                "theme_node_id": "THM_profil-oauth-9700-et-liaison-expediteur",
+                "canonical_slug": "profil-oauth-9700-et-liaison-expediteur",
+                "theme_title": "Profil OAuth RFC 9700, jetons liés à l'expéditeur (mTLS/DPoP) et durée courte (≤ 15 min)",
+                "content_specification": "Arrête le profil normatif OAuth 2.0 RFC 9700 (aligné sur OAuth 2.1 sans le traiter comme RFC finale) au moyen d'EXIG-IAM-13, EXIG-IAM-14 et EXIG-IAM-15 : proscription des octrois implicite et par mot de passe, PKCE S256 obligatoire, émission et validation de l'émetteur `iss` (RFC 9207), métadonnées RFC 9728, liaison DPoP/mTLS impérative pour P2, P3, P1 sensible et classe élevée, et durée maximale cible ≤ 15 minutes.",
+                "identifiers_and_norms": [
+                  "EXIG-IAM-13",
+                  "EXIG-IAM-14",
+                  "EXIG-IAM-15"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D06_02_02",
+            "family_title": "Approbation CIBA, KYA et révocation SSF/CAEP",
+            "family_overview": "Verrouille les actes irréversibles P3 par approbation hors bande CIBA+FIDO2 scellée sur I-JSON/JCS, évalue la maturité pré-normative du KYA tiers et documente l'asymétrie de révocation sur dix mécanismes.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_approbation-ciba",
+                "canonical_slug": "approbation-ciba",
+                "theme_title": "Approbation hors bande OpenID Connect CIBA + FIDO2 liée au condensat I-JSON/JCS SHA-256",
+                "content_specification": "Élimine toute validation conversationnelle ou par simple clic sur les actes critiques P3 et P2 hors seuil en classe élevée (EXIG-AUT-09, EXIG-AUT-11..15, C.6, CAP-002, `SBB-SIGNED-HUMAN-APPROVAL`) : rejet strict de tout paramètre non conforme à I-JSON (RFC 7493, aucun flottant ambigu), calcul de l'empreinte `h = SHA-256(JCS({outil, version, definition_digest, agent_id, task_id, arguments}))`, notification asynchrone OpenID Connect CIBA + FIDO2/WebAuthn sur canal et appareil séparés, émission vers le PEP (jamais vers l'agent) d'un jeton ≤ 15 min à `jti` à usage unique, règle SoD (`approver != sub`), double approbation indépendante en classe élevée P3 et couplage SSF/CAEP.",
+                "identifiers_and_norms": [
+                  "EXIG-AUT-09",
+                  "EXIG-AUT-12",
+                  "EXIG-AUT-13",
+                  "EXIG-AUT-14",
+                  "EXIG-AUT-15",
+                  "CIBA",
+                  "FIDO2",
+                  "TASK_STATE_AUTH_REQUIRED",
+                  "ADR-012",
+                  "ADR-018",
+                  "S-10",
+                  "S-15",
+                  "CAP-002",
+                  "EXIG-AUT-11",
+                  "PRR S-10",
+                  "S-14",
+                  "R-07",
+                  "C24",
+                  "SBB-SIGNED-HUMAN-APPROVAL",
+                  "OIDC-CIBA-1.0",
+                  "G0-EX-CH02-02"
+                ]
+              },
+              {
+                "theme_node_id": "THM_kya-verification-agent-tiers",
+                "canonical_slug": "kya-verification-agent-tiers",
+                "theme_title": "KYA (Know Your Agent) B2B, fraude APP/deepfake et grille des cinq questions",
+                "content_specification": "Inventorie les neuf chantiers KYA menés dans six organismes (W3C CGs, OpenID AIIM, DIF KYA-OS, IETF `draft-sharif-openid-agent-identity` et `draft-drake-agent-identity-registry`, NIST NCCoE/CAISI, Akamai, WIMSE) et constate zéro texte ratifié : la décision d'admission incombe entièrement au récepteur, aggravée par la mutabilité de l'agent (`arXiv 2605.30169`) et les fraudes APP/deepfake (plafond UK PSR de 85 000 £). Appelle le recours transitoire aux substituts contractuels, au précédent eIDAS 2.0 / FIDO MDS et à la grille Q-A..Q-E.",
+                "identifiers_and_norms": [
+                  "KYA-OS",
+                  "draft-sharif-openid-agent-identity",
+                  "draft-drake-agent-identity-registry",
+                  "draft-ietf-wimse-aims-00",
+                  "FIDO MDS",
+                  "arXiv 2605.30169",
+                  "KYA",
+                  "Q-A..Q-E",
+                  "PSR 85k£"
+                ]
+              },
+              {
+                "theme_node_id": "THM_inventaire-revocation-asymetrie",
+                "canonical_slug": "inventaire-revocation-asymetrie",
+                "theme_title": "Inventaire de la révocation en dix rangées, précédent PKI et absence de révocation en cascade",
+                "content_specification": "Prouve l'asymétrie structurelle entre émission spécifiée et révocation négligée sur dix mécanismes (A2A carte/clé, OAuth RFC 7009 SHOULD / RFC 7662, MCP `2025-11-25`, CSA, AGNTCY, AP2, RFC 8693) selon trois manifestations (silence, `MUST NOT` sans mécanisme, état sans fraîcheur). Rappelle les échecs historiques PKI (CRL RFC 5280, OCSP RFC 6960 « good » ≠ émis, fin d'OCSP chez Let's Encrypt le 6 août 2025) et le vide de la révocation en cascade multi-sauts, justifiant des durées courtes (≤ 15 min) conjuguées à un automate SSF/CAEP.",
+                "identifiers_and_norms": [
+                  "RFC 7009",
+                  "RFC 7662",
+                  "RFC 5280",
+                  "RFC 6960",
+                  "MCP 2025-11-25",
+                  "A2A v1.0.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Courtier RFC 8693 / RFC 8707 / RFC 9396 / DPoP validé au PEP (Extrait C.6 et Extrait 27.2) bloquant tout relais de jeton (`token passthrough`) et toute profondeur supérieure à deux sauts.",
+          "Suite exécutable vérifiant la canonicalisation I-JSON / JCS (`h = SHA-256(JCS(...))`), l'unicité atomique `jti` et la règle de séparation des tâches (`approver != sub`) du jeton CIBA (`SBB-SIGNED-HUMAN-APPROVAL`).",
+          "Automate de révocation continue SSF/CAEP relié aux listes d'invalidation de jetons et à l'expulsion des sessions Temporal en attente.",
+          "Protocole contractuel KYA provisoire (fondé sur Q-A..Q-E et les substituts de passeport de la section 16.1.1) pour toute intégration B2B antérieure à l'échéance du 1er mai 2027."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 2,
+            "target_slug": "erreurs-silencieuses-cascade",
+            "synthesis": "[delegation-obo-deux-sauts] La chaîne de mandat WIMSE/RFC 8693, l'atténuation des privilèges à chaque saut et la vérification de fraîcheur CRL/OCSP (section 37.8) empêchent l'amplification de privilèges ou l'usage de mandats révoqués sur les arêtes."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "operationnalisation",
+            "target_chapter_number": 5,
+            "target_slug": "regle-maillon-plus-eleve",
+            "synthesis": "[approbation-ciba] Tout appel P3 ou dépassant le seuil P2 selon EXIG-AUT-10 déclenche l'exigence d'un jeton d'approbation signé hors bande lié à l'empreinte `h` (EXIG-AUT-09, EXIG-AUT-12)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 5,
+            "target_slug": "supervision-hitl-hotl-abstention",
+            "synthesis": "[approbation-ciba] L'escalade hors bande CIBA/FIDO2 liée à `tx_hash` et au condensat SHA-256(JCS) avec séparation des tâches empêche l'approbation complaisante en interface locale, la modification post-validation des paramètres et la fraude interne (sections 30.4 et 30.9); les six règles de conception de la section 22.5 (abstention ciblée, justification structurée, limitation de cadence, vérification en contexte) neutralisent la fatigue d'approbation de 93 % sur les points critiques, tandis que les agents ambiants utilisent la boîte de réception persistante (EXIG-AUT-16) et les jetons signés hors conversation (EXIG-AUT-13) pour appuyer les files Réviser."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-a2a",
+            "synthesis": "[delegation-obo-deux-sauts] Chaque appel A2A transporte un jeton délégué RFC 8693 à audience unique et à portée restreinte par compétence (EXIG-A2A-10, EXIG-IAM-08)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "protocole-ap2",
+            "synthesis": "[delegation-obo-deux-sauts] L'autorisation AP2 (section 36.2) dépend d'une chaîne cryptographique de mandats Intent → Cart → Payment signés, propagés et atténués jusqu'au règlement final; en parallèle, EXIG-INT-22 classe P3 tout paiement déclenché par un agent (AP2, ACP, UCP) et exige une approbation humaine signée par transaction."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "concordance_inter_tomes",
+            "target_chapter_number": 9,
+            "target_slug": "matrice-protocoles-exigences-reglementaires",
+            "synthesis": "[kya-verification-agent-tiers] La section 42.3.3 croise systématiquement la matrice protocoles × exigences réglementaires avec les cinq questions KYA et de gouvernance employées aux chapitres 25, 27 et 37."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 9,
+            "target_slug": "passerelle-mcp-ai-gateway",
+            "synthesis": "[approbation-ciba] Le contrôle 5 de la passerelle valide l'I-JSON, calcule `h = SHA-256(JCS)`, vérifie le `jti` atomique et retient le jeton CIBA au PEP hors de portée du modèle; simultanément, l'interdiction du relais de jeton par les serveurs MCP impose au courtier de la passerelle d'exécuter l'échange OAuth 2.1 OBO (RFC 8693) ciblé par audience RFC 8707 avec preuve DPoP (sections 5.5, 5.9 et 27.8)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 10,
+            "target_slug": "donnees-pretes-agents-odcs-openlineage",
+            "synthesis": "[delegation-obo-deux-sauts] Les cinq points de rupture d'héritage ACL documentés à la section 15.3 imposent une délégation nominative de bout en bout jusqu'à l'entrepôt de données ou au dépôt documentaire afin d'appliquer le filtrage ligne/colonne et de proscrire tout compte de service sur-privilégié."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 15,
+            "target_slug": "execution-durable-temporal",
+            "synthesis": "[approbation-ciba] L'escalade CIBA asynchrone s'appuie sur la primitive `awakeable` de Temporal ou Restate (Extrait 18.1, sections 18.10–18.12 et 30.9) afin de suspendre la saga à coût nul pendant des heures ou des jours sans bloquer de fil CPU, puis revalider mandat et état du monde au retour du signal CIBA."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 15,
+            "target_slug": "saga-compensatoire",
+            "synthesis": "[approbation-ciba] Lier le jeton CIBA au condensat JCS de la Saga au point pivot garantit l'imputabilité humaine tout en couvrant la compensation pré-enregistrée."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 16,
+            "target_slug": "did-vc-passeport-agent",
+            "synthesis": "[kya-verification-agent-tiers] L'admission inter-domaines d'un agent tiers par KYA requiert l'assemblage d'attestations portables et de registres vérifiables formalisé dans le passeport d'agent (chapitre 16, section 16.3; chapitre 18, section 18.2), dont la chaîne de mandat (AP2, RFC 8693, Transaction Tokens) forme la troisième pièce spécifiquement instruite pour répondre à Q-C (chapitre 16, section 16.1; chapitre 17)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 16,
+            "target_slug": "identite-non-humaine-nhi",
+            "synthesis": "[delegation-obo-deux-sauts] L'échange RFC 8693 par saut sans relais de jeton, l'audience unique RFC 8707 et DPoP/mTLS parent au délégué confus au deuxième saut (RFC 8693 § 4.1); cette délégation multi-sauts dépend d'une identité NHI propre à l'agent alimentant `actor_token` et `act` (chapitre 12, section 12.5; chapitre 17, section 17.1; EXIG-IAM-08/09), tandis que l'enregistrement, la rotation courte et la révocation en cascade (sections 45.8–45.10) réduisent la surface de compromission du parc 82:1 (section 24.3)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 16,
+            "target_slug": "spiffe-spire-attestation",
+            "synthesis": "[delegation-obo-deux-sauts] L'agent s'authentifie sans secret auprès du STS lors de l'échange RFC 8693 par `client_assertion` JWT-SVID SPIFFE ou X.509-SVID mTLS (sections 30.8, 30.9, 37.2 et 37.8); par ailleurs, raccourcir la validité d'un certificat (24 h chez Google Cloud) borne l'exposition mais ne permet pas de révoquer immédiatement ni de remplacer l'inventaire (chapitre 12, section 12.2; chapitre 20, section 20.5)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 18,
+            "target_slug": "crypto-agilite-migration-pqc",
+            "synthesis": "[inventaire-revocation-asymetrie] Comme la carte signée et les registres ne documentent pas le retrait des clés et artefacts émis, la migration post-quantique risque d'empiler les algorithmes sans pouvoir fermer l'ancien (chapitre 21, sections 21.3 et 21.6)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 18,
+            "target_slug": "post-quantique-ml-dsa-slh-dsa",
+            "synthesis": "[delegation-obo-deux-sauts] La taille 50–72× supérieure des signatures ML-DSA-65/87 gonfle les en-têtes OBO/DPoP à 20–35 Ko dès deux ou trois sauts et provoque des rejets `HTTP 431` (> 8 192 o) sur Nginx et Envoy (section 49.5), imposant la bascule vers `kid`/JWKS et des Transaction Tokens CBOR-COSE de taille constante O(1)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 19,
+            "target_slug": "injection-indirecte-prompt",
+            "synthesis": "[delegation-obo-deux-sauts] L'échange OAuth 2.0/2.1 OBO (RFC 8693 `sub`/`act`) à portée réduite, lié par DPoP (RFC 9449) et audience RFC 8707 avec rejet du `token passthrough`, borne strictement les privilèges exploitables en aval si l'agent appelant est compromis par injection indirecte (sections 5.5, 15.3 et 27.8)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "concordance_inter_tomes",
+            "target_chapter_number": 22,
+            "target_slug": "observabilite-otel-genai",
+            "synthesis": "[delegation-obo-deux-sauts] La propagation W3C Trace Context posée au chapitre 3 (section 3.4.5) est évaluée au chapitre 17 (section 17.6.2) comme piste de traçabilité multi-sauts avant d'être instruite en exploitation au chapitre 38, formant un pont entre les Livres I, II et IV."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "amplification_synergie",
+            "target_chapter_number": 22,
+            "target_slug": "scellage-jcs-scitt",
+            "synthesis": "[approbation-ciba] Le journal d'audit C.8 consigne les jetons d'approbation et recalcule `h` après canonicalisation JCS (RFC 8785, sans virgule flottante) pour prouver la concordance entre décision humaine et octets transmis (EXIG-AUT-12, EXIG-OBS-12, preuve C.6)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 26,
+            "target_slug": "eu-ai-act",
+            "synthesis": "[kya-verification-agent-tiers] Le règlement eIDAS 2.0 (audits tous les 24 mois et listes de confiance par État membre) sert de modèle institutionnel comparatif pour concevoir l'accréditation KYA transfrontalière (chapitre 18, section 18.3)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 30,
+            "target_slug": "anti-patrons-agentiques",
+            "synthesis": "[delegation-obo-deux-sauts] L'échange RFC 8693 avec atténuation monotone RAR et liaison DPoP/mTLS supprime l'emprunt brut du jeton humain ainsi que les comptes de service sur-privilégiés, parant aux anti-patrons de délégation (sections 30.7 et 30.9)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "tri-prospectif-peremption-feuilles-route",
+            "synthesis": "[kya-verification-agent-tiers] Les échéances affichées des brouillons IETF KYA et WIMSE correspondent à des expirations procédurales automatiques à six mois (statut PROGRAMMÉ) qui ne préjugent en rien d'une adoption en RFC (chapitre 12, section 12.5; chapitre 18, section 18.1)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 34,
+            "target_slug": "referentiel-annexes-protocoles-chronologie",
+            "synthesis": "[delegation-obo-deux-sauts] Les chartes créées en octobre 2026 (`agentproto`, `dawn`) et les livrables OAuth 2.1 / WIMSE situent la stabilisation normative des protocoles d'identité et de dialogue au plus tôt en 2027–2028 (section 49.3, Annexe D.5)."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 3 §3.2, Ch. 17, Ch. 18 & Ch. 20 Chaîne de mandat, 2e saut, KYA et inventaire révocation (L716–L808, L4157–L4469, L4720–L4792)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Ch. 8 §8.5, Ch. 9 §9.3 & Annexe C.6 Approbation CIBA, RFC 8693/9700 et jeton lié à h (L3601–L3670, L3907–L4104, L7292–L7375)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 27 Extrait 27.2 & Ch. 30 Délégation OBO, RAR, DPoP, SoD et CIBA (L14320–L14413, L15558–L16258)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Ch. 6 §6.2 & Ch. 7 §7.2 Liaison JCS SHA-256 CIBA et rupture au 2e saut (L917–L979, L1055–L1102)"
+          },
+          {
+            "tome_id": "T6",
+            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+            "reference": "Ch. 10 §10.3 Chaîne IETF RFC 8693/8707/9449/9396 et Transaction Tokens (L3189–L3241)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Ch. 07 §7.2–7.3 Délégation bornée et approbation hors bande CIBA (L1057–L1129)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Ch. 02 §2.1.2–2.1.4 Délégation 2 sauts, automate SSF/CAEP et CIBA I-JSON/JCS (L519–L616)"
+          }
+        ]
+      }
+    },
+    {
+      "chapter_number": 18,
+      "chapter_code": "CH-18",
+      "domain_id": "D06",
+      "subdomain_node_id": "SUB_D06_03",
+      "representative_title": "Agilité cryptographique, cycles TLS à 47 jours et transition post-quantique ML-DSA/SLH-DSA",
+      "executive_summary": "Deux horloges cryptographiques irréversibles convergent sur l'infrastructure d'identité agentique. Premièrement, le CA/Browser Forum (Ballot SC-081v3) ramène la validité des certificats TLS publics à 100 jours le 15 mars 2027 (ANC-023) puis à 47 jours le 15 mars 2029 (ANC-030, réutilisation de validation à 10 j), rendant obligatoire dès le Palier 1 l'automatisation ACME (RFC 8555) et SPIFFE sur toutes les passerelles (EXIG-SEC-27, PRI-012, POR-001/007). Deuxièmement, la publication finale de NIST IR 8547 (27 octobre 2026) fait basculer de PROJETÉ à PROGRAMMÉ la dépréciation (> 2030) puis l'interdiction (> 2035) des signatures asymétriques classiques face à l'algorithme de Shor et aux attaques rétroactives « récolter maintenant, falsifier plus tard ». S'appuyant sur FIPS 203/204/205, l'inégalité de Mosca (fenêtre 2026–2029), trois conditions de crypto-agilité et le banc Borealis-Bench / `pqc_http431.py`, ce chapitre maîtrise l'amplification 50–72× des signatures ML-DSA (rejets HTTP 431 > 8 192 o) par Transaction Tokens CBOR-COSE O(1), références `kid`/JWKS, TLS hybride X25519MLKEM768 et rescellement SCITT + SLH-DSA ≤ 5 ans (EXIG-SEC-28).",
+      "targeted_content": {
+        "scope_and_objectives": "Éliminer la collision cryptographique des certificats courts et orchestrer une migration post-quantique sans rupture réseau HTTP 431 ni perte de force probante des archives et mandats de longue durée.",
+        "key_requirements_and_objectives": [
+          "Automatiser à 100 % l'émission, la rotation et le renouvellement ACME (RFC 8555) et SPIFFE des certificats TLS dès le Palier 1 pour soutenir sans incident les plafonds de 100 j (15 mars 2027) et 47 j (15 mars 2029, validation de domaine à 10 j) (EXIG-SEC-27, PRI-012, POR-001/007).",
+          "Maintenir un inventaire cryptographique complet (CBOM) distinguant sans fusion les calendriers officiels : NIST IR 8547 (2030/2035 PROGRAMMÉ), décret américain 14412 / OMB M-26-15 (2030/2031), ITSM.40.001 canadien (2031/2035 non liant pour les institutions financières), G7 financier et bulletin BSIF de mars 2026.",
+          "Respecter les trois conditions de crypto-agilité (paramètre nommé, version vérifiable, procédure testée de transition et de retrait) et appliquer l'inégalité de Mosca (x + y > z) sur la fenêtre d'action inverse 2026–2029.",
+          "Neutraliser le choc de taille ML-DSA-65 (3 309 o) / ML-DSA-87 (4 627 o) dépassant la limite HTTP 431 (8 192 o dès 1–2 sauts pour 20–165 Ko d'en-têtes) en imposant les références JWKS par `kid`, des tampons ≥ 32 Ko et les Transaction Tokens CBOR-COSE de taille O(1) (RFC 9964, EXIG-SEC-27).",
+          "Protéger la valeur probante à 5–40 ans (archives, mandats, cartes A2A, journaux d'audit) par rescellement périodique ≤ 5 ans au moyen de signatures hybrides ou post-quantiques SLH-DSA (FIPS 205) et d'ancrage en arbre de Merkle SCITT (RFC 9943), ainsi que par TLS hybride / MLS X25519MLKEM768 sur canaux gRPC (EXIG-SEC-28)."
+        ],
+        "families_and_themes": [
+          {
+            "family_node_id": "FAM_D06_03_01",
+            "family_title": "Certificats TLS 100 j / 47 j et ACME",
+            "family_overview": "Traduit le resserrement du CA/Browser Forum (100 j en 2027, 47 j en 2029) en automatisation ACME/SPIFFE obligatoire dès le Palier 1 afin de prévenir les pannes de collision cryptographique.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_certificats-tls-47-jours",
+                "canonical_slug": "certificats-tls-47-jours",
+                "theme_title": "Réduction CA/Browser Forum des certificats TLS à 100 j (2027) puis 47 j (2029) et ACME",
+                "content_specification": "Exécute EXIG-SEC-27 et PRI-012 face au Ballot SC-081v3 du CA/Browser Forum réduisant la durée maximale des certificats TLS publics à 100 jours au 15 mars 2027 (ANC-023) puis à 47 jours au 15 mars 2029 (ANC-030, validation de domaine ramenée à 10 j). Impose l'automatisation ACME (RFC 8555) et SPIFFE à 100 % sur toutes les passerelles, les serveurs d'autorisation et les courtiers dès le Palier 1 (INI-002, POR-001/007), bloquant toute ouverture externe au Palier 2 sans renouvellement automatisé vérifié.",
+                "identifiers_and_norms": [
+                  "EXIG-SEC-27",
+                  "PRI-012",
+                  "ANC-023",
+                  "ANC-030",
+                  "SIG-012",
+                  "INI-002",
+                  "POR-001",
+                  "POR-007",
+                  "EXIG-IAM-15",
+                  "CABF-BR-SC081V3",
+                  "2027-03-15-TLS-100J",
+                  "2029-03-15-TLS-47J"
+                ]
+              }
+            ]
+          },
+          {
+            "family_node_id": "FAM_D06_03_02",
+            "family_title": "Transition post-quantique ML-DSA / SLH-DSA",
+            "family_overview": "Aligne la transition FIPS 203/204/205 et NIST IR 8547, instaure la crypto-agilité en trois conditions (fenêtre 2026–2029 de Mosca) et résout la saturation HTTP 431 au moyen des Transaction Tokens O(1) et de `kid`/JWKS.",
+            "themes_targeted": [
+              {
+                "theme_node_id": "THM_post-quantique-ml-dsa-slh-dsa",
+                "canonical_slug": "post-quantique-ml-dsa-slh-dsa",
+                "theme_title": "Transition post-quantique (FIPS 203/204/205, NIST IR 8547), choc HTTP 431 (50–72×) et CBOR-COSE",
+                "content_specification": "Consolide les normes finales NIST du 13 août 2024 (FIPS 203 ML-KEM, FIPS 204 ML-DSA, FIPS 205 SLH-DSA) et actualise leur échéancier à la suite de NIST IR 8547 Final (27 octobre 2026 : dépréciation 2030, interdiction 2035 PROGRAMMÉ en Annexe N), tout en distinguant EO 14412 / OMB M-26-15, ITSM.40.001, Europol/QSFF, G7 et le bulletin BSIF de mars 2026. Déploie les tunnels MLS X25519MLKEM768 (RFC 9420) sur SLIM, un schéma crypto-agile ES256/ML-DSA et le rescellement ≤ 5 ans SCITT (RFC 9943) + SLH-DSA sur preuves longues (EXIG-SEC-28).",
+                "identifiers_and_norms": [
+                  "FIPS 203",
+                  "FIPS 204",
+                  "FIPS 205",
+                  "NIST IR 8547",
+                  "SP 800-131A Rev. 3",
+                  "EO 14412",
+                  "OMB M-26-15",
+                  "ITSM.40.001",
+                  "ML-DSA",
+                  "SLH-DSA",
+                  "AN-1..AN-5",
+                  "EXIG-SEC-27",
+                  "EXIG-SEC-28",
+                  "RFC 9420",
+                  "X25519MLKEM768",
+                  "ADR-006",
+                  "RFC 9943",
+                  "Borealis-Bench-C4",
+                  "CAP-040",
+                  "PRI-012",
+                  "DEC-012",
+                  "INI-019",
+                  "INI-041",
+                  "POR-007",
+                  "POR-011",
+                  "SIG-009",
+                  "SIG-010",
+                  "SIG-011",
+                  "ANC-040",
+                  "ANC-043",
+                  "RFC 9964",
+                  "C27",
+                  "G0-EX-CH02-03"
+                ]
+              },
+              {
+                "theme_node_id": "THM_crypto-agilite-migration-pqc",
+                "canonical_slug": "crypto-agilite-migration-pqc",
+                "theme_title": "Crypto-agilité en trois conditions, dette de migration PQC et calendrier inverse 2026–2029",
+                "content_specification": "Adapte le modèle *harvest now, decrypt later* aux artefacts d'identité de longue durée (contrefaçon et non-répudiation rétroactive amplifiées par l'absence de date d'expiration sur l'AgentCard). Exige trois conditions de crypto-agilité (paramètre nommé, version vérifiable, procédure testée de transition et de retrait — 0/5 artefacts documentant le retrait au Tableau 21.3), propose quatre patrons de migration, situe le coût OMB (7,1 G$ US pour l'administration fédérale américaine seule) et applique l'inégalité de Mosca (x + y > z) pour ouvrir la fenêtre 2026–2029.",
+                "identifiers_and_norms": [
+                  "Public Law 117-260",
+                  "Mosca 2018",
+                  "FIPS 204"
+                ]
+              },
+              {
+                "theme_node_id": "THM_saturation-http-431-ml-dsa-kid",
+                "canonical_slug": "saturation-http-431-ml-dsa-kid",
+                "theme_title": "Dimensionnement HTTP 431 sous ML-DSA-65/87 et référence JWKS par kid",
+                "content_specification": "Prouve au moyen du banc Python `pqc_http431.py` et de la Campagne 4 Borealis-Bench que l'empilement linéaire en O(sauts) de signatures ML-DSA-65 (3 309 o, 50× ECDSA) ou ML-DSA-87 (4 627 o, 72×) gonfle les en-têtes OBO/DPoP à 20–35 Ko dès un à deux sauts (165 Ko à cinq sauts), déclenchant des rejets HTTP 431 (> 8 192 o). Neutralise ce blocage par résolution de clés publiques JWKS via `kid`, tampons ≥ 32 Ko et Transaction Tokens CBOR-COSE O(1) (RFC 9964 / -11 : 4 757 o / 6 514 o) dès le Palier P1–P2 (POR-007).",
+                "identifiers_and_norms": [
+                  "FIPS 204",
+                  "POR-007",
+                  "C27",
+                  "EXIG-SEC-27"
+                ]
+              }
+            ]
+          }
+        ],
+        "deliverables_and_verification": [
+          "Pipeline ACME RFC 8555 / Envoy SDS testé en intégration continue garantissant une rotation TLS ≤ 47 jours sans interruption de service (POR-001, POR-007).",
+          "Inventaire CBOM complet (EXIG-SEC-27, EXIG-SEC-28) couvrant certificats, jetons OBO, cartes AgentCard A2A, tunnels SLIM (X25519MLKEM768) et journaux d'audit.",
+          "Banc exécutable `pqc_http431.py` / Borealis-Bench Campagne 4 démontrant le dépassement > 8 192 o en O(sauts) et le maintien en O(1) (4 757 o / 6 514 o) via CBOR-COSE et `kid`/JWKS.",
+          "Procédure de rescellement cryptographique ≤ 5 ans sous SCITT + SLH-DSA (RFC 9943, FIPS 205) vérifiée sur schéma crypto-agile ES256/ML-DSA-65/ML-DSA-87 (Annexe C)."
+        ],
+        "cross_chapter_interrelations": [
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 8,
+            "target_slug": "agntcy-slim",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] La configuration de production SLIM (Extrait 6.3, section 6.10) chiffre les canaux gRPC via le protocole MLS (RFC 9420) configuré avec l'échange de clés hybride post-quantique X25519MLKEM768."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "tension_arbitrage",
+            "target_chapter_number": 9,
+            "target_slug": "passerelle-mcp-ai-gateway",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Les signatures `ML-DSA-65/87` accroissent la taille des jetons de 4,6 à 165 Ko sur cinq sauts et provoquent des rejets `HTTP 431` sur les mandataires inverses plafonnés à 8 KiB, imposant l'adoption de `Transaction Tokens` (section 49.5)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 16,
+            "target_slug": "spiffe-spire-attestation",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] La migration vers ML-DSA et SLH-DSA sous NIST IR 8547 (sections 45.9, 49.4 et Annexe N) exige le renouvellement et l'adaptation des autorités SVID, des certificats et des signatures de passeport."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 17,
+            "target_slug": "delegation-obo-deux-sauts",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] La taille 50–72× supérieure de ML-DSA-65/87 fait croître les en-têtes OBO/DPoP à 20–35 Ko dès deux ou trois sauts et franchit la limite `HTTP 431` (> 8 192 o) sur Nginx et Envoy (section 49.5), imposant l'arbitrage en faveur de `kid`/JWKS et des Transaction Tokens CBOR-COSE de taille constante O(1)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 17,
+            "target_slug": "inventaire-revocation-asymetrie",
+            "synthesis": "[crypto-agilite-migration-pqc] Comme la carte signée et les registres ne documentent pas le retrait des clés et artefacts émis, la migration PQC risque d'empiler les algorithmes sans permettre le retrait de l'ancien jeu cryptographique (chapitre 21, sections 21.3 et 21.6)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "attenuation_risque",
+            "target_chapter_number": 22,
+            "target_slug": "scellage-jcs-scitt",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Le scellement en arbre de Merkle SCITT signé SLH-DSA (FIPS 205), conjugué aux signatures hybrides/post-quantiques et au rescellement ≤ 5 ans imposé par EXIG-SEC-28, protège la valeur probante à 5–40 ans des mandats, cartes A2A et journaux d'audit face à l'algorithme de Shor."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "encadrement_normatif",
+            "target_chapter_number": 25,
+            "target_slug": "bsif-e-23",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Le chapitre 21 (section 21.8) établit que le décret américain 14412 (2030/2031) et ITSM.40.001 (2031/2035) ne lient pas les institutions financières canadiennes et que le bulletin BSIF de mars 2026 ne fixe aucune échéance propre; en parallèle, l'adoption précoce de MLS hybride X25519MLKEM768 sur SLIM (section 6.10) prépare les liaisons B2B et IDMZ aux futures exigences prudentielles 2026–2030."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "trajectoire-90j-18m-p1-p3",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Le déploiement s'échelonne sur trois paliers : préparation `kid`/tampons/TLS hybride en P1, signatures hybrides et SCITT à POR-007 en P2 (G7 2030–2032), puis PQC natif complet à POR-011 en P3 (2035)."
+          },
+          {
+            "direction": "sortante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 31,
+            "target_slug": "trajectoires-adaptatives-dapp",
+            "synthesis": "[certificats-tls-47-jours] Les échéances CA/Browser Forum SC-081v3 du 15 mars 2027 (100 j) et du 15 mars 2029 (47 j) constituent des seuils irréversibles pilotant l'automatisation PKI/ACME; par ailleurs, les retraits prévus dès 2030–2031 dictent d'exiger dès 2027 l'agilité cryptographique et `kid`/CBOR-COSE dans les acquisitions IAM (sections 41.10 et 49.5), la planification adaptative DAPP déclenchant les bascules sur signaux vers 2030–2035 selon NIST IR 8547 / G7 (2030–2032 critique, 2035 général)."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "dependance_technique",
+            "target_chapter_number": 35,
+            "target_slug": "contrats-types-executes-ci-annexe-c",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] Le schéma JSON Draft 2020-12 de l'Annexe C (`Borealis-Bench`) publie le format crypto-agile ES256/ML-DSA-65/ML-DSA-87 préparant la transition algorithmique des signatures sans rupture de format."
+          },
+          {
+            "direction": "entrante",
+            "relation_type": "projection_temporelle",
+            "target_chapter_number": 36,
+            "target_slug": "peremption-revalidation-annexe-n",
+            "synthesis": "[post-quantique-ml-dsa-slh-dsa] L'Annexe N actualise le statut prospectif de la migration PQC de PROJETÉ à PROGRAMMÉ sur l'horizon 2030–2035 à la suite de NIST IR 8547 Final (27 octobre 2026 : dépréciation > 2030, interdiction > 2035)."
+          }
+        ],
+        "corpus_anchors": [
+          {
+            "tome_id": "T1",
+            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
+            "reference": "Ch. 21 & Annexe N.2 Horloge post-quantique, Mosca 2026–2029, dette migration et NIST IR 8547 (L4922–L5132, L12883–L12928)"
+          },
+          {
+            "tome_id": "T2",
+            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
+            "reference": "Ch. 9 §9.10 Agilité cryptographique, TLS ≤ 47 j et rescellement PQC EXIG-SEC-27/28 (L4704–L4727)"
+          },
+          {
+            "tome_id": "T3",
+            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+            "reference": "Ch. 6 §6.10 & Ch. 49 §49.5 MLS X25519MLKEM768 sur SLIM et choc HTTP 431 (L3365–L3472, L26868–L26904)"
+          },
+          {
+            "tome_id": "T4",
+            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+            "reference": "Ch. M-5 Transition PQC et Campagne 4 Borealis-Bench (L997–L1107)"
+          },
+          {
+            "tome_id": "T5",
+            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+            "reference": "Ch. 7 §7.4 PKI à 47 j, NIST IR 8547 et Transaction Tokens HTTP 431 (L1131–L1167)"
+          },
+          {
+            "tome_id": "T7",
+            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
+            "reference": "Ch. 11–12 & Annexe B Collision cryptographique et chronologie 2026–2035 (L1627–L1815, L2075–L2140)"
+          },
+          {
+            "tome_id": "T8",
+            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+            "reference": "Ch. 02 §2.2 Banc Python HTTP 431 : chaînes O(sauts) face à CBOR-COSE O(1) ML-DSA-65/87 (L617–L710)"
+          }
+        ]
+      }
+    }
+  ]
+}
