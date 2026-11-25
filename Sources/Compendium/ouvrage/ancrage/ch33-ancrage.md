@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b5-4`
 - **Passe G2 initiale (supportés) :** 15
 - **Rectifications appliquées lors de la passe G2 :** 13
-- **Verdict final — supportés :** 28 / 28 (100,0 %)
+- **Verdict final — supportés :** 29 / 29 (100,0 %)
 
 ---
 
@@ -154,3 +154,7 @@ Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées
 - **C33-28 (`L106`)** — *Affirmation :* Clôture sur les quatre livrables du domaine et transition vers la Partie XII (`CRE-IA-2026-01`, trousse logicielle et chaîne probatoire `Wyvern`, Chapitre 34).
   - **Appui vérifié :** `Compendium/prd.md` (`L6097–6100`), `specs/manifest.json` (`ch34`, Partie XII).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+
+- **C33-29 (`L15`, `L58`, § 33.1.1 & § 33.2.1 — ajout *system agency*)** — *Affirmation :* La revue de Chandra et Michel (`[7]`) qualifie le basculement agentique de délégation d'autorité à des artefacts agentiques, mettant l'expansion de l'agentivité des systèmes en tension directe avec la préservation de l'agentivité humaine suivie par l'*AI Index 2026* (`[1]`) ; sans écrans différentiels `CIBA`, cas témoins, quota manuel `INI-043` (`> 70 %`) ni exercices de repli `L0`, cette expansion atrophie la relève et dégrade la supervision en approbation réflexe (`[3, 4]`).
+  - **Appui vérifié :** `SRC-113.txt` (`[7]`, `L88–94`, `L113–119`, `L319–323`), `SRC-008.txt` (`[1]`, `L16360–16372`), `SRC-073.txt` (`[3]`, `L322–357`), `SRC-075.txt` (`[4]`, `L387–554`).
+  - **Passe *system agency* :** intégré et vérifié · **Verdict : supporté**

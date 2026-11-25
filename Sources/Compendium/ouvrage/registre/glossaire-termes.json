@@ -442,6 +442,14 @@
       "chapitre_proprietaire": "ch01",
       "source_l_plus_id": "SRC-027, SRC-122",
       "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Agentivité des systèmes",
+      "en": "system agency",
+      "definition": "Propriété émergente, composite et bornée par laquelle un système sociotechnique complet exécute des tâches multi-étapes grâce au couplage d'un modèle cognitif, d'un harnais déterministe, d'outils vérifiés, d'une mémoire gouvernée, d'une identité non humaine et d'une supervision humaine, plutôt que par les seuls poids d'un modèle.",
+      "chapitre_proprietaire": "ch01",
+      "source_l_plus_id": "SRC-001, SRC-122, SRC-123",
+      "statut_preuve": "l_plus"
     }
   ]
 }

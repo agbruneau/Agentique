@@ -6,7 +6,7 @@
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Passe G2 initiale (supportés) :** 53
 - **Rectifications appliquées dans `00 - Liminaire.md` :** 10 écarts initiaux de formulation ou d'attribution corrigés directement sur pièces (`L13`, `L15`, `L19`, `L45`, `L80`, `L92`, `L96`, `L98`) sans casser `CA-01`–`CA-11`, `CA-21` ou `CA-22`, sans ajout de source et sans contournement du `statut F`
-- **Verdict final — supportés :** 63 / 63 (100,0 %)
+- **Verdict final — supportés :** 68 / 68 (100,0 %)
 
 ---
 
@@ -240,7 +240,7 @@
 - **Validation déterministe `G1` (`verifie_manuscrit.py --unit 00-liminaire --strict`) :** `exit 0`, `0` erreur.
 - **Calibre du manuscrit (`CA-01`) :** `4 063` mots (`verifie_manuscrit.py`) / `4 259` mots (`parser_plan.py`), conformes à la plage `[3 680, 4 320]`.
 - **Base fermée citée (`CA-09`, `CA-10`) :** `19 / 19` sources (`[1]`–`[19]`) de `sources/ch00-sources.md` citées, `0` référence orpheline, `0` source en statut F exploitée hors réserve explicite (`CA-11`).
-- **Verdict final — supportés :** 63 / 63 (100,0 %), `0` écart résiduel.
+- **Verdict final — supportés :** 68 / 68 (100,0 %), `0` écart résiduel.
 
 ---
 
@@ -258,4 +258,7 @@
 - **L00-REV-04 (`L92–L106`, `PRD-L1-010`, `REF-003`)** — *Énoncé :* Ajout de `art. 17` (`ÉFVP`) et `art. 27` (portabilité) pour la Loi 25 (`[14]`), nuance de corroboration secondaire `AIBanks.ca` sur le repère AMF (portail en statut F), mention des repères `EN 18286:2026`, `DORA`, `Cyber Resilience Act`, `ISO/IEC 42001` et `NIST AI RMF`, et précision `21/21` validations sur `13` schémas `JSON Schema 2020-12` à la barrière `G0`.
   - *Preuve primaire :* `Compendium/prd.md` (`L300`), `SRC-063` (`LQ 2021, c. 25`), `aq/rapports-g0.json`.
   - Verdict : supporté
-- **Contrôle `REV-04` :** `3 770` mots (`verifie_manuscrit.py`) / `3 965` mots (`parser_plan.py`) dans `[3 680, 4 320]`, `verifie_manuscrit.py --unit 00-liminaire --strict` = `exit 0`. **Verdict final : `67 / 67` (`100,0 %` supporté).**
+- **L00-REV-05 (`L29`, `§ 0.2`)** — *Énoncé :* Distinction doctrinale posant que **l'agentivité des systèmes** (*system agency*) émane du couplage gouverné entre modèle probabiliste, contrôleur déterministe, mémoire persistante, outillage validé, identité non humaine et supervision humaine, et que l'exosquelette calibre la capacité effective d'action selon le principe de moindre agence (*Least-Agency*).
+  - *Preuve primaire :* `SRC-027.txt` (`[1]`, `L38–L40`, `L149–L151`), `SRC-055.txt` (`[8]`, `L237–L242`), `SRC-066.txt` (`[12]`, `L27`, `L65`, `L175`).
+  - Verdict : supporté
+- **Contrôle `REV-05` :** `3 831` mots (`verifie_manuscrit.py`) dans `[3 680, 4 320]`, `verifie_manuscrit.py --unit 00-liminaire --strict` = `exit 0`. **Verdict final : `68 / 68` (`100,0 %` supporté).**

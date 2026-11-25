@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-1`
 - **Passe G2 initiale (supportés)** : 9
 - **Rectifications appliquées lors de la passe G2 :** 22
-- **Verdict final — supportés :** 31 / 31 (100,0 %)
+- **Verdict final — supportés :** 32 / 32 (100,0 %)
 
 ---
 
@@ -154,3 +154,7 @@ Toutes les formulations divergentes, sur-affirmées ou issues de spécifications
 - **C14-31 (`L111–L115`)** — *Affirmation :* Trois invariants exécutables du Chapitre 14 : (1) enveloppe `CloudEvents` `≤ 64 Ko` `[1]` / `AsyncAPI 3.x` sans PII et `PEP` `OPA`/`Rego` (`default allow := false` `[5, 6]`) ; (2) coupure à `4` sauts + `Outbox`/`CDC` + déduplication `(source, id)` `[1]` + `DLQ` + `FORCED_OPEN` vers `L0` ; (3) passerelle discrète `MCP ↔ ROS 2/DDS` + `LOTO` + `DDS-Security Enforce` + `TUF`/`Sigstore` + arbitre cible `Simplex` visant `≤ 1 ms`.
   - **Appui vérifié :** `SRC-035.txt` `[1]`, `SRC-087.txt` `[5]`, `SRC-088.txt` `[6]`, `Corpus/Tome 2` (`EXIG-EVT-02..10`), `Corpus/Tome 3` (`ADR-028`).
   - **Passe initiale :** écart rectifié · **Action :** ajouté `[1, 5, 6]`, uniformisé `AsyncAPI 3.x` et qualifié `arbitre cible Simplex visant une coupure en ≤ 1 ms` · **Verdict : supporté**
+
+- **C14-32 (`§ 14.2.1`, `§ 14.2.2`)** — *Affirmation :* La dorsale `Event Mesh` projette l'agentivité des systèmes dans le temps asynchrone où, selon `STAMP/STPA` `[4]`, les rétroactions engendrent tempêtes d'événements et dérives `ASI08`/`ASI10` `[2]` sans le plafond `xagentmaxhops = 4` ; la passerelle `MCP ↔ ROS 2/DDS` la prolonge dans l'espace physique sous verrou `LOTO` et arbitre cible `Simplex` visant `≤ 1 ms`.
+  - **Appui vérifié :** `SRC-055.txt` (`[2]`), `SRC-058.txt` (`[4]`), `Tomes/Tome 2` (`EXIG-EVT-06`), `Tomes/Tome 3` (`ADR-028`).
+  - **Passe initiale :** ajout ciblé · **Action :** raccordement terminologique ancré sur `[2, 4]` · **Verdict : supporté**

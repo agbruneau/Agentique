@@ -5,7 +5,7 @@
 - **Auditeur Wyvern neuf (`AO-07`) :** `wyvern-03`
 - **Passe G2 initiale (supportés) :** 23 / 50 (46,0 %)
 - **Rectifications appliquées en passe G2 :** 27 affirmations réancrées et corrigées directement dans `Chapitre 03.md`
-- **Verdict final — supportés :** 50 / 50 (100,0 %)
+- **Verdict final — supportés :** 53 / 53 (100,0 %)
 
 ---
 
@@ -287,4 +287,8 @@
   - **Confrontation :** `Compendium/prd.md` (`L768`, `L780`, `L800`), `schemas/SCH-03-02.svg`.
   - **Verdict :** `Verdict : supporté`
 
-- **Contrôle `REV-04` :** `4 639` mots (`verifie_manuscrit.py`) / `4 885` mots (`parser_plan.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch03 --strict` = `exit 0`, **100,0 % supporté**.
+- **C03-REV-03 (`L21`, `L72`, `§ 3.1.1`, `§ 3.1.3`)** — En régime « conçue × perméable », **l'agentivité des systèmes** économique repose sur l'infrastructure contractuelle (identifiants, bornes budgétaires, registres, arbitrages) plutôt que sur un modèle isolé ; la dissociation de Belcak et coll. entre *Language model agency* et *Code agency* fonde l'appui de l'agentivité des systèmes sur le harnais déterministe et autorise le routage frugal vers `SLM`.
+  - **Confrontation :** `SRC-096.txt` (`[2]`, `L5–L17`), `SRC-098.txt` (`[3]`, `L9–L14`), `SRC-123.txt` (`[5]`, `L161–L164`, `L280–L288`).
+  - **Verdict :** `Verdict : supporté`
+
+- **Contrôle `REV-05` :** `4 726` mots (`verifie_manuscrit.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch03 --strict` = `exit 0`. **Verdict final : `53 / 53` (`100,0 %` supporté).**

@@ -39,6 +39,8 @@ Cette ossature commande la traçabilité d'architecture de bout en bout entre bl
 
 Dans la modélisation visuelle d'entreprise, `DISC-04` assure la compatibilité bidirectionnelle entre les profils `ArchiMate 3.2` et la spécification `ArchiMate 4.0` (`C260`, publiée le `27 avril 2026`). Il rappelle simultanément que les manuels propriétaires `TOGAF 10 ADM` demeurent hors évidence probante ouverte (rangés en `statut F` doctrinal) et qu'aucun artefact d'outil commercial n'est exigé à la barrière `G0`. En appliquant le mécanisme de spécialisation (`Specialization`) et les profils `W172`, l'architecte doit typer chaque acteur cognitif (`«Cognitive Actor»`) comme un `Application Component`, et jamais comme un `Business Actor`, afin de maintenir la séparation entre imputabilité humaine et exécution logicielle.
 
+Cette distinction typologique traduit en modélisation d'entreprise la nature composite de **l'agentivité des systèmes** (*system agency*) : le modèle reste un composant applicatif subordonné au harnais et aux règles de l'institution, jamais un mandataire autonome [5].
+
 Les sept patrons de modélisation associés verrouillent ainsi la traçabilité de bout en bout. Ils relient explicitement les stéréotypes `«Cognitive Actor»`, `«Guardrail Policy»` et `«Human-on-the-Loop»` à la couche applicative et aux contrôles d'autorisation, interdisent tout flux direct (`Flow`) contournant l'approbateur humain et exigent zéro exigence réglementaire (`«regulatory-requirement»`) orpheline le long de la chaîne `Driver → Assessment → Requirement → Exécution`. Chaque obligation prudentielle ou légale aboutit ainsi à un composant d'exécution mesurable et vérifiable.
 
 ![Fermeture DIV-02 : le modèle unifié à cinq couches et trois volets, ArchiMate 4.0 et points de contrôle PC1–PC5](../../schemas/rendus/SCH-06-01.svg)
@@ -126,6 +128,8 @@ Pour gouverner ces couches sans arbitraire local, les douze principes directeurs
 4. **Contenir le modèle** : défiance systématique envers toute donnée reçue (`PRIN-07`) et déterminisme autour du modèle selon la simplicité d'abord (`PRIN-08`) ;
 5. **Garder la maîtrise** : découplage des fournisseurs et propriété de la logique (`PRIN-09`), parrain humain nommément imputable (`PRIN-10`) ;
 6. **Concevoir pour durer et défaillir** : séparation du raisonnement, de l'action et de la mémoire (`PRIN-11`), et dégradation maîtrisée en mode fermé vers l'avant (`PRIN-12`).
+
+Pris ensemble, ces principes ancrent la souveraineté institutionnelle sur **l'agentivité des systèmes** au sein du socle des quarante-deux capacités invariantes : le pouvoir d'agir appartient au système gouverné et borné par contrat, non au modèle probabiliste [5, 8].
 
 En cas de conflit entre ces principes ou avec une contrainte de projet, l'arbitrage obéit à un **ordre de préséance strict** (`CAD26 § 4.3`). Le droit et les règlements applicables priment sur les dix interdictions sans dérogation (`EXIG-GOV-17`), qui priment elles-mêmes sur les exigences de force `DOIT` avant celles de force `DEVRAIT`, la source unique désignée avant le renvoi et la disposition spéciale avant la générale. Ces règles arbitrent ensuite le bloc de protection (`PRIN-03` à `PRIN-07`, `PRIN-10` et `PRIN-12`) avant le bloc architectural (`PRIN-01`, `PRIN-02`, `PRIN-08`, `PRIN-09`, `PRIN-11`), toute exception temporaire exigeant une dérogation formelle bornée (`EXIG-GOV-16`).
 

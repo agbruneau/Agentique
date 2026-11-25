@@ -2,7 +2,7 @@
 
 Cette annexe consolidée est générée mécaniquement à la date de gel du 2 décembre 2026 (`CA-17`) à partir du plan directeur du Compendium, du registre MindMap, du glossaire bilingue, du manifeste `SHA-256` des sources ouvertes `L+`, du registre des exclusions `statut F` et des journaux d'ancrage `G2`.
 
-Le socle documentaire fermé recense **135 sources primaires ouvertes `L+`** hachées `SHA-256` (`0,0 %` `METADATA_ONLY`), **27 exclusions `statut F`** (`AO-01`) et **55 vedettes** assignées à un chapitre propriétaire unique. La barrière `G2` totalise **37/37 journaux d'ancrage Wyvern**, passant de **674** assertions initialement validées à **1393** assertions `supportées` (`100,0 %` après rectifications).
+Le socle documentaire fermé recense **135 sources primaires ouvertes `L+`** hachées `SHA-256` (`0,0 %` `METADATA_ONLY`), **27 exclusions `statut F`** (`AO-01`) et **56 vedettes** assignées à un chapitre propriétaire unique. La barrière `G2` totalise **37/37 journaux d'ancrage Wyvern**, passant de **674** assertions initialement validées à **1425** assertions `supportées` (`100,0 %` après rectifications).
 
 ## 1. Ventilation du corpus primaire ouvert `L+` par catégorie documentaire
 
@@ -105,33 +105,33 @@ Le domaine `D12` couvre les chapitres `ch34` à `ch36` (3 chapitres, **6 famille
 
 Chaque thème du graphe MindMap relève d'un unique chapitre propriétaire (`CA-21`), éliminant tout chevauchement éditorial entre les douze domaines. La notation de quadruple preuve (`[N]/[M]/[É]/[S]`) distingue le socle normatif (`[N]`), la mesure empirique (`[M]`), l'état de l'art évalué (`[É]`) et la synthèse architecturale (`[S]`). Les paragraphes ci-dessous synthétisent la partition des trente-six chapitres par domaine avant le dépliage intégral des deux cent soixante slugs canoniques en section 6.
 
-**Domaine `D01` :** `ch01` (`SUB_D01_01`, familles `FAM_D01_01_01`, `FAM_D01_01_02`, 8 thèmes, ancrage `G2` 21→38/38) ; `ch02` (`SUB_D01_02`, familles `FAM_D01_02_01`, `FAM_D01_02_02`, 4 thèmes, ancrage `G2` 23→44/44) ; `ch03` (`SUB_D01_03`, familles `FAM_D01_03_01`, `FAM_D01_03_02`, 8 thèmes, ancrage `G2` 23→50/50).
+**Domaine `D01` :** `ch01` (`SUB_D01_01`, familles `FAM_D01_01_01`, `FAM_D01_01_02`, 8 thèmes, ancrage `G2` 21→41/41) ; `ch02` (`SUB_D01_02`, familles `FAM_D01_02_01`, `FAM_D01_02_02`, 4 thèmes, ancrage `G2` 23→44/44) ; `ch03` (`SUB_D01_03`, familles `FAM_D01_03_01`, `FAM_D01_03_02`, 8 thèmes, ancrage `G2` 23→53/53).
 
-**Domaine `D02` :** `ch04` (`SUB_D02_01`, familles `FAM_D02_01_01`, `FAM_D02_01_02`, 7 thèmes, ancrage `G2` 31→53/53) ; `ch05` (`SUB_D02_02`, familles `FAM_D02_02_01`, `FAM_D02_02_02`, 4 thèmes, ancrage `G2` 20→36/36) ; `ch06` (`SUB_D02_03`, familles `FAM_D02_03_01`, `FAM_D02_03_02`, 12 thèmes, ancrage `G2` 33→51/51).
+**Domaine `D02` :** `ch04` (`SUB_D02_01`, familles `FAM_D02_01_01`, `FAM_D02_01_02`, 7 thèmes, ancrage `G2` 31→56/56) ; `ch05` (`SUB_D02_02`, familles `FAM_D02_02_01`, `FAM_D02_02_02`, 4 thèmes, ancrage `G2` 20→38/38) ; `ch06` (`SUB_D02_03`, familles `FAM_D02_03_01`, `FAM_D02_03_02`, 12 thèmes, ancrage `G2` 33→53/53).
 
 **Domaine `D03` :** `ch07` (`SUB_D03_01`, familles `FAM_D03_01_01`, `FAM_D03_01_02`, 6 thèmes, ancrage `G2` 21→43/43) ; `ch08` (`SUB_D03_02`, familles `FAM_D03_02_01`, `FAM_D03_02_02`, 8 thèmes, ancrage `G2` 19→36/36) ; `ch09` (`SUB_D03_03`, familles `FAM_D03_03_01`, `FAM_D03_03_02`, 11 thèmes, ancrage `G2` 31→47/47).
 
 **Domaine `D04` :** `ch10` (`SUB_D04_01`, familles `FAM_D04_01_01`, `FAM_D04_01_02`, 7 thèmes, ancrage `G2` 17→34/34) ; `ch11` (`SUB_D04_02`, familles `FAM_D04_02_01`, `FAM_D04_02_02`, 5 thèmes, ancrage `G2` 28→39/39) ; `ch12` (`SUB_D04_03`, familles `FAM_D04_03_01`, `FAM_D04_03_02`, 7 thèmes, ancrage `G2` 26→42/42).
 
-**Domaine `D05` :** `ch13` (`SUB_D05_01`, familles `FAM_D05_01_01`, `FAM_D05_01_02`, 10 thèmes, ancrage `G2` 15→44/44) ; `ch14` (`SUB_D05_02`, familles `FAM_D05_02_01`, `FAM_D05_02_02`, 3 thèmes, ancrage `G2` 9→31/31) ; `ch15` (`SUB_D05_03`, familles `FAM_D05_03_01`, `FAM_D05_03_02`, 7 thèmes, ancrage `G2` 18→36/36).
+**Domaine `D05` :** `ch13` (`SUB_D05_01`, familles `FAM_D05_01_01`, `FAM_D05_01_02`, 10 thèmes, ancrage `G2` 15→45/45) ; `ch14` (`SUB_D05_02`, familles `FAM_D05_02_01`, `FAM_D05_02_02`, 3 thèmes, ancrage `G2` 9→32/32) ; `ch15` (`SUB_D05_03`, familles `FAM_D05_03_01`, `FAM_D05_03_02`, 7 thèmes, ancrage `G2` 18→36/36).
 
-**Domaine `D06` :** `ch16` (`SUB_D06_01`, familles `FAM_D06_01_01`, `FAM_D06_01_02`, 8 thèmes, ancrage `G2` 19→41/41) ; `ch17` (`SUB_D06_02`, familles `FAM_D06_02_01`, `FAM_D06_02_02`, 7 thèmes, ancrage `G2` 17→38/38) ; `ch18` (`SUB_D06_03`, familles `FAM_D06_03_01`, `FAM_D06_03_02`, 4 thèmes, ancrage `G2` 20→34/34).
+**Domaine `D06` :** `ch16` (`SUB_D06_01`, familles `FAM_D06_01_01`, `FAM_D06_01_02`, 8 thèmes, ancrage `G2` 19→42/42) ; `ch17` (`SUB_D06_02`, familles `FAM_D06_02_01`, `FAM_D06_02_02`, 7 thèmes, ancrage `G2` 17→38/38) ; `ch18` (`SUB_D06_03`, familles `FAM_D06_03_01`, `FAM_D06_03_02`, 4 thèmes, ancrage `G2` 20→34/34).
 
-**Domaine `D07` :** `ch19` (`SUB_D07_01`, familles `FAM_D07_01_01`, `FAM_D07_01_02`, 7 thèmes, ancrage `G2` 9→39/39) ; `ch20` (`SUB_D07_02`, familles `FAM_D07_02_01`, `FAM_D07_02_02`, 9 thèmes, ancrage `G2` 16→38/38) ; `ch21` (`SUB_D07_03`, familles `FAM_D07_03_01`, `FAM_D07_03_02`, 4 thèmes, ancrage `G2` 10→36/36).
+**Domaine `D07` :** `ch19` (`SUB_D07_01`, familles `FAM_D07_01_01`, `FAM_D07_01_02`, 7 thèmes, ancrage `G2` 9→41/41) ; `ch20` (`SUB_D07_02`, familles `FAM_D07_02_01`, `FAM_D07_02_02`, 9 thèmes, ancrage `G2` 16→40/40) ; `ch21` (`SUB_D07_03`, familles `FAM_D07_03_01`, `FAM_D07_03_02`, 4 thèmes, ancrage `G2` 10→38/38).
 
 **Domaine `D08` :** `ch22` (`SUB_D08_01`, familles `FAM_D08_01_01`, `FAM_D08_01_02`, 8 thèmes, ancrage `G2` 13→33/33) ; `ch23` (`SUB_D08_02`, familles `FAM_D08_02_01`, `FAM_D08_02_02`, 7 thèmes, ancrage `G2` 14→32/32) ; `ch24` (`SUB_D08_03`, familles `FAM_D08_03_01`, `FAM_D08_03_02`, 5 thèmes, ancrage `G2` 8→33/33).
 
-**Domaine `D09` :** `ch25` (`SUB_D09_01`, familles `FAM_D09_01_01`, `FAM_D09_01_02`, 10 thèmes, ancrage `G2` 13→28/28) ; `ch26` (`SUB_D09_02`, familles `FAM_D09_02_01`, `FAM_D09_02_02`, 8 thèmes, ancrage `G2` 9→31/31) ; `ch27` (`SUB_D09_03`, familles `FAM_D09_03_01`, `FAM_D09_03_02`, 5 thèmes, ancrage `G2` 6→32/32).
+**Domaine `D09` :** `ch25` (`SUB_D09_01`, familles `FAM_D09_01_01`, `FAM_D09_01_02`, 10 thèmes, ancrage `G2` 13→30/30) ; `ch26` (`SUB_D09_02`, familles `FAM_D09_02_01`, `FAM_D09_02_02`, 8 thèmes, ancrage `G2` 9→31/31) ; `ch27` (`SUB_D09_03`, familles `FAM_D09_03_01`, `FAM_D09_03_02`, 5 thèmes, ancrage `G2` 6→32/32).
 
 **Domaine `D10` :** `ch28` (`SUB_D10_01`, familles `FAM_D10_01_01`, `FAM_D10_01_02`, 10 thèmes, ancrage `G2` 7→29/29) ; `ch29` (`SUB_D10_02`, familles `FAM_D10_02_01`, `FAM_D10_02_02`, 8 thèmes, ancrage `G2` 13→36/36) ; `ch30` (`SUB_D10_03`, familles `FAM_D10_03_01`, `FAM_D10_03_02`, 6 thèmes, ancrage `G2` 4→29/29).
 
-**Domaine `D11` :** `ch31` (`SUB_D11_01`, familles `FAM_D11_01_01`, `FAM_D11_01_02`, 11 thèmes, ancrage `G2` 11→32/32) ; `ch32` (`SUB_D11_02`, familles `FAM_D11_02_01`, `FAM_D11_02_02`, 8 thèmes, ancrage `G2` 26→33/33) ; `ch33` (`SUB_D11_03`, familles `FAM_D11_03_01`, 3 thèmes, ancrage `G2` 15→28/28).
+**Domaine `D11` :** `ch31` (`SUB_D11_01`, familles `FAM_D11_01_01`, `FAM_D11_01_02`, 11 thèmes, ancrage `G2` 11→33/33) ; `ch32` (`SUB_D11_02`, familles `FAM_D11_02_01`, `FAM_D11_02_02`, 8 thèmes, ancrage `G2` 26→34/34) ; `ch33` (`SUB_D11_03`, familles `FAM_D11_03_01`, 3 thèmes, ancrage `G2` 15→29/29).
 
 **Domaine `D12` :** `ch34` (`SUB_D12_01`, familles `FAM_D12_01_01`, `FAM_D12_01_02`, 6 thèmes, ancrage `G2` 14→28/28) ; `ch35` (`SUB_D12_02`, familles `FAM_D12_02_01`, `FAM_D12_02_02`, 5 thèmes, ancrage `G2` 15→35/35) ; `ch36` (`SUB_D12_03`, familles `FAM_D12_03_01`, `FAM_D12_03_02`, 14 thèmes, ancrage `G2` 27→41/41).
 
 ## 5. Exclusions `statut F` (`AO-01`) et propriété terminologique
 
-Les **27 ressources exclues en `statut F`** se répartissent par motif documenté : HTTP_403 (15), HTTP_404 (2), HTTP_202_NON_FINAL (2), NETWORK_ERROR:TimeoutError (2), WAF_OR_CHALLENGE:aws-waf (1), WAF_OR_CHALLENGE:g-recaptcha (1), NETWORK_ERROR:URLError (1), HTTP_500 (1), WAF_OR_CHALLENGE:challenges.cloudflare.com (1), HTTP_401 (1). Aucune ressource exclue n'entre dans l'inventaire probatoire `L+`, conformément à la règle stricte de non-contournement des contrôles d'accès (`AO-01`) et de conservation d'empreinte sur sources primaires ouvertes. Chaque exclusion est consignée avec son URL exacte et son motif dans la section 7 afin que tout auditeur puisse vérifier l'absence de contournement et les sources primaires ouvertes de substitution. Par ailleurs, les **55 vedettes** du glossaire bilingue `fr-CA / en` sont réparties sans chevauchement sur **27 chapitres propriétaires** vérifiés sous `CA-07`.
+Les **27 ressources exclues en `statut F`** se répartissent par motif documenté : HTTP_403 (15), HTTP_404 (2), HTTP_202_NON_FINAL (2), NETWORK_ERROR:TimeoutError (2), WAF_OR_CHALLENGE:aws-waf (1), WAF_OR_CHALLENGE:g-recaptcha (1), NETWORK_ERROR:URLError (1), HTTP_500 (1), WAF_OR_CHALLENGE:challenges.cloudflare.com (1), HTTP_401 (1). Aucune ressource exclue n'entre dans l'inventaire probatoire `L+`, conformément à la règle stricte de non-contournement des contrôles d'accès (`AO-01`) et de conservation d'empreinte sur sources primaires ouvertes. Chaque exclusion est consignée avec son URL exacte et son motif dans la section 7 afin que tout auditeur puisse vérifier l'absence de contournement et les sources primaires ouvertes de substitution. Par ailleurs, les **56 vedettes** du glossaire bilingue `fr-CA / en` sont réparties sans chevauchement sur **27 chapitres propriétaires** vérifiés sous `CA-07`.
 
 Le chapitre `ch01` couvre le sous-domaine `SUB_D01_01` (Rupture épistémique et Systèmes d'agentivité) et porte en propriété exclusive 8 thèmes canoniques : Constat empirique de fin 2026 : soutien par rapport à la production et déploiements bornés, De l'échange de données à l'échange d'intentions et contrats comportementaux probabilistes, Du modèle conversationnel à l'agent qui agit en boucle (PEAS, BDI, POMDP), Écart pilote-production, étude MAP et statistiques d'adoption 2026-2027, Taxonomie des systèmes d'IA composés et 5 archétypes d'acteurs, Hiérarchie des preuves (6 niveaux) et bilan empirique des études de cas, Raisonnement à l'inférence, modèles de raisonnement et limites des planificateurs LLM, Revue multivocale PRISMA-ScR / Garousi (MLR W3.2) sur textes intégraux OA.
 
@@ -345,40 +345,40 @@ Le chapitre `ch01` couvre le sous-domaine `SUB_D01_01` (Rupture épistémique et
 
 ### Bilan des journaux d'ancrage `G2` par unité
 
-- **`00-liminaire`** : 53 initial → 63 final (`100,0 %` supporté).
-- **`ch01`** : 21 initial → 38 final (`100,0 %` supporté).
+- **`00-liminaire`** : 53 initial → 68 final (`100,0 %` supporté).
+- **`ch01`** : 21 initial → 41 final (`100,0 %` supporté).
 - **`ch02`** : 23 initial → 44 final (`100,0 %` supporté).
-- **`ch03`** : 23 initial → 50 final (`100,0 %` supporté).
-- **`ch04`** : 31 initial → 53 final (`100,0 %` supporté).
-- **`ch05`** : 20 initial → 36 final (`100,0 %` supporté).
-- **`ch06`** : 33 initial → 51 final (`100,0 %` supporté).
+- **`ch03`** : 23 initial → 53 final (`100,0 %` supporté).
+- **`ch04`** : 31 initial → 56 final (`100,0 %` supporté).
+- **`ch05`** : 20 initial → 38 final (`100,0 %` supporté).
+- **`ch06`** : 33 initial → 53 final (`100,0 %` supporté).
 - **`ch07`** : 21 initial → 43 final (`100,0 %` supporté).
 - **`ch08`** : 19 initial → 36 final (`100,0 %` supporté).
 - **`ch09`** : 31 initial → 47 final (`100,0 %` supporté).
 - **`ch10`** : 17 initial → 34 final (`100,0 %` supporté).
 - **`ch11`** : 28 initial → 39 final (`100,0 %` supporté).
 - **`ch12`** : 26 initial → 42 final (`100,0 %` supporté).
-- **`ch13`** : 15 initial → 44 final (`100,0 %` supporté).
-- **`ch14`** : 9 initial → 31 final (`100,0 %` supporté).
+- **`ch13`** : 15 initial → 45 final (`100,0 %` supporté).
+- **`ch14`** : 9 initial → 32 final (`100,0 %` supporté).
 - **`ch15`** : 18 initial → 36 final (`100,0 %` supporté).
-- **`ch16`** : 19 initial → 41 final (`100,0 %` supporté).
+- **`ch16`** : 19 initial → 42 final (`100,0 %` supporté).
 - **`ch17`** : 17 initial → 38 final (`100,0 %` supporté).
 - **`ch18`** : 20 initial → 34 final (`100,0 %` supporté).
-- **`ch19`** : 9 initial → 39 final (`100,0 %` supporté).
-- **`ch20`** : 16 initial → 38 final (`100,0 %` supporté).
-- **`ch21`** : 10 initial → 36 final (`100,0 %` supporté).
+- **`ch19`** : 9 initial → 41 final (`100,0 %` supporté).
+- **`ch20`** : 16 initial → 40 final (`100,0 %` supporté).
+- **`ch21`** : 10 initial → 38 final (`100,0 %` supporté).
 - **`ch22`** : 13 initial → 33 final (`100,0 %` supporté).
 - **`ch23`** : 14 initial → 32 final (`100,0 %` supporté).
 - **`ch24`** : 8 initial → 33 final (`100,0 %` supporté).
-- **`ch25`** : 13 initial → 28 final (`100,0 %` supporté).
+- **`ch25`** : 13 initial → 30 final (`100,0 %` supporté).
 - **`ch26`** : 9 initial → 31 final (`100,0 %` supporté).
 - **`ch27`** : 6 initial → 32 final (`100,0 %` supporté).
 - **`ch28`** : 7 initial → 29 final (`100,0 %` supporté).
 - **`ch29`** : 13 initial → 36 final (`100,0 %` supporté).
 - **`ch30`** : 4 initial → 29 final (`100,0 %` supporté).
-- **`ch31`** : 11 initial → 32 final (`100,0 %` supporté).
-- **`ch32`** : 26 initial → 33 final (`100,0 %` supporté).
-- **`ch33`** : 15 initial → 28 final (`100,0 %` supporté).
+- **`ch31`** : 11 initial → 33 final (`100,0 %` supporté).
+- **`ch32`** : 26 initial → 34 final (`100,0 %` supporté).
+- **`ch33`** : 15 initial → 29 final (`100,0 %` supporté).
 - **`ch34`** : 14 initial → 28 final (`100,0 %` supporté).
 - **`ch35`** : 15 initial → 35 final (`100,0 %` supporté).
 - **`ch36`** : 27 initial → 41 final (`100,0 %` supporté).

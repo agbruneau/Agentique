@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b5-2`
 - **Passe G2 initiale (supportés)** : 11
 - **Rectifications appliquées lors de la passe G2 :** 21
-- **Verdict final — supportés :** 32 / 32 (100,0 %)
+- **Verdict final — supportés :** 33 / 33 (100,0 %)
 
 ---
 
@@ -161,3 +161,7 @@ Toutes les formulations divergentes, sur-attribuées ou mélangeant le corpus `L
 - **C31-32 (`L134`)** — *Affirmation :* Cinq livrables (`43 INI × 15 POR × 27 SIG`, plan `13 semaines` + `J1–J5` `16` indicateurs, grille `5×5` `kappa`, rapport `EMA` `DC-P12`, registre trié des `40` entrées de lacunes et absences de degré `3` avant chaque revue annuelle et `30 juin 2033`) et transition vers le Chapitre 32.
   - **Appui vérifié :** `registre/matrice-exig-prr-c40.json`, `Corpus/Tome 1` (`§ 49.12`), `Corpus/Tome 2` (`Tableaux 55, 60, 61`), `Corpus/Tome 4` (`§ 8.6`).
   - **Passe initiale :** écart rectifié · **Action :** aligné le décompte du registre des lacunes sur les `40` entrées et absences de degré `3` · **Verdict : supporté**
+
+- **C31-33 (`L17`, `L96`, § 31.1.1 & § 31.2.2 — ajout *system agency*)** — *Affirmation :* La planification `DAPP` (`[1]`) régit l'ouverture progressive de l'agentivité des systèmes devant les `15` portes `POR` jusqu'à la rétrogradation `POR-015` en moins de `60 s`, tandis que la dissociation entre capacité d'oracle et agentivité orientée vers des buts et l'émergence de *group agency* par coordination (`Genewein et coll. [9]`) justifient de subordonner l'agentivité des systèmes à la falaise de fiabilité `METR` (`50 %` par rapport à `80 %` `[8]`).
+  - **Appui vérifié :** `SRC-112.txt` (`[1]`), `SRC-025.txt` (`[8]`, `L68–91`), `SRC-001.txt` (`[9]`, `L939–962` *group agency*, `L1808–1832` oracle vs *agency*), `registre/matrice-exig-prr-c40.json` (`POR-015`).
+  - **Passe *system agency* :** intégré et vérifié · **Verdict : supporté**

@@ -6,7 +6,7 @@
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Passe G2 initiale (supportés) :** 20 affirmations atomiques validées sans retouche sur `36` auditées (`16` rectifiées directement dans `Chapitre 05.md`, dont `4` comportant des chiffres ou libellés divergents retirés et réancrés sur les textes `L+`)
 - **Actions appliquées dans `Chapitre 05.md` :** rectification exacte des `8` domaines `D1–D8` (`Tome 4 § 12.2`, `Tome 5 § 6.1`), suppression des taux non fondés dans `ch05-sources.md` (`93 %` issu d'une source absente du chapitre, `26 %` issu de `PMC3240751` exclu en `statut F`, `0,8 %` confondu entre appels irréversibles et routage `Classe 2`), réancrage exact de `12,36 %` / `0,8 %` / `> 15 %` sur `SRC-073` (`[7]`) et de l'enquête auprès de `17` développeurs sur `SRC-075` (`[6]`), réattribution des échantillons `5 %` / `1 %` à la revue a posteriori `N3–N4` (`EXIG-AUT-21`), précision du profil `CIBA`/`FIDO2`/`RFC 9396` et du rejeu sur expiration (`EXIG-AUT-12`, `EXIG-AUT-16`), suppression de la mention erronée à `§ 42.3.2` au profit d'`EXIG-CON-08`, et ajustement de la légende `Figure 3` (`SCH-05-03`)
-- **Verdict final — supportés :** 36 / 36 (100,0 %)
+- **Verdict final — supportés :** 38 / 38 (100,0 %)
 
 ---
 
@@ -151,7 +151,7 @@
 - **Mots vérifiés (`Chapitre 05.md`) :** `4 016` mots de prose (plage autorisée `[3 552, 4 168]`, cible `3 860`, conforme `CA-01`).
 - **Base fermée citée (`CA-09`, `CA-10`, `CA-11`) :** `10 / 10` sources (`[1]`–`[10]`) citées, `0` référence orpheline, `4` exclusions `statut F` qualifiées sans exploitation probante (`PMC3240751`, `lautorite.qc.ca`, `genai.owasp.org`, `legisquebec`).
 - **Synchronisation et hygiène (`CA-02..CA-08`, `CA-22`) :** `0` symbole dollar non échappé, `0` collision `12-grammes`, `3` tableaux (`Tableau 5.1` à `Tableau 5.3`), `3` figures (`SCH-05-01` à `SCH-05-03`), `2` vedettes propriétaires du glossaire présentes (`Autonomie bornée`, `règle du maillon le plus élevé`), encodage UTF-8 sans BOM et fins de ligne `LF` strictes.
-- **Verdict final — supportés :** 36 / 36 (100,0 %)
+- **Verdict final — supportés :** 38 / 38 (100,0 %)
 
 ---
 
@@ -160,4 +160,7 @@
 - **C05-REV-01 (`L9`, `L29`, `L47`, `L61`, `L90`, `L107`, `SCH-05-01.svg`, `SCH-05-03.puml`, `PRD-L1-007`, `008`, `011`, `015`, `016`, `018`, `021`)** — Numérotation continue `Figure 17`–`Figure 19`, correction de l'italique imbriqué en légende de `Figure 18` (`SCH-05-02`), retrait des fuites d'atelier (`SUB_D02_02`, `SRC-055`, `SRC-063`), ajout de `ISO/IEC 42105`, retrait des backticks littéraux dans `SCH-05-01.svg`, alignement de `SCH-05-03.puml` sur `AL-Ali 2026` (`12,36 %` / `> 15 %` sous cadence, retrait du repère `93 %` issu de la source exclue `PMC3240751`) et remplacement des deux emplois de `vs`.
   - *Preuve primaire :* `SRC-073.txt` (`[7]`, `AL-Ali 2026`), `Compendium/prd.md` (`L1148`), `specs/manifest.json`, `schemas/SCH-05-01.svg`, `schemas/SCH-05-03.puml`.
   - Verdict : supporté
-- **Contrôle `REV-04` :** `3 721` mots (`verifie_manuscrit.py`) / `3 938` mots (`parser_plan.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch05 --strict` = `exit 0`, **100,0 % supporté**.
+- **C05-REV-02 (`L9`, `L55`, `§ 5.1`, `§ 5.2.1`)** — Qualification de **l'agentivité des systèmes** (*system agency*) comme propriété configurée, bornée et vérifiée par le harnais externe hors modèle ; distinction entre agentivité locale d'un composant et agentivité des systèmes effective sous règle asymétrique du maillon le plus élevé et proscription `NX` bloquant toute agence excessive.
+  - *Preuve primaire :* `SRC-066.txt` (`[2]`, `L27`, `L65`, `L175`), `SRC-055.txt` (`[10]`, `L237–L242`).
+  - Verdict : supporté
+- **Contrôle `REV-05` :** `3 798` mots (`verifie_manuscrit.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch05 --strict` = `exit 0`. **Verdict final : `38 / 38` (`100,0 %` supporté).**

@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-01`
 - **Passe G2 initiale (supportés) :** 21
 - **Rectifications appliquées lors de la passe G2 :** 17
-- **Verdict final — supportés :** 38 / 38 (100,0 %)
+- **Verdict final — supportés :** 41 / 41 (100,0 %)
 
 ---
 
@@ -192,4 +192,8 @@
   - **Appui vérifié :** `Compendium/prd.md` (`L466`, `L470`, `L474`), `schemas/SCH-01-03.puml`, `recherche/manifeste-sources-sha256.json`.
   - **Verdict : supporté**
 
-- **Contrôle `REV-04` :** `4 606` mots (`verifie_manuscrit.py`) / `4 845` mots (`parser_plan.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch01 --strict` = `exit 0`, **100,0 % supporté**.
+- **C01-REV-03 (`L29`, `§ 1.1.2`)** — *Affirmation :* Distinction conceptuelle entre la strate architecturale `SoA` et **l'agentivité des systèmes** (*system agency*), propriété émergente et composite de l'assemblage sociotechnique complet (opposant oracle purement cognitif et boucle outillée gouvernée hors modèle, calibrée selon le principe de moindre agence).
+  - **Appui vérifié :** `SRC-001.txt` (`[4]`, `L1810–L1817`), `SRC-122.txt` (`[2]`, `L26–L30`), `SRC-055.txt` (`[9]`, `L237–L242`), `registre/glossaire-termes.json` (vedette `Agentivité des systèmes`).
+  - **Verdict : supporté**
+
+- **Contrôle `REV-05` :** `4 682` mots (`verifie_manuscrit.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch01 --strict` = `exit 0`. **Verdict final : `41 / 41` (`100,0 %` supporté).**

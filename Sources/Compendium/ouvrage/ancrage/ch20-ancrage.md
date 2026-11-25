@@ -1,12 +1,12 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 20 (`ch20`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md` (`5 088` mots de prose, plage `[4 426, 5 194]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md` (`4 806` mots de prose, plage `[4 426, 5 194]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch20-sources.md` (`[1]`–`[7]` en statut `L+`, `1` exclusion `statut F` sur `genai.owasp.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json`) et trousse Tome 8 (`policies_opa/rule_of_two.rego`, `policies_opa/camel_taint.rego`, `policy_saga/taint_camel.py`, `tests/test_policy_saga.py`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-7`
 - **Passe G2 initiale (supportés)** : 16
 - **Rectifications appliquées lors de la passe G2 :** 22
-- **Verdict final — supportés :** 38 / 38 (100,0 %)
+- **Verdict final — supportés :** 40 / 40 (100,0 %)
 
 ---
 
@@ -23,7 +23,7 @@ Toutes les formulations nécessitant un réancrage ou une qualification de prove
 
 ---
 
-## 2. Registre complet des affirmations atomiques (`C20-01` à `C20-38`)
+## 2. Registre complet des affirmations atomiques (`C20-01` à `C20-40`)
 
 | ID | Localisation (`Chapitre 20.md`) | Affirmation atomique | Source / Preuve primaire vérifiée | Passe G2 initiale | Statut final |
 |---|---|---|---|---|---|
@@ -66,3 +66,4 @@ Toutes les formulations nécessitant un réancrage ou une qualification de prove
 | `C20-37` | L184–L190 (Tableau 20.3) | Tableau 20.3 : livrables (`rule_of_two.rego`, `camel_taint.rego`, cible `Cedar`/`AuthZEN`, `STAMP/STPA` & bancs), contrats (`C03`, `C15`, `C16`, `C25`, `C28`, `PRR S-08/S-09`, `EXIG-*`) et vérifications `G0`–`G1` `[1..7]` | `matrice-exig-prr-c40.json` (`C03`, `C15`, `C16`, `C25`, `C28`, `S-08`, `S-09`), `aq/rapports-g0.json`, `ch20-sources.md` (`[1]`–`[7]`) | À rectifier (alignée) | Verdict : supporté |
 | `C20-38` | L192–L196 (Encadré final) | Trois invariants exécutables du Chapitre 20 : externalisation et échec fermé (`PRI-005`, `EXIG-SEC-06/25`, cible `Cedar`), Règle de deux non dérogeable sur session composée (`G0-EX-CH03-01`), séparation `CaMeL` + teinte `A2A` (`0,0 %` `ASR` sur `MultiAgentDojo`, `G0-EX-CH03-02`) et `SRE` borné (`ADR-030`) | `rule_of_two.rego`, `camel_taint.rego`, `aq/rapports-g0.json`, `SRC-087.txt` `[1]`, `SRC-088.txt` `[2]`, `SRC-056.txt` `[4]` | À rectifier (alignée) | Verdict : supporté |
 | `C20-39` | `REV-04` (`L39`, `L41`, `L51`, `L151`, `L186–187`) | Uniformisation `Figure 64`..`Figure 66`, correction `SCH-20-03.svg` (`52,85 µs` `PEP` en `Z1`, `64,01 µs` `C6 CaMeL` en `Z2`) et `SCH-20-01.puml` (`Cedar` cible hors `G0`), ajout de la 3e acception `AgentMesh`, `AWS Bedrock AgentCore`, `Docker` et des IDs `EXIG-AUT-10/11`, `EXIG-IAM-01/02`, `ADR-002/005`, `CAP-038` au `Tableau 20.3` | `Compendium/prd.md` (`L3790–3802`), `schemas/SCH-20-01.puml`, `schemas/SCH-20-03.svg`, `Corpus/Tome 3` (`§ 24.5`) | Révision `REV-04` | Verdict : supporté |
+| `C20-40` | L37 (`§ 20.2.1`) et L151 (`§ 20.2.2`) | `OPA/Rego` en échec fermé (`default allow := false` `[1]`), retrait dynamique d'exfiltration sur session composée (`Règle de deux` `[5, 7]`) et isolation contrôle/données `CaMeL`/`multi-CaMeL` `[3, 4]` bornent mathématiquement l'agentivité des systèmes à l'exécution | `SRC-087.txt` `[1]` (`L2068–2114`), `SRC-007.txt` `[3]`, `SRC-056.txt` `[4]`, `SRC-055.txt` `[5]`, `SRC-002.txt` `[7]`, `rule_of_two.rego`, `camel_taint.rego` | Ajout concept agentivité des systèmes | Verdict : supporté |

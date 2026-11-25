@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-3`
 - **Passe G2 initiale (supportés)** : 19
 - **Rectifications appliquées lors de la passe G2** : 21
-- **Verdict final — supportés** : 41 / 41 (100,0 %)
+- **Verdict final — supportés** : 42 / 42 (100,0 %)
 
 ---
 
@@ -195,3 +195,7 @@ Toutes les formulations demandant un réancrage ou une nuance modale lors de la 
 - **C16-41 (Révision `REV-04` : `PRD-L2-012`, `020`, `021`, `023`, `PRD-L4-002`, `REF-003`)** — *Affirmation :* Uniformisation des figures en `Figure 52`..`Figure 54` (`SCH-16-01` corrigé en `OAuth 2.0 (BCP 240 / RFC 9700)`, `SCH-16-02` aligné sur `A2A v1.0.0 / v1.0.1`), réconciliation explicite `0/15` (`3 × 5`, distinct de quinze produits) et verdict `1/4` du passeport virtuel (`Tome 1 ch. 16`, repérage `arXiv:2509.01063`), intégration de `EXIG-IAM-09`, `EXIG-IAM-16`, `NIST SP 800-207`, `ANC-022` et `SIG-003`, encadré `Clause non-avis (AO-05)`, francisation `playbooks` → `procédures de réponse`, et qualification explicite de `AIBanks.ca` (`[12]`, `SRC-071`) comme source secondaire (portail AMF en statut `F`).
   - **Appui vérifié :** `Compendium/prd.md`, `Corpus/Tome 1` (`ch. 14`, `ch. 16`), `schemas/SCH-16-01.svg`, `schemas/SCH-16-02.svg`, `SRC-071.txt` (`[12]`), `SRC-133.txt` (`[6]`).
   - **Passe initiale :** ajout `REV-04` · **Action :** vérification différentielle `REV-04` · **Verdict : supporté**
+
+- **C16-42 (`§ 16.1`, `§ 16.2.1`)** — *Affirmation :* L'architecture d'identité dissocie la strate des **Systèmes d'agentivité** de l'agentivité des systèmes qui en émerge à l'exécution : dépourvue de personnalité juridique propre, celle-ci requiert l'enchaînement `Q-A` à `Q-E` et une identité `NHI` cryptographiquement distincte (`WIMSE`/`SPIFFE` `[1, 3]`) rattachée à un parrain humain au `SIRH` pour combler le déficit d'attribution `ASI03` `[9]`.
+  - **Appui vérifié :** `SRC-046.txt` (`[1]`), `SRC-048.txt` (`[3]`), `SRC-055.txt` (`[9]`), `Tomes/Tome 1` (`ch. 14`), `Tomes/Tome 2` (`EXIG-IAM-03`, `EXIG-IAM-07`).
+  - **Passe initiale :** ajout ciblé · **Action :** raccordement terminologique ancré sur `[1, 3, 9]` · **Verdict : supporté**

@@ -2,7 +2,7 @@
 
 [Accueil du dépôt](../README.md) · [PDF (`Compendium.pdf`)](Compendium.pdf) · [Markdown (`Compendium.md`)](Compendium.md) · [Tomes thématiques (`../Tomes/`)](../Tomes/README.md) · [Sources éditoriales (`../Sources/Compendium/`)](../Sources/Compendium/README.md) · [Référentiel directeur (`prd.md`)](../Sources/Compendium/prd.md) · [PRD Web](../Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html)
 
-Le **Compendium de l'entreprise agentique** est le traité unifié d'architecture, de gouvernance et d'homologation vérifiable des Systèmes d'agentivité (`non-avis`). Il consolide en un ouvrage maître auto-portant les huit tomes de la collection ([`../Tomes/README.md`](../Tomes/README.md)), réancré sur sources primaires ouvertes `L+` hachées `SHA-256` à la date de gel du **2 décembre 2026** (parution : janvier 2027).
+Le **Compendium de l'entreprise agentique** est le traité unifié d'architecture, de gouvernance et d'homologation vérifiable des **Systèmes d'agentivité** (`SoA`) et de l'**agentivité des systèmes** (`non-avis`). Il consolide en un ouvrage maître auto-portant les huit tomes de la collection ([`../Tomes/README.md`](../Tomes/README.md)), réancré sur sources primaires ouvertes `L+` hachées `SHA-256` à la date de gel du **2 décembre 2026** (parution : janvier 2027).
 
 ---
 
@@ -10,8 +10,8 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 
 | Livrable | Format | Volume mesuré | Description |
 |---|---|---|---|
-| [**Compendium.pdf**](Compendium.pdf) | PDF (`Typst 6,14 × 9,21 po`) | `834` pages · `23 122 392` octets | Édition imprimable et navigable avec table des matières, `115` figures intégrées et notice opposable `non-avis` |
-| [**Compendium.md**](Compendium.md) | Markdown UTF-8 (`LF`) | `1 859 417` octets · `8 362` lignes · `240 477` mots (`180 000` mots de prose cible, `42` unités) | Édition Markdown intégrale synchronisée avec table des matières `GFM`, `37` bibliographies de chapitre et `5` annexes |
+| [**Compendium.pdf**](Compendium.pdf) | PDF (`Typst 6,14 × 9,21 po`) | `837` pages · `23 175 718` octets | Édition imprimable et navigable avec table des matières, `115` figures intégrées et notice opposable `non-avis` |
+| [**Compendium.md**](Compendium.md) | Markdown UTF-8 (`LF`) | `1 868 863` octets · `8 408` lignes · `241 759` mots (`180 000` mots de prose cible, `42` unités) | Édition Markdown intégrale synchronisée avec table des matières `GFM`, `37` bibliographies de chapitre et `5` annexes |
 
 ---
 

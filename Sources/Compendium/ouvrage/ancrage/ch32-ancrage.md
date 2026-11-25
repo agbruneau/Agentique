@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b5-3`
 - **Passe G2 initiale (supportés)** : 26
 - **Rectifications appliquées lors de la passe G2 :** 7
-- **Verdict final — supportés :** 33 / 33 (100,0 %)
+- **Verdict final — supportés :** 34 / 34 (100,0 %)
 
 ---
 
@@ -167,3 +167,7 @@ Toutes les formulations divergentes, sur-affirmées ou issues de spécifications
 - **C32-33 (`L112`–`L116`, § 32.3 — ajout post-G4)** — *Affirmation :* Grille interne à quatre échelons (`R1` à `R4` : `R1 Minimal` `L0–L1` lecture interne sans `SoR` ni `RP` revue annuelle, `R2 Modéré` `L1–L2` revue ciblée `2LoD` semestrielle, `R3 Élevé` `L2–L3` contrôle indépendant `2LoD`/homologation/`ÉFVP`/audit `3LoD`, `R4 Critique` `L3–L4` comité exécutif/`RPRP`/bascule `L0`/retrait éprouvé), explicitement distincte des cotes propres à `BSIF E-23` `[1]`.
   - **Appui vérifié :** `Corpus/Tome 6` (`§ 12` `L3775–3778`), `registre/concordance-taxonomies.json` (`DISC-02`), `SRC-065.txt` (`[1]`).
   - **Passe initiale :** ajout post-G4 · **Action :** vérification différentielle `G2` · **Verdict : supporté**
+
+- **C32-34 (`L13`, `L69`, § 32.1.1 & § 32.2.1 — ajout *system agency*)** — *Affirmation :* Le contrat croisé `AE ↔ AS`, le parrain physique unique consigné au `SIRH`, le registre à sept états, la détection mensuelle d'agents fantômes et les dix interdits absolus d'`EXIG-GOV-17` institutionnalisent la gouvernance de l'agentivité des systèmes par des garde-fous hors modèle face aux dérives d'autonomie et aux risques `OWASP` (`[1, 2, 7]`).
+  - **Appui vérifié :** `SRC-065.txt` (`[1]`, `L209–231`), `SRC-066.txt` (`[2]`, `L25–27`, `L175`), `SRC-055.txt` (`[7]`, `ASI01`–`ASI10`), `Corpus/Tome 2` (`EXIG-GOV-01`, `EXIG-GOV-10`, `EXIG-GOV-17`).
+  - **Passe *system agency* :** intégré et vérifié · **Verdict : supporté**

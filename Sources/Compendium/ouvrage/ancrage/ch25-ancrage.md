@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b4-4`
 - **Passe G2 initiale (supportés)** : 13
 - **Rectifications appliquées lors de la passe G2 :** 15
-- **Verdict final — supportés :** 28 / 28 (100,0 %)
+- **Verdict final — supportés :** 30 / 30 (100,0 %)
 
 ---
 
@@ -146,3 +146,7 @@ Toutes les formulations divergentes, sur-attribuées ou issues de repères hors 
 - **C25-29 (`REV-04`, `PRD-L3-016/017/020`, `REF-003`, `PRD-L4-002`)** — *Affirmation :* Intégration substantielle des deux exigences non dérogeables `GOV-17 ND` (`EXIG-CON-21` extension de l'explication intelligible et du canal de révision `30` j aux décisions partiellement automatisées, et `EXIG-CON-22` vérification humaine `P3` préalable de tout contenu juridique externe, appuyée au repérage `Tome 2 § 12.7` hors `L+` sur *Specter Aviation c. Laprade*, `2025 QCCS 3521`, `5 000 $ CA` art. `342` C.p.c.) ; ajout de la réserve explicite de source secondaire sur chaque citation de `SRC-071` (`AIBanks.ca` `[7]`) et retrait de `[7]` redondant sur `BSIF E-23` ; ajout de la mention du condensat `SHA-256` AMF et du code d'écart `CA-5` ; aération en liste numérotée des 4 conditions d'`EXIG-CON-08` ; nettoyage des `5` `\$` dans backticks ; alignement de `SCH-25-01.puml`, `SCH-25-02.svg` et `SCH-25-03.svg` ; numérotation `Figure 79`..`Figure 81`.
   - **Appui vérifié :** `Corpus/Tome 2` (`L6000–6015`), `Compendium/prd.md` (`L4675–4679`, `L4700`), `SRC-071.txt` (`[7]`), `SRC-114.txt` (`[9]`), `schemas/SCH-25-01.puml`, `schemas/SCH-25-02.svg`, `schemas/SCH-25-03.svg`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
+
+- **C25-30 (`L37`, `L78`, § 25.2.1–25.2.2 — ajout *system agency*)** — *Affirmation :* Le droit québécois saisit l'agentivité des systèmes par ses effets décisionnels sans nommer l'« agent » tout en maintenant l'imputabilité intégrale de l'entreprise sur l'assemblage sociotechnique (`Loi 25` art. `12.1` `[1]`), tandis que la supervision prudentielle canadienne l'encadre par ses effets opérationnels via la décision autonome (`BSIF E-23` `[3]`) et les garde-fous hors modèle (*AI harnessing*, bulletin BSIF de juillet 2026 `[4]`).
+  - **Appui vérifié :** `SRC-063.txt` (`[1]`, art. `12.1` `L1542–1555`), `SRC-065.txt` (`[3]`, occurrences « autonom* »), `SRC-066.txt` (`[4]`, `L27`, `L175` *AI harnessing*).
+  - **Passe *system agency* :** intégré et vérifié · **Verdict : supporté**

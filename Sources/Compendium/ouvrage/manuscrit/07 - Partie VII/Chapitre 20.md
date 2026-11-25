@@ -34,6 +34,8 @@ La barrière `G0` du Compendium vérifie mécaniquement cette clause sur `100,0 
 
 Ce mode fermé élimine aussi les dérives liées à la syntaxe `JSON` : en `Rego`, toute règle conjonctive échoue sur une expression non satisfaite ou une variable non liée [1]. Validée en amont par `JSON Schema Draft 2020-12`, aucune propriété optionnelle absente ne crée d'effet de bord, assurant un déterminisme reproductible du poste local à la production.
 
+Par cette sémantique en échec fermé, `OPA/Rego` borne mathématiquement **l'agentivité des systèmes** à l'exécution : toute ambiguïté d'attribut ou absence de preuve dans la requête bascule immédiatement en refus déterministe hors du modèle sous `default allow := false` [1].
+
 ![Le modèle n'est jamais juge et partie : politiques hors modèle OPA/Rego/Cedar à refus par défaut au poste-frontière PEP](../../schemas/rendus/SCH-20-01.svg)
 
 *Figure 64 — SCH-20-01 : Séparation stricte entre la zone cognitive probabiliste (LLM et enquête SRE R0), la passerelle PEP obligatoire en mTLS (« jamais confiance au graphe ») et le moteur PDP déterministe OPA/Rego scellé en G0 complété hors G0 par la cible Cedar (< 1,5 ms).*
@@ -145,6 +147,8 @@ _a2a_taint_safe if {
 ```
 
 Ce second contrat vérifie simultanément trois conditions cumulatives sous `default allow := false` : le flot de contrôle provient impérativement d'un plan fiable (`control_flow_source == "TRUSTED_PLAN"`), les arguments sensibles ne dérivent pas d'une entrée contaminée à moins d'avoir été ancrés contre le système d'enregistrement (`sensitive_args_grounded_against_sor == true`), et toute session contaminée déléguée via `A2A` maintient obligatoirement le drapeau `propagated_consumed_untrusted == true` le long du graphe d'appel [4].
+
+Conjointement, le retrait dynamique des capacités d'exfiltration sur session composée par la **Règle de deux** [5, 7] et l'isolation contrôle/données `CaMeL`/`multi-CaMeL` [3, 4] bornent mathématiquement **l'agentivité des systèmes** à chaque appel d'outil et à chaque frontière `A2A`.
 
 ![La Règle de deux et le marquage CaMeL : retirer l'outil d'envoi dès que l'agent lit une source externe douteuse](../../schemas/rendus/SCH-20-03.svg)
 

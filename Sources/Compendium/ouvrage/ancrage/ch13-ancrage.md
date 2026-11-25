@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b2-8`
 - **Passe G2 initiale (supportés)** : 15
 - **Rectifications appliquées lors de la passe G2 :** 29
-- **Verdict final — supportés :** 44 / 44 (100,0 %)
+- **Verdict final — supportés :** 45 / 45 (100,0 %)
 
 ---
 
@@ -207,3 +207,7 @@ Toutes les formulations divergentes ou issues de sources non archivées en `L+` 
 - **C13-44 (`L134`)** — *Affirmation :* Invariant exécutable 3 : délégation par objet `JSON Schema Draft 2020-12` (`additionalProperties: false` `[9]`) sans historique brut ni jeton ; en `B2B`, politiques hors modèle isolant le Diplomate en `DMZ` (cible illustrative `≤ 4` tours) des prix de réserve de l'Évaluateur ou du `TEE` (`ADR-026`).
   - **Appui vérifié :** `SRC-021.txt` (`[9]`), `Corpus/Tome 2` (`EXIG-ORC-23..25`), `Corpus/Tome 3` (`ADR-026`, `L23688–23730`).
   - **Passe initiale :** écart rectifié · **Action :** dissocié `strict: true` de `[9]`, généralisé `politiques hors modèle` et qualifié `≤ 4` tours de cible illustrative · **Verdict : supporté**
+
+- **C13-45 (`§ 13.2.1`)** — *Affirmation :* La discontinuité `OO2 → OO3` et la bijection entre *frames* normatifs et opérationnels (`APM`) domestiquent l'agentivité des systèmes : confier l'enchaînement au moteur déterministe hors modèle prévient l'amplification d'erreurs multi-agents `[1]`, la dilution par effet Ringelmann `[3]`, les défaillances `MAST` `[4]` et les cascades `ASI08` `[5]`.
+  - **Appui vérifié :** `SRC-003.txt` (`[1]`), `SRC-032.txt` (`[3]`), `SRC-028.txt` (`[4]`), `SRC-055.txt` (`[5]`), `Tomes/Tome 1` (`§ 22.1`, `§ 22.6–22.7`, `§ 29.4.1`).
+  - **Passe initiale :** ajout ciblé · **Action :** raccordement terminologique ancré sur `[1, 3, 4, 5]` · **Verdict : supporté**

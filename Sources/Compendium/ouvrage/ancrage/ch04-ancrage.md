@@ -5,7 +5,7 @@
 - **Référentiel probatoire fermé :** `Compendium/ouvrage/sources/ch04-sources.md` (`[1]` à `[8]`), `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt`, `Compendium/ouvrage/aq/rapports-g0.json`, `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`, `Compendium/ouvrage/registre/*.json`
 - **Passe G2 initiale (supportés)** : 31
 - **Rectifications appliquées lors de la passe G2 :** 22
-- **Verdict final — supportés :** 53 / 53 (100,0 %)
+- **Verdict final — supportés :** 56 / 56 (100,0 %)
 
 ---
 
@@ -91,5 +91,6 @@ Toutes les formulations inexactes ou ambiguës relevées à la passe initiale on
 |---|---|---|---|---|---|
 | `C04-REV-01` | L7, L17, L29–L37, L81, L95, L166, L183 | Retrait des `6` échappements `\$` dans backticks (`PRD-L1-009`), ajout de `Plan-and-Solve` et `Self-Refine` (`PRD-L1-021`), suppression des fuites internes `SUB_D02_01`, `aq/rapports-g0.json` et `registre/ancres-chronologiques.json` (`PRD-L1-016`) | `Compendium/prd.md` (`L968`), `SRC-034`/`[3]` (`arXiv:2305.18323`), `SRC-063`/`[7]`, `aq/rapports-g0.json` | Rectifiée | Verdict : supporté |
 | `C04-REV-02` | L87, L154, L170, `SCH-04-01.svg`, `SCH-04-03.puml` | Numérotation continue `Figure 14`–`Figure 16` (`PRD-L1-008`), retrait des backticks littéraux et correction `2_input_schema` → `2_input` dans `SCH-04-01.svg` (`PRD-L1-011`), remplacement de `vs` dans `SCH-04-03.puml` (`PRD-L1-015`) ; blocs `CA-G0-SYNC` strictement intacts | `specs/manifest.json`, `harness_proto/pipeline.py`, `schemas/SCH-04-01.svg`, `schemas/SCH-04-03.puml` | Rectifiée | Verdict : supporté |
+| `C04-REV-03` | L29 (`§ 4.2.1`) | Transfert de l'enchaînement critique vers le harnais déterministe (`80/20`) situant **l'agentivité des systèmes** (*system agency*) dans l'assemblage gouverné plutôt que dans la boucle cognitive ; confinement `CodeAct` en bac à sable sans privilèges ambiants | `SRC-027.txt` (`[8]`, `L149–L151`), `SRC-120.txt` (`[4]`, `L13–L20`), `CA-G0-SYNC` intacts | Ajoutée | Verdict : supporté |
 
-- **Contrôle `REV-04` :** `4 443` mots (`verifie_manuscrit.py`) / `4 658` mots (`parser_plan.py`) dans `[4 076, 4 784]`, `verifie_manuscrit.py --unit ch04 --strict` = `exit 0`, **100,0 % supporté**.
+- **Contrôle `REV-05` :** `4 507` mots (`verifie_manuscrit.py`) dans `[4 076, 4 784]`, `verifie_manuscrit.py --unit ch04 --strict` = `exit 0`. **Verdict final : `56 / 56` (`100,0 %` supporté).**

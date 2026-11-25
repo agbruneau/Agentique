@@ -1,12 +1,12 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 19 (`ch19`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md` (`4 381` mots de prose selon `parser_plan` / `verifie_manuscrit`, plage `[4 076, 4 784]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md` (`4 491` mots de prose selon `parser_plan` / `verifie_manuscrit`, plage `[4 076, 4 784]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch19-sources.md` (`[1]`–`[7]` en statut `L+`, `1` exclusion `statut F` sur `genai.owasp.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json` et `Tomes/Tome 8 .../trousse/`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-6`
 - **Passe G2 initiale (supportés)** : 9
 - **Rectifications appliquées lors de la passe G2 :** 30
-- **Verdict final — supportés :** 39 / 39 (100,0 %)
+- **Verdict final — supportés :** 41 / 41 (100,0 %)
 
 ---
 
@@ -21,7 +21,7 @@ Toutes les formulations demandant un resserrement documentaire à la passe initi
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources (`C19-01` à `C19-39`)
+## 2. Inventaire atomique et confrontation aux sources (`C19-01` à `C19-41`)
 
 ### Ouverture et Résumé exécutif (`L1–L21`)
 
@@ -190,3 +190,7 @@ Toutes les formulations demandant un resserrement documentaire à la passe initi
 - **C19-40 (`REV-04`, `PRD-L3-001/002/003`, `PRD-L4-002`)** — *Affirmation :* Ajout des repères secondaires PRD (`PRIN-07`, `F-25` détournement de refus multi-agents `Tome 3 § 31.1`, `OWASP API1–API3` `Tome 2`, `AIUC-1` `Tome 2`/`Tome 3`), uniformisation des légendes en `Figure 61`..`Figure 63`, et alignement des schémas `SCH-19-01.svg` (`EXIG-SEC-03` / `EXIG-SEC-05` + ordre `A`/`B`/`C`) et `SCH-19-03.mmd` (`FR/EN`, `EXIG-SEC-24`, distinction `OPA` `G0` vs cible `HMAC`/`Cedar`).
   - **Appui vérifié :** `Compendium/prd.md` (`L3612–3641`), `Corpus/Tome 2` (`§ 9.6`), `Corpus/Tome 3` (`§ 31.1`, `§ 31.8`), `schemas/SCH-19-01.svg`, `schemas/SCH-19-03.mmd`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
+
+- **C19-41 (`L31`, `L99`)** — *Affirmation :* La non-compositionnalité de la triade létale éclaire l'agentivité des systèmes comme propriété émergente de l'assemblage (outils, mémoire, délégations) activant *Excessive Agency* (`ASI01`–`ASI03` `[1, 5]`) ; Barrett et coll. (`[7]`, `SRC-058` `L953–966`) identifient l'agentivité (*agency*), la conscience de situation et les buts instrumentaux comme facteurs systémiques de perte de contrôle lorsque des données externes détournent les outils légitimes du mandataire confus (`ASI01`–`ASI03` `[1, 5, 7]`).
+  - **Appui vérifié :** `SRC-055.txt` `[1]` (`ASI01`–`ASI03`, `Excessive Agency` `L237`, `L430`, `L485`, `L551`), `SRC-002.txt` `[5]` (`§ 3`), `SRC-058.txt` `[7]` (`L953–966`), `Chapitre 19.md` (`L31`, `L99`).
+  - **Ajout concept agentivité des systèmes :** intégré et vérifié · **Verdict : supporté**

@@ -22,8 +22,8 @@ Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine é
 
 ## Livrables publiés (`../../Compendium/`)
 
-- [`Compendium.pdf`](../../Compendium/Compendium.pdf) : `834` pages (`Typst 6,14 × 9,21 po`, `23 122 392` octets).
-- [`Compendium.md`](../../Compendium/Compendium.md) : édition Markdown consolidée (`1 859 417` octets, `8 362` lignes, `42` unités, `115` figures).
+- [`Compendium.pdf`](../../Compendium/Compendium.pdf) : `837` pages (`Typst 6,14 × 9,21 po`, `23 175 718` octets).
+- [`Compendium.md`](../../Compendium/Compendium.md) : édition Markdown consolidée (`1 868 863` octets, `8 408` lignes, `241 759` mots, `42` unités, `115` figures).
 
 ---
 

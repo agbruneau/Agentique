@@ -1,12 +1,12 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 21 (`ch21`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md` (`4 110` mots de prose, plage `[3 552, 4 168]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md` (`3 973` mots de prose, plage `[3 552, 4 168]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch21-sources.md` (`[1]`–`[6]` en statut `L+`, `1` exclusion `statut F` sur `genai.owasp.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-{055,058,062,087,088,095}.txt` ; registres `Compendium/ouvrage/registre/*.json` ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json` et trousse `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-8`
 - **Passe G2 initiale (supportés)** : 10
 - **Rectifications appliquées lors de la passe G2** : 26
-- **Verdict final — supportés** : 36 / 36 (100,0 %)
+- **Verdict final — supportés** : 38 / 38 (100,0 %)
 
 ---
 
@@ -20,7 +20,7 @@ Toutes les formulations méritant réancrage ou gain de précision lors de la pa
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources `L+` (`C21-01` à `C21-36`)
+## 2. Inventaire atomique et confrontation aux sources `L+` (`C21-01` à `C21-38`)
 
 ### Section introductive — Titre, question directrice et cadrage (`L1–L9`)
 
@@ -179,3 +179,7 @@ Toutes les formulations méritant réancrage ou gain de précision lors de la pa
 - **C21-37 (`REV-04`, `PRD-L3-007/008`, `PRD-L4-002`)** — *Affirmation :* Restauration substantielle du 4e verrou obligatoire `EXIG-SEC-16` (journal d'exécution immuable tenu hors bac à sable en ajout seul `EXIG-OBS-13`, distinct des traces et de l'audit, `Tome 2 § 9.7` L4568–4576, `OWASP ASI05`/`ASI10` `[1]`) en prose, `Tableau 21.2`, Invariant 1 et 4e boîte de `SCH-21-01.svg` ; précision `IMDSv2` (`hop limit = 1`, `EXIG-SEC-13`), correction du renvoi `Loi 25 (→ Chapitres 25 et 26)`, nettoyage `\$` dans backticks, devise `$ US` / légende de `SCH-21-02.puml`, et numérotation `Figure 67`..`Figure 69`.
   - **Appui vérifié :** `Corpus/Tome 2` (`L4568–4587`), `Compendium/prd.md` (`L3964`), `SRC-055.txt` (`ASI05`, `ASI10`), `schemas/SCH-21-01.svg`, `schemas/SCH-21-02.puml`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
+
+- **C21-38 (`L35`, `L94`)** — *Affirmation :* Les caissons éphémères (`Firecracker`/`WASI` sans réseau contre `ASI05` `[1]`) et le coupe-circuit `SOC/SOAR` à quatre paliers (`< 10 s` au `PEP`, rétrogradation `< 60 s` vers `N2`/`L0`, maintien du canal `Saga`) assurent l'endiguement matériel et opérationnel de l'agentivité des systèmes face aux pertes de contrôle `STPA` `[2]` et aux exigences `DORA` `[6]`.
+  - **Appui vérifié :** `SRC-055.txt` `[1]` (`ASI05`, `L762–779`), `SRC-058.txt` `[2]` (`L953–966`), `SRC-062.txt` `[6]` (`art. 10–12, 19`), `sandbox_confinement.rego`, `Chapitre 21.md` (`L35`, `L94`).
+  - **Ajout concept agentivité des systèmes :** intégré et vérifié · **Verdict : supporté**
