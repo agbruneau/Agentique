@@ -305,7 +305,7 @@
       "chapter_title": "Chapitre M-4 — Calendrier de normalisation et standards de données sectoriels",
       "line_start": 834,
       "line_end": 990,
-      "summary": "Cartographie les jalons datés et angles morts de la normalisation : MCP 2026-07-28, A2A v1.0, chantiers IETF/W3C/PKI 2026–2029 (TLS 100 j -> 47 j, OAuth/WIMSE/DAWN/AGENTPROTO/SCITT), OTel Development, asymétrie syntaxe-sémantique des standards financiers (FIBO/ISO 20022 vs FDX/ACORD/CSIO statut F).",
+      "summary": "Cartographie les jalons datés et angles morts de la normalisation : MCP 2026-07-28, A2A v1.0, chantiers IETF/W3C/PKI 2026–2029 (TLS 100 j → 47 j, OAuth/WIMSE/DAWN/AGENTPROTO/SCITT), OTel Development, asymétrie syntaxe-sémantique des standards financiers (FIBO/ISO 20022 par rapport à FDX/ACORD/CSIO statut F).",
       "primary_domain": "D03",
       "secondary_domains": [
         "D04",
@@ -363,7 +363,7 @@
       "chapter_title": "Chapitre M-5 — Transition post-quantique de l’identité et de la délégation",
       "line_start": 991,
       "line_end": 1145,
-      "summary": "Analyse les deux menaces post-quantiques (secret rétroactif et falsification des mandats), les normes FIPS 203/204/205 et RFC 2026, les calendriers séparés État vs secteur financier G7 (2030–2035), le choc HTTP 431 (ML-DSA) mesuré sur Borealis-Bench Campagne 4 et le séquencement P1–P3.",
+      "summary": "Analyse les deux menaces post-quantiques (secret rétroactif et falsification des mandats), les normes FIPS 203/204/205 et RFC 2026, les calendriers séparés État par rapport à secteur financier G7 (2030–2035), le choc HTTP 431 (ML-DSA) mesuré sur Borealis-Bench Campagne 4 et le séquencement P1–P3.",
       "primary_domain": "D06",
       "secondary_domains": [
         "D08",
@@ -417,7 +417,7 @@
       "chapter_title": "Chapitre M-6 — Capacités des agents et techniques en transfert",
       "line_start": 1146,
       "line_end": 1301,
-      "summary": "Examine l'extinction de la métrique publique METR (8 sept. 2026), la rupture entre capacité brute et constance pass^k (MAST, MAP), six familles de techniques en transfert industriel, les invariants indépendants des modèles et la calibration FEDS des seuils.",
+      "summary": "Examine l'extinction de la métrique publique METR (8 septembre 2026), la rupture entre capacité brute et constance pass^k (MAST, MAP), six familles de techniques en transfert industriel, les invariants indépendants des modèles et la calibration FEDS des seuils.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D07",
@@ -690,7 +690,7 @@
       "chapter_title": "Chapitre M-11 — Cible invariante et cible conditionnelle",
       "line_start": 2729,
       "line_end": 2881,
-      "summary": "Partitionne le portefeuille en 42 capacités invariantes formant le noyau possédé (vs ressources consommées ou fédérées) et 10 capacités conditionnelles déclenchées par signaux SIG-* sous A, B et C, fixe les règles d'arbitrage temporel et nomme cinq exclusions fermes.",
+      "summary": "Partitionne le portefeuille en 42 capacités invariantes formant le noyau possédé (par rapport à ressources consommées ou fédérées) et 10 capacités conditionnelles déclenchées par signaux SIG-* sous A, B et C, fixe les règles d'arbitrage temporel et nomme cinq exclusions fermes.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D10",
@@ -1007,7 +1007,7 @@
       "chapter_title": "Chapitre M-17 — Assurance de dommages",
       "line_start": 3647,
       "line_end": 3823,
-      "summary": "Profil Assurance de dommages IARD (PEX-031..035) : élasticité catastrophique B-9/E-21 avec interdiction des refus automatisés d'indemnisation, formulaires auto approuvés art. 71, comparaison >= 3 assureurs hors groupe LDPSF art. 38, NHI courtiers + sas photo et modèles cat. / B-15.",
+      "summary": "Profil Assurance de dommages IARD (PEX-031..035) : élasticité catastrophique B-9/E-21 avec interdiction des refus automatisés d'indemnisation, formulaires auto approuvés art. 71, comparaison ≥ 3 assureurs hors groupe LDPSF art. 38, NHI courtiers + sas photo et modèles cat. / B-15.",
       "primary_domain": "D10",
       "secondary_domains": [
         "D09",
@@ -1155,7 +1155,7 @@
       "chapter_title": "Chapitre M-20 — Palier 1, 2028-2029",
       "line_start": 4228,
       "line_end": 4411,
-      "summary": "Spécifie le Palier 1 (2028–2029, Fonder -> Stade 2) : 14 initiatives sans regret (INI-001..014), 1 conditionnelle d'extinction CUA (INI-015) et 4 portes bloquantes vérifiées par la 2e ligne (POR-001..004 dont coupe-circuit < 10 s et 6 substrats).",
+      "summary": "Spécifie le Palier 1 (2028–2029, Fonder → Stade 2) : 14 initiatives sans regret (INI-001..014), 1 conditionnelle d'extinction CUA (INI-015) et 4 portes bloquantes vérifiées par la 2e ligne (POR-001..004 dont coupe-circuit < 10 s et 6 substrats).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D06",
@@ -1209,7 +1209,7 @@
       "chapter_title": "Chapitre M-21 — Palier 2, 2030-2032",
       "line_start": 4412,
       "line_end": 4549,
-      "summary": "Spécifie le Palier 2 (2030–2032, Étendre -> Stade 3) : 9 initiatives sans regret (INI-016..024), 5 conditionnelles (INI-025..029) et 5 portes (POR-005..009 dont bascule PQC hybride G7, extinction CUA et refacturation CPO).",
+      "summary": "Spécifie le Palier 2 (2030–2032, Étendre → Stade 3) : 9 initiatives sans regret (INI-016..024), 5 conditionnelles (INI-025..029) et 5 portes (POR-005..009 dont bascule PQC hybride G7, extinction CUA et refacturation CPO).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D04",
@@ -1260,7 +1260,7 @@
       "chapter_title": "Chapitre M-22 — Palier 3, 2033-2035",
       "line_start": 4550,
       "line_end": 4689,
-      "summary": "Spécifie le Palier 3 (2033–2035, Ouvrir sélectivement -> Stade 3/4) : 4 initiatives sans regret (INI-041..044), 6 conditionnelles B2B/souveraines (INI-045..050) et 4 portes de sortie post-temporisation 2033 (POR-011..014).",
+      "summary": "Spécifie le Palier 3 (2033–2035, Ouvrir sélectivement → Stade 3/4) : 4 initiatives sans regret (INI-041..044), 6 conditionnelles B2B/souveraines (INI-045..050) et 4 portes de sortie post-temporisation 2033 (POR-011..014).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D06",
@@ -1675,7 +1675,7 @@
       "key_terms": [
         "matrice de traçabilité",
         "traceabilite.json",
-        "24 PEX -> EXIG"
+        "24 PEX → EXIG"
       ],
       "normative_refs": [
         "PEX-001",
@@ -1900,7 +1900,7 @@
       "chapter_title": "Liminaire — À propos de ce mémoire",
       "line_start": 11,
       "line_end": 53,
-      "summary": "Fixe le statut v2.0 (19 nov. 2026) opérant la soudure de 2 541 p. + Note AMF IA (49 p.) et CRE-IA-2027 v2.0, clôt DIV-02, maintient l'hygiène statut F / exclusion Groupe Boréal, expose la recollation CA-16 (40/40) et rappelle la clause DC-P01.",
+      "summary": "Fixe le statut v2.0 (19 novembre 2026) opérant la soudure de 2 541 p. + Note AMF IA (49 p.) et CRE-IA-2027 v2.0, clôt DIV-02, maintient l'hygiène statut F / exclusion Groupe Boréal, expose la recollation CA-16 (40/40) et rappelle la clause DC-P01.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D09",
@@ -1962,7 +1962,7 @@
       "chapter_title": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS",
       "line_start": 82,
       "line_end": 127,
-      "summary": "Expose la thèse centrale AE/AS, le contrat de lecture croisé, les 10 thèses structurantes (T1 à T10), les 6 décisions conjointes AE ↔ AS, le noyau possédé (42 vs 10 CAP) et la trajectoire 90 j -> 18 mois -> P1–P3.",
+      "summary": "Expose la thèse centrale AE/AS, le contrat de lecture croisé, les 10 thèses structurantes (T1 à T10), les 6 décisions conjointes AE ↔ AS, le noyau possédé (42 contre 10 CAP) et la trajectoire 90 jours → 18 mois → P1–P3.",
       "primary_domain": "D11",
       "secondary_domains": [
         "D01",
@@ -1979,8 +1979,8 @@
       "key_terms": [
         "10 thèses T1-T10",
         "6 décisions AE ↔ AS",
-        "42 vs 10 CAP",
-        "90 j -> 18 m -> P1-P3"
+        "42 contre 10 CAP",
+        "90 jours → 18 m → P1-P3"
       ],
       "normative_refs": [
         "PRI-001",
@@ -2070,7 +2070,7 @@
       "chapter_title": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02)",
       "line_start": 255,
       "line_end": 404,
-      "summary": "Fermeture sur pièce de DIV-02 raccordant les 5 couches + 3 volets aux 6 vraies couches de CAD26 §5.2, points PC1–PC5, noyau possédé selon la gravité des données, correspondance ABB -> SBB substituables et règles ArchiMate 4.",
+      "summary": "Fermeture sur pièce de DIV-02 raccordant les 5 couches + 3 volets aux 6 vraies couches de CAD26 §5.2, points PC1–PC5, noyau possédé selon la gravité des données, correspondance ABB → SBB substituables et règles ArchiMate 4.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D02"
@@ -2087,7 +2087,7 @@
         "DIV-02",
         "T2",
         "6 couches CAD26",
-        "ABB->SBB",
+        "ABB→SBB",
         "PC1-PC5",
         "ArchiMate 4"
       ],
@@ -2235,7 +2235,7 @@
       "chapter_title": "Chapitre 5 — Orchestration hybride (OO1–OO4, 8 patrons), exécution durable, sagas et sémantique d’effet",
       "line_start": 703,
       "line_end": 882,
-      "summary": "Continuum OO1–OO4 et test réglementaire de bascule OO2 -> OO3, catalogue fermé des 8 patrons + 1 variante et 10 antipatrons, exécution durable (effets LLM journalisés, idempotence JCS SHA-256, revalidation TOCTOU) et Saga à point pivot avec canal EXIG-ORC-28.",
+      "summary": "Continuum OO1–OO4 et test réglementaire de bascule OO2 → OO3, catalogue fermé des 8 patrons + 1 variante et 10 antipatrons, exécution durable (effets LLM journalisés, idempotence JCS SHA-256, revalidation TOCTOU) et Saga à point pivot avec canal EXIG-ORC-28.",
       "primary_domain": "D05",
       "secondary_domains": [
         "D01",
@@ -2292,7 +2292,7 @@
       "chapter_title": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique",
       "line_start": 883,
       "line_end": 1028,
-      "summary": "Gouvernance matricielle D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3 (NX interdit, règle d'or <= N2), approbation hors bande CIBA/FIDO2 liée à SHA-256(JCS), séparation PC3 vs art. 12.1 et ergonomie anti-complaisance ASI09.",
+      "summary": "Gouvernance matricielle D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3 (NX interdit, règle d'or ≤ N2), approbation hors bande CIBA/FIDO2 liée à SHA-256(JCS), séparation entre PC3 et art. 12.1 et ergonomie anti-complaisance ASI09.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D06",
@@ -2313,7 +2313,7 @@
         "Classes 1-6",
         "CIBA/FIDO2",
         "JCS SHA-256",
-        "PC3 vs art. 12.1",
+        "PC3 par rapport à art. 12.1",
         "ASI09"
       ],
       "normative_refs": [
@@ -2347,7 +2347,7 @@
       "chapter_title": "Chapitre 7 — Fabrique de confiance : NHI, 2e saut, défense anti-injection et transition PKI / post-quantique",
       "line_start": 1037,
       "line_end": 1184,
-      "summary": "Diagnostic Q-A..Q-E (0/15) et KYA (0/9), identités NHI SPIFFE SVID sans secret statique, parade au 2e saut RFC 8693 + DPoP/mTLS, règle de deux + CaMeL + microVM à 4 verrous, PKI 47 j et parades au choc HTTP 431 ML-DSA (Campagne 4 Borealis-Bench).",
+      "summary": "Diagnostic Q-A..Q-E (0/15) et KYA (0/9), identités NHI SPIFFE SVID sans secret statique, parade au 2e saut RFC 8693 + DPoP/mTLS, règle de deux + CaMeL + microVM à 4 verrous, PKI 47 jours et parades au choc HTTP 431 ML-DSA (Campagne 4 Borealis-Bench).",
       "primary_domain": "D06",
       "secondary_domains": [
         "D07",
@@ -2411,7 +2411,7 @@
       "chapter_title": "Chapitre 8 — Observabilité à double couloir PII, journal d’audit JCS, évaluation E1–E3 et FinOps CPO",
       "line_start": 1185,
       "line_end": 1278,
-      "summary": "Collecte OpenTelemetry v1.41.0 épinglée à double couloir PII (voûte <= 14 j), séparation des 3 magasins dont journal d'audit JCS ancré/h (>= 24 mois), évaluation E1–E3 (pass^k) sur dérive SLO et pilotage FinOps au CPO (FOCUS 1.4, showback -> chargeback).",
+      "summary": "Collecte OpenTelemetry v1.41.0 épinglée à double couloir PII (voûte ≤ 14 jours), séparation des 3 magasins dont journal d'audit JCS ancré/h (≥ 24 mois), évaluation E1–E3 (pass^k) sur dérive SLO et pilotage FinOps au CPO (FOCUS 1.4, showback → chargeback).",
       "primary_domain": "D08",
       "secondary_domains": [
         "D01",
@@ -2585,7 +2585,7 @@
       "chapter_title": "Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible",
       "line_start": 1464,
       "line_end": 1543,
-      "summary": "Modèle opérationnel en étoile à 3 lignes (RACI à 1 seul A, registre 7 états, quotas contre atrophie junior), usine logicielle interne Oracle vs Bâtisseur (WAP/ODCS, zéro shell libre SRE, distillation sous sas anti-RP) et approvisionnement réversible (EXIG-APP-07..16).",
+      "summary": "Modèle opérationnel en étoile à 3 lignes (RACI à 1 seul A, registre 7 états, quotas contre atrophie junior), usine logicielle interne Oracle par rapport à Bâtisseur (WAP/ODCS, zéro shell libre SRE, distillation sous sas anti-RP) et approvisionnement réversible (EXIG-APP-07..16).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D08",
@@ -2638,7 +2638,7 @@
       "chapter_title": "Chapitre 12 — Homologation unifiée et trajectoire adaptative (90 jours → 18 mois → Paliers P1–P3) sous signaux",
       "line_start": 1544,
       "line_end": 1692,
-      "summary": "Porte unique d'homologation fusionnant 305 EXIG-* v1.2, 75 PRR (24 bloquants) et 10 interdits GOV-17, continuité 90 j -> 18 mois -> Paliers DAPP P1–P3 (43 INI, 15 POR), veille des 27 SIG parant 7 échecs endogènes et calibration FEDS/EMA.",
+      "summary": "Porte unique d'homologation fusionnant 305 EXIG-* v1.2, 75 PRR (24 bloquants) et 10 interdits GOV-17, continuité 90 jours → 18 mois → Paliers DAPP P1–P3 (43 INI, 15 POR), veille des 27 SIG parant 7 échecs endogènes et calibration FEDS/EMA.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D11",
@@ -2659,7 +2659,7 @@
       "key_terms": [
         "T10",
         "porte unique",
-        "90 j -> 18 m -> P1-P3",
+        "90 jours → 18 m → P1-P3",
         "43 INI",
         "15 POR",
         "27 SIG",
@@ -2714,8 +2714,8 @@
       ],
       "key_terms": [
         "DIV-02 résorbée",
-        "52 CAP -> EXIG",
-        "24 PEX -> EXIG",
+        "52 CAP → EXIG",
+        "24 PEX → EXIG",
         "305 EXIG v1.2"
       ],
       "normative_refs": [
@@ -2846,7 +2846,7 @@
       "chapter_title": "Annexe D — Guide d’orientation vers les 2 541 pages sources et bibliographie maîtresse",
       "line_start": 1989,
       "line_end": 2033,
-      "summary": "Guide d'orientation vers les 2 541 pages sources (+ Note AMF IA), table d'orientation Ch. 1–12 -> 4 PDF, parcours de lecture par rôle et bilan des limites héritées.",
+      "summary": "Guide d'orientation vers les 2 541 pages sources (+ Note AMF IA), table d'orientation Ch. 1–12 → 4 PDF, parcours de lecture par rôle et bilan des limites héritées.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D11"
@@ -2982,9 +2982,9 @@
       "local_id": "t45-001",
       "canonical_slug": "systems-of-agency",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Rupture agentique et terrain",
-      "title": "Constat empirique fin 2026 : soutien vs production et déploiements bornés",
+      "title": "Constat empirique de fin 2026 : soutien par rapport à la production et déploiements bornés",
       "summary": "Démontre qu'en novembre 2026 la majorité des agents déployés (étude MAP, 68 %) exécutent au plus 10 étapes sur flux prédéfinis (16/20) avec évaluation humaine (74 %). Oppose la règle « soutien n'est pas production » aux communiqués bancaires canadiens et note l'absence d'étude arbitrée mesurant MCP ou A2A à grande échelle (seul cas réel arbitré : Nubank KDD 2026, 5 agents ReAct sans MCP ni A2A). Appuie la thèse T1 et les hypothèses H1–H6.",
       "autonomy_levels": [
         "L0",
@@ -3064,7 +3064,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Lois d'échelle et défaillances",
       "title": "Loi de Lusser, taxonomie MAST (1 642 traces) et saturation METR",
-      "summary": "Formalise la dégradation géométrique de la fiabilité séquentielle sans validation intermédiaire (0,94^10 ≈ 53,9 %). S'appuie sur la taxonomie MAST (Cemri et al., 1 642 traces v3, 41 à 86,7 % d'échecs répartis entre conception 44,2 %, désalignement 32,4 % et vérification 23,5 %) et le gel de METR Time Horizon v1.1 (8 sept. 2026), où la portée chute de ~17,4 h (50 %) à ~3,1 h (80 % de constance).",
+      "summary": "Formalise la dégradation géométrique de la fiabilité séquentielle sans validation intermédiaire (0,94^10 ≈ 53,9 %). S'appuie sur la taxonomie MAST (Cemri et al., 1 642 traces v3, 41 à 86,7 % d'échecs répartis entre conception 44,2 %, désalignement 32,4 % et vérification 23,5 %) et le gel de METR Time Horizon v1.1 (8 septembre 2026), où la portée chute de ~17,4 h (50 %) à ~3,1 h (80 % de constance).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3197,7 +3197,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Constance multi-essais",
       "title": "Primauté de la constance pass^k sur pass@k et transfert de techniques",
-      "summary": "Substitue l'exigence de constance répétée pass^k (k >= 3 minimal, k >= 5 critique) à la métrique permissive pass@k avant toute promotion en production. Encadre en T4 M-6 six familles de techniques en transfert industriel sur une échelle à cinq niveaux de maturité afin d'identifier les invariants indépendants de la capacité brute des modèles.",
+      "summary": "Substitue l'exigence de constance répétée pass^k (k ≥ 3 minimal, k ≥ 5 critique) à la métrique permissive pass@k avant toute promotion en production. Encadre en T4 M-6 six familles de techniques en transfert industriel sur une échelle à cinq niveaux de maturité afin d'identifier les invariants indépendants de la capacité brute des modèles.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3339,7 +3339,7 @@
       "canonical_slug": "partition-hybride-80-20",
       "domain_id": "D02",
       "subdomain": "Partition hybride 80/20 et harnais déterministe",
-      "family": "Contrôle déterministe vs cognition",
+      "family": "Contrôle déterministe et cognition",
       "title": "Primauté du contrôle et enveloppe déterministe autour du raisonnement probabiliste",
       "summary": "Établit le cœur des thèses T1–T2 et des principes PRI-001 et PRI-002 : toute délégation d'autonomie est subordonnée à l'activation préalable du plan de contrôle (registre, NHI, moteur de politiques, trace causale, coupe-circuit) et tout routage critique ou mutation demeure régi par du code ou des machines à états déterministes enveloppant des cellules agentiques bornées.",
       "autonomy_levels": [
@@ -3405,7 +3405,7 @@
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
       "family": "Noyau possédé et 52 CAP",
-      "title": "Noyau de contrôle possédé : 42 capacités invariantes vs 10 capacités conditionnelles",
+      "title": "Noyau de contrôle possédé : 42 capacités invariantes et 10 capacités conditionnelles",
       "summary": "Délimite le noyau possédé en propre (schémas, clés, politiques, registre, passerelles, traces : 42 capacités invariantes sans regret sous A, B et C, dont 17 au plan de contrôle et 25 points de coupure) face aux 10 capacités conditionnelles (CAP-004, 006, 013, 014, 025, 027, 028, 033, 034, 041) réservées par interface légère et activées uniquement sur signal SIG-* vérifié. Sépare trois régimes d'appropriation : posséder, consommer comme commodité et fédérer près des données.",
       "autonomy_levels": [
         "L1",
@@ -3624,7 +3624,7 @@
       "domain_id": "D02",
       "subdomain": "Échelle d'autonomie L0–L4 et supervision humaine",
       "family": "Règles de plafond strict",
-      "title": "Règle du critère le plus faible, union la plus stricte et règle d'or (<= N2)",
+      "title": "Règle du critère le plus faible, union la plus stricte et règle d'or (≤ N2)",
       "summary": "Impose trois mécanismes cumulatifs contre le dépassement de risque : (1) la maturité d'un domaine vaut celle de son maillon de contrôle le plus faible ; (2) la passerelle prend l'union la plus stricte (classe × palier × règle d'or plafonnant à N2 dès cumul d'impact élevé, faible réversibilité et détection lente) ; (3) en groupe diversifié prévaut la règle du maillon réglementaire le plus contraignant.",
       "autonomy_levels": [
         "L0",
@@ -3761,7 +3761,7 @@
       "domain_id": "D02",
       "subdomain": "Échelle d'autonomie L0–L4 et supervision humaine",
       "family": "Ergonomie anti-complaisance",
-      "title": "Ergonomie anti-complaisance (ASI09), vue différentielle et distinction PC3 vs art. 12.1",
+      "title": "Ergonomie anti-complaisance (ASI09), vue différentielle et distinction entre PC3 et art. 12.1",
       "summary": "Encadre la supervision humaine substantielle (PRI-007, CAP-002, CAP-003) face aux 93 % d'acceptation machinale et +26 % d'erreurs sous conseil erroné. Impose un écran différentiel hors modèle depuis I-JSON, le plafonnement par quart, l'injection de dossiers témoins à défaut connu (POR-014) et sépare strictement le point d'arrêt préventif (PC3/HITL) de la révision humaine a posteriori (Loi 25 art. 12.1).",
       "autonomy_levels": [
         "L1",
@@ -3838,7 +3838,7 @@
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
       "family": "Couches, ABB/SBB et ArchiMate",
-      "title": "Modèle à 5 couches + 3 volets, séparation ABB -> SBB et règles ArchiMate 4",
+      "title": "Modèle à 5 couches + 3 volets, séparation ABB → SBB et règles ArchiMate 4",
       "summary": "Unifie l'architecture de référence en cinq couches horizontales (C1 interaction, C2 agents-orchestration, C3 contexte-connaissance, C4 acces, C5 modeles) et trois volets de contrôle (Plans A, B, C), découple chaque bloc neutre ABB de ses SBB substituables révisés trimestriellement, et prescrit quatre règles ArchiMate 4 (C260) dont zéro Requirement réglementaire orphelin (TOGAF demeurant en statut F).",
       "autonomy_levels": [
         "L0",
@@ -3902,7 +3902,7 @@
       "subdomain": "Architecture de référence, plans et noyau possédé",
       "family": "Corpus PRI-001..015 et arbitrage",
       "title": "Les 15 principes directeurs PRI-001 à PRI-015 et l'ordre d'arbitrage normatif",
-      "summary": "Consolide les 15 principes falsifiables de T4 M-9 (PRI-001 à PRI-015) en quatre familles et les aligne en T5 Annexe B.1 sur les 12 principes PRIN-01..12 et les 10 décisions structurantes de CAD26. Fixe l'ordre strict d'arbitrage en cas de tension (CAD26 §4.3) : droit applicable -> 10 interdits EXIG-GOV-17 -> DOIT sur DEVRAIT -> principes de protection -> principes d'architecture.",
+      "summary": "Consolide les 15 principes falsifiables de T4 M-9 (PRI-001 à PRI-015) en quatre familles et les aligne en T5 Annexe B.1 sur les 12 principes PRIN-01..12 et les 10 décisions structurantes de CAD26. Fixe l'ordre strict d'arbitrage en cas de tension (CAD26 §4.3) : droit applicable → 10 interdits EXIG-GOV-17 → DOIT sur DEVRAIT → principes de protection → principes d'architecture.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -3995,7 +3995,7 @@
       "canonical_slug": "catalogue-31-adr-12-dec",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Révision ADR 2027 -> DEC 2035",
+      "family": "Révision ADR 2027 → DEC 2035",
       "title": "Sort des 31 ADR de 2027 (8/7/16) et les 12 décisions neutres DEC-001 à DEC-012",
       "summary": "Audite les 31 fiches ADR-001 à ADR-031 issues des volets non sourcés du Compendium 2027 : 8 sont maintenues comme invariants (ADR-001, 002, 003, 008, 011, 017, 025, 029), 7 sont placées sous révision sur signal SIG-* (ADR-004, 005, 018, 021, 024, 027, 031) et 16 sont généralisées sans nom de produit en 12 décisions neutres DEC-001 à DEC-012 (avec gabarit YAML minimal).",
       "autonomy_levels": [
@@ -4115,8 +4115,8 @@
       "domain_id": "D03",
       "subdomain": "Protocoles verticaux outil-modèle (MCP)",
       "family": "Couplage agent-outil",
-      "title": "Protocole MCP (2026-07-28) sans état, <= 15 outils d'intention et bascule juillet 2027",
-      "summary": "Normalise l'invocation verticale agent-outil sur MCP révision 2026-07-28 en Streamable HTTP sans état (stdio cantonné au poste local sans secret). Limite chaque serveur à <= 15 outils d'intention métier (alerte > 15 en L1/L2, resserré à <= 10–12 en L3/L4 sous Borealis-Bench), désactive les extensions Beta hors liste blanche et date la migration obligatoire au 28 juillet 2027 sous veille SEP-3398 (30 mars 2027) et SEP-2596.",
+      "title": "Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027",
+      "summary": "Normalise l'invocation verticale agent-outil sur MCP révision 2026-07-28 en Streamable HTTP sans état (stdio cantonné au poste local sans secret). Limite chaque serveur à ≤ 15 outils d'intention métier (alerte > 15 en L1/L2, resserré à ≤ 10–12 en L3/L4 sous Borealis-Bench), désactive les extensions Beta hors liste blanche et date la migration obligatoire au 28 juillet 2027 sous veille SEP-3398 (30 mars 2027) et SEP-2596.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4181,7 +4181,7 @@
       "subdomain": "Protocoles verticaux outil-modèle (MCP)",
       "family": "Intégrité des schémas MCP",
       "title": "Épinglage cryptographique SHA-256 des outils MCP et analyse des 102 fiches NVD",
-      "summary": "Répond aux 102 fiches NVD citant « Model Context Protocol » (juil.–oct. 2026, 13 de score >= 9,0 sur serveurs tiers) et à l'instabilité de la moitié des connecteurs publics. Traite annotations (readOnlyHint, destructiveHint), schémas, URL et icônes comme non fiables, impose le condensat SHA-256 épinglé par outil contre le rug-pull et prohibe toute collecte de secret ou d'approbation par elicitation.",
+      "summary": "Répond aux 102 fiches NVD citant « Model Context Protocol » (juillet–octobre 2026, 13 de score ≥ 9,0 sur serveurs tiers) et à l'instabilité de la moitié des connecteurs publics. Traite annotations (readOnlyHint, destructiveHint), schémas, URL et icônes comme non fiables, impose le condensat SHA-256 épinglé par outil contre le rug-pull et prohibe toute collecte de secret ou d'approbation par elicitation.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4245,7 +4245,7 @@
       "domain_id": "D03",
       "subdomain": "Protocoles horizontaux pair-à-pair (A2A, AGNTCY, AP2)",
       "family": "Délégation pair-à-pair",
-      "title": "Non-substituabilité outil vs pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)",
+      "title": "Non-substituabilité entre outil et pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)",
       "summary": "Pose la loi de non-substituabilité (PRI-003) séparant invocation verticale MCP et délégation horizontale A2A v1.0.1 (AAIF, ayant absorbé ACP). Documente les lacunes de A2A 1.0 (signature JWS optionnelle, zéro expiration ni révocation natives) et le constat 0/15 lien natif (C26 ch. 42) entre protocoles (MCP/A2A/AP2) et cadres financiers canadiens, compensé par les 5 zones Z1 à Z5.",
       "autonomy_levels": [
         "L2",
@@ -4321,7 +4321,7 @@
       "subdomain": "Passerelles, découverte et anti-verrouillage",
       "family": "Registre interne et IETF",
       "title": "Découverte à 4 opérations, cartes JWS/JCS, catalogue 5 statuts et veille DAWN/AGENTPROTO",
-      "summary": "Sépare trouver, décrire, authentifier et approuver : seule l'autorité interne approuve via un catalogue révisé chaque trimestre (ou <= 15 jours ouvrables sur faille/rupture) à 5 statuts (Adopter, Évaluer, Surveiller, Contenir, Suspendu) et 60 jours de coexistence. Exige la signature JWS/JCS des Agent Cards, le cache borné, la garde anti-SSRF et suit IETF DAWN / AGENTPROTO (2027–2028) et MCP Registry v1.8.7.",
+      "summary": "Sépare trouver, décrire, authentifier et approuver : seule l'autorité interne approuve via un catalogue révisé chaque trimestre (ou ≤ 15 jours ouvrables sur faille/rupture) à 5 statuts (Adopter, Évaluer, Surveiller, Contenir, Suspendu) et 60 jours de coexistence. Exige la signature JWS/JCS des Agent Cards, le cache borné, la garde anti-SSRF et suit IETF DAWN / AGENTPROTO (2027–2028) et MCP Registry v1.8.7.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4390,7 +4390,7 @@
       "subdomain": "Passerelles, découverte et anti-verrouillage",
       "family": "Coupure bidirectionnelle 9 contrôles",
       "title": "Passerelle d'agents bidirectionnelle PEP à 9 contrôles ordonnés et budget Borealis-Bench",
-      "summary": "Spécifie la coupure réseau obligée en échec fermé (CAP-022, CAD26 Fig. 18) pour tout flux MCP, A2A et action P2/P3 : 7 contrôles aller (mTLS/SVID, catalogue SHA-256, PDP hors modèle P0–P3, schéma I-JSON/anti-injection, jeton JCS/CIBA <= 15 min, quotas/budget, échange RFC 8693 + pré-audit bloquant) et 2 contrôles retour (masquage RP + règle de deux EXIG-SEC-06, span OTel + issue JCS). Validée sur Borealis-Bench Campagne 1 (p50 = 52,85 µs en processus, p95 = 1,01 ms HTTP local).",
+      "summary": "Spécifie la coupure réseau obligée en échec fermé (CAP-022, CAD26 Fig. 18) pour tout flux MCP, A2A et action P2/P3 : 7 contrôles aller (mTLS/SVID, catalogue SHA-256, PDP hors modèle P0–P3, schéma I-JSON/anti-injection, jeton JCS/CIBA ≤ 15 min, quotas/budget, échange RFC 8693 + pré-audit bloquant) et 2 contrôles retour (masquage RP + règle de deux EXIG-SEC-06, span OTel + issue JCS). Validée sur Borealis-Bench Campagne 1 (p50 = 52,85 µs en processus, p95 = 1,01 ms HTTP local).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4586,7 +4586,7 @@
       "subdomain": "Mémoire CoALA, bi-temporalité et filtrage ACL",
       "family": "Architecture CoALA et Loi 25",
       "title": "Séparation des 4 mémoires CoALA, bi-temporalité auditable et purge sélective Loi 25 art. 23",
-      "summary": "Désactive par défaut la mémoire inter-sessions (DEC-004, PRI-008). Quand elle est homologuée, isole strictement les quatre mémoires CoALA (travail hors processus chiffrée en C2, procédurale signée en C3, épisodique et sémantique en C5) sans écriture partagée (EXIG-ARC-25) contre OWASP ASI06. Impose le graphe bi-temporel (valid_from/valid_to vs ingestion) pour l'audit E-23 et l'effacement sélectif vérifiable de la Loi 25 art. 23.",
+      "summary": "Désactive par défaut la mémoire inter-sessions (DEC-004, PRI-008). Quand elle est homologuée, isole strictement les quatre mémoires CoALA (travail hors processus chiffrée en C2, procédurale signée en C3, épisodique et sémantique en C5) sans écriture partagée (EXIG-ARC-25) contre OWASP ASI06. Impose le graphe bi-temporel (valid_from/valid_to par rapport à ingestion) pour l'audit E-23 et l'effacement sélectif vérifiable de la Loi 25 art. 23.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4803,7 +4803,7 @@
       "domain_id": "D04",
       "subdomain": "Encapsulation patrimoniale, IT/OT et 6 substrats",
       "family": "Extinction CUA et sas OPC UA",
-      "title": "Extinction des agents d'écran CUA (<= 12 mois) et sas OT lecture seule devant OPC UA / Simplex",
+      "title": "Extinction des agents d'écran CUA (≤ 12 mois) et sas OT lecture seule devant OPC UA / Simplex",
       "summary": "Interdit le grattage d'écran externe sous LSAC art. 171 (PEX-001) et confine les automates d'écran internes 3270/5250 (CUA) à une dérogation sous double validation, caviardage PII et budget d'extinction à 12 mois (CAP-025, INI-015, zéro reliquat à POR-008). Pour les équipements périphériques/télématiques marginaux en finance (CAP-028, ADR-017 maintenue avec réserve), limite le pont MCP devant OPC UA/AAS/MQTT à la lecture seule sur réplica isolé, jumeau déterministe et arbitre matériel Simplex hors ligne (CRDT).",
       "autonomy_levels": [
         "L0",
@@ -4908,7 +4908,7 @@
         "6-substrats",
         "souverainete",
         "CLOUD-Act",
-        "residence-vs-controle",
+        "residence-par rapport à-controle",
         "KMS-HSM"
       ],
       "identifiers": [
@@ -4966,8 +4966,8 @@
       "domain_id": "D05",
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Continuum OO1–OO4 et test",
-      "title": "Arbre de sobriété (N0 -> flux -> agent unique -> multiagent) et bascule réglementaire OO2 -> OO3",
-      "summary": "Formalise l'arbre de décision minimaliste (règle déterministe DMN/code N0 -> flux déterministe -> agent unique outillé -> multiagent sur gain mesuré pass^k et CPO). Localise « la main qui commande » selon OO1–OO4 (APM) et proscrit OO1–OO2 dès que les 3 conditions cumulatives de C26 §29.4.1 sont réunies (texte opposable sur l'issue, trace exigible par tiers, dommage non réparable par simple reprise), imposant OO3 ou OO4.",
+      "title": "Arbre de sobriété (N0 → flux → agent unique → multiagent) et bascule réglementaire OO2 → OO3",
+      "summary": "Formalise l'arbre de décision minimaliste (règle déterministe DMN/code N0 → flux déterministe → agent unique outillé → multiagent sur gain mesuré pass^k et CPO). Localise « la main qui commande » selon OO1–OO4 (APM) et proscrit OO1–OO2 dès que les 3 conditions cumulatives de C26 §29.4.1 sont réunies (texte opposable sur l'issue, trace exigible par tiers, dommage non réparable par simple reprise), imposant OO3 ou OO4.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5030,7 +5030,7 @@
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "8 patrons + 1 variante",
       "title": "Catalogue fermé des 8 patrons autorisés + 1 variante et proscription des 10 antipatrons",
-      "summary": "Restreint l'orchestration à 8 patrons homologués (flux déterministe, chaîne séquentielle, routage/handoff, parallélisation écrivain unique, orchestrateur-exécutants à <= 2 sauts, évaluateur-optimiseur à <= 3 tours, chorégraphie événementielle, agent unique étalon <= 15 outils) et 1 variante (débat <= 3 agents + gestionnaire). Proscrit les 10 antipatrons d'EXIG-ORC-29 et tout graphe cyclique libre (ADR-011).",
+      "summary": "Restreint l'orchestration à 8 patrons homologués (flux déterministe, chaîne séquentielle, routage/handoff, parallélisation écrivain unique, orchestrateur-exécutants à ≤ 2 sauts, évaluateur-optimiseur à ≤ 3 tours, chorégraphie événementielle, agent unique étalon ≤ 15 outils) et 1 variante (débat ≤ 3 agents + gestionnaire). Proscrit les 10 antipatrons d'EXIG-ORC-29 et tout graphe cyclique libre (ADR-011).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5366,7 +5366,7 @@
       "subdomain": "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
       "family": "SPIFFE SVID et WIMSE",
       "title": "Attestations cryptographiques éphémères SPIFFE X.509-SVID, OIDC et veille WIMSE / OAuth 2.1",
-      "summary": "Fonde l'authentification des charges agentiques sur des attestations cryptographiques courtes liées à l'instance (SPIFFE X.509-SVID préféré au JWT-SVID rejouable, ou fédération OIDC infonuagique), en attente de ratification des 8 brouillons IETF WIMSE (zéro RFC en nov. 2026) et d'OAuth 2.1 draft-17 (SIG-003). Encadré par des adaptateurs réversibles et un bail local fail-closed TTL <= 5 s en CRE-IA-2027 v2.0.",
+      "summary": "Fonde l'authentification des charges agentiques sur des attestations cryptographiques courtes liées à l'instance (SPIFFE X.509-SVID préféré au JWT-SVID rejouable, ou fédération OIDC infonuagique), en attente de ratification des 8 brouillons IETF WIMSE (zéro RFC en novembre 2026) et d'OAuth 2.1 draft-17 (SIG-003). Encadré par des adaptateurs réversibles et un bail local fail-closed TTL ≤ 5 s en CRE-IA-2027 v2.0.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5438,7 +5438,7 @@
       "domain_id": "D06",
       "subdomain": "Chaîne de mandat, OBO 2e saut et approbation CIBA",
       "family": "Rupture du 2e saut",
-      "title": "Rupture au deuxième saut (RFC 8693 §4.1), délégation atténuée <= 2 sauts et DPoP/mTLS",
+      "title": "Rupture au deuxième saut (RFC 8693 §4.1), délégation atténuée ≤ 2 sauts et DPoP/mTLS",
       "summary": "Résout le problème du délégué confus (ASI03) et la lacune de RFC 8693 §4.1 (act purement informatif) : interdit sans dérogation le relais de jeton entrant (EXIG-IAM-12), impose un échange RFC 8693 par saut (mandant pseudonymisé dans sub, agent dans act) plafonné à 2 sauts sous intersection monotone, audience unique RFC 8707, détails RFC 9396 et preuve de possession cryptographique DPoP (RFC 9449) ou mTLS (RFC 8705 / RFC 9700).",
       "autonomy_levels": [
         "L2",
@@ -5509,7 +5509,7 @@
       "subdomain": "Chaîne de mandat, OBO 2e saut et approbation CIBA",
       "family": "Liaison cryptographique JCS",
       "title": "Approbation hors bande OpenID Connect CIBA + FIDO2 liée au condensat I-JSON/JCS SHA-256",
-      "summary": "Verrouille toute action P3 / Classe 4 (et P2 > seuil en classe élevée) contre le oui conversationnel ou l'injection post-validation (CAP-002, EXIG-AUT-09/12/13). Filtre le payload selon I-JSON (RFC 7493), calcule h = SHA-256(JCS(...)) (RFC 8785), notifie sur appareil/session distincts via OpenID Connect CIBA + FIDO2/WebAuthn + RFC 9396 (<= 15 min, jti atomique retenu à la passerelle hors modèle, 2 approbateurs en classe élevée).",
+      "summary": "Verrouille toute action P3 / Classe 4 (et P2 > seuil en classe élevée) contre le oui conversationnel ou l'injection post-validation (CAP-002, EXIG-AUT-09/12/13). Filtre le payload selon I-JSON (RFC 7493), calcule h = SHA-256(JCS(...)) (RFC 8785), notifie sur appareil/session distincts via OpenID Connect CIBA + FIDO2/WebAuthn + RFC 9396 (≤ 15 min, jti atomique retenu à la passerelle hors modèle, 2 approbateurs en classe élevée).",
       "autonomy_levels": [
         "L2",
         "L3"
@@ -5659,8 +5659,8 @@
       "canonical_slug": "certificats-tls-47-jours",
       "domain_id": "D06",
       "subdomain": "PKI automatisée 47 jours et cryptographie post-quantique",
-      "family": "Durée TLS 100 j -> 47 j",
-      "title": "Réduction CA/Browser Forum des certificats TLS à 100 j (2027) puis 47 j (2029) et ACME",
+      "family": "Durée TLS 100 j → 47 j",
+      "title": "Réduction CA/Browser Forum des certificats TLS à 100 j (2027) puis 47 jours (2029) et ACME",
       "summary": "Intègre les échéances fermes du CA/Browser Forum (Ballot SC-081v3) abaissant la validité des certificats TLS publics à 100 jours le 15 mars 2027 (ANC-023) puis à 47 jours le 15 mars 2029 (ANC-030, validation domaine à 10 j). Impose l'automatisation ACME (RFC 8555) et SPIFFE à 100 % dès le Palier 1 (PRI-012, INI-002, POR-001/007) et bloque l'ouverture externe en P2 sans renouvellement automatisé (M-26).",
       "autonomy_levels": [
         "L1",
@@ -5737,7 +5737,7 @@
       "subdomain": "PKI automatisée 47 jours et cryptographie post-quantique",
       "family": "Transition PQC et choc HTTP 431",
       "title": "Transition post-quantique (FIPS 203/204/205, NIST IR 8547), choc HTTP 431 (50–72×) et CBOR-COSE",
-      "summary": "Prouve qu'une délégation signée classiquement en 2028 perd sa force probante en 2035 (menaces harvest-now-decrypt-later et falsification active). Aligne la trajectoire financière sur FIPS 203/204/205, NIST IR 8547 (dépréciation > 2030, interdiction > 2035), RFC 9964/10024/10073 et la feuille G7 (2030–2032 -> 2035, distincte d'AMOPS/EO 14412 publics). Résout le choc d'amplification ML-DSA (3 309–4 627 o, rejet HTTP 431 à 20–35 Ko dès le saut 1 sur Campagne 4 Borealis-Bench) par clés kid/JWKS, tampons >= 32 Ko, Transaction Tokens CBOR-COSE O(1), TLS 1.3 hybride et scellement SCITT + SLH-DSA.",
+      "summary": "Prouve qu'une délégation signée classiquement en 2028 perd sa force probante en 2035 (menaces harvest-now-decrypt-later et falsification active). Aligne la trajectoire financière sur FIPS 203/204/205, NIST IR 8547 (dépréciation > 2030, interdiction > 2035), RFC 9964/10024/10073 et la feuille G7 (2030–2032 → 2035, distincte d'AMOPS/EO 14412 publics). Résout le choc d'amplification ML-DSA (3 309–4 627 o, rejet HTTP 431 à 20–35 Ko dès le saut 1 sur Campagne 4 Borealis-Bench) par clés kid/JWKS, tampons ≥ 32 Ko, Transaction Tokens CBOR-COSE O(1), TLS 1.3 hybride et scellement SCITT + SLH-DSA.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5970,8 +5970,8 @@
       "domain_id": "D07",
       "subdomain": "Menaces agentiques et surface d'attaque protocolaire",
       "family": "OWASP ASI, CaMeL et tests bilingues",
-      "title": "Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % vs 84 %) et tests FR/EN",
-      "summary": "Face à l'absence de frontière native instructions/données et aux faiblesses des classifieurs sous reformulation multilingue, interdit la détection seule et impose une suite d'attaques bilingue français/anglais en CI (EXIG-SEC-05/24). Adopte en risque élevé au moins un des 6 patrons anti-injection confinant aussi les données (CaMeL : 77 % réussite sûre vs 84 % sans défense sur AgentDojo ; 95,83 % rappel / 0 % FP sur Campagne 2 Borealis-Bench) tout en propageant le marquage face à sa non-composition inter-agents (Can CaMeLs Talk?).",
+      "title": "Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % contre 84 %) et tests FR/EN",
+      "summary": "Face à l'absence de frontière native instructions/données et aux faiblesses des classifieurs sous reformulation multilingue, interdit la détection seule et impose une suite d'attaques bilingue français/anglais en CI (EXIG-SEC-05/24). Adopte en risque élevé au moins un des 6 patrons anti-injection confinant aussi les données (CaMeL : 77 % réussite sûre par rapport à 84 % sans défense sur AgentDojo ; 95,83 % rappel / 0 % FP sur Campagne 2 Borealis-Bench) tout en propageant le marquage face à sa non-composition inter-agents (Can CaMeLs Talk?).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6104,8 +6104,8 @@
       "domain_id": "D07",
       "subdomain": "Confinement SHADI/microVM, TEE et défense SOC/SOAR",
       "family": "Coupe-circuit < 10 s et repli < 60 s",
-      "title": "Coupe-circuit hiérarchisé (< 10 s POR-003 vs 15 min CAD26), SSF/CAEP et rétrogradation < 60 s",
-      "summary": "Arme deux disjoncteurs chronométrés et exercés trimestriellement (CAP-039) : (1) le coupe-circuit passerelle bloquant vers l'avant agent, gabarit ou outil en < 10 s [S] (PRR S-14 / POR-003, mesuré à 0,050 ms max sur Borealis-Bench ; <= 15 min global avec SSF/CAEP sous CAD26) sans bloquer le canal Saga EXIG-ORC-28 ; et (2) la rétrogradation automatique d'autonomie vers N2 ou flux fixe en < 60 s [S] (POR-015) dès épuisement du budget d'erreur.",
+      "title": "Coupe-circuit hiérarchisé (< 10 s POR-003 contre 15 min CAD26), SSF/CAEP et rétrogradation < 60 s",
+      "summary": "Arme deux disjoncteurs chronométrés et exercés trimestriellement (CAP-039) : (1) le coupe-circuit passerelle bloquant vers l'avant agent, gabarit ou outil en < 10 s [S] (PRR S-14 / POR-003, mesuré à 0,050 ms max sur Borealis-Bench ; ≤ 15 min global avec SSF/CAEP sous CAD26) sans bloquer le canal Saga EXIG-ORC-28 ; et (2) la rétrogradation automatique d'autonomie vers N2 ou flux fixe en < 60 s [S] (POR-015) dès épuisement du budget d'erreur.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6199,7 +6199,7 @@
       "subdomain": "Confinement SHADI/microVM, TEE et défense SOC/SOAR",
       "family": "Enclaves TEE, HYOK et Cognitive DR",
       "title": "Enclaves matérielles CPU/GPU (TEE, limite TEE.fail), clés HYOK et continuité cognitive bimodèle",
-      "summary": "Complète le chiffrement des six substrats par l'inférence confidentielle en enclave attestée CPU/GPU (Intel TDX, AMD SEV-SNP, NVIDIA Confidential Computing — option conditionnelle CAP-033 sous scénarios B/C et SIG-016) et le séquestre de clés HYOK (RTT <= 35 ms conseillé). Intègre la vulnérabilité physique TEE.fail (< 1 000 $ US sur DDR5) et impose sur tout flux critique (Classes 3–5) une continuité cognitive bimodèle à poids ouverts exercée chaque trimestre (CAP-031, POR-006).",
+      "summary": "Complète le chiffrement des six substrats par l'inférence confidentielle en enclave attestée CPU/GPU (Intel TDX, AMD SEV-SNP, NVIDIA Confidential Computing — option conditionnelle CAP-033 sous scénarios B/C et SIG-016) et le séquestre de clés HYOK (RTT ≤ 35 ms conseillé). Intègre la vulnérabilité physique TEE.fail (< 1 000 $ US sur DDR5) et impose sur tout flux critique (Classes 3–5) une continuité cognitive bimodèle à poids ouverts exercée chaque trimestre (CAP-031, POR-006).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -6275,7 +6275,7 @@
       "domain_id": "D08",
       "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
       "family": "OpenTelemetry GenAI épinglé",
-      "title": "Télémétrie OpenTelemetry v1.41.0 épinglée (vs v1.44.0 Development) et jointure trace ↔ mandat",
+      "title": "Télémétrie OpenTelemetry v1.41.0 épinglée (face à v1.44.0 Development) et jointure trace ↔ mandat",
       "summary": "Prouve l'instabilité des 85 attributs gen_ai.* du registre OpenTelemetry v1.44.0 (tous en statut Development, sans champs de mandat). Épingle le collecteur v1.41.0 derrière une table de correspondance interne (PRI-013, CAP-042, ADR-021 sous SIG-006), propage W3C Trace Context sur MCP/A2A/CloudEvents sans RP en Baggage et injecte la jointure trace ↔ mandat du Tableau 41.",
       "autonomy_levels": [
         "L1",
@@ -6343,7 +6343,7 @@
       "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
       "family": "Trois magasins et purge 14 j",
       "title": "Architecture à double couloir PII et séparation des trois magasins réglementés",
-      "summary": "Sépare physiquement et administrativement trois magasins : (1) couloir opérationnel OTel 100 % métadonnées sans contenu brut sous pseudonymes SHA-256 poivrés (13 mois [S]) et voûte forensique « bris de glace » sous double accord purgée <= 14 jours (EXIG-OBS-07/08) ; (2) journal d'audit probatoire JCS (>= 24 mois) ; (3) dossier de décision individuelle Loi 25 art. 12.1 conservé >= 1 an (EXIG-CON-09).",
+      "summary": "Sépare physiquement et administrativement trois magasins : (1) couloir opérationnel OTel 100 % métadonnées sans contenu brut sous pseudonymes SHA-256 poivrés (13 mois [S]) et voûte forensique « bris de glace » sous double accord purgée ≤ 14 jours (EXIG-OBS-07/08) ; (2) journal d'audit probatoire JCS (≥ 24 mois) ; (3) dossier de décision individuelle Loi 25 art. 12.1 conservé ≥ 1 an (EXIG-CON-09).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6420,7 +6420,7 @@
       "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
       "family": "Journal JCS et ancrage SCITT",
       "title": "Journal d'audit à 5 éléments canonisé RFC 8785 (JCS), ancré chaque heure et scellé SCITT + SLH-DSA",
-      "summary": "Exige avant tout relais P2/P3 en échec fermé (EXIG-OBS-11, non dérogeable EXIG-GOV-17) un journal distinct scellant 5 éléments (mandant pseudonymisé RPRP, agent/SPIFFE/invite, outil/arguments HMAC, modèle réel servi, autorité/idempotence/précédent_sha256) canonisé en RFC 8785 (JCS). Ancre chaque heure hors domaine (RFC 9162 / SCITT RFC 9943 signé SLH-DSA FIPS 205, 0,786 o/evt sur Campagne 4) et garde >= 24 mois (5 ans bancaire ouvert, 7 ans plaintes/OCRI, 20–40 ans vie/rentes).",
+      "summary": "Exige avant tout relais P2/P3 en échec fermé (EXIG-OBS-11, non dérogeable EXIG-GOV-17) un journal distinct scellant 5 éléments (mandant pseudonymisé RPRP, agent/SPIFFE/invite, outil/arguments HMAC, modèle réel servi, autorité/idempotence/précédent_sha256) canonisé en RFC 8785 (JCS). Ancre chaque heure hors domaine (RFC 9162 / SCITT RFC 9943 signé SLH-DSA FIPS 205, 0,786 o/evt sur Campagne 4) et garde ≥ 24 mois (5 ans bancaire ouvert, 7 ans plaintes/OCRI, 20–40 ans vie/rentes).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -6496,7 +6496,7 @@
       "subdomain": "Banc EvalOps hermétique E1–E3, Wilson et métamorphique",
       "family": "Étages E1–E3 et SLO",
       "title": "Évaluation continue E1–E3 (pass^k), juge calibré et abaissement d'autonomie sur dérive SLO",
-      "summary": "Déploie un cycle à 3 étages contre l'auto-évaluation complaisante (CAP-043, CAP-044, DEC-010) : E1 en CI déterministe (contrats, politiques, chaos Saga), E2 en simulation pré-production sur >= 50 scénarios CAD26 (>= 100 PRR O-04 [S]) joués >= 3 fois en pass^k, et E3 en échantillonnage continu sous juge de famille distincte étalonné sur annotations humaines. Couple l'épuisement du budget d'erreur au repli < 60 s (POR-015) et 3 mois hors SLO à l'abaissement d'un niveau (EXIG-EVA-06).",
+      "summary": "Déploie un cycle à 3 étages contre l'auto-évaluation complaisante (CAP-043, CAP-044, DEC-010) : E1 en CI déterministe (contrats, politiques, chaos Saga), E2 en simulation pré-production sur ≥ 50 scénarios CAD26 (≥ 100 PRR O-04 [S]) joués ≥ 3 fois en pass^k, et E3 en échantillonnage continu sous juge de famille distincte étalonné sur annotations humaines. Couple l'épuisement du budget d'erreur au repli < 60 s (POR-015) et 3 mois hors SLO à l'abaissement d'un niveau (EXIG-EVA-06).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6573,9 +6573,9 @@
       "canonical_slug": "finops-focus-cpo",
       "domain_id": "D08",
       "subdomain": "SRE agentique et FinOps FOCUS / CPO / carbone",
-      "family": "CPO complet et showback -> chargeback",
+      "family": "CPO complet et showback → chargeback",
       "title": "Pilotage économique au coût complet par résultat conforme (CPO), FOCUS 1.4 et disjoncteurs",
-      "summary": "Rejette le tarif facial du million de jetons (> 97 % de relecture sur cas SEC ; 4× / 15× selon Hadfield et coll.) au profit du CPO complet non rouvert (PRI-014, CAP-045, EF-13). Convertit les crédits SaaS, arme des disjoncteurs par tâche et mensuels (alerte 80 %, arrêt 100 % hors compensations Saga), exploite FOCUS 1.4 et les lots -50 %, et séquence l'imputation (DEC-011) : showback en P1 (POR-004) -> chargeback et déclassement après 2 trimestres déficitaires en P2 (POR-009, POR-016).",
+      "summary": "Rejette le tarif facial du million de jetons (> 97 % de relecture sur cas SEC ; 4× / 15× selon Hadfield et coll.) au profit du CPO complet non rouvert (PRI-014, CAP-045, EF-13). Convertit les crédits SaaS, arme des disjoncteurs par tâche et mensuels (alerte 80 %, arrêt 100 % hors compensations Saga), exploite FOCUS 1.4 et les lots -50 %, et séquence l'imputation (DEC-011) : showback en P1 (POR-004) → chargeback et déclassement après 2 trimestres déficitaires en P2 (POR-009, POR-016).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6647,7 +6647,7 @@
       "subdomain": "SRE agentique et FinOps FOCUS / CPO / carbone",
       "family": "Routage 3 paliers, distillation et B-15",
       "title": "Plan d'inférence à alias logiques, affinité KV-cache, distillation SLM et comptabilité carbone (B-15)",
-      "summary": "Encapsule les modèles derrière une passerelle d'alias logiques (CAP-029, DEC-006) dissociant routage frugal à 3 paliers qualifié en E2 et ordonnanceur à affinité KV-cache (TTFT). Prévoit sur signaux SIG-015/016 la distillation LLM -> SLM sous sas irréversible de purge des RP à canaris et porte pass^5 >= 99 % [S] (CAP-034, INI-028, ADR-031), et instrumente la comptabilité kWh/carbone (CAP-046) pour BSIF B-15 portée 3 dès 2028 face aux 1 700 TWh projetés en 2035.",
+      "summary": "Encapsule les modèles derrière une passerelle d'alias logiques (CAP-029, DEC-006) dissociant routage frugal à 3 paliers qualifié en E2 et ordonnanceur à affinité KV-cache (TTFT). Prévoit sur signaux SIG-015/016 la distillation LLM → SLM sous sas irréversible de purge des RP à canaris et porte pass^5 ≥ 99 % [S] (CAP-034, INI-028, ADR-031), et instrumente la comptabilité kWh/carbone (CAP-046) pour BSIF B-15 portée 3 dès 2028 face aux 1 700 TWh projetés en 2035.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6806,7 +6806,7 @@
       "domain_id": "D09",
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Note AMF IA et 12 EXIG-AMF",
-      "title": "Encadrement AMF Québec : Note AMF IA (41 attentes -> 12 EXIG-AMF-01..12), lois d'assurance et statut F",
+      "title": "Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F",
       "summary": "Intègre le décloisonnement de 2026/documents/Note AMF IA.pdf (CRE-IA-2026-01-QC, 49 p.) traduisant les 41 attentes de la Ligne directrice AMF sur l'IA (1er mai 2027 D ANC-112 ; AMF-G/R/C/V/P) en 12 exigences EXIG-AMF-01..12 levées des 9 reports initiaux (ANC-112/113). Maintient honnêtement au statut F les PDF directs bloqués par HTTP 403 sur lautorite.qc.ca (T-01, T-02, T-13..15) et couvre la Loi sur les assureurs et la LDPSF en L+.",
       "autonomy_levels": [
         "L0",
@@ -6891,7 +6891,7 @@
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Loi 25 art. 12.1, 23 et 3.5",
       "title": "Loi 25 Québec : décisions exclusivement automatisées (art. 12.1), effacement (art. 23) et incidents",
-      "summary": "Traduit en contrôles d'architecture les articles en vigueur de la Loi 25 (L.Q. 2021, c. 25) : avis contemporain, communication des principaux facteurs/paramètres, droit d'observation devant un employé habilité à réviser effectivement et conservation >= 1 an du dossier (art. 12.1, Classe 5, CAP-003) ; purge/anonymisation sélective (art. 23, CAP-019) ; notification d'incident (art. 3.5) ; risque de requalification devant la CAI si validation nominale (SIG-106).",
+      "summary": "Traduit en contrôles d'architecture les articles en vigueur de la Loi 25 (L.Q. 2021, c. 25) : avis contemporain, communication des principaux facteurs/paramètres, droit d'observation devant un employé habilité à réviser effectivement et conservation ≥ 1 an du dossier (art. 12.1, Classe 5, CAP-003) ; purge/anonymisation sélective (art. 23, CAP-019) ; notification d'incident (art. 3.5) ; risque de requalification devant la CAI si validation nominale (SIG-106).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -7044,7 +7044,7 @@
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "ACVM 11-348, NI 31-103 et OCRI",
       "title": "Encadrement des valeurs mobilières : Avis ACVM 11-348, Règlement 31-103 et règles OCRI",
-      "summary": "Intègre l'Avis consultatif 11-348 des ACVM (5 déc. 2024, ANC-121, SIG-105) sur l'explicabilité, la gouvernance et l'interdiction de l'AI washing ; les jalons fermes du Règlement 31-103 (coût quotidien des fonds au 1er janv. 2026 ANC-101, distributeurs principaux 2027/2029, interdiction des rétrofacturations de commissions le 1er oct. 2028 ANC-105) ; et les règles consolidées OCRI (1103(2), 3240/3241 OEO, 3400 convenance, 3600 communications, 3803 archives 7 ans).",
+      "summary": "Intègre l'Avis consultatif 11-348 des ACVM (5 décembre 2024, ANC-121, SIG-105) sur l'explicabilité, la gouvernance et l'interdiction de l'AI washing ; les jalons fermes du Règlement 31-103 (coût quotidien des fonds au 1er janv. 2026 ANC-101, distributeurs principaux 2027/2029, interdiction des rétrofacturations de commissions le 1er octobre 2028 ANC-105) ; et les règles consolidées OCRI (1103(2), 3240/3241 OEO, 3400 convenance, 3600 communications, 3803 archives 7 ans).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -7109,8 +7109,8 @@
       "domain_id": "D09",
       "subdomain": "Réglementation européenne et référentiels internationaux",
       "family": "AI Act, Omnibus 2026/1744, Data Act et DORA",
-      "title": "Droit européen applicable par effet extraterritorial : AI Act (Annexe III déc. 2027), Data Act et DORA",
-      "summary": "Couvre l'extraterritorialité dès utilisation des sorties dans l'UE (art. 2(1)(c)) : EU AI Act modifié par l'Omnibus numérique (UE) 2026/1744 (transparence art. 50 en déc. 2026 ANC-001, GPAI 2 août 2027 ANC-004, Annexe III solvabilité crédit 5 b et vie/maladie 5 c le 2 déc. 2027 ANC-007 avec SMQ EN 18286:2026, art. 25 requalification fournisseur). Intègre le Data Act art. 29 (suppression des frais de sortie le 12 janv. 2027 ANC-003), DORA (tiers critiques TIC janv. 2028 ANC-009) et Cyber Resilience Act (déc. 2027 ANC-008).",
+      "title": "Droit européen applicable par effet extraterritorial : AI Act (Annexe III décembre 2027), Data Act et DORA",
+      "summary": "Couvre l'extraterritorialité dès utilisation des sorties dans l'UE (art. 2(1)(c)) : EU AI Act modifié par l'Omnibus numérique (UE) 2026/1744 (transparence art. 50 en décembre 2026 ANC-001, GPAI 2 août 2027 ANC-004, Annexe III solvabilité crédit 5 b et vie/maladie 5 c le 2 décembre 2027 ANC-007 avec SMQ EN 18286:2026, art. 25 requalification fournisseur). Intègre le Data Act art. 29 (suppression des frais de sortie le 12 janv. 2027 ANC-003), DORA (tiers critiques TIC janv. 2028 ANC-009) et Cyber Resilience Act (décembre 2027 ANC-008).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -7499,7 +7499,7 @@
       "subdomain": "Cinq profils financiers réglementés et 24 PEX",
       "family": "Profil 2 : Gestion de patrimoine",
       "title": "Profil Gestion de patrimoine et valeurs mobilières (M-15, PEX-011..015) : convenance OCRI 3400 et OEO 3241",
-      "summary": "Décline le cadre pour courtiers OCRI, gestionnaires de portefeuille et IFM (charge FEDS 49,59 / 100), démontrant que le Stade 4 n'est pas universel (D2 plafonné aux Stades 2–3). Impose via PEX-011 à PEX-015 : le rattachement non délégable de la convenance à une personne physique inscrite (OCRI 3400/1103(2), ACVM 11-348) ; la double barrière OEO bloquant recommandations et ordres automatisés clients (OCRI 3240/3241) ; la pré-approbation superviseur, l'anti-AI washing et l'archive 7 ans (3600/3803) ; l'exclusion des rétrofacturations interdites au 1er oct. 2028 ; et le calcul Decimal exact quotidien des frais (NI 31-103).",
+      "summary": "Décline le cadre pour courtiers OCRI, gestionnaires de portefeuille et IFM (charge FEDS 49,59 / 100), démontrant que le Stade 4 n'est pas universel (D2 plafonné aux Stades 2–3). Impose via PEX-011 à PEX-015 : le rattachement non délégable de la convenance à une personne physique inscrite (OCRI 3400/1103(2), ACVM 11-348) ; la double barrière OEO bloquant recommandations et ordres automatisés clients (OCRI 3240/3241) ; la pré-approbation superviseur, l'anti-AI washing et l'archive 7 ans (3600/3803) ; l'exclusion des rétrofacturations interdites au 1er octobre 2028 ; et le calcul Decimal exact quotidien des frais (NI 31-103).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -7652,8 +7652,8 @@
       "domain_id": "D10",
       "subdomain": "Cinq profils financiers réglementés et 24 PEX",
       "family": "Profil 4 : Assurance de dommages",
-      "title": "Profil Assurance de dommages IARD (M-17, PEX-031..035) : élasticité cat., >= 3 assureurs et sas photo",
-      "summary": "Traite la distribution intermédiée et les pointes catastrophiques en IARD (charge FEDS 64,23 / 100). Impose via PEX-031 à PEX-035 : un profil pré-homologué d'élasticité catastrophique (B-9/E-21) interdisant tout refus automatisé d'indemnité sans expert certifié ; l'assemblage déterministe des formulaires automobiles approuvés (Loi sur les assureurs art. 71) ; la neutralité probatoire comparant >= 3 assureurs hors groupe en courtage (LDPSF art. 38) ; des NHI révocables par cabinet tiers avec sas multimodal anti-injection sur photos ; et la validation des modèles externes de catastrophe et émissions B-15.",
+      "title": "Profil Assurance de dommages IARD (M-17, PEX-031..035) : élasticité cat., ≥ 3 assureurs et sas photo",
+      "summary": "Traite la distribution intermédiée et les pointes catastrophiques en IARD (charge FEDS 64,23 / 100). Impose via PEX-031 à PEX-035 : un profil pré-homologué d'élasticité catastrophique (B-9/E-21) interdisant tout refus automatisé d'indemnité sans expert certifié ; l'assemblage déterministe des formulaires automobiles approuvés (Loi sur les assureurs art. 71) ; la neutralité probatoire comparant ≥ 3 assureurs hors groupe en courtage (LDPSF art. 38) ; des NHI révocables par cabinet tiers avec sas multimodal anti-injection sur photos ; et la validation des modèles externes de catastrophe et émissions B-15.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -8000,7 +8000,7 @@
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Scénarios A/B/C, EMA, 43 INI, 15 POR, 27 SIG",
       "title": "Parcours adaptatifs DAPP sans probabilité (A/B/C), modélisation EMA et portefeuille 43 INI / 15 POR / 27 SIG",
-      "summary": "Adapte la méthode DAPP (Haasnoot et al.) sous incertitude profonde sans affecter de probabilité aux trois scénarios structurels : A (Socle étendu), B (Archipel propriétaire) et C (Blocs juridictionnels), traversés orthogonalement par la portée des agents. En modélisation EMA (3 000 LHS), le parcours B domine en décision robuste (92,53 % satisfaction, regret p95 = 0,000) avec bascule conditionnelle vers C au seuil X34 >= 0,386. Orchestre 43 initiatives (29 sans regret + 14 conditionnelles), 15 portes sur preuves (POR-001..009, POR-011..016) et 27 signaux de veille (SIG-001..017, SIG-101..110).",
+      "summary": "Adapte la méthode DAPP (Haasnoot et al.) sous incertitude profonde sans affecter de probabilité aux trois scénarios structurels : A (Socle étendu), B (Archipel propriétaire) et C (Blocs juridictionnels), traversés orthogonalement par la portée des agents. En modélisation EMA (3 000 LHS), le parcours B domine en décision robuste (92,53 % satisfaction, regret p95 = 0,000) avec bascule conditionnelle vers C au seuil X34 ≥ 0,386. Orchestre 43 initiatives (29 sans regret + 14 conditionnelles), 15 portes sur preuves (POR-001..009, POR-011..016) et 27 signaux de veille (SIG-001..017, SIG-101..110).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -8181,9 +8181,9 @@
       "canonical_slug": "trajectoire-90j-18m-p1-p3",
       "domain_id": "D11",
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
-      "family": "Rampe 90 j -> 18 m -> P1–P3 et T1–T10",
-      "title": "Rampe tactique 90 jours -> 18 mois soudée aux Paliers P1–P3 (2028–2035) et les 10 thèses T1–T10",
-      "summary": "Sonde la continuité entre la rampe tactique immédiate (J1 90 j Fondations N0–N1 -> J2 9 mois Plateforme -> J3 18 mois Niveau 3 Défini / Stade 2, arrimée aux dates 2027) et les trois paliers DAPP : P1 (2028–2029, fonder le contrôle, 14+1 INI, POR-001..004 -> Stade 2), P2 (2030–2032, étendre sans perdre la preuve + fenêtre PQC G7, 9+7 INI, POR-005..009 -> Stade 3) et P3 (2033–2035, ouvrir sélectivement post-temporisation 2033, 4+6 INI, POR-011..014 -> Stade 3/4 sélectif), le tout structuré par les 10 thèses T1–T10 de T5.",
+      "family": "Rampe 90 jours → 18 m → P1–P3 et T1–T10",
+      "title": "Rampe tactique 90 jours → 18 mois soudée aux Paliers P1–P3 (2028–2035) et les 10 thèses T1–T10",
+      "summary": "Sonde la continuité entre la rampe tactique immédiate (J1 90 jours Fondations N0–N1 → J2 9 mois Plateforme → J3 18 mois Niveau 3 Défini / Stade 2, arrimée aux dates 2027) et les trois paliers DAPP : P1 (2028–2029, fonder le contrôle, 14+1 INI, POR-001..004 → Stade 2), P2 (2030–2032, étendre sans perdre la preuve + fenêtre PQC G7, 9+7 INI, POR-005..009 → Stade 3) et P3 (2033–2035, ouvrir sélectivement post-temporisation 2033, 4+6 INI, POR-011..014 → Stade 3/4 sélectif), le tout structuré par les 10 thèses T1–T10 de T5.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -8293,7 +8293,7 @@
       "subdomain": "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges",
       "family": "Contrat croisé AE ↔ AS, 3 lignes et usine",
       "title": "Contrat croisé AE ↔ AS (6 décisions conjointes), étoile à 3 lignes (1 seul A) et usine Oracle/Bâtisseur",
-      "summary": "Scelle l'interface entre AE (portefeuille 52 CAP, 3 lignes, D1–D8, ABB, APP, CPO, 15 POR / 27 SIG) et AS (SBB, PEP 9 contrôles, CoALA, COMP-3, sagas, JCS/CIBA, SPIFFE/PQC, double couloir, E1–E3) à travers 6 décisions conjointes. Organise la gouvernance en étoile à 3 lignes (plateforme + parrain RH attestant tous les 6/12 mois, 2e ligne indépendante E-23, 3e ligne audit autonome), registre à 7 états (régularisation 5 j ouvrables, préavis retrait >= 60 j) avec 1 seul rôle A (RACI), et usine logicielle séparant Oracle et Bâtisseur (mutation >= 85 % [S], Shadow Mirroring 30 j [S], zéro shell libre en SRE).",
+      "summary": "Scelle l'interface entre AE (portefeuille 52 CAP, 3 lignes, D1–D8, ABB, APP, CPO, 15 POR / 27 SIG) et AS (SBB, PEP 9 contrôles, CoALA, COMP-3, sagas, JCS/CIBA, SPIFFE/PQC, double couloir, E1–E3) à travers 6 décisions conjointes. Organise la gouvernance en étoile à 3 lignes (plateforme + parrain RH attestant tous les 6/12 mois, 2e ligne indépendante E-23, 3e ligne audit autonome), registre à 7 états (régularisation 5 j ouvrables, préavis retrait ≥ 60 j) avec 1 seul rôle A (RACI), et usine logicielle séparant Oracle et Bâtisseur (mutation ≥ 85 % [S], Shadow Mirroring 30 jours [S], zéro shell libre en SRE).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -8474,7 +8474,7 @@
       "subdomain": "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges",
       "family": "7 modes d'échec et décision 30 j",
       "title": "Les 7 modes d'échec endogènes du plan directeur (M-26), 4 paris fragiles et veille décisionnelle sous 30 j",
-      "summary": "Identifie et arme les disjoncteurs des 7 modes d'échec internes du plan lui-même (M-26.5, résolvant l'écart prose « six modes » vs 7 lignes au Tableau 26.5) : (1) sur-ingénierie / contournement SaaS (couloir rapide Classe 1 + blocage hors PEP) ; (2) goulot 2e ligne E-23 ; (3) atrophie et approbation réflexe ; (4) choc tarifaire / verrouillage ; (5) collision PKI 47 j / ML-DSA sur patrimoine ; (6) dilution et fuite intra-groupe ; (7) veille rituelle et coûts irrécupérables (décision budgétaire forcée sous 30 jours après franchissement d'un SIG-*, auditée par la 3e ligne).",
+      "summary": "Identifie et arme les disjoncteurs des 7 modes d'échec internes du plan lui-même (M-26.5, résolvant l'écart prose « six modes » face aux 7 lignes au Tableau 26.5) : (1) sur-ingénierie / contournement SaaS (couloir rapide Classe 1 + blocage hors PEP) ; (2) goulot 2e ligne E-23 ; (3) atrophie et approbation réflexe ; (4) choc tarifaire / verrouillage ; (5) collision PKI 47 jours / ML-DSA sur patrimoine ; (6) dilution et fuite intra-groupe ; (7) veille rituelle et coûts irrécupérables (décision budgétaire forcée sous 30 jours après franchissement d'un SIG-*, auditée par la 3e ligne).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -8546,7 +8546,7 @@
       "domain_id": "D12",
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Fermeture DIV-02 et ponts 2026–2035",
-      "title": "Fermeture de DIV-02 : soudure des 4 volumes (2 541 p.), 52 CAP + 24 PEX -> 305 EXIG-* v1.2",
+      "title": "Fermeture de DIV-02 : soudure des 4 volumes (2 541 p.), 52 CAP + 24 PEX → 305 EXIG-* v1.2",
       "summary": "Documente la fermeture vérifiée de la lacune initiale DIV-02 (corpus_2026_absent en PD28) par inspection directe de CAD26 (CRE-IA-2026-01 v1.2) et Note AMF IA (49 p.). Raccorde le pivot 5 couches + 3 volets aux 6 vraies couches de CAD26 §5.2 (rectifiant 3 hypothèses d'Annexe E.1 : modèles/confinement en Couche 3, pas de Couche 3 Connaissance, enregistrement en Couche 6). Relie 52/52 CAP et 24/24 PEX (13 spécialisations + 11 comblements de lacunes 2026) aux 305 EXIG-* par liens typés DC-P07 (couverture_directe, ancrage_extension, comble_lacune_2026), et rectifie 4 coquilles de CAD26 v1.1 et la dissonance D6/D7 entre M-12 et M-15/M-18.",
       "autonomy_levels": [
         "L0",
@@ -8642,7 +8642,7 @@
       "subdomain": "Exigences CRE-IA-2026-01, PRR-75 et 24 portes bloquantes",
       "family": "305 EXIG-* × 75 PRR × 15 POR et 10 interdits",
       "title": "Porte unique d'homologation : 305 EXIG-* v1.2 × 75 PRR (24 bloquants) × 15 POR et 10 interdits GOV-17",
-      "summary": "Fusionne CAD26 Annexe A v1.2 (305 EXIG-* : 255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT, incluant 12 EXIG-AMF et 6 ajouts PQC/ACVM/RTR/EN 18286), les 75 points PRR de C27 Annexe G (dont 24 [BLOQUANT] en L3/L4 recalibrés W1.3, 26 Conditionnel, 25 Élevée/Moyenne) et les 15 portes POR en une grille unifiée à 7 domaines (A.2–A.8) et 41 rubriques. Verrouille les 10 interdictions sans dérogation EXIG-GOV-17 (réconciliées à zéro écart avec 46 exigences non dérogeables) et borne les exceptions à <= 6 mois (<= 90 j faible).",
+      "summary": "Fusionne CAD26 Annexe A v1.2 (305 EXIG-* : 255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT, incluant 12 EXIG-AMF et 6 ajouts PQC/ACVM/RTR/EN 18286), les 75 points PRR de C27 Annexe G (dont 24 [BLOQUANT] en L3/L4 recalibrés W1.3, 26 Conditionnel, 25 Élevée/Moyenne) et les 15 portes POR en une grille unifiée à 7 domaines (A.2–A.8) et 41 rubriques. Verrouille les 10 interdictions sans dérogation EXIG-GOV-17 (réconciliées à zéro écart avec 46 exigences non dérogeables) et borne les exceptions à ≤ 6 mois (≤ 90 jours faible).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -8721,7 +8721,7 @@
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Recollation CA-16 et statut L+/C/F",
       "title": "Production 100 % par agents à rôles séparés, double recollation CA-16 sur texte brut et hygiène L+/C/F",
-      "summary": "Documente la chaîne de production autonome sans relecture humaine intégrale : séparation stricte entre rédacteurs, outilleurs, auditeurs de fond (CA-15, CA-18) et recollation déterministe à l'aveugle CA-16 sur textes primaires bruts L+ (T4 : tirage 1 seed=20282035 38/60 -> 60/60 ; tirage 2 disjoint seed=20261119 59/60 -> 60/60 soit 120 énoncés ; T5 : seed=20262035 39/40 -> 40/40 sur les 4 PDF). Préserve l'hygiène stricte des 98 textes L+ SHA-256 face aux sources statut F (HTTP 403 / licences) et aux lots absents DIV-01/DIV-03.",
+      "summary": "Documente la chaîne de production autonome sans relecture humaine intégrale : séparation stricte entre rédacteurs, outilleurs, auditeurs de fond (CA-15, CA-18) et recollation déterministe à l'aveugle CA-16 sur textes primaires bruts L+ (T4 : tirage 1 seed=20282035 38/60 → 60/60 ; tirage 2 disjoint seed=20261119 59/60 → 60/60 soit 120 énoncés ; T5 : seed=20262035 39/40 → 40/40 sur les 4 PDF). Préserve l'hygiène stricte des 98 textes L+ SHA-256 face aux sources statut F (HTTP 403 / licences) et aux lots absents DIV-01/DIV-03.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -8804,7 +8804,7 @@
       "subdomain": "Trousse exécutable Tome 8 et vecteurs tiers",
       "family": "Monte Carlo, EMA et charge 5 profils",
       "title": "Calibration artificielle FEDS/EMA (DC-P12, plafond C07 = 65 %) sur seuils [S], trajectoires et profils",
-      "summary": "Regroupe les expériences quantitatives exclusivement artificielles (DC-P12, plafond épistémique C07 = 65,0 %, zéro étude de cas humaine) du banc Borealis-Bench/feds-ema/ (seed=20261119) : calibration Monte Carlo (4 000 tirages) des 5 seuils [S] (POR-003 < 10 s à 99,95 %, <= 15 outils resserré à <= 10–12 en L3/L4, CIBA < 60 s SLA, rétention chaude 30 j portée à 45 j, pass^5 >= 99 % plan de contrôle vs >= 95 % génératif), modélisation EMA 3 000 LHS (A/B/C) et charge normalisée des 5 profils financiers (49,59 à 95,78 / 100).",
+      "summary": "Regroupe les expériences quantitatives exclusivement artificielles (DC-P12, plafond épistémique C07 = 65,0 %, zéro étude de cas humaine) du banc Borealis-Bench/feds-ema/ (seed=20261119) : calibration Monte Carlo (4 000 tirages) des 5 seuils [S] (POR-003 < 10 s à 99,95 %, ≤ 15 outils resserré à ≤ 10–12 en L3/L4, CIBA < 60 s SLA, rétention chaude 30 jours portée à 45 jours, pass^5 ≥ 99 % plan de contrôle contre ≥ 95 % en génératif), modélisation EMA 3 000 LHS (A/B/C) et charge normalisée des 5 profils financiers (49,59 à 95,78 / 100).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -8894,7 +8894,7 @@
       "domain_id": "D12",
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "DC-P01, CC-BY-4.0 / MIT et périmètre",
-      "title": "Clause de non-avis consultatif (DC-P01), licences duales CC BY 4.0 / MIT et démarcation secteur privé vs public",
+      "title": "Clause de non-avis consultatif (DC-P01), licences duales CC BY 4.0 / MIT et démarcation secteur privé et secteur public",
       "summary": "Pose le statut strictement informatif et consultatif AE/AS de T4 et T5 (DC-P01 : produit par agents d'IA sans relecture ni homologation humaine, ne constitue ni un avis juridique ni une certification prudentielle), les licences duales CC BY 4.0 (textes, registres, figures) et MIT (scripts, outils, Borealis-Bench), le périmètre démontré strictement financier (extrapolations hors finance balisées) et la séparation absolue EF-06 entre règles du secteur financier privé et directives visant les administrations publiques.",
       "autonomy_levels": [
         "L0"
@@ -8912,7 +8912,7 @@
         "CC-BY-4.0",
         "MIT",
         "EF-06",
-        "secteur-prive-vs-public"
+        "secteur-prive-par rapport à-public"
       ],
       "identifiers": [
         "DC-P01",
@@ -9084,7 +9084,7 @@
       "target_slug": "efvp-transfert-hors-quebec",
       "type": "attenuation_risque",
       "label": "Isolation et oubli bi-temporel sous Loi 25",
-      "justification": "La séparation des 4 tiroirs CoALA sans écriture partagée et la purge sélective sur graphe bi-temporel parent l'empoisonnement mémoriel (ASI06) et le profilage illicite.",
+      "justification": "La séparation des quatre compartiments mémoriels CoALA sans écriture partagée et la purge sélective sur graphe bi-temporel parent l'empoisonnement mémoriel (ASI06) et le profilage illicite.",
       "tomes": [
         "T4",
         "T5"
@@ -9190,7 +9190,7 @@
       "source_slug": "certificats-tls-47-jours",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "dependance_technique",
-      "label": "Automatisation ACME 47 j préalable au PQC",
+      "label": "Automatisation ACME 47 jours préalable au PQC",
       "justification": "L'automatisation intégrale ACME/SPIFFE exigée pour mars 2029 (47 j) constitue le prérequis technique pour supporter les rotations et certificats hybrides/PQC.",
       "tomes": [
         "T4",
@@ -9277,7 +9277,7 @@
       "target_slug": "cadre-togaf-archimate-4-plans",
       "type": "operationnalisation",
       "label": "Conversion des ADR en 12 contrats neutres DEC",
-      "justification": "Les 12 décisions DEC-001 à DEC-012 éliminent le couplage produit des 16 ADR généralisées et s'exécutent via le découpage neutre ABB -> SBB.",
+      "justification": "Les 12 décisions DEC-001 à DEC-012 éliminent le couplage produit des 16 ADR généralisées et s'exécutent via le découpage neutre ABB → SBB.",
       "tomes": [
         "T4",
         "T5"
@@ -9288,7 +9288,7 @@
       "target_slug": "constance-pass-k",
       "type": "operationnalisation",
       "label": "Exécution CI/CD E1–E3 de la constance pass^k",
-      "justification": "Les étages E1 (déterministe/chaos), E2 (>= 50/100 scénarios × 3) et E3 (juge calibré) opérationnalisent la mesure pass^k et les budgets d'erreur.",
+      "justification": "Les étages E1 (déterministe/chaos), E2 (≥ 50/100 scénarios × 3) et E3 (juge calibré) opérationnalisent la mesure pass^k et les budgets d'erreur.",
       "tomes": [
         "T4",
         "T5"
@@ -9331,7 +9331,7 @@
       "target_slug": "topologies-patrons-orchestration",
       "type": "operationnalisation",
       "label": "Déploiement OO3/OO4 via les 8 patrons homologués",
-      "justification": "La bascule réglementaire OO2 -> OO3 se concrétise exclusivement par l'un des 8 patrons fermés (ou la variante à <= 3 agents) sous enveloppe déterministe.",
+      "justification": "La bascule réglementaire OO2 → OO3 se concrétise exclusivement par l'un des 8 patrons fermés (ou la variante à ≤ 3 agents) sous enveloppe déterministe.",
       "tomes": [
         "T5"
       ]
@@ -9351,7 +9351,7 @@
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "operationnalisation",
       "label": "Cadencement des 43 INI et 15 POR sur P1–P3",
-      "justification": "La rampe 90 j -> 18 m et les trois paliers 2028–2035 traduisent les parcours adaptatifs DAPP en initiatives sans regret/conditionnelles et portes vérifiées.",
+      "justification": "La rampe 90 jours → 18 m et les trois paliers 2028–2035 traduisent les parcours adaptatifs DAPP en initiatives sans regret/conditionnelles et portes vérifiées.",
       "tomes": [
         "T4",
         "T5"
@@ -9428,7 +9428,7 @@
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "encadrement_normatif",
       "label": "Obligation d'avis, facteurs et révision humaine effective",
-      "justification": "L'article 12.1 impose un avis contemporain, l'explication des facteurs, le réexamen par employé habilité (non purement formel) et le dossier >= 1 an sur toute Classe 5.",
+      "justification": "L'article 12.1 impose un avis contemporain, l'explication des facteurs, le réexamen par employé habilité (non purement formel) et le dossier ≥ 1 an sur toute Classe 5.",
       "tomes": [
         "T4",
         "T5"
@@ -9482,7 +9482,7 @@
       "source_slug": "ligne-directrice-amf",
       "target_slug": "profil-assurance-dommages-m17",
       "type": "encadrement_normatif",
-      "label": "Formulaires auto art. 71 et >= 3 assureurs LDPSF art. 38",
+      "label": "Formulaires auto art. 71 et ≥ 3 assureurs LDPSF art. 38",
       "justification": "La Loi sur les assureurs et la LDPSF du Québec dictent le rendu déterministe des polices auto (PEX-032) et la comparaison neutre hors groupe (PEX-033).",
       "tomes": [
         "T4",
@@ -9504,7 +9504,7 @@
       "source_slug": "clause-non-avis-licences",
       "target_slug": "bsif-e-23",
       "type": "encadrement_normatif",
-      "label": "Distinction stricte secteur privé vs administrations publiques",
+      "label": "Distinction stricte secteur privé et administrations publiques",
       "justification": "La règle EF-06 empêche d'appliquer aux banques et assureurs privés les échéances AMOPS, EO 14412, OMB M-26-15 ou directive SCT réservées à l'État.",
       "tomes": [
         "T4",
@@ -9515,7 +9515,7 @@
       "source_slug": "loi-25-article-12-1",
       "target_slug": "double-couloir-probatoire-pii",
       "type": "encadrement_normatif",
-      "label": "Zéro PII en télémétrie courante et purge <= 14 j",
+      "label": "Zéro PII en télémétrie courante et purge ≤ 14 jours",
       "justification": "La Loi 25 impose la pseudonymisation en couloir opérationnel, la limitation à 14 jours de la voûte forensique et l'anonymisation par suppression RPRP en fin de garde.",
       "tomes": [
         "T5"
@@ -9536,8 +9536,8 @@
       "source_slug": "eu-ai-act",
       "target_slug": "scellage-jcs-scitt",
       "type": "encadrement_normatif",
-      "label": "Conservation probatoire >= 24 mois dépassant RIA art. 26(6)",
-      "justification": "Le journal d'audit JCS ancré chaque heure s'aligne sur l'Annexe III du RIA (2 déc. 2027) et dépasse ses 6 mois pour couvrir les 24 mois à 7 ans canadiens.",
+      "label": "Conservation probatoire ≥ 24 mois dépassant RIA art. 26(6)",
+      "justification": "Le journal d'audit JCS ancré chaque heure s'aligne sur l'Annexe III du RIA (2 décembre 2027) et dépasse ses 6 mois pour couvrir les 24 mois à 7 ans canadiens.",
       "tomes": [
         "T5"
       ]
@@ -9623,7 +9623,7 @@
       "source_slug": "exigences-cre-ia-305",
       "target_slug": "catalogue-31-adr-12-dec",
       "type": "concordance_inter_tomes",
-      "label": "Réconciliation 305 EXIG-* × 75 PRR × 31 ADR -> 12 DEC",
+      "label": "Réconciliation 305 EXIG-* × 75 PRR × 31 ADR → 12 DEC",
       "justification": "T5 Annexes B et C soudent les 31 ADR de C27, les 12 DEC de T4, les 75 PRR et les 305 EXIG-* en une grille d'homologation unique à 41 rubriques.",
       "tomes": [
         "T4",
@@ -9668,7 +9668,7 @@
       "target_slug": "catalogue-31-adr-12-dec",
       "type": "concordance_inter_tomes",
       "label": "Résolution en DEC-003 de la dissonance ADR-009",
-      "justification": "T5 §4.1 et Annexe B.2 exposent et neutralisent la contradiction interne de C27 (Apache Ossie 0.1.1 vs Extrait 1.0.0) en généralisant ADR-009 dans DEC-003.",
+      "justification": "T5 §4.1 et Annexe B.2 exposent et neutralisent la contradiction interne de C27 (Apache Ossie 0.1.1 et Extrait 1.0.0) en généralisant ADR-009 dans DEC-003.",
       "tomes": [
         "T4",
         "T5"
@@ -9678,8 +9678,8 @@
       "source_slug": "double-couloir-probatoire-pii",
       "target_slug": "exigences-cre-ia-305",
       "type": "concordance_inter_tomes",
-      "label": "Primeur CAD26 <= 14 j sur C27 14–30 j",
-      "justification": "T5 §8.1 arbitre la divergence entre les 14–30 jours [S] de C27 et l'exigence normative EXIG-OBS-08 imposant la purge forensique sous <= 14 jours.",
+      "label": "Primeur CAD26 ≤ 14 jours sur C27 14–30 j",
+      "justification": "T5 §8.1 arbitre la divergence entre les 14–30 jours [S] de C27 et l'exigence normative EXIG-OBS-08 imposant la purge forensique sous ≤ 14 jours.",
       "tomes": [
         "T5"
       ]
@@ -9688,8 +9688,8 @@
       "source_slug": "soc-soar-coupe-circuit",
       "target_slug": "exigences-cre-ia-305",
       "type": "concordance_inter_tomes",
-      "label": "Réconciliation < 10 s (PRR S-14 / POR-003) vs 15 min (CAD26)",
-      "justification": "T5 §12.2 et la calibration Monte Carlo FEDS concilient la cible technique passerelle < 10 s [S] (bail TTL <= 5 s) avec l'enveloppe globale <= 15 min de CAD26.",
+      "label": "Réconciliation < 10 s (PRR S-14 / POR-003) et 15 min (CAD26)",
+      "justification": "T5 §12.2 et la calibration Monte Carlo FEDS concilient la cible technique passerelle < 10 s [S] (bail TTL ≤ 5 s) avec l'enveloppe globale ≤ 15 min de CAD26.",
       "tomes": [
         "T4",
         "T5"
@@ -9699,8 +9699,8 @@
       "source_slug": "injection-indirecte-prompt",
       "target_slug": "constance-pass-k",
       "type": "tension_arbitrage",
-      "label": "Coût d'utilité de la sécurité CaMeL (77 % vs 84 %)",
-      "justification": "L'application d'un confinement strict des données (CaMeL) induit un recul mesuré de 7 points de réussite (84 % -> 77 % sur AgentDojo) assumé en classe de risque élevée.",
+      "label": "Coût d'utilité de la sécurité CaMeL (77 % contre 84 %)",
+      "justification": "L'application d'un confinement strict des données (CaMeL) induit un recul mesuré de 7 points de réussite (84 % → 77 % sur AgentDojo) assumé en classe de risque élevée.",
       "tomes": [
         "T5"
       ]
@@ -9709,7 +9709,7 @@
       "source_slug": "regle-maillon-plus-eleve",
       "target_slug": "profil-groupe-diversifie-m18",
       "type": "tension_arbitrage",
-      "label": "Mutualisation du socle technique vs cloisonnement filiales",
+      "label": "Mutualisation du socle technique face au cloisonnement des filiales",
       "justification": "Dans un groupe diversifié, l'économie d'échelle du plan de contrôle partagé s'arbitre contre l'interdiction absolue de fusionner contextes, mémoires et scores inter-entités.",
       "tomes": [
         "T4",
@@ -9720,7 +9720,7 @@
       "source_slug": "arbre-sobriete-oo1-oo4",
       "target_slug": "protocole-a2a",
       "type": "tension_arbitrage",
-      "label": "Sobriété agent unique vs surcoût multi-agents (-70 % à +80,8 %)",
+      "label": "Sobriété agent unique face au surcoût multi-agents (-70 % à +80,8 %)",
       "justification": "L'orchestrateur multi-agents n'est autorisé que sur gain net mesuré en pass^k et CPO, la majorité des tâches séquentielles couplées se dégradant sous multiagent.",
       "tomes": [
         "T5"
@@ -9730,7 +9730,7 @@
       "source_slug": "post-quantique-ml-dsa-slh-dsa",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "tension_arbitrage",
-      "label": "Poids des signatures ML-DSA vs limite en-têtes HTTP 431",
+      "label": "Poids des signatures ML-DSA face à la limite des en-têtes HTTP 431",
       "justification": "La taille 50–72× supérieure de ML-DSA fait exploser les en-têtes OBO/DPoP à 20–35 Ko dès 2–3 sauts, obligeant à arbitrer pour kid/JWKS et CBOR-COSE O(1).",
       "tomes": [
         "T4",
@@ -9741,7 +9741,7 @@
       "source_slug": "finops-focus-cpo",
       "target_slug": "dette-cognitive-vs-technique",
       "type": "tension_arbitrage",
-      "label": "Baisse du prix du jeton vs explosion CPO par relecture",
+      "label": "Baisse du prix du jeton face à l'explosion du CPO par relecture",
       "justification": "La chute du tarif facial du jeton masque l'inflation de volume (> 97 % de relecture et facteurs 4×/15×), arbitrée par l'évaluation au coût complet par résultat conforme.",
       "tomes": [
         "T4",
@@ -9752,7 +9752,7 @@
       "source_slug": "atrophie-competences-humaines",
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "tension_arbitrage",
-      "label": "Gain d'automatisation vs maintien du vivier humain",
+      "label": "Gain d'automatisation et maintien du vivier humain",
       "justification": "Automatiser massivement les cas simples tarit la formation des juniors (-20 %), forçant l'arbitrage INI-043 : conserver > 30 % ou un quota formateur de traitement manuel.",
       "tomes": [
         "T4",
@@ -9763,7 +9763,7 @@
       "source_slug": "pieges-gouvernance",
       "target_slug": "partition-hybride-80-20",
       "type": "tension_arbitrage",
-      "label": "Rigueur du contrôle vs sur-ingénierie et agents fantômes",
+      "label": "Rigueur du contrôle face à la sur-ingénierie et aux agents fantômes",
       "justification": "Un portail d'homologation trop lourd en Classe 1 sans écriture déclenche le contournement vers des studios SaaS hors registre, arbitré par des gabarits rapides pré-homologués.",
       "tomes": [
         "T4",
@@ -9774,7 +9774,7 @@
       "source_slug": "saga-compensatoire",
       "target_slug": "soc-soar-coupe-circuit",
       "type": "tension_arbitrage",
-      "label": "Arrêt d'urgence vs intégrité comptable des sagas en vol",
+      "label": "Arrêt d'urgence et intégrité comptable des sagas en vol",
       "justification": "Couper brutalement tout outil laisserait des écritures orphelines ; le couplage EXIG-ORC-17 / EXIG-ORC-28 bloque l'avant tout en gardant ouvert le canal de compensation dédié.",
       "tomes": [
         "T5"
@@ -9784,7 +9784,7 @@
       "source_slug": "calibration-feds-ema",
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "tension_arbitrage",
-      "label": "Optimisation TCO (Scénario A) vs robustesse minimax (Scénario B)",
+      "label": "Optimisation du TCO (Scénario A) face à la robustesse minimax (Scénario B)",
       "justification": "Sous modélisation EMA, A minimise le TCO (1,233) mais échoue en regret (p95 = 13,858) et verrouillage, là où B domine en décision robuste (92,53 % satisfaction, regret 0,000).",
       "tomes": [
         "T4",
@@ -9795,7 +9795,7 @@
       "source_slug": "protocole-wyvern-g0-g5",
       "target_slug": "clause-non-avis-licences",
       "type": "tension_arbitrage",
-      "label": "Exhaustivité automatisée vs plafond d'absence de relecture humaine",
+      "label": "Exhaustivité automatisée et absence de relecture humaine",
       "justification": "La production et recollation à 100 % par essaim (CA-16) atteint une cohérence mécanique complète mais impose de borner explicitement la portée consultative sans certification humaine.",
       "tomes": [
         "T4",
@@ -9881,7 +9881,7 @@
       "target_slug": "couche-anti-corruption-acl",
       "type": "amplification_synergie",
       "label": "Outils d'intention MCP encapsulant le patrimoine exact",
-      "justification": "Exposer des outils orientés intention métier (<= 15) devant les adaptateurs EBCDIC/COMP-3 protège les cœurs patrimoniaux tout en simplifiant l'appel par l'agent.",
+      "justification": "Exposer des outils orientés intention métier (≤ 15) devant les adaptateurs EBCDIC/COMP-3 protège les cœurs patrimoniaux tout en simplifiant l'appel par l'agent.",
       "tomes": [
         "T4",
         "T5"
@@ -9892,7 +9892,7 @@
       "target_slug": "banc-evalops-hermetique",
       "type": "amplification_synergie",
       "label": "Étalonnage quantitatif des seuils pass^k et coupe-circuit",
-      "justification": "Les 4 000 simulations Monte Carlo FEDS affinent les seuils [S] de pass^k (>= 99 % contrôle vs >= 95 % génératif) et du bail local (TTL <= 5 s) exploités par E1–E3.",
+      "justification": "Les 4 000 simulations Monte Carlo FEDS affinent les seuils [S] de pass^k (≥ 99 % en contrôle contre ≥ 95 % en génératif) et du bail local (TTL ≤ 5 s) exploités par E1–E3.",
       "tomes": [
         "T4",
         "T5"
@@ -9903,7 +9903,7 @@
       "target_slug": "trajectoire-90j-18m-p1-p3",
       "type": "projection_temporelle",
       "label": "Passage du point de départ 2027 (Stade 1) au Palier 1",
-      "justification": "Projette l'état constaté fin 2026/2027 (pilotes courts <= 10 étapes) vers la rampe 90 j -> 18 m et le Palier 1 (2028–2029) pour atteindre le Stade 2 généralisé.",
+      "justification": "Projette l'état constaté fin 2026/2027 (pilotes courts ≤ 10 étapes) vers la rampe 90 jours → 18 m et le Palier 1 (2028–2029) pour atteindre le Stade 2 généralisé.",
       "tomes": [
         "T4",
         "T5"
@@ -9913,7 +9913,7 @@
       "source_slug": "trajectoire-90j-18m-p1-p3",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "projection_temporelle",
-      "label": "Déploiement échelonné P1 (hybride) -> P2 (G7 2030–32) -> P3 (2035)",
+      "label": "Déploiement échelonné P1 (hybride) → P2 (G7 2030–32) → P3 (2035)",
       "justification": "Cadence la transition cryptographique sur les trois paliers : préparation kid/tampons/TLS hybride en P1, signatures hybrides et SCITT à POR-007 en P2, et PQC natif complet à POR-011 en P3.",
       "tomes": [
         "T4",
@@ -9936,7 +9936,7 @@
       "target_slug": "trajectoire-90j-18m-p1-p3",
       "type": "projection_temporelle",
       "label": "Cadencement par les jalons fermes 2027, 2028, 2029 et 2033",
-      "justification": "Aligne la rampe 90 j–18 m et P1–P3 sur les dates fermes [D] : 1er mai 2027 (E-23/AMF), 2 déc. 2027 (RIA Annexe III), oct./fin 2028 (NI 31-103 / B-15), 15 mars 2029 (TLS 47 j) et 30 juin 2033 (temporisation fédérale).",
+      "justification": "Aligne la rampe 90 j–18 m et P1–P3 sur les dates fermes [D] : 1er mai 2027 (E-23/AMF), 2 décembre 2027 (RIA Annexe III), octobre/fin 2028 (NI 31-103 / B-15), 15 mars 2029 (TLS 47 j) et 30 juin 2033 (temporisation fédérale).",
       "tomes": [
         "T4",
         "T5"
@@ -9946,7 +9946,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "trajectoire-90j-18m-p1-p3",
       "type": "projection_temporelle",
-      "label": "Migration MCP 2026-07-28 au 28 juill. 2027 (rampe J2)",
+      "label": "Migration MCP 2026-07-28 au 28 juillet 2027 (rampe J2)",
       "justification": "Inscrit l'échéance ferme EXIG-MCP-22 (28 juillet 2027) et la veille SEP-3398 / SEP-2596 dans le jalon J2 (mois 3–9) de la rampe vers le Stade 2.",
       "tomes": [
         "T5"
@@ -9978,8 +9978,8 @@
       "source_slug": "avis-acvm-11-348",
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "projection_temporelle",
-      "label": "Jalons valeurs mobilières 2026 -> 2028 -> veille SIG-105",
-      "justification": "Projette les exigences patrimoniales du coût quotidien (2026) et de la fin des rétrofacturations (1er oct. 2028) vers la veille SIG-105 sur d'éventuelles règles contraignantes OCRI/ACVM.",
+      "label": "Jalons valeurs mobilières 2026 → 2028 → veille SIG-105",
+      "justification": "Projette les exigences patrimoniales du coût quotidien (2026) et de la fin des rétrofacturations (1er octobre 2028) vers la veille SIG-105 sur d'éventuelles règles contraignantes OCRI/ACVM.",
       "tomes": [
         "T4",
         "T5"

@@ -158,7 +158,7 @@
       "chapter_title": "2 · Données, sémantique et ontologies",
       "line_start": 486,
       "line_end": 709,
-      "summary": "Traite les paliers syntaxique et sémantique : formats textuels/binaires/colonnaires (JSON, Protobuf, Avro, Parquet, Arrow/Flight SQL), quatre régimes de compatibilité de schéma et registres, contrats de données (ODCS, Dataspace Protocol) et catalogues de tables (Iceberg REST Catalog), pile du Web sémantique (RDF/OWL 2 monde ouvert vs SHACL/ShEx monde clos, SPARQL fédéré, OBDA, LPG) et automatisation par LLM / GraphRAG.",
+      "summary": "Traite les paliers syntaxique et sémantique : formats textuels/binaires/colonnaires (JSON, Protobuf, Avro, Parquet, Arrow/Flight SQL), quatre régimes de compatibilité de schéma et registres, contrats de données (ODCS, Dataspace Protocol) et catalogues de tables (Iceberg REST Catalog), pile du Web sémantique (RDF/OWL 2 monde ouvert par rapport à SHACL/ShEx monde clos, SPARQL fédéré, OBDA, LPG) et automatisation par LLM / GraphRAG.",
       "primary_domain": "D04",
       "secondary_domains": [
         "D03"
@@ -175,7 +175,7 @@
         "schema-on-write",
         "schema-on-read",
         "compatibilité descendante/ascendante/complète/transitive",
-        "monde ouvert vs monde clos",
+        "monde ouvert par rapport à monde clos",
         "GAV/LAV",
         "OBDA",
         "GraphRAG"
@@ -349,7 +349,7 @@
       "chapter_title": "6 · Systèmes multi-agents, évaluation et sûreté",
       "line_start": 1500,
       "line_end": 1720,
-      "summary": "Passe à l'ingénierie des systèmes composés : arbitrage multi-agent vs rédacteur unique (15× jetons Anthropic vs Cognition), topologies (étoile, chaîne, arbre, graphe), écart illocutoire d'A2A/ACP face à FIPA-ACL, difficulté d'évaluation (trajectoire vs résultat, juge LLM et biais, bancs SWE-bench/OSWorld/WebArena/GAIA/τ-bench/HLE), red-teaming (AgentDojo, InjecAgent, AgentHarm), constance pass^k, taxonomie MAST, défense hors modèle (CaMeL, double modèle, règle de non-cumul Meta AI) et comportement stratégique déviant.",
+      "summary": "Passe à l'ingénierie des systèmes composés : arbitrage multi-agent par rapport à rédacteur unique (15× jetons Anthropic par rapport à Cognition), topologies (étoile, chaîne, arbre, graphe), écart illocutoire d'A2A/ACP face à FIPA-ACL, difficulté d'évaluation (trajectoire et résultat, juge LLM et biais, bancs SWE-bench/OSWorld/WebArena/GAIA/τ-bench/HLE), red-teaming (AgentDojo, InjecAgent, AgentHarm), constance pass^k, taxonomie MAST, défense hors modèle (CaMeL, double modèle, règle de non-cumul Meta AI) et comportement stratégique déviant.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D03",
@@ -370,7 +370,7 @@
         "alignement-deceptif-red-teaming-adversarial"
       ],
       "key_terms": [
-        "pass@k vs pass^k",
+        "pass@k par rapport à pass^k",
         "topologies multi-agents",
         "force illocutoire",
         "modèle comme juge",
@@ -440,7 +440,7 @@
       "chapter_title": "8 · Anatomie : MCP (agent-outil) et A2A (agent-agent)",
       "line_start": 1978,
       "line_end": 2298,
-      "summary": "Anatomie détaillée de MCP (N×M -> N+M, primitives et grille de contrôle, transports jusqu'au cœur sans état de la révision 2026-07-28 revalidée le 30 juil. 2026, MRTR, `server/discover`, Client ID Metadata Documents, fenêtre de dépréciation de 12 mois, passerelles d'entreprise et réserve F-01) et d'A2A v1.0 (12 mars 2026, Agent Card signée, modèle de tâche, opacité voulue), mécanique de la fusion de l'ACP protocolaire, alternative ANP à 3 couches, doctrine unilatérale « dans les agents, entre les agents » et inventaire infonuagique (AWS/GCP/Microsoft).",
+      "summary": "Anatomie détaillée de MCP (N×M → N+M, primitives et grille de contrôle, transports jusqu'au cœur sans état de la révision 2026-07-28 revalidée le 30 juillet 2026, MRTR, `server/discover`, Client ID Metadata Documents, fenêtre de dépréciation de 12 mois, passerelles d'entreprise et réserve F-01) et d'A2A v1.0 (12 mars 2026, Agent Card signée, modèle de tâche, opacité voulue), mécanique de la fusion de l'ACP protocolaire, alternative ANP à 3 couches, doctrine unilatérale « dans les agents, entre les agents » et inventaire infonuagique (AWS/GCP/Microsoft).",
       "primary_domain": "D03",
       "secondary_domains": [
         "D06",
@@ -485,7 +485,7 @@
       "chapter_title": "9 · Découverte, registres, portabilité et pile protocolaire",
       "line_start": 2299,
       "line_end": 2633,
-      "summary": "Instruit la découverte en 3 moments (découverte, sélection, résolution) et la récurrence UDDI, la distinction registre technique vs place de marché, la pile descriptive en 4 strates (dont l'identité transversale non empilable) et sa matrice de maturité, la portabilité inter-modèles/inter-cadriciels (paradoxe du verrouillage inverse sur Chat Completions OpenAI, retrait Assistants API), l'écart « accord de protocole ≠ compréhension » (Yuan 2026, synthèse neuro-symbolique) et la pyramide d'évaluation à 3 étages.",
+      "summary": "Instruit la découverte en 3 moments (découverte, sélection, résolution) et la récurrence UDDI, la distinction registre technique par rapport à place de marché, la pile descriptive en 4 strates (dont l'identité transversale non empilable) et sa matrice de maturité, la portabilité inter-modèles/inter-cadriciels (paradoxe du verrouillage inverse sur Chat Completions OpenAI, retrait Assistants API), l'écart « accord de protocole ≠ compréhension » (Yuan 2026, synthèse neuro-symbolique) et la pyramide d'évaluation à 3 étages.",
       "primary_domain": "D03",
       "secondary_domains": [
         "D04",
@@ -602,7 +602,7 @@
         "tool poisoning",
         "rug-pull",
         "cascade d'erreurs",
-        "confinement vs prévention"
+        "confinement par rapport à prévention"
       ],
       "normative_refs": [
         "CVE-2025-32711",
@@ -648,7 +648,7 @@
       "chapter_title": "12 · L’héritage et les standards étirés : un demi-siècle d’identités non humaines, puis OAuth, OIDC et SCIM face à l’agent",
       "line_start": 3276,
       "line_end": 3480,
-      "summary": "Chapitre à deux mouvements : retrace la généalogie documentée de l'identité machine depuis 2012 (RFC 6749, RFC 7643 SCIM §4 degré 1, SPIFFE/SPIRE 2018–2022, IETF WIMSE `arch-08` et `aims-00`, CSA 2026), l'écart de gouvernance NHI (UNC6395, OWASP ASI03, connexion vs usage continu), puis l'étirement d'OAuth 2.x (client vs détenteur, client credentials), des brouillons IETF (`transaction-tokens`, `scim-agent-extension` expiré, `scim-agent-resource`), de SCIM et d'Entra Agent ID (extensions des RFC), avec un exemple de chaque degré d'absence (Tableau 12.3).",
+      "summary": "Chapitre à deux mouvements : retrace la généalogie documentée de l'identité machine depuis 2012 (RFC 6749, RFC 7643 SCIM §4 degré 1, SPIFFE/SPIRE 2018–2022, IETF WIMSE `arch-08` et `aims-00`, CSA 2026), l'écart de gouvernance NHI (UNC6395, OWASP ASI03, connexion par rapport à usage continu), puis l'étirement d'OAuth 2.x (client par rapport à détenteur, client credentials), des brouillons IETF (`transaction-tokens`, `scim-agent-extension` expiré, `scim-agent-resource`), de SCIM et d'Entra Agent ID (extensions des RFC), avec un exemple de chaque degré d'absence (Tableau 12.3).",
       "primary_domain": "D06",
       "secondary_domains": [
         "D07",
@@ -694,7 +694,7 @@
       "chapter_title": "13 · L’identité décentralisée : VC, DID et la promesse du portable",
       "line_start": 3481,
       "line_end": 3608,
-      "summary": "Examine le corpus W3C (VC Data Model 2.0 Recommandation mai 2025, 4 propriétés, deux familles de preuves incompatibles incorporée vs JOSE/COSE, statut hors document; v2.1 WD; DID 1.0 & 1.1 CR résolution hors périmètre), la lacune sur les profils DIF, trois Community Groups agentiques du W3C (sans voie des normes), l'articulation SPIFFE/WIMSE vs DID, et le fossé d'adoption financier (10 implémentations au rapport W3C, contrepoint vLEI GLEIF/KERI/ToIP, Bank of Japan Review 2026-E-6).",
+      "summary": "Examine le corpus W3C (VC Data Model 2.0 Recommandation mai 2025, 4 propriétés, deux familles de preuves incompatibles incorporée par rapport à JOSE/COSE, statut hors document; v2.1 WD; DID 1.0 & 1.1 CR résolution hors périmètre), la lacune sur les profils DIF, trois Community Groups agentiques du W3C (sans voie des normes), l'articulation SPIFFE/WIMSE par rapport à DID, et le fossé d'adoption financier (10 implémentations au rapport W3C, contrepoint vLEI GLEIF/KERI/ToIP, Bank of Japan Review 2026-E-6).",
       "primary_domain": "D06",
       "secondary_domains": [
         "D03",
@@ -774,7 +774,7 @@
       "chapter_title": "15 · Émettre : Agent Card signée, annuaires, registres gouvernés",
       "line_start": 3738,
       "line_end": 3983,
-      "summary": "Instruit sur pièce les trois mécanismes d'émission et leur soumet la grille du ch. 14 : (1) Agent Card signée A2A v1.0.0 (JWS RFC 7515 + canonicalisation JCS RFC 8785, 4 paramètres en-tête sans borne temporelle, 14 champs sans validité, ancrage hors protocole, apposition MAY / vérification SHOULD, MUST NOT sans moyen de contrôle); (2) annuaires commerciaux (Entra Agent ID GA avril 2026 vs Preview, 2 plans sans recouvrement, GCP/AWS, risque de standard de fait); (3) registres gouvernés (brouillon CSA `toolAccessList`/`permissionBoundaries`, A2A sans interface de registre, AGNTCY ADS) et registre comme objet réglementaire (BSIF E-23, AMF, ACVM 11-348).",
+      "summary": "Instruit sur pièce les trois mécanismes d'émission et leur soumet la grille du ch. 14 : (1) Agent Card signée A2A v1.0.0 (JWS RFC 7515 + canonicalisation JCS RFC 8785, 4 paramètres en-tête sans borne temporelle, 14 champs sans validité, ancrage hors protocole, apposition MAY / vérification SHOULD, MUST NOT sans moyen de contrôle); (2) annuaires commerciaux (Entra Agent ID GA avril 2026 par rapport à Preview, 2 plans sans recouvrement, GCP/AWS, risque de standard de fait); (3) registres gouvernés (brouillon CSA `toolAccessList`/`permissionBoundaries`, A2A sans interface de registre, AGNTCY ADS) et registre comme objet réglementaire (BSIF E-23, AMF, ACVM 11-348).",
       "primary_domain": "D06",
       "secondary_domains": [
         "D03",
@@ -911,7 +911,7 @@
       "chapter_title": "18 · Know Your Agent : la vérification d’agent tiers inter-domaines",
       "line_start": 4348,
       "line_end": 4478,
-      "summary": "Siège unique du KYA pour toute la somme : recense neuf chantiers pré-normatifs dans six organisations (W3C CGs, OpenID AIIM, DIF KYA-OS, IETF soumissions individuelles, NIST NCCoE/CAISI, Akamai, plus `draft-ietf-wimse-aims-00` sept. 2026) avec zéro texte ratifié; démontre l'asymétrie d'admission à la frontière (découverte spécifiée, admission remise au destinataire); instruit trois précédents institutionnels de fédération (eIDAS 2.0/base audit 24 mois + listes, FIDO certification + MDS, vLEI gouvernance) et consigne la relève `arXiv 2605.30169` sur l'agent mutable.",
+      "summary": "Siège unique du KYA pour toute la somme : recense neuf chantiers pré-normatifs dans six organisations (W3C CGs, OpenID AIIM, DIF KYA-OS, IETF soumissions individuelles, NIST NCCoE/CAISI, Akamai, plus `draft-ietf-wimse-aims-00` septembre 2026) avec zéro texte ratifié; démontre l'asymétrie d'admission à la frontière (découverte spécifiée, admission remise au destinataire); instruit trois précédents institutionnels de fédération (eIDAS 2.0/base audit 24 mois + listes, FIDO certification + MDS, vLEI gouvernance) et consigne la relève `arXiv 2605.30169` sur l'agent mutable.",
       "primary_domain": "D06",
       "secondary_domains": [
         "D03",
@@ -1294,7 +1294,7 @@
       "subdomain": "Raisonnement et planification",
       "family": "Calcul au moment du test",
       "title": "Raisonnement à l'inférence, modèles de raisonnement et limites des planificateurs LLM",
-      "summary": "Évolution du CoT linéaire vers la cohérence interne, Tree/Graph of Thoughts, LATS et le test-time compute (PRM vs ORM, DeepSeek-R1, alignement délibératif). PlanBench montre que les LLM autorégressifs échouent en planification complète, justifiant les architectures hybrides LLM+P / LLM-Modulo avec vérificateur externe, tandis que la trace CoT demeure infidèle et fragile comme surface de surveillance.",
+      "summary": "Évolution du CoT linéaire vers la cohérence interne, Tree/Graph of Thoughts, LATS et le test-time compute (PRM et ORM, DeepSeek-R1, alignement délibératif). PlanBench montre que les LLM autorégressifs échouent en planification complète, justifiant les architectures hybrides LLM+P / LLM-Modulo avec vérificateur externe, tandis que la trace CoT demeure infidèle et fragile comme surface de surveillance.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -1705,7 +1705,7 @@
       "subdomain": "Architecture de contrôle",
       "family": "Découplage déterministe",
       "title": "Minimisation de la surface agentique et séparation contrôleur/exécuteur",
-      "summary": "Principe d'ingénierie constant : confier au code déterministe toute séquence anticipable (flux de travail) et ne déléguer au modèle que la délibération indispensable. Formalise la séparation entre un contrôleur décisionnel et un exécuteur contractuel (régimes réactif vs délibératif), et nomme deux anti-patrons : l'agentivité non justifiée et le plan rigide.",
+      "summary": "Principe d'ingénierie constant : confier au code déterministe toute séquence anticipable (flux de travail) et ne déléguer au modèle que la délibération indispensable. Formalise la séparation entre un contrôleur décisionnel et un exécuteur contractuel (régimes réactif et délibératif), et nomme deux anti-patrons : l'agentivité non justifiée et le plan rigide.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -1721,7 +1721,7 @@
       "tags": [
         "contrôleur/exécuteur",
         "minimisation surface agentique",
-        "flux vs agent",
+        "flux par rapport à agent",
         "agentivité non justifiée",
         "plan rigide"
       ],
@@ -1906,7 +1906,7 @@
         "ISO 11354",
         "LISI",
         "maturité continue",
-        "registre unifié vs fédéré"
+        "registre unifié par rapport à fédéré"
       ],
       "identifiers": [
         "EIF",
@@ -2027,7 +2027,7 @@
       "subdomain": "Axe vertical agent-outil",
       "family": "Spécification MCP",
       "title": "Model Context Protocol (MCP) : contrat N+M, primitives et révision sans état 2026-07-28",
-      "summary": "Anatomie du protocole vertical hôte/client/serveur en JSON-RPC 2.0 (cinq jalons de nov. 2024 à juillet 2026). La révision ratifiée `2026-07-28` institue un cœur sans état (suppression des sessions et de la poignée de main), remplace les requêtes serveur-vers-client par le patron MRTR (`input_required`), déprécie racines/échantillonnage/journalisation/RFC 7591 avec fenêtre de 12 mois, bascule les tâches asynchrones en extension officielle et conserve la réserve F-01 (« cadre d'autorisation, jamais sécurisé »).",
+      "summary": "Anatomie du protocole vertical hôte/client/serveur en JSON-RPC 2.0 (cinq jalons de novembre 2024 à juillet 2026). La révision ratifiée `2026-07-28` institue un cœur sans état (suppression des sessions et de la poignée de main), remplace les requêtes serveur-vers-client par le patron MRTR (`input_required`), déprécie racines/échantillonnage/journalisation/RFC 7591 avec fenêtre de 12 mois, bascule les tâches asynchrones en extension officielle et conserve la réserve F-01 (« cadre d'autorisation, jamais sécurisé »).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -2182,7 +2182,7 @@
         "opacité voulue",
         "multi-location",
         "délégation de tâches",
-        "statut préversion vs GA"
+        "statut préversion par rapport à GA"
       ],
       "identifiers": [
         "A2A v1.0",
@@ -2236,7 +2236,7 @@
       "domain_id": "D03",
       "subdomain": "Découverte et annuaires",
       "family": "Auto-description",
-      "title": "Découverte en trois moments, leçon d'UDDI, Agent Card bien connue et registres vs places de marché",
+      "title": "Découverte en trois moments, leçon d'UDDI, Agent Card bien connue et registres et places de marché",
       "summary": "Décompose l'appariement dynamique en trois moments (découverte, sélection sémantique, résolution) et tire la leçon de la fermeture des annuaires UDDI publics (curation et fédération > tout-dynamique centralisé). Distingue le registre technique de la place de marché commerciale, expose l'Agent Card `/.well-known/` et recense les risques de carte mensongère, typosquattage et empoisonnement de registre.",
       "autonomy_levels": [
         "L1",
@@ -2690,7 +2690,7 @@
       "tags": [
         "OpenAPI",
         "AsyncAPI",
-        "conformité vs interopérabilité",
+        "conformité par rapport à interopérabilité",
         "consumer-driven contract testing",
         "tests aller-retour",
         "pyramide d'évaluation"
@@ -2761,7 +2761,7 @@
       ],
       "horizon": "2025-2026",
       "tags": [
-        "soutien vs production",
+        "soutien et mise en production",
         "métrique auto-déclarée",
         "diligence raisonnable",
         "comité de pilotage"
@@ -2818,7 +2818,7 @@
       "subdomain": "Sémantique et graphes",
       "family": "Ontologies et médiation",
       "title": "Pile du Web sémantique (RDF, OWL, SHACL, SPARQL), graphes de connaissances et synthèse neuro-symbolique",
-      "summary": "Pose les briques du sens partagé : triplets RDF, RDFS/SKOS, OWL 2 (inférence sous hypothèse de monde ouvert) distingué impérativement de SHACL/ShEx (validation sous monde clos), JSON-LD sur REST, SPARQL fédéré, architectures de médiation GAV/LAV, OBDA, coexistence RDF vs LPG (normalisé en avril 2024), et usage des ontologies de capacités comme garde-fou neuro-symbolique (Tuan & Sanyal, 2026).",
+      "summary": "Pose les briques du sens partagé : triplets RDF, RDFS/SKOS, OWL 2 (inférence sous hypothèse de monde ouvert) distingué impérativement de SHACL/ShEx (validation sous monde clos), JSON-LD sur REST, SPARQL fédéré, architectures de médiation GAV/LAV, OBDA, coexistence RDF et LPG (normalisé en avril 2024), et usage des ontologies de capacités comme garde-fou neuro-symbolique (Tuan & Sanyal, 2026).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -2836,7 +2836,7 @@
         "RDF",
         "OWL 2",
         "SHACL",
-        "monde clos vs ouvert",
+        "monde clos par rapport à ouvert",
         "OBDA",
         "GAV/LAV",
         "neuro-symbolique"
@@ -2911,7 +2911,7 @@
       ],
       "horizon": "2024-2028",
       "tags": [
-        "accord vs compréhension",
+        "accord par rapport à compréhension",
         "sémantique lue par le modèle",
         "force illocutoire",
         "faux accord sémantique",
@@ -2969,7 +2969,7 @@
       "subdomain": "Contrats de données",
       "family": "Sérialisation et schémas",
       "title": "Formats d'échange, registres de schémas, contrats de données (ODCS/Dataspace) et catalogues lakehouse",
-      "summary": "Arbitrage de couplage entre formats textuels (JSON, XML, YAML), binaires (Protobuf, Avro — numéros de champ figés vs résolution à la lecture), colonnaires (Parquet, ORC) et en mémoire (Arrow, Arrow Flight SQL, ADBC). Décrit les quatre régimes de compatibilité (descendante, ascendante, complète, transitive), l'application par registre de schémas, l'Open Data Contract Standard, le Dataspace Protocol et l'Iceberg REST Catalog (Polaris, Unity Catalog OSS, Gravitino).",
+      "summary": "Arbitrage de couplage entre formats textuels (JSON, XML, YAML), binaires (Protobuf, Avro — numéros de champ figés contre résolution à la lecture), colonnaires (Parquet, ORC) et en mémoire (Arrow, Arrow Flight SQL, ADBC). Décrit les quatre régimes de compatibilité (descendante, ascendante, complète, transitive), l'application par registre de schémas, l'Open Data Contract Standard, le Dataspace Protocol et l'Iceberg REST Catalog (Polaris, Unity Catalog OSS, Gravitino).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -3035,7 +3035,7 @@
       "domain_id": "D04",
       "subdomain": "Mémoire et contexte",
       "family": "Architecture CoALA",
-      "title": "Mémoire CoALA à quatre tiroirs, ingénierie du contexte et architectures long terme",
+      "title": "Mémoire CoALA à quatre compartiments, ingénierie du contexte et architectures long terme",
       "summary": "Adapte l'héritage cognitif (Soar, ACT-R, CoALA Sumers et coll. 2023 : mémoire de travail, épisodique, sémantique, procédurale) pour transformer un LLM sans état en agent persistant. Instruit les phénomènes empiriques (*lost in the middle*, *context rot*), les 4 verbes d'ingénierie du contexte (écrire, sélectionner, compacter, isoler), la compaction réversible, `AGENTS.md`/`CLAUDE.md`, les lignées (MemGPT/Letta, Mem0, MIRIX, Zep/Graphiti bitemporel) et leur évaluation (LongMemEval, LoCoMo, MemoryAgentBench).",
       "autonomy_levels": [
         "L1",
@@ -3103,7 +3103,7 @@
       "subdomain": "Récupération d'information",
       "family": "RAG agentique et GraphRAG",
       "title": "RAG agentique, pile hybride de récupération, GraphRAG et accès structuré text-to-SQL",
-      "summary": "Dépasse les sept pannes du RAG linéaire (Barnett et coll., 2024) en transformant la récupération en boucle de contrôle planifier-récupérer-critiquer-itérer (Self-RAG, Corrective RAG, IRCoT, FLARE, Search-R1). Intègre la pile hybride (Dense DPR/Contriever + BM25 -> RRF -> réordonnanceur ColBERT), le *late chunking*, RAPTOR, GraphRAG (Edge et coll., 2024 : traçabilité et ontologie garde-fou), HippoRAG et le *text-to-SQL* agentique (Spider 2.0, BIRD) via MCP.",
+      "summary": "Dépasse les sept pannes du RAG linéaire (Barnett et coll., 2024) en transformant la récupération en boucle de contrôle planifier-récupérer-critiquer-itérer (Self-RAG, Corrective RAG, IRCoT, FLARE, Search-R1). Intègre la pile hybride (Dense DPR/Contriever + BM25 → RRF → réordonnanceur ColBERT), le *late chunking*, RAPTOR, GraphRAG (Edge et coll., 2024 : traçabilité et ontologie garde-fou), HippoRAG et le *text-to-SQL* agentique (Spider 2.0, BIRD) via MCP.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3435,7 +3435,7 @@
       ],
       "horizon": "2024-2032",
       "tags": [
-        "orchestration vs chorégraphie",
+        "orchestration par rapport à chorégraphie",
         "auditabilité",
         "topologies étoile/chaîne/arbre/graphe",
         "orchestrateur-travailleurs",
@@ -3697,7 +3697,7 @@
       "subdomain": "Émission et annuaires",
       "family": "Annuaires commerciaux",
       "title": "Annuaires commerciaux (Entra Agent ID, Google Cloud, AWS Bedrock) et risque de standard de fait",
-      "summary": "Analyse Entra Agent ID (disponibilité générale avril 2026, capacités en Preview, flux OBO étendant les RFC, objet `agentIdentityBlueprint` héritant de `application`, deux plans d'identité sans recouvrement d'accès conditionnel F-35), Google Cloud Agent Identity (GA 22 avril 2026, SPIFFE 24h) et AWS Bedrock AgentCore Identity (GA 13 oct. 2025). Formule le risque qu'un schéma commercial publié fixe les attentes avant toute norme ratifiée.",
+      "summary": "Analyse Entra Agent ID (disponibilité générale avril 2026, capacités en Preview, flux OBO étendant les RFC, objet `agentIdentityBlueprint` héritant de `application`, deux plans d'identité sans recouvrement d'accès conditionnel F-35), Google Cloud Agent Identity (GA 22 avril 2026, SPIFFE 24 h) et AWS Bedrock AgentCore Identity (GA 13 octobre 2025). Formule le risque qu'un schéma commercial publié fixe les attentes avant toute norme ratifiée.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3752,7 +3752,7 @@
       "subdomain": "Identité de charge de travail",
       "family": "Zero-Trust et SPIFFE",
       "title": "Zero-Trust (NIST SP 800-207), SPIFFE/SPIRE (SVID courte durée) et groupe IETF WIMSE",
-      "summary": "Pose l'attestation cryptographique éphémère de charge de travail sans secrets statiques : SPIFFE/SPIRE (CNCF Graduated août 2022, SVID valides relativement à leur domaine de confiance et soumis au dérive entre émission et usage selon §4.1.1) et les travaux IETF WIMSE (`draft-ietf-wimse-workload-identity-practices-05`, `draft-ietf-wimse-arch-08` §3.4.11 rangeant les intermédiaires IA en charges déléguées, `draft-ietf-wimse-aims-00` adopté le 15 sept. 2026).",
+      "summary": "Pose l'attestation cryptographique éphémère de charge de travail sans secrets statiques : SPIFFE/SPIRE (CNCF Graduated août 2022, SVID valides relativement à leur domaine de confiance et soumis au dérive entre émission et usage selon §4.1.1) et les travaux IETF WIMSE (`draft-ietf-wimse-workload-identity-practices-05`, `draft-ietf-wimse-arch-08` §3.4.11 rangeant les intermédiaires IA en charges déléguées, `draft-ietf-wimse-aims-00` adopté le 15 septembre 2026).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3829,7 +3829,7 @@
       "subdomain": "Identité portable et passeport",
       "family": "VC, DID et passeport virtuel",
       "title": "Corpus W3C (VC 2.0/2.1, DID 1.0/1.1), fossé d'adoption financier et passeport d'agent à quatre pièces",
-      "summary": "Analyse les Recommandations W3C VC Data Model v2.0 (4 propriétés obligatoires, preuves incorporées vs JOSE/COSE, statut hors document) et DID v1.0/v1.1 (résolution hors périmètre), trois Community Groups du W3C et le fossé d'adoption en finance (0 établissement financier nommément relevé parmi 10 implémentations ; contrepoint vLEI GLEIF). Construit au ch. 16 le **passeport d'agent** (objet virtuel à 4 pièces — carte signée, registre, mandat, attestations —, 4 substituts provisoires intra-organisationnels, affirmations écartées et 3 scénarios de normalisation).",
+      "summary": "Analyse les Recommandations W3C VC Data Model v2.0 (4 propriétés obligatoires, preuves incorporées et JOSE/COSE, statut hors document) et DID v1.0/v1.1 (résolution hors périmètre), trois Community Groups du W3C et le fossé d'adoption en finance (0 établissement financier nommément relevé parmi 10 implémentations ; contrepoint vLEI GLEIF). Construit au ch. 16 le **passeport d'agent** (objet virtuel à 4 pièces — carte signée, registre, mandat, attestations —, 4 substituts provisoires intra-organisationnels, affirmations écartées et 3 scénarios de normalisation).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4322,7 +4322,7 @@
         "OCSP",
         "Let's Encrypt",
         "révocation en cascade",
-        "durée courte vs révocation"
+        "durée courte par rapport à révocation"
       ],
       "identifiers": [
         "RFC 7009",
@@ -4387,7 +4387,7 @@
       "subdomain": "Cryptographie post-quantique",
       "family": "Horloge et normes PQC",
       "title": "Horloge post-quantique multi-origines et standards finaux NIST (FIPS 203 ML-KEM, 204 ML-DSA, 205 SLH-DSA)",
-      "summary": "Siège unique des échéances PQC interdisant la fusion d'origines distinctes : normes finales publiées le 13 août 2024 (FIPS 203 ML-KEM, FIPS 204 ML-DSA, FIPS 205 SLH-DSA) face au calendrier de retrait NIST IR 8547 (projet nov. 2024 visant 2030 *Deprecated* 112 bits / 2035 *Disallowed*, actualisé post-gel en annexe N.2), au décret US 14412 / OMB M-26-15 (31 déc. 2030 clés / 31 déc. 2031 signatures PROGRAMMÉ), au rapport Europol/QSFF par le risque, et à la feuille de route fédérale canadienne ITSM.40.001 (fin 2031/2035, non opposable aux IF) et au bulletin BSIF de mars 2026.",
+      "summary": "Siège unique des échéances PQC interdisant la fusion d'origines distinctes : normes finales publiées le 13 août 2024 (FIPS 203 ML-KEM, FIPS 204 ML-DSA, FIPS 205 SLH-DSA) face au calendrier de retrait NIST IR 8547 (projet novembre 2024 visant 2030 *Deprecated* 112 bits / 2035 *Disallowed*, actualisé post-gel en annexe N.2), au décret US 14412 / OMB M-26-15 (31 décembre 2030 clés / 31 décembre 2031 signatures PROGRAMMÉ), au rapport Europol/QSFF par le risque, et à la feuille de route fédérale canadienne ITSM.40.001 (fin 2031/2035, non opposable aux IF) et au bulletin BSIF de mars 2026.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4725,7 +4725,7 @@
       "subdomain": "Modèle de menace agentique",
       "family": "Composition et mémoire hostile",
       "title": "Non-compositionnalité de la sûreté, triade des surfaces (outils, invites, mémoire) et AgentPoison",
-      "summary": "Établit qu'un agent sûr et un outil sûr ne forment pas un système sûr une fois composés (découverte dynamique, délégation inter-organisationnelle, fédération). Range les trois surfaces distinctes (outils -> capacité, invites -> instruction, mémoire -> état persistant) et documente l'empoisonnement de mémoire/RAG (AgentPoison, NeurIPS 2024), la contrefaçon d'éditeur, l'*agent session smuggling* (Unit 42) et le détournement multi-agents lorsque les agents isolés refusent les actions nuisibles (F-25, cas hors grille).",
+      "summary": "Établit qu'un agent sûr et un outil sûr ne forment pas un système sûr une fois composés (découverte dynamique, délégation inter-organisationnelle, fédération). Range les trois surfaces distinctes (outils → capacité, invites → instruction, mémoire → état persistant) et documente l'empoisonnement de mémoire/RAG (AgentPoison, NeurIPS 2024), la contrefaçon d'éditeur, l'*agent session smuggling* (Unit 42) et le détournement multi-agents lorsque les agents isolés refusent les actions nuisibles (F-25, cas hors grille).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4899,7 +4899,7 @@
       "subdomain": "Défense architecturale",
       "family": "Confinement hors modèle",
       "title": "Séparation de privilège hors modèle : double modèle (Willison), CaMeL, sandboxing et cadres locaux",
-      "summary": "Parce que l'injection d'invite est irrésoluble au niveau du modèle, la garantie est déplacée hors modèle vers la défense en profondeur et le confinement : patron à deux modèles (privilégié vs en quarantaine, Willison 2023), interpréteur à capacités CaMeL extrayant le flux de contrôle et de données (67 % puis 77 % sur AgentDojo — mesure de réduction de risque, jamais immunité totale), classifieurs d'entrée/sortie, bac à sable, moindre privilège et cadres locaux comme frontière de confinement.",
+      "summary": "Parce que l'injection d'invite est irrésoluble au niveau du modèle, la garantie est déplacée hors modèle vers la défense en profondeur et le confinement : patron à deux modèles (privilégié et modèle en quarantaine, Willison 2023), interpréteur à capacités CaMeL extrayant le flux de contrôle et de données (67 % puis 77 % sur AgentDojo — mesure de réduction de risque, jamais immunité totale), classifieurs d'entrée/sortie, bac à sable, moindre privilège et cadres locaux comme frontière de confinement.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4971,7 +4971,7 @@
       "domain_id": "D07",
       "subdomain": "Défense architecturale",
       "family": "Invariants d'isolation",
-      "title": "Règle de non-cumul de Meta AI (31 oct. 2025) et borne intra-session de la sûreté",
+      "title": "Règle de non-cumul de Meta AI (31 octobre 2025) et borne intra-session de la sûreté",
       "summary": "Heuristique architecturale de Meta AI (précurseur direct de la règle de deux) posant l'invariant qu'au sein d'une même session, un agent ne doit jamais cumuler simultanément plus de deux des trois propriétés : contenu non fiable, accès aux données sensibles et capacité de communication externe. Le chapitre précise sa limite chiffrée par son auteur : la garantie ne vaut qu'à l'intérieur d'une session et ne protège pas contre une attaque étalée sur plusieurs sessions.",
       "autonomy_levels": [
         "L1",
@@ -5022,7 +5022,7 @@
       "subdomain": "Défense opérationnelle et SOC",
       "family": "Agentic SOC et disjoncteurs",
       "title": "Boucle défensive : attaque autonome GTG-1002, offres d'agentic SOC, symétrie d'identité et disjoncteurs",
-      "summary": "Documente le franchissement du seuil de l'attaque largement autonome via MCP (GTG-1002, Anthropic nov. 2025, sans généralisation ni reprise de la projection Gartner 25 % [C] hors de sa borne), les offres datées d'*agentic SOC* (Microsoft 12 mai 2026, Google Cloud 9 juin 2026, CrowdStrike 25 mars 2026), la symétrie d'identité des agents défensifs (incompatibilité PIM/TAP en arrière-plan F-57), l'agenda de recherche sur la vérification continue et le rôle des disjoncteurs pour couper les cascades.",
+      "summary": "Documente le franchissement du seuil de l'attaque largement autonome via MCP (GTG-1002, Anthropic novembre 2025, sans généralisation ni reprise de la projection Gartner 25 % [C] hors de sa borne), les offres datées d'*agentic SOC* (Microsoft 12 mai 2026, Google Cloud 9 juin 2026, CrowdStrike 25 mars 2026), la symétrie d'identité des agents défensifs (incompatibilité PIM/TAP en arrière-plan F-57), l'agenda de recherche sur la vérification continue et le rôle des disjoncteurs pour couper les cascades.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -5115,7 +5115,7 @@
       "subdomain": "Sûreté et alignement",
       "family": "Red-teaming et comportements déviants",
       "title": "Bancs adversariaux (AgentDojo, InjecAgent, AgentHarm), comportements déviants et asymétrie adaptative",
-      "summary": "Distingue la performance fonctionnelle de la robustesse adversariale : AgentDojo (utilité vs résistance), InjecAgent (injections par outils), AgentHarm (nocivité) et red-teaming automatisé. Documente les comportements observés en évaluation — piratage de récompense (METR juin 2025), manigances en contexte (Meinke/Apollo 2024), feinte d'alignement (Greenblatt 2024), menace d'initié sous pression (*Agentic Misalignment*, Anthropic juin 2025) — et le principe *The Attacker Moves Second* (oct. 2025).",
+      "summary": "Distingue la performance fonctionnelle de la robustesse adversariale : AgentDojo (utilité contre résistance), InjecAgent (injections par outils), AgentHarm (nocivité) et red-teaming automatisé. Documente les comportements observés en évaluation — piratage de récompense (METR juin 2025), manigances en contexte (Meinke/Apollo 2024), feinte d'alignement (Greenblatt 2024), menace d'initié sous pression (*Agentic Misalignment*, Anthropic juin 2025) — et le principe *The Attacker Moves Second* (octobre 2025).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5299,7 +5299,7 @@
       "domain_id": "D08",
       "subdomain": "Évaluation et métrologie",
       "family": "Bancs et reproductibilité",
-      "title": "Évaluation agentique : trajectoire vs résultat, dérive silencieuse d'API et bancs de capacité",
+      "title": "Évaluation agentique : trajectoire et résultat, dérive silencieuse d'API et bancs de capacité",
       "summary": "Évalue un système composite non déterministe comme une distribution : contrôle de variance, détection des mises à jour silencieuses de modèles servis, décontamination et mesure conjointe précision-coût (*AI Agents That Matter*, Kapoor 2024 ; *Holistic Agent Leaderboard*, 2025). Inventorie les bancs par domaine : codage (SWE-bench / Verified retiré par OpenAI en fév. 2026, SWE-agent), web (WebArena, VisualWebArena), bureautique (OSWorld — écart résiduel au plafond humain), raisonnement et outils (GAIA, AgentBench, τ-bench, BFCL, *Humanity's Last Exam*).",
       "autonomy_levels": [
         "L1",
@@ -5540,7 +5540,7 @@
       "subdomain": "Régulation prudentielle québécoise",
       "family": "Gouvernance de l'IA",
       "title": "Ligne directrice IA de l'AMF (1ᵉʳ mai 2027) : attentes sur l'autonomie et l'adaptabilité après déploiement",
-      "summary": "Formule les attentes de l'Autorité des marchés financiers (« L'Autorité s'attend à ce que… ») avec prise d'effet au 1ᵉʳ mai 2027 (PROGRAMMÉ). Retient une définition de système d'IA englobant des degrés variables d'autonomie et d'adaptabilité après déploiement, convergeant avec E-23 sur la tenue d'un inventaire et la surveillance post-déploiement (et publie par ailleurs Perspectives AMF 2024/nov. 2025 sans échéance quantique).",
+      "summary": "Formule les attentes de l'Autorité des marchés financiers (« L'Autorité s'attend à ce que… ») avec prise d'effet au 1ᵉʳ mai 2027 (PROGRAMMÉ). Retient une définition de système d'IA englobant des degrés variables d'autonomie et d'adaptabilité après déploiement, convergeant avec E-23 sur la tenue d'un inventaire et la surveillance post-déploiement (et publie par ailleurs Perspectives AMF 2024/novembre 2025 sans échéance quantique).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5654,7 +5654,7 @@
       "subdomain": "Droit européen et comparatif",
       "family": "Régulation UE et non-analogie",
       "title": "Règlement (UE) 2024/1689 (EU AI Act), eIDAS 2.0, Interoperable Europe Act et règle de non-analogie",
-      "summary": "Recense les instruments européens en précisant la règle méthodologique du Tome 1 : ils illustrent un geste juridique (évaluation d'interopérabilité obligatoire UE 2024/903, auditabilité PSD2, audits tous les 24 mois et portefeuille eIDAS 2.0 UE 2024/1183 pour le 24 déc. 2026, obligations GPAI au 2 août 2025 et transparence art. 50 EU AI Act 2024/1689 au 2 août 2026) sans jamais servir d'analogie normative au droit canadien.",
+      "summary": "Recense les instruments européens en précisant la règle méthodologique du Tome 1 : ils illustrent un geste juridique (évaluation d'interopérabilité obligatoire UE 2024/903, auditabilité PSD2, audits tous les 24 mois et portefeuille eIDAS 2.0 UE 2024/1183 pour le 24 décembre 2026, obligations GPAI au 2 août 2025 et transparence art. 50 EU AI Act 2024/1689 au 2 août 2026) sans jamais servir d'analogie normative au droit canadien.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5736,7 +5736,7 @@
       "subdomain": "Prospective et péremption",
       "family": "Tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF",
       "title": "Tri prospectif (PROGRAMMÉ, PROJETÉ, SPÉCULATIF) et péremption accélérée des feuilles de route",
-      "summary": "Discipline temporelle appliquée aux protocoles, brouillons et échéances : distingue strictement un engagement daté réel (PROGRAMMÉ : 1ᵉʳ mai 2027 BSIF/AMF, 31 déc. 2030/2031 décret US 14412, expirations automatiques de 6 mois des Internet-Drafts) d'une intention non contraignante (PROJETÉ : NIST IR 8547 projet, normalisation IETF/FIDO sans date) et d'un pari de recherche (SPÉCULATIF). Illustre la péremption par la feuille de route d'Ehtesham et coll. (mai 2025) vidée d'une étape en moins de 4 mois par la fusion ACP->A2A.",
+      "summary": "Discipline temporelle appliquée aux protocoles, brouillons et échéances : distingue strictement un engagement daté réel (PROGRAMMÉ : 1ᵉʳ mai 2027 BSIF/AMF, 31 décembre 2030/2031 décret US 14412, expirations automatiques de 6 mois des Internet-Drafts) d'une intention non contraignante (PROJETÉ : NIST IR 8547 projet, normalisation IETF/FIDO sans date) et d'un pari de recherche (SPÉCULATIF). Illustre la péremption par la feuille de route d'Ehtesham et coll. (mai 2025) vidée d'une étape en moins de 4 mois par la fusion ACP→A2A.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5861,7 +5861,7 @@
       "subdomain": "Épistémologie de vérification",
       "family": "Régime de preuve et réserves",
       "title": "Appareil critique du Tome 1 : niveaux [A]/[B]/[C], trois degrés d'absence et réserve F-01",
-      "summary": "Méthode probatoire transversale gouvernant les Livres I et II : hiérarchie des entrées ([A] source primaire extraite, [B] corroborée, [C] repérage hérité du Vol. I ne portant aucun fait central), échelle des trois degrés d'absence (1 : fait négatif vérifié par balayage borné ; 2 : fait négatif établi par réserve explicite de la source ; 3 : absence de documentation au corpus), convention cryptographique (« démontre » vs « promet », réserve F-01 interdisant « sécurisé »), arbitrage inter-volumes sans lissage (S-090/S-091, Tableau 11.5) et revalidations datées (28–30 juil. et oct. 2026).",
+      "summary": "Méthode probatoire transversale gouvernant les Livres I et II : hiérarchie des entrées ([A] source primaire extraite, [B] corroborée, [C] repérage hérité du Vol. I ne portant aucun fait central), échelle des trois degrés d'absence (1 : fait négatif vérifié par balayage borné ; 2 : fait négatif établi par réserve explicite de la source ; 3 : absence de documentation au corpus), convention cryptographique (« démontre » plutôt que « promet », réserve F-01 interdisant « sécurisé »), arbitrage inter-volumes sans lissage (S-090/S-091, Tableau 11.5) et revalidations datées (28–30 juillet et octobre 2026).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5881,7 +5881,7 @@
         "régime de preuve",
         "trois degrés d'absence",
         "réserve F-01",
-        "démontre vs promet",
+        "démontre par rapport à promet",
         "revalidation post-gel",
         "arbitrage provenance"
       ],
@@ -6112,7 +6112,7 @@
       "target_slug": "constance-pass-k",
       "type": "attenuation_risque",
       "label": "Réduction du non-déterminisme par flux déterministe",
-      "justification": "En confiant la tuyauterie anticipable au code déterministe et en limitant l'autonomie aux nœuds nécessaires, on évite la dégradation géométrique de pass^k sur horizon long (ch. 4 §4.1.4, §4.2.4).",
+      "justification": "En confiant la mécanique d'exécution anticipable au code déterministe et en limitant l'autonomie aux nœuds nécessaires, cela évite la dégradation géométrique de pass^k sur horizon long (ch. 4 §4.1.4, §4.2.4).",
       "tomes": [
         "T1"
       ]
@@ -6431,7 +6431,7 @@
       "source_slug": "evaluation-agentique-bancs-capacite",
       "target_slug": "constance-pass-k",
       "type": "operationnalisation",
-      "label": "τ-bench et HAL opérationnalisent l'évaluation à coût et consistance contrôlés",
+      "label": "Τ-bench et HAL opérationnalisent l'évaluation à coût et consistance contrôlés",
       "justification": "τ-bench introduit la métrique pass^k et le Holistic Agent Leaderboard mesure la performance à budget égal pour corriger les biais des scores isolés (ch. 6 §6.3.3, §6.4.2).",
       "tomes": [
         "T1"
@@ -6462,7 +6462,7 @@
       "target_slug": "identite-non-humaine-nhi",
       "type": "encadrement_normatif",
       "label": "Encadrement des systèmes autonomes sur les marchés de capitaux",
-      "justification": "L'avis ACVM 11-348 (5 déc. 2024) confirme l'application des lois sur les valeurs mobilières aux systèmes d'IA présentant des niveaux variables d'autonomie et d'adaptativité (ch. 12 §12.3, ch. 15 §15.3.3).",
+      "justification": "L'avis ACVM 11-348 (5 décembre 2024) confirme l'application des lois sur les valeurs mobilières aux systèmes d'IA présentant des niveaux variables d'autonomie et d'adaptativité (ch. 12 §12.3, ch. 15 §15.3.3).",
       "tomes": [
         "T1"
       ]
@@ -6571,7 +6571,7 @@
       "source_slug": "surcout-multi-agent-debat-mast",
       "target_slug": "separation-controleur-executeur-determinisme",
       "type": "tension_arbitrage",
-      "label": "Contexte isolé multi-agents (15×) vs rédacteur unique continu",
+      "label": "Contexte isolé multi-agents (15×) face au rédacteur unique continu",
       "justification": "Le débat entre le gain rapporté par Anthropic (au prix d'un facteur 15× en jetons) et la doctrine « Don't Build Multi-Agents » de Cognition (contexte continu unique) arbitre le découpage agentique (ch. 5 §5.1.2, ch. 6 §6.1.1).",
       "tomes": [
         "T1"
@@ -6581,7 +6581,7 @@
       "source_slug": "dette-semantique-ontologies",
       "target_slug": "ecart-accord-protocolaire-comprehension",
       "type": "tension_arbitrage",
-      "label": "Expressivité ontologique coûteuse vs souplesse fragile en prose",
+      "label": "Expressivité ontologique coûteuse face à la souplesse fragile en prose",
       "justification": "Plus une ontologie de capacité est formelle et vérifiable (OWL/SHACL), plus elle est rigide et coûteuse ; plus la description reste en langage naturel, plus le faux accord sémantique menace (ch. 9 §9.4.3–9.4.4).",
       "tomes": [
         "T1"
@@ -6591,7 +6591,7 @@
       "source_slug": "annuaires-commerciaux-risque-standard-de-fait",
       "target_slug": "anti-verrouillage-standards",
       "type": "tension_arbitrage",
-      "label": "Adoption immédiate d'annuaires propriétaires vs attente de normes neutres",
+      "label": "Adoption immédiate d'annuaires propriétaires par rapport à l'attente de normes neutres",
       "justification": "Les organisations doivent choisir entre des annuaires commerciaux déjà en disponibilité générale (Entra/GCP/AWS étendant les RFC) et des normes ouvertes encore à l'état de brouillon (ch. 15 §15.2.3).",
       "tomes": [
         "T1"
@@ -6601,7 +6601,7 @@
       "source_slug": "spiffe-spire-attestation",
       "target_slug": "did-vc-passeport-agent",
       "type": "tension_arbitrage",
-      "label": "Infrastructure centralisée intra-domaine (SPIFFE) vs portabilité écosystémique (DID)",
+      "label": "Infrastructure centralisée intra-domaine (SPIFFE) face à la portabilité écosystémique (DID)",
       "justification": "SPIFFE/SPIRE assure une attestation courte et révocable intra-domaine au prix d'une infrastructure dédiée, tandis que DID/VC vise la portabilité inter-domaines mais reporte révocation et résolution sur l'écosystème (ch. 13 §13.4).",
       "tomes": [
         "T1"
@@ -6611,8 +6611,8 @@
       "source_slug": "inventaire-revocation-asymetrie",
       "target_slug": "spiffe-spire-attestation",
       "type": "tension_arbitrage",
-      "label": "Durée de vie courte (24h) comme substitut partiel à la révocation",
-      "justification": "Raccourcir la validité d'un certificat (24h chez Google Cloud) borne la fenêtre d'exposition mais ne permet pas de révoquer immédiatement dans la fenêtre ni de remplacer l'inventaire (ch. 12 §12.2, ch. 20 §20.5).",
+      "label": "Durée de vie courte (24 h) comme substitut partiel à la révocation",
+      "justification": "Raccourcir la validité d'un certificat (24 h chez Google Cloud) borne la fenêtre d'exposition mais ne permet pas de révoquer immédiatement dans la fenêtre ni de remplacer l'inventaire (ch. 12 §12.2, ch. 20 §20.5).",
       "tomes": [
         "T1"
       ]
@@ -6621,7 +6621,7 @@
       "source_slug": "economie-jetons-routage-slm",
       "target_slug": "raisonnement-inference-limites-planification",
       "type": "tension_arbitrage",
-      "label": "Arbitrage coût des jetons de réflexion vs gain de qualité à l'inférence",
+      "label": "Arbitrage coût des jetons de réflexion face au gain de qualité à l'inférence",
       "justification": "Le calcul étendu à l'inférence améliore le raisonnement mais facture des jetons cachés et expose à la sur-réflexion, imposant un routage sélectif SLM/LLM par classe de tâche (ch. 4 §4.3.4, §4.5).",
       "tomes": [
         "T1"
@@ -6791,7 +6791,7 @@
       "source_slug": "tri-prospectif-peremption-feuilles-route",
       "target_slug": "protocole-ap2",
       "type": "projection_temporelle",
-      "label": "Transfert AP2->FIDO annoncé sans échéance de normalisation",
+      "label": "Transfert AP2→FIDO annoncé sans échéance de normalisation",
       "justification": "L'annonce officielle du 28 avril 2026 vers la FIDO Alliance reste à l'état d'intention non matérialisée au dépôt et ses deux groupes de travail n'ont aucune date de livraison (ch. 10 §10.1.3, ch. 16 §16.4).",
       "tomes": [
         "T1"
@@ -6871,7 +6871,7 @@
       "source_slug": "regime-preuve-trois-degres-absence",
       "target_slug": "protocole-ap2",
       "type": "concordance_inter_tomes",
-      "label": "Arbitrage Vol. I / Vol. II / Vol. III sur la gouvernance d'AP2 (S-090 vs S-091)",
+      "label": "Arbitrage des volumes I, II et III sur la gouvernance d'AP2 (S-090 et S-091)",
       "justification": "Le §10.1.3 concilie sans les lisser le silence du Vol. II (S-004), l'annonce officielle Google Cloud vers FIDO du 28 avril 2026 (Vol. I / S-090 [A]) et la non-matérialisation au dépôt (Vol. III / S-091 [B]).",
       "tomes": [
         "T1"

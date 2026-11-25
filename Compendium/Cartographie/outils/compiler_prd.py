@@ -79,17 +79,29 @@ def strip_md_inline(text: str) -> str:
 
 
 def _clean_prd_prose(text: Any) -> str:
-    """Normalise flèches, plages ``Lxxx–Lyyy``, ``\\$`` et jetons techniques collés hors code."""
+    """Normalise flèches, plages ``Lxxx–Lyyy``, comparateurs, « Systèmes d'agentivité » et jetons hors code."""
     cleaned = cm.clean_prose_typography(str(text or ""))
 
-    def _wrap_tokens(seg: str) -> str:
-        return re.sub(
-            r"\b(strict:\s*true|additionalProperties:\s*false|Status:\s*(?:Accepted|Final))\b",
-            r"`\1`",
-            seg,
-        )
+    def _transform_plain(seg: str) -> str:
+        chunks = re.split(r"(<code\b[^>]*>.*?</code>)", seg, flags=re.IGNORECASE | re.DOTALL)
+        for idx in range(0, len(chunks), 2):
+            part = chunks[idx]
+            part = (
+                part.replace("Systems of Agency", "Systèmes d'agentivité")
+                .replace("System of Agency", "Système d'agentivité")
+                .replace("systems of agency", "systèmes d'agentivité")
+            )
+            part = re.sub(r"(?<![<>=])<=(?!=)", "≤", part)
+            part = re.sub(r"(?<![<>=])>=(?!=)", "≥", part)
+            part = re.sub(
+                r"\b(strict:\s*true|additionalProperties:\s*false|Status:\s*(?:Accepted|Final))\b",
+                r"`\1`",
+                part,
+            )
+            chunks[idx] = part
+        return "".join(chunks)
 
-    return cm.map_outside_inline_code(cleaned, _wrap_tokens).strip()
+    return cm.map_outside_inline_code(cleaned, _transform_plain).strip()
 
 
 def escape_markdown_dollars(markdown_text: str) -> str:
@@ -356,7 +368,7 @@ def _render_schema_block(schema: dict[str, Any]) -> list[str]:
         lines.append(f"    - **Légende couleur** : {leg_txt}")
     takeaway = _clean_prd_prose(vb.get("key_takeaway_box", ""))
     if takeaway:
-        lines.append(f"    - **Encadré « À retenir »** : {takeaway}")
+        lines.append(f"    - **Synthèse doctrinale** : {takeaway}")
 
     figs = schema.get("linked_tome_figures") or []
     if not figs:
@@ -917,9 +929,9 @@ def build_prd_markdown(
         body_lines.append("")
         body_lines.append(
             f"Ce panorama directeur réunit les **{len(global_schemas)} schémas de vulgarisation transversaux "
-            "(`SCH-00-01` à `SCH-00-04`)** destinés à offrir en dix secondes une lecture visuelle de l'architecture "
-            "`80/20`, de la chaîne de confiance protocolaire et juridique, de la trajectoire `2026–2035` (`L0–L4`) et "
-            "de l'équation économique `FinOps` / homologation `G0–G5`."
+            "(`SCH-00-01` à `SCH-00-04`)** afin d'offrir une synthèse visuelle immédiate et rigoureuse de l'architecture "
+            "`80/20`, de la chaîne de confiance protocolaire et juridique, de la trajectoire `2026–2035` (`L0–L4`) ainsi que "
+            "de l'équation économique `FinOps` et de l'homologation `G0–G5`."
         )
         body_lines.append("")
         for g_sch in sorted(global_schemas, key=lambda x: str(x.get("schema_id", ""))):
@@ -1154,9 +1166,14 @@ def build_prd_markdown(
                     if rc.get(k)
                 ]
                 fams_list = ", ".join(f"`{f}`" for f in covered_fams)
+                n_schemas = len(ch_schemas)
+                n_covered = len(covered_fams)
+                n_fams = len(fams)
+                schema_word = "schéma" if n_schemas <= 1 else "schémas"
+                family_word = "famille" if n_fams <= 1 else "familles"
                 body_lines.append(
-                    f"Ce chapitre intègre **{len(ch_schemas)} schéma(s) de vulgarisation** couvrant "
-                    f"**{len(covered_fams)} / {len(fams)} famille(s)** ({fams_list}) : "
+                    f"Ce chapitre intègre **{n_schemas} {schema_word} de vulgarisation** couvrant "
+                    f"**{n_covered} / {n_fams} {family_word}** ({fams_list}) : "
                     f"{', '.join(stat_parts)}."
                 )
                 body_lines.append("")

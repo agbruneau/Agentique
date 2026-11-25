@@ -53,7 +53,7 @@
       "chapter_title": "Historique des versions",
       "line_start": 31,
       "line_end": 45,
-      "summary": "Traçabilité des versions 0.1 à 1.2 (27 oct. au 19 nov. 2026), unification des échelles N0–N4/P0–P3, calage 2027–2030 et passage à 305 exigences (255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT) exportées dans `exigences.json`.",
+      "summary": "Traçabilité des versions 0.1 à 1.2 (27 octobre au 19 novembre 2026), unification des échelles N0–N4/P0–P3, calage 2027–2030 et passage à 305 exigences (255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT) exportées dans `exigences.json`.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D02",
@@ -302,7 +302,7 @@
       "chapter_title": "2 Contexte et enjeux",
       "line_start": 545,
       "line_end": 708,
-      "summary": "État de l'entreprise agentique en 2026 (adoption vs industrialisation, coûts multiagents 15×, ratio NHI 82:1, shadow AI), chronologie vérifiée de la consolidation des standards (MCP/A2A sous l'AAIF), huit enjeux motivant le cadre (N×M vers N+M) et déplacement du verrouillage vers les plateformes.",
+      "summary": "État de l'entreprise agentique en 2026 (adoption par rapport à industrialisation, coûts multiagents 15×, ratio NHI 82:1, shadow AI), chronologie vérifiée de la consolidation des standards (MCP/A2A sous l'AAIF), huit enjeux motivant le cadre (N×M vers N+M) et déplacement du verrouillage vers les plateformes.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D02",
@@ -319,7 +319,7 @@
         "bsif-e-23"
       ],
       "key_terms": [
-        "N×M vs N+M",
+        "N×M par rapport à N+M",
         "AAIF",
         "Shadow AI",
         "Verrouillage plateformes",
@@ -341,7 +341,7 @@
       "chapter_title": "3 Concepts et définitions",
       "line_start": 709,
       "line_end": 832,
-      "summary": "Définitions normatives faisant foi (Tableau 7 : agent, système d'IA, déployeur, outil, ressource, invite, flux déterministe, délégation, passerelles, registre, catalogue, idempotence, session, environnement serveur), résumé des échelles N0–N4/NX et P0–P3, flux vs agent, interactif vs ambiant et triple exclusion identitaire.",
+      "summary": "Définitions normatives faisant foi (Tableau 7 : agent, système d'IA, déployeur, outil, ressource, invite, flux déterministe, délégation, passerelles, registre, catalogue, idempotence, session, environnement serveur), résumé des échelles N0–N4/NX et P0–P3, flux par rapport à agent, interactif par rapport à ambiant et triple exclusion identitaire.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D03",
@@ -356,7 +356,7 @@
       ],
       "key_terms": [
         "Tableau 7",
-        "Agent vs Outil",
+        "Agent par rapport à Outil",
         "Flux déterministe",
         "N0-N4",
         "P0-P3",
@@ -622,7 +622,7 @@
       "chapter_title": "9 Identité, sécurité et confiance zéro",
       "line_start": 3787,
       "line_end": 4727,
-      "summary": "Sécurité et identité (49 exigences `EXIG-IAM-01..21` et `EXIG-SEC-01..28`) : confiance zéro par appel (NIST SP 800-207), NHI propres SPIFFE/SPIRE/OIDC (OWASP NHI Top 10), délégation RFC 8693 ≤2 sauts + OAuth RFC 9700 + mTLS/DPoP, passerelle à 9 fonctions + coupe-circuit SSF/CAEP, menaces OWASP ASI/ATLAS, règle de deux + patrons CaMeL, bacs à sable microVM + 4 verrous, chaîne d'approvisionnement, équipe rouge, suite CI, exercice trimestriel et transition post-quantique NIST IR 8547 / TLS 47j.",
+      "summary": "Sécurité et identité (49 exigences `EXIG-IAM-01..21` et `EXIG-SEC-01..28`) : confiance zéro par appel (NIST SP 800-207), NHI propres SPIFFE/SPIRE/OIDC (OWASP NHI Top 10), délégation RFC 8693 ≤2 sauts + OAuth RFC 9700 + mTLS/DPoP, passerelle à 9 fonctions + coupe-circuit SSF/CAEP, menaces OWASP ASI/ATLAS, règle de deux + patrons CaMeL, bacs à sable microVM + 4 verrous, chaîne d'approvisionnement, équipe rouge, suite CI, exercice trimestriel et transition post-quantique NIST IR 8547 / TLS 47 jours.",
       "primary_domain": "D07",
       "secondary_domains": [
         "D03",
@@ -653,7 +653,7 @@
         "Règle de deux",
         "MicroVM",
         "NIST IR 8547",
-        "TLS 47j"
+        "TLS 47 jours"
       ],
       "normative_refs": [
         "EXIG-IAM-01..21",
@@ -1116,7 +1116,7 @@
       "chapter_title": "F Validation des sources et des ébauches",
       "line_start": 7935,
       "line_end": 8169,
-      "summary": "Compte rendu de la validation probatoire (27–28 oct. 2026, déduplication 19 nov. 2026) : méthode à 3 passes, bilan chiffré (121 références, 427 liens dont 302 corrigés/retirés, 705 sources admissibles, 449 sources distinctes à l'Annexe G), 32 corrections factuelles majeures (Tableau 68) et registre des 121 références (Tableau 69).",
+      "summary": "Compte rendu de la validation probatoire (27–28 octobre 2026, déduplication 19 novembre 2026) : méthode à 3 passes, bilan chiffré (121 références, 427 liens dont 302 corrigés/retirés, 705 sources admissibles, 449 sources distinctes à l'Annexe G), 32 corrections factuelles majeures (Tableau 68) et registre des 121 références (Tableau 69).",
       "primary_domain": "D12",
       "secondary_domains": [
         "D01",
@@ -1175,7 +1175,7 @@
       "chapter_title": "H Actualisation de novembre 2026",
       "line_start": 8649,
       "line_end": 8780,
-      "summary": "Réouverture au 1er nov. 2026 des 24 dépendances datées (Tableau 70, 22/24 directes + protocole d'échantillonnage stratifié n≥8/24), 9 reports Note AMF IA (Tableau 71), 3 errata prouvés (Tableau 72), correctifs de cohérence interne et bilan d'unification v1.2 (DC-P08, 305 EXIG-*, références `[475]` à `[496]`/`[498]`).",
+      "summary": "Réouverture au 1er novembre 2026 des 24 dépendances datées (Tableau 70, 22/24 directes + protocole d'échantillonnage stratifié n≥8/24), 9 reports Note AMF IA (Tableau 71), 3 errata prouvés (Tableau 72), correctifs de cohérence interne et bilan d'unification v1.2 (DC-P08, 305 EXIG-*, références `[475]` à `[496]`/`[498]`).",
       "primary_domain": "D12",
       "secondary_domains": [
         "D03",
@@ -1218,7 +1218,7 @@
       "local_id": "t2-001",
       "canonical_slug": "systems-of-agency",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Entreprise agentique et intégration",
       "title": "Entreprise agentique 2026 et passage du maillage N×M aux contrats N+M",
       "summary": "Analyse de l'adoption agentique en 2026 (40 % des applications selon Gartner, 82:1 identités machines/humains selon CyberArk, >40 % d'annulations prévues sans gouvernance) et réduction des intégrations de N×M connecteurs propriétaires à N+M contrats réutilisables derrière une passerelle et un catalogue uniques.",
@@ -1275,7 +1275,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Erreurs sémantiques et cascade multiagent",
       "title": "Erreurs silencieuses sémantiques et amplification en cascade dans les chaînes d'agents",
-      "summary": "Même avec des protocoles techniquement conformes, des divergences sémantiques (montant HT vs TTC) ou une coordination multiagent sans goulot de validation amplifient les erreurs jusqu'à 17,2× (Google Research) et déclenchent le risque OWASP ASI08 (Cascading Failures).",
+      "summary": "Même avec des protocoles techniquement conformes, des divergences sémantiques (montant hors taxes et montant toutes taxes comprises) ou une coordination multiagent sans goulot de validation amplifient les erreurs jusqu'à 17,2× (Google Research) et déclenchent le risque OWASP ASI08 (Cascading Failures).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -1411,7 +1411,7 @@
       "subdomain": "Échelle d'autonomie L0–L4 et supervision humaine",
       "family": "Définitions de base",
       "title": "Distinction normative entre flux déterministe, agent interactif et agent ambiant",
-      "summary": "Définitions du Tableau 7 fixant la frontière entre flux déterministe (N0, code qui fixe le chemin), agent (boucle ReAct choisissant ses actions au moyen d'un modèle), agent interactif vs ambiant (événement/tâche planifiée), et triple exclusion identitaire (ni compte utilisateur, ni principal partagé, ni responsable).",
+      "summary": "Définitions du Tableau 7 fixant la frontière entre flux déterministe (N0, code qui fixe le chemin), agent (boucle ReAct choisissant ses actions au moyen d'un modèle), agent interactif ou ambiant (événement/tâche planifiée), et triple exclusion identitaire (ni compte utilisateur, ni principal partagé, ni responsable).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -2598,7 +2598,7 @@
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Huit patrons autorisés",
       "title": "Arbre de décision, 8 patrons d'orchestration autorisés et preuve mesurée multiagent",
-      "summary": "Règle de sobriété (EXIG-ORC-01/02) exigeant de justifier l'insuffisance des options plus simples et de prouver le gain du multiagent (IC 95 % + valeur monétaire vs surcoût 3–10× en jetons) parmi 8 patrons autorisés et 1 variante débat encadrée (≤3 participants + gestionnaire, évaluateur-optimiseur ≤3 itérations, délégation ≤2 niveaux).",
+      "summary": "Règle de sobriété (EXIG-ORC-01/02) exigeant de justifier l'insuffisance des options plus simples et de prouver le gain du multiagent (IC 95 % + valeur monétaire face au surcoût de 3–10× en jetons) parmi 8 patrons autorisés et 1 variante débat encadrée (≤3 participants + gestionnaire, évaluateur-optimiseur ≤3 itérations, délégation ≤2 niveaux).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -2671,7 +2671,7 @@
       "subdomain": "Chorégraphie Event Mesh et bus asynchrone",
       "family": "Bus d'événements, CloudEvents et AsyncAPI",
       "title": "Interopérabilité événementielle (CloudEvents 1.0, AsyncAPI 3.x), compteur de sauts et rejeu isolé",
-      "summary": "Coordination asynchrone via bus d'événements et courtier agissant comme PEP : enveloppe CloudEvents 1.0.2 complète (`datacontenttype`, `dataschema`, `type` inversé versionné), contrats AsyncAPI 3.x au catalogue, aucun RP direct dans les attributs, `xagenthopcount`/`xagentmaxhops` (défaut 4) et plafond de largeur contre les tempêtes d'événements, boîte d'envoi transactionnelle, clé de partition et rejeu isolé (rétention ≥90j modéré, ≥1 an élevé).",
+      "summary": "Coordination asynchrone via bus d'événements et courtier agissant comme PEP : enveloppe CloudEvents 1.0.2 complète (`datacontenttype`, `dataschema`, `type` inversé versionné), contrats AsyncAPI 3.x au catalogue, aucun RP direct dans les attributs, `xagenthopcount`/`xagentmaxhops` (défaut 4) et plafond de largeur contre les tempêtes d'événements, boîte d'envoi transactionnelle, clé de partition et rejeu isolé (rétention ≥90j modéré, ≥ 1 an élevé).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3770,7 +3770,7 @@
       "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
       "family": "Télémétrie sans contenu et journal d'audit",
       "title": "Interdiction du contenu en télémétrie, caviardage et journal d'audit exhaustif distinct",
-      "summary": "Séparation stricte entre télémétrie technique (aucun texte d'invite/réponse/argument en production, capture de débogage exceptionnelle caviardée/chiffrée ≤14j, caviardage fr/en + HMAC à la sortie, aucun RP dans W3C `baggage`), journal d'audit distinct non échantillonné (intention avant relais P2/P3, issue après) et dossier de décision chiffré pour art. 12.1 (conservé ≥1 an).",
+      "summary": "Séparation stricte entre télémétrie technique (aucun texte d'invite/réponse/argument en production, capture de débogage exceptionnelle caviardée/chiffrée ≤14j, caviardage fr/en + HMAC à la sortie, aucun RP dans W3C `baggage`), journal d'audit distinct non échantillonné (intention avant relais P2/P3, issue après) et dossier de décision chiffré pour art. 12.1 (conservé ≥ 1 an).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3886,7 +3886,7 @@
       "subdomain": "Banc EvalOps hermétique E1–E3, Wilson et métamorphique",
       "family": "Trois étages E1–E3 et statistiques",
       "title": "Évaluation continue en 3 étages (E1–E3), intervalle de Wilson, dépôt dédié et rétrogradation sur SLO",
-      "summary": "Validation relancée à chaque déclencheur `EXIG-GOV-12` (y compris changement de modèle derrière alias) : E1 déterministe bloquant en CI (contrats, politiques, saga), E2 trajectoires isolées contre doublures (≥50 scénarios fr/en × 3 répétitions, règle 3/p et IC 95 % de Wilson), E3 production (échantillon aléatoire ≥5–10 % + 100 % anomalies via dépôt chiffré 30j), juge calibré (kappa ≥0,6) interdit d'action bloquante en prod et 4 familles de SLO avec réduction d'autonomie après 3 mois d'écart.",
+      "summary": "Validation relancée à chaque déclencheur `EXIG-GOV-12` (y compris changement de modèle derrière alias) : E1 déterministe bloquant en CI (contrats, politiques, saga), E2 trajectoires isolées contre doublures (≥50 scénarios fr/en × 3 répétitions, règle 3/p et IC 95 % de Wilson), E3 production (échantillon aléatoire ≥5–10 % + 100 % anomalies via dépôt chiffré 30 jours), juge calibré (kappa ≥0,6) interdit d'action bloquante en production et 4 familles de SLO avec réduction d'autonomie après 3 mois d'écart.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3941,7 +3941,7 @@
       "subdomain": "SRE agentique et FinOps FOCUS / CPO / carbone",
       "family": "Enveloppes, frugalité et coût par tâche réussie",
       "title": "Enveloppes budgétaires (80 %/100 %), routage frugal, préfixe stable, FOCUS et coût par tâche réussie",
-      "summary": "Gouvernance économique bout en bout : comparaison des modèles et SaaS au coût total par tâche réussie (CPO en $ CA) avec hypothèses de prix datées/trimestrielles, enveloppe atomique tenue côté passerelle de modèles (alerte 80 %, arrêt propre à 100 %, part dédiée en délégation), quotas mensuels, plus petit modèle suffisant, préfixe d'invite stable pour cache, lots asynchrones (-50 %/24h) et imputation par centre de coûts jointe à FOCUS 1.4/1.5.",
+      "summary": "Gouvernance économique bout en bout : comparaison des modèles et SaaS au coût total par tâche réussie (CPO en $ CA) avec hypothèses de prix datées/trimestrielles, enveloppe atomique tenue côté passerelle de modèles (alerte 80 %, arrêt propre à 100 %, part dédiée en délégation), quotas mensuels, plus petit modèle suffisant, préfixe d'invite stable pour cache, lots asynchrones (-50 %/24 h) et imputation par centre de coûts jointe à FOCUS 1.4/1.5.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4096,7 +4096,7 @@
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Décisions automatisées, transparence et conservation",
       "title": "Loi 25 art. 12.1/65.2, interdiction d'approbation nominale, transparence et vérification juridique",
-      "summary": "Régime complet des décisions automatisées et de la transparence : classe élevée obligatoire pour décisions exclusivement automatisées (art. 12.1/65.2), test à 4 conditions contre l'approbation nominale (`EXIG-CON-08`), avis et explication par facteurs déterministes (jamais chaîne de pensée) avec révision ≤30j et conservation dossier ≥1 an (`EXIG-CON-07/09`, étendu au partiellement automatisé par `EXIG-CON-21`), cycles de vie des mémoires/index/plongements RP (`EXIG-CON-10`), divulgation d'interaction (`EXIG-CON-19/20`) et vérification humaine des contenus juridiques (affaire *Specter Aviation*, `EXIG-CON-22`).",
+      "summary": "Régime complet des décisions automatisées et de la transparence : classe élevée obligatoire pour décisions exclusivement automatisées (art. 12.1/65.2), test à 4 conditions contre l'approbation nominale (`EXIG-CON-08`), avis et explication par facteurs déterministes (jamais chaîne de pensée) avec révision ≤30j et conservation dossier ≥ 1 an (`EXIG-CON-07/09`, étendu au partiellement automatisé par `EXIG-CON-21`), cycles de vie des mémoires/index/plongements RP (`EXIG-CON-10`), divulgation d'interaction (`EXIG-CON-19/20`) et vérification humaine des contenus juridiques (affaire *Specter Aviation*, `EXIG-CON-22`).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4170,7 +4170,7 @@
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "BSIF E-23, B-13, LPRPDE et projets fédéraux",
       "title": "Arrimage BSIF E-23 (1er mai 2027), B-13, LPRPDE, directive EIA et veille C-36/C-8/C-22",
-      "summary": "Cartographie des régimes applicables à chaque fiche (`EXIG-CON-11`) et arrimage à la ligne directrice E-23 du BSIF (en vigueur le 1er mai 2027 : inventaire de tous agents et modèles incluant tiers, cote de risque, état de validation et revue indépendante de modification importante), B-13 (comptes privilégiés/journalisation), signalement BSIF 24h, LPRPDE, directive fédérale EIA et suivi de C-36 (successeur du feu C-27/LIAD) et de la Loi concernant la cybersécurité (C-8).",
+      "summary": "Cartographie des régimes applicables à chaque fiche (`EXIG-CON-11`) et arrimage à la ligne directrice E-23 du BSIF (en vigueur le 1er mai 2027 : inventaire de tous agents et modèles incluant tiers, cote de risque, état de validation et revue indépendante de modification importante), B-13 (comptes privilégiés/journalisation), signalement BSIF 24 h, LPRPDE, directive fédérale EIA et suivi de C-36 (successeur du feu C-27/LIAD) et de la Loi concernant la cybersécurité (C-8).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4215,7 +4215,7 @@
       "subdomain": "Réglementation européenne et référentiels internationaux",
       "family": "Règlement (UE) 2024/1689, 2026/1744 et EN 18286",
       "title": "Règlement européen sur l'IA (RIA), portée par sorties dans l'UE, art. 25/26 et SMQ EN 18286:2026",
-      "summary": "Évaluation d'applicabilité extraterritoriale fondée sur l'utilisation des sorties dans l'UE (art. 2), interdiction absolue des pratiques prohibées, classement automatique en classe élevée pour usages annexe III (échéance 2 déc. 2027 modifiée par 2026/1744; annexe I au 2 août 2028), revue de requalification en fournisseur (art. 25), obligations du déployeur (art. 26, journaux ≥6 mois) et alignement du SMQ fournisseur sur EN 18286:2026 au plus tard au jalon J2a (1er nov. 2027).",
+      "summary": "Évaluation d'applicabilité extraterritoriale fondée sur l'utilisation des sorties dans l'UE (art. 2), interdiction absolue des pratiques prohibées, classement automatique en classe élevée pour usages annexe III (échéance 2 décembre 2027 modifiée par 2026/1744; annexe I au 2 août 2028), revue de requalification en fournisseur (art. 25), obligations du déployeur (art. 26, journaux ≥6 mois) et alignement du SMQ fournisseur sur EN 18286:2026 au plus tard au jalon J2a (1er novembre 2027).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4336,7 +4336,7 @@
       "subdomain": "Réglementation européenne et référentiels internationaux",
       "family": "Réponse 5 temps et notification cumulée",
       "title": "Incidents agentiques (S1–S4), réponse en 5 temps avec gel et cumul des délais de notification",
-      "summary": "Procédure de réponse en 5 temps (Contenir par coupe-circuit sans approbation préalable tout en laissant le canal de compensation ouvert, Préserver bacs à sable/contextes/versions gelées, Évaluer/Aviser, Corriger/Compenser, Apprendre); registre des incidents conservé 5 ans, cible interne CAI 72h, et cumul de la règle la plus exigeante entre Loi 25, LPRPDE, BSIF (24h), RIA (2/10/15j), RGPD (72h) et C-8.",
+      "summary": "Procédure de réponse en 5 temps (Contenir par coupe-circuit sans approbation préalable tout en laissant le canal de compensation ouvert, Préserver bacs à sable/contextes/versions gelées, Évaluer/Aviser, Corriger/Compenser, Apprendre); registre des incidents conservé 5 ans, cible interne CAI 72h, et cumul de la règle la plus exigeante entre Loi 25, LPRPDE, BSIF (24 h), RIA (2/10/15j), RGPD (72h) et C-8.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4354,7 +4354,7 @@
         "incidents-agentiques",
         "gel-preuves",
         "notification-72h",
-        "bsif-24h",
+        "bsif-24 h",
         "cai",
         "rprp",
         "risques"
@@ -4548,7 +4548,7 @@
       "subdomain": "Approvisionnement réversible et clauses contractuelles",
       "family": "Dix clauses contractuelles normatives",
       "title": "Dix clauses contractuelles minimales (EXIG-APP-07 à EXIG-APP-16) : portabilité, Loi 25, RIA et sortie",
-      "summary": "Socle contractuel obligatoire pour toute acquisition ou renouvellement (aucune clause contraire à `EXIG-GOV-17` permise) : A2A 1.0 + cartes portables, MCP + délégation RFC 8693 (`act`), télémétrie + explicabilité (10j/1 an), interdiction d'entraînement sur données d'entreprise (art. 18.3), lieux/préavis 90j/EFVP art. 17/CLOUD Act, notification incident (24h, 4h IFF), droit d'audit/équipe rouge/préavis modèle 90j, réversibilité complète + assistance 6 mois + destruction attestée, accord écrit RIA art. 25(4) et révocation NHI (24h).",
+      "summary": "Socle contractuel obligatoire pour toute acquisition ou renouvellement (aucune clause contraire à `EXIG-GOV-17` permise) : A2A 1.0 + cartes portables, MCP + délégation RFC 8693 (`act`), télémétrie + explicabilité (10j/1 an), interdiction d'entraînement sur données d'entreprise (art. 18.3), lieux/préavis 90j/EFVP art. 17/CLOUD Act, notification incident (24 h, 4h IFF), droit d'audit/équipe rouge/préavis modèle 90j, réversibilité complète + assistance 6 mois + destruction attestée, accord écrit RIA art. 25(4) et révocation NHI (24 h).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4566,7 +4566,7 @@
         "clauses-contractuelles",
         "reversibilite",
         "interdiction-entrainement",
-        "notification-24h",
+        "notification-24 h",
         "article-25-4",
         "approvisionnement",
         "rprp"
@@ -4602,7 +4602,7 @@
       "subdomain": "Cinq profils financiers réglementés et 24 PEX",
       "family": "Paiements irrévocables RTR et ISO 20022",
       "title": "Tampon déterministe hors modèle et validation ISO 20022 sur le Rail en temps réel (RTR)",
-      "summary": "Exigence sectorielle v1.2 pour Paiements Canada RTR (en production le 9 nov. 2026) et messages ISO 20022 (`pacs.008`, `camt.*`) : l'irrévocabilité immédiate rendant impossible la compensation par Saga, tout ordre préparé par un agent traverse un tampon déterministe hors modèle (validation schéma décimale exacte, clé d'idempotence, antifraude/liquidité synchrone, approbation P3 liée au condensat JCS avec rétention configurable ≥30 s).",
+      "summary": "Exigence sectorielle v1.2 pour Paiements Canada RTR (en production le 9 novembre 2026) et messages ISO 20022 (`pacs.008`, `camt.*`) : l'irrévocabilité immédiate rendant impossible la compensation par Saga, tout ordre préparé par un agent traverse un tampon déterministe hors modèle (validation schéma décimale exacte, clé d'idempotence, antifraude/liquidité synchrone, approbation P3 liée au condensat JCS avec rétention configurable ≥30 s).",
       "autonomy_levels": [
         "L1",
         "L2"
@@ -4908,7 +4908,7 @@
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Quatre phases, 90 jours et indicateurs",
       "title": "Feuille de route 2027–2030 (4 phases, J1–J5, J2a), plan des 90 jours et 16 indicateurs",
-      "summary": "Planification progressive sur 4 phases (Fondations 0–3m N0/N1 -> Plateforme 3–9m N2/N3 bornés -> Industrialisation 9–18m N3 interdomaines -> Mise à l'échelle 18m+ N4) calée sur les jalons externes (E-23 1er mai 2027, migration MCP 28 juill. 2027, J2a 1er nov. 2027 avant RIA annexe III 2 déc. 2027, ISO 42001 J4/J5); plan détaillé des 90 premiers jours en 13 semaines, 16 indicateurs mesurés et 11 risques de mise en œuvre avec parades.",
+      "summary": "Planification progressive sur 4 phases (Fondations 0–3m N0/N1 → Plateforme 3–9m N2/N3 bornés → Industrialisation 9–18m N3 interdomaines → Mise à l'échelle 18m+ N4) calée sur les jalons externes (E-23 1er mai 2027, migration MCP 28 juillet 2027, J2a 1er novembre 2027 avant RIA annexe III 2 décembre 2027, ISO 42001 J4/J5); plan détaillé des 90 premiers jours en 13 semaines, 16 indicateurs mesurés et 11 risques de mise en œuvre avec parades.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5119,7 +5119,7 @@
         "force-normative",
         "rfc-2119",
         "roles-lecture",
-        "exigence-externe-vs-interne",
+        "exigence-externe-par rapport à-interne",
         "audit"
       ],
       "identifiers": [
@@ -5412,7 +5412,7 @@
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Audit des sources et corrections des ébauches",
       "title": "Validation des 121 références (427 liens), 449 sources dédupliquées (A/B/C) et 32 corrections factuelles",
-      "summary": "Méthodologie probatoire en trois passes (27–28 oct. 2026, déduplication 19 nov. 2026) : vérification de 121 références et 427 liens affirmation-source (71 % corrigés/remplacés/retirés dont 32 corrections majeures au Tableau 68), audit de 1 409 affirmations sur 449 sources distinctes classées A/B/C à l'Annexe G (Gartner reclassé en B, catégorie C proscrite à l'appui d'une exigence).",
+      "summary": "Méthodologie probatoire en trois passes (27–28 octobre 2026, déduplication 19 novembre 2026) : vérification de 121 références et 427 liens affirmation-source (71 % corrigés/remplacés/retirés dont 32 corrections majeures au Tableau 68), audit de 1 409 affirmations sur 449 sources distinctes classées A/B/C à l'Annexe G (Gartner reclassé en B, catégorie C proscrite à l'appui d'une exigence).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5484,7 +5484,7 @@
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Actualisation novembre 2026 et unification v1.2",
       "title": "Actualisation de novembre 2026 (Annexe H) et unification normative v1.2 (DC-P08, 305 EXIG-*)",
-      "summary": "Suivi méthodologique et unification : contrôle 24/24 des dépendances datées au 1er nov. 2026 + échantillonnage stratifié (n≥8/24), errata prouvés (Tableau 72 : 9 sièges A2A, calendrier MCP SEP-3398, erratum RTR 9 nov.), intégration en v1.2 (19 nov. 2026, DC-P08) des 12 `EXIG-AMF` en attente au Tableau 71 et des 6 exigences PQC/ACVM/RTR/EN 18286:2026 portant le socle à 305 exigences.",
+      "summary": "Suivi méthodologique et unification : contrôle 24/24 des dépendances datées au 1er novembre 2026 + échantillonnage stratifié (n≥8/24), errata prouvés (Tableau 72 : 9 sièges A2A, calendrier MCP SEP-3398, erratum RTR 9 novembre), intégration en v1.2 (19 novembre 2026, DC-P08) des 12 `EXIG-AMF` en attente au Tableau 71 et des 6 exigences PQC/ACVM/RTR/EN 18286:2026 portant le socle à 305 exigences.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -5546,7 +5546,7 @@
       "source_slug": "systems-of-agency",
       "target_slug": "anti-verrouillage-standards",
       "type": "tension_arbitrage",
-      "label": "déplace le verrouillage vers les plateformes",
+      "label": "Déplace le verrouillage vers les plateformes",
       "justification": "Les protocoles ouverts réduisent N×M à N+M, mais déplacent la dépendance vers les extensions, identités et unités des plateformes (§ 2.4, § 13.1).",
       "tomes": [
         "T2"
@@ -5556,7 +5556,7 @@
       "source_slug": "systems-of-agency",
       "target_slug": "contrats-interfaces-catalogue-entreprise",
       "type": "operationnalisation",
-      "label": "ramène N×M intégrations à N+M contrats",
+      "label": "Ramène N×M intégrations à N+M contrats",
       "justification": "Le catalogue unique et les protocoles communs remplacent la prolifération N×M des connecteurs (§ 2.3, Fig. 2).",
       "tomes": [
         "T2"
@@ -5566,7 +5566,7 @@
       "source_slug": "erreurs-silencieuses-cascade",
       "target_slug": "dette-semantique-ontologies",
       "type": "attenuation_risque",
-      "label": "prévient les écarts sémantiques par schémas typés",
+      "label": "Prévient les écarts sémantiques par schémas typés",
       "justification": "L'ancrage des schémas JSON Schema 2020-12 dans le vocabulaire métier et SemVer majeur prévient les erreurs que le transport ne voit pas (§ 6.1, EXIG-INT-02).",
       "tomes": [
         "T2"
@@ -5576,7 +5576,7 @@
       "source_slug": "erreurs-silencieuses-cascade",
       "target_slug": "topologies-patrons-orchestration",
       "type": "encadrement_normatif",
-      "label": "impose la preuve mesurée avant multiagent",
+      "label": "Impose la preuve mesurée avant multiagent",
       "justification": "L'amplification d'erreur de 17,2× et les surcoûts 3–10× justifient EXIG-ORC-01 et EXIG-ORC-02 avant toute topologie multiagent (§ 7.1).",
       "tomes": [
         "T2"
@@ -5586,7 +5586,7 @@
       "source_slug": "erreurs-silencieuses-cascade",
       "target_slug": "choregraphie-event-mesh",
       "type": "attenuation_risque",
-      "label": "coupe les boucles par compteur de sauts",
+      "label": "Coupe les boucles par compteur de sauts",
       "justification": "Les extensions `xagenthopcount`/`xagentmaxhops` et le plafond par trace coupent déterministement les tempêtes d'événements (EXIG-EVT-06).",
       "tomes": [
         "T2"
@@ -5596,7 +5596,7 @@
       "source_slug": "douze-principes-directeurs-prin",
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
-      "label": "fonde les 305 exigences vérifiables",
+      "label": "Fonde les 305 exigences vérifiables",
       "justification": "Chaque paire de principes PRIN-01 à PRIN-12 se traduit en familles EXIG-* et fixe la règle d'arbitrage et de préséance (§ 4.2, § 4.3).",
       "tomes": [
         "T2"
@@ -5606,7 +5606,7 @@
       "source_slug": "distinction-agent-flux-ambiant",
       "target_slug": "partition-hybride-80-20",
       "type": "operationnalisation",
-      "label": "sépare N0 déterministe et boucle agentique",
+      "label": "Sépare N0 déterministe et boucle agentique",
       "justification": "Le critère « qui choisit le prochain pas » oriente par défaut vers le flux déterministe (N0) avant l'agent outillé (§ 3.2, § 7.3).",
       "tomes": [
         "T2"
@@ -5616,7 +5616,7 @@
       "source_slug": "distinction-agent-flux-ambiant",
       "target_slug": "identite-non-humaine-nhi",
       "type": "encadrement_normatif",
-      "label": "exclut comptes humains et secrets partagés",
+      "label": "Exclut comptes humains et secrets partagés",
       "justification": "La section 3.4 établit qu'un agent n'est ni un utilisateur, ni un principal partagé, ni un responsable, fondant EXIG-IAM-03 à EXIG-IAM-05.",
       "tomes": [
         "T2"
@@ -5626,7 +5626,7 @@
       "source_slug": "partition-hybride-80-20",
       "target_slug": "topologies-patrons-orchestration",
       "type": "operationnalisation",
-      "label": "place le flux déterministe en patron par défaut",
+      "label": "Place le flux déterministe en patron par défaut",
       "justification": "PRIN-08 et EXIG-ORC-01 érigent le flux déterministe à étapes agentiques en patron 1 par défaut dans l'arbre de décision (§ 7.2, § 7.3).",
       "tomes": [
         "T2"
@@ -5636,7 +5636,7 @@
       "source_slug": "cadre-togaf-archimate-4-plans",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "dependance_technique",
-      "label": "fait de la passerelle le passage obligé de couche 4",
+      "label": "Fait de la passerelle le passage obligé de couche 4",
       "justification": "EXIG-ARC-01 et EXIG-ARC-11 imposent la passerelle d'agents et le catalogue comme règle centrale reliant les 6 couches.",
       "tomes": [
         "T2"
@@ -5646,7 +5646,7 @@
       "source_slug": "cadre-togaf-archimate-4-plans",
       "target_slug": "gouvernance-raci-modele-en-etoile",
       "type": "amplification_synergie",
-      "label": "mutualise les 3 plans transversaux en étoile",
+      "label": "Mutualise les 3 plans transversaux en étoile",
       "justification": "EXIG-ARC-19 et EXIG-GOV-05 convergent pour faire fournir les 3 plans transversaux par la plateforme centrale.",
       "tomes": [
         "T2"
@@ -5656,7 +5656,7 @@
       "source_slug": "anti-verrouillage-standards",
       "target_slug": "criteres-evaluation-fournisseurs-grille",
       "type": "operationnalisation",
-      "label": "vérifie portabilité et identité avant achat",
+      "label": "Vérifie portabilité et identité avant achat",
       "justification": "Le déplacement du verrouillage vers les plateformes se traduit par les critères éliminatoires de conformité protocolaire, identité et réversibilité (§ 13.1–13.4).",
       "tomes": [
         "T2"
@@ -5666,7 +5666,7 @@
       "source_slug": "anti-verrouillage-standards",
       "target_slug": "clauses-contractuelles-normatives-app",
       "type": "operationnalisation",
-      "label": "inscrit la réversibilité dans les 10 clauses",
+      "label": "Inscrit la réversibilité dans les 10 clauses",
       "justification": "EXIG-APP-07 à EXIG-APP-16 traduisent PRIN-09 et EXIG-ARC-21 en obligations contractuelles opposables.",
       "tomes": [
         "T2"
@@ -5676,7 +5676,7 @@
       "source_slug": "echelle-autonomie-l0-l4",
       "target_slug": "regle-maillon-plus-eleve",
       "type": "dependance_technique",
-      "label": "combine niveau N0–N4, classe et palier P0–P3",
+      "label": "Combine niveau N0–N4, classe et palier P0–P3",
       "justification": "La passerelle calcule le contrôle requis par union de l'échelle N0–N4, des paliers P0–P3 et du maillon le plus contraignant de la chaîne (EXIG-AUT-10).",
       "tomes": [
         "T2"
@@ -5686,7 +5686,7 @@
       "source_slug": "echelle-autonomie-l0-l4",
       "target_slug": "classes-risque-agents-et-plafonds",
       "type": "encadrement_normatif",
-      "label": "plafonne l'autonomie par la classe de risque",
+      "label": "Plafonne l'autonomie par la classe de risque",
       "justification": "EXIG-CON-02 est la source unique plafonnant la classe élevée à N2, modérée/faible à N3 et réservant N4 à la classe faible sur décision du comité.",
       "tomes": [
         "T2"
@@ -5696,7 +5696,7 @@
       "source_slug": "regle-maillon-plus-eleve",
       "target_slug": "approbation-ciba",
       "type": "operationnalisation",
-      "label": "déclenche le jeton signé hors bande pour P3",
+      "label": "Déclenche le jeton signé hors bande pour P3",
       "justification": "Tout appel P3 ou dépassant le seuil P2 selon EXIG-AUT-10 exige un jeton d'approbation signé lié à l'empreinte `h` (EXIG-AUT-09, EXIG-AUT-12).",
       "tomes": [
         "T2"
@@ -5706,7 +5706,7 @@
       "source_slug": "supervision-hitl-hotl-abstention",
       "target_slug": "approbation-ciba",
       "type": "dependance_technique",
-      "label": "appuie les files Réviser sur des jetons signés",
+      "label": "Appuie les files Réviser sur des jetons signés",
       "justification": "Les agents ambiants utilisent la boîte de réception persistante (EXIG-AUT-16) et transmettent l'approbation via jetons signés hors conversation (EXIG-AUT-13).",
       "tomes": [
         "T2"
@@ -5716,7 +5716,7 @@
       "source_slug": "supervision-hitl-hotl-abstention",
       "target_slug": "loi-25-article-12-1",
       "type": "tension_arbitrage",
-      "label": "évite l'approbation nominale qui rend la décision automatisée",
+      "label": "Évite l'approbation nominale qui rend la décision automatisée",
       "justification": "Saturer les approbateurs produit des clics machinals (OWASP T10) qui échouent au test de révision humaine significative à 4 conditions (EXIG-AUT-21, EXIG-CON-08).",
       "tomes": [
         "T2"
@@ -5726,7 +5726,7 @@
       "source_slug": "cadre-eif-4-couches",
       "target_slug": "contrats-interfaces-catalogue-entreprise",
       "type": "operationnalisation",
-      "label": "impose revue 4 niveaux et accords d'interface",
+      "label": "Impose revue 4 niveaux et accords d'interface",
       "justification": "EXIG-INT-01 à EXIG-INT-03 ancrent la revue EIF, le vocabulaire et l'accord de changement dans les contrats inscrits au catalogue.",
       "tomes": [
         "T2"
@@ -5736,7 +5736,7 @@
       "source_slug": "contrats-interfaces-catalogue-entreprise",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "dependance_technique",
-      "label": "alimente la liste d'autorisation de la passerelle",
+      "label": "Alimente la liste d'autorisation de la passerelle",
       "justification": "La passerelle tire sa liste d'autorisation exclusivement du catalogue d'entreprise et bloque tout élément absent ou suspendu (EXIG-ARC-12, EXIG-INT-17).",
       "tomes": [
         "T2"
@@ -5746,7 +5746,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "epinglage-schemas-mcp",
       "type": "dependance_technique",
-      "label": "exige JSON Schema 2020-12 et empreintes vérifiées",
+      "label": "Exige JSON Schema 2020-12 et empreintes vérifiées",
       "justification": "MCP 2026-07-28 sans état s'appuie sur `tools/list`, JSON Schema 2020-12, empreintes SHA-256 JCS et concordance en-têtes/corps (EXIG-MCP-15, EXIG-MCP-20).",
       "tomes": [
         "T2"
@@ -5756,7 +5756,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "operationnalisation",
-      "label": "interpose la passerelle devant tout serveur MCP",
+      "label": "Interpose la passerelle devant tout serveur MCP",
       "justification": "EXIG-MCP-01 et EXIG-MCP-08 obligent Streamable HTTP + TLS derrière la passerelle pour tout environnement serveur.",
       "tomes": [
         "T2"
@@ -5766,7 +5766,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "couche-anti-corruption-acl",
       "type": "operationnalisation",
-      "label": "expose les API existantes en outils orientés tâche",
+      "label": "Expose les API existantes en outils orientés tâche",
       "justification": "EXIG-ARC-14 et EXIG-MCP-06 proscrivent les miroirs CRUD et imposent des adaptateurs orientés tâche sans réécriture métier.",
       "tomes": [
         "T2"
@@ -5776,7 +5776,7 @@
       "source_slug": "protocole-a2a",
       "target_slug": "agent-card-decouverte",
       "type": "dependance_technique",
-      "label": "découvre et valide les pairs par carte signée",
+      "label": "Découvre et valide les pairs par carte signée",
       "justification": "Toute délégation A2A 1.0 repose sur une carte signée JWS/JCS inscrite au catalogue avec interfaces pointant vers la passerelle (EXIG-A2A-02, EXIG-A2A-03).",
       "tomes": [
         "T2"
@@ -5786,7 +5786,7 @@
       "source_slug": "protocole-a2a",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "dependance_technique",
-      "label": "transporte la chaîne de mandat à chaque saut A2A",
+      "label": "Transporte la chaîne de mandat à chaque saut A2A",
       "justification": "Chaque appel A2A transmet un jeton délégué RFC 8693 à audience unique et portée par compétence (EXIG-A2A-10, EXIG-IAM-08).",
       "tomes": [
         "T2"
@@ -5796,7 +5796,7 @@
       "source_slug": "agntcy-slim",
       "target_slug": "contrats-interfaces-catalogue-entreprise",
       "type": "encadrement_normatif",
-      "label": "subordonne OASF/ADS au catalogue d'entreprise",
+      "label": "Subordonne OASF/ADS au catalogue d'entreprise",
       "justification": "EXIG-INT-20 et EXIG-INT-21 limitent AGNTCY aux pilotes (OASF/ADS en Évaluer, SLIM en Surveiller) dérivés du seul catalogue.",
       "tomes": [
         "T2"
@@ -5806,7 +5806,7 @@
       "source_slug": "protocole-ap2",
       "target_slug": "approbation-ciba",
       "type": "encadrement_normatif",
-      "label": "soumet tout paiement agentique à l'approbation P3 signée",
+      "label": "Soumet tout paiement agentique à l'approbation P3 signée",
       "justification": "EXIG-INT-22 classe P3 tout paiement déclenché par un agent (AP2/ACP/UCP) et exige une approbation humaine signée par transaction.",
       "tomes": [
         "T2"
@@ -5816,7 +5816,7 @@
       "source_slug": "passerelle-mcp-ai-gateway",
       "target_slug": "politiques-opa-rego-hors-modele",
       "type": "operationnalisation",
-      "label": "exécute les 9 contrôles PEP par appel",
+      "label": "Exécute les 9 contrôles PEP par appel",
       "justification": "La passerelle agit en PEP NIST SP 800-207 appliquant les décisions du service de politiques en code à chaque requête (EXIG-IAM-17, EXIG-IAM-21).",
       "tomes": [
         "T2"
@@ -5826,7 +5826,7 @@
       "source_slug": "dette-semantique-ontologies",
       "target_slug": "epinglage-schemas-mcp",
       "type": "dependance_technique",
-      "label": "impose un incrément majeur sur changement de sens",
+      "label": "Impose un incrément majeur sur changement de sens",
       "justification": "EXIG-INT-13 et EXIG-INT-16 exigent une revue sémantique et une version majeure dès que change la signification d'un champ.",
       "tomes": [
         "T2"
@@ -5836,7 +5836,7 @@
       "source_slug": "memoire-coala-4-tiroirs",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "contrôle et étiquette les écritures en mémoire",
+      "label": "Contrôle et étiquette les écritures en mémoire",
       "justification": "EXIG-ARC-23 et EXIG-ARC-24 préviennent l'empoisonnement de mémoire (ASI06) en validant la source par schéma et en interdisant à l'agent de modifier sa mémoire procédurale.",
       "tomes": [
         "T2"
@@ -5846,7 +5846,7 @@
       "source_slug": "memoire-coala-4-tiroirs",
       "target_slug": "efvp-transfert-hors-quebec",
       "type": "encadrement_normatif",
-      "label": "localise les magasins mémoire et plongements RP",
+      "label": "Localise les magasins mémoire et plongements RP",
       "justification": "EXIG-CON-05 et EXIG-CON-10 imposent de cartographier le lieu de traitement des mémoires/index et de borner la rétention des plongements vectoriels traités comme RP.",
       "tomes": [
         "T2"
@@ -5856,7 +5856,7 @@
       "source_slug": "couche-anti-corruption-acl",
       "target_slug": "execution-durable-temporal",
       "type": "dependance_technique",
-      "label": "vérifie l'idempotence via service cible ou adaptateur",
+      "label": "Vérifie l'idempotence via service cible ou adaptateur",
       "justification": "EXIG-ARC-14 et EXIG-ORC-22 exigent qu'un adaptateur dispose d'un registre durable d'idempotence ou classe l'outil P3 sans réessai.",
       "tomes": [
         "T2"
@@ -5866,7 +5866,7 @@
       "source_slug": "topologies-patrons-orchestration",
       "target_slug": "contexte-minimal-delegation-interagents",
       "type": "operationnalisation",
-      "label": "borne la délégation à 2 niveaux et structure les échanges",
+      "label": "Borne la délégation à 2 niveaux et structure les échanges",
       "justification": "EXIG-ORC-04 limite l'imbrication à orchestrateur + exécutants et EXIG-ORC-23 minimalise le message transmis.",
       "tomes": [
         "T2"
@@ -5876,7 +5876,7 @@
       "source_slug": "topologies-patrons-orchestration",
       "target_slug": "anti-patrons-agentiques",
       "type": "attenuation_risque",
-      "label": "proscrit le maillage libre et les écritures concurrentes",
+      "label": "Proscrit le maillage libre et les écritures concurrentes",
       "justification": "EXIG-ORC-06, EXIG-ORC-07 et EXIG-ORC-29 interdisent les essaims non bornés et imposent un écrivain unique par système.",
       "tomes": [
         "T2"
@@ -5886,7 +5886,7 @@
       "source_slug": "choregraphie-event-mesh",
       "target_slug": "saga-compensatoire",
       "type": "dependance_technique",
-      "label": "exige un coordinateur et une saga en chorégraphie à effets",
+      "label": "Exige un coordinateur et une saga en chorégraphie à effets",
       "justification": "EXIG-ORC-08 impose à toute chorégraphie multisystème un propriétaire de bout en bout, un coordinateur de saga et les contrôles d'enveloppe.",
       "tomes": [
         "T2"
@@ -5896,7 +5896,7 @@
       "source_slug": "choregraphie-event-mesh",
       "target_slug": "execution-durable-temporal",
       "type": "dependance_technique",
-      "label": "dérive la clé d'idempotence du couple (source, id)",
+      "label": "Dérive la clé d'idempotence du couple (source, id)",
       "justification": "EXIG-EVT-08 impose la déduplication sur l'identité CloudEvents et la clé transmise au système cible pour compenser la livraison au moins une fois.",
       "tomes": [
         "T2"
@@ -5906,7 +5906,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "saga-compensatoire",
       "type": "operationnalisation",
-      "label": "fournit persistance et reprise aux étapes et compensations",
+      "label": "Fournit persistance et reprise aux étapes et compensations",
       "justification": "La persistance à chaque transition (EXIG-ORC-11) et l'isolation des appels non déterministes (EXIG-ORC-12) permettent aux sagas de reprendre et compenser après panne.",
       "tomes": [
         "T2"
@@ -5916,7 +5916,7 @@
       "source_slug": "saga-compensatoire",
       "target_slug": "resilience-orchestration-repli-plafonds",
       "type": "amplification_synergie",
-      "label": "préserve le canal de compensation sous coupe-circuit",
+      "label": "Préserve le canal de compensation sous coupe-circuit",
       "justification": "EXIG-ORC-28 garantit que l'arrêt vers l'avant ou l'épuisement d'enveloppe laisse ouvert le canal de compensation sous identité d'orchestrateur.",
       "tomes": [
         "T2"
@@ -5926,7 +5926,7 @@
       "source_slug": "saga-compensatoire",
       "target_slug": "tampon-deterministe-rtr-iso20022",
       "type": "tension_arbitrage",
-      "label": "interdit la compensation a posteriori sur virements RTR irrévocables",
+      "label": "Interdit la compensation a posteriori sur virements RTR irrévocables",
       "justification": "La nature irrévocable en temps réel du RTR ISO 20022 exclut le patron compensation a posteriori et impose un tampon déterministe préalable (EXIG-CON-29).",
       "tomes": [
         "T2"
@@ -5936,7 +5936,7 @@
       "source_slug": "resilience-orchestration-repli-plafonds",
       "target_slug": "finops-focus-cpo",
       "type": "amplification_synergie",
-      "label": "unifie les 5 plafonds d'exécution avec l'enveloppe budgétaire",
+      "label": "Unifie les 5 plafonds d'exécution avec l'enveloppe budgétaire",
       "justification": "Les plafonds EXIG-ORC-26 (étapes, appels, jetons, coût, durée) forment les dimensions de l'enveloppe budgétaire tenue par la passerelle de modèles (EXIG-FIN-04).",
       "tomes": [
         "T2"
@@ -5946,7 +5946,7 @@
       "source_slug": "identite-non-humaine-nhi",
       "target_slug": "spiffe-spire-attestation",
       "type": "operationnalisation",
-      "label": "délivre l'identité sans secret statique via SVID/OIDC",
+      "label": "Délivre l'identité sans secret statique via SVID/OIDC",
       "justification": "EXIG-IAM-04 et EXIG-IAM-05 éliminent clés d'API et secrets statiques par l'attestation cryptographique de plateforme (X.509-SVID, JWT-SVID, OIDC).",
       "tomes": [
         "T2"
@@ -5956,7 +5956,7 @@
       "source_slug": "identite-non-humaine-nhi",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "dependance_technique",
-      "label": "identifie l'agent comme acteur distinct dans le jeton délégué",
+      "label": "Identifie l'agent comme acteur distinct dans le jeton délégué",
       "justification": "L'identité propre de l'agent alimente `actor_token` et la revendication `act` de la RFC 8693 (EXIG-IAM-08, EXIG-IAM-09).",
       "tomes": [
         "T2"
@@ -5966,7 +5966,7 @@
       "source_slug": "delegation-obo-deux-sauts",
       "target_slug": "profil-oauth-9700-et-liaison-expediteur",
       "type": "dependance_technique",
-      "label": "lie les jetons délégués à l'expéditeur via mTLS ou DPoP",
+      "label": "Lie les jetons délégués à l'expéditeur via mTLS ou DPoP",
       "justification": "EXIG-IAM-14 protège les jetons délégués P2/P3/classe élevée contre le vol en les liant cryptographiquement (`cnf`) via mTLS RFC 8705 ou DPoP RFC 9449.",
       "tomes": [
         "T2"
@@ -5976,7 +5976,7 @@
       "source_slug": "approbation-ciba",
       "target_slug": "scellage-jcs-scitt",
       "type": "amplification_synergie",
-      "label": "ancre l'empreinte d'approbation `h` dans le journal d'audit",
+      "label": "Ancre l'empreinte d'approbation `h` dans le journal d'audit",
       "justification": "Le journal d'audit C.8 consigne les jetons d'approbation et recalcule `h` (RFC 8785) pour prouver la concordance entre décision humaine et octets transmis (EXIG-AUT-12, EXIG-OBS-12).",
       "tomes": [
         "T2"
@@ -5986,7 +5986,7 @@
       "source_slug": "certificats-tls-47-jours",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "amplification_synergie",
-      "label": "prépare la bascule algorithmique par automatisation PKI",
+      "label": "Prépare la bascule algorithmique par automatisation PKI",
       "justification": "L'automatisation complète imposée pour les certificats TLS ≤47 jours rend possible le remplacement rapide des suites classiques vers ML-KEM/ML-DSA (EXIG-SEC-27).",
       "tomes": [
         "T2"
@@ -5996,7 +5996,7 @@
       "source_slug": "post-quantique-ml-dsa-slh-dsa",
       "target_slug": "scellage-jcs-scitt",
       "type": "operationnalisation",
-      "label": "assure le rescellement ML-DSA/SLH-DSA des journaux longs",
+      "label": "Assure le rescellement ML-DSA/SLH-DSA des journaux longs",
       "justification": "EXIG-SEC-28 impose signatures hybrides/post-quantiques et rescellement ≤5 ans avec ancrage SCITT sur les enregistrements d'audit, jetons et cartes A2A.",
       "tomes": [
         "T2"
@@ -6006,7 +6006,7 @@
       "source_slug": "politiques-opa-rego-hors-modele",
       "target_slug": "regle-de-deux-opa",
       "type": "operationnalisation",
-      "label": "applique déterministement la règle de deux en passerelle",
+      "label": "Applique déterministement la règle de deux en passerelle",
       "justification": "La passerelle tient l'état de session dans un magasin fortement cohérent et exécute en code le retrait des outils d'envoi après contamination (EXIG-IAM-02, EXIG-SEC-06).",
       "tomes": [
         "T2"
@@ -6016,7 +6016,7 @@
       "source_slug": "injection-indirecte-prompt",
       "target_slug": "regle-de-deux-opa",
       "type": "attenuation_risque",
-      "label": "rompt la triade létale face à l'injection présumée",
+      "label": "Rompt la triade létale face à l'injection présumée",
       "justification": "Comme aucun détecteur n'élimine l'injection (EXIG-SEC-05), EXIG-SEC-04 et EXIG-SEC-06 cassent la triade létale de façon déterministe hors modèle.",
       "tomes": [
         "T2"
@@ -6026,7 +6026,7 @@
       "source_slug": "injection-indirecte-prompt",
       "target_slug": "confinement-shadi-sandbox",
       "type": "attenuation_risque",
-      "label": "confine l'exécution du code généré après lecture non fiable",
+      "label": "Confine l'exécution du code généré après lecture non fiable",
       "justification": "Une injection amenant l'agent à écrire du code est contenue par la microVM sans réseau ni secret et par la porte statique anti-`eval` (EXIG-SEC-08 à EXIG-SEC-17).",
       "tomes": [
         "T2"
@@ -6036,7 +6036,7 @@
       "source_slug": "regle-de-deux-opa",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "tension_arbitrage",
-      "label": "accroît le volume d'approbations après contamination",
+      "label": "Accroît le volume d'approbations après contamination",
       "justification": "La règle de deux bascule en approbation EXIG-AUT-12 tout appel [C] après lecture non fiable; la fiche doit donc dimensionner la charge et reconcevoir selon Tableau 39 si elle sature (EXIG-SEC-04).",
       "tomes": [
         "T2"
@@ -6046,7 +6046,7 @@
       "source_slug": "tool-poisoning-rug-pull",
       "target_slug": "epinglage-schemas-mcp",
       "type": "attenuation_risque",
-      "label": "bloque les substitutions de définitions par empreinte SHA-256",
+      "label": "Bloque les substitutions de définitions par empreinte SHA-256",
       "justification": "EXIG-MCP-20 et EXIG-SEC-18 calculent le SHA-256 JCS des outils à chaque `tools/list` et avant exécution pour neutraliser le rug pull.",
       "tomes": [
         "T2"
@@ -6056,7 +6056,7 @@
       "source_slug": "soc-soar-coupe-circuit",
       "target_slug": "banc-evalops-hermetique",
       "type": "amplification_synergie",
-      "label": "intègre la suite d'attaques adverses dans l'étage E2",
+      "label": "Intègre la suite d'attaques adverses dans l'étage E2",
       "justification": "La suite d'attaques automatisées fr/en de l'EXIG-SEC-24 constitue le volet adverse de l'étage E2 d'évaluation continue avec seuil fixé par risques et conformité.",
       "tomes": [
         "T2"
@@ -6066,7 +6066,7 @@
       "source_slug": "soc-soar-coupe-circuit",
       "target_slug": "incidents-agentiques-et-notification-multiregime",
       "type": "operationnalisation",
-      "label": "exécute la contention immédiate en temps 1 des incidents",
+      "label": "Exécute la contention immédiate en temps 1 des incidents",
       "justification": "En incident S1/S2, l'équipe de garde déclenche sans approbation préalable le coupe-circuit EXIG-IAM-20 tout en conservant les bacs à sable et le canal de compensation (EXIG-CON-23).",
       "tomes": [
         "T2"
@@ -6076,7 +6076,7 @@
       "source_slug": "observabilite-otel-genai",
       "target_slug": "double-couloir-probatoire-pii",
       "type": "encadrement_normatif",
-      "label": "sépare métadonnées OTel et contenu PII hors télémétrie",
+      "label": "Sépare métadonnées OTel et contenu PII hors télémétrie",
       "justification": "EXIG-OBS-01 à 06 rendent obligatoires les métadonnées GenAI tandis qu'EXIG-OBS-07 à 10 proscrivent tout texte brut d'invite ou RP dans les spans et le bagage.",
       "tomes": [
         "T2"
@@ -6086,7 +6086,7 @@
       "source_slug": "observabilite-otel-genai",
       "target_slug": "finops-focus-cpo",
       "type": "dependance_technique",
-      "label": "fournit jetons, modèle servi et `cost_center` pour le CPO",
+      "label": "Fournit jetons, modèle servi et `cost_center` pour le CPO",
       "justification": "L'imputation par centre de coûts et le coût par tâche réussie joignent les données FOCUS aux attributs `gen_ai.usage.*` et `ca.entreprise.cost_center` (EXIG-OBS-05, EXIG-FIN-09/10).",
       "tomes": [
         "T2"
@@ -6096,8 +6096,8 @@
       "source_slug": "double-couloir-probatoire-pii",
       "target_slug": "loi-25-article-12-1",
       "type": "operationnalisation",
-      "label": "alimente le dossier de décision art. 12.1 hors télémétrie",
-      "justification": "Le dossier de décision chiffré (EXIG-OBS-11) conserve ≥1 an les RP en entrée, résultats d'outils et facteurs déterministes exigés par l'art. 12.1 (EXIG-CON-09).",
+      "label": "Alimente le dossier de décision art. 12.1 hors télémétrie",
+      "justification": "Le dossier de décision chiffré (EXIG-OBS-11) conserve ≥ 1 an les RP en entrée, résultats d'outils et facteurs déterministes exigés par l'art. 12.1 (EXIG-CON-09).",
       "tomes": [
         "T2"
       ]
@@ -6106,7 +6106,7 @@
       "source_slug": "double-couloir-probatoire-pii",
       "target_slug": "scellage-jcs-scitt",
       "type": "operationnalisation",
-      "label": "scelle les enregistrements d'audit sans exposer le contenu",
+      "label": "Scelle les enregistrements d'audit sans exposer le contenu",
       "justification": "L'enregistrement d'audit à 5 éléments ne conserve que les empreintes SHA-256/HMAC des arguments et est chaîné et ancré selon EXIG-OBS-12.",
       "tomes": [
         "T2"
@@ -6116,7 +6116,7 @@
       "source_slug": "banc-evalops-hermetique",
       "target_slug": "registre-agents-cycle-de-vie-et-attestations",
       "type": "dependance_technique",
-      "label": "relance E1–E2 à chaque déclencheur de réévaluation",
+      "label": "Relance E1–E2 à chaque déclencheur de réévaluation",
       "justification": "EXIG-EVA-01 et EXIG-GOV-12 bloquent toute bascule de modèle ou changement significatif tant que les étages E1 et E2 ne sont pas franchis avec succès.",
       "tomes": [
         "T2"
@@ -6126,7 +6126,7 @@
       "source_slug": "banc-evalops-hermetique",
       "target_slug": "finops-focus-cpo",
       "type": "operationnalisation",
-      "label": "sélectionne le plus petit modèle suffisant sur jeu de référence",
+      "label": "Sélectionne le plus petit modèle suffisant sur jeu de référence",
       "justification": "EXIG-FIN-06 impose de retenir la configuration modèle atteignant les seuils E2 au plus faible coût par tâche réussie mesuré.",
       "tomes": [
         "T2"
@@ -6136,7 +6136,7 @@
       "source_slug": "finops-focus-cpo",
       "target_slug": "registre-agents-cycle-de-vie-et-attestations",
       "type": "encadrement_normatif",
-      "label": "déclenche la revue de valeur après 2 mois hors cible",
+      "label": "Déclenche la revue de valeur après 2 mois hors cible",
       "justification": "EXIG-FIN-10 soumet tout agent dépassant son coût cible 2 mois consécutifs à une revue de valeur statuant sur son maintien, sa reconception ou son retrait.",
       "tomes": [
         "T2"
@@ -6146,7 +6146,7 @@
       "source_slug": "classes-risque-agents-et-plafonds",
       "target_slug": "iso-iec-42001-nist",
       "type": "operationnalisation",
-      "label": "déclenche l'évaluation d'impact unifiée en classe élevée",
+      "label": "Déclenche l'évaluation d'impact unifiée en classe élevée",
       "justification": "Toute classification élevée impose l'EIU couvrant EFVP, AIDF art. 27, impact algorithmique et ISO/IEC 42005 avant le pilote (EXIG-CON-26).",
       "tomes": [
         "T2"
@@ -6156,7 +6156,7 @@
       "source_slug": "classes-risque-agents-et-plafonds",
       "target_slug": "ligne-directrice-amf",
       "type": "encadrement_normatif",
-      "label": "rompt la circularité entre classe et cote de modèle AMF",
+      "label": "Rompt la circularité entre classe et cote de modèle AMF",
       "justification": "EXIG-AMF-07 intègre la cote de risque de modèle, l'autonomie envisagée et la non-conformité dans une évaluation en un seul passage non récursif.",
       "tomes": [
         "T2"
@@ -6166,7 +6166,7 @@
       "source_slug": "efvp-transfert-hors-quebec",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "dependance_technique",
-      "label": "bloque techniquement les routes hors Québec non couvertes",
+      "label": "Bloque techniquement les routes hors Québec non couvertes",
       "justification": "EXIG-CON-05 oblige passerelle de modèles, passerelle d'agents et plan mémoire à refuser toute route vers l'extérieur du Québec dépourvue d'EFVP art. 17.",
       "tomes": [
         "T2"
@@ -6176,7 +6176,7 @@
       "source_slug": "efvp-transfert-hors-quebec",
       "target_slug": "clauses-contractuelles-normatives-app",
       "type": "operationnalisation",
-      "label": "constitue l'entente écrite art. 17 et encadre le CLOUD Act",
+      "label": "Constitue l'entente écrite art. 17 et encadre le CLOUD Act",
       "justification": "Les clauses 4, 5 et 6 (EXIG-APP-10..12) fournissent les engagements écrits art. 17/18.3 de la Loi sur le privé et les garanties anti-entraînement.",
       "tomes": [
         "T2"
@@ -6186,7 +6186,7 @@
       "source_slug": "loi-25-article-12-1",
       "target_slug": "avis-acvm-11-348",
       "type": "amplification_synergie",
-      "label": "cumule explicabilité client, dossier 7 ans et personne inscrite",
+      "label": "Cumule explicabilité client, dossier 7 ans et personne inscrite",
       "justification": "Dans les valeurs mobilières, EXIG-CON-27 ajoute la responsabilité non délégable d'une personne physique inscrite et la conservation 7 ans aux règles d'explicabilité.",
       "tomes": [
         "T2"
@@ -6196,7 +6196,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "registre-agents-cycle-de-vie-et-attestations",
       "type": "operationnalisation",
-      "label": "utilise le registre d'entreprise comme inventaire E-23",
+      "label": "Utilise le registre d'entreprise comme inventaire E-23",
       "justification": "EXIG-CON-12 ancre l'inventaire des modèles à risque non négligeable (échéance 1er mai 2027) directement dans le registre d'entreprise et les revues EXIG-GOV-12.",
       "tomes": [
         "T2"
@@ -6206,7 +6206,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "ligne-directrice-amf",
       "type": "concordance_inter_tomes",
-      "label": "pendant québécois AMF de l'arrimage fédéral E-23",
+      "label": "Pendant québécois AMF de l'arrimage fédéral E-23",
       "justification": "EXIG-AMF-05 et EXIG-AMF-06 constituent l'équivalent québécois d'EXIG-CON-12 pour le répertoire des modèles et la prise d'effet au 1er mai 2027.",
       "tomes": [
         "T2"
@@ -6216,7 +6216,7 @@
       "source_slug": "eu-ai-act",
       "target_slug": "clauses-contractuelles-normatives-app",
       "type": "operationnalisation",
-      "label": "impose l'accord écrit art. 25(4) avec les tiers",
+      "label": "Impose l'accord écrit art. 25(4) avec les tiers",
       "justification": "EXIG-CON-15 et la clause 9 (EXIG-APP-15) requièrent un accord écrit avec tout fournisseur de composants intégrés à un système à haut risque.",
       "tomes": [
         "T2"
@@ -6226,8 +6226,8 @@
       "source_slug": "eu-ai-act",
       "target_slug": "modele-maturite-5-niveaux-dimensions",
       "type": "projection_temporelle",
-      "label": "cale la conformité SMQ EN 18286 sur J2a et J3",
-      "justification": "La norme harmonisée EN 18286:2026 s'impose au jalon J2a (1er nov. 2027) avant l'entrée en vigueur de l'annexe III du RIA le 2 déc. 2027 (EXIG-CON-30).",
+      "label": "Cale la conformité SMQ EN 18286 sur J2a et J3",
+      "justification": "La norme harmonisée EN 18286:2026 s'impose au jalon J2a (1er novembre 2027) avant l'entrée en vigueur de l'annexe III du RIA le 2 décembre 2027 (EXIG-CON-30).",
       "tomes": [
         "T2"
       ]
@@ -6236,7 +6236,7 @@
       "source_slug": "iso-iec-42001-nist",
       "target_slug": "modele-maturite-5-niveaux-dimensions",
       "type": "concordance_inter_tomes",
-      "label": "arrime les niveaux 2 à 5 aux articles ISO 42001 et NIST",
+      "label": "Arrime les niveaux 2 à 5 aux articles ISO 42001 et NIST",
       "justification": "Le Tableau 57 relie le niveau 3 à la déclaration d'applicabilité, le niveau 4 à la préparation et le niveau 5 à la certification ISO/IEC 42001.",
       "tomes": [
         "T2"
@@ -6246,7 +6246,7 @@
       "source_slug": "iso-iec-42001-nist",
       "target_slug": "exigences-cre-ia-305",
       "type": "operationnalisation",
-      "label": "fédère les preuves des 305 EXIG-* dans un index unique",
+      "label": "Fédère les preuves des 305 EXIG-* dans un index unique",
       "justification": "EXIG-CON-18 et le Tableau 50 rattachent chaque preuve de la plateforme aux identifiants EXIG-* pour satisfaire simultanément Loi 25, BSIF, RIA, NIST et ISO 42001.",
       "tomes": [
         "T2"
@@ -6256,7 +6256,7 @@
       "source_slug": "criteres-evaluation-fournisseurs-grille",
       "target_slug": "clauses-contractuelles-normatives-app",
       "type": "dependance_technique",
-      "label": "conditionne l'admissibilité à l'acceptation des clauses DOIT",
+      "label": "Conditionne l'admissibilité à l'acceptation des clauses DOIT",
       "justification": "En vertu d'EXIG-APP-17, le refus de toute clause DOIT de la section 13.3 est un motif éliminatoire dans la grille Tableau 54.",
       "tomes": [
         "T2"
@@ -6266,7 +6266,7 @@
       "source_slug": "gouvernance-raci-modele-en-etoile",
       "target_slug": "registre-agents-cycle-de-vie-et-attestations",
       "type": "operationnalisation",
-      "label": "affecte les rôles R et A nommés sur chaque fiche",
+      "label": "Affecte les rôles R et A nommés sur chaque fiche",
       "justification": "EXIG-GOV-04 exige que chaque fiche au registre désigne nommément les titulaires R/A de la matrice RACI et leurs suppléants.",
       "tomes": [
         "T2"
@@ -6276,7 +6276,7 @@
       "source_slug": "registre-agents-cycle-de-vie-et-attestations",
       "target_slug": "regime-derogations-et-transition-cohorte",
       "type": "encadrement_normatif",
-      "label": "gère dérogations, quarantaines et cohorte transitoire",
+      "label": "Gère dérogations, quarantaines et cohorte transitoire",
       "justification": "Toute dérogation (≤6 mois), suspension administrative ou fiche minimale « existant inventorié » est consignée et déclenchée au registre (EXIG-GOV-09, EXIG-GOV-16).",
       "tomes": [
         "T2"
@@ -6286,7 +6286,7 @@
       "source_slug": "modele-maturite-5-niveaux-dimensions",
       "target_slug": "feuille-de-route-phases-90-jours-indicateurs",
       "type": "projection_temporelle",
-      "label": "conditionne l'ouverture des phases et niveaux d'autonomie",
+      "label": "Conditionne l'ouverture des phases et niveaux d'autonomie",
       "justification": "Les jalons J2 (maturité 2), J3 (maturité 3) et J4 (maturité 4) régissent la progression d'autonomie de N0/N1 jusqu'à N4 dans le Tableau 58.",
       "tomes": [
         "T2"
@@ -6296,7 +6296,7 @@
       "source_slug": "feuille-de-route-phases-90-jours-indicateurs",
       "target_slug": "protocole-mcp",
       "type": "projection_temporelle",
-      "label": "fixe l'échéance de migration MCP au 28 juillet 2027",
+      "label": "Fixe l'échéance de migration MCP au 28 juillet 2027",
       "justification": "EXIG-MCP-22 et le Tableau 59 placent l'abandon des révisions antérieures et des fonctions dépréciées de MCP en tête de la phase Plateforme (jalon J2).",
       "tomes": [
         "T2"
@@ -6306,8 +6306,8 @@
       "source_slug": "feuille-de-route-phases-90-jours-indicateurs",
       "target_slug": "bsif-e-23",
       "type": "projection_temporelle",
-      "label": "impose l'inventaire E-23 au 1er mai 2027 sans glissement",
-      "justification": "Les règles de progression de la section 15.1 traitent E-23 (1er mai 2027) et RIA annexe III (J2a, 1er nov. 2027) comme des échéances externes incompressibles.",
+      "label": "Impose l'inventaire E-23 au 1er mai 2027 sans glissement",
+      "justification": "Les règles de progression de la section 15.1 traitent E-23 (1er mai 2027) et RIA annexe III (J2a, 1er novembre 2027) comme des échéances externes incompressibles.",
       "tomes": [
         "T2"
       ]
@@ -6316,7 +6316,7 @@
       "source_slug": "portee-et-force-normative-cre-ia",
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
-      "label": "définit la force juridique RFC 2119 des 305 blocs",
+      "label": "Définit la force juridique RFC 2119 des 305 blocs",
       "justification": "La section 1.4 fixe la force des 255 DOIT, 34 NE DOIT PAS et 16 DEVRAIT ainsi que la liste exacte des tableaux et annexes à valeur normative.",
       "tomes": [
         "T2"
@@ -6326,7 +6326,7 @@
       "source_slug": "exigences-cre-ia-305",
       "target_slug": "grille-homologation-et-fiche-agent",
       "type": "operationnalisation",
-      "label": "projette les 305 exigences dans la grille d'homologation",
+      "label": "Projette les 305 exigences dans la grille d'homologation",
       "justification": "L'Annexe A regroupe les 305 exigences de l'Annexe D en points vérifiables et bloque tout passage en production hors conformité ou dérogation.",
       "tomes": [
         "T2"
@@ -6336,7 +6336,7 @@
       "source_slug": "grille-homologation-et-fiche-agent",
       "target_slug": "regime-derogations-et-transition-cohorte",
       "type": "encadrement_normatif",
-      "label": "projette point par point les interdits de EXIG-GOV-17",
+      "label": "Projette point par point les interdits de EXIG-GOV-17",
       "justification": "Les marques « non dérogeable » des sections A.2 à A.8 reflètent strictement la liste fermée d'EXIG-GOV-17 et les obligations légales.",
       "tomes": [
         "T2"
@@ -6346,7 +6346,7 @@
       "source_slug": "contrats-types-executes-ci-annexe-c",
       "target_slug": "scellage-jcs-scitt",
       "type": "operationnalisation",
-      "label": "démontre en CI la chaîne cryptographique JCS SHA-256",
+      "label": "Démontre en CI la chaîne cryptographique JCS SHA-256",
       "justification": "Les exemples C.1, C.2, C.6 et C.8 vérifient en CI le recalcul exact des empreintes RFC 8785 liant définition d'outil, jeton d'approbation et enregistrement d'audit.",
       "tomes": [
         "T2"
@@ -6356,7 +6356,7 @@
       "source_slug": "contrats-types-executes-ci-annexe-c",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "dependance_technique",
-      "label": "publie le schéma crypto-agile ES256/ML-DSA-65/ML-DSA-87",
+      "label": "Publie le schéma crypto-agile ES256/ML-DSA-65/ML-DSA-87",
       "justification": "Le schéma JSON Draft 2020-12 de l'Annexe C (`Borealis-Bench`) prépare la transition algorithmique des signatures sans rupture de format.",
       "tomes": [
         "T2"
@@ -6366,7 +6366,7 @@
       "source_slug": "glossaire-normatif-tome-2",
       "target_slug": "distinction-agent-flux-ambiant",
       "type": "concordance_inter_tomes",
-      "label": "aligne les définitions bilingues fr-CA/en sur le Tableau 7",
+      "label": "Aligne les définitions bilingues fr-CA/en sur le Tableau 7",
       "justification": "L'Annexe E unifie la terminologie et les équivalents anglais tout en subordonnant les entrées abrégées au Tableau 7 et au corps.",
       "tomes": [
         "T2"
@@ -6376,7 +6376,7 @@
       "source_slug": "audit-validation-sources-121-449",
       "target_slug": "clause-non-avis-licences",
       "type": "amplification_synergie",
-      "label": "fonde la crédibilité du cadre par le tri A/B/C et les avertissements",
+      "label": "Fonde la crédibilité du cadre par le tri A/B/C et les avertissements",
       "justification": "L'élimination des allégations commerciales et des sources de catégorie C garantit que chaque exigence s'appuie sur une source primaire/normative ou est marquée choix interne.",
       "tomes": [
         "T2"
@@ -6386,8 +6386,8 @@
       "source_slug": "actualisation-novembre-2026-unification-v1-2",
       "target_slug": "exigences-cre-ia-305",
       "type": "operationnalisation",
-      "label": "intègre 18 exigences et porte le registre de 287 à 305",
-      "justification": "La décision DC-P08 (v1.2, 19 nov. 2026) intègre les 12 EXIG-AMF, 2 EXIG-SEC PQC et 4 EXIG-CON sectorielles/EN 18286 dans le corps et l'Annexe D.",
+      "label": "Intègre 18 exigences et porte le registre de 287 à 305",
+      "justification": "La décision DC-P08 (v1.2, 19 novembre 2026) intègre les 12 EXIG-AMF, 2 EXIG-SEC PQC et 4 EXIG-CON sectorielles/EN 18286 dans le corps et l'Annexe D.",
       "tomes": [
         "T2"
       ]
@@ -6396,7 +6396,7 @@
       "source_slug": "actualisation-novembre-2026-unification-v1-2",
       "target_slug": "ligne-directrice-amf",
       "type": "operationnalisation",
-      "label": "absorbe les reports de la Note AMF IA en exigences normatives",
+      "label": "Absorbe les reports de la Note AMF IA en exigences normatives",
       "justification": "Ce que le Tableau 71 de l'Annexe H présentait comme reports en attente de la Note AMF IA devient normatif en section 12.10 dans la version 1.2.",
       "tomes": [
         "T2"
@@ -6406,7 +6406,7 @@
       "source_slug": "actualisation-novembre-2026-unification-v1-2",
       "target_slug": "tampon-deterministe-rtr-iso20022",
       "type": "operationnalisation",
-      "label": "corrige l'omission RTR du 9 novembre 2026 par EXIG-CON-29",
+      "label": "Corrige l'omission RTR du 9 novembre 2026 par EXIG-CON-29",
       "justification": "L'erratum inter-livrables consigné en section H.5 sur la mise en production du RTR se matérialise par l'ajout normatif d'EXIG-CON-29 en v1.2.",
       "tomes": [
         "T2"

@@ -59,13 +59,26 @@ def _check(condition: bool, message: str) -> None:
 
 
 def _clean_text(value: Any) -> str:
-    """Supprime ``\\$``, normalise les plages ``Lxxx–Lyyy`` et convertit les flèches hors code."""
+    """Supprime ``\\$``, normalise plages ``Lxxx–Lyyy``, flèches, comparateurs et « Systèmes d'agentivité » hors code."""
     s = str(value or "").replace(r"\$", "$").strip()
     s = re.sub(r"\bL([1-9]\d*)-L?([1-9]\d*)\b", r"L\1–L\2", s)
-    parts = s.split("`")
-    for idx in range(0, len(parts), 2):
-        parts[idx] = parts[idx].replace("<->", "↔").replace("->", "→")
-    return "`".join(parts)
+
+    def _clean_outside_code(seg: str) -> str:
+        chunks = re.split(r"(<code\b[^>]*>.*?</code>)", seg, flags=re.IGNORECASE | re.DOTALL)
+        for idx in range(0, len(chunks), 2):
+            part = chunks[idx]
+            part = part.replace("<->", "↔").replace("->", "→")
+            part = (
+                part.replace("Systems of Agency", "Systèmes d'agentivité")
+                .replace("System of Agency", "Système d'agentivité")
+                .replace("systems of agency", "systèmes d'agentivité")
+            )
+            part = re.sub(r"(?<![<>=])<=(?!=)", "≤", part)
+            part = re.sub(r"(?<![<>=])>=(?!=)", "≥", part)
+            chunks[idx] = part
+        return "".join(chunks)
+
+    return cp.cm.map_outside_inline_code(s, _clean_outside_code)
 
 
 def _clean_nested_strings(obj: Any, skip_keys: set[str] | None = None) -> Any:

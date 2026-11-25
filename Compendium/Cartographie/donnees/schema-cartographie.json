@@ -97,10 +97,10 @@
       "domain_id": "D01",
       "order": 1,
       "title": "Fondements épistémiques, économiques et rupture agentique",
-      "summary": "Passage des copilotes passifs aux Systems of Agency, loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k vs pass@1, coûts de transaction cognitifs de Coase et dette cognitive vs dette technique.",
+      "summary": "Passage des copilotes passifs aux Systèmes d'agentivité, loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique.",
       "color": "#2563eb",
       "subdomains_canonical": [
-        "Rupture épistémique et Systems of Agency",
+        "Rupture épistémique et Systèmes d'agentivité",
         "Fiabilité probabiliste et loi de Lusser",
         "Économie de Coase et dettes agentiques"
       ],
@@ -118,7 +118,7 @@
       "domain_id": "D02",
       "order": 2,
       "title": "Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)",
-      "summary": "Séparation entre exosquelette déterministe (80 %) et nœuds cognitifs (20 %), échelle L0–L4 et règle du maillon le plus élevé, supervision HITL/HOTL et abstention, harnais déterministe à 8 étapes sous JSON Schema strict, modélisation TOGAF/ArchiMate, 4 plans/6 couches/DIV-02, noyau de contrôle possédé (42 CAP invariantes vs 10 conditionnelles) et arbitrage Acheter/Assembler/Construire.",
+      "summary": "Séparation entre exosquelette déterministe (80 %) et nœuds cognitifs (20 %), échelle L0–L4 et règle du maillon le plus élevé, supervision HITL/HOTL et abstention, harnais déterministe à 8 étapes sous JSON Schema strict, modélisation TOGAF/ArchiMate, 4 plans, 6 couches et DIV-02, noyau de contrôle possédé (42 CAP invariantes et 10 conditionnelles) et arbitrage entre achat, assemblage et construction.",
       "color": "#0284c7",
       "subdomains_canonical": [
         "Partition hybride 80/20 et harnais déterministe",
@@ -164,7 +164,7 @@
       "domain_id": "D04",
       "order": 4,
       "title": "Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)",
-      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à 4 tiroirs isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
+      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments mémoriels isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
       "color": "#059669",
       "subdomains_canonical": [
         "Sémantique métier, ontologies et compilation de contexte",
@@ -227,7 +227,7 @@
       "domain_id": "D07",
       "order": 7,
       "title": "Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC",
-      "summary": "Asymétrie capacité/sûreté, injection indirecte de consignes, tool poisoning et dérive silencieuse (rug pull), confusion de député et kill chain multi-agents (OWASP ASI01–ASI10), politiques déterministes hors modèle OPA/Rego (default allow := false), Règle de deux et séparation contrôle/données CaMeL, confinement sans réseau sortant (SHADI/microVM/WASI), TEE, SOC/SOAR, coupe-circuit (< 10 s) et Red Team.",
+      "summary": "Asymétrie capacité/sûreté, injection indirecte de consignes, tool poisoning et dérive silencieuse (rug pull), mandataire confus et kill chain multi-agents (OWASP ASI01–ASI10), politiques déterministes hors modèle OPA/Rego (default allow := false), Règle de deux et séparation contrôle/données CaMeL, confinement sans réseau sortant (SHADI/microVM/WASI), TEE, SOC/SOAR, coupe-circuit (< 10 s) et Red Team.",
       "color": "#dc2626",
       "subdomains_canonical": [
         "Menaces agentiques et surface d'attaque protocolaire",
@@ -248,7 +248,7 @@
       "domain_id": "D08",
       "order": 8,
       "title": "Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme",
-      "summary": "Télémétrie OpenTelemetry GenAI sans contenu brut, double couloir probatoire (métadonnées caviardées PII/RP vs voûte d'audit scellée JCS RFC 8785, SCITT RFC 9943 et SLH-DSA), banc EvalOps hermétique à 3 paliers E1–E3, constance pass^k, bornes statistiques de Wilson (>= 3/p), tests métamorphiques bilingues FR/EN, SRE/budgets d'erreur, et FinOps FOCUS v1.4 piloté par le coût complet par résultat conforme (CPO) et la cascade SLM/LLM.",
+      "summary": "Télémétrie OpenTelemetry GenAI sans contenu brut, double couloir probatoire (métadonnées caviardées PII/RP par opposition à la voûte d'audit scellée JCS RFC 8785, SCITT RFC 9943 et SLH-DSA), banc EvalOps hermétique à 3 paliers E1–E3, constance pass^k, bornes statistiques de Wilson (≥ 3/p), tests métamorphiques bilingues FR/EN, SRE et budgets d'erreur, ainsi que FinOps FOCUS v1.4 piloté par le coût complet par résultat conforme (CPO) et la cascade SLM/LLM.",
       "color": "#ea580c",
       "subdomains_canonical": [
         "Observabilité OTel GenAI et double couloir probatoire",
@@ -290,7 +290,7 @@
       "domain_id": "D10",
       "order": 10,
       "title": "Architectures sectorielles, blueprints et cas métier",
-      "summary": "Déclinaison des 5 profils financiers (Banque, Gestion de patrimoine, Assurance de personnes, Assurance de dommages, Groupe financier diversifié) et 24 PEX, 3 blueprints multisectoriels/fédérés de référence (couvrant C01–C40 et 5 SBB), cas fil rouge Groupe Boréal Inc. (BEL : SAP S/4HANA, WMS, SOX — balisé illustratif/fictif), usine GitOps et 12 anti-patrons agentiques.",
+      "summary": "Déclinaison des 5 profils financiers (Banque, Gestion de patrimoine, Assurance de personnes, Assurance de dommages, Groupe financier diversifié) et 24 PEX, 3 blueprints multisectoriels et fédérés de référence (couvrant C01–C40 et 5 SBB), cas fil rouge Groupe Boréal Inc. (BEL : SAP S/4HANA, WMS, SOX — balisé comme illustratif et fictif), usine GitOps et 12 anti-patrons agentiques.",
       "color": "#db2777",
       "subdomains_canonical": [
         "Cinq profils financiers réglementés et 24 PEX",
@@ -309,7 +309,7 @@
       "domain_id": "D11",
       "order": 11,
       "title": "Prospective 2028–2035, trajectoires DAPP et capital humain",
-      "summary": "Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret vs conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90j/180j/18m et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE ↔ AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines/vivier junior et contraintes énergétiques/marché.",
+      "summary": "Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret et conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90 jours / 180 jours / 18 mois et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE ↔ AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines et du vivier junior, et contraintes énergétiques et de marché.",
       "color": "#4f46e5",
       "subdomains_canonical": [
         "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
@@ -394,7 +394,7 @@
     {
       "type_id": "tension_arbitrage",
       "label": "Tension d'arbitrage",
-      "description": "Deux objectifs, contraintes ou propriétés architecturales entrent en compromis (ex. sécurité vs utilité, latence vs preuve, autonomie vs vigilance).",
+      "description": "Deux objectifs, contraintes ou propriétés architecturales entrent en compromis (par exemple sécurité et utilité, latence et preuve, autonomie et vigilance).",
       "directionality": "bidirectional_semantic",
       "color": "#dc2626",
       "dash_pattern": "dashed",

@@ -34,12 +34,12 @@ SLUG_MERGE_MAP: dict[str, str] = {
 SUBDOMAIN_OVERRIDE: dict[tuple[str, str], str] = {
     # D01
     ("D01", "Économie de l'interopérabilité"): "Économie de Coase et dettes agentiques",
-    ("D01", "Fondements des systèmes agentiques"): "Rupture épistémique et Systems of Agency",
+    ("D01", "Fondements des systèmes agentiques"): "Rupture épistémique et Systèmes d'agentivité",
     ("D01", "Fiabilité probabiliste"): "Fiabilité probabiliste et loi de Lusser",
-    ("D01", "Raisonnement et planification"): "Rupture épistémique et Systems of Agency",
+    ("D01", "Raisonnement et planification"): "Rupture épistémique et Systèmes d'agentivité",
     ("D01", "Économie de l'inférence"): "Économie de Coase et dettes agentiques",
     ("D01", "Systèmes multi-agents"): "Fiabilité probabiliste et loi de Lusser",
-    ("D01", "Épistémologie des échanges"): "Rupture épistémique et Systems of Agency",
+    ("D01", "Épistémologie des échanges"): "Rupture épistémique et Systèmes d'agentivité",
     # D02
     ("D02", "Échelles d'autonomie"): "Échelle d'autonomie L0–L4 et supervision humaine",
     ("D02", "Supervision et contrôle humain"): "Échelle d'autonomie L0–L4 et supervision humaine",
@@ -109,8 +109,8 @@ SUBDOMAIN_OVERRIDE: dict[tuple[str, str], str] = {
 # Règles de regroupement propre des familles (Niveau 3) par (domain_id, subdomain)
 # Chaque entrée : (nom_famille_canonique, mots_cles) ; la dernière entrée du sous-domaine sert de repli.
 FAMILY_RULES: dict[tuple[str, str], list[tuple[str, list[str]]]] = {
-    ("D01", "Rupture épistémique et Systems of Agency"): [
-        ("Paradigme Systems of Agency", ["systems-of-agency", "rupture", "boucle", "taxonomie", "map", "adoption", "intentions"]),
+    ("D01", "Rupture épistémique et Systèmes d'agentivité"): [
+        ("Paradigme des Systèmes d'agentivité", ["systems-of-agency", "systemes-d-agentivite", "rupture", "boucle", "taxonomie", "map", "adoption", "intentions"]),
         ("Généalogie et fondements", []),
     ],
     ("D01", "Fiabilité probabiliste et loi de Lusser"): [
@@ -150,7 +150,7 @@ FAMILY_RULES: dict[tuple[str, str], list[tuple[str, list[str]]]] = {
         ("Compilation de contexte et RAG agentique", []),
     ],
     ("D04", "Mémoire CoALA, bi-temporalité et filtrage ACL"): [
-        ("Architecture mémorielle CoALA à 4 tiroirs", ["coala", "memoire"]),
+        ("Architecture mémorielle CoALA à quatre compartiments", ["coala", "memoire"]),
         ("Filtrage ACL amont et gouvernance RAG", []),
     ],
     ("D04", "Encapsulation patrimoniale, IT/OT et 6 substrats"): [
@@ -384,7 +384,7 @@ SPECIALIZED_NODES_SPEC: list[dict[str, Any]] = [
         "domain_id": "D07",
         "subdomain": "Politiques hors modèle OPA/Rego, Règle de deux et CaMeL",
         "title": "Séparation contrôle/données CaMeL et propagation de teinte inter-agents",
-        "summary": "Architecture CaMeL isolant le graphe d'appels fiable des variables de données non approuvées et propageant les étiquettes de contamination entre agents (EXIG-SEC-07, PRR S-08, compromis utilité 77 % vs 84 %).",
+        "summary": "Architecture CaMeL isolant le graphe d'appels fiable des variables de données non approuvées et propageant les étiquettes de contamination entre agents (EXIG-SEC-07, PRR S-08, compromis d'utilité de 77 % contre 84 %).",
         "autonomy_levels": ["L1", "L2", "L3"],
         "roles": ["AS", "RSSI"],
         "horizon": "2026–2035",
@@ -399,7 +399,7 @@ SPECIALIZED_NODES_SPEC: list[dict[str, Any]] = [
         "domain_id": "D08",
         "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
         "title": "Caviardage PII/RP bilingue FR/EN sans contenu brut en télémétrie",
-        "summary": "Processeur de filtrage OTel supprimant les invites brutes, réponses d'outils et renseignements personnels avant export opérationnel (EXIG-OBS-07, EXIG-OBS-09, PRR O-02, diagnostic <= 14 jours).",
+        "summary": "Processeur de filtrage OTel supprimant les invites brutes, réponses d'outils et renseignements personnels avant export opérationnel (EXIG-OBS-07, EXIG-OBS-09, PRR O-02, diagnostic ≤ 14 jours).",
         "autonomy_levels": ["L0", "L1", "L2", "L3", "L4"],
         "roles": ["AS", "RSSI", "SRE", "Juridique"],
         "horizon": "2026–2035",
@@ -429,7 +429,7 @@ SPECIALIZED_NODES_SPEC: list[dict[str, Any]] = [
         "domain_id": "D08",
         "subdomain": "Banc EvalOps hermétique E1–E3, Wilson et métamorphique",
         "title": "Tests métamorphiques sans oracle et invariance bilingue FR/EN (EXIG-SEC-24)",
-        "summary": "Quatre relations métamorphiques (permutation d'outils, invariance injection FR/EN, monotonie budgétaire Decimal, paraphrase avec divulgation non-avis) testées sur >= 100 scénarios ASI01–ASI10 au Tome 8.",
+        "summary": "Quatre relations métamorphiques (permutation d'outils, invariance injection FR/EN, monotonie budgétaire Decimal, paraphrase avec divulgation non-avis) testées sur ≥ 100 scénarios ASI01–ASI10 au Tome 8.",
         "autonomy_levels": ["L1", "L2", "L3", "L4"],
         "roles": ["AS", "SRE", "RSSI"],
         "horizon": "2026–2035",
@@ -654,7 +654,7 @@ SPECIALIZED_NODES_SPEC: list[dict[str, Any]] = [
         "domain_id": "D12",
         "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
         "title": "Résolution des cinq discordances inter-volumes (DISC-01 à DISC-05, Tome 8 §0.2)",
-        "summary": "Table canonique de passage levant les cinq divergences entre Tomes 1–7 : L0–L4 déterministe vs lecture IA (DISC-01), 3 criticités et P0–P3 (DISC-02), Plans A/B/C et 4 modules (DISC-03), neutralité ArchiMate 3.2/4.0 (DISC-04) et épinglage MCP 2026-07-28 (DISC-05).",
+        "summary": "Table canonique de passage levant les cinq divergences entre Tomes 1–7 : L0–L4 déterministe plutôt que lecture assistée par IA (DISC-01), 3 criticités et P0–P3 (DISC-02), Plans A/B/C et 4 modules (DISC-03), neutralité ArchiMate 3.2/4.0 (DISC-04) et épinglage MCP 2026-07-28 (DISC-05).",
         "autonomy_levels": ["L0", "L1", "L2", "L3", "L4"],
         "roles": ["AE", "AS", "SRE"],
         "horizon": "2026–2035",
@@ -813,7 +813,7 @@ CURATED_UNIT_METADATA: dict[str, dict[str, Any]] = {
         ],
         "replace_themes": False,
         "summary": "Six annexes instrumentales du Tome 5 (A à F) : tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-*, catalogue de poche des décisions AE/AS, grille unifiée d'homologation, guide d'orientation vers les tomes sources, glossaire de 385 sigles et bibliographie primaire sélective (70 sources).",
-        "key_terms": ["Annexes A–F", "pont CAP/PEX -> EXIG-*", "glossaire 385 entrées", "AE/AS", "DIV-02"],
+        "key_terms": ["Annexes A–F", "pont CAP/PEX vers EXIG-*", "glossaire 385 entrées", "AE/AS", "DIV-02"],
     },
     "t6-u0004": {
         "themes": [
@@ -850,7 +850,7 @@ CURATED_UNIT_METADATA: dict[str, dict[str, Any]] = {
             "blueprints-reference-multisectoriels",
         ],
         "replace_themes": True,
-        "summary": "Résumé exécutif destiné à l'architecture de solutions (AS) : mise en œuvre du harnais déterministe 80/20 en huit étapes, médiation MCP et A2A, mémoire CoALA à quatre tiroirs, exécution durable et compensation Saga avant d'instancier les trois blueprints multisectoriels.",
+        "summary": "Résumé exécutif destiné à l'architecture de solutions (AS) : mise en œuvre du harnais déterministe 80/20 en huit étapes, médiation MCP et A2A, mémoire CoALA à quatre compartiments, exécution durable et compensation Saga avant d'instancier les trois blueprints multisectoriels.",
         "key_terms": ["AS", "harnais 8 étapes", "MCP", "A2A", "CoALA", "Saga", "blueprints"],
     },
     "t6-u0007": {
@@ -876,8 +876,8 @@ CURATED_UNIT_METADATA: dict[str, dict[str, Any]] = {
             "eu-ai-act",
         ],
         "replace_themes": True,
-        "summary": "Analyse le basculement des systèmes d'enregistrement vers les systems of agency et le tissu conjonctif inter-agent (MCP, A2A, AGNTCY, NANDA), et montre pourquoi la souveraineté exige de reprendre la propriété de la couche de contrôle sous contrainte BSIF E-23, NIST et EU AI Act.",
-        "key_terms": ["systems of agency", "MCP", "A2A", "AGNTCY", "NANDA", "souveraineté", "BSIF E-23"],
+        "summary": "Analyse le basculement des systèmes d'enregistrement vers les systèmes d'agentivité et le tissu conjonctif inter-agents (MCP, A2A, AGNTCY, NANDA), et démontre pourquoi la souveraineté exige de reprendre la propriété de la couche de contrôle sous contrainte BSIF E-23, NIST et EU AI Act.",
+        "key_terms": ["systèmes d'agentivité", "MCP", "A2A", "AGNTCY", "NANDA", "souveraineté", "BSIF E-23"],
     },
     "t7-u0003": {
         "themes": [
@@ -1657,7 +1657,7 @@ def synthesize_graph(repo_root: Path) -> dict[str, Any]:
                 "subdomain": sub_title,
                 "family": None,
                 "title": sub_title,
-                "summary": f"Sous-domaine de {did} : {sub_title}.",
+                "summary": f"Sous-domaine de {did} consacré à : {sub_title}.",
                 "autonomy_levels": [],
                 "roles": [],
                 "horizons": [],
@@ -1687,6 +1687,7 @@ def synthesize_graph(repo_root: Path) -> dict[str, Any]:
                     themes_by_dom_sub_fam[(did, sub_title, fam_title)],
                     key=lambda x: (-x["occurrence_count"], x["title"]),
                 )
+                nb_fam_themes = len(fam_themes)
                 fam_node = {
                     "node_id": fam_nid,
                     "canonical_slug": f"famille-{did.lower()}-{sub_idx:02d}-{fam_idx:02d}",
@@ -1698,7 +1699,7 @@ def synthesize_graph(repo_root: Path) -> dict[str, Any]:
                     "subdomain": sub_title,
                     "family": fam_title,
                     "title": fam_title,
-                    "summary": f"Famille thématique ({len(fam_themes)} thèmes) dans « {sub_title} ».",
+                    "summary": f"Famille thématique regroupant {nb_fam_themes} thème{'s' if nb_fam_themes > 1 else ''} au sein du sous-domaine « {sub_title} ».",
                     "autonomy_levels": sorted(dedup_preserve([a for t in fam_themes for a in t["autonomy_levels"]])),
                     "roles": dedup_preserve([r for t in fam_themes for r in t["roles"]]),
                     "horizons": dedup_preserve([normalize_horizon(h) for t in fam_themes for h in t["horizons"]]),

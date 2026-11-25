@@ -17,7 +17,7 @@
       "chapter_title": "Chapitre 29 — Identité agentique",
       "line_start": 15229,
       "line_end": 15525,
-      "summary": "Distingue l'identité d'agent des comptes humains et applicatifs : parrainage obligatoire, séparation annuaire vs registre, attestation SPIFFE sans secret déployé, échange RFC 8693 (`client_id`/`sub`/`act`), preuve de possession DPoP/mTLS, chaînage inter-organisations, ID-JAG, WIMSE AIMS et DID.",
+      "summary": "Distingue l'identité d'agent des comptes humains et applicatifs : parrainage obligatoire, séparation annuaire par rapport à registre, attestation SPIFFE sans secret déployé, échange RFC 8693 (`client_id`/`sub`/`act`), preuve de possession DPoP/mTLS, chaînage inter-organisations, ID-JAG, WIMSE AIMS et DID.",
       "primary_domain": "D06",
       "secondary_domains": [
         "D03",
@@ -314,7 +314,7 @@
       "chapter_title": "Chapitre 36 — Responsabilité",
       "line_start": 19386,
       "line_end": 19610,
-      "summary": "Analyse l'imputabilité juridique (absence de personnalité, art. 1714.46 Californie, *Moffatt c. Air Canada*), l'écart autorité réelle vs apparente, la formation des contrats (E-SIGN, UETA, loi type CNUDCI), la directive produits (UE) 2024/2853, les exclusions d'assurance Verisk/ISO et les clauses contractuelles à négocier.",
+      "summary": "Analyse l'imputabilité juridique (absence de personnalité, art. 1714.46 Californie, *Moffatt c. Air Canada*), l'écart autorité réelle par rapport à apparente, la formation des contrats (E-SIGN, UETA, loi type CNUDCI), la directive produits (UE) 2024/2853, les exclusions d'assurance Verisk/ISO et les clauses contractuelles à négocier.",
       "primary_domain": "D09",
       "secondary_domains": [
         "D03",
@@ -349,7 +349,7 @@
       "chapter_title": "Chapitre 37 — Souveraineté",
       "line_start": 19611,
       "line_end": 19784,
-      "summary": "Distingue résidence et contrôle juridictionnel (CLOUD Act vs Data Act art. 32), présente le Cloud Sovereignty Framework (SEAL), SecNumCloud, EUCS et la proposition Cloud and AI Development Act, puis évalue Gaia-X, le Rulebook IDSA 2026-1 (DSP/DCP/EDC) et l'extension vers les espaces d'agents.",
+      "summary": "Distingue résidence et contrôle juridictionnel (CLOUD Act par rapport à Data Act art. 32), présente le Cloud Sovereignty Framework (SEAL), SecNumCloud, EUCS et la proposition Cloud and AI Development Act, puis évalue Gaia-X, le Rulebook IDSA 2026-1 (DSP/DCP/EDC) et l'extension vers les espaces d'agents.",
       "primary_domain": "D09",
       "secondary_domains": [
         "D03",
@@ -440,7 +440,7 @@
       "chapter_title": "Chapitre 39 — Gouvernance interne",
       "line_start": 20428,
       "line_end": 20683,
-      "summary": "Structure la gouvernance interne opérationnelle : inventaire unifié agrégeant les registres partiels, cycle de vie à six portes (qualification au retrait), imputabilité (propriétaire d'affaires vs technique, départ du responsable), instances décisionnelles proportionnées, politiques exécutées aux PEP et audit interne en trois lignes IIA.",
+      "summary": "Structure la gouvernance interne opérationnelle : inventaire unifié agrégeant les registres partiels, cycle de vie à six portes (qualification au retrait), imputabilité (propriétaire d'affaires par rapport à technique, départ du responsable), instances décisionnelles proportionnées, politiques exécutées aux PEP et audit interne en trois lignes IIA.",
       "primary_domain": "D09",
       "secondary_domains": [
         "D06",
@@ -516,7 +516,7 @@
       "chapter_title": "Chapitre 41 — Modèle opérationnel",
       "line_start": 21344,
       "line_end": 21950,
-      "summary": "Conçoit l'organisation agentique : recherche sur la complémentarité humain-IA et l'atrophie des compétences, architecture Hub-and-Spoke (CoE + propriétaires nominatifs couplés au SIRH sous 72 h), ergonomie cognitive HOTL (<= 33 dossiers/quart, forçage cognitif, canaris ASI09), horizons 2028–2030 et bilan 12 mois Boréal (ADR-025).",
+      "summary": "Conçoit l'organisation agentique : recherche sur la complémentarité humain-IA et l'atrophie des compétences, architecture Hub-and-Spoke (CoE + propriétaires nominatifs couplés au SIRH sous 72 h), ergonomie cognitive HOTL (≤ 33 dossiers/quart, forçage cognitif, canaris ASI09), horizons 2028–2030 et bilan 12 mois Boréal (ADR-025).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D02",
@@ -914,7 +914,7 @@
       "chapter_title": "Chapitre 50 — Projection 2027-2030 et étude de marché",
       "line_start": 27130,
       "line_end": 27593,
-      "summary": "Délimite le marché en 6 périmètres emboîtés, confronte 16 séries d'analystes (enveloppe 25–55 G$ US en 2030 vs périmètre large Gartner), analyse l'offre éditeurs et les 720–740 G$ US d'infrastructure, recoupe la demande (Statistique Canada 19,2 %, retard gouvernance 21 %) et projette 2027–2030 selon trois degrés de certitude.",
+      "summary": "Délimite le marché en 6 périmètres emboîtés, confronte 16 séries d'analystes (enveloppe 25–55 G$ US en 2030 par rapport à périmètre large Gartner), analyse l'offre éditeurs et les 720–740 G$ US d'infrastructure, recoupe la demande (Statistique Canada 19,2 %, retard gouvernance 21 %) et projette 2027–2030 selon trois degrés de certitude.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D08",
@@ -1056,7 +1056,7 @@
       "chapter_title": "Annexe D — Chronologie 2024-2028",
       "line_start": 28044,
       "line_end": 28150,
-      "summary": "Trace la chronologie vérifiée 2024–2028 du regroupement protocolaire (MCP, A2A/ACP, AAIF, AGNTCY), des brouillons d'identité IETF et de la montée réglementaire jusqu'aux échéances fermes de 2027–2028 (BSIF E-23 / AMF 1er mai 2027, EU AI Act Annexe III déc. 2027 / Annexe I août 2028).",
+      "summary": "Trace la chronologie vérifiée 2024–2028 du regroupement protocolaire (MCP, A2A/ACP, AAIF, AGNTCY), des brouillons d'identité IETF et de la montée réglementaire jusqu'aux échéances fermes de 2027–2028 (BSIF E-23 / AMF 1er mai 2027, EU AI Act Annexe III décembre 2027 / Annexe I août 2028).",
       "primary_domain": "D12",
       "secondary_domains": [
         "D03",
@@ -1237,7 +1237,7 @@
       "local_id": "t3b-001",
       "canonical_slug": "systems-of-agency",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Paradigme opérationnel",
       "title": "Systèmes d'action agentiques et séparation état/décision",
       "summary": "Transition des assistants conversationnels vers des systèmes d'action bornés qui planifient, invoquent des outils typés et opèrent sur des référentiels d'entreprise sans écriture SQL directe, tout en demeurant sous responsabilité humaine.",
@@ -1309,8 +1309,8 @@
       "domain_id": "D01",
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Métriques de constance",
-      "title": "Métrique de constance pass^k vs pass@k et intervalle de Wilson",
-      "summary": "Distinction critique entre pass@k (au moins un succès sur k essais) et pass^k (réussite simultanée de k trajectoires indépendantes), assortie de la borne inférieure de Wilson à 95 % comme porte bloquante CI/CD (pass^5 >= 0,95 à 0,97).",
+      "title": "Métrique de constance pass^k par rapport à pass@k et intervalle de Wilson",
+      "summary": "Distinction critique entre pass@k (au moins un succès sur k essais) et pass^k (réussite simultanée de k trajectoires indépendantes), assortie de la borne inférieure de Wilson à 95 % comme porte bloquante CI/CD (pass^5 ≥ 0,95 à 0,97).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -1557,7 +1557,7 @@
       "local_id": "t3b-006",
       "canonical_slug": "revue-litterature-mlr-prisma",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Revue multivocale systématique",
       "title": "Revue multivocale PRISMA-ScR / Garousi (MLR W3.2) sur textes intégraux OA",
       "summary": "Synthèse scientifique consolidée (453 notices 2023–2026 dont 67,11 % évaluées par les pairs; 223 textes intégraux OA hachés SHA-256; 160 études incluses après double filtrage κ = 0,7935, 0 % sur résumé seul) structurée sur RQ1–RQ4.",
@@ -1633,7 +1633,7 @@
       "local_id": "t3b-007",
       "canonical_slug": "hierarchie-preuves-etudes-cas",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Hiérarchie probante",
       "title": "Hiérarchie des preuves (6 niveaux) et bilan empirique des études de cas",
       "summary": "Classement critique des cas (Nubank KDD 2026 au niveau 1, étude MAP au niveau 2, ServiceNow au niveau 3, bancs SEC/ITBench/ORCA-bench au niveau 4, registre québécois MCN 432 initiatives au niveau 5) confirmant des agents étroits subordonnés à l'infrastructure et à l'évaluation.",
@@ -1727,7 +1727,7 @@
       "subdomain": "Économie de Coase et dettes agentiques",
       "family": "Structure de marché et adoption",
       "title": "Dispersion des estimations de marché (2025–2030) et adoption réelle",
-      "summary": "Délimitation en six périmètres emboîtés, analyse critique de 16 séries d'analystes (25–55 G$ US en 2030 vs lignes larges Gartner), dépenses capex des hyperscalers (720–740 G$ US en 2026) et écart d'adoption mesuré (Statistique Canada 19,2 %, gouvernance mûre à 21 %).",
+      "summary": "Délimitation en six périmètres emboîtés, analyse critique de 16 séries d'analystes (25–55 G$ US en 2030 face aux périmètres larges de Gartner), dépenses capex des hyperscalers (720–740 G$ US en 2026) et écart d'adoption mesuré (Statistique Canada 19,2 %, gouvernance mûre à 21 %).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -2024,7 +2024,7 @@
       "subdomain": "Échelle d'autonomie L0–L4 et supervision humaine",
       "family": "Ergonomie cognitive HOTL",
       "title": "Supervision HITL/HOTL instrumentée, forçage cognitif et prévention ASI09",
-      "summary": "Conception de la console différentielle A2UI sans prose persuasive, fonction de forçage cognitif, plafond de charge cognitive (<= 33 dossiers complexes/quart), détection du Mackworth Decrement et injection de 3–5 % de tests canaris contre le théâtre HITL (ASI09).",
+      "summary": "Conception de la console différentielle A2UI sans prose persuasive, fonction de forçage cognitif, plafond de charge cognitive (≤ 33 dossiers complexes/quart), détection du Mackworth Decrement et injection de 3–5 % de tests canaris contre le théâtre HITL (ASI09).",
       "autonomy_levels": [
         "L2",
         "L3"
@@ -2244,7 +2244,7 @@
       "subdomain": "Partition hybride 80/20 et harnais déterministe",
       "family": "Agentic SDLC et modernisation",
       "title": "Usine logicielle agentique (AST/SCIP), séparation des devoirs et Figuier étrangleur",
-      "summary": "Séparation stricte entre agent spécificateur/oracle et agent bâtisseur isolé, indexation exacte AST/SCIP/LSP, tests par propriétés et de mutation (cible >= 85 %), et modernisation RPG/COBOL via oracle Golden Master (10k–100k cas) et exécution en miroir sans écart.",
+      "summary": "Séparation stricte entre agent spécificateur/oracle et agent bâtisseur isolé, indexation exacte AST/SCIP/LSP, tests par propriétés et de mutation (cible ≥ 85 %), et modernisation RPG/COBOL via oracle Golden Master (10k–100k cas) et exécution en miroir sans écart.",
       "autonomy_levels": [
         "L2",
         "L3"
@@ -3188,7 +3188,7 @@
       "subdomain": "Sémantique métier, ontologies et compilation de contexte",
       "family": "Couche sémantique et dérive",
       "title": "Couche sémantique (Apache Ossie en incubation) et prévention de la dérive silencieuse",
-      "summary": "Ancrage des définitions métiers, unités physiques et transitions d'états légales sous Apache Ossie (`0.1.1` en incubation avec réserve de prudence) pour prévenir les ruptures sémantiques silencieuses (bar vs kPa, redéfinition de statuts CRM).",
+      "summary": "Ancrage des définitions métiers, unités physiques et transitions d'états légales sous Apache Ossie (`0.1.1` en incubation avec réserve de prudence) pour prévenir les ruptures sémantiques silencieuses (bar par rapport à kPa, redéfinition de statuts CRM).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3481,7 +3481,7 @@
       "domain_id": "D04",
       "subdomain": "Sémantique métier, ontologies et compilation de contexte",
       "family": "Agentic DataOps",
-      "title": "Contrats de données ODCS v3.2.0, patron Write-Audit-Publish et gardien sémantique",
+      "title": "Contrats de données ODCS v3.2.0, patron Write-Audit-Publish et contrôleur sémantique",
       "summary": "Quarantaine transactionnelle des ingestions sur branche isolée (Apache Iceberg / Project Nessie) avant visibilité aux agents, vérification déterministe ODCS (unités, dérive PSI, pré-DDL), propagation du signal `staleness` et arbitrage borné des dérives bénignes.",
       "autonomy_levels": [
         "L1",
@@ -3842,7 +3842,7 @@
       "domain_id": "D05",
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Dimensionnement et bornage",
-      "title": "Topologies multi-agents bornées, utilité vs agent unique et plafond de sauts",
+      "title": "Topologies multi-agents bornées, utilité par rapport à l'agent unique et plafond de sauts",
       "summary": "Critère de nécessité (mesurer l'agent unique d'abord à budget égal), interdiction des essaims conversationnels libres sur flux audités, essaims d'hypothèses en lecture seule, plafond dur `maxRemainingHops` et enseignements scientifiques sur la diversité des agents.",
       "autonomy_levels": [
         "L1",
@@ -3999,7 +3999,7 @@
       "subdomain": "Chorégraphie Event Mesh et bus asynchrone",
       "family": "IA physique et sûreté fonctionnelle",
       "title": "Passerelle MCP ↔︎ ROS 2/DDS, vérification LOTO et arbitre matériel Simplex",
-      "summary": "Découplage entre sagas A2A/MCP (0,5–5 s) et boucles robotiques ROS 2/DDS (10–30 ms) : exposition exclusive de missions discrètes validées contre consignation LOTO, contrôleur de repli matériel Simplex (<= 1 ms, IEC 61508 / ISO 10218-1) et déploiement signé TUF/Sigstore.",
+      "summary": "Découplage entre sagas A2A/MCP (0,5–5 s) et boucles robotiques ROS 2/DDS (10–30 ms) : exposition exclusive de missions discrètes validées contre consignation LOTO, contrôleur de repli matériel Simplex (≤ 1 ms, IEC 61508 / ISO 10218-1) et déploiement signé TUF/Sigstore.",
       "autonomy_levels": [
         "L2",
         "L3"
@@ -4091,7 +4091,7 @@
       "subdomain": "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
       "family": "Annuaire et cycle de vie NHI",
       "title": "Identité non humaine (NHI), Agent Identity Blueprint et parrainage humain SIRH",
-      "summary": "Élévation des agents au rang d'identités distinctes (`client_id` vs `sub`), séparation Blueprint/Instance (Entra Agent ID), double parrainage métier/technique couplé au SIRH (transfert < 72 h) et non-réattribution perpétuelle des identifiants retirés.",
+      "summary": "Élévation des agents au rang d'identités distinctes (`client_id` par rapport à `sub`), séparation Blueprint/Instance (Entra Agent ID), double parrainage métier/technique couplé au SIRH (transfert < 72 h) et non-réattribution perpétuelle des identifiants retirés.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5042,7 +5042,7 @@
       "subdomain": "Menaces agentiques et surface d'attaque protocolaire",
       "family": "Red Team CI/CD et anti-ASI06",
       "title": "Suivi de teinte HMAC anti-ASI06 et harnais Red Team adaptatif CI/CD",
-      "summary": "Propagation par treillis de sécurité de l'étiquette signée `UNTRUSTED_EXTERNAL` bloquant toute mutation sensible aval sous Cedar, couplée à une suite Red Team automatisée en CI/CD et des essais par attaquant adaptatif mesurant `ASR_plan` vs `ASR_action` (cible 0,0 %).",
+      "summary": "Propagation par treillis de sécurité de l'étiquette signée `UNTRUSTED_EXTERNAL` bloquant toute mutation sensible aval sous Cedar, couplée à une suite Red Team automatisée en CI/CD et des essais par attaquant adaptatif mesurant `ASR_plan` par rapport à `ASR_action` (cible 0,0 %).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -5426,7 +5426,7 @@
       "subdomain": "Banc EvalOps hermétique E1–E3, Wilson et métamorphique",
       "family": "Simulation, chaos et déploiement progressif",
       "title": "Cycle ADLC SemVer+Intent, arène OpenEnv/tau-bench, chaos MCP et Canary épinglé",
-      "summary": "Gouvernance des six vitesses de changement par manifeste immuable `SemVer+Intent` (zéro alias `latest`), évaluation multi-tours déterministe OpenEnv / `tau-bench` / `tau^2-bench` (simulateurs hétérogènes), ingénierie du chaos (5 classes) et déploiement mode fantôme -> canari épinglé.",
+      "summary": "Gouvernance des six vitesses de changement par manifeste immuable `SemVer+Intent` (zéro alias `latest`), évaluation multi-tours déterministe OpenEnv / `tau-bench` / `tau^2-bench` (simulateurs hétérogènes), ingénierie du chaos (5 classes) et déploiement mode fantôme → canari épinglé.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -6139,7 +6139,7 @@
       "subdomain": "Réglementation européenne et référentiels internationaux",
       "family": "EU AI Act et Digital Omnibus",
       "title": "EU AI Act (2024/1689) et Digital Omnibus (2026/1744) : transparence et haut risque",
-      "summary": "Qualification de l'agent comme système d'IA classé selon l'usage, calendrier fixé par le Digital Omnibus (transparence art. 50 active le 2 août 2026, marquage 2 déc. 2026, haut risque Annexe III 2 déc. 2027 et Annexe I 2 août 2028), chaîne art. 25, dérive art. 3(23) et EN 18286:2026.",
+      "summary": "Qualification de l'agent comme système d'IA classé selon l'usage, calendrier fixé par le Digital Omnibus (transparence art. 50 active le 2 août 2026, marquage 2 décembre 2026, haut risque Annexe III 2 décembre 2027 et Annexe I 2 août 2028), chaîne art. 25, dérive art. 3(23) et EN 18286:2026.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -7190,7 +7190,7 @@
       "domain_id": "D11",
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Horizons METR et transfert recherche",
-      "title": "Saturation de l'horizon METR (50 % vs 80 %), audit des bancs et frontières 2028–2030",
+      "title": "Saturation de l'horizon METR (50 % contre 80 %), audit des bancs et frontières 2028–2030",
       "summary": "Écart facteur 5–6 entre l'horizon 50 % (17,4 h) et 80 % (3,1 h) sur METR avant arrêt de la série, 219 failles / contournements sur 10 bancs publics, échelle de maturité de transfert (niveaux 1–5) et verrous 2028–2030 (marchés B2B liquides, auto-conception Lean 4/TLA+, Physical AI).",
       "autonomy_levels": [
         "L2",
@@ -7529,7 +7529,7 @@
       "source_slug": "injection-indirecte-prompt",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "Rupture de cascade ASI01 -> ASI08",
+      "label": "Rupture de cascade ASI01 → ASI08",
       "justification": "L'isolation SLM à l'ingestion et la séparation contrôle/données coupent la chaîne d'exploitation trans-agent dès le vecteur d'entrée avant la cascade aval (Ch. 31.9, 31.12).",
       "tomes": [
         "T3"
@@ -7640,7 +7640,7 @@
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
       "label": "Enveloppe physique Simplex IEC 61508",
-      "justification": "L'arbitre matériel Simplex isole la sécurité machine (<= 1 ms) de la gigue et des hallucinations du contrôleur neuronal ou du LLM en entreprise (Ch. 46.7, 46.15).",
+      "justification": "L'arbitre matériel Simplex isole la sécurité machine (≤ 1 ms) de la gigue et des hallucinations du contrôleur neuronal ou du LLM en entreprise (Ch. 46.7, 46.15).",
       "tomes": [
         "T3"
       ]
@@ -7740,7 +7740,7 @@
       "target_slug": "double-couloir-probatoire-pii",
       "type": "dependance_technique",
       "label": "Curation sur traces assainies Loi 25",
-      "justification": "Le volant de distillation LLM -> SLM puise exclusivement dans des trajectoires assainies de PII et validées par le dénouement des sagas et les paires HOTL (Ch. 47.18).",
+      "justification": "Le volant de distillation LLM → SLM puise exclusivement dans des trajectoires assainies de PII et validées par le dénouement des sagas et les paires HOTL (Ch. 47.18).",
       "tomes": [
         "T3"
       ]
@@ -7990,7 +7990,7 @@
       "target_slug": "decisions-architecture-adr-001-031",
       "type": "encadrement_normatif",
       "label": "Obligations art. 50 et Annexe III sur les ADR",
-      "justification": "Le Digital Omnibus et l'EU AI Act imposent dès août 2026 la divulgation d'interaction IA (art. 50) et au 2 déc. 2027 le dossier Annexe III pour crédit, emploi et infrastructures critiques (Ch. 35.2, 38.9).",
+      "justification": "Le Digital Omnibus et l'EU AI Act imposent dès août 2026 la divulgation d'interaction IA (art. 50) et au 2 décembre 2027 le dossier Annexe III pour crédit, emploi et infrastructures critiques (Ch. 35.2, 38.9).",
       "tomes": [
         "T3"
       ]
@@ -8039,8 +8039,8 @@
       "source_slug": "protocole-probatoire-l-plus-statut-f",
       "target_slug": "revue-litterature-mlr-prisma",
       "type": "concordance_inter_tomes",
-      "label": "Audit T0 -> MLR W3.2 et purge L+ W2.1",
-      "justification": "L'annexe E.3/E.4 et la section 48.12 documentent l'audit de recollationnement du 14 nov., le remplacement des 83 résumés par 160 OA SHA-256 et la ré-ancrage `L+` (Ch. 38.10, 48.12, Annexe E).",
+      "label": "Audit T0 → MLR W3.2 et purge L+ W2.1",
+      "justification": "L'annexe E.3/E.4 et la section 48.12 documentent l'audit de recollationnement du 14 novembre, le remplacement des 83 résumés par 160 OA SHA-256 et la ré-ancrage `L+` (Ch. 38.10, 48.12, Annexe E).",
       "tomes": [
         "T3"
       ]
@@ -8099,7 +8099,7 @@
       "source_slug": "banc-evalops-hermetique",
       "target_slug": "finops-focus-cpo",
       "type": "tension_arbitrage",
-      "label": "Coût de simulation vs risque d'erreur en prod",
+      "label": "Coût de simulation face au risque d'erreur en production",
       "justification": "Les campagnes multi-tours `pass^5` (5× exécutions × 100+ scénarios) et les juges automatiques augmentent la facture d'évaluation CI, arbitrée contre le coût d'une erreur métier (Ch. 33.6, 34.9, 40.5).",
       "tomes": [
         "T3"
@@ -8109,7 +8109,7 @@
       "source_slug": "routage-cognitif-hybride-3-paliers",
       "target_slug": "constance-pass-k",
       "type": "tension_arbitrage",
-      "label": "Économie SLM vs baisse de précision/constance",
+      "label": "Économie SLM face au risque de baisse de précision et de constance",
       "justification": "Acheminer vers des modèles légers réduit le coût de 51 % mais peut faire chuter le F1 ou le `pass^5`, obligeant un arbitrage par classe de tâche et cascade d'incertitude (Ch. 40.6, 44.8).",
       "tomes": [
         "T3"
@@ -8119,7 +8119,7 @@
       "source_slug": "confinement-opensandbox-firecracker-wasi",
       "target_slug": "anti-verrouillage-standards",
       "type": "tension_arbitrage",
-      "label": "Isolation stricte vs latence et complexité KVM",
+      "label": "Isolation stricte face à la latence et à la complexité KVM",
       "justification": "La virtualisation matérielle Firecracker et l'absence de réutilisation multi-locataires éliminent les évasions ASI05 mais imposent des nœuds métal nu `/dev/kvm` et un surcoût mémoire (Ch. 32.6, 32.9).",
       "tomes": [
         "T3"
@@ -8129,7 +8129,7 @@
       "source_slug": "double-couloir-probatoire-pii",
       "target_slug": "observabilite-otel-genai",
       "type": "tension_arbitrage",
-      "label": "Diagnostic complet vs minimisation Loi 25/RGPD",
+      "label": "Diagnostic complet face à la minimisation Loi 25 et RGPD",
       "justification": "Le diagnostic d'erreurs exige les prompts et sorties brutes, tandis que la Loi 25 et le RGPD interdisent leur indexation libre, arbitrés par le double couloir avec accès bris de glace (Ch. 33.4, 33.10).",
       "tomes": [
         "T3"
@@ -8139,7 +8139,7 @@
       "source_slug": "supervision-hitl-hotl-abstention",
       "target_slug": "echelle-autonomie-l0-l4",
       "type": "tension_arbitrage",
-      "label": "Vitesse d'autonomie vs fatigue d'approbation",
+      "label": "Vitesse d'autonomie et fatigue d'approbation",
       "justification": "Multiplier les points HITL ralentit les flux et provoque la complaisance réflexe (ASI09); la conception HOTL réserve l'intervention humaine aux seuils critiques et cas rares (Ch. 41.9, 43.7).",
       "tomes": [
         "T3"
@@ -8149,7 +8149,7 @@
       "source_slug": "souverainete-espaces-donnees-tee-hyok",
       "target_slug": "finops-focus-cpo",
       "type": "tension_arbitrage",
-      "label": "Souveraineté/HYOK/TEE vs coût et disponibilité",
+      "label": "Souveraineté, HYOK et TEE face au coût et à la disponibilité",
       "justification": "Le géorepérage, la capacité GPU de secours pré-chauffée et les enclaves TEE majorent les coûts d'infrastructure et la complexité d'exploitation au profit de la conformité (Ch. 40.1, 46.10, 46.11).",
       "tomes": [
         "T3"
@@ -8159,7 +8159,7 @@
       "source_slug": "topologies-patrons-orchestration",
       "target_slug": "finops-focus-cpo",
       "type": "tension_arbitrage",
-      "label": "Surcoût multi-agents (×15) vs agent unique",
+      "label": "Surcoût multi-agents (×15) face à l'agent unique",
       "justification": "Un système multi-agents consomme jusqu'à 15× plus de jetons et ajoute 8 % d'erreurs de coordination : son usage ne se justifie que si la valeur du gain dépasse ce surcoût (Ch. 40.1, 40.5, 42.3).",
       "tomes": [
         "T3"
@@ -8169,7 +8169,7 @@
       "source_slug": "post-quantique-ml-dsa-slh-dsa",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "tension_arbitrage",
-      "label": "Taille des signatures PQ vs contraintes réseau",
+      "label": "Taille des signatures post-quantiques face aux contraintes réseau",
       "justification": "Les signatures `ML-DSA-65/87` accroissent les jetons de 4,6 à 165 Ko sur 5 sauts et provoquent des rejets `HTTP 431` sur proxys 8 KiB, imposant l'adoption de `Transaction Tokens` (Ch. 49.5).",
       "tomes": [
         "T3"
@@ -8179,7 +8179,7 @@
       "source_slug": "volant-distillation-dspy-multilora",
       "target_slug": "memoire-bi-temporelle-et-purge",
       "type": "tension_arbitrage",
-      "label": "Apprentissage sur traces vs risque de fuite/biais",
+      "label": "Apprentissage sur traces face au risque de fuite et de biais",
       "justification": "Réinjecter les traces de production vers l'affinage LoRA crée un risque d'effondrement de modèle, de mémorisation de PII et d'injection ASI06, maîtrisé par sas d'assainissement et canaris (Ch. 47.8, 47.18).",
       "tomes": [
         "T3"
@@ -8189,7 +8189,7 @@
       "source_slug": "hierarchie-preuves-etudes-cas",
       "target_slug": "protocole-a2a",
       "type": "tension_arbitrage",
-      "label": "Spécifications stables vs rareté de preuves en prod",
+      "label": "Spécifications stables face à la rareté des preuves en production",
       "justification": "Malgré le soutien affiché (> 150 organisations), aucun cas publié de niveau 1 ne documente encore MCP ou A2A en production à grande échelle au 11 novembre 2026 (Ch. 42.6, 48.10, Annexe E.3).",
       "tomes": [
         "T3"
@@ -8310,7 +8310,7 @@
       "target_slug": "echelle-autonomie-l0-l4",
       "type": "projection_temporelle",
       "label": "Révision de l'autonomie face à la saturation METR",
-      "justification": "La croissance de l'horizon des tâches (doublement ~129 j, écart 50 % vs 80 %) fait du coût de la fiabilité la borne de l'autonomie et rend la portée non observée après l'arrêt de METR (Ch. 49.2, 49.8).",
+      "justification": "La croissance de l'horizon des tâches (doublement ~129 j, écart 50 % contre 80 %) fait du coût de la fiabilité la borne de l'autonomie et rend la portée non observée après l'arrêt de METR (Ch. 49.2, 49.8).",
       "tomes": [
         "T3"
       ]
@@ -8320,7 +8320,7 @@
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "projection_temporelle",
       "label": "Échéancier impératif 2026–2031 (Omnibus)",
-      "justification": "Les échéances datées (art. 50 août 2026, Annexe III déc. 2027, Annexe I août 2028, réexamen 2029–2031) cadencent la demande de conformité indépendamment du cycle de vie des protocoles (Ch. 35.2, 49.4, 50.6).",
+      "justification": "Les échéances datées (art. 50 août 2026, Annexe III décembre 2027, Annexe I août 2028, réexamen 2029–2031) cadencent la demande de conformité indépendamment du cycle de vie des protocoles (Ch. 35.2, 49.4, 50.6).",
       "tomes": [
         "T3"
       ]
@@ -8379,7 +8379,7 @@
       "source_slug": "revue-litterature-mlr-prisma",
       "target_slug": "frontiere-capacites-metr-veille",
       "type": "projection_temporelle",
-      "label": "Transfert recherche -> production d'ici 2030",
+      "label": "Transfert recherche → production d'ici 2030",
       "justification": "L'isolation par construction et la vérification formelle des politiques (niveaux 2–3 de maturité) présentent le chemin le plus court vers la production d'ici 2030 comparé aux mémoires et SLM autonomes (Ch. 48.12, 49.6).",
       "tomes": [
         "T3"

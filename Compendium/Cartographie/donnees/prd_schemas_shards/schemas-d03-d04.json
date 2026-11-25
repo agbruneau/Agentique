@@ -38,36 +38,36 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Montre en un coup d'œil pourquoi l'entreprise abandonne les sessions persistantes HTTP+SSE (DISC-05) au profit d'un guichet MCP sans état routé comme du trafic Web standard, avec amortisseur McpTransportAdapter absorbant les changements SEP-3398 et SEP-2596 de 2027 sans réécrire les applications métier.",
-      "vulgarization_angle": "Comparer le passage d'HTTP+SSE à MCP 2026-07-28 au remplacement d'un ligne téléphonique bloquée en continu par un guichet postal à bordereaux autonomes (Streamable HTTP + reprise MRTR), doublé d'un adaptateur universel protégeant les prises électriques lors du changement de norme de 2027.",
+      "pedagogical_objective": "Ce schéma met en évidence les raisons pour lesquelles l'entreprise abandonne les sessions persistantes HTTP+SSE (DISC-05) au profit d'un point d'accès MCP sans état acheminé comme du trafic Web ordinaire, tout en interposant l'adaptateur McpTransportAdapter pour absorber les évolutions SEP-3398 et SEP-2596 de 2027 sans réécriture des applications métier.",
+      "vulgarization_angle": "Le passage de HTTP+SSE à MCP 2026-07-28 s'apparente au remplacement d'une ligne téléphonique immobilisée en continu par un guichet postal à bordereaux autonomes (Streamable HTTP et reprise MRTR), complété par un adaptateur normalisé qui protège les équipements internes lors du changement de norme prévu en 2027.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Poste client et adaptateur de transport (McpTransportAdapter)",
-            "content": "Hôte agentique créant un client par serveur MCP, encapsulé derrière McpTransportAdapter pour rejeter HTTP+SSE (DISC-05) et préparer les jalons SEP-3398 (30 mars 2027) et SEP-2596 (28 juill. 2027)."
+            "content": "L'hôte agentique instancie un client par serveur MCP derrière l'adaptateur McpTransportAdapter, qui bloque HTTP+SSE (DISC-05) et prépare les jalons SEP-3398 (30 mars 2027) et SEP-2596 (28 juillet 2027)."
           },
           {
             "zone_id": "Z2",
             "label": "Bus Streamable HTTP sans état et patron MRTR",
-            "content": "Requêtes JSON-RPC 2.0 autonomes validées en passerelle (Mcp-Method / Mcp-Name), reprises multi-tours input_required (MRTR) et exclusion stricte de stdio en production."
+            "content": "Les requêtes JSON-RPC 2.0 autonomes sont validées à la passerelle (Mcp-Method et Mcp-Name), gèrent les reprises multi-tours input_required (MRTR) et excluent strictement stdio en production."
           },
           {
             "zone_id": "Z3",
             "label": "Frontière Web ouverte (WebMCP, NLWeb, Web Bot Auth)",
-            "content": "Traitement sans confiance implicite de WebMCP (document.modelContext) et NLWeb (/ask) en périphérie, avec Web Bot Auth RFC 9421 limité à la preuve d'origine HTTP sans prouver l'intention."
+            "content": "Les surfaces WebMCP (document.modelContext) et NLWeb (/ask) sont traitées en périphérie sans confiance implicite, tandis que Web Bot Auth (RFC 9421) demeure restreint à la preuve d'origine HTTP sans attester l'intention."
           }
         ],
         "numbered_flows": [
           "① L'agent émet une requête métier JSON-RPC 2.0 sans session vers l'adaptateur neutre McpTransportAdapter.",
-          "② L'adaptateur bloque tout repli HTTP+SSE obsolète (DISC-05) et émet sur Streamable HTTP avec en-têtes Mcp-Method/Mcp-Name.",
-          "③ Si une donnée complémentaire est requise, le serveur retourne un état structuré MRTR (input_required) plutôt qu'une requête serveur-vers-client inversée.",
-          "④ Toute exposition externe WebMCP ou signature RFC 9421 reste filtrée comme entrée non fiable sans délégation de droits internes."
+          "② L'adaptateur bloque tout repli vers le transport HTTP+SSE obsolète (DISC-05) et achemine le flux sur Streamable HTTP avec les en-têtes Mcp-Method et Mcp-Name.",
+          "③ Lorsqu'une donnée complémentaire est requise, le serveur retourne un état structuré MRTR (input_required) plutôt que d'initier une requête serveur-vers-client inversée.",
+          "④ Toute exposition externe WebMCP ou signature RFC 9421 reste filtrée comme entrée non fiable, sans aucune délégation de privilèges internes."
         ],
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Transport normatif épinglé MCP 2026-07-28 sans état (Streamable HTTP) et adaptateur"
+            "meaning": "Transport normatif épinglé MCP 2026-07-28 sans état (Streamable HTTP) et adaptateur de transport"
           },
           {
             "color_token": "Vert émeraude (#047857)",
@@ -75,14 +75,14 @@
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Surfaces Web émergentes (WebMCP, NLWeb, Web Bot Auth) confinées sans confiance"
+            "meaning": "Surfaces Web émergentes (WebMCP, NLWeb, Web Bot Auth) confinées sans confiance implicite"
           },
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "Transports proscrits en production (HTTP+SSE DISC-05, stdio avec secrets)"
+            "meaning": "Transports proscrits en production (HTTP+SSE DISC-05, stdio porteur de secrets)"
           }
         ],
-        "key_takeaway_box": "À retenir : MCP 2026-07-28 fonctionne sans session comme le Web moderne : l'adaptateur de transport protège vos équipes des révisions de 2027 et maintient les protocoles Web ouverts à distance des secrets métier."
+        "key_takeaway_box": "MCP 2026-07-28 fonctionne sans session à l'instar du Web moderne : l'adaptateur McpTransportAdapter isole les équipes applicatives des révisions de 2027 et maintient les protocoles Web ouverts à distance des secrets métier."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -92,7 +92,7 @@
           "title": "La réduction de N×M à N+M par une couche de contrat, et les trois choses que cette couche ne porte pas.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-08.1 - La réduction de N×M à N+M par une couche de contrat.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.1.svg",
-          "role_note": "Illustre la réduction N×M vers N+M et les angles morts sécurité laissés hors protocole."
+          "role_note": "Illustre la réduction de complexité de N×M vers N+M et met en évidence les angles morts de sécurité demeurant hors du protocole."
         },
         {
           "tome_id": "T1",
@@ -100,7 +100,7 @@
           "title": "Cinq jalons du protocole agent-outil en moins de deux ans, et ce que chacun ajoute au contrat (points pleins : révisions acquises au gel ; point creux : révision ratifiée le 28 juillet 2026 ; les racines figurant dès 2024-11).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-08.2 - Cinq jalons du protocole agent-outil en moins de deux ans, et ce.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.2.png",
-          "role_note": "Situe la révision ratifiée MCP 2026-07-28 dans la chronologie des spécifications."
+          "role_note": "Situe la révision ratifiée MCP 2026-07-28 dans la chronologie des jalons de spécification."
         },
         {
           "tome_id": "T2",
@@ -108,7 +108,7 @@
           "title": "MCP 2026-07-28 derrière la passerelle d’agents. L’hôte crée un client par point d’accès MCP (serveur publié ou point d’accès virtuel); chaque requête, autonome et sans session, traverse la passerelle, qui vérifie le jeton, la concordance des en-têtes et du corps, le palier de l’outil et le catalogue avant de joindre le serveur de domaine. La requête illustrée est abrégée : une requête complète porte aussi jsonrpc et id , ainsi que les capacités du client dans _meta . La passerelle « ignore » les clés _meta non reconnues en les retirant (EXIG-MCP-16). L’extension d’autorisation EMA qui y figure est au statut Évaluer : pilotes seulement (section 6.3). Le jeton présenté à la passerelle lui est destiné; elle en obtient un second pour le serveur de domaine (section 9.3). Source : cadre CRE-IA-2026-01, d’après la spécification MCP 2026-07-28 [198] .",
           "source_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-07 - MCP 2026-07-28 derrière la passerelle d'agents.puml",
           "rendered_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-07.svg",
-          "role_note": "Ancre le routage sans session MCP 2026-07-28 et le filtrage _meta en passerelle."
+          "role_note": "Ancre le routage sans session MCP 2026-07-28 ainsi que le filtrage des clés _meta à la passerelle."
         },
         {
           "tome_id": "T3",
@@ -116,7 +116,7 @@
           "title": "Un échange entre client et serveur avant et depuis la révision du 28 juillet 2026 : la poignée de main, la session et les requêtes initiées par le serveur disparaissent au profit de requêtes autonomes et d’allers- retours multiples.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-09 - Un échange entre client et serveur avant et depuis la révision du 28.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-09.svg",
-          "role_note": "Démontre la suppression de la poignée de main et l'arrivée des allers-retours MRTR."
+          "role_note": "Démontre la suppression de la poignée de main initiale et l'introduction des allers-retours MRTR."
         },
         {
           "tome_id": "T6",
@@ -124,7 +124,7 @@
           "title": "Séquence protocolaire MCP 2026-07-28 : découverte sans état, transport Streamable HTTP, reprise MRTR et cache ttlMs",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-13 - Séquence protocolaire MCP 2026-07-28 - découverte sans état.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-13.svg",
-          "role_note": "Décrit la séquence complète Streamable HTTP, MRTR et durée de vie ttlMs."
+          "role_note": "Décrit la séquence complète combinant Streamable HTTP, le patron MRTR et la durée de vie en cache ttlMs."
         }
       ]
     },
@@ -141,7 +141,7 @@
         "ergonomie-aci-anti-swagger",
         "protocole-mcp"
       ],
-      "title": "Anti-patron Swagger-to-MCP 1:1 contre façades d'intention ACI (≤ 15 outils métier et Code Mode)",
+      "title": "Anti-patron Swagger-to-MCP 1:1 face aux façades d'intention ACI (≤ 15 outils métier et Code Mode)",
       "insertion_point": "Chapitre 07 §07.2.1 — Façades MCP orientées intention métier et ergonomie ACI (AP-04)",
       "target_audiences": [
         "Direction / Métier",
@@ -150,31 +150,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Explique immédiatement aux décideurs et équipes produit pourquoi convertir mécaniquement chaque route REST/Swagger en outil MCP (anti-patron AP-04) noie l'agent sous plus de 50 boutons techniques et explose la facture de jetons, alors qu'une façade d'intention ACI de 5 à 12 outils métier réduit les erreurs et fiabilise le retour JSON.",
-      "vulgarization_angle": "Opposer un tableau de bord de cockpit encombré de 60 interrupteurs électriques bruts (Swagger-to-MCP 1:1) à 6 manettes d'intention claire (« Approuver dossier », « Consulter solde ») dotées de voyants structurés (structuredContent) et de tickets de dossier pour les gros documents (resource_link > 8 Ko).",
+      "pedagogical_objective": "Ce comparatif démontre aux décideurs et aux équipes produit pourquoi la transposition mécanique de chaque route REST ou Swagger en outil MCP (anti-patron AP-04) sature l'agent sous plus de 50 appels techniques et accroît la consommation de jetons, alors qu'une façade d'intention ACI de 5 à 12 outils métier réduit les erreurs et fiabilise le retour JSON structuré.",
+      "vulgarization_angle": "La comparaison oppose un poste de pilotage encombré de 60 interrupteurs électriques élémentaires (Swagger-to-MCP 1:1) à un pupitre de 6 commandes d'intention claire (« Approuver dossier », « Consulter solde ») dotées de témoins typés (structuredContent) et de bordereaux de renvoi pour les pièces volumineuses (resource_link > 8 Ko).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "AVANT (Anti-patron AP-04) — Miroir brut Swagger-to-MCP 1:1 (> 50 outils)",
-            "content": "Exposition mécanique de dizaines de routes CRUD atomiques saturant la fenêtre d'attention, multipliant les erreurs de jointure et explosant les coûts d'inférence."
+            "content": "L'exposition mécanique de dizaines de routes CRUD atomiques sature la fenêtre d'attention du modèle, multiplie les erreurs de jointure et alourdit les coûts d'inférence."
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS (Cible ACI) — Façades d'intention métier (5–12 outils, plafond 15)",
-            "content": "Agrégation métier avec sortie typée structuredContent (JSON Schema 2020-12), clé d'idempotence, pointeur resource_link dès > 8 Ko, chargement Dynamic Toolsets et erreurs cognitives guidant la reprise."
+            "label": "APRÈS (Cible ACI) — Façades d'intention métier (5–12 outils, plafond à 15)",
+            "content": "L'agrégation métier expose des sorties typées structuredContent (JSON Schema 2020-12), une clé d'idempotence, des pointeurs resource_link dès > 8 Ko, le chargement Dynamic Toolsets et des erreurs cognitives guidant la reprise."
           }
         ],
         "numbered_flows": [
-          "① Avant (AP-04) : le convertisseur automatique injecte 50+ définitions REST brutes dans le contexte à chaque tour.",
-          "② L'agent échoue sur des appels atomiques partiels et renvoie des charges brutes saturant les jetons.",
-          "③ Après (ACI / ADR-005) : la façade expose 5 à 12 outils d'intention (alerte > 15 sous EXIG-ORC-09) et bascule vers Dynamic Toolsets / Code Mode confiné si la requête devient analytique.",
-          "④ Le serveur renvoie un structuredContent vérifié ou un resource_link (> 8 Ko), plus un message d'erreur actionnable en cas de paramètre invalide."
+          "① Avant (AP-04) : le convertisseur automatique injecte plus de 50 définitions REST brutes dans le contexte à chaque tour d'inférence.",
+          "② L'agent échoue sur des enchaînements d'appels atomiques partiels et reçoit des charges brutes qui saturent le budget de jetons.",
+          "③ Après (ACI / ADR-005) : la façade expose 5 à 12 outils d'intention (avec seuil d'alerte à 15 selon EXIG-ORC-09) et bascule vers Dynamic Toolsets ou le Code Mode confiné lorsque la requête devient analytique.",
+          "④ Le serveur retourne un objet structuredContent vérifié ou un pointeur resource_link (> 8 Ko), accompagné d'un message d'erreur actionnable en cas de paramètre invalide."
         ],
         "color_legend": [
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "Anti-patron Swagger-to-MCP 1:1 (AP-04 : > 50 outils, coûts et erreurs de jointure)"
+            "meaning": "Anti-patron Swagger-to-MCP 1:1 (AP-04 : > 50 outils, surcoûts et erreurs de jointure)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
@@ -185,7 +185,7 @@
             "meaning": "Contrat JSON Schema 2020-12 et bac à sable Code Mode"
           }
         ],
-        "key_takeaway_box": "À retenir : Un bon serveur MCP ne traduit pas une API technique bout à bout : il expose au maximum 15 intentions métier claires qui économisent les jetons et guident l'agent."
+        "key_takeaway_box": "Un serveur MCP d'entreprise ne transpose pas une API technique point par point : il expose au plus 15 intentions métier explicites qui préservent le budget de jetons et orientent l'agent de manière déterministe."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -195,7 +195,7 @@
           "title": "Comparaison architecturale : mappage naïf 1:1 CRUD REST vers MCP face à la conception orientée intention métier agrégée.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-11 - Comparaison architecturale - mappage naïf 1 - 1 CRUD REST vers MCP.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-11.svg",
-          "role_note": "Met face à face le mappage naïf CRUD 1:1 et l'architecture orientée intention métier."
+          "role_note": "Met en regard le mappage rudimentaire CRUD 1:1 et l'architecture orientée vers l'intention métier."
         },
         {
           "tome_id": "T6",
@@ -203,7 +203,7 @@
           "title": "Comparaison structurelle entre l’anti-patron Swagger-to-MCP 1:1 et l’architecture ACI consolidée",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-14 - Comparaison structurelle entre l'anti-patron Swagger-to-MCP 1 - 1.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-14.svg",
-          "role_note": "Formalise la réduction par façades ACI contre l'anti-patron AP-04."
+          "role_note": "Formalise la réduction de surface d'outils par façades ACI contre l'anti-patron AP-04."
         },
         {
           "tome_id": "T7",
@@ -211,7 +211,7 @@
           "title": "Topologie d'interopérabilité : médiation verticale MCP, délégation horizontale A2A et couche anti-corruption",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-09.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-09.svg",
-          "role_note": "Place les façades d'intention MCP comme couche de médiation devant les API métier."
+          "role_note": "Positionne les façades d'intention MCP comme couche de médiation devant les API métier."
         }
       ]
     },
@@ -236,47 +236,47 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Rend tangible le risque des connecteurs MCP tiers (102 fiches NVD documentées en quatre mois) pour la conformité et la sécurité : un fournisseur externe peut modifier silencieusement la description d'un outil après validation (rug-pull). Le schéma illustre comment l'empreinte SHA-256 figée au catalogue et l'authentification OAuth par audience bloquent tout outil modifié.",
-      "vulgarization_angle": "Comparer l'épinglage SHA-256 à un scellé de plomb sur le compteur d'un prestataire : si une seule virgule change dans le mode d'emploi d'un outil tiers (rug-pull), le sceau casse instantanément et l'outil est bloqué jusqu'à réapprobation.",
+      "pedagogical_objective": "Ce schéma matérialise le risque inhérent aux connecteurs MCP tiers (102 fiches NVD documentées en quatre mois) pour la conformité et la sécurité : un fournisseur externe peut altérer silencieusement la description d'un outil après son homologation (rug-pull). Il montre comment l'empreinte SHA-256 figée au catalogue et l'authentification OAuth à audience stricte bloquent tout outil modifié.",
+      "vulgarization_angle": "L'épinglage SHA-256 agit comme un scellé cryptographique apposé sur le contrat d'un prestataire : si un seul caractère varie dans la définition ou le mode d'emploi d'un outil tiers (rug-pull), le sceau se brise aussitôt et l'outil est bloqué jusqu'à réapprobation.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Menaces vérifiées sur serveurs tiers (102 fiches NVD / ASI04)",
-            "content": "Rug-pull (mutation silencieuse post-approbation), annotations mensongères (readOnlyHint falsifié), relais de jeton (token passthrough) et abus d'elicitation."
+            "content": "La surface de menace englobe le rug-pull (mutation silencieuse post-approbation), les annotations mensongères (readOnlyHint falsifié), le relais de jeton (token passthrough) et l'abus du mécanisme d'elicitation."
           },
           {
             "zone_id": "Z2",
-            "label": "Sceau cryptographique catalogue (EXIG-MCP-14..20)",
-            "content": "Calcul d'empreinte SHA-256 canonisée JCS (RFC 8785) sur JSON Schema 2020-12 et version SemVer ; blocage automatique et réapprobation obligatoire au moindre octet altéré."
+            "label": "Sceau cryptographique au catalogue (EXIG-MCP-14..20)",
+            "content": "L'empreinte SHA-256 canonisée selon JCS (RFC 8785) scelle la définition JSON Schema 2020-12 et la version SemVer, imposant un blocage automatique et une réapprobation complète au moindre octet altéré."
           },
           {
             "zone_id": "Z3",
             "label": "Bouclier OAuth 2.1 sans relais de jeton",
-            "content": "Qualification du serveur MCP en serveur de ressources OAuth 2.1 à audience unique (RFC 8707), validation iss (RFC 9207) et Client ID Metadata Documents remplaçant RFC 7591."
+            "content": "Chaque serveur MCP est qualifié en serveur de ressources OAuth 2.1 à audience unique (RFC 8707), avec validation de l'émetteur iss (RFC 9207) et emploi des Client ID Metadata Documents en remplacement de RFC 7591."
           }
         ],
         "numbered_flows": [
-          "① À l'homologation, l'équipe sécurité fige la définition JSON Schema 2020-12 et son empreinte SHA-256 JCS dans le catalogue interne.",
-          "② À chaque appel, la passerelle vérifie la concordance entre les en-têtes Mcp-Method/Mcp-Name, le corps JSON-RPC et l'empreinte épinglée (rejet HeaderMismatch).",
-          "③ Toute annotation déclarative (readOnlyHint, destructiveHint, icône) est ignorée ; seuls font foi le palier P0–P3 du catalogue et le jeton OAuth à audience stricte (RFC 8707).",
-          "④ L'elicitation est neutralisée pour tout secret ou approbation réglementaire (EXIG-MCP-21)."
+          "① Lors de l'homologation, l'équipe de sécurité fige la définition JSON Schema 2020-12 et son empreinte SHA-256 JCS dans le catalogue interne.",
+          "② À chaque invocation, la passerelle contrôle la concordance exacte entre les en-têtes Mcp-Method/Mcp-Name, le corps JSON-RPC et l'empreinte épinglée (rejet HeaderMismatch en cas d'écart).",
+          "③ Toute annotation déclarative (readOnlyHint, destructiveHint, icône) demeure ignorée sur le plan décisionnel ; seuls font foi le palier P0–P3 inscrit au catalogue et le jeton OAuth à audience stricte (RFC 8707).",
+          "④ Le mécanisme d'elicitation est neutralisé pour toute collecte de secret ou d'approbation réglementaire (EXIG-MCP-21)."
         ],
         "color_legend": [
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "Surface d'attaque MCP (rug-pull, relais de jeton, 102 NVD, annotations falsifiées)"
+            "meaning": "Surface d'attaque MCP (rug-pull, relais de jeton, 102 fiches NVD, annotations falsifiées)"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Contrôle d'intégrité déterministe (SHA-256 JCS RFC 8785, SemVer, HeaderMismatch)"
+            "meaning": "Contrôle d'intégrité déterministe (SHA-256 JCS RFC 8785, SemVer, rejet HeaderMismatch)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Identité et portée OAuth 2.1 (RFC 8707 audience, RFC 9207 iss)"
+            "meaning": "Identité et portée OAuth 2.1 (audience RFC 8707, validation iss RFC 9207)"
           }
         ],
-        "key_takeaway_box": "À retenir : Un serveur MCP compatible reste vulnérable s'il peut changer à l'insu de l'entreprise : seul l'épinglage SHA-256 au catalogue et l'absence de relais de jeton rendent son comportement opposable."
+        "key_takeaway_box": "Un serveur MCP techniquement compatible demeure vulnérable tant que ses définitions peuvent muter à l'insu de l'entreprise : seuls l'épinglage SHA-256 au catalogue et l'interdiction du relais de jeton rendent son comportement opposable."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -286,7 +286,7 @@
           "title": "Les trois surfaces d’attaque, distinguées par ce que chacune corrompt.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-11.2 - Les trois surfaces d'attaque, distinguées par ce que chacune.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.2.png",
-          "role_note": "Distingue les surfaces d'attaque protocolaires corrompant schéma, contexte ou identité."
+          "role_note": "Distingue les surfaces d'attaque protocolaires selon qu'elles corrompent le schéma, le contexte ou l'identité."
         },
         {
           "tome_id": "T3",
@@ -319,7 +319,7 @@
         "fusion-acp-collision-terminologique",
         "protocole-anp-did-wba"
       ],
-      "title": "Loi de non-substituabilité (MCP vs A2A v1.0.1 vs ANP) et désambiguïsation ACP à 4 branches",
+      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches",
       "insertion_point": "Chapitre 08 §08.2.1 — Protocole pair-à-pair A2A et ANP",
       "target_audiences": [
         "Direction / Métier",
@@ -328,51 +328,51 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Évite l'erreur coûteuse des projets pilotes qui traitent un autre agent comme un simple outil ou utilisent une API transactionnelle par dialogue libre. Cet arbre tranche en trois questions quand utiliser un appel déterministe, MCP, A2A v1.0.1 (pairs opaques), pourquoi écarter ANP en production et comment proscrire le sigle ambigu « ACP ».",
-      "vulgarization_angle": "Utiliser une règle de poste claire : on appelle un marteau via MCP (outil sans opinion), on délègue un dossier complet à un collègue d'un autre service via A2A (pair opaque à tâche suivie), et on refuse d'utiliser des acronymes homonymes comme « ACP » sans étiquette précise.",
+      "pedagogical_objective": "Cet arbre de décision prévient l'écueil fréquent des projets pilotes qui traitent un agent autonome comme un simple outil ou sollicitent une API transactionnelle par dialogue libre. Il permet de trancher en trois critères quand recourir à un appel déterministe, à MCP ou à A2A v1.0.1 (entre pairs opaques), tout en justifiant l'exclusion d'ANP en production et l'interdiction du sigle ambigu « ACP ».",
+      "vulgarization_angle": "La règle d'attribution distingue l'outillage de l'interlocuteur autonome : l'agent actionne un instrument borné au moyen de MCP (outil sans délibération propre), délègue un dossier complet à un pair d'un autre domaine via A2A (tâche suivie sans ingérence dans son raisonnement interne) et bannit tout acronyme homonyme tel qu'« ACP » dépourvu de qualificatif explicite.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Critères de décision (PRI-003 : contrôle et opacité)",
-            "content": "Trois questions binaires : appel déterministe sans LLM → API classique ; fonction outillée locale/verticale → MCP ; délégation asynchrone inter-domaines vers pair opaque → A2A v1.0.1."
+            "content": "Trois critères binaires orientent le routage : un appel déterministe sans LLM relève d'une API classique ; une fonction outillée locale ou verticale relève de MCP ; une délégation asynchrone inter-domaines vers un pair opaque relève d'A2A v1.0.1."
           },
           {
             "zone_id": "Z2",
             "label": "Cycle de tâche A2A et garde-fous obligatoires (Z1–Z5)",
-            "content": "Tâche à états (submitted → working → input-required → terminal), opacité cognitive préservée, signature JWS/JCS obligatoire, anti-SSRF et rejet d'ANP à méta-protocole dynamique."
+            "content": "La tâche suit une machine d'état bornée (submitted → working → input-required → état terminal) en préservant l'opacité cognitive, sous signature JWS/JCS obligatoire, protection anti-SSRF et rejet d'ANP à méta-protocole dynamique."
           },
           {
             "zone_id": "Z3",
             "label": "Tableau de désambiguïsation ACP (Tableau 7.3)",
-            "content": "Quatre branches distinctes : ACP IBM/BeeAI fusionné dans A2A (éteint), Agentic Control Plane de consortium, offre IBM et module ACP AGNTCY non élucidé."
+            "content": "Quatre acceptions distinctes sont isolées : l'ACP IBM/BeeAI fusionné dans A2A (éteint), l'Agentic Control Plane de consortium, l'offre commerciale IBM et le module ACP d'AGNTCY non élucidé."
           }
         ],
         "numbered_flows": [
-          "① Évaluer l'appel : s'il s'agit d'une API transactionnelle déterministe, proscrire A2A et MCP dialogue libre et utiliser l'API ou OO1.",
-          "② Si un agent appelle un outil borné sous son propre plan, utiliser MCP 2026-07-28 (axe vertical).",
-          "③ Si un agent délègue une mission asynchrone à un pair autonome d'un autre domaine sans lire son raisonnement interne, activer A2A v1.0.1 sous JWS/JCS et zones Z1–Z5.",
-          "④ Rejeter ANP v1.2 (méta-protocole négocié à la volée non auditable) et interdire tout usage du sigle « ACP » nu dans les contrats et architectures."
+          "① Qualifier l'appel : s'il correspond à une API transactionnelle déterministe, proscrire A2A et le dialogue libre MCP au profit d'une API classique ou du palier OO1.",
+          "② Lorsqu'un agent invoque un outil borné sous son propre plan d'exécution, employer MCP 2026-07-28 sur l'axe vertical.",
+          "③ Lorsqu'un agent délègue une mission asynchrone à un pair autonome d'un autre domaine sans inspecter son raisonnement interne, activer A2A v1.0.1 sous signature JWS/JCS et zones Z1–Z5.",
+          "④ Rejeter ANP v1.2 (dont le méta-protocole négocié à la volée demeure non auditable) et proscrire tout emploi du sigle « ACP » nu dans les contrats et architectures."
         ],
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Axe vertical déterministe / outil (API classique ou MCP 2026-07-28)"
+            "meaning": "Axe vertical déterministe ou outillé (API classique ou MCP 2026-07-28)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Axe horizontal entre pairs autonomes opaques (A2A v1.0.1 sous AAIF)"
+            "meaning": "Axe horizontal entre pairs autonomes opaques (A2A v1.0.1 sous gouvernance AAIF)"
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Protocoles ou acceptions à confiner / désambiguïser (ANP did:wba, branches ACP)"
+            "meaning": "Protocoles ou acceptions à confiner et désambiguïser (ANP did:wba, branches ACP)"
           },
           {
             "color_token": "Rouge brique (#B91C1C)",
             "meaning": "Usages proscrits (outil déguisé en pair A2A, ACP éteint, ANP non auditable)"
           }
         ],
-        "key_takeaway_box": "À retenir : On n'envoie pas de lettre formelle (A2A) pour serrer un boulon (MCP) : la non-substituabilité évite de multiplier les boucles coûteuses et clarifie la responsabilité entre domaines."
+        "key_takeaway_box": "Un mandat de délégation pair-à-pair (A2A) ne saurait remplacer un appel d'outil déterministe (MCP) : la loi de non-substituabilité évite la prolifération de boucles coûteuses et clarifie l'imputabilité entre domaines."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -382,7 +382,7 @@
           "title": "Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-07.5 - Les quatre branches de la collision ACP - (agentic) control.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.5.svg",
-          "role_note": "Lève la collision terminologique à quatre branches autour du sigle ACP."
+          "role_note": "Lève la collision terminologique à quatre branches entourant le sigle ACP."
         },
         {
           "tome_id": "T2",
@@ -398,7 +398,7 @@
           "title": "Dualité verticale MCP et horizontale A2A entre domaines opaques",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-17 - Dualité verticale MCP et horizontale A2A entre domaines opaques.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-17.svg",
-          "role_note": "Visualise la complémentarité sans confusion entre axe vertical MCP et axe horizontal A2A."
+          "role_note": "Visualise la complémentarité sans confusion entre l'axe vertical MCP et l'axe horizontal A2A."
         },
         {
           "tome_id": "T6",
@@ -406,7 +406,7 @@
           "title": "Arbre de décision entre API déterministe, MCP, A2A sur HTTP et pile fédérée AGNTCY",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-18 - Arbre de décision entre API déterministe, MCP, A2A sur HTTP et pile.mmd",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-18.png",
-          "role_note": "Fournit l'arbre décisionnel canonique entre API, MCP, A2A et AGNTCY."
+          "role_note": "Fournit l'arbre décisionnel canonique arbitrant entre API déterministe, MCP, A2A et AGNTCY."
         }
       ]
     },
@@ -425,7 +425,7 @@
         "agntcy-slim",
         "maillage-b2b-federe-edc-odrl"
       ],
-      "title": "Commerce agentique (AP2, x402, MPP) vs rails financiers et fédération B2B (AGNTCY / ODRL / vLEI)",
+      "title": "Commerce agentique (AP2, x402, MPP) face aux rails financiers et à la fédération B2B (AGNTCY / ODRL / vLEI)",
       "insertion_point": "Chapitre 08 §08.2.2 — Piles AGNTCY/SLIM, paiements AP2 et réseaux B2B fédérés",
       "target_audiences": [
         "Direction / Métier",
@@ -435,47 +435,47 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Clarifie pour la direction financière et juridique pourquoi les protocoles de paiement par agent (AP2, x402, MPP) et les réseaux B2B (AGNTCY, Dataspace) restent strictement encadrés en veille (statut Surveiller/Évaluer) : un mandat signé techniquement valide peut couvrir un achat non intentionnel (Whispers of Wealth) que les règles de litige actuelles ne savent pas trancher.",
-      "vulgarization_angle": "Superposer trois étages comme un chèque certifié en trois volets : l'intention client (mandat Intent/Cart/Payment AP2 en veille), la messagerie inter-entreprises blindée (AGNTCY/SLIM + passeport légal vLEI + contrat ODRL), et le rail bancaire réel (Lynx/cartes) qui garde seul le pouvoir de débiter.",
+      "pedagogical_objective": "Ce diagramme clarifie à l'intention des directions financières et juridiques pourquoi les protocoles de paiement par agent (AP2, x402, MPP) et les réseaux B2B (AGNTCY, Dataspace) demeurent strictement cantonnés en veille (statut Surveiller ou Évaluer) : un mandat cryptographiquement valide peut couvrir un achat non intentionnel (Whispers of Wealth) que les mécanismes actuels de règlement des litiges ne savent pas trancher.",
+      "vulgarization_angle": "L'architecture superpose trois strates analogues à un ordre bancaire certifié en trois volets : la chaîne d'intention client (mandats Intent/Cart/Payment AP2 maintenus en veille), la messagerie inter-entreprises chiffrée (AGNTCY/SLIM, passeport légal vLEI et licence ODRL), et le rail bancaire déterministe (Lynx et réseaux de cartes) qui conserve seul l'autorité de débiter les comptes.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Strate transactionnelle en veille — AP2 v0.2, ACP commercial, UCP, x402 et MPP",
-            "content": "Chaîne Intent → Cart → Payment (SD-JWT) dissociant consentement et règlement (FMI 2026/004), bloquée au statut Surveiller (transfert FIDO S-090 non matérialisé S-091, faille achat non intentionnel)."
+            "content": "La chaîne Intent → Cart → Payment (SD-JWT) dissocie le consentement du règlement (FMI 2026/004), mais demeure bloquée au statut Surveiller en raison du transfert FIDO S-090 non matérialisé (S-091) et du risque d'achat non intentionnel."
           },
           {
             "zone_id": "Z2",
             "label": "Strate transport et découverte fédérée — AGNTCY (OASF, ADS, SLIM/MLS)",
-            "content": "OASF/ADS en statut Évaluer subordonnés au catalogue interne ; transport SLIM chiffré bout en bout MLS RFC 9420 en statut Surveiller."
+            "content": "Les composants OASF et ADS demeurent au statut Évaluer, subordonnés au catalogue interne, tandis que le transport SLIM chiffré de bout en bout via MLS (RFC 9420) reste au statut Surveiller."
           },
           {
             "zone_id": "Z3",
-            "label": "Strate B2B contractuelle Palier 3 (ADR-026) — vLEI, Dataspace EDC et ODRL 2.2",
-            "content": "Identité légale GLEIF vLEI/OOR, connecteurs Dataspace vérifiant le contrat d'usage ODRL 2.2 et scission Diplomate (externe sans secret) / Évaluateur (interne anti-collusion)."
+            "label": "Strate B2B contractuelle au Palier 3 (ADR-026) — vLEI, Dataspace EDC et ODRL 2.2",
+            "content": "L'identité légale GLEIF vLEI/OOR s'articule avec les connecteurs Dataspace vérifiant le contrat d'usage ODRL 2.2 et avec la scission entre Diplomate (externe sans secret) et Évaluateur (interne anti-collusion)."
           }
         ],
         "numbered_flows": [
-          "① Un mandant absent signe une enveloppe d'intention bornée ; en P3, aucune exécution ne passe sans approbation humaine hors bande FIDO2/CIBA.",
-          "② Dans la pile AGNTCY, l'annuaire ADS reste subordonné au registre interne pendant que SLIM sécurise le transport de groupe via MLS RFC 9420.",
-          "③ En fédération B2B (2033–2035), le connecteur Dataspace contrôle la preuve légale vLEI et la licence ODRL 2.2 avant l'échange avec le Diplomate externe.",
-          "④ L'Évaluateur interne valide marges, fraude et absence de collusion avant tout règlement sur le rail bancaire déterministe."
+          "① Un mandant absent signe une enveloppe d'intention bornée ; en palier P3, aucune exécution ne s'opère sans approbation humaine hors bande FIDO2/CIBA.",
+          "② Au sein de la pile AGNTCY, l'annuaire ADS reste subordonné au registre interne pendant que SLIM sécurise le transport de groupe via MLS (RFC 9420).",
+          "③ En fédération B2B (2033–2035), le connecteur Dataspace contrôle la preuve légale vLEI et la licence ODRL 2.2 préalablement à tout échange avec le Diplomate externe.",
+          "④ L'Évaluateur interne valide les marges, l'absence de fraude et la non-collusion avant tout règlement sur le rail bancaire déterministe."
         ],
         "color_legend": [
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Protocoles en veille/évaluation hors production réelle (AP2 v0.2, OASF/ADS, SLIM)"
+            "meaning": "Protocoles en veille ou en évaluation hors production réelle (AP2 v0.2, OASF/ADS, SLIM)"
           },
           {
             "color_token": "Violet prune (#6D28D9)",
-            "meaning": "Cadre juridique B2B et consentement (vLEI, ODRL 2.2, zone grise litige non intentionnel)"
+            "meaning": "Cadre juridique B2B et chaîne de consentement (vLEI, ODRL 2.2, zone grise du litige non intentionnel)"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Garde déterministe interne (catalogue de vérité, Évaluateur, rail bancaire)"
+            "meaning": "Contrôle déterministe interne (catalogue faisant foi, Évaluateur interne, rail bancaire)"
           }
         ],
-        "key_takeaway_box": "À retenir : Signer techniquement une commande ne crée ni responsabilité claire ni droit au remboursement : AP2 et x402 restent en veille tant que la gouvernance FIDO et le droit des litiges ne sont pas mûrs."
+        "key_takeaway_box": "La signature technique d'une commande par un agent ne fonde ni responsabilité juridique claire ni droit au remboursement : AP2 et x402 demeurent en veille tant que la gouvernance FIDO et le droit des litiges ne sont pas établis."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -493,7 +493,7 @@
           "title": "L’achat non intentionnel : le trou que les cadres de litige existants ne couvrent pas.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-36.2 - L'achat non intentionnel - le trou que les cadres de litige.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-36.2.svg",
-          "role_note": "Matérialise la faille de responsabilité sur un achat signé mais non intentionnel."
+          "role_note": "Matérialise la faille d'imputabilité entourant un achat signé mais non intentionnel."
         },
         {
           "tome_id": "T3",
@@ -501,7 +501,7 @@
           "title": "Architecture de la pile réseau AGNTCY : découverte fédérée OASF / Agent Directory et transport SLIM chiffré de bout en bout par MLS post-quantique.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-14 - Architecture de la pile réseau AGNTCY - découverte fédérée OASF.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-14.svg",
-          "role_note": "Détaille l'articulation OASF, ADS et transport SLIM MLS."
+          "role_note": "Détaille l'articulation entre OASF, ADS et le transport SLIM fondé sur MLS."
         },
         {
           "tome_id": "T3",
@@ -517,7 +517,7 @@
           "title": "Architecture fédérée AGNTCY : enregistrement OASF/ADS et session chiffrée SLIM/MLS",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-20 - Architecture fédérée AGNTCY - enregistrement OASF-ADS et session.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-20.svg",
-          "role_note": "Complète la séquence opérationnelle OASF/ADS et canal SLIM/MLS."
+          "role_note": "Complète la séquence opérationnelle reliant OASF/ADS au canal chiffré SLIM/MLS."
         }
       ]
     },
@@ -542,31 +542,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Montre pourquoi laisser un agent générer directement du HTML ou du JavaScript d'interface crée une brèche critique de sécurité (OWASP ASI01/ASI09), et comment le découplage entre le tuyau d'état AG-UI (RFC 6902) et un catalogue fermé de widgets pré-approuvés (A2UI / MCP-UI) assure une interface réactive et sûre.",
-      "vulgarization_angle": "Comparer un agent écrivant du code écran libre (laisser un décorateur refaire le câblage électrique) à une régie de théâtre choisissant uniquement parmi des panneaux numérotés déjà homologués (catalogue fermé A2UI) mis à jour en temps réel par fiches différentielles (JSON Patch).",
+      "pedagogical_objective": "Ce schéma comparatif montre pourquoi autoriser un agent à générer directement du HTML ou du JavaScript d'interface crée une faille critique de sécurité (OWASP ASI01/ASI09), et comment le découplage entre le flux d'état AG-UI (RFC 6902) et un catalogue fermé de composants pré-approuvés (A2UI / MCP-UI) assure une interface à la fois réactive et sûre.",
+      "vulgarization_angle": "Permettre à un modèle d'écrire du code d'interface libre revient à laisser un scénographe modifier le câblage électrique d'une salle ; l'architecture impose plutôt une régie déclarative sélectionnant uniquement des panneaux numérotés déjà homologués (catalogue fermé A2UI) mis à jour en temps réel par fiches différentielles (JSON Patch).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "AVANT (Risque OWASP ASI01/ASI09) — Interface générative libre HTML/JS",
-            "content": "Code exécutable produit par le LLM directement interprété côté navigateur, ouvrant XSS, hameçonnage d'approbation et dérive visuelle non auditable."
+            "content": "Le code exécutable produit par le LLM est interprété directement par le navigateur, ouvrant la voie aux injections XSS, au hameçonnage d'approbation et à une dérive visuelle non auditable."
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS (EXIG-ARC-03) — Tuyau SSE/AG-UI + Catalogue fermé A2UI / MCP-UI",
-            "content": "Mises à jour d'état typées STATE_DELTA (JSON Patch RFC 6902 avec test anti-concurrence) projetées sur liste plate A2UI homologuée ou iframe sandboxée MCP-UI, plus WebRTC < 200 ms en audio terrain."
+            "label": "APRÈS (EXIG-ARC-03) — Canal SSE/AG-UI et catalogue fermé A2UI / MCP-UI",
+            "content": "Les mises à jour d'état typées STATE_DELTA (JSON Patch RFC 6902 avec test anti-concurrence) sont projetées sur une liste plate A2UI homologuée ou en iframe isolée MCP-UI, avec WebRTC < 200 ms réservé à l'audio de terrain."
           }
         ],
         "numbered_flows": [
           "① L'agent publie des événements différentiels structurés STATE_DELTA (RFC 6902 avec opération test de révision) sur le canal SSE/AG-UI.",
-          "② Le moteur d'interface filtre les données et ne sélectionne que des composants déclarés dans le catalogue fermé A2UI (zéro JS généré).",
-          "③ Pour tout composant tiers riche, le rendu est isolé dans une iframe sans privilèges (MCP-UI) pendant que les actions sensibles déclenchent la validation humaine hors bande.",
-          "④ En contexte industriel vocal, l'audio duplex WebRTC (UDP/SRTP) garantit une interruption sous 200 ms sans court-circuiter la validation d'écriture."
+          "② Le moteur d'interface filtre les données et sélectionne exclusivement des composants déclarés dans le catalogue fermé A2UI, sans aucune génération de JavaScript.",
+          "③ Pour tout composant tiers riche, le rendu est confiné dans une iframe dépourvue de privilèges (MCP-UI), tandis que les actions sensibles déclenchent la validation humaine hors bande.",
+          "④ En contexte industriel vocal, l'audio duplex WebRTC (UDP/SRTP) garantit une latence d'interruption inférieure à 200 ms sans jamais contourner la validation d'écriture."
         ],
         "color_legend": [
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "Exécution de HTML/JavaScript généré par modèle (proscrite par EXIG-ARC-03)"
+            "meaning": "Exécution de HTML ou de JavaScript généré par modèle (proscrite par EXIG-ARC-03)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
@@ -577,7 +577,7 @@
             "meaning": "Transport d'état typé AG-UI / SSE (JSON Patch RFC 6902)"
           }
         ],
-        "key_takeaway_box": "À retenir : L'agent pilote les données affichées, jamais le code de l'écran : le catalogue fermé A2UI élimine l'injection de script tout en offrant une réactivité fluide."
+        "key_takeaway_box": "L'agent pilote les données affichées, jamais le code de l'interface : le catalogue fermé A2UI élimine l'injection de scripts tout en préservant une réactivité fluide."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -587,7 +587,7 @@
           "title": "Architecture convergente du dernier kilomètre : interfaces réactives AG-UI / A2UI et WebRTC d’un côté, chaîne d’autorisation AP2 et règlement HTTP x402 de l’autre.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-17 - Architecture convergente du dernier kilomètre - interfaces réactives.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-17.svg",
-          "role_note": "Représente l'architecture de dernier kilomètre couplant AG-UI, A2UI et WebRTC."
+          "role_note": "Représente l'architecture du dernier kilomètre couplant AG-UI, A2UI et WebRTC."
         },
         {
           "tome_id": "T2",
@@ -620,36 +620,36 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Démontre visuellement le rôle central du point d'application PEP bidirectionnel en échec fermé : chaque appel MCP, A2A ou action sensible traverse sept barrages à l'aller et deux filtres au retour en moins d'une milliseconde en processus (52,85 µs p50 sur Borealis-Bench), tout en appliquant la Règle de deux sans laisser de secrets au modèle.",
-      "vulgarization_angle": "Comparer la passerelle PEP à un sas de sécurité bidirectionnel de banque centrale à neuf guichets séquentiels : vérification du badge, du registre autorisé, des droits, du contenu, du contreseing humain, du budget et injection finale du code coffre à l'aller ; masquage des données privées et coupure des sorties d'envoi en cas de contamination au retour.",
+      "pedagogical_objective": "Ce diagramme démontre le rôle central du point d'application PEP bidirectionnel en échec fermé : chaque appel MCP, A2A ou action sensible franchit sept contrôles à l'aller et deux filtres au retour en moins d'une milliseconde en processus (52,85 µs p50 sur Borealis-Bench), tout en appliquant la Règle de deux sans jamais exposer de secrets au modèle.",
+      "vulgarization_angle": "La passerelle PEP opère comme un sas de haute sécurité à neuf postes séquentiels : vérification de l'accréditation, du registre homologué, des droits, du contenu, du contreseing humain, des quotas et injection finale du jeton d'accès à l'aller ; masquage des renseignements personnels et verrouillage des outils d'envoi en cas de contamination au retour.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Contrôles ALLER (1 à 7 + pré-audit EXIG-OBS-11)",
-            "content": "(1) SVID/mTLS/DPoP et débit ; (2) Catalogue/SHA-256 ; (3) Décision PDP N1–N4/P0–P3 ; (4) Schéma I-JSON et anti-injection FR/EN ; (5) Jeton jti lié h=SHA-256(JCS) ; (6) Quotas ; (7) Échange RFC 8693 (zéro secret au LLM) + écriture pré-audit avant P2/P3."
+            "label": "Contrôles ALLER (1 à 7 et pré-audit EXIG-OBS-11)",
+            "content": "La chaîne aller exécute successivement : (1) SVID/mTLS/DPoP et débit ; (2) catalogue et empreinte SHA-256 ; (3) décision PDP N1–N4/P0–P3 ; (4) schéma I-JSON et garde anti-injection bilingue ; (5) jeton jti lié à h=SHA-256(JCS) ; (6) quotas ; (7) échange RFC 8693 (zéro secret au LLM) et pré-audit avant P2/P3."
           },
           {
             "zone_id": "Z2",
-            "label": "Contrôles RETOUR (8 et 9) + Règle de deux (EXIG-SEC-06)",
-            "content": "(8) Masquage RP/PII, marquage non fiable et retrait déterministe de tout outil d'envoi/P3 dès exposition simultanée à entrée externe + actif sensible ; (9) Span OTel sans PII et scellement JCS."
+            "label": "Contrôles RETOUR (8 et 9) et Règle de deux (EXIG-SEC-06)",
+            "content": "La chaîne retour assure : (8) le masquage RP/PII, le marquage non fiable et le retrait déterministe de tout outil d'envoi/P3 dès exposition simultanée à une entrée externe et à un actif sensible ; (9) l'émission du span OTel sans PII et le scellement JCS."
           },
           {
             "zone_id": "Z3",
             "label": "Plan de performance et désambiguïsation AgentMesh",
-            "content": "Étalonnage Borealis-Bench à 52,85 µs p50 (coupe-circuit POR-003 en 0,050 ms max) et distinction nette entre maillage réseau (Istio/agentgateway), dorsale (Solace) et bibliothèque de confiance."
+            "content": "L'étalonnage Borealis-Bench atteint 52,85 µs p50 (coupe-circuit POR-003 en 0,050 ms maximum) et distingue nettement le maillage réseau (Istio/agentgateway), la dorsale événementielle (Solace) et la bibliothèque de confiance."
           }
         ],
         "numbered_flows": [
           "① L'appel MCP ou A2A franchit les contrôles 1 à 4 (identité SVID, condensat SHA-256 au catalogue, droits PDP et garde anti-injection).",
-          "② Sur P2/P3, les contrôles 5 à 7 valident le jeton h=SHA-256(JCS), les quotas et échangent le jeton RFC 8693 après écriture du pré-audit EXIG-OBS-11.",
-          "③ Au retour, le contrôle 8 masque les RP et active le verrou irréversible EXIG-SEC-06 (retrait d'envoi et P3) si la session est marquée non fiable.",
-          "④ Le contrôle 9 ferme le span OpenTelemetry GenAI et scelle l'issue dans le journal d'audit JCS."
+          "② Sur les actions P2/P3, les contrôles 5 à 7 valident le jeton lié h=SHA-256(JCS), vérifient les quotas et échangent le jeton RFC 8693 après écriture du pré-audit EXIG-OBS-11.",
+          "③ Au retour, le contrôle 8 masque les renseignements personnels et active le verrou irréversible EXIG-SEC-06 (retrait des capacités d'envoi et P3) si la session devient marquée non fiable.",
+          "④ Le contrôle 9 clôt le span OpenTelemetry GenAI et scelle l'issue dans le journal d'audit JCS."
         ],
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Contrôles aller 1–7 de la passerelle PEP en échec fermé"
+            "meaning": "Contrôles aller 1 à 7 de la passerelle PEP en échec fermé"
           },
           {
             "color_token": "Rouge brique (#B91C1C)",
@@ -657,10 +657,10 @@
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Filtrage retour (contrôles 8–9), pré-audit P2/P3 et télémétrie OTel"
+            "meaning": "Filtrage retour (contrôles 8 et 9), pré-audit P2/P3 et télémétrie OTel"
           }
         ],
-        "key_takeaway_box": "À retenir : Neuf contrôles ordonnés sur un passage obligé unique remplacent des dizaines de garde-fous disparates et protègent les cœurs métier en quelques microsecondes."
+        "key_takeaway_box": "Neuf contrôles ordonnés concentrés en un point de passage obligé remplacent des garde-fous disparates et protègent les cœurs métier en quelques microsecondes."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -694,7 +694,7 @@
           "title": "Les cinq contrôles qu’une passerelle applique à un appel d’outil : l’appel traverse les cinq avant d’atteindre l’outil, et la réponse repasse par l’inspection avant son retour à l’agent. Le regroupement en cinq contrôles est une grille de lecture tirée du brouillon de Microsoft et de la documentation des produits, pas un résultat éprouvé.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-37 - Les cinq contrôles qu'une passerelle applique à un appel d'outil.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-37.svg",
-          "role_note": "Montre la grille initiale de cinq contrôles avant raffinement vers les neuf contrôles normatifs."
+          "role_note": "Présente la grille initiale à cinq contrôles préalablement à son raffinement vers les neuf contrôles normatifs."
         }
       ]
     },
@@ -713,7 +713,7 @@
         "contrats-api-versionnement-conformite",
         "metriques-soutien-vs-production"
       ],
-      "title": "Découverte en 4 opérations (Agent Card JWS/JCS), catalogue unique à 5 statuts et règle « soutien ≠ production »",
+      "title": "Découverte en quatre opérations (Agent Card JWS/JCS), catalogue unique à cinq statuts et règle « soutien ≠ production »",
       "insertion_point": "Chapitre 09 §09.2.1 — Découverte Agent Card et registres",
       "target_audiences": [
         "Direction / Métier",
@@ -722,36 +722,36 @@
       ],
       "visual_archetype": "Échelle graduée de maturité / autonomie",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Fait comprendre en un regard la différence entre trouver un agent ou protocole sur Internet (trouver, décrire, authentifier) et l'autoriser dans l'entreprise (4e opération : approuver au catalogue unique). Le schéma montre les cinq échelons de statut du catalogue et prémunit les décideurs contre l'illusion des communiqués marketing (« 150+ soutiens » ≠ preuve en production).",
-      "vulgarization_angle": "Comparer la découverte à l'embauche d'un fournisseur : un annuaire public ou une brochure publicitaire ne donne jamais le badge d'accès ; seule l'accréditation au registre interne sur six critères (statut Adopter, préavis de 60 jours, signatures JWS/JCS) autorise le service.",
+      "pedagogical_objective": "Cette infographie établit avec clarté la frontière entre repérer un agent ou un protocole externe (trouver, décrire, authentifier) et l'autoriser dans l'entreprise (quatrième opération : approuver au catalogue unique). Elle présente les cinq statuts de gouvernance du catalogue et prémunit les décideurs contre l'illusion des annonces promotionnelles (« 150+ soutiens » ≠ déploiement vérifié en production).",
+      "vulgarization_angle": "La découverte se compare à l'accréditation d'un fournisseur : un annuaire public ou une brochure commerciale ne confère jamais de droit d'accès ; seule l'inscription au registre interne sur six critères cumulatifs (statut Adopter, préavis de 60 jours, signatures JWS/JCS) autorise la mise en service.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Quatre opérations séparées de découverte et diligence critique",
-            "content": "(1) Trouver, (2) Décrire, (3) Authentifier via Agent Card /.well-known/ signée JWS/JCS (RFC 8785), (4) Approuver réservée au seul catalogue interne (rejet des métriques d'attention non probantes)."
+            "content": "Le processus dissocie : (1) trouver, (2) décrire, (3) authentifier au moyen d'une Agent Card /.well-known/ signée JWS/JCS (RFC 8785), et (4) approuver au sein du seul catalogue interne, en écartant les métriques d'attention non probantes."
           },
           {
             "zone_id": "Z2",
             "label": "Échelle des cinq statuts du catalogue d'entreprise (EXIG-INT-04..23)",
-            "content": "Suspendu (arrêt immédiat) → Contenir (adaptateur à retrait) → Surveiller (veille sans données réelles) → Évaluer (pilotes bornés) → Adopter (6 critères cumulatifs, ≥ 60 j de coexistence)."
+            "content": "La progression graduelle couvre : Suspendu (arrêt immédiat) → Contenir (adaptateur destiné au retrait) → Surveiller (veille sans données réelles) → Évaluer (pilotes bornés) → Adopter (six critères cumulatifs et ≥ 60 jours de coexistence)."
           },
           {
             "zone_id": "Z3",
             "label": "Cycle de vie des contrats API et pyramide d'évaluation",
-            "content": "Design-first OpenAPI 3.1/3.2 & AsyncAPI 3.0, en-têtes Deprecation RFC 9745 / Sunset RFC 8594 et pyramide à 3 étages (conformité, interopérabilité consommateur, bancs non déterministes)."
+            "content": "L'ingénierie design-first sous OpenAPI 3.1/3.2 et AsyncAPI 3.0 s'appuie sur les en-têtes Deprecation (RFC 9745) et Sunset (RFC 8594) ainsi que sur la pyramide à trois étages (conformité, interopérabilité consommateur, bancs non déterministes)."
           }
         ],
         "numbered_flows": [
-          "① Un protocole ou une Agent Card externe est trouvé et authentifié cryptographiquement (JWS/JCS), mais reste bloqué tant qu'il n'est pas approuvé.",
-          "② L'architecture applique la grille de diligence écartant les décomptes auto-déclarés (« soutien déclaré ≠ production ») au profit de preuves CI vérifiées.",
-          "③ Le comité trimestriel (ou <= 15 j ouvrables sur incident) classe le composant dans l'un des cinq statuts et impose 60 jours de coexistence sur rupture majeure.",
-          "④ Les API conformes publient leurs dates de fin de vie via RFC 9745 / RFC 8594 et réussissent les trois étages de la pyramide de test."
+          "① Un protocole ou une Agent Card externe est découvert et authentifié cryptographiquement (JWS/JCS), mais demeure bloqué tant qu'il n'est pas approuvé.",
+          "② L'architecture applique la grille de diligence écartant les décomptes auto-déclarés (« soutien déclaré ≠ production ») au profit de preuves d'intégration continue vérifiées.",
+          "③ Le comité trimestriel (ou en ≤ 15 jours ouvrables sur incident) classe le composant dans l'un des cinq statuts et impose 60 jours de coexistence lors de toute rupture majeure.",
+          "④ Les API conformes publient leurs dates de retrait via RFC 9745 et RFC 8594 et satisfont aux trois étages de la pyramide de test."
         ],
         "color_legend": [
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Statut Adopter validé sur 6 critères cumulatifs et contrat JWS/JCS actif"
+            "meaning": "Statut Adopter validé sur six critères cumulatifs avec contrat JWS/JCS actif"
           },
           {
             "color_token": "Ambre doré (#D97706)",
@@ -766,7 +766,7 @@
             "meaning": "Catalogue interne unique (source de vérité) et en-têtes RFC 9745/8594"
           }
         ],
-        "key_takeaway_box": "À retenir : Trouver un agent ne donne aucun droit d'accès : seule l'approbation trimestrielle au catalogue unique sur six critères objectifs ouvre la porte de production."
+        "key_takeaway_box": "Repérer un agent externe ne lui confère aucun droit d'accès : seule l'homologation trimestrielle au catalogue unique, fondée sur six critères objectifs, autorise son entrée en production."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -826,36 +826,36 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Révèle aux comités juridiques et de direction l'angle mort majeur des standards techniques : aucun des 15 croisements entre MCP/A2A/AP2 et les 5 cadres financiers canadiens ne répond à la question « qui en est responsable ? ». Le schéma associe chaque case vide aux cinq zones de compensation architecturale Z1–Z5 et montre les 5 verrous EXIG-ARC-21 empêchant l'enfermement SaaS.",
-      "vulgarization_angle": "Présenter les protocoles comme des routes goudronnées (couches technique et syntaxique EIF) qui n'apportent ni code de la route juridique ni assurance : cinq postes de contrôle Z1–Z5 comblent les trous, tandis que des sorties de secours EXIG-ARC-21 empêchent les suites commerciales de fermer leurs barrières.",
+      "pedagogical_objective": "Cette matrice révèle aux comités juridiques et de direction l'angle mort majeur des standards techniques : aucun des 15 croisements entre MCP/A2A/AP2 et les cinq cadres financiers canadiens ne répond à la question d'imputabilité juridique (« qui en répond ? »). Elle associe chaque lacune aux cinq zones de compensation architecturale Z1–Z5 et expose les verrous EXIG-ARC-21 empêchant l'enfermement propriétaire SaaS.",
+      "vulgarization_angle": "Les protocoles forment une infrastructure routière normalisée (couches technique et syntaxique EIF) qui n'emporte ni code juridique ni couverture d'assurance : cinq postes compensatoires Z1–Z5 comblent ces lacunes hors protocole, tandis que des clauses de réversibilité EXIG-ARC-21 empêchent les suites commerciales de verrouiller l'écosystème interne.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Matrice 0/15 (Tableau 42.1) — Ce que les protocoles ignorent",
-            "content": "Croisement MCP, A2A, AP2 × BSIF E-23, AMF, ACVM 11-348, Loi 25 art. 12.1 et C-15 : 0 lien documenté sur 15 (Q-A protocolaire ≠ Q-E responsabilité juridique)."
+            "label": "Matrice 0/15 (Tableau 42.1) — Angles morts réglementaires des protocoles",
+            "content": "Le croisement de MCP, A2A et AP2 avec BSIF E-23, AMF, ACVM 11-348, Loi 25 art. 12.1 et C-15 révèle 0 lien documenté sur 15 (la question protocolaire Q-A ne répondant pas à la question juridique Q-E)."
           },
           {
             "zone_id": "Z2",
             "label": "Cinq zones de compensation Z1–Z5 et grille EIF / LCIM",
-            "content": "Z1 trace d'instance, Z2 arrêt humain suspensif, Z3 blocage d'auto-modification, Z4 abstraction bancaire ouverte (CAP-026), Z5 filtrage par maillage pour atteindre les paliers pragmatique/juridique EIF/LCIM."
+            "content": "La couverture des couches sémantique, organisationnelle et juridique EIF/LCIM repose sur : Z1 trace d'instance, Z2 arrêt humain suspensif, Z3 blocage d'auto-modification, Z4 abstraction bancaire ouverte (CAP-026) et Z5 filtrage par maillage."
           },
           {
             "zone_id": "Z3",
-            "label": "Bouclier anti-verrouillage EXIG-ARC-21 sur suites SaaS",
-            "content": "Transit obligatoire par passerelle vers tout autre domaine, identité dédiée, export OTel, test d'arrêt trimestriel, plafond N2 sans JCS et préavis de sortie de 12 mois."
+            "label": "Bouclier anti-verrouillage EXIG-ARC-21 sur les suites SaaS",
+            "content": "Les suites SaaS sont astreintes au transit par passerelle vers tout autre domaine, à une identité dédiée, à l'exportation OTel, à un test d'arrêt trimestriel, au plafond N2 sans JCS et à un préavis de sortie de 12 mois."
           }
         ],
         "numbered_flows": [
-          "① Le constat 0/15 montre que la conformité protocolaire MCP/A2A ne répond à aucune obligation BSIF E-23, AMF, Loi 25 ou C-15.",
-          "② L'entreprise active les cinq zones compensatoires Z1–Z5 hors du fil protocolaire pour couvrir les couches sémantique, organisationnelle et juridique (EIF).",
-          "③ Toute suite agentique SaaS « ouverte sur le fil, fermée sur le contrôle » est cantonnée par les cinq mesures trimestrielles d'EXIG-ARC-21.",
-          "④ L'adhésion aux standards AAIF, WIMSE et CAISI garantit la portabilité neutre face aux dépréciations (ex. retrait Assistants API le 26 août 2026)."
+          "① Le constat 0/15 démontre que la conformité protocolaire MCP/A2A ne satisfait à aucune exigence réglementaire BSIF E-23, AMF, Loi 25 ou C-15.",
+          "② L'institution active les cinq zones compensatoires Z1–Z5 hors du fil protocolaire afin de couvrir les couches sémantique, organisationnelle et juridique (EIF).",
+          "③ Toute suite agentique SaaS « ouverte sur le fil, fermée sur le contrôle » est cantonnée par les mesures trimestrielles prescrites par EXIG-ARC-21.",
+          "④ L'alignement sur les standards AAIF, WIMSE et CAISI garantit la portabilité neutre face aux dépréciations brutales (tel le retrait d'Assistants API le 26 août 2026)."
         ],
         "color_legend": [
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "15 croisements vides (0/15) et risque d'enfermement propriétaire SaaS"
+            "meaning": "Quinze croisements sans lien documenté (0/15) et risque d'enfermement propriétaire SaaS"
           },
           {
             "color_token": "Violet prune (#6D28D9)",
@@ -866,7 +866,7 @@
             "meaning": "Contrôles anti-verrouillage EXIG-ARC-21 et noyau possédé (CAP-013)"
           }
         ],
-        "key_takeaway_box": "À retenir : Adopter un protocole ouvert ne rend ni conforme au droit canadien ni indépendant d'un fournisseur : Z1–Z5 apportent la conformité et EXIG-ARC-21 garantit la porte de sortie."
+        "key_takeaway_box": "L'adoption d'un protocole ouvert ne confère ni conformité au droit canadien ni indépendance envers un fournisseur : les zones Z1–Z5 assurent l'opposabilité juridique et EXIG-ARC-21 préserve la réversibilité."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -876,7 +876,7 @@
           "title": "La pile canonique d’interopérabilité, son extension par le LCIM et le palier où opèrent MCP et A2A (quatre paliers cumulatifs numérotés de 1 à 4).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-01.1 - La pile canonique d'interopérabilité, son extension par le LCIM.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.1.svg",
-          "role_note": "Situe MCP et A2A aux paliers bas de l'échelle cumulative LCIM."
+          "role_note": "Situe MCP et A2A aux paliers inférieurs de l'échelle cumulative LCIM."
         },
         {
           "tome_id": "T1",
@@ -884,7 +884,7 @@
           "title": "La matrice protocoles × textes canadiens : les quinze croisements sans lien documenté (voir le Tableau 42.1 pour l’alignement exact des cinq lignes — E-23, AMF, Avis 11-348, Art. 12.1 et Cadre bancaire — et des cellules Art. 12.1 × MCP/A2A/AP2, sans case partielle sur AP2).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-42.1 - La matrice protocoles × textes canadiens - les quinze.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-42.1.svg",
-          "role_note": "Visualise les 15 cases sans lien réglementaire documenté de la matrice."
+          "role_note": "Visualise les 15 cellules dépourvues de lien réglementaire documenté dans la matrice."
         },
         {
           "tome_id": "T1",
@@ -892,7 +892,7 @@
           "title": "Les cinq zones de compensation architecturale : ce que l’architecture doit porter là où rien ne le porte.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-42.3 - Les cinq zones de compensation architecturale - ce.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-42.3.png",
-          "role_note": "Cartographie les cinq zones compensatoires Z1–Z5 requises hors protocoles."
+          "role_note": "Cartographie les cinq zones compensatoires Z1–Z5 requises hors des protocoles."
         },
         {
           "tome_id": "T2",
@@ -925,26 +925,26 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Explique comment éviter de payer le tarif maximal des grands modèles sur des tâches routinières sans sacrifier la précision ni ralentir le système : 70 à 78 % du trafic qualifié en E2 est dirigé vers de petits modèles spécialisés (SLM 3B–14B), pendant que l'ordonnanceur Endpoint Picker dirige chaque requête vers le serveur GPU ayant déjà le préfixe chaud en mémoire KV-cache.",
-      "vulgarization_angle": "Comparer le routage à trois paliers au triage hospitalier entre infirmière de triage rapide (SLM 70–78 % des cas), médecin généraliste (LLM frontière) et collège de spécialistes (calcul réflexif), dirigés vers des salles d'examen où le dossier du patient est déjà ouvert sur le bureau (affinité KV-cache).",
+      "pedagogical_objective": "Cet arbre de décision explique comment éviter la facturation systématique des grands modèles frontière sur des tâches courantes sans compromettre la précision ni la latence : de 70 à 78 % du trafic qualifié en E2 est orienté vers des modèles spécialisés compacts (SLM 3B–14B), tandis que l'ordonnanceur Endpoint Picker dirige chaque requête vers la réplique GPU détenant déjà le préfixe chaud en mémoire KV-cache.",
+      "vulgarization_angle": "Le routage à trois paliers fonctionne comme un triage clinique gradué : les cas courants relèvent d'une intervention rapide et spécialisée (SLM 70–78 %), les dossiers ambigus passent au généraliste (LLM frontière) et les arbitrages complexes au collège d'experts (calcul réflexif), chaque dossier étant dirigé vers le poste disposant déjà de ses antécédents ouverts en mémoire (affinité KV-cache).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Aiguilleur cognitif à 3 paliers qualifié en E2 (O-10 / EXIG-FIN-06)",
-            "content": "Palier 1 SLM (3B–14B, 70–78 % des appels bornés) ; Palier 2 LLM frontière (intention complexe) ; Palier 3 calcul réflexif (test-time compute), protégés contre les attaques d'éponge budgétaire."
+            "label": "Aiguilleur cognitif à trois paliers qualifié en E2 (O-10 / EXIG-FIN-06)",
+            "content": "La distribution s'établit entre le Palier 1 SLM (3B–14B, 70–78 % des appels bornés), le Palier 2 LLM frontière (intention complexe) et le Palier 3 calcul réflexif (test-time compute), sous protection contre les attaques d'éponge budgétaire."
           },
           {
             "zone_id": "Z2",
             "label": "Ordonnanceur Gateway API Inference Extension (EPP / llm-d / EXIG-FIN-07)",
-            "content": "Endpoint Picker (EPP) pondérant charge GPU et affinité de préfixe KV-cache (RadixAttention, désagrégation prefill/decode) contre le rond-robin naïf destructeur de localité."
+            "content": "L'Endpoint Picker (EPP) pondère la charge GPU et l'affinité de préfixe KV-cache (RadixAttention, désagrégation prefill/decode), supplantant la répartition circulaire indifférenciée destructrice de localité."
           }
         ],
         "numbered_flows": [
-          "① Le classifieur qualifié en E2 évalue la complexité et la sensibilité aux reformulations avant d'assigner le palier (SLM, LLM ou réflexif) avec plafond anti-éponge.",
-          "② L'Endpoint Picker (EPP) inspecte l'empreinte de préfixe système/outils de la requête et les files VRAM des répliques disponibles.",
-          "③ La requête est aiguillée vers la réplique possédant déjà le préfixe chaud en KV-cache (ou délestée sur hiérarchie prefill/decode), abaissant le TTFT et le coût de relecture de ~90 %.",
-          "④ En cas de doute de calibration sur log-probabilités, le flux escalade vers le palier supérieur sous budget FinOps contrôlé."
+          "① Le classifieur qualifié en E2 évalue la complexité et la sensibilité aux reformulations avant d'assigner le palier (SLM, LLM ou calcul réflexif) sous plafond anti-éponge.",
+          "② L'Endpoint Picker (EPP) inspecte l'empreinte du préfixe système/outils de la requête ainsi que les files VRAM des répliques disponibles.",
+          "③ La requête est aiguillée vers la réplique détenant déjà le préfixe chaud en KV-cache (ou délestée sur hiérarchie prefill/decode), abaissant le TTFT et le coût de relecture d'environ 90 %.",
+          "④ Lorsque la calibration sur log-probabilités révèle une incertitude élevée, le flux escalade vers le palier supérieur sous budget FinOps maîtrisé."
         ],
         "color_legend": [
           {
@@ -957,10 +957,10 @@
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Escalade LLM frontière ou calcul réflexif sous plafond budgétaire"
+            "meaning": "Escalade vers LLM frontière ou calcul réflexif sous plafond budgétaire"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne pas envoyer un grand modèle là où un petit modèle spécialisé suffit, et toujours renvoyer la question vers le serveur qui a déjà le début du dossier en mémoire (KV-cache)."
+        "key_takeaway_box": "Solliciter un modèle frontière lorsqu'un petit modèle spécialisé suffit constitue un gaspillage évitable ; le routage cognitif et l'affinité KV-cache concilient frugalité budgétaire et performance."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -970,7 +970,7 @@
           "title": "Plan de données AI-natif : passerelle unifiée agentgateway, routage cognitif hybride à trois paliers et ordonnancement Kubernetes conscient du préfixe KV-cache.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-56 - Plan de données AI-natif - passerelle unifiée agentgateway, routage.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-56.svg",
-          "role_note": "Réunit agentgateway, routage à trois paliers et ordonnancement conscient du KV-cache."
+          "role_note": "Réunit agentgateway, le routage à trois paliers et l'ordonnancement conscient du KV-cache."
         },
         {
           "tome_id": "T6",
@@ -986,7 +986,7 @@
           "title": "Séquence de récupération en deux étages et cascade d’inférence SLM vers Frontier LLM",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-10 - Séquence de récupération en deux étages et cascade d'inférence SLM.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-10.svg",
-          "role_note": "Montre la séquence concrète de cascade entre SLM et LLM frontière."
+          "role_note": "Illustre la séquence concrète de cascade entre SLM et LLM frontière."
         }
       ]
     },
@@ -1012,31 +1012,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Illustre un piège majeur invisible aux tests syntaxiques : deux agents échangent un message JSON valide, mais calculent différemment « revenu » ou « ratio de solvabilité » sans lever d'erreur (détecteur automatique bloqué à 27,9 %). Le schéma montre comment une couche sémantique analytique neutre (DEC-003) et des ontologies validées en monde clos (SHACL sur FIBO) suppriment cette erreur silencieuse.",
-      "vulgarization_angle": "Comparer une erreur de syntaxe à une enveloppe déchirée rejetée par le facteur, et une erreur sémantique silencieuse à une lettre impeccablement timbrée contenant une facture en dollars US lue en dollars canadiens — corrigée uniquement par un dictionnaire officiel unique (couche sémantique DEC-003).",
+      "pedagogical_objective": "Ce comparatif met en évidence un piège invisible aux contrôles syntaxiques : deux agents échangent un message JSON parfaitement valide tout en calculant différemment « revenu » ou « ratio de solvabilité » sans lever aucune erreur (la détection automatique plafonnant à 27,9 %). Il démontre comment une couche sémantique analytique neutre (DEC-003) et des ontologies validées en monde clos (SHACL sur FIBO) suppriment cette erreur silencieuse.",
+      "vulgarization_angle": "Une erreur de syntaxe équivaut à une enveloppe déchirée rejetée par le service postal, alors qu'une erreur sémantique silencieuse correspond à une lettre dûment affranchie contenant une facture en dollars américains lue en dollars canadiens — une divergence que seul un référentiel officiel unique de définitions (couche sémantique DEC-003) permet d'éliminer.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "AVANT (Piège syntaxe ≠ sens) — SQL libre et prose ambiguë",
-            "content": "Validation JSON Schema réussie mais calculs divergents entre Ventes et Finances ; détection automatique d'écart plafonnant à 27,9 % et perte de force illocutoire (FIPA-ACL vs MCP)."
+            "content": "La validation JSON Schema réussit alors que les calculs divergent entre Ventes et Finances ; la détection automatique d'écart plafonne à 27,9 % et la force illocutoire (FIPA-ACL par rapport à MCP) est perdue."
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS (PRI-008 / DEC-003) — Couche sémantique neutre + Ontologies + Registres",
-            "content": "Formules versionnées comme du code (60 j de coexistence SIG-110, sans couplage à Apache Ossie 0.1.1), validation SHACL (monde clos) distincte d'OWL 2 (monde ouvert) sur FIBO/ISO 20022 et régimes Protobuf/Avro."
+            "label": "APRÈS (PRI-008 / DEC-003) — Couche sémantique neutre, ontologies et registres",
+            "content": "Les formules sont versionnées comme du code (60 jours de coexistence SIG-110, sans couplage à Apache Ossie 0.1.1), la validation SHACL (monde clos) se distingue d'OWL 2 (monde ouvert) sur FIBO/ISO 20022 et les registres encadrent Protobuf/Avro."
           }
         ],
         "numbered_flows": [
-          "① Avant : deux agents s'accordent sur le nom du champ mais appliquent deux règles métier incompatibles sans lever d'exception.",
-          "② Après : l'agent invoque une métrique nommée de la couche sémantique neutre (DEC-003) sans jamais générer de SQL libre.",
+          "① Avant : deux agents s'accordent sur le nom d'un champ mais appliquent deux règles métier incompatibles sans déclencher d'exception.",
+          "② Après : l'agent invoque une métrique nommée au sein de la couche sémantique neutre (DEC-003) sans jamais générer de SQL libre.",
           "③ Les entités réglementaires traversent les règles de validation fermée SHACL adossées aux vocabulaires FIBO, BIAN ou CDM/DRR.",
-          "④ Les schémas d'échange (Protobuf, Avro, Arrow) évoluent uniquement selon les régimes de compatibilité vérifiés par le registre."
+          "④ Les schémas d'échange (Protobuf, Avro, Arrow) évoluent exclusivement selon les régimes de compatibilité vérifiés par le registre."
         ],
         "color_legend": [
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "Erreur sémantique silencieuse (message bien formé mais faux calcul métier)"
+            "meaning": "Erreur sémantique silencieuse (message bien formé mais calcul métier erroné)"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
@@ -1047,7 +1047,7 @@
             "meaning": "Validation fermée SHACL sur ontologies établies (FIBO, ISO 20022, HL7 FHIR)"
           }
         ],
-        "key_takeaway_box": "À retenir : Un schéma technique dit comment ranger les chiffres ; seule la couche sémantique neutre garantit que tous les agents calculent exactement la même réalité métier."
+        "key_takeaway_box": "Un schéma technique régit uniquement la forme des données ; seule la couche sémantique neutre garantit que l'ensemble des agents calculent rigoureusement la même réalité métier."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1057,7 +1057,7 @@
           "title": "L’agent des ventes et l’agent des finances échangent un message conforme au schéma, mais donnent deux sens au « revenu du trimestre ». Une erreur de syntaxe produit un rejet; une erreur de sens produit une réponse bien formée, que l’agent suivant reprend comme un fait.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-20 - L'agent des ventes et l'agent des finances échangent un message.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-20.svg",
-          "role_note": "Illustre concrètement le cas de divergence sémantique silencieuse entre Ventes et Finances."
+          "role_note": "Illustre concrètement un cas de divergence sémantique silencieuse entre Ventes et Finances."
         },
         {
           "tome_id": "T1",
@@ -1065,7 +1065,7 @@
           "title": "Les quatre régimes de compatibilité de schéma, et le sens d’évolution que chacun protège (la transitivité qualifiant l’étendue temporelle des trois premiers régimes).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-02.1 - Les quatre régimes de compatibilité de schéma, et le sens.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-02.1.svg",
-          "role_note": "Détaille les quatre régimes d'évolution sûre des schémas (Avro/Protobuf/JSON)."
+          "role_note": "Détaille les quatre régimes d'évolution sûre des schémas (Avro, Protobuf et JSON)."
         },
         {
           "tome_id": "T1",
@@ -1073,7 +1073,7 @@
           "title": "La pile du Web sémantique, et ce que chaque brique ajoute au graphe (JSON-LD opérant comme format de sérialisation transversal de RDF et non comme couche logique au-dessus d’OWL).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-02.3 - La pile du Web sémantique, et ce que chaque brique ajoute.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-02.3.svg",
-          "role_note": "Clarifie les rôles de RDF, RDFS, OWL 2 et JSON-LD."
+          "role_note": "Clarifie les rôles respectifs de RDF, RDFS, OWL 2 et JSON-LD."
         },
         {
           "tome_id": "T3",
@@ -1081,7 +1081,7 @@
           "title": "Architecture duale couplant la couche sémantique analytique Apache Ossie et l’ontologie opéra tionnelle causale au sein d’un pipeline neuro-symbolique.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-21 - Architecture duale couplant la couche sémantique analytique Apache.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-21.svg",
-          "role_note": "Montre le couplage couche analytique et ontologie (à décliner sans verrouillage Ossie via DEC-003)."
+          "role_note": "Illustre le couplage entre couche analytique et ontologie (à décliner sans verrouillage Ossie conformément à DEC-003)."
         }
       ]
     },
@@ -1098,7 +1098,7 @@
         "donnees-pretes-agents-odcs-openlineage",
         "iso-20022-lynx-rtr"
       ],
-      "title": "Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) et observation ISO 20022 (Lynx/RTR)",
+      "title": "Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) et observation ISO 20022 (Lynx et RTR)",
       "insertion_point": "Chapitre 10 §10.2.1 — Contrats ODCS v3.2.0, Write-Audit-Publish et rails ISO 20022 canadiens",
       "target_audiences": [
         "Direction / Métier",
@@ -1108,31 +1108,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Montre comment garantir qu'un agent ne consomme jamais des données périmées ou corrompues grâce au sas de quarantaine Write-Audit-Publish sous contrat ODCS v3.2.0, et clarifie pour les décideurs financiers l'état réel des rails canadiens ISO 20022 (Lynx migré, RTR reporté sans lancement confirmé, Règlement n° 10 en vigueur, agent cantonné à l'observation).",
-      "vulgarization_angle": "Comparer le patron Write-Audit-Publish au contrôle qualité d'un entrepôt alimentaire : les arrivages restent en chambre de quarantaine isolée (branche Iceberg/Nessie) jusqu'à vérification du contrat ODCS et de la fraîcheur avant d'être mis en rayon, pendant que sur le rail bancaire Lynx l'agent lit les bordereaux sans jamais signer le virement.",
+      "pedagogical_objective": "Ce parcours séquentiel démontre comment empêcher qu'un agent ne consomme des données périmées ou corrompues grâce au sas de quarantaine Write-Audit-Publish sous contrat ODCS v3.2.0, tout en clarifiant pour les décideurs financiers l'état vérifié des rails canadiens ISO 20022 (Lynx migré, RTR reporté sans lancement confirmé, Règlement n° 10 en vigueur et agent cantonné à l'observation).",
+      "vulgarization_angle": "Le patron Write-Audit-Publish fonctionne comme l'inspection sanitaire d'un entrepôt : chaque arrivage séjourne en chambre de quarantaine isolée (branche Iceberg/Nessie) jusqu'à certification du contrat ODCS et de sa fraîcheur avant toute mise à disposition, tandis que sur le rail bancaire Lynx, l'agent examine les bordereaux sans jamais détenir le pouvoir de signer le virement.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Sas Write-Audit-Publish (Iceberg/Nessie + ODCS v3.2.0 / PRR F-13)",
-            "content": "Ingestion sur branche isolée, validation déterministe des unités, dérives PSI, signal staleness et lignage OpenLineage avant publication au catalogue."
+            "label": "Sas Write-Audit-Publish (Iceberg/Nessie et ODCS v3.2.0 / PRR F-13)",
+            "content": "L'ingestion s'opère sur branche isolée avec validation déterministe des unités, des dérives PSI, du signal staleness et du lignage OpenLineage préalablement à la publication au catalogue."
           },
           {
             "zone_id": "Z2",
             "label": "Exposition gouvernée sous identité du mandant (EXIG-ARC-16)",
-            "content": "Propriétaire identifié par champ, étiquette juridique/inter-filiales à l'ingestion (PRI-010, PEX-041), et zéro repli silencieux vers un compte de service."
+            "content": "Chaque champ dispose d'un propriétaire identifié, porte son étiquette juridique ou inter-filiales dès l'ingestion (PRI-010, PEX-041) et exclut tout repli silencieux vers un compte de service."
           },
           {
             "zone_id": "Z3",
-            "label": "Rails canadiens ISO 20022 (Lynx accompli vs RTR reporté)",
-            "content": "Lynx migré le 22 nov. 2025 (S-026), Règlement n° 10 (DORS/2026-133) actif, RTR reporté après quatre cibles (S-027) et séparation observation agentique / exécution déterministe (§45.12)."
+            "label": "Rails canadiens ISO 20022 (Lynx achevé et RTR reporté)",
+            "content": "Lynx a achevé sa migration le 22 novembre 2025 (S-026) et le Règlement n° 10 (DORS/2026-133) est entré en vigueur, tandis que RTR demeure reporté après quatre cibles (S-027) et que l'observation agentique reste séparée de l'exécution déterministe (§45.12)."
           }
         ],
         "numbered_flows": [
-          "① Les données brutes entrent sur une branche isolée (Write) invisibles aux agents d'entreprise.",
-          "② Le gardien sémantique vérifie les contrats ODCS v3.2.0, la dérive PSI et la fraîcheur (Audit) avec lignage OpenLineage avant promotion (Publish).",
-          "③ L'agent interroge l'entrepôt via MCP uniquement sous l'identité déléguée du mandant (EXIG-ARC-16) et sur des champs marqués d'entité juridique.",
-          "④ Sur les flux de paiement ISO 20022 (Lynx/RTR), l'agent observe et prépare le dossier normalisé sans franchir la frontière d'irréversibilité du rail."
+          "① Les données brutes entrent sur une branche isolée (Write), demeurant invisibles aux agents d'entreprise.",
+          "② Le contrôleur sémantique vérifie les contrats ODCS v3.2.0, la dérive PSI et la fraîcheur (Audit) avec lignage OpenLineage avant la promotion (Publish).",
+          "③ L'agent interroge l'entrepôt via MCP exclusivement sous l'identité déléguée du mandant (EXIG-ARC-16) et sur des champs marqués quant à l'entité juridique.",
+          "④ Sur les flux de paiement ISO 20022 (Lynx/RTR), l'agent observe et prépare le dossier normalisé sans jamais franchir la frontière d'irréversibilité du rail."
         ],
         "color_legend": [
           {
@@ -1145,10 +1145,10 @@
           },
           {
             "color_token": "Rouge brique (#B91C1C)",
-            "meaning": "Barrière d'irréversibilité (zéro exécution autonome sur Lynx, zéro compte service)"
+            "meaning": "Barrière d'irréversibilité (aucune exécution autonome sur Lynx, aucun compte de service)"
           }
         ],
-        "key_takeaway_box": "À retenir : Aucune donnée n'atteint l'agent sans passeport de fraîcheur ODCS ni droits utilisateur propagés, et aucun agent ne déclenche directement un virement de grande valeur sur Lynx."
+        "key_takeaway_box": "Aucune donnée n'atteint l'agent sans attestation de fraîcheur ODCS et propagation des droits du mandant, et aucun agent ne déclenche directement de virement de grande valeur sur Lynx."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1158,7 +1158,7 @@
           "title": "Chaîne de souveraineté sémantique : des contrats de données ODCS et du MDM à la consommation agentique",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-23 - Chaîne de souveraineté sémantique - des contrats de données ODCS.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-23.svg",
-          "role_note": "Trace la chaîne complète de souveraineté depuis ODCS et MDM jusqu'aux serveurs MCP."
+          "role_note": "Trace la chaîne complète de souveraineté depuis ODCS et le MDM jusqu'aux serveurs MCP."
         },
         {
           "tome_id": "T1",
@@ -1206,42 +1206,42 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Explique pourquoi agrandir simplement la fenêtre d'un LLM à un million de jetons échoue en production (un seul document hors sujet dégrade la réponse et 97 % des jetons relus coûtent cher). Le schéma montre comment un compilateur déterministe assemble la fenêtre par couches fixes (règles en tête pour le KV-cache, preuves ACL en bas) au sein d'une boucle RAG critique.",
-      "vulgarization_angle": "Comparer le contexte d'un agent à un dossier d'audience strictement paginé : en première partie immuable les lois et définitions (mises en cache), ensuite uniquement les pièces autorisées par le badge du lecteur (ACL amont), plus une boucle d'inspecteur qui vérifie si une pièce manque avant de rédiger.",
+      "pedagogical_objective": "Cette boucle de contrôle explique pourquoi l'allongement brut de la fenêtre d'un LLM à un million de jetons échoue en production (un seul document distracteur dégrade la précision et 97 % des jetons relus pèsent sur le budget). Elle montre comment un compilateur déterministe structure la fenêtre par strates fixes (règles immuables en tête pour le KV-cache, preuves filtrées ACL ensuite) au sein d'une boucle RAG critique.",
+      "vulgarization_angle": "La fenêtre contextuelle s'organise à la manière d'un dossier d'audience strictement paginé : en tête figurent les textes normatifs immuables (mis en cache), suivis exclusivement des pièces accessibles selon l'habilitation du requérant (ACL amont), tandis qu'une boucle de contrôle vérifie la suffisance probante avant toute rédaction.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Compilateur déterministe à strates fixes (ADR-008 / CAP-017)",
-            "content": "Tête immuable (consignes, schémas, Agent Skills signés humains CAP-018) optimisant le KV-cache, suivie des preuves filtrées ACL, borne de jetons et passage par référence sur A2A."
+            "content": "La tête immuable (consignes, schémas, Agent Skills rédigés et signés par des humains selon CAP-018) optimise le KV-cache, suivie des preuves filtrées par ACL, du plafonnement des jetons et du passage par référence sous A2A."
           },
           {
             "zone_id": "Z2",
-            "label": "Boucle RAG agentique planifier → récupérer → critiquer → itérer",
-            "content": "Récupération hybride (Dense DPR + BM25 → RRF → ColBERT), GraphRAG à ontologie garde-fou, Self-RAG / Corrective RAG et Text-to-SQL gouverné (Spider 2.0)."
+            "label": "Boucle RAG agentique : planifier → récupérer → critiquer → itérer",
+            "content": "La récupération hybride (Dense DPR et BM25 → RRF → ColBERT) s'articule avec GraphRAG à ontologie garde-fou, Self-RAG / Corrective RAG et le Text-to-SQL gouverné (Spider 2.0)."
           }
         ],
         "numbered_flows": [
-          "① Le compilateur fixe en tête le préfixe invariant (invites système, Agent Skills signés SHA-256) pour maximiser la réutilisation KV-cache.",
-          "② L'orchestrateur RAG applique les ACL du mandant avant la recherche hybride (Dense + BM25 + réordonnanceur ColBERT / GraphRAG).",
-          "③ Un critiqueur déterministe ou Self-RAG évalue la pertinence des passages récupérés et déclenche une itération corrective ou une abstention si les preuves sont insuffisantes.",
-          "④ À l'atteinte du plafond de jetons, le contexte est compacté de façon réversible sans jamais verser l'historique brut en mémoire longue, et transmis par référence sous A2A."
+          "① Le compilateur place en tête le préfixe invariant (invites système et Agent Skills signés SHA-256) afin de maximiser la réutilisation du KV-cache.",
+          "② L'orchestrateur RAG applique les ACL du mandant préalablement à la recherche hybride (Dense + BM25 + réordonnanceur ColBERT / GraphRAG).",
+          "③ Un critiqueur déterministe ou Self-RAG évalue la pertinence des passages extraits et déclenche une itération corrective ou une abstention lorsque les preuves demeurent insuffisantes.",
+          "④ À l'atteinte du plafond de jetons, le contexte est compacté de façon réversible sans verser l'historique brut en mémoire longue, et transmis par référence sous A2A."
         ],
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Strate fixe KV-cache et Agent Skills humains vérifiés en CI (CAP-018)"
+            "meaning": "Strate fixe KV-cache et Agent Skills humains vérifiés en intégration continue (CAP-018)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Récupération hybride filtrée ACL amont et validation de pertinence"
+            "meaning": "Récupération hybride filtrée ACL en amont et validation de pertinence"
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Boucle de rétroaction itérative et compaction au seuil de budget"
+            "meaning": "Boucle de rétroaction itérative et compaction au seuil budgétaire"
           }
         ],
-        "key_takeaway_box": "À retenir : Donner plus de texte brut au modèle nuit à sa précision et au budget : compiler le contexte en strates fixes filtrées ACL produit des réponses plus fiables et dix fois moins coûteuses."
+        "key_takeaway_box": "L'injection de texte brut superflu altère à la fois la fiabilité et les coûts : compiler le contexte en strates fixes filtrées par ACL améliore la précision et réduit substantiellement la dépense de jetons."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1251,7 +1251,7 @@
           "title": "Pipeline industriel de Context Engineering : filtrage ACL pré-récupération, allocation du budget d’attention avec ancrage KV-cache et compilation d’enveloppe de transfert sans Context Rot.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-22 - Pipeline industriel de Context Engineering - filtrage ACL.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-22.svg",
-          "role_note": "Décrit la chaîne complète de compilation sans pourrissement de contexte ni perte ACL."
+          "role_note": "Décrit la chaîne complète de compilation sans pourrissement de contexte ni perte d'ACL."
         },
         {
           "tome_id": "T1",
@@ -1259,7 +1259,7 @@
           "title": "Du RAG statique au RAG agentique : d’une passe unique à une boucle de contrôle.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-05.3 - Du RAG statique au RAG agentique - d'une passe unique.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-05.3.svg",
-          "role_note": "Illustre le passage de la passe unique statique à la boucle itérative critique."
+          "role_note": "Illustre le passage d'une requête statique unique à une boucle itérative de contrôle."
         },
         {
           "tome_id": "T6",
@@ -1283,7 +1283,7 @@
         "memoire-coala-4-tiroirs"
       ],
       "title": "Architecture des quatre mémoires CoALA isolées (zéro écriture partagée) et échelle de risque",
-      "insertion_point": "Chapitre 11 §11.2.1 — Architecture mémorielle CoALA à 4 tiroirs",
+      "insertion_point": "Chapitre 11 §11.2.1 — Architecture mémorielle CoALA à quatre compartiments",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1292,33 +1292,33 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Traduit l'architecture cognitive CoALA en règle de gouvernance claire : toute mémoire longue est coupée par défaut (PRIN-11, DEC-004), puis lorsqu'ouverte, quatre tiroirs distincts séparent le brouillon éphémère (travail), le journal d'événements (épisodique), le dictionnaire métier (sémantique) et le manuel opératoire (procédurale) — ce dernier étant strictement figé contre l'empoisonnement.",
-      "vulgarization_angle": "Représenter la mémoire d'un agent comme un meuble classeur à quatre tiroirs dotés de serrures distinctes : seul le développeur certifie le tiroir des procédures (clé CI), tandis que deux agents n'ont jamais le droit d'écrire dans le même tiroir pour éviter la contamination croisée.",
+      "pedagogical_objective": "Ce schéma traduit la taxonomie cognitive CoALA en règle de gouvernance opérationnelle : toute mémoire longue demeure désactivée par défaut (PRIN-11, DEC-004), puis lorsqu'elle est autorisée, quatre compartiments distincts isolent l'état éphémère (travail), le journal d'événements (épisodique), le référentiel métier (sémantique) et le manuel opératoire (procédurale) — ce dernier étant strictement figé contre tout empoisonnement.",
+      "vulgarization_angle": "La mémoire agentique s'apparente à un coffre d'archives divisé en quatre compartiments dotés de verrous indépendants : seule l'équipe d'ingénierie certifie le compartiment des procédures (clé d'intégration continue), tandis que deux agents ne détiennent jamais le droit d'écrire dans le même registre afin d'éviter toute contamination croisée.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Tiroir 1 — Mémoire de travail (risque minimal, hors processus)",
-            "content": "État de session et sous-objectifs persistés hors processus et chiffrés à chaque transition (EXIG-ARC-05/06, EXIG-ORC-11)."
+            "label": "Compartiment 1 — Mémoire de travail (risque minimal, hors processus)",
+            "content": "L'état de session et les sous-objectifs sont persistés hors processus et chiffrés à chaque transition (EXIG-ARC-05/06, EXIG-ORC-11)."
           },
           {
             "zone_id": "Z2",
-            "label": "Tiroir 2 — Mémoire épisodique (résumés typés + TTL)",
-            "content": "Résumés structurés horodatés sans texte brut externe, isolés par locataire/mandant/serveur MCP et marqués non fiables (EXIG-ARC-22/23)."
+            "label": "Compartiment 2 — Mémoire épisodique (résumés typés et TTL)",
+            "content": "Les résumés structurés et horodatés excluent le texte brut externe, restent isolés par locataire, mandant et serveur MCP, et sont marqués comme contenu non fiable (EXIG-ARC-22/23)."
           },
           {
             "zone_id": "Z3",
-            "label": "Tiroir 3 — Mémoire sémantique (graphes et index ACL)",
-            "content": "Connaissances métier filtrées ACL en lecture expirant avec leur document source, incapables d'autoriser seules une action P2/P3 (EXIG-ARC-16)."
+            "label": "Compartiment 3 — Mémoire sémantique (graphes et index ACL)",
+            "content": "Les connaissances métier filtrées par ACL en lecture expirent avec leur document source et ne peuvent jamais autoriser seules une action P2/P3 (EXIG-ARC-16)."
           },
           {
             "zone_id": "Z4",
-            "label": "Tiroir 4 — Mémoire procédurale (risque maximal, PC4 figée)",
-            "content": "Invites système et Agent Skills signés sous contrôle de changement logiciel (EXIG-ARC-24) avec blocage absolu d'auto-modification en production (PC4)."
+            "label": "Compartiment 4 — Mémoire procédurale (risque maximal, PC4 figée)",
+            "content": "Les invites système et Agent Skills signés relèvent du contrôle de changement logiciel (EXIG-ARC-24) avec blocage absolu de toute auto-modification en production (PC4)."
           }
         ],
         "numbered_flows": [
-          "① Par défaut (PRIN-11), la mémoire inter-sessions reste fermée ; seule la mémoire de travail chiffrée porte la tâche courante.",
+          "① Par défaut (PRIN-11), la mémoire inter-sessions demeure fermée ; seule la mémoire de travail chiffrée porte l'état de la tâche courante.",
           "② Toute écriture en mémoire épisodique ou sémantique est validée par schéma strict, signée HMAC contre ASI06 et interdite d'accès partagé en écriture (EXIG-ARC-25).",
           "③ À la lecture, un souvenir conservé demeure étiqueté « contenu non fiable » sans pouvoir lever les contrôles d'autorisation P2/P3.",
           "④ La mémoire procédurale (invites et Agent Skills) reste figée hors production et ne peut jamais évoluer par auto-apprentissage autonome (PC4)."
@@ -1326,7 +1326,7 @@
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Tiroir de travail hors processus chiffré et garde d'isolation EXIG-ARC-25"
+            "meaning": "Compartiment de travail hors processus chiffré et garde d'isolation EXIG-ARC-25"
           },
           {
             "color_token": "Ambre doré (#D97706)",
@@ -1337,7 +1337,7 @@
             "meaning": "Mémoire procédurale critique verrouillée contre toute auto-modification (PC4)"
           }
         ],
-        "key_takeaway_box": "À retenir : Un agent ne possède pas une « mémoire unique » : séparer ses quatre tiroirs et verrouiller son manuel opératoire empêche une information piégée de réécrire ses règles."
+        "key_takeaway_box": "Un agent ne dispose pas d'une mémoire indifférenciée : le cloisonnement des quatre compartiments mémoriels CoALA et le verrouillage du registre procédural empêchent une donnée piégée d'altérer ses règles de comportement."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -1347,7 +1347,7 @@
           "title": "Cloisonnement des quatre mémoires d'entreprise et filtrage d'accès en amont",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-10.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-10.svg",
-          "role_note": "Réemploi direct illustrant le cloisonnement des quatre tiroirs CoALA et le filtrage amont."
+          "role_note": "Réemploi direct illustrant le cloisonnement des quatre compartiments mémoriels CoALA et le filtrage en amont."
         },
         {
           "tome_id": "T3",
@@ -1397,31 +1397,31 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Réconcilie deux exigences apparemment contradictoires devant les juristes : ne jamais altérer l'historique d'audit exigé par BSIF E-23 tout en détruisant sélectivement les données personnelles d'un client demandant l'oubli sous la Loi 25 art. 23. Le schéma montre le fonctionnement du graphe bi-temporel et du déchiquetage cryptographique par clé dédiée.",
-      "vulgarization_angle": "Comparer la bi-temporalité à un grand livre comptable à deux colonnes de dates (quand le fait était vrai vs quand le système l'a appris) dont chaque dossier client est chiffré dans son propre coffret : jeter la clé du coffret rend le dossier illisible sans arracher une seule page du registre.",
+      "pedagogical_objective": "Cette boucle de contrôle réconcilie deux obligations juridiques en apparence antagonistes : préserver l'intégrité de l'historique d'audit exigé par BSIF E-23 tout en détruisant sélectivement les renseignements personnels d'un citoyen exerçant son droit à l'effacement sous l'article 23 de la Loi 25. Elle illustre le fonctionnement du graphe bi-temporel et du déchiquetage cryptographique par clé dédiée.",
+      "vulgarization_angle": "La bi-temporalité fonctionne comme un grand livre comptable à deux colonnes de dates — distinguant le moment où le fait était valide de celui où le système l'a enregistré — dans lequel chaque dossier client est chiffré sous sa propre clé : détruire cette clé rend le dossier illisible sans arracher aucune page du registre d'audit.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Contrôle d'écriture et signature HMAC (Letta / écrivain unique)",
-            "content": "Résolution des conflits par écrivain unique, verrouillage optimiste, étiquette de provenance HMAC anti-ASI06 et mise en quarantaine des faits contestés."
+            "label": "Contrôle d'écriture et signature HMAC (Letta et écrivain unique)",
+            "content": "Les conflits sont résolus par un écrivain unique et un verrouillage optimiste, assortis d'une étiquette de provenance HMAC anti-ASI06 et d'une mise en quarantaine des faits contestés."
           },
           {
             "zone_id": "Z2",
-            "label": "Double ligne temporelle Graphiti (valid_from/to vs system_time)",
-            "content": "Reconstitution exacte de l'état connu à toute date passée pour audit BSIF E-23 et traçabilité du passeport face à l'agent apprenant (§39.5)."
+            "label": "Double ligne temporelle Graphiti (valid_from/to et system_time)",
+            "content": "La double datation permet la reconstitution exacte de l'état connu à toute date antérieure pour l'audit BSIF E-23 et assure la traçabilité du passeport face à l'agent apprenant (§39.5)."
           },
           {
             "zone_id": "Z3",
-            "label": "Purge sélective vérifiable (Loi 25 art. 23 / RGPD art. 17)",
-            "content": "Destruction de la clé de chiffrement par entité (Crypto-Shredding) et invalidation en cascade des faits dérivés sans briser la structure globale du graphe."
+            "label": "Purge sélective vérifiable (Loi 25 art. 23 et RGPD art. 17)",
+            "content": "La révocation de la clé de chiffrement par entité (Crypto-Shredding) et l'invalidation en cascade des faits dérivés effacent les données personnelles sans rompre la structure globale du graphe."
           }
         ],
         "numbered_flows": [
-          "① Une nouvelle information passe par le point écrivain unique qui marque sa signature HMAC et ouvre une arête datée (valid_from, system_ingestion).",
-          "② Si un fait contredit un souvenir antérieur, il remplace son prédécesseur par supersession temporelle sans effacer la trace passée (audit BSIF E-23).",
-          "③ En cas de demande de rectification ou d'oubli (Loi 25 art. 23 / RGPD art. 17), le moteur révoque la clé cryptographique dédiée du mandant et purge les faits dérivés.",
-          "④ À toute lecture, le système vérifie la portée et la validité temporelle afin d'exclure les souvenirs expirés ou révoqués."
+          "① Toute nouvelle information transite par le point écrivain unique, qui appose sa signature HMAC et ouvre une arête datée (valid_from, system_ingestion).",
+          "② Lorsqu'un fait contredit un souvenir antérieur, il remplace son prédécesseur par supersession temporelle sans effacer la trace passée (audit BSIF E-23).",
+          "③ Sur demande de rectification ou d'oubli (Loi 25 art. 23 et RGPD art. 17), le moteur révoque la clé cryptographique dédiée du mandant et purge les faits dérivés.",
+          "④ À chaque lecture, le système vérifie la portée et la validité temporelle afin d'exclure les souvenirs expirés ou révoqués."
         ],
         "color_legend": [
           {
@@ -1437,7 +1437,7 @@
             "meaning": "Quarantaine et signature HMAC contre l'empoisonnement mémoriel (ASI06)"
           }
         ],
-        "key_takeaway_box": "À retenir : La mémoire bi-temporelle et le déchiquetage cryptographique permettent à la fois de prouver ce que l'agent savait hier et d'oublier proprement un citoyen aujourd'hui."
+        "key_takeaway_box": "La mémoire bi-temporelle et le déchiquetage cryptographique concilient l'exigence d'auditabilité historique et l'effectivité du droit à l'effacement."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1447,7 +1447,7 @@
           "title": "Architecture de mémoire agentique combinant les blocs hiérarchiques de type OS (Letta) et le graphe de connaissances bi-temporel partagé (Graphiti) sous isolation multi-locataire.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-24 - Architecture de mémoire agentique combinant les blocs hiérarchiques.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-24.svg",
-          "role_note": "Illustre le couplage entre mémoire de travail hiérarchique Letta et graphe bi-temporel Graphiti."
+          "role_note": "Illustre le couplage entre la mémoire de travail hiérarchique Letta et le graphe bi-temporel Graphiti."
         },
         {
           "tome_id": "T1",
@@ -1482,31 +1482,31 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Montre pourquoi filtrer les permissions après la recherche vectorielle laisse filtrer des indices confidentiels dans les résumés ou le classement (OWASP LLM08:2025). Le schéma impose le filtrage ACL en amont par fragment (OpenFGA, RLS), compare les trois cloisonnements Silo/Bridge/Pool et relie chaque phrase générée à sa source avec abstention en cas de doute.",
-      "vulgarization_angle": "Comparer le filtrage post-recherche à laisser un employé consulter tous les dossiers confidentiels sur une table puis caviarder sa réponse après coup ; le filtrage pré-récupération vérifie d'abord son badge à la porte de la salle des archives (OpenFGA/RLS) avant même qu'il ne touche un seul feuillet.",
+      "pedagogical_objective": "Cette matrice démontre pourquoi l'application des permissions après la recherche vectorielle laisse filtrer des indices confidentiels dans les résumés ou l'ordonnancement (OWASP LLM08:2025). Elle impose le filtrage ACL en amont par fragment (OpenFGA, RLS), compare les trois modèles de cloisonnement Silo/Bridge/Pool et relie chaque énoncé généré à sa source avec abstention en cas de lacune.",
+      "vulgarization_angle": "Le filtrage post-recherche équivaut à laisser un requérant consulter librement tous les dossiers d'une salle d'archives avant de caviarder sa synthèse après coup ; le filtrage pré-récupération contrôle son habilitation au seuil même de la salle (OpenFGA/RLS) avant toute extraction de feuillet.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Filtre d'habilitation pré-récupération (OpenFGA / RLS / ABAC)",
-            "content": "Évaluation des droits RBAC/ABAC de l'utilisateur effectif avant tout calcul de similarité vectorielle (interdiction du filtrage tardif post-classement)."
+            "label": "Filtre d'habilitation pré-récupération (OpenFGA, RLS et ABAC)",
+            "content": "L'évaluation des droits RBAC/ABAC de l'utilisateur effectif s'exécute préalablement à tout calcul de similarité vectorielle, proscrivant le filtrage tardif post-classement."
           },
           {
             "zone_id": "Z2",
-            "label": "Trois architectures d'isolation multi-locataires (Silo / Bridge / Pool)",
-            "content": "Silo physique dédié (données très sensibles / filiales), Bridge logique partitionné (Qdrant/pgvector RLS) et Pool exclusivement sur documents publics."
+            "label": "Trois architectures d'isolation multi-locataires (Silo, Bridge et Pool)",
+            "content": "Le modèle Silo isole physiquement les données sensibles ou par filiale, Bridge assure un partitionnement logique (Qdrant/pgvector RLS), et Pool demeure réservé exclusivement aux documents publics."
           },
           {
             "zone_id": "Z3",
             "label": "Ancrage vérifiable et évaluation RAG dissociée",
-            "content": "Citation obligatoire énoncé par énoncé, règle d'abstention sur preuve manquante et métriques séparées : Recall@K (récupération) vs RAGAS / ARES / CRAG (génération)."
+            "content": "Chaque réponse impose la citation énoncé par énoncé et l'abstention sur preuve manquante, évaluées par des métriques distinctes : Recall@K (récupération) par rapport à RAGAS / ARES / CRAG (génération)."
           }
         ],
         "numbered_flows": [
-          "① La requête transmet le jeton d'identité déléguée du mandant jusqu'au moteur de politiques OpenFGA / PostgreSQL RLS.",
+          "① La requête transmet le jeton d'identité déléguée du mandant jusqu'au moteur de politiques OpenFGA ou PostgreSQL RLS.",
           "② L'index vectoriel (Qdrant/pgvector) restreint l'espace de recherche aux seuls fragments autorisés selon l'architecture Silo, Bridge ou Pool.",
-          "③ Les fragments retournés alimentent la génération qui produit des énoncés cités un à un — ou s'abstient explicitement si le rappel est insuffisant.",
-          "④ Les bancs CI dissocient la mesure du rappel de recherche (Recall@K) de la fidélité des réponses (RAGAS, ARES, CRAG)."
+          "③ Les fragments retournés alimentent la génération, qui produit des énoncés cités un à un ou formule une abstention explicite lorsque le rappel est insuffisant.",
+          "④ Les bancs d'intégration continue dissocient la mesure du rappel de recherche (Recall@K) de la fidélité des réponses (RAGAS, ARES, CRAG)."
         ],
         "color_legend": [
           {
@@ -1522,7 +1522,7 @@
             "meaning": "Fuite vectorielle OWASP LLM08:2025 par index Pool non filtré ou post-filtrage"
           }
         ],
-        "key_takeaway_box": "À retenir : Les droits d'accès s'appliquent avant le tri vectoriel, jamais après : sans filtrage pré-récupération par fragment, un agent peut révéler indirectement ce que l'utilisateur n'a pas le droit de lire."
+        "key_takeaway_box": "Les droits d'accès s'appliquent avant le tri vectoriel, jamais après : sans filtrage pré-récupération par fragment, un agent risque de révéler indirectement des informations auxquelles l'utilisateur n'est pas habilité."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1557,7 +1557,7 @@
         "mediation-b2b-esb-traducteurs",
         "coexistence-bpm-ipaas-rpa"
       ],
-      "title": "Couche anticorruption MCP (EBCDIC/COMP-3 Decimal exact), médiation B2B/EDI et Strangler Fig en 4 stades",
+      "title": "Couche anticorruption MCP (EBCDIC/COMP-3 Decimal exact), médiation B2B/EDI et Strangler Fig en quatre stades",
       "insertion_point": "Chapitre 12 §12.2.1 — Couche anti-corruption (ACL) et mainframes",
       "target_audiences": [
         "Direction / Métier",
@@ -1566,31 +1566,31 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Rassure les directions bancaires et d'assurance : intégrer des agents ne demande ni de réécrire les grands livres IBM i / z/OS / SAP ni d'exposer la comptabilité aux approximations des nombres flottants. La façade MCP anticorruption traduit déterministiquement EBCDIC et COMP-3 en Decimal exact, protège les quotas MIPS et pilote le remplacement graduel des flux fragiles (Strangler Fig en 4 stades).",
-      "vulgarization_angle": "Comparer la couche anticorruption à un traducteur-comptable certifié posté devant un coffre mainframe : il parle en messages modernes MCP côté agent, convertit chaque centime COMP-3 sans aucune erreur d'arrondi côté COBOL/SAP, absorbe les rafales (CQRS/CDC) et remplace petit à petit les vieux automates RPA sans tout casser.",
+      "pedagogical_objective": "Ce schéma rassure les directions bancaires et d'assurance : l'intégration d'agents n'exige ni la réécriture des grands livres IBM i, z/OS ou SAP, ni l'exposition de la comptabilité aux approximations des nombres flottants. La façade MCP anticorruption convertit de façon déterministe EBCDIC et COMP-3 en Decimal exact, protège les quotas MIPS et pilote le remplacement graduel des flux fragiles selon le patron Strangler Fig en quatre stades.",
+      "vulgarization_angle": "La couche anticorruption agit comme un traducteur-comptable assermenté posté devant un coffre mainframe : elle converse en messages modernes MCP côté agent, convertit chaque centime COMP-3 sans erreur d'arrondi côté COBOL/SAP, absorbe les rafales de lecture (CQRS/CDC) et remplace progressivement les anciens automates RPA sans rupture de service.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Façade MCP anticorruption hors modèle (EXIG-ARC-14..18 / DEC-008)",
-            "content": "Outils orientés tâche (sans miroir CRUD ni SQL direct), propagation QSYS2.SET_CLIENT_INFO, clé d'idempotence cible et protection de charge par CQRS / CDC Debezium."
+            "content": "Les outils orientés vers la tâche (sans miroir CRUD ni SQL direct) assurent la propagation de QSYS2.SET_CLIENT_INFO, la clé d'idempotence cible et la protection de charge par CQRS / CDC Debezium."
           },
           {
             "zone_id": "Z2",
             "label": "Moteur déterministe de traduction exacte (PEX-015)",
-            "content": "Transcodage EBCDIC (CP037 / CP1147) ↔ UTF-8, conversion Packed Decimal COMP-3 → Decimal exact (excluant IEEE 754) et trames fixes CICS COMMAREA / SAP BAPI / EDI X12."
+            "content": "Le moteur exécute le transcodage EBCDIC (CP037 / CP1147) ↔ UTF-8, la conversion Packed Decimal COMP-3 → Decimal exact (excluant IEEE 754) et le formatage des trames fixes CICS COMMAREA, SAP BAPI et EDI X12."
           },
           {
             "zone_id": "Z3",
-            "label": "Coexistence BPMN 2.0 / iPaaS et trajectoire Strangler Fig (4 stades)",
-            "content": "Moteurs Camunda/Zeebe préservés en sous-processus ad hoc, réconciliation des pertes sémantiques EDI/ESB et retrait gradué du RPA fragile en 4 stades (ombre, recommandation, action bornée, autonomie)."
+            "label": "Coexistence BPMN 2.0 / iPaaS et trajectoire Strangler Fig (quatre stades)",
+            "content": "Les moteurs Camunda/Zeebe sont préservés en sous-processus ad hoc, les pertes sémantiques EDI/ESB sont réconciliées et le RPA fragile est retiré graduellement en quatre stades (ombre, recommandation, action bornée, autonomie)."
           }
         ],
         "numbered_flows": [
-          "① L'agent appelle une intention métier bornée sur le serveur MCP anticorruption sans accès direct aux tables ni requêtes SQL.",
-          "② L'adaptateur déterministe convertit les paramètres UTF-8 en EBCDIC et COMP-3 Decimal exact (zéro flottant IEEE 754), tout en propageant l'identité client QSYS2.",
-          "③ Les lectures passent par réplica CDC/CQRS pour préserver les quotas MIPS du mainframe, tandis que les écritures vérifient l'idempotence en cible et les tests de parité SOX.",
-          "④ Parallèlement, les moteurs BPMN 2.0 et flux B2B EDI coexistent derrière iPaaS pendant que le patron Strangler Fig remplace progressivement le RPA fragile."
+          "① L'agent invoque une intention métier bornée sur le serveur MCP anticorruption sans accès direct aux tables ni requêtes SQL.",
+          "② L'adaptateur déterministe convertit les paramètres UTF-8 en EBCDIC et COMP-3 Decimal exact (sans flottant IEEE 754), tout en propageant l'identité client QSYS2.",
+          "③ Les lectures passent par un réplica CDC/CQRS afin de préserver les quotas MIPS du mainframe, tandis que les écritures vérifient l'idempotence en cible et les tests de parité SOX.",
+          "④ Parallèlement, les moteurs BPMN 2.0 et les flux B2B EDI coexistent derrière iPaaS pendant que le patron Strangler Fig remplace progressivement le RPA fragile."
         ],
         "color_legend": [
           {
@@ -1603,10 +1603,10 @@
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Migration progressive Strangler Fig en 4 stades et remplacement du RPA fragile"
+            "meaning": "Migration progressive Strangler Fig en quatre stades et remplacement du RPA fragile"
           }
         ],
-        "key_takeaway_box": "À retenir : Le cœur financier reste intouché et exact au centime près : l'adaptateur MCP absorbe la complexité mainframe/EDI sans jamais laisser l'IA manipuler directement les tables centrales."
+        "key_takeaway_box": "Le cœur financier demeure intouché et exact au centime près : l'adaptateur MCP absorbe la complexité mainframe et EDI sans jamais exposer directement les tables centrales à l'agent."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1632,7 +1632,7 @@
           "title": "Cycle de migration Strangler Fig agentique en quatre stades sous façade et mécanismes de repli",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-58 - Cycle de migration Strangler Fig agentique en quatre stades.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-58.svg",
-          "role_note": "Cadence la migration en quatre stades (ombre à autonomie) avec repli déterministe."
+          "role_note": "Cadence la migration en quatre stades (de l'ombre à l'autonomie) avec repli déterministe."
         },
         {
           "tome_id": "T3",
@@ -1640,7 +1640,7 @@
           "title": "Architecture hybride d’intégration patrimoniale : orchestration UiPath Maestro, serveurs MCP d’encapsulation IBM i / CICS / EDI et cellules CUA confinées à double vérification.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-38 - Architecture hybride d'intégration patrimoniale - orchestration.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-38.svg",
-          "role_note": "Relie adaptateurs IBM i / CICS / EDI, orchestration RPA/APA et cellules confinées."
+          "role_note": "Relie les adaptateurs IBM i / CICS / EDI, l'orchestration RPA/APA et les cellules confinées."
         }
       ]
     },
@@ -1668,31 +1668,31 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Donne une règle d'arbitrage limpide devant les écrans sans API (5250/Citrix) et les équipements industriels OT : zéro grattage client externe (LSAC art. 171), CUA interne cantonné à <= 8 % sous bail d'extinction de 12 mois jusqu'à POR-008, et confinement total des capteurs industriels derrière sas lecture seule (Purdue SL-3), jumeau numérique et arbitre matériel Simplex.",
-      "vulgarization_angle": "Présenter l'usage des automates d'écran CUA comme une roue de secours limitée à 12 mois (interdite à haute vitesse) et la frontière OT comme un hublot vitré de salle blanche : l'agent regarde la télémétrie sur un miroir lecture seule et ne touche jamais directement les commandes d'une machine.",
+      "pedagogical_objective": "Cet arbre décisionnel fixe une règle d'arbitrage limpide devant les écrans dépourvus d'API (5250/Citrix) et les équipements industriels OT : aucun grattage client externe (LSAC art. 171), CUA interne cantonné à ≤ 8 % sous bail d'extinction de 12 mois jusqu'à POR-008, et confinement intégral des capteurs industriels derrière un sas en lecture seule (Purdue SL-3), un jumeau numérique et un arbitre matériel Simplex.",
+      "vulgarization_angle": "Les automates d'écran CUA s'assimilent à une mesure transitoire strictement datée à 12 mois, tandis que la frontière OT opère comme une vitre d'observation blindée : l'agent consulte la télémétrie sur un réplica en lecture seule sans jamais actionner directement les commandes physiques d'une installation.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Hiérarchie sans API (ADR-016) et extinction CUA à 12 mois",
-            "content": "MCP (≥ 92 %) → RPA déterministe → CUA visuel (≤ 8 %) sous harnais (caviardage PII Loi 25, blocage touches destructrices, double lecture OCR) et interdiction totale à POR-008 ; grattage client proscrit (PEX-001)."
+            "content": "La progression MCP (≥ 92 %) → RPA déterministe → CUA visuel (≤ 8 %) s'applique sous harnais (caviardage PII Loi 25, blocage des touches destructrices, double lecture OCR) avec interdiction totale à POR-008, le grattage client étant proscrit (PEX-001)."
           },
           {
             "zone_id": "Z2",
-            "label": "Sas OT lecture seule (Purdue / IEC 62443-3-3 SL-3, CAP-028)",
-            "content": "Hors champ financier démontré : réplica en IDMZ niveau 3.5 devant OPC UA (IEC 62541) / MQTT Sparkplug B, agrégation FFT/RMS, validation jumeau FMI 3.0 Ed25519 et arbitre matériel Simplex."
+            "label": "Sas OT en lecture seule (Purdue / IEC 62443-3-3 SL-3, CAP-028)",
+            "content": "Hors champ financier démontré, la télémétrie passe par un réplica en IDMZ niveau 3.5 devant OPC UA (IEC 62541) et MQTT Sparkplug B, avec agrégation FFT/RMS, validation sur jumeau FMI 3.0 Ed25519 et arbitre matériel Simplex."
           },
           {
             "zone_id": "Z3",
             "label": "Cellule Edge Local-First déconnectée (ADR-028 / 72 h)",
-            "content": "SLM local, SPIRE/TPM 2.0, structures CRDT sans conflit sous quotas en séquestre et repli automatique L1 au-delà de 72 h sans WAN."
+            "content": "La cellule embarque un SLM local, l'attestation SPIRE/TPM 2.0 et des structures CRDT sans conflit sous quotas en séquestre, avec repli automatique en palier L1 au-delà de 72 h sans réseau WAN."
           }
         ],
         "numbered_flows": [
-          "① Si une application n'a pas d'API, privilégier à ≥ 92 % un adaptateur MCP ou RPA déterministe et refuser tout grattage client externe (LSAC art. 171).",
-          "② L'exception CUA interne (≤ 8 %) active le caviardage PII avant capture, bloque les touches destructrices et lance le compte à rebours d'extinction de 12 mois (INI-015 → POR-008).",
-          "③ En périphérie industrielle OT, les capteurs publient uniquement vers un réplica lecture seule en IDMZ ; toute consigne proposée doit passer le jumeau FMI 3.0, l'approbation hors bande et l'arbitre matériel Simplex.",
-          "④ Sur site déconnecté (72 h cible), la cellule Edge maintient l'autonomie par SLM local et synchronisation CRDT à quotas bornés jusqu'au rétablissement WAN."
+          "① Lorsqu'une application est dépourvue d'API, privilégier à ≥ 92 % un adaptateur MCP ou du RPA déterministe et refuser tout grattage client externe (LSAC art. 171).",
+          "② L'exception CUA interne (≤ 8 %) active le caviardage PII avant capture, bloque les touches destructrices et déclenche le compte à rebours d'extinction de 12 mois (INI-015 → POR-008).",
+          "③ En périphérie industrielle OT, les capteurs publient uniquement vers un réplica en lecture seule en IDMZ ; toute consigne proposée franchit le jumeau FMI 3.0, l'approbation hors bande et l'arbitre matériel Simplex.",
+          "④ Sur site déconnecté (cible de 72 h), la cellule Edge maintient l'autonomie par SLM local et synchronisation CRDT à quotas bornés jusqu'au rétablissement du lien WAN."
         ],
         "color_legend": [
           {
@@ -1708,7 +1708,7 @@
             "meaning": "Cible durable MCP (≥ 92 %), réplica lecture seule IDMZ et arbitre Simplex"
           }
         ],
-        "key_takeaway_box": "À retenir : L'agent ne clique à l'écran qu'à titre exceptionnel avec date d'expiration (≤ 12 mois), et il ne commande jamais directement un équipement physique sans jumeau ni verrou matériel."
+        "key_takeaway_box": "L'interaction visuelle à l'écran (CUA) demeure une dérogation exceptionnelle assortie d'une échéance d'extinction (≤ 12 mois), et aucune consigne agentique n'atteint un équipement physique sans validation par jumeau numérique ni verrou matériel."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1726,7 +1726,7 @@
           "title": "Architecture de convergence IT/OT conforme IEC 62443 (modèle Purdue) : télémétrie OPC UA / MQTT Sparkplug en lecture seule et sas obligatoire par Jumeau numérique déterministe.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-40 - Architecture de convergence IT-OT conforme IEC 62443 (modèle Purdue).puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-40.svg",
-          "role_note": "Détaille la segmentation Purdue IDMZ 3.5, OPC UA lecture seule et validation jumeau."
+          "role_note": "Détaille la segmentation Purdue IDMZ 3.5, OPC UA en lecture seule et la validation par jumeau."
         },
         {
           "tome_id": "T3",
@@ -1734,7 +1734,7 @@
           "title": "Architecture d’orchestration Edge déconnectée : cellule locale SLM + CRDT sur coupure WAN 72 h, passerelle MCP vers ROS 2 (DDS) et enveloppe cyber-physique Simplex.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-59 - Architecture d'orchestration Edge déconnectée - cellule locale SLM +.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-59.svg",
-          "role_note": "Illustre le mode Edge Local-First 72 h sur CRDT et l'enveloppe Simplex."
+          "role_note": "Illustre le mode Edge Local-First de 72 h sur CRDT ainsi que l'enveloppe Simplex."
         }
       ]
     },
@@ -1759,25 +1759,25 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Dissipe une illusion juridique critique auprès de la direction et des équipes conformité : héberger un serveur à Montréal ou Toronto ne protège pas contre les lois extraterritoriales (CLOUD Act) si l'opérateur tient les clés ou retient l'état en mémoire GPU. Le schéma cartographie les 6 substrats où loge la donnée agentique et le contrôle HYOK/TEE associé à chacun.",
-      "vulgarization_angle": "Comparer la souveraineté au rangement d'objets de valeur dans un entrepôt loué : peu importe que le bâtiment soit à Montréal (résidence physique), si le propriétaire étranger a un double de la clé et peut ouvrir vos boîtes sur injonction, seule la garde exclusive de vos propres cadenas (HYOK / HSM) garantit la maîtrise juridictionnelle.",
+      "pedagogical_objective": "Cette matrice dissipe une confusion juridique critique auprès de la direction et des équipes de conformité : héberger un serveur à Montréal ou à Toronto ne protège pas contre les lois extraterritoriales (CLOUD Act) si l'opérateur détient les clés ou conserve l'état en mémoire GPU. Elle cartographie les six substrats où séjourne la donnée agentique et associe à chacun le contrôle HYOK/TEE requis.",
+      "vulgarization_angle": "La souveraineté réelle s'apparente au dépôt de valeurs dans un entrepôt loué : quelle que soit l'adresse du bâtiment (résidence physique), si le bailleur étranger détient un double des clés sur injonction, seule la garde exclusive de ses propres serrures cryptographiques (HYOK / HSM) assure la maîtrise juridictionnelle.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Substrats 1 à 3 — Modèle, Contexte volatil GPU et Mémoire longue",
-            "content": "(1) Poids et invites signés avec repli Open-Weights (CAP-031) ; (2) KV-cache GPU sous zéro rétention et enclave TEE sélective (CAP-033) ; (3) Mémoire longue isolée sous clés souveraines et purge Loi 25."
+            "label": "Substrats 1 à 3 — Modèle, contexte volatil GPU et mémoire longue",
+            "content": "Le dispositif couvre : (1) poids et invites signés avec repli Open-Weights (CAP-031) ; (2) KV-cache GPU sous zéro rétention et enclave TEE sélective (CAP-033) ; (3) mémoire longue isolée sous clés souveraines et purge Loi 25."
           },
           {
             "zone_id": "Z2",
-            "label": "Substrats 4 à 6 — État durable, Voûte d'audit et Secrets/KMS/HSM",
-            "content": "(4) État d'exécution chiffré hors processus sans jetons (EXIG-IAM-06) ; (5) Double couloir OTel caviardé + audit JCS ; (6) Clés racines KMS/HSM/SPIFFE en garde exclusive HYOK (POR-002)."
+            "label": "Substrats 4 à 6 — État durable, voûte d'audit et secrets/KMS/HSM",
+            "content": "La protection s'étend à : (4) l'état d'exécution chiffré hors processus sans jetons (EXIG-IAM-06) ; (5) le double couloir OTel caviardé et audit JCS ; (6) les clés racines KMS/HSM/SPIFFE en garde exclusive HYOK (POR-002)."
           }
         ],
         "numbered_flows": [
           "① Classifier et inventorier l'ensemble des flux sur les six substrats d'état lors de l'ÉFVP préalable (Loi 25 art. 17, EXIG-CON-05).",
-          "② Maintenir les clés racines KMS/HSM en séquestre exclusif HYOK chez l'institution (RTT <= 35 ms conseillé) pour assurer le déchiquetage instantané.",
-          "③ Enforcer les clauses zéro rétention / zéro entraînement et l'effacement IOMMU sur le contexte volatil GPU (substrat 2) sous enclaves TEE si requis.",
+          "② Maintenir les clés racines KMS/HSM en séquestre exclusif HYOK chez l'institution (RTT ≤ 35 ms conseillé) afin de garantir un déchiquetage cryptographique instantané.",
+          "③ Appliquer les clauses zéro rétention / zéro entraînement ainsi que l'effacement IOMMU sur le contexte volatil GPU (substrat 2) sous enclaves TEE au besoin.",
           "④ Tester chaque trimestre la bascule Cognitive DR vers un second profil Open-Weights qualifié en E2 (CAP-031, POR-006)."
         ],
         "color_legend": [
@@ -1794,7 +1794,7 @@
             "meaning": "Garde exclusive HYOK / HSM, double couloir JCS et repli Open-Weights"
           }
         ],
-        "key_takeaway_box": "À retenir : La localisation géographique d'un centre de données ne suffit plus : la souveraineté réelle exige de contrôler les six endroits où la donnée séjourne et d'en garder seule la clé maîtresse (HYOK)."
+        "key_takeaway_box": "La localisation géographique d'un centre de données ne suffit plus : la souveraineté effective exige de maîtriser les six substrats où séjourne l'information et d'en conserver exclusivement les clés maîtresses (HYOK)."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [

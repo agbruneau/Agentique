@@ -12,9 +12,9 @@ Application HTML autonome hors ligne (`file://`, sans CDN ni requête réseau ex
 - **Couverture & interrelations** : `616` interrelations typées sur les `8` types canoniques (`0` arête cassée, `0` auto-boucle), `290 / 290` chapitres/liminaires/annexes mappés (`0` orphelin) et `1 636` unités structurelles liées directement aux thèmes.
 - **Pivots de concordance** : `5` discordances résolues (`DISC-01`..`DISC-05`, Tome 8 §0.2) + fermeture `DIV-02` (Tome 5), `86` jalons chronologiques consolidés (`2018–2035`) et `237` entrées uniques de traçabilité (`0` doublon, couvrant `95` tests exécutables Tome 8 dont `30` identifiants fusionnés : `PRR-75`, `CAP`, `C01–C40`, `EXIG`, `PEX`, `CRE-IA`, `5 SBB`, `ADR_TEMPLATE`).
 - **Livrables HTML autonomes (`file://`)** :
-  - [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) (`7 753 342` octets, 5 vues dont le PRD intégré avec `115` schémas et Annexe E, thèmes `Auto / Clair / Sombre`).
-  - [`PRD - Référentiel directeur de l'entreprise agentique.html`](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) (`3 757 885` octets, lecteur web autonome du PRD avec pont `MindMap` / `Graphe`, `115` schémas et `319` figures).
-- **PRD maître compilé** : [`../prd.md`](../prd.md) (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes normatives `A–E`, `115` schémas de vulgarisation [`4` `SCH-00` + `111` `SCH-01..36`, `267/319` figures liées via `356` liens], `7 513` lignes, `255 409` mots, `267` titres `H1–H6`).
+  - [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) (`7 874 998` octets, 5 vues dont le PRD intégré avec `115` schémas et Annexe E, thèmes `Auto / Clair / Sombre`).
+  - [`PRD - Référentiel directeur de l'entreprise agentique.html`](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) (`3 873 762` octets, lecteur web autonome du PRD avec pont `MindMap` / `Graphe`, `115` schémas et `319` figures).
+- **PRD maître compilé** : [`../prd.md`](../prd.md) (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes normatives `A–E`, `115` schémas de vulgarisation [`4` `SCH-00` + `111` `SCH-01..36`, `267/319` figures liées via `356` liens], `7 513` lignes, `267 988` mots, `267` titres `H1–H6`).
 
 ## Les 5 vues dynamiques
 

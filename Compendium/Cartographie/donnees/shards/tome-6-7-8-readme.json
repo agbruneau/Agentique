@@ -170,7 +170,7 @@
       "chapter_title": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales",
       "line_start": 194,
       "line_end": 458,
-      "summary": "Stratification SoR / SoE / Systems of Agency, rupture épistémique (non-déterminisme même à temperature=0, latence prefill/decode p99, effets irréversibles LLM06), échelle L0–L4, HITL/HOTL contre les biais et modèle des trois dettes avec CACE.",
+      "summary": "Stratification SoR / SoE / Systèmes d'agentivité, rupture épistémique (non-déterminisme même à temperature=0, latence prefill/decode p99, effets irréversibles LLM06), échelle L0–L4, HITL/HOTL contre les biais et modèle des trois dettes avec CACE.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D02"
@@ -183,7 +183,7 @@
         "dette-cognitive-vs-technique"
       ],
       "key_terms": [
-        "Systems of Agency",
+        "Systèmes d'agentivité",
         "SoR",
         "SoE",
         "L0–L4",
@@ -240,7 +240,7 @@
       "chapter_title": "Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20",
       "line_start": 785,
       "line_end": 1077,
-      "summary": "Anatomie de l'Agent Harness et confinement (SHADI local, Agent Sandbox/gVisor/Firecracker), spécialisation SLM vs frontier LLM (Bi/Cross-Encoder, FrugalGPT, RouteLLM), règle 80/20 avec arbre de tri en 5 régimes et contrats JSON Schema Draft 2020-12 (XGrammar).",
+      "summary": "Anatomie de l'Agent Harness et confinement (SHADI local, Agent Sandbox/gVisor/Firecracker), spécialisation SLM par rapport à frontier LLM (Bi/Cross-Encoder, FrugalGPT, RouteLLM), règle 80/20 avec arbre de tri en 5 régimes et contrats JSON Schema Draft 2020-12 (XGrammar).",
       "primary_domain": "D02",
       "secondary_domains": [
         "D07",
@@ -315,7 +315,7 @@
       "chapter_title": "Chapitre 5 — Interopérabilité horizontale inter-agents et fédération : A2A, AGNTCY et maillage multi-fournisseurs",
       "line_start": 1421,
       "line_end": 1726,
-      "summary": "Orthogonalité MCP vs A2A et exécution opaque, protocole A2A v1.0 (AgentCard JWS/RFC 8785, Tasks, SSE, Artifacts), pile fédérée AGNTCY (OASF, ADS sur OCI/Kademlia/Sigstore, SLIM/MLS RFC 9420), ponts inter-cadriciels, fédération B2B (AP2) et parades ASI07/ASI08.",
+      "summary": "Orthogonalité MCP par rapport à A2A et exécution opaque, protocole A2A v1.0 (AgentCard JWS/RFC 8785, Tasks, SSE, Artifacts), pile fédérée AGNTCY (OASF, ADS sur OCI/Kademlia/Sigstore, SLIM/MLS RFC 9420), ponts inter-cadriciels, fédération B2B (AP2) et parades ASI07/ASI08.",
       "primary_domain": "D03",
       "secondary_domains": [
         "D07",
@@ -428,7 +428,7 @@
       "chapter_title": "Chapitre 8 — Chorégraphie réactive et Event Mesh d’entreprise",
       "line_start": 2390,
       "line_end": 2724,
-      "summary": "Agents ambiants sur Apache Kafka, Solace Event Mesh et NATS JetStream sous CloudEvents v1.0.2 et AsyncAPI 3.0.0, arbitrage commandes vs événements, pathologies réactives (tempêtes, boucles d'écho ce_ttl, DLQ, backpressure TPM) et patron hybride macro-orchestré / intra-domaine chorégraphié.",
+      "summary": "Agents ambiants sur Apache Kafka, Solace Event Mesh et NATS JetStream sous CloudEvents v1.0.2 et AsyncAPI 3.0.0, arbitrage commandes par rapport à événements, pathologies réactives (tempêtes, boucles d'écho ce_ttl, DLQ, backpressure TPM) et patron hybride macro-orchestré / intra-domaine chorégraphié.",
       "primary_domain": "D05",
       "secondary_domains": [
         "D03",
@@ -545,7 +545,7 @@
       "chapter_title": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique)",
       "line_start": 3384,
       "line_end": 3712,
-      "summary": "Instrumentation OpenTelemetry GenAI (SEP-414, A2A, SPIFFE/OBO, Tail Sampling), pipeline EvalOps (pass^k vs pass@k, golden datasets, mock MCP servers, juges calibrés), SRE agentique (SLI/SLO, burn rate, dérive sémantique, rejeu forensique) et coupe-circuits à 5 états avec repli L0.",
+      "summary": "Instrumentation OpenTelemetry GenAI (SEP-414, A2A, SPIFFE/OBO, Tail Sampling), pipeline EvalOps (pass^k par rapport à pass@k, golden datasets, mock MCP servers, juges calibrés), SRE agentique (SLI/SLO, burn rate, dérive sémantique, rejeu forensique) et coupe-circuits à 5 états avec repli L0.",
       "primary_domain": "D08",
       "secondary_domains": [
         "D07",
@@ -878,7 +878,7 @@
       "chapter_title": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique",
       "line_start": 10,
       "line_end": 157,
-      "summary": "Passage de l'humain intégrateur au tissu conjonctif en 6 dimensions (D1–D6), coupure entre qui parle et qui en répond, discipline de retenue et loi de Lusser, 5 critères d'évaluation architecturale, règle du maillon le plus élevé, hygiène probatoire (gel 2 déc. 2026) et colophon non-avis.",
+      "summary": "Passage de l'humain intégrateur au tissu conjonctif en 6 dimensions (D1–D6), coupure entre qui parle et qui en répond, discipline de retenue et loi de Lusser, 5 critères d'évaluation architecturale, règle du maillon le plus élevé, hygiène probatoire (gel 2 décembre 2026) et colophon non-avis.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D01",
@@ -1295,7 +1295,7 @@
       "chapter_title": "Chapitre 11 — Les sept pièges de la gouvernance et l'atrophie silencieuse des compétences",
       "line_start": 1595,
       "line_end": 1717,
-      "summary": "Sept pièges endogènes (sur-ingénierie, Shadow AI 70 % vs 8 %, saturation 2LoD, dilution intra-groupe, veille décorative, choc tarifaire, collision cryptographique), paradoxe de supervision (approbation réflexe et requalification Loi 25), crise de la relève junior (~20 %) et 4 parades / 3 disjoncteurs organisationnels (Fig-20).",
+      "summary": "Sept pièges endogènes (sur-ingénierie, Shadow AI 70 % contre 8 %, saturation 2LoD, dilution intra-groupe, veille décorative, choc tarifaire, collision cryptographique), paradoxe de supervision (approbation réflexe et requalification Loi 25), crise de la relève junior (~20 %) et 4 parades / 3 disjoncteurs organisationnels (Fig-20).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D09",
@@ -1335,7 +1335,7 @@
       "chapter_title": "Chapitre 12 — Décider sous incertitude profonde : des 90 premiers jours à l'ère post-quantique",
       "line_start": 1718,
       "line_end": 1845,
-      "summary": "Planification DAPP devant trois avenirs plausibles sans probabilité (2027–2035), six priorités irréductibles des 90 premiers jours, frontière sans regret vs conditionnel (automatisation ACME TLS 100j/47j et crypto-agilité ML-DSA/ML-KEM/SLH-DSA) et pilotage par 5 familles de signaux avancés (DAPP/STPA).",
+      "summary": "Planification DAPP devant trois avenirs plausibles sans probabilité (2027–2035), six priorités irréductibles des 90 premiers jours, frontière sans regret et conditionnel (automatisation ACME TLS 100j/47 jours et crypto-agilité ML-DSA/ML-KEM/SLH-DSA) et pilotage par 5 familles de signaux avancés (DAPP/STPA).",
       "primary_domain": "D11",
       "secondary_domains": [
         "D06",
@@ -1409,7 +1409,7 @@
       "chapter_title": "Annexe B — Chronologie réglementaire et cryptographique consolidée (2026–2035)",
       "line_start": 2053,
       "line_end": 2162,
-      "summary": "11 fiches chronologiques détaillées (Loi 25 2023, EU AI Act art. 50 août 2026, TLS 100 j mars 2027, BSIF E-23/AMF mai 2027, EU Annexe III déc. 2027, Annexe I août 2028, ACVM NC 31-103 oct. 2028, BSIF B-15 fin 2028, TLS 47 j mars 2029, G7/NIST PQC 2030–2035, Loi banques juin 2033) et lecture par horizon.",
+      "summary": "11 fiches chronologiques détaillées (Loi 25 2023, EU AI Act art. 50 août 2026, TLS 100 j mars 2027, BSIF E-23/AMF mai 2027, EU Annexe III décembre 2027, Annexe I août 2028, ACVM NC 31-103 octobre 2028, BSIF B-15 fin 2028, TLS 47 jours mars 2029, G7/NIST PQC 2030–2035, Loi banques juin 2033) et lecture par horizon.",
       "primary_domain": "D09",
       "secondary_domains": [
         "D06",
@@ -1427,7 +1427,7 @@
       ],
       "key_terms": [
         "Chronologie 2026–2035",
-        "Gel 2 déc. 2026",
+        "Gel 2 décembre 2026",
         "Horizons"
       ],
       "normative_refs": [
@@ -1449,7 +1449,7 @@
       "chapter_title": "Annexe C — Méthodologie bibliométrique, bibliographie classée et bilan d'assurance qualité",
       "line_start": 2163,
       "line_end": 2327,
-      "summary": "Protocole MLR-PRISMA-ScR (79 textes intégraux L+ de 58 éditeurs hachés SHA-256, AACODS >= 9.0/12, 24 URL en statut F sous AO-01), couverture RQ1–RQ6, bilan G1–G5 (13/13 journaux Wyvern G2 : 1 084 -> 1 087 affirmations 100 % supportées, 3 passes G3 à 60/60, G4, G5, 23 figures).",
+      "summary": "Protocole MLR-PRISMA-ScR (79 textes intégraux L+ de 58 éditeurs hachés SHA-256, AACODS ≥ 9.0/12, 24 URL en statut F sous AO-01), couverture RQ1–RQ6, bilan G1–G5 (13/13 journaux Wyvern G2 : 1 084 → 1 087 affirmations 100 % supportées, 3 passes G3 à 60/60, G4, G5, 23 figures).",
       "primary_domain": "D12",
       "secondary_domains": [
         "D08"
@@ -1480,7 +1480,7 @@
       "chapter_title": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5",
       "line_start": 10,
       "line_end": 120,
-      "summary": "Conversion de la prose en preuve exécutable à exit 0 : table canonique des 5 discordances inter-volumes (DISC-01 à DISC-05), architecture bicéphale (manuel CC BY 4.0 à extraits <= 40 L / CA-G0-SYNC + trousse MIT Python 3.12+/OPA v1.22.4), 4 parcours, gel 2 déc. 2026, délimitation DC-01/DC-P12, pipeline G0–G5 et clause non-avis AO-05.",
+      "summary": "Conversion de la prose en preuve exécutable à exit 0 : table canonique des 5 discordances inter-volumes (DISC-01 à DISC-05), architecture bicéphale (manuel CC BY 4.0 à extraits ≤ 40 L / CA-G0-SYNC + trousse MIT Python 3.12+/OPA v1.22.4), 4 parcours, gel 2 décembre 2026, délimitation DC-01/DC-P12, pipeline G0–G5 et clause non-avis AO-05.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D02",
@@ -1575,7 +1575,7 @@
       "chapter_title": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS)",
       "line_start": 495,
       "line_end": 842,
-      "summary": "Module authz_pqc_audit/ : délégation OAuth 2.0 OBO <= 2 sauts (RFC 8693/8707/9449 DPoP), rejet token passthrough, automate SSF/CAEP, approbation CIBA (I-JSON/JCS C.6), banc HTTP 431 (empilement O(sauts) ML-DSA vs Transaction Tokens O(1) RFC 9964/-11), mappage OTel v1.41.0 ↔ genai_dev, caviardage PII bilingue et jointure lacune 21, chaîne C.8 JCS + SCITT (RFC 9943) + SLH-DSA MIT (FIPS 205 ACVP) et CPO/FOCUS v1.4 carbone (CAP-046).",
+      "summary": "Module authz_pqc_audit/ : délégation OAuth 2.0 OBO ≤ 2 sauts (RFC 8693/8707/9449 DPoP), rejet token passthrough, automate SSF/CAEP, approbation CIBA (I-JSON/JCS C.6), banc HTTP 431 (empilement O(sauts) ML-DSA par rapport à Transaction Tokens O(1) RFC 9964/-11), mappage OTel v1.41.0 ↔ genai_dev, caviardage PII bilingue et jointure lacune 21, chaîne C.8 JCS + SCITT (RFC 9943) + SLH-DSA MIT (FIPS 205 ACVP) et CPO/FOCUS v1.4 carbone (CAP-046).",
       "primary_domain": "D06",
       "secondary_domains": [
         "D08",
@@ -1647,7 +1647,7 @@
       "chapter_title": "Chapitre 03 — Politiques hors modèle (OPA / Rego), Règle de deux, confinement déterministe et sémantique d'effet Saga à dix scénarios de fautes",
       "line_start": 845,
       "line_end": 1175,
-      "summary": "Modules policy_saga/ et policies_opa/ : choix exclusif OPA/Rego (default allow := false, 45/45 cas à 100 % de couverture), Règle de deux (EXIG-SEC-06) et propagation CaMeL inter-agents, confinement déclaratif sans KVM (network: none, anti-IMDS, zéro secret, Decimal vs float), orchestrateur Saga durable (idem-v1 JCS SHA-256, SQLite WAL, Transactional Outbox, point pivot, canal isolé EXIG-ORC-28) et suite de 10 scénarios de fautes (EXIG-ORC-20).",
+      "summary": "Modules policy_saga/ et policies_opa/ : choix exclusif OPA/Rego (default allow := false, 45/45 cas à 100 % de couverture), Règle de deux (EXIG-SEC-06) et propagation CaMeL inter-agents, confinement déclaratif sans KVM (network: none, anti-IMDS, zéro secret, Decimal par rapport à float), orchestrateur Saga durable (idem-v1 JCS SHA-256, SQLite WAL, Transactional Outbox, point pivot, canal isolé EXIG-ORC-28) et suite de 10 scénarios de fautes (EXIG-ORC-20).",
       "primary_domain": "D07",
       "secondary_domains": [
         "D05",
@@ -1707,7 +1707,7 @@
       "chapter_title": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints",
       "line_start": 1176,
       "line_end": 1480,
-      "summary": "Module evalops_prr/ : banc hermétique MockMcpServer et constance pass^k, dimensionnement statistique par intervalle unilatéral de Wilson à 95 % < p (n >= ceil(3/p), EXIG-EVA-03), 4 relations métamorphiques sans oracle sur >= 100 scénarios bilingues FR/EN (EXIG-SEC-24, EXIG-AMF-11, OWASP SRC-055), et validateurs déterministes de 2027-B001, des 24 [BLOQUANT] PRR, des 5 SBB et des 3 blueprints (C01–C40) sous réserve DC-P12/non-avis.",
+      "summary": "Module evalops_prr/ : banc hermétique MockMcpServer et constance pass^k, dimensionnement statistique par intervalle unilatéral de Wilson à 95 % < p (n ≥ ceil(3/p), EXIG-EVA-03), 4 relations métamorphiques sans oracle sur ≥ 100 scénarios bilingues FR/EN (EXIG-SEC-24, EXIG-AMF-11, OWASP SRC-055), et validateurs déterministes de 2027-B001, des 24 [BLOQUANT] PRR, des 5 SBB et des 3 blueprints (C01–C40) sous réserve DC-P12/non-avis.",
       "primary_domain": "D08",
       "secondary_domains": [
         "D12",
@@ -1760,7 +1760,7 @@
       "chapter_title": "Annexe A — Socle de spécifications primaires L+ hachées SHA-256, registre statut F et journal intégral d'ancrage atomique Wyvern (G2)",
       "line_start": 1483,
       "line_end": 1724,
-      "summary": "Socle probatoire généré automatiquement (CA-17) : 95 sources primaires ouvertes L+ de 70 émetteurs hachées SHA-256 (LF UTF-8), synthèse des statuts de maturité normative (specifications-lplus.json), grille AACODS >= 9.0/12, registre des 10 exclusions statut F (AO-01), isolement post-gel et bibliographie SRC-001 à SRC-095.",
+      "summary": "Socle probatoire généré automatiquement (CA-17) : 95 sources primaires ouvertes L+ de 70 émetteurs hachées SHA-256 (LF UTF-8), synthèse des statuts de maturité normative (specifications-lplus.json), grille AACODS ≥ 9.0/12, registre des 10 exclusions statut F (AO-01), isolement post-gel et bibliographie SRC-001 à SRC-095.",
       "primary_domain": "D12",
       "secondary_domains": [
         "D09"
@@ -1990,10 +1990,10 @@
       "local_id": "t678-001",
       "canonical_slug": "systems-of-agency",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Stratification du SI",
-      "title": "Émergence des Systems of Agency (SoA) entre SoE et SoR",
-      "summary": "Insertion d'une strate probabiliste de planification (Systems of Agency) entre les systèmes d'engagement (SoE) et les systèmes d'enregistrement (SoR), imposant des frontières d'autorité explicites et la coupure entre qui parle et qui en répond.",
+      "title": "Émergence des Systèmes d'agentivité (SoA) entre SoE et SoR",
+      "summary": "Insertion d'une strate probabiliste de planification (Systèmes d'agentivité) entre les systèmes d'engagement (SoE) et les systèmes d'enregistrement (SoR), imposant des frontières d'autorité explicites et la coupure entre qui parle et qui en répond.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -2055,7 +2055,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Fiabilité en série",
       "title": "Loi de Lusser et dégradation géométrique des chaînes autonomes",
-      "summary": "Application du modèle des risques concurrents en série (manuel NIST/SEMATECH) aux chaînes d'agents : le produit des fiabilités individuelles fait chuter la réussite à ~53,9 % sur 10 étapes à 94 %, justifiant les assertions déterministes et la limite MAP de <= 10 étapes.",
+      "summary": "Application du modèle des risques concurrents en série (manuel NIST/SEMATECH) aux chaînes d'agents : le produit des fiabilités individuelles fait chuter la réussite à ~53,9 % sur 10 étapes à 94 %, justifiant les assertions déterministes et la limite MAP de ≤ 10 étapes.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -2124,7 +2124,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Défaillances probabilistes",
       "title": "Erreurs plausibles silencieuses, asymétrie prefill/decode et rayon d'impact",
-      "summary": "Passage des pannes franches aux erreurs plausibles sous statut HTTP 200 OK, amplifié par le non-déterminisme même à temperature=0, la variance de latence p99 (prefill vs decode) et le rayon d'impact (blast radius) sur les mutations irréversibles (OWASP LLM06).",
+      "summary": "Passage des pannes franches aux erreurs plausibles sous statut HTTP 200 OK, amplifié par le non-déterminisme même à temperature=0, la variance de latence p99 (prefill par rapport à decode) et le rayon d'impact (blast radius) sur les mutations irréversibles (OWASP LLM06).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -2920,7 +2920,7 @@
       "subdomain": "Protocoles verticaux outil-modèle (MCP)",
       "family": "Intégrité des définitions MCP",
       "title": "Épinglage cryptographique JCS SHA-256 sur tools/list et rejet HeaderMismatch",
-      "summary": "Contre-mesure à la dérive silencieuse mesurée sur 40,58 % des serveurs MCP multi-versions (Kraishan, sept. 2026, OR=2,96) : canonisation JCS (RFC 8785) et épinglage SHA-256 du catalogue tools/list, purge de liste blanche _meta et blocage HeaderMismatch (400 / -32020).",
+      "summary": "Contre-mesure à la dérive silencieuse mesurée sur 40,58 % des serveurs MCP multi-versions (Kraishan, septembre 2026, OR=2,96) : canonisation JCS (RFC 8785) et épinglage SHA-256 du catalogue tools/list, purge de liste blanche _meta et blocage HeaderMismatch (400 / -32020).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3457,7 +3457,7 @@
       "subdomain": "Sémantique métier, ontologies et compilation de contexte",
       "family": "Récupération fédérée",
       "title": "Agentic RAG fédéré : recherche hybride BM25/RRF, Cross-Encoder, CRAG, Text-to-SQL et GraphRAG",
-      "summary": "Dépassement du RAG vectoriel naïf par le Contextual Retrieval, la fusion RRF (BM25 + vecteurs), le reclassement en deux étages (Bi-Encoder/Cross-Encoder), les boucles correctives CRAG, le Text-to-SQL gouverné par couche sémantique et GraphRAG.",
+      "summary": "Dépassement du RAG vectoriel élémentaire par le Contextual Retrieval, la fusion RRF (BM25 + vecteurs), le reclassement en deux étages (Bi-Encoder/Cross-Encoder), les boucles correctives CRAG, le Text-to-SQL gouverné par couche sémantique et GraphRAG.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3735,7 +3735,7 @@
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Topologies et transferts d'état",
       "title": "Topologies multi-agents (Supervisor, DAG, Handoff, Generator-Verifier), Claim-Check et Goal Pinning",
-      "summary": "Catalogue des topologies dirigées (Séquentiel, Routeur, Supervisor, DAG/LLMCompiler) et collaboratives bornées (Handoff, Scatter-Gather, Generator-Verifier, Group Chat <= 3), complétées par le passage par référence (Artifact URI / Claim-Check) et l'ancrage d'objectif contre le Goal Drift.",
+      "summary": "Catalogue des topologies dirigées (Séquentiel, Routeur, Supervisor, DAG/LLMCompiler) et collaboratives bornées (Handoff, Scatter-Gather, Generator-Verifier, Group Chat ≤ 3), complétées par le passage par référence (Artifact URI / Claim-Check) et l'ancrage d'objectif contre le Goal Drift.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -3789,7 +3789,7 @@
       "subdomain": "Chorégraphie Event Mesh et bus asynchrone",
       "family": "Event Mesh et patron hybride",
       "title": "Chorégraphie réactive sur Event Mesh (Kafka/Solace/NATS), CloudEvents/AsyncAPI et patron hybride",
-      "summary": "Activation d'agents ambiants sur Kafka, Solace et NATS JetStream sous enveloppes CloudEvents v1.0.2 (<= 64 Ko) et contrats AsyncAPI 3.0.0, articulée selon le patron hybride cible : orchestration macro-réglementaire inter-domaines et chorégraphie intra-domaine.",
+      "summary": "Activation d'agents ambiants sur Kafka, Solace et NATS JetStream sous enveloppes CloudEvents v1.0.2 (≤ 64 Ko) et contrats AsyncAPI 3.0.0, articulée selon le patron hybride cible : orchestration macro-réglementaire inter-domaines et chorégraphie intra-domaine.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4145,7 +4145,7 @@
       "subdomain": "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
       "family": "Attestation de charge SPIFFE",
       "title": "Attestation de workload SPIFFE/SPIRE, SVID éphémères, Envoy SDS et Trust Domains",
-      "summary": "Attestation cryptographique à deux étages (nœud et workload) par SPIFFE/SPIRE émettant des justificatifs SVID (X.509 / JWT) renouvelés en mémoire via Envoy SDS sans redémarrage et isolés par Trust Domains (hors-prod vs prod).",
+      "summary": "Attestation cryptographique à deux étages (nœud et workload) par SPIFFE/SPIRE émettant des justificatifs SVID (X.509 / JWT) renouvelés en mémoire via Envoy SDS sans redémarrage et isolés par Trust Domains (hors-prod par rapport à prod).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4207,7 +4207,7 @@
       "subdomain": "Chaîne de mandat, OBO 2e saut et approbation CIBA",
       "family": "Chaîne de mandat et OBO",
       "title": "Délégation OAuth 2.0 OBO à 2 sauts (RFC 8693, RFC 8707, DPoP RFC 9449, RAR RFC 9396)",
-      "summary": "Résolution du problème du deuxième saut et rejet du token passthrough (EXIG-MCP-11) : échange explicite RFC 8693 (sub + chaîne act[] <= 2 sauts), indicateur d'audience RFC 8707, preuve de possession DPoP RFC 9449 (cnf/jti unique) et autorisations granulaires RAR RFC 9396.",
+      "summary": "Résolution du problème du deuxième saut et rejet du token passthrough (EXIG-MCP-11) : échange explicite RFC 8693 (sub + chaîne act[] ≤ 2 sauts), indicateur d'audience RFC 8707, preuve de possession DPoP RFC 9449 (cnf/jti unique) et autorisations granulaires RAR RFC 9396.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4344,7 +4344,7 @@
       "subdomain": "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
       "family": "Confiance inter-organisations DID/VC/vLEI",
       "title": "Responsabilité du mandant inter-entreprises, DID/VC et chaîne GLEIF vLEI (ISO 17442-3)",
-      "summary": "Limites de la cryptographie face à la capacité juridique d'une personne morale (Hadfield & Koh, contrats incomplets), comblées par le triangle DID/VC (Tomašev et al.) et l'infrastructure GLEIF vLEI (KERI/ACDC, hiérarchie QVI -> LE -> OOR/ECR, ISO 17442-3).",
+      "summary": "Limites de la cryptographie face à la capacité juridique d'une personne morale (Hadfield & Koh, contrats incomplets), comblées par le triangle DID/VC (Tomašev et al.) et l'infrastructure GLEIF vLEI (KERI/ACDC, hiérarchie QVI → LE → OOR/ECR, ISO 17442-3).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4470,7 +4470,7 @@
       "domain_id": "D06",
       "subdomain": "PKI automatisée 47 jours et cryptographie post-quantique",
       "family": "Agilité post-quantique",
-      "title": "Choc post-quantique ML-DSA (FIPS 204) vs HTTP 431, Transaction Tokens O(1) et NIST/G7 2030–2035",
+      "title": "Choc post-quantique ML-DSA (FIPS 204) par rapport à HTTP 431, Transaction Tokens O(1) et NIST/G7 2030–2035",
       "summary": "Démonstration sur banc Python (pqc_http431.py) que l'empilement de signatures ML-DSA-65 (3 309 o) / ML-DSA-87 (4 627 o) en O(sauts) dépasse 8 192 o (HTTP 431) dès 1 ou 2 sauts, contre les Transaction Tokens O(1) CBOR-COSE (RFC 9964 / -11 : 4 757 o / 6 514 o) préparant le calendrier NIST IR 8547 / G7 (2030–2035).",
       "autonomy_levels": [
         "L1",
@@ -5058,7 +5058,7 @@
       "domain_id": "D08",
       "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
       "family": "Double couloir et caviardage PII",
-      "title": "Double couloir télémétrique et probatoire : caviardage PII bilingue FR/EN vs journal canonique",
+      "title": "Double couloir télémétrique et probatoire : caviardage PII bilingue FR/EN et journal canonique",
       "summary": "Séparation à la source entre le couloir opérationnel à faible latence — soumis à liste fermée et caviardage HMAC-SHA256 bilingue FR/EN sans appel modèle (EXIG-OBS-09, O-02) — et le couloir d'audit probatoire dédié à l'explicabilité Loi 25 art. 12.1 et au rejeu forensique.",
       "autonomy_levels": [
         "L1",
@@ -5194,7 +5194,7 @@
       "subdomain": "Banc EvalOps hermétique E1–E3, Wilson et métamorphique",
       "family": "EvalOps hermétique et tests métamorphiques",
       "title": "Banc EvalOps à mock MCP servers, juges calibrés et tests métamorphiques bilingues FR/EN",
-      "summary": "Évaluation continue en CI sur golden datasets et doublures hermétiques MockMcpServer (évitant effets de bord et vibe-testing AP-12), complétée par juges calibrés (kappa) et 4 relations métamorphiques sans oracle sur >= 100 scénarios bilingues FR/EN couvrant ASI01–ASI10, équité et non-avis.",
+      "summary": "Évaluation continue en CI sur golden datasets et doublures hermétiques MockMcpServer (évitant effets de bord et vibe-testing AP-12), complétée par juges calibrés (kappa) et 4 relations métamorphiques sans oracle sur ≥ 100 scénarios bilingues FR/EN couvrant ASI01–ASI10, équité et non-avis.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5257,8 +5257,8 @@
       "domain_id": "D08",
       "subdomain": "Banc EvalOps hermétique E1–E3, Wilson et métamorphique",
       "family": "Statistique d'homologation EvalOps",
-      "title": "Dimensionnement statistique par borne de Wilson unilatérale à 95 % < p (>= ceil(3/p) essais)",
-      "summary": "Remplacement de l'approximation défaillante de Wald sur les événements rares par l'intervalle unilatéral de Wilson à 95 % et le plancher n >= ceil(3/p) scénarios indépendants sans échec (ex. n = 300 donnant 0,8938 % < 1 %, rejetant n = 299 et les répétitions corrélées, EXIG-EVA-03).",
+      "title": "Dimensionnement statistique par borne de Wilson unilatérale à 95 % < p (≥ ceil(3/p) essais)",
+      "summary": "Remplacement de l'approximation défaillante de Wald sur les événements rares par l'intervalle unilatéral de Wilson à 95 % et le plancher n ≥ ceil(3/p) scénarios indépendants sans échec (ex. n = 300 donnant 0,8938 % < 1 %, rejetant n = 299 et les répétitions corrélées, EXIG-EVA-03).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -5377,7 +5377,7 @@
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Droit québécois des renseignements personnels",
       "title": "Loi 25 du Québec (art. 12.1 décisions exclusivement automatisées, RPRP, sanctions) et CAI 2026",
-      "summary": "Obligations en vigueur depuis le 22 sept. 2023 (portabilité 22 sept. 2024) sous LQ 2021, c. 25 : notification, divulgation des facteurs/paramètres et révision humaine habilitée (risque de requalification sur HITL mécanique), RPRP (art. 3.1), sanctions jusqu'à 10 M$/2 % (art. 90.12) et amendes pénales 25 M$/4 % (art. 91).",
+      "summary": "Obligations en vigueur depuis le 22 septembre 2023 (portabilité 22 septembre 2024) sous LQ 2021, c. 25 : notification, divulgation des facteurs/paramètres et révision humaine habilitée (risque de requalification sur HITL mécanique), RPRP (art. 3.1), sanctions jusqu'à 10 M$/2 % (art. 90.12) et amendes pénales 25 M$/4 % (art. 91).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5661,8 +5661,8 @@
       "domain_id": "D09",
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Valeurs mobilières et lois bancaires canadiennes",
-      "title": "Norme canadienne 31-103 (ACVM, oct. 2028), Consumer-Driven Banking Act et Loi sur les banques",
-      "summary": "Encadrement canadien des services financiers : interdiction des rétrofacturations en gestion de patrimoine sous NC 31-103 art. 11.11 (1er oct. 2028), Loi sur les services bancaires axés sur les consommateurs (L.C. 2026, ch. 3, art. 171 anti-screen-scraping) et Loi sur les banques (art. 415/416, Partie XI, temporisation 30 juin 2033).",
+      "title": "Norme canadienne 31-103 (ACVM, octobre 2028), Consumer-Driven Banking Act et Loi sur les banques",
+      "summary": "Encadrement canadien des services financiers : interdiction des rétrofacturations en gestion de patrimoine sous NC 31-103 art. 11.11 (1er octobre 2028), Loi sur les services bancaires axés sur les consommateurs (L.C. 2026, ch. 3, art. 171 anti-screen-scraping) et Loi sur les banques (art. 415/416, Partie XI, temporisation 30 juin 2033).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5714,7 +5714,7 @@
       "subdomain": "Réglementation européenne et référentiels internationaux",
       "family": "Réglementation européenne et réversibilité",
       "title": "EU AI Act (2024/1689 & 2026/1744), EN 18286:2026, DORA (2022/2554) et EU Data Act",
-      "summary": "Calendrier européen vérifié : pratiques interdites/GPAI (2025), transparence art. 50 (2 août / 2 déc. 2026), haut risque Annexe III (2 déc. 2027) et Annexe I (2 août 2028) selon (UE) 2026/1744, contrôle humain art. 14, QMS art. 17 / EN 18286:2026, tests de résilience DORA (art. 24–26) et réversibilité EU Data Act.",
+      "summary": "Calendrier européen vérifié : pratiques interdites/GPAI (2025), transparence art. 50 (2 août / 2 décembre 2026), haut risque Annexe III (2 décembre 2027) et Annexe I (2 août 2028) selon (UE) 2026/1744, contrôle humain art. 14, QMS art. 17 / EN 18286:2026, tests de résilience DORA (art. 24–26) et réversibilité EU Data Act.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6104,7 +6104,7 @@
       "domain_id": "D11",
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Planification adaptative DAPP",
-      "title": "Trajectoires adaptatives DAPP (3 avenirs 2027–2035, investissements sans regret vs conditionnels, 5 signaux)",
+      "title": "Trajectoires adaptatives DAPP (3 avenirs 2027–2035, investissements sans regret et conditionnels, 5 signaux)",
       "summary": "Application de la méthode Dynamic Adaptive Policy Pathways (Haasnoot et al.) face à 3 avenirs non probabilisés (socle ouvert étendu, archipel fermé, fragmentation souveraine) : séparation des investissements sans regret et des capacités conditionnelles pilotées par 5 familles de signaux avancés (PKI/PQC, sortie SaaS, régulation, STPA, dette/relève).",
       "autonomy_levels": [
         "L1",
@@ -6330,7 +6330,7 @@
       "subdomain": "Gouvernance duale AE ↔ AS, thèses T1–T10 et pièges",
       "family": "Pathologies organisationnelles de gouvernance",
       "title": "Sept pièges endogènes de gouvernance (sur-ingénierie, Shadow AI, saturation 2LoD, veille décorative...)",
-      "summary": "Typologie des sept dérives internes qui paralysent les programmes agentiques : (1) sur-ingénierie initiale, (2) agents fantômes (70 % d'usage hebdomadaire individuel vs 8 % en exploitation selon BdC), (3) saturation de la 2e ligne, (4) dilution intra-groupe, (5) veille décorative, (6) choc tarifaire et (7) collision cryptographique.",
+      "summary": "Typologie des sept dérives internes qui paralysent les programmes agentiques : (1) sur-ingénierie initiale, (2) agents fantômes (70 % d'usage hebdomadaire individuel par rapport à 8 % en exploitation selon BdC), (3) saturation de la 2e ligne, (4) dilution intra-groupe, (5) veille décorative, (6) choc tarifaire et (7) collision cryptographique.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6384,7 +6384,7 @@
       "subdomain": "Trousse exécutable Tome 8 et vecteurs tiers",
       "family": "Architecture bicéphale et trousse MIT",
       "title": "Trousse exécutable Tome 8 (Python 3.12+, OPA v1.22.4, JSON Schema 2020-12) et contrat CA-G0-SYNC",
-      "summary": "Architecture bicéphale séparant le manuel CC BY 4.0 (<= 40 L par extrait, 9 figures) de la trousse exécutable MIT (harness_proto, authz_pqc_audit, policy_saga/policies_opa, evalops_prr) : validation G0 à exit 0 (83/83 pytest, 45/45 OPA à 100 %, 13/21 schémas 2020-12, 17/18 paquets requirements.lock SHA-256, 50 fichiers MIT et 14 extraits CA-G0-SYNC).",
+      "summary": "Architecture bicéphale séparant le manuel CC BY 4.0 (≤ 40 L par extrait, 9 figures) de la trousse exécutable MIT (harness_proto, authz_pqc_audit, policy_saga/policies_opa, evalops_prr) : validation G0 à exit 0 (83/83 pytest, 45/45 OPA à 100 %, 13/21 schémas 2020-12, 17/18 paquets requirements.lock SHA-256, 50 fichiers MIT et 14 extraits CA-G0-SYNC).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -6524,7 +6524,7 @@
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Concordance inter-volumes",
       "title": "Table canonique de passage et résolution des 5 discordances inter-volumes (DISC-01 à DISC-05)",
-      "summary": "Arbitrage exécutable des 5 divergences accumulées entre les Tomes 1 à 7 : DISC-01 (L0–L4 vs flux sans modèle), DISC-02 (criticité BLOQUANT/OBLIGATOIRE/RECOMMANDE et P0–P3), DISC-03 (4 plans SI vs 4 plans noyau vs 6 couches + A/B/C vs 4 modules T8), DISC-04 (neutralité ArchiMate 3.2/4.0 en G0) et DISC-05 (MCP 2026-07-28 vs 2025-11-25).",
+      "summary": "Arbitrage exécutable des 5 divergences accumulées entre les Tomes 1 à 7 : DISC-01 (L0–L4 par rapport à flux sans modèle), DISC-02 (criticité BLOQUANT/OBLIGATOIRE/RECOMMANDE et P0–P3), DISC-03 (4 plans SI par rapport à 4 plans noyau par rapport à 6 couches + A/B/C par rapport à 4 modules T8), DISC-04 (neutralité ArchiMate 3.2/4.0 en G0) et DISC-05 (MCP 2026-07-28 par rapport à 2025-11-25).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -6757,7 +6757,7 @@
       "source_slug": "partition-hybride-80-20",
       "target_slug": "loi-de-lusser",
       "type": "attenuation_risque",
-      "label": "circonscrit la chaîne probabiliste en série",
+      "label": "Circonscrit la chaîne probabiliste en série",
       "justification": "En maintenant ~80 % du flux de contrôle et des assertions en code déterministe, la règle 80/20 réduit les maillons stochastiques soumis à la décroissance multiplicative de Lusser.",
       "tomes": [
         "T6",
@@ -6769,7 +6769,7 @@
       "source_slug": "harnais-deterministe-8-etapes",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "intercepte les sorties invalides ou non ancrées",
+      "label": "Intercepte les sorties invalides ou non ancrées",
       "justification": "Les jalons 5_schema (JSON Schema 2020-12 strict: true) et 6_grounding (_check_grounding) bloquent les erreurs plausibles silencieuses et les montants hors bornes avant toute mutation.",
       "tomes": [
         "T6",
@@ -6780,7 +6780,7 @@
       "source_slug": "epinglage-schemas-mcp",
       "target_slug": "tool-poisoning-rug-pull",
       "type": "attenuation_risque",
-      "label": "détecte la dérive silencieuse tools/list",
+      "label": "Détecte la dérive silencieuse tools/list",
       "justification": "L'épinglage JCS SHA-256 sur tools/list et le rejet HeaderMismatch neutralisent les 40,58 % de dérives silencieuses et le rug-pull d'outils MCP entre versions.",
       "tomes": [
         "T6",
@@ -6792,7 +6792,7 @@
       "source_slug": "ergonomie-aci-anti-swagger",
       "target_slug": "tool-poisoning-rug-pull",
       "type": "attenuation_risque",
-      "label": "réduit la confusion d'outils (AP-04)",
+      "label": "Réduit la confusion d'outils (AP-04)",
       "justification": "Remplacer l'exposition mécanique Swagger-to-MCP par des façades d'intention ACI et Dynamic Toolsets supprime la saturation contextuelle et le choix erroné de routes destructrices.",
       "tomes": [
         "T6",
@@ -6803,7 +6803,7 @@
       "source_slug": "couche-anti-corruption-acl",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "protège les SoR des rafales et doubles écritures",
+      "label": "Protège les SoR des rafales et doubles écritures",
       "justification": "L'interposition d'une façade ACL + projections CQRS/CDC (Debezium) isole les ERP et mainframes contre les boucles exploratoires et les écritures doubles (AP-06).",
       "tomes": [
         "T6",
@@ -6814,7 +6814,7 @@
       "source_slug": "propagation-acl-memoire-silo",
       "target_slug": "tool-poisoning-rug-pull",
       "type": "attenuation_risque",
-      "label": "bloque les fuites vectorielles et ASI06",
+      "label": "Bloque les fuites vectorielles et ASI06",
       "justification": "La propagation des habilitations (OpenFGA, PostgreSQL RLS) en amont de la recherche et l'isolation Silo préviennent la fuite inter-locataires (LLM08) et l'empoisonnement mémoriel (ASI06).",
       "tomes": [
         "T6"
@@ -6824,7 +6824,7 @@
       "source_slug": "arbre-sobriete-oo1-oo4",
       "target_slug": "pathologies-reactives-backpressure",
       "type": "attenuation_risque",
-      "label": "prévient les échecs MAST et l'effet Ringelmann",
+      "label": "Prévient les échecs MAST et l'effet Ringelmann",
       "justification": "L'arbre de sobriété privilégie règle fixe et agent unique outillé avant toute décomposition et proscrit les essaims en débat libre (41 %–86,7 % d'échecs MAST).",
       "tomes": [
         "T6",
@@ -6836,7 +6836,7 @@
       "source_slug": "saga-compensatoire",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "répare les échecs partiels sans verrou 2PC",
+      "label": "Répare les échecs partiels sans verrou 2PC",
       "justification": "La combinaison idem-v1, Transactional Outbox, point pivot et canal de compensation isolé EXIG-ORC-28 empêche les états comptables incohérents et les doubles écritures.",
       "tomes": [
         "T6",
@@ -6848,7 +6848,7 @@
       "source_slug": "spiffe-spire-attestation",
       "target_slug": "identite-non-humaine-nhi",
       "type": "attenuation_risque",
-      "label": "élimine les secrets statiques en environnement",
+      "label": "Élimine les secrets statiques en environnement",
       "justification": "L'attestation cryptographique à deux étages SPIFFE/SPIRE et les SVID éphémères renouvelés par Envoy SDS suppriment les clés API statiques exposées (OWASP NHI Top 10).",
       "tomes": [
         "T6",
@@ -6860,7 +6860,7 @@
       "source_slug": "delegation-obo-deux-sauts",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "contient le Confused Deputy sur deux sauts",
+      "label": "Contient le Confused Deputy sur deux sauts",
       "justification": "L'échange OAuth 2.0 OBO (RFC 8693 sub/act) à portée réduite, lié par DPoP (RFC 9449) et audience RFC 8707 avec rejet du passthrough, borne les privilèges même si l'agent est détourné.",
       "tomes": [
         "T6",
@@ -6872,7 +6872,7 @@
       "source_slug": "politiques-opa-rego-hors-modele",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "extrait les invariants de sécurité hors du prompt",
+      "label": "Extrait les invariants de sécurité hors du prompt",
       "justification": "L'Intent Gate OPA/Rego (default allow := false) et la séparation contrôle/données CaMeL empêchent qu'une injection indirecte ou l'anti-patron AP-10 ne contourne les règles impératives.",
       "tomes": [
         "T6",
@@ -6884,7 +6884,7 @@
       "source_slug": "regle-de-deux-opa",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "interdit la conjonction entrée non fiable + exfiltration",
+      "label": "Interdit la conjonction entrée non fiable + exfiltration",
       "justification": "rule_of_two.rego et camel_taint.rego bloquent de manière déterministe toute exfiltration ou écriture persistante lorsque des données externes contaminées ont été consommées, y compris à travers A2A.",
       "tomes": [
         "T7",
@@ -6895,7 +6895,7 @@
       "source_slug": "confinement-shadi-sandbox",
       "target_slug": "tool-poisoning-rug-pull",
       "type": "attenuation_risque",
-      "label": "isole l'exécution de code arbitraire (ASI05)",
+      "label": "Isole l'exécution de code arbitraire (ASI05)",
       "justification": "SHADI, microVM (Firecracker/gVisor) et le profil déclaratif sans réseau sortant (blocage IMDS 169.254.169.254, zéro secret env) neutralisent l'évasion et le vol d'identifiants.",
       "tomes": [
         "T6",
@@ -6907,7 +6907,7 @@
       "source_slug": "soc-soar-coupe-circuit",
       "target_slug": "pathologies-reactives-backpressure",
       "type": "attenuation_risque",
-      "label": "stoppe les boucles d'emballement et dérives",
+      "label": "Stoppe les boucles d'emballement et dérives",
       "justification": "Le coupe-circuit à 5 états (FORCED_OPEN), les plafonds max_turns/budget et le repli automatique vers le flux déterministe L0 coupent les tempêtes et l'épuisement LLM10/ASI08/ASI10.",
       "tomes": [
         "T6",
@@ -6918,7 +6918,7 @@
       "source_slug": "double-couloir-probatoire-pii",
       "target_slug": "loi-25-article-12-1",
       "type": "attenuation_risque",
-      "label": "évite l'exposition de PII en télémétrie courante",
+      "label": "Évite l'exposition de PII en télémétrie courante",
       "justification": "Le caviardage déterministe bilingue FR/EN par HMAC-SHA256 et le mode Opt-In OTel purgent les renseignements personnels des traces opérationnelles tout en préservant l'auditabilité.",
       "tomes": [
         "T6",
@@ -6930,8 +6930,8 @@
       "source_slug": "banc-evalops-hermetique",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "bloque les régressions avant mise en production",
-      "justification": "Les doublures MockMcpServer et les tests métamorphiques bilingues FR/EN sur >= 100 scénarios détectent les dérives comportementales avant déploiement sans toucher aux SoR.",
+      "label": "Bloque les régressions avant mise en production",
+      "justification": "Les doublures MockMcpServer et les tests métamorphiques bilingues FR/EN sur ≥ 100 scénarios détectent les dérives comportementales avant déploiement sans toucher aux SoR.",
       "tomes": [
         "T6",
         "T7",
@@ -6942,7 +6942,7 @@
       "source_slug": "anti-patrons-agentiques",
       "target_slug": "dette-cognitive-vs-technique",
       "type": "attenuation_risque",
-      "label": "éradique les 12 modes d'échec structurels en ARB",
+      "label": "Éradique les 12 modes d'échec structurels en ARB",
       "justification": "Ériger AP-01 à AP-12 en critères bloquants ARB empêche l'empilement de dette cognitive, le Tool Sprawl, le Prompt-as-Policy et le lancement sans EvalOps.",
       "tomes": [
         "T6"
@@ -6952,7 +6952,7 @@
       "source_slug": "harnais-deterministe-8-etapes",
       "target_slug": "partition-hybride-80-20",
       "type": "dependance_technique",
-      "label": "repose sur la frontière stricte contrôle/modèle",
+      "label": "Repose sur la frontière stricte contrôle/modèle",
       "justification": "Le pipeline à 8 jalons (step_trace) requiert que le modèle reste confiné au seul jalon 4_model derrière des schémas stricts.",
       "tomes": [
         "T6",
@@ -6963,7 +6963,7 @@
       "source_slug": "epinglage-schemas-mcp",
       "target_slug": "protocole-mcp",
       "type": "dependance_technique",
-      "label": "s'ancre sur Streamable HTTP 2026-07-28",
+      "label": "S'ancre sur Streamable HTTP 2026-07-28",
       "justification": "La validation des en-têtes (MCP-Protocol-Version, HeaderMismatch) et de tools/list s'appuie sur le contrat sans état de MCP 2026-07-28.",
       "tomes": [
         "T6",
@@ -6974,7 +6974,7 @@
       "source_slug": "agent-card-decouverte",
       "target_slug": "protocole-a2a",
       "type": "dependance_technique",
-      "label": "authentifie les pairs du protocole A2A v1.0.1",
+      "label": "Authentifie les pairs du protocole A2A v1.0.1",
       "justification": "La découverte et la délégation A2A reposent sur la validation JWS (RFC 7515) après canonisation JCS (RFC 8785) de l'AgentCard et épinglage jku/kid.",
       "tomes": [
         "T6",
@@ -6985,7 +6985,7 @@
       "source_slug": "agntcy-slim",
       "target_slug": "agent-card-decouverte",
       "type": "dependance_technique",
-      "label": "étend les cartes A2A via schémas OASF et ADS",
+      "label": "Étend les cartes A2A via schémas OASF et ADS",
       "justification": "L'annuaire fédéré ADS et le transport SLIM/MLS complètent la découverte HTTP /.well-known/agent-card.json pour les maillages multi-organisations.",
       "tomes": [
         "T6"
@@ -6995,7 +6995,7 @@
       "source_slug": "rag-agentique-contexte",
       "target_slug": "dette-semantique-ontologies",
       "type": "dependance_technique",
-      "label": "exige des contrats ODCS et une couche sémantique",
+      "label": "Exige des contrats ODCS et une couche sémantique",
       "justification": "Le Text-to-SQL gouverné et le RAG fédéré échouent sans définitions métier partagées (ODCS, MDM, OWL 2/SHACL) prévenant le schisme analytique.",
       "tomes": [
         "T6",
@@ -7006,7 +7006,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "couche-anti-corruption-acl",
       "type": "dependance_technique",
-      "label": "s'appuie sur l'idempotence devant les SoR",
+      "label": "S'appuie sur l'idempotence devant les SoR",
       "justification": "Les reprises par rejeu déterministe d'un moteur durable exigent des appels externes idempotents et protégés par façades ACL/CQRS.",
       "tomes": [
         "T6",
@@ -7017,7 +7017,7 @@
       "source_slug": "saga-compensatoire",
       "target_slug": "execution-durable-temporal",
       "type": "dependance_technique",
-      "label": "nécessite une persistance d'état durable",
+      "label": "Nécessite une persistance d'état durable",
       "justification": "L'orchestrateur Saga exige un journal persisté (Outbox/SQLite WAL ou moteur Temporal/Restate) pour reprendre la compensation après un plantage sans dupliquer les étapes déjà acquittées.",
       "tomes": [
         "T6",
@@ -7029,7 +7029,7 @@
       "source_slug": "delegation-obo-deux-sauts",
       "target_slug": "spiffe-spire-attestation",
       "type": "dependance_technique",
-      "label": "requiert l'identité attestée des charges intermédiaires",
+      "label": "Requiert l'identité attestée des charges intermédiaires",
       "justification": "L'échange de jetons OBO à deux sauts et l'authentification des clients auprès du STS reposent sur les SVID SPIFFE attestant chaque orchestrateur et serveur d'outils.",
       "tomes": [
         "T6",
@@ -7041,7 +7041,7 @@
       "source_slug": "approbation-ciba",
       "target_slug": "scellage-jcs-scitt",
       "type": "dependance_technique",
-      "label": "canonise les paramètres d'action via JCS (RFC 8785)",
+      "label": "Canonise les paramètres d'action via JCS (RFC 8785)",
       "justification": "La preuve d'action C.6 liant l'approbation hors bande CIBA aux paramètres exacts utilise le hachage JCS SHA-256 sans virgule flottante.",
       "tomes": [
         "T7",
@@ -7052,7 +7052,7 @@
       "source_slug": "post-quantique-ml-dsa-slh-dsa",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "dependance_technique",
-      "label": "impose des Transaction Tokens O(1) face à HTTP 431",
+      "label": "Impose des Transaction Tokens O(1) face à HTTP 431",
       "justification": "La migration vers des signatures ML-DSA-65/87 sur chaînes OBO multi-sauts casse le plafond HTTP 431 sans bascule vers des Transaction Tokens CBOR-COSE en O(1).",
       "tomes": [
         "T8"
@@ -7062,7 +7062,7 @@
       "source_slug": "scellage-jcs-scitt",
       "target_slug": "observabilite-otel-genai",
       "type": "dependance_technique",
-      "label": "corrèle le grand livre C.8 aux traces via lacune 21",
+      "label": "Corrèle le grand livre C.8 aux traces via lacune 21",
       "justification": "Les enregistrements d'audit C.8 chaînés en JCS/SCITT s'apparient aux spans OTel épurés par les 4 clés obligatoires de jointure trace ↔ mandat.",
       "tomes": [
         "T8"
@@ -7072,7 +7072,7 @@
       "source_slug": "blueprints-reference-multisectoriels",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "dependance_technique",
-      "label": "repose sur les passerelles MCP et AI unifiées",
+      "label": "Repose sur les passerelles MCP et AI unifiées",
       "justification": "Les trois blueprints de référence (transactionnel, B2B fédéré, souverain Zero-Egress) s'appuient sur la médiation centralisée des passerelles MCP et AI.",
       "tomes": [
         "T6",
@@ -7083,7 +7083,7 @@
       "source_slug": "plateforme-iap-gitops-cognitif",
       "target_slug": "execution-durable-temporal",
       "type": "dependance_technique",
-      "label": "exige le Worker Versioning pour les livraisons en vol",
+      "label": "Exige le Worker Versioning pour les livraisons en vol",
       "justification": "Le déploiement progressif Canary/Blue-Green sur une plateforme IAP dépend du mécanisme Worker Versioning (Pinned/Rainbow) pour ne pas rompre le déterminisme du rejeu des sagas en cours.",
       "tomes": [
         "T6"
@@ -7093,7 +7093,7 @@
       "source_slug": "trousse-executable-tome-8",
       "target_slug": "partition-hybride-80-20",
       "type": "operationnalisation",
-      "label": "code le harnais 80/20 dans harness_proto/",
+      "label": "Code le harnais 80/20 dans harness_proto/",
       "justification": "La trousse exécutable du Tome 8 concrétise la partition 80/20 en Python 3.12+ avec 8 jalons déterministes testés en G0.",
       "tomes": [
         "T8"
@@ -7103,7 +7103,7 @@
       "source_slug": "trousse-executable-tome-8",
       "target_slug": "exigences-cre-ia-305",
       "type": "operationnalisation",
-      "label": "exécute les 24 PRR, 5 SBB, 2027-B001 et C01–C40 à exit 0",
+      "label": "Exécute les 24 PRR, 5 SBB, 2027-B001 et C01–C40 à exit 0",
       "justification": "evalops_prr/prr_validators.py et les quatre paquets de la trousse transforment les prescriptions déclaratives en validateurs bloquants vérifiés par 83 tests pytest.",
       "tomes": [
         "T8"
@@ -7113,7 +7113,7 @@
       "source_slug": "trousse-executable-tome-8",
       "target_slug": "regle-de-deux-opa",
       "type": "operationnalisation",
-      "label": "implémente la Règle de deux et CaMeL en Rego",
+      "label": "Implémente la Règle de deux et CaMeL en Rego",
       "justification": "policies_opa/rule_of_two.rego et camel_taint.rego atteignent 100 % de couverture sur 45 cas OPA en barrière G0.",
       "tomes": [
         "T8"
@@ -7123,7 +7123,7 @@
       "source_slug": "trousse-executable-tome-8",
       "target_slug": "saga-dix-scenarios-fautes",
       "type": "operationnalisation",
-      "label": "vérifie EXIG-ORC-20 sur SQLite WAL",
+      "label": "Vérifie EXIG-ORC-20 sur SQLite WAL",
       "justification": "policy_saga/saga_orchestrator.py et tests/test_saga_10_faults.py exécutent les 10 scénarios d'injection de fautes et le canal isolé EXIG-ORC-28.",
       "tomes": [
         "T8"
@@ -7133,8 +7133,8 @@
       "source_slug": "dimensionnement-wilson-evalops",
       "target_slug": "constance-pass-k",
       "type": "operationnalisation",
-      "label": "convertit pass^k en seuil statistique de Wilson",
-      "justification": "evalops_prr/wilson_bounds.py opérationnalise l'exigence de constance en imposant n >= ceil(3/p) essais indépendants sous borne unilatérale à 95 %.",
+      "label": "Convertit pass^k en seuil statistique de Wilson",
+      "justification": "evalops_prr/wilson_bounds.py opérationnalise l'exigence de constance en imposant n ≥ ceil(3/p) essais indépendants sous borne unilatérale à 95 %.",
       "tomes": [
         "T8"
       ]
@@ -7143,7 +7143,7 @@
       "source_slug": "blueprints-reference-multisectoriels",
       "target_slug": "noyau-controle-possede-cap",
       "type": "operationnalisation",
-      "label": "instancie les 4 plans en 3 architectures complètes",
+      "label": "Instancie les 4 plans en 3 architectures complètes",
       "justification": "Le chapitre 14 du Tome 6 concrétise la séparation en quatre plans découplés à travers trois blueprints secteur financier, B2B et souverain.",
       "tomes": [
         "T6"
@@ -7153,7 +7153,7 @@
       "source_slug": "passerelle-mcp-ai-gateway",
       "target_slug": "anti-verrouillage-standards",
       "type": "operationnalisation",
-      "label": "rend substituables les fournisseurs de modèles et outils",
+      "label": "Rend substituables les fournisseurs de modèles et outils",
       "justification": "L'unification GAIE/LiteLLM et MCP Gateway (server.json) permet de basculer entre modèles infonuagiques et enclaves vLLM/NIM sans réécrire le harnais.",
       "tomes": [
         "T6",
@@ -7164,7 +7164,7 @@
       "source_slug": "plateforme-iap-gitops-cognitif",
       "target_slug": "gouvernance-duale-ae-as",
       "type": "operationnalisation",
-      "label": "fournit des Golden Paths conformes aux développeurs",
+      "label": "Fournit des Golden Paths conformes aux développeurs",
       "justification": "Les gabarits Backstage/Kratix/Crossplane de l'IAP pré-câblent identité NHI, OTel et garde-fous afin que la voie homologuée soit plus rapide que le Shadow AI.",
       "tomes": [
         "T6"
@@ -7174,7 +7174,7 @@
       "source_slug": "modele-maturite-feuille-360j",
       "target_slug": "coexistence-bpm-ipaas-rpa",
       "type": "operationnalisation",
-      "label": "planifie la sortie du RPA et le Strangler Fig sur 360 jours",
+      "label": "Planifie la sortie du RPA et le Strangler Fig sur 360 jours",
       "justification": "Les jalons J90, J180 et J360 cadencent le gel du RPA, la migration Strangler Fig en 4 stades et le décommissionnement patrimonial.",
       "tomes": [
         "T6"
@@ -7184,7 +7184,7 @@
       "source_slug": "priorites-90-jours-gouvernance",
       "target_slug": "noyau-controle-possede-cap",
       "type": "operationnalisation",
-      "label": "verrouille les 6 fondations déterministes en 90 jours",
+      "label": "Verrouille les 6 fondations déterministes en 90 jours",
       "justification": "Les 6 priorités des 90 premiers jours traduisent la propriété du noyau de contrôle en actions immédiates avant toute autonomie en écriture.",
       "tomes": [
         "T7"
@@ -7194,7 +7194,7 @@
       "source_slug": "finops-focus-cpo",
       "target_slug": "observabilite-otel-genai",
       "type": "operationnalisation",
-      "label": "impute les coûts et le carbone via OTel + FOCUS v1.4",
+      "label": "Impute les coûts et le carbone via OTel + FOCUS v1.4",
       "justification": "L'association des spans OpenTelemetry GenAI et du schéma FOCUS v1.4 étendu carbone (CAP-046) opérationnalise le calcul exact du CPO.",
       "tomes": [
         "T6",
@@ -7205,8 +7205,8 @@
       "source_slug": "did-vc-passeport-agent",
       "target_slug": "protocole-a2a",
       "type": "operationnalisation",
-      "label": "ancre l'identité légale des pairs A2A inter-firmes",
-      "justification": "L'écosystème GLEIF vLEI (QVI -> LE -> OOR/ECR, ISO 17442-3) et les justificatifs vérifiables VC permettent aux passerelles A2A d'authentifier la personne morale mandante au-delà du champ provider.",
+      "label": "Ancre l'identité légale des pairs A2A inter-firmes",
+      "justification": "L'écosystème GLEIF vLEI (QVI → LE → OOR/ECR, ISO 17442-3) et les justificatifs vérifiables VC permettent aux passerelles A2A d'authentifier la personne morale mandante au-delà du champ provider.",
       "tomes": [
         "T7"
       ]
@@ -7215,7 +7215,7 @@
       "source_slug": "confinement-shadi-sandbox",
       "target_slug": "politiques-opa-rego-hors-modele",
       "type": "operationnalisation",
-      "label": "applique le refus réseau par défaut au niveau manifeste",
+      "label": "Applique le refus réseau par défaut au niveau manifeste",
       "justification": "sandbox_manifest.py et sandbox_confinement.rego couplent validation de schéma et règles Rego pour vérifier l'isolement réseau et les délais bornés.",
       "tomes": [
         "T8"
@@ -7225,7 +7225,7 @@
       "source_slug": "memoire-coala-4-tiroirs",
       "target_slug": "rag-agentique-contexte",
       "type": "operationnalisation",
-      "label": "structure les mémoires épisodique, sémantique et procédurale",
+      "label": "Structure les mémoires épisodique, sémantique et procédurale",
       "justification": "L'Agentic RAG fédéré (CRAG, GraphRAG, Text-to-SQL) alimente la mémoire de travail depuis les strates sémantique et épisodique CoALA sous budget d'attention.",
       "tomes": [
         "T6"
@@ -7235,7 +7235,7 @@
       "source_slug": "cadre-togaf-archimate-4-plans",
       "target_slug": "exigences-cre-ia-305",
       "type": "operationnalisation",
-      "label": "formalise les contrôles EA/SA dans le gabarit ADR",
+      "label": "Formalise les contrôles EA/SA dans le gabarit ADR",
       "justification": "L'Annexe B du Tome 6 traduit les extensions TOGAF/ArchiMate et la topologie en plans dans les rubriques d'ADR et critères C01–C08.",
       "tomes": [
         "T6",
@@ -7246,7 +7246,7 @@
       "source_slug": "scellage-jcs-scitt",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "operationnalisation",
-      "label": "enregistre les approbations humaines C.6 dans l'audit C.8",
+      "label": "Enregistre les approbations humaines C.6 dans l'audit C.8",
       "justification": "Le grand livre immuable consigne dans le bloc autorite l'empreinte des approbations CIBA et des vérifications humaines pour prouver l'effectivité du recours.",
       "tomes": [
         "T6",
@@ -7257,7 +7257,7 @@
       "source_slug": "controle-surete-stamp-stpa",
       "target_slug": "soc-soar-coupe-circuit",
       "type": "operationnalisation",
-      "label": "convertit l'analyse STPA en coupe-circuits et signaux",
+      "label": "Convertit l'analyse STPA en coupe-circuits et signaux",
       "justification": "Les actions de contrôle dangereuses identifiées par STPA dictent les seuils des disjoncteurs cognitifs et la table des signaux d'alerte de boucle.",
       "tomes": [
         "T7"
@@ -7267,7 +7267,7 @@
       "source_slug": "protocole-wyvern-g0-g5",
       "target_slug": "trousse-executable-tome-8",
       "type": "operationnalisation",
-      "label": "scelle les 14 extraits par SHA-256 et vérifie 4 vecteurs tiers",
+      "label": "Scelle les 14 extraits par SHA-256 et vérifie 4 vecteurs tiers",
       "justification": "Le contrat CA-G0-SYNC et la barrière G0 lient mécaniquement le code exécuté et les suites tierces (RFC 8785, ACVP, a2a-tck, OWASP SRC-055) au texte du manuel.",
       "tomes": [
         "T8",
@@ -7278,7 +7278,7 @@
       "source_slug": "loi-25-article-12-1",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "encadrement_normatif",
-      "label": "impose un réviseur humain réellement habilité",
+      "label": "Impose un réviseur humain réellement habilité",
       "justification": "L'article 12.1 de la Loi 25 interdit la validation mécanique décorative : il exige avis, explication des paramètres et capacité réelle de révision sous peine de sanctions (10 M$/2 % et 25 M$/4 %).",
       "tomes": [
         "T6",
@@ -7290,7 +7290,7 @@
       "source_slug": "loi-25-article-12-1",
       "target_slug": "scellage-jcs-scitt",
       "type": "encadrement_normatif",
-      "label": "exige la traçabilité des facteurs et paramètres",
+      "label": "Exige la traçabilité des facteurs et paramètres",
       "justification": "Le deuxième couloir probatoire (audit C.8 / SCITT / SLH-DSA) fournit les preuves horodatées et facteurs décisionnels nécessaires pour répondre aux demandes sous l'article 12.1.",
       "tomes": [
         "T7",
@@ -7301,7 +7301,7 @@
       "source_slug": "efvp-transfert-hors-quebec",
       "target_slug": "memoire-coala-4-tiroirs",
       "type": "encadrement_normatif",
-      "label": "impose l'ÉFVP préalable et la portabilité/purge des RP",
+      "label": "Impose l'ÉFVP préalable et la portabilité/purge des RP",
       "justification": "L'article 3.3 de la Loi 25 contraint les mémoires persistantes CoALA à l'évaluation d'impact préalable, à l'export structuré et au cloisonnement des renseignements personnels.",
       "tomes": [
         "T6",
@@ -7312,7 +7312,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "gouvernance-duale-ae-as",
       "type": "encadrement_normatif",
-      "label": "impose inventaire, validation 2LoD et propriété sur le cycle de vie",
+      "label": "Impose inventaire, validation 2LoD et propriété sur le cycle de vie",
       "justification": "La directive BSIF E-23 (en vigueur le 1er mai 2027) et le bulletin de juillet 2026 obligent à proportionner l'homologation (R1–R4), nommer un propriétaire et maintenir des solutions de repli manuel.",
       "tomes": [
         "T6",
@@ -7324,7 +7324,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "regle-maillon-plus-eleve",
       "type": "encadrement_normatif",
-      "label": "fonde la propagation de criticité aux maillons amont",
+      "label": "Fonde la propagation de criticité aux maillons amont",
       "justification": "La cotation de risque et le suivi des dépendances de BSIF E-23 imposent d'aligner les agents de lecture amont sur la criticité des systèmes avals qu'ils alimentent.",
       "tomes": [
         "T7"
@@ -7334,7 +7334,7 @@
       "source_slug": "ligne-directrice-amf",
       "target_slug": "banc-evalops-hermetique",
       "type": "encadrement_normatif",
-      "label": "encadre l'équité bilingue et la non-substitution d'avis",
+      "label": "Encadre l'équité bilingue et la non-substitution d'avis",
       "justification": "L'exigence EXIG-AMF-11 (reliée au repère attendu du 1er mai 2027 sous réserve AIBanks.ca) est testée par paires métamorphiques bilingues FR/EN et divulgation non-avis.",
       "tomes": [
         "T7",
@@ -7345,8 +7345,8 @@
       "source_slug": "avis-acvm-11-348",
       "target_slug": "profils-financiers-5-secteurs",
       "type": "encadrement_normatif",
-      "label": "fixe les cinq plafonds métier en finance canadienne",
-      "justification": "NC 31-103 (oct. 2028), la Loi sur les services bancaires axés sur les consommateurs (art. 171) et la Loi sur les banques (art. 415/416, Partie XI) tracent les actes non délégables aux agents.",
+      "label": "Fixe les cinq plafonds métier en finance canadienne",
+      "justification": "NC 31-103 (octobre 2028), la Loi sur les services bancaires axés sur les consommateurs (art. 171) et la Loi sur les banques (art. 415/416, Partie XI) tracent les actes non délégables aux agents.",
       "tomes": [
         "T7"
       ]
@@ -7355,8 +7355,8 @@
       "source_slug": "eu-ai-act",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "encadrement_normatif",
-      "label": "exige un contrôle humain conscient du biais d'automatisation",
-      "justification": "L'article 14 du Règlement (UE) 2024/1689 impose aux systèmes à haut risque (Annexe III déc. 2027) une supervision humaine compétente dotée d'un pouvoir effectif d'arrêt.",
+      "label": "Exige un contrôle humain conscient du biais d'automatisation",
+      "justification": "L'article 14 du Règlement (UE) 2024/1689 impose aux systèmes à haut risque (Annexe III décembre 2027) une supervision humaine compétente dotée d'un pouvoir effectif d'arrêt.",
       "tomes": [
         "T6",
         "T7",
@@ -7367,7 +7367,7 @@
       "source_slug": "eu-ai-act",
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
-      "label": "relie les portes PRR et QMS à DORA et EN 18286:2026",
+      "label": "Relie les portes PRR et QMS à DORA et EN 18286:2026",
       "justification": "Les tests mécaniques des 24 portes bloquantes répondent à DORA (art. 24–26) et préparent la présomption de conformité QMS de l'article 17 (EN 18286:2026) et l'article 50.",
       "tomes": [
         "T8"
@@ -7377,7 +7377,7 @@
       "source_slug": "iso-iec-42001-nist",
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
-      "label": "structure les contrôles de gouvernance et l'échantillonnage 3/p",
+      "label": "Structure les contrôles de gouvernance et l'échantillonnage 3/p",
       "justification": "NIST AI RMF 1.0 (AI 600-1, 7.2.4.1) et ISO/IEC 42001:2023 fournissent le socle d'ingénierie unifié sous-tendant les critères C37, C40 et la fiche ADR 2027-B001.",
       "tomes": [
         "T6",
@@ -7388,7 +7388,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "atrophie-competences-humaines",
       "type": "encadrement_normatif",
-      "label": "exige des scénarios de panne et un repli manuel éprouvé",
+      "label": "Exige des scénarios de panne et un repli manuel éprouvé",
       "justification": "Le bulletin BSIF de juillet 2026 et les plans de sortie B-10 obligent à préserver l'aptitude humaine de reprise manuelle par des exercices périodiques (game days) et quotas formateurs.",
       "tomes": [
         "T7"
@@ -7398,7 +7398,7 @@
       "source_slug": "eu-ai-act",
       "target_slug": "anti-verrouillage-standards",
       "type": "encadrement_normatif",
-      "label": "impose la réversibilité infonuagique via l'EU Data Act",
+      "label": "Impose la réversibilité infonuagique via l'EU Data Act",
       "justification": "L'EU Data Act et les plans de sortie BSIF B-10 exigent des clauses contractuelles de portabilité et l'évitement des silos propriétaires fermés.",
       "tomes": [
         "T6",
@@ -7410,7 +7410,7 @@
       "source_slug": "clause-non-avis-licences",
       "target_slug": "trousse-executable-tome-8",
       "type": "encadrement_normatif",
-      "label": "délimite la portée synthétique DC-P12 et le statut non-avis",
+      "label": "Délimite la portée synthétique DC-P12 et le statut non-avis",
       "justification": "La règle AO-05 et la frontière DC-01/DC-P12 encadrent la trousse MIT comme preuve mécanique sur doublures hermétiques, excluant toute homologation sur SoR réel ou conseil juridique.",
       "tomes": [
         "T8",
@@ -7421,7 +7421,7 @@
       "source_slug": "protocole-wyvern-g0-g5",
       "target_slug": "ligne-directrice-amf",
       "type": "encadrement_normatif",
-      "label": "exclut les portails bloqués (lautorite.qc.ca) en statut F",
+      "label": "Exclut les portails bloqués (lautorite.qc.ca) en statut F",
       "justification": "La discipline anti-contournement AO-01 interdit d'extraire des sources derrière WAF/HTTP 403 et impose le réancrage sur texte ouvert ou source secondaire balisée (AIBanks.ca).",
       "tomes": [
         "T7",
@@ -7432,7 +7432,7 @@
       "source_slug": "iso-iec-42001-nist",
       "target_slug": "protocole-wyvern-g0-g5",
       "type": "encadrement_normatif",
-      "label": "exclut la norme payante ISO 42001 des preuves L+ en T8",
+      "label": "Exclut la norme payante ISO 42001 des preuves L+ en T8",
       "justification": "Sous AO-01 au Tome 8, ISO/IEC 42001 (payante, HTTP 403) passe en statut F et est remplacée dans le dossier probatoire par les textes officiels ouverts de l'UE (EN 18286:2026 / EU AI Act).",
       "tomes": [
         "T8"
@@ -7442,8 +7442,8 @@
       "source_slug": "concordance-inter-tomes-div02",
       "target_slug": "echelle-autonomie-l0-l4",
       "type": "concordance_inter_tomes",
-      "label": "réconcilie L0–L4 et les criticités (DISC-01, DISC-02)",
-      "justification": "La table canonique § 0.2 du Tome 8 harmonise L0 sans IA (T6) vs L0 lecture assistée (T7) via DISC-01 et unifie N0–N4/R1–R4/Classes sous BLOQUANT/OBLIGATOIRE/RECOMMANDE et P0–P3 via DISC-02.",
+      "label": "Réconcilie L0–L4 et les criticités (DISC-01, DISC-02)",
+      "justification": "La table canonique § 0.2 du Tome 8 harmonise L0 sans IA (T6) et L0 en lecture assistée (T7) via DISC-01 et unifie N0–N4/R1–R4/Classes sous BLOQUANT/OBLIGATOIRE/RECOMMANDE et P0–P3 via DISC-02.",
       "tomes": [
         "T6",
         "T7",
@@ -7454,7 +7454,7 @@
       "source_slug": "concordance-inter-tomes-div02",
       "target_slug": "noyau-controle-possede-cap",
       "type": "concordance_inter_tomes",
-      "label": "aligne les 4 plans homonymes sur les 4 modules (DISC-03)",
+      "label": "Aligne les 4 plans homonymes sur les 4 modules (DISC-03)",
       "justification": "DISC-03 relie les 4 plans du SI entier (T6) et les 4 plans du noyau possédé (T7) aux plans transversaux A/B/C et aux 4 paquets Python/OPA du Tome 8.",
       "tomes": [
         "T6",
@@ -7466,7 +7466,7 @@
       "source_slug": "concordance-inter-tomes-div02",
       "target_slug": "cadre-togaf-archimate-4-plans",
       "type": "concordance_inter_tomes",
-      "label": "établit la neutralité ArchiMate 3.2 vs 4.0 (DISC-04)",
+      "label": "Établit la neutralité ArchiMate 3.2 et 4.0 (DISC-04)",
       "justification": "DISC-04 garantit que les stéréotypes ArchiMate 3.2 du Tome 6 restent compatibles avec ArchiMate 4.0 (C260) sans artefact propriétaire bloquant en barrière G0.",
       "tomes": [
         "T6",
@@ -7477,7 +7477,7 @@
       "source_slug": "concordance-inter-tomes-div02",
       "target_slug": "protocole-mcp",
       "type": "concordance_inter_tomes",
-      "label": "tranche MCP 2025-11-25 (T7) vs 2026-07-28 (T6/T8) (DISC-05)",
+      "label": "Tranche MCP 2025-11-25 (T7) et 2026-07-28 (T6/T8) (DISC-05)",
       "justification": "DISC-05 retient MCP 2026-07-28 sans état comme référence exécutable, relègue 2025-11-25 au rôle de témoin historique (T7) et isole l'évolution via McpTransportAdapter.",
       "tomes": [
         "T6",
@@ -7489,7 +7489,7 @@
       "source_slug": "blueprints-reference-multisectoriels",
       "target_slug": "concordance-inter-tomes-div02",
       "type": "concordance_inter_tomes",
-      "label": "documente le mappage des 3 blueprints T6 ↔ T8",
+      "label": "Documente le mappage des 3 blueprints T6 ↔ T8",
       "justification": "Le Tome 8 (§ 4.4) explicite la correspondance et la permutation d'identifiants entre les 3 blueprints du Ch. 14 du Tome 6 et bp1_assistant_interne / bp2_rag_entreprise_acl / bp3_orchestration_multi_agents_b2b.",
       "tomes": [
         "T6",
@@ -7500,7 +7500,7 @@
       "source_slug": "exigences-cre-ia-305",
       "target_slug": "protocole-wyvern-g0-g5",
       "type": "concordance_inter_tomes",
-      "label": "comble l'Annexe D du Tome 6 par l'Annexe A du Tome 8",
+      "label": "Comble l'Annexe D du Tome 6 par l'Annexe A du Tome 8",
       "justification": "Le Tome 8 (§ 0.1, § 0.4) substitue aux simples décomptes de l'Annexe D du Tome 6 un journal intégral d'ancrage atomique Wyvern et la matrice exécutable matrice-exig-prr-c40.json.",
       "tomes": [
         "T6",
@@ -7511,7 +7511,7 @@
       "source_slug": "clause-non-avis-licences",
       "target_slug": "protocole-wyvern-g0-g5",
       "type": "concordance_inter_tomes",
-      "label": "consolide la collection R et les éditions T6, T7, T8",
+      "label": "Consolide la collection R et les éditions T6, T7, T8",
       "justification": "Corpus/README.md unifie la nomenclature, les compteurs exacts (4 542 pages, 319 diagrammes), les gabarits Typst et les bilans qualité de Tomes 1–6 à Tomes 7–8.",
       "tomes": [
         "R",
@@ -7524,8 +7524,8 @@
       "source_slug": "constance-pass-k",
       "target_slug": "finops-focus-cpo",
       "type": "tension_arbitrage",
-      "label": "arbitre coût de vérification vs fiabilité requise",
-      "justification": "Exiger une constance pass^k (k >= 5) et des reprises bornées augmente la consommation de jetons et le CPO à court terme, arbitré par la cascade SLM/LLM et le caching.",
+      "label": "Arbitre le coût de vérification face à la fiabilité requise",
+      "justification": "Exiger une constance pass^k (k ≥ 5) et des reprises bornées augmente la consommation de jetons et le CPO à court terme, arbitré par la cascade SLM/LLM et le caching.",
       "tomes": [
         "T6",
         "T7",
@@ -7536,7 +7536,7 @@
       "source_slug": "double-couloir-probatoire-pii",
       "target_slug": "observabilite-otel-genai",
       "type": "tension_arbitrage",
-      "label": "arbitre diagnostic rapide vs confidentialité Loi 25",
+      "label": "Arbitre diagnostic rapide et confidentialité Loi 25",
       "justification": "La capture brute des invites facilite le débogage SRE mais viole la minimisation des RP ; le mode Opt-In et le caviardage bilingue résolvent ce conflit via la jointure lacune 21.",
       "tomes": [
         "T6",
@@ -7548,7 +7548,7 @@
       "source_slug": "post-quantique-ml-dsa-slh-dsa",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "tension_arbitrage",
-      "label": "conflit taille des signatures ML-DSA vs plafond HTTP 431",
+      "label": "Conflit entre la taille des signatures ML-DSA et le plafond HTTP 431",
       "justification": "L'allongement des signatures ML-DSA-65/87 fait exploser l'en-tête HTTP (> 8 192 o) dans les chaînes O(sauts), imposant le passage aux Transaction Tokens O(1).",
       "tomes": [
         "T7",
@@ -7559,7 +7559,7 @@
       "source_slug": "atrophie-competences-humaines",
       "target_slug": "economie-industrialisation-cognitive",
       "type": "tension_arbitrage",
-      "label": "paradoxe productivité immédiate vs érosion de la relève",
+      "label": "Paradoxe productivité immédiate et érosion de la relève",
       "justification": "Les gains de productivité mesurés chez les juniors (26 %–40 %) réduisent la pratique directe (deep practice), contractent le vivier 22–25 ans (~20 %) et fragilisent le repli manuel.",
       "tomes": [
         "T7"
@@ -7569,7 +7569,7 @@
       "source_slug": "pieges-gouvernance",
       "target_slug": "gouvernance-duale-ae-as",
       "type": "tension_arbitrage",
-      "label": "sur-ingénierie 2LoD vs prolifération Shadow AI",
+      "label": "Sur-ingénierie de 2e ligne et prolifération du Shadow AI",
       "justification": "Appliquer un circuit d'homologation lourd aux assistants bénins engorge la 2e ligne et déclenche le Shadow AI (70 % d'usage personnel), résolu par le couloir rapide en lecture seule.",
       "tomes": [
         "T7"
@@ -7579,7 +7579,7 @@
       "source_slug": "choregraphie-event-mesh",
       "target_slug": "topologies-patrons-orchestration",
       "type": "tension_arbitrage",
-      "label": "arbitre autonomie événementielle vs maîtrise transactionnelle",
+      "label": "Arbitre l'autonomie événementielle face à la maîtrise transactionnelle",
       "justification": "La chorégraphie pure expose à l'anti-patron « flipper » et aux tempêtes d'événements, arbitrée au T6 (Ch. 8) par l'inversion hybride : orchestration macro et chorégraphie intra-domaine.",
       "tomes": [
         "T6"
@@ -7589,7 +7589,7 @@
       "source_slug": "economie-industrialisation-cognitive",
       "target_slug": "anti-verrouillage-standards",
       "type": "tension_arbitrage",
-      "label": "arbitre vitesse des agents SaaS vs contrôle architectural",
+      "label": "Arbitre vitesse des agents SaaS et contrôle architectural",
       "justification": "Activer des agents embarqués dans les suites SaaS accélère le démarrage mais crée des silos fermés sur le plan de contrôle, contre l'assemblage sur standards ouverts.",
       "tomes": [
         "T6",
@@ -7600,7 +7600,7 @@
       "source_slug": "plateforme-iap-gitops-cognitif",
       "target_slug": "dette-cognitive-vs-technique",
       "type": "tension_arbitrage",
-      "label": "immuabilité Git vs édition dynamique des prompts",
+      "label": "Immuabilité Git face à l'édition dynamique des prompts",
       "justification": "Le découplage dynamique en registre de prompts (Langfuse) accélère l'itération produit mais brise la traçabilité GitOps ; la réconciliation CI/Git + SLSA résout l'arbitrage.",
       "tomes": [
         "T6"
@@ -7610,7 +7610,7 @@
       "source_slug": "supervision-hitl-hotl-abstention",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "tension_arbitrage",
-      "label": "charge d'approbation humaine vs biais de complaisance",
+      "label": "Charge d'approbation humaine face au biais de complaisance",
       "justification": "Multiplier les validations HITL sous pression de cadence induit la reddition cognitive et l'approbation réflexe (12,36 % d'échecs sous pression), exigeant masquage et cas témoins.",
       "tomes": [
         "T6",
@@ -7621,8 +7621,8 @@
       "source_slug": "certificats-tls-47-jours",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "tension_arbitrage",
-      "label": "collision rotation TLS 47j et taille PQC sur passerelles",
-      "justification": "Le raccourcissement TLS à 100 j (2027) puis 47 j (2029) coïncide avec l'alourdissement post-quantique, sanctionnant toute infrastructure PKI manuelle ou rigide.",
+      "label": "Collision rotation TLS 47 jours et taille PQC sur passerelles",
+      "justification": "Le raccourcissement TLS à 100 j (2027) puis 47 jours (2029) coïncide avec l'alourdissement post-quantique, sanctionnant toute infrastructure PKI manuelle ou rigide.",
       "tomes": [
         "T7"
       ]
@@ -7631,7 +7631,7 @@
       "source_slug": "partition-hybride-80-20",
       "target_slug": "finops-focus-cpo",
       "type": "amplification_synergie",
-      "label": "comprime le coût par résultat conforme (CPO)",
+      "label": "Comprime le coût par résultat conforme (CPO)",
       "justification": "En confinant les appels LLM à ~20 % et en routant vers des SLM spécialisés avec cache KV, la partition 80/20 réduit drastiquement l'amplification de coût et le carbone (CAP-046).",
       "tomes": [
         "T6",
@@ -7643,7 +7643,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "amplification_synergie",
-      "label": "pérennise les attentes humaines longues sans coût actif",
+      "label": "Pérennise les attentes humaines longues sans coût actif",
       "justification": "Les mécanismes Signals et Awakeables permettent de suspendre un workflow des jours sous SLA pour révision humaine HOTL sans immobiliser de mémoire ni perdre l'état.",
       "tomes": [
         "T6"
@@ -7653,7 +7653,7 @@
       "source_slug": "noyau-controle-possede-cap",
       "target_slug": "anti-verrouillage-standards",
       "type": "amplification_synergie",
-      "label": "permet de remplacer un modèle en quelques jours",
+      "label": "Permet de remplacer un modèle en quelques jours",
       "justification": "Posséder les 4 plans déterministes (Registre/NHI, Passerelle/Routeur, Mémoire gouvernée, Journal durable) rend le modèle probabiliste réellement substituable.",
       "tomes": [
         "T7"
@@ -7663,7 +7663,7 @@
       "source_slug": "observabilite-otel-genai",
       "target_slug": "banc-evalops-hermetique",
       "type": "amplification_synergie",
-      "label": "alimente les golden datasets par les traces de production",
+      "label": "Alimente les golden datasets par les traces de production",
       "justification": "Les traces distribuées OTel GenAI caviardées et les incidents capturés en production enrichissent continuellement les suites de non-régression EvalOps.",
       "tomes": [
         "T6"
@@ -7673,7 +7673,7 @@
       "source_slug": "agent-card-decouverte",
       "target_slug": "agntcy-slim",
       "type": "amplification_synergie",
-      "label": "unit découverte signée et routage chiffré fédéré",
+      "label": "Unit découverte signée et routage chiffré fédéré",
       "justification": "L'ancrage des AgentCards signées JWS dans l'annuaire OASF/ADS (Sigstore) et leur transport sur SLIM/MLS démultiplient la portée sûre du maillage B2B.",
       "tomes": [
         "T6"
@@ -7683,8 +7683,8 @@
       "source_slug": "couts-transaction-coase",
       "target_slug": "systems-of-agency",
       "type": "amplification_synergie",
-      "label": "accélère la recomposition des processus inter-firmes",
-      "justification": "L'effondrement des coûts cognitifs de recherche et vérification pousse les organisations des copilotes L1 vers des Systems of Agency interconnectés.",
+      "label": "Accélère la recomposition des processus inter-entreprises",
+      "justification": "L'effondrement des coûts cognitifs de recherche et de vérification pousse les organisations des copilotes L1 vers des Systèmes d'agentivité interconnectés.",
       "tomes": [
         "T7"
       ]
@@ -7693,7 +7693,7 @@
       "source_slug": "priorites-90-jours-gouvernance",
       "target_slug": "modele-maturite-feuille-360j",
       "type": "projection_temporelle",
-      "label": "amorce la rampe M1 -> M3 -> M4/M5 sur 360 jours",
+      "label": "Amorce la rampe M1 → M3 → M4/M5 sur 360 jours",
       "justification": "Les 6 priorités des 90 premiers jours du Tome 7 ancrent l'Horizon 1 (J0–J90) de la feuille de route T6 menant à l'autonomie sous contrat à J360.",
       "tomes": [
         "T6",
@@ -7704,7 +7704,7 @@
       "source_slug": "trajectoires-adaptatives-dapp",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "projection_temporelle",
-      "label": "déclenche les bascules PQC sur signaux vers 2030–2035",
+      "label": "Déclenche les bascules PQC sur signaux vers 2030–2035",
       "justification": "La planification DAPP suit les signaux de maturité ML-KEM/ML-DSA et le calendrier NIST IR 8547 / G7 (2030–2032 critique, 2035 général) sans investissement prématuré rigide.",
       "tomes": [
         "T7"
@@ -7714,7 +7714,7 @@
       "source_slug": "certificats-tls-47-jours",
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "projection_temporelle",
-      "label": "projette les jalons TLS 100 j (2027) et 47 j (2029)",
+      "label": "Projette les jalons TLS 100 j (2027) et 47 jours (2029)",
       "justification": "Les échéances CA/Browser Forum SC-081v3 du 15 mars 2027 et 15 mars 2029 constituent des seuils temporels irréversibles pilotant l'automatisation PKI/ACME.",
       "tomes": [
         "T7",
@@ -7725,7 +7725,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "priorites-90-jours-gouvernance",
       "type": "projection_temporelle",
-      "label": "dicte le verrouillage du socle avant le 1er mai 2027",
+      "label": "Dicte le verrouillage du socle avant le 1er mai 2027",
       "justification": "L'entrée en vigueur prochaine de BSIF E-23 au 1er mai 2027 impose d'unifier l'inventaire, les propriétaires d'agents et le journal probatoire dès les 90 premiers jours.",
       "tomes": [
         "T7",
@@ -7736,8 +7736,8 @@
       "source_slug": "eu-ai-act",
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "projection_temporelle",
-      "label": "jalonne la conformité 2026–2028 (Art. 50, Ann. III, Ann. I)",
-      "justification": "Les échéances progressives du Règlement (UE) 2026/1744 (août/déc. 2026, 2 déc. 2027 Annexe III, 2 août 2028 Annexe I) servent de portes de révision adaptatives.",
+      "label": "Jalonne la conformité 2026–2028 (Art. 50, Ann. III, Ann. I)",
+      "justification": "Les échéances progressives du Règlement (UE) 2026/1744 (août/décembre 2026, 2 décembre 2027 Annexe III, 2 août 2028 Annexe I) servent de portes de révision adaptatives.",
       "tomes": [
         "T6",
         "T7",
@@ -7748,7 +7748,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "anti-verrouillage-standards",
       "type": "projection_temporelle",
-      "label": "prépare la migration post-gel SEP-3398 (30 mars 2027)",
+      "label": "Prépare la migration post-gel SEP-3398 (30 mars 2027)",
       "justification": "L'isolation derrière McpTransportAdapter prépare la spécification semestrielle MCP attendue le 30 mars 2027 (SEP-3398) et le retrait potentiel de primitives dès juillet 2027 (SEP-2596).",
       "tomes": [
         "T8"

@@ -17,7 +17,7 @@
         "noyau-controle-possede-cap",
         "harnais-deterministe-8-etapes"
       ],
-      "title": "Vue d'ensemble de l'entreprise agentique : l'exosquelette déterministe à 80 % encadrant 20 % de cognition",
+      "title": "Architecture de l'entreprise agentique : exosquelette déterministe à 80 % encadrant 20 % de cognition probabiliste",
       "insertion_point": "Sommaire exécutif global — après le paragraphe §2 (Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et harnais déterministe)",
       "target_audiences": [
         "Direction / Métier",
@@ -26,52 +26,52 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "En dix secondes, un dirigeant ou architecte comprend qu'un agent d'entreprise n'est ni un robot conversationnel libre ni un logiciel figé : 80 % du système forment une charpente déterministe contrôlée par l'entreprise (règles, droits, traces, validation), tandis que le modèle d'IA occupe uniquement 20 % du cœur décisionnel pour proposer et synthétiser. L'illustration montre comment cette couche d'action (Systems of Agency) s'intercale proprement entre les interfaces utilisateurs (SoE) et les systèmes centraux patrimoniaux (SoR) sans enfermement propriétaire.",
-      "vulgarization_angle": "Comparer l'architecture 80/20 à un véhicule ferroviaire guidé sur des rails déterministes (aiguillages, freins d'urgence, signalisation) où le modèle probabiliste sert de copilote de navigation et non de conducteur sans freins.",
+      "pedagogical_objective": "Ce schéma permet à un dirigeant ou à un architecte de saisir d'emblée qu'un agent d'entreprise ne relève ni d'un assistant conversationnel autonome ni d'un progiciel rigide : 80 % du système constituent une charpente déterministe détenue par l'organisation (règles métier, contrôles d'accès, traçabilité et validation), tandis que le modèle d'IA demeure confiné aux 20 % centraux dédiés à la classification, à la synthèse et à la proposition d'actions. L'illustration met en évidence l'insertion rigoureuse de cette couche des Systèmes d'agentivité entre les interfaces usagers (SoE) et les systèmes d'enregistrement patrimoniaux (SoR), sans dépendance propriétaire.",
+      "vulgarization_angle": "Mettre en parallèle l'architecture hybride 80/20 et une infrastructure ferroviaire guidée sur rails déterministes (aiguillages, signalisation et freinage d'urgence), au sein de laquelle le modèle probabiliste agit comme système d'aide à la navigation plutôt que comme conducteur dépourvu de freins.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Strate supérieure — Systems of Engagement (SoE) et usagers humains",
-            "content": "Portails métier, postes conseillers et interfaces de validation HITL/HOTL recevant des propositions structurées avec bouton de libération humaine pour toute action irréversible."
+            "label": "Strate supérieure — Systems of Engagement (SoE) et autorités humaines",
+            "content": "Portails métier, postes de conseillers et interfaces de supervision HITL/HOTL recevant des propositions structurées et dotées d'un mécanisme explicite de libération humaine pour toute opération irréversible."
           },
           {
             "zone_id": "Z2",
             "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP et harnais à 8 étapes",
-            "content": "Routage à états, validation JSON Schema Draft 2020-12, calculs financiers en Decimal, caviardage PII, passerelle PEP/AI Gateway et règle d'abstention typée AMBIGU_ESCALADE."
+            "content": "Routage à états, validation par JSON Schema Draft 2020-12, calculs financiers en type Decimal, caviardage préalable des renseignements personnels, passerelle PEP/AI Gateway et mécanisme d'abstention typée AMBIGU_ESCALADE."
           },
           {
             "zone_id": "Z3",
-            "label": "Noyau cognitif encapsulé (20 %) — Modèles LLM/SLM substituables",
-            "content": "Boîte cognitive interchangeable confinée aux tâches sémantiques (classification, rédaction, planification proposée) sans accès direct aux systèmes d'écriture ni secrets statiques."
+            "label": "Cœur cognitif encapsulé (20 %) — Modèles LLM/SLM substituables",
+            "content": "Composante cognitive interchangeable strictement cantonnée aux traitements sémantiques (classification, rédaction et planification proposée), privée d'accès direct aux systèmes d'écriture comme aux secrets statiques."
           },
           {
             "zone_id": "Z4",
             "label": "Strate inférieure — Systems of Record (SoR) protégés par couches anti-corruption (ACL)",
-            "content": "ERP, systèmes bancaires et d'assurance, bases documentaires CoALA et automates IT/OT accessibles uniquement via façades d'intention validées."
+            "content": "Progiciels ERP, systèmes bancaires et d'assurance, bases documentaires CoALA et automates IT/OT accessibles exclusivement par l'entremise de façades d'intention validées."
           }
         ],
         "numbered_flows": [
-          "① L'usager ou un événement métier déclenche une demande normalisée dans le harnais déterministe (SoE → noyau 80 %).",
-          "② Le noyau déterministe filtre les données sensibles (caviardage PII), compile le contexte autorisé (ACL amont) et sollicite la bulle cognitive (20 %) sur un schéma strict.",
-          "③ La proposition du modèle est vérifiée mécaniquement (JSON Schema, règles métier, calcul Decimal) avec sortie AMBIGU_ESCALADE en cas de doute.",
-          "④ Toute écriture vers les Systems of Record (SoR) traverse la passerelle PEP et requiert l'autorisation de palier (≤ L2 ou validation humaine explicite) avant exécution idempotente."
+          "① L'usager ou un événement métier déclenche une requête normalisée au sein du harnais déterministe (SoE → noyau 80 %).",
+          "② Le noyau déterministe caviarde les données sensibles (PII), assemble le contexte autorisé (ACL en amont) et sollicite le module cognitif (20 %) selon un contrat de schéma strict.",
+          "③ La proposition émise par le modèle fait l'objet d'une vérification mécanique (JSON Schema, règles métier, arithmétique Decimal) assortie d'une sortie AMBIGU_ESCALADE en cas d'incertitude.",
+          "④ Toute écriture dirigée vers les Systems of Record (SoR) transite par la passerelle PEP et exige l'autorisation du palier requis (≤ L2 ou validation humaine explicite) avant exécution idempotente."
         ],
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Noyau déterministe possédé par l'entreprise (80 % : harnais, contrats, passerelle, SoR)"
+            "meaning": "Noyau déterministe possédé par l'entreprise (80 % : harnais, contrats, passerelle et SoR)"
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Bulle cognitive probabiliste substituable (20 % : LLM/SLM sous contrat strict)"
+            "meaning": "Module cognitif probabiliste substituable (20 % : LLM/SLM sous contrat strict)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Porte humaine et validation déterministe (HITL, JSON Schema, AMBIGU_ESCALADE)"
+            "meaning": "Porte humaine et validation déterministe (HITL, JSON Schema et AMBIGU_ESCALADE)"
           }
         ],
-        "key_takeaway_box": "À retenir : L'entreprise ne délègue jamais les clés du coffre-fort au modèle d'IA. Les 80 % de charpente déterministe garantissent la fiabilité, l'auditabilité et le changement de fournisseur de modèles sans réécrire le métier."
+        "key_takeaway_box": "L'entreprise ne délègue jamais la souveraineté de ses actifs ni l'autorité d'exécution au modèle d'IA : les 80 % d'infrastructure déterministe assurent la fiabilité, l'auditabilité et le remplacement des fournisseurs de modèles sans refonte du socle métier."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -81,7 +81,7 @@
           "title": "Architecture de référence unifiée à 5 couches et 3 volets de contrôle, raccordement exact aux 6 couches de CAD26 § 5.2 (fermeture DIV-02) et délimitation du noyau possédé face aux suites SaaS.",
           "source_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/Fig-02 - Architecture de référence unifiée à 5 couches et 3 volets.puml",
           "rendered_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-02.svg",
-          "role_note": "Fournit l'architecture de référence unifiée à 5 couches et 3 volets de contrôle avec délimitation du noyau possédé face aux suites SaaS."
+          "role_note": "Établit l'architecture de référence unifiée à 5 couches et 3 volets de contrôle en délimitant le noyau possédé face aux suites SaaS."
         },
         {
           "tome_id": "T2",
@@ -89,7 +89,7 @@
           "title": "Le cadre en une page. Le toit énonce la finalité; les principes s’appliquent à toutes les décisions; les cinq piliers portent les règles techniques; l’architecture de référence, la gouvernance et la conformité en sont les fondations; la feuille de route en organise le déploiement.",
           "source_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-01 - Le cadre en une page.puml",
           "rendered_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-01.svg",
-          "role_note": "Apporte la vue synthétique « le cadre en une page » reliant finalité, principes, cinq piliers techniques et fondations."
+          "role_note": "Fournit la vue synthétique « le cadre en une page » articulant finalité, principes directeurs, cinq piliers techniques et fondations."
         },
         {
           "tome_id": "T3",
@@ -97,7 +97,7 @@
           "title": "Architecture de référence à 6 couches et 2 piliers transversaux de l’entreprise agentique en 2027.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-01 - Architecture de référence à 6 couches et 2 piliers transversaux.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-01.svg",
-          "role_note": "Structure la présentation en 6 couches et 2 piliers transversaux de l'entreprise agentique."
+          "role_note": "Structure la représentation en 6 couches et 2 piliers transversaux de l'entreprise agentique."
         },
         {
           "tome_id": "T6",
@@ -105,7 +105,7 @@
           "title": "Stratification évolutive du système d’information : SoE, Systems of Agency et SoR",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-01 - Stratification évolutive du système d'information - SoE, Systems.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-01.svg",
-          "role_note": "Illustre la stratification SoE, Systems of Agency et SoR compréhensible par la direction métier."
+          "role_note": "Illustre la stratification SoE, Systèmes d'agentivité et SoR à l'intention de la direction métier."
         },
         {
           "tome_id": "T7",
@@ -113,7 +113,7 @@
           "title": "Architecture cible en quatre plans séparant le noyau déterministe possédé des modèles substituables",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-08.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-08.svg",
-          "role_note": "Distingue visuellement les quatre plans séparant le noyau déterministe possédé des modèles substituables."
+          "role_note": "Distingue graphiquement les quatre plans séparant le noyau déterministe possédé des modèles substituables."
         },
         {
           "tome_id": "T8",
@@ -121,7 +121,7 @@
           "title": "Pipeline déterministe du harnais 80/20 à huit étapes et porte AMBIGU_ESCALADE sous schémas JSON Schema 2020-12 stricts",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-01.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg",
-          "role_note": "Ancre le harnais déterministe 80/20 à huit étapes et la porte d'abstention AMBIGU_ESCALADE."
+          "role_note": "Ancre le pipeline déterministe du harnais 80/20 à huit étapes et la porte d'abstention AMBIGU_ESCALADE."
         }
       ]
     },
@@ -150,48 +150,48 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma montre en un coup d'œil comment une action d'agent franchit cinq contrôles infalsifiables entre la demande d'un utilisateur et l'écriture dans un système métier, sans jamais faire confiance aux promesses du modèle. Le lecteur juridique ou sécurité voit immédiatement où s'appliquent l'identité vérifiée (NHI/OBO), le refus par défaut (OPA/Règle de deux), la preuve scellée (double couloir) et les obligations Loi 25, BSIF E-23 et EU AI Act.",
-      "vulgarization_angle": "Représenter la chaîne protocolaire et réglementaire comme un poste-frontière aéroportuaire à cinq sas séquentiels : identité du voyageur et mandat limité, contrôle des bagages hors du voyageur, tampon juridique immuable et bouton d'arrêt d'urgence du poste de contrôle.",
+      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement d'une action agentique à travers cinq contrôles infalsifiables, depuis la requête initiale d'un usager jusqu'à l'écriture dans un système métier, sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement les points d'application de l'identité attestée (NHI/OBO), du refus par défaut (OPA et Règle de deux), de la journalisation scellée (double couloir) ainsi que des obligations issues de la Loi 25, de la ligne directrice BSIF E-23 et de l'EU AI Act.",
+      "vulgarization_angle": "Modéliser la chaîne protocolaire et réglementaire sous la forme d'une enceinte douanière à cinq sas séquentiels : vérification de l'identité du mandataire et de l'étendue bornée du mandat, inspection des charges utiles hors de la sphère du modèle, apposition d'un sceau probatoire immuable et commande de révocation immédiate.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Couloir de mandat et identité sans secret fixe (D06)",
-            "content": "Identité non humaine (NHI SPIFFE/SVID) combinée à la délégation atténuée OAuth 2.0 OBO/DPoP sur 2 sauts maximum, empêchant tout secret statique ou usurpation de rôle."
+            "label": "Couloir d'identité et de mandat sans secret statique (D06)",
+            "content": "Identité non humaine (NHI SPIFFE/SVID) conjuguée à la délégation atténuée OAuth 2.0 OBO/DPoP limitée à 2 sauts, proscrivant tout secret statique ou usurpation de rôle."
           },
           {
             "zone_id": "Z2",
             "label": "Passerelle PEP à 9 contrôles et séparation protocolaire (D03 + D07)",
-            "content": "Médiation verticale MCP 2026-07-28 vers les outils, délégation horizontale A2A v1.0.1 entre agents, moteur de règles hors modèle OPA/Rego (default allow := false) et Règle de deux contre la triade létale."
+            "content": "Médiation verticale MCP 2026-07-28 vers les outils, délégation horizontale A2A v1.0.1 entre agents pairs, moteur de politiques hors modèle OPA/Rego (`default allow := false`) et Règle de deux neutralisant la triade létale."
           },
           {
             "zone_id": "Z3",
             "label": "Voûte probatoire et socle multi-juridictions (D08 + D09)",
-            "content": "Double couloir OTel GenAI sans PII opérationnelle et journal JCS/SCITT scellé répondant simultanément à Loi 25 (art. 12.1, ÉFVP), BSIF E-23, AMF et EU AI Act."
+            "content": "Double couloir OTel GenAI exempt de PII opérationnelle et registre JCS/SCITT scellé satisfaisant simultanément aux exigences de la Loi 25 (art. 12.1, ÉFVP), de BSIF E-23, de l'AMF et de l'EU AI Act."
           }
         ],
         "numbered_flows": [
-          "① Un utilisateur ou service initie une tâche dotée d'un jeton de mandat borné (NHI + OBO atténué, durée courte, portée RAR explicite).",
-          "② L'agent dialogue verticalement avec ses outils via MCP (façades d'intention ≤ 15 outils) ou horizontalement avec un agent pair via A2A après vérification cryptographique des cartes et schémas.",
-          "③ Avant tout effet externe, la passerelle PEP interroge la politique hors modèle OPA/Rego et vérifie la Règle de deux et le marquage de provenance CaMeL (données non fiables isolées).",
-          "④ Si l'action est sensible, une approbation humaine hors bande (CIBA + FIDO2) liée à l'empreinte JCS SHA-256 bloque ou libère la transaction.",
-          "⑤ L'exécution et sa justification réglementaire (Loi 25 / BSIF E-23 / EU AI Act) sont consignées dans le double couloir probatoire pendant que le coupe-circuit SOC peut révoquer la session en < 10 s."
+          "① Un usager ou un service déclenche une tâche munie d'un jeton de mandat borné (NHI et OBO atténué, durée brève et portée RAR explicite).",
+          "② L'agent communique verticalement avec ses outils via MCP (façades d'intention ≤ 15 outils) ou horizontalement avec un pair via A2A après vérification cryptographique des Agent Cards et des schémas.",
+          "③ Préalablement à tout effet externe, la passerelle PEP interroge la politique hors modèle OPA/Rego et contrôle la Règle de deux ainsi que le marquage de provenance CaMeL isolant les données non fiables.",
+          "④ Lorsque l'opération comporte un impact sensible, une approbation humaine hors bande (CIBA + FIDO2) liée au condensat JCS SHA-256 autorise ou bloque la transaction.",
+          "⑤ L'exécution et sa justification réglementaire (Loi 25, BSIF E-23 et EU AI Act) sont consignées dans le double couloir probatoire, tandis que le coupe-circuit SOC demeure en mesure de révoquer la session en < 10 s."
         ],
         "color_legend": [
           {
             "color_token": "Violet sécurité (#6D28D9)",
-            "meaning": "Identité cryptographique et mandat atténué (NHI, OBO, DPoP, CIBA)"
+            "meaning": "Identité cryptographique et mandat atténué (NHI, OBO, DPoP et CIBA)"
           },
           {
-            "color_token": "Rouge garde-fou (#B91C1C)",
-            "meaning": "Verrous hors modèle à échec fermé (PEP, OPA default allow := false, Règle de deux, coupe-circuit SOC)"
+            "color_token": "Rouge confinement (#B91C1C)",
+            "meaning": "Verrous hors modèle à échec fermé (PEP, OPA `default allow := false`, Règle de deux et coupe-circuit SOC)"
           },
           {
             "color_token": "Bleu conformité (#1D4ED8)",
-            "meaning": "Preuve d'audit et traçabilité juridique unique (OTel GenAI, JCS/SCITT, Loi 25, BSIF E-23)"
+            "meaning": "Preuve d'audit et traçabilité juridique unifiée (OTel GenAI, JCS/SCITT, Loi 25 et BSIF E-23)"
           }
         ],
-        "key_takeaway_box": "À retenir : Un modèle d'IA ne s'auto-contrôle jamais. La sécurité et la conformité Loi 25 / BSIF E-23 reposent sur des sas protocolaires et cryptographiques placés en dehors du modèle, avec refus par défaut."
+        "key_takeaway_box": "Un modèle d'IA ne s'auto-contrôle jamais : la sûreté d'exécution et la conformité à la Loi 25 comme à la ligne directrice BSIF E-23 reposent intégralement sur des sas protocolaires et cryptographiques situés hors du modèle et régis par le refus par défaut."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -201,7 +201,7 @@
           "title": "Passerelle d’agents bidirectionnelle (PEP) à neuf contrôles ordonnés en échec fermé, séparation des flux MCP, A2A et CloudEvents/AsyncAPI, règle de deux et retrait déterministe EXIG-SEC-06.",
           "source_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/Fig-03 - Passerelle d'agents bidirectionnelle (PEP) à neuf contrôles ordonnés.puml",
           "rendered_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-03.svg",
-          "role_note": "Matérialise la passerelle d'agents bidirectionnelle (PEP) à 9 contrôles ordonnés en échec fermé et la séparation MCP/A2A/CloudEvents."
+          "role_note": "Matérialise la passerelle d'agents bidirectionnelle (PEP) à 9 contrôles ordonnés en échec fermé et la séparation des flux MCP, A2A et CloudEvents."
         },
         {
           "tome_id": "T5",
@@ -217,7 +217,7 @@
           "title": "Architecture du tissu conjonctif de l'entreprise agentique : six dimensions d'interopérabilité et plan d'orchestration déterministe",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-00.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-00.svg",
-          "role_note": "Relie les six dimensions d'interopérabilité et le plan d'orchestration déterministe dans une vue lisible."
+          "role_note": "Articule les six dimensions d'interopérabilité et le plan d'orchestration déterministe dans une vue synthétique."
         },
         {
           "tome_id": "T7",
@@ -225,7 +225,7 @@
           "title": "Socle probatoire unique couvrant Loi 25, BSIF E-23, AMF et EU AI Act",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-19.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-19.svg",
-          "role_note": "Synthétise le socle probatoire unique couvrant Loi 25, BSIF E-23, AMF et EU AI Act."
+          "role_note": "Synthétise le socle probatoire unique couvrant la Loi 25, BSIF E-23, l'AMF et l'EU AI Act."
         },
         {
           "tome_id": "T8",
@@ -241,7 +241,7 @@
           "title": "Porte de politique hors modèle OPA / Rego fermée par défaut appliquant la Règle de deux, le suivi de contamination CaMeL et le contrôle déclaratif de confinement EXIG-SEC-12..15",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-05.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-05.svg",
-          "role_note": "Illustre la porte OPA/Rego fermée par défaut appliquant la Règle de deux et le suivi CaMeL."
+          "role_note": "Illustre la porte OPA/Rego fermée par défaut appliquant la Règle de deux et le suivi de provenance CaMeL."
         }
       ]
     },
@@ -269,47 +269,47 @@
       ],
       "visual_archetype": "Frise chronologique et jalons",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette frise bilingue métier-architecture explique que l'entreprise ne bascule pas à l'autonomie totale du jour au lendemain : elle déploie un socle sans regret sur 90 jours à 18 mois, puis ouvre progressivement les paliers P1 à P3 jusqu'en 2035 uniquement lorsque des preuves mesurées (15 portes POR) et des signaux externes (27 SIG) sont validés. Elle associe clairement chaque horizon aux dates légales et cryptographiques (Loi 25, AMF/BSIF E-23 au 1er mai 2027, TLS 47 j, EU AI Act 2026–2028, PQC G7 2030–2035) et rappelle la sanctuarisation des compétences humaines (INI-043).",
-      "vulgarization_angle": "Coupler sur un axe temporel unique 2026–2035 les trois vagues de déploiement (rampe tactique, P1, P2, P3) avec les marches de l'escalier L0–L4 et les barrières réglementaires faisant office de feux de circulation contrôlés par le duo AE ↔ AS.",
+      "pedagogical_objective": "Cette frise bilingue métier-architecture démontre que l'entreprise ne bascule pas vers l'autonomie intégrale de manière abrupte : elle déploie d'abord un socle sans regret sur 90 jours à 18 mois, puis n'ouvre progressivement les paliers P1 à P3 jusqu'en 2035 qu'à la suite de validations empiriques (15 portes POR) et de l'observation de signaux externes (27 SIG). Elle relie explicitement chaque horizon aux échéances juridiques et cryptographiques (Loi 25, arrimage AMF/BSIF E-23 au 1er mai 2027, TLS 47 j, EU AI Act 2026–2028, PQC G7 2030–2035) tout en soulignant la sanctuarisation des compétences humaines (INI-043).",
+      "vulgarization_angle": "Réunir sur un axe temporel unique 2026–2035 les trois vagues de déploiement (rampe tactique, P1, P2 et P3), les paliers de l'échelle L0–L4 et les échéances réglementaires faisant office de seuils de franchissement arbitrés conjointement par le binôme AE ↔ AS.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Bande supérieure — Échéances externes opposables (2023–2035)",
-            "content": "Loi 25 (2023–2024), EU AI Act art. 50 (août 2026), arrimage AMF / BSIF E-23 (1er mai 2027), TLS 100 j → 47 j (2027–2029), EU AI Act Annexe III/I (2027–2028), BSIF B-15 & ACVM 31-103 (2028) et fenêtre G7 PQC (2030–2035)."
+            "content": "Loi 25 (2023–2024), EU AI Act art. 50 (août 2026), arrimage AMF / BSIF E-23 (1er mai 2027), TLS 100 j → 47 j (2027–2029), EU AI Act Annexe III/I (2027–2028), BSIF B-15 et ACVM 31-103 (2028), puis fenêtre G7 PQC (2030–2035)."
           },
           {
             "zone_id": "Z2",
             "label": "Bande médiane — Trajectoire adaptative DAPP (J1–J3 → Paliers P1–P3) et gouvernance AE ↔ AS",
-            "content": "Rampe sans regret (J1 90 j, J2 9 mois, J3 18 mois) suivie des paliers adaptatifs P1 (2028–2029), P2 (2030–2032) et P3 (2033–2035), pilotés par les 15 portes POR sur preuves et 27 signaux SIG avec rétrogradation < 60 s."
+            "content": "Rampe sans regret (J1 90 j, J2 9 mois, J3 18 mois) suivie des paliers adaptatifs P1 (2028–2029), P2 (2030–2032) et P3 (2033–2035), pilotés au moyen des 15 portes POR sur preuves et des 27 signaux SIG avec rétrogradation en < 60 s."
           },
           {
             "zone_id": "Z3",
-            "label": "Bande inférieure — Escalier gradué L0–L4 et garde-fous humains (INI-043)",
-            "content": "Progression contrôlée L0 (lecture/suggestion) → L1 → L2 (règle d'or sans validation renforcée) → L3/L4 sous porte humaine obligatoire, quota de dossiers formateurs dès > 70 % d'automatisation (INI-043) et exercices de reprise manuelle."
+            "label": "Bande inférieure — Échelle graduée L0–L4 et préservation du capital humain (INI-043)",
+            "content": "Progression maîtrisée L0 (lecture et suggestion) → L1 → L2 (plafond sans validation renforcée) → L3/L4 sous porte humaine obligatoire, quota de dossiers formateurs dès > 70 % d'automatisation (INI-043) et exercices périodiques de reprise manuelle."
           }
         ],
         "numbered_flows": [
-          "① Déployer d'abord le noyau invariant sans regret (J1 90 j → J3 18 mois) en L0–L1 pour respecter les échéances 2026–2027 (EU AI Act art. 50, AMF/BSIF E-23, ACME TLS).",
-          "② Franchir chaque palier P1–P3 uniquement lorsque les indicateurs objectifs ouvrent la porte POR correspondante (contrôlée conjointement par AE pour le portefeuille et AS pour les harnais).",
-          "③ Limiter toute autonomie déléguée courante à ≤ L2 selon la règle du maillon le plus élevé, et activer la ré-internalisation humaine INI-043 dès 70 % d'automatisation.",
-          "④ Déclencher les bascules conditionnelles (ex. migration PQC ML-DSA/SLH-DSA sur signal SIG) ou rétrograder de palier en < 60 s en cas de dérive."
+          "① Déployer prioritairement le noyau invariant sans regret (J1 90 j → J3 18 mois) en L0–L1 afin de satisfaire aux échéances 2026–2027 (EU AI Act art. 50, AMF/BSIF E-23 et automatisation ACME TLS).",
+          "② N'autoriser le franchissement de chaque palier P1–P3 que lorsque les métriques probatoires ouvrent la porte POR associée, sous contrôle conjoint de l'AE (portefeuille) et de l'AS (harnais).",
+          "③ Plafonner toute autonomie déléguée courante à ≤ L2 en vertu de la règle du maillon le plus élevé, et activer la mesure de préservation humaine INI-043 dès le seuil de 70 % d'automatisation.",
+          "④ Déclencher les bascules conditionnelles (telle la migration PQC ML-DSA/SLH-DSA sur signal SIG) ou opérer une rétrogradation de palier en < 60 s en cas de dérive."
         ],
         "color_legend": [
           {
             "color_token": "Vert sauge (#15803D)",
-            "meaning": "Socle invariant sans regret (90 j – 18 mois, 42 CAP possédées, L0–L2 encadrés)"
+            "meaning": "Socle invariant sans regret (90 j – 18 mois, 42 CAP possédées et niveaux L0–L2 encadrés)"
           },
           {
             "color_token": "Or ambré (#B45309)",
-            "meaning": "Paliers adaptatifs conditionnels P1–P3 soumis aux 15 portes POR et 27 signaux SIG"
+            "meaning": "Paliers adaptatifs conditionnels P1–P3 régis par les 15 portes POR et les 27 signaux SIG"
           },
           {
             "color_token": "Bleu marine (#1E3A8A)",
-            "meaning": "Jalons légaux, prudentiels et cryptographiques (Loi 25, BSIF E-23, EU AI Act, PKI/PQC)"
+            "meaning": "Jalons légaux, prudentiels et cryptographiques (Loi 25, BSIF E-23, EU AI Act et PKI/PQC)"
           }
         ],
-        "key_takeaway_box": "À retenir : La trajectoire DAPP remplace les grands plans rigides par des options réversibles : on n'augmente l'autonomie L0–L4 qu'à la lumière des preuves mesurées, jamais par effet de mode, tout en protégeant la relève humaine."
+        "key_takeaway_box": "La trajectoire adaptative DAPP substitue aux feuilles de route rigides des options réversibles : l'élévation du niveau d'autonomie L0–L4 ne s'opère qu'à la lumière de preuves vérifiées, sans jamais sacrifier la relève ni la maîtrise humaine."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -335,7 +335,7 @@
           "title": "Frise 2027-2035 des ancres réglementaires, normatives et post-quantiques vérifiées sur textes primaires",
           "source_path": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/Fig-01 - Frise 2027-2035 des ancres réglementaires, normatives.puml",
           "rendered_path": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-01.svg",
-          "role_note": "Catalogue les ancres réglementaires, normatives et post-quantiques vérifiées 2027–2035."
+          "role_note": "Recense les ancres réglementaires, normatives et post-quantiques vérifiées sur la période 2027–2035."
         },
         {
           "tome_id": "T4",
@@ -343,7 +343,7 @@
           "title": "Frise 2028-2035 des trois paliers, de leurs portes et des échéances réglementaires",
           "source_path": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/Fig-06 - Frise 2028-2035 des trois paliers, de leurs portes et des échéances.puml",
           "rendered_path": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-06.svg",
-          "role_note": "Relie les trois paliers 2028–2035 à leurs portes et échéances réglementaires."
+          "role_note": "Relie les trois paliers 2028–2035 à leurs portes d'homologation et échéances réglementaires."
         },
         {
           "tome_id": "T7",
@@ -351,7 +351,7 @@
           "title": "Spectre d'autonomie opérationnelle (L0–L4) : droits de mutation, régime de supervision et contrôles exigés par niveau",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-01.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-01.svg",
-          "role_note": "Vulgarise le spectre d'autonomie L0–L4 (droits de mutation et régime de supervision)."
+          "role_note": "Clarifie le spectre d'autonomie L0–L4, ses droits de mutation et son régime de supervision."
         },
         {
           "tome_id": "T7",
@@ -367,7 +367,7 @@
           "title": "Séquence opérationnelle des 90, 180 et 360 premiers jours",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-22.mmd",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-22.png",
-          "role_note": "Rend immédiatement actionnable la séquence des 90, 180 et 360 premiers jours."
+          "role_note": "Rend directement actionnable la séquence des 90, 180 et 360 premiers jours."
         }
       ]
     },
@@ -396,47 +396,47 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce schéma relie visuellement le coût réel d'un agent (FinOps) à la preuve statistique de sa fiabilité (EvalOps) et aux 24 portes bloquantes qui autorisent ou interdisent sa mise en production. Un dirigeant financier ou RSSI comprend immédiatement pourquoi brûler des jetons dans un collectif non borné détruit la marge et la fiabilité (loi de Lusser), et comment le harnais, le calcul du coût par résultat conforme (CPO), la distillation SLM et la chaîne G0–G5 inversent la courbe.",
-      "vulgarization_angle": "Mettre en regard la boucle destructrice de valeur (chaîne probabiliste non bornée × inflation de jetons 15× × évaluation manuelle) et la boucle vertueuse pilotée par preuves (harnais 80/20 → banc EvalOps pass^k/Wilson → disjoncteur CPO FOCUS v1.4 → homologation 24 [BLOQUANT] PRR-75 / G0–G5).",
+      "pedagogical_objective": "Ce schéma établit le lien analytique entre l'économie réelle d'un système agentique (FinOps), la démonstration statistique de sa fiabilité (EvalOps) et les 24 portes bloquantes qui conditionnent son accès à la production. Un responsable financier ou un RSSI y constate sans ambiguïté pourquoi la consommation incontrôlée de jetons au sein d'un collectif non borné érode simultanément la marge et la fiabilité (loi de Lusser), et comment le harnais déterministe, la mesure du Cost-per-Outcome (CPO), la distillation vers des SLM et la chaîne G0–G5 rétablissent la soutenabilité.",
+      "vulgarization_angle": "Opposer la spirale de dérive économique et opérationnelle (chaîne probabiliste non bornée × amplification de jetons 15× × évaluation manuelle) à la boucle de maîtrise fondée sur les preuves (harnais 80/20 → banc EvalOps pass^k/Wilson → disjoncteur CPO FOCUS v1.4 → homologation 24 [BLOQUANT] PRR-75 / G0–G5).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Constat économique & mathématique — Pourquoi les agents naïfs échouent",
-            "content": "Loi de Lusser (53,9 % à 10 étapes × 94 %), inflation de jetons jusqu'à 15× en multi-agents, biais pass@k vs constance pass^k et 74 % d'évaluations manuelles non reproductibles."
+            "label": "Constat économique et mathématique — Limites structurelles des chaînes probabilistes non bornées",
+            "content": "Loi de Lusser (53,9 % à 10 étapes × 94 %), inflation de jetons atteignant 15× en collectif multi-agents, biais du taux ponctuel pass@k au regard de la constance pass^k et 74 % d'évaluations manuelles non reproductibles."
           },
           {
             "zone_id": "Z2",
-            "label": "Boucle de maîtrise EvalOps & FinOps — Mesurer par résultat conforme",
-            "content": "Bancs hermétiques E1–E3 (Wilson n ≥ ceil(3/p), pass^5 ≥ 99 % pour distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
+            "label": "Boucle de maîtrise EvalOps et FinOps — Mesure au résultat métier conforme",
+            "content": "Bancs hermétiques E1–E3 (borne de Wilson n ≥ ceil(3/p), pass^5 ≥ 99 % pour la distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
           },
           {
             "zone_id": "Z3",
-            "label": "Porte d'homologation mécanique G0–G5 — Rien ne passe sans preuve",
-            "content": "Matrice unifiée 305 EXIG-* CRE-IA v1.2 × PRR-75 (dont 24 portes [BLOQUANT]) × 40 critères blueprints C01–C40 × 5 SBB du Tableau 12, sanctionnée par la chaîne AQ G0–G5 et la fiche 2027-B001."
+            "label": "Porte d'homologation mécanique G0–G5 — Exigence probatoire intégrale",
+            "content": "Matrice unifiée 305 EXIG-* CRE-IA v1.2 × PRR-75 (dont 24 portes [BLOQUANT]) × 40 critères blueprints C01–C40 × 5 SBB du Tableau 12, sanctionnée par la chaîne d'assurance qualité G0–G5 et la fiche 2027-B001."
           }
         ],
         "numbered_flows": [
-          "① Le harnais 80/20 découpe les tâches longues afin de casser la dégradation exponentielle de Lusser et limiter les reprises coûteuses.",
-          "② Les bancs hermétiques EvalOps vérifient la constance multi-essais pass^k et le dimensionnement statistique de Wilson avant toute promotion ou distillation vers des SLM frugaux.",
-          "③ La passerelle mesure le coût complet en $ CA par résultat conforme (CPO sous FOCUS v1.4) et coupe automatiquement à 100 % du budget (alerte à 80 %).",
-          "④ Seules les versions franchissant les 24 portes [BLOQUANT] de PRR-75, les 5 SBB sous barrière G0 et les contrôles G0–G5 reçoivent le feu vert d'exploitation."
+          "① Le harnais 80/20 fragmente les tâches longues afin de contenir la dégradation exponentielle de Lusser et de réduire les reprises coûteuses.",
+          "② Les bancs hermétiques EvalOps mesurent la constance multi-essais pass^k ainsi que le dimensionnement statistique de Wilson préalablement à toute promotion ou distillation vers des SLM frugaux.",
+          "③ La passerelle comptabilise le coût complet en $ CA par résultat conforme (CPO sous FOCUS v1.4) et déclenche une coupure automatique à 100 % du plafond budgétaire (alerte préalable à 80 %).",
+          "④ Seules les versions satisfaisant aux 24 portes [BLOQUANT] de PRR-75, aux 5 SBB sous barrière G0 et à l'ensemble des contrôles G0–G5 obtiennent l'autorisation de mise en exploitation."
         ],
         "color_legend": [
           {
             "color_token": "Corail alerte (#DC2626)",
-            "meaning": "Dérive probabiliste non bornée (Lusser, surcoût 15×, non-conformité bloquante)"
+            "meaning": "Dérive probabiliste non bornée (loi de Lusser, surcoût 15× et non-conformité bloquante)"
           },
           {
             "color_token": "Turquoise mesure (#0F766E)",
-            "meaning": "Instrumentation et économie vérifiée (OTel, EvalOps Wilson/pass^k, CPO FOCUS v1.4, SLM)"
+            "meaning": "Instrumentation et économie vérifiée (OTel, EvalOps Wilson/pass^k, CPO FOCUS v1.4 et SLM)"
           },
           {
             "color_token": "Indigo homologation (#4338CA)",
-            "meaning": "Verdict mécanique d'homologation (305 EXIG-*, 24 [BLOQUANT] PRR-75, G0–G5)"
+            "meaning": "Verdict déterministe d'homologation (305 EXIG-*, 24 [BLOQUANT] PRR-75 et chaîne G0–G5)"
           }
         ],
-        "key_takeaway_box": "À retenir : On ne déploie pas un agent sur une intuition de démonstration. La rentabilité (CPO) et la sûreté exigent d'unir harnais borné, tests statistiques pass^k/Wilson et 24 portes bloquantes automatisées avant la production."
+        "key_takeaway_box": "Le déploiement d'un agent ne saurait reposer sur une démonstration probante : la rentabilité (CPO) et la sûreté imposent de conjuguer harnais borné, validation statistique pass^k/Wilson et 24 portes bloquantes automatisées avant toute mise en production."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -446,7 +446,7 @@
           "title": "Dégradation géométrique de la réussite sans contrôle déterministe (loi de Lusser)",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-04.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-04.svg",
-          "role_note": "Démontre visuellement la dégradation géométrique de la réussite sans contrôle déterministe (loi de Lusser)."
+          "role_note": "Démontre visuellement la dégradation géométrique de la réussite en l'absence de contrôle déterministe (loi de Lusser)."
         },
         {
           "tome_id": "T7",
@@ -462,7 +462,7 @@
           "title": "Entonnoir d’optimisation FinOps agentique : réduction du coût unitaire et endiguement de l’amplification",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-47 - Entonnoir d'optimisation FinOps agentique - réduction du coût.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-47.svg",
-          "role_note": "Illustre l'entonnoir d'optimisation FinOps et l'endiguement de l'amplification de jetons."
+          "role_note": "Illustre l'entonnoir d'optimisation FinOps et la maîtrise de l'amplification de jetons."
         },
         {
           "tome_id": "T5",
@@ -470,7 +470,7 @@
           "title": "Cartographie des 2 541 pages du corpus (+ Note AMF IA), hiérarchie de la preuve et fermeture structurelle de la lacune DIV-02.",
           "source_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/Fig-01 - Cartographie des 2 541 pages du corpus (+ Note AMF IA), hiérarchie.puml",
           "rendered_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-01.svg",
-          "role_note": "Relie la cartographie du corpus à la hiérarchie de la preuve et la fermeture de concordance."
+          "role_note": "Relie la cartographie du corpus à la hiérarchie de la preuve et à la fermeture de concordance."
         },
         {
           "tome_id": "T8",
@@ -478,7 +478,7 @@
           "title": "Double couloir probatoire unifiant télémétrie OTel GenAI caviardée, jointure trace-mandat, chaîne JCS / SCITT rescellée SLH-DSA et calculateur CPO / FOCUS v1.4",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-04.mmd",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-04.png",
-          "role_note": "Trace le double couloir probatoire joignant télémétrie OTel, SCITT/SLH-DSA et calculateur CPO / FOCUS v1.4."
+          "role_note": "Trace le double couloir probatoire unissant télémétrie OTel, SCITT/SLH-DSA et calculateur CPO / FOCUS v1.4."
         },
         {
           "tome_id": "T8",
@@ -486,7 +486,7 @@
           "title": "Pipeline du banc EvalOps hermétique à doublures mock MCP, calcul pass^k, borne de Wilson >= 3/p et relations métamorphiques sans oracle sur scénarios FR/EN",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-07.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg",
-          "role_note": "Détaille le pipeline du banc EvalOps hermétique (pass^k, Wilson >= 3/p et tests métamorphiques FR/EN)."
+          "role_note": "Détaille le pipeline du banc EvalOps hermétique (pass^k, borne de Wilson ≥ 3/p et tests métamorphiques FR/EN)."
         },
         {
           "tome_id": "T8",
@@ -502,13 +502,13 @@
   "annexe_e": {
     "annexe_code": "E",
     "representative_title": "Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus",
-    "executive_summary": "Cette cinquième annexe établit le plan directeur visuel permettant à tout lecteur — dirigeant métier, juriste, architecte d'entreprise, architecte de solutions ou ingénieur SRE/RSSI — de saisir en quelques secondes l'architecture, les risques, les obligations et les mécanismes de contrôle du PRD sans devoir décrypter d'emblée 164 000 mots de spécifications. Elle regroupe les 4 schémas directeurs du Sommaire exécutif global (SCH-00-01 à SCH-00-04) ainsi que les schémas de vulgarisation ciblés rattachés aux 36 chapitres (CH-01 à CH-36), en couvrant 100 % des 71 familles thématiques et en établissant une table de correspondance bidirectionnelle avec les 319 figures sources vérifiées sur disque dans Tomes/ (253 PlantUML/SVG et 66 Mermaid/PNG).",
-    "targeted_content_description": "Catalogue complet généré depuis Compendium/Cartographie/donnees/prd_schemas_shards/schemas-*.json et Compendium/Cartographie/donnees/inventaire-319-diagrammes.json exposant : (1) le tableau maître des 4 schémas transversaux SCH-00-01 à SCH-00-04 et de tous les schémas SCH-01-xx à SCH-36-xx (identifiant, chapitre, domaine, familles couvertes, archétype visuel, notation recommandée, publics cibles, statut de réutilisation, point d'insertion dans prd.md et fiche pédagogique complète : objectif en 10 s, angle de vulgarisation, blueprint par zones/flux ① ② ③/légende/encadré « À retenir »), et (2) la matrice d'inventaire et de concordance complète des 319 diagrammes d'origine des Tomes 1 à 8 avec liens vérifiés vers les sources .puml/.mmd et les rendus .svg/.png.",
+    "executive_summary": "Cette cinquième annexe établit le plan directeur visuel permettant à chaque lecteur — dirigeant métier, juriste, architecte d'entreprise, architecte de solutions ou ingénieur SRE/RSSI — d'appréhender avec rigueur et immédiateté l'architecture, les risques, les obligations réglementaires et les mécanismes de contrôle du PRD sans devoir parcourir d'emblée l'intégralité du corpus normatif. Elle rassemble les 4 schémas directeurs du Sommaire exécutif global (SCH-00-01 à SCH-00-04) ainsi que les schémas de vulgarisation rattachés aux 36 chapitres (CH-01 à CH-36), couvrant 100 % des 71 familles thématiques et établissant une table de correspondance bidirectionnelle avec les 319 figures sources vérifiées sur disque dans Tomes/ (253 PlantUML/SVG et 66 Mermaid/PNG).",
+    "targeted_content_description": "Catalogue intégral généré depuis Compendium/Cartographie/donnees/prd_schemas_shards/schemas-*.json et Compendium/Cartographie/donnees/inventaire-319-diagrammes.json exposant : (1) le tableau maître des 4 schémas transversaux SCH-00-01 à SCH-00-04 et de l'ensemble des schémas SCH-01-xx à SCH-36-xx (identifiant, chapitre, domaine, familles couvertes, archétype visuel, notation recommandée, publics cibles, statut de réutilisation, point d'insertion dans prd.md et fiche pédagogique complète : objectif pédagogique, angle de vulgarisation, maquette par zones, flux numérotés ① ② ③, légende chromatique et synthèse doctrinale), et (2) la matrice d'inventaire et de concordance complète des 319 diagrammes d'origine des Tomes 1 à 8 assortie de liens vérifiés vers les sources .puml/.mmd et les rendus .svg/.png.",
     "editorial_guidelines": [
-      "Chaque schéma de vulgarisation vise une compréhension de l'intention architecturale et des garde-fous en 10 secondes par un lecteur non technicien.",
-      "Zéro jargon opaque non traduit : chaque sigle technique (MCP, A2A, OBO, OPA, Saga, CPO, Wilson, PRR-75) est accompagné de son rôle métier explicite.",
+      "Chaque schéma de vulgarisation vise une saisie rigoureuse et immédiate de l'intention architecturale et des mécanismes de contrôle par un lecteur non technicien.",
+      "Tout acronyme ou terme technique spécialisé (MCP, A2A, OBO, OPA, Saga, CPO, Wilson, PRR-75) est systématiquement accompagné de l'explicitation de son rôle métier.",
       "Chaque chapitre CH-01 à CH-36 reçoit de 1 à 4 schémas dont l'union des champs families_covered couvre 100 % des FAM_* du chapitre.",
-      "Tout schéma classé en réemploi direct ou adaptation vulgarisée référence au moins une figure réelle vérifiée dans inventaire-319-diagrammes.json (zéro lien orphelin)."
+      "Tout schéma classé en réemploi direct ou en adaptation vulgarisée référence au moins une figure existante vérifiée dans inventaire-319-diagrammes.json, sans aucun lien orphelin."
     ],
     "coverage_targets": {
       "global_schemas": 4,

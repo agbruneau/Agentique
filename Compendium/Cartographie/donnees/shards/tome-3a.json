@@ -271,7 +271,7 @@
       "chapter_title": "0.4 Conventions, échelle d’autonomie et statut des affirmations",
       "line_start": 282,
       "line_end": 317,
-      "summary": "Définition normative de l'échelle d'autonomie propre au compendium (L0 à L4 par droits sur les systèmes d'enregistrement et régime de supervision), énoncé de la règle du maillon le plus élevé (High-Water Mark Rule) et de la réversibilité Saga L2->L3, cinq critères d'évaluation technologique et statut factuel 2027.",
+      "summary": "Définition normative de l'échelle d'autonomie propre au compendium (L0 à L4 par droits sur les systèmes d'enregistrement et régime de supervision), énoncé de la règle du maillon le plus élevé (High-Water Mark Rule) et de la réversibilité Saga L2→L3, cinq critères d'évaluation technologique et statut factuel 2027.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D09",
@@ -308,7 +308,7 @@
       "chapter_title": "0.5 Dossier initial du fil rouge : Groupe Boréal Inc.",
       "line_start": 318,
       "line_end": 342,
-      "summary": "Dossier initial du fil rouge fictif Groupe Boréal Inc. (Montréal, 14 500 employés, 6,8 G$ CAD) : trois divisions (BEL, BCA, BSN), audit de 47 initiatives dont 19 agents fantômes, incident HTTP 429 de 41 000 $ CAD sur 11h, jeton partagé BCA, silos de 46h et inventaire des 108 blocs CI (DC-P11, 90 exécutés en CI) ainsi que du banc Borealis-Bench/.",
+      "summary": "Dossier initial du fil rouge fictif Groupe Boréal Inc. (Montréal, 14 500 employés, 6,8 G$ CAD) : trois divisions (BEL, BCA, BSN), audit de 47 initiatives dont 19 agents fantômes, incident HTTP 429 de 41 000 $ CAD sur 11 h, jeton partagé BCA, silos de 46h et inventaire des 108 blocs CI (DC-P11, 90 exécutés en CI) ainsi que du banc Borealis-Bench/.",
       "primary_domain": "D10",
       "secondary_domains": [
         "D08",
@@ -383,7 +383,7 @@
       "chapter_title": "Chapitre 1 — L’entreprise agentique",
       "line_start": 393,
       "line_end": 1110,
-      "summary": "Définition de l'entreprise agentique autour de 4 propriétés (autonomie, outils, mémoire, délégation), taxonomie en 5 niveaux du modèle composé, distinction espace d'action vs autonomie, 7 critères vérifiables et thèse de l'ouvrage. Volet Mise en œuvre : 3 générations 2023–2027, 5 archétypes d'acteurs, System of Action au-dessus des SoR, régimes temporels T1–T4, cas Boréal (46h->18min) et ADR-001.",
+      "summary": "Définition de l'entreprise agentique autour de 4 propriétés (autonomie, outils, mémoire, délégation), taxonomie en 5 niveaux du modèle composé, distinction espace d'action par rapport à autonomie, 7 critères vérifiables et thèse de l'ouvrage. Volet Mise en œuvre : 3 générations 2023–2027, 5 archétypes d'acteurs, System of Action au-dessus des SoR, régimes temporels T1–T4, cas Boréal (46h→18min) et ADR-001.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D02",
@@ -400,7 +400,7 @@
         "System of Action",
         "7 critères vérifiables",
         "5 archétypes d'acteurs",
-        "espace d'action vs autonomie",
+        "espace d'action par rapport à autonomie",
         "46h à 18 minutes"
       ],
       "normative_refs": [
@@ -420,7 +420,7 @@
       "chapter_title": "Chapitre 2 — Généalogie",
       "line_start": 1111,
       "line_end": 1343,
-      "summary": "Généalogie reliant les 4 générations d'intégration (EAI, SOA, API/REST, EDA/CloudEvents), les systèmes multi-agents classiques (KQML, FIPA-ACL, Contract Net) et le Web sémantique (RDF/OWL) aux protocoles LLM actuels. Analyse du déplacement du sens vers le modèle, du piège des registres centralisés ouverts, de la distinction OASIS politique vs contrat (garde-fous hors modèle) et des 7 défis de gouvernance.",
+      "summary": "Généalogie reliant les 4 générations d'intégration (EAI, SOA, API/REST, EDA/CloudEvents), les systèmes multi-agents classiques (KQML, FIPA-ACL, Contract Net) et le Web sémantique (RDF/OWL) aux protocoles LLM actuels. Analyse du déplacement du sens vers le modèle, du piège des registres centralisés ouverts, de la distinction OASIS politique par rapport à contrat (garde-fous hors modèle) et des 7 défis de gouvernance.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D03",
@@ -436,7 +436,7 @@
         "EAI / SOA / REST / EDA",
         "KQML / FIPA-ACL",
         "Contract Net",
-        "politique vs contrat OASIS",
+        "politique par rapport à contrat OASIS",
         "déplacement du sens"
       ],
       "normative_refs": [
@@ -490,7 +490,7 @@
       "chapter_title": "Chapitre 4 — État des lieux 2026-2027",
       "line_start": 1579,
       "line_end": 1802,
-      "summary": "État des lieux empirique 2026–2027 séparant enquêtes déclaratives (McKinsey : 40 % grandes entreprises vs 22 % plus petites, 37 % d'impact EBIT stable), statistiques officielles (~20 % d'usage IA au Canada/UE/É.-U.), étude MAP (68 % < 10 étapes avant humain, 16/20 workflows prédéfinis, 74 % évaluation humaine), prévision Gartner (> 40 % d'annulations d'ici fin 2027), taxonomie MAST, trois horloges (plateformes/standards/régulateurs) et 6 hypothèses H1–H6.",
+      "summary": "État des lieux empirique 2026–2027 séparant enquêtes déclaratives (McKinsey : 40 % grandes entreprises par rapport à 22 % plus petites, 37 % d'impact EBIT stable), statistiques officielles (~20 % d'usage IA au Canada/UE/É.-U.), étude MAP (68 % < 10 étapes avant humain, 16/20 workflows prédéfinis, 74 % évaluation humaine), prévision Gartner (> 40 % d'annulations d'ici fin 2027), taxonomie MAST, trois horloges (plateformes/standards/régulateurs) et 6 hypothèses H1–H6.",
       "primary_domain": "D01",
       "secondary_domains": [
         "D11",
@@ -504,7 +504,7 @@
       ],
       "key_terms": [
         "étude MAP",
-        "McKinsey 40 % vs 22 %",
+        "McKinsey 40 % par rapport à 22 %",
         "agent washing",
         "trois horloges",
         "hypothèses H1–H6"
@@ -567,7 +567,7 @@
       "chapter_title": "Chapitre 6 — A2A : le protocole agent-agent",
       "line_start": 2792,
       "line_end": 3613,
-      "summary": "Protocole horizontal A2A v1.0/1.0.1 fondé sur l'opacité : fusion avec ACP d'IBM, architecture 3 couches (Protobuf, opérations abstraites, JSON-RPC/gRPC/HTTP+JSON), Agent Card signée JWS et carte étendue, cycle Task à 8 états dont REJECTED et AUTH_REQUIRED, artefacts vs messages, composition vertical MCP vs horizontal A2A. Volet Mise en œuvre : AGNTCY OASF/Agent Directory, transport SLIM chiffré MLS hybride post-quantique X25519MLKEM768, fédération ANP did:wba, Boréal et ADR-006.",
+      "summary": "Protocole horizontal A2A v1.0/1.0.1 fondé sur l'opacité : fusion avec ACP d'IBM, architecture 3 couches (Protobuf, opérations abstraites, JSON-RPC/gRPC/HTTP+JSON), Agent Card signée JWS et carte étendue, cycle Task à 8 états dont REJECTED et AUTH_REQUIRED, artefacts par rapport à messages, composition vertical MCP par rapport à horizontal A2A. Volet Mise en œuvre : AGNTCY OASF/Agent Directory, transport SLIM chiffré MLS hybride post-quantique X25519MLKEM768, fédération ANP did:wba, Boréal et ADR-006.",
       "primary_domain": "D03",
       "secondary_domains": [
         "D06",
@@ -642,7 +642,7 @@
       "chapter_title": "Chapitre 8 — Découverte et registres",
       "line_start": 3808,
       "line_end": 4098,
-      "summary": "Modèles de découverte (centralisé, fédéré, distribué) et distinction entre trouver, décrire, authentifier et approuver. Couvre le registre MCP (server.json, preuve DNS/well-known, sous-registres _meta, Server Cards), Agent Cards A2A, AI Catalog vs ARD v0.91, AGNTCY Agent Directory adressé par contenu (CID/OCI/Kad-DHT), catalogues éditeurs (AWS/Agent 365/MuleSoft/Apigee), gouvernance par cycle de vie et études empiriques révélant 40,58 % de dérive sémantique silencieuse et le détournement d'identités.",
+      "summary": "Modèles de découverte (centralisé, fédéré, distribué) et distinction entre trouver, décrire, authentifier et approuver. Couvre le registre MCP (server.json, preuve DNS/well-known, sous-registres _meta, Server Cards), Agent Cards A2A, AI Catalog par rapport à ARD v0.91, AGNTCY Agent Directory adressé par contenu (CID/OCI/Kad-DHT), catalogues éditeurs (AWS/Agent 365/MuleSoft/Apigee), gouvernance par cycle de vie et études empiriques révélant 40,58 % de dérive sémantique silencieuse et le détournement d'identités.",
       "primary_domain": "D03",
       "secondary_domains": [
         "D07",
@@ -659,7 +659,7 @@
         "server.json",
         "sous-registre MCP",
         "/.well-known/agent-card.json",
-        "AI Catalog vs ARD v0.91",
+        "AI Catalog par rapport à ARD v0.91",
         "CID / Kad-DHT",
         "dérive sémantique 40,58 %"
       ],
@@ -710,7 +710,7 @@
       "chapter_title": "Chapitre 10 — Commerce agentique",
       "line_start": 4296,
       "line_end": 4972,
-      "summary": "Architecture en 4 couches du commerce agentique : AP2 v0.2 (Checkout/Payment Mandates SD-JWT, Trusted Surface non agentique, vérification déterministe) et Verifiable Intent (FIDO Alliance), ACP vs UCP, Visa Trusted Agent Protocol, règlement HTTP 402 (x402 et MPP), analyses formelles de failles structurelles (Tamarin, rejeu sans nonce) et limites en B2B. Volet Mise en œuvre : poste AG-UI/A2UI (RFC 6902 test révision), WebRTC temps réel <200ms, Boréal BEL/BCA et ADR-007.",
+      "summary": "Architecture en 4 couches du commerce agentique : AP2 v0.2 (Checkout/Payment Mandates SD-JWT, Trusted Surface non agentique, vérification déterministe) et Verifiable Intent (FIDO Alliance), ACP par rapport à UCP, Visa Trusted Agent Protocol, règlement HTTP 402 (x402 et MPP), analyses formelles de failles structurelles (Tamarin, rejeu sans nonce) et limites en B2B. Volet Mise en œuvre : poste AG-UI/A2UI (RFC 6902 test révision), WebRTC temps réel <200ms, Boréal BEL/BCA et ADR-007.",
       "primary_domain": "D03",
       "secondary_domains": [
         "D06",
@@ -727,7 +727,7 @@
       "key_terms": [
         "AP2 v0.2",
         "Verifiable Intent",
-        "ACP vs UCP",
+        "ACP par rapport à UCP",
         "x402 / MPP",
         "Trusted Surface",
         "WebRTC duplex intégral"
@@ -791,7 +791,7 @@
       "chapter_title": "Chapitre 12 — Couche sémantique et ontologies",
       "line_start": 5681,
       "line_end": 6507,
-      "summary": "Trois étages de l'accord sémantique (mesure, concept, intention) face aux erreurs silencieuses du SQL libre (16 % vs 54 % en graphe sur banc d'essai 2023). Analyse critique d'Apache Ossie ex-OSI (0.1.1 et 0.3.0.dev0 non production, champ ai_context), exposition MCP (dbt get_metrics_compiled_sql), divergence d'intention (MAST 36,94 %/32 %, détecteur à 27,9 % de précision) et gouvernance du vocabulaire comme code. Volet Mise en œuvre : ontologie opérationnelle causale, résolution neuro-symbolique, réconciliation BEL/BCA/BSN (19,4 % d'échecs réduits) et ADR-009.",
+      "summary": "Trois étages de l'accord sémantique (mesure, concept, intention) face aux erreurs silencieuses du SQL libre (16 % contre 54 % en graphe sur banc d'essai 2023). Analyse critique d'Apache Ossie ex-OSI (0.1.1 et 0.3.0.dev0 non production, champ ai_context), exposition MCP (dbt get_metrics_compiled_sql), divergence d'intention (MAST 36,94 %/32 %, détecteur à 27,9 % de précision) et gouvernance du vocabulaire comme code. Volet Mise en œuvre : ontologie opérationnelle causale, résolution neuro-symbolique, réconciliation BEL/BCA/BSN (19,4 % d'échecs réduits) et ADR-009.",
       "primary_domain": "D04",
       "secondary_domains": [
         "D01",
@@ -826,7 +826,7 @@
       "chapter_title": "Chapitre 13 — Ingénierie du contexte",
       "line_start": 6508,
       "line_end": 7161,
-      "summary": "Ingénierie du contexte face au rendement décroissant des longues fenêtres (Lost in the Middle, Context Rot) : 5 critères (pertinence, suffisance, isolation, économie, provenance), format Agent Skills SKILL.md (SkillsBench 33,9 %->50,5 % vs 26,1 % de vulnérabilités sur 31 132 skills), Skills over MCP (SHA-256), preuves mitigées sur AGENTS.md, découverte progressive et préservation du cache (1/10–1/40x). Volet Mise en œuvre : stratification en 4 strates KV-cache (>75 %), RAG filtré par ACL avant récupération, passage par référence A2A, BSN (138k->9,4k jetons) et ADR-008.",
+      "summary": "Ingénierie du contexte face au rendement décroissant des longues fenêtres (Lost in the Middle, Context Rot) : 5 critères (pertinence, suffisance, isolation, économie, provenance), format Agent Skills SKILL.md (SkillsBench 33,9 %→50,5 % par rapport à 26,1 % de vulnérabilités sur 31 132 skills), Skills over MCP (SHA-256), preuves mitigées sur AGENTS.md, découverte progressive et préservation du cache (1/10–1/40x). Volet Mise en œuvre : stratification en 4 strates KV-cache (>75 %), RAG filtré par ACL avant récupération, passage par référence A2A, BSN (138k→9,4k jetons) et ADR-008.",
       "primary_domain": "D04",
       "secondary_domains": [
         "D07",
@@ -936,7 +936,7 @@
       "chapter_title": "Chapitre 16 — Topologies et patrons",
       "line_start": 8089,
       "line_end": 9019,
-      "summary": "Taxonomie des topologies multi-agents (centralisée, décentralisée, hiérarchique + axe adaptatif) et correspondance des 9 patrons éditeurs. Données chiffrées de Kulkarni (10 000 dépôts : F1 réflexif 0,943 vs hiérarchique 0,929 à 60,7 % du coût, effondrement du réflexif à 100k docs/j) et de Kim et coll. (260 configs : écart moyen −0,3 %, +80,8 % décomposable vs −70,0 % séquentiel, 17,2x amplification d'erreurs sans vérificateur). Volet Mise en œuvre : chorégraphie entre domaines, 6 topologies canoniques bornées, Boréal et ADR-011.",
+      "summary": "Taxonomie des topologies multi-agents (centralisée, décentralisée, hiérarchique + axe adaptatif) et correspondance des 9 patrons éditeurs. Données chiffrées de Kulkarni (10 000 dépôts : F1 réflexif 0,943 par rapport à hiérarchique 0,929 à 60,7 % du coût, effondrement du réflexif à 100k docs/j) et de Kim et coll. (260 configs : écart moyen −0,3 %, +80,8 % décomposable par rapport à −70,0 % séquentiel, 17,2x amplification d'erreurs sans vérificateur). Volet Mise en œuvre : chorégraphie entre domaines, 6 topologies canoniques bornées, Boréal et ADR-011.",
       "primary_domain": "D05",
       "secondary_domains": [
         "D01",
@@ -973,7 +973,7 @@
       "chapter_title": "Chapitre 17 — Déterministe ou agentique",
       "line_start": 9020,
       "line_end": 9738,
-      "summary": "Spectre en 4 positions (workflow, étapes agentiques, agent borné, agent ouvert) et frontière de visibilité dans les moteurs BPMN (sous-processus ad hoc Camunda 8.11 avec fromAi et plafond 10 appels vs agent comme tâche UiPath Maestro), gestion de cas CMMN (règles d'abord, agent ensuite), planification structurée Routine (41,1 %->96,3 %) et processus exposé comme outil. Volet Mise en œuvre : loi de Lusser, pass@1 vs pass^k, séparation plan déterministe/cellule bornée, matrice d'arbitrage, Boréal et ADR-002.",
+      "summary": "Spectre en 4 positions (workflow, étapes agentiques, agent borné, agent ouvert) et frontière de visibilité dans les moteurs BPMN (sous-processus ad hoc Camunda 8.11 avec fromAi et plafond 10 appels par rapport à agent comme tâche UiPath Maestro), gestion de cas CMMN (règles d'abord, agent ensuite), planification structurée Routine (41,1 %→96,3 %) et processus exposé comme outil. Volet Mise en œuvre : loi de Lusser, pass@1 par rapport à pass^k, séparation plan déterministe/cellule bornée, matrice d'arbitrage, Boréal et ADR-002.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D05",
@@ -1046,7 +1046,7 @@
       "chapter_title": "Chapitre 19 — Orchestration événementielle",
       "line_start": 10724,
       "line_end": 11403,
-      "summary": "Orchestration événementielle asynchrone : critères de bascule vers l'événement (Kafka, Flink Agents 0.4, RocketMQ-A2A, Real-Time Context Engine), rejeu du journal (incluant sorties de modèle et d'outils), notifications MCP/A2A sans rattrapage, chorégraphie vs orchestrateur sur flux. Volet Mise en œuvre : architecture EDAA hybride Solace PubSub+/Kafka sans 2PC/XA, CloudEvents 1.0, Transactional Outbox, Saga probabiliste, tampon à fenêtre de grâce pour actions irréversibles, annulation Boréal et ADR-013.",
+      "summary": "Orchestration événementielle asynchrone : critères de bascule vers l'événement (Kafka, Flink Agents 0.4, RocketMQ-A2A, Real-Time Context Engine), rejeu du journal (incluant sorties de modèle et d'outils), notifications MCP/A2A sans rattrapage, chorégraphie par rapport à orchestrateur sur flux. Volet Mise en œuvre : architecture EDAA hybride Solace PubSub+/Kafka sans 2PC/XA, CloudEvents 1.0, Transactional Outbox, Saga probabiliste, tampon à fenêtre de grâce pour actions irréversibles, annulation Boréal et ADR-013.",
       "primary_domain": "D05",
       "secondary_domains": [
         "D03",
@@ -1099,7 +1099,7 @@
         "LangGraph / CrewAI / Microsoft Agent Framework",
         "Google ADK 2.0 / OpenAI / Claude Agent SDK",
         "DSPy / MetaGPT",
-        "bibliothèque vs harnais",
+        "bibliothèque par rapport à harnais",
         "périssabilité des cadriciels"
       ],
       "normative_refs": [
@@ -1147,7 +1147,7 @@
       "chapter_title": "Chapitre 22 — L’humain dans la boucle",
       "line_start": 12042,
       "line_end": 12303,
-      "summary": "Gouvernance de l'humain dans/sur/hors de la boucle et position non délégable « aux commandes ». Comparaison des échelles (Feng, Singapour, CSA), autonomie méritée (promotion par classe sur preuve vs rétrogradation automatique sur signal), grille de décision par gravité/réversibilité/faisabilité (cas Dayos), lutte contre la fatigue d'approbation (93 % d'acceptation, biais d'automatisation +26 %) par 6 règles et 4 compléments, et conformité EU AI Act art. 14 / Québec / Canada.",
+      "summary": "Gouvernance de l'humain dans/sur/hors de la boucle et position non délégable « aux commandes ». Comparaison des échelles (Feng, Singapour, CSA), autonomie méritée (promotion par classe sur preuve par rapport à rétrogradation automatique sur signal), grille de décision par gravité/réversibilité/faisabilité (cas Dayos), lutte contre la fatigue d'approbation (93 % d'acceptation, biais d'automatisation +26 %) par 6 règles et 4 compléments, et conformité EU AI Act art. 14 / Québec / Canada.",
       "primary_domain": "D02",
       "secondary_domains": [
         "D09",
@@ -1202,7 +1202,7 @@
         "banc-evalops-hermetique"
       ],
       "key_terms": [
-        "plan de contrôle vs plan de données",
+        "plan de contrôle par rapport à plan de données",
         "maillage agentique",
         "Megagon / SALLMA",
         "AgentArcEval",
@@ -1260,7 +1260,7 @@
       "chapter_title": "Chapitre 25 — Intégration au patrimoine",
       "line_start": 12973,
       "line_end": 13663,
-      "summary": "Intégration au patrimoine (mainframes z/OS CICS TS 6.3, IBM i AS/400) : préservation du cœur déterministe, source d'autorité relue avant décision engageante, couche anticorruption (ACL) et modernisation mixte. Volet Mise en œuvre : hiérarchie MCP (≥92 %) -> RPA -> CUA (≤8 %), encapsulation RPGLE/XMLSERVICE/EBCDIC/COMP-3/EDI X12, confinement de CUA sur Citrix/3270/5250 avec bail d'extinction de 12 mois, conformité BSIF E-23/SOX, cas BCA AS/400 et ADR-016.",
+      "summary": "Intégration au patrimoine (mainframes z/OS CICS TS 6.3, IBM i AS/400) : préservation du cœur déterministe, source d'autorité relue avant décision engageante, couche anticorruption (ACL) et modernisation mixte. Volet Mise en œuvre : hiérarchie MCP (≥92 %) → RPA → CUA (≤8 %), encapsulation RPGLE/XMLSERVICE/EBCDIC/COMP-3/EDI X12, confinement de CUA sur Citrix/3270/5250 avec bail d'extinction de 12 mois, conformité BSIF E-23/SOX, cas BCA AS/400 et ADR-016.",
       "primary_domain": "D04",
       "secondary_domains": [
         "D07",
@@ -1297,7 +1297,7 @@
       "chapter_title": "Chapitre 26 — Plateformes d’entreprise",
       "line_start": 13664,
       "line_end": 13944,
-      "summary": "Analyse de l'interopérabilité déclarée vs constatée sur 10 plateformes (Microsoft Agent 365/Copilot Studio, Salesforce Agentforce, ServiceNow AI Control Tower, SAP Joule, Workday, AWS AgentCore, Google Agent Registry/Gateway, IBM watsonx Orchestrate, UiPath Maestro, Camunda) selon 6 questions et 4 niveaux d'intégration d'agents tiers. Démontre l'ouverture sur le fil mais la fermeture sur le plan de contrôle, décode le Magic Quadrant Gartner 2026 et oppose la trousse TCK d'A2A et les essais Borealis-Bench (9/9 PASS).",
+      "summary": "Analyse de l'interopérabilité déclarée par rapport à constatée sur 10 plateformes (Microsoft Agent 365/Copilot Studio, Salesforce Agentforce, ServiceNow AI Control Tower, SAP Joule, Workday, AWS AgentCore, Google Agent Registry/Gateway, IBM watsonx Orchestrate, UiPath Maestro, Camunda) selon 6 questions et 4 niveaux d'intégration d'agents tiers. Démontre l'ouverture sur le fil mais la fermeture sur le plan de contrôle, décode le Magic Quadrant Gartner 2026 et oppose la trousse TCK d'A2A et les essais Borealis-Bench (9/9 PASS).",
       "primary_domain": "D10",
       "secondary_domains": [
         "D03",
@@ -1331,7 +1331,7 @@
       "chapter_title": "Chapitre 27 — Stratégie multi-plateformes",
       "line_start": 13945,
       "line_end": 14600,
-      "summary": "Stratégie multi-plateformes face à la coexistence durable de plusieurs orchestrateurs : fédération d'inventaire (vs politiques non propagées), noyau possédé (registre de référence, identité, politiques, actifs ouverts), interchangeabilité vs transférabilité, matrice construire/acheter/fédérer et 9 clauses contractuelles de sortie (Règlement UE 2023/2854 sur les données, BSIF B-10). Volet Mise en œuvre : coexistence de 5 suites SaaS, gravité des données (≥85 %), propagation Entra ID->SAP CIS/Salesforce, prévention des boucles circulaires, Boréal et ADR-015.",
+      "summary": "Stratégie multi-plateformes face à la coexistence durable de plusieurs orchestrateurs : fédération d'inventaire (par rapport à politiques non propagées), noyau possédé (registre de référence, identité, politiques, actifs ouverts), interchangeabilité par rapport à transférabilité, matrice construire/acheter/fédérer et 9 clauses contractuelles de sortie (Règlement UE 2023/2854 sur les données, BSIF B-10). Volet Mise en œuvre : coexistence de 5 suites SaaS, gravité des données (≥85 %), propagation Entra ID→SAP CIS/Salesforce, prévention des boucles circulaires, Boréal et ADR-015.",
       "primary_domain": "D10",
       "secondary_domains": [
         "D02",
@@ -1348,7 +1348,7 @@
       ],
       "key_terms": [
         "gravité des données",
-        "interchangeabilité vs transférabilité",
+        "interchangeabilité par rapport à transférabilité",
         "coexistence 5 suites SaaS",
         "boucles circulaires de webhooks",
         "clauses de sortie testées"
@@ -1407,7 +1407,7 @@
       "local_id": "t3a-001",
       "canonical_slug": "systems-of-agency",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Entreprise agentique et System of Action",
       "title": "Entreprise agentique, boucle d'action et System of Action",
       "summary": "Passage de l'assistant conversationnel par tours à l'agent agissant en boucle (autonomie, outils, mémoire, délégation) au sein d'une strate System of Action superposée aux systèmes d'enregistrement. Encadré par 7 critères vérifiables (action, limites, identité, imputabilité, inventaire, composition, mesure) et ADR-001.",
@@ -1470,7 +1470,7 @@
       "local_id": "t3a-002",
       "canonical_slug": "taxonomie-acteurs-agentiques",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Entreprise agentique et System of Action",
       "title": "Taxonomie des systèmes d'IA composés et 5 archétypes d'acteurs",
       "summary": "Distinction en 5 paliers (LLM augmenté, workflow agentique, agent, système multi-agents, système d'IA composé) selon qui décide du chemin, complétée en mise en œuvre par la séparation en 5 archétypes fonctionnels (interface, spécialiste de domaine, travailleur de tâche, orchestrateur, méta-gouverneur) proscrivant le super-agent universel.",
@@ -1487,7 +1487,7 @@
       "horizon": "2026-2027",
       "tags": [
         "taxonomie",
-        "workflow vs agent",
+        "workflow par rapport à agent",
         "5 archétypes",
         "système composé"
       ],
@@ -1650,7 +1650,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Composition probabiliste des erreurs",
       "title": "De l'exactitude ponctuelle pass@1 à la constance multi-essais pass^k",
-      "summary": "Écart entre une réussite ponctuelle (pass@1) et la constance exigée en production sur k exécutions répétées (pass^k = p^k). Illustré au fil rouge Boréal BSN où une boucle libre tombait à pass^5 = 61 % avant l'encapsulation déterministe visant pass^5 >= 95 %.",
+      "summary": "Écart entre une réussite ponctuelle (pass@1) et la constance exigée en production sur k exécutions répétées (pass^k = p^k). Illustré au fil rouge Boréal BSN où une boucle libre tombait à pass^5 = 61 % avant l'encapsulation déterministe visant pass^5 ≥ 95 %.",
       "autonomy_levels": [
         "L2",
         "L3"
@@ -1833,10 +1833,10 @@
       "local_id": "t3a-008",
       "canonical_slug": "etat-des-lieux-adoption-map-2027",
       "domain_id": "D01",
-      "subdomain": "Rupture épistémique et Systems of Agency",
+      "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Mesures empiriques et adoption 2026-2027",
       "title": "Écart pilote-production, étude MAP et statistiques d'adoption 2026-2027",
-      "summary": "Confrontation des enquêtes déclaratives (McKinsey 40 % grandes organisations vs 22 % plus petites, EBIT stable à 37 %) et des offices statistiques (~20 % d'usage IA au Canada/UE/É.-U.) à l'étude académique MAP (68 % < 10 étapes avant humain, 16/20 workflows prédéfinis, 74 % évaluation humaine) et à la prévision Gartner (> 40 % d'annulations d'ici fin 2027).",
+      "summary": "Confrontation des enquêtes déclaratives (McKinsey 40 % pour les grandes organisations contre 22 % pour les plus petites, EBIT stable à 37 %) et des offices statistiques (~20 % d'usage IA au Canada/UE/É.-U.) à l'étude académique MAP (68 % < 10 étapes avant humain, 16/20 workflows prédéfinis, 74 % évaluation humaine) et à la prévision Gartner (> 40 % d'annulations d'ici fin 2027).",
       "autonomy_levels": [
         "L1",
         "L2"
@@ -1907,7 +1907,7 @@
       ],
       "horizon": "2026-2028",
       "tags": [
-        "déterministe vs agentique",
+        "déterministe par rapport à agentique",
         "cellule bornée",
         "ADR-002"
       ],
@@ -2028,7 +2028,7 @@
       "subdomain": "Échelle d'autonomie L0–L4 et supervision humaine",
       "family": "Niveaux d'autonomie et droits de mutation",
       "title": "Règle du maillon le plus élevé (High-Water Mark Rule) et réversibilité",
-      "summary": "Principe normatif de durcissement sécuritaire et réglementaire : lorsqu'un agent L1 alimente un agent L3 sans sas d'assainissement, il entre dans le périmètre de contrôle L3 (OWASP ASI01, BSIF E-23, EU AI Act) sans obtenir ses droits de mutation; le passage L2->L3 requiert la réversibilité Saga.",
+      "summary": "Principe normatif de durcissement sécuritaire et réglementaire : lorsqu'un agent L1 alimente un agent L3 sans sas d'assainissement, il entre dans le périmètre de contrôle L3 (OWASP ASI01, BSIF E-23, EU AI Act) sans obtenir ses droits de mutation; le passage L2→L3 requiert la réversibilité Saga.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -2219,7 +2219,7 @@
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
       "family": "Plan de contrôle et noyau souverain",
-      "title": "Plan de contrôle vs plan de données et noyau de gouvernance possédé",
+      "title": "Plan de contrôle et plan de données et noyau de gouvernance possédé",
       "summary": "Séparation entre le plan de contrôle (registre de référence, fournisseur d'identité, moteur de politiques, observabilité, budgets) qui décide et le plan de données (passerelles, runtimes) qui applique sur un chemin obligé, sous 3 conditions (non-contournement, registre faisant autorité, preuve tracée).",
       "autonomy_levels": [
         "L2",
@@ -2397,7 +2397,7 @@
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
       "family": "Plan de contrôle et noyau souverain",
-      "title": "Interchangeabilité vs transférabilité, dépôts d'actifs et clauses de sortie",
+      "title": "Interchangeabilité et transférabilité, dépôts d'actifs et clauses de sortie",
       "summary": "Distinction entre interchangeabilité protocolaire (appeler via MCP/A2A) et transférabilité (déplacer graphe, état, mémoire et configuration). Ancrage réglementaire dans le chapitre VI du Règlement européen 2023/2854 (Data Act) et la ligne directrice B-10 du BSIF, traduit en 9 clauses contractuelles vérifiables par essai de sortie.",
       "autonomy_levels": [
         "L1",
@@ -2600,7 +2600,7 @@
       "subdomain": "Protocoles verticaux outil-modèle (MCP)",
       "family": "Connectivité verticale agent-outil (MCP)",
       "title": "Façades MCP orientées intention métier, structuredContent et resource_link",
-      "summary": "Proscription de la conversion mécanique OpenAPI->MCP 1:1 (surcharge > 50 outils et erreurs de jointure) au profit de 5 à 12 outils métier par domaine, dotés de schémas de sortie structuredContent, clés d'idempotence, pointeurs resource_link (> 8 Ko) et erreurs cognitives guidant la correction.",
+      "summary": "Proscription de la conversion mécanique OpenAPI→MCP 1:1 (surcharge > 50 outils et erreurs de jointure) au profit de 5 à 12 outils métier par domaine, dotés de schémas de sortie structuredContent, clés d'idempotence, pointeurs resource_link (> 8 Ko) et erreurs cognitives guidant la correction.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3486,7 +3486,7 @@
       "subdomain": "Sémantique métier, ontologies et compilation de contexte",
       "family": "Couche sémantique et ontologies causales",
       "title": "Couche sémantique (Apache Ossie), ontologie opérationnelle causale et résolution neuro-symbolique",
-      "summary": "Architecture à trois étages pour éliminer les erreurs sémantiques du SQL libre (16 % vs 54 %) sur 14 000 tables : couche sémantique déclarative (Apache Ossie ex-OSI 0.1.1 / 0.3.0.dev0 non production, dbt get_metrics_compiled_sql), ontologie opérationnelle causale d'automates légaux et résolution neuro-symbolique MDM avant planification (ADR-009).",
+      "summary": "Architecture à trois étages pour éliminer les erreurs sémantiques du SQL libre (16 % contre 54 %) sur 14 000 tables : couche sémantique déclarative (Apache Ossie ex-OSI 0.1.1 / 0.3.0.dev0 non production, dbt get_metrics_compiled_sql), ontologie opérationnelle causale d'automates légaux et résolution neuro-symbolique MDM avant planification (ADR-009).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3664,7 +3664,7 @@
       "subdomain": "Mémoire CoALA, bi-temporalité et filtrage ACL",
       "family": "Mémoire structurée et bi-temporalité",
       "title": "Taxonomie CoALA (4 mémoires) et modèle hybride Letta + Graphiti bi-temporel",
-      "summary": "Structuration de la mémoire agentique en quatre types selon CoALA (travail, épisodique, sémantique, procédurale à risque maximal), comparant fichiers, vecteurs (Mem0) et graphes temporels (Graphiti). Prescrit en environnement réglementé le couplage Letta (blocs paginés) + Graphiti bi-temporel (valid_from vs ingested_at) sous ADR-010.",
+      "summary": "Structuration de la mémoire agentique en quatre types selon CoALA (travail, épisodique, sémantique, procédurale à risque maximal), comparant fichiers, vecteurs (Mem0) et graphes temporels (Graphiti). Prescrit en environnement réglementé le couplage Letta (blocs paginés) + Graphiti bi-temporel (valid_from par rapport à ingested_at) sous ADR-010.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -3956,7 +3956,7 @@
       "domain_id": "D04",
       "subdomain": "Encapsulation patrimoniale, IT/OT et 6 substrats",
       "family": "Intégration patrimoniale et mainframes",
-      "title": "Hiérarchie MCP -> RPA -> CUA et confinement des Computer-Use Agents (Citrix/5250)",
+      "title": "Hiérarchie MCP → RPA → CUA et confinement des Computer-Use Agents (Citrix/5250)",
       "summary": "Doctrine d'intégration du patrimoine sans API (ADR-016) priorisant MCP (≥ 92 %), puis RPA déterministe sous plan APA (UiPath Maestro), et restreignant les CUA visuels (≤ 8 %) à un harnais confiné (caviardage PII Loi 25, blocage touches destructrices, relecture OCR/vérification double, bail d'extinction de 12 mois).",
       "autonomy_levels": [
         "L0",
@@ -4112,7 +4112,7 @@
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Topologies et lois d'échelle multi-agents",
       "title": "Topologies multi-agents (centralisée, décentralisée, hiérarchique), 6 patrons canoniques et compromis mesurés",
-      "summary": "Taxonomie des patrons d'orchestration (pipeline, fan-out, routeur, superviseur, hiérarchie, planificateur à registre, débat, réflexion, transfert/essaim) avec l'agent unique comme point de départ. Appuyée par Kulkarni (hiérarchie à 98,5 % du F1 réflexif pour 60,7 % du coût) et Kim et coll. (écart moyen −0,3 %, +80,8 % décomposable vs −70 % séquentiel), fondant l'ADR-011.",
+      "summary": "Taxonomie des patrons d'orchestration (pipeline, fan-out, routeur, superviseur, hiérarchie, planificateur à registre, débat, réflexion, transfert/essaim) avec l'agent unique comme point de départ. Appuyée par Kulkarni (hiérarchie à 98,5 % du F1 réflexif pour 60,7 % du coût) et Kim et coll. (écart moyen −0,3 %, +80,8 % décomposable par rapport à −70 % séquentiel), fondant l'ADR-011.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -4191,7 +4191,7 @@
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Enveloppes de processus déterministes",
       "title": "Enveloppes BPMN ad hoc, gestion de cas CMMN, Routine et processus exposé comme outil",
-      "summary": "Quatre mécanismes d'encapsulation du non-déterminisme dans l'orchestration métier : sous-processus ad hoc BPMN (Camunda 8.11 fromAi, plafond 10 appels), agent appelé comme tâche avec contrat JSON (UiPath Maestro), gestion de cas à règles préalables (Case Manager) et planification structurée Routine (41,1 %->96,3 %), plus exposition d'un processus entier comme outil MCP.",
+      "summary": "Quatre mécanismes d'encapsulation du non-déterminisme dans l'orchestration métier : sous-processus ad hoc BPMN (Camunda 8.11 fromAi, plafond 10 appels), agent appelé comme tâche avec contrat JSON (UiPath Maestro), gestion de cas à règles préalables (Case Manager) et planification structurée Routine (41,1 %→96,3 %), plus exposition d'un processus entier comme outil MCP.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -4747,7 +4747,7 @@
       "subdomain": "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
       "family": "Identités de charges de travail agentiques",
       "title": "Attestation cryptographique SPIFFE/SPIRE et mTLS pour SLIM et conduits IDMZ",
-      "summary": "Ancrage de l'identité machine des agents, travailleurs Temporal et passerelles via SVID/SPIFFE et fédération SPIRE : authentification mutuelle mTLS à certificats courts entre domaines sur SLIM (AGNTCY), dans les maillages Solo.io et sur le conduit descendant IT->OT de l'IDMZ (IEC 62443 SL-3).",
+      "summary": "Ancrage de l'identité machine des agents, travailleurs Temporal et passerelles via SVID/SPIFFE et fédération SPIRE : authentification mutuelle mTLS à certificats courts entre domaines sur SLIM (AGNTCY), dans les maillages Solo.io et sur le conduit descendant IT→OT de l'IDMZ (IEC 62443 SL-3).",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -4884,7 +4884,7 @@
       "subdomain": "Chaîne de mandat, OBO 2e saut et approbation CIBA",
       "family": "Échange de jetons et atténuation de portée",
       "title": "Délégation OAuth 2.1 OBO (RFC 8693), DPoP, ID-JAG et propagation multi-SaaS",
-      "summary": "Interdiction stricte du relais brut de jetons par un serveur MCP ou une passerelle (RFC 8707 audience). Opérationnalisation par échange de jetons On-Behalf-Of (RFC 8693 act/sub) avec preuve de possession DPoP (RFC 9449), Enterprise-Managed Authorization via ID-JAG (brouillon IETF -06) et propagation nominative Entra ID -> SAP CIS / Salesforce (ADR-005, ADR-015).",
+      "summary": "Interdiction stricte du relais brut de jetons par un serveur MCP ou une passerelle (RFC 8707 audience). Opérationnalisation par échange de jetons On-Behalf-Of (RFC 8693 act/sub) avec preuve de possession DPoP (RFC 9449), Enterprise-Managed Authorization via ID-JAG (brouillon IETF -06) et propagation nominative Entra ID → SAP CIS / Salesforce (ADR-005, ADR-015).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -5711,7 +5711,7 @@
       "subdomain": "SRE agentique et FinOps FOCUS / CPO / carbone",
       "family": "FinOps agentique et maîtrise des coûts d'inférence",
       "title": "FinOps par Cost-per-Outcome, budgets de jetons, cache KV et maîtrise des licences SaaS",
-      "summary": "Pilotage économique au coût complet par résultat métier validé (CPO) face au multiplicateur de jetons multi-agents (4x à 15x), aux incidents de boucle (41 000 $ CAD sur 11h) et au cumul des crédits SaaS (multiplicateur ≤ 1,25). Leviers techniques : plafonds durs à la passerelle et par exécution, routage SLM/LLM, ordre déterministe des outils et cache de préfixes (1/10 à 1/40 du prix).",
+      "summary": "Pilotage économique au coût complet par résultat métier validé (CPO) face au multiplicateur de jetons multi-agents (4x à 15x), aux incidents de boucle (41 000 $ CAD sur 11 h) et au cumul des crédits SaaS (multiplicateur ≤ 1,25). Leviers techniques : plafonds durs à la passerelle et par exécution, routage SLM/LLM, ordre déterministe des outils et cache de préfixes (1/10 à 1/40 du prix).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6310,7 +6310,7 @@
       "domain_id": "D10",
       "subdomain": "Usine logicielle GitOps et anti-patrons agentiques",
       "family": "Plateformes d'entreprise et réalité des éditeurs",
-      "title": "Interopérabilité déclarée vs constatée des 10 plateformes SaaS et 4 niveaux d'agents tiers",
+      "title": "Interopérabilité déclarée par rapport à l'interopérabilité constatée des 10 plateformes SaaS et 4 niveaux d'agents tiers",
       "summary": "Évaluation des promesses MCP/A2A chez Microsoft (Agent 365/Copilot Studio), Salesforce (Agentforce/MuleSoft), ServiceNow (AI Control Tower), SAP (Joule/CIS), Workday, AWS (AgentCore), Google, IBM (watsonx), UiPath et Camunda. Révèle une ouverture sur le fil mais une fermeture sur le plan de contrôle et un traitement asymétrique des agents tiers (inventorié, observé, gouverné, jamais de plein droit).",
       "autonomy_levels": [
         "L1",
@@ -6382,7 +6382,7 @@
       "subdomain": "Trois blueprints de référence et cas Groupe Boréal BEL",
       "family": "Fédération multi-SaaS et gravité des données",
       "title": "Fédération des 5 suites SaaS par gravité des données et prévention des boucles circulaires",
-      "summary": "Doctrine ADR-015 face à la coexistence durable d'Agentforce, ServiceNow, SAP Joule, Copilot Studio et Workday : ancrage des spécialistes selon la gravité ontologique et de conformité des données (≥ 85 % d'appels locaux), orchestration transverse neutre (Temporal/agentgateway/MuleSoft), propagation Entra ID->SAP CIS/Salesforce (RFC 8693) et prévention des boucles circulaires de webhooks.",
+      "summary": "Doctrine ADR-015 face à la coexistence durable d'Agentforce, ServiceNow, SAP Joule, Copilot Studio et Workday : ancrage des spécialistes selon la gravité ontologique et de conformité des données (≥ 85 % d'appels locaux), orchestration transverse neutre (Temporal/agentgateway/MuleSoft), propagation Entra ID→SAP CIS/Salesforce (RFC 8693) et prévention des boucles circulaires de webhooks.",
       "autonomy_levels": [
         "L2",
         "L3",
@@ -6461,7 +6461,7 @@
       "subdomain": "Usine logicielle GitOps et anti-patrons agentiques",
       "family": "Antipatrons d'architecture et de gouvernance",
       "title": "Catalogue des antipatrons : super-agent, OpenAPI 1:1, SQL libre, salle virtuelle et plan consultatif",
-      "summary": "Recensement transversal des écueils récurrents documentés au Tome 3a : super-agent universel (ch. 1), conversion mécanique OpenAPI->MCP 1:1 (ch. 5), SQL libre sur schémas physiques bruts (ch. 12), essaim ou salle de réunion virtuelle non bornés (ch. 16), plan de contrôle consultatif, registre-vitrine, garde-fou d'une seule tranche et évaluation ponctuelle unique (ch. 23).",
+      "summary": "Recensement transversal des écueils récurrents documentés au Tome 3a : super-agent universel (ch. 1), conversion mécanique OpenAPI→MCP 1:1 (ch. 5), SQL libre sur schémas physiques bruts (ch. 12), essaim ou salle de réunion virtuelle non bornés (ch. 16), plan de contrôle consultatif, registre purement déclaratif, garde-fou d'une seule tranche et évaluation ponctuelle unique (ch. 23).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -6478,7 +6478,7 @@
         "antipatrons",
         "OpenAPI 1:1",
         "plan consultatif",
-        "registre-vitrine",
+        "registre-façade",
         "salle virtuelle"
       ],
       "identifiers": [
@@ -6550,7 +6550,7 @@
       "domain_id": "D10",
       "subdomain": "Cinq profils financiers réglementés et 24 PEX",
       "family": "Délimitation probatoire et transpositions sectorielles",
-      "title": "Délimitation stricte finance/génie logiciel vs extrapolations sectorielles (santé FHIR, IT/OT SIL, M&A)",
+      "title": "Délimitation stricte finance et génie logiciel face aux extrapolations sectorielles (santé FHIR, IT/OT SIL, M&A)",
       "summary": "Distinction méthodologique posée dès l'Ouverture : seul le périmètre services financiers réglementés (BCA, CRE-IA-2026-01, Note AMF IA) et contrôle logiciel déterministe (Borealis-Bench) est démontré; les volets santé HL7 FHIR R4, usines BEL/Trois-Rivières (IEC 62443), énergie/mines NERC CIP / SIL 2/3 et M&A industrielles sont explicitement balisés comme extrapolations illustratives.",
       "autonomy_levels": [
         "L0",
@@ -6713,7 +6713,7 @@
         "3 horloges",
         "H1-H6",
         "scénarios standards",
-        "convergence vs bifurcation"
+        "convergence par rapport à bifurcation"
       ],
       "identifiers": [
         "H1–H6",
@@ -6911,7 +6911,7 @@
       "source_slug": "partition-hybride-80-20",
       "target_slug": "loi-de-lusser",
       "type": "attenuation_risque",
-      "label": "encapsule le non-déterminisme contre la chute exponentielle",
+      "label": "Encapsule le non-déterminisme contre la chute exponentielle",
       "justification": "La partition 80/20 extrait le routage, l'état et les invariants hors du modèle vers un plan de contrôle déterministe afin d'éviter la dégradation en chaîne R = p^n (ex. 0,94^10 ≈ 53,9 %, ch. 0.2 et 17.8).",
       "tomes": [
         "T3"
@@ -6921,7 +6921,7 @@
       "source_slug": "harnais-deterministe-8-etapes",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "intercepte les sorties plausibles mais invalides avant propagation",
+      "label": "Intercepte les sorties plausibles mais invalides avant propagation",
       "justification": "Les gardes d'entrée/sortie, le décodage contraint JSON Schema Draft 2020-12 et la validation factuelle du harnais bloquent les rationalisations erronées (OWASP ASI08) avant leur transmission aux étapes aval (ch. 17.11).",
       "tomes": [
         "T3"
@@ -6931,7 +6931,7 @@
       "source_slug": "harnais-deterministe-8-etapes",
       "target_slug": "constance-pass-k",
       "type": "attenuation_risque",
-      "label": "élève la constance multi-essais vers pass^5 >= 95 %",
+      "label": "Élève la constance multi-essais vers pass^5 ≥ 95 %",
       "justification": "Dans le fil rouge Boréal BSN/BCA (section 17.12 et Extrait 17.1), l'encapsulation de la cellule LLM dans une machine à états typée corrige l'instabilité de la boucle libre (pass^5 = 61 %).",
       "tomes": [
         "T3"
@@ -6941,8 +6941,8 @@
       "source_slug": "dette-semantique-ontologies",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "élimine les erreurs sémantiques silencieuses du SQL libre",
-      "justification": "Une couche sémantique gouvernée (Apache Ossie) et une ontologie opérationnelle causale résolvent la polysémie métier (ex. stock LABST vs net_allocatable_atp_qty, ch. 12.1, 12.8–12.12).",
+      "label": "Élimine les erreurs sémantiques silencieuses du SQL libre",
+      "justification": "Une couche sémantique gouvernée (Apache Ossie) et une ontologie opérationnelle causale résolvent la polysémie métier (ex. stock LABST et net_allocatable_atp_qty, ch. 12.1, 12.8–12.12).",
       "tomes": [
         "T3"
       ]
@@ -6951,7 +6951,7 @@
       "source_slug": "epinglage-schemas-mcp",
       "target_slug": "tool-poisoning-rug-pull",
       "type": "attenuation_risque",
-      "label": "bloque la dérive silencieuse et le rug-pull des outils",
+      "label": "Bloque la dérive silencieuse et le rug-pull des outils",
       "justification": "Le scellement SHA-256 au registre interne et le rejet des notifications list_changed non approuvées contrent les 40,58 % de dérives sémantiques mesurées sur 21 643 serveurs MCP (ch. 8.8, 24.2).",
       "tomes": [
         "T3"
@@ -6961,7 +6961,7 @@
       "source_slug": "regle-de-deux-opa",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "brise la trifecta létale et contient LogJack au PEP",
+      "label": "Brise la trifecta létale et contient LogJack au PEP",
       "justification": "Les contrôles C4 (Règle de deux Cedar/OPA) et C6 (filtre CaMeL) sur la passerelle bloquent l'exfiltration lorsque données non fiables, données sensibles et sortie externe se combinent (Borealis-Bench Campagne 3, ch. 24.5, 26.9).",
       "tomes": [
         "T3"
@@ -6971,7 +6971,7 @@
       "source_slug": "politiques-opa-rego-hors-modele",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "empêche un prompt détourné de contourner les autorisations",
+      "label": "Empêche un prompt détourné de contourner les autorisations",
       "justification": "Selon la règle OASIS reprise aux ch. 2 et 24, déporter les politiques dans un PDP déterministe fail-closed (Cedar/OPA/CEL) garantit qu'aucune injection de prompt ne peut octroyer un privilège.",
       "tomes": [
         "T3"
@@ -6981,7 +6981,7 @@
       "source_slug": "confinement-shadi-sandbox",
       "target_slug": "chaine-approvisionnement-agent-skills",
       "type": "attenuation_risque",
-      "label": "isole l'exécution des scripts et composants non fiables",
+      "label": "Isole l'exécution des scripts et composants non fiables",
       "justification": "Face aux 26,1 % de vulnérabilités mesurées sur 31 132 Agent Skills (ch. 13.3), OpenSandbox (microVM/gVisor/WASM) et MCP-UI sandboxé (connect-src 'none') confinent le code hors de l'hôte.",
       "tomes": [
         "T3"
@@ -6991,7 +6991,7 @@
       "source_slug": "delegation-obo-deux-sauts",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "borne le rayon d'impact par échange RFC 8693 et DPoP",
+      "label": "Borne le rayon d'impact par échange RFC 8693 et DPoP",
       "justification": "L'interdiction du relais brut de jeton et l'atténuation de portée OAuth 2.1 OBO (RFC 8693/8707) limitent strictement les privilèges exploitables en aval si l'agent appelant est compromis (ch. 5.5, 15.3, 27.8).",
       "tomes": [
         "T3"
@@ -7001,8 +7001,8 @@
       "source_slug": "soc-soar-coupe-circuit",
       "target_slug": "finops-focus-cpo",
       "type": "attenuation_risque",
-      "label": "stoppe les boucles autonomes coûteuses avant dérive budgétaire",
-      "justification": "Les coupe-circuits topologiques (ADR-011), anti-tempête (ADR-013) et POR-003 (< 0,050 ms) préviennent la récurrence d'incidents de boucle tels que le dépassement de 41 000 $ CAD sur 11h chez Boréal (ch. 0.5, 16.12, 24.5).",
+      "label": "Stoppe les boucles autonomes coûteuses avant dérive budgétaire",
+      "justification": "Les coupe-circuits topologiques (ADR-011), anti-tempête (ADR-013) et POR-003 (< 0,050 ms) préviennent la récurrence d'incidents de boucle tels que le dépassement de 41 000 $ CAD sur 11 h chez Boréal (ch. 0.5, 16.12, 24.5).",
       "tomes": [
         "T3"
       ]
@@ -7011,7 +7011,7 @@
       "source_slug": "choregraphie-event-mesh",
       "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "retient les effets irréversibles via le tampon à fenêtre de grâce",
+      "label": "Retient les effets irréversibles via le tampon à fenêtre de grâce",
       "justification": "L'architecture EDAA (ADR-013, Extrait 19.3) interpose un tampon asynchrone révocable avec enregistrement préalable et anti-tempête entre l'intention probabiliste de l'agent et le système externe (ch. 19.9, 19.11).",
       "tomes": [
         "T3"
@@ -7021,7 +7021,7 @@
       "source_slug": "memoire-partagee-concurrence-effacement",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "bloque l'empoisonnement persistant de mémoire (OWASP ASI06)",
+      "label": "Bloque l'empoisonnement persistant de mémoire (OWASP ASI06)",
       "justification": "Le contrôleur Letta + Graphiti vérifie provenance, validité temporelle et portée avant écriture et exclut les données externes brutes des blocs procéduraux durables (Extrait 14.2, ch. 14.5, 14.9).",
       "tomes": [
         "T3"
@@ -7031,7 +7031,7 @@
       "source_slug": "supervision-hitl-hotl-abstention",
       "target_slug": "approbation-ciba",
       "type": "attenuation_risque",
-      "label": "neutralise la fatigue d'approbation de 93 % sur les points critiques",
+      "label": "Neutralise la fatigue d'approbation de 93 % sur les points critiques",
       "justification": "Les 6 règles de conception du ch. 22.5 (abstention ciblée, justification structurée, limitation de cadence, vérification en contexte) préservent la valeur de l'approbation hors bande CIBA face au biais d'automatisation.",
       "tomes": [
         "T3"
@@ -7041,7 +7041,7 @@
       "source_slug": "rag-agentique-contexte",
       "target_slug": "finops-focus-cpo",
       "type": "attenuation_risque",
-      "label": "réduit l'explosion des jetons par stratification et cache KV",
+      "label": "Réduit l'explosion des jetons par stratification et cache KV",
       "justification": "La compaction en 4 strates préservant > 75 % du cache de préfixes abaisse le coût à 1/10–1/40 du tarif d'entrée (ex. Boréal BSN réduit de 138k à 9,4k jetons, ch. 13.8, 13.11).",
       "tomes": [
         "T3"
@@ -7051,7 +7051,7 @@
       "source_slug": "couche-anti-corruption-acl",
       "target_slug": "encapsulation-patrimoine-it-ot",
       "type": "attenuation_risque",
-      "label": "protège la charge et l'intégrité des systèmes d'enregistrement",
+      "label": "Protège la charge et l'intégrité des systèmes d'enregistrement",
       "justification": "Le patron ACL avec lecture préalable en source d'autorité, plafonds de débit et tests de parité protège autant les cœurs IBM i / z/OS CICS que les automates de production exposés en lecture seule (ch. 25.1, 25.5, 28.4).",
       "tomes": [
         "T3"
@@ -7061,7 +7061,7 @@
       "source_slug": "confinement-cua-patrimoine-sans-api",
       "target_slug": "injection-indirecte-prompt",
       "type": "attenuation_risque",
-      "label": "verrouille les zones d'écran et touches destructrices des CUA",
+      "label": "Verrouille les zones d'écran et touches destructrices des CUA",
       "justification": "Le harnais TypeScript CUA (Extrait 25.3) caviarde les PII, bloque les zones interdites et impose une double vérification post-action contre le détournement visuel sur Citrix/3270/5250 (ch. 25.8).",
       "tomes": [
         "T3"
@@ -7071,7 +7071,7 @@
       "source_slug": "federation-multi-plateformes-gravite",
       "target_slug": "soc-soar-coupe-circuit",
       "type": "attenuation_risque",
-      "label": "prévient les boucles circulaires de webhooks inter-SaaS",
+      "label": "Prévient les boucles circulaires de webhooks inter-SaaS",
       "justification": "Le vecteur signé anti-boucle et la détection d'oscillation (Extrait 27.3 sur agentgateway) coupent les réentrances infinies entre Agentforce, ServiceNow, SAP Joule et Copilot Studio (ch. 27.8).",
       "tomes": [
         "T3"
@@ -7081,7 +7081,7 @@
       "source_slug": "anti-verrouillage-standards",
       "target_slug": "dette-cognitive-vs-technique",
       "type": "attenuation_risque",
-      "label": "convertit l'intégration quadratique N×M en contrats ouverts N+M",
+      "label": "Convertit l'intégration quadratique N×M en contrats ouverts N+M",
       "justification": "L'abstraction derrière adaptateurs conformes aux protocoles ouverts (ADR-004) isole les processus métier pérennes de l'obsolescence rapide des SDK et de la capture par un éditeur (ch. 2.1, 11.13, 20.6).",
       "tomes": [
         "T3"
@@ -7091,7 +7091,7 @@
       "source_slug": "passerelle-mcp-ai-gateway",
       "target_slug": "politiques-opa-rego-hors-modele",
       "type": "dependance_technique",
-      "label": "exécute les décisions PDP Cedar/OPA/CEL comme PEP obligatoire",
+      "label": "Exécute les décisions PDP Cedar/OPA/CEL comme PEP obligatoire",
       "justification": "La passerelle MCP (agentgateway, Agent Router) constitue le point d'application obligé (PEP) sans lequel les règles hors modèle restent consultatives (ch. 23.2, 24.2, 24.5).",
       "tomes": [
         "T3"
@@ -7101,7 +7101,7 @@
       "source_slug": "passerelle-mcp-ai-gateway",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "dependance_technique",
-      "label": "porte l'échange RFC 8693 et la preuve DPoP entre agent et outil",
+      "label": "Porte l'échange RFC 8693 et la preuve DPoP entre agent et outil",
       "justification": "L'interdiction du relais de jeton par les serveurs MCP impose au courtier de la passerelle d'effectuer l'échange OAuth 2.1 OBO (RFC 8693) ciblé par audience RFC 8707 (ch. 5.5, 5.9, 27.8).",
       "tomes": [
         "T3"
@@ -7111,7 +7111,7 @@
       "source_slug": "protocole-a2a",
       "target_slug": "agent-card-decouverte",
       "type": "dependance_technique",
-      "label": "requiert la découverte et la vérification JWS de l'Agent Card",
+      "label": "Requiert la découverte et la vérification JWS de l'Agent Card",
       "justification": "Un client A2A v1.0.1 découvre les capacités, modes d'authentification et points d'accès d'un pair opaque via /.well-known/agent-card.json signé JWS (RFC 7515/8615) avant d'initier une Task (ch. 6.2, 8.4).",
       "tomes": [
         "T3"
@@ -7121,7 +7121,7 @@
       "source_slug": "protocole-a2a",
       "target_slug": "agntcy-slim",
       "type": "dependance_technique",
-      "label": "s'appuie sur SLIM/OASF pour le routage bas niveau et multipartite",
+      "label": "S'appuie sur SLIM/OASF pour le routage bas niveau et multipartite",
       "justification": "Là où A2A définit le cycle Task JSON-RPC/gRPC pair-à-pair, AGNTCY fournit l'annuaire distribué CID/Kad-DHT, la taxonomie OASF et le transport de session multipartite SLIM/MLS (ch. 6.9, 6.10, 7.3).",
       "tomes": [
         "T3"
@@ -7131,7 +7131,7 @@
       "source_slug": "agntcy-slim",
       "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "dependance_technique",
-      "label": "chiffre les canaux gRPC par IETF MLS X25519MLKEM768",
+      "label": "Chiffre les canaux gRPC par IETF MLS X25519MLKEM768",
       "justification": "La configuration de production SLIM (Extrait 6.3, section 6.10) repose sur le protocole MLS (RFC 9420) configuré avec l'échange de clés hybride post-quantique X25519MLKEM768.",
       "tomes": [
         "T3"
@@ -7141,7 +7141,7 @@
       "source_slug": "agntcy-slim",
       "target_slug": "spiffe-spire-attestation",
       "type": "dependance_technique",
-      "label": "authentifie les nœuds de session via SVID SPIFFE/SPIRE mTLS",
+      "label": "Authentifie les nœuds de session via SVID SPIFFE/SPIRE mTLS",
       "justification": "Les passerelles SLIM (Extrait 6.3) et les maillages inter-zones utilisent les identités cryptographiques SPIFFE/SPIRE pour établir mTLS sans secret statique (ch. 6.10, 28.6).",
       "tomes": [
         "T3"
@@ -7151,7 +7151,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "saga-compensatoire",
       "type": "dependance_technique",
-      "label": "persiste l'état, la clé d'idempotence et le journal de compensation",
+      "label": "Persiste l'état, la clé d'idempotence et le journal de compensation",
       "justification": "L'exécution durable (Temporal + Restate) fournit le journal de réveil déterministe, les scopes non annulables (Extrait 18.1) et les clés d'idempotence dérivées de l'étape indispensables aux sagas multi-jours (ch. 18.3, 18.4, 18.8).",
       "tomes": [
         "T3"
@@ -7161,7 +7161,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "approbation-ciba",
       "type": "dependance_technique",
-      "label": "suspend sans coût le workflow sur awakeable jusqu'au retour CIBA",
+      "label": "Suspend sans coût le workflow sur awakeable jusqu'au retour CIBA",
       "justification": "Dans les flux T3/T4 (Extrait 18.1, ch. 18.10–18.12), Temporal met l'exécution en veille à coût nul pendant plusieurs jours et revalide mandat et état du monde à réception du signal CIBA.",
       "tomes": [
         "T3"
@@ -7171,7 +7171,7 @@
       "source_slug": "rag-agentique-contexte",
       "target_slug": "donnees-pretes-agents-odcs-openlineage",
       "type": "dependance_technique",
-      "label": "exige des sources indexées avec lignage, fraîcheur et ACL héritées",
+      "label": "Exige des sources indexées avec lignage, fraîcheur et ACL héritées",
       "justification": "La récupération hybride filtrée par ACL (Extrait 13.2) et la prévention du contexte périmé dépendent de contrats de fraîcheur ODCS v3.2.0, d'OpenLineage et de permissions source intactes (ch. 13.9, 15.1–15.3).",
       "tomes": [
         "T3"
@@ -7181,7 +7181,7 @@
       "source_slug": "donnees-pretes-agents-odcs-openlineage",
       "target_slug": "delegation-obo-deux-sauts",
       "type": "dependance_technique",
-      "label": "applique le filtrage au niveau ligne/colonne sous identité déléguée",
+      "label": "Applique le filtrage au niveau ligne/colonne sous identité déléguée",
       "justification": "Les 5 points de rupture d'héritage ACL documentés au ch. 15.3 imposent une délégation nominative bout-en-bout jusqu'à l'entrepôt ou le dépôt documentaire afin de proscrire le compte de service sur-privilégié.",
       "tomes": [
         "T3"
@@ -7191,7 +7191,7 @@
       "source_slug": "identite-non-humaine-nhi",
       "target_slug": "observabilite-otel-genai",
       "type": "dependance_technique",
-      "label": "corrèle les trois identités de chaque action dans les traces",
+      "label": "Corrèle les trois identités de chaque action dans les traces",
       "justification": "La traçabilité exigée au ch. 23.2 et 24.2 relie l'identité utilisateur, l'identité NHI de l'agent et la chaîne de délégation aux attributs OpenTelemetry propagés via _meta.",
       "tomes": [
         "T3"
@@ -7201,7 +7201,7 @@
       "source_slug": "protocole-anp-did-wba",
       "target_slug": "did-vc-passeport-agent",
       "type": "dependance_technique",
-      "label": "fonde l'admission DMZ sur la résolution did:wba DNS/TLS",
+      "label": "Fonde l'admission DMZ sur la résolution did:wba DNS/TLS",
       "justification": "Dans l'Extrait 6.4 (ch. 6.11 et 7.2), l'interopérabilité inter-organisations sans annuaire central repose sur le document DID did:wba résolu via HTTPS et évalué par politique Cedar en DMZ.",
       "tomes": [
         "T3"
@@ -7211,7 +7211,7 @@
       "source_slug": "protocole-ap2",
       "target_slug": "did-vc-passeport-agent",
       "type": "dependance_technique",
-      "label": "encode Intent/Cart/Payment Mandates en W3C VC et SD-JWT",
+      "label": "Encode Intent/Cart/Payment Mandates en W3C VC et SD-JWT",
       "justification": "Les mandats AP2 v0.2 et Verifiable Intent (ch. 10.2, 10.11, Extrait 10.2) utilisent W3C Verifiable Credentials 2.0, SD-JWT et assertions FIDO2 sur Trusted Surface non agentique.",
       "tomes": [
         "T3"
@@ -7221,7 +7221,7 @@
       "source_slug": "encapsulation-patrimoine-it-ot",
       "target_slug": "spiffe-spire-attestation",
       "type": "dependance_technique",
-      "label": "authentifie le passage de la zone IT à l'IDMZ niveau 3.5",
+      "label": "Authentifie le passage de la zone IT à l'IDMZ niveau 3.5",
       "justification": "Le modèle Purdue / IEC 62443-3-3 SL-3 (ch. 28.6) exige des diodes logiques, courtiers miroirs et identités SPIFFE/SPIRE sur les conduits traversant l'IDMZ vers OPC UA / MES.",
       "tomes": [
         "T3"
@@ -7231,7 +7231,7 @@
       "source_slug": "protocoles-interfaces-agui-a2ui-webrtc",
       "target_slug": "confinement-shadi-sandbox",
       "type": "dependance_technique",
-      "label": "rend les composants UI tiers sans exécution de code arbitraire",
+      "label": "Rend les composants UI tiers sans exécution de code arbitraire",
       "justification": "A2UI (liste plate à catalogue homologué) et MCP-UI (iframe sandboxée sans allow-same-origin) empêchent qu'un agent distant n'injecte de script dans l'interface opérateur AG-UI (ch. 7.1, 10.9).",
       "tomes": [
         "T3"
@@ -7241,7 +7241,7 @@
       "source_slug": "noyau-controle-possede-cap",
       "target_slug": "agent-card-decouverte",
       "type": "dependance_technique",
-      "label": "s'appuie sur un registre de référence faisant autorité",
+      "label": "S'appuie sur un registre de référence faisant autorité",
       "justification": "Des 3 conditions posées en 23.2 et 27.2, le plan de contrôle possédé exige un registre central faisant autorité qui approuve, versionne et révoque les Agent Cards et serveurs MCP actifs.",
       "tomes": [
         "T3"
@@ -7251,7 +7251,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "cadre-eif-4-couches",
       "type": "operationnalisation",
-      "label": "concrétise les couches technique et syntaxique agent-outil",
+      "label": "Concrétise les couches technique et syntaxique agent-outil",
       "justification": "Le ch. 3.2 et le ch. 5 montrent que MCP (Streamable HTTP sans état, JSON-RPC, schémas JSON) met en œuvre les niveaux 1 et 2 du cadre EIF/LCIM entre agent et outil.",
       "tomes": [
         "T3"
@@ -7261,7 +7261,7 @@
       "source_slug": "protocole-a2a",
       "target_slug": "cadre-eif-4-couches",
       "type": "operationnalisation",
-      "label": "concrétise l'échange syntaxique entre pairs opaques",
+      "label": "Concrétise l'échange syntaxique entre pairs opaques",
       "justification": "Complément horizontal de MCP, A2A v1.0.1 normalise le transport et le cycle de tâches inter-agents (couches 1–2 EIF) tout en laissant sémantique, processus et preuve juridique à l'entreprise (ch. 3, 6).",
       "tomes": [
         "T3"
@@ -7271,7 +7271,7 @@
       "source_slug": "facades-mcp-intention-metier",
       "target_slug": "protocole-mcp",
       "type": "operationnalisation",
-      "label": "adapte MCP à la production par 5–12 outils métier et structuredContent",
+      "label": "Adapte MCP à la production par 5–12 outils métier et structuredContent",
       "justification": "Le volet Mise en œuvre 5.11 (Extrait 5.2) traduit la spécification brute MCP en façades orientées intention métier avec pagination, resource_link et erreurs auto-correctrices.",
       "tomes": [
         "T3"
@@ -7281,7 +7281,7 @@
       "source_slug": "enveloppes-bpmn-cas-routine",
       "target_slug": "partition-hybride-80-20",
       "type": "operationnalisation",
-      "label": "matérialise le contrôle déterministe en BPMN 2.0 / CMMN / Routine",
+      "label": "Matérialise le contrôle déterministe en BPMN 2.0 / CMMN / Routine",
       "justification": "Les sous-processus ad hoc Camunda (fromAi, plafond 10 appels), tâches agent UiPath Maestro et workflows Routine incarnent la séparation contrôle déterministe / cellule bornée (ch. 16.11, 17.2–17.4).",
       "tomes": [
         "T3"
@@ -7291,7 +7291,7 @@
       "source_slug": "topologies-patrons-orchestration",
       "target_slug": "systems-of-agency",
       "type": "operationnalisation",
-      "label": "structure la couche System of Action en 6 patrons bornés",
+      "label": "Structure la couche System of Action en 6 patrons bornés",
       "justification": "Les 6 topologies du ch. 16.10–16.11 (superviseur/routeur, Planificateur-Exécuteur-Critique, DAG typé, tableau noir, Contract Net sur A2A, hybride BPMN/DMN) réalisent l'exécution multi-étapes du System of Action.",
       "tomes": [
         "T3"
@@ -7301,7 +7301,7 @@
       "source_slug": "cadriciels-orchestration-portabilite",
       "target_slug": "topologies-patrons-orchestration",
       "type": "operationnalisation",
-      "label": "implémente les graphes d'état et équipes en LangGraph/CrewAI/MAF/ADK",
+      "label": "Implémente les graphes d'état et équipes en LangGraph/CrewAI/MAF/ADK",
       "justification": "Le ch. 20 analyse comment LangGraph, CrewAI Flow, Microsoft Agent Framework, Google ADK 2.0 et DSPy encodent ces topologies tout en réservant la portabilité aux frontières MCP/A2A.",
       "tomes": [
         "T3"
@@ -7311,7 +7311,7 @@
       "source_slug": "choregraphie-event-mesh",
       "target_slug": "saga-compensatoire",
       "type": "operationnalisation",
-      "label": "exécute la compensation probabiliste par CloudEvents et Outbox",
+      "label": "Exécute la compensation probabiliste par CloudEvents et Outbox",
       "justification": "En environnement événementiel asynchrone (ch. 19.9–19.10, Extrait 19.2), un coordinateur LIFO déterministe persiste le CompensationPlan via Transactional Outbox et CloudEvents 1.0.",
       "tomes": [
         "T3"
@@ -7321,8 +7321,8 @@
       "source_slug": "memoire-coala-4-tiroirs",
       "target_slug": "rag-agentique-contexte",
       "type": "operationnalisation",
-      "label": "alimente le compilateur de contexte depuis blocs Letta et graphe Graphiti",
-      "justification": "Les tiroirs CoALA (ch. 14.1, 14.8) fournissent les faits épisodiques et sémantiques bi-temporels injectés dans la strate dynamique du ContextWindowCompiler (ch. 13.8).",
+      "label": "Alimente le compilateur de contexte depuis blocs Letta et graphe Graphiti",
+      "justification": "Les compartiments mémoriels CoALA (ch. 14.1, 14.8) fournissent les faits épisodiques et sémantiques bi-temporels injectés dans la strate dynamique du ContextWindowCompiler (ch. 13.8).",
       "tomes": [
         "T3"
       ]
@@ -7331,7 +7331,7 @@
       "source_slug": "couche-anti-corruption-acl",
       "target_slug": "systems-of-agency",
       "type": "operationnalisation",
-      "label": "relie le System of Action aux SoR IBM i et z/OS via MCP",
+      "label": "Relie le System of Action aux SoR IBM i et z/OS via MCP",
       "justification": "La couche anti-corruption (ch. 25.4, 25.7, ADR-016) encapsule RPGLE/XMLSERVICE, CICS COMMAREA et flux EDI X12 850 en serveurs MCP déterministes sans toucher au cœur patrimonial.",
       "tomes": [
         "T3"
@@ -7341,8 +7341,8 @@
       "source_slug": "federation-multi-plateformes-gravite",
       "target_slug": "noyau-controle-possede-cap",
       "type": "operationnalisation",
-      "label": "applique le noyau possédé sur 5 suites SaaS via un plan neutre",
-      "justification": "Face aux 5 suites SaaS (ch. 27.6–27.8, Extrait 27.1), la coordination inter-plateformes ancrée sur la gravité des données (≥ 85 % local) exécute Temporal, agentgateway et Entra ID->SAP CIS comme noyau souverain.",
+      "label": "Applique le noyau possédé sur 5 suites SaaS via un plan neutre",
+      "justification": "Face aux 5 suites SaaS (ch. 27.6–27.8, Extrait 27.1), la coordination inter-plateformes ancrée sur la gravité des données (≥ 85 % local) exécute Temporal, agentgateway et Entra ID→SAP CIS comme noyau souverain.",
       "tomes": [
         "T3"
       ]
@@ -7351,7 +7351,7 @@
       "source_slug": "protocoles-ressources-physiques-lap",
       "target_slug": "saga-compensatoire",
       "type": "operationnalisation",
-      "label": "transpose bail exclusif et barrière paramétrique aux points de non-retour",
+      "label": "Transpose bail exclusif et barrière paramétrique aux points de non-retour",
       "justification": "Le patron LAP (ch. 7.4) propose un mécanisme concret de verrouillage exclusif à battement et de validation humaine liée au condensat des paramètres avant toute action physique irréversible (ch. 18.7).",
       "tomes": [
         "T3"
@@ -7361,7 +7361,7 @@
       "source_slug": "banc-evalops-hermetique",
       "target_slug": "criteres-qos-cout-precision-latence",
       "type": "operationnalisation",
-      "label": "mesure reproductiblement latence PEP, conformité A2A et coût",
+      "label": "Mesure reproductiblement latence PEP, conformité A2A et coût",
       "justification": "Borealis-Bench (Campagnes 1 et 3), OpenEnv, AgentArcEval et la trousse TCK A2A traduisent les budgets QoS et les 5 critères du compendium en mesures vérifiées en CI (ch. 23.8, 24.5, 26.9).",
       "tomes": [
         "T3"
@@ -7371,7 +7371,7 @@
       "source_slug": "observabilite-otel-genai",
       "target_slug": "finops-focus-cpo",
       "type": "operationnalisation",
-      "label": "capture jetons, latences et attributions de coûts par résultat",
+      "label": "Capture jetons, latences et attributions de coûts par résultat",
       "justification": "Les attributs OpenTelemetry gen_ai.* et mcp.* propagés de bout en bout (ch. 5.9, 24.5) fournissent la télémétrie brute requise pour calculer le Cost-per-Outcome (CPO) par classe de tâche.",
       "tomes": [
         "T3"
@@ -7381,7 +7381,7 @@
       "source_slug": "web-agentique-webmcp-webbotauth",
       "target_slug": "protocole-mcp",
       "type": "operationnalisation",
-      "label": "étend l'exposition d'outils côté navigateur et canaux web",
+      "label": "Étend l'exposition d'outils côté navigateur et canaux web",
       "justification": "WebMCP (document.modelContext dans Chrome) et NLWeb transposent la logique d'exposition d'outils MCP vers le navigateur et les sites web tout en devant converger vers les mêmes contrôles serveur (ch. 5.12, 9.2, 9.6).",
       "tomes": [
         "T3"
@@ -7391,7 +7391,7 @@
       "source_slug": "exigences-cre-ia-305",
       "target_slug": "banc-evalops-hermetique",
       "type": "operationnalisation",
-      "label": "vérifie syntaxiquement les 108 blocs CI et badges probatoires DC-P11",
+      "label": "Vérifie syntaxiquement les 108 blocs CI et badges probatoires DC-P11",
       "justification": "Le registre Borealis-Bench/ci-audit-108-blocs/registre-108-blocs.json automatise le contrôle des 90 blocs exécutés en CI (83,3 %) sur les 108 extraits du Tome 3 (Ouverture 0.5).",
       "tomes": [
         "T3"
@@ -7401,7 +7401,7 @@
       "source_slug": "fil-rouge-groupe-boreal-bel",
       "target_slug": "architecture-reference-6-couches-2-piliers",
       "type": "operationnalisation",
-      "label": "illustre l'architecture 6 couches et 2 piliers de bout en bout",
+      "label": "Illustre l'architecture 6 couches et 2 piliers de bout en bout",
       "justification": "À travers les 15 sections d'application du Tome 3a (ch. 0.5 à 28.10), Groupe Boréal Inc. (BEL, BCA, BSN) matérialise chaque couche, de MCP/A2A/SLIM à l'ACL AS/400 et l'usine Trois-Rivières.",
       "tomes": [
         "T3"
@@ -7411,7 +7411,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "echelle-autonomie-l0-l4",
       "type": "encadrement_normatif",
-      "label": "impose inventaire, matérialité et contrôle par palier dès mai 2027",
+      "label": "Impose inventaire, matérialité et contrôle par palier dès mai 2027",
       "justification": "La ligne directrice BSIF E-23 (entrée en vigueur 1er mai 2027) exige la qualification formelle du niveau d'autonomie, la validation continue et la maîtrise des agents autoapprenants (ch. 0.1, 0.4, 25.9).",
       "tomes": [
         "T3"
@@ -7421,7 +7421,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "clauses-sortie-portabilite-interchangeabilite",
       "type": "encadrement_normatif",
-      "label": "encadre via BSIF B-10 le risque de concentration et la réversibilité",
+      "label": "Encadre via BSIF B-10 le risque de concentration et la réversibilité",
       "justification": "La ligne directrice B-10 sur la gestion du risque lié aux tiers, conjointement au Data Act (UE) 2023/2854, fonde les 9 clauses contractuelles de sortie testées et le plan anti-concentration multi-plateformes (ch. 27.1, 27.5).",
       "tomes": [
         "T3"
@@ -7431,7 +7431,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "couche-anti-corruption-acl",
       "type": "encadrement_normatif",
-      "label": "exige parité, traçabilité SOX et révision des cellules CUA sur SoR",
+      "label": "Exige parité, traçabilité SOX et révision des cellules CUA sur SoR",
       "justification": "En institution financière réglementée (BCA, ch. 25.9), BSIF E-23 et SOX / NI 52-109 imposent l'intégrité des systèmes d'enregistrement patrimoniaux et le bail d'extinction de 12 mois des CUA.",
       "tomes": [
         "T3"
@@ -7441,7 +7441,7 @@
       "source_slug": "loi-25-article-12-1",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "encadrement_normatif",
-      "label": "refuse qu'une approbation cosmétique écarte l'article 12.1",
+      "label": "Refuse qu'une approbation cosmétique écarte l'article 12.1",
       "justification": "La Loi 25 (art. 12.1) et le guide MCN Québec 2026 (ch. 22.6) disposent qu'une intervention humaine mineure ou mécanique (93 % d'acceptation) ne soustrait pas une décision entièrement automatisée à la loi.",
       "tomes": [
         "T3"
@@ -7451,7 +7451,7 @@
       "source_slug": "loi-25-article-12-1",
       "target_slug": "memoire-partagee-concurrence-effacement",
       "type": "encadrement_normatif",
-      "label": "impose l'oubli sélectif et le Crypto-Shredding des faits dérivés",
+      "label": "Impose l'oubli sélectif et le Crypto-Shredding des faits dérivés",
       "justification": "L'obligation d'effacement (Loi 25 et RGPD art. 17) s'étend aux blocs Letta, aux arêtes Graphiti et aux journaux d'exécution durable immuables via chiffrement sélectif par locataire (Extrait 14.3, ch. 14.6, 18.11).",
       "tomes": [
         "T3"
@@ -7461,8 +7461,8 @@
       "source_slug": "eu-ai-act",
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "encadrement_normatif",
-      "label": "rend obligatoire la supervision effective et le bouton d'arrêt (art. 14)",
-      "justification": "L'article 14 de l'EU AI Act (échéances haut risque reportées au 2 déc. 2027 / 2 août 2028 par le Digital Omnibus 2026/1744) exige conscience du biais d'automatisation et interruption vers un état sûr (ch. 0.1, 22.6).",
+      "label": "Rend obligatoire la supervision effective et le bouton d'arrêt (art. 14)",
+      "justification": "L'article 14 de l'EU AI Act (échéances haut risque reportées au 2 décembre 2027 / 2 août 2028 par le Digital Omnibus 2026/1744) exige conscience du biais d'automatisation et interruption vers un état sûr (ch. 0.1, 22.6).",
       "tomes": [
         "T3"
       ]
@@ -7471,7 +7471,7 @@
       "source_slug": "ligne-directrice-amf",
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
-      "label": "raccorde 41 attentes AMF et 12 EXIG-AMF à CRE-IA-2026-01-QC",
+      "label": "Raccorde 41 attentes AMF et 12 EXIG-AMF à CRE-IA-2026-01-QC",
       "justification": "La Synthèse de l'Ouverture et la section 0.4 rattachent explicitement les attentes de l'AMF (1er mai 2027, source PDF primaire en statut F) aux exigences traçables du référentiel CRE-IA.",
       "tomes": [
         "T3"
@@ -7481,7 +7481,7 @@
       "source_slug": "iso-iec-42001-nist",
       "target_slug": "anti-verrouillage-standards",
       "type": "encadrement_normatif",
-      "label": "fixe le cadre PDCA et révèle l'absence de norme ISO dédiée aux agents",
+      "label": "Fixe le cadre PDCA et révèle l'absence de norme ISO dédiée aux agents",
       "justification": "Le ch. 11.5–11.6 établit qu'ISO/IEC 42001 (management IA) et les travaux FDIS 24970 / ISO 42105 / NIST CAISI encadrent la gouvernance sans encore normer la sémantique protocolaire des agents.",
       "tomes": [
         "T3"
@@ -7491,7 +7491,7 @@
       "source_slug": "regle-maillon-plus-eleve",
       "target_slug": "echelle-autonomie-l0-l4",
       "type": "encadrement_normatif",
-      "label": "étend le périmètre de sécurité du maillon le plus élevé en amont",
+      "label": "Étend le périmètre de sécurité du maillon le plus élevé en amont",
       "justification": "Énoncée en 0.4, la High-Water Mark Rule impose qu'un agent L1 alimentant un agent L3 sans sas d'assainissement soit soumis aux mêmes contrôles de sécurité et conformité que le palier L3.",
       "tomes": [
         "T3"
@@ -7501,7 +7501,7 @@
       "source_slug": "eclats-sectoriels-extrapoles",
       "target_slug": "encapsulation-patrimoine-it-ot",
       "type": "encadrement_normatif",
-      "label": "exclut les systèmes SIS SIL 2/3 du champ probatoire financier démontré",
+      "label": "Exclut les systèmes SIS SIL 2/3 du champ probatoire financier démontré",
       "justification": "Le balisage méthodologique de l'Ouverture et du ch. 28.9 cantonne l'IT/OT (IEC 62443, IEC 61511 SIL 2/3) au rang d'extrapolation illustrative tout en y interdisant l'actionnement autonome direct.",
       "tomes": [
         "T3"
@@ -7511,7 +7511,7 @@
       "source_slug": "identite-non-humaine-nhi",
       "target_slug": "execution-durable-temporal",
       "type": "encadrement_normatif",
-      "label": "impose la revalidation du mandat et de la révocation au réveil",
+      "label": "Impose la revalidation du mandat et de la révocation au réveil",
       "justification": "Dans Temporal (Extrait 18.4, ch. 18.10–18.11), un workflow réveillé après hibernation multi-jours doit revalider cryptographiquement que le mandat utilisateur et la NHI ne sont pas révoqués.",
       "tomes": [
         "T3"
@@ -7521,7 +7521,7 @@
       "source_slug": "clause-non-avis-licences",
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
-      "label": "qualifie CRE-IA et Tome 3 comme consultatifs sans homologation humaine (DC-P01)",
+      "label": "Qualifie CRE-IA et Tome 3 comme consultatifs sans homologation humaine (DC-P01)",
       "justification": "La page titre (t3-u0001) subordonne tout usage du référentiel par les AE/AS à la clause DC-P01 (non-avis juridique, non-substitution à la décision humaine) sous licences CC BY 4.0 / MIT.",
       "tomes": [
         "T3"
@@ -7531,7 +7531,7 @@
       "source_slug": "bsif-e-23",
       "target_slug": "plateformes-saas-et-asymetrie-tiers",
       "type": "encadrement_normatif",
-      "label": "rend inacceptables les contrôles opaques des plateformes fermées",
+      "label": "Rend inacceptables les contrôles opaques des plateformes fermées",
       "justification": "L'asymétrie constatée au ch. 26.9 (ouvert sur le fil, fermé sur le plan de contrôle pour agents tiers) entre en tension directe avec l'inventaire exhaustif et la gouvernance de bout en bout exigés par BSIF E-23.",
       "tomes": [
         "T3"
@@ -7541,7 +7541,7 @@
       "source_slug": "exigences-cre-ia-305",
       "target_slug": "politiques-opa-rego-hors-modele",
       "type": "encadrement_normatif",
-      "label": "traduit les exigences CRE-IA en garde-fous déterministes vérifiables",
+      "label": "Traduit les exigences CRE-IA en garde-fous déterministes vérifiables",
       "justification": "Les 305 exigences de CRE-IA-2026-01 v1.2 (Ouverture) trouvent leur exécution technique dans les politiques déterministes hors modèle (Cedar/OPA/CEL) et les 108 extraits audités en CI.",
       "tomes": [
         "T3"
@@ -7551,7 +7551,7 @@
       "source_slug": "architecture-reference-6-couches-2-piliers",
       "target_slug": "noyau-controle-possede-cap",
       "type": "concordance_inter_tomes",
-      "label": "aligne la vue 6 couches + 2 piliers du T3 sur le noyau possédé du corpus",
+      "label": "Aligne la vue 6 couches + 2 piliers du T3 sur le noyau possédé du corpus",
       "justification": "Les chapitres 0.1, 11.12 et 23.1–23.2 raccordent la pile 6 couches + 2 piliers du Tome 3 au plan de contrôle possédé et à la partition entre artefacts portables et plateformes commerciales.",
       "tomes": [
         "T3"
@@ -7561,7 +7561,7 @@
       "source_slug": "protocole-wyvern-g0-g5",
       "target_slug": "exigences-cre-ia-305",
       "type": "concordance_inter_tomes",
-      "label": "trace 356 corrections d'audit et 1 614 compléments entre exposés et volets CI",
+      "label": "Trace 356 corrections d'audit et 1 614 compléments entre exposés et volets CI",
       "justification": "Le rapprochement éditorial consigné à la section « Rapprochement des deux éditions » (t3-u0005) assure la cohérence entre exposés sourcés, 31 volets Mise en œuvre et exigences CRE-IA-2026-01.",
       "tomes": [
         "T3"
@@ -7571,7 +7571,7 @@
       "source_slug": "eclats-sectoriels-extrapoles",
       "target_slug": "fil-rouge-groupe-boreal-bel",
       "type": "concordance_inter_tomes",
-      "label": "délimite la branche démontrée BCA/BSN des extrapolations BEL/usine",
+      "label": "Délimite la branche démontrée BCA/BSN des extrapolations BEL/usine",
       "justification": "L'Ouverture et le ch. 0.5 séparent le socle probatoire vérifié (finance BCA, CRE-IA, Borealis-Bench CI) des transpositions sectorielles illustratives du conglomérat Boréal (usine Trois-Rivières, santé FHIR).",
       "tomes": [
         "T3"
@@ -7581,7 +7581,7 @@
       "source_slug": "ligne-directrice-amf",
       "target_slug": "bsif-e-23",
       "type": "concordance_inter_tomes",
-      "label": "synchronise les échéances prudentielles du 1er mai 2027 Québec/fédéral",
+      "label": "Synchronise les échéances prudentielles du 1er mai 2027 Québec/fédéral",
       "justification": "L'Ouverture (0.1 et 0.4) met en regard l'entrée en vigueur du BSIF E-23 et l'alignement de la ligne directrice AMF (Note AMF IA / 12 EXIG-AMF) au 1er mai 2027.",
       "tomes": [
         "T3"
@@ -7591,7 +7591,7 @@
       "source_slug": "gouvernance-duale-ae-as",
       "target_slug": "systems-of-agency",
       "type": "concordance_inter_tomes",
-      "label": "raccorde les parcours AE/AS et CISO aux fiches ADR-001..ADR-031",
+      "label": "Raccorde les parcours AE/AS et CISO aux fiches ADR-001..ADR-031",
       "justification": "La section 0.3 organise l'articulation entre architectes d'entreprise (AE), architectes de solutions (AS), CISO, AgentOps et Juridique à travers la série transversale des ADR du Tome 3.",
       "tomes": [
         "T3"
@@ -7601,7 +7601,7 @@
       "source_slug": "genealogie-eai-soa-fipa-llm",
       "target_slug": "cadre-eif-4-couches",
       "type": "concordance_inter_tomes",
-      "label": "relie vingt ans d'architecture EAI/SOA/FIPA aux 5 niveaux EIF+LCIM",
+      "label": "Relie vingt ans d'architecture EAI/SOA/FIPA aux 5 niveaux EIF+LCIM",
       "justification": "Les chapitres 2 et 3 démontrent la continuité conceptuelle entre registres/contrats SOA-FIPA et les 5 niveaux technique, syntaxique, sémantique, organisationnel et juridique de l'interopérabilité.",
       "tomes": [
         "T3"
@@ -7611,7 +7611,7 @@
       "source_slug": "topologies-patrons-orchestration",
       "target_slug": "finops-focus-cpo",
       "type": "tension_arbitrage",
-      "label": "arbitre gain F1 réflexif/multi-agents contre explosion de coût 4x–15x",
+      "label": "Arbitre gain F1 réflexif/multi-agents contre explosion de coût 4x–15x",
       "justification": "Kulkarni (ch. 16.6) montre qu'une architecture hiérarchique atteint 98,5 % du F1 réflexif pour 60,7 % du coût et que la réflexion s'effondre sous 100k docs/jour; Kim et coll. mesurent −70 % en tâches séquentielles.",
       "tomes": [
         "T3"
@@ -7621,7 +7621,7 @@
       "source_slug": "rag-agentique-contexte",
       "target_slug": "injection-indirecte-prompt",
       "type": "tension_arbitrage",
-      "label": "agrandir la fenêtre dilue l'attention et élargit la surface ASI01",
+      "label": "Agrandir la fenêtre dilue l'attention et élargit la surface ASI01",
       "justification": "Le ch. 13.7 démontre que les grandes fenêtres dégradent le rappel (Lost in the Middle, Context Rot), alourdissent le coût de pré-remplissage et exposent davantage de données non fiables à l'injection indirecte.",
       "tomes": [
         "T3"
@@ -7631,7 +7631,7 @@
       "source_slug": "supervision-hitl-hotl-abstention",
       "target_slug": "criteres-qos-cout-precision-latence",
       "type": "tension_arbitrage",
-      "label": "oppose latence opérationnelle et exigence d'approbation humaine",
+      "label": "Oppose latence opérationnelle et exigence d'approbation humaine",
       "justification": "Un HITL systématique provoque goulots d'étranglement et 93 % d'acceptation mécanique sans valeur (ch. 22.5), imposant de réserver l'approbation aux classes de décision irréversibles.",
       "tomes": [
         "T3"
@@ -7641,7 +7641,7 @@
       "source_slug": "plateformes-saas-et-asymetrie-tiers",
       "target_slug": "noyau-controle-possede-cap",
       "type": "tension_arbitrage",
-      "label": "fermeture du plan de contrôle SaaS contre gouvernance souveraine",
+      "label": "Fermeture du plan de contrôle SaaS contre gouvernance souveraine",
       "justification": "Les 10 plateformes évaluées au ch. 26 sont ouvertes sur le fil (MCP/A2A) mais retiennent registre, politiques et facturation en interne, reléguant l'agent tiers hors du plein droit.",
       "tomes": [
         "T3"
@@ -7651,7 +7651,7 @@
       "source_slug": "anti-patrons-agentiques",
       "target_slug": "facades-mcp-intention-metier",
       "type": "tension_arbitrage",
-      "label": "oppose le mappage rapide OpenAPI 1:1 à la conception par intention",
+      "label": "Oppose le mappage rapide OpenAPI 1:1 à la conception par intention",
       "justification": "Générer 50+ outils bruts depuis OpenAPI sature la fenêtre de contexte et dégrade le choix d'outils (ch. 5.11, 24.3), alors que 5 à 12 façades métier exigent un investissement initial d'encapsulation.",
       "tomes": [
         "T3"
@@ -7661,7 +7661,7 @@
       "source_slug": "anti-patrons-agentiques",
       "target_slug": "taxonomie-acteurs-agentiques",
       "type": "tension_arbitrage",
-      "label": "proscrit le super-agent universel face aux 5 archétypes spécialisés",
+      "label": "Proscrit le super-agent universel face aux 5 archétypes spécialisés",
       "justification": "Concentrer interface, domaine, orchestration et gouvernance dans un super-agent monolithique (ch. 1.7) empêche le moindre privilège, le ciblage de modèle et l'auditabilité des frontières.",
       "tomes": [
         "T3"
@@ -7671,7 +7671,7 @@
       "source_slug": "anti-patrons-agentiques",
       "target_slug": "topologies-patrons-orchestration",
       "type": "tension_arbitrage",
-      "label": "condamne la « salle virtuelle » libre au profit de graphes bornés",
+      "label": "Condamne la « salle virtuelle » libre au profit de graphes bornés",
       "justification": "La croissance quadratique O(n^2) des échanges en salle de réunion virtuelle non bornée (ch. 16.9, 16.12) impose l'arbitrage en faveur d'un agent unique ou d'une topologie hiérarchique/DAG plafonnée.",
       "tomes": [
         "T3"
@@ -7681,8 +7681,8 @@
       "source_slug": "confinement-cua-patrimoine-sans-api",
       "target_slug": "couche-anti-corruption-acl",
       "type": "tension_arbitrage",
-      "label": "tolère CUA à <= 8 % sous bail 12 mois contre refactoring MCP durable",
-      "justification": "La hiérarchie MCP (>= 92 %) -> RPA -> CUA (<= 8 %) du ch. 25.6–25.8 arbitre le délai court terme sur écrans sans API face au risque de fragilité visuelle et à l'obligation de remplacement sous 12 mois.",
+      "label": "Tolère CUA à ≤ 8 % sous bail 12 mois contre refactoring MCP durable",
+      "justification": "La hiérarchie MCP (≥ 92 %) → RPA → CUA (≤ 8 %) du ch. 25.6–25.8 arbitre le délai court terme sur écrans sans API face au risque de fragilité visuelle et à l'obligation de remplacement sous 12 mois.",
       "tomes": [
         "T3"
       ]
@@ -7691,7 +7691,7 @@
       "source_slug": "web-agentique-webmcp-webbotauth",
       "target_slug": "protocole-ap2",
       "type": "tension_arbitrage",
-      "label": "oppose l'authentification par origine HTTP à la preuve d'intention signée",
+      "label": "Oppose l'authentification par origine HTTP à la preuve d'intention signée",
       "justification": "Web Bot Auth (RFC 9421, ch. 9.4) prouve quel robot signe la requête HTTP mais sans prouver l'intention ni la délégation utilisateur qu'apporte la pile AP2 / Verifiable Intent (ch. 10.2).",
       "tomes": [
         "T3"
@@ -7701,7 +7701,7 @@
       "source_slug": "protocole-mcp",
       "target_slug": "protocole-a2a",
       "type": "amplification_synergie",
-      "label": "compose connectivité verticale outil et délégation horizontale pair",
+      "label": "Compose connectivité verticale outil et délégation horizontale pair",
       "justification": "Selon la loi de non-substituabilité (ch. 6.6 et 11.12), MCP standardise l'accès interne aux ressources et outils structurés tandis qu'A2A coordonne des pairs opaques encapsulant leurs propres serveurs MCP.",
       "tomes": [
         "T3"
@@ -7711,7 +7711,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "choregraphie-event-mesh",
       "type": "amplification_synergie",
-      "label": "unit sagas multi-jours déterministes et bus événementiel découplé",
+      "label": "Unit sagas multi-jours déterministes et bus événementiel découplé",
       "justification": "Coupler Temporal (reprise et mémoire de workflow long) avec Kafka/Solace + CloudEvents 1.0 (ch. 18.12, 19.8) permet des transactions inter-divisions à la fois durables et faiblement couplées.",
       "tomes": [
         "T3"
@@ -7721,7 +7721,7 @@
       "source_slug": "memoire-coala-4-tiroirs",
       "target_slug": "dette-semantique-ontologies",
       "type": "amplification_synergie",
-      "label": "croise faits bi-temporels Graphiti et vocabulaire causal Apache Ossie",
+      "label": "Croise faits bi-temporels Graphiti et vocabulaire causal Apache Ossie",
       "justification": "Le graphe bi-temporel ancre ce qui était vrai et quand il a été connu (ch. 14.8–14.9), tandis que la couche sémantique (ch. 12.9–12.10) garantit l'unicité des concepts et préconditions partagés.",
       "tomes": [
         "T3"
@@ -7731,7 +7731,7 @@
       "source_slug": "fiabilite-coordination-taxonomie-mast",
       "target_slug": "gouvernance-duale-ae-as",
       "type": "amplification_synergie",
-      "label": "relie les 14 modes d'échec MAST à l'imputabilité organisationnelle",
+      "label": "Relie les 14 modes d'échec MAST à l'imputabilité organisationnelle",
       "justification": "Le ch. 21.1–21.7 montre que 44,2 % des pannes multi-agents viennent de la conception/spécification et appellent une gouvernance organisationnelle explicite des frontières de rôles et de vérification.",
       "tomes": [
         "T3"
@@ -7741,7 +7741,7 @@
       "source_slug": "maillage-agentique-trois-acceptions",
       "target_slug": "passerelle-mcp-ai-gateway",
       "type": "amplification_synergie",
-      "label": "combine plan de données passerelle, dorsale événementielle et identité",
+      "label": "Combine plan de données passerelle, dorsale événementielle et identité",
       "justification": "En clarifiant les acceptions réseau (agentgateway/Solo.io), dorsale (Solace) et confiance (AgentMesh), le ch. 23.3 articule la passerelle PEP avec la messagerie asynchrone et l'attestation.",
       "tomes": [
         "T3"
@@ -7751,8 +7751,8 @@
       "source_slug": "passerelle-mcp-ai-gateway",
       "target_slug": "observabilite-otel-genai",
       "type": "amplification_synergie",
-      "label": "centralise la télémétrie OTel et le double couloir au chemin obligé",
-      "justification": "Placer l'instrumentation OTel et le contrôle C9 double couloir (PII vs trace scellée) sur la passerelle garantit 100 % de visibilité sur MCP, A2A et appels LLM sans dépendre du code de chaque agent (ch. 24.5).",
+      "label": "Centralise la télémétrie OTel et le double couloir au chemin obligé",
+      "justification": "Placer l'instrumentation OTel et le contrôle C9 double couloir (PII et trace scellée) sur la passerelle garantit 100 % de visibilité sur MCP, A2A et appels LLM sans dépendre du code de chaque agent (ch. 24.5).",
       "tomes": [
         "T3"
       ]
@@ -7761,7 +7761,7 @@
       "source_slug": "protocole-ap2",
       "target_slug": "protocoles-interfaces-agui-a2ui-webrtc",
       "type": "amplification_synergie",
-      "label": "relie l'approbation opérateur AG-UI/A2UI au mandat signé AP2/x402",
+      "label": "Relie l'approbation opérateur AG-UI/A2UI au mandat signé AP2/x402",
       "justification": "Au poste opérateur du fil rouge Boréal (section 10.12, Extraits 10.1–10.2), AG-UI/A2UI affiche la demande d'escalade HOTL avant signature FIDO2 du Cart Mandate AP2 et règlement HTTP x402.",
       "tomes": [
         "T3"
@@ -7771,7 +7771,7 @@
       "source_slug": "federation-multi-plateformes-gravite",
       "target_slug": "clauses-sortie-portabilite-interchangeabilite",
       "type": "amplification_synergie",
-      "label": "allie fédération par gravité technique et réversibilité contractuelle",
+      "label": "Allie fédération par gravité technique et réversibilité contractuelle",
       "justification": "Le ch. 27 associe la portabilité des actifs ouverts (agents, skills, prompts, mémoires exportables) aux 9 clauses de sortie B-10/Data Act pour éviter la captivité multi-SaaS.",
       "tomes": [
         "T3"
@@ -7781,7 +7781,7 @@
       "source_slug": "chaine-approvisionnement-agent-skills",
       "target_slug": "rag-agentique-contexte",
       "type": "amplification_synergie",
-      "label": "apporte la divulgation progressive SKILL.md sous contrôle SHA-256",
+      "label": "Apporte la divulgation progressive SKILL.md sous contrôle SHA-256",
       "justification": "La divulgation en trois paliers d'Agent Skills (ch. 5.12, 13.3 : SkillsBench +16,6 pts) n'est sûre en production que couplée au registre interne revu et au scellement SHA-256 Skills over MCP.",
       "tomes": [
         "T3"
@@ -7791,7 +7791,7 @@
       "source_slug": "etat-des-lieux-adoption-map-2027",
       "target_slug": "trajectoire-consolidation-standards-2027-2028",
       "type": "projection_temporelle",
-      "label": "projette l'écart pilote-production vers trois horloges et H1–H6",
+      "label": "Projette l'écart pilote-production vers trois horloges et H1–H6",
       "justification": "Partant des constats 2026–2027 (MAP 68 % < 10 étapes, prévision Gartner > 40 % d'annulations), le ch. 4.4–4.5 modélise la divergence entre horloges éditeurs, standards et régulateurs sur 2027–2028.",
       "tomes": [
         "T3"
@@ -7801,7 +7801,7 @@
       "source_slug": "trajectoire-consolidation-standards-2027-2028",
       "target_slug": "anti-verrouillage-standards",
       "type": "projection_temporelle",
-      "label": "fonde la posture suivre/contribuer/attendre sur 3 scénarios 2027–2030",
+      "label": "Fonde la posture suivre/contribuer/attendre sur 3 scénarios 2027–2030",
       "justification": "Les 3 scénarios du ch. 11.8 (convergence AAIF/IETF, bifurcation régionale avec GB/Z 185-2026, prolifération) orientent l'architecture en adaptateurs remplaçables de la section 11.10 et d'ADR-004.",
       "tomes": [
         "T3"
@@ -7811,8 +7811,8 @@
       "source_slug": "genealogie-eai-soa-fipa-llm",
       "target_slug": "systems-of-agency",
       "type": "projection_temporelle",
-      "label": "retrace l'évolution 2000–2027 vers les Systems of Agency à 3 générations",
-      "justification": "Les chapitres 1.6 et 2 montrent la transition historique EAI -> SOA -> API -> EDA et des copilotes synchrones 2023–2024 vers l'orchestration de spécialistes L2/L3 en 2026–2027.",
+      "label": "Retrace l'évolution 2000–2027 vers les Systèmes d'agentivité à trois générations",
+      "justification": "Les chapitres 1.6 et 2 retracent la transition historique EAI → SOA → API → EDA et le passage des copilotes synchrones de 2023–2024 vers l'orchestration de spécialistes L2/L3 en 2026–2027.",
       "tomes": [
         "T3"
       ]
@@ -7821,7 +7821,7 @@
       "source_slug": "did-vc-passeport-agent",
       "target_slug": "trajectoire-consolidation-standards-2027-2028",
       "type": "projection_temporelle",
-      "label": "place la fédération DID/VC inter-organisations en horizon 2027–2030",
+      "label": "Place la fédération DID/VC inter-organisations en horizon 2027–2030",
       "justification": "Les chapitres 7.2 et 11.10 placent ANP, W3C Agent Trust CG et AGNTCY Agent Badge en posture « attendre » pour la production tant que le consensus inter-entreprises reste en construction.",
       "tomes": [
         "T3"
@@ -7831,7 +7831,7 @@
       "source_slug": "observabilite-otel-genai",
       "target_slug": "exigences-cre-ia-305",
       "type": "projection_temporelle",
-      "label": "suit la maturation OTel Development vers la preuve d'audit 2027",
+      "label": "Suit la maturation OTel Development vers la preuve d'audit 2027",
       "justification": "Le ch. 0.6 et le ch. 5.2 signalent que les conventions OTel GenAI/MCP restent au statut Development en 2026–2027 et nécessitent un profil interne stable pour satisfaire CRE-IA d'ici mai 2027.",
       "tomes": [
         "T3"
@@ -7841,7 +7841,7 @@
       "source_slug": "post-quantique-ml-dsa-slh-dsa",
       "target_slug": "bsif-e-23",
       "type": "projection_temporelle",
-      "label": "anticipe l'agilité cryptographique des canaux B2B et industriels 2026–2030",
+      "label": "Anticipe l'agilité cryptographique des canaux B2B et industriels 2026–2030",
       "justification": "L'adoption précoce de MLS hybride X25519MLKEM768 sur SLIM (ch. 6.10) prépare les liaisons inter-entreprises et IDMZ de Boréal aux futures exigences de résilience cryptographique prudentielle.",
       "tomes": [
         "T3"

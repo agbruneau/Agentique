@@ -29,8 +29,8 @@
         "systems-of-agency",
         "taxonomie-acteurs-agentiques"
       ],
-      "title": "Du copilote passif à la boucle System of Action : 5 paliers d'autonomie de trajectoire et 5 archétypes sans super-agent",
-      "insertion_point": "Chapitre 01 (§01.2.1 — Paradigme Systems of Agency, après le thème `rupture-modele-conversationnel-agent-boucle`)",
+      "title": "Du copilote passif à la boucle System of Action : cinq paliers d'autonomie de trajectoire et cinq archétypes sans super-agent",
+      "insertion_point": "Chapitre 01 (§ 01.2.1 — Paradigme des Systèmes d'agentivité, après le thème `rupture-modele-conversationnel-agent-boucle`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -38,31 +38,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "En dix secondes, un dirigeant saisit la différence entre un assistant qui répond une fois sans effet de bord et un agent qui agit en boucle (PEAS/BDI/POMDP) sur les systèmes de l'entreprise. Le schéma montre pourquoi on classe chaque cas sur cinq paliers (du LLM augmenté au système composé) et pourquoi on spécialise cinq rôles au lieu de bâtir un super-agent omniscient.",
-      "vulgarization_angle": "Opposer un guichet d'information (un texte affiché à l'écran) à une brigade de chantier où chaque spécialiste (accueil, expert domaine, opérateur, chef de coordination, inspecteur) porte un outillage borné sous contrat.",
+      "pedagogical_objective": "Ce schéma permet à la direction de distinguer avec précision un assistant conversationnel mono-tour sans effet de bord d'un agent opérant en boucle fermée (PEAS/BDI/POMDP) sur les systèmes de l'entreprise. Il illustre pourquoi chaque cas d'usage est classé selon cinq paliers (du LLM augmenté au système composé) et pourquoi l'architecture spécialise cinq rôles fonctionnels plutôt que de concevoir un super-agent omniscient.",
+      "vulgarization_angle": "Opposer un terminal de consultation passive (délivrant un texte à l'écran sans actionneur) à un atelier industriel structuré où chaque poste spécialisé (interface, spécialiste de domaine, opérateur de tâche, orchestrateur et inspecteur de conformité) dispose d'un outillage borné sous contrat.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Avant — Modèle conversationnel isolé (1 tour sans effet de bord)",
-            "content": "L'utilisateur pose une question dans les Systems of Engagement (SoE) et recopie manuellement la réponse vers les dossiers métier sans actionneur ni trace système."
+            "label": "Avant — Modèle conversationnel isolé (un tour sans effet de bord)",
+            "content": "L'utilisateur interroge les Systems of Engagement (SoE) puis recopie manuellement la réponse vers les dossiers métier, sans actionneur ni trace système."
           },
           {
             "zone_id": "Z2",
             "label": "Après — Strate System of Action (SoA) en boucle PEAS / POMDP bornée",
-            "content": "Boucle perception → raisonnement → action → observation sous ADR-001 (zéro SQL direct sur les SoR) respectant les 7 critères vérifiables de production."
+            "content": "Boucle perception → raisonnement → action → observation conforme à ADR-001 (zéro SQL direct sur les SoR) et satisfaisant les sept critères vérifiables de production."
           },
           {
             "zone_id": "Z3",
-            "label": "Décomposition en 5 paliers et 5 archétypes fonctionnels (proscription du super-agent)",
+            "label": "Décomposition en cinq paliers et cinq archétypes fonctionnels (proscription du super-agent)",
             "content": "Séparation stricte entre agent d'interface, spécialiste de domaine, travailleur de tâche, orchestrateur et méta-gouverneur à privilèges disjoints."
           }
         ],
         "numbered_flows": [
-          "① Un événement ou un usager sollicite la strate System of Engagement (SoE), qui transmet une intention structurée au System of Action (SoA).",
-          "② Le décideur d'architecture classe le besoin sur les 5 paliers (qui choisit le chemin : code fixe vs boucle) avant d'activer un archétype spécialisé.",
-          "③ L'agent exécute une boucle bornée (PEAS / BDI / POMDP) sous contrainte d'optimalité limitée sans toucher directement aux tables des Systems of Record (SoR).",
-          "④ Le méta-gouverneur et la passe d'inventaire vérifient la condition d'arrêt et scellent la trace à chaque itération."
+          "① Un événement ou un utilisateur sollicite la strate System of Engagement (SoE), qui transmet une intention structurée au System of Action (SoA).",
+          "② L'architecture classe le besoin selon les cinq paliers (selon que le code fixe ou la boucle décide du chemin) avant d'activer un archétype spécialisé.",
+          "③ L'agent exécute une boucle bornée (PEAS / BDI / POMDP) sous contrainte d'optimalité limitée sans accéder directement aux tables des Systems of Record (SoR).",
+          "④ Le méta-gouverneur et le registre d'inventaire vérifient la condition d'arrêt et scellent la trace à chaque itération."
         ],
         "color_legend": [
           {
@@ -71,14 +71,14 @@
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Strate System of Action (SoA) et archétypes spécialisés à droits bornés"
+            "meaning": "Strate System of Action (SoA) et archétypes spécialisés à privilèges bornés"
           },
           {
             "color_token": "Vert émeraude (#047857)",
             "meaning": "Systems of Record (SoR) protégés et critère d'arrêt déterministe vérifié"
           }
         ],
-        "key_takeaway_box": "À retenir : Un agent n'est pas un clavardage amélioré, mais un opérateur en boucle capable d'effets irréversibles; l'entreprise sépare donc la couche d'action (SoA) des livres comptables (SoR) et bannit le super-agent universel."
+        "key_takeaway_box": "Un agent ne constitue pas un simple dialogue automatisé, mais un opérateur en boucle capable d'effets irréversibles ; l'entreprise isole donc la couche d'action (SoA) des livres comptables (SoR) et proscrit tout super-agent universel."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -96,7 +96,7 @@
           "title": "Les cinq termes retenus par ce chapitre, du plus simple au plus englobant, avec qui décide du chemin dans chacun; workflow agentique, agent et système multi-agents sont aussi des systèmes d’IA composés.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-03 - Les cinq termes retenus par ce chapitre, du plus simple au plus.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-03.svg",
-          "role_note": "Illustre les cinq paliers taxonomiques selon qui décide du chemin d'exécution."
+          "role_note": "Illustre les cinq paliers taxonomiques selon l'entité qui détermine la trajectoire d'exécution."
         },
         {
           "tome_id": "T1",
@@ -104,7 +104,7 @@
           "title": "La boucle agentique, et le critère d’arrêt qui la distingue d’un appel unique.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-04.2 - La boucle agentique, et le critère d'arrêt qui la distingue d'un.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-04.2.png",
-          "role_note": "Formalise la boucle perception-raisonnement-action-observation et son critère d'arrêt."
+          "role_note": "Formalise la boucle perception-raisonnement-action-observation ainsi que son critère d'arrêt."
         },
         {
           "tome_id": "T6",
@@ -112,7 +112,7 @@
           "title": "Stratification évolutive du système d’information : SoE, Systems of Agency et SoR",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-01 - Stratification évolutive du système d'information - SoE, Systems.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-01.svg",
-          "role_note": "Positionne visuellement SoE, Systems of Agency et SoR pour la direction métier."
+          "role_note": "Positionne visuellement les Systems of Engagement, les Systèmes d'agentivité et les Systems of Record à l'intention de la direction métier."
         }
       ]
     },
@@ -129,44 +129,44 @@
         "echanges-intentions-contrats-probabilistes",
         "systems-of-agency"
       ],
-      "title": "Mirage du « agent washing » vs réalité terrain MAP 2027 et passage aux engagements observables",
-      "insertion_point": "Chapitre 01 (§01.2.1 — Paradigme Systems of Agency, après le thème `etat-des-lieux-adoption-map-2027`)",
+      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP 2027 et passage aux engagements observables",
+      "insertion_point": "Chapitre 01 (§ 01.2.1 — Paradigme des Systèmes d'agentivité, après le thème `etat-des-lieux-adoption-map-2027`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS"
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif visuel déjoue en dix secondes le discours commercial (« agent washing ») : 68 % des systèmes observés par l'étude MAP s'arrêtent avant 10 étapes, 95 % des pilotes MIT NANDA n'ont pas de ROI chiffré et Gartner prévoit > 40 % d'annulations d'ici fin 2027. Il montre comment sécuriser les échanges d'intentions floues grâce à des contrats comportementaux mesurables.",
-      "vulgarization_angle": "Mettre face à face l'affiche publicitaire d'un robot autonome tout-terrain et le carnet d'inspection réel d'un chantier (trajets balisés à 10 pas, engagements écrits et vérifiés à l'exécution plutôt que vœux pieux).",
+      "pedagogical_objective": "Ce comparatif visuel déjoue méthodiquement le discours commercial (« agent washing ») : 68 % des systèmes recensés par l'étude MAP s'interrompent avant 10 étapes, 95 % des projets pilotes MIT NANDA ne dégagent aucun ROI chiffré et Gartner prévoit plus de 40 % d'annulations d'ici la fin de 2027. Il démontre comment sécuriser les échanges d'intentions sous-spécifiées au moyen de contrats comportementaux mesurables.",
+      "vulgarization_angle": "Confronter une brochure promotionnelle vantant un robot autonome tout-terrain au journal de bord réel d'une exploitation réglementée : parcours balisés à dix pas, protocoles signés et vérifications à l'exécution plutôt que promesses invérifiables.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Discours déclaratif vs réalité statistique 2026–2027",
-            "content": "Sondages d'usage général (StatCan 19,2 % / 40,4 % finance ; McKinsey 40 % grandes org.) vs réalité MAP (68 % ≤ 10 étapes, 16/20 flux fixes, 74 % revue humaine) et 95 % sans ROI chiffré."
+            "label": "Discours déclaratif face à la réalité statistique de 2026–2027",
+            "content": "Sondages d'usage général (Statistique Canada 19,2 % / 40,4 % en finance ; McKinsey 40 % des grandes organisations) confrontés à l'étude MAP (68 % ≤ 10 étapes, 16/20 flux fixes, 74 % de revue humaine) et à 95 % de projets sans ROI chiffré."
           },
           {
             "zone_id": "Z2",
             "label": "Règle « soutien n'est pas production » et cas réels vérifiés",
-            "content": "Distinction entre assistants de productivité interne et systèmes transactionnels autonomes (Nubank KDD 2026 : 5 agents ReAct sur graphes déterministes, zéro MCP/A2A)."
+            "content": "Distinction entre assistants de productivité interne et systèmes transactionnels autonomes (Nubank KDD 2026 : 5 agents ReAct sur graphes déterministes, sans MCP ni A2A)."
           },
           {
             "zone_id": "Z3",
             "label": "Passage des données figées aux engagements sociaux observables",
-            "content": "Remplacement de l'ancien modèle mentaliste FIPA-ACL par des contrats comportementaux probabilistes (probabilité minimale, tolérance, vérification à l'exécution selon Bhardwaj 2026)."
+            "content": "Remplacement de l'ancien modèle mentaliste FIPA-ACL par des contrats comportementaux probabilistes (probabilité minimale, tolérance d'écart et vérification à l'exécution selon Bhardwaj 2026)."
           }
         ],
         "numbered_flows": [
-          "① Filtrer toute annonce éditeur au crible de la règle « soutien n'est pas production » et des ratios observés (ratio 82:1 NHI/humain CyberArk, énergie AIE 415 → 945 TWh).",
-          "② Bornage par contrat comportemental probabiliste dès que deux acteurs échangent une intention sous-spécifiée au lieu d'une structure statique.",
-          "③ Remplacer les préconditions mentales invérifiables (FIPA-ACL) par des engagements sociaux observables et auditables (Singh / Yolum & Singh).",
-          "④ Exiger des essais répétés à l'exécution avant de classer un cas en production réelle."
+          "① Filtrer toute allégation d'éditeur au crible de la règle « soutien n'est pas production » et des ratios observés (ratio 82:1 NHI/humain CyberArk, consommation énergétique AIE 415 → 945 TWh).",
+          "② Encadrer par contrat comportemental probabiliste tout échange d'intentions sous-spécifiées entre deux acteurs au lieu d'une structure statique.",
+          "③ Substituer des engagements sociaux observables et auditables (Singh / Yolum & Singh) aux préconditions mentales invérifiables de FIPA-ACL.",
+          "④ Exiger des essais répétés à l'exécution préalablement au classement d'un cas en production réelle."
         ],
         "color_legend": [
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Effet vitrine « agent washing » et écart pilote-valeur (MIT NANDA 95 %, Gartner > 40 % annulations)"
+            "meaning": "Discours promotionnel (« agent washing ») et écart pilote-valeur (MIT NANDA 95 %, Gartner > 40 % d'annulations)"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
@@ -177,7 +177,7 @@
             "meaning": "Contrat comportemental probabiliste et engagement social vérifiable à l'exécution"
           }
         ],
-        "key_takeaway_box": "À retenir : Soutien n'est pas production. En 2026–2027, la réussite repose sur des parcours courts, prédéfinis et liés par des engagements observables — jamais sur l'autonomie magique promise en vitrine."
+        "key_takeaway_box": "Soutien n'est pas production : sur l'horizon 2026–2027, la viabilité opérationnelle repose sur des parcours courts, prédéfinis et régis par des engagements observables, jamais sur une autonomie illimitée."
       },
       "reuse_status": "creation_originale",
       "linked_tome_figures": []
@@ -195,8 +195,8 @@
         "raisonnement-inference-limites-planification",
         "revue-litterature-mlr-prisma"
       ],
-      "title": "Tamiser la preuve : pyramide à 6 niveaux, filtre PRISMA-ScR W3.2 et vérificateur externe LLM-Modulo",
-      "insertion_point": "Chapitre 01 (§01.2.2 — Généalogie et fondements, après le thème `revue-litterature-mlr-prisma`)",
+      "title": "Tamiser la preuve : pyramide à six niveaux, filtre PRISMA-ScR W3.2 et vérificateur externe LLM-Modulo",
+      "insertion_point": "Chapitre 01 (§ 01.2.2 — Généalogie et fondements, après le thème `revue-litterature-mlr-prisma`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -204,36 +204,36 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce parcours montre comment le PRD évite les décisions fondées sur des rumeurs ou sur la prose trompeuse des modèles de raisonnement. Il illustre l'entonnoir PRISMA-ScR W3.2 (582 notices ramenées à 160 études lues intégralement sous empreinte SHA-256) et pourquoi tout plan produit par un LLM exige un contrôleur mathématique externe.",
-      "vulgarization_angle": "Représenter une double chaîne de contrôle qualité : un tamis scientifique à six grilles pour les preuves documentaires, doublé d'un détecteur de faux plans qui refuse de croire le raisonnement « à voix haute » du modèle.",
+      "pedagogical_objective": "Ce parcours démontre comment le PRD prémunit la gouvernance contre les décisions fondées sur des allégations non vérifiées ou sur la prose plausible des modèles de raisonnement. Il illustre l'entonnoir PRISMA-ScR W3.2 (582 notices ramenées à 160 études lues intégralement sous empreinte SHA-256) et explique pourquoi tout plan généré par un LLM requiert un contrôleur mathématique externe.",
+      "vulgarization_angle": "Représenter une double chaîne d'assurance qualité : un crible métrologique à six niveaux pour les preuves documentaires, doublé d'un banc de validation formelle qui refuse d'accepter le raisonnement discursif du modèle sans vérification indépendante.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Entonnoir scientifique PRISMA-ScR / Garousi (lot W3.2 — DC-P13)",
-            "content": "582 notices (5 API ouvertes productives, 3 en statut F sans contournement A4) → 453 dédupliquées (AACODS 9,97/12) → 223 textes intégraux OA SHA-256 → 160 incluses (κ = 0,7935, 0 % sur résumé seul)."
+            "content": "582 notices (5 interfaces ouvertes productives, 3 en statut F sans contournement A4) → 453 dédupliquées (AACODS 9,97/12) → 223 textes intégraux en libre accès SHA-256 → 160 incluses (κ = 0,7935, 0 % sur résumé seul)."
           },
           {
             "zone_id": "Z2",
-            "label": "Pyramide probante à 6 niveaux sur les études de cas terrain",
-            "content": "Niveau 1 arbitré (Nubank KDD 2026) au sommet vs Niveau 2 (MAP), Niveau 3 (éditeurs), Niveau 4 (SEC 0,758, ITBench 10–25 %, ORCA-bench) et Niveau 5 (registre MCN 432 initiatives)."
+            "label": "Pyramide probante à six niveaux sur les études de cas terrain",
+            "content": "Niveau 1 arbitré (Nubank KDD 2026) au sommet par rapport au Niveau 2 (MAP), au Niveau 3 (éditeurs), au Niveau 4 (SEC 0,758, ITBench 10–25 %, ORCA-bench) et au Niveau 5 (registre MCN, 432 initiatives)."
           },
           {
             "zone_id": "Z3",
             "label": "Limite des planificateurs et non-fiabilité de la trace CoT (LLM-Modulo)",
-            "content": "Les échecs PlanBench imposent un vérificateur déterministe externe (LLM+P / LLM-Modulo), tandis que l'infidélité CoT interdit d'en faire une barrière de sécurité."
+            "content": "Les échecs documentés sur PlanBench imposent un vérificateur déterministe externe (LLM+P / LLM-Modulo), tandis que l'infidélité de la trace CoT interdit d'en faire une barrière de sécurité."
           }
         ],
         "numbered_flows": [
-          "① Collecter les sources ouvertes sans contournement puis éliminer les notices non lues intégralement (0 % sur résumé seul).",
-          "② Classer chaque preuve empirique du niveau 1 (production arbitrée) au niveau 6 (déclaratif).",
-          "③ Cantonne le calcul étendu à l'inférence (ToT, LATS, DeepSeek-R1) à la seule proposition de plans candidats.",
-          "④ Valider mécaniquement chaque étape par un vérificateur externe LLM-Modulo sans faire confiance à la trace Chain-of-Thought."
+          "① Collecter les sources ouvertes sans contournement puis écarter toute notice non lue intégralement (0 % sur résumé seul).",
+          "② Classifier chaque preuve empirique du niveau 1 (production arbitrée) au niveau 6 (déclaratif).",
+          "③ Cantonner le calcul étendu à l'inférence (ToT, LATS, DeepSeek-R1) à la seule proposition de plans candidats.",
+          "④ Valider mécaniquement chaque étape au moyen d'un vérificateur externe LLM-Modulo sans accorder de valeur probante à la trace Chain-of-Thought."
         ],
         "color_legend": [
           {
             "color_token": "Bleu marine (#1E3A8A)",
-            "meaning": "Corpus scientifique vérifié sur texte intégral OA haché SHA-256 (160 études W3.2)"
+            "meaning": "Corpus scientifique vérifié sur texte intégral en libre accès haché SHA-256 (160 études W3.2)"
           },
           {
             "color_token": "Ambre doré (#D97706)",
@@ -244,7 +244,7 @@
             "meaning": "Vérificateur formel externe LLM-Modulo autorisant ou rejetant le plan"
           }
         ],
-        "key_takeaway_box": "À retenir : Ni un résumé d'article non lu ni le monologue « raisonné » d'un modèle ne constituent une preuve. Tout plan critique doit être validé par un vérificateur externe indépendant."
+        "key_takeaway_box": "Ni un résumé d'article non consulté intégralement ni le monologue raisonné d'un modèle ne valent preuve ; tout plan critique doit être sanctionné par un vérificateur externe indépendant."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -254,7 +254,7 @@
           "title": "Diagramme de flux PRISMA-ScR / Garousi (lot W3.2 — CHANTIER-10) : 582 notices brutes issues de 5 API scientifiques ouvertes productives, 453 dédupliquées (67,11 % évaluées par les pairs), 223 textes intégraux OA hachés SHA-256, double filtrage indépendant (κ = 0,7935) et 160 études incluses sur texte intégral (33,75 % évaluées par les pairs, 0,0 % sur résumé seul).",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-64 - Diagramme de flux PRISMA-ScR - Garousi (lot W3.2 - CHANTIER-10) - 582.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-64.svg",
-          "role_note": "Fournit l'entonnoir complet PRISMA-ScR W3.2 (582 notices vers 160 textes intégraux SHA-256)."
+          "role_note": "Fournit l'entonnoir complet PRISMA-ScR W3.2 (582 notices ramenées à 160 textes intégraux authentifiés par SHA-256)."
         },
         {
           "tome_id": "T1",
@@ -262,7 +262,7 @@
           "title": "Du raisonnement linéaire à la recherche structurée : trois régimes, et ce que chacun corrige. (§ 4.3.1-4.3.2).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-04.3 - Du raisonnement linéaire à la recherche structurée - trois.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-04.3.png",
-          "role_note": "Distingue les trois régimes de raisonnement à l'inférence et leurs garde-fous externes."
+          "role_note": "Distingue les trois régimes de raisonnement à l'inférence ainsi que leurs garde-fous externes."
         },
         {
           "tome_id": "T3",
@@ -270,7 +270,7 @@
           "title": "Du repérage au corpus retenu : 124 notices rendues par dix requêtes, 83 retenues après tri, 82 confirmées auprès d’arXiv ou de Crossref. À droite, les notices rendues et retenues pour chaque requête.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-63 - Du repérage au corpus retenu - 124 notices rendues par dix requêtes.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-63.svg",
-          "role_note": "Documente l'écart méthodologique initial (83 notices sur résumé) remplacé par le protocole W3.2."
+          "role_note": "Documente l'écart méthodologique initial (83 notices évaluées sur résumé) remplacé par le protocole W3.2."
         }
       ]
     },
@@ -286,8 +286,8 @@
         "loi-de-lusser",
         "erreurs-silencieuses-cascade"
       ],
-      "title": "Loi de Lusser et piège du HTTP 200 OK : pourquoi 94 % de précision par étape chute à 53,9 % sur 10 pas",
-      "insertion_point": "Chapitre 02 (§02.2.1 — Loi de Lusser et erreurs en cascade, après le thème `loi-de-lusser`)",
+      "title": "Loi de Lusser et piège du HTTP 200 OK : pourquoi 94 % de précision par étape chute à 53,9 % sur dix pas",
+      "insertion_point": "Chapitre 02 (§ 02.2.1 — Loi de Lusser et erreurs en cascade, après le thème `loi-de-lusser`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -295,19 +295,19 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "En un coup d'œil, même un décideur non mathématicien comprend deux dangers fatals des agents sans garde-fous : les erreurs se multiplient au fil des étapes (loi de Lusser : 0,94¹⁰ = 53,9 %) et un agent qui se trompe n'affiche pas une panne rouge (HTTP 500), mais livre une réponse polie et fausse (HTTP 200 OK, HT au lieu de TTC) qui contamine jusqu'à 17,2× la chaîne.",
-      "vulgarization_angle": "Comparer le jeu du téléphone arabe en chaîne ouverte (où chaque maillon à 94 % dégrade le message jusqu'à 53,9 % sans alarme) à une chaîne d'assemblage dotée de calibres passe-partout après chaque poste.",
+      "pedagogical_objective": "Ce schéma permet aux décideurs non mathématiciens de saisir deux risques majeurs inhérents aux agents sans garde-fous : d'une part, les erreurs se multiplient au fil des étapes (loi de Lusser : 0,94¹⁰ = 53,9 %) ; d'autre part, un agent défaillant ne signale pas une panne franche (HTTP 500), mais livre une réponse polie et erronée (HTTP 200 OK, montant hors taxes confondu avec toutes taxes comprises) qui amplifie l'écart jusqu'à 17,2× dans la chaîne.",
+      "vulgarization_angle": "Comparer une chaîne de transmission non vérifiée (où chaque relais fiable à 94 % dégrade le signal jusqu'à 53,9 % sans alarme) à une ligne d'assemblage métrologique munie de calibres passe-ou-ne-passe-pas après chaque poste de transformation.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Panne franche classique (HTTP 500) vs erreur sémantique silencieuse (OWASP ASI08)",
-            "content": "Microservice en erreur stoppant net le flux vs maillon LLM renvoyant un JSON valide sous HTTP 200 OK portant un montant HT pris pour TTC (non-compositionnalité H-24)."
+            "label": "Panne franche classique (HTTP 500) par rapport à l'erreur sémantique silencieuse (OWASP ASI08)",
+            "content": "Microservice en erreur interrompant nettement le flux par opposition au maillon LLM retournant un JSON valide sous HTTP 200 OK avec un montant HT interprété comme TTC (non-compositionnalité H-24)."
           },
           {
             "zone_id": "Z2",
             "label": "Courbe de décroissance multiplicative de Lusser (NIST/SEMATECH 8.1.8.1)",
-            "content": "Chute de R = p^n sans contrôle intermédiaire : 0,94¹⁰ ≈ 53,9 %, 0,95¹⁵ ≈ 46,3 %, éclairant l'arrêt de METR v1.1 (17,4 h à 50 % chutant 5–6× à 3,1 h à 80 %)."
+            "content": "Chute de R = p^n sans contrôle intermédiaire : 0,94¹⁰ ≈ 53,9 %, 0,95¹⁵ ≈ 46,3 %, éclairant l'arrêt de METR v1.1 (17,4 h à 50 % chutant d'un facteur 5 à 6× vers 3,1 h à 80 %)."
           },
           {
             "zone_id": "Z3",
@@ -317,14 +317,14 @@
         ],
         "numbered_flows": [
           "① Une étape probabiliste commet une erreur plausible (JSON valide, HTTP 200 OK) invisible au contrôle syntaxique.",
-          "② Sans vérification intermédiaire, les étapes suivantes amplifient l'écart jusqu'à 17,2× (tempêtes HTTP 429, boucles sémantiques, livelocks).",
-          "③ L'enveloppe déterministe (ADR-002 / CAP-007) découpe la chaîne et applique une assertion métier après chaque étape cognitive.",
-          "④ Le compteur de sauts et le disjoncteur coupent la propagation avant d'atteindre un System of Record."
+          "② En l'absence de vérification intermédiaire, les étapes aval amplifient l'écart jusqu'à 17,2× (tempêtes HTTP 429, boucles sémantiques, livelocks).",
+          "③ L'enveloppe déterministe (ADR-002 / CAP-007) segmente la chaîne et applique une assertion métier après chaque étape cognitive.",
+          "④ Le compteur de sauts et le disjoncteur interrompent la propagation avant d'atteindre un System of Record."
         ],
         "color_legend": [
           {
             "color_token": "Corail alerte (#DC2626)",
-            "meaning": "Cascade silencieuse sous HTTP 200 OK (ASI08) et chute exponentielle R = p^n"
+            "meaning": "Cascade silencieuse sous HTTP 200 OK (ASI08) et décroissance exponentielle R = p^n"
           },
           {
             "color_token": "Ambre doré (#D97706)",
@@ -335,7 +335,7 @@
             "meaning": "Vérification déterministe d'étape et compteur de sauts bloquant l'amplification"
           }
         ],
-        "key_takeaway_box": "À retenir : Sans contrôle déterministe entre les étapes, un agent fiable à 94 % échoue près d'une fois sur deux sur dix pas — et produit ses pires erreurs en silence avec un code HTTP 200 OK."
+        "key_takeaway_box": "En l'absence de contrôle déterministe entre les étapes, un agent fiable à 94 % échoue près d'une fois sur deux sur dix pas — et propage ses défaillances les plus critiques en silence sous un statut HTTP 200 OK."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -345,7 +345,7 @@
           "title": "Dégradation géométrique de la réussite sans contrôle déterministe (loi de Lusser)",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-04.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-04.svg",
-          "role_note": "Montre directement la courbe de dégradation géométrique de la loi de Lusser."
+          "role_note": "Illustre directement la courbe de dégradation géométrique issue de la loi de Lusser."
         },
         {
           "tome_id": "T1",
@@ -353,7 +353,7 @@
           "title": "La non-compositionnalité de la sûreté : deux arêtes sûres, un chemin qui ne l’est pas.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-37.3 - La non-compositionnalité de la sûreté - deux arêtes sûres.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.3.png",
-          "role_note": "Illustre la non-compositionnalité de la sûreté entre deux arêtes individuellement sûres."
+          "role_note": "Met en évidence la non-compositionnalité de la sûreté entre deux arêtes individuellement sûres."
         },
         {
           "tome_id": "T3",
@@ -361,7 +361,7 @@
           "title": "L’agent des ventes et l’agent des finances échangent un message conforme au schéma, mais donnent deux sens au « revenu du trimestre ». Une erreur de syntaxe produit un rejet; une erreur de sens produit une réponse bien formée, que l’agent suivant reprend comme un fait.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-20 - L'agent des ventes et l'agent des finances échangent un message.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-20.svg",
-          "role_note": "Démontre l'erreur de sens silencieuse (HT vs TTC / revenu) sous schéma syntaxiquement valide."
+          "role_note": "Démontre l'erreur sémantique silencieuse (HT/TTC ou définition du revenu) sous un schéma syntaxiquement valide."
         }
       ]
     },
@@ -377,8 +377,8 @@
         "surcout-multi-agent-debat-mast",
         "erreurs-silencieuses-cascade"
       ],
-      "title": "Autopsie des 14 pannes MAST (1 642 traces) et arbitrage : agent unique continu vs collectif à 15× le coût",
-      "insertion_point": "Chapitre 02 (§02.2.1 — Loi de Lusser et erreurs en cascade, après le thème `surcout-multi-agent-debat-mast`)",
+      "title": "Autopsie des 14 pannes MAST (1 642 traces) et arbitrage : agent unique continu par rapport au collectif à 15× le coût",
+      "insertion_point": "Chapitre 02 (§ 02.2.1 — Loi de Lusser et erreurs en cascade, après le thème `surcout-multi-agent-debat-mast`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -386,31 +386,31 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce tableau visuel explique pourquoi ajouter des agents qui débattent entre eux dégrade souvent les performances (−70 % sur tâches séquentielles) tout en multipliant la facture par ~15×. L'autopsie MAST (41 à 86,7 % d'échecs) prouve que près de la moitié des pannes (44,2 %) vient d'une mauvaise architecture et que la sobriété du rédacteur unique bat les essaims non justifiés.",
-      "vulgarization_angle": "Comparer une réunion interminable de 30 personnes (où l'effet Ringelmann ramène l'efficacité à 1,5 personne avec 15× plus de factures de café) à un seul spécialiste concentré disposant du dossier complet.",
+      "pedagogical_objective": "Ce tableau visuel explique pourquoi la multiplication d'agents qui débattent entre eux dégrade souvent la performance (−70 % sur les tâches séquentielles) tout en multipliant la consommation par ~15×. L'autopsie MAST (41 % à 86,7 % d'échecs) démontre que 44,2 % des pannes résultent de la conception architecturale et que la sobriété d'un agent unique surpasse les essaims non justifiés.",
+      "vulgarization_angle": "Opposer un comité plénier de trente intervenants (où l'effet Ringelmann ramène l'efficacité utile à 1,5 personne pour un coût multiplié par quinze) à un analyste unique disposant d'un dossier complet et continu.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Répartition des 14 modes d'échec MAST v3 (1 642 traces)",
-            "content": "Conception & spécification système (44,2 %), désalignement inter-agents (32,4 %), vérification & terminaison défaillantes (23,5 %) sur 7 cadriciels ouverts."
+            "content": "Conception et spécification système (44,2 %), désalignement inter-agents (32,4 %), vérification et terminaison défaillantes (23,5 %) sur 7 cadriciels ouverts."
           },
           {
             "zone_id": "Z2",
-            "label": "Arbitrage économique et cognitif : Rédacteur unique vs Multi-agents",
-            "content": "Thèse Cognition (contexte continu unique sans perte d'implicites) vs surcoût ~15× jetons Anthropic (58 %–515 % coordination), effet Ringelmann (1,2–1,8 effectifs / 30) et écart −70 % à +80,8 %."
+            "label": "Arbitrage économique et cognitif : rédacteur unique face au multi-agents",
+            "content": "Thèse Cognition (contexte continu unique sans perte d'implicites) par rapport au surcoût ~15× en jetons Anthropic (58 %–515 % de coordination), à l'effet Ringelmann (1,2–1,8 effectifs sur 30) et à l'écart de −70 % à +80,8 %."
           },
           {
             "zone_id": "Z3",
             "label": "Conditions strictes d'autorisation multi-agents (EXIG-ORC-01 / ORC-02)",
-            "content": "Interdiction des chambres d'écho; le multi-agents n'est ouvert que pour sous-tâches réellement parallélisables ou séparation de sécurité avec gain pass^k prouvé."
+            "content": "Proscription des chambres d'écho ; le mode multi-agents n'est ouvert que pour des sous-tâches réellement parallélisables ou une séparation de sécurité offrant un gain `pass^k` démontré."
           }
         ],
         "numbered_flows": [
-          "① Partir par défaut d'un agent unique outillé à contexte continu (coût 1×, zéro friction inter-agents).",
-          "② Vérifier sur les 3 familles MAST que la séparation de rôles ne crée ni perte de contexte (32,4 %) ni terminaison ambiguë (23,5 %).",
+          "① Partir par défaut d'un agent unique outillé à contexte continu (coût unitaire 1×, zéro friction inter-agents).",
+          "② Vérifier sur les trois familles MAST que la séparation des rôles n'engendre ni perte de contexte (32,4 %) ni terminaison ambiguë (23,5 %).",
           "③ Écarter les débats libres exposés à la chambre d'écho et à l'effet Ringelmann.",
-          "④ N'ouvrir le multi-agents qu'après preuve mesurée de gain pass^k et CPO face au mono-agent (EXIG-ORC-02)."
+          "④ N'autoriser le multi-agents qu'après démonstration mesurée d'un gain de constance `pass^k` et de CPO par rapport au mono-agent (EXIG-ORC-02)."
         ],
         "color_legend": [
           {
@@ -423,10 +423,10 @@
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Parcimonie validée (rédacteur unique continu ou parallélisme strict +80,8 % sous preuve)"
+            "meaning": "Parcimonie validée (rédacteur unique continu ou parallélisme strict à +80,8 % sous preuve)"
           }
         ],
-        "key_takeaway_box": "À retenir : Multiplier les agents n'ajoute pas de l'intelligence, cela ajoute des pannes de coordination et jusqu'à 15× de jetons; prouvez d'abord qu'un seul agent bien outillé ne suffit pas."
+        "key_takeaway_box": "Multiplier les agents n'accroît pas l'intelligence collective, mais démultiplie les pannes de coordination et la consommation de jetons jusqu'à 15× ; la nécessité du découpage multi-agents doit être prouvée face à l'agent unique bien outillé."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -444,7 +444,7 @@
           "title": "Les quatre topologies de coordination multi-agents (supervisée en étoile, séquentielle en chaîne, hiérarchique en arbre, pair-à-pair en graphe) et la propriété dominante de chacune.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-06.1 - Les quatre topologies de coordination multi-agents.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-06.1.png",
-          "role_note": "Compare les quatre topologies multi-agents et leurs propriétés dominantes."
+          "role_note": "Compare les quatre topologies multi-agents ainsi que leurs propriétés dominantes."
         }
       ]
     },
@@ -459,8 +459,8 @@
       "themes_vulgarized": [
         "constance-pass-k"
       ],
-      "title": "De la démo flatteuse (`pass@1`) à la constance industrielle (`pass^k` ≥ 0,95 et borne de Wilson à 95 %)",
-      "insertion_point": "Chapitre 02 (§02.2.2 — Constance pass^k et métriques de fiabilité, après le thème `constance-pass-k`)",
+      "title": "De l'essai ponctuel (`pass@1`) à la constance industrielle (`pass^k` ≥ 0,95 et borne de Wilson à 95 %)",
+      "insertion_point": "Chapitre 02 (§ 02.2.2 — Constance pass^k et métriques de fiabilité, après le thème `constance-pass-k`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -468,19 +468,19 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma dévoile pourquoi un taux de réussite brillant en démonstration (`pass@k` : réussir au moins une fois sur k essais) est inutilisable en production : en finance ou assurance, il faut réussir à chaque fois (`pass^k`). Un lecteur comprend comment un banc hermétique CI/CD (≥ 50 à 100 scénarios, borne statistique de Wilson à 95 %) élimine les mirages des classements publics biaisés.",
-      "vulgarization_angle": "Comparer un joueur de fléchettes qui se vante d'avoir touché le centre une fois en cinq lancers (`pass@5`) à un pilote de ligne qui doit poser l'avion sans incident cinq vols de suite (`pass^5`).",
+      "pedagogical_objective": "Ce schéma met en évidence l'inadéquation d'un score de réussite ponctuel (`pass@k` : réussir au moins une fois sur k essais) pour la production : en finance ou en assurance, la conformité exige de réussir systématiquement (`pass^k`). Il montre comment un banc hermétique CI/CD (≥ 50 à 100 scénarios, borne statistique de Wilson à 95 %) écarte les biais des classements publics contaminés.",
+      "vulgarization_angle": "Distinguer un essai sportif validé sur le meilleur lancer parmi cinq (`pass@5`) d'une certification aéronautique exigeant cinq atterrissages conformes consécutifs sans aucune anomalie (`pass^5`).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Illusion des démos (`pass@k`) et palmarès contaminés (> 25 % biaisés)",
-            "content": "Mesurer « au moins un succès sur k » et juger sur des bancs publics pollués (HAL, SWE-bench, OSWorld) masque l'effondrement (< 25 % à pass^8 sur τ-bench)."
+            "label": "Illusion du potentiel (`pass@k`) et palmarès contaminés (> 25 % biaisés)",
+            "content": "Mesurer « au moins un succès sur k » et évaluer sur des bancs publics pollués (HAL, SWE-bench, OSWorld) dissimule l'effondrement (< 25 % à pass^8 sur τ-bench)."
           },
           {
             "zone_id": "Z2",
             "label": "Exigence de constance (`pass^k = p^k`) et courbe HAL coût/précision",
-            "content": "EXIG-EVA-03 impose k ≥ 3 minimal et k ≥ 5 critique (cible pass^5 ≥ 0,95 à 0,99 [S] sous ADR-022 / PRR F-15) arbitrée contre le coût sur la courbe HAL."
+            "content": "EXIG-EVA-03 impose k ≥ 3 minimal et k ≥ 5 critique (cible pass^5 ≥ 0,95 à 0,99 [S] sous ADR-022 / PRR F-15) arbitrée face au coût sur la courbe HAL."
           },
           {
             "zone_id": "Z3",
@@ -489,15 +489,15 @@
           }
         ],
         "numbered_flows": [
-          "① Rejeter les scores `pass@1` ou palmarès publics externes lors des revues de mise en production.",
+          "① Exclure les scores `pass@1` et les palmarès publics externes lors des revues de mise en production.",
           "② Exécuter chaque scénario critique k fois de façon indépendante (k = 3 à 5) sur un banc hermétique sans appel réel aux SoR.",
-          "③ Calculer la borne inférieure de Wilson à 95 % (n ≥ ceil(3/p)) pour prouver que la constance ne tient pas du hasard.",
-          "④ Bloquer automatiquement le déploiement si `pass^5` tombe sous le seuil de classe de risque, et surveiller la dérive d'horizon METR."
+          "③ Calculer la borne inférieure de Wilson à 95 % (n ≥ ceil(3/p)) pour attester statistiquement la constance.",
+          "④ Bloquer automatiquement le déploiement si `pass^5` passe sous le seuil de classe de risque et surveiller la dérive d'horizon METR."
         ],
         "color_legend": [
           {
             "color_token": "Corail alerte (#DC2626)",
-            "meaning": "Métrique flatteuse `pass@k` et palmarès contaminés impropres à la production"
+            "meaning": "Métrique trompeuse `pass@k` et palmarès contaminés impropres à la production"
           },
           {
             "color_token": "Turquoise mesure (#0F766E)",
@@ -508,7 +508,7 @@
             "meaning": "Porte CI/CD bloquante C31 / PRR F-15 autorisant la promotion"
           }
         ],
-        "key_takeaway_box": "À retenir : En production réglementée, réussir « parfois » équivaut à échouer. Seule la constance répétée pass^k validée par un test statistique de Wilson à 95 % prouve qu'un agent est fiable."
+        "key_takeaway_box": "En production réglementée, une réussite occasionnelle équivaut à une défaillance ; seule la constance répétée pass^k validée par une borne statistique de Wilson à 95 % atteste la fiabilité d'un agent."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -518,7 +518,7 @@
           "title": "Potentiel contre consistance : deux métriques dont la confusion masque l’effondrement.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-06.4 - Potentiel contre consistance - deux métriques dont la confusion.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-06.4.svg",
-          "role_note": "Opposent visuellement potentiel (`pass@k`) et consistance (`pass^k`) dont la confusion masque l'effondrement."
+          "role_note": "Oppose visuellement le potentiel (`pass@k`) et la constance (`pass^k`), dont la confusion masque l'effondrement."
         },
         {
           "tome_id": "T8",
@@ -526,7 +526,7 @@
           "title": "Pipeline du banc EvalOps hermétique à doublures mock MCP, calcul pass^k, borne de Wilson >= 3/p et relations métamorphiques sans oracle sur scénarios FR/EN",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-07.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg",
-          "role_note": "Illustre le banc hermétique CI/CD exécutant `pass^k` et la borne de Wilson n >= 3/p."
+          "role_note": "Illustre le banc hermétique CI/CD exécutant `pass^k` et la borne de Wilson n ≥ 3/p."
         }
       ]
     },
@@ -543,8 +543,8 @@
         "economie-industrialisation-cognitive",
         "marche-ia-agentique-dispersion"
       ],
-      "title": "Économie coasienne, piège des jardins clos SaaS et arbre à 5 portes Acheter / Assembler / Construire",
-      "insertion_point": "Chapitre 03 (§03.2.1 — Économie cognitive de Coase, après le thème `economie-industrialisation-cognitive`)",
+      "title": "Économie coasienne, piège des jardins clos SaaS et arbre à cinq portes Acheter / Assembler / Construire",
+      "insertion_point": "Chapitre 03 (§ 03.2.1 — Économie cognitive de Coase, après le thème `economie-industrialisation-cognitive`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -552,36 +552,36 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Cet arbre éclaire en dix secondes la décision d'investissement de la direction : même si le calcul chute (~10×/an) et comprime les coûts de recherche et de négociation (Coase), les estimations de marché varient d'un facteur 1 à 59 et les agents SaaS captifs (« ouverts sur le fil, fermés sur le contrôle ») bloquent la sortie. L'arbre oriente donc par défaut vers l'assemblage sur standards ouverts.",
-      "vulgarization_angle": "Comparer l'agent préintégré d'un éditeur aux « souliers de quilles loués » (prêts en deux minutes mais impossibles à sortir de la salle) face à l'assemblage de composants standards sur un châssis possédé par l'entreprise.",
+      "pedagogical_objective": "Cet arbre éclaire la décision d'investissement de la direction : bien que le calcul chute d'environ 10× par an et comprime les coûts de recherche et de négociation (Coase), les estimations de marché varient d'un facteur de 1 à 59 et les agents SaaS captifs (« ouverts sur le fil, fermés sur le contrôle ») entravent la réversibilité. L'arbre privilégie donc par défaut l'assemblage sur standards ouverts.",
+      "vulgarization_angle": "Comparer l'agent préintégré d'un éditeur à un équipement captif utilisable uniquement dans l'enceinte du fournisseur, par opposition à l'assemblage de composants normalisés sur un châssis détenu en propre par l'entreprise.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Bascule coasienne et quadrant « Conçue × Perméable »",
-            "content": "Éviter l'économie « émergente × perméable » (Flash Crash, HFN, collusion RL, ROI Deloitte chutant 45 % → 12 %) et filtrer la dispersion 1:59 du marché (1,5–88,2 G$ US)."
+            "content": "Éviter l'économie « émergente × perméable » (Flash Crash, HFN, collusion RL, ROI Deloitte chutant de 45 % à 12 %) et filtrer la dispersion de 1 à 59 du marché (1,5–88,2 G$ US)."
           },
           {
             "zone_id": "Z2",
-            "label": "Arbre à 5 portes : Acheter (SaaS), Assembler (défaut) ou Construire",
-            "content": "Portes 1–3 : si non critique, achat SaaS autorisé uniquement si plan de contrôle et sortie B-10 ouverts; Portes 4–5 : flux critique assemblé sur standards ouverts (80/20), construction réservée au différenciant souverain."
+            "label": "Arbre à cinq portes : Acheter (SaaS), Assembler (défaut) ou Construire",
+            "content": "Portes 1–3 : si le cas est non critique, l'achat SaaS n'est autorisé que si le plan de contrôle et la sortie B-10 sont ouverts ; Portes 4–5 : tout flux critique est assemblé sur standards ouverts (80/20), la construction interne demeurant réservée au différenciant souverain."
           },
           {
             "zone_id": "Z3",
-            "label": "Évaluation sur les 5 critères permanents (C04)",
-            "content": "Arbitrage systématique selon neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût marginal CPO et coût de sortie."
+            "label": "Évaluation selon les cinq critères permanents (C04)",
+            "content": "Arbitrage systématique selon la neutralité de gouvernance, le déterminisme des frontières, la tolérance aux pannes, le coût marginal CPO et le coût de sortie."
           }
         ],
         "numbered_flows": [
           "① Écarter toute prévision de marché dispersée (6 périmètres emboîtés) au profit du coût complet par résultat conforme (CPO).",
-          "② Vérifier si le cas d'usage est banalisé (monosilo) ou critique/transversal pour le mandat.",
+          "② Vérifier si le cas d'usage est banalisé (monosilo) ou critique et transversal pour le mandat.",
           "③ Geler ou confiner en lecture seule tout agent SaaS « ouvert sur le fil mais fermé sur le plan de contrôle ».",
           "④ Assembler par défaut sur protocoles ouverts (MCP, A2A, CloudEvents, Temporal) autour du noyau possédé."
         ],
         "color_legend": [
           {
             "color_token": "Rouge garde-fou (#B91C1C)",
-            "meaning": "Quadrant émergent non gouverné et piège SaaS « bowling-shoe » à coût de sortie prohibitif"
+            "meaning": "Quadrant émergent non gouverné et piège SaaS captif à coût de sortie prohibitif"
           },
           {
             "color_token": "Vert émeraude (#047857)",
@@ -589,10 +589,10 @@
           },
           {
             "color_token": "Bleu marine (#1E3A8A)",
-            "meaning": "Construction interne souveraine réservée aux actifs différenciants et secrets métiers"
+            "meaning": "Construction interne souveraine réservée aux actifs différenciants et secrets métier"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne confondez pas connecteurs ouverts et liberté de sortie. Pour tout flux critique, assemblez des modèles remplaçables autour d'un plan de contrôle qui vous appartient."
+        "key_takeaway_box": "L'ouverture des connecteurs ne garantit pas la liberté de sortie ; pour tout flux critique, l'institution assemble des modèles substituables autour d'un plan de contrôle dont elle conserve l'entière maîtrise."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -602,7 +602,7 @@
           "title": "Arbre d'arbitrage du portefeuille : Acheter en SaaS, Assembler sur standards ouverts ou Construire",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-06.mmd",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-06.png",
-          "role_note": "Modélise directement l'arbre à cinq portes Acheter / Assembler / Construire."
+          "role_note": "Modélise directement l'arbre décisionnel à cinq portes Acheter / Assembler / Construire."
         },
         {
           "tome_id": "T6",
@@ -618,7 +618,7 @@
           "title": "Matrice des économies d'agents selon leur origine et leur perméabilité économique",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-05.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-05.svg",
-          "role_note": "Positionne la matrice 2×2 des économies d'agents virtuels (émergente vs conçue × perméabilité)."
+          "role_note": "Positionne la matrice 2×2 des économies d'agents virtuels (émergente par rapport à conçue × perméabilité)."
         },
         {
           "tome_id": "T3",
@@ -626,7 +626,7 @@
           "title": "Tailles publiées du marché de l’IA agentique pour 2025 et pour 2030, sur une échelle logarithmique. Les points pleins viennent de pages lues; les points creux, d’un blogue qui reprend des documents payants de Gartner. L’écart tient d’abord au périmètre compté.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-66 - Tailles publiées du marché de l'IA agentique pour 2025 et pour 2030.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-66.svg",
-          "role_note": "Met à nu la dispersion 1:59 des estimations de marché selon les six périmètres emboîtés."
+          "role_note": "Met en évidence la dispersion de 1 à 59 des estimations de marché selon les six périmètres emboîtés."
         }
       ]
     },
@@ -645,7 +645,7 @@
         "economie-jetons-routage-slm"
       ],
       "title": "Engrenage de la quadruple dette agentique, preuve `[N]/[M]/[É]/[S]` et économie des jetons SLM/LLM",
-      "insertion_point": "Chapitre 03 (§03.2.2 — Dettes cognitive, technique et d'intention, après le thème `quadruple-dette-agentique`)",
+      "insertion_point": "Chapitre 03 (§ 03.2.2 — Dettes cognitive, technique et d'intention, après le thème `quadruple-dette-agentique`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -653,36 +653,36 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma montre l'engrenage invisible qui transforme un prototype facile en piège financier et juridique : faute de socle logiciel (dette technique, 40,58 % de dérive MCP), on empile tout dans la mémoire du modèle (dette cognitive), on enterre les règles métier dans de la prose non testable (dette d'intention) et on reste prisonnier d'un fournisseur (dette de couplage), tout en brûlant 97 % de jetons en contexte répété.",
-      "vulgarization_angle": "Illustrer un tourbillon à quatre engrenages qui s'entraînent mutuellement vers le verrouillage, opposé à une triple vanne de sortie : preuves étiquetées [N]/[M]/[É]/[S], règles sorties en code et routage sobre vers petits modèles (SLM).",
+      "pedagogical_objective": "Ce schéma met au jour l'engrenage qui transforme un prototype rapide en passif financier et juridique : faute de socle logiciel (dette technique, 40,58 % de dérive MCP), la logique est empilée dans le contexte du modèle (dette cognitive), les règles métier sont enfouies dans une prose non testable (dette d'intention) et l'organisation se trouve captive d'un fournisseur (dette de couplage), tout en consacrant plus de 97 % des jetons à la relecture répétée du contexte.",
+      "vulgarization_angle": "Illustrer un engrenage à quatre roues dentées qui s'entraînent mutuellement vers le verrouillage technique, contré par une triple soupape de régulation : preuves étiquetées [N]/[M]/[É]/[S], règles externalisées en code et routage sobre vers de petits modèles spécialisés (SLM).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Tourbillon de la quadruple dette agentique (Tome 7 §4.1 & Tableau 24.1)",
-            "content": "Dette technique (ratio NHI 82:1, 40,58 % dérive silencieuse MCP, SDK < 2 ans) → dette cognitive (oubli contextuel, capitulation critique Storey) → dette d'intention (règles en prose) → couplage global (violation BSIF B-10)."
+            "label": "Engrenage de la quadruple dette agentique (Tome 7, § 4.1 et Tableau 24.1)",
+            "content": "Dette technique (ratio NHI 82:1, 40,58 % de dérive silencieuse MCP, SDK < 2 ans) → dette cognitive (oubli contextuel, capitulation critique Storey) → dette d'intention (règles en prose) → couplage global (violation BSIF B-10)."
           },
           {
             "zone_id": "Z2",
             "label": "Bouclier épistémique `[N]/[M]/[É]/[S]` et externalisation de l'intention",
-            "content": "Discipline de preuve séparant droit [N], pairs [M], specs [É] et construits [S], et sortie obligatoire des règles vers schémas, ADR et tests BDD versionnés."
+            "content": "Discipline probatoire distinguant droit [N], pairs [M], spécifications [É] et construits [S], avec sortie obligatoire des règles vers des schémas, des ADR et des tests BDD versionnés."
           },
           {
             "zone_id": "Z3",
-            "label": "Vanne économique : routage SLM/LLM, KV-cache et budget de réflexion",
-            "content": "Remplacement des modèles frontière coûteux par des SLM spécialisés (Belcak et coll.) et maîtrise des jetons de réflexion cachés et du KV-cache."
+            "label": "Régulation économique : routage SLM/LLM, KV-cache et budget de réflexion",
+            "content": "Remplacement des modèles frontière coûteux par des SLM spécialisés (Belcak et coll.) et maîtrise des jetons de réflexion cachés ainsi que du KV-cache."
           }
         ],
         "numbered_flows": [
-          "① L'absence d'architecture propre (N×M connecteurs, serveurs MCP non épinglés) pousse les équipes à tout compenser dans le prompt.",
-          "② Les équipes perdent la « théorie du système » (dette cognitive) pendant que les règles de conformité deviennent intestables en prose (dette d'intention).",
-          "③ L'entreprise brise l'engrenage en externalisant règles et schémas sous dépôt versionné, avec étiquetage probatoire [N]/[M]/[É]/[S].",
-          "④ Le routage dynamique oriente les tâches structurées vers des SLM sobres et préserve le KV-cache pour couper la facture de jetons."
+          "① L'absence d'architecture robuste (connecteurs N×M, serveurs MCP non épinglés) incite à compenser les manques dans l'invite système.",
+          "② Les équipes perdent la maîtrise structurelle du système (dette cognitive) tandis que les règles de conformité deviennent intestables en prose (dette d'intention).",
+          "③ L'entreprise rompt l'engrenage en externalisant règles et schémas sous dépôt versionné, avec étiquetage probatoire [N]/[M]/[É]/[S].",
+          "④ Le routage dynamique oriente les tâches structurées vers des SLM sobres et préserve le KV-cache afin de réduire la consommation de jetons."
         ],
         "color_legend": [
           {
             "color_token": "Corail alerte (#DC2626)",
-            "meaning": "Engrenage cumulatif des quatre dettes (technique, cognitive, intention, couplage)"
+            "meaning": "Engrenage cumulatif des quatre dettes (technique, cognitive, intention et couplage)"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
@@ -693,7 +693,7 @@
             "meaning": "Optimisation FinOps par routage SLM/LLM, KV-cache et plafonds de réflexion"
           }
         ],
-        "key_takeaway_box": "À retenir : Écrire des règles juridiques ou financières dans un prompt accumule une quadruple dette qui bloque le changement de fournisseur; externalisez l'intention en contrats et routez vers des SLM ciblés."
+        "key_takeaway_box": "Consigner des règles juridiques ou financières dans une invite engendre une quadruple dette qui entrave la réversibilité ; l'intention doit être externalisée en contrats et les tâches bornées acheminées vers des SLM ciblés."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -703,7 +703,7 @@
           "title": "Boucles de dette cognitive, de dette d’intention et de couplage aux modèles",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-04 - Boucles de dette cognitive, de dette d'intention et de couplage.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-04.svg",
-          "role_note": "Formalise les boucles de rétroaction entre dette cognitive, dette d'intention et couplage aux modèles."
+          "role_note": "Formalise les boucles de rétroaction reliant dette cognitive, dette d'intention et couplage aux modèles."
         },
         {
           "tome_id": "T3",
@@ -711,7 +711,7 @@
           "title": "Pour un document traité par un pipeline séquentiel, l’entrée pèse plus de 97 % des jetons; trois multiplicateurs s’y ajoutent : la boucle (mesure interne d’Anthropic), la topologie, à modèle égal, et les outils, payés en jetons d’entrée.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-52 - Pour un document traité par un pipeline séquentiel, l'entrée pèse.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-52.svg",
-          "role_note": "Chiffre le poids des jetons d'entrée (> 97 %) et les trois multiplicateurs de coût en pipeline."
+          "role_note": "Chiffre la prépondérance des jetons d'entrée (> 97 %) ainsi que les trois multiplicateurs de coût en pipeline."
         },
         {
           "tome_id": "T5",
@@ -719,7 +719,7 @@
           "title": "Cartographie des 2 541 pages du corpus (+ Note AMF IA), hiérarchie de la preuve et fermeture structurelle de la lacune DIV-02.",
           "source_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/Fig-01 - Cartographie des 2 541 pages du corpus (+ Note AMF IA), hiérarchie.puml",
           "rendered_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-01.svg",
-          "role_note": "Situe la hiérarchie probatoire [N]/[M]/[É]/[S] face aux fractures du corpus."
+          "role_note": "Situe la hiérarchie probatoire [N]/[M]/[É]/[S] face aux fractures documentées dans le corpus."
         }
       ]
     },
@@ -735,8 +735,8 @@
         "cout-non-interop-dette-integration",
         "genealogie-eai-soa-fipa-llm"
       ],
-      "title": "De 20 connecteurs fragiles (`N×M`) à 9 contrats ouverts (`N+M`) : 20 ans d'intégration et l'invariant à 4 termes",
-      "insertion_point": "Chapitre 03 (§03.2.2 — Dettes cognitive, technique et d'intention, après le thème `cout-non-interop-dette-integration`)",
+      "title": "De vingt connecteurs fragiles (`N×M`) à neuf contrats ouverts (`N+M`) : vingt ans d'intégration et l'invariant à quatre termes",
+      "insertion_point": "Chapitre 03 (§ 03.2.2 — Dettes cognitive, technique et d'intention, après le thème `cout-non-interop-dette-integration`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -744,31 +744,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce comparatif démontre en dix secondes pourquoi les intégrations point-à-point explosent financièrement selon N(N−1)/2 et comment un catalogue de contrats standards ramène 4 agents × 5 systèmes de 20 liaisons à 9 contrats réutilisables. Il relie vingt ans d'architecture (EAI, SOA, REST, EDA, FIPA-ACL) aux quatre termes permanents : découplage, contrat, évolution et exploitation.",
-      "vulgarization_angle": "Opposer un plat de spaghettis de câbles propriétaires incompatibles à une prise électrique normalisée où chaque appareil parle au tableau central au moyen de quatre règles immuables.",
+      "pedagogical_objective": "Ce comparatif montre pourquoi les intégrations point-à-point croissent financièrement selon N(N−1)/2 et comment un catalogue de contrats normalisés ramène quatre agents et cinq systèmes de 20 liaisons à 9 contrats réutilisables. Il relie vingt ans d'architecture d'intégration (EAI, SOA, REST, EDA, FIPA-ACL) aux quatre termes permanents : découplage, contrat, évolution et exploitation.",
+      "vulgarization_angle": "Opposer un câblage artisanal point-à-point incompatible à un bus de distribution normalisé où chaque équipement se raccorde au tableau central au moyen de quatre spécifications immuables.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Avant — Spaghetti point-à-point N×M et leçon de l'échec FIPA-ACL",
-            "content": "Coût quadratique C = (1+δ)(N×M), connecteurs dédiés dupliqués et rappel de l'échec historique FIPA (désaccord HTTP + taxe d'ontologie préalable)."
+            "label": "Avant — Maillage point-à-point N×M et leçon de l'échec FIPA-ACL",
+            "content": "Coût quadratique C = (1+δ)(N×M), connecteurs dédiés redondants et rappel de l'échec historique FIPA (désaccord de substrat HTTP et taxe d'ontologie préalable)."
           },
           {
             "zone_id": "Z2",
             "label": "Après — Bus de contrats ouverts N+M et héritage EAI → SOA → API → EDA",
-            "content": "Chaque agent et chaque système publie un contrat unique derrière la passerelle et le catalogue sur HTTP/gRPC/CloudEvents."
+            "content": "Chaque agent et chaque système publie un contrat unique derrière la passerelle et le catalogue sur HTTP, gRPC ou CloudEvents."
           },
           {
             "zone_id": "Z3",
-            "label": "Socle de l'invariant à 4 termes du Tome 1 (§1.0.2)",
-            "content": "Les quatre conditions durables d'interopérabilité (ISO/IEC 25010) : découplage (espace/temps/format), contrat explicite, évolution SemVer et exploitation observable."
+            "label": "Socle de l'invariant à quatre termes du Tome 1 (§ 1.0.2)",
+            "content": "Les quatre conditions durables d'interopérabilité (ISO/IEC 25010) : découplage (espace, temps et format), contrat explicite, évolution SemVer et exploitation observable."
           }
         ],
         "numbered_flows": [
-          "① Mesurer l'explosion combinatoire N(N−1)/2 lorsqu'un nouvel agent exige un connecteur spécifique par progiciel.",
-          "② Retenir les acquis des 4 générations (EAI/SOA/REST/EDA) sans reproduire la lourdeur bloquante de FIPA-ACL.",
-          "③ Publier un seul contrat normalisé par producteur et par consommateur (N+M) derrière passerelle et catalogue.",
-          "④ Vérifier chaque contrat à travers les quatre termes de l'invariant : découplage, contrat, évolution (Deprecation/Sunset) et exploitation."
+          "① Mesurer l'explosion combinatoire N(N−1)/2 dès lors que chaque nouvel agent exige un connecteur spécifique par progiciel.",
+          "② Capitaliser sur les acquis des quatre générations (EAI, SOA, REST, EDA) sans reconduire la lourdeur bloquante de FIPA-ACL.",
+          "③ Publier un seul contrat normalisé par producteur et par consommateur (N+M) derrière la passerelle et le catalogue.",
+          "④ Vérifier chaque contrat à l'aune des quatre termes de l'invariant : découplage, contrat, évolution (Deprecation/Sunset) et exploitation."
         ],
         "color_legend": [
           {
@@ -784,7 +784,7 @@
             "meaning": "Invariant à quatre termes assurant la pérennité sans réécriture"
           }
         ],
-        "key_takeaway_box": "À retenir : Sans contrats communs, chaque nouvel agent multiplie la facture et les failles de sécurité; l'invariant découplage-contrat-évolution-exploitation ramène l'intégration de N×M à N+M."
+        "key_takeaway_box": "Sans contrats partagés, chaque nouvel agent démultiplie les coûts d'intégration et la surface d'exposition ; l'invariant découplage-contrat-évolution-exploitation ramène la complexité de N×M à N+M."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -794,7 +794,7 @@
           "title": "Du maillage N × M aux contrats communs N + M. À gauche, chaque agent possède ses propres connecteurs vers chaque système : quatre agents et cinq systèmes exigent vingt intégrations, chacune avec sa sécurité. À droite, chaque agent et chaque système publient un seul contrat derrière la passerelle et le catalogue : neuf contrats réutilisables, soumis à un point d’application unique, les autorisations restant fixées par couple agent-outil. Source : élaboration du cadre CRE-IA-2026-01; exemple illustratif.",
           "source_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-02 - Du maillage N × M aux contrats communs N + M.puml",
           "rendered_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-02.svg",
-          "role_note": "Démontre visuellement le passage de 20 liaisons N×M à 9 contrats N+M derrière passerelle."
+          "role_note": "Démontre visuellement le passage de 20 liaisons N×M à 9 contrats N+M derrière une passerelle unique."
         },
         {
           "tome_id": "T1",
@@ -802,7 +802,7 @@
           "title": "L’invariant de la somme : les trois termes que le chapitre éprouve (§ 1.1.3-1.1.4), et le quatrième qu’il pose au § 1.0.2 pour le Livre IV (ch. 38-40).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-01.0 - L'invariant de la somme - les trois termes que le chapitre.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.0.png",
-          "role_note": "Pose les quatre termes de l'invariant transversal (découplage, contrat, évolution, exploitation)."
+          "role_note": "Pose les quatre termes de l'invariant transversal (découplage, contrat, évolution et exploitation)."
         },
         {
           "tome_id": "T1",
@@ -810,7 +810,7 @@
           "title": "De la SOA au maillage : ce que chaque étage déplace, et le couplage qui se déplace sans disparaître.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-01.3 - De la SOA au maillage - ce que chaque étage déplace.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.3.png",
-          "role_note": "Trace le déplacement du couplage de la SOA au maillage sans qu'il disparaisse."
+          "role_note": "Trace le déplacement du couplage de l'architecture SOA au maillage sans que ce couplage disparaisse."
         },
         {
           "tome_id": "T3",
@@ -837,7 +837,7 @@
         "validation-json-schema-ambigu-escalade"
       ],
       "title": "Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte `AMBIGU_ESCALADE`",
-      "insertion_point": "Chapitre 04 (§04.2.1 — Partition 80/20 et séparation déterministe, après le thème `harnais-deterministe-8-etapes`)",
+      "insertion_point": "Chapitre 04 (§ 04.2.1 — Partition 80/20 et séparation déterministe, après le thème `harnais-deterministe-8-etapes`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -845,31 +845,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma montre concrètement comment la règle hybride 80/20 s'exécute en code réel (`harness_proto/pipeline.py`) : sept étapes déterministes encerclent une seule étape probabiliste (`4_model`) sous contrat JSON Schema Draft 2020-12 strict (`additionalProperties: false`, zéro `$ref` réseau). Dès qu'une pièce est ambiguë ou qu'un calcul dévie, le modèle s'abstient proprement via `AMBIGU_ESCALADE` sans jamais deviner ni écrire en SQL.",
-      "vulgarization_angle": "Représenter une chaîne d'embouteillage haute précision où le modèle d'IA n'est qu'une seule station d'inspection optique encadrée par sept vérins mécaniques, avec une goulotte d'éjection nommée « cas douteux → humain ».",
+      "pedagogical_objective": "Ce schéma concrétise la règle hybride 80/20 en code exécutable (`harness_proto/pipeline.py`) : sept étapes déterministes encerclent une unique étape probabiliste (`4_model`) sous contrat JSON Schema Draft 2020-12 strict (`additionalProperties: false`, zéro `$ref` réseau). Dès qu'une pièce s'avère ambiguë ou qu'un calcul dévie, le modèle s'abstient explicitement via `AMBIGU_ESCALADE` sans jamais extrapoler ni écrire en SQL.",
+      "vulgarization_angle": "Représenter une chaîne d'inspection métrologique de haute précision où le modèle d'IA n'occupe qu'un seul poste d'analyse optique encadré par sept contrôles mécaniques, avec une voie de dérivation dédiée aux cas ambigus destinée à la révision humaine.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Sas d'entrée déterministe (jalons 1_size_utf8 à 3_ctx)",
-            "content": "Re-sérialisation UTF-8 ≤ 64 Kio (allow_nan=False), validation `_INPUT_SCHEMA` et construction triée du contexte borné (zéro coût modèle sur rejet précoce VALIDATION_FAILED)."
+            "label": "Sas d'entrée déterministe (jalons `1_size_utf8` à `3_ctx`)",
+            "content": "Re-sérialisation UTF-8 ≤ 64 Kio (`allow_nan=False`), validation `_INPUT_SCHEMA` et construction triée du contexte borné (coût modèle nul sur rejet précoce `VALIDATION_FAILED`)."
           },
           {
             "zone_id": "Z2",
-            "label": "Bulle cognitive bornée (jalon 4_model ~20 %) et réparation limitée",
-            "content": "Un seul appel structuré sous décodage contraint JSON Schema Draft 2020-12 strict: true (EXIG-MCP-19), boucle de réparation plafonnée à max_repair_retries = 2 (3 appels max)."
+            "label": "Enclave d'inférence bornée (jalon `4_model` ~20 %) et réparation limitée",
+            "content": "Un seul appel structuré sous décodage contraint JSON Schema Draft 2020-12 `strict: true` (EXIG-MCP-19), avec boucle de réparation plafonnée à `max_repair_retries = 2` (3 appels au plus)."
           },
           {
             "zone_id": "Z3",
-            "label": "Sas de sortie, porte d'abstention et sceau d'audit (jalons 5_schema à 8_seal)",
-            "content": "Validateur de schéma, ancrage `_check_grounding` (Decimal/cents, allowed_grounding_ids), issue explicite AMBIGU_ESCALADE / DONNEES_INSUFFISANTES et empreinte JCS SHA-256."
+            "label": "Sas de sortie, porte d'abstention et sceau d'audit (jalons `5_schema` à `8_seal`)",
+            "content": "Validateur de schéma, ancrage `_check_grounding` (arithmétique `Decimal` en unités mineures, `allowed_grounding_ids`), issue explicite `AMBIGU_ESCALADE` ou `DONNEES_INSUFFISANTES` et empreinte JCS SHA-256."
           }
         ],
         "numbered_flows": [
-          "① Valider l'entrée en UTF-8 (≤ 65 536 o, zéro NaN) et trier les pièces justificatives avant tout appel au modèle (jalons 1–3).",
-          "② Confiner le modèle au seul jalon 4_model pour extraire ou classifier sous grammaire JSON Schema Draft 2020-12 stricte.",
+          "① Valider l'entrée en UTF-8 (≤ 65 536 octets, zéro NaN) et trier les pièces justificatives préalablement à tout appel au modèle (jalons 1–3).",
+          "② Confiner le modèle au seul jalon `4_model` afin d'extraire ou de classifier sous grammaire JSON Schema Draft 2020-12 stricte.",
           "③ Contrôler la sortie par schéma puis par invariants métier (`_check_grounding`), avec au plus 2 reprises avant rejet `ESCALADED` (jalons 5–7).",
-          "④ Autoriser l'abstention honnête via `AMBIGU_ESCALADE` et sceller `HarnessOutcome` par `output_sha256` JCS sans écriture SQL directe (jalon 8)."
+          "④ Autoriser l'abstention explicite via `AMBIGU_ESCALADE` et sceller `HarnessOutcome` par `output_sha256` JCS sans écriture SQL directe (jalon 8)."
         ],
         "color_legend": [
           {
@@ -878,14 +878,14 @@
           },
           {
             "color_token": "Ambre doré (#D97706)",
-            "meaning": "Jalon cognitif unique `4_model` remplaçable (~20 %, max 3 appels pire cas)"
+            "meaning": "Jalon cognitif unique `4_model` remplaçable (~20 %, 3 appels au pire cas)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
             "meaning": "Issue d'abstention typée `AMBIGU_ESCALADE` et sceau d'audit JCS SHA-256"
           }
         ],
-        "key_takeaway_box": "À retenir : Le modèle propose, le harnais dispose. Grâce aux sept étapes déterministes et à la porte AMBIGU_ESCALADE, aucune réponse invalide ou inventée n'atteint les systèmes financiers."
+        "key_takeaway_box": "Le modèle propose, le harnais dispose : grâce aux sept étapes déterministes et à la porte AMBIGU_ESCALADE, aucune sortie invalide ou fabriquée ne parvient aux systèmes financiers."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -895,7 +895,7 @@
           "title": "Pipeline déterministe du harnais 80/20 à huit étapes et porte AMBIGU_ESCALADE sous schémas JSON Schema 2020-12 stricts",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-01.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg",
-          "role_note": "Détaille exactement les 8 jalons exécutables `step_trace` du harnais 80/20 et la porte AMBIGU_ESCALADE."
+          "role_note": "Détaille avec exactitude les 8 jalons exécutables `step_trace` du harnais 80/20 et la porte `AMBIGU_ESCALADE`."
         },
         {
           "tome_id": "T7",
@@ -937,8 +937,8 @@
         "separation-controleur-executeur-determinisme",
         "pont-reglementation-frames-deterministes"
       ],
-      "title": "Traduction réglementaire (Tableau 29.1), test à 3 conditions et choix de boucle ReAct / ReWOO / CodeAct",
-      "insertion_point": "Chapitre 04 (§04.2.2 — Harnais déterministe à 8 étapes, après le thème `pont-reglementation-frames-deterministes`)",
+      "title": "Traduction réglementaire (Tableau 29.1), test à trois conditions et choix de boucle ReAct / ReWOO / CodeAct",
+      "insertion_point": "Chapitre 04 (§ 04.2.2 — Harnais déterministe à huit étapes, après le thème `pont-reglementation-frames-deterministes`)",
       "target_audiences": [
         "Juridique / Conformité",
         "AE / AS",
@@ -946,36 +946,36 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma explique au juriste et à l'architecte comment passer d'un texte de loi (BSIF E-23, Loi 25 art. 12.1, ACVM 11-348) à une architecture exécutable : un test cumulatif à trois conditions (§29.4.1) tranche si le processus doit être commandé en OO3/OO4 par le cadre, puis sélectionne la boucle mono-agent la plus sobre.",
-      "vulgarization_angle": "Représenter un double triage juridique et technique : une bascule réglementaire à trois serrures suivie d'un établi d'outils où chaque tâche reçoit uniquement la boucle nécessaire (jamais de marteau CodeAct sans cage).",
+      "pedagogical_objective": "Ce schéma indique aux juristes et aux architectes comment transposer une disposition légale ou réglementaire (BSIF E-23, Loi 25 art. 12.1, ACVM 11-348) en architecture exécutable : un test cumulatif à trois conditions (§ 29.4.1) détermine si le processus doit être commandé en OO3/OO4 par le cadre, puis sélectionne la boucle mono-agent la plus sobre.",
+      "vulgarization_angle": "Représenter un double triage juridique et technique : une grille d'éligibilité réglementaire à trois critères cumulatifs suivie d'un poste d'allocation outillée où chaque tâche ne reçoit que le degré d'autonomie strictement requis.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Test cumulatif d'exigence réglementaire stricte (§29.4.1 et Tableau 29.1)",
+            "label": "Test cumulatif d'exigence réglementaire stricte (§ 29.4.1 et Tableau 29.1)",
             "content": "11 entrées réglementaires → 9 contraintes de cadre : texte opposable de résultat + trace exigible par un tiers + dommage non réparable par reprise = commande OO3/OO4 obligatoire."
           },
           {
             "zone_id": "Z2",
             "label": "Séparation contrôleur/exécuteur et anti-patrons symétriques",
-            "content": "Éviter l'« agentivité non justifiée » (LLM à la place d'un script) autant que le « plan rigide » face à une ambiguïté réelle, tout en coordonnant 5 horloges de versionnage."
+            "content": "Éviter l'« agentivité non justifiée » (LLM substitué à un script) autant que le « plan rigide » face à une ambiguïté réelle, tout en coordonnant 5 horloges de versionnage."
           },
           {
             "zone_id": "Z3",
             "label": "Sélection des boucles mono-agent (ReAct, ReWOO, Reflexion, CodeAct)",
-            "content": "ReWOO/LLMCompiler pour paralléliser sans surcoût, Reflexion borné contre chambre d'écho, CodeAct confiné en microVM/WASI sans réseau, Set-of-Mark en dernier recours GUI."
+            "content": "ReWOO/LLMCompiler pour paralléliser sans surcoût, Reflexion borné contre la chambre d'écho, CodeAct confiné en microVM/WASI sans réseau, Set-of-Mark en dernier recours GUI."
           }
         ],
         "numbered_flows": [
-          "① Évaluer le processus métier sur le test cumulatif à 3 conditions (§29.4.1) pour qualifier la contrainte réglementaire stricte.",
-          "② Si les 3 conditions sont réunies, placer la commande maîtresse en OO3/OO4 dans le cadre déterministe (le cadre porte seul la preuve démontrable).",
-          "③ Écarter les étapes anticipables vers du code pur, et choisir la boucle mono-agent (ReAct, ReWOO/LLMCompiler, Reflexion, CodeAct confiné) selon le besoin.",
-          "④ Synchroniser les 5 horloges de versionnage (modèle, invites, outils, politiques, harnais) avant tout déploiement ou rollback."
+          "① Évaluer le processus métier selon le test cumulatif à trois conditions (§ 29.4.1) afin de qualifier la contrainte réglementaire stricte.",
+          "② Si les trois conditions sont réunies, placer la commande maîtresse en OO3/OO4 dans le cadre déterministe (seul artefact offrant une preuve démontrable).",
+          "③ Confier les étapes anticipables à du code pur et sélectionner la boucle mono-agent (ReAct, ReWOO/LLMCompiler, Reflexion, CodeAct confiné) selon le besoin.",
+          "④ Synchroniser les cinq horloges de versionnage (modèle, invites, outils, politiques et harnais) préalablement à tout déploiement ou retour arrière."
         ],
         "color_legend": [
           {
             "color_token": "Bleu conformité (#1D4ED8)",
-            "meaning": "Test §29.4.1 et 9 contraintes issues de BSIF E-23, Loi 25 art. 12.1 et ACVM 11-348"
+            "meaning": "Test § 29.4.1 et 9 contraintes issues de BSIF E-23, Loi 25 art. 12.1 et ACVM 11-348"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
@@ -986,7 +986,7 @@
             "meaning": "Boucle mono-agent bornée (CodeAct isolé en microVM, ReWOO parallèle)"
           }
         ],
-        "key_takeaway_box": "À retenir : Sous exigence réglementaire stricte, l'agent n'orchestre jamais le processus; le cadre commande en OO3/OO4 parce qu'il reste le seul objet que l'entreprise puisse prouver devant un régulateur."
+        "key_takeaway_box": "Sous exigence réglementaire stricte, l'agent n'orchestre jamais le processus ; le cadre exerce la commande en OO3/OO4 parce qu'il demeure le seul objet démontrable devant une autorité de surveillance."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1004,7 +1004,7 @@
           "title": "Les quatre options d’orchestration, ordonnées selon l’axe du commandement de l’enchaînement (agents en haut, cadre en bas) et celui de la connaissance du processus ; la discontinuité OO2 → OO3 relève d’une lecture de l’auteur.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-22.1 - Les quatre options d'orchestration, ordonnées selon l'axe.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-22.1.svg",
-          "role_note": "Positionne OO1 à OO4 selon qui commande l'enchaînement et ce que l'agent sait du processus."
+          "role_note": "Positionne OO1 à OO4 selon l'entité qui commande l'enchaînement et la visibilité du processus par l'agent."
         },
         {
           "tome_id": "T1",
@@ -1012,7 +1012,7 @@
           "title": "Flux de travail ou agent : qui tient la tuyauterie, le code ou le modèle (dichotomie popularisée par Anthropic, 2024a).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-04.1 - Flux de travail ou agent - qui tient la tuyauterie, le code.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-04.1.svg",
-          "role_note": "Pose l'arbre fondateur séparant flux déterministe et agent selon le détenteur du contrôle."
+          "role_note": "Pose l'arbre fondateur séparant le flux déterministe de l'agent selon le détenteur du contrôle."
         },
         {
           "tome_id": "T1",
@@ -1020,7 +1020,7 @@
           "title": "Les cinq composants d’un agent et leurs horloges propres : ce qui les fait changer, et qui en décide.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-47.1 - Les cinq composants d'un agent et leurs horloges propres - ce.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.1.svg",
-          "role_note": "Visualise les cinq horloges indépendantes qui gouvernent les évolutions d'un agent."
+          "role_note": "Visualise les cinq horloges indépendantes régissant les évolutions d'un agent."
         }
       ]
     },
@@ -1036,7 +1036,7 @@
         "usine-logicielle-agentic-sdlc"
       ],
       "title": "Usine logicielle agentique (AST/SCIP), muraille Oracle–Bâtisseur et bascule RPG/COBOL en Shadow Mirroring",
-      "insertion_point": "Chapitre 04 (§04.2.1 — Partition 80/20 et séparation déterministe, après le thème `usine-logicielle-agentic-sdlc`)",
+      "insertion_point": "Chapitre 04 (§ 04.2.1 — Partition 80/20 et séparation déterministe, après le thème `usine-logicielle-agentic-sdlc`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -1044,31 +1044,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce parcours explique comment confier la génération ou la modernisation de code patrimonial (COBOL/RPG) à des agents sans risquer d'erreurs d'arrondi financier ni d'auto-validation trompeuse : celui qui écrit les tests ne peut jamais toucher au code, et le nouveau service tourne en double miroir jusqu'à prouver 0,00 $ d'écart sur 100 000 transactions réelles.",
-      "vulgarization_angle": "Comparer l'usine logicielle à une séparation stricte entre l'inspecteur des normes (qui rédige l'épreuve d'examen sous clé) et l'atelier isolé sans Internet, suivie d'une course à blanc côte à côte pendant un cycle comptable.",
+      "pedagogical_objective": "Ce parcours décrit comment déléguer la génération ou la modernisation de code patrimonial (COBOL/RPG) à des agents sans exposer l'entreprise aux erreurs d'arrondi financier ni à l'auto-validation : l'agent qui rédige les tests ne peut jamais modifier le code, et le nouveau service s'exécute en double miroir jusqu'à prouver un écart de 0,00 $ sur au moins 100 000 transactions réelles.",
+      "vulgarization_angle": "Comparer l'usine logicielle à la séparation stricte entre le bureau de normalisation (qui scelle les épreuves d'homologation) et l'atelier d'assemblage isolé de tout réseau externe, suivie d'une marche en parallèle durant un cycle comptable complet.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Séparation des devoirs SPIFFE : Agent Spécificateur vs Agent Bâtisseur isolé",
-            "content": "Spécificateur lit AST/SCIP et rédige specs + oracle Golden Master/Z3 (10k–100k cas) sans écrire de code; Bâtisseur écrit en Rust/Go/Java sous Decimal exact sans accès réseau ni `specs/**`/`tests/**`."
+            "label": "Séparation des devoirs SPIFFE : Agent Spécificateur face à l'Agent Bâtisseur isolé",
+            "content": "Le Spécificateur analyse AST/SCIP et rédige spécifications + oracle Golden Master/Z3 (10k–100k cas) sans écrire de code ; le Bâtisseur code en Rust, Go ou Java en arithmétique `Decimal` exacte sans accès réseau ni écriture dans `specs/**` ou `tests/**`."
           },
           {
             "zone_id": "Z2",
             "label": "Barrière de vérification : tests par propriétés et mutation calibrée",
-            "content": "Rejet de la simple couverture de lignes au profit des tests par propriétés et mutants ciblés (Meta ACH, ex. `minMutationKillScore: 0.88` sur code modifié hors mutants équivalents)."
+            "content": "Rejet de la simple couverture de lignes au profit des tests par propriétés et des mutants ciblés (Meta ACH, par exemple `minMutationKillScore: 0.88` sur le code modifié hors mutants équivalents)."
           },
           {
             "zone_id": "Z3",
             "label": "Figuier étrangleur patrimonial et comparateur Shadow Mirroring",
-            "content": "Exécution parallèle du cœur RPG/COBOL et du service MCP moderne via comparateur `Decimal` (`0,00 $` d'écart sur `N >= 100 000` sur cycle complet) puis bascule progressive avec Outbox/Debezium < 200 ms."
+            "content": "Exécution parallèle du cœur RPG/COBOL et du service MCP moderne via comparateur `Decimal` (`0,00 $` d'écart sur `N >= 100 000` transactions durant un cycle complet), suivie d'une bascule progressive avec Outbox/Debezium < 200 ms."
           }
         ],
         "numbered_flows": [
           "① Extraire la structure exacte par parseur AST/SCIP (ou ANTLR/Tree-sitter pour DB2/RPG/COBOL) et verrouiller un oracle Golden Master + Z3.",
-          "② Faire écrire spécifications et tests par l'agent Spécificateur, puis générer le service en Decimal exact par l'agent Bâtisseur en bac à sable fermé.",
-          "③ Filtrer par tests par propriétés et score de mutation calibré sous porte `sdlc-modernization-gate.yaml`.",
-          "④ Exécuter en Shadow Mirroring en production (0,00 $ d'écart sur ≥ 100 000 transactions) avant bascule graduelle et extinction des écrans CUA."
+          "② Confier la rédaction des spécifications et tests à l'agent Spécificateur, puis la génération du service en `Decimal` exact à l'agent Bâtisseur en bac à sable fermé.",
+          "③ Filtrer la production par tests par propriétés et score de mutation calibré sous la porte `sdlc-modernization-gate.yaml`.",
+          "④ Exécuter en Shadow Mirroring en production (0,00 $ d'écart sur ≥ 100 000 transactions) avant la bascule graduelle et l'extinction des écrans CUA."
         ],
         "color_legend": [
           {
@@ -1084,7 +1084,7 @@
             "meaning": "Comparateur de parité Shadow Mirroring (`0,00 $` d'écart) et réplication Outbox/CDC"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne laissez jamais l'agent qui code écrire ses propres examens, ni un LLM traduire du COBOL/RPG en flottants approximatifs; prouvez la parité au centime près en Shadow Mirroring avant toute bascule."
+        "key_takeaway_box": "L'agent qui produit le code ne doit jamais rédiger ses propres critères d'évaluation, ni convertir des traitements COBOL ou RPG en virgule flottante ; seule la parité exacte au centime près en Shadow Mirroring autorise la bascule."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1117,8 +1117,8 @@
       "themes_vulgarized": [
         "echelle-autonomie-l0-l4"
       ],
-      "title": "L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, le tabou `NX` et la matrice `D1–D8` × `Classes 1–6`",
-      "insertion_point": "Chapitre 05 (§05.2.1 — Échelle L0–L4 et règle du maillon, après le thème `echelle-autonomie-l0-l4`)",
+      "title": "L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`",
+      "insertion_point": "Chapitre 05 (§ 05.2.1 — Échelle L0–L4 et règle du maillon, après le thème `echelle-autonomie-l0-l4`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1126,30 +1126,30 @@
       ],
       "visual_archetype": "Échelle graduée de maturité / autonomie",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cet escalier lève toute ambiguïté sur le mot « autonomie » pour la direction et les équipes de risque : N0/L0 désigne un flux déterministe sans modèle, N1 à N4 graduent les droits d'écriture sous ODD documenté, et NX (autonomie sans bornes) est interdit sans dérogation (EXIG-GOV-17). Le bon niveau est toujours le plus bas qui suffit, plafonné par domaine D1–D8 (zéro Stade 4 externe en conseil D2 et conformité D6).",
-      "vulgarization_angle": "Un escalier de permis gradués (du marchepied codé N0 au véhicule sur circuit fermé certifié ODD N4) flanqué d'une barrière rouge interdisant à tout agent de s'auto-octroyer ses objectifs ou ses clés (NX).",
+      "pedagogical_objective": "Cet escalier lève toute ambiguïté terminologique sur l'« autonomie » pour la direction et les équipes de risque : N0/L0 désigne un flux déterministe sans modèle, N1 à N4 graduent les droits d'écriture sous ODD documenté, et NX (autonomie sans bornes) est interdit sans dérogation (EXIG-GOV-17). Le niveau retenu est toujours le plus bas qui suffise, plafonné par domaine D1–D8 (zéro Stade 4 externe en conseil D2 et en conformité D6).",
+      "vulgarization_angle": "Un référentiel d'habilitations graduées — de la chaîne automatisée déterministe N0 au système ambiant certifié sur domaine d'exploitation fermé N4 — assorti d'un seuil d'interdiction absolue proscrivant tout agent qui s'auto-octroierait ses objectifs ou ses privilèges (NX).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Désambiguïsation DISC-01 / DISC-02 et échelle unique N0–N4 (L0–L4)",
-            "content": "Flux fixe sans IA (N0/L0) hors profil agent; N1 consultatif P0/P1; N2 écriture sous approbation HITL; N3 réversible P2 dans un ODD sous HOTL; N4 ambiant ODD certifié (classe faible)."
+            "content": "Flux fixe sans IA (N0/L0) hors profil d'agent ; N1 consultatif P0/P1 ; N2 écriture sous approbation HITL ; N3 réversible P2 dans un ODD sous HOTL ; N4 ambiant sous ODD certifié (classe faible)."
           },
           {
             "zone_id": "Z2",
-            "label": "Matrice de portefeuille D1–D8 × Stades 0–4 et 6 Classes d'actes",
-            "content": "8 domaines d'affaires × 5 stades (Stade 4 inter-firmes proscrit en D2 conseil et D6 conformité/CANAFE) croisés aux Classes 1–5 et paliers P0–P3."
+            "label": "Matrice de portefeuille D1–D8 × Stades 0–4 et six Classes d'actes",
+            "content": "Huit domaines d'affaires × cinq stades (Stade 4 inter-firmes proscrit en D2 conseil et D6 conformité/CANAFE) croisés aux Classes 1–5 et aux paliers P0–P3."
           },
           {
             "zone_id": "Z3",
             "label": "Plafond de classe et interdiction absolue NX (EXIG-AUT-03 / EXIG-GOV-17)",
-            "content": "Interdiction sans dérogation qu'un agent fixe ses objectifs, modifie ses droits ou code sans contrainte; réévaluation exigée avant tout changement matériel (EXIG-AUT-05)."
+            "content": "Interdiction sans dérogation qu'un agent définisse ses propres objectifs, modifie ses privilèges ou génère du code sans contrainte ; réévaluation exigée avant tout changement matériel (EXIG-AUT-05)."
           }
         ],
         "numbered_flows": [
-          "① Vérifier d'abord si un flux déterministe N0 suffit avant d'enregistrer un agent (moindre agence).",
-          "② Qualifier l'agent selon ses permissions effectives et le plafonner via EXIG-CON-02 selon son domaine D1–D8 et sa classe de risque.",
-          "③ Exiger un ODD documenté et un repli sûr automatique avant toute ouverture N3 ou N4.",
+          "① Vérifier d'abord si un flux déterministe N0 suffit avant d'enregistrer un agent (principe de moindre agence).",
+          "② Qualifier l'agent selon ses permissions effectives et le plafonner via EXIG-CON-02 d'après son domaine D1–D8 et sa classe de risque.",
+          "③ Exiger un ODD documenté et un repli sûr automatique préalablement à toute ouverture N3 ou N4.",
           "④ Bloquer systématiquement tout comportement NX (Classe 6) et déclencher la ré-homologation sur changement matériel."
         ],
         "color_legend": [
@@ -1159,14 +1159,14 @@
           },
           {
             "color_token": "Or ambré (#B45309)",
-            "meaning": "Autonomie bornée N3–N4 exigant un ODD documenté/certifié, réversibilité et comité"
+            "meaning": "Autonomie bornée N3–N4 exigeant un ODD documenté/certifié, la réversibilité et une décision de comité"
           },
           {
             "color_token": "Rouge interdit (#991B1B)",
             "meaning": "Zone interdite sans dérogation : NX (Classe 6) et Stade 4 externe en D2 / D6"
           }
         ],
-        "key_takeaway_box": "À retenir : L'échelle d'autonomie n'est pas un concours pour atteindre N4; le meilleur niveau est le plus bas qui accomplit la tâche, et le niveau sans bornes (NX) est banni par conception."
+        "key_takeaway_box": "L'échelle d'autonomie ne constitue pas une cible ascendante vers N4 : le niveau optimal demeure le plus bas qui satisfasse la tâche, et le régime sans bornes (NX) est proscrit par construction."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -1184,7 +1184,7 @@
           "title": "Spectre d'autonomie opérationnelle (L0–L4) : droits de mutation, régime de supervision et contrôles exigés par niveau",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-01.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-01.svg",
-          "role_note": "Vulgarise le spectre d'autonomie L0–L4 par droits de mutation et régime de supervision."
+          "role_note": "Vulgarise le spectre d'autonomie L0–L4 selon les droits de mutation et le régime de supervision."
         },
         {
           "tome_id": "T5",
@@ -1192,7 +1192,7 @@
           "title": "Matrice d’autonomie unifiée (D1–D8 × Classes 1–6 × N0–N4 / P0–P3, interdiction NX/Classe 6) et séquence d’approbation hors bande liée au condensat JCS SHA-256 via CIBA et FIDO2.",
           "source_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/Fig-06 - Matrice d'autonomie unifiée.puml",
           "rendered_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-06.svg",
-          "role_note": "Réconcilie D1–D8 × Classes 1–6 × N0–N4 / P0–P3 et l'interdiction NX."
+          "role_note": "Réconcilie D1–D8 × Classes 1–6 × N0–N4 / P0–P3 ainsi que l'interdiction NX."
         },
         {
           "tome_id": "T1",
@@ -1216,7 +1216,7 @@
         "regle-maillon-plus-eleve"
       ],
       "title": "Règle du maillon le plus élevé (`High-Water Mark`) et règle d'or `≤ N2` dans un graphe multi-agents",
-      "insertion_point": "Chapitre 05 (§05.2.1 — Échelle L0–L4 et règle du maillon, après le thème `regle-maillon-plus-eleve`)",
+      "insertion_point": "Chapitre 05 (§ 05.2.1 — Échelle L0–L4 et règle du maillon, après le thème `regle-maillon-plus-eleve`)",
       "target_audiences": [
         "Juridique / Conformité",
         "AE / AS",
@@ -1224,8 +1224,8 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce schéma empêche une faille classique de contournement : placer un « petit » agent L1 peu sécurisé en lecture devant un agent critique L3. Il montre visuellement la règle High-Water Mark (tout maillon amont sans sas hérite des exigences E-23 / EU AI Act de l'aval sans gagner ses droits d'écriture) et l'union la plus stricte calculée à chaque appel par la passerelle.",
-      "vulgarization_angle": "Comparer une chaîne d'agents à un convoi maritime ou à une conduite d'eau propre : le niveau de protection du convoi s'aligne sur sa cargaison la plus sensible, et un maillon qui accumule trois feux orange est bloqué à N2.",
+      "pedagogical_objective": "Ce schéma prévient un contournement classique : placer un agent L1 peu sécurisé en lecture en amont d'un agent critique L3. Il visualise la règle High-Water Mark (tout maillon amont dépourvu de sas hérite des exigences E-23 / EU AI Act de l'aval sans en acquérir les droits d'écriture) ainsi que l'union la plus stricte calculée à chaque appel par la passerelle.",
+      "vulgarization_angle": "Comparer une chaîne d'agents à un convoi logistique réglementé : le niveau de sûreté imposé à l'ensemble de l'escorte s'aligne sur le maillon le plus sensible, et tout cumul de trois facteurs de criticité plafonne l'autonomie à N2.",
       "visual_blueprint": {
         "zones": [
           {
@@ -1236,19 +1236,19 @@
           {
             "zone_id": "Z2",
             "label": "Règle d'or (`EXIG-AUT-07`, `CAP-048`) : plafond strict ≤ N2 sur triple cumul",
-            "content": "Tout cumul impact élevé + réversibilité faible + détection lente (ou critère non étalonné) plafonne l'agent à N2 quel que soit son score en banc d'essai."
+            "content": "Tout cumul d'impact élevé, de réversibilité faible et de détection lente (ou de critère non étalonné) plafonne l'agent à N2 quel que soit son score sur banc d'essai."
           },
           {
             "zone_id": "Z3",
             "label": "Calcul à la passerelle : union la plus stricte en mode fermé (`EXIG-AUT-10`, `EXIG-AUT-11`)",
-            "content": "Maximum entre matrice classe × palier P0–P3 qualifié au catalogue (indices MCP ignorés), maillon le plus restrictif de la chaîne, règle de deux (`EXIG-SEC-04`) et seuils métier."
+            "content": "Maximum entre la matrice classe × palier P0–P3 qualifiée au catalogue (indices MCP ignorés), le maillon le plus restrictif de la chaîne, la règle de deux (`EXIG-SEC-04`) et les seuils métier."
           }
         ],
         "numbered_flows": [
-          "① Qualifier chaque outil sur P0–P3 en revue de sécurité (ignorer les indicateurs déclaratifs `readOnlyHint` non fiables).",
+          "① Qualifier chaque outil sur P0–P3 en revue de sécurité (en ignorant les indicateurs déclaratifs `readOnlyHint` non fiables).",
           "② Appliquer en CI/CD l'inspection OPA sur `deployment-footprint.yaml` pour propager les contrôles du maillon le plus élevé vers l'amont.",
           "③ Évaluer la règle d'or (`EXIG-AUT-07`) : en cas de triple cumul ou d'incertitude sur l'étalonnage, verrouiller à ≤ N2.",
-          "④ À l'exécution, la passerelle calcule l'union la plus stricte et refuse en mode fermé (`EXIG-AUT-11`) dès qu'un critère manque."
+          "④ À l'exécution, la passerelle calcule l'union la plus stricte et refuse en mode fermé (`EXIG-AUT-11`) dès qu'un critère fait défaut."
         ],
         "color_legend": [
           {
@@ -1264,7 +1264,7 @@
             "meaning": "Passerelle à union stricte et refus automatique en mode fermé (`EXIG-AUT-10`/`11`)"
           }
         ],
-        "key_takeaway_box": "À retenir : La sécurité d'une chaîne d'agents vaut celle de son maillon le plus exposé, jamais celle de son composant le plus simple; toute incertitude verrouille l'autonomie à N2 et ferme l'accès."
+        "key_takeaway_box": "La sûreté d'une chaîne d'agents s'aligne sur son maillon le plus exposé et jamais sur son composant le plus simple ; toute incertitude verrouille l'autonomie à N2 et ferme l'accès."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1290,8 +1290,8 @@
         "distinction-agent-flux-ambiant",
         "supervision-hitl-hotl-abstention"
       ],
-      "title": "Éviter le clic réflexe à 93 % (ASI09) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` vs Loi 25",
-      "insertion_point": "Chapitre 05 (§05.2.2 — Supervision HITL / HOTL et abstention, après le thème `supervision-hitl-hotl-abstention`)",
+      "title": "Prévenir la validation réflexe à 93 % (ASI09) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25",
+      "insertion_point": "Chapitre 05 (§ 05.2.2 — Supervision HITL / HOTL et abstention, après le thème `supervision-hitl-hotl-abstention`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1299,36 +1299,36 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma montre au responsable juridique et opérationnel pourquoi demander à un employé de « relire » des centaines de propositions d'agents échoue (93 % d'approbation machinale, +26 % d'erreurs sous conseil fautif) et expose à une requalification juridique sous la Loi 25 art. 12.1. Il détaille les parades concrètes : vue différentielle hors IA, plafond de cadence et signature cryptographique CIBA.",
-      "vulgarization_angle": "Comparer une validation de façade (un opérateur épuisé qui clique « Oui » en deux secondes sur un résumé écrit par l'agent) à une double clé physique hors ligne devant un écran qui n'affiche que les chiffres bruts et les écarts.",
+      "pedagogical_objective": "Ce schéma montre aux responsables juridiques et opérationnels pourquoi la relecture humaine massive de propositions d'agents échoue (93 % d'approbation machinale, +26 % d'erreurs sous conseil fautif) et expose à une requalification juridique sous l'article 12.1 de la Loi 25. Il détaille les parades requises : vue différentielle générée hors IA, plafond de cadence et signature cryptographique CIBA.",
+      "vulgarization_angle": "Opposer une approbation de façade — où un opérateur surchargé valide machinalement un résumé rédigé par l'agent — à un mécanisme de double authentification hors bande présentant exclusivement les écarts chiffrés bruts sur un canal indépendant.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Distinction identitaire (Tableau 7) et déclenchement interactif vs ambiant",
-            "content": "Triple exclusion identitaire (ni compte humain, ni secret partagé, ni responsable) et blocage d'écriture ambiante pour tout agent < N4 via attribut d'origine."
+            "label": "Distinction identitaire (Tableau 7) et déclenchement interactif par rapport à ambiant",
+            "content": "Triple exclusion identitaire (ni compte humain, ni secret partagé, ni personne responsable) et blocage d'écriture ambiante pour tout agent inférieur à N4 via l'attribut d'origine."
           },
           {
             "zone_id": "Z2",
             "label": "Approbation hors bande CIBA / FIDO2 liée à `h = SHA-256(JCS(...))` et ergonomie ASI09",
-            "content": "Écran différentiel A2UI généré hors LLM depuis I-JSON (EXIG-AUT-19), filtrage ne remontant que ~0,8 % d'exceptions (≤ 33 dossiers/quart), 3–5 % témoins canaris POR-014, quota manuel INI-043 (> 70 % auto) et repli < 60 s."
+            "content": "Écran différentiel A2UI généré hors LLM depuis I-JSON (EXIG-AUT-19), filtrage ne remontant qu'environ 0,8 % d'exceptions (≤ 33 dossiers par quart), 3–5 % de témoins canaris POR-014, quota manuel INI-043 (> 70 % auto) et repli < 60 s."
           },
           {
             "zone_id": "Z3",
-            "label": "Frontière juridique nette : arrêt préventif `PC3` vs révision effective Loi 25 art. 12.1",
-            "content": "PC3 bloque ou libère avant l'effet irréversible `P3` (`H-31`), tandis que l'art. 12.1 exige avis contemporain (`PC1`), facteurs (`PC2`), rectification, révision humaine réelle et dossier chiffré ≥ 1 an."
+            "label": "Frontière juridique nette : arrêt préventif `PC3` face à la révision effective Loi 25 art. 12.1",
+            "content": "PC3 bloque ou libère avant l'effet irréversible `P3` (`H-31`), tandis que l'article 12.1 exige avis contemporain (`PC1`), facteurs (`PC2`), rectification, révision humaine réelle et dossier chiffré ≥ 1 an."
           }
         ],
         "numbered_flows": [
           "① La passerelle filtre l'I-JSON, calcule le condensat canonique `h = SHA-256(JCS(...))` et dépose la requête en boîte persistante (EXIG-AUT-16).",
-          "② L'approbateur reçoit sur appareil distinct (CIBA + FIDO2 + RFC 9396) une vue différentielle brute sans texte persuasif du LLM.",
-          "③ La console surveille le taux d'approbation sans retouche, la cadence (≤ 33 cas/quart) et injecte 3–5 % de dossiers témoins à défaut connu.",
+          "② L'approbateur reçoit sur appareil distinct (CIBA + FIDO2 + RFC 9396) une vue différentielle brute exempte de texte persuasif généré par LLM.",
+          "③ La console surveille le taux d'approbation sans retouche, la cadence (≤ 33 cas par quart) et injecte de 3 % à 5 % de dossiers témoins à défaut connu.",
           "④ En aval d'une décision automatisée visant une personne, un circuit distinct assure l'avis, les facteurs explicables et la révision humaine effective pendant ≥ 1 an."
         ],
         "color_legend": [
           {
             "color_token": "Corail alerte (#DC2626)",
-            "meaning": "Théâtre HITL à 93 % d'approbation machinale (ASI09) et risque de requalification CAI"
+            "meaning": "Supervision HITL de façade à 93 % d'approbation machinale (ASI09) et risque de requalification CAI"
           },
           {
             "color_token": "Violet sécurité (#6D28D9)",
@@ -1339,7 +1339,7 @@
             "meaning": "Console différentielle hors modèle, témoins POR-014 et dossier Loi 25 art. 12.1 (≥ 1 an)"
           }
         ],
-        "key_takeaway_box": "À retenir : Un « oui » en fenêtre de clavardage ne protège ni contre la fraude ni contre la Loi 25. L'approbation doit montrer les chiffres bruts hors du modèle, plafonner la charge et signer l'empreinte exacte."
+        "key_takeaway_box": "Une confirmation dans une fenêtre conversationnelle ne protège ni contre la fraude ni contre les exigences de la Loi 25 ; l'approbation doit exposer les données brutes hors du modèle, plafonner la charge cognitive et signer l'empreinte exacte."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1391,8 +1391,8 @@
         "architecture-reference-6-couches-2-piliers",
         "architecture-reference-six-couches-pc1-pc5"
       ],
-      "title": "Fermeture `DIV-02` : le modèle unifié à 5 couches + 3 volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`",
-      "insertion_point": "Chapitre 06 (§06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `cadre-togaf-archimate-4-plans`)",
+      "title": "Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `cadre-togaf-archimate-4-plans`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1400,31 +1400,31 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce plan architectural réconcilie en dix secondes les découpages des quatre volumes sources (fermeture DIV-02) : cinq couches horizontales d'exécution (`C1–C5`) traversées par trois volets de contrôle (`Plans A, B, C`), raccordées aux six vraies couches normatives de 2026 et aux cinq points d'arrêt `PC1–PC5`. L'architecte voit exactement comment modéliser l'agent en `ArchiMate 4.0` sans aucun trou de traçabilité réglementaire.",
-      "vulgarization_angle": "Présenter un bâtiment à cinq étages opérationnels soutenus par trois colonnes techniques verticales (Identité/Sécurité, Observabilité/FinOps, Gouvernance/Registre) et cinq compteurs d'inspection obligatoires `PC1–PC5`.",
+      "pedagogical_objective": "Ce plan architectural réconcilie les découpages des quatre volumes sources (fermeture de DIV-02) : cinq couches horizontales d'exécution (`C1–C5`) traversées par trois volets de contrôle (`Plans A, B, C`), raccordées aux six vraies couches normatives de 2026 ainsi qu'aux cinq points d'arrêt `PC1–PC5`. L'architecte dispose ainsi d'une méthode univoque pour modéliser l'agent en `ArchiMate 4.0` sans rupture de traçabilité réglementaire.",
+      "vulgarization_angle": "Structurer l'architecture comme un châssis d'ingénierie à cinq strates d'exécution traversées par trois colonnes de gouvernance (Sécurité/Identité, Observabilité/FinOps, Registre/Conformité) et verrouillées par cinq points d'inspection obligatoires `PC1–PC5`.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Cinq couches pivot `C1–C5` soudées aux 6 vraies couches `CAD26 §5.2` (DIV-02)",
-            "content": "C1 Interaction (Canaux C1), C2 Agents & orchestration (C2 + volet C3), C3 Contexte & connaissance (C2/C3/C5), C4 Accès (C4 Médiation + C5 Outils + C6 SoR), C5 Modèles (logés en Couche 3 CAD26)."
+            "label": "Cinq couches pivot `C1–C5` soudées aux six vraies couches `CAD26 § 5.2` (DIV-02)",
+            "content": "C1 Interaction (Canaux C1), C2 Agents et orchestration (C2 + volet C3), C3 Contexte et connaissance (C2/C3/C5), C4 Accès (C4 Médiation + C5 Outils + C6 SoR), C5 Modèles (logés en Couche 3 CAD26)."
           },
           {
             "zone_id": "Z2",
             "label": "Trois volets transversaux (`Plans A, B, C`) et cinq points de contrôle `PC1–PC5`",
-            "content": "Plan A (NHI/OPA/PQC), Plan B (OTel double couloir/EvalOps/CPO), Plan C (Registre 7 états/B-10); points PC1 (avis art. 12.1), PC2 (trace Z1), PC3 (arrêt Z2), PC4 (adaptation vs évolution Z3), PC5 (confinement Z5)."
+            "content": "Plan A (NHI/OPA/PQC), Plan B (OTel double couloir/EvalOps/CPO), Plan C (Registre 7 états/B-10) ; points PC1 (avis art. 12.1), PC2 (trace Z1), PC3 (arrêt Z2), PC4 (adaptation par rapport à évolution Z3), PC5 (confinement Z5)."
           },
           {
             "zone_id": "Z3",
             "label": "Pont TOGAF `ABB → SBB` (`EXIG-ARC-20`) et règles `ArchiMate 4.0 C260` (`DISC-04`)",
-            "content": "Révision trimestrielle ABB→SBB (dérogations ≤ 6 mois / 90 j sous EXIG-GOV-16); stéréotype `«Cognitive Actor»` en `Application Component` (jamais `Business Actor`) et zéro `«regulatory-requirement»` orphelin."
+            "content": "Révision trimestrielle ABB → SBB (dérogations ≤ 6 mois / 90 j sous EXIG-GOV-16) ; stéréotype `«Cognitive Actor»` en `Application Component` (jamais `Business Actor`) et zéro `«regulatory-requirement»` orphelin."
           }
         ],
         "numbered_flows": [
-          "① Toute demande entre par `C1 Interaction` (authentifiée, zéro invite/logique) et déclenche `PC1` si une décision automatisée vise une personne.",
+          "① Toute demande entre par `C1 Interaction` (authentifiée, sans invite ni logique métier) et déclenche `PC1` lorsqu'une décision automatisée vise une personne.",
           "② `C2 Orchestration` et `C3 Contexte` préparent l'état durable et le savoir filtré tout en appliquant `PC3` (arrêt préventif) et `PC4` (séparation adaptation/évolution).",
-          "③ Chaque appel passe obligatoirement par la passerelle de `C4 Accès` vers les outils/SoR et sollicite `C5 Modèles` confiné (`PC5`).",
-          "④ Les Plans A, B et C tracent chaque exigence réglementaire depuis le `Driver` ArchiMate jusqu'au SBB homologué sans exigence orpheline."
+          "③ Chaque appel transite obligatoirement par la passerelle de `C4 Accès` vers les outils et SoR et sollicite `C5 Modèles` confiné (`PC5`).",
+          "④ Les Plans A, B et C tracent chaque exigence réglementaire depuis le `Driver` ArchiMate jusqu'au SBB homologué sans aucune exigence orpheline."
         ],
         "color_legend": [
           {
@@ -1433,14 +1433,14 @@
           },
           {
             "color_token": "Indigo homologation (#4338CA)",
-            "meaning": "Trois plans de contrôle transversaux (A, B, C) et chaîne ArchiMate 4.0 zéro orpheline"
+            "meaning": "Trois plans de contrôle transversaux (A, B, C) et chaîne ArchiMate 4.0 sans exigence orpheline"
           },
           {
             "color_token": "Vert émeraude (#047857)",
             "meaning": "Points de contrôle obligatoires `PC1–PC5` et séparation de `SBB` substituables"
           }
         ],
-        "key_takeaway_box": "À retenir : Tous les volumes convergent vers une carte unique à cinq couches et trois plans transversaux; chaque obligation réglementaire y descend sans rupture jusqu'au composant logiciel remplaçable (SBB)."
+        "key_takeaway_box": "Tous les volumes convergent vers une carte unifiée à cinq couches et trois plans transversaux, assurant la traçabilité continue de chaque obligation réglementaire jusqu'au composant logiciel substituable (SBB)."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1450,7 +1450,7 @@
           "title": "Architecture de référence unifiée à 5 couches et 3 volets de contrôle, raccordement exact aux 6 couches de CAD26 § 5.2 (fermeture DIV-02) et délimitation du noyau possédé face aux suites SaaS.",
           "source_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/Fig-02 - Architecture de référence unifiée à 5 couches et 3 volets.puml",
           "rendered_path": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-02.svg",
-          "role_note": "Schéma maître de fermeture DIV-02 raccordant C1–C5 + Plans A–C aux six couches de CAD26 §5.2."
+          "role_note": "Schéma maître de fermeture DIV-02 raccordant C1–C5 et Plans A–C aux six couches de CAD26 § 5.2."
         },
         {
           "tome_id": "T2",
@@ -1498,8 +1498,8 @@
         "noyau-controle-possede-cap",
         "clauses-sortie-portabilite-interchangeabilite"
       ],
-      "title": "Posséder son noyau (42 capacités invariantes vs 10 sur signal), gravité des données et 9 clauses de sortie",
-      "insertion_point": "Chapitre 06 (§06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `noyau-controle-possede-cap`)",
+      "title": "Posséder son noyau (42 capacités invariantes par rapport à 10 sur signal), gravité des données et neuf clauses de sortie",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `noyau-controle-possede-cap`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1507,19 +1507,19 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle ne déclenche que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS par gravité des données tout en verrouillant la sortie (Data Act & BSIF B-10).",
-      "vulgarization_angle": "Séparer le terrain, les titres de propriété et les compteurs (noyau possédé) des appareils électroménagers loués (modèles substituables) et imposer un contrat de déménagement testé chaque année (essai de sortie).",
+      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle n'active que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS selon la gravité des données tout en verrouillant la réversibilité (Data Act et BSIF B-10).",
+      "vulgarization_angle": "Distinguer les infrastructures foncières, les titres de propriété et les instruments de mesure (noyau possédé) des équipements loués ou remplaçables (modèles d'inférence), tout en exigeant un protocole de migration contractuel testé annuellement.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Trois conditions du plan de contrôle et les 42 CAP invariantes (DISC-03)",
-            "content": "Chemin réseau obligé (PEP), registre à 7 états faisant seul autorité (≠ catalogue produit) et preuve immuable hors modèle; 17 CAP au plan de contrôle + 25 points de coupure financés dès P1."
+            "content": "Chemin réseau obligé (PEP), registre à 7 états faisant seul autorité (distinct du catalogue produit) et preuve immuable hors modèle ; 17 CAP au plan de contrôle + 25 points de coupure financés dès P1."
           },
           {
             "zone_id": "Z2",
-            "label": "10 capacités conditionnelles (`CAP-004, 006, 013, 014, 025, 027, 028, 033, 034, 041`)",
-            "content": "Action préparatoire légère dès P1–P2 mais déploiement complet déclenché uniquement sur signal vérifié SIG-* selon les scénarios A (Socle étendu), B (Archipel) ou C (Blocs)."
+            "label": "Dix capacités conditionnelles (`CAP-004, 006, 013, 014, 025, 027, 028, 033, 034, 041`)",
+            "content": "Action préparatoire légère dès P1–P2, mais déploiement complet déclenché uniquement sur signal vérifié `SIG-*` selon les scénarios A (Socle étendu), B (Archipel) ou C (Blocs)."
           },
           {
             "zone_id": "Z3",
@@ -1528,26 +1528,26 @@
           }
         ],
         "numbered_flows": [
-          "① Financer sans regret au Palier 1 les 42 capacités invariantes formant les 4 plans du noyau possédé.",
-          "② Garder les 10 capacités conditionnelles en attente derrière interfaces légères jusqu'au franchissement d'un signal SIG-*.",
+          "① Financer sans regret au Palier 1 les 42 capacités invariantes formant les quatre plans du noyau possédé.",
+          "② Maintenir les 10 capacités conditionnelles en attente derrière des interfaces légères jusqu'au franchissement d'un signal `SIG-*`.",
           "③ Appliquer la règle de gravité (≥ 85 % local) : bloquer toute liaison latérale entre suites SaaS et imposer `EXIG-ARC-21`.",
-          "④ Distinguer interchangeabilité (appeler) et transférabilité (déménager état/mémoire/règles), puis prouver la sortie par un essai annuel B-10 / Data Act."
+          "④ Dissocier interchangeabilité (appeler) et transférabilité (migrer état, mémoire et règles), puis démontrer la sortie au moyen d'un essai annuel B-10 / Data Act."
         ],
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Noyau de contrôle possédé (42 CAP invariantes sous 3 conditions d'effectivité)"
+            "meaning": "Noyau de contrôle possédé (42 CAP invariantes sous trois conditions d'effectivité)"
           },
           {
             "color_token": "Or ambré (#B45309)",
-            "meaning": "10 capacités conditionnelles activées uniquement sur signal SIG-* (scénarios A/B/C)"
+            "meaning": "Dix capacités conditionnelles activées uniquement sur signal `SIG-*` (scénarios A, B et C)"
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Actifs transférables sous Git et 9 clauses de sortie validées par répétition"
+            "meaning": "Actifs transférables sous Git et neuf clauses de sortie validées par répétition"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne recodez pas les modèles ni les clouds, mais possédez toujours votre registre, vos clés, vos politiques et vos dépôts d'actifs — et testez chaque année votre porte de sortie contractuelle."
+        "key_takeaway_box": "L'institution ne réinvente ni les modèles ni les infrastructures infonuagiques, mais conserve la propriété exclusive de son registre, de ses clés, de ses politiques et de ses dépôts d'actifs, tout en éprouvant annuellement sa réversibilité contractuelle."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1565,7 +1565,7 @@
           "title": "Carte des capacités cibles par couche et par volet du plan de contrôle",
           "source_path": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/Fig-03 - Carte des capacités cibles par couche et par volet du plan de contrôle.puml",
           "rendered_path": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-03.svg",
-          "role_note": "Cartographie l'ensemble des 52 capacités cibles par couche et volet du plan de contrôle."
+          "role_note": "Cartographie l'ensemble des 52 capacités cibles par couche et par volet du plan de contrôle."
         },
         {
           "tome_id": "T7",
@@ -1609,7 +1609,7 @@
         "principes-architecture-pri-001-015"
       ],
       "title": "Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit",
-      "insertion_point": "Chapitre 06 (§06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `catalogue-31-adr-12-dec`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `catalogue-31-adr-12-dec`)",
       "target_audiences": [
         "Juridique / Conformité",
         "AE / AS",
@@ -1617,13 +1617,13 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce schéma résout deux casse-têtes récurrents en comité d'architecture : quel principe gagne en cas de conflit (droit > 10 interdits `EXIG-GOV-17` > `DOIT` > protection > architecture) et comment faire évoluer le catalogue des `31 ADR` de 2027 vers 2035 sans dépendre d'outils commerciaux ou en incubation (`8` invariants maintenus, `7` sous veille `SIG-*`, `16` généralisées en `12 DEC` neutres).",
-      "vulgarization_angle": "Associer une cour suprême hiérarchique des règles (5 échelons où la loi prime toujours) à un poste de triage qui purge les marques commerciales des 31 fiches ADR pour produire 12 contrats durables.",
+      "pedagogical_objective": "Ce schéma résout deux arbitrages récurrents en comité d'architecture : déterminer quel principe prévaut en cas de conflit (droit applicable > 10 interdits `EXIG-GOV-17` > `DOIT` > protection > architecture) et faire évoluer le catalogue des `31 ADR` de 2027 vers 2035 sans dépendance envers des outils commerciaux ou en incubation (`8` invariants maintenus, `7` sous veille `SIG-*`, `16` généralisés en `12 DEC` neutres).",
+      "vulgarization_angle": "Combiner une hiérarchie constitutionnelle des normes à cinq échelons — où le droit applicable prime systématiquement — à un filtre de pérennisation qui purge les marques commerciales des 31 fiches ADR pour en extraire 12 contrats techniques durables.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Pyramide stricte d'arbitrage normatif (`CAD26 §4.3` : `PRIN-01..12` ↔ `PRI-001..015`)",
+            "label": "Pyramide stricte d'arbitrage normatif (`CAD26 § 4.3` : `PRIN-01..12` ↔ `PRI-001..015`)",
             "content": "Échelon 1 Droit applicable → Échelon 2 Dix interdits EXIG-GOV-17 → Échelon 3 Règles DOIT sur DEVRAIT → Échelon 4 Principes de protection (`PRIN-03..07,10,12`) → Échelon 5 Principes d'architecture (`PRIN-01,02,08,09,11`)."
           },
           {
@@ -1634,13 +1634,13 @@
           {
             "zone_id": "Z3",
             "label": "Consolidation en 12 contrats fonctionnels neutres `DEC-001` à `DEC-012`",
-            "content": "Suppression de tout nom d'éditeur ou projet précoce (ex. dissonance ADR-009 purgée en DEC-003), rattachement aux `CAP-001..052`, gabarit YAML minimal et suivi par signaux `SIG-*`."
+            "content": "Suppression de tout nom d'éditeur ou de projet précoce (par exemple dissonance ADR-009 purgée en DEC-003), rattachement aux `CAP-001..052`, gabarit YAML minimal et suivi par signaux `SIG-*`."
           }
         ],
         "numbered_flows": [
-          "① Trancher tout conflit d'ingénierie (ex. baisse d'utilité CaMeL 84 % → 77 % en classe élevée) selon la pyramide à cinq échelons.",
-          "② Contrôler chaque dossier sur les 15 principes falsifiables `PRI-001..015` et leur table de passage `PRIN-01..12`.",
-          "③ Ventiler les 31 ADR opérationnelles (2027-B001 / PRR-75) entre 8 invariants permanents, 7 veilles sur signal et 16 fiches à neutraliser.",
+          "① Trancher tout conflit d'ingénierie (par exemple baisse d'utilité CaMeL de 84 % à 77 % en classe élevée) selon la pyramide à cinq échelons.",
+          "② Contrôler chaque dossier à l'aune des 15 principes falsifiables `PRI-001..015` et de leur table de passage `PRIN-01..12`.",
+          "③ Ventiler les 31 ADR opérationnelles (`2027-B001` / `PRR-75`) entre 8 invariants permanents, 7 veilles sur signal et 16 fiches à neutraliser.",
           "④ Publier et vérifier en CI/CD les 12 décisions `DEC-001` à `DEC-012` exemptes de couplage produit jusqu'en 2035."
         ],
         "color_legend": [
@@ -1650,14 +1650,14 @@
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "8 ADR maintenues comme invariants architecturaux et principes de protection"
+            "meaning": "Huit ADR maintenues comme invariants architecturaux et principes de protection"
           },
           {
             "color_token": "Turquoise mesure (#0F766E)",
-            "meaning": "7 ADR surveillées sur signal `SIG-*` et 12 décisions neutres `DEC-001..012`"
+            "meaning": "Sept ADR surveillées sur signal `SIG-*` et douze décisions neutres `DEC-001..012`"
           }
         ],
-        "key_takeaway_box": "À retenir : La loi et la protection des personnes priment toujours sur la performance d'un modèle, et aucune décision d'architecture durable ne doit reposer sur le nom d'un outil commercial passager."
+        "key_takeaway_box": "Le droit et la protection des personnes priment systématiquement sur la performance d'un modèle, et aucune décision d'architecture pérenne ne saurait reposer sur le nom d'un produit commercial conjoncturel."
       },
       "reuse_status": "creation_originale",
       "linked_tome_figures": []
@@ -1676,7 +1676,7 @@
         "criteres-qos-cout-precision-latence"
       ],
       "title": "Maturité `N1–N5`, diagnostic patrimonial `S_ready` (`c_sec ≥ 60`), ergonomie d'outils et budgets `QoS`",
-      "insertion_point": "Chapitre 06 (§06.2.2 — Cadres TOGAF / ArchiMate et 6 couches, après le thème `grille-evaluation-maturite-n1-n5`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.2 — Cadres TOGAF / ArchiMate et six couches, après le thème `grille-evaluation-maturite-n1-n5`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -1684,36 +1684,36 @@
       ],
       "visual_archetype": "Échelle graduée de maturité / autonomie",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma donne à l'entreprise sa grille de progression sur 5 niveaux (`N1 Ad hoc` à `N5 Fédéré B2B`) verrouillée par quatre portes `G1–G4` : impossible de sauter à l'orchestration si un vieux système central échoue au test `S_ready` (clause éliminatoire de sécurité `c_sec ≥ 60`), si les outils ne retournent pas d'erreurs claires ou si les budgets de latence et coût QoS ne sont pas tenus.",
-      "vulgarization_angle": "Visualiser une rampe à cinq paliers munie de quatre barrières douanières `G1–G4` et d'un contrôle technique obligatoire `S_ready` qui rétrograde en lecture seule tout vieux système non encapsulé.",
+      "pedagogical_objective": "Ce schéma fournit à l'entreprise sa grille de progression sur cinq niveaux (`N1 Ad hoc` à `N5 Fédéré B2B`) verrouillée par quatre portes `G1–G4` : il empêche d'accéder à l'orchestration si un système patrimonial échoue à l'évaluation `S_ready` (clause éliminatoire de sécurité `c_sec ≥ 60`), si les outils ne retournent pas d'erreurs structurées exploitables ou si les budgets QoS de latence et de coût ne sont pas respectés.",
+      "vulgarization_angle": "Visualiser une rampe de qualification à cinq paliers munie de quatre portes de contrôle `G1–G4` et d'un audit technique préalable `S_ready` qui maintient en lecture seule tout système patrimonial non encapsulé.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Grille à 5 niveaux `N1–N5` et 4 portes bloquantes `G1–G4`",
-            "content": "N1 Ad hoc → G1 Visibilité → N2 Départemental → G2 Homologation (socle N3 Gouverné : E-23 / AI Act) → G3 Industrialisation → N4 Orchestré SI → G4 Fédération → N5 Fédéré B2B (aucun saut N1→N4)."
+            "label": "Grille à cinq niveaux `N1–N5` et quatre portes bloquantes `G1–G4`",
+            "content": "N1 Ad hoc → G1 Visibilité → N2 Départemental → G2 Homologation (socle N3 Gouverné : E-23 / AI Act) → G3 Industrialisation → N4 Orchestré SI → G4 Fédération → N5 Fédéré B2B (aucun saut N1 → N4)."
           },
           {
             "zone_id": "Z2",
-            "label": "Score brownfield `S_ready` et triage automatisé du patrimoine",
-            "content": "5 critères pondérés avec clause éliminatoire `c_sec ≥ 60` : < 50 ou `c_sec < 60` → lecture seule `L1` + façade MCP ACID/bulkhead; 50–75 → écriture sous quotas; ≥ 75 → natif N3/N4."
+            "label": "Score patrimonial `S_ready` et triage automatisé",
+            "content": "Cinq critères pondérés avec clause éliminatoire `c_sec ≥ 60` : < 50 ou `c_sec < 60` → lecture seule `L1` + façade MCP ACID/bulkhead ; 50–75 → écriture sous quotas ; ≥ 75 → natif N3/N4."
           },
           {
             "zone_id": "Z3",
             "label": "Ergonomie cognitive d'outils (ACI) et budgets QoS mesurés en CI",
-            "content": "Outils orientés intention métier (≤ 15 outils, erreurs structurées actionnables vs CRUD 1:1) et budgets QoS coût/précision/latence vérifiés via Borealis-Bench et TCK A2A."
+            "content": "Outils orientés intention métier (≤ 15 outils, erreurs structurées actionnables par rapport à CRUD 1:1) et budgets QoS coût/précision/latence vérifiés via Borealis-Bench et TCK A2A."
           }
         ],
         "numbered_flows": [
           "① Évaluer chaque système patrimonial selon `S_ready` et bloquer en lecture seule L1 tout score < 50 ou `c_sec < 60`.",
-          "② Remplacer les appels REST CRUD 1:1 par des outils d'intention fiables retournant des erreurs actionnables.",
-          "③ Vérifier en CI les 5 critères permanents et budgets QoS (coût, précision, latence) avant le passage en production N3.",
+          "② Remplacer les points de terminaison REST CRUD 1:1 par des outils d'intention fiables retournant des erreurs actionnables.",
+          "③ Vérifier en intégration continue les cinq critères permanents et les budgets QoS (coût, précision, latence) avant le passage en production N3.",
           "④ Appliquer le triage automatisé (`DECOMMISSION`, `QUARANTINE_L1`, `REMEDIATE`, `PROMOTE`) aux portes `G1–G4`."
         ],
         "color_legend": [
           {
             "color_token": "Corail alerte (#DC2626)",
-            "meaning": "Niveaux non gouvernés N1–N2 et systèmes bloqués en `L1` faute de `c_sec ≥ 60`"
+            "meaning": "Niveaux non gouvernés N1–N2 et systèmes maintenus en `L1` faute de `c_sec ≥ 60`"
           },
           {
             "color_token": "Bleu ardoise (#1B4F72)",
@@ -1721,10 +1721,10 @@
           },
           {
             "color_token": "Vert émeraude (#047857)",
-            "meaning": "Niveaux N4–N5 atteints uniquement après validation des portes G2–G4 et budgets QoS"
+            "meaning": "Niveaux N4–N5 atteints uniquement après validation des portes G2–G4 et des budgets QoS"
           }
         ],
-        "key_takeaway_box": "À retenir : Pas de raccourci vers l'orchestration multi-domaines : tout système patrimonial non sécurisé (`c_sec < 60`) reste cantonné à la lecture seule derrière une façade d'intention."
+        "key_takeaway_box": "Aucun raccourci ne mène à l'orchestration multi-domaines : tout système patrimonial n'atteignant pas le seuil de sécurité (`c_sec ≥ 60`) demeure confiné en lecture seule derrière une façade orientée intention."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -1734,7 +1734,7 @@
           "title": "Modèle de maturité de l’entreprise agentique (N1 à N5) et portes de gouvernance bloquantes.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-55 - Modèle de maturité de l'entreprise agentique (N1 à N5) et portes.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-55.svg",
-          "role_note": "Fournit l'escalier complet N1–N5, les portes G1–G4 et la loi de progression interdisant le saut N1→N4."
+          "role_note": "Fournit l'escalier complet N1–N5, les portes G1–G4 et la règle de progression interdisant le saut N1 → N4."
         },
         {
           "tome_id": "T2",
@@ -1742,7 +1742,7 @@
           "title": "Modèle de maturité en cinq niveaux. Chaque niveau englobe les précédents; la feuille de route vise le niveau 3, « Défini », en 18 mois environ (durée indicative, à calibrer après l’évaluation initiale). Le niveau global de l’entreprise est celui de sa dimension la plus faible. Source : cadre CRE-IA-2026-01.",
           "source_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-27 - Modèle de maturité en cinq niveaux.puml",
           "rendered_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-27.svg",
-          "role_note": "Relie le modèle de maturité en cinq niveaux à la règle du niveau global égal à la dimension la plus faible."
+          "role_note": "Relie le modèle de maturité en cinq niveaux à la règle selon laquelle le niveau global équivaut à la dimension la plus faible."
         },
         {
           "tome_id": "T3",
@@ -1750,7 +1750,7 @@
           "title": "Comparaison architecturale : mappage naïf 1:1 CRUD REST vers MCP face à la conception orientée intention métier agrégée.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-11 - Comparaison architecturale - mappage naïf 1 - 1 CRUD REST vers MCP.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-11.svg",
-          "role_note": "Illustre le passage des endpoints CRUD 1:1 fragiles aux outils orientés intention métier."
+          "role_note": "Illustre le passage des points de terminaison CRUD 1:1 fragiles aux outils orientés intention métier."
         },
         {
           "tome_id": "T6",

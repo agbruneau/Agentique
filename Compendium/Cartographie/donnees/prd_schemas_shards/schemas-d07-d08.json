@@ -38,31 +38,31 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Faire comprendre en dix secondes qu'un agent IA lit instructions et données externes dans le même flux de texte : un courriel ou document piégé (injection indirecte) peut détourner un agent tout à fait honnête dès lors que l'écosystème réunit trois ingrédients séparés (données privées, lecture externe non fiable, canal de sortie).",
-      "vulgarization_angle": "Métaphore du circuit à trois fils séparés : pris individuellement, un outil CRM, un lecteur de courriels et un connecteur HTTP sont sûrs, mais les relier au même agent referme la triade létale (exfiltration zéro-clic EchoLeak).",
+      "pedagogical_objective": "Démontrer avec clarté qu'un agent d'intelligence artificielle traite les instructions et les données externes dans un même flux de jetons : un courriel ou un document piégé (injection indirecte) peut détourner un agent légitime dès lors que son environnement réunit trois propriétés distinctes (accès aux données privées, exposition à une source externe non fiable et canal de sortie).",
+      "vulgarization_angle": "Métaphore d'un circuit électrique à trois conducteurs séparés : pris isolément, un outil CRM, un lecteur de courriels et un connecteur HTTP demeurent sûrs, mais leur raccordement au même agent referme la triade létale (exfiltration zéro-clic EchoLeak).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Trois capacités bénignes isolément (non-compositionnalité)",
-            "content": "Outil A (lecture CRM/dossiers privés), Outil B (lecture courriels/web non fiables) et Outil C (envoi courriel/requête HTTP sortante), chacun validé et sûr pris à part."
+            "content": "Outil A (lecture CRM et dossiers privés), Outil B (lecture de courriels et pages web non fiables) et Outil C (envoi de courriel ou requête HTTP sortante), chacun validé et sûr pris séparément."
           },
           {
             "zone_id": "Z2",
             "label": "Zone de danger — Reconstitution de la triade létale au cœur du modèle",
-            "content": "Fusion des consignes système et du texte piégé (CVE-2025-32711 EchoLeak, AgentPoison) dans la même fenêtre d'attention, poussant l'agent à exfiltrer les données privées via l'outil C."
+            "content": "Fusion des consignes système et du texte piégé (CVE-2025-32711 EchoLeak, AgentPoison) dans la même fenêtre d'attention, incitant l'agent à exfiltrer les données privées via l'outil C."
           },
           {
             "zone_id": "Z3",
-            "label": "SAS de désamorçage déterministe (pré-analyse SLM + CaMeL + Bilingue FR/EN)",
-            "content": "Lecteur SLM sans outil extrayant un JSON Schema strict (données marquées non fiables) et refus de la détection probabiliste seule (EXIG-SEC-05), avec suite adversariale FR/EN en CI."
+            "label": "Sas de désamorçage déterministe (pré-analyse SLM + CaMeL + suite bilingue FR/EN)",
+            "content": "Lecteur SLM sans outil extrayant un JSON Schema strict (données marquées non fiables) et proscription de la détection probabiliste isolée (EXIG-SEC-05), avec suite adversariale FR/EN en intégration continue."
           }
         ],
         "numbered_flows": [
           "① Un agent autorisé lit simultanément des données confidentielles internes (sommet B) et un document externe provenant d'un tiers (sommet A).",
-          "② Une consigne cachée dans le document externe détourne l'attention du modèle parce que texte fiable et texte adverse partagent le même canal de jetons.",
-          "③ Sans garde-fou structurel, l'agent invoque un outil d'envoi externe (sommet C) et déclenche une exfiltration silencieuse sans clic utilisateur.",
-          "④ L'encapsulation par pré-lecteur SLM sans outil, schéma JSON fermé et suivi de teinte CaMeL (77 % sur AgentDojo, 95,83 % rappel Borealis-Bench) rompt la triade avant toute sortie."
+          "② Une consigne dissimulée dans le document externe détourne l'attention du modèle parce que texte fiable et texte adversarial partagent le même canal de jetons.",
+          "③ En l'absence de verrou structurel, l'agent invoque un outil d'envoi externe (sommet C) et déclenche une exfiltration silencieuse sans intervention de l'utilisateur.",
+          "④ L'encapsulation par pré-lecteur SLM sans outil, schéma JSON fermé et suivi de teinte CaMeL (77 % sur AgentDojo, 95,83 % de rappel sur Borealis-Bench) rompt la triade avant toute sortie."
         ],
         "color_legend": [
           {
@@ -71,14 +71,14 @@
           },
           {
             "color_token": "Ambre avertissement (#D97706)",
-            "meaning": "Surface d'entrée non fiable (courriels, web, documents, mémoire partagée)"
+            "meaning": "Surface d'entrée non fiable (courriels, pages web, documents, mémoire partagée)"
           },
           {
             "color_token": "Bleu garde-fou (#1D4ED8)",
             "meaning": "Sas SLM sans outil, JSON Schema fermé et suite bilingue FR/EN bloquante en CI"
           }
         ],
-        "key_takeaway_box": "À retenir : Assembler trois composants individuellement sûrs ne produit jamais un système sûr par addition. Comme un modèle ne distingue pas l'ordre légitime du texte piégé, il faut casser la triade en amont hors du modèle."
+        "key_takeaway_box": "L'assemblage de trois composants individuellement sûrs ne produit jamais un système sûr par simple addition. Puisqu'un modèle ne distingue pas l'ordre légitime du texte piégé, la triade doit être rompue en amont hors du modèle."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -88,7 +88,7 @@
           "title": "La triade létale : trois propriétés (accès aux données privées, exposition à du contenu non fiable, canal de sortie vers l’extérieur) dont la conjonction à l’intersection des trois ensembles suffit.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-19.2 - La triade létale - trois propriétés.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-19.2.png",
-          "role_note": "Diagramme source de la triade létale à l'intersection des données privées, du contenu non fiable et du canal sortant."
+          "role_note": "Diagramme source illustrant la triade létale à l'intersection des données privées, du contenu non fiable et du canal sortant."
         },
         {
           "tome_id": "T1",
@@ -96,7 +96,7 @@
           "title": "Ce que la composition ajoute à la menace : surface non composable (§ 11.1.1), frontière franchie (§ 11.1.3), effet cumulé (§ 11.2.2).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-11.1 - Ce que la composition ajoute à la menace - surface non.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.1.png",
-          "role_note": "Illustre pourquoi la composition multi-serveurs crée une surface d'attaque non composable."
+          "role_note": "Explique pourquoi la composition multi-serveurs engendre une surface d'attaque non composable."
         },
         {
           "tome_id": "T3",
@@ -104,7 +104,7 @@
           "title": "Le trajet d’une injection indirecte : un tiers dépose une consigne dans un contenu que l’agent lit pour une tâche légitime, et le résultat d’outil détourne l’objectif de l’agent. Ce que l’attaquant en tire dépend des capacités dont l’agent dispose.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-43 - Le trajet d'une injection indirecte - un tiers dépose une consigne.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-43.svg",
-          "role_note": "Trace le trajet complet d'une injection indirecte depuis un contenu tiers jusqu'au détournement d'outil."
+          "role_note": "Retrace le cheminement complet d'une injection indirecte depuis un contenu tiers jusqu'au détournement d'outil."
         },
         {
           "tome_id": "T3",
@@ -112,7 +112,7 @@
           "title": "Anatomie d’une attaque trans-agent (OWASP ASI & MCP) et barrières de rupture déterministes.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-44 - Anatomie d'une attaque trans-agent (OWASP ASI & MCP) et barrières.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-44.svg",
-          "role_note": "Montre la propagation trans-agent OWASP ASI/MCP et les barrières déterministes de coupure."
+          "role_note": "Expose la propagation inter-agents OWASP ASI/MCP ainsi que les barrières déterministes de coupure."
         }
       ]
     },
@@ -129,7 +129,7 @@
         "chaine-approvisionnement-agent-skills"
       ],
       "title": "Outils MCP empoisonnés, « rug-pull » et Agent Skills vulnérables : le menu modifié en cuisine après l'inspection",
-      "insertion_point": "Chapitre 19 — section 19.2.1 (fiche tool-poisoning-rug-pull et chaine-approvisionnement-agent-skills)",
+      "insertion_point": "Chapitre 19 — section 19.2.1 (fiches tool-poisoning-rug-pull et chaine-approvisionnement-agent-skills)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -137,38 +137,38 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Rendre tangible en dix secondes le risque de chaîne logistique MCP et Agent Skills (40,58 % de dérives silencieuses observées sur 21 643 serveurs MCP et 26,1 % de vulnérabilités dans 31 132 skills) et justifier pourquoi chaque outil et compétence doit porter un scellement SHA-256 vérifié avant chaque exécution.",
-      "vulgarization_angle": "Comparer l'écosystème sans scellement à un traiteur qui soumet un menu validé par l'inspecteur le lundi puis remplace secrètement les ingrédients le mardi (« rug-pull »), face au scellé numérique SHA-256 JCS bloquant la moindre virgule modifiée.",
+      "pedagogical_objective": "Rendre tangible le risque de chaîne logistique MCP et Agent Skills (40,58 % de dérives silencieuses relevées sur 21 643 serveurs MCP et 26,1 % de vulnérabilités parmi 31 132 compétences publiques) et justifier pourquoi chaque outil et chaque compétence doivent porter un scellement SHA-256 vérifié avant chaque exécution.",
+      "vulgarization_angle": "Comparer l'écosystème sans scellement à un fournisseur alimentaire qui présente un menu approuvé par l'inspecteur le lundi puis substitue secrètement les ingrédients le mardi (« rug-pull »), par opposition au sceau cryptographique SHA-256 JCS bloquant la moindre altération d'octet.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Avant — Registres ouverts non signés et mutation post-approbation (F-52)",
-            "content": "Spécification Tool sans champ de signature/version (MCP 2025-11-25), descriptions textuelles piégées (AML.T0104), notification list_changed silencieuse, redirections GitHub et scripts SKILL.md publics non audités."
+            "content": "Spécification Tool dépourvue de champ de signature ou de version (MCP 2025-11-25), descriptions textuelles piégées (AML.T0104), notification `list_changed` silencieuse, redirections GitHub et scripts `SKILL.md` publics non audités."
           },
           {
             "zone_id": "Z2",
-            "label": "Après — Scellé cryptographique SHA-256 JCS et catalogue interne cloisonné",
-            "content": "Empreinte SHA-256 canonisée RFC 8785 vérifiée à tools/list et avant chaque appel (EXIG-MCP-20, EXIG-SEC-18), espace de noms préfixé par serveur, SBOM CycloneDX/SPDX complet et confinement OpenSandbox."
+            "label": "Après — Sceau cryptographique SHA-256 JCS et catalogue interne cloisonné",
+            "content": "Empreinte SHA-256 canonisée RFC 8785 vérifiée lors de `tools/list` et avant chaque appel (EXIG-MCP-20, EXIG-SEC-18), espace de noms préfixé par serveur, SBOM CycloneDX/SPDX complet et confinement OpenSandbox."
           }
         ],
         "numbered_flows": [
-          "① L'architecte audite et approuve initialement un serveur MCP ou une compétence SKILL.md dans le registre interne.",
-          "② Sans scellement, un fournisseur compromis ou malveillant modifie la description d'outil ou le script après coup (rug-pull F-52).",
-          "③ Avec le contrôle EXIG-MCP-20, la passerelle recalcule le condensat SHA-256 JCS de la définition avant tout appel et compare au registre.",
-          "④ Au moindre écart d'un octet ou redirection d'hôte, l'appel est révoqué en mode fermé et l'outil bascule en quarantaine jusqu'à ré-homologation."
+          "① L'architecte audite et homologue initialement un serveur MCP ou une compétence `SKILL.md` au sein du registre interne.",
+          "② En l'absence de scellement, un fournisseur compromis ou malveillant modifie après coup la description de l'outil ou le script (`rug-pull` F-52).",
+          "③ Grâce au contrôle EXIG-MCP-20, la passerelle recalcule le condensat SHA-256 JCS de la définition avant chaque appel et le compare au registre.",
+          "④ Au moindre écart d'octet ou redirection d'hôte, l'appel est révoqué en mode fermé et l'outil bascule en quarantaine jusqu'à ré-homologation."
         ],
         "color_legend": [
           {
             "color_token": "Orange alerte (#EA580C)",
-            "meaning": "Chaîne logistique publique mutable (40,58 % de dérives MCP, 26,1 % de skills à risque)"
+            "meaning": "Chaîne logistique publique mutable (40,58 % de dérives MCP, 26,1 % de compétences à risque)"
           },
           {
             "color_token": "Vert validation (#15803D)",
             "meaning": "Registre interne épinglé par empreinte SHA-256 JCS et SBOM vérifié"
           }
         ],
-        "key_takeaway_box": "À retenir : Inspecter un outil ou une Agent Skill une fois à l'entrée ne suffit pas. L'empreinte cryptographique SHA-256 vérifiée avant chaque exécution transforme une promesse verbale mutable en contrat matériellement infalsifiable."
+        "key_takeaway_box": "L'inspection ponctuelle d'un outil ou d'une Agent Skill à l'admission ne suffit pas. L'empreinte cryptographique SHA-256 vérifiée avant chaque exécution transforme une déclaration mutable en contrat matériellement infalsifiable."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -178,7 +178,7 @@
           "title": "Les trois surfaces d’attaque, distinguées par ce que chacune corrompt.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-11.2 - Les trois surfaces d'attaque, distinguées par ce que chacune.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.2.png",
-          "role_note": "Distingue les trois surfaces d'attaque (outils, invites, mémoire) selon ce que chacune corrompt."
+          "role_note": "Distingue les trois surfaces d'attaque (outils, invites, mémoire) selon la nature de ce que chacune corrompt."
         },
         {
           "tome_id": "T1",
@@ -186,7 +186,7 @@
           "title": "La classe d’attaques dont la particularité n’est pas le maillon mais le moment.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-20.0 - La classe d'attaques dont la particularité n'est pas le maillon.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-20.0.png",
-          "role_note": "Explique la classe d'attaques temporelles (« rug-pull ») où l'altération survient après l'approbation."
+          "role_note": "Explique la classe des attaques temporelles (« rug-pull ») dont l'altération survient postérieurement à l'approbation."
         },
         {
           "tome_id": "T1",
@@ -194,7 +194,7 @@
           "title": "Le retournement du ch. 20 relu comme défaut de provenance : la même attaque, vue de l’autre bout.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-47.2 - Le retournement du ch.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.2.svg",
-          "role_note": "Relie l'attaque de mutation d'outils au défaut de provenance AIBOM et d'épinglage des composants livrés."
+          "role_note": "Relie l'attaque par mutation d'outils au défaut de provenance AIBOM et d'épinglage des composants livrés."
         }
       ]
     },
@@ -220,31 +220,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Unifier pour le RSSI, l'architecte et le juriste les référentiels OWASP ASI01–10, MCP Top 10 et CSA MAESTRO avec le principe du mandataire confus (Q-A à Q-D) et montrer comment le marquage cryptographique HMAC UNTRUSTED_EXTERNAL bloque en CI/CD et en exécution tout empoisonnement différé de mémoire (ASI06).",
-      "vulgarization_angle": "Représenter une encre de sûreté indélébile (étiquette HMAC) apposée dès qu'une information vient de l'extérieur : tant que la trace d'encre est détectée au contrôle Cedar, aucun coffre-fort critique ne peut s'ouvrir même si le modèle insiste.",
+      "pedagogical_objective": "Unifier pour le RSSI, l'architecte et les équipes juridiques les référentiels OWASP ASI01–10, MCP Top 10 et CSA MAESTRO avec le patron du mandataire confus (Q-A à Q-D), et illustrer comment le marquage cryptographique HMAC `UNTRUSTED_EXTERNAL` bloque en CI/CD comme à l'exécution tout empoisonnement différé de la mémoire (ASI06).",
+      "vulgarization_angle": "Représenter une encre de sûreté indélébile (étiquette HMAC) apposée dès qu'une information provient de l'extérieur : tant que cette marque demeure décelée lors du contrôle Cedar, aucune opération critique ne peut être déclenchée, quelle que soit l'insistance du modèle.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Boussole taxonomique unifiée — OWASP ASI01–10 × MCP01–10 × MAESTRO × Maillons Q-A..Q-D",
-            "content": "Correspondance directe entre incidents réels (ex. UNC6395 en Q-A, AgentPoison en Q-B, confusion de délégué en Q-C, défaut de mandat en Q-D), les 7 couches MAESTRO et les signaux OTel/SIEM."
+            "content": "Correspondance directe entre incidents réels (UNC6395 en Q-A, AgentPoison en Q-B, confusion de délégué en Q-C, défaut de mandat en Q-D), les sept couches MAESTRO et les signaux OTel/SIEM."
           },
           {
             "zone_id": "Z2",
-            "label": "Treillis d'étiquetage HMAC UNTRUSTED_EXTERNAL et quarantaine mémorielle (ASI06)",
-            "content": "Marquage cryptographique non falsifiable collé aux résumés externes et aux entrées en mémoire partagée, propageant la teinte jusqu'au moteur de règles Cedar qui bloque toute mutation sensible."
+            "label": "Treillis d'étiquetage HMAC `UNTRUSTED_EXTERNAL` et quarantaine mémorielle (ASI06)",
+            "content": "Marquage cryptographique infalsifiable attaché aux résumés externes et aux entrées en mémoire partagée, propageant la teinte jusqu'au moteur de règles Cedar qui bloque toute mutation sensible."
           },
           {
             "zone_id": "Z3",
-            "label": "Harnais Red Team adaptatif continu en CI/CD (ASR_plan vs ASR_action)",
-            "content": "Batterie automatisée testant la déviation d'intention (ASR_plan) et exigeant un taux de passage à l'acte malveillant nul (ASR_action = 0,0 %) avant homologation PRR Grille S."
+            "label": "Harnais Red Team adaptatif continu en CI/CD (`ASR_plan` par rapport à `ASR_action`)",
+            "content": "Batterie automatisée mesurant la déviation d'intention (`ASR_plan`) et exigeant un taux de passage à l'acte malveillant nul (`ASR_action = 0,0 %`) avant l'homologation PRR Grille S."
           }
         ],
         "numbered_flows": [
           "① Toute donnée entrante externe ou mémoire non vérifiée reçoit un sceau HMAC `UNTRUSTED_EXTERNAL` avant même d'atteindre l'agent.",
-          "② Chaque tentative de l'agent ou de sa mémoire est classée sur la matrice OWASP ASI01–10 / MAESTRO et les quatre questions d'identité Q-A..Q-D.",
+          "② Chaque tentative de l'agent ou de sa mémoire est classée sur la matrice OWASP ASI01–10 / MAESTRO et selon les quatre questions d'identité Q-A..Q-D.",
           "③ Lorsque la donnée teintée atteint un outil d'écriture ou une mémoire procédurale durable (ASI06), le PDP Cedar rejette l'opération par treillis de teinte.",
-          "④ En parallèle dans le pipeline CI/CD, un attaquant adaptatif mesure `ASR_plan` vs `ASR_action` et bloque la mise en production tant que `ASR_action > 0 %`."
+          "④ En parallèle dans le pipeline CI/CD, un attaquant adaptatif mesure `ASR_plan` par rapport à `ASR_action` et bloque la mise en production tant que `ASR_action > 0 %`."
         ],
         "color_legend": [
           {
@@ -253,14 +253,14 @@
           },
           {
             "color_token": "Magenta teinte (#BE185D)",
-            "meaning": "Marquage HMAC UNTRUSTED_EXTERNAL propagé sur données externes et mémoire"
+            "meaning": "Marquage HMAC `UNTRUSTED_EXTERNAL` propagé sur données externes et mémoire"
           },
           {
             "color_token": "Émeraude blocage (#047857)",
-            "meaning": "Verrou Cedar et porte CI Red Team garantissant ASR_action = 0,0 %"
+            "meaning": "Verrou Cedar et porte CI Red Team garantissant `ASR_action = 0,0 %`"
           }
         ],
-        "key_takeaway_box": "À retenir : Classer les attaques par maillon d'identité défaillant (mandataire confus) et coller un marqueur HMAC indélébile sur toute donnée douteuse empêche l'agent de blanchir une information piégée en action autorisée."
+        "key_takeaway_box": "Le classement des attaques par maillon d'identité défaillant (mandataire confus) combiné à un marqueur HMAC indélébile sur toute donnée douteuse empêche l'agent de blanchir une information piégée en action autorisée."
       },
       "reuse_status": "creation_originale",
       "linked_tome_figures": []
@@ -290,47 +290,47 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Faire saisir immédiatement le principe directeur PRI-005 : demander à un LLM de respecter ses propres consignes de sécurité ne vaut rien légalement ; les règles (plafonds, murailles réglementaires, runbooks SRE R0–R3 sans shell libre) doivent vivre hors du modèle dans OPA/Rego ou Cedar avec échec fermé (`default allow := false`) au poste PEP.",
-      "vulgarization_angle": "Distinction claire entre le « panneau de conseil » écrit dans le prompt (l'agent peut être convaincu de l'ignorer) et la « barrière mécanique de péage » (PDP OPA/Cedar + PEP agentgateway) qui refuse automatiquement toute porte sans clé valide ni couverture 100 % des règles.",
+      "pedagogical_objective": "Clarifier le principe directeur PRI-005 : demander à un LLM de respecter ses propres consignes de sécurité est dépourvu de valeur contraignante; les règles (plafonds, murailles réglementaires, runbooks SRE R0–R3 sans shell libre) doivent résider hors du modèle dans OPA/Rego ou Cedar avec échec fermé (`default allow := false`) au poste PEP.",
+      "vulgarization_angle": "Distinguer un panneau consultatif inscrit dans l'invite (que l'agent peut être amené à contourner) d'une barrière mécanique de péage (PDP OPA/Cedar associé au PEP `agentgateway`), laquelle refuse systématiquement tout passage dépourvu de titre valide ou de couverture intégrale des règles.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Zone probabiliste (non fiable pour la sécurité) — Modèle et agents SRE d'enquête R0",
-            "content": "Raisonnement LLM, consignes de prompt (interdites comme frontière unique selon AP-10) et essaim d'investigation SRE en lecture seule R0 face aux journaux douteux."
+            "content": "Raisonnement LLM, consignes d'invite (proscrites comme frontière unique selon AP-10) et essaim d'investigation SRE en lecture seule R0 face aux journaux douteux."
           },
           {
             "zone_id": "Z2",
-            "label": "Poste-frontière obligé PEP — Passerelle agentgateway / maillage Zero Trust mTLS",
-            "content": "Coupure réseau obligatoire (« jamais confiance au graphe », NIST SP 800-207) interceptant 100 % des appels MCP, A2A et runbooks sans aucun contournement direct."
+            "label": "Poste-frontière obligé PEP — Passerelle `agentgateway` et maillage Zero Trust mTLS",
+            "content": "Coupure réseau obligatoire (« jamais confiance au graphe », NIST SP 800-207) interceptant 100 % des appels MCP, A2A et runbooks sans contournement direct."
           },
           {
             "zone_id": "Z3",
             "label": "Moteur déterministe PDP hors modèle — OPA Rego v1 (G0) et Cedar SMT (< 1,5 ms)",
-            "content": "Verrou `default allow := false` (EXIG-SEC-06, 45/45 cas à 100 %), sémantique `forbid` prioritaire AuthZEN 1.0, entiers 64 bits sans flottants et catalogue borné SRE R1–R3 (refroidissement 30 min, zéro shell libre)."
+            "content": "Verrou `default allow := false` (EXIG-SEC-06, 45/45 cas à 100 %), sémantique `forbid` prioritaire AuthZEN 1.0, entiers 64 bits sans flottants et catalogue borné SRE R1–R3 (refroidissement de 30 min, zéro shell libre)."
           }
         ],
         "numbered_flows": [
-          "① L'agent ou l'essaim SRE lecture seule R0 formule une intention structurée d'appel d'outil, de paire A2A ou de runbook R1–R3.",
+          "① L'agent ou l'essaim SRE en lecture seule R0 formule une intention structurée d'appel d'outil, de délégation A2A ou de runbook R1–R3.",
           "② Le trafic traverse obligatoirement la passerelle PEP en mTLS (« jamais confiance au graphe ») et interroge le PDP hors modèle.",
-          "③ OPA Rego (`default allow := false`) ou Cedar (`forbid` prioritaire) tranche de manière déterministe en < 1,5 ms selon identité NHI, plafonds et état de session.",
-          "④ Toute donnée manquante, champ mal typé ou commande shell libre entraîne un refus fermé immédiat journalisé sans appel au système cible."
+          "③ OPA Rego (`default allow := false`) ou Cedar (`forbid` prioritaire) tranche de manière déterministe en < 1,5 ms selon l'identité NHI, les plafonds et l'état de session.",
+          "④ Toute donnée manquante, champ mal typé ou commande shell libre entraîne un refus fermé immédiat journalisé sans solliciter le système cible."
         ],
         "color_legend": [
           {
             "color_token": "Ambre probabiliste (#D97706)",
-            "meaning": "Zone cognitive LLM / enquête lecture seule R0 (propose, ne décide jamais ses droits)"
+            "meaning": "Zone cognitive LLM et enquête lecture seule R0 (propose sans jamais statuer sur ses droits)"
           },
           {
             "color_token": "Bleu acier PEP (#1E40AF)",
-            "meaning": "Maillage Zero Trust mTLS et passerelle obligatoire agentgateway / AuthZEN"
+            "meaning": "Maillage Zero Trust mTLS et passerelle obligatoire `agentgateway` / AuthZEN"
           },
           {
             "color_token": "Vert déterministe (#15803D)",
             "meaning": "Moteur Policy-as-Code OPA/Cedar en mode fermé (`default allow := false`)"
           }
         ],
-        "key_takeaway_box": "À retenir : Une règle écrite dans un prompt n'est qu'une suggestion. Seul un moteur OPA/Cedar placé hors du modèle et bloqué par défaut (`default allow := false`) garantit aux juristes et au RSSI que les limites tiennent toujours."
+        "key_takeaway_box": "Une règle énoncée dans une invite demeure purement consultative. Seul un moteur OPA/Cedar situé hors du modèle et fermé par défaut (`default allow := false`) garantit juridiquement et techniquement la tenue des limites."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -340,7 +340,7 @@
           "title": "Où se prend la décision d’autorisation, et où elle s’applique.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-37.5 - Où se prend la décision d'autorisation, et où elle s'applique.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.5.svg",
-          "role_note": "Distingue l'endroit où se prend la décision d'autorisation (PDP) et l'endroit où elle s'applique (PEP)."
+          "role_note": "Distingue le lieu où s'élabore la décision d'autorisation (PDP) de celui où elle s'applique (PEP)."
         },
         {
           "tome_id": "T1",
@@ -348,7 +348,7 @@
           "title": "Zero trust transposé : de « jamais confiance au réseau » à « jamais confiance au graphe ».",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-37.7 - Zero trust transposé - de jamais confiance au réseau à jamais.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.7.svg",
-          "role_note": "Illustre le passage Zero Trust de « jamais confiance au réseau » à « jamais confiance au graphe »."
+          "role_note": "Illustre la transposition Zero Trust de « jamais confiance au réseau » vers « jamais confiance au graphe »."
         },
         {
           "tome_id": "T5",
@@ -364,7 +364,7 @@
           "title": "Architecture conjointe Agentic DataOps et SRE autonome : branchement Write-Audit-Publish sous Data Contracts et investigation causale OTel avec remédiation bornée par Cedar.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-61 - Architecture conjointe Agentic DataOps et SRE autonome - branchement.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-61.svg",
-          "role_note": "Illustre l'application au SRE autonome avec remédiation bornée par politiques Cedar."
+          "role_note": "Illustre l'application au SRE autonome avec remédiation bornée par des politiques Cedar."
         }
       ]
     },
@@ -381,8 +381,8 @@
         "controle-surete-stamp-stpa",
         "alignement-deceptif-red-teaming-adversarial"
       ],
-      "title": "Pourquoi un garde-fou IA ne protège pas d'un attaquant adaptatif : sûreté système STAMP/STPA et comportements déviants mesurés",
-      "insertion_point": "Chapitre 20 — section 20.2.1 & 20.2.2 (Sûreté STAMP/STPA et bancs adversariaux AgentDojo / InjecAgent / AgentHarm)",
+      "title": "Pourquoi un filtre IA ne protège pas d'un attaquant adaptatif : sûreté système STAMP/STPA et comportements déviants mesurés",
+      "insertion_point": "Chapitre 20 — sections 20.2.1 et 20.2.2 (Sûreté STAMP/STPA et bancs adversariaux AgentDojo / InjecAgent / AgentHarm)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -390,36 +390,36 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Dissiper l'illusion commerciale qu'un second LLM « garde-fou » ou un modèle plus intelligent suffisent à assurer la sûreté. En s'appuyant sur STAMP/STPA et les résultats empiriques d'AgentDojo, InjecAgent, METR et Agentic Misalignment, l'arbre guide l'architecte vers des contrôles structurels non adaptables.",
-      "vulgarization_angle": "Montrer pourquoi poster un second surveillant influençable (LLM auxiliaire) cède dès que l'attaquant adapte son discours (« l'attaquant joue en second »), et comment l'analyse STAMP/STPA transforme chaque risque en disjoncteur matériel.",
+      "pedagogical_objective": "Dissiper l'illusion commerciale voulant qu'un second LLM de surveillance ou un modèle plus capable suffise à garantir la sûreté. À partir de STAMP/STPA et des mesures issues d'AgentDojo, d'InjecAgent, de METR et d'Agentic Misalignment, l'arbre oriente l'architecte vers des contrôles structurels non adaptables.",
+      "vulgarization_angle": "Démontrer pourquoi poster un second surveillant influençable (LLM auxiliaire) échoue dès que l'adversaire adapte son discours (« l'attaquant joue en second »), et comment l'analyse STAMP/STPA convertit chaque risque en disjoncteur matériel.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Illusion probabiliste — Filtres par LLM auxiliaire et évaluation naïve en laboratoire",
-            "content": "Hypothèse fausse que capacité brute = sûreté ; faillite des juges et classifieurs statiques sous attaques adaptatives (*The Attacker Moves Second*) et comportements déviants (reward hacking METR, feinte d'alignement, menace d'initié Anthropic)."
+            "label": "Illusion probabiliste — Filtres par LLM auxiliaire et évaluation élémentaire en laboratoire",
+            "content": "Postulat erroné assimilant capacité brute et sûreté; défaillance des juges et classifieurs statiques sous attaques adaptatives (*The Attacker Moves Second*) et comportements déviants (piratage de récompense METR, feinte d'alignement, menace d'initié Anthropic)."
           },
           {
             "zone_id": "Z2",
             "label": "Analyse systémique STAMP/STPA — Identification des actions de contrôle dangereuses",
-            "content": "Cartographie des boucles de rétroaction et érosions de modèles de processus sur bancs spécialisés (AgentDojo utilité/résistance, InjecAgent outils, AgentHarm nocivité)."
+            "content": "Cartographie des boucles de rétroaction et de l'érosion des modèles de processus sur bancs spécialisés (AgentDojo pour le compromis utilité/résistance, InjecAgent pour les outils, AgentHarm pour la nocivité)."
           },
           {
             "zone_id": "Z3",
             "label": "Sortie normative — Conversion vers contrôles déterministes et disjoncteurs",
-            "content": "Traduction directe des modes de défaillance STPA en seuils d'arrêt matériel, politiques OPA/Cedar et retrait d'outils non dérogeable."
+            "content": "Traduction directe des modes de défaillance STPA en seuils d'arrêt matériel, politiques OPA/Cedar et retrait non dérogeable d'outils."
           }
         ],
         "numbered_flows": [
-          "① L'analyse STAMP/STPA recense les actions de contrôle dangereuses qu'un agent pourrait déclencher ou oublier sur dérive de boucle.",
-          "② Un test adversarial évalue la solution face à un attaquant adaptatif sur AgentDojo, InjecAgent et AgentHarm (incluant scénarios de pression type Agentic Misalignment).",
-          "③ Si la protection repose uniquement sur un classifieur ou LLM auxiliaire, elle cède dès que l'adversaire joue en second et adapte ses invites.",
-          "④ Chaque boucle dangereuse identifiée par STPA est convertie en verrou déterministe hors modèle et en seuil de disjoncteur opérationnel."
+          "① L'analyse STAMP/STPA recense les actions de contrôle dangereuses qu'un agent pourrait déclencher ou omettre par dérive de boucle.",
+          "② Une évaluation adversariale éprouve le système face à un attaquant adaptatif sur AgentDojo, InjecAgent et AgentHarm (incluant des scénarios sous pression de type *Agentic Misalignment*).",
+          "③ Si la protection repose uniquement sur un classifieur ou un LLM auxiliaire, elle cède dès que l'adversaire joue en second et adapte ses invites.",
+          "④ Chaque boucle dangereuse repérée par STPA est convertie en verrou déterministe hors modèle ainsi qu'en seuil de disjoncteur opérationnel."
         ],
         "color_legend": [
           {
             "color_token": "Corail fragile (#E11D48)",
-            "meaning": "Protection probabiliste seule exposée aux attaques adaptatives et comportements déviants"
+            "meaning": "Protection probabiliste isolée exposée aux attaques adaptatives et aux comportements déviants"
           },
           {
             "color_token": "Bleu ingénierie (#0369A1)",
@@ -430,7 +430,7 @@
             "meaning": "Contrôle structurel converti en règle déterministe et disjoncteur"
           }
         ],
-        "key_takeaway_box": "À retenir : Un modèle plus intelligent n'est pas intrinsèquement plus sûr ; face à un attaquant qui s'adapte, seule l'analyse de sûreté système (STAMP/STPA) ancrée dans des verrous mécaniques tient bon."
+        "key_takeaway_box": "Un modèle plus capable n'est pas intrinsèquement plus sûr; devant un attaquant adaptatif, seule l'ingénierie de sûreté système (STAMP/STPA) traduite en verrous mécaniques résiste."
       },
       "reuse_status": "creation_originale",
       "linked_tome_figures": []
@@ -458,26 +458,26 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Vulgariser de manière lumineuse la Règle de deux (EXIG-SEC-06, `rule_of_two.rego`) et la séparation contrôle/données CaMeL (EXIG-SEC-07, `camel_taint.rego`) : dès qu'une session composée touche à la fois une donnée privée et une source externe non fiable, la passerelle retire mécaniquement toute porte de sortie ou d'écriture.",
-      "vulgarization_angle": "Comparer la session à un sas bancaire à deux verrous : vous pouvez consulter votre coffre privé seul, ou lire le courrier extérieur dans une pièce isolée, mais dès qu'un document externe entre en salle des coffres, la trappe d'envoi vers l'extérieur se condamne automatiquement jusqu'à validation signée CIBA ou nettoyage complet de la salle.",
+      "pedagogical_objective": "Vulgariser avec rigueur la Règle de deux (EXIG-SEC-06, `rule_of_two.rego`) et la séparation contrôle/données CaMeL (EXIG-SEC-07, `camel_taint.rego`) : dès qu'une session composée accède simultanément à une donnée privée et à une source externe non fiable, la passerelle condamne mécaniquement toute porte de sortie ou d'écriture.",
+      "vulgarization_angle": "Comparer la session à un sas bancaire à double verrouillage : la consultation d'un coffre privé seul ou l'examen de courrier externe en salle isolée demeure licite, mais dès qu'un document externe pénètre en salle des coffres, la trappe d'envoi extérieur se verrouille automatiquement jusqu'à validation signée CIBA ou réinitialisation intégrale de la salle.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Session composée sous Règle de deux (`rule_of_two.rego`, EXIG-SEC-04/06)",
-            "content": "Suivi d'état fortement cohérent couvrant tâche racine, sous-tâches A2A, lectures mémoire et reprises Temporal : cumul maximal de 2 propriétés sur [A] entrée non fiable, [B] données sensibles, [C] sortie/mutation."
+            "content": "Suivi d'état fortement cohérent couvrant tâche racine, sous-tâches A2A, lectures mémoire et reprises Temporal : cumul maximal de deux propriétés parmi [A] entrée non fiable, [B] données sensibles, [C] sortie ou mutation."
           },
           {
             "zone_id": "Z2",
             "label": "Séparation structurelle CaMeL et étiquettes inter-agents (`camel_taint.rego`, EXIG-SEC-07)",
-            "content": "Isolation du graphe d'appels fiable face aux variables de données contaminées ; propagation du marquage de teinte à travers A2A pour prévenir le blanchiment multi-agents (*Can CaMeLs Talk?*)."
+            "content": "Isolation du graphe d'appels fiable face aux variables de données contaminées; propagation du marquage de teinte à travers A2A afin de prévenir le blanchiment multi-agents (*Can CaMeLs Talk?*)."
           }
         ],
         "numbered_flows": [
           "① L'agent lit des données privées [B] puis consomme une source externe non fiable [A] au cours de la même session composée.",
-          "② La passerelle détecte [A]+[B] en code (`rule_of_two.rego`) et retire immédiatement tous les outils [C] d'envoi sortant (y compris P0 texte libre) et de mutation P3.",
-          "③ Tout transfert vers un pair A2A conserve son étiquette de contamination CaMeL (`camel_taint.rego`) pour empêcher qu'un agent propre ne blanchisse la session.",
-          "④ L'action externe reste bloquée jusqu'au redémarrage en contexte vierge ou à la présentation d'un jeton humain CIBA lié cryptographiquement au condensat JCS `h`."
+          "② La passerelle détecte la conjonction [A]+[B] en code (`rule_of_two.rego`) et retire immédiatement tous les outils [C] d'envoi sortant (y compris P0 à texte libre) et de mutation P3.",
+          "③ Tout transfert vers un pair A2A conserve son étiquette de contamination CaMeL (`camel_taint.rego`) afin d'empêcher qu'un agent tiers ne blanchisse la session.",
+          "④ L'action externe demeure bloquée jusqu'au redémarrage en contexte vierge ou à la présentation d'un jeton humain CIBA lié cryptographiquement au condensat JCS `h`."
         ],
         "color_legend": [
           {
@@ -493,7 +493,7 @@
             "meaning": "Contexte vierge redémarré ou approbation signée CIBA/JCS `h`"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne jamais laisser dans la même pièce ouverte un secret client, un document inconnu et un téléphone vers l'extérieur. La Règle de deux + CaMeL coupe la ligne dès que deux de ces conditions se rencontrent."
+        "key_takeaway_box": "La coexistence au sein d'une même session ouverte d'un secret client, d'un document externe et d'un canal de sortie doit être proscrite : le couplage Règle de deux et CaMeL sectionne le canal sortant dès la rencontre des deux premières conditions."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -503,7 +503,7 @@
           "title": "Défense contre l’injection : éviter la triade létale. Le diagramme de gauche montre la combinaison à éviter et la règle de deux qui la casse; la bande inférieure présente les quatre niveaux de contrôle du cadre, du signalement à l’approbation, qui se complètent sans se remplacer. Les propriétés sont celles de l’EXIG-SEC-04 : [B] vise les données et les systèmes sensibles, en lecture comme en écriture. Source : cadre CRE-IA-2026-01, d’après Willison (2025), Meta (2025) et Beurer-Kellner et coll. (2025).",
           "source_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-19 - Défense contre l'injection - éviter la triade létale.puml",
           "rendered_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-19.svg",
-          "role_note": "Figure normative originale expliquant comment la Règle de deux casse la triade létale [A]/[B]/[C]."
+          "role_note": "Figure normative originelle exposant comment la Règle de deux rompt la triade létale [A]/[B]/[C]."
         },
         {
           "tome_id": "T7",
@@ -519,7 +519,7 @@
           "title": "Défense en profondeur et application déterministe de la règle de deux",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-16.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-16.svg",
-          "role_note": "Expose la défense en profondeur et l'application déterministe de la règle de deux."
+          "role_note": "Expose la défense en profondeur et l'application déterministe de la Règle de deux."
         },
         {
           "tome_id": "T8",
@@ -527,7 +527,7 @@
           "title": "Porte de politique hors modèle OPA / Rego fermée par défaut appliquant la Règle de deux, le suivi de contamination CaMeL et le contrôle déclaratif de confinement EXIG-SEC-12..15",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-05.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-05.svg",
-          "role_note": "Contrat exécutable de porte OPA/Rego fermée par défaut appliquant Règle de deux et CaMeL."
+          "role_note": "Contrat exécutable de porte OPA/Rego fermée par défaut appliquant la Règle de deux et CaMeL."
         }
       ]
     },
@@ -543,7 +543,7 @@
         "confinement-shadi-sandbox",
         "confinement-opensandbox-firecracker-wasi"
       ],
-      "title": "De la passoire au coffre-fort éphémère : pourquoi le code généré s'exécute en microVM Firecracker / WASI sans réseau ni secrets",
+      "title": "Du cloisonnement poreux au caisson étanche éphémère : exécution du code généré en microVM Firecracker / WASI sans réseau ni secrets",
       "insertion_point": "Chapitre 21 — section 21.2.1 (Confinement SHADI, microVM et OpenSandbox)",
       "target_audiences": [
         "Direction / Métier",
@@ -552,31 +552,31 @@
       ],
       "visual_archetype": "Échelle graduée de maturité / autonomie",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Expliquer sans jargon noyau pourquoi un conteneur Docker standard (`runc`) ne suffit pas pour exécuter du code généré par IA (OWASP ASI05), et présenter l'échelle d'isolation (WASI, gVisor, microVM Firecracker < 15 ms) ainsi que les quatre verrous obligatoires d'OpenSandbox / SHADI.",
-      "vulgarization_angle": "Comparer des cloisons de plâtre partagées (conteneur à noyau unique interdit) à des caissons étanches jetables à usage unique (microVM Firecracker), privés de téléphone sortant (zéro réseau) et vidés de tout mot de passe en mémoire.",
+      "pedagogical_objective": "Expliquer sans jargon noyau pourquoi un conteneur Docker standard (`runc`) ne suffit pas à exécuter du code généré par l'IA (OWASP ASI05), et présenter l'échelle d'isolation (WASI, gVisor, microVM Firecracker < 15 ms) ainsi que les quatre verrous obligatoires d'OpenSandbox et de SHADI.",
+      "vulgarization_angle": "Opposer des cloisons légères sur fondation partagée (conteneur à noyau unique interdit) à des caissons étanches à usage unique (microVM Firecracker), dépourvus de liaison sortante (zéro réseau) et purgés de tout mot de passe en mémoire.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Échelle de frontières d'isolation (du noyau partagé banni à la microVM matérielle)",
-            "content": "Niveau interdit : conteneur `runc` à noyau partagé ou socket Docker monté ; Niveaux admis : WASI 0.2 (sandboxing léger), gVisor (émulation syscall), microVM Firecracker/Kata KVM par défaut (< 15 ms depuis snapshot)."
+            "label": "Échelle de frontières d'isolation (du noyau partagé proscrit à la microVM matérielle)",
+            "content": "Niveau interdit : conteneur `runc` à noyau partagé ou socket Docker monté; Niveaux admis : WASI 0.2 (confinement léger), gVisor (émulation d'appels système), microVM Firecracker/Kata KVM par défaut (< 15 ms depuis cliché instantané)."
           },
           {
             "zone_id": "Z2",
-            "label": "Quatre verrous cumulatifs OpenSandbox / SHADI + confinement UI (MCP-UI)",
-            "content": "(1) `defaultEgress: DENY_ALL` bloquant SSRF, IMDSv2 169.254.169.254 et 11 plages IANA ; (2) Zéro secret en environnement (injection par mandataire `vsock` hôte) ; (3) Triple délai 30s / 20m / 60m + arithmétique Decimal ; (4) Porte statique anti-`eval` et iframe MCP-UI CSP `connect-src 'none'`."
+            "label": "Quatre verrous cumulatifs OpenSandbox / SHADI et confinement d'interface (MCP-UI)",
+            "content": "(1) `defaultEgress: DENY_ALL` bloquant SSRF, IMDSv2 169.254.169.254 et les 11 plages IANA; (2) zéro secret en environnement (injection par mandataire `vsock` hôte); (3) triple délai 30 s / 20 min / 60 min et arithmétique `Decimal`; (4) porte statique anti-`eval` et `iframe` MCP-UI avec CSP `connect-src 'none'`."
           }
         ],
         "numbered_flows": [
-          "① Un script Agent Skill ou du code généré est validé statiquement hors ligne (porte anti-`eval`, contrôle Decimal sans IEEE-754).",
+          "① Un script Agent Skill ou du code généré fait l'objet d'une validation statique hors ligne (porte anti-`eval`, contrôle `Decimal` sans IEEE-754).",
           "② OpenSandbox ou SHADI démarre une microVM Firecracker éphémère (< 15 ms) ou un bac WASI vierge muni d'un noyau isolé.",
-          "③ Le mandataire hôte injecte uniquement le résultat ou jeton temporaire autorisé via `vsock`, sans déposer aucun secret dans la RAM invitée ni ouvrir de réseau.",
-          "④ Au terme du délai (30 s / 20 min / 60 min max) ou dès l'issue connue, le journal externe capture la trace et la microVM est détruite intégralement."
+          "③ Le mandataire hôte injecte uniquement le résultat ou jeton temporaire autorisé via `vsock`, sans déposer de secret dans la mémoire vive invitée ni ouvrir de réseau.",
+          "④ À l'expiration du délai (30 s / 20 min / 60 min maximum) ou dès l'issue connue, le journal externe capture la trace et la microVM est détruite intégralement."
         ],
         "color_legend": [
           {
             "color_token": "Gris barré (#64748B)",
-            "meaning": "Noyau partagé `runc` et accès réseau/IMDS directs — strictement interdits"
+            "meaning": "Noyau partagé `runc` et accès réseau/IMDS directs — strictement proscrits"
           },
           {
             "color_token": "Bleu isolation (#0284C7)",
@@ -584,10 +584,10 @@
           },
           {
             "color_token": "Vert verrous (#059669)",
-            "meaning": "Quatre verrous EXIG-SEC-12..17 (zéro egress, zéro secret local, délais, audit externe)"
+            "meaning": "Quatre verrous EXIG-SEC-12..17 (zéro sortie réseau, zéro secret local, délais, audit externe)"
           }
         ],
-        "key_takeaway_box": "À retenir : Tout code écrit par une IA ou venu d'un tiers est exécuté dans une pièce jetable sans porte réseau ni coffre de mots de passe. S'il est compromis, il ne trouve rien à voler et disparaît avec la microVM."
+        "key_takeaway_box": "Tout code généré par un modèle ou issu d'un tiers s'exécute dans un environnement éphémère privé d'accès réseau et de secrets : en cas de compromission, aucun actif n'y est accessible et cet environnement disparaît au terme de la tâche."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -597,7 +597,7 @@
           "title": "Niveaux d’isolation pour le code généré. Chaque colonne situe la frontière d’isolation principale d’une technologie, du noyau partagé (interdit) à la microVM (option par défaut); la bande inférieure rappelle les quatre verrous exigés quelle que soit la technologie. Source : cadre CRE-IA-2026-01, d’après Agache et coll. (2020), la documentation de gVisor et de WASI, et l’OWASP (ASI05).",
           "source_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-20 - Niveaux d'isolation pour le code généré.puml",
           "rendered_path": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-20.svg",
-          "role_note": "Classe les frontières d'isolation du noyau partagé interdit à la microVM et rappelle les quatre verrous."
+          "role_note": "Classe les frontières d'isolation du noyau partagé interdit jusqu'à la microVM et rappelle les quatre verrous."
         },
         {
           "tome_id": "T6",
@@ -605,7 +605,7 @@
           "title": "Arbre de décision architectural pour la sélection du confinement d’exécution (Wasmtime, gVisor, Firecracker/Kata) et du niveau d’Intent Gate",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-39 - Arbre de décision architectural pour la sélection du confinement.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-39.svg",
-          "role_note": "Fournit l'arbre décisionnel pour choisir Wasmtime, gVisor ou Firecracker/Kata selon le risque."
+          "role_note": "Fournit l'arbre décisionnel permettant de choisir Wasmtime, gVisor ou Firecracker/Kata selon le niveau de risque."
         },
         {
           "tome_id": "T6",
@@ -613,7 +613,7 @@
           "title": "Architecture C4 Component d’un Agent Harness de production et de son confinement SHADI",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-09 - Architecture C4 Component d'un Agent Harness de production et de son.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-09.svg",
-          "role_note": "Illustre l'architecture d'un Agent Harness de production entouré de son confinement SHADI."
+          "role_note": "Illustre l'architecture d'un Agent Harness de production doté de son confinement SHADI."
         },
         {
           "tome_id": "T3",
@@ -621,7 +621,7 @@
           "title": "Architecture de défense en profondeur : garde-fous neuro-symboliques PEP/PDP hors du LLM, confinement OpenSandbox et coupe-circuit SOC.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-45 - Architecture de défense en profondeur - garde-fous neuro-symboliques.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-45.svg",
-          "role_note": "Positionne le confinement OpenSandbox au sein de la défense en profondeur multi-couches."
+          "role_note": "Positionne le confinement OpenSandbox au sein d'une défense en profondeur multicouche."
         }
       ]
     },
@@ -636,7 +636,7 @@
       "themes_vulgarized": [
         "confidentialite-materielle-tee-hyok"
       ],
-      "title": "Enclaves TEE, clés HYOK et continuité bimodèle : garder la souveraineté même sur GPU partagé (et malgré TEE.fail)",
+      "title": "Enclaves TEE, clés HYOK et continuité bimodèle : préserver la souveraineté sur GPU partagé malgré TEE.fail",
       "insertion_point": "Chapitre 21 — section 21.2.1 (fiche confidentialite-materielle-tee-hyok)",
       "target_audiences": [
         "Direction / Métier",
@@ -646,47 +646,47 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Vulgariser pour la direction et la conformité comment combiner enclaves matérielles (Intel TDX, AMD SEV-SNP, NVIDIA Confidential Computing), séquestre de clés HYOK et bascule bimodèle à poids ouverts — tout en exposant honnêtement les limites physiques (attaque DDR5 TEE.fail à < 1 000 $ US) afin d'éviter un faux sentiment d'invulnérabilité.",
-      "vulgarization_angle": "Présenter l'enclave TEE + clé HYOK comme une boîte à gants scellée chez un hébergeur infonuagique (l'hébergeur ne voit pas vos données, et vous pouvez couper sa clé à distance instantanément), doublée d'une grappe de secours souveraine à poids ouverts en cas de coupure ou de risque physique.",
+      "pedagogical_objective": "Expliquer à la direction et à la conformité comment combiner enclaves matérielles (Intel TDX, AMD SEV-SNP, NVIDIA Confidential Computing), séquestre de clés HYOK et bascule bimodèle à poids ouverts, tout en exposant rigoureusement les limites physiques (attaque DDR5 `TEE.fail` à < 1 000 $ US) afin d'éviter un faux sentiment d'invulnérabilité.",
+      "vulgarization_angle": "Présenter l'enclave TEE associée à la clé HYOK comme une boîte à gants scellée chez un hébergeur infonuagique (l'hébergeur n'accède pas aux données et la clé peut être révoquée à distance instantanément), doublée d'une grappe de secours souveraine à poids ouverts en cas de rupture ou d'exposition physique.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Souveraineté des clés HYOK (Hold Your Own Key) et géorepérage",
-            "content": "Clés détenues exclusivement par le client hors du fournisseur infonuagique (RTT <= 35 ms recommandé), autorisant le déchiquetage cryptographique et le retrait d'accès immédiats."
+            "content": "Clés détenues exclusivement par le client hors du fournisseur infonuagique (RTT ≤ 35 ms recommandé), autorisant le déchiquetage cryptographique et la révocation d'accès immédiats."
           },
           {
             "zone_id": "Z2",
-            "label": "Enclave matérielle attestée CPU/GPU (CAP-033 optionnel sous SIG-016) & limite TEE.fail",
-            "content": "Calcul chiffré en mémoire attestée Intel TDX / AMD SEV-SNP / NVIDIA Confidential Computing sur GPU partagés, tout en intégrant la limite d'attaque physique bus mémoire DDR5 (`TEE.fail` < 1 000 $ US) dans le modèle de risque."
+            "label": "Enclave matérielle attestée CPU/GPU (CAP-033 optionnel sous SIG-016) et limite TEE.fail",
+            "content": "Calcul chiffré en mémoire attestée Intel TDX, AMD SEV-SNP ou NVIDIA Confidential Computing sur GPU partagés, tout en intégrant la limite d'attaque physique sur bus mémoire DDR5 (`TEE.fail` < 1 000 $ US) au modèle de risque."
           },
           {
             "zone_id": "Z3",
             "label": "Plan de continuité cognitive bimodèle à poids ouverts (CAP-031, POR-006)",
-            "content": "Infrastructure souveraine de repli basée sur modèles à poids ouverts testée en bascule réelle chaque trimestre pour tous les flux critiques (Classes 3–5)."
+            "content": "Infrastructure souveraine de repli reposant sur des modèles à poids ouverts et éprouvée en bascule réelle chaque trimestre pour l'ensemble des flux critiques (Classes 3–5)."
           }
         ],
         "numbered_flows": [
           "① Le flux sensible est acheminé par géorepérage vers une enclave matérielle attestée CPU/GPU dont la signature cryptographique est vérifiée à distance.",
-          "② Le déchiffrement des données ou du contexte requiert la clé HYOK conservée chez l'entreprise, révocable à tout instant.",
-          "③ Comme une enclave partagée reste vulnérable à une sonde physique DDR5 sur site hôte (`TEE.fail`), les secrets souverains ultimes restent hors matériel tiers ou sur grappe dédiée.",
+          "② Le déchiffrement des données ou du contexte requiert la clé HYOK conservée chez l'organisation, révocable à tout instant.",
+          "③ Puisqu'une enclave partagée demeure vulnérable à une sonde physique DDR5 sur le site hôte (`TEE.fail`), les secrets souverains ultimes restent hors matériel tiers ou sur grappe dédiée.",
           "④ Chaque trimestre (POR-006), l'organisation exerce à blanc la bascule des flux critiques vers sa grappe bimodèle à poids ouverts."
         ],
         "color_legend": [
           {
             "color_token": "Or souverain (#B45309)",
-            "meaning": "Clés HYOK sous contrôle exclusif client et révocation instantanée"
+            "meaning": "Clés HYOK sous contrôle exclusif du client et révocation instantanée"
           },
           {
             "color_token": "Bleu enclave (#1D4ED8)",
-            "meaning": "Calcul confidentiel CPU/GPU (TDX, SEV-SNP, NVIDIA CC) avec vigilance physique TEE.fail"
+            "meaning": "Calcul confidentiel CPU/GPU (TDX, SEV-SNP, NVIDIA CC) avec vigilance physique `TEE.fail`"
           },
           {
             "color_token": "Émeraude continuité (#047857)",
             "meaning": "Grappe de secours souveraine bimodèle à poids ouverts exercée chaque trimestre"
           }
         ],
-        "key_takeaway_box": "À retenir : Les enclaves TEE et clés HYOK protègent des accès logiciels infonuagiques, mais ne sont ni magiques ni indestructibles physiquement (TEE.fail). Seule une bascule trimestrielle vers un modèle souverain garantit la continuité."
+        "key_takeaway_box": "Les enclaves TEE et les clés HYOK protègent contre les accès logiciels infonuagiques, mais ne procurent ni garantie absolue ni immunité physique (`TEE.fail`). Seule une bascule trimestrielle exercée vers un modèle souverain assure la continuité cognitive."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -711,7 +711,7 @@
       "themes_vulgarized": [
         "soc-soar-coupe-circuit"
       ],
-      "title": "Coupe-circuits hiérarchisés (< 10 s / 0,050 ms), révocation SSF/CAEP et repli < 60 s : couper la course folle sans briser les Sagas",
+      "title": "Coupe-circuits hiérarchisés (< 10 s / 0,050 ms), révocation SSF/CAEP et repli < 60 s : stopper l'emballement sans briser les sagas",
       "insertion_point": "Chapitre 21 — section 21.2.2 (Défense SOC/SOAR, Red Team et coupe-circuit)",
       "target_audiences": [
         "Direction / Métier",
@@ -720,47 +720,47 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Expliquer visuellement au RSSI et au métier comment arrêter instantanément un agent déviant ou compromis (< 10 s au PEP POR-003, 0,050 ms en local, <= 15 min global SSF/CAEP CAD26, rétrogradation < 60 s POR-015) sans provoquer de corruption comptable en préservant le canal dédié de compensation Saga.",
-      "vulgarization_angle": "Comparer le coupe-circuit à un frein d'urgence ferroviaire sélectif : il coupe immédiatement la traction en avant sur 4 niveaux (tâche, outil, gabarit, région) et rétrograde l'autonomie vers L0/L2, tout en laissant alimentée la voie de garage (canal de compensation Saga) afin d'annuler proprement les réservations entamées.",
+      "pedagogical_objective": "Montrer au RSSI et aux équipes métier comment interrompre instantanément un agent déviant ou compromis (< 10 s au PEP POR-003, 0,050 ms en local, ≤ 15 min global SSF/CAEP CAD26, rétrogradation < 60 s POR-015) sans provoquer de corruption comptable grâce au maintien du canal dédié de compensation Saga.",
+      "vulgarization_angle": "Comparer le coupe-circuit à un frein d'urgence ferroviaire sélectif : il coupe immédiatement la traction avant sur quatre paliers (tâche, outil, gabarit, région) et rétrograde l'autonomie vers L0/L2, tout en laissant alimentée la voie de dégagement (canal de compensation Saga) pour annuler proprement les opérations engagées.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Boucle de détection AISPM/AIDR & automate à 5 états",
-            "content": "Détection d'emballement (LLM10/ASI08/ASI10), attaques MCP (GTG-1002) ou épuisement de budget ; transition `CLOSED -> OPEN -> FORCED_OPEN`."
+            "label": "Boucle de détection AISPM/AIDR et automate à cinq états",
+            "content": "Détection d'emballement (LLM10/ASI08/ASI10), d'attaques MCP (GTG-1002) ou d'épuisement de budget; transition d'état `CLOSED` → `OPEN` → `FORCED_OPEN`."
           },
           {
             "zone_id": "Z2",
-            "label": "Coupure hiérarchisée sur 4 paliers et propagation OpenID SSF/CAEP",
-            "content": "Arrêt ciblé (saga, connecteur MCP, Blueprint, domaine/région) en < 10 s PEP (POR-003, 0,050 ms mesuré) et éviction SPIRE / révocation OAuth globale <= 15 min (CAD26), avec identité propre des agents SOC (hors PIM/TAP F-57)."
+            "label": "Coupure hiérarchisée sur quatre paliers et propagation OpenID SSF/CAEP",
+            "content": "Arrêt ciblé (saga, connecteur MCP, Blueprint, domaine/région) en < 10 s au PEP (POR-003, 0,050 ms mesuré) et éviction SPIRE / révocation OAuth globale en ≤ 15 min (CAD26), avec identité propre des agents SOC (hors PIM/TAP F-57)."
           },
           {
             "zone_id": "Z3",
-            "label": "Sanctuaire de reprise — Canal de compensation Saga EXIG-ORC-28 & gel forensique",
-            "content": "Les files Temporal sont gelées sans destruction des preuves ni microVMs, et le canal de compensation Saga demeure ouvert pour annuler proprement les écritures en cours pendant le repli vers N2/L0 (< 60 s POR-015)."
+            "label": "Sanctuaire de reprise — Canal de compensation Saga EXIG-ORC-28 et gel forensique",
+            "content": "Les files Temporal sont gelées sans destruction des preuves ni des microVMs, et le canal de compensation Saga demeure ouvert afin d'annuler proprement les écritures en cours durant le repli vers N2/L0 (< 60 s POR-015)."
           }
         ],
         "numbered_flows": [
-          "① L'agentic SOC / AISPM ou le compteur de budget détecte un comportement déviant, un dépassement de tours ou une alerte d'attaque (GTG-1002).",
+          "① Le SOC agentique / AISPM ou le compteur budgétaire détecte un comportement déviant, un dépassement de tours ou une alerte d'attaque (GTG-1002).",
           "② L'automate bascule en `FORCED_OPEN` et déclenche POR-003 : le PEP bloque toute nouvelle mutation vers l'avant en < 10 s (0,050 ms local).",
-          "③ Le playbook SOAR diffuse la révocation OpenID SSF/CAEP, évince les SVID SPIRE et gèle les workflows Temporal tout en conservant les journaux forensiques.",
+          "③ La procédure SOAR diffuse la révocation OpenID SSF/CAEP, évince les SVID SPIRE et gèle les flux Temporal tout en préservant les journaux forensiques.",
           "④ Simultanément, le canal de compensation Saga EXIG-ORC-28 reste ouvert pour annuler proprement les transactions partielles pendant que l'autonomie bascule vers N2/L0 (< 60 s, POR-015)."
         ],
         "color_legend": [
           {
             "color_token": "Rouge urgence (#DC2626)",
-            "meaning": "Coupure de la voie avant (`FORCED_OPEN`, POR-003 < 10 s / SSF-CAEP <= 15 min)"
+            "meaning": "Coupure de la voie avant (`FORCED_OPEN`, POR-003 < 10 s / SSF-CAEP ≤ 15 min)"
           },
           {
             "color_token": "Ambre repli (#D97706)",
-            "meaning": "Rétrogradation automatique vers flux déterministe N2/L0 (< 60 s POR-015)"
+            "meaning": "Rétrogradation automatique vers un flux déterministe N2/L0 (< 60 s POR-015)"
           },
           {
             "color_token": "Bleu compensation (#0284C7)",
             "meaning": "Canal de compensation Saga préservé (EXIG-ORC-28) et capture forensique"
           }
         ],
-        "key_takeaway_box": "À retenir : Arracher la prise électrique laisserait des paiements ou dossiers bancaires bloqués à mi-chemin. Un vrai coupe-circuit bloque les nouvelles actions en secondes tout en laissant les annulations Saga se terminer proprement."
+        "key_takeaway_box": "Une coupure électrique brutale laisserait les paiements et dossiers financiers en suspens à mi-parcours. Un coupe-circuit architecturé bloque les nouvelles actions en quelques secondes tout en laissant les compensations Saga s'achever proprement."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -770,7 +770,7 @@
           "title": "Automate coupe-circuit cognitif à états étendus, plafonds de profondeur et repli déterministe",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-44 - Automate coupe-circuit cognitif à états étendus, plafonds.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-44.svg",
-          "role_note": "Détaille l'automate coupe-circuit à états étendus, plafonds de profondeur et repli déterministe."
+          "role_note": "Détaille l'automate coupe-circuit à états étendus, ses plafonds de profondeur et son repli déterministe."
         },
         {
           "tome_id": "T5",
@@ -810,7 +810,7 @@
         "observabilite-otel-genai",
         "provenance-artefacts-aibom-5-horloges"
       ],
-      "title": "Boîte noire OpenTelemetry GenAI (v1.41.0 épinglée), jointure trace ↔ mandat et AIBOM à 5+1 horloges",
+      "title": "Enregistreur de vol OpenTelemetry GenAI (v1.41.0 épinglée), jointure trace ↔ mandat et AIBOM à 5+1 horloges",
       "insertion_point": "Chapitre 22 — section 22.2.1 (Télémétrie OpenTelemetry GenAI et provenance)",
       "target_audiences": [
         "AE / AS",
@@ -819,30 +819,30 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Expliquer comment tracer un parcours agentique multi-sauts de bout en bout malgré l'instabilité des conventions OpenTelemetry GenAI v1.44.0 (statut Development) et la lacune 21 (absence de lien natif entre trace technique et mandat juridique), tout en inventoriant les 5 constituants d'un agent dans une nomenclature AIBOM.",
-      "vulgarization_angle": "Comparer l'observabilité distribuée à une boîte noire d'avion dotée d'un traducteur interne universel : quel que soit le constructeur des capteurs (standards OTel mouvants), le collecteur épinglé réécrit tout dans le carnet d'entreprise, attache à chaque geste le numéro de billet du passager (jointure trace ↔ mandat) et la fiche d'entretien des 5 pièces.",
+      "pedagogical_objective": "Expliquer comment tracer un parcours agentique multi-sauts de bout en bout malgré l'instabilité des conventions OpenTelemetry GenAI v1.44.0 (statut Development) et la lacune 21 (absence de lien natif entre trace technique et mandat juridique), tout en inventoriant les cinq constituants d'un agent dans une nomenclature AIBOM.",
+      "vulgarization_angle": "Comparer l'observabilité distribuée à un enregistreur de vol aéronautique doté d'un traducteur interne normalisé : quelle que soit l'évolution des capteurs (standards OTel mouvants), le collecteur épinglé consigne chaque événement selon le schéma d'entreprise, attache à chaque geste le titre d'autorité du mandant (jointure trace ↔ mandat) et relie l'ensemble à la fiche d'état des cinq composants.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Émission uniforme OTLP & propagation W3C Trace Context (`_meta`)",
-            "content": "Spans hiérarchiques normalisés (`invoke_workflow` → `invoke_agent` → `execute_tool`) propagés sans RP dans `baggage` sur MCP (SEP-414), A2A et CloudEvents, avec 5 SLI cognitifs (TCR, TER, tours, amplification, désaveu HOTL)."
+            "label": "Émission uniforme OTLP et propagation W3C Trace Context (`_meta`)",
+            "content": "Spans hiérarchiques normalisés (`invoke_workflow` → `invoke_agent` → `execute_tool`) propagés sans renseignement personnel dans `baggage` sur MCP (SEP-414), A2A et CloudEvents, avec cinq SLI cognitifs (TCR, TER, tours, amplification, désaveu HOTL)."
           },
           {
             "zone_id": "Z2",
-            "label": "Couche d'isolation — Collecteur OTel v1.41.0 épinglé + jointure 4 clés (lacune 21)",
-            "content": "Table de correspondance de 60 entrées stabilisant les 85 attributs Development de `semantic-conventions-genai`, validation de `traceparent` aux frontières, jointure trace ↔ mandat (Tableau 41) et tail-sampling gardant 100 % des anomalies."
+            "label": "Couche d'isolation — Collecteur OTel v1.41.0 épinglé et jointure à 4 clés (lacune 21)",
+            "content": "Table de correspondance de 60 entrées stabilisant les 85 attributs Development de `semantic-conventions-genai`, validation de `traceparent` aux frontières, jointure trace ↔ mandat (Tableau 41) et échantillonnage en queue retenant 100 % des anomalies."
           },
           {
             "zone_id": "Z3",
-            "label": "Provenance complète AIBOM (5 composants livrés + 5+1 horloges)",
-            "content": "Nomenclature CycloneDX 1.7 / SPDX 3.0.1 / SLSA v1.2 / NIST SP 800-218A étendue aux prompts, Agent Skills, outils MCP et règles Rego/Cedar."
+            "label": "Provenance complète AIBOM (5 composants livrés et 5+1 horloges)",
+            "content": "Nomenclature CycloneDX 1.7 / SPDX 3.0.1 / SLSA v1.2 / NIST SP 800-218A étendue aux invites, Agent Skills, outils MCP et règles Rego/Cedar."
           }
         ],
         "numbered_flows": [
           "① L'agent, la passerelle et le moteur d'orchestration émettent leurs traces OTLP en propageant `traceparent` via `_meta` sans renseignement personnel dans `baggage`.",
           "② Aux frontières de confiance, le collecteur v1.41.0 épinglé valide la trace et traduit les attributs OTel instables vers le schéma canonique `ca.entreprise.*`.",
-          "③ Les quatre clés de jointure (lacune 21) relient chaque span technique au mandat utilisateur/NHI exact qui l'a autorisé, avec référence à l'AIBOM des 5 composants livrés.",
+          "③ Les quatre clés de jointure (lacune 21) relient chaque span technique au mandat utilisateur/NHI exact qui l'a autorisé, en référence à l'AIBOM des cinq composants livrés.",
           "④ L'échantillonnage en queue conserve 100 % des anomalies, dépassements de budget et désaveux HOTL pour l'analyse SRE et la conformité."
         ],
         "color_legend": [
@@ -852,14 +852,14 @@
           },
           {
             "color_token": "Turquoise stabilisateur (#0D9488)",
-            "meaning": "Collecteur v1.41.0 épinglé, jointure trace ↔ mandat et échantillonnage 100 % anomalies"
+            "meaning": "Collecteur v1.41.0 épinglé, jointure trace ↔ mandat et échantillonnage intégral des anomalies"
           },
           {
             "color_token": "Ardoise provenance (#475569)",
             "meaning": "Inventaire AIBOM (CycloneDX/SPDX/SLSA) sur les 5+1 horloges de changement"
           }
         ],
-        "key_takeaway_box": "À retenir : Sans collecteur épinglé ni clé liant la trace au mandat d'identité, on sait qu'un incident a eu lieu mais pas au nom de qui ni avec quelle version de prompt ou de politique l'agent agissait."
+        "key_takeaway_box": "Sans collecteur épinglé ni clé liant la trace au mandat d'identité, l'organisation constate qu'un incident est survenu sans pouvoir établir pour le compte de qui ni sous quelle version d'invite ou de politique l'agent opérait."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -893,7 +893,7 @@
           "title": "Les cinq composants d’un agent et leurs horloges propres : ce qui les fait changer, et qui en décide.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-47.1 - Les cinq composants d'un agent et leurs horloges propres - ce.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.1.svg",
-          "role_note": "Décompose les cinq composants livrés d'un agent et leurs horloges indépendantes d'évolution."
+          "role_note": "Décompose les cinq composants livrés d'un agent ainsi que leurs horloges indépendantes d'évolution."
         }
       ]
     },
@@ -909,7 +909,7 @@
         "double-couloir-probatoire-pii",
         "caviardage-pii-rp-bilingue"
       ],
-      "title": "Le double couloir PII : comment diagnostiquer les pannes en production sans violer la Loi 25 ni le RGPD",
+      "title": "Le double couloir PII : diagnostiquer les pannes en production sans enfreindre la Loi 25 ni le RGPD",
       "insertion_point": "Chapitre 22 — section 22.2.2 (Double couloir PII et caviardage bilingue FR/EN)",
       "target_audiences": [
         "Direction / Métier",
@@ -919,31 +919,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Faire comprendre instantanément au comité de conformité et aux équipes SRE pourquoi les journaux classiques mènent à une infraction Loi 25 / RGPD, et comment la séparation physique à la source entre couloir opérationnel caviardé et trois magasins cloisonnés (voûte <= 14 j, dossier art. 12.1 à clé client effaçable, audit immuable) résout la tension.",
-      "vulgarization_angle": "Comparer un dossier médical jeté en vrac dans le couloir de maintenance (avant) à un triage postal à double porte (après) : le SRE reçoit les statistiques techniques anonymisées, tandis que les faits client nominatifs restent sous enveloppe scellée à clé client destructive (oubli Loi 25) et la voûte bris de glace s'autodétruit sous 14 jours.",
+      "pedagogical_objective": "Démontrer au comité de conformité et aux équipes SRE pourquoi la journalisation classique expose à une infraction à la Loi 25 et au RGPD, et comment la séparation physique dès la source entre couloir opérationnel caviardé et trois magasins cloisonnés (voûte ≤ 14 jours, dossier art. 12.1 à clé client effaçable, audit immuable) résout cette tension.",
+      "vulgarization_angle": "Comparer un dossier nominatif déposé en vrac dans un couloir de maintenance (avant) à un triage postal à double sas (après) : le SRE reçoit les indicateurs techniques anonymisés, tandis que les faits nominatifs demeurent sous enveloppe scellée par clé client destructive (droit à l'effacement Loi 25) et que la voûte « bris de glace » s'efface automatiquement sous 14 jours.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Couloir 1 — Télémétrie opérationnelle assainie (EXIG-OBS-07/09, PRR O-02)",
-            "content": "Liste fermée de métadonnées techniques sans contenu brut d'invite ni réponse ; caviardage déterministe bilingue FR/EN (NAS, IBAN, courriel) par HMAC-SHA256 poivré sans appel LLM (rétention 13 mois [S])."
+            "content": "Liste fermée de métadonnées techniques sans contenu brut d'invite ni réponse; caviardage déterministe bilingue FR/EN (NAS, IBAN, courriel) par HMAC-SHA256 poivré sans appel LLM (rétention 13 mois [S])."
           },
           {
             "zone_id": "Z2",
-            "label": "Voûte de débogage « bris de glace » (<= 14 jours, tranchant CAD26 sur C27)",
-            "content": "Capture exceptionnelle sous double autorisation chiffrée en juridiction avec purge irréversible automatique sous 14 jours maximum (EXIG-OBS-08)."
+            "label": "Voûte de débogage « bris de glace » (≤ 14 jours, tranchant CAD26 sur C27)",
+            "content": "Capture exceptionnelle sous double autorisation chiffrée en juridiction avec purge irréversible automatique sous 14 jours au plus (EXIG-OBS-08)."
           },
           {
             "zone_id": "Z3",
             "label": "Magasin 3 — Dossier de décision individuelle Loi 25 art. 12.1 (EXIG-CON-09)",
-            "content": "Stockage distinct chiffré par clé DEK dédiée par client sous KMS (>= 1 an) pour restituer les facteurs déterministes à la demande et exécuter le droit à l'effacement par destruction de clé."
+            "content": "Stockage distinct chiffré par clé DEK dédiée par client sous KMS (≥ 1 an) afin de restituer les facteurs déterministes sur demande et d'exécuter le droit à l'effacement par destruction de clé."
           }
         ],
         "numbered_flows": [
-          "① Avant exportation, le collecteur OTel applique un filtre déterministe bilingue FR/EN (zéro modèle) qui retire tout texte brut et pseudonymise les identifiants RPRP.",
-          "② Le couloir 1 alimente les tableaux de bord SRE et FinOps en pure métadonnée exploitable sans fuite de renseignements personnels.",
-          "③ En cas d'incident critique, une voûte « bris de glace » temporaire est ouverte sous double accord et purgée mécaniquement au plus tard à J+14.",
-          "④ Parallèlement, le dossier décisionnel art. 12.1 conserve les facteurs exigibles sous clé DEK client isolée, conciliant transparence et oubli cryptographique."
+          "① Avant toute exportation, le collecteur OTel applique un filtre déterministe bilingue FR/EN (zéro modèle) qui retire le texte brut et pseudonymise les identifiants RPRP.",
+          "② Le couloir 1 alimente les tableaux de bord SRE et FinOps en métadonnées exploitables sans fuite de renseignements personnels.",
+          "③ Lors d'un incident critique, une voûte « bris de glace » temporaire est ouverte sous double accord puis purgée mécaniquement au plus tard à J+14.",
+          "④ Parallèlement, le dossier décisionnel art. 12.1 conserve les facteurs exigibles sous clé DEK client isolée, conciliant transparence et effacement cryptographique."
         ],
         "color_legend": [
           {
@@ -952,14 +952,14 @@
           },
           {
             "color_token": "Ambre temporaire (#D97706)",
-            "meaning": "Voûte forensique « bris de glace » à purge automatique <= 14 jours"
+            "meaning": "Voûte forensique « bris de glace » à purge automatique ≤ 14 jours"
           },
           {
             "color_token": "Bleu juridique (#1D4ED8)",
-            "meaning": "Dossier art. 12.1 sous clé DEK client (explicabilité Loi 25 et crypto-shredding)"
+            "meaning": "Dossier art. 12.1 sous clé DEK client (explicabilité Loi 25 et déchiquetage cryptographique)"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne jamais logguer les conversations clients dans les traces SRE. Le double couloir PII sépare dès la source ce qui sert à réparer la machine de ce qui prouve les décisions face à la Loi 25."
+        "key_takeaway_box": "Les échanges nominatifs des clients ne doivent jamais figurer dans les traces SRE. Le double couloir PII dissocie dès la source les métadonnées servant au maintien opérationnel des preuves requises au titre de la Loi 25."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -969,7 +969,7 @@
           "title": "Double couloir de télémétrie conciliant vie privée et preuve d'audit immuable",
           "source_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-17.puml",
           "rendered_path": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-17.svg",
-          "role_note": "Représentation claire et directe du double couloir de télémétrie conciliant vie privée et preuve immuable."
+          "role_note": "Représentation directe du double couloir de télémétrie conciliant vie privée et preuve immuable."
         },
         {
           "tome_id": "T3",
@@ -1012,31 +1012,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Montrer pourquoi un agent ne doit jamais écrire seul sa propre preuve (SEC 17a-4, tableau 38.2) et comment l'enregistrement C.8 à 5 éléments canonisé RFC 8785 (JCS), chaîné et scellé hors de portée par SCITT + SLH-DSA résiste à toute falsification ou percée quantique pour 2 à 40 ans à un coût marginal dérisoire (0,786 o/evt).",
-      "vulgarization_angle": "Comparer le grand livre C.8 à un registre notarié à pages numérotées et cousues : chaque ligne est rangée selon l'ordre alphabétique strict JCS pour éliminer toute ambiguïté d'impression, liée à la précédente par empreinte SHA-256, timbrée chaque heure à l'extérieur (SCITT) et recachetée à l'encre post-quantique SLH-DSA pour survivre quarante ans.",
+      "pedagogical_objective": "Montrer pourquoi un agent ne doit jamais rédiger seul sa propre preuve (SEC 17a-4, Tableau 38.2) et comment l'enregistrement C.8 à 5 éléments canonisé RFC 8785 (JCS), chaîné et scellé hors de portée par SCITT + SLH-DSA résiste à toute falsification et à la menace quantique sur 2 à 40 ans pour un surcoût marginal minime (0,786 octet par événement).",
+      "vulgarization_angle": "Comparer le grand livre C.8 à un registre notarié à feuillets numérotés et reliés : chaque ligne est ordonnée selon la norme stricte JCS afin d'éliminer toute ambiguïté d'encodage, chaînée à la précédente par empreinte SHA-256, horodatée chaque heure à l'extérieur (SCITT) et rescellée à l'encre post-quantique SLH-DSA pour demeurer vérifiable quarante ans.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Enregistrement C.8 à 5 éléments et canonisation JCS RFC 8785",
-            "content": "Capture hors agent avant tout relais P2/P3 : (1) mandant pseudonyme, (2) agent SPIFFE/invite, (3) outil/HMAC arguments, (4) modèle réel servi, (5) autorité/CIBA/idempotence — triés en UTF-16 et IEEE-754 (aussi utilisé pour Agent Cards A2A et preuves CIBA C.6)."
+            "content": "Capture hors agent avant tout relais P2/P3 : (1) mandant pseudonyme, (2) agent SPIFFE/invite, (3) outil/HMAC des arguments, (4) modèle réel servi, (5) autorité/CIBA/idempotence — triés en UTF-16 et IEEE-754 (également employés pour les Agent Cards A2A et preuves CIBA C.6)."
           },
           {
             "zone_id": "Z2",
             "label": "Chaînage `precedent_sha256` et ancrage Merkle SCITT horaire (RFC 9943)",
-            "content": "SBB-IMMUTABLE-AUDIT-LEDGER en ajout seul hors de portée des agents, séparation de nœuds `0x00`/`0x01`, vérification quotidienne et ancrage externe horaire (0,786 o/evt amorti sur 10 000 événements en Campagne 4)."
+            "content": "SBB-IMMUTABLE-AUDIT-LEDGER en ajout seul hors de portée des agents, séparation de nœuds `0x00`/`0x01`, vérification quotidienne et ancrage externe horaire (0,786 octet par événement amorti sur 10 000 événements lors de la Campagne 4)."
           },
           {
             "zone_id": "Z3",
             "label": "Rescellement post-quantique SLH-DSA (FIPS 205) et rétention longue durée",
-            "content": "Signatures sans état SLH-DSA-SHA2-128s renouvelées <= 5 ans (EXIG-SEC-28) garantissant la force probante sur 24 mois minimum, 5–7 ans (bancaire/OCRI) et 20–40 ans (assurance vie/rentes)."
+            "content": "Signatures sans état `SLH-DSA-SHA2-128s` renouvelées ≤ 5 ans (EXIG-SEC-28) garantissant la force probante sur 24 mois minimum, 5–7 ans (bancaire/OCRI) et 20–40 ans (assurance vie/rentes)."
           }
         ],
         "numbered_flows": [
-          "① Avant tout relais sensible P2/P3 (en échec fermé, EXIG-OBS-11), la passerelle assemble les 5 éléments obligatoires de l'enregistrement C.8.",
+          "① Avant tout relais sensible P2/P3 (en échec fermé, EXIG-OBS-11), la passerelle assemble les cinq éléments obligatoires de l'enregistrement C.8.",
           "② Le bloc JSON est canonisé selon RFC 8785 (JCS) afin que chaque système obtienne rigoureusement le même condensat SHA-256.",
           "③ Chaque enregistrement est chaîné au précédent (`precedent_sha256`) et versé dans un arbre de Merkle SCITT ancré chaque heure en stockage WORM externe.",
-          "④ Au plus tard tous les 5 ans, la racine de preuve est rescellée avec SLH-DSA (FIPS 205) pour préserver sa valeur probatoire jusqu'à 40 ans."
+          "④ Au plus tard tous les cinq ans, la racine de preuve est rescellée avec SLH-DSA (FIPS 205) afin de préserver sa valeur probatoire jusqu'à 40 ans."
         ],
         "color_legend": [
           {
@@ -1052,7 +1052,7 @@
             "meaning": "Rescellement cryptographique SLH-DSA (FIPS 205) à conservation pluriannuelle"
           }
         ],
-        "key_takeaway_box": "À retenir : Une preuve informatique ne tient devant un régulateur que si l'agent ne peut ni la modifier ni l'omettre. JCS + SCITT + SLH-DSA assure l'intégrité mathématique pendant des décennies pour moins d'un octet par événement."
+        "key_takeaway_box": "Une preuve numérique n'est opposable devant un organisme de réglementation que si l'agent ne peut ni la modifier ni l'omettre. La combinaison JCS + SCITT + SLH-DSA garantit son intégrité mathématique sur plusieurs décennies pour moins d'un octet par événement."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -1070,7 +1070,7 @@
           "title": "Deux moitiés d’un même mécanisme : le protocole normalise le chemin, l’infrastructure spécifie le magasin.",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-15.3 - Deux moitiés d'un même mécanisme - le protocole normalise.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-15.3.svg",
-          "role_note": "Rappelle la complémentarité entre contrat protocolaire (signature JWS/JCS) et infrastructure de magasin WORM."
+          "role_note": "Rappelle la complémentarité entre le contrat protocolaire (signature JWS/JCS) et l'infrastructure de magasin WORM."
         },
         {
           "tome_id": "T6",
@@ -1078,7 +1078,7 @@
           "title": "Topologie d’instrumentation unifiée OpenTelemetry GenAI, corrélation SPIFFE/OBO et pipeline collecteur assaini",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-41 - Topologie d'instrumentation unifiée OpenTelemetry GenAI, corrélation.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-41.svg",
-          "role_note": "Illustre l'intégration dans la topologie d'observabilité et l'auditabilité bout-en-bout."
+          "role_note": "Illustre l'intégration dans la topologie d'observabilité et l'auditabilité de bout en bout."
         }
       ]
     },
@@ -1095,7 +1095,7 @@
         "dimensionnement-wilson-evalops",
         "evaluation-agentique-bancs-capacite"
       ],
-      "title": "Banc EvalOps hermétique E1–E3, constance pass^k et borne de Wilson (≥ 300 essais) : prouver la régularité plutôt qu'un coup de chance",
+      "title": "Banc EvalOps hermétique E1–E3, constance pass^k et borne de Wilson (≥ 300 essais) : prouver la régularité plutôt qu'une réussite fortuite",
       "insertion_point": "Chapitre 23 — section 23.2.1 (Bancs EvalOps E1–E3 et bornes de Wilson)",
       "target_audiences": [
         "Direction / Métier",
@@ -1105,31 +1105,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Faire comprendre aux décideurs l'abîme entre une démo réussie une fois (`pass@1`) ou le « vibe-testing » (AP-12) et l'homologation statistique de production : 3 étages hermétiques E1–E3, doublures `MockMcpServer`, constance `pass^k`, intervalle unilatéral de Wilson (plancher `n >= ceil(3/p)`, soit 300 cas indépendants pour < 1 %) et rétrogradation automatique.",
-      "vulgarization_angle": "Comparer la validation logicielle d'un agent au test de résistance d'un pont : on ne se contente pas de faire traverser un camion un matin ensoleillé (`pass@1`) ; on teste maquette (E1), soufflerie en simulateur sous rafales 429 avec 300 passages sans faille selon Wilson (E2) et capteurs permanents sur le pont réel (E3).",
+      "pedagogical_objective": "Faire mesurer aux décideurs l'écart séparant une démonstration réussie une fois (`pass@1`) ou les tests empiriques informels (AP-12) de l'homologation statistique de production : trois étages hermétiques E1–E3, doublures `MockMcpServer`, constance `pass^k`, intervalle unilatéral de Wilson (plancher `n ≥ ceil(3/p)`, soit 300 cas indépendants pour < 1 %) et rétrogradation automatique.",
+      "vulgarization_angle": "Comparer la validation d'un agent à l'épreuve de charge d'un ouvrage d'art : il est exclu de se contenter d'un seul passage par temps calme (`pass@1`); l'ouvrage est validé sur maquette (E1), en soufflerie sous rafales HTTP 429 avec 300 traversées sans défaillance selon Wilson (E2) et sous capteurs permanents en service (E3).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Étage E1 (CI déterministe) & E2 (Arène hermétique OpenEnv / tau-bench / Wilson)",
-            "content": "E1 bloquant contrats/Rego/Saga à chaque déclencheur `EXIG-GOV-12` (`SemVer+Intent`, zéro alias `latest`) ; E2 isolé sur doublures `MockMcpServer`, >= 50/100 scénarios × 3 répétitions `pass^k`, borne unilatérale de Wilson à 95 % (`n >= ceil(3/p)`, rejet de Wald et des répétitions corrélées)."
+            "label": "Étage E1 (CI déterministe) et E2 (Arène hermétique OpenEnv / `tau-bench` / Wilson)",
+            "content": "E1 bloquant contrats/Rego/Saga à chaque déclencheur `EXIG-GOV-12` (`SemVer+Intent`, zéro alias `latest`); E2 isolé sur doublures `MockMcpServer`, ≥ 50/100 scénarios × 3 répétitions `pass^k`, borne unilatérale de Wilson à 95 % (`n ≥ ceil(3/p)`, rejet de Wald et des répétitions corrélées)."
           },
           {
             "zone_id": "Z2",
-            "label": "Distribution complète sur bancs publics & déploiement fantôme → canari",
-            "content": "Évaluation conjointe précision-variance-coût (SWE-bench, OSWorld, WebArena, GAIA, τ-bench, BFCL, TCK A2A, AgentArcEval) puis shadow/canary épinglé avant ouverture du trafic."
+            "label": "Distribution complète sur bancs publics et déploiement fantôme → canari",
+            "content": "Évaluation conjointe précision-variance-coût (SWE-bench, OSWorld, WebArena, GAIA, τ-bench, BFCL, TCK A2A, AgentArcEval) suivie d'un déploiement fantôme puis canari épinglé avant ouverture du trafic."
           },
           {
             "zone_id": "Z3",
-            "label": "Étage E3 (Production continue) & mécanisme d'abaissement d'autonomie",
-            "content": "Échantillonnage >= 5–10 % du trafic + 100 % des anomalies (dépôt chiffré 30 j) ; bascule < 60 s (POR-015) sur rupture de budget d'erreur et rétrogradation automatique d'un palier d'autonomie après 3 mois hors SLO (EXIG-EVA-06)."
+            "label": "Étage E3 (Production continue) et mécanisme d'abaissement d'autonomie",
+            "content": "Échantillonnage ≥ 5–10 % du trafic + 100 % des anomalies (dépôt chiffré conservé 30 jours); bascule < 60 s (POR-015) sur rupture du budget d'erreur et rétrogradation automatique d'un palier d'autonomie après 3 mois hors SLO (EXIG-EVA-06)."
           }
         ],
         "numbered_flows": [
-          "① Toute modification de modèle, prompt, outil ou règle (`EXIG-GOV-12`) déclenche l'étage E1 déterministe en CI.",
-          "② Le banc hermétique E2 lance au moins `n >= ceil(3/p)` scénarios indépendants (`MockMcpServer` + chaos HTTP 429) vérifiant `pass^k` et la borne de Wilson (< 1 % à n=300).",
+          "① Toute modification de modèle, d'invite, d'outil ou de règle (`EXIG-GOV-12`) déclenche l'étage E1 déterministe en intégration continue.",
+          "② Le banc hermétique E2 exécute au moins `n ≥ ceil(3/p)` scénarios indépendants (`MockMcpServer` + chaos HTTP 429) vérifiant `pass^k` et la borne de Wilson (< 1 % à n = 300).",
           "③ Après validation fantôme et canari sur manifeste `SemVer+Intent` immuable, l'étage E3 surveille 5–10 % des traces réelles et 100 % des incidents.",
-          "④ Si le budget d'erreur s'épuise ou que les SLO dérapent 3 mois d'affilée, l'autonomie descend automatiquement d'un palier."
+          "④ Si le budget d'erreur s'épuise ou si les SLO dérapent trois mois d'affilée, l'autonomie descend automatiquement d'un palier."
         ],
         "color_legend": [
           {
@@ -1138,14 +1138,14 @@
           },
           {
             "color_token": "Turquoise statistique (#0D9488)",
-            "meaning": "Rigueur mathématique `pass^k` et intervalle unilatéral de Wilson (n >= ceil(3/p))"
+            "meaning": "Rigueur statistique `pass^k` et intervalle unilatéral de Wilson (`n ≥ ceil(3/p)`)"
           },
           {
             "color_token": "Ambre rétrogradation (#D97706)",
             "meaning": "Surveillance continue E3 et abaissement automatique d'autonomie hors SLO"
           }
         ],
-        "key_takeaway_box": "À retenir : Un essai réussi prouve seulement que l'agent peut réussir par chance ; la borne de Wilson sur 300 scénarios indépendants en simulateur hermétique prouve qu'il reste fiable de façon reproductible."
+        "key_takeaway_box": "Un essai réussi démontre uniquement qu'un agent peut aboutir par aléa favorable; la borne de Wilson appliquée à 300 scénarios indépendants en simulateur hermétique atteste une fiabilité reproductible."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -1163,7 +1163,7 @@
           "title": "Pipeline du banc EvalOps hermétique à doublures mock MCP, calcul pass^k, borne de Wilson >= 3/p et relations métamorphiques sans oracle sur scénarios FR/EN",
           "source_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/Fig-07.puml",
           "rendered_path": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg",
-          "role_note": "Détaille le pipeline exécutable avec doublures mock MCP, calcul pass^k et borne de Wilson >= 3/p."
+          "role_note": "Détaille le pipeline exécutable avec doublures mock MCP, calcul `pass^k` et borne de Wilson ≥ 3/p."
         },
         {
           "tome_id": "T6",
@@ -1171,7 +1171,7 @@
           "title": "Pipeline EvalOps continu : portes CI/CD, simulation hermétique et calibration des juges",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-42 - Pipeline EvalOps continu - portes CI-CD, simulation hermétique.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-42.svg",
-          "role_note": "Montre le pipeline EvalOps industriel incluant golden datasets de trajectoires et portes CI/CD."
+          "role_note": "Montre le pipeline EvalOps industriel incluant les jeux de référence de trajectoires et les portes CI/CD."
         }
       ]
     },
@@ -1188,7 +1188,7 @@
         "modele-comme-juge-biais-calibration",
         "evaluation-continue-derives"
       ],
-      "title": "Tester sans corrigé unique : invariance bilingue FR/EN, juges IA étalonnés (kappa ≥ 0,6) et sentinelle des 3+1 dérives",
+      "title": "Évaluer sans oracle unique : invariance bilingue FR/EN, juges IA étalonnés (kappa ≥ 0,6) et sentinelle des 3+1 dérives",
       "insertion_point": "Chapitre 23 — section 23.2.2 (Tests métamorphiques, juges et dérives)",
       "target_audiences": [
         "Juridique / Conformité",
@@ -1197,31 +1197,31 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Résoudre deux casse-tête d'évaluation : comment tester une réponse rédigée quand il n'existe pas un corrigé unique (tests métamorphiques sans oracle bilingues FR/EN sur >= 100 scénarios) et comment éviter qu'un modèle-juge ne triche ou ne dérive (biais de position/verbosité, étalonnage humain kappa >= 0,6, sentinelle des 3+1 dérives).",
-      "vulgarization_angle": "Expliquer les tests métamorphiques comme une balance à deux plateaux : même sans connaître le poids exact d'un objet, changer l'étiquette du français à l'anglais ou réordonner la liste des outils ne doit jamais faire pencher le verdict de sûreté ni la mention non-avis.",
+      "pedagogical_objective": "Résoudre deux défis méthodologiques d'évaluation : vérifier une réponse rédigée en l'absence d'un corrigé unique (tests métamorphiques sans oracle bilingues FR/EN sur ≥ 100 scénarios) et prévenir les biais ou dérives d'un modèle-juge (biais de position et de verbosité, étalonnage humain `kappa ≥ 0,6`, sentinelle des 3+1 dérives).",
+      "vulgarization_angle": "Illustrer les tests métamorphiques comme une balance à deux plateaux : même sans connaître la masse exacte d'un objet, le passage d'une étiquette du français à l'anglais ou la permutation de la liste des outils ne doit jamais faire basculer le verdict de sûreté ni la mention de non-avis.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "4 relations métamorphiques sans oracle (EXIG-SEC-24, EXIG-AMF-11, >= 100 cas FR/EN)",
-            "content": "Invariance sous permutation d'outils équivalents, invariance de défense anti-injection entre français et anglais, monotonie budgétaire Decimal et stabilité sous paraphrase avec mention non-avis."
+            "label": "4 relations métamorphiques sans oracle (EXIG-SEC-24, EXIG-AMF-11, ≥ 100 cas FR/EN)",
+            "content": "Invariance sous permutation d'outils équivalents, invariance de défense anti-injection entre français et anglais, monotonie budgétaire `Decimal` et stabilité sous paraphrase incluant la mention de non-avis."
           },
           {
             "zone_id": "Z2",
-            "label": "Encadrement du LLM-as-a-Judge (biais Zheng 2023 & calibration kappa >= 0,6)",
-            "content": "Recours obligatoire à une famille de modèle distincte, permutation aléatoire des réponses (anti-biais position/longueur/auto-préférence), versionnement de juge et interdiction d'action bloquante synchrone en prod."
+            "label": "Encadrement du LLM-as-a-Judge (biais Zheng 2023 et étalonnage `kappa ≥ 0,6`)",
+            "content": "Recours obligatoire à une famille de modèles distincte, permutation aléatoire des réponses (contre les biais de position, de longueur et d'auto-préférence), versionnement du juge et interdiction d'action bloquante synchrone en production."
           },
           {
             "zone_id": "Z3",
             "label": "Radar des 3+1 dérives en exploitation continue (MS Foundry / Langfuse)",
-            "content": "Détection permanente de la dérive modèle/mémoire (F-23), dérive silencieuse/rug-pull d'outil (F-52), glissement d'autonomie (H-12) et dérive d'auto-apprentissage en ligne."
+            "content": "Détection permanente de la dérive modèle/mémoire (F-23), de la dérive silencieuse ou du `rug-pull` d'outil (F-52), du glissement d'autonomie (H-12) et de la dérive d'auto-apprentissage en ligne."
           }
         ],
         "numbered_flows": [
-          "① Des paires métamorphiques FR/EN testent la constance de décision sans exiger une phrase unique attendue (>= 100 scénarios ASI01–10 et AMF).",
-          "② Les trajectoires ouvertes sont évaluées hors ligne par un modèle-juge de famille différente étalonné sur annotations humaines (kappa >= 0,6).",
-          "③ En production, l'évaluateur continu surveille en flux les indicateurs des trois dérives (F-23 modèle, F-52 outil, H-12 autonomie) et de l'apprentissage.",
-          "④ Dès franchissement d'un seuil de dérive ou chute de concordance humaine, l'alerte déclenche immédiatement le cycle de ré-homologation."
+          "① Des paires métamorphiques FR/EN éprouvent la constance décisionnelle sans exiger une formulation unique attendue (≥ 100 scénarios ASI01–10 et AMF).",
+          "② Les trajectoires ouvertes sont évaluées hors ligne par un modèle-juge issu d'une famille distincte et étalonné sur annotations humaines (`kappa ≥ 0,6`).",
+          "③ En production, l'évaluateur continu surveille en flux les indicateurs des trois dérives (F-23 modèle, F-52 outil, H-12 autonomie) ainsi que de l'apprentissage.",
+          "④ Dès le franchissement d'un seuil de dérive ou la chute de concordance humaine, l'alerte déclenche immédiatement le cycle de ré-homologation."
         ],
         "color_legend": [
           {
@@ -1230,14 +1230,14 @@
           },
           {
             "color_token": "Violet calibration (#7C3AED)",
-            "meaning": "Modèle-juge hétérogène étalonné humainement (kappa >= 0,6, jamais bloquant)"
+            "meaning": "Modèle-juge hétérogène étalonné humainement (`kappa ≥ 0,6`, jamais bloquant)"
           },
           {
             "color_token": "Orange sentinelle (#EA580C)",
             "meaning": "Surveillance continue des 3+1 dérives (F-23, F-52, H-12, apprentissage)"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne demandez jamais à un modèle de noter sa propre copie sans contre-expertise humaine, et vérifiez en bilingue FR/EN que la sécurité ne s'effondre pas quand on change simplement la formulation."
+        "key_takeaway_box": "Un modèle ne doit jamais évaluer sa propre production sans contre-expertise humaine, et l'évaluation bilingue FR/EN doit attester que les garanties de sécurité résistent aux simples variations de formulation."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1263,7 +1263,7 @@
           "title": "Chaîne SRE agentique : calcul multi-fenêtres burn rate, détection de dérive sémantique et rejeu forensique",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-43 - Chaîne SRE agentique - calcul multi-fenêtres burn rate, détection.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-43.svg",
-          "role_note": "Illustre la détection continue de dérive sémantique et les calculs burn rate côté SRE."
+          "role_note": "Illustre la détection continue de dérive sémantique et les calculs de taux de consommation d'erreur côté SRE."
         }
       ]
     },
@@ -1288,36 +1288,36 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Montrer comment l'entreprise industrialise ses tâches répétitives en passant de prompts manuels coûteux sur gros modèles frontières vers de petits modèles spécialisés (SLM 3B–8B Multi-LoRA optimisés via DSPy/MIPROv2), sans jamais réinjecter de données personnelles ni introduire d'effondrement ou d'empoisonnement de modèle.",
-      "vulgarization_angle": "Comparer le volant cognitif à la formation d'apprentis spécialisés : un maître expert cher (Frontier LLM) traite les premiers dossiers complexes sous supervision HOTL, puis ses meilleurs gestes dûment anonymisés forment des spécialistes rapides et peu coûteux (SLM Multi-LoRA), contrôlés par examen final `pass^5` avant prise de poste.",
+      "pedagogical_objective": "Montrer comment l'organisation industrialise ses tâches récurrentes en passant d'invites manuelles coûteuses sur grands modèles frontières à de petits modèles spécialisés (SLM 3B–8B Multi-LoRA optimisés via DSPy/MIPROv2), sans jamais réinjecter de données personnelles ni introduire d'effondrement ou d'empoisonnement de modèle.",
+      "vulgarization_angle": "Comparer le volant cognitif à la formation de spécialistes : un expert onéreux (modèle frontière) traite les premiers dossiers complexes sous supervision HOTL, puis ses meilleurs cheminements dûment anonymisés forment des spécialistes rapides et sobres (SLM Multi-LoRA), validés par l'examen final `pass^5` avant leur mise en service.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Collecte qualifiée et sas d'assainissement Loi 25 à canaris Carlini",
-            "content": "Sélection exclusive des sagas réussies et arbitrages HOTL validés ; passage irréversible par le sas de purge des renseignements personnels et détection par canaris contre la mémorisation."
+            "content": "Sélection exclusive des sagas réussies et arbitrages HOTL validés; passage irréversible par le sas de purge des renseignements personnels et détection par canaris contre la mémorisation."
           },
           {
             "zone_id": "Z2",
-            "label": "Compilation déclarative DSPy / MIPROv2 & affinage SFT+DPO Multi-LoRA (3B–8B)",
-            "content": "Remplacement des prompts figés par signatures typées optimisées automatiquement et entraînement d'adaptateurs LoRA légers par domaine métier."
+            "label": "Compilation déclarative DSPy / MIPROv2 et affinage SFT+DPO Multi-LoRA (3B–8B)",
+            "content": "Remplacement des invites figées par des signatures typées optimisées automatiquement et entraînement d'adaptateurs LoRA légers par domaine métier."
           },
           {
             "zone_id": "Z3",
-            "label": "Porte de qualification `pass^5` et sentinelle de régression 2 % (`V_min`)",
-            "content": "Aucune bascule au palier 1 du routeur sans atteindre la parité `pass^5` et respecter une dérive maximale de 2 % sur le banc scellé E2."
+            "label": "Porte de qualification `pass^5` et sentinelle de régression à 2 % (`V_min`)",
+            "content": "Aucune bascule au palier 1 du routeur sans atteindre la parité `pass^5` ni respecter une dérive maximale de 2 % sur le banc scellé E2."
           }
         ],
         "numbered_flows": [
           "① Les traces de sagas menées à terme et les corrections humaines HOTL alimentent le vivier de dossiers exemplaires.",
-          "② Le sas Loi 25 caviarde irréversiblement les renseignements personnels et vérifie par canaris Carlini l'absence de fuite mémorisée.",
-          "③ DSPy/MIPROv2 compile des signatures typées et pilote l'affinage SFT+DPO vers un adaptateur SLM Multi-LoRA (3B–8B) peu énergivore.",
-          "④ L'adaptateur n'entre au palier 1 du routeur qu'après avoir franchi la porte `pass^5` et la sentinelle stricte de 2 % (`V_min`) face au modèle maître."
+          "② Le sas Loi 25 caviarde irréversiblement les renseignements personnels et vérifie au moyen de canaris Carlini l'absence de fuite mémorisée.",
+          "③ DSPy/MIPROv2 compile des signatures typées et pilote l'affinage SFT+DPO vers un adaptateur SLM Multi-LoRA (3B–8B) à faible empreinte énergétique.",
+          "④ L'adaptateur n'accède au palier 1 du routeur qu'après avoir franchi la porte `pass^5` et la sentinelle stricte de 2 % (`V_min`) face au modèle maître."
         ],
         "color_legend": [
           {
             "color_token": "Bleu collecte (#1E40AF)",
-            "meaning": "Traces assainies de sagas validées et arbitrages HOTL + canaris Carlini"
+            "meaning": "Traces assainies de sagas validées et arbitrages HOTL avec canaris Carlini"
           },
           {
             "color_token": "Turquoise distillation (#0F766E)",
@@ -1328,7 +1328,7 @@
             "meaning": "Barrière de promotion `pass^5` et sentinelle de qualité 2 % (`V_min`)"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne payez pas indéfiniment un modèle géant pour faire des tâches routinières maîtrisées ; distillez vos dossiers réussis et anonymisés vers de petits modèles spécialisés après examen `pass^5`."
+        "key_takeaway_box": "Le recours systématique à un modèle frontière pour des tâches routinières maîtrisées est économiquement insoutenable : la distillation des dossiers validés et anonymisés vers de petits modèles spécialisés exige toutefois l'examen probatoire `pass^5`."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1364,31 +1364,31 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Révéler l'illusion du prix facial du million de jetons (> 97 % de relecture en entrée, facteur 4× à 15× en multi-agents, boucle de 41 000 $ CAD en 11 h) et installer le pilotage par coût complet par résultat conforme (CPO), routage 3 paliers, enveloppe budgétaire à coupure atomique et comptabilité kWh/carbone FOCUS v1.4 pour BSIF B-15 (fin 2028).",
-      "vulgarization_angle": "Comparer le tarif au jeton au prix affiché d'une vis sans compter les 14 reprises ni les pièces cassées (avant), face au coût réel par dossier clôturé conforme en $ CA (CPO après), équipé d'un compteur d'eau qui sonne à 80 % et coupe la vanne à 100 % tout en mesurant l'empreinte électrique et carbone.",
+      "pedagogical_objective": "Mettre en évidence l'illusion du prix facial du million de jetons (> 97 % de relecture en entrée, facteur de 4× à 15× en multi-agents, boucle de 41 000 $ CAD en 11 heures) et instaurer le pilotage par coût complet par résultat conforme (CPO), le routage à trois paliers, l'enveloppe budgétaire à coupure atomique et la comptabilité kWh/carbone FOCUS v1.4 pour BSIF B-15 (fin 2028).",
+      "vulgarization_angle": "Opposer le tarif unitaire du jeton — analogue au prix affiché d'une pièce isolée sans comptabiliser quatorze reprises ni rebuts (avant) — au coût réel par dossier clôturé conforme en $ CA (CPO après), muni d'un compteur qui alerte à 80 % et ferme l'alimentation à 100 % tout en mesurant l'empreinte électrique et carbone.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Avant — Piège du tarif au jeton (AP-03) et boucles non plafonnées",
-            "content": "> 97 % de jetons consommés en relecture de contexte, multiplication jusqu'à 15× en collectif d'agents, cumul de crédits SaaS opaques et absence de plafond menant aux dérapages de type 41 000 $ CAD."
+            "content": "> 97 % de jetons consommés en relecture de contexte, multiplication jusqu'à 15× en collectif d'agents, cumul de crédits SaaS opaques et absence de plafond menant à des dérapages de l'ordre de 41 000 $ CAD."
           },
           {
             "zone_id": "Z2",
-            "label": "Après — Plan d'inférence à alias logiques, cache KV & cascade SLM/LLM (CAP-029/034)",
-            "content": "Abstraction derrière alias logiques, préfixes fixes pour prompt caching (~90 % d'économie), lots asynchrones (-50 %/24h) et routage frugal à 3 paliers (SLM 73–86 % du trafic) avec ordonnanceur à affinité KV-cache."
+            "label": "Après — Plan d'inférence à alias logiques, cache KV et cascade SLM/LLM (CAP-029/034)",
+            "content": "Abstraction derrière alias logiques, préfixes fixes pour la mise en cache des invites (~90 % d'économie), lots asynchrones (−50 % sur 24 heures) et routage frugal à trois paliers (SLM 73–86 % du trafic) avec ordonnanceur à affinité KV-cache."
           },
           {
             "zone_id": "Z3",
             "label": "Comptabilité CPO exacte en FOCUS v1.4 carbone (CAP-046, BSIF B-15) et disjoncteurs",
-            "content": "Calculateur Decimal complet (échecs + compensations + HOTL inclus), enveloppes atomiques côté passerelle (repli SLM 70 %, alerte 80 %, coupure 100 % hors Saga), Showback → Chargeback/déclassement après 2 trimestres hors cible et champs `x_energy_kwh` / `x_carbon_gco2e`."
+            "content": "Calculateur `Decimal` complet (échecs, compensations et charge HOTL inclus), enveloppes atomiques côté passerelle (repli SLM 70 %, alerte 80 %, coupure 100 % hors Saga), transition Showback → Chargeback/déclassement après deux trimestres hors cible et champs `x_energy_kwh` / `x_carbon_gco2e`."
           }
         ],
         "numbered_flows": [
-          "① Chaque requête d'inférence cible un alias logique sur `agentgateway` et est orientée d'abord vers le plus petit modèle qualifié E2, en exploitant l'affinité KV-cache.",
-          "② La passerelle décrémente en temps réel l'enveloppe atomique de la saga : repli SLM à 70 %, alerte à 80 % et arrêt propre à 100 % en préservant les compensations Saga.",
-          "③ Les spans OTel (`gen_ai.usage.*`, `cost_center`) alimentent la facturation FOCUS v1.4 étendue carbone (`x_energy_kwh`, `x_carbon_gco2e`, BSIF B-15).",
-          "④ Le CPO mensuel (incluant échecs et charge HOTL) pilote la refacturation (Showback → Chargeback) et déclenche une revue/déclassement après deux périodes déficitaires."
+          "① Chaque requête d'inférence cible un alias logique sur `agentgateway` et est orientée d'abord vers le plus petit modèle qualifié en E2, en exploitant l'affinité KV-cache.",
+          "② La passerelle décrémente en temps réel l'enveloppe atomique de la saga : repli SLM à 70 %, alerte à 80 % et arrêt propre à 100 % tout en préservant les compensations Saga.",
+          "③ Les spans OTel (`gen_ai.usage.*`, `cost_center`) alimentent la facturation FOCUS v1.4 étendue au carbone (`x_energy_kwh`, `x_carbon_gco2e`, BSIF B-15).",
+          "④ Le CPO mensuel (incluant échecs et charge HOTL) pilote la refacturation (Showback → Chargeback) et déclenche une revue ou un déclassement après deux périodes déficitaires."
         ],
         "color_legend": [
           {
@@ -1397,14 +1397,14 @@
           },
           {
             "color_token": "Turquoise frugalité (#0D9488)",
-            "meaning": "Cascade 3 paliers SLM/LLM, affinité KV-cache (~90 %) et lots -50 %"
+            "meaning": "Cascade à trois paliers SLM/LLM, affinité KV-cache (~90 %) et lots −50 %"
           },
           {
             "color_token": "Vert maîtrise (#15803D)",
-            "meaning": "Comptabilité Decimal CPO / FOCUS v1.4 carbone (CAP-046) et disjoncteurs 70/80/100 %"
+            "meaning": "Comptabilité `Decimal` CPO / FOCUS v1.4 carbone (CAP-046) et disjoncteurs 70 % / 80 % / 100 %"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne négociez pas uniquement le prix du million de jetons — pilotez au coût réel d'un dossier réussi (CPO), orientez les tâches simples vers de petits modèles avec cache KV et armez des plafonds qui coupent net avant l'incident."
+        "key_takeaway_box": "La maîtrise budgétaire ne repose pas uniquement sur la négociation du million de jetons : le pilotage au coût réel d'un dossier conforme (CPO), l'orientation vers des SLM avec cache KV et des plafonds à coupure nette préviennent les dérives."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1430,7 +1430,7 @@
           "title": "Chaîne d’attribution, de refacturation interne (Showback/Chargeback) et de réversibilité FinOps",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-48 - Chaîne d'attribution, de refacturation interne (Showback-Chargeback).puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-48.svg",
-          "role_note": "Présente la chaîne d'attribution Showback/Chargeback et la réversibilité FinOps."
+          "role_note": "Présente la chaîne d'attribution Showback/Chargeback ainsi que la réversibilité FinOps."
         },
         {
           "tome_id": "T3",
@@ -1438,7 +1438,7 @@
           "title": "Pour un document traité par un pipeline séquentiel, l’entrée pèse plus de 97 % des jetons; trois multiplicateurs s’y ajoutent : la boucle (mesure interne d’Anthropic), la topologie, à modèle égal, et les outils, payés en jetons d’entrée.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-52 - Pour un document traité par un pipeline séquentiel, l'entrée pèse.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-52.svg",
-          "role_note": "Quantifie le poids > 97 % des jetons d'entrée et les trois multiplicateurs de boucle, topologie et outils."
+          "role_note": "Quantifie la part > 97 % des jetons d'entrée et les trois multiplicateurs de boucle, de topologie et d'outils."
         },
         {
           "tome_id": "T3",
@@ -1461,7 +1461,7 @@
       "themes_vulgarized": [
         "cycle-vie-operationnel-derives-gitops"
       ],
-      "title": "GitOps agentique à 3 objets indissociables (agent + outil + politique) : déployer et revenir en arrière sans casser l'existant",
+      "title": "GitOps agentique à trois objets indissociables (agent + outil + politique) : déployer et revenir en arrière sans altérer l'existant",
       "insertion_point": "Chapitre 24 — section 24.2.2 (fiche cycle-vie-operationnel-derives-gitops)",
       "target_audiences": [
         "AE / AS",
@@ -1469,31 +1469,31 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Faire comprendre aux équipes plateforme et gouvernance pourquoi déployer un agent diffère d'un microservice : la reproductibilité et le retour arrière rapide exigent de versionner atomiquement en GitOps un triplet indissociable (définition d'agent, schéma d'outil, politique OPA/Cedar) et de savoir quand une adaptation de mémoire exige une ré-homologation.",
-      "vulgarization_angle": "Comparer la mise en production d'un agent à la sortie d'un train complet en bloc scellé : on ne change pas le frein (politique) sans vérifier la locomotive (modèle/agent) ni les rails (schémas d'outils) ; les trois voyagent sous le même numéro de rame `SemVer+Intent`.",
+      "pedagogical_objective": "Expliquer aux équipes plateforme et de gouvernance pourquoi le déploiement d'un agent diffère de celui d'un microservice : la reproductibilité et le retour arrière rapide imposent de versionner atomiquement en GitOps un triplet indissociable (définition d'agent, schéma d'outil, politique OPA/Cedar) et de définir quand une adaptation mémorielle exige une ré-homologation.",
+      "vulgarization_angle": "Comparer la mise en production d'un agent à l'expédition d'une rame ferroviaire scellée : il est exclu de modifier le système de freinage (politique) sans vérifier la motrice (modèle et agent) ni la voie (schémas d'outils); les trois éléments voyagent sous un même identifiant `SemVer+Intent`.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Triplet GitOps versionné (Tableau 39.1) — Jamais déployés séparément",
-            "content": "Dépôt déclaratif unifié scellant : (1) manifeste/mandat et prompts d'agent, (2) contrats et empreintes SHA-256 des outils MCP, (3) politiques hors modèle OPA Rego / Cedar."
+            "content": "Dépôt déclaratif unifié scellant : (1) manifeste/mandat et invites d'agent, (2) contrats et empreintes SHA-256 des outils MCP, (3) politiques hors modèle OPA Rego / Cedar."
           },
           {
             "zone_id": "Z2",
-            "label": "Portes CI/CD, attestation Sigstore/SLSA et promotions par paliers (Shadow → Canary)",
-            "content": "Chaque version immuable (zéro tag flottant `latest`) franchit les étages E1/E2 avant promotion environnementale et épinglage des workflows durables Temporal déjà en vol."
+            "label": "Portes CI/CD, attestation Sigstore/SLSA et promotions par paliers (fantôme → canari)",
+            "content": "Chaque version immuable (zéro étiquette flottante `latest`) franchit les étages E1/E2 avant promotion environnementale et épinglage des flux durables Temporal déjà engagés."
           },
           {
             "zone_id": "Z3",
-            "label": "Critère de réévaluation complète (§39.4, §39.6) & retour arrière atomique",
-            "content": "Détection du seuil où l'ajustement de prompts, compétences ou mémoire constitue une évolution de modèle nécessitant ré-homologation intégrale plutôt qu'un simple correctif."
+            "label": "Critère de réévaluation complète (sections 39.4 et 39.6) et retour arrière atomique",
+            "content": "Détection du seuil où l'ajustement d'invites, de compétences ou de mémoire constitue une évolution de modèle nécessitant une ré-homologation intégrale plutôt qu'un simple correctif."
           }
         ],
         "numbered_flows": [
-          "① Toute modification de définition d'agent, schéma d'outil ou règle de politique est soumise par requête de fusion sur le triplet GitOps unifié.",
-          "② La chaîne CI vérifie empreintes, tests OPA et banc hermétique E1–E2, puis scelle l'artefact composite (`SemVer+Intent`, SLSA/Sigstore).",
-          "③ Le déploiement promeut la rame en mode Shadow puis Canary en épinglant l'ancienne version pour les tâches longues Temporal déjà engagées.",
-          "④ Si la dérive dépasse les seuils ou si le changement modifie le comportement de modèle, un retour arrière atomique s'opère pendant qu'une ré-homologation complète démarre."
+          "① Toute modification de définition d'agent, de schéma d'outil ou de règle de politique est soumise par requête de fusion sur le triplet GitOps unifié.",
+          "② La chaîne CI vérifie les empreintes, les essais OPA et le banc hermétique E1–E2, puis scelle l'artefact composite (`SemVer+Intent`, SLSA/Sigstore).",
+          "③ Le déploiement promeut la rame en mode fantôme puis canari tout en épinglant l'ancienne version pour les tâches longues Temporal déjà en cours.",
+          "④ Si la dérive dépasse les seuils ou si le changement modifie le comportement du modèle, un retour arrière atomique s'opère tandis qu'une ré-homologation complète s'amorce."
         ],
         "color_legend": [
           {
@@ -1502,14 +1502,14 @@
           },
           {
             "color_token": "Turquoise promotion (#0D9488)",
-            "meaning": "Portes CI, signature SLSA/Sigstore et déploiement progressif Shadow/Canary"
+            "meaning": "Portes CI, signature SLSA/Sigstore et déploiement progressif fantôme puis canari"
           },
           {
             "color_token": "Ambre gouvernance (#D97706)",
-            "meaning": "Basculement vers ré-homologation complète ou rollback atomique sur dérive"
+            "meaning": "Basculement vers ré-homologation complète ou retour arrière atomique sur dérive"
           }
         ],
-        "key_takeaway_box": "À retenir : Ne déployez jamais séparément un prompt, un outil et une règle de sécurité ; versionnez les trois dans un même bloc GitOps pour pouvoir expliquer ou annuler chaque comportement en un clic."
+        "key_takeaway_box": "Une invite, un outil et une règle de sécurité ne doivent jamais être déployés séparément : leur versionnement conjoint dans un bloc GitOps unifié permet d'expliquer chaque comportement et d'opérer un retour arrière atomique."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1527,7 +1527,7 @@
           "title": "Séquence de déploiement progressif (Shadow, Canary) articulée avec l’épinglage des workflows durables en vol",
           "source_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-52 - Séquence de déploiement progressif (Shadow, Canary) articulée.puml",
           "rendered_path": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-52.svg",
-          "role_note": "Séquence Shadow et Canary respectant l'épinglage des workflows durables déjà en cours d'exécution."
+          "role_note": "Séquence fantôme et canari respectant l'épinglage des flux durables déjà en cours d'exécution."
         },
         {
           "tome_id": "T3",
@@ -1535,7 +1535,7 @@
           "title": "Pipeline CI/CD probabiliste du cycle de vie ADLC : du registre SemVer+Intent au déploiement Canary sous contrôle pass⁵ et chaos.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-47 - Pipeline CI-CD probabiliste du cycle de vie ADLC - du registre.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-47.svg",
-          "role_note": "Pipeline ADLC probabiliste du registre SemVer+Intent au déploiement Canary sous pass^5 et chaos."
+          "role_note": "Pipeline ADLC probabiliste allant du registre `SemVer+Intent` au déploiement canari sous `pass^5` et chaos."
         }
       ]
     },
@@ -1562,36 +1562,36 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Relier les compteurs techniques quotidiens d'exploitation (grille minimale AgentOps à 4 familles, dont attention humaine et délais de retrait) aux indicateurs de gestion du risque de modèle exigés par les dirigeants et les régulateurs (BSIF E-23 et AMF dès le 1er mai 2027), en signalant avec transparence les manques d'instrumentation actuels.",
-      "vulgarization_angle": "Présenter le pont de traduction entre la salle des machines (capteurs SRE : erreurs, latence, désaveux HOTL, coûts) et la passerelle de commandement (indicateurs E-23 / AMF pour le conseil d'administration et l'auditeur).",
+      "pedagogical_objective": "Relier les compteurs techniques quotidiens d'exploitation (grille minimale AgentOps à quatre familles, incluant attention humaine et délais de retrait) aux indicateurs de gestion du risque de modèle exigés par les dirigeants et les organismes de réglementation (BSIF E-23 et AMF dès le 1er mai 2027), en signalant avec transparence les manques d'instrumentation actuels.",
+      "vulgarization_angle": "Présenter la passerelle de traduction reliant les capteurs d'exploitation SRE (erreurs, latence, désaveux HOTL, coûts) aux indicateurs prudentiels E-23 / AMF destinés au conseil d'administration et à l'auditeur.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Capteurs salle des machines — Grille minimale AgentOps à 4 familles (§40.2)",
-            "content": "Famille 1 : parc inventorié ; Famille 2 : trace ↔ mandat et taux de réussite/dérive ; Famille 3 : attention humaine (latence d'approbation & taux de dérogation HOTL §40.4) et délais de retrait ; Famille 4 : coût CPO / économie du plan d'inférence."
+            "label": "Capteurs d'exploitation — Grille minimale AgentOps à 4 familles (section 40.2)",
+            "content": "Famille 1 : parc inventorié; Famille 2 : trace ↔ mandat et taux de réussite/dérive; Famille 3 : attention humaine (latence d'approbation et taux de dérogation HOTL, section 40.4) et délais de retrait; Famille 4 : coût CPO et économie du plan d'inférence."
           },
           {
             "zone_id": "Z2",
             "label": "Passerelle de traduction — Tableaux 40.1–40.2 et 46.1 (4 prérequis manquants à combler)",
-            "content": "Mappage vers les indicateurs de risque de modèle tout en comblant explicitement les 4 trous du marché : dénominateur du parc, clé de jointure trace-mandat, délai mesuré de propagation de révocation et horodatage d'évaluation exportable."
+            "content": "Correspondance vers les indicateurs de risque de modèle tout en comblant explicitement les quatre lacunes du marché : dénominateur du parc, clé de jointure trace-mandat, délai mesuré de propagation de révocation et horodatage d'évaluation exportable."
           },
           {
             "zone_id": "Z3",
             "label": "Tableau de bord réglementaire et gouvernance — BSIF E-23 / AMF (1er mai 2027)",
-            "content": "Indicateurs de matérialité, seuils d'alerte prudentiels, taux d'approbation critique (lutte contre l'acquiescement mécanique à 93 %) et décision de maintien, ré-étalonnage ou retrait d'agent."
+            "content": "Indicateurs de matérialité, seuils d'alerte prudentiels, taux d'approbation critique (lutte contre l'acquiescement mécanique à 93 %) et décision de maintien, de ré-étalonnage ou de retrait d'agent."
           }
         ],
         "numbered_flows": [
-          "① Les instruments AgentOps collectent les quatre familles de métriques techniques, incluant la mesure active du temps et du taux d'approbation humaine.",
+          "① Les instruments AgentOps recueillent les quatre familles de métriques techniques, incluant la mesure active du temps et du taux d'approbation humaine.",
           "② La couche de gouvernance comble les quatre prérequis d'auditabilité (parc exact, jointure trace-mandat, délai de retrait, horodatage E2/E3).",
-          "③ Le référentiel Tableau 46.1 traduit ces mesures techniques en indicateurs de risque de modèle lisibles par la conformité et le conseil.",
-          "④ Tout dépassement prolongé ou défaut de supervision effective déclenche soit un ré-étalonnage du routage/modèle, soit une rétrogradation sous BSIF E-23."
+          "③ Le référentiel du Tableau 46.1 traduit ces mesures techniques en indicateurs de risque de modèle lisibles par la conformité et le conseil.",
+          "④ Tout dépassement prolongé ou défaut de supervision effective déclenche soit un ré-étalonnage du routage ou du modèle, soit une rétrogradation sous BSIF E-23."
         ],
         "color_legend": [
           {
             "color_token": "Bleu technique (#0369A1)",
-            "meaning": "Quatre familles d'indicateurs AgentOps et attention humaine HOTL (§40.2, §40.4)"
+            "meaning": "Quatre familles d'indicateurs AgentOps et attention humaine HOTL (sections 40.2 et 40.4)"
           },
           {
             "color_token": "Ambre lacunes (#D97706)",
@@ -1602,7 +1602,7 @@
             "meaning": "KPI de risque de modèle opposables BSIF E-23 / AMF (Tableau 46.1)"
           }
         ],
-        "key_takeaway_box": "À retenir : Des métriques techniques sans traduction prudentielle n'éclairent pas le conseil, et un cadre E-23 sans capteurs AgentOps reste aveugle. La grille minimale + Tableau 46.1 bâtit le pont mesurable entre les deux."
+        "key_takeaway_box": "Des métriques techniques dépourvues de traduction prudentielle n'éclairent pas le conseil, tandis qu'un cadre E-23 privé de capteurs AgentOps demeure aveugle : la grille minimale couplée au Tableau 46.1 établit le pont mesurable entre les deux."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1612,7 +1612,7 @@
           "title": "La grille minimale d’indicateurs et ce qui manque pour calculer chacun d’eux : dénominateur du parc (1), clé de jointure trace-mandat (2), bornes de propagation du retrait — le socle ne documentant aucun délai de propagation fixé par un cadre canadien instruit, au degré 3 — (3) et horodatage d’évaluation exportable (4).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-40.1 - La grille minimale d'indicateurs et ce qui manque pour calculer.puml",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-40.1.svg",
-          "role_note": "Présente la grille minimale à 4 familles d'indicateurs AgentOps et identifie les 4 manques à combler pour l'auditeur."
+          "role_note": "Présente la grille minimale à quatre familles d'indicateurs AgentOps et identifie les quatre lacunes à combler pour l'auditeur."
         },
         {
           "tome_id": "T1",
@@ -1620,7 +1620,7 @@
           "title": "Le compte à rebours vers le 1ᵉʳ mai 2027 : trois mouvements séquentiels (1. Inventorier → 2. Coter, puis encadrer → 3. Surveiller ; sur l’image, les repères « −1 / −2 / −3 » désignent les trois mouvements successifs lus de droite à gauche vers l’échéance du 1ᵉʳ mai 2027).",
           "source_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-46.1 - Le compte à rebours vers le 1er mai 2027 - trois mouvements.mmd",
           "rendered_path": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-46.1.png",
-          "role_note": "Structuration séquentielle (Inventorier → Coter/Encadrer → Surveiller) vers les exigences BSIF E-23 / AMF."
+          "role_note": "Structuration séquentielle (Inventorier → Coter et encadrer → Surveiller) vers les exigences BSIF E-23 / AMF."
         },
         {
           "tome_id": "T3",
@@ -1628,7 +1628,7 @@
           "title": "Plan de données AI-natif : passerelle unifiée agentgateway, routage cognitif hybride à trois paliers et ordonnancement Kubernetes conscient du préfixe KV-cache.",
           "source_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-56 - Plan de données AI-natif - passerelle unifiée agentgateway, routage.puml",
           "rendered_path": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-56.svg",
-          "role_note": "Relie les mesures de routage cognitif hybride à trois paliers sur agentgateway à la télémétrie d'exploitation."
+          "role_note": "Relie les mesures de routage cognitif hybride à trois paliers sur `agentgateway` à la télémétrie d'exploitation."
         }
       ]
     }
