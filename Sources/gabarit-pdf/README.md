@@ -1,6 +1,6 @@
 # Gabarit PDF partagé de la collection
 
-[Compendium](../../Compendium/README.md) · [Tomes publiés](../../Tomes/README.md) · [Index des sources](../README.md) · [Sources des tomes](../Tomes/README.md) · [Cartographie](../Cartographie/README.md) · [Retour à l'index principal du dépôt](../../README.md)
+[Compendium](../../Compendium/README.md) · [Tomes publiés](../../Tomes/README.md) · [Index des sources](../README.md) · [Sources des tomes](../Tomes/README.md) · [Cartographie](../Cartographie/README.md) · [PRD maître](../Compendium/prd.md) · [PRD Web](../Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](../Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) · [Retour à l'index principal du dépôt](../../README.md)
 
 Gabarit éditorial Typst unique et compilateur unifié pour le **Compendium** ([`Compendium/`](../../Compendium/README.md)) et les **8 tomes** du dépôt (fichiers consolidés `.md`/`.pdf` dans [`Tomes/`](../../Tomes/README.md) et dossiers sources dans [`Sources/Tomes/`](../Tomes/README.md)), fondés sur la charte de référence de [Compendium.pdf](../../Compendium/Compendium.pdf) et de [Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf](../../Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.pdf).
 

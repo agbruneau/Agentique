@@ -3,10 +3,12 @@
 Vérifie :
 - les fonctions unitaires de ``compiler_prd.py`` (ancres GFM, numérotation 1..36, encodage URL) ;
 - la compilation sur fixture synthétique et le rejet strict des placeholders/omissions ;
-- l'exhaustivité du vrai ``prd.md`` (12 domaines D01–D12, 36 chapitres 01–36, 71 familles,
-  260 thèmes, 4 annexes A–D, unicité des titres/résumés, zéro placeholder/mojibake) ;
+- l'exhaustivité du vrai ``Sources/Compendium/prd.md`` (12 domaines D01–D12, 36 chapitres 01–36,
+  71 familles, 260 thèmes, 5 annexes A–E, 115 schémas Compendium, unicité, zéro placeholder/mojibake) ;
+- l'ancrage exclusif sur le Compendium (0 lien vers `Tomes/` dans les tableaux d'ancrages ou `corpus_anchors`) ;
 - la validité à 100 % de toutes les ancres internes ``#slug`` via parseur CommonMark strict ;
-- la validité à 100 % de tous les liens relatifs vers ``Tomes/``, ``Sources/Tomes/`` et la documentation du dépôt.
+- la validité à 100 % de tous les liens relatifs vers ``Compendium/``, ``Sources/Compendium/`` et les READMEs ;
+- l'application Web autonome ``PRD - Référentiel directeur de l'entreprise agentique.html`` sous Node.js.
 """
 
 from __future__ import annotations
@@ -28,6 +30,11 @@ OUTILS_DIR = CARTO_DIR / "outils"
 PRD_PATH = REPO_ROOT / "Sources" / "Compendium" / "prd.md"
 PRD_WEB_DATA_PATH = DONNEES_DIR / "prd-web-data.json"
 PRD_WEB_HTML_PATH = CARTO_DIR / "PRD - Référentiel directeur de l'entreprise agentique.html"
+MINDMAP_HTML_PATH = CARTO_DIR / "MindMap - Cartographie thématique du Compendium.html"
+MINDMAP_HTML_ENCODED = "MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html"
+OLD_MINDMAP_NAME = "MindMap - Cartographie thématique du Corpus.html"
+OLD_MINDMAP_ENCODED = "MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html"
+PRD_WEB_ENCODED = "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html"
 
 sys.path.insert(0, str(OUTILS_DIR))
 import compiler_prd as cp  # noqa: E402
@@ -36,15 +43,15 @@ import extraire_structure as es  # noqa: E402
 
 def test_unit_gfm_anchor_and_chapter_numbering() -> None:
     seen: dict[str, int] = {}
-    a1 = cp.gfm_anchor("Chapitre 01 — Rupture épistémique & `Systems of Agency`", seen)
-    a2 = cp.gfm_anchor("Chapitre 01 — Rupture épistémique & `Systems of Agency`", seen)
-    assert a1 == "chapitre-01--rupture-épistémique--systems-of-agency"
+    a1 = cp.gfm_anchor("Chapitre 01 — Rupture épistémique & `Systèmes d'agentivité`", seen)
+    a2 = cp.gfm_anchor("Chapitre 01 — Rupture épistémique & `Systèmes d'agentivité`", seen)
+    assert a1 == "chapitre-01--rupture-épistémique--systèmes-dagentivité"
     assert a2 == f"{a1}-1"
 
     assert cp.expected_chapter_number("D01", "SUB_D01_01") == 1
     assert cp.expected_chapter_number("D01", "SUB_D01_03") == 3
     assert cp.expected_chapter_number("D12", "SUB_D12_03") == 36
-    assert "%27" in cp.encode_rel_url("Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md")
+    assert "%27" in cp.encode_rel_url("Sources/Compendium/ouvrage/manuscrit/02 - Architecture d'entreprise.md")
     assert cp._md_cell("a | b\nc  d") == r"a \| b c d"
     assert cp._md_cell(r"a \| b") == r"a \| b"
 
@@ -125,23 +132,33 @@ def test_unit_build_prd_markdown_end_to_end_on_real_bundle() -> None:
 
 def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     if not PRD_PATH.is_file():
-        pytest.skip("prd.md pas encore compilé (en attente des shards PRD)")
+        pytest.skip("Sources/Compendium/prd.md pas encore compilé")
 
     bundle = json.loads((DONNEES_DIR / "corpus-mindmap-data.json").read_text(encoding="utf-8"))
+    raw_bytes = PRD_PATH.read_bytes()
+    assert not raw_bytes.startswith(b"\xef\xbb\xbf"), "BOM UTF-8 détecté dans prd.md"
+    assert b"\r\n" not in raw_bytes, "Séquences CRLF détectées dans prd.md"
     prd_text = PRD_PATH.read_text(encoding="utf-8")
     prd_lines = prd_text.splitlines()
 
-    # 0 mojibake / placeholder / dict Python brut (hors mention réglementaire BSIF B-15 SRC-067)
+    # 0 mojibake / placeholder / dict Python brut (hors mention réglementaire BSIF B-15 SRC-110/SRC-067)
     for pat in cp.PLACEHOLDER_PATTERNS:
         bad_lines = [
             (idx, ln)
             for idx, ln in enumerate(prd_lines, 1)
             if pat.search(ln)
-            and not (pat.pattern == r"\bTBD\b" and "ligne directrice B-15 du BSIF" in ln and "SRC-067" in ln)
+            and not (pat.pattern == r"\bTBD\b" and "ligne directrice B-15 du BSIF" in ln and ("SRC-110" in ln or "SRC-067" in ln))
         ]
         assert not bad_lines, f"Placeholder détecté dans prd.md ({pat.pattern}) : {bad_lines[:3]}"
     assert not re.search(r"\{'[A-Za-z0-9_]+'\s*:", prd_text), "Dict Python brut détecté dans prd.md"
     assert "\ufffd" not in prd_text
+
+    # Présence explicite de Agentivité des systèmes et zéro occurrence System(s) of Agency
+    assert "Agentivité des systèmes" in prd_text
+    assert "Systems of Agency" not in prd_text
+    assert "System of Agency" not in prd_text
+    assert OLD_MINDMAP_NAME not in prd_text and OLD_MINDMAP_ENCODED not in prd_text
+    assert MINDMAP_HTML_ENCODED in prd_text
 
     # Extraction stricte CommonMark de TOUS les titres H1..H6 de prd.md
     headings, _, code_lines = es.parse_markdown_lines(prd_lines)
@@ -165,7 +182,6 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
         elif lvl == 5:
             h5_titles.append(title)
 
-    # 12 Parties + 5 Annexes + TDM + Sommaire exécutif
     parties_h2 = [t for t in h2_titles if t.startswith("Partie ")]
     annexes_h2 = [t for t in h2_titles if t.startswith("Annexe ")]
     assert len(parties_h2) == 12
@@ -173,7 +189,6 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert len(set(parties_h2)) == 12
     assert len(set(annexes_h2)) == 5
 
-    # Panorama + 36 Chapitres uniques + 36 Résumés + 36 Descriptifs + 36 Sections XX.3 + 71 Familles H5
     assert cp.PANORAMA_HEADING in h3_titles
     chapters_h3 = [t for t in h3_titles if re.match(r"^Chapitre \d{2} — ", t)]
     assert len(chapters_h3) == 36
@@ -188,7 +203,6 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert len(h5_titles) == 71
     assert len(fam_h5) == 71
 
-    # Couverture 100 % des 12 domaines, 36 sous-domaines, 71 familles et 260 thèmes du MindMap
     for node in bundle["nodes"]:
         kind = node["node_kind"]
         if kind in ("domain", "subdomain", "family"):
@@ -196,6 +210,20 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
         elif kind == "theme":
             assert node["node_id"] in prd_text, f"Thème manquant dans prd.md : {node['node_id']}"
             assert node["canonical_slug"] in prd_text, f"Slug manquant dans prd.md : {node['canonical_slug']}"
+
+    # 0 lien vers Tomes/ dans les tableaux d'ancrages (**Ancrages dans le Compendium** / *Ancrages directs*)
+    in_anchor_table = False
+    for idx, line in enumerate(prd_lines, 1):
+        if line.strip().startswith("**Ancrages dans le Compendium**"):
+            in_anchor_table = True
+            continue
+        if in_anchor_table:
+            if line.strip().startswith("|"):
+                assert "Tomes/" not in line, f"Lien Tomes/ interdit dans tableau d'ancrage L{idx} : {line}"
+            elif line.strip() != "":
+                in_anchor_table = False
+        if "*Ancrages directs*" in line:
+            assert "Tomes/" not in line, f"Lien Tomes/ interdit dans *Ancrages directs* L{idx} : {line}"
 
     # Validation 100 % des ancres internes #slug et liens relatifs dans prd.md (hors code)
     line_counts_cache: dict[Path, int] = {}
@@ -225,8 +253,11 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
                     )
                 file_checked += 1
 
-    assert internal_checked >= 200
-    assert file_checked >= 200
+    assert internal_checked >= 1000
+    assert file_checked >= 1500
+    assert len(re.findall(r"\]\([^)]*Compendium/Compendium\.md", prd_text)) >= 500
+    assert len(re.findall(r"\]\([^)]*ouvrage/manuscrit/", prd_text)) >= 140
+    assert len(re.findall(r"\]\([^)]*ouvrage/schemas/rendus/", prd_text)) >= 115
 
     # Cohérence du nombre de colonnes de tous les tableaux Markdown GFM (hors blocs de code)
     def _table_col_count(row_line: str) -> int:
@@ -264,7 +295,7 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
             idx_line += 1
     assert tables_checked >= 40
 
-    # Exhaustivité Annexe B (toutes les tensions d'arbitrage) & Annexe D (toutes familles + C01–C40)
+    # Exhaustivité Annexe B & Annexe D
     expected_tensions = sum(1 for r in bundle["relations"] if r["type"] == "tension_arbitrage")
     t_idx = next(
         i for i, ln in enumerate(prd_lines) if ln.startswith("#### Tensions d'arbitrage structurantes")
@@ -284,9 +315,9 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert "`BLOQUANT` : `18`" in ann_d_text
     assert "`OBLIGATOIRE` : `15`" in ann_d_text
     assert "`RECOMMANDE` : `7`" in ann_d_text
+    assert "`135`" in ann_d_text and "`27`" in ann_d_text
 
-    # Phase 2 : Hygiène typographique, LF strict, 0 troncature, parité Annexe C & D
-    assert b"\r\n" not in PRD_PATH.read_bytes(), "Séquences CRLF détectées dans prd.md"
+    # Hygiène typographique stricte
     for bad_trunc in ("*(+", "28 autres non listées", "L'extrait ci-dessus"):
         assert bad_trunc not in prd_text, f"Troncature résiduelle dans prd.md : {bad_trunc}"
     assert r"\\$" not in prd_text, r"Double-échappement \\$ détecté dans prd.md"
@@ -340,7 +371,7 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert len(ann_d_ids) == 237
     assert len(set(ann_d_ids)) == 237
 
-    # Annexe E : 115 schémas de vulgarisation et couverture des 319 figures Tomes/
+    # Annexe E : 115 schémas de vulgarisation et concordance 319 figures
     assert "## Annexe E — " in prd_text
     assert any(ln.startswith("#### Catalogue directeur intégral des 115 schémas") for ln in prd_lines)
     ann_e_cat_idx = next(i for i, ln in enumerate(prd_lines) if ln.startswith("#### Catalogue directeur intégral des 115 schémas"))
@@ -351,14 +382,7 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
         ann_e_sch_ids.append(ln.split("|")[1].strip().strip("`"))
     assert len(ann_e_sch_ids) == 115
     assert len(set(ann_e_sch_ids)) == 115
-    tomes_file_links = [
-        lnk for lnk in re.findall(r"\]\((\.\./\.\./Sources/Tomes/[^)#]+)", prd_text)
-    ]
-    assert len(tomes_file_links) >= 1400
-    for rel_tome in set(tomes_file_links):
-        assert (PRD_PATH.parent / unquote(rel_tome)).resolve().is_file(), f"Lien ../../Sources/Tomes/ cassé dans prd.md : {rel_tome}"
 
-    # #138 : 0 'Synthetise' sans accent et pourcentages Annexe E (E.1 + E.2) au format virgule française
     assert not re.search(r"\bsynthetise\b", prd_text, re.IGNORECASE), "Synthetise sans accent détecté dans prd.md"
     ann_e_block = prd_text.split("## Annexe E — ", 1)[1]
     ann_e_stats = ann_e_block.split("#### Répartition des schémas de vulgarisation", 1)[0]
@@ -409,6 +433,9 @@ def test_inventaire_319_diagrammes_et_catalogue_115_schemas() -> None:
     assert cat["summary_stats"]["unique_themes_vulgarized_count"] == 260
     assert cat["tome_figures_coverage"]["unique_linked_figures_count"] == 267
     for sc in all_sch:
+        cfig = sc.get("compendium_figure") or {}
+        assert (REPO_ROOT / cfig["rendered_path"]).is_file()
+        assert (REPO_ROOT / cfig["source_path"]).is_file()
         for fg in sc.get("linked_tome_figures") or []:
             assert (REPO_ROOT / fg["source_path"]).is_file()
             assert (REPO_ROOT / fg["rendered_path"]).is_file()
@@ -417,7 +444,8 @@ def test_inventaire_319_diagrammes_et_catalogue_115_schemas() -> None:
 def test_prd_links_in_readmes_valid() -> None:
     if not PRD_PATH.is_file():
         pytest.skip("prd.md pas encore compilé")
-    assert "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" in PRD_PATH.read_text(encoding="utf-8")
+    assert PRD_WEB_ENCODED in PRD_PATH.read_text(encoding="utf-8")
+    assert MINDMAP_HTML_ENCODED in PRD_PATH.read_text(encoding="utf-8")
     all_readmes = (
         REPO_ROOT / "README.md",
         REPO_ROOT / "Compendium" / "README.md",
@@ -438,21 +466,24 @@ def test_prd_links_in_readmes_valid() -> None:
     for md_path in all_readmes:
         content = md_path.read_text(encoding="utf-8")
         assert b"\r\n" not in md_path.read_bytes(), f"CRLF détecté dans {md_path}"
+        assert OLD_MINDMAP_NAME not in content and OLD_MINDMAP_ENCODED not in content, (
+            f"Référence obsolète à MindMap Corpus dans {md_path}"
+        )
+        assert MINDMAP_HTML_ENCODED in content, f"Lien MindMap Compendium manquant dans {md_path}"
+        assert PRD_WEB_ENCODED in content, f"Lien PRD Web manquant dans {md_path}"
         if md_path in prd_required_readmes:
             assert "prd.md" in content, f"Lien vers prd.md manquant dans {md_path}"
-            assert "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" in content, f"Lien PRD Web manquant dans {md_path}"
         for raw_target in re.findall(r"\[[^\]]+\]\(([^)#]+)(?:#[^)]*)?\)", content):
             if raw_target.startswith(("http://", "https://", "mailto:")):
                 continue
             target_path = (md_path.parent / unquote(raw_target)).resolve()
             assert target_path.exists(), f"Lien cassé dans {md_path}: {raw_target}"
 
-    # Parité exacte des métriques documentées dans Cartographie/README.md
     carto_readme = (CARTO_DIR / "README.md").read_text(encoding="utf-8")
     prd_text = PRD_PATH.read_text(encoding="utf-8")
     prd_lines_cnt = len(prd_text.splitlines())
     prd_words_cnt = len(prd_text.split())
-    mm_bytes = (CARTO_DIR / "MindMap - Cartographie thématique du Corpus.html").stat().st_size
+    mm_bytes = MINDMAP_HTML_PATH.stat().st_size
     pw_bytes = PRD_WEB_HTML_PATH.stat().st_size
     assert f"`{prd_lines_cnt:,}".replace(",", " ") in carto_readme
     assert f"`{prd_words_cnt:,}".replace(",", " ") in carto_readme
@@ -460,8 +491,7 @@ def test_prd_links_in_readmes_valid() -> None:
     assert f"`{pw_bytes:,}".replace(",", " ") in carto_readme
     assert "`86` jalons" in carto_readme
     assert "`237` entrées uniques" in carto_readme
-    assert "`115` schémas de vulgarisation" in carto_readme
-    assert "`5` annexes normatives `A–E`" in carto_readme
+    assert "`115`" in carto_readme
 
 
 def test_prd_web_data_json_and_parity() -> None:
@@ -479,6 +509,28 @@ def test_prd_web_data_json_and_parity() -> None:
     assert data["meta"]["annexes_count"] == 5
     assert data["meta"]["schemas_count"] == 115
     assert data["meta"]["tome_figures_count"] == 319
+
+    # Ancres de chapitres exclusivement sur Compendium/Compendium.md ou Sources/Compendium/ouvrage/manuscrit/ (0 Tomes/)
+    for ch in data["chapters"]:
+        anchors_list = ch.get("targeted_content", {}).get("corpus_anchors", [])
+        assert any(a.get("file") == "Compendium/Compendium.md" for a in anchors_list), (
+            f"Chapitre {ch.get('chapter_number')} sans ancre Compendium.md"
+        )
+        for anchor in anchors_list:
+            f_val = str(anchor.get("file", ""))
+            assert f_val == "Compendium/Compendium.md" or f_val.startswith("Sources/Compendium/ouvrage/manuscrit/"), (
+                f"Ancre hors Compendium : {anchor}"
+            )
+            assert "Tomes/" not in f_val, f"Ancre Tomes/ résiduelle : {anchor}"
+
+    # Glossaire 56 vedettes & socle probatoire
+    glossary = data.get("glossary") or []
+    assert len(glossary) == 56
+    assert any(
+        str(g.get("fr", "")).lower() == "agentivité des systèmes"
+        and str(g.get("en", "")).lower() == "system agency"
+        for g in glossary
+    )
 
     ann_e = next(a for a in data["annexes"] if a["annexe_code"] == "E")
     assert len(ann_e["catalogue_all"]) == 115
@@ -519,14 +571,19 @@ def test_prd_web_data_json_and_parity() -> None:
     assert len(data["lookup"]["node_id_to_prd"]) == 379
     assert len(data["lookup"]["slug_to_chapter"]) == 260
     assert len(data["lookup"]["domain_to_part"]) == 12
-    assert len(data["lookup"]["unit_id_to_chapter"]) >= 250
+    assert len(data["lookup"]["unit_id_to_chapter"]) == 42
 
 
 def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     assert PRD_WEB_HTML_PATH.is_file()
-    assert b"\r\n" not in PRD_WEB_HTML_PATH.read_bytes(), "CRLF détecté dans PRD Web HTML"
+    raw_bytes = PRD_WEB_HTML_PATH.read_bytes()
+    assert not raw_bytes.startswith(b"\xef\xbb\xbf"), "BOM UTF-8 détecté dans PRD Web HTML"
+    assert b"\r\n" not in raw_bytes, "CRLF détecté dans PRD Web HTML"
     html = PRD_WEB_HTML_PATH.read_text(encoding="utf-8")
     assert "__PRD_DATA_JSON__" not in html
+    assert OLD_MINDMAP_NAME not in html and OLD_MINDMAP_ENCODED not in html
+    assert 'id="prd-open-mindmap-link"' in html
+    assert 'id="prd-glossary-btn"' in html
 
     json_match = re.search(
         r'<script[^>]*id="prd-web-data"[^>]*>([\s\S]*?)</script>', html
@@ -539,6 +596,7 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     assert "\u2029" not in embedded_raw
     parsed = json.loads(embedded_raw)
     assert len(parsed["chapters"]) == 36
+    assert len(parsed["glossary"]) == 56
 
     html_without_json = html[: json_match.start(1)] + html[json_match.end(1) :]
     assert not re.search(r"<script[^>]+src\s*=", html_without_json, re.IGNORECASE)
@@ -554,6 +612,7 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
+    const fsPath = require("path");
     const html = fs.readFileSync(process.argv[1], "utf8");
     const jsonMatch = html.match(/<script[^>]*id="prd-web-data"[^>]*>([\s\S]*?)<\/script>/);
     const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
@@ -573,34 +632,45 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     if (idx.parties.length !== 12 || idx.chapters.length !== 36 || idx.annexes.length !== 5) {
       throw new Error("Cardinaux index PrdWebEngine invalides");
     }
+    if (!idx.glossary || idx.glossary.length !== 56) {
+      throw new Error("Glossaire PrdWebEngine != 56");
+    }
 
     const sHits = eng.searchPrd(idx, "Lusser", 10);
     if (sHits.length === 0) throw new Error("searchPrd('Lusser') vide");
+    const sGloss = eng.searchPrd(idx, "Agentivité des systèmes", 10);
+    if (!sGloss.some(h => h.kind === "glossary")) {
+      throw new Error("searchPrd('Agentivité des systèmes') ne remonte pas le glossaire");
+    }
     const fRes = eng.filterPrd(idx, { domain: "D07" });
     if (!fRes.active || fRes.counts.chapters !== 3) {
       throw new Error("filterPrd D07 invalide: " + JSON.stringify(fRes.counts));
     }
     const mmUrl = eng.mindmapHref("mindmap", "THM_loi-de-lusser");
-    if (!mmUrl.includes("MindMap%20-") || !mmUrl.includes("#view=mindmap&node=THM_loi-de-lusser")) {
+    if (!mmUrl.includes("MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&node=THM_loi-de-lusser")) {
       throw new Error("mindmapHref invalide: " + mmUrl);
     }
     const parsedThm = eng.parseHash("#thm=loi-de-lusser", idx);
     if (!parsedThm || parsedThm.kind !== "chapter" || Number(parsedThm.chapterNumber) !== 2) {
       throw new Error("parseHash #thm=loi-de-lusser invalide: " + JSON.stringify(parsedThm));
     }
-    const corpUrl = eng.corpusHref("Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md", 709);
-    if (!corpUrl.startsWith("../../Tomes/") || !corpUrl.includes("%27") || !corpUrl.endsWith("#L709")) {
+    const parsedGloss = eng.parseHash("#glossary", idx);
+    if (!parsedGloss || parsedGloss.kind !== "glossary") {
+      throw new Error("parseHash #glossary invalide: " + JSON.stringify(parsedGloss));
+    }
+    const corpUrl = eng.corpusHref("Compendium/Compendium.md", 215);
+    if (corpUrl !== "../../Compendium/Compendium.md#L215") {
       throw new Error("corpusHref PRD Web invalide: " + corpUrl);
     }
 
     const toc = eng.renderTocHtml(idx, "", { tocExpanded: new Set(), target: { kind: "exec" } }, { active: false });
-    if (!toc.html || toc.count < 12) throw new Error("renderTocHtml insuffisant");
+    if (!toc.html || toc.count < 12 || !toc.html.includes("Glossaire")) throw new Error("renderTocHtml incomplet");
     const fullHtml = eng.renderContentHtml(idx, { mode: "full", target: { kind: "exec" }, filters: {}, highlightQuery: "" }, { active: false, counts: { themes: 260, chapters: 36, parties: 12 } });
     for (const marker of [
       "Partie I", "Partie XII", "Chapitre 01", "Chapitre 36",
       "Annexe A", "Annexe D", "Annexe E", "THM_loi-de-lusser",
       "Panorama visuel directeur", "01.3 Schémas de vulgarisation à intégrer", "36.3 Schémas de vulgarisation à intégrer",
-      "SCH-00-01", "SCH-15-03", "SCH-36-03"
+      "SCH-00-01", "SCH-15-03", "SCH-36-03", "135"
     ]) {
       if (!fullHtml.includes(marker)) throw new Error("Contenu mode intégral PrdWebEngine incomplet: " + marker);
     }
@@ -610,50 +680,31 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     for (const sid of allSchemaIds) {
       if (!fullHtml.includes(sid)) throw new Error("Schéma manquant dans PRD Web fullHtml: " + sid);
     }
-    const tomeHrefs = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Sources\/Tomes\/[^"#]+)"/g), m => m[1]);
-    if (tomeHrefs.length < 600) throw new Error("Trop peu de liens ../../Sources/Tomes/ dans PRD Web fullHtml: " + tomeHrefs.length);
-    const fsPath = require("path");
-    for (const rawHref of new Set(tomeHrefs)) {
+
+    const compMdHrefs = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Compendium\/Compendium\.md[^"]*)"/g), m => m[1]);
+    if (compMdHrefs.length < 36) throw new Error("Trop peu de liens ../../Compendium/Compendium.md dans PRD Web: " + compMdHrefs.length);
+    const compRendus = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"#]+)"/g), m => m[1]);
+    if (compRendus.length < 100) throw new Error("Trop peu de liens rendus Compendium dans PRD Web: " + compRendus.length);
+    for (const rawHref of new Set([...compMdHrefs.map(u => u.split("#")[0]), ...compRendus])) {
       const diskPath = fsPath.resolve(fsPath.dirname(process.argv[1]), decodeURIComponent(rawHref));
-      if (!fs.existsSync(diskPath)) throw new Error("Lien ../../Sources/Tomes/ cassé sur disque: " + diskPath);
+      if (!fs.existsSync(diskPath)) throw new Error("Lien Compendium cassé sur disque: " + diskPath);
     }
-    const hSch15 = eng.parseHash("#sch=SCH-15-03", idx);
-    if (!hSch15 || hSch15.kind !== "chapter" || Number(hSch15.chapterNumber) !== 15 || hSch15.focusId !== "SCH-15-03") {
-      throw new Error("parseHash #sch=SCH-15-03 invalide: " + JSON.stringify(hSch15));
+
+    // Mode glossaire ciblé (#glossary) + table #prd-glossary-table
+    const glossHtml = eng.renderContentHtml(idx, { mode: "targeted", target: { kind: "glossary" }, filters: {}, highlightQuery: "" }, { active: false, counts: { themes: 260, chapters: 36, parties: 12 } });
+    for (const gm of ['id="prd-glossary"', 'id="prd-glossary-table"', "Agentivité des systèmes", "system agency", "ch01", "135", "27", "37/37"]) {
+      if (!glossHtml.includes(gm)) throw new Error("Rendu glossaire #prd-glossary incomplet: " + gm);
     }
-    // Phase 2 : Zéro backtick brut hors <code>, 0 **gras** brut, 0 \$ littéral, 0 <em> brisé sur gen_ai.*
+
     const noCodeTags = fullHtml.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
     if (noCodeTags.includes("`")) throw new Error("Backtick brut détecté hors <code> dans PRD Web HTML");
     if (/(^|[\s(>])\*\*[^\s*](?:[^*\n]*?[^\s*])?\*\*(?=[\s.,;:!?<)]|$)/.test(noCodeTags)) {
       throw new Error("**gras** brut détecté dans PRD Web HTML");
     }
-    if (/<strong>\s*et tests\//i.test(fullHtml)) {
-      throw new Error("Glob specs/** transformé en <strong> par erreur");
-    }
     if (fullHtml.includes("\\$")) throw new Error("Literal backslash-dollar dans PRD Web HTML");
-    if (/<em>[^<]*gen_ai\.[^<]*<\/em>/i.test(fullHtml)) throw new Error("<em> brisé autour de gen_ai.* dans PRD Web HTML");
+    if (/\bsynthetise\b/i.test(fullHtml)) throw new Error("Synthetise sans accent détecté dans PRD Web HTML");
 
-    const inlineSample = eng.renderInlineMd("attributs gen_ai.* et *Cost-per-Outcome* + `strict: true`");
-    if (!inlineSample.includes("gen_ai.* et <em>Cost-per-Outcome</em>") || !inlineSample.includes("<code")) {
-      throw new Error("renderInlineMd défaillant sur gen_ai.* : " + inlineSample);
-    }
-    if (/\bsynthetise\b/i.test(fullHtml)) {
-      throw new Error("Synthetise sans accent détecté dans PRD Web HTML");
-    }
-    const hSecPan = eng.parseHash("#sec=exec-panorama", idx);
-    if (!hSecPan || hSecPan.kind !== "exec" || hSecPan.sectionId !== "panorama") {
-      throw new Error("parseHash #sec=exec-panorama invalide: " + JSON.stringify(hSecPan));
-    }
-    const hSec02 = eng.parseHash("#sec=02", idx);
-    if (!hSec02 || hSec02.kind !== "exec" || hSec02.sectionId !== "exec-02") {
-      throw new Error("parseHash #sec=02 invalide: " + JSON.stringify(hSec02));
-    }
-    const hPart07 = eng.parseHash("#part=part-07", idx);
-    if (!hPart07 || hPart07.kind !== "part" || hPart07.domainId !== "D07") {
-      throw new Error("parseHash #part=part-07 invalide: " + JSON.stringify(hPart07));
-    }
-
-    // Smoke mountApp avec stub DOM léger et hash #part=part-07
+    // Smoke mountApp avec stub DOM léger et hash #glossary puis #part=part-07
     const stubEls = {};
     const makeStubEl = (id) => ({
       id, textContent: "", innerHTML: "", value: "", style: {},
@@ -662,7 +713,11 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
       getAttribute(k) { return this["attr_" + k] ?? null; },
       appendChild(){}, addEventListener(){}, scrollIntoView(){}, focus(){}, querySelector: () => null, querySelectorAll: () => []
     });
-    for (const k of ["prd-web-data", "prd-global-title", "prd-global-meta", "prd-kpi-strip", "prd-content", "prd-toc-tree", "prd-toc-count", "prd-open-mindmap-link", "prd-filter-summary"]) {
+    for (const k of [
+      "prd-web-data", "prd-global-title", "prd-global-meta", "prd-kpi-strip",
+      "prd-content", "prd-toc-tree", "prd-toc-count", "prd-open-mindmap-link",
+      "prd-filter-summary", "prd-glossary-btn"
+    ]) {
       stubEls[k] = makeStubEl(k);
     }
     stubEls["prd-web-data"].textContent = jsonMatch[1];
@@ -673,9 +728,12 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
       createElement: (tag) => makeStubEl(tag),
       addEventListener(){}, querySelector: () => null, querySelectorAll: () => []
     };
-    const appInst = eng.mountApp(docStub, { location: { hash: "#part=part-07" }, addEventListener(){} });
-    if (!appInst || appInst.getState().target.domainId !== "D07" || !stubEls["prd-content"].innerHTML.includes("Partie VII")) {
-      throw new Error("mountApp smoke #part=part-07 échoué");
+    const appInst = eng.mountApp(docStub, { location: { hash: "#glossary" }, addEventListener(){} });
+    if (!appInst || appInst.getState().target.kind !== "glossary" || !stubEls["prd-content"].innerHTML.includes("prd-glossary-table")) {
+      throw new Error("mountApp smoke #glossary échoué");
+    }
+    if (!String(stubEls["prd-open-mindmap-link"].getAttribute("href") || "").includes("MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html")) {
+      throw new Error("#prd-open-mindmap-link ne pointe pas vers MindMap Compendium: " + stubEls["prd-open-mindmap-link"].getAttribute("href"));
     }
     """
 

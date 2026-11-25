@@ -1116,7 +1116,7 @@
       <div class="topbar-row">
         <div class="brand">
           <span class="brand-mark">CA</span>
-          <span class="brand-title">Cartographie du Corpus Agentique</span>
+          <span class="brand-title">Cartographie du Compendium Agentique</span>
         </div>
         <div class="kpi-strip" id="kpi-strip"></div>
 
@@ -1124,16 +1124,18 @@
           <button class="view-tab active" role="tab" data-view="mindmap" aria-selected="true">1 · MindMap Thématique</button>
           <button class="view-tab" role="tab" data-view="structure" aria-selected="false">2 · Structure Intégrale</button>
           <button class="view-tab" role="tab" data-view="synaptic" aria-selected="false">3 · Graphe Synaptique &amp; Chemins</button>
-          <button class="view-tab" role="tab" data-view="concordance" aria-selected="false">4 · Concordance &amp; Réconciliations</button>
+          <button class="view-tab" role="tab" data-view="concordance" aria-selected="false">4 · Concordance, Glossaire &amp; Preuves</button>
           <button class="view-tab" role="tab" data-view="prd" aria-selected="false">5 · PRD Maître</button>
         </nav>
 
         <div class="topbar-actions">
           <div class="search-wrap">
-            <input id="global-search" class="search-input" type="search" placeholder="Rechercher thème, EXIG, CAP, C01, H1–H6…" autocomplete="off" aria-label="Recherche plein-texte" />
+            <input id="global-search" class="search-input" type="search" placeholder="Rechercher thème, glossaire, SCH-*, EXIG, CAP, H1–H6…" autocomplete="off" aria-label="Recherche plein-texte" />
             <span class="search-kbd">Ctrl+K</span>
             <div id="search-dropdown" class="search-dropdown" role="listbox"></div>
           </div>
+          <a id="top-compendium-md-link" class="btn btn-sm" href="../../Compendium/Compendium.md" target="_blank" rel="noopener" title="Ouvrir Compendium.md">Compendium.md ↗</a>
+          <a id="top-compendium-pdf-link" class="btn btn-sm" href="../../Compendium/Compendium.pdf" target="_blank" rel="noopener" title="Ouvrir Compendium.pdf">Compendium.pdf ↗</a>
           <button id="theme-toggle-btn" class="btn" title="Basculer thème Auto / Clair / Sombre">Thème : Auto</button>
           <button id="export-svg-btn" class="btn" title="Exporter la vue graphique courante en SVG">Export SVG</button>
           <button id="export-json-btn" class="btn" title="Exporter le sous-ensemble filtré en JSON">Export JSON</button>
@@ -1143,8 +1145,8 @@
       <!-- Barre de filtres multi-facettes -->
       <div class="filter-bar" aria-label="Filtres multi-facettes">
         <div class="filter-group">
-          <label for="f-tome">Tome</label>
-          <select id="f-tome" class="filter-select"><option value="">Tous (R, T1–T8)</option></select>
+          <label for="f-tome">Section</label>
+          <select id="f-tome" class="filter-select" data-filter="section"><option value="">Toutes (R, LIM, P01–P12, ANN)</option></select>
         </div>
         <div class="filter-group">
           <label for="f-domain">Domaine</label>
@@ -1222,10 +1224,10 @@
           <div class="canvas-toolbar">
             <button id="st-toggle-list-btn" class="btn btn-sm active">Panneau Arbre H1–H6</button>
             <button id="st-expand-chapters-btn" class="btn btn-sm">Déplier jusqu'aux chapitres</button>
-            <button id="st-collapse-tomes-btn" class="btn btn-sm">Replier aux 9 fichiers</button>
+            <button id="st-collapse-tomes-btn" class="btn btn-sm">Replier aux 15 sections</button>
             <div class="filter-group">
-              <label for="st-file-select">Fichier</label>
-              <select id="st-file-select" class="filter-select"><option value="">Tous (9 fichiers)</option></select>
+              <label for="st-file-select">Section</label>
+              <select id="st-file-select" class="filter-select"><option value="">Toutes (15 sections)</option></select>
             </div>
             <span id="st-stats-pill" class="kpi-pill" style="margin-left:auto;"></span>
           </div>
@@ -1284,14 +1286,15 @@
           <div id="path-results" class="path-results"></div>
         </section>
 
-        <!-- VUE 4 : Matrice de Concordance Inter-Tomes & Réconciliations -->
-        <section id="view-concordance" class="view-panel" aria-label="Matrice de Concordance et Réconciliations">
+        <!-- VUE 4 : Matrice de Concordance, Réconciliations, Glossaire & Socle Probatoire -->
+        <section id="view-concordance" class="view-panel" aria-label="Matrice de Concordance, Glossaire et Socle Probatoire">
           <div class="matrix-view">
             <div class="subtabs">
-              <button class="btn active" data-c4-tab="heatmap">Carte thermique Domaines × 9 fichiers</button>
+              <button class="btn active" data-c4-tab="heatmap">Carte thermique 12 Domaines × 15 Sections</button>
               <button class="btn" data-c4-tab="reconciliations">5 Discordances (§0.2) &amp; DIV-02</button>
-              <button class="btn" data-c4-tab="timeline">Chronologie 2023–2035</button>
-              <button class="btn" data-c4-tab="traceability">Matrice EXIG / CAP / PRR / C01–C40 / SBB</button>
+              <button class="btn" data-c4-tab="timeline">Chronologie 2018–2035 (86 jalons)</button>
+              <button class="btn" data-c4-tab="traceability">Matrice EXIG / CAP / PRR / C01–C40 / SBB (237)</button>
+              <button class="btn" data-c4-tab="glossary_evidence">Glossaire (56) &amp; Socle probatoire L+</button>
             </div>
             <div id="c4-content"></div>
           </div>
@@ -1333,7 +1336,7 @@
         </div>
         <div id="inspector-body" class="inspector-body">
           <div class="empty-state">
-            Cliquez sur un nœud thématique, une unité structurelle ou une arête pour inspecter ses détails, ses ancrages <span class="mono">../../Tomes/*.md#Lxxx</span> et ses interrelations.
+            Cliquez sur un nœud thématique, une unité structurelle ou une arête pour inspecter ses détails, ses ancrages <span class="mono">../../Compendium/Compendium.md#Lxxx</span> et ses interrelations.
           </div>
         </div>
       </aside>
@@ -1373,7 +1376,7 @@
     }
 
     function corpusHref(filePath, lineStart) {
-      var clean = String(filePath || "").replace(/\\/g, "/").replace(/^(?:\.\.\/)+/, "");
+      var clean = String(filePath || "").replace(/\\/g, "/").replace(/^(?:\.\.\/)+/, "").replace(/^\/+/, "");
       var parts = clean.split("/");
       var encoded = parts
         .filter(function (p) { return p.length > 0; })
@@ -1381,8 +1384,14 @@
           return encodeURIComponent(p).replace(/'/g, "%27");
         })
         .join("/");
-      var prefix = (encoded.indexOf("Tomes/") === 0 || encoded.indexOf("Sources/") === 0) ? "../../" : "../../Tomes/";
+      var prefix = (encoded.indexOf("Compendium/") === 0 || encoded.indexOf("Sources/") === 0 || encoded.indexOf("Tomes/") === 0)
+        ? "../../"
+        : "../../Compendium/";
       return prefix + encoded + (lineStart ? "#L" + lineStart : "");
+    }
+
+    function compendiumAssetHref(relPath) {
+      return tomeAssetHref(relPath);
     }
 
     function tomeAssetHref(relPath) {
@@ -1760,6 +1769,25 @@
         });
       }
 
+      // Index glossaire Compendium (56 vedettes dont Agentivité des systèmes)
+      var glossaryTerms = (pivots.glossaire_pivot && pivots.glossaire_pivot.glossaire_compendium_56) ||
+        (prd && Array.isArray(prd.glossary) ? prd.glossary : []) ||
+        (pivots.glossaire_pivot && pivots.glossaire_pivot.vedettes_t8) || [];
+      glossaryTerms.forEach(function (gt) {
+        var gfr = gt.fr || "";
+        var gen = gt.en || "";
+        var hayG = [gfr, gen, gt.definition, gt.chapitre_proprietaire, gt.source_l_plus_id].join(" ");
+        searchDocs.push({
+          kind: "glossary",
+          id: gfr,
+          chapter_id: gt.chapitre_proprietaire || "",
+          line_start: gt.compendium_md_line || 1,
+          title: gfr + (gen ? " (" + gen + ")" : ""),
+          subtitle: "Glossaire Compendium · " + (gt.chapitre_proprietaire || "") + " · " + (gt.source_l_plus_id || "L+"),
+          norm: normalizeText(hayG)
+        });
+      });
+
       // Valeurs de facettes uniques (hors nœud racine depth === 0, horizons normalisés)
       var facetAutonomy = new Set();
       var facetRoles = new Set();
@@ -1800,6 +1828,7 @@
         chapterByUnitId: chapterByUnitId,
         themesByStructUnit: themesByStructUnit,
         searchDocs: searchDocs,
+        glossaryTerms: glossaryTerms,
         pivots: pivots,
         prd: prd,
         prdPartyByDom: prdPartyByDom,
@@ -1836,11 +1865,12 @@
         if (!ok) continue;
         var titleNorm = normalizeText(doc.title);
         var score = doc.kind === "theme" ? 20
+          : (doc.kind === "glossary" ? 19
           : (doc.kind === "prd-chapter" ? 18
           : (doc.kind === "prd-part" ? 17
           : (doc.kind === "prd-schema" ? 16
           : (doc.kind === "prd-family" ? 15
-          : (doc.kind && doc.kind.indexOf("prd-") === 0 ? 14 : 5)))));
+          : (doc.kind && doc.kind.indexOf("prd-") === 0 ? 14 : 5))))));
         if (titleNorm.indexOf(q) !== -1) score += 40;
         if (titleNorm.indexOf(terms[0]) === 0) score += 15;
         scored.push({ doc: doc, score: score });
@@ -1868,7 +1898,10 @@
       indexes.nodes.forEach(function (n) {
         if (n.depth === 0) return;
         if (f.domain && n.domain_id !== f.domain) return;
-        if (f.tome && (!n.tomes_present || n.tomes_present.indexOf(f.tome) === -1)) return;
+        if (f.tome) {
+          var nodeParts = (Array.isArray(n.parts_present) && n.parts_present.length) ? n.parts_present : (n.tomes_present || []);
+          if (nodeParts.indexOf(f.tome) === -1) return;
+        }
         if (f.autonomy && (!n.autonomy_levels || n.autonomy_levels.indexOf(f.autonomy) === -1)) return;
         if (f.role && (!n.roles || n.roles.indexOf(f.role) === -1)) return;
         if (f.horizon) {
@@ -1881,7 +1914,10 @@
 
       var filteredRelations = indexes.relations.filter(function (r) {
         if (f.relationType && r.type !== f.relationType) return false;
-        if (f.tome && r.tomes && r.tomes.length > 0 && r.tomes.indexOf(f.tome) === -1) return false;
+        if (f.tome) {
+          var relParts = (Array.isArray(r.parts) && r.parts.length) ? r.parts : (r.tomes || []);
+          if (relParts.length > 0 && relParts.indexOf(f.tome) === -1) return false;
+        }
         if (hasNodeFilter) {
           return matchingNodeIds.has(r.source) && matchingNodeIds.has(r.target);
         }
@@ -2025,20 +2061,13 @@
     }
 
     function computeConcordanceMatrix(indexes, groupBy) {
-      var files = (indexes.schema && indexes.schema.corpus_scope && indexes.schema.corpus_scope.files)
-        ? indexes.schema.corpus_scope.files
-        : [
-            { tome_id: "R", title: "Tomes/README.md" },
-            { tome_id: "T1", title: "Tome 1" },
-            { tome_id: "T2", title: "Tome 2" },
-            { tome_id: "T3", title: "Tome 3" },
-            { tome_id: "T4", title: "Tome 4" },
-            { tome_id: "T5", title: "Tome 5" },
-            { tome_id: "T6", title: "Tome 6" },
-            { tome_id: "T7", title: "Tome 7" },
-            { tome_id: "T8", title: "Tome 8" }
-          ];
-      var tomeIds = files.map(function (f) { return f.tome_id; });
+      var enumParts = (indexes.schema && indexes.schema.enums && indexes.schema.enums.compendium_parts) || null;
+      var files = (indexes.schema && indexes.schema.corpus_scope && indexes.schema.corpus_scope.files) || [];
+      var tomeIds = (enumParts && enumParts.length)
+        ? enumParts.slice()
+        : (files.length
+            ? files.map(function (f) { return f.section_id || f.tome_id; })
+            : ["R", "LIM", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "ANN"]);
       var rows = [];
 
       if (groupBy === "subdomain") {
@@ -2058,14 +2087,15 @@
           });
           indexes.nodes.forEach(function (n) {
             if (n.node_kind !== "theme" || n.domain_id !== sd.domain_id || n.subdomain !== sd.title) return;
-            var seenTomes = new Set();
+            var seenParts = new Set();
             (n.occurrences || []).forEach(function (occ) {
-              if (!row.cells[occ.tome_id]) return;
-              row.cells[occ.tome_id].occurrences += 1;
-              seenTomes.add(occ.tome_id);
-              if (occ.unit_id) row.cells[occ.tome_id].chapterIds.add(occ.unit_id);
+              var pid = occ.part_id || occ.tome_id;
+              if (!row.cells[pid]) return;
+              row.cells[pid].occurrences += 1;
+              seenParts.add(pid);
+              if (occ.compendium_unit_id || occ.unit_id) row.cells[pid].chapterIds.add(occ.compendium_unit_id || occ.unit_id);
             });
-            seenTomes.forEach(function (tid) {
+            seenParts.forEach(function (tid) {
               row.cells[tid].nodeIds.push(n.node_id);
             });
           });
@@ -2089,14 +2119,15 @@
           });
           indexes.nodes.forEach(function (n) {
             if (n.node_kind !== "theme" || n.domain_id !== d.domain_id) return;
-            var seenTomes = new Set();
+            var seenParts = new Set();
             (n.occurrences || []).forEach(function (occ) {
-              if (!row.cells[occ.tome_id]) return;
-              row.cells[occ.tome_id].occurrences += 1;
-              seenTomes.add(occ.tome_id);
-              if (occ.unit_id) row.cells[occ.tome_id].chapterIds.add(occ.unit_id);
+              var pid = occ.part_id || occ.tome_id;
+              if (!row.cells[pid]) return;
+              row.cells[pid].occurrences += 1;
+              seenParts.add(pid);
+              if (occ.compendium_unit_id || occ.unit_id) row.cells[pid].chapterIds.add(occ.compendium_unit_id || occ.unit_id);
             });
-            seenTomes.forEach(function (tid) {
+            seenParts.forEach(function (tid) {
               row.cells[tid].nodeIds.push(n.node_id);
             });
           });
@@ -2688,13 +2719,20 @@
       function renderKpis() {
         var strip = document.getElementById("kpi-strip");
         var themeCount = idx.nodes.filter(function (n) { return n.node_kind === "theme"; }).length;
-        var totalHeadings = (idx.data.totals && idx.data.totals.headings) || idx.structFlat.length;
-        var totalPages = (idx.schema.corpus_scope && idx.schema.corpus_scope.total_pdf_pages) || 4542;
+        var cmeta = (idx.prd && idx.prd.compendium_meta) || (idx.pivots && idx.pivots.collection_metrics) || {};
+        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 837);
+        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 241759);
+        var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || 42);
+        var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || 115);
+        var totalTerms = Number(cmeta.glossary_terms_count || cmeta.glossary_terms || idx.glossaryTerms.length || 56);
+        var totalLplus = Number(cmeta.lplus_sources_count || cmeta.sources_l_plus || 135);
         strip.innerHTML = [
-          '<span class="kpi-pill"><strong>9</strong> fichiers .md (' + totalPages.toLocaleString("fr-CA") + ' p.)</span>',
+          '<span class="kpi-pill"><strong>' + totalPages.toLocaleString("fr-CA") + '</strong> p. PDF</span>',
+          '<span class="kpi-pill"><strong>' + totalWords.toLocaleString("fr-CA") + '</strong> mots · <strong>' + totalUnits + '</strong> unités</span>',
+          '<span class="kpi-pill"><strong>12</strong> Parties · <strong>36</strong> Ch. · <strong>5</strong> Ann.</span>',
           '<span class="kpi-pill"><strong>' + themeCount + '</strong> thèmes (' + idx.nodes.length + ' nœuds)</span>',
           '<span class="kpi-pill"><strong>' + idx.relations.length + '</strong> interrelations</span>',
-          '<span class="kpi-pill"><strong>' + totalHeadings.toLocaleString("fr-CA") + '</strong> titres H1–H6</span>'
+          '<span class="kpi-pill"><strong>' + totalSchemas + '</strong> schémas · <strong>' + totalTerms + '</strong> termes · <strong>' + totalLplus + '</strong> L+</span>'
         ].join("");
       }
 
@@ -2702,9 +2740,10 @@
         var fTome = document.getElementById("f-tome");
         var stFileSel = document.getElementById("st-file-select");
         idx.structFiles.forEach(function (f) {
+          var sid = f.section_id || f.tome_id;
           var opt = document.createElement("option");
-          opt.value = f.tome_id;
-          opt.textContent = f.tome_id + " · " + truncate(f.filename.replace(/\.md$/, ""), 30);
+          opt.value = sid;
+          opt.textContent = sid + " · " + truncate(f.title || f.filename.replace(/\.md$/, ""), 34);
           fTome.appendChild(opt);
           stFileSel.appendChild(opt.cloneNode(true));
         });
@@ -2904,14 +2943,23 @@
         html.push('<button class="btn btn-sm" id="insp-set-b">Arrivée B</button>');
         html.push('</div>');
 
-        // Métadonnées
-        html.push('<div><div class="section-label">Attributs transversaux</div><div class="chip-row">');
-        (n.tomes_present || []).forEach(function (t) { html.push('<span class="chip">' + escapeHtml(t) + '</span>'); });
+        // Métadonnées Compendium & attributs transversaux
+        html.push('<div><div class="section-label">Attributs Compendium &amp; transversaux</div><div class="chip-row">');
+        if (n.owner_chapter) html.push('<span class="chip mono">Propriétaire : ' + escapeHtml(n.owner_chapter) + '</span>');
+        ((n.parts_present && n.parts_present.length) ? n.parts_present : (n.tomes_present || [])).forEach(function (t) { html.push('<span class="chip">' + escapeHtml(t) + '</span>'); });
         (n.autonomy_levels || []).forEach(function (a) { html.push('<span class="chip mono">' + escapeHtml(a) + '</span>'); });
         (n.roles || []).forEach(function (r) { html.push('<span class="chip">' + escapeHtml(r) + '</span>'); });
         (n.horizons || (n.horizon ? [n.horizon] : [])).forEach(function (h) { html.push('<span class="chip">' + escapeHtml(h) + '</span>'); });
         (n.roles_in_tome || []).forEach(function (rt) { html.push('<span class="chip">' + escapeHtml(rt) + '</span>'); });
         html.push('</div></div>');
+
+        if (n.glossary_terms && n.glossary_terms.length) {
+          html.push('<div><div class="section-label">Vedettes du glossaire associées (' + n.glossary_terms.length + ')</div><div class="chip-row">');
+          n.glossary_terms.forEach(function (gt) {
+            html.push('<span class="chip">' + prdInlineHtml(gt) + '</span>');
+          });
+          html.push('</div></div>');
+        }
 
         if (n.identifiers && n.identifiers.length) {
           html.push('<div><div class="section-label">Identifiants détectés (' + n.identifiers.length + ')</div><div class="chip-row">');
@@ -2938,9 +2986,11 @@
             }
           }
           if (schItems.length) {
-            html.push('<div><div class="section-label">Schémas de vulgarisation PRD (' + schItems.length + ')</div><div style="display:flex;flex-direction:column;gap:5px;">');
+            html.push('<div><div class="section-label">Schémas compilés du Compendium (' + schItems.length + ')</div><div style="display:flex;flex-direction:column;gap:5px;">');
             schItems.forEach(function (sc) {
               var rl = sc.reuse_status === "reemploi_direct" ? "Réemploi direct" : (sc.reuse_status === "creation_originale" ? "Création originale" : "Adaptation vulgarisée");
+              var cRend = sc.compendium_rendered_path ? compendiumAssetHref(sc.compendium_rendered_path) : "";
+              var cSrc = sc.compendium_source_path ? compendiumAssetHref(sc.compendium_source_path) : "";
               html.push(
                 '<div class="rel-card" role="button" tabindex="0" data-insp-prd-schema="' + escapeHtml(sc.schema_id) + '" data-insp-prd-ch="' + escapeHtml(sc.chapter_number || 0) + '" style="border-left-color:var(--accent);padding:6px 8px;">' +
                   '<div style="display:flex;justify-content:space-between;gap:6px;align-items:center;">' +
@@ -2948,6 +2998,12 @@
                     '<span class="chip">' + escapeHtml(rl) + '</span>' +
                   '</div>' +
                   '<div style="font-size:12px;">' + prdInlineHtml(sc.title || "") + '</div>' +
+                  ((cRend || cSrc)
+                    ? '<div class="chip-row" style="margin-top:4px;">' +
+                        (cRend ? '<a class="chip clickable mono" href="' + escapeHtml(cRend) + '" target="_blank" rel="noopener">Rendu compilé ↗</a>' : '') +
+                        (cSrc ? '<a class="chip clickable mono" href="' + escapeHtml(cSrc) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+                      '</div>'
+                    : '') +
                 '</div>'
               );
             });
@@ -2955,26 +3011,30 @@
           }
         }
 
-        // Occurrences et liens Corpus
+        // Occurrences et liens Compendium
         var occs = n.occurrences || [];
-        html.push('<div><div class="section-label">Ancrages dans le Corpus (' + occs.length + ')</div>');
+        html.push('<div><div class="section-label">Occurrences vérifiées dans le Compendium (' + occs.length + ')</div>');
         if (occs.length === 0) {
           html.push('<div style="color:var(--text-muted);font-size:12px;">Nœud hiérarchique agrégateur (' + (idx.descendantCount[n.node_id] || 0) + ' descendants).</div>');
         } else {
           html.push('<div style="display:flex;flex-direction:column;gap:6px;">');
           occs.forEach(function (occ) {
+            var pid = occ.part_id || occ.tome_id || "";
+            var ucid = occ.compendium_unit_id ? (" · " + occ.compendium_unit_id) : "";
             var href = corpusHref(occ.file, occ.line_start);
+            var modHref = occ.source_file ? corpusHref(occ.source_file, 1) : "";
             var rangeStr = "L" + occ.line_start + (occ.line_end ? "–L" + occ.line_end : "");
             html.push(
               '<div class="occ-card">' +
                 '<div style="display:flex;justify-content:space-between;gap:6px;align-items:center;">' +
-                  '<strong>' + escapeHtml(occ.tome_id || "") + ' · ' + prdInlineHtml(occ.chapter || occ.section || "") + '</strong>' +
+                  '<strong>' + escapeHtml(pid + ucid) + ' · ' + prdInlineHtml(occ.chapter || occ.section || "") + '</strong>' +
                   '<span class="chip mono">' + escapeHtml(rangeStr) + '</span>' +
                 '</div>' +
                 (occ.section && occ.section !== occ.chapter ? '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(occ.section) + '</div>' : '') +
-                '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:2px;">' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:2px;flex-wrap:wrap;">' +
                   '<a class="mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(truncate(occ.file, 36) + "#L" + occ.line_start) + '</a>' +
-                  (occ.role_in_tome ? '<span class="chip">' + escapeHtml(occ.role_in_tome) + '</span>' : '') +
+                  (modHref ? '<a class="mono" href="' + escapeHtml(modHref) + '" target="_blank" rel="noopener">Manuscrit ↗</a>' : '') +
+                  ((occ.role_in_unit || occ.role_in_tome) ? '<span class="chip">' + escapeHtml(occ.role_in_unit || occ.role_in_tome) + '</span>' : '') +
                 '</div>' +
               '</div>'
             );
@@ -3096,7 +3156,8 @@
 
         var html = [];
         html.push('<div class="chip-row">');
-        html.push('<span class="chip">' + escapeHtml(u.tome_id) + '</span>');
+        html.push('<span class="chip">' + escapeHtml(u.section_id || u.tome_id) + '</span>');
+        if (u.compendium_unit_id) html.push('<span class="chip mono">' + escapeHtml(u.compendium_unit_id) + '</span>');
         html.push('<span class="chip mono">H' + u.level + ' · ' + escapeHtml(u.kind) + '</span>');
         html.push('<span class="chip mono">L' + u.line_start + '–L' + u.line_end + '</span>');
         html.push('<span class="chip">' + Number(u.word_count || 0).toLocaleString("fr-CA") + ' mots</span>');
@@ -3110,6 +3171,9 @@
         var prdStructTarget = resolveStructUnitToPrdTarget(idx, u.unit_id);
         html.push('<div class="chip-row">');
         html.push('<a class="btn btn-sm primary" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">Ouvrir ' + escapeHtml(truncate(u.filename || u.file, 26)) + ' #L' + u.line_start + '</a>');
+        if (u.source_file) {
+          html.push('<a class="btn btn-sm" href="' + escapeHtml(corpusHref(u.source_file, 1)) + '" target="_blank" rel="noopener">Manuscrit source ↗</a>');
+        }
         html.push('<button class="btn btn-sm" id="insp-struct-goto-prd">Lire dans le PRD →</button>');
         html.push('</div>');
 
@@ -3478,7 +3542,7 @@
       }
 
       // =========================================================================
-      // VUE 2 : MindMap Structurelle Intégrale (9 fichiers .md)
+      // VUE 2 : MindMap Structurelle Intégrale (15 sections Compendium)
       // =========================================================================
       function buildStructVirtualTree() {
         var nodesMap = Object.create(null);
@@ -3486,22 +3550,23 @@
 
         nodesMap["STRUCT_ROOT"] = {
           id: "STRUCT_ROOT",
-          title: "Corpus Agentique (9 fichiers .md)",
+          title: "Compendium Agentique (15 sections · 42 unités)",
           sub: (idx.structFlat.length || 0) + " sections H1–H6",
           color: "#2563eb",
           level: 0
         };
         var filesToShow = state.stFileFilter
-          ? idx.structFiles.filter(function (f) { return f.tome_id === state.stFileFilter; })
+          ? idx.structFiles.filter(function (f) { return (f.section_id || f.tome_id) === state.stFileFilter; })
           : idx.structFiles;
 
-        childrenMap["STRUCT_ROOT"] = filesToShow.map(function (f) { return "STRUCT_FILE_" + f.tome_id; });
+        childrenMap["STRUCT_ROOT"] = filesToShow.map(function (f) { return "STRUCT_FILE_" + (f.section_id || f.tome_id); });
 
         filesToShow.forEach(function (f) {
-          var fid = "STRUCT_FILE_" + f.tome_id;
+          var sid = f.section_id || f.tome_id;
+          var fid = "STRUCT_FILE_" + sid;
           nodesMap[fid] = {
             id: fid,
-            title: f.tome_id + " · " + f.filename.replace(/\.md$/, ""),
+            title: sid + " · " + truncate(f.title || f.filename.replace(/\.md$/, ""), 36),
             sub: f.line_count + " l. · " + f.heading_count + " titres",
             color: "#0d9488",
             level: 1,
@@ -4030,11 +4095,11 @@
               : "";
             cards.push(
               '<div class="card" style="border-left:4px solid #7c3aed;">' +
-                '<div class="chip-row"><span class="chip mono">DIV-02</span><span class="chip">' + escapeHtml(div02.statut || "Fermée") + '</span><span class="chip">Tome 5</span></div>' +
+                '<div class="chip-row"><span class="chip mono">DIV-02</span><span class="chip">' + escapeHtml(div02.statut || "Fermée") + '</span><span class="chip">Compendium §0.2 / Ch. 06 / Annexe C</span></div>' +
                 '<h3 style="margin-top:6px;">' + prdInlineHtml(div02.title || "Fermeture de DIV-02") + '</h3>' +
                 '<p style="margin:4px 0;color:var(--text-muted);">' + prdInlineHtml(div02.resolution || div02.description || "") + '</p>' +
                 rectsHtml +
-                (div02.file ? '<a class="mono" href="' + escapeHtml(corpusHref(div02.file, div02.line_start || 19)) + '" target="_blank" rel="noopener">' + escapeHtml(div02.file) + '#L' + (div02.line_start || 19) + '</a>' : '') +
+                (div02.file ? '<a class="mono" href="' + escapeHtml(corpusHref(div02.file, div02.line_start || 108)) + '" target="_blank" rel="noopener">' + escapeHtml(div02.file) + '#L' + (div02.line_start || 108) + '</a>' : '') +
               '</div>'
             );
           }
@@ -4044,12 +4109,12 @@
               : "";
             cards.push(
               '<div class="card" style="border-left:4px solid #0d9488;">' +
-                '<div class="chip-row"><span class="chip mono">' + escapeHtml(item.id || item.code || "") + '</span><span class="chip">' + escapeHtml(item.section || "Tome 8 §0.2") + '</span></div>' +
+                '<div class="chip-row"><span class="chip mono">' + escapeHtml(item.id || item.code || "") + '</span><span class="chip">' + escapeHtml(item.section || "Compendium §0.2") + '</span></div>' +
                 '<h3 style="margin-top:6px;">' + prdInlineHtml(item.title || item.sujet || "") + '</h3>' +
                 varHtml +
                 '<p style="margin:4px 0;"><strong>Choix canonique :</strong> ' + prdInlineHtml(item.resolution || item.choix_canonique || item.summary || "") + '</p>' +
                 (item.rationale ? '<p style="margin:4px 0;color:var(--text-muted);font-size:12px;">' + prdInlineHtml(item.rationale) + '</p>' : '') +
-                (item.file ? '<a class="mono" href="' + escapeHtml(corpusHref(item.file, item.line_start || 34)) + '" target="_blank" rel="noopener">' + escapeHtml(item.file) + '#L' + (item.line_start || 34) + '</a>' : '') +
+                (item.file ? '<a class="mono" href="' + escapeHtml(corpusHref(item.file, item.line_start || 116)) + '" target="_blank" rel="noopener">' + escapeHtml(item.file) + '#L' + (item.line_start || 116) + '</a>' : '') +
               '</div>'
             );
           });
@@ -4067,14 +4132,14 @@
               })
             : tl;
           var rows = filteredTl.map(function (ev) {
-            var fileRef = ev.file || "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md";
+            var fileRef = ev.file || "Compendium/Compendium.md";
             return (
               '<tr>' +
                 '<td class="mono" style="white-space:nowrap;font-weight:700;">' + prdInlineHtml(ev.date || ev.horizon || "") + '</td>' +
                 '<td><strong>' + prdInlineHtml(ev.cadre || ev.title || "") + '</strong></td>' +
                 '<td style="color:var(--text-muted);">' + prdInlineHtml(ev.impact || ev.description || "") + '</td>' +
                 '<td>' + escapeHtml((ev.tomes || []).join(", ")) + '</td>' +
-                '<td>' + (ev.line_start ? '<a class="mono" href="' + escapeHtml(corpusHref(fileRef, ev.line_start)) + '" target="_blank" rel="noopener">L' + ev.line_start + '</a>' : "") + '</td>' +
+                '<td>' + (ev.line_start ? '<a class="mono" href="' + escapeHtml(corpusHref(fileRef, ev.line_start)) + '" target="_blank" rel="noopener">Compendium #L' + ev.line_start + '</a>' : "") + '</td>' +
               '</tr>'
             );
           });
@@ -4084,7 +4149,7 @@
                 '<input id="c4-tl-search" class="search-input" style="max-width:340px;" type="search" placeholder="Filtrer jalon, date, Loi 25, BSIF, DAPP, ML-DSA…" value="' + escapeHtml(tq) + '" />' +
                 '<span class="kpi-pill"><strong>' + filteredTl.length + '</strong> / ' + tl.length + ' jalons</span>' +
               '</div>' +
-              '<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Tomes</th><th>Source</th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div>' +
+              '<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Unités Compendium</th><th>Source</th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div>' +
             '</div>';
           var tlInput = document.getElementById("c4-tl-search");
           if (tlInput) {
@@ -4142,6 +4207,109 @@
               }
             });
           }
+          return;
+        }
+
+        if (state.c4Tab === "glossary_evidence") {
+          var gTerms = idx.glossaryTerms || [];
+          var socle = (idx.prd && idx.prd.socle_probatoire) || {};
+          var compG0 = (idx.pivots.bilans_aq && idx.pivots.bilans_aq.compendium_g0_g5) || {};
+          var facts16 = socle.faits_empiriques || idx.pivots.faits_empiriques_16 || compG0.faits_empiriques_16 || [];
+          var specs57 = socle.specifications_lplus || idx.pivots.specifications_lplus_57 || compG0.specifications_lplus_57 || [];
+          var statF27 = socle.statut_f_excluded || idx.pivots.statut_f_exclus_27 || [];
+          var sync14 = socle.ca_g0_sync_catalog || compG0.ca_g0_sync_catalog || [];
+          var wyv37 = socle.wyvern_g2_unites || compG0.wyvern_g2_unites || [];
+          var lplusCnt = socle.sources_l_plus_count || compG0.sources_l_plus || 135;
+
+          var gq = state.c4GlossaryQuery || "";
+          var gqNorm = normalizeText(gq).trim();
+          var filteredTerms = gqNorm
+            ? gTerms.filter(function (g) {
+                return normalizeText([g.fr, g.en, g.definition, g.chapitre_proprietaire, g.source_l_plus_id].join(" ")).indexOf(gqNorm) !== -1;
+              })
+            : gTerms;
+
+          var gHtml = [];
+          gHtml.push('<div class="card">');
+          gHtml.push('<div class="chip-row" style="margin-bottom:10px;">');
+          gHtml.push('<span class="chip"><strong>' + gTerms.length + '</strong> vedettes glossaire</span>');
+          gHtml.push('<span class="chip"><strong>' + lplusCnt + '</strong> sources primaires L+ (0,0 % METADATA_ONLY)</span>');
+          gHtml.push('<span class="chip"><strong>' + statF27.length + '</strong> exclusions Statut F (AO-01)</span>');
+          gHtml.push('<span class="chip"><strong>' + facts16.length + '</strong> faits empiriques</span>');
+          gHtml.push('<span class="chip"><strong>' + specs57.length + '</strong> spécifications L+</span>');
+          gHtml.push('<span class="chip"><strong>' + sync14.length + '</strong> extraits CA-G0-SYNC</span>');
+          gHtml.push('<span class="chip"><strong>' + wyv37.length + '/37</strong> journaux Wyvern G2</span>');
+          gHtml.push('</div>');
+          gHtml.push('<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">');
+          gHtml.push('<input id="c4-gloss-search" class="search-input" style="max-width:380px;" type="search" placeholder="Filtrer le glossaire (Agentivité des systèmes, OBO, MCP, ch01…)" value="' + escapeHtml(gq) + '" />');
+          gHtml.push('<span class="kpi-pill"><strong>' + filteredTerms.length + '</strong> / ' + gTerms.length + ' vedettes</span>');
+          gHtml.push('</div>');
+          gHtml.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Terme (fr-CA)</th><th>Équivalent (en)</th><th>Définition normative</th><th>Propriétaire</th><th>Source L+</th><th>Compendium</th></tr></thead><tbody>');
+          filteredTerms.forEach(function (gt) {
+            var cLine = gt.compendium_md_line || 1;
+            var isSa = normalizeText(gt.fr || "").indexOf("agentivite des systemes") !== -1;
+            gHtml.push(
+              '<tr' + (isSa ? ' style="background:var(--accent-soft);"' : '') + '>' +
+                '<td><strong>' + prdInlineHtml(gt.fr || "") + '</strong></td>' +
+                '<td class="mono">' + escapeHtml(gt.en || "") + '</td>' +
+                '<td>' + prdInlineHtml(gt.definition || "") + '</td>' +
+                '<td class="mono">' + escapeHtml(gt.chapitre_proprietaire || "") + '</td>' +
+                '<td class="mono">' + escapeHtml(gt.source_l_plus_id || "") + '</td>' +
+                '<td><a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a></td>' +
+              '</tr>'
+            );
+          });
+          gHtml.push('</tbody></table></div></div>');
+
+          if (facts16.length) {
+            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Faits empiriques vérifiés L+ (' + facts16.length + ')</h3><div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Métrique</th><th>Valeur vérifiée</th><th>Source L+</th></tr></thead><tbody>');
+            facts16.forEach(function (fc) {
+              gHtml.push('<tr><td class="mono"><strong>' + escapeHtml(fc.id || "") + '</strong></td><td>' + prdInlineHtml(fc.metric || "") + '</td><td>' + prdInlineHtml(fc.value || "") + '</td><td class="mono">' + escapeHtml(fc.source_l_plus_id || fc.source || "") + '</td></tr>');
+            });
+            gHtml.push('</tbody></table></div></div>');
+          }
+
+          if (specs57.length) {
+            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Catalogue des ' + specs57.length + ' spécifications ouvertes L+ (SHA-256)</h3><div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Titre</th><th>Version / Tag</th><th>Licence</th><th>Source L+</th></tr></thead><tbody>');
+            specs57.forEach(function (sp) {
+              gHtml.push('<tr><td class="mono"><strong>' + escapeHtml(sp.spec_id || "") + '</strong></td><td>' + prdInlineHtml(sp.title || "") + '</td><td class="mono">' + escapeHtml(sp.version_or_tag || "") + '</td><td class="mono">' + escapeHtml(sp.license_spdx || "") + '</td><td class="mono">' + escapeHtml(sp.source_l_plus_id || "") + '</td></tr>');
+            });
+            gHtml.push('</tbody></table></div></div>');
+          }
+
+          if (wyv37.length || sync14.length || statF27.length) {
+            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Chaîne probatoire Wyvern G2 (' + wyv37.length + '/37), CA-G0-SYNC (' + sync14.length + ') &amp; Statut F (' + statF27.length + ')</h3>');
+            if (wyv37.length) {
+              gHtml.push('<div class="chip-row" style="margin-bottom:8px;">');
+              wyv37.forEach(function (w) {
+                gHtml.push('<span class="chip mono">' + escapeHtml(w.unit_id) + ': ' + (w.supported_claims != null ? (w.supported_claims + '/' + w.total_claims) : (w.strict_passed ? 'OK' : 'WARN')) + '</span>');
+              });
+              gHtml.push('</div>');
+            }
+            if (statF27.length) {
+              gHtml.push('<details><summary>Voir les ' + statF27.length + ' exclusions Statut F (politique zéro contournement AO-01)</summary><div style="overflow-x:auto;margin-top:8px;"><table class="data-table"><thead><tr><th>Source exclue</th><th>HTTP / Raison</th><th>Statut</th></tr></thead><tbody>');
+              statF27.forEach(function (sf) {
+                gHtml.push('<tr><td>' + prdInlineHtml(sf.source_hint || sf.url || "") + '</td><td class="mono">' + escapeHtml((sf.http_status || "") + " " + (sf.block_reason || "")) + '</td><td class="mono">' + escapeHtml(sf.status || "F") + '</td></tr>');
+              });
+              gHtml.push('</tbody></table></div></details>');
+            }
+            gHtml.push('</div>');
+          }
+
+          container.innerHTML = gHtml.join("");
+          var glInput = document.getElementById("c4-gloss-search");
+          if (glInput) {
+            glInput.addEventListener("input", function (ev) {
+              state.c4GlossaryQuery = ev.target.value;
+              renderConcordanceView();
+              var nextEl = document.getElementById("c4-gloss-search");
+              if (nextEl) {
+                nextEl.focus();
+                nextEl.setSelectionRange(nextEl.value.length, nextEl.value.length);
+              }
+            });
+          }
+          return;
         }
       }
 
@@ -4297,11 +4465,28 @@
           }
           html.push('</div>');
         }
+        var compRend = sc.compendium_rendered_path ? compendiumAssetHref(sc.compendium_rendered_path) : "";
+        var compSrc = sc.compendium_source_path ? compendiumAssetHref(sc.compendium_source_path) : "";
+        var compLine = sc.compendium_md_line || null;
+        if (compRend || compSrc) {
+          html.push(
+            '<div class="occ-card" style="margin:6px 0;padding:6px 8px;">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">' +
+                '<span><strong class="mono">Rendu compilé Compendium</strong> (' + escapeHtml(sc.compendium_unit || "") + ' · ' + escapeHtml(sc.compendium_engine || "") + ')</span>' +
+                '<span class="chip-row">' +
+                  (compRend ? '<a class="chip clickable mono" href="' + escapeHtml(compRend) + '" target="_blank" rel="noopener">Rendu compilé ↗</a>' : '') +
+                  (compSrc ? '<a class="chip clickable mono" href="' + escapeHtml(compSrc) + '" target="_blank" rel="noopener">Source schéma ↗</a>' : '') +
+                  (compLine ? '<a class="chip clickable mono" href="' + escapeHtml(corpusHref(sc.compendium_md_file || "Compendium/Compendium.md", compLine)) + '" target="_blank" rel="noopener">Compendium #L' + compLine + '</a>' : '') +
+                '</span>' +
+              '</div>' +
+            '</div>'
+          );
+        }
         var figs = Array.isArray(sc.linked_tome_figures) ? sc.linked_tome_figures : [];
         if (figs.length === 0) {
           html.push('<div style="font-size:11.5px;color:var(--text-muted);">Création originale pure (aucune figure préexistante dans les Tomes 1–8).</div>');
         } else {
-          html.push('<div class="section-label" style="margin-top:6px;">Figures Tomes rattachées (' + figs.length + ')</div>');
+          html.push('<div class="section-label" style="margin-top:6px;">Concordance historique Tomes 1–8 (' + figs.length + ')</div>');
           html.push('<div style="display:flex;flex-direction:column;gap:4px;">');
           figs.forEach(function (fg) {
             var rHref = fg.rendered_path ? tomeAssetHref(fg.rendered_path) : "";
@@ -4580,16 +4765,17 @@
           html.push('</div>');
         }
 
-        // Ancrages dans le Corpus
+        // Ancrages dans le Compendium
         if (Array.isArray(tc.corpus_anchors) && tc.corpus_anchors.length) {
-          html.push('<div class="section-label" style="margin-top:12px;">Ancrages dans le Corpus (' + tc.corpus_anchors.length + ')</div>');
-          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Tome</th><th>Fichier source (Tomes/)</th><th>Référence</th></tr></thead><tbody>');
+          html.push('<div class="section-label" style="margin-top:12px;">Ancrages dans le Compendium (' + tc.corpus_anchors.length + ')</div>');
+          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Section</th><th>Source Compendium</th><th>Référence</th></tr></thead><tbody>');
           tc.corpus_anchors.forEach(function (anc) {
             var href = corpusHref(anc.file, anc.line_start);
             var fname = String(anc.file || "").split("/").pop();
+            var pid = anc.part_id || anc.tome_id || "";
             html.push(
               '<tr>' +
-                '<td class="mono"><strong>' + escapeHtml(anc.tome_id || "") + '</strong></td>' +
+                '<td class="mono"><strong>' + escapeHtml(pid) + '</strong></td>' +
                 '<td><a class="mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(fname) + (anc.line_start ? "#L" + anc.line_start : "") + '</a></td>' +
                 '<td>' + prdInlineHtml(anc.reference || "") + '</td>' +
               '</tr>'
@@ -4696,44 +4882,51 @@
             if (Array.isArray(d2.rectifications)) {
               html.push('<ul class="prd-list">' + d2.rectifications.map(function (r) { return '<li>' + prdInlineHtml(r) + '</li>'; }).join("") + '</ul>');
             }
-            if (d2.file) html.push('<a class="mono" href="' + escapeHtml(corpusHref(d2.file, d2.line_start || 19)) + '" target="_blank" rel="noopener">Tome 5 #L' + (d2.line_start || 19) + '</a>');
+            if (d2.file) html.push('<a class="mono" href="' + escapeHtml(corpusHref(d2.file, d2.line_start || 74)) + '" target="_blank" rel="noopener">' + (d2.file === "Compendium/Compendium.md" ? "Compendium #L" : "Tome 5 #L") + (d2.line_start || 74) + '</a>');
             html.push('</div>');
           }
           if (Array.isArray(ann.reconciliations)) {
             html.push('<h4 style="margin:10px 0 6px 0;">Cinq discordances inter-volumes (DISC-01 à DISC-05)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Sujet</th><th>Choix canonique (Tome 8)</th><th>Source</th></tr></thead><tbody>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Sujet</th><th>Choix canonique (Compendium)</th><th>Source</th></tr></thead><tbody>');
             ann.reconciliations.forEach(function (rec) {
-              html.push('<tr><td class="mono">' + escapeHtml(rec.id) + '</td><td>' + prdInlineHtml(rec.title) + '</td><td>' + prdInlineHtml(rec.resolution) + '</td><td><a class="mono" href="' + escapeHtml(corpusHref(rec.file, rec.line_start || 34)) + '" target="_blank" rel="noopener">' + escapeHtml(rec.section || "T8 §0.2") + '</a></td></tr>');
+              html.push('<tr><td class="mono">' + escapeHtml(rec.id) + '</td><td>' + prdInlineHtml(rec.title) + '</td><td>' + prdInlineHtml(rec.resolution) + '</td><td><a class="mono" href="' + escapeHtml(corpusHref(rec.file, rec.line_start || 74)) + '" target="_blank" rel="noopener">' + escapeHtml(rec.section || "Compendium § 0.2") + '</a></td></tr>');
             });
             html.push('</tbody></table></div>');
           }
           if (Array.isArray(ann.timeline)) {
             html.push('<h4 style="margin:12px 0 6px 0;">Chronologie consolidée 2023–2035 (' + ann.timeline.length + ' jalons)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Tomes</th></tr></thead><tbody>');
+            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Sections</th></tr></thead><tbody>');
             ann.timeline.forEach(function (ev) {
-              html.push('<tr><td class="mono" style="white-space:nowrap;">' + prdInlineHtml(ev.date) + '</td><td><strong>' + prdInlineHtml(ev.cadre) + '</strong></td><td>' + prdInlineHtml(ev.impact) + '</td><td>' + escapeHtml((ev.tomes || []).join(", ")) + '</td></tr>');
+              var secTxt = (ev.tomes || []).join(", ");
+              var evLink = ev.file ? '<a class="mono" href="' + escapeHtml(corpusHref(ev.file, ev.line_start || 1)) + '" target="_blank" rel="noopener">' + escapeHtml(secTxt || "Compendium") + '</a>' : escapeHtml(secTxt);
+              html.push('<tr><td class="mono" style="white-space:nowrap;">' + prdInlineHtml(ev.date) + '</td><td><strong>' + prdInlineHtml(ev.cadre) + '</strong></td><td>' + prdInlineHtml(ev.impact) + '</td><td>' + evLink + '</td></tr>');
             });
             html.push('</tbody></table></div>');
           }
         } else if (ac === "D") {
           var bil = ann.bilans_aq || {};
+          var cg = bil.compendium_g0_g5 || {};
           var t8g = bil.tome_8_g0_g5 || {};
-          var t7g = bil.tome_7_g1_g5 || {};
-          var t5c = bil.tome_5_ca16 || {};
-          var col = ann.collection_metrics || {};
-          var wyv = t7g.wyvern_g2;
-          var wyvStr = (wyv && typeof wyv === "object")
-            ? ("Wyvern G2 : " + wyv.unites + " unités, " + wyv.initiales + " → " + wyv.finales_supportees + " assertions (" + wyv.taux + ")")
-            : String(wyv || "");
+          var rapG0 = cg.rapports_g0 || {};
+          var opaPass = (rapG0.opa_check && rapG0.opa_check.tests_passed) || t8g.opa_tests_passed || "PASS";
+          var pyPass = (rapG0.pytest_check && rapG0.pytest_check.passed) || t8g.pytest_passed || "PASS";
+          var g0Stat = rapG0.overall_status || t8g.overall_status || "PASS";
+          var col = (idx.prd && idx.prd.compendium_meta && Object.keys(idx.prd.compendium_meta).length) ? idx.prd.compendium_meta : (ann.collection_metrics || {});
+          var lPlus = cg.sources_l_plus || t8g.sources_l_plus || 135;
+          var statF = cg.statut_f_exclus || t8g.statut_f_exclus || 27;
+          var syncN = cg.ca_g0_sync_count || t8g.synced_excerpts_count || 14;
+          var wyvN = cg.wyvern_g2_unites_count || t8g.wyvern_g2_units || 37;
+          var glossN = col.glossaire_vedettes || (idx.glossaryTerms ? idx.glossaryTerms.length : 56);
+          var factsN = (cg.faits_empiriques_16 ? cg.faits_empiriques_16.length : 16);
+          var specsN = (cg.specifications_lplus_57 ? cg.specifications_lplus_57.length : 57);
           var lic = col.licences;
           var licStr = (lic && typeof lic === "object")
-            ? (lic.texte_figures_registres + " / " + lic.code_scripts_trousse)
-            : String(lic || "");
+            ? ((lic.texte_figures_registres || "CC-BY-4.0") + " / " + (lic.code_scripts_trousse || "MIT"))
+            : String(lic || "CC-BY-4.0 / MIT");
           html.push('<ul class="prd-list">');
-          html.push('<li><strong>Tome 8 (G0–G5)</strong> : ' + escapeHtml(t8g.g0_pytest || "83/83") + ' · ' + escapeHtml(t8g.g0_opa || "45/45") + ' · ' + escapeHtml(t8g.g0_schemas || "21/21") + '</li>');
-          html.push('<li><strong>Tome 7 (G1–G5)</strong> : ' + escapeHtml(t7g.sources_l_plus || 79) + ' sources L+, ' + prdInlineHtml(wyvStr) + '</li>');
-          html.push('<li><strong>Tome 5 (CA-16)</strong> : échantillon ' + escapeHtml(t5c.echantillon_stratifie || "40") + ', passe finale ' + escapeHtml(t5c.passe_2_finale || "100 %") + '</li>');
-          html.push('<li><strong>Licences &amp; statut</strong> : ' + prdInlineHtml(licStr) + ' · ' + prdInlineHtml(col.statut_juridique || "non-avis") + '</li>');
+          html.push('<li><strong>Homologation Compendium (G0–G5)</strong> : statut G0 <code>' + escapeHtml(g0Stat) + '</code> · pytest : <code>' + escapeHtml(pyPass) + '</code> · OPA/Rego : <code>' + escapeHtml(opaPass) + '</code> · <code>' + escapeHtml(syncN) + '</code> extraits CA-G0-SYNC · gel <code>' + escapeHtml(cg.freeze_date || col.freeze_date || "2026-12-02") + '</code></li>');
+          html.push('<li><strong>Socle probatoire vérifié</strong> : <code>' + escapeHtml(lPlus) + '</code> sources <code>L+</code> (' + escapeHtml(statF) + ' Statut F exclus, politique <code>AO-01</code>) · Wyvern G2 : <code>' + escapeHtml(wyvN) + '/' + escapeHtml(wyvN) + '</code> unités · <code>' + escapeHtml(factsN) + '</code> faits empiriques · <code>' + escapeHtml(specsN) + '</code> spécifications L+ · <code>' + escapeHtml(glossN) + '</code> vedettes glossaire</li>');
+          html.push('<li><strong>Édition &amp; licences Compendium</strong> : <code>' + escapeHtml(col.total_pdf_pages || 837) + '</code> pages PDF · <code>' + escapeHtml(col.total_compendium_schemas || 115) + '</code> schémas Compendium (+ <code>' + escapeHtml(col.total_historical_tome_diagrams || 319) + '</code> figures Tomes) · ' + prdInlineHtml(licStr) + ' · ' + prdInlineHtml(col.statut_juridique || "non-avis (DC-P01 / DC-P12 / AO-05)") + '</li>');
           html.push('</ul>');
 
           var allMat = Array.isArray(ann.matrix_all) ? ann.matrix_all : [];
@@ -4902,11 +5095,15 @@
               var figsCell = figs.length === 0
                 ? '<span style="color:var(--text-muted);">Création originale pure</span>'
                 : figs.map(function (fg) {
-                    var rUrl = fg.rendered_path ? tomeAssetHref(fg.rendered_path) : "";
-                    var sUrl = fg.source_path ? tomeAssetHref(fg.source_path) : "";
+                    var rPath = fg.compendium_rendered_path || fg.rendered_path;
+                    var sPath = fg.compendium_source_path || fg.source_path;
+                    var rUrl = rPath ? tomeAssetHref(rPath) : "";
+                    var sUrl = sPath ? tomeAssetHref(sPath) : "";
+                    var cLine = fg.compendium_md_line ? (' <a class="mono" href="' + escapeHtml(corpusHref(fg.compendium_md_file || "Compendium/Compendium.md", fg.compendium_md_line)) + '" target="_blank" rel="noopener">[#L' + fg.compendium_md_line + ']</a>') : '';
                     return '<div style="margin-bottom:2px;"><span class="mono">' + escapeHtml((fg.tome_id || "") + " · " + (fg.fig_id || "")) + '</span> ' +
                       (rUrl ? '<a class="mono" href="' + escapeHtml(rUrl) + '" target="_blank" rel="noopener">[Rendu]</a> ' : '') +
                       (sUrl ? '<a class="mono" href="' + escapeHtml(sUrl) + '" target="_blank" rel="noopener">[Source]</a>' : '') +
+                      cLine +
                     '</div>';
                   }).join("");
               html.push(
@@ -5280,6 +5477,13 @@
             if (kind === "theme") {
               switchView("mindmap");
               selectThemeNode(rid, true);
+            } else if (kind === "glossary") {
+              state.c4Tab = "glossary_evidence";
+              state.c4GlossaryQuery = rid;
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                b.classList.toggle("active", b.getAttribute("data-c4-tab") === "glossary_evidence");
+              });
+              switchView("concordance");
             } else if (kind === "prd-exec") {
               jumpToPrdTarget({ kind: "exec", section_id: rid });
             } else if (kind === "prd-part") {

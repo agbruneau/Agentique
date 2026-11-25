@@ -78,10 +78,20 @@ def build_catalogue_schemas_payload(
     shards_dir = donnees_dir / "prd_schemas_shards"
     schema_path = donnees_dir / "schema-prd-vulgarisation.json"
     inv_path = donnees_dir / "inventaire-319-diagrammes.json"
+    comp_inv_path = donnees_dir / "inventaire-115-schemas-compendium.json"
 
     if bundle is None:
+        synthese_path = donnees_dir / "synthese-transversale.json"
         bundle_path = donnees_dir / "corpus-mindmap-data.json"
-        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+        chosen = synthese_path if synthese_path.is_file() else bundle_path
+        bundle = json.loads(chosen.read_text(encoding="utf-8"))
+
+    comp_inv_by_id: dict[str, dict[str, Any]] = {}
+    comp_inv_totals: dict[str, Any] = {}
+    if comp_inv_path.is_file():
+        comp_inv_data = json.loads(comp_inv_path.read_text(encoding="utf-8"))
+        comp_inv_totals = comp_inv_data.get("totals") or {}
+        comp_inv_by_id = {f["schema_id"]: f for f in (comp_inv_data.get("figures") or [])}
 
     schema_vulg = json.loads(schema_path.read_text(encoding="utf-8"))
     jsonschema.Draft202012Validator.check_schema(schema_vulg)
@@ -373,13 +383,44 @@ def build_catalogue_schemas_payload(
         "figures_catalogue": figures_catalogue,
     }
 
+    comp_by_part: dict[str, int] = {}
+    if comp_inv_by_id:
+        for item in all_global_schemas + all_chapter_schemas:
+            cfig = comp_inv_by_id.get(item["schema_id"])
+            if cfig:
+                part_id = cfig["part_id"]
+                comp_by_part[part_id] = comp_by_part.get(part_id, 0) + 1
+                item["compendium_figure"] = {
+                    "schema_id": cfig["schema_id"],
+                    "unit": cfig["unit"],
+                    "part_id": part_id,
+                    "engine": cfig["engine"],
+                    "source_path": cfig["source_path"],
+                    "rendered_path": cfig["rendered_path"],
+                    "compendium_md_file": cfig["compendium_md_file"],
+                    "compendium_md_line": cfig["compendium_md_line"],
+                    "source_file": cfig["source_file"],
+                    "source_file_line": cfig["source_file_line"],
+                }
+
+    compendium_schemas_summary = {
+        "total_compendium_figures": comp_inv_totals.get("figures_count", len(comp_inv_by_id)),
+        "verified_sources_on_disk": comp_inv_totals.get("verified_sources_on_disk", len(comp_inv_by_id)),
+        "verified_renders_on_disk": comp_inv_totals.get("verified_renders_on_disk", len(comp_inv_by_id)),
+        "verified_compendium_lines": comp_inv_totals.get("verified_compendium_lines", len(comp_inv_by_id)),
+        "by_engine": comp_inv_totals.get("by_engine") or {},
+        "by_part": {k: comp_by_part[k] for k in sorted(comp_by_part)},
+    }
+
     payload = {
-        "schema_version": "1.0.0",
+        "schema_version": "2.0.0",
         "lang": "fr-CA",
         "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "generator": "Sources/Cartographie/outils/consolider_catalogue_schemas.py",
         "source_shards": [f"Sources/Cartographie/donnees/prd_schemas_shards/{fn}" for fn in SCHEMA_SHARD_FILENAMES],
         "source_inventory": "Sources/Cartographie/donnees/inventaire-319-diagrammes.json",
+        "source_compendium_inventory": "Sources/Cartographie/donnees/inventaire-115-schemas-compendium.json",
+        "compendium_schemas_summary": compendium_schemas_summary,
         "global_schemas": all_global_schemas,
         "chapter_schemas": all_chapter_schemas,
         "annexe_e": annexe_e_block,

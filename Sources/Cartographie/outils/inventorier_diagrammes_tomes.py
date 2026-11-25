@@ -370,9 +370,11 @@ def _match_synthese_chapter(
     tome_id: str,
     section_label: str,
     chapters_by_tome: dict[str, list[dict[str, Any]]],
-) -> dict[str, Any]:
+) -> dict[str, Any] | None:
     ns = _norm_ascii(section_label)
     candidates = chapters_by_tome.get(tome_id, [])
+    if not candidates:
+        return None
     for ch in candidates:
         nc = _norm_ascii(ch["chapter_title"])
         if ns == nc or ns in nc or nc in ns:
@@ -384,14 +386,27 @@ def _match_synthese_chapter(
             nc = _norm_ascii(ch["chapter_title"])
             if re.search(rf"\b(?:chapitre\s+m\s+|chapitre\s+)?0?{num_tok}\b", nc):
                 return ch
-    raise ValueError(f"Impossible de rattacher la section {section_label!r} ({tome_id}) à synthese-transversale.json")
+    return None
+
+
+DOMAIN_BY_TOME_FALLBACK: dict[str, str] = {
+    "T1": "D01",
+    "T2": "D02",
+    "T3": "D03",
+    "T4": "D11",
+    "T5": "D02",
+    "T6": "D10",
+    "T7": "D07",
+    "T8": "D12",
+}
 
 
 def _infer_domain_hints(
     title: str,
     raw_caption: str,
     section_label: str,
-    matched_chapter: dict[str, Any],
+    matched_chapter: dict[str, Any] | None,
+    tome_id: str,
 ) -> list[str]:
     haystack = _norm_ascii(f"{title} {raw_caption} {section_label}")
     scores: dict[str, int] = {}
@@ -403,8 +418,8 @@ def _infer_domain_hints(
         if score > 0:
             scores[dom_id] = score
 
-    primary = matched_chapter.get("primary_domain")
-    secondary = matched_chapter.get("secondary_domains") or []
+    primary = (matched_chapter or {}).get("primary_domain") or DOMAIN_BY_TOME_FALLBACK.get(tome_id, "D02")
+    secondary = (matched_chapter or {}).get("secondary_domains") or []
 
     ranked = sorted(scores.keys(), key=lambda d: (-scores[d], d))
     ordered: list[str] = []
@@ -412,7 +427,10 @@ def _infer_domain_hints(
         if d not in ordered:
             ordered.append(d)
     if primary and primary not in ordered:
-        ordered.insert(0, primary)
+        if len(ordered) >= 3:
+            ordered = [primary] + ordered[:2]
+        else:
+            ordered.insert(0, primary)
     if not ordered:
         ordered = [primary] if primary else []
     for sec_d in secondary:
@@ -543,12 +561,13 @@ def build_inventory() -> dict[str, Any]:
             matched_chapter = _match_synthese_chapter(tome_id, sec_label, chapters_by_tome)
             clean_title = _sanitize_prose(title)
             clean_caption = _sanitize_prose(raw_caption)
-            domain_hints = _infer_domain_hints(clean_title, clean_caption, sec_label, matched_chapter)
+            domain_hints = _infer_domain_hints(clean_title, clean_caption, sec_label, matched_chapter, tome_id)
 
             page_val: int | str | None = None
             if page_str:
                 page_val = int(page_str) if page_str.isdigit() else _sanitize_prose(page_str)
 
+            fallback_uid = f"{tome_id.lower()}-{_norm_ascii(sec_label).replace(' ', '-')[:28]}"
             figures.append(
                 {
                     "diagram_uid": f"{tome_id}:{fig_id}",
@@ -561,7 +580,7 @@ def build_inventory() -> dict[str, Any]:
                     "rendered_path": ren_file.relative_to(REPO_ROOT).as_posix(),
                     "source_section": sec_label,
                     "source_section_file": sec_file.relative_to(REPO_ROOT).as_posix(),
-                    "matched_unit_id": matched_chapter["unit_id"],
+                    "matched_unit_id": (matched_chapter or {}).get("unit_id") or fallback_uid,
                     "page": page_val,
                     "domain_hints": domain_hints,
                 }

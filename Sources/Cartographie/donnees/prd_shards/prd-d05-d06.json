@@ -295,49 +295,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 22 §22.1–22.10 Taxonomie OO1–OO4 et paradigme APM (L5171–L5407)"
+            "part_id": "P05",
+            "unit_id": "ch13",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2185,
+            "reference": "Partie V · Chapitre 13 — Sobriété d'orchestration OO1–OO4, catalogue fermé des topologies et maîtrise des défaillances MAST (L2185–L2339)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 23 §23.1–23.5 Frameworks d'orchestration GA (L5428–L5543)"
+            "part_id": "P05",
+            "unit_id": "ch13",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2189,
+            "reference": "Partie V · § 13.1 Résumé (L2189–L2198)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Ch. 7 §7.1–7.3 & §7.7 Sobriété, 8 patrons EXIG-ORC-01..10 et contexte minimal EXIG-ORC-23..25 (L2734–L2985, L3187–L3236)"
+            "part_id": "P05",
+            "unit_id": "ch13",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2199,
+            "reference": "Partie V · § 13.2 Gouvernance de l'orchestration : de l'arbre de sobriété au catalogue fermé (L2199–L2307)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 16–17 Topologies canoniques, ADR-011 et enveloppes BPMN/CMMN/Routine (L8089–L9238)"
+            "part_id": "P05",
+            "unit_id": "ch13",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2308,
+            "reference": "Partie V · § 13.3 Synthèse des schémas, livrables, exigences probatoires et trois invariants exécutables (L2308–L2327)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 20–21 Cadriciels, fiabilité de coordination et taxonomie MAST (L11440–L11949)"
+            "part_id": "P05",
+            "unit_id": "ch13",
+            "tome_id": "P05",
+            "file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 13.md (L1–L142)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 45 §45.4–45.10 Scission Diplomate DMZ / Évaluateur TEE et règlement tripartite (L23430–L23916)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Ch. 5 §5.1–5.2 Continuum OO1–OO4 et catalogue fermé des topologies (L711–L753)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Ch. 7 Patrons d'orchestration, Claim-Check et Goal Pinning (L2059–L2383)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Ch. 06 §6.1–6.2 Arbre de sobriété opérationnelle et effet Ringelmann (L862–L933)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -525,39 +544,52 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 1 §1.5, Ch. 23 §23.3 & Ch. 37 §37.0 Event Mesh, journal avant le cadre et homonymie (L326–L417, L5476–L5495, L8712–L8729)"
+            "part_id": "P05",
+            "unit_id": "ch14",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2340,
+            "reference": "Partie V · Chapitre 14 — Chorégraphie Event Mesh sur CloudEvents/AsyncAPI, contrôle des boucles et passerelle vers l'IA physique (L2340–L2469)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Ch. 6 §6.7 Interopérabilité événementielle EXIG-EVT-01..10 (L2391–L2556)"
+            "part_id": "P05",
+            "unit_id": "ch14",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2344,
+            "reference": "Partie V · § 14.1 Résumé (L2344–L2353)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 19 Architecture événementielle agentique EDAA et CloudEvents 1.0 ADR-013 (L10734–L11148)"
+            "part_id": "P05",
+            "unit_id": "ch14",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2354,
+            "reference": "Partie V · § 14.2 Chorégraphie Event Mesh et extension cyber-physique (L2354–L2439)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 46 §46.6–46.8 & §46.15–46.18 Passerelle MCP ↔ ROS 2/DDS, LOTO et arbitre Simplex (L24043–L24110, L24657–L24812)"
+            "part_id": "P05",
+            "unit_id": "ch14",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2440,
+            "reference": "Partie V · § 14.3 Synthèse des schémas, livrables, exigences probatoires et trois invariants exécutables (L2440–L2459)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Ch. M-10 CAP-011..013 Dorsale événementielle et fédération selon gravité (L2002–L2047)"
+            "part_id": "P05",
+            "unit_id": "ch14",
+            "tome_id": "P05",
+            "file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 14.md (L1–L119)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Ch. 8 Chorégraphie réactive, pathologies, DLQ, backpressure et patron hybride (L2396–L2718)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Ch. 06 §6.3 Pathologies des systèmes réactifs et multi-agents (L934–L963)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           }
         ]
       }
@@ -839,44 +871,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 1 §1.6.2 & Ch. 48 Sémantique d'effet, Saga et jointure UETR (L434–L467, L10898–L10983)"
+            "part_id": "P05",
+            "unit_id": "ch15",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2470,
+            "reference": "Partie V · Chapitre 15 — Exécution durable hors processus, idempotence JCS, sémantique d'effet et sagas à canal isolé (L2470–L2648)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Ch. 7 §7.4–7.6 & §7.8–7.10 Exécution durable, Saga, idempotence et résilience EXIG-ORC-11..30 (L2986–L3186, L3237–L3323)"
+            "part_id": "P05",
+            "unit_id": "ch15",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2474,
+            "reference": "Partie V · § 15.1 Résumé (L2474–L2483)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 7 §7.4 Protocole agent-instrument LAP v0.1 (L3702–L3715)"
+            "part_id": "P05",
+            "unit_id": "ch15",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2484,
+            "reference": "Partie V · § 15.2 Exécution durable, idempotence JCS et sagas compensatoires (L2484–L2619)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 18 & Ch. 34 §34.10–34.11 Temporal/Restate, garde TOCTOU au réveil et chaos agentique (L9749–L10623, L18878–L19030)"
+            "part_id": "P05",
+            "unit_id": "ch15",
+            "tome_id": "P05",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2620,
+            "reference": "Partie V · § 15.3 Synthèse des schémas, livrables, exigences probatoires et trois invariants exécutables (L2620–L2639)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Ch. 5 §5.3–5.4 Reprise du programme, point pivot et canal isolé EXIG-ORC-28 (L754–L864)"
+            "part_id": "P05",
+            "unit_id": "ch15",
+            "tome_id": "P05",
+            "file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 15.md (L1–L169)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Ch. 9 & Ch. 13 §13.4.3 Durable Execution, Worker Versioning et cohérence sans 2PC (L2731–L2969, L4251–L4290)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Ch. 06 §6.4 Machines à états durables et sagas à point pivot (L964–L1014)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Ch. 03 §3.3 Orchestrateur Saga durable et 10 scénarios de fautes EXIG-ORC-20 (L1034–L1175)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }
@@ -1314,44 +1362,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 12–16 Héritage OAuth/SCIM, DID/VC, grille Q-A..Q-E, Agent Card et passeport (L3296–L4142)"
+            "part_id": "P06",
+            "unit_id": "ch16",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2651,
+            "reference": "Partie VI · Chapitre 16 — Identités non humaines parrainées, attestations SPIFFE/SPIRE et fondations d'identité décentralisée (L2651–L2814)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 37 §37.2 & Ch. 45 §45.8 Maillage SPIFFE/SPIRE et naissance de l'agent (L8764–L8807, L10452–L10497)"
+            "part_id": "P06",
+            "unit_id": "ch16",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2663,
+            "reference": "Partie VI · § 16.1 Résumé exécutif : l'impératif d'une identité machine parrainée et attestée (L2663–L2670)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Ch. 3 §3.4 & Ch. 9 §9.2 Identité NHI et justificatifs SPIFFE EXIG-IAM-01..07 (L813–L832, L3830–L3906)"
+            "part_id": "P06",
+            "unit_id": "ch16",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2671,
+            "reference": "Partie VI · § 16.2 Architecture d'identité NHI, socle IAM fédéré et fédération décentralisée (L2671–L2776)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 29 Identité agentique, Blueprint Entra, SPIFFE/SPIRE et DID/VC (L15241–L15458)"
+            "part_id": "P06",
+            "unit_id": "ch16",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2777,
+            "reference": "Partie VI · § 16.3 Synthèse architecturale, livrables et portes de contrôle (L2777–L2799)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 45 §45.3 Identité légale GLEIF vLEI et rôles OOR/ECR (L23406–L23429)"
+            "part_id": "P06",
+            "unit_id": "ch16",
+            "tome_id": "P06",
+            "file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 16.md (L1–L148)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Ch. M-10 §10.6 Plan de contrôle identité CAP-035..041 (L2382–L2493)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Ch. 10 §10.2 NHI, OWASP NHI Top 10 et SPIFFE/SPIRE/Envoy SDS (L3115–L3186)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Ch. 07 §7.1 & §7.4 Attestation éphémère et responsabilité inter-entreprises (L1029–L1056, L1130–L1157)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -1691,39 +1763,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 3 §3.2, Ch. 17, Ch. 18 & Ch. 20 Chaîne de mandat, 2e saut, KYA et inventaire révocation (L716–L808, L4157–L4469, L4720–L4792)"
+            "part_id": "P06",
+            "unit_id": "ch17",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2815,
+            "reference": "Partie VI · Chapitre 17 — Chaîne de mandat OBO à deux sauts, approbation cryptographique CIBA, KYA tiers et asymétrie de révocation (L2815–L3024)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Ch. 8 §8.5, Ch. 9 §9.3 & Annexe C.6 Approbation CIBA, RFC 8693/9700 et jeton lié à h (L3601–L3670, L3907–L4104, L7292–L7375)"
+            "part_id": "P06",
+            "unit_id": "ch17",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2827,
+            "reference": "Partie VI · § 17.1 Résumé exécutif : endiguer l'escalade de privilèges et le consentement factice (L2827–L2832)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 27 Extrait 27.2 & Ch. 30 Délégation OBO, RAR, DPoP, SoD et CIBA (L14320–L14413, L15558–L16258)"
+            "part_id": "P06",
+            "unit_id": "ch17",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2833,
+            "reference": "Partie VI · § 17.2 Chaîne de mandat OBO, scellement CIBA et asymétrie de révocation (L2833–L2983)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Ch. 6 §6.2 & Ch. 7 §7.2 Liaison JCS SHA-256 CIBA et rupture au 2e saut (L917–L979, L1055–L1102)"
+            "part_id": "P06",
+            "unit_id": "ch17",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2984,
+            "reference": "Partie VI · § 17.3 Synthèse architecturale, livrables et portes de contrôle (L2984–L3006)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Ch. 10 §10.3 Chaîne IETF RFC 8693/8707/9449/9396 et Transaction Tokens (L3189–L3241)"
+            "part_id": "P06",
+            "unit_id": "ch17",
+            "tome_id": "P06",
+            "file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 17.md (L1–L191)"
           },
           {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Ch. 07 §7.2–7.3 Délégation bornée et approbation hors bande CIBA (L1057–L1129)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Ch. 02 §2.1.2–2.1.4 Délégation 2 sauts, automate SSF/CAEP et CIBA I-JSON/JCS (L519–L616)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }
@@ -1931,39 +2024,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Ch. 21 & Annexe N.2 Horloge post-quantique, Mosca 2026–2029, dette migration et NIST IR 8547 (L4922–L5132, L12883–L12928)"
+            "part_id": "P06",
+            "unit_id": "ch18",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3025,
+            "reference": "Partie VI · Chapitre 18 — Agilité cryptographique, cycles TLS à 47 jours et transition post-quantique ML-DSA/SLH-DSA (L3025–L3196)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Ch. 9 §9.10 Agilité cryptographique, TLS ≤ 47 j et rescellement PQC EXIG-SEC-27/28 (L4704–L4727)"
+            "part_id": "P06",
+            "unit_id": "ch18",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3035,
+            "reference": "Partie VI · § 18.1 Résumé exécutif : automatisation ACME à 47 jours et maîtrise du choc PQC (L3035–L3042)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ch. 6 §6.10 & Ch. 49 §49.5 MLS X25519MLKEM768 sur SLIM et choc HTTP 431 (L3365–L3472, L26868–L26904)"
+            "part_id": "P06",
+            "unit_id": "ch18",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3043,
+            "reference": "Partie VI · § 18.2 Automatisation PKI 47 jours et migration post-quantique maîtrisée (L3043–L3151)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Ch. M-5 Transition PQC et Campagne 4 Borealis-Bench (L997–L1107)"
+            "part_id": "P06",
+            "unit_id": "ch18",
+            "tome_id": "P06",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3152,
+            "reference": "Partie VI · § 18.3 Synthèse architecturale, livrables et portes de contrôle (L3152–L3182)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Ch. 7 §7.4 PKI à 47 j, NIST IR 8547 et Transaction Tokens HTTP 431 (L1131–L1167)"
+            "part_id": "P06",
+            "unit_id": "ch18",
+            "tome_id": "P06",
+            "file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 18.md (L1–L157)"
           },
           {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Ch. 11–12 & Annexe B Collision cryptographique et chronologie 2026–2035 (L1627–L1815, L2075–L2140)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Ch. 02 §2.2 Banc Python HTTP 431 : chaînes O(sauts) face à CBOR-COSE O(1) ML-DSA-65/87 (L617–L710)"
+            "part_id": "ANN",
+            "unit_id": "annexe-c",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7434,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+          },
+          {
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }

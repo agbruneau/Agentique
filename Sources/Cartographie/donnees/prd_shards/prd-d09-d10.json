@@ -345,54 +345,84 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "16 · Le passeport d’agent : synthèse d’un objet encore virtuel — 16.5 Le passeport par la grille du ch. 14 (L4114–L4133)"
+            "part_id": "P09",
+            "unit_id": "ch25",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4197,
+            "reference": "Partie IX · Chapitre 25 — Droit québécois et cadre prudentiel financier canadien (L4197–L4349)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "17 · La chaîne de mandat et le problème des deux sauts — 17.4 L’humain, premier et dernier maillon (L4226–L4247)"
+            "part_id": "P09",
+            "unit_id": "ch25",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4205,
+            "reference": "Partie IX · § 25.1 Résumé exécutif : Loi 25, échéance du 1er mai 2027 et mosaïque canadienne (L4205–L4216)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "17 · La chaîne de mandat et le problème des deux sauts — 17.5 Le biais d’automatisation et la supervision de façade (L4248–L4267)"
+            "part_id": "P09",
+            "unit_id": "ch25",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4217,
+            "reference": "Partie IX · § 25.2 Droit québécois et cadre prudentiel canadien (L4217–L4314)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "8 Autonomie et supervision humaine — 8.8 Décisions automatisées et droit à la révision (L3751–L3778)"
+            "part_id": "P09",
+            "unit_id": "ch25",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4315,
+            "reference": "Partie IX · § 25.3 Synthèse architecturale, livrables et portes de contrôle (L4315–L4337)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 (L152–L220)"
+            "part_id": "P09",
+            "unit_id": "ch25",
+            "tome_id": "P09",
+            "file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 25.md (L1–L140)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-3 — Calendrier réglementaire et prudentiel — 3.3 Régimes sectoriels canadiens et québécois : banque, patrimoine, assurances et vie privée (L676–L708)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique — 6.3 Point d’arrêt préventif (PC3) contre révision humaine a posteriori (Loi 25 art. 12.1) (L980–L985)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 165,
+            "reference": "Liminaire · § 0.5 Cadre réglementaire 2023–2035, chaîne probatoire `G0`–`G5`, clause `non-avis` et gel documentaire (L165–L188)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.2.1 Québec (Loi 25) : RPRP, ÉFVP préalable et décisions exclusivement automatisées (L3790–L3799)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.1 Transparence, vie privée et contestation humaine : l'article 12.1 de la Loi 25 au Québec comme révélateur (L1472–L1493)"
+            "part_id": "ANN",
+            "unit_id": "annexe-c",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7434,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
           },
           {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Cadre juridique borné CA/QC/UE (L1384–L1387)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -681,54 +711,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise — 1.2.3 Le cadre européen : EIF, EIRA et l’*Interoperable Europe Act* (L276–L285)"
+            "part_id": "P09",
+            "unit_id": "ch26",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4350,
+            "reference": "Partie IX · Chapitre 26 — Réglementation européenne et référentiels internationaux (L4350–L4494)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.3.2 Identité décentralisée, eIDAS 2.0 et cryptographie post-quantique (L829–L850)"
+            "part_id": "P09",
+            "unit_id": "ch26",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4358,
+            "reference": "Partie IX · § 26.1 Résumé exécutif : portée extraterritoriale, classification unique et coffre souverain (L4358–L4371)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.4.6 Auditabilité et conformité réglementaire des intégrations (L929–L940)"
+            "part_id": "P09",
+            "unit_id": "ch26",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4372,
+            "reference": "Partie IX · § 26.2 Droit européen et référentiels internationaux (L4372–L4461)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "12 Risques, conformité et réglementation — 12.4 Règlement européen sur l’IA (L5844–L5916)"
+            "part_id": "P09",
+            "unit_id": "ch26",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4462,
+            "reference": "Partie IX · § 26.3 Synthèse architecturale, livrables et portes de contrôle (L4462–L4484)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 (L152–L220)"
+            "part_id": "P09",
+            "unit_id": "ch26",
+            "tome_id": "P09",
+            "file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 26.md (L1–L134)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-3 — Calendrier réglementaire et prudentiel — 3.4 Droit européen applicable par effet extraterritorial : AI Act, Omnibus numérique 2026/1744 et cadres connexes (L709–L731)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers — 10.1 Empilement normatif 2026-2033 : une base de preuves unique contre les silos (L1388–L1406)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 165,
+            "reference": "Liminaire · § 0.5 Cadre réglementaire 2023–2035, chaîne probatoire `G0`–`G5`, clause `non-avis` et gel documentaire (L165–L188)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.2.3 & 12.4.3 EU AI Act, Digital Omnibus et réversibilité EU Data Act (L3808–L3982)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.3 L'articulation transatlantique avec l'EU AI Act (août 2026 – août 2028) et le référentiel de gouvernance ISO/IEC 42001 (L1508–L1542)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Union européenne, EN 18286:2026 et DORA (L1392–L1396)"
+            "part_id": "ANN",
+            "unit_id": "annexe-c",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7434,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
           }
         ]
       }
@@ -919,54 +963,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "31 · Le vertical financier : pourquoi l’agentique y est durcie — 31.5 Données, résidence et souveraineté en finance régulée (L7430–L7465)"
+            "part_id": "P09",
+            "unit_id": "ch27",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4495,
+            "reference": "Partie IX · Chapitre 27 — Approvisionnement réversible et clauses contractuelles (L4495–L4624)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "49 · L’horizon 2027-2032 et la frontière de la connaissance vérifiable — 49.1 La grappe d’échéances 2027-2032 : le squelette daté (PROGRAMMÉ) et l’horloge visée (PROJETÉ) (L11027–L11082)"
+            "part_id": "P09",
+            "unit_id": "ch27",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4503,
+            "reference": "Partie IX · § 27.1 Résumé exécutif : banc d'essai éliminatoire, dix clauses et mandat apparent (L4503–L4510)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "13 Approvisionnement et clauses contractuelles — 13.3 Clauses contractuelles normatives (L6367–L6456)"
+            "part_id": "P09",
+            "unit_id": "ch27",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4511,
+            "reference": "Partie IX · § 27.2 Évaluation éliminatoire, clauses de réversibilité et responsabilité B2B (L4511–L4592)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.1 L’état du droit : les humains et les entités derrière l’agent (L19398–L19411)"
+            "part_id": "P09",
+            "unit_id": "ch27",
+            "tome_id": "P09",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4593,
+            "reference": "Partie IX · § 27.3 Synthèse architecturale, livrables et portes de contrôle (L4593–L4615)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.2 Droit du mandat (L19412–L19458)"
+            "part_id": "P09",
+            "unit_id": "ch27",
+            "tome_id": "P09",
+            "file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 27.md (L1–L120)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.3 Formation des contrats (L19459–L19478)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 36 — Responsabilité — 36.4 Responsabilité du fait des produits (L19479–L19500)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-051 — Gouvernance des tiers, clauses contractuelles de sortie, notification et réversibilité éprouvée (L2639–L2653)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-20 — Palier 1, 2028-2029 — 20.3 Initiatives sans regret et initiatives conditionnelles (L4300–L4335)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible — 11.3 Approvisionnement réversible et dix clauses contractuelles (`EXIG-APP-07..16`) (L1498–L1528)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 165,
+            "reference": "Liminaire · § 0.5 Cadre réglementaire 2023–2035, chaîne probatoire `G0`–`G5`, clause `non-avis` et gel documentaire (L165–L188)"
           }
         ]
       }
@@ -1269,54 +1319,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "34 · Les sous-domaines financiers : banque, assurance, patrimoine — 34.1 Bancaire : détail, gros, paiements, crédit, cœur de système (L7738–L8207)"
+            "part_id": "P10",
+            "unit_id": "ch28",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4627,
+            "reference": "Partie X · Chapitre 28 — Cinq profils financiers réglementés et 24 propositions PEX (L4627–L4780)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "12 Risques, conformité et réglementation — 12.10 Exigences sectorielles financières, harmonisation EN 18286:2026 et profil québécois AMF (L6149–L6156)"
+            "part_id": "P10",
+            "unit_id": "ch28",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4635,
+            "reference": "Partie X · § 28.1 Cinq profils financiers réglementés et 24 propositions PEX (DIV-02) (L4635–L4700)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Ouverture — Architecture et gouvernance du tissu conjonctif agentique (L140–L382)"
+            "part_id": "P10",
+            "unit_id": "ch28",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4701,
+            "reference": "Partie X · § 28.2 Durcissement financier, rail RTR ISO 20022 et terrain canadien 2025–2026 (L4701–L4752)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-17 — Assurance de dommages — 17.4 Stade visé en 2035 par domaine et autonomie maximale par classe (L3702–L3716)"
+            "part_id": "P10",
+            "unit_id": "ch28",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4753,
+            "reference": "Partie X · § 28.3 Frontière probante face aux extrapolations et schémas de vulgarisation (L4753–L4769)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-18 — Groupe financier diversifié et synthèse comparative — 18.12 Synthèse comparative des sous-secteurs (L3931–L4064)"
+            "part_id": "P10",
+            "unit_id": "ch28",
+            "tome_id": "P10",
+            "file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 28.md (L1–L142)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-19 — Analyse d’écarts — 19.1 Bilan de l’épreuve sectorielle et clôture de la carte des capacités (L4143–L4151)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 146,
+            "reference": "Liminaire · § 0.4 Gouvernance duale `AE ↔ AS`, rôles cibles et tableau directeur `KPI` / `SLO` (L146–L164)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Annexe C — Registre des principes, décisions, portes, initiatives et propositions d’exigence — C.5 Propositions d’exigence sectorielles (`PEX`) (L5417–L5445)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers — 10.2 Fermeture de `DIV-02` et déclinaison des cinq profils financiers (`24 PEX`) (L1407–L1420)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\\* — A.4 Raccordement des 24 propositions d’exigence sectorielles (`PEX`) (L1805–L1833)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve — 10.4 Cinq frontières métier non délégables : banque ouverte, conseil en patrimoine, assurance de personnes, assurance de dommages et cloisons intra-groupe (L1543–L1594)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -1562,54 +1626,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.1 Les six principes directeurs (L10334–L10439)"
+            "part_id": "P10",
+            "unit_id": "ch29",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4781,
+            "reference": "Partie X · Chapitre 29 — Trois blueprints de référence et cas Groupe Boréal (BEL) (L4781–L4947)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.7 L’architecture de solutions Boréalis, résumée (L10440–L10559)"
+            "part_id": "P10",
+            "unit_id": "ch29",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4789,
+            "reference": "Partie X · § 29.1 Trois blueprints multisectoriels (C01–C40, 5 SBB) et couche C1–C8 (L4789–L4864)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d’un agent d’entreprise — 45.15 Confrontation : ce que l’épreuve vaut, et ce qu’elle ne vaut pas (L10560–L10580)"
+            "part_id": "P10",
+            "unit_id": "ch29",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4865,
+            "reference": "Partie X · § 29.2 Fédération multi-SaaS, reprise Cognitive DR et réseau B2B Palier 3 (L4865–L4906)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.5 Dossier initial du fil rouge : Groupe Boréal Inc. (L318–L342)"
+            "part_id": "P10",
+            "unit_id": "ch29",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4907,
+            "reference": "Partie X · § 29.3 Fil rouge Groupe Boréal (BEL/BCA/BSN), exclusion DC-P11/DC-P12 et Borealis-Bench (L4907–L4936)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique — 1.10 Application au fil rouge : premier flux transversal chez Groupe Boréal (L1049–L1078)"
+            "part_id": "P10",
+            "unit_id": "ch29",
+            "tome_id": "P10",
+            "file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 29.md (L1–L155)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 5 — MCP : le protocole agent-outil — 5.13 Application au fil rouge : connectivité verticale au Groupe Boréal (L2739–L2758)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 146,
+            "reference": "Liminaire · § 0.4 Gouvernance duale `AE ↔ AS`, rôles cibles et tableau directeur `KPI` / `SLO` (L146–L164)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude — 1.1 Positionnement de l’ouvrage et frontières du périmètre (L181–L211)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Liminaire — À propos de ce mémoire — Textes `statut F`, hygiène probatoire et démarcation sectorielle (L31–L34)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables — 14.1–14.4 Trois blueprints sectoriels et synthèse comparative non fonctionnelle (L4311–L4658)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.4 Les 24 [BLOQUANT] PRR, les 5 SBB du Tableau 12 et les 3 blueprints (C01–C40) (L1442–L1471)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }
@@ -1827,54 +1897,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "41 · La fabrique d’agents : produire, certifier et réémettre le parc — 41.1 Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer (L9578–L9674)"
+            "part_id": "P10",
+            "unit_id": "ch30",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4948,
+            "reference": "Partie X · Chapitre 30 — Usine logicielle GitOps et anti-patrons agentiques (L4948–L5088)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "49 · L’horizon 2027-2032 et la frontière de la connaissance vérifiable — 49.14 Les frontières de la fabrique de confiance (L11397–L11418)"
+            "part_id": "P10",
+            "unit_id": "ch30",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4956,
+            "reference": "Partie X · § 30.1 Usine logicielle IAP, fabrique d'agents et asymétrie des suites SaaS (L4956–L5002)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "7 Orchestration — 7.9 Anti-patrons proscrits (L3269–L3295)"
+            "part_id": "P10",
+            "unit_id": "ch30",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 5003,
+            "reference": "Partie X · § 30.2 Catalogue bloquant des anti-patrons agentiques (EXIG-ORC-29, AP-01–AP-12) (L5003–L5046)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.1 Grille d’analyse (L13674–L13695)"
+            "part_id": "P10",
+            "unit_id": "ch30",
+            "tome_id": "P10",
+            "file": "Compendium/Compendium.md",
+            "line_start": 5047,
+            "reference": "Partie X · § 30.3 Modèle de maturité AAGMM (M1–M5) et feuille de route à 360 jours (L5047–L5078)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.2 Microsoft (L13696–L13711)"
+            "part_id": "P10",
+            "unit_id": "ch30",
+            "tome_id": "P10",
+            "file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 30.md (L1–L130)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — IBM (L13795–L13800)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 146,
+            "reference": "Liminaire · § 0.4 Gouvernance duale `AE ↔ AS`, rôles cibles et tableau directeur `KPI` / `SLO` (L146–L164)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 26 — Plateformes d’entreprise — 26.9 Interopérabilité déclarée et interopérabilité constatée (L13829–L13871)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-11 — Cible invariante et cible conditionnelle — 11.5 Ce que l’architecture cible exclut délibérément (L2829–L2838)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 5 — Orchestration hybride (OO1–OO4, 8 patrons), exécution durable, sagas et sémantique d’effet — 5.2 Catalogue fermé des topologies autorisées (8 patrons + 1 variante) et proscription des antipatrons (L734–L753)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps) — 13.1, 13.3–13.4 Architecture IAP, GitOps cognitif et déploiement progressif (L3997–L4306)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }

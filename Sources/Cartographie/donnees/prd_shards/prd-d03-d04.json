@@ -166,39 +166,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent), L1984–L2132"
+            "part_id": "P03",
+            "unit_id": "ch07",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1240,
+            "reference": "Partie III · Chapitre 07 — Protocoles verticaux outil-modèle : épinglage MCP 2026-07-28, façades d'intention et intégrité SHA-256 (L1240–L1429)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Annexe N — Actualisation de novembre 2026 (SEP-3398), L12879–L12936"
+            "part_id": "P03",
+            "unit_id": "ch07",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1244,
+            "reference": "Partie III · § 7.1 Rupture verticale, épinglage MCP 2026-07-28 et résolution DISC-05 (L1244–L1274)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Section 6 Interopérabilité (EXIG-MCP-01..22), L1751–L2134"
+            "part_id": "P03",
+            "unit_id": "ch07",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1275,
+            "reference": "Partie III · § 7.2 Architecture de la couche verticale : transport sans état, façades d'intention et intégrité SHA-256 (L1275–L1394)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 5 — MCP : le protocole agent-outil (ADR-005, façades ACI, WebMCP), L1833–L2738"
+            "part_id": "P03",
+            "unit_id": "ch07",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1395,
+            "reference": "Partie III · § 7.3 Synthèse opérationnelle, livrables et frontières du Chapitre 07 (L1395–L1413)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 3 — Couche protocolaire MCP/A2A et passerelle 9 contrôles, L415–L583"
+            "part_id": "P03",
+            "unit_id": "ch07",
+            "tome_id": "P03",
+            "file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 07.md (L1–L173)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 4 — Interopérabilité verticale agent-outil MCP, L1176–L1246"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 01 — Harnais 80/20 et adaptateur MCP 2026-07-28, L371–L393"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -408,39 +429,52 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitre 8 — A2A (agent-agent) et Chapitre 10 — AP2 et AGNTCY, L2133–L2928"
+            "part_id": "P03",
+            "unit_id": "ch08",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1430,
+            "reference": "Partie III · Chapitre 08 — Protocoles horizontaux pair-à-pair : A2A v1.0.1, pile AGNTCY/SLIM, paiements AP2 et fédération B2B (L1430–L1610)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitre 36 — Prospective : AP2 sur les rails canadiens ? (S-090/S-091), L8528–L8699"
+            "part_id": "P03",
+            "unit_id": "ch08",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1434,
+            "reference": "Partie III · § 8.1 Axe horizontal pair-à-pair, non-substituabilité et désambiguïsation ACP (L1434–L1465)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Section 6 Interopérabilité (EXIG-A2A-01..15, EXIG-INT-20..22), L2135–L2713"
+            "part_id": "P03",
+            "unit_id": "ch08",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1466,
+            "reference": "Partie III · § 8.2 Délégation A2A, piles fédérées, paiements AP2 et fédération B2B (L1466–L1566)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitres 6, 7 et 10 — A2A, AG-UI/A2UI/WebRTC et Commerce agentique, L2804–L4723"
+            "part_id": "P03",
+            "unit_id": "ch08",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1567,
+            "reference": "Partie III · § 8.3 Interfaces humain-agent sûres, livrables et frontières du Chapitre 08 (L1567–L1597)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 45 — Réseaux B2B fédérés (EDC/DSP, ODRL 2.2, vLEI), L23375–L23429"
+            "part_id": "P03",
+            "unit_id": "ch08",
+            "tome_id": "P03",
+            "file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 08.md (L1–L167)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitres 3 et 9 — Non-substituabilité A2A/AP2 et réseaux B2B P3, L431–L582"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 5 — A2A, AGNTCY et fédération inter-agents, L1450–L1730"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           }
         ]
       }
@@ -692,34 +726,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitre 9 — Découverte, registres, portabilité et Chapitre 42 — Matrice 0/15 Z1–Z5, L2305–L2633"
+            "part_id": "P03",
+            "unit_id": "ch09",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1611,
+            "reference": "Partie III · Chapitre 09 — Passerelles PEP à neuf contrôles, découverte gouvernée, routage d'inférence et anti-verrouillage (L1611–L1787)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitre 42 — La matrice protocoles × exigences réglementaires (Tableau 42.1/42.2), L9725–L9838"
+            "part_id": "P03",
+            "unit_id": "ch09",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1615,
+            "reference": "Partie III · § 9.1 Médiation bidirectionnelle PEP à neuf contrôles et séparation des plans (L1615–L1661)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Sections 5 et 6 — Passerelle PEP et catalogue à 5 statuts (EXIG-ARC-01/21, EXIG-INT-01..23), L1106–L2662"
+            "part_id": "P03",
+            "unit_id": "ch09",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1662,
+            "reference": "Partie III · § 9.2 Découverte gouvernée, matrice compensatoire et routage d'inférence (L1662–L1755)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitres 8, 23, 24 et 44 — Découverte, AgentMesh, Passerelles et Routage KV-cache, L3818–L23318"
+            "part_id": "P03",
+            "unit_id": "ch09",
+            "tome_id": "P03",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1756,
+            "reference": "Partie III · § 9.3 Synthèse opérationnelle, livrables et frontières du Chapitre 09 (L1756–L1774)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 3 — Passerelle à neuf contrôles, Borealis-Bench et anti-verrouillage, L437–L583"
+            "part_id": "P03",
+            "unit_id": "ch09",
+            "tome_id": "P03",
+            "file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 09.md (L1–L163)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 4 — Passerelle d'agents et contrôles ordonnés, L1247–L1329"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
+          },
+          {
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+          },
+          {
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -925,34 +993,52 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitres 2, 5 et 33 — Ontologies, RAG agentique et ISO 20022 Lynx/RTR, L492–L7719"
+            "part_id": "P04",
+            "unit_id": "ch10",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1790,
+            "reference": "Partie IV · Chapitre 10 — Sémantique métier, ontologies financières, contrats de données ODCS et compilation du contexte (L1790–L1924)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Section 6 Interopérabilité (EXIG-INT-02/12..16), L1523–L1553"
+            "part_id": "P04",
+            "unit_id": "ch10",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1796,
+            "reference": "Partie IV · § 10.1 Problématique sémantique, écart accord-compréhension et données prêtes pour l'agent (L1796–L1811)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitres 12, 13, 15 et 47 — Couche sémantique, Contexte, Données prêtes et WAP ODCS, L5729–L25760"
+            "part_id": "P04",
+            "unit_id": "ch10",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1812,
+            "reference": "Partie IV · § 10.2 Architecture sémantique, contrats ODCS et compilation déterministe du contexte (L1812–L1894)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitres M-4 et M-10 — Standards de données sectoriels et capacités cibles, L919–L2174"
+            "part_id": "P04",
+            "unit_id": "ch10",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1895,
+            "reference": "Partie IV · § 10.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables (L1895–L1913)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 4 — Sémantique métier, compilation du contexte et résolution ADR-009/DEC-003, L584–L611"
+            "part_id": "P04",
+            "unit_id": "ch10",
+            "tome_id": "P04",
+            "file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 10.md (L1–L123)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 6 — Ingénierie du contexte et souveraineté sémantique, L1733–L2044"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           }
         ]
       }
@@ -1116,34 +1202,52 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitres 5, 24 et 39 — CoALA, RAG ACL et agent qui apprend (§39.5), L1302–L9336"
+            "part_id": "P04",
+            "unit_id": "ch11",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1925,
+            "reference": "Partie IV · Chapitre 11 — Mémoire CoALA à quatre compartiments isolés, bi-temporalité auditable et filtrage ACL pré-récupération (L1925–L2052)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Section 5 Architecture de référence (EXIG-ARC-22..25, PRIN-11), L1367–L1463"
+            "part_id": "P04",
+            "unit_id": "ch11",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1931,
+            "reference": "Partie IV · § 11.1 Gouvernance de la mémoire longue et refus du stockage indifférencié (L1931–L1944)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitres 14, 31 et 38 — Mémoire partagée, bi-temporalité, ASI06 et Loi 25, L7172–L19919"
+            "part_id": "P04",
+            "unit_id": "ch11",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1945,
+            "reference": "Partie IV · § 11.2 Compartimentation CoALA, bi-temporalité et filtrage ACL pré-récupération (L1945–L2018)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitres M-10 et M-13 — Capacité CAP-019 et décision DEC-004, L2130–L3085"
+            "part_id": "P04",
+            "unit_id": "ch11",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2019,
+            "reference": "Partie IV · § 11.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables (L2019–L2041)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 4 §4.3 — Quatre mémoires CoALA et oubli sélectif, L612–L655"
+            "part_id": "P04",
+            "unit_id": "ch11",
+            "tome_id": "P04",
+            "file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 11.md (L1–L116)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 6 — Propagation ACL (OpenFGA/RLS) et Silo/Bridge/Pool, L1733–L2044"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           }
         ]
       }
@@ -1342,34 +1446,52 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "Chapitres 1, 34 et 45 — Médiation ESB/EDI, cœurs bancaires et intégration sans duplication, L308–L10425"
+            "part_id": "P04",
+            "unit_id": "ch12",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2053,
+            "reference": "Partie IV · Chapitre 12 — Encapsulation patrimoniale déterministe (EBCDIC/COMP-3), extinction CUA, sas OT et six substrats d'état (L2053–L2182)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "Section 5 Architecture de référence (EXIG-ARC-14..18) et Section 6 (EXIG-MCP-06), L1244–L1936"
+            "part_id": "P04",
+            "unit_id": "ch12",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2059,
+            "reference": "Partie IV · § 12.1 Préservation des cœurs transactionnels et principes de l'encapsulation déterministe (L2059–L2072)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitres 25, 28 et 46 — Intégration patrimoine COMP-3/CUA, OT Purdue/OPC UA et Edge CRDT, L12983–L24812"
+            "part_id": "P04",
+            "unit_id": "ch12",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2073,
+            "reference": "Partie IV · § 12.2 Couche anti-corruption, extinction CUA, sas OT et souveraineté des six substrats (L2073–L2149)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitres M-9, M-10 et M-20 — Six substrats (PRI-011, CAP-032) et extinction CUA, L1604–L4346"
+            "part_id": "P04",
+            "unit_id": "ch12",
+            "tome_id": "P04",
+            "file": "Compendium/Compendium.md",
+            "line_start": 2150,
+            "reference": "Partie IV · § 12.3 Contrat d'exigences, validation PRR et invariants exécutables (L2150–L2172)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitres 4 §4.4 et 9 §9.2 — Couche anticorruption COMP-3/CUA, OT et six substrats, L656–L1322"
+            "part_id": "P04",
+            "unit_id": "ch12",
+            "tome_id": "P04",
+            "file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 12.md (L1–L119)"
           },
           {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 15 — Coexistence BPMN 2.0 / iPaaS / RPA et Strangler Fig en 4 stades, L4669–L4805"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           }
         ]
       }

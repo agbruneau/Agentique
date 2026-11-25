@@ -272,84 +272,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils — 4.0.1 Du modèle conversationnel à l’agent qui agit sur le monde (L955–L970)"
+            "part_id": "P07",
+            "unit_id": "ch19",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3199,
+            "reference": "Partie VII · Chapitre 19 — Surface d'attaque protocolaire, menaces OWASP ASI01–10 et chaîne logistique d'outils (L3199–L3362)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "5 · Ancrage informationnel : mémoire, contexte, RAG agentique — 5.4.2 Gouvernance d’accès, ancrage et évaluation (L1475–L1499)"
+            "part_id": "P07",
+            "unit_id": "ch19",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3209,
+            "reference": "Partie VII · § 19.1 Résumé exécutif : trois surfaces non composables et quatre verrous préventifs (L3209–L3218)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "11 · Modes d’échec et taxonomie des risques protocolaires — 11.1.2 Modèle de menace de la pile et la triade létale amplifiée (L3005–L3024)"
+            "part_id": "P07",
+            "unit_id": "ch19",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3219,
+            "reference": "Partie VII · § 19.2 Surface d'attaque protocolaire et modélisation multicouche (L3219–L3331)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "9 Identité, sécurité et confiance zéro — 9.5 Menaces propres aux agents (L4237–L4295)"
+            "part_id": "P07",
+            "unit_id": "ch19",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3332,
+            "reference": "Partie VII · § 19.3 Synthèse architecturale, livrables et portes de contrôle (L3332–L3352)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "9 Identité, sécurité et confiance zéro — 9.6 Se défendre contre l’injection d’instructions (L4296–L4311)"
+            "part_id": "P07",
+            "unit_id": "ch19",
+            "tome_id": "P07",
+            "file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 19.md (L1–L153)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "9 Identité, sécurité et confiance zéro — 9.6 Se défendre contre l’injection d’instructions (L4365–L4425)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 13 — Ingénierie du contexte — Surface d’injection indirecte (L6798–L6864)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 14 — Mémoire — Trois voies d’attaque documentées (L7313–L7320)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert — 6.3 Six familles de techniques en transfert industriel (2028-2035) (L1184–L1220)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-038 — Décontamination des entrées externes non fiables et défense contre les menaces agentiques (L2433–L2447)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 7 — Fabrique de confiance : NHI, 2e saut, défense anti-injection et transition PKI / post-quantique — 7.3 Défense anti-injection (`OWASP ASI`, règle de deux, `CaMeL`) et microVM à quatre verrous (L1103–L1130)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 4 — Interopérabilité verticale agent-outil : Model Context Protocol (MCP), passerelles et intégration du patrimoine — 4.2.3 Remédiations : façades d’intention, Dynamic Toolsets, Code Mode et intégrité OWASP (L1219–L1240)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques — 10.1 Modèle de menaces OWASP Agentic Top 10 : Goal Hijacking, Confused Deputy et injections indirectes (L3058–L3112)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr — 8.1 Nouvelle surface d'attaque : injection indirecte, détournement d'objectif et compromission de la chaîne d'approvisionnement des registres d'outils (L1172–L1203)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Annexe A — Glossaire raisonné français-anglais de l'entreprise agentique — Blanchiment de frontière (boundary laundering) (L1864–L1867)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) — 1.2.1 Anatomie de la dérive silencieuse (40,58 %) et leçon du défaut F-52 (L277–L286)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -629,79 +613,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "37 · Le maillage d’agents : du *service mesh* au point d’application (PEP/PDP et *zero trust* agentique) — 37.5 PEP et PDP agentiques : où se prend et où s’applique la décision d’autorisation (L8854–L8887)"
+            "part_id": "P07",
+            "unit_id": "ch20",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3363,
+            "reference": "Partie VII · Chapitre 20 — Politiques hors modèle OPA/Rego/Cedar, Règle de deux et séparation contrôle/données CaMeL (L3363–L3573)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "41 · La fabrique d’agents : produire, certifier et réémettre le parc — 41.4 La barrière de certification : ce qu’un agent démontre avant d’être admis au maillage (L9630–L9645)"
+            "part_id": "P07",
+            "unit_id": "ch20",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3373,
+            "reference": "Partie VII · § 20.1 Résumé exécutif : externaliser l'autorité, fermer par défaut et briser la triade (L3373–L3382)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "9 Identité, sécurité et confiance zéro — 9.1 La confiance zéro appliquée aux agents (L3791–L3829)"
+            "part_id": "P07",
+            "unit_id": "ch20",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3383,
+            "reference": "Partie VII · § 20.2 Moteurs de politiques déterministes, Règle de deux et isolation CaMeL (L3383–L3543)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "9 Identité, sécurité et confiance zéro — 9.4 La passerelle d’agents, point d’application des politiques (L4177–L4236)"
+            "part_id": "P07",
+            "unit_id": "ch20",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3544,
+            "reference": "Partie VII · § 20.3 Synthèse architecturale, livrables et portes de contrôle (L3544–L3563)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie — Contrats (L1278–L1283)"
+            "part_id": "P07",
+            "unit_id": "ch20",
+            "tome_id": "P07",
+            "file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 20.md (L1–L200)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 6 — A2A : le protocole agent-agent — Extrait 6.4 — `[Exécuté en CI]` (2 blocs) · Document d’identité ANP (did:wba) et politique Cedar d’admission DMZ (L3495–L3562)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence — 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-037 — Point de décision de politique déterministe hors modèle et preuve formelle d’invariants (L2417–L2432)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 3 — Couche protocolaire (MCP, A2A, événements), passerelle à neuf contrôles et anti-verrouillage — 3.3 Passerelle d’agents bidirectionnelle (`PEP`) à neuf contrôles ordonnés (L445–L546)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 7 — Fabrique de confiance : NHI, 2e saut, défense anti-injection et transition PKI / post-quantique — 7.3 Défense anti-injection (`OWASP ASI`, règle de deux, `CaMeL`) et microVM à quatre verrous (L1103–L1130)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques — 10.3.3 Intent Gates déterministes : Policy-as-Code avec OPA/Rego et Cedar (L3242–L3258)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr — 8.2 & 8.4 Les limites mesurées des filtres par modèle auxiliaire et contrôle comme problème de sûreté (STAMP) (L1204–L1314)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr — 8.3 Sécurité par construction : séparation stricte entre flux de contrôle et flux de données non fiables, et règle de deux (L1233–L1278)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 03 — Politiques hors modèle (OPA / Rego), Règle de deux, confinement déterministe et sémantique d'effet Saga à dix scénarios de fautes — 3.1 Arbitrage OPA / Rego vs Cedar, contrat default allow := false et 100 % de couverture négative (EXIG-SEC-06, CaMeL) (L855–L938)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 03 — Politiques hors modèle (OPA / Rego), Règle de deux, confinement déterministe et sémantique d'effet Saga à dix scénarios de fautes — 3.1.4–3.1.5 Contrat rule_of_two.rego et suivi de contamination CaMeL (L899–L981)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }
@@ -940,84 +913,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "11 · Modes d’échec et taxonomie des risques protocolaires — 11.2.2 Défaillances en cascade, incidents de production et effet cumulatif (L3111–L3133)"
+            "part_id": "P07",
+            "unit_id": "ch21",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3574,
+            "reference": "Partie VII · Chapitre 21 — Confinement éphémère (SHADI/microVM/WASI), enclaves TEE/HYOK et coupe-circuit SOC/SOAR (L3574–L3701)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "20 · Usurpation, révocation et boucle défensive : du *rug-pull* au centre opérationnel de sécurité (SOC) agentique — 20.7 Le seuil franchi : l’attaque largement autonome est démontrée (L4793–L4806)"
+            "part_id": "P07",
+            "unit_id": "ch21",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3584,
+            "reference": "Partie VII · § 21.1 Résumé exécutif : caisson étanche, souveraineté réaliste et frein d'urgence sélectif (L3584–L3593)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "20 · Usurpation, révocation et boucle défensive : du *rug-pull* au centre opérationnel de sécurité (SOC) agentique — 20.8 État de l’*agentic SOC* : offres datées, périmètres réels (L4807–L4836)"
+            "part_id": "P07",
+            "unit_id": "ch21",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3594,
+            "reference": "Partie VII · § 21.2 Confinement matériel, enclaves et boucle défensive SOC/SOAR (L3594–L3670)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "5 Architecture de référence — 5.2 Responsabilités et règles par couche (L1206–L1213)"
+            "part_id": "P07",
+            "unit_id": "ch21",
+            "tome_id": "P07",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3671,
+            "reference": "Partie VII · § 21.3 Synthèse architecturale, livrables et portes de contrôle (L3671–L3692)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "9 Identité, sécurité et confiance zéro — 9.7 Cloisonnement de l’exécution du code (L4426–L4593)"
+            "part_id": "P07",
+            "unit_id": "ch21",
+            "tome_id": "P07",
+            "file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 21.md (L1–L118)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 (L152–L220)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 5 — MCP : le protocole agent-outil — 5.9 Architecture de production : hôte, client, passerelle et serveur (L2247–L2403)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-030 — Confinement d’exécution en bac à sable isolé matériellement sans réseau sortant (L2305–L2319)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-20 — Palier 1, 2028-2029 — 20.3 Initiatives sans regret et initiatives conditionnelles (L4300–L4335)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 7 — Fabrique de confiance : NHI, 2e saut, défense anti-injection et transition PKI / post-quantique — 7.3 Défense anti-injection (`OWASP ASI`, règle de deux, `CaMeL`) et microVM à quatre verrous (L1103–L1130)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 9 — Plan d’inférence, six substrats d’état, confidentialité matérielle, résilience et réseaux B2B — 9.2 Souveraineté juridictionnelle, six substrats d’état, `TEE` / `HYOK` et continuité cognitive (L1306–L1322)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20 — 3.1.3–3.1.4 Environnements durcis SHADI et confinement en grappe (L862–L894)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques — 10.4 Confinement d’exécution (microVM, gVisor, WASM), protection PII et postures AISPM/AIDR (L3265–L3377)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr — 8.4 Confinement matériel et système des exécutions (L1279–L1314)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 09 — Observer, prouver et compter au coût complet du résultat conforme — 9.3 Disjoncteurs cognitifs et continuité d'exploitation : plafonds budgétaires, bascule bimodèle qualifiée et arrêt d'urgence rapide (L1391–L1412)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 03 — Politiques hors modèle (OPA / Rego), Règle de deux, confinement déterministe et sémantique d'effet Saga à dix scénarios de fautes — 3.2 Profils déclaratifs de confinement sans KVM et arithmétique Decimal vs IEEE-754 (L982–L1033)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           }
         ]
       }
@@ -1307,79 +1256,76 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.4.2 Cycle de vie des contrats, niveaux de service et application à l’exécution (L867–L888)"
+            "part_id": "P08",
+            "unit_id": "ch22",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3704,
+            "reference": "Partie VIII · Chapitre 22 — Observabilité OpenTelemetry GenAI, double couloir PII et scellage probatoire JCS/SCITT + SLH-DSA (L3704–L3884)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "3 · Sécurité, identité et gouvernance de l’interopérabilité — 3.4.5 Traçage distribué : OpenTelemetry et W3C Trace Context (L915–L928)"
+            "part_id": "P08",
+            "unit_id": "ch22",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3712,
+            "reference": "Partie VIII · § 22.1 Résumé exécutif : instrumentation stabilisée et séparation physique des preuves (L3712–L3719)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "10 Observabilité, évaluation et FinOps — 10.1 Traçage de bout en bout (L4732–L4870)"
+            "part_id": "P08",
+            "unit_id": "ch22",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3720,
+            "reference": "Partie VIII · § 22.2 Télémétrie distribuée, provenance et scellage probatoire (L3720–L3855)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "10 Observabilité, évaluation et FinOps — 10.2 Contenu des invites et des réponses (L4871–L4914)"
+            "part_id": "P08",
+            "unit_id": "ch22",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3856,
+            "reference": "Partie VIII · § 22.3 Synthèse architecturale, livrables et portes de contrôle (L3856–L3873)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 (L152–L220)"
+            "part_id": "P08",
+            "unit_id": "ch22",
+            "tome_id": "P08",
+            "file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 22.md (L1–L169)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 5 — MCP : le protocole agent-outil — La traçabilité (L1969–L1972)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-4 — Calendrier de normalisation et standards de données sectoriels — 4.4 Observabilité, normes internationales de gouvernance et souveraineté infonuagique (L903–L918)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 146,
+            "reference": "Liminaire · § 0.4 Gouvernance duale `AE ↔ AS`, rôles cibles et tableau directeur `KPI` / `SLO` (L146–L164)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — 10.7 Plan de contrôle, volet 2 — Observabilité, évaluation et FinOps (`CAP-042` à `CAP-046`) (L2494–L2573)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 8 — Observabilité à double couloir PII, journal d’audit JCS, évaluation E1–E3 et FinOps CPO — 8.1 Télémétrie `OpenTelemetry GenAI` épinglée et collecte souveraine à double couloir PII (L1193–L1203)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 8 — Observabilité à double couloir PII, journal d’audit JCS, évaluation E1–E3 et FinOps CPO — 8.2 Séparation des trois magasins et journal d’audit chaîné `RFC 8785` (`≥ 24 mois`) (L1204–L1217)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) — 11.1 Instrumentation unifiée OpenTelemetry GenAI : corrélation traces, identités SPIFFE / OBO et coûts (L3390–L3493)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) — 11.1.4 & 11.3 Assainissement, Tail Sampling, SLI/SLO comportementaux et rejeu forensique (L3472–L3649)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 09 — Observer, prouver et compter au coût complet du résultat conforme — 9.1 Le double couloir de télémétrie : séparer les métadonnées opérationnelles sans contenu personnel et le journal d'audit probatoire canonique (L1327–L1356)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS) — 2.3 Mappage OTel v1.41.0 ↔ semantic-conventions-genai, caviardage PII bilingue (FR/EN) et jointure trace ↔ mandat (lacune 21) (L711–L784)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS) — 2.3.2–2.3.3 Jointure trace ↔ mandat et caviardage déterministe PII bilingue (FR/EN) (L730–L784)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -1630,79 +1576,68 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "6 · Systèmes multi-agents, évaluation et sûreté — 6.3.1 Pourquoi évaluer un agent est difficile (L1589–L1603)"
+            "part_id": "P08",
+            "unit_id": "ch23",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3885,
+            "reference": "Partie VIII · Chapitre 23 — Banc EvalOps hermétique (E1–E3), bornes de Wilson, tests métamorphiques FR/EN et distillation contrôlée (L3885–L4061)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "6 · Systèmes multi-agents, évaluation et sûreté — 6.3.3 Bancs d’essai de capacité (L1620–L1633)"
+            "part_id": "P08",
+            "unit_id": "ch23",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3893,
+            "reference": "Partie VIII · § 23.1 Résumé exécutif : validation hermétique, rigueur statistique et distillation bornée (L3893–L3900)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "39 · Le cycle de vie opérationnel : évaluation continue, dérive et incident — 39.1 L’évaluation en production : des jeux d’essai à l’évaluation continue (L9199–L9260)"
+            "part_id": "P08",
+            "unit_id": "ch23",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 3901,
+            "reference": "Partie VIII · § 23.2 Qualification E1–E3, dimensionnement de Wilson, invariance sans oracle et distillation (L3901–L4029)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "10 Observabilité, évaluation et FinOps — 10.4 Évaluation continue (L4974–L5070)"
+            "part_id": "P08",
+            "unit_id": "ch23",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4030,
+            "reference": "Partie VIII · § 23.3 Synthèse architecturale, livrables et portes de contrôle (L4030–L4050)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.5 Dossier initial du fil rouge : Groupe Boréal Inc. (L318–L342)"
+            "part_id": "P08",
+            "unit_id": "ch23",
+            "tome_id": "P08",
+            "file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 23.md (L1–L165)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 23 — Architecture de référence — 23.8 Évaluer une architecture d’agents (L12545–L12559)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 24 — Passerelles et intégration — Banc expérimental interne *Borealis-Bench* (Campagnes 1 et 3 — évaluation artificielle FEDS) (L12861–L12875)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 146,
+            "reference": "Liminaire · § 0.4 Gouvernance duale `AE ↔ AS`, rôles cibles et tableau directeur `KPI` / `SLO` (L146–L164)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-043 — Qualification pré-production par simulation multi-tours répétée, chaos et déploiement progressif (L2513–L2528)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-10 — Carte des capacités cibles — CAP-044 — Surveillance continue en production, détection de dérive et pilotage par budgets d’erreur (L2529–L2543)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-24 — Pilotage, indicateurs et portes — 24.3 Indicateurs d’exploitation, de fiabilité et de vigilance humaine (L4840–L4857)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 8 — Observabilité à double couloir PII, journal d’audit JCS, évaluation E1–E3 et FinOps CPO — 8.3 Évaluation continue `E1–E3`, constance `pass^k` et rétrogradation sur dérive SLO (L1218–L1227)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) — 11.2 Pipeline EvalOps industriel : golden datasets de trajectoires, mock MCP servers et juges calibrés (L3494–L3573)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 09 — Observer, prouver et compter au coût complet du résultat conforme — 9.2 Juger sur la constance et non sur la moyenne (L1357–L1390)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.1 & 4.3 Banc hermétique et relations métamorphiques sans oracle FR/EN (L1188–L1377)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints — 4.2 Dimensionnement statistique par intervalle de Wilson à 95 % < p (>= 3/p essais indépendants sans échec, EXIG-EVA-03) (L1235–L1303)"
+            "part_id": "ANN",
+            "unit_id": "annexe-a",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6056,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
           }
         ]
       }
@@ -1940,84 +1875,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "24 · Le passage à l’échelle de l’entreprise — 24.8 Capacité d’inférence, budget de latence et contention (L5938–L5953)"
+            "part_id": "P08",
+            "unit_id": "ch24",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4062,
+            "reference": "Partie VIII · Chapitre 24 — SRE agentique, FinOps FOCUS v1.4 au Cost-per-Outcome, routage frugal et comptabilité carbone (L4062–L4194)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "39 · Le cycle de vie opérationnel : évaluation continue, dérive et incident — 39.4 GitOps du parc d’agents : versionner le mandat protocolaire, promouvoir, revenir en arrière (L9285–L9358)"
+            "part_id": "P08",
+            "unit_id": "ch24",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4070,
+            "reference": "Partie VIII · § 24.1 Résumé exécutif : gouverner par le coût complet, la frugalité et l'opposabilité (L4070–L4077)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "40 · Les indicateurs de l’AgentOps et le FinOps des agents — 40.5 Le modèle de coût agentique comme contrainte d’ingénierie de premier ordre (L9499–L9561)"
+            "part_id": "P08",
+            "unit_id": "ch24",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4078,
+            "reference": "Partie VIII · § 24.2 Ingénierie FinOps FOCUS, plan d'inférence frugal et SRE agentique (L4078–L4167)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "10 Observabilité, évaluation et FinOps — 10.5 Économie de l’inférence (L5071–L5110)"
+            "part_id": "P08",
+            "unit_id": "ch24",
+            "tome_id": "P08",
+            "file": "Compendium/Compendium.md",
+            "line_start": 4168,
+            "reference": "Partie VIII · § 24.3 Synthèse architecturale, livrables et portes de contrôle (L4168–L4185)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "10 Observabilité, évaluation et FinOps — 10.6 Maîtrise des coûts (L5111–L5206)"
+            "part_id": "P08",
+            "unit_id": "ch24",
+            "tome_id": "P08",
+            "file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 24.md (L1–L123)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.2 Enjeux économiques et opérationnels de 2027 (L221–L242)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 130,
+            "reference": "Liminaire · § 0.3 Architecture systémique des douze domaines, 616 interrelations et chaîne de confiance (L130–L145)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.5 Dossier initial du fil rouge : Groupe Boréal Inc. (L318–L342)"
-          },
-          {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 13 — Ingénierie du contexte — Coût cumulé du pré-remplissage (L6786–L6793)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-7 — Marché, coûts, énergie et compétences — 7.2 Économie de l’inférence agentique et pilotage par le coût par résultat vérifié (L1316–L1334)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-24 — Pilotage, indicateurs et portes — 24.4 Méthode de dimensionnement économique : le coût complet par résultat conforme (`EF-13`) (L4858–L4874)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 8 — Observabilité à double couloir PII, journal d’audit JCS, évaluation E1–E3 et FinOps CPO — 8.4 Gouvernance économique `FinOps` : du jeton trompeur au coût par résultat conforme (`CPO`) (L1228–L1261)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 9 — Plan d’inférence, six substrats d’état, confidentialité matérielle, résilience et réseaux B2B — 9.1 Plan de données d’inférence, séparation modèle / réplique et cinq horloges de versionnage (L1287–L1305)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20 — 3.2 Typologie et spécialisation des modèles : frontier LLMs, SLMs spécialisés et cascade d’inférence (L895–L959)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 12.3–12.4 FinOps agentique, économie unitaire, Showback/Chargeback et TCO/ROI (L3860–L3982)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 09 — Observer, prouver et compter au coût complet du résultat conforme — 9.4 Gouvernance économique (FinOps agentique) : piloter au coût complet du résultat conforme plutôt qu'au prix facial du jeton (L1413–L1459)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS) — 2.4.3 Calculateur CPO exact et enregistrements FOCUS v1.4 extensibles carbone (CAP-046) (L809–L827)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 146,
+            "reference": "Liminaire · § 0.4 Gouvernance duale `AE ↔ AS`, rôles cibles et tableau directeur `KPI` / `SLO` (L146–L164)"
           }
         ]
       }

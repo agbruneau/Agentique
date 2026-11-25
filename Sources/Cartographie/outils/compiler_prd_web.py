@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Compilateur de la page web autonome dédiée au PRD maître du Corpus Agentique.
+"""Compilateur de la page web autonome dédiée au PRD maître (socle Compendium).
 
 Assemble :
-- ``Cartographie/donnees/prd-web-data.json`` (produit par ``preparer_donnees_prd_web.py``)
-- ``Cartographie/outils/template_prd_web.html``
+- ``Sources/Cartographie/donnees/prd-web-data.json`` (produit par ``preparer_donnees_prd_web.py``)
+- ``Sources/Cartographie/outils/template_prd_web.html``
 
 Valide le contrat JSON minimal attendu (12 parties, 36 chapitres, 71 familles,
-260 thèmes, 5 annexes A–E, 115 schémas de vulgarisation, 319 figures Tomes),
+260 thèmes, 5 annexes A–E, 115 schémas de vulgarisation, 319 figures historiques,
+56 vedettes de glossaire et socle probatoire Compendium),
 échappe de façon sûre le JSON embarqué pour ``<script type="application/json">``,
 vérifie l'autonomie hors ligne stricte (zéro URL ``http://`` ou ``https://`` hors
 bloc JSON) et génère :
-- ``Cartographie/PRD - Référentiel directeur de l'entreprise agentique.html``
+- ``Sources/Cartographie/PRD - Référentiel directeur de l'entreprise agentique.html``
 """
 
 from __future__ import annotations
@@ -111,6 +112,12 @@ def validate_prd_web_payload(payload: dict[str, Any]) -> dict[str, int]:
     if not node_map:
         raise ValueError("lookup.node_id_to_prd ne doit pas être vide.")
 
+    glossary = payload.get("glossary") or []
+    if len(glossary) != 56:
+        raise ValueError(f"glossary attendu=56 vedettes, trouvé={len(glossary)}")
+    if not any("agentivité des systèmes" in str(g.get("fr", "")).lower() for g in glossary):
+        raise ValueError("Vedette obligatoire 'Agentivité des systèmes' absente de glossary.")
+
     return {
         "exec_sections": len(exec_sections),
         "parties": len(parties),
@@ -122,6 +129,7 @@ def validate_prd_web_payload(payload: dict[str, Any]) -> dict[str, int]:
         "tome_figures": len(inv_figures),
         "chapter_interrelations": interrelation_count,
         "lookup_nodes": len(node_map),
+        "glossary_terms": len(glossary),
     }
 
 

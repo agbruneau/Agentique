@@ -1,73 +1,139 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "title": "Schéma formel de la cartographie thématique et structurelle du corpus agentique",
-  "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux, des unités structurelles (9 fichiers Markdown) et de la matrice de concordance inter-tomes pour l'ensemble du corpus (Tomes 1 à 8 + Tomes/README.md).",
+  "title": "Schéma formel de la cartographie thématique et structurelle du Compendium agentique",
+  "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 115 schémas compilés et de la matrice de concordance pour le Compendium (837 pages PDF, 56 termes glossaire, 135 sources L+, gel du 2 décembre 2026).",
   "corpus_scope": {
-    "total_markdown_files": 9,
+    "compendium_pdf_pages": 837,
+    "compendium_markdown_lines": 8408,
+    "compendium_units": 42,
+    "compendium_sections": 15,
+    "compendium_schemas": 115,
+    "glossary_terms": 56,
+    "sources_l_plus": 135,
+    "statut_f_excluded": 27,
+    "ca_g0_sync_excerpts": 14,
+    "wyvern_g2_units": 37,
+    "freeze_date": "2026-12-02",
+    "historical_tomes": 8,
+    "historical_pdf_pages": 4542,
+    "historical_tome_diagrams": 319,
+    "total_markdown_files": 2,
     "total_tomes": 8,
-    "total_pdf_pages": 4542,
-    "total_diagrams": 319,
+    "total_pdf_pages": 837,
+    "total_diagrams": 115,
     "files": [
       {
         "tome_id": "R",
-        "file": "Tomes/README.md",
-        "title": "Suite intégrale du corpus (Index éditorial)",
+        "section_id": "R",
+        "file": "Compendium/README.md",
+        "title": "Compendium de l'entreprise agentique (Index éditorial)",
         "role_default": "synthese"
       },
       {
-        "tome_id": "T1",
-        "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-        "title": "Tome 1 — Confiance protocolaire et encadrement financier",
+        "tome_id": "LIM",
+        "section_id": "LIM",
+        "file": "Compendium/Compendium.md",
+        "title": "Liminaire — Sommaire exécutif global, doctrine hybride 80/20, concordance inter-tomes et Panorama visuel directeur",
+        "role_default": "synthese"
+      },
+      {
+        "tome_id": "P01",
+        "section_id": "P01",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie I — D01 : Rupture épistémique, limites probabilistes et économie cognitive des Systèmes d'agentivité",
         "role_default": "fondation"
       },
       {
-        "tome_id": "T2",
-        "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-        "title": "Tome 2 — Cadre normatif et exigences d'architecture",
-        "role_default": "norme"
+        "tome_id": "P02",
+        "section_id": "P02",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie II — D02 : Architecture d'entreprise hybride 80/20, autonomie graduée L0–L4 et noyau de contrôle possédé",
+        "role_default": "architecture"
       },
       {
-        "tome_id": "T3",
-        "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-        "title": "Tome 3 — Ingénierie du tissu conjonctif et état de l'art",
+        "tome_id": "P03",
+        "section_id": "P03",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie III — D03 : Tissu conjonctif protocolaire, découverte fédérée et prévention du verrouillage SaaS",
         "role_default": "etat_de_l_art"
       },
       {
-        "tome_id": "T4",
-        "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-        "title": "Tome 4 — Prospective stratégique et trajectoire 2028-2035",
-        "role_default": "prospective"
+        "tome_id": "P04",
+        "section_id": "P04",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie IV — D04 : Gouvernance sémantique, mémoire CoALA à quatre tiroirs et encapsulation patrimoniale ACL/OT",
+        "role_default": "etat_de_l_art"
       },
       {
-        "tome_id": "T5",
-        "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-        "title": "Tome 5 — Synthèse exécutive et concordance architecturale",
-        "role_default": "synthese"
-      },
-      {
-        "tome_id": "T6",
-        "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-        "title": "Tome 6 — Architecture multisectorielle et patrons de référence",
+        "tome_id": "P05",
+        "section_id": "P05",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie V — D05 : Orchestration sobre OO1–OO4, chorégraphie événementielle et exécution durable Saga",
         "role_default": "patron"
       },
       {
-        "tome_id": "T7",
-        "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-        "title": "Tome 7 — Gouverner l'industrialisation cognitive",
+        "tome_id": "P06",
+        "section_id": "P06",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie VI — D06 : Identités non humaines (NHI), délégation OBO atténuée, PKI 47 jours et transition post-quantique",
+        "role_default": "norme"
+      },
+      {
+        "tome_id": "P07",
+        "section_id": "P07",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie VII — D07 : Défense hors modèle, politiques OPA/Rego, Règle de deux et confinement déterministe",
         "role_default": "gouvernance"
       },
       {
-        "tome_id": "T8",
-        "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-        "title": "Tome 8 — Ingénierie exécutable et homologation vérifiable",
+        "tome_id": "P08",
+        "section_id": "P08",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie VIII — D08 : Observabilité probatoire, bancs EvalOps hermétiques et pilotage FinOps au résultat conforme",
+        "role_default": "gouvernance"
+      },
+      {
+        "tome_id": "P09",
+        "section_id": "P09",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie IX — D09 : Conformité juridique et prudentielle multi-juridictions (QC, CA, UE, int.) et réversibilité contractuelle",
+        "role_default": "norme"
+      },
+      {
+        "tome_id": "P10",
+        "section_id": "P10",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie X — D10 : Architectures sectorielles réglementées, trois blueprints C01–C40 et usine logicielle GitOps",
+        "role_default": "patron"
+      },
+      {
+        "tome_id": "P11",
+        "section_id": "P11",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie XI — D11 : Prospective 2028–2035, trajectoires adaptatives DAPP, gouvernance AE/AS et capital humain",
+        "role_default": "prospective"
+      },
+      {
+        "tome_id": "P12",
+        "section_id": "P12",
+        "file": "Compendium/Compendium.md",
+        "title": "Partie XII — D12 : Homologation vérifiable, trousse exécutable du Tome 8, concordance inter-tomes et chaîne Wyvern G0–G5",
         "role_default": "executable"
+      },
+      {
+        "tome_id": "ANN",
+        "section_id": "ANN",
+        "file": "Compendium/Compendium.md",
+        "title": "Annexes — Instruments de référence (Annexes A à E)",
+        "role_default": "synthese"
       }
     ]
   },
   "enums": {
     "domain_ids": ["D01", "D02", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12"],
+    "compendium_parts": ["R", "LIM", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "ANN"],
     "relation_types": [
       "attenuation_risque",
       "dependance_technique",
@@ -82,6 +148,7 @@
     "roles": ["AE", "AS", "RSSI", "Juridique", "SRE", "Direction"],
     "roles_in_tome": [
       "fondation",
+      "architecture",
       "norme",
       "etat_de_l_art",
       "prospective",
@@ -97,14 +164,14 @@
       "domain_id": "D01",
       "order": 1,
       "title": "Fondements épistémiques, économiques et rupture agentique",
-      "summary": "Passage des copilotes passifs aux Systèmes d'agentivité, loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique.",
+      "summary": "Passage des copilotes passifs aux Systèmes d'agentivité et maîtrise de l'agentivité des systèmes (system agency), loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique.",
       "color": "#2563eb",
       "subdomains_canonical": [
         "Rupture épistémique et Systèmes d'agentivité",
         "Fiabilité probabiliste et loi de Lusser",
         "Économie de Coase et dettes agentiques"
       ],
-      "key_identifiers": ["pass@1", "pass^k", "MAP", "MAST", "METR", "T1"],
+      "key_identifiers": ["pass@1", "pass^k", "MAP", "MAST", "METR", "SoA", "T1"],
       "pivot_slugs": [
         "systems-of-agency",
         "loi-de-lusser",
@@ -554,6 +621,11 @@
         "identifiers": {"type": "array", "items": {"type": "string"}},
         "roles_in_tome": {"type": "array", "items": {"type": "string"}},
         "tomes_present": {"type": "array", "items": {"type": "string"}},
+        "parts_present": {"type": "array", "items": {"type": "string"}},
+        "units_present": {"type": "array", "items": {"type": "string"}},
+        "owner_chapter": {"type": ["string", "null"]},
+        "compendium_schemas": {"type": "array", "items": {"type": "string"}},
+        "glossary_terms": {"type": "array", "items": {"type": "string"}},
         "source_shards": {"type": "array", "items": {"type": "string"}},
         "occurrences": {"type": "array"},
         "chapter_unit_ids": {"type": "array", "items": {"type": "string"}},
@@ -574,6 +646,7 @@
         "label": {"type": "string"},
         "justification": {"type": "string"},
         "tomes": {"type": "array", "items": {"type": "string"}},
+        "parts": {"type": "array", "items": {"type": "string"}},
         "source_shards": {"type": "array", "items": {"type": "string"}},
         "weight": {"type": "integer", "minimum": 1}
       }
@@ -585,6 +658,7 @@
         "domain_id": {"type": "string"},
         "subdomain": {"type": ["string", "null"]},
         "tome_id": {"type": "string"},
+        "part_id": {"type": "string"},
         "file": {"type": "string"},
         "node_count": {"type": "integer", "minimum": 0},
         "occurrence_count": {"type": "integer", "minimum": 0},
@@ -596,11 +670,11 @@
     }
   },
   "validation_invariants": [
-    "Couverture à 100 % des 9 fichiers Markdown de Tomes/ (R et T1 à T8).",
-    "Couverture des 12 domaines canoniques D01 à D12 avec au moins un sous-domaine et des nœuds thématiques actifs.",
-    "Intégrité référentielle à 100 % des arêtes : chaque source et chaque target existe dans les nœuds thématiques synthétisés, sans auto-boucle (source != target).",
+    "Couverture à 100 % des 15 sections du Compendium (R dans Compendium/README.md ; LIM, P01..P12, ANN dans Compendium/Compendium.md) et des 42 unités éditoriales (00-liminaire, ch01..ch36, annexe-a..annexe-e).",
+    "Couverture des 12 domaines canoniques D01 à D12, 36 sous-domaines, 71 familles et 260 thèmes (380 nœuds exacts dont NODE_ROOT).",
+    "Intégrité référentielle à 100 % des 616 arêtes (REL_0001..REL_0616) : chaque source et chaque target existe dans les nœuds synthétisés, sans auto-boucle (source != target).",
     "Chaque arête porte un type appartenant aux 8 types canoniques et une justification non vide.",
-    "Zéro unité structurelle (chapitre, liminaire, ouverture, synthèse ou annexe) orpheline : toute unité mappée ou structurelle pertinente est reliée bidirectionnellement à au moins un nœud thématique existant.",
-    "Hiérarchie MindMap complète à 5 niveaux (profondeurs 0 à 4) sans cycle ni nœud détaché."
+    "Zéro unité éditoriale (00-liminaire, ch01..ch36, annexe-a..annexe-e) orpheline : chaque unité du Compendium est reliée à des nœuds thématiques existants et à des occurrences vérifiées dans Compendium/Compendium.md.",
+    "Hiérarchie MindMap complète à 5 niveaux (profondeurs 0 à 4) sans cycle ni nœud détaché, avec intégration explicite de l'agentivité des systèmes (system agency) dans D01."
   ]
 }

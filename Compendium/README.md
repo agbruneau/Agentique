@@ -1,6 +1,6 @@
 # Compendium de l'entreprise agentique
 
-[Accueil du dépôt](../README.md) · [PDF (`Compendium.pdf`)](Compendium.pdf) · [Markdown (`Compendium.md`)](Compendium.md) · [Tomes thématiques (`../Tomes/`)](../Tomes/README.md) · [Sources éditoriales (`../Sources/Compendium/`)](../Sources/Compendium/README.md) · [Référentiel directeur (`prd.md`)](../Sources/Compendium/prd.md) · [PRD Web](../Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html)
+[Accueil du dépôt](../README.md) · [PDF (`Compendium.pdf`)](Compendium.pdf) · [Markdown (`Compendium.md`)](Compendium.md) · [Tomes thématiques (`../Tomes/`)](../Tomes/README.md) · [Sources éditoriales (`../Sources/Compendium/`)](../Sources/Compendium/README.md) · [Référentiel directeur (`prd.md`)](../Sources/Compendium/prd.md) · [PRD Web](../Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html)
 
 Le **Compendium de l'entreprise agentique** est le traité unifié d'architecture, de gouvernance et d'homologation vérifiable des **Systèmes d'agentivité** (`SoA`) et de l'**agentivité des systèmes** (`non-avis`). Il consolide en un ouvrage maître auto-portant les huit tomes de la collection ([`../Tomes/README.md`](../Tomes/README.md)), réancré sur sources primaires ouvertes `L+` hachées `SHA-256` à la date de gel du **2 décembre 2026** (parution : janvier 2027).
 
@@ -48,7 +48,7 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 
 - **Usine éditoriale et sources** : [`../Sources/Compendium/README.md`](../Sources/Compendium/README.md) (manuscrit `42` unités, `115` schémas, sources `L+`, registres SSOT et outillage Python de vérification et d'assemblage).
 - **Spécifications produit** : [`../Sources/Compendium/prd.md`](../Sources/Compendium/prd.md) et sa version web interactive [PRD Web](../Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html).
-- **Cartographie thématique** : [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) (`5` vues autonomes hors ligne).
+- **Cartographie thématique** : [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`5` vues autonomes hors ligne sur les `15` sections et `42` unités du Compendium).
 - **Collection des huit tomes** : [`../Tomes/README.md`](../Tomes/README.md) (`Tome 1` à `Tome 8` en PDF et Markdown).
 
 ---

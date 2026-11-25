@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-25T19:57:40Z",
+  "generated_at": "2026-11-25T22:00:13Z",
   "generator": "Sources/Cartographie/outils/consolider_catalogue_schemas.py",
   "source_shards": [
     "Sources/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json",
@@ -13,6 +13,33 @@
     "Sources/Cartographie/donnees/prd_schemas_shards/schemas-d11-d12.json"
   ],
   "source_inventory": "Sources/Cartographie/donnees/inventaire-319-diagrammes.json",
+  "source_compendium_inventory": "Sources/Cartographie/donnees/inventaire-115-schemas-compendium.json",
+  "compendium_schemas_summary": {
+    "total_compendium_figures": 115,
+    "verified_sources_on_disk": 115,
+    "verified_renders_on_disk": 115,
+    "verified_compendium_lines": 115,
+    "by_engine": {
+      "mmd": 23,
+      "puml": 52,
+      "svg": 40
+    },
+    "by_part": {
+      "LIM": 4,
+      "P01": 9,
+      "P02": 10,
+      "P03": 10,
+      "P04": 9,
+      "P05": 9,
+      "P06": 9,
+      "P07": 9,
+      "P08": 9,
+      "P09": 9,
+      "P10": 9,
+      "P11": 9,
+      "P12": 10
+    }
+  },
   "global_schemas": [
     {
       "schema_id": "SCH-00-01",
@@ -133,7 +160,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg",
           "role_note": "Ancre le pipeline déterministe du harnais 80/20 à huit étapes et la porte d'abstention AMBIGU_ESCALADE."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-00-01",
+        "unit": "00-liminaire",
+        "part_id": "LIM",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 126,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+        "source_file_line": 53
+      }
     },
     {
       "schema_id": "SCH-00-02",
@@ -253,7 +292,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-05.svg",
           "role_note": "Illustre la porte OPA/Rego fermée par défaut appliquant la Règle de deux et le suivi de provenance CaMeL."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-00-02",
+        "unit": "00-liminaire",
+        "part_id": "LIM",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 142,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+        "source_file_line": 69
+      }
     },
     {
       "schema_id": "SCH-00-03",
@@ -379,7 +430,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-22.png",
           "role_note": "Rend directement actionnable la séquence des 90, 180 et 360 premiers jours."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-00-03",
+        "unit": "00-liminaire",
+        "part_id": "LIM",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 177,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+        "source_file_line": 104
+      }
     },
     {
       "schema_id": "SCH-00-04",
@@ -506,7 +569,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-08.png",
           "role_note": "Formalise l'arbre décisionnel mécanique des 24 [BLOQUANT] PRR, de 2027-B001, des 5 SBB et des contrats C01–C40."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-00-04",
+        "unit": "00-liminaire",
+        "part_id": "LIM",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-04.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-04.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 183,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+        "source_file_line": 110
+      }
     }
   ],
   "chapter_schemas": [
@@ -608,7 +683,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-01.svg",
           "role_note": "Positionne visuellement les Systems of Engagement, les Systèmes d'agentivité et les Systems of Record à l'intention de la direction métier."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-01-01",
+        "unit": "ch01",
+        "part_id": "P01",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 257,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+        "source_file_line": 45
+      }
     },
     {
       "schema_id": "SCH-01-02",
@@ -674,7 +761,19 @@
         "key_takeaway_box": "Soutien n'est pas production : sur l'horizon 2026–2027, la viabilité opérationnelle repose sur des parcours courts, prédéfinis et régis par des engagements observables, jamais sur une autonomie illimitée."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-01-02",
+        "unit": "ch01",
+        "part_id": "P01",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 289,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+        "source_file_line": 77
+      }
     },
     {
       "schema_id": "SCH-01-03",
@@ -766,7 +865,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-63.svg",
           "role_note": "Documente l'écart méthodologique initial (83 notices évaluées sur résumé) remplacé par le protocole W3.2."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-01-03",
+        "unit": "ch01",
+        "part_id": "P01",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 335,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+        "source_file_line": 123
+      }
     },
     {
       "schema_id": "SCH-02-01",
@@ -857,7 +968,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-20.svg",
           "role_note": "Démontre l'erreur sémantique silencieuse (HT/TTC ou définition du revenu) sous un schéma syntaxiquement valide."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-02-01",
+        "unit": "ch02",
+        "part_id": "P01",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 405,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+        "source_file_line": 37
+      }
     },
     {
       "schema_id": "SCH-02-02",
@@ -940,7 +1063,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-06.1.png",
           "role_note": "Compare les quatre topologies multi-agents ainsi que leurs propriétés dominantes."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-02-02",
+        "unit": "ch02",
+        "part_id": "P01",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 423,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+        "source_file_line": 55
+      }
     },
     {
       "schema_id": "SCH-02-03",
@@ -1022,7 +1157,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg",
           "role_note": "Illustre le banc hermétique CI/CD exécutant `pass^k` et la borne de Wilson n ≥ 3/p."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-02-03",
+        "unit": "ch02",
+        "part_id": "P01",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 458,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+        "source_file_line": 90
+      }
     },
     {
       "schema_id": "SCH-03-01",
@@ -1122,7 +1269,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-66.svg",
           "role_note": "Met en évidence la dispersion de 1 à 59 des estimations de marché selon les six périmètres emboîtés."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-03-01",
+        "unit": "ch03",
+        "part_id": "P01",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-01.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-01.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 578,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+        "source_file_line": 64
+      }
     },
     {
       "schema_id": "SCH-03-02",
@@ -1215,7 +1374,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-01.svg",
           "role_note": "Situe la hiérarchie probatoire [N]/[M]/[É]/[S] face aux fractures documentées dans le corpus."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-03-02",
+        "unit": "ch03",
+        "part_id": "P01",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 622,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+        "source_file_line": 108
+      }
     },
     {
       "schema_id": "SCH-03-03",
@@ -1314,7 +1485,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-06.svg",
           "role_note": "Synthétise les quatre générations historiques d'intégration EAI, SOA, API et EDA."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-03-03",
+        "unit": "ch03",
+        "part_id": "P01",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 647,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+        "source_file_line": 133
+      }
     },
     {
       "schema_id": "SCH-04-01",
@@ -1415,7 +1598,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-12.svg",
           "role_note": "Montre la séquence de décodage contraint CFG et de validation sémantique post-génération."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-04-01",
+        "unit": "ch04",
+        "part_id": "P02",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 775,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+        "source_file_line": 87
+      }
     },
     {
       "schema_id": "SCH-04-02",
@@ -1516,7 +1711,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.1.svg",
           "role_note": "Visualise les cinq horloges indépendantes régissant les évolutions d'un agent."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-04-02",
+        "unit": "ch04",
+        "part_id": "P02",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 842,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+        "source_file_line": 154
+      }
     },
     {
       "schema_id": "SCH-04-03",
@@ -1598,7 +1805,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-58.svg",
           "role_note": "Illustre le cycle de migration Strangler Fig en quatre stades sous façade et mécanismes de repli."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-04-03",
+        "unit": "ch04",
+        "part_id": "P02",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 858,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+        "source_file_line": 170
+      }
     },
     {
       "schema_id": "SCH-05-01",
@@ -1696,7 +1915,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-43.4.svg",
           "role_note": "Lève les confusions terminologiques entre les trois échelles homonymes antérieures."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-05-01",
+        "unit": "ch05",
+        "part_id": "P02",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 940,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+        "source_file_line": 47
+      }
     },
     {
       "schema_id": "SCH-05-02",
@@ -1770,7 +2001,19 @@
           "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-15.svg",
           "role_note": "Fournit la matrice normative classe d'agent × palier d'outil P0–P3 au cœur du calcul EXIG-AUT-10."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-05-02",
+        "unit": "ch05",
+        "part_id": "P02",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 956,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+        "source_file_line": 63
+      }
     },
     {
       "schema_id": "SCH-05-03",
@@ -1869,7 +2112,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-27.1.png",
           "role_note": "Pose la séquence réglementaire complète de l'article 12.1 de la Loi 25."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-05-03",
+        "unit": "ch05",
+        "part_id": "P02",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 985,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+        "source_file_line": 92
+      }
     },
     {
       "schema_id": "SCH-06-01",
@@ -1978,7 +2233,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-06.svg",
           "role_note": "Détaille les stéréotypes ArchiMate «Cognitive Actor», «Guardrail Policy» et «Human-on-the-Loop»."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-06-01",
+        "unit": "ch06",
+        "part_id": "P02",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1080,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+        "source_file_line": 46
+      }
     },
     {
       "schema_id": "SCH-06-02",
@@ -2085,7 +2352,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-07.svg",
           "role_note": "Décline la séparation en quatre plans découplés de l'entreprise agentique."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-06-02",
+        "unit": "ch06",
+        "part_id": "P02",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1108,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+        "source_file_line": 74
+      }
     },
     {
       "schema_id": "SCH-06-03",
@@ -2154,7 +2433,19 @@
         "key_takeaway_box": "Le droit et la protection des personnes priment systématiquement sur la performance d'un modèle, et aucune décision d'architecture pérenne ne saurait reposer sur le nom d'un produit commercial conjoncturel."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-06-03",
+        "unit": "ch06",
+        "part_id": "P02",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1141,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+        "source_file_line": 107
+      }
     },
     {
       "schema_id": "SCH-06-04",
@@ -2254,7 +2545,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-14.svg",
           "role_note": "Compare visuellement l'anti-patron Swagger-to-MCP 1:1 à l'architecture ACI consolidée."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-06-04",
+        "unit": "ch06",
+        "part_id": "P02",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-04.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-04.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1200,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+        "source_file_line": 166
+      }
     },
     {
       "schema_id": "SCH-07-01",
@@ -2366,7 +2669,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-13.svg",
           "role_note": "Décrit la séquence complète combinant Streamable HTTP, le patron MRTR et la durée de vie en cache ttlMs."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-07-01",
+        "unit": "ch07",
+        "part_id": "P03",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1297,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+        "source_file_line": 58
+      }
     },
     {
       "schema_id": "SCH-07-02",
@@ -2453,7 +2768,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-09.svg",
           "role_note": "Positionne les façades d'intention MCP comme couche de médiation devant les API métier."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-07-02",
+        "unit": "ch07",
+        "part_id": "P03",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1311,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+        "source_file_line": 72
+      }
     },
     {
       "schema_id": "SCH-07-03",
@@ -2544,7 +2871,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-02.svg",
           "role_note": "Démontre l'implémentation CI exécutable du contrôle JCS SHA-256 et du rejet HeaderMismatch."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-07-03",
+        "unit": "ch07",
+        "part_id": "P03",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1347,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+        "source_file_line": 108
+      }
     },
     {
       "schema_id": "SCH-08-01",
@@ -2648,7 +2987,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-18.png",
           "role_note": "Fournit l'arbre décisionnel canonique arbitrant entre API déterministe, MCP, A2A et AGNTCY."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-08-01",
+        "unit": "ch08",
+        "part_id": "P03",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-01.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-01.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1472,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+        "source_file_line": 43
+      }
     },
     {
       "schema_id": "SCH-08-02",
@@ -2759,7 +3110,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-20.svg",
           "role_note": "Complète la séquence opérationnelle reliant OASF/ADS au canal chiffré SLIM/MLS."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-08-02",
+        "unit": "ch08",
+        "part_id": "P03",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1554,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+        "source_file_line": 125
+      }
     },
     {
       "schema_id": "SCH-08-03",
@@ -2837,7 +3200,19 @@
           "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-09.svg",
           "role_note": "Montre le maintien des approbateurs humains hors du canal d'interface manipulable."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-08-03",
+        "unit": "ch08",
+        "part_id": "P03",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1577,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+        "source_file_line": 148
+      }
     },
     {
       "schema_id": "SCH-09-01",
@@ -2936,7 +3311,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-37.svg",
           "role_note": "Présente la grille initiale à cinq contrôles préalablement à son raffinement vers les neuf contrôles normatifs."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-09-01",
+        "unit": "ch09",
+        "part_id": "P03",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1629,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+        "source_file_line": 19
+      }
     },
     {
       "schema_id": "SCH-09-02",
@@ -3042,7 +3429,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-15.svg",
           "role_note": "Compare dépôt unique interne, registres fédérés et découverte pair-à-pair."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-09-02",
+        "unit": "ch09",
+        "part_id": "P03",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1690,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+        "source_file_line": 80
+      }
     },
     {
       "schema_id": "SCH-09-03",
@@ -3142,7 +3541,19 @@
           "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-05.svg",
           "role_note": "Illustre les quatre strates EIF juridique, organisationnelle, sémantique et technique."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-09-03",
+        "unit": "ch09",
+        "part_id": "P03",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1714,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+        "source_file_line": 104
+      }
     },
     {
       "schema_id": "SCH-09-04",
@@ -3228,7 +3639,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-10.svg",
           "role_note": "Illustre la séquence concrète de cascade entre SLM et LLM frontière."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-09-04",
+        "unit": "ch09",
+        "part_id": "P03",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-04.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-04.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1732,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+        "source_file_line": 122
+      }
     },
     {
       "schema_id": "SCH-10-01",
@@ -3323,7 +3746,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-21.svg",
           "role_note": "Illustre le couplage entre couche analytique et ontologie (à décliner sans verrouillage Ossie conformément à DEC-003)."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-10-01",
+        "unit": "ch10",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1826,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+        "source_file_line": 37
+      }
     },
     {
       "schema_id": "SCH-10-02",
@@ -3424,7 +3859,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.4.png",
           "role_note": "Illustre le principe « l'agent observe, le rail exécute » sur Lynx ISO 20022."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-10-02",
+        "unit": "ch10",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1848,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+        "source_file_line": 59
+      }
     },
     {
       "schema_id": "SCH-10-03",
@@ -3509,7 +3956,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-22.svg",
           "role_note": "Assemble recherche hybride RRF, GraphRAG et Text-to-SQL gouverné en patron de référence."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-10-03",
+        "unit": "ch10",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1886,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+        "source_file_line": 97
+      }
     },
     {
       "schema_id": "SCH-11-01",
@@ -3613,7 +4072,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-21.svg",
           "role_note": "Positionne la topologie des quatre mémoires dans l'architecture de référence."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-11-01",
+        "unit": "ch11",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1968,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+        "source_file_line": 44
+      }
     },
     {
       "schema_id": "SCH-11-02",
@@ -3697,7 +4168,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-05.0.png",
           "role_note": "Distingue la gouvernance de la mémoire persistante de celle du RAG et des accès."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-11-02",
+        "unit": "ch11",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1981,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+        "source_file_line": 57
+      }
     },
     {
       "schema_id": "SCH-11-03",
@@ -3782,7 +4265,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-10.svg",
           "role_note": "Renforce l'exigence de filtrage des droits en amont de toute lecture."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-11-03",
+        "unit": "ch11",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2016,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+        "source_file_line": 92
+      }
     },
     {
       "schema_id": "SCH-12-01",
@@ -3882,7 +4377,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-38.svg",
           "role_note": "Relie les adaptateurs IBM i / CICS / EDI, l'orchestration RPA/APA et les cellules confinées."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-12-01",
+        "unit": "ch12",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2102,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+        "source_file_line": 50
+      }
     },
     {
       "schema_id": "SCH-12-02",
@@ -3976,7 +4483,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-59.svg",
           "role_note": "Illustre le mode Edge Local-First de 72 h sur CRDT ainsi que l'enveloppe Simplex."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-12-02",
+        "unit": "ch12",
+        "part_id": "P04",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2123,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+        "source_file_line": 71
+      }
     },
     {
       "schema_id": "SCH-12-03",
@@ -4062,7 +4581,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-04.svg",
           "role_note": "Ancre l'hébergement contrôlé de la mémoire longue et des adaptateurs patrimoniaux."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-12-03",
+        "unit": "ch12",
+        "part_id": "P04",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2147,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+        "source_file_line": 95
+      }
     },
     {
       "schema_id": "SCH-13-01",
@@ -4170,7 +4701,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-28.svg",
           "role_note": "Illustre l'épine dorsale BPMN déterministe encapsulant des cellules cognitives bornées."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-13-01",
+        "unit": "ch13",
+        "part_id": "P05",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2228,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+        "source_file_line": 44
+      }
     },
     {
       "schema_id": "SCH-13-02",
@@ -4286,7 +4829,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-23.5.svg",
           "role_note": "Positionne les cadriciels commerciaux et ouverts en disponibilité générale sur la grille OO1–OO4."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-13-02",
+        "unit": "ch13",
+        "part_id": "P05",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2268,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+        "source_file_line": 84
+      }
     },
     {
       "schema_id": "SCH-13-03",
@@ -4387,7 +4942,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.1.png",
           "role_note": "Explique la non-composabilité et l'effet cumulé aux frontières inter-agents."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-13-03",
+        "unit": "ch13",
+        "part_id": "P05",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2296,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+        "source_file_line": 112
+      }
     },
     {
       "schema_id": "SCH-14-01",
@@ -4477,7 +5044,19 @@
           "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-10.svg",
           "role_note": "Expose le mécanisme normatif du compteur xagenthopcount/xagentmaxhops bloquant les boucles."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-14-01",
+        "unit": "ch14",
+        "part_id": "P05",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2380,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+        "source_file_line": 41
+      }
     },
     {
       "schema_id": "SCH-14-02",
@@ -4560,7 +5139,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-31.svg",
           "role_note": "Trace la séquence anti-écho, les files DLQ non bloquantes et la rétro-pression sous quotas LLM."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-14-02",
+        "unit": "ch14",
+        "part_id": "P05",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2399,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+        "source_file_line": 60
+      }
     },
     {
       "schema_id": "SCH-14-03",
@@ -4643,7 +5234,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-40.svg",
           "role_note": "Détaille la frontière IT/OT conforme à IEC 62443 et l'isolation des commandes vers les automates."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-14-03",
+        "unit": "ch14",
+        "part_id": "P05",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2424,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+        "source_file_line": 85
+      }
     },
     {
       "schema_id": "SCH-15-01",
@@ -4742,7 +5345,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-36.svg",
           "role_note": "Détaille la bascule multi-fournisseurs journalisée et la suspension HOTL sous SLA."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-15-01",
+        "unit": "ch15",
+        "part_id": "P05",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2509,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+        "source_file_line": 40
+      }
     },
     {
       "schema_id": "SCH-15-02",
@@ -4851,7 +5466,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-48.3.png",
           "role_note": "Distingue visuellement ce qui se compense avant le pivot de ce qui demeure irréversible après."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-15-02",
+        "unit": "ch15",
+        "part_id": "P05",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2533,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+        "source_file_line": 64
+      }
     },
     {
       "schema_id": "SCH-15-03",
@@ -4945,7 +5572,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-29.svg",
           "role_note": "Illustre le séquencement des transactions locales et des compensations inverses."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-15-03",
+        "unit": "ch15",
+        "part_id": "P05",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2616,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+        "source_file_line": 147
+      }
     },
     {
       "schema_id": "SCH-16-01",
@@ -5054,7 +5693,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-24.3.png",
           "role_note": "Trace le cycle de vie Naissance → Vie → Mort d'une identité d'agent à l'échelle du parc."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-16-01",
+        "unit": "ch16",
+        "part_id": "P06",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2698,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+        "source_file_line": 48
+      }
     },
     {
       "schema_id": "SCH-16-02",
@@ -5148,7 +5799,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-41.1.svg",
           "role_note": "Sépare clairement le registre gouverné d'entreprise du catalogue technique interne."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-16-02",
+        "unit": "ch16",
+        "part_id": "P06",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2731,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+        "source_file_line": 81
+      }
     },
     {
       "schema_id": "SCH-16-03",
@@ -5248,7 +5911,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-16.2.svg",
           "role_note": "Opère le tri entre substituts provisoires intra-organisationnels et frontière B2B."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-16-03",
+        "unit": "ch16",
+        "part_id": "P06",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2771,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+        "source_file_line": 121
+      }
     },
     {
       "schema_id": "SCH-17-01",
@@ -5366,7 +6041,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-17.6.png",
           "role_note": "Localise précisément l'endroit où la chaîne de mandat cesse d'être interrogeable après deux sauts."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-17-01",
+        "unit": "ch17",
+        "part_id": "P06",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2858,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+        "source_file_line": 44
+      }
     },
     {
       "schema_id": "SCH-17-02",
@@ -5457,7 +6144,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-06.svg",
           "role_note": "Relie l'échelle d'autonomie N0–N4/P0–P3 à la séquence CIBA + FIDO2 et JCS SHA-256."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-17-02",
+        "unit": "ch17",
+        "part_id": "P06",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2940,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+        "source_file_line": 126
+      }
     },
     {
       "schema_id": "SCH-17-03",
@@ -5549,7 +6248,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-20.6.png",
           "role_note": "Trace ce qui est révoqué — et ce qui demeure actif — lors d'une révocation en cascade depuis le mandat d'origine."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-17-03",
+        "unit": "ch17",
+        "part_id": "P06",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2963,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+        "source_file_line": 149
+      }
     },
     {
       "schema_id": "SCH-18-01",
@@ -5614,7 +6325,19 @@
         "key_takeaway_box": "À une validité de 47 jours, la gestion manuelle des certificats TLS devient matériellement impraticable : l'automatisation ACME constitue un prérequis opérationnel dès le Palier 1."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-18-01",
+        "unit": "ch18",
+        "part_id": "P06",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-01.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-01.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3059,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+        "source_file_line": 35
+      }
     },
     {
       "schema_id": "SCH-18-02",
@@ -5722,7 +6445,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-07.svg",
           "role_note": "Articule la chaîne de confiance multi-sauts, les parades PKI/ML-DSA et le double couloir probatoire."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-18-02",
+        "unit": "ch18",
+        "part_id": "P06",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3088,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+        "source_file_line": 64
+      }
     },
     {
       "schema_id": "SCH-18-03",
@@ -5800,7 +6535,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-07.svg",
           "role_note": "Synthétise les parades architecturales au choc PKI/ML-DSA sur la chaîne de confiance multi-sauts."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-18-03",
+        "unit": "ch18",
+        "part_id": "P06",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3146,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+        "source_file_line": 122
+      }
     },
     {
       "schema_id": "SCH-19-01",
@@ -5900,7 +6647,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-44.svg",
           "role_note": "Expose la propagation inter-agents OWASP ASI/MCP ainsi que les barrières déterministes de coupure."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-19-01",
+        "unit": "ch19",
+        "part_id": "P07",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3233,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+        "source_file_line": 35
+      }
     },
     {
       "schema_id": "SCH-19-02",
@@ -5982,7 +6741,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.2.svg",
           "role_note": "Relie l'attaque par mutation d'outils au défaut de provenance AIBOM et d'épinglage des composants livrés."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-19-02",
+        "unit": "ch19",
+        "part_id": "P07",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3258,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+        "source_file_line": 60
+      }
     },
     {
       "schema_id": "SCH-19-03",
@@ -6049,7 +6820,19 @@
         "key_takeaway_box": "Le classement des attaques par maillon d'identité défaillant (mandataire confus) combiné à un marqueur HMAC indélébile sur toute donnée douteuse empêche l'agent de blanchir une information piégée en action autorisée."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-19-03",
+        "unit": "ch19",
+        "part_id": "P07",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3320,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+        "source_file_line": 122
+      }
     },
     {
       "schema_id": "SCH-20-01",
@@ -6152,7 +6935,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-61.svg",
           "role_note": "Illustre l'application au SRE autonome avec remédiation bornée par des politiques Cedar."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-20-01",
+        "unit": "ch20",
+        "part_id": "P07",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3401,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+        "source_file_line": 39
+      }
     },
     {
       "schema_id": "SCH-20-02",
@@ -6219,7 +7014,19 @@
         "key_takeaway_box": "Un modèle plus capable n'est pas intrinsèquement plus sûr; devant un attaquant adaptatif, seule l'ingénierie de sûreté système (STAMP/STPA) traduite en verrous mécaniques résiste."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-20-02",
+        "unit": "ch20",
+        "part_id": "P07",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3413,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+        "source_file_line": 51
+      }
     },
     {
       "schema_id": "SCH-20-03",
@@ -6315,7 +7122,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-05.svg",
           "role_note": "Contrat exécutable de porte OPA/Rego fermée par défaut appliquant la Règle de deux et CaMeL."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-20-03",
+        "unit": "ch20",
+        "part_id": "P07",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3515,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+        "source_file_line": 153
+      }
     },
     {
       "schema_id": "SCH-21-01",
@@ -6409,7 +7228,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-45.svg",
           "role_note": "Positionne le confinement OpenSandbox au sein d'une défense en profondeur multicouche."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-21-01",
+        "unit": "ch21",
+        "part_id": "P07",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3610,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+        "source_file_line": 37
+      }
     },
     {
       "schema_id": "SCH-21-02",
@@ -6484,7 +7315,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-58.svg",
           "role_note": "Illustre le géorepérage cognitif, l'enclave GPU TEE sous clé HYOK et la bascule vers une grappe open-weights souveraine."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-21-02",
+        "unit": "ch21",
+        "part_id": "P07",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3631,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+        "source_file_line": 58
+      }
     },
     {
       "schema_id": "SCH-21-03",
@@ -6582,7 +7425,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-39.2.png",
           "role_note": "Décrit la séquence complète Révoquer → Confiner → Imputer de réponse à incident."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-21-03",
+        "unit": "ch21",
+        "part_id": "P07",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3661,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+        "source_file_line": 88
+      }
     },
     {
       "schema_id": "SCH-22-01",
@@ -6681,7 +7536,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.1.svg",
           "role_note": "Décompose les cinq composants livrés d'un agent ainsi que leurs horloges indépendantes d'évolution."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-22-01",
+        "unit": "ch22",
+        "part_id": "P08",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3744,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+        "source_file_line": 41
+      }
     },
     {
       "schema_id": "SCH-22-02",
@@ -6773,7 +7640,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-07.svg",
           "role_note": "Précise la pseudonymisation sous table séparée détenue par le responsable RPRP."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-22-02",
+        "unit": "ch22",
+        "part_id": "P08",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3781,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+        "source_file_line": 78
+      }
     },
     {
       "schema_id": "SCH-22-03",
@@ -6866,7 +7745,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-41.svg",
           "role_note": "Illustre l'intégration dans la topologie d'observabilité et l'auditabilité de bout en bout."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-22-03",
+        "unit": "ch22",
+        "part_id": "P08",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3852,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+        "source_file_line": 149
+      }
     },
     {
       "schema_id": "SCH-23-01",
@@ -6959,7 +7850,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-42.svg",
           "role_note": "Montre le pipeline EvalOps industriel incluant les jeux de référence de trajectoires et les portes CI/CD."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-23-01",
+        "unit": "ch23",
+        "part_id": "P08",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 3921,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+        "source_file_line": 37
+      }
     },
     {
       "schema_id": "SCH-23-02",
@@ -7051,7 +7954,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-43.svg",
           "role_note": "Illustre la détection continue de dérive sémantique et les calculs de taux de consommation d'erreur côté SRE."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-23-02",
+        "unit": "ch23",
+        "part_id": "P08",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4013,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+        "source_file_line": 129
+      }
     },
     {
       "schema_id": "SCH-23-03",
@@ -7126,7 +8041,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-62.svg",
           "role_note": "Diagramme complet du volant d'inertie cognitif (collecte OTel/HOTL, sas Loi 25, DSPy + LoRA et économie trimestrielle)."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-23-03",
+        "unit": "ch23",
+        "part_id": "P08",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4026,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+        "source_file_line": 142
+      }
     },
     {
       "schema_id": "SCH-24-01",
@@ -7234,7 +8161,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-53.svg",
           "role_note": "Modélise le moteur FinOps agentique, ses disjoncteurs par saga et l'imputation du Cost-per-Outcome."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-24-01",
+        "unit": "ch24",
+        "part_id": "P08",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4111,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+        "source_file_line": 50
+      }
     },
     {
       "schema_id": "SCH-24-02",
@@ -7323,7 +8262,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-47.svg",
           "role_note": "Pipeline ADLC probabiliste allant du registre `SemVer+Intent` au déploiement canari sous `pass^5` et chaos."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-24-02",
+        "unit": "ch24",
+        "part_id": "P08",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4140,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+        "source_file_line": 79
+      }
     },
     {
       "schema_id": "SCH-24-03",
@@ -7416,7 +8367,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-56.svg",
           "role_note": "Relie les mesures de routage cognitif hybride à trois paliers sur `agentgateway` à la télémétrie d'exploitation."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-24-03",
+        "unit": "ch24",
+        "part_id": "P08",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4155,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+        "source_file_line": 94
+      }
     },
     {
       "schema_id": "SCH-25-01",
@@ -7501,7 +8464,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-27.2.png",
           "role_note": "Met en évidence le seuil critique de l'adverbe « exclusivement » qui distingue une assistance réelle d'une automatisation déguisée."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-25-01",
+        "unit": "ch25",
+        "part_id": "P09",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4266,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+        "source_file_line": 70
+      }
     },
     {
       "schema_id": "SCH-25-02",
@@ -7602,7 +8577,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-30.2.svg",
           "role_note": "Positionne sur un même axe temporel canadien la Loi 25, BSIF E-23, la ligne directrice AMF (1er mai 2027) et l'Avis ACVM 11-348."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-25-02",
+        "unit": "ch25",
+        "part_id": "P09",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4280,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+        "source_file_line": 84
+      }
     },
     {
       "schema_id": "SCH-25-03",
@@ -7695,7 +8682,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-51.svg",
           "role_note": "Décrit les six étapes du cycle de vie interne dans l'inventaire unifié (cadre MCN Québec étendu à six portes)."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-25-03",
+        "unit": "ch25",
+        "part_id": "P09",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4311,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+        "source_file_line": 115
+      }
     },
     {
       "schema_id": "SCH-26-01",
@@ -7787,7 +8786,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-46.svg",
           "role_note": "Cartographie les obligations multijuridictionnelles vers une couche commune d'artefacts de preuve d'audit."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-26-01",
+        "unit": "ch26",
+        "part_id": "P09",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4410,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+        "source_file_line": 61
+      }
     },
     {
       "schema_id": "SCH-26-02",
@@ -7881,7 +8892,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-19.svg",
           "role_note": "Synthétise le socle probatoire unique évitant les silos entre normes volontaires et obligations légales."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-26-02",
+        "unit": "ch26",
+        "part_id": "P09",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4442,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+        "source_file_line": 93
+      }
     },
     {
       "schema_id": "SCH-26-03",
@@ -7963,7 +8986,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-31.4.svg",
           "role_note": "Identifie les quatre plans où circule réellement la donnée régulée afin de ne laisser aucun substrat d'état hors périmètre."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-26-03",
+        "unit": "ch26",
+        "part_id": "P09",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4458,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+        "source_file_line": 109
+      }
     },
     {
       "schema_id": "SCH-27-01",
@@ -8029,7 +9064,19 @@
         "key_takeaway_box": "Les déclarations d'interopérabilité et de réversibilité des fournisseurs demeurent inopposables sans preuve empirique : l'exigence EXIG-APP-04 impose une validation reproductible en banc d'essai avant toute signature contractuelle."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-27-01",
+        "unit": "ch27",
+        "part_id": "P09",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-01.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-01.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4539,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+        "source_file_line": 45
+      }
     },
     {
       "schema_id": "SCH-27-02",
@@ -8096,7 +9143,19 @@
         "key_takeaway_box": "La faculté de quitter un fournisseur d'IA se négocie avant la signature contractuelle et jamais lors d'une panne ou d'une révision tarifaire : les dix clauses EXIG-APP garantissent une sortie ordonnée assortie de six mois d'assistance."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-27-02",
+        "unit": "ch27",
+        "part_id": "P09",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4568,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+        "source_file_line": 74
+      }
     },
     {
       "schema_id": "SCH-27-03",
@@ -8170,7 +9229,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-49.svg",
           "role_note": "Met directement en scène la séparation entre autorité réelle configurée et autorité apparente perçue par le tiers où loge le risque juridique."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-27-03",
+        "unit": "ch27",
+        "part_id": "P09",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4589,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+        "source_file_line": 95
+      }
     },
     {
       "schema_id": "SCH-28-01",
@@ -8273,7 +9344,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-34.3.png",
           "role_note": "Montre la chaîne de souscription vie accélérée soumise à des contraintes réglementaires et à une révision humaine directes."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-28-01",
+        "unit": "ch28",
+        "part_id": "P10",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4692,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+        "source_file_line": 66
+      }
     },
     {
       "schema_id": "SCH-28-02",
@@ -8366,7 +9449,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.4.png",
           "role_note": "Démontre le principe « l'agent observe, le rail exécute » avec blocage symbolisé (×) à la frontière d'irréversibilité."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-28-02",
+        "unit": "ch28",
+        "part_id": "P10",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4724,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+        "source_file_line": 98
+      }
     },
     {
       "schema_id": "SCH-28-03",
@@ -8458,7 +9553,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-40.svg",
           "role_note": "Matérialise le sas obligatoire IEC 62443 (lecture seule et jumeau numérique déterministe) bornant l'extrapolation IT/OT."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-28-03",
+        "unit": "ch28",
+        "part_id": "P10",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4762,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+        "source_file_line": 136
+      }
     },
     {
       "schema_id": "SCH-29-01",
@@ -8567,7 +9674,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-08.png",
           "role_note": "Apporte l'arbre décisionnel de validation mécanique des 5 SBB et des critères C01–C40 à la porte G0."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-29-01",
+        "unit": "ch29",
+        "part_id": "P10",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4856,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+        "source_file_line": 76
+      }
     },
     {
       "schema_id": "SCH-29-02",
@@ -8659,7 +9778,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-36.svg",
           "role_note": "Illustre la séquence de bascule multi-fournisseurs journalisée et le repli HOTL sous SLA."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-29-02",
+        "unit": "ch29",
+        "part_id": "P10",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4879,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+        "source_file_line": 99
+      }
     },
     {
       "schema_id": "SCH-29-03",
@@ -8758,7 +9889,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg",
           "role_note": "Matérialise le banc EvalOps hermétique reproductible qui substitue des mesures CI vérifiables à toute estimation fictive."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-29-03",
+        "unit": "ch29",
+        "part_id": "P10",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4931,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+        "source_file_line": 151
+      }
     },
     {
       "schema_id": "SCH-30-01",
@@ -8875,7 +10018,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-52.svg",
           "role_note": "Illustre la livraison progressive Shadow/Canary couplée au Worker Versioning Temporal."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-30-01",
+        "unit": "ch30",
+        "part_id": "P10",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 4994,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+        "source_file_line": 47
+      }
     },
     {
       "schema_id": "SCH-30-02",
@@ -8965,7 +10120,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-14.svg",
           "role_note": "Compare l'antipatron destructeur Swagger-to-MCP 1:1 à la conception par façades d'intention ACI consolidées."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-30-02",
+        "unit": "ch30",
+        "part_id": "P10",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5043,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+        "source_file_line": 96
+      }
     },
     {
       "schema_id": "SCH-30-03",
@@ -9065,7 +10232,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-22.png",
           "role_note": "Fournit une vue synthétique immédiatement actionnable pour la direction sur les jalons 90, 180 et 360 jours."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-30-03",
+        "unit": "ch30",
+        "part_id": "P10",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5073,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+        "source_file_line": 126
+      }
     },
     {
       "schema_id": "SCH-31-01",
@@ -9158,7 +10337,19 @@
           "rendered_path": "Sources/Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-06.svg",
           "role_note": "Relie les trois paliers 2028–2035 à leurs portes d'homologation et aux échéances réglementaires."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-31-01",
+        "unit": "ch31",
+        "part_id": "P11",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-01.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5148,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+        "source_file_line": 58
+      }
     },
     {
       "schema_id": "SCH-31-02",
@@ -9258,7 +10449,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-65.svg",
           "role_note": "Compare visuellement les trois horloges : chartes IETF, textes réglementaires adoptés et transition post-quantique."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-31-02",
+        "unit": "ch31",
+        "part_id": "P11",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5174,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+        "source_file_line": 84
+      }
     },
     {
       "schema_id": "SCH-31-03",
@@ -9360,7 +10563,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-21.svg",
           "role_note": "Positionne les signaux de veille et le socle sans regret sur l'horizon incertain 2027–2035."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-31-03",
+        "unit": "ch31",
+        "part_id": "P11",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5196,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+        "source_file_line": 106
+      }
     },
     {
       "schema_id": "SCH-32-01",
@@ -9453,7 +10668,19 @@
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-45.svg",
           "role_note": "Relie le modèle opérationnel EA au registre central et aux Trois Lignes de Défense."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-32-01",
+        "unit": "ch32",
+        "part_id": "P11",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5281,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
+        "source_file_line": 43
+      }
     },
     {
       "schema_id": "SCH-32-02",
@@ -9544,7 +10771,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-24.3.png",
           "role_note": "Complète le cycle de vie de l'identité à l'échelle du parc, de l'enregistrement initial à la révocation."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-32-02",
+        "unit": "ch32",
+        "part_id": "P11",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5309,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
+        "source_file_line": 71
+      }
     },
     {
       "schema_id": "SCH-32-03",
@@ -9627,7 +10866,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-10.4.png",
           "role_note": "Montre la chaîne du mandat comme couche de preuve technique face aux limites d'opposabilité en litige."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-32-03",
+        "unit": "ch32",
+        "part_id": "P11",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5341,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
+        "source_file_line": 103
+      }
     },
     {
       "schema_id": "SCH-33-01",
@@ -9696,7 +10947,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-20.svg",
           "role_note": "Fournit exactement la boucle d'érosion des compétences humaines E1–E5 et ses trois disjoncteurs organisationnels D1–D3."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-33-01",
+        "unit": "ch33",
+        "part_id": "P11",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5432,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+        "source_file_line": 42
+      }
     },
     {
       "schema_id": "SCH-33-02",
@@ -9757,7 +11020,19 @@
         "key_takeaway_box": "Une approbation humaine exécutée sans examen critique des pièces sources ne constitue pas un contrôle opposable ; le masquage préalable et les cas témoins protègent simultanément le client, la conformité à la Loi 25 et l'autorité réelle du réviseur."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-33-02",
+        "unit": "ch33",
+        "part_id": "P11",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5450,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+        "source_file_line": 60
+      }
     },
     {
       "schema_id": "SCH-33-03",
@@ -9814,7 +11089,19 @@
         "key_takeaway_box": "Un plan de continuité manuel qui n'est jamais exercé hors ligne demeure théorique ; la règle INI-043 préserve la compétence humaine active avant la survenue d'une crise."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-33-03",
+        "unit": "ch33",
+        "part_id": "P11",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5462,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+        "source_file_line": 72
+      }
     },
     {
       "schema_id": "SCH-34-01",
@@ -9897,7 +11184,19 @@
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-19.svg",
           "role_note": "Illustre le socle probatoire unique couvrant simultanément Loi 25, BSIF E-23, AMF et EU AI Act."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-34-01",
+        "unit": "ch34",
+        "part_id": "P12",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5583,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
+        "source_file_line": 72
+      }
     },
     {
       "schema_id": "SCH-34-02",
@@ -9982,7 +11281,19 @@
           "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-68.svg",
           "role_note": "Détaille l'arbre de décision arbitrant entre service déterministe L0, SLM, HITL L2 et orchestration multi-agents L3/L4."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-34-02",
+        "unit": "ch34",
+        "part_id": "P12",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-02.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-02.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5601,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
+        "source_file_line": 90
+      }
     },
     {
       "schema_id": "SCH-34-03",
@@ -10057,7 +11368,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-08.png",
           "role_note": "Fournit l'arbre décisionnel de validation mécanique des 24 [BLOQUANT] PRR, de 2027-B001, des 5 SBB et des contrats C01–C40."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-34-03",
+        "unit": "ch34",
+        "part_id": "P12",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-03.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-03.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5621,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
+        "source_file_line": 110
+      }
     },
     {
       "schema_id": "SCH-35-01",
@@ -10132,7 +11455,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-00.svg",
           "role_note": "Montre directement l'architecture bicéphale du Tome 8 (manuel ≤ 40 lignes, quatre modules Python/OPA, DISC-01 à DISC-05, quatre vecteurs tiers, CA-G0-SYNC et pipeline G0–G5)."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-35-01",
+        "unit": "ch35",
+        "part_id": "P12",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5732,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+        "source_file_line": 34
+      }
     },
     {
       "schema_id": "SCH-35-02",
@@ -10219,7 +11554,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-05.svg",
           "role_note": "Illustre le moteur OPA/Rego fermé par défaut portant `SBB-GUARDRAILS-ENGINE`."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-35-02",
+        "unit": "ch35",
+        "part_id": "P12",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-02.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5756,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+        "source_file_line": 58
+      }
     },
     {
       "schema_id": "SCH-35-03",
@@ -10276,7 +11623,19 @@
         "key_takeaway_box": "Les résultats de simulation servent à calibrer les seuils hors ligne sous un plafond épistémique explicite de 65 % (`DC-P12`), tandis que les contrats C.1–C.8 garantissent la continuité de la piste d'audit lors de la transition post-quantique."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-35-03",
+        "unit": "ch35",
+        "part_id": "P12",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-03.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5837,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+        "source_file_line": 139
+      }
     },
     {
       "schema_id": "SCH-36-01",
@@ -10361,7 +11720,19 @@
           "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-02.svg",
           "role_note": "Détaille le raccordement exact des cinq couches et trois volets aux six couches de CAD26 § 5.2."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-36-01",
+        "unit": "ch36",
+        "part_id": "P12",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-01.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-01.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5919,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+        "source_file_line": 45
+      }
     },
     {
       "schema_id": "SCH-36-02",
@@ -10422,7 +11793,19 @@
         "key_takeaway_box": "Les règles DISC-01 à DISC-05 agissent comme une table de passage formelle : une seule échelle de criticité, une seule révision MCP de référence et une cohérence complète entre la norme écrite et le code exécutable."
       },
       "reuse_status": "creation_originale",
-      "linked_tome_figures": []
+      "linked_tome_figures": [],
+      "compendium_figure": {
+        "schema_id": "SCH-36-02",
+        "unit": "ch36",
+        "part_id": "P12",
+        "engine": "svg",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-02.svg",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-02.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5941,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+        "source_file_line": 67
+      }
     },
     {
       "schema_id": "SCH-36-03",
@@ -10508,7 +11891,19 @@
           "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-00.svg",
           "role_note": "Illustre le chaînage complet des barrières G0 à G5, l'étanchéité de vérification et les vecteurs tiers."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-36-03",
+        "unit": "ch36",
+        "part_id": "P12",
+        "engine": "puml",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-03.puml",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-03.svg",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 5991,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+        "source_file_line": 117
+      }
     },
     {
       "schema_id": "SCH-36-04",
@@ -10602,7 +11997,19 @@
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.3.svg",
           "role_note": "Fournit la vue synthétique par Livre des impacts de péremption post-gel (Tableau 50.1 et Annexe N)."
         }
-      ]
+      ],
+      "compendium_figure": {
+        "schema_id": "SCH-36-04",
+        "unit": "ch36",
+        "part_id": "P12",
+        "engine": "mmd",
+        "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-04.mmd",
+        "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-04.png",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 6011,
+        "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+        "source_file_line": 137
+      }
     }
   ],
   "annexe_e": {

@@ -370,14 +370,36 @@ def _render_schema_block(schema: dict[str, Any]) -> list[str]:
     if takeaway:
         lines.append(f"    - **Synthèse doctrinale** : {takeaway}")
 
+    cfig = schema.get("compendium_figure")
+    if isinstance(cfig, dict) and cfig.get("rendered_path"):
+        comp_r_url = f"../../{encode_rel_url(str(cfig.get('rendered_path', '')))}"
+        comp_s_url = f"../../{encode_rel_url(str(cfig.get('source_path', '')))}"
+        comp_md_line = cfig.get("compendium_md_line")
+        comp_src_file = str(cfig.get("source_file", ""))
+        comp_src_line = cfig.get("source_file_line")
+        md_link = (
+            f" · [Compendium L{comp_md_line}](../../Compendium/Compendium.md#L{comp_md_line})"
+            if comp_md_line
+            else ""
+        )
+        src_unit_link = (
+            f" · [Manuscrit L{comp_src_line}](../../{encode_rel_url(comp_src_file)}#L{comp_src_line})"
+            if comp_src_file and comp_src_line
+            else ""
+        )
+        lines.append(
+            f"  - **Rendu compilé Compendium (`{cfig.get('unit', '')}` · `{cfig.get('part_id', '')}` · `{cfig.get('engine', '')}`)** : "
+            f"[Rendu compilé]({comp_r_url}) · [Source schéma]({comp_s_url}){md_link}{src_unit_link}"
+        )
+
     figs = schema.get("linked_tome_figures") or []
     if not figs:
         lines.append(
-            "  - **Figures sources des Tomes rattachées** : Aucune figure préexistante "
+            "  - **Concordance historique Tomes 1–8** : Aucune figure préexistante "
             "(création originale pure sans équivalent dans les Tomes 1–8)."
         )
     else:
-        lines.append(f"  - **Figures sources des Tomes rattachées ({len(figs)})** :")
+        lines.append(f"  - **Concordance historique Tomes 1–8 ({len(figs)})** :")
         for fig in figs:
             tome_id = str(fig.get("tome_id", "")).strip()
             fig_id = _clean_prd_prose(fig.get("fig_id", ""))
@@ -414,7 +436,7 @@ def render_annexe_tables(
     if code == "A":
         lines.append("#### Table maîtresse de traçabilité MindMap (12 Domaines / 36 Sous-domaines / 71 Familles / 260 Thèmes) → PRD")
         lines.append("")
-        lines.append("| Ch. | Domaine | Sous-domaine MindMap (`node_id`) | Titre du chapitre PRD | Familles | Thèmes | Occurrences | Tomes | Identifiants clés |")
+        lines.append("| Ch. | Domaine | Sous-domaine MindMap (`node_id`) | Titre du chapitre PRD | Familles | Thèmes | Occurrences | Sections Compendium | Identifiants clés |")
         lines.append("|---:|---|---|---|---:|---:|---:|---|---|")
         for ch_num in range(1, 37):
             ch = chapters_by_num[ch_num]
@@ -431,7 +453,8 @@ def render_annexe_tables(
                 for th in f["themes_targeted"]:
                     ids_set.update(node_by_id[th["theme_node_id"]].get("identifiers") or [])
             ids_top = ", ".join(f"`{_md_cell(x)}`" for x in sorted(ids_set)) or "—"
-            tomes = ", ".join(_md_cell(t) for t in (sub.get("tomes_present") or []))
+            parts_list = sub.get("parts_present") or sub.get("tomes_present") or []
+            tomes = ", ".join(_md_cell(t) for t in parts_list)
             anc = chapter_anchors[ch_num]
             lines.append(
                 f"| **[{ch_num:02d}](#{anc})** | `{_md_cell(ch['domain_id'])}` | `{_md_cell(sub['node_id'])}` — {_md_cell(sub['title'])} | "
@@ -454,7 +477,7 @@ def render_annexe_tables(
 
         lines.append("#### Top 20 des nœuds carrefours par degré d'interrelations")
         lines.append("")
-        lines.append("| Rang | Nœud thématique | Domaine | Chapitre PRD | Degré total | Tomes |")
+        lines.append("| Rang | Nœud thématique | Domaine | Chapitre PRD | Degré total | Sections Compendium |")
         lines.append("|---:|---|---|---|---:|---|")
         themes = [n for n in nodes if n["node_kind"] == "theme"]
         sub_by_title = {
@@ -469,7 +492,7 @@ def render_annexe_tables(
             if sub_id:
                 cnum = expected_chapter_number(tn["domain_id"], sub_id)
                 ch_link = f"[Ch. {cnum:02d}](#{chapter_anchors[cnum]})"
-            tomes = ", ".join(_md_cell(t) for t in (tn.get("tomes_present") or []))
+            tomes = ", ".join(_md_cell(t) for t in (tn.get("parts_present") or tn.get("tomes_present") or []))
             lines.append(
                 f"| {rank} | **{_md_cell(tn['title'])}** (`{_md_cell(tn['canonical_slug'])}`) | "
                 f"`{_md_cell(tn['domain_id'])}` | {ch_link} | **{tn.get('relation_degree', 0)}** | {tomes} |"
@@ -494,22 +517,26 @@ def render_annexe_tables(
     elif code == "C":
         div02 = pivots.get("div_02") or {}
         if div02:
-            lines.append("#### Fermeture de la divergence architecturale `DIV-02` (Tome 5)")
+            lines.append("#### Fermeture de la divergence architecturale `DIV-02` (Compendium § 0.2 / Ch. 06 / Annexe C)")
             lines.append("")
-            lines.append(f"- **Objet** : {div02.get('title', '')}")
-            lines.append(f"- **Statut** : `{div02.get('statut', '')}` — [Source Tome 5](../../{encode_rel_url(div02.get('file', ''))}#L{div02.get('line_start', 19)})")
+            lines.append(f"- **Objet** : {_clean_prd_prose(div02.get('title', ''))}")
+            d_file = div02.get("file") or "Compendium/Compendium.md"
+            d_line = div02.get("line_start") or 108
+            lines.append(f"- **Statut** : `{div02.get('statut', '')}` — [Compendium #L{d_line}](../../{encode_rel_url(d_file)}#L{d_line})")
             for rect in div02.get("rectifications", []):
-                lines.append(f"  - {rect}")
+                lines.append(f"  - {_clean_prd_prose(rect)}")
             lines.append("")
 
         recs = pivots.get("reconciliations") or []
         if recs:
-            lines.append("#### Résolution des cinq discordances inter-volumes (`DISC-01` à `DISC-05`, Tome 8 §0.2)")
+            lines.append("#### Résolution des cinq discordances inter-volumes (`DISC-01` à `DISC-05`, Compendium § 0.2 / Ch. 36 / Annexe C)")
             lines.append("")
-            lines.append("| ID | Sujet | Choix canonique retenu (Tome 8) | Source |")
+            lines.append("| ID | Sujet | Choix canonique retenu (Compendium) | Source |")
             lines.append("|---|---|---|---|")
             for rec in recs:
-                ref_url = f"[{_md_cell(rec.get('section', 'Tome 8 §0.2'))}](../../{encode_rel_url(rec.get('file', ''))}#L{rec.get('line_start', 34)})"
+                r_file = rec.get("file") or "Compendium/Compendium.md"
+                r_line = rec.get("line_start") or 116
+                ref_url = f"[{_md_cell(rec.get('section', f'Compendium L{r_line}'))}](../../{encode_rel_url(r_file)}#L{r_line})"
                 lines.append(
                     f"| `{_md_cell(rec.get('id', ''))}` | {_md_cell(rec.get('title', ''))} | "
                     f"{_md_cell(rec.get('resolution', ''))} | {ref_url} |"
@@ -532,7 +559,7 @@ def render_annexe_tables(
         if tl_clean:
             lines.append(f"#### Jalons chronologiques consolidés 2018–2035 ({len(tl_clean)} jalons consolidés et triés)")
             lines.append("")
-            lines.append("| Échéance | Cadre / Jalon | Portée concrète | Tomes |")
+            lines.append("| Échéance | Cadre / Jalon | Portée concrète | Unités Compendium |")
             lines.append("|---|---|---|---|")
             for ev in tl_clean:
                 tomes = ", ".join(_md_cell(t) for t in (ev.get("tomes") or []))
@@ -544,39 +571,61 @@ def render_annexe_tables(
 
     elif code == "D":
         bilans = pivots.get("bilans_aq") or {}
-        t8_g0 = bilans.get("tome_8_g0_g5") or {}
-        t7_g = bilans.get("tome_7_g1_g5") or {}
-        t5_ca = bilans.get("tome_5_ca16") or {}
+        comp_g0 = bilans.get("compendium_g0_g5") or {}
+        g0_rep = comp_g0.get("rapports_g0") or {}
         col = pivots.get("collection_metrics") or {}
-        lines.append("#### Synthèse d'homologation vérifiable `G0–G5`, licences et clause `non-avis`")
+        gloss_items = (pivots.get("glossaire_pivot") or {}).get("glossaire_compendium_56") or []
+        facts_16 = pivots.get("faits_empiriques_16") or comp_g0.get("faits_empiriques_16") or []
+        specs_57 = pivots.get("specifications_lplus_57") or comp_g0.get("specifications_lplus_57") or []
+
+        lines.append("#### Synthèse d'homologation vérifiable `G0–G5` du Compendium, socle `L+`, glossaire et clause `non-avis`")
         lines.append("")
+        opa_chk = g0_rep.get("opa_check") or {}
+        pyt_chk = g0_rep.get("pytest_check") or {}
+        sch_chk = g0_rep.get("schema_validation") or {}
         lines.append(
-            f"- **Trousse exécutable (`Tome 8`)** : `{t8_g0.get('g0_pytest', '83/83 pytest')}`, "
-            f"`{t8_g0.get('g0_opa', '45/45 OPA / Rego (100 %)')}`, `{t8_g0.get('g0_schemas', '21/21 validations JSON Schema 2020-12 (13 schémas)')}`."
+            f"- **Ouvrage maître Compendium (`2026-12-02`)** : `{col.get('compendium_pdf_pages', 837)}` pages PDF (`Compendium/Compendium.pdf`), "
+            f"`{col.get('compendium_md_words', 241759)}` mots (`{col.get('compendium_md_lines', 8408)}` lignes, `{col.get('compendium_units', 42)}` unités, "
+            f"`{col.get('compendium_schemas', 115)}` schémas compilés)."
         )
-        if t7_g:
-            wyv = t7_g.get("wyvern_g2")
-            if isinstance(wyv, dict):
-                wyv_txt = (
-                    f"Wyvern G2 : `{wyv.get('unites', 13)}` unités, "
-                    f"`{wyv.get('initiales', 1084)} → {wyv.get('finales_supportees', 1087)}` assertions supportées (`{wyv.get('taux', '100 %')}`)"
-                )
-            else:
-                wyv_txt = f"`{_clean_prd_prose(wyv or '1 087 assertions Wyvern 100 %')}`"
-            lines.append(f"- **Tome 7 (`G1–G5`)** : `{t7_g.get('sources_l_plus', 79)}` sources `L+`, {wyv_txt}.")
-        if t5_ca:
-            lines.append(f"- **Tome 5 (`CA-16`)** : échantillon stratifié `{t5_ca.get('echantillon_stratifie', '24 items')}`, passe finale `{t5_ca.get('passe_2_finale', '100 %')}`.")
+        lines.append(
+            f"- **Trousse exécutable (`G0–G5`)** : statut `{g0_rep.get('overall_status', 'PASS')}` · "
+            f"`pytest` : `{pyt_chk.get('passed', 0)}` réussis / `{pyt_chk.get('failed', 0)}` échec · "
+            f"`OPA/Rego` : `{opa_chk.get('tests_passed', 0)}` réussis (`{opa_chk.get('coverage_pct', 100)} %`) · "
+            f"`JSON Schema` : `{sch_chk.get('schemas_checked', 0)}` schémas vérifiés · "
+            f"`{comp_g0.get('ca_g0_sync_count', 14)}` extraits scellés `CA-G0-SYNC`."
+        )
+        lines.append(
+            f"- **Socle probatoire fermé (`L+` / Wyvern `G2`)** : `{comp_g0.get('sources_l_plus', 135)}` sources primaires `L+` "
+            f"(`{comp_g0.get('metadata_only_pct', 0.0)} %` `METADATA_ONLY`), `{comp_g0.get('statut_f_exclus', 27)}` exclusions `Statut F` sans contournement (`AO-01`), "
+            f"`{comp_g0.get('wyvern_g2_unites_count', 37)}/37` journaux d'ancrage Wyvern `G2`, `{len(facts_16)}` faits empiriques et `{len(specs_57)}` spécifications `L+`."
+        )
+        if gloss_items:
+            sa_item = next(
+                (g for g in gloss_items if "agentivité des systèmes" in str(g.get("fr", "")).lower()),
+                next((g for g in gloss_items if "agentivit" in str(g.get("fr", "")).lower()), None),
+            )
+            sa_en = _clean_prd_prose(sa_item["en"]) if sa_item else ""
+            sa_note = (
+                f" (dont **`{sa_item['fr']}`** / *{sa_en}*, `{sa_item['chapitre_proprietaire']}` · "
+                f"[Compendium L{sa_item.get('compendium_md_line', 213)}](../../Compendium/Compendium.md#L{sa_item.get('compendium_md_line', 213)}))"
+                if sa_item
+                else ""
+            )
+            lines.append(
+                f"- **Glossaire normatif bilingue** : `{len(gloss_items)}` vedettes vérifiées avec chapitre propriétaire unique{sa_note}."
+            )
         if col:
             lic = col.get("licences")
             if isinstance(lic, dict):
                 lic_txt = (
-                    f"`{lic.get('texte_figures_registres', 'CC-BY-4.0 (T2–T5, T7–T8)')}` (texte, figures et registres) et "
+                    f"`{lic.get('texte_figures_registres', 'CC BY 4.0')}` (texte, figures et registres) et "
                     f"`{lic.get('code_scripts_trousse', 'MIT')}` (code, scripts et trousse)"
                 )
             else:
-                lic_txt = str(lic or "CC-BY-4.0 (texte/figures) et MIT (code/scripts)")
+                lic_txt = str(lic or "CC BY 4.0 (texte/figures) et MIT (code/scripts)")
             lines.append(
-                f"- **Licences & portée consultative** : {lic_txt} ; statut `{col.get('statut_juridique', 'non-avis (DC-P12 / AO-05)')}`."
+                f"- **Licences & portée consultative** : {lic_txt} ; statut `{col.get('statut_juridique', 'non-avis (AO-05 / DC-P01 / DC-P12)')}`."
             )
         lines.append("")
 
@@ -822,13 +871,13 @@ def render_annexe_tables(
             )
         lines.append("")
 
-        # Table E.4 : Catalogue directeur intégral des 115 schémas
-        lines.append(f"#### Catalogue directeur intégral des {len(all_schemas)} schémas de vulgarisation (SCH-00 et SCH-01 à SCH-36)")
+        # Table E.4 : Catalogue directeur intégral des 115 schémas (Compendium + concordance Tomes)
+        lines.append(f"#### Catalogue directeur intégral des {len(all_schemas)} schémas compilés du Compendium (SCH-00 et SCH-01 à SCH-36)")
         lines.append("")
         lines.append(
             "| Identifiant schéma (`SCH-*`) | Portée (`GLOBAL` / `CH-XX` et `FAM_*`) | "
-            "Titre et point d'insertion dans `prd.md` | Archétype visuel et notation recommandée | "
-            "Publics cibles et statut de réutilisation | Figures Tomes 1–8 associées (`.puml`/`.mmd` et rendus) |"
+            "Titre et point d'insertion | Archétype visuel et notation | "
+            "Rendu & source Compendium (`schemas/rendus/`) | Concordance figures Tomes 1–8 |"
         )
         lines.append("|---|---|---|---|---|---|")
         for sc in all_schemas:
@@ -842,11 +891,21 @@ def render_annexe_tables(
                 fams_txt = ", ".join(f"`{_md_cell(f)}`" for f in (sc.get("families_covered") or []))
                 scope_cell = f"[`CH-{cnum:02d}`](#{c_anc}) · [§{cnum:02d}.3](#{s_anc}) ({fams_txt})"
             title_ins = f"**{_md_cell(sc.get('title', ''))}** — *{_md_cell(sc.get('insertion_point', ''))}*"
-            arch_not = f"{_md_cell(sc.get('visual_archetype', ''))} · `{_md_cell(sc.get('recommended_notation', ''))}`"
-            aud_stat = (
-                f"{_md_cell(', '.join(sc.get('target_audiences') or []))} · "
+            arch_not = (
+                f"{_md_cell(sc.get('visual_archetype', ''))} · `{_md_cell(sc.get('recommended_notation', ''))}` · "
                 f"`{REUSE_STATUS_LABELS.get(str(sc.get('reuse_status', '')), str(sc.get('reuse_status', '')))}`"
             )
+            cfig = sc.get("compendium_figure") or {}
+            if cfig.get("rendered_path"):
+                c_r = f"../../{encode_rel_url(str(cfig.get('rendered_path', '')))}"
+                c_s = f"../../{encode_rel_url(str(cfig.get('source_path', '')))}"
+                c_line = cfig.get("compendium_md_line")
+                comp_cell = (
+                    f"[Rendu]({c_r}) · [Source]({c_s})"
+                    + (f" · [L{c_line}](../../Compendium/Compendium.md#L{c_line})" if c_line else "")
+                )
+            else:
+                comp_cell = "—"
             figs = sc.get("linked_tome_figures") or []
             if not figs:
                 figs_cell = "Création originale pure (aucune figure Tome)"
@@ -857,7 +916,7 @@ def render_annexe_tables(
                     f"[Source](../../{encode_rel_url(str(fg.get('source_path', '')))}))"
                     for fg in figs
                 )
-            lines.append(f"| `{sid}` | {scope_cell} | {title_ins} | {arch_not} | {aud_stat} | {figs_cell} |")
+            lines.append(f"| `{sid}` | {scope_cell} | {title_ins} | {arch_not} | {comp_cell} | {figs_cell} |")
         lines.append("")
 
     return lines
@@ -984,11 +1043,13 @@ def build_prd_markdown(
 
             body_lines.append(f"### {ch_head}")
             body_lines.append("")
+            parts_lbl = ", ".join(f"`{t}`" for t in (sub_node.get("parts_present") or [])) or "—"
+            tomes_lbl = ", ".join(f"`{t}`" for t in (sub_node.get("tomes_present") or [])) or "—"
             body_lines.append(
                 f"- **Identifiant PRD** : `{ch['chapter_code']}` · **Domaine** : `{dom_id}` · "
                 f"**Sous-domaine MindMap** : `{sub_node['node_id']}` (*{_clean_prd_prose(sub_node['title'])}*) · "
                 f"**Couverture** : `{len(fams)}` familles, `{thm_count}` thèmes · "
-                f"**Tomes** : {', '.join(f'`{t}`' for t in (sub_node.get('tomes_present') or []))}"
+                f"**Sections Compendium** : {parts_lbl} · **Tomes sources (provenance)** : {tomes_lbl}"
             )
             body_lines.append("")
 
@@ -1022,6 +1083,8 @@ def build_prd_markdown(
                     autonomy = ", ".join(mm_node.get("autonomy_levels") or []) or "—"
                     roles = ", ".join(mm_node.get("roles") or []) or "—"
                     horizon = _clean_prd_prose(mm_node.get("horizon") or ", ".join(mm_node.get("horizons") or [])) or "—"
+                    owner_ch = mm_node.get("owner_chapter") or f"ch{ch_num:02d}"
+                    parts_ch = ", ".join(mm_node.get("parts_present") or []) or "—"
                     tomes = ", ".join(mm_node.get("tomes_present") or []) or "—"
                     ids_str = ", ".join(f"`{i}`" for i in ids_merged) if ids_merged else "—"
 
@@ -1030,31 +1093,35 @@ def build_prd_markdown(
                     for occ in sorted(
                         mm_node.get("occurrences") or [],
                         key=lambda o: (
-                            cm.TOME_ORDER.get(str(o.get("tome_id", "")), 99),
+                            cm.TOME_ORDER.get(str(o.get("part_id") or o.get("tome_id", "")), 99),
                             int(o.get("line_start") or 0),
                             int(o.get("line_end") or o.get("line_start") or 0),
                         ),
                     ):
                         ok_key = (
-                            str(occ.get("tome_id", "")),
+                            str(occ.get("part_id") or occ.get("tome_id", "")),
                             str(occ.get("file", "")),
                             int(occ.get("line_start") or 0),
-                            int(occ.get("line_end") or occ.get("line_start") or 0),
+                            int(o_end := int(occ.get("line_end") or occ.get("line_start") or 0)),
                         )
                         if ok_key not in occ_seen:
                             occ_seen.add(ok_key)
                             occ_sorted.append(occ)
                     occ_links: list[str] = []
                     for occ in occ_sorted:
+                        pid = str(occ.get("part_id") or occ.get("tome_id", ""))
+                        uid_c = str(occ.get("compendium_unit_id") or "")
                         href = f"../../{encode_rel_url(occ['file'])}#L{occ['line_start']}"
-                        occ_links.append(f"[{occ['tome_id']} L{occ['line_start']}–L{occ['line_end']}]({href})")
+                        lbl = f"{pid} · {uid_c} · L{occ['line_start']}–L{occ['line_end']}" if uid_c else f"{pid} L{occ['line_start']}–L{occ['line_end']}"
+                        occ_links.append(f"[{lbl}]({href})")
                     occ_str = " · ".join(occ_links) if occ_links else "—"
 
                     body_lines.append(f"- **{_clean_prd_prose(th['theme_title'])}** (`{th['theme_node_id']}` · `{slug}`)")
                     body_lines.append(f"  - *Spécification ciblée* : {_clean_prd_prose(th['content_specification'])}")
                     body_lines.append(
-                        f"  - *Gouvernance & métadonnées* : Autonomie `{autonomy}` · Rôles `{roles}` · "
-                        f"Horizon `{horizon}` · Tomes `{tomes}` · Normes/IDs : {ids_str}"
+                        f"  - *Gouvernance & métadonnées* : Chapitre propriétaire `{owner_ch}` · "
+                        f"Sections Compendium `{parts_ch}` · Autonomie `{autonomy}` · Rôles `{roles}` · "
+                        f"Horizon `{horizon}` · Provenance Tomes `{tomes}` · Normes/IDs : {ids_str}"
                     )
                     body_lines.append(f"  - *Ancrages directs* : {occ_str}")
                 body_lines.append("")
@@ -1110,40 +1177,43 @@ def build_prd_markdown(
                 )
             body_lines.append("")
 
-            body_lines.append("**Ancrages dans le Corpus**")
+            body_lines.append("**Ancrages dans le Compendium**")
             body_lines.append("")
-            body_lines.append("| Tome | Fichier source (`Tomes/`) | Référence |")
+            body_lines.append("| Section | Source Compendium | Référence |")
             body_lines.append("|---|---|---|")
             norm_anchors: list[tuple[int, int, str, str, str, str]] = []
             seen_anc_keys: set[tuple[str, str, str]] = set()
             for anc in tc.get("corpus_anchors", []):
-                tome_id = str(anc["tome_id"]).strip()
+                part_id = str(anc.get("part_id") or anc.get("section_id") or anc.get("tome_id") or "").strip()
                 fpath = str(anc["file"]).strip()
                 ref_clean = _clean_prd_prose(anc.get("reference", ""))
-                line_m = re.search(r"\bL(\d+)\s*[–-]\s*L?\d+", ref_clean) or re.search(
-                    r"\bL([1-9]\d*)\b", ref_clean
-                )
-                line_start_int = int(line_m.group(1)) if line_m else int(anc.get("line_start") or 0)
-                akey = (tome_id, fpath, ref_clean)
+                if isinstance(anc.get("line_start"), int) and int(anc["line_start"]) > 0:
+                    line_start_int = int(anc["line_start"])
+                else:
+                    line_m = re.search(r"\bL(\d+)\s*[–-]\s*L?\d+", ref_clean) or re.search(
+                        r"\bL([1-9]\d*)\b", ref_clean
+                    )
+                    line_start_int = int(line_m.group(1)) if line_m else 0
+                akey = (part_id, fpath, ref_clean)
                 if akey in seen_anc_keys:
                     continue
                 seen_anc_keys.add(akey)
                 norm_anchors.append(
                     (
-                        cm.TOME_ORDER.get(tome_id, 99),
+                        cm.TOME_ORDER.get(part_id, 99),
                         line_start_int,
-                        tome_id,
+                        part_id,
                         fpath,
                         f"#L{line_start_int}" if line_start_int > 0 else "",
                         ref_clean,
                     )
                 )
             norm_anchors.sort(key=lambda x: (x[0], x[1], x[5]))
-            for _, _, tome_id, fpath, line_frag, ref_clean in norm_anchors:
+            for _, _, part_id, fpath, line_frag, ref_clean in norm_anchors:
                 fname = Path(fpath).name
                 url = f"../../{encode_rel_url(fpath)}"
                 body_lines.append(
-                    f"| `{_md_cell(tome_id)}` | [{_md_cell(fname)}]({url}{line_frag}) | {_md_cell(ref_clean)} |"
+                    f"| `{_md_cell(part_id)}` | [{_md_cell(fname)}]({url}{line_frag}) | {_md_cell(ref_clean)} |"
                 )
             body_lines.append("")
 
@@ -1317,28 +1387,44 @@ def build_prd_markdown(
 
     toc_lines.extend(["", "---", ""])
 
+    col_metrics = (raw_pivots.get("collection_metrics") or {})
+    comp_pages = int(col_metrics.get("compendium_pdf_pages", 837))
+    comp_words = int(col_metrics.get("compendium_md_words", 241759))
+    comp_units = int(col_metrics.get("compendium_units", 42))
+    comp_secs = int(col_metrics.get("compendium_sections", 15))
+    comp_sch = int(col_metrics.get("compendium_schemas", 115))
+    comp_gloss = int(col_metrics.get("glossary_terms", 56))
+    comp_lplus = int(col_metrics.get("sources_l_plus", 135))
+    comp_words_str = f"{comp_words:,}".replace(",", " ")
+
     header_lines: list[str] = [
         f"# {prd_title}",
         "",
         f"*{_clean_prd_prose(global_shard['prd_subtitle'])}*",
         "",
         (
-            f"> **Version** : `{meta.get('version', '1.0.0')}` · **Date** : `{meta.get('date', '2026-11-24')}` · "
-            f"**Statut** : {meta.get('status', 'Référentiel d’exigences produit et architecture (non-avis)')}  "
+            f"> **Version** : `{meta.get('version', '2.0.0')}` · **Date** : `{meta.get('date', '2026-12-02')}` · "
+            f"**Statut** : {meta.get('status', 'Référentiel d’exigences produit et architecture du Compendium (non-avis)')}  "
         ),
         (
             f"> **Couverture vérifiée du MindMap** : `{totals['nodes']}` nœuds sur `5` niveaux "
             f"(`12` domaines `D01–D12`, `36` sous-domaines / chapitres, `71` familles, `{totals['theme_nodes']}` thèmes), "
-            f"`{totals['relations']}` interrelations typées, `{totals['files']}` fichiers `.md` (`{totals['headings']}` titres `H1–H6`).  "
+            f"`{totals['relations']}` interrelations typées, `{comp_secs}` sections `R, LIM, P01–P12, ANN` (`{totals['headings']}` titres `H1–H6`).  "
+        ),
+        (
+            f"> **Socle Compendium vérifié** : `{comp_pages}` pages PDF · `{comp_words_str}` mots · `{comp_units}` unités éditoriales · "
+            f"`{comp_sch}` schémas compilés · `{comp_gloss}` vedettes glossaire (dont `Agentivité des systèmes`) · `{comp_lplus}` sources `L+`.  "
         ),
         (
             "> **Navigation rapide** : "
             f"[Table des matières](#{toc_anchor}) · "
             f"[Sommaire exécutif global](#{exec_anchor}) · "
             f"[Compendium (`Compendium/`)](../../Compendium/README.md) · "
+            f"[Compendium Markdown](../../Compendium/Compendium.md) · "
+            f"[Compendium PDF](../../Compendium/Compendium.pdf) · "
             f"[Sources Compendium (`Sources/Compendium/`)](README.md) · "
             f"[PRD Web](../../{encode_rel_url('Sources/Cartographie/PRD - Référentiel directeur de l\'entreprise agentique.html')}) · "
-            f"[MindMap HTML](../../{encode_rel_url('Sources/Cartographie/MindMap - Cartographie thématique du Corpus.html')}) · "
+            f"[MindMap HTML](../../{encode_rel_url('Sources/Cartographie/MindMap - Cartographie thématique du Compendium.html')}) · "
             f"[Cartographie (`Sources/Cartographie/`)](../Cartographie/README.md) · "
             f"[Tomes (`Tomes/`)](../../Tomes/README.md) · "
             f"[Index dépôt](../../README.md)"
@@ -1351,6 +1437,12 @@ def build_prd_markdown(
     markdown_text = escape_markdown_dollars(
         "\n".join(header_lines + toc_lines) + "\n" + body_text.rstrip() + "\n"
     )
+    if "Systems of Agency" in markdown_text or "System of Agency" in markdown_text:
+        raise ValueError("Hygiène prd.md : occurrence 'System(s) of Agency' détectée")
+    if re.search(r"\bL[1-9]\d*-L?[1-9]\d*\b", markdown_text):
+        raise ValueError("Hygiène prd.md : plage Lxxx-Lyyy avec tiret ASCII détectée")
+    if re.search(r"(?<![A-Za-z_])synthetise\b", markdown_text.lower()):
+        raise ValueError("Hygiène prd.md : 'synthetise' sans accent détecté")
     total_schemas = len(global_schemas) + len(chapter_schemas_list)
     metrics = {
         "domains": len(parties),

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Extracteur structurel intégral du Corpus Agentique (Markdown CommonMark strict).
+"""Extracteur structurel intégral du Compendium de l'entreprise agentique (CommonMark strict).
 
-Parse les 9 fichiers Markdown de ``Tomes/`` (``README.md`` et ``Tome 1`` à ``Tome 8``),
-en respectant strictement la spécification CommonMark des blocs de code clôturés
-(backticks `` ``` `` / ```` ```` ```` et tildes `` ~~~ `` de longueur >= 3) afin
-qu'aucun commentaire ``# ...`` dans un bloc de code ne soit pris pour un titre.
+Parse en CommonMark strict :
+- ``Compendium/README.md`` (section ``R``)
+- ``Compendium/Compendium.md`` découpé selon ses 14 sections ``H1`` (``LIM``, ``P01``..``P12``, ``ANN``)
+en conservant les numéros de lignes exacts ``1..8408`` de ``Compendium/Compendium.md`` et en
+rattachant chaque unité (``00-liminaire``, ``ch01..ch36``, ``annexe-a..annexe-e``) à son
+``compendium_unit_id`` et à son ``source_file`` déclarés dans ``manifest.json``.
 
 Produit ``Sources/Cartographie/donnees/structure-integrale.json``.
 """
@@ -19,56 +21,67 @@ from pathlib import Path
 import re
 from typing import Any
 
-# Ordre canonique des 9 fichiers Markdown de Tomes/
-CORPUS_FILES_ORDER: list[tuple[str, str, str]] = [
-    ("R", "Tomes/README.md", "Index consolidé des Tomes"),
-    (
-        "T1",
-        "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-        "Tome 1 — Confiance protocolaire et encadrement financier",
-    ),
-    (
-        "T2",
-        "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-        "Tome 2 — Cadre normatif et exigences d'architecture",
-    ),
-    (
-        "T3",
-        "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-        "Tome 3 — Ingénierie du tissu conjonctif et état de l'art",
-    ),
-    (
-        "T4",
-        "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-        "Tome 4 — Prospective stratégique et trajectoire 2028–2035",
-    ),
-    (
-        "T5",
-        "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-        "Tome 5 — Synthèse exécutive et concordance architecturale",
-    ),
-    (
-        "T6",
-        "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-        "Tome 6 — Architecture multisectorielle et patrons de référence",
-    ),
-    (
-        "T7",
-        "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-        "Tome 7 — Gouverner l'industrialisation cognitive",
-    ),
-    (
-        "T8",
-        "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-        "Tome 8 — Ingénierie exécutable et homologation vérifiable",
-    ),
-]
+ROMAN_TO_PART_ID: dict[str, str] = {
+    "I": "P01",
+    "II": "P02",
+    "III": "P03",
+    "IV": "P04",
+    "V": "P05",
+    "VI": "P06",
+    "VII": "P07",
+    "VIII": "P08",
+    "IX": "P09",
+    "X": "P10",
+    "XI": "P11",
+    "XII": "P12",
+}
+
+COMPENDIUM_SECTIONS_ORDER: tuple[str, ...] = (
+    "R",
+    "LIM",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "ANN",
+)
+
+SECTION_DEFAULT_ROLES: dict[str, str] = {
+    "R": "synthese",
+    "LIM": "synthese",
+    "P01": "fondation",
+    "P02": "architecture",
+    "P03": "etat_de_l_art",
+    "P04": "etat_de_l_art",
+    "P05": "patron",
+    "P06": "norme",
+    "P07": "gouvernance",
+    "P08": "gouvernance",
+    "P09": "norme",
+    "P10": "patron",
+    "P11": "prospective",
+    "P12": "executable",
+    "ANN": "synthese",
+}
 
 OPEN_FENCE_RE = re.compile(r"^( {0,3})(`{3,}|~{3,})(.*)$")
 ATX_HEADING_RE = re.compile(r"^ {0,3}(#{1,6})(?:[ \t]+(.*?))?[ \t]*$")
 TRAILING_HASH_RE = re.compile(r"[ \t]+#+[ \t]*$")
 
 IDENTIFIER_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bSCH-\d{2}-\d{2}\b"),
+    re.compile(r"\bSRC-\d{3}\b"),
+    re.compile(r"\bPOR-\d{3}\b"),
+    re.compile(r"\bSIG-\d{3}\b"),
+    re.compile(r"\bINI-\d{3}\b"),
     re.compile(r"\bEXIG-[A-Z0-9]+(?:-[A-Z0-9]+)*\b"),
     re.compile(r"\bCAP-[A-Z0-9]+(?:-[A-Z0-9]+)*\b"),
     re.compile(r"\bPEX-[A-Z0-9]+(?:-[A-Z0-9]+)*\b"),
@@ -89,7 +102,7 @@ IDENTIFIER_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\bE[1-3]\b"),
     re.compile(r"\bP[0-3]\b"),
     re.compile(r"\bRQ[1-6]\b"),
-    re.compile(r"\bDC-P12\b"),
+    re.compile(r"\bDC-P(?:0[1-9]|1[0-2])\b"),
     re.compile(r"\bAO-0[1-9]\b"),
 )
 
@@ -111,6 +124,7 @@ class HeadingItem:
 
     unit_id: str
     tome_id: str
+    section_id: str
     level: int
     kind: str
     title: str
@@ -119,6 +133,8 @@ class HeadingItem:
     word_count: int = 0
     own_word_count: int = 0
     part_title: str | None = None
+    compendium_unit_id: str | None = None
+    source_file: str | None = None
     identifiers: list[str] = field(default_factory=list)
     children: list[HeadingItem] = field(default_factory=list)
 
@@ -127,6 +143,7 @@ class HeadingItem:
         return {
             "unit_id": self.unit_id,
             "tome_id": self.tome_id,
+            "section_id": self.section_id,
             "level": self.level,
             "kind": self.kind,
             "title": self.title,
@@ -135,6 +152,8 @@ class HeadingItem:
             "word_count": self.word_count,
             "own_word_count": self.own_word_count,
             "part_title": self.part_title,
+            "compendium_unit_id": self.compendium_unit_id,
+            "source_file": self.source_file,
             "identifiers": self.identifiers,
             "children": [child.to_dict() for child in self.children],
         }
@@ -148,50 +167,49 @@ def detect_identifiers(text: str) -> list[str]:
     return sorted(found)
 
 
+def _match_compendium_unit(section_id: str, level: int, title: str) -> str | None:
+    """Rattache un titre H1/H2 du Compendium à son ``compendium_unit_id`` du manifeste."""
+    low = title.lower().strip()
+    if section_id == "LIM" and level == 1 and low.startswith("liminaire"):
+        return "00-liminaire"
+    if level == 2:
+        m_ch = re.match(r"^Chapitre\s+(\d{2})\b", title, flags=re.IGNORECASE)
+        if m_ch:
+            return f"ch{m_ch.group(1)}"
+        if section_id == "ANN":
+            m_ann = re.match(r"^Annexe\s+([A-E])\b", title, flags=re.IGNORECASE)
+            if m_ann:
+                return f"annexe-{m_ann.group(1).lower()}"
+    return None
+
+
 def classify_heading(tome_id: str, level: int, title: str) -> str:
     """Détermine la nature structurelle (kind) d'un titre Markdown."""
     low = title.lower().strip()
-    if level == 1 and (
+    if (level == 1 or (tome_id == "LIM" and level == 2)) and (
         low.startswith("table des matières")
         or low.startswith("liste des tableaux")
         or low.startswith("liste des figures")
     ):
         return "toc"
-    if level == 1 and (
-        low.startswith("tome ")
-        or low.startswith("suite intégrale")
-    ):
+    if tome_id == "R" and level == 1:
         return "document"
-    if level == 1 and (
-        low.startswith("livre ")
-        or low.startswith("partie ")
-    ):
+    if tome_id == "R" and level == 2:
+        return "section"
+    if level == 1 and (low.startswith("partie ") or low.startswith("livre ")):
         return "part"
-    if (level == 1 and low.startswith("annexe")) or (
-        level == 2 and (low.startswith("annexe") or (tome_id == "T2" and re.match(r"^[A-H]\s+[A-ZÉÈÊÀ]", title)))
-    ):
+    if (level == 1 and low.startswith("annexe")) or (level == 2 and low.startswith("annexe ")):
         return "annex"
-    if level == 1 and (
-        low.startswith("liminaire")
-        or low.startswith("à propos")
-        or low.startswith("historique")
-        or low.startswith("méthode")
-        or low.startswith("sommaire exécutif")
-        or low.startswith("synthèse exécutive")
-        or low.startswith("ouverture")
-    ):
+    if level == 1 and low.startswith("liminaire"):
         return "liminaire"
-    if tome_id == "T6" and level == 1 and low.startswith("chapitre "):
-        return "chapter"
-    if level == 2 and (
-        low.startswith("chapitre ")
-        or (tome_id == "T1" and re.match(r"^\d+\s*·", title))
-        or (tome_id == "T2" and re.match(r"^\d+\s+[A-ZÉÈÊÀ]", title))
-        or (tome_id == "R")
-    ):
+    if level == 2 and re.match(r"^Chapitre\s+\d{2}\b", title, flags=re.IGNORECASE):
         return "chapter"
     if level == 2 and re.match(r"^0\.\d+\b", title):
         return "liminaire"
+    if level == 2 and low.startswith("références du liminaire"):
+        return "references"
+    if level == 3 and low.startswith("références"):
+        return "references"
     return "section"
 
 
@@ -281,11 +299,15 @@ def build_heading_tree(
     lines: list[str],
     raw_headings: list[tuple[int, int, str]],
     code_line_numbers: set[int],
+    *,
+    slice_end_line: int | None = None,
+    unit_source_map: dict[str, str] | None = None,
 ) -> tuple[list[HeadingItem], list[HeadingItem]]:
     """Construit l'arbre hiérarchique H1..H6 et calcule plages de lignes, mots et identifiants."""
-    total_lines = len(lines)
+    total_lines = min(len(lines), slice_end_line) if slice_end_line else len(lines)
     nodes: list[HeadingItem] = []
     current_part: str | None = None
+    unit_map = unit_source_map or {}
 
     for seq_idx, (line_no, level, title) in enumerate(raw_headings, start=1):
         kind = classify_heading(tome_id, level, title)
@@ -293,20 +315,25 @@ def build_heading_tree(
             current_part = title
         elif level == 1 and kind == "document":
             current_part = None
+        cid = _match_compendium_unit(tome_id, level, title)
+        src_file = unit_map.get(cid) if cid else None
         unit_id = f"{tome_id.lower()}-u{seq_idx:04d}"
         nodes.append(
             HeadingItem(
                 unit_id=unit_id,
                 tome_id=tome_id,
+                section_id=tome_id,
                 level=level,
                 kind=kind,
                 title=title,
                 line_start=line_no,
                 part_title=current_part,
+                compendium_unit_id=cid,
+                source_file=src_file,
             )
         )
 
-    # Calcul de line_end pour chaque titre : jusqu'au prochain titre de niveau <= level
+    # Calcul de line_end pour chaque titre : jusqu'au prochain titre de niveau <= level dans la section
     for i, node in enumerate(nodes):
         end_line = total_lines
         for j in range(i + 1, len(nodes)):
@@ -315,24 +342,27 @@ def build_heading_tree(
                 break
         node.line_end = max(node.line_start, end_line)
 
-    # Construction de l'arbre par pile monotone
+    # Construction de l'arbre par pile monotone + héritage de compendium_unit_id/source_file
     roots: list[HeadingItem] = []
     stack: list[HeadingItem] = []
     for node in nodes:
         while stack and stack[-1].level >= node.level:
             stack.pop()
         if stack:
-            stack[-1].children.append(node)
+            parent = stack[-1]
+            if node.compendium_unit_id is None and parent.compendium_unit_id is not None:
+                node.compendium_unit_id = parent.compendium_unit_id
+                node.source_file = parent.source_file
+            parent.children.append(node)
         else:
             roots.append(node)
         stack.append(node)
 
-    # Pré-calcul des mots par ligne pour O(1) par intervalle
-    prefix_words = [0] * (total_lines + 1)
+    # Pré-calcul des mots par ligne sur le fichier complet pour indexation exacte 1..len(lines)
+    prefix_words = [0] * (len(lines) + 1)
     for idx, line in enumerate(lines, start=1):
         prefix_words[idx] = prefix_words[idx - 1] + len(line.split())
 
-    # Calcul own_word_count, word_count et identifiants détectés hors blocs de code
     for node in nodes:
         node.word_count = prefix_words[node.line_end] - prefix_words[node.line_start - 1]
         if node.children:
@@ -342,7 +372,6 @@ def build_heading_tree(
         own_end = max(node.line_start, own_end)
         node.own_word_count = prefix_words[own_end] - prefix_words[node.line_start - 1]
 
-        # Détection d'identifiants sur les lignes propres (hors code) puis fusion ascendante
         own_text = "\n".join(
             lines[ln - 1]
             for ln in range(node.line_start, own_end + 1)
@@ -363,74 +392,186 @@ def build_heading_tree(
     return roots, nodes
 
 
+def _section_id_for_h1(title: str) -> str:
+    """Associe un titre H1 de ``Compendium/Compendium.md`` à son identifiant canonique (LIM, P01..P12, ANN)."""
+    low = title.lower().strip()
+    if low.startswith("liminaire"):
+        return "LIM"
+    if low.startswith("annexes"):
+        return "ANN"
+    m_part = re.match(r"^Partie\s+(XII|XI|IX|X|VIII|VII|VI|IV|V|III|II|I)\b", title, flags=re.IGNORECASE)
+    if m_part:
+        return ROMAN_TO_PART_ID[m_part.group(1).upper()]
+    raise ValueError(f"Section H1 non reconnue dans Compendium/Compendium.md : {title!r}")
+
+
+def _load_unit_source_map(repo_root: Path) -> dict[str, str]:
+    """Charge la table ``unit_id -> Sources/Compendium/ouvrage/manuscrit/...`` depuis ``manifest.json``."""
+    manifest_path = repo_root / "Sources" / "Compendium" / "ouvrage" / "specs" / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    return {
+        u["id"]: f"Sources/Compendium/ouvrage/{u['file']}"
+        for u in manifest.get("units", [])
+    }
+
+
+def _build_section_payload(
+    *,
+    section_id: str,
+    rel_path: str,
+    title: str,
+    lines: list[str],
+    raw_headings: list[tuple[int, int, str]],
+    fenced_blocks: list[FencedBlock],
+    code_lines: set[int],
+    slice_start_line: int,
+    slice_end_line: int,
+    unit_source_map: dict[str, str] | None,
+) -> tuple[dict[str, Any], int]:
+    """Construit l'entrée JSON pour une section (``R`` ou ``LIM..ANN``)."""
+    roots, flat_nodes = build_heading_tree(
+        section_id,
+        lines,
+        raw_headings,
+        code_lines,
+        slice_end_line=slice_end_line,
+        unit_source_map=unit_source_map,
+    )
+    by_level = {f"H{lvl}": 0 for lvl in range(1, 7)}
+    for _, lvl, _ in raw_headings:
+        by_level[f"H{lvl}"] += 1
+
+    file_ids: set[str] = set()
+    for r in roots:
+        file_ids.update(r.identifiers)
+
+    slice_word_count = sum(len(lines[ln - 1].split()) for ln in range(slice_start_line, slice_end_line + 1))
+    slice_fenced = sum(
+        1 for fb in fenced_blocks if slice_start_line <= fb.line_start <= slice_end_line
+    )
+    mapped_units = sorted({n.compendium_unit_id for n in flat_nodes if n.compendium_unit_id})
+
+    payload = {
+        "tome_id": section_id,
+        "section_id": section_id,
+        "file": rel_path,
+        "filename": Path(rel_path).name,
+        "title": title,
+        "line_start": slice_start_line,
+        "line_end": slice_end_line,
+        "line_count": slice_end_line - slice_start_line + 1,
+        "word_count": slice_word_count,
+        "heading_count": len(flat_nodes),
+        "headings_by_level": by_level,
+        "fenced_code_blocks_count": slice_fenced,
+        "compendium_units": mapped_units,
+        "identifiers_count": len(file_ids),
+        "identifiers": sorted(file_ids),
+        "tree": [r.to_dict() for r in roots],
+    }
+    return payload, slice_fenced
+
+
 def extract_corpus_structure(repo_root: Path) -> dict[str, Any]:
-    """Extrait la structure intégrale des 9 fichiers Markdown de ``Tomes/``."""
-    files_payload: list[dict[str, Any]] = []
+    """Extrait la structure intégrale de ``Compendium/README.md`` (``R``) et ``Compendium/Compendium.md`` (14 sections H1)."""
+    unit_source_map = _load_unit_source_map(repo_root)
+    sections_payload: list[dict[str, Any]] = []
+    headings_by_level_global = {f"H{lvl}": 0 for lvl in range(1, 7)}
+    global_identifiers: set[str] = set()
+    mapped_units_all: set[str] = set()
     total_lines = 0
     total_words = 0
     total_headings = 0
     total_fences = 0
-    headings_by_level_global = {f"H{lvl}": 0 for lvl in range(1, 7)}
-    global_identifiers: set[str] = set()
 
-    for tome_id, rel_path, default_title in CORPUS_FILES_ORDER:
-        file_path = repo_root / rel_path
-        if not file_path.is_file():
-            raise FileNotFoundError(f"Fichier Corpus introuvable : {file_path}")
-        raw_text = file_path.read_text(encoding="utf-8")
-        lines = raw_text.splitlines()
-        line_count = len(lines)
-        word_count = len(raw_text.split())
+    # 1. Index éditorial : Compendium/README.md -> section_id="R"
+    readme_rel = "Compendium/README.md"
+    readme_path = repo_root / readme_rel
+    if not readme_path.is_file():
+        raise FileNotFoundError(f"Index Compendium introuvable : {readme_path}")
+    r_text = readme_path.read_text(encoding="utf-8")
+    r_lines = r_text.splitlines()
+    r_headings, r_fenced, r_code = parse_markdown_lines(r_lines)
+    r_title = r_headings[0][2] if r_headings else "Compendium de l'entreprise agentique"
+    r_sec, r_fcnt = _build_section_payload(
+        section_id="R",
+        rel_path=readme_rel,
+        title=r_title,
+        lines=r_lines,
+        raw_headings=r_headings,
+        fenced_blocks=r_fenced,
+        code_lines=r_code,
+        slice_start_line=1,
+        slice_end_line=len(r_lines),
+        unit_source_map=None,
+    )
+    sections_payload.append(r_sec)
+    for k, v in r_sec["headings_by_level"].items():
+        headings_by_level_global[k] += v
+    global_identifiers.update(r_sec["identifiers"])
+    total_lines += r_sec["line_count"]
+    total_words += r_sec["word_count"]
+    total_headings += r_sec["heading_count"]
+    total_fences += r_fcnt
 
-        raw_headings, fenced_blocks, code_lines = parse_markdown_lines(lines)
-        roots, flat_nodes = build_heading_tree(tome_id, lines, raw_headings, code_lines)
+    # 2. Ouvrage maître : Compendium/Compendium.md -> 14 sections H1 (LIM, P01..P12, ANN)
+    comp_rel = "Compendium/Compendium.md"
+    comp_path = repo_root / comp_rel
+    if not comp_path.is_file():
+        raise FileNotFoundError(f"Compendium Markdown introuvable : {comp_path}")
+    c_text = comp_path.read_text(encoding="utf-8")
+    c_lines = c_text.splitlines()
+    c_headings, c_fenced, c_code = parse_markdown_lines(c_lines)
 
-        by_level = {f"H{lvl}": 0 for lvl in range(1, 7)}
-        for _, lvl, _ in raw_headings:
-            key = f"H{lvl}"
-            by_level[key] += 1
-            headings_by_level_global[key] += 1
+    h1_indices = [idx for idx, (_, lvl, _) in enumerate(c_headings) if lvl == 1]
+    if len(h1_indices) != 14:
+        raise ValueError(f"14 sections H1 attendues dans {comp_rel}, trouvées {len(h1_indices)}")
 
-        file_ids: set[str] = set()
-        for r in roots:
-            file_ids.update(r.identifiers)
-        global_identifiers.update(file_ids)
+    for pos, h1_idx in enumerate(h1_indices):
+        h1_line, _, h1_title = c_headings[h1_idx]
+        sec_id = _section_id_for_h1(h1_title)
+        slice_start = 1 if pos == 0 else h1_line
+        if pos + 1 < len(h1_indices):
+            next_h1_line = c_headings[h1_indices[pos + 1]][0]
+            slice_end = next_h1_line - 1
+        else:
+            slice_end = len(c_lines)
 
-        doc_title = default_title
-        for r in roots:
-            if r.level == 1 and r.title:
-                if r.kind == "document" or tome_id in ("R",):
-                    doc_title = r.title
-                break
-
-        files_payload.append(
-            {
-                "tome_id": tome_id,
-                "file": rel_path,
-                "filename": Path(rel_path).name,
-                "title": doc_title,
-                "line_count": line_count,
-                "word_count": word_count,
-                "heading_count": len(flat_nodes),
-                "headings_by_level": by_level,
-                "fenced_code_blocks_count": len(fenced_blocks),
-                "identifiers_count": len(file_ids),
-                "identifiers": sorted(file_ids),
-                "tree": [r.to_dict() for r in roots],
-            }
+        slice_headings = [
+            h for h in c_headings if slice_start <= h[0] <= slice_end
+        ]
+        sec_obj, sec_fcnt = _build_section_payload(
+            section_id=sec_id,
+            rel_path=comp_rel,
+            title=h1_title,
+            lines=c_lines,
+            raw_headings=slice_headings,
+            fenced_blocks=c_fenced,
+            code_lines=c_code,
+            slice_start_line=slice_start,
+            slice_end_line=slice_end,
+            unit_source_map=unit_source_map,
         )
-
-        total_lines += line_count
-        total_words += word_count
-        total_headings += len(flat_nodes)
-        total_fences += len(fenced_blocks)
+        sections_payload.append(sec_obj)
+        for k, v in sec_obj["headings_by_level"].items():
+            headings_by_level_global[k] += v
+        global_identifiers.update(sec_obj["identifiers"])
+        mapped_units_all.update(sec_obj["compendium_units"])
+        total_lines += sec_obj["line_count"]
+        total_words += sec_obj["word_count"]
+        total_headings += sec_obj["heading_count"]
+        total_fences += sec_fcnt
 
     return {
-        "schema_version": "1.0.0",
+        "schema_version": "2.0.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "generator": "Sources/Cartographie/outils/extraire_structure.py",
         "totals": {
-            "files": len(files_payload),
+            "files": len(sections_payload),
+            "sections": len(sections_payload),
+            "compendium_units_mapped": len(mapped_units_all),
+            "compendium_lines": len(c_lines),
+            "compendium_headings": len(c_headings),
             "lines": total_lines,
             "words": total_words,
             "headings": total_headings,
@@ -438,14 +579,14 @@ def extract_corpus_structure(repo_root: Path) -> dict[str, Any]:
             "fenced_code_blocks": total_fences,
             "unique_identifiers": len(global_identifiers),
         },
-        "files": files_payload,
+        "files": sections_payload,
     }
 
 
 def main() -> int:
-    """Point d'entrée CLI pour l'extraction structurelle du Corpus."""
+    """Point d'entrée CLI pour l'extraction structurelle du Compendium."""
     parser = argparse.ArgumentParser(
-        description="Extrait l'arbre hiérarchique H1–H6 des 9 fichiers Markdown de Tomes/."
+        description="Extrait l'arbre hiérarchique H1–H6 de Compendium/README.md et Compendium/Compendium.md."
     )
     parser.add_argument(
         "--repo-root",
@@ -478,8 +619,9 @@ def main() -> int:
 
     totals = payload["totals"]
     print(
-        f"Extraction terminée : {totals['files']} fichiers, {totals['lines']} lignes, "
-        f"{totals['words']} mots, {totals['headings']} titres H1–H6, "
+        f"Extraction Compendium terminée : {totals['sections']} sections ({totals['compendium_units_mapped']} unités), "
+        f"{totals['compendium_lines']} lignes Compendium.md ({totals['compendium_headings']} titres), "
+        f"{totals['lines']} lignes totales, {totals['words']} mots, {totals['headings']} titres H1–H6, "
         f"{totals['fenced_code_blocks']} blocs de code filtrés, "
         f"{totals['unique_identifiers']} identifiants uniques -> {output_path}"
     )

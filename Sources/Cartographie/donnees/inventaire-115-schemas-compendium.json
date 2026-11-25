@@ -1,0 +1,3227 @@
+{
+  "schema_version": "1.0.0",
+  "lang": "fr-CA",
+  "generated_at": "2026-11-25T21:59:21Z",
+  "generator": "Sources/Cartographie/outils/inventorier_schemas_compendium.py",
+  "manifest_source": "Sources/Compendium/ouvrage/specs/manifest.json",
+  "compendium_md_source": "Compendium/Compendium.md",
+  "totals": {
+    "figures_count": 115,
+    "verified_sources_on_disk": 115,
+    "verified_renders_on_disk": 115,
+    "verified_compendium_lines": 115,
+    "verified_source_file_lines": 115,
+    "by_engine": {
+      "mmd": 23,
+      "puml": 52,
+      "svg": 40
+    },
+    "by_part": {
+      "LIM": 4,
+      "P01": 9,
+      "P02": 10,
+      "P03": 10,
+      "P04": 9,
+      "P05": 9,
+      "P06": 9,
+      "P07": 9,
+      "P08": 9,
+      "P09": 9,
+      "P10": 9,
+      "P11": 9,
+      "P12": 10
+    }
+  },
+  "figures": [
+    {
+      "schema_id": "SCH-00-01",
+      "unit": "00-liminaire",
+      "part_id": "LIM",
+      "chapter_number": 0,
+      "domain_id": "GLOBAL",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Architecture de l'entreprise agentique : exosquelette déterministe à 80 % encadrant 20 % de cognition probabiliste",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "systems-of-agency",
+        "partition-hybride-80-20",
+        "architecture-reference-6-couches-2-piliers",
+        "noyau-controle-possede-cap",
+        "harnais-deterministe-8-etapes"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-01.svg",
+      "source_bytes": 11020,
+      "rendered_bytes": 11020,
+      "sha256_source": "26250288f2e3dfc80d093b63536c9a66c28c568522a9609325b7bdf958cd4f9b",
+      "sha256_rendered": "26250288f2e3dfc80d093b63536c9a66c28c568522a9609325b7bdf958cd4f9b",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 126,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+      "source_file_line": 53
+    },
+    {
+      "schema_id": "SCH-00-02",
+      "unit": "00-liminaire",
+      "part_id": "LIM",
+      "chapter_number": 0,
+      "domain_id": "GLOBAL",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Chaîne de confiance protocolaire et juridique de bout en bout (MCP, A2A, OBO, OPA et conformité)",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "protocole-mcp",
+        "protocole-a2a",
+        "identite-non-humaine-nhi",
+        "delegation-obo-deux-sauts",
+        "politiques-opa-rego-hors-modele",
+        "bsif-e-23",
+        "loi-25-article-12-1",
+        "eu-ai-act"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-02.svg",
+      "source_bytes": 3338,
+      "rendered_bytes": 18551,
+      "sha256_source": "483567dc4df8426c779710c63db2901be52c901f4cad71890ec0993a1212889e",
+      "sha256_rendered": "0256181ea045d703226816800e211aeb5021952a1a491efc87dc2edd18ccfd7f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 142,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+      "source_file_line": 69
+    },
+    {
+      "schema_id": "SCH-00-03",
+      "unit": "00-liminaire",
+      "part_id": "LIM",
+      "chapter_number": 0,
+      "domain_id": "GLOBAL",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Trajectoire adaptative 2026–2035 et paliers d'autonomie L0–L4 sous gouvernance duale AE ↔ AS",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "echelle-autonomie-l0-l4",
+        "trajectoires-adaptatives-dapp",
+        "quinze-portes-homologation-por",
+        "vingt-sept-signaux-veille-sig",
+        "gouvernance-duale-ae-as",
+        "crypto-agilite-migration-pqc",
+        "sanctuarisation-vivier-junior-reprise"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-03.svg",
+      "source_bytes": 11823,
+      "rendered_bytes": 11823,
+      "sha256_source": "fda5a44687cf95d8f162ef92d1a84fb3f1d1a0485534c8e214c6e8100fa210e2",
+      "sha256_rendered": "fda5a44687cf95d8f162ef92d1a84fb3f1d1a0485534c8e214c6e8100fa210e2",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 177,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+      "source_file_line": 104
+    },
+    {
+      "schema_id": "SCH-00-04",
+      "unit": "00-liminaire",
+      "part_id": "LIM",
+      "chapter_number": 0,
+      "domain_id": "GLOBAL",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Équation économique FinOps (CPO / FOCUS v1.4) et chaîne d'homologation vérifiable G0–G5 (CRE-IA × PRR-75)",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "loi-de-lusser",
+        "constance-pass-k",
+        "finops-focus-cpo",
+        "banc-evalops-hermetique",
+        "dimensionnement-wilson-evalops",
+        "exigences-cre-ia-305",
+        "homologation-prr-75-points",
+        "protocole-wyvern-g0-g5"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-04.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-04.png",
+      "source_bytes": 2358,
+      "rendered_bytes": 323258,
+      "sha256_source": "dc5d86cfccd2a3a4021ce7fbad5c4b44948c9347e9043eefd2a3150f06d666e2",
+      "sha256_rendered": "d53299fedd86fa217df53f9eb29c706b2b06939d4cddf94b0b678633ef7880c7",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 183,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+      "source_file_line": 110
+    },
+    {
+      "schema_id": "SCH-01-01",
+      "unit": "ch01",
+      "part_id": "P01",
+      "chapter_number": 1,
+      "domain_id": "D01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Du copilote passif à la boucle System of Action : cinq paliers d'autonomie de trajectoire et cinq archétypes sans super-agent",
+      "families_covered": [
+        "FAM_D01_01_01"
+      ],
+      "themes_vulgarized": [
+        "rupture-modele-conversationnel-agent-boucle",
+        "systems-of-agency",
+        "taxonomie-acteurs-agentiques"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-01.svg",
+      "source_bytes": 3002,
+      "rendered_bytes": 15312,
+      "sha256_source": "94de08c5185506245fa787969c7bd960fb477a874015834f860f440752f95978",
+      "sha256_rendered": "92bc91eb0f2c27e353afb3b901627d1a8010fb1d2110663c06fd31f8717e3388",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 257,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+      "source_file_line": 45
+    },
+    {
+      "schema_id": "SCH-01-02",
+      "unit": "ch01",
+      "part_id": "P01",
+      "chapter_number": 1,
+      "domain_id": "D01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP 2027 et passage aux engagements observables",
+      "families_covered": [
+        "FAM_D01_01_01"
+      ],
+      "themes_vulgarized": [
+        "etat-des-lieux-adoption-map-2027",
+        "echanges-intentions-contrats-probabilistes",
+        "systems-of-agency"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-02.svg",
+      "source_bytes": 9372,
+      "rendered_bytes": 9372,
+      "sha256_source": "e4d8250395aacba57b8f48d3b1ff58d9986f5828a4e12f564b6ce92bb9a2eb00",
+      "sha256_rendered": "e4d8250395aacba57b8f48d3b1ff58d9986f5828a4e12f564b6ce92bb9a2eb00",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 289,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+      "source_file_line": 77
+    },
+    {
+      "schema_id": "SCH-01-03",
+      "unit": "ch01",
+      "part_id": "P01",
+      "chapter_number": 1,
+      "domain_id": "D01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Tamiser la preuve : pyramide à six niveaux, filtre PRISMA-ScR W3.2 et vérificateur externe LLM-Modulo",
+      "families_covered": [
+        "FAM_D01_01_02"
+      ],
+      "themes_vulgarized": [
+        "hierarchie-preuves-etudes-cas",
+        "raisonnement-inference-limites-planification",
+        "revue-litterature-mlr-prisma"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-03.svg",
+      "source_bytes": 3291,
+      "rendered_bytes": 14436,
+      "sha256_source": "cca3942567f4cc7027426ebff1c0c1325ad54bddc9cb7e6c777ef795c947f14b",
+      "sha256_rendered": "c43abc67816200271e4c2d53f7def1e05c55d83f301468a161f6efa748dfa020",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 335,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+      "source_file_line": 123
+    },
+    {
+      "schema_id": "SCH-02-01",
+      "unit": "ch02",
+      "part_id": "P01",
+      "chapter_number": 2,
+      "domain_id": "D01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Loi de Lusser et piège du HTTP 200 OK : pourquoi 94 % de précision par étape chute à 53,9 % sur dix pas",
+      "families_covered": [
+        "FAM_D01_02_01"
+      ],
+      "themes_vulgarized": [
+        "loi-de-lusser",
+        "erreurs-silencieuses-cascade"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-01.svg",
+      "source_bytes": 8586,
+      "rendered_bytes": 8586,
+      "sha256_source": "b414033166eb2d874d11f23d450c68b185182ee6b0cbb295630fb5a4d1957348",
+      "sha256_rendered": "b414033166eb2d874d11f23d450c68b185182ee6b0cbb295630fb5a4d1957348",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 405,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+      "source_file_line": 37
+    },
+    {
+      "schema_id": "SCH-02-02",
+      "unit": "ch02",
+      "part_id": "P01",
+      "chapter_number": 2,
+      "domain_id": "D01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Autopsie des 14 pannes MAST (1 642 traces) et arbitrage : agent unique continu par rapport au collectif à 15× le coût",
+      "families_covered": [
+        "FAM_D01_02_01"
+      ],
+      "themes_vulgarized": [
+        "surcout-multi-agent-debat-mast",
+        "erreurs-silencieuses-cascade"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-02.svg",
+      "source_bytes": 3132,
+      "rendered_bytes": 14222,
+      "sha256_source": "fd791e854252b0c0932d112282061fed551472bf1c58398d7662bf250532853f",
+      "sha256_rendered": "f5a50603dfb2bd80d9f9480ecaa3257682f669b8d05006d2a4d3e8b32225baf2",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 423,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+      "source_file_line": 55
+    },
+    {
+      "schema_id": "SCH-02-03",
+      "unit": "ch02",
+      "part_id": "P01",
+      "chapter_number": 2,
+      "domain_id": "D01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "De l'essai ponctuel (`pass@1`) à la constance industrielle (`pass^k` ≥ 0,95 et borne de Wilson à 95 %)",
+      "families_covered": [
+        "FAM_D01_02_02"
+      ],
+      "themes_vulgarized": [
+        "constance-pass-k"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-03.svg",
+      "source_bytes": 2970,
+      "rendered_bytes": 12734,
+      "sha256_source": "ab4e953b762ed3e04fa98c72e99ec7d30612d64340d6406edae129a259954083",
+      "sha256_rendered": "38bc1fe9eb6d571e07856883c7202f1d9a8ecf7d42100c1cc0cdeb607687a3d6",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 458,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+      "source_file_line": 90
+    },
+    {
+      "schema_id": "SCH-03-01",
+      "unit": "ch03",
+      "part_id": "P01",
+      "chapter_number": 3,
+      "domain_id": "D01",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Économie coasienne, piège des jardins clos SaaS et arbre à cinq portes Acheter / Assembler / Construire",
+      "families_covered": [
+        "FAM_D01_03_01"
+      ],
+      "themes_vulgarized": [
+        "couts-transaction-coase",
+        "economie-industrialisation-cognitive",
+        "marche-ia-agentique-dispersion"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-01.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-01.png",
+      "source_bytes": 2542,
+      "rendered_bytes": 269617,
+      "sha256_source": "4f09a1b9d753f0b8771fae4c44e604f6f0bc2415ca2b2228fb03ca2f61938ad6",
+      "sha256_rendered": "23b298db9a0a37c58e181f511990d21520542791df3448efb2322cb650484357",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 578,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+      "source_file_line": 64
+    },
+    {
+      "schema_id": "SCH-03-02",
+      "unit": "ch03",
+      "part_id": "P01",
+      "chapter_number": 3,
+      "domain_id": "D01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Engrenage de la quadruple dette agentique, preuve `[N]/[M]/[É]/[S]` et économie des jetons SLM/LLM",
+      "families_covered": [
+        "FAM_D01_03_01",
+        "FAM_D01_03_02"
+      ],
+      "themes_vulgarized": [
+        "dette-cognitive-vs-technique",
+        "quadruple-dette-agentique",
+        "economie-jetons-routage-slm"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-02.svg",
+      "source_bytes": 9881,
+      "rendered_bytes": 9881,
+      "sha256_source": "4d88c9366f4efaa7d7c4c6dfff6021ae5191fe7a27dcac8ba2dd0f837e6b85b0",
+      "sha256_rendered": "4d88c9366f4efaa7d7c4c6dfff6021ae5191fe7a27dcac8ba2dd0f837e6b85b0",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 622,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+      "source_file_line": 108
+    },
+    {
+      "schema_id": "SCH-03-03",
+      "unit": "ch03",
+      "part_id": "P01",
+      "chapter_number": 3,
+      "domain_id": "D01",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "De vingt connecteurs fragiles (`N×M`) à neuf contrats ouverts (`N+M`) : vingt ans d'intégration et l'invariant à quatre termes",
+      "families_covered": [
+        "FAM_D01_03_02"
+      ],
+      "themes_vulgarized": [
+        "cout-non-interop-dette-integration",
+        "genealogie-eai-soa-fipa-llm"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-03.svg",
+      "source_bytes": 2888,
+      "rendered_bytes": 12522,
+      "sha256_source": "d1c173849eddde8f5e66abd6f97e5f7eff98ebcdc88ed2c63dcaa7613a3e5ede",
+      "sha256_rendered": "7fe3f056b68540d56ba9929b807e08ba4ca061403a3b1e5afaa5b59ea6ef51ec",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 647,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+      "source_file_line": 133
+    },
+    {
+      "schema_id": "SCH-04-01",
+      "unit": "ch04",
+      "part_id": "P02",
+      "chapter_number": 4,
+      "domain_id": "D02",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte `AMBIGU_ESCALADE`",
+      "families_covered": [
+        "FAM_D02_01_01",
+        "FAM_D02_01_02"
+      ],
+      "themes_vulgarized": [
+        "partition-hybride-80-20",
+        "harnais-deterministe-8-etapes",
+        "validation-json-schema-ambigu-escalade"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-01.svg",
+      "source_bytes": 9640,
+      "rendered_bytes": 9640,
+      "sha256_source": "1a0793ea03a52f4f00efc5994fc90d718d00a35ca2eef572be3d34074e928d72",
+      "sha256_rendered": "1a0793ea03a52f4f00efc5994fc90d718d00a35ca2eef572be3d34074e928d72",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 775,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+      "source_file_line": 87
+    },
+    {
+      "schema_id": "SCH-04-02",
+      "unit": "ch04",
+      "part_id": "P02",
+      "chapter_number": 4,
+      "domain_id": "D02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Traduction réglementaire (Tableau 29.1), test à trois conditions et choix de boucle ReAct / ReWOO / CodeAct",
+      "families_covered": [
+        "FAM_D02_01_01",
+        "FAM_D02_01_02"
+      ],
+      "themes_vulgarized": [
+        "patrons-boucle-mono-agent-codeact",
+        "separation-controleur-executeur-determinisme",
+        "pont-reglementation-frames-deterministes"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-02.svg",
+      "source_bytes": 3062,
+      "rendered_bytes": 13661,
+      "sha256_source": "9953ce946127d5d4085d57af879bd37e0c1cc329843393b03a47cadc221f7c56",
+      "sha256_rendered": "6a2d88c9b75d01fec235a939013739dbc91edb5ce166be429ec43dbc7604b845",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 842,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+      "source_file_line": 154
+    },
+    {
+      "schema_id": "SCH-04-03",
+      "unit": "ch04",
+      "part_id": "P02",
+      "chapter_number": 4,
+      "domain_id": "D02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Usine logicielle agentique (AST/SCIP), muraille Oracle–Bâtisseur et bascule RPG/COBOL en Shadow Mirroring",
+      "families_covered": [
+        "FAM_D02_01_01"
+      ],
+      "themes_vulgarized": [
+        "usine-logicielle-agentic-sdlc"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-03.svg",
+      "source_bytes": 3150,
+      "rendered_bytes": 14823,
+      "sha256_source": "6b870eed722f44ddfe13dce024b1920220511fb6205c516e661081ee20481f4e",
+      "sha256_rendered": "6dbf9173354130c686a9564d64be86804f6ee78ec510d2b4231a15a80e8438d9",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 858,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+      "source_file_line": 170
+    },
+    {
+      "schema_id": "SCH-05-01",
+      "unit": "ch05",
+      "part_id": "P02",
+      "chapter_number": 5,
+      "domain_id": "D02",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`",
+      "families_covered": [
+        "FAM_D02_02_01"
+      ],
+      "themes_vulgarized": [
+        "echelle-autonomie-l0-l4"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-01.svg",
+      "source_bytes": 9070,
+      "rendered_bytes": 9070,
+      "sha256_source": "e8b67e5d08b44f728bae3904f7161af3bb2e9cb619b98316cf1bfc9396b4c338",
+      "sha256_rendered": "e8b67e5d08b44f728bae3904f7161af3bb2e9cb619b98316cf1bfc9396b4c338",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 940,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+      "source_file_line": 47
+    },
+    {
+      "schema_id": "SCH-05-02",
+      "unit": "ch05",
+      "part_id": "P02",
+      "chapter_number": 5,
+      "domain_id": "D02",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Règle du maillon le plus élevé (`High-Water Mark`) et règle d'or `≤ N2` dans un graphe multi-agents",
+      "families_covered": [
+        "FAM_D02_02_01"
+      ],
+      "themes_vulgarized": [
+        "regle-maillon-plus-eleve"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-02.png",
+      "source_bytes": 2332,
+      "rendered_bytes": 278089,
+      "sha256_source": "c8d08b9522c45b8cc161e0de6c799eab66f262b6886e082a6ebaf9306740d6ae",
+      "sha256_rendered": "28281efb20b376ebc93f5d585bda83407c0fce3aac423200ce3fc18a1dff5df9",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 956,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+      "source_file_line": 63
+    },
+    {
+      "schema_id": "SCH-05-03",
+      "unit": "ch05",
+      "part_id": "P02",
+      "chapter_number": 5,
+      "domain_id": "D02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Prévenir la validation réflexe à 93 % (ASI09) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25",
+      "families_covered": [
+        "FAM_D02_02_02"
+      ],
+      "themes_vulgarized": [
+        "distinction-agent-flux-ambiant",
+        "supervision-hitl-hotl-abstention"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-03.svg",
+      "source_bytes": 3176,
+      "rendered_bytes": 13474,
+      "sha256_source": "8b202735314d992846f8eefb24b754ceaf858d4a983f7b9424219619a539ace4",
+      "sha256_rendered": "3db0532c50e19ead2bcd5fc6b00fefff08a3bf18b00627361ed4af54127b2fb5",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 985,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+      "source_file_line": 92
+    },
+    {
+      "schema_id": "SCH-06-01",
+      "unit": "ch06",
+      "part_id": "P02",
+      "chapter_number": 6,
+      "domain_id": "D02",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`",
+      "families_covered": [
+        "FAM_D02_03_01",
+        "FAM_D02_03_02"
+      ],
+      "themes_vulgarized": [
+        "cadre-togaf-archimate-4-plans",
+        "architecture-reference-6-couches-2-piliers",
+        "architecture-reference-six-couches-pc1-pc5"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-01.svg",
+      "source_bytes": 9631,
+      "rendered_bytes": 9631,
+      "sha256_source": "c62ee43f4fee4cb88acf20278045a30d2f0a2c4f6f332fd5e7a1bda623bc7e9e",
+      "sha256_rendered": "c62ee43f4fee4cb88acf20278045a30d2f0a2c4f6f332fd5e7a1bda623bc7e9e",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1080,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+      "source_file_line": 46
+    },
+    {
+      "schema_id": "SCH-06-02",
+      "unit": "ch06",
+      "part_id": "P02",
+      "chapter_number": 6,
+      "domain_id": "D02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Posséder son noyau (42 capacités invariantes par rapport à 10 sur signal), gravité des données et neuf clauses de sortie",
+      "families_covered": [
+        "FAM_D02_03_01"
+      ],
+      "themes_vulgarized": [
+        "noyau-controle-possede-cap",
+        "clauses-sortie-portabilite-interchangeabilite"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-02.svg",
+      "source_bytes": 3086,
+      "rendered_bytes": 12996,
+      "sha256_source": "f88cec036b421e2ac0a223f50267170ef72f1b7f881129353f0fe333211b04b1",
+      "sha256_rendered": "516d38de7b62afcc5882b0896a9b425b4503389621a4f23576937ad2d2cfa95a",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1108,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+      "source_file_line": 74
+    },
+    {
+      "schema_id": "SCH-06-03",
+      "unit": "ch06",
+      "part_id": "P02",
+      "chapter_number": 6,
+      "domain_id": "D02",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit",
+      "families_covered": [
+        "FAM_D02_03_01",
+        "FAM_D02_03_02"
+      ],
+      "themes_vulgarized": [
+        "catalogue-31-adr-12-dec",
+        "decisions-architecture-adr-001-031",
+        "douze-principes-directeurs-prin",
+        "principes-architecture-pri-001-015"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-03.png",
+      "source_bytes": 2294,
+      "rendered_bytes": 281762,
+      "sha256_source": "58b705271d3e59fcb42928e4063ede9fa35f90a34304f23fc05ab740ddde0b06",
+      "sha256_rendered": "4a4d0465c0fa543309488903b314c5af3ef5df8486d7b68aeef1656d8c80c89b",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1141,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+      "source_file_line": 107
+    },
+    {
+      "schema_id": "SCH-06-04",
+      "unit": "ch06",
+      "part_id": "P02",
+      "chapter_number": 6,
+      "domain_id": "D02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Maturité `N1–N5`, diagnostic patrimonial `S_ready` (`c_sec ≥ 60`), ergonomie d'outils et budgets `QoS`",
+      "families_covered": [
+        "FAM_D02_03_02"
+      ],
+      "themes_vulgarized": [
+        "grille-evaluation-maturite-n1-n5",
+        "architecture-outils-fiables-erreurs-actionnables",
+        "criteres-qos-cout-precision-latence"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-04.svg",
+      "source_bytes": 2949,
+      "rendered_bytes": 12549,
+      "sha256_source": "6e6c6dab895a3e4167798977ed849f64a8e14952fa5c7f593d6c130eb7fc8cc3",
+      "sha256_rendered": "603680039d59c4b39dfbd3b40707d7a9abafbc1a54cc418cfd8df30311b155ff",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1200,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+      "source_file_line": 166
+    },
+    {
+      "schema_id": "SCH-07-01",
+      "unit": "ch07",
+      "part_id": "P03",
+      "chapter_number": 7,
+      "domain_id": "D03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "MCP 2026-07-28 sans état, adaptateur SEP-3398 et confinement des surfaces Web agentiques",
+      "families_covered": [
+        "FAM_D03_01_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-mcp",
+        "adaptateur-mcp-streamable-http-sep-3398",
+        "web-agentique-webmcp-webbotauth"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-01.svg",
+      "source_bytes": 3082,
+      "rendered_bytes": 13313,
+      "sha256_source": "f0c0eef690dcff4688edb48970382dd95bf1d928fe3d21dc4a19a9629da4736c",
+      "sha256_rendered": "c05307319da3bc0840963199b02cc32a031e75c76524dee420d0eb11726e445f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1297,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+      "source_file_line": 58
+    },
+    {
+      "schema_id": "SCH-07-02",
+      "unit": "ch07",
+      "part_id": "P03",
+      "chapter_number": 7,
+      "domain_id": "D03",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Anti-patron Swagger-to-MCP 1:1 face aux façades d'intention ACI (≤ 15 outils métier et Code Mode)",
+      "families_covered": [
+        "FAM_D03_01_01"
+      ],
+      "themes_vulgarized": [
+        "facades-mcp-intention-metier",
+        "ergonomie-aci-anti-swagger",
+        "protocole-mcp"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-02.svg",
+      "source_bytes": 7598,
+      "rendered_bytes": 7598,
+      "sha256_source": "d4f6eedfa76162fc3490051985ea43252e4571b9bea032e1d6e9b58f717406f6",
+      "sha256_rendered": "d4f6eedfa76162fc3490051985ea43252e4571b9bea032e1d6e9b58f717406f6",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1311,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+      "source_file_line": 72
+    },
+    {
+      "schema_id": "SCH-07-03",
+      "unit": "ch07",
+      "part_id": "P03",
+      "chapter_number": 7,
+      "domain_id": "D03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Scellement SHA-256 et défense OAuth des outils MCP contre le rug-pull et les 102 failles NVD",
+      "families_covered": [
+        "FAM_D03_01_02"
+      ],
+      "themes_vulgarized": [
+        "epinglage-schemas-mcp",
+        "protocole-mcp"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-03.svg",
+      "source_bytes": 3101,
+      "rendered_bytes": 13020,
+      "sha256_source": "386dec03b65f609b034fc0d5712e3a4991996cfdefa4c8675bd485b869c52363",
+      "sha256_rendered": "da4cacde9e65754e964995da1c1ddd93c439525723b5b3fd997091586b626808",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1347,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+      "source_file_line": 108
+    },
+    {
+      "schema_id": "SCH-08-01",
+      "unit": "ch08",
+      "part_id": "P03",
+      "chapter_number": 8,
+      "domain_id": "D03",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches",
+      "families_covered": [
+        "FAM_D03_02_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-a2a",
+        "fusion-acp-collision-terminologique",
+        "protocole-anp-did-wba"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-01.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-01.png",
+      "source_bytes": 2230,
+      "rendered_bytes": 290471,
+      "sha256_source": "073be6ac6580ed11fcd34c9e5558aa7263533a0fd7df91d31e6c95d60cdc170f",
+      "sha256_rendered": "55a015939e2dfa8681d39593090c6079028e2e31167c4d2ab5f4c9ff142193c7",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1472,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+      "source_file_line": 43
+    },
+    {
+      "schema_id": "SCH-08-02",
+      "unit": "ch08",
+      "part_id": "P03",
+      "chapter_number": 8,
+      "domain_id": "D03",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Commerce agentique (AP2, x402, MPP) face aux rails financiers et à la fédération B2B (AGNTCY / ODRL / vLEI)",
+      "families_covered": [
+        "FAM_D03_02_01",
+        "FAM_D03_02_02"
+      ],
+      "themes_vulgarized": [
+        "protocole-ap2",
+        "rails-paiement-commerce-agentique",
+        "agntcy-slim",
+        "maillage-b2b-federe-edc-odrl"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-02.svg",
+      "source_bytes": 8750,
+      "rendered_bytes": 8750,
+      "sha256_source": "252f3380c54fc8f0815c4f1b35ce931ee91e8c0a29e7cc334db33558f4f46475",
+      "sha256_rendered": "252f3380c54fc8f0815c4f1b35ce931ee91e8c0a29e7cc334db33558f4f46475",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1554,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+      "source_file_line": 125
+    },
+    {
+      "schema_id": "SCH-08-03",
+      "unit": "ch08",
+      "part_id": "P03",
+      "chapter_number": 8,
+      "domain_id": "D03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Interfaces humain-agent sûres : transport AG-UI (JSON Patch), catalogue fermé A2UI et exclusion du code libre",
+      "families_covered": [
+        "FAM_D03_02_01"
+      ],
+      "themes_vulgarized": [
+        "protocoles-interfaces-agui-a2ui-webrtc",
+        "protocole-a2a"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-03.svg",
+      "source_bytes": 2781,
+      "rendered_bytes": 10954,
+      "sha256_source": "e2ed4a71a55f2742ab12887d5c86d6a8ccaef2ae88685f2614ebb3dafe9ecf16",
+      "sha256_rendered": "6f99ee1778ddf386984128a3cd1c0d9f13323473e56eb9f5affd321605696958",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1577,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+      "source_file_line": 148
+    },
+    {
+      "schema_id": "SCH-09-01",
+      "unit": "ch09",
+      "part_id": "P03",
+      "chapter_number": 9,
+      "domain_id": "D03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Passerelle d'agents bidirectionnelle (PEP) à neuf contrôles ordonnés et budget Borealis-Bench",
+      "families_covered": [
+        "FAM_D03_03_02"
+      ],
+      "themes_vulgarized": [
+        "passerelle-mcp-ai-gateway",
+        "maillage-agentique-trois-acceptions"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-01.svg",
+      "source_bytes": 3407,
+      "rendered_bytes": 16594,
+      "sha256_source": "ce1cb366ec675eb434f1181f3ec8d7e9557cf43743558fd3c588ed77c7285c2f",
+      "sha256_rendered": "e6e4d563f28bfa641d346b70c02c488445ec40d1276232c5ad82c4db928a3efc",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1629,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+      "source_file_line": 19
+    },
+    {
+      "schema_id": "SCH-09-02",
+      "unit": "ch09",
+      "part_id": "P03",
+      "chapter_number": 9,
+      "domain_id": "D03",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Découverte en quatre opérations (Agent Card JWS/JCS), catalogue unique à cinq statuts et règle « soutien ≠ production »",
+      "families_covered": [
+        "FAM_D03_03_01",
+        "FAM_D03_03_02"
+      ],
+      "themes_vulgarized": [
+        "agent-card-decouverte",
+        "contrats-interfaces-catalogue-entreprise",
+        "contrats-api-versionnement-conformite",
+        "metriques-soutien-vs-production"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-02.svg",
+      "source_bytes": 10076,
+      "rendered_bytes": 10076,
+      "sha256_source": "ebd09a9f1ec01351e89f0d43ff0522585e7bd1144c32827af10c6d3688309699",
+      "sha256_rendered": "ebd09a9f1ec01351e89f0d43ff0522585e7bd1144c32827af10c6d3688309699",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1690,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+      "source_file_line": 80
+    },
+    {
+      "schema_id": "SCH-09-03",
+      "unit": "ch09",
+      "part_id": "P03",
+      "chapter_number": 9,
+      "domain_id": "D03",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Asymétrie 0/15, zones compensatoires Z1–Z5, strates EIF/LCIM et bouclier anti-verrouillage SaaS (EXIG-ARC-21)",
+      "families_covered": [
+        "FAM_D03_03_02"
+      ],
+      "themes_vulgarized": [
+        "matrice-protocoles-exigences-reglementaires",
+        "cadre-eif-4-couches",
+        "anti-verrouillage-standards"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-03.svg",
+      "source_bytes": 8571,
+      "rendered_bytes": 8571,
+      "sha256_source": "1b2b9cf22342d4336350ff708961287eecd77cc84c4bb5b2646377890db6c443",
+      "sha256_rendered": "1b2b9cf22342d4336350ff708961287eecd77cc84c4bb5b2646377890db6c443",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1714,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+      "source_file_line": 104
+    },
+    {
+      "schema_id": "SCH-09-04",
+      "unit": "ch09",
+      "part_id": "P03",
+      "chapter_number": 9,
+      "domain_id": "D03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Aiguillage cognitif à trois paliers (SLM 70–78 %) et ordonnancement KV-cache Endpoint Picker",
+      "families_covered": [
+        "FAM_D03_03_01"
+      ],
+      "themes_vulgarized": [
+        "plan-donnees-inference-kv-cache",
+        "routage-cognitif-hybride-3-paliers"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-04.svg",
+      "source_bytes": 2979,
+      "rendered_bytes": 13160,
+      "sha256_source": "9374dc8c23424f0aacdda5318e6f7003ee18b45ce0d3c8a9445a79b9b83ee082",
+      "sha256_rendered": "773e2bbf43b7083c4b8d7ab6de1f2f574bb28b050bea9178078ed0e6d2da4f2c",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1732,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
+      "source_file_line": 122
+    },
+    {
+      "schema_id": "SCH-10-01",
+      "unit": "ch10",
+      "part_id": "P04",
+      "chapter_number": 10,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies FIBO et registres",
+      "families_covered": [
+        "FAM_D04_01_01"
+      ],
+      "themes_vulgarized": [
+        "dette-semantique-ontologies",
+        "ecart-accord-protocolaire-comprehension",
+        "formats-echange-registres-schemas"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-01.svg",
+      "source_bytes": 2754,
+      "rendered_bytes": 10832,
+      "sha256_source": "4c666d5c804fdf8d47a144b9eb017ba050e47d6ecdf0f0b65e39277f26f92478",
+      "sha256_rendered": "4eb40602b52b4d241754fc3e358205f7513f008fd5ab3755899635a37ba08cb9",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1826,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+      "source_file_line": 37
+    },
+    {
+      "schema_id": "SCH-10-02",
+      "unit": "ch10",
+      "part_id": "P04",
+      "chapter_number": 10,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) et observation ISO 20022 (Lynx et RTR)",
+      "families_covered": [
+        "FAM_D04_01_01"
+      ],
+      "themes_vulgarized": [
+        "contrats-donnees-write-audit-publish",
+        "donnees-pretes-agents-odcs-openlineage",
+        "iso-20022-lynx-rtr"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-02.svg",
+      "source_bytes": 3026,
+      "rendered_bytes": 12660,
+      "sha256_source": "f11b1048a61d1e38988feea10e0f40dcda1a4d4a3dbd3598999e6abe235166c2",
+      "sha256_rendered": "6909cb3c9a1fd2e53e97e76ac5c459f68270efdc3fea7bd24dfe55c14e866f61",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1848,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+      "source_file_line": 59
+    },
+    {
+      "schema_id": "SCH-10-03",
+      "unit": "ch10",
+      "part_id": "P04",
+      "chapter_number": 10,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Compilateur déterministe du contexte (KV-cache en tête, ACL amont), RAG itératif et Agent Skills signés",
+      "families_covered": [
+        "FAM_D04_01_02"
+      ],
+      "themes_vulgarized": [
+        "rag-agentique-contexte"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-03.svg",
+      "source_bytes": 2828,
+      "rendered_bytes": 11701,
+      "sha256_source": "ae9cd98ed9e07245c727e1084902dfc02c64662058bee42c2d8823230d3e9376",
+      "sha256_rendered": "09d8fc30a664003e876b024e7f54488e3c73c9b70f8f0efe0ae6ef109eb4329d",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1886,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+      "source_file_line": 97
+    },
+    {
+      "schema_id": "SCH-11-01",
+      "unit": "ch11",
+      "part_id": "P04",
+      "chapter_number": 11,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Architecture des quatre mémoires CoALA isolées (zéro écriture partagée) et échelle de risque",
+      "families_covered": [
+        "FAM_D04_02_01"
+      ],
+      "themes_vulgarized": [
+        "memoire-coala-4-tiroirs"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-01.svg",
+      "source_bytes": 3152,
+      "rendered_bytes": 17096,
+      "sha256_source": "d87b2b71091fce4aaadfc7ec7eb6de5836cf3dbe17701fead7ffae1a8da8a192",
+      "sha256_rendered": "91058f95c71d9a1c5277e00e14dab24bd713cedc93d1528a6f0301fa08098b8b",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1968,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+      "source_file_line": 44
+    },
+    {
+      "schema_id": "SCH-11-02",
+      "unit": "ch11",
+      "part_id": "P04",
+      "chapter_number": 11,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Mémoire bi-temporelle (BSIF E-23), concurrence multi-agents et effacement crypto-sélectif (Loi 25 art. 23)",
+      "families_covered": [
+        "FAM_D04_02_01"
+      ],
+      "themes_vulgarized": [
+        "memoire-bi-temporelle-et-purge",
+        "memoire-partagee-concurrence-effacement",
+        "memoire-coala-4-tiroirs"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-02.svg",
+      "source_bytes": 2940,
+      "rendered_bytes": 11883,
+      "sha256_source": "5761f1101cde7563264546bdbec3573aa5959a18da5b1dd9a9ec9f5dcc3c1868",
+      "sha256_rendered": "580da2fc989eebd8556bf5d3355aca7717f0b1d9c58ec76c642f234a43b5c607",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1981,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+      "source_file_line": 57
+    },
+    {
+      "schema_id": "SCH-11-03",
+      "unit": "ch11",
+      "part_id": "P04",
+      "chapter_number": 11,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Filtrage RBAC/ABAC pré-récupération (OpenFGA/RLS), modèles Silo/Bridge/Pool et évaluation RAG",
+      "families_covered": [
+        "FAM_D04_02_01",
+        "FAM_D04_02_02"
+      ],
+      "themes_vulgarized": [
+        "propagation-acl-memoire-silo",
+        "gouvernance-acces-rag-ancrage"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-03.svg",
+      "source_bytes": 3053,
+      "rendered_bytes": 15438,
+      "sha256_source": "69a7de41974476f0d5c13bbd9b17d2cf313a2446ca044308e5b8f85b0a84d668",
+      "sha256_rendered": "1e2b7972bd9f3c7d64327b066d466c3f66f6dd547f46f81de9686daccf28449a",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2016,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
+      "source_file_line": 92
+    },
+    {
+      "schema_id": "SCH-12-01",
+      "unit": "ch12",
+      "part_id": "P04",
+      "chapter_number": 12,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Couche anticorruption MCP (EBCDIC/COMP-3 Decimal exact), médiation B2B/EDI et Strangler Fig en quatre stades",
+      "families_covered": [
+        "FAM_D04_03_01"
+      ],
+      "themes_vulgarized": [
+        "couche-anti-corruption-acl",
+        "mediation-b2b-esb-traducteurs",
+        "coexistence-bpm-ipaas-rpa"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-01.svg",
+      "source_bytes": 3053,
+      "rendered_bytes": 14208,
+      "sha256_source": "9e4c96e4274fddad81a9a4962d73d581d127ca5dc37eb44b3891c97de4db90fd",
+      "sha256_rendered": "e83f1e2c30418dfedf3d90f052c542fb684bb8ad6f8f9f25ac4e2b29f03168aa",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2102,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+      "source_file_line": 50
+    },
+    {
+      "schema_id": "SCH-12-02",
+      "unit": "ch12",
+      "part_id": "P04",
+      "chapter_number": 12,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Hiérarchie MCP (≥ 92 %) → RPA → CUA confiné (bail 12 mois) et sas OT/Edge (Purdue, Simplex, CRDT)",
+      "families_covered": [
+        "FAM_D04_03_01",
+        "FAM_D04_03_02"
+      ],
+      "themes_vulgarized": [
+        "confinement-cua-patrimoine-sans-api",
+        "encapsulation-patrimoine-it-ot",
+        "synchronisation-edge-crdt"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-02.svg",
+      "source_bytes": 3060,
+      "rendered_bytes": 13066,
+      "sha256_source": "e1a27d6e174bef718e2cccd04d6aec5a5c310e2c3f1dbecd216d4bd882ba9391",
+      "sha256_rendered": "a64cb46959e8693902bf1ae2e2770cbe1a503aadbe69e8caecf41ae210ec4534",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2123,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+      "source_file_line": 71
+    },
+    {
+      "schema_id": "SCH-12-03",
+      "unit": "ch12",
+      "part_id": "P04",
+      "chapter_number": 12,
+      "domain_id": "D04",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Résidence physique ≠ souveraineté : maîtrise des six substrats d'état sous clés HYOK face au CLOUD Act",
+      "families_covered": [
+        "FAM_D04_03_02"
+      ],
+      "themes_vulgarized": [
+        "six-substrats-etat-souverainete"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-03.svg",
+      "source_bytes": 8198,
+      "rendered_bytes": 8198,
+      "sha256_source": "193c1269644996b149477c03953458e92a8b8a2bf1d13b13af4ec4b5ed6b1198",
+      "sha256_rendered": "193c1269644996b149477c03953458e92a8b8a2bf1d13b13af4ec4b5ed6b1198",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2147,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
+      "source_file_line": 95
+    },
+    {
+      "schema_id": "SCH-13-01",
+      "unit": "ch13",
+      "part_id": "P05",
+      "chapter_number": 13,
+      "domain_id": "D05",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "L'échelle de sobriété OO1–OO4 et l'encapsulation BPMN/APM : conditionner le multi-agents au gain démontré",
+      "families_covered": [
+        "FAM_D05_01_01"
+      ],
+      "themes_vulgarized": [
+        "arbre-sobriete-oo1-oo4",
+        "enveloppes-bpmn-cas-routine",
+        "paradigme-apm-autonomie-encadree"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-01.svg",
+      "source_bytes": 9325,
+      "rendered_bytes": 9325,
+      "sha256_source": "353493ddd06da43dabab2cb1a9625a8481a15f1f38587383620a4e529a6a3fab",
+      "sha256_rendered": "353493ddd06da43dabab2cb1a9625a8481a15f1f38587383620a4e529a6a3fab",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2228,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+      "source_file_line": 44
+    },
+    {
+      "schema_id": "SCH-13-02",
+      "unit": "ch13",
+      "part_id": "P05",
+      "chapter_number": 13,
+      "domain_id": "D05",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Catalogue fermé des huit topologies autorisées et portabilité des cadriciels aux frontières MCP/A2A",
+      "families_covered": [
+        "FAM_D05_01_02"
+      ],
+      "themes_vulgarized": [
+        "topologies-patrons-orchestration",
+        "cadriciels-orchestration-portabilite",
+        "frameworks-orchestration-entreprise"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-02.svg",
+      "source_bytes": 9064,
+      "rendered_bytes": 9064,
+      "sha256_source": "eb948ca49bb0907e4dca9284abf0b76f29a872946b8acc9199c21fc1464b80e6",
+      "sha256_rendered": "eb948ca49bb0907e4dca9284abf0b76f29a872946b8acc9199c21fc1464b80e6",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2268,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+      "source_file_line": 84
+    },
+    {
+      "schema_id": "SCH-13-03",
+      "unit": "ch13",
+      "part_id": "P05",
+      "chapter_number": 13,
+      "domain_id": "D05",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Parades aux 14 modes d'échec MAST : enveloppe de délégation minimale (EXIG-ORC-23..25) et scission B2B DMZ/TEE",
+      "families_covered": [
+        "FAM_D05_01_02"
+      ],
+      "themes_vulgarized": [
+        "fiabilite-coordination-taxonomie-mast",
+        "modes-echecs-emergents-frontiere",
+        "contexte-minimal-delegation-interagents",
+        "negociation-b2b-diplomate-evaluateur"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-03.svg",
+      "source_bytes": 2974,
+      "rendered_bytes": 12536,
+      "sha256_source": "c38006df863c11b91fd489aef626382aa05ec9fa856c4f0f3831c9b96e1d5866",
+      "sha256_rendered": "91914f6e7e94558f4f18b0cbd92959f90366dfa549698bd731c05c2cf76769c0",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2296,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
+      "source_file_line": 112
+    },
+    {
+      "schema_id": "SCH-14-01",
+      "unit": "ch14",
+      "part_id": "P05",
+      "chapter_number": 14,
+      "domain_id": "D05",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Dorsale Event Mesh et patron hybride : « le journal avant le cadre » sous enveloppe CloudEvents/AsyncAPI",
+      "families_covered": [
+        "FAM_D05_02_01"
+      ],
+      "themes_vulgarized": [
+        "choregraphie-event-mesh"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-01.svg",
+      "source_bytes": 8625,
+      "rendered_bytes": 8625,
+      "sha256_source": "d15dd5320a8f85a120228c65694b84c35eb5af12c579a7f970ce6e3aa291177d",
+      "sha256_rendered": "d15dd5320a8f85a120228c65694b84c35eb5af12c579a7f970ce6e3aa291177d",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2380,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+      "source_file_line": 41
+    },
+    {
+      "schema_id": "SCH-14-02",
+      "unit": "ch14",
+      "part_id": "P05",
+      "chapter_number": 14,
+      "domain_id": "D05",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Boucle de rétroaction anti-tempête : endiguer « l'effet flipper », les boucles d'écho et les messages poisons DLQ",
+      "families_covered": [
+        "FAM_D05_02_01"
+      ],
+      "themes_vulgarized": [
+        "pathologies-reactives-backpressure",
+        "choregraphie-event-mesh"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-02.png",
+      "source_bytes": 2263,
+      "rendered_bytes": 303138,
+      "sha256_source": "861d0d6ba1035c1a8e2cd0dd710f841f354142e8a074da317b91987f2e9be3fd",
+      "sha256_rendered": "580bbdf610a5ce9aa5a3ee42015fbb19f788c744026897bc1edb6ab9b3d50c1d",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2399,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+      "source_file_line": 60
+    },
+    {
+      "schema_id": "SCH-14-03",
+      "unit": "ch14",
+      "part_id": "P05",
+      "chapter_number": 14,
+      "domain_id": "D05",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Passerelle IA physique MCP ↔ ROS 2/DDS : missions discrètes LOTO et arbitre de sûreté matériel Simplex (≤ 1 ms)",
+      "families_covered": [
+        "FAM_D05_02_02"
+      ],
+      "themes_vulgarized": [
+        "pont-ia-physique-ros2-simplex"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-03.svg",
+      "source_bytes": 2995,
+      "rendered_bytes": 12533,
+      "sha256_source": "14b87602c2e17ac1581915a7cbef9d8268bc4ed84e64d7f1fd6315ec4da9bfc0",
+      "sha256_rendered": "625507e394cf9caceaad8820ece0474465974ef91316178832033ed4bfd04e02",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2424,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
+      "source_file_line": 85
+    },
+    {
+      "schema_id": "SCH-15-01",
+      "unit": "ch15",
+      "part_id": "P05",
+      "chapter_number": 15,
+      "domain_id": "D05",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "De la boucle volatile au moteur durable (Temporal/Restate) : revalidation au réveil et cinq plafonds EXIG-ORC-26",
+      "families_covered": [
+        "FAM_D05_03_01"
+      ],
+      "themes_vulgarized": [
+        "execution-durable-temporal",
+        "resilience-orchestration-repli-plafonds"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-01.svg",
+      "source_bytes": 9065,
+      "rendered_bytes": 9065,
+      "sha256_source": "23e877178a86eb94254792842593bb7e9b8f8c179be94070bae0d390ed64bf57",
+      "sha256_rendered": "23e877178a86eb94254792842593bb7e9b8f8c179be94070bae0d390ed64bf57",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2509,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+      "source_file_line": 40
+    },
+    {
+      "schema_id": "SCH-15-02",
+      "unit": "ch15",
+      "part_id": "P05",
+      "chapter_number": 15,
+      "domain_id": "D05",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Orchestrateur Saga à point pivot, journal préalable Outbox et canal de compensation isolé EXIG-ORC-28",
+      "families_covered": [
+        "FAM_D05_03_02"
+      ],
+      "themes_vulgarized": [
+        "saga-compensatoire",
+        "canal-compensation-isole-outbox",
+        "saga-dix-scenarios-fautes"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-02.svg",
+      "source_bytes": 3425,
+      "rendered_bytes": 19162,
+      "sha256_source": "7bdd02c86babc9e0f17ea4eab35e388654d421c17d4a5e0a86149f9e535bdb12",
+      "sha256_rendered": "d3c1a8f20a7439679479c2c52c7ab10900a36638b4a96d56386c3387e1d1a6a8",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2533,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+      "source_file_line": 64
+    },
+    {
+      "schema_id": "SCH-15-03",
+      "unit": "ch15",
+      "part_id": "P05",
+      "chapter_number": 15,
+      "domain_id": "D05",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Sémantique d'effet (Lecture / Écriture / Engagement), clé idem-v1 côté outil, UETR et bail exclusif LAP",
+      "families_covered": [
+        "FAM_D05_03_01",
+        "FAM_D05_03_02"
+      ],
+      "themes_vulgarized": [
+        "semantique-effet-idempotence-uetr",
+        "protocoles-ressources-physiques-lap",
+        "execution-durable-temporal"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-03.png",
+      "source_bytes": 2127,
+      "rendered_bytes": 283827,
+      "sha256_source": "8741bb8b5e08781795757ecfe1e64a0731b1dca9eec9856639b081dd1d4bf31e",
+      "sha256_rendered": "a0f06f07246daecf0e8bdbcc798549183a81bbdca0010e396d0dddc73b5f0526",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2616,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
+      "source_file_line": 147
+    },
+    {
+      "schema_id": "SCH-16-01",
+      "unit": "ch16",
+      "part_id": "P06",
+      "chapter_number": 16,
+      "domain_id": "D06",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Fin des secrets fixes (ratio 82:1) : identité NHI parrainée au SIRH et audit par les cinq questions (Q-A à Q-E)",
+      "families_covered": [
+        "FAM_D06_01_01"
+      ],
+      "themes_vulgarized": [
+        "identite-non-humaine-nhi",
+        "grille-cinq-questions-identite",
+        "socle-iam-federe-oauth-fapi"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-01.svg",
+      "source_bytes": 9093,
+      "rendered_bytes": 9093,
+      "sha256_source": "1f419505f23d225d4ca2c41fa33370ab2bf808f2b74421e5e8ccbd533cd27612",
+      "sha256_rendered": "1f419505f23d225d4ca2c41fa33370ab2bf808f2b74421e5e8ccbd533cd27612",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2698,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+      "source_file_line": 48
+    },
+    {
+      "schema_id": "SCH-16-02",
+      "unit": "ch16",
+      "part_id": "P06",
+      "chapter_number": 16,
+      "domain_id": "D06",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Cartes A2A, annuaires commerciaux et trois modèles de registres : distinguer ce qui est signé de ce qui fait foi",
+      "families_covered": [
+        "FAM_D06_01_01",
+        "FAM_D06_01_02"
+      ],
+      "themes_vulgarized": [
+        "annuaires-commerciaux-risque-standard-de-fait",
+        "registres-gouvernes-trois-modeles",
+        "signature-agent-card-ancrage"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-02.svg",
+      "source_bytes": 8978,
+      "rendered_bytes": 8978,
+      "sha256_source": "73594ef646b47158ea858067c4ff81859c3e965a9447b44d965fb9df6aaa9850",
+      "sha256_rendered": "73594ef646b47158ea858067c4ff81859c3e965a9447b44d965fb9df6aaa9850",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2731,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+      "source_file_line": 81
+    },
+    {
+      "schema_id": "SCH-16-03",
+      "unit": "ch16",
+      "part_id": "P06",
+      "chapter_number": 16,
+      "domain_id": "D06",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Attestations éphémères SPIFFE/SPIRE (1 h) en interne et trajectoire conditionnelle vLEI / passeport B2B",
+      "families_covered": [
+        "FAM_D06_01_02"
+      ],
+      "themes_vulgarized": [
+        "spiffe-spire-attestation",
+        "did-vc-passeport-agent"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-03.svg",
+      "source_bytes": 3062,
+      "rendered_bytes": 12967,
+      "sha256_source": "83d91e225b8c8fc998d8919120bd696effe09961f3182166d593d18cbeb1284e",
+      "sha256_rendered": "16a7afae64d5daaec26fd9a2110ba1040e29046d629c622fd7b2810dcf31e289",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2771,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
+      "source_file_line": 121
+    },
+    {
+      "schema_id": "SCH-17-01",
+      "unit": "ch17",
+      "part_id": "P06",
+      "chapter_number": 17,
+      "domain_id": "D06",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Délégation OBO à deux sauts (RFC 8693), réduction monotone RAR, preuve DPoP/mTLS et profil RFC 9700 (≤ 15 min)",
+      "families_covered": [
+        "FAM_D06_02_01"
+      ],
+      "themes_vulgarized": [
+        "delegation-obo-deux-sauts",
+        "requetes-riches-rar-txn-tokens",
+        "liaison-jetons-dpop-mtls",
+        "profil-oauth-9700-et-liaison-expediteur"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-01.svg",
+      "source_bytes": 1601,
+      "rendered_bytes": 14836,
+      "sha256_source": "f38ccdb952d2167dba79ef41bd3e68e9751e0a63276d67ed323e97c9c31ed18f",
+      "sha256_rendered": "a9f4bc9e09e0656a7801557efc0c9dfe003c94990fab5d0050707e1a3dd3cbfd",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2858,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+      "source_file_line": 44
+    },
+    {
+      "schema_id": "SCH-17-02",
+      "unit": "ch17",
+      "part_id": "P06",
+      "chapter_number": 17,
+      "domain_id": "D06",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Approbation humaine hors bande CIBA + FIDO2 liée à l'empreinte JCS (h) : scellement cryptographique de l'acte",
+      "families_covered": [
+        "FAM_D06_02_02"
+      ],
+      "themes_vulgarized": [
+        "approbation-ciba"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-02.svg",
+      "source_bytes": 1616,
+      "rendered_bytes": 16147,
+      "sha256_source": "52816a44387a0feb2413fd997fb2735f72f59a0fbcf912c57b3bb9defc79c57e",
+      "sha256_rendered": "478a5b3db7e5b9ba8c0460ce965cebf7d9050b758fa59aad2bdf5c499836225c",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2940,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+      "source_file_line": 126
+    },
+    {
+      "schema_id": "SCH-17-03",
+      "unit": "ch17",
+      "part_id": "P06",
+      "chapter_number": 17,
+      "domain_id": "D06",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Angles morts B2B : 0/9 norme KYA ratifiée et asymétrie émission/révocation compensée par SSF/CAEP",
+      "families_covered": [
+        "FAM_D06_02_02"
+      ],
+      "themes_vulgarized": [
+        "kya-verification-agent-tiers",
+        "inventaire-revocation-asymetrie"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-03.svg",
+      "source_bytes": 8430,
+      "rendered_bytes": 8430,
+      "sha256_source": "947067fe147623a9b67638862e44177dcc1327f6641c27f20ff9c08959f5d5c4",
+      "sha256_rendered": "947067fe147623a9b67638862e44177dcc1327f6641c27f20ff9c08959f5d5c4",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2963,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+      "source_file_line": 149
+    },
+    {
+      "schema_id": "SCH-18-01",
+      "unit": "ch18",
+      "part_id": "P06",
+      "chapter_number": 18,
+      "domain_id": "D06",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Compte à rebours TLS 2027–2029 (100 j → 47 j) : éradiquer la collision cryptographique par ACME dès le Palier 1",
+      "families_covered": [
+        "FAM_D06_03_01"
+      ],
+      "themes_vulgarized": [
+        "certificats-tls-47-jours"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-01.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-01.png",
+      "source_bytes": 2052,
+      "rendered_bytes": 101753,
+      "sha256_source": "d88e185178de602f982feefc85b5964cc7364d521b759d28b5126c72f28a41f4",
+      "sha256_rendered": "d6217f539be8030ec8f9b868852d3bfbbffa6060a4ab23bdc6b528d2902a6e51",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3059,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+      "source_file_line": 35
+    },
+    {
+      "schema_id": "SCH-18-02",
+      "unit": "ch18",
+      "part_id": "P06",
+      "chapter_number": 18,
+      "domain_id": "D06",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Horloge post-quantique multi-sources (NIST IR 8547 2030/2035), fenêtre de Mosca 2026–2029 et rescellement SCITT",
+      "families_covered": [
+        "FAM_D06_03_02"
+      ],
+      "themes_vulgarized": [
+        "post-quantique-ml-dsa-slh-dsa",
+        "crypto-agilite-migration-pqc"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-02.svg",
+      "source_bytes": 8503,
+      "rendered_bytes": 8503,
+      "sha256_source": "8b5550c586a953adc6f937581c90917c6c79be2c629450ab781172b7994bf77f",
+      "sha256_rendered": "8b5550c586a953adc6f937581c90917c6c79be2c629450ab781172b7994bf77f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3088,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+      "source_file_line": 64
+    },
+    {
+      "schema_id": "SCH-18-03",
+      "unit": "ch18",
+      "part_id": "P06",
+      "chapter_number": 18,
+      "domain_id": "D06",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Choc d'en-têtes HTTP 431 sous ML-DSA (50–72×) : passer des chaînes O(sauts) aux Transaction Tokens O(1) et `kid`/JWKS",
+      "families_covered": [
+        "FAM_D06_03_02"
+      ],
+      "themes_vulgarized": [
+        "saturation-http-431-ml-dsa-kid",
+        "post-quantique-ml-dsa-slh-dsa"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-03.png",
+      "source_bytes": 1829,
+      "rendered_bytes": 130607,
+      "sha256_source": "2db4b1a42e6a30d8ea286a258f5a4ebcaa5939e4037cc991afd393624640b498",
+      "sha256_rendered": "321355cc1da78d5a0d36b0ba1b23eb464038f718e2616f7c75f023337142bc54",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3146,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
+      "source_file_line": 122
+    },
+    {
+      "schema_id": "SCH-19-01",
+      "unit": "ch19",
+      "part_id": "P07",
+      "chapter_number": 19,
+      "domain_id": "D07",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "La triade létale et la non-compositionnalité de la sûreté : pourquoi assembler trois outils innocents crée une faille d'exfiltration",
+      "families_covered": [
+        "FAM_D07_01_01"
+      ],
+      "themes_vulgarized": [
+        "injection-indirecte-prompt",
+        "non-compositionnalite-surete-surface-attaques"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-01.svg",
+      "source_bytes": 9871,
+      "rendered_bytes": 9871,
+      "sha256_source": "22e3d8b17720143d9ed221987b9692dab30b77aba1f038e9377c1e9d5d584f87",
+      "sha256_rendered": "22e3d8b17720143d9ed221987b9692dab30b77aba1f038e9377c1e9d5d584f87",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3233,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+      "source_file_line": 35
+    },
+    {
+      "schema_id": "SCH-19-02",
+      "unit": "ch19",
+      "part_id": "P07",
+      "chapter_number": 19,
+      "domain_id": "D07",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Outils MCP empoisonnés, « rug-pull » et Agent Skills vulnérables : le menu modifié en cuisine après l'inspection",
+      "families_covered": [
+        "FAM_D07_01_01"
+      ],
+      "themes_vulgarized": [
+        "tool-poisoning-rug-pull",
+        "chaine-approvisionnement-agent-skills"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-02.svg",
+      "source_bytes": 2627,
+      "rendered_bytes": 13676,
+      "sha256_source": "99df57954c1d446d469bfe0c162fba732f6f982e34bf4043238336aa9b820d9e",
+      "sha256_rendered": "329b204c13931ddad1165161906c1536070f30dc528e5a77836f5b66d8433af4",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3258,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+      "source_file_line": 60
+    },
+    {
+      "schema_id": "SCH-19-03",
+      "unit": "ch19",
+      "part_id": "P07",
+      "chapter_number": 19,
+      "domain_id": "D07",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Mandataire confus, matrice OWASP ASI01–10 / MAESTRO et suivi de teinte HMAC : verrouiller l'identité et teinter la donnée douteuse",
+      "families_covered": [
+        "FAM_D07_01_02"
+      ],
+      "themes_vulgarized": [
+        "taxonomie-attaques-identite-mandataire-confus",
+        "taxonomie-owasp-asi-mcp-maestro",
+        "red-teaming-continu-empoisonnement-memoire"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-03.png",
+      "source_bytes": 1859,
+      "rendered_bytes": 221343,
+      "sha256_source": "cf177c98209c69eecea9222c16b993e6f8892565fa1048f63f651a5e981b1ef4",
+      "sha256_rendered": "30f4c8ae48a4b34e57fe7cbb78cd1322daf9a6ee31bd8a1c193b665f5f3e13e2",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3320,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
+      "source_file_line": 122
+    },
+    {
+      "schema_id": "SCH-20-01",
+      "unit": "ch20",
+      "part_id": "P07",
+      "chapter_number": 20,
+      "domain_id": "D07",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Le modèle n'est jamais juge et partie : politiques hors modèle OPA/Rego/Cedar à refus par défaut au poste-frontière PEP",
+      "families_covered": [
+        "FAM_D07_02_01",
+        "FAM_D07_02_02"
+      ],
+      "themes_vulgarized": [
+        "politiques-opa-rego-hors-modele",
+        "echec-ferme-opa-default-deny",
+        "maillage-agents-pep-pdp-zero-trust",
+        "sre-autonome-rayon-impact-cedar"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-01.svg",
+      "source_bytes": 2829,
+      "rendered_bytes": 16410,
+      "sha256_source": "4f92a464a98701e3b1b27314aa0d2434c25fe5d911bb4489065a62d02c3d4d80",
+      "sha256_rendered": "aa995d4f56414f658e66567ac55abd5e857ee1abace95fea9854f9775f493ac7",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3401,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+      "source_file_line": 39
+    },
+    {
+      "schema_id": "SCH-20-02",
+      "unit": "ch20",
+      "part_id": "P07",
+      "chapter_number": 20,
+      "domain_id": "D07",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Pourquoi un filtre IA ne protège pas d'un attaquant adaptatif : sûreté système STAMP/STPA et comportements déviants mesurés",
+      "families_covered": [
+        "FAM_D07_02_01",
+        "FAM_D07_02_02"
+      ],
+      "themes_vulgarized": [
+        "controle-surete-stamp-stpa",
+        "alignement-deceptif-red-teaming-adversarial"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-02.png",
+      "source_bytes": 1789,
+      "rendered_bytes": 211843,
+      "sha256_source": "eb16f1a6ab57e9e06870f3dc2a76fb6e79ab4605629fd698fd784e3725552d79",
+      "sha256_rendered": "733d623f34fd7c8ae1e63e3dbdf396f7b65e8bcfa39f06efb709a7ef22416515",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3413,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+      "source_file_line": 51
+    },
+    {
+      "schema_id": "SCH-20-03",
+      "unit": "ch20",
+      "part_id": "P07",
+      "chapter_number": 20,
+      "domain_id": "D07",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "La Règle de deux et le marquage CaMeL : retirer l'outil d'envoi dès que l'agent lit une source externe douteuse",
+      "families_covered": [
+        "FAM_D07_02_02"
+      ],
+      "themes_vulgarized": [
+        "regle-de-deux-opa",
+        "separation-controle-donnees-camel",
+        "defense-hors-modele-camel-confinement"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-03.svg",
+      "source_bytes": 8811,
+      "rendered_bytes": 8811,
+      "sha256_source": "5c588df2ac802b6563752896417c36deddae21f74d40efad8e30eed1c7df595c",
+      "sha256_rendered": "5c588df2ac802b6563752896417c36deddae21f74d40efad8e30eed1c7df595c",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3515,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
+      "source_file_line": 153
+    },
+    {
+      "schema_id": "SCH-21-01",
+      "unit": "ch21",
+      "part_id": "P07",
+      "chapter_number": 21,
+      "domain_id": "D07",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Du cloisonnement poreux au caisson étanche éphémère : exécution du code généré en microVM Firecracker / WASI sans réseau ni secrets",
+      "families_covered": [
+        "FAM_D07_03_01"
+      ],
+      "themes_vulgarized": [
+        "confinement-shadi-sandbox",
+        "confinement-opensandbox-firecracker-wasi"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-01.svg",
+      "source_bytes": 9501,
+      "rendered_bytes": 9501,
+      "sha256_source": "f49ed52735dd4e3fb30d8af48d445286420dc6882d107a8ab2599d72bf39e376",
+      "sha256_rendered": "f49ed52735dd4e3fb30d8af48d445286420dc6882d107a8ab2599d72bf39e376",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3610,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+      "source_file_line": 37
+    },
+    {
+      "schema_id": "SCH-21-02",
+      "unit": "ch21",
+      "part_id": "P07",
+      "chapter_number": 21,
+      "domain_id": "D07",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Enclaves TEE, clés HYOK et continuité bimodèle : préserver la souveraineté sur GPU partagé malgré TEE.fail",
+      "families_covered": [
+        "FAM_D07_03_01"
+      ],
+      "themes_vulgarized": [
+        "confidentialite-materielle-tee-hyok"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-02.svg",
+      "source_bytes": 2622,
+      "rendered_bytes": 14935,
+      "sha256_source": "5c3b3b821885cb65e6e8690b851e9f141670475d276ca37e02b0ba303d14feff",
+      "sha256_rendered": "b78b76088b2e93bf0ec071bf82d7bcb35ccca172f440be5b51f84b0763b74ee8",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3631,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+      "source_file_line": 58
+    },
+    {
+      "schema_id": "SCH-21-03",
+      "unit": "ch21",
+      "part_id": "P07",
+      "chapter_number": 21,
+      "domain_id": "D07",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Coupe-circuits hiérarchisés (< 10 s / 0,050 ms), révocation SSF/CAEP et repli < 60 s : stopper l'emballement sans briser les sagas",
+      "families_covered": [
+        "FAM_D07_03_02"
+      ],
+      "themes_vulgarized": [
+        "soc-soar-coupe-circuit"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-03.svg",
+      "source_bytes": 2546,
+      "rendered_bytes": 13533,
+      "sha256_source": "6d45462a8dfb773d3bcd2ba5f75b6389f13d61a4e69053df62788c345c6e37d5",
+      "sha256_rendered": "000c4760401f55cf09bda41b3af88b9ea5df2f79755c3243a1ffcde618b893be",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3661,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+      "source_file_line": 88
+    },
+    {
+      "schema_id": "SCH-22-01",
+      "unit": "ch22",
+      "part_id": "P08",
+      "chapter_number": 22,
+      "domain_id": "D08",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Enregistreur de vol OpenTelemetry GenAI (v1.41.0 épinglée), jointure trace ↔ mandat et AIBOM à 5+1 horloges",
+      "families_covered": [
+        "FAM_D08_01_01"
+      ],
+      "themes_vulgarized": [
+        "observabilite-otel-genai",
+        "provenance-artefacts-aibom-5-horloges"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-01.svg",
+      "source_bytes": 2550,
+      "rendered_bytes": 13409,
+      "sha256_source": "eb680dd820416ed5d9d468f080d8b7230e0381147b578333b45bf26b870203c2",
+      "sha256_rendered": "d83d486c839590fc68dc2be6405bbc2d40306fac5dce32ad65ca09720c1d36bb",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3744,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+      "source_file_line": 41
+    },
+    {
+      "schema_id": "SCH-22-02",
+      "unit": "ch22",
+      "part_id": "P08",
+      "chapter_number": 22,
+      "domain_id": "D08",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Le double couloir PII : diagnostiquer les pannes en production sans enfreindre la Loi 25 ni le RGPD",
+      "families_covered": [
+        "FAM_D08_01_02"
+      ],
+      "themes_vulgarized": [
+        "double-couloir-probatoire-pii",
+        "caviardage-pii-rp-bilingue"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-02.svg",
+      "source_bytes": 9285,
+      "rendered_bytes": 9285,
+      "sha256_source": "c140409ee6e6731bab1cfbf3d6ab80e422881263d322b993c0d6eb2a69bd6e29",
+      "sha256_rendered": "c140409ee6e6731bab1cfbf3d6ab80e422881263d322b993c0d6eb2a69bd6e29",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3781,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+      "source_file_line": 78
+    },
+    {
+      "schema_id": "SCH-22-03",
+      "unit": "ch22",
+      "part_id": "P08",
+      "chapter_number": 22,
+      "domain_id": "D08",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Notaire cryptographique à 5 éléments : canonisation JCS (RFC 8785), ancrage Merkle SCITT et rescellement SLH-DSA",
+      "families_covered": [
+        "FAM_D08_01_02"
+      ],
+      "themes_vulgarized": [
+        "scellage-jcs-scitt",
+        "canonisation-deterministe-jcs",
+        "canonicalisation-jcs-rfc8785",
+        "journalisation-probatoire-audit"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-03.png",
+      "source_bytes": 1882,
+      "rendered_bytes": 205315,
+      "sha256_source": "70f11f78171c3b738d6c09ab367cffc9e59ace90a1fb329bceffca774cec9259",
+      "sha256_rendered": "dfb599243e79155b714b94b46a793d03b013e9dd4f1acbfae64e3c579548e620",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3852,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
+      "source_file_line": 149
+    },
+    {
+      "schema_id": "SCH-23-01",
+      "unit": "ch23",
+      "part_id": "P08",
+      "chapter_number": 23,
+      "domain_id": "D08",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Banc EvalOps hermétique E1–E3, constance pass^k et borne de Wilson (≥ 300 essais) : prouver la régularité plutôt qu'une réussite fortuite",
+      "families_covered": [
+        "FAM_D08_02_01"
+      ],
+      "themes_vulgarized": [
+        "banc-evalops-hermetique",
+        "dimensionnement-wilson-evalops",
+        "evaluation-agentique-bancs-capacite"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-01.svg",
+      "source_bytes": 2598,
+      "rendered_bytes": 13099,
+      "sha256_source": "42cf259f4de9e5a0ddb998681310f6cb20fd475782551c598a6e50eb1d6b4633",
+      "sha256_rendered": "2da089206cf72d59058e4c23cd81faebc505788ae553894609b7ec373065e8bc",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3921,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+      "source_file_line": 37
+    },
+    {
+      "schema_id": "SCH-23-02",
+      "unit": "ch23",
+      "part_id": "P08",
+      "chapter_number": 23,
+      "domain_id": "D08",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Évaluer sans oracle unique : invariance bilingue FR/EN, juges IA étalonnés (kappa ≥ 0,6) et sentinelle des 3+1 dérives",
+      "families_covered": [
+        "FAM_D08_02_02"
+      ],
+      "themes_vulgarized": [
+        "tests-metamorphiques-fr-en-sans-oracle",
+        "modele-comme-juge-biais-calibration",
+        "evaluation-continue-derives"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-02.svg",
+      "source_bytes": 9279,
+      "rendered_bytes": 9279,
+      "sha256_source": "cb1e54429f24ed0a33b29b41dd3052a7f9d897ed028bb05f87c09361220fc276",
+      "sha256_rendered": "cb1e54429f24ed0a33b29b41dd3052a7f9d897ed028bb05f87c09361220fc276",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4013,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+      "source_file_line": 129
+    },
+    {
+      "schema_id": "SCH-23-03",
+      "unit": "ch23",
+      "part_id": "P08",
+      "chapter_number": 23,
+      "domain_id": "D08",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Le volant de distillation DSPy → Multi-LoRA : transformer les dossiers validés en petits modèles spécialisés 10× plus sobres",
+      "families_covered": [
+        "FAM_D08_02_02"
+      ],
+      "themes_vulgarized": [
+        "volant-distillation-dspy-multilora"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-03.svg",
+      "source_bytes": 2612,
+      "rendered_bytes": 13580,
+      "sha256_source": "96200451ab34b6da9fe9bf4a21770e340137f420dc822dfbbc517de3667b8898",
+      "sha256_rendered": "633da4d3ea0dbfbecc9fd9f1bb77ad7658c2f3900f9cd42c1a2ada642388c636",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4026,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
+      "source_file_line": 142
+    },
+    {
+      "schema_id": "SCH-24-01",
+      "unit": "ch24",
+      "part_id": "P08",
+      "chapter_number": 24,
+      "domain_id": "D08",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Du prix trompeur du jeton au Cost-per-Outcome (CPO FOCUS v1.4) : cascade frugale, disjoncteur 80 % / 100 % et carbone BSIF B-15",
+      "families_covered": [
+        "FAM_D08_03_01"
+      ],
+      "themes_vulgarized": [
+        "finops-focus-cpo",
+        "plan-inference-routage-carbone",
+        "comptabilite-carbone-cap-046-bsif-b15"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-01.svg",
+      "source_bytes": 9378,
+      "rendered_bytes": 9378,
+      "sha256_source": "0db7a3f69d9b0cf4baf0ee101b08a18c237ce5df198f84042b70d332049c7191",
+      "sha256_rendered": "0db7a3f69d9b0cf4baf0ee101b08a18c237ce5df198f84042b70d332049c7191",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4111,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+      "source_file_line": 50
+    },
+    {
+      "schema_id": "SCH-24-02",
+      "unit": "ch24",
+      "part_id": "P08",
+      "chapter_number": 24,
+      "domain_id": "D08",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "GitOps agentique à trois objets indissociables (agent + outil + politique) : déployer et revenir en arrière sans altérer l'existant",
+      "families_covered": [
+        "FAM_D08_03_02"
+      ],
+      "themes_vulgarized": [
+        "cycle-vie-operationnel-derives-gitops"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-02.svg",
+      "source_bytes": 2476,
+      "rendered_bytes": 13026,
+      "sha256_source": "330c62e24b7341a09fc8e22941f531f2a19fd37f64f25e71948aa63721fedcfc",
+      "sha256_rendered": "7c583b5ace2ad2ae4c27c19d749b2ace1facf5f4378c1049cd4aa8a63555cbb0",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4140,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+      "source_file_line": 79
+    },
+    {
+      "schema_id": "SCH-24-03",
+      "unit": "ch24",
+      "part_id": "P08",
+      "chapter_number": 24,
+      "domain_id": "D08",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Tableau de bord du conseil : traduire la grille minimale AgentOps (4 familles) en KPI de risque de modèle BSIF E-23 et AMF",
+      "families_covered": [
+        "FAM_D08_03_02",
+        "FAM_D08_03_01"
+      ],
+      "themes_vulgarized": [
+        "indicateurs-agentops-horizon-tache",
+        "plan-inference-routage-carbone"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-03.png",
+      "source_bytes": 1816,
+      "rendered_bytes": 199960,
+      "sha256_source": "0c96e86c8cdd786def3c979edf6af581b441d86fc228fd88d441224ccdcba70a",
+      "sha256_rendered": "056e7e1d50d63fb82a8b50d07a912aeac5c2d4a911adc22a6bf89aad2380ce91",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4155,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+      "source_file_line": 94
+    },
+    {
+      "schema_id": "SCH-25-01",
+      "unit": "ch25",
+      "part_id": "P09",
+      "chapter_number": 25,
+      "domain_id": "D09",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Parcours Loi 25 complet : ÉFVP préalable (articles 3.3 et 17), décision selon l'article 12.1 (PC3) et crypto-effacement CoALA/RAG (articles 23 et 27)",
+      "families_covered": [
+        "FAM_D09_01_01"
+      ],
+      "themes_vulgarized": [
+        "loi-25-article-12-1",
+        "efvp-transfert-hors-quebec",
+        "droit-effacement-portabilite-loi-25"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-01.svg",
+      "source_bytes": 2537,
+      "rendered_bytes": 12342,
+      "sha256_source": "a2fb90b71944617e3d2eb5c3b1af958161dbfaf1f93d37d8e0192752e8dae30a",
+      "sha256_rendered": "101e235befebd962740a591b69a9e32063ab2434c49296fdd4403f098a09b602",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4266,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+      "source_file_line": 70
+    },
+    {
+      "schema_id": "SCH-25-02",
+      "unit": "ch25",
+      "part_id": "P09",
+      "chapter_number": 25,
+      "domain_id": "D09",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Compte à rebours de 278 jours vers le 1er mai 2027 : convergence entre BSIF E-23 et Note AMF IA (EXIG-AMF-01..12 sous statut F)",
+      "families_covered": [
+        "FAM_D09_01_01",
+        "FAM_D09_01_02"
+      ],
+      "themes_vulgarized": [
+        "bsif-e-23",
+        "ligne-directrice-amf",
+        "feuille-route-1er-mai-2027"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-02.svg",
+      "source_bytes": 9939,
+      "rendered_bytes": 9939,
+      "sha256_source": "c80dcdbd5faade0af0f7d6b2cc4ae5bf3c54f7f5e21ddb9a8e8e85d5490502cd",
+      "sha256_rendered": "c80dcdbd5faade0af0f7d6b2cc4ae5bf3c54f7f5e21ddb9a8e8e85d5490502cd",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4280,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+      "source_file_line": 84
+    },
+    {
+      "schema_id": "SCH-25-03",
+      "unit": "ch25",
+      "part_id": "P09",
+      "chapter_number": 25,
+      "domain_id": "D09",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Mosaïque canadienne en l'absence de loi générale : vide C-27/C-36, ACVM 11-348, banque ouverte C-15 et registre à trois lignes IIA",
+      "families_covered": [
+        "FAM_D09_01_02"
+      ],
+      "themes_vulgarized": [
+        "vide-federal-ia-c27-c36",
+        "avis-acvm-11-348",
+        "services-bancaires-consommateurs-c15",
+        "gouvernance-interne-registre-trois-lignes"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-03.svg",
+      "source_bytes": 9956,
+      "rendered_bytes": 9956,
+      "sha256_source": "2332f719658bd7808d2f59efc2918912eef3f824eab81afc4c716505c58677a7",
+      "sha256_rendered": "2332f719658bd7808d2f59efc2918912eef3f824eab81afc4c716505c58677a7",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4311,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
+      "source_file_line": 115
+    },
+    {
+      "schema_id": "SCH-26-01",
+      "unit": "ch26",
+      "part_id": "P09",
+      "chapter_number": 26,
+      "domain_id": "D09",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Triple qualification et calendrier européen : EU AI Act et Digital Omnibus 2026/1744, EN 18286:2026, DORA et CRA",
+      "families_covered": [
+        "FAM_D09_02_01"
+      ],
+      "themes_vulgarized": [
+        "eu-ai-act",
+        "maillage-reglementaire-international",
+        "systeme-qualite-en-18286-dora-cra"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-01.svg",
+      "source_bytes": 9986,
+      "rendered_bytes": 9986,
+      "sha256_source": "d4f4a8212976451783db6b1fa02ea571ae52fb27f5da37954bb1fb317beff585",
+      "sha256_rendered": "d4f4a8212976451783db6b1fa02ea571ae52fb27f5da37954bb1fb317beff585",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4410,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+      "source_file_line": 61
+    },
+    {
+      "schema_id": "SCH-26-02",
+      "unit": "ch26",
+      "part_id": "P09",
+      "chapter_number": 26,
+      "domain_id": "D09",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Boucle de maîtrise PDCA : plafonds par pire cas (EXIG-CON-02), index unique NIST/ISO/IMDA et riposte aux incidents S1–S4",
+      "families_covered": [
+        "FAM_D09_02_02"
+      ],
+      "themes_vulgarized": [
+        "classes-risque-agents-et-plafonds",
+        "incidents-agentiques-et-notification-multiregime",
+        "iso-iec-42001-nist",
+        "cadres-internationaux-imda-aica-g7"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-02.png",
+      "source_bytes": 1762,
+      "rendered_bytes": 183302,
+      "sha256_source": "20642299999ec3e788a126f26c32b49dd3d78bc39e88fe68f236336060e0900d",
+      "sha256_rendered": "1da0dbf0e805bd41c9ec43dab209066bd2e4ab10c0670b32b04a76d8ece1bdd7",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4442,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+      "source_file_line": 93
+    },
+    {
+      "schema_id": "SCH-26-03",
+      "unit": "ch26",
+      "part_id": "P09",
+      "chapter_number": 26,
+      "domain_id": "D09",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Souveraineté cognitive et coffre matériel : géorepérage des 6 couches d'état, grille SEAL, HYOK HMAC-FPE et GPU TEE",
+      "families_covered": [
+        "FAM_D09_02_02"
+      ],
+      "themes_vulgarized": [
+        "souverainete-espaces-donnees-tee-hyok"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-03.svg",
+      "source_bytes": 2550,
+      "rendered_bytes": 12506,
+      "sha256_source": "c7cef3bc65156882725a20f3d52065aeacbf8b728b501656435a23520b045ef6",
+      "sha256_rendered": "2fce740e24b31bcc54e45d62aab4458dda760bd3de9757dd70dd7cf8a55c0255",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4458,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
+      "source_file_line": 109
+    },
+    {
+      "schema_id": "SCH-27-01",
+      "unit": "ch27",
+      "part_id": "P09",
+      "chapter_number": 27,
+      "domain_id": "D09",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54, MCP, A2A a2a-tck et export FOCUS 1.4+)",
+      "families_covered": [
+        "FAM_D09_03_02"
+      ],
+      "themes_vulgarized": [
+        "criteres-evaluation-fournisseurs-grille"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-01.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-01.png",
+      "source_bytes": 1801,
+      "rendered_bytes": 223021,
+      "sha256_source": "b665726f83af443ad96bcdf7fc4a6da2ae8435f871ea6245bb1b94870dd81019",
+      "sha256_rendered": "b5a814155ec35c3c8d57822f4bbca3f1f6a89e9fb457dff8e9a365bba405b509",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4539,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+      "source_file_line": 45
+    },
+    {
+      "schema_id": "SCH-27-02",
+      "unit": "ch27",
+      "part_id": "P09",
+      "chapter_number": 27,
+      "domain_id": "D09",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Bouclier d'approvisionnement réversible : les 10 clauses minimales EXIG-APP-07..16 et le droit de sortie annuel POR-016",
+      "families_covered": [
+        "FAM_D09_03_01"
+      ],
+      "themes_vulgarized": [
+        "approvisionnement-reversible-contrats",
+        "clauses-contractuelles-normatives-app",
+        "clauses-reversibilite-cloud-souverain"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-02.svg",
+      "source_bytes": 9393,
+      "rendered_bytes": 9393,
+      "sha256_source": "ec333b28a3806a39112f1c6526d7b39e3307dd12d8529e2555a076050d091bb4",
+      "sha256_rendered": "ec333b28a3806a39112f1c6526d7b39e3307dd12d8529e2555a076050d091bb4",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4568,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+      "source_file_line": 74
+    },
+    {
+      "schema_id": "SCH-27-03",
+      "unit": "ch27",
+      "part_id": "P09",
+      "chapter_number": 27,
+      "domain_id": "D09",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Écart du mandat apparent B2B : responsabilité (Moffatt c. Air Canada, AB-316), contrats LCCJTI/LUCE et anti-collusion",
+      "families_covered": [
+        "FAM_D09_03_02"
+      ],
+      "themes_vulgarized": [
+        "responsabilite-mandat-contrats-b2b"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-03.svg",
+      "source_bytes": 2690,
+      "rendered_bytes": 15132,
+      "sha256_source": "ab69ccbf760e9f73c2acf34e32cf65c2841717ef572370d11ea028d348da6924",
+      "sha256_rendered": "7cce0223ea75aa0826b11655d07620a8c0bb2622f0a99a9f39b2a0be04370a07",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4589,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
+      "source_file_line": 95
+    },
+    {
+      "schema_id": "SCH-28-01",
+      "unit": "ch28",
+      "part_id": "P10",
+      "chapter_number": 28,
+      "domain_id": "D10",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Carte des cinq profils financiers réglementés (M-14..M-18) et 24 verrous PEX : mutualiser le socle, cloisonner les données clients",
+      "families_covered": [
+        "FAM_D10_01_01"
+      ],
+      "themes_vulgarized": [
+        "profils-financiers-5-secteurs",
+        "profil-banque-m14",
+        "profil-gestion-patrimoine-m15",
+        "profil-assurance-personnes-m16",
+        "profil-assurance-dommages-m17",
+        "profil-groupe-diversifie-m18"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-01.svg",
+      "source_bytes": 9404,
+      "rendered_bytes": 9404,
+      "sha256_source": "95005456239586ce885ee5570905dbe1397ae4a9aab2edc75f27536fc7d63b58",
+      "sha256_rendered": "95005456239586ce885ee5570905dbe1397ae4a9aab2edc75f27536fc7d63b58",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4692,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+      "source_file_line": 66
+    },
+    {
+      "schema_id": "SCH-28-02",
+      "unit": "ch28",
+      "part_id": "P10",
+      "chapter_number": 28,
+      "domain_id": "D10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Frontière d'irréversibilité financière : tampon déterministe Paiements Canada RTR (pacs.008, EXIG-CON-29) face à la compensation impossible",
+      "families_covered": [
+        "FAM_D10_01_01",
+        "FAM_D10_01_02"
+      ],
+      "themes_vulgarized": [
+        "tampon-deterministe-rtr-iso20022",
+        "vertical-financier-durci",
+        "profil-banque-m14"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-02.svg",
+      "source_bytes": 2655,
+      "rendered_bytes": 13516,
+      "sha256_source": "f01405ac963160fea7faa3b3596113eeb79cd1683d746eca0b57dacec46d297d",
+      "sha256_rendered": "af83d3e932623eb5fb9a359dc1230b8d1a09061e3e144b158955c3f7e31670a3",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4724,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+      "source_file_line": 98
+    },
+    {
+      "schema_id": "SCH-28-03",
+      "unit": "ch28",
+      "part_id": "P10",
+      "chapter_number": 28,
+      "domain_id": "D10",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2/3",
+      "families_covered": [
+        "FAM_D10_01_02"
+      ],
+      "themes_vulgarized": [
+        "production-agentique-canadienne-2025-2026",
+        "eclats-sectoriels-extrapoles",
+        "vertical-financier-durci"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-03.svg",
+      "source_bytes": 8671,
+      "rendered_bytes": 8671,
+      "sha256_source": "e7eb7d4b7bf715a34af5e55c470060c3c696354f440377aef01a8b81730c779c",
+      "sha256_rendered": "e7eb7d4b7bf715a34af5e55c470060c3c696354f440377aef01a8b81730c779c",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4762,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+      "source_file_line": 136
+    },
+    {
+      "schema_id": "SCH-29-01",
+      "unit": "ch29",
+      "part_id": "P10",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Anatomie comparée des trois blueprints de référence (`bp1` SoR, `bp2` enclave RAG ACL, `bp3` maillage B2B) sur C1–C8 et C01–C40",
+      "families_covered": [
+        "FAM_D10_02_01"
+      ],
+      "themes_vulgarized": [
+        "blueprint-1-assistant-sor",
+        "blueprint-2-enclave-rag-acl",
+        "blueprint-3-maillage-b2b",
+        "blueprints-reference-multisectoriels"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-01.svg",
+      "source_bytes": 2526,
+      "rendered_bytes": 11482,
+      "sha256_source": "d8f8e70d614b1e23b75f632322ea8e69655f2ca28dd47a63c46b5e54e0d02322",
+      "sha256_rendered": "99805d5534c67c56b2ff65b62401db2b695dc75b6df977fba084e50a2989dbdb",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4856,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+      "source_file_line": 76
+    },
+    {
+      "schema_id": "SCH-29-02",
+      "unit": "ch29",
+      "part_id": "P10",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Fédération multi-SaaS par gravité (≥ 85 % local), reprise Cognitive DR (RTO < 15 minutes) et sas B2B Palier 3 (vLEI / Diplomate ↔ Évaluateur)",
+      "families_covered": [
+        "FAM_D10_02_02"
+      ],
+      "themes_vulgarized": [
+        "federation-multi-plateformes-gravite",
+        "reprise-sinistre-cognitif-continuite",
+        "reseaux-b2b-federes-p3"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-02.png",
+      "source_bytes": 1694,
+      "rendered_bytes": 221470,
+      "sha256_source": "f0162ab7d84cd453a538fc555281108a0709feaf0a1aa071116b698e34e137ad",
+      "sha256_rendered": "5377a5d6e59a4bd302259770ddda84e5e88c1320827b720bfff80cd1790e762a",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4879,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+      "source_file_line": 99
+    },
+    {
+      "schema_id": "SCH-29-03",
+      "unit": "ch29",
+      "part_id": "P10",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Du fil rouge illustratif Groupe Boréal Inc. (BEL/BCA/BSN) au banc reproductible Borealis-Bench (108 blocs CI, DC-P11 et DC-P12)",
+      "families_covered": [
+        "FAM_D10_02_02"
+      ],
+      "themes_vulgarized": [
+        "fil-rouge-groupe-boreal-bel"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-03.svg",
+      "source_bytes": 8724,
+      "rendered_bytes": 8724,
+      "sha256_source": "045eb25a6ddd2e76f5d3023aa671126ba1fa30d1a65a67976e106ce7a46d8042",
+      "sha256_rendered": "045eb25a6ddd2e76f5d3023aa671126ba1fa30d1a65a67976e106ce7a46d8042",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4931,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+      "source_file_line": 151
+    },
+    {
+      "schema_id": "SCH-30-01",
+      "unit": "ch30",
+      "part_id": "P10",
+      "chapter_number": 30,
+      "domain_id": "D10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Chaîne d'industrialisation IAP et fabrique d'agents : Golden Paths GitOps cognitif, barrière d'admission et asymétrie des 10 suites SaaS",
+      "families_covered": [
+        "FAM_D10_03_01"
+      ],
+      "themes_vulgarized": [
+        "fabrique-agents-certification-reemission",
+        "passage-echelle-parc-agents",
+        "plateforme-iap-gitops-cognitif",
+        "plateformes-saas-et-asymetrie-tiers"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-01.svg",
+      "source_bytes": 2579,
+      "rendered_bytes": 12847,
+      "sha256_source": "e8db552f4e57112d92a1b8c065898bbffd2ed3db4430e1f3d4134e6ce2f8478d",
+      "sha256_rendered": "76ac8089c1558bdceb2eb208739d589752566473249c0282d4046ac4db0e95fa",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4994,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+      "source_file_line": 47
+    },
+    {
+      "schema_id": "SCH-30-02",
+      "unit": "ch30",
+      "part_id": "P10",
+      "chapter_number": 30,
+      "domain_id": "D10",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Verrou d'architecture : les 10 antipatrons bloquants (EXIG-ORC-29, AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
+      "families_covered": [
+        "FAM_D10_03_02"
+      ],
+      "themes_vulgarized": [
+        "anti-patrons-agentiques"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-02.png",
+      "source_bytes": 1690,
+      "rendered_bytes": 243792,
+      "sha256_source": "fd4df7926a386bcde9fdc4f5e250a49298b001e54fbe95f95937f579d1f344d7",
+      "sha256_rendered": "f79e707b709d5e5ec74818e1d43ee18b903acb1fd7bc89309f978f97edd0ae2d",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5043,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+      "source_file_line": 96
+    },
+    {
+      "schema_id": "SCH-30-03",
+      "unit": "ch30",
+      "part_id": "P10",
+      "chapter_number": 30,
+      "domain_id": "D10",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Échelle de maturité AAGMM (M1 → M5) et feuille de route à 90, 180 et 360 jours sous portes ARB 1–3 et sortie Strangler Fig du RPA",
+      "families_covered": [
+        "FAM_D10_03_01",
+        "FAM_D10_03_02"
+      ],
+      "themes_vulgarized": [
+        "modele-maturite-feuille-360j",
+        "passage-echelle-parc-agents"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-03.svg",
+      "source_bytes": 8099,
+      "rendered_bytes": 8099,
+      "sha256_source": "05bc200949bed7b0d5aa8b9655eac3610655b6ea24424f42d12ba9cbcfa3673f",
+      "sha256_rendered": "05bc200949bed7b0d5aa8b9655eac3610655b6ea24424f42d12ba9cbcfa3673f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5073,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+      "source_file_line": 126
+    },
+    {
+      "schema_id": "SCH-31-01",
+      "unit": "ch31",
+      "part_id": "P11",
+      "chapter_number": 31,
+      "domain_id": "D11",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Trajectoire DAPP 2028–2035 : parcours A/B/C, 15 portes POR et bifurcation sur 27 signaux SIG",
+      "families_covered": [
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "trajectoires-adaptatives-dapp",
+        "vingt-sept-signaux-veille-sig",
+        "quinze-portes-homologation-por",
+        "trajectoire-90j-18m-p1-p3"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-01.svg",
+      "source_bytes": 9066,
+      "rendered_bytes": 9066,
+      "sha256_source": "05d22c1de24d8de1c42c2ae3994d93d2db0d6a916ec045f73c70915b2106bc9f",
+      "sha256_rendered": "05d22c1de24d8de1c42c2ae3994d93d2db0d6a916ec045f73c70915b2106bc9f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5148,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+      "source_file_line": 58
+    },
+    {
+      "schema_id": "SCH-31-02",
+      "unit": "ch31",
+      "part_id": "P11",
+      "chapter_number": 31,
+      "domain_id": "D11",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Rampe des 90 premiers jours aux jalons J1–J5 face aux trois horloges et échéances 2027–2035",
+      "families_covered": [
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "priorites-90-jours-gouvernance",
+        "feuille-de-route-phases-90-jours-indicateurs",
+        "trajectoire-consolidation-standards-2027-2028"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-02.png",
+      "source_bytes": 1644,
+      "rendered_bytes": 104709,
+      "sha256_source": "94caf08249efc9405d348aa2bd09c27172f86f13404d6a23ce06e5e79a9a92b6",
+      "sha256_rendered": "cd8f67210cedb2f4d92d43de3c96fb29f3c83246d6b64bc527cc4faf544e2890",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5174,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+      "source_file_line": 84
+    },
+    {
+      "schema_id": "SCH-31-03",
+      "unit": "ch31",
+      "part_id": "P11",
+      "chapter_number": 31,
+      "domain_id": "D11",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Boussole prospective : tri PROGRAMMÉ / PROJETÉ / SPÉCULATIF, falaise METR (50 % par rapport à 80 %) et maturité 5×5",
+      "families_covered": [
+        "FAM_D11_01_02",
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "tri-prospectif-peremption-feuilles-route",
+        "frontiere-capacites-metr-veille",
+        "modele-maturite-5-niveaux-dimensions",
+        "horizon-2027-2032-tri-prospectif"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-03.svg",
+      "source_bytes": 2503,
+      "rendered_bytes": 12083,
+      "sha256_source": "d39241b041c8fa2daded2b5360b96c9f8f5b3a1952e911c1bbd041c971a52f07",
+      "sha256_rendered": "66c3784bef6237e07874ff201a2c5539d6d2437ec1785873af902caa8dcbf2e1",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5196,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+      "source_file_line": 106
+    },
+    {
+      "schema_id": "SCH-32-01",
+      "unit": "ch32",
+      "part_id": "P11",
+      "chapter_number": 32,
+      "domain_id": "D11",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Contrat dual AE ↔ AS et modèle opérationnel en étoile / Hub-and-Spoke à A unique",
+      "families_covered": [
+        "FAM_D11_02_01"
+      ],
+      "themes_vulgarized": [
+        "gouvernance-duale-ae-as",
+        "modele-operationnel-hub-and-spoke",
+        "dix-theses-t1-t10-tome-5",
+        "gouvernance-raci-modele-en-etoile"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-01.svg",
+      "source_bytes": 2639,
+      "rendered_bytes": 13897,
+      "sha256_source": "ff7d95364144022f43042d3df903f4b8db76d21eef0eacc18f025a7670ee8078",
+      "sha256_rendered": "2be073e85c10e3ecc3a240eec02ebf7c3b6c892b16ac285c19b870e990581c9f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5281,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
+      "source_file_line": 43
+    },
+    {
+      "schema_id": "SCH-32-02",
+      "unit": "ch32",
+      "part_id": "P11",
+      "chapter_number": 32,
+      "domain_id": "D11",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Passeport d'existence : registre à sept états, détection mensuelle des agents fantômes et dérogations bornées",
+      "families_covered": [
+        "FAM_D11_02_01"
+      ],
+      "themes_vulgarized": [
+        "registre-agents-cycle-de-vie-et-attestations",
+        "regime-derogations-et-transition-cohorte"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-02.png",
+      "source_bytes": 1810,
+      "rendered_bytes": 188220,
+      "sha256_source": "b6dd3402ee4a6db118d00c3f5e558a986fa2f7d217c612ef5bf6d76b33c81fd1",
+      "sha256_rendered": "d5e424483db30381bea309b2383310ecdc33bd54fe0caf107fdfe71f18c18077",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5309,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
+      "source_file_line": 71
+    },
+    {
+      "schema_id": "SCH-32-03",
+      "unit": "ch32",
+      "part_id": "P11",
+      "chapter_number": 32,
+      "domain_id": "D11",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Les sept pièges endogènes qui entravent la gouvernance et l'angle mort juridique des litiges AP2",
+      "families_covered": [
+        "FAM_D11_02_02"
+      ],
+      "themes_vulgarized": [
+        "pieges-gouvernance",
+        "responsabilite-litiges-commerce-agentique"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-03.svg",
+      "source_bytes": 8692,
+      "rendered_bytes": 8692,
+      "sha256_source": "88d7632c7fc6269e2965d31f9a39a18450bc30c6684bea4c4dcd217b5d547ee8",
+      "sha256_rendered": "88d7632c7fc6269e2965d31f9a39a18450bc30c6684bea4c4dcd217b5d547ee8",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5341,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
+      "source_file_line": 103
+    },
+    {
+      "schema_id": "SCH-33-01",
+      "unit": "ch33",
+      "part_id": "P11",
+      "chapter_number": 33,
+      "domain_id": "D11",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Boucle d'érosion cognitive : comment l'automatisation des tâches simples fragilise la relève et le repli manuel",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "atrophie-competences-humaines"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-01.svg",
+      "source_bytes": 2504,
+      "rendered_bytes": 13840,
+      "sha256_source": "c8455a377f861bd2baedd12518e77f04d8396415b4ca3ff292145b1283810473",
+      "sha256_rendered": "6cb37abb22b754631b13901f895beca85c48cac301921f3b8a0b227df62a7541",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5432,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+      "source_file_line": 42
+    },
+    {
+      "schema_id": "SCH-33-02",
+      "unit": "ch33",
+      "part_id": "P11",
+      "chapter_number": 33,
+      "domain_id": "D11",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Écrans différentiels, CIBA et cas témoins à l'aveugle contre la validation réflexe (Loi 25 art. 12.1)",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "approbation-reflexe-biais-automatisation"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-02.svg",
+      "source_bytes": 7658,
+      "rendered_bytes": 7658,
+      "sha256_source": "927915dada615fdc49da5cd00a714d9c30ebebe15483e91c8da4429cb19c9e86",
+      "sha256_rendered": "927915dada615fdc49da5cd00a714d9c30ebebe15483e91c8da4429cb19c9e86",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5450,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+      "source_file_line": 60
+    },
+    {
+      "schema_id": "SCH-33-03",
+      "unit": "ch33",
+      "part_id": "P11",
+      "chapter_number": 33,
+      "domain_id": "D11",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Sanctuarisation de la relève (quota > 70 % INI-043) et exercices périodiques de bascule sans agent",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "sanctuarisation-vivier-junior-reprise",
+        "atrophie-competences-humaines"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-03.png",
+      "source_bytes": 1584,
+      "rendered_bytes": 84031,
+      "sha256_source": "fb93f93a61204e6dfacdf77a8b57150311f4256f7d9542c30fa89e7877011929",
+      "sha256_rendered": "76b1a62c535d88878e5c99377bcb4e4461105471b6b00f60874ea256b38ba4af",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5462,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+      "source_file_line": 72
+    },
+    {
+      "schema_id": "SCH-34-01",
+      "unit": "ch34",
+      "part_id": "P12",
+      "chapter_number": 34,
+      "domain_id": "D12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Porte unique d'homologation : 305 exigences CRE-IA v1.2, 16 préfixes et 10 lignes rouges sans dérogation",
+      "families_covered": [
+        "FAM_D12_01_01"
+      ],
+      "themes_vulgarized": [
+        "exigences-cre-ia-305",
+        "dix-interdictions-exig-gov-17"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-01.svg",
+      "source_bytes": 2381,
+      "rendered_bytes": 11290,
+      "sha256_source": "beb6dfa0bf635486f444bf59c02199f4b31a8416225e99d7475a73082fde132f",
+      "sha256_rendered": "c6bc607135e4bea388d87de83aa79628acebcb925220c3e335f53bfd47942664",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5583,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
+      "source_file_line": 72
+    },
+    {
+      "schema_id": "SCH-34-02",
+      "unit": "ch34",
+      "part_id": "P12",
+      "chapter_number": 34,
+      "domain_id": "D12",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Règle du doute, force RFC 2119 et parcours d'application : fiche d'agent, grille A.1–A.8 et sept protocoles",
+      "families_covered": [
+        "FAM_D12_01_01",
+        "FAM_D12_01_02"
+      ],
+      "themes_vulgarized": [
+        "portee-et-force-normative-cre-ia",
+        "grille-homologation-et-fiche-agent",
+        "referentiel-annexes-protocoles-chronologie"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-02.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-02.png",
+      "source_bytes": 1718,
+      "rendered_bytes": 179913,
+      "sha256_source": "e635f32b10f8fc61a7a038b517db98401fb1806a9d6f2fec441902793c2f76d5",
+      "sha256_rendered": "bd0b6f6aed99474e7025002e76b683fa056cdfb06ac41825e9d3df273b800a1d",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5601,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
+      "source_file_line": 90
+    },
+    {
+      "schema_id": "SCH-34-03",
+      "unit": "ch34",
+      "part_id": "P12",
+      "chapter_number": 34,
+      "domain_id": "D12",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Grille PRR-75 en cinq domaines (S/R/O/G/F) et arbre mécanique des 24 portes [BLOQUANT] + fiche 2027-B001",
+      "families_covered": [
+        "FAM_D12_01_02"
+      ],
+      "themes_vulgarized": [
+        "homologation-prr-75-points",
+        "exigences-cre-ia-305"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-03.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-03.png",
+      "source_bytes": 1753,
+      "rendered_bytes": 256442,
+      "sha256_source": "3b914b3527e79d91e0858446f4a8096704dc6627e6dcafa1d4194a806ea765f8",
+      "sha256_rendered": "151adabe9626c24609715c2328589cdc701e8abca2374966d7fe8b2818d0777a",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5621,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
+      "source_file_line": 110
+    },
+    {
+      "schema_id": "SCH-35-01",
+      "unit": "ch35",
+      "part_id": "P12",
+      "chapter_number": 35,
+      "domain_id": "D12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Architecture bicéphale du Tome 8 : manuel CC BY 4.0, quatre modules Python/OPA MIT et barrière G0 à exit 0",
+      "families_covered": [
+        "FAM_D12_02_01"
+      ],
+      "themes_vulgarized": [
+        "trousse-executable-tome-8",
+        "barriere-logicielle-g0-execute-g0"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-01.svg",
+      "source_bytes": 2517,
+      "rendered_bytes": 13550,
+      "sha256_source": "f6821e63ca89da25a8772737ac08cf50a5e68e8b9fca3ee378d400c9cc3ccb12",
+      "sha256_rendered": "567144fe42df52f2652343d266fa555f4a6f049446f4aabe2826f3e311bda6f3",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5732,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+      "source_file_line": 34
+    },
+    {
+      "schema_id": "SCH-35-02",
+      "unit": "ch35",
+      "part_id": "P12",
+      "chapter_number": 35,
+      "domain_id": "D12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Les cinq blocs critiques du Tableau 12 (5 SBB) matérialisés dans la trousse exécutable",
+      "families_covered": [
+        "FAM_D12_02_01"
+      ],
+      "themes_vulgarized": [
+        "cinq-blocs-sbb-tableau-12",
+        "trousse-executable-tome-8"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-02.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-02.svg",
+      "source_bytes": 2423,
+      "rendered_bytes": 13959,
+      "sha256_source": "930d557b4737157d018d73d60d6a142e3a01af6e2b3cea6cc2661ea06509c3be",
+      "sha256_rendered": "44ebf67882b6b8719ee5e157f51e01012b7325a14c47c03712df873991bbbe09",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5756,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+      "source_file_line": 58
+    },
+    {
+      "schema_id": "SCH-35-03",
+      "unit": "ch35",
+      "part_id": "P12",
+      "chapter_number": 35,
+      "domain_id": "D12",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Preuve synthétique bornée DC-P12 (FEDS/EMA C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8",
+      "families_covered": [
+        "FAM_D12_02_02"
+      ],
+      "themes_vulgarized": [
+        "calibration-feds-ema",
+        "contrats-types-executes-ci-annexe-c"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-03.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-03.svg",
+      "source_bytes": 7620,
+      "rendered_bytes": 7620,
+      "sha256_source": "7d4762bed7740979738a0063279f9cc662e77d874ae16abd79ba8ade52a3a4a2",
+      "sha256_rendered": "7d4762bed7740979738a0063279f9cc662e77d874ae16abd79ba8ade52a3a4a2",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5837,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+      "source_file_line": 139
+    },
+    {
+      "schema_id": "SCH-36-01",
+      "unit": "ch36",
+      "part_id": "P12",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Fermeture de DIV-02 et pont unifié : 52 CAP + 24 PEX → 305 EXIG-*, réconciliation Tome 1 et glossaire",
+      "families_covered": [
+        "FAM_D12_03_01"
+      ],
+      "themes_vulgarized": [
+        "concordance-inter-tomes-div02",
+        "architecture-collection-tome-1-preambule",
+        "reconciliation-inter-volumes-tome1",
+        "glossaire-normatif-tome-2"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-01.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-01.svg",
+      "source_bytes": 2400,
+      "rendered_bytes": 11544,
+      "sha256_source": "6ef4e28be1bad97927f8b72da29c3fc2bcd01025e9bd57d4b1c87111e9fce8df",
+      "sha256_rendered": "3fe5b2022a29fa94f44ff21d669e1946bbc1eea54551936d8166ecd69c209a9e",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5919,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+      "source_file_line": 45
+    },
+    {
+      "schema_id": "SCH-36-02",
+      "unit": "ch36",
+      "part_id": "P12",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Table canonique de passage des cinq discordances inter-volumes (DISC-01 à DISC-05)",
+      "families_covered": [
+        "FAM_D12_03_01"
+      ],
+      "themes_vulgarized": [
+        "cinq-discordances-inter-volumes-tome-8"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-02.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-02.svg",
+      "source_bytes": 9286,
+      "rendered_bytes": 9286,
+      "sha256_source": "3b35c84490cd1e796bc175b36ced6ebfa44cdc83387e8dd256943a52b10977dd",
+      "sha256_rendered": "3b35c84490cd1e796bc175b36ced6ebfa44cdc83387e8dd256943a52b10977dd",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5941,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+      "source_file_line": 67
+    },
+    {
+      "schema_id": "SCH-36-03",
+      "unit": "ch36",
+      "part_id": "P12",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Chaîne probatoire Wyvern (G0–G5), réconciliation CA-16, hygiène L+ / Statut F et degrés d'absence",
+      "families_covered": [
+        "FAM_D12_03_02"
+      ],
+      "themes_vulgarized": [
+        "protocole-wyvern-g0-g5",
+        "protocole-probatoire-l-plus-statut-f",
+        "regime-preuve-trois-degres-absence",
+        "audit-validation-sources-121-449"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-03.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-03.svg",
+      "source_bytes": 2581,
+      "rendered_bytes": 12090,
+      "sha256_source": "c76cf4b769c1a0c8a0d797f1d89b810894b1d81c97d5adb690ff0a6184bf4ab1",
+      "sha256_rendered": "b33b028b11a271864ba49a227a57c823180e07bf0c3e1ef3496a3a1b6dd7dce3",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5991,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+      "source_file_line": 117
+    },
+    {
+      "schema_id": "SCH-36-04",
+      "unit": "ch36",
+      "part_id": "P12",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "engine": "mmd",
+      "notation": "Mermaid",
+      "title": "Usine éditoriale Typst (4 542 pages, 319 figures), cycle de péremption de 30 jours et clause non-avis",
+      "families_covered": [
+        "FAM_D12_03_02"
+      ],
+      "themes_vulgarized": [
+        "gabarit-typst-edition-4542-pages",
+        "clause-non-avis-licences",
+        "actualisation-novembre-2026-unification-v1-2",
+        "peremption-revalidation-annexe-n",
+        "registre-sources-tracees-annexe-b"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-04.mmd",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-04.png",
+      "source_bytes": 1691,
+      "rendered_bytes": 181948,
+      "sha256_source": "dbc34bf64918ac579b165a200ba190b88b0a3f49b2ac105999f04b48da802f9b",
+      "sha256_rendered": "792eea7352d946c69344c80c1157e8bbf5e188375cf0d5e55fa6aef3c82f1fe7",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 6011,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+      "source_file_line": 137
+    }
+  ]
+}

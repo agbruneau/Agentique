@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Compilateur du bundle de données et de la MindMap HTML autonome du Corpus Agentique.
+"""Compilateur du bundle de données et de la MindMap HTML autonome du Compendium Agentique.
 
 Fusionne :
-- ``Cartographie/donnees/schema-cartographie.json``
-- ``Cartographie/donnees/structure-integrale.json``
-- ``Cartographie/donnees/pivots-concordance.json``
-- ``Cartographie/donnees/synthese-transversale.json``
-- ``Cartographie/outils/template_mindmap.html``
+- ``Sources/Cartographie/donnees/schema-cartographie.json``
+- ``Sources/Cartographie/donnees/structure-integrale.json``
+- ``Sources/Cartographie/donnees/pivots-concordance.json``
+- ``Sources/Cartographie/donnees/synthese-transversale.json``
+- ``Sources/Cartographie/outils/template_mindmap.html``
 
 Produit :
-- ``Cartographie/donnees/corpus-mindmap-data.json``
-- ``Cartographie/MindMap - Cartographie thématique du Corpus.html``
+- ``Sources/Cartographie/donnees/corpus-mindmap-data.json``
+- ``Sources/Cartographie/MindMap - Cartographie thématique du Compendium.html``
 """
 
 from __future__ import annotations
@@ -23,8 +23,12 @@ import re
 import sys
 from typing import Any, Callable
 
-PAGE_TITLE = "MindMap — Cartographie thématique du Corpus Agentique (Tomes 1 à 8)"
-TOME_ORDER: dict[str, int] = {"R": 0, "T1": 1, "T2": 2, "T3": 3, "T4": 4, "T5": 5, "T6": 6, "T7": 7, "T8": 8}
+PAGE_TITLE = "MindMap — Cartographie thématique du Compendium Agentique"
+TOME_ORDER: dict[str, int] = {
+    "R": 0, "LIM": 1, "P01": 2, "P02": 3, "P03": 4, "P04": 5, "P05": 6,
+    "P06": 7, "P07": 8, "P08": 9, "P09": 10, "P10": 11, "P11": 12, "P12": 13, "ANN": 14,
+    "T1": 21, "T2": 22, "T3": 23, "T4": 24, "T5": 25, "T6": 26, "T7": 27, "T8": 28,
+}
 
 
 def map_outside_inline_code(text: str, transform: Callable[[str], str]) -> str:
@@ -236,8 +240,8 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
             "rectifications": [clean_prose_typography(r) for r in raw_div02.get("trois_rectifications", [])],
             "coquilles": [clean_prose_typography(c) for c in raw_div02.get("quatre_coquilles_cad26_v1_1_rectifiees", [])],
             "bilan_chiffre": raw_div02.get("bilan_chiffre", {}),
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "line_start": 19,
+            "file": raw_div02.get("compendium_file") or "Compendium/Compendium.md",
+            "line_start": int(raw_div02.get("compendium_line_start") or 108),
         }
 
     reconciliations: list[dict[str, Any]] = []
@@ -249,16 +253,17 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
             else var
             for var in entry.get("volume_variants", [])
         ]
+        c_line = int(entry.get("compendium_line_start") or 116)
         reconciliations.append(
             {
                 "id": entry.get("discordance_id", ""),
                 "title": clean_prose_typography(entry.get("topic", "")),
-                "section": f"Tome 8 §{entry.get('liminaire_section', '0.2')}",
+                "section": f"Compendium §{entry.get('liminaire_section', '0.2')} / Annexe C · L{c_line}",
                 "resolution": clean_prose_typography(entry.get("canonical_vol8_choice", "")),
                 "rationale": clean_prose_typography(entry.get("rationale", "")),
                 "variants": variants_clean,
-                "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-                "line_start": 34,
+                "file": entry.get("compendium_file") or "Compendium/Compendium.md",
+                "line_start": c_line,
             }
         )
 
@@ -306,6 +311,9 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
             "concordance_8_tomes": raw_pivots.get("concordance_8_tomes", {}),
             "bilans_aq": raw_pivots.get("bilans_aq_wyvern_et_statut_f", {}),
             "glossaire_pivot": raw_pivots.get("glossaire_pivot", {}),
+            "faits_empiriques_16": raw_pivots.get("faits_empiriques_16", []),
+            "specifications_lplus_57": raw_pivots.get("specifications_lplus_57", []),
+            "statut_f_exclus_27": raw_pivots.get("statut_f_exclus_27", []),
         }
 
     timeline: list[dict[str, Any]] = []
@@ -566,8 +574,11 @@ def compile_mindmap(repo_root: Path) -> tuple[Path, Path, dict[str, Any]]:
     if re.search(r"<script[^>]+src\s*=|<link[^>]+href\s*=\s*['\"]?(?:https?:)?//|@import\s+url\(|\bfetch\s*\(", html_outside_json, re.IGNORECASE):
         raise ValueError("Référence réseau/CDN détectée hors bloc JSON dans MindMap HTML")
 
-    html_out = repo_root / "Sources" / "Cartographie" / "MindMap - Cartographie thématique du Corpus.html"
+    html_out = repo_root / "Sources" / "Cartographie" / "MindMap - Cartographie thématique du Compendium.html"
     html_out.write_text(compiled_html, encoding="utf-8", newline="\n")
+    old_html = repo_root / "Sources" / "Cartographie" / "MindMap - Cartographie thématique du Corpus.html"
+    if old_html.is_file():
+        old_html.unlink()
 
     return data_out, html_out, bundle
 

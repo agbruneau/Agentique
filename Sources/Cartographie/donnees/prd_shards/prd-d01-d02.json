@@ -13,7 +13,7 @@
       "representative_title": "Rupture épistémique, Systèmes d'agentivité et fondements des acteurs autonomes",
       "executive_summary": "Ce chapitre encadre le basculement architectural des assistants conversationnels sans effet de bord vers des Systèmes d'agentivité opérant en boucle fermée sur les systèmes d'entreprise, faisant émerger l'agentivité des systèmes (*system agency*) en tant que propriété composite et observable de l'assemblage sociotechnique. Face à l'écart observé entre les projets pilotes déclaratifs et la production réelle — où l'étude MAP recense 68 % de déploiements bornés à au plus dix étapes et 16 cas sur 20 reposant sur des flux fixes, tandis que Gartner anticipe plus de 40 % d'annulations d'ici la fin de 2027 —, le PRD institue la règle « soutien n'est pas production » et substitue des contrats N+M gouvernés aux connecteurs N×M. Sur le plan formel, la spécification réoutille les cadres PEAS, BDI et POMDP contre la dérive de replanification, remplace le modèle mentaliste FIPA-ACL par des contrats comportementaux probabilistes et des protocoles à engagements sociaux observables, puis cantonne le test-time compute derrière des vérificateurs externes de type LLM-Modulo sans jamais considérer la trace Chain-of-Thought comme une preuve de sûreté. Enfin, elle arrime l'ensemble des exigences sur une hiérarchie probante à six niveaux et sur la revue multivocale PRISMA-ScR W3.2 (160 études en texte intégral authentifiées par empreinte SHA-256).",
       "targeted_content": {
-        "scope_and_objectives": "Délimiter la strate System of Action (SoA) entre les Systems of Engagement (SoE) et les Systems of Record (SoR) conformément à la décision ADR-001 ; classifier chaque initiative selon la taxonomie à cinq paliers d'autonomie de trajectoire et cinq archétypes fonctionnels ; et fonder l'admissibilité en production sur des preuves empiriques vérifiables plutôt que sur les annonces d'éditeurs ou les traces de raisonnement.",
+        "scope_and_objectives": "Délimiter la strate System of Action (SoA) entre les Systems of Engagement (SoE) et les Systems of Record (SoR) conformément à la décision ADR-001, tout en distinguant cette couche architecturale de l'agentivité des systèmes (*system agency*), propriété émergente et bornée de l'assemblage sociotechnique complet (modèle, harnais déterministe, outils, mémoire, identité non humaine et supervision humaine) ; classifier chaque initiative selon la taxonomie à cinq paliers et cinq archétypes fonctionnels ; et fonder l'admissibilité en production sur des preuves empiriques vérifiables.",
         "key_requirements_and_objectives": [
           "EXIG-D01-01.1 (Cadrage SoA / SoR) : Tout système agentique exploité en production DOIT être isolé dans une strate System of Action distincte des Systems of Engagement et des Systems of Record (ADR-001), sans accès SQL direct, et satisfaire les 7 critères vérifiables (action, limites, identité, imputabilité, inventaire, composition et mesure).",
           "EXIG-D01-01.2 (Répudiation du super-agent) : Chaque acteur DOIT être typé parmi les 5 archétypes fonctionnels (interface, spécialiste de domaine, travailleur de tâche, orchestrateur et méta-gouverneur) et borné selon l'entité qui détermine la trajectoire d'exécution ; le super-agent universel est proscrit.",
@@ -71,7 +71,7 @@
                 "theme_node_id": "THM_systems-of-agency",
                 "canonical_slug": "systems-of-agency",
                 "theme_title": "Constat empirique de fin 2026 : soutien par rapport à la production et déploiements bornés",
-                "content_specification": "La strate System of Action (SoA) DOIT être instituée entre les Systems of Engagement (SoE) et les Systems of Record (SoR) en vertu d'ADR-001 (zéro écriture SQL directe) afin de ramener N×M connecteurs propriétaires à N+M contrats réutilisables derrière une passerelle et un catalogue uniques, tout en satisfaisant sept critères vérifiables (action, limites, identité, imputabilité, inventaire, composition et mesure). La règle « soutien n'est pas production » s'impose face à l'écart entre les projets pilotes et la valeur réalisée (MIT NANDA : 95 % sans rendement chiffré), à la prolifération des identités non humaines (ratio 82:1 selon CyberArk), à la contrainte énergétique (AIE : 415 → 945 TWh d'ici 2030) et à la rareté des cas arbitrés en production réelle (Nubank, KDD 2026, reposant sur 5 agents ReAct sans MCP ni A2A).",
+                "content_specification": "La strate System of Action (SoA) DOIT être instituée entre les Systems of Engagement (SoE) et les Systems of Record (SoR) en vertu d'ADR-001 (zéro écriture SQL directe) afin de ramener N×M connecteurs propriétaires à N+M contrats réutilisables derrière une passerelle et un catalogue uniques, tout en satisfaisant sept critères vérifiables (action, limites, identité, imputabilité, inventaire, composition et mesure). Sur le plan conceptuel, le référentiel distingue cette strate `SoA` de l'agentivité des systèmes (*system agency*), propriété émergente, composite et bornée qui résulte du couplage gouverné entre modèle cognitif, harnais déterministe, outils vérifiés, mémoire gouvernée, identité non humaine et supervision humaine selon le principe de moindre agence plutôt que des seuls poids d'un modèle. La règle « soutien n'est pas production » s'impose face à l'écart entre les projets pilotes et la valeur réalisée (MIT NANDA : 95 % sans rendement chiffré), à la prolifération des identités non humaines (ratio 82:1 selon CyberArk), à la contrainte énergétique (AIE : 415 → 945 TWh d'ici 2030) et à la rareté des cas arbitrés en production réelle (Nubank, KDD 2026, reposant sur 5 agents ReAct sans MCP ni A2A).",
                 "identifiers_and_norms": [
                   "SoE / SoA / SoR",
                   "ADR-001",
@@ -267,74 +267,76 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.0.1 Du modèle conversationnel à l’agent qui agit sur le monde (L955–L970)"
+            "part_id": "P01",
+            "unit_id": "ch01",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 213,
+            "reference": "Partie I · Chapitre 01 — Rupture épistémique, Systèmes d'agentivité et fondements des acteurs autonomes (L213–L368)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.1 Qu’est-ce qu’un agent ? Définition canonique et débat terminologique (L985–L1000)"
+            "part_id": "P01",
+            "unit_id": "ch01",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 221,
+            "reference": "Partie I · § 1.1 Paradigme des Systèmes d'agentivité : rupture en boucle fermée, constats `MAP 2027` et contrats comportementaux (L221–L297)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.2 Le cadre de l’agent rationnel : PEAS et typologies (L1001–L1012)"
+            "part_id": "P01",
+            "unit_id": "ch01",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 298,
+            "reference": "Partie I · § 1.2 Généalogie, limites des planificateurs `LLM` et hiérarchie probante `PRISMA-ScR` (L298–L338)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "2 Contexte et enjeux > 2.1 Où en est l’entreprise agentique en 2026 (L549–L600)"
+            "part_id": "P01",
+            "unit_id": "ch01",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 339,
+            "reference": "Partie I · § 1.3 Synthèse opératoire, exigences `D01-01` et frontières d'architecture (L339–L356)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "2 Contexte et enjeux > 2.3 Huit enjeux qui motivent le cadre (L637–L686)"
+            "part_id": "P01",
+            "unit_id": "ch01",
+            "tome_id": "P01",
+            "file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 01.md (L1–L143)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique > 1.1 De l’assistant à l’agent (L405–L456)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 84,
+            "reference": "Liminaire · § 0.1 Problématique industrielle : rupture probabiliste, coûts de Coase et jardins clos (L84–L95)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique > 1.2 Taxonomie (L457–L511)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 96,
+            "reference": "Liminaire · § 0.2 Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et concordance inter-tomes (`DIV-02`, `DISC-01` à `DISC-05`) (L96–L129)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur > 2.1 Bilan à l’entrée de 2028 : acquis stabilisés et chantiers ouverts (L383–L412)"
+            "part_id": "ANN",
+            "unit_id": "annexe-a",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6056,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur > 2.2 État détaillé des hypothèses `H1` à `H6` du Compendium 2027 (L413–L432)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 2. Les dix thèses structurantes (`T1` à `T10`) (L95–L107)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.1 Adoption mesurée fin 2026 et règle « soutien n’est pas production » (L142–L151)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.1 Stratification du SI : Systems of Record, Systems of Engagement et Systems of Agency (L202–L265)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique > 0.2 L'interopérabilité au-delà du transport syntaxique (L38–L161)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.2 Séparer les systèmes d'engagement, d'agence et d'autorité (L586–L605)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -345,9 +347,9 @@
       "domain_id": "D01",
       "subdomain_node_id": "SUB_D01_02",
       "representative_title": "Fiabilité probabiliste, loi de Lusser, erreurs silencieuses et constance pass^k",
-      "executive_summary": "Ce chapitre énonce les fondements mathématiques et empiriques qui interdisent le déploiement de chaînes probabilistes dépourvues de contrôle d'état déterministe. À l'inverse des microservices classiques qui signalent leurs défaillances par un code HTTP 500, un maillon LLM défaillant retourne fréquemment un statut HTTP 200 OK et un document JSON syntaxiquement valide dissimulant une erreur sémantique silencieuse (OWASP ASI08). Selon la loi de Lusser (modèle des risques concurrents en série NIST/SEMATECH 8.1.8.1), dix étapes probabilistes fiables à 94 % chacune voient leur taux de succès composé chuter à 53,9 %, tandis que l'amplification d'erreurs atteint 17,2× sans vérificateur central contre 4,4× avec coordination bornée. La taxonomie MAST (1 642 traces en v3, entre 41 % et 86,7 % d'échecs) confirme que 44,2 % des pannes découlent de la spécification système. En conséquence, le PRD proscrit pass@k pour toute homologation en production, impose la constance multi-essais pass^k vérifiée par une borne de Wilson à 95 % et exige des preuves quantitatives de gain avant d'autoriser le surcoût (~15× en jetons) d'une topologie multi-agents.",
+      "executive_summary": "Ce chapitre énonce les fondements mathématiques et empiriques qui interdisent le déploiement de chaînes probabilistes dépourvues de contrôle d'état déterministe. À l'inverse des microservices classiques qui signalent leurs défaillances par un code HTTP 500, un maillon LLM défaillant retourne fréquemment un statut HTTP 200 OK et un document JSON syntaxiquement valide dissimulant une erreur sémantique silencieuse (OWASP ASI08). Selon la loi de Lusser (modèle des risques concurrents en série NIST/SEMATECH 8.1.8.1), dix étapes probabilistes fiables à 94 % chacune voient leur taux de succès composé chuter à 53,9 %, tandis que l'amplification d'erreurs atteint 17,2× sans vérificateur central contre 4,4× avec coordination bornée. La taxonomie MAST (1 642 traces en v3, entre 41 % et 86,7 % d'échecs) confirme que 44,2 % des pannes découlent de la spécification système. En conséquence, le PRD proscrit pass@k pour toute homologation en production, impose la constance multi-essais pass^k vérifiée par une borne de Wilson à 95 % et exige des preuves quantitatives de gain avant d'autoriser le surcoût (~15× en jetons) d'une topologie multi-agents. En démontrant que la fiabilité opérationnelle dépend de l'architecture d'encadrement plutôt que du seul modèle probabiliste, ce chapitre soumet l'agentivité des systèmes (*system agency*) à des seuils vérifiables de constance et d'orchestration bornée.",
       "targeted_content": {
-        "scope_and_objectives": "Neutraliser la non-compositionnalité de sûreté (H-24), l'amplification des erreurs sémantiques silencieuses (ASI08) et la décroissance géométrique de la fiabilité sur horizon long en subordonnant toute mise en production et tout recours au multi-agents à la métrique de constance pass^k sous validation statistique de Wilson.",
+        "scope_and_objectives": "Neutraliser la non-compositionnalité de sûreté (H-24), l'amplification des erreurs sémantiques silencieuses (ASI08) et la décroissance géométrique de la fiabilité sur horizon long afin de gouverner l'agentivité des systèmes (*system agency*), en subordonnant toute mise en production et tout recours au multi-agents à la métrique de constance pass^k sous validation statistique de Wilson.",
         "key_requirements_and_objectives": [
           "EXIG-D01-02.1 (Rupture de cascade et invariants sémantiques) : Tout pipeline multi-étapes DOIT interposer des assertions sémantiques déterministes et des plafonds anti-boucle (xagenthopcount / xagentmaxhops) entre ses maillons afin d'intercepter les erreurs plausibles émises sous HTTP 200 OK (EXIG-INT-02, EXIG-EVT-06, OWASP ASI08).",
           "EXIG-D01-02.2 (Bornage contre la loi de Lusser) : Toute séquence dépassant une étape cognitive isolée DOIT encapsuler les transitions et validations critiques dans une machine à états déterministe (ADR-002, CAP-007) de manière à contenir la décroissance R = p^n et à prévenir les 14 modes d'échec MAST.",
@@ -550,74 +552,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.5 La frontière des capacités 2024-2026 : cadrage qualitatif (L1043–L1058)"
+            "part_id": "P01",
+            "unit_id": "ch02",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 369,
+            "reference": "Partie I · Chapitre 02 — Fiabilité probabiliste, loi de Lusser, erreurs silencieuses et constance pass^k (L369–L514)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "6 · Systèmes multi-agents, évaluation et sûreté > 6.1.1 Gains, surcoût et fondements classiques (L1512–L1531)"
+            "part_id": "P01",
+            "unit_id": "ch02",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 377,
+            "reference": "Partie I · § 2.1 Loi de Lusser, non-compositionnalité et erreurs sémantiques silencieuses en cascade (L377–L431)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "6 Interopérabilité > 6.1 Quatre niveaux d’interopérabilité et gouvernance intégrée (L1534–L1545)"
+            "part_id": "P01",
+            "unit_id": "ch02",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 432,
+            "reference": "Partie I · § 2.2 Constance multi-essais `pass^k`, borne statistique de Wilson et rejet des palmarès contaminés (L432–L461)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "7 Orchestration > 7.1 Commencer simple : ce que disent les données probantes (L2744–L2750)"
+            "part_id": "P01",
+            "unit_id": "ch02",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 462,
+            "reference": "Partie I · § 2.3 Synthèse opératoire, exigences `D01-02` et frontières d'architecture (L462–L502)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.2 Enjeux économiques et opérationnels de 2027 > 0.2 Enjeux économiques et opérationnels de 2027 (L221–L242)"
+            "part_id": "P01",
+            "unit_id": "ch02",
+            "tome_id": "P01",
+            "file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 02.md (L1–L133)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 12 — Couche sémantique et ontologies > 12.1 Pourquoi l’accord syntaxique ne suffit pas (L5693–L5734)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 84,
+            "reference": "Liminaire · § 0.1 Problématique industrielle : rupture probabiliste, coûts de Coase et jardins clos (L84–L95)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert > 6.1 La capacité brute des modèles devenue variable non observée (L1152–L1165)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-6 — Capacités des agents et techniques en transfert > 6.2 Du plafond de capacité brute au prix de la fiabilité opérationnelle (L1166–L1183)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.2 Défaillances systémiques, loi de Lusser, bancs saturés et marché (L152–L159)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.4 Sobriété agentique, hypothèses H1–H6 et parcours adaptatifs DAPP (L218–L239)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.2 Rupture épistémique : non-déterminisme, latence variable et effets de bord irréversibles (L266–L341)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) > 11.2.1 Trajectoire et état final : la divergence entre pass@k et pass^k (L3496–L3506)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique > 0.3 L'orchestration comme discipline de retenue et de contrôle déterministe (L162–L175)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) > 1.1 Pipeline typé en huit étapes (JSON Schema Draft 2020-12, `strict: true`) et porte AMBIGU_ESCALADE (L139–L148)"
+            "part_id": "ANN",
+            "unit_id": "annexe-a",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6056,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
           }
         ]
       }
@@ -876,74 +864,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.0.1 Coût de la non-interopérabilité et dette d’intégration : l’enjeu économique et le périmètre du chapitre (L123–L130)"
+            "part_id": "P01",
+            "unit_id": "ch03",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 515,
+            "reference": "Partie I · Chapitre 03 — Économie cognitive de Coase, matrices de portefeuille et quadruple dette agentique (L515–L686)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.0.2 L’invariant transversal — découplage, contrat, évolution (L131–L144)"
+            "part_id": "P01",
+            "unit_id": "ch03",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 523,
+            "reference": "Partie I · § 3.1 Économie cognitive de Coase, matrices de portefeuille et arbitrage `Acheter` / `Assembler` / `Construire` (L523–L596)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "1 · L’interopérabilité comme problème d’intégration d’entreprise > 1.1.3 Couplage, découplage et conception orientée contrat (L192–L215)"
+            "part_id": "P01",
+            "unit_id": "ch03",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 597,
+            "reference": "Partie I · § 3.2 Quadruple dette agentique, économie des jetons `SLM`/`LLM` et invariant à quatre termes (L597–L650)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie > 2.1 EAI, SOA, API, EDA : quatre générations d’intégration (L1121–L1183)"
+            "part_id": "P01",
+            "unit_id": "ch03",
+            "tome_id": "P01",
+            "file": "Compendium/Compendium.md",
+            "line_start": 651,
+            "reference": "Partie I · § 3.3 Synthèse opératoire, exigences `D01-03` et frontières d'architecture (L651–L669)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie > Protocoles d’interaction et négociation (L1215–L1218)"
+            "part_id": "P01",
+            "unit_id": "ch03",
+            "tome_id": "P01",
+            "file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 03.md (L1–L154)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 2 — Généalogie > Ce que cela résout (L1256–L1261)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 84,
+            "reference": "Liminaire · § 0.1 Problématique industrielle : rupture probabiliste, coûts de Coase et jardins clos (L84–L95)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude > 1.3 Discipline du temps et de la preuve : marques, sources et lettres probantes (L231–L278)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-7 — Marché, coûts, énergie et compétences > 7.1 Lire les prévisions de marché comme des hypothèses datées en fourchette (L1308–L1315)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Liminaire — À propos de ce mémoire > Lexique des marques épistémiques et normatives (L35–L39)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve > 1.3 Thèse centrale, fractures du corpus et économie de la preuve (L160–L217)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.4 Dette technique contre dette cognitive : dérive silencieuse et couplage aux modèles (L401–L454)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.4 Gouvernance du portefeuille : arbitrage Acheter (agents SaaS) vs Assembler vs Construire (L723–L778)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents > 1.2 Les moteurs composés de l'industrialisation cognitive (L214–L294)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes > 3.1 Ronald Coase revisité : quand chercher, négocier et vérifier ne coûtent presque plus de temps humain (L426–L504)"
+            "part_id": "ANN",
+            "unit_id": "annexe-a",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6056,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
           }
         ]
       }
@@ -1209,74 +1183,76 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d’autonomie (L1027–L1042)"
+            "part_id": "P02",
+            "unit_id": "ch04",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 689,
+            "reference": "Partie II · Chapitre 04 — Partition hybride 80/20, harnais déterministe à huit étapes et usine logicielle (L689–L893)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.2.1 Le modèle augmenté et la boucle perception-raisonnement-action-observation (L1063–L1074)"
+            "part_id": "P02",
+            "unit_id": "ch04",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 693,
+            "reference": "Partie II · § 4.1 De la théorie de la fiabilité à l'enveloppe hybride 80/20 (L693–L708)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "3 Concepts et définitions > 3.2 Flux de travail ou agent? (L772–L794)"
+            "part_id": "P02",
+            "unit_id": "ch04",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 709,
+            "reference": "Partie II · § 4.2 Architecture du harnais déterministe, séparation contrôleur–exécuteur et usine logicielle (L709–L861)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "4 Principes directeurs > 4.1 Les douze principes (L913–L920)"
+            "part_id": "P02",
+            "unit_id": "ch04",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 862,
+            "reference": "Partie II · § 4.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L862–L882)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 17 — Déterministe ou agentique > 17.1 Un spectre : workflow, étapes agentiques, agent borné, agent ouvert (L9032–L9084)"
+            "part_id": "P02",
+            "unit_id": "ch04",
+            "tome_id": "P02",
+            "file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 04.md (L1–L193)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 17 — Déterministe ou agentique > Extrait 17.1 — `[Exécuté en CI]` · Modèle quantitatif de fiabilité composée et de gain d’encapsulation hybride (L9385–L9422)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 96,
+            "reference": "Liminaire · § 0.2 Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et concordance inter-tomes (`DIV-02`, `DISC-01` à `DISC-05`) (L96–L129)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Synthèse exécutive — Sommaire pour décision > La thèse vérifiée : ce qui est daté porte sur la preuve, non sur l’autonomie (L127–L134)"
+            "part_id": "ANN",
+            "unit_id": "annexe-c",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7434,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
+            "part_id": "ANN",
+            "unit_id": "annexe-d",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7742,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 1. Thèse centrale et contrat de lecture croisé AE / AS (L86–L94)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02) > 2.3 Noyau de contrôle possédé, gravité des données et séparation des systèmes (L344–L351)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Liminaire — Résumé exécutif à double entrée et conventions architecturales > Résumé exécutif — Direction de l’architecture d’entreprise (EA) (L120–L164)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20 > 3.3 Ingénierie de la partition 80/20 entre flux déterministes et nœuds cognitifs (L960–L997)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.3 La règle d'ingénierie 80/20 (L606–L633)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1) > 1.1 Pipeline typé en huit étapes (JSON Schema Draft 2020-12, `strict: true`) et porte AMBIGU_ESCALADE (L135–L272)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }
@@ -1510,74 +1486,60 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.1.4 Agent, workflow, automatisation : régimes de contrôle et niveaux d’autonomie (L1027–L1042)"
+            "part_id": "P02",
+            "unit_id": "ch05",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 894,
+            "reference": "Partie II · Chapitre 05 — Échelle d'autonomie unifiée N0–N4/L0–L4, règle du maillon et supervision anti-complaisance (L894–L1034)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "5 · Ancrage informationnel : mémoire, contexte, RAG agentique > 5.2.2 Consolidation, ancrage et évaluation de la mémoire (L1398–L1420)"
+            "part_id": "P02",
+            "unit_id": "ch05",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 898,
+            "reference": "Partie II · § 5.1 L'autonomie comme décision d'architecture par configuration (L898–L911)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "3 Concepts et définitions > 3.1 Définitions normatives (L713–L771)"
+            "part_id": "P02",
+            "unit_id": "ch05",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 912,
+            "reference": "Partie II · § 5.2 Gradation d'autonomie, propagation stricte et supervision anti-complaisance (L912–L1001)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "3 Concepts et définitions > 3.1 Définitions normatives (L750–L771)"
+            "part_id": "P02",
+            "unit_id": "ch05",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1002,
+            "reference": "Partie II · § 5.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L1002–L1021)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.4 Conventions, échelle d’autonomie et statut des affirmations > 0.4 Conventions, échelle d’autonomie et statut des affirmations (L282–L317)"
+            "part_id": "P02",
+            "unit_id": "ch05",
+            "tome_id": "P02",
+            "file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 05.md (L1–L127)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "Chapitre 1 — L’entreprise agentique > 1.3 Niveaux d’autonomie : premier aperçu (L512–L547)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 96,
+            "reference": "Liminaire · § 0.2 Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et concordance inter-tomes (`DIV-02`, `DISC-01` à `DISC-05`) (L96–L129)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
-          },
-          {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-12 — Stades visés par domaine d’affaires et autonomie par classe de décision > 12.2 Les huit domaines d’affaires du référentiel commun (`D1` à `D8`) (L2896–L2912)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique > 6.1 Gouvernance matricielle de l’autonomie : domaines D1–D8, stades 0–4 et classes de décision 1–6 (L891–L916)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 6 — Autonomie graduée, classes de décision, supervision humaine et liaison cryptographique > 6.3 Point d’arrêt préventif (PC3) contre révision humaine a posteriori (Loi 25 art. 12.1) (L980–L985)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.3.1 Échelle graduée L0 à L4 : de la logique figée à l’autonomie bornée sous contrat (L342–L400)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales > 1.3.2 Modalités Human-in-the-Loop et Human-on-the-Loop face aux biais cognitifs (L377–L400)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents > 1.1 Une échelle commune pour un mot ambigu (L170–L213)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5 > 0.2 Table canonique de passage et résolution des cinq discordances inter-volumes (L34–L51)"
+            "part_id": "ANN",
+            "unit_id": "annexe-c",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7434,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
           }
         ]
       }
@@ -1910,74 +1872,76 @@
         ],
         "corpus_anchors": [
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.4.1 Appel de fonctions et apprentissage de l’usage d’outils (L1200–L1211)"
+            "part_id": "P02",
+            "unit_id": "ch06",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1035,
+            "reference": "Partie II · Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP) et douze décisions neutres (L1035–L1237)"
           },
           {
-            "tome_id": "T1",
-            "file": "Tomes/Tome 1 - Confiance protocolaire et encadrement financier.md",
-            "reference": "4 · L’ingénierie des systèmes agentiques : anatomie, raisonnement, outils > 4.4.2 Sélection, orchestration et conception d’outils fiables (L1212–L1229)"
+            "part_id": "P02",
+            "unit_id": "ch06",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1039,
+            "reference": "Partie II · § 6.1 Souveraineté architecturale et fermeture de la divergence DIV-02 (L1039–L1052)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "4 Principes directeurs > 4.1 Les douze principes (L837–L964)"
+            "part_id": "P02",
+            "unit_id": "ch06",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1053,
+            "reference": "Partie II · § 6.2 Architecture cible, noyau possédé, principes d'arbitrage et maturité (L1053–L1203)"
           },
           {
-            "tome_id": "T2",
-            "file": "Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md",
-            "reference": "4 Principes directeurs > 4.2 Application des principes (L965–L987)"
+            "part_id": "P02",
+            "unit_id": "ch06",
+            "tome_id": "P02",
+            "file": "Compendium/Compendium.md",
+            "line_start": 1204,
+            "reference": "Partie II · § 6.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L1204–L1226)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.1 Pourquoi ce compendium en 2027 > 0.1 Pourquoi ce compendium en 2027 (L152–L220)"
+            "part_id": "P02",
+            "unit_id": "ch06",
+            "tome_id": "P02",
+            "file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
+            "line_start": 1,
+            "reference": "Source modulaire : Chapitre 06.md (L1–L191)"
           },
           {
-            "tome_id": "T3",
-            "file": "Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
-            "reference": "0.4 Conventions, échelle d’autonomie et statut des affirmations > Critères d’évaluation technologique utilisés dans l’ouvrage (L298–L308)"
+            "part_id": "LIM",
+            "unit_id": "00-liminaire",
+            "tome_id": "LIM",
+            "file": "Compendium/Compendium.md",
+            "line_start": 96,
+            "reference": "Liminaire · § 0.2 Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et concordance inter-tomes (`DIV-02`, `DISC-01` à `DISC-05`) (L96–L129)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.1 Quinze principes directeurs d’architecture (L1604–L1643)"
+            "part_id": "ANN",
+            "unit_id": "annexe-b",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 6440,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
           },
           {
-            "tome_id": "T4",
-            "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-            "reference": "Chapitre M-9 — Principes et modèle de référence > 9.2 Le modèle de référence : cinq couches d’exécution et un plan de contrôle à trois volets (L1644–L1695)"
+            "part_id": "ANN",
+            "unit_id": "annexe-c",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 7434,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
           },
           {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS > 4. Noyau possédé (`42 CAP` vs `10`) et trajectoire `90 j → 18 mois → P1–P3` (L119–L127)"
-          },
-          {
-            "tome_id": "T5",
-            "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-            "reference": "Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02) > 2.4 Blocs ABB → SBB substituables (2026), arbitrage des principes et ArchiMate (L352–L387)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.1–2.2 Extension du métamodèle TOGAF ADM et stéréotypes ArchiMate pour acteurs cognitifs (L465–L610)"
-          },
-          {
-            "tome_id": "T6",
-            "file": "Tomes/Tome 6 - Architecture multisectorielle et patrons de référence.md",
-            "reference": "Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans > 2.3 Architecture cible de référence en quatre plans découplés (L611–L722)"
-          },
-          {
-            "tome_id": "T7",
-            "file": "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-            "reference": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables > 4.4 Le noyau possédé en quatre plans découplés (L634–L695)"
-          },
-          {
-            "tome_id": "T8",
-            "file": "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-            "reference": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5 > 0.2 Table canonique de passage et résolution des cinq discordances inter-volumes (L44–L44)"
+            "part_id": "ANN",
+            "unit_id": "annexe-e",
+            "tome_id": "ANN",
+            "file": "Compendium/Compendium.md",
+            "line_start": 8299,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
           }
         ]
       }

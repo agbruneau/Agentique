@@ -31,14 +31,28 @@ import extraire_structure as es  # noqa: E402
 
 TOME_RANK: dict[str, int] = {
     "R": 0,
-    "T1": 1,
-    "T2": 2,
-    "T3": 3,
-    "T4": 4,
-    "T5": 5,
-    "T6": 6,
-    "T7": 7,
-    "T8": 8,
+    "LIM": 1,
+    "P01": 2,
+    "P02": 3,
+    "P03": 4,
+    "P04": 5,
+    "P05": 6,
+    "P06": 7,
+    "P07": 8,
+    "P08": 9,
+    "P09": 10,
+    "P10": 11,
+    "P11": 12,
+    "P12": 13,
+    "ANN": 14,
+    "T1": 21,
+    "T2": 22,
+    "T3": 23,
+    "T4": 24,
+    "T5": 25,
+    "T6": 26,
+    "T7": 27,
+    "T8": 28,
 }
 
 # Correspondance entre les 6 repères généraux README et les clés canoniques L+
@@ -86,9 +100,11 @@ def _clean_nested_strings(obj: Any, skip_keys: set[str] | None = None) -> Any:
     skip = skip_keys or {
         "file", "canonical_slug", "node_id", "unit_id", "id", "discordance_id",
         "pytest_nodeid", "implementation_symbol", "rego_rule", "type", "type_id",
-        "domain_id", "tome_id", "schema_id", "subdomain_node_id", "families_covered",
-        "themes_vulgarized", "source_path", "rendered_path", "source_section_file",
-        "fig_id", "diagram_uid", "chapter_code", "reuse_status", "linked_schema_ids",
+        "domain_id", "tome_id", "part_id", "section_id", "schema_id", "subdomain_node_id",
+        "families_covered", "themes_vulgarized", "source_path", "rendered_path",
+        "source_section_file", "fig_id", "diagram_uid", "chapter_code", "reuse_status",
+        "linked_schema_ids", "source_file", "compendium_md_file", "compendium_rendered_path",
+        "compendium_source_path", "en",
     }
     if isinstance(obj, str):
         return _clean_text(obj)
@@ -100,9 +116,20 @@ def _clean_nested_strings(obj: Any, skip_keys: set[str] | None = None) -> Any:
 
 
 def _clean_schema_entry(raw_item: dict[str, Any]) -> dict[str, Any]:
-    """Nettoie les chaînes éditoriales d'un schéma ``SCH-*`` sans altérer chemins ni identifiants."""
-    cleaned = _clean_nested_strings(raw_item)
-    return dict(cleaned)
+    """Nettoie les chaînes éditoriales d'un schéma ``SCH-*`` et expose les liens Compendium compilés."""
+    cleaned = dict(_clean_nested_strings(raw_item))
+    cfig = raw_item.get("compendium_figure")
+    if isinstance(cfig, dict):
+        cleaned["compendium_rendered_path"] = cfig.get("rendered_path", "")
+        cleaned["compendium_source_path"] = cfig.get("source_path", "")
+        cleaned["compendium_md_file"] = cfig.get("compendium_md_file", "Compendium/Compendium.md")
+        cleaned["compendium_md_line"] = cfig.get("compendium_md_line")
+        cleaned["compendium_unit"] = cfig.get("unit", "")
+        cleaned["compendium_part_id"] = cfig.get("part_id", "")
+        cleaned["compendium_engine"] = cfig.get("engine", "")
+        cleaned["compendium_source_file"] = cfig.get("source_file", "")
+        cleaned["compendium_source_file_line"] = cfig.get("source_file_line")
+    return cleaned
 
 
 def _parse_markdown_section_body(body_md: str) -> tuple[list[str], dict[str, Any] | None]:
@@ -364,47 +391,38 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
 
     merged_by_key: dict[str, dict[str, Any]] = {}
 
-    def upsert_l_plus(anc: dict[str, Any], tome: str, line_start: int, file_path: str) -> None:
+    def upsert_l_plus(anc: dict[str, Any], origin_tag: str) -> None:
         key = anc["key"]
         date_val = "2026-08-02" if anc.get("date") == "2026-08" else _clean_text(anc.get("date", ""))
         cadre = f"{_clean_text(anc.get('label', ''))} ({_clean_text(anc.get('jurisdiction', ''))})"
         impact = _clean_text(anc.get("commentaire_annexe") or anc.get("nature", ""))
+        file_path = anc.get("compendium_file") or "Compendium/Compendium.md"
+        line_start = int(anc.get("compendium_line_start") or 7434)
+        chaps = list(anc.get("chapters") or [])
+        part_tags = [origin_tag] if not chaps else chaps[:4]
         if key not in merged_by_key:
             merged_by_key[key] = {
                 "date": date_val,
                 "cadre": cadre,
                 "impact_parts": [impact] if impact else [],
-                "tomes": [tome],
+                "tomes": list(dict.fromkeys(part_tags)),
                 "file": file_path,
                 "line_start": line_start,
-                "source_group": "Synthèse L+ (R / T7 / T8)",
+                "source_group": f"Compendium Annexe C ({origin_tag})",
                 "_tier": 0,
             }
         else:
             entry = merged_by_key[key]
-            if tome not in entry["tomes"]:
-                entry["tomes"].append(tome)
-            # Préférer l'intitulé le plus concis/précis et cumuler les justifications distinctes
+            for pt in part_tags:
+                if pt not in entry["tomes"]:
+                    entry["tomes"].append(pt)
             if impact and impact not in entry["impact_parts"]:
                 entry["impact_parts"].append(impact)
-            if tome == "T8":
-                entry["file"] = file_path
-                entry["line_start"] = line_start
 
     for anc in chrono.get("ancres_t7_l_plus", []):
-        upsert_l_plus(
-            anc,
-            "T7",
-            2053,
-            "Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
-        )
+        upsert_l_plus(anc, "L+ T7/Compendium")
     for anc in chrono.get("ancres_t8_l_plus", []):
-        upsert_l_plus(
-            anc,
-            "T8",
-            1483,
-            "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
-        )
+        upsert_l_plus(anc, "L+ T8/Compendium")
 
     for rep in chrono.get("six_reperes_readme", []):
         ech = _clean_text(rep.get("echeance", ""))
@@ -414,10 +432,8 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
         for tk in target_keys:
             if tk in merged_by_key:
                 matched = True
-                if "R" not in merged_by_key[tk]["tomes"]:
-                    merged_by_key[tk]["tomes"].append("R")
-                if "T4" not in merged_by_key[tk]["tomes"]:
-                    merged_by_key[tk]["tomes"].append("T4")
+                if "LIM" not in merged_by_key[tk]["tomes"]:
+                    merged_by_key[tk]["tomes"].append("LIM")
                 if rep_resume and rep_resume[:45] not in " ".join(merged_by_key[tk]["impact_parts"]):
                     merged_by_key[tk]["impact_parts"].append(rep_resume)
         if not matched:
@@ -425,16 +441,16 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                 "date": ech,
                 "cadre": _clean_text(rep.get("cadre", "")),
                 "impact_parts": [rep_resume] if rep_resume else [],
-                "tomes": ["R", "T4", "T7"],
-                "file": "Tomes/README.md",
-                "line_start": 24,
-                "source_group": "Repères clés",
+                "tomes": ["LIM", "ANN"],
+                "file": "Compendium/Compendium.md",
+                "line_start": 165,
+                "source_group": "Repères clés (§ 0.5 / Annexe C)",
                 "_tier": 0,
             }
 
     events: list[dict[str, Any]] = []
     for item in merged_by_key.values():
-        tomes_sorted = sorted(item["tomes"], key=lambda t: TOME_RANK.get(t, 99))
+        tomes_sorted = sorted(item["tomes"], key=lambda t: (TOME_RANK.get(t, 99), str(t)))
         impact_str = " · ".join(item["impact_parts"][:2])
         events.append(
             {
@@ -455,24 +471,25 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                 "date": _format_dapp_date(pal.get("horizon", ""), pal.get("phase", "")),
                 "cadre": f"DAPP · {_clean_text(pal.get('stade', ''))}",
                 "impact": _clean_text(pal.get("jalons", "")),
-                "tomes": ["T4", "T5"],
-                "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
-                "line_start": 1544,
-                "source_group": "Trajectoire DAPP",
+                "tomes": ["ch31", "ch32"],
+                "file": pal.get("compendium_file") or "Compendium/Compendium.md",
+                "line_start": int(pal.get("compendium_line_start") or 5091),
+                "source_group": "Trajectoire DAPP (Ch. 31 / Annexe C)",
                 "_tier": 1,
             }
         )
 
     for anc in chrono.get("ancres_t4_67", []):
+        ch_list = anc.get("chapters") or ["ch25"]
         events.append(
             {
                 "date": _clean_text(anc.get("echeance", "")),
                 "cadre": f"{anc.get('id', '')} · {_clean_text(anc.get('juridiction', ''))} ({_clean_text(anc.get('axe', ''))})",
                 "impact": _clean_text(anc.get("enonce", "")),
-                "tomes": ["T4"],
-                "file": "Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
-                "line_start": 5175,
-                "source_group": "Tome 4 Annexe A",
+                "tomes": list(ch_list[:4]),
+                "file": anc.get("compendium_file") or "Compendium/Compendium.md",
+                "line_start": int(anc.get("compendium_line_start") or 7434),
+                "source_group": "Compendium Annexe C (Ch. 25–26, 31)",
                 "_tier": 2,
             }
         )
@@ -1061,13 +1078,29 @@ def build_prd_web_payload(
     """Assemble le payload complet du PRD pour ``prd-web-data.json`` et la Vue 5 MindMap."""
     donnees_dir = repo_root / "Sources" / "Cartographie" / "donnees"
     if bundle is None:
+        synthese_path = donnees_dir / "synthese-transversale.json"
         bundle_path = donnees_dir / "corpus-mindmap-data.json"
-        if not bundle_path.is_file():
-            raise FileNotFoundError(f"Bundle MindMap introuvable : {bundle_path}")
-        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+        chosen = synthese_path if synthese_path.is_file() else bundle_path
+        if not chosen.is_file():
+            raise FileNotFoundError(f"Graphe MindMap introuvable : {chosen}")
+        bundle = dict(json.loads(chosen.read_text(encoding="utf-8")))
+    else:
+        bundle = dict(bundle)
+
+    if not bundle.get("domains") or not bundle.get("relation_types"):
+        schema_path = donnees_dir / "schema-cartographie.json"
+        if schema_path.is_file():
+            schema_cfg = json.loads(schema_path.read_text(encoding="utf-8"))
+            if not bundle.get("domains"):
+                bundle["domains"] = schema_cfg.get("domains", [])
+            if not bundle.get("relation_types"):
+                bundle["relation_types"] = schema_cfg.get("relation_types", [])
 
     pivots_path = donnees_dir / "pivots-concordance.json"
     raw_pivots = json.loads(pivots_path.read_text(encoding="utf-8")) if pivots_path.is_file() else {}
+    if not bundle.get("pivots") and raw_pivots:
+        import compiler_mindmap as _cm_mod  # noqa: E402
+        bundle["pivots"] = _cm_mod.normalize_pivots(raw_pivots)
 
     cat_path = donnees_dir / "catalogue-schemas-prd.json"
     if cat_path.is_file():
@@ -1215,15 +1248,21 @@ def build_prd_web_payload(
                 )
                 direct_anchors = [
                     {
-                        "tome_id": occ["tome_id"],
+                        "part_id": occ.get("part_id") or occ.get("tome_id", ""),
+                        "tome_id": occ.get("part_id") or occ.get("tome_id", ""),
+                        "compendium_unit_id": occ.get("compendium_unit_id") or "",
                         "file": occ["file"],
+                        "source_file": occ.get("source_file") or "",
                         "line_start": int(occ["line_start"]),
                         "line_end": int(occ["line_end"]),
-                        "label": f"{occ['tome_id']} L{occ['line_start']}–L{occ['line_end']}",
+                        "label": (
+                            f"{occ.get('part_id') or occ['tome_id']} · "
+                            f"{occ.get('compendium_unit_id', '')} · L{occ['line_start']}–L{occ['line_end']}"
+                        ).replace(" ·  · ", " · "),
                     }
                     for occ in sorted(
                         mm_node.get("occurrences") or [],
-                        key=lambda o: (TOME_RANK.get(o["tome_id"], 99), int(o["line_start"])),
+                        key=lambda o: (TOME_RANK.get(o.get("part_id") or o.get("tome_id", ""), 99), int(o["line_start"])),
                     )
                 ]
                 themes_out.append(
@@ -1236,7 +1275,12 @@ def build_prd_web_payload(
                         "roles": mm_node.get("roles") or [],
                         "horizon": mm_node.get("horizon") or "",
                         "horizons": mm_node.get("horizons") or [],
+                        "owner_chapter": mm_node.get("owner_chapter") or f"ch{cnum:02d}",
+                        "parts_present": mm_node.get("parts_present") or [],
+                        "units_present": mm_node.get("units_present") or [],
                         "tomes_present": mm_node.get("tomes_present") or [],
+                        "compendium_schemas": mm_node.get("compendium_schemas") or [],
+                        "glossary_terms": mm_node.get("glossary_terms") or [],
                         "identifiers_and_norms": ids_merged,
                         "occurrence_count": int(mm_node.get("occurrence_count", 0)),
                         "relation_degree": int(mm_node.get("relation_degree", 0)),
@@ -1269,18 +1313,23 @@ def build_prd_web_payload(
         by_tome_line: dict[tuple[str, str, int], dict[str, Any]] = {}
         for anc in tc.get("corpus_anchors", []):
             ref_txt = _clean_text(anc.get("reference", ""))
-            ln = _extract_anchor_line(ref_txt)
-            k = (anc["tome_id"], anc["file"], ln or 0)
+            ln = anc.get("line_start")
+            ln = int(ln) if isinstance(ln, int) and ln > 0 else _extract_anchor_line(ref_txt)
+            pid = str(anc.get("part_id") or anc.get("section_id") or anc.get("tome_id") or "")
+            uid_anc = str(anc.get("unit_id") or "")
+            k = (pid, anc["file"], ln or 0)
             if k not in by_tome_line or len(ref_txt) > len(by_tome_line[k]["reference"]):
                 by_tome_line[k] = {
-                    "tome_id": anc["tome_id"],
+                    "part_id": pid,
+                    "tome_id": pid,
+                    "unit_id": uid_anc,
                     "file": anc["file"],
                     "line_start": ln,
                     "reference": ref_txt,
                 }
         corpus_anchors_out = sorted(
             by_tome_line.values(),
-            key=lambda a: (TOME_RANK.get(a["tome_id"], 99), a["line_start"] or 0, a["reference"]),
+            key=lambda a: (TOME_RANK.get(a["part_id"], 99), a["line_start"] or 0, a["reference"]),
         )
 
         clean_chtitle = re.sub(
@@ -1301,6 +1350,9 @@ def build_prd_web_payload(
                 "representative_title": _clean_text(clean_chtitle),
                 "slug": anchors["chapter_anchors"][cnum],
                 "executive_summary": _clean_text(ch["executive_summary"]),
+                "owner_chapter": sub_node.get("owner_chapter") or f"ch{cnum:02d}",
+                "parts_present": sub_node.get("parts_present") or [],
+                "units_present": sub_node.get("units_present") or [],
                 "tomes_present": sub_node.get("tomes_present") or [],
                 "autonomy_levels": sub_node.get("autonomy_levels") or [],
                 "roles": sub_node.get("roles") or [],
@@ -1415,6 +1467,10 @@ def build_prd_web_payload(
                 "target_audiences": item["target_audiences"],
                 "families_covered": item["families_covered"],
                 "linked_tome_figures_count": len(item["linked_tome_figures"]),
+                "compendium_rendered_path": item.get("compendium_rendered_path", ""),
+                "compendium_source_path": item.get("compendium_source_path", ""),
+                "compendium_md_line": item.get("compendium_md_line"),
+                "compendium_unit": item.get("compendium_unit", ""),
                 "chapter_slug": item["chapter_slug"],
                 "schemas_anchor": item["schemas_anchor"],
             }
@@ -1422,11 +1478,51 @@ def build_prd_web_payload(
         ],
     }
 
+    cm_meta = raw_pivots.get("collection_metrics") or {}
+    comp_bilans = (raw_pivots.get("bilans_aq_wyvern_et_statut_f") or {}).get("compendium_g0_g5") or {}
+    compendium_meta = {
+        "title": _clean_text(cm_meta.get("compendium_title", "Compendium de l'entreprise agentique")),
+        "pdf_file": "Compendium/Compendium.pdf",
+        "md_file": "Compendium/Compendium.md",
+        "pdf_pages": int(cm_meta.get("compendium_pdf_pages", 837)),
+        "pdf_bytes": int(cm_meta.get("compendium_pdf_bytes", 0)),
+        "words": int(cm_meta.get("compendium_md_words", 241759)),
+        "lines": int(cm_meta.get("compendium_md_lines", 8408)),
+        "editorial_units": int(cm_meta.get("compendium_units", 42)),
+        "sections": int(cm_meta.get("compendium_sections", 15)),
+        "compiled_schemas": int(cm_meta.get("compendium_schemas", 115)),
+        "glossary_terms_count": int(cm_meta.get("glossary_terms", 56)),
+        "lplus_sources_count": int(cm_meta.get("sources_l_plus", 135)),
+        "statut_f_count": int(cm_meta.get("statut_f_excluded", 27)),
+        "synced_excerpts_count": int(cm_meta.get("ca_g0_sync_excerpts", 14)),
+        "wyvern_g2_units": int(cm_meta.get("wyvern_g2_units", 37)),
+        "freeze_date": str(cm_meta.get("freeze_date", "2026-12-02")),
+    }
+    raw_gloss = (raw_pivots.get("glossaire_pivot") or {}).get("glossaire_compendium_56") or []
+    glossary_out = _clean_nested_strings(raw_gloss)
+    socle_probatoire = {
+        "freeze_date": compendium_meta["freeze_date"],
+        "sources_l_plus_count": compendium_meta["lplus_sources_count"],
+        "metadata_only_pct": comp_bilans.get("metadata_only_pct", 0.0),
+        "statut_f_count": compendium_meta["statut_f_count"],
+        "ca_g0_sync_count": compendium_meta["synced_excerpts_count"],
+        "wyvern_g2_units": compendium_meta["wyvern_g2_units"],
+        "faits_empiriques": _clean_nested_strings(raw_pivots.get("faits_empiriques_16") or comp_bilans.get("faits_empiriques_16") or []),
+        "specifications_lplus": _clean_nested_strings(raw_pivots.get("specifications_lplus_57") or comp_bilans.get("specifications_lplus_57") or []),
+        "statut_f_excluded": _clean_nested_strings(raw_pivots.get("statut_f_exclus_27") or []),
+        "ca_g0_sync_catalog": _clean_nested_strings(comp_bilans.get("ca_g0_sync_catalog") or []),
+        "wyvern_g2_unites": _clean_nested_strings(comp_bilans.get("wyvern_g2_unites") or []),
+        "rapports_g0": _clean_nested_strings(comp_bilans.get("rapports_g0") or {}),
+    }
+
     payload = {
-        "schema_version": "1.0.0",
+        "schema_version": "2.0.0",
         "lang": "fr-CA",
         "generator": "Sources/Cartographie/outils/preparer_donnees_prd_web.py",
         "meta": meta,
+        "compendium_meta": compendium_meta,
+        "glossary": glossary_out,
+        "socle_probatoire": socle_probatoire,
         "executive_summary": executive_summary,
         "parties": parties_out,
         "chapters": chapters_out,

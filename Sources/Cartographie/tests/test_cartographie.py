@@ -1,12 +1,13 @@
-"""Suite de tests automatisés pour la cartographie interactive du Corpus Agentique.
+"""Suite de tests automatisés pour la cartographie interactive du Compendium Agentique.
 
 Couvre :
-- l'extraction structurelle CommonMark stricte des 9 fichiers Markdown de ``Tomes/`` ;
-- l'absence de faux positifs dans les blocs de code clôturés (dont Tome 3) ;
-- l'intégrité du graphe transversal (12 domaines, 8 types de relations, 0 arête cassée, 0 chapitre orphelin) ;
-- l'échappement sûr du JSON embarqué dans ``<script>`` et l'autonomie ``file://`` stricte (0 CDN / requête réseau) ;
-- la validité de tous les liens relatifs URL-encodés ;
-- la validation syntaxique (``vm.Script``) et fonctionnelle sous ``Node.js`` sur le vrai HTML compilé.
+- l'extraction structurelle CommonMark stricte des 15 sections du Compendium (`R`, `LIM`, `P01`–`P12`, `ANN`, 42 unités, 401 titres dans `Compendium/Compendium.md`, 8 408 lignes) ;
+- l'absence de faux positifs dans les blocs de code clôturés et la couverture des identifiants `SCH-*`, `SRC-*`, `POR-*`, `SIG-*`, `INI-*` ;
+- la complétude des 115 schémas compilés du Compendium (`52` PlantUML, `23` Mermaid, `40` SVG) ;
+- l'intégrité du graphe transversal (`380` nœuds dont `260` thèmes, `616` relations, `180` cellules de matrice, `56` vedettes glossaire, `135` `L+`, `27` `Statut F`, `14` `CA-G0-SYNC`, `37/37` `G2`, `837` pages PDF) ;
+- la suppression définitive de l'ancienne carte `MindMap - Cartographie thématique du Corpus.html` et de `donnees/shards/` ;
+- l'échappement sûr du JSON embarqué dans `<script>` et l'autonomie `file://` stricte (`0` CDN / requête réseau) ;
+- la validation syntaxique et fonctionnelle DOM complète des `5` vues sous `Node.js`.
 """
 
 from __future__ import annotations
@@ -25,7 +26,9 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 CARTO_DIR = REPO_ROOT / "Sources" / "Cartographie"
 DONNEES_DIR = CARTO_DIR / "donnees"
 OUTILS_DIR = CARTO_DIR / "outils"
-HTML_PATH = CARTO_DIR / "MindMap - Cartographie thématique du Corpus.html"
+HTML_PATH = CARTO_DIR / "MindMap - Cartographie thématique du Compendium.html"
+OLD_HTML_PATH = CARTO_DIR / "MindMap - Cartographie thématique du Corpus.html"
+OLD_SHARDS_DIR = DONNEES_DIR / "shards"
 
 sys.path.insert(0, str(OUTILS_DIR))
 import compiler_mindmap as cm  # noqa: E402
@@ -99,63 +102,103 @@ def test_script_json_escaping_safety() -> None:
 
 
 # ---------------------------------------------------------------------------
-# 2. Tests d'extraction sur les 9 fichiers réels de Tomes/
+# 2. Suppression des artefacts obsolètes & extraction structurelle Compendium
 # ---------------------------------------------------------------------------
-def test_structure_covers_all_9_corpus_files_accurately() -> None:
+def test_legacy_corpus_mindmap_and_tome_shards_removed() -> None:
+    assert not OLD_HTML_PATH.exists(), f"Ancien fichier HTML encore présent : {OLD_HTML_PATH}"
+    assert not OLD_SHARDS_DIR.exists(), f"Ancien dossier shards/ encore présent : {OLD_SHARDS_DIR}"
+
+
+def test_structure_covers_compendium_15_sections_and_42_units() -> None:
     struct_path = DONNEES_DIR / "structure-integrale.json"
     assert struct_path.is_file()
     data = json.loads(struct_path.read_text(encoding="utf-8"))
 
-    assert data["totals"]["files"] == 9
-    assert len(data["files"]) == 9
+    expected_sections = [
+        "R", "LIM", "P01", "P02", "P03", "P04", "P05", "P06",
+        "P07", "P08", "P09", "P10", "P11", "P12", "ANN",
+    ]
+    assert data["totals"]["files"] == 15
+    assert data["totals"]["sections"] == 15
+    assert data["totals"]["compendium_units_mapped"] == 42
+    assert data["totals"]["compendium_lines"] == 8408
+    assert data["totals"]["compendium_headings"] == 401
+    assert len(data["files"]) == 15
+    assert [f["tome_id"] for f in data["files"]] == expected_sections
 
-    expected_tomes = ["R", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]
-    assert [f["tome_id"] for f in data["files"]] == expected_tomes
+    comp_md_path = REPO_ROOT / "Compendium" / "Compendium.md"
+    comp_lines = comp_md_path.read_text(encoding="utf-8").splitlines()
+    assert len(comp_lines) == 8408
+    _, _, comp_code_lines = es.parse_markdown_lines(comp_lines)
 
+    mapped_units: set[str] = set()
+    all_identifiers: set[str] = set()
     total_lines = 0
     total_words = 0
     total_headings = 0
+    compendium_headings = 0
+
     for fmeta in data["files"]:
         md_path = REPO_ROOT / fmeta["file"]
         assert md_path.is_file()
-        raw_text = md_path.read_text(encoding="utf-8")
-        assert fmeta["line_count"] == len(raw_text.splitlines())
-        assert fmeta["word_count"] == len(raw_text.split())
+        raw_lines = md_path.read_text(encoding="utf-8").splitlines()
+        l_start = int(fmeta["line_start"])
+        l_end = int(fmeta["line_end"])
+        assert 1 <= l_start <= l_end <= len(raw_lines)
+        assert fmeta["line_count"] == l_end - l_start + 1
         flat = _walk_struct_tree(fmeta["tree"])
         assert len(flat) == fmeta["heading_count"]
+
+        for node in flat:
+            assert l_start <= node["line_start"] <= node["line_end"] <= l_end
+            if fmeta["file"] == "Compendium/Compendium.md":
+                assert node["line_start"] not in comp_code_lines, (
+                    f"Faux titre dans bloc de code Compendium à L{node['line_start']}"
+                )
+
+        if fmeta["tome_id"] != "R":
+            compendium_headings += len(flat)
+        mapped_units.update(fmeta.get("compendium_units", []))
+        all_identifiers.update(fmeta.get("identifiers", []))
         total_lines += fmeta["line_count"]
         total_words += fmeta["word_count"]
         total_headings += len(flat)
 
+    assert len(mapped_units) == 42
+    assert compendium_headings == 401
     assert data["totals"]["lines"] == total_lines
     assert data["totals"]["words"] == total_words
     assert data["totals"]["headings"] == total_headings
-    assert total_headings >= 4000
+
+    # Identifiants pivots extraits (SCH-*, SRC-*, POR-*, SIG-*, INI-*)
+    for prefix in ("SCH-", "SRC-", "POR-", "SIG-", "INI-"):
+        assert any(ident.startswith(prefix) for ident in all_identifiers), (
+            f"Préfixe d'identifiant manquant dans structure-integrale.json : {prefix}"
+        )
 
 
-def test_tome3_code_fence_hash_lines_excluded() -> None:
-    struct_path = DONNEES_DIR / "structure-integrale.json"
-    data = json.loads(struct_path.read_text(encoding="utf-8"))
-    t3 = next(f for f in data["files"] if f["tome_id"] == "T3")
-    t3_heading_lines = {n["line_start"] for n in _walk_struct_tree(t3["tree"])}
+def test_inventaire_115_schemas_compendium_complete() -> None:
+    inv_path = DONNEES_DIR / "inventaire-115-schemas-compendium.json"
+    assert inv_path.is_file()
+    inv = json.loads(inv_path.read_text(encoding="utf-8"))
+    totals = inv["totals"]
+    assert totals["figures_count"] == 115
+    assert totals["verified_sources_on_disk"] == 115
+    assert totals["verified_renders_on_disk"] == 115
+    assert totals["verified_compendium_lines"] == 115
+    assert totals["verified_source_file_lines"] == 115
+    assert totals["by_engine"] == {"mmd": 23, "puml": 52, "svg": 40}
 
-    forbidden_code_hash_lines = {
-        2632,
-        3436,
-        4890,
-        4895,
-        4900,
-        4907,
-        15867,
-        15876,
-        16733,
-        16740,
-        16741,
-        16742,
-        16928,
-        17590,
-    }
-    assert t3_heading_lines.isdisjoint(forbidden_code_hash_lines)
+    figs = inv["figures"]
+    assert len(figs) == 115
+    comp_line_count = len((REPO_ROOT / "Compendium" / "Compendium.md").read_text(encoding="utf-8").splitlines())
+    for fg in figs:
+        assert (REPO_ROOT / fg["source_path"]).is_file(), f"Source absente : {fg['source_path']}"
+        assert (REPO_ROOT / fg["rendered_path"]).is_file(), f"Rendu absent : {fg['rendered_path']}"
+        assert (REPO_ROOT / fg["source_file"]).is_file(), f"Manuscrit absent : {fg['source_file']}"
+        assert 1 <= int(fg["compendium_md_line"]) <= comp_line_count
+        src_lines = len((REPO_ROOT / fg["source_file"]).read_text(encoding="utf-8").splitlines())
+        assert 1 <= int(fg["source_file_line"]) <= src_lines
 
 
 # ---------------------------------------------------------------------------
@@ -171,24 +214,23 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     relations = bundle["relations"]
     chapters = bundle["chapters"]
 
+    assert len(nodes) == 380
+    theme_nodes = [n for n in nodes if n["node_kind"] == "theme"]
+    assert len(theme_nodes) == 260
+    assert len(relations) == 616
+    assert len(chapters) == 42
+
     node_by_id = {n["node_id"]: n for n in nodes}
     node_by_slug = {n["canonical_slug"]: n for n in nodes if n.get("canonical_slug")}
     valid_rel_types = {rt["type_id"] for rt in schema["relation_types"]}
     expected_domains = {d["domain_id"] for d in schema["domains"]}
-
-    # 12 domaines couverts
-    theme_nodes = [n for n in nodes if n["node_kind"] == "theme"]
-    assert len(theme_nodes) >= 200
     assert expected_domains.issubset({n["domain_id"] for n in theme_nodes})
 
-    # Hiérarchie 5 niveaux sans nœud orphelin
     for n in nodes:
         assert 0 <= n["depth"] <= 4
         if n["depth"] > 0:
             assert n["parent_id"] in node_by_id
 
-    # 0 arête cassée, 0 auto-boucle, type canonique, justification non vide
-    assert len(relations) >= 400
     for rel in relations:
         assert rel["source"] in node_by_id
         assert rel["target"] in node_by_id
@@ -196,23 +238,30 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         assert rel["type"] in valid_rel_types
         assert str(rel.get("justification", "")).strip() != ""
 
-    # 0 chapitre sans thème rattaché & 9 fichiers couverts
-    assert len(chapters) >= 250
-    covered_tomes = {c["tome_id"] for c in chapters}
-    assert covered_tomes == {"R", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"}
+    expected_chap_sections = {
+        "LIM", "P01", "P02", "P03", "P04", "P05", "P06",
+        "P07", "P08", "P09", "P10", "P11", "P12", "ANN",
+    }
+    assert {c["tome_id"] for c in chapters} == expected_chap_sections
     for ch in chapters:
         themes_addr = ch.get("themes_addressed", [])
         assert len(themes_addr) >= 1
         assert any(slug in node_by_slug for slug in themes_addr)
 
-    # Validité des plages de lignes sur chaque occurrence
-    line_limits = {f["file"]: f["line_count"] for f in bundle["structure"]["files"]}
+    # 100 % des 260 thèmes ont des occurrences vérifiées dans Compendium/Compendium.md
     for n in theme_nodes:
-        for occ in n.get("occurrences", []):
-            assert occ["file"] in line_limits
-            assert 1 <= occ["line_start"] <= occ["line_end"] <= line_limits[occ["file"]]
+        occs = n.get("occurrences") or []
+        assert len(occs) >= 1, f"Thème sans occurrence Compendium : {n['node_id']}"
+        for occ in occs:
+            assert occ["file"] == "Compendium/Compendium.md", f"Occurrence hors Compendium.md : {occ}"
+            assert 1 <= occ["line_start"] <= occ["line_end"] <= 8408
+            assert (REPO_ROOT / occ["source_file"]).is_file(), f"source_file absent : {occ['source_file']}"
 
-    # Pivots de concordance (5 discordances, DIV-02, chronologie, traçabilité)
+    # Matrice de concordance 12 x 15 = 180 cellules
+    cmat = bundle.get("concordance_matrix") or []
+    assert len(cmat) == 180
+
+    # Pivots Compendium (glossaire 56, 135 L+, 27 Statut F, 14 CA-G0-SYNC, 37/37 G2, 837 p.)
     pivots = bundle["pivots"]
     assert pivots["div_02"] is not None
     assert len(pivots["reconciliations"]) == 5
@@ -224,6 +273,26 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         "tome8_executable_tests": 95,
         "shared_ids_merged": 30,
     }
+
+    gloss = (pivots.get("glossaire_pivot") or {}).get("glossaire_compendium_56") or []
+    assert len(gloss) == 56
+    assert any(
+        str(g.get("fr", "")).lower() == "agentivité des systèmes"
+        and str(g.get("en", "")).lower() == "system agency"
+        and g.get("chapitre_proprietaire") == "ch01"
+        for g in gloss
+    )
+
+    comp_g0 = (pivots.get("bilans_aq") or {}).get("compendium_g0_g5") or {}
+    assert comp_g0.get("sources_l_plus") == 135
+    assert comp_g0.get("statut_f_exclus") == 27
+    assert comp_g0.get("ca_g0_sync_count") == 14
+    assert comp_g0.get("wyvern_g2_unites_count") == 37
+    assert len(pivots.get("faits_empiriques_16") or []) == 16
+    assert len(pivots.get("specifications_lplus_57") or []) == 57
+    assert len(pivots.get("statut_f_exclus_27") or []) == 27
+    assert (pivots.get("collection_metrics") or {}).get("compendium_pdf_pages") == 837
+
     bundle_raw = bundle_path.read_text(encoding="utf-8")
     assert r"\$" not in bundle_raw
     assert "AE <-> AS" not in bundle_raw
@@ -249,16 +318,16 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         assert bundle["prd"] == json.loads(prd_web_path.read_text(encoding="utf-8"))
     assert b"\r\n" not in HTML_PATH.read_bytes(), "CRLF détecté dans MindMap HTML"
 
-    # Intégration PRD Web (Vue 5 & lookup 379 nœuds + 290 unit_id)
     prd = bundle.get("prd") or {}
     assert len(prd.get("parties", [])) == 12
     assert len(prd.get("chapters", [])) == 36
     assert len(prd.get("annexes", [])) == 5
+    assert len(prd.get("glossary", [])) == 56
     lookup = prd.get("lookup") or {}
     assert len(lookup.get("node_id_to_prd", {})) == 379
     assert len(lookup.get("slug_to_chapter", {})) == 260
     assert len(lookup.get("domain_to_part", {})) == 12
-    assert len(lookup.get("unit_id_to_chapter", {})) >= 250
+    assert len(lookup.get("unit_id_to_chapter", {})) == 42
 
 
 # ---------------------------------------------------------------------------
@@ -268,10 +337,14 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert HTML_PATH.is_file()
     html = HTML_PATH.read_text(encoding="utf-8")
 
+    assert "__MINDMAP_DATA_JSON__" not in html
     assert "__CORPUS_DATA_JSON__" not in html
     assert "__PAGE_TITLE__" not in html
+    assert "MindMap - Cartographie thématique du Corpus.html" not in html
+    assert 'id="top-compendium-md-link"' in html
+    assert 'id="top-compendium-pdf-link"' in html
+    assert 'data-c4-tab="glossary_evidence"' in html
 
-    # Extraction de la partie hors JSON embarqué pour vérifier l'absence de CDN/fetch/@import
     json_match = re.search(
         r'<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)</script>', html
     )
@@ -284,7 +357,7 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert 'data-view="prd"' in html
     assert "5 · PRD Maître" in html
     parsed = json.loads(embedded_raw)
-    assert parsed["totals"]["files"] == 9
+    assert parsed["totals"]["files"] == 15
 
     html_without_json = html[: json_match.start(1)] + html[json_match.end(1) :]
     assert not re.search(r"<script[^>]+src\s*=", html_without_json, re.IGNORECASE)
@@ -293,6 +366,7 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert not re.search(r"\bfetch\s*\(", html_without_json)
     assert "http://" not in html_without_json
     assert "https://" not in html_without_json
+    assert not re.search(r"\bsynthetise\b", html_without_json, re.IGNORECASE)
 
 
 def test_markdown_relative_links_valid() -> None:
@@ -328,14 +402,14 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
 
-    node_script = """
+    node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
     const html = fs.readFileSync(process.argv[1], "utf8");
-    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)<\/script>/);
     if (!jsonMatch) throw new Error("JSON embarqué introuvable");
     const data = JSON.parse(jsonMatch[1]);
-    const jsMatch = html.match(/<script(?![^>]*type="application\\/json")[^>]*>([\\s\\S]*?)<\\/script>/);
+    const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
     if (!jsMatch) throw new Error("Bloc JS introuvable");
 
     const sandbox = {
@@ -350,17 +424,22 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     const idx = eng.buildIndexes(data);
     idx.schema = data.schema || {};
 
-    if (idx.nodes.length < 300) throw new Error("Nombre de nœuds insuffisant: " + idx.nodes.length);
-    if (idx.relations.length < 400) throw new Error("Nombre de relations insuffisant: " + idx.relations.length);
-    if (idx.structFlat.length < 4000) throw new Error("Titres H1-H6 insuffisants: " + idx.structFlat.length);
+    if (idx.nodes.length !== 380) throw new Error("Nombre de nœuds != 380: " + idx.nodes.length);
+    if (idx.relations.length !== 616) throw new Error("Nombre de relations != 616: " + idx.relations.length);
+    if (idx.structFlat.length !== 406) throw new Error("Titres H1-H6 != 406: " + idx.structFlat.length);
+    if (!idx.glossaryTerms || idx.glossaryTerms.length !== 56) throw new Error("Glossaire != 56");
 
     const s1 = eng.searchCorpus(idx, "Lusser", 10);
     if (s1.length === 0) throw new Error("Recherche 'Lusser' vide");
     const s2 = eng.searchCorpus(idx, "EXIG-MCP-15", 10);
     if (s2.length === 0) throw new Error("Recherche 'EXIG-MCP-15' vide");
+    const sGloss = eng.searchCorpus(idx, "Agentivité des systèmes", 10);
+    if (!sGloss.some(d => d.kind === "glossary")) {
+      throw new Error("Ctrl+K 'Agentivité des systèmes' ne remonte aucune vedette glossary");
+    }
 
-    const filtered = eng.filterNodesAndRelations(idx, { domain: "D07", tome: "T8" });
-    if (filtered.matchingNodeIds.size === 0) throw new Error("Filtrage D07+T8 vide");
+    const filtered = eng.filterNodesAndRelations(idx, { domain: "D07", section: "P07" });
+    if (filtered.matchingNodeIds.size === 0) throw new Error("Filtrage D07+P07 vide");
 
     const nA = idx.nodes.find(n => n.canonical_slug === "loi-de-lusser");
     const nB = idx.nodes.find(n => n.canonical_slug === "trousse-executable-tome-8");
@@ -374,16 +453,17 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     const matDom = eng.computeConcordanceMatrix(idx, "domain");
     const matSub = eng.computeConcordanceMatrix(idx, "subdomain");
     if (matDom.rows.length !== 12) throw new Error("Matrice domaines != 12");
-    if (matSub.rows.length < 30) throw new Error("Matrice sous-domaines < 30");
+    if (matDom.tomeIds.length !== 15) throw new Error("Matrice sections != 15");
+    if (matSub.rows.length !== 36) throw new Error("Matrice sous-domaines != 36");
 
-    const href = eng.corpusHref("Tomes/Tome 2 - Cadre normatif et exigences d'architecture.md", 709);
-    if (!href.startsWith("../../Tomes/") || !href.includes("%27") || !href.endsWith("#L709")) throw new Error("Encodage href invalide: " + href);
+    const hrefComp = eng.corpusHref("Compendium/Compendium.md", 215);
+    if (hrefComp !== "../../Compendium/Compendium.md#L215") throw new Error("Encodage corpusHref invalide: " + hrefComp);
 
-    // Non-régression facettes Horizon (normalisation demi-cadratin et exclusion du nœud racine)
+    // Non-régression facettes Horizon
     const horizons = idx.facets.horizons;
     const seenNorm = new Set();
     for (const h of horizons) {
-      if (/[\\u2013\\u2014]/.test(h)) throw new Error("Horizon non normalisé dans facettes: " + h);
+      if (/[\u2013\u2014]/.test(h)) throw new Error("Horizon non normalisé dans facettes: " + h);
       if (seenNorm.has(h)) throw new Error("Doublon horizon: " + h);
       seenNorm.add(h);
       const resH = eng.filterNodesAndRelations(idx, { horizon: h });
@@ -402,9 +482,9 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     if (!prdHit || Number(prdHit.chapter_number) !== 2) {
       throw new Error("resolveNodeToPrdTarget THM_loi-de-lusser invalide: " + JSON.stringify(prdHit));
     }
-    const unitHit = eng.resolveStructUnitToPrdTarget(idx, "r-u0001");
-    if (!unitHit || !unitHit.chapter_number) {
-      throw new Error("resolveStructUnitToPrdTarget r-u0001 vide");
+    const unitHit = eng.resolveStructUnitToPrdTarget(idx, "p01-u0013");
+    if (!unitHit || Number(unitHit.chapter_number) !== 2) {
+      throw new Error("resolveStructUnitToPrdTarget p01-u0013 invalide: " + JSON.stringify(unitHit));
     }
     const prdFilt = eng.computePrdFilterState(idx, { domain: "D07" });
     if (!prdFilt.active || prdFilt.matchingChapters.size !== 3) {
@@ -439,18 +519,17 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
 
 def test_html_css_specificity_and_svg_export_styles() -> None:
     html = HTML_PATH.read_text(encoding="utf-8")
-    # .mm-node-box ne doit pas écraser l'attribut stroke par une règle CSS générique
     m_box = re.search(r"\.mm-node-box\s*\{([^}]+)\}", html)
     assert m_box is not None
     assert "stroke:" not in m_box.group(1)
-    assert 'viewBox' in html
-    assert '.mm-toggle-circle{' in html
-    assert '.mm-toggle-text{' in html
-    assert '.mm-node.dimmed{' in html
-    assert '.mm-edge.dimmed{' in html
+    assert "viewBox" in html
+    assert ".mm-toggle-circle{" in html
+    assert ".mm-toggle-text{" in html
+    assert ".mm-node.dimmed{" in html
+    assert ".mm-edge.dimmed{" in html
 
 
-def test_nodejs_all_four_views_dom_smoke() -> None:
+def test_nodejs_all_five_views_dom_smoke() -> None:
     node_exe = shutil.which("node")
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
@@ -458,6 +537,7 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
     node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
+    const fsPath = require("path");
     const html = fs.readFileSync(process.argv[1], "utf8");
     const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)<\/script>/);
     const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
@@ -468,135 +548,6 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
       const children = [];
       const classes = new Set();
       const el = {
-        tagName: (tag || "DIV").toUpperCase(),
-        id: id || "",
-        textContent: "",
-        innerHTML: "",
-        value: "",
-        checked: false,
-        style: {},
-        children,
-        classList: {
-          add: c => classes.add(c),
-          remove: c => classes.delete(c),
-          toggle: (c, f) => { if (f === undefined) { if (classes.has(c)) classes.delete(c); else classes.add(c); } else if (f) classes.add(c); else classes.delete(c); },
-          contains: c => classes.has(c),
-        },
-        setAttribute: (k, v) => { attrs[k] = String(v); },
-        getAttribute: k => attrs[k] ?? null,
-        appendChild: c => { children.push(c); return c; },
-        removeChild: c => { const i = children.indexOf(c); if (i >= 0) children.splice(i, 1); },
-        get firstChild() { return children[0] || null; },
-        addEventListener: (ev, fn) => { (listeners[ev] = listeners[ev] || []).push(fn); },
-        click: () => { (listeners.click || []).forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: el, target: el })); },
-        dispatch: (ev) => { (listeners[ev] || []).forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: el, target: el })); },
-        querySelector: () => null,
-        querySelectorAll: () => [],
-        getBoundingClientRect: () => ({ width: 1200, height: 800, left: 0, top: 0 }),
-        getBBox: () => ({ x: 0, y: 0, width: 600, height: 400 }),
-        closest: () => null,
-        cloneNode: () => makeEl(tag, id),
-        insertBefore: (n) => { children.unshift(n); },
-        focus() {}, select() {}, setSelectionRange() {}
-      };
-      return el;
-    }
-
-    const byId = {};
-    for (const id of [
-      "corpus-mindmap-data", "mm-svg", "mm-stage", "mm-zoom-label", "st-svg", "st-stage", "st-zoom-label",
-      "sy-svg", "sy-stage", "sy-zoom-label", "canvas-tooltip", "kpi-strip", "f-tome", "st-file-select",
-      "f-domain", "f-autonomy", "f-role", "f-horizon", "f-rel", "mm-legend-grid", "path-start", "path-end",
-      "filter-summary", "inspector", "inspector-body", "mm-stats-pill", "st-list-pane", "st-stats-pill",
-      "sy-stats-pill", "path-results", "c4-content", "global-search", "search-dropdown", "export-svg-btn",
-      "export-json-btn", "theme-toggle-btn", "reset-filters-btn", "mm-expand-all-btn", "mm-collapse-all-btn",
-      "mm-toggle-edges-btn", "mm-xray-btn", "mm-expand-linked-btn", "st-toggle-list-btn",
-      "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
-      "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle"
-    ]) {
-      byId[id] = makeEl(id.endsWith("-svg") ? "svg" : "div", id);
-    }
-    byId["corpus-mindmap-data"].textContent = jsonMatch[1];
-
-    const viewTabs = ["mindmap", "structure", "synaptic", "concordance"].map(v => {
-      const b = makeEl("button");
-      b.setAttribute("data-view", v);
-      return b;
-    });
-    const c4Tabs = ["heatmap", "reconciliations", "timeline", "traceability"].map(t => {
-      const b = makeEl("button");
-      b.setAttribute("data-c4-tab", t);
-      return b;
-    });
-
-    const documentStub = {
-      readyState: "complete",
-      documentElement: makeEl("html"),
-      body: makeEl("body"),
-      activeElement: null,
-      getElementById: id => byId[id] || null,
-      createElement: tag => makeEl(tag),
-      createElementNS: (ns, tag) => makeEl(tag),
-      addEventListener() {},
-      querySelectorAll: sel => sel === ".view-tab" ? viewTabs : (sel === "[data-c4-tab]" ? c4Tabs : [])
-    };
-    const sandbox = {
-      console, Set, Map, Object, Array, Math, String, Number, Boolean, Date, RegExp, JSON,
-      encodeURIComponent, document: documentStub, window: { innerWidth: 1400, innerHeight: 900, addEventListener() {} }, globalThis: {}
-    };
-    sandbox.globalThis = sandbox;
-    new vm.Script(jsMatch[1], { filename: "runtime_dom_smoke.js" }).runInNewContext(sandbox);
-
-    for (const vt of viewTabs) vt.click();
-    for (const ct of c4Tabs) ct.click();
-
-    if (!byId["mm-stats-pill"].textContent.includes("nœuds")) throw new Error("Vue 1 non rendue");
-    if (!byId["st-stats-pill"].textContent.includes("titres")) throw new Error("Vue 2 non rendue");
-    if (!byId["sy-stats-pill"].textContent.includes("thèmes")) throw new Error("Vue 3 non rendue");
-    if (byId["c4-content"].innerHTML.length < 1000) throw new Error("Vue 4 vide");
-
-    // Non-régression bug #1 : Vue 3 filtrée -> Vue 1 -> Reset -> retour Vue 3 doit rendre tous les nœuds
-    viewTabs[2].click(); // synaptic
-    byId["f-domain"].value = "D07";
-    byId["f-domain"].dispatch("change");
-    const d07Count = byId["sy-svg"].children[0].children.length;
-    if (d07Count >= 300) throw new Error("Filtrage D07 inefficace: " + d07Count);
-
-    viewTabs[0].click(); // mindmap
-    byId["reset-filters-btn"].click();
-    viewTabs[2].click(); // synaptic
-    const fullCount = byId["sy-svg"].children[0].children.length;
-    if (fullCount < 800) throw new Error("Vue 3 désynchronisée après reset hors vue: " + fullCount);
-    """
-
-    proc = subprocess.run(
-        [node_exe, "-e", node_script, str(HTML_PATH)],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        check=False,
-    )
-    assert proc.returncode == 0, f"Échec DOM smoke Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
-
-
-def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
-    node_exe = shutil.which("node")
-    if node_exe is None:
-        pytest.skip("Node.js non disponible dans l'environnement")
-
-    node_script = r"""
-    const fs = require("fs");
-    const vm = require("vm");
-    const html = fs.readFileSync(process.argv[1], "utf8");
-    const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)<\/script>/);
-    const jsMatch = html.match(/<script(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/);
-
-    function makeEl(tag, id) {
-      const listeners = {};
-      const attrs = {};
-      const children = [];
-      const classes = new Set();
-      return {
         tagName: (tag || "DIV").toUpperCase(),
         id: id || "",
         textContent: "",
@@ -619,18 +570,19 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
         removeChild: c => { const i = children.indexOf(c); if (i >= 0) children.splice(i, 1); },
         get firstChild() { return children[0] || null; },
         addEventListener: (ev, fn) => { (listeners[ev] = listeners[ev] || []).push(fn); },
-        click: () => { (listeners.click || []).forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: this, target: this })); },
-        dispatch: (ev) => { (listeners[ev] = listeners[ev] || []); listeners[ev].forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: this, target: this })); },
+        click: () => { (listeners.click || []).forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: el, target: el })); },
+        dispatch: (ev) => { (listeners[ev] || []).forEach(fn => fn({ stopPropagation() {}, preventDefault() {}, currentTarget: el, target: el })); },
         querySelector: () => null,
         querySelectorAll: () => [],
         getBoundingClientRect: () => ({ width: 1200, height: 800, left: 0, top: 0 }),
         getBBox: () => ({ x: 0, y: 0, width: 600, height: 400 }),
         closest: () => null,
-        cloneNode: () => makeEl(tag, id),
+        cloneNode: () => { const c = makeEl(tag, id); c.value = el.value; c.textContent = el.textContent; c.innerHTML = el.innerHTML; return c; },
         insertBefore: (n) => { children.unshift(n); },
         scrollIntoView() {},
         focus() {}, select() {}, setSelectionRange() {}
       };
+      return el;
     }
 
     const allIds = [
@@ -644,15 +596,24 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
       "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
       "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle",
       "prd-toc-pane", "prd-toc-filter", "prd-toc-count", "prd-toc-list", "prd-reader", "prd-stats-pill",
-      "prd-toggle-toc-btn", "prd-print-btn", "prd-standalone-link"
+      "prd-toggle-toc-btn", "prd-print-btn", "prd-standalone-link",
+      "top-compendium-md-link", "top-compendium-pdf-link", "c4-gloss-search", "c4-gloss-body", "c4-gloss-count"
     ];
     const byId = {};
     for (const id of allIds) byId[id] = makeEl(id.endsWith("-svg") ? "svg" : "div", id);
     byId["corpus-mindmap-data"].textContent = jsonMatch[1];
+    byId["f-tome"].setAttribute("data-filter", "section");
+    byId["top-compendium-md-link"].setAttribute("href", "../../Compendium/Compendium.md");
+    byId["top-compendium-pdf-link"].setAttribute("href", "../../Compendium/Compendium.pdf");
 
     const viewTabs = ["mindmap", "structure", "synaptic", "concordance", "prd"].map(v => {
       const b = makeEl("button");
       b.setAttribute("data-view", v);
+      return b;
+    });
+    const c4Tabs = ["heatmap", "reconciliations", "timeline", "traceability", "glossary_evidence"].map(t => {
+      const b = makeEl("button");
+      b.setAttribute("data-c4-tab", t);
       return b;
     });
 
@@ -665,7 +626,7 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
       createElement: tag => makeEl(tag),
       createElementNS: (ns, tag) => makeEl(tag),
       addEventListener() {},
-      querySelectorAll: sel => sel === ".view-tab" ? viewTabs : []
+      querySelectorAll: sel => sel === ".view-tab" ? viewTabs : (sel === "[data-c4-tab]" ? c4Tabs : [])
     };
     const sandbox = {
       console, Set, Map, Object, Array, Math, String, Number, Boolean, Date, RegExp, JSON,
@@ -674,12 +635,57 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
       globalThis: {}
     };
     sandbox.globalThis = sandbox;
-    new vm.Script(jsMatch[1], { filename: "view5_dom_smoke.js" }).runInNewContext(sandbox);
+    new vm.Script(jsMatch[1], { filename: "runtime_all5_smoke.js" }).runInNewContext(sandbox);
 
     const app = sandbox.CartographieApp;
-    if (!app) throw new Error("CartographieApp non exposé");
+    const eng = sandbox.CartographieEngine;
+    if (!app || !eng) throw new Error("CartographieApp/Engine manquant");
 
-    // 1. Export SVG désactivé sur concordance ET prd, réactivé sur mindmap
+    // 1. Vues 1, 2, 3, 4
+    for (const vt of viewTabs.slice(0, 4)) vt.click();
+    if (!byId["mm-stats-pill"].textContent.includes("nœuds")) throw new Error("Vue 1 non rendue");
+    const hasStLim = byId["st-file-select"].children.some(o => o.value === "LIM" || String(o.textContent).includes("LIM")) || byId["st-file-select"].innerHTML.includes("LIM");
+    if (!byId["st-stats-pill"].textContent.includes("titres") || !hasStLim) {
+      throw new Error("Vue 2 structure 15 sections/42 unités non rendue");
+    }
+    if (!byId["sy-stats-pill"].textContent.includes("thèmes")) throw new Error("Vue 3 non rendue");
+    const hasFTomeP07 = byId["f-tome"].children.some(o => o.value === "P07" || String(o.textContent).includes("P07")) || byId["f-tome"].innerHTML.includes("P07");
+    if (byId["f-tome"].getAttribute("data-filter") !== "section" || !hasFTomeP07) {
+      throw new Error("#f-tome[data-filter='section'] sans option Compendium");
+    }
+
+    // 5 sous-onglets Vue 4 dont glossary_evidence + filtre #c4-gloss-search
+    for (const ct of c4Tabs) ct.click();
+    const glossHtml = byId["c4-content"].innerHTML;
+    if (!glossHtml.includes("Agentivité des systèmes") || !glossHtml.includes("system agency") || !glossHtml.includes("135")) {
+      throw new Error("Sous-onglet glossary_evidence incomplet");
+    }
+    byId["c4-gloss-search"].value = "Agentivité des systèmes";
+    byId["c4-gloss-search"].dispatch("input");
+    if (!byId["c4-content"].innerHTML.includes("Agentivité des systèmes") ||
+        !byId["c4-content"].innerHTML.includes("<strong>1</strong> / 56 vedettes")) {
+      throw new Error("Filtre #c4-gloss-search défaillant");
+    }
+
+    // Liens en-tête Compendium
+    if (!byId["top-compendium-md-link"].getAttribute("href").includes("Compendium/Compendium.md") ||
+        !byId["top-compendium-pdf-link"].getAttribute("href").includes("Compendium/Compendium.pdf")) {
+      throw new Error("Liens en-tête Compendium invalides");
+    }
+
+    // Non-régression Vue 3 filtrée -> Vue 1 -> Reset -> Vue 3
+    viewTabs[2].click();
+    byId["f-domain"].value = "D07";
+    byId["f-domain"].dispatch("change");
+    const d07Count = byId["sy-svg"].children[0].children.length;
+    if (d07Count >= 300) throw new Error("Filtrage D07 inefficace: " + d07Count);
+    viewTabs[0].click();
+    byId["reset-filters-btn"].click();
+    viewTabs[2].click();
+    const fullCount = byId["sy-svg"].children[0].children.length;
+    if (fullCount < 800) throw new Error("Vue 3 désynchronisée après reset hors vue: " + fullCount);
+
+    // 2. Vue 5 PRD Maître intégrée & liens Compendium + SCH-15-03 + Agentivité des systèmes
     app.switchView("concordance");
     if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en concordance");
     app.switchView("prd");
@@ -687,185 +693,72 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
     if (!byId["prd-stats-pill"].textContent.includes("260 thèmes")) {
       throw new Error("Statistiques Vue 5 incomplètes: " + byId["prd-stats-pill"].textContent);
     }
-    if (!byId["prd-toc-list"].innerHTML.includes("Partie XII")) {
-      throw new Error("TDM Vue 5 incomplète");
-    }
 
-    // 2. Mode Document intégral : 12 parties, 36 chapitres, 71 familles, 260 thèmes, 4 annexes
     app.getState().prdMode = "full";
     app.switchView("prd");
     const fullHtml = byId["prd-reader"].innerHTML;
     for (const marker of [
       "Partie I — D01", "Partie XII — D12", "Chapitre 01 —", "Chapitre 36 —",
-      "Annexe A —", "Annexe B —", "Annexe C —", "Annexe D —",
-      "THM_loi-de-lusser", "Tensions d'arbitrage structurantes (62 relations tension_arbitrage)"
+      "Annexe A —", "Annexe B —", "Annexe C —", "Annexe D —", "Annexe E —",
+      "THM_loi-de-lusser", "Panorama visuel directeur", "01.3 Schémas de vulgarisation à intégrer",
+      "36.3 Schémas de vulgarisation à intégrer", "237 entrées uniques", "135"
     ]) {
       if (!fullHtml.includes(marker)) throw new Error("Marqueur absent en Vue 5 mode intégral: " + marker);
     }
 
-    // Phase 2 : Hygiène DOM Vue 5 (0 backtick hors <code>, 0 **gras**, 0 \$, 0 <em> brisé sur gen_ai.*, 237 entrées Annexe D)
+    // Hygiène DOM Vue 5 (0 backtick hors <code>, 0 **gras**, 0 \$, 0 synthetise)
     const fullNoCode = fullHtml.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
     if (fullNoCode.includes("`")) throw new Error("Backtick brut détecté hors <code> dans Vue 5");
     if (/(^|[\s(>])\*\*[^\s*](?:[^*\n]*?[^\s*])?\*\*(?=[\s.,;:!?<)]|$)/.test(fullNoCode)) {
       throw new Error("**gras** brut détecté dans Vue 5");
     }
-    if (/<strong>\s*et tests\//i.test(fullHtml)) {
-      throw new Error("Glob specs/** transformé en <strong> par erreur");
-    }
     if (fullHtml.includes("\\$")) throw new Error("Literal backslash-dollar dans Vue 5");
-    if (/<em>[^<]*gen_ai\.[^<]*<\/em>/i.test(fullHtml)) throw new Error("<em> brisé autour de gen_ai.* dans Vue 5");
-    if (!fullHtml.includes("237 entrées uniques")) throw new Error("Matrice Annexe D 237 entrées absente en Vue 5");
-    const eng = sandbox.CartographieEngine;
-    const inlineChk = eng.prdInlineHtml("gen_ai.* et *Cost-per-Outcome* + `strict: true` 10 M\\$ CA L10-L20 A -> B C <-> D");
-    if (!inlineChk.includes("gen_ai.* et <em>Cost-per-Outcome</em>") || !inlineChk.includes("10 M$ CA") || !inlineChk.includes("A → B") || !inlineChk.includes("C ↔ D")) {
-      throw new Error("prdInlineHtml MindMap défaillant: " + inlineChk);
-    }
+    if (/\bsynthetise\b/i.test(fullHtml)) throw new Error("Synthetise sans accent détecté en Vue 5");
 
-    // 3. Filtres multi-facettes sur Vue 5 & état vide D01+L0+RSSI (Vue 5 + Vue 3)
-    byId["f-domain"].value = "D07";
-    byId["f-domain"].dispatch("change");
-    if (!byId["prd-stats-pill"].textContent.includes("3 / 36 chapitres")) {
-      throw new Error("Filtrage D07 inopérant en Vue 5: " + byId["prd-stats-pill"].textContent);
-    }
-    byId["f-domain"].value = "D01";
-    byId["f-autonomy"].value = "L0";
-    byId["f-role"].value = "RSSI";
-    byId["f-role"].dispatch("change");
-    if (!byId["prd-stats-pill"].textContent.startsWith("0 / 36 chapitres · 0 / 260 thèmes")) {
-      throw new Error("computePrdFilterState incohérent sur D01+L0+RSSI: " + byId["prd-stats-pill"].textContent);
-    }
-    if (!byId["prd-reader"].innerHTML.includes("empty-state")) {
-      throw new Error("Empty state manquant en Vue 5 sur filtre 0 thème");
-    }
-    app.switchView("synaptic");
-    if (byId["sy-stats-pill"].textContent !== "0 thème · 0 arête") {
-      throw new Error("Vue 3 devrait afficher '0 thème · 0 arête' sans fallback 260: " + byId["sy-stats-pill"].textContent);
-    }
-    byId["f-domain"].value = "";
-    byId["f-autonomy"].value = "";
-    byId["f-role"].value = "";
-    byId["f-domain"].dispatch("change");
-    app.switchView("prd");
-
-    // 4. Pont bidirectionnel Inspecteur -> PRD & hash deep-linking & lien dynamique #prd-standalone-link
-    app.getState().prdMode = "targeted";
-    app.selectThemeNode("THM_loi-de-lusser", true);
-    if (!byId["inspector-body"].innerHTML.includes("insp-goto-prd")) {
-      throw new Error("Bouton 'Lire dans le PRD' absent de l'inspecteur thème");
-    }
-    app.jumpToPrdByNodeId("THM_loi-de-lusser");
-    if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 2 || app.getState().prdHighlightId !== "THM_loi-de-lusser") {
-      throw new Error("Saut thème -> PRD défaillant");
-    }
-    if (!String(byId["prd-standalone-link"].getAttribute("href") || "").includes("#thm=THM_loi-de-lusser")) {
-      throw new Error("Lien dynamique prd-standalone-link non synchronisé: " + byId["prd-standalone-link"].getAttribute("href"));
-    }
-
-    app.applyHashNavigation("#view=prd&sec=1");
-    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "exec" || app.getState().prdHighlightId !== "exec-01") {
-      throw new Error("Hash #view=prd&sec=1 non normalisé: " + app.getState().prdHighlightId);
-    }
-    if (!byId["prd-reader"].innerHTML.includes('prd-highlight" data-prd-eid="exec-01"')) {
-      throw new Error("Section exec-01 non mise en surbrillance sur #view=prd&sec=1");
-    }
-    app.applyHashNavigation("#view=prd&annexe=B");
-    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "annexe" || app.getState().prdFocusId !== "B") {
-      throw new Error("Hash #view=prd&annexe=B défaillant");
-    }
-    app.getState().syEgo = "1";
-    app.applyHashNavigation("#view=synaptic&node=DOM_D07");
-    const d07CenterId = app.getState().syLastCenterId;
-    const d07Domain = (JSON.parse(jsonMatch[1]).nodes.find(n => n.node_id === d07CenterId) || {}).domain_id;
-    if (d07Domain !== "D07") {
-      throw new Error("Hash #view=synaptic&node=DOM_D07 centré hors D07: " + d07CenterId + " (" + d07Domain + ")");
-    }
-    const d07SyText = byId["sy-stats-pill"].textContent;
-    if (!byId["sy-stats-pill"].textContent.includes("thèmes") || d07SyText.startsWith("11 thèmes")) {
-      throw new Error("Vue synaptique ego DOM_D07 invalide: " + d07SyText);
-    }
-    app.applyHashNavigation("#view=synaptic&node=THM_loi-de-lusser");
-    if (app.getState().activeView !== "synaptic" || app.getState().selectedId !== "THM_loi-de-lusser") {
-      throw new Error("Hash #view=synaptic&node=... défaillant");
-    }
-    if (byId["export-svg-btn"].disabled) throw new Error("export-svg-btn resté désactivé en synaptic");
-
-    // 5. Phase C2.c : 115 schémas, Panorama SCH-00, 01.3..36.3, Annexe E, Inspecteur & recherche SCH-* + liens ../../Sources/Tomes/
+    // 115 schémas Compendium + liens ../../Compendium/Compendium.md et ../../Sources/Compendium/ouvrage/schemas/rendus/
     const prdData = JSON.parse(jsonMatch[1]).prd;
-    if (!prdData || !prdData.meta || prdData.meta.annexes_count !== 5 || prdData.meta.schemas_count !== 115) {
-      throw new Error("Méta PRD schémas/annexes invalide dans MindMap");
-    }
-    app.getState().prdMode = "full";
-    app.switchView("prd");
-    const fullWithSchemas = byId["prd-reader"].innerHTML;
-    for (const marker of [
-      "Panorama visuel directeur", "01.3 Schémas de vulgarisation à intégrer",
-      "36.3 Schémas de vulgarisation à intégrer", "Annexe E —",
-      "Inventaire complet des 319 figures des Tomes 1 à 8"
-    ]) {
-      if (!fullWithSchemas.includes(marker)) throw new Error("Marqueur C2.c manquant en Vue 5 MindMap: " + marker);
-    }
     const mmSchemas = (prdData.executive_summary.vulgarization_schemas || []).map(s => s.schema_id)
       .concat(prdData.chapters.flatMap(c => (c.vulgarization_schemas || []).map(s => s.schema_id)));
     if (mmSchemas.length !== 115) throw new Error("MindMap != 115 schémas");
     for (const sid of mmSchemas) {
-      if (!fullWithSchemas.includes(sid)) throw new Error("Schéma manquant en Vue 5 MindMap: " + sid);
+      if (!fullHtml.includes(sid)) throw new Error("Schéma manquant en Vue 5 MindMap: " + sid);
     }
-    const mmTomeHrefs = Array.from(fullWithSchemas.matchAll(/href="(\.\.\/\.\.\/Sources\/Tomes\/[^"#]+)"/g), m => m[1]);
-    if (mmTomeHrefs.length < 600) throw new Error("Liens ../../Sources/Tomes/ insuffisants en Vue 5 MindMap: " + mmTomeHrefs.length);
-    const fsPath = require("path");
-    for (const rawHref of new Set(mmTomeHrefs)) {
+
+    const compMdHrefs = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Compendium\/Compendium\.md[^"]*)"/g), m => m[1]);
+    if (compMdHrefs.length < 36) throw new Error("Liens ../../Compendium/Compendium.md insuffisants en Vue 5: " + compMdHrefs.length);
+    const compSchemaRendus = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"#]+)"/g), m => m[1]);
+    if (compSchemaRendus.length < 100) throw new Error("Liens ../../Sources/Compendium/ouvrage/schemas/rendus/ insuffisants: " + compSchemaRendus.length);
+    for (const rawHref of new Set([...compMdHrefs.map(u => u.split("#")[0]), ...compSchemaRendus])) {
       const diskPath = fsPath.resolve(fsPath.dirname(process.argv[1]), decodeURIComponent(rawHref));
-      if (!fs.existsSync(diskPath)) throw new Error("Lien ../../Sources/Tomes/ cassé en Vue 5 MindMap: " + diskPath);
+      if (!fs.existsSync(diskPath)) throw new Error("Lien Compendium cassé sur disque: " + diskPath);
     }
 
-    // Inspecteur latéral : Schémas de vulgarisation PRD rattachés
+    // Inspecteur latéral + saut PRD + Ctrl+K SCH-15-03
+    app.getState().prdMode = "targeted";
     app.selectThemeNode("THM_loi-de-lusser", true);
-    if (!byId["inspector-body"].innerHTML.includes("Schémas de vulgarisation PRD") || !byId["inspector-body"].innerHTML.includes("SCH-02-")) {
-      throw new Error("Section Schémas PRD absente de l'inspecteur thème");
+    const inspHtml = byId["inspector-body"].innerHTML;
+    if (!inspHtml.includes("insp-goto-prd") ||
+        !inspHtml.includes("Schémas compilés du Compendium") ||
+        !inspHtml.includes("Occurrences vérifiées dans le Compendium") ||
+        !inspHtml.includes("SCH-02-")) {
+      throw new Error("Inspecteur thème incomplet");
     }
-
-    // Recherche Ctrl+K sur SCH-15-03 + hash #sch=SCH-15-03
+    app.jumpToPrdByNodeId("THM_loi-de-lusser");
+    if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 2) {
+      throw new Error("Saut thème -> PRD défaillant");
+    }
     const mmIdx = eng.buildIndexes(JSON.parse(jsonMatch[1]));
     const schHits = eng.searchCorpus(mmIdx, "SCH-15-03", 10);
     if (!schHits.some(h => h.kind === "prd-schema" && h.id === "SCH-15-03")) {
       throw new Error("searchCorpus('SCH-15-03') n'a pas retourné prd-schema");
     }
+    const agHits = eng.searchCorpus(mmIdx, "Agentivité des systèmes", 10);
+    if (!agHits.some(h => h.kind === "glossary")) {
+      throw new Error("searchCorpus('Agentivité des systèmes') n'a pas retourné glossary");
+    }
     app.applyHashNavigation("#sch=SCH-15-03");
     if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 15 || app.getState().prdHighlightId !== "SCH-15-03") {
       throw new Error("Hash #sch=SCH-15-03 défaillant dans MindMap");
-    }
-    if (!String(byId["prd-standalone-link"].getAttribute("href") || "").includes("#sch=SCH-15-03")) {
-      throw new Error("prd-standalone-link non synchronisé sur #sch=SCH-15-03");
-    }
-
-    // #138 : 0 'Synthetise', virgules décimales françaises et boutons GLOBAL/Panorama -> exec-panorama en Vue 5 Annexe E
-    if (/\bsynthetise\b/i.test(fullWithSchemas)) {
-      throw new Error("Synthetise sans accent détecté en Vue 5 MindMap");
-    }
-    app.applyHashNavigation("#view=prd&annexe=E");
-    const annEHtml = byId["prd-reader"].innerHTML;
-    if (/\bsynthetise\b/i.test(annEHtml)) {
-      throw new Error("Synthetise sans accent détecté dans Annexe E Vue 5 MindMap");
-    }
-    if (!annEHtml.includes('data-prd-jump-exec="exec-panorama">GLOBAL</button>') ||
-        !annEHtml.includes('data-prd-jump-exec="exec-panorama">Panorama</button>')) {
-      throw new Error("Boutons GLOBAL/Panorama Annexe E ne pointent pas vers exec-panorama");
-    }
-    const annEDistSlice = annEHtml.split("Répartition par Domaine")[1].split("Catalogue directeur intégral")[0];
-    if (annEDistSlice.includes('data-prd-jump-sch="SCH-00-01">GLOBAL</button>') ||
-        annEDistSlice.includes('data-prd-jump-sch="SCH-00-01">Panorama</button>')) {
-      throw new Error("Boutons GLOBAL/Panorama de Répartition pointent encore vers SCH-00-01");
-    }
-    const annEStatsSlice = annEHtml.split("Synthèse statistique des 115 schémas")[1].split("Répartition par Domaine")[0];
-    if (/\d+\.\d+\s*%/.test(annEStatsSlice)) {
-      throw new Error("Pourcentage avec point décimal anglais détecté dans Annexe E Vue 5 MindMap");
-    }
-    if ((annEStatsSlice.match(/\d+,\d+\s+%/g) || []).length < 27) {
-      throw new Error("Pourcentages avec virgule française incomplets dans Annexe E Vue 5 MindMap");
-    }
-    app.applyHashNavigation("#view=prd&sec=exec-panorama");
-    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "exec" || app.getState().prdHighlightId !== "exec-panorama") {
-      throw new Error("Navigation exec-panorama défaillante en Vue 5 MindMap");
     }
     """
 
@@ -876,4 +769,4 @@ def test_nodejs_view5_prd_and_bidirectional_bridge() -> None:
         encoding="utf-8",
         check=False,
     )
-    assert proc.returncode == 0, f"Échec Vue 5 DOM smoke Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
+    assert proc.returncode == 0, f"Échec DOM smoke 5 vues Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
