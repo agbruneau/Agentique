@@ -86,3 +86,13 @@ Toutes les formulations à ajuster relevées à la passe initiale ont été dire
 - **Couverture des sources fermées (`ch09-sources.md`) :** toutes les références `[1]` à `[10]` sont citées et vérifiées sur texte intégral `L+`.
 - **Barrière déterministe G1 (`verifie_manuscrit.py --unit ch09 --strict`) :** `0` erreur (`exit 0`).
 - **Verdict G2 :** `47 / 47` affirmations atomiques supportées (`100,0 %`).
+
+---
+
+## 4. Mise à jour post-révision PRD (`REV-04`)
+
+| ID | Localisation | Clause révisée (`REV-04`) | Source vérifiée | Statut | Verdict |
+|---|---|---|---|---|---|
+| `C09-REV-01` | L3, L13–L21, L36–L48, L62–L120, L159, `SCH-09-01.puml`, `SCH-09-03.svg`, `SCH-09-04.puml` | Uniformisation `*Question directrice :*` et déplacement de l'encadré *Trois invariants exécutables* en fin de `§ 9.1` (`PRD-L1-018`), retrait des slugs MindMap et de `owned_concepts` (`PRD-L1-016`), numérotation continue `Figure 30`–`Figure 33` et renvois (`PRD-L1-008`), ajout de `maxhops = 4`, `ISO 11354-1:2011` (palier unifié malgré ambition fédérée), `EIRA 6.1.0` et `ISO/IEC 19941`, ajout du bloc de désambiguïsation du maillage + `CloudEvents 1.0.2` dans `SCH-09-01.puml`, harmonisation du préavis (`≥ 90 j` / sortie `6 mois` / dépréciation `12 mois`) dans `SCH-09-03.svg` et retrait du `−90 %` dans `SCH-09-04.puml` (`PRD-L1-020`) | `Compendium/prd.md` (`L1897–L1898`, `L1996`), `SRC-088.txt` (`[7]`, `CloudEvents 1.0.2`), `specs/manifest.json`, `schemas/SCH-09-01.puml`, `SCH-09-03.svg`, `SCH-09-04.puml` | Rectifiée | Verdict : supporté |
+
+- **Contrôle `REV-04` :** `5 101` mots (`verifie_manuscrit.py`) / `5 343` mots (`parser_plan.py`) dans `[4 775, 5 605]`, `verifie_manuscrit.py --unit ch09 --strict` = `exit 0`. **Verdict final : `48 / 48` (`100,0 %` supporté).**

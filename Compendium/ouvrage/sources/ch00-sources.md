@@ -134,7 +134,7 @@
 - **Organisme / Revue :** OSFI Technology Risk Bulletin
 - **Identifiant :** `OSFI-BULLETIN-AGENTIC-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-066.txt`, score AACODS `12.0/12`)
-- **URL d'origine :** http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
+- **URL d'origine :** https://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
 - **Empreinte SHA-256 (LF) :** `5a1b1a2e004b17fdfdbef1e2da35981654e689878fe0727cf26d9aba27e00f2b` (`14425` octets, `1971` mots)
 - **Synthèse factuelle vérifiée :** Bulletin du BSIF (juillet 2026) sur l'IA générative et agentique recommandant explicitement l'implémentation de garde-fous techniques (AI harnessing) et d'une gouvernance de bout en bout.
 
@@ -220,7 +220,7 @@
 ## Exclusions en statut F (`AO-01` — hors preuve)
 
 - `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur genai.owasp.org; compensé intégralement par le PDF officiel CC BY-SA 4.0 v1.0 archivé sur github.com/genai-security-project/GenAI-Security-Corpus (SRC-055, L+).
-- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (L+) avec mention explicite du statut F du communiqué primaire.
+- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (SRC-011, L+) avec mention explicite du statut F du communiqué primaire.
 - `https://lautorite.qc.ca/` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 Cloudflare WAF sur lautorite.qc.ca (1 tentative AO-01) et absence de l'archive locale 2026/documents/Note AMF IA.pdf ; date attendue du 1er mai 2027 corroborée sous réserve explicite via AIBanks.ca (SRC-071, L+).
 - `https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1` — `HTTP_403` (`included_in_evidence: false`). Portail consolidé bloqué HTTP 403 (1 tentative AO-01) ; compensé en L+ par LQ 2021, c. 25 sanctionnée (SRC-063) et Rapport quinquennal CAI 2026 (SRC-064).
 - `https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202401689` — `WAF_OR_CHALLENGE:aws-waf` (`included_in_evidence: false`). Réponse HTTP 200 coquille WAF JS / défi AWS WAF HTTP 202 sur eur-lex.europa.eu; compensé par le PDF officiel du JOUE via publications.europa.eu/resource/cellar/ (SRC-060, L+).

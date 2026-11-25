@@ -109,6 +109,6 @@
 
 ## Exclusions en statut F (`AO-01` — hors preuve)
 
-- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (L+) avec mention explicite du statut F du communiqué primaire.
+- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (SRC-011, L+) avec mention explicite du statut F du communiqué primaire.
 - `https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-fra.htm` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur la page HTML ; compensé par les archives CSV ouvertes StatCan 33101167-fra.zip (SRC-014) et 33101207-fra.zip (SRC-015).
 - `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur genai.owasp.org; compensé intégralement par le PDF officiel CC BY-SA 4.0 v1.0 archivé sur github.com/genai-security-project/GenAI-Security-Corpus (SRC-055, L+).

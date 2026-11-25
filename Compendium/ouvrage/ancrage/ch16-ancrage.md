@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-3`
 - **Passe G2 initiale (supportés)** : 19
 - **Rectifications appliquées lors de la passe G2** : 21
-- **Verdict final — supportés** : 40 / 40 (100,0 %)
+- **Verdict final — supportés** : 41 / 41 (100,0 %)
 
 ---
 
@@ -191,3 +191,7 @@ Toutes les formulations demandant un réancrage ou une nuance modale lors de la 
 - **C16-40 (`L74–L75`, § 16.2.1 — ajout post-G4)** — *Affirmation :* `a2a_card.py` évalue structure, flux OAuth, épinglage `jku`/`kid` et signature `ES256` sur `JCS` en retournant un `card_etag` déterministe sans état temporel ; la politique `TTL` s'exerce hors protocole sur le magasin d'ancrage et la passerelle `PEP` (`EXIG-A2A-03`, `EXIG-A2A-04`, `Tome 2 § 6.6`) via `ETag` fort, `Cache-Control` (`max-age`) et rejet de régression `SemVer`, avec échec en mode fermé sous `EXIG-IAM-18` (`Tome 2 § 9.4`) sur rupture de statut, du cache `JWKS` ou de l'horloge externe (politique distribuée échue limitant au plus à `P0`).
   - **Appui vérifié :** `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/harness_proto/a2a_card.py`, `Corpus/Tome 2` (`§ 6.6` `L2167`, `L2193`, `L2201` ; `§ 9.4`), `SRC-083.txt` `[11]`, `SRC-077.txt` `[8]`.
   - **Passe initiale :** ajout post-G4 · **Action :** vérification différentielle `G2` · **Verdict : supporté**
+
+- **C16-41 (Révision `REV-04` : `PRD-L2-012`, `020`, `021`, `023`, `PRD-L4-002`, `REF-003`)** — *Affirmation :* Uniformisation des figures en `Figure 52`..`Figure 54` (`SCH-16-01` corrigé en `OAuth 2.0 (BCP 240 / RFC 9700)`, `SCH-16-02` aligné sur `A2A v1.0.0 / v1.0.1`), réconciliation explicite `0/15` (`3 × 5`, distinct de quinze produits) et verdict `1/4` du passeport virtuel (`Tome 1 ch. 16`, repérage `arXiv:2509.01063`), intégration de `EXIG-IAM-09`, `EXIG-IAM-16`, `NIST SP 800-207`, `ANC-022` et `SIG-003`, encadré `Clause non-avis (AO-05)`, francisation `playbooks` → `procédures de réponse`, et qualification explicite de `AIBanks.ca` (`[12]`, `SRC-071`) comme source secondaire (portail AMF en statut `F`).
+  - **Appui vérifié :** `Compendium/prd.md`, `Corpus/Tome 1` (`ch. 14`, `ch. 16`), `schemas/SCH-16-01.svg`, `schemas/SCH-16-02.svg`, `SRC-071.txt` (`[12]`), `SRC-133.txt` (`[6]`).
+  - **Passe initiale :** ajout `REV-04` · **Action :** vérification différentielle `REV-04` · **Verdict : supporté**

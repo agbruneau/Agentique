@@ -1,68 +1,62 @@
 # Rapport de lissage éditorial (`G5`) et d'inspection visuelle intégrale (`CA-16`)
 
-- **Rôle exécutant :** `inspecteur-visuel` (`Task 9` — `T9-S3`)
+- **Rôle exécutant :** `inspecteur-visuel` (`T9-S3`) et `revise-outils-livrables` (`REV-05` — actualisation post-révision `PRD`)
 - **Date de référence et de gel :** `2 décembre 2026` (`2026-12-02`)
-- **Livrables inspectés :**
-  - `Compendium/ouvrage/livrables/Compendium.pdf` (`19 158 415` octets, `711` pages)
-  - `Compendium/ouvrage/livrables/Compendium.html` (`10 094 315` octets)
-  - `Compendium/ouvrage/livrables/Compendium.md` (`1 522 869` octets)
+- **Livrables inspectés (post-révision `REV-05`) :**
+  - `Compendium/ouvrage/livrables/Compendium.pdf` (`23 123 417` octets, `834` pages, `400` signets)
+  - `Compendium/ouvrage/livrables/Compendium.html` (`10 530 440` octets, `115/115` figures base64)
+  - `Compendium/ouvrage/livrables/Compendium.md` (`1 856 321` octets, `8 362` lignes)
 - **Statut de clôture visuelle :** **CONFORME — 0 défaut bloquant**
 
 ---
 
-## 1. Inspection intégrale du livrable PDF (`100,0 %` des `711` pages)
+## 1. Inspection intégrale du livrable PDF (`100,0 %` des `834` pages)
 
-Toutes les `711` pages de `Compendium.pdf` ont été rendues en PNG (`130 DPI`) via `pymupdf` (`fitz`) et balayées algorithmiquement (`fitz` + `PIL`) dans `scratch/pdf_pages/`, puis complétées par une inspection visuelle directe de planches-contacts et de captures pleine page.
+Toutes les `834` pages de `Compendium.pdf` recompilé à l'issue de la campagne `REV-01`–`REV-05` ont été balayées algorithmiquement (`pymupdf` / `fitz`), puis complétées par une inspection visuelle directe (`read_file` à `140 DPI`) sur les zones critiques et l'ensemble des corrections apportées.
 
-### 1.1 Métriques automatisées sur `711 / 711` pages (`100,0 %`)
+### 1.1 Métriques automatisées sur `834 / 834` pages (`100,0 %`)
 
 | Contrôle automatisé | Périmètre | Résultat observé | Statut |
 |---|---:|---|---|
-| Décompte exact des pages | `711` pages | `711` pages (couverture `p.1` à dernière page `p.711`) | Conforme |
-| Dimensions physiques | `711 / 711` pages | `6,14 × 9,21 po` (`442,08 × 663,12 pt`) uniformes | Conforme |
-| Débordement hors page (`bbox`) | `711 / 711` pages | `0` boîte texte, image ou dessin hors limites de page | Conforme |
-| Débordement marqué hors marges (`> 10 pt`) | `710` pages corps | `0` image/dessin ; `1` formule centrée large (`CPO = ...`, `p.388`, `x0=44,8 pt`, sans rognage) | Conforme (mineur) |
-| Pages blanches anormales | `711 / 711` pages | `0` page blanche ni page à faible encre anormale | Conforme |
-| Formules LaTeX/Typst brutes (`\\(`, `\\)`, `$$`) | `711 / 711` pages | `0` occurrence résiduelle (mathématiques `p.99` et `p.113` rendues) | Conforme |
-| Glyphes manquants (`\ufffd`) | `711 / 711` pages | `0` occurrence | Conforme |
-| Images raster blanches ou corrompues | `23` xrefs uniques | `0` image blanche ou corrompue | Conforme |
-| Présence graphique des `115` figures | `115 / 115` schémas | `115 / 115` présents avec légende et vecteur/image (`0` figure vide) | Conforme |
+| Décompte exact des pages | `834` pages | `834` pages (couverture `p. 1` à dernière page `p. 834`, `400` signets) | Conforme |
+| Débordement hors page (`bbox`) | `834 / 834` pages | `0` boîte texte, image ou dessin hors limites de page | Conforme |
+| Pages blanches anormales | `834 / 834` pages | `0` page blanche ni page à faible encre anormale | Conforme |
+| Formules LaTeX/Typst brutes (`\\(`, `\\)`, `\\$`, `Syntax Error`) | `834 / 834` pages | `0` occurrence résiduelle | Conforme |
+| Glyphes manquants (`\ufffd`) | `834 / 834` pages | `0` occurrence | Conforme |
+| Corruptions textuelles (`//[É]/`, `[N]//`, `policies_opa/opa_runner.py`) | `834 / 834` pages | `0` occurrence | Conforme |
+| Table des matières (`passᵏ`) | `p. 3–6` | `passᵏ` composé en exposant typographique (`0` `pass^k` brut) | Conforme |
+| Numérotation séquentielle des `115` figures | `115 / 115` schémas | `Figure 1` à `Figure 115` uniques et ordonnées sans doublon ni reset | Conforme |
+| Citations `[k]` et bibliographies d'unités | `37 / 37` unités | `37/37` sous-sections « Références » injectées, `0` citation orpheline | Conforme |
 
-### 1.2 Inspection visuelle directe (`read_file` sur planches-contacts et PNG pleine résolution)
+### 1.2 Inspection visuelle directe (`read_file` sur captures PNG pleine résolution `REV-05`)
 
-Les captures rendues ont été inspectées visuellement sur les zones critiques suivantes :
-
-1. **Couverture et pages liminaires (`p.1`–`p.6`)** : couverture marine `Compendium de l'entreprise agentique` nette, badge `CC BY 4.0` et métadonnées de gel alignés ; table des matières (`p.3`–`p.6`) alignée avec points de conduite et pagination exacte jusqu'aux Annexes `A`–`E`.
-2. **Débuts de parties et de chapitres (`sheet_02`)** : hiérarchie typographique homogène, encadrés de chapitre nets et en-têtes courants tronqués proprement sans collision.
-3. **Rendu mathématique (`p.99`, `p.113`, `p.388`)** : formules `S_ready` et fonction indicatrice `I(c_sec >= 60)` correctement composées en Typst sans artifice `\\(` ni `\\)` ; équation centrée `CPO` (`p.388`) entièrement lisible.
-4. **Trois moteurs de figures (`115` schémas)** :
-   - **Infographies SVG natives (`40`)** : `SCH-00-01` (`p.13`), `SCH-01-02` (`p.30`), `SCH-03-02` (`p.62`) — rendu vectoriel net, contrastes élevés, zéro texte coupé.
-   - **PlantUML `.svg` (`52`)** : `SCH-00-02` (`p.15`), `SCH-02-02` (`p.44`) — tracés, zones et légendes nets et lisibles.
-   - **Mermaid `.png` (`23`)** : `SCH-00-04` (`p.20`), `SCH-03-01` (`p.58`), `SCH-05-02` (`p.91`) — rendu propre à `300 DPI`, aucune troncature ni pixellisation bloquante.
-5. **Blocs `CA-G0-SYNC` et extraits de code (`p.73`, `p.282`, `p.559`, `p.568`)** : coloration syntaxique, indentation et retours à la ligne contenus à l'intérieur des encadrés de code sans débordement horizontal.
-6. **Tableaux larges (`p.26`, `p.62`, `p.88`, `p.593`, `p.614`)** : en-têtes bleu marine, alternance de lignes et césures cellulaires maîtrisées (ex. `Tableau 5.1`, `p.88`).
-7. **Annexes `A`–`E` et fin d'ouvrage (`p.593`, `p.614`, `p.639`, `p.663`, `p.687`, `p.711`)** : démarrage propre de chaque annexe déterministe (`Annexe A` `p.593`, `Annexe B` `p.614`, `Annexe C` `p.639`, `Annexe D` `p.663`, `Annexe E` `p.687`) et clôture nette en `p.711`. *(Observation éditoriale mineure non bloquante : l'Annexe B enchaîne `## 1.` vers `## 3.` selon le gabarit de `genere_annexes.py`, sans perte de données.)*
-
----
-
-## 2. Inspection du livrable HTML autonome (`Compendium.html`)
-
-L'analyse DOM (`HTMLParser`) et par expression régulière sur `Compendium/ouvrage/livrables/Compendium.html` (`10 094 315` octets) confirme :
-
-- **`115 / 115` figures embarquées en `data:image/...;base64`** : `92` SVG (`image/svg+xml`, couvrant les `52` PlantUML et les `40` infographies natives) et `23` PNG (`image/png`, couvrant les `23` diagrammes Mermaid) ; `115 / 115` charges base64 décodées valides et non vides.
-- **`0` dépendance réseau externe** : aucune URI `http://`, `https://` ou `//` dans les balises `<img>`, `<script>` ou `<link>` (CSS et MathML intégrés hors ligne).
+1. **Table des matières (`p. 3`)** : hiérarchie propre, pagination exacte incluant `Références du liminaire` (`p. 14`) et titre du Chapitre 02 composé avec exposant typographique **`passᵏ`** (`p. 35`).
+2. **Bibliographie injectée en fin d'unité (`p. 39`, Chapitre 01)** : sous-section **« Références du chapitre »** nette et lisible (`[1] SRC-027` à `[6] SRC-014`), sans URL débordante ni fuite d'atelier.
+3. **Schémas bloquants corrigés et recompilés** :
+   - `Figure 11 — SCH-03-01` (`p. 62`, Mermaid `300 DPI`) : routage logique corrigé (`Porte 1` Non → `Portes 2–3` Ouvert → `ACHETER`, Fermé → `Rejet ou confinement`).
+   - `Figure 43 — SCH-13-01` (`p. 234`, SVG) : dissociation nette entre l'arbre de sobriété (`N0` → multi-agents, `EXIG-ORC-01`) et la grille d'autorité `OO1–OO4` (`Tome 1 § 22.1`).
+   - `Figure 60 — SCH-18-03` (`p. 323`, Mermaid `300 DPI`) : mesures exactes `pqc_http431.py` (`2 sauts : 9,6–38,8 Ko` ; `5 sauts : 24,5–97,4 Ko, max 97 403 o`) alignées au `Tableau 18.1` juste au-dessus.
+4. **Annexes `A` à `E` refondues sans troncature et fin d'ouvrage (`p. 636`, `673`, `738`, `774`, `823`, `831`, `834`)** :
+   - **Annexe A (`p. 636`)** : `Tableau A.1` complet (`Ch.`, `Domaine`, `Sous-domaine node_id`, `Fam./Thm.`, `Occ.`, `Tomes`, `Schémas`), zéro colonne `Cible (mots)`, typographie `fr-CA` exacte.
+   - **Annexe B (`p. 673`)** : enchaînement continu `1.` → `Tableau B.1` → `2. Analyse des vingt-cinq nœuds carrefours`, catalogue intégral des `616/616` interrelations sans doublon.
+   - **Annexe C (`p. 738`)** : décompte chronologique exact (`12` acquis au gel / `74` post-gel et paliers `DAPP`), `Emplacement Compendium : Liminaire § 0.2 ; Chapitre 36`, zéro fuite `Volume 8`.
+   - **Annexe D (`p. 774`)** : `policy_saga/opa_runner.py`, note de concordance `17` paquets `requirements.lock` / `18` paquets `SPDX`, plage `PEX-001`–`PEX-044`, inventaires complets `52 CAP`, `75 PRR`, `57` specs `L+`, `95` liaisons `G0`, `43 INI` / `15 POR` / `27 SIG`.
+   - **Annexe E (`p. 823`, `p. 831`, `p. 834`)** : `Tableau E.1` (`267/319 = 83,70 %`), `Tableau E.2` (`8` archétypes visuels), présence intégrale de **Partie XII (`D12`, `Figure 106` à `Figure 115`)** et clôture propre en dernière page (`p. 834`).
 
 ---
 
-## 3. Synthèse du lissage éditorial `G5` (`Task 8`) et de la compilation finale (`Task 9`)
+## 2. Inspection du livrable HTML autonome (`Compendium.html`) et du Markdown (`Compendium.md`)
 
-- **Lissage éditorial (`T8-S1`) :** harmonisation des transitions entre parties (`I`–`XII`) et passerelles `→`/`←`, suppression des sections dupliquées et des redites inter-chapitres (`DIV-02` `ch06`/`ch36`, Partie IV), et traitement complet des `11` micro-raccords relevés au Tour 2 du `gauntlet-log.md` § 3 (`ch16`, `ch26`, `ch27`, `ch28`, `ch29`, `ch30`, `ch32`, `ch33`, `ch34`, `ch35`, `ch36`).
-- **Audit différentiel post-lissage (`T8-S2`) :** comparaison intégrale contre `snapshot_post_g4` (`24` unités narratives retouchées sur `42` : `00-liminaire` et `23` chapitres), mise à jour de `15` journaux `ancrage/chXX-ancrage.md` maintenus à `100,0 %` supportés et préservation intégrale des `14` extraits `CA-G0-SYNC`.
-- **Recollation à froid double passe `G3` (`T8-S3`) :** deux passes indépendantes strictement disjointes (`0` chevauchement sur `claim_loc` et `paragraph_loc`) — `seed=20270901` (`142/148` initial → `148/148` après `6` rectifications) et `seed=20270902` (`141/148` initial → `148/148` après `7` rectifications), soit **`296 / 296` énoncés validés (`100,0 %`)**.
-- **Régénération et assemblage final (`T9-S1`, `T9-S2`) :** `5` Annexes `A`–`E` régénérées de manière déterministe (`2 802`, `2 438`, `2 848`, `2 958`, `3 424` mots) portant le manuscrit à **`42 / 42` unités conformes (`188 650` mots)** ; correctif `_unwrap_backticked_latex_math` dans `assemble_livre.py` éliminant les délimiteurs LaTeX résiduels en compilation HTML/PDF.
+- **`Compendium.html` (`10 530 440` octets)** : `115/115` figures embarquées en `data:image/...;base64` (`92` SVG + `23` PNG), `0` dépendance réseau externe dans `<img>`, `<script>` ou `<link>`, `0` ancre interne cassée, `0` marqueur `BIBLIOGRAPHIE_BRUTE`, `0` `//[É]/`, `0` doublon TOC (`<nav id="TOC">` unique), `pass<sup>k</sup>` rendu.
+- **`Compendium.md` (`1 856 321` octets, `8 362` lignes)** : `## Table des matières` GFM en tête, `37/37` bibliographies d'unités (`0` citation `[k]` orpheline), `Figure 1`..`Figure 115` uniques, `0` `\$` littéral, `0` marqueur `BIBLIOGRAPHIE_BRUTE`, `100 %` des légendes de tableaux uniformément placées en dessous.
 
 ---
+
+## 3. Synthèse du lissage `G5` et de la campagne de révision `REV-01`–`REV-06`
+
+- **Recollation à froid double passe `G3`** : deux passes strictement disjointes — `seed=20270901` (`148/148`) et `seed=20270902` (`148/148`), soit **`296 / 296` énoncés validés (`100,0 %`)**.
+- **Révision intégrale `PRD` (`REV-01`–`REV-05`)** : `107/107` constats (`12` références + `95` PRD) corrigés et vérifiés, `115/115` schémas recompilés (`--strict`), `5/5` Annexes déterministes calibrées simultanément sous `vm` et `pp` (`42/42` unités conformes sur le tableau de bord).
 
 ## 4. Verdict de clôture
 
-Le Compendium satisfait sans réserve les critères visuels et d'autonomie documentaire (`CA-16`, `CA-17`, `CA-18`) : **aucun défaut bloquant** détecté sur les `711` pages PDF, les `115` figures multi-moteurs ou le HTML autonome.
+Le Compendium satisfait intégralement aux critères éditoriaux, normatifs, visuels et d'autonomie documentaire (`CA-01` à `CA-22`, `G0`–`G5`) : **0 défaut bloquant** sur les `834` pages PDF, le HTML autonome, le Markdown consolidé et les `115` schémas.

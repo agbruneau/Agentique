@@ -64,7 +64,7 @@ package "Z1 : Poste 1 — Avant le pilote (ÉFVP et transfert)" {
   rectangle "Verrou transfert hors Québec (art. 17)\nBlocage 3 chemins (modèle, PEP, mémoire)\n& risque CLOUD Act" as XFER <<danger>>
 }
 package "Z2 : Poste 2 — Décision automatisée (art. 12.1)" {
-  rectangle "Décision « exclusivement automatisée »\nAvis légal immédiat & facteurs en voûte" as ART12 <<prob>>
+  rectangle "Décision « exclusivement automatisée »\nAvis légal immédiat & dossier art. 12.1 (≥ 1 an)" as ART12 <<prob>>
   rectangle "Point d'arrêt humain PC3\nRévision qualifiée & outillée\n(zéro validation mécanique)" as PC3 <<ok>>
 }
 package "Z3 : Poste 3 — Portabilité et crypto-effacement" {

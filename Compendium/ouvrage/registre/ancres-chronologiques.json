@@ -48,7 +48,7 @@
       "key": "2027-03-15-TLS-100J",
       "date": "2027-03-15",
       "nature": "Échéance technique sectorielle",
-      "jurisdiction": "International (CA/B Forum)",
+      "jurisdiction": "International (CA/Browser Forum)",
       "label": "Réduction maximale de la durée de validité des certificats TLS publics à 100 jours au 15 mars 2027",
       "chapters": [
         "ch17",
@@ -151,7 +151,7 @@
       "key": "2029-03-15-TLS-47J",
       "date": "2029-03-15",
       "nature": "Échéance technique sectorielle",
-      "jurisdiction": "International (CA/B Forum)",
+      "jurisdiction": "International (CA/Browser Forum)",
       "label": "Plafond de validité des certificats TLS publics ramené à 47 jours au 15 mars 2029",
       "chapters": [
         "ch17",
@@ -168,7 +168,7 @@
       "key": "2030-2035-G7-PQC-FINANCE",
       "date": "2030–2035",
       "nature": "Feuille de route post-quantique",
-      "jurisdiction": "G7 / NIST",
+      "jurisdiction": "International (G7 / NIST)",
       "label": "Fenêtre coordonnée 2030–2035 de transition vers les standards post-quantiques NIST (FIPS 203, FIPS 204, FIPS 205, IR 8547)",
       "chapters": [
         "ch17",
@@ -190,7 +190,7 @@
       "key": "2028-10-01-GESTION-PATRIMOINE-RETROFACTURATION",
       "date": "2028-10-01",
       "nature": "Échéance sectorielle financière (ACVM / Norme canadienne 31-103)",
-      "jurisdiction": "Canada",
+      "jurisdiction": "Canada (ACVM — provincial et territorial)",
       "label": "Entrée en vigueur de l'interdiction des rétrofacturations de commissions liées à la distribution de titres de fonds d'investissement",
       "chapters": [
         "ch18",
@@ -201,14 +201,14 @@
       ],
       "statut_preuve": "l_plus",
       "source_l_plus_id": "SRC-111",
-      "commentaire_annexe": "Vérifié dans l'avis des ACVM / OSC du 8 octobre 2026 modifiant la Norme canadienne 31-103 (« This Instrument comes into force on October 1, 2028 », SRC-069).",
+      "commentaire_annexe": "Vérifié dans l'avis des ACVM / OSC du 8 octobre 2026 modifiant la Norme canadienne 31-103 (« This Instrument comes into force on October 1, 2028 », SRC-111).",
       "origin": "T7"
     },
     {
       "key": "2028-12-31-BSIF-B15-PORTEE3",
       "date": "Fin 2028",
       "nature": "Échéance prudentielle climatique (exercice financier 2028)",
-      "jurisdiction": "Canada fédéral",
+      "jurisdiction": "Canada (fédéral)",
       "label": "Exigences prudentielles de divulgation climatique du BSIF (ligne directrice B-15, annexe 2-2 : émissions absolues brutes de portée 3 incluant les émissions financées et assurées)",
       "chapters": [
         "ch18",
@@ -218,14 +218,14 @@
       ],
       "statut_preuve": "l_plus",
       "source_l_plus_id": "SRC-110",
-      "commentaire_annexe": "Vérifié à l'élément b) ii de l'annexe 2-2 de la ligne directrice B-15 du BSIF (SRC-067), fixant à l'exercice financier 2028 la divulgation Scope 3 (catégorie 15 financée et assurée) ; le volet AUM b) iii demeure marqué TBD.",
+      "commentaire_annexe": "Vérifié à l'élément b) ii de l'annexe 2-2 de la ligne directrice B-15 du BSIF (SRC-110), fixant à l'exercice financier 2028 la divulgation Scope 3 (catégorie 15 financée et assurée) ; le volet AUM b) iii demeure marqué TBD.",
       "origin": "T7"
     },
     {
       "key": "2033-06-30-LOIS-FINANCIERES-CANADA",
       "date": "2033-06-30",
       "nature": "Échéance législative statutaire",
-      "jurisdiction": "Canada fédéral",
+      "jurisdiction": "Canada (fédéral)",
       "label": "Clause statutaire de temporisation et de révision des lois fédérales régissant les institutions financières canadiennes (Loi sur les banques, art. 21)",
       "chapters": [
         "ch18",

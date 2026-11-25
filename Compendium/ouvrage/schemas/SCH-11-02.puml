@@ -33,7 +33,7 @@ package "Z1 — Contrôle d'écriture et signature HMAC (Letta / écrivain uniqu
   N1 --> N2
 }
 
-package "Z2 — Double ligne temporelle Graphiti (audit BSIF E-23 / §39.5)" {
+package "Z2 — Double ligne temporelle Graphiti (audit BSIF E-23 / Tome 1 § 39.5)" {
   database "Arêtes bi-temporelles\n(valid_from / valid_to + system_time)" as N3 <<det>>
   rectangle "② Supersession temporelle sans effacement\n(reconstitution exacte à toute date passée)" as N4 <<det>>
   N2 --> N3 : Ouvre arête datée

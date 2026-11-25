@@ -92,9 +92,9 @@ Toutes les formulations divergentes, sur-affirmées ou issues du corpus interne 
   - **Appui vérifié :** `Corpus/Tome 6` (`L4065`, `L4192`, `L4239–4258`).
   - **Passe initiale :** écart rectifié · **Action :** qualifié ces composants comme pile de référence du `Tome 6` (`sections 13.3–13.4`) · **Verdict : supporté**
 
-- **C30-16 (`L47–L49`, Figure 94)** — *Affirmation :* La Figure 94 (`SCH-30-01.svg`) articule les *Golden Paths* `IAP` (`Z1`), le `GitOps` cognitif sous `SLSA v1.2` et réémission `SPOF` (`Z2`), et l'encadrement des dix suites `SaaS` (`Z3`).
+- **C30-16 (`L47–L49`, Figure 94)** — *Affirmation :* La Figure 94 (`SCH-30-01.svg`) articule les `Golden Paths` `IAP` (`Z1`), le `GitOps` cognitif sous `SLSA v1.2` et réémission `SPOF` (`Z2`), et l'encadrement des dix suites `SaaS` (`Z3`).
   - **Appui vérifié :** `specs/manifest.json` (`ch30`, `SCH-30-01`), `schemas/SCH-30-01.puml`, `schemas/rendus/SCH-30-01.svg`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** conforme · **Action :** révision `REV-04` : correction des italiques imbriqués (`*Golden Paths*` → `` `Golden Paths` ``, `PRD-L4-011`) · **Verdict : supporté**
 
 - **C30-17 (`L51–L54`)** — *Affirmation :* Les trois invariants exécutables du Chapitre 30 fixent le maintien du noyau possédé + quintette `GitOps` (`C33`, `C35`, `C36`), le rejet bloquant `ARB` par défaut sauf dérogation formelle documentée (`EXIG-ORC-29`, `AP-01` à `AP-12`, `Tableau 44.2`) et le séquencement `AAGMM` à trois portes (`J90`, `J180`, `J360`).
   - **Appui vérifié :** `registre/matrice-exig-prr-c40.json` (`C33`, `C35`, `C36`, `EXIG-ORC-29`), `Corpus/Tome 2` (`L3288–3292`), `Corpus/Tome 6` (`§ 13`, `§ 15`).
@@ -146,9 +146,9 @@ Toutes les formulations divergentes, sur-affirmées ou issues du corpus interne 
   - **Appui vérifié :** `Corpus/Tome 6` (`Tableau 15.4`, `L4877–4885`), `SRC-087.txt` (`[3]`), `SRC-088.txt` (`[4]`), `recherche/registre-statut-f.json` (`L216–224`).
   - **Passe initiale :** écart rectifié · **Action :** ajouté la mention `statut F` en cellule `M5` et en légende du `Tableau 30.3` · **Verdict : supporté**
 
-- **C30-27 (`L114–L126`, Figure 96)** — *Affirmation :* Feuille de route prescriptive (`Tome 6 § 15.4.2`) en trois horizons (`J0–J90` `ARB 1` `M1 → M2`, `J90–J180` `ARB 2` `M2 → M3` incluant la sortie *Strangler Fig* du `RPA` en quatre stades, `J180–J360` `ARB 3` `M3 → M4/M5`) illustrée par `SCH-30-03.svg` (mentionnant les `750` simulations d'Acharya).
-  - **Appui vérifié :** `Corpus/Tome 6` (`L4795–4802`, `L4887–4927`), `specs/manifest.json` (`ch30`, `SCH-30-03`), `schemas/SCH-30-03.svg`.
-  - **Passe initiale :** écart rectifié · **Action :** qualifié la feuille de route de prescriptive (`Tome 6 § 15.4.2`) et rattaché la légende de la `Figure 96` aux `750` simulations rapportées par Acharya · **Verdict : supporté**
+- **C30-27 (`L114–L128`, Figure 96)** — *Affirmation :* Feuille de route prescriptive (`Tome 6 § 15.4.2`) en trois horizons (`J0–J90` `ARB 1` `M1 → M2`, `J90–J180` `ARB 2` `M2 → M3` incluant la sortie `Strangler Fig` du `RPA` en quatre stades, `J180–J360` `ARB 3` `M3 → M4/M5`) illustrée par `SCH-30-03.svg` (mentionnant les `750` simulations d'Acharya).
+  - **Appui vérifié :** `Corpus/Tome 6` (`L4795–4802`, `L4887–4927`), `specs/manifest.json` (`ch30`, `SCH-30-03`), `schemas/SCH-30-03.svg`, `registre/matrice-exig-prr-c40.json` (`POR-016`, `ADR-009`, `DEC-001`).
+  - **Passe initiale :** écart rectifié · **Action :** qualifié la feuille de route de prescriptive (`Tome 6 § 15.4.2`) et rattaché la légende de la `Figure 96` aux `750` simulations rapportées par Acharya ; révision `REV-04` : correction des italiques imbriqués (`*Strangler Fig*` → `` `Strangler Fig` ``, `PRD-L4-011`) et ajout des renvois `POR-016`, `ADR-009` et `DEC-001` aux `Tableaux 30.2` et `30.3` (`PRD-L4-025`) · **Verdict : supporté**
 
 - **C30-28 (`L128`)** — *Affirmation :* Clôture de la Partie X (`D10`) articulant les profils sectoriels, les trois blueprints de référence et l'usine `IAP` encadrée vers la Partie XI (`D11`, `DAPP`, `AE ↔ AS`, capital humain).
   - **Appui vérifié :** `specs/manifest.json` (`ch28`, `ch29`, `ch30`, `ch31–ch33`).

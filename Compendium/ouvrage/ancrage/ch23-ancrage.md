@@ -159,3 +159,7 @@ Toutes les formulations divergentes, sur-affirmées ou insuffisamment attribuée
 - **C23-32 (`L161–L165`)** — *Affirmation :* Trois invariants exécutables du Chapitre 23 récapitulant (1) herméticité `E1–E2` et `pass^k`, (2) borne unilatérale de Wilson (`300` → `0,8938 % < 1 %`) et suite métamorphique `FR`/`EN` (`G0-EX-CH04-02`), et (3) juges hétérogènes asynchrones (p. ex. `κ ≥ 0,6`), rétrogradation `SLO` à `3` mois et recette cible `DSPy` → `Multi-LoRA`.
   - **Appui vérifié :** `Chapitre 23.md` (`L11–L157`), `aq/rapports-g0.json`, `evalops_prr/`, `Corpus/Tome 2` (`EXIG-EVA-01..06`), `Corpus/Tome 3` (`ADR-031`).
   - **Passe initiale :** écart rectifié · **Action :** qualifié l'exemple contractuel `(p. ex. κ ≥ 0,6)` et la `recette cible DSPy → Multi-LoRA` dans l'invariant 3 · **Verdict : supporté**
+
+- **C23-33 (`REV-04`, `PRD-L3-011/012/013`, `PRD-L4-002`)** — *Affirmation :* Nettoyage des `5` échappements `\$` dans backticks (`40 000 $ US`, `0,90 $ CA`, `0,50 $ CA`), uniformisation `Figure 73`..`Figure 75`, et corrections de schémas `SCH-23-01.puml` (`k ≥ 3 ; k ≥ 5 critique`), `SCH-23-02.svg` (`Pare les biais de position et longueur`) et `SCH-23-03.puml` (distinction seuil volume `V_min`, porte `pass^5 ≥ 99 %` / écart `≤ 1 %` et sentinelle ombre `2 %` / alerte `> 1,5 pt`).
+  - **Appui vérifié :** `Corpus/Tome 3` (`ADR-031`, `Extrait 47.10`), `schemas/SCH-23-01.puml`, `schemas/SCH-23-02.svg`, `schemas/SCH-23-03.puml`.
+  - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**

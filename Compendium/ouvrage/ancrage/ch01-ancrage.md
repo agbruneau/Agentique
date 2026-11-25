@@ -179,3 +179,17 @@
 - **C01-38 (L143–L145)** — *Affirmation :* Cinq livrables concrets matérialisent le chapitre avant exploitation réelle (fiche `SoA` + matrice des `5` archétypes, spécification `PEAS`/`POMDP`, banc `LLM-Modulo`, dossier probatoire `6` niveaux / `PRISMA-ScR`, tableau de bord soutien vs production), en prélude à l'étude de la dégradation en série au Chapitre 02.
   - **Appui vérifié :** Prescriptions opérationnelles du traité et transition vérifiée vers `ch02`.
   - **Verdict : supporté**
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+- **C01-REV-01 (`§ 1.1.3`, `§ 1.1.4`, `SCH-01-02.svg`, `PRD-L1-004`, `PRD-L1-012`)** — *Affirmation :* Raccord explicite entre la base fermée `L+` du chapitre (`MAP`, Statistique Canada, Banque du Canada, Deloitte, OWASP) et les repères de veille du corpus affichés dans `SCH-01-02.svg` (`McKinsey 40 %`, `MIT NANDA 95 %`, `CyberArk 82:1`, `AIE 415 → 945 TWh`, cas `Nubank KDD 2026` sur `5` agents `ReAct` sans `MCP`/`A2A`), et mention des jalons conceptuels `Bhardwaj (2026)`, `Singh (1998)` et `Yolum & Singh (2002)`.
+  - **Appui vérifié :** `Compendium/prd.md` (`L441`, `L445`, `L453`, `L466`), `schemas/SCH-01-02.svg`, `SRC-027` (`[1]`), `SRC-011` (`[5]`), `SRC-055` (`[9]`).
+  - **Verdict : supporté**
+
+- **C01-REV-02 (`§ 1.2.1`, `Tableau 1.2`, `§ 1.2.2`, `SCH-01-03.puml`, `PRD-L1-004`, `PRD-L1-012`, `PRD-L1-015`)** — *Affirmation :* Ajout de `Graph of Thoughts`, `LATS`, `DeepSeek-R1`, `PRM` par rapport à `ORM`, alignement délibératif et `arXiv:2507.11473` (veille corpus), complétion du *Tableau 1.2* (`Nubank`, `ServiceNow`, `SEC 0,758`, `ITBench 10–25 %`, `ORCA-bench`, `Eurostat 2025`, `MCN 432`), retrait de `vs` (`L104`), et explicitation du raccord `PRISMA-ScR W3.2` (`582 → 453 → 223 → 160`, `AACODS 9,97/12`, `κ = 0,7935`) vers la base fermée `L+` (`135` textes `SHA-256`, `AACODS 11,13/12`, `27` exclusions `F`) alignée sur `SCH-01-03.puml`.
+  - **Appui vérifié :** `Compendium/prd.md` (`L466`, `L470`, `L474`), `schemas/SCH-01-03.puml`, `recherche/manifeste-sources-sha256.json`.
+  - **Verdict : supporté**
+
+- **Contrôle `REV-04` :** `4 606` mots (`verifie_manuscrit.py`) / `4 845` mots (`parser_plan.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch01 --strict` = `exit 0`, **100,0 % supporté**.

@@ -24,7 +24,7 @@
 - **Organisme / Revue :** OSFI Technology Risk Bulletin
 - **Identifiant :** `OSFI-BULLETIN-AGENTIC-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-066.txt`, score AACODS `12.0/12`)
-- **URL d'origine :** http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
+- **URL d'origine :** https://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
 - **Empreinte SHA-256 (LF) :** `5a1b1a2e004b17fdfdbef1e2da35981654e689878fe0727cf26d9aba27e00f2b` (`14425` octets, `1971` mots)
 - **Synthèse factuelle vérifiée :** Bulletin du BSIF (juillet 2026) sur l'IA générative et agentique recommandant explicitement l'implémentation de garde-fous techniques (AI harnessing) et d'une gouvernance de bout en bout.
 

@@ -46,10 +46,10 @@
   </g>
   <g id="node-5" class="node" data-node="true">
     <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
-    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#0F2942">Socle OAuth 2.1 / BCP 240 / FAPI 2.0</text>
+    <text x="806.3" y="332" font-size="13" font-weight="bold" fill="#0F2942">OAuth 2.0 (BCP 240 / RFC 9700)</text>
     <line x1="806.3" y1="344" x2="1147.0" y2="344" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
     <text x="806.3" y="358" font-size="11.8" fill="#1E293B">Gestionnaire de secrets hors LLM</text>
-    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">PKCE, mTLS et DPoP obligatoires</text>
+    <text x="806.3" y="374" font-size="11.8" fill="#1E293B">PKCE, mTLS/DPoP et FAPI 2.0</text>
   </g>
 </g>
 <g id="zone-Z3" class="zone">
@@ -80,7 +80,7 @@
   <text x="609.0" y="627" font-size="11.5" fill="#334155">environnement.</text>
   <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Rattacher l'instance au double parrainage SIRH avec transfert ou suspension en</text>
   <text x="42.0" y="665" font-size="11.5" fill="#334155">moins de 72 h.</text>
-  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Évaluer l'architecture au crible Q-A..Q-E sur le socle OAuth 2.1 / BCP 240 (PKCE,</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Évaluer l'architecture au crible Q-A..Q-E sur OAuth 2.0 / RFC 9700 (PKCE,</text>
   <text x="609.0" y="665" font-size="11.5" fill="#334155">mTLS/DPoP, FAPI 2.0).</text>
 </g>
 <g id="legend-box">

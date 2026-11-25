@@ -197,3 +197,12 @@
 - **Base fermée citée (`CA-09`, `CA-10`, `CA-11`) :** `8 / 8` sources (`[1]`–`[8]`) citées, `0` référence orpheline, `2` exclusions `statut F` formelles consignées dans `ch06-sources.md` (`iso.org/standard/81230.html`, `genai.owasp.org` compensée par `SRC-055` `[8]`) et guides propriétaires `TOGAF 10 ADM` maintenus hors évidence ouverte sous `DISC-04`.
 - **Synchronisation et hygiène (`CA-02..CA-08`, `CA-22`) :** `0` symbole dollar non échappé, `0` collision `12-grammes`, `3` tableaux (`Tableau 6.1` à `Tableau 6.3`), `4` figures (`SCH-06-01` à `SCH-06-04`), vedette propriétaire du glossaire présente (`noyau de contrôle déterministe`), encodage UTF-8 sans BOM et fins de ligne `LF` strictes.
 - **Verdict final — supportés :** 51 / 51 (100,0 %)
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+- **C06-REV-01 (`L7`, `L17`, `L46`, `L70–L74`, `L107`, `L115`, `L152`, `L158`, `L164`, `L168`, `SCH-06-01.svg`, `SCH-06-02.puml`, `PRD-L1-003`, `008`, `011`, `015`, `016`, `021`)** — Retrait bloquant des backticks autour des `6` formules LaTeX inline (`S_ready < 50`, `c_sec < 60`, `\tau_{\min} = 60`, `\mathbb{I}(c_{\text{sec}} \ge 60)`), numérotation continue `Figure 20`–`Figure 23` (y compris renvoi `L70` vers `Figure 21`), phrase de pont sur l'emboîtement `LCIM` (`4`/`5`/`7` paliers), harmonisation `9` clauses de négociation Tome 3 consolidées en `10` clauses `EXIG-APP-07..16` (prose, légende `Figure 21` et `SCH-06-02.puml`), retrait des fuites (`SUB_D02_03`, `SRC-055`), retrait des backticks littéraux dans `SCH-06-01.svg` et remplacement de `vs` dans `SCH-06-02.puml`.
+  - *Preuve primaire :* `Compendium/prd.md` (`L1333`, `L1345`), `specs/manifest.json`, `schemas/SCH-06-01.svg`, `schemas/SCH-06-02.puml`.
+  - Verdict : supporté
+- **Contrôle `REV-04` :** `5 308` mots (`verifie_manuscrit.py`) / `5 640` mots (`parser_plan.py`) dans `[4 950, 5 810]`, `verifie_manuscrit.py --unit ch06 --strict` = `exit 0`, **100,0 % supporté**.

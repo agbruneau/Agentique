@@ -61,7 +61,7 @@
       <rect x="818" y="329" width="346" height="165" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
       <text x="830" y="353" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#4C1D95">Droit à l'effacement vérifiable</text>
       <text x="830" y="375" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Destruction de la clé DEK client</text>
-      <text x="830" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Rendent traces &amp; index illisibles</text>
+      <text x="830" y="394" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Rend traces &amp; index illisibles</text>
     </g>
   </g>
   <g id="flows-bar">

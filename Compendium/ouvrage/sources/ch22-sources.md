@@ -17,7 +17,7 @@
 - **Empreinte SHA-256 (LF) :** `1b2526202e8aef9b15819b89cd1c34eefd8d10be3dac7b05f714597c34d5549c` (`125111` octets, `13159` mots)
 - **Synthèse factuelle vérifiée :** Conventions sémantiques OpenTelemetry GenAI Agent & Framework Spans (gen-ai-agent-spans.md, statut Development) décrivant les spans create_agent, invoke_agent et execute_tool.
 
-### [2] SRC-089 — OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md)
+### [2] SRC-089 — OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md : 60 attributs = 50 Development + 10 Deprecated)
 
 - **Auteurs / Émetteur :** OpenTelemetry Semantic Conventions Maintainers
 - **Date de publication :** `2026-04-28`

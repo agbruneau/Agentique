@@ -69,15 +69,15 @@ package "Z2 : Poste-frontière obligé PEP" {
 }
 package "Z3 : Moteur déterministe PDP hors modèle" {
   rectangle "OPA / Rego v1 (G0 : 45/45)\ndefault allow := false (EXIG-SEC-06)" as OPA <<ok>>
-  rectangle "Cedar SMT (< 1,5 ms)\nforbid prioritaire & entiers 64 bits" as CEDAR <<ok>>
+  rectangle "Cedar SMT (< 1,5 ms · cible hors G0)\nforbid prioritaire & entiers 64 bits" as CEDAR <<ext>>
   rectangle "Runbooks bornés SRE R1–R3\nRefroidissement 30 min, 0 shell libre" as RUNBOOK <<det>>
   rectangle "Refus fermé journalisé\nChamp manquant ou shell libre" as DENY <<danger>>
 }
 LLM .[#B45309].> PEP : ① intention structurée MCP/A2A
 SRE_R0 .[#B45309].> PEP : ① demande runbook R1–R3
 PEP --> AUTHZ : ② transit mTLS obligé
-AUTHZ --> OPA : ③ évaluation déterministe
-AUTHZ --> CEDAR : ③ évaluation < 1,5 ms
+AUTHZ --> OPA : ③ évaluation déterministe (G0)
+AUTHZ --> CEDAR : ③ cible hors G0 (< 1,5 ms)
 OPA --> RUNBOOK : autorisé & borné
 CEDAR --> RUNBOOK : autorisé & borné
 OPA --> DENY : ④ refus par défaut
@@ -85,6 +85,6 @@ CEDAR --> DENY : ④ forbid / erreur
 legend bottom
   **Ambre probabiliste** : zone cognitive LLM et enquête R0 (propose sans jamais statuer sur ses droits)
   **Bleu acier PEP** : maillage Zero Trust mTLS et passerelle obligatoire agentgateway / AuthZEN
-  **Vert déterministe** : moteur OPA/Cedar fermé par défaut (default allow := false)
+  **Vert déterministe** : moteur OPA/Rego v1 scellé en G0 (default allow := false) · **Gris** : cible Cedar SMT hors G0
 end legend
 @enduml

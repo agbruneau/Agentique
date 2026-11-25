@@ -82,6 +82,7 @@
 - **URL d'origine :** https://hal.science/hal-05789314/document
 - **Empreinte SHA-256 (LF) :** `323acadcd6fb3ec9daedac54624e5710566a4f86d47cbcf297dce2f266eb9265` (`61710` octets, `8640` mots)
 - **Synthèse factuelle vérifiée :** Revue de littérature en libre accès sur HAL (hal-05789314, 9 oct. 2026) examinant l'influence de l'IA agentique sur l'évolution et l'atrophie potentielle des compétences des développeurs logiciels.
+- **Audit d'accès réseau (`2026-11-25`) :** Sondage direct filtré par défi Proof-of-Work Anubis sur HAL (non contourné selon `AO-01`). Texte intégral CC BY 4.0 (AIM 2026, Neuchâtel) archivé avant filtrage et vérifié par empreinte `SHA-256` locale (`323acadcd6fb3ec9daedac54624e5710566a4f86d47cbcf297dce2f266eb9265`) ; notice HAL canonique : `https://hal.science/hal-05789314v1`.
 
 ### [8] SRC-060 — Règlement (UE) 2024/1689 (EU AI Act)
 

@@ -71,7 +71,7 @@ package "Z2 : Quatre modules exécutables MIT (Python 3.12+ & OPA v1.22.4)" {
 package "Z3 : Barrière G0 (exit 0) et vecteurs tiers" {
   rectangle "4 suites officielles tierces\nRFC 8785, NIST ACVP, a2a-tck, OWASP SRC-055" as VEC <<ext>>
   rectangle "execute_g0.py → exit 0\n83 pytest, 45 OPA 100 %, 13 schémas, SPDX MIT" as G0 <<ok>>
-  rectangle "Scellé SHA-256 → G1–G5\nrapports-g0.json sans réseau" as G15 <<ok>>
+  rectangle "Scellé SHA-256 → G1–G5\nrapport G0 scellé sans réseau" as G15 <<ok>>
 }
 VEC --> G0 : ① brise biais circulaire
 M1 --> G0

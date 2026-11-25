@@ -47,7 +47,9 @@ N7 --> N4 : Rappel filtré non fiable
 N7 --> N5 : Lecture seule expirante
 N1 .[#D97706].> N2 : Écriture proposée
 N2 --> N4 : Schéma validé + HMAC
+N2 --> N5 : Schéma validé + HMAC
 N8 --> N4 : Purge planifiée
+N8 --> N5 : Purge planifiée
 N8 --> N6 : ④ Verrouillé hors prod. (PC4)
 
 legend bottom

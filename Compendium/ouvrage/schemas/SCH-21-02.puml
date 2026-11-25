@@ -67,7 +67,7 @@ package "Z1 : Souveraineté des clés HYOK (entreprise)" {
 package "Z2 : Enclave matérielle GPU/CPU partagée" {
   rectangle "Enclave CPU/GPU TEE\nIntel TDX / AMD SEV-SNP / NVIDIA CC\n(CAP-033 sous signal SIG-016)" as TEE <<det>>
   rectangle "Inférence confidentielle\nDonnées chiffrées en mémoire" as INF <<prob>>
-  rectangle "Risque physique DDR5\nLimite TEE.fail (< 1 000 USD)\nSecrets ultimes exclus" as FAIL <<danger>>
+  rectangle "Risque physique DDR5\nLimite TEE.fail (< 1 000 $ US)\nSecrets ultimes exclus" as FAIL <<danger>>
 }
 package "Z3 : Continuité cognitive bimodèle (POR-006)" {
   rectangle "Grappe souveraine de repli\nModèles à poids ouverts (CAP-031)" as DR <<ok>>
@@ -82,8 +82,8 @@ FAIL .[#B45309].> TEE : ③ menace sonde hôte
 GEO --> DR : ④ bascule souveraine
 TEST --> DR : valide trimestriellement
 legend bottom
-  **Or / Ardoise** : clés HYOK sous contrôle exclusif client et révocation instantanée
-  **Bleu / Rouge** : calcul confidentiel TEE avec vigilance physique DDR5 TEE.fail
+  **Bleu acier / Gris** : contrôle mandant, clés HYOK (RTT ≤ 35 ms) et enclaves TEE attestées
+  **Ambre / Rouge** : inférence en enclave et vigilance physique DDR5 TEE.fail (< 1 000 $ US)
   **Vert continuité** : grappe de secours bimodèle à poids ouverts exercée chaque trimestre
 end legend
 @enduml

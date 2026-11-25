@@ -60,6 +60,7 @@
 - **URL d'origine :** https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal
 - **Empreinte SHA-256 (LF) :** `647fbb09b0ec2399cfae5add020126b9b9b65b26dee84e381b204afcc21aa291` (`1876` octets, `295` mots)
 - **Synthèse factuelle vérifiée :** Communiqué officiel de la Commission européenne (21 octobre 2026) précisant la portée opérationnelle d'EN 18286:2026 et son intégration dans les systèmes QMS sectoriels existants.
+- **Portée probante :** Communiqué institutionnel bref de la Commission européenne (DG CNECT, `295` mots) complémentaire à la Décision d'exécution `(UE) 2026/2274` (`SRC-067`, `786` mots), qui porte l'autorité juridique exécutoire.
 
 ### [6] SRC-052 — Advancing a Coordinated Roadmap for the Transition to Post-Quantum Cryptography in the Financial Sector
 

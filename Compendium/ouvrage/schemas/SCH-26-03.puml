@@ -67,8 +67,8 @@ package "Z2 : Géorepérage des 6 substrats d'état (F-04..F-06)" {
   database "6 substrats verrouillés\nTemporal, CoALA, KV-cache,\ncourtiers, OTel, journaux fournisseur" as SUB6 <<det>>
 }
 package "Z3 : Boucliers matériels C2 (HYOK) et C3 (GPU TEE)" {
-  rectangle "Classe C2 : HYOK HMAC-FPE\nPseudonymisation réversible sous\nHSM détenu par l'entreprise" as HYOK <<det>>
-  rectangle "Classe C3 : CPU/GPU TEE\nEnclave attestée SEV-SNP / TDX / H100\nDéchiffrement si mesure PCR conforme" as TEE <<ok>>
+  rectangle "Classe C2 : HYOK HMAC-FPE (RTT ≤ 35 ms)\nPseudonymisation fail-closed sous\nHSM détenu par l'entreprise" as HYOK <<det>>
+  rectangle "Classe C3 : CPU/GPU TEE (limite TEE.fail)\nEnclave attestée SEV-SNP / TDX / H100\nDéchiffrement si mesure PCR conforme" as TEE <<ok>>
   rectangle "Bascule Cognitive DR\nGrappe souveraine poids ouverts" as DR <<ok>>
 }
 SEAL --> SUB6 : ① classe C1/C2/C3 & géorepère

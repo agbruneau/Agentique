@@ -6,7 +6,7 @@
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Parcours séquentiel illustré</text>
 <text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
 <text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">`AMBIGU_ESCALADE`</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">AMBIGU_ESCALADE</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#1B4F72"/>
@@ -20,7 +20,7 @@
   </g>
   <g id="node-2" class="node" data-node="true">
     <rect x="418.7" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
-    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">2. 2_input_schema</text>
+    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">2. 2_input</text>
     <line x1="429.7" y1="194" x2="770.3" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
     <text x="429.7" y="208" font-size="11.8" fill="#1E293B">Validation _INPUT_SCHEMA stricte</text>
     <text x="429.7" y="224" font-size="11.8" fill="#1E293B">Sortie VALIDATION_FAILED précoce</text>

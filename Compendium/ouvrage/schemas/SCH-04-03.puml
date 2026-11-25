@@ -27,7 +27,7 @@ skinparam padding 7
 top to bottom direction
 title Usine logicielle (AST/SCIP), muraille Oracle–Bâtisseur et bascule Shadow Mirroring
 
-package "Z1 — Séparation des devoirs SPIFFE : Spécificateur vs Bâtisseur" {
+package "Z1 — Séparation des devoirs SPIFFE : Spécificateur face au Bâtisseur" {
   rectangle "Parseur AST/SCIP & ANTLR/Tree-sitter\n(DB2 / RPG / COBOL)" as N1 <<indigo>>
   rectangle "Agent Spécificateur (SPIFFE)\nRédige specs + oracle Golden Master / Z3 (10k–100k)" as N2 <<indigo>>
   rectangle "Agent Bâtisseur confiné (sans réseau)\nCode en Rust/Go/Java · Decimal exact (zéro specs/tests)" as N3 <<det>>

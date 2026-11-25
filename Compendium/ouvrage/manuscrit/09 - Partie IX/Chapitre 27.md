@@ -16,7 +16,7 @@ Troisièmement, la responsabilité juridique des engagements pris par un agent d
 
 ## 27.2 Évaluation éliminatoire, clauses de réversibilité et responsabilité B2B
 
-### 27.2.1 Banc d'essai technique et grille d'évaluation des fournisseurs
+### 27.2.1 Banc d'essai éliminatoire, grille Tableau 54 et clauses contractuelles EXIG-APP-07 à EXIG-APP-16
 
 L'acquisition d'une plateforme d'agents, d'un service d'inférence, d'une passerelle ou d'un serveur `MCP` s'ouvre obligatoirement par une analyse de réversibilité validée par l'architecture d'entreprise (`EXIG-APP-01`), recensant composants propriétaires, formats de restitution, délais et coûts de sortie, en appui aux plans de sortie [2]. Parallèlement, `EXIG-APP-02` proscrit toute dépendance à une extension propriétaire absente du catalogue : une extension admise porte un `URI` versionné, dispose d'un repli documenté et ne peut être déclarée obligatoire (`required`) sans dérogation. Ces deux gardes répondent aux cinq foyers du repérage (*Tome 2*, Tableau 53). Ils couvrent extensions obligatoires (`A2A`/`MCP`), prise en charge partielle (outils seuls sans ressources ni état), limites de sous-agents, captation d'identité en console unique et facturation par crédits avec coupure au-delà du quota.
 
@@ -44,9 +44,7 @@ L'ensemble de ces essais alimente la grille pondérée du **Tableau 54** (`EXIG-
 
 ![Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54, MCP, A2A a2a-tck et export FOCUS 1.4+)](../../schemas/rendus/SCH-27-01.png)
 
-*Figure 1 — SCH-27-01 : Arbre de qualification éliminatoire des fournisseurs en trois sas, excluant d'office les promesses déclaratives (EXIG-APP-04) et les refus de clauses DOIT avant l'exécution du banc d'essai (MCP, a2a-tck, P50/P99 sous politiques, OTLP, FOCUS 1.4+) et le classement pondéré du Tableau 54.*
-
-### 27.2.2 Clauses contractuelles EXIG-APP-07 à EXIG-APP-16 et réversibilité infonuagique
+*Figure 85 — SCH-27-01 : Arbre de qualification éliminatoire des fournisseurs en trois sas, excluant d'office les promesses déclaratives (EXIG-APP-04) et les refus de clauses DOIT avant l'exécution du banc d'essai (MCP, a2a-tck, P50/P99 sous politiques, OTLP, FOCUS 1.4+) et le classement pondéré du Tableau 54.*
 
 Une fois le candidat qualifié en banc d'essai, le contrat d'acquisition ou de renouvellement incorpore obligatoirement **dix clauses normatives non dérogeables** du cadre (`EXIG-APP-07` à `EXIG-APP-16`), appuyées sur les assises légales et prudentielles applicables [1, 2, 4] et complétées par l'interdiction absolue de toute stipulation contraire à `EXIG-GOV-17`. Une dérogation exceptionnelle à un délai interne ou à un critère technique (écart contractuel approuvé par le comité pour la durée du contrat) reste strictement interdite sur les engagements reprenant des obligations légales impératives (articles 17 et 18.3 de la Loi 25 [1], ou points `EXIG-GOV-17` prohibant par exemple les actions `P3` sans approbation). Ces dix clauses forment le bouclier opérationnel de l'organisation :
 
@@ -75,9 +73,9 @@ Sur le plan stratégique, ces dix clauses luttent contre la concentration sur le
 
 ![Bouclier d'approvisionnement réversible : les 10 clauses minimales EXIG-APP-07..16 et le droit de sortie annuel POR-016](../../schemas/rendus/SCH-27-02.svg)
 
-*Figure 2 — SCH-27-02 : Comparatif Avant / Après opposant un contrat infonuagique captif au bouclier des dix clauses non dérogeables EXIG-APP-07..16 (deux piliers juridiques et techniques) et à l'exercice annuel de sortie POR-016.*
+*Figure 86 — SCH-27-02 : Comparatif Avant / Après opposant un contrat infonuagique captif au bouclier des dix clauses non dérogeables EXIG-APP-07..16 (deux piliers juridiques et techniques) et à l'exercice annuel de sortie POR-016.*
 
-### 27.2.3 Mandat apparent, contrats B2B autonomes et prévention des risques juridiques
+### 27.2.2 Mandat apparent, contrats B2B autonomes et prévention des risques juridiques
 
 Au-delà de la relation entre l'entreprise et son fournisseur d'IA, l'autonomie croissante des agents interagissant directement avec des clients ou des contreparties commerciales expose l'organisation à un risque de responsabilité civile et contractuelle majeur. Aucun système d'IA ou agent logiciel ne possède la personnalité juridique : il ne peut être ni partie à un contrat ni titulaire d'une faute autonome susceptible d'exonérer son exploitant, comme le relève le repérage doctrinal du traité (*Tome 3*, § 36.1, hors socle `L+` fermé de ce chapitre). Selon ce même repérage, l'article `1714.46` du Code civil de Californie (issu d'`AB-316`, en vigueur le 1er janvier 2026 d'après suivi législatif, texte reproduit hors portail officiel inaccessible) prive tout défendeur ayant développé, modifié ou utilisé une IA du moyen de défense tiré d'une causation autonome de la machine.
 
@@ -96,7 +94,7 @@ Quatre garde-fous juridiques et architecturaux s'imposent dès lors pour maîtri
 
 ![Écart du mandat apparent B2B : responsabilité (Moffatt c. Air Canada, AB-316), contrats LCCJTI/LUCE et anti-collusion](../../schemas/rendus/SCH-27-03.svg)
 
-*Figure 3 — SCH-27-03 : Représentation de l'écart juridique entre autorité réelle configurée et autorité apparente perçue par les tiers (risque Moffatt c. Air Canada et AB-316), et des quatre garde-fous B2B (avenants LCCJTI/LUCE, mandats AP2 plafonnés, anti-collusion PRR G-14 et audit des exclusions d'assurance).*
+*Figure 87 — SCH-27-03 : Représentation de l'écart juridique entre autorité réelle configurée et autorité apparente perçue par les tiers (risque Moffatt c. Air Canada et AB-316), et des quatre garde-fous B2B (avenants LCCJTI/LUCE, mandats AP2 plafonnés, anti-collusion PRR G-14 et audit des exclusions d'assurance).*
 
 ## 27.3 Synthèse architecturale, livrables et portes de contrôle
 

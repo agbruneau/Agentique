@@ -61,7 +61,7 @@
     <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Réversibilité &amp; standards ouverts</text>
     <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
     <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Plafond N2 sans JCS · arrêt trimestriel</text>
-    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Préavis sortie 12 mois · AAIF/WIMSE/CAISI</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Préavis ≥ 90 j · sortie 6 mois · dépréc. 12 mois</text>
   </g>
 </g>
 <g id="flows-box">

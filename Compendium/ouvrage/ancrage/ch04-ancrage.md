@@ -82,3 +82,14 @@ Toutes les formulations inexactes ou ambiguës relevées à la passe initiale on
 | `C04-51` | L182–183 (Tableau 4.3) | Exigences `EXIG-D02-01.5` et `EXIG-D02-01.6` : pont `Tome 1 § 29.4.1` / `Tome 1 Tableau 29.1` (`9` contraintes `E-23` [6], Loi 25 [7], `ACVM 11-348` `ANC-121`, `CH-25`) et cible `Shadow Mirroring` `0,00 \$` sur `≥ 100 000` tx (`ADR-029`, `CAP-052`, `F-11`, `F-12`) | `SRC-065.txt`, `SRC-063.txt`, `ancres-chronologiques.json` (`ANC-121`), `matrice-exig-prr-c40.json` | À rectifier (écart corrigé) | Verdict : supporté |
 | `C04-52` | L187 (`§ 4.3`) | Interfaces amont : cible `pass^5 ≥ 95 %` (`ADR-022`, `PRR F-15`) contre cascades (`CH-02`), arbitrage mono-agent vs surcoût `15×` du multi-agent (`CH-02`), dette (`CH-03`), facture `CPO` (`CH-24`) | `Chapitre 02.md` (`§ 2.1.3` `~15×`), `matrice-exig-prr-c40.json` (`F-15`), `CH-03`, `CH-24` | À rectifier (écart corrigé) | Verdict : supporté |
 | `C04-53` | L189–191 (`§ 4.3`) | Interfaces aval/transversales (`CH-05`, `CH-09`, `CH-11`, `CH-12`, `CH-13`, `CH-15`, `CH-21`, `CH-25`, `CH-30`, `CH-32`, `CH-36`) et distinction nette entre artefacts vérifiés `G0` repris au `CH-35` (`pipeline.py`, `validate_strict_schema`, `harness_extraction.schema.json`, `test_harness_proto.py` `14/14`) et gabarits de conception | `aq/rapports-g0.json` (`test_harness_proto.py: 14`), `manifest.json` (`ch35`) | À rectifier (écart corrigé) | Verdict : supporté |
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+| ID | Localisation | Clause révisée (`REV-04`) | Source vérifiée | Statut | Verdict |
+|---|---|---|---|---|---|
+| `C04-REV-01` | L7, L17, L29–L37, L81, L95, L166, L183 | Retrait des `6` échappements `\$` dans backticks (`PRD-L1-009`), ajout de `Plan-and-Solve` et `Self-Refine` (`PRD-L1-021`), suppression des fuites internes `SUB_D02_01`, `aq/rapports-g0.json` et `registre/ancres-chronologiques.json` (`PRD-L1-016`) | `Compendium/prd.md` (`L968`), `SRC-034`/`[3]` (`arXiv:2305.18323`), `SRC-063`/`[7]`, `aq/rapports-g0.json` | Rectifiée | Verdict : supporté |
+| `C04-REV-02` | L87, L154, L170, `SCH-04-01.svg`, `SCH-04-03.puml` | Numérotation continue `Figure 14`–`Figure 16` (`PRD-L1-008`), retrait des backticks littéraux et correction `2_input_schema` → `2_input` dans `SCH-04-01.svg` (`PRD-L1-011`), remplacement de `vs` dans `SCH-04-03.puml` (`PRD-L1-015`) ; blocs `CA-G0-SYNC` strictement intacts | `specs/manifest.json`, `harness_proto/pipeline.py`, `schemas/SCH-04-01.svg`, `schemas/SCH-04-03.puml` | Rectifiée | Verdict : supporté |
+
+- **Contrôle `REV-04` :** `4 443` mots (`verifie_manuscrit.py`) / `4 658` mots (`parser_plan.py`) dans `[4 076, 4 784]`, `verifie_manuscrit.py --unit ch04 --strict` = `exit 0`, **100,0 % supporté**.

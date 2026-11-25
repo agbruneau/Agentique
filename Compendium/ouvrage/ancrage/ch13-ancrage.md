@@ -44,9 +44,9 @@ Toutes les formulations divergentes ou issues de sources non archivées en `L+` 
 
 ### Section 13.2.1 — Arbre `OO1–OO4`, encapsulation hybride et paradigme `APM` (`L17–L52`, Tableau 13.1, Figure 1)
 
-- **C13-05 (`L17`)** — *Affirmation :* L'arbre `OO1–OO4` ordonne le choix selon la détention explicite du processus et le commandement de la transition (`N0`/`OO1` déterministe jusqu'à `OO4`), et `EXIG-ORC-01` exige une justification écrite préalable de l'insuffisance des paliers inférieurs.
-  - **Appui vérifié :** `Corpus/Tome 1` (`L5171–5203`), `Corpus/Tome 2` (`L2759–2765`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+- **C13-05 (`L19`)** — *Affirmation :* Dissociation doctrinale (`REV-04`, `PRD-L2-001`) entre l'arbre de sobriété en quatre paliers (`EXIG-ORC-01`: `N0`/code déterministe `DMN` → flux structuré fixe → agent unique outillé `≤ 15` outils → collectif multi-agents) et la grille d'autorité de commandement `OO1–OO4` (`Tome 1 § 22.1`, Tableau 13.1 : `OO1`/`OO2` pilotés par l'agent vs `OO3`/`OO4` pilotés par le moteur déterministe) ; `EXIG-ORC-01` exige une justification écrite préalable de l'insuffisance des paliers inférieurs.
+  - **Appui vérifié :** `Corpus/Tome 1` (`L5171–5203`), `Corpus/Tome 2` (`L2759–2765`), `schemas/SCH-13-01.svg`.
+  - **Passe initiale :** rectifié (`REV-04`) · **Action :** levé la contradiction `OO1–OO4` dans le texte (`L19`, `L134`) et dans `SCH-13-01.svg` · **Verdict : supporté**
 
 - **C13-06 (`L19`)** — *Affirmation :* Kim et coll. `[1]` montrent sur `260` configurations contrôlées (6 bancs, 5 architectures, 3 familles) des gains jusqu'à `+80,8 %` en raisonnement financier décomposable contre une chute jusqu'à `−70,0 %` en planification séquentielle.
   - **Appui vérifié :** `SRC-003.txt` (`L10–12`, `L18–19`, `L668–676`).
@@ -88,13 +88,13 @@ Toutes les formulations divergentes ou issues de sources non archivées en `L+` 
   - **Appui vérifié :** `Corpus/Tome 1` (`Tableau 22.1`, `L5197–5202`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C13-16 (`L42–L44`, Figure 1)** — *Affirmation :* La Figure 1 (`SCH-13-01.svg`) illustre l'arbre `OO1–OO4`, la bascule `OO2 → OO3` et les capsules `BPMN`, `CMMN`, `Routine` et `APM`.
+- **C13-16 (`L44–L46`, Figure 43)** — *Affirmation :* La Figure 43 (`SCH-13-01.svg`, refondue en `REV-04`) dissocie l'arbre de sobriété (`N0` → multi-agents) de la grille d'autorité `OO1–OO4`, illustre la bascule `OO2 → OO3`, aligne le surcoût sur `1,6×–6,2×` (`10×–45×` en débat), qualifie `Tome 1 § 22.10` et situe les capsules `BPMN`, `CMMN`, `Routine` et `APM`.
   - **Appui vérifié :** `specs/manifest.json` (`ch13`, `SCH-13-01`), `schemas/SCH-13-01.svg`, `schemas/rendus/SCH-13-01.svg`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** rectifié (`REV-04`) · **Action :** aligné `SCH-13-01.svg` (`PRD-L2-001`, `PRD-L2-008`, `PRD-L2-018`) et numérotation `Figure 43`–`Figure 45` · **Verdict : supporté**
 
-- **C13-17 (`L46`)** — *Affirmation :* Quatre patrons d'encapsulation hybride retenus dans l'ingénierie des processus du traité (`Tome 3 § 17.2–17.4`) confinent le raisonnement stochastique : sous-processus ad hoc `BPMN 2.0` borné, activité typée `JSON Schema Draft 2020-12` `[9]`, `CMMN`/`DMN`, et planification structurée avec contrôles aval et exposition en outil `MCP`.
-  - **Appui vérifié :** `Corpus/Tome 3` (`L9085–9230`), `SRC-021.txt` (`[9]`).
-  - **Passe initiale :** écart rectifié · **Action :** retiré les références et chiffres non archivés en `L+` (`Camunda 8.11`/`fromAi`/`10` invocations, `UiPath Maestro`, `41,1 %` à `96,3 %`) et réancré sur les quatre mécanismes structurels · **Verdict : supporté**
+- **C13-17 (`L48`)** — *Affirmation :* Quatre patrons d'encapsulation hybride retenus dans l'ingénierie des processus du traité (`Tome 3 § 17.2–17.4`) confinent le raisonnement stochastique : sous-processus ad hoc `BPMN 2.0` (`Camunda 8.11` `fromAi` plafonné à `10` appels en exemple d'index produit), activité typée (`UiPath Maestro`) sous `JSON Schema Draft 2020-12` `[9]`, `CMMN`/`DMN`, et planification structurée `Routine` (repérage interne `41,1 %` à `96,3 %` hors corpus probatoire primaire) avec contrôles aval et exposition en outil `MCP`.
+  - **Appui vérifié :** `Corpus/Tome 3` (`L9085–9230`), `prd.md` (`L2596`), `SRC-021.txt` (`[9]`).
+  - **Passe initiale :** rectifié (`G2` + `REV-04`) · **Action :** synchronisé les repères d'encapsulation avec `SCH-13-01.svg` en qualifiant explicitement leur statut d'index produit hors corpus probatoire primaire · **Verdict : supporté**
 
 - **C13-18 (`L48–L50`)** — *Affirmation :* Le paradigme `APM` (*Agentic Business Process Management*, `Tome 1 § 22.6–22.7`) distingue automatisation (séquence figée) et autonomie (décision déléguée dans des *frames*), ainsi que *frames* normatifs et opérationnels (exigeant une correspondance bijective en architecture).
   - **Appui vérifié :** `Corpus/Tome 1` (`L5298–5325`).
@@ -114,9 +114,9 @@ Toutes les formulations divergentes ou issues de sources non archivées en `L+` 
   - **Appui vérifié :** `Corpus/Tome 2` (`L2864–2878`, `L2970–2984`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C13-22 (`L60`)** — *Affirmation :* La variante débat réunit `≤ 3` participants sous un gestionnaire (`EXIG-ORC-06`), `EXIG-ORC-29` proscrit dix anti-patrons (Tableau 26 du `Tome 2`), et trois verrous complètent le dispositif (`Claim-Check`, `Goal Pinning`, gestion de l'opacité `A2A`).
-  - **Appui vérifié :** `Corpus/Tome 2` (`L2880–2887`, `L3273–3295`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+- **C13-22 (`L62`)** — *Affirmation :* La variante débat réunit `≤ 3` participants sous un gestionnaire (`EXIG-ORC-06`), `EXIG-ORC-29` proscrit dix anti-patrons (dont explicitement `AP-07` sur l'état mutable partagé et `AP-09` sur la dilution du contexte, `PRD-L2-017`), et trois verrous complètent le dispositif (`Claim-Check`, `Goal Pinning`, gestion de l'opacité `A2A`).
+  - **Appui vérifié :** `Corpus/Tome 2` (`L2880–2887`, `L3273–3295`), `Corpus/Tome 6` (`L4828`, `L4834`).
+  - **Passe initiale :** rectifié (`REV-04`) · **Action :** rattaché explicitement `AP-07` et `AP-09`, converti `O(n²)` en Unicode · **Verdict : supporté**
 
 - **C13-23 (`L62–L74`, Tableau 13.2)** — *Affirmation :* Le `Tableau 13.2` consolide les huit topologies homologuées et la variante débat d'`ADR-011` avec leurs bornes maximales (`xagentmaxhops = 4`, `≤ 2` sauts, `≤ 3` itérations, `≤ 15` outils, `≤ 3` participants).
   - **Appui vérifié :** `Corpus/Tome 2` (`Tableau 24`, `L2446`, `L7229`, `L2826–2838`), `Chapitre 14.md` (`L34`, `L103`).
@@ -126,9 +126,9 @@ Toutes les formulations divergentes ou issues de sources non archivées en `L+` 
   - **Appui vérifié :** `specs/manifest.json` (`ch13`, `SCH-13-02`), `schemas/SCH-13-02.svg`, `schemas/rendus/SCH-13-02.svg`.
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C13-25 (`L80`)** — *Affirmation :* La portabilité s'établit aux frontières `MCP` et `A2A` en raison de la pénalité de surcharge sur les workflows outillés (`β = −0,096`) `[1]`, de la fragmentation informationnelle des dialogues multi-agents `[2]` et du besoin de contrats stricts `[9]`.
-  - **Appui vérifié :** `SRC-003.txt` (`L149–150`), `SRC-031.txt` (`L12–22`), `SRC-021.txt` (`[9]`).
-  - **Passe initiale :** écart rectifié · **Action :** retiré les comptages de billets non archivés en `L+` (`409`, `5 669`, `24,7 %`) et réancré sur `[1, 2, 9]` · **Verdict : supporté**
+- **C13-25 (`L82`)** — *Affirmation :* La portabilité s'établit aux frontières `MCP` et `A2A` en raison de la pénalité de surcharge sur les flux outillés (`β = −0,096`) `[1]`, de la fragmentation informationnelle des dialogues multi-agents `[2]` et du besoin de contrats stricts `[9]`, tendance corroborée par l'étude SDK indexée au `Tome 3` (`409` puis `5 669` rapports, `24,7 %` liés à l'intégration modèle, qualifiée hors corpus probatoire primaire en concordance avec `SCH-13-02.svg`).
+  - **Appui vérifié :** `SRC-003.txt` (`L149–150`), `SRC-031.txt` (`L12–22`), `SRC-021.txt` (`[9]`), `prd.md` (`L2613`), `schemas/SCH-13-02.svg`.
+  - **Passe initiale :** rectifié (`G2` + `REV-04`) · **Action :** réconcilié `SCH-13-02.svg` (`24,7 %`) avec qualification de statut et remplacé `workflows` par `flux` · **Verdict : supporté**
 
 - **C13-26 (`L82`)** — *Affirmation :* L'exigence `EXIG-ORC-30` (`Tome 2 § 7.10`) soumet toute pile d'orchestration (exemples d'écosystème indexés au `Tome 2 § 7.10` : `LangGraph`, `Microsoft Agent Framework`, `Temporal`, `CrewAI`, `Google ADK`, `DSPy`, `Confluent`) à une preuve de concept couvrant neuf capacités techniques vérifiables.
   - **Appui vérifié :** `Corpus/Tome 2` (`Tableau 27`, `L3300–3322`).
@@ -162,9 +162,9 @@ Toutes les formulations divergentes ou issues de sources non archivées en `L+` 
   - **Appui vérifié :** `SRC-028.txt` (`L93–95`, `L524–573`), `Corpus/Tome 2` (`EXIG-ORC-05`, `EXIG-ORC-23`).
   - **Passe initiale :** écart rectifié · **Action :** retiré les parts `v2` absentes du corpus `L+` et aligné `FM-2` sur `32,3 %` · **Verdict : supporté**
 
-- **C13-34 (`L104–L106`, Figure 3)** — *Affirmation :* La Figure 3 (`SCH-13-03.svg`) cartographie les `14` modes `MAST v3` et `7` pannes frontalières face à l'enveloppe `EXIG-ORC-23..25` et à la scission `DMZ`/`TEE`.
-  - **Appui vérifié :** `specs/manifest.json` (`ch13`, `SCH-13-03`), `schemas/SCH-13-03.svg`, `schemas/rendus/SCH-13-03.svg`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+- **C13-34 (`L106–L108`, Figure 45)** — *Affirmation :* La Figure 45 (`SCH-13-03.svg`, corrigée en `REV-04` avec `FM-2 = 32,3 %`) cartographie les `14` modes `MAST v3` et `7` pannes frontalières (incluant `Replit #1152`) face à l'enveloppe `EXIG-ORC-23..25` et à la scission `DMZ`/`TEE`.
+  - **Appui vérifié :** `specs/manifest.json` (`ch13`, `SCH-13-03`), `schemas/SCH-13-03.puml`, `schemas/rendus/SCH-13-03.svg`, `SRC-028.txt`.
+  - **Passe initiale :** rectifié (`REV-04`) · **Action :** aligné `FM-2 = 32,3 %` dans `SCH-13-03.puml` et synchronisé `#1152` en prose (`L116`) · **Verdict : supporté**
 
 - **C13-35 (`L108`)** — *Affirmation :* Quatre familles de remèdes structurels complètent `MAST` `[4]`, et les interventions de Cemri et coll. montrent sur `ChatDev` (`GPT-4o`) un gain de `+9,4 %` par clarification des rôles et de `+15,6 %` par vérification de haut niveau sur *ProgramDev*, tandis que `MetaGPT` réduit de `60 %` à `68 %` les échecs `FM-1`/`FM-2` mais subit `1,56×` plus d'échecs `FM-3` `[4]`.
   - **Appui vérifié :** `SRC-028.txt` (`L137–141`, `L542–543`, `L586–587`, `L659–662`).

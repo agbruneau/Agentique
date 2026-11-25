@@ -52,6 +52,6 @@ package "Z3 — Domaine temps réel OT (10–30 ms) : Arbitre matériel Simplex 
 legend bottom
   **Bleu IT** : Plan entreprise asynchrone MCP/A2A et artefacts signés TUF/Sigstore
   **Or sécurité** : Sas de consignation humaine LOTO et filtrage en missions discrètes
-  **Rouge sûreté** : Arbitre déterministe Simplex ≤ 1 ms conforme IEC 61508 et ISO 10218-1
+  **Rouge sûreté** : Arbitre déterministe Simplex ≤ 1 ms préparatoire à IEC 61508 et ISO 10218-1
 end legend
 @enduml

@@ -27,7 +27,7 @@ skinparam padding 7
 top to bottom direction
 title Filtrage RBAC/ABAC pré-récupération (OpenFGA/RLS), modèles Silo/Bridge/Pool et évaluation RAG
 
-package "Z1 — Filtre d'habilitation pré-récupération (EXIG contre OWASP LLM08)" {
+package "Z1 — Filtre d'habilitation pré-récupération (EXIG-ARC-16 / EXIG-ARC-23 vs OWASP LLM08)" {
   rectangle "① Requête + jeton d'identité déléguée\ndu mandant effectif" as N1 <<det>>
   rectangle "Moteur OpenFGA / PostgreSQL RLS (ABAC)\nFiltre AVANT tout calcul de similarité" as N2 <<det>>
   rectangle "Anti-patron proscrit : post-filtrage tardif\n(risque de fuite vectorielle LLM08:2025)" as N3 <<red>>
@@ -49,6 +49,7 @@ package "Z3 — Ancrage vérifiable et évaluation RAG dissociée" {
   rectangle "④ Banc CI dissocié : Recall@K (recherche)\npar rapport à RAGAS / ARES / CRAG (génération)" as N8 <<det>>
   N4 --> N7
   N5 --> N7
+  N6 --> N7
   N7 --> N8
 }
 

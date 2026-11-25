@@ -6,7 +6,7 @@
 - **Date de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Passe G2 initiale (supportés)** : 17
 - **Rectifications et réancrages appliqués lors de la passe G2** : 20
-- **Verdict final — supportés** : 37 / 37 (100,0 %)
+- **Verdict final — supportés** : 38 / 38 (100,0 %)
 
 ---
 
@@ -66,3 +66,4 @@ Toutes les formulations perfectibles relevées à la passe initiale ont été di
 | `C17-35` | L166–L170 (`§ 17.3`) | Synthèse architecturale : consommations entrantes (Ch. 05, 08, 09, 10, 15, 16, 26), alimentations sortantes (Ch. 18, 19, 22, 30, 34) et frontières de non-redite `D06` `[4, 7, 10]` | `specs/manifest.json` (`ch17.owned_concepts`), `SRC-043.txt`, `SRC-013.txt`, `SRC-020.txt` | Supporté | Verdict : supporté |
 | `C17-36` | L172–L179 (Tableau 17.3) | Tableau 17.3 : quatre livrables d'ingénierie, exigences normatives (`EXIG-IAM-08..15`, `EXIG-MCP-11`, `EXIG-AUT-09/12..15`, `EXIG-SEC-25`, `CAP-002`, `CAP-036`, `PRR S-03..S-05`) et preuves exécutables `G0`–`G1` (`BSIF E-23` / `AMF` `statut F` via `AIBanks.ca` `[15]`) | `aq/rapports-g0.json`, `obo_dpop.py`, `ciba_approval.py`, `revocation_fsm.py`, `SRC-071.txt` (`[15]`), `matrice-exig-prr-c40.json` | Réancrée | Verdict : supporté |
 | `C17-37` | L181–L187 (Clôture & Trois invariants) | Clôture sur les trois modules Python `G0` et encadré des trois invariants exécutables (`OBO`/`RAR`/`DPoP`/`EXIG-IAM-15`, `CIBA`/`C.6`/`I-JSON`/`PEP`, `KYA`/`SSF`/`CAEP`/`REVOKED`) | `obo_dpop.py`, `ciba_approval.py`, `revocation_fsm.py`, `aq/rapports-g0.json`, `SRC-041.txt`–`SRC-020.txt` | Réancrée | Verdict : supporté |
+| `C17-38` | Révision `REV-04` (`PRD-L2-007`, `011`, `020`–`023`, `PRD-L4-002`, `REF-003`) | Uniformisation `Figure 55`..`Figure 57`, correction protocolaire `SCH-17-01.puml` (`PKCE S256`/`iss RFC 9207` sur frontal `RFC 9700`), synthèse veille délégation (`Tome 1 § 17.6.2` : `Macaroons`, `Biscuit`, `GNAP RFC 9635`, `RFC 7523`, `agentproto`, `dawn`, `ID-JAG` ; `arXiv:2605.30169`), intégration `ADR-005/012/015/018`, `EXIG-AUT-10/16`, `EXIG-ORC-04`, `PRR S-04/S-14/S-15`, transition `transaction-tokens-09 → -11`, encadré `Clause non-avis (AO-05)`, Unicode `O(1)`/`k`, francisation `anti-patron`, et cantonnement de `[15]` (`AIBanks.ca`, source secondaire) aux repères `BSIF E-23`/`AMF` (`statut F`) avec blocs `CA-G0-SYNC` intacts | `Compendium/prd.md`, `Corpus/Tome 1` (`§ 17.6.2`, `§ 18.4`), `schemas/SCH-17-01.puml`, `SRC-071.txt` (`[15]`), `SRC-013.txt` (`[7]`), `SRC-133.txt` (`[13]`) | Ajout `REV-04` | Verdict : supporté |

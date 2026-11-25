@@ -162,3 +162,7 @@ Toutes les formulations divergentes, sur-attribuées à une source `[k]` ou issu
 - **C22-33 (`L165`–`L169`, Trois invariants)** — *Affirmation :* Encadré final des trois invariants exécutables du Chapitre 22 (`OTel v1.41.0` + `4` clés `ca.entreprise.*`, double couloir `PII` `FR`/`EN` + purge `≤ 14` j + dossier `DEK` `art. 12.1`, et grand livre `C.8` `JCS` `RFC 8785` + `SCITT` `RFC 9943` + `SLH-DSA` `FIPS 205` `≤ 5` ans).
   - **Appui vérifié :** `verifie_manuscrit.py` (`CA-04` exit 0), `otel_pii_mapper.py`, `audit_scitt_focus.py`, `slh_dsa_fips205.py`, `SRC-077`, `SRC-044`, `SRC-018`, `SRC-063`.
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+
+- **C22-34 (`REV-04`, `PRD-L3-009/010`, `PRD-L4-002`)** — *Affirmation :* Intégration des repères secondaires PRD (`PRIN-06`, lacune flotte `F-96`, `FINOS AI Governance v2.0` et `watsonx.governance` qualifiés hors base `L+` du chapitre, `PRR R-07` sur `JCS`), correction `SCH-22-02.svg` (`Rend`) et `SCH-22-01.puml` (`60 ↔ 85 attr. gen_ai.*`, `horloge harnais`), nettoyage `\$` dans backticks (`10 M$ CA`, `15 000 $ CA`, `25 M$ CA`) et numérotation `Figure 70`..`Figure 72`.
+  - **Appui vérifié :** `Compendium/prd.md` (`L4134–4168`), `schemas/SCH-22-01.puml`, `schemas/SCH-22-02.svg`, `SRC-063.txt`, `SRC-077.txt`.
+  - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**

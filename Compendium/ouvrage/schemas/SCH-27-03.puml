@@ -67,8 +67,8 @@ package "Z1 : Absence de personnalité et écart réel ↔ apparent" {
   actor "Tiers / partenaire B2B\nCroit l'agent habilité" as TIERS <<ext>>
 }
 package "Z2 : Zone d'exposition B2B" {
-  rectangle "Contrats B2B (LCCJTI, LUCE, CNUDCI)\n& alignement tarifaire (anti-collusion)" as B2B <<prob>>
-  rectangle "Angles morts d'assurance\nExclusions IA Verisk/ISO (G-14)" as ASSUR <<danger>>
+  rectangle "Contrats B2B (LCCJTI, LUCE, CNUDCI)\n& alignement tarifaire (anti-collusion PRR G-14)" as B2B <<prob>>
+  rectangle "Angles morts d'assurance\nExclusions IA Verisk/ISO" as ASSUR <<danger>>
 }
 package "Z3 : Quatre garde-fous juridiques et architecturaux" {
   rectangle "Mandats AP2 plafonnés, divulgation\nnon-avis, avenants & Diplomate/Évaluateur" as GUARD <<ok>>

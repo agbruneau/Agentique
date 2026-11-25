@@ -63,7 +63,7 @@ package "Z1 : Étages E1 (CI) et E2 (Arène hermétique)" {
   rectangle "Déclencheur EXIG-GOV-12\nManifeste SemVer+Intent (0 latest)" as TRIG <<det>>
   rectangle "Étage E1 : Contrats CI\nSchémas MCP, Rego, fautes Saga" as E1 <<det>>
   rectangle "Étage E2 : Banc hermétique\nAgent évalué vs MockMcpServer\nChaos HTTP 429, 0 SoR réel" as E2 <<prob>>
-  rectangle "Constance pass^k (k ≥ 5)\n& Wilson 95 % < p (n ≥ 300 → 0,8938 %)" as WIL <<ok>>
+  rectangle "Constance pass^k (k ≥ 3 ; k ≥ 5 critique)\n& Wilson 95 % < p (n ≥ 300 → 0,8938 %)" as WIL <<ok>>
 }
 package "Z2 : Bancs publics et promotion canari" {
   rectangle "Distribution complète\nSWE-bench, τ-bench, TCK A2A\n& déploiement fantôme → canari" as CAN <<det>>

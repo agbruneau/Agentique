@@ -65,22 +65,23 @@ package "Z1 : Collecte qualifiée et sas Loi 25" {
 }
 package "Z2 : Compilation DSPy et affinage Multi-LoRA" {
   rectangle "Compilateur DSPy / MIPROv2\nSignatures typées optimisées" as DSPY <<det>>
-  rectangle "Affinage SFT + DPO Multi-LoRA\nSLM spécialisés 3B–8B par domaine" as LORA <<prob>>
+  rectangle "Affinage SFT + DPO Multi-LoRA\nSLM 3B–8B si volume ≥ seuil V_min" as LORA <<prob>>
 }
-package "Z3 : Porte pass^5 et sentinelle 2 %" {
-  rectangle "Banc scellé E2 : porte pass^5\n& sentinelle régression ≤ 2 % (V_min)" as GATE <<ok>>
-  rectangle "Palier 1 du routeur frugal\nPromotion SLM (10× plus sobre)" as PROD <<ok>>
-  rectangle "Rejet / maintien modèle maître\nÉchec parité ou fuite canari" as REJ <<danger>>
+package "Z3 : Porte pass^5 ≥ 99 % et sentinelle ombre 2 %" {
+  rectangle "Banc scellé E2 : porte pass^5 ≥ 99 %\nÉcart ≤ 1 % vs enseignant (zéro canari)" as GATE <<ok>>
+  rectangle "Palier 1 du routeur frugal\nSLM promu + sentinelle ombre 2 % trafic" as PROD <<ok>>
+  rectangle "Rejet / repli modèle maître\nÉchec pass^5, canari ou dérive > 1,5 pt" as REJ <<danger>>
 }
 COLL .[#B45309].> SAS : ① traces & corrections
 SAS --> DSPY : ② jeu assaini vérifié
-DSPY --> LORA : ③ signatures & poids
+DSPY --> LORA : ③ volume ≥ V_min
 LORA .[#B45309].> GATE : ④ examen probatoire
-GATE --> PROD : pass^5 & écart ≤ 2 %
-GATE --> REJ : dérive > 2 %
+GATE --> PROD : pass^5 ≥ 99 % (écart ≤ 1 %)
+GATE --> REJ : échec porte / canari
+PROD --> REJ : ombre 2 % : dérive > 1,5 pt
 legend bottom
   **Bleu collecte** : traces validées assainies Loi 25 et contrôlées par canaris Carlini
-  **Ambre distillation** : compilation DSPy/MIPROv2 et adaptateurs SLM Multi-LoRA (3B–8B)
-  **Vert qualification** : barrière pass^5 et sentinelle V_min à 2 % avant routage palier 1
+  **Ambre distillation** : compilation DSPy/MIPROv2 et adaptateurs SLM Multi-LoRA (volume ≥ V_min)
+  **Vert qualification** : porte E2 pass^5 ≥ 99 % (écart ≤ 1 %) et sentinelle ombre 2 % (alerte > 1,5 pt)
 end legend
 @enduml

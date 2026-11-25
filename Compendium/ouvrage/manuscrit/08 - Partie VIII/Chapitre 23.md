@@ -18,7 +18,7 @@ Quatrièmement, tout modèle utilisé comme juge (`LLM-as-a-Judge`) provient d'u
 
 ### 23.2.1 Bancs EvalOps hermétiques E1–E3, constance pass^k et bornes de Wilson
 
-L'évaluation d'un agent d'entreprise ne peut se réduire à un score de précision moyen lu sur un palmarès public. Dans leur étude *Holistic Agent Leaderboard* (`HAL`), Kapoor et ses collègues ont orchestré `21 730` essais sur neuf modèles, neuf bancs d'essai et divers échafaudages logiciels pour `2,5` milliards de jetons et environ `40 000 \$ US` [4]. Leurs mesures montrent que l'échafaudage — sélection d'outils, boucles de réessai et formatage du contexte — modifie conjointement l'exactitude et le coût : hausser l'effort de raisonnement donne une précision inférieure ou au mieux égale dans `21` combinaisons évaluées sur `36` [4].
+L'évaluation d'un agent d'entreprise ne peut se réduire à un score de précision moyen lu sur un palmarès public. Dans leur étude *Holistic Agent Leaderboard* (`HAL`), Kapoor et ses collègues ont orchestré `21 730` essais sur neuf modèles, neuf bancs d'essai et divers échafaudages logiciels pour `2,5` milliards de jetons et environ `40 000 $ US` [4]. Leurs mesures montrent que l'échafaudage — sélection d'outils, boucles de réessai et formatage du contexte — modifie conjointement l'exactitude et le coût : hausser l'effort de raisonnement donne une précision inférieure ou au mieux égale dans `21` combinaisons évaluées sur `36` [4].
 
 L'inspection automatisée des journaux de `HAL` y révèle également des contournements imprévus — recherche de corrigés sur *HuggingFace* ou usage de mauvais numéros de carte simulés — ainsi que des fuites de données sur certains échafaudages et des barèmes attribuant un score nul aux abstentions prudentes [4]. Les bancs spécialisés restent utiles pour mesurer des capacités ciblées : résolution logicielle sur `SWE-bench`, navigation web sur *Online Mind2Web* ou `WebArena` (`Tome 1 § 6.3.3`), bureautique sur `OSWorld` (`Tome 1 § 6.3.3`), et invocation d'outils transactionnels sur `τ-bench`, `BFCL` (cité dans [3]) et `GAIA` [3, 4]. Encore faut-il analyser la distribution complète — justesse, **constance multi-essais**, coût réel et latence — sous contrôle strict de décontamination des jeux de test [3, 4].
 
@@ -36,7 +36,7 @@ L'usine déploie ce contrôle dans un banc `EvalOps` hermétique à trois étage
 
 ![Banc EvalOps hermétique E1–E3, constance pass^k et borne de Wilson (≥ 300 essais)](../../schemas/rendus/SCH-23-01.svg)
 
-*Figure 1 — SCH-23-01 : Parcours EvalOps hermétique articulant l'étage CI E1 et l'arène isolée E2 contre doublures MockMcpServer sous contrainte pass^k et borne de Wilson (Z1), la promotion SemVer+Intent fantôme puis canari (Z2) et la surveillance E3 avec rétrogradation après trois mois hors SLO (Z3).*
+*Figure 73 — SCH-23-01 : Parcours EvalOps hermétique articulant l'étage CI E1 et l'arène isolée E2 contre doublures MockMcpServer sous contrainte pass^k (k ≥ 3 ; k ≥ 5 critique) et borne de Wilson (Z1), la promotion SemVer+Intent fantôme puis canari (Z2) et la surveillance E3 avec rétrogradation après trois mois hors SLO (Z3).*
 
 Toutefois, obtenir zéro défaillance sur un petit banc de `30` ou `60` cas ne prouve pas statistiquement que la probabilité d'échec reste sous `1 %`. L'exigence `EXIG-EVA-03` impose donc un dimensionnement exact fondé sur le manuel statistique du `NIST/SEMATECH` (chapitre `7.2.4.1`) [1] et sur l'analyse de McGrath et Burke dédiée aux probabilités d'événements rares (`arXiv:2109.02516`) [2]. Ces travaux montrent que l'intervalle asymptotique classique de Wald s'effondre aux faibles taux d'échec : lorsque aucun échec n'est observé, l'estimation de variance s'annule et produit une borne supérieure illusoire de `0,0 %`, tandis que pour de très faibles proportions non nulles, sa borne inférieure devient négative [1, 2]. McGrath et Burke rappellent en outre que sur des événements rares, la précision doit être calibrée relativement à la magnitude de `p` (\(\epsilon_R = \epsilon / p\)) plutôt qu'en écart absolu [2].
 
@@ -101,13 +101,13 @@ def verify_metamorphic_pair(
     return MetamorphicCheck(rel_v, ok, "PASS" if ok else f"Echec {rel_v}")
 ```
 
-Cet extrait verrouille deux garde-fous essentiels. Dans `BILINGUAL_FR_EN_INJECTION_INVARIANCE`, la condition `b.blocked` empêche qu'une paire où l'attaque aurait réussi dans les deux langues soit validée par symétrie. Dans `BENIGN_PARAPHRASE_INVARIANCE`, vérifier simultanément l'attribut `is_non_avis_disclosed` sur la sortie de référence et sur la sortie transformée empêche qu'une traduction française n'omette la divulgation `non-avis` présente en anglais. La suite négative `G0` vérifie de surcroît le rejet immédiat d'une attaque bloquée en anglais mais exécutée en français, d'un dépassement de coût `Decimal` sous plafond resserré (`0,90 \$ CA` contre `0,50 \$ CA`) ou d'un refus inopiné après permutation d'outils de lecture indépendants.
+Cet extrait verrouille deux garde-fous essentiels. Dans `BILINGUAL_FR_EN_INJECTION_INVARIANCE`, la condition `b.blocked` empêche qu'une paire où l'attaque aurait réussi dans les deux langues soit validée par symétrie. Dans `BENIGN_PARAPHRASE_INVARIANCE`, vérifier simultanément l'attribut `is_non_avis_disclosed` sur la sortie de référence et sur la sortie transformée empêche qu'une traduction française n'omette la divulgation `non-avis` présente en anglais. La suite négative `G0` vérifie de surcroît le rejet immédiat d'une attaque bloquée en anglais mais exécutée en français, d'un dépassement de coût `Decimal` sous plafond resserré (`0,90 $ CA` contre `0,50 $ CA`) ou d'un refus inopiné après permutation d'outils de lecture indépendants.
 
 | Relation métamorphique | Propriété invariante exigée | Scénario d'échec bloqué en `G0` | Rattachement |
 |---|---|---|---|
 | **Permutation d'outils indépendants** | Même indicateur `blocked`, même décision, mêmes appels triés et réponse ancrée identique | Bascule vers un refus après simple réordonnancement du catalogue | `EXIG-EVA-03` (`ASI02`) [8] |
 | **Invariance d'injection `FR` / `EN`** | Blocage obligatoire dans les deux langues (`b.blocked == True`) et appels triés égaux | Exécution d'une invite malveillante en français alors que son équivalent anglais est bloqué | `EXIG-SEC-24` (`ASI01`–`ASI10`) [8] |
-| **Monotonie du plafond budgétaire** | Dépense transformée comprise entre `0` et le coût initial en `Decimal` exact | Dépassement (`0,90 \$ CA` vs `0,50 \$ CA`) sous contrainte resserrée | `EXIG-FIN-04` (`ASI08`) [8] |
+| **Monotonie du plafond budgétaire** | Dépense transformée comprise entre `0` et le coût initial en `Decimal` exact | Dépassement (`0,90 $ CA` vs `0,50 $ CA`) sous contrainte resserrée | `EXIG-FIN-04` (`ASI08`) [8] |
 | **Invariance sous paraphrase bénigne** | Décision, ensemble des outils invoqués et mention `non-avis` préservés | Omission de l'avertissement `non-avis` après traduction bilingue | `EXIG-AMF-11`, `Loi 25`, `EU AI Act` |
 
 *Tableau 23.2 — Les quatre relations métamorphiques sans oracle et les contrôles négatifs vérifiés en G0.*
@@ -128,7 +128,7 @@ En exploitation continue (`E3`), la surveillance outillée (recourant à des pla
 
 ![Évaluer sans oracle unique : invariance bilingue FR/EN, juges IA étalonnés (kappa ≥ 0,6) et sentinelle des 3+1 dérives](../../schemas/rendus/SCH-23-02.svg)
 
-*Figure 2 — SCH-23-02 : Articulation des quatre relations métamorphiques FR/EN sans oracle (Z1), de l'encadrement asynchrone des juges IA hétérogènes à kappa ≥ 0,6 (Z2) et de la sentinelle des 3+1 dérives en exploitation (Z3).*
+*Figure 74 — SCH-23-02 : Articulation des quatre relations métamorphiques FR/EN sans oracle (Z1), de l'encadrement asynchrone des juges IA hétérogènes à kappa ≥ 0,6 (Z2) et de la sentinelle des 3+1 dérives en exploitation (Z3).*
 
 Enfin, lorsque le volume d'un flux stabilisé justifie de réduire la facture d'inférence et la latence tout en renforçant la souveraineté locale, la recette cible **`ADR-031`** (`PRR F-15`, acceptée sous réserve de validation empirique au `Tome 3 § 47.20–47.22`) formalise un **volant de distillation contrôlée** `DSPy` → `Multi-LoRA`. Plutôt que d'entretenir des invites monolithiques rédigées à la main — qui cassent dès qu'un fournisseur modifie son modèle — les ingénieurs déclarent des signatures typées optimisées par programme (`DSPy` / `MIPROv2`), puis distillent les compétences vers des petits modèles spécialisés (`SLM 3B–8B`).
 
@@ -141,7 +141,7 @@ Sur le plan matériel et économique, l'architecture cible mutualise un tronc ge
 
 ![Le volant de distillation DSPy → Multi-LoRA : transformer les dossiers validés en petits modèles spécialisés 10× plus sobres](../../schemas/rendus/SCH-23-03.svg)
 
-*Figure 3 — SCH-23-03 : Boucle fermée cible du volant de distillation DSPy → Multi-LoRA (ADR-031, objectif illustratif 10× plus sobre à valider) reliant la collecte assainie Loi 25 et canaris Carlini (Z1) à l'affinage SFT+DPO (Z2) sous porte pass^5 et sentinelle à 2 % (Z3).*
+*Figure 75 — SCH-23-03 : Boucle fermée cible du volant de distillation DSPy → Multi-LoRA (ADR-031, objectif illustratif 10× plus sobre à valider) reliant la collecte assainie Loi 25 et canaris Carlini (Z1) à l'affinage SFT+DPO sous seuil de volume V_min (Z2), la porte pass^5 ≥ 99 % et la sentinelle ombre à 2 % du trafic (Z3).*
 
 ## 23.3 Synthèse architecturale, livrables et portes de contrôle
 

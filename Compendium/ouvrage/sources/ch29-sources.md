@@ -13,7 +13,7 @@
 - **Organisme / Revue :** GLEIF & GitHub (GLEIF-IT/vlei-egf, WebOfTrust/vLEI)
 - **Identifiant :** `GLEIF-VLEI-ISO17442-3`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-079.txt`, score AACODS `11.0/12`)
-- **URL d'origine :** https://www.gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/
+- **URL d'origine :** https://www.gleif.org/en/organizational-identity/lei-vlei/the-verifiable-lei-vlei/
 - **Empreinte SHA-256 (LF) :** `2ccc0f09f7c8475c0236605ba2b3f07537945e72e998df4db363f641a6166bd5` (`39987` octets, `5350` mots)
 - **Synthèse factuelle vérifiée :** Spécification ouverte GLEIF vLEI et écosystème KERI/ACDC (ISO 17442-3, WebOfTrust, oct. 2026) définissant la chaîne de confiance cryptographique d'identité organisationnelle vérifiable pour personnes et agents mandatés.
 
@@ -98,5 +98,5 @@
 
 ## Exclusions en statut F (`AO-01` — hors preuve)
 
-- `https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/` — `HTTP_404` (`included_in_evidence: false`). HTTP 404 sur la sous-page EGF de gleif.org; compensé par la page officielle gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/ et les dépôts ouverts GLEIF-IT/vlei-egf et WebOfTrust/vLEI (SRC-079, L+).
+- `https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/` — `HTTP_404` (`included_in_evidence: false`). HTTP 404 sur la sous-page EGF de gleif.org; compensé par la page officielle gleif.org/en/organizational-identity/lei-vlei/the-verifiable-lei-vlei/ et les dépôts ouverts GLEIF-IT/vlei-egf et WebOfTrust/vLEI (SRC-079, L+).
 - `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur genai.owasp.org; compensé intégralement par le PDF officiel CC BY-SA 4.0 v1.0 archivé sur github.com/genai-security-project/GenAI-Security-Corpus (SRC-055, L+).

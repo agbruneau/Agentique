@@ -68,3 +68,13 @@ Toutes les formulations perfectibles relevées à la passe initiale ont été di
 | `C08-34` | L152–L159 (Tableau 8.3) | Tableau 8.3 des contrôles horizontaux (`EXIG-A2A-01..15` incluant `EXIG-A2A-12` et `EXIG-A2A-14`, `EXIG-INT-20..22`/`CAP-026`, `EXIG-ARC-03`/`ADR-007`, `ADR-026`/`CAP-027`/`CAP-041`) et renvois | `Corpus/Tome 2` (`EXIG-A2A-12`, `EXIG-A2A-14`), `matrice-exig-prr-c40.json` | Rectifiée | Verdict : supporté |
 | `C08-35` | L161 (`§ 8.3`) | Délimitation `owned_concepts` et renvois de frontière (`CH-07`, `CH-09`, `CH-10`, `CH-13`, `CH-16`, `CH-17`, `CH-18`, `CH-19`, `CH-21`, `CH-26`, `CH-27`) | `specs/manifest.json` (`ch08.owned_concepts`) | Conforme | Verdict : supporté |
 | `C08-36` | L163–L167 (Trois invariants) | Encadré des trois invariants exécutables : délégation `A2A v1.0.1` + `JWS ES256`/`JCS` + anti-SSRF (`EXIG-A2A-12`, `EXIG-SEC-12`) + rejet `ANP` et « ACP » nu ; rendu `AG-UI`/`A2UI`/`MCP-UI` sans code libre (`EXIG-ARC-03`) ; cantonnement `EXIG-INT-20..22` et verrous `P3` / Palier 3 | `a2a_card.py`, `SRC-083.txt`, `SRC-077.txt`, `SRC-126.txt`, `SRC-130.txt`, `SRC-079.txt`, `Corpus/Tome 2` | Rectifiée | Verdict : supporté |
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+| ID | Localisation | Clause révisée (`REV-04`) | Source vérifiée | Statut | Verdict |
+|---|---|---|---|---|---|
+| `C08-REV-01` | L3, L9–L35, L41–L59, L105–L167 | Uniformisation `*Question directrice :*` et déplacement de l'encadré *Trois invariants exécutables* en fin de `§ 8.1` (`PRD-L1-018`), correction d'élision `chaîne d'invites` et casse `NE DOIT JAMAIS` (`PRD-L1-017`), retrait des slugs MindMap, de `owned_concepts`, `rapports-g0.json` et `SRC-039`/`SRC-083` (`PRD-L1-016`), numérotation continue `Figure 27`–`Figure 29` et renvois (`PRD-L1-008`), et suppression de la redite anti-SSRF (`PRD-L1-019`, bloc `CA-G0-SYNC` intact) | `specs/manifest.json`, `Compendium/prd.md` (`L306`), `SRC-083.txt` (`[2]`), `harness_proto/a2a_card.py` | Rectifiée | Verdict : supporté |
+
+- **Contrôle `REV-04` :** `4 489` mots (`verifie_manuscrit.py`) / `4 676` mots (`parser_plan.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch08 --strict` = `exit 0`, **100,0 % supporté**.

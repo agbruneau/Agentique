@@ -24,7 +24,7 @@
 - **Organisme / Revue :** Temporal Documentation
 - **Identifiant :** `TEMPORAL-SDKS-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-034.txt`, score AACODS `10.5/12`)
-- **URL d'origine :** https://docs.temporal.io/encyclopedia/temporal-sdks
+- **URL d'origine :** https://docs.temporal.io/encyclopedia/architecture/temporal-sdks
 - **Empreinte SHA-256 (LF) :** `95aa625eecff574cd1e55188823cb0b0e10a7c36a2f78b415913ca3bf1fcf35b` (`15387` octets, `2327` mots)
 - **Synthèse factuelle vérifiée :** Documentation technique Temporal SDKs décrivant l'exécution durable basée sur l'historique d'événements rejouable de façon déterministe, la gestion des délais et les signaux humains.
 

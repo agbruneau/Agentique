@@ -11,7 +11,7 @@ flowchart TB
 
   subgraph Z2["Z2 · Régulateurs en ligne"]
     direction TB
-    N4{"① xagenthopcount > 4<br/>ou ce_ttl expiré ?"}:::amber
+    N4{"① xagenthopcount ≥ 4<br/>ou ce_ttl expiré ?"}:::amber
     N5{"② Schéma invalide ou<br/>erreur sémantique ?"}:::amber
     N6["Déport DLQ non bloquante<br/>(max.poll.interval.ms préservé)"]:::amber
     N7["③ Rétro-pression progressive<br/>selon latence LLM et quotas TPM"]:::amber

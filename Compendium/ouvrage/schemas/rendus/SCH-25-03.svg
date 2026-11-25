@@ -60,7 +60,7 @@
     <g id="node-6" class="node" data-node="true">
       <rect x="818" y="152" width="346" height="165" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
       <text x="830" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">Inventaire unifié &amp; 6 portes (G-01)</text>
-      <text x="830" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Cadre MCN Québec étendu à 6 portes</text>
+      <text x="830" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">MCN Québec (secteur public) → 6 portes</text>
       <text x="830" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Agrégation annuaires &amp; serveurs MCP</text>
     </g>
     <g id="node-7" class="node" data-node="true">

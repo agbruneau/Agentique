@@ -93,6 +93,7 @@
 - **URL d'origine :** https://www.ietf.org/archive/id/draft-chen-oauth-agent-revocation-01.txt
 - **Empreinte SHA-256 (LF) :** `25d9788ca0cb574ff0c4bbc3215ad4094bb8f9cde660e2e15a184c7a81bd9a22` (`14051` octets, `1968` mots)
 - **Synthèse factuelle vérifiée :** Brouillon individuel IETF (draft-chen-oauth-agent-revocation-01, non adopté par un WG au 2026-12-02) proposant une révocation explicite, en lot et en cascade pour les délégations d'agents OAuth 2.0.
+- **Échéance de péremption :** Brouillon individuel IETF (non adopté par un groupe de travail au gel du `2026-12-02`) expirant le `3 mai 2027` (`2027-05-03`) ; suivi de révision requis.
 
 ### [9] SRC-019 — OpenID Shared Signals Framework Specification 1.0
 
@@ -167,7 +168,7 @@
 - **Organisme / Revue :** AIBanks.ca (agrégateur tiers indépendant — index public de preuves)
 - **Identifiant :** `AIBANKS-CA-AMF-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-071.txt`, score AACODS `9.0/12`)
-- **URL d'origine :** https://www.aibanks.ca/
+- **URL d'origine :** https://aibanks.ca/
 - **Empreinte SHA-256 (LF) :** `2d39751c5fed55ad19aebd3cc238f8a1a26d6b266bb8bc3f7ee1e0e37a796e8b` (`12404` octets, `1985` mots)
 - **Synthèse factuelle vérifiée :** Agrégateur canadien ouvert AIBanks.ca (édition T4 au 1er novembre 2026) confirmant l'échéance du 1er mai 2027 pour BSIF E-23 et signalant l'échéance attendue du 1er mai 2027 de la ligne directrice IA de l'AMF (rapportée sous réserve car le portail lautorite.qc.ca est en statut F).
 

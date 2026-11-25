@@ -71,9 +71,9 @@ Toutes les formulations divergentes, sur-affirmées ou issues de spécifications
   - **Appui vérifié :** `specs/manifest.json` (`ch14`, `SCH-14-01`), `schemas/SCH-14-01.svg`, `schemas/rendus/SCH-14-01.svg`.
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C14-12 (`L43`)** — *Affirmation :* Fédération inter-domaines par gravité (`CAP-013`) ; l'exemple de référence `Apache Kafka` (`Tome 2 § 6.7` : `4.0` sans `ZooKeeper`, `4.2.0` files coopératives, `4.4.0` `DLQ` associées ; livraison « au moins une fois » et `read_committed` interne) fonde les verrous solidaires d'`EXIG-EVT-08` : `Transactional Outbox` + `CDC`, déduplication sur `(source, id)` (`[1]`) et clé d'idempotence cible.
-  - **Appui vérifié :** `registre/matrice-exig-prr-c40.json` (`CAP-013`, `EXIG-EVT-08`), `Corpus/Tome 2` (`Tableau 21`, `L2517–2537`), `SRC-035.txt` (`L251–254`).
-  - **Passe initiale :** écart rectifié · **Action :** indexé les versions `Kafka 4.0–4.4.0` sur le `Tome 2 § 6.7` et ancré la déduplication `(source, id)` sur `SRC-035.txt` `[1]` · **Verdict : supporté**
+- **C14-12 (`L45`)** — *Affirmation :* Fédération inter-domaines par gravité (`CAP-013`, `DEC-007`, généralisant `ADR-015` sur le cloisonnement inter-entités) ; l'exemple de référence `Apache Kafka` (`Tome 2 § 6.7` : `4.0` sans `ZooKeeper`, `4.2.0` files coopératives, `4.4.0` `DLQ` associées ; livraison « au moins une fois » et `read_committed` interne) fonde les verrous solidaires d'`EXIG-EVT-08` : `Transactional Outbox` + `CDC`, déduplication sur `(source, id)` (`[1]`) et clé d'idempotence cible.
+  - **Appui vérifié :** `registre/matrice-exig-prr-c40.json` (`CAP-013`, `DEC-007`, `ADR-015`, `EXIG-EVT-08`), `Corpus/Tome 2` (`Tableau 21`, `L2517–2537`), `SRC-035.txt` (`L251–254`).
+  - **Passe initiale :** rectifié (`G2` + `REV-04`) · **Action :** intégré `DEC-007` et `ADR-015` (`PRD-L2-009`), uniformisé `Figure 46`–`Figure 48` et notations Unicode (`PRD-L2-022`) · **Verdict : supporté**
 
 - **C14-13 (`L45`)** — *Affirmation :* `EXIG-EVT-09` impose une clé native égale à `partitionkey` pseudonyme sur partitions figées (sans files coopératives) ; `EXIG-EVT-10` impose `≥ 90` jours (classe modérée) et `≥ 1` an (classe élevée) de rétention avec effacement par destruction de clé, et rejeu isolé sur doublures sans reproduction garantie des décisions probabilistes.
   - **Appui vérifié :** `Corpus/Tome 2` (`L2539–2553`).
@@ -87,9 +87,9 @@ Toutes les formulations divergentes, sur-affirmées ou issues de spécifications
   - **Appui vérifié :** `SRC-058.txt` (`[4]`), `SRC-055.txt` (`[2]`), `Corpus/Tome 2` (`L2495–2501`), `Corpus/Tome 3` (`L2640–2647`).
   - **Passe initiale :** écart rectifié · **Action :** précisé `max.poll.interval.ms` comme exemple (`ex.`) en Tableau 14.2 · **Verdict : supporté**
 
-- **C14-16 (`L58–L60`, Figure 2)** — *Affirmation :* La Figure 2 (`SCH-14-02.png`) représente les quatre régulateurs déterministes et la bascule `FORCED_OPEN` vers `L0`.
+- **C14-16 (`L60–L62`, Figure 47)** — *Affirmation :* La Figure 47 (`SCH-14-02.png`, corrigée en `REV-04` : `xagenthopcount ≥ 4`, `PRD-L2-004`) représente les quatre régulateurs déterministes et la bascule `FORCED_OPEN` vers `L0`.
   - **Appui vérifié :** `specs/manifest.json` (`ch14`, `SCH-14-02`), `schemas/SCH-14-02.mmd`, `schemas/rendus/SCH-14-02.png`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** rectifié (`REV-04`) · **Action :** harmonisé `xagenthopcount ≥ 4` dans `SCH-14-02.mmd` · **Verdict : supporté**
 
 - **C14-17 (`L62`)** — *Affirmation :* Règle `EXIG-EVT-06` (`xagenthopcount ≥ xagentmaxhops = 4`, plafond le plus bas prévalant, exception compensations `EXIG-ORC-28`, cohérence Figure 2), plafond par trace et fenêtre temporelle, `DLQ` à ACL héritées, rétro-pression `TPM` et disjoncteur interne à cinq états en mode `FORCED_OPEN` vers `L0`.
   - **Appui vérifié :** `Corpus/Tome 2` (`L2495–2501`), `Corpus/Tome 6` (`L3662–3691`), `schemas/SCH-14-02.mmd`.
@@ -113,9 +113,9 @@ Toutes les formulations divergentes, sur-affirmées ou issues de spécifications
   - **Appui vérifié :** `Corpus/Tome 3` (`L24676–24681`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C14-22 (`L81–L83`, Figure 3)** — *Affirmation :* La Figure 3 (`SCH-14-03.svg`) illustre la séparation `IT`/`OT` par missions discrètes vérifiées `LOTO` et la coupure matérielle cible `Simplex` (`≤ 1 ms`).
+- **C14-22 (`L83–L85`, Figure 48)** — *Affirmation :* La Figure 48 (`SCH-14-03.svg`, corrigée en `REV-04` : « préparatoire à IEC 61508 et ISO 10218-1 », `PRD-L2-009`) illustre la séparation `IT`/`OT` par missions discrètes vérifiées `LOTO` et la coupure matérielle cible `Simplex` (`≤ 1 ms`).
   - **Appui vérifié :** `specs/manifest.json` (`ch14`, `SCH-14-03`), `schemas/SCH-14-03.puml`, `schemas/rendus/SCH-14-03.svg`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** rectifié (`REV-04`) · **Action :** remplacé « conforme » par « préparatoire à » dans `SCH-14-03.puml` · **Verdict : supporté**
 
 - **C14-23 (`L85–L89`)** — *Affirmation :* Le profil `ADR-028` (`Tome 3 § 46.7, § 46.15`) transpose l'architecture `Simplex` (principe de Sha, protection, ponctualité et tolérance aux fautes) en séparant `Nav2`/VLA d'un contrôleur de repli sur `MCU Safety PLC` à cycle cible `≤ 1 ms`, évaluant l'enveloppe cinématique \(d_{\text{sécurité}}(t) \le d_{\text{LiDAR}}(t)\).
   - **Appui vérifié :** `Corpus/Tome 3` (`L24064–24080`, `L24668–24674`).
@@ -139,9 +139,9 @@ Toutes les formulations divergentes, sur-affirmées ou issues de spécifications
   - **Appui vérifié :** `specs/manifest.json` (`ch14`), `Chapitre 14.md` (`L39`, `L58`, `L81`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C14-28 (`L101–L105`)** — *Affirmation :* Quatre livrables obligatoires : contrats `AsyncAPI 3.x` / `CloudEvents v1.0.2` `[1]` validés `OPA`/`JSON Schema` en `G0` `[5, 6]`, test de boucle `xagenthopcount ≥ 4` + `DLQ`, configuration `Outbox` + `CDC` et `traceparent` `W3C` inter-courtiers, et dossier industriel préparatoire `IEC 61508`/`ISO 10218-1` (normes payantes `statut F`) attestant `LOTO`, `DDS-Security Enforce` et coupure cible `Simplex` (`≤ 1 ms`).
-  - **Appui vérifié :** `SRC-035.txt` `[1]`, `SRC-087.txt` `[5]`, `SRC-088.txt` `[6]`, `aq/rapports-g0.json`, `registre/matrice-exig-prr-c40.json` (`EXIG-EVT-01..06`, `ADR-028`).
-  - **Passe initiale :** écart rectifié · **Action :** aligné `AsyncAPI 3.x`, ajouté les renvois `[1, 5, 6]` et qualifié le dossier industriel de préparatoire face aux normes `statut F` · **Verdict : supporté**
+- **C14-28 (`L101–L105`)** — *Affirmation :* Quatre livrables obligatoires rattachés aux portes `PRR R-04` et `PRR R-05` (`DEC-007`, `ADR-015`, `PRD-L2-009`) : contrats `AsyncAPI 3.x` / `CloudEvents v1.0.2` `[1]` validés `OPA`/`JSON Schema` en `G0` `[5, 6]`, test de boucle `xagenthopcount ≥ 4` + `DLQ`, configuration `Outbox` + `CDC` et `traceparent` `W3C` inter-courtiers, et dossier industriel préparatoire `IEC 61508`/`ISO 10218-1` attestant `LOTO`, `DDS-Security Enforce` et coupure cible `Simplex` (`≤ 1 ms`).
+  - **Appui vérifié :** `SRC-035.txt` `[1]`, `SRC-087.txt` `[5]`, `SRC-088.txt` `[6]`, `aq/rapports-g0.json`, `registre/matrice-exig-prr-c40.json` (`EXIG-EVT-01..10`, `DEC-007`, `ADR-015`, `PRR R-04`, `PRR R-05`, `ADR-028`).
+  - **Passe initiale :** rectifié (`G2` + `REV-04`) · **Action :** intégré `DEC-007`, `ADR-015`, `PRR R-04` et `PRR R-05` ainsi que l'encadré `Clause non-avis` · **Verdict : supporté**
 
 - **C14-29 (`L107`)** — *Affirmation :* Interfaces amont (`ch02`, `ch03`, `ch09`, `ch13`, `ch15`, `ch21`, `ch22`, `ch31`) et aval (`ch02`, `ch13`, `ch15`) respectant la partition bijective `CA-21`.
   - **Appui vérifié :** `specs/manifest.json` (`owned_concepts` et découpage `ch01`–`ch36`), `verifie_manuscrit.py` (`CA-21`).

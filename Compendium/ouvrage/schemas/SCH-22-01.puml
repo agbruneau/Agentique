@@ -65,12 +65,12 @@ package "Z1 : Émission OTLP et propagation W3C Trace Context" {
   rectangle "5 SLI cognitifs\nTCR, TER, tours, amplification, HOTL" as SLI <<det>>
 }
 package "Z2 : Collecteur épinglé OTel v1.41.0 et jointure (lacune 21)" {
-  rectangle "Adaptateur bidirectionnel\nOTel v1.41.0 ↔ genai@244465e9\n(60 entrées → ca.entreprise.*)" as COL <<det>>
+  rectangle "Adaptateur bidirectionnel\nOTel v1.41.0 ↔ genai@244465e9\n(60 ↔ 85 attr. gen_ai.*)" as COL <<det>>
   rectangle "Jointure trace ↔ mandat (4 clés)\ntask_id, niveau, approval.jti, cost_center" as JOIN <<ok>>
   rectangle "Échantillonnage en queue\n100 % anomalies, budgets & désaveux" as TAIL <<det>>
 }
 package "Z3 : Provenance AIBOM (5+1 horloges)" {
-  database "Nomenclature AIBOM\nCycloneDX 1.7 / SPDX 3.0.1 / SLSA v1.2\n5 composants + horloge révision" as AIBOM <<ext>>
+  database "Nomenclature AIBOM\nCycloneDX 1.7 / SPDX 3.0.1 / SLSA v1.2\n5 composants + horloge harnais" as AIBOM <<ext>>
 }
 AGT .[#B45309].> META : ① émet spans OTLP
 META --> COL : ② valide aux frontières

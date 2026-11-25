@@ -161,3 +161,7 @@ Toutes les formulations divergentes, sur-attribuées à des renvois `[n]` ou iss
 - **C27-32 (`L116–L122`)** — *Affirmation :* Transition vers la Partie X (`→ Chapitre 28`) et trois invariants exécutables du Chapitre 27 (banc éliminatoire `7/8`, dix clauses non dérogeables et sortie `POR-016`, maîtrise de l'écart réel ↔ apparent en `B2B` avec `PRR G-14` et audit d'assurance).
   - **Appui vérifié :** `specs/manifest.json` (`ch27`, `ch28`), `SRC-063.txt` `[1]`, `SRC-068.txt` `[2]`, `SRC-086.txt` `[3]`, `SRC-060.txt` `[4]`, `SRC-070.txt` `[5]`, `SRC-114.txt` `[6]`.
   - **Passe initiale :** écart rectifié · **Action :** retiré `[2, 3]` de la fin du premier invariant et `[4]` de la fin du troisième, ajouté l'ancrage exact `[5, 6]` et `PRR G-14` · **Verdict : supporté**
+
+- **C27-33 (`REV-04`, `PRD-L3-021/022`, `PRD-L4-002`)** — *Affirmation :* Déplacement de `(PRR G-14)` vers la boîte anti-collusion `B2B` dans `SCH-27-03.puml` (retrait de la boîte exclusions `Verisk/ISO`), rétablissement de la symétrie à deux sous-sections `27.2.1` / `27.2.2` en préservant l'ordre chronologique `SCH-27-01..03`, et numérotation `Figure 85`..`Figure 87`.
+  - **Appui vérifié :** `registre/matrice-exig-prr-c40.json` (`G-14`), `schemas/SCH-27-03.puml`, `Compendium/prd.md` (`L5050–5079`).
+  - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**

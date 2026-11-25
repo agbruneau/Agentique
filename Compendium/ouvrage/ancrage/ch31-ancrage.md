@@ -32,9 +32,9 @@ Toutes les formulations divergentes, sur-attribuées ou mélangeant le corpus `L
   - **Appui vérifié :** `SRC-001.txt` (`L160` note 2 : `1.5 * 2.5 * 3 = 11.25, which we round down to 10× per year`), `SRC-112.txt` (`L23–L31`, `L78–L86`), `registre/faits-empiriques.json` (`FACT-COMPUTE-10X`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C31-03 (`L7`)** — *Affirmation :* Clause de non-avis juridique et réglementaire (`AO-05`) au gel du `2 décembre 2026` ; textes primaires archivés en `L+`, tandis que `eur-lex.europa.eu` (compensé par `publications.europa.eu` `[6, 7]`) et `lautorite.qc.ca` (`HTTP 403`) sont consignés en Statut F sans contournement (`ch31-sources.md` et `registre-statut-f.json`).
+- **C31-03 (`L7`)** — *Affirmation :* Clause de non-avis juridique et réglementaire (`AO-05`) au gel du `2 décembre 2026` ; textes primaires archivés en `L+`, tandis que `eur-lex.europa.eu` (compensé par `publications.europa.eu` `[6, 7]`) et `lautorite.qc.ca` (`HTTP 403`) sont consignés en Statut F sans contournement (exclusions consignées dans les fiches bibliographiques et le registre des exclusions de l'Annexe A).
   - **Appui vérifié :** `sources/ch31-sources.md` (`L5`, `L64–L84`, `L121–L124`), `recherche/registre-statut-f.json` (`L29–L37`, `L62–L70`), `SRC-060.txt` (`[6]`), `SRC-061.txt` (`[7]`).
-  - **Passe initiale :** écart rectifié · **Action :** dissocié les archives `publications.europa.eu` (`[6, 7]`) de l'exclusion `AMF` consignée dans `ch31-sources.md` et `registre-statut-f.json` · **Verdict : supporté**
+  - **Passe initiale :** écart rectifié · **Action :** dissocié les archives `publications.europa.eu` (`[6, 7]`) de l'exclusion `AMF` ; révision `REV-04` : remplacement des chemins internes d'atelier par leurs intitulés éditoriaux (`Annexe A`, `Annexe C`, `Annexe D`, `PRD-L4-015`), ajout explicite d'`EXIG-CON-30` (`PRD-L4-019`) et explicitation de `POR-006`, `POR-012`, `POR-013` (`PRD-L4-028`) · **Verdict : supporté**
 
 ### Section 31.1.1 — Limites des feuilles de route statiques et méthode `DAPP` (`L11–L17`)
 
@@ -120,9 +120,9 @@ Toutes les formulations divergentes, sur-attribuées ou mélangeant le corpus `L
   - **Appui vérifié :** `SRC-065.txt` (`[5]`), `SRC-061.txt` (`[7]`), `SRC-053.txt` (`[2]`), `SRC-051.txt` (`L206–L209`, `[3]`).
   - **Passe initiale :** écart rectifié · **Action :** ajouté le renvoi `[3]` et précisé la portée fédérale américaine d'`EO 14412` · **Verdict : supporté**
 
-- **C31-23 (`L92`)** — *Affirmation :* Statuts **PROJETÉ** (`2030–2032` du `G7 CEG` `[4]`, `ANP`, `W3C Agent Trust`, `FIDO/AP2`) et **SPÉCULATIF** (`CRQC` `[3]`, boutade `claw`) ; caducité de la feuille de route d'Ehtesham et coll. (`arXiv:2505.02279`, mai `2025`) après fusion d'`ACP` dans `A2A` (`29 août 2025`), et requalification semestrielle.
-  - **Appui vérifié :** `SRC-052.txt` (`[4]`), `SRC-051.txt` (`[3]`), `Corpus/Tome 1` (`L1881`, `L2935`, `L11281`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+- **C31-23 (`L92`)** — *Affirmation :* Statuts **PROJETÉ** (`2030–2032` du `G7 CEG` `[4]`, `ANP`, `W3C Agent Trust`, `FIDO/AP2`) et **SPÉCULATIF** (`CRQC` `[3]`, boutade `claw`) ; vulnérabilité des plans figés illustrée par l'adoption de `MCP SEP-3398` (`14 octobre 2026`, reportant décembre `2026` au `30 mars 2027` `[10]`) et par la fusion antérieure d'`ACP` dans `A2A` (`← Chapitre 08`), avec requalification semestrielle.
+  - **Appui vérifié :** `SRC-052.txt` (`[4]`), `SRC-051.txt` (`[3]`), `SRC-082.txt` (`[10]`, `SEP-3398`), `Chapitre 08.md`.
+  - **Passe initiale :** conforme · **Action :** révision `REV-04` (`REF-005`) : suppression de la référence externe non indexée et réancrage sur la source `L+` `[10]` (`SRC-082`, `MCP SEP-3398`) et le renvoi interne `← Chapitre 08` · **Verdict : supporté**
 
 - **C31-24 (`L94`, `L96`)** — *Affirmation :* L'étude `METR` (`Kwa et coll.`, `arXiv:2503.14499v4` `[8]`, `170` tâches `2019–2025` jusqu'à `o3`) mesure un doublement de `207 jours` à `50 %` (`204 jours` à `80 %`) et démontre une chute d'un facteur `4` à `6` (`~5×`) entre `50 %` et `80 %` ; la mise à jour ultérieure `METR Time Horizons v1.1` consignée au Corpus (`8 septembre 2026`, `Tome 3 § 49.2`, `Tome 4 § 6.1`, hors `L+` fermé) rapporte `Claude Mythos Preview` (`17,4 h` `[8,5–55 h]` à `50 %` vs `3,1 h` `[1,6–6,6 h]` à `80 %`), un plafonnement `> 16 h`, l'arrêt en septembre `2026` et un doublement de `~129 j` depuis `2023` (`~188 j` global).
   - **Appui vérifié :** `SRC-025.txt` (`L17`, `L68–L91`, `L238`, `L294–L295`, `[8]`), `Corpus/Tome 3` (`§ 49.2`, `L26748–L26764`), `Corpus/Tome 4` (`§ 6.1`, `L1154–L1156`).

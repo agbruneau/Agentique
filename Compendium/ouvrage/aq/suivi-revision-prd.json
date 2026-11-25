@@ -1,7 +1,7 @@
 {
   "campaign_id": "REV-PRD-2026-11",
   "title": "Audit, validation des références et révision finale vs Compendium/prd.md",
-  "updated_at": "2026-11-25T16:26:00Z",
+  "updated_at": "2026-11-25T17:24:00+00:00",
   "milestones": [
     {
       "id": "REV-01",
@@ -12,51 +12,51 @@
     {
       "id": "REV-02",
       "title": "Audit viabilité et fiabilité des références (135 L+, 27 statut F, URLs, SHA-256)",
-      "status": "en_cours",
-      "detail": "Sondage HTTP AO-01, contrôle SHA-256, qualité L+ et cohérence 37 sources."
+      "status": "termine",
+      "detail": "135/135 L+ SHA-256 vérifiés, 135 URLs sondées (118 ok, 8 redir, 9 403/Anubis, 0 err), 12/12 constats vérifiés."
     },
     {
       "id": "REV-03",
       "title": "Audit contenu et couverture des 42 unités contre Compendium/prd.md",
-      "status": "en_cours",
-      "detail": "4 lots parallèles : Liminaire + Parties I–XII + Annexes A–E + 115 schémas."
+      "status": "termine",
+      "detail": "42/42 unités, 115 schémas et 3 livrables audités vs prd.md : 95 constats (13B/41M/41m) consolidés."
     },
     {
       "id": "REV-04",
       "title": "Révision ciblée des écarts et mise à jour des ancrages G2",
-      "status": "a_venir",
-      "detail": "En attente de consolidation des constats REV-02 et REV-03."
+      "status": "termine",
+      "detail": "Registres/sources, 37 unités narratives (Figure 1..115, 0 \\$ backticks, REF-003/005 résolus) et schémas révisés et vérifiés."
     },
     {
       "id": "REV-05",
       "title": "Régénération SSOT Annexes, recompilation MD/HTML/PDF et contrôle visuel",
-      "status": "a_venir",
-      "detail": "En attente de clôture REV-04."
+      "status": "termine",
+      "detail": "genere_annexes.py & assemble_livre.py refondus (5 Annexes SSOT sans troncature, 37/37 bibliographies d'unités, 0 [k] orphelin), 115/115 schémas et Compendium.{md,html,pdf} (834 p.) inspectés."
     },
     {
       "id": "REV-06",
       "title": "Validation finale G0–G5, pytest, rapport consolidé et poussée main",
-      "status": "a_venir",
-      "detail": "En attente de clôture REV-05."
+      "status": "termine",
+      "detail": "Batterie finale 5/5 PASS (G0 exit 0, 115/115 schémas, 5/5 Annexes dry-run, G1+deliverables exit 0, pytest 56/56 PASS), 107/107 constats vérifiés et rapport consolidé publié."
     }
   ],
   "reference_metrics": {
     "l_plus_total": 135,
     "statut_f_total": 27,
-    "urls_total": 151,
-    "sha256_verified": 0,
-    "urls_ok": 0,
-    "urls_redirect": 0,
-    "urls_blocked_or_403": 0,
+    "urls_total": 135,
+    "sha256_verified": 135,
+    "urls_ok": 118,
+    "urls_redirect": 8,
+    "urls_blocked_or_403": 9,
     "urls_broken_or_err": 0,
     "suspect_txt_files": 0,
     "citation_mismatches": 0,
-    "audit_completed": false
+    "audit_completed": true
   },
   "prd_coverage": {
-    "lots_completed": 0,
+    "lots_completed": 4,
     "lots_total": 4,
-    "units_audited": 0,
+    "units_audited": 42,
     "units_total": 42
   },
   "findings": []

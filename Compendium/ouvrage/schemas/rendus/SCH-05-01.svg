@@ -5,8 +5,8 @@
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-05-01</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Échelle graduée de maturité / autonomie</text>
 <text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">`D1–D8` × `Classes 1–6`</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">L'escalier d'autonomie unifié N0–N4 / L0–L4, l'interdit NX et la matrice</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">D1–D8 × Classes 1–6</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#047857"/>

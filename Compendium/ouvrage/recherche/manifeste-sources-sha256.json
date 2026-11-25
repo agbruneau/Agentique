@@ -23,13 +23,14 @@
         "D11"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch04"
+        "ch01",
+        "ch31"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-001.txt",
       "sha256": "edd192381975a8159249a6bb7db581577959d30f2cf408869dfb67786ac8b8cf",
       "byte_length": 241842,
-      "word_count": 35148
+      "word_count": 35148,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-002",
@@ -51,13 +52,14 @@
         "D07"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch19",
+        "ch20"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-002.txt",
       "sha256": "b3e1ed3304dd7a8c4a96cc21c515d50b2b1ebf00c5764a4844179bdce76b72d1",
       "byte_length": 80916,
-      "word_count": 12285
+      "word_count": 12285,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-003",
@@ -79,20 +81,19 @@
         "D05"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch03",
-        "ch04"
+        "ch13"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-003.txt",
       "sha256": "991148d77ecdcd5a7ba19a0f6ce1ff3c5d8f54c8abea67debf7182a1296a559f",
       "byte_length": 145288,
-      "word_count": 18743
+      "word_count": 18743,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-004",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 7493: The I-JSON Message Format",
       "authors": "Tim Bray (Ed.)",
       "year": 2015,
@@ -108,19 +109,19 @@
         "D08"
       ],
       "chapters": [
-        "ch01",
-        "ch02"
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-004.txt",
       "sha256": "79cf90d87551d63e750c72b383876c2617311a31fb5a9e0f72dc69f3dcb9600e",
       "byte_length": 11483,
-      "word_count": 1941
+      "word_count": 1941,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-005",
       "seed_id": "SEED-V8-01",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 7515: JSON Web Signature (JWS)",
       "authors": "Michael B. Jones, John Bradley, Nat Sakimura",
       "year": 2015,
@@ -136,13 +137,15 @@
         "D06"
       ],
       "chapters": [
-        "ch01",
-        "ch02"
+        "ch08",
+        "ch09",
+        "ch16"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-005.txt",
       "sha256": "d5c3662fb6fe9c5b80d449af96143b94157ac5e85d7978074702a382b8a50460",
       "byte_length": 115827,
-      "word_count": 15912
+      "word_count": 15912,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-006",
@@ -163,12 +166,13 @@
         "D05"
       ],
       "chapters": [
-        "ch03"
+        "ch15"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-006.txt",
       "sha256": "c2565e8391cc57e98ad4c7f26cac6b52dd76360de5a461152d2a94765e64e694",
       "byte_length": 73051,
-      "word_count": 9679
+      "word_count": 9679,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-007",
@@ -189,13 +193,14 @@
         "D07"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch11",
+        "ch20"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-007.txt",
       "sha256": "7a9735abcbdcbea1569be50b290f7e8198648a57f378a27bdb796e0f38cb3d2b",
       "byte_length": 361916,
-      "word_count": 50342
+      "word_count": 50342,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-008",
@@ -217,19 +222,19 @@
         "D11"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch04"
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-008.txt",
       "sha256": "752f0d68bbd73166825eb8fdeabcb4f5b004d18b16425bf3df8dbfa116267629",
       "byte_length": 880129,
-      "word_count": 132584
+      "word_count": 132584,
+      "review_regime": "grey_literature"
     },
     {
       "source_id": "SRC-009",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 8707: Resource Indicators for OAuth 2.0",
       "authors": "Brian Campbell, John Bradley, Hannes Tschofenig",
       "year": 2020,
@@ -245,18 +250,20 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch07",
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-009.txt",
       "sha256": "7fb70d66034ad271cda08ff66a791627b774e81a121be798165c0ea70ec81b01",
       "byte_length": 23316,
-      "word_count": 3145
+      "word_count": 3145,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-010",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 9334: Remote ATtestation procedureS (RATS) Architecture",
       "authors": "Henk Birkholz, Dave Thaler, Michael Richardson, Ned Smith, Wei Pan",
       "year": 2023,
@@ -272,13 +279,13 @@
         "D07"
       ],
       "chapters": [
-        "ch02",
-        "ch03"
+        "ch16"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-010.txt",
       "sha256": "9cf8aa2510befad61a50b4808a031e37e6ac1658b0d3efd7df940a07770325b1",
       "byte_length": 102376,
-      "word_count": 15421
+      "word_count": 15421,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-011",
@@ -300,18 +307,21 @@
         "D10"
       ],
       "chapters": [
-        "00-liminaire"
+        "ch00",
+        "ch01",
+        "ch30"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-011.txt",
       "sha256": "e7d41d25e64a998140f9d6510c553c62821273c598d9de5f92be40839362271b",
       "byte_length": 39392,
-      "word_count": 5425
+      "word_count": 5425,
+      "review_regime": "grey_literature"
     },
     {
       "source_id": "SRC-012",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 9964: ML-DSA for JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and Encryption (COSE)",
       "authors": "Mike Prorock, Orie Steele",
       "year": 2026,
@@ -327,12 +337,13 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch18"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-012.txt",
       "sha256": "a7c42dac175c3a9c95d2e36fe43afaddc35c7586d16cfe15e71ff67f47479c8b",
       "byte_length": 178023,
-      "word_count": 4971
+      "word_count": 4971,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-013",
@@ -353,12 +364,13 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-013.txt",
       "sha256": "64447dddda3a5d9fe7440a2f9ff84b5c14c9e55c23f936963f98e37fad483f9c",
       "byte_length": 70155,
-      "word_count": 10658
+      "word_count": 10658,
+      "review_regime": "standards_draft"
     },
     {
       "source_id": "SRC-014",
@@ -381,12 +393,14 @@
         "D10"
       ],
       "chapters": [
-        "00-liminaire"
+        "ch00",
+        "ch01"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-014.txt",
       "sha256": "2e07bdc05646acfdea82572de31a2c950b9bdc0a892d975f56054c0d11a97686",
       "byte_length": 4854425,
-      "word_count": 325245
+      "word_count": 325245,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-015",
@@ -409,12 +423,14 @@
         "D10"
       ],
       "chapters": [
-        "00-liminaire"
+        "ch00",
+        "ch01"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-015.txt",
       "sha256": "ea9fc801ab53e49a43c12b8796a0c118cb0a8a76dcb028a10b23ec913aaac413",
       "byte_length": 5870503,
-      "word_count": 416409
+      "word_count": 416409,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-016",
@@ -436,12 +452,15 @@
         "D11"
       ],
       "chapters": [
-        "00-liminaire"
+        "ch00",
+        "ch01",
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-016.txt",
       "sha256": "b46da71236a3698319ad67a17391b5d4e79010dc1527f61abba216e0cff66aea",
       "byte_length": 24662,
-      "word_count": 3960
+      "word_count": 3960,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-017",
@@ -462,18 +481,21 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-017.txt",
       "sha256": "25d9788ca0cb574ff0c4bbc3215ad4094bb8f9cde660e2e15a184c7a81bd9a22",
       "byte_length": 14051,
-      "word_count": 1968
+      "word_count": 1968,
+      "review_regime": "standards_draft",
+      "expiry_date": "2027-05-03",
+      "authority_note": "Brouillon individuel IETF (Individual Submission, non adopté par un groupe de travail au gel du 2026-12-02) expirant le 3 mai 2027 ; suivi de péremption requis."
     },
     {
       "source_id": "SRC-018",
       "seed_id": "SEED-V8-04",
       "category": "standard_gov",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "NIST FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA)",
       "authors": "National Institute of Standards and Technology (NIST)",
       "year": 2024,
@@ -489,12 +511,15 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch18",
+        "ch22",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-018.txt",
       "sha256": "c27445a0f736858615b4625c234e30c8a222b2ea61cd5bfef18b7e45e53aad37",
       "byte_length": 137225,
-      "word_count": 21924
+      "word_count": 21924,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-019",
@@ -515,12 +540,13 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-019.txt",
       "sha256": "68263a1cbe315de9ae3519ff2321053aa92ca72096ae3f0872b289d0d046c6a7",
       "byte_length": 87785,
-      "word_count": 12202
+      "word_count": 12202,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-020",
@@ -541,18 +567,19 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-020.txt",
       "sha256": "f3114cfa038f095958641996c432193e843cb2395a2b0cd3ba13ca31f8a2345f",
       "byte_length": 29497,
-      "word_count": 3733
+      "word_count": 3733,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-021",
       "seed_id": "SEED-V8-01",
       "category": "standard_spec",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "JSON Schema: A Media Type for Describing JSON Documents (Draft 2020-12 Core, draft-bhutton-json-schema-01)",
       "authors": "Austin Wright, Henry Andrews, Ben Hutton, Greg Dennis",
       "year": 2022,
@@ -569,19 +596,27 @@
         "D04"
       ],
       "chapters": [
-        "ch01",
-        "ch04"
+        "ch04",
+        "ch06",
+        "ch09",
+        "ch10",
+        "ch12",
+        "ch13",
+        "ch30",
+        "ch34",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-021.txt",
       "sha256": "ece40a12059837b62bc4867673924eafd5845d73223d3f04ff3b99254b6c9875",
       "byte_length": 135644,
-      "word_count": 19552
+      "word_count": 19552,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-022",
       "seed_id": "SEED-V8-07",
       "category": "standard_reference",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "NIST/SEMATECH e-Handbook of Statistical Methods — Section 7.2.4.1 Confidence Intervals for a Binomial Proportion (Wilson / Exact)",
       "authors": "NIST / SEMATECH",
       "year": 2012,
@@ -596,12 +631,15 @@
         "D08"
       ],
       "chapters": [
-        "ch04"
+        "ch02",
+        "ch23",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-022.txt",
       "sha256": "7cd7f651da8a13015902f782f324ad3d2a038446bb9079e6e99f294e32d1442a",
       "byte_length": 10050,
-      "word_count": 1406
+      "word_count": 1406,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-023",
@@ -623,20 +661,28 @@
         "D10"
       ],
       "chapters": [
-        "ch02",
-        "ch04"
+        "ch00",
+        "ch24"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-023.txt",
       "sha256": "67f651d7a5b0bd9103b5cffaa3617edaec6fb7f1aa9ebd2b7d3f122a422a5f5e",
       "byte_length": 698569,
-      "word_count": 92764
+      "word_count": 92764,
+      "review_regime": "standards_consensus",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_302_TO_200_OK",
+        "access_mechanism": "benign_redirect",
+        "local_sha256_verified": true
+      },
+      "access_note": "Redirection CDN normale (302 -> 200 OK via release-assets.githubusercontent.com) vérifiée le 2026-11-25."
     },
     {
       "source_id": "SRC-024",
       "seed_id": "SEED-V8-07",
       "category": "standard_reference",
       "peer_reviewed": false,
-      "title": "NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Series Model (Lusser Reliability Law)",
+      "title": "NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Competing Risk Model (loi multiplicative équivalente à Lusser)",
       "authors": "National Institute of Standards and Technology (NIST) / SEMATECH",
       "year": 2012,
       "publication_date": "2012-04",
@@ -651,14 +697,15 @@
         "D08"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01",
-        "ch04"
+        "ch02"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-024.txt",
       "sha256": "8734d2a7119029ec0a3459f4c9f33332967e14e2742b40938f3c53a2e94c01da",
       "byte_length": 3049,
-      "word_count": 467
+      "word_count": 467,
+      "review_regime": "standards_consensus",
+      "source_native_format": "html_extract",
+      "extraction_note": "Extraction texte depuis HTML NIST/SEMATECH e-Handbook (balises <i> et repères éditoriaux mineurs sans altération du contenu mathématique)."
     },
     {
       "source_id": "SRC-025",
@@ -680,12 +727,14 @@
         "D11"
       ],
       "chapters": [
-        "ch04"
+        "ch02",
+        "ch31"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-025.txt",
       "sha256": "816b90ee61a714306a4e404f67f8334c44292899471f50abd0bdd95953ea3f23",
       "byte_length": 127225,
-      "word_count": 19725
+      "word_count": 19725,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-026",
@@ -706,13 +755,14 @@
         "D04"
       ],
       "chapters": [
-        "ch01",
-        "ch03"
+        "ch10",
+        "ch11"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-026.txt",
       "sha256": "831e99a3f99a9f1e2cdc1c2940b3a2046ca2973226130c16ebf5d58b2acb3dde",
       "byte_length": 123231,
-      "word_count": 18434
+      "word_count": 18434,
+      "review_regime": "academic_peer_review"
     },
     {
       "source_id": "SRC-027",
@@ -734,14 +784,15 @@
         "D02"
       ],
       "chapters": [
-        "00-liminaire",
+        "ch00",
         "ch01",
         "ch04"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-027.txt",
       "sha256": "3f8f34adaeb523b3cdc740f8df9d4c97b621f9ac7f955c10d94e3fbc97dcc2e1",
       "byte_length": 160353,
-      "word_count": 22684
+      "word_count": 22684,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-028",
@@ -763,14 +814,15 @@
         "D05"
       ],
       "chapters": [
-        "ch01",
-        "ch03",
-        "ch04"
+        "ch00",
+        "ch02",
+        "ch13"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-028.txt",
       "sha256": "7eeb1c6dfd098f1f6507ab979bdae4a7a2eacc1888efc0d599aca663f6577933",
       "byte_length": 136729,
-      "word_count": 19765
+      "word_count": 19765,
+      "review_regime": "academic_peer_review"
     },
     {
       "source_id": "SRC-029",
@@ -792,12 +844,14 @@
         "D08"
       ],
       "chapters": [
-        "ch04"
+        "ch02",
+        "ch23"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-029.txt",
       "sha256": "659469b4a86d64eab21b613c1754164de732af170d5954a26ac7a69d06cab7d9",
       "byte_length": 130060,
-      "word_count": 17795
+      "word_count": 17795,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-030",
@@ -819,12 +873,14 @@
         "D08"
       ],
       "chapters": [
-        "ch04"
+        "ch02",
+        "ch23"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-030.txt",
       "sha256": "4f1e326b6b314f5856566ce21a588bd934508fc767159859376315a94fcb2dfd",
       "byte_length": 173603,
-      "word_count": 25986
+      "word_count": 25986,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-031",
@@ -846,13 +902,13 @@
         "D05"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch13"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-031.txt",
       "sha256": "80b064f92eb145f5ff0977ee03fb95543bb95599007e69ded99c08927edac0e9",
       "byte_length": 74996,
-      "word_count": 11295
+      "word_count": 11295,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-032",
@@ -874,13 +930,13 @@
         "D05"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch13"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-032.txt",
       "sha256": "dd138f578d07f36f25b962fc8a5c346c1461587184ab85121087e8731feaee72",
       "byte_length": 135378,
-      "word_count": 20794
+      "word_count": 20794,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-033",
@@ -901,12 +957,13 @@
         "D05"
       ],
       "chapters": [
-        "ch03"
+        "ch15"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-033.txt",
       "sha256": "61c64fc7900604a34fcae13f7907df581d97c48ff19ec0d7db579a3bd1bd332e",
       "byte_length": 46158,
-      "word_count": 7817
+      "word_count": 7817,
+      "review_regime": "academic_peer_review"
     },
     {
       "source_id": "SRC-034",
@@ -919,7 +976,7 @@
       "publication_date": "2026",
       "venue_or_issuer": "Temporal Documentation",
       "identifier": "TEMPORAL-SDKS-2026",
-      "url": "https://docs.temporal.io/encyclopedia/temporal-sdks",
+      "url": "https://docs.temporal.io/encyclopedia/architecture/temporal-sdks",
       "status": "L+",
       "metadata_only": false,
       "aacods_score": 10.5,
@@ -927,12 +984,13 @@
         "D05"
       ],
       "chapters": [
-        "ch03"
+        "ch15"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-034.txt",
       "sha256": "95aa625eecff574cd1e55188823cb0b0e10a7c36a2f78b415913ca3bf1fcf35b",
       "byte_length": 15387,
-      "word_count": 2327
+      "word_count": 2327,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-035",
@@ -953,13 +1011,14 @@
         "D05"
       ],
       "chapters": [
-        "ch02",
-        "ch03"
+        "ch09",
+        "ch14"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-035.txt",
       "sha256": "8f4d59dd27f8807741321b3145c5c9c2f22bba5bf9a9299b0c2020d769dc92ae",
       "byte_length": 25147,
-      "word_count": 3651
+      "word_count": 3651,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-036",
@@ -980,12 +1039,13 @@
         "D05"
       ],
       "chapters": [
-        "ch03"
+        "ch15"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-036.txt",
       "sha256": "d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb",
       "byte_length": 24607,
-      "word_count": 3668
+      "word_count": 3668,
+      "review_regime": "standards_draft"
     },
     {
       "source_id": "SRC-037",
@@ -1006,12 +1066,14 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch14",
+        "ch22"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-037.txt",
       "sha256": "1b2526202e8aef9b15819b89cd1c34eefd8d10be3dac7b05f714597c34d5549c",
       "byte_length": 125111,
-      "word_count": 13159
+      "word_count": 13159,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-038",
@@ -1033,13 +1095,16 @@
         "D12"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01"
+        "ch07",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-038.txt",
       "sha256": "938fca60c06c92e10cd6448f31d90fbb81d03adcb1952a21915d219f685e96a9",
       "byte_length": 757889,
-      "word_count": 62231
+      "word_count": 62231,
+      "review_regime": "standards_consensus",
+      "source_native_format": "mdx_concatenated",
+      "extraction_note": "Concaténation brute des fichiers sources MDX de la spécification MCP 2025-11-25 (35,3 % de balises structurelles HTML/JSX légitimes ; contenu normatif authentique)."
     },
     {
       "source_id": "SRC-039",
@@ -1060,13 +1125,13 @@
         "D03"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01"
+        "ch08"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-039.txt",
       "sha256": "fb9823ce13380143b0509c404cc5098c945ba2ec21f0dda779ddf90f4a351727",
       "byte_length": 179807,
-      "word_count": 24333
+      "word_count": 24333,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-040",
@@ -1088,18 +1153,19 @@
         "D04"
       ],
       "chapters": [
-        "ch04"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-040.txt",
       "sha256": "ea4b2e2a02be74d9ea58c479f65fd32ca0dd95a60fab65538792e41a844dd052",
       "byte_length": 32784,
-      "word_count": 4902
+      "word_count": 4902,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-041",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 8693: OAuth 2.0 Token Exchange",
       "authors": "Michael B. Jones, Anthony Nadalin, Brian Campbell, John Bradley, Chuck Mortimore",
       "year": 2020,
@@ -1115,18 +1181,20 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch09",
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-041.txt",
       "sha256": "22f271006669060ee5142350371ee70ed30bba6db93a9d8b43d897d462586a6f",
       "byte_length": 56867,
-      "word_count": 7815
+      "word_count": 7815,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-042",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR)",
       "authors": "Torsten Lodderstedt, Justin Richer, Brian Campbell",
       "year": 2023,
@@ -1142,18 +1210,20 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch05",
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-042.txt",
       "sha256": "e334d06f14081317caf9d457dcbffeae877c5e5009f2452d2f11adcd47d68f6b",
       "byte_length": 55352,
-      "word_count": 7380
+      "word_count": 7380,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-043",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
       "authors": "Daniel Fett, Brian Campbell, John Bradley, Torsten Lodderstedt et al.",
       "year": 2023,
@@ -1168,18 +1238,19 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-043.txt",
       "sha256": "5e0267f9b8801cc882ec1dcb1d1d220cbe8cb38bbe428362cd1c8a2b33ef30e0",
       "byte_length": 83632,
-      "word_count": 12014
+      "word_count": 12014,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-044",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 9943: An Architecture for Trustworthy and Transparent Digital Supply Chains (SCITT)",
       "authors": "Henk Birkholz, Antoine Delignat-Lavaud, Cedric Fournet, Yogesh Deshpande, Steve Lasker",
       "year": 2026,
@@ -1195,12 +1266,14 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch18",
+        "ch22"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-044.txt",
       "sha256": "1ed0ffb4007b7986d5d3ff4da1a0489d5b9d71c5eae4cd89a7f48ae650a19fef",
       "byte_length": 65473,
-      "word_count": 9449
+      "word_count": 9449,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-045",
@@ -1222,12 +1295,14 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch05",
+        "ch17"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-045.txt",
       "sha256": "fb983307e736a3747a1dfa27f4e698f41cd45f4854f129c7cfc3c4a24c3d8020",
       "byte_length": 70895,
-      "word_count": 9881
+      "word_count": 9881,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-046",
@@ -1248,12 +1323,13 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch16"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-046.txt",
       "sha256": "d85539da6604e026266545f74198661e718d6fd2d7316178cab87565f44c9851",
       "byte_length": 6860,
-      "word_count": 1080
+      "word_count": 1080,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-047",
@@ -1274,12 +1350,13 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch16"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-047.txt",
       "sha256": "863cee96178b93722999cbceee5ff74cb7b6203356af2ae571e289c6e72b408b",
       "byte_length": 57958,
-      "word_count": 8930
+      "word_count": 8930,
+      "review_regime": "standards_draft"
     },
     {
       "source_id": "SRC-048",
@@ -1300,12 +1377,13 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch16"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-048.txt",
       "sha256": "ab53c74913dd1337f6183a03825d985dc1f39bc613721a54e9a3d3092231045e",
       "byte_length": 69988,
-      "word_count": 10027
+      "word_count": 10027,
+      "review_regime": "standards_draft"
     },
     {
       "source_id": "SRC-049",
@@ -1326,12 +1404,13 @@
         "D06"
       ],
       "chapters": [
-        "ch02"
+        "ch18"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-049.txt",
       "sha256": "bb840af1e6a3e1df10862cf3a8f26e435cbdc7502248a809ba1caba205a3574c",
       "byte_length": 125529,
-      "word_count": 19224
+      "word_count": 19224,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-050",
@@ -1353,12 +1432,15 @@
         "D12"
       ],
       "chapters": [
-        "ch02"
+        "ch00",
+        "ch18",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-050.txt",
       "sha256": "14b6c1706d2c4a1645a7c285e37e9e7e33dd98348302c84c11db9613c0f1d267",
       "byte_length": 150660,
-      "word_count": 25028
+      "word_count": 25028,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-051",
@@ -1380,13 +1462,14 @@
         "D11"
       ],
       "chapters": [
-        "ch02",
-        "ch04"
+        "ch18",
+        "ch31"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-051.txt",
       "sha256": "80e6a458907c3d2e5829db8eef5b8efbbb89a25b2dbe1153bcc7129a1a4a2599",
       "byte_length": 78365,
-      "word_count": 10327
+      "word_count": 10327,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-052",
@@ -1409,13 +1492,15 @@
         "D11"
       ],
       "chapters": [
-        "ch02",
-        "ch04"
+        "ch18",
+        "ch26",
+        "ch31"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-052.txt",
       "sha256": "cab48e350b2941891ec38ed7545d2b276b5815804d690187650c232424c945e3",
       "byte_length": 16420,
-      "word_count": 2175
+      "word_count": 2175,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-053",
@@ -1437,13 +1522,14 @@
         "D11"
       ],
       "chapters": [
-        "ch02",
-        "ch04"
+        "ch18",
+        "ch31"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-053.txt",
       "sha256": "8d44ae9b57d6bc8b4bc90896c0edff9f2217d7e7468d3b19ac285454e31016c2",
       "byte_length": 337172,
-      "word_count": 47637
+      "word_count": 47637,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-054",
@@ -1464,13 +1550,13 @@
         "D07"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch19"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-054.txt",
       "sha256": "1f113bf38b90261c6372c5b9a8d77a4355c7e4fa0ccf11b4d179930a9a0dfa7f",
       "byte_length": 347771,
-      "word_count": 48743
+      "word_count": 48743,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-055",
@@ -1495,16 +1581,33 @@
         "D12"
       ],
       "chapters": [
-        "00-liminaire",
+        "ch00",
         "ch01",
         "ch02",
-        "ch03",
-        "ch04"
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch11",
+        "ch13",
+        "ch14",
+        "ch16",
+        "ch19",
+        "ch20",
+        "ch21",
+        "ch22",
+        "ch23",
+        "ch29",
+        "ch30",
+        "ch32",
+        "ch34",
+        "ch35",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-055.txt",
       "sha256": "4d9f1c9f067fc284f01e8a904b172bbaceb97dd5a259a4d73c7d80f1482c22f3",
       "byte_length": 100680,
-      "word_count": 13820
+      "word_count": 13820,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-056",
@@ -1525,13 +1628,13 @@
         "D07"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch20"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-056.txt",
       "sha256": "490ff7dc6d6914d59acfb56fab33ebb48ae61dd5ef1bfd181cb69d04c68ee9f5",
       "byte_length": 97586,
-      "word_count": 14394
+      "word_count": 14394,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-057",
@@ -1554,14 +1657,17 @@
         "D07"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01",
-        "ch04"
+        "ch00",
+        "ch03",
+        "ch07",
+        "ch19",
+        "ch30"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-057.txt",
       "sha256": "cae21acac54fea61a6270540a888a090731fac9d0de3ae0f121f3d51d59ed7e9",
       "byte_length": 49308,
-      "word_count": 7412
+      "word_count": 7412,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-058",
@@ -1583,12 +1689,16 @@
         "D11"
       ],
       "chapters": [
-        "ch04"
+        "ch12",
+        "ch14",
+        "ch19",
+        "ch21"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-058.txt",
       "sha256": "78b03417f4de11b0132a9afce95e493bec8b9028715ec9b9139aa504d4599ecb",
       "byte_length": 112088,
-      "word_count": 17212
+      "word_count": 17212,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-059",
@@ -1610,13 +1720,17 @@
         "D12"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch13",
+        "ch14",
+        "ch16",
+        "ch19",
+        "ch20"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-059.txt",
       "sha256": "e5a50552cb527f49da00bcd4ea206348db3331b41c6f4fa2dd7e7dc5904cf17d",
       "byte_length": 3616,
-      "word_count": 506
+      "word_count": 506,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-060",
@@ -1639,14 +1753,20 @@
         "D11"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch02",
-        "ch04"
+        "ch00",
+        "ch05",
+        "ch26",
+        "ch27",
+        "ch31",
+        "ch32",
+        "ch33",
+        "ch34"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-060.txt",
       "sha256": "e0a79e4f278c88177206c60458fad1f06c74fc80d6b23e404ef523c290346477",
       "byte_length": 711317,
-      "word_count": 102754
+      "word_count": 102754,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-061",
@@ -1668,12 +1788,16 @@
         "D11"
       ],
       "chapters": [
-        "ch04"
+        "ch05",
+        "ch26",
+        "ch31",
+        "ch34"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-061.txt",
       "sha256": "cafaf35193ed2bdb4c97f5219deef5a6c9310aa5ceae48484d36485b3211d712",
       "byte_length": 175654,
-      "word_count": 26235
+      "word_count": 26235,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-062",
@@ -1694,14 +1818,14 @@
         "D09"
       ],
       "chapters": [
-        "ch02",
-        "ch03",
-        "ch04"
+        "ch21",
+        "ch26"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-062.txt",
       "sha256": "6e4b138de7f05c440c3b1c3b590545dc0cd3f1c793e4c12c733f8736a2ecfb9e",
       "byte_length": 364364,
-      "word_count": 52268
+      "word_count": 52268,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-063",
@@ -1725,14 +1849,25 @@
         "D10"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch02",
-        "ch04"
+        "ch00",
+        "ch04",
+        "ch05",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch22",
+        "ch25",
+        "ch27",
+        "ch28",
+        "ch29",
+        "ch32",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-063.txt",
       "sha256": "829e67f777ca0645b5b51a2ec4d8ec94739232c5a33ef76b7944d2bb81b61d87",
       "byte_length": 143588,
-      "word_count": 21658
+      "word_count": 21658,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-064",
@@ -1753,13 +1888,14 @@
         "D09"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch04"
+        "ch11",
+        "ch25"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-064.txt",
       "sha256": "db8153ade9d57151bd7427e5ed3c4157447efdc17a4d35d8727427edd7589e7c",
       "byte_length": 1206095,
-      "word_count": 167678
+      "word_count": 167678,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-065",
@@ -1784,14 +1920,27 @@
         "D11"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch02",
-        "ch04"
+        "ch00",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch25",
+        "ch28",
+        "ch29",
+        "ch31",
+        "ch32",
+        "ch33",
+        "ch34",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-065.txt",
       "sha256": "60ef80b531aaa0ac26d2180a14bd1c295297dabe7ddf8c4260f37c90b2ecda3e",
       "byte_length": 44778,
-      "word_count": 6372
+      "word_count": 6372,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-066",
@@ -1804,7 +1953,7 @@
       "publication_date": "2026-07-13",
       "venue_or_issuer": "OSFI Technology Risk Bulletin",
       "identifier": "OSFI-BULLETIN-AGENTIC-2026",
-      "url": "http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational",
+      "url": "https://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational",
       "status": "L+",
       "metadata_only": false,
       "aacods_score": 12.0,
@@ -1814,20 +1963,23 @@
         "D10"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01",
-        "ch04"
+        "ch00",
+        "ch05",
+        "ch06",
+        "ch25",
+        "ch32"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-066.txt",
       "sha256": "5a1b1a2e004b17fdfdbef1e2da35981654e689878fe0727cf26d9aba27e00f2b",
       "byte_length": 14425,
-      "word_count": 1971
+      "word_count": 1971,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-067",
       "seed_id": "SEED-V8-10",
       "category": "legislation",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "Décision d'exécution (UE) 2026/2274 de la Commission du 12 octobre 2026 concernant les normes harmonisées relatives aux systèmes d'IA à haut risque (EN 18286:2026)",
       "authors": "Commission européenne",
       "year": 2026,
@@ -1843,12 +1995,15 @@
         "D12"
       ],
       "chapters": [
-        "ch04"
+        "ch26",
+        "ch34",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-067.txt",
       "sha256": "3d1dcffce8aeb8fa2cf340feb94c21e084800bf21c7249940c0fa51000b37f33",
       "byte_length": 5154,
-      "word_count": 733
+      "word_count": 733,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-068",
@@ -1872,18 +2027,26 @@
         "D10"
       ],
       "chapters": [
-        "ch04"
+        "ch06",
+        "ch09",
+        "ch12",
+        "ch24",
+        "ch25",
+        "ch27",
+        "ch28",
+        "ch32"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-068.txt",
       "sha256": "db7ccc401ea3b392f22b42c75b63d657eb95cd1c6ab5ccf2d55551bf9be01625",
       "byte_length": 55115,
-      "word_count": 7859
+      "word_count": 7859,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-069",
       "seed_id": "SEED-V8-10",
       "category": "official_report",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "First harmonised standard supporting the AI Act published in the Official Journal (EN 18286:2026)",
       "authors": "Commission européenne (DG CNECT)",
       "year": 2026,
@@ -1899,12 +2062,15 @@
         "D12"
       ],
       "chapters": [
-        "ch04"
+        "ch26",
+        "ch34"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-069.txt",
       "sha256": "647fbb09b0ec2399cfae5add020126b9b9b65b26dee84e381b204afcc21aa291",
       "byte_length": 1876,
-      "word_count": 295
+      "word_count": 295,
+      "review_regime": "statutory_or_regulatory",
+      "authority_note": "Communiqué institutionnel bref de la Commission européenne (DG CNECT, 295 mots) publié en complément opérationnel de la Décision d'exécution (UE) 2026/2274 (SRC-067, 786 mots), qui porte l'autorité juridique exécutoire."
     },
     {
       "source_id": "SRC-070",
@@ -1927,12 +2093,19 @@
         "D10"
       ],
       "chapters": [
-        "ch04"
+        "ch10",
+        "ch12",
+        "ch25",
+        "ch27",
+        "ch28"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-070.txt",
       "sha256": "0e1fc93237931022566f8436015964c426c7f7a70f22fe5ab8af69396717bd1f",
       "byte_length": 1767391,
-      "word_count": 266067
+      "word_count": 266067,
+      "review_regime": "statutory_or_regulatory",
+      "source_native_format": "html_extract",
+      "extraction_note": "Extraction texte depuis HTML Justice Canada (en-tête de gabarit HTML mineur sans altération du texte législatif)."
     },
     {
       "source_id": "SRC-071",
@@ -1945,7 +2118,7 @@
       "publication_date": "2026-11-01",
       "venue_or_issuer": "AIBanks.ca (agrégateur tiers indépendant — index public de preuves)",
       "identifier": "AIBANKS-CA-AMF-2026",
-      "url": "https://www.aibanks.ca/",
+      "url": "https://aibanks.ca/",
       "status": "L+",
       "metadata_only": false,
       "aacods_score": 9.0,
@@ -1955,13 +2128,19 @@
         "D10"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch04"
+        "ch16",
+        "ch17",
+        "ch25",
+        "ch28",
+        "ch32",
+        "ch34",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-071.txt",
       "sha256": "2d39751c5fed55ad19aebd3cc238f8a1a26d6b266bb8bc3f7ee1e0e37a796e8b",
       "byte_length": 12404,
-      "word_count": 1985
+      "word_count": 1985,
+      "review_regime": "grey_literature"
     },
     {
       "source_id": "SRC-072",
@@ -1983,14 +2162,18 @@
         "D12"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01"
+        "ch00",
+        "ch07",
+        "ch29",
+        "ch35",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-072.txt",
       "sha256": "ed550806a58eb7744b858fb9f26001aa5e55dac9e2babe88317cc81d9d4c490d",
       "byte_length": 23788,
       "word_count": 2925,
-      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267"
+      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-073",
@@ -2012,12 +2195,21 @@
         "D11"
       ],
       "chapters": [
-        "ch04"
+        "ch05",
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-073.txt",
       "sha256": "f06eb8eca755edcd0c919c7f55a5493baa75067ac6fb28848e4486419653708a",
       "byte_length": 79718,
-      "word_count": 10596
+      "word_count": 10596,
+      "review_regime": "academic_peer_review",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_302_TO_200_OK",
+        "access_mechanism": "benign_redirect",
+        "local_sha256_verified": true
+      },
+      "access_note": "Redirection de contrôle de témoin sans état Springer Nature (302 -> 200 OK) vérifiée le 2026-11-25."
     },
     {
       "source_id": "SRC-074",
@@ -2039,14 +2231,16 @@
         "D12"
       ],
       "chapters": [
-        "00-liminaire",
-        "ch01"
+        "ch00",
+        "ch07",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-074.txt",
       "sha256": "22574bf11e004068493787203ce92be1162107cad717bcb805a15780d4fa69c9",
       "byte_length": 31155,
       "word_count": 3746,
-      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267"
+      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-075",
@@ -2068,18 +2262,20 @@
         "D11"
       ],
       "chapters": [
-        "ch04"
+        "ch05",
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-075.txt",
       "sha256": "a0b7c487a5e089136bbd97d1f4d9dc54ce8376634f6f270ea425689f31dd179c",
       "byte_length": 122290,
-      "word_count": 17178
+      "word_count": 17178,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-076",
       "seed_id": "SEED-V8-04",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)",
       "authors": "Simon Josefsson, Ilari Liusvaara",
       "year": 2017,
@@ -2095,19 +2291,19 @@
         "D08"
       ],
       "chapters": [
-        "ch01",
-        "ch02"
+        "ch18"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-076.txt",
       "sha256": "29c43d9f68a78933e16355eba485ce654fb7256858b69f8d1f02af9ea40e25cc",
       "byte_length": 87266,
-      "word_count": 12059
+      "word_count": 12059,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-077",
       "seed_id": "SEED-V8-01",
       "category": "standard_rfc",
-      "peer_reviewed": true,
+      "peer_reviewed": false,
       "title": "RFC 8785: JSON Canonicalization Scheme (JCS)",
       "authors": "Anders Rundgren, Bret Jordan, Samuel Erdtman",
       "year": 2020,
@@ -2125,13 +2321,22 @@
         "D12"
       ],
       "chapters": [
-        "ch01",
-        "ch02"
+        "ch04",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch15",
+        "ch16",
+        "ch22",
+        "ch35",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-077.txt",
       "sha256": "be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642",
       "byte_length": 36840,
-      "word_count": 5011
+      "word_count": 5011,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-078",
@@ -2153,14 +2358,14 @@
         "D07"
       ],
       "chapters": [
-        "ch01",
-        "ch02"
+        "ch07"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-078.txt",
       "sha256": "71dd5f0f236cfa26fb33a3cebf6fc71d4797f1225a06c9cae85bdda54ae50bf8",
       "byte_length": 9939,
       "word_count": 1104,
-      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267"
+      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-079",
@@ -2173,7 +2378,7 @@
       "publication_date": "2026-10-15",
       "venue_or_issuer": "GLEIF & GitHub (GLEIF-IT/vlei-egf, WebOfTrust/vLEI)",
       "identifier": "GLEIF-VLEI-ISO17442-3",
-      "url": "https://www.gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/",
+      "url": "https://www.gleif.org/en/organizational-identity/lei-vlei/the-verifiable-lei-vlei/",
       "status": "L+",
       "metadata_only": false,
       "aacods_score": 11.0,
@@ -2183,12 +2388,15 @@
         "D10"
       ],
       "chapters": [
-        "ch02"
+        "ch08",
+        "ch16",
+        "ch29"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-079.txt",
       "sha256": "2ccc0f09f7c8475c0236605ba2b3f07537945e72e998df4db363f641a6166bd5",
       "byte_length": 39987,
-      "word_count": 5350
+      "word_count": 5350,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-080",
@@ -2210,13 +2418,14 @@
         "D12"
       ],
       "chapters": [
-        "ch01"
+        "ch07"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-080.txt",
       "sha256": "742750af0bb8c716e7030c4977c992b55d1adc4407e9e66997db5846baedc2cd",
       "byte_length": 98426,
       "word_count": 12890,
-      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267"
+      "pinned_git_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-081",
@@ -2238,13 +2447,15 @@
         "D12"
       ],
       "chapters": [
-        "ch01"
+        "ch07",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-081.txt",
       "sha256": "6608969be1213cafd12edc27269519be54b3fadb0443ff0f1b5fc76f75752de4",
       "byte_length": 26389,
       "word_count": 3378,
-      "pinned_git_commit": "862397cec702e8f828713071da501cf56158e8fc"
+      "pinned_git_commit": "862397cec702e8f828713071da501cf56158e8fc",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-082",
@@ -2267,13 +2478,16 @@
         "D12"
       ],
       "chapters": [
-        "ch01"
+        "ch07",
+        "ch31",
+        "ch36"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-082.txt",
       "sha256": "64aee02f2717dc1b290c079a012c470baccd53f6299103b6713a545ccae03be5",
       "byte_length": 27669,
       "word_count": 3795,
-      "pinned_git_commit": "862397cec702e8f828713071da501cf56158e8fc"
+      "pinned_git_commit": "862397cec702e8f828713071da501cf56158e8fc",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-083",
@@ -2295,13 +2509,17 @@
         "D12"
       ],
       "chapters": [
-        "ch01"
+        "ch00",
+        "ch08",
+        "ch16",
+        "ch29"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-083.txt",
       "sha256": "627ccfe6ffb1be2c56811c3dcc18780deb419f41cdc98248095c939b2d9dc9cb",
       "byte_length": 155498,
       "word_count": 17885,
-      "pinned_git_commit": "3303592588e388e62e0f69f701af531d2f4e3991"
+      "pinned_git_commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-084",
@@ -2323,13 +2541,14 @@
         "D12"
       ],
       "chapters": [
-        "ch01"
+        "ch08"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-084.txt",
       "sha256": "e195bf96ab630c69797851970203e1b2b6b19528f2e9803b7d904b91a5104016",
       "byte_length": 35844,
       "word_count": 4952,
-      "pinned_git_commit": "3303592588e388e62e0f69f701af531d2f4e3991"
+      "pinned_git_commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-085",
@@ -2351,13 +2570,14 @@
         "D12"
       ],
       "chapters": [
-        "ch01"
+        "ch08"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-085.txt",
       "sha256": "25a940c30c00482eac0572714022c310ea2f37189e7d9bde67d62b8a56783c63",
       "byte_length": 184205,
       "word_count": 21402,
-      "pinned_git_commit": "78e1d6a1f7f118c8e9bc830b04a8579c1119cb78"
+      "pinned_git_commit": "78e1d6a1f7f118c8e9bc830b04a8579c1119cb78",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-086",
@@ -2381,14 +2601,18 @@
         "D12"
       ],
       "chapters": [
-        "ch01",
-        "ch04"
+        "ch08",
+        "ch27",
+        "ch29",
+        "ch30",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-086.txt",
       "sha256": "4889ec96433ae5f2a09c0332d9e1ff96bf3533bcd6ff41fc35a5106ffd59e44d",
       "byte_length": 8648,
       "word_count": 672,
-      "pinned_git_commit": "5daf0144b4a4adbdefb62180739b13c5bd7d8196"
+      "pinned_git_commit": "5daf0144b4a4adbdefb62180739b13c5bd7d8196",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-087",
@@ -2411,13 +2635,21 @@
         "D12"
       ],
       "chapters": [
-        "ch03"
+        "ch09",
+        "ch11",
+        "ch14",
+        "ch20",
+        "ch21",
+        "ch29",
+        "ch30",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-087.txt",
       "sha256": "4b242f9eee53ae85cdb9e073e8fd8addfe60177b0d33c7de371a0c0f2cbbb7fc",
       "byte_length": 118657,
       "word_count": 16566,
-      "pinned_git_commit": "ba39415db4b3c90cd68942a74b3cc2223ec2b23c"
+      "pinned_git_commit": "ba39415db4b3c90cd68942a74b3cc2223ec2b23c",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-088",
@@ -2439,21 +2671,26 @@
         "D12"
       ],
       "chapters": [
-        "ch03",
-        "ch04"
+        "ch11",
+        "ch14",
+        "ch20",
+        "ch21",
+        "ch30",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-088.txt",
       "sha256": "4e566ce11e03cf89bba835e3ab35a54b21b980d5b1661951d8b82278c4fab291",
       "byte_length": 18696,
       "word_count": 2247,
-      "pinned_git_commit": "ba39415db4b3c90cd68942a74b3cc2223ec2b23c"
+      "pinned_git_commit": "ba39415db4b3c90cd68942a74b3cc2223ec2b23c",
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-089",
       "seed_id": "SEED-V8-05",
       "category": "standard_spec",
       "peer_reviewed": false,
-      "title": "OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md)",
+      "title": "OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md : 60 attributs = 50 Development + 10 Deprecated)",
       "authors": "OpenTelemetry Semantic Conventions Maintainers",
       "year": 2026,
       "publication_date": "2026-04-28",
@@ -2467,13 +2704,17 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch22",
+        "ch24"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-089.txt",
       "sha256": "74e99ecc4e35c6c7c7541dd310d1bd2f9e9c24f26e35338a332901cce43993da",
       "byte_length": 39330,
       "word_count": 3715,
-      "pinned_git_commit": "e018fe6f91862f5ed63c082f87697cddac596784"
+      "pinned_git_commit": "e018fe6f91862f5ed63c082f87697cddac596784",
+      "review_regime": "standards_consensus",
+      "source_native_format": "markdown_autogen",
+      "extraction_note": "Registre Markdown autogénéré OpenTelemetry v1.41.0 gen-ai.md (11,5 % d'ancres HTML <a id=...> et badges shields.io ; 60 attributs = 50 Development + 10 Deprecated)."
     },
     {
       "source_id": "SRC-090",
@@ -2494,13 +2735,17 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch22",
+        "ch24"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-090.txt",
       "sha256": "b05fc94233aa5bf1dea4d7d5b60abf65b0255f49443f08ce9502a6bea7a18c75",
       "byte_length": 62752,
       "word_count": 6234,
-      "pinned_git_commit": "244465e94b9d7167fa5ed5c31a4b2b49ab6ddee5"
+      "pinned_git_commit": "244465e94b9d7167fa5ed5c31a4b2b49ab6ddee5",
+      "review_regime": "standards_consensus",
+      "source_native_format": "markdown_autogen",
+      "extraction_note": "Registre Markdown autogénéré OpenTelemetry semantic-conventions-genai@244465e9 gen-ai.md (10,1 % d'ancres HTML et badges ; 85 attributs Development incluant cache_write)."
     },
     {
       "source_id": "SRC-091",
@@ -2522,12 +2767,23 @@
         "D12"
       ],
       "chapters": [
-        "ch04"
+        "ch23"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-091.txt",
       "sha256": "069cee64fd680ec43c71269994ed3945bc99f8e0bd4d9b737d1917a26e8ba39d",
       "byte_length": 42745,
-      "word_count": 6801
+      "word_count": 6801,
+      "review_regime": "academic_peer_review",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_200_POW_ANUBIS",
+        "access_mechanism": "hal_anubis_pow_challenge",
+        "canonical_notice_url": "https://inria.hal.science/hal-02526355v1",
+        "canonical_doi": "10.1007/978-3-030-31280-0_3",
+        "canonical_doi_url": "https://doi.org/10.1007/978-3-030-31280-0_3",
+        "local_sha256_verified": true
+      },
+      "access_note": "Sondage réseau direct (2026-11-25) filtré par défi Proof-of-Work Anubis sur HAL (non contourné selon AO-01). Texte intégral CC BY 4.0 archivé avant filtrage et vérifié au bit près par empreinte SHA-256 locale (6 801 mots) ; notice HAL https://inria.hal.science/hal-02526355v1 et DOI éditeur IFIP ICTSS 2019 : https://doi.org/10.1007/978-3-030-31280-0_3."
     },
     {
       "source_id": "SRC-092",
@@ -2549,12 +2805,13 @@
         "D12"
       ],
       "chapters": [
-        "ch04"
+        "ch23"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-092.txt",
       "sha256": "0e9939c49f50f444cac355418f0db09d566aef8d16f240d7c65a6a9efbe8acc8",
       "byte_length": 112972,
-      "word_count": 17197
+      "word_count": 17197,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-093",
@@ -2576,12 +2833,13 @@
         "D12"
       ],
       "chapters": [
-        "ch04"
+        "ch23"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-093.txt",
       "sha256": "619e05baae21e839f905977dba7044e689b91a4678be105edc031a6307593af2",
       "byte_length": 71983,
-      "word_count": 9506
+      "word_count": 9506,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-094",
@@ -2603,12 +2861,15 @@
         "D12"
       ],
       "chapters": [
-        "ch04"
+        "ch02",
+        "ch23",
+        "ch35"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-094.txt",
       "sha256": "5389504543994bb1ff65414eb1edcf4ccda10b0d880e50ece38618bd82346151",
       "byte_length": 70404,
-      "word_count": 12083
+      "word_count": 12083,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-095",
@@ -2630,13 +2891,14 @@
         "D07"
       ],
       "chapters": [
-        "ch01",
-        "ch02"
+        "ch19",
+        "ch21"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-095.txt",
       "sha256": "61dc1007669dc9da079e90bf98645a61774cc9f896fdb2267f88ce154860e065",
       "byte_length": 66053,
-      "word_count": 9569
+      "word_count": 9569,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-096",
@@ -2658,17 +2920,13 @@
         "D11"
       ],
       "chapters": [
-        "ch00",
-        "ch01",
-        "ch03",
-        "ch04",
-        "ch07",
-        "ch11"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-096.txt",
       "sha256": "f475a70c3b55b02a344241b1e1e6e1634cd904922b191f8bed2b89c1ca5d1554",
       "byte_length": 153510,
-      "word_count": 23147
+      "word_count": 23147,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-097",
@@ -2689,16 +2947,13 @@
         "D01"
       ],
       "chapters": [
-        "ch01",
-        "ch03",
-        "ch04",
-        "ch05",
-        "ch11"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-097.txt",
       "sha256": "45b9200d9e59c5eff7cb6ee35688c38f65ee372e0d547be0596409c1b2810292",
       "byte_length": 64339,
-      "word_count": 9028
+      "word_count": 9028,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-098",
@@ -2720,16 +2975,13 @@
         "D11"
       ],
       "chapters": [
-        "ch01",
-        "ch03",
-        "ch04",
-        "ch07",
-        "ch10"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-098.txt",
       "sha256": "c87fd1c3cd815ba6ae355c6b34203dd83f75b20406e1eded6fbac6787e0eb0e9",
       "byte_length": 74078,
-      "word_count": 11074
+      "word_count": 11074,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-099",
@@ -2751,14 +3003,13 @@
         "D11"
       ],
       "chapters": [
-        "ch01",
-        "ch02",
-        "ch11"
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-099.txt",
       "sha256": "454df0409d081bd558bdb7b8dc0427d0c995178ab676795dcda876f6de5f31fc",
       "byte_length": 39185,
-      "word_count": 5888
+      "word_count": 5888,
+      "review_regime": "academic_peer_review"
     },
     {
       "source_id": "SRC-100",
@@ -2780,14 +3031,13 @@
         "D11"
       ],
       "chapters": [
-        "ch01",
-        "ch02",
-        "ch11"
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-100.txt",
       "sha256": "6d5df87a4d49f1f4579706842ef43e90ac07161dd8b21def7d15271c7a9ead40",
       "byte_length": 93164,
-      "word_count": 14293
+      "word_count": 14293,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-101",
@@ -2808,13 +3058,14 @@
         "D01"
       ],
       "chapters": [
-        "ch02",
         "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-101.txt",
       "sha256": "d36ecb1c274ce55607835b6e3c6c5b4e02d1868265e37f73a79173ace448bef6",
       "byte_length": 47538,
-      "word_count": 6584
+      "word_count": 6584,
+      "review_regime": "grey_literature",
+      "authority_note": "Synthèse web publique ouverte d'un rapport commercial payant à méthodologie propriétaire fermée (AACODS 9,0/12). Usage restreint à l'illustration de dispersion des fourchettes de marché dans ch03, assorti d'une mise en garde critique, hors preuve décisionnelle."
     },
     {
       "source_id": "SRC-102",
@@ -2835,12 +3086,22 @@
         "D01"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-102.txt",
       "sha256": "575dae06de0905788fc86efa811396c295cc16b6a0dcbc1182993dd4f500f16b",
       "byte_length": 20770,
-      "word_count": 2917
+      "word_count": 2917,
+      "review_regime": "grey_literature",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_FORBIDDEN",
+        "access_mechanism": "commercial_antibot_403",
+        "canonical_notice_url": "https://www.grandviewresearch.com/industry-analysis/enterprise-agentic-ai-market-report",
+        "local_sha256_verified": true
+      },
+      "access_note": "Sondage réseau direct (2026-11-25) retournant HTTP 403 Forbidden (filtrage anti-bot sur vitrine commerciale publique, non contourné selon AO-01). Texte intégral archivé antérieurement et vérifié par empreinte SHA-256 locale (2 917 mots) ; usage restreint à l'illustration de dispersion de marché en ch03 (hors preuve décisionnelle, AACODS 9,0/12).",
+      "authority_note": "Synthèse web publique ouverte d'un rapport commercial payant à méthodologie propriétaire fermée (AACODS 9,0/12) et filtrée HTTP 403 en sondage direct (2026-11-25). Usage restreint à l'illustration de dispersion de marché dans ch03, hors preuve décisionnelle."
     },
     {
       "source_id": "SRC-103",
@@ -2862,12 +3123,21 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-103.txt",
       "sha256": "ebfea816ab26e93d4f4b837fbbeea00d626ed26b9f023a76c4ae7db25d6d48e7",
       "byte_length": 25461,
-      "word_count": 3730
+      "word_count": 3730,
+      "review_regime": "statutory_or_regulatory",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_SEC_FAIR_ACCESS",
+        "access_mechanism": "sec_edgar_fair_access_declared_user_agent",
+        "policy_url": "https://www.sec.gov/os/accessing-edgar-data",
+        "local_sha256_verified": true
+      },
+      "access_note": "Dépôt public officiel SEC EDGAR (domaine public). Le sondage direct sous User-Agent générique retourne HTTP 403 conformément à la SEC EDGAR Fair Access Policy (exige un en-tête User-Agent déclaré organisation + courriel, https://www.sec.gov/os/accessing-edgar-data). Texte intégral archivé et vérifié au bit près par empreinte SHA-256 locale."
     },
     {
       "source_id": "SRC-104",
@@ -2889,12 +3159,21 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-104.txt",
       "sha256": "8da73deea031eeb68c1ff6501b08f4eb681248b18dde64cf2d68a8dd65d608a9",
       "byte_length": 39402,
-      "word_count": 5981
+      "word_count": 5981,
+      "review_regime": "statutory_or_regulatory",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_SEC_FAIR_ACCESS",
+        "access_mechanism": "sec_edgar_fair_access_declared_user_agent",
+        "policy_url": "https://www.sec.gov/os/accessing-edgar-data",
+        "local_sha256_verified": true
+      },
+      "access_note": "Dépôt public officiel SEC EDGAR (domaine public). Le sondage direct sous User-Agent générique retourne HTTP 403 conformément à la SEC EDGAR Fair Access Policy (exige un en-tête User-Agent déclaré organisation + courriel, https://www.sec.gov/os/accessing-edgar-data). Texte intégral archivé et vérifié au bit près par empreinte SHA-256 locale."
     },
     {
       "source_id": "SRC-105",
@@ -2916,12 +3195,21 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-105.txt",
       "sha256": "bb4724559067335d931adf053587027a7f013b526abe9cd6cd3c8609908289e0",
       "byte_length": 25225,
-      "word_count": 3681
+      "word_count": 3681,
+      "review_regime": "statutory_or_regulatory",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_SEC_FAIR_ACCESS",
+        "access_mechanism": "sec_edgar_fair_access_declared_user_agent",
+        "policy_url": "https://www.sec.gov/os/accessing-edgar-data",
+        "local_sha256_verified": true
+      },
+      "access_note": "Dépôt public officiel SEC EDGAR (domaine public). Le sondage direct sous User-Agent générique retourne HTTP 403 conformément à la SEC EDGAR Fair Access Policy (exige un en-tête User-Agent déclaré organisation + courriel, https://www.sec.gov/os/accessing-edgar-data). Texte intégral archivé et vérifié au bit près par empreinte SHA-256 locale."
     },
     {
       "source_id": "SRC-106",
@@ -2943,12 +3231,21 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-106.txt",
       "sha256": "6d7b4822b23decd7b2782bdbacd32d3d8a2d243af30f66e101703022a5fd2237",
       "byte_length": 203772,
-      "word_count": 30213
+      "word_count": 30213,
+      "review_regime": "statutory_or_regulatory",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_SEC_FAIR_ACCESS",
+        "access_mechanism": "sec_edgar_fair_access_declared_user_agent",
+        "policy_url": "https://www.sec.gov/os/accessing-edgar-data",
+        "local_sha256_verified": true
+      },
+      "access_note": "Dépôt public officiel SEC EDGAR (domaine public). Le sondage direct sous User-Agent générique retourne HTTP 403 conformément à la SEC EDGAR Fair Access Policy (exige un en-tête User-Agent déclaré organisation + courriel, https://www.sec.gov/os/accessing-edgar-data). Texte intégral archivé et vérifié au bit près par empreinte SHA-256 locale."
     },
     {
       "source_id": "SRC-107",
@@ -2970,12 +3267,21 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-107.txt",
       "sha256": "bdd42cefdb9a08b514caaa0de6b8161aab4e7a533f6358743f352e03d76201b0",
       "byte_length": 330060,
-      "word_count": 48966
+      "word_count": 48966,
+      "review_regime": "statutory_or_regulatory",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_SEC_FAIR_ACCESS",
+        "access_mechanism": "sec_edgar_fair_access_declared_user_agent",
+        "policy_url": "https://www.sec.gov/os/accessing-edgar-data",
+        "local_sha256_verified": true
+      },
+      "access_note": "Dépôt public officiel SEC EDGAR (domaine public). Le sondage direct sous User-Agent générique retourne HTTP 403 conformément à la SEC EDGAR Fair Access Policy (exige un en-tête User-Agent déclaré organisation + courriel, https://www.sec.gov/os/accessing-edgar-data). Texte intégral archivé et vérifié au bit près par empreinte SHA-256 locale."
     },
     {
       "source_id": "SRC-108",
@@ -2997,12 +3303,21 @@
         "D08"
       ],
       "chapters": [
-        "ch02"
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-108.txt",
       "sha256": "c840108cea5228ca58c45ebbcda9000ca0f69d6fb33f511ef89f983a849bcd3c",
       "byte_length": 207044,
-      "word_count": 31313
+      "word_count": 31313,
+      "review_regime": "statutory_or_regulatory",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_403_SEC_FAIR_ACCESS",
+        "access_mechanism": "sec_edgar_fair_access_declared_user_agent",
+        "policy_url": "https://www.sec.gov/os/accessing-edgar-data",
+        "local_sha256_verified": true
+      },
+      "access_note": "Dépôt public officiel SEC EDGAR (domaine public). Le sondage direct sous User-Agent générique retourne HTTP 403 conformément à la SEC EDGAR Fair Access Policy (exige un en-tête User-Agent déclaré organisation + courriel, https://www.sec.gov/os/accessing-edgar-data). Texte intégral archivé et vérifié au bit près par empreinte SHA-256 locale."
     },
     {
       "source_id": "SRC-109",
@@ -3024,13 +3339,21 @@
         "D11"
       ],
       "chapters": [
-        "ch09",
-        "ch10"
+        "ch26",
+        "ch32"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-109.txt",
       "sha256": "ccfeca2f7bdcb50bee94cc157151c33f01246c54aaae878846a63ea2b864dd5c",
       "byte_length": 81859,
-      "word_count": 10451
+      "word_count": 10451,
+      "review_regime": "academic_peer_review",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_302_TO_200_OK",
+        "access_mechanism": "benign_redirect",
+        "local_sha256_verified": true
+      },
+      "access_note": "Redirection de contrôle de témoin sans état Springer Nature (302 -> 200 OK) vérifiée le 2026-11-25."
     },
     {
       "source_id": "SRC-110",
@@ -3053,13 +3376,13 @@
         "D10"
       ],
       "chapters": [
-        "ch09",
-        "ch12"
+        "ch24"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-110.txt",
       "sha256": "8136e1e002181ca17e41c4492105da441a3b316d8fccb6289665c35ed11d8946",
       "byte_length": 48790,
-      "word_count": 6901
+      "word_count": 6901,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-111",
@@ -3081,13 +3404,14 @@
         "D10"
       ],
       "chapters": [
-        "ch10",
-        "ch12"
+        "ch25",
+        "ch28"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-111.txt",
       "sha256": "70b2dbd2b698650079e67404dc9b1037de32fb620a42f1013224514b48ae0922",
       "byte_length": 33492,
-      "word_count": 4993
+      "word_count": 4993,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-112",
@@ -3109,13 +3433,20 @@
       ],
       "chapters": [
         "ch00",
-        "ch10",
-        "ch12"
+        "ch31"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-112.txt",
       "sha256": "7977e2b1fb07500ea09003968e6a53a737e5d4630117dbbfcbd5f7b9da65b29c",
       "byte_length": 56644,
-      "word_count": 8402
+      "word_count": 8402,
+      "review_regime": "academic_peer_review",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_302_TO_200_OK",
+        "access_mechanism": "benign_redirect",
+        "local_sha256_verified": true
+      },
+      "access_note": "Redirection de contrôle de témoin sans état Springer Nature (302 -> 200 OK) vérifiée le 2026-11-25."
     },
     {
       "source_id": "SRC-113",
@@ -3136,13 +3467,22 @@
         "D11"
       ],
       "chapters": [
-        "ch11",
-        "ch12"
+        "ch33"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-113.txt",
       "sha256": "323acadcd6fb3ec9daedac54624e5710566a4f86d47cbcf297dce2f266eb9265",
       "byte_length": 61710,
-      "word_count": 8640
+      "word_count": 8640,
+      "review_regime": "preprint_or_working_paper",
+      "live_url_audit": {
+        "audited_at": "2026-11-25",
+        "probe_result": "HTTP_200_POW_ANUBIS",
+        "access_mechanism": "hal_anubis_pow_challenge",
+        "canonical_notice_url": "https://hal.science/hal-05789314v1",
+        "canonical_doi": null,
+        "local_sha256_verified": true
+      },
+      "access_note": "Sondage réseau direct (2026-11-25) filtré par défi Proof-of-Work Anubis sur HAL (non contourné selon AO-01). Texte intégral CC BY 4.0 (AIM 2026, Neuchâtel) archivé avant filtrage et vérifié au bit près par empreinte SHA-256 locale (8 640 mots) ; notice HAL canonique : https://hal.science/hal-05789314v1."
     },
     {
       "source_id": "SRC-114",
@@ -3166,12 +3506,16 @@
       ],
       "chapters": [
         "ch10",
-        "ch12"
+        "ch12",
+        "ch25",
+        "ch27",
+        "ch28"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-114.txt",
       "sha256": "dba003d4dce0e7bb54a214ec5a7ccb4592cd7b23af0ab66187f0aec776c06cfd",
       "byte_length": 175186,
-      "word_count": 25960
+      "word_count": 25960,
+      "review_regime": "statutory_or_regulatory"
     },
     {
       "source_id": "SRC-115",
@@ -3192,11 +3536,15 @@
         "D02",
         "D05"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch04",
+        "ch13"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-115.txt",
       "sha256": "02f512999e00633a9cae90eac5add6117eaa125f49fac87f584d81705031972f",
       "byte_length": 110918,
-      "word_count": 17108
+      "word_count": 17108,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-116",
@@ -3217,11 +3565,14 @@
         "D02",
         "D03"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch06"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-116.txt",
       "sha256": "65cd388c2bd5ec5ead601e44f54aeb60517878fdf1f8f37c768280db6c910888",
       "byte_length": 72730,
-      "word_count": 11907
+      "word_count": 11907,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-117",
@@ -3242,11 +3593,14 @@
         "D02",
         "D03"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch06"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-117.txt",
       "sha256": "64274c0deb63b3cb1f38628cfd5fdd5357f0f28bff7613f77ed04a1be664297d",
       "byte_length": 61221,
-      "word_count": 9206
+      "word_count": 9206,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-118",
@@ -3267,11 +3621,15 @@
         "D02",
         "D05"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch04",
+        "ch13"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-118.txt",
       "sha256": "7d2660c4b45e20c67be902240f3b22a606a7a48e1ad26bad5f301b20eb231b38",
       "byte_length": 79317,
-      "word_count": 12427
+      "word_count": 12427,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-119",
@@ -3292,11 +3650,14 @@
         "D02",
         "D03"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch06"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-119.txt",
       "sha256": "9edc88138dde6f5c2bbd38a747ec1361afc92c1acdf441b0dabd1f7b3fb899c4",
       "byte_length": 83086,
-      "word_count": 12435
+      "word_count": 12435,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-120",
@@ -3317,11 +3678,14 @@
         "D02",
         "D07"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch04"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-120.txt",
       "sha256": "fde6ea4999c0f96ef5a121bb61bcf99afda4579d74a7c5be204e04d60aed35a7",
       "byte_length": 97762,
-      "word_count": 14852
+      "word_count": 14852,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-121",
@@ -3342,11 +3706,14 @@
         "D01",
         "D05"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch01"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-121.txt",
       "sha256": "69bb9cf7eb554f09ae345d9f788bf00889c6da23a9679f326dbde9bd204e6970",
       "byte_length": 59695,
-      "word_count": 9118
+      "word_count": 9118,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-122",
@@ -3366,11 +3733,14 @@
       "research_axes": [
         "D01"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch01"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-122.txt",
       "sha256": "67346c9a49593aaf74cb743e28ddcce2479a8536a36036a3a9e9f3552e99f9ce",
       "byte_length": 201836,
-      "word_count": 27737
+      "word_count": 27737,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-123",
@@ -3392,11 +3762,17 @@
         "D03",
         "D08"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch03",
+        "ch09",
+        "ch10",
+        "ch24"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-123.txt",
       "sha256": "89d5cb83654b0d00f6841cfc57baa92ee65fd9e0f1d256968ad7d50421372916",
       "byte_length": 58860,
-      "word_count": 8680
+      "word_count": 8680,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-124",
@@ -3417,11 +3793,15 @@
         "D01",
         "D10"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch02",
+        "ch28"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-124.txt",
       "sha256": "cb7d7cb818867ced911cda9762c78fabf51ddd10b47b1adc7de0b2920fa94ff6",
       "byte_length": 103145,
-      "word_count": 14892
+      "word_count": 14892,
+      "review_regime": "preprint_or_working_paper"
     },
     {
       "source_id": "SRC-125",
@@ -3441,11 +3821,16 @@
       "research_axes": [
         "D12"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch00",
+        "ch34",
+        "ch36"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-125.txt",
       "sha256": "c7db148fd51852d35e7dadbd388dd01a320fb2b305e72e77df3bccec3d5142ca",
       "byte_length": 4122,
-      "word_count": 640
+      "word_count": 640,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-126",
@@ -3465,11 +3850,14 @@
       "research_axes": [
         "D03"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch08"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-126.txt",
       "sha256": "d2627c569ee6157d1eef490599de8e420b33bd98aef8a7faac5137f1a3adbcd7",
       "byte_length": 22764,
-      "word_count": 4124
+      "word_count": 4124,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-127",
@@ -3489,11 +3877,14 @@
       "research_axes": [
         "D06"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch18"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-127.txt",
       "sha256": "1c656cf6f144c547103b3c17c111dadfb0e4ed655cbcd48a12c418edab03356b",
       "byte_length": 163121,
-      "word_count": 24053
+      "word_count": 24053,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-128",
@@ -3513,11 +3904,14 @@
       "research_axes": [
         "D06"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch17"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-128.txt",
       "sha256": "f3a8ff8dc00c2bdbc0059fb52300945b33d7f0dbfa5ded5a494b13f99ddfc6c8",
       "byte_length": 54252,
-      "word_count": 7366
+      "word_count": 7366,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-129",
@@ -3538,11 +3932,15 @@
         "D03",
         "D06"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch07",
+        "ch17"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-129.txt",
       "sha256": "033ca79b0d49be0aa32623798e18b209dd2c63ec52e48838ed3c479b849a7d66",
       "byte_length": 18611,
-      "word_count": 2522
+      "word_count": 2522,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-130",
@@ -3563,11 +3961,15 @@
         "D03",
         "D06"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch08",
+        "ch18"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-130.txt",
       "sha256": "450cb6f072255f6259cba2d59bf0901f6257d031b8cb085a43844e6292d117c2",
       "byte_length": 254659,
-      "word_count": 39978
+      "word_count": 39978,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-131",
@@ -3587,11 +3989,14 @@
       "research_axes": [
         "D03"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch09"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-131.txt",
       "sha256": "1b23937c2708a8ed3c610155cad87db3cbe8480234f12faffe95408db27f88b2",
       "byte_length": 220907,
-      "word_count": 30513
+      "word_count": 30513,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-132",
@@ -3611,11 +4016,14 @@
       "research_axes": [
         "D05"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch15"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-132.txt",
       "sha256": "a3d609ca981cd5c9f4bf0acf6a8a3a446ed79f5cc4c0ae2d9287349feaab70c1",
       "byte_length": 99366,
-      "word_count": 14594
+      "word_count": 14594,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-133",
@@ -3636,11 +4044,15 @@
         "D06",
         "D07"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch16",
+        "ch17"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-133.txt",
       "sha256": "7ffb6c499888b7d9a9cdbbb9eb2d4cc156d775e5df46bc288175b60d0910d63b",
       "byte_length": 113847,
-      "word_count": 16604
+      "word_count": 16604,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-134",
@@ -3661,11 +4073,15 @@
         "D03",
         "D06"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch07",
+        "ch17"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-134.txt",
       "sha256": "148d22364f63c78ae696363667ab074246c1fadf07c9d5eaab814296333953c0",
       "byte_length": 53311,
-      "word_count": 7435
+      "word_count": 7435,
+      "review_regime": "standards_consensus"
     },
     {
       "source_id": "SRC-135",
@@ -3685,11 +4101,14 @@
       "research_axes": [
         "D03"
       ],
-      "chapters": [],
+      "chapters": [
+        "ch09"
+      ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-135.txt",
       "sha256": "72fc72057a4fb363a4a4ed767ec4a621775894f2a6be69b8179c7fa6a5a61bfc",
       "byte_length": 14674,
-      "word_count": 2171
+      "word_count": 2171,
+      "review_regime": "standards_consensus"
     }
   ]
 }

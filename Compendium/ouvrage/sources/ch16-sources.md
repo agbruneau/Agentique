@@ -57,7 +57,7 @@
 - **Organisme / Revue :** GLEIF & GitHub (GLEIF-IT/vlei-egf, WebOfTrust/vLEI)
 - **Identifiant :** `GLEIF-VLEI-ISO17442-3`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-079.txt`, score AACODS `11.0/12`)
-- **URL d'origine :** https://www.gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/
+- **URL d'origine :** https://www.gleif.org/en/organizational-identity/lei-vlei/the-verifiable-lei-vlei/
 - **Empreinte SHA-256 (LF) :** `2ccc0f09f7c8475c0236605ba2b3f07537945e72e998df4db363f641a6166bd5` (`39987` octets, `5350` mots)
 - **Synthèse factuelle vérifiée :** Spécification ouverte GLEIF vLEI et écosystème KERI/ACDC (ISO 17442-3, WebOfTrust, oct. 2026) définissant la chaîne de confiance cryptographique d'identité organisationnelle vérifiable pour personnes et agents mandatés.
 
@@ -134,7 +134,7 @@
 - **Organisme / Revue :** AIBanks.ca (agrégateur tiers indépendant — index public de preuves)
 - **Identifiant :** `AIBANKS-CA-AMF-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-071.txt`, score AACODS `9.0/12`)
-- **URL d'origine :** https://www.aibanks.ca/
+- **URL d'origine :** https://aibanks.ca/
 - **Empreinte SHA-256 (LF) :** `2d39751c5fed55ad19aebd3cc238f8a1a26d6b266bb8bc3f7ee1e0e37a796e8b` (`12404` octets, `1985` mots)
 - **Synthèse factuelle vérifiée :** Agrégateur canadien ouvert AIBanks.ca (édition T4 au 1er novembre 2026) confirmant l'échéance du 1er mai 2027 pour BSIF E-23 et signalant l'échéance attendue du 1er mai 2027 de la ligne directrice IA de l'AMF (rapportée sous réserve car le portail lautorite.qc.ca est en statut F).
 
@@ -143,5 +143,5 @@
 ## Exclusions en statut F (`AO-01` — hors preuve)
 
 - `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur genai.owasp.org; compensé intégralement par le PDF officiel CC BY-SA 4.0 v1.0 archivé sur github.com/genai-security-project/GenAI-Security-Corpus (SRC-055, L+).
-- `https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/` — `HTTP_404` (`included_in_evidence: false`). HTTP 404 sur la sous-page EGF de gleif.org; compensé par la page officielle gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/ et les dépôts ouverts GLEIF-IT/vlei-egf et WebOfTrust/vLEI (SRC-079, L+).
+- `https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/` — `HTTP_404` (`included_in_evidence: false`). HTTP 404 sur la sous-page EGF de gleif.org; compensé par la page officielle gleif.org/en/organizational-identity/lei-vlei/the-verifiable-lei-vlei/ et les dépôts ouverts GLEIF-IT/vlei-egf et WebOfTrust/vLEI (SRC-079, L+).
 - `https://lautorite.qc.ca/` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 Cloudflare WAF sur lautorite.qc.ca (1 tentative AO-01) et absence de l'archive locale 2026/documents/Note AMF IA.pdf ; date attendue du 1er mai 2027 corroborée sous réserve explicite via AIBanks.ca (SRC-071, L+).

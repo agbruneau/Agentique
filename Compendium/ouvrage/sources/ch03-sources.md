@@ -82,6 +82,7 @@
 - **URL d'origine :** https://www.mordorintelligence.com/industry-reports/agentic-ai-market
 - **Empreinte SHA-256 (LF) :** `d36ecb1c274ce55607835b6e3c6c5b4e02d1868265e37f73a79173ace448bef6` (`47538` octets, `6584` mots)
 - **Synthèse factuelle vérifiée :** Rapport de marché ouvert Mordor Intelligence (oct. 2026) estimant la taille et la croissance du marché de l'IA agentique selon les modes de déploiement et secteurs, dont les services financiers.
+- **Réserve méthodologique AACODS (`9,0/12`) :** Synthèse web publique d'un rapport commercial payant à méthodologie propriétaire fermée ; usage borné à l'illustration de dispersion des fourchettes de marché en `ch03`, hors preuve décisionnelle.
 
 ### [8] SRC-102 — Enterprise Agentic AI Market Size, Share & Trends Analysis Report
 
@@ -93,6 +94,7 @@
 - **URL d'origine :** https://www.grandviewresearch.com/industry-analysis/enterprise-agentic-ai-market-report
 - **Empreinte SHA-256 (LF) :** `575dae06de0905788fc86efa811396c295cc16b6a0dcbc1182993dd4f500f16b` (`20770` octets, `2917` mots)
 - **Synthèse factuelle vérifiée :** Rapport de marché ouvert Grand View Research (juill. 2026) présentant les fourchettes d'estimation du marché Enterprise Agentic AI (2,6 G\$ en 2024, 5,3 G\$ en 2026) par architecture mono-agent et multi-agent.
+- **Audit d'accès réseau (`2026-11-25`) et réserve AACODS (`9,0/12`) :** Sondage direct retournant `HTTP 403 Forbidden` (filtrage anti-bot sur vitrine commerciale publique, non contourné selon `AO-01`). Texte intégral archivé antérieurement et vérifié par empreinte `SHA-256` locale (`575dae06de0905788fc86efa811396c295cc16b6a0dcbc1182993dd4f500f16b`) ; synthèse commerciale à méthodologie propriétaire fermée, usage borné à l'illustration de dispersion de marché en `ch03` (hors preuve décisionnelle).
 
 ### [9] SRC-103 — Alphabet Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results
 
@@ -104,6 +106,7 @@
 - **URL d'origine :** https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm
 - **Empreinte SHA-256 (LF) :** `ebfea816ab26e93d4f4b837fbbeea00d626ed26b9f023a76c4ae7db25d6d48e7` (`25461` octets, `3730` mots)
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 8-K Exhibit 99.1 d'Alphabet Inc. (28 oct. 2026, T3 2026) exposant les revenus consolidés et les dépenses d'investissement (CapEx) en infrastructure infonuagique et IA.
+- **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`ebfea816ab26e93d4f4b837fbbeea00d626ed26b9f023a76c4ae7db25d6d48e7`).
 
 ### [10] SRC-104 — Amazon.com, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results and 2026 CapEx Guidance
 
@@ -115,6 +118,7 @@
 - **URL d'origine :** https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm
 - **Empreinte SHA-256 (LF) :** `8da73deea031eeb68c1ff6501b08f4eb681248b18dde64cf2d68a8dd65d608a9` (`39402` octets, `5981` mots)
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 8-K Exhibit 99.1 d'Amazon.com, Inc. (29 oct. 2026, T3 2026) documentant les résultats AWS et les prévisions d'investissements en capital 2026.
+- **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`8da73deea031eeb68c1ff6501b08f4eb681248b18dde64cf2d68a8dd65d608a9`).
 
 ### [11] SRC-105 — Meta Platforms, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Results and 2026 CapEx Guidance
 
@@ -126,6 +130,7 @@
 - **URL d'origine :** https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm
 - **Empreinte SHA-256 (LF) :** `bb4724559067335d931adf053587027a7f013b526abe9cd6cd3c8609908289e0` (`25225` octets, `3681` mots)
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 8-K Exhibit 99.1 de Meta Platforms, Inc. (21 oct. 2026, T3 2026) présentant les résultats trimestriels et la trajectoire d'investissements en infrastructure IA.
+- **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`bb4724559067335d931adf053587027a7f013b526abe9cd6cd3c8609908289e0`).
 
 ### [12] SRC-106 — Microsoft Corporation Form 10-Q — Quarter Ended September 30, 2026 (Q1 FY2027)
 
@@ -137,6 +142,7 @@
 - **URL d'origine :** https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm
 - **Empreinte SHA-256 (LF) :** `6d7b4822b23decd7b2782bdbacd32d3d8a2d243af30f66e101703022a5fd2237` (`203772` octets, `30213` mots)
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 10-Q de Microsoft Corporation (trimestre clos le 30 sept. 2026, T1 FY2027) détaillant les investissements en capital et engagements infonuagiques.
+- **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`6d7b4822b23decd7b2782bdbacd32d3d8a2d243af30f66e101703022a5fd2237`).
 
 ### [13] SRC-107 — Microsoft Corporation Form 10-K — Fiscal Year Ended June 30, 2026
 
@@ -148,6 +154,7 @@
 - **URL d'origine :** https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 - **Empreinte SHA-256 (LF) :** `bdd42cefdb9a08b514caaa0de6b8161aab4e7a533f6358743f352e03d76201b0` (`330060` octets, `48966` mots)
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 10-K de Microsoft Corporation (exercice clos le 30 juin 2026, FY2026) documentant les immobilisations et dépenses d'infrastructure annuelles.
+- **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`bdd42cefdb9a08b514caaa0de6b8161aab4e7a533f6358743f352e03d76201b0`).
 
 ### [14] SRC-108 — Microsoft Corporation Form 10-Q — Six Months Ended December 31, 2025 (Q2 FY2026)
 
@@ -159,11 +166,12 @@
 - **URL d'origine :** https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm
 - **Empreinte SHA-256 (LF) :** `c840108cea5228ca58c45ebbcda9000ca0f69d6fb33f511ef89f983a849bcd3c` (`207044` octets, `31313` mots)
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 10-Q de Microsoft Corporation (semestre clos le 31 déc. 2025, T2 FY2026) servant de série historique de comparaison des investissements CapEx.
+- **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`c840108cea5228ca58c45ebbcda9000ca0f69d6fb33f511ef89f983a849bcd3c`).
 
 ---
 
 ## Exclusions en statut F (`AO-01` — hors preuve)
 
-- `https://onlinelibrary.wiley.com/doi/10.1111/j.1468-0335.1937.tb00002.x` — `HTTP_403` (`included_in_evidence: false`). Mur payant / HTTP 403 éditeurs commerciaux : Coase (1937, Wiley) compensé via Shahidi et al. (NBER w34468, SRC-004 L+); Bainbridge (1983, Automatica/Elsevier) sans copie ouverte légitime en dépôt universitaire/HAL/arXiv (statut F maintenu, retiré des références primaires).
-- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (L+) avec mention explicite du statut F du communiqué primaire.
+- `https://onlinelibrary.wiley.com/doi/10.1111/j.1468-0335.1937.tb00002.x` — `HTTP_403` (`included_in_evidence: false`). Mur payant / HTTP 403 éditeurs commerciaux : Coase (1937, Wiley) compensé via Shahidi et al. (NBER w34468, SRC-097 L+); Bainbridge (1983, Automatica/Elsevier) sans copie ouverte légitime en dépôt universitaire/HAL/arXiv (statut F maintenu, retiré des références primaires).
+- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (SRC-011, L+) avec mention explicite du statut F du communiqué primaire.
 - `https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai` — `NETWORK_ERROR:TimeoutError` (`included_in_evidence: false`). Expiration réseau / blocage Akamai sur mckinsey.com.

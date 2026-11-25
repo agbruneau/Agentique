@@ -46,7 +46,7 @@ Dans la pile de référence du traité (`Tome 6`, sections 13.3–13.4), chaque 
 
 ![Chaîne d'industrialisation IAP et fabrique d'agents : Golden Paths GitOps cognitif, barrière d'admission et asymétrie des 10 suites SaaS](../../schemas/rendus/SCH-30-01.svg)
 
-*Figure 94 — SCH-30-01 : Articulation entre les *Golden Paths* `IAP` du Centre d'excellence (`Z1`), la chaîne `GitOps` cognitif sous `SLSA v1.2` et boucle de réémission sous surveillance `SPOF` (`Z2`), et l'encadrement des dix suites `SaaS` tierces hors du plein droit (`Z3`).*
+*Figure 94 — SCH-30-01 : Articulation entre les `Golden Paths` `IAP` du Centre d'excellence (`Z1`), la chaîne `GitOps` cognitif sous `SLSA v1.2` et boucle de réémission sous surveillance `SPOF` (`Z2`), et l'encadrement des dix suites `SaaS` tierces hors du plein droit (`Z3`).*
 
 > **Trois invariants exécutables — Chapitre 30**
 > 1. **Noyau possédé face aux suites SaaS et GitOps quintette (`C33`, `C35`, `C36`)** — Maintenir le registre, les politiques `OPA` et la facturation dans le noyau possédé (`4` statuts pour les agents tiers, jamais de plein droit), et co-versionner sous `OpenGitOps v1.0.0` et `SLSA v1.2` code, invites, schémas, politiques et banc `EvalOps`.
@@ -69,8 +69,8 @@ Aucune voie de contournement non bornée n'est tolérée face à `EXIG-ORC-29` :
 |---|---|---|---|
 | `AP-01` Marteau agentique | `EXIG-ORC-01` / `§ 43.2` | Remplacement d'un flux déterministe fixe par une boucle `LLM` lente et coûteuse | Rejeter ; conserver code déterministe (`N0`) ou `RAG` sans boucle |
 | `AP-02` Étalement fantôme | `ASI03` [1] | Prolifération d'agents non inventoriés sans propriétaire ni identité attestée | Raccorder scanners au registre central, imposer `Agent Owner` |
-| `AP-03` Cécité économique | `EXIG-FIN-01` | Pilote spectaculaire non rentable à l'échelle sous explosion des jetons | Exiger *baseline* chiffrée et coût complet par résultat conforme |
-| `AP-04` *Tool Sprawl* (`Swagger 1:1`) | `ASI02` [1] / `§ 5.11` | Exposition de `50+` outils `CRUD` bruts saturant l'attention du modèle | Regrouper en `5`–`12` façades d'intention validées `JSON Schema` [5] |
+| `AP-03` Cécité économique | `EXIG-FIN-01` / `POR-016` | Pilote spectaculaire non rentable à l'échelle sous explosion des jetons | Exiger *baseline* chiffrée et coût complet par résultat conforme |
+| `AP-04` *Tool Sprawl* (`Swagger 1:1`) | `ASI02` [1] / `ADR-009` / `§ 5.11` | Exposition de `50+` outils `CRUD` bruts saturant l'attention du modèle | Regrouper en `5`–`12` façades d'intention validées `JSON Schema` [5] |
 | `AP-05` Surcouche `RPA` fragile | `ADR-001` | Boucle cognitive pilotant des sélecteurs d'écran instables | Sortir vers `API`/`CDC` ou confiner le robot sous moteur `BPMN` |
 | `AP-06` Accès direct `SoR` | `ADR-001` | Saturation des progiciels centraux et doubles écritures `SQL` | Interposer couche anti-corruption `ACL`, projection `CQRS` et idempotence |
 | `AP-07` Essaim prématuré (`Parallel Writers`) | `MAST` / `EXIG-ORC-07` | Sous-agents concurrents produisant des écritures contradictoires et dérives | Privilégier agent unique ou flux fixe ; imposer écrivain unique sérialisé |
@@ -109,7 +109,7 @@ Dans les `750` simulations rapportées par Acharya et citées au `Tome 6`, le pa
 | `M2` Réactif (`ARB 1`) | Centre d'excellence (`CoE`), inventaire initial | `AI Gateway` unique ; première façade `MCP` + `ACL` | Identités isolées sur pilotes ; gel du `RPA` | Mode ombre et recommandation | Référence chiffrée (*baseline*) et plafonds |
 | `M3` Défini (`ARB 2`) | Registre central obligatoire, `Agent Owner`, paliers `R1–R4` | *Golden Paths* `IAP`, exécution durable, *Strangler Fig* | `NHI` éphémères, `OBO`, politiques `OPA` [3] | `EvalOps` bloquant en CI (`100,0 %` [4]), arrêt d'urgence | Coût par résultat conforme (`CPO`) et *Showback* |
 | `M4` Géré | Détection automatisée d'étalement et de dérive | Fédération `A2A` contrôlée ; retrait actif du `RPA` | Confinement `microVM`, `ACL` mémoire | `SLO` actifs, rejeu et exercices `L0` | *Chargeback* comptable et routage `SLM` |
-| `M5` Optimisé (`ARB 3`) | *Governance-as-Code* continu (`ISO 42001`, `statut F`) | Maillage `OASF` / `Event Mesh` ; autonomie sous contrat | Révocation fédérée en temps réel | Bascule multi-fournisseurs périodique | `ROI` ajusté du risque et sortie patrimoine |
+| `M5` Optimisé (`ARB 3`) | *Governance-as-Code* continu (`ISO 42001`, `statut F`) | Maillage `OASF` / `Event Mesh` ; autonomie sous contrat | Révocation fédérée en temps réel (`DEC-001`) | Bascule multi-fournisseurs périodique | `ROI` ajusté du risque et sortie patrimoine |
 
 *Tableau 30.3 — Matrice de progression du modèle de maturité `AAGMM` (`M1` à `M5`, reprise du `Tome 6`, section 15.4 ; `ISO/IEC 42001` consignée en `statut F`) sur cinq axes conjoints.*
 
@@ -125,6 +125,6 @@ La *Figure 96* récapitule cette trajectoire à `90`, `180` et `360` jours relia
 
 ![Échelle de maturité AAGMM (M1 → M5) et feuille de route à 90, 180 et 360 jours sous portes ARB 1–3 et sortie Strangler Fig du RPA](../../schemas/rendus/SCH-30-03.svg)
 
-*Figure 96 — SCH-30-03 : Trajectoire d'industrialisation sur trois horizons (`J0–J90` sous `ARB 1` en `Z1`, `J90–J180` sous `ARB 2` au palier `M3` en `Z2`, `J180–J360` sous `ARB 3` vers `M4–M5` avec retrait *Strangler Fig* du `RPA` en `Z3`) et gains issus des `750` simulations rapportées par Acharya.*
+*Figure 96 — SCH-30-03 : Trajectoire d'industrialisation sur trois horizons (`J0–J90` sous `ARB 1` en `Z1`, `J90–J180` sous `ARB 2` au palier `M3` en `Z2`, `J180–J360` sous `ARB 3` vers `M4–M5` avec retrait `Strangler Fig` du `RPA` en `Z3`) et gains issus des `750` simulations rapportées par Acharya.*
 
 Avec la clôture de la Partie X (`D10`, ← Chapitre 29), l'entreprise dispose de profils sectoriels conformes, de trois blueprints de référence et d'une usine `IAP` encadrée contre les anti-patrons. La **Partie XI (`D11`)** inscrit cette capacité dans le temps long `2027–2035` via les trajectoires adaptatives `DAPP`, la gouvernance duale `AE ↔ AS` et la préservation du capital humain (→ Partie XI, Chapitre 31).

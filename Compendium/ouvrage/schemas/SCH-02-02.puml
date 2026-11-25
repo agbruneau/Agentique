@@ -29,7 +29,7 @@ title Autopsie des 14 pannes MAST (1 642 traces) et arbitrage mono-agent / colle
 
 package "Z1 — Répartition des 14 modes d'échec MAST v3 (1 642 traces)" {
   rectangle "FM-1 : Conception & spécification\n(44,2 % des pannes)" as N1 <<red>>
-  rectangle "FM-2 : Désalignement inter-agents\n(32,4 % · perte de contexte)" as N2 <<red>>
+  rectangle "FM-2 : Désalignement inter-agents\n(32,3 % · perte de contexte)" as N2 <<red>>
   rectangle "FM-3 : Vérification & terminaison\n(23,5 % sur 7 cadriciels)" as N3 <<red>>
 }
 
@@ -54,7 +54,7 @@ N3 --> N8 : ④ Démontrer gain pass^k/CPO
 N8 --> N9
 
 legend bottom
-  **Rouge** : Causes architecturales et coordination MAST (44,2 % + 32,4 %)
+  **Rouge** : Causes architecturales et coordination MAST (44,2 % + 32,3 %)
   **Ambre** : Zone de surcoût 15× et baisse de performance (−70 %) sur tâches séquentielles
   **Vert émeraude** : Parcimonie validée (rédacteur unique continu ou parallélisme prouvé)
 end legend

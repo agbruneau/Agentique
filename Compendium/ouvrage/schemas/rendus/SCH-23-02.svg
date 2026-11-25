@@ -37,7 +37,7 @@
     <g id="node-3" class="node" data-node="true">
       <rect x="426" y="152" width="346" height="165" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
       <text x="438" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#4C1D95">Famille distincte &amp; permutation</text>
-      <text x="438" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Paires le biais de position/longueur</text>
+      <text x="438" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Pare les biais de position et longueur</text>
       <text x="438" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Versionnement strict du juge (Zheng)</text>
     </g>
     <g id="node-4" class="node" data-node="true">

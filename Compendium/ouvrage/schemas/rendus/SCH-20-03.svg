@@ -32,7 +32,7 @@
       <rect x="34" y="410" width="543" height="117" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
       <text x="46" y="434" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7F1D1D">Verrou (C) · Retrait automatique</text>
       <text x="46" y="456" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">EXIG-SEC-04/06 : outils sortants &amp; P3</text>
-      <text x="46" y="475" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">retirés dès (A)+(B) (64,01 µs)</text>
+      <text x="46" y="475" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">retirés dès (A)+(B) (médiane PEP 52,85 µs)</text>
     </g>
   </g>
   <g id="zone-Z2">
@@ -42,8 +42,8 @@
     <g id="node-4" class="node" data-node="true">
       <rect x="623" y="152" width="543" height="117" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
       <text x="635" y="176" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Flot de contrôle vs données (EXIG-SEC-07)</text>
-      <text x="635" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Graphe d'appels fiable isolé des</text>
-      <text x="635" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">variables de données contaminées</text>
+      <text x="635" y="198" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Graphe d'appels fiable isolé des données</text>
+      <text x="635" y="217" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">contaminées (contrôle C6 : 64,01 µs moy.)</text>
     </g>
     <g id="node-5" class="node" data-node="true">
       <rect x="623" y="281" width="543" height="117" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>

@@ -74,3 +74,13 @@ Toutes les formulations demandant une reformulation ou un réancrage à la passe
 | `C07-41` | L165 (`§ 7.3`) | Trois mesures continues `PRR S-07` : zéro serveur actif sans empreinte `JCS SHA-256` valide, zéro dépassement de `15` façades, et rejet `100,0 %` sur en-têtes discordants et `HTTP+SSE` vérifié en barrière `G0` (`14/14` cas dans `test_harness_proto.py`) | `aq/rapports-g0.json` (L45 : `test_harness_proto.py: 14`), `test_harness_proto.py` (L407–712) | À rectifier (écart corrigé) | Verdict : supporté |
 | `C07-42` | L167 (`§ 7.3`) | Partition `owned_concepts` et renvois inter-chapitres (`→ CH-08`, `→ CH-09`, `→ CH-12`, `→ CH-16`, `→ CH-17`, `→ CH-19`, `← CH-22`, `← CH-36`) | `manifest.json` (`ch07`), `matrice-exig-prr-c40.json`, `concordance-taxonomies.json` (`DISC-05`) | Supporté | Verdict : supporté |
 | `C07-43` | L169–173 (Trois invariants) | Synthèse des trois invariants exécutables : transport `MCP 2026-07-28` sans état / `McpTransportAdapter` / `-32020` / `2027-07-28`, façades `ACI ≤ 15` / `structuredContent` / `resource_link > 8 Ko` / idempotence / erreurs cognitives, et scellement `SHA-256 JCS` / annotations non fiables / `OAuth 2.1` / `elicitation` bannie pour secrets et visas | Cohérence complète des sections `§ 7.1`–`§ 7.3` et des preuves `L+` / `G0` associées | Supporté | Verdict : supporté |
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+| ID | Localisation | Clause révisée (`REV-04`) | Source vérifiée | Statut | Verdict |
+|---|---|---|---|---|---|
+| `C07-REV-01` | L3, L19–L34, L54–L110, L154, L173 | Uniformisation de `*Question directrice :*` et déplacement de l'encadré *Trois invariants exécutables* en fin de `§ 7.1` (`PRD-L1-018`), retrait des `6` slugs MindMap et de `owned_concepts` (`PRD-L1-016`), numérotation continue `Figure 24`–`Figure 26` et renvois (`PRD-L1-008`), suppression de la redite `x-mcp-header` (`PRD-L1-019`, bloc `CA-G0-SYNC` intact) et normalisation `NE DOIT JAMAIS` (`PRD-L1-017`) | `specs/manifest.json`, `Compendium/prd.md` (`L306`), `SRC-074.txt` (`[2]`), `harness_proto/mcp_pinning.py` | Rectifiée | Verdict : supporté |
+
+- **Contrôle `REV-04` :** `4 262` mots (`verifie_manuscrit.py`) / `4 434` mots (`parser_plan.py`) dans `[3 901, 4 579]`, `verifie_manuscrit.py --unit ch07 --strict` = `exit 0`, **100,0 % supporté**.

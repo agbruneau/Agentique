@@ -6,7 +6,7 @@
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-5`
 - **Passe G2 initiale (supportés)** : 20
 - **Rectifications appliquées lors de la passe G2** : 13
-- **Verdict final — supportés** : 33 / 33 (100,0 %)
+- **Verdict final — supportés** : 34 / 34 (100,0 %)
 
 ---
 
@@ -161,3 +161,7 @@ Toutes les formulations divergentes ou issues de documents non archivés en `L+`
 - **C18-33 (`L151`–`L155`, Trois invariants)** — *Affirmation :* Encadré final des trois invariants exécutables : automatisation `ACME`/`SPIFFE` `100,0 %` (`15 mars 2027` et `15 mars 2029`, `≤ 47` j, `≤ 10` j) ; maîtrise `HTTP 431` sous `ML-DSA-65` (`3 309` o) / `ML-DSA-87` (`4 627` o) via `kid`/`JWKS`, `CBOR-COSE O(1)` (`4 757`–`6 514` o pour l'en-tête seul) et tampons passerelle `≥ 32` Ko dès `P1` face au cumul `Authorization`/`Txn-Token` + preuve `DPoP` (`> 8 192` o hors `mTLS` dès le premier saut) ; crypto-agilité en `3` conditions, `X25519MLKEM768` et rescellement `SCITT` (`RFC 9943`) + `SLH-DSA` (`FIPS 205`) `≤ 5` ans.
   - **Appui vérifié :** `SRC-053.txt`, `SRC-127.txt`, `SRC-050.txt`, `SRC-012.txt`, `SRC-044.txt`, `SRC-018.txt`, `SRC-051.txt`, `pqc_http431.py`, `Corpus/Tome 2` (`EXIG-SEC-27`, `EXIG-SEC-28`, `EXIG-IAM-14`).
   - **Passe initiale :** conforme · **Action :** précisé le cumul `Authorization`/`Txn-Token` + `DPoP` dépassant `8 192` octets hors `mTLS` (`post-G4`) · **Verdict : supporté**
+
+- **C18-34 (Révision `REV-04` : `PRD-L2-002`, `010`, `018`, `019`, `021`–`023`, `PRD-L4-002`)** — *Affirmation :* Résolution du bloquant `PRD-L2-002` dans `SCH-18-03.mmd` (`9,6–38,8 Ko` à 2 sauts et `24,5–97,4 Ko` max `97 403 o` à 5 sauts alignés sur `pqc_http431.py` / Tableau 18.1), uniformisation `Figure 58`..`Figure 60`, francisation `automation` → `automatisation` (`SCH-18-01.mmd`), qualification `Tome 1 Tab. 21.3` (`SCH-18-02.svg`), accord `sa neutralisation`, réconciliation explicite de la date `NIST IR 8547 Final` (`21 octobre 2026` faisant foi selon `SRC-051` face au repère antérieur du `27 octobre 2026`), intégration de `ANC-023/030/040/043`, `DEC-012`, `SIG-010/011`, `SP 800-131A Rev. 3` (`SRC-051`), `Public Law 117-260` et veille `Europol/QSFF` (repérage du traité), encadré `Clause non-avis (AO-05)` et conversion Unicode de toutes les expressions LaTeX, bloc `CA-G0-SYNC` `G0-EX-CH02-03` intact.
+  - **Appui vérifié :** `SRC-051.txt` (`[4]`), `manifeste-sources-sha256.json` (`SRC-051` `2026-10-21`), `pqc_http431.py`, `schemas/SCH-18-01.mmd`, `schemas/SCH-18-02.svg`, `schemas/SCH-18-03.mmd`, `Compendium/prd.md`.
+  - **Passe initiale :** ajout `REV-04` · **Action :** vérification différentielle `REV-04` · **Verdict : supporté**

@@ -24,7 +24,7 @@
 - **Organisme / Revue :** OSFI Technology Risk Bulletin
 - **Identifiant :** `OSFI-BULLETIN-AGENTIC-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-066.txt`, score AACODS `12.0/12`)
-- **URL d'origine :** http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
+- **URL d'origine :** https://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
 - **Empreinte SHA-256 (LF) :** `5a1b1a2e004b17fdfdbef1e2da35981654e689878fe0727cf26d9aba27e00f2b` (`14425` octets, `1971` mots)
 - **Synthèse factuelle vérifiée :** Bulletin du BSIF (juillet 2026) sur l'IA générative et agentique recommandant explicitement l'implémentation de garde-fous techniques (AI harnessing) et d'une gouvernance de bout en bout.
 
@@ -68,7 +68,7 @@
 - **Organisme / Revue :** AIBanks.ca (agrégateur tiers indépendant — index public de preuves)
 - **Identifiant :** `AIBANKS-CA-AMF-2026`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-071.txt`, score AACODS `9.0/12`)
-- **URL d'origine :** https://www.aibanks.ca/
+- **URL d'origine :** https://aibanks.ca/
 - **Empreinte SHA-256 (LF) :** `2d39751c5fed55ad19aebd3cc238f8a1a26d6b266bb8bc3f7ee1e0e37a796e8b` (`12404` octets, `1985` mots)
 - **Synthèse factuelle vérifiée :** Agrégateur canadien ouvert AIBanks.ca (édition T4 au 1er novembre 2026) confirmant l'échéance du 1er mai 2027 pour BSIF E-23 et signalant l'échéance attendue du 1er mai 2027 de la ligne directrice IA de l'AMF (rapportée sous réserve car le portail lautorite.qc.ca est en statut F).
 

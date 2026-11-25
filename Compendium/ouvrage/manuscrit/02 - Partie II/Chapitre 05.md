@@ -6,7 +6,7 @@
 
 Dans la pratique industrielle, le terme d'autonomie entretient une confusion persistante entre la capacité cognitive brute d'un modèle et l'étendue des pouvoirs opérationnels que l'organisation lui concède. Un modèle performant sur bancs d'essai n'acquiert aucun droit automatique à exécuter des transactions financières ni à modifier des dossiers réglementés sans contrôle. La doctrine d'**Autonomie bornée** pose en principe que le degré d'autonomie résulte d'un choix explicite d'architecture et de configuration hors du modèle [2], contraignant périmètre d'action, écritures autorisées et budgets au sein de l'exosquelette du chapitre précédent conformément à `BSIF E-23` [1] et au bulletin technologique du BSIF de juillet 2026 sur le *harnessing* [2].
 
-Le présent chapitre (`D02` / `SUB_D02_02`) établit l'armature normative permettant de gouverner cette autonomie sur un portefeuille entier. Il réconcilie d'abord `DISC-01` et `DISC-02` afin de fournir une grille matricielle sans collision entre flux déterministes (`N0`), paliers (`N1`–`N4` / `L0`–`L4`), domaines (`D1`–`D8`), `Stades 0–4`, `Classes 1–6` et paliers d'outils (`P0`–`P3`). Il prévient ensuite le contournement latéral par la **règle du maillon le plus élevé** (*High-Water Mark*), l'union la plus stricte en mode fermé à la passerelle et la règle d'or `≤ N2` (`§ 5.2.1`). Il dissocie enfin agents interactifs et ambiants sous triple exclusion identitaire et structure une supervision résistante au biais d'automatisation (`OWASP ASI09` [10]), en séparant nettement l'arrêt préventif `PC3` de l'article `12.1` de la Loi 25 (`§ 5.2.2`) [5].
+Le présent chapitre (domaine `D02`) établit l'armature normative permettant de gouverner cette autonomie sur un portefeuille entier. Il réconcilie d'abord `DISC-01` et `DISC-02` afin de fournir une grille matricielle sans collision entre flux déterministes (`N0`), paliers (`N1`–`N4` / `L0`–`L4`), domaines (`D1`–`D8`), `Stades 0–4`, `Classes 1–6` et paliers d'outils (`P0`–`P3`). Il prévient ensuite le contournement latéral par la **règle du maillon le plus élevé** (*High-Water Mark*), l'union la plus stricte en mode fermé à la passerelle et la règle d'or `≤ N2` (`§ 5.2.1`). Il dissocie enfin agents interactifs et ambiants sous triple exclusion identitaire et structure une supervision résistante au biais d'automatisation (`OWASP ASI09` [10]), en séparant nettement l'arrêt préventif `PC3` de l'article `12.1` de la Loi 25 (`§ 5.2.2`) [5].
 
 > **Trois invariants exécutables — Chapitre 5**
 >
@@ -26,7 +26,7 @@ Au-delà de ces quatre marches opérationnelles, le niveau `NX` (`Classe 6` — 
 
 Sous la concordance `DISC-02`, l'ouvrage relie cette échelle individuelle `N0–N4` à la gouvernance matricielle du portefeuille financier. Celle-ci répartit les activités entre huit domaines d'affaires propres au traité : `D1` pour la distribution et la relation client ; `D2` pour le conseil, la vente et l'évaluation de convenance ; `D3` pour la souscription et la tarification du risque (incluant l'octroi de crédit) ; et `D4` pour la gestion des contrats et les opérations de compte. S'y ajoutent `D5` pour le règlement, l'indemnisation et le traitement des sinistres ; `D6` pour la conformité, la lutte contre le blanchiment et la gestion des risques ; `D7` pour la trésorerie, l'investissement et la réassurance ; et `D8` pour les opérations technologiques et la cyberrésilience. Elle croise ces huit domaines avec cinq stades de déploiement (`Stades 0–4`), six classes d'actes (`Classes 1–6`) et quatre paliers d'outils (`P0` lecture publique, `P1` lecture interne filtrée, `P2` écriture réversible bornée, `P3` écriture irréversible ou sortie externe).
 
-Cette matrice s'arrime aux repères méthodologiques consolidés dans les tomes du traité : la pratique recommandée `SAE J3016` (par analogie pour l'`ODD` et le repli), le cadre `IMDA v1.5` de Singapour, la taxonomie de Feng et coll., l'échelle `LCIM` et le modèle `ISO 11354 FEI`. Elle impose en outre deux verrous sectoriels non négociables : le `Stade 4` inter-organisations demeure proscrit dans les domaines du conseil (`D2`, plafonné aux `Stades 2–3`) et de la conformité ou lutte antiblanchiment (`D6`, plafonné au `Stade 3` interne selon le modèle de portefeuille) en raison de l'imputabilité réglementaire directe. Par ailleurs, pour éviter toute collision d'échelles dans les moteurs de politiques `OPA`/`Rego` (`CH-20`), la couche technique ramène ces multiples taxonomies à trois niveaux de criticité exécutables (`BLOQUANT`, `OBLIGATOIRE`, `RECOMMANDE`) croisés aux paliers `P0–P3`.
+Cette matrice s'arrime aux repères méthodologiques consolidés dans les tomes du traité : la pratique recommandée `SAE J3016` (par analogie pour l'`ODD` et le repli), le cadre `IMDA v1.5` de Singapour, la taxonomie de Feng et coll., la norme `ISO/IEC 42105` (supervision humaine de l'IA), l'échelle `LCIM` et le modèle `ISO 11354 FEI`. Elle impose en outre deux verrous sectoriels non négociables : le `Stade 4` inter-organisations demeure proscrit dans les domaines du conseil (`D2`, plafonné aux `Stades 2–3`) et de la conformité ou lutte antiblanchiment (`D6`, plafonné au `Stade 3` interne selon le modèle de portefeuille) en raison de l'imputabilité réglementaire directe. Par ailleurs, pour éviter toute collision d'échelles dans les moteurs de politiques `OPA`/`Rego` (`CH-20`), la couche technique ramène ces multiples taxonomies à trois niveaux de criticité exécutables (`BLOQUANT`, `OBLIGATOIRE`, `RECOMMANDE`) croisés aux paliers `P0–P3`.
 
 La correspondance entre stades organisationnels et niveaux individuels empêche également toute promotion prématurée. Un flux `Stade 0` repose exclusivement sur du code déterministe `N0` sans choix de modèle, tandis qu'un pilote `Stade 1` reste confiné aux paliers `N0–N1` durant une fenêtre transitoire maximale de `90` jours. Un déploiement encadré `Stade 2` constitue le seuil minimal de production réglementée, alors que le `Stade 3` couvre l'orchestration interne maîtrisée suffisante pour la majorité des processus. Enfin, le `Stade 4` demeure réservé aux seuls échanges inter-entreprises dûment fédérés hors `D2` et `D6`.
 
@@ -44,7 +44,7 @@ La correspondance entre stades organisationnels et niveaux individuels empêche 
 
 ![L'escalier d'autonomie unifié N0–N4 / L0–L4, l'interdit NX et la matrice D1–D8 × Classes 1–6](../../schemas/rendus/SCH-05-01.svg)
 
-*Figure 1 — SCH-05-01 : L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`.*
+*Figure 17 — SCH-05-01 : L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`.*
 
 Dans une architecture distribuée, gouverner chaque agent isolément ne suffit pas. Un contournement classique consiste à placer un agent faiblement habilité (`L1` en lecture documentaire) en amont d'un agent critique (`L3` en décision opérationnelle), dans l'espoir de soustraire le premier aux exigences rigoureuses de conformité. Si l'agent `L1` ingère une donnée altérée ou mal résumée puis la transmet en texte libre à l'agent `L3`, la défaillance se propage directement à la décision finale sans avoir subi de contrôle proportionné à l'enjeu aval.
 
@@ -58,7 +58,7 @@ Troisièmement, à l'exécution, la passerelle applique l'**union la plus strict
 
 ![Règle du maillon le plus élevé (High-Water Mark) et règle d'or ≤ N2 dans un graphe multi-agents](../../schemas/rendus/SCH-05-02.png)
 
-*Figure 2 — SCH-05-02 : Règle du maillon le plus élevé (*High-Water Mark*) et règle d'or `≤ N2` dans un graphe multi-agents.*
+*Figure 18 — SCH-05-02 : Règle du maillon le plus élevé (« High-Water Mark ») et règle d'or `≤ N2` dans un graphe multi-agents.*
 
 ### 5.2.2 Distinction des régimes d'agent et supervision anti-complaisance
 
@@ -87,7 +87,7 @@ L'articulation de ces règles évite autant le goulot d'une validation humaine s
 
 ![Prévenir la validation réflexe (ASI09) : circuit CIBA/JCS, vue différentielle et distinction PC3 / Loi 25](../../schemas/rendus/SCH-05-03.svg)
 
-*Figure 3 — SCH-05-03 : Prévenir la validation réflexe (`ASI09`) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25.*
+*Figure 19 — SCH-05-03 : Prévenir la validation réflexe (`ASI09`) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25.*
 
 Enfin, l'architecture trace une séparation juridique et opérationnelle infranchissable entre l'arrêt préventif `PC3` (`HITL` ou `CIBA` avant effet `P3`) et le régime des décisions fondées exclusivement sur un traitement automatisé visé à l'article `12.1` de la Loi 25 du Québec [5] (en vigueur depuis le `22 septembre 2023`). Cette distinction rejoint la gouvernance humaine de l'article `14` du Règlement `(UE) 2024/1689` [3], dont le modificatif `(UE) 2026/1744` reporte au plus tard au `2 décembre 2027` l'échéance de l'Annexe III [4]. Selon `EXIG-CON-08`, insérer une validation superficielle à haut débit pour contourner l'article `12.1` échoue à prévenir les erreurs tout en exposant l'institution à une requalification réglementaire.
 
@@ -104,7 +104,7 @@ Dès qu'une décision affecte une personne sans réexamen substantiel, le dispos
 
 ## 5.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation
 
-La mise en œuvre du régime d'autonomie graduée se résume dans cinq exigences vérifiables (`EXIG-D02-02.1` à `EXIG-D02-02.5`), strictement encadrées par la clause `non-avis` (`AO-05`) au gel du `2 décembre 2026` ([1] à [10]) sans constituer une opinion juridique. À cet égard, quatre ressources externes inaccessibles lors de la collecte — l'article `PMC3240751` bloqué par défi `CAPTCHA`, le portail `lautorite.qc.ca` (`HTTP 403`), la page `genai.owasp.org` (`HTTP 403`, compensée intégralement par le document officiel `CC BY-SA 4.0` archivé dans `SRC-055` [10]) et le portail `legisquebec` (`HTTP 403`, compensé par la loi sanctionnée `SRC-063` [5]) — restent exclues en `statut F`.
+La mise en œuvre du régime d'autonomie graduée se résume dans cinq exigences vérifiables (`EXIG-D02-02.1` à `EXIG-D02-02.5`), strictement encadrées par la clause `non-avis` (`AO-05`) au gel du `2 décembre 2026` ([1] à [10]) sans constituer une opinion juridique. À cet égard, quatre ressources externes inaccessibles lors de la collecte — l'article `PMC3240751` bloqué par défi `CAPTCHA`, le portail `lautorite.qc.ca` (`HTTP 403`), la page `genai.owasp.org` (`HTTP 403`, compensée intégralement par le document officiel `CC BY-SA 4.0` archivé en texte intégral [10]) et le portail `legisquebec` (`HTTP 403`, compensé par la loi sanctionnée en texte intégral [5]) — restent exclues en `statut F`.
 
 | Exigence | Objet normatif | Contrôle exécutable et seuil | Ancrage et portée |
 |---|---|---|---|

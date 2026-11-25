@@ -25,25 +25,25 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Tamiser la preuve : filtre PRISMA-ScR W3.2, pyramide à 6 niveaux et LLM-Modulo
+title Tamiser la preuve : filtre PRISMA-ScR (W3.2 → base L+ 135), pyramide à 6 niveaux et LLM-Modulo
 
-package "Z1 — Entonnoir scientifique PRISMA-ScR / Garousi (lot W3.2)" {
-  rectangle "582 notices initiales\n(5 sources ouvertes, 3 en statut F)" as N1 <<blue>>
-  rectangle "453 dédupliquées (AACODS 9,97/12)\n→ 223 textes intégraux SHA-256" as N2 <<blue>>
-  rectangle "160 études incluses\n(κ = 0,7935 · 0 % sur résumé seul)" as N3 <<blue>>
-  N1 --> N2 : ① Tri sans contournement
-  N2 --> N3 : Lecture intégrale
+package "Z1 — Entonnoir scientifique PRISMA-ScR (W3.2 → base fermée L+ Compendium)" {
+  rectangle "Veille W3.2 (Tome 3) : 582 → 453 notices\n223 OA SHA-256 → 160 incluses (AACODS 9,97 · κ = 0,7935)" as N1 <<blue>>
+  rectangle "Base fermée L+ Compendium (11 API ouvertes)\n27 exclusions statut F (AO-01, zéro contournement)" as N2 <<blue>>
+  rectangle "135 textes intégraux L+ SHA-256\n(AACODS 11,13/12 · 0,0 % sur résumé seul)" as N3 <<blue>>
+  N1 --> N2 : ① Consolidation AO-01
+  N2 --> N3 : Lecture intégrale L+
 }
 
 package "Z2 — Pyramide probante à six niveaux (études de cas)" {
-  rectangle "Niveau 1 : Production arbitrée (Nubank KDD 2026)\nNiveau 2 : Enquête MAP" as N4 <<green>>
-  rectangle "Niveaux 3–4 : Éditeurs & bancs (SEC, ITBench, ORCA)\nNiveaux 5–6 : Registre MCN (432) & déclaratif" as N5 <<det>>
+  rectangle "Niveau 1 : Production arbitrée (Nubank KDD 2026, veille)\nNiveau 2 : Enquête terrain MAP (306 rép., 20 cas)" as N4 <<green>>
+  rectangle "Niveaux 3–4 : Études cabinets & bancs (PlanBench, SEC, ITBench, ORCA)\nNiveaux 5–6 : StatCan/BdC/MCN (432) & déclaratif exclu" as N5 <<det>>
   N3 --> N4 : ② Classement probatoire
   N4 --> N5
 }
 
 package "Z3 — Planification et vérificateur externe LLM-Modulo" {
-  rectangle "Calcul étendu à l'inférence\n(ToT, LATS, PlanBench)" as N6 <<prob>>
+  rectangle "Calcul étendu à l'inférence\n(ToT, GoT, LATS, PlanBench)" as N6 <<prob>>
   rectangle "Trace Chain-of-Thought\n(infidèle : non opposable)" as N7 <<amber>>
   rectangle "Vérificateur formel externe\nLLM-Modulo / LLM+P (valide ou rejette)" as N8 <<green>>
   N5 --> N6 : ③ Propose plans candidats
@@ -52,7 +52,7 @@ package "Z3 — Planification et vérificateur externe LLM-Modulo" {
 }
 
 legend bottom
-  **Bleu marine** : Corpus scientifique vérifié sur texte intégral SHA-256 (160 études W3.2)
+  **Bleu marine** : Corpus ouvert vérifié sur texte intégral SHA-256 (160 W3.2 → 135 L+ Compendium)
   **Ambre pointillé** : Propositions de planification probabiliste et traces CoT non opposables
   **Vert émeraude** : Vérificateur formel externe LLM-Modulo autorisant ou rejetant le plan
 end legend

@@ -60,6 +60,7 @@
 - **URL d'origine :** https://inria.hal.science/hal-02526355v1/document
 - **Empreinte SHA-256 (LF) :** `069cee64fd680ec43c71269994ed3945bc99f8e0bd4d9b737d1917a26e8ba39d` (`42745` octets, `6801` mots)
 - **Synthèse factuelle vérifiée :** Article de Bozic et Wotawa (ICTSS / hal-02526355v1) appliquant les relations métamorphiques (citées depuis Chen et al. 2018) au test de systèmes conversationnels sans oracle explicite.
+- **Audit d'accès réseau (`2026-11-25`) :** Sondage direct filtré par défi Proof-of-Work Anubis sur HAL (non contourné selon `AO-01`). Texte intégral CC BY 4.0 archivé avant filtrage et vérifié par empreinte `SHA-256` locale (`069cee64fd680ec43c71269994ed3945bc99f8e0bd4d9b737d1917a26e8ba39d`) ; notice HAL canonique `https://inria.hal.science/hal-02526355v1` et DOI éditeur IFIP ICTSS 2019 : `https://doi.org/10.1007/978-3-030-31280-0_3`.
 
 ### [6] SRC-092 — MORTAR: Multi-turn Metamorphic Testing for LLM-based Dialogue Systems
 

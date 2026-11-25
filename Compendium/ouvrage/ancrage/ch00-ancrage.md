@@ -241,3 +241,21 @@
 - **Calibre du manuscrit (`CA-01`) :** `4 063` mots (`verifie_manuscrit.py`) / `4 259` mots (`parser_plan.py`), conformes à la plage `[3 680, 4 320]`.
 - **Base fermée citée (`CA-09`, `CA-10`) :** `19 / 19` sources (`[1]`–`[19]`) de `sources/ch00-sources.md` citées, `0` référence orpheline, `0` source en statut F exploitée hors réserve explicite (`CA-11`).
 - **Verdict final — supportés :** 63 / 63 (100,0 %), `0` écart résiduel.
+
+---
+
+## 4. Mise à jour post-révision PRD (`REV-04`)
+
+- **L00-REV-01 (`L7`, `PRD-L1-017`)** — *Énoncé :* Ajout de `NE DOIT JAMAIS` dans l'énumération RFC 2119.
+  - *Preuve primaire :* `Compendium/prd.md` (`L306`), `SRC-045` (`RFC 2119`).
+  - Verdict : supporté
+- **L00-REV-02 (`L25`, `PRD-L1-010`)** — *Énoncé :* Exposé explicite en `§0.2` de la règle du maillon le plus élevé (`≤ N2`) et du harnais déterministe à huit étapes (`JSON Schema Draft 2020-12`, `additionalProperties: false`, `Decimal`, caviardage préalable, `AMBIGU_ESCALADE`, règle `H-31`).
+  - *Preuve primaire :* `Compendium/prd.md` (`L277`), `harness_proto/pipeline.py`, `SRC-021` (`JSON Schema Draft 2020-12`).
+  - Verdict : supporté
+- **L00-REV-03 (`L73–L88`, `PRD-L1-002`, `PRD-L1-009`, `PRD-L1-010`)** — *Énoncé :* Remplacement de la collision `CAP-033` par `CAP-040` + `CA/B Forum v2.3.1` au *Tableau 0.2* (erratum `prd.md L294` aligné sur Annexe D `L7111`/`L7118` et `CH-06`), ajout des dix thèses `T1–T10`, des six décisions conjointes `AE ↔ AS`, de `PRR F-11`, `G0-EX-CH04-01`, `maxTotalCostCad`, `PRR O-13` et `NIST IR 8547`, suppression des `4` échappements `\$` dans backticks, et renvoi explicite vers la *Figure 4* (`SCH-00-04`) dès la suite du *Tableau 0.2* (en conservant l'ordre d'inclusion `SCH-00-01..04` imposé par `specs/manifest.json` / `CA-04`).
+  - *Preuve primaire :* `Compendium/prd.md` (`L285–L296`, `L7111`, `L7118`), `registre/matrice-exig-prr-c40.json`, `specs/manifest.json`.
+  - Verdict : supporté
+- **L00-REV-04 (`L92–L106`, `PRD-L1-010`, `REF-003`)** — *Énoncé :* Ajout de `art. 17` (`ÉFVP`) et `art. 27` (portabilité) pour la Loi 25 (`[14]`), nuance de corroboration secondaire `AIBanks.ca` sur le repère AMF (portail en statut F), mention des repères `EN 18286:2026`, `DORA`, `Cyber Resilience Act`, `ISO/IEC 42001` et `NIST AI RMF`, et précision `21/21` validations sur `13` schémas `JSON Schema 2020-12` à la barrière `G0`.
+  - *Preuve primaire :* `Compendium/prd.md` (`L300`), `SRC-063` (`LQ 2021, c. 25`), `aq/rapports-g0.json`.
+  - Verdict : supporté
+- **Contrôle `REV-04` :** `3 770` mots (`verifie_manuscrit.py`) / `3 965` mots (`parser_plan.py`) dans `[3 680, 4 320]`, `verifie_manuscrit.py --unit 00-liminaire --strict` = `exit 0`. **Verdict final : `67 / 67` (`100,0 %` supporté).**

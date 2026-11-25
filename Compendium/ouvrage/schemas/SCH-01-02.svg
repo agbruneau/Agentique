@@ -15,22 +15,22 @@
     <rect x="42.0" y="160" width="362.7" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
     <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#451A03">Sondages d'usage général</text>
     <line x1="53.0" y1="194" x2="393.7" y2="194" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Statistique Canada : 19,2 % (40,4 % finance)</text>
-    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">40 % grandes organisations · 95 % sans ROI chiffré</text>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">StatCan : 19,2 % (40,4 % finance) · BdC : 8 %</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Deloitte 12 % ROI · veille : 40 % / 95 %</text>
   </g>
   <g id="node-2" class="node" data-node="true">
     <rect x="418.7" y="160" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
-    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">Étude terrain MAP v4</text>
+    <text x="429.7" y="182" font-size="13" font-weight="bold" fill="#0F2942">Étude terrain MAP (306 rép.)</text>
     <line x1="429.7" y1="194" x2="770.3" y2="194" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
     <text x="429.7" y="208" font-size="11.8" fill="#1E293B">68 % ≤ 10 étapes · 16/20 flux fixes</text>
     <text x="429.7" y="224" font-size="11.8" fill="#1E293B">74 % sous revue humaine · &gt; 40 % d'annulations</text>
   </g>
   <g id="node-3" class="node" data-node="true">
     <rect x="795.3" y="160" width="362.7" height="86" rx="8" fill="#FFF5E0" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
-    <text x="806.3" y="182" font-size="13" font-weight="bold" fill="#451A03">Pressions d'échelle observées</text>
+    <text x="806.3" y="182" font-size="13" font-weight="bold" fill="#451A03">Pressions d'échelle (veille)</text>
     <line x1="806.3" y1="194" x2="1147.0" y2="194" stroke="#D97706" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="806.3" y="208" font-size="11.8" fill="#1E293B">Ratio 82:1 NHI / humain</text>
-    <text x="806.3" y="224" font-size="11.8" fill="#1E293B">Énergie AIE : 415 → 945 TWh</text>
+    <text x="806.3" y="208" font-size="11.8" fill="#1E293B">Ratio NHI 82:1 · OWASP ASI03/ASI08</text>
+    <text x="806.3" y="224" font-size="11.8" fill="#1E293B">Énergie AIE : 415 → 945 TWh (2030)</text>
   </g>
 </g>
 <g id="zone-Z2" class="zone">

@@ -274,3 +274,17 @@
   - **Confrontation :** `SRC-101.txt` (`[7]` `L171`, `L173`), `SRC-123.txt` (`[5]` `L200`, `L369–380` `CA4`/`A12`/`A13`), `registre/matrice-exig-prr-c40.json` (`ADR-023`, `EXIG-FIN-01`, `PRR F-15`).
   - **Passe initiale :** Ajout post-G4 vérifié.
   - **Verdict :** `Verdict : supporté`
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+- **C03-REV-01 (`§ 3.1.2`, `§ 3.1.3`, `SCH-03-01.mmd`, `PRD-L1-001`, `PRD-L1-006`, `PRD-L1-009`, `PRD-L1-014`, `REF-006`)** — Correction bloquante de l'arbre décisionnel `SCH-03-01.mmd` (`N4 Ouvert → ACHETER SaaS ouvert`, `N4 Fermé → Rejet ou confinement lecture seule BSIF B-10`, `N3 Oui → N6 → ASSEMBLER défaut / CONSTRUIRE souverain`) ; raccord de la dispersion marché `1 à 59` (`1,5–88,2 G$ US`, `6` périmètres, `450 G$ US` valeur utilisateur, `234 G$ US` dépenses déplacées, `GMV` en veille corpus) avec les séries ouvertes `L+` (`5,3–9,89 G$ US` en `2026`, `[7, 8]`) ; retrait des `31` échappements `\$` dans backticks ; ajout `> 97 %` jetons d'entrée et `CAP-029`/`CAP-034` ; distinction explicite `40 %` (`Open Operator`), `60 %` (`MetaGPT`), `70 %` (`Cradle`) dans Belcak et coll. (`SRC-123` `[5]`) face à la cible interne d'architecture `70 %–78 %` (`EXIG-D01-03.5`).
+  - **Confrontation :** `SRC-123.txt` (`[5]`), `SRC-101.txt` (`[7]`), `SRC-102.txt` (`[8]`), `Compendium/prd.md` (`L755`, `L767`, `L791`, `L871`), `schemas/SCH-03-01.mmd`.
+  - **Verdict :** `Verdict : supporté`
+
+- **C03-REV-02 (`§ 3.2.1`, `§ 3.2.2`, `Tableau 3.3`, `SCH-03-02.svg`, `PRD-L1-006`, `PRD-L1-014`, `PRD-L1-015`)** — Intégration du ratio de veille `NHI 82:1` (`CyberArk`, hors source primaire `L+` directe ici) aligné sur `SCH-03-02.svg` et `EXIG-D01-03.6`, ajout de `ISO/IEC 25010:2023 (SQuaRE)`, harmonisation des variables `N` (agents) et `M` (systèmes), condensation de la redite `4×5 = 20 → 9`, et substitution des deux emplois de `vs`.
+  - **Confrontation :** `Compendium/prd.md` (`L768`, `L780`, `L800`), `schemas/SCH-03-02.svg`.
+  - **Verdict :** `Verdict : supporté`
+
+- **Contrôle `REV-04` :** `4 639` mots (`verifie_manuscrit.py`) / `4 885` mots (`parser_plan.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch03 --strict` = `exit 0`, **100,0 % supporté**.

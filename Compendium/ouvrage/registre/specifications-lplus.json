@@ -144,7 +144,7 @@
         "harness_proto",
         "evalops_prr"
       ],
-      "adapter_boundary": "À ce tag 1.0.0.alpha3, conformance-vectors/a2a-jcs-v01 est ABSENT du dépôt et CARD-SIGN-001..004 sont marqués NOT_AUTOMATABLE dans tck/requirements/agent_card.py ; vérifiés localement en G0 sur 8 - Manuel/trousse/vectors/a2a_tck et rfc8785."
+      "adapter_boundary": "À ce tag 1.0.0.alpha3, conformance-vectors/a2a-jcs-v01 est ABSENT du dépôt et CARD-SIGN-001..004 sont marqués NOT_AUTOMATABLE dans tck/requirements/agent_card.py ; vérifiés localement en G0 sur trousse/vectors/a2a_tck (Tome 8) et rfc8785."
     },
     {
       "spec_id": "SPEC-OPA-REGO-V1-22-4",

@@ -3,7 +3,7 @@ flowchart LR
   subgraph Z1["Z1 · AVANT — Chaîne JWT/DPoP en O(sauts) (> 8 192 o)"]
     direction TB
     N1["Signatures ML-DSA-65 (3 309 o)<br/>et ML-DSA-87 (4 627 o)"]:::warn
-    N2["Chaîne à 2 sauts : 20–35 Ko<br/>5 sauts : jusqu'à 165 Ko (pqc_http431.py)"]:::warn
+    N2["2 sauts : 9,6–38,8 Ko (pqc_http431.py)<br/>5 sauts : 24,5–97,4 Ko (max 97 403 o)"]:::warn
     N3["Rejet HTTP 431 par mandataires<br/>inverses (> 8 192 octets)"]:::warn
     N1 -.->|"① Banc HTTP 431"| N2 -.-> N3
   end

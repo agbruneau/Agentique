@@ -31,16 +31,16 @@ rectangle "Agent métier probabiliste\n(propose plan, révocable)" as N1 <<prob>
 rectangle "Clé canonique idem-v1 (JCS SHA-256)\nHTTP 409 / 422 divergence" as N2 <<det>>
 rectangle "Batterie 10 fautes (EXIG-ORC-20)\n(11/11 tests G0 · test_saga_10_faults.py)" as N3 <<det>>
 
-package "Z1/Z2 — Automate Saga et point pivot P3 (saga_orchestrator.py)" {
+package "Z1/Z2 — Automate Saga et point pivot T3 (saga_orchestrator.py)" {
   rectangle "Transitions pré-pivot T1 → T2\n(outils de compensation C1, C2 déclarés)" as N4 <<blue>>
-  rectangle "Garde pré-pivot (détecte faute T2)" as N5 <<blue>>
-  rectangle "Point pivot P3 (PIVOT_REACHED)\nTampon irréversible (bloque repli)" as N6 <<amber>>
-  rectangle "Finalisation réessayable T3\n(COMPLETED) ou réconciliation" as N7 <<blue>>
+  rectangle "Garde pré-pivot (faute T2 → C1 ;\nfaute avant pivot T3 → C2 → C1)" as N5 <<blue>>
+  rectangle "Point pivot T3 (PIVOT_REACHED, palier P3)\nTampon irréversible (bloque C1..C2)" as N6 <<amber>>
+  rectangle "Finalisation post-pivot T4\n(COMPLETED ou réconciliation avant)" as N7 <<blue>>
 }
 
 package "Z3 — Canal de compensation isolé (EXIG-ORC-28)" {
   rectangle "CompensationChannel dédié\n(NHI & budget propres, immunisé SOC)" as N8 <<green>>
-  rectangle "Compensations inverses C2 → C1\n(idempotentes → COMPENSATED)" as N9 <<green>>
+  rectangle "Compensations inverses (C1 ou C2 → C1)\n(idempotentes → COMPENSATED)" as N9 <<green>>
   actor "File HUMAN_ESCALATION (ORC-18)\naprès 2 échecs C_k" as N10 <<gray>>
 }
 
@@ -50,19 +50,19 @@ N1 .[#D97706].> N4 : Proposition typée
 N2 --> N4 : ② Verrouille clé idem-v1
 N4 --> N5
 N5 --> N6 : ④ Pré-pivot vérifié
-N6 --> N7 : Scellement P3
+N6 --> N7 : Scellement pivot T3
 N5 --> N8 : ③ Faute pré-pivot
 N3 --> N5 : Fautes 1..9
 N3 --> N8 : Faute 10 (agent révoqué)
-N8 --> N9 : Exécute C2 → C1
+N8 --> N9 : Exécute C_k ordre inverse
 N9 --> N10 : 2 échecs C_k
 N4 --> N11
 N6 --> N11
 N9 --> N11
 
 legend bottom
-  **Bleu** : Transitions pré-pivot réversibles T1–T2 et journal préalable Outbox
-  **Ambre** : Tampon d'irréversibilité et frontière P3 sans retour arrière possible
+  **Bleu** : Transitions pré-pivot T1–T2, post-pivot T4 et journal préalable Outbox
+  **Ambre** : Tampon d'irréversibilité et Point pivot T3 (P3) sans retour arrière possible
   **Vert émeraude** : Canal de compensation isolé EXIG-ORC-28 immunisé contre la coupure SOC
 end legend
 @enduml

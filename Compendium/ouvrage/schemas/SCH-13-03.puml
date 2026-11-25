@@ -28,7 +28,7 @@ top to bottom direction
 title Parades aux 14 modes d'échec MAST : enveloppe minimale (EXIG-ORC-23..25) et scission B2B DMZ/TEE
 
 package "Z1 — Taxonomie des défaillances (14 modes MAST v3 et 7 frontaliers)" {
-  rectangle "① FM-1 conception (44,2 %) · FM-2 désalignement (32,4 %)\nFM-3 vérification (23,5 %)" as N1 <<red>>
+  rectangle "① FM-1 conception (44,2 %) · FM-2 désalignement (32,3 %)\nFM-3 vérification (23,5 %)" as N1 <<red>>
   rectangle "7 dérives frontalières : routage erroné,\ndérive HT/TTC, cascade Replit #1152" as N2 <<red>>
   N1 --> N2
 }

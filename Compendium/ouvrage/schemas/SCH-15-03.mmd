@@ -3,7 +3,7 @@ flowchart TB
   subgraph Z1["Z1 · Trois classes d'effet (Tome 1, chap. 48)"]
     direction TB
     N1{"① Classification de l'outil"}:::det
-    N2["Lecture (L0–L1)<br/>Répétable sans effet de bord"]:::gray
+    N2["Lecture (P0–P1)<br/>Répétable sans effet de bord"]:::gray
     N3["Écriture compensable<br/>Clé idem-v1 (HTTP 409 / 422)"]:::det
     N4["Engagement irréversible<br/>Tampon préalable et rapprochement"]:::purple
     N1 --> N2
@@ -27,7 +27,8 @@ flowchart TB
   end
 
   N3 --> N5
-  N4 --> N7
+  N4 -->|"Transaction / bancaire"| N5
+  N4 -->|"Actif physique / exclusif"| N7
   N6 --> N9
 
   subgraph LEG["Légende"]

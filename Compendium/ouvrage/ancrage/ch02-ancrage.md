@@ -263,3 +263,17 @@
   - Preuve L+ : cohérence architecturale inter-chapitres vérifiée dans `specs/manifest.json` (`ch02`–`ch31`).
   - Statut initial : supporté.
   - Verdict : supporté
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+- **C02-REV-01 (`§ 2.1.1`–`§ 2.1.3`, `SCH-02-01.svg`, `SCH-02-02.puml`, `SCH-02-03.puml`, `PRD-L1-005`, `PRD-L1-009`, `PRD-L1-013`, `PRD-L1-015`)** :
+  - Harmonisation `MAST FM-2` à `32,3 %` dans `SCH-02-02.puml` (vérifié exact dans `SRC-028.txt` : `44,2 % + 32,3 % + 23,5 % = 100,0 %`).
+  - Raccord entre `METR arXiv:2503.14499v4` (`[5]`, `o3 ~110 min` à `50 %`, chute `4×–6×`) et repère de veille `METR v1.1` (`~17,4 h` → `~3,1 h`) dans la prose et `SCH-02-01.svg`.
+  - Retrait de `HAL` de la boîte « palmarès contaminés » dans `SCH-02-03.puml` et séparation claire `50–100` scénarios CI (`E2`, `k = 5`) face à `n ≥ 300` distincts pour Wilson `p = 1 %`.
+  - Ajout de `OWASP LLM06`, `NIST AI 600-1`, plafond simulé `27,9 %`, `Cognition` (« *Don't Build Multi-Agents* »), `Anthropic` (`15×` / `+90 %`), `CAMEL`, `Contract Net`, correction signe moins Unicode `−70,0 %`, retrait des `14` échappements `\$` dans backticks et des emplois de `vs` (`CH-02` et `SCH-02-01.svg`).
+  - Preuve : `SRC-028.txt` (`[4]`), `SRC-025.txt` (`[5]`), `SRC-030.txt` (`[7]`), `Compendium/prd.md` (`L614–L632`), `schemas/SCH-02-01.svg`, `SCH-02-02.puml`, `SCH-02-03.puml`.
+  - Verdict : supporté
+
+- **Contrôle `REV-04` :** `3 683` mots (`verifie_manuscrit.py`) / `3 938` mots (`parser_plan.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch02 --strict` = `exit 0`, **100,0 % supporté**.

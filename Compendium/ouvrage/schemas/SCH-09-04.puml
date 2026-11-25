@@ -39,7 +39,7 @@ package "Z1 — Aiguilleur cognitif à trois paliers qualifié en E2 (EXIG-FIN-0
 
 package "Z2 — Ordonnanceur Gateway API Inference Extension (EPP / llm-d)" {
   rectangle "Endpoint Picker (EPP / EXIG-FIN-07)\nInspecte empreinte préfixe & files VRAM" as N5 <<det>>
-  rectangle "Réplique GPU avec KV-cache chaud\n(RadixAttention · −90 % coût relecture)" as N6 <<green>>
+  rectangle "Réplique GPU avec KV-cache chaud\n(RadixAttention · réutilisation préfixe KV)" as N6 <<green>>
   rectangle "Désagrégation prefill / decode\n(remplace répartition circulaire aveugle)" as N7 <<det>>
   N2 --> N5 : ② Sélection réplique
   N3 .[#D97706].> N5

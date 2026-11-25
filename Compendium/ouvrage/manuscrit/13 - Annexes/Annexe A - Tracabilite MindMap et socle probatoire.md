@@ -1,346 +1,385 @@
 # Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes)
 
-Cette annexe consolidée est générée mécaniquement à la date de gel du 2 décembre 2026 (`CA-17`) à partir de `specs/manifest.json`, `registre/mindmap-complet.json`, `registre/glossaire-termes.json`, `recherche/manifeste-sources-sha256.json`, `recherche/registre-statut-f.json` et des journaux `ancrage/`.
+Cette annexe consolidée est générée mécaniquement à la date de gel du 2 décembre 2026 (`CA-17`) à partir du plan directeur du Compendium, du registre MindMap, du glossaire bilingue, du manifeste `SHA-256` des sources ouvertes `L+`, du registre des exclusions `statut F` et des journaux d'ancrage `G2`.
 
-Le socle documentaire fermé recense **135 sources primaires ouvertes `L+`** hachées `SHA-256` (`0,0 %` `METADATA_ONLY`), **27 exclusions `statut F`** (`AO-01`) et **55 vedettes** assignées à un chapitre propriétaire unique dans `glossaire-termes.json`. La barrière `G2` totalise **37 / 37 journaux Wyvern**, passant de **674** assertions initialement validées à **1390** assertions `supportées` (`100,0 %` après rectifications).
+Le socle documentaire fermé recense **135 sources primaires ouvertes `L+`** hachées `SHA-256` (`0,0 %` `METADATA_ONLY`), **27 exclusions `statut F`** (`AO-01`) et **55 vedettes** assignées à un chapitre propriétaire unique. La barrière `G2` totalise **37/37 journaux d'ancrage Wyvern**, passant de **674** assertions initialement validées à **1393** assertions `supportées` (`100,0 %` après rectifications).
 
 ## 1. Ventilation du corpus primaire ouvert `L+` par catégorie documentaire
 
-La distribution typologique des 135 pièces `L+` s'établit comme suit: `preprint` (33), `standard_spec` (26), `standard_rfc` (22), `legislation` (7), `regulatory_filing` (6), `standard_draft` (5), `standard_gov` (5), `journal_article` (4), `official_report` (4), `regulatory_guideline` (4), `conference_paper` (3), `industry_report` (3), `industry_standard` (2), `official_statistics` (2), `standard_reference` (2), `working_paper` (2), `book_chapter` (1), `regulatory_notice` (1), `report` (1), `technical_spec` (1), `third_party_aggregator` (1). Chaque pièce intégrale est conservée localement en UTF-8 sous `recherche/corpus_l_plus/` avec empreinte vérifiée par `verifie_manuscrit.py --sources-only`, tandis que les huit tomes antérieurs du Corpus restent cantonnés à un rôle d'index heuristique (`AO-02`) soumis au contrôle anti-plagiat par 12-grammes (`CA-03`).
+La distribution typologique des 135 pièces `L+` s'établit comme suit : `preprint` (33), `standard_spec` (26), `standard_rfc` (22), `legislation` (7), `regulatory_filing` (6), `standard_draft` (5), `standard_gov` (5), `journal_article` (4), `official_report` (4), `regulatory_guideline` (4), `conference_paper` (3), `industry_report` (3), `industry_standard` (2), `official_statistics` (2), `standard_reference` (2), `working_paper` (2), `book_chapter` (1), `regulatory_notice` (1), `report` (1), `technical_spec` (1), `third_party_aggregator` (1). Chaque pièce intégrale est archivée localement en UTF-8 avec empreinte `SHA-256` vérifiée en intégration continue, tandis que les huit tomes antérieurs du Corpus demeurent cantonnés à un rôle d'index heuristique (`AO-02`) soumis au contrôle anti-plagiat par 12-grammes (`CA-03`).
 
 ## 2. Table maîtresse de traçabilité des 36 chapitres, 71 familles et 260 thèmes
 
-| Unité | Domaine | Fam. / Thm. | Schémas | Cible (mots) |
-|---|---|---:|---|---:|
-| `ch01` | `D01` | 2 / 8 | SCH-01-01, SCH-01-02, SCH-01-03 | 4620 |
-| `ch02` | `D01` | 2 / 4 | SCH-02-01, SCH-02-02, SCH-02-03 | 3860 |
-| `ch03` | `D01` | 2 / 8 | SCH-03-01, SCH-03-02, SCH-03-03 | 4620 |
-| `ch04` | `D02` | 2 / 7 | SCH-04-01, SCH-04-02, SCH-04-03 | 4430 |
-| `ch05` | `D02` | 2 / 4 | SCH-05-01, SCH-05-02, SCH-05-03 | 3860 |
-| `ch06` | `D02` | 2 / 12 | SCH-06-01, SCH-06-02, SCH-06-03, SCH-06-04 | 5380 |
-| `ch07` | `D03` | 2 / 6 | SCH-07-01, SCH-07-02, SCH-07-03 | 4240 |
-| `ch08` | `D03` | 2 / 8 | SCH-08-01, SCH-08-02, SCH-08-03 | 4620 |
-| `ch09` | `D03` | 2 / 11 | SCH-09-01, SCH-09-02, SCH-09-03, SCH-09-04 | 5190 |
-| `ch10` | `D04` | 2 / 7 | SCH-10-01, SCH-10-02, SCH-10-03 | 4430 |
-| `ch11` | `D04` | 2 / 5 | SCH-11-01, SCH-11-02, SCH-11-03 | 4050 |
-| `ch12` | `D04` | 2 / 7 | SCH-12-01, SCH-12-02, SCH-12-03 | 4430 |
-| `ch13` | `D05` | 2 / 10 | SCH-13-01, SCH-13-02, SCH-13-03 | 5000 |
-| `ch14` | `D05` | 2 / 3 | SCH-14-01, SCH-14-02, SCH-14-03 | 3670 |
-| `ch15` | `D05` | 2 / 7 | SCH-15-01, SCH-15-02, SCH-15-03 | 4430 |
-| `ch16` | `D06` | 2 / 8 | SCH-16-01, SCH-16-02, SCH-16-03 | 4620 |
-| `ch17` | `D06` | 2 / 7 | SCH-17-01, SCH-17-02, SCH-17-03 | 4430 |
-| `ch18` | `D06` | 2 / 4 | SCH-18-01, SCH-18-02, SCH-18-03 | 3860 |
-| `ch19` | `D07` | 2 / 7 | SCH-19-01, SCH-19-02, SCH-19-03 | 4430 |
-| `ch20` | `D07` | 2 / 9 | SCH-20-01, SCH-20-02, SCH-20-03 | 4810 |
-| `ch21` | `D07` | 2 / 4 | SCH-21-01, SCH-21-02, SCH-21-03 | 3860 |
-| `ch22` | `D08` | 2 / 8 | SCH-22-01, SCH-22-02, SCH-22-03 | 4620 |
-| `ch23` | `D08` | 2 / 7 | SCH-23-01, SCH-23-02, SCH-23-03 | 4430 |
-| `ch24` | `D08` | 2 / 5 | SCH-24-01, SCH-24-02, SCH-24-03 | 4050 |
-| `ch25` | `D09` | 2 / 10 | SCH-25-01, SCH-25-02, SCH-25-03 | 5000 |
-| `ch26` | `D09` | 2 / 8 | SCH-26-01, SCH-26-02, SCH-26-03 | 4620 |
-| `ch27` | `D09` | 2 / 5 | SCH-27-01, SCH-27-02, SCH-27-03 | 4050 |
-| `ch28` | `D10` | 2 / 10 | SCH-28-01, SCH-28-02, SCH-28-03 | 5000 |
-| `ch29` | `D10` | 2 / 8 | SCH-29-01, SCH-29-02, SCH-29-03 | 4620 |
-| `ch30` | `D10` | 2 / 6 | SCH-30-01, SCH-30-02, SCH-30-03 | 4240 |
-| `ch31` | `D11` | 2 / 11 | SCH-31-01, SCH-31-02, SCH-31-03 | 5190 |
-| `ch32` | `D11` | 2 / 8 | SCH-32-01, SCH-32-02, SCH-32-03 | 4620 |
-| `ch33` | `D11` | 1 / 3 | SCH-33-01, SCH-33-02, SCH-33-03 | 3670 |
-| `ch34` | `D12` | 2 / 6 | SCH-34-01, SCH-34-02, SCH-34-03 | 4240 |
-| `ch35` | `D12` | 2 / 5 | SCH-35-01, SCH-35-02, SCH-35-03 | 4050 |
-| `ch36` | `D12` | 2 / 14 | SCH-36-01, SCH-36-02, SCH-36-03, SCH-36-04 | 5760 |
+|Ch.|Domaine|Sous-domaine (`node_id`)|Fam./Thm.|Occ.|Tomes|Schémas|
+|---|---|---|---:|---:|---|---|
+|`ch01`|`D01`|`SUB_D01_01`|2/8|45|T1, T2, T3, T4, T5, T6, T7|SCH-01-01, SCH-01-02, SCH-01-03|
+|`ch02`|`D01`|`SUB_D01_02`|2/4|54|T1, T2, T3, T4, T5, T6, T7, T8|SCH-02-01, SCH-02-02, SCH-02-03|
+|`ch03`|`D01`|`SUB_D01_03`|2/8|43|T1, T3, T4, T5, T6, T7|SCH-03-01, SCH-03-02, SCH-03-03|
+|`ch04`|`D02`|`SUB_D02_01`|2/7|45|T1, T2, T3, T4, T5, T6, T7, T8|SCH-04-01, SCH-04-02, SCH-04-03|
+|`ch05`|`D02`|`SUB_D02_02`|2/4|70|T1, T2, T3, T4, T5, T6, T7, T8|SCH-05-01, SCH-05-02, SCH-05-03|
+|`ch06`|`D02`|`SUB_D02_03`|2/12|59|T1, T2, T3, T4, T5, T6, T7, T8|SCH-06-01, SCH-06-02, SCH-06-03, SCH-06-04|
+|`ch07`|`D03`|`SUB_D03_01`|2/6|55|T1, T2, T3, T4, T5, T6, T7, T8|SCH-07-01, SCH-07-02, SCH-07-03|
+|`ch08`|`D03`|`SUB_D03_02`|2/8|77|T1, T2, T3, T4, T5, T6, T7, T8|SCH-08-01, SCH-08-02, SCH-08-03|
+|`ch09`|`D03`|`SUB_D03_03`|2/11|106|T1, T2, T3, T4, T5, T6, T7, T8|SCH-09-01, SCH-09-02, SCH-09-03, SCH-09-04|
+|`ch10`|`D04`|`SUB_D04_01`|2/7|66|T1, T2, T3, T4, T5, T6, T7|SCH-10-01, SCH-10-02, SCH-10-03|
+|`ch11`|`D04`|`SUB_D04_02`|2/5|27|T1, T2, T3, T4, T5, T6, T7|SCH-11-01, SCH-11-02, SCH-11-03|
+|`ch12`|`D04`|`SUB_D04_03`|2/7|43|T1, T2, T3, T4, T5, T6, T7|SCH-12-01, SCH-12-02, SCH-12-03|
+|`ch13`|`D05`|`SUB_D05_01`|2/10|54|T1, T2, T3, T4, T5, T6, T7, T8|SCH-13-01, SCH-13-02, SCH-13-03|
+|`ch14`|`D05`|`SUB_D05_02`|2/3|28|T1, T2, T3, T4, T5, T6, T7, T8|SCH-14-01, SCH-14-02, SCH-14-03|
+|`ch15`|`D05`|`SUB_D05_03`|2/7|47|T1, T2, T3, T4, T5, T6, T7, T8|SCH-15-01, SCH-15-02, SCH-15-03|
+|`ch16`|`D06`|`SUB_D06_01`|2/8|86|T1, T2, T3, T4, T5, T6, T7, T8|SCH-16-01, SCH-16-02, SCH-16-03|
+|`ch17`|`D06`|`SUB_D06_02`|2/7|91|T1, T2, T3, T4, T5, T6, T7, T8|SCH-17-01, SCH-17-02, SCH-17-03|
+|`ch18`|`D06`|`SUB_D06_03`|2/4|42|T1, T2, T3, T4, T5, T7, T8|SCH-18-01, SCH-18-02, SCH-18-03|
+|`ch19`|`D07`|`SUB_D07_01`|2/7|71|T1, T2, T3, T4, T5, T6, T7, T8|SCH-19-01, SCH-19-02, SCH-19-03|
+|`ch20`|`D07`|`SUB_D07_02`|2/9|59|T1, T2, T3, T4, T5, T6, T7, T8|SCH-20-01, SCH-20-02, SCH-20-03|
+|`ch21`|`D07`|`SUB_D07_03`|2/4|48|T1, T2, T3, T4, T5, T6, T7, T8|SCH-21-01, SCH-21-02, SCH-21-03|
+|`ch22`|`D08`|`SUB_D08_01`|2/8|62|T1, T2, T3, T4, T5, T6, T7, T8|SCH-22-01, SCH-22-02, SCH-22-03|
+|`ch23`|`D08`|`SUB_D08_02`|2/7|36|T1, T2, T3, T4, T5, T6, T7, T8|SCH-23-01, SCH-23-02, SCH-23-03|
+|`ch24`|`D08`|`SUB_D08_03`|2/5|40|T1, T2, T3, T4, T5, T6, T7, T8|SCH-24-01, SCH-24-02, SCH-24-03|
+|`ch25`|`D09`|`SUB_D09_01`|2/10|119|T1, T2, T3, T4, T5, T6, T7, T8|SCH-25-01, SCH-25-02, SCH-25-03|
+|`ch26`|`D09`|`SUB_D09_02`|2/8|69|T1, T2, T3, T4, T5, T6, T7, T8|SCH-26-01, SCH-26-02, SCH-26-03|
+|`ch27`|`D09`|`SUB_D09_03`|2/5|16|T1, T2, T3, T4, T5|SCH-27-01, SCH-27-02, SCH-27-03|
+|`ch28`|`D10`|`SUB_D10_01`|2/10|35|T1, T2, T3, T4, T5, T7|SCH-28-01, SCH-28-02, SCH-28-03|
+|`ch29`|`D10`|`SUB_D10_02`|2/8|58|T1, T3, T4, T5, T6, T8|SCH-29-01, SCH-29-02, SCH-29-03|
+|`ch30`|`D10`|`SUB_D10_03`|2/6|25|T1, T2, T3, T4, T5, T6|SCH-30-01, SCH-30-02, SCH-30-03|
+|`ch31`|`D11`|`SUB_D11_01`|2/11|64|T1, T2, T3, T4, T5, T7|SCH-31-01, SCH-31-02, SCH-31-03|
+|`ch32`|`D11`|`SUB_D11_02`|2/8|36|T1, T2, T3, T4, T5, T6, T7|SCH-32-01, SCH-32-02, SCH-32-03|
+|`ch33`|`D11`|`SUB_D11_03`|1/3|22|T1, T3, T4, T5, T7|SCH-33-01, SCH-33-02, SCH-33-03|
+|`ch34`|`D12`|`SUB_D12_01`|2/6|41|T1, T2, T3, T5, T6, T8|SCH-34-01, SCH-34-02, SCH-34-03|
+|`ch35`|`D12`|`SUB_D12_02`|2/5|15|R, T2, T4, T5, T8|SCH-35-01, SCH-35-02, SCH-35-03|
+|`ch36`|`D12`|`SUB_D12_03`|2/14|77|R, T1, T2, T3, T4, T5, T6, T7, T8|SCH-36-01, SCH-36-02, SCH-36-03, SCH-36-04|
 
-## 3. Ventilation analytique des douze domaines (`D01`–`D12`)
+*Tableau A.1 — Table maîtresse de traçabilité des trente-six chapitres, sous-domaines `SUB_Dxx_yy`, soixante et onze familles, deux cent soixante thèmes et cent onze schémas de chapitres.*
+
+## 3. Ventilation analytique des douze domaines (`D01`–`D12`) et de leurs soixante et onze familles
 
 ### D01 — Fondements épistémiques, économiques et rupture agentique
 
-Le domaine `D01` couvre les chapitres `ch01` à `ch03` (3 chapitres, cible **13100** mots) et regroupe **6 familles**, **20 thèmes**, **9 schémas** ainsi que **35 études `L+`** indexées sur cet axe. Passage des copilotes passifs aux Systèmes d'agentivité, loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique.
-
-Familles affectées en propriété exclusive: Paradigme des Systèmes d'agentivité ; Généalogie et fondements ; Loi de Lusser et erreurs en cascade ; Constance pass^k et métriques de fiabilité ; Économie cognitive de Coase ; Dettes cognitive, technique et d'intention.
+Le domaine `D01` couvre les chapitres `ch01` à `ch03` (3 chapitres, **6 familles**, **20 thèmes**, **9 schémas**, **35 études `L+`** indexées). Passage des copilotes passifs aux Systèmes d'agentivité, loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique. Ses familles affectées en propriété exclusive regroupent `FAM_D01_01_01` (Paradigme des Systèmes d'agentivité), `FAM_D01_01_02` (Généalogie et fondements), `FAM_D01_02_01` (Loi de Lusser et erreurs en cascade), `FAM_D01_02_02` (Constance pass^k et métriques de fiabilité), `FAM_D01_03_01` (Économie cognitive de Coase), `FAM_D01_03_02` (Dettes cognitive, technique et d'intention).
 
 ### D02 — Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)
 
-Le domaine `D02` couvre les chapitres `ch04` à `ch06` (3 chapitres, cible **13670** mots) et regroupe **6 familles**, **23 thèmes**, **10 schémas** ainsi que **19 études `L+`** indexées sur cet axe. Séparation entre exosquelette déterministe (80 %) et nœuds cognitifs (20 %), échelle L0–L4 et règle du maillon le plus élevé, supervision HITL/HOTL et abstention, harnais déterministe à 8 étapes sous JSON Schema strict, modélisation TOGAF/ArchiMate, 4 plans, 6 couches et DIV-02, noyau de contrôle possédé (42 CAP invariantes et 10 conditionnelles) et arbitrage entre achat, assemblage et construction.
-
-Familles affectées en propriété exclusive: Partition 80/20 et séparation déterministe ; Harnais déterministe à 8 étapes ; Échelle L0–L4 et règle du maillon ; Supervision HITL / HOTL et abstention ; Noyau de contrôle possédé (42 CAP) et 31 ADR ; Cadres TOGAF / ArchiMate et 6 couches.
+Le domaine `D02` couvre les chapitres `ch04` à `ch06` (3 chapitres, **6 familles**, **23 thèmes**, **10 schémas**, **19 études `L+`** indexées). Séparation entre exosquelette déterministe (80 %) et nœuds cognitifs (20 %), échelle L0–L4 et règle du maillon le plus élevé, supervision HITL/HOTL et abstention, harnais déterministe à 8 étapes sous JSON Schema strict, modélisation TOGAF/ArchiMate, 4 plans, 6 couches et DIV-02, noyau de contrôle possédé (42 CAP invariantes et 10 conditionnelles) et arbitrage entre achat, assemblage et construction. Ses familles affectées en propriété exclusive regroupent `FAM_D02_01_01` (Partition 80/20 et séparation déterministe), `FAM_D02_01_02` (Harnais déterministe à 8 étapes), `FAM_D02_02_01` (Échelle L0–L4 et règle du maillon), `FAM_D02_02_02` (Supervision HITL / HOTL et abstention), `FAM_D02_03_01` (Noyau de contrôle possédé (42 CAP) et 31 ADR), `FAM_D02_03_02` (Cadres TOGAF / ArchiMate et 6 couches).
 
 ### D03 — Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2)
 
-Le domaine `D03` couvre les chapitres `ch07` à `ch09` (3 chapitres, cible **14050** mots) et regroupe **6 familles**, **25 thèmes**, **10 schémas** ainsi que **29 études `L+`** indexées sur cet axe. Cadre EIF à 4 couches, protocole vertical MCP avec épinglage cryptographique SHA-256 des schémas, protocole horizontal A2A et cartes AgentCard signées, initiatives AGNTCY/SLIM et AP2, Open Responses/SKILL.md, registres de découverte, passerelle PEP/AI Gateway à 9 contrôles et prévention du verrouillage fournisseur.
-
-Familles affectées en propriété exclusive: Spécification MCP et façades d'intention ; Épinglage SHA-256 et sécurité MCP ; Protocole pair-à-pair A2A et ANP ; Piles AGNTCY/SLIM et paiements AP2 ; Découverte Agent Card et registres ; Passerelles PEP / AI Gateway et anti-verrouillage.
+Le domaine `D03` couvre les chapitres `ch07` à `ch09` (3 chapitres, **6 familles**, **25 thèmes**, **10 schémas**, **29 études `L+`** indexées). Cadre EIF à 4 couches, protocole vertical MCP avec épinglage cryptographique SHA-256 des schémas, protocole horizontal A2A et cartes AgentCard signées, initiatives AGNTCY/SLIM et AP2, Open Responses/SKILL.md, registres de découverte, passerelle PEP/AI Gateway à 9 contrôles et prévention du verrouillage fournisseur. Ses familles affectées en propriété exclusive regroupent `FAM_D03_01_01` (Spécification MCP et façades d'intention), `FAM_D03_01_02` (Épinglage SHA-256 et sécurité MCP), `FAM_D03_02_01` (Protocole pair-à-pair A2A et ANP), `FAM_D03_02_02` (Piles AGNTCY/SLIM et paiements AP2), `FAM_D03_03_01` (Découverte Agent Card et registres), `FAM_D03_03_02` (Passerelles PEP / AI Gateway et anti-verrouillage).
 
 ### D04 — Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)
 
-Le domaine `D04` couvre les chapitres `ch10` à `ch12` (3 chapitres, cible **12910** mots) et regroupe **6 familles**, **19 thèmes**, **9 schémas** ainsi que **8 études `L+`** indexées sur cet axe. Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments mémoriels isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.
-
-Familles affectées en propriété exclusive: Ontologies métier (FIBO) et contrats ODCS ; Compilation de contexte et RAG agentique ; Architecture mémorielle CoALA à quatre compartiments ; Filtrage ACL amont et gouvernance RAG ; Couche anti-corruption (ACL) et mainframes ; Encapsulation IT/OT et 6 substrats d'état.
+Le domaine `D04` couvre les chapitres `ch10` à `ch12` (3 chapitres, **6 familles**, **19 thèmes**, **9 schémas**, **8 études `L+`** indexées). Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments mémoriels isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état. Ses familles affectées en propriété exclusive regroupent `FAM_D04_01_01` (Ontologies métier (FIBO) et contrats ODCS), `FAM_D04_01_02` (Compilation de contexte et RAG agentique), `FAM_D04_02_01` (Architecture mémorielle CoALA à quatre compartiments), `FAM_D04_02_02` (Filtrage ACL amont et gouvernance RAG), `FAM_D04_03_01` (Couche anti-corruption (ACL) et mainframes), `FAM_D04_03_02` (Encapsulation IT/OT et 6 substrats d'état).
 
 ### D05 — Orchestration hybride, chorégraphie événementielle et exécution durable (Saga)
 
-Le domaine `D05` couvre les chapitres `ch13` à `ch15` (3 chapitres, cible **13100** mots) et regroupe **6 familles**, **20 thèmes**, **9 schémas** ainsi que **14 études `L+`** indexées sur cet axe. Arbre de sobriété OO1–OO4, 8 patrons de topologies multi-agents et lois d'échelle, dorsale événementielle CloudEvents/AsyncAPI, exécution durable (Temporal/Restate), idempotence JCS SHA-256, sémantique d'effet, Saga compensatoire autour d'un point pivot avec canal de compensation isolé et suite de 10 scénarios de fautes.
-
-Familles affectées en propriété exclusive: Arbre de sobriété OO1–OO4 et APM ; Topologies multi-agents, cadriciels et MAST ; Dorsale Event Mesh (CloudEvents / AsyncAPI) ; Protocoles d'échange et négociation asynchrone ; Exécution durable (Temporal) et résilience ; Idempotence JCS et Saga compensatoire.
+Le domaine `D05` couvre les chapitres `ch13` à `ch15` (3 chapitres, **6 familles**, **20 thèmes**, **9 schémas**, **14 études `L+`** indexées). Arbre de sobriété OO1–OO4, 8 patrons de topologies multi-agents et lois d'échelle, dorsale événementielle CloudEvents/AsyncAPI, exécution durable (Temporal/Restate), idempotence JCS SHA-256, sémantique d'effet, Saga compensatoire autour d'un point pivot avec canal de compensation isolé et suite de 10 scénarios de fautes. Ses familles affectées en propriété exclusive regroupent `FAM_D05_01_01` (Arbre de sobriété OO1–OO4 et APM), `FAM_D05_01_02` (Topologies multi-agents, cadriciels et MAST), `FAM_D05_02_01` (Dorsale Event Mesh (CloudEvents / AsyncAPI)), `FAM_D05_02_02` (Protocoles d'échange et négociation asynchrone), `FAM_D05_03_01` (Exécution durable (Temporal) et résilience), `FAM_D05_03_02` (Idempotence JCS et Saga compensatoire).
 
 ### D06 — Identité non humaine (NHI), chaîne de mandat et post-quantique
 
-Le domaine `D06` couvre les chapitres `ch16` à `ch18` (3 chapitres, cible **12910** mots) et regroupe **6 familles**, **19 thèmes**, **9 schémas** ainsi que **33 études `L+`** indexées sur cet axe. OAuth 2.1/OIDC/SCIM, identités non humaines (NHI) éphémères sans secret statique, attestation SPIFFE/SPIRE, DID/VC/vLEI et passeport d'agent, grille des 5 questions et KYA, délégation atténuée au 2e saut (RFC 8693 OBO, RFC 9449 DPoP, RFC 9396 RAR), approbation hors bande CIBA+FIDO2, cycles TLS 100 j / 47 j et transition post-quantique ML-DSA/ML-KEM/SLH-DSA.
-
-Familles affectées en propriété exclusive: Identités NHI, OAuth 2.1 et registres ; Attestation SPIFFE/SPIRE, DID/VC et vLEI ; Délégation OBO (RFC 8693), DPoP et RAR ; Approbation CIBA, KYA et révocation SSF/CAEP ; Certificats TLS 100 j / 47 j et ACME ; Transition post-quantique ML-DSA / SLH-DSA.
+Le domaine `D06` couvre les chapitres `ch16` à `ch18` (3 chapitres, **6 familles**, **19 thèmes**, **9 schémas**, **33 études `L+`** indexées). OAuth 2.1/OIDC/SCIM, identités non humaines (NHI) éphémères sans secret statique, attestation SPIFFE/SPIRE, DID/VC/vLEI et passeport d'agent, grille des 5 questions et KYA, délégation atténuée au 2e saut (RFC 8693 OBO, RFC 9449 DPoP, RFC 9396 RAR), approbation hors bande CIBA+FIDO2, cycles TLS 100 j / 47 j et transition post-quantique ML-DSA/ML-KEM/SLH-DSA. Ses familles affectées en propriété exclusive regroupent `FAM_D06_01_01` (Identités NHI, OAuth 2.1 et registres), `FAM_D06_01_02` (Attestation SPIFFE/SPIRE, DID/VC et vLEI), `FAM_D06_02_01` (Délégation OBO (RFC 8693), DPoP et RAR), `FAM_D06_02_02` (Approbation CIBA, KYA et révocation SSF/CAEP), `FAM_D06_03_01` (Certificats TLS 100 j / 47 j et ACME), `FAM_D06_03_02` (Transition post-quantique ML-DSA / SLH-DSA).
 
 ### D07 — Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC
 
-Le domaine `D07` couvre les chapitres `ch19` à `ch21` (3 chapitres, cible **13100** mots) et regroupe **6 familles**, **20 thèmes**, **9 schémas** ainsi que **15 études `L+`** indexées sur cet axe. Asymétrie capacité/sûreté, injection indirecte de consignes, tool poisoning et dérive silencieuse (rug pull), mandataire confus et kill chain multi-agents (OWASP ASI01–ASI10), politiques déterministes hors modèle OPA/Rego (default allow:= false), Règle de deux et séparation contrôle/données CaMeL, confinement sans réseau sortant (SHADI/microVM/WASI), TEE, SOC/SOAR, coupe-circuit (< 10 s) et Red Team.
-
-Familles affectées en propriété exclusive: Injection indirecte et empoisonnement MCP ; Taxonomies OWASP ASI, ATLAS et mandataire confus ; Politiques OPA/Rego en échec fermé ; Règle de deux et séparation contrôle/données CaMeL ; Confinement SHADI, microVM, WASI et TEE ; Défense SOC/SOAR, Red Team et coupe-circuit.
+Le domaine `D07` couvre les chapitres `ch19` à `ch21` (3 chapitres, **6 familles**, **20 thèmes**, **9 schémas**, **15 études `L+`** indexées). Asymétrie capacité/sûreté, injection indirecte de consignes, tool poisoning et dérive silencieuse (rug pull), mandataire confus et kill chain multi-agents (OWASP ASI01–ASI10), politiques déterministes hors modèle OPA/Rego (default allow := false), Règle de deux et séparation contrôle/données CaMeL, confinement sans réseau sortant (SHADI/microVM/WASI), TEE, SOC/SOAR, coupe-circuit (< 10 s) et Red Team. Ses familles affectées en propriété exclusive regroupent `FAM_D07_01_01` (Injection indirecte et empoisonnement MCP), `FAM_D07_01_02` (Taxonomies OWASP ASI, ATLAS et mandataire confus), `FAM_D07_02_01` (Politiques OPA/Rego en échec fermé), `FAM_D07_02_02` (Règle de deux et séparation contrôle/données CaMeL), `FAM_D07_03_01` (Confinement SHADI, microVM, WASI et TEE), `FAM_D07_03_02` (Défense SOC/SOAR, Red Team et coupe-circuit).
 
 ### D08 — Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme
 
-Le domaine `D08` couvre les chapitres `ch22` à `ch24` (3 chapitres, cible **13100** mots) et regroupe **6 familles**, **20 thèmes**, **9 schémas** ainsi que **26 études `L+`** indexées sur cet axe. Télémétrie OpenTelemetry GenAI sans contenu brut, double couloir probatoire (métadonnées caviardées PII/RP par opposition à la voûte d'audit scellée JCS RFC 8785, SCITT RFC 9943 et SLH-DSA), banc EvalOps hermétique à 3 paliers E1–E3, constance pass^k, bornes statistiques de Wilson (≥ 3/p), tests métamorphiques bilingues FR/EN, SRE et budgets d'erreur, ainsi que FinOps FOCUS v1.4 piloté par le coût complet par résultat conforme (CPO) et la cascade SLM/LLM.
-
-Familles affectées en propriété exclusive: Télémétrie OpenTelemetry GenAI et provenance ; Double couloir PII, JCS et scellage SCITT ; Bancs EvalOps E1–E3 et bornes de Wilson ; Tests métamorphiques, juges et dérives ; FinOps FOCUS v1.4, CPO et carbone ; SRE agentique et volant de distillation SLM.
+Le domaine `D08` couvre les chapitres `ch22` à `ch24` (3 chapitres, **6 familles**, **20 thèmes**, **9 schémas**, **26 études `L+`** indexées). Télémétrie OpenTelemetry GenAI sans contenu brut, double couloir probatoire (métadonnées caviardées PII/RP par opposition à la voûte d'audit scellée JCS RFC 8785, SCITT RFC 9943 et SLH-DSA), banc EvalOps hermétique à 3 paliers E1–E3, constance pass^k, bornes statistiques de Wilson (≥ 3/p), tests métamorphiques bilingues FR/EN, SRE et budgets d'erreur, ainsi que FinOps FOCUS v1.4 piloté par le coût complet par résultat conforme (CPO) et la cascade SLM/LLM. Ses familles affectées en propriété exclusive regroupent `FAM_D08_01_01` (Télémétrie OpenTelemetry GenAI et provenance), `FAM_D08_01_02` (Double couloir PII, JCS et scellage SCITT), `FAM_D08_02_01` (Bancs EvalOps E1–E3 et bornes de Wilson), `FAM_D08_02_02` (Tests métamorphiques, juges et dérives), `FAM_D08_03_01` (FinOps FOCUS v1.4, CPO et carbone), `FAM_D08_03_02` (SRE agentique et volant de distillation SLM).
 
 ### D09 — Droit, régulation prudentielle (QC, CA, UE, int.) et contrats
 
-Le domaine `D09` couvre les chapitres `ch25` à `ch27` (3 chapitres, cible **13670** mots) et regroupe **6 familles**, **23 thèmes**, **9 schémas** ainsi que **20 études `L+`** indexées sur cet axe. Obligations applicables et jalons vérifiés: Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et NI 31-103, LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité.
-
-Familles affectées en propriété exclusive: Droit québécois: Loi 25, ÉFVP et AMF ; Prudentiel canadien: BSIF E-23, ACVM et LSAC ; Union européenne: EU AI Act, DORA, CRA et EN 18286 ; Référentiels internationaux: NIST, ISO 42001 et G7 ; Clauses contractuelles EXIG-APP et sortie ; Grille fournisseurs et souveraineté nuage.
+Le domaine `D09` couvre les chapitres `ch25` à `ch27` (3 chapitres, **6 familles**, **23 thèmes**, **9 schémas**, **20 études `L+`** indexées). Obligations applicables et jalons vérifiés : Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et NI 31-103, LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité. Ses familles affectées en propriété exclusive regroupent `FAM_D09_01_01` (Droit québécois : Loi 25, ÉFVP et AMF), `FAM_D09_01_02` (Prudentiel canadien : BSIF E-23, ACVM et LSAC), `FAM_D09_02_01` (Union européenne : EU AI Act, DORA, CRA et EN 18286), `FAM_D09_02_02` (Référentiels internationaux : NIST, ISO 42001 et G7), `FAM_D09_03_01` (Clauses contractuelles EXIG-APP et sortie), `FAM_D09_03_02` (Grille fournisseurs et souveraineté nuage).
 
 ### D10 — Architectures sectorielles, blueprints et cas métier
 
-Le domaine `D10` couvre les chapitres `ch28` à `ch30` (3 chapitres, cible **13860** mots) et regroupe **6 familles**, **24 thèmes**, **9 schémas** ainsi que **18 études `L+`** indexées sur cet axe. Déclinaison des 5 profils financiers (Banque, Gestion de patrimoine, Assurance de personnes, Assurance de dommages, Groupe financier diversifié) et 24 PEX, 3 blueprints multisectoriels et fédérés de référence (couvrant C01–C40 et 5 SBB), cas fil rouge Groupe Boréal Inc. (BEL: SAP S/4HANA, WMS, SOX — balisé comme illustratif et fictif), usine GitOps et 12 anti-patrons agentiques.
-
-Familles affectées en propriété exclusive: Cinq profils financiers réglementés (M-14 à M-18) ; Spécialisations financières, RTR et terrain canadien ; Trois blueprints multisectoriels (C01–C40) ; Cas fil rouge Groupe Boréal (BEL) et fédération ; Usine logicielle, GitOps et reprise cognitive ; Catalogue des anti-patrons agentiques.
+Le domaine `D10` couvre les chapitres `ch28` à `ch30` (3 chapitres, **6 familles**, **24 thèmes**, **9 schémas**, **18 études `L+`** indexées). Déclinaison des 5 profils financiers (Banque, Gestion de patrimoine, Assurance de personnes, Assurance de dommages, Groupe financier diversifié) et 24 PEX, 3 blueprints multisectoriels et fédérés de référence (couvrant C01–C40 et 5 SBB), cas fil rouge Groupe Boréal Inc. (BEL : SAP S/4HANA, WMS, SOX — balisé comme illustratif et fictif), usine GitOps et 12 anti-patrons agentiques. Ses familles affectées en propriété exclusive regroupent `FAM_D10_01_01` (Cinq profils financiers réglementés (M-14 à M-18)), `FAM_D10_01_02` (Spécialisations financières, RTR et terrain canadien), `FAM_D10_02_01` (Trois blueprints multisectoriels (C01–C40)), `FAM_D10_02_02` (Cas fil rouge Groupe Boréal (BEL) et fédération), `FAM_D10_03_01` (Usine logicielle, GitOps et reprise cognitive), `FAM_D10_03_02` (Catalogue des anti-patrons agentiques).
 
 ### D11 — Prospective 2028–2035, trajectoires DAPP et capital humain
 
-Le domaine `D11` couvre les chapitres `ch31` à `ch33` (3 chapitres, cible **13480** mots) et regroupe **5 familles**, **22 thèmes**, **9 schémas** ainsi que **21 études `L+`** indexées sur cet axe. Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret et conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90 jours / 180 jours / 18 mois et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE ↔ AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines et du vivier junior, et contraintes énergétiques et de marché.
-
-Familles affectées en propriété exclusive: Trajectoires adaptatives DAPP, portes POR et signaux SIG ; Prospective, scénarios 2028–2035 et maturité ; Gouvernance duale AE ↔ AS, thèses T1–T10 et RACI ; Sept pièges de gouvernance et responsabilité ; Atrophie des compétences et vivier junior.
+Le domaine `D11` couvre les chapitres `ch31` à `ch33` (3 chapitres, **5 familles**, **22 thèmes**, **9 schémas**, **21 études `L+`** indexées). Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret et conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90 jours / 180 jours / 18 mois et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE ↔ AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines et du vivier junior, et contraintes énergétiques et de marché. Ses familles affectées en propriété exclusive regroupent `FAM_D11_01_01` (Trajectoires adaptatives DAPP, portes POR et signaux SIG), `FAM_D11_01_02` (Prospective, scénarios 2028–2035 et maturité), `FAM_D11_02_01` (Gouvernance duale AE ↔ AS, thèses T1–T10 et RACI), `FAM_D11_02_02` (Sept pièges de gouvernance et responsabilité), `FAM_D11_03_01` (Atrophie des compétences et vivier junior).
 
 ### D12 — Homologation vérifiable, trousse exécutable, concordance et Wyvern/G0–G5
 
-Le domaine `D12` couvre les chapitres `ch34` à `ch36` (3 chapitres, cible **14050** mots) et regroupe **6 familles**, **25 thèmes**, **10 schémas** ainsi que **23 études `L+`** indexées sur cet axe. Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100%, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis.
+Le domaine `D12` couvre les chapitres `ch34` à `ch36` (3 chapitres, **6 familles**, **25 thèmes**, **10 schémas**, **23 études `L+`** indexées). Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100%, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis. Ses familles affectées en propriété exclusive regroupent `FAM_D12_01_01` (Socle CRE-IA-2026-01 (305 EXIG-*) et interdits GOV-17), `FAM_D12_01_02` (Grille PRR-75, 24 portes bloquantes et fiche 2027-B001), `FAM_D12_02_01` (Trousse exécutable Python/OPA et 5 SBB), `FAM_D12_02_02` (Validation des vecteurs tiers et CA-G0-SYNC), `FAM_D12_03_01` (Concordance inter-tomes (DIV-02 et 5 discordances)), `FAM_D12_03_02` (Protocole Wyvern, G0–G5, Typst et clause non-avis).
 
-Familles affectées en propriété exclusive: Socle CRE-IA-2026-01 (305 EXIG-*) et interdits GOV-17 ; Grille PRR-75, 24 portes bloquantes et fiche 2027-B001 ; Trousse exécutable Python/OPA et 5 SBB ; Validation des vecteurs tiers et CA-G0-SYNC ; Concordance inter-tomes (DIV-02 et 5 discordances) ; Protocole Wyvern, G0–G5, Typst et clause non-avis.
+## 4. Partition bijective des trente-six chapitres et socle probatoire (`CA-21`, quadruple preuve `[N]/[M]/[É]/[S]`)
 
-## 4. Partition bijective des 260 thèmes par chapitre (`CA-21`)
+Chaque thème du graphe MindMap relève d'un unique chapitre propriétaire (`CA-21`), éliminant tout chevauchement éditorial entre les douze domaines. La notation de quadruple preuve (`[N]/[M]/[É]/[S]`) distingue le socle normatif (`[N]`), la mesure empirique (`[M]`), l'état de l'art évalué (`[É]`) et la synthèse architecturale (`[S]`). Les paragraphes ci-dessous synthétisent la partition des trente-six chapitres par domaine avant le dépliage intégral des deux cent soixante slugs canoniques en section 6.
 
-- **`ch01`** (`D01`, cible 4620 mots ; ancrage `G2`: 38/38 assertions `supportées` (initial 21)) — 8 thèmes: Constat empirique de fin 2026: soutien par rapport à la production et déploiements bornés ; De l'échange de données à l'échange d'intentions et contrats comportementaux probabilistes ; Du modèle conversationnel à l'agent qui agit en boucle (PEAS, BDI, POMDP) ; Écart pilote-production, étude MAP et statistiques d'adoption 2026-2027 ; Taxonomie des systèmes d'IA composés et 5 archétypes d'acteurs ; Hiérarchie des preuves (6 niveaux) et bilan empirique des études de cas ; Raisonnement à l'inférence, modèles de raisonnement et limites des planificateurs LLM ; Revue multivocale PRISMA-ScR / Garousi (MLR W3.2) sur textes intégraux OA.
+**Domaine `D01` :** `ch01` (`SUB_D01_01`, familles `FAM_D01_01_01`, `FAM_D01_01_02`, 8 thèmes, ancrage `G2` 21→38/38) ; `ch02` (`SUB_D01_02`, familles `FAM_D01_02_01`, `FAM_D01_02_02`, 4 thèmes, ancrage `G2` 23→44/44) ; `ch03` (`SUB_D01_03`, familles `FAM_D01_03_01`, `FAM_D01_03_02`, 8 thèmes, ancrage `G2` 23→50/50).
 
-- **`ch02`** (`D01`, cible 3860 mots ; ancrage `G2`: 44/44 assertions `supportées` (initial 23)) — 4 thèmes: Rupture entre validité syntaxique et erreurs sémantiques silencieuses ; Loi de Lusser, taxonomie MAST (1 642 traces) et saturation METR ; Gains et surcoût du multi-agent (~15× jetons), raisonnement collectif et taxonomie MAST ; Primauté de la constance pass^k sur pass@k et transfert de techniques.
+**Domaine `D02` :** `ch04` (`SUB_D02_01`, familles `FAM_D02_01_01`, `FAM_D02_01_02`, 7 thèmes, ancrage `G2` 31→53/53) ; `ch05` (`SUB_D02_02`, familles `FAM_D02_02_01`, `FAM_D02_02_02`, 4 thèmes, ancrage `G2` 20→36/36) ; `ch06` (`SUB_D02_03`, familles `FAM_D02_03_01`, `FAM_D02_03_02`, 12 thèmes, ancrage `G2` 33→51/51).
 
-- **`ch03`** (`D01`, cible 4620 mots ; ancrage `G2`: 50/50 assertions `supportées` (initial 23)) — 8 thèmes: Économie de la preuve (//[É]/), dispersion de marché et dette de revue ; Dispersion des estimations de marché (2025–2030) et adoption réelle ; Industrialisation cognitive, moteurs composés (10x/an) et matrice Acheter/Assembler/Construire ; Économie des jetons, budget de réflexion et routage dynamique SLM/LLM ; Coûts de transaction cognitifs de Coase et économies d'agents virtuels ; Quadruple dette agentique (technique, cognitive, intention, couplage) ; Coût de la non-interopérabilité, dette d'intégration et invariant à quatre termes ; Généalogie EAI, SOA, API, EDA, FIPA-ACL et déplacement du sens.
+**Domaine `D03` :** `ch07` (`SUB_D03_01`, familles `FAM_D03_01_01`, `FAM_D03_01_02`, 6 thèmes, ancrage `G2` 21→43/43) ; `ch08` (`SUB_D03_02`, familles `FAM_D03_02_01`, `FAM_D03_02_02`, 8 thèmes, ancrage `G2` 19→36/36) ; `ch09` (`SUB_D03_03`, familles `FAM_D03_03_01`, `FAM_D03_03_02`, 11 thèmes, ancrage `G2` 31→47/47).
 
-- **`ch04`** (`D02`, cible 4430 mots ; ancrage `G2`: 53/53 assertions `supportées` (initial 31)) — 7 thèmes: Primauté du contrôle et enveloppe déterministe autour du raisonnement probabiliste ; Enveloppe déterministe, séparation System of Action / Systems of Record et 5 horloges ; Usine logicielle agentique (AST/SCIP), séparation des devoirs et Figuier étrangleur ; Patrons de boucle mono-agent (ReAct, ReWOO, Reflexion, CodeAct) et pilotage d'interface ; Minimisation de la surface agentique et séparation contrôleur/exécuteur ; Contrats JSON Schema Draft 2020-12 stricts et porte AMBIGU_ESCALADE ; Pont réglementaire: de BSIF E-23, AMF et Loi 25 aux frames déterministes.
+**Domaine `D04` :** `ch10` (`SUB_D04_01`, familles `FAM_D04_01_01`, `FAM_D04_01_02`, 7 thèmes, ancrage `G2` 17→34/34) ; `ch11` (`SUB_D04_02`, familles `FAM_D04_02_01`, `FAM_D04_02_02`, 5 thèmes, ancrage `G2` 28→39/39) ; `ch12` (`SUB_D04_03`, familles `FAM_D04_03_01`, `FAM_D04_03_02`, 7 thèmes, ancrage `G2` 26→42/42).
 
-- **`ch05`** (`D02`, cible 3860 mots ; ancrage `G2`: 36/36 assertions `supportées` (initial 20)) — 4 thèmes: Gouvernance matricielle: 8 domaines D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3 ; Règle du critère le plus faible, union la plus stricte et règle d'or (≤ N2) ; Ergonomie anti-complaisance (ASI09), vue différentielle et distinction entre PC3 et art. 12.1 ; Distinction normative entre flux déterministe, agent interactif et agent ambiant.
+**Domaine `D05` :** `ch13` (`SUB_D05_01`, familles `FAM_D05_01_01`, `FAM_D05_01_02`, 10 thèmes, ancrage `G2` 15→44/44) ; `ch14` (`SUB_D05_02`, familles `FAM_D05_02_01`, `FAM_D05_02_02`, 3 thèmes, ancrage `G2` 9→31/31) ; `ch15` (`SUB_D05_03`, familles `FAM_D05_03_01`, `FAM_D05_03_02`, 7 thèmes, ancrage `G2` 18→36/36).
 
-- **`ch06`** (`D02`, cible 5380 mots ; ancrage `G2`: 51/51 assertions `supportées` (initial 33)) — 12 thèmes: Plan de contrôle d'agents, registre gouverné et distinction avec le catalogue interne ; Modèle à 5 couches + 3 volets, séparation ABB → SBB et règles ArchiMate 4 ; Sort des 31 ADR de 2027 (8/7/16) et les 12 décisions neutres DEC-001 à DEC-012 ; Interchangeabilité et transférabilité, dépôts d'actifs et clauses de sortie ; Registre des 31 décisions d'architecture (ADR-001 à ADR-031) et gabarit CI/CD ; Modèle de maturité N1–N5, diagnostic patrimonial et portail à portes G1–G4 ; Architecture de référence à 6 couches et 2 piliers transversaux ; Les 15 principes directeurs PRI-001 à PRI-015 et l'ordre d'arbitrage normatif ; Appel de fonctions contraint, ergonomie cognitive d'outils et erreurs actionnables ; Douze principes directeurs (PRIN-01 à PRIN-12) et hiérarchie d'arbitrage ; Critères d'évaluation technologique et budgets QoS (coût, précision, latence) ; Architecture de référence unifiée à six couches et points de contrôle PC1–PC5.
+**Domaine `D06` :** `ch16` (`SUB_D06_01`, familles `FAM_D06_01_01`, `FAM_D06_01_02`, 8 thèmes, ancrage `G2` 19→41/41) ; `ch17` (`SUB_D06_02`, familles `FAM_D06_02_01`, `FAM_D06_02_02`, 7 thèmes, ancrage `G2` 17→38/38) ; `ch18` (`SUB_D06_03`, familles `FAM_D06_03_01`, `FAM_D06_03_02`, 4 thèmes, ancrage `G2` 20→34/34).
 
-- **`ch07`** (`D03`, cible 4240 mots ; ancrage `G2`: 43/43 assertions `supportées` (initial 21)) — 6 thèmes: Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027 ; Web agentique: WebMCP, NLWeb, Web Bot Auth (RFC 9421) et llms.txt ; Façades MCP orientées intention métier, structuredContent et resource_link ; Transport Streamable HTTP MCP 2026-07-28, rejet HTTP+SSE et adaptateur SEP-3398 ; Agent-Computer Interface (ACI), façades d'intention et Code Mode contre Swagger-to-MCP ; Épinglage cryptographique SHA-256 des outils MCP et analyse des 102 fiches NVD.
+**Domaine `D07` :** `ch19` (`SUB_D07_01`, familles `FAM_D07_01_01`, `FAM_D07_01_02`, 7 thèmes, ancrage `G2` 9→39/39) ; `ch20` (`SUB_D07_02`, familles `FAM_D07_02_01`, `FAM_D07_02_02`, 9 thèmes, ancrage `G2` 16→38/38) ; `ch21` (`SUB_D07_03`, familles `FAM_D07_03_01`, `FAM_D07_03_02`, 4 thèmes, ancrage `G2` 10→36/36).
 
-- **`ch14`** (`D05`, cible 3670 mots ; ancrage `G2`: 31/31 assertions `supportées` (initial 9)) — 3 thèmes: Dorsale événementielle sobre (CloudEvents/AsyncAPI, xagentmaxhops = 4) et fédération par gravité ; Taxonomie MAST (14 modes), tempêtes d'événements, boucles d'écho, DLQ et backpressure LLM ; Passerelle MCP ↔︎ ROS 2/DDS, vérification LOTO et arbitre matériel Simplex.
+**Domaine `D08` :** `ch22` (`SUB_D08_01`, familles `FAM_D08_01_01`, `FAM_D08_01_02`, 8 thèmes, ancrage `G2` 13→33/33) ; `ch23` (`SUB_D08_02`, familles `FAM_D08_02_01`, `FAM_D08_02_02`, 7 thèmes, ancrage `G2` 14→32/32) ; `ch24` (`SUB_D08_03`, familles `FAM_D08_03_01`, `FAM_D08_03_02`, 5 thèmes, ancrage `G2` 8→33/33).
+
+**Domaine `D09` :** `ch25` (`SUB_D09_01`, familles `FAM_D09_01_01`, `FAM_D09_01_02`, 10 thèmes, ancrage `G2` 13→28/28) ; `ch26` (`SUB_D09_02`, familles `FAM_D09_02_01`, `FAM_D09_02_02`, 8 thèmes, ancrage `G2` 9→31/31) ; `ch27` (`SUB_D09_03`, familles `FAM_D09_03_01`, `FAM_D09_03_02`, 5 thèmes, ancrage `G2` 6→32/32).
+
+**Domaine `D10` :** `ch28` (`SUB_D10_01`, familles `FAM_D10_01_01`, `FAM_D10_01_02`, 10 thèmes, ancrage `G2` 7→29/29) ; `ch29` (`SUB_D10_02`, familles `FAM_D10_02_01`, `FAM_D10_02_02`, 8 thèmes, ancrage `G2` 13→36/36) ; `ch30` (`SUB_D10_03`, familles `FAM_D10_03_01`, `FAM_D10_03_02`, 6 thèmes, ancrage `G2` 4→29/29).
+
+**Domaine `D11` :** `ch31` (`SUB_D11_01`, familles `FAM_D11_01_01`, `FAM_D11_01_02`, 11 thèmes, ancrage `G2` 11→32/32) ; `ch32` (`SUB_D11_02`, familles `FAM_D11_02_01`, `FAM_D11_02_02`, 8 thèmes, ancrage `G2` 26→33/33) ; `ch33` (`SUB_D11_03`, familles `FAM_D11_03_01`, 3 thèmes, ancrage `G2` 15→28/28).
+
+**Domaine `D12` :** `ch34` (`SUB_D12_01`, familles `FAM_D12_01_01`, `FAM_D12_01_02`, 6 thèmes, ancrage `G2` 14→28/28) ; `ch35` (`SUB_D12_02`, familles `FAM_D12_02_01`, `FAM_D12_02_02`, 5 thèmes, ancrage `G2` 15→35/35) ; `ch36` (`SUB_D12_03`, familles `FAM_D12_03_01`, `FAM_D12_03_02`, 14 thèmes, ancrage `G2` 27→41/41).
+
+## 5. Exclusions `statut F` (`AO-01`) et propriété terminologique
+
+Les **27 ressources exclues en `statut F`** se répartissent par motif documenté : HTTP_403 (15), HTTP_404 (2), HTTP_202_NON_FINAL (2), NETWORK_ERROR:TimeoutError (2), WAF_OR_CHALLENGE:aws-waf (1), WAF_OR_CHALLENGE:g-recaptcha (1), NETWORK_ERROR:URLError (1), HTTP_500 (1), WAF_OR_CHALLENGE:challenges.cloudflare.com (1), HTTP_401 (1). Aucune ressource exclue n'entre dans l'inventaire probatoire `L+`, conformément à la règle stricte de non-contournement des contrôles d'accès (`AO-01`) et de conservation d'empreinte sur sources primaires ouvertes. Chaque exclusion est consignée avec son URL exacte et son motif dans la section 7 afin que tout auditeur puisse vérifier l'absence de contournement et les sources primaires ouvertes de substitution. Par ailleurs, les **55 vedettes** du glossaire bilingue `fr-CA / en` sont réparties sans chevauchement sur **27 chapitres propriétaires** vérifiés sous `CA-07`.
+
+Le chapitre `ch01` couvre le sous-domaine `SUB_D01_01` (Rupture épistémique et Systèmes d'agentivité) et porte en propriété exclusive 8 thèmes canoniques : Constat empirique de fin 2026 : soutien par rapport à la production et déploiements bornés, De l'échange de données à l'échange d'intentions et contrats comportementaux probabilistes, Du modèle conversationnel à l'agent qui agit en boucle (PEAS, BDI, POMDP), Écart pilote-production, étude MAP et statistiques d'adoption 2026-2027, Taxonomie des systèmes d'IA composés et 5 archétypes d'acteurs, Hiérarchie des preuves (6 niveaux) et bilan empirique des études de cas, Raisonnement à l'inférence, modèles de raisonnement et limites des planificateurs LLM, Revue multivocale PRISMA-ScR / Garousi (MLR W3.2) sur textes intégraux OA.
 
 <!-- BIBLIOGRAPHIE_BRUTE_DEBUT -->
-## Registre complet des sources `L+`, exclusions `statut F` et journaux `G2`
+## 6. Inventaire exhaustif des 36 chapitres, 71 familles (`FAM_*`) et 260 thèmes (slugs canoniques)
 
-- **SRC-001** — From AGI to ASI (`edd192381975`).
-- **SRC-002** — Design Patterns for Securing LLM Agents against Prompt Injections (`b3e1ed3304dd`).
-- **SRC-003** — Towards a Science of Scaling Agent Systems (`991148d77ecd`).
-- **SRC-004** — RFC 7493: The I-JSON Message Format (`79cf90d87551`).
-- **SRC-005** — RFC 7515: JSON Web Signature (JWS) (`d5c3662fb6fe`).
-- **SRC-006** — SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning (`c2565e8391cc`).
-- **SRC-007** — Defeating Prompt Injections by Design (CaMeL) (`7a9735abcbdc`).
-- **SRC-008** — Artificial Intelligence Index Report 2026 (`752f0d68bbd7`).
-- **SRC-009** — RFC 8707: Resource Indicators for OAuth 2.0 (`7fb70d66034a`).
-- **SRC-010** — RFC 9334: Remote ATtestation procedureS (RATS) Architecture (`9cf8aa2510be`).
-- **SRC-011** — Agentic AI orchestration: TMT Predictions 2026 (`e7d41d25e64a`).
-- **SRC-012** — RFC 9964: ML-DSA for JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and Encryption (COSE) (`a7c42dac175c`).
-- **SRC-013** — Transaction Tokens (Internet-Draft draft-ietf-oauth-transaction-tokens-11 — brouillon IETF WG) (`64447dddda3a`).
-- **SRC-014** — Utilisation de l'intelligence artificielle par les entreprises au Canada, deuxième trimestre de 2026 (Tableau 33-10-1167-01) (`2e07bdc05646`).
-- **SRC-015** — Utilisation de l'intelligence artificielle par les entreprises au Canada, troisième trimestre de 2026 (Tableau 33-10-1207-01) (`ea9fc801ab53`).
-- **SRC-016** — Staff Analytical Paper 2026-22: Survey Evidence on Firm AI Adoption and its Implications (`b46da71236a3`).
-- **SRC-017** — OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft draft-chen-oauth-agent-revocation-01 — brouillon individuel) (`25d9788ca0cb`).
-- **SRC-018** — NIST FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA) (`c27445a0f736`).
-- **SRC-019** — OpenID Shared Signals Framework Specification 1.0 (`68263a1cbe31`).
-- **SRC-020** — OpenID Continuous Access Evaluation Profile (CAEP) 1.0 (`f3114cfa038f`).
-- **SRC-021** — JSON Schema: A Media Type for Describing JSON Documents (Draft 2020-12 Core, draft-bhutton-json-schema-01) (`ece40a120598`).
-- **SRC-022** — NIST/SEMATECH e-Handbook of Statistical Methods — Section 7.2.4.1 Confidence Intervals for a Binomial Proportion (Wilson / Exact) (`7cd7f651da8a`).
-- **SRC-023** — FinOps Open Cost and Usage Specification (FOCUS) v1.4 — Spécification normative complète (`67f651d7a5b0`).
-- **SRC-024** — NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Series Model (Lusser Reliability Law) (`8734d2a71190`).
-- **SRC-025** — Measuring AI Ability to Complete Long Software Tasks (arXiv:2503.14499v4) (`816b90ee61a7`).
-- **SRC-026** — Cognitive Architectures for Language Agents (CoALA) (`831e99a3f99a`).
-- **SRC-027** — Measuring Agents in Production (MAP) (`3f8f34adaeb5`).
-- **SRC-028** — Why Do Multi-Agent LLM Systems Fail? (MAST) (`7eeb1c6dfd09`).
-- **SRC-029** — τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (`659469b4a86d`).
-- **SRC-030** — Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (HAL) (`4f1e326b6b31`).
-- **SRC-031** — Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets (`80b064f92eb1`).
-- **SRC-032** — The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size (`dd138f578d07`).
-- **SRC-033** — Sagas (`61c64fc79006`).
-- **SRC-034** — Temporal SDKs — Durable Execution, Event History and Deterministic Replay (`95aa625eecff`).
-- **SRC-035** — CloudEvents Specification — Version 1.0.2 (`8f4d59dd27f8`).
-- **SRC-036** — The Idempotency-Key HTTP Header Field (draft-ietf-httpapi-idempotency-key-header) (`d737453f458f`).
-- **SRC-037** — OpenTelemetry Semantic Conventions for Generative AI Agent & Execute Tool Spans (gen_ai.operation.name) (`1b2526202e8a`).
-- **SRC-038** — Model Context Protocol (MCP) Specification — Revision 2025-11-25 (corpus normatif complet) (`938fca60c06c`).
-- **SRC-039** — Agent2Agent (A2A) Protocol Specification (`fb9823ce1338`).
-- **SRC-040** — From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI (`ea4b2e2a02be`).
-- **SRC-041** — RFC 8693: OAuth 2.0 Token Exchange (`22f271006669`).
-- **SRC-042** — RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR) (`e334d06f1408`).
-- **SRC-043** — RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP) (`5e0267f9b880`).
-- **SRC-044** — RFC 9943: An Architecture for Trustworthy and Transparent Digital Supply Chains (SCITT) (`1ed0ffb4007b`).
-- **SRC-045** — OpenID Connect Client-Initiated Backchannel Authentication Flow — Core 1.0 (`fb983307e736`).
-- **SRC-046** — SPIFFE Concepts — Workload Identity, SPIFFE ID and SVID (`d85539da6604`).
-- **SRC-047** — Workload Identity Practices (draft-ietf-wimse-workload-identity-practices-08) (`863cee96178b`).
-- **SRC-048** — AI Identity Management System (draft-ietf-wimse-aims-01) (`ab53c74913dd`).
-- **SRC-049** — NIST FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM) (`bb840af1e6a3`).
-- **SRC-050** — NIST FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA) (`14b6c1706d2c`).
-- **SRC-051** — NIST IR 8547: Transition to Post-Quantum Cryptography Standards (Final, October 2026) (`80e6a458907c`).
-- **SRC-052** — Advancing a Coordinated Roadmap for the Transition to Post-Quantum Cryptography in the Financial Sector (`cab48e350b29`).
-- **SRC-053** — Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates (incl. Ballot SC-081v3) (`8d44ae9b57d6`).
-- **SRC-054** — NIST AI 100-2e2025: Adversarial Machine Learning — A Taxonomy and Terminology of Attacks and Mitigations (`1f113bf38b90`).
-- **SRC-055** — OWASP Top 10 for Agentic Applications 2026 (v1.0, December 2025 — document complet CC BY-SA 4.0) (`4d9f1c9f067f`).
-- **SRC-056** — Can CaMeLs Talk? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks (`490ff7dc6d69`).
-- **SRC-057** — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (`cae21acac54f`).
-- **SRC-058** — STAMP/STPA Informed Characterization of Factors Leading to Loss of Control in AI Systems (`78b03417f4de`).
-- **SRC-059** — OWASP Agentic AI Top 10 Crosswalk (GitHub Pages miroir ouvert CC BY-SA 4.0) (`e5a50552cb52`).
-- **SRC-060** — Règlement (UE) 2024/1689 (EU AI Act) (`e0a79e4f278c`).
-- **SRC-061** — Règlement (UE) 2026/1744 du 8 juillet 2026 modifiant le règlement (UE) 2024/1689 (simplification / échéances IA) (`cafaf35193ed`).
-- **SRC-062** — Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique du secteur financier (DORA) (`6e4b138de7f0`).
-- **SRC-063** — Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25 / LQ 2021, c. 25, art. 12.1) (`829e67f777ca`).
-- **SRC-064** — Rapport quinquennal 2026 sur l'application de la Loi sur la protection des renseignements personnels dans le secteur privé (`db8153ade9d5`).
-- **SRC-065** — Ligne directrice E-23 — Gestion du risque de modélisation à l'échelle de l'entreprise (édition 2027) (`60ef80b531aa`).
-- **SRC-066** — Generative and Agentic Artificial Intelligence: Implications for Technology, Cyber Security and Operational Risk (`5a1b1a2e004b`).
-- **SRC-067** — Décision d'exécution (UE) 2026/2274 de la Commission du 12 octobre 2026 concernant les normes harmonisées relatives aux systèmes d'IA à haut risque (EN 18286:2026) (`3d1dcffce8ae`).
-- **SRC-068** — Guideline B-10: Third-Party Risk Management (`db7ccc401ea3`).
-- **SRC-069** — First harmonised standard supporting the AI Act published in the Official Journal (EN 18286:2026) (`647fbb09b0ec`).
-- **SRC-070** — Loi sur les banques (L.C. 1991, ch. 46 — révision statutaire au 30 juin 2033) (`0e1fc9323793`).
-- **SRC-071** — AIBanks.ca — The Canadian Bank AI Index (2026 Q4 edition, agrégateur tiers indépendant) (`2d39751c5fed`).
-- **SRC-072** — Model Context Protocol (MCP) Revision 2026-07-28 — Server Tools (tools.mdx) (`ed550806a58e`).
-- **SRC-073** — Calibrated adaptive framework for trustworthy human and artificial intelligence decision systems (`f06eb8eca755`).
-- **SRC-074** — Model Context Protocol (MCP) Revision 2026-07-28 — Streamable HTTP Transport (streamable-http.mdx) (`22574bf11e00`).
-- **SRC-075** — Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents (`a0b7c487a5e0`).
-- **SRC-076** — RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA) (`29c43d9f68a7`).
-- **SRC-077** — RFC 8785: JSON Canonicalization Scheme (JCS) (`be00e8aeddaf`).
-- **SRC-078** — Model Context Protocol (MCP) Revision 2026-07-28 — Authorization Security Considerations (security-considerations.mdx) (`71dd5f0f236c`).
-- **SRC-079** — GLEIF verifiable LEI (vLEI) Trust Chain & WebOfTrust vLEI KERI/ACDC Ecosystem Specifications (ISO 17442-3) (`2ccc0f09f7c8`).
-- **SRC-080** — Model Context Protocol (MCP) Revision 2026-07-28 — TypeScript Schema (schema.ts) (`742750af0bb8`).
-- **SRC-081** — MCP SEP-2596: Specification Feature Lifecycle and Deprecation Policy (Status: Final) (`6608969be121`).
-- **SRC-082** — MCP SEP-3398: Release Cycle Updates (Status: Accepted) (`64aee02f2717`).
-- **SRC-083** — Agent2Agent (A2A) Protocol Specification v1.0.1 (docs/specification.md) (`627ccfe6ffb1`).
-- **SRC-084** — Agent2Agent (A2A) Protocol Protobuf Contract v1.0.1 (specification/a2a.proto) (`e195bf96ab63`).
-- **SRC-085** — Agent2Agent (A2A) Protocol Specification v1.1.0-rc (Release Candidate post-gel adaptateur) (`25a940c30c00`).
-- **SRC-086** — A2A Technology Compatibility Kit (a2a-tck) v1.0.0.alpha3 — AgentCard Requirements (tck/requirements/agent_card.py) (`4889ec96433a`).
-- **SRC-087** — Open Policy Agent (OPA) v1.22.4 — Rego Policy Language Reference (policy-language.md) (`4b242f9eee53`).
-- **SRC-088** — Open Policy Agent (OPA) v1.22.4 — Policy Testing & Coverage (policy-testing.md) (`4e566ce11e03`).
-- **SRC-089** — OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md) (`74e99ecc4e35`).
-- **SRC-090** — OpenTelemetry semantic-conventions-genai (commit 244465e9 — 85 attributs Development incluant cache_write) (`b05fc94233aa`).
-- **SRC-091** — Testing Chatbots Using Metamorphic Relations (`069cee64fd68`).
-- **SRC-092** — MORTAR: Multi-turn Metamorphic Testing for LLM-based Dialogue Systems (`0e9939c49f50`).
-- **SRC-093** — Explanation-Guided Metamorphic Testing of Specialized Language Models: An Empirical Study (`619e05baae21`).
-- **SRC-094** — Binomial confidence intervals for rare events: importance of defining margin of error relative to magnitude of proportion (`538950454399`).
-- **SRC-095** — Attested Tool-Server Admission: A Security Extension to the Model Context Protocol (`61dc1007669d`).
-- **SRC-096** — Virtual Agent Economies (`f475a70c3b55`).
-- **SRC-097** — The Coasean Singularity? Demand, Supply, and Market Design with AI Agents (`45b9200d9e59`).
-- **SRC-098** — An Economy of AI Agents (`c87fd1c3cd81`).
-- **SRC-099** — Experimental evidence on the productivity effects of generative artificial intelligence (`454df0409d08`).
-- **SRC-100** — The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers (`6d5df87a4d49`).
-- **SRC-101** — Agentic AI Market Size & Share Analysis — Growth Trends and Forecast (`d36ecb1c274c`).
-- **SRC-102** — Enterprise Agentic AI Market Size, Share & Trends Analysis Report (`575dae06de09`).
-- **SRC-103** — Alphabet Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results (`ebfea816ab26`).
-- **SRC-104** — Amazon.com, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results and 2026 CapEx Guidance (`8da73deea031`).
-- **SRC-105** — Meta Platforms, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Results and 2026 CapEx Guidance (`bb4724559067`).
-- **SRC-106** — Microsoft Corporation Form 10-Q — Quarter Ended September 30, 2026 (Q1 FY2027) (`6d7b4822b23d`).
-- **SRC-107** — Microsoft Corporation Form 10-K — Fiscal Year Ended June 30, 2026 (`bdd42cefdb9a`).
-- **SRC-108** — Microsoft Corporation Form 10-Q — Six Months Ended December 31, 2025 (Q2 FY2026) (`c840108cea52`).
-- **SRC-109** — System level governance of generative AI risks in cross border e-commerce supply chains (`ccfeca2f7bdc`).
-- **SRC-110** — Guideline B-15: Climate Risk Management (`8136e1e00218`).
-- **SRC-111** — CSA / OSC Notice of Amendments to National Instrument 31-103 — Prohibition of Chargebacks (`70b2dbd2b698`).
-- **SRC-112** — Dynamic Adaptive Policy Pathways (DAPP) (`7977e2b1fb07`).
-- **SRC-113** — How does Agentic AI Influence the Developer Skills in the Software Industry? — A Literature Review (`323acadcd6fb`).
-- **SRC-114** — Loi sur les services bancaires axés sur les consommateurs (L.C. 2026, ch. 3, art. 224) (`dba003d4dce0`).
-- **SRC-115** — ReAct: Synergizing Reasoning and Acting in Language Models (`02f512999e00`).
-- **SRC-116** — Toolformer: Language Models Can Teach Themselves to Use Tools (`65cd388c2bd5`).
-- **SRC-117** — Gorilla: Large Language Model Connected with Massive APIs (`64274c0deb63`).
-- **SRC-118** — ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models (`7d2660c4b45e`).
-- **SRC-119** — ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs (`9edc88138dde`).
-- **SRC-120** — Executable Code Actions Elicit Better LLM Agents (CodeAct) (`fde6ea4999c0`).
-- **SRC-121** — LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (`69bb9cf7eb55`).
-- **SRC-122** — AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges (`67346c9a4959`).
-- **SRC-123** — Small Language Models are the Future of Agentic AI (`89d5cb83654b`).
-- **SRC-124** — Benchmarking LLM Agents for Wealth-Management Workflows (`cb7d7cb81886`).
-- **SRC-125** — RFC 2119: Key words for use in RFCs to Indicate Requirement Levels (`c7db148fd518`).
-- **SRC-126** — RFC 6902: JavaScript Object Notation (JSON) Patch (`d2627c569ee6`).
-- **SRC-127** — RFC 8555: Automatic Certificate Management Environment (ACME) (`1c656cf6f144`).
-- **SRC-128** — RFC 8705: OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens (`f3a8ff8dc00c`).
-- **SRC-129** — RFC 9207: OAuth 2.0 Authorization Server Issuer Identification (`033ca79b0d49`).
-- **SRC-130** — RFC 9420: The Messaging Layer Security (MLS) Protocol (`450cb6f07225`).
-- **SRC-131** — RFC 9421: HTTP Message Signatures (`1b23937c2708`).
-- **SRC-132** — RFC 9562: Universally Unique IDentifiers (UUIDs) (`a3d609ca981c`).
-- **SRC-133** — RFC 9700: Best Current Practice for OAuth 2.0 Security (BCP 240) (`7ffb6c499888`).
-- **SRC-134** — RFC 9728: OAuth 2.0 Protected Resource Metadata (`148d22364f63`).
-- **SRC-135** — RFC 9745: The Deprecation HTTP Response Header Field (`72fc72057a4f`).
-- `statut F`: `https://dl.acm.org/doi/10.1145/3143561` (HTTP_403).
-- `statut F`: `https://economics.mit.edu/sites/default/files/2024-11/The%20Effects%20of%20Generative%20AI%20on%20High-Skilled%20Work.pdf` (HTTP_404).
-- `statut F`: `https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202401689` (WAF_OR_CHALLENGE:aws-waf).
-- `statut F`: `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` (HTTP_403).
-- `statut F`: `https://ieeexplore.ieee.org/document/11580353/` (HTTP_202_NON_FINAL).
-- `statut F`: `https://lautorite.qc.ca/` (HTTP_403).
-- `statut F`: `https://onlinelibrary.wiley.com/doi/10.1111/j.1468-0335.1937.tb00002.x` (HTTP_403).
-- `statut F`: `https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/` (WAF_OR_CHALLENGE:g-recaptcha).
-- `statut F`: `https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf` (NETWORK_ERROR:URLError).
-- `statut F`: `https://publications.gc.ca/site/fra/9.505677/publication.html` (HTTP_202_NON_FINAL).
-- `statut F`: `https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:82555` (HTTP_500).
-- `statut F`: `https://www.ciro.ca/rules-and-guidance/investment-dealer-and-partially-consolidated-rules` (HTTP_403).
-- `statut F`: `https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13776542/fullTextXML` (NETWORK_ERROR:TimeoutError).
-- `statut F`: `https://www.fasken.com/en/knowledge/topics/artificial-intelligence` (HTTP_403).
-- `statut F`: `https://www.fortunebusinessinsights.com/agentic-ai-market-114233` (HTTP_403).
-- `statut F`: `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` (HTTP_403).
-- `statut F`: `https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/` (HTTP_404).
-- `statut F`: `https://www.hbs.edu/ris/Publication%20Files/24-013_d9b45b68-9e74-42d6-a1c6-c72fb70c7282.pdf` (HTTP_403).
-- `statut F`: `https://www.idc.com/getdoc.jsp?containerId=prUS53863225` (HTTP_403).
-- `statut F`: `https://www.iso.org/standard/81230.html` (HTTP_403).
-- `statut F`: `https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1` (HTTP_403).
-- `statut F`: `https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai` (NETWORK_ERROR:TimeoutError).
-- `statut F`: `https://www.mdpi.com/2079-8954/14/4/447` (HTTP_403).
-- `statut F`: `https://www.polarismarketresearch.com/industry-analysis/enterprise-agentic-ai-market` (WAF_OR_CHALLENGE:challenges.cloudflare.com).
-- `statut F`: `https://www.reuters.com/technology/over-40-agentic-ai-projects-will-be-scrapped-by-2027-gartner-says-2025-06-25/` (HTTP_401).
-- `statut F`: `https://www.securities-administrators.ca/news/` (HTTP_403).
-- `statut F`: `https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-fra.htm` (HTTP_403).
-- `00-liminaire` (`ch00-ancrage.md`): 53 initial → 63 final (`100,0 %` supporté).
-- `ch01` (`ch01-ancrage.md`): 21 initial → 38 final (`100,0 %` supporté).
-- `ch02` (`ch02-ancrage.md`): 23 initial → 44 final (`100,0 %` supporté).
-- `ch03` (`ch03-ancrage.md`): 23 initial → 50 final (`100,0 %` supporté).
-- `ch04` (`ch04-ancrage.md`): 31 initial → 53 final (`100,0 %` supporté).
-- `ch05` (`ch05-ancrage.md`): 20 initial → 36 final (`100,0 %` supporté).
-- `ch06` (`ch06-ancrage.md`): 33 initial → 51 final (`100,0 %` supporté).
-- `ch07` (`ch07-ancrage.md`): 21 initial → 43 final (`100,0 %` supporté).
-- `ch08` (`ch08-ancrage.md`): 19 initial → 36 final (`100,0 %` supporté).
-- `ch09` (`ch09-ancrage.md`): 31 initial → 47 final (`100,0 %` supporté).
-- `ch10` (`ch10-ancrage.md`): 17 initial → 34 final (`100,0 %` supporté).
-- `ch11` (`ch11-ancrage.md`): 28 initial → 39 final (`100,0 %` supporté).
-- `ch12` (`ch12-ancrage.md`): 26 initial → 42 final (`100,0 %` supporté).
-- `ch13` (`ch13-ancrage.md`): 15 initial → 44 final (`100,0 %` supporté).
-- `ch14` (`ch14-ancrage.md`): 9 initial → 31 final (`100,0 %` supporté).
-- `ch15` (`ch15-ancrage.md`): 18 initial → 36 final (`100,0 %` supporté).
-- `ch16` (`ch16-ancrage.md`): 19 initial → 40 final (`100,0 %` supporté).
-- `ch17` (`ch17-ancrage.md`): 17 initial → 37 final (`100,0 %` supporté).
-- `ch18` (`ch18-ancrage.md`): 20 initial → 33 final (`100,0 %` supporté).
-- `ch19` (`ch19-ancrage.md`): 9 initial → 39 final (`100,0 %` supporté).
-- `ch20` (`ch20-ancrage.md`): 16 initial → 38 final (`100,0 %` supporté).
-- `ch21` (`ch21-ancrage.md`): 10 initial → 36 final (`100,0 %` supporté).
-- `ch22` (`ch22-ancrage.md`): 13 initial → 33 final (`100,0 %` supporté).
-- `ch23` (`ch23-ancrage.md`): 14 initial → 32 final (`100,0 %` supporté).
-- `ch24` (`ch24-ancrage.md`): 8 initial → 33 final (`100,0 %` supporté).
-- `ch25` (`ch25-ancrage.md`): 13 initial → 28 final (`100,0 %` supporté).
-- `ch26` (`ch26-ancrage.md`): 9 initial → 31 final (`100,0 %` supporté).
-- `ch27` (`ch27-ancrage.md`): 6 initial → 32 final (`100,0 %` supporté).
-- `ch28` (`ch28-ancrage.md`): 7 initial → 29 final (`100,0 %` supporté).
-- `ch29` (`ch29-ancrage.md`): 13 initial → 36 final (`100,0 %` supporté).
-- `ch30` (`ch30-ancrage.md`): 4 initial → 29 final (`100,0 %` supporté).
-- `ch31` (`ch31-ancrage.md`): 11 initial → 32 final (`100,0 %` supporté).
-- `ch32` (`ch32-ancrage.md`): 26 initial → 33 final (`100,0 %` supporté).
-- `ch33` (`ch33-ancrage.md`): 15 initial → 28 final (`100,0 %` supporté).
-- `ch34` (`ch34-ancrage.md`): 14 initial → 28 final (`100,0 %` supporté).
-- `ch35` (`ch35-ancrage.md`): 15 initial → 35 final (`100,0 %` supporté).
-- `ch36` (`ch36-ancrage.md`): 27 initial → 41 final (`100,0 %` supporté).
+- **`ch01`** (`D01`, `SUB_D01_01`, familles `FAM_D01_01_01`, `FAM_D01_01_02`) : `systems-of-agency` (Constat empirique de fin 2026 : soutien par rapport à la production et déploiements bornés) ; `echanges-intentions-contrats-probabilistes` (De l'échange de données à l'échange d'intentions et contrats comportementaux probabilistes) ; `rupture-modele-conversationnel-agent-boucle` (Du modèle conversationnel à l'agent qui agit en boucle (PEAS, BDI, POMDP)) ; `etat-des-lieux-adoption-map-2027` (Écart pilote-production, étude MAP et statistiques d'adoption 2026-2027) ; `taxonomie-acteurs-agentiques` (Taxonomie des systèmes d'IA composés et 5 archétypes d'acteurs) ; `hierarchie-preuves-etudes-cas` (Hiérarchie des preuves (6 niveaux) et bilan empirique des études de cas) ; `raisonnement-inference-limites-planification` (Raisonnement à l'inférence, modèles de raisonnement et limites des planificateurs LLM) ; `revue-litterature-mlr-prisma` (Revue multivocale PRISMA-ScR / Garousi (MLR W3.2) sur textes intégraux OA).
+- **`ch02`** (`D01`, `SUB_D01_02`, familles `FAM_D01_02_01`, `FAM_D01_02_02`) : `erreurs-silencieuses-cascade` (Rupture entre validité syntaxique et erreurs sémantiques silencieuses) ; `loi-de-lusser` (Loi de Lusser, taxonomie MAST (1 642 traces) et saturation METR) ; `surcout-multi-agent-debat-mast` (Gains et surcoût du multi-agent (~15× jetons), raisonnement collectif et taxonomie MAST) ; `constance-pass-k` (Primauté de la constance pass^k sur pass@k et transfert de techniques).
+- **`ch03`** (`D01`, `SUB_D01_03`, familles `FAM_D01_03_01`, `FAM_D01_03_02`) : `dette-cognitive-vs-technique` (Économie de la preuve ([N]/[M]/[É]/[S]), dispersion de marché et dette de revue) ; `marche-ia-agentique-dispersion` (Dispersion des estimations de marché (2025–2030) et adoption réelle) ; `economie-industrialisation-cognitive` (Industrialisation cognitive, moteurs composés (10x/an) et matrice Acheter/Assembler/Construire) ; `economie-jetons-routage-slm` (Économie des jetons, budget de réflexion et routage dynamique SLM/LLM) ; `couts-transaction-coase` (Coûts de transaction cognitifs de Coase et économies d'agents virtuels) ; `quadruple-dette-agentique` (Quadruple dette agentique (technique, cognitive, intention, couplage)) ; `cout-non-interop-dette-integration` (Coût de la non-interopérabilité, dette d'intégration et invariant à quatre termes) ; `genealogie-eai-soa-fipa-llm` (Généalogie EAI, SOA, API, EDA, FIPA-ACL et déplacement du sens).
+- **`ch04`** (`D02`, `SUB_D02_01`, familles `FAM_D02_01_01`, `FAM_D02_01_02`) : `partition-hybride-80-20` (Primauté du contrôle et enveloppe déterministe autour du raisonnement probabiliste) ; `harnais-deterministe-8-etapes` (Enveloppe déterministe, séparation System of Action / Systems of Record et 5 horloges) ; `usine-logicielle-agentic-sdlc` (Usine logicielle agentique (AST/SCIP), séparation des devoirs et Figuier étrangleur) ; `patrons-boucle-mono-agent-codeact` (Patrons de boucle mono-agent (ReAct, ReWOO, Reflexion, CodeAct) et pilotage d'interface) ; `separation-controleur-executeur-determinisme` (Minimisation de la surface agentique et séparation contrôleur/exécuteur) ; `validation-json-schema-ambigu-escalade` (Contrats JSON Schema Draft 2020-12 stricts et porte AMBIGU_ESCALADE) ; `pont-reglementation-frames-deterministes` (Pont réglementaire : de BSIF E-23, AMF et Loi 25 aux frames déterministes).
+- **`ch05`** (`D02`, `SUB_D02_02`, familles `FAM_D02_02_01`, `FAM_D02_02_02`) : `echelle-autonomie-l0-l4` (Gouvernance matricielle : 8 domaines D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3) ; `regle-maillon-plus-eleve` (Règle du critère le plus faible, union la plus stricte et règle d'or (≤ N2)) ; `supervision-hitl-hotl-abstention` (Ergonomie anti-complaisance (ASI09), vue différentielle et distinction entre PC3 et art. 12.1) ; `distinction-agent-flux-ambiant` (Distinction normative entre flux déterministe, agent interactif et agent ambiant).
+- **`ch06`** (`D02`, `SUB_D02_03`, familles `FAM_D02_03_01`, `FAM_D02_03_02`) : `noyau-controle-possede-cap` (Plan de contrôle d'agents, registre gouverné et distinction avec le catalogue interne) ; `cadre-togaf-archimate-4-plans` (Modèle à 5 couches + 3 volets, séparation ABB → SBB et règles ArchiMate 4) ; `catalogue-31-adr-12-dec` (Sort des 31 ADR de 2027 (8/7/16) et les 12 décisions neutres DEC-001 à DEC-012) ; `clauses-sortie-portabilite-interchangeabilite` (Interchangeabilité et transférabilité, dépôts d'actifs et clauses de sortie) ; `decisions-architecture-adr-001-031` (Registre des 31 décisions d'architecture (ADR-001 à ADR-031) et gabarit CI/CD) ; `grille-evaluation-maturite-n1-n5` (Modèle de maturité N1–N5, diagnostic patrimonial et portail à portes G1–G4) ; `architecture-reference-6-couches-2-piliers` (Architecture de référence à 6 couches et 2 piliers transversaux) ; `principes-architecture-pri-001-015` (Les 15 principes directeurs PRI-001 à PRI-015 et l'ordre d'arbitrage normatif) ; `architecture-outils-fiables-erreurs-actionnables` (Appel de fonctions contraint, ergonomie cognitive d'outils et erreurs actionnables) ; `douze-principes-directeurs-prin` (Douze principes directeurs (PRIN-01 à PRIN-12) et hiérarchie d'arbitrage) ; `criteres-qos-cout-precision-latence` (Critères d'évaluation technologique et budgets QoS (coût, précision, latence)) ; `architecture-reference-six-couches-pc1-pc5` (Architecture de référence unifiée à six couches et points de contrôle PC1–PC5).
+- **`ch07`** (`D03`, `SUB_D03_01`, familles `FAM_D03_01_01`, `FAM_D03_01_02`) : `protocole-mcp` (Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027) ; `web-agentique-webmcp-webbotauth` (Web agentique : WebMCP, NLWeb, Web Bot Auth (RFC 9421) et llms.txt) ; `facades-mcp-intention-metier` (Façades MCP orientées intention métier, structuredContent et resource_link) ; `adaptateur-mcp-streamable-http-sep-3398` (Transport Streamable HTTP MCP 2026-07-28, rejet HTTP+SSE et adaptateur SEP-3398) ; `ergonomie-aci-anti-swagger` (Agent-Computer Interface (ACI), façades d'intention et Code Mode contre Swagger-to-MCP) ; `epinglage-schemas-mcp` (Épinglage cryptographique SHA-256 des outils MCP et analyse des 102 fiches NVD).
+- **`ch08`** (`D03`, `SUB_D03_02`, familles `FAM_D03_02_01`, `FAM_D03_02_02`) : `protocole-a2a` (Non-substituabilité entre outil et pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)) ; `protocole-ap2` (Commerce agentique (AP2, ACP, UCP) au statut Surveiller et encadrement P3 des paiements) ; `protocole-anp-did-wba` (Protocole ANP, méthode did:wba et DMZ agentique inter-organisations) ; `protocoles-interfaces-agui-a2ui-webrtc` (Flux AG-UI (JSON Patch), interfaces déclaratives A2UI/MCP-UI et audio WebRTC) ; `fusion-acp-collision-terminologique` (Fusion de l'ACP protocolaire dans A2A et désambiguïsation « ACP / agentic control plane » à 4 branches) ; `rails-paiement-commerce-agentique` (Commerce agentique, rails de cartes et paiements machine-natifs (ACP commercial, UCP, x402, MPP)) ; `agntcy-slim` (Infrastructure fédérée AGNTCY (OASF, ADS, SLIM/MLS RFC 9420) et paiements AP2) ; `maillage-b2b-federe-edc-odrl` (Connecteurs Dataspace (EDC/DSP), contrats d'usage ODRL 2.2 et identité vLEI).
+- **`ch09`** (`D03`, `SUB_D03_03`, familles `FAM_D03_03_01`, `FAM_D03_03_02`) : `agent-card-decouverte` (Découverte à 4 opérations, cartes JWS/JCS, catalogue 5 statuts et veille DAWN/AGENTPROTO) ; `contrats-interfaces-catalogue-entreprise` (Catalogue des protocoles (5 statuts), matrice de sélection et catalogue d'entreprise unique) ; `contrats-api-versionnement-conformite` (Contrats d'API (OpenAPI/AsyncAPI), dépréciation HTTP et pyramide d'évaluation d'interopérabilité) ; `plan-donnees-inference-kv-cache` (Gateway API Inference Extension (InferencePool/EPP) et affinité de KV-cache) ; `routage-cognitif-hybride-3-paliers` (Routage cognitif à trois paliers (SLM, LLM frontière, calcul réflexif) et calibration) ; `anti-verrouillage-standards` (Confinement anti-verrouillage SaaS (EXIG-ARC-21), catalogues déclaratifs C1 et statut AP2/AGNTCY) ; `passerelle-mcp-ai-gateway` (Passerelle d'agents bidirectionnelle PEP à 9 contrôles ordonnés et budget Borealis-Bench) ; `cadre-eif-4-couches` (Interopérabilité stratifiée, modèle LCIM à 7 niveaux et verrou sémantique-pragmatique) ; `metriques-soutien-vs-production` (Lecture critique des métriques d'adoption protocolaire : « soutien déclaré ≠ production ») ; `maillage-agentique-trois-acceptions` (Maillage agentique : trois acceptions (réseau, dorsale, confiance) et limites du service mesh) ; `matrice-protocoles-exigences-reglementaires` (Matrice 15 cellules protocoles × régulation et 5 zones de compensation (Z1–Z5)).
+- **`ch10`** (`D04`, `SUB_D04_01`, familles `FAM_D04_01_01`, `FAM_D04_01_02`) : `dette-semantique-ontologies` (Couche sémantique gouvernée neutre, médiation ISO 20022/FIBO et résolution ADR-009) ; `contrats-donnees-write-audit-publish` (Contrats de données ODCS v3.2.0, patron Write-Audit-Publish et contrôleur sémantique) ; `donnees-pretes-agents-odcs-openlineage` (Données prêtes pour agents : ODCS v3.2.0, OpenLineage, catalogues et héritage ACL) ; `ecart-accord-protocolaire-comprehension` (Écart entre accord de protocole et compréhension : sémantique lue par le modèle et force illocutoire) ; `formats-echange-registres-schemas` (Formats d'échange, registres de schémas, contrats de données (ODCS/Dataspace) et catalogues lakehouse) ; `iso-20022-lynx-rtr` (ISO 20022 au Canada : Lynx achevé, RTR reporté (T4 2026 visé) et By-law No. 10) ; `rag-agentique-contexte` (Compilateur déterministe du contexte (ACL amont), Agent Skills signés et sas WAP ODCS v3).
+- **`ch11`** (`D04`, `SUB_D04_02`, familles `FAM_D04_02_01`, `FAM_D04_02_02`) : `memoire-coala-4-tiroirs` (Séparation des 4 mémoires CoALA, bi-temporalité auditable et purge sélective Loi 25 art. 23) ; `memoire-partagee-concurrence-effacement` (Concurrence de mémoire partagée, portabilité et effacement crypto-sélectif) ; `memoire-bi-temporelle-et-purge` (Mémoire hybride bi-temporelle (Graphiti/Letta), quarantaine et purge Loi 25) ; `propagation-acl-memoire-silo` (Propagation des ACL en amont (OpenFGA, RLS) et isolation multi-locataires (Silo/Bridge/Pool)) ; `gouvernance-acces-rag-ancrage` (Gouvernance d'accès RBAC/ABAC par fragment, citation énoncé par énoncé et évaluation RAG).
+- **`ch12`** (`D04`, `SUB_D04_03`, familles `FAM_D04_03_01`, `FAM_D04_03_02`) : `couche-anti-corruption-acl` (Encapsulation patrimoniale déterministe : EBCDIC, COMP-3 Decimal exact et trames COBOL/EDI) ; `encapsulation-patrimoine-it-ot` (Extinction des agents d'écran CUA (≤ 12 mois) et sas OT lecture seule devant OPC UA / Simplex) ; `confinement-cua-patrimoine-sans-api` (Hiérarchie MCP → RPA → CUA et confinement des Computer-Use Agents (Citrix/5250)) ; `mediation-b2b-esb-traducteurs` (Médiation ESB/iPaaS, intégration B2B frontalière (EDI), figuier étrangleur et pertes de traduction) ; `coexistence-bpm-ipaas-rpa` (Coexistence BPMN 2.0 / iPaaS, sortie maîtrisée du RPA fragile et Strangler Fig en 4 stades) ; `six-substrats-etat-souverainete` (Cartographie et maîtrise juridictionnelle des six substrats d'état (PRI-011, CAP-032, POR-002)) ; `synchronisation-edge-crdt` (Cellule Edge Local-First déconnectée, synchronisation CRDT et quotas de droits).
+- **`ch13`** (`D05`, `SUB_D05_01`, familles `FAM_D05_01_01`, `FAM_D05_01_02`) : `arbre-sobriete-oo1-oo4` (Arbre de sobriété (N0 → flux → agent unique → multiagent) et bascule réglementaire OO2 → OO3) ; `enveloppes-bpmn-cas-routine` (Enveloppes BPMN ad hoc, gestion de cas CMMN, Routine et processus exposé comme outil) ; `paradigme-apm-autonomie-encadree` (Paradigme APM : frames normatifs/opérationnels/locaux et écart de responsabilité) ; `topologies-patrons-orchestration` (Catalogue fermé des 8 patrons autorisés + 1 variante et proscription des 10 antipatrons) ; `cadriciels-orchestration-portabilite` (Cadriciels d'orchestration (LangGraph, CrewAI, MAF, ADK, DSPy) et portabilité aux frontières) ; `negociation-b2b-diplomate-evaluateur` (Scission Diplomate DMZ / Évaluateur interne, salles blanches TEE et règlement tripartite) ; `fiabilite-coordination-taxonomie-mast` (Taxonomie MAST (14 modes d'échec), imputabilité architecturale et injection de fautes) ; `modes-echecs-emergents-frontiere` (Sept modes d'échec à la frontière interopérable (MAST), cascades d'erreurs et tolérance byzantine) ; `contexte-minimal-delegation-interagents` (Contexte de délégation minimal et structuré, validation des retours et filtrage de sécurité) ; `frameworks-orchestration-entreprise` (Frameworks GA d'orchestration : Microsoft Agent Framework, LangGraph, Confluent, Temporal et CrewAI).
+- **`ch14`** (`D05`, `SUB_D05_02`, familles `FAM_D05_02_01`, `FAM_D05_02_02`) : `choregraphie-event-mesh` (Dorsale événementielle sobre (CloudEvents/AsyncAPI, xagentmaxhops = 4) et fédération par gravité) ; `pathologies-reactives-backpressure` (Taxonomie MAST (14 modes), tempêtes d'événements, boucles d'écho, DLQ et backpressure LLM) ; `pont-ia-physique-ros2-simplex` (Passerelle MCP ↔︎ ROS 2/DDS, vérification LOTO et arbitre matériel Simplex).
+- **`ch15`** (`D05`, `SUB_D05_03`, familles `FAM_D05_03_01`, `FAM_D05_03_02`) : `execution-durable-temporal` (Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)) ; `resilience-orchestration-repli-plafonds` (Plafonds d'exécution, résilience par dépendance, canal de compensation et preuve de pile en POC) ; `protocoles-ressources-physiques-lap` (Patron LAP : bail exclusif, barrière liée aux paramètres et résultats métrologiques typés) ; `saga-compensatoire` (Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28) ; `canal-compensation-isole-outbox` (Point pivot, Transactional Outbox et canal de compensation isolé (EXIG-ORC-28)) ; `saga-dix-scenarios-fautes` (Suite déterministe des 10 scénarios d'injection de fautes Saga (EXIG-ORC-20)) ; `semantique-effet-idempotence-uetr` (Sémantique d'effet (Lecture/Écriture/Engagement), idempotence outil et jointure UETR).
+- **`ch16`** (`D06`, `SUB_D06_01`, familles `FAM_D06_01_01`, `FAM_D06_01_02`) : `identite-non-humaine-nhi` (Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes) ; `grille-cinq-questions-identite` (La grille des cinq questions (Q-A à Q-E) : instrument falsifiable et dépendance d'imputabilité) ; `annuaires-commerciaux-risque-standard-de-fait` (Annuaires commerciaux (Entra Agent ID, Google Cloud, AWS Bedrock) et risque de standard de fait) ; `socle-iam-federe-oauth-fapi` (Confiance par message (AAA), SAML 2.0, OAuth 2.1 / BCP 240, OIDC, liaison mTLS/DPoP et FAPI 2.0) ; `registres-gouvernes-trois-modeles` (Registres gouvernés d'agents : brouillon CSA (`toolAccessList`, `permissionBoundaries`) et modèles concurrents) ; `did-vc-passeport-agent` (Identité légale vérifiable GLEIF vLEI, lacune KYA (0/9) et encadrement des agents externes) ; `spiffe-spire-attestation` (Attestations cryptographiques éphémères SPIFFE X.509-SVID, OIDC et veille WIMSE / OAuth 2.1) ; `signature-agent-card-ancrage` (Agent Card signée A2A v1.0.0 : intégrité par JWS/JCS, ancrage hors protocole et absence d'horloge).
+- **`ch17`** (`D06`, `SUB_D06_02`, familles `FAM_D06_02_01`, `FAM_D06_02_02`) : `delegation-obo-deux-sauts` (Rupture au deuxième saut (RFC 8693 §4.1), délégation atténuée ≤ 2 sauts et DPoP/mTLS) ; `requetes-riches-rar-txn-tokens` (Autorisations fines RAR (RFC 9396) et Transaction Tokens O(1)) ; `liaison-jetons-dpop-mtls` (Liaison cryptographique DPoP (RFC 9449), mTLS (RFC 8705) et rejet du token passthrough) ; `profil-oauth-9700-et-liaison-expediteur` (Profil OAuth RFC 9700, jetons liés à l'expéditeur (mTLS/DPoP) et durée courte (≤15 min)) ; `approbation-ciba` (Approbation hors bande OpenID Connect CIBA + FIDO2 liée au condensat I-JSON/JCS SHA-256) ; `kya-verification-agent-tiers` (KYA (Know Your Agent) B2B, fraude APP/deepfake et grille des cinq questions) ; `inventaire-revocation-asymetrie` (Inventaire de la révocation en dix rangées, précédent PKI et absence de révocation en cascade).
+- **`ch18`** (`D06`, `SUB_D06_03`, familles `FAM_D06_03_01`, `FAM_D06_03_02`) : `certificats-tls-47-jours` (Réduction CA/Browser Forum des certificats TLS à 100 j (2027) puis 47 jours (2029) et ACME) ; `post-quantique-ml-dsa-slh-dsa` (Transition post-quantique (FIPS 203/204/205, NIST IR 8547), choc HTTP 431 (50–72×) et CBOR-COSE) ; `crypto-agilite-migration-pqc` (Crypto-agilité en trois conditions, dette de migration PQC et calendrier inverse 2026–2029) ; `saturation-http-431-ml-dsa-kid` (Dimensionnement HTTP 431 sous ML-DSA-65/87 et référence JWKS par kid).
+- **`ch19`** (`D07`, `SUB_D07_01`, familles `FAM_D07_01_01`, `FAM_D07_01_02`) : `injection-indirecte-prompt` (Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % contre 84 %) et tests FR/EN) ; `tool-poisoning-rug-pull` (Empoisonnement d'outils (Tool Poisoning), Rug-Pull et corruption mémorielle (ASI04/ASI06)) ; `non-compositionnalite-surete-surface-attaques` (Non-compositionnalité de la sûreté, triade des surfaces (outils, invites, mémoire) et AgentPoison) ; `chaine-approvisionnement-agent-skills` (Risques de la chaîne logistique des Agent Skills (26,1 % vulnérables) et manifestes SHA-256) ; `taxonomie-attaques-identite-mandataire-confus` (Taxonomie par maillon d'identité : mandataire confus (Hardy 1988), UNC6395, OWASP ASI et MITRE ATLAS) ; `taxonomie-owasp-asi-mcp-maestro` (Modélisation par couches : OWASP Agentic Top 10 (ASI01–ASI10), MCP Top 10 et MAESTRO) ; `red-teaming-continu-empoisonnement-memoire` (Suivi de teinte HMAC anti-ASI06 et harnais Red Team adaptatif CI/CD).
+- **`ch20`** (`D07`, `SUB_D07_02`, familles `FAM_D07_02_01`, `FAM_D07_02_02`) : `politiques-opa-rego-hors-modele` (Évaluation déterministe des politiques hors modèle (OPA/Cedar, PRI-005, CAP-037, DEC-009)) ; `echec-ferme-opa-default-deny` (Échec en mode fermé (default allow := false) et couverture 100 % Rego) ; `controle-surete-stamp-stpa` (Ingénierie de contrôle STAMP/STPA et faillite des filtres probabilistes auxiliaires) ; `maillage-agents-pep-pdp-zero-trust` (AgentMesh (Solo.io et Solace), séparation PEP/PDP et Zero Trust (« jamais confiance au graphe »)) ; `regle-de-deux-opa` (Règle de deux par session composée et retrait déterministe non dérogeable (EXIG-SEC-06)) ; `separation-controle-donnees-camel` (Séparation contrôle/données CaMeL et propagation de teinte inter-agents) ; `sre-autonome-rayon-impact-cedar` (SRE autonome par essaim lecture seule (R0) et procédures typées Cedar (R1–R3)) ; `defense-hors-modele-camel-confinement` (Séparation de privilège hors modèle : double modèle (Willison), CaMeL, sandboxing et cadres locaux) ; `alignement-deceptif-red-teaming-adversarial` (Bancs adversariaux (AgentDojo, InjecAgent, AgentHarm), comportements déviants et asymétrie adaptative).
+- **`ch21`** (`D07`, `SUB_D07_03`, familles `FAM_D07_03_01`, `FAM_D07_03_02`) : `confinement-shadi-sandbox` (Bac à sable éphémère matériel (microVM / WASI) sans réseau sortant ni secret local) ; `confidentialite-materielle-tee-hyok` (Enclaves matérielles CPU/GPU (TEE, limite TEE.fail), clés HYOK et continuité cognitive bimodèle) ; `confinement-opensandbox-firecracker-wasi` (Isolation OpenSandbox (AAIF) sur microVMs Firecracker, gVisor et WASI 0.2) ; `soc-soar-coupe-circuit` (Coupe-circuit hiérarchisé (< 10 s POR-003 contre 15 min CAD26), SSF/CAEP et rétrogradation < 60 s).
+- **`ch22`** (`D08`, `SUB_D08_01`, familles `FAM_D08_01_01`, `FAM_D08_01_02`) : `observabilite-otel-genai` (Télémétrie OpenTelemetry v1.41.0 épinglée (face à v1.44.0 Development) et jointure trace ↔ mandat) ; `provenance-artefacts-aibom-5-horloges` (Provenance (CycloneDX 1.7, SPDX 3.0.1, SLSA v1.2, NIST SP 800-218A) et 5+1 horloges) ; `double-couloir-probatoire-pii` (Architecture à double couloir PII et séparation des trois magasins réglementés) ; `scellage-jcs-scitt` (Journal d'audit à 5 éléments canonisé RFC 8785 (JCS), ancré chaque heure et scellé SCITT + SLH-DSA) ; `caviardage-pii-rp-bilingue` (Caviardage PII/RP bilingue FR/EN sans contenu brut en télémétrie) ; `canonisation-deterministe-jcs` (Canonisation déterministe JCS (RFC 8785) pour idempotence, CIBA et audit) ; `canonicalisation-jcs-rfc8785` (Canonicalisation JCS (RFC 8785) pour la signature et reconstruction vérifiable des Agent Cards) ; `journalisation-probatoire-audit` (Journalisation probatoire (SEC 17a-4, watsonx.governance) contre l'auto-journalisation agentique).
+- **`ch23`** (`D08`, `SUB_D08_02`, familles `FAM_D08_02_01`, `FAM_D08_02_02`) : `banc-evalops-hermetique` (Évaluation continue E1–E3 (pass^k), juge calibré et abaissement d'autonomie sur dérive SLO) ; `evaluation-agentique-bancs-capacite` (Évaluation agentique : trajectoire et résultat, dérive silencieuse d'API et bancs de capacité) ; `dimensionnement-wilson-evalops` (Dimensionnement statistique par borne de Wilson unilatérale à 95 % < p (≥ ceil(3/p) essais)) ; `volant-distillation-dspy-multilora` (Compilation déclarative DSPy et volant de distillation LLM → SLM Multi-LoRA) ; `tests-metamorphiques-fr-en-sans-oracle` (Tests métamorphiques sans oracle et invariance bilingue FR/EN (EXIG-SEC-24)) ; `evaluation-continue-derives` (Évaluation continue (MS Foundry, Langfuse), tests métamorphiques et 3+1 dérives) ; `modele-comme-juge-biais-calibration` (Le modèle comme juge : biais de position/longueur/auto-préférence, piratage et calibration humaine).
+- **`ch24`** (`D08`, `SUB_D08_03`, familles `FAM_D08_03_01`, `FAM_D08_03_02`) : `finops-focus-cpo` (Pilotage économique au coût complet par résultat conforme (CPO), FOCUS 1.4 et disjoncteurs) ; `plan-inference-routage-carbone` (Plan d'inférence à alias logiques, affinité KV-cache, distillation SLM et comptabilité carbone (B-15)) ; `comptabilite-carbone-cap-046-bsif-b15` (Comptabilité énergétique, carbone portée 3 (CAP-046) et BSIF B-15) ; `cycle-vie-operationnel-derives-gitops` (GitOps agentique à 3 objets versionnés, promotion par environnements et réévaluation) ; `indicateurs-agentops-horizon-tache` (Grille minimale AgentOps à 4 indicateurs et traduction vers le risque de modèle).
+- **`ch25`** (`D09`, `SUB_D09_01`, familles `FAM_D09_01_01`, `FAM_D09_01_02`) : `loi-25-article-12-1` (Loi 25 Québec : décisions exclusivement automatisées (art. 12.1), effacement (art. 23) et incidents) ; `ligne-directrice-amf` (Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F) ; `droit-effacement-portabilite-loi-25` (Droit à la portabilité (art. 27) et purge sélective vérifiable (Loi 25 art. 23)) ; `efvp-transfert-hors-quebec` (ÉFVP préalable (art. 3.3), transferts hors Québec (art. 17) et réforme fédérale LPRPDE) ; `bsif-e-23` (Architecture prudentielle fédérale : BSIF E-23 (1er mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033) ; `avis-acvm-11-348` (Encadrement des valeurs mobilières : Avis ACVM 11-348, Règlement 31-103 et règles OCRI) ; `gouvernance-interne-registre-trois-lignes` (Inventaire unifié des agents, portes à 6 étapes, cadre MCN Québec et 3 lignes IIA) ; `services-bancaires-consommateurs-c15` (Projet de loi C-15 (Banque du Canada) et absence vérifiée de standard technique) ; `feuille-route-1er-mai-2027` (Feuille de route vers le 1ᵉʳ mai 2027 (278 jours) en trois paliers et 6 jalons externes) ; `vide-federal-ia-c27-c36` (Vide législatif fédéral sur l'IA : échec de C-27 (LIAD) et portée limitée de C-36).
+- **`ch26`** (`D09`, `SUB_D09_02`, familles `FAM_D09_02_01`, `FAM_D09_02_02`) : `eu-ai-act` (Droit européen applicable par effet extraterritorial : AI Act (Annexe III décembre 2027), Data Act et DORA) ; `systeme-qualite-en-18286-dora-cra` (Système de management de la qualité EN 18286:2026, DORA et Cyber Resilience Act) ; `maillage-reglementaire-international` (Triple qualification réglementaire (modèle, TIC DORA, marché) : US SR 26-2, UK SS1/23, AMLR, B-13/B-10) ; `iso-iec-42001-nist` (Cadres internationaux : portée limitée d'ISO/IEC 42001 (statut F), NIST AI RMF et IMDA v1.5) ; `souverainete-espaces-donnees-tee-hyok` (Souveraineté cognitive (SEAL/Gaia-X/SecNumCloud), enclaves GPU TEE, HYOK et 6 couches d'état) ; `cadres-internationaux-imda-aica-g7` (Repères internationaux IMDA (Singapour), AICA/IAIS et feuille de route G7) ; `classes-risque-agents-et-plafonds` (Classes de risque (Faible, Modérée, Élevée), critère maximal et source unique des plafonds) ; `incidents-agentiques-et-notification-multiregime` (Incidents agentiques (S1–S4), réponse en 5 temps avec gel et cumul des délais de notification).
+- **`ch27`** (`D09`, `SUB_D09_03`, familles `FAM_D09_03_01`, `FAM_D09_03_02`) : `approvisionnement-reversible-contrats` (Approvisionnement réversible : grille éliminatoire et 10 clauses obligatoires EXIG-APP-07..16) ; `clauses-reversibilite-cloud-souverain` (Sortie fournisseur (Data Act 12 janv. 2027), neutralité pratique et risque de concentration) ; `clauses-contractuelles-normatives-app` (Dix clauses contractuelles minimales (EXIG-APP-07 à EXIG-APP-16) : portabilité, Loi 25, RIA et sortie) ; `responsabilite-mandat-contrats-b2b` (Mandat apparent, contrats B2B autonomes (LUCE/LCCJTI), anti-collusion et assurances) ; `criteres-evaluation-fournisseurs-grille` (Évaluation et grille pondérée des fournisseurs (7 critères éliminatoires, preuves en banc d'essai)).
+- **`ch28`** (`D10`, `SUB_D10_01`, familles `FAM_D10_01_01`, `FAM_D10_01_02`) : `profils-financiers-5-secteurs` (Déclinaison comparative des cinq profils financiers réglementés et 24 propositions d'exigence (PEX)) ; `profil-assurance-dommages-m17` (Profil Assurance de dommages IARD (M-17, PEX-031..035) : élasticité cat., ≥ 3 assureurs et sas photo) ; `profil-assurance-personnes-m16` (Profil Assurance de personnes (M-16, PEX-021..025) : purge génétique pénale, MGA et PQC 20–40 ans) ; `profil-banque-m14` (Profil Banque et coopératives de dépôt (M-14, PEX-001..005) : LSAC art. 171, muraille 416 et RTR pacs.008) ; `profil-gestion-patrimoine-m15` (Profil Gestion de patrimoine et valeurs mobilières (M-15, PEX-011..015) : convenance OCRI 3400 et OEO 3241) ; `profil-groupe-diversifie-m18` (Profil Groupe financier diversifié et synthèse comparative (M-18, PEX-041..044) : mutualiser le socle, cloisonner les données) ; `eclats-sectoriels-extrapoles` (Délimitation stricte finance et génie logiciel face aux extrapolations sectorielles (santé FHIR, IT/OT SIL, M&A)) ; `vertical-financier-durci` (Durcissement du vertical financier : 6 facteurs structurels dont Moffatt et risque systémique) ; `tampon-deterministe-rtr-iso20022` (Tampon déterministe hors modèle et validation ISO 20022 sur le Rail en temps réel (RTR)) ; `production-agentique-canadienne-2025-2026` (Étude terrain 2025–2026 sur 10 institutions financières canadiennes (5+4+1 classes d'accès)).
+- **`ch29`** (`D10`, `SUB_D10_02`, familles `FAM_D10_02_01`, `FAM_D10_02_02`) : `blueprints-reference-multisectoriels` (Blueprint C1–C8 sur portefeuille IBM (565 contrôles), 6 principes et vérification de cohérence) ; `blueprint-1-assistant-sor` (Blueprint 1 — Traitement transactionnel réglementé orienté SoR (bp1_assistant_interne)) ; `blueprint-2-enclave-rag-acl` (Blueprint 2 — Enclave souveraine haute confidentialité & RAG ACL (bp2_rag_entreprise_acl)) ; `blueprint-3-maillage-b2b` (Blueprint 3 — Maillage inter-départemental et B2B (bp3_orchestration_multi_agents_b2b)) ; `fil-rouge-groupe-boreal-bel` (Exclusion probante du cas fictif Groupe Boréal Inc. et banc reproductible Borealis-Bench) ; `federation-multi-plateformes-gravite` (Fédération des 5 suites SaaS par gravité des données et prévention des boucles circulaires) ; `reprise-sinistre-cognitif-continuite` (Reprise après sinistre cognitif (Cognitive DR, cible RTO < 15 min, RPO = 0)) ; `reseaux-b2b-federes-p3` (Réseaux B2B fédérés conditionnels au Palier 3 : vLEI, Dataspace/ODRL 2.2 et scission Diplomate/Évaluateur).
+- **`ch30`** (`D10`, `SUB_D10_03`, familles `FAM_D10_03_01`, `FAM_D10_03_02`) : `plateformes-saas-et-asymetrie-tiers` (Interopérabilité déclarée par rapport à l'interopérabilité constatée des 10 plateformes SaaS et 4 niveaux d'agents tiers) ; `fabrique-agents-certification-reemission` (Fabrique d'agents : gabarit gouverné, barrière d'admission, réémission et concentration) ; `passage-echelle-parc-agents` (Passage à l'échelle : 3 plans d'intégration, collaboration B2B et Centre d'excellence) ; `plateforme-iap-gitops-cognitif` (Internal Agentic Platform (IAP), Golden Paths, GitOps cognitif et livraison progressive) ; `anti-patrons-agentiques` (Proscription des 10 antipatrons d'orchestration (EXIG-ORC-29) et des 5 exclusions architecturales) ; `modele-maturite-feuille-360j` (Modèle de maturité M1–M5 (AAGMM) et feuille de route séquencée à 90, 180 et 360 jours).
+- **`ch31`** (`D11`, `SUB_D11_01`, familles `FAM_D11_01_01`, `FAM_D11_01_02`) : `trajectoires-adaptatives-dapp` (Parcours adaptatifs DAPP sans probabilité (A/B/C), modélisation EMA et portefeuille 43 INI / 15 POR / 27 SIG) ; `vingt-sept-signaux-veille-sig` (Observatoire des 27 signaux de bascule DAPP (SIG-001..017, SIG-101..110)) ; `quinze-portes-homologation-por` (Quinze portes d'homologation de trajectoire (POR-001 à POR-016)) ; `trajectoire-90j-18m-p1-p3` (Rampe tactique 90 jours → 18 mois soudée aux Paliers P1–P3 (2028–2035) et les 10 thèses T1–T10) ; `feuille-de-route-phases-90-jours-indicateurs` (Feuille de route 2027–2030 (4 phases, J1–J5, J2a), plan des 90 jours et 16 indicateurs) ; `trajectoire-consolidation-standards-2027-2028` (Trois horloges (plateformes/standards/régulateurs), hypothèses H1–H6 et 3 scénarios géopolitiques) ; `priorites-90-jours-gouvernance` (Six priorités irréductibles des 90 premiers jours et chronologie réglementaire/PQC 2026–2035) ; `tri-prospectif-peremption-feuilles-route` (Tri prospectif (PROGRAMMÉ, PROJETÉ, SPÉCULATIF) et péremption accélérée des feuilles de route) ; `frontiere-capacites-metr-veille` (Saturation de l'horizon METR (50 % contre 80 %), audit des bancs et frontières 2028–2030) ; `modele-maturite-5-niveaux-dimensions` (Modèle de maturité cumulatif en 5 niveaux (Initial à Optimisé) et 5 dimensions) ; `horizon-2027-2032-tri-prospectif` (Horizon 2027–2032 : tri PROGRAMMÉ/PROJETÉ/SPÉCULATIF, scénarios et 40+ lacunes transmises).
+- **`ch32`** (`D11`, `SUB_D11_02`, familles `FAM_D11_02_01`, `FAM_D11_02_02`) : `gouvernance-duale-ae-as` (Contrat croisé AE ↔ AS (6 décisions conjointes), étoile à 3 lignes (1 seul A) et usine Oracle/Bâtisseur) ; `modele-operationnel-hub-and-spoke` (Organisation Hub-and-Spoke : Centre d'excellence agentique et propriétaires métiers nominatifs) ; `dix-theses-t1-t10-tome-5` (Dix thèses structurantes (T1–T10) et six décisions conjointes AE ↔ AS) ; `gouvernance-raci-modele-en-etoile` (Douze rôles, comité décisionnel, matrice RACI à A unique et modèle opérationnel en étoile) ; `regime-derogations-et-transition-cohorte` (Dérogations temporaires (EXIG-GOV-15..17), cohorte transitoire et révision trimestrielle des standards) ; `registre-agents-cycle-de-vie-et-attestations` (Registre d'entreprise à 7 états, 6 jalons, déclencheurs de réévaluation et détection mensuelle) ; `pieges-gouvernance` (Les 7 modes d'échec endogènes du plan directeur (M-26), 4 paris fragiles et veille décisionnelle sous 30 j) ; `responsabilite-litiges-commerce-agentique` (Imputabilité juridique, litiges sans présence humaine et non-répudiation des mandats).
+- **`ch33`** (`D11`, `SUB_D11_03`, familles `FAM_D11_03_01`) : `atrophie-competences-humaines` (Érosion de la relève junior (-20 %), quotas formateurs manuels (> 70 % auto) et reprise manuelle) ; `sanctuarisation-vivier-junior-reprise` (Sanctuarisation du vivier junior (quota > 70 % INI-043) et exercices de reprise manuelle) ; `approbation-reflexe-biais-automatisation` (Approbation réflexe (automation bias), dossiers témoins et vue différentielle).
+- **`ch34`** (`D12`, `SUB_D12_01`, familles `FAM_D12_01_01`, `FAM_D12_01_02`) : `exigences-cre-ia-305` (Porte unique d'homologation : 305 EXIG-* v1.2 × 75 PRR (24 bloquants) × 15 POR et 10 interdits GOV-17) ; `dix-interdictions-exig-gov-17` (Dix interdictions sans dérogation (EXIG-GOV-17) et protocole d'exception) ; `portee-et-force-normative-cre-ia` (Portée fonctionnelle (interne/acheté/tiers), force normative RFC 2119 et séparation interne/externe) ; `homologation-prr-75-points` (Grille d'homologation PRR en 75 points (24 bloquants, 5 domaines S/R/O/G/F)) ; `referentiel-annexes-protocoles-chronologie` (Référentiel synoptique des annexes : glossaire FR-EN, 7 fiches protocoles, chronologie et index) ; `grille-homologation-et-fiche-agent` (Grille d'homologation des 305 exigences (Annexe A) et gabarit normatif de fiche d'agent (Annexe B)).
+- **`ch35`** (`D12`, `SUB_D12_02`, familles `FAM_D12_02_01`, `FAM_D12_02_02`) : `barriere-logicielle-g0-execute-g0` (Barrière logicielle G0 (execute_g0.py), 4 suites vecteurs tiers et CA-G0-SYNC) ; `trousse-executable-tome-8` (Trousse exécutable Tome 8 (Python 3.12+, OPA v1.22.4, JSON Schema 2020-12) et contrat CA-G0-SYNC) ; `cinq-blocs-sbb-tableau-12` (Cinq blocs de solution critiques (5 SBB du Tableau 12) et fiche 2027-B001) ; `calibration-feds-ema` (Calibration artificielle FEDS/EMA (DC-P12, plafond C07 = 65 %) sur seuils, trajectoires et profils) ; `contrats-types-executes-ci-annexe-c` (Huit contrats types C.1–C.8 audités en CI (Borealis-Bench) et schéma crypto-agile).
+- **`ch36`** (`D12`, `SUB_D12_03`, familles `FAM_D12_03_01`, `FAM_D12_03_02`) : `concordance-inter-tomes-div02` (Fermeture de DIV-02 : soudure des 4 volumes (2 541 p.), 52 CAP + 24 PEX → 305 EXIG-* v1.2) ; `architecture-collection-tome-1-preambule` (Architecture du Tome 1 en cinq Livres (50 chapitres) et trois annexes consolidées (B, I, N)) ; `reconciliation-inter-volumes-tome1` (Réconciliation interne des couches, échelles d'autonomie, lacunes et registre de gel du Tome 1) ; `cinq-discordances-inter-volumes-tome-8` (Résolution des cinq discordances inter-volumes (DISC-01 à DISC-05, Tome 8 §0.2)) ; `glossaire-normatif-tome-2` (Glossaire bilingue fr-CA/en et conventions terminologiques (Annexe E)) ; `clause-non-avis-licences` (Collection des 8 tomes (4 542 pages, 319 diagrammes), gabarit Typst, délimitation DC-P12, clause non-avis (AO-05) et licences) ; `protocole-wyvern-g0-g5` (Ancrage atomique Wyvern, sources L+ SHA-256, statut F (AO-01), vecteurs tiers et barrières G0–G5 / CA-16) ; `regime-preuve-trois-degres-absence` (Appareil critique du Tome 1 : niveaux [A]/[B]/[C], trois degrés d'absence et réserve F-01) ; `gabarit-typst-edition-4542-pages` (Chaîne éditoriale Typst 6,14×9,21 po (4 542 pages, 319 diagrammes) et recollation CA-16) ; `protocole-probatoire-l-plus-statut-f` (Rigueur probatoire : statut F (anti-objectif A4), ancrage ouvert L+ SHA-256 et audit de sources) ; `audit-validation-sources-121-449` (Validation des 121 références (427 liens), 449 sources dédupliquées (A/B/C) et 32 corrections factuelles) ; `actualisation-novembre-2026-unification-v1-2` (Actualisation de novembre 2026 (Annexe H) et unification normative v1.2 (DC-P08, 305 EXIG-*)) ; `peremption-revalidation-annexe-n` (Péremption (14 événements), seuil 30 jours et actualisation complète du 1ᵉʳ novembre 2026) ; `registre-sources-tracees-annexe-b` (Registre des 159 sources S-001..S-159 (Annexe B) et 999 notices consolidées du Vol. I (Annexe I)).
+
+## 7. Registre intégral des 135 sources `L+`, 27 exclusions `statut F` et 37 journaux `G2`
+
+- **`SRC-001`** — From AGI to ASI (2026-11-10, `SHA-256` `edd192381975`).
+- **`SRC-002`** — Design Patterns for Securing LLM Agents against Prompt Injections (2025-06-27, `SHA-256` `b3e1ed3304dd`).
+- **`SRC-003`** — Towards a Science of Scaling Agent Systems (2025-12-09, `SHA-256` `991148d77ecd`).
+- **`SRC-004`** — RFC 7493 : The I-JSON Message Format (2015-03, `SHA-256` `79cf90d87551`).
+- **`SRC-005`** — RFC 7515 : JSON Web Signature (JWS) (2015-05, `SHA-256` `d5c3662fb6fe`).
+- **`SRC-006`** — SagaLLM : Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning (2025-07-09, `SHA-256` `c2565e8391cc`).
+- **`SRC-007`** — Defeating Prompt Injections by Design (CaMeL) (2025-06-24, `SHA-256` `7a9735abcbdc`).
+- **`SRC-008`** — Artificial Intelligence Index Report 2026 (2026-04-14, `SHA-256` `752f0d68bbd7`).
+- **`SRC-009`** — RFC 8707 : Resource Indicators for OAuth 2.0 (2020-02, `SHA-256` `7fb70d66034a`).
+- **`SRC-010`** — RFC 9334 : Remote ATtestation procedureS (RATS) Architecture (2023-01, `SHA-256` `9cf8aa2510be`).
+- **`SRC-011`** — Agentic AI orchestration : TMT Predictions 2026 (2025-11-18, `SHA-256` `e7d41d25e64a`).
+- **`SRC-012`** — RFC 9964 : ML-DSA for JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and Encryption (COSE) (2026-05, `SHA-256` `a7c42dac175c`).
+- **`SRC-013`** — Transaction Tokens (Internet-Draft draft-ietf-oauth-transaction-tokens-11 — brouillon IETF WG) (2026-07-30, `SHA-256` `64447dddda3a`).
+- **`SRC-014`** — Utilisation de l'intelligence artificielle par les entreprises au Canada, deuxième trimestre de 2026 (Tableau 33-10-1167-01) (2026-06-30, `SHA-256` `2e07bdc05646`).
+- **`SRC-015`** — Utilisation de l'intelligence artificielle par les entreprises au Canada, troisième trimestre de 2026 (Tableau 33-10-1207-01) (2026-09-30, `SHA-256` `ea9fc801ab53`).
+- **`SRC-016`** — Staff Analytical Paper 2026-22 : Survey Evidence on Firm AI Adoption and its Implications (2026-06-02, `SHA-256` `b46da71236a3`).
+- **`SRC-017`** — OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft draft-chen-oauth-agent-revocation-01 — brouillon individuel) (2026-10-30, `SHA-256` `25d9788ca0cb`).
+- **`SRC-018`** — NIST FIPS 205 : Stateless Hash-Based Digital Signature Standard (SLH-DSA) (2024-08-13, `SHA-256` `c27445a0f736`).
+- **`SRC-019`** — OpenID Shared Signals Framework Specification 1.0 (2025-08-29, `SHA-256` `68263a1cbe31`).
+- **`SRC-020`** — OpenID Continuous Access Evaluation Profile (CAEP) 1.0 (2025-08-29, `SHA-256` `f3114cfa038f`).
+- **`SRC-021`** — JSON Schema : A Media Type for Describing JSON Documents (Draft 2020-12 Core, draft-bhutton-json-schema-01) (2022-06-16, `SHA-256` `ece40a120598`).
+- **`SRC-022`** — NIST/SEMATECH e-Handbook of Statistical Methods — Section 7.2.4.1 Confidence Intervals for a Binomial Proportion (Wilson / Exact) (2012-04, `SHA-256` `7cd7f651da8a`).
+- **`SRC-023`** — FinOps Open Cost and Usage Specification (FOCUS) v1.4 — Spécification normative complète (2026-06-04, `SHA-256` `67f651d7a5b0`).
+- **`SRC-024`** — NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Competing Risk Model (loi multiplicative équivalente à Lusser) (2012-04, `SHA-256` `8734d2a71190`).
+- **`SRC-025`** — Measuring AI Ability to Complete Long Software Tasks (arXiv:2503.14499v4) (2026-07-10, `SHA-256` `816b90ee61a7`).
+- **`SRC-026`** — Cognitive Architectures for Language Agents (CoALA) (2024-03-15, `SHA-256` `831e99a3f99a`).
+- **`SRC-027`** — Measuring Agents in Production (MAP) (2025-12-02, `SHA-256` `3f8f34adaeb5`).
+- **`SRC-028`** — Why Do Multi-Agent LLM Systems Fail ? (MAST) (2025-10-26, `SHA-256` `7eeb1c6dfd09`).
+- **`SRC-029`** — τ-bench : A Benchmark for Tool-Agent-User Interaction in Real-World Domains (2024-06-17, `SHA-256` `659469b4a86d`).
+- **`SRC-030`** — Holistic Agent Leaderboard : The Missing Infrastructure for AI Agent Evaluation (HAL) (2025-10-13, `SHA-256` `4f1e326b6b31`).
+- **`SRC-031`** — Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets (2026-04-11, `SHA-256` `80b064f92eb1`).
+- **`SRC-032`** — The Ringelmann Effect in Multi-Agent LLM Systems : A Scaling Law for Effective Team Size (2026-05-31, `SHA-256` `dd138f578d07`).
+- **`SRC-033`** — Sagas (1987-05, `SHA-256` `61c64fc79006`).
+- **`SRC-034`** — Temporal SDKs — Durable Execution, Event History and Deterministic Replay (2026, `SHA-256` `95aa625eecff`).
+- **`SRC-035`** — CloudEvents Specification — Version 1.0.2 (2022-04, `SHA-256` `8f4d59dd27f8`).
+- **`SRC-036`** — The Idempotency-Key HTTP Header Field (draft-ietf-httpapi-idempotency-key-header) (2026-11-21, `SHA-256` `d737453f458f`).
+- **`SRC-037`** — OpenTelemetry Semantic Conventions for Generative AI Agent & Execute Tool Spans (gen_ai.operation.name) (2026-11-05, `SHA-256` `1b2526202e8a`).
+- **`SRC-038`** — Model Context Protocol (MCP) Specification — Revision 2025-11-25 (corpus normatif complet) (2025-11-25, `SHA-256` `938fca60c06c`).
+- **`SRC-039`** — Agent2Agent (A2A) Protocol Specification (2026-05-28, `SHA-256` `fb9823ce1338`).
+- **`SRC-040`** — From Technical Debt to Cognitive and Intent Debt : Rethinking Software Health in the Age of AI (2026-03-23, `SHA-256` `ea4b2e2a02be`).
+- **`SRC-041`** — RFC 8693 : OAuth 2.0 Token Exchange (2020-01, `SHA-256` `22f271006669`).
+- **`SRC-042`** — RFC 9396 : OAuth 2.0 Rich Authorization Requests (RAR) (2023-05, `SHA-256` `e334d06f1408`).
+- **`SRC-043`** — RFC 9449 : OAuth 2.0 Demonstrating Proof of Possession (DPoP) (2023-09, `SHA-256` `5e0267f9b880`).
+- **`SRC-044`** — RFC 9943 : An Architecture for Trustworthy and Transparent Digital Supply Chains (SCITT) (2026-06, `SHA-256` `1ed0ffb4007b`).
+- **`SRC-045`** — OpenID Connect Client-Initiated Backchannel Authentication Flow — Core 1.0 (2021-09-01, `SHA-256` `fb983307e736`).
+- **`SRC-046`** — SPIFFE Concepts — Workload Identity, SPIFFE ID and SVID (2026, `SHA-256` `d85539da6604`).
+- **`SRC-047`** — Workload Identity Practices (draft-ietf-wimse-workload-identity-practices-08) (2026-10-30, `SHA-256` `863cee96178b`).
+- **`SRC-048`** — AI Identity Management System (draft-ietf-wimse-aims-01) (2026-11-02, `SHA-256` `ab53c74913dd`).
+- **`SRC-049`** — NIST FIPS 203 : Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM) (2024-08-13, `SHA-256` `bb840af1e6a3`).
+- **`SRC-050`** — NIST FIPS 204 : Module-Lattice-Based Digital Signature Standard (ML-DSA) (2024-08-13, `SHA-256` `14b6c1706d2c`).
+- **`SRC-051`** — NIST IR 8547 : Transition to Post-Quantum Cryptography Standards (Final, October 2026) (2026-10-21, `SHA-256` `80e6a458907c`).
+- **`SRC-052`** — Advancing a Coordinated Roadmap for the Transition to Post-Quantum Cryptography in the Financial Sector (2026-01-14, `SHA-256` `cab48e350b29`).
+- **`SRC-053`** — Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates (incl. Ballot SC-081v3) (2026-10-04, `SHA-256` `8d44ae9b57d6`).
+- **`SRC-054`** — NIST AI 100-2e2025 : Adversarial Machine Learning — A Taxonomy and Terminology of Attacks and Mitigations (2025-03-20, `SHA-256` `1f113bf38b90`).
+- **`SRC-055`** — OWASP Top 10 for Agentic Applications 2026 (v1.0, December 2025 — document complet CC BY-SA 4.0) (2025-12, `SHA-256` `4d9f1c9f067f`).
+- **`SRC-056`** — Can CaMeLs Talk ? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks (2026-10-05, `SHA-256` `490ff7dc6d69`).
+- **`SRC-057`** — Same Name, Different Server : A Security Census of Silent Drift in the Model Context Protocol Ecosystem (2026-09-15, `SHA-256` `cae21acac54f`).
+- **`SRC-058`** — STAMP/STPA Informed Characterization of Factors Leading to Loss of Control in AI Systems (2026-02-03, `SHA-256` `78b03417f4de`).
+- **`SRC-059`** — OWASP Agentic AI Top 10 Crosswalk (GitHub Pages miroir ouvert CC BY-SA 4.0) (2026, `SHA-256` `e5a50552cb52`).
+- **`SRC-060`** — Règlement (UE) 2024/1689 (EU AI Act) (2024-07-12, `SHA-256` `e0a79e4f278c`).
+- **`SRC-061`** — Règlement (UE) 2026/1744 du 8 juillet 2026 modifiant le règlement (UE) 2024/1689 (simplification / échéances IA) (2026-07-24, `SHA-256` `cafaf35193ed`).
+- **`SRC-062`** — Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique du secteur financier (DORA) (2022-12-27, `SHA-256` `6e4b138de7f0`).
+- **`SRC-063`** — Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25 / LQ 2021, c. 25, art. 12.1) (2021-09-22, `SHA-256` `829e67f777ca`).
+- **`SRC-064`** — Rapport quinquennal 2026 sur l'application de la Loi sur la protection des renseignements personnels dans le secteur privé (2026-05, `SHA-256` `db8153ade9d5`).
+- **`SRC-065`** — Ligne directrice E-23 — Gestion du risque de modélisation à l'échelle de l'entreprise (édition 2027) (2025-09-11, `SHA-256` `60ef80b531aa`).
+- **`SRC-066`** — Generative and Agentic Artificial Intelligence : Implications for Technology, Cyber Security and Operational Risk (2026-07-13, `SHA-256` `5a1b1a2e004b`).
+- **`SRC-067`** — Décision d'exécution (UE) 2026/2274 de la Commission du 12 octobre 2026 concernant les normes harmonisées relatives aux systèmes d'IA à haut risque (EN 18286:2026) (2026-10-12, `SHA-256` `3d1dcffce8ae`).
+- **`SRC-068`** — Guideline B-10 : Third-Party Risk Management (2023-04-30, `SHA-256` `db7ccc401ea3`).
+- **`SRC-069`** — First harmonised standard supporting the AI Act published in the Official Journal (EN 18286:2026) (2026-10-21, `SHA-256` `647fbb09b0ec`).
+- **`SRC-070`** — Loi sur les banques (L.C. 1991, ch. 46 — révision statutaire au 30 juin 2033) (2026-10-29, `SHA-256` `0e1fc9323793`).
+- **`SRC-071`** — AIBanks.ca — The Canadian Bank AI Index (2026 Q4 edition, agrégateur tiers indépendant) (2026-11-01, `SHA-256` `2d39751c5fed`).
+- **`SRC-072`** — Model Context Protocol (MCP) Revision 2026-07-28 — Server Tools (tools.mdx) (2026-07-28, `SHA-256` `ed550806a58e`).
+- **`SRC-073`** — Calibrated adaptive framework for trustworthy human and artificial intelligence decision systems (2026-08-20, `SHA-256` `f06eb8eca755`).
+- **`SRC-074`** — Model Context Protocol (MCP) Revision 2026-07-28 — Streamable HTTP Transport (streamable-http.mdx) (2026-07-28, `SHA-256` `22574bf11e00`).
+- **`SRC-075`** — Human oversight of agentic systems in practice : Examining the oversight work, challenges, and heuristics of developers using software agents (2026-06-03, `SHA-256` `a0b7c487a5e0`).
+- **`SRC-076`** — RFC 8032 : Edwards-Curve Digital Signature Algorithm (EdDSA) (2017-01, `SHA-256` `29c43d9f68a7`).
+- **`SRC-077`** — RFC 8785 : JSON Canonicalization Scheme (JCS) (2020-06, `SHA-256` `be00e8aeddaf`).
+- **`SRC-078`** — Model Context Protocol (MCP) Revision 2026-07-28 — Authorization Security Considerations (security-considerations.mdx) (2026-07-28, `SHA-256` `71dd5f0f236c`).
+- **`SRC-079`** — GLEIF verifiable LEI (vLEI) Trust Chain & WebOfTrust vLEI KERI/ACDC Ecosystem Specifications (ISO 17442-3) (2026-10-15, `SHA-256` `2ccc0f09f7c8`).
+- **`SRC-080`** — Model Context Protocol (MCP) Revision 2026-07-28 — TypeScript Schema (schema.ts) (2026-07-28, `SHA-256` `742750af0bb8`).
+- **`SRC-081`** — MCP SEP-2596 : Specification Feature Lifecycle and Deprecation Policy (Status : Final) (2026-11-22, `SHA-256` `6608969be121`).
+- **`SRC-082`** — MCP SEP-3398 : Release Cycle Updates (Status : Accepted) (2026-10-14, `SHA-256` `64aee02f2717`).
+- **`SRC-083`** — Agent2Agent (A2A) Protocol Specification v1.0.1 (docs/specification.md) (2026-05-28, `SHA-256` `627ccfe6ffb1`).
+- **`SRC-084`** — Agent2Agent (A2A) Protocol Protobuf Contract v1.0.1 (specification/a2a.proto) (2026-05-28, `SHA-256` `e195bf96ab63`).
+- **`SRC-085`** — Agent2Agent (A2A) Protocol Specification v1.1.0-rc (Release Candidate post-gel adaptateur) (2026-10-29, `SHA-256` `25a940c30c00`).
+- **`SRC-086`** — A2A Technology Compatibility Kit (a2a-tck) v1.0.0.alpha3 — AgentCard Requirements (tck/requirements/agent_card.py) (2026-10-20, `SHA-256` `4889ec96433a`).
+- **`SRC-087`** — Open Policy Agent (OPA) v1.22.4 — Rego Policy Language Reference (policy-language.md) (2026-11-12, `SHA-256` `4b242f9eee53`).
+- **`SRC-088`** — Open Policy Agent (OPA) v1.22.4 — Policy Testing & Coverage (policy-testing.md) (2026-11-12, `SHA-256` `4e566ce11e03`).
+- **`SRC-089`** — OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md : 60 attributs = 50 Development + 10 Deprecated) (2026-04-28, `SHA-256` `74e99ecc4e35`).
+- **`SRC-090`** — OpenTelemetry semantic-conventions-genai (commit 244465e9 — 85 attributs Development incluant cache_write) (2026-10-31, `SHA-256` `b05fc94233aa`).
+- **`SRC-091`** — Testing Chatbots Using Metamorphic Relations (2020-03-31, `SHA-256` `069cee64fd68`).
+- **`SRC-092`** — MORTAR : Multi-turn Metamorphic Testing for LLM-based Dialogue Systems (2024-12-20, `SHA-256` `0e9939c49f50`).
+- **`SRC-093`** — Explanation-Guided Metamorphic Testing of Specialized Language Models : An Empirical Study (2026-08-07, `SHA-256` `619e05baae21`).
+- **`SRC-094`** — Binomial confidence intervals for rare events : importance of defining margin of error relative to magnitude of proportion (2024-01-15, `SHA-256` `538950454399`).
+- **`SRC-095`** — Attested Tool-Server Admission : A Security Extension to the Model Context Protocol (2026-06-02, `SHA-256` `61dc1007669d`).
+- **`SRC-096`** — Virtual Agent Economies (2025-09-12, `SHA-256` `f475a70c3b55`).
+- **`SRC-097`** — The Coasean Singularity ? Demand, Supply, and Market Design with AI Agents (2025-11, `SHA-256` `45b9200d9e59`).
+- **`SRC-098`** — An Economy of AI Agents (2025-09-01, `SHA-256` `c87fd1c3cd81`).
+- **`SRC-099`** — Experimental evidence on the productivity effects of generative artificial intelligence (2023-07-14, `SHA-256` `454df0409d08`).
+- **`SRC-100`** — The Effects of Generative AI on High-Skilled Work : Evidence from Three Field Experiments with Software Developers (2025-06, `SHA-256` `6d5df87a4d49`).
+- **`SRC-101`** — Agentic AI Market Size & Share Analysis — Growth Trends and Forecast (2026-10-22, `SHA-256` `d36ecb1c274c`).
+- **`SRC-102`** — Enterprise Agentic AI Market Size, Share & Trends Analysis Report (2026-07, `SHA-256` `575dae06de09`).
+- **`SRC-103`** — Alphabet Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results (2026-10-28, `SHA-256` `ebfea816ab26`).
+- **`SRC-104`** — Amazon.com, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results and 2026 CapEx Guidance (2026-10-29, `SHA-256` `8da73deea031`).
+- **`SRC-105`** — Meta Platforms, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Results and 2026 CapEx Guidance (2026-10-21, `SHA-256` `bb4724559067`).
+- **`SRC-106`** — Microsoft Corporation Form 10-Q — Quarter Ended September 30, 2026 (Q1 FY2027) (2026-10-28, `SHA-256` `6d7b4822b23d`).
+- **`SRC-107`** — Microsoft Corporation Form 10-K — Fiscal Year Ended June 30, 2026 (2026-07-29, `SHA-256` `bdd42cefdb9a`).
+- **`SRC-108`** — Microsoft Corporation Form 10-Q — Six Months Ended December 31, 2025 (Q2 FY2026) (2026-01-28, `SHA-256` `c840108cea52`).
+- **`SRC-109`** — System level governance of generative AI risks in cross border e-commerce supply chains (2026-08-27, `SHA-256` `ccfeca2f7bdc`).
+- **`SRC-110`** — Guideline B-15 : Climate Risk Management (2025-03-07, `SHA-256` `8136e1e00218`).
+- **`SRC-111`** — CSA / OSC Notice of Amendments to National Instrument 31-103 — Prohibition of Chargebacks (2026-10-08, `SHA-256` `70b2dbd2b698`).
+- **`SRC-112`** — Dynamic Adaptive Policy Pathways (DAPP) (2019-04-05, `SHA-256` `7977e2b1fb07`).
+- **`SRC-113`** — How does Agentic AI Influence the Developer Skills in the Software Industry ? — A Literature Review (2026-10-09, `SHA-256` `323acadcd6fb`).
+- **`SRC-114`** — Loi sur les services bancaires axés sur les consommateurs (L.C. 2026, ch. 3, art. 224) (2026-03-26, `SHA-256` `dba003d4dce0`).
+- **`SRC-115`** — ReAct : Synergizing Reasoning and Acting in Language Models (2022-10-06, `SHA-256` `02f512999e00`).
+- **`SRC-116`** — Toolformer : Language Models Can Teach Themselves to Use Tools (2023-02-09, `SHA-256` `65cd388c2bd5`).
+- **`SRC-117`** — Gorilla : Large Language Model Connected with Massive APIs (2023-05-24, `SHA-256` `64274c0deb63`).
+- **`SRC-118`** — ReWOO : Decoupling Reasoning from Observations for Efficient Augmented Language Models (2023-05-23, `SHA-256` `7d2660c4b45e`).
+- **`SRC-119`** — ToolLLM : Facilitating Large Language Models to Master 16000+ Real-world APIs (2023-07-31, `SHA-256` `9edc88138dde`).
+- **`SRC-120`** — Executable Code Actions Elicit Better LLM Agents (CodeAct) (2024-02-01, `SHA-256` `fde6ea4999c0`).
+- **`SRC-121`** — LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024-02-02, `SHA-256` `69bb9cf7eb55`).
+- **`SRC-122`** — AI Agents vs. Agentic AI : A Conceptual Taxonomy, Applications and Challenges (2025-05-15, `SHA-256` `67346c9a4959`).
+- **`SRC-123`** — Small Language Models are the Future of Agentic AI (2025-06-02, `SHA-256` `89d5cb83654b`).
+- **`SRC-124`** — Benchmarking LLM Agents for Wealth-Management Workflows (2025-12-01, `SHA-256` `cb7d7cb81886`).
+- **`SRC-125`** — RFC 2119 : Key words for use in RFCs to Indicate Requirement Levels (1997-03, `SHA-256` `c7db148fd518`).
+- **`SRC-126`** — RFC 6902 : JavaScript Object Notation (JSON) Patch (2013-04, `SHA-256` `d2627c569ee6`).
+- **`SRC-127`** — RFC 8555 : Automatic Certificate Management Environment (ACME) (2019-03, `SHA-256` `1c656cf6f144`).
+- **`SRC-128`** — RFC 8705 : OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens (2020-02, `SHA-256` `f3a8ff8dc00c`).
+- **`SRC-129`** — RFC 9207 : OAuth 2.0 Authorization Server Issuer Identification (2022-03, `SHA-256` `033ca79b0d49`).
+- **`SRC-130`** — RFC 9420 : The Messaging Layer Security (MLS) Protocol (2023-07, `SHA-256` `450cb6f07225`).
+- **`SRC-131`** — RFC 9421 : HTTP Message Signatures (2024-02, `SHA-256` `1b23937c2708`).
+- **`SRC-132`** — RFC 9562 : Universally Unique IDentifiers (UUIDs) (2024-05, `SHA-256` `a3d609ca981c`).
+- **`SRC-133`** — RFC 9700 : Best Current Practice for OAuth 2.0 Security (BCP 240) (2025-01, `SHA-256` `7ffb6c499888`).
+- **`SRC-134`** — RFC 9728 : OAuth 2.0 Protected Resource Metadata (2025-04, `SHA-256` `148d22364f63`).
+- **`SRC-135`** — RFC 9745 : The Deprecation HTTP Response Header Field (2025-04, `SHA-256` `72fc72057a4f`).
+
+### Ressources exclues en `statut F` (`AO-01`)
+
+- `statut F` : `https://dl.acm.org/doi/10.1145/3143561` (HTTP_403).
+- `statut F` : `https://economics.mit.edu/sites/default/files/2024-11/The%20Effects%20of%20Generative%20AI%20on%20High-Skilled%20Work.pdf` (HTTP_404).
+- `statut F` : `https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202401689` (WAF_OR_CHALLENGE:aws-waf).
+- `statut F` : `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` (HTTP_403).
+- `statut F` : `https://ieeexplore.ieee.org/document/11580353/` (HTTP_202_NON_FINAL).
+- `statut F` : `https://lautorite.qc.ca/` (HTTP_403).
+- `statut F` : `https://onlinelibrary.wiley.com/doi/10.1111/j.1468-0335.1937.tb00002.x` (HTTP_403).
+- `statut F` : `https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/` (WAF_OR_CHALLENGE:g-recaptcha).
+- `statut F` : `https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf` (NETWORK_ERROR:URLError).
+- `statut F` : `https://publications.gc.ca/site/fra/9.505677/publication.html` (HTTP_202_NON_FINAL).
+- `statut F` : `https://standards.cencenelec.eu/dyn/www/f?p=CEN:110:0::::FSP_PROJECT:82555` (HTTP_500).
+- `statut F` : `https://www.ciro.ca/rules-and-guidance/investment-dealer-and-partially-consolidated-rules` (HTTP_403).
+- `statut F` : `https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13776542/fullTextXML` (NETWORK_ERROR:TimeoutError).
+- `statut F` : `https://www.fasken.com/en/knowledge/topics/artificial-intelligence` (HTTP_403).
+- `statut F` : `https://www.fortunebusinessinsights.com/agentic-ai-market-114233` (HTTP_403).
+- `statut F` : `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` (HTTP_403).
+- `statut F` : `https://www.gleif.org/organizational-identity/lei-vlei/vlei-ecosystem-governance-framework/` (HTTP_404).
+- `statut F` : `https://www.hbs.edu/ris/Publication%20Files/24-013_d9b45b68-9e74-42d6-a1c6-c72fb70c7282.pdf` (HTTP_403).
+- `statut F` : `https://www.idc.com/getdoc.jsp?containerId=prUS53863225` (HTTP_403).
+- `statut F` : `https://www.iso.org/standard/81230.html` (HTTP_403).
+- `statut F` : `https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1` (HTTP_403).
+- `statut F` : `https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai` (NETWORK_ERROR:TimeoutError).
+- `statut F` : `https://www.mdpi.com/2079-8954/14/4/447` (HTTP_403).
+- `statut F` : `https://www.polarismarketresearch.com/industry-analysis/enterprise-agentic-ai-market` (WAF_OR_CHALLENGE:challenges.cloudflare.com).
+- `statut F` : `https://www.reuters.com/technology/over-40-agentic-ai-projects-will-be-scrapped-by-2027-gartner-says-2025-06-25/` (HTTP_401).
+- `statut F` : `https://www.securities-administrators.ca/news/` (HTTP_403).
+- `statut F` : `https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-fra.htm` (HTTP_403).
+
+### Bilan des journaux d'ancrage `G2` par unité
+
+- **`00-liminaire`** : 53 initial → 63 final (`100,0 %` supporté).
+- **`ch01`** : 21 initial → 38 final (`100,0 %` supporté).
+- **`ch02`** : 23 initial → 44 final (`100,0 %` supporté).
+- **`ch03`** : 23 initial → 50 final (`100,0 %` supporté).
+- **`ch04`** : 31 initial → 53 final (`100,0 %` supporté).
+- **`ch05`** : 20 initial → 36 final (`100,0 %` supporté).
+- **`ch06`** : 33 initial → 51 final (`100,0 %` supporté).
+- **`ch07`** : 21 initial → 43 final (`100,0 %` supporté).
+- **`ch08`** : 19 initial → 36 final (`100,0 %` supporté).
+- **`ch09`** : 31 initial → 47 final (`100,0 %` supporté).
+- **`ch10`** : 17 initial → 34 final (`100,0 %` supporté).
+- **`ch11`** : 28 initial → 39 final (`100,0 %` supporté).
+- **`ch12`** : 26 initial → 42 final (`100,0 %` supporté).
+- **`ch13`** : 15 initial → 44 final (`100,0 %` supporté).
+- **`ch14`** : 9 initial → 31 final (`100,0 %` supporté).
+- **`ch15`** : 18 initial → 36 final (`100,0 %` supporté).
+- **`ch16`** : 19 initial → 41 final (`100,0 %` supporté).
+- **`ch17`** : 17 initial → 38 final (`100,0 %` supporté).
+- **`ch18`** : 20 initial → 34 final (`100,0 %` supporté).
+- **`ch19`** : 9 initial → 39 final (`100,0 %` supporté).
+- **`ch20`** : 16 initial → 38 final (`100,0 %` supporté).
+- **`ch21`** : 10 initial → 36 final (`100,0 %` supporté).
+- **`ch22`** : 13 initial → 33 final (`100,0 %` supporté).
+- **`ch23`** : 14 initial → 32 final (`100,0 %` supporté).
+- **`ch24`** : 8 initial → 33 final (`100,0 %` supporté).
+- **`ch25`** : 13 initial → 28 final (`100,0 %` supporté).
+- **`ch26`** : 9 initial → 31 final (`100,0 %` supporté).
+- **`ch27`** : 6 initial → 32 final (`100,0 %` supporté).
+- **`ch28`** : 7 initial → 29 final (`100,0 %` supporté).
+- **`ch29`** : 13 initial → 36 final (`100,0 %` supporté).
+- **`ch30`** : 4 initial → 29 final (`100,0 %` supporté).
+- **`ch31`** : 11 initial → 32 final (`100,0 %` supporté).
+- **`ch32`** : 26 initial → 33 final (`100,0 %` supporté).
+- **`ch33`** : 15 initial → 28 final (`100,0 %` supporté).
+- **`ch34`** : 14 initial → 28 final (`100,0 %` supporté).
+- **`ch35`** : 15 initial → 35 final (`100,0 %` supporté).
+- **`ch36`** : 27 initial → 41 final (`100,0 %` supporté).
 <!-- BIBLIOGRAPHIE_BRUTE_FIN -->

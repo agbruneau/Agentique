@@ -28,13 +28,13 @@ top to bottom direction
 title Prévenir l'approbation réflexe (ASI09) : circuit CIBA/JCS, vue différentielle et PC3 / Loi 25
 
 package "Z1 — Distinction identitaire (Tableau 7) et filtrage à la passerelle" {
-  rectangle "Agent interactif vs ambiant\n(triple exclusion identitaire · blocage < N4)" as N1 <<red>>
+  rectangle "Agent interactif ou ambiant\n(triple exclusion identitaire · blocage < N4)" as N1 <<red>>
   rectangle "Passerelle PEP : filtre I-JSON\nh = SHA-256(JCS(...)) & boîte persistante" as N2 <<purple>>
   N1 --> N2 : ① Calculer condensat h
 }
 
 package "Z2 — Approbation hors bande CIBA/FIDO2 et ergonomie ASI09" {
-  rectangle "Console différentielle A2UI hors LLM\n(zéro texte persuasif · 93 % réflexe bloqué)" as N3 <<blue>>
+  rectangle "Console différentielle A2UI hors LLM\n(zéro texte persuasif · 12,36 % / > 15 % AL-Ali)" as N3 <<blue>>
   rectangle "Dispositif distinct CIBA + FIDO2\n+ RFC 9396 (≤ 15 min · jti atomique)" as N4 <<purple>>
   rectangle "Garde anti-saturation (≤ 33 cas/quart)\n3–5 % témoins POR-014 · INI-043 · repli < 60 s" as N5 <<blue>>
   N2 --> N3 : ② Exposer pièces brutes
@@ -42,7 +42,7 @@ package "Z2 — Approbation hors bande CIBA/FIDO2 et ergonomie ASI09" {
   N3 --> N5 : ③ Surveiller cadence
 }
 
-package "Z3 — Frontière juridique : arrêt préventif PC3 vs Loi 25 art. 12.1" {
+package "Z3 — Frontière juridique : arrêt préventif PC3 par rapport à Loi 25 art. 12.1" {
   rectangle "Arrêt préventif PC3 (H-31)\n(bloque ou libère avant acte irréversible P3)" as N6 <<purple>>
   rectangle "Circuit Loi 25 art. 12.1 : avis PC1, facteurs PC2,\nrectification, révision humaine & archive ≥ 1 an" as N7 <<blue>>
   N4 --> N6 : Libération P3 signée
@@ -50,7 +50,7 @@ package "Z3 — Frontière juridique : arrêt préventif PC3 vs Loi 25 art. 12.1
 }
 
 legend bottom
-  **Corail / Rouge** : Supervision HITL de façade (93 % réflexe ASI09) et écriture ambiante bloquée
+  **Corail / Rouge** : Supervision HITL de façade (biais ASI09 : 12,36 % / > 15 % sous cadence) et écriture ambiante bloquée
   **Violet** : Jeton CIBA/FIDO2 retenu au PEP (≤ 15 min, jti atomique, lié à h)
   **Bleu** : Console différentielle hors modèle, témoins POR-014 et dossier Loi 25 (≥ 1 an)
 end legend

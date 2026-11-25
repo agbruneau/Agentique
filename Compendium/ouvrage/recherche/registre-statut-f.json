@@ -22,7 +22,7 @@
       "http_status": 404,
       "block_reason": "HTTP_404",
       "reason": "HTTP_404",
-      "note": "HTTP 404 (lien PDF déplacé/inaccessible sans contournement) sur economics.mit.edu; compensé par la version ouverte auteur sur mertdemirer.com (SRC-010, L+).",
+      "note": "HTTP 404 (lien PDF déplacé/inaccessible sans contournement) sur economics.mit.edu; compensé par la version ouverte auteur sur mertdemirer.com (SRC-100, L+).",
       "checked_at": "2026-11-22T14:20:58Z"
     },
     {
@@ -77,7 +77,7 @@
       "http_status": 403,
       "block_reason": "HTTP_403",
       "reason": "HTTP_403",
-      "note": "Mur payant / HTTP 403 éditeurs commerciaux : Coase (1937, Wiley) compensé via Shahidi et al. (NBER w34468, SRC-004 L+); Bainbridge (1983, Automatica/Elsevier) sans copie ouverte légitime en dépôt universitaire/HAL/arXiv (statut F maintenu, retiré des références primaires).",
+      "note": "Mur payant / HTTP 403 éditeurs commerciaux : Coase (1937, Wiley) compensé via Shahidi et al. (NBER w34468, SRC-097 L+); Bainbridge (1983, Automatica/Elsevier) sans copie ouverte légitime en dépôt universitaire/HAL/arXiv (statut F maintenu, retiré des références primaires).",
       "checked_at": "2026-11-22T14:20:57Z"
     },
     {
@@ -99,7 +99,7 @@
       "http_status": null,
       "block_reason": "NETWORK_ERROR:URLError",
       "reason": "NETWORK_ERROR:URLError",
-      "note": "Erreur TLS/réseau sur serveur scripts.mit.edu; méthode STPA/STAMP documentée en L+ via Barrett et al. (arXiv:2512.17600).",
+      "note": "Erreur TLS/réseau sur serveur scripts.mit.edu; méthode STPA/STAMP documentée en L+ via Barrett et al. (arXiv:2512.17600, SRC-058, L+).",
       "checked_at": "2026-11-22T14:20:57Z"
     },
     {
@@ -176,7 +176,7 @@
       "http_status": 403,
       "block_reason": "HTTP_403",
       "reason": "HTTP_403",
-      "note": "HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (L+) avec mention explicite du statut F du communiqué primaire.",
+      "note": "HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (SRC-011, L+) avec mention explicite du statut F du communiqué primaire.",
       "checked_at": "2026-11-22T14:20:57Z"
     },
     {
@@ -187,7 +187,7 @@
       "http_status": 404,
       "block_reason": "HTTP_404",
       "reason": "HTTP_404",
-      "note": "HTTP 404 sur la sous-page EGF de gleif.org; compensé par la page officielle gleif.org/organizational-identity/lei-vlei/the-verifiable-lei-vlei/ et les dépôts ouverts GLEIF-IT/vlei-egf et WebOfTrust/vLEI (SRC-079, L+).",
+      "note": "HTTP 404 sur la sous-page EGF de gleif.org; compensé par la page officielle gleif.org/en/organizational-identity/lei-vlei/the-verifiable-lei-vlei/ et les dépôts ouverts GLEIF-IT/vlei-egf et WebOfTrust/vLEI (SRC-079, L+).",
       "checked_at": "2026-11-22T21:38:00Z"
     },
     {

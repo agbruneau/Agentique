@@ -3,7 +3,7 @@
   "freeze_date": "2026-12-02",
   "div_02": {
     "id": "DIV-02",
-    "source": "Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md (§ Liminaire, Ch. 2, Annexe A)",
+    "source": "Tome 5 — Synthèse exécutive et concordance architecturale (§ Liminaire, Ch. 2, Annexe A)",
     "objet": "Résorption de la lacune corpus_2026_absent entre CAD26 (CRE-IA-2026-01 v1.2, 6 couches et 3 plans) et PD28 (5 couches C1–C5 et 3 volets Plans A–C)",
     "statut": "Fermée sur pièce",
     "trois_rectifications": [
@@ -199,9 +199,9 @@
           "corpus_ref": "7 - Livre.md L184-L202"
         }
       ],
-      "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (0.2) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
+      "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (Liminaire § 0.2 et Chapitre 36) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
       "liminaire_section": "0.2",
-      "rationale": "Empêche le déploiement d'agents probabilistes sur des workflows où un script déterministe sans modèle suffit, tout en rendant les profils OPA (policies_opa) homogènes entre le cadre normatif et les chapitres pratiques."
+      "rationale": "Empêche le déploiement d'agents probabilistes sur des flux où un script déterministe sans modèle suffit, tout en rendant les profils OPA (politiques Rego policies_opa évaluées par policy_saga/opa_runner.py) homogènes entre le cadre normatif et les chapitres pratiques du Compendium."
     },
     {
       "discordance_id": "DISC-02",
@@ -223,7 +223,7 @@
           "corpus_ref": "6 - Livre Blanc.md L5011-L5012 (C05-C06)"
         }
       ],
-      "canonical_vol8_choice": "Conformément à AO-03, la prose du Volume 8 proscrit « Classe 1–6 », « Stade 0–4 » et « Palier 1–3 » ; le noyau technique utilise exclusivement les 3 niveaux de criticité (BLOQUANT, OBLIGATOIRE, RECOMMANDE) et les paliers d'outils P0–P3 avec table de correspondance dans 0.2.",
+      "canonical_vol8_choice": "Conformément à AO-03, la prose et le code de la trousse exécutable d'homologation (Tome 8) proscrivent « Classe 1–6 », « Stade 0–4 » et « Palier 1–3 » ; le noyau technique utilise exclusivement les 3 niveaux de criticité (BLOQUANT, OBLIGATOIRE, RECOMMANDE) et les paliers d'outils P0–P3, avec table de correspondance complète dans le Compendium (Liminaire § 0.2, Annexe C et Chapitre 36).",
       "liminaire_section": "0.2",
       "rationale": "Supprime les collisions d'échelles dans le code Rego et JSON Schema tout en préservant une traçabilité exacte vers les critères C05–C06 et les plans pluriannuels antérieurs."
     },
@@ -247,9 +247,9 @@
           "corpus_ref": "5 - Memoire.md L98"
         }
       ],
-      "canonical_vol8_choice": "Les quatre modules techniques de 8 - Manuel/trousse/ ancrent leurs composants dans les Plans A (policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
+      "canonical_vol8_choice": "Les quatre modules techniques de la trousse exécutable d'homologation ancrent leurs composants dans les Plans A (policy_saga/opa_runner.py avec politiques Rego policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
       "liminaire_section": "0.2",
-      "rationale": "Aligne directement la structure en quatre chapitres du Volume 8 sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des volumes 2 à 7."
+      "rationale": "Aligne directement l'architecture exécutable d'homologation (Partie XII du Compendium, Chapitres 34 à 36) sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des tomes antérieurs (Tomes 2 à 7)."
     },
     {
       "discordance_id": "DISC-04",

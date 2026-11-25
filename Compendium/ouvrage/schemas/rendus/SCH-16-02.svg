@@ -10,7 +10,7 @@
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#B45309"/>
-  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B45309">Z1 — Anatomie critique de l'Agent Card signée (A2A v1.0.0, JWS + JCS RFC 8785)</text>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B45309">Z1 — Anatomie critique de l'Agent Card signée (A2A v1.0.0 / v1.0.1, JWS + JCS RFC 8785)</text>
   <g id="node-1" class="node" data-node="true">
     <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
     <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#451A03">Signature JWS + JCS optionnelle</text>

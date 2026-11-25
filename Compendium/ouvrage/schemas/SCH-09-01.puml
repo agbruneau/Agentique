@@ -44,10 +44,11 @@ package "Passerelle d'agents — PEP bidirectionnel en échec fermé (EXIG-IAM-1
 together {
   rectangle "MCP 2026-07-28\nHTTP sans état · ≤ 15 outils" as N7 <<det>>
   rectangle "A2A v1.0.1\nAgent Card JWS/JCS" as N8 <<det>>
-  rectangle "CloudEvents 1.0\nAsyncAPI · maxhops = 4" as N9 <<det>>
+  rectangle "CloudEvents 1.0.2\nAsyncAPI · maxhops = 4" as N9 <<det>>
 }
 
 rectangle "Règle de deux (EXIG-SEC-04) & retrait anti-exfiltration (EXIG-SEC-06)\nEntrée non fiable + Accès sensible → retrait immédiat outils d'envoi et P3" as N10 <<red>>
+rectangle "Désambiguïsation du maillage (3 acceptions)\nRéseau (Istio/agentgateway) · Dorsale (Solace) · Confiance (AgentMesh, alpha)" as N11 <<gray>>
 
 N1 --> N4
 N2 <--> N4
@@ -56,6 +57,7 @@ N6 <--> N7
 N6 <--> N8
 N6 <--> N9
 N6 --> N10 : Marquage irréversible session
+N9 -[hidden]right-> N11
 
 legend bottom
   **Bleu ardoise** : Contrôles aller 1 à 7 de la passerelle PEP en échec fermé

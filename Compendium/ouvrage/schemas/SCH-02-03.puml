@@ -29,21 +29,21 @@ title De l'essai ponctuel (pass@1) à la constance industrielle (pass^k ≥ 0,95
 
 package "Z1 — Illusion du potentiel (pass@k) et palmarès biaisés" {
   rectangle "Métrique pass@k (≥ 1 succès sur k)\nDissimule l'effondrement (< 25 % à pass^8)" as N1 <<red>>
-  rectangle "Palmarès publics contaminés\n(> 25 % biaisés : HAL, SWE-bench)" as N2 <<red>>
+  rectangle "Palmarès publics contaminés\n(biais de harnais & fuites révélés par HAL)" as N2 <<red>>
   N1 .[#DC2626].> N2 : ① Exclure en production
 }
 
 package "Z2 — Exigence de constance (pass^k = p^k) et courbe HAL" {
   rectangle "Banc hermétique τ-bench\n(sans appel réel aux SoR)" as N3 <<teal>>
-  rectangle "Exécution répétée EXIG-EVA-03\n(k = 3 minimal · k = 5 critique ≥ 0,95–0,99)" as N4 <<teal>>
-  rectangle "Arbitrage coût / précision\nsur la courbe HAL (ADR-022)" as N5 <<teal>>
+  rectangle "Exécution répétée EXIG-EVA-02/03\n(50–100 scénarios CI × k = 3 à 5)" as N4 <<teal>>
+  rectangle "Arbitrage coût / précision\nsur la frontière de Pareto HAL (ADR-022)" as N5 <<teal>>
   N2 --> N3 : ② Isoler scénarios
   N3 --> N4
   N4 --> N5
 }
 
 package "Z3 — Porte statistique CI/CD et borne de Wilson à 95 %" {
-  rectangle "Calcul Wilson (evalops_prr/wilson_bounds.py)\nn ≥ ceil(3/p) sur ≥ 50 à 100 scénarios" as N6 <<indigo>>
+  rectangle "Wilson unilatérale (wilson_bounds.py)\nn ≥ ceil(3/p) : 300 scénarios distincts (p = 1 %)" as N6 <<indigo>>
   rectangle "Porte bloquante C31 / PRR F-15\n& veille de dérive METR" as N7 <<indigo>>
   N5 --> N6 : ③ Attester constance
   N6 --> N7 : ④ Bloquer si pass^5 < seuil

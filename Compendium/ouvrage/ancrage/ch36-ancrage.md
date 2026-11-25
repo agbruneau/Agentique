@@ -92,9 +92,9 @@ Toutes les formulations divergentes ou insuffisamment qualifiées relevées lors
   - **Appui vérifié :** `registre/concordance-taxonomies.json` (`L188–205`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C36-17 (`L58`, Tableau 36.1 `DISC-02`)** — *Affirmation :* Arbitrage `DISC-02` proscrivant en prose technique `Classe 1–6`, `Stade 0–4` et `Palier 1–3` au profit exclusif de `BLOQUANT`, `OBLIGATOIRE`, `RECOMMANDE` et des paliers d'outils `P0–P3`.
-  - **Appui vérifié :** `registre/concordance-taxonomies.json` (`L207–229`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+- **C36-17 (`L56`, Tableau 36.1 `DISC-02`)** — *Affirmation :* Arbitrage `DISC-02` (`AO-03`) proscrivant dans la prose et le code du Tome 8 `Classe 1–6`, `Stade 0–4` et `Palier 1–3` au profit exclusif de `BLOQUANT`, `OBLIGATOIRE`, `RECOMMANDE` et des paliers d'outils `P0–P3` avec table de correspondance inter-tomes (`→ Annexe C`).
+  - **Appui vérifié :** `registre/concordance-taxonomies.json` (`L207–229`), `Compendium/prd.md` (`L6901`).
+  - **Passe initiale :** conforme · **Action :** révision `REV-04` (`PRD-L4-014`) : recadrage exact de la portée de `DISC-02` sur la prose et le code du Tome 8 avec table de correspondance inter-tomes · **Verdict : supporté**
 
 - **C36-18 (`L59`, Tableau 36.1 `DISC-03`)** — *Affirmation :* Arbitrage `DISC-03` raccordant les modules Python/`OPA` du Tome 8 aux Plans `A`, `B` et `C` du cadre `CAD26` (`5 SBB`).
   - **Appui vérifié :** `registre/concordance-taxonomies.json` (`L231–253`).
@@ -192,6 +192,6 @@ Toutes les formulations divergentes ou insuffisamment qualifiées relevées lors
   - **Appui vérifié :** `Compendium/prd.md` (`L6502–6507`), `outils/genere_annexes.py`, `outils/verifie_manuscrit.py` (`CA-17`), `ch36-sources.md` (`[2..7, 9, 10, 12]`).
   - **Passe initiale :** écart rectifié · **Action :** rattaché explicitement `EXIG-CONC-01..06` à `prd.md`, aligné les décomptes des rangées `4` et `5` (`24` dépendances / `n ≥ 8/24`, `319` + `115` schémas, `HTML` `23`/`9`/`115`) et ajouté le renvoi `→ Annexe C` (lissage G5) · **Verdict : supporté**
 
-- **C36-41 (`L161–L165`)** — *Affirmation :* Trois invariants exécutables du Chapitre 36 (`EXIG-CONC-01` concordance `DIV-02` et `DISC-01`–`05` ; `AO-01`/`CA-16`/`CA-17` intégrité `L+`/`Statut F` et `Wyvern G0–G5` ; `DC-P01`/`AO-05`/`EF-06` fraîcheur `30` j, `gabarit-pdf/` et clause `non-avis`).
-  - **Appui vérifié :** `Compendium/prd.md` (`L6502–6507`), `registre/concordance-taxonomies.json`, `outils/verifie_manuscrit.py`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+- **C36-41 (`L159–L163`)** — *Affirmation :* Trois invariants exécutables du Chapitre 36 (`EXIG-CONC-01` concordance `DIV-02` et `DISC-01`–`05` bornant la proscription `DISC-02` à la prose et au code du Tome 8 ; `AO-01`/`CA-16`/`CA-17` intégrité `L+`/`Statut F` et `Wyvern G0–G5` ; `DC-P01`/`AO-05`/`EF-06` fraîcheur `30` j, `gabarit-pdf/` et clause `non-avis`).
+  - **Appui vérifié :** `Compendium/prd.md` (`L6502–6507`, `L6563`, `L6901`), `registre/concordance-taxonomies.json`, `outils/verifie_manuscrit.py`, `schemas/SCH-36-03.puml`.
+  - **Passe initiale :** conforme · **Action :** révision `REV-04` : renumérotation continue `Figure 112` à `Figure 115` (`PRD-L4-012`), recadrage `DISC-02` + explicitation `EXIG-AMF-01..12`, `EXIG-CON-27..30`, `EXIG-SEC-27..28` (`PRD-L4-014`), suppression des `5` mentions `prd.md` au `Tableau 36.3` et de `gauntlet-loop` (`PRD-L4-015`, `SCH-36-03.puml` `PRD-L4-027`), harmonisation `H2`/`H3` (`PRD-L4-022`) et nuance explicite de source secondaire `AIBanks.ca` sur `[12]` (`REF-003`) · **Verdict : supporté**

@@ -41,9 +41,9 @@ package "Z2 — Exposition gouvernée sous identité du mandant (EXIG-ARC-16)" {
 }
 
 package "Z3 — Rails canadiens ISO 20022 (Lynx achevé et RTR reporté)" {
-  rectangle "Rail Lynx (migration achevée nov. 2025)\nRèglement n° 10 DORS/2026-133" as N5 <<green>>
-  rectangle "Rail RTR (reporté après 4 cibles)" as N6 <<amber>>
-  rectangle "④ Barrière d'irréversibilité (§45.12)\nObservation et préparation sans exécution autonome" as N7 <<red>>
+  rectangle "Rail Lynx (migration achevée nov. 2025)\nPaiement grande valeur ISO 20022" as N5 <<green>>
+  rectangle "Rail RTR (reporté après 4 cibles)\nRèglement n° 10 DORS/2026-133 (août 2026)" as N6 <<amber>>
+  rectangle "④ Barrière d'irréversibilité (Tome 1 § 45.12)\nObservation et préparation sans exécution autonome" as N7 <<red>>
   N4 --> N7
   N7 --> N5 : Lecture / dossier normalisé
   N7 ..> N6 : Veille RTR

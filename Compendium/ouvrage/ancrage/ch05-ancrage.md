@@ -152,3 +152,12 @@
 - **Base fermée citée (`CA-09`, `CA-10`, `CA-11`) :** `10 / 10` sources (`[1]`–`[10]`) citées, `0` référence orpheline, `4` exclusions `statut F` qualifiées sans exploitation probante (`PMC3240751`, `lautorite.qc.ca`, `genai.owasp.org`, `legisquebec`).
 - **Synchronisation et hygiène (`CA-02..CA-08`, `CA-22`) :** `0` symbole dollar non échappé, `0` collision `12-grammes`, `3` tableaux (`Tableau 5.1` à `Tableau 5.3`), `3` figures (`SCH-05-01` à `SCH-05-03`), `2` vedettes propriétaires du glossaire présentes (`Autonomie bornée`, `règle du maillon le plus élevé`), encodage UTF-8 sans BOM et fins de ligne `LF` strictes.
 - **Verdict final — supportés :** 36 / 36 (100,0 %)
+
+---
+
+## Mise à jour post-révision PRD (`REV-04`)
+
+- **C05-REV-01 (`L9`, `L29`, `L47`, `L61`, `L90`, `L107`, `SCH-05-01.svg`, `SCH-05-03.puml`, `PRD-L1-007`, `008`, `011`, `015`, `016`, `018`, `021`)** — Numérotation continue `Figure 17`–`Figure 19`, correction de l'italique imbriqué en légende de `Figure 18` (`SCH-05-02`), retrait des fuites d'atelier (`SUB_D02_02`, `SRC-055`, `SRC-063`), ajout de `ISO/IEC 42105`, retrait des backticks littéraux dans `SCH-05-01.svg`, alignement de `SCH-05-03.puml` sur `AL-Ali 2026` (`12,36 %` / `> 15 %` sous cadence, retrait du repère `93 %` issu de la source exclue `PMC3240751`) et remplacement des deux emplois de `vs`.
+  - *Preuve primaire :* `SRC-073.txt` (`[7]`, `AL-Ali 2026`), `Compendium/prd.md` (`L1148`), `specs/manifest.json`, `schemas/SCH-05-01.svg`, `schemas/SCH-05-03.puml`.
+  - Verdict : supporté
+- **Contrôle `REV-04` :** `3 721` mots (`verifie_manuscrit.py`) / `3 938` mots (`parser_plan.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch05 --strict` = `exit 0`, **100,0 % supporté**.

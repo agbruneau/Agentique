@@ -69,7 +69,7 @@ package "Z2 : Appareil critique et trois degrés d'absence" {
 package "Z3 : Pipeline G0–G5 et double recollation CA-16" {
   rectangle "Barrières G0 → G1 → G2 Wyvern\n100 % assertions au verdict supporté" as G02 <<det>>
   rectangle "Double recollation aveugle CA-16 (G3)\nInspecteurs disjoints (60/60 T4/7/8, 40/40 T5)" as CA16 <<ok>>
-  rectangle "G4 duel gauntlet-loop & G5 lissage\nAnnexes automatisées CA-17 & audit visuel" as G45 <<det>>
+  rectangle "G4 revue contradictoire aveugle & G5 lissage\nAnnexes automatisées CA-17 & audit visuel" as G45 <<det>>
 }
 LPLUS --> DEGR : ① admet sources hachées
 STATF --> DEGR : ① consigne refus sans lisser

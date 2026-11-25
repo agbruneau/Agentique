@@ -17,7 +17,7 @@
 - **Empreinte SHA-256 (LF) :** `67f651d7a5b0bd9103b5cffaa3617edaec6fb7f1aa9ebd2b7d3f122a422a5f5e` (`698569` octets, `92764` mots)
 - **Synthèse factuelle vérifiée :** Spécification FinOps FOCUS v1.4 normalisant les colonnes de facturation et d'usage (BilledCost, EffectiveCost, ConsumedQuantity, ChargePeriodStart) et permettant les champs d'extension carbone/énergie (CAP-046).
 
-### [2] SRC-089 — OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md)
+### [2] SRC-089 — OpenTelemetry Semantic Conventions v1.41.0 — GenAI Attribute Registry (gen-ai.md : 60 attributs = 50 Development + 10 Deprecated)
 
 - **Auteurs / Émetteur :** OpenTelemetry Semantic Conventions Maintainers
 - **Date de publication :** `2026-04-28`
@@ -76,5 +76,5 @@
 
 ## Exclusions en statut F (`AO-01` — hors preuve)
 
-- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (L+) avec mention explicite du statut F du communiqué primaire.
+- `https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (SRC-011, L+) avec mention explicite du statut F du communiqué primaire.
 - `https://www.iso.org/standard/81230.html` — `HTTP_403` (`included_in_evidence: false`). HTTP 403 et norme payante sans texte intégral ouvert ; exclu de l'évidence probante L+ selon AO-01 (alignement SMIA couvert via EN 18286:2026 / UE 2026/2274, SRC-067).

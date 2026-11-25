@@ -36,9 +36,9 @@ Ce mode fermé élimine aussi les dérives liées à la syntaxe `JSON` : en `Reg
 
 ![Le modèle n'est jamais juge et partie : politiques hors modèle OPA/Rego/Cedar à refus par défaut au poste-frontière PEP](../../schemas/rendus/SCH-20-01.svg)
 
-*Figure 1 — SCH-20-01 : Séparation stricte entre la zone cognitive probabiliste (LLM et enquête SRE R0), la passerelle PEP obligatoire en mTLS (« jamais confiance au graphe ») et le moteur PDP déterministe OPA/Rego + Cedar opérant en échec fermé (< 1,5 ms).*
+*Figure 64 — SCH-20-01 : Séparation stricte entre la zone cognitive probabiliste (LLM et enquête SRE R0), la passerelle PEP obligatoire en mTLS (« jamais confiance au graphe ») et le moteur PDP déterministe OPA/Rego scellé en G0 complété hors G0 par la cible Cedar (< 1,5 ms).*
 
-La transposition de l'architecture `Zero Trust` au maillage d'agents exige également de clarifier la terminologie industrielle et de maîtriser le coût d'infrastructure par arête. L'analyse des offres dites *AgentMesh* révèle une divergence structurante entre les approches centrées sur le maillage réseau et le point d'application (`Solo.io` avec `agentgateway` et `AuthZEN` face aux dorsales événementielles telles que `Solace Agent Mesh` orientées vers la chorégraphie asynchrone, ← Chapitre 09).
+La transposition de l'architecture `Zero Trust` au maillage d'agents exige également de clarifier la terminologie industrielle et de maîtriser le coût d'infrastructure par arête. L'analyse des offres dites *AgentMesh* distingue trois acceptions : maillage réseau `PEP` (`Solo.io` avec `agentgateway` et `AuthZEN`), dorsale événementielle asynchrone (`Solace Agent Mesh`) et bibliothèque de confiance inter-agents (← Chapitre 09 ; complétées en repérage hors `L+` par `AWS Bedrock AgentCore` et le confinement `Docker`).
 
 Quelle que soit la topologie, l'interposition `PEP`/`PDP` par arête DOIT satisfaire cinq conditions de réfutation avant homologation (`Tome 1 § 37.9`, `Tome 2 § 9.4`). Le surcoût par saut reste sous la cible hors `G0` (`< 1,5 ms` vérifiés sur charge réelle selon `EXIG-APP-04`). De plus, chaque `PEP` réplique localement les paquets sans point unique de défaillance, exclut tout appel `LLM`, maintient des règles testables et supprime les doublons réseau/application (→ Chapitre 24).
 
@@ -48,7 +48,7 @@ Ces dérives proviennent d'un modèle de processus interne erroné (par exemple 
 
 ![Pourquoi un filtre IA ne protège pas d'un attaquant adaptatif : sûreté système STAMP/STPA et comportements déviants mesurés](../../schemas/rendus/SCH-20-02.png)
 
-*Figure 2 — SCH-20-02 : Arbre de décision opposant les filtres probabilistes isolés — vulnérables aux attaques adaptatives et aux comportements déviants — à la traduction des boucles dangereuses STAMP/STPA en verrous déterministes OPA/Cedar et disjoncteurs.*
+*Figure 65 — SCH-20-02 : Arbre de décision opposant les filtres probabilistes isolés — vulnérables aux attaques adaptatives et aux comportements déviants — à la traduction des boucles dangereuses STAMP/STPA en verrous déterministes OPA/Cedar et disjoncteurs.*
 
 Pour convertir cette approche systémique en contrôles vérifiables, chaque analyse `STPA` recense les actions de contrôle dangereuses propres au domaine métier et les traduit directement en règles `OPA`/`Cedar` et en seuils de coupe-circuit (→ Chapitre 21). À l'inverse, s'en remettre à un second `LLM` ou à un classifieur probabiliste auxiliaire échoue devant l'asymétrie fondamentale de l'évaluation adaptative (principes de `Tome 1 § 6.5.3` et `Tome 3 § 32.5` ; *The Attacker Moves Second*) et devant le constat des travaux `L+` [5, 7]. Ces filtres demeurent heuristiques et peuvent être contournés dès qu'un adversaire adapte ses entrées après déploiement, sans jamais pouvoir contourner une interdiction évaluée hors modèle sur des attributs vérifiés [5, 7].
 
@@ -148,7 +148,7 @@ Ce second contrat vérifie simultanément trois conditions cumulatives sous `def
 
 ![La Règle de deux et le marquage CaMeL : retirer l'outil d'envoi dès que l'agent lit une source externe douteuse](../../schemas/rendus/SCH-20-03.svg)
 
-*Figure 3 — SCH-20-03 : Couplage déterministe entre la Règle de deux sur session composée (retrait des outils `[C]` dès la rencontre `[A]` + `[B]` ; le repère `64,01 µs` figurant sur le schéma correspond au contrôle connexe `C6` en Campagne 1 de `Borealis-Bench`, sur `52,85 µs` de médiane cumulée `C1`–`C9`) et la propagation inter-agents de l'étiquette de contamination CaMeL jusqu'à remise à zéro ou visa CIBA/JCS h.*
+*Figure 66 — SCH-20-03 : Couplage déterministe entre la Règle de deux sur session composée (retrait des outils `[C]` dès `[A]` + `[B]`, médiane `PEP` cumulée de `52,85 µs` en Campagne 1 de `Borealis-Bench`) et la séparation CaMeL (contrôle connexe `C6` à `64,01 µs` en moyenne) avec propagation inter-agents de la teinte jusqu'à remise à zéro ou visa CIBA/JCS h.*
 
 L'application de la séparation contrôle/données trouve une illustration opérationnelle critique dans l'architecture du **SRE autonome** régie par la décision `ADR-030` (remédiation face au défaut `F-14`). Les journaux de production, alertes et traces ingérés lors d'un incident proviennent fréquemment de requêtes d'usagers ou de charges externes susceptibles de receler des injections indirectes de consignes. Accorder un accès en ligne de commande libre (`bash` ou `kubectl exec`) à un agent de dépannage revient à placer la triade létale au cœur de l'infrastructure critique.
 
@@ -183,8 +183,8 @@ En aval, ces règles alimentent les arbitrages de charge d'approbation humaine l
 
 | Livrable d'ingénierie | Exigences et contrats couverts | Vérification exécutable (`G0`–`G1`) |
 |---|---|---|
-| Contrats `rule_of_two.rego` et `camel_taint.rego` (**scellés `G0`**) | `EXIG-SEC-04/06/07`, `EXIG-GOV-17`, `C03`, `C15`, `C16`, `C25`, `C28`, `PRR S-08` | Synchronisation `CA-G0-SYNC` (`G0-EX-CH03-01` & `G0-EX-CH03-02`), `45/45` cas `OPA` à `100,0 %` (`G0`) [1, 2] |
-| Politiques `Cedar`/`AuthZEN` et runbooks `SRE` `R1`–`R3` (**cibles hors `G0`**) | `PRI-005`, `CAP-037`, `DEC-009`, `ADR-020`, `ADR-030`, `EXIG-IAM-18/21`, `EXIG-SEC-25`, `PRR S-09`, `AP-10` | Cible hors `G0` `< 1,5 ms` (`mTLS`), `forbid`, entiers `64` bits ; zéro shell libre vérifié sous `OPA` en `G0` [2] |
+| Contrats `rule_of_two.rego` et `camel_taint.rego` (**scellés `G0`**) | `EXIG-SEC-04/06/07`, `EXIG-GOV-17`, `CAP-038`, `ADR-005`, `C03`, `C15`, `C16`, `C25`, `C28`, `PRR S-08` | Synchronisation `CA-G0-SYNC` (`G0-EX-CH03-01` & `G0-EX-CH03-02`), `45/45` cas `OPA` à `100,0 %` (`G0`) [1, 2] |
+| Politiques `Cedar`/`AuthZEN` et runbooks `SRE` `R1`–`R3` (**cibles hors `G0`**) | `PRI-005`, `CAP-037`, `DEC-009`, `ADR-002`, `ADR-020`, `ADR-030`, `EXIG-AUT-10/11`, `EXIG-IAM-01/02/18/21`, `EXIG-SEC-25`, `PRR S-09`, `AP-10` | Cible hors `G0` `< 1,5 ms` (`mTLS`), `forbid`, entiers `64` bits ; zéro shell libre vérifié sous `OPA` en `G0` [2] |
 | Analyse `STAMP/STPA` et bancs adversariaux | `AgentDojo` (`77 %` vs `84 %`) [3], `MultiAgentDojo` (`0,0 %` `ASR` sous `multi-CaMeL`) [4], `ASI10` [5, 6] | Cartographie des actions de contrôle dangereuses vers disjoncteurs (`→ Ch. 21`) et détection de comportements déviants [5, 7] |
 
 *Tableau 20.3 — Livrables d'ingénierie, exigences normatives et preuves exécutables du Chapitre 20.*

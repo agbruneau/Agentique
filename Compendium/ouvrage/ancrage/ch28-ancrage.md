@@ -137,9 +137,9 @@ Toutes les formulations divergentes, attributions inexactes ou références issu
   - **Appui vérifié :** `specs/manifest.json` (`SCH-28-03`), `schemas/SCH-28-03.svg`, `schemas/rendus/SCH-28-03.svg`.
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C28-28 (`L140`)** — *Affirmation :* Convergence des échéances du `1er mai 2027` (`BSIF E-23` `[2]` et `AMF` attendu `[5]`) et du `1er octobre 2028` (`NC 31-103` `[6]`), et valeur de l'alignement des `24 PEX` sur `CRE-IA-2026-01 v1.2`.
+- **C28-28 (`L140`)** — *Affirmation :* Convergence des échéances du `1er mai 2027` (`BSIF E-23` `[2]` et `AMF` attendu sous réserve via source secondaire `AIBanks.ca`, portail en statut `F` `[5]`) et du `1er octobre 2028` (`NC 31-103` `[6]`), et valeur de l'alignement des `24 PEX` sur `CRE-IA-2026-01 v1.2`.
   - **Appui vérifié :** `SRC-065.txt` (`[2]`), `SRC-071.txt` (`[5]`), `SRC-111.txt` (`[6]`), `registre/ancres-chronologiques.json`.
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** conforme · **Action :** révision `REV-04` : ajout de la nuance explicite de source secondaire `AIBanks.ca` (`statut F` AMF) sur les renvois `[5]` (`REF-003`), retrait des échappements `\$` dans les backticks (`PRD-L4-010`) et ajout des renvois `SIG-103`, `SIG-104`, `SIG-105`, `DISC-01`, `DISC-05` au `Tableau 28.1` (`PRD-L4-025`) · **Verdict : supporté**
 
 - **C28-29 (`L142`)** — *Affirmation :* Ouverture vers le Chapitre 29 (assemblage en trois blueprints `C01–C40`, fédération multi-SaaS, continuité cognitive et séparation entre le fil rouge du Groupe Boréal et les preuves exécutables de la trousse logicielle).
   - **Appui vérifié :** `specs/manifest.json` (`ch29`), `Corpus/Tome 8` (`L1804`).

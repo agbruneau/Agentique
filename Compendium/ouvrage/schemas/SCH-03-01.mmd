@@ -2,24 +2,25 @@
 flowchart TB
   subgraph Z1["Z1 · Bascule coasienne et filtrage marché"]
     direction TB
-    N1["Dispersion marché 1 à 59<br/>(1,5–88,2 G$ US sur 6 périmètres)"]:::prob
+    N1["Dispersion marché 1 à 59<br/>(1,5–88,2 G$ US veille ; 5,3–9,9 G$ L+ 2026)"]:::prob
     N2["Quadrant « Conçue × Perméable »<br/>(coûts Coase contre dérive émergente)"]:::det
     N1 -.->|"① Filtrer par CPO"| N2
   end
 
   subgraph Z2["Z2 · Arbre à cinq portes Acheter / Assembler / Construire"]
     direction TB
-    N3{"Portes 1–2 : Flux critique<br/>et transversal ?"}:::det
-    N4{"Porte 3 : Plan de contrôle<br/>et sortie B-10 ouverts ?"}:::det
-    N5["Acheter SaaS confiné<br/>(mono-silo, lecture seule)"]:::warn
-    N6{"Portes 4–5 : Différenciant<br/>souverain interne ?"}:::det
+    N3{"Porte 1 : Flux critique<br/>ou transversal ?"}:::det
+    N4{"Portes 2–3 : Plan de contrôle<br/>et sortie B-10 ouverts ?"}:::det
+    N5["ACHETER (SaaS ouvert autorisé)<br/>Export états, journaux et sortie B-10"]:::det
+    N10["Rejet ou confinement lecture seule<br/>(BSIF B-10 · plan de contrôle fermé)"]:::warn
+    N6{"Portes 4–5 : Actif différenciant<br/>souverain exclusif ?"}:::det
     N7["ASSEMBLER (défaut 80/20)<br/>MCP, A2A, CloudEvents, Temporal"]:::green
     N8["CONSTRUIRE (souverain)<br/>Actif métier cœur et secrets"]:::blue
     N3 -->|"Non"| N4
-    N4 -->|"③ Fermé : confiner"| N5
-    N4 -->|"Ouvert"| N7
+    N4 -->|"Ouvert"| N5
+    N4 -->|"③ Fermé"| N10
     N3 -->|"② Oui"| N6
-    N6 -->|"④ Défaut"| N7
+    N6 -->|"④ Défaut (Non)"| N7
     N6 -->|"Oui"| N8
   end
 
@@ -29,6 +30,7 @@ flowchart TB
   end
 
   N2 --> N3
+  N5 --> N9
   N7 --> N9
   N8 --> N9
 
