@@ -1,6 +1,6 @@
 # Éditions structurées des huit tomes (`Tomes`)
 
-[Retour à l'index principal du dépôt](../README.md) · [Livrables consolidés (`Corpus/`)](../Corpus/README.md) · [Gabarit PDF partagé (`gabarit-pdf/`)](../gabarit-pdf/README.md)
+[Retour à l'index principal du dépôt](../README.md) · [Livrables consolidés (`Corpus/`)](../Corpus/README.md) · [Cartographie (`Cartographie/`)](Cartographie/README.md) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [PRD Web](Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [Compendium (`Compendium/`)](../Compendium/README.md) · [PRD maître (`Compendium/prd.md`)](../Compendium/prd.md) · [Gabarit PDF partagé (`gabarit-pdf/`)](../gabarit-pdf/README.md)
 
 Ce répertoire regroupe les **8 dossiers structurés** des ouvrages de la collection (`Tome 1` à `Tome 8`) : chapitres découpés en Markdown, sources et rendus des **319 diagrammes** (`253` PlantUML `.svg`, `66` Mermaid `.png`), spécifications, rapports d'assurance qualité et éditions `HTML` autonomes des tomes 7 et 8, ainsi que la trousse logicielle exécutable du tome 8 ([`Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md)).
 
@@ -23,3 +23,4 @@ Les **16 fichiers intégraux consolidés** (`8` PDF au format unifié `6,14 × 9
 
 - **Tomes 1 à 6** : chaque dossier contient les liminaires (`00 - *.md`), les parties numérotées (`01` à `11`) munies de leur propre `README.md`, ainsi que `Diagrammes/` (sources `.puml`/`.mmd` et rendus `.svg`/`.png` dans `Diagrammes/rendus/`).
 - **Tomes 7 et 8** : chaque dossier regroupe le manuscrit (`manuscrit/`), les spécifications (`specs/`), les sources ancrées (`sources-locales/`, `ancrage/`), l'assurance qualité (`aq/`), les diagrammes (`diagrammes/`), les scripts d'assemblage et de vérification (`outils/`), l'édition `HTML` autonome (`livrables/`) et, pour le Tome 8, la trousse logicielle exécutable (`trousse/`).
+- **Cartographie du corpus (`Cartographie/`)** : [`Cartographie/`](Cartographie/README.md) rassemble la cartographie thématique et structurelle complète des huit tomes (données `JSON`, outillage `Python`, suites `pytest` et deux applications `HTML` autonomes hors ligne : [`MindMap`](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) et [`PRD Web`](Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html)).
