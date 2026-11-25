@@ -1,6 +1,6 @@
 # Cartographie thématique et structurelle du Corpus (`Tomes/Cartographie`)
 
-[Retour à l'index principal](../../README.md) · [Éditions structurées (`Tomes/`)](../README.md) · [Compendium (`Compendium/`)](../../Compendium/README.md) · [Suite intégrale (`Corpus/`)](../../Corpus/README.md) · [Ouvrir la MindMap interactive](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [PRD Web autonome](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [PRD maître (`../../Compendium/prd.md`)](../../Compendium/prd.md)
+[Retour à l'index principal](../../README.md) · [Éditions structurées (`Tomes/`)](../README.md) · [Compendium (`Compendium/`)](../../Compendium/README.md) · [Suite intégrale (`Corpus/`)](../../Corpus/README.md) · [Ouvrir la MindMap interactive](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [PRD Web autonome](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [PRD maître (`../../Compendium/prd.md`)](../../Compendium/prd.md) · [Plan directeur (`../../Compendium/plan.md`)](../../Compendium/plan.md)
 
 Application HTML autonome hors ligne (`file://`, sans CDN ni requête réseau externe) cartographiant l'ensemble des **9 fichiers Markdown** du corpus ([`Corpus/README.md`](../../Corpus/README.md) et `Tome 1` à `Tome 8`).
 
@@ -33,6 +33,7 @@ La barre d'outils supérieure offre une recherche plein-texte instantanée (`Ctr
 | [`MindMap - Cartographie thématique du Corpus.html`](MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) | Application interactive autonome hors ligne (`file://`, 5 vues dont PRD intégré) |
 | [`PRD - Référentiel directeur de l'entreprise agentique.html`](PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) | Page web autonome dédiée au PRD complet (`file://`, pont MindMap) |
 | [`../../Compendium/prd.md`](../../Compendium/prd.md) | PRD maître exhaustif (`12` domaines, `36` chapitres, `71` familles, `260` thèmes, `5` annexes `A–E`, `115` schémas) |
+| [`../../Compendium/plan.md`](../../Compendium/plan.md) | Plan directeur exécutable de production, d'illustration (`115` schémas) et d'homologation `G0`–`G5` (`9` tâches, `36` fiches chapitres, `CA-01`–`CA-22`) |
 | [`outils/extraire_structure.py`](outils/extraire_structure.py) | Parseur CommonMark strict des 9 `.md` → `structure-integrale.json` |
 | [`outils/inventorier_diagrammes_tomes.py`](outils/inventorier_diagrammes_tomes.py) | Inventorie et vérifie sur disque les `319` figures des Tomes (`253` PlantUML/SVG + `66` Mermaid/PNG) |
 | [`outils/synthetiser_graphe.py`](outils/synthetiser_graphe.py) | Fusion des shards et pivots → `synthese-transversale.json` |
@@ -55,6 +56,7 @@ La barre d'outils supérieure offre une recherche plein-texte instantanée (`Ctr
 | [`donnees/corpus-mindmap-data.json`](donnees/corpus-mindmap-data.json) | Bundle unifié (graphe + structure + pivots + PRD) injecté dans la MindMap HTML |
 | [`tests/test_cartographie.py`](tests/test_cartographie.py) | Suite `pytest` + validation syntaxique et DOM 5 vues sous `Node.js` |
 | [`tests/test_prd.py`](tests/test_prd.py) | Suite `pytest` vérifiant `prd.md`, `prd-web-data.json`, schémas `115`/`319` et page PRD HTML |
+| [`tests/test_plan.py`](tests/test_plan.py) | Suite `pytest` vérifiant `Compendium/plan.md` (charte `fr-CA`, structure, couverture `260`/`115`, ancres et liens) |
 
 ## Commandes de régénération et de vérification
 
@@ -75,6 +77,6 @@ python Tomes/Cartographie/outils/preparer_donnees_prd_web.py
 python Tomes/Cartographie/outils/compiler_prd_web.py
 python Tomes/Cartographie/outils/compiler_mindmap.py
 
-# 5. Exécuter les suites complètes de tests (Cartographie + Node.js + PRD + Schémas)
-python -m pytest Tomes/Cartographie/tests/test_cartographie.py Tomes/Cartographie/tests/test_prd.py -v
+# 5. Exécuter les suites complètes de tests (Cartographie + Node.js + PRD + Plan + Schémas)
+python -m pytest Tomes/Cartographie/tests/test_cartographie.py Tomes/Cartographie/tests/test_prd.py Tomes/Cartographie/tests/test_plan.py -v
 ```

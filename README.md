@@ -1,6 +1,6 @@
 # Interopérabilité et Orchestration en Entreprise Agentique
 
-*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du corpus ([`Corpus/`](Corpus/README.md) · [`Tomes/`](Tomes/README.md) · [`Compendium/`](Compendium/README.md) · [`Cartographie/`](Tomes/Cartographie/README.md) · [MindMap HTML](Tomes/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [PRD Web](Tomes/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [`Compendium/prd.md`](Compendium/prd.md) · 8 ouvrages · 4 542 pages · horizon 2024–2035)*
+*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du corpus ([`Corpus/`](Corpus/README.md) · [`Tomes/`](Tomes/README.md) · [`Compendium/`](Compendium/README.md) · [`Cartographie/`](Tomes/Cartographie/README.md) · [MindMap HTML](Tomes/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Corpus.html) · [PRD Web](Tomes/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [`Compendium/prd.md`](Compendium/prd.md) · [`Compendium/plan.md`](Compendium/plan.md) · 8 ouvrages · 4 542 pages · horizon 2024–2035)*
 
 ---
 
@@ -171,6 +171,7 @@ Les huit ouvrages forment une suite thématique de huit tomes (`PDF` au format u
 - [`Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) : le code exécutable de référence (`4` modules `Python 3.12+`, `3` politiques `OPA / Rego`, `13` schémas `JSON Schema`, vecteurs de test officiels et `83` tests automatisés `pytest`).
 - [`Compendium/`](Compendium/README.md) : espace de production du Compendium fondé sur [`Compendium/prd.md`](Compendium/prd.md) :
   - [`Compendium/prd.md`](Compendium/prd.md) : PRD maître exhaustif consolidant l'architecture du corpus (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `616` interrelations et `5` annexes normatives `A–E` incluant `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes, compilé par [`compiler_prd.py`](Tomes/Cartographie/outils/compiler_prd.py)) et sa version interactive autonome [`PRD - Référentiel directeur de l'entreprise agentique.html`](Tomes/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html).
+  - [`Compendium/plan.md`](Compendium/plan.md) : plan directeur exécutable de production, d'illustration (`115` schémas) et d'homologation vérifiable `G0`–`G5` du traité (`9` tâches, `36` fiches chapitres, `5` annexes et `22` critères `CA-01`–`CA-22`, vérifié par [`test_plan.py`](Tomes/Cartographie/tests/test_plan.py)).
 - [`gabarit-pdf/`](gabarit-pdf/README.md) : le gabarit `Typst` commun et les scripts permettant de recompiler les diagrammes et les huit PDF de la collection.
 
 ---
