@@ -1,6 +1,6 @@
 # Sources locales déposées par l'auteur (`statut L+`)
 
-[Retour au sommaire du document](../README.md) · [Sources des tomes](../../README.md) · [Tomes publiés](../../../../Tomes/README.md) · [Index principal du dépôt](../../../../README.md)
+[Retour au sommaire du document](../README.md) · [Compendium](../../../../Compendium/README.md) · [Sources des tomes](../../README.md) · [Tomes publiés](../../../../Tomes/README.md) · [Index principal du dépôt](../../../../README.md)
 
 Déposez dans ce répertoire, **avant de lancer la production agentique**, tout document PDF ou texte UTF-8 obtenu licitement (rapports institutionnels, articles en libre accès ou tirés à part autorisés, notes réglementaires officielles) que les agents doivent lire intégralement et hacher en `SHA-256` dans [`recherche/manifeste-sources-sha256.json`](../recherche/manifeste-sources-sha256.json).
 

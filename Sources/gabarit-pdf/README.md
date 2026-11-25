@@ -1,6 +1,6 @@
 # Gabarit PDF partagé de la collection
 
-[Retour à l'index principal du dépôt](../../README.md) · [Index des sources](../README.md)
+[Compendium](../../Compendium/README.md) · [Tomes publiés](../../Tomes/README.md) · [Index des sources](../README.md) · [Sources des tomes](../Tomes/README.md) · [Cartographie](../Cartographie/README.md) · [Retour à l'index principal du dépôt](../../README.md)
 
 Gabarit éditorial Typst unique et compilateur unifié pour le **Compendium** ([`Compendium/`](../../Compendium/README.md)) et les **8 tomes** du dépôt (fichiers consolidés `.md`/`.pdf` dans [`Tomes/`](../../Tomes/README.md) et dossiers sources dans [`Sources/Tomes/`](../Tomes/README.md)), fondés sur la charte de référence de [Compendium.pdf](../../Compendium/Compendium.pdf) et de [Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf](../../Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.pdf).
 
@@ -12,7 +12,7 @@ Gabarit éditorial Typst unique et compilateur unifié pour le **Compendium** ([
 | [postprocess_typst.py](postprocess_typst.py) | Post-traitement typographique `fr-CA` (rééquilibrage des tableaux y compris larges 8–11 colonnes, virgules décimales en math, légendes centrées, césure des URL et du code inline, espaces insécables, sections bibliographiques non justifiées, exposant `pass^k`). |
 | [preprocess_md.py](preprocess_md.py) | Pré-traitement Markdown (YAML liminaire, retrait des couvertures aplaties et TDM statiques `#` ou `## Table des matières` du Compendium et des tomes 1–6, normalisation des chemins d'images, injection des diagrammes rendus avec remplacement automatique des blocs `> **[Figure]**`). |
 | [volumes.json](volumes.json) | Catalogue déclaratif des 9 volumes (`0` Compendium et `1`–`8` Tomes : répertoires et diagrammes sous `Sources/Compendium/` et `Sources/Tomes/`, sources `.md` et cibles `.pdf` dans `Compendium/` et `Tomes/`, métadonnées de couverture, mentions de référence, conventions de titres et options de pré-traitement). |
-| [compile_diagrams.py](compile_diagrams.py) | Compilateur parallèle avec cache incrémental des diagrammes `.puml` (`plantuml` → `.svg`) et `.mmd` (`mmdc` → `.png` haute résolution) vers `Sources/Tomes/<Tome>/Diagrammes/rendus/` (noms canoniques courts, rapport console/JSON). |
+| [compile_diagrams.py](compile_diagrams.py) | Compilateur parallèle avec cache incrémental des diagrammes `.puml` (`plantuml` → `.svg`) et `.mmd` (`mmdc` → `.png` haute résolution) couvrant par défaut les tomes 1 à 6 via `--all` (ou tout dossier via `--input-dir`) vers `Sources/Tomes/<Tome>/Diagrammes/rendus/` (noms canoniques courts, rapport console/JSON). |
 | [compile_pdf.py](compile_pdf.py) | Interface CLI et API Python pour compiler le Compendium, un tome catalogué, toute la collection ou un fichier Markdown arbitraire. |
 | [test_gabarit_pdf.py](test_gabarit_pdf.py) | Suite de tests automatisés (`pytest`) couvrant le catalogue, les transformations, `compile_diagrams.py` et la compilation Typst réelle. |
 
@@ -73,7 +73,7 @@ Contenu de l'ouvrage.
 
 ## Raccordement avec `Compendium`, `Tome 7` et `Tome 8`
 
-Les assembleurs [Sources/Compendium/ouvrage/outils/assemble_livre.py](../Compendium/ouvrage/outils/assemble_livre.py), [Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py](../Tomes/Tome%207%20-%20Gouverner%20l'industrialisation%20cognitive/outils/assemble_livre.py) et [Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py](../Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/outils/assemble_livre.py) utilisent [gabarit-collection.typ](gabarit-collection.typ) (via `render_typst_document`) et délèguent leur post-traitement Typst à [postprocess_typst.py](postprocess_typst.py).
+Les assembleurs [Sources/Compendium/ouvrage/outils/assemble_livre.py](../Compendium/ouvrage/outils/assemble_livre.py), [Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py](../Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive/outils/assemble_livre.py) et [Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py](../Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/outils/assemble_livre.py) utilisent [gabarit-collection.typ](gabarit-collection.typ) (via `render_typst_document`) et délèguent leur post-traitement Typst à [postprocess_typst.py](postprocess_typst.py).
 
 ## Tests
 

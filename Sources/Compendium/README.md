@@ -16,7 +16,7 @@ Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine é
   - `sources/` et `recherche/` : `37` bases documentaires fermées (`ch00..ch36-sources.md`), corpus primaire ouvert `L+` haché `SHA-256` et registre d'exclusions `Statut F`.
   - `registre/` : `7` registres JSON SSOT (`mindmap-complet.json`, `specifications-lplus.json`, `matrice-exig-prr-c40.json`, `concordance-taxonomies.json`, `ancres-chronologiques.json`, `faits-empiriques.json`, `glossaire-termes.json`).
   - `ancrage/` et `aq/` : `37` journaux d'audit atomique `G2`, rapport `G0` (`rapports-g0.json`), doubles recollations `G3`, journaux `G4`/`G5`.
-  - `outils/` : scripts Python déterministes d'inspection, de génération et d'assemblage (`verifie_specs.py`, `compile_schemas_compendium.py`, `execute_g0.py`, `genere_annexes.py`, `assemble_livre.py`, `verifie_manuscrit.py`) et leur suite `pytest`.
+  - `outils/` : `14` fichiers — `9` scripts Python déterministes (`_communs.py`, `verifie_specs.py`, `collecte_mlr_ouverte.py`, `compile_schemas_compendium.py`, `execute_g0.py`, `genere_annexes.py`, `echantillon_aq.py`, `verifie_manuscrit.py`, `assemble_livre.py`) et `5` suites `pytest` totalisant `43` tests (`test_collecte_mlr.py`, `test_compile_schemas.py`, `test_execute_g0.py`, `test_outillage_aq.py`, `test_verifie_specs.py`).
 
 ---
 
@@ -29,11 +29,12 @@ Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine é
 
 ## Commandes de validation et de publication
 
-Exécuter depuis la racine du dépôt (`-B` et `-p no:cacheprovider` évitent la génération de caches) :
+Exécuter depuis la racine du dépôt (`-B` et `-p no:cacheprovider` évitent la génération de caches ; ajouter `--output <chemin-temporaire.json>` à `execute_g0.py` pour ne pas modifier l'horodatage de `aq/rapports-g0.json`) :
 
 ```powershell
 python -B Sources/Compendium/ouvrage/outils/verifie_specs.py
 python -B Sources/Compendium/ouvrage/outils/compile_schemas_compendium.py --check-only
+python -B Sources/Compendium/ouvrage/outils/execute_g0.py --verify-sync-manifest --output "$env:TEMP\rapports-g0.json"
 python -B Sources/Compendium/ouvrage/outils/genere_annexes.py
 python -B Sources/Compendium/ouvrage/outils/assemble_livre.py --all
 python -B Sources/Compendium/ouvrage/outils/verifie_manuscrit.py --strict --check-deliverables

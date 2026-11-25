@@ -1,6 +1,6 @@
 # Diagrammes — Tome 7 : *Gouverner l'industrialisation cognitive*
 
-Index des 23 diagrammes originaux de l'ouvrage *Gouverner l'industrialisation cognitive* (retour au [sommaire du document](../README.md) · [sources des tomes](../../README.md) · [tomes publiés](../../../../Tomes/README.md) · [index principal du dépôt](../../../../README.md)).
+Index des 23 diagrammes originaux de l'ouvrage *Gouverner l'industrialisation cognitive* (retour au [sommaire du document](../README.md) · [Compendium](../../../../Compendium/README.md) · [sources des tomes](../../README.md) · [tomes publiés](../../../../Tomes/README.md) · [index principal du dépôt](../../../../README.md)).
 
 - **Total des diagrammes** : 23
 - **PlantUML (`.puml`)** : 20 (rendus vectoriels `.svg` dans `rendus/`)

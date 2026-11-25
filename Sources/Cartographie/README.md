@@ -6,7 +6,7 @@ Application HTML autonome hors ligne (`file://`, sans CDN ni requête réseau ex
 
 ## Métriques vérifiées du graphe et du corpus
 
-- **Périmètre source** : `9` fichiers `.md`, `69 821` lignes, `1 537 370` mots (`split()`), `4 542` pages PDF et `319` diagrammes.
+- **Périmètre source** : `9` fichiers `.md`, `69 821` lignes, `1 537 380` mots (`split()`), `4 542` pages PDF et `319` diagrammes.
 - **Structure extraite (`CommonMark` strict)** : `4 434` titres `H1–H6` (hors `143` blocs de code clôturés filtrés), `564` identifiants normatifs et techniques uniques (`EXIG-*`, `CAP-*`, `PEX-*`, `OO1–OO4`, `T1–T10`, `PRR-75`, `C01–C40`, `L0–L4`, `DIV-02`, `SBB-*`, `G0–G5`).
 - **Arbre thématique (5 niveaux)** : `380` nœuds (`1` racine, `12` domaines `D01–D12`, `36` sous-domaines, `71` familles thématiques, `260` thèmes détaillés), `1 931` occurrences ancrées aux lignes exactes.
 - **Couverture & interrelations** : `616` interrelations typées sur les `8` types canoniques (`0` arête cassée, `0` auto-boucle), `290 / 290` chapitres/liminaires/annexes mappés (`0` orphelin) et `1 636` unités structurelles liées directement aux thèmes.

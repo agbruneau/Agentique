@@ -1,6 +1,6 @@
 # Tome 5 — Synthèse exécutive et concordance architecturale
 
-[Retour à l'index principal du dépôt](../../../README.md) · [Sources des tomes (`Sources/Tomes/`)](../README.md) · [Tomes publiés (`Tomes/`)](../../../Tomes/README.md) · [Composants sources (`Sources/`)](../../README.md)
+[Retour à l'index principal du dépôt](../../../README.md) · [Compendium](../../../Compendium/README.md) · [PRD maître](../../Compendium/prd.md) · [Sources des tomes (`Sources/Tomes/`)](../README.md) · [Tomes publiés (`Tomes/`)](../../../Tomes/README.md) · [Composants sources (`Sources/`)](../../README.md)
 
 ## Informations sur le document
 

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-25T18:26:05Z",
+  "generated_at": "2026-11-25T19:57:40Z",
   "generator": "Sources/Cartographie/outils/consolider_catalogue_schemas.py",
   "source_shards": [
     "Sources/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json",

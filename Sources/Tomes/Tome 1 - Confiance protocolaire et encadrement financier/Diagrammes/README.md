@@ -5,7 +5,7 @@ Index des 118 diagrammes extraits et reconstruits depuis `Tome 1 - Confiance pro
 - **Total des diagrammes** : 118
 - **PlantUML (`.puml`)** : 63 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 55 (rendus haute résolution `.png` dans `rendus/`)
-- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 1` (génère `rendus/Figure-XX.Y.svg` / `.png` injectés dans le PDF unifié via [`../../../gabarit-pdf/`](../../../gabarit-pdf/README.md))
+- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 1` (génère `rendus/Figure-XX.Y.svg` / `.png` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-25T18:26:07.367808+00:00",
+  "generated_at": "2026-11-25T19:57:42.093001+00:00",
   "lang": "fr-CA",
   "schema": {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -1523,7 +1523,7 @@
   "totals": {
     "files": 9,
     "lines": 69821,
-    "words": 1537370,
+    "words": 1537380,
     "headings": 4434,
     "nodes": 380,
     "theme_nodes": 260,
@@ -92863,12 +92863,12 @@
   },
   "structure": {
     "schema_version": "1.0.0",
-    "generated_at": "2026-11-25T18:26:03.932628+00:00",
+    "generated_at": "2026-11-25T19:57:39.135177+00:00",
     "generator": "Sources/Cartographie/outils/extraire_structure.py",
     "totals": {
       "files": 9,
       "lines": 69821,
-      "words": 1537370,
+      "words": 1537380,
       "headings": 4434,
       "headings_by_level": {
         "H1": 95,
@@ -92888,7 +92888,7 @@
         "filename": "README.md",
         "title": "Suite intégrale des Tomes (`Tomes/`)",
         "line_count": 30,
-        "word_count": 1156,
+        "word_count": 1166,
         "heading_count": 3,
         "headings_by_level": {
           "H1": 1,
@@ -92919,7 +92919,7 @@
             "title": "Suite intégrale des Tomes (`Tomes/`)",
             "line_start": 1,
             "line_end": 30,
-            "word_count": 1156,
+            "word_count": 1166,
             "own_word_count": 273,
             "part_title": null,
             "identifiers": [
@@ -92955,8 +92955,8 @@
                 "title": "Repères éditoriaux",
                 "line_start": 24,
                 "line_end": 30,
-                "word_count": 651,
-                "own_word_count": 651,
+                "word_count": 661,
+                "own_word_count": 661,
                 "part_title": null,
                 "identifiers": [
                   "CA-G0-SYNC",

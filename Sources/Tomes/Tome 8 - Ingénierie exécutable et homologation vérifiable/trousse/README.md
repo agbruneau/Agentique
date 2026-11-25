@@ -1,6 +1,6 @@
 # `Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/` — Trousse logicielle exécutable du Tome 8
 
-[Retour au sommaire du manuel](../README.md) · [Sources des tomes](../../README.md) · [Tomes publiés](../../../../Tomes/README.md) · [Index principal du dépôt](../../../../README.md) · [Rapport `G0` (`aq/rapports-g0.json`)](../aq/rapports-g0.json)
+[Retour au sommaire du manuel](../README.md) · [Compendium](../../../../Compendium/README.md) · [Sources des tomes](../../README.md) · [Tomes publiés](../../../../Tomes/README.md) · [Index principal du dépôt](../../../../README.md) · [Rapport `G0` (`aq/rapports-g0.json`)](../aq/rapports-g0.json)
 
 > **AVIS IMPORTANT (`non-avis` · `AO-05` / `DC-P12`) :**  
 > Ce sous-répertoire exécutable intégré à [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/`](../README.md) constitue une **référence figée et vérifiée à la date de gel (`2026-12-02`) — archive pédagogique non maintenue en production sans équipe d'exploitation dédiée**.  
@@ -13,7 +13,7 @@
 `Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/` (`107` fichiers versionnés, hors environnements locaux `.venv/` et `.tools/` exclus par [`../.gitignore`](../.gitignore)) regroupe les contrats exécutables, politiques `OPA / Rego`, schémas `JSON Schema Draft 2020-12` (`strict: true`), vecteurs officiels tiers et suites `pytest` intégrés au manuel [*Ingénierie exécutable et homologation vérifiable*](../README.md) (André-Guy Bruneau, M.Sc IT — édition de référence : janvier 2027, gel des faits : `2 décembre 2026`).
 
 - **Licence du code (`trousse/` et [`../outils/`](../outils/)) :** [`MIT`](LICENSE)
-- **Licence du manuel et des figures (`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/`) :** `CC BY 4.0` (voir [`NOTICE`](NOTICE))
+- **Licence du manuel et des figures (`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/`) :** `CC-BY-4.0` (voir [`NOTICE`](NOTICE))
 - **Moteur de politiques hors modèle :** `OPA` CLI `v1.22.4` (`Apache-2.0`, condensat vérifié dans [`tools-lock.json`](tools-lock.json))
 - **Bilan `G0` vérifié ([`../aq/rapports-g0.json`](../aq/rapports-g0.json) via [`../outils/execute_g0.py`](../outils/execute_g0.py)) :** `PASS` (`exit_code: 0`) — `83/83` tests `pytest` réussis (`0` échec, `0` ignoré), `45/45` tests `OPA` réussis à `100,0 %` de couverture, `21` validations de schémas/registres, `4/4` suites de vecteurs tiers (`50/50` fichiers), `17` paquets verrouillés dans [`requirements.lock`](requirements.lock) et `50` fichiers `.py`/`.rego` (`36` dans `trousse/` et `14` dans `../outils/`) / `18` paquets conformes `MIT` contre [`spdx-allowlist.json`](spdx-allowlist.json).
 
@@ -40,7 +40,7 @@
 - [`tools-lock.json`](tools-lock.json) — Épinglage `SHA-256` multiplateforme de `OPA CLI v1.22.4` (`Apache-2.0`, Windows `.tools/opa.exe` et Linux `.tools/opa`)
 - [`spdx-allowlist.json`](spdx-allowlist.json) — Liste blanche des `8` licences permissives compatibles `MIT`
 - [`LICENSE`](LICENSE) — Texte officiel de la licence `MIT`
-- [`NOTICE`](NOTICE) — Attributions, frontière `MIT` (`trousse/`, `../outils/`) / `CC BY 4.0` (`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/`) et notice `OPA` (les exclusions locales `trousse/.venv/`, `trousse/.tools/`, `__pycache__/` et `.pytest_cache/` sont centralisées dans [`../.gitignore`](../.gitignore))
+- [`NOTICE`](NOTICE) — Attributions, frontière `MIT` (`trousse/`, `../outils/`) / `CC-BY-4.0` (`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/`) et notice `OPA` (les exclusions locales `trousse/.venv/`, `trousse/.tools/`, `__pycache__/` et `.pytest_cache/` sont centralisées dans [`../.gitignore`](../.gitignore))
 
 ---
 

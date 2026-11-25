@@ -1,6 +1,6 @@
 # Diagrammes — Tome 8 : *Ingénierie exécutable et homologation vérifiable*
 
-Index des 9 diagrammes originaux du manuel *Ingénierie exécutable et homologation vérifiable* (retour au [sommaire du manuel](../README.md) · [sources des tomes](../../README.md) · [tomes publiés](../../../../Tomes/README.md) · [index principal du dépôt](../../../../README.md)).
+Index des 9 diagrammes originaux du manuel *Ingénierie exécutable et homologation vérifiable* (retour au [sommaire du manuel](../README.md) · [Compendium](../../../../Compendium/README.md) · [sources des tomes](../../README.md) · [tomes publiés](../../../../Tomes/README.md) · [index principal du dépôt](../../../../README.md)).
 
 - **Total des diagrammes** : 9
 - **PlantUML (`.puml`)** : 7 (rendus vectoriels `.svg` dans [`rendus/`](rendus/))

@@ -53,4 +53,4 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 
 ---
 
-*Portée et licences : ouvrage consultatif (`non-avis`) figé au `2 décembre 2026`. Textes et schémas sous licence `CC BY 4.0` ; outillage déterministe et trousse logicielle compagnon sous licence `MIT`.*
+*Portée et licences : ouvrage consultatif (`non-avis`) figé au `2 décembre 2026`. Textes et schémas sous licence `CC-BY-4.0` ; outillage déterministe et trousse logicielle compagnon sous licence `MIT`.*
