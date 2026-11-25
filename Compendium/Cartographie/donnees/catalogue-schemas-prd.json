@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-25T00:34:34Z",
+  "generated_at": "2026-11-25T01:31:43Z",
   "generator": "Compendium/Cartographie/outils/consolider_catalogue_schemas.py",
   "source_shards": [
     "Compendium/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json",
@@ -271,7 +271,7 @@
         "sanctuarisation-vivier-junior-reprise"
       ],
       "title": "Trajectoire adaptative 2026–2035 et paliers d'autonomie L0–L4 sous gouvernance duale AE ↔ AS",
-      "insertion_point": "Sommaire exécutif global — après le paragraphe §5 (Cadre réglementaire, jalons 2023–2035 et statut probatoire non-avis)",
+      "insertion_point": "Sommaire exécutif global — après le paragraphe §5 (Cadre réglementaire, jalons 2023–2035, statut probatoire non-avis et charte rédactionnelle)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -10613,6 +10613,8 @@
     "editorial_guidelines": [
       "Chaque schéma de vulgarisation vise une saisie rigoureuse et immédiate de l'intention architecturale et des mécanismes de contrôle par un lecteur non technicien.",
       "Tout acronyme ou terme technique spécialisé (MCP, A2A, OBO, OPA, Saga, CPO, Wilson, PRR-75) est systématiquement accompagné de l'explicitation de son rôle métier.",
+      "Toute fiche de schéma est rédigée en français canadien (`fr-CA`) technique, précis, professionnel, soutenu et fluide, sur un ton strictement neutre de calibre universitaire : proscription du pronom « on », des accroches chronométriques promotionnelles, des métaphores familières et des abréviations relâchées hors code, avec emploi exclusif de l'appellation normée « Systèmes d'agentivité » et des symboles typographiques Unicode (`→`, `↔`, `≤`, `≥`, `–`).",
+      "Les synthèses finales de schémas sont formulées sans préfixe injonctif redondant sous l'intitulé « Synthèse doctrinale », en préservant intégralement les chiffres, seuils, identifiants et marqueurs normatifs RFC 2119 du référentiel.",
       "Chaque chapitre CH-01 à CH-36 reçoit de 1 à 4 schémas dont l'union des champs families_covered couvre 100 % des FAM_* du chapitre.",
       "Tout schéma classé en réemploi direct ou en adaptation vulgarisée référence au moins une figure existante vérifiée dans inventaire-319-diagrammes.json, sans aucun lien orphelin."
     ],
