@@ -584,6 +584,21 @@ def test_html_css_specificity_and_svg_export_styles() -> None:
     assert "overflow: visible !important" in print_css
     assert ".svg-stage" in print_css and "620px" in print_css
 
+    # Améliorations ergonomiques sur le HTML MindMap compilé
+    assert '<a class="skip-link" href="#mm-stage">' in html
+    assert ".skip-link" in html
+    m_td_domain = re.search(r"td\.domain-col\s*\{([^}]+)\}", html)
+    assert m_td_domain is not None and "position: sticky" in m_td_domain.group(1)
+    assert "tome-concordance-details" in html
+    m_print_fn = re.search(r"function\s+prepareDomForPrint\s*\(\)\s*\{([\s\S]*?)\n\s{6}\}", html)
+    assert m_print_fn is not None and "details.tome-concordance-details" in m_print_fn.group(1)
+    m_rnav = re.search(r"\.prd-reading-nav\s*\{([^}]+)\}", html)
+    assert m_rnav is not None and "position: sticky" in m_rnav.group(1)
+    assert 'id="active-filters-strip"' in html
+    readme_bytes = (CARTO_DIR / "README.md").read_bytes()
+    assert not readme_bytes.startswith(b"\xef\xbb\xbf") and b"\r\n" not in readme_bytes
+    assert not HTML_PATH.read_bytes().startswith(b"\xef\xbb\xbf") and b"\r\n" not in HTML_PATH.read_bytes()
+
 
 def test_nodejs_all_five_views_dom_smoke() -> None:
     node_exe = shutil.which("node")
@@ -889,6 +904,12 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     // Non-régression : Glossaire intégré en Vue 5 (mode intégral + hash #view=prd&glossary=1 + TDM + recherche TDM par thème)
     if (!fullHtml.includes("prd-v5-glossary-table")) {
       throw new Error("Mode intégral Vue 5 omet le glossaire #prd-v5-glossary-table");
+    }
+    if (!fullHtml.includes('class="prd-reading-nav"')) {
+      throw new Error("Mode intégral Vue 5 omet .prd-reading-nav");
+    }
+    if (!fullHtml.includes('<details class="tome-concordance-details"')) {
+      throw new Error("Mode intégral Vue 5 omet <details class=\"tome-concordance-details\">");
     }
     if (!byId["prd-toc-list"].innerHTML.includes("data-toc-gloss")) {
       throw new Error("TDM Vue 5 omet l'entrée Glossaire [data-toc-gloss]");

@@ -586,6 +586,16 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     assert OLD_MINDMAP_NAME not in html and OLD_MINDMAP_ENCODED not in html
     assert 'id="prd-open-mindmap-link"' in html
     assert 'id="prd-glossary-btn"' in html
+    assert '<a class="skip-link" href="#prd-main">' in html
+    assert ".skip-link" in html
+    assert 'id="prd-active-filters-strip"' in html
+    m_rnav = re.search(r"\.reading-nav\s*\{([^}]+)\}", html)
+    assert m_rnav is not None and "position: sticky" in m_rnav.group(1)
+    assert "tome-concordance-details" in html
+    m_print_fn = re.search(r"function\s+preparePrdForPrint\s*\(\)\s*\{([\s\S]*?)\n\s{6}\}", html)
+    assert m_print_fn is not None and "details.tome-concordance-details" in m_print_fn.group(1)
+    assert not PRD_WEB_DATA_PATH.read_bytes().startswith(b"\xef\xbb\xbf") and b"\r\n" not in PRD_WEB_DATA_PATH.read_bytes()
+    assert not (CARTO_DIR / "README.md").read_bytes().startswith(b"\xef\xbb\xbf") and b"\r\n" not in (CARTO_DIR / "README.md").read_bytes()
 
     json_match = re.search(
         r'<script[^>]*id="prd-web-data"[^>]*>([\s\S]*?)</script>', html
@@ -695,6 +705,12 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     }
     if (!fullHtml.includes("prd-glossary-table")) {
       throw new Error("Mode intégral PRD Web omet le glossaire #prd-glossary-table");
+    }
+    if (!fullHtml.includes('class="reading-nav"')) {
+      throw new Error("Mode intégral PRD Web omet .reading-nav");
+    }
+    if (!fullHtml.includes('<details class="tome-concordance-details"')) {
+      throw new Error("Mode intégral PRD Web omet <details class=\"tome-concordance-details\">");
     }
     const prdSchemaImgs = Array.from(fullHtml.matchAll(/<img[^>]+src="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"]+)"/g), m => m[1]);
     if (prdSchemaImgs.length !== 115) {
