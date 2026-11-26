@@ -319,12 +319,12 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
         terms_by_owner.setdefault(t.get("chapitre_proprietaire", ""), []).append(t)
 
     # Reconstruire NODE_ROOT + les 379 nœuds de mindmap-complet.json (= 380 nœuds exacts)
-    domain_ids = [d["domain_id"] for d in mm["domains"]]
+    domain_node_ids = [d["node_id"] for d in mm["domains"]]
     root_node: dict[str, Any] = {
         "node_id": "NODE_ROOT",
         "canonical_slug": "corpus-agentique-racine",
         "parent_id": None,
-        "children_ids": domain_ids,
+        "children_ids": domain_node_ids,
         "depth": 0,
         "node_kind": "root",
         "domain_id": None,
@@ -549,6 +549,47 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                 if sec["unit_id"] not in target_th["chapter_unit_ids"]:
                     target_th["chapter_unit_ids"].append(sec["unit_id"])
 
+    # Rattacher la section R (Compendium/README.md — Sommaire des douze parties) aux thèmes phares par domaine
+    readme_path = repo_root / "Compendium" / "README.md"
+    readme_sec_for_score: dict[str, Any] | None = None
+    readme_summary_uid = "r-u0004"
+    if readme_path.is_file():
+        r_text = readme_path.read_text(encoding="utf-8")
+        r_file_entry = next((f for f in struct_data.get("files", []) if (f.get("section_id") or f.get("tome_id")) == "R"), None)
+        if r_file_entry and r_file_entry.get("tree"):
+            r_children = r_file_entry["tree"][0].get("children") or []
+            for rc in r_children:
+                if "sommaire" in str(rc.get("title", "")).lower():
+                    readme_summary_uid = rc["unit_id"]
+                    break
+        readme_sec_for_score = {
+            "norm_title": _norm("Compendium de l'entreprise agentique Sommaire des douze parties"),
+            "norm_body": _norm(r_text),
+            "identifiers": set(es.detect_identifiers(r_text)),
+        }
+
+    if readme_sec_for_score is not None:
+        for dom in domains_list:
+            did = dom["domain_id"]
+            dom_thms = [t for t in themes_list if t["domain_id"] == did]
+            if not dom_thms:
+                continue
+            scored_r = []
+            for t in dom_thms:
+                sp, tk, ids = _extract_theme_signals(t, [])
+                sc_r = _score_section_for_theme(readme_sec_for_score, sp, tk, ids)
+                scored_r.append((sc_r, int(t.get("relation_degree", 0)), t))
+            scored_r.sort(key=lambda x: (-x[0], -x[1], x[2]["node_id"]))
+            picked_r = [item[2] for item in scored_r[:2] if item[0] >= 4.0] or [scored_r[0][2]]
+            for r_th in picked_r:
+                if "R" not in r_th["parts_present"]:
+                    r_th["parts_present"] = sorted(
+                        r_th["parts_present"] + ["R"],
+                        key=lambda p: PART_RANK.get(p, 99),
+                    )
+                if readme_summary_uid not in r_th["chapter_unit_ids"]:
+                    r_th["chapter_unit_ids"] = sorted(r_th["chapter_unit_ids"] + [readme_summary_uid])
+
     # Propager parts_present, units_present, compendium_schemas, glossary_terms, occurrence_count vers FAM, SUB, DOM, ROOT
     def propagate_node(node: dict[str, Any]) -> None:
         if node["node_kind"] == "theme":
@@ -668,11 +709,13 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
         for pid in PART_ORDER:
             if pid == "R":
                 file_path = "Compendium/README.md"
-                matching_themes = []
-                occ_cnt = 0
-                ch_cnt = 1 if did in ("D01", "D02", "D12") else 0
+                matching_themes = [t for t in dom_themes if "R" in (t.get("parts_present") or [])]
+                occ_cnt = len(matching_themes)
+                ch_cnt = 1 if matching_themes else 0
                 roles_in_sec = ["synthese"] if ch_cnt else []
-                sample_ids = ["CRE-IA-2026-01", "G0–G5"] if ch_cnt else []
+                sample_ids = sorted(
+                    {ident for t in matching_themes for ident in (t.get("identifiers") or [])}
+                )[:8]
             else:
                 file_path = "Compendium/Compendium.md"
                 matching_themes = [t for t in dom_themes if pid in (t.get("parts_present") or [])]

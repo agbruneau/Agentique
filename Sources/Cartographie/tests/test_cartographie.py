@@ -230,6 +230,19 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         assert 0 <= n["depth"] <= 4
         if n["depth"] > 0:
             assert n["parent_id"] in node_by_id
+        for cid in n.get("children_ids") or []:
+            assert cid in node_by_id, f"Enfant inexistant {cid!r} dans {n['node_id']}.children_ids"
+
+    root_node = node_by_id["NODE_ROOT"]
+    assert len(root_node["children_ids"]) == 12
+    assert root_node["children_ids"] == [f"DOM_D{i:02d}" for i in range(1, 13)]
+
+    for n in nodes:
+        if n["node_kind"] in ("domain", "subdomain", "family"):
+            assert len(n.get("parts_present") or []) >= 1, f"parts_present vide sur {n['node_id']}"
+            assert len(n.get("units_present") or []) >= 1, f"units_present vide sur {n['node_id']}"
+            assert int(n.get("occurrence_count") or 0) >= 1, f"occurrence_count nul sur {n['node_id']}"
+            assert n.get("owner_chapter"), f"owner_chapter absent sur {n['node_id']}"
 
     for rel in relations:
         assert rel["source"] in node_by_id
@@ -367,6 +380,8 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert "http://" not in html_without_json
     assert "https://" not in html_without_json
     assert not re.search(r"\bsynthetise\b", html_without_json, re.IGNORECASE)
+    assert "mm-xray-btn" not in html_without_json
+    assert "Mode Rayon X" not in html_without_json
 
 
 def test_markdown_relative_links_valid() -> None:
@@ -440,6 +455,34 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
 
     const filtered = eng.filterNodesAndRelations(idx, { domain: "D07", section: "P07" });
     if (filtered.matchingNodeIds.size === 0) throw new Error("Filtrage D07+P07 vide");
+    const mismatchSec = eng.filterNodesAndRelations(idx, { domain: "D07", section: "LIM" });
+    if (mismatchSec.matchingNodeIds.size === filtered.matchingNodeIds.size) {
+      throw new Error("filters.section ignoré par filterNodesAndRelations");
+    }
+    for (const secId of ["R", "LIM", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "ANN"]) {
+      const fSec = eng.filterNodesAndRelations(idx, { section: secId });
+      if (!fSec.active || fSec.matchingNodeIds.size === 0) {
+        throw new Error("Filtrage section vide ou inactif pour: " + secId);
+      }
+    }
+    if (idx.childrenByParent["NODE_ROOT"].length !== 12 || idx.descendantCount["NODE_ROOT"] !== 379) {
+      throw new Error("Racine corrompue: branches=" + idx.childrenByParent["NODE_ROOT"].length + ", desc=" + idx.descendantCount["NODE_ROOT"]);
+    }
+
+    // Vérification géométrique absence de chevauchement en disposition radiale (Niv. 1, 2, 3)
+    for (const maxD of [1, 2, 3]) {
+      const expSet = new Set(idx.nodes.filter(n => n.depth < maxD).map(n => n.node_id));
+      const rad = eng.computeRadialTreeLayout("NODE_ROOT", nid => idx.childrenByParent[nid] || [], expSet, 320);
+      const boxes = rad.visibleIds.map(nid => ({ nid, x: rad.positions[nid].x, y: rad.positions[nid].y, w: 186, h: 44 }));
+      for (let i = 0; i < boxes.length; i++) {
+        for (let j = i + 1; j < boxes.length; j++) {
+          const a = boxes[i], b = boxes[j];
+          if (Math.abs(a.x - b.x) < (a.w - 2) && Math.abs(a.y - b.y) < (a.h - 2)) {
+            throw new Error(`Chevauchement radial Niv.${maxD} entre ${a.nid} et ${b.nid}`);
+          }
+        }
+      }
+    }
 
     const nA = idx.nodes.find(n => n.canonical_slug === "loi-de-lusser");
     const nB = idx.nodes.find(n => n.canonical_slug === "trousse-executable-tome-8");
@@ -509,6 +552,7 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
 
     proc = subprocess.run(
         [node_exe, "-e", node_script, str(HTML_PATH)],
+        stdin=subprocess.DEVNULL,
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -523,10 +567,22 @@ def test_html_css_specificity_and_svg_export_styles() -> None:
     assert m_box is not None
     assert "stroke:" not in m_box.group(1)
     assert "viewBox" in html
+    assert "svg-export-bg" in html
     assert ".mm-toggle-circle{" in html
     assert ".mm-toggle-text{" in html
-    assert ".mm-node.dimmed{" in html
-    assert ".mm-edge.dimmed{" in html
+    assert ".mm-node.dimmed{" in html or ".mm-node.dimmed {" in html
+    assert ".mm-edge.dimmed{" in html or ".mm-edge.dimmed {" in html
+    assert 'id="prd-stats-pill" class="kpi-pill"' in html
+    m_toc_grp = re.search(r"\.prd-toc-group\s*\{([^}]+)\}", html)
+    assert m_toc_grp is not None and "flex-shrink: 0" in m_toc_grp.group(1)
+    assert ".canvas-toolbar" in html and ".stage-container" in html
+    assert ".view-toolbar" not in html and ".main-canvas-area" not in html
+    m_print = re.search(r"@media\s+print\s*\{([\s\S]+?)\n\s{4}\}", html)
+    assert m_print is not None
+    print_css = m_print.group(1)
+    assert "height: auto !important" in print_css
+    assert "overflow: visible !important" in print_css
+    assert ".svg-stage" in print_css and "620px" in print_css
 
 
 def test_nodejs_all_five_views_dom_smoke() -> None:
@@ -592,7 +648,7 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
       "filter-summary", "inspector", "inspector-body", "mm-stats-pill", "st-list-pane", "st-stats-pill",
       "sy-stats-pill", "path-results", "c4-content", "global-search", "search-dropdown", "export-svg-btn",
       "export-json-btn", "theme-toggle-btn", "reset-filters-btn", "mm-expand-all-btn", "mm-collapse-all-btn",
-      "mm-toggle-edges-btn", "mm-xray-btn", "mm-expand-linked-btn", "st-toggle-list-btn",
+      "mm-toggle-edges-btn", "mm-expand-linked-btn", "st-toggle-list-btn",
       "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
       "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle",
       "prd-toc-pane", "prd-toc-filter", "prd-toc-count", "prd-toc-list", "prd-reader", "prd-stats-pill",
@@ -616,6 +672,11 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
       b.setAttribute("data-c4-tab", t);
       return b;
     });
+    const mmDepthBtns = [1, 2, 3, 4, 5].map(lvl => {
+      const b = makeEl("button");
+      b.setAttribute("data-mm-depth", String(lvl));
+      return b;
+    });
 
     const documentStub = {
       readyState: "complete",
@@ -626,7 +687,7 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
       createElement: tag => makeEl(tag),
       createElementNS: (ns, tag) => makeEl(tag),
       addEventListener() {},
-      querySelectorAll: sel => sel === ".view-tab" ? viewTabs : (sel === "[data-c4-tab]" ? c4Tabs : [])
+      querySelectorAll: sel => sel === ".view-tab" ? viewTabs : (sel === "[data-c4-tab]" ? c4Tabs : (sel === "[data-mm-depth]" ? mmDepthBtns : []))
     };
     const sandbox = {
       console, Set, Map, Object, Array, Math, String, Number, Boolean, Date, RegExp, JSON,
@@ -641,8 +702,25 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     const eng = sandbox.CartographieEngine;
     if (!app || !eng) throw new Error("CartographieApp/Engine manquant");
 
-    // 1. Vues 1, 2, 3, 4
+    // Invariants au démarrage : Niv. 2 (13 nœuds), filtres repliés par défaut, bouton cibles liées désactivé, inspecteur ouvert sur desktop
+    if (app.getState().mmDepth !== 2 || !byId["mm-stats-pill"].textContent.startsWith("13 nœud")) {
+      throw new Error("Démarrage attendu à Niv. 2 (13 nœuds), obtenu: depth=" + app.getState().mmDepth + " / " + byId["mm-stats-pill"].textContent);
+    }
+    if (app.getState().filtersOpen !== false) {
+      throw new Error("filtersOpen attendu à false au démarrage sans filtre actif");
+    }
+    if (byId["mm-expand-linked-btn"].disabled !== true) {
+      throw new Error("mm-expand-linked-btn devrait être désactivé sans sélection");
+    }
+    if (byId["inspector"].classList.contains("collapsed")) {
+      throw new Error("Inspecteur devrait être ouvert par défaut en Vue 1 sur desktop");
+    }
+
+    // 1. Vues 1, 2, 3, 4 + repli auto de l'inspecteur en concordance/prd
     for (const vt of viewTabs.slice(0, 4)) vt.click();
+    if (!byId["inspector"].classList.contains("collapsed")) {
+      throw new Error("Inspecteur devrait se replier automatiquement en Vue 4 concordance sans cellule sélectionnée");
+    }
     if (!byId["mm-stats-pill"].textContent.includes("nœuds")) throw new Error("Vue 1 non rendue");
     const hasStLim = byId["st-file-select"].children.some(o => o.value === "LIM" || String(o.textContent).includes("LIM")) || byId["st-file-select"].innerHTML.includes("LIM");
     if (!byId["st-stats-pill"].textContent.includes("titres") || !hasStLim) {
@@ -689,6 +767,9 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     app.switchView("concordance");
     if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en concordance");
     app.switchView("prd");
+    if (!byId["inspector"].classList.contains("collapsed")) {
+      throw new Error("Inspecteur devrait se replier automatiquement en Vue 5 prd");
+    }
     if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en prd");
     if (!byId["prd-stats-pill"].textContent.includes("260 thèmes")) {
       throw new Error("Statistiques Vue 5 incomplètes: " + byId["prd-stats-pill"].textContent);
@@ -760,10 +841,100 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 15 || app.getState().prdHighlightId !== "SCH-15-03") {
       throw new Error("Hash #sch=SCH-15-03 défaillant dans MindMap");
     }
+
+    // Non-régression saut DOM_D01 -> Partie I (D01), Replier aux 15 sections, Déplier cibles liées sur DOM_D01, hash concordance tab
+    app.jumpToPrdByNodeId("DOM_D01");
+    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "part" || app.getState().prdFocusId !== "D01") {
+      throw new Error("Saut DOM_D01 -> PRD Partie I défaillant: " + JSON.stringify(app.getState()));
+    }
+    app.switchView("mindmap");
+    if (byId["inspector"].classList.contains("collapsed")) {
+      throw new Error("Inspecteur devrait se rouvrir au retour en Vue 1 mindmap");
+    }
+    app.selectThemeNode("DOM_D01", false);
+    if (byId["mm-expand-linked-btn"].disabled !== false) {
+      throw new Error("mm-expand-linked-btn devrait être activé après sélection de DOM_D01");
+    }
+    byId["mm-collapse-all-btn"].click();
+    const sizeBeforeLinked = app.getState().mmExpanded.size;
+    byId["mm-expand-linked-btn"].click();
+    if (app.getState().mmExpanded.size <= sizeBeforeLinked) {
+      throw new Error("Déplier les cibles liées inactif sur un nœud domaine DOM_D01");
+    }
+    app.switchView("structure");
+    byId["st-collapse-tomes-btn"].click();
+    if (!byId["st-stats-pill"].textContent.startsWith("16 nœuds")) {
+      throw new Error("Replier aux 15 sections n'affiche pas 16 nœuds: " + byId["st-stats-pill"].textContent);
+    }
+    app.applyHashNavigation("#view=concordance&tab=glossary_evidence");
+    if (app.getState().activeView !== "concordance" || app.getState().c4Tab !== "glossary_evidence") {
+      throw new Error("Hash #view=concordance&tab=glossary_evidence défaillant");
+    }
+    const schemaImgs = Array.from(fullHtml.matchAll(/<img[^>]+src="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"]+)"/g), m => m[1]);
+    if (schemaImgs.length !== 115) {
+      throw new Error("Prévisualisations <img> des 115 schémas manquantes en Vue 5: " + schemaImgs.length);
+    }
+
+    // Non-régression : 5 niveaux distincts Niv. 1..5 (1, 13, 49, 120, 380 nœuds)
+    app.switchView("mindmap");
+    const expectedCounts = [1, 13, 49, 120, 380];
+    for (let i = 0; i < 5; i++) {
+      mmDepthBtns[i].click();
+      const expectedPrefix = expectedCounts[i] + " nœud";
+      if (!byId["mm-stats-pill"].textContent.startsWith(expectedPrefix)) {
+        throw new Error(`Niv. ${i + 1} attendu ${expectedCounts[i]} nœuds, obtenu: ${byId["mm-stats-pill"].textContent}`);
+      }
+    }
+
+    // Non-régression : Glossaire intégré en Vue 5 (mode intégral + hash #view=prd&glossary=1 + TDM + recherche TDM par thème)
+    if (!fullHtml.includes("prd-v5-glossary-table")) {
+      throw new Error("Mode intégral Vue 5 omet le glossaire #prd-v5-glossary-table");
+    }
+    if (!byId["prd-toc-list"].innerHTML.includes("data-toc-gloss")) {
+      throw new Error("TDM Vue 5 omet l'entrée Glossaire [data-toc-gloss]");
+    }
+    app.applyHashNavigation("#view=prd&glossary=1");
+    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "glossary" || !byId["prd-reader"].innerHTML.includes("prd-v5-glossary-table")) {
+      throw new Error("Navigation #view=prd&glossary=1 défaillante en Vue 5");
+    }
+    byId["prd-toc-filter"].value = "loi-de-lusser";
+    byId["prd-toc-filter"].dispatch("input");
+    if (!byId["prd-toc-list"].innerHTML.includes("Ch. 02 —")) {
+      throw new Error("Filtre TDM Vue 5 ne trouve pas Ch. 02 via le slug thème loi-de-lusser");
+    }
+    byId["prd-toc-filter"].value = "Chapitre 02";
+    byId["prd-toc-filter"].dispatch("input");
+    if (!byId["prd-toc-list"].innerHTML.includes("Ch. 02 —")) {
+      throw new Error("Filtre TDM Vue 5 ne trouve pas Ch. 02 via 'Chapitre 02'");
+    }
+    byId["prd-toc-filter"].value = "";
+    byId["prd-toc-filter"].dispatch("input");
+
+    // Non-régression : mise à jour de #filter-summary en Vue 2 et Vue 4 (glossary_evidence), synchro bidirectionnelle #st-file-select <-> #f-tome, et levée auto de filtre bloquant
+    app.switchView("structure");
+    byId["f-domain"].value = "D07";
+    byId["f-domain"].dispatch("change");
+    if (byId["filter-summary"].textContent.includes("Tous les nœuds actifs")) {
+      throw new Error("#filter-summary figé en Vue 2 sous filtre D07: " + byId["filter-summary"].textContent);
+    }
+    byId["st-file-select"].value = "LIM";
+    byId["st-file-select"].dispatch("change");
+    if (byId["f-tome"].value !== "LIM") {
+      throw new Error("Synchronisation #st-file-select -> #f-tome défaillante: " + byId["f-tome"].value);
+    }
+    app.applyHashNavigation("#view=concordance&tab=glossary_evidence");
+    if (byId["filter-summary"].textContent.includes("Tous les nœuds actifs")) {
+      throw new Error("#filter-summary figé en Vue 4 glossary_evidence sous filtre actif");
+    }
+    app.applyHashNavigation("#view=synaptic&node=THM_loi-de-lusser");
+    if (app.getState().filters.domain !== "" || app.getState().filters.tome !== "") {
+      throw new Error("La navigation explicite vers THM_loi-de-lusser n'a pas levé les filtres bloquants: " + JSON.stringify(app.getState().filters));
+    }
     """
 
     proc = subprocess.run(
         [node_exe, "-e", node_script, str(HTML_PATH)],
+        stdin=subprocess.DEVNULL,
         capture_output=True,
         text=True,
         encoding="utf-8",

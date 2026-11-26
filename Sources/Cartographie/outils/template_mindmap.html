@@ -13,8 +13,9 @@
       --bg-surface-3: light-dark(#e2e8f0, #23304a);
       --text-main: light-dark(#0f172a, #f1f5f9);
       --text-muted: light-dark(#475569, #94a3b8);
-      --text-subtle: light-dark(#64748b, #64748b);
+      --text-subtle: light-dark(#64748b, #94a3b8);
       --border: light-dark(#cbd5e1, #2a3750);
+      --border-subtle: light-dark(#e2e8f0, #1e293b);
       --border-strong: light-dark(#94a3b8, #475569);
       --accent: light-dark(#2563eb, #60a5fa);
       --accent-soft: light-dark(#dbeafe, #1e3a8a);
@@ -22,8 +23,10 @@
       --ok: light-dark(#16a34a, #4ade80);
       --warn: light-dark(#d97706, #fbbf24);
       --danger: light-dark(#dc2626, #f87171);
-      --shadow-sm: light-dark(0 1px 2px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0, 0, 0, 0.45));
-      --shadow-md: light-dark(0 8px 24px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(0, 0, 0, 0.55));
+      --shadow-sm: light-dark(0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(0, 0, 0, 0.42));
+      --shadow-md: light-dark(0 8px 24px rgba(15, 23, 42, 0.11), 0 10px 28px rgba(0, 0, 0, 0.55));
+      --hud-bg: light-dark(rgba(255, 255, 255, 0.88), rgba(17, 24, 39, 0.88));
+      --backdrop-bg: light-dark(rgba(15, 23, 42, 0.35), rgba(2, 6, 23, 0.62));
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 14px;
@@ -74,22 +77,65 @@
       text-decoration: underline;
     }
 
+    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+
+    .inspector-body, .struct-list-pane, .prd-toc-list, .prd-reader, .matrix-view,
+    .search-dropdown, .path-results, .table-wrap {
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-strong) transparent;
+    }
+    .inspector-body::-webkit-scrollbar, .struct-list-pane::-webkit-scrollbar,
+    .prd-toc-list::-webkit-scrollbar, .prd-reader::-webkit-scrollbar,
+    .matrix-view::-webkit-scrollbar, .search-dropdown::-webkit-scrollbar,
+    .path-results::-webkit-scrollbar, .table-wrap::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .inspector-body::-webkit-scrollbar-thumb, .struct-list-pane::-webkit-scrollbar-thumb,
+    .prd-toc-list::-webkit-scrollbar-thumb, .prd-reader::-webkit-scrollbar-thumb,
+    .matrix-view::-webkit-scrollbar-thumb, .search-dropdown::-webkit-scrollbar-thumb,
+    .path-results::-webkit-scrollbar-thumb, .table-wrap::-webkit-scrollbar-thumb {
+      background: var(--border-strong);
+      border-radius: 999px;
+    }
+    .inspector-body::-webkit-scrollbar-track, .struct-list-pane::-webkit-scrollbar-track,
+    .prd-toc-list::-webkit-scrollbar-track, .prd-reader::-webkit-scrollbar-track,
+    .matrix-view::-webkit-scrollbar-track, .search-dropdown::-webkit-scrollbar-track,
+    .path-results::-webkit-scrollbar-track, .table-wrap::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
     /* Layout shell */
     .app-shell {
       display: flex;
       flex-direction: column;
       height: 100vh;
       width: 100vw;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
     /* Top Header */
     .topbar {
       background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
-      padding: 8px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 6px 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 5px;
       z-index: 20;
       flex-shrink: 0;
     }
@@ -97,25 +143,42 @@
     .topbar-row {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .topbar-nav {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 8px;
+    }
+
+    .topbar-nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      flex: 0 1 430px;
+      min-width: 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-right: 4px;
+      gap: 7px;
+      margin-right: 2px;
+      flex-shrink: 0;
     }
 
     .brand-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
       background: linear-gradient(135deg, #2563eb, #0d9488);
       color: #fff;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 11.5px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -125,7 +188,7 @@
 
     .brand-title {
       font-weight: 700;
-      font-size: 14.5px;
+      font-size: 13px;
       letter-spacing: -0.01em;
       white-space: nowrap;
     }
@@ -133,16 +196,19 @@
     .kpi-strip {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 0;
       flex-wrap: wrap;
+      font-variant-numeric: tabular-nums;
+      min-width: 0;
     }
 
     .kpi-pill {
       background: var(--bg-surface-2);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: 999px;
-      padding: 2px 9px;
-      font-size: 11.5px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
       color: var(--text-muted);
       white-space: nowrap;
     }
@@ -151,29 +217,59 @@
       font-weight: 650;
     }
 
+    .kpi-strip .kpi-pill {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 1px 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      position: relative;
+    }
+    .kpi-strip .kpi-pill:first-child {
+      padding-left: 2px;
+    }
+    .kpi-strip .kpi-pill + .kpi-pill::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 11px;
+      background: var(--border-subtle);
+    }
+
     /* View Tabs */
     .view-tabs {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 4px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 2px;
       background: var(--bg-surface-2);
-      padding: 3px;
+      padding: 2px;
       border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      margin-left: auto;
+      border: 1px solid var(--border-subtle);
+      min-width: 0;
+      max-width: 100%;
+    }
+    .view-tabs::-webkit-scrollbar {
+      display: none;
     }
 
     .view-tab {
-      border: none;
+      border: 1px solid transparent;
       background: transparent;
       color: var(--text-muted);
-      padding: 5px 11px;
+      padding: 4px 10px;
       border-radius: 7px;
       font-weight: 600;
-      font-size: 12.5px;
-      transition: background 0.15s, color 0.15s;
+      font-size: 12px;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .view-tab:hover {
       color: var(--text-main);
@@ -182,31 +278,35 @@
     .view-tab.active {
       background: var(--bg-surface);
       color: var(--accent-text);
-      box-shadow: var(--shadow-sm);
+      border-color: var(--border-subtle);
+      box-shadow: var(--shadow-sm), inset 0 -2px 0 var(--accent);
     }
 
     /* Global actions & search */
     .topbar-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
+      flex-wrap: wrap;
     }
 
     .search-wrap {
       position: relative;
-      min-width: 250px;
-      flex: 1 1 260px;
-      max-width: 390px;
+      min-width: 210px;
+      flex: 1 1 240px;
+      max-width: 360px;
     }
 
     .search-input {
       width: 100%;
-      padding: 6px 56px 6px 10px;
+      padding: 5px 54px 5px 10px;
       border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       background: var(--bg-surface-2);
       color: var(--text-main);
       outline: none;
+      font-size: 12.5px;
+      transition: border-color 0.15s, background 0.15s;
     }
     .search-input:focus {
       border-color: var(--accent);
@@ -215,14 +315,14 @@
 
     .search-kbd {
       position: absolute;
-      right: 8px;
+      right: 7px;
       top: 50%;
       transform: translateY(-50%);
       font-family: var(--font-mono);
-      font-size: 10.5px;
-      color: var(--text-muted);
+      font-size: 10px;
+      color: var(--text-subtle);
       background: var(--bg-surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: 4px;
       padding: 1px 5px;
       pointer-events: none;
@@ -248,7 +348,7 @@
 
     .search-item {
       padding: 8px 10px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-subtle);
       cursor: pointer;
       display: flex;
       flex-direction: column;
@@ -275,6 +375,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 5px;
       padding: 5px 10px;
       border-radius: var(--radius-sm);
@@ -284,19 +385,31 @@
       font-weight: 500;
       font-size: 12px;
       white-space: nowrap;
-      transition: background 0.12s, border-color 0.12s;
+      transition: background 0.12s, border-color 0.12s, color 0.12s;
     }
-    .btn:hover {
+    .btn:hover:not(:disabled) {
       background: var(--bg-surface-2);
       border-color: var(--border-strong);
+      text-decoration: none;
+    }
+    .btn.btn-ghost {
+      background: transparent;
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .btn.btn-ghost:hover:not(:disabled) {
+      background: var(--bg-surface-2);
+      border-color: var(--border);
+      color: var(--text-main);
     }
     .btn.primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
+      background: light-dark(#2563eb, #2563eb);
+      color: #ffffff;
+      border-color: light-dark(#2563eb, #3b82f6);
     }
-    .btn.primary:hover {
-      filter: brightness(1.06);
+    .btn.primary:hover:not(:disabled) {
+      background: light-dark(#1d4ed8, #3b82f6);
+      border-color: light-dark(#1d4ed8, #3b82f6);
     }
     .btn.active {
       background: var(--accent-soft);
@@ -308,47 +421,69 @@
       padding: 3px 8px;
       font-size: 11.5px;
     }
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      border-radius: 999px;
+      background: light-dark(#2563eb, #2563eb);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .mobile-only-btn {
+      display: none;
+    }
 
     /* Filter Bar */
     .filter-bar {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
-      padding-top: 4px;
-      border-top: 1px dashed var(--border);
+      padding-top: 5px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .filter-bar.collapsed {
+      display: none;
     }
 
     .filter-group {
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-size: 12px;
+      font-size: 11.5px;
     }
     .filter-group label {
-      color: var(--text-muted);
+      color: var(--text-subtle);
       font-weight: 600;
-      font-size: 11px;
+      font-size: 10.5px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
     .filter-select {
-      padding: 3px 7px;
+      padding: 3px 6px;
       border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       background: var(--bg-surface-2);
       color: var(--text-main);
-      font-size: 12px;
-      max-width: 175px;
+      font-size: 11.5px;
+      max-width: 140px;
     }
 
     .filter-status {
       margin-left: auto;
-      font-size: 11.5px;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
       color: var(--text-muted);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      white-space: nowrap;
     }
 
     /* Main Content Workspace */
@@ -357,6 +492,7 @@
       flex: 1 1 auto;
       min-height: 0;
       position: relative;
+      overflow: hidden;
     }
 
     .stage-container {
@@ -387,18 +523,20 @@
       flex-wrap: wrap;
       padding: 6px 12px;
       background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-subtle);
       flex-shrink: 0;
+      min-width: 0;
     }
 
     .seg-group {
       display: inline-flex;
       align-items: center;
       background: var(--bg-surface-2);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       padding: 2px;
       gap: 2px;
+      flex-shrink: 0;
     }
     .seg-btn {
       border: none;
@@ -408,6 +546,7 @@
       border-radius: 4px;
       font-size: 11.5px;
       font-weight: 600;
+      white-space: nowrap;
     }
     .seg-btn:hover {
       color: var(--text-main);
@@ -423,7 +562,7 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 1px 1px, light-dark(rgba(148, 163, 184, 0.22), rgba(148, 163, 184, 0.11)) 1px, transparent 0);
+        radial-gradient(circle at 1px 1px, light-dark(rgba(148, 163, 184, 0.14), rgba(148, 163, 184, 0.08)) 1px, transparent 0);
       background-size: 24px 24px;
       cursor: grab;
       user-select: none;
@@ -445,8 +584,10 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
+      background: var(--hud-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 4px;
       box-shadow: var(--shadow-md);
@@ -454,10 +595,11 @@
     }
     .zoom-readout {
       font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
       font-size: 11px;
       color: var(--text-muted);
       padding: 0 6px;
-      min-width: 44px;
+      min-width: 46px;
       text-align: center;
     }
 
@@ -466,10 +608,12 @@
       position: absolute;
       bottom: 14px;
       right: 14px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
+      background: var(--hud-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 8px 10px;
+      padding: 7px 10px;
       box-shadow: var(--shadow-md);
       z-index: 15;
       max-width: 310px;
@@ -483,11 +627,25 @@
       align-items: center;
       gap: 10px;
       cursor: pointer;
+      user-select: none;
+    }
+    .legend-hud.collapsed .legend-title {
+      margin-bottom: 0;
+    }
+    .legend-chevron {
+      display: inline-block;
+      transition: transform 0.18s ease;
+    }
+    .legend-hud.collapsed .legend-chevron {
+      transform: rotate(-90deg);
     }
     .legend-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4px 10px;
+    }
+    .legend-hud.collapsed .legend-grid {
+      display: none;
     }
     .legend-item {
       display: flex;
@@ -523,23 +681,34 @@
     /* SVG Nodes & Edges */
     .mm-branch {
       fill: none;
-      stroke-width: 1.8;
-      opacity: 0.65;
+      stroke-width: 2.0;
+      opacity: 0.82;
       transition: opacity 0.15s;
     }
     .mm-edge {
       fill: none;
-      stroke-width: 1.7;
-      opacity: 0.58;
+      stroke-width: 1.15;
+      opacity: 0.22;
       cursor: pointer;
       transition: opacity 0.15s, stroke-width 0.15s;
     }
     .mm-edge:hover, .mm-edge.highlighted {
-      opacity: 0.98;
-      stroke-width: 3.1;
+      opacity: 0.96;
+      stroke-width: 2.8;
+    }
+    .mm-edge.soft-dimmed {
+      opacity: 0.08;
     }
     .mm-edge.dimmed {
       opacity: 0.07 !important;
+    }
+    .mm-edge-mult {
+      opacity: 0.55;
+      pointer-events: none;
+      transition: opacity 0.15s;
+    }
+    .mm-edge-mult.highlighted {
+      opacity: 1;
     }
     .mm-node {
       cursor: pointer;
@@ -557,10 +726,16 @@
       stroke-width: 1.4;
       rx: 8;
       ry: 8;
+      filter: drop-shadow(0 1px 2px light-dark(rgba(15, 23, 42, 0.06), rgba(0, 0, 0, 0.35)));
+      transition: filter 0.15s, stroke-width 0.15s;
+    }
+    .mm-node:hover .mm-node-box {
+      filter: drop-shadow(0 3px 6px light-dark(rgba(15, 23, 42, 0.1), rgba(0, 0, 0, 0.5)));
     }
     .mm-node.selected .mm-node-box {
       stroke: var(--accent);
       stroke-width: 2.6;
+      filter: drop-shadow(0 0 6px light-dark(rgba(37, 99, 235, 0.32), rgba(96, 165, 250, 0.44)));
     }
     .mm-node.matched .mm-node-box {
       stroke-width: 2.2;
@@ -569,10 +744,12 @@
       fill: var(--text-main);
       font-size: 11.5px;
       font-weight: 600;
+      letter-spacing: -0.005em;
     }
     .mm-node-sub {
       fill: var(--text-muted);
       font-size: 10px;
+      font-variant-numeric: tabular-nums;
     }
     .mm-toggle-circle {
       fill: var(--bg-surface-2);
@@ -593,22 +770,30 @@
       dominant-baseline: central;
     }
 
+    /* Drawer Backdrop (mobile/tablet) */
+    .drawer-backdrop {
+      display: none;
+    }
+
     /* View 2 Structural Explorer Split */
     .struct-body {
       display: flex;
       flex: 1 1 auto;
       min-height: 0;
+      position: relative;
+      overflow: hidden;
     }
     .struct-list-pane {
-      width: 390px;
-      max-width: 48%;
-      border-right: 1px solid var(--border);
+      width: 360px;
+      max-width: 44%;
+      border-right: 1px solid var(--border-subtle);
       background: var(--bg-surface);
       overflow-y: auto;
       padding: 8px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
+      flex-shrink: 0;
     }
     .struct-list-pane.hidden {
       display: none;
@@ -631,7 +816,7 @@
     .struct-expander {
       width: 18px;
       height: 18px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       background: var(--bg-surface-2);
       border-radius: 4px;
       display: inline-flex;
@@ -649,16 +834,17 @@
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
-      padding: 8px 12px;
+      padding: 6px 12px;
       background: var(--bg-surface-2);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-subtle);
+      flex-shrink: 0;
     }
     .path-results {
       max-height: 195px;
       overflow-y: auto;
       background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      padding: 8px 12px;
+      border-top: 1px solid var(--border-subtle);
+      padding: 10px 14px;
       display: none;
     }
     .path-results.open {
@@ -668,7 +854,7 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      padding: 6px 8px;
+      padding: 7px 10px;
       border-left: 3px solid var(--accent);
       background: var(--bg-surface-2);
       border-radius: 0 6px 6px 0;
@@ -680,7 +866,7 @@
     .matrix-view {
       flex: 1 1 auto;
       overflow-y: auto;
-      padding: 14px 18px;
+      padding: 14px 18px 28px 18px;
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -689,27 +875,36 @@
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-subtle);
       padding-bottom: 8px;
+      flex-shrink: 0;
     }
     .card {
       background: var(--bg-surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 12px 14px;
+      padding: 14px 16px;
       box-shadow: var(--shadow-sm);
     }
     .card h3 {
       margin: 0 0 8px 0;
       font-size: 14px;
     }
+    .table-wrap {
+      overflow: auto;
+      max-height: 68vh;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+    }
     .heatmap-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 12px;
+      font-variant-numeric: tabular-nums;
     }
     .heatmap-table th, .heatmap-table td {
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       padding: 6px 8px;
       text-align: center;
     }
@@ -718,6 +913,8 @@
       font-weight: 700;
       position: sticky;
       top: 0;
+      z-index: 2;
+      border-bottom: 1px solid var(--border);
     }
     .heatmap-table td.domain-col {
       text-align: left;
@@ -727,6 +924,7 @@
     .heat-cell {
       cursor: pointer;
       font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
       font-weight: 600;
       transition: transform 0.1s, outline 0.1s;
     }
@@ -739,7 +937,7 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
       gap: 12px;
     }
 
@@ -747,10 +945,11 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 12px;
+      font-variant-numeric: tabular-nums;
     }
     .data-table th, .data-table td {
-      border-bottom: 1px solid var(--border);
-      padding: 7px 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 9px 11px;
       text-align: left;
       vertical-align: top;
     }
@@ -759,6 +958,8 @@
       font-weight: 700;
       position: sticky;
       top: 0;
+      z-index: 2;
+      border-bottom: 1px solid var(--border);
     }
 
     /* Right Inspector Sidebar */
@@ -766,12 +967,13 @@
       width: 390px;
       max-width: 44vw;
       background: var(--bg-surface);
-      border-left: 1px solid var(--border);
+      border-left: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       min-height: 0;
       z-index: 18;
       transition: width 0.18s;
+      flex-shrink: 0;
     }
     .inspector.collapsed {
       width: 38px;
@@ -779,8 +981,8 @@
       overflow: hidden;
     }
     .inspector-header {
-      padding: 9px 12px;
-      border-bottom: 1px solid var(--border);
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -791,10 +993,10 @@
     .inspector-body {
       flex: 1 1 auto;
       overflow-y: auto;
-      padding: 12px 14px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
     .inspector.collapsed .inspector-body,
     .inspector.collapsed .inspector-title {
@@ -814,7 +1016,8 @@
       border-radius: 999px;
       font-size: 11px;
       font-weight: 600;
-      border: 1px solid var(--border);
+      font-variant-numeric: tabular-nums;
+      border: 1px solid var(--border-subtle);
       background: var(--bg-surface-2);
     }
     .chip.clickable {
@@ -823,36 +1026,39 @@
     .chip.clickable:hover {
       border-color: var(--accent);
       background: var(--accent-soft);
+      text-decoration: none;
     }
     .mono {
       font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
       font-size: 11.5px;
     }
 
     .occ-card {
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 7px 9px;
+      padding: 9px 11px;
       background: var(--bg-surface-2);
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
       font-size: 12px;
     }
 
     .rel-card {
       border-left: 3px solid var(--accent);
-      border-top: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 7px 9px;
+      padding: 9px 11px;
       background: var(--bg-surface);
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
       cursor: pointer;
       font-size: 12px;
+      transition: background 0.12s;
     }
     .rel-card:hover {
       background: var(--bg-surface-2);
@@ -863,8 +1069,8 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
+      color: var(--text-subtle);
+      margin-bottom: 6px;
     }
 
     .empty-state {
@@ -872,31 +1078,6 @@
       text-align: center;
       color: var(--text-muted);
       font-size: 12.5px;
-    }
-
-    @media (max-width: 980px) {
-      .inspector {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 92vw;
-        max-width: 390px;
-        box-shadow: var(--shadow-md);
-      }
-      .inspector.collapsed {
-        position: static;
-        width: 36px;
-      }
-      .struct-list-pane {
-        width: 240px;
-      }
-      .prd-toc-pane {
-        width: 240px;
-      }
-      .prd-reader {
-        padding: 12px 14px;
-      }
     }
 
     /* View 5 PRD Maître */
@@ -912,21 +1093,23 @@
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
-      padding: 8px 12px;
-      background: var(--bg-surface-2);
-      border-bottom: 1px solid var(--border);
+      padding: 6px 12px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
       flex-shrink: 0;
+      min-width: 0;
     }
     .prd-body {
       flex: 1 1 auto;
       display: flex;
       min-height: 0;
       overflow: hidden;
+      position: relative;
     }
     .prd-toc-pane {
-      width: 340px;
-      max-width: 40%;
-      border-right: 1px solid var(--border);
+      width: 320px;
+      max-width: 38%;
+      border-right: 1px solid var(--border-subtle);
       background: var(--bg-surface);
       display: flex;
       flex-direction: column;
@@ -938,7 +1121,7 @@
     }
     .prd-toc-filter-wrap {
       padding: 8px 10px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-subtle);
       background: var(--bg-surface-2);
       flex-shrink: 0;
     }
@@ -948,23 +1131,23 @@
       padding: 8px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
     }
     .prd-toc-group {
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       background: var(--bg-surface-2);
-      overflow: hidden;
+      flex-shrink: 0;
     }
     .prd-toc-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
+      display: block;
       padding: 5px 8px;
       font-size: 12px;
       cursor: pointer;
       border-radius: 4px;
       line-height: 1.35;
+      word-break: break-word;
+      flex-shrink: 0;
     }
     .prd-toc-item:hover {
       background: var(--bg-surface-3);
@@ -996,29 +1179,56 @@
     .prd-reader {
       flex: 1 1 auto;
       overflow-y: auto;
-      padding: 18px 24px 36px 24px;
+      padding: 20px 28px 44px 28px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 16px;
       min-width: 0;
     }
+    .prd-reader > * {
+      width: 100%;
+      max-width: 940px;
+    }
+    .prd-reader p,
+    .prd-reader li {
+      font-size: 15px;
+      line-height: 1.66;
+    }
     .prd-hero {
       background: var(--bg-surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 16px 18px;
+      padding: 18px 20px;
       box-shadow: var(--shadow-sm);
     }
     .prd-hero h1 {
       margin: 0 0 6px 0;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.3;
+      letter-spacing: -0.015em;
+    }
+    .prd-section-card h2,
+    .prd-section-card h3,
+    .prd-family-block h4 {
+      letter-spacing: -0.015em;
+    }
+    .tech-tag {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+      font-size: 11px;
+      color: var(--text-subtle);
+      background: var(--bg-surface-2);
+      padding: 1px 6px;
+      border-radius: 4px;
     }
     .prd-section-card {
       background: var(--bg-surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 14px 16px;
+      padding: 16px 18px;
       box-shadow: var(--shadow-sm);
       scroll-margin-top: 12px;
     }
@@ -1042,7 +1252,7 @@
       justify-content: space-between;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .prd-card-actions {
       display: flex;
@@ -1051,28 +1261,270 @@
       flex-shrink: 0;
     }
     .prd-family-block {
-      margin-top: 12px;
-      padding: 10px 12px;
+      margin-top: 14px;
+      padding: 12px 14px;
       border-left: 3px solid var(--accent);
       background: var(--bg-surface-2);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       scroll-margin-top: 12px;
     }
     .prd-theme-card {
-      margin-top: 8px;
-      padding: 10px 12px;
+      margin-top: 10px;
+      padding: 12px 14px;
       background: var(--bg-surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       scroll-margin-top: 12px;
     }
     .prd-list {
-      margin: 6px 0 8px 18px;
+      margin: 6px 0 10px 18px;
       padding: 0;
     }
     .prd-list li {
-      margin-bottom: 4px;
-      line-height: 1.45;
+      margin-bottom: 5px;
+      line-height: 1.66;
+    }
+    .schema-preview-details {
+      margin: 6px 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-2);
+      padding: 6px 8px;
+    }
+    .schema-preview-details > summary {
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-text);
+      user-select: none;
+    }
+    .schema-preview-frame {
+      margin-top: 6px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 8px;
+      overflow-x: auto;
+      text-align: center;
+    }
+    .schema-preview-img {
+      max-width: 100%;
+      max-height: 520px;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Responsive Breakpoints */
+    @media (min-width: 1100px) {
+      .topbar-primary {
+        flex-wrap: nowrap;
+      }
+      .topbar-primary .kpi-strip {
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .topbar-primary .kpi-strip::-webkit-scrollbar {
+        display: none;
+      }
+      .topbar-primary .topbar-actions {
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .topbar {
+        padding: 6px 10px;
+        gap: 5px;
+      }
+      .kpi-strip .kpi-pill {
+        padding: 1px 6px;
+        font-size: 10.5px;
+      }
+      .inspector {
+        width: 340px;
+      }
+      .struct-list-pane {
+        width: 280px;
+      }
+      .prd-toc-pane {
+        width: 280px;
+      }
+      .prd-reader {
+        padding: 16px 20px 36px 20px;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .topbar-nav {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .topbar-nav-tools {
+        flex: 1 1 280px;
+      }
+      .search-wrap {
+        min-width: 160px;
+        max-width: none;
+      }
+      .canvas-toolbar, .prd-toolbar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .canvas-toolbar > *, .prd-toolbar > * {
+        flex-shrink: 0;
+      }
+      .canvas-toolbar::-webkit-scrollbar, .prd-toolbar::-webkit-scrollbar {
+        display: none;
+      }
+      .drawer-backdrop.open {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: var(--backdrop-bg);
+        z-index: 35;
+      }
+      #inspector-backdrop.open {
+        z-index: 41;
+      }
+      .inspector {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: min(92vw, 370px);
+        max-width: none;
+        z-index: 42;
+        box-shadow: var(--shadow-md);
+      }
+      .inspector.collapsed {
+        display: none;
+      }
+      .mobile-only-btn {
+        display: inline-flex;
+      }
+      .struct-list-pane, .prd-toc-pane {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: min(86vw, 300px);
+        max-width: none;
+        z-index: 38;
+        box-shadow: var(--shadow-md);
+      }
+      .prd-reader {
+        padding: 14px 16px 32px 16px;
+      }
+      .matrix-view {
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        padding: 6px 10px;
+      }
+      .brand-title {
+        font-size: 12.5px;
+      }
+      .topbar-actions {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+      }
+      .topbar-actions::-webkit-scrollbar {
+        display: none;
+      }
+      .kpi-strip {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        width: 100%;
+      }
+      .kpi-strip::-webkit-scrollbar {
+        display: none;
+      }
+      .view-tabs {
+        width: 100%;
+      }
+      .topbar-nav-tools {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+      .search-wrap {
+        min-width: 0;
+        flex: 1 1 auto;
+      }
+      .search-kbd {
+        display: none;
+      }
+      .search-input {
+        padding-right: 10px;
+      }
+      .view-tab, .topbar .btn, .canvas-toolbar .btn, .canvas-toolbar .seg-btn,
+      .prd-toolbar .btn, .prd-toolbar .seg-btn, .subtabs .btn,
+      .filter-select, .search-input, .zoom-hud .btn {
+        min-height: 36px;
+      }
+      .filter-group {
+        flex: 1 1 calc(50% - 6px);
+      }
+      .filter-select {
+        max-width: none;
+        width: 100%;
+      }
+      .filter-status {
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-between;
+      }
+      .path-bar select {
+        width: 100%;
+        max-width: none !important;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .zoom-hud {
+        bottom: 10px;
+        left: 10px;
+        padding: 3px;
+        gap: 2px;
+        max-width: calc(100% - 20px);
+      }
+      .zoom-hud .btn {
+        padding: 3px 7px;
+        font-size: 11px;
+      }
+      .zoom-readout {
+        min-width: 38px;
+        padding: 0 3px;
+      }
+      .legend-hud {
+        bottom: 58px;
+        right: 10px;
+        max-width: calc(100% - 20px);
+      }
+      .prd-reader {
+        padding: 12px 12px 28px 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
     @media print {
       :root, html, html[data-theme], body {
@@ -1084,22 +1536,49 @@
         --text-main: #000000 !important;
         --text-muted: #1e293b !important;
         --border: #cbd5e1 !important;
+        --border-subtle: #cbd5e1 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
         background: #ffffff !important;
         color: #000000 !important;
       }
       .topbar, .inspector, .prd-toolbar, .prd-toc-pane, .canvas-tooltip, .prd-card-actions,
-      .view-toolbar, .zoom-hud, .legend-hud, .path-bar, .path-results, .subtabs {
+      .canvas-toolbar, .zoom-hud, .legend-hud, .path-bar, .path-results, .subtabs, .drawer-backdrop,
+      .struct-list-pane {
         display: none !important;
       }
-      .app-shell, .workspace, .main-canvas-area, .view-panel.active, .prd-view, .prd-body, .prd-reader, .matrix-view {
+      .app-shell, .workspace, .stage-container, .view-panel.active, .struct-body, .prd-view, .prd-body, .prd-reader, .matrix-view {
         display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
         overflow: visible !important;
         position: static !important;
         background: #ffffff !important;
         color: #000000 !important;
       }
-      .prd-section-card, .prd-theme-card, .prd-hero, .card {
+      .table-wrap {
+        overflow: visible !important;
+      }
+      .svg-stage {
+        display: block !important;
+        height: 85vh !important;
+        min-height: 620px !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+      }
+      .svg-stage svg {
+        width: 100% !important;
+        height: 620px !important;
+      }
+      .prd-section-card, .card {
+        box-shadow: none !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cbd5e1 !important;
+      }
+      .prd-theme-card, .prd-hero, .occ-card, .rel-card {
         break-inside: avoid;
         box-shadow: none !important;
         background: #ffffff !important;
@@ -1113,13 +1592,22 @@
   <div class="app-shell">
     <!-- En-tête & navigation -->
     <header class="topbar">
-      <div class="topbar-row">
+      <div class="topbar-row topbar-primary">
         <div class="brand">
           <span class="brand-mark">CA</span>
           <span class="brand-title">Cartographie du Compendium Agentique</span>
         </div>
         <div class="kpi-strip" id="kpi-strip"></div>
+        <div class="topbar-actions" style="margin-left:auto;">
+          <a id="top-compendium-md-link" class="btn btn-sm btn-ghost" href="../../Compendium/Compendium.md" target="_blank" rel="noopener" title="Ouvrir Compendium.md">Compendium.md ↗</a>
+          <a id="top-compendium-pdf-link" class="btn btn-sm btn-ghost" href="../../Compendium/Compendium.pdf" target="_blank" rel="noopener" title="Ouvrir Compendium.pdf">Compendium.pdf ↗</a>
+          <button id="theme-toggle-btn" class="btn btn-sm btn-ghost" title="Basculer thème Auto / Clair / Sombre">Thème : Auto</button>
+          <button id="export-svg-btn" class="btn btn-sm btn-ghost" title="Exporter la vue graphique courante en SVG">Export SVG</button>
+          <button id="export-json-btn" class="btn btn-sm btn-ghost" title="Exporter le sous-ensemble filtré en JSON">Export JSON</button>
+        </div>
+      </div>
 
+      <div class="topbar-row topbar-nav">
         <nav class="view-tabs" role="tablist" aria-label="Vues de la cartographie">
           <button class="view-tab active" role="tab" data-view="mindmap" aria-selected="true">1 · MindMap Thématique</button>
           <button class="view-tab" role="tab" data-view="structure" aria-selected="false">2 · Structure Intégrale</button>
@@ -1127,23 +1615,19 @@
           <button class="view-tab" role="tab" data-view="concordance" aria-selected="false">4 · Concordance, Glossaire &amp; Preuves</button>
           <button class="view-tab" role="tab" data-view="prd" aria-selected="false">5 · PRD Maître</button>
         </nav>
-
-        <div class="topbar-actions">
+        <div class="topbar-nav-tools">
           <div class="search-wrap">
             <input id="global-search" class="search-input" type="search" placeholder="Rechercher thème, glossaire, SCH-*, EXIG, CAP, H1–H6…" autocomplete="off" aria-label="Recherche plein-texte" />
             <span class="search-kbd">Ctrl+K</span>
             <div id="search-dropdown" class="search-dropdown" role="listbox"></div>
           </div>
-          <a id="top-compendium-md-link" class="btn btn-sm" href="../../Compendium/Compendium.md" target="_blank" rel="noopener" title="Ouvrir Compendium.md">Compendium.md ↗</a>
-          <a id="top-compendium-pdf-link" class="btn btn-sm" href="../../Compendium/Compendium.pdf" target="_blank" rel="noopener" title="Ouvrir Compendium.pdf">Compendium.pdf ↗</a>
-          <button id="theme-toggle-btn" class="btn" title="Basculer thème Auto / Clair / Sombre">Thème : Auto</button>
-          <button id="export-svg-btn" class="btn" title="Exporter la vue graphique courante en SVG">Export SVG</button>
-          <button id="export-json-btn" class="btn" title="Exporter le sous-ensemble filtré en JSON">Export JSON</button>
+          <button id="filters-toggle-btn" class="btn btn-sm" type="button" aria-expanded="false" aria-controls="filter-bar" title="Afficher ou masquer les filtres multi-facettes">Filtres</button>
+          <button id="inspector-topbar-btn" class="btn btn-sm mobile-only-btn" type="button" aria-expanded="false" aria-controls="inspector" title="Afficher ou masquer l'inspecteur">Inspecteur</button>
         </div>
       </div>
 
       <!-- Barre de filtres multi-facettes -->
-      <div class="filter-bar" aria-label="Filtres multi-facettes">
+      <div id="filter-bar" class="filter-bar collapsed" aria-label="Filtres multi-facettes">
         <div class="filter-group">
           <label for="f-tome">Section</label>
           <select id="f-tome" class="filter-select" data-filter="section"><option value="">Toutes (R, LIM, P01–P12, ANN)</option></select>
@@ -1186,17 +1670,16 @@
               <button class="seg-btn" data-mm-layout="radial">Radiale (360°)</button>
             </div>
             <div class="seg-group" aria-label="Profondeur affichée">
-              <button class="seg-btn" data-mm-depth="1">Niv. 1</button>
-              <button class="seg-btn active" data-mm-depth="2">Niv. 2</button>
-              <button class="seg-btn" data-mm-depth="3">Niv. 3</button>
-              <button class="seg-btn" data-mm-depth="4">Niv. 4</button>
-              <button class="seg-btn" data-mm-depth="5">Niv. 5</button>
+              <button class="seg-btn" data-mm-depth="1" title="Niveau 1 : Racine uniquement (1 nœud)">Niv. 1</button>
+              <button class="seg-btn active" data-mm-depth="2" title="Niveau 2 : 12 Domaines (13 nœuds)">Niv. 2</button>
+              <button class="seg-btn" data-mm-depth="3" title="Niveau 3 : 36 Sous-domaines (49 nœuds)">Niv. 3</button>
+              <button class="seg-btn" data-mm-depth="4" title="Niveau 4 : 71 Familles (120 nœuds)">Niv. 4</button>
+              <button class="seg-btn" data-mm-depth="5" title="Niveau 5 : 260 Thèmes — arbre complet (380 nœuds)">Niv. 5</button>
             </div>
             <button id="mm-expand-all-btn" class="btn btn-sm">Tout déplier</button>
             <button id="mm-collapse-all-btn" class="btn btn-sm">Tout replier</button>
             <button id="mm-toggle-edges-btn" class="btn btn-sm active">Interrelations : ON</button>
-            <button id="mm-xray-btn" class="btn btn-sm">Mode Rayon X</button>
-            <button id="mm-expand-linked-btn" class="btn btn-sm primary" title="Déplie les ancêtres de tous les nœuds reliés au nœud sélectionné">Déplier les cibles liées</button>
+            <button id="mm-expand-linked-btn" class="btn btn-sm" disabled title="Déplie les ancêtres de tous les nœuds reliés au nœud sélectionné">Déplier les cibles liées</button>
             <span id="mm-stats-pill" class="kpi-pill" style="margin-left:auto;"></span>
           </div>
 
@@ -1210,9 +1693,9 @@
               <button class="btn btn-sm" data-zoom="mm" data-action="center" title="Centrer sur la sélection">Centrer</button>
             </div>
             <div class="legend-hud" id="mm-legend">
-              <div class="legend-title" id="mm-legend-toggle">
+              <div class="legend-title" id="mm-legend-toggle" role="button" tabindex="0" aria-expanded="true" aria-controls="mm-legend-grid">
                 <span>8 types d'interrelations</span>
-                <span class="mono">▾</span>
+                <span class="mono legend-chevron">▾</span>
               </div>
               <div class="legend-grid" id="mm-legend-grid"></div>
             </div>
@@ -1232,6 +1715,7 @@
             <span id="st-stats-pill" class="kpi-pill" style="margin-left:auto;"></span>
           </div>
           <div class="struct-body">
+            <div id="st-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
             <div id="st-list-pane" class="struct-list-pane"></div>
             <div id="st-stage" class="svg-stage" tabindex="0">
               <svg id="st-svg"></svg>
@@ -1312,9 +1796,10 @@
               <button id="prd-print-btn" class="btn btn-sm" title="Imprimer ou exporter en PDF">Imprimer / PDF</button>
               <a id="prd-standalone-link" class="btn btn-sm" href="PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" target="_blank" rel="noopener">Page PRD autonome ↗</a>
               <a id="prd-source-md-link" class="btn btn-sm" href="../../Sources/Compendium/prd.md" target="_blank" rel="noopener">prd.md ↗</a>
-              <span id="prd-stats-pill" class="stats-pill" style="margin-left:auto;"></span>
+              <span id="prd-stats-pill" class="kpi-pill" style="margin-left:auto;"></span>
             </div>
             <div class="prd-body">
+              <div id="prd-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
               <aside id="prd-toc-pane" class="prd-toc-pane" aria-label="Table des matières du PRD">
                 <div class="prd-toc-filter-wrap">
                   <input id="prd-toc-filter" class="search-input" type="search" placeholder="Filtrer TDM (Partie, Ch., Famille, Annexe…)" autocomplete="off" aria-label="Filtrer la table des matières PRD" />
@@ -1329,6 +1814,7 @@
       </main>
 
       <!-- Inspecteur latéral -->
+      <div id="inspector-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
       <aside id="inspector" class="inspector" aria-label="Inspecteur détaillé">
         <div class="inspector-header">
           <span class="inspector-title" style="font-weight:700;font-size:13px;">Inspecteur</span>
@@ -1336,7 +1822,10 @@
         </div>
         <div id="inspector-body" class="inspector-body">
           <div class="empty-state">
-            Cliquez sur un nœud thématique, une unité structurelle ou une arête pour inspecter ses détails, ses ancrages <span class="mono">../../Compendium/Compendium.md#Lxxx</span> et ses interrelations.
+            <strong>Guide rapide</strong><br/>
+            Cliquez sur un nœud ou une relation pour inspecter ses détails et ancrages Compendium.<br/>
+            Double-cliquez sur un nœud pour déplier ou replier ses branches.<br/>
+            Utilisez <span class="mono">Ctrl+K</span> pour rechercher, la molette pour zoomer et <span class="mono">0</span> pour cadrer.
           </div>
         </div>
       </aside>
@@ -1483,7 +1972,13 @@
       nodes.forEach(function (n) {
         nodeById[n.node_id] = n;
         if (n.canonical_slug) nodeBySlug[n.canonical_slug] = n;
-        childrenByParent[n.node_id] = Array.isArray(n.children_ids) ? n.children_ids.slice() : [];
+      });
+      nodes.forEach(function (n) {
+        var validKids = [];
+        (Array.isArray(n.children_ids) ? n.children_ids : []).forEach(function (cid) {
+          if (nodeById[cid] && validKids.indexOf(cid) === -1) validKids.push(cid);
+        });
+        childrenByParent[n.node_id] = validKids;
       });
       // Assurer childrenByParent même si children_ids n'était pas renseigné
       nodes.forEach(function (n) {
@@ -1608,11 +2103,12 @@
           (n.tags || []).join(" "),
           (n.identifiers || []).join(" ")
         ].join(" ");
+        var nodeSecs = (Array.isArray(n.parts_present) && n.parts_present.length) ? n.parts_present : (n.tomes_present || []);
         searchDocs.push({
           kind: "theme",
           id: n.node_id,
           title: n.title,
-          subtitle: (n.domain_id || "") + " · " + (n.node_kind || "") + " · " + ((n.tomes_present || []).join(", ") || "Corpus"),
+          subtitle: (n.domain_id || "") + " · " + (n.node_kind || "") + " · " + (nodeSecs.join(", ") || "Compendium"),
           domain_id: n.domain_id,
           norm: normalizeText(hay)
         });
@@ -1880,27 +2376,30 @@
     }
 
     function isAnyFilterActive(filters) {
+      var f = filters || {};
       return Boolean(
-        filters.tome ||
-        filters.domain ||
-        filters.autonomy ||
-        filters.role ||
-        filters.horizon ||
-        filters.relationType
+        f.tome ||
+        f.section ||
+        f.domain ||
+        f.autonomy ||
+        f.role ||
+        f.horizon ||
+        f.relationType
       );
     }
 
     function filterNodesAndRelations(indexes, filters) {
       var f = filters || {};
-      var hasNodeFilter = Boolean(f.tome || f.domain || f.autonomy || f.role || f.horizon);
+      var secFilter = f.section || f.tome || "";
+      var hasNodeFilter = Boolean(secFilter || f.domain || f.autonomy || f.role || f.horizon);
       var matchingNodeIds = new Set();
 
       indexes.nodes.forEach(function (n) {
         if (n.depth === 0) return;
         if (f.domain && n.domain_id !== f.domain) return;
-        if (f.tome) {
+        if (secFilter) {
           var nodeParts = (Array.isArray(n.parts_present) && n.parts_present.length) ? n.parts_present : (n.tomes_present || []);
-          if (nodeParts.indexOf(f.tome) === -1) return;
+          if (nodeParts.indexOf(secFilter) === -1) return;
         }
         if (f.autonomy && (!n.autonomy_levels || n.autonomy_levels.indexOf(f.autonomy) === -1)) return;
         if (f.role && (!n.roles || n.roles.indexOf(f.role) === -1)) return;
@@ -1914,9 +2413,9 @@
 
       var filteredRelations = indexes.relations.filter(function (r) {
         if (f.relationType && r.type !== f.relationType) return false;
-        if (f.tome) {
+        if (secFilter) {
           var relParts = (Array.isArray(r.parts) && r.parts.length) ? r.parts : (r.tomes || []);
-          if (relParts.length > 0 && relParts.indexOf(f.tome) === -1) return false;
+          if (relParts.length > 0 && relParts.indexOf(secFilter) === -1) return false;
         }
         if (hasNodeFilter) {
           return matchingNodeIds.has(r.source) && matchingNodeIds.has(r.target);
@@ -2060,7 +2559,7 @@
       return { found: true, hops: hops, nodes: pathNodes, edges: edges };
     }
 
-    function computeConcordanceMatrix(indexes, groupBy) {
+    function computeConcordanceMatrix(indexes, groupBy, allowedNodeIds) {
       var enumParts = (indexes.schema && indexes.schema.enums && indexes.schema.enums.compendium_parts) || null;
       var files = (indexes.schema && indexes.schema.corpus_scope && indexes.schema.corpus_scope.files) || [];
       var tomeIds = (enumParts && enumParts.length)
@@ -2069,6 +2568,26 @@
             ? files.map(function (f) { return f.section_id || f.tome_id; })
             : ["R", "LIM", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "ANN"]);
       var rows = [];
+
+      function accumulateThemeIntoRow(row, n) {
+        if (allowedNodeIds && !allowedNodeIds.has(n.node_id)) return;
+        var seenParts = new Set();
+        (n.occurrences || []).forEach(function (occ) {
+          var pid = occ.part_id || occ.tome_id;
+          if (!row.cells[pid]) return;
+          row.cells[pid].occurrences += 1;
+          seenParts.add(pid);
+          if (occ.compendium_unit_id || occ.unit_id) row.cells[pid].chapterIds.add(occ.compendium_unit_id || occ.unit_id);
+        });
+        if (row.cells["R"] && !seenParts.has("R") && Array.isArray(n.parts_present) && n.parts_present.indexOf("R") !== -1) {
+          row.cells["R"].occurrences += 1;
+          seenParts.add("R");
+          row.cells["R"].chapterIds.add("Compendium/README.md");
+        }
+        seenParts.forEach(function (tid) {
+          row.cells[tid].nodeIds.push(n.node_id);
+        });
+      }
 
       if (groupBy === "subdomain") {
         var subNodes = indexes.nodes.filter(function (n) { return n.node_kind === "subdomain"; });
@@ -2087,17 +2606,7 @@
           });
           indexes.nodes.forEach(function (n) {
             if (n.node_kind !== "theme" || n.domain_id !== sd.domain_id || n.subdomain !== sd.title) return;
-            var seenParts = new Set();
-            (n.occurrences || []).forEach(function (occ) {
-              var pid = occ.part_id || occ.tome_id;
-              if (!row.cells[pid]) return;
-              row.cells[pid].occurrences += 1;
-              seenParts.add(pid);
-              if (occ.compendium_unit_id || occ.unit_id) row.cells[pid].chapterIds.add(occ.compendium_unit_id || occ.unit_id);
-            });
-            seenParts.forEach(function (tid) {
-              row.cells[tid].nodeIds.push(n.node_id);
-            });
+            accumulateThemeIntoRow(row, n);
           });
           tomeIds.forEach(function (tid) {
             row.cells[tid].chapterCount = row.cells[tid].chapterIds.size;
@@ -2119,17 +2628,7 @@
           });
           indexes.nodes.forEach(function (n) {
             if (n.node_kind !== "theme" || n.domain_id !== d.domain_id) return;
-            var seenParts = new Set();
-            (n.occurrences || []).forEach(function (occ) {
-              var pid = occ.part_id || occ.tome_id;
-              if (!row.cells[pid]) return;
-              row.cells[pid].occurrences += 1;
-              seenParts.add(pid);
-              if (occ.compendium_unit_id || occ.unit_id) row.cells[pid].chapterIds.add(occ.compendium_unit_id || occ.unit_id);
-            });
-            seenParts.forEach(function (tid) {
-              row.cells[tid].nodeIds.push(n.node_id);
-            });
+            accumulateThemeIntoRow(row, n);
           });
           tomeIds.forEach(function (tid) {
             row.cells[tid].chapterCount = row.cells[tid].chapterIds.size;
@@ -2185,6 +2684,8 @@
       var visibleIds = [];
       var edges = [];
       var weightCache = Object.create(null);
+      var byDepth = Object.create(null);
+      var maxDepthSeen = 0;
 
       function getWeight(nid) {
         if (weightCache[nid] != null) return weightCache[nid];
@@ -2203,17 +2704,12 @@
         return weightCache[nid];
       }
 
-      function layout(nid, depth, aStart, aEnd) {
+      function collectAngles(nid, depth, aStart, aEnd) {
         visibleIds.push(nid);
+        if (depth > maxDepthSeen) maxDepthSeen = depth;
+        if (!byDepth[depth]) byDepth[depth] = [];
         var angle = (aStart + aEnd) / 2;
-        var r = depth === 0 ? 0 : depth * ringStep + (depth > 1 ? 60 : 0);
-        positions[nid] = {
-          x: Math.cos(angle) * r,
-          y: Math.sin(angle) * r,
-          depth: depth,
-          angle: angle,
-          r: r
-        };
+        byDepth[depth].push({ nid: nid, angle: angle, depth: depth });
         if (!expandedSet.has(nid)) return;
         var kids = getChildren(nid) || [];
         if (kids.length === 0) return;
@@ -2223,12 +2719,69 @@
           var kw = getWeight(kids[i]);
           var span = ((aEnd - aStart) * kw) / totalW;
           edges.push({ from: nid, to: kids[i] });
-          layout(kids[i], depth + 1, curA, curA + span);
+          collectAngles(kids[i], depth + 1, curA, curA + span);
           curA += span;
         }
       }
 
-      if (rootId) layout(rootId, 0, -Math.PI, Math.PI);
+      if (rootId) {
+        collectAngles(rootId, 0, -Math.PI, Math.PI);
+        positions[rootId] = { x: 0, y: 0, depth: 0, angle: 0, r: 0 };
+        var BOX_W = 198;
+        var BOX_H = 50;
+        var ASPECT_X = 1.26;
+        var stepBase = Math.max(240, ringStep || 300);
+        var prevR = 0;
+
+        for (var d = 1; d <= maxDepthSeen; d++) {
+          var ring = byDepth[d] || [];
+          var rMin = Math.max(d * stepBase, prevR + 220);
+          for (var i = 0; i < ring.length; i++) {
+            var ci = Math.cos(ring[i].angle) * ASPECT_X;
+            var si = Math.sin(ring[i].angle);
+            for (var j = i + 1; j < ring.length; j++) {
+              var ux = Math.abs(ci - Math.cos(ring[j].angle) * ASPECT_X);
+              var uy = Math.abs(si - Math.sin(ring[j].angle));
+              var needX = ux > 1e-6 ? (BOX_W / ux) : 1e9;
+              var needY = uy > 1e-6 ? (BOX_H / uy) : 1e9;
+              var needR = Math.min(needX, needY);
+              if (needR > rMin && needR < 1e8) rMin = needR;
+            }
+          }
+          // Garantir également zéro collision avec les anneaux intérieurs (0..d-1)
+          for (var guard = 0; guard < 12; guard++) {
+            var ringCollision = false;
+            for (var m = 0; m < ring.length && !ringCollision; m++) {
+              var xm = Math.cos(ring[m].angle) * rMin * ASPECT_X;
+              var ym = Math.sin(ring[m].angle) * rMin;
+              for (var pd = 0; pd < d; pd++) {
+                var pRing = byDepth[pd] || [];
+                for (var pm = 0; pm < pRing.length; pm++) {
+                  var pp = positions[pRing[pm].nid];
+                  if (pp && Math.abs(xm - pp.x) < BOX_W && Math.abs(ym - pp.y) < BOX_H) {
+                    ringCollision = true;
+                    break;
+                  }
+                }
+                if (ringCollision) break;
+              }
+            }
+            if (!ringCollision) break;
+            rMin += 65;
+          }
+          for (var k = 0; k < ring.length; k++) {
+            var item = ring[k];
+            positions[item.nid] = {
+              x: Math.cos(item.angle) * rMin * ASPECT_X,
+              y: Math.sin(item.angle) * rMin,
+              depth: d,
+              angle: item.angle,
+              r: rMin
+            };
+          }
+          prevR = rMin;
+        }
+      }
       return { positions: positions, visibleIds: visibleIds, edges: edges };
     }
 
@@ -2519,10 +3072,15 @@
       var idx = buildIndexes(rawData);
       idx.schema = rawData.schema || {};
 
+      var isInitialDrawer = typeof window !== "undefined" && typeof window.innerWidth === "number" && window.innerWidth <= 960;
+      var mmHasFitted = false;
       var state = {
         activeView: "mindmap",
         themeMode: "auto",
+        filtersOpen: false,
+        inspectorManualOpen: null,
         filters: {
+          section: "",
           tome: "",
           domain: "",
           autonomy: "",
@@ -2538,10 +3096,10 @@
         mmDepth: 2,
         mmExpanded: new Set(),
         mmShowEdges: true,
-        mmXray: false,
         mmLastPositions: {},
+        mmLegendCollapsed: isInitialDrawer,
         // Vue 2
-        stShowList: true,
+        stShowList: !isInitialDrawer,
         stFileFilter: "",
         stExpanded: new Set(["STRUCT_ROOT"]),
         stLastPositions: {},
@@ -2564,35 +3122,91 @@
         prdFocusId: "exec",
         prdHighlightId: null,
         prdTocFilter: "",
-        prdShowToc: true,
+        prdShowToc: !isInitialDrawer,
         prdAnnDShowAll: false
       };
 
-      // Expansion initiale Vue 1 (Niv. 2 : Racine + Domaines dépliés)
+      function isDrawerViewport() {
+        return typeof window !== "undefined" && typeof window.innerWidth === "number" && window.innerWidth <= 960;
+      }
+
+      function countActiveFilters() {
+        var c = 0;
+        if (state.filters.tome) c++;
+        if (state.filters.domain) c++;
+        if (state.filters.autonomy) c++;
+        if (state.filters.role) c++;
+        if (state.filters.horizon) c++;
+        if (state.filters.relationType) c++;
+        return c;
+      }
+
+      function syncFiltersToggleUI() {
+        var btn = document.getElementById("filters-toggle-btn");
+        var bar = document.getElementById("filter-bar");
+        var activeCount = countActiveFilters();
+        if (bar) bar.classList.toggle("collapsed", !state.filtersOpen);
+        if (btn) {
+          btn.setAttribute("aria-expanded", state.filtersOpen ? "true" : "false");
+          btn.classList.toggle("active", state.filtersOpen || activeCount > 0);
+          btn.innerHTML = activeCount > 0
+            ? 'Filtres <span class="filter-count">' + activeCount + '</span>'
+            : 'Filtres';
+        }
+      }
+
+      function syncLegendUI() {
+        var leg = document.getElementById("mm-legend");
+        var tog = document.getElementById("mm-legend-toggle");
+        var grid = document.getElementById("mm-legend-grid");
+        if (leg) leg.classList.toggle("collapsed", state.mmLegendCollapsed);
+        if (tog) tog.setAttribute("aria-expanded", state.mmLegendCollapsed ? "false" : "true");
+        if (grid) grid.style.display = state.mmLegendCollapsed ? "none" : "grid";
+      }
+
+      function syncDrawerBackdrops() {
+        var drawerMode = isDrawerViewport();
+        var insp = document.getElementById("inspector");
+        var inspBd = document.getElementById("inspector-backdrop");
+        if (inspBd) inspBd.classList.toggle("open", Boolean(drawerMode && insp && !insp.classList.contains("collapsed")));
+        var stBd = document.getElementById("st-backdrop");
+        if (stBd) stBd.classList.toggle("open", Boolean(drawerMode && state.stShowList));
+        var prdBd = document.getElementById("prd-backdrop");
+        if (prdBd) prdBd.classList.toggle("open", Boolean(drawerMode && state.prdShowToc));
+      }
+
+      // Expansion initiale Vue 1 (5 niveaux réels : Niv.1=1, Niv.2=13 [défaut], Niv.3=49, Niv.4=120, Niv.5=380)
       function applyMindMapDepth(depthLevel) {
-        state.mmDepth = depthLevel;
+        var lvl = Math.max(1, Math.min(5, Number(depthLevel) || 2));
+        var maxExpandDepth = lvl - 1;
+        state.mmDepth = lvl;
         state.mmExpanded = new Set();
         idx.nodes.forEach(function (n) {
-          if (n.depth < depthLevel) state.mmExpanded.add(n.node_id);
+          if (n.depth < maxExpandDepth) state.mmExpanded.add(n.node_id);
+        });
+        document.querySelectorAll("[data-mm-depth]").forEach(function (b) {
+          b.classList.toggle("active", Number(b.getAttribute("data-mm-depth")) === lvl);
         });
       }
       applyMindMapDepth(2);
 
-      // Expansion initiale Vue 2 (Racine + 9 fichiers)
+      function syncExpandLinkedBtn() {
+        var btn = document.getElementById("mm-expand-linked-btn");
+        if (btn) btn.disabled = !(state.selectedKind === "theme" && state.selectedId);
+      }
+
+      // Expansion Vue 2 : replié aux 15 sections (upToChapters=false) ou déplié jusqu'aux chapitres/unités (upToChapters=true)
       function initStructExpansion(upToChapters) {
         state.stExpanded = new Set(["STRUCT_ROOT"]);
+        if (!upToChapters) return;
         idx.structFiles.forEach(function (f) {
-          state.stExpanded.add("STRUCT_FILE_" + f.tome_id);
-          if (upToChapters) {
-            (f.tree || []).forEach(function (u) {
-              if (u.kind === "part" || u.kind === "liminaire" || u.kind === "annex" || u.kind === "document") {
-                state.stExpanded.add(u.unit_id);
-                (u.children || []).forEach(function (ch) {
-                  if (ch.kind === "part") state.stExpanded.add(ch.unit_id);
-                });
-              }
-            });
-          }
+          var sid = f.section_id || f.tome_id;
+          state.stExpanded.add("STRUCT_FILE_" + sid);
+          (f.tree || []).forEach(function (u) {
+            if (u.kind === "part" || u.kind === "annex") {
+              state.stExpanded.add(u.unit_id);
+            }
+          });
         });
       }
       initStructExpansion(false);
@@ -2635,6 +3249,7 @@
         vp.tx = (w - bbox.width * s) / 2 - bbox.x * s;
         vp.ty = (h - bbox.height * s) / 2 - bbox.y * s;
         applyViewportTransform(key);
+        if (key === "mm") mmHasFitted = true;
       }
 
       function centerOnPoint(key, x, y) {
@@ -2835,8 +3450,14 @@
       function setInspectorOpen(isOpen) {
         var insp = document.getElementById("inspector");
         var btn = document.getElementById("inspector-toggle-btn");
+        var topBtn = document.getElementById("inspector-topbar-btn");
         if (insp) insp.classList.toggle("collapsed", !isOpen);
         if (btn) btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (topBtn) {
+          topBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          topBtn.classList.toggle("active", Boolean(isOpen));
+        }
+        syncDrawerBackdrops();
       }
 
       function bindKeyboardActivation(root) {
@@ -2853,6 +3474,25 @@
         });
       }
 
+      function ensureThemeNodeVisibleUnderFilters(nodeId) {
+        if (!nodeId || !idx.nodeById[nodeId] || !isAnyFilterActive(state.filters)) return;
+        var filt = filterNodesAndRelations(idx, state.filters);
+        var checkIds = [nodeId].concat(collectDescendantThemeIds(idx, nodeId));
+        var anyVisible = checkIds.some(function (cid) { return filt.matchingNodeIds.has(cid); });
+        if (!anyVisible) {
+          ["f-tome", "f-domain", "f-autonomy", "f-role", "f-horizon", "f-rel"].forEach(function (fid) {
+            var el = document.getElementById(fid);
+            if (el) el.value = "";
+          });
+          state.filters = { section: "", tome: "", domain: "", autonomy: "", role: "", horizon: "", relationType: "" };
+          state.stFileFilter = "";
+          var stSel = document.getElementById("st-file-select");
+          if (stSel) stSel.value = "";
+          state.syPositions = null;
+          syncFiltersToggleUI();
+        }
+      }
+
       function revealThemeNode(nodeId) {
         var cur = idx.nodeById[nodeId];
         while (cur && cur.parent_id) {
@@ -2866,6 +3506,7 @@
         if (!n) return;
         state.selectedKind = "theme";
         state.selectedId = nodeId;
+        syncExpandLinkedBtn();
         revealThemeNode(nodeId);
         renderInspectorTheme(n);
         if (state.activeView === "mindmap") {
@@ -2892,9 +3533,17 @@
           state.stFileFilter = "";
           var stSel = document.getElementById("st-file-select");
           if (stSel) stSel.value = "";
+          if (state.filters.tome) {
+            state.filters.tome = "";
+            var fTomeEl = document.getElementById("f-tome");
+            if (fTomeEl) fTomeEl.value = "";
+            state.syPositions = null;
+            syncFiltersToggleUI();
+          }
         }
         state.selectedKind = "structure";
         state.selectedId = unitId;
+        syncExpandLinkedBtn();
         var p = u.parent_id;
         while (p) {
           state.stExpanded.add(p);
@@ -2912,6 +3561,7 @@
       function selectRelation(rel) {
         state.selectedKind = "relation";
         state.selectedId = rel.relation_id;
+        syncExpandLinkedBtn();
         renderInspectorRelation(rel);
       }
 
@@ -2970,7 +3620,7 @@
           html.push('</div></div>');
         }
 
-        if (idx.prd && (n.node_kind === "subdomain" || n.node_kind === "family" || n.node_kind === "theme")) {
+        if (idx.prd && (n.node_kind === "domain" || n.node_kind === "subdomain" || n.node_kind === "family" || n.node_kind === "theme")) {
           var schSeen = Object.create(null);
           var schItems = [];
           function pushInspSch(s) {
@@ -2979,6 +3629,11 @@
             schItems.push(s);
           }
           (idx.prdSchemasByNodeId[n.node_id] || []).forEach(pushInspSch);
+          if (n.node_kind === "domain" && Array.isArray(n.compendium_schemas)) {
+            n.compendium_schemas.forEach(function (sid) {
+              if (idx.prdSchemaById[sid]) pushInspSch(idx.prdSchemaById[sid]);
+            });
+          }
           if (n.node_kind === "subdomain" || n.node_kind === "theme") {
             var schTarget = resolveNodeToPrdTarget(idx, n.node_id);
             if (schTarget && schTarget.chapter_number && idx.prdChapterByNum[schTarget.chapter_number]) {
@@ -3013,9 +3668,10 @@
 
         // Occurrences et liens Compendium
         var occs = n.occurrences || [];
-        html.push('<div><div class="section-label">Occurrences vérifiées dans le Compendium (' + occs.length + ')</div>');
+        var aggOccCount = Number(n.occurrence_count || occs.length || 0);
+        html.push('<div><div class="section-label">Occurrences vérifiées dans le Compendium (' + (occs.length || aggOccCount) + ')</div>');
         if (occs.length === 0) {
-          html.push('<div style="color:var(--text-muted);font-size:12px;">Nœud hiérarchique agrégateur (' + (idx.descendantCount[n.node_id] || 0) + ' descendants).</div>');
+          html.push('<div style="color:var(--text-muted);font-size:12px;">Nœud hiérarchique agrégateur (' + (idx.descendantCount[n.node_id] || 0) + ' descendants · ' + aggOccCount + ' ancrages cumulés dans ' + ((n.units_present || []).length) + ' unités).</div>');
         } else {
           html.push('<div style="display:flex;flex-direction:column;gap:6px;">');
           occs.forEach(function (occ) {
@@ -3052,11 +3708,12 @@
           outRels.forEach(function (r) {
             var rt = idx.relTypeById[r.type] || { label: r.type, color: "#64748b" };
             var tgt = idx.nodeById[r.target];
+            var relSecsOut = (Array.isArray(r.parts) && r.parts.length) ? r.parts : (r.tomes || []);
             html.push(
               '<div class="rel-card" role="button" tabindex="0" data-jump-node="' + escapeHtml(r.target) + '" style="border-left-color:' + escapeHtml(rt.color) + ';">' +
                 '<div style="display:flex;justify-content:space-between;gap:6px;">' +
                   '<span style="color:' + escapeHtml(rt.color) + ';font-weight:700;font-size:11px;">→ ' + escapeHtml(rt.label) + '</span>' +
-                  '<span class="mono" style="font-size:10.5px;">' + escapeHtml((r.tomes || []).join(", ")) + '</span>' +
+                  '<span class="mono" style="font-size:10.5px;">' + escapeHtml(relSecsOut.join(", ")) + '</span>' +
                 '</div>' +
                 '<div><strong>' + prdInlineHtml(tgt ? tgt.title : r.target) + '</strong></div>' +
                 '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(r.label) + ' — ' + prdInlineHtml(r.justification) + '</div>' +
@@ -3075,11 +3732,12 @@
           inRels.forEach(function (r) {
             var rt = idx.relTypeById[r.type] || { label: r.type, color: "#64748b" };
             var src = idx.nodeById[r.source];
+            var relSecsIn = (Array.isArray(r.parts) && r.parts.length) ? r.parts : (r.tomes || []);
             html.push(
               '<div class="rel-card" role="button" tabindex="0" data-jump-node="' + escapeHtml(r.source) + '" style="border-left-color:' + escapeHtml(rt.color) + ';">' +
                 '<div style="display:flex;justify-content:space-between;gap:6px;">' +
                   '<span style="color:' + escapeHtml(rt.color) + ';font-weight:700;font-size:11px;">← ' + escapeHtml(rt.label) + '</span>' +
-                  '<span class="mono" style="font-size:10.5px;">' + escapeHtml((r.tomes || []).join(", ")) + '</span>' +
+                  '<span class="mono" style="font-size:10.5px;">' + escapeHtml(relSecsIn.join(", ")) + '</span>' +
                 '</div>' +
                 '<div><strong>' + prdInlineHtml(src ? src.title : r.source) + '</strong></div>' +
                 '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(r.label) + ' — ' + prdInlineHtml(r.justification) + '</div>' +
@@ -3091,17 +3749,21 @@
         html.push('</div>');
 
         body.innerHTML = html.join("");
+        body.scrollTop = 0;
         setInspectorOpen(true);
         bindKeyboardActivation(body);
 
         // Liaison événements internes inspecteur
         body.querySelectorAll("[data-jump-node]").forEach(function (el) {
           el.addEventListener("click", function () {
-            selectThemeNode(el.getAttribute("data-jump-node"), true);
+            var jid = el.getAttribute("data-jump-node");
+            ensureThemeNodeVisibleUnderFilters(jid);
+            selectThemeNode(jid, true);
           });
         });
         body.querySelectorAll("[data-insp-prd-schema]").forEach(function (el) {
-          el.addEventListener("click", function () {
+          el.addEventListener("click", function (ev) {
+            if (ev && ev.target && typeof ev.target.closest === "function" && ev.target.closest("a, button")) return;
             jumpToPrdTarget({
               kind: "schema",
               schema_id: el.getAttribute("data-insp-prd-schema"),
@@ -3115,11 +3777,13 @@
         });
         var bMm = document.getElementById("insp-goto-mm");
         if (bMm) bMm.addEventListener("click", function () {
+          ensureThemeNodeVisibleUnderFilters(n.node_id);
           switchView("mindmap");
           selectThemeNode(n.node_id, true);
         });
         var bSy = document.getElementById("insp-goto-sy");
         if (bSy) bSy.addEventListener("click", function () {
+          ensureThemeNodeVisibleUnderFilters(n.node_id);
           state.syEgo = "1";
           state.syPositions = null;
           document.querySelectorAll("[data-sy-ego]").forEach(function (b) {
@@ -3128,17 +3792,35 @@
           switchView("synaptic");
           selectThemeNode(n.node_id, true);
         });
+        function resolveRepresentativeThemeId(nid) {
+          var cand = collectDescendantThemeIds(idx, nid);
+          if (!cand.length) return nid;
+          var best = cand[0];
+          var bestD = -1;
+          cand.forEach(function (tid) {
+            var tn = idx.nodeById[tid];
+            var d = tn ? Number(tn.relation_degree || 0) : 0;
+            if (d > bestD) { bestD = d; best = tid; }
+          });
+          return best;
+        }
         var bA = document.getElementById("insp-set-a");
         if (bA) bA.addEventListener("click", function () {
-          state.pathStart = n.node_id;
-          document.getElementById("path-start").value = n.node_id;
+          var thId = resolveRepresentativeThemeId(n.node_id);
+          ensureThemeNodeVisibleUnderFilters(thId);
+          state.pathStart = thId;
+          document.getElementById("path-start").value = thId;
           switchView("synaptic");
+          if (state.pathStart && state.pathEnd) runShortestPathUI();
         });
         var bB = document.getElementById("insp-set-b");
         if (bB) bB.addEventListener("click", function () {
-          state.pathEnd = n.node_id;
-          document.getElementById("path-end").value = n.node_id;
+          var thId = resolveRepresentativeThemeId(n.node_id);
+          ensureThemeNodeVisibleUnderFilters(thId);
+          state.pathEnd = thId;
+          document.getElementById("path-end").value = thId;
           switchView("synaptic");
+          if (state.pathStart && state.pathEnd) runShortestPathUI();
         });
       }
 
@@ -3201,6 +3883,7 @@
         }
 
         body.innerHTML = html.join("");
+        body.scrollTop = 0;
         setInspectorOpen(true);
         bindKeyboardActivation(body);
         var bStructPrd = document.getElementById("insp-struct-goto-prd");
@@ -3221,14 +3904,16 @@
         var src = idx.nodeById[rel.source];
         var tgt = idx.nodeById[rel.target];
 
+        var relSecs = (Array.isArray(rel.parts) && rel.parts.length) ? rel.parts : (rel.tomes || []);
         body.innerHTML = [
           '<div class="chip-row"><span class="chip" style="border-color:' + escapeHtml(rt.color) + ';color:' + escapeHtml(rt.color) + ';">' + escapeHtml(rt.label) + '</span>' +
-          '<span class="chip mono">' + escapeHtml((rel.tomes || []).join(", ")) + '</span></div>',
+          '<span class="chip mono">' + escapeHtml(relSecs.join(", ")) + '</span></div>',
           '<h3 style="margin:6px 0;">' + prdInlineHtml(rel.label) + '</h3>',
           '<p style="margin:0;color:var(--text-muted);font-size:12.5px;">' + prdInlineHtml(rel.justification) + '</p>',
           '<div class="occ-card"><strong>Source :</strong> <a href="#" data-jump-node="' + escapeHtml(rel.source) + '">' + prdInlineHtml(src ? src.title : rel.source) + '</a></div>',
           '<div class="occ-card"><strong>Cible :</strong> <a href="#" data-jump-node="' + escapeHtml(rel.target) + '">' + prdInlineHtml(tgt ? tgt.title : rel.target) + '</a></div>'
         ].join("");
+        body.scrollTop = 0;
         setInspectorOpen(true);
         body.querySelectorAll("[data-jump-node]").forEach(function (el) {
           el.addEventListener("click", function (ev) {
@@ -3242,61 +3927,45 @@
       // =========================================================================
       // VUE 1 : MindMap Thématique & Interrelations (Horizontale / Radiale)
       // =========================================================================
-      function applyMindMapXrayHighlight(centerId) {
+      function syncMindMapHoverHighlight() {
         var svg = document.getElementById("mm-svg");
         if (!svg) return;
-        var active = Boolean(state.mmXray && centerId);
-        var neighbors = new Set();
-        if (active) neighbors.add(centerId);
-
+        var centerId = state.hoveredNodeId || (state.selectedKind === "theme" ? state.selectedId : null);
         svg.querySelectorAll("path.mm-edge").forEach(function (p) {
           var s = p.getAttribute("data-vis-src");
           var t = p.getAttribute("data-vis-tgt");
           var touches = Boolean(centerId && (s === centerId || t === centerId));
-          if (active && touches) {
-            neighbors.add(s);
-            neighbors.add(t);
-          }
           p.classList.toggle("highlighted", touches);
-          p.classList.toggle("dimmed", active && !touches);
+          p.classList.toggle("soft-dimmed", Boolean(centerId && !touches));
         });
-
-        svg.querySelectorAll("g.mm-node").forEach(function (g) {
-          var nid = g.getAttribute("data-node-id");
-          var dimFilter = g.getAttribute("data-filter-dim") === "1";
-          var dimXray = active && !neighbors.has(nid);
-          g.classList.toggle("dimmed", dimFilter || dimXray);
+        svg.querySelectorAll("text.mm-edge-mult").forEach(function (b) {
+          var s = b.getAttribute("data-vis-src");
+          var t = b.getAttribute("data-vis-tgt");
+          var touches = Boolean(centerId && (s === centerId || t === centerId));
+          var keepFull = touches || b.getAttribute("data-always-full") === "1";
+          b.classList.toggle("highlighted", keepFull);
         });
       }
 
       function renderMindMap(autoFit) {
         var svg = document.getElementById("mm-svg");
         if (!svg || !idx.rootNode) return;
+        syncExpandLinkedBtn();
         var filtered = filterNodesAndRelations(idx, state.filters);
         updateFilterStatus(filtered);
 
-        var NODE_W = state.mmLayout === "radial" ? 186 : 216;
+        var NODE_W = state.mmLayout === "radial" ? 186 : 238;
         var NODE_H = 44;
         var radialStep = Math.max(290, Math.min(480, state.mmExpanded.size * 18 + 250));
         var layoutRes = state.mmLayout === "radial"
           ? computeRadialTreeLayout(idx.rootNode.node_id, function (nid) { return idx.childrenByParent[nid] || []; }, state.mmExpanded, radialStep)
-          : computeHorizontalTreeLayout(idx.rootNode.node_id, function (nid) { return idx.childrenByParent[nid] || []; }, state.mmExpanded, NODE_W, 88, 60);
+          : computeHorizontalTreeLayout(idx.rootNode.node_id, function (nid) { return idx.childrenByParent[nid] || []; }, state.mmExpanded, NODE_W, 92, 54);
 
         state.mmLastPositions = layoutRes.positions;
         var visibleSet = new Set(layoutRes.visibleIds);
         var bundles = state.mmShowEdges ? projectRelationsToVisible(filtered.relations, visibleSet, idx.nodeById) : [];
 
-        // Détermination du voisinage actif en mode Rayon X / sélection
         var activeCenterId = state.hoveredNodeId || (state.selectedKind === "theme" ? state.selectedId : null);
-        var xrayActive = Boolean(state.mmXray && activeCenterId && visibleSet.has(activeCenterId));
-        var xrayNeighbors = new Set();
-        if (xrayActive) {
-          xrayNeighbors.add(activeCenterId);
-          bundles.forEach(function (b) {
-            if (b.visSource === activeCenterId) xrayNeighbors.add(b.visTarget);
-            if (b.visTarget === activeCenterId) xrayNeighbors.add(b.visSource);
-          });
-        }
 
         document.getElementById("mm-stats-pill").textContent =
           layoutRes.visibleIds.length + " nœuds visibles · " + bundles.length + " liens (" +
@@ -3362,11 +4031,8 @@
 
           var path = document.createElementNS(SVG_NS, "path");
           var cls = "mm-edge";
-          if (xrayActive) {
-            cls += touchesActive ? " highlighted" : " dimmed";
-          } else if (touchesActive) {
-            cls += " highlighted";
-          }
+          if (touchesActive) cls += " highlighted";
+          else if (activeCenterId) cls += " soft-dimmed";
           path.setAttribute("class", cls);
           path.setAttribute("data-vis-src", b.visSource);
           path.setAttribute("data-vis-tgt", b.visTarget);
@@ -3404,10 +4070,15 @@
           });
           gEdges.appendChild(path);
 
-          if (b.relations.length > 1 && (touchesActive || !xrayActive)) {
+          if (b.relations.length > 1) {
             var mx = 0.25 * p1.x + 0.5 * cx + 0.25 * p2.x;
             var my = 0.25 * p1.y + 0.5 * cy + 0.25 * p2.y;
             var badge = document.createElementNS(SVG_NS, "text");
+            var alwaysFull = bundles.length <= 60;
+            badge.setAttribute("class", "mm-edge-mult" + ((touchesActive || alwaysFull) ? " highlighted" : ""));
+            badge.setAttribute("data-vis-src", b.visSource);
+            badge.setAttribute("data-vis-tgt", b.visTarget);
+            if (alwaysFull) badge.setAttribute("data-always-full", "1");
             badge.setAttribute("x", mx.toFixed(1));
             badge.setAttribute("y", my.toFixed(1));
             badge.setAttribute("fill", rt.color);
@@ -3436,7 +4107,7 @@
           var cls = "mm-node";
           if (state.selectedKind === "theme" && state.selectedId === nid) cls += " selected";
           if (filtered.active && filtered.matchingNodeIds.has(nid)) cls += " matched";
-          if ((xrayActive && !xrayNeighbors.has(nid)) || (filtered.active && !isMatched)) cls += " dimmed";
+          if (filtered.active && !isMatched) cls += " dimmed";
           g.setAttribute("class", cls);
           g.setAttribute("data-node-id", nid);
           g.setAttribute("data-filter-dim", (filtered.active && !isMatched) ? "1" : "0");
@@ -3462,19 +4133,20 @@
           var titleText = document.createElementNS(SVG_NS, "text");
           titleText.setAttribute("class", "mm-node-title");
           titleText.setAttribute("x", "13");
-          titleText.setAttribute("y", "18");
+          titleText.setAttribute("y", "19");
           var prefix = n.depth === 1 && n.domain_id ? n.domain_id + " · " : "";
-          titleText.textContent = truncate(prefix + n.title, state.mmLayout === "radial" ? 23 : 28);
+          titleText.textContent = truncate(prefix + n.title, state.mmLayout === "radial" ? 23 : 33);
           g.appendChild(titleText);
 
           var subText = document.createElementNS(SVG_NS, "text");
           subText.setAttribute("class", "mm-node-sub");
           subText.setAttribute("x", "13");
-          subText.setAttribute("y", "34");
+          subText.setAttribute("y", "35");
+          var nodeSecsMm = (Array.isArray(n.parts_present) && n.parts_present.length) ? n.parts_present : (n.tomes_present || []);
           var subInfo = n.node_kind === "theme"
-            ? ((n.tomes_present || []).join(",") + " · " + (n.relation_degree || ((idx.outRelations[nid] || []).length + (idx.inRelations[nid] || []).length)) + " rel.")
+            ? (nodeSecsMm.join(",") + " · " + (n.relation_degree || ((idx.outRelations[nid] || []).length + (idx.inRelations[nid] || []).length)) + " rel.")
             : ((kids.length > 0 ? kids.length + " branches · " : "") + (idx.descendantCount[nid] || 0) + " élém.");
-          subText.textContent = truncate(subInfo, state.mmLayout === "radial" ? 27 : 32);
+          subText.textContent = truncate(subInfo, state.mmLayout === "radial" ? 27 : 36);
           g.appendChild(subText);
 
           // Pastille (+N) ou (−) de dépliage/repliage
@@ -3523,14 +4195,12 @@
           });
           g.addEventListener("mouseenter", function (ev) {
             state.hoveredNodeId = nid;
-            if (state.mmXray) applyMindMapXrayHighlight(nid);
+            syncMindMapHoverHighlight();
             showTooltip(ev, "<strong>" + prdInlineHtml(n.title) + "</strong><br/><span style='color:var(--text-muted);'>" + prdInlineHtml(truncate(n.summary, 150)) + "</span>");
           });
           g.addEventListener("mouseleave", function () {
             state.hoveredNodeId = null;
-            if (state.mmXray) {
-              applyMindMapXrayHighlight(state.selectedKind === "theme" ? state.selectedId : null);
-            }
+            syncMindMapHoverHighlight();
             hideTooltip();
           });
           gNodes.appendChild(g);
@@ -3591,7 +4261,13 @@
 
       function renderStructListPane(vTree) {
         var pane = document.getElementById("st-list-pane");
+        var stBtn = document.getElementById("st-toggle-list-btn");
+        if (stBtn) {
+          stBtn.classList.toggle("active", state.stShowList);
+          stBtn.setAttribute("aria-expanded", state.stShowList ? "true" : "false");
+        }
         pane.classList.toggle("hidden", !state.stShowList);
+        syncDrawerBackdrops();
         if (!state.stShowList) return;
 
         var rows = [];
@@ -3638,8 +4314,12 @@
         pane.querySelectorAll("[data-st-id]").forEach(function (row) {
           row.addEventListener("click", function () {
             var sid = row.getAttribute("data-st-id");
-            if (idx.structUnitById[sid]) selectStructUnit(sid, true);
-            else {
+            if (idx.structUnitById[sid]) {
+              if (isDrawerViewport()) {
+                state.stShowList = false;
+              }
+              selectStructUnit(sid, true);
+            } else {
               if (state.stExpanded.has(sid)) state.stExpanded.delete(sid);
               else state.stExpanded.add(sid);
               renderStructureView(false);
@@ -3649,6 +4329,7 @@
       }
 
       function renderStructureView(autoFit) {
+        updateFilterStatus(filterNodesAndRelations(idx, state.filters));
         var vTree = buildStructVirtualTree();
         renderStructListPane(vTree);
 
@@ -3941,9 +4622,17 @@
           c.setAttribute("stroke-width", isSel || isPath ? "3" : "1.5");
           g.appendChild(c);
 
-          if (isPath || isSel || themeNodes.length <= 85) {
+          if (isPath || (isSel && (seedSet.size <= 6 || themeNodes.length <= 85)) || themeNodes.length <= 85) {
             var lbl = document.createElementNS(SVG_NS, "text");
-            lbl.setAttribute("x", String(rad + 5));
+            if (state.syLayout === "circular" && (Math.abs(pos.x) > 1 || Math.abs(pos.y) > 1)) {
+              var angDeg = Math.atan2(pos.y, pos.x) * 180 / Math.PI;
+              var flipLeft = pos.x < 0;
+              lbl.setAttribute("transform", "rotate(" + (flipLeft ? angDeg + 180 : angDeg).toFixed(1) + ")");
+              lbl.setAttribute("x", String(flipLeft ? -(rad + 6) : (rad + 6)));
+              lbl.setAttribute("text-anchor", flipLeft ? "end" : "start");
+            } else {
+              lbl.setAttribute("x", String(rad + 5));
+            }
             lbl.setAttribute("y", "4");
             lbl.setAttribute("class", "mm-node-title");
             lbl.setAttribute("font-size", isPath ? "12" : "10.5");
@@ -3956,7 +4645,8 @@
             selectThemeNode(n.node_id, false);
           });
           g.addEventListener("mouseenter", function (ev) {
-            showTooltip(ev, "<strong>" + prdInlineHtml(n.domain_id + " · " + n.title) + "</strong><br/><span>" + deg + " interrelations · " + escapeHtml((n.tomes_present || []).join(", ")) + "</span>");
+            var sySecs = (Array.isArray(n.parts_present) && n.parts_present.length) ? n.parts_present : (n.tomes_present || []);
+            showTooltip(ev, "<strong>" + prdInlineHtml(n.domain_id + " · " + n.title) + "</strong><br/><span>" + deg + " interrelations · " + escapeHtml(sySecs.join(", ")) + "</span>");
           });
           g.addEventListener("mouseleave", hideTooltip);
           gRoot.appendChild(g);
@@ -3966,11 +4656,16 @@
         else applyViewportTransform("sy");
       }
 
-      function runShortestPathUI() {
+      function runShortestPathUI(showIncompleteHint) {
         var resDiv = document.getElementById("path-results");
         if (!state.pathStart || !state.pathEnd) {
-          resDiv.classList.remove("open");
           state.activePath = null;
+          if (showIncompleteHint) {
+            resDiv.innerHTML = '<div style="color:var(--text-muted);font-weight:500;">Sélectionnez un thème de départ (A) et un thème d\'arrivée (B) pour calculer le plus court chemin sémantique.</div>';
+            resDiv.classList.add("open");
+          } else {
+            resDiv.classList.remove("open");
+          }
           renderSynapticGraph(false);
           return;
         }
@@ -3992,12 +4687,13 @@
             var n2 = idx.nodeById[h.to];
             var rt = idx.relTypeById[h.relation.type] || { label: h.relation.type, color: "#2563eb" };
             var arrow = h.dir === "out" ? "→" : "← (inversée)";
+            var hopSecs = (Array.isArray(h.relation.parts) && h.relation.parts.length) ? h.relation.parts : (h.relation.tomes || []);
             items.push(
               '<div class="path-hop" style="border-left-color:' + escapeHtml(rt.color) + ';">' +
                 '<span class="chip mono">' + (i + 1) + '</span>' +
                 '<div style="flex:1;">' +
                   '<div><strong>' + prdInlineHtml(n1 ? n1.title : h.from) + '</strong> ' + arrow + ' <span style="color:' + escapeHtml(rt.color) + ';font-weight:700;">[' + escapeHtml(rt.label) + ']</span> → <strong>' + prdInlineHtml(n2 ? n2.title : h.to) + '</strong></div>' +
-                  '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(h.relation.label) + ' — ' + prdInlineHtml(h.relation.justification) + ' <span class="mono">(' + escapeHtml((h.relation.tomes || []).join(", ")) + ')</span></div>' +
+                  '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(h.relation.label) + ' — ' + prdInlineHtml(h.relation.justification) + ' <span class="mono">(' + escapeHtml(hopSecs.join(", ")) + ')</span></div>' +
                 '</div>' +
               '</div>'
             );
@@ -4013,9 +4709,11 @@
       function renderConcordanceView() {
         var container = document.getElementById("c4-content");
         if (!container) return;
+        var c4Filt = filterNodesAndRelations(idx, state.filters);
+        updateFilterStatus(c4Filt);
 
         if (state.c4Tab === "heatmap") {
-          var mat = computeConcordanceMatrix(idx, state.c4GroupBy);
+          var mat = computeConcordanceMatrix(idx, state.c4GroupBy, c4Filt.active ? c4Filt.matchingNodeIds : null);
           var maxVal = 1;
           mat.rows.forEach(function (r) {
             mat.tomeIds.forEach(function (tid) {
@@ -4032,7 +4730,7 @@
           html.push('<div class="seg-group"><button class="seg-btn' + (state.c4Metric === "occurrences" ? " active" : "") + '" data-c4-met="occurrences">Occurrences</button><button class="seg-btn' + (state.c4Metric === "nodes" ? " active" : "") + '" data-c4-met="nodes">Thèmes uniques</button><button class="seg-btn' + (state.c4Metric === "chapters" ? " active" : "") + '" data-c4-met="chapters">Chapitres</button></div>');
           html.push('</div>');
 
-          html.push('<div style="overflow-x:auto;"><table class="heatmap-table"><thead><tr><th style="text-align:left;">Domaine / Sous-domaine</th>');
+          html.push('<div class="table-wrap"><table class="heatmap-table"><thead><tr><th style="text-align:left;">Domaine / Sous-domaine</th>');
           mat.tomeIds.forEach(function (tid) { html.push('<th>' + escapeHtml(tid) + '</th>'); });
           html.push('</tr></thead><tbody>');
 
@@ -4074,6 +4772,7 @@
           container.querySelectorAll(".heat-cell").forEach(function (td) {
             td.addEventListener("click", function () {
               state.c4SelectedCell = { rowId: td.getAttribute("data-cell-row"), tomeId: td.getAttribute("data-cell-tome") };
+              setInspectorOpen(true);
               renderConcordanceView();
             });
           });
@@ -4149,7 +4848,7 @@
                 '<input id="c4-tl-search" class="search-input" style="max-width:340px;" type="search" placeholder="Filtrer jalon, date, Loi 25, BSIF, DAPP, ML-DSA…" value="' + escapeHtml(tq) + '" />' +
                 '<span class="kpi-pill"><strong>' + filteredTl.length + '</strong> / ' + tl.length + ' jalons</span>' +
               '</div>' +
-              '<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Unités Compendium</th><th>Source</th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div>' +
+              '<div class="table-wrap"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Unités Compendium</th><th>Source</th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div>' +
             '</div>';
           var tlInput = document.getElementById("c4-tl-search");
           if (tlInput) {
@@ -4193,7 +4892,7 @@
                 '<input id="c4-trace-search" class="search-input" style="max-width:340px;" type="search" placeholder="Filtrer EXIG, CAP, PRR-75, C01–C40, SBB…" value="' + escapeHtml(qVal) + '" />' +
                 '<span class="kpi-pill"><strong>' + filteredMat.length + '</strong> / ' + matItems.length + ' entrées affichées</span>' +
               '</div>' +
-              '<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Identifiant</th><th>Famille</th><th>Intitulé / Règle</th><th>Module Trousse</th><th>Ancrage</th></tr></thead><tbody>' + rowsT.join("") + '</tbody></table></div>' +
+              '<div class="table-wrap"><table class="data-table"><thead><tr><th>Identifiant</th><th>Famille</th><th>Intitulé / Règle</th><th>Module Trousse</th><th>Ancrage</th></tr></thead><tbody>' + rowsT.join("") + '</tbody></table></div>' +
             '</div>';
           var trInput = document.getElementById("c4-trace-search");
           if (trInput) {
@@ -4244,16 +4943,23 @@
           gHtml.push('<input id="c4-gloss-search" class="search-input" style="max-width:380px;" type="search" placeholder="Filtrer le glossaire (Agentivité des systèmes, OBO, MCP, ch01…)" value="' + escapeHtml(gq) + '" />');
           gHtml.push('<span class="kpi-pill"><strong>' + filteredTerms.length + '</strong> / ' + gTerms.length + ' vedettes</span>');
           gHtml.push('</div>');
-          gHtml.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Terme (fr-CA)</th><th>Équivalent (en)</th><th>Définition normative</th><th>Propriétaire</th><th>Source L+</th><th>Compendium</th></tr></thead><tbody>');
+          gHtml.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Terme (fr-CA)</th><th>Équivalent (en)</th><th>Définition normative</th><th>Propriétaire</th><th>Source L+</th><th>Compendium</th></tr></thead><tbody>');
           filteredTerms.forEach(function (gt) {
             var cLine = gt.compendium_md_line || 1;
             var isSa = normalizeText(gt.fr || "").indexOf("agentivite des systemes") !== -1;
+            var ownerCode = String(gt.chapitre_proprietaire || "");
+            var chMatch = ownerCode.match(/^ch(\d{2})$/i);
+            var ownerCell = chMatch
+              ? '<button type="button" class="btn btn-sm mono" data-gloss-jump-ch="' + Number(chMatch[1]) + '">' + escapeHtml(ownerCode) + '</button>'
+              : (ownerCode === "00-liminaire"
+                  ? '<button type="button" class="btn btn-sm mono" data-gloss-jump-exec="exec">' + escapeHtml(ownerCode) + '</button>'
+                  : escapeHtml(ownerCode));
             gHtml.push(
               '<tr' + (isSa ? ' style="background:var(--accent-soft);"' : '') + '>' +
                 '<td><strong>' + prdInlineHtml(gt.fr || "") + '</strong></td>' +
                 '<td class="mono">' + escapeHtml(gt.en || "") + '</td>' +
                 '<td>' + prdInlineHtml(gt.definition || "") + '</td>' +
-                '<td class="mono">' + escapeHtml(gt.chapitre_proprietaire || "") + '</td>' +
+                '<td class="mono">' + ownerCell + '</td>' +
                 '<td class="mono">' + escapeHtml(gt.source_l_plus_id || "") + '</td>' +
                 '<td><a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a></td>' +
               '</tr>'
@@ -4262,7 +4968,7 @@
           gHtml.push('</tbody></table></div></div>');
 
           if (facts16.length) {
-            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Faits empiriques vérifiés L+ (' + facts16.length + ')</h3><div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Métrique</th><th>Valeur vérifiée</th><th>Source L+</th></tr></thead><tbody>');
+            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Faits empiriques vérifiés L+ (' + facts16.length + ')</h3><div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Métrique</th><th>Valeur vérifiée</th><th>Source L+</th></tr></thead><tbody>');
             facts16.forEach(function (fc) {
               gHtml.push('<tr><td class="mono"><strong>' + escapeHtml(fc.id || "") + '</strong></td><td>' + prdInlineHtml(fc.metric || "") + '</td><td>' + prdInlineHtml(fc.value || "") + '</td><td class="mono">' + escapeHtml(fc.source_l_plus_id || fc.source || "") + '</td></tr>');
             });
@@ -4270,7 +4976,7 @@
           }
 
           if (specs57.length) {
-            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Catalogue des ' + specs57.length + ' spécifications ouvertes L+ (SHA-256)</h3><div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Titre</th><th>Version / Tag</th><th>Licence</th><th>Source L+</th></tr></thead><tbody>');
+            gHtml.push('<div class="card" style="margin-top:12px;"><h3 style="margin:0 0 8px 0;">Catalogue des ' + specs57.length + ' spécifications ouvertes L+ (SHA-256)</h3><div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Titre</th><th>Version / Tag</th><th>Licence</th><th>Source L+</th></tr></thead><tbody>');
             specs57.forEach(function (sp) {
               gHtml.push('<tr><td class="mono"><strong>' + escapeHtml(sp.spec_id || "") + '</strong></td><td>' + prdInlineHtml(sp.title || "") + '</td><td class="mono">' + escapeHtml(sp.version_or_tag || "") + '</td><td class="mono">' + escapeHtml(sp.license_spdx || "") + '</td><td class="mono">' + escapeHtml(sp.source_l_plus_id || "") + '</td></tr>');
             });
@@ -4287,7 +4993,7 @@
               gHtml.push('</div>');
             }
             if (statF27.length) {
-              gHtml.push('<details><summary>Voir les ' + statF27.length + ' exclusions Statut F (politique zéro contournement AO-01)</summary><div style="overflow-x:auto;margin-top:8px;"><table class="data-table"><thead><tr><th>Source exclue</th><th>HTTP / Raison</th><th>Statut</th></tr></thead><tbody>');
+              gHtml.push('<details><summary>Voir les ' + statF27.length + ' exclusions Statut F (politique zéro contournement AO-01)</summary><div class="table-wrap" style="margin-top:8px;"><table class="data-table"><thead><tr><th>Source exclue</th><th>HTTP / Raison</th><th>Statut</th></tr></thead><tbody>');
               statF27.forEach(function (sf) {
                 gHtml.push('<tr><td>' + prdInlineHtml(sf.source_hint || sf.url || "") + '</td><td class="mono">' + escapeHtml((sf.http_status || "") + " " + (sf.block_reason || "")) + '</td><td class="mono">' + escapeHtml(sf.status || "F") + '</td></tr>');
               });
@@ -4297,6 +5003,16 @@
           }
 
           container.innerHTML = gHtml.join("");
+          container.querySelectorAll("[data-gloss-jump-ch]").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              jumpToPrdTarget({ kind: "subdomain", chapter_number: Number(btn.getAttribute("data-gloss-jump-ch")) });
+            });
+          });
+          container.querySelectorAll("[data-gloss-jump-exec]").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              jumpToPrdTarget({ kind: "exec" });
+            });
+          });
           var glInput = document.getElementById("c4-gloss-search");
           if (glInput) {
             glInput.addEventListener("input", function (ev) {
@@ -4337,10 +5053,18 @@
             state.prdFocusId = scCh;
             state.prdHighlightId = (scObj && scObj.schema_id) || target.schema_id || ("ch-" + pad2(scCh) + "-schemas");
           }
+        } else if (target.kind === "glossary") {
+          state.prdFocusKind = "glossary";
+          state.prdFocusId = target.focus_id || "glossary";
+          state.prdHighlightId = "glossary";
         } else if (target.kind === "annexe" || target.annexe_code) {
           state.prdFocusKind = "annexe";
           state.prdFocusId = target.annexe_code || "A";
           state.prdHighlightId = "ann-" + state.prdFocusId;
+        } else if (target.kind === "domain" || (!chNum && target.domain_id && idx.prdPartyByDom[target.domain_id])) {
+          state.prdFocusKind = "part";
+          state.prdFocusId = target.domain_id;
+          state.prdHighlightId = "part-" + target.domain_id;
         } else if (target.kind === "exec" || (!chNum && target.section_id)) {
           state.prdFocusKind = "exec";
           state.prdFocusId = "exec";
@@ -4390,6 +5114,8 @@
           params.push("part=" + encodeURIComponent(state.prdFocusId));
         } else if (state.prdFocusKind === "annexe" && state.prdFocusId) {
           params.push("annexe=" + encodeURIComponent(state.prdFocusId));
+        } else if (state.prdFocusKind === "glossary") {
+          params.push("glossary=1");
         } else if (state.prdHighlightId === "exec-panorama") {
           params.push("sec=panorama");
         } else if (state.prdHighlightId && state.prdHighlightId !== "exec") {
@@ -4469,6 +5195,7 @@
         var compSrc = sc.compendium_source_path ? compendiumAssetHref(sc.compendium_source_path) : "";
         var compLine = sc.compendium_md_line || null;
         if (compRend || compSrc) {
+          var openPreview = (state.prdMode !== "full" || state.prdHighlightId === sid) ? " open" : "";
           html.push(
             '<div class="occ-card" style="margin:6px 0;padding:6px 8px;">' +
               '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">' +
@@ -4479,6 +5206,16 @@
                   (compLine ? '<a class="chip clickable mono" href="' + escapeHtml(corpusHref(sc.compendium_md_file || "Compendium/Compendium.md", compLine)) + '" target="_blank" rel="noopener">Compendium #L' + compLine + '</a>' : '') +
                 '</span>' +
               '</div>' +
+              (compRend
+                ? '<details class="schema-preview-details"' + openPreview + '>' +
+                    '<summary>Aperçu visuel du schéma compilé (' + escapeHtml(sid) + ')</summary>' +
+                    '<div class="schema-preview-frame">' +
+                      '<a href="' + escapeHtml(compRend) + '" target="_blank" rel="noopener" title="Ouvrir le schéma en taille réelle">' +
+                        '<img loading="lazy" class="schema-preview-img" src="' + escapeHtml(compRend) + '" alt="' + escapeHtml(sid + " — " + String(sc.title || "").replace(/[`*]/g, "")) + '" />' +
+                      '</a>' +
+                    '</div>' +
+                  '</details>'
+                : '') +
             '</div>'
           );
         }
@@ -4562,7 +5299,7 @@
 
         html.push('<div class="prd-section-card" data-prd-eid="exec">');
         html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">' + prdInlineHtml(exec.title || "Sommaire exécutif global") + '</h2>');
-        if (exec.lead) html.push('<p style="margin:0 0 10px 0;line-height:1.55;">' + prdInlineHtml(exec.lead) + '</p>');
+        if (exec.lead) html.push('<p style="margin:0 0 10px 0;">' + prdInlineHtml(exec.lead) + '</p>');
         sections.forEach(function (sec, i) {
           var sid = sec.id || ("exec-" + (i + 1));
           var isHl = state.prdHighlightId === sid;
@@ -4572,10 +5309,10 @@
           paras.forEach(function (pTxt) {
             var trimmed = String(pTxt || "").trim();
             if (!trimmed || trimmed.charAt(0) === "|") return;
-            html.push('<p style="margin:4px 0 6px 0;line-height:1.5;">' + prdInlineHtml(trimmed) + '</p>');
+            html.push('<p style="margin:4px 0 6px 0;">' + prdInlineHtml(trimmed) + '</p>');
           });
           if (sec.kpi_table && Array.isArray(sec.kpi_table.headers) && Array.isArray(sec.kpi_table.rows)) {
-            html.push('<div style="overflow-x:auto;margin-top:8px;"><table class="data-table"><thead><tr>');
+            html.push('<div class="table-wrap" style="margin-top:8px;"><table class="data-table"><thead><tr>');
             sec.kpi_table.headers.forEach(function (h) { html.push('<th>' + prdInlineHtml(h) + '</th>'); });
             html.push('</tr></thead><tbody>');
             sec.kpi_table.rows.forEach(function (row) {
@@ -4628,7 +5365,7 @@
         html.push('<div class="chip-row" style="margin-bottom:5px;"><span class="chip mono">' + escapeHtml(p.domain_id) + '</span><span class="chip mono">' + escapeHtml(p.domain_node_id || ("DOM_" + p.domain_id)) + '</span><span class="chip">Partie ' + escapeHtml(p.part_roman) + '</span></div>');
         html.push('<h2 style="margin:0;font-size:17px;">Partie ' + escapeHtml(p.part_roman) + ' — ' + escapeHtml(p.domain_id) + ' : ' + prdInlineHtml(cleanTitle) + '</h2>');
         html.push('</div>' + renderPrdBridgeButtons(p.domain_node_id, false) + '</div>');
-        html.push('<p style="margin:4px 0 8px 0;line-height:1.5;">' + prdInlineHtml(p.part_summary || "") + '</p>');
+        html.push('<p style="margin:4px 0 8px 0;">' + prdInlineHtml(p.part_summary || "") + '</p>');
         if (Array.isArray(p.key_identifiers) && p.key_identifiers.length) {
           html.push('<div class="chip-row" style="margin-bottom:8px;">');
           p.key_identifiers.forEach(function (k) { html.push('<span class="chip mono">' + escapeHtml(k) + '</span>'); });
@@ -4658,12 +5395,13 @@
         var html = [];
         html.push('<article class="prd-section-card' + chDim + chHl + '" data-prd-eid="' + escapeHtml(eid) + '">');
         html.push('<div class="prd-card-head"><div>');
+        var chSecs = (Array.isArray(ch.parts_present) && ch.parts_present.length) ? ch.parts_present : (ch.tomes_present || []);
         html.push(
           '<div class="chip-row" style="margin-bottom:5px;">' +
             '<span class="chip mono">' + escapeHtml(ch.chapter_code || ("CH-" + pad2(cnum))) + '</span>' +
             '<span class="chip mono">' + escapeHtml(ch.domain_id) + '</span>' +
             '<span class="chip mono">' + escapeHtml(ch.subdomain_node_id) + '</span>' +
-            ((ch.tomes_present || []).map(function (t) { return '<span class="chip">' + escapeHtml(t) + '</span>'; }).join("")) +
+            (chSecs.map(function (t) { return '<span class="chip">' + escapeHtml(t) + '</span>'; }).join("")) +
             ((ch.autonomy_levels || []).map(function (a) { return '<span class="chip mono">' + escapeHtml(a) + '</span>'; }).join("")) +
           '</div>'
         );
@@ -4678,12 +5416,12 @@
 
         // XX.1 Résumé
         html.push('<div style="margin-top:8px;"><h3 style="margin:0 0 4px 0;font-size:14.5px;">' + pad2(cnum) + '.1 Résumé</h3>');
-        html.push('<p style="margin:0;line-height:1.55;">' + prdInlineHtml(ch.executive_summary || "") + '</p></div>');
+        html.push('<p style="margin:0;">' + prdInlineHtml(ch.executive_summary || "") + '</p></div>');
 
         // XX.2 Descriptif du contenu ciblé
         html.push('<div style="margin-top:12px;"><h3 style="margin:0 0 4px 0;font-size:14.5px;">' + pad2(cnum) + '.2 Descriptif du contenu ciblé</h3>');
         if (tc.scope_and_objectives) {
-          html.push('<p style="margin:4px 0 6px 0;line-height:1.5;">' + prdInlineHtml(tc.scope_and_objectives) + '</p>');
+          html.push('<p style="margin:4px 0 6px 0;">' + prdInlineHtml(tc.scope_and_objectives) + '</p>');
         }
         if (Array.isArray(tc.key_requirements_and_objectives) && tc.key_requirements_and_objectives.length) {
           html.push('<div class="section-label" style="margin-top:8px;">Exigences et objectifs vérifiables (' + tc.key_requirements_and_objectives.length + ')</div><ul class="prd-list">');
@@ -4709,15 +5447,16 @@
             html.push('<div class="prd-theme-card' + thCls + '" data-prd-eid="' + escapeHtml(th.theme_node_id) + '">');
             html.push('<div class="prd-card-head" style="margin-bottom:4px;"><div>');
             html.push('<strong style="font-size:13.5px;">' + prdInlineHtml(th.theme_title || "") + '</strong> ');
-            html.push('<span class="chip mono">' + escapeHtml(th.theme_node_id) + '</span> <span class="chip mono">' + escapeHtml(th.canonical_slug || "") + '</span>');
+            html.push('<span class="tech-tag">' + escapeHtml(th.theme_node_id) + '</span> <span class="tech-tag">' + escapeHtml(th.canonical_slug || "") + '</span>');
             html.push('</div>' + renderPrdBridgeButtons(th.theme_node_id, true) + '</div>');
-            html.push('<p style="margin:4px 0 6px 0;line-height:1.5;">' + prdInlineHtml(th.content_specification || "") + '</p>');
+            html.push('<p style="margin:4px 0 6px 0;">' + prdInlineHtml(th.content_specification || "") + '</p>');
 
             html.push('<div class="chip-row" style="margin-bottom:5px;">');
             if ((th.autonomy_levels || []).length) html.push('<span class="chip mono">Autonomie : ' + escapeHtml(th.autonomy_levels.join(", ")) + '</span>');
             if ((th.roles || []).length) html.push('<span class="chip">Rôles : ' + escapeHtml(th.roles.join(", ")) + '</span>');
             if (th.horizon) html.push('<span class="chip">Horizon : ' + escapeHtml(th.horizon) + '</span>');
-            if ((th.tomes_present || []).length) html.push('<span class="chip">Tomes : ' + escapeHtml(th.tomes_present.join(", ")) + '</span>');
+            var thSecs = (Array.isArray(th.parts_present) && th.parts_present.length) ? th.parts_present : (th.tomes_present || []);
+            if (thSecs.length) html.push('<span class="chip">Sections : ' + escapeHtml(thSecs.join(", ")) + '</span>');
             (th.identifiers_and_norms || []).forEach(function (idStr) {
               html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
             });
@@ -4768,7 +5507,7 @@
         // Ancrages dans le Compendium
         if (Array.isArray(tc.corpus_anchors) && tc.corpus_anchors.length) {
           html.push('<div class="section-label" style="margin-top:12px;">Ancrages dans le Compendium (' + tc.corpus_anchors.length + ')</div>');
-          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Section</th><th>Source Compendium</th><th>Référence</th></tr></thead><tbody>');
+          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Section</th><th>Source Compendium</th><th>Référence</th></tr></thead><tbody>');
           tc.corpus_anchors.forEach(function (anc) {
             var href = corpusHref(anc.file, anc.line_start);
             var fname = String(anc.file || "").split("/").pop();
@@ -4808,9 +5547,9 @@
         html.push('<div class="chip-row" style="margin-bottom:5px;"><span class="chip mono">Annexe ' + escapeHtml(ac) + '</span></div>');
         html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">Annexe ' + escapeHtml(ac) + ' — ' + prdInlineHtml(cleanTitle) + '</h2>');
         html.push('<h3 style="margin:6px 0 4px 0;font-size:14.5px;">Annexe ' + escapeHtml(ac) + '.1 Résumé</h3>');
-        html.push('<p style="margin:0 0 8px 0;line-height:1.5;">' + prdInlineHtml(ann.executive_summary || "") + '</p>');
+        html.push('<p style="margin:0 0 8px 0;">' + prdInlineHtml(ann.executive_summary || "") + '</p>');
         html.push('<h3 style="margin:6px 0 4px 0;font-size:14.5px;">Annexe ' + escapeHtml(ac) + '.2 Descriptif du contenu ciblé</h3>');
-        html.push('<p style="margin:0 0 10px 0;line-height:1.5;">' + prdInlineHtml(ann.targeted_content_description || "") + '</p>');
+        html.push('<p style="margin:0 0 10px 0;">' + prdInlineHtml(ann.targeted_content_description || "") + '</p>');
 
         if (ac === "A" && Array.isArray(ann.traceability_table)) {
           var annADoms = (idx.prd && idx.prd.parties ? idx.prd.parties.length : idx.domains.length) || 0;
@@ -4818,8 +5557,9 @@
           var annAFams = ann.traceability_table.reduce(function (s, r) { return s + (Number(r.families_count) || 0); }, 0);
           var annAThms = ann.traceability_table.reduce(function (s, r) { return s + (Number(r.themes_count) || 0); }, 0);
           html.push('<h4 style="margin:10px 0 6px 0;">Table maîtresse MindMap (' + annADoms + ' Domaines / ' + annAChs + ' Chapitres / ' + annAFams + ' Familles / ' + annAThms + ' Thèmes)</h4>');
-          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Ch.</th><th>Domaine</th><th>Sous-domaine</th><th>Titre du chapitre PRD</th><th>Fam.</th><th>Thèmes</th><th>Occ.</th><th>Tomes</th></tr></thead><tbody>');
+          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Ch.</th><th>Domaine</th><th>Sous-domaine</th><th>Titre du chapitre PRD</th><th>Fam.</th><th>Thèmes</th><th>Occ.</th><th>Sections</th></tr></thead><tbody>');
           ann.traceability_table.forEach(function (r) {
+            var rSecs = (Array.isArray(r.parts_present) && r.parts_present.length) ? r.parts_present : (r.tomes_present || []);
             html.push(
               '<tr>' +
                 '<td><button class="btn btn-sm" data-prd-jump-ch="' + r.chapter_number + '">' + pad2(r.chapter_number) + '</button></td>' +
@@ -4829,7 +5569,7 @@
                 '<td>' + r.families_count + '</td>' +
                 '<td>' + r.themes_count + '</td>' +
                 '<td>' + r.occurrence_count + '</td>' +
-                '<td>' + escapeHtml((r.tomes_present || []).join(", ")) + '</td>' +
+                '<td>' + escapeHtml(rSecs.join(", ")) + '</td>' +
               '</tr>'
             );
           });
@@ -4837,7 +5577,7 @@
         } else if (ac === "B") {
           if (Array.isArray(ann.relation_types_stats)) {
             html.push('<h4 style="margin:10px 0 6px 0;">Répartition des interrelations par type canonique</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Type</th><th>Libellé</th><th>Total</th><th>Direction</th><th>Règle sémantique</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Type</th><th>Libellé</th><th>Total</th><th>Direction</th><th>Règle sémantique</th></tr></thead><tbody>');
             ann.relation_types_stats.forEach(function (rt) {
               html.push('<tr><td class="mono">' + escapeHtml(rt.type_id) + '</td><td>' + escapeHtml(rt.label) + '</td><td><strong>' + rt.count + '</strong></td><td>' + escapeHtml(rt.directionality || "") + '</td><td>' + prdInlineHtml(rt.semantic_rule || "") + '</td></tr>');
             });
@@ -4845,7 +5585,7 @@
           }
           if (Array.isArray(ann.top_hubs)) {
             html.push('<h4 style="margin:12px 0 6px 0;">Top ' + ann.top_hubs.length + ' des nœuds carrefours</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>#</th><th>Nœud</th><th>Domaine</th><th>Ch.</th><th>Degré</th><th>Actions</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>#</th><th>Nœud</th><th>Domaine</th><th>Ch.</th><th>Degré</th><th>Actions</th></tr></thead><tbody>');
             ann.top_hubs.forEach(function (h) {
               html.push(
                 '<tr>' +
@@ -4862,7 +5602,7 @@
           }
           if (Array.isArray(ann.tensions)) {
             html.push('<h4 style="margin:12px 0 6px 0;">Tensions d\'arbitrage structurantes (' + ann.tensions.length + ' relations tension_arbitrage)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Source</th><th>Cible</th><th>Intitulé</th><th>Justification</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Source</th><th>Cible</th><th>Intitulé</th><th>Justification</th></tr></thead><tbody>');
             ann.tensions.forEach(function (t) {
               html.push(
                 '<tr>' +
@@ -4887,7 +5627,7 @@
           }
           if (Array.isArray(ann.reconciliations)) {
             html.push('<h4 style="margin:10px 0 6px 0;">Cinq discordances inter-volumes (DISC-01 à DISC-05)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Sujet</th><th>Choix canonique (Compendium)</th><th>Source</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Sujet</th><th>Choix canonique (Compendium)</th><th>Source</th></tr></thead><tbody>');
             ann.reconciliations.forEach(function (rec) {
               html.push('<tr><td class="mono">' + escapeHtml(rec.id) + '</td><td>' + prdInlineHtml(rec.title) + '</td><td>' + prdInlineHtml(rec.resolution) + '</td><td><a class="mono" href="' + escapeHtml(corpusHref(rec.file, rec.line_start || 74)) + '" target="_blank" rel="noopener">' + escapeHtml(rec.section || "Compendium § 0.2") + '</a></td></tr>');
             });
@@ -4895,7 +5635,7 @@
           }
           if (Array.isArray(ann.timeline)) {
             html.push('<h4 style="margin:12px 0 6px 0;">Chronologie consolidée 2023–2035 (' + ann.timeline.length + ' jalons)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Sections</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Sections</th></tr></thead><tbody>');
             ann.timeline.forEach(function (ev) {
               var secTxt = (ev.tomes || []).join(", ");
               var evLink = ev.file ? '<a class="mono" href="' + escapeHtml(corpusHref(ev.file, ev.line_start || 1)) + '" target="_blank" rel="noopener">' + escapeHtml(secTxt || "Compendium") + '</a>' : escapeHtml(secTxt);
@@ -4938,7 +5678,7 @@
               ? (" · " + matTotals.tome8_executable_tests + " tests exécutables Tome 8, " + (matTotals.shared_ids_merged || 0) + " IDs fusionnés sans doublon")
               : "";
             html.push('<h4 style="margin:10px 0 6px 0;">Distribution complète des ' + uniqueMatCount + ' entrées uniques de traçabilité' + totalsExtra + '</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Famille</th><th>Entrées</th><th>Détail par criticité / catégorie</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Famille</th><th>Entrées</th><th>Détail par criticité / catégorie</th></tr></thead><tbody>');
             ann.matrix_distribution.forEach(function (d) {
               var subTxt = (d.subfamilies || []).map(function (s) { return s.name + " (" + s.count + ")"; }).join(", ");
               html.push('<tr><td class="mono"><strong>' + escapeHtml(d.family) + '</strong></td><td><strong>' + d.count + '</strong></td><td>' + prdInlineHtml(subTxt) + '</td></tr>');
@@ -4956,7 +5696,7 @@
                   : '') +
               '</div>'
             );
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Famille</th><th>Intitulé / Règle / Test</th><th>Module</th><th>Ancrage</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Famille</th><th>Intitulé / Règle / Test</th><th>Module</th><th>Ancrage</th></tr></thead><tbody>');
             shownMat.forEach(function (m) {
               html.push('<tr><td class="mono"><strong>' + escapeHtml(m.id) + '</strong></td><td>' + prdInlineHtml(m.family) + '</td><td>' + prdInlineHtml(m.title) + '</td><td class="mono">' + prdInlineHtml(m.module) + '</td><td>' + prdInlineHtml(m.anchor) + '</td></tr>');
             });
@@ -4964,7 +5704,7 @@
           }
           if (ann.exig_cre_ia && Array.isArray(ann.exig_cre_ia.familles)) {
             html.push('<h4 style="margin:12px 0 6px 0;">' + ann.exig_cre_ia.familles.length + ' familles normatives ' + escapeHtml(ann.exig_cre_ia.code_norme || "CRE-IA-2026-01") + ' (' + (ann.exig_cre_ia.total || 305) + ' EXIG-*)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Préfixe</th><th>Famille</th><th>Emplacement Tome 2</th><th>Nombre</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Préfixe</th><th>Famille</th><th>Emplacement Tome 2</th><th>Nombre</th></tr></thead><tbody>');
             ann.exig_cre_ia.familles.forEach(function (f) {
               html.push('<tr><td class="mono">' + escapeHtml(f.prefixe) + '</td><td>' + prdInlineHtml(f.titre) + '</td><td>' + prdInlineHtml(f.emplacement_t2) + '</td><td><strong>' + f.nombre + '</strong></td></tr>');
             });
@@ -4972,7 +5712,7 @@
           }
           if (Array.isArray(ann.five_sbb)) {
             html.push('<h4 style="margin:12px 0 6px 0;">Cinq blocs normalisés (5 SBB) et trois blueprints (C01–C40)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Bloc SBB</th><th>Rôle</th><th>Plan</th><th>Module Tome 8</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Bloc SBB</th><th>Rôle</th><th>Plan</th><th>Module Tome 8</th></tr></thead><tbody>');
             ann.five_sbb.forEach(function (s) {
               html.push('<tr><td class="mono">' + escapeHtml(s.sbb_id) + '</td><td class="mono">' + escapeHtml(s.slot) + '</td><td>' + escapeHtml(s.plan) + '</td><td class="mono">' + escapeHtml(s.module_t8) + '</td></tr>');
             });
@@ -5006,7 +5746,7 @@
           var byNot = sStats.by_recommended_notation || {};
           var byAud = sStats.by_target_audience || {};
           html.push('<h4 style="margin:10px 0 6px 0;">Synthèse statistique des ' + totalSchE + ' schémas de vulgarisation (' + (byReuse.reemploi_direct || 0) + ' / ' + (byReuse.adaptation_vulgarisee || 0) + ' / ' + (byReuse.creation_originale || 0) + ')</h4>');
-          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Dimension</th><th>Catégorie</th><th>Schémas</th><th>Part (sur ' + totalSchE + ')</th></tr></thead><tbody>');
+          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Dimension</th><th>Catégorie</th><th>Schémas</th><th>Part (sur ' + totalSchE + ')</th></tr></thead><tbody>');
           function pushStatRows(dimLabel, obj, labelsMap) {
             Object.keys(obj || {}).forEach(function (k) {
               var cnt = Number(obj[k] || 0);
@@ -5023,7 +5763,7 @@
 
           var byTomeCov = tcCov.by_tome || {};
           html.push('<h4 style="margin:12px 0 6px 0;">Couverture des ' + (tcCov.total_inventory_figures || 319) + ' figures des Tomes 1 à 8 (' + (tcCov.inventory_plantuml_svg || 253) + ' PlantUML/SVG · ' + (tcCov.inventory_mermaid_png || 66) + ' Mermaid/PNG)</h4>');
-          html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Tome</th><th>Inventaire</th><th>PlantUML / SVG</th><th>Mermaid / PNG</th><th>Figures uniques liées</th><th>Non liées</th><th>Liens totaux</th><th>Couverture</th></tr></thead><tbody>');
+          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Tome</th><th>Inventaire</th><th>PlantUML / SVG</th><th>Mermaid / PNG</th><th>Figures uniques liées</th><th>Non liées</th><th>Liens totaux</th><th>Couverture</th></tr></thead><tbody>');
           ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"].forEach(function (tid) {
             var ts = byTomeCov[tid] || {};
             html.push(
@@ -5055,7 +5795,7 @@
 
           if (distList.length) {
             html.push('<h4 style="margin:12px 0 6px 0;">Répartition par Domaine (D01–D12) et Chapitre (01–36)</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Domaine</th><th>Intitulé</th><th>Chapitres</th><th>Familles</th><th>Thèmes</th><th>Schémas</th><th>Identifiants</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Domaine</th><th>Intitulé</th><th>Chapitres</th><th>Familles</th><th>Thèmes</th><th>Schémas</th><th>Identifiants</th></tr></thead><tbody>');
             distList.forEach(function (dd) {
               var isGlob = dd.domain_id === "GLOBAL";
               var domBtn = isGlob
@@ -5083,7 +5823,7 @@
 
           if (catAll.length) {
             html.push('<h4 style="margin:12px 0 6px 0;">Catalogue directeur intégral des ' + catAll.length + ' schémas de vulgarisation</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Portée</th><th>Titre &amp; insertion</th><th>Archétype &amp; notation</th><th>Publics &amp; statut</th><th>Figures Tomes 1–8</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Portée</th><th>Titre &amp; insertion</th><th>Archétype &amp; notation</th><th>Publics &amp; statut</th><th>Figures Tomes 1–8</th></tr></thead><tbody>');
             catAll.forEach(function (sc) {
               var cnumS = Number(sc.chapter_number || 0);
               var scopeBtn = cnumS === 0
@@ -5122,7 +5862,7 @@
 
           if (invFigs.length) {
             html.push('<h4 style="margin:12px 0 6px 0;">Inventaire complet des ' + invFigs.length + ' figures des Tomes 1 à 8</h4>');
-            html.push('<div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>Tome</th><th>Figure</th><th>Notation</th><th>Titre</th><th>Schémas PRD</th><th>Fichiers Sources/Tomes/</th></tr></thead><tbody>');
+            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Tome</th><th>Figure</th><th>Notation</th><th>Titre</th><th>Schémas PRD</th><th>Fichiers Sources/Tomes/</th></tr></thead><tbody>');
             invFigs.forEach(function (fg) {
               var rUrl = fg.rendered_path ? tomeAssetHref(fg.rendered_path) : "";
               var sUrl = fg.source_path ? tomeAssetHref(fg.source_path) : "";
@@ -5153,12 +5893,89 @@
         return html.join("");
       }
 
+      function renderPrdGlossaryHtml() {
+        var gTerms = idx.glossaryTerms || [];
+        var socle = (idx.prd && idx.prd.socle_probatoire) || {};
+        var compG0 = (idx.pivots.bilans_aq && idx.pivots.bilans_aq.compendium_g0_g5) || {};
+        var facts16 = socle.faits_empiriques || idx.pivots.faits_empiriques_16 || compG0.faits_empiriques_16 || [];
+        var specs57 = socle.specifications_lplus || idx.pivots.specifications_lplus_57 || compG0.specifications_lplus_57 || [];
+        var statF27 = socle.statut_f_excluded || idx.pivots.statut_f_exclus_27 || [];
+        var sync14 = socle.ca_g0_sync_catalog || compG0.ca_g0_sync_catalog || [];
+        var wyv37 = socle.wyvern_g2_unites || compG0.wyvern_g2_unites || [];
+        var lplusCnt = socle.sources_l_plus_count || compG0.sources_l_plus || 135;
+        var isHl = state.prdHighlightId === "glossary" ? " prd-highlight" : "";
+
+        var html = [];
+        html.push('<article class="prd-section-card' + isHl + '" data-prd-eid="glossary">');
+        html.push('<div class="chip-row" style="margin-bottom:6px;">');
+        html.push('<span class="chip mono">Glossaire (' + gTerms.length + ')</span>');
+        html.push('<span class="chip"><strong>' + lplusCnt + '</strong> sources L+ (0,0 % METADATA_ONLY)</span>');
+        html.push('<span class="chip"><strong>' + statF27.length + '</strong> Statut F (AO-01)</span>');
+        html.push('<span class="chip"><strong>' + facts16.length + '</strong> faits empiriques</span>');
+        html.push('<span class="chip"><strong>' + specs57.length + '</strong> spécifications L+</span>');
+        html.push('<span class="chip"><strong>' + sync14.length + '</strong> CA-G0-SYNC</span>');
+        html.push('<span class="chip"><strong>' + wyv37.length + '/37</strong> Wyvern G2</span>');
+        html.push('</div>');
+        html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">Glossaire normatif Compendium (' + gTerms.length + ' vedettes) &amp; Socle probatoire L+</h2>');
+        html.push('<div style="display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap;">');
+        html.push('<input id="prd-gloss-filter" class="search-input" style="max-width:360px;" type="search" placeholder="Filtrer le glossaire (Agentivité des systèmes, OBO, MCP, ch01…)" aria-label="Filtrer le glossaire PRD" />');
+        html.push('<span id="prd-gloss-count" class="kpi-pill"><strong>' + gTerms.length + '</strong> / ' + gTerms.length + ' vedettes</span>');
+        html.push('</div>');
+        html.push('<div class="table-wrap"><table class="data-table" id="prd-v5-glossary-table"><thead><tr><th>Terme (fr-CA)</th><th>Équivalent (en)</th><th>Définition normative</th><th>Propriétaire</th><th>Source L+</th><th>Compendium</th></tr></thead><tbody>');
+        gTerms.forEach(function (gt) {
+          var cLine = gt.compendium_md_line || 1;
+          var isSa = normalizeText(gt.fr || "").indexOf("agentivite des systemes") !== -1;
+          var ownerCode = String(gt.chapitre_proprietaire || "");
+          var chMatch = ownerCode.match(/^ch(\d{2})$/i);
+          var ownerCell = chMatch
+            ? '<button type="button" class="btn btn-sm mono" data-prd-jump-ch="' + Number(chMatch[1]) + '">' + escapeHtml(ownerCode) + '</button>'
+            : (ownerCode === "00-liminaire"
+                ? '<button type="button" class="btn btn-sm mono" data-prd-jump-exec="exec">' + escapeHtml(ownerCode) + '</button>'
+                : escapeHtml(ownerCode));
+          html.push(
+            '<tr' + (isSa ? ' style="background:var(--accent-soft);"' : '') + '>' +
+              '<td><strong>' + prdInlineHtml(gt.fr || "") + '</strong></td>' +
+              '<td class="mono">' + escapeHtml(gt.en || "") + '</td>' +
+              '<td>' + prdInlineHtml(gt.definition || "") + '</td>' +
+              '<td class="mono">' + ownerCell + '</td>' +
+              '<td class="mono">' + escapeHtml(gt.source_l_plus_id || "") + '</td>' +
+              '<td><a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a></td>' +
+            '</tr>'
+          );
+        });
+        html.push('</tbody></table></div>');
+        if (facts16.length) {
+          html.push('<h4 style="margin:12px 0 6px 0;">Faits empiriques vérifiés L+ (' + facts16.length + ')</h4>');
+          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Métrique</th><th>Valeur vérifiée</th><th>Source L+</th></tr></thead><tbody>');
+          facts16.forEach(function (fc) {
+            html.push('<tr><td class="mono"><strong>' + escapeHtml(fc.id || "") + '</strong></td><td>' + prdInlineHtml(fc.metric || "") + '</td><td>' + prdInlineHtml(fc.value || "") + '</td><td class="mono">' + escapeHtml(fc.source_l_plus_id || fc.source || "") + '</td></tr>');
+          });
+          html.push('</tbody></table></div>');
+        }
+        if (specs57.length) {
+          html.push('<details class="schema-preview-details" style="margin-top:10px;"><summary>Catalogue des ' + specs57.length + ' spécifications ouvertes L+ (SHA-256)</summary>');
+          html.push('<div class="table-wrap" style="margin-top:6px;"><table class="data-table"><thead><tr><th>ID</th><th>Titre</th><th>Version / Tag</th><th>Licence</th><th>Source L+</th></tr></thead><tbody>');
+          specs57.forEach(function (sp) {
+            html.push('<tr><td class="mono"><strong>' + escapeHtml(sp.spec_id || "") + '</strong></td><td>' + prdInlineHtml(sp.title || "") + '</td><td class="mono">' + escapeHtml(sp.version_or_tag || "") + '</td><td class="mono">' + escapeHtml(sp.license_spdx || "") + '</td><td class="mono">' + escapeHtml(sp.source_l_plus_id || "") + '</td></tr>');
+          });
+          html.push('</tbody></table></div></details>');
+        }
+        html.push('</article>');
+        return html.join("");
+      }
+
       function renderPrdToc(fState) {
         var tocPane = document.getElementById("prd-toc-pane");
         var tocList = document.getElementById("prd-toc-list");
         var tocCount = document.getElementById("prd-toc-count");
+        var tocBtn = document.getElementById("prd-toggle-toc-btn");
+        if (tocBtn) {
+          tocBtn.classList.toggle("active", state.prdShowToc);
+          tocBtn.setAttribute("aria-expanded", state.prdShowToc ? "true" : "false");
+        }
         if (!tocList || !idx.prd) return;
         if (tocPane) tocPane.classList.toggle("hidden", !state.prdShowToc);
+        syncDrawerBackdrops();
 
         var q = normalizeText(state.prdTocFilter || "").trim();
         var prd = idx.prd;
@@ -5203,14 +6020,20 @@
             var chLabel = "Ch. " + pad2(cnum) + " — " + String(ch.representative_title || "").replace(/^Chapitre\s+0?\d+\s*[—–:-]?\s*/i, "");
             var fams = (ch.targeted_content && ch.targeted_content.families_and_themes) || [];
             var schs = ch.vulgarization_schemas || [];
-            var matchedFams = fams.filter(function (f) { return matchQ(f.family_title + " " + f.family_node_id); });
+            var matchedFams = fams.filter(function (f) {
+              if (matchQ(f.family_title + " " + f.family_node_id)) return true;
+              return (f.themes_targeted || []).some(function (th) {
+                return matchQ((th.theme_title || "") + " " + (th.canonical_slug || "") + " " + (th.theme_node_id || ""));
+              });
+            });
             var schMatch = schs.some(function (sc) { return matchQ(sc.schema_id + " " + sc.title + " schemas vulgarisation"); });
-            if (pSelfMatch || matchQ(chLabel + " " + ch.domain_id + " " + ch.subdomain_node_id) || matchedFams.length || schMatch) {
+            var chSelfHay = chLabel + " Chapitre " + pad2(cnum) + " " + (ch.chapter_code || "") + " " + ch.domain_id + " " + ch.subdomain_node_id;
+            if (pSelfMatch || matchQ(chSelfHay) || matchedFams.length || schMatch) {
               chRows.push({
                 ch: ch,
                 label: chLabel,
-                fams: q && !matchQ(chLabel) && !pSelfMatch ? matchedFams : fams,
-                showSchemas: schs.length > 0 && (!q || pSelfMatch || matchQ(chLabel) || schMatch)
+                fams: q && !matchQ(chSelfHay) && !pSelfMatch ? matchedFams : fams,
+                showSchemas: schs.length > 0 && (!q || pSelfMatch || matchQ(chSelfHay) || schMatch)
               });
             }
           });
@@ -5255,18 +6078,35 @@
           html.push('</div>');
         }
 
+        // Glossaire (56) & Socle probatoire L+
+        var glossCountToc = (idx.glossaryTerms && idx.glossaryTerms.length) || 56;
+        if (matchQ("Glossaire vedettes Agentivité des systèmes system agency socle probatoire sources L+ Statut F Wyvern G2")) {
+          shown++;
+          var isGlossAct = state.prdFocusKind === "glossary";
+          html.push('<div class="prd-toc-group">');
+          html.push('<div class="prd-toc-item' + (isGlossAct ? " active" : "") + '" role="button" tabindex="0" data-toc-gloss="1"><strong>Glossaire (' + glossCountToc + ') &amp; Socle probatoire L+</strong></div>');
+          html.push('</div>');
+        }
+
         tocList.innerHTML = html.length ? html.join("") : '<div class="empty-state">Aucune entrée TDM correspondante.</div>';
         bindKeyboardActivation(tocList);
         if (tocCount) tocCount.textContent = shown + " entrées TDM affichées";
 
+        function closePrdTocIfDrawer() {
+          if (isDrawerViewport() && state.prdShowToc) {
+            state.prdShowToc = false;
+          }
+        }
         tocList.querySelectorAll("[data-toc-exec]").forEach(function (el) {
           el.addEventListener("click", function () {
             var sid = el.getAttribute("data-toc-exec");
+            closePrdTocIfDrawer();
             jumpToPrdTarget({ kind: "exec", section_id: sid });
           });
         });
         tocList.querySelectorAll("[data-toc-part]").forEach(function (el) {
           el.addEventListener("click", function () {
+            closePrdTocIfDrawer();
             jumpToPrdTarget({ kind: "domain", domain_id: el.getAttribute("data-toc-part") });
           });
         });
@@ -5277,12 +6117,20 @@
             state.prdFocusKind = "chapter";
             state.prdFocusId = cn;
             state.prdHighlightId = hl || ("ch-" + pad2(cn));
+            closePrdTocIfDrawer();
             renderPrdView(true);
           });
         });
         tocList.querySelectorAll("[data-toc-ann]").forEach(function (el) {
           el.addEventListener("click", function () {
+            closePrdTocIfDrawer();
             jumpToPrdTarget({ kind: "annexe", annexe_code: el.getAttribute("data-toc-ann") });
+          });
+        });
+        tocList.querySelectorAll("[data-toc-gloss]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            closePrdTocIfDrawer();
+            jumpToPrdTarget({ kind: "glossary" });
           });
         });
       }
@@ -5343,6 +6191,7 @@
           (prd.annexes || []).forEach(function (ann) {
             bodyParts.push(renderPrdAnnexeHtml(ann));
           });
+          bodyParts.push(renderPrdGlossaryHtml());
         } else {
           if (state.prdFocusKind === "part" && idx.prdPartyByDom[state.prdFocusId]) {
             var partObj = idx.prdPartyByDom[state.prdFocusId];
@@ -5358,6 +6207,8 @@
             bodyParts.push(renderPrdChapterHtml(chTarget, fState));
           } else if (state.prdFocusKind === "annexe" && idx.prdAnnexeByCode[state.prdFocusId]) {
             bodyParts.push(renderPrdAnnexeHtml(idx.prdAnnexeByCode[state.prdFocusId]));
+          } else if (state.prdFocusKind === "glossary") {
+            bodyParts.push(renderPrdGlossaryHtml());
           } else {
             bodyParts.push(renderPrdExecHtml(prd));
           }
@@ -5376,6 +6227,7 @@
           btn.addEventListener("click", function (ev) {
             ev.stopPropagation();
             var nid = btn.getAttribute("data-prd-jump-mm");
+            ensureThemeNodeVisibleUnderFilters(nid);
             switchView("mindmap");
             selectThemeNode(nid, true);
           });
@@ -5384,6 +6236,7 @@
           btn.addEventListener("click", function (ev) {
             ev.stopPropagation();
             var nid = btn.getAttribute("data-prd-jump-sy");
+            ensureThemeNodeVisibleUnderFilters(nid);
             state.syEgo = "1";
             state.syPositions = null;
             state.selectedKind = "theme";
@@ -5427,11 +6280,34 @@
             renderPrdView(false);
           });
         }
+        var prdGlossFilterEl = document.getElementById("prd-gloss-filter");
+        if (prdGlossFilterEl) {
+          prdGlossFilterEl.addEventListener("input", function (ev) {
+            var qg = normalizeText(ev.target.value || "").trim();
+            var tbl = document.getElementById("prd-v5-glossary-table");
+            var cnt = document.getElementById("prd-gloss-count");
+            if (!tbl || !tbl.querySelectorAll) return;
+            var rowsG = tbl.querySelectorAll("tbody tr");
+            var visG = 0;
+            rowsG.forEach(function (tr) {
+              var okG = !qg || normalizeText(tr.textContent || "").indexOf(qg) !== -1;
+              tr.style.display = okG ? "" : "none";
+              if (okG) visG++;
+            });
+            if (cnt) cnt.innerHTML = "<strong>" + visG + "</strong> / " + rowsG.length + " vedettes";
+          });
+        }
 
         if (scrollToHighlight && state.prdHighlightId) {
           var targetEl = reader.querySelector('[data-prd-eid="' + state.prdHighlightId + '"]');
-          if (targetEl && typeof targetEl.scrollIntoView === "function") {
-            targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (targetEl && typeof targetEl.getBoundingClientRect === "function" && typeof reader.getBoundingClientRect === "function") {
+            var rRect = reader.getBoundingClientRect();
+            var tRect = targetEl.getBoundingClientRect();
+            reader.scrollTop = Math.max(0, reader.scrollTop + (tRect.top - rRect.top) - 12);
+          } else if (targetEl && typeof targetEl.scrollIntoView === "function") {
+            targetEl.scrollIntoView({ block: "start" });
+          } else {
+            reader.scrollTop = 0;
           }
         } else if (scrollToHighlight) {
           reader.scrollTop = 0;
@@ -5475,6 +6351,7 @@
             var rid = el.getAttribute("data-res-id");
             searchDropdown.classList.remove("open");
             if (kind === "theme") {
+              ensureThemeNodeVisibleUnderFilters(rid);
               switchView("mindmap");
               selectThemeNode(rid, true);
             } else if (kind === "glossary") {
@@ -5506,9 +6383,18 @@
 
       searchInput.addEventListener("input", renderSearchDropdown);
       searchInput.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          var first = searchDropdown.querySelector(".search-item");
-          if (first) first.click();
+        var items = Array.prototype.slice.call(searchDropdown.querySelectorAll(".search-item") || []);
+        if ((e.key === "ArrowDown" || e.key === "ArrowUp") && items.length > 0) {
+          e.preventDefault();
+          var curIdx = items.findIndex(function (it) { return it.classList.contains("active"); });
+          if (curIdx < 0) curIdx = 0;
+          items[curIdx].classList.remove("active");
+          var nextIdx = e.key === "ArrowDown" ? (curIdx + 1) % items.length : (curIdx - 1 + items.length) % items.length;
+          items[nextIdx].classList.add("active");
+          if (typeof items[nextIdx].scrollIntoView === "function") items[nextIdx].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "Enter") {
+          var activeItem = searchDropdown.querySelector(".search-item.active") || searchDropdown.querySelector(".search-item");
+          if (activeItem) activeItem.click();
         } else if (e.key === "Escape") {
           searchDropdown.classList.remove("open");
           searchInput.blur();
@@ -5555,8 +6441,18 @@
         clone.setAttribute("viewBox", bx + " " + by + " " + bw + " " + bh);
         clone.setAttribute("width", String(bw));
         clone.setAttribute("height", String(bh));
+        clone.setAttribute("style", "background:#ffffff;");
+        var bgRect = document.createElementNS(SVG_NS, "rect");
+        bgRect.setAttribute("class", "svg-export-bg");
+        bgRect.setAttribute("x", String(bx));
+        bgRect.setAttribute("y", String(by));
+        bgRect.setAttribute("width", String(bw));
+        bgRect.setAttribute("height", String(bh));
+        bgRect.setAttribute("fill", "#ffffff");
+        clone.insertBefore(bgRect, clone.firstChild);
         var style = document.createElementNS(SVG_NS, "style");
         style.textContent = [
+          ":root{--bg-surface:#ffffff;--bg-surface-2:#eef2f7;--border:#cbd5e1;--border-strong:#94a3b8;--text-main:#0f172a;--text-muted:#475569;--accent:#2563eb}",
           ".mm-branch{fill:none;stroke-width:1.8;opacity:.65}",
           ".mm-edge{fill:none;stroke-width:1.7;opacity:.58}",
           ".mm-edge.highlighted{opacity:.98;stroke-width:3.1}",
@@ -5567,7 +6463,8 @@
           ".mm-node-title{fill:#0f172a;font-family:sans-serif;font-size:11.5px;font-weight:600}",
           ".mm-node-sub{fill:#475569;font-family:sans-serif;font-size:10px}",
           ".mm-toggle-circle{fill:#eef2f7;stroke:#94a3b8;stroke-width:1.2}",
-          ".mm-toggle-text{fill:#0f172a;font-family:sans-serif;font-size:9.5px;font-weight:700;text-anchor:middle;dominant-baseline:central}"
+          ".mm-toggle-text{fill:#0f172a;font-family:sans-serif;font-size:9.5px;font-weight:700;text-anchor:middle;dominant-baseline:central}",
+          ".sy-empty-state{fill:#475569;font-family:sans-serif;font-size:13px}"
         ].join("");
         clone.insertBefore(style, clone.firstChild);
         var xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(clone);
@@ -5593,6 +6490,20 @@
       // =========================================================================
       function switchView(viewName) {
         state.activeView = viewName;
+        if (isDrawerViewport()) {
+          state.stShowList = false;
+          state.prdShowToc = false;
+          setInspectorOpen(false);
+        } else {
+          if (viewName === "prd") {
+            setInspectorOpen(false);
+          } else if (viewName === "concordance") {
+            if (!state.c4SelectedCell) setInspectorOpen(false);
+          } else if (viewName === "mindmap" || viewName === "structure" || viewName === "synaptic") {
+            if (state.inspectorManualOpen !== false) setInspectorOpen(true);
+          }
+          syncDrawerBackdrops();
+        }
         var expSvgBtn = document.getElementById("export-svg-btn");
         if (expSvgBtn) expSvgBtn.disabled = (viewName === "concordance" || viewName === "prd");
         document.querySelectorAll(".view-tab").forEach(function (t) {
@@ -5603,7 +6514,7 @@
         document.querySelectorAll(".view-panel").forEach(function (p) {
           p.classList.toggle("active", p.id === "view-" + viewName);
         });
-        if (viewName === "mindmap") renderMindMap(false);
+        if (viewName === "mindmap") renderMindMap(!mmHasFitted);
         else if (viewName === "structure") renderStructureView(!state.stLastPositions || Object.keys(state.stLastPositions).length === 0);
         else if (viewName === "synaptic") renderSynapticGraph(!state.syPositions);
         else if (viewName === "concordance") renderConcordanceView();
@@ -5635,13 +6546,23 @@
         state.filters.relationType = document.getElementById("f-rel").value;
         state.syPositions = null;
 
+        var stSelSync = document.getElementById("st-file-select");
+        if (stSelSync && state.stFileFilter !== state.filters.tome) {
+          state.stFileFilter = state.filters.tome || "";
+          stSelSync.value = state.stFileFilter;
+          if (state.stFileFilter) state.stExpanded.add("STRUCT_FILE_" + state.stFileFilter);
+        }
+
         // Auto-révélation des branches correspondantes lorsqu'un filtre précis est actif
         var filtered = filterNodesAndRelations(idx, state.filters);
+        syncFiltersToggleUI();
         if (filtered.active && filtered.matchingNodeIds.size <= 90) {
           filtered.matchingNodeIds.forEach(function (nid) { revealThemeNode(nid); });
         }
         if (state.activeView === "mindmap") renderMindMap(false);
+        else if (state.activeView === "structure") renderStructureView(true);
         else if (state.activeView === "synaptic") renderSynapticGraph(true);
+        else if (state.activeView === "concordance") renderConcordanceView();
         else if (state.activeView === "prd") renderPrdView(false);
         else updateFilterStatus(filtered);
       }
@@ -5682,7 +6603,7 @@
         renderMindMap(true);
       });
       document.getElementById("mm-collapse-all-btn").addEventListener("click", function () {
-        applyMindMapDepth(1);
+        applyMindMapDepth(2);
         renderMindMap(true);
       });
       document.getElementById("mm-toggle-edges-btn").addEventListener("click", function (e) {
@@ -5691,17 +6612,22 @@
         e.currentTarget.textContent = "Interrelations : " + (state.mmShowEdges ? "ON" : "OFF");
         renderMindMap(false);
       });
-      document.getElementById("mm-xray-btn").addEventListener("click", function (e) {
-        state.mmXray = !state.mmXray;
-        e.currentTarget.classList.toggle("active", state.mmXray);
-        renderMindMap(false);
-      });
       document.getElementById("mm-expand-linked-btn").addEventListener("click", function () {
         if (state.selectedKind !== "theme" || !state.selectedId) return;
-        var rels = (idx.outRelations[state.selectedId] || []).concat(idx.inRelations[state.selectedId] || []);
-        rels.forEach(function (r) {
-          revealThemeNode(r.source);
-          revealThemeNode(r.target);
+        var seedThemes = collectDescendantThemeIds(idx, state.selectedId);
+        var filt = filterNodesAndRelations(idx, state.filters);
+        var allowedSet = filt.active ? filt.matchingNodeIds : null;
+        seedThemes.forEach(function (tid) {
+          if (allowedSet && !allowedSet.has(tid)) return;
+          revealThemeNode(tid);
+          var rels = (idx.outRelations[tid] || []).concat(idx.inRelations[tid] || []);
+          rels.forEach(function (r) {
+            if (filt.active && state.filters.relationType && r.type !== state.filters.relationType) return;
+            if (!allowedSet || (allowedSet.has(r.source) && allowedSet.has(r.target))) {
+              revealThemeNode(r.source);
+              revealThemeNode(r.target);
+            }
+          });
         });
         renderMindMap(true);
       });
@@ -5722,6 +6648,12 @@
       });
       document.getElementById("st-file-select").addEventListener("change", function (e) {
         state.stFileFilter = e.target.value;
+        var fTomeEl = document.getElementById("f-tome");
+        if (fTomeEl && fTomeEl.value !== state.stFileFilter) {
+          fTomeEl.value = state.stFileFilter;
+          onFilterChange();
+          return;
+        }
         if (state.stFileFilter) state.stExpanded.add("STRUCT_FILE_" + state.stFileFilter);
         renderStructureView(true);
       });
@@ -5748,7 +6680,7 @@
         state.pathStart = document.getElementById("path-start").value;
         state.pathEnd = document.getElementById("path-end").value;
         state.pathDirected = document.getElementById("path-directed").checked;
-        runShortestPathUI();
+        runShortestPathUI(true);
       });
       document.getElementById("path-swap-btn").addEventListener("click", function () {
         var s = document.getElementById("path-start");
@@ -5796,10 +6728,46 @@
           renderPrdToc(computePrdFilterState(idx, state.filters));
         });
       }
+      function prepareDomForPrint() {
+        document.querySelectorAll("details.schema-preview-details, details.ann-details").forEach(function (d) {
+          if (!d.open) {
+            d.setAttribute("data-opened-for-print", "1");
+            d.open = true;
+          }
+        });
+        var pending = [];
+        document.querySelectorAll("img.schema-preview-img").forEach(function (img) {
+          img.loading = "eager";
+          if (!img.complete) pending.push(img);
+        });
+        return pending;
+      }
+      function restoreDomAfterPrint() {
+        document.querySelectorAll('details[data-opened-for-print="1"]').forEach(function (d) {
+          d.removeAttribute("data-opened-for-print");
+          d.open = false;
+        });
+      }
+      if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
+        window.addEventListener("beforeprint", prepareDomForPrint);
+        window.addEventListener("afterprint", restoreDomAfterPrint);
+      }
       var prdPrintBtn = document.getElementById("prd-print-btn");
       if (prdPrintBtn) {
         prdPrintBtn.addEventListener("click", function () {
-          if (typeof window !== "undefined" && typeof window.print === "function") {
+          if (typeof window === "undefined" || typeof window.print !== "function") return;
+          var pending = prepareDomForPrint();
+          if (pending.length > 0 && typeof Promise !== "undefined") {
+            Promise.race([
+              Promise.all(pending.map(function (img) {
+                return new Promise(function (res) {
+                  img.addEventListener("load", res, { once: true });
+                  img.addEventListener("error", res, { once: true });
+                });
+              })),
+              new Promise(function (res) { setTimeout(res, 600); })
+            ]).then(function () { window.print(); });
+          } else {
             window.print();
           }
         });
@@ -5826,8 +6794,9 @@
               centerOnPoint("mm", state.mmLastPositions[state.selectedId].x, state.mmLastPositions[state.selectedId].y);
             } else if (key === "st" && state.selectedId && state.stLastPositions[state.selectedId]) {
               centerOnPoint("st", state.stLastPositions[state.selectedId].x, state.stLastPositions[state.selectedId].y);
-            } else if (key === "sy" && state.selectedId && state.syPositions && state.syPositions[state.selectedId]) {
-              centerOnPoint("sy", state.syPositions[state.selectedId].x, state.syPositions[state.selectedId].y);
+            } else if (key === "sy" && state.syPositions && (state.syPositions[state.selectedId] || (state.syLastCenterId && state.syPositions[state.syLastCenterId]))) {
+              var syCenterPt = state.syPositions[state.selectedId] || state.syPositions[state.syLastCenterId];
+              centerOnPoint("sy", syCenterPt.x, syCenterPt.y);
             } else {
               fitViewport(key);
             }
@@ -5835,15 +6804,59 @@
         });
       });
 
+      var filtersToggleBtn = document.getElementById("filters-toggle-btn");
+      if (filtersToggleBtn) {
+        filtersToggleBtn.addEventListener("click", function () {
+          state.filtersOpen = !state.filtersOpen;
+          syncFiltersToggleUI();
+        });
+      }
+
       document.getElementById("inspector-toggle-btn").addEventListener("click", function () {
         var insp = document.getElementById("inspector");
-        setInspectorOpen(insp ? insp.classList.contains("collapsed") : true);
+        var nextOpen = insp ? insp.classList.contains("collapsed") : true;
+        if (!isDrawerViewport()) state.inspectorManualOpen = nextOpen;
+        setInspectorOpen(nextOpen);
       });
+      var inspTopbarBtn = document.getElementById("inspector-topbar-btn");
+      if (inspTopbarBtn) {
+        inspTopbarBtn.addEventListener("click", function () {
+          var insp = document.getElementById("inspector");
+          var nextOpen = insp ? insp.classList.contains("collapsed") : true;
+          if (!isDrawerViewport()) state.inspectorManualOpen = nextOpen;
+          setInspectorOpen(nextOpen);
+        });
+      }
 
-      document.getElementById("mm-legend-toggle").addEventListener("click", function () {
-        var grid = document.getElementById("mm-legend-grid");
-        grid.style.display = grid.style.display === "none" ? "grid" : "none";
-      });
+      var inspBackdropEl = document.getElementById("inspector-backdrop");
+      if (inspBackdropEl) {
+        inspBackdropEl.addEventListener("click", function () {
+          setInspectorOpen(false);
+        });
+      }
+      var stBackdropEl = document.getElementById("st-backdrop");
+      if (stBackdropEl) {
+        stBackdropEl.addEventListener("click", function () {
+          state.stShowList = false;
+          renderStructureView(false);
+        });
+      }
+      var prdBackdropEl = document.getElementById("prd-backdrop");
+      if (prdBackdropEl) {
+        prdBackdropEl.addEventListener("click", function () {
+          state.prdShowToc = false;
+          renderPrdToc(computePrdFilterState(idx, state.filters));
+        });
+      }
+
+      var mmLegendToggle = document.getElementById("mm-legend-toggle");
+      if (mmLegendToggle) {
+        mmLegendToggle.addEventListener("click", function () {
+          state.mmLegendCollapsed = !state.mmLegendCollapsed;
+          syncLegendUI();
+        });
+        bindKeyboardActivation(mmLegendToggle.parentNode || document);
+      }
 
       // Raccourcis clavier
       document.addEventListener("keydown", function (e) {
@@ -5852,6 +6865,29 @@
           searchInput.focus();
           searchInput.select();
           return;
+        }
+        if (e.key === "Escape") {
+          if (searchDropdown && searchDropdown.classList.contains("open")) {
+            searchDropdown.classList.remove("open");
+            return;
+          }
+          if (isDrawerViewport()) {
+            var inspEl = document.getElementById("inspector");
+            if (inspEl && !inspEl.classList.contains("collapsed")) {
+              setInspectorOpen(false);
+              return;
+            }
+            if (state.activeView === "structure" && state.stShowList) {
+              state.stShowList = false;
+              renderStructureView(false);
+              return;
+            }
+            if (state.activeView === "prd" && state.prdShowToc) {
+              state.prdShowToc = false;
+              renderPrdToc(computePrdFilterState(idx, state.filters));
+              return;
+            }
+          }
         }
         if (document.activeElement && (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "SELECT")) {
           return;
@@ -5867,24 +6903,21 @@
         else if (e.key === "ArrowRight") { vp.tx -= 60; applyViewportTransform(vpKey); }
         else if (e.key === "ArrowUp") { vp.ty += 60; applyViewportTransform(vpKey); }
         else if (e.key === "ArrowDown") { vp.ty -= 60; applyViewportTransform(vpKey); }
-        else if (e.key === "Escape") {
-          state.mmXray = false;
-          document.getElementById("mm-xray-btn").classList.remove("active");
-          renderMindMap(false);
-        }
       });
 
       function applyHashNavigation(hashStr) {
         var p = parseLocationHash(hashStr);
         if (!p || Object.keys(p).length === 0) return false;
-        if (p.view === "prd" || (!p.view && (p.ch || p.thm || p.fam || p.part || p.annexe || p.sec || p.sch || p.schemas))) {
+        if (p.view === "prd" || (!p.view && (p.ch || p.thm || p.fam || p.part || p.annexe || p.sec || p.sch || p.schemas || p.glossary !== undefined || p.glossaire !== undefined))) {
           if (p.mode === "full" || p.mode === "targeted") {
             state.prdMode = p.mode;
             document.querySelectorAll("[data-prd-mode]").forEach(function (b) {
               b.classList.toggle("active", b.getAttribute("data-prd-mode") === state.prdMode);
             });
           }
-          if (p.sch) {
+          if (p.glossary !== undefined || p.glossaire !== undefined) {
+            jumpToPrdTarget({ kind: "glossary", focus_id: p.glossary || p.glossaire || "glossary" });
+          } else if (p.sch) {
             jumpToPrdTarget({ kind: "schema", schema_id: p.sch });
           } else if (p.thm) {
             var tn = idx.nodeById[p.thm] || idx.nodeBySlug[p.thm];
@@ -5917,6 +6950,7 @@
             });
           }
           if (p.node) {
+            ensureThemeNodeVisibleUnderFilters(p.node);
             state.selectedKind = "theme";
             state.selectedId = p.node;
             state.syPositions = null;
@@ -5926,6 +6960,7 @@
           return true;
         }
         if (p.view === "mindmap") {
+          if (p.node) ensureThemeNodeVisibleUnderFilters(p.node);
           switchView("mindmap");
           if (p.node) selectThemeNode(p.node, true);
           return true;
@@ -5936,6 +6971,16 @@
           return true;
         }
         if (p.view === "concordance") {
+          var validC4Tabs = ["heatmap", "reconciliations", "timeline", "traceability", "glossary_evidence"];
+          if (p.tab && validC4Tabs.indexOf(p.tab) !== -1) {
+            state.c4Tab = p.tab;
+            document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+              b.classList.toggle("active", b.getAttribute("data-c4-tab") === state.c4Tab);
+            });
+          }
+          if (p.q && state.c4Tab === "glossary_evidence") {
+            state.c4GlossaryQuery = p.q;
+          }
           switchView("concordance");
           return true;
         }
@@ -5957,13 +7002,66 @@
       // Démarrage initial
       renderKpis();
       populateFilters();
+      if (isAnyFilterActive(state.filters)) {
+        state.filtersOpen = true;
+      }
+      syncFiltersToggleUI();
+      syncLegendUI();
+      syncExpandLinkedBtn();
+      setInspectorOpen(!isInitialDrawer);
+      var stToggleInit = document.getElementById("st-toggle-list-btn");
+      if (stToggleInit) {
+        stToggleInit.classList.toggle("active", state.stShowList);
+        stToggleInit.setAttribute("aria-expanded", state.stShowList ? "true" : "false");
+      }
+      var prdToggleInit = document.getElementById("prd-toggle-toc-btn");
+      if (prdToggleInit) {
+        prdToggleInit.classList.toggle("active", state.prdShowToc);
+        prdToggleInit.setAttribute("aria-expanded", state.prdShowToc ? "true" : "false");
+      }
       var initHash = (typeof window !== "undefined" && window.location && window.location.hash) ? window.location.hash : "";
-      if (!applyHashNavigation(initHash)) {
+      var hadHashNav = applyHashNavigation(initHash);
+      if (!hadHashNav) {
         renderMindMap(true);
       }
       if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
         window.addEventListener("hashchange", function () {
-          if (window.location && window.location.hash) applyHashNavigation(window.location.hash);
+          var curHash = (window.location && window.location.hash) ? window.location.hash : "";
+          if (curHash) {
+            if (applyHashNavigation(curHash)) hadHashNav = true;
+          } else if (hadHashNav) {
+            switchView("mindmap");
+          }
+        });
+        var wasDrawerViewport = isInitialDrawer;
+        window.addEventListener("resize", function () {
+          var nowDrawer = isDrawerViewport();
+          if (nowDrawer !== wasDrawerViewport) {
+            wasDrawerViewport = nowDrawer;
+            if (nowDrawer) {
+              state.stShowList = false;
+              state.prdShowToc = false;
+              setInspectorOpen(false);
+              if (!isAnyFilterActive(state.filters)) state.filtersOpen = false;
+              state.mmLegendCollapsed = true;
+            } else {
+              state.stShowList = true;
+              state.prdShowToc = true;
+              if (state.activeView === "prd" || (state.activeView === "concordance" && !state.c4SelectedCell)) {
+                setInspectorOpen(false);
+              } else if (state.inspectorManualOpen !== false) {
+                setInspectorOpen(true);
+              }
+              if (countActiveFilters() > 0) state.filtersOpen = true;
+              state.mmLegendCollapsed = false;
+            }
+            syncFiltersToggleUI();
+            syncLegendUI();
+            if (state.activeView === "structure") renderStructureView(false);
+            else if (state.activeView === "prd") renderPrdToc(computePrdFilterState(idx, state.filters));
+          } else {
+            syncDrawerBackdrops();
+          }
         });
       }
     }

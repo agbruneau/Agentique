@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-25T22:00:13Z",
+  "generated_at": "2026-11-25T22:56:05Z",
   "generator": "Sources/Cartographie/outils/consolider_catalogue_schemas.py",
   "source_shards": [
     "Sources/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json",
@@ -13295,7 +13295,6 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.0.png",
         "source_section": "1 · L'interopérabilité comme problème d'intégration d'entreprise",
         "domain_hints": [
-          "D12",
           "D01",
           "D03"
         ],
@@ -13314,7 +13313,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.1.svg",
         "source_section": "1 · L'interopérabilité comme problème d'intégration d'entreprise",
         "domain_hints": [
-          "D12",
+          "D01",
           "D03",
           "D11"
         ],
@@ -13333,9 +13332,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.3.png",
         "source_section": "1 · L'interopérabilité comme problème d'intégration d'entreprise",
         "domain_hints": [
-          "D12",
-          "D03",
-          "D01"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-03-03"
@@ -13352,7 +13350,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-01.5.png",
         "source_section": "1 · L'interopérabilité comme problème d'intégration d'entreprise",
         "domain_hints": [
-          "D12",
+          "D01",
           "D05",
           "D03"
         ],
@@ -13369,8 +13367,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-02.1.svg",
         "source_section": "2 · Données, sémantique et ontologies",
         "domain_hints": [
-          "D04",
-          "D03"
+          "D01",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-10-01"
@@ -13387,8 +13385,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-02.3.svg",
         "source_section": "2 · Données, sémantique et ontologies",
         "domain_hints": [
-          "D04",
-          "D03"
+          "D01",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-10-01"
@@ -13405,9 +13403,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-03.2.png",
         "source_section": "3 · Sécurité, identité et gouvernance de l'interopérabilité",
         "domain_hints": [
+          "D01",
           "D06",
-          "D03",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-16-01"
@@ -13424,7 +13422,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-03.3.svg",
         "source_section": "3 · Sécurité, identité et gouvernance de l'interopérabilité",
         "domain_hints": [
-          "D06",
+          "D01",
           "D07",
           "D03"
         ],
@@ -13442,8 +13440,7 @@
         "source_section": "4 · L'ingénierie des systèmes agentiques : anatomie, raisonnement, outils",
         "domain_hints": [
           "D01",
-          "D05",
-          "D02"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-04-02"
@@ -13461,8 +13458,7 @@
         "source_section": "4 · L'ingénierie des systèmes agentiques : anatomie, raisonnement, outils",
         "domain_hints": [
           "D01",
-          "D05",
-          "D02"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-01-01"
@@ -13479,9 +13475,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-04.3.png",
         "source_section": "4 · L'ingénierie des systèmes agentiques : anatomie, raisonnement, outils",
         "domain_hints": [
-          "D01",
-          "D02",
-          "D04"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-01-03"
@@ -13498,9 +13492,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-05.0.png",
         "source_section": "5 · Ancrage informationnel : mémoire, contexte, RAG agentique",
         "domain_hints": [
+          "D01",
           "D04",
-          "D09",
-          "D02"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-11-02"
@@ -13517,9 +13511,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-05.3.svg",
         "source_section": "5 · Ancrage informationnel : mémoire, contexte, RAG agentique",
         "domain_hints": [
+          "D01",
           "D04",
-          "D09",
-          "D02"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-10-03"
@@ -13537,8 +13531,7 @@
         "source_section": "6 · Systèmes multi-agents, évaluation et sûreté",
         "domain_hints": [
           "D01",
-          "D06",
-          "D03"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-02-02"
@@ -13555,9 +13548,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-06.4.svg",
         "source_section": "6 · Systèmes multi-agents, évaluation et sûreté",
         "domain_hints": [
-          "D01",
-          "D03",
-          "D05"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-02-03"
@@ -13574,9 +13565,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.2.svg",
         "source_section": "7 · Généalogie et gouvernance : des projets propriétaires aux standards ouverts",
         "domain_hints": [
-          "D03",
           "D01",
-          "D12"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13591,9 +13581,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.3.svg",
         "source_section": "7 · Généalogie et gouvernance : des projets propriétaires aux standards ouverts",
         "domain_hints": [
-          "D03",
-          "D01",
-          "D12"
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13608,9 +13596,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.5.svg",
         "source_section": "7 · Généalogie et gouvernance : des projets propriétaires aux standards ouverts",
         "domain_hints": [
-          "D03",
-          "D01",
-          "D12"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-08-01"
@@ -13627,9 +13613,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.1.svg",
         "source_section": "8 · Anatomie : MCP (agent-outil) et A2A (agent-agent)",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-07-01"
@@ -13646,9 +13631,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.2.png",
         "source_section": "8 · Anatomie : MCP (agent-outil) et A2A (agent-agent)",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-07-01"
@@ -13665,9 +13649,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.4.png",
         "source_section": "8 · Anatomie : MCP (agent-outil) et A2A (agent-agent)",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13682,9 +13665,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.6.svg",
         "source_section": "8 · Anatomie : MCP (agent-outil) et A2A (agent-agent)",
         "domain_hints": [
+          "D01",
           "D03",
-          "D07",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13699,9 +13682,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-09.1.png",
         "source_section": "9 · Découverte, registres, portabilité et pile protocolaire",
         "domain_hints": [
+          "D01",
           "D03",
-          "D09",
-          "D04"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-09-02"
@@ -13718,9 +13701,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-09.2.svg",
         "source_section": "9 · Découverte, registres, portabilité et pile protocolaire",
         "domain_hints": [
+          "D01",
           "D03",
-          "D09",
-          "D04"
+          "D09"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13735,9 +13718,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-09.5.png",
         "source_section": "9 · Découverte, registres, portabilité et pile protocolaire",
         "domain_hints": [
+          "D01",
           "D03",
-          "D09",
-          "D04"
+          "D09"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13752,9 +13735,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-10.3.png",
         "source_section": "10 · Transaction et infrastructure : AP2 et AGNTCY",
         "domain_hints": [
+          "D01",
           "D03",
-          "D07",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-32-03"
@@ -13771,9 +13754,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-10.4.png",
         "source_section": "10 · Transaction et infrastructure : AP2 et AGNTCY",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D09"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-08-02",
@@ -13791,9 +13773,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.1.png",
         "source_section": "11 · Modes d'échec et taxonomie des risques protocolaires",
         "domain_hints": [
-          "D07",
-          "D03",
-          "D05"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-13-03",
@@ -13811,9 +13791,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.2.png",
         "source_section": "11 · Modes d'échec et taxonomie des risques protocolaires",
         "domain_hints": [
-          "D07",
-          "D03",
-          "D05"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-07-03",
@@ -13831,9 +13809,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-11.4.svg",
         "source_section": "11 · Modes d'échec et taxonomie des risques protocolaires",
         "domain_hints": [
-          "D07",
-          "D03",
-          "D05"
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13848,9 +13824,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-12.1.png",
         "source_section": "12 · L'héritage et les standards étirés : un demi-siècle d'identités non humaines, puis OAuth, OIDC et SCIM face à l'agent",
         "domain_hints": [
-          "D06",
-          "D07",
-          "D09"
+          "D01",
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-16-01"
@@ -13867,9 +13842,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-12.4.svg",
         "source_section": "12 · L'héritage et les standards étirés : un demi-siècle d'identités non humaines, puis OAuth, OIDC et SCIM face à l'agent",
         "domain_hints": [
-          "D06",
-          "D07",
-          "D09"
+          "D01",
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-16-01"
@@ -13886,9 +13860,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-13.4.svg",
         "source_section": "13 · L'identité décentralisée : VC, DID et la promesse du portable",
         "domain_hints": [
+          "D01",
           "D06",
-          "D04",
-          "D09"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-16-03"
@@ -13905,9 +13879,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-13.5.svg",
         "source_section": "13 · L'identité décentralisée : VC, DID et la promesse du portable",
         "domain_hints": [
-          "D06",
-          "D03",
-          "D11"
+          "D01",
+          "D06"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -13922,9 +13895,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-14.1.svg",
         "source_section": "14 · La grille des cinq questions",
         "domain_hints": [
-          "D06",
-          "D02",
-          "D07"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-16-01"
@@ -13941,10 +13912,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-15.1.png",
         "source_section": "15 · Émettre : Agent Card signée, annuaires, registres gouvernés",
         "domain_hints": [
-          "D06",
+          "D01",
           "D03",
-          "D04",
-          "D09"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-09-02",
@@ -13962,9 +13932,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-15.3.svg",
         "source_section": "15 · Émettre : Agent Card signée, annuaires, registres gouvernés",
         "domain_hints": [
-          "D06",
-          "D03",
-          "D08"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-16-02",
@@ -13982,9 +13951,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-16.1.svg",
         "source_section": "16 · Le passeport d'agent : synthèse d'un objet encore virtuel",
         "domain_hints": [
-          "D06",
-          "D07",
-          "D09"
+          "D01",
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-16-03"
@@ -14001,9 +13969,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-16.2.svg",
         "source_section": "16 · Le passeport d'agent : synthèse d'un objet encore virtuel",
         "domain_hints": [
-          "D06",
-          "D07",
-          "D09"
+          "D01",
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-16-03"
@@ -14020,9 +13987,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-17.2.svg",
         "source_section": "17 · La chaîne de mandat et le problème des deux sauts",
         "domain_hints": [
-          "D06",
-          "D02",
-          "D08"
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14037,9 +14002,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-17.6.png",
         "source_section": "17 · La chaîne de mandat et le problème des deux sauts",
         "domain_hints": [
-          "D06",
-          "D02",
-          "D08"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-17-01"
@@ -14056,9 +14019,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-18.1.svg",
         "source_section": "18 · Know Your Agent : la vérification d'agent tiers inter-domaines",
         "domain_hints": [
-          "D06",
-          "D03",
-          "D09"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-17-03"
@@ -14075,9 +14036,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-18.2.svg",
         "source_section": "18 · Know Your Agent : la vérification d'agent tiers inter-domaines",
         "domain_hints": [
-          "D06",
-          "D03",
-          "D09"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-17-03"
@@ -14094,9 +14053,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-19.2.png",
         "source_section": "19 · Taxonomie des attaques d'identité et de délégation",
         "domain_hints": [
-          "D07",
-          "D06",
-          "D04"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-19-01"
@@ -14113,9 +14070,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-19.4.svg",
         "source_section": "19 · Taxonomie des attaques d'identité et de délégation",
         "domain_hints": [
-          "D07",
-          "D09",
-          "D06"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14130,9 +14086,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-20.0.png",
         "source_section": "20 · Usurpation, révocation et boucle défensive : du rug-pull au centre opérationnel de sécurité (SOC) agentique",
         "domain_hints": [
+          "D01",
           "D04",
-          "D07",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-19-02"
@@ -14149,9 +14105,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-20.6.png",
         "source_section": "20 · Usurpation, révocation et boucle défensive : du rug-pull au centre opérationnel de sécurité (SOC) agentique",
         "domain_hints": [
+          "D01",
           "D04",
-          "D07",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-17-03",
@@ -14169,9 +14125,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-21.2.svg",
         "source_section": "21 · L'horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration",
         "domain_hints": [
+          "D01",
           "D06",
-          "D07",
-          "D09"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-18-02"
@@ -14188,9 +14144,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-21.9.png",
         "source_section": "21 · L'horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration",
         "domain_hints": [
+          "D01",
           "D06",
-          "D07",
-          "D09"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-18-02"
@@ -14207,9 +14163,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-22.1.svg",
         "source_section": "22 · Options d'orchestration et paradigme APM : la taxonomie OO1-OO4 et l'autonomie encadrée",
         "domain_hints": [
+          "D01",
           "D05",
-          "D02",
-          "D07"
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-04-02",
@@ -14227,9 +14183,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-22.6.svg",
         "source_section": "22 · Options d'orchestration et paradigme APM : la taxonomie OO1-OO4 et l'autonomie encadrée",
         "domain_hints": [
+          "D01",
           "D05",
-          "D02",
-          "D07"
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-13-01"
@@ -14246,9 +14202,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-22.10.svg",
         "source_section": "22 · Options d'orchestration et paradigme APM : la taxonomie OO1-OO4 et l'autonomie encadrée",
         "domain_hints": [
+          "D01",
           "D05",
-          "D02",
-          "D07"
+          "D02"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14263,9 +14219,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-23.5.svg",
         "source_section": "23 · Les frameworks d'orchestration d'entreprise",
         "domain_hints": [
-          "D05",
-          "D03",
-          "D06"
+          "D01",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-13-02"
@@ -14282,9 +14237,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-24.1.svg",
         "source_section": "24 · Le passage à l'échelle de l'entreprise",
         "domain_hints": [
-          "D02",
-          "D01",
-          "D03"
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14299,9 +14252,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-24.3.png",
         "source_section": "24 · Le passage à l'échelle de l'entreprise",
         "domain_hints": [
-          "D02",
-          "D03",
-          "D01"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-16-01",
@@ -14319,9 +14271,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-24.5.svg",
         "source_section": "24 · Le passage à l'échelle de l'entreprise",
         "domain_hints": [
-          "D02",
-          "D05",
-          "D01"
+          "D01",
+          "D05"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14336,9 +14287,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-25.1.png",
         "source_section": "25 · E-23 : le risque de modèle à l'ère de l'IA",
         "domain_hints": [
-          "D09",
-          "D02",
-          "D06"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-25-02"
@@ -14355,9 +14305,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-25.3.png",
         "source_section": "25 · E-23 : le risque de modèle à l'ère de l'IA",
         "domain_hints": [
-          "D09",
-          "D02",
-          "D06"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-25-02"
@@ -14374,8 +14323,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-26.3.svg",
         "source_section": "26 · Le vide fédéral : de C-27 à C-36",
         "domain_hints": [
-          "D09",
-          "D10"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-25-03"
@@ -14392,8 +14341,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-27.1.png",
         "source_section": "27 · Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25",
         "domain_hints": [
-          "D09",
-          "D10"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-05-03",
@@ -14411,8 +14360,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-27.2.png",
         "source_section": "27 · Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25",
         "domain_hints": [
-          "D09",
-          "D10"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-25-01"
@@ -14429,9 +14378,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-29.1.svg",
         "source_section": "29 · Le pont : des contraintes réglementaires aux frames déterministes",
         "domain_hints": [
-          "D02",
-          "D09",
-          "D05"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-04-02"
@@ -14448,9 +14396,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-30.1.svg",
         "source_section": "30 · Le maillage réglementaire international et la normalisation institutionnelle",
         "domain_hints": [
-          "D09",
-          "D03",
-          "D06"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-26-01"
@@ -14467,9 +14414,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-30.2.svg",
         "source_section": "30 · Le maillage réglementaire international et la normalisation institutionnelle",
         "domain_hints": [
-          "D09",
-          "D03",
-          "D06"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-25-02"
@@ -14486,9 +14432,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-31.1.png",
         "source_section": "31 · Le vertical financier : pourquoi l'agentique y est durcie",
         "domain_hints": [
-          "D10",
-          "D04",
-          "D06"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-28-02"
@@ -14505,9 +14449,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-31.2.svg",
         "source_section": "31 · Le vertical financier : pourquoi l'agentique y est durcie",
         "domain_hints": [
-          "D10",
-          "D04",
-          "D06"
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14522,10 +14464,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-31.3.png",
         "source_section": "31 · Le vertical financier : pourquoi l'agentique y est durcie",
         "domain_hints": [
-          "D10",
+          "D01",
           "D02",
-          "D04",
-          "D06"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-10-02"
@@ -14542,7 +14483,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-31.4.svg",
         "source_section": "31 · Le vertical financier : pourquoi l'agentique y est durcie",
         "domain_hints": [
-          "D10",
+          "D01",
           "D02",
           "D05"
         ],
@@ -14561,9 +14502,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-32.4.png",
         "source_section": "32 · Le cadre des services bancaires axés sur les consommateurs",
         "domain_hints": [
-          "D09",
-          "D03",
-          "D06"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-25-03"
@@ -14580,9 +14519,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-33.2.png",
         "source_section": "33 · ISO 20022 : Lynx accompli, RTR visé",
         "domain_hints": [
-          "D04",
-          "D10",
-          "D03"
+          "D01",
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-10-02",
@@ -14600,9 +14538,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-34.1.svg",
         "source_section": "34 · Les sous-domaines financiers : banque, assurance, patrimoine",
         "domain_hints": [
+          "D01",
           "D10",
-          "D02",
-          "D07"
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-28-01"
@@ -14619,9 +14557,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-34.2.png",
         "source_section": "34 · Les sous-domaines financiers : banque, assurance, patrimoine",
         "domain_hints": [
+          "D01",
           "D10",
-          "D09",
-          "D01"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-28-01"
@@ -14638,9 +14576,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-34.3.png",
         "source_section": "34 · Les sous-domaines financiers : banque, assurance, patrimoine",
         "domain_hints": [
+          "D01",
           "D10",
-          "D05",
-          "D09"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-28-01"
@@ -14657,9 +14595,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-35.1.svg",
         "source_section": "35 · Études de cas : la production agentique canadienne (2025-2026)",
         "domain_hints": [
-          "D10",
-          "D07",
-          "D02"
+          "D01",
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-28-03"
@@ -14676,9 +14613,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-35.2.svg",
         "source_section": "35 · Études de cas : la production agentique canadienne (2025-2026)",
         "domain_hints": [
-          "D10",
-          "D05",
-          "D02"
+          "D01",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-28-03"
@@ -14695,9 +14631,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-36.1.png",
         "source_section": "36 · Prospective : AP2 sur les rails canadiens ?",
         "domain_hints": [
+          "D01",
           "D03",
-          "D11",
-          "D06"
+          "D11"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14712,9 +14648,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-36.2.svg",
         "source_section": "36 · Prospective : AP2 sur les rails canadiens ?",
         "domain_hints": [
+          "D01",
           "D03",
-          "D11",
-          "D06"
+          "D11"
         ],
         "linked_schema_ids": [
           "SCH-08-02"
@@ -14750,9 +14686,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.5.svg",
         "source_section": "37 · Le maillage d'agents : du service mesh au point d'application (PEP/PDP et zero trust agentique)",
         "domain_hints": [
+          "D01",
           "D07",
-          "D03",
-          "D04"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-20-01"
@@ -14769,9 +14705,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.7.svg",
         "source_section": "37 · Le maillage d'agents : du service mesh au point d'application (PEP/PDP et zero trust agentique)",
         "domain_hints": [
+          "D01",
           "D07",
-          "D03",
-          "D01"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-20-01"
@@ -14788,9 +14724,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.8.svg",
         "source_section": "37 · Le maillage d'agents : du service mesh au point d'application (PEP/PDP et zero trust agentique)",
         "domain_hints": [
+          "D01",
           "D07",
-          "D03",
-          "D01"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14805,9 +14741,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-38.3.png",
         "source_section": "38 · L'observabilité agentique",
         "domain_hints": [
+          "D01",
           "D04",
-          "D07",
-          "D08"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-22-01"
@@ -14824,9 +14760,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-38.5.png",
         "source_section": "38 · L'observabilité agentique",
         "domain_hints": [
-          "D08",
-          "D06",
-          "D09"
+          "D01",
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-22-01"
@@ -14843,9 +14778,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-39.1.svg",
         "source_section": "39 · Le cycle de vie opérationnel : évaluation continue, dérive et incident",
         "domain_hints": [
-          "D08",
-          "D07",
-          "D02"
+          "D01",
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-23-02"
@@ -14862,9 +14796,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-39.2.png",
         "source_section": "39 · Le cycle de vie opérationnel : évaluation continue, dérive et incident",
         "domain_hints": [
-          "D08",
-          "D02",
-          "D04"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-21-03"
@@ -14881,9 +14813,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-40.1.svg",
         "source_section": "40 · Les indicateurs de l'AgentOps et le FinOps des agents",
         "domain_hints": [
+          "D01",
           "D07",
-          "D08",
-          "D01"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-24-03"
@@ -14900,9 +14832,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-40.2.svg",
         "source_section": "40 · Les indicateurs de l'AgentOps et le FinOps des agents",
         "domain_hints": [
-          "D08",
           "D01",
-          "D02"
+          "D08"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -14917,9 +14848,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-41.1.svg",
         "source_section": "41 · La fabrique d'agents : produire, certifier et réémettre le parc",
         "domain_hints": [
-          "D10",
-          "D03",
-          "D02"
+          "D01",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-09-02",
@@ -14938,9 +14868,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-41.2.png",
         "source_section": "41 · La fabrique d'agents : produire, certifier et réémettre le parc",
         "domain_hints": [
-          "D10",
-          "D02",
-          "D07"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-30-01"
@@ -14957,7 +14885,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-41.3.png",
         "source_section": "41 · La fabrique d'agents : produire, certifier et réémettre le parc",
         "domain_hints": [
-          "D10",
+          "D01",
           "D07",
           "D02"
         ],
@@ -14976,9 +14904,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-42.1.svg",
         "source_section": "42 · La matrice protocoles × exigences réglementaires",
         "domain_hints": [
+          "D01",
           "D09",
-          "D03",
-          "D06"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-09-03"
@@ -14995,9 +14923,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-42.2.svg",
         "source_section": "42 · La matrice protocoles × exigences réglementaires",
         "domain_hints": [
-          "D03",
-          "D09",
-          "D06"
+          "D01",
+          "D09"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15012,7 +14939,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-42.3.png",
         "source_section": "42 · La matrice protocoles × exigences réglementaires",
         "domain_hints": [
-          "D03",
+          "D01",
           "D05",
           "D09"
         ],
@@ -15031,9 +14958,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-43.1.png",
         "source_section": "43 · L'architecture de référence unifiée par couches",
         "domain_hints": [
-          "D02",
-          "D03",
-          "D05"
+          "D01",
+          "D02"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15048,7 +14974,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-43.2.png",
         "source_section": "43 · L'architecture de référence unifiée par couches",
         "domain_hints": [
-          "D02",
+          "D01",
           "D05",
           "D09"
         ],
@@ -15067,9 +14993,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-43.3.png",
         "source_section": "43 · L'architecture de référence unifiée par couches",
         "domain_hints": [
-          "D02",
-          "D03",
-          "D05"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-06-01"
@@ -15087,8 +15011,7 @@
         "source_section": "43 · L'architecture de référence unifiée par couches",
         "domain_hints": [
           "D01",
-          "D02",
-          "D03"
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-05-01"
@@ -15105,9 +15028,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-44.1.svg",
         "source_section": "44 · La formalisation ArchiMate",
         "domain_hints": [
-          "D02",
-          "D09",
-          "D10"
+          "D01",
+          "D02"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15122,9 +15044,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-44.2.svg",
         "source_section": "44 · La formalisation ArchiMate",
         "domain_hints": [
+          "D01",
           "D02",
-          "D03",
-          "D09"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-06-01"
@@ -15141,9 +15063,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-44.3.svg",
         "source_section": "44 · La formalisation ArchiMate",
         "domain_hints": [
+          "D01",
           "D10",
-          "D02",
-          "D09"
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-30-02"
@@ -15160,9 +15082,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.1.png",
         "source_section": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise",
         "domain_hints": [
+          "D01",
           "D10",
-          "D07",
-          "D08"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-29-01"
@@ -15179,9 +15101,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.2.png",
         "source_section": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise",
         "domain_hints": [
-          "D10",
-          "D02",
-          "D03"
+          "D01",
+          "D10"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15196,9 +15117,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.3.png",
         "source_section": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise",
         "domain_hints": [
+          "D01",
           "D10",
-          "D07",
-          "D02"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-29-03"
@@ -15215,9 +15136,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.4.png",
         "source_section": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise",
         "domain_hints": [
-          "D10",
-          "D02",
-          "D03"
+          "D01",
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-10-02",
@@ -15235,9 +15155,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.5.png",
         "source_section": "45 · Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise",
         "domain_hints": [
+          "D01",
           "D10",
-          "D07",
-          "D09"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-29-03"
@@ -15254,9 +15174,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-46.1.png",
         "source_section": "46 · Instrumentation et feuille de route vers le 1ᵉʳ mai 2027",
         "domain_hints": [
-          "D09",
-          "D05",
-          "D08"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-24-03",
@@ -15274,9 +15192,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-46.2.svg",
         "source_section": "46 · Instrumentation et feuille de route vers le 1ᵉʳ mai 2027",
         "domain_hints": [
-          "D09",
-          "D05",
-          "D08"
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15291,9 +15207,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.1.svg",
         "source_section": "47 · L'artefact livré : provenance des composants et mise en service",
         "domain_hints": [
-          "D08",
-          "D05",
-          "D06"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-04-02",
@@ -15311,9 +15225,7 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-47.2.svg",
         "source_section": "47 · L'artefact livré : provenance des composants et mise en service",
         "domain_hints": [
-          "D08",
-          "D05",
-          "D06"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-19-02"
@@ -15330,9 +15242,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-48.1.svg",
         "source_section": "48 · La sémantique d'effet : idempotence, compensation, réconciliation",
         "domain_hints": [
+          "D01",
           "D05",
-          "D04",
-          "D03"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-15-03"
@@ -15349,9 +15261,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-48.2.png",
         "source_section": "48 · La sémantique d'effet : idempotence, compensation, réconciliation",
         "domain_hints": [
+          "D01",
           "D05",
-          "D04",
-          "D03"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-15-03"
@@ -15368,9 +15280,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-48.3.png",
         "source_section": "48 · La sémantique d'effet : idempotence, compensation, réconciliation",
         "domain_hints": [
+          "D01",
           "D05",
-          "D04",
-          "D03"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-15-02"
@@ -15387,9 +15299,8 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-49.1.svg",
         "source_section": "49 · L'horizon 2027-2032 et la frontière de la connaissance vérifiable",
         "domain_hints": [
-          "D11",
           "D01",
-          "D03"
+          "D11"
         ],
         "linked_schema_ids": [
           "SCH-31-03"
@@ -15406,9 +15317,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-49.2.png",
         "source_section": "49 · L'horizon 2027-2032 et la frontière de la connaissance vérifiable",
         "domain_hints": [
+          "D01",
           "D06",
-          "D11",
-          "D10"
+          "D11"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15423,10 +15334,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-49.3.svg",
         "source_section": "49 · L'horizon 2027-2032 et la frontière de la connaissance vérifiable",
         "domain_hints": [
-          "D11",
+          "D01",
           "D06",
-          "D04",
-          "D09"
+          "D04"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15441,9 +15351,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.1.svg",
         "source_section": "50 · Péremption et protocole de revalidation",
         "domain_hints": [
+          "D01",
           "D03",
-          "D12",
-          "D05"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-36-04"
@@ -15460,9 +15370,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.2.png",
         "source_section": "50 · Péremption et protocole de revalidation",
         "domain_hints": [
+          "D01",
           "D12",
-          "D03",
-          "D05"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-36-04"
@@ -15479,9 +15389,9 @@
         "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.3.svg",
         "source_section": "50 · Péremption et protocole de revalidation",
         "domain_hints": [
+          "D01",
           "D12",
-          "D03",
-          "D05"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-36-04"
@@ -15498,7 +15408,6 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-01.svg",
         "source_section": "Sommaire exécutif",
         "domain_hints": [
-          "D12",
           "D02",
           "D04"
         ],
@@ -15518,10 +15427,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-02.svg",
         "source_section": "2 Contexte et enjeux",
         "domain_hints": [
-          "D01",
+          "D02",
           "D03",
-          "D12",
-          "D04"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-03-03"
@@ -15559,8 +15467,7 @@
         "domain_hints": [
           "D02",
           "D04",
-          "D12",
-          "D07"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-11-01"
@@ -15577,9 +15484,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-05.svg",
         "source_section": "6 Interopérabilité",
         "domain_hints": [
+          "D02",
           "D03",
-          "D04",
-          "D09"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-09-03"
@@ -15596,9 +15503,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-06.svg",
         "source_section": "6 Interopérabilité",
         "domain_hints": [
+          "D02",
           "D03",
-          "D12",
-          "D06"
+          "D12"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15632,9 +15539,8 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-08.svg",
         "source_section": "6 Interopérabilité",
         "domain_hints": [
-          "D03",
-          "D01",
-          "D04"
+          "D02",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-08-01"
@@ -15651,9 +15557,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-09.svg",
         "source_section": "6 Interopérabilité",
         "domain_hints": [
+          "D02",
           "D03",
-          "D12",
-          "D06"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-08-03"
@@ -15670,9 +15576,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-10.svg",
         "source_section": "6 Interopérabilité",
         "domain_hints": [
+          "D02",
           "D05",
-          "D03",
-          "D01"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-14-01"
@@ -15689,9 +15595,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-11.svg",
         "source_section": "7 Orchestration",
         "domain_hints": [
+          "D02",
           "D12",
-          "D05",
-          "D04"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-13-02"
@@ -15708,9 +15614,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-12.svg",
         "source_section": "7 Orchestration",
         "domain_hints": [
+          "D02",
           "D05",
-          "D12",
-          "D01"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-13-02"
@@ -15727,9 +15633,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-13.svg",
         "source_section": "7 Orchestration",
         "domain_hints": [
+          "D02",
           "D05",
-          "D12",
-          "D07"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-15-02"
@@ -15804,10 +15710,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-17.svg",
         "source_section": "9 Identité, sécurité et confiance zéro",
         "domain_hints": [
-          "D07",
+          "D02",
           "D12",
-          "D03",
-          "D06"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-17-01"
@@ -15824,9 +15729,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-18.png",
         "source_section": "9 Identité, sécurité et confiance zéro",
         "domain_hints": [
+          "D02",
           "D07",
-          "D12",
-          "D03"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-09-01"
@@ -15843,9 +15748,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-19.svg",
         "source_section": "9 Identité, sécurité et confiance zéro",
         "domain_hints": [
+          "D02",
           "D12",
-          "D07",
-          "D03"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-20-03"
@@ -15862,9 +15767,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-20.svg",
         "source_section": "9 Identité, sécurité et confiance zéro",
         "domain_hints": [
+          "D02",
           "D07",
-          "D12",
-          "D03"
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-21-01"
@@ -15881,9 +15786,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-21.svg",
         "source_section": "10 Observabilité, évaluation et FinOps",
         "domain_hints": [
+          "D02",
           "D12",
-          "D08",
-          "D03"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-22-01"
@@ -15900,9 +15805,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-22.svg",
         "source_section": "10 Observabilité, évaluation et FinOps",
         "domain_hints": [
+          "D02",
           "D12",
-          "D08",
-          "D11"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-23-01"
@@ -15919,9 +15824,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-23.svg",
         "source_section": "10 Observabilité, évaluation et FinOps",
         "domain_hints": [
+          "D02",
           "D12",
-          "D08",
-          "D06"
+          "D08"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -15936,10 +15841,9 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-24.svg",
         "source_section": "11 Gouvernance et cycle de vie",
         "domain_hints": [
-          "D11",
+          "D02",
           "D03",
-          "D07",
-          "D12"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-32-01"
@@ -15956,7 +15860,7 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-25.png",
         "source_section": "11 Gouvernance et cycle de vie",
         "domain_hints": [
-          "D11",
+          "D02",
           "D12",
           "D03"
         ],
@@ -15975,7 +15879,7 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-26.png",
         "source_section": "12 Risques, conformité et réglementation",
         "domain_hints": [
-          "D09",
+          "D02",
           "D12",
           "D04"
         ],
@@ -15994,9 +15898,8 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-27.svg",
         "source_section": "14 Modèle de maturité",
         "domain_hints": [
-          "D11",
-          "D12",
-          "D09"
+          "D02",
+          "D12"
         ],
         "linked_schema_ids": [
           "SCH-06-04",
@@ -16015,7 +15918,6 @@
         "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-28.svg",
         "source_section": "15 Feuille de route et indicateurs",
         "domain_hints": [
-          "D11",
           "D12",
           "D02",
           "D03"
@@ -16035,9 +15937,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-01.svg",
         "source_section": "Ouverture — Architecture et gouvernance du tissu conjonctif agentique",
         "domain_hints": [
-          "D02",
-          "D09",
-          "D12"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-00-01"
@@ -16054,9 +15954,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-02.svg",
         "source_section": "Chapitre 1 — L’entreprise agentique",
         "domain_hints": [
-          "D01",
-          "D02",
-          "D10"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-01-01"
@@ -16073,9 +15971,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-03.svg",
         "source_section": "Chapitre 1 — L’entreprise agentique",
         "domain_hints": [
-          "D01",
-          "D02",
-          "D10"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-01-01"
@@ -16092,9 +15988,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-04.svg",
         "source_section": "Chapitre 1 — L’entreprise agentique",
         "domain_hints": [
-          "D01",
-          "D02",
-          "D10"
+          "D03",
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16109,7 +16004,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-05.svg",
         "source_section": "Chapitre 1 — L’entreprise agentique",
         "domain_hints": [
-          "D01",
+          "D03",
           "D04",
           "D10"
         ],
@@ -16128,9 +16023,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-06.svg",
         "source_section": "Chapitre 2 — Généalogie",
         "domain_hints": [
-          "D01",
-          "D03",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-03-03"
@@ -16147,9 +16040,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-07.svg",
         "source_section": "Chapitre 3 — Les dimensions de l’interopérabilité",
         "domain_hints": [
-          "D03",
-          "D04",
-          "D06"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16164,9 +16055,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-08.svg",
         "source_section": "Chapitre 5 — MCP : le protocole agent-outil",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16181,9 +16070,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-09.svg",
         "source_section": "Chapitre 5 — MCP : le protocole agent-outil",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-07-01"
@@ -16200,9 +16087,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-10.svg",
         "source_section": "Chapitre 5 — MCP : le protocole agent-outil",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-07-03"
@@ -16220,8 +16105,7 @@
         "source_section": "Chapitre 5 — MCP : le protocole agent-outil",
         "domain_hints": [
           "D03",
-          "D07",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-06-04",
@@ -16239,9 +16123,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-12.svg",
         "source_section": "Chapitre 6 — A2A : le protocole agent-agent",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D05"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16256,9 +16138,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-13.svg",
         "source_section": "Chapitre 6 — A2A : le protocole agent-agent",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D05"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16274,8 +16154,7 @@
         "source_section": "Chapitre 6 — A2A : le protocole agent-agent",
         "domain_hints": [
           "D03",
-          "D06",
-          "D05"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-08-02"
@@ -16292,9 +16171,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-15.svg",
         "source_section": "Chapitre 8 — Découverte et registres",
         "domain_hints": [
-          "D03",
-          "D07",
-          "D02"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-09-02"
@@ -16311,9 +16188,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-16.svg",
         "source_section": "Chapitre 10 — Commerce agentique",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16328,9 +16203,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-17.svg",
         "source_section": "Chapitre 10 — Commerce agentique",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-08-03"
@@ -16347,9 +16220,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-18.svg",
         "source_section": "Chapitre 11 — Géopolitique et gouvernance des standards",
         "domain_hints": [
-          "D03",
-          "D02",
-          "D11"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16364,9 +16235,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-19.svg",
         "source_section": "Chapitre 11 — Géopolitique et gouvernance des standards",
         "domain_hints": [
-          "D03",
-          "D02",
-          "D11"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16381,9 +16250,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-20.svg",
         "source_section": "Chapitre 12 — Couche sémantique et ontologies",
         "domain_hints": [
-          "D04",
-          "D01",
-          "D03"
+          "D03",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-02-01",
@@ -16401,9 +16269,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-21.svg",
         "source_section": "Chapitre 12 — Couche sémantique et ontologies",
         "domain_hints": [
-          "D04",
-          "D01",
-          "D03"
+          "D03",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-10-01"
@@ -16420,9 +16287,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-22.svg",
         "source_section": "Chapitre 13 — Ingénierie du contexte",
         "domain_hints": [
+          "D03",
           "D04",
-          "D09",
-          "D07"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-10-03"
@@ -16439,9 +16306,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-23.svg",
         "source_section": "Chapitre 14 — Mémoire",
         "domain_hints": [
-          "D04",
-          "D07",
-          "D09"
+          "D03",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-11-01"
@@ -16458,9 +16324,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-24.svg",
         "source_section": "Chapitre 14 — Mémoire",
         "domain_hints": [
+          "D03",
           "D04",
-          "D06",
-          "D07"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-11-02"
@@ -16477,9 +16343,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-25.svg",
         "source_section": "Chapitre 16 — Topologies et patrons",
         "domain_hints": [
-          "D05",
-          "D01",
-          "D08"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16494,9 +16358,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-26.svg",
         "source_section": "Chapitre 16 — Topologies et patrons",
         "domain_hints": [
-          "D05",
-          "D01",
-          "D08"
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16511,9 +16373,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-27.svg",
         "source_section": "Chapitre 17 — Déterministe ou agentique",
         "domain_hints": [
-          "D02",
-          "D09",
-          "D05"
+          "D03",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-13-01"
@@ -16530,9 +16391,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-28.svg",
         "source_section": "Chapitre 17 — Déterministe ou agentique",
         "domain_hints": [
-          "D02",
-          "D09",
-          "D05"
+          "D03",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-13-01"
@@ -16549,9 +16409,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-29.svg",
         "source_section": "Chapitre 18 — Exécution durable et transactions",
         "domain_hints": [
-          "D05",
-          "D06",
-          "D09"
+          "D03",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-15-03"
@@ -16568,9 +16427,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-30.svg",
         "source_section": "Chapitre 18 — Exécution durable et transactions",
         "domain_hints": [
-          "D05",
-          "D09",
-          "D06"
+          "D03",
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-15-01"
@@ -16587,9 +16445,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-31.svg",
         "source_section": "Chapitre 18 — Exécution durable et transactions",
         "domain_hints": [
-          "D05",
-          "D06",
-          "D09"
+          "D03",
+          "D05"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16604,9 +16461,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-32.svg",
         "source_section": "Chapitre 19 — Orchestration événementielle",
         "domain_hints": [
-          "D05",
           "D03",
-          "D07"
+          "D05"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -16621,9 +16477,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-33.svg",
         "source_section": "Chapitre 19 — Orchestration événementielle",
         "domain_hints": [
-          "D05",
           "D03",
-          "D07"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-14-01"
@@ -16640,9 +16495,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-34.svg",
         "source_section": "Chapitre 21 — Fiabilité de la coordination",
         "domain_hints": [
-          "D05",
-          "D01",
-          "D02"
+          "D03",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-02-02",
@@ -16660,9 +16514,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-35.svg",
         "source_section": "Chapitre 22 — L’humain dans la boucle",
         "domain_hints": [
-          "D02",
-          "D09",
-          "D06"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-05-03"
@@ -16696,9 +16548,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-37.svg",
         "source_section": "Chapitre 24 — Passerelles et intégration",
         "domain_hints": [
-          "D03",
-          "D06",
-          "D07"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-09-01"
@@ -16734,10 +16584,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-39.svg",
         "source_section": "Chapitre 27 — Stratégie multi-plateformes",
         "domain_hints": [
-          "D10",
+          "D03",
           "D04",
-          "D06",
-          "D07"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-06-02",
@@ -16755,9 +16604,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-40.svg",
         "source_section": "Chapitre 28 — Agents industriels et périphérie",
         "domain_hints": [
+          "D03",
           "D04",
-          "D08",
-          "D09"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-12-02",
@@ -16776,9 +16625,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-41.svg",
         "source_section": "Chapitre 30 — Autorisation et délégation",
         "domain_hints": [
-          "D06",
-          "D07",
-          "D09"
+          "D03",
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-17-01"
@@ -16795,9 +16643,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-42.svg",
         "source_section": "Chapitre 30 — Autorisation et délégation",
         "domain_hints": [
+          "D03",
           "D06",
-          "D07",
-          "D09"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-17-01"
@@ -16814,9 +16662,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-43.svg",
         "source_section": "Chapitre 31 — Menaces",
         "domain_hints": [
+          "D03",
           "D02",
-          "D07",
-          "D03"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-19-01"
@@ -16871,9 +16719,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-46.svg",
         "source_section": "Chapitre 33 — Observabilité et évaluation",
         "domain_hints": [
-          "D08",
-          "D05",
-          "D09"
+          "D03",
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-22-02"
@@ -16890,7 +16737,6 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-47.svg",
         "source_section": "Chapitre 34 — Exploitation",
         "domain_hints": [
-          "D08",
           "D10",
           "D03"
         ],
@@ -16909,7 +16755,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-48.svg",
         "source_section": "Chapitre 35 — Cadres internationaux",
         "domain_hints": [
-          "D09",
+          "D03",
           "D07",
           "D11"
         ],
@@ -16928,9 +16774,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-49.svg",
         "source_section": "Chapitre 36 — Responsabilité",
         "domain_hints": [
-          "D09",
           "D03",
-          "D06"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-27-03"
@@ -16948,8 +16793,7 @@
         "source_section": "Chapitre 38 — Canada et Québec",
         "domain_hints": [
           "D09",
-          "D03",
-          "D02"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-26-02"
@@ -16966,9 +16810,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-51.svg",
         "source_section": "Chapitre 39 — Gouvernance interne",
         "domain_hints": [
-          "D09",
-          "D06",
-          "D08"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-25-03",
@@ -16986,9 +16828,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-52.svg",
         "source_section": "Chapitre 40 — FinOps agentique",
         "domain_hints": [
-          "D08",
-          "D01",
-          "D03"
+          "D03",
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-03-02",
@@ -17006,9 +16847,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-53.svg",
         "source_section": "Chapitre 40 — FinOps agentique",
         "domain_hints": [
+          "D03",
           "D05",
-          "D08",
-          "D01"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-24-01"
@@ -17025,9 +16866,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-54.svg",
         "source_section": "Chapitre 41 — Modèle opérationnel",
         "domain_hints": [
-          "D11",
-          "D02",
-          "D09"
+          "D03",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-32-01"
@@ -17044,7 +16884,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-55.svg",
         "source_section": "Chapitre 43 — Maturité et prospective",
         "domain_hints": [
-          "D02",
+          "D03",
           "D11",
           "D12"
         ],
@@ -17084,9 +16924,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-57.svg",
         "source_section": "Chapitre 45 — Réseaux B2B fédérés et négociation entre agents",
         "domain_hints": [
-          "D05",
-          "D03",
-          "D06"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-08-02",
@@ -17105,7 +16943,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-58.svg",
         "source_section": "Chapitre 46 — Inférence confidentielle, résilience et IA physique",
         "domain_hints": [
-          "D09",
+          "D03",
           "D04",
           "D07"
         ],
@@ -17126,7 +16964,6 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-59.svg",
         "source_section": "Chapitre 46 — Inférence confidentielle, résilience et IA physique",
         "domain_hints": [
-          "D09",
           "D03",
           "D05",
           "D07"
@@ -17147,10 +16984,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-60.svg",
         "source_section": "Chapitre 47 — Ingénierie agentique interne et distillation",
         "domain_hints": [
-          "D02",
+          "D03",
           "D04",
-          "D10",
-          "D08"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-04-03"
@@ -17167,9 +17003,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-61.svg",
         "source_section": "Chapitre 47 — Ingénierie agentique interne et distillation",
         "domain_hints": [
-          "D02",
-          "D08",
-          "D01"
+          "D03",
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-20-01"
@@ -17186,9 +17021,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-62.svg",
         "source_section": "Chapitre 47 — Ingénierie agentique interne et distillation",
         "domain_hints": [
+          "D03",
           "D08",
-          "D09",
-          "D02"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-23-03"
@@ -17205,7 +17040,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-63.svg",
         "source_section": "Chapitre 48 — Revue de littérature",
         "domain_hints": [
-          "D01",
+          "D03",
           "D04",
           "D08"
         ],
@@ -17224,9 +17059,8 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-64.svg",
         "source_section": "Chapitre 48 — Revue de littérature",
         "domain_hints": [
-          "D01",
-          "D04",
-          "D03"
+          "D03",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-01-03",
@@ -17244,7 +17078,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-65.svg",
         "source_section": "Chapitre 49 — Veille technologique",
         "domain_hints": [
-          "D11",
+          "D03",
           "D06",
           "D09"
         ],
@@ -17264,9 +17098,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-66.svg",
         "source_section": "Chapitre 50 — Projection 2027-2030 et étude de marché",
         "domain_hints": [
-          "D01",
-          "D08",
-          "D11"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-03-01"
@@ -17283,9 +17115,7 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-67.svg",
         "source_section": "Annexe F — Décisions d’architecture (ADR) et arbres de choix",
         "domain_hints": [
-          "D12",
-          "D03",
-          "D02"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-34-02"
@@ -17302,10 +17132,9 @@
         "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-68.svg",
         "source_section": "Annexe F — Décisions d’architecture (ADR) et arbres de choix",
         "domain_hints": [
-          "D12",
+          "D03",
           "D02",
-          "D05",
-          "D08"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-34-02"
@@ -17343,9 +17172,8 @@
         "rendered_path": "Sources/Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-02.svg",
         "source_section": "Chapitre M-9 — Principes et modèle de référence",
         "domain_hints": [
-          "D02",
-          "D04",
-          "D05"
+          "D11",
+          "D02"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -17360,9 +17188,8 @@
         "rendered_path": "Sources/Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-03.svg",
         "source_section": "Chapitre M-10 — Carte des capacités cibles",
         "domain_hints": [
-          "D02",
-          "D03",
-          "D04"
+          "D11",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-06-02"
@@ -17379,9 +17206,8 @@
         "rendered_path": "Sources/Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-04.svg",
         "source_section": "Chapitre M-11 — Cible invariante et cible conditionnelle",
         "domain_hints": [
-          "D02",
-          "D10",
-          "D11"
+          "D11",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-06-02",
@@ -17400,8 +17226,7 @@
         "source_section": "Chapitre M-18 — Groupe financier diversifié et synthèse comparative",
         "domain_hints": [
           "D10",
-          "D11",
-          "D02"
+          "D11"
         ],
         "linked_schema_ids": [
           "SCH-28-01"
@@ -17419,8 +17244,7 @@
         "source_section": "Chapitre M-20 — Palier 1, 2028-2029",
         "domain_hints": [
           "D11",
-          "D09",
-          "D06"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-00-03",
@@ -17438,10 +17262,9 @@
         "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-01.svg",
         "source_section": "Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve",
         "domain_hints": [
-          "D01",
+          "D02",
           "D12",
-          "D06",
-          "D09"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-00-04",
@@ -17480,9 +17303,9 @@
         "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-03.svg",
         "source_section": "Chapitre 3 — Couche protocolaire (MCP, A2A, événements), passerelle à neuf contrôles et anti-verrouillage",
         "domain_hints": [
+          "D02",
           "D03",
-          "D05",
-          "D07"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-00-02",
@@ -17501,9 +17324,9 @@
         "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-04.svg",
         "source_section": "Chapitre 4 — Sémantique métier, compilation du contexte, mémoire CoALA et encapsulation patrimoniale/OT",
         "domain_hints": [
+          "D02",
           "D04",
-          "D09",
-          "D10"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-12-03"
@@ -17520,9 +17343,9 @@
         "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-05.svg",
         "source_section": "Chapitre 5 — Orchestration hybride (OO1–OO4, 8 patrons), exécution durable, sagas et sémantique d’effet",
         "domain_hints": [
+          "D02",
           "D05",
-          "D07",
-          "D04"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-15-02",
@@ -17561,9 +17384,9 @@
         "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-07.svg",
         "source_section": "Chapitre 7 — Fabrique de confiance : NHI, 2e saut, défense anti-injection et transition PKI / post-quantique",
         "domain_hints": [
+          "D02",
           "D06",
-          "D08",
-          "D07"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-00-02",
@@ -17583,9 +17406,9 @@
         "rendered_path": "Sources/Tomes/Tome 5 - Synthèse exécutive et concordance architecturale/Diagrammes/rendus/Fig-08.svg",
         "source_section": "Chapitre 12 — Homologation unifiée et trajectoire adaptative (90 jours → 18 mois → Paliers P1–P3) sous signaux",
         "domain_hints": [
+          "D02",
           "D11",
-          "D09",
-          "D12"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-00-03",
@@ -17603,7 +17426,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-01.svg",
         "source_section": "Chapitre 1 — Du système d'information déterministe à l'entreprise agentique : rupture et continuité architecturales",
         "domain_hints": [
-          "D12",
+          "D10",
           "D01",
           "D09"
         ],
@@ -17623,7 +17446,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-02.svg",
         "source_section": "Chapitre 1 — Du système d'information déterministe à l'entreprise agentique : rupture et continuité architecturales",
         "domain_hints": [
-          "D12",
+          "D10",
           "D01",
           "D09"
         ],
@@ -17640,7 +17463,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-03.svg",
         "source_section": "Chapitre 1 — Du système d'information déterministe à l'entreprise agentique : rupture et continuité architecturales",
         "domain_hints": [
-          "D12",
+          "D10",
           "D02",
           "D09"
         ],
@@ -17657,7 +17480,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-04.svg",
         "source_section": "Chapitre 1 — Du système d'information déterministe à l'entreprise agentique : rupture et continuité architecturales",
         "domain_hints": [
-          "D12",
+          "D10",
           "D01",
           "D09"
         ],
@@ -17676,7 +17499,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-05.svg",
         "source_section": "Chapitre 2 — Cadre d'architecture d'entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans",
         "domain_hints": [
-          "D11",
+          "D10",
           "D02",
           "D07"
         ],
@@ -17693,9 +17516,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-06.svg",
         "source_section": "Chapitre 2 — Cadre d'architecture d'entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans",
         "domain_hints": [
-          "D11",
-          "D02",
-          "D09"
+          "D10",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-06-01"
@@ -17712,9 +17534,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-07.svg",
         "source_section": "Chapitre 2 — Cadre d'architecture d'entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans",
         "domain_hints": [
-          "D11",
-          "D02",
-          "D09"
+          "D10",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-06-02"
@@ -17731,7 +17552,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-08.png",
         "source_section": "Chapitre 2 — Cadre d'architecture d'entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans",
         "domain_hints": [
-          "D11",
+          "D10",
           "D02",
           "D12"
         ],
@@ -17750,9 +17571,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-09.svg",
         "source_section": "Chapitre 3 — Anatomie d'un agent d'entreprise et partition des charges de travail : la règle hybride 80/20",
         "domain_hints": [
+          "D10",
           "D02",
-          "D07",
-          "D03"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-21-01"
@@ -17769,9 +17590,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-10.svg",
         "source_section": "Chapitre 3 — Anatomie d'un agent d'entreprise et partition des charges de travail : la règle hybride 80/20",
         "domain_hints": [
+          "D10",
           "D02",
-          "D08",
-          "D03"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-09-04"
@@ -17788,9 +17609,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-11.png",
         "source_section": "Chapitre 3 — Anatomie d'un agent d'entreprise et partition des charges de travail : la règle hybride 80/20",
         "domain_hints": [
-          "D02",
-          "D03",
-          "D04"
+          "D10",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-04-01"
@@ -17807,9 +17627,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-12.svg",
         "source_section": "Chapitre 3 — Anatomie d'un agent d'entreprise et partition des charges de travail : la règle hybride 80/20",
         "domain_hints": [
+          "D10",
           "D02",
-          "D04",
-          "D03"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-04-01"
@@ -17827,8 +17647,7 @@
         "source_section": "Chapitre 4 — Interopérabilité verticale agent-outil : Model Context Protocol (MCP), passerelles et intégration du patrimoine",
         "domain_hints": [
           "D03",
-          "D10",
-          "D04"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-07-01"
@@ -17846,8 +17665,7 @@
         "source_section": "Chapitre 4 — Interopérabilité verticale agent-outil : Model Context Protocol (MCP), passerelles et intégration du patrimoine",
         "domain_hints": [
           "D03",
-          "D10",
-          "D04"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-06-04",
@@ -17867,8 +17685,7 @@
         "source_section": "Chapitre 4 — Interopérabilité verticale agent-outil : Model Context Protocol (MCP), passerelles et intégration du patrimoine",
         "domain_hints": [
           "D03",
-          "D10",
-          "D04"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-09-01"
@@ -17904,9 +17721,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-17.svg",
         "source_section": "Chapitre 5 — Interopérabilité horizontale inter-agents et fédération : A2A, AGNTCY et maillage multi-fournisseurs",
         "domain_hints": [
+          "D10",
           "D03",
-          "D07",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-08-01"
@@ -17923,9 +17740,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-18.png",
         "source_section": "Chapitre 5 — Interopérabilité horizontale inter-agents et fédération : A2A, AGNTCY et maillage multi-fournisseurs",
         "domain_hints": [
+          "D10",
           "D03",
-          "D09",
-          "D07"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-08-01"
@@ -17942,9 +17759,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-19.svg",
         "source_section": "Chapitre 5 — Interopérabilité horizontale inter-agents et fédération : A2A, AGNTCY et maillage multi-fournisseurs",
         "domain_hints": [
-          "D03",
-          "D07",
-          "D06"
+          "D10",
+          "D03"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -17959,9 +17775,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-20.svg",
         "source_section": "Chapitre 5 — Interopérabilité horizontale inter-agents et fédération : A2A, AGNTCY et maillage multi-fournisseurs",
         "domain_hints": [
-          "D03",
-          "D07",
-          "D06"
+          "D10",
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-08-02"
@@ -17978,8 +17793,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-21.svg",
         "source_section": "Chapitre 6 — Ingénierie du contexte, mémoire distribuée et souveraineté sémantique des données",
         "domain_hints": [
-          "D04",
-          "D07"
+          "D10",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-11-01"
@@ -17996,8 +17811,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-22.svg",
         "source_section": "Chapitre 6 — Ingénierie du contexte, mémoire distribuée et souveraineté sémantique des données",
         "domain_hints": [
-          "D04",
-          "D07"
+          "D10",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-10-03"
@@ -18014,8 +17829,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-23.svg",
         "source_section": "Chapitre 6 — Ingénierie du contexte, mémoire distribuée et souveraineté sémantique des données",
         "domain_hints": [
-          "D04",
-          "D07"
+          "D10",
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-10-02"
@@ -18032,6 +17847,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-24.svg",
         "source_section": "Chapitre 6 — Ingénierie du contexte, mémoire distribuée et souveraineté sémantique des données",
         "domain_hints": [
+          "D10",
           "D04",
           "D07"
         ],
@@ -18050,6 +17866,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-25.svg",
         "source_section": "Chapitre 7 — Patrons d'orchestration et topologies de composition multi-agents",
         "domain_hints": [
+          "D10",
           "D04",
           "D05"
         ],
@@ -18068,8 +17885,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-26.svg",
         "source_section": "Chapitre 7 — Patrons d'orchestration et topologies de composition multi-agents",
         "domain_hints": [
-          "D05",
-          "D04"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-13-02"
@@ -18086,8 +17903,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-27.svg",
         "source_section": "Chapitre 7 — Patrons d'orchestration et topologies de composition multi-agents",
         "domain_hints": [
-          "D05",
-          "D04"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-13-02"
@@ -18104,8 +17921,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-28.svg",
         "source_section": "Chapitre 7 — Patrons d'orchestration et topologies de composition multi-agents",
         "domain_hints": [
-          "D05",
-          "D04"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-13-03"
@@ -18122,9 +17939,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-29.svg",
         "source_section": "Chapitre 8 — Chorégraphie réactive et Event Mesh d'entreprise",
         "domain_hints": [
-          "D05",
-          "D03",
-          "D07"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -18139,9 +17955,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-30.svg",
         "source_section": "Chapitre 8 — Chorégraphie réactive et Event Mesh d'entreprise",
         "domain_hints": [
-          "D05",
-          "D03",
-          "D07"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-14-02"
@@ -18158,9 +17973,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-31.svg",
         "source_section": "Chapitre 8 — Chorégraphie réactive et Event Mesh d'entreprise",
         "domain_hints": [
+          "D10",
           "D05",
-          "D07",
-          "D12"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-14-02"
@@ -18177,9 +17992,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-32.svg",
         "source_section": "Chapitre 8 — Chorégraphie réactive et Event Mesh d'entreprise",
         "domain_hints": [
+          "D10",
           "D05",
-          "D09",
-          "D03"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-14-01"
@@ -18196,9 +18011,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-33.svg",
         "source_section": "Chapitre 9 — Exécution durable, gestion d'état transactionnel et résilience opérationnelle",
         "domain_hints": [
+          "D10",
           "D05",
-          "D04",
-          "D07"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-15-01"
@@ -18215,8 +18030,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-34.svg",
         "source_section": "Chapitre 9 — Exécution durable, gestion d'état transactionnel et résilience opérationnelle",
         "domain_hints": [
-          "D05",
-          "D02"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-15-01"
@@ -18233,8 +18048,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-35.svg",
         "source_section": "Chapitre 9 — Exécution durable, gestion d'état transactionnel et résilience opérationnelle",
         "domain_hints": [
-          "D05",
-          "D02"
+          "D10",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-15-02"
@@ -18251,8 +18066,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-36.svg",
         "source_section": "Chapitre 9 — Exécution durable, gestion d'état transactionnel et résilience opérationnelle",
         "domain_hints": [
-          "D05",
-          "D02"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-15-01",
@@ -18270,6 +18084,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-37.svg",
         "source_section": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques",
         "domain_hints": [
+          "D10",
           "D06",
           "D07"
         ],
@@ -18288,6 +18103,7 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-38.svg",
         "source_section": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques",
         "domain_hints": [
+          "D10",
           "D06",
           "D07"
         ],
@@ -18306,9 +18122,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-39.svg",
         "source_section": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques",
         "domain_hints": [
+          "D10",
           "D07",
-          "D06",
-          "D09"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-21-01"
@@ -18325,9 +18141,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-40.svg",
         "source_section": "Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques",
         "domain_hints": [
+          "D10",
           "D07",
-          "D02",
-          "D03"
+          "D02"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -18342,9 +18158,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-41.svg",
         "source_section": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique)",
         "domain_hints": [
+          "D10",
           "D08",
-          "D06",
-          "D07"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-22-03"
@@ -18361,9 +18177,8 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-42.svg",
         "source_section": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique)",
         "domain_hints": [
-          "D08",
-          "D07",
-          "D01"
+          "D10",
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-23-01"
@@ -18380,9 +18195,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-43.svg",
         "source_section": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique)",
         "domain_hints": [
+          "D10",
           "D08",
-          "D04",
-          "D07"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-23-02"
@@ -18399,9 +18214,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-44.svg",
         "source_section": "Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique)",
         "domain_hints": [
+          "D10",
           "D08",
-          "D07",
-          "D09"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-21-03"
@@ -18418,9 +18233,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-45.svg",
         "source_section": "Chapitre 12 — Gouvernance d'entreprise, conformité réglementaire et FinOps agentique",
         "domain_hints": [
+          "D10",
           "D03",
-          "D08",
-          "D09"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-32-01"
@@ -18437,9 +18252,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-46.svg",
         "source_section": "Chapitre 12 — Gouvernance d'entreprise, conformité réglementaire et FinOps agentique",
         "domain_hints": [
+          "D10",
           "D08",
-          "D09",
-          "D11"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-26-01"
@@ -18456,9 +18271,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-47.svg",
         "source_section": "Chapitre 12 — Gouvernance d'entreprise, conformité réglementaire et FinOps agentique",
         "domain_hints": [
+          "D10",
           "D08",
-          "D09",
-          "D11"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-00-04",
@@ -18476,9 +18291,9 @@
         "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-48.svg",
         "source_section": "Chapitre 12 — Gouvernance d'entreprise, conformité réglementaire et FinOps agentique",
         "domain_hints": [
+          "D10",
           "D08",
-          "D09",
-          "D11"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-24-01"
@@ -18496,8 +18311,7 @@
         "source_section": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps)",
         "domain_hints": [
           "D10",
-          "D03",
-          "D05"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-30-01"
@@ -18515,8 +18329,7 @@
         "source_section": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps)",
         "domain_hints": [
           "D03",
-          "D10",
-          "D05"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-09-04"
@@ -18534,8 +18347,7 @@
         "source_section": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps)",
         "domain_hints": [
           "D03",
-          "D10",
-          "D05"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-24-02",
@@ -18554,8 +18366,7 @@
         "source_section": "Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps)",
         "domain_hints": [
           "D10",
-          "D03",
-          "D05"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-24-02",
@@ -18574,8 +18385,7 @@
         "source_section": "Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables",
         "domain_hints": [
           "D02",
-          "D10",
-          "D03"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-29-01"
@@ -18593,8 +18403,7 @@
         "source_section": "Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables",
         "domain_hints": [
           "D03",
-          "D10",
-          "D05"
+          "D10"
         ],
         "linked_schema_ids": [
           "SCH-29-01"
@@ -18632,8 +18441,7 @@
         "source_section": "Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables",
         "domain_hints": [
           "D10",
-          "D02",
-          "D03"
+          "D02"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -18668,8 +18476,7 @@
         "source_section": "Chapitre 15 — Coexistence patrimoniale (BPM/iPaaS/RPA), anti-patrons critiques et feuille de route d'adoption",
         "domain_hints": [
           "D10",
-          "D04",
-          "D02"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-04-03",
@@ -18707,10 +18514,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-00.svg",
         "source_section": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique",
         "domain_hints": [
-          "D02",
+          "D07",
           "D03",
-          "D05",
-          "D09"
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-00-02"
@@ -18727,9 +18533,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-01.svg",
         "source_section": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents",
         "domain_hints": [
+          "D07",
           "D01",
-          "D02",
-          "D11"
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-00-03",
@@ -18747,9 +18553,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-02.svg",
         "source_section": "Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents",
         "domain_hints": [
-          "D01",
-          "D02",
-          "D11"
+          "D07",
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -18764,8 +18569,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-03.svg",
         "source_section": "Chapitre 02 — L'épreuve des mesures : investissements géants, bancs biaisés et productivité réelle",
         "domain_hints": [
-          "D01",
-          "D08"
+          "D07",
+          "D01"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -18780,9 +18585,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-04.svg",
         "source_section": "Chapitre 02 — L'épreuve des mesures : investissements géants, bancs biaisés et productivité réelle",
         "domain_hints": [
+          "D07",
           "D01",
-          "D09",
-          "D08"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-00-04",
@@ -18800,9 +18605,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-05.svg",
         "source_section": "Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes",
         "domain_hints": [
-          "D01",
-          "D03",
-          "D02"
+          "D07",
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-03-01"
@@ -18819,9 +18623,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-06.png",
         "source_section": "Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes",
         "domain_hints": [
+          "D07",
           "D02",
-          "D01",
-          "D04"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-03-01"
@@ -18838,9 +18642,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-07.svg",
         "source_section": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables",
         "domain_hints": [
-          "D02",
-          "D01",
-          "D03"
+          "D07",
+          "D02"
         ],
         "linked_schema_ids": [
           "SCH-04-01"
@@ -18857,9 +18660,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-08.svg",
         "source_section": "Chapitre 04 — Posséder le noyau de contrôle : l'architecture 80/20 contre les modèles jetables",
         "domain_hints": [
+          "D07",
           "D02",
-          "D09",
-          "D01"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-00-01",
@@ -18877,9 +18680,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-09.svg",
         "source_section": "Chapitre 05 — Connecter sans s'enfermer : protocoles ouverts, dette sémantique et patrimoine",
         "domain_hints": [
+          "D07",
           "D03",
-          "D04",
-          "D10"
+          "D04"
         ],
         "linked_schema_ids": [
           "SCH-07-02",
@@ -18897,7 +18700,7 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-10.svg",
         "source_section": "Chapitre 05 — Connecter sans s'enfermer : protocoles ouverts, dette sémantique et patrimoine",
         "domain_hints": [
-          "D03",
+          "D07",
           "D04",
           "D10"
         ],
@@ -18917,9 +18720,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-11.png",
         "source_section": "Chapitre 06 — Quand ne pas multiplier les agents : lois d'échelle et exécution durable",
         "domain_hints": [
-          "D05",
-          "D01",
-          "D08"
+          "D07",
+          "D05"
         ],
         "linked_schema_ids": [
           "SCH-13-01"
@@ -18937,8 +18739,7 @@
         "source_section": "Chapitre 06 — Quand ne pas multiplier les agents : lois d'échelle et exécution durable",
         "domain_hints": [
           "D05",
-          "D07",
-          "D01"
+          "D07"
         ],
         "linked_schema_ids": [],
         "linked_count": 0
@@ -18953,9 +18754,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-13.svg",
         "source_section": "Chapitre 07 — Qui agit et au nom de qui ? Identité non humaine et chaîne de mandat",
         "domain_hints": [
-          "D06",
-          "D09",
-          "D08"
+          "D07",
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-17-01"
@@ -18972,9 +18772,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-14.svg",
         "source_section": "Chapitre 07 — Qui agit et au nom de qui ? Identité non humaine et chaîne de mandat",
         "domain_hints": [
-          "D06",
-          "D09",
-          "D08"
+          "D07",
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-05-03",
@@ -18992,9 +18791,7 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-15.svg",
         "source_section": "Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr",
         "domain_hints": [
-          "D07",
-          "D03",
-          "D06"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-20-03"
@@ -19012,8 +18809,7 @@
         "source_section": "Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr",
         "domain_hints": [
           "D07",
-          "D09",
-          "D03"
+          "D09"
         ],
         "linked_schema_ids": [
           "SCH-20-03"
@@ -19030,9 +18826,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-17.svg",
         "source_section": "Chapitre 09 — Observer, prouver et compter au coût complet du résultat conforme",
         "domain_hints": [
-          "D08",
           "D07",
-          "D09"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-22-02"
@@ -19049,9 +18844,8 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-18.svg",
         "source_section": "Chapitre 09 — Observer, prouver et compter au coût complet du résultat conforme",
         "domain_hints": [
-          "D08",
           "D07",
-          "D09"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-00-04",
@@ -19070,8 +18864,7 @@
         "source_section": "Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve",
         "domain_hints": [
           "D09",
-          "D07",
-          "D10"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-00-02",
@@ -19090,9 +18883,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-20.svg",
         "source_section": "Chapitre 11 — Les sept pièges de la gouvernance et l'atrophie silencieuse des compétences",
         "domain_hints": [
+          "D07",
           "D11",
-          "D01",
-          "D09"
+          "D01"
         ],
         "linked_schema_ids": [
           "SCH-33-01"
@@ -19109,9 +18902,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-21.svg",
         "source_section": "Chapitre 12 — Décider sous incertitude profonde : des 90 premiers jours à l'ère post-quantique",
         "domain_hints": [
+          "D07",
           "D11",
-          "D06",
-          "D09"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-00-03",
@@ -19129,9 +18922,9 @@
         "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-22.png",
         "source_section": "Chapitre 12 — Décider sous incertitude profonde : des 90 premiers jours à l'ère post-quantique",
         "domain_hints": [
+          "D07",
           "D11",
-          "D06",
-          "D09"
+          "D06"
         ],
         "linked_schema_ids": [
           "SCH-00-03",
@@ -19151,8 +18944,7 @@
         "source_section": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5",
         "domain_hints": [
           "D12",
-          "D07",
-          "D02"
+          "D07"
         ],
         "linked_schema_ids": [
           "SCH-35-01",
@@ -19170,9 +18962,9 @@
         "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg",
         "source_section": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1)",
         "domain_hints": [
+          "D12",
           "D02",
-          "D03",
-          "D04"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-00-01",
@@ -19209,9 +19001,9 @@
         "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-03.svg",
         "source_section": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS)",
         "domain_hints": [
+          "D12",
           "D06",
-          "D08",
-          "D12"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-00-02",
@@ -19230,9 +19022,9 @@
         "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-04.png",
         "source_section": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS)",
         "domain_hints": [
+          "D12",
           "D06",
-          "D08",
-          "D12"
+          "D08"
         ],
         "linked_schema_ids": [
           "SCH-00-04",
@@ -19291,9 +19083,9 @@
         "rendered_path": "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg",
         "source_section": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints",
         "domain_hints": [
+          "D12",
           "D08",
-          "D03",
-          "D04"
+          "D03"
         ],
         "linked_schema_ids": [
           "SCH-00-04",

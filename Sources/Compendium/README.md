@@ -8,7 +8,7 @@ Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine é
 
 ## Contenu du répertoire
 
-- [**`prd.md`**](prd.md) : référentiel directeur d'exigences produit, d'architecture et d'homologation (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes `A–E`, `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes `1` à `8`, `7 560` lignes, `270 087` mots).
+- [**`prd.md`**](prd.md) : référentiel directeur d'exigences produit, d'architecture et d'homologation (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes `A–E`, `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes `1` à `8`, `7 560` lignes, `270 382` mots).
 - **`ouvrage/`** : atelier complet de rédaction, d'ancrage probatoire et d'assemblage publiant vers [`../../Compendium/`](../../Compendium/README.md) :
   - `specs/` : manifeste normatif (`manifest.json`, `42` unités, `180 000` mots cibles) et protocole de collecte ouverte (`protocole-mlr-compendium.json`, gel au `2 décembre 2026`).
   - `manuscrit/` : `00 - Liminaire.md`, `12` parties (`36` chapitres) et `5` annexes déterministes (`13 - Annexes/Annexe A..E.md`).

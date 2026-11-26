@@ -155,6 +155,7 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
 
     # Présence explicite de Agentivité des systèmes et zéro occurrence System(s) of Agency
     assert "Agentivité des systèmes" in prd_text
+    assert "**Sections Compendium** : —" not in prd_text, "Sections Compendium vides (—) dans prd.md"
     assert "Systems of Agency" not in prd_text
     assert "System of Agency" not in prd_text
     assert OLD_MINDMAP_NAME not in prd_text and OLD_MINDMAP_ENCODED not in prd_text
@@ -502,6 +503,7 @@ def test_prd_web_data_json_and_parity() -> None:
     assert data["executive_summary"]["sections"][3]["kpi_table"] is not None
     assert len(data["parties"]) == 12
     assert len(data["chapters"]) == 36
+    assert all(len(ch.get("parts_present") or []) >= 1 for ch in data["chapters"]), "parts_present vide sur un chapitre PRD"
     assert len(data["annexes"]) == 5
     assert [a["annexe_code"] for a in data["annexes"]] == ["A", "B", "C", "D", "E"]
     assert all(ch.get("schemas_anchor") and len(ch.get("vulgarization_schemas") or []) >= 1 for ch in data["chapters"])
@@ -658,6 +660,17 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     if (!parsedGloss || parsedGloss.kind !== "glossary") {
       throw new Error("parseHash #glossary invalide: " + JSON.stringify(parsedGloss));
     }
+    const parsedChFull = eng.parseHash("#ch=15&mode=full", idx);
+    if (!parsedChFull || parsedChFull.kind !== "chapter" || Number(parsedChFull.chapterNumber) !== 15 || parsedChFull.mode !== "full") {
+      throw new Error("parseHash #ch=15&mode=full invalide: " + JSON.stringify(parsedChFull));
+    }
+    const parsedModeOnly = eng.parseHash("#mode=full", idx);
+    if (!parsedModeOnly || parsedModeOnly.mode !== "full") {
+      throw new Error("parseHash #mode=full invalide: " + JSON.stringify(parsedModeOnly));
+    }
+    if (eng.targetToHash({ kind: "chapter", chapterNumber: 15 }, "full") !== "#ch=15&mode=full") {
+      throw new Error("targetToHash mode=full invalide");
+    }
     const corpUrl = eng.corpusHref("Compendium/Compendium.md", 215);
     if (corpUrl !== "../../Compendium/Compendium.md#L215") {
       throw new Error("corpusHref PRD Web invalide: " + corpUrl);
@@ -679,6 +692,13 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     if (allSchemaIds.length !== 115) throw new Error("Nombre de schémas != 115: " + allSchemaIds.length);
     for (const sid of allSchemaIds) {
       if (!fullHtml.includes(sid)) throw new Error("Schéma manquant dans PRD Web fullHtml: " + sid);
+    }
+    if (!fullHtml.includes("prd-glossary-table")) {
+      throw new Error("Mode intégral PRD Web omet le glossaire #prd-glossary-table");
+    }
+    const prdSchemaImgs = Array.from(fullHtml.matchAll(/<img[^>]+src="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"]+)"/g), m => m[1]);
+    if (prdSchemaImgs.length !== 115) {
+      throw new Error("Prévisualisations <img> des 115 schémas manquantes dans PRD Web: " + prdSchemaImgs.length);
     }
 
     const compMdHrefs = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Compendium\/Compendium\.md[^"]*)"/g), m => m[1]);
@@ -735,10 +755,133 @@ def test_prd_web_standalone_html_and_nodejs_smoke() -> None:
     if (!String(stubEls["prd-open-mindmap-link"].getAttribute("href") || "").includes("MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html")) {
       throw new Error("#prd-open-mindmap-link ne pointe pas vers MindMap Compendium: " + stubEls["prd-open-mindmap-link"].getAttribute("href"));
     }
+
+    // Non-régression : mountApp honore #ch=15&mode=full et ensureVisible lève les filtres bloquants sur thème et partie
+    const appFull = eng.mountApp(docStub, { location: { hash: "#ch=15&mode=full" }, addEventListener(){} });
+    if (appFull.getState().mode !== "full" || Number(appFull.getState().target.chapterNumber) !== 15) {
+      throw new Error("mountApp n'a pas honoré #ch=15&mode=full: " + JSON.stringify(appFull.getState()));
+    }
+    appFull.getState().mode = "targeted";
+    appFull.getState().filters.role = "AE";
+    appFull.navigateToTarget({ kind: "chapter", chapterNumber: 1, focusKind: "thm", focusId: "raisonnement-inference-limites-planification" }, { ensureVisible: true });
+    if (appFull.getState().filters.role !== "" || !stubEls["prd-content"].innerHTML.includes("THM_raisonnement-inference-limites-planification")) {
+      throw new Error("ensureVisible n'a pas levé le filtre Rôle=AE masquant le thème ciblé");
+    }
+    appFull.getState().filters.domain = "D07";
+    appFull.navigateToTarget({ kind: "part", domainId: "D01" }, { ensureVisible: true });
+    if (appFull.getState().filters.domain !== "" || !stubEls["prd-content"].innerHTML.includes("Partie I")) {
+      throw new Error("ensureVisible n'a pas levé le filtre Domaine=D07 masquant Partie I");
+    }
+
+    // Régression E2E : repliage #prd-filters-toggle-btn avec fCount > 0 et resize 1440 -> 390 -> 1440
+    const makeInteractiveEl = (id) => {
+      const classes = new Set();
+      const listeners = Object.create(null);
+      const el = {
+        id, textContent: "", innerHTML: "", value: "", style: {},
+        classList: {
+          add(c) { classes.add(c); },
+          remove(c) { classes.delete(c); },
+          toggle(c, force) {
+            if (force === undefined) {
+              if (classes.has(c)) { classes.delete(c); return false; }
+              classes.add(c); return true;
+            }
+            if (force) classes.add(c); else classes.delete(c);
+            return Boolean(force);
+          },
+          contains(c) { return classes.has(c); }
+        },
+        setAttribute(k, v) { el["attr_" + k] = String(v); },
+        getAttribute(k) { return el["attr_" + k] ?? null; },
+        appendChild(){}, scrollIntoView(){}, focus(){}, querySelector: () => null, querySelectorAll: () => [],
+        addEventListener(type, fn) { (listeners[type] = listeners[type] || []).push(fn); },
+        trigger(type, ev = {}) { (listeners[type] || []).forEach(fn => fn(Object.assign({ target: el, preventDefault(){}, stopPropagation(){} }, ev))); }
+      };
+      return el;
+    };
+    const interactiveEls = {};
+    for (const k of [
+      "prd-web-data", "prd-global-title", "prd-global-meta", "prd-kpi-strip",
+      "prd-content", "prd-toc-tree", "prd-toc-count", "prd-open-mindmap-link",
+      "prd-filter-summary", "prd-glossary-btn", "prd-filters-toggle-btn",
+      "prd-filter-bar", "prd-filter-autonomy", "prd-reset-filters-btn",
+      "prd-toc", "prd-toc-toggle-btn", "prd-toc-backdrop", "prd-main"
+    ]) {
+      interactiveEls[k] = makeInteractiveEl(k);
+    }
+    interactiveEls["prd-web-data"].textContent = jsonMatch[1];
+    const docInteractive = {
+      documentElement: makeInteractiveEl("html"),
+      body: makeInteractiveEl("body"),
+      getElementById: (id) => interactiveEls[id] || null,
+      createElement: (tag) => makeInteractiveEl(tag),
+      addEventListener(){}, querySelector: () => null, querySelectorAll: () => []
+    };
+    const winListeners = Object.create(null);
+    const winInteractive = {
+      innerWidth: 1440,
+      location: { hash: "#ch=01" },
+      addEventListener(type, fn) { (winListeners[type] = winListeners[type] || []).push(fn); },
+      trigger(type) { (winListeners[type] || []).forEach(fn => fn({})); }
+    };
+    const app2 = eng.mountApp(docInteractive, winInteractive);
+    if (!app2 || !app2.getState().tocOpen || app2.getState().filtersOpen !== false || !interactiveEls["prd-filter-bar"].classList.contains("collapsed") || interactiveEls["prd-filters-toggle-btn"].getAttribute("aria-expanded") !== "false" || interactiveEls["prd-filters-toggle-btn"].classList.contains("active")) {
+      throw new Error("État initial desktop 1440px invalide (filtersOpen doit être false par défaut)");
+    }
+    interactiveEls["prd-filters-toggle-btn"].trigger("click");
+    if (app2.getState().filtersOpen !== true || interactiveEls["prd-filter-bar"].classList.contains("collapsed") || interactiveEls["prd-filters-toggle-btn"].getAttribute("aria-expanded") !== "true") {
+      throw new Error("Ouverture #prd-filters-toggle-btn sans filtre échouée");
+    }
+    interactiveEls["prd-filter-autonomy"].value = "L2";
+    interactiveEls["prd-filter-autonomy"].trigger("change", { target: { value: "L2" } });
+    interactiveEls["prd-filters-toggle-btn"].trigger("click");
+    if (app2.getState().filtersOpen !== false || !interactiveEls["prd-filter-bar"].classList.contains("collapsed") || interactiveEls["prd-filters-toggle-btn"].getAttribute("aria-expanded") !== "false") {
+      throw new Error("Repliage #prd-filters-toggle-btn impossible avec filtre actif sur desktop");
+    }
+    interactiveEls["prd-filters-toggle-btn"].trigger("click");
+    if (app2.getState().filtersOpen !== true || interactiveEls["prd-filter-bar"].classList.contains("collapsed")) {
+      throw new Error("Réouverture #prd-filters-toggle-btn avec filtre actif échouée");
+    }
+    interactiveEls["prd-reset-filters-btn"].trigger("click");
+    interactiveEls["prd-filters-toggle-btn"].trigger("click");
+    if (app2.getState().filtersOpen !== false || !interactiveEls["prd-filter-bar"].classList.contains("collapsed")) {
+      throw new Error("Repliage #prd-filters-toggle-btn après reset échoué");
+    }
+    winInteractive.innerWidth = 390;
+    winInteractive.trigger("resize");
+    if (app2.getState().tocOpen !== false || !interactiveEls["prd-toc"].classList.contains("collapsed") || interactiveEls["prd-toc-backdrop"].classList.contains("open")) {
+      throw new Error("Resize 1440->390 a laissé le tiroir TDM ou le voile ouvert");
+    }
+    interactiveEls["prd-toc-toggle-btn"].trigger("click");
+    if (!app2.getState().tocOpen || !interactiveEls["prd-toc-backdrop"].classList.contains("open")) {
+      throw new Error("Ouverture manuelle du tiroir TDM sur 390px échouée");
+    }
+    winInteractive.innerWidth = 1440;
+    winInteractive.trigger("resize");
+    if (!app2.getState().tocOpen || interactiveEls["prd-toc"].classList.contains("collapsed") || interactiveEls["prd-toc-backdrop"].classList.contains("open") || app2.getState().filtersOpen !== false) {
+      throw new Error("Resize 390->1440 invalide (filtersOpen doit rester false sans filtre actif)");
+    }
+    winInteractive.innerWidth = 390;
+    winInteractive.trigger("resize");
+    if (app2.getState().tocOpen !== false || interactiveEls["prd-toc-backdrop"].classList.contains("open")) {
+      throw new Error("Second resize 1440->390 a laissé le tiroir TDM ou le voile ouvert");
+    }
+    interactiveEls["prd-main"].scrollTop = 240;
+    interactiveEls["prd-main"].trigger("scroll");
+    if (!interactiveEls["prd-main"].classList.contains("is-scrolled")) {
+      throw new Error("Classe .is-scrolled manquante après scrollTop > 160");
+    }
+    interactiveEls["prd-main"].scrollTop = 0;
+    interactiveEls["prd-main"].trigger("scroll");
+    if (interactiveEls["prd-main"].classList.contains("is-scrolled")) {
+      throw new Error("Classe .is-scrolled persistante à scrollTop === 0");
+    }
     """
 
     proc = subprocess.run(
         [node_exe, "-e", node_script, str(PRD_WEB_HTML_PATH)],
+        stdin=subprocess.DEVNULL,
         capture_output=True,
         text=True,
         encoding="utf-8",

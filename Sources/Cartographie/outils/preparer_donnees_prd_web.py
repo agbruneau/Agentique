@@ -714,6 +714,7 @@ def _build_annexes_payload(
                         "families_count": len(fams),
                         "themes_count": len(thm_list),
                         "occurrence_count": occ_sum,
+                        "parts_present": ch["parts_present"],
                         "tomes_present": ch["tomes_present"],
                         "key_identifiers": sorted(ids_set),
                     }
@@ -751,6 +752,7 @@ def _build_annexes_payload(
                     "chapter_slug": chap_anchors.get(theme_to_chapter.get(tn["node_id"], 0), ""),
                     "relation_degree": int(tn.get("relation_degree", 0)),
                     "occurrence_count": int(tn.get("occurrence_count", 0)),
+                    "parts_present": tn.get("parts_present") or [],
                     "tomes_present": tn.get("tomes_present") or [],
                 }
                 for idx, tn in enumerate(deg_sorted, 1)
@@ -769,6 +771,7 @@ def _build_annexes_payload(
                     "target_chapter_number": theme_to_chapter.get(tr["target"]),
                     "label": _clean_text(tr.get("label", "")),
                     "justification": _clean_text(tr.get("justification", "")),
+                    "parts": tr.get("parts") or [],
                     "tomes": tr.get("tomes") or [],
                 }
                 for tr in tensions_raw
@@ -1390,14 +1393,13 @@ def build_prd_web_payload(
             continue
         dom_id = n["domain_id"]
         if nkind == "domain":
-            pnum = domain_to_part[dom_id]
             node_id_to_prd[nid] = {
                 "kind": "domain",
                 "domain_id": dom_id,
                 "chapter_number": None,
                 "family_node_id": None,
                 "theme_node_id": None,
-                "section_id": f"part-{pnum:02d}",
+                "section_id": f"part-{dom_id}",
                 "slug": anchors["part_anchors"][dom_id],
             }
         elif nkind == "subdomain":
@@ -1432,7 +1434,7 @@ def build_prd_web_payload(
                 "chapter_number": cnum,
                 "family_node_id": fid,
                 "theme_node_id": nid,
-                "section_id": f"thm-{n['canonical_slug']}",
+                "section_id": f"thm-{nid}",
                 "slug": anchors["family_anchors"][fid],
             }
 
