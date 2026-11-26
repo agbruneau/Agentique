@@ -20,7 +20,12 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import sys
 from typing import Any
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 
 ROMAN_TO_PART_ID: dict[str, str] = {
     "I": "P01",
@@ -132,6 +137,8 @@ def _locate_figure_line(
 
 def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
     """Construit l'inventaire vérifié des 115 schémas du Compendium."""
+    from index_pdf_compendium import CompendiumPdfIndex  # noqa: E402
+
     ouvrage_dir = repo_root / "Sources" / "Compendium" / "ouvrage"
     manifest_path = ouvrage_dir / "specs" / "manifest.json"
     comp_md_path = repo_root / "Compendium" / "Compendium.md"
@@ -141,6 +148,11 @@ def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     comp_lines = comp_md_path.read_text(encoding="utf-8").splitlines()
     unit_spans = _compute_compendium_unit_spans(comp_lines)
+    pdf_index = (
+        CompendiumPdfIndex.from_repo(repo_root)
+        if (repo_root / "Compendium" / "Compendium.pdf").is_file()
+        else None
+    )
 
     units_by_id: dict[str, dict[str, Any]] = {u["id"]: u for u in manifest["units"]}
     figures_raw: list[dict[str, Any]] = manifest["figures"]
@@ -206,6 +218,15 @@ def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
         if src_line is None:
             raise ValueError(f"Schéma {sid} introuvable dans {rel_man_path}")
 
+        pdf_page: int | None = None
+        if pdf_index is not None:
+            u_pdf_span = pdf_index.heading_pages_by_line.get(u_start)
+            if u_pdf_span is None:
+                p0 = pdf_index.resolve_line_page(u_start)
+                p1 = max(p0, pdf_index.resolve_line_page(u_end))
+                u_pdf_span = (p0, p1)
+            pdf_page = pdf_index.resolve_figure_page(sid, u_pdf_span)
+
         by_engine[engine] += 1
         by_part[part_id] += 1
 
@@ -229,6 +250,7 @@ def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
                 "sha256_rendered": _sha256_file(ren_file),
                 "compendium_md_file": "Compendium/Compendium.md",
                 "compendium_md_line": comp_line,
+                "pdf_page": pdf_page,
                 "source_file": rel_man_path,
                 "source_file_line": src_line,
             }
@@ -252,6 +274,7 @@ def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
             "verified_renders_on_disk": len(matched_renders),
             "verified_compendium_lines": sum(1 for it in items if it["compendium_md_line"] >= 1),
             "verified_source_file_lines": sum(1 for it in items if it["source_file_line"] >= 1),
+            "verified_pdf_pages": sum(1 for it in items if isinstance(it.get("pdf_page"), int) and it["pdf_page"] >= 1),
             "by_engine": dict(sorted(by_engine.items())),
             "by_part": {k: by_part[k] for k in sorted(by_part)},
         },

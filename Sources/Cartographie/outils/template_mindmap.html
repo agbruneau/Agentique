@@ -1430,6 +1430,187 @@
       vertical-align: middle;
     }
 
+    /* Navigation lecture Compendium (extraits, parcours, modale schémas, progression) */
+    .reading-path-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 7px 14px;
+      background: var(--accent-soft);
+      border-bottom: 1px solid var(--accent);
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .reading-path-bar.hidden {
+      display: none;
+    }
+    .reading-path-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+      flex: 1 1 320px;
+    }
+    .reading-path-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .reading-card {
+      border: 1px solid var(--accent);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      background: var(--bg-surface-2);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .guiding-q-box {
+      border-left: 3px solid var(--accent);
+      padding: 5px 9px;
+      background: var(--bg-surface);
+      border-radius: 0 5px 5px 0;
+      font-size: 12px;
+      color: var(--text-main);
+    }
+    .excerpt-box {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-sm);
+      padding: 7px 9px;
+    }
+    .occ-card.primary {
+      border-color: var(--accent);
+      border-left: 4px solid var(--accent);
+      background: var(--bg-elevated);
+    }
+    .read-badge-btn.is-read {
+      background: light-dark(#dcfce7, #14532d);
+      border-color: var(--ok);
+      color: light-dark(#15803d, #86efac);
+      font-weight: 600;
+    }
+    .unit-read-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 5px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      background: light-dark(#dcfce7, #14532d);
+      color: light-dark(#15803d, #86efac);
+    }
+    .st-filter-pills {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .order-reading-box {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      background: var(--bg-surface-2);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .schemas-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
+      gap: 12px;
+    }
+    .schema-gallery-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .schema-thumb-wrap {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 6px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .schema-thumb-img {
+      max-width: 100%;
+      max-height: 210px;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .schema-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: var(--backdrop-bg);
+      z-index: 140;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .schema-modal-backdrop.hidden {
+      display: none;
+    }
+    .schema-modal {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      max-width: min(94vw, 1180px);
+      max-height: 92vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .schema-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-hairline);
+      background: var(--bg-surface-2);
+    }
+    .schema-modal-body {
+      padding: 14px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .schema-modal-frame {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      text-align: center;
+      overflow: auto;
+    }
+    .schema-modal-frame img {
+      max-width: 100%;
+      max-height: 68vh;
+      height: auto;
+    }
+
     /* Responsive Breakpoints */
     @media (min-width: 1100px) {
       .topbar-primary {
@@ -1725,10 +1906,13 @@
         </nav>
         <div class="topbar-nav-tools">
           <div class="search-wrap">
-            <input id="global-search" class="search-input" type="search" placeholder="Rechercher thème, glossaire, SCH-*, EXIG, CAP, H1–H6…" autocomplete="off" aria-label="Recherche plein-texte" />
+            <input id="global-search" class="search-input" type="search" placeholder="Rechercher thème, glossaire, SCH-*, EXIG, CAP, jalon…" autocomplete="off" aria-label="Recherche plein-texte" />
             <span class="search-kbd">Ctrl+K</span>
             <div id="search-dropdown" class="search-dropdown" role="listbox"></div>
           </div>
+          <select id="reading-path-select" class="filter-select" aria-label="Parcours de lecture guidé" title="Choisir un parcours de lecture guidé" style="max-width:170px;">
+            <option value="">Parcours…</option>
+          </select>
           <button id="filters-toggle-btn" class="btn btn-sm" type="button" aria-expanded="false" aria-controls="filter-bar" title="Afficher ou masquer les filtres multi-facettes">Filtres</button>
           <button id="inspector-topbar-btn" class="btn btn-sm mobile-only-btn" type="button" aria-expanded="false" aria-controls="inspector" title="Afficher ou masquer l'inspecteur">Inspecteur</button>
         </div>
@@ -1772,6 +1956,7 @@
     <!-- Espace de travail principal -->
     <div class="workspace">
       <main class="stage-container">
+        <div id="reading-path-banner" class="reading-path-bar hidden" aria-label="Parcours de lecture actif"></div>
         <!-- VUE 1 : MindMap Thématique & Interrelations -->
         <section id="view-mindmap" class="view-panel active" aria-label="MindMap Thématique">
           <div class="canvas-toolbar">
@@ -1837,6 +2022,14 @@
               </div>
               <div class="struct-sidebar-filter">
                 <input id="st-tree-filter" class="search-input" type="search" placeholder="Filtrer les titres H1–H6…" autocomplete="off" aria-label="Filtrer les titres H1–H6" style="padding-right:10px;" />
+                <div class="st-filter-pills">
+                  <div class="seg-group" aria-label="Filtrer par état de lecture">
+                    <button type="button" class="seg-btn active" data-st-read-filter="all">Toutes</button>
+                    <button type="button" class="seg-btn" data-st-read-filter="unread">À lire</button>
+                    <button type="button" class="seg-btn" data-st-read-filter="read">Lues</button>
+                  </div>
+                  <span id="st-read-progress" class="kpi-pill">0 / 42 lues</span>
+                </div>
               </div>
               <div id="st-list-pane" class="struct-list-pane"></div>
             </aside>
@@ -1904,6 +2097,7 @@
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="timeline">Chronologie 2018–2035 (77 jalons)</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="traceability">Matrice EXIG / CAP / PRR / C01–C40 / SBB (237)</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="glossary_evidence">Glossaire (56) &amp; Socle probatoire L+</button>
+              <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="schemas_gallery">Galerie 115 schémas</button>
             </div>
             <div id="c4-content"></div>
           </div>
@@ -1931,6 +2125,16 @@
   </div>
 
   <div id="canvas-tooltip" class="canvas-tooltip"></div>
+
+  <div id="schema-modal-backdrop" class="schema-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="schema-modal-title">
+    <div class="schema-modal">
+      <div class="schema-modal-head">
+        <strong id="schema-modal-title">Schéma</strong>
+        <button id="schema-modal-close-btn" type="button" class="btn btn-sm">Fermer ✕</button>
+      </div>
+      <div id="schema-modal-body" class="schema-modal-body"></div>
+    </div>
+  </div>
 
   <!-- Données embarquées échappées de façon sûre -->
   <script id="corpus-mindmap-data" type="application/json">__CORPUS_DATA_JSON__</script>
@@ -1979,6 +2183,11 @@
 
     function compendiumAssetHref(relPath) {
       return tomeAssetHref(relPath);
+    }
+
+    function compendiumPdfHref(pageNo) {
+      var base = "../../Compendium/Compendium.pdf";
+      return (pageNo != null && Number(pageNo) > 0) ? (base + "#page=" + Number(pageNo)) : base;
     }
 
     function tomeAssetHref(relPath) {
@@ -2040,6 +2249,36 @@
         }
       });
       return res;
+    }
+
+    function buildLocationHash(st) {
+      if (!st) return "";
+      var parts = [];
+      var v = st.activeView || "mindmap";
+      parts.push("view=" + encodeURIComponent(v));
+      if (v === "mindmap" || v === "synaptic") {
+        if (st.selectedKind === "theme" && st.selectedId) {
+          parts.push("node=" + encodeURIComponent(st.selectedId));
+        }
+        if (v === "synaptic" && st.syEgo && st.syEgo !== "all") {
+          parts.push("ego=" + encodeURIComponent(st.syEgo));
+        }
+      } else if (v === "structure") {
+        if (st.selectedKind === "structure" && st.selectedId) {
+          parts.push("unit=" + encodeURIComponent(st.selectedId));
+        }
+      } else if (v === "concordance") {
+        if (st.c4Tab) parts.push("tab=" + encodeURIComponent(st.c4Tab));
+        if (st.c4Tab === "glossary_evidence" && st.c4GlossaryQuery) parts.push("q=" + encodeURIComponent(st.c4GlossaryQuery));
+        if (st.c4Tab === "traceability" && st.c4TraceQuery) parts.push("q=" + encodeURIComponent(st.c4TraceQuery));
+        if (st.c4Tab === "timeline" && st.c4TimelineQuery) parts.push("q=" + encodeURIComponent(st.c4TimelineQuery));
+        if (st.c4Tab === "schemas_gallery" && st.c4SchemaQuery) parts.push("q=" + encodeURIComponent(st.c4SchemaQuery));
+      }
+      if (st.activeTourId) {
+        parts.push("tour=" + encodeURIComponent(st.activeTourId));
+        parts.push("step=" + encodeURIComponent(String(st.activeTourStep || 0)));
+      }
+      return "#" + parts.join("&");
     }
 
     var SVG_NS = "http" + "://www.w3.org/2000/svg";
@@ -2118,10 +2357,13 @@
       // Index structurel H1..H6 + liaison chapitres -> nœuds thématiques
       var structUnitById = Object.create(null);
       var structParentById = Object.create(null);
+      var structUnitByCompendiumUnitId = Object.create(null);
       var structFlat = [];
       var chapterByUnitId = Object.create(null);
+      var chapterByCompendiumUnitId = Object.create(null);
       chapters.forEach(function (c) {
         if (c.unit_id) chapterByUnitId[c.unit_id] = c;
+        if (c.compendium_unit_id) chapterByCompendiumUnitId[c.compendium_unit_id] = c;
       });
 
       function walkStruct(unit, parentId, fileMeta) {
@@ -2133,6 +2375,9 @@
         });
         structUnitById[unit.unit_id] = entry;
         structParentById[unit.unit_id] = parentId;
+        if (entry.compendium_unit_id && !structUnitByCompendiumUnitId[entry.compendium_unit_id]) {
+          structUnitByCompendiumUnitId[entry.compendium_unit_id] = entry;
+        }
         structFlat.push(entry);
         var kids = Array.isArray(unit.children) ? unit.children : [];
         for (var i = 0; i < kids.length; i++) {
@@ -2226,19 +2471,95 @@
       // Index glossaire Compendium (56 vedettes dont Agentivité des systèmes)
       var glossaryTerms = (pivots.glossaire_pivot && pivots.glossaire_pivot.glossaire_compendium_56) ||
         (pivots.glossaire_pivot && pivots.glossaire_pivot.vedettes_t8) || [];
+      var glossaryByFr = Object.create(null);
       glossaryTerms.forEach(function (gt) {
         var gfr = gt.fr || "";
         var gen = gt.en || "";
+        if (gfr) glossaryByFr[normalizeText(gfr)] = gt;
         var hayG = [gfr, gen, gt.definition, gt.chapitre_proprietaire, gt.source_l_plus_id].join(" ");
         searchDocs.push({
           kind: "glossary",
           id: gfr,
           chapter_id: gt.chapitre_proprietaire || "",
           line_start: gt.compendium_md_line || 1,
+          pdf_page: gt.pdf_page || null,
           title: gfr + (gen ? " (" + gen + ")" : ""),
-          subtitle: "Glossaire Compendium · " + (gt.chapitre_proprietaire || "") + " · " + (gt.source_l_plus_id || "L+"),
+          subtitle: "Glossaire Compendium · " + (gt.chapitre_proprietaire || "") + (gt.pdf_page ? " · p. " + gt.pdf_page : "") + " · " + (gt.source_l_plus_id || "L+"),
           norm: normalizeText(hayG)
         });
+      });
+
+      // Index des 115 schémas de vulgarisation
+      var schemasList = Array.isArray(data.schemas) ? data.schemas : [];
+      var schemaById = Object.create(null);
+      var schemasByUnit = Object.create(null);
+      var schemasBySlug = Object.create(null);
+      schemasList.forEach(function (sc) {
+        schemaById[sc.schema_id] = sc;
+        if (sc.unit) {
+          if (!schemasByUnit[sc.unit]) schemasByUnit[sc.unit] = [];
+          schemasByUnit[sc.unit].push(sc.schema_id);
+        }
+        (sc.themes_vulgarized || []).forEach(function (sl) {
+          if (!schemasBySlug[sl]) schemasBySlug[sl] = [];
+          schemasBySlug[sl].push(sc.schema_id);
+        });
+        var hayS = [
+          sc.schema_id,
+          sc.title,
+          sc.notation,
+          sc.unit,
+          sc.domain_id,
+          sc.pedagogical_objective,
+          (sc.themes_vulgarized || []).join(" "),
+          (sc.target_audiences || []).join(" ")
+        ].join(" ");
+        searchDocs.push({
+          kind: "schema",
+          id: sc.schema_id,
+          unit: sc.unit || "",
+          pdf_page: sc.pdf_page || null,
+          title: sc.schema_id + " · " + sc.title,
+          subtitle: "Schéma " + (sc.notation || sc.engine) + " · " + (sc.unit || "") + (sc.pdf_page ? " · p. " + sc.pdf_page : ""),
+          norm: normalizeText(hayS)
+        });
+      });
+
+      // Index matrice EXIG / CAP / PRR / C01–C40 / SBB (237) et chronologie (77)
+      var traceMatrix = Array.isArray(pivots.traceability_matrix) ? pivots.traceability_matrix : [];
+      var traceById = Object.create(null);
+      traceMatrix.forEach(function (m) {
+        if (!m || !m.id) return;
+        traceById[m.id] = m;
+        var hayM = [m.id, m.family, m.title, m.module, m.anchor, m.compendium_unit_id].join(" ");
+        searchDocs.push({
+          kind: "traceability",
+          id: m.id,
+          pdf_page: m.pdf_page || null,
+          title: m.id + (m.title ? " · " + truncate(m.title, 62) : ""),
+          subtitle: "Matrice · " + (m.family || "") + (m.compendium_unit_id ? " · " + m.compendium_unit_id : "") + (m.pdf_page ? " · p. " + m.pdf_page : ""),
+          norm: normalizeText(hayM)
+        });
+      });
+
+      var timelineItems = Array.isArray(pivots.timeline) ? pivots.timeline : [];
+      timelineItems.forEach(function (ev, tlIdx) {
+        var hayT = [ev.date, ev.cadre, ev.impact, (ev.tomes || []).join(" "), ev.source_group].join(" ");
+        searchDocs.push({
+          kind: "timeline",
+          id: ev.cadre || String(tlIdx),
+          query: ev.date || ev.cadre || "",
+          pdf_page: ev.pdf_page || null,
+          title: (ev.date || "") + " — " + truncate(ev.cadre || "", 58),
+          subtitle: "Jalon 2018–2035 · " + truncate(ev.impact || "", 62) + (ev.pdf_page ? " · p. " + ev.pdf_page : ""),
+          norm: normalizeText(hayT)
+        });
+      });
+
+      var readingPaths = Array.isArray(data.reading_paths) ? data.reading_paths : [];
+      var readingPathById = Object.create(null);
+      readingPaths.forEach(function (rp) {
+        if (rp && rp.path_id) readingPathById[rp.path_id] = rp;
       });
 
       // Valeurs de facettes uniques (hors nœud racine depth === 0, horizons normalisés)
@@ -2277,11 +2598,22 @@
         structFiles: structFiles,
         structUnitById: structUnitById,
         structParentById: structParentById,
+        structUnitByCompendiumUnitId: structUnitByCompendiumUnitId,
         structFlat: structFlat,
         chapterByUnitId: chapterByUnitId,
+        chapterByCompendiumUnitId: chapterByCompendiumUnitId,
         themesByStructUnit: themesByStructUnit,
         searchDocs: searchDocs,
         glossaryTerms: glossaryTerms,
+        glossaryByFr: glossaryByFr,
+        schemas: schemasList,
+        schemaById: schemaById,
+        schemasByUnit: schemasByUnit,
+        schemasBySlug: schemasBySlug,
+        traceMatrix: traceMatrix,
+        traceById: traceById,
+        readingPaths: readingPaths,
+        readingPathById: readingPathById,
         pivots: pivots,
         facets: {
           autonomy: Array.from(facetAutonomy).sort(),
@@ -2309,8 +2641,13 @@
         }
         if (!ok) continue;
         var titleNorm = normalizeText(doc.title);
+        var idNorm = normalizeText(doc.id);
         var score = doc.kind === "theme" ? 20
-          : (doc.kind === "glossary" ? 19 : 5);
+          : (doc.kind === "glossary" ? 19
+          : (doc.kind === "schema" ? 18
+          : (doc.kind === "traceability" ? 15
+          : (doc.kind === "timeline" ? 12 : 5))));
+        if (idNorm === q) score += 60;
         if (titleNorm.indexOf(q) !== -1) score += 40;
         if (titleNorm.indexOf(terms[0]) === 0) score += 15;
         scored.push({ doc: doc, score: score });
@@ -2849,9 +3186,11 @@
       normalizeText: normalizeText,
       normalizeHorizon: normalizeHorizon,
       corpusHref: corpusHref,
+      compendiumPdfHref: compendiumPdfHref,
       tomeAssetHref: tomeAssetHref,
       prdInlineHtml: prdInlineHtml,
       parseLocationHash: parseLocationHash,
+      buildLocationHash: buildLocationHash,
       collectDescendantThemeIds: collectDescendantThemeIds,
       buildIndexes: buildIndexes,
       searchCorpus: searchCorpus,
@@ -2884,6 +3223,31 @@
 
       var isInitialDrawer = typeof window !== "undefined" && typeof window.innerWidth === "number" && window.innerWidth <= 960;
       var mmHasFitted = false;
+      var suppressHashSync = false;
+      var STORAGE_KEY = "agy_compendium_reading_v1";
+
+      function loadReadingState() {
+        var out = { read: [] };
+        try {
+          if (typeof window !== "undefined" && window.localStorage && typeof window.localStorage.getItem === "function") {
+            var raw = window.localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+              var parsed = JSON.parse(raw);
+              if (parsed && Array.isArray(parsed.read)) out.read = parsed.read;
+            }
+          }
+        } catch (_e) {}
+        return new Set(out.read);
+      }
+
+      function saveReadingState(readSet) {
+        try {
+          if (typeof window !== "undefined" && window.localStorage && typeof window.localStorage.setItem === "function") {
+            window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ read: Array.from(readSet) }));
+          }
+        } catch (_e) {}
+      }
+
       var state = {
         activeView: "mindmap",
         themeMode: "auto",
@@ -2901,6 +3265,9 @@
         selectedKind: null,
         selectedId: null,
         hoveredNodeId: null,
+        readUnits: loadReadingState(),
+        activeTourId: "",
+        activeTourStep: 0,
         // Vue 1
         mmLayout: "horizontal",
         mmDepth: 2,
@@ -2912,6 +3279,7 @@
         stShowList: !isInitialDrawer,
         stFileFilter: "",
         stTreeFilter: "",
+        stReadFilter: "all",
         stExpanded: new Set(["STRUCT_ROOT"]),
         stLastPositions: {},
         // Vue 3
@@ -2926,8 +3294,52 @@
         c4Tab: "heatmap",
         c4GroupBy: "domain",
         c4Metric: "occurrences",
-        c4SelectedCell: null
+        c4SelectedCell: null,
+        c4SchemaQuery: "",
+        c4SchemaDomain: "",
+        c4SchemaAudience: ""
       };
+
+      function syncLocationHash(replaceOnly) {
+        if (suppressHashSync || typeof window === "undefined") return;
+        var nextHash = buildLocationHash(state);
+        if (!nextHash) return;
+        try {
+          if (window.location && window.location.hash === nextHash) return;
+          if (window.history && typeof window.history.pushState === "function" && typeof window.history.replaceState === "function") {
+            if (replaceOnly) window.history.replaceState(null, "", nextHash);
+            else window.history.pushState(null, "", nextHash);
+          }
+        } catch (_e) {}
+      }
+
+      function isUnitRead(compUnitId) {
+        return Boolean(compUnitId && state.readUnits.has(compUnitId));
+      }
+
+      function updateReadProgressUI() {
+        var progEl = document.getElementById("st-read-progress");
+        if (progEl) {
+          var totalUnits = idx.chapters ? idx.chapters.length : 42;
+          progEl.textContent = state.readUnits.size + " / " + totalUnits + " lues";
+        }
+      }
+
+      function toggleUnitRead(compUnitId) {
+        if (!compUnitId) return false;
+        if (state.readUnits.has(compUnitId)) state.readUnits.delete(compUnitId);
+        else state.readUnits.add(compUnitId);
+        saveReadingState(state.readUnits);
+        updateReadProgressUI();
+        renderReadingPathBanner();
+        if (state.selectedKind === "theme" && state.selectedId && idx.nodeById[state.selectedId]) {
+          renderInspectorTheme(idx.nodeById[state.selectedId]);
+        } else if (state.selectedKind === "structure" && state.selectedId && idx.structUnitById[state.selectedId]) {
+          renderInspectorStruct(idx.structUnitById[state.selectedId]);
+        }
+        if (state.activeView === "structure") renderStructureView(false);
+        return state.readUnits.has(compUnitId);
+      }
 
       function isDrawerViewport() {
         return typeof window !== "undefined" && typeof window.innerWidth === "number" && window.innerWidth <= 960;
@@ -3299,6 +3711,17 @@
           pStart.appendChild(o1);
           pEnd.appendChild(o1.cloneNode(true));
         });
+
+        var rpSel = document.getElementById("reading-path-select");
+        if (rpSel && Array.isArray(idx.readingPaths)) {
+          idx.readingPaths.forEach(function (rp) {
+            var opt = document.createElement("option");
+            opt.value = rp.path_id;
+            opt.textContent = truncate(rp.title, 36) + " (" + rp.steps_count + " ét. · ~" + rp.total_minutes + " min)";
+            rpSel.appendChild(opt);
+          });
+        }
+        updateReadProgressUI();
       }
 
       function updateFilterStatus(filtered) {
@@ -3404,6 +3827,7 @@
             centerOnPoint("sy", centerPos.x, centerPos.y);
           }
         }
+        syncLocationHash(false);
       }
 
       function selectStructUnit(unitId, centerCanvas) {
@@ -3436,6 +3860,197 @@
             centerOnPoint("st", state.stLastPositions[unitId].x, state.stLastPositions[unitId].y);
           }
         }
+        syncLocationHash(false);
+      }
+
+      function selectCompendiumUnitInStructure(compUnitId) {
+        if (!compUnitId) return;
+        var stUnit = idx.structUnitByCompendiumUnitId[compUnitId];
+        if (stUnit) {
+          switchView("structure");
+          selectStructUnit(stUnit.unit_id, true);
+        }
+      }
+
+      function openSchemaModal(schemaId) {
+        var sc = idx.schemaById[schemaId];
+        var bd = document.getElementById("schema-modal-backdrop");
+        var ttl = document.getElementById("schema-modal-title");
+        var body = document.getElementById("schema-modal-body");
+        if (!sc || !bd || !ttl || !body) return;
+        ttl.textContent = sc.schema_id + " — " + sc.title;
+        var chMeta = idx.chapterByCompendiumUnitId[sc.unit];
+        var pdfUrl = compendiumPdfHref(sc.pdf_page);
+        var mdUrl = corpusHref(sc.compendium_md_file, sc.compendium_md_line);
+        body.innerHTML = [
+          '<div class="chip-row">',
+            '<span class="chip mono">' + escapeHtml(sc.schema_id) + '</span>',
+            '<span class="chip">' + escapeHtml(sc.domain_id) + ' · ' + escapeHtml(sc.unit) + '</span>',
+            '<span class="chip">' + escapeHtml(sc.notation) + '</span>',
+            (sc.pdf_page ? '<span class="chip mono">PDF p. ' + sc.pdf_page + '</span>' : ''),
+            (sc.target_audiences || []).map(function (a) { return '<span class="chip">' + escapeHtml(a) + '</span>'; }).join(""),
+          '</div>',
+          '<div class="schema-modal-frame"><img src="' + escapeHtml(tomeAssetHref(sc.rendered_path)) + '" alt="' + escapeHtml(sc.schema_id) + '" /></div>',
+          (sc.pedagogical_objective ? '<p style="margin:0;font-size:12.5px;"><strong>Objectif pédagogique :</strong> ' + prdInlineHtml(sc.pedagogical_objective) + '</p>' : ''),
+          (sc.vulgarization_angle ? '<p style="margin:0;font-size:12px;color:var(--text-muted);"><strong>Angle de vulgarisation :</strong> ' + prdInlineHtml(sc.vulgarization_angle) + '</p>' : ''),
+          '<div class="chip-row">',
+            '<a class="btn btn-sm primary" href="' + escapeHtml(pdfUrl) + '" target="_blank" rel="noopener">Lire dans le PDF (p. ' + (sc.pdf_page || 1) + ') ↗</a>',
+            '<a class="btn btn-sm" href="' + escapeHtml(mdUrl) + '" target="_blank" rel="noopener">Compendium.md #L' + sc.compendium_md_line + '</a>',
+            (chMeta && chMeta.unit_id ? '<button type="button" class="btn btn-sm" id="modal-goto-struct" data-unit-id="' + escapeHtml(chMeta.unit_id) + '">Situer dans le plan (Vue 2)</button>' : ''),
+          '</div>'
+        ].join("");
+        bd.classList.remove("hidden");
+        var gotoBtn = document.getElementById("modal-goto-struct");
+        if (gotoBtn) {
+          gotoBtn.addEventListener("click", function () {
+            closeSchemaModal();
+            switchView("structure");
+            selectStructUnit(gotoBtn.getAttribute("data-unit-id"), true);
+          });
+        }
+      }
+
+      function closeSchemaModal() {
+        var bd = document.getElementById("schema-modal-backdrop");
+        if (bd) bd.classList.add("hidden");
+      }
+
+      function renderSchemaCardsHtml(schemaIds) {
+        if (!schemaIds || !schemaIds.length) return "";
+        var items = [];
+        schemaIds.forEach(function (sid) {
+          var sc = idx.schemaById[sid];
+          if (!sc) return;
+          var pdfUrl = compendiumPdfHref(sc.pdf_page);
+          var imgSrc = tomeAssetHref(sc.rendered_path);
+          items.push(
+            '<details class="schema-preview-details">' +
+              '<summary>' + escapeHtml(sc.schema_id) + ' · ' + prdInlineHtml(truncate(sc.title, 48)) + (sc.pdf_page ? ' (p. ' + sc.pdf_page + ')' : '') + '</summary>' +
+              '<div class="schema-preview-frame">' +
+                '<img class="schema-preview-img" loading="lazy" src="' + escapeHtml(imgSrc) + '" alt="' + escapeHtml(sc.schema_id) + '" />' +
+              '</div>' +
+              (sc.pedagogical_objective ? '<p style="margin:6px 0;font-size:11.5px;color:var(--text-muted);">' + prdInlineHtml(truncate(sc.pedagogical_objective, 220)) + '</p>' : '') +
+              '<div class="chip-row" style="margin-top:6px;">' +
+                '<button type="button" class="btn btn-sm" data-open-schema-modal="' + escapeHtml(sc.schema_id) + '">Agrandir</button>' +
+                '<a class="btn btn-sm primary" href="' + escapeHtml(pdfUrl) + '" target="_blank" rel="noopener">PDF p. ' + (sc.pdf_page || 1) + ' ↗</a>' +
+                '<span class="chip">' + escapeHtml(sc.notation) + '</span>' +
+              '</div>' +
+            '</details>'
+          );
+        });
+        if (!items.length) return "";
+        return '<div class="inspector-section"><div class="section-label">Schémas de vulgarisation associés (' + items.length + ')</div>' + items.join("") + '</div>';
+      }
+
+      function renderReadingOrderBox(n, outRels, inRels) {
+        var upstream = [];
+        var downstream = [];
+        var seenUp = new Set();
+        var seenDown = new Set();
+        (outRels || []).forEach(function (r) {
+          if (r.type === "dependance_technique" && !seenUp.has(r.target)) {
+            seenUp.add(r.target);
+            upstream.push({ nodeId: r.target, relType: r.type });
+          } else if ((r.type === "operationnalisation" || r.type === "attenuation_risque") && !seenDown.has(r.target)) {
+            seenDown.add(r.target);
+            downstream.push({ nodeId: r.target, relType: r.type });
+          }
+        });
+        (inRels || []).forEach(function (r) {
+          if ((r.type === "encadrement_normatif" || r.type === "dependance_technique") && !seenUp.has(r.source)) {
+            seenUp.add(r.source);
+            upstream.push({ nodeId: r.source, relType: r.type });
+          } else if (r.type === "operationnalisation" && !seenDown.has(r.source)) {
+            seenDown.add(r.source);
+            downstream.push({ nodeId: r.source, relType: r.type });
+          }
+        });
+        if (!upstream.length && !downstream.length) return "";
+        function renderChips(list) {
+          return list.slice(0, 3).map(function (it) {
+            var tn = idx.nodeById[it.nodeId];
+            if (!tn) return "";
+            var ch = tn.owner_chapter ? idx.chapterByCompendiumUnitId[tn.owner_chapter] : null;
+            var loc = tn.owner_chapter ? (" (" + tn.owner_chapter + (ch && ch.pdf_page_start ? " · p. " + ch.pdf_page_start : "") + ")") : "";
+            return '<span class="chip clickable" role="button" tabindex="0" data-jump-node="' + escapeHtml(it.nodeId) + '">' + prdInlineHtml(truncate(tn.title, 32)) + escapeHtml(loc) + '</span>';
+          }).join("");
+        }
+        var html = ['<div class="inspector-section"><div class="section-label">Ordre de lecture suggéré</div><div class="order-reading-box">'];
+        if (upstream.length) {
+          html.push('<div><strong style="font-size:11px;color:var(--text-muted);">En amont (prérequis / cadre) :</strong><div class="chip-row" style="margin-top:4px;">' + renderChips(upstream) + '</div></div>');
+        }
+        if (downstream.length) {
+          html.push('<div><strong style="font-size:11px;color:var(--text-muted);">En aval (mise en œuvre) :</strong><div class="chip-row" style="margin-top:4px;">' + renderChips(downstream) + '</div></div>');
+        }
+        html.push('</div></div>');
+        return html.join("");
+      }
+
+      function bindInspectorInteractiveLinks(container) {
+        if (!container) return;
+        container.querySelectorAll("[data-jump-node]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            var jid = el.getAttribute("data-jump-node");
+            ensureThemeNodeVisibleUnderFilters(jid);
+            selectThemeNode(jid, true);
+          });
+        });
+        container.querySelectorAll("[data-jump-struct]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            var suid = el.getAttribute("data-jump-struct");
+            if (suid) {
+              switchView("structure");
+              selectStructUnit(suid, true);
+            }
+          });
+        });
+        container.querySelectorAll("[data-jump-comp-unit]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            selectCompendiumUnitInStructure(el.getAttribute("data-jump-comp-unit"));
+          });
+        });
+        container.querySelectorAll("[data-open-schema-modal]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            openSchemaModal(el.getAttribute("data-open-schema-modal"));
+          });
+        });
+        container.querySelectorAll("[data-jump-glossary]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            state.c4Tab = "glossary_evidence";
+            state.c4GlossaryQuery = el.getAttribute("data-jump-glossary") || "";
+            document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+              var isA = b.getAttribute("data-c4-tab") === "glossary_evidence";
+              b.classList.toggle("active", isA);
+              b.setAttribute("aria-selected", isA ? "true" : "false");
+            });
+            switchView("concordance");
+          });
+        });
+        container.querySelectorAll("[data-jump-ident]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            var ident = el.getAttribute("data-jump-ident") || "";
+            if (idx.schemaById[ident]) {
+              openSchemaModal(ident);
+            } else if (ident === "DIV-02" || ident.indexOf("DISC-") === 0) {
+              state.c4Tab = "reconciliations";
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                var isA = b.getAttribute("data-c4-tab") === "reconciliations";
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
+              });
+              switchView("concordance");
+            } else if (idx.traceById[ident]) {
+              state.c4Tab = "traceability";
+              state.c4TraceQuery = ident;
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                var isA = b.getAttribute("data-c4-tab") === "traceability";
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
+              });
+              switchView("concordance");
+            }
+          });
+        });
       }
 
       function selectRelation(rel) {
@@ -3467,14 +4082,65 @@
 
         html.push('<div class="chip-row">');
         html.push('<button class="btn btn-sm primary" id="insp-goto-mm">Voir MindMap</button>');
+        if (n.primary_struct_unit_id || (n.occurrences && n.occurrences[0] && n.occurrences[0].unit_id) || (n.owner_chapter && idx.structUnitByCompendiumUnitId[n.owner_chapter])) {
+          html.push('<button class="btn btn-sm" id="insp-goto-st">Voir Plan (Vue 2)</button>');
+        }
         html.push('<button class="btn btn-sm" id="insp-goto-sy">Voir Graphe (1 saut)</button>');
         html.push('<button class="btn btn-sm" id="insp-set-a">Départ A</button>');
         html.push('<button class="btn btn-sm" id="insp-set-b">Arrivée B</button>');
+        if (n.owner_chapter) {
+          var isRead = isUnitRead(n.owner_chapter);
+          html.push('<button type="button" class="btn btn-sm read-badge-btn' + (isRead ? ' is-read' : '') + '" id="insp-toggle-read" data-read-unit="' + escapeHtml(n.owner_chapter) + '">' + (isRead ? '✓ Lu' : '★ À lire') + '</button>');
+        }
         html.push('</div>');
+
+        // Carte d'accès direct au Compendium pour les niveaux macro (Niv. 1 à 4)
+        if (n.node_kind !== "theme") {
+          var primStruct = n.primary_struct_unit_id ? idx.structUnitById[n.primary_struct_unit_id] : null;
+          var chMetaMacro = n.owner_chapter ? idx.chapterByCompendiumUnitId[n.owner_chapter] : null;
+          var pStart = n.pdf_page_start || (primStruct && primStruct.pdf_page_start) || (chMetaMacro && chMetaMacro.pdf_page_start) || null;
+          var pEnd = n.pdf_page_end || (primStruct && primStruct.pdf_page_end) || (chMetaMacro && chMetaMacro.pdf_page_end) || pStart;
+          var rMin = n.reading_minutes || (primStruct && primStruct.reading_minutes) || (chMetaMacro && chMetaMacro.reading_minutes) || null;
+          var gqText = n.guiding_question || (primStruct && primStruct.guiding_question) || (chMetaMacro && chMetaMacro.guiding_question) || "";
+          var excText = n.excerpt || (primStruct && primStruct.excerpt) || (chMetaMacro && chMetaMacro.excerpt) || "";
+          var mdLineMacro = (primStruct && primStruct.line_start) || (chMetaMacro && chMetaMacro.line_start) || 1;
+          var pageRangeLabel = pStart ? ("p. " + pStart + (pEnd && pEnd !== pStart ? "–" + pEnd : "")) : "";
+
+          html.push('<div class="inspector-section"><div class="section-label">Accès direct au Compendium</div>');
+          html.push('<div class="reading-card">');
+          html.push('<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">');
+          html.push('<strong>' + prdInlineHtml(primStruct ? primStruct.title : (chMetaMacro ? chMetaMacro.chapter_title : n.title)) + '</strong>');
+          if (pageRangeLabel || rMin) {
+            html.push('<span class="chip mono">' + escapeHtml([pageRangeLabel, rMin ? ("~" + rMin + " min") : ""].filter(Boolean).join(" · ")) + '</span>');
+          }
+          html.push('</div>');
+          if (gqText) html.push('<div class="guiding-q-box"><strong>Question directrice :</strong> ' + prdInlineHtml(gqText) + '</div>');
+          if (excText) html.push('<div class="excerpt-box">' + prdInlineHtml(excText) + '</div>');
+          html.push('<div class="chip-row">');
+          if (pStart) {
+            html.push('<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(pStart)) + '" target="_blank" rel="noopener">Lire dans le PDF (p. ' + pStart + ') ↗</a>');
+          }
+          if (primStruct) {
+            html.push('<button type="button" class="btn btn-sm" data-jump-struct="' + escapeHtml(primStruct.unit_id) + '">Plan du chapitre (Vue 2)</button>');
+          }
+          html.push('<a class="btn btn-sm" href="' + escapeHtml(corpusHref("Compendium/Compendium.md", mdLineMacro)) + '" target="_blank" rel="noopener">Compendium.md #L' + mdLineMacro + '</a>');
+          html.push('</div>');
+          if (primStruct && Array.isArray(primStruct.children) && primStruct.children.length) {
+            html.push('<div style="margin-top:4px;"><div style="font-size:11px;font-weight:700;color:var(--text-subtle);margin-bottom:4px;">Sections à explorer :</div><div class="chip-row">');
+            primStruct.children.slice(0, 10).forEach(function (subCh) {
+              var subPg = subCh.pdf_page_start ? (" · p. " + subCh.pdf_page_start) : "";
+              html.push('<span class="chip clickable" role="button" tabindex="0" data-jump-struct="' + escapeHtml(subCh.unit_id) + '">' + prdInlineHtml(truncate(subCh.title, 34)) + escapeHtml(subPg) + '</span>');
+            });
+            html.push('</div></div>');
+          }
+          html.push('</div></div>');
+        }
 
         // Métadonnées Compendium & attributs transversaux
         html.push('<div class="inspector-section"><div class="section-label">Attributs Compendium &amp; transversaux</div><div class="chip-row">');
-        if (n.owner_chapter) html.push('<span class="chip mono">Propriétaire : ' + escapeHtml(n.owner_chapter) + '</span>');
+        if (n.owner_chapter) {
+          html.push('<span class="chip clickable mono" role="button" tabindex="0" data-jump-comp-unit="' + escapeHtml(n.owner_chapter) + '" title="Ouvrir ' + escapeHtml(n.owner_chapter) + ' dans le plan">Propriétaire : ' + escapeHtml(n.owner_chapter) + '</span>');
+        }
         ((n.parts_present && n.parts_present.length) ? n.parts_present : (n.tomes_present || [])).forEach(function (t) { html.push('<span class="chip">' + escapeHtml(t) + '</span>'); });
         (n.autonomy_levels || []).forEach(function (a) { html.push('<span class="chip mono">' + escapeHtml(a) + '</span>'); });
         (n.roles || []).forEach(function (r) { html.push('<span class="chip">' + escapeHtml(r) + '</span>'); });
@@ -3485,7 +4151,10 @@
         if (n.glossary_terms && n.glossary_terms.length) {
           html.push('<div class="inspector-section"><div class="section-label">Vedettes du glossaire associées (' + n.glossary_terms.length + ')</div><div class="chip-row">');
           n.glossary_terms.forEach(function (gt) {
-            html.push('<span class="chip">' + prdInlineHtml(gt) + '</span>');
+            var baseTerm = String(gt || "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+            var gEntry = idx.glossaryByFr[normalizeText(baseTerm)];
+            var defTip = gEntry ? gEntry.definition : "Voir dans le glossaire";
+            html.push('<span class="chip clickable" role="button" tabindex="0" data-jump-glossary="' + escapeHtml(baseTerm) + '" title="' + escapeHtml(defTip) + '">' + prdInlineHtml(gt) + '</span>');
           });
           html.push('</div></div>');
         }
@@ -3493,7 +4162,12 @@
         if (n.identifiers && n.identifiers.length) {
           html.push('<div class="inspector-section"><div class="section-label">Identifiants détectés (' + n.identifiers.length + ')</div><div class="chip-row">');
           n.identifiers.slice(0, 28).forEach(function (idStr) {
-            html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
+            var isLinkable = Boolean(idx.schemaById[idStr] || idx.traceById[idStr] || idStr === "DIV-02" || idStr.indexOf("DISC-") === 0);
+            if (isLinkable) {
+              html.push('<span class="chip clickable mono" role="button" tabindex="0" data-jump-ident="' + escapeHtml(idStr) + '" title="Ouvrir la fiche ' + escapeHtml(idStr) + '">' + escapeHtml(idStr) + '</span>');
+            } else {
+              html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
+            }
           });
           if (n.identifiers.length > 28) html.push('<span class="chip">+' + (n.identifiers.length - 28) + '</span>');
           html.push('</div></div>');
@@ -3506,31 +4180,62 @@
         if (occs.length === 0) {
           html.push('<div style="color:var(--text-muted);font-size:12px;">Nœud hiérarchique agrégateur (' + (idx.descendantCount[n.node_id] || 0) + ' descendants · ' + aggOccCount + ' ancrages cumulés dans ' + ((n.units_present || []).length) + ' unités).</div>');
         } else {
-          html.push('<div style="display:flex;flex-direction:column;gap:6px;">');
-          occs.forEach(function (occ) {
-            var pid = occ.part_id || occ.tome_id || "";
-            var ucid = occ.compendium_unit_id ? (" · " + occ.compendium_unit_id) : "";
-            var href = corpusHref(occ.file, occ.line_start);
-            var modHref = occ.source_file ? corpusHref(occ.source_file, 1) : "";
-            var rangeStr = "L" + occ.line_start + (occ.line_end ? "–L" + occ.line_end : "");
-            html.push(
-              '<div class="occ-card">' +
-                '<div style="display:flex;justify-content:space-between;gap:6px;align-items:center;">' +
-                  '<strong>' + escapeHtml(pid + ucid) + ' · ' + prdInlineHtml(occ.chapter || occ.section || "") + '</strong>' +
-                  '<span class="chip mono">' + escapeHtml(rangeStr) + '</span>' +
-                '</div>' +
-                (occ.section && occ.section !== occ.chapter ? '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(occ.section) + '</div>' : '') +
-                '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:2px;flex-wrap:wrap;">' +
-                  '<a class="mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(truncate(occ.file, 36) + "#L" + occ.line_start) + '</a>' +
-                  (modHref ? '<a class="mono" href="' + escapeHtml(modHref) + '" target="_blank" rel="noopener">Manuscrit ↗</a>' : '') +
-                  ((occ.role_in_unit || occ.role_in_tome) ? '<span class="chip">' + escapeHtml(occ.role_in_unit || occ.role_in_tome) + '</span>' : '') +
-                '</div>' +
-              '</div>'
-            );
-          });
-          html.push('</div>');
+          var primOccs = occs.filter(function (o) { return Boolean(o.is_primary); });
+          var secOccs = occs.filter(function (o) { return !o.is_primary; });
+          function renderOccList(list, labelHeader, isPrimGroup) {
+            if (!list.length) return;
+            if (labelHeader) html.push('<div style="font-size:11px;font-weight:700;color:var(--text-subtle);margin:4px 0;">' + escapeHtml(labelHeader) + '</div>');
+            html.push('<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:6px;">');
+            list.forEach(function (occ) {
+              var pid = occ.part_id || occ.tome_id || "";
+              var ucid = occ.compendium_unit_id ? (" · " + occ.compendium_unit_id) : "";
+              var href = corpusHref(occ.file, occ.line_start);
+              var modHref = occ.source_file ? corpusHref(occ.source_file, 1) : "";
+              var pdfUrl = occ.pdf_page_start ? compendiumPdfHref(occ.pdf_page_start) : "";
+              var rangeStr = "L" + occ.line_start + (occ.line_end ? "–L" + occ.line_end : "");
+              var pgStr = occ.pdf_page_start ? ("p. " + occ.pdf_page_start + (occ.pdf_page_end && occ.pdf_page_end !== occ.pdf_page_start ? "–" + occ.pdf_page_end : "")) : "";
+              var minStr = occ.reading_minutes ? ("~" + occ.reading_minutes + " min") : "";
+              var excerptHtml = "";
+              if (occ.excerpt) {
+                if (isPrimGroup) excerptHtml = '<div class="excerpt-box">' + prdInlineHtml(occ.excerpt) + '</div>';
+                else excerptHtml = '<details style="font-size:11.5px;"><summary style="cursor:pointer;color:var(--accent-text);">Aperçu du passage</summary><div class="excerpt-box" style="margin-top:4px;">' + prdInlineHtml(occ.excerpt) + '</div></details>';
+              }
+              html.push(
+                '<div class="occ-card' + (isPrimGroup ? ' primary' : '') + '">' +
+                  '<div style="display:flex;justify-content:space-between;gap:6px;align-items:center;flex-wrap:wrap;">' +
+                    '<strong>' + escapeHtml(pid + ucid) + ' · ' + prdInlineHtml(occ.chapter || occ.section || "") + '</strong>' +
+                    '<span class="chip mono">' + escapeHtml([pgStr, minStr, rangeStr].filter(Boolean).join(" · ")) + '</span>' +
+                  '</div>' +
+                  (occ.section && occ.section !== occ.chapter ? '<div style="color:var(--text-muted);font-size:11.5px;">' + prdInlineHtml(occ.section) + '</div>' : '') +
+                  excerptHtml +
+                  '<div style="display:flex;align-items:center;gap:6px;margin-top:2px;flex-wrap:wrap;">' +
+                    (pdfUrl ? '<a class="btn btn-sm primary" href="' + escapeHtml(pdfUrl) + '" target="_blank" rel="noopener">PDF p. ' + occ.pdf_page_start + ' ↗</a>' : '') +
+                    (occ.unit_id ? '<button type="button" class="btn btn-sm" data-jump-struct="' + escapeHtml(occ.unit_id) + '">Plan ↳</button>' : '') +
+                    '<a class="mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">MD #L' + occ.line_start + '</a>' +
+                    (modHref ? '<a class="mono" href="' + escapeHtml(modHref) + '" target="_blank" rel="noopener">Manuscrit ↗</a>' : '') +
+                    ((occ.role_in_unit || occ.role_in_tome) ? '<span class="chip">' + escapeHtml(occ.role_in_unit || occ.role_in_tome) + '</span>' : '') +
+                  '</div>' +
+                '</div>'
+              );
+            });
+            html.push('</div>');
+          }
+          renderOccList(primOccs, primOccs.length ? "Section maîtresse à lire" : "", true);
+          renderOccList(secOccs, primOccs.length && secOccs.length ? "Mentions et applications transversales" : "", false);
         }
         html.push('</div>');
+
+        // Schémas de vulgarisation associés (limité à 8 dans l'inspecteur sur les gros nœuds macro)
+        var nodeSchemas = Array.isArray(n.compendium_schemas) ? n.compendium_schemas : [];
+        if (nodeSchemas.length) {
+          html.push(renderSchemaCardsHtml(nodeSchemas.slice(0, 8)));
+          if (nodeSchemas.length > 8) {
+            html.push('<div style="font-size:11.5px;color:var(--text-muted);">+' + (nodeSchemas.length - 8) + ' autre(s) schéma(s) visibles dans l\'onglet Vue 4 « Galerie 115 schémas ».</div>');
+          }
+        }
+
+        // Ordre de lecture suggéré (amont / aval)
+        html.push(renderReadingOrderBox(n, outRels, inRels));
 
         // Interrelations sortantes / entrantes
         html.push('<div class="inspector-section"><div class="section-label">Interrelations sortantes (' + outRels.length + ')</div>');
@@ -3587,12 +4292,20 @@
         bindKeyboardActivation(body);
 
         // Liaison événements internes inspecteur
-        body.querySelectorAll("[data-jump-node]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            var jid = el.getAttribute("data-jump-node");
-            ensureThemeNodeVisibleUnderFilters(jid);
-            selectThemeNode(jid, true);
-          });
+        bindInspectorInteractiveLinks(body);
+        var bRead = document.getElementById("insp-toggle-read");
+        if (bRead) bRead.addEventListener("click", function () {
+          toggleUnitRead(bRead.getAttribute("data-read-unit"));
+        });
+        var bSt = document.getElementById("insp-goto-st");
+        if (bSt) bSt.addEventListener("click", function () {
+          var targetSu = n.primary_struct_unit_id ||
+            (n.occurrences && n.occurrences[0] && n.occurrences[0].unit_id) ||
+            (n.owner_chapter && idx.structUnitByCompendiumUnitId[n.owner_chapter] && idx.structUnitByCompendiumUnitId[n.owner_chapter].unit_id);
+          if (targetSu) {
+            switchView("structure");
+            selectStructUnit(targetSu, true);
+          }
         });
         var bMm = document.getElementById("insp-goto-mm");
         if (bMm) bMm.addEventListener("click", function () {
@@ -3660,8 +4373,12 @@
         html.push('<span class="chip">' + escapeHtml(u.section_id || u.tome_id) + '</span>');
         if (u.compendium_unit_id) html.push('<span class="chip mono">' + escapeHtml(u.compendium_unit_id) + '</span>');
         html.push('<span class="chip mono">H' + u.level + ' · ' + escapeHtml(u.kind) + '</span>');
+        if (u.pdf_page_start) {
+          var pgLbl = "p. " + u.pdf_page_start + (u.pdf_page_end && u.pdf_page_end !== u.pdf_page_start ? "–" + u.pdf_page_end : "");
+          html.push('<span class="chip mono">' + escapeHtml(pgLbl) + '</span>');
+        }
         html.push('<span class="chip mono">L' + u.line_start + '–L' + u.line_end + '</span>');
-        html.push('<span class="chip">' + Number(u.word_count || 0).toLocaleString("fr-CA") + ' mots</span>');
+        html.push('<span class="chip">' + Number(u.word_count || 0).toLocaleString("fr-CA") + ' mots' + (u.reading_minutes ? " · ~" + u.reading_minutes + " min" : "") + '</span>');
         html.push('</div>');
 
         html.push('<h3 style="margin:6px 0 4px 0;font-size:15px;">' + prdInlineHtml(u.title) + '</h3>');
@@ -3669,12 +4386,38 @@
         if (chapMeta && chapMeta.summary) {
           html.push('<p style="margin:4px 0;font-size:12.5px;color:var(--text-muted);">' + prdInlineHtml(chapMeta.summary) + '</p>');
         }
+        if (u.guiding_question) {
+          html.push('<div class="guiding-q-box"><strong>Question directrice :</strong> ' + prdInlineHtml(u.guiding_question) + '</div>');
+        }
+        if (u.excerpt) {
+          html.push('<div class="excerpt-box">' + prdInlineHtml(u.excerpt) + '</div>');
+        }
         html.push('<div class="chip-row">');
-        html.push('<a class="btn btn-sm primary" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">Ouvrir ' + escapeHtml(truncate(u.filename || u.file, 26)) + ' #L' + u.line_start + '</a>');
+        if (u.pdf_page_start) {
+          html.push('<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(u.pdf_page_start)) + '" target="_blank" rel="noopener">Lire dans le PDF (p. ' + u.pdf_page_start + ') ↗</a>');
+        }
+        html.push('<a class="btn btn-sm' + (u.pdf_page_start ? '' : ' primary') + '" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">Ouvrir ' + escapeHtml(truncate(u.filename || u.file, 24)) + ' #L' + u.line_start + '</a>');
         if (u.source_file) {
           html.push('<a class="btn btn-sm" href="' + escapeHtml(corpusHref(u.source_file, 1)) + '" target="_blank" rel="noopener">Manuscrit source ↗</a>');
         }
+        if (u.compendium_unit_id) {
+          var stIsRead = isUnitRead(u.compendium_unit_id);
+          html.push('<button type="button" class="btn btn-sm read-badge-btn' + (stIsRead ? ' is-read' : '') + '" id="insp-st-toggle-read" data-read-unit="' + escapeHtml(u.compendium_unit_id) + '">' + (stIsRead ? '✓ Lu' : '★ À lire') + '</button>');
+        }
         html.push('</div>');
+
+        var structSchemas = [];
+        if (u.identifiers && u.identifiers.length) {
+          u.identifiers.forEach(function (idStr) {
+            if (idx.schemaById[idStr] && structSchemas.indexOf(idStr) === -1) structSchemas.push(idStr);
+          });
+        }
+        if (!structSchemas.length && u.compendium_unit_id && idx.schemasByUnit[u.compendium_unit_id]) {
+          structSchemas = idx.schemasByUnit[u.compendium_unit_id].slice();
+        }
+        if (structSchemas.length) {
+          html.push(renderSchemaCardsHtml(structSchemas.slice(0, 6)));
+        }
 
         html.push('<div class="inspector-section"><div class="section-label">Thèmes associés (' + linkedIds.length + ')</div>');
         if (linkedIds.length === 0) {
@@ -3694,7 +4437,12 @@
         if (u.identifiers && u.identifiers.length) {
           html.push('<div class="inspector-section"><div class="section-label">Identifiants dans cette section (' + u.identifiers.length + ')</div><div class="chip-row">');
           u.identifiers.slice(0, 32).forEach(function (idStr) {
-            html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
+            var isLinkable = Boolean(idx.schemaById[idStr] || idx.traceById[idStr] || idStr === "DIV-02" || idStr.indexOf("DISC-") === 0);
+            if (isLinkable) {
+              html.push('<span class="chip clickable mono" role="button" tabindex="0" data-jump-ident="' + escapeHtml(idStr) + '">' + escapeHtml(idStr) + '</span>');
+            } else {
+              html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
+            }
           });
           html.push('</div></div>');
         }
@@ -3703,6 +4451,13 @@
         body.scrollTop = 0;
         setInspectorOpen(true);
         bindKeyboardActivation(body);
+        bindInspectorInteractiveLinks(body);
+        var stReadBtn = document.getElementById("insp-st-toggle-read");
+        if (stReadBtn) {
+          stReadBtn.addEventListener("click", function () {
+            toggleUnitRead(stReadBtn.getAttribute("data-read-unit"));
+          });
+        }
         body.querySelectorAll("[data-jump-theme]").forEach(function (el) {
           el.addEventListener("click", function () {
             switchView("mindmap");
@@ -4087,14 +4842,18 @@
         if (!state.stShowList || !pane) return;
 
         var fq = normalizeText(state.stTreeFilter || "").trim();
+        var rf = state.stReadFilter || "all";
         var visibleFiltered = null;
-        if (fq) {
+        if (fq || rf !== "all") {
           visibleFiltered = new Set();
           function collectMatched(id) {
             var item = vTree.nodesMap[id];
             if (!item) return false;
             var hay = item.title + " " + item.sub + " " + (item.unit && Array.isArray(item.unit.identifiers) ? item.unit.identifiers.join(" ") : "");
-            var selfHit = normalizeText(hay).indexOf(fq) !== -1;
+            var textHit = !fq || normalizeText(hay).indexOf(fq) !== -1;
+            var cid = item.unit ? item.unit.compendium_unit_id : null;
+            var readHit = rf === "all" || (cid && ((rf === "read" && isUnitRead(cid)) || (rf === "unread" && !isUnitRead(cid))));
+            var selfHit = textHit && readHit;
             var kids = vTree.childrenMap[id] || [];
             var childHit = false;
             for (var i = 0; i < kids.length; i++) {
@@ -4115,11 +4874,15 @@
           var item = vTree.nodesMap[id];
           if (!item) return;
           var kids = vTree.childrenMap[id] || [];
-          var isExp = fq ? true : state.stExpanded.has(id);
+          var isExp = (fq || rf !== "all") ? true : state.stExpanded.has(id);
           var isSel = state.selectedKind === "structure" && state.selectedId === id;
           var indent = depth * 12;
           var themesCount = item.unit ? (idx.themesByStructUnit[item.unit.unit_id] || []).length : 0;
           var stLevel = item.unit ? item.unit.level : (item.level != null ? item.level : depth);
+          var stPg = item.unit && item.unit.pdf_page_start ? ("p. " + item.unit.pdf_page_start + (item.unit.pdf_page_end && item.unit.pdf_page_end !== item.unit.pdf_page_start ? "–" + item.unit.pdf_page_end : "")) : "";
+          var stCid = item.unit ? item.unit.compendium_unit_id : null;
+          var isUnitHead = Boolean(item.unit && (item.unit.kind === "chapter" || item.unit.kind === "liminaire" || item.unit.kind === "annex"));
+          var readBadge = (isUnitHead && stCid && isUnitRead(stCid)) ? '<span class="unit-read-pill">✓ Lu</span>' : '';
 
           rows.push(
             '<div class="struct-tree-row' + (isSel ? " selected" : "") + '" role="button" tabindex="0" data-st-id="' + escapeHtml(id) + '" data-st-level="' + escapeHtml(stLevel) + '" style="padding-left:' + (6 + indent) + 'px;">' +
@@ -4127,8 +4890,9 @@
                 ? '<button class="struct-expander" data-st-toggle="' + escapeHtml(id) + '">' + (isExp ? "−" : "+") + '</button>'
                 : '<span style="width:18px;display:inline-block;flex-shrink:0;"></span>') +
               '<div style="flex:1;min-width:0;">' +
-                '<div class="struct-row-title" style="word-break:break-word;">' + prdInlineHtml(item.title) + '</div>' +
+                '<div class="struct-row-title" style="word-break:break-word;">' + prdInlineHtml(item.title) + ' ' + readBadge + '</div>' +
                 '<div class="struct-row-meta">' +
+                  (stPg ? '<span class="mono">' + escapeHtml(stPg) + '</span>' : '') +
                   '<span class="mono">' + escapeHtml(item.sub) + '</span>' +
                   (themesCount > 0 ? '<span style="color:var(--accent-text);font-weight:600;">' + themesCount + ' thème(s)</span>' : '') +
                 '</div>' +
@@ -4140,8 +4904,13 @@
           }
         }
         walk("STRUCT_ROOT", 0);
-        pane.innerHTML = rows.length ? rows.join("") : '<div class="empty-state">Aucun titre H1–H6 ne correspond à « ' + escapeHtml(state.stTreeFilter) + ' ».</div>';
+        pane.innerHTML = rows.length ? rows.join("") : '<div class="empty-state">Aucun titre H1–H6 ne correspond aux filtres actifs.</div>';
         bindKeyboardActivation(pane);
+        if (typeof pane.querySelector === "function") {
+          var selRowEl = pane.querySelector(".struct-tree-row.selected");
+          if (selRowEl && typeof selRowEl.scrollIntoView === "function") selRowEl.scrollIntoView({ block: "nearest" });
+        }
+        updateReadProgressUI();
 
         pane.querySelectorAll("[data-st-toggle]").forEach(function (btn) {
           btn.addEventListener("click", function (ev) {
@@ -4656,7 +5425,7 @@
             var targetRow = mat.rows.find(function (x) { return x.row_id === state.c4SelectedCell.rowId; });
             var selCell = targetRow ? targetRow.cells[state.c4SelectedCell.tomeId] : null;
             if (selCell) {
-              html.push('<div class="card"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;"><h3 style="margin:0;">' + prdInlineHtml(targetRow.label) + ' × ' + escapeHtml(state.c4SelectedCell.tomeId) + ' (' + selCell.nodeCount + ' thèmes, ' + selCell.occurrences + ' occurrences)</h3><button type="button" id="c4-cell-close-btn" class="btn btn-sm btn-ghost">Fermer ✕</button></div><div class="chip-row">');
+              html.push('<div class="card"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;"><h3 style="margin:0;">' + prdInlineHtml(targetRow.label) + ' × ' + escapeHtml(state.c4SelectedCell.tomeId) + ' (' + selCell.nodeCount + ' thèmes, ' + selCell.occurrences + ' occurrences)</h3><div class="chip-row"><button type="button" id="c4-filter-mm-btn" class="btn btn-sm primary">Filtrer dans la MindMap</button><button type="button" id="c4-cell-close-btn" class="btn btn-sm btn-ghost">Fermer ✕</button></div></div><div class="chip-row">');
               selCell.nodeIds.forEach(function (nid) {
                 var tn = idx.nodeById[nid];
                 if (tn) html.push('<span class="chip clickable" role="button" tabindex="0" data-c4-jump="' + escapeHtml(nid) + '">' + prdInlineHtml(tn.title) + '</span>');
@@ -4666,6 +5435,21 @@
           }
           container.innerHTML = html.join("");
           bindKeyboardActivation(container);
+
+          var filterMmBtn = document.getElementById("c4-filter-mm-btn");
+          if (filterMmBtn && state.c4SelectedCell) {
+            filterMmBtn.addEventListener("click", function () {
+              var domSelVal = targetRow && targetRow.domain_id ? targetRow.domain_id : "";
+              var secSelVal = state.c4SelectedCell.tomeId || "";
+              var fDomEl = document.getElementById("f-domain");
+              var fSecEl = document.getElementById("f-tome");
+              if (fDomEl) fDomEl.value = domSelVal;
+              if (fSecEl) fSecEl.value = secSelVal;
+              state.filtersOpen = true;
+              onFilterChange();
+              switchView("mindmap");
+            });
+          }
 
           var cellCloseBtn = document.getElementById("c4-cell-close-btn");
           if (cellCloseBtn) {
@@ -4710,7 +5494,12 @@
                 '<h3 style="margin-top:6px;">' + prdInlineHtml(div02.title || "Fermeture de DIV-02") + '</h3>' +
                 '<p style="margin:4px 0;color:var(--text-muted);">' + prdInlineHtml(div02.resolution || div02.description || "") + '</p>' +
                 rectsHtml +
+                '<div class="chip-row">' +
+                (div02.pdf_page ? '<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(div02.pdf_page)) + '" target="_blank" rel="noopener">PDF §0.2 (p. ' + div02.pdf_page + ') ↗</a>' : '') +
+                (div02.annexe_c_pdf_page ? '<a class="btn btn-sm" href="' + escapeHtml(compendiumPdfHref(div02.annexe_c_pdf_page)) + '" target="_blank" rel="noopener">PDF Annexe C (p. ' + div02.annexe_c_pdf_page + ') ↗</a>' : '') +
                 (div02.file ? '<a class="mono" href="' + escapeHtml(corpusHref(div02.file, div02.line_start || 108)) + '" target="_blank" rel="noopener">' + escapeHtml(div02.file) + '#L' + (div02.line_start || 108) + '</a>' : '') +
+                '<button type="button" class="btn btn-sm" data-jump-comp-unit="annexe-c">Plan Annexe C</button>' +
+                '</div>' +
               '</div>'
             );
           }
@@ -4725,11 +5514,16 @@
                 varHtml +
                 '<p style="margin:4px 0;"><strong>Choix canonique :</strong> ' + prdInlineHtml(item.resolution || item.choix_canonique || item.summary || "") + '</p>' +
                 (item.rationale ? '<p style="margin:4px 0;color:var(--text-muted);font-size:12px;">' + prdInlineHtml(item.rationale) + '</p>' : '') +
+                '<div class="chip-row">' +
+                (item.pdf_page ? '<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(item.pdf_page)) + '" target="_blank" rel="noopener">PDF §0.2 (p. ' + item.pdf_page + ') ↗</a>' : '') +
+                (item.annexe_c_pdf_page ? '<a class="btn btn-sm" href="' + escapeHtml(compendiumPdfHref(item.annexe_c_pdf_page)) + '" target="_blank" rel="noopener">PDF Annexe C (p. ' + item.annexe_c_pdf_page + ') ↗</a>' : '') +
                 (item.file ? '<a class="mono" href="' + escapeHtml(corpusHref(item.file, item.line_start || 116)) + '" target="_blank" rel="noopener">' + escapeHtml(item.file) + '#L' + (item.line_start || 116) + '</a>' : '') +
+                '</div>' +
               '</div>'
             );
           });
           container.innerHTML = '<div class="cards-grid">' + (cards.length ? cards.join("") : '<div class="empty-state">Aucune fiche de réconciliation chargée.</div>') + '</div>';
+          bindInspectorInteractiveLinks(container);
           return;
         }
 
@@ -4744,13 +5538,27 @@
             : tl;
           var rows = filteredTl.map(function (ev) {
             var fileRef = ev.file || "Compendium/Compendium.md";
+            var unitChips = (ev.tomes || []).map(function (tCode) {
+              var compUid = tCode === "LIM" ? "00-liminaire" : (tCode === "ANN" ? "annexe-c" : tCode);
+              if (idx.structUnitByCompendiumUnitId[compUid]) {
+                return '<span class="chip clickable mono" role="button" tabindex="0" data-jump-comp-unit="' + escapeHtml(compUid) + '">' + escapeHtml(tCode) + '</span>';
+              }
+              return '<span class="chip mono">' + escapeHtml(tCode) + '</span>';
+            }).join("");
+            var srcLinks = [];
+            if (ev.pdf_page) {
+              srcLinks.push('<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(ev.pdf_page)) + '" target="_blank" rel="noopener">PDF p. ' + ev.pdf_page + ' ↗</a>');
+            }
+            if (ev.line_start) {
+              srcLinks.push('<a class="mono" href="' + escapeHtml(corpusHref(fileRef, ev.line_start)) + '" target="_blank" rel="noopener">Compendium #L' + ev.line_start + '</a>');
+            }
             return (
               '<tr>' +
                 '<td class="mono" style="white-space:nowrap;font-weight:700;">' + prdInlineHtml(ev.date || ev.horizon || "") + '</td>' +
                 '<td><strong>' + prdInlineHtml(ev.cadre || ev.title || "") + '</strong></td>' +
                 '<td class="prose-col" style="color:var(--text-muted);">' + prdInlineHtml(ev.impact || ev.description || "") + '</td>' +
-                '<td>' + escapeHtml((ev.tomes || []).join(", ")) + '</td>' +
-                '<td>' + (ev.line_start ? '<a class="mono" href="' + escapeHtml(corpusHref(fileRef, ev.line_start)) + '" target="_blank" rel="noopener">Compendium #L' + ev.line_start + '</a>' : "") + '</td>' +
+                '<td><div class="chip-row">' + unitChips + '</div></td>' +
+                '<td><div class="chip-row">' + srcLinks.join("") + '</div></td>' +
               '</tr>'
             );
           });
@@ -4762,6 +5570,8 @@
               '</div>' +
               '<div class="table-wrap"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Unités Compendium</th><th>Source</th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div>' +
             '</div>';
+          bindKeyboardActivation(container);
+          bindInspectorInteractiveLinks(container);
           var tlInput = document.getElementById("c4-tl-search");
           if (tlInput) {
             tlInput.addEventListener("input", function (ev) {
@@ -4783,18 +5593,32 @@
           var qNorm = normalizeText(qVal).trim();
           var filteredMat = qNorm
             ? matItems.filter(function (m) {
-                var hay = normalizeText([m.id || m.code, m.family || m.famille, m.title || m.description, m.module || m.target, m.anchor || m.tomes].join(" "));
+                var hay = normalizeText([m.id || m.code, m.family || m.famille, m.title || m.description, m.module || m.target, m.anchor || m.tomes, m.compendium_unit_id || ""].join(" "));
                 return hay.indexOf(qNorm) !== -1;
               })
             : matItems;
           var rowsT = filteredMat.map(function (m) {
+            var anchorParts = ['<div>' + prdInlineHtml(m.anchor || m.tomes || "") + '</div>'];
+            var actionLinks = [];
+            if (m.pdf_page) {
+              actionLinks.push('<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(m.pdf_page)) + '" target="_blank" rel="noopener">PDF p. ' + m.pdf_page + ' ↗</a>');
+            }
+            if (m.compendium_line_start) {
+              actionLinks.push('<a class="mono" href="' + escapeHtml(corpusHref("Compendium/Compendium.md", m.compendium_line_start)) + '" target="_blank" rel="noopener">L' + m.compendium_line_start + '</a>');
+            }
+            if (m.struct_unit_id) {
+              actionLinks.push('<button type="button" class="btn btn-sm" data-jump-struct="' + escapeHtml(m.struct_unit_id) + '">Plan ↳</button>');
+            } else if (m.compendium_unit_id) {
+              actionLinks.push('<button type="button" class="btn btn-sm" data-jump-comp-unit="' + escapeHtml(m.compendium_unit_id) + '">' + escapeHtml(m.compendium_unit_id) + ' ↳</button>');
+            }
+            if (actionLinks.length) anchorParts.push('<div class="chip-row" style="margin-top:4px;">' + actionLinks.join("") + '</div>');
             return (
               '<tr>' +
                 '<td class="mono" style="font-weight:700;">' + escapeHtml(m.id || m.code || "") + '</td>' +
                 '<td><span class="chip">' + prdInlineHtml(m.family || m.famille || "") + '</span></td>' +
                 '<td class="prose-col">' + prdInlineHtml(m.title || m.description || "") + '</td>' +
                 '<td class="mono">' + prdInlineHtml(m.module || m.target || "") + '</td>' +
-                '<td class="mono">' + prdInlineHtml(m.anchor || m.tomes || "") + '</td>' +
+                '<td class="mono">' + anchorParts.join("") + '</td>' +
               '</tr>'
             );
           });
@@ -4806,6 +5630,8 @@
               '</div>' +
               '<div class="table-wrap"><table class="data-table"><thead><tr><th>Identifiant</th><th>Famille</th><th>Intitulé / Règle</th><th>Module Trousse</th><th>Ancrage</th></tr></thead><tbody>' + rowsT.join("") + '</tbody></table></div>' +
             '</div>';
+          bindKeyboardActivation(container);
+          bindInspectorInteractiveLinks(container);
           var trInput = document.getElementById("c4-trace-search");
           if (trInput) {
             trInput.addEventListener("input", function (ev) {
@@ -4857,14 +5683,22 @@
             var cLine = gt.compendium_md_line || 1;
             var isSa = normalizeText(gt.fr || "").indexOf("agentivite des systemes") !== -1;
             var ownerCode = String(gt.chapitre_proprietaire || "");
+            var ownerCell = (ownerCode && idx.structUnitByCompendiumUnitId[ownerCode])
+              ? '<span class="chip clickable mono" role="button" tabindex="0" data-jump-comp-unit="' + escapeHtml(ownerCode) + '">' + escapeHtml(ownerCode) + '</span>'
+              : escapeHtml(ownerCode);
+            var compLinks = [];
+            if (gt.pdf_page) {
+              compLinks.push('<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(gt.pdf_page)) + '" target="_blank" rel="noopener">p. ' + gt.pdf_page + ' ↗</a>');
+            }
+            compLinks.push('<a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a>');
             gHtml.push(
               '<tr' + (isSa ? ' style="background:var(--accent-soft);"' : '') + '>' +
                 '<td><strong>' + prdInlineHtml(gt.fr || "") + '</strong></td>' +
                 '<td class="mono">' + escapeHtml(gt.en || "") + '</td>' +
                 '<td class="prose-col">' + prdInlineHtml(gt.definition || "") + '</td>' +
-                '<td class="mono">' + escapeHtml(ownerCode) + '</td>' +
+                '<td class="mono">' + ownerCell + '</td>' +
                 '<td class="mono">' + escapeHtml(gt.source_l_plus_id || "") + '</td>' +
-                '<td><a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a></td>' +
+                '<td><div class="chip-row">' + compLinks.join("") + '</div></td>' +
               '</tr>'
             );
           });
@@ -4906,6 +5740,8 @@
           }
 
           container.innerHTML = gHtml.join("");
+          bindKeyboardActivation(container);
+          bindInspectorInteractiveLinks(container);
           var glInput = document.getElementById("c4-gloss-search");
           if (glInput) {
             glInput.addEventListener("input", function (ev) {
@@ -4920,6 +5756,99 @@
           }
           return;
         }
+
+        if (state.c4Tab === "schemas_gallery") {
+          var allSchemas = idx.schemas || [];
+          var sq = state.c4SchemaQuery || "";
+          var sqNorm = normalizeText(sq).trim();
+          var sDom = state.c4SchemaDomain || "";
+          var sAud = state.c4SchemaAudience || "";
+
+          var domOpts = ['<option value="">Tous les domaines</option>'];
+          ['GLOBAL'].concat(idx.domains.map(function (d) { return d.domain_id; })).forEach(function (did) {
+            domOpts.push('<option value="' + escapeHtml(did) + '"' + (sDom === did ? ' selected' : '') + '>' + escapeHtml(did) + '</option>');
+          });
+          var audSet = new Set();
+          allSchemas.forEach(function (sc) { (sc.target_audiences || []).forEach(function (a) { audSet.add(a); }); });
+          var audOpts = ['<option value="">Tous les publics</option>'];
+          Array.from(audSet).sort().forEach(function (a) {
+            audOpts.push('<option value="' + escapeHtml(a) + '"' + (sAud === a ? ' selected' : '') + '>' + escapeHtml(a) + '</option>');
+          });
+
+          var filteredSchemas = allSchemas.filter(function (sc) {
+            if (sDom && sc.domain_id !== sDom) return false;
+            if (sAud && (sc.target_audiences || []).indexOf(sAud) === -1) return false;
+            if (sqNorm) {
+              var hay = normalizeText([sc.schema_id, sc.title, sc.unit, sc.notation, sc.pedagogical_objective, (sc.themes_vulgarized || []).join(" ")].join(" "));
+              if (hay.indexOf(sqNorm) === -1) return false;
+            }
+            return true;
+          });
+
+          var sCards = filteredSchemas.map(function (sc) {
+            var themePills = (sc.themes_vulgarized || []).slice(0, 4).map(function (sl) {
+              var tn = idx.nodeBySlug[sl];
+              if (!tn) return "";
+              return '<span class="chip clickable" role="button" tabindex="0" data-c4-jump="' + escapeHtml(tn.node_id) + '">' + prdInlineHtml(truncate(tn.title, 28)) + '</span>';
+            }).join("");
+            return (
+              '<div class="schema-gallery-card">' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">' +
+                  '<span class="chip mono"><strong>' + escapeHtml(sc.schema_id) + '</strong></span>' +
+                  '<span class="chip">' + escapeHtml(sc.domain_id) + ' · ' + escapeHtml(sc.unit) + (sc.pdf_page ? ' · p. ' + sc.pdf_page : '') + '</span>' +
+                '</div>' +
+                '<h3 style="margin:0;font-size:13.5px;">' + prdInlineHtml(sc.title) + '</h3>' +
+                '<div class="schema-thumb-wrap" role="button" tabindex="0" data-open-schema-modal="' + escapeHtml(sc.schema_id) + '" title="Cliquer pour agrandir">' +
+                  '<img class="schema-thumb-img" loading="lazy" src="' + escapeHtml(tomeAssetHref(sc.rendered_path)) + '" alt="' + escapeHtml(sc.schema_id) + '" />' +
+                '</div>' +
+                (sc.pedagogical_objective ? '<div style="font-size:12px;color:var(--text-muted);">' + prdInlineHtml(truncate(sc.pedagogical_objective, 190)) + '</div>' : '') +
+                (themePills ? '<div class="chip-row">' + themePills + '</div>' : '') +
+                '<div class="chip-row" style="margin-top:auto;">' +
+                  '<button type="button" class="btn btn-sm" data-open-schema-modal="' + escapeHtml(sc.schema_id) + '">Agrandir</button>' +
+                  '<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(sc.pdf_page)) + '" target="_blank" rel="noopener">PDF p. ' + (sc.pdf_page || 1) + ' ↗</a>' +
+                  '<button type="button" class="btn btn-sm" data-jump-comp-unit="' + escapeHtml(sc.unit) + '">Plan ↳</button>' +
+                  '<a class="mono" href="' + escapeHtml(corpusHref(sc.compendium_md_file, sc.compendium_md_line)) + '" target="_blank" rel="noopener">L' + sc.compendium_md_line + '</a>' +
+                '</div>' +
+              '</div>'
+            );
+          });
+
+          container.innerHTML =
+            '<div class="card">' +
+              '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;">' +
+                '<input id="c4-schema-search" class="search-input" style="max-width:300px;" type="search" placeholder="Rechercher SCH-*, concept, chapitre…" value="' + escapeHtml(sq) + '" />' +
+                '<select id="c4-schema-dom" class="filter-select">' + domOpts.join("") + '</select>' +
+                '<select id="c4-schema-aud" class="filter-select">' + audOpts.join("") + '</select>' +
+                '<span class="kpi-pill"><strong>' + filteredSchemas.length + '</strong> / ' + allSchemas.length + ' schémas</span>' +
+              '</div>' +
+              '<div class="schemas-gallery-grid">' + (sCards.length ? sCards.join("") : '<div class="empty-state">Aucun schéma ne correspond à ces critères.</div>') + '</div>' +
+            '</div>';
+          bindKeyboardActivation(container);
+          bindInspectorInteractiveLinks(container);
+          container.querySelectorAll("[data-c4-jump]").forEach(function (ch) {
+            ch.addEventListener("click", function () {
+              switchView("mindmap");
+              selectThemeNode(ch.getAttribute("data-c4-jump"), true);
+            });
+          });
+          var scIn = document.getElementById("c4-schema-search");
+          if (scIn) {
+            scIn.addEventListener("input", function (ev) {
+              state.c4SchemaQuery = ev.target.value;
+              renderConcordanceView();
+              var nextEl = document.getElementById("c4-schema-search");
+              if (nextEl) {
+                nextEl.focus();
+                nextEl.setSelectionRange(nextEl.value.length, nextEl.value.length);
+              }
+            });
+          }
+          var scDomSel = document.getElementById("c4-schema-dom");
+          if (scDomSel) scDomSel.addEventListener("change", function (ev) { state.c4SchemaDomain = ev.target.value; renderConcordanceView(); });
+          var scAudSel = document.getElementById("c4-schema-aud");
+          if (scAudSel) scAudSel.addEventListener("change", function (ev) { state.c4SchemaAudience = ev.target.value; renderConcordanceView(); });
+          return;
+        }
       }
 
       // =========================================================================
@@ -4931,6 +5860,9 @@
       var SEARCH_CATEGORY_LABELS = {
         theme: "Thème",
         glossary: "Glossaire",
+        schema: "Schéma",
+        traceability: "Matrice",
+        timeline: "Jalon",
         structure: "Structure"
       };
 
@@ -4953,10 +5885,10 @@
           return;
         }
         searchDropdown.innerHTML = headerHtml + results.map(function (r, i) {
-          var icon = r.kind === "theme" ? "◆" : "§";
+          var icon = r.kind === "theme" ? "◆" : (r.kind === "schema" ? "▣" : (r.kind === "traceability" ? "✓" : (r.kind === "timeline" ? "◷" : "§")));
           var catLabel = SEARCH_CATEGORY_LABELS[r.kind] || "Structure";
           return (
-            '<div class="search-item' + (i === 0 ? " active" : "") + '" role="button" tabindex="0" data-res-kind="' + escapeHtml(r.kind) + '" data-res-id="' + escapeHtml(r.id) + '">' +
+            '<div class="search-item' + (i === 0 ? " active" : "") + '" role="button" tabindex="0" data-res-kind="' + escapeHtml(r.kind) + '" data-res-id="' + escapeHtml(r.id) + '" data-res-q="' + escapeHtml(r.query || r.id) + '">' +
               '<div class="search-item-head">' +
                 '<span>' + escapeHtml(icon) + '</span>' +
                 '<span class="search-cat-badge">' + escapeHtml(catLabel) + '</span>' +
@@ -4973,16 +5905,47 @@
           el.addEventListener("click", function () {
             var kind = el.getAttribute("data-res-kind");
             var rid = el.getAttribute("data-res-id");
+            var rq = el.getAttribute("data-res-q") || rid;
             searchDropdown.classList.remove("open");
             if (kind === "theme") {
               ensureThemeNodeVisibleUnderFilters(rid);
               switchView("mindmap");
               selectThemeNode(rid, true);
+            } else if (kind === "schema") {
+              state.c4Tab = "schemas_gallery";
+              state.c4SchemaQuery = rid;
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                var isA = b.getAttribute("data-c4-tab") === "schemas_gallery";
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
+              });
+              switchView("concordance");
+              openSchemaModal(rid);
+            } else if (kind === "traceability") {
+              state.c4Tab = "traceability";
+              state.c4TraceQuery = rid;
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                var isA = b.getAttribute("data-c4-tab") === "traceability";
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
+              });
+              switchView("concordance");
+            } else if (kind === "timeline") {
+              state.c4Tab = "timeline";
+              state.c4TimelineQuery = rq;
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                var isA = b.getAttribute("data-c4-tab") === "timeline";
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
+              });
+              switchView("concordance");
             } else if (kind === "glossary") {
               state.c4Tab = "glossary_evidence";
               state.c4GlossaryQuery = rid;
               document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
-                b.classList.toggle("active", b.getAttribute("data-c4-tab") === "glossary_evidence");
+                var isA = b.getAttribute("data-c4-tab") === "glossary_evidence";
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
               });
               switchView("concordance");
             } else {
@@ -5098,8 +6061,97 @@
       });
 
       // =========================================================================
-      // Navigation & Événements globaux
+      // Parcours guidés & Navigation
       // =========================================================================
+      function renderReadingPathBanner() {
+        var banner = document.getElementById("reading-path-banner");
+        var rpSel = document.getElementById("reading-path-select");
+        if (rpSel) rpSel.value = state.activeTourId || "";
+        if (!banner) return;
+        if (!state.activeTourId || !idx.readingPathById[state.activeTourId]) {
+          banner.classList.add("hidden");
+          banner.innerHTML = "";
+          return;
+        }
+        var rp = idx.readingPathById[state.activeTourId];
+        var steps = rp.steps || [];
+        if (!steps.length) {
+          banner.classList.add("hidden");
+          return;
+        }
+        var stepIdx = Math.max(0, Math.min(steps.length - 1, Number(state.activeTourStep) || 0));
+        state.activeTourStep = stepIdx;
+        var stp = steps[stepIdx];
+        var pgLbl = stp.pdf_page_start ? ("p. " + stp.pdf_page_start + (stp.pdf_page_end && stp.pdf_page_end !== stp.pdf_page_start ? "–" + stp.pdf_page_end : "")) : "";
+        var stpRead = isUnitRead(stp.compendium_unit_id);
+        banner.innerHTML =
+          '<div class="reading-path-meta">' +
+            '<span class="chip mono"><strong>' + escapeHtml(rp.audience) + '</strong></span>' +
+            '<span><strong>Étape ' + (stepIdx + 1) + ' / ' + steps.length + ' :</strong> ' + prdInlineHtml(stp.title) + '</span>' +
+            '<span class="chip mono">' + escapeHtml([pgLbl, "~" + stp.reading_minutes + " min (total ~" + rp.total_minutes + " min)"].filter(Boolean).join(" · ")) + '</span>' +
+            (stp.objective ? '<span style="color:var(--text-muted);">— ' + prdInlineHtml(truncate(stp.objective, 110)) + '</span>' : '') +
+          '</div>' +
+          '<div class="reading-path-actions">' +
+            (stp.pdf_page_start ? '<a class="btn btn-sm primary" href="' + escapeHtml(compendiumPdfHref(stp.pdf_page_start)) + '" target="_blank" rel="noopener">PDF p. ' + stp.pdf_page_start + ' ↗</a>' : '') +
+            '<button type="button" class="btn btn-sm" id="tour-goto-plan">Plan (Vue 2)</button>' +
+            '<button type="button" class="btn btn-sm read-badge-btn' + (stpRead ? ' is-read' : '') + '" id="tour-toggle-read">' + (stpRead ? '✓ Lu' : '★ Marquer lu') + '</button>' +
+            '<button type="button" class="btn btn-sm" id="tour-prev-btn"' + (stepIdx === 0 ? ' disabled' : '') + '>◀ Précédent</button>' +
+            '<button type="button" class="btn btn-sm" id="tour-next-btn"' + (stepIdx >= steps.length - 1 ? ' disabled' : '') + '>Suivant ▶</button>' +
+            '<button type="button" class="btn btn-sm btn-ghost" id="tour-close-btn">Quitter ✕</button>' +
+          '</div>';
+        banner.classList.remove("hidden");
+
+        var prevB = document.getElementById("tour-prev-btn");
+        if (prevB) prevB.addEventListener("click", function () { activateReadingPath(state.activeTourId, stepIdx - 1); });
+        var nextB = document.getElementById("tour-next-btn");
+        if (nextB) nextB.addEventListener("click", function () { activateReadingPath(state.activeTourId, stepIdx + 1); });
+        var closeB = document.getElementById("tour-close-btn");
+        if (closeB) closeB.addEventListener("click", function () {
+          state.activeTourId = "";
+          state.activeTourStep = 0;
+          renderReadingPathBanner();
+          syncLocationHash(false);
+        });
+        var readB = document.getElementById("tour-toggle-read");
+        if (readB) readB.addEventListener("click", function () { toggleUnitRead(stp.compendium_unit_id); });
+        var planB = document.getElementById("tour-goto-plan");
+        if (planB) planB.addEventListener("click", function () {
+          if (stp.struct_unit_id) {
+            switchView("structure");
+            selectStructUnit(stp.struct_unit_id, true);
+          } else {
+            selectCompendiumUnitInStructure(stp.compendium_unit_id);
+          }
+        });
+      }
+
+      function activateReadingPath(pathId, stepIdx) {
+        if (!pathId || !idx.readingPathById[pathId]) {
+          state.activeTourId = "";
+          state.activeTourStep = 0;
+          renderReadingPathBanner();
+          syncLocationHash(false);
+          return false;
+        }
+        var rp = idx.readingPathById[pathId];
+        var steps = rp.steps || [];
+        var idxStep = Math.max(0, Math.min(steps.length - 1, Number(stepIdx) || 0));
+        state.activeTourId = pathId;
+        state.activeTourStep = idxStep;
+        var stp = steps[idxStep];
+        renderReadingPathBanner();
+        if (stp && stp.representative_node_id && idx.nodeById[stp.representative_node_id]) {
+          ensureThemeNodeVisibleUnderFilters(stp.representative_node_id);
+          if (state.activeView !== "mindmap" && state.activeView !== "synaptic") {
+            switchView("mindmap");
+          }
+          selectThemeNode(stp.representative_node_id, true);
+        } else {
+          syncLocationHash(false);
+        }
+        return true;
+      }
+
       function switchView(viewName) {
         state.activeView = viewName;
         if (isDrawerViewport()) {
@@ -5128,6 +6180,7 @@
         else if (viewName === "structure") renderStructureView(!state.stLastPositions || Object.keys(state.stLastPositions).length === 0);
         else if (viewName === "synaptic") renderSynapticGraph(!state.syPositions);
         else if (viewName === "concordance") renderConcordanceView();
+        syncLocationHash(false);
       }
 
       document.querySelectorAll(".view-tab").forEach(function (btn) {
@@ -5298,6 +6351,29 @@
           renderStructureView(false);
         });
       }
+      document.querySelectorAll("[data-st-read-filter]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          state.stReadFilter = btn.getAttribute("data-st-read-filter") || "all";
+          document.querySelectorAll("[data-st-read-filter]").forEach(function (b) { b.classList.toggle("active", b === btn); });
+          renderStructListPane(buildStructVirtualTree());
+        });
+      });
+
+      var rpSelectEl = document.getElementById("reading-path-select");
+      if (rpSelectEl) {
+        rpSelectEl.addEventListener("change", function (ev) {
+          activateReadingPath(ev.target.value, 0);
+        });
+      }
+
+      var modalBackdrop = document.getElementById("schema-modal-backdrop");
+      var modalCloseBtn = document.getElementById("schema-modal-close-btn");
+      if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeSchemaModal);
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", function (ev) {
+          if (ev.target === modalBackdrop) closeSchemaModal();
+        });
+      }
 
       // Contrôles Vue 3
       document.querySelectorAll("[data-sy-layout]").forEach(function (btn) {
@@ -5354,6 +6430,7 @@
             b.setAttribute("tabindex", isA ? "0" : "-1");
           });
           renderConcordanceView();
+          syncLocationHash(false);
         });
       });
       var c4Tablist = typeof document.querySelector === "function" ? document.querySelector('.subtabs[role="tablist"]') : null;
@@ -5490,6 +6567,11 @@
           return;
         }
         if (e.key === "Escape") {
+          var modalBd = document.getElementById("schema-modal-backdrop");
+          if (modalBd && !modalBd.classList.contains("hidden")) {
+            closeSchemaModal();
+            return;
+          }
           if (searchDropdown && searchDropdown.classList.contains("open")) {
             searchDropdown.classList.remove("open");
             return;
@@ -5526,49 +6608,76 @@
       function applyHashNavigation(hashStr) {
         var p = parseLocationHash(hashStr);
         if (!p || Object.keys(p).length === 0) return false;
-        if (p.view === "synaptic") {
-          if (p.ego && (p.ego === "all" || p.ego === "1" || p.ego === "2")) {
-            state.syEgo = p.ego;
-            document.querySelectorAll("[data-sy-ego]").forEach(function (b) {
-              b.classList.toggle("active", b.getAttribute("data-sy-ego") === state.syEgo);
-            });
+        suppressHashSync = true;
+        try {
+          if (p.tour && idx.readingPathById[p.tour]) {
+            state.activeTourId = p.tour;
+            state.activeTourStep = Math.max(0, Number(p.step || 0) || 0);
+            renderReadingPathBanner();
           }
-          if (p.node) {
-            ensureThemeNodeVisibleUnderFilters(p.node);
-            state.selectedKind = "theme";
-            state.selectedId = p.node;
-            state.syPositions = null;
+          if (p.view === "synaptic") {
+            if (p.ego && (p.ego === "all" || p.ego === "1" || p.ego === "2")) {
+              state.syEgo = p.ego;
+              document.querySelectorAll("[data-sy-ego]").forEach(function (b) {
+                b.classList.toggle("active", b.getAttribute("data-sy-ego") === state.syEgo);
+              });
+            }
+            if (p.node) {
+              ensureThemeNodeVisibleUnderFilters(p.node);
+              state.selectedKind = "theme";
+              state.selectedId = p.node;
+              state.syPositions = null;
+            }
+            switchView("synaptic");
+            if (p.node) selectThemeNode(p.node, true);
+            return true;
           }
-          switchView("synaptic");
-          if (p.node) selectThemeNode(p.node, true);
-          return true;
-        }
-        if (p.view === "mindmap") {
-          if (p.node) ensureThemeNodeVisibleUnderFilters(p.node);
-          switchView("mindmap");
-          if (p.node) selectThemeNode(p.node, true);
-          return true;
-        }
-        if (p.view === "structure") {
-          switchView("structure");
-          if (p.unit) selectStructUnit(p.unit, true);
-          return true;
-        }
-        if (p.view === "concordance") {
-          var validC4Tabs = ["heatmap", "reconciliations", "timeline", "traceability", "glossary_evidence"];
-          if (p.tab && validC4Tabs.indexOf(p.tab) !== -1) {
-            state.c4Tab = p.tab;
-            document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
-              b.classList.toggle("active", b.getAttribute("data-c4-tab") === state.c4Tab);
-            });
+          if (p.view === "mindmap") {
+            if (p.node) ensureThemeNodeVisibleUnderFilters(p.node);
+            switchView("mindmap");
+            if (p.node) {
+              selectThemeNode(p.node, true);
+            } else if (state.activeTourId) {
+              var rp = idx.readingPathById[state.activeTourId];
+              var stp = rp && rp.steps && rp.steps[state.activeTourStep];
+              if (stp && stp.representative_node_id) selectThemeNode(stp.representative_node_id, true);
+            }
+            return true;
           }
-          if (p.q && state.c4Tab === "glossary_evidence") {
-            state.c4GlossaryQuery = p.q;
+          if (p.view === "structure") {
+            switchView("structure");
+            if (p.unit) selectStructUnit(p.unit, true);
+            return true;
           }
-          switchView("concordance");
-          return true;
+          if (p.view === "concordance") {
+            var validC4Tabs = ["heatmap", "reconciliations", "timeline", "traceability", "glossary_evidence", "schemas_gallery"];
+            if (p.tab && validC4Tabs.indexOf(p.tab) !== -1) {
+              state.c4Tab = p.tab;
+              document.querySelectorAll("[data-c4-tab]").forEach(function (b) {
+                var isA = b.getAttribute("data-c4-tab") === state.c4Tab;
+                b.classList.toggle("active", isA);
+                b.setAttribute("aria-selected", isA ? "true" : "false");
+                b.setAttribute("tabindex", isA ? "0" : "-1");
+              });
+            }
+            if (p.q) {
+              if (state.c4Tab === "glossary_evidence") state.c4GlossaryQuery = p.q;
+              else if (state.c4Tab === "traceability") state.c4TraceQuery = p.q;
+              else if (state.c4Tab === "timeline") state.c4TimelineQuery = p.q;
+              else if (state.c4Tab === "schemas_gallery") state.c4SchemaQuery = p.q;
+            }
+            switchView("concordance");
+            if (p.schema && idx.schemaById[p.schema]) openSchemaModal(p.schema);
+            return true;
+          }
+          if (p.tour && idx.readingPathById[p.tour]) {
+            activateReadingPath(p.tour, state.activeTourStep);
+            return true;
+          }
+          return false;
+        } finally {
+          suppressHashSync = false;
         }
-        return false;
       }
 
       if (typeof globalThis !== "undefined") {
@@ -5577,6 +6686,9 @@
           selectThemeNode: selectThemeNode,
           selectStructUnit: selectStructUnit,
           applyHashNavigation: applyHashNavigation,
+          activateReadingPath: activateReadingPath,
+          toggleUnitRead: toggleUnitRead,
+          openSchemaModal: openSchemaModal,
           getState: function () { return state; }
         };
       }

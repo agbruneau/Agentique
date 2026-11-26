@@ -25,7 +25,12 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import re
+import sys
 from typing import Any
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 
 PLACEHOLDER_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\b(?:TODO|FIXME|XXX|À COMPLÉTER)\b", re.IGNORECASE),
@@ -268,6 +273,7 @@ def _build_concordance_section(
     manifest: dict[str, Any],
     comp_lines: list[str],
     unit_spans: dict[str, tuple[int, int]],
+    pdf_index: Any | None = None,
 ) -> dict[str, Any]:
     """Construit la concordance taxonomique et le découpage des parties du Compendium."""
     part_titles = manifest.get("part_titles") or {}
@@ -276,6 +282,25 @@ def _build_concordance_section(
         "V": "P05", "VI": "P06", "VII": "P07", "VIII": "P08",
         "IX": "P09", "X": "P10", "XI": "P11", "XII": "P12",
     }
+
+    def _pdf_span_for_units(unit_ids: list[str], fallback_line: int) -> tuple[int | None, int | None]:
+        if pdf_index is None:
+            return None, None
+        starts: list[int] = []
+        ends: list[int] = []
+        for uid in unit_ids:
+            u_ln = unit_spans.get(uid, (fallback_line, fallback_line))[0]
+            sp = pdf_index.heading_pages_by_line.get(u_ln)
+            if sp is not None:
+                starts.append(sp[0])
+                ends.append(sp[1])
+        if starts:
+            return min(starts), max(ends)
+        p0 = pdf_index.resolve_line_page(fallback_line)
+        return p0, p0
+
+    lim_line = unit_spans["00-liminaire"][0]
+    lim_p0, lim_p1 = _pdf_span_for_units(["00-liminaire"], lim_line)
     compendium_parts: list[dict[str, Any]] = [
         {
             "tome_id": "R",
@@ -284,6 +309,8 @@ def _build_concordance_section(
             "title": "Index éditorial du Compendium",
             "units": [],
             "line_start": 1,
+            "pdf_page_start": None,
+            "pdf_page_end": None,
         },
         {
             "tome_id": "LIM",
@@ -291,12 +318,17 @@ def _build_concordance_section(
             "file": "Compendium/Compendium.md",
             "title": "Liminaire — Sommaire exécutif global, doctrine 80/20 et panorama visuel",
             "units": ["00-liminaire"],
-            "line_start": unit_spans["00-liminaire"][0],
+            "line_start": lim_line,
+            "pdf_page_start": lim_p0,
+            "pdf_page_end": lim_p1,
         },
     ]
     for roman, pid in roman_to_pid.items():
         part_units = [u for u in manifest["units"] if u.get("part") == roman]
         first_uid = part_units[0]["id"] if part_units else "00-liminaire"
+        u_ids = [u["id"] for u in part_units]
+        f_line = unit_spans.get(first_uid, (1, 1))[0]
+        p0, p1 = _pdf_span_for_units(u_ids, f_line)
         compendium_parts.append(
             {
                 "tome_id": pid,
@@ -304,19 +336,26 @@ def _build_concordance_section(
                 "part_roman": roman,
                 "file": "Compendium/Compendium.md",
                 "title": _clean_text(part_titles.get(roman, f"Partie {roman}")),
-                "units": [u["id"] for u in part_units],
-                "line_start": unit_spans.get(first_uid, (1, 1))[0],
+                "units": u_ids,
+                "line_start": f_line,
+                "pdf_page_start": p0,
+                "pdf_page_end": p1,
             }
         )
     ann_units = [u for u in manifest["units"] if u["kind"] == "annex"]
+    ann_ids = [u["id"] for u in ann_units]
+    ann_line = unit_spans.get("annexe-a", (6056, 6056))[0]
+    ann_p0, ann_p1 = _pdf_span_for_units(ann_ids, ann_line)
     compendium_parts.append(
         {
             "tome_id": "ANN",
             "part_id": "ANN",
             "file": "Compendium/Compendium.md",
             "title": "Annexes — Instruments de référence (A à E)",
-            "units": [u["id"] for u in ann_units],
-            "line_start": unit_spans.get("annexe-a", (6056, 6056))[0],
+            "units": ann_ids,
+            "line_start": ann_line,
+            "pdf_page_start": ann_p0,
+            "pdf_page_end": ann_p1,
         }
     )
 
@@ -338,6 +377,7 @@ def _build_discordances(
     conc: dict[str, Any],
     comp_lines: list[str],
     unit_spans: dict[str, tuple[int, int]],
+    pdf_index: Any | None = None,
 ) -> dict[str, Any]:
     """Ancre DIV-02 et DISC-01..05 directement sur ``Compendium/Compendium.md``."""
     lim_span = unit_spans.get("00-liminaire", (74, 210))
@@ -346,9 +386,14 @@ def _build_discordances(
 
     div_raw = dict(conc["div_02"])
     div_line = _find_line_in_compendium(comp_lines, ["DIV-02"], [lim_span, ch36_span, ann_c_span])
+    div_ann_c_line = _find_line_in_compendium(comp_lines, ["DIV-02"], [ann_c_span])
     div_obj = _sanitize_nested(div_raw)
     div_obj["compendium_file"] = "Compendium/Compendium.md"
     div_obj["compendium_line_start"] = div_line
+    div_obj["compendium_annexe_c_line"] = div_ann_c_line
+    if pdf_index is not None:
+        div_obj["compendium_pdf_page"] = pdf_index.resolve_line_page(div_line, ["DIV-02"])
+        div_obj["compendium_annexe_c_pdf_page"] = pdf_index.resolve_line_page(div_ann_c_line, ["DIV-02"])
     div_obj["source"] = (
         f"Compendium/Compendium.md (§ 0.2, Ch. 36, Annexe C · L{div_line}) & "
         "Sources/Compendium/ouvrage/registre/concordance-taxonomies.json"
@@ -358,10 +403,14 @@ def _build_discordances(
     for raw_entry in conc["concordances"]:
         did = raw_entry["discordance_id"]
         d_line = _find_line_in_compendium(comp_lines, [did], [lim_span, ch36_span, ann_c_span])
+        ann_c_line = _find_line_in_compendium(comp_lines, [did], [ann_c_span])
         item = _sanitize_nested(raw_entry)
         item["compendium_file"] = "Compendium/Compendium.md"
         item["compendium_line_start"] = d_line
-        item["compendium_annexe_c_line"] = _find_line_in_compendium(comp_lines, [did], [ann_c_span])
+        item["compendium_annexe_c_line"] = ann_c_line
+        if pdf_index is not None:
+            item["compendium_pdf_page"] = pdf_index.resolve_line_page(d_line, [did])
+            item["compendium_annexe_c_pdf_page"] = pdf_index.resolve_line_page(ann_c_line, [did])
         disc_entries.append(item)
 
     return {
@@ -380,6 +429,7 @@ def _build_chronology(
     anc_raw: dict[str, Any],
     comp_lines: list[str],
     unit_spans: dict[str, tuple[int, int]],
+    pdf_index: Any | None = None,
 ) -> dict[str, Any]:
     """Assemble la chronologie des 77 jalons uniques depuis ``registre/ancres-chronologiques.json``."""
     lim_span = unit_spans.get("00-liminaire", (74, 210))
@@ -401,9 +451,11 @@ def _build_chronology(
         date_val = str(anc.get("date", ""))
         needles = [key, date_val, anc.get("label", "")[:32]]
         ln = _find_line_in_compendium(comp_lines, needles, [ann_c_span, ch31_span, lim_span])
+        pdf_page = pdf_index.resolve_line_page(ln, needles) if pdf_index is not None else None
         enriched = _sanitize_nested(anc)
         enriched["compendium_file"] = "Compendium/Compendium.md"
         enriched["compendium_line_start"] = ln
+        enriched["pdf_page"] = pdf_page
         ancres_compendium_77.append(enriched)
 
         origin = anc.get("origin")
@@ -428,6 +480,7 @@ def _build_chronology(
                     "jalons": jalons,
                     "compendium_file": "Compendium/Compendium.md",
                     "compendium_line_start": ln,
+                    "pdf_page": pdf_page,
                     "source_l_plus_id": _clean_text(anc.get("source_l_plus_id", "")),
                 }
             )
@@ -444,6 +497,7 @@ def _build_chronology(
                     "source_l_plus_id": _clean_text(anc.get("source_l_plus_id", "")),
                     "compendium_file": "Compendium/Compendium.md",
                     "compendium_line_start": ln,
+                    "pdf_page": pdf_page,
                 }
             )
 
@@ -526,6 +580,7 @@ def _build_glossary(
     gloss: dict[str, Any],
     comp_lines: list[str],
     unit_spans: dict[str, tuple[int, int]],
+    pdf_index: Any | None = None,
 ) -> dict[str, Any]:
     """Enrichit les 56 vedettes du glossaire avec leur ligne vérifiée dans ``Compendium.md``."""
     terms_raw: list[dict[str, Any]] = gloss["terms"]
@@ -545,6 +600,7 @@ def _build_glossary(
         entry = _sanitize_nested(t)
         entry["compendium_md_file"] = "Compendium/Compendium.md"
         entry["compendium_md_line"] = line_no
+        entry["pdf_page"] = pdf_index.resolve_line_page(line_no, [fr, en]) if pdf_index is not None else None
         enriched_terms.append(entry)
 
     if not has_system_agency:
@@ -580,6 +636,14 @@ def build_pivots_payload(repo_root: Path) -> dict[str, Any]:
     comp_text = comp_path.read_text(encoding="utf-8")
     comp_lines = comp_text.splitlines()
     unit_spans = _compute_compendium_unit_spans(comp_lines)
+
+    from index_pdf_compendium import CompendiumPdfIndex  # noqa: E402
+
+    pdf_index = (
+        CompendiumPdfIndex.from_repo(repo_root)
+        if (repo_root / "Compendium" / "Compendium.pdf").is_file()
+        else None
+    )
 
     lplus_count = len(sources_lplus["sources"])
     statut_f_count = len(statut_f["blocked"])
@@ -648,12 +712,12 @@ def build_pivots_payload(repo_root: Path) -> dict[str, Any]:
             "tomes_7_et_8": "2026-12-02 (gel unifié du Compendium)",
         },
         "collection_metrics": collection_metrics,
-        "concordance_8_tomes": _build_concordance_section(conc, manifest, comp_lines, unit_spans),
-        "discordances_resolues": _build_discordances(conc, comp_lines, unit_spans),
-        "chronologie_2023_2035": _build_chronology(anc, comp_lines, unit_spans),
+        "concordance_8_tomes": _build_concordance_section(conc, manifest, comp_lines, unit_spans, pdf_index=pdf_index),
+        "discordances_resolues": _build_discordances(conc, comp_lines, unit_spans, pdf_index=pdf_index),
+        "chronologie_2023_2035": _build_chronology(anc, comp_lines, unit_spans, pdf_index=pdf_index),
         "matrices": _build_matrices(mat),
         "bilans_aq_wyvern_et_statut_f": bilans_aq,
-        "glossaire_pivot": _build_glossary(gloss, comp_lines, unit_spans),
+        "glossaire_pivot": _build_glossary(gloss, comp_lines, unit_spans, pdf_index=pdf_index),
         "faits_empiriques_16": facts_list,
         "specifications_lplus_57": specs_list,
         "statut_f_exclus_27": _sanitize_nested(statut_f["blocked"]),

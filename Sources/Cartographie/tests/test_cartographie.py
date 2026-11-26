@@ -151,10 +151,19 @@ def test_structure_covers_compendium_15_sections_and_42_units() -> None:
 
         for node in flat:
             assert l_start <= node["line_start"] <= node["line_end"] <= l_end
+            assert int(node.get("reading_minutes") or 0) >= 1
             if fmeta["file"] == "Compendium/Compendium.md":
                 assert node["line_start"] not in comp_code_lines, (
                     f"Faux titre dans bloc de code Compendium à L{node['line_start']}"
                 )
+                p0 = node.get("pdf_page_start")
+                p1 = node.get("pdf_page_end")
+                assert isinstance(p0, int) and isinstance(p1, int), f"Pages PDF manquantes sur {node['unit_id']}"
+                assert 1 <= p0 <= p1 <= 852, f"Plage PDF invalide sur {node['unit_id']}: {p0}..{p1}"
+                if node.get("kind") in ("chapter", "liminaire") and node.get("compendium_unit_id"):
+                    assert node.get("excerpt"), f"Extrait vide sur {node['compendium_unit_id']}"
+                    if (node.get("level") == 1 and node.get("kind") == "liminaire") or node.get("kind") == "chapter":
+                        assert node.get("guiding_question"), f"Question directrice absente sur {node['compendium_unit_id']}"
 
         if fmeta["tome_id"] != "R":
             compendium_headings += len(flat)
@@ -187,6 +196,7 @@ def test_inventaire_115_schemas_compendium_complete() -> None:
     assert totals["verified_renders_on_disk"] == 115
     assert totals["verified_compendium_lines"] == 115
     assert totals["verified_source_file_lines"] == 115
+    assert totals["verified_pdf_pages"] == 115
     assert totals["by_engine"] == {"mmd": 23, "puml": 52, "svg": 40}
 
     figs = inv["figures"]
@@ -197,6 +207,7 @@ def test_inventaire_115_schemas_compendium_complete() -> None:
         assert (REPO_ROOT / fg["rendered_path"]).is_file(), f"Rendu absent : {fg['rendered_path']}"
         assert (REPO_ROOT / fg["source_file"]).is_file(), f"Manuscrit absent : {fg['source_file']}"
         assert 1 <= int(fg["compendium_md_line"]) <= comp_line_count
+        assert 1 <= int(fg["pdf_page"]) <= 852
         src_lines = len((REPO_ROOT / fg["source_file"]).read_text(encoding="utf-8").splitlines())
         assert 1 <= int(fg["source_file_line"]) <= src_lines
 
@@ -261,14 +272,37 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         assert len(themes_addr) >= 1
         assert any(slug in node_by_slug for slug in themes_addr)
 
-    # 100 % des 260 thèmes ont des occurrences vérifiées dans Compendium/Compendium.md
+    # 100 % des 260 thèmes ont des occurrences vérifiées dans Compendium/Compendium.md et au moins une occurrence maîtresse
     for n in theme_nodes:
         occs = n.get("occurrences") or []
         assert len(occs) >= 1, f"Thème sans occurrence Compendium : {n['node_id']}"
+        assert any(o.get("is_primary") for o in occs), f"Thème sans occurrence maîtresse is_primary : {n['node_id']}"
         for occ in occs:
             assert occ["file"] == "Compendium/Compendium.md", f"Occurrence hors Compendium.md : {occ}"
             assert 1 <= occ["line_start"] <= occ["line_end"] <= 8532
+            assert 1 <= int(occ.get("pdf_page_start") or 0) <= 852
             assert (REPO_ROOT / occ["source_file"]).is_file(), f"source_file absent : {occ['source_file']}"
+
+    # 100 % des 120 nœuds macro (root/domain/subdomain/family) ont un ancrage structurel et PDF direct
+    for n in nodes:
+        if n["node_kind"] != "theme":
+            assert n.get("primary_struct_unit_id"), f"primary_struct_unit_id manquant sur {n['node_id']}"
+            assert 1 <= int(n.get("pdf_page_start") or 0) <= 852
+
+    # 115 schémas intégrés + 5 parcours de lecture guidés
+    schemas_cat = bundle.get("schemas") or []
+    assert len(schemas_cat) == 115
+    for sc in schemas_cat:
+        assert 1 <= int(sc.get("pdf_page") or 0) <= 852
+        assert (REPO_ROOT / sc["rendered_path"]).is_file()
+
+    reading_paths = bundle.get("reading_paths") or []
+    assert len(reading_paths) == 5
+    for rp in reading_paths:
+        assert rp["steps_count"] >= 5 and rp["total_minutes"] > 0
+        for stp in rp["steps"]:
+            assert 1 <= int(stp.get("pdf_page_start") or 0) <= 852
+            assert stp.get("representative_node_id") in node_by_id
 
     # Matrice de concordance 12 x 15 = 180 cellules
     cmat = bundle.get("concordance_matrix") or []
@@ -277,9 +311,18 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     # Pivots Compendium (glossaire 56, 135 L+, 27 Statut F, 14 CA-G0-SYNC, 37/37 G2, 852 p.)
     pivots = bundle["pivots"]
     assert pivots["div_02"] is not None
+    assert 1 <= int(pivots["div_02"].get("pdf_page") or 0) <= 852
     assert len(pivots["reconciliations"]) == 5
+    for rec in pivots["reconciliations"]:
+        assert 1 <= int(rec.get("pdf_page") or 0) <= 852
     assert len(pivots["timeline"]) == 77
+    for ev in pivots["timeline"]:
+        assert 1 <= int(ev.get("pdf_page") or 0) <= 852
     assert len(pivots["traceability_matrix"]) == 237
+    for tr in pivots["traceability_matrix"]:
+        assert tr.get("compendium_unit_id")
+        assert int(tr.get("compendium_line_start") or 0) >= 74
+        assert 1 <= int(tr.get("pdf_page") or 0) <= 852
     assert len({x["id"] for x in pivots["traceability_matrix"]}) == 237
     assert pivots.get("matrix_totals") == {
         "unique_entries": 237,
@@ -504,6 +547,18 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
 
     const hrefComp = eng.corpusHref("Compendium/Compendium.md", 215);
     if (hrefComp !== "../../Compendium/Compendium.md#L215") throw new Error("Encodage corpusHref invalide: " + hrefComp);
+    const pdfHref = eng.compendiumPdfHref(24);
+    if (pdfHref !== "../../Compendium/Compendium.pdf#page=24") throw new Error("Encodage compendiumPdfHref invalide: " + pdfHref);
+    const builtHash = eng.buildLocationHash({ activeView: "mindmap", selectedKind: "theme", selectedId: "DOM_D01", activeTourId: "essentiel", activeTourStep: 1 });
+    if (builtHash !== "#view=mindmap&node=DOM_D01&tour=essentiel&step=1") throw new Error("buildLocationHash invalide: " + builtHash);
+
+    // Recherche étendue à 6 catégories (schéma, matrice, jalon, glossaire, thème, structure)
+    const sSchema = eng.searchCorpus(idx, "SCH-00-01", 10);
+    if (!sSchema.some(d => d.kind === "schema" && d.id === "SCH-00-01")) throw new Error("searchCorpus('SCH-00-01') sans schema");
+    const sTrace = eng.searchCorpus(idx, "SBB-SECRETS-VAULT", 10);
+    if (!sTrace.some(d => d.kind === "traceability")) throw new Error("searchCorpus('SBB-SECRETS-VAULT') sans traceability");
+    const sTime = eng.searchCorpus(idx, "2027-05-01", 10);
+    if (!sTime.some(d => d.kind === "timeline")) throw new Error("searchCorpus('2027-05-01') sans timeline");
 
     // Non-régression facettes Horizon
     const horizons = idx.facets.horizons;
@@ -644,7 +699,9 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
       "mm-toggle-edges-btn", "mm-expand-linked-btn", "st-toggle-list-btn",
       "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
       "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle",
-      "top-compendium-md-link", "top-compendium-pdf-link", "c4-gloss-search", "c4-gloss-body", "c4-gloss-count"
+      "top-compendium-md-link", "top-compendium-pdf-link", "c4-gloss-search", "c4-gloss-body", "c4-gloss-count",
+      "reading-path-select", "reading-path-banner", "st-read-progress", "schema-modal-backdrop",
+      "schema-modal-title", "schema-modal-body", "schema-modal-close-btn"
     ];
     const byId = {};
     for (const id of allIds) byId[id] = makeEl(id.endsWith("-svg") ? "svg" : "div", id);
@@ -658,7 +715,7 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
       b.setAttribute("data-view", v);
       return b;
     });
-    const c4Tabs = ["heatmap", "reconciliations", "timeline", "traceability", "glossary_evidence"].map(t => {
+    const c4Tabs = ["heatmap", "reconciliations", "timeline", "traceability", "glossary_evidence", "schemas_gallery"].map(t => {
       const b = makeEl("button");
       b.setAttribute("data-c4-tab", t);
       return b;
@@ -669,6 +726,7 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
       return b;
     });
 
+    const memStorage = {};
     const documentStub = {
       readyState: "complete",
       documentElement: makeEl("html"),
@@ -683,7 +741,17 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
     const sandbox = {
       console, Set, Map, Object, Array, Math, String, Number, Boolean, Date, RegExp, JSON,
       encodeURIComponent, decodeURIComponent, document: documentStub,
-      window: { innerWidth: 1400, innerHeight: 900, location: { hash: "" }, addEventListener() {}, print() {} },
+      window: {
+        innerWidth: 1400, innerHeight: 900, location: { hash: "" }, addEventListener() {}, print() {},
+        localStorage: {
+          getItem: k => (k in memStorage ? memStorage[k] : null),
+          setItem: (k, v) => { memStorage[k] = String(v); }
+        },
+        history: {
+          pushState: (_s, _t, u) => { sandbox.window.location.hash = String(u || ""); },
+          replaceState: (_s, _t, u) => { sandbox.window.location.hash = String(u || ""); }
+        }
+      },
       globalThis: {}
     };
     sandbox.globalThis = sandbox;
@@ -723,8 +791,8 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
       throw new Error("#f-tome[data-filter='section'] sans option Compendium");
     }
 
-    // 5 sous-onglets Vue 4 dont glossary_evidence + filtre #c4-gloss-search
-    for (const ct of c4Tabs) ct.click();
+    // 6 sous-onglets Vue 4 dont glossary_evidence + filtre #c4-gloss-search + schemas_gallery
+    for (const ct of c4Tabs.slice(0, 5)) ct.click();
     const glossHtml = byId["c4-content"].innerHTML;
     if (!glossHtml.includes("Agentivité des systèmes") || !glossHtml.includes("system agency") || !glossHtml.includes("135")) {
       throw new Error("Sous-onglet glossary_evidence incomplet");
@@ -737,6 +805,10 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
     }
     byId["c4-gloss-search"].value = "";
     byId["c4-gloss-search"].dispatch("input");
+    c4Tabs[5].click();
+    if (!byId["c4-content"].innerHTML.includes("SCH-00-01")) {
+      throw new Error("Sous-onglet schemas_gallery incomplet");
+    }
 
     // Liens en-tête Compendium
     if (!byId["top-compendium-md-link"].getAttribute("href").includes("Compendium/Compendium.md") ||
@@ -849,6 +921,39 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
     app.applyHashNavigation("#view=synaptic&node=THM_loi-de-lusser");
     if (app.getState().filters.domain !== "" || app.getState().filters.tome !== "") {
       throw new Error("La navigation explicite vers THM_loi-de-lusser n'a pas levé les filtres bloquants: " + JSON.stringify(app.getState().filters));
+    }
+
+    // Nouvelles capacités P1-P5 : nœuds macro (Niv. 2-4), galerie 115 schémas, modale, parcours guidé et suivi localStorage
+    app.switchView("mindmap");
+    app.selectThemeNode("DOM_D01", false);
+    const macroInsp = byId["inspector-body"].innerHTML;
+    if (!macroInsp.includes("Accès direct au Compendium") || !macroInsp.includes("Compendium.pdf#page=")) {
+      throw new Error("Accès direct Compendium manquant sur nœud macro DOM_D01");
+    }
+    app.selectThemeNode("THM_loi-de-lusser", false);
+    const thmInsp = byId["inspector-body"].innerHTML;
+    if (!thmInsp.includes("Section maîtresse à lire") || !thmInsp.includes("insp-goto-st")) {
+      throw new Error("Section maîtresse ou pont Vue 2 manquant sur thème THM_loi-de-lusser");
+    }
+
+    app.applyHashNavigation("#view=concordance&tab=schemas_gallery");
+    const galHtml = byId["c4-content"].innerHTML;
+    if (!galHtml.includes("SCH-00-01") || !galHtml.includes("Compendium.pdf#page=")) {
+      throw new Error("Onglet Vue 4 schemas_gallery incomplet");
+    }
+    app.openSchemaModal("SCH-00-01");
+    if (byId["schema-modal-backdrop"].classList.contains("hidden") || !byId["schema-modal-body"].innerHTML.includes("SCH-00-01")) {
+      throw new Error("Modale schéma SCH-00-01 non ouverte");
+    }
+
+    if (!app.activateReadingPath("essentiel", 1) || app.getState().activeTourId !== "essentiel" || byId["reading-path-banner"].classList.contains("hidden")) {
+      throw new Error("Activation du parcours guidé 'essentiel' échouée");
+    }
+    if (!app.toggleUnitRead("ch01") || !memStorage["agy_compendium_reading_v1"].includes("ch01")) {
+      throw new Error("Suivi localStorage toggleUnitRead('ch01') échoué");
+    }
+    if (app.toggleUnitRead("ch01") !== false) {
+      throw new Error("Décochage toggleUnitRead('ch01') échoué");
     }
     """
 

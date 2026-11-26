@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-26T13:06:25Z",
+  "generated_at": "2026-11-26T13:59:41Z",
   "generator": "Sources/Cartographie/outils/extraire_pivots_compendium.py",
   "freeze_dates": {
     "compendium": "2026-12-02 (parution janvier 2027)",
@@ -55,7 +55,9 @@
         "file": "Compendium/README.md",
         "title": "Index éditorial du Compendium",
         "units": [],
-        "line_start": 1
+        "line_start": 1,
+        "pdf_page_start": null,
+        "pdf_page_end": null
       },
       {
         "tome_id": "LIM",
@@ -65,7 +67,9 @@
         "units": [
           "00-liminaire"
         ],
-        "line_start": 74
+        "line_start": 74,
+        "pdf_page_start": 7,
+        "pdf_page_end": 22
       },
       {
         "tome_id": "P01",
@@ -78,7 +82,9 @@
           "ch02",
           "ch03"
         ],
-        "line_start": 213
+        "line_start": 213,
+        "pdf_page_start": 24,
+        "pdf_page_end": 74
       },
       {
         "tome_id": "P02",
@@ -91,7 +97,9 @@
           "ch05",
           "ch06"
         ],
-        "line_start": 690
+        "line_start": 690,
+        "pdf_page_start": 76,
+        "pdf_page_end": 129
       },
       {
         "tome_id": "P03",
@@ -104,7 +112,9 @@
           "ch08",
           "ch09"
         ],
-        "line_start": 1241
+        "line_start": 1241,
+        "pdf_page_start": 131,
+        "pdf_page_end": 183
       },
       {
         "tome_id": "P04",
@@ -117,7 +127,9 @@
           "ch11",
           "ch12"
         ],
-        "line_start": 1794
+        "line_start": 1794,
+        "pdf_page_start": 185,
+        "pdf_page_end": 230
       },
       {
         "tome_id": "P05",
@@ -130,7 +142,9 @@
           "ch14",
           "ch15"
         ],
-        "line_start": 2200
+        "line_start": 2200,
+        "pdf_page_start": 232,
+        "pdf_page_end": 282
       },
       {
         "tome_id": "P06",
@@ -143,7 +157,9 @@
           "ch17",
           "ch18"
         ],
-        "line_start": 2670
+        "line_start": 2670,
+        "pdf_page_start": 284,
+        "pdf_page_end": 333
       },
       {
         "tome_id": "P07",
@@ -156,7 +172,9 @@
           "ch20",
           "ch21"
         ],
-        "line_start": 3228
+        "line_start": 3228,
+        "pdf_page_start": 335,
+        "pdf_page_end": 383
       },
       {
         "tome_id": "P08",
@@ -169,7 +187,9 @@
           "ch23",
           "ch24"
         ],
-        "line_start": 3733
+        "line_start": 3733,
+        "pdf_page_start": 385,
+        "pdf_page_end": 436
       },
       {
         "tome_id": "P09",
@@ -182,7 +202,9 @@
           "ch26",
           "ch27"
         ],
-        "line_start": 4226
+        "line_start": 4226,
+        "pdf_page_start": 438,
+        "pdf_page_end": 486
       },
       {
         "tome_id": "P10",
@@ -195,7 +217,9 @@
           "ch29",
           "ch30"
         ],
-        "line_start": 4660
+        "line_start": 4660,
+        "pdf_page_start": 488,
+        "pdf_page_end": 539
       },
       {
         "tome_id": "P11",
@@ -208,7 +232,9 @@
           "ch32",
           "ch33"
         ],
-        "line_start": 5128
+        "line_start": 5128,
+        "pdf_page_start": 541,
+        "pdf_page_end": 589
       },
       {
         "tome_id": "P12",
@@ -221,7 +247,9 @@
           "ch35",
           "ch36"
         ],
-        "line_start": 5549
+        "line_start": 5549,
+        "pdf_page_start": 591,
+        "pdf_page_end": 647
       },
       {
         "tome_id": "ANN",
@@ -235,7 +263,9 @@
           "annexe-d",
           "annexe-e"
         ],
-        "line_start": 6097
+        "line_start": 6097,
+        "pdf_page_start": 649,
+        "pdf_page_end": 852
       }
     ],
     "decoupages_architecturaux_t5_a1": [
@@ -430,7 +460,10 @@
         "note_ventilation_pex": "En CRE-IA-2026-01 v1.2 (305 exigences), les 24 propositions PEX couvrent 5 raccordements directs, 12 extensions spécialisées et 7 comblements de lacunes (remplaçant le bilan 13 spécialisations et 11 comblements hérité de v1.1)."
       },
       "compendium_file": "Compendium/Compendium.md",
-      "compendium_line_start": 96
+      "compendium_line_start": 96,
+      "compendium_annexe_c_line": 7509,
+      "compendium_pdf_page": 10,
+      "compendium_annexe_c_pdf_page": 754
     },
     "cinq_discordances_tome_8": {
       "source": "Compendium/Compendium.md (§ 0.2, Chapitre 36, Annexe C) & Sources/Compendium/ouvrage/registre/concordance-taxonomies.json",
@@ -455,7 +488,9 @@
           "rationale": "Empêche le déploiement d'agents probabilistes sur des flux où un script déterministe sans modèle suffit, tout en rendant les profils OPA (politiques Rego policies_opa évaluées par policy_saga/opa_runner.py) homogènes entre le cadre normatif et les chapitres pratiques du Compendium.",
           "compendium_file": "Compendium/Compendium.md",
           "compendium_line_start": 96,
-          "compendium_annexe_c_line": 7509
+          "compendium_annexe_c_line": 7509,
+          "compendium_pdf_page": 10,
+          "compendium_annexe_c_pdf_page": 754
         },
         {
           "discordance_id": "DISC-02",
@@ -482,7 +517,9 @@
           "rationale": "Supprime les collisions d'échelles dans le code Rego et JSON Schema tout en préservant une traçabilité exacte vers les critères C05–C06 et les plans pluriannuels antérieurs.",
           "compendium_file": "Compendium/Compendium.md",
           "compendium_line_start": 117,
-          "compendium_annexe_c_line": 7522
+          "compendium_annexe_c_line": 7522,
+          "compendium_pdf_page": 12,
+          "compendium_annexe_c_pdf_page": 755
         },
         {
           "discordance_id": "DISC-03",
@@ -509,7 +546,9 @@
           "rationale": "Aligne directement l'architecture exécutable d'homologation (Partie XII du Compendium, Chapitres 34 à 36) sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des tomes antérieurs (Tomes 2 à 7).",
           "compendium_file": "Compendium/Compendium.md",
           "compendium_line_start": 118,
-          "compendium_annexe_c_line": 7523
+          "compendium_annexe_c_line": 7523,
+          "compendium_pdf_page": 12,
+          "compendium_annexe_c_pdf_page": 755
         },
         {
           "discordance_id": "DISC-04",
@@ -531,7 +570,9 @@
           "rationale": "Préserve l'ouverture licence MIT et l'interopérabilité des diagrammes PlantUML/Mermaid exécutables sans dépendance à un modeleur commercial.",
           "compendium_file": "Compendium/Compendium.md",
           "compendium_line_start": 119,
-          "compendium_annexe_c_line": 7524
+          "compendium_annexe_c_line": 7524,
+          "compendium_pdf_page": 13,
+          "compendium_annexe_c_pdf_page": 755
         },
         {
           "discordance_id": "DISC-05",
@@ -553,7 +594,9 @@
           "rationale": "Élimine toute ambiguïté d'implémentation entre la prose historique de 2025 et les contrôles bloquants EXIG-MCP-03/11/15/16/18/19/20 vérifiés en G0.",
           "compendium_file": "Compendium/Compendium.md",
           "compendium_line_start": 96,
-          "compendium_annexe_c_line": 7509
+          "compendium_annexe_c_line": 7509,
+          "compendium_pdf_page": 10,
+          "compendium_annexe_c_pdf_page": 754
         }
       ]
     }
@@ -577,7 +620,8 @@
         "commentaire_annexe": "Jalon ANC-120 (Tome 4, code QC-03, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "key": "ANC-119",
@@ -595,7 +639,8 @@
         "commentaire_annexe": "Jalon ANC-119 (Tome 4, code QC-02, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "key": "ANC-114",
@@ -625,7 +670,8 @@
           "2026-LOI25-ART12-1"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "key": "ANC-115",
@@ -643,7 +689,8 @@
         "commentaire_annexe": "Jalon ANC-115 (Tome 4, code QC-CAI-LOI25, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "key": "ANC-121",
@@ -661,7 +708,8 @@
         "commentaire_annexe": "Jalon ANC-121 (Tome 4, code ACVM-11-348, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "key": "ANC-117",
@@ -679,7 +727,8 @@
         "commentaire_annexe": "Jalon ANC-117 (Tome 4, code QC-MCN-ENONCE-IA, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "key": "ANC-101",
@@ -697,7 +746,8 @@
         "commentaire_annexe": "Jalon ANC-101 (Tome 4, code N-06, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "key": "ANC-116",
@@ -715,7 +765,8 @@
         "commentaire_annexe": "Jalon ANC-116 (Tome 4, code QC-CAI-RAPPORT-2026, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "key": "2026-08-02-EU-AI-ACT-ART50",
@@ -735,7 +786,8 @@
         "commentaire_annexe": "Vérifié aux art. 50 et 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements du Règlement (UE) 2026/1744 (SRC-061).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "key": "ANC-118",
@@ -753,7 +805,8 @@
         "commentaire_annexe": "Jalon ANC-118 (Tome 4, code QC-MCN-GUIDE-AGENTIQUE, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "key": "ANC-001",
@@ -771,7 +824,8 @@
         "commentaire_annexe": "Jalon ANC-001 (Tome 4, code P-02, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "key": "ANC-002",
@@ -789,7 +843,8 @@
         "commentaire_annexe": "Jalon ANC-002 (Tome 4, code P-07, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-022",
@@ -807,7 +862,8 @@
         "commentaire_annexe": "Jalon ANC-022 (Tome 4, code P-13, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-031",
@@ -825,7 +881,8 @@
         "commentaire_annexe": "Jalon ANC-031 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-045",
@@ -843,7 +900,8 @@
         "commentaire_annexe": "Jalon ANC-045 (Tome 4, code P-29, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-102",
@@ -861,7 +919,8 @@
         "commentaire_annexe": "Jalon ANC-102 (Tome 4, code N-07, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-003",
@@ -879,7 +938,8 @@
         "commentaire_annexe": "Jalon ANC-003 (Tome 4, code P-08, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-023",
@@ -905,7 +965,8 @@
           "2027-03-15-TLS-100J"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "2027-03-30-MCP-SEP-3398",
@@ -923,7 +984,8 @@
         "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-024",
@@ -941,7 +1003,8 @@
         "commentaire_annexe": "Jalon ANC-024 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-032",
@@ -959,7 +1022,8 @@
         "commentaire_annexe": "Jalon ANC-032 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-103",
@@ -984,7 +1048,8 @@
           "2027-05-01-BSIF-E23-AMF"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-112",
@@ -1009,7 +1074,8 @@
           "2027-05-01-BSIF-E23-AMF"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7604
+        "compendium_line_start": 7604,
+        "pdf_page": 766
       },
       {
         "key": "ANC-025",
@@ -1027,7 +1093,8 @@
         "commentaire_annexe": "Jalon ANC-025 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7605
+        "compendium_line_start": 7605,
+        "pdf_page": 766
       },
       {
         "key": "2027-07-28-MCP-MIGRATION",
@@ -1045,7 +1112,8 @@
         "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7606
+        "compendium_line_start": 7606,
+        "pdf_page": 766
       },
       {
         "key": "ANC-004",
@@ -1063,7 +1131,8 @@
         "commentaire_annexe": "Jalon ANC-004 (Tome 4, code P-01, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7607
+        "compendium_line_start": 7607,
+        "pdf_page": 766
       },
       {
         "key": "ANC-026",
@@ -1081,7 +1150,8 @@
         "commentaire_annexe": "Jalon ANC-026 (Tome 4, code P-11, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7608
+        "compendium_line_start": 7608,
+        "pdf_page": 766
       },
       {
         "key": "ANC-005",
@@ -1099,7 +1169,8 @@
         "commentaire_annexe": "Jalon ANC-005 (Tome 4, code P-02, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7609
+        "compendium_line_start": 7609,
+        "pdf_page": 766
       },
       {
         "key": "ANC-113",
@@ -1117,7 +1188,8 @@
         "commentaire_annexe": "Jalon ANC-113 (Tome 4, code QC-AMF-NOTE-2026, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7610
+        "compendium_line_start": 7610,
+        "pdf_page": 767
       },
       {
         "key": "ANC-006",
@@ -1135,7 +1207,8 @@
         "commentaire_annexe": "Jalon ANC-006 (Tome 4, code P-06, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7611
+        "compendium_line_start": 7611,
+        "pdf_page": 767
       },
       {
         "key": "ANC-007",
@@ -1160,7 +1233,8 @@
           "2027-12-02-EU-AI-ACT-ANNEXE-III"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7612
+        "compendium_line_start": 7612,
+        "pdf_page": 767
       },
       {
         "key": "ANC-008",
@@ -1178,7 +1252,8 @@
         "commentaire_annexe": "Jalon ANC-008 (Tome 4, code P-05, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7613
+        "compendium_line_start": 7613,
+        "pdf_page": 767
       },
       {
         "key": "ANC-027",
@@ -1196,7 +1271,8 @@
         "commentaire_annexe": "Jalon ANC-027 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7614
+        "compendium_line_start": 7614,
+        "pdf_page": 767
       },
       {
         "key": "ANC-033",
@@ -1214,7 +1290,8 @@
         "commentaire_annexe": "Jalon ANC-033 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7615
+        "compendium_line_start": 7615,
+        "pdf_page": 767
       },
       {
         "key": "ANC-104",
@@ -1232,7 +1309,8 @@
         "commentaire_annexe": "Jalon ANC-104 (Tome 4, code T-20, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7616
+        "compendium_line_start": 7616,
+        "pdf_page": 768
       },
       {
         "key": "ANC-009",
@@ -1250,7 +1328,8 @@
         "commentaire_annexe": "Jalon ANC-009 (Tome 4, code P-04, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-028",
@@ -1268,7 +1347,8 @@
         "commentaire_annexe": "Jalon ANC-028 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-029",
@@ -1286,7 +1366,8 @@
         "commentaire_annexe": "Jalon ANC-029 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-034",
@@ -1304,7 +1385,8 @@
         "commentaire_annexe": "Jalon ANC-034 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-010",
@@ -1329,7 +1411,8 @@
           "2028-08-02-EU-AI-ACT-ANNEXE-I"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-011",
@@ -1347,7 +1430,8 @@
         "commentaire_annexe": "Jalon ANC-011 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-012",
@@ -1365,7 +1449,8 @@
         "commentaire_annexe": "Jalon ANC-012 (Tome 4, code P-05, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-105",
@@ -1389,7 +1474,8 @@
           "2028-10-01-GESTION-PATRIMOINE-RETROFACTURATION"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-106",
@@ -1414,7 +1500,8 @@
           "2028-12-31-BSIF-B15-PORTEE3"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7625
+        "compendium_line_start": 7625,
+        "pdf_page": 769
       },
       {
         "key": "ANC-107",
@@ -1432,7 +1519,8 @@
         "commentaire_annexe": "Jalon ANC-107 (Tome 4, code N-07, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-030",
@@ -1458,7 +1546,8 @@
           "2029-03-15-TLS-47J"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-013",
@@ -1476,7 +1565,8 @@
         "commentaire_annexe": "Jalon ANC-013 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-108",
@@ -1494,7 +1584,8 @@
         "commentaire_annexe": "Jalon ANC-108 (Tome 4, code N-12, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-035",
@@ -1512,7 +1603,8 @@
         "commentaire_annexe": "Jalon ANC-035 (Tome 4, code P-21, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-014",
@@ -1530,7 +1622,8 @@
         "commentaire_annexe": "Jalon ANC-014 (Tome 4, code P-02, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-015",
@@ -1548,7 +1641,8 @@
         "commentaire_annexe": "Jalon ANC-015 (Tome 4, code P-06, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-016",
@@ -1566,7 +1660,8 @@
         "commentaire_annexe": "Jalon ANC-016 (Tome 4, code P-07, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-017",
@@ -1584,7 +1679,8 @@
         "commentaire_annexe": "Jalon ANC-017 (Tome 4, code P-05, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-018",
@@ -1602,7 +1698,8 @@
         "commentaire_annexe": "Jalon ANC-018 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-036",
@@ -1620,7 +1717,8 @@
         "commentaire_annexe": "Jalon ANC-036 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-037",
@@ -1638,7 +1736,8 @@
         "commentaire_annexe": "Jalon ANC-037 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "ANC-019",
@@ -1656,7 +1755,8 @@
         "commentaire_annexe": "Jalon ANC-019 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7638
+        "compendium_line_start": 7638,
+        "pdf_page": 771
       },
       {
         "key": "ANC-038",
@@ -1674,7 +1774,8 @@
         "commentaire_annexe": "Jalon ANC-038 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7639
+        "compendium_line_start": 7639,
+        "pdf_page": 771
       },
       {
         "key": "ANC-039",
@@ -1692,7 +1793,8 @@
         "commentaire_annexe": "Jalon ANC-039 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7640
+        "compendium_line_start": 7640,
+        "pdf_page": 772
       },
       {
         "key": "ANC-020",
@@ -1710,7 +1812,8 @@
         "commentaire_annexe": "Jalon ANC-020 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7641
+        "compendium_line_start": 7641,
+        "pdf_page": 772
       },
       {
         "key": "ANC-040",
@@ -1728,7 +1831,8 @@
         "commentaire_annexe": "Jalon ANC-040 (Tome 4, code P-24, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7642
+        "compendium_line_start": 7642,
+        "pdf_page": 772
       },
       {
         "key": "ANC-109",
@@ -1752,7 +1856,8 @@
           "2033-06-30-LOIS-FINANCIERES-CANADA"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7643
+        "compendium_line_start": 7643,
+        "pdf_page": 772
       },
       {
         "key": "ANC-110",
@@ -1776,7 +1881,8 @@
           "2033-06-30-LOIS-FINANCIERES-CANADA"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7644
+        "compendium_line_start": 7644,
+        "pdf_page": 772
       },
       {
         "key": "ANC-111",
@@ -1800,7 +1906,8 @@
           "2033-06-30-LOIS-FINANCIERES-CANADA"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7645
+        "compendium_line_start": 7645,
+        "pdf_page": 772
       },
       {
         "key": "ANC-021",
@@ -1818,7 +1925,8 @@
         "commentaire_annexe": "Jalon ANC-021 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7646
+        "compendium_line_start": 7646,
+        "pdf_page": 773
       },
       {
         "key": "ANC-046",
@@ -1836,7 +1944,8 @@
         "commentaire_annexe": "Jalon ANC-046 (Tome 4, code P-31, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7647
+        "compendium_line_start": 7647,
+        "pdf_page": 773
       },
       {
         "key": "ANC-041",
@@ -1854,7 +1963,8 @@
         "commentaire_annexe": "Jalon ANC-041 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7648
+        "compendium_line_start": 7648,
+        "pdf_page": 773
       },
       {
         "key": "ANC-042",
@@ -1872,7 +1982,8 @@
         "commentaire_annexe": "Jalon ANC-042 (Tome 4, code P-21, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7649
+        "compendium_line_start": 7649,
+        "pdf_page": 773
       },
       {
         "key": "ANC-043",
@@ -1890,7 +2001,8 @@
         "commentaire_annexe": "Jalon ANC-043 (Tome 4, code P-24, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7650
+        "compendium_line_start": 7650,
+        "pdf_page": 773
       },
       {
         "key": "ANC-044",
@@ -1908,7 +2020,8 @@
         "commentaire_annexe": "Jalon ANC-044 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7651
+        "compendium_line_start": 7651,
+        "pdf_page": 773
       },
       {
         "key": "2030-2035-G7-PQC-FINANCE",
@@ -1932,7 +2045,8 @@
         "commentaire_annexe": "Vérifié dans G7-CEG Quantum Transition Roadmap (SRC-052) et NIST IR 8547 (SRC-051).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7652
+        "compendium_line_start": 7652,
+        "pdf_page": 774
       },
       {
         "key": "DAPP-T5-01",
@@ -1950,7 +2064,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : Immédiat), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "DAPP-T5-02",
@@ -1968,7 +2083,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2027), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "DAPP-T5-03",
@@ -1986,7 +2102,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : Fin 2027), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "DAPP-T5-04",
@@ -2004,7 +2121,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2028–2029), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "DAPP-T5-05",
@@ -2022,7 +2140,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2030–2032), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "DAPP-T5-06",
@@ -2040,7 +2159,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2033–2035), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       }
     ],
     "six_reperes_readme": [
@@ -2084,6 +2204,7 @@
         "jalons": "Fondations (N0–N1 / Stade 1) : Inventaire en 5 jours ouvrables, zéro clé fixe, passerelle de modèles, ÉFVP et coupe-circuit.",
         "compendium_file": "Compendium/Compendium.md",
         "compendium_line_start": 7565,
+        "pdf_page": 759,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2094,6 +2215,7 @@
         "jalons": "Plateforme (Stade 2 partiel) : Passerelle PEP, JCS/CIBA, certificats TLS 100 jours (15 mars 2027 D), BSIF E-23 et AMF IA (1er mai 2027 D), MCP 2026-07-28 (28 juillet 2027 D).",
         "compendium_file": "Compendium/Compendium.md",
         "compendium_line_start": 7565,
+        "pdf_page": 759,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2104,6 +2226,7 @@
         "jalons": "Industrialisation (Niveau 3 Défini / Stade 2) : EU AI Act Annexe III (2 décembre 2027 D), sagas compensatoires et bancs d'évaluation E1–E3.",
         "compendium_file": "Compendium/Compendium.md",
         "compendium_line_start": 7565,
+        "pdf_page": 759,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2114,6 +2237,7 @@
         "jalons": "P1 (Stade 2 (14 initiatives sans regret et 1 conditionnelle, POR-001..004)) : 6 substrats, showback CPO, fin des rétrofacturations NI 31-103 (1er octobre 2028 D), BSIF B-15 portée 3 (fin 2028 D), TLS 1.3 hybride et TLS 47 jours (15 mars 2029 D).",
         "compendium_file": "Compendium/Compendium.md",
         "compendium_line_start": 7565,
+        "pdf_page": 759,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2124,6 +2248,7 @@
         "jalons": "P2 (Stade 3 (9 initiatives sans regret et 7 conditionnelles, POR-005..009)) : Sémantique, bi-temporalité, repli bimodèle, API ouvertes, chargeback CPO et porte POR-007 (ML-DSA kid, SCITT) sur la fenêtre G7 2030–2032 A.",
         "compendium_file": "Compendium/Compendium.md",
         "compendium_line_start": 7565,
+        "pdf_page": 759,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2134,6 +2259,7 @@
         "jalons": "P3 (Stade 3 / Stade 4 sélectif (4 initiatives sans regret et 6 conditionnelles, POR-011..014)) : Post-temporisation des lois financières du Canada (30 juin 2033 D), mandats vLEI (POR-013), cryptographie post-quantique financière G7 2035 A sous POR-015 (< 60 s) et POR-016.",
         "compendium_file": "Compendium/Compendium.md",
         "compendium_line_start": 7565,
+        "pdf_page": 759,
         "source_l_plus_id": "SRC-112, SRC-065"
       }
     ],
@@ -2157,7 +2283,8 @@
         "commentaire_annexe": "Vérifié aux art. 50 et 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements du Règlement (UE) 2026/1744 (SRC-061).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "key": "2027-03-30-MCP-SEP-3398",
@@ -2175,7 +2302,8 @@
         "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "key": "2027-07-28-MCP-MIGRATION",
@@ -2193,7 +2321,8 @@
         "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7606
+        "compendium_line_start": 7606,
+        "pdf_page": 766
       },
       {
         "key": "2030-2035-G7-PQC-FINANCE",
@@ -2217,7 +2346,8 @@
         "commentaire_annexe": "Vérifié dans G7-CEG Quantum Transition Roadmap (SRC-052) et NIST IR 8547 (SRC-051).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7652
+        "compendium_line_start": 7652,
+        "pdf_page": 774
       }
     ],
     "ancres_t4_67": [
@@ -2235,7 +2365,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "id": "ANC-119",
@@ -2251,7 +2382,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "id": "ANC-114",
@@ -2277,7 +2409,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "id": "ANC-115",
@@ -2293,7 +2426,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "id": "ANC-121",
@@ -2309,7 +2443,8 @@
         ],
         "source_l_plus_id": "SRC-071, SRC-065",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "id": "ANC-117",
@@ -2325,7 +2460,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 758
       },
       {
         "id": "ANC-101",
@@ -2341,7 +2477,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "id": "ANC-116",
@@ -2357,7 +2494,8 @@
         ],
         "source_l_plus_id": "SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "id": "ANC-118",
@@ -2373,7 +2511,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "id": "ANC-001",
@@ -2389,7 +2528,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7561
+        "compendium_line_start": 7561,
+        "pdf_page": 759
       },
       {
         "id": "ANC-002",
@@ -2405,7 +2545,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-022",
@@ -2421,7 +2562,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-031",
@@ -2437,7 +2579,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-045",
@@ -2453,7 +2596,8 @@
         ],
         "source_l_plus_id": "SRC-014, SRC-015",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-102",
@@ -2469,7 +2613,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-003",
@@ -2485,7 +2630,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-023",
@@ -2507,7 +2653,8 @@
         ],
         "source_l_plus_id": "SRC-053",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-024",
@@ -2523,7 +2670,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-032",
@@ -2539,7 +2687,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-103",
@@ -2560,7 +2709,8 @@
         ],
         "source_l_plus_id": "SRC-065, SRC-066, SRC-071",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-112",
@@ -2581,7 +2731,8 @@
         ],
         "source_l_plus_id": "SRC-071, SRC-065",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7604
+        "compendium_line_start": 7604,
+        "pdf_page": 766
       },
       {
         "id": "ANC-025",
@@ -2597,7 +2748,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7605
+        "compendium_line_start": 7605,
+        "pdf_page": 766
       },
       {
         "id": "ANC-004",
@@ -2613,7 +2765,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7607
+        "compendium_line_start": 7607,
+        "pdf_page": 766
       },
       {
         "id": "ANC-026",
@@ -2629,7 +2782,8 @@
         ],
         "source_l_plus_id": "SRC-081, SRC-082",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7608
+        "compendium_line_start": 7608,
+        "pdf_page": 766
       },
       {
         "id": "ANC-005",
@@ -2645,7 +2799,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7609
+        "compendium_line_start": 7609,
+        "pdf_page": 766
       },
       {
         "id": "ANC-113",
@@ -2661,7 +2816,8 @@
         ],
         "source_l_plus_id": "SRC-071, SRC-065",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7610
+        "compendium_line_start": 7610,
+        "pdf_page": 767
       },
       {
         "id": "ANC-006",
@@ -2677,7 +2833,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7611
+        "compendium_line_start": 7611,
+        "pdf_page": 767
       },
       {
         "id": "ANC-007",
@@ -2698,7 +2855,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-067",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7612
+        "compendium_line_start": 7612,
+        "pdf_page": 767
       },
       {
         "id": "ANC-008",
@@ -2714,7 +2872,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7613
+        "compendium_line_start": 7613,
+        "pdf_page": 767
       },
       {
         "id": "ANC-027",
@@ -2730,7 +2889,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7614
+        "compendium_line_start": 7614,
+        "pdf_page": 767
       },
       {
         "id": "ANC-033",
@@ -2746,7 +2906,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7615
+        "compendium_line_start": 7615,
+        "pdf_page": 767
       },
       {
         "id": "ANC-104",
@@ -2762,7 +2923,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7616
+        "compendium_line_start": 7616,
+        "pdf_page": 768
       },
       {
         "id": "ANC-009",
@@ -2778,7 +2940,8 @@
         ],
         "source_l_plus_id": "SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-028",
@@ -2794,7 +2957,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-029",
@@ -2810,7 +2974,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-034",
@@ -2826,7 +2991,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-010",
@@ -2847,7 +3013,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-011",
@@ -2863,7 +3030,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-012",
@@ -2879,7 +3047,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-105",
@@ -2899,7 +3068,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-106",
@@ -2920,7 +3090,8 @@
         ],
         "source_l_plus_id": "SRC-065, SRC-066, SRC-110",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7625
+        "compendium_line_start": 7625,
+        "pdf_page": 769
       },
       {
         "id": "ANC-107",
@@ -2936,7 +3107,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-030",
@@ -2958,7 +3130,8 @@
         ],
         "source_l_plus_id": "SRC-053",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-013",
@@ -2974,7 +3147,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-108",
@@ -2990,7 +3164,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-035",
@@ -3006,7 +3181,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-014",
@@ -3022,7 +3198,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-015",
@@ -3038,7 +3215,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-016",
@@ -3054,7 +3232,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-017",
@@ -3070,7 +3249,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-018",
@@ -3086,7 +3266,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-036",
@@ -3102,7 +3283,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-037",
@@ -3118,7 +3300,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7565
+        "compendium_line_start": 7565,
+        "pdf_page": 759
       },
       {
         "id": "ANC-019",
@@ -3134,7 +3317,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7638
+        "compendium_line_start": 7638,
+        "pdf_page": 771
       },
       {
         "id": "ANC-038",
@@ -3150,7 +3334,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7639
+        "compendium_line_start": 7639,
+        "pdf_page": 771
       },
       {
         "id": "ANC-039",
@@ -3166,7 +3351,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7640
+        "compendium_line_start": 7640,
+        "pdf_page": 772
       },
       {
         "id": "ANC-020",
@@ -3182,7 +3368,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7641
+        "compendium_line_start": 7641,
+        "pdf_page": 772
       },
       {
         "id": "ANC-040",
@@ -3198,7 +3385,8 @@
         ],
         "source_l_plus_id": "SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7642
+        "compendium_line_start": 7642,
+        "pdf_page": 772
       },
       {
         "id": "ANC-109",
@@ -3218,7 +3406,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7643
+        "compendium_line_start": 7643,
+        "pdf_page": 772
       },
       {
         "id": "ANC-110",
@@ -3238,7 +3427,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7644
+        "compendium_line_start": 7644,
+        "pdf_page": 772
       },
       {
         "id": "ANC-111",
@@ -3258,7 +3448,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7645
+        "compendium_line_start": 7645,
+        "pdf_page": 772
       },
       {
         "id": "ANC-021",
@@ -3274,7 +3465,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7646
+        "compendium_line_start": 7646,
+        "pdf_page": 773
       },
       {
         "id": "ANC-046",
@@ -3290,7 +3482,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7647
+        "compendium_line_start": 7647,
+        "pdf_page": 773
       },
       {
         "id": "ANC-041",
@@ -3306,7 +3499,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7648
+        "compendium_line_start": 7648,
+        "pdf_page": 773
       },
       {
         "id": "ANC-042",
@@ -3322,7 +3516,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7649
+        "compendium_line_start": 7649,
+        "pdf_page": 773
       },
       {
         "id": "ANC-043",
@@ -3338,7 +3533,8 @@
         ],
         "source_l_plus_id": "SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7650
+        "compendium_line_start": 7650,
+        "pdf_page": 773
       },
       {
         "id": "ANC-044",
@@ -3354,7 +3550,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7651
+        "compendium_line_start": 7651,
+        "pdf_page": 773
       }
     ]
   },
@@ -11350,7 +11547,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 901
+        "compendium_md_line": 901,
+        "pdf_page": 95
       },
       {
         "fr": "Clause non-avis",
@@ -11360,7 +11558,8 @@
         "source_l_plus_id": "SRC-055",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 78
+        "compendium_md_line": 78,
+        "pdf_page": 7
       },
       {
         "fr": "Statut F",
@@ -11370,7 +11569,8 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5918
+        "compendium_md_line": 5918,
+        "pdf_page": 626
       },
       {
         "fr": "Harnais déterministe",
@@ -11380,7 +11580,8 @@
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 690
+        "compendium_md_line": 690,
+        "pdf_page": 76
       },
       {
         "fr": "Partition 80/20",
@@ -11390,7 +11591,8 @@
         "source_l_plus_id": "SRC-027",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 698
+        "compendium_md_line": 698,
+        "pdf_page": 76
       },
       {
         "fr": "Dérive silencieuse",
@@ -11400,7 +11602,8 @@
         "source_l_plus_id": "SRC-057",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1330
+        "compendium_md_line": 1330,
+        "pdf_page": 140
       },
       {
         "fr": "Épinglage cryptographique",
@@ -11410,7 +11613,8 @@
         "source_l_plus_id": "SRC-077",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1334
+        "compendium_md_line": 1334,
+        "pdf_page": 141
       },
       {
         "fr": "Carte d'agent",
@@ -11420,7 +11624,8 @@
         "source_l_plus_id": "SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1441
+        "compendium_md_line": 1441,
+        "pdf_page": 149
       },
       {
         "fr": "Identité non humaine",
@@ -11430,7 +11635,8 @@
         "source_l_plus_id": "SRC-046",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2672
+        "compendium_md_line": 2672,
+        "pdf_page": 284
       },
       {
         "fr": "Passage de jeton",
@@ -11440,7 +11646,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2840
+        "compendium_md_line": 2840,
+        "pdf_page": 302
       },
       {
         "fr": "Jeton de transaction",
@@ -11450,7 +11657,8 @@
         "source_l_plus_id": "SRC-013",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2850
+        "compendium_md_line": 2850,
+        "pdf_page": 303
       },
       {
         "fr": "Preuve d'action C.6",
@@ -11460,7 +11668,8 @@
         "source_l_plus_id": "SRC-045",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2852
+        "compendium_md_line": 2852,
+        "pdf_page": 303
       },
       {
         "fr": "Double couloir probatoire",
@@ -11470,7 +11679,8 @@
         "source_l_plus_id": "SRC-044",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3743
+        "compendium_md_line": 3743,
+        "pdf_page": 386
       },
       {
         "fr": "Coût par résultat conforme",
@@ -11480,7 +11690,8 @@
         "source_l_plus_id": "SRC-023",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4097
+        "compendium_md_line": 4097,
+        "pdf_page": 422
       },
       {
         "fr": "Règle de deux",
@@ -11490,7 +11701,8 @@
         "source_l_plus_id": "SRC-087",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3392
+        "compendium_md_line": 3392,
+        "pdf_page": 351
       },
       {
         "fr": "Contamination CaMeL",
@@ -11500,7 +11712,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3398
+        "compendium_md_line": 3398,
+        "pdf_page": 351
       },
       {
         "fr": "Échec en mode fermé",
@@ -11510,7 +11723,8 @@
         "source_l_plus_id": "SRC-088",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3398
+        "compendium_md_line": 3398,
+        "pdf_page": 351
       },
       {
         "fr": "Saga compensable",
@@ -11520,7 +11734,8 @@
         "source_l_plus_id": "SRC-006",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "Point pivot",
@@ -11530,7 +11745,8 @@
         "source_l_plus_id": "SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "Canal de compensation isolé",
@@ -11540,7 +11756,8 @@
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "Constance pass^k",
@@ -11550,7 +11767,8 @@
         "source_l_plus_id": "SRC-029",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "Borne de Wilson",
@@ -11560,7 +11778,8 @@
         "source_l_plus_id": "SRC-022",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "Test métamorphique sans oracle",
@@ -11570,7 +11789,8 @@
         "source_l_plus_id": "SRC-092",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "Porte PRR bloquante",
@@ -11580,7 +11800,8 @@
         "source_l_plus_id": "SRC-067",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5561
+        "compendium_md_line": 5561,
+        "pdf_page": 592
       },
       {
         "fr": "tissu conjonctif agentique",
@@ -11590,7 +11811,8 @@
         "source_l_plus_id": "SRC-039",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 100
+        "compendium_md_line": 100,
+        "pdf_page": 11
       },
       {
         "fr": "règle du maillon le plus élevé",
@@ -11600,7 +11822,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 905
+        "compendium_md_line": 905,
+        "pdf_page": 95
       },
       {
         "fr": "industrialisation cognitive",
@@ -11610,7 +11833,8 @@
         "source_l_plus_id": "SRC-001",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 217
+        "compendium_md_line": 217,
+        "pdf_page": 24
       },
       {
         "fr": "loi de Lusser",
@@ -11620,7 +11844,8 @@
         "source_l_plus_id": "SRC-024",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 369
+        "compendium_md_line": 369,
+        "pdf_page": 42
       },
       {
         "fr": "coût de transaction cognitif",
@@ -11630,7 +11855,8 @@
         "source_l_plus_id": "SRC-097",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 525
+        "compendium_md_line": 525,
+        "pdf_page": 57
       },
       {
         "fr": "économie d'agents virtuels",
@@ -11640,7 +11866,8 @@
         "source_l_plus_id": "SRC-096",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 533
+        "compendium_md_line": 533,
+        "pdf_page": 58
       },
       {
         "fr": "harnais d'agent",
@@ -11650,7 +11877,8 @@
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 708
+        "compendium_md_line": 708,
+        "pdf_page": 78
       },
       {
         "fr": "noyau de contrôle déterministe",
@@ -11660,7 +11888,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1038
+        "compendium_md_line": 1038,
+        "pdf_page": 110
       },
       {
         "fr": "dette cognitive et d'intention",
@@ -11670,7 +11899,8 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 607
+        "compendium_md_line": 607,
+        "pdf_page": 66
       },
       {
         "fr": "quadruple dette agentique",
@@ -11680,7 +11910,8 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 515
+        "compendium_md_line": 515,
+        "pdf_page": 56
       },
       {
         "fr": "interopérabilité verticale et horizontale",
@@ -11690,7 +11921,8 @@
         "source_l_plus_id": "SRC-072, SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1247
+        "compendium_md_line": 1247,
+        "pdf_page": 131
       },
       {
         "fr": "couche anti-corruption",
@@ -11700,7 +11932,8 @@
         "source_l_plus_id": "SRC-070",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2077
+        "compendium_md_line": 2077,
+        "pdf_page": 216
       },
       {
         "fr": "couche sémantique métier",
@@ -11710,7 +11943,8 @@
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1812
+        "compendium_md_line": 1812,
+        "pdf_page": 187
       },
       {
         "fr": "blanchiment de frontière",
@@ -11720,7 +11954,8 @@
         "source_l_plus_id": "SRC-055",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3240
+        "compendium_md_line": 3240,
+        "pdf_page": 336
       },
       {
         "fr": "exécution durable",
@@ -11730,7 +11965,8 @@
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2487
+        "compendium_md_line": 2487,
+        "pdf_page": 266
       },
       {
         "fr": "saga à point pivot",
@@ -11740,7 +11976,8 @@
         "source_l_plus_id": "SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "clé d'idempotence transactionnelle",
@@ -11750,7 +11987,8 @@
         "source_l_plus_id": "SRC-036",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "effet Ringelmann multi-agents",
@@ -11760,7 +11998,8 @@
         "source_l_plus_id": "SRC-032",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2222
+        "compendium_md_line": 2222,
+        "pdf_page": 234
       },
       {
         "fr": "délégation au nom du mandant",
@@ -11770,7 +12009,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2850
+        "compendium_md_line": 2850,
+        "pdf_page": 303
       },
       {
         "fr": "crypto-agilité post-quantique",
@@ -11780,7 +12020,8 @@
         "source_l_plus_id": "SRC-050, SRC-051",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3066
+        "compendium_md_line": 3066,
+        "pdf_page": 321
       },
       {
         "fr": "injection indirecte de consignes",
@@ -11790,7 +12031,8 @@
         "source_l_plus_id": "SRC-054",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3230
+        "compendium_md_line": 3230,
+        "pdf_page": 335
       },
       {
         "fr": "séparation par construction entre contrôle et données",
@@ -11800,7 +12042,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3398
+        "compendium_md_line": 3398,
+        "pdf_page": 361
       },
       {
         "fr": "dérive silencieuse d'outil",
@@ -11810,7 +12053,8 @@
         "source_l_plus_id": "SRC-057",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1334
+        "compendium_md_line": 1334,
+        "pdf_page": 140
       },
       {
         "fr": "analyse de contrôle STPA",
@@ -11820,7 +12064,8 @@
         "source_l_plus_id": "SRC-058",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3664
+        "compendium_md_line": 3664,
+        "pdf_page": 377
       },
       {
         "fr": "constance multi-essais",
@@ -11830,7 +12075,8 @@
         "source_l_plus_id": "SRC-029",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "coût complet par résultat conforme",
@@ -11840,7 +12086,8 @@
         "source_l_plus_id": "SRC-023",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4101
+        "compendium_md_line": 4101,
+        "pdf_page": 423
       },
       {
         "fr": "télémétrie à double couloir",
@@ -11850,7 +12097,8 @@
         "source_l_plus_id": "SRC-037",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3745
+        "compendium_md_line": 3745,
+        "pdf_page": 386
       },
       {
         "fr": "décision fondée exclusivement sur un traitement automatisé",
@@ -11860,7 +12108,8 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4236
+        "compendium_md_line": 4236,
+        "pdf_page": 438
       },
       {
         "fr": "approbation réflexe",
@@ -11870,7 +12119,8 @@
         "source_l_plus_id": "SRC-073",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5428
+        "compendium_md_line": 5428,
+        "pdf_page": 577
       },
       {
         "fr": "trajectoire adaptative sous seuils",
@@ -11880,7 +12130,8 @@
         "source_l_plus_id": "SRC-112",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5132
+        "compendium_md_line": 5132,
+        "pdf_page": 541
       },
       {
         "fr": "Système d'agentivité",
@@ -11890,7 +12141,8 @@
         "source_l_plus_id": "SRC-027, SRC-122",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 215
+        "compendium_md_line": 215,
+        "pdf_page": 24
       },
       {
         "fr": "Agentivité des systèmes",
@@ -11900,7 +12152,8 @@
         "source_l_plus_id": "SRC-001, SRC-122, SRC-123",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 241
+        "compendium_md_line": 241,
+        "pdf_page": 27
       }
     ],
     "vedettes_t8": [
@@ -11912,7 +12165,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 901
+        "compendium_md_line": 901,
+        "pdf_page": 95
       },
       {
         "fr": "Clause non-avis",
@@ -11922,7 +12176,8 @@
         "source_l_plus_id": "SRC-055",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 78
+        "compendium_md_line": 78,
+        "pdf_page": 7
       },
       {
         "fr": "Statut F",
@@ -11932,7 +12187,8 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5918
+        "compendium_md_line": 5918,
+        "pdf_page": 626
       },
       {
         "fr": "Harnais déterministe",
@@ -11942,7 +12198,8 @@
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 690
+        "compendium_md_line": 690,
+        "pdf_page": 76
       },
       {
         "fr": "Partition 80/20",
@@ -11952,7 +12209,8 @@
         "source_l_plus_id": "SRC-027",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 698
+        "compendium_md_line": 698,
+        "pdf_page": 76
       },
       {
         "fr": "Dérive silencieuse",
@@ -11962,7 +12220,8 @@
         "source_l_plus_id": "SRC-057",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1330
+        "compendium_md_line": 1330,
+        "pdf_page": 140
       },
       {
         "fr": "Épinglage cryptographique",
@@ -11972,7 +12231,8 @@
         "source_l_plus_id": "SRC-077",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1334
+        "compendium_md_line": 1334,
+        "pdf_page": 141
       },
       {
         "fr": "Carte d'agent",
@@ -11982,7 +12242,8 @@
         "source_l_plus_id": "SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1441
+        "compendium_md_line": 1441,
+        "pdf_page": 149
       },
       {
         "fr": "Identité non humaine",
@@ -11992,7 +12253,8 @@
         "source_l_plus_id": "SRC-046",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2672
+        "compendium_md_line": 2672,
+        "pdf_page": 284
       },
       {
         "fr": "Passage de jeton",
@@ -12002,7 +12264,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2840
+        "compendium_md_line": 2840,
+        "pdf_page": 302
       },
       {
         "fr": "Jeton de transaction",
@@ -12012,7 +12275,8 @@
         "source_l_plus_id": "SRC-013",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2850
+        "compendium_md_line": 2850,
+        "pdf_page": 303
       },
       {
         "fr": "Preuve d'action C.6",
@@ -12022,7 +12286,8 @@
         "source_l_plus_id": "SRC-045",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2852
+        "compendium_md_line": 2852,
+        "pdf_page": 303
       },
       {
         "fr": "Double couloir probatoire",
@@ -12032,7 +12297,8 @@
         "source_l_plus_id": "SRC-044",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3743
+        "compendium_md_line": 3743,
+        "pdf_page": 386
       },
       {
         "fr": "Coût par résultat conforme",
@@ -12042,7 +12308,8 @@
         "source_l_plus_id": "SRC-023",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4097
+        "compendium_md_line": 4097,
+        "pdf_page": 422
       },
       {
         "fr": "Règle de deux",
@@ -12052,7 +12319,8 @@
         "source_l_plus_id": "SRC-087",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3392
+        "compendium_md_line": 3392,
+        "pdf_page": 351
       },
       {
         "fr": "Contamination CaMeL",
@@ -12062,7 +12330,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3398
+        "compendium_md_line": 3398,
+        "pdf_page": 351
       },
       {
         "fr": "Échec en mode fermé",
@@ -12072,7 +12341,8 @@
         "source_l_plus_id": "SRC-088",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3398
+        "compendium_md_line": 3398,
+        "pdf_page": 351
       },
       {
         "fr": "Saga compensable",
@@ -12082,7 +12352,8 @@
         "source_l_plus_id": "SRC-006",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "Point pivot",
@@ -12092,7 +12363,8 @@
         "source_l_plus_id": "SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "Canal de compensation isolé",
@@ -12102,7 +12374,8 @@
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "Constance pass^k",
@@ -12112,7 +12385,8 @@
         "source_l_plus_id": "SRC-029",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "Borne de Wilson",
@@ -12122,7 +12396,8 @@
         "source_l_plus_id": "SRC-022",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "Test métamorphique sans oracle",
@@ -12132,7 +12407,8 @@
         "source_l_plus_id": "SRC-092",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "Porte PRR bloquante",
@@ -12142,7 +12418,8 @@
         "source_l_plus_id": "SRC-067",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5561
+        "compendium_md_line": 5561,
+        "pdf_page": 592
       },
       {
         "fr": "tissu conjonctif agentique",
@@ -12152,7 +12429,8 @@
         "source_l_plus_id": "SRC-039",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 100
+        "compendium_md_line": 100,
+        "pdf_page": 11
       },
       {
         "fr": "règle du maillon le plus élevé",
@@ -12162,7 +12440,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 905
+        "compendium_md_line": 905,
+        "pdf_page": 95
       },
       {
         "fr": "industrialisation cognitive",
@@ -12172,7 +12451,8 @@
         "source_l_plus_id": "SRC-001",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 217
+        "compendium_md_line": 217,
+        "pdf_page": 24
       },
       {
         "fr": "loi de Lusser",
@@ -12182,7 +12462,8 @@
         "source_l_plus_id": "SRC-024",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 369
+        "compendium_md_line": 369,
+        "pdf_page": 42
       },
       {
         "fr": "coût de transaction cognitif",
@@ -12192,7 +12473,8 @@
         "source_l_plus_id": "SRC-097",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 525
+        "compendium_md_line": 525,
+        "pdf_page": 57
       },
       {
         "fr": "économie d'agents virtuels",
@@ -12202,7 +12484,8 @@
         "source_l_plus_id": "SRC-096",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 533
+        "compendium_md_line": 533,
+        "pdf_page": 58
       },
       {
         "fr": "harnais d'agent",
@@ -12212,7 +12495,8 @@
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 708
+        "compendium_md_line": 708,
+        "pdf_page": 78
       },
       {
         "fr": "noyau de contrôle déterministe",
@@ -12222,7 +12506,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1038
+        "compendium_md_line": 1038,
+        "pdf_page": 110
       },
       {
         "fr": "dette cognitive et d'intention",
@@ -12232,7 +12517,8 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 607
+        "compendium_md_line": 607,
+        "pdf_page": 66
       },
       {
         "fr": "quadruple dette agentique",
@@ -12242,7 +12528,8 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 515
+        "compendium_md_line": 515,
+        "pdf_page": 56
       },
       {
         "fr": "interopérabilité verticale et horizontale",
@@ -12252,7 +12539,8 @@
         "source_l_plus_id": "SRC-072, SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1247
+        "compendium_md_line": 1247,
+        "pdf_page": 131
       },
       {
         "fr": "couche anti-corruption",
@@ -12262,7 +12550,8 @@
         "source_l_plus_id": "SRC-070",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2077
+        "compendium_md_line": 2077,
+        "pdf_page": 216
       },
       {
         "fr": "couche sémantique métier",
@@ -12272,7 +12561,8 @@
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1812
+        "compendium_md_line": 1812,
+        "pdf_page": 187
       },
       {
         "fr": "blanchiment de frontière",
@@ -12282,7 +12572,8 @@
         "source_l_plus_id": "SRC-055",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3240
+        "compendium_md_line": 3240,
+        "pdf_page": 336
       },
       {
         "fr": "exécution durable",
@@ -12292,7 +12583,8 @@
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2487
+        "compendium_md_line": 2487,
+        "pdf_page": 266
       },
       {
         "fr": "saga à point pivot",
@@ -12302,7 +12594,8 @@
         "source_l_plus_id": "SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "clé d'idempotence transactionnelle",
@@ -12312,7 +12605,8 @@
         "source_l_plus_id": "SRC-036",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2499
+        "compendium_md_line": 2499,
+        "pdf_page": 267
       },
       {
         "fr": "effet Ringelmann multi-agents",
@@ -12322,7 +12616,8 @@
         "source_l_plus_id": "SRC-032",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2222
+        "compendium_md_line": 2222,
+        "pdf_page": 234
       },
       {
         "fr": "délégation au nom du mandant",
@@ -12332,7 +12627,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2850
+        "compendium_md_line": 2850,
+        "pdf_page": 303
       },
       {
         "fr": "crypto-agilité post-quantique",
@@ -12342,7 +12638,8 @@
         "source_l_plus_id": "SRC-050, SRC-051",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3066
+        "compendium_md_line": 3066,
+        "pdf_page": 321
       },
       {
         "fr": "injection indirecte de consignes",
@@ -12352,7 +12649,8 @@
         "source_l_plus_id": "SRC-054",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3230
+        "compendium_md_line": 3230,
+        "pdf_page": 335
       },
       {
         "fr": "séparation par construction entre contrôle et données",
@@ -12362,7 +12660,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3398
+        "compendium_md_line": 3398,
+        "pdf_page": 361
       },
       {
         "fr": "dérive silencieuse d'outil",
@@ -12372,7 +12671,8 @@
         "source_l_plus_id": "SRC-057",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1334
+        "compendium_md_line": 1334,
+        "pdf_page": 140
       },
       {
         "fr": "analyse de contrôle STPA",
@@ -12382,7 +12682,8 @@
         "source_l_plus_id": "SRC-058",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3664
+        "compendium_md_line": 3664,
+        "pdf_page": 377
       },
       {
         "fr": "constance multi-essais",
@@ -12392,7 +12693,8 @@
         "source_l_plus_id": "SRC-029",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3926
+        "compendium_md_line": 3926,
+        "pdf_page": 405
       },
       {
         "fr": "coût complet par résultat conforme",
@@ -12402,7 +12704,8 @@
         "source_l_plus_id": "SRC-023",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4101
+        "compendium_md_line": 4101,
+        "pdf_page": 423
       },
       {
         "fr": "télémétrie à double couloir",
@@ -12412,7 +12715,8 @@
         "source_l_plus_id": "SRC-037",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3745
+        "compendium_md_line": 3745,
+        "pdf_page": 386
       },
       {
         "fr": "décision fondée exclusivement sur un traitement automatisé",
@@ -12422,7 +12726,8 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4236
+        "compendium_md_line": 4236,
+        "pdf_page": 438
       },
       {
         "fr": "approbation réflexe",
@@ -12432,7 +12737,8 @@
         "source_l_plus_id": "SRC-073",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5428
+        "compendium_md_line": 5428,
+        "pdf_page": 577
       },
       {
         "fr": "trajectoire adaptative sous seuils",
@@ -12442,7 +12748,8 @@
         "source_l_plus_id": "SRC-112",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5132
+        "compendium_md_line": 5132,
+        "pdf_page": 541
       },
       {
         "fr": "Système d'agentivité",
@@ -12452,7 +12759,8 @@
         "source_l_plus_id": "SRC-027, SRC-122",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 215
+        "compendium_md_line": 215,
+        "pdf_page": 24
       },
       {
         "fr": "Agentivité des systèmes",
@@ -12462,7 +12770,8 @@
         "source_l_plus_id": "SRC-001, SRC-122, SRC-123",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 241
+        "compendium_md_line": 241,
+        "pdf_page": 27
       }
     ]
   },

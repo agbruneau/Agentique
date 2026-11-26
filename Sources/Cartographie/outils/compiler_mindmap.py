@@ -21,7 +21,12 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import re
+import sys
 from typing import Any, Callable
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 
 PAGE_TITLE = "MindMap — Cartographie thématique du Compendium Agentique"
 TOME_ORDER: dict[str, int] = {
@@ -338,6 +343,7 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                 "tomes": list(dict.fromkeys(part_tags)),
                 "file": file_path,
                 "line_start": line_start,
+                "pdf_page": anc.get("pdf_page"),
                 "source_group": f"Compendium Annexe C ({origin_tag})",
                 "_tier": 0,
             }
@@ -348,6 +354,8 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                     entry["tomes"].append(pt)
             if impact and impact not in entry["impact_parts"]:
                 entry["impact_parts"].append(impact)
+            if not entry.get("pdf_page") and anc.get("pdf_page"):
+                entry["pdf_page"] = anc.get("pdf_page")
         register_aliases(anc, key, merged_by_key[key])
 
     for anc in chrono.get("ancres_t7_l_plus", []):
@@ -366,6 +374,7 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
             "tomes": list(dict.fromkeys(ch_list[:4])),
             "file": anc.get("compendium_file") or "Compendium/Compendium.md",
             "line_start": int(anc.get("compendium_line_start") or 7434),
+            "pdf_page": anc.get("pdf_page"),
             "source_group": "Compendium Annexe C (Ch. 25–26, 31)",
             "_tier": 2,
         }
@@ -393,6 +402,7 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                 "tomes": ["LIM", "ANN"],
                 "file": "Compendium/Compendium.md",
                 "line_start": 165,
+                "pdf_page": 17,
                 "source_group": "Repères clés (§ 0.5 / Annexe C)",
                 "_tier": 0,
             }
@@ -409,6 +419,7 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                 "tomes": tomes_sorted,
                 "file": item["file"],
                 "line_start": item["line_start"],
+                "pdf_page": item.get("pdf_page"),
                 "source_group": item["source_group"],
                 "_tier": item["_tier"],
             }
@@ -423,6 +434,7 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
                 "tomes": ["ch31", "ch32"],
                 "file": pal.get("compendium_file") or "Compendium/Compendium.md",
                 "line_start": int(pal.get("compendium_line_start") or 5091),
+                "pdf_page": pal.get("pdf_page"),
                 "source_group": "Trajectoire DAPP (Ch. 31 / Annexe C)",
                 "_tier": 1,
             }
@@ -432,8 +444,96 @@ def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, A
     return events
 
 
+def _flatten_struct_for_lookup(structure: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Aplatit les nœuds structurels de ``Compendium/Compendium.md`` pour le raccordement ligne -> unité."""
+    if not structure:
+        return []
+    out: list[dict[str, Any]] = []
+
+    def walk(node: dict[str, Any]) -> None:
+        out.append(node)
+        for ch in node.get("children") or []:
+            walk(ch)
+
+    for f in structure.get("files") or []:
+        if f.get("tome_id") == "R":
+            continue
+        for root in f.get("tree") or []:
+            walk(root)
+    return out
+
+
+def _enrich_matrix_compendium_anchors(
+    unified: list[dict[str, Any]],
+    comp_lines: list[str] | None,
+    structure: dict[str, Any] | None,
+    pdf_index: Any | None,
+) -> None:
+    """Enrichit les 237 entrées de la matrice unifiée avec leur ancrage exact dans le Compendium."""
+    if not comp_lines:
+        return
+    from extraire_pivots_compendium import _compute_compendium_unit_spans, _find_line_in_compendium  # noqa: E402
+
+    unit_spans = _compute_compendium_unit_spans(comp_lines)
+    struct_flat = _flatten_struct_for_lookup(structure)
+
+    priority_by_prefix: tuple[tuple[str, list[str]], ...] = (
+        ("5 SBB", ["ch35", "annexe-d", "ch06"]),
+        ("PRR-75", ["ch34", "annexe-d", "ch35"]),
+        ("C40", ["ch29", "ch35", "annexe-d"]),
+        ("CAP", ["ch06", "annexe-d", "ch32"]),
+        ("PEX", ["ch28", "annexe-d"]),
+        ("EXIG", ["ch34", "annexe-d", "ch35"]),
+        ("ADR_TEMPLATE", ["ch35", "ch34", "annexe-d"]),
+        ("CRE-IA", ["ch34", "annexe-d"]),
+    )
+
+    body_start = unit_spans.get("00-liminaire", (74, len(comp_lines)))[0]
+    body_span = (body_start, len(comp_lines))
+
+    for entry in unified:
+        eid = str(entry.get("id") or "")
+        fam = str(entry.get("family") or "")
+        pref_units = ["annexe-d", "ch34", "ch35"]
+        for fam_pref, ulist in priority_by_prefix:
+            if fam.startswith(fam_pref):
+                pref_units = ulist
+                break
+        pref_spans = [unit_spans[u] for u in pref_units if u in unit_spans]
+        pref_spans.append(body_span)
+
+        clean_eid = eid.rstrip("-")
+        needles = [eid] if eid == clean_eid else [eid, clean_eid]
+        if fam.startswith("5 SBB") and entry.get("module"):
+            needles.append(str(entry["module"]).split()[0])
+        line_no = _find_line_in_compendium(comp_lines, needles, pref_spans)
+
+        # Résolution de l'unité structurelle la plus profonde contenant line_no
+        best_struct = None
+        for sn in struct_flat:
+            if int(sn.get("line_start", 0)) <= line_no <= int(sn.get("line_end", 0)):
+                if best_struct is None or int(sn.get("level", 0)) >= int(best_struct.get("level", 0)):
+                    best_struct = sn
+
+        cid = best_struct.get("compendium_unit_id") if best_struct else None
+        if not cid:
+            for u_name, (u_lo, u_hi) in unit_spans.items():
+                if u_lo <= line_no <= u_hi:
+                    cid = u_name
+                    break
+
+        entry["compendium_unit_id"] = cid or "annexe-d"
+        entry["struct_unit_id"] = best_struct.get("unit_id") if best_struct else None
+        entry["compendium_line_start"] = line_no
+        entry["pdf_page"] = pdf_index.resolve_line_page(line_no, needles) if pdf_index is not None else None
+
+
 def _build_unified_matrix(
     raw_pivots: dict[str, Any],
+    *,
+    comp_lines: list[str] | None = None,
+    structure: dict[str, Any] | None = None,
+    pdf_index: Any | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
     """Construit la matrice unifiée dédupliquée (237 entrées uniques, 0 ID en double)."""
     raw_mat = raw_pivots.get("matrices") or {}
@@ -575,6 +675,8 @@ def _build_unified_matrix(
         for fam_top in sorted(fam_buckets, key=lambda k: (-len(fam_buckets[k]), k))
     ]
 
+    _enrich_matrix_compendium_anchors(unified, comp_lines, structure, pdf_index)
+
     summary_counts = {
         "unique_entries": len(unified),
         "tome8_executable_tests": len(m95),
@@ -583,8 +685,14 @@ def _build_unified_matrix(
     return unified, matrix_distribution, summary_counts
 
 
-def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
-    """Normalise les pivots de concordance pour les 4 sous-onglets de la Vue 4."""
+def normalize_pivots(
+    raw_pivots: dict[str, Any],
+    *,
+    comp_lines: list[str] | None = None,
+    structure: dict[str, Any] | None = None,
+    pdf_index: Any | None = None,
+) -> dict[str, Any]:
+    """Normalise les pivots de concordance pour les sous-onglets de la Vue 4."""
     disc_block = raw_pivots.get("discordances_resolues") or {}
     raw_div02 = disc_block.get("div_02_tome_5") or {}
     div_02 = None
@@ -599,6 +707,9 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
             "bilan_chiffre": raw_div02.get("bilan_chiffre", {}),
             "file": raw_div02.get("compendium_file") or "Compendium/Compendium.md",
             "line_start": int(raw_div02.get("compendium_line_start") or 108),
+            "pdf_page": raw_div02.get("compendium_pdf_page"),
+            "annexe_c_line": raw_div02.get("compendium_annexe_c_line"),
+            "annexe_c_pdf_page": raw_div02.get("compendium_annexe_c_pdf_page"),
         }
 
     reconciliations: list[dict[str, Any]] = []
@@ -621,6 +732,9 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
                 "variants": variants_clean,
                 "file": entry.get("compendium_file") or "Compendium/Compendium.md",
                 "line_start": c_line,
+                "pdf_page": entry.get("compendium_pdf_page"),
+                "annexe_c_line": entry.get("compendium_annexe_c_line"),
+                "annexe_c_pdf_page": entry.get("compendium_annexe_c_pdf_page"),
             }
         )
 
@@ -638,7 +752,9 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
             }
             for ev in tl_unified
         ]
-        mat_unified, matrix_distribution, matrix_totals = _build_unified_matrix(raw_pivots)
+        mat_unified, matrix_distribution, matrix_totals = _build_unified_matrix(
+            raw_pivots, comp_lines=comp_lines, structure=structure, pdf_index=pdf_index
+        )
         traceability_matrix = [
             {
                 **item,
@@ -816,11 +932,161 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _build_schemas_catalog(
+    comp_inv: dict[str, Any] | None,
+    cat_schemas: dict[str, Any] | None,
+) -> list[dict[str, Any]]:
+    """Fusionne l'inventaire vérifié des 115 schémas et les métadonnées pédagogiques."""
+    if not comp_inv:
+        return []
+    cat_by_id: dict[str, dict[str, Any]] = {}
+    if cat_schemas:
+        for grp in ("global_schemas", "chapter_schemas"):
+            for item in cat_schemas.get(grp) or []:
+                sid = item.get("schema_id")
+                if sid:
+                    cat_by_id[sid] = item
+
+    out: list[dict[str, Any]] = []
+    for fig in comp_inv.get("figures") or []:
+        sid = fig["schema_id"]
+        meta = cat_by_id.get(sid) or {}
+        out.append(
+            {
+                "schema_id": sid,
+                "unit": fig["unit"],
+                "part_id": fig["part_id"],
+                "chapter_number": int(fig.get("chapter_number", 0)),
+                "domain_id": fig.get("domain_id", "GLOBAL"),
+                "engine": fig["engine"],
+                "notation": _clean_text(fig.get("notation", "")),
+                "title": _clean_text(fig.get("title", "")),
+                "rendered_path": fig["rendered_path"],
+                "compendium_md_file": fig.get("compendium_md_file", "Compendium/Compendium.md"),
+                "compendium_md_line": int(fig.get("compendium_md_line", 1)),
+                "pdf_page": fig.get("pdf_page"),
+                "pedagogical_objective": _clean_text(meta.get("pedagogical_objective", "")),
+                "vulgarization_angle": _clean_text(meta.get("vulgarization_angle", "")),
+                "target_audiences": [str(a) for a in (meta.get("target_audiences") or [])],
+                "visual_archetype": _clean_text(meta.get("visual_archetype", "")),
+                "families_covered": list(fig.get("families_covered") or meta.get("families_covered") or []),
+                "themes_vulgarized": list(fig.get("themes_vulgarized") or meta.get("themes_vulgarized") or []),
+            }
+        )
+    return out
+
+
+def _build_reading_paths(
+    chapters: list[dict[str, Any]],
+    nodes: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Construit 5 parcours guidés vérifiés dans le Compendium."""
+    chapters_by_cid = {c["compendium_unit_id"]: c for c in chapters if c.get("compendium_unit_id")}
+    sub_by_ch = {n.get("chapter_id"): n for n in nodes if n.get("node_kind") == "subdomain" and n.get("chapter_id")}
+    node_by_slug = {n.get("canonical_slug"): n for n in nodes if n.get("canonical_slug")}
+
+    specs = [
+        {
+            "path_id": "essentiel",
+            "title": "Parcours Essentiel — Découverte & Doctrine 80/20",
+            "audience": "Direction · Décideurs · Tous publics",
+            "description": "Comprendre la rupture agentique, la loi de Lusser, la partition hybride 80/20 et l'échelle d'autonomie L0–L4.",
+            "units": ["00-liminaire", "ch01", "ch02", "ch04", "ch05"],
+        },
+        {
+            "path_id": "ae-strategie",
+            "title": "Architecte d'entreprise — Portefeuille, Souveraineté & DAPP",
+            "audience": "Architecte d'entreprise (AE)",
+            "description": "Cadrer le noyau possédé (42 CAP), l'arbitrage Acheter/Assembler/Construire, la réversibilité et la trajectoire 2028–2035.",
+            "units": ["00-liminaire", "ch03", "ch06", "ch27", "ch31", "ch32", "ch34"],
+        },
+        {
+            "path_id": "as-ingenierie",
+            "title": "Architecte de solutions — Protocoles, Sagas & Trousse",
+            "audience": "Architecte de solutions (AS) · Ingénierie",
+            "description": "Assembler les harnais 80/20, MCP 2026-07-28, A2A v1.0.1, mémoire CoALA, exécution durable Saga et trousse Tome 8.",
+            "units": ["ch04", "ch07", "ch08", "ch11", "ch13", "ch15", "ch35"],
+        },
+        {
+            "path_id": "rssi-securite",
+            "title": "RSSI & Défense hors modèle — NHI, OPA, Confinement & PQC",
+            "audience": "RSSI · Cybersécurité · SRE",
+            "description": "Verrouiller les identités NHI/OBO/CIBA, appliquer la Règle de deux sous OPA/Rego, confiner l'exécution et préparer le PQC.",
+            "units": ["ch09", "ch16", "ch17", "ch18", "ch19", "ch20", "ch21"],
+        },
+        {
+            "path_id": "juridique-2035",
+            "title": "Juridique & Conformité — Loi 25, BSIF E-23, EU AI Act & Humain",
+            "audience": "Juridique · Conformité · Audit",
+            "description": "Relier observabilité probatoire, obligations QC/CA/UE, profils financiers, calendrier 2023–2035 et préservation du capital humain.",
+            "units": ["ch22", "ch25", "ch26", "ch28", "ch31", "ch33", "annexe-c"],
+        },
+    ]
+
+    paths: list[dict[str, Any]] = []
+    for sp in specs:
+        steps: list[dict[str, Any]] = []
+        total_min = 0
+        total_pages = 0
+        for uid in sp["units"]:
+            ch = chapters_by_cid.get(uid)
+            if not ch:
+                continue
+            sub_node = sub_by_ch.get(uid)
+            rep_node_id = sub_node["node_id"] if sub_node else None
+            if not rep_node_id:
+                for sl in ch.get("themes_addressed") or []:
+                    tn = node_by_slug.get(sl)
+                    if tn:
+                        rep_node_id = tn["node_id"]
+                        break
+            if not rep_node_id:
+                rep_node_id = "NODE_ROOT"
+
+            p0 = ch.get("pdf_page_start")
+            p1 = ch.get("pdf_page_end")
+            rmin = int(ch.get("reading_minutes") or max(1, round(int(ch.get("word_count", 0)) / 220)))
+            total_min += rmin
+            if p0 is not None and p1 is not None and p1 >= p0:
+                total_pages += p1 - p0 + 1
+            steps.append(
+                {
+                    "compendium_unit_id": uid,
+                    "struct_unit_id": ch.get("unit_id"),
+                    "representative_node_id": rep_node_id,
+                    "part_id": ch.get("part_id"),
+                    "title": _clean_text(ch.get("chapter_title") or uid),
+                    "objective": _clean_text(ch.get("guiding_question") or ch.get("summary") or ""),
+                    "line_start": int(ch.get("line_start") or 1),
+                    "pdf_page_start": p0,
+                    "pdf_page_end": p1,
+                    "reading_minutes": rmin,
+                }
+            )
+        paths.append(
+            {
+                "path_id": sp["path_id"],
+                "title": sp["title"],
+                "audience": sp["audience"],
+                "description": sp["description"],
+                "steps_count": len(steps),
+                "total_minutes": total_min,
+                "total_pages": total_pages,
+                "steps": steps,
+            }
+        )
+    return paths
+
+
 def build_mindmap_bundle(
     schema: dict[str, Any],
     structure: dict[str, Any],
     pivots: dict[str, Any],
     synthese: dict[str, Any],
+    comp_inv: dict[str, Any] | None = None,
+    cat_schemas: dict[str, Any] | None = None,
+    comp_lines: list[str] | None = None,
+    pdf_index: Any | None = None,
 ) -> dict[str, Any]:
     """Assemble et valide le bundle unifié ``corpus-mindmap-data.json``."""
     nodes = synthese.get("nodes") or synthese.get("thematic_nodes") or []
@@ -844,7 +1110,11 @@ def build_mindmap_bundle(
         if not str(rel.get("justification", "")).strip():
             raise ValueError(f"Justification vide sur la relation {rel.get('relation_id')}")
 
-    normalized_pivots = normalize_pivots(pivots)
+    normalized_pivots = normalize_pivots(
+        pivots, comp_lines=comp_lines, structure=structure, pdf_index=pdf_index
+    )
+    schemas_catalog = _build_schemas_catalog(comp_inv, cat_schemas)
+    reading_paths = _build_reading_paths(chapters, nodes)
 
     return {
         "schema_version": "1.0.0",
@@ -862,11 +1132,15 @@ def build_mindmap_bundle(
             "theme_nodes": sum(1 for n in nodes if n.get("node_kind") == "theme"),
             "relations": len(relations),
             "chapters": len(chapters),
+            "schemas": len(schemas_catalog),
+            "reading_paths": len(reading_paths),
         },
         "nodes": nodes,
         "relations": relations,
         "chapters": chapters,
         "concordance_matrix": concordance_matrix,
+        "schemas": schemas_catalog,
+        "reading_paths": reading_paths,
         "pivots": normalized_pivots,
         "structure": structure,
     }
@@ -881,9 +1155,33 @@ def compile_mindmap(repo_root: Path) -> tuple[Path, Path, dict[str, Any]]:
     structure = json.loads((donnees_dir / "structure-integrale.json").read_text(encoding="utf-8"))
     pivots = json.loads((donnees_dir / "pivots-concordance.json").read_text(encoding="utf-8"))
     synthese = json.loads((donnees_dir / "synthese-transversale.json").read_text(encoding="utf-8"))
+    comp_inv_path = donnees_dir / "inventaire-115-schemas-compendium.json"
+    cat_schemas_path = donnees_dir / "catalogue-schemas-prd.json"
+    comp_inv = json.loads(comp_inv_path.read_text(encoding="utf-8")) if comp_inv_path.is_file() else None
+    cat_schemas = json.loads(cat_schemas_path.read_text(encoding="utf-8")) if cat_schemas_path.is_file() else None
+
+    comp_md_path = repo_root / "Compendium" / "Compendium.md"
+    comp_lines = comp_md_path.read_text(encoding="utf-8").splitlines() if comp_md_path.is_file() else None
+    from index_pdf_compendium import CompendiumPdfIndex  # noqa: E402
+
+    pdf_index = (
+        CompendiumPdfIndex.from_repo(repo_root)
+        if (repo_root / "Compendium" / "Compendium.pdf").is_file() and comp_md_path.is_file()
+        else None
+    )
+
     template_html = (outils_dir / "template_mindmap.html").read_text(encoding="utf-8")
 
-    bundle = build_mindmap_bundle(schema, structure, pivots, synthese)
+    bundle = build_mindmap_bundle(
+        schema,
+        structure,
+        pivots,
+        synthese,
+        comp_inv=comp_inv,
+        cat_schemas=cat_schemas,
+        comp_lines=comp_lines,
+        pdf_index=pdf_index,
+    )
 
     data_out = donnees_dir / "corpus-mindmap-data.json"
     data_out.write_text(

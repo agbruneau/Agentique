@@ -19,7 +19,12 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import re
+import sys
 from typing import Any
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 
 ROMAN_TO_PART_ID: dict[str, str] = {
     "I": "P01",
@@ -136,6 +141,11 @@ class HeadingItem:
     compendium_unit_id: str | None = None
     source_file: str | None = None
     identifiers: list[str] = field(default_factory=list)
+    pdf_page_start: int | None = None
+    pdf_page_end: int | None = None
+    reading_minutes: int = 1
+    guiding_question: str | None = None
+    excerpt: str = ""
     children: list[HeadingItem] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -151,6 +161,11 @@ class HeadingItem:
             "line_end": self.line_end,
             "word_count": self.word_count,
             "own_word_count": self.own_word_count,
+            "reading_minutes": self.reading_minutes,
+            "pdf_page_start": self.pdf_page_start,
+            "pdf_page_end": self.pdf_page_end,
+            "guiding_question": self.guiding_question,
+            "excerpt": self.excerpt,
             "part_title": self.part_title,
             "compendium_unit_id": self.compendium_unit_id,
             "source_file": self.source_file,
@@ -302,8 +317,11 @@ def build_heading_tree(
     *,
     slice_end_line: int | None = None,
     unit_source_map: dict[str, str] | None = None,
+    pdf_index: Any | None = None,
 ) -> tuple[list[HeadingItem], list[HeadingItem]]:
-    """Construit l'arbre hiérarchique H1..H6 et calcule plages de lignes, mots et identifiants."""
+    """Construit l'arbre hiérarchique H1..H6 et calcule plages de lignes, mots, pages PDF, extraits et identifiants."""
+    from index_pdf_compendium import clean_prose_excerpt  # noqa: E402
+
     total_lines = min(len(lines), slice_end_line) if slice_end_line else len(lines)
     nodes: list[HeadingItem] = []
     current_part: str | None = None
@@ -365,6 +383,7 @@ def build_heading_tree(
 
     for node in nodes:
         node.word_count = prefix_words[node.line_end] - prefix_words[node.line_start - 1]
+        node.reading_minutes = max(1, round(node.word_count / 220))
         if node.children:
             own_end = node.children[0].line_start - 1
         else:
@@ -378,6 +397,19 @@ def build_heading_tree(
             if ln not in code_line_numbers
         )
         node.identifiers = detect_identifiers(own_text)
+
+        gq, exc = clean_prose_excerpt(lines, node.line_start, node.line_end, code_line_numbers)
+        node.guiding_question = gq
+        node.excerpt = exc
+
+        if pdf_index is not None:
+            span = pdf_index.heading_pages_by_line.get(node.line_start)
+            if span is not None:
+                node.pdf_page_start, node.pdf_page_end = span
+            else:
+                p_start = pdf_index.resolve_line_page(node.line_start, [node.title])
+                p_end = max(p_start, pdf_index.resolve_line_page(node.line_end))
+                node.pdf_page_start, node.pdf_page_end = p_start, p_end
 
     def propagate_identifiers(node: HeadingItem) -> set[str]:
         acc = set(node.identifiers)
@@ -427,6 +459,7 @@ def _build_section_payload(
     slice_start_line: int,
     slice_end_line: int,
     unit_source_map: dict[str, str] | None,
+    pdf_index: Any | None = None,
 ) -> tuple[dict[str, Any], int]:
     """Construit l'entrée JSON pour une section (``R`` ou ``LIM..ANN``)."""
     roots, flat_nodes = build_heading_tree(
@@ -436,6 +469,7 @@ def _build_section_payload(
         code_lines,
         slice_end_line=slice_end_line,
         unit_source_map=unit_source_map,
+        pdf_index=pdf_index,
     )
     by_level = {f"H{lvl}": 0 for lvl in range(1, 7)}
     for _, lvl, _ in raw_headings:
@@ -451,6 +485,9 @@ def _build_section_payload(
     )
     mapped_units = sorted({n.compendium_unit_id for n in flat_nodes if n.compendium_unit_id})
 
+    pdf_starts = [n.pdf_page_start for n in flat_nodes if n.pdf_page_start is not None]
+    pdf_ends = [n.pdf_page_end for n in flat_nodes if n.pdf_page_end is not None]
+
     payload = {
         "tome_id": section_id,
         "section_id": section_id,
@@ -461,6 +498,9 @@ def _build_section_payload(
         "line_end": slice_end_line,
         "line_count": slice_end_line - slice_start_line + 1,
         "word_count": slice_word_count,
+        "reading_minutes": max(1, round(slice_word_count / 220)),
+        "pdf_page_start": min(pdf_starts) if pdf_starts else None,
+        "pdf_page_end": max(pdf_ends) if pdf_ends else None,
         "heading_count": len(flat_nodes),
         "headings_by_level": by_level,
         "fenced_code_blocks_count": slice_fenced,
@@ -474,7 +514,12 @@ def _build_section_payload(
 
 def extract_corpus_structure(repo_root: Path) -> dict[str, Any]:
     """Extrait la structure intégrale de ``Compendium/README.md`` (``R``) et ``Compendium/Compendium.md`` (14 sections H1)."""
+    from index_pdf_compendium import CompendiumPdfIndex  # noqa: E402
+
     unit_source_map = _load_unit_source_map(repo_root)
+    pdf_index = None
+    if (repo_root / "Compendium" / "Compendium.pdf").is_file() and (repo_root / "Compendium" / "Compendium.md").is_file():
+        pdf_index = CompendiumPdfIndex.from_repo(repo_root)
     sections_payload: list[dict[str, Any]] = []
     headings_by_level_global = {f"H{lvl}": 0 for lvl in range(1, 7)}
     global_identifiers: set[str] = set()
@@ -551,6 +596,7 @@ def extract_corpus_structure(repo_root: Path) -> dict[str, Any]:
             slice_start_line=slice_start,
             slice_end_line=slice_end,
             unit_source_map=unit_source_map,
+            pdf_index=pdf_index,
         )
         sections_payload.append(sec_obj)
         for k, v in sec_obj["headings_by_level"].items():

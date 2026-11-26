@@ -47,7 +47,7 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 ## Navigation et ressources associées
 
 - **Usine éditoriale et sources** : [`../Sources/Compendium/README.md`](../Sources/Compendium/README.md) (manuscrit `42` unités, `115` schémas, sources `L+`, registres SSOT et outillage Python de vérification et d'assemblage).
-- **Cartographie thématique** : [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`4` vues autonomes hors ligne sur les `15` sections et `42` unités du Compendium).
+- **Cartographie thématique et navigateur de lecture** : [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`4` vues autonomes hors ligne avec ancrage direct `Compendium.pdf#page=N`, extraits éditoriaux, `5` parcours de lecture guidés — ex. [Parcours Essentiel](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=essentiel) — et [Galerie des `115` schémas](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=concordance&tab=schemas_gallery)).
 - **Collection des huit tomes** : [`../Tomes/README.md`](../Tomes/README.md) (`Tome 1` à `Tome 8` en PDF et Markdown).
 
 ---

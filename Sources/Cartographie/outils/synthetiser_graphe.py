@@ -88,10 +88,17 @@ def _flatten_compendium_sections(
     struct_data: dict[str, Any],
     comp_lines: list[str],
     manifest_units: dict[str, dict[str, Any]],
-) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]]]:
-    """Extrait les sous-sections indexables et la table des 42 unités de ``structure-integrale.json``."""
+) -> tuple[
+    list[dict[str, Any]],
+    dict[str, dict[str, Any]],
+    dict[str, dict[str, Any]],
+    dict[str, dict[str, Any]],
+]:
+    """Extrait les sous-sections indexables, les 42 unités et les index structurels de ``structure-integrale.json``."""
     sections: list[dict[str, Any]] = []
     unit_meta_by_cid: dict[str, dict[str, Any]] = {}
+    struct_by_uid: dict[str, dict[str, Any]] = {}
+    part_h1_by_part_id: dict[str, dict[str, Any]] = {}
 
     def walk(
         node: dict[str, Any],
@@ -99,10 +106,14 @@ def _flatten_compendium_sections(
         current_unit_cid: str | None,
         current_unit_title: str,
     ) -> None:
+        struct_by_uid[node["unit_id"]] = node
         cid = node.get("compendium_unit_id") or current_unit_cid
         kind = node.get("kind", "")
         title = node.get("title", "")
         level = int(node.get("level", 1))
+
+        if level == 1 and kind in ("part", "liminaire", "annex") and part_id not in part_h1_by_part_id:
+            part_h1_by_part_id[part_id] = node
 
         # Détecter l'en-tête racine de l'unité éditoriale (00-liminaire, ch01..ch36, annexe-a..e)
         if node.get("compendium_unit_id") and (
@@ -121,6 +132,11 @@ def _flatten_compendium_sections(
                     "chapter_title": title,
                     "line_start": int(node["line_start"]),
                     "line_end": int(node["line_end"]),
+                    "pdf_page_start": node.get("pdf_page_start"),
+                    "pdf_page_end": node.get("pdf_page_end"),
+                    "reading_minutes": int(node.get("reading_minutes") or max(1, round(int(node.get("word_count", 0)) / 220))),
+                    "guiding_question": node.get("guiding_question"),
+                    "excerpt": node.get("excerpt", ""),
                     "identifiers": list(node.get("identifiers") or []),
                     "word_count": int(node.get("word_count", 0)),
                 }
@@ -149,6 +165,10 @@ def _flatten_compendium_sections(
                         "level": level,
                         "line_start": l_start,
                         "line_end": l_end,
+                        "pdf_page_start": node.get("pdf_page_start"),
+                        "pdf_page_end": node.get("pdf_page_end"),
+                        "reading_minutes": int(node.get("reading_minutes") or max(1, round(int(node.get("word_count", 0)) / 220))),
+                        "excerpt": node.get("excerpt", ""),
                         "identifiers": set(node.get("identifiers") or []),
                         "norm_title": norm_title,
                         "norm_body": norm_body,
@@ -161,11 +181,13 @@ def _flatten_compendium_sections(
     for sec_obj in struct_data["files"]:
         part_id = sec_obj.get("section_id") or sec_obj["tome_id"]
         if part_id == "R":
+            for root_node in sec_obj["tree"]:
+                struct_by_uid[root_node["unit_id"]] = root_node
             continue
         for root_node in sec_obj["tree"]:
             walk(root_node, part_id, root_node.get("compendium_unit_id"), root_node.get("title", ""))
 
-    return sections, unit_meta_by_cid
+    return sections, unit_meta_by_cid, struct_by_uid, part_h1_by_part_id
 
 
 def _extract_theme_signals(
@@ -296,7 +318,9 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
 
     comp_lines = (repo_root / "Compendium" / "Compendium.md").read_text(encoding="utf-8").splitlines()
     manifest_units = {u["id"]: u for u in manifest["units"]}
-    sections, unit_meta_by_cid = _flatten_compendium_sections(struct_data, comp_lines, manifest_units)
+    sections, unit_meta_by_cid, struct_by_uid, part_h1_by_part_id = _flatten_compendium_sections(
+        struct_data, comp_lines, manifest_units
+    )
     if len(unit_meta_by_cid) != 42:
         raise ValueError(f"42 unités attendues dans structure-integrale.json, trouvées {len(unit_meta_by_cid)}")
 
@@ -473,9 +497,10 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                 chosen_secs.append(sec)
                 seen_units_for_th.add(ucid)
 
-        # Constituer les occurrences vérifiées
+        # Constituer les occurrences vérifiées (avec ancrage maître is_primary sur la meilleure section du chapitre propriétaire)
+        primary_sec_uid = chosen_secs[0]["unit_id"] if (chosen_secs and chosen_secs[0]["compendium_unit_id"] == owner_ch) else None
         occs: list[dict[str, Any]] = []
-        for sec in sorted(chosen_secs, key=lambda s: (PART_RANK.get(s["part_id"], 99), s["line_start"])):
+        for sec in chosen_secs:
             pid = sec["part_id"]
             ucid = sec["compendium_unit_id"]
             occs.append(
@@ -490,12 +515,19 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                     "section": sec["section"],
                     "line_start": sec["line_start"],
                     "line_end": sec["line_end"],
+                    "pdf_page_start": sec.get("pdf_page_start"),
+                    "pdf_page_end": sec.get("pdf_page_end"),
+                    "reading_minutes": sec.get("reading_minutes", 1),
+                    "excerpt": sec.get("excerpt", ""),
+                    "is_primary": sec["unit_id"] == primary_sec_uid,
                     "role_in_unit": es.SECTION_DEFAULT_ROLES.get(pid, "synthese"),
                 }
             )
             unit_to_themes.setdefault(ucid, [])
             if slug not in unit_to_themes[ucid]:
                 unit_to_themes[ucid].append(slug)
+
+        occs.sort(key=lambda o: (0 if o["is_primary"] else 1, PART_RANK.get(o["part_id"], 99), o["line_start"]))
 
         parts_pres = sorted({o["part_id"] for o in occs}, key=lambda p: PART_RANK.get(p, 99))
         units_pres = sorted(
@@ -549,6 +581,11 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                         "section": sec["section"],
                         "line_start": sec["line_start"],
                         "line_end": sec["line_end"],
+                        "pdf_page_start": sec.get("pdf_page_start"),
+                        "pdf_page_end": sec.get("pdf_page_end"),
+                        "reading_minutes": sec.get("reading_minutes", 1),
+                        "excerpt": sec.get("excerpt", ""),
+                        "is_primary": False,
                         "role_in_unit": es.SECTION_DEFAULT_ROLES.get(sec["part_id"], "synthese"),
                     }
                 )
@@ -636,12 +673,57 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
         node["chapter_unit_ids"] = sorted(unit_ids_acc)
         node["occurrence_count"] = occ_sum
         if node["node_kind"] == "family":
-            node["owner_chapter"] = fam_owner_chapter[node["node_id"]]
+            owner_ch = fam_owner_chapter[node["node_id"]]
+            node["owner_chapter"] = owner_ch
+            prim_counts: Counter[str] = Counter()
+            for ch in children:
+                for occ in ch.get("occurrences") or []:
+                    if occ.get("is_primary") and occ.get("unit_id"):
+                        prim_counts[occ["unit_id"]] += 1
+            best_uid = prim_counts.most_common(1)[0][0] if prim_counts else unit_meta_by_cid[owner_ch]["unit_id"]
+            st_node = struct_by_uid.get(best_uid) or unit_meta_by_cid.get(owner_ch)
+            if st_node:
+                node["primary_struct_unit_id"] = st_node["unit_id"]
+                node["pdf_page_start"] = st_node.get("pdf_page_start")
+                node["pdf_page_end"] = st_node.get("pdf_page_end")
+                node["word_count"] = st_node.get("word_count")
+                node["reading_minutes"] = st_node.get("reading_minutes")
+                node["guiding_question"] = st_node.get("guiding_question")
+                node["excerpt"] = st_node.get("excerpt", "")
         elif node["node_kind"] == "subdomain":
-            node["owner_chapter"] = sub_owner_chapter[node["node_id"]]
+            owner_ch = sub_owner_chapter[node["node_id"]]
+            node["owner_chapter"] = owner_ch
+            um_sub = unit_meta_by_cid.get(owner_ch)
+            if um_sub:
+                node["primary_struct_unit_id"] = um_sub["unit_id"]
+                node["pdf_page_start"] = um_sub.get("pdf_page_start")
+                node["pdf_page_end"] = um_sub.get("pdf_page_end")
+                node["word_count"] = um_sub.get("word_count")
+                node["reading_minutes"] = um_sub.get("reading_minutes")
+                node["guiding_question"] = um_sub.get("guiding_question")
+                node["excerpt"] = um_sub.get("excerpt", "")
         elif node["node_kind"] == "domain":
             ch_owners = sorted({sub_owner_chapter[cid] for cid in node["children_ids"] if cid in sub_owner_chapter})
             node["owner_chapter"] = ch_owners[0] if ch_owners else None
+            dom_num = str(node.get("domain_id") or "")[1:]
+            part_node = part_h1_by_part_id.get(f"P{dom_num}")
+            if part_node:
+                node["primary_struct_unit_id"] = part_node["unit_id"]
+                node["pdf_page_start"] = part_node.get("pdf_page_start")
+                node["pdf_page_end"] = part_node.get("pdf_page_end")
+                node["word_count"] = part_node.get("word_count")
+                node["reading_minutes"] = part_node.get("reading_minutes")
+                node["excerpt"] = part_node.get("excerpt", "")
+        elif node["node_kind"] == "root":
+            lim_um = unit_meta_by_cid.get("00-liminaire")
+            if lim_um:
+                node["primary_struct_unit_id"] = lim_um["unit_id"]
+                node["pdf_page_start"] = 1
+                node["pdf_page_end"] = pdf_pages
+                node["word_count"] = cm_pivots.get("compendium_md_words")
+                node["reading_minutes"] = max(1, round(int(cm_pivots.get("compendium_md_words") or 246518) / 220))
+                node["guiding_question"] = lim_um.get("guiding_question")
+                node["excerpt"] = lim_um.get("excerpt", "")
 
     propagate_node(root_node)
 
@@ -705,6 +787,12 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                 "chapter_title": um["chapter_title"],
                 "line_start": um["line_start"],
                 "line_end": um["line_end"],
+                "pdf_page_start": um.get("pdf_page_start"),
+                "pdf_page_end": um.get("pdf_page_end"),
+                "word_count": um.get("word_count", 0),
+                "reading_minutes": um.get("reading_minutes", 1),
+                "guiding_question": um.get("guiding_question"),
+                "excerpt": um.get("excerpt", ""),
                 "summary": _clean_text(sub_match["summary"] if sub_match else u["title"]),
                 "primary_domain": primary_dom,
                 "secondary_domains": sec_doms,
