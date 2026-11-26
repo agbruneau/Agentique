@@ -574,7 +574,7 @@
       "themes_vulgarized": [
         "criteres-evaluation-fournisseurs-grille"
       ],
-      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54, MCP, A2A a2a-tck et export FOCUS 1.4+)",
+      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54 du Tome 2 / Tableau 27.1, MCP, A2A a2a-tck et export FOCUS 1.4+)",
       "insertion_point": "Chapitre 27 — à l'issue de la famille FAM_D09_03_02 (thème criteres-evaluation-fournisseurs-grille)",
       "target_audiences": [
         "Direction / Métier",
@@ -584,8 +584,8 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce diagramme décisionnel démontre aux responsables des achats, aux juristes et aux architectes qu'aucune allégation commerciale ne suffit à qualifier un fournisseur d'IA (EXIG-APP-04) : le soumissionnaire doit franchir en banc d'essai réel sept portes éliminatoires sur huit (MCP 2026-07-28, A2A 1.0 `a2a-tck`, latence mesurée sous politiques actives, export OTLP et FOCUS 1.4+, identité sans clé statique et arrêt indépendant) avant d'obtenir sa note pondérée dans la grille du Tableau 54.",
-      "vulgarization_angle": "Modéliser l'appel d'offres comme un banc de qualification séquentiel rigoureux où sept non-conformités éliminatoires excluent immédiatement le soumissionnaire avant même la comparaison commerciale ou l'évaluation pondérée de 0 à 3 du Tableau 54.",
+      "pedagogical_objective": "Ce diagramme décisionnel démontre aux responsables des achats, aux juristes et aux architectes qu'aucune allégation commerciale ne suffit à qualifier un fournisseur d'IA (EXIG-APP-04) : le soumissionnaire doit franchir en banc d'essai réel sept portes éliminatoires sur huit (MCP 2026-07-28, A2A 1.0 `a2a-tck`, latence mesurée sous politiques actives, export OTLP et FOCUS 1.4+, identité sans clé statique et arrêt indépendant) avant d'obtenir sa note pondérée dans la grille du Tableau 54 du Tome 2 (Tableau 27.1).",
+      "vulgarization_angle": "Modéliser l'appel d'offres comme un banc de qualification séquentiel rigoureux où sept non-conformités éliminatoires excluent immédiatement le soumissionnaire avant même la comparaison commerciale ou l'évaluation pondérée de 0 à 3 du Tableau 54 du Tome 2 (Tableau 27.1).",
       "visual_blueprint": {
         "zones": [
           {
@@ -600,14 +600,14 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Sas 3 — Notation pondérée Tableau 54 (échelle 0 à 3, 7 critères éliminatoires sur 8)",
+            "label": "Sas 3 — Notation pondérée Tableau 54 du Tome 2 / Tableau 27.1 (échelle 0 à 3, 7 critères éliminatoires sur 8)",
             "content": "Seuls les candidats ne présentant aucune note éliminatoire sont classés selon les pondérations techniques, juridiques, de sécurité et de réversibilité."
           }
         ],
         "numbered_flows": [
           "① Soumettre le cahier des charges EXIG-APP : tout refus d'une clause DOIT entraîne un rejet automatique immédiat.",
           "② Placer la solution en banc d'essai pour démontrer les protocoles ouverts (MCP, A2A `a2a-tck`), la télémétrie (OTLP et FOCUS 1.4+) et l'arrêt indépendant.",
-          "③ Mesurer la latence P50 et P99 avec les garde-fous de sécurité actifs (et non en configuration dépouillée) puis coter les 8 critères de 0 à 3 (Tableau 54).",
+          "③ Mesurer la latence P50 et P99 avec les garde-fous de sécurité actifs (et non en configuration dépouillée) puis coter les 8 critères de 0 à 3 (Tableau 54 du Tome 2 / Tableau 27.1).",
           "④ Exiger zéro échec sur les 7 critères éliminatoires avant d'autoriser la négociation financière finale."
         ],
         "color_legend": [
@@ -621,7 +621,7 @@
           },
           {
             "color_token": "Vert éligible (#047857)",
-            "meaning": "Candidat qualifié pour le classement pondéré final (Tableau 54)"
+            "meaning": "Candidat qualifié pour le classement pondéré final (Tableau 54 du Tome 2 / Tableau 27.1)"
           }
         ],
         "key_takeaway_box": "Les déclarations d'interopérabilité et de réversibilité des fournisseurs demeurent inopposables sans preuve empirique : l'exigence EXIG-APP-04 impose une validation reproductible en banc d'essai avant toute signature contractuelle."
@@ -979,7 +979,7 @@
         "eclats-sectoriels-extrapoles",
         "vertical-financier-durci"
       ],
-      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2/3",
+      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2–4",
       "insertion_point": "Chapitre 28 — à l'issue de la famille FAM_D10_01_02 (Terrain canadien et délimitation probante)",
       "target_audiences": [
         "Direction / Métier",
@@ -988,7 +988,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif délimite avec rigueur ce qui est démontré sur pièces dans le corpus et ce qui relève de la transposition illustrative : d'une part, les dix institutions canadiennes documentées en 2025–2026 (classes 5+4+1) et le socle financier et logiciel vérifié (BCA, CRE-IA, Borealis-Bench) ; d'autre part, les extrapolations explicitement balisées en santé (HL7 FHIR R4), en milieu manufacturier (IEC 62443) et en énergie ou mines (NERC CIP, SIL 2/3) où toute commande autonome directe demeure interdite.",
+      "pedagogical_objective": "Ce comparatif délimite avec rigueur ce qui est démontré sur pièces dans le corpus et ce qui relève de la transposition illustrative : d'une part, les dix institutions canadiennes documentées en 2025–2026 (classes 5+4+1) et le socle financier et logiciel vérifié (BCA, CRE-IA, Borealis-Bench) ; d'autre part, les extrapolations explicitement balisées en santé (HL7 FHIR R4), en milieu manufacturier (IEC 62443) et en énergie ou mines (NERC CIP, SIL 2–4) où toute commande autonome directe demeure interdite.",
       "vulgarization_angle": "Tracer une ligne de démarcation nette entre le périmètre financier canadien vérifié (dix institutions bancaires et assurantielles ainsi que six facteurs de durcissement) et les transpositions non financières balisées comme purement illustratives.",
       "visual_blueprint": {
         "zones": [
@@ -1004,14 +1004,14 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Périmètre extrapolé (Illustratif uniquement) — Santé FHIR et IT/OT critique SIL 2/3",
-            "content": "Dossiers de santé HL7 FHIR R4, usine BEL de Trois-Rivières (IEC 62443), réseaux NERC CIP et systèmes instrumentés de sécurité IEC 61511 SIL 2/3 : lecture seule et jumeau numérique déterministe uniquement, zéro actionnement autonome direct."
+            "label": "Périmètre extrapolé (Illustratif uniquement) — Santé FHIR et IT/OT critique SIL 2–4",
+            "content": "Dossiers de santé HL7 FHIR R4, usine BEL de Trois-Rivières (IEC 62443), réseaux NERC CIP et systèmes instrumentés de sécurité IEC 61511 SIL 2–4 : lecture seule et jumeau numérique déterministe uniquement, zéro actionnement autonome direct."
           }
         ],
         "numbered_flows": [
           "① Classer chaque constat de production canadien 2025–2026 selon son niveau de preuve documentaire (5 accès complets, 4 accès dégradés et 1 source secondaire).",
           "② Appliquer le socle démontré (CRE-IA v1.2, Note AMF IA, Borealis-Bench) exclusivement à la finance réglementée et au génie logiciel déterministe.",
-          "③ Étiqueter explicitement tout cas relevant de la santé (HL7 FHIR), du milieu manufacturier (IEC 62443) ou de l'énergie (SIL 2/3) comme extrapolation illustrative exigeant une preuve propre.",
+          "③ Étiqueter explicitement tout cas relevant de la santé (HL7 FHIR), du milieu manufacturier (IEC 62443) ou de l'énergie (SIL 2–4) comme extrapolation illustrative exigeant une preuve propre.",
           "④ Maintenir en périphérie IT/OT un sas strict en lecture seule et jumeau numérique déterministe interdisant tout actionnement direct sur automate."
         ],
         "color_legend": [
@@ -1025,10 +1025,10 @@
           },
           {
             "color_token": "Gris balisé (#64748B)",
-            "meaning": "Extrapolations illustratives (HL7 FHIR R4, IEC 62443, NERC CIP, SIL 2/3 sans action directe)"
+            "meaning": "Extrapolations illustratives (HL7 FHIR R4, IEC 62443, NERC CIP, SIL 2–4 sans action directe)"
           }
         ],
-        "key_takeaway_box": "La rigueur probante impose une frontière nette : les mesures et pièces réglementaires du compendium démontrent la finance réglementée et le génie logiciel déterministe, tandis que la santé FHIR et les installations SIL 2/3 demeurent des transpositions illustratives sans actionnement direct sur équipement."
+        "key_takeaway_box": "La rigueur probante impose une frontière nette : les mesures et pièces réglementaires du compendium démontrent la finance réglementée et le génie logiciel déterministe, tandis que la santé FHIR et les installations SIL 2–4 demeurent des transpositions illustratives sans actionnement direct sur équipement."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1098,7 +1098,7 @@
           {
             "zone_id": "Z3",
             "label": "Blueprint 3 — `bp3_orchestration_multi_agents_b2b` (Tome 6 section 14.2, Fig. 54) : maillage fédéré",
-            "content": "Interopérabilité A2A 1.0, pile AGNTCY/SLIM (OASF), Event Mesh CloudEvents et délégation OBO à deux sauts (C13, C20), tous validés à la porte G0 sur 5 SBB et C01–C40 (socle C1–C8 et 565 contrôles)."
+            "content": "Interopérabilité A2A 1.0 (C13–C14), pile AGNTCY/SLIM (OASF), Event Mesh CloudEvents, audit (C20) et délégation OBO à deux sauts (C24, C26), tous validés à la porte G0 sur 5 SBB et C01–C40 (socle C1–C8 et 565 contrôles)."
           }
         ],
         "numbered_flows": [
@@ -1280,7 +1280,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma précise le double statut du Groupe Boréal Inc. dans le corpus : il constitue un fil rouge pédagogique précieux pour démontrer l'assemblage de quatre flux complets (crédit, paiement Lynx, banque ouverte C-15, assurance vie FHIR), mais ses données chiffrées narratives fictives sont formellement exclues de toute valeur probante (DC-P11, DC-P12, C27) et remplacées par les 108 blocs d'exécution reproductibles de Borealis-Bench au Tome 8.",
+      "pedagogical_objective": "Ce schéma précise le double statut du Groupe Boréal Inc. dans le corpus : il constitue un fil rouge pédagogique précieux pour démontrer l'assemblage de quatre flux complets (crédit, paiement Lynx, banque ouverte C-15, assurance vie FHIR), mais ses données chiffrées narratives fictives sont formellement exclues de toute valeur probante (DC-P11, DC-P12, règle documentaire DC-C27) et remplacées par les 108 blocs d'exécution reproductibles de Borealis-Bench au Tome 8.",
       "vulgarization_angle": "Mettre en regard une maquette architecturale à vocation pédagogique (Groupe Boréal BEL, BCA et BSN) et un laboratoire d'essai reproductible (Borealis-Bench à 108 blocs CI), séparés par le filtre d'hygiène probante DC-P11 et DC-P12.",
       "visual_blueprint": {
         "zones": [
@@ -1291,7 +1291,7 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Filtre d'exclusion probante (DC-P11, DC-P12, C27, CA-10)",
+            "label": "Filtre d'exclusion probante (DC-P11, DC-P12, règle documentaire DC-C27, CA-10)",
             "content": "Interdiction absolue de citer les chiffres fictifs (tels que 6,8 G$ CAD, 14 500 employés ou des économies estimées) à titre de preuve empirique dans les décisions d'audit ou d'homologation."
           },
           {
@@ -1313,7 +1313,7 @@
           },
           {
             "color_token": "Rouge exclusion (#B91C1C)",
-            "meaning": "Règle d'exclusion DC-P11, DC-P12 et C27 proscrivant l'usage des chiffres fictifs en preuve"
+            "meaning": "Règle d'exclusion DC-P11, DC-P12 et règle documentaire DC-C27 proscrivant l'usage des chiffres fictifs en preuve"
           },
           {
             "color_token": "Vert vérifié (#047857)",
@@ -1486,7 +1486,7 @@
       "themes_vulgarized": [
         "anti-patrons-agentiques"
       ],
-      "title": "Verrou d'architecture : les 10 antipatrons bloquants (EXIG-ORC-29, AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
+      "title": "Verrou d'architecture : les 10 motifs bloquants d'EXIG-ORC-29 (AP-01, AP-06–AP-09, AP-12 parmi AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
       "insertion_point": "Chapitre 30 — en ouverture de la famille FAM_D10_03_02 (thème anti-patrons-agentiques)",
       "target_audiences": [
         "Direction / Métier",
@@ -1496,7 +1496,7 @@
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
       "pedagogical_objective": "Cet arbre décisionnel aide les architectes et membres du comité ARB à détecter les défauts structurels qui compromettent les déploiements agentiques : employer un LLM pour un calcul déterministe, multiplier les agents sans justification, exposer une API OpenAPI 1:1 en 50 outils MCP, partager un état mutable au sein d'un essaim non borné, inscrire les règles de sécurité dans un prompt ou modéliser l'agent comme un acteur humain en ArchiMate. Chaque détection entraîne un blocage ARB net et oriente vers son contre-patron sûr.",
-      "vulgarization_angle": "Structurer la revue d'architecture (ARB) en un filtrage séquentiel à trois barrages sans dérogation : si la tâche est déterministe, si la topologie viole AP-01 à AP-12 (EXIG-ORC-29) ou si la vue ArchiMate confond agent et employé (Tableau 44.2), la validation est refusée avec renvoi vers le patron conforme.",
+      "vulgarization_angle": "Structurer la revue d'architecture (ARB) en un filtrage séquentiel à trois barrages sans dérogation : si la tâche est déterministe, si la topologie viole AP-01 à AP-12 (EXIG-ORC-29) ou si la vue ArchiMate confond agent et employé (Tableau 44.2 du Tome 6), la validation est refusée avec renvoi vers le patron conforme.",
       "visual_blueprint": {
         "zones": [
           {
@@ -1506,25 +1506,25 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Filtre 2 — Les 10 antipatrons d'orchestration bloquants (EXIG-ORC-29 et AP-01..AP-12)",
-            "content": "Multiagent injustifié, découpage par rôle abstrait, état mutable partagé, contexte gonflé, état en mémoire volatile, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence, Prompt-as-Policy, Tool Sprawl et lancement sans EvalOps (OWASP ASI02, ASI03, ASI08 et ASI09)."
+            "label": "Filtre 2 — Les 10 motifs bloquants d'EXIG-ORC-29 et les 12 codes AP-01..AP-12",
+            "content": "Multi-agent injustifié, découpage par rôle abstrait, état mutable partagé, contexte gonflé, état en mémoire volatile, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence, Prompt-as-Policy, Tool Sprawl et lancement sans EvalOps (OWASP ASI02, ASI03, ASI08 et ASI09)."
           },
           {
             "zone_id": "Z3",
-            "label": "Filtre 3 — 9 antipatrons ArchiMate (Tableau 44.2) et levée des 3 homonymies",
+            "label": "Filtre 3 — 9 anti-patrons ArchiMate (Tableau 44.2 du Tome 6) et levée des 3 homonymies",
             "content": "Interdiction de modéliser l'agent en acteur humain ou de laisser une exigence orpheline ; désambiguïsation explicite d'AgentMesh (Solace par rapport à Solo.io), de Fabrique (section 43.1) et d'ACP Sun Life."
           }
         ],
         "numbered_flows": [
-          "① Vérifier d'abord si un workflow déterministe ou une API classique résout le besoin : à défaut seulement, justifier le recours à l'agent sous EXIG-ORC-29.",
-          "② Contrôler l'architecture au regard des dix antipatrons AP-01 à AP-12 (état isolé, écrivain unique, façades métier de 5 à 12 outils, politiques hors prompt).",
-          "③ Valider les modèles ArchiMate contre le Tableau 44.2 (stéréotype cognitif dédié, chaîne de traçabilité complète jusqu'aux couches C1–C8).",
-          "④ Prononcer un rejet bloquant en comité ARB dès qu'un seul antipatron est relevé, avec réorientation obligatoire vers l'un des 8 patrons autorisés."
+          "① Vérifier d'abord si un flux de travail déterministe ou une API classique résout le besoin : à défaut seulement, justifier le recours à l'agent sous EXIG-ORC-29.",
+          "② Contrôler l'architecture au regard des dix motifs d'EXIG-ORC-29 et des douze codes AP-01 à AP-12 (état isolé, écrivain unique, façades métier de 5 à 12 outils, politiques hors prompt).",
+          "③ Valider les modèles ArchiMate contre le Tableau 44.2 du Tome 6 (stéréotype cognitif dédié, chaîne de traçabilité complète jusqu'aux couches C1–C8).",
+          "④ Prononcer un rejet bloquant en comité ARB dès qu'un seul anti-patron est relevé, avec réorientation obligatoire vers l'un des 8 patrons autorisés."
         ],
         "color_legend": [
           {
             "color_token": "Rouge bloquant (#B91C1C)",
-            "meaning": "Rejet ARB sans dérogation (EXIG-ORC-29, AP-01 à AP-12, Tableau 44.2, OWASP ASI)"
+            "meaning": "Rejet ARB sans dérogation (EXIG-ORC-29, AP-01 à AP-12, Tableau 44.2 du Tome 6, OWASP ASI)"
           },
           {
             "color_token": "Ambre garde-fou (#D97706)",
@@ -1553,7 +1553,7 @@
           "title": "Les neuf anti-patrons du Tableau 44.2 et leur regroupement (le neuvième consistant à réexpliquer la prose protocolaire ou réglementaire des chapitres amont dans une vue).",
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-44.3 - Les neuf anti-patrons du Tableau 44.2 et leur regroupement.puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-44.3.svg",
-          "role_note": "Regroupe visuellement les neuf antipatrons de modélisation ArchiMate du Tableau 44.2."
+          "role_note": "Regroupe visuellement les neuf anti-patrons de modélisation ArchiMate du Tableau 44.2 du Tome 6."
         },
         {
           "tome_id": "T6",
@@ -1561,7 +1561,7 @@
           "title": "Comparaison structurelle entre l’anti-patron Swagger-to-MCP 1:1 et l’architecture ACI consolidée",
           "source_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-14 - Comparaison structurelle entre l'anti-patron Swagger-to-MCP 1 - 1.puml",
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-14.svg",
-          "role_note": "Compare l'antipatron destructeur Swagger-to-MCP 1:1 à la conception par façades d'intention ACI consolidées."
+          "role_note": "Compare l'anti-patron destructeur Swagger-to-MCP 1:1 à la conception par façades d'intention ACI consolidées."
         }
       ]
     },

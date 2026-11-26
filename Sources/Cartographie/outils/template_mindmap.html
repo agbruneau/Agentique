@@ -2250,7 +2250,7 @@
             <div class="subtabs" role="tablist" aria-label="Sous-vues Concordance">
               <button class="btn active" role="tab" aria-selected="true" tabindex="0" data-c4-tab="heatmap">Carte thermique 12 Domaines × 15 Sections</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="reconciliations">5 Discordances (§0.2) &amp; DIV-02</button>
-              <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="timeline">Chronologie 2018–2035 (86 jalons)</button>
+              <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="timeline">Chronologie 2018–2035 (77 jalons)</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="traceability">Matrice EXIG / CAP / PRR / C01–C40 / SBB (237)</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="glossary_evidence">Glossaire (56) &amp; Socle probatoire L+</button>
             </div>
@@ -3885,8 +3885,8 @@
         var strip = document.getElementById("kpi-strip");
         var themeCount = idx.nodes.filter(function (n) { return n.node_kind === "theme"; }).length;
         var cmeta = (idx.prd && idx.prd.compendium_meta) || (idx.pivots && idx.pivots.collection_metrics) || {};
-        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 837);
-        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 241759);
+        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 852);
+        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 246518);
         var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || 42);
         var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || 115);
         var totalTerms = Number(cmeta.glossary_terms_count || cmeta.glossary_terms || idx.glossaryTerms.length || 56);
@@ -6330,7 +6330,7 @@
           html.push('<ul class="prd-list">');
           html.push('<li><strong>Homologation Compendium (G0–G5)</strong> : statut G0 <code>' + escapeHtml(g0Stat) + '</code> · pytest : <code>' + escapeHtml(pyPass) + '</code> · OPA/Rego : <code>' + escapeHtml(opaPass) + '</code> · <code>' + escapeHtml(syncN) + '</code> extraits CA-G0-SYNC · gel <code>' + escapeHtml(cg.freeze_date || col.freeze_date || "2026-12-02") + '</code></li>');
           html.push('<li><strong>Socle probatoire vérifié</strong> : <code>' + escapeHtml(lPlus) + '</code> sources <code>L+</code> (' + escapeHtml(statF) + ' Statut F exclus, politique <code>AO-01</code>) · Wyvern G2 : <code>' + escapeHtml(wyvN) + '/' + escapeHtml(wyvN) + '</code> unités · <code>' + escapeHtml(factsN) + '</code> faits empiriques · <code>' + escapeHtml(specsN) + '</code> spécifications L+ · <code>' + escapeHtml(glossN) + '</code> vedettes glossaire</li>');
-          html.push('<li><strong>Édition &amp; licences Compendium</strong> : <code>' + escapeHtml(col.total_pdf_pages || 837) + '</code> pages PDF · <code>' + escapeHtml(col.total_compendium_schemas || 115) + '</code> schémas Compendium (+ <code>' + escapeHtml(col.total_historical_tome_diagrams || 319) + '</code> figures Tomes) · ' + prdInlineHtml(licStr) + ' · ' + prdInlineHtml(col.statut_juridique || "non-avis (DC-P01 / DC-P12 / AO-05)") + '</li>');
+          html.push('<li><strong>Édition &amp; licences Compendium</strong> : <code>' + escapeHtml(col.compendium_pdf_pages || col.total_pdf_pages || 852) + '</code> pages PDF · <code>' + escapeHtml(col.compendium_schemas || col.total_compendium_schemas || 115) + '</code> schémas Compendium (+ <code>' + escapeHtml(col.total_historical_tome_diagrams || 319) + '</code> figures Tomes) · ' + prdInlineHtml(licStr) + ' · ' + prdInlineHtml(col.statut_juridique || "non-avis (DC-P01 / DC-P12 / AO-05)") + '</li>');
           html.push('</ul>');
 
           var allMat = Array.isArray(ann.matrix_all) ? ann.matrix_all : [];

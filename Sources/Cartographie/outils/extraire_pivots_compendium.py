@@ -4,9 +4,9 @@
 Assemble ``Sources/Cartographie/donnees/pivots-concordance.json`` exclusivement depuis
 les registres SSOT de ``Sources/Compendium/ouvrage/`` :
 - ``specs/manifest.json``
-- ``Compendium/Compendium.md`` & ``Compendium/Compendium.pdf`` (`837` pages)
+- ``Compendium/Compendium.md`` & ``Compendium/Compendium.pdf`` (nombre de pages mesuré dynamiquement via ``pymupdf``)
 - ``registre/concordance-taxonomies.json`` (DIV-02, DISC-01..05, échelles)
-- ``registre/ancres-chronologiques.json`` (86 jalons 2018–2035)
+- ``registre/ancres-chronologiques.json`` (77 jalons uniques 2018–2035)
 - ``registre/matrice-exig-prr-c40.json`` (305 EXIG, 52 CAP, 24 PEX, PRR-75, C01–C40 = 18/15/7, 5 SBB, DAPP, 95 mappings -> 237 entrées uniques)
 - ``registre/glossaire-termes.json`` (56 vedettes dont « Agentivité des systèmes » / « system agency »)
 - ``registre/faits-empiriques.json`` (16 faits empiriques L+)
@@ -197,12 +197,26 @@ def _parse_compendium_metrics(
     pdf_bytes = pdf_path.stat().st_size if pdf_path.is_file() else 0
     md_bytes = md_path.stat().st_size if md_path.is_file() else len(comp_text.encode("utf-8"))
 
-    # Vérifier le nombre de pages PDF depuis le README ou pypdf si disponible
-    pdf_pages = 837
-    readme_txt = (repo_root / "Compendium" / "README.md").read_text(encoding="utf-8")
-    m_pages = re.search(r"`(\d{3,4})`\s*pages", readme_txt)
-    if m_pages:
-        pdf_pages = int(m_pages.group(1))
+    # Mesurer dynamiquement le nombre réel de pages PDF via pymupdf (avec repli sur README.md)
+    pdf_pages = 0
+    if pdf_path.is_file():
+        try:
+            import pymupdf  # type: ignore
+
+            with pymupdf.open(pdf_path) as doc:
+                pdf_pages = int(doc.page_count)
+        except Exception:
+            try:
+                import fitz  # type: ignore
+
+                with fitz.open(pdf_path) as doc:
+                    pdf_pages = int(doc.page_count)
+            except Exception:
+                pdf_pages = 0
+    if pdf_pages <= 0:
+        readme_txt = (repo_root / "Compendium" / "README.md").read_text(encoding="utf-8")
+        m_pages = re.search(r"`(\d{3,4})`\s*pages", readme_txt)
+        pdf_pages = int(m_pages.group(1)) if m_pages else 852
 
     figs = manifest["figures"]
     by_engine = Counter(f["engine"] for f in figs)
@@ -367,16 +381,16 @@ def _build_chronology(
     comp_lines: list[str],
     unit_spans: dict[str, tuple[int, int]],
 ) -> dict[str, Any]:
-    """Assemble la chronologie des 86 jalons depuis ``registre/ancres-chronologiques.json``."""
+    """Assemble la chronologie des 77 jalons uniques depuis ``registre/ancres-chronologiques.json``."""
     lim_span = unit_spans.get("00-liminaire", (74, 210))
     ch31_span = unit_spans.get("ch31", (5091, 5238))
     ann_c_span = unit_spans.get("annexe-c", (7434, 7741))
 
     anchors_all: list[dict[str, Any]] = anc_raw["anchors"]
-    if len(anchors_all) != 86:
-        raise ValueError(f"86 jalons chronologiques attendus, trouvés {len(anchors_all)}")
+    if len(anchors_all) != 77:
+        raise ValueError(f"77 jalons chronologiques uniques attendus, trouvés {len(anchors_all)}")
 
-    ancres_compendium_86: list[dict[str, Any]] = []
+    ancres_compendium_77: list[dict[str, Any]] = []
     ancres_t7: list[dict[str, Any]] = []
     ancres_t8: list[dict[str, Any]] = []
     ancres_dapp: list[dict[str, Any]] = []
@@ -390,7 +404,7 @@ def _build_chronology(
         enriched = _sanitize_nested(anc)
         enriched["compendium_file"] = "Compendium/Compendium.md"
         enriched["compendium_line_start"] = ln
-        ancres_compendium_86.append(enriched)
+        ancres_compendium_77.append(enriched)
 
         origin = anc.get("origin")
         if origin == "T7":
@@ -421,6 +435,7 @@ def _build_chronology(
             ancres_t4_67.append(
                 {
                     "id": key,
+                    "aliases": list(anc.get("aliases") or []),
                     "echeance": _clean_text(date_val),
                     "axe": _clean_text(anc.get("nature", "")),
                     "juridiction": _clean_text(anc.get("jurisdiction", "")),
@@ -466,8 +481,8 @@ def _build_chronology(
     ]
 
     return {
-        "total_jalons": len(ancres_compendium_86),
-        "ancres_compendium_86": ancres_compendium_86,
+        "total_jalons": len(ancres_compendium_77),
+        "ancres_compendium_77": ancres_compendium_77,
         "six_reperes_readme": six_reperes_readme,
         "rampe_et_paliers_dapp_t5": ancres_dapp,
         "ancres_t7_l_plus": ancres_t7,
@@ -680,7 +695,7 @@ def main() -> int:
     print(
         f"Pivots Compendium -> {out_path} : {cm['compendium_pdf_pages']} p. PDF, "
         f"{cm['compendium_md_lines']} lignes MD, {cm['compendium_schemas']} schémas, "
-        f"{len(payload['chronologie_2023_2035']['ancres_compendium_86'])} jalons, "
+        f"{len(payload['chronologie_2023_2035']['ancres_compendium_77'])} jalons, "
         f"{len(payload['glossaire_pivot']['glossaire_compendium_56'])} termes glossaire, "
         f"{cm['sources_l_plus']} L+, {cm['statut_f_excluded']} Statut F, "
         f"{cm['ca_g0_sync_excerpts']} CA-G0-SYNC, {cm['wyvern_g2_units']}/37 Wyvern G2, "

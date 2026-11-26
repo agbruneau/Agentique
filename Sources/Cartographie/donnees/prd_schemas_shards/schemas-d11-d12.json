@@ -335,7 +335,7 @@
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
       "pedagogical_objective": "La direction perçoit immédiatement comment prévenir la friction entre l'orientation de portefeuille et l'improvisation technique : l'Architecte d'entreprise (AE) gouverne la finalité et l'investissement (52 capacités, CPO, trois lignes de défense) tandis que l'Architecte de solutions (AS) garantit l'invariance technique (passerelle, OPA, Saga, JCS) au moyen de six décisions conjointes et d'un modèle en étoile où la plateforme centrale délivre une seule fois les garde-fous communs.",
-      "vulgarization_angle": "Représenter l'organisation comme un mécanisme à moyeu central unique (Centre d'excellence et trois plans transversaux) relié aux rayons métiers par un propriétaire nominatif (SIRH 72 heures) et un unique responsable imputable A par activité RACI.",
+      "vulgarization_angle": "Représenter l'organisation comme un mécanisme à moyeu central unique (Centre d'excellence et trois plans transversaux) relié aux rayons métiers par un propriétaire nominatif (SIRH : intérim et relève < 72 heures, rétrogradation < 60 s POR-015) et un unique responsable imputable A par activité RACI.",
       "visual_blueprint": {
         "zones": [
           {
@@ -351,7 +351,7 @@
           {
             "zone_id": "Z3",
             "label": "Rayons métiers fédérés et trois lignes de défense (12 rôles, RACI à A unique)",
-            "content": "Propriétaire métier nominatif couplé au SIRH (rétrogradation sous 72 heures au départ), séparation préparation/approbation (EXIG-GOV-03), 2e ligne proportionnée E-23 et audit indépendant de 3e ligne."
+            "content": "Propriétaire métier nominatif couplé au SIRH (intérim et relève sous 72 heures au départ, rétrogradation automatique en moins de 60 s selon POR-015 en l'absence de suppléant actif), séparation préparation/approbation (EXIG-GOV-03), 2e ligne proportionnée E-23 et audit indépendant de 3e ligne."
           }
         ],
         "numbered_flows": [
@@ -798,7 +798,7 @@
           {
             "zone_id": "Z2",
             "label": "Socle multi-régulateurs unifié (BSIF E-23, AMF, Loi 25, EU AI Act)",
-            "content": "Table de correspondance croisant les 305 EXIG-*, les 75 points PRR et les 15 portes POR en 41 rubriques d'homologation afin qu'une même preuve réponde aux quatre cadres juridiques."
+            "content": "Table de correspondance croisant les 305 EXIG-*, les 75 points PRR et les 15 portes POR en 43 rubriques d'homologation (Annexe D) afin qu'une même preuve réponde aux quatre cadres juridiques."
           },
           {
             "zone_id": "Z3",
@@ -871,7 +871,7 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Cet arbre de décision permet à tout chef de projet ou juriste de trancher rapidement deux questions fondamentales : l'outil interne ou acquis est-il assujetti au cadre (oui dès qu'il dispose d'une capacité d'appel d'outil ou d'action, règle du doute incluse), et quels livrables doivent être constitués avant le pilote (la fiche d'agent JSON Tableau 63, la grille d'applicabilité A.1–A.8 et la sélection protocolaire fondée sur les sept fiches validées).",
+      "pedagogical_objective": "Cet arbre de décision permet à tout chef de projet ou juriste de trancher rapidement deux questions fondamentales : l'outil interne ou acquis est-il assujetti au cadre (oui dès qu'il dispose d'une capacité d'appel d'outil ou d'action, règle du doute incluse), et quels livrables doivent être constitués avant le pilote (la fiche d'agent JSON Tableau 63 du Tome 2, la grille d'applicabilité A.1–A.8 et la sélection protocolaire fondée sur les sept fiches validées).",
       "vulgarization_angle": "Structurer la portée juridique et documentaire en guichet d'orientation méthodique : une question filtre (« L'outil agit-il ? »), trois degrés RFC 2119 (DOIT, NE DOIT PAS, DEVRAIT), la séparation nette entre loi externe et choix interne, puis deux formulaires normatifs obligatoires.",
       "visual_blueprint": {
         "zones": [
@@ -882,8 +882,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Trois étapes de dossier : Fiche d'agent (Annexe B) et Grille (A.1–A.8)",
-            "content": "Enrichissement progressif de la fiche JSON Tableau 63 (Proposition → Conception → Pilote) et sélection des 305 exigences filtrées par profil dans les sections A.1 à A.8."
+            "label": "Trois étapes de dossier : Fiche d'agent (Annexe B du Tome 2) et Grille (A.1–A.8)",
+            "content": "Enrichissement progressif de la fiche JSON Tableau 63 du Tome 2 (Proposition → Conception → Pilote) et sélection des 305 exigences filtrées par profil dans les sections A.1 à A.8."
           },
           {
             "zone_id": "Z3",
@@ -893,7 +893,7 @@
         ],
         "numbered_flows": [
           "① Appliquer la règle du doute : si le logiciel peut appeler un outil ou agir sur un système, il entre dans le périmètre CRE-IA.",
-          "② Ouvrir la fiche d'agent (Annexe B / Tableau 63) dès la phase Proposition et l'enrichir jusqu'au jalon Pilote.",
+          "② Ouvrir la fiche d'agent (Annexe B / Tableau 63 du Tome 2) dès la phase Proposition et l'enrichir jusqu'au jalon Pilote.",
           "③ Sélectionner les exigences applicables au moyen de la grille A.1–A.8 en distinguant les obligations légales externes des choix internes.",
           "④ Valider les choix d'interface par rapport aux sept fiches protocoles et aux trois grilles probatoires du Tome 3."
         ],
@@ -904,7 +904,7 @@
           },
           {
             "color_token": "Vert dossier (#047857)",
-            "meaning": "Livrables obligatoires : fiche d'agent Tableau 63 et grille d'homologation A.1–A.8"
+            "meaning": "Livrables obligatoires : fiche d'agent Tableau 63 du Tome 2 et grille d'homologation A.1–A.8"
           },
           {
             "color_token": "Gris référence (#475569)",
@@ -975,7 +975,7 @@
           }
         ],
         "numbered_flows": [
-          "① Soumettre la fiche ADR 2027-B001 et l'inventaire des preuves associées aux 75 points PRR (domaines S, R, O, G et F).",
+          "① Soumettre la fiche ADR-2027-B001 et l'inventaire des preuves associées aux 75 points PRR (domaines S, R, O, G et F).",
           "② Évaluer mécaniquement les 24 points [BLOQUANT] dans `evalops_prr` : aucune case manquante n'est contournable.",
           "③ Vérifier la présence conjointe des `5 SBB` et du niveau de preuve ([N] normatif, [M] mesuré, [É] éditeur, [S] synthèse).",
           "④ Délivrer le passeport d'homologation uniquement si le code de sortie `0` et l'absence de toute anomalie bloquante sont confirmés."
@@ -1105,7 +1105,7 @@
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
       "pedagogical_objective": "Ce schéma montre comment cinq composants demeurés à l'état conceptuel au Tableau 12 du Tome 2 deviennent des blocs logiciels vérifiables : un coffre sans secret statique, un moteur de garde-fous OPA fermé par défaut et une approbation humaine signée au Plan A (contrôle), puis un registre d'audit immuable SCITT/SLH-DSA et un contrôleur budgétaire en arithmétique `Decimal` exacte au Plan B (preuve et FinOps).",
-      "vulgarization_angle": "Comparer les `5 SBB` aux cinq organes de sûreté qui complètent l'ossature du Tableau 12 : le coffre d'identités, le filtre déterministe OPA et la double validation humaine CIBA (Plan A), associés au registre d'audit scellé et au compteur financier exempt d'erreur d'arrondi (Plan B).",
+      "vulgarization_angle": "Comparer les `5 SBB` aux cinq organes de sûreté qui complètent l'ossature du Tableau 12 du Tome 2 : le coffre d'identités, le filtre déterministe OPA et la double validation humaine CIBA (Plan A), associés au registre d'audit scellé et au compteur financier exempt d'erreur d'arrondi (Plan B).",
       "visual_blueprint": {
         "zones": [
           {
@@ -1140,7 +1140,7 @@
             "meaning": "Deux SBB du Plan B garantissant l'audit immuable (SCITT/SLH-DSA) et l'exactitude `Decimal`"
           }
         ],
-        "key_takeaway_box": "Les cinq composants du Tableau 12 dépassent désormais le stade de la spécification abstraite : chacun est implémenté en Python et OPA avec une couverture systématique de tests négatifs."
+        "key_takeaway_box": "Les cinq composants du Tableau 12 du Tome 2 dépassent désormais le stade de la spécification abstraite : chacun est implémenté en Python et OPA avec une couverture systématique de tests négatifs."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -1182,7 +1182,7 @@
         "calibration-feds-ema",
         "contrats-types-executes-ci-annexe-c"
       ],
-      "title": "Preuve synthétique bornée DC-P12 (FEDS/EMA C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8",
+      "title": "Preuve synthétique bornée DC-P12 (FEDS/EMA DC-C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8",
       "insertion_point": "Chapitre 35 — § 35.2.2 Calibration synthétique FEDS/EMA (DC-P12), vecteurs tiers et contrats types exécutés C.1–C.8 (après le thème `contrats-types-executes-ci-annexe-c`)",
       "target_audiences": [
         "AE / AS",
@@ -1197,7 +1197,7 @@
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Banc quantitatif `feds-ema/` sous plafond `DC-P12` (`C07 = 65,0 %`)",
+            "label": "Banc quantitatif `feds-ema/` sous plafond `DC-P12` (`DC-C07 = 65,0 %`)",
             "content": "4 000 tirages Monte Carlo (cinq seuils [S] : POR-003 < 10 secondes à 99,95 %, ≤ 10–12 outils en L3/L4, CIBA < 60 secondes, rétention de 45 jours, `pass^5` de 99 % au regard de 95 %), 3 000 tirages LHS EMA et charges sectorielles (49,59 à 95,78/100) ; aucune étude humaine."
           },
           {
@@ -1207,7 +1207,7 @@
           }
         ],
         "numbered_flows": [
-          "① Exécuter les simulations FEDS et EMA avec une graine figée (`seed=20261119`) tout en affichant la borne épistémique `C07 = 65 %` (`DC-P12`).",
+          "① Exécuter les simulations FEDS et EMA avec une graine figée (`seed=20261119`) tout en affichant la borne épistémique `DC-C07 = 65 %` (`DC-P12`).",
           "② Injecter les seuils [S] calibrés (coupe-circuit < 10 secondes, rétention de 45 jours, `pass^5`) dans le banc hermétique EvalOps (`mock MCP`).",
           "③ Valider en CI les contrats C.1 à C.8 sous JSON Schema Draft 2020-12 crypto-agile sans rompre le chaînage d'audit C.8.",
           "④ Préparer le remplacement sans coupure de `ES256` vers `ML-DSA-65` et `ML-DSA-87` sur les mêmes contrats d'enveloppe."
@@ -1257,7 +1257,7 @@
           {
             "zone_id": "Z1",
             "label": "Fermeture de `DIV-02` par liens typés `DC-P07` (Tome 4 / Tome 5 ↔ Tome 2)",
-            "content": "52/52 CAP et 24/24 PEX (13 spécialisations et 11 comblements) raccordées aux 305 EXIG-* v1.2 ; trois rectifications de l'Annexe E.1 (modèles et confinement en Couche 3, absence de Couche Connaissance, journal en Couche 6) et consigne de la dissonance D6/D7."
+            "content": "52/52 CAP et 24/24 PEX en v1.2 (5 directes, 12 extensions et 7 comblements, contre 13/11 en v1.1) raccordées aux 305 EXIG-* v1.2 ; trois rectifications de l'Annexe E.1 (modèles et confinement en Couche 3, absence de Couche Connaissance, journal en Couche 6) et consigne de la dissonance D6/D7."
           },
           {
             "zone_id": "Z2",
@@ -1483,8 +1483,8 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce schéma procure une vision claire de la fraîcheur documentaire et du statut juridique de la collection : un protocole de péremption à 30 jours (Annexe N, Annexe H et unification v1.2, registres S-001 à S-159 et 999 notices) prévient l'obsolescence silencieuse du corpus ; la chaîne `Sources/gabarit-pdf/` compile uniformément les huit volumes (4 542 pages Typst, 319 diagrammes) et affiche de manière opposable les licences CC BY 4.0 / MIT ainsi que la clause consultative de non-avis (`DC-P01`, `AO-05`, `EF-06`).",
-      "vulgarization_angle": "Coupler la boucle d'entretien chronologique (détection d'événement → réouverture de la source primaire → mise à jour v1.2 et Annexe N) à la chaîne de publication produisant les huit volumes Typst revêtus des licences et de la clause de non-avis.",
+      "pedagogical_objective": "Ce schéma procure une vision claire de la fraîcheur documentaire et du statut juridique de la collection : un protocole de péremption à 30 jours (Annexe N et Annexe H du corpus source et unification v1.2, registres S-001 à S-159 et 999 notices) prévient l'obsolescence silencieuse du corpus ; la chaîne `Sources/gabarit-pdf/` compile uniformément les huit volumes (4 542 pages Typst, 319 diagrammes) et affiche de manière opposable les licences CC BY 4.0 / MIT ainsi que la clause consultative de non-avis (`DC-P01`, `AO-05`, `EF-06`).",
+      "vulgarization_angle": "Coupler la boucle d'entretien chronologique (détection d'événement → réouverture de la source primaire → mise à jour v1.2 et Annexe N du corpus source) à la chaîne de publication produisant les huit volumes Typst revêtus des licences et de la clause de non-avis.",
       "visual_blueprint": {
         "zones": [
           {
@@ -1512,7 +1512,7 @@
         "color_legend": [
           {
             "color_token": "Turquoise veille (#0F766E)",
-            "meaning": "Boucle de revalidation à 30 jours (Annexe N, Annexe H v1.2, registres B et I)"
+            "meaning": "Boucle de revalidation à 30 jours (Annexe N et Annexe H v1.2 du corpus source, registres B et I)"
           },
           {
             "color_token": "Bleu édition (#1E40AF)",
@@ -1549,7 +1549,7 @@
           "title": "Vue synthétique par Livre du gel unique (27 juillet 2026) et exemples d’événements de péremption qui l’entament (le transfert de gouvernance du protocole de paiement AP2 touchant les ch. 10, 16, 36 et 49 ; voir le Tableau 50.1 pour les quatorze événements complets et l’Annexe N pour le détail des passes de revalidation post-gel).",
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-50.3 - Vue synthétique par Livre du gel unique (27 juillet 2026).puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.3.svg",
-          "role_note": "Fournit la vue synthétique par Livre des impacts de péremption post-gel (Tableau 50.1 et Annexe N)."
+          "role_note": "Fournit la vue synthétique par Livre des impacts de péremption post-gel (Tableau 50.1 et Annexe N du Tome 1)."
         }
       ]
     }

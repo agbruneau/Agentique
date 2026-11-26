@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-25T22:56:05Z",
+  "generated_at": "2026-11-26T12:53:00Z",
   "generator": "Sources/Cartographie/outils/consolider_catalogue_schemas.py",
   "source_shards": [
     "Sources/Cartographie/donnees/prd_schemas_shards/schemas-global-et-annexe-e.json",
@@ -74,7 +74,7 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP et harnais à 8 étapes",
+            "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP invariantes sur 52 et harnais à 8 étapes",
             "content": "Routage à états, validation par JSON Schema Draft 2020-12, calculs financiers en type Decimal, caviardage préalable des renseignements personnels, passerelle PEP/AI Gateway et mécanisme d'abstention typée AMBIGU_ESCALADE."
           },
           {
@@ -199,7 +199,7 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement d'une action agentique à travers cinq contrôles infalsifiables, depuis la requête initiale d'un usager jusqu'à l'écriture dans un système métier, sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement les points d'application de l'identité attestée (NHI/OBO), du refus par défaut (OPA et Règle de deux), de la journalisation scellée (double couloir) ainsi que des obligations issues de la Loi 25, de la ligne directrice BSIF E-23 et de l'EU AI Act.",
+      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement d'une action agentique à travers neuf contrôles infalsifiables (sept à l'aller, deux au retour), depuis la requête initiale d'un usager jusqu'à l'écriture dans un système métier, sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement les points d'application de l'identité attestée (NHI/OBO), du refus par défaut (OPA et Règle de deux), de la journalisation scellée (double couloir) ainsi que des obligations issues de la Loi 25, de la ligne directrice BSIF E-23 et de l'EU AI Act.",
       "vulgarization_angle": "Modéliser la chaîne protocolaire et réglementaire sous la forme d'une enceinte douanière à cinq sas séquentiels : vérification de l'identité du mandataire et de l'étendue bornée du mandat, inspection des charges utiles hors de la sphère du modèle, apposition d'un sceau probatoire immuable et commande de révocation immédiate.",
       "visual_blueprint": {
         "zones": [
@@ -359,7 +359,7 @@
         "color_legend": [
           {
             "color_token": "Vert sauge (#15803D)",
-            "meaning": "Socle invariant sans regret (90 j – 18 mois, 42 CAP possédées et niveaux L0–L2 encadrés)"
+            "meaning": "Socle invariant sans regret (90 j – 18 mois, 42 CAP invariantes sur 52 possédées et niveaux L0–L2 encadrés)"
           },
           {
             "color_token": "Or ambré (#B45309)",
@@ -481,12 +481,12 @@
           {
             "zone_id": "Z2",
             "label": "Boucle de maîtrise EvalOps et FinOps — Mesure au résultat métier conforme",
-            "content": "Bancs hermétiques E1–E3 (borne de Wilson n ≥ ceil(3/p), pass^5 ≥ 99 % pour la distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
+            "content": "Bancs hermétiques E1–E3 (règle des trois n ≥ ceil(3/p) garantissant la borne de Wilson < p, pass^5 ≥ 99 % pour la distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
           },
           {
             "zone_id": "Z3",
             "label": "Porte d'homologation mécanique G0–G5 — Exigence probatoire intégrale",
-            "content": "Matrice unifiée 305 EXIG-* CRE-IA v1.2 × PRR-75 (dont 24 portes [BLOQUANT]) × 40 critères blueprints C01–C40 × 5 SBB du Tableau 12, sanctionnée par la chaîne d'assurance qualité G0–G5 et la fiche 2027-B001."
+            "content": "Matrice unifiée 305 EXIG-* CRE-IA v1.2 × PRR-75 (dont 24 portes [BLOQUANT]) × 40 critères blueprints C01–C40 × 5 SBB du Tableau 12 du Tome 2, sanctionnée par la chaîne d'assurance qualité G0–G5 et la fiche 2027-B001."
           }
         ],
         "numbered_flows": [
@@ -710,7 +710,7 @@
         "echanges-intentions-contrats-probabilistes",
         "systems-of-agency"
       ],
-      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP 2027 et passage aux engagements observables",
+      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP et passage aux engagements observables",
       "insertion_point": "Chapitre 01 (§ 01.2.1 — Paradigme des Systèmes d'agentivité, après le thème `etat-des-lieux-adoption-map-2027`)",
       "target_audiences": [
         "Direction / Métier",
@@ -1109,18 +1109,18 @@
           {
             "zone_id": "Z2",
             "label": "Exigence de constance (`pass^k = p^k`) et courbe HAL coût/précision",
-            "content": "EXIG-EVA-03 impose k ≥ 3 minimal et k ≥ 5 critique (cible pass^5 ≥ 0,95 à 0,99 [S] sous ADR-022 / PRR F-15) arbitrée face au coût sur la courbe HAL."
+            "content": "EXIG-EVA-03 impose k ≥ 3 minimal et k ≥ 5 critique (cible pass^5 ≥ 0,95 en qualification générale (ADR-022) et ≥ 0,99 [S] avant distillation SLM (PRR F-15)) arbitrée face au coût sur la courbe HAL."
           },
           {
             "zone_id": "Z3",
             "label": "Porte statistique CI/CD : banc hermétique et borne unilatérale de Wilson à 95 %",
-            "content": "Exécution isolée (`evalops_prr/wilson_bounds.py`, C31) avec n ≥ ceil(3/p) essais indépendants sur ≥ 50 scénarios (EXIG-EVA-02) ou ≥ 100 [S] (PRR O-04)."
+            "content": "Exécution isolée (`evalops_prr/wilson_bounds.py`, C31) avec le plancher conservateur de la règle des trois n ≥ ceil(3/p) essais indépendants garantissant la borne < p sur ≥ 50 scénarios (EXIG-EVA-02) ou ≥ 100 [S] (PRR O-04)."
           }
         ],
         "numbered_flows": [
           "① Exclure les scores `pass@1` et les palmarès publics externes lors des revues de mise en production.",
           "② Exécuter chaque scénario critique k fois de façon indépendante (k = 3 à 5) sur un banc hermétique sans appel réel aux SoR.",
-          "③ Calculer la borne inférieure de Wilson à 95 % (n ≥ ceil(3/p)) pour attester statistiquement la constance.",
+          "③ Appliquer le plancher de la règle des trois (n ≥ ceil(3/p)) et calculer la borne unilatérale de Wilson à 95 % pour attester statistiquement la constance.",
           "④ Bloquer automatiquement le déploiement si `pass^5` passe sous le seuil de classe de risque et surveiller la dérive d'horizon METR."
         ],
         "color_legend": [
@@ -1210,7 +1210,7 @@
           {
             "zone_id": "Z3",
             "label": "Évaluation selon les cinq critères permanents (C04)",
-            "content": "Arbitrage systématique selon la neutralité de gouvernance, le déterminisme des frontières, la tolérance aux pannes, le coût marginal CPO et le coût de sortie."
+            "content": "Arbitrage systématique selon la neutralité de gouvernance, le déterminisme des frontières, la tolérance aux pannes, le coût complet par résultat conforme (CPO) et le coût de sortie."
           }
         ],
         "numbered_flows": [
@@ -1607,7 +1607,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 775,
+        "compendium_md_line": 776,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
         "source_file_line": 87
       }
@@ -1720,7 +1720,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 842,
+        "compendium_md_line": 843,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
         "source_file_line": 154
       }
@@ -1814,7 +1814,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 858,
+        "compendium_md_line": 859,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
         "source_file_line": 170
       }
@@ -1924,7 +1924,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 940,
+        "compendium_md_line": 941,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
         "source_file_line": 47
       }
@@ -2010,7 +2010,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 956,
+        "compendium_md_line": 957,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
         "source_file_line": 63
       }
@@ -2121,7 +2121,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 985,
+        "compendium_md_line": 986,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
         "source_file_line": 92
       }
@@ -2141,7 +2141,7 @@
         "architecture-reference-six-couches-pc1-pc5"
       ],
       "title": "Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`",
-      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `cadre-togaf-archimate-4-plans`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR, après le thème `cadre-togaf-archimate-4-plans`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -2242,7 +2242,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1080,
+        "compendium_md_line": 1081,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
         "source_file_line": 46
       }
@@ -2260,7 +2260,7 @@
         "clauses-sortie-portabilite-interchangeabilite"
       ],
       "title": "Posséder son noyau (42 capacités invariantes par rapport à 10 sur signal), gravité des données et neuf clauses de sortie",
-      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `noyau-controle-possede-cap`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR, après le thème `noyau-controle-possede-cap`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -2268,13 +2268,13 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle n'active que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS selon la gravité des données tout en verrouillant la réversibilité (Data Act et BSIF B-10).",
+      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes sur 52 : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle n'active que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS selon la gravité des données tout en verrouillant la réversibilité (Data Act et BSIF B-10).",
       "vulgarization_angle": "Distinguer les infrastructures foncières, les titres de propriété et les instruments de mesure (noyau possédé) des équipements loués ou remplaçables (modèles d'inférence), tout en exigeant un protocole de migration contractuel testé annuellement.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Trois conditions du plan de contrôle et les 42 CAP invariantes (DISC-03)",
+            "label": "Trois conditions du plan de contrôle et les 42 CAP invariantes sur 52 (DISC-03)",
             "content": "Chemin réseau obligé (PEP), registre à 7 états faisant seul autorité (distinct du catalogue produit) et preuve immuable hors modèle ; 17 CAP au plan de contrôle + 25 points de coupure financés dès P1."
           },
           {
@@ -2297,7 +2297,7 @@
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Noyau de contrôle possédé (42 CAP invariantes sous trois conditions d'effectivité)"
+            "meaning": "Noyau de contrôle possédé (42 CAP invariantes sur 52 sous trois conditions d'effectivité)"
           },
           {
             "color_token": "Or ambré (#B45309)",
@@ -2361,7 +2361,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1108,
+        "compendium_md_line": 1109,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
         "source_file_line": 74
       }
@@ -2382,7 +2382,7 @@
         "principes-architecture-pri-001-015"
       ],
       "title": "Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit",
-      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `catalogue-31-adr-12-dec`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR, après le thème `catalogue-31-adr-12-dec`)",
       "target_audiences": [
         "Juridique / Conformité",
         "AE / AS",
@@ -2442,7 +2442,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1141,
+        "compendium_md_line": 1142,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
         "source_file_line": 107
       }
@@ -2554,7 +2554,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-06-04.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-06-04.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1200,
+        "compendium_md_line": 1201,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
         "source_file_line": 166
       }
@@ -2678,7 +2678,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1297,
+        "compendium_md_line": 1298,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
         "source_file_line": 58
       }
@@ -2777,7 +2777,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1311,
+        "compendium_md_line": 1312,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
         "source_file_line": 72
       }
@@ -2880,7 +2880,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1347,
+        "compendium_md_line": 1348,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
         "source_file_line": 108
       }
@@ -2898,7 +2898,7 @@
         "fusion-acp-collision-terminologique",
         "protocole-anp-did-wba"
       ],
-      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches",
+      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches documentaires et ACP commercial (cinq acceptions)",
       "insertion_point": "Chapitre 08 §08.2.1 — Protocole pair-à-pair A2A et ANP",
       "target_audiences": [
         "Direction / Métier",
@@ -2928,7 +2928,7 @@
           }
         ],
         "numbered_flows": [
-          "① Qualifier l'appel : s'il correspond à une API transactionnelle déterministe, proscrire A2A et le dialogue libre MCP au profit d'une API classique ou du palier OO1.",
+          "① Qualifier l'appel : s'il correspond à une API transactionnelle déterministe, proscrire A2A et le dialogue libre MCP au profit d'une API classique ou d'un automate déterministe N0.",
           "② Lorsqu'un agent invoque un outil borné sous son propre plan d'exécution, employer MCP 2026-07-28 sur l'axe vertical.",
           "③ Lorsqu'un agent délègue une mission asynchrone à un pair autonome d'un autre domaine sans inspecter son raisonnement interne, activer A2A v1.0.1 sous signature JWS/JCS et zones Z1–Z5.",
           "④ Rejeter ANP v1.2 (dont le méta-protocole négocié à la volée demeure non auditable) et proscrire tout emploi du sigle « ACP » nu dans les contrats et architectures."
@@ -2961,7 +2961,7 @@
           "title": "Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.",
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-07.5 - Les quatre branches de la collision ACP - (agentic) control.puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.5.svg",
-          "role_note": "Lève la collision terminologique à quatre branches entourant le sigle ACP."
+          "role_note": "Lève la collision terminologique à cinq acceptions entourant le sigle ACP."
         },
         {
           "tome_id": "T2",
@@ -2996,7 +2996,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-01.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-01.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1472,
+        "compendium_md_line": 1473,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
         "source_file_line": 43
       }
@@ -3119,7 +3119,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1554,
+        "compendium_md_line": 1555,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
         "source_file_line": 125
       }
@@ -3209,7 +3209,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1577,
+        "compendium_md_line": 1578,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
         "source_file_line": 148
       }
@@ -3242,7 +3242,7 @@
           {
             "zone_id": "Z1",
             "label": "Contrôles ALLER (1 à 7 et pré-audit EXIG-OBS-11)",
-            "content": "La chaîne aller exécute successivement : (1) SVID/mTLS/DPoP et débit ; (2) catalogue et empreinte SHA-256 ; (3) décision PDP N1–N4/P0–P3 ; (4) schéma I-JSON et garde anti-injection bilingue ; (5) jeton jti lié à h=SHA-256(JCS) ; (6) quotas ; (7) échange RFC 8693 (zéro secret au LLM) et pré-audit avant P2/P3."
+            "content": "La chaîne aller exécute successivement : (1) SVID/mTLS/DPoP et débit ; (2) catalogue et empreinte SHA-256 ; (3) décision PDP N0–N4/P0–P3 ; (4) conformité I-JSON (RFC 7493), validation JSON Schema Draft 2020-12 et garde anti-injection bilingue ; (5) jeton jti lié à h=SHA-256(JCS) ; (6) quotas ; (7) échange RFC 8693 (zéro secret au LLM) et pré-audit avant P2/P3."
           },
           {
             "zone_id": "Z2",
@@ -3320,7 +3320,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1629,
+        "compendium_md_line": 1630,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
         "source_file_line": 19
       }
@@ -3438,7 +3438,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1690,
+        "compendium_md_line": 1691,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
         "source_file_line": 80
       }
@@ -3550,9 +3550,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1714,
+        "compendium_md_line": 1717,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
-        "source_file_line": 104
+        "source_file_line": 106
       }
     },
     {
@@ -3648,9 +3648,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-09-04.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-09-04.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1732,
+        "compendium_md_line": 1735,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
-        "source_file_line": 122
+        "source_file_line": 124
       }
     },
     {
@@ -3755,9 +3755,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1826,
+        "compendium_md_line": 1828,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
-        "source_file_line": 37
+        "source_file_line": 35
       }
     },
     {
@@ -3868,9 +3868,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1848,
+        "compendium_md_line": 1857,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
-        "source_file_line": 59
+        "source_file_line": 64
       }
     },
     {
@@ -3965,9 +3965,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1886,
+        "compendium_md_line": 1896,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
-        "source_file_line": 97
+        "source_file_line": 103
       }
     },
     {
@@ -4081,9 +4081,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1968,
+        "compendium_md_line": 1979,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
-        "source_file_line": 44
+        "source_file_line": 42
       }
     },
     {
@@ -4125,7 +4125,7 @@
           {
             "zone_id": "Z3",
             "label": "Purge sélective vérifiable (Loi 25 art. 23 et RGPD art. 17)",
-            "content": "La révocation de la clé de chiffrement par entité (Crypto-Shredding) et l'invalidation en cascade des faits dérivés effacent les données personnelles sans rompre la structure globale du graphe."
+            "content": "La révocation de la clé de chiffrement par entité (Crypto-Shredding sur les payloads et charges épisodiques) et l'invalidation en cascade des faits dérivés, suivies de la purge physique asynchrone des vecteurs HNSW/IVFFlat, effacent les données personnelles sans rompre la structure globale du graphe."
           }
         ],
         "numbered_flows": [
@@ -4177,9 +4177,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1981,
+        "compendium_md_line": 1993,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
-        "source_file_line": 57
+        "source_file_line": 56
       }
     },
     {
@@ -4274,7 +4274,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-11-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-11-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2016,
+        "compendium_md_line": 2029,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
         "source_file_line": 92
       }
@@ -4386,9 +4386,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2102,
+        "compendium_md_line": 2114,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
-        "source_file_line": 50
+        "source_file_line": 48
       }
     },
     {
@@ -4492,9 +4492,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2123,
+        "compendium_md_line": 2136,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
-        "source_file_line": 71
+        "source_file_line": 70
       }
     },
     {
@@ -4590,7 +4590,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-12-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-12-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2147,
+        "compendium_md_line": 2161,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
         "source_file_line": 95
       }
@@ -4608,8 +4608,8 @@
         "enveloppes-bpmn-cas-routine",
         "paradigme-apm-autonomie-encadree"
       ],
-      "title": "L'échelle de sobriété OO1–OO4 et l'encapsulation BPMN/APM : conditionner le multi-agents au gain démontré",
-      "insertion_point": "Chapitre 13 (section 13.2.1 — Arbre de sobriété OO1–OO4 et APM)",
+      "title": "L'arbre de sobriété, la grille d'autorité OO1–OO4 et l'encapsulation BPMN/APM : conditionner le multi-agents au gain démontré",
+      "insertion_point": "Chapitre 13 (section 13.2.1 — Arbre de sobriété, autorité OO1–OO4 et APM)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -4617,14 +4617,14 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma explique aux dirigeants, aux juristes et aux architectes pourquoi un système agentique d'entreprise ne débute jamais par une multiplication d'agents : l'arbre de sobriété privilégie d'abord la règle déterministe (OO1) puis le flux structuré (OO2), avant d'encapsuler un agent unique (OO3) dans une enveloppe BPMN/APM ou d'autoriser le multi-agents (OO4) uniquement lorsque le gain en constance pass^k et en coût par résultat (CPO) compense le surcoût de 3× à 15× en jetons.",
-      "vulgarization_angle": "L'échelle OO1→OO4 est présentée comme une gradation d'outillage industriel : privilégier l'automate à règle fixe (OO1) ou la séquence déterministe bornée (OO2) avant d'encadrer un spécialiste unique dans un périmètre de sécurité BPMN/frame local (OO3) ou de mobiliser une équipe coordonnée (OO4), avec bascule réglementaire obligatoire OO2→OO3 dès qu'une décision opposable ou un dommage irréversible survient.",
+      "pedagogical_objective": "Ce schéma explique aux dirigeants, aux juristes et aux architectes pourquoi un système agentique d'entreprise ne débute jamais par une multiplication d'agents : l'arbre de sobriété privilégie d'abord la règle déterministe (N0) puis le flux structuré fixe, avant de confier la commande au cadre déterministe (OO3/OO4 plutôt qu'aux régimes libres OO1/OO2) pour encapsuler un agent unique dans une enveloppe BPMN/APM ou autoriser le multi-agents uniquement lorsque le gain en constance pass^k et en coût par résultat (CPO) compense le surcoût de 3× à 15× en jetons.",
+      "vulgarization_angle": "L'arbre de sobriété en quatre paliers et la grille d'autorité OO1–OO4 sont dissociés : privilégier l'automate à règle fixe (N0) ou la séquence déterministe bornée avant d'encadrer un spécialiste unique dans un périmètre BPMN/frame local ou de mobiliser une équipe coordonnée, avec bascule réglementaire obligatoire OO2→OO3 vers la commande déterministe du cadre (OO3/OO4) dès qu'une décision opposable ou un dommage irréversible survient.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Paliers déterministes par défaut (OO1 Code/DMN → OO2 Chaîne structurée)",
-            "content": "Règles fixes, calculs financiers exacts et flux de travail prévisibles à coût marginal minimal; ces paliers deviennent toutefois proscrits dès que les trois critères cumulatifs C26 § 29.4.1 (issue opposable, trace exigible par un tiers, dommage non réparable par reprise) imposent l'encadrement OO3."
+            "label": "Paliers déterministes par défaut (N0 Code/DMN → Chaîne structurée fixe)",
+            "content": "Règles fixes, calculs financiers exacts et flux de travail prévisibles à coût marginal minimal; ces paliers deviennent toutefois proscrits dès que les trois critères cumulatifs C26 § 29.4.1 (issue opposable, trace exigible par un tiers, dommage non réparable par reprise) imposent la commande déterministe par le cadre (OO3/OO4, proscrivant OO1/OO2)."
           },
           {
             "zone_id": "Z2",
@@ -4633,28 +4633,28 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Porte probatoire vers OO4 (Multi-agents homologué EXIG-ORC-01/02)",
+            "label": "Porte probatoire vers le multi-agents homologué (EXIG-ORC-01/02)",
             "content": "Franchissement réservé aux tâches décomposables démontrant une supériorité statistique mesurée (IC 95 %, pass^k et CPO) face au seuil de saturation (~45 %) et à l'effet Ringelmann multi-agents."
           }
         ],
         "numbered_flows": [
-          "① Vérifier d'abord si une règle déterministe (OO1) ou un graphe fixe (OO2) répond au besoin sans recourir à l'IA générative.",
-          "② Évaluer le seuil réglementaire C26 § 29.4.1 : en présence d'une issue opposable et d'un dommage non réparable par reprise, basculer impérativement vers OO3 encadré.",
+          "① Vérifier d'abord si une règle déterministe (N0) ou un graphe fixe répond au besoin sans recourir à l'IA générative.",
+          "② Évaluer le seuil réglementaire C26 § 29.4.1 : en présence d'une issue opposable et d'un dommage non réparable par reprise, proscrire OO1/OO2 et basculer impérativement vers un cadre déterministe OO3/OO4.",
           "③ Encapsuler l'agent unique dans un sous-processus BPMN/CMMN/Routine et des frames locaux APM qui bornent ses marges d'initiative.",
-          "④ Autoriser le collectif multi-agents OO4 uniquement sur preuve chiffrée de constance pass^k et de CPO surpassant le surcoût de 3× à 15× en jetons."
+          "④ Autoriser le collectif multi-agents sous cadre OO3/OO4 uniquement sur preuve chiffrée de constance pass^k et de CPO surpassant le surcoût de 3× à 15× en jetons."
         ],
         "color_legend": [
           {
             "color_token": "Bleu acier (#1D4ED8)",
-            "meaning": "Automatisation déterministe sobre et peu coûteuse (OO1 et OO2)"
+            "meaning": "Automatisation déterministe sobre et peu coûteuse (N0 et graphe fixe)"
           },
           {
             "color_token": "Vert forêt (#047857)",
-            "meaning": "Agent unique encadré par capsule BPMN/APM et bascule réglementaire OO3"
+            "meaning": "Agent unique encadré par capsule BPMN/APM et commande déterministe OO3/OO4"
           },
           {
             "color_token": "Ambre contrôle (#D97706)",
-            "meaning": "Collectif multi-agents OO4 subordonné à une preuve financière et statistique"
+            "meaning": "Collectif multi-agents homologué (OO3/OO4) subordonné à une preuve financière et statistique"
           }
         ],
         "key_takeaway_box": "Une architecture d'entreprise demeure déterministe partout où cela suffit et n'active l'autonomie que dans une capsule strictement mesurée."
@@ -4710,7 +4710,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2228,
+        "compendium_md_line": 2243,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
         "source_file_line": 44
       }
@@ -4838,7 +4838,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2268,
+        "compendium_md_line": 2283,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
         "source_file_line": 84
       }
@@ -4951,7 +4951,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-13-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-13-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2296,
+        "compendium_md_line": 2311,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
         "source_file_line": 112
       }
@@ -5053,7 +5053,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2380,
+        "compendium_md_line": 2395,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
         "source_file_line": 41
       }
@@ -5148,9 +5148,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2399,
+        "compendium_md_line": 2416,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
-        "source_file_line": 60
+        "source_file_line": 62
       }
     },
     {
@@ -5198,7 +5198,7 @@
           "① Soumettre une mission discrète typée via MCP depuis l'orchestrateur métier, en excluant tout ordre moteur continu.",
           "② Contrôler dans le sas industriel la signature TUF/Sigstore du paquet ainsi que le statut du verrou de consignation LOTO.",
           "③ Convertir la mission autorisée vers le bus temps réel ROS 2/DDS selon un cycle de 10 à 30 ms.",
-          "④ Vérifier à chaque milliseconde les limites cinématiques dans l'arbitre matériel Simplex et reprendre la main en ≤ 1 ms au moindre dépassement d'enveloppe."
+          "④ Vérifier à chaque milliseconde les limites cinématiques dans l'arbitre matériel Simplex et reprendre la main en ≤ 1 ms dès d_LiDAR(t) < d_sécurité(t) (au moindre dépassement d'enveloppe)."
         ],
         "color_legend": [
           {
@@ -5243,9 +5243,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-14-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-14-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2424,
+        "compendium_md_line": 2441,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
-        "source_file_line": 85
+        "source_file_line": 87
       }
     },
     {
@@ -5354,7 +5354,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2509,
+        "compendium_md_line": 2526,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
         "source_file_line": 40
       }
@@ -5475,9 +5475,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2533,
+        "compendium_md_line": 2552,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
-        "source_file_line": 64
+        "source_file_line": 66
       }
     },
     {
@@ -5581,9 +5581,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-15-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-15-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2616,
+        "compendium_md_line": 2635,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
-        "source_file_line": 147
+        "source_file_line": 149
       }
     },
     {
@@ -5609,7 +5609,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif établit pourquoi l'attribution d'un compte humain ou d'un secret technique partagé à des agents (désormais 82 fois plus nombreux que les employés) rompt toute imputabilité juridique et sécuritaire : les protocoles historiques reposaient sur la présence d'un humain derrière un navigateur. L'organisation déploie alors le couple Blueprint/Instance parrainé au SIRH (transfert < 72 h sur départ), proscrit tout secret statique et soumet chaque solution à la grille Q-A..Q-E.",
+      "pedagogical_objective": "Ce comparatif établit pourquoi l'attribution d'un compte humain ou d'un secret technique partagé à des agents (désormais 82 fois plus nombreux que les employés) rompt toute imputabilité juridique et sécuritaire : les protocoles historiques reposaient sur la présence d'un humain derrière un navigateur. L'organisation déploie alors le couple Blueprint/Instance parrainé au SIRH (intérim et relève < 72 h sur départ, rétrogradation < 60 s selon POR-015 sans suppléant actif), proscrit tout secret statique et soumet chaque solution à la grille Q-A..Q-E.",
       "vulgarization_angle": "L'évolution consiste à remplacer des clés passe-partout anonymes par une accréditation nominative d'agent rattachée au dossier d'un répondant humain au registre RH, révoquée automatiquement lors d'un mouvement de personnel et auditée selon cinq questions cumulatives.",
       "visual_blueprint": {
         "zones": [
@@ -5620,8 +5620,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS — Identité NHI propre Blueprint/Instance et parrainage SIRH (< 72 h)",
-            "content": "Chaque agent et chaque environnement dispose d'un identifiant non réattribuable, relié au gestionnaire de secrets (injection hors LLM) sur socle OAuth 2.1 / BCP 240 / FAPI 2.0, avec réaffectation < 72 h au départ du parrain."
+            "label": "APRÈS — Identité NHI propre Blueprint/Instance et parrainage SIRH (< 72 h / < 60 s POR-015)",
+            "content": "Chaque agent et chaque environnement dispose d'un identifiant non réattribuable, relié au gestionnaire de secrets (injection hors LLM) sur socle OAuth 2.0 (BCP 240 / RFC 9700, préparant OAuth 2.1) / FAPI 2.0, avec intérim et réaffectation < 72 h au départ du parrain (et rétrogradation automatique < 60 s selon POR-015 sans suppléant actif)."
           },
           {
             "zone_id": "Z3",
@@ -5632,7 +5632,7 @@
         "numbered_flows": [
           "① Proscrire tout compte humain partagé ainsi que toute clé statique dans le code ou le contexte LLM (EXIG-IAM-03..07).",
           "② Créer une fiche Agent Identity Blueprint puis instancier une identité NHI distincte par environnement (hors production et en production).",
-          "③ Rattacher l'instance au double parrainage métier et technique dans le SIRH avec suspension ou transfert automatique en moins de 72 h.",
+          "③ Rattacher l'instance au double parrainage métier et technique dans le SIRH avec intérim et transfert sous 72 h au départ, ou rétrogradation automatique en moins de 60 s selon POR-015.",
           "④ Évaluer l'architecture au crible Q-A..Q-E sur le socle OAuth 2.1 / BCP 240 (PKCE, mTLS/DPoP, FAPI 2.0)."
         ],
         "color_legend": [
@@ -5702,7 +5702,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2698,
+        "compendium_md_line": 2717,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
         "source_file_line": 48
       }
@@ -5808,7 +5808,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2731,
+        "compendium_md_line": 2750,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
         "source_file_line": 81
       }
@@ -5920,7 +5920,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-16-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-16-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2771,
+        "compendium_md_line": 2790,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
         "source_file_line": 121
       }
@@ -6050,7 +6050,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2858,
+        "compendium_md_line": 2879,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
         "source_file_line": 44
       }
@@ -6153,7 +6153,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2940,
+        "compendium_md_line": 2961,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
         "source_file_line": 126
       }
@@ -6257,9 +6257,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2963,
+        "compendium_md_line": 2988,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
-        "source_file_line": 149
+        "source_file_line": 153
       }
     },
     {
@@ -6334,7 +6334,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-01.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-01.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3059,
+        "compendium_md_line": 3086,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
         "source_file_line": 35
       }
@@ -6378,14 +6378,14 @@
           {
             "zone_id": "Z3",
             "label": "Défense hybride immédiate et rescellement probatoire ≤ 5 ans (EXIG-SEC-28)",
-            "content": "Échange de clés hybride TLS 1.3 / MLS X25519MLKEM768 sur tunnels gRPC SLIM et rescellement ≤ 5 ans des journaux, cartes et mandats (≥ 7 ans) sous arbre SCITT (RFC 9943) + SLH-DSA."
+            "content": "Échange de clés hybride TLS 1.3 / MLS (RFC 9420) avec extension X25519MLKEM768 sur tunnels gRPC SLIM et rescellement ≤ 5 ans des journaux, cartes et mandats (≥ 7 ans) sous arbre SCITT (RFC 9943) + SLH-DSA."
           }
         ],
         "numbered_flows": [
           "① Dresser l'inventaire cryptographique CBOM complet des certificats, jetons, cartes A2A et archives longues (> 5 ans).",
           "② Calculer l'urgence selon Mosca (x durée de valeur probante + y délai de migration > z horizon quantique) sur la fenêtre 2026–2029.",
           "③ Exiger la crypto-agilité (algorithme nommé, schéma versionné ES256/ML-DSA, procédure de retrait) dans toute acquisition IAM dès 2027.",
-          "④ Déployer TLS/MLS hybride (X25519MLKEM768) et resceller périodiquement (≤ 5 ans) les preuves longues en SCITT + SLH-DSA (EXIG-SEC-28)."
+          "④ Déployer TLS 1.3 / MLS (RFC 9420) avec extension hybride X25519MLKEM768 et resceller périodiquement (≤ 5 ans) les preuves longues en SCITT + SLH-DSA (EXIG-SEC-28)."
         ],
         "color_legend": [
           {
@@ -6454,7 +6454,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3088,
+        "compendium_md_line": 3115,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
         "source_file_line": 64
       }
@@ -6480,25 +6480,25 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce comparatif met en évidence un obstacle d'infrastructure critique lors de l'adoption post-quantique : une signature ML-DSA pèse 50 à 72 fois plus lourd qu'une signature classique (3 309 o pour ML-DSA-65, 4 627 o pour ML-DSA-87). Empilées dans les en-têtes HTTP sur deux à cinq sauts d'agents (20–165 Ko), ces signatures franchissent immédiatement la limite de 8 192 octets des mandataires inverses (rejet HTTP 431). Le passage au format CBOR-COSE en taille constante O(1) conjugué aux références `kid`/JWKS maintient la charge entre 4 757 o et 6 514 o.",
-      "vulgarization_angle": "L'empilement linéaire de signatures post-quantiques dans les en-têtes HTTP s'apparente au transport de dossiers 70 fois plus volumineux qui saturent le contrôle d'accès dès le deuxième relais (HTTP 431 à 8 Ko), par opposition à un jeton compact CBOR-COSE à encombrement constant O(1) muni d'un identifiant de clé (`kid` JWKS).",
+      "pedagogical_objective": "Ce comparatif met en évidence un obstacle d'infrastructure critique lors de l'adoption post-quantique : une signature ML-DSA pèse 50 à 72 fois plus lourd qu'une signature classique (3 309 o pour ML-DSA-65, 4 627 o pour ML-DSA-87). Empilées dans les en-têtes HTTP sur deux à cinq sauts d'agents (20–165 Kio), ces signatures franchissent immédiatement la limite de 8 192 octets des mandataires inverses (rejet HTTP 431). Le passage au format CBOR-COSE en taille constante O(1) conjugué aux références `kid`/JWKS maintient la charge entre 4 757 o et 6 514 o.",
+      "vulgarization_angle": "L'empilement linéaire de signatures post-quantiques dans les en-têtes HTTP s'apparente au transport de dossiers 70 fois plus volumineux qui saturent le contrôle d'accès dès le deuxième relais (HTTP 431 à 8 Kio), par opposition à un jeton compact CBOR-COSE à encombrement constant O(1) muni d'un identifiant de clé (`kid` JWKS).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "AVANT — Chaîne JWT/DPoP en O(sauts) dépassant le plafond HTTP 431 (8 192 o)",
-            "content": "Signatures ML-DSA-65 (3 309 o) et ML-DSA-87 (4 627 o) atteignant 20–35 Ko dès deux sauts (jusqu'à 165 Ko à cinq sauts sur la Campagne 4 Borealis-Bench / `pqc_http431.py`), provoquant le rejet par Nginx et Envoy."
+            "content": "Signatures ML-DSA-65 (3 309 o) et ML-DSA-87 (4 627 o) atteignant 20–35 Kio dès deux sauts (jusqu'à 165 Kio à cinq sauts sur la Campagne 4 Borealis-Bench / `pqc_http431.py`), provoquant le rejet par Nginx et Envoy."
           },
           {
             "zone_id": "Z2",
             "label": "APRÈS — Transaction Tokens CBOR-COSE O(1) (RFC 9964 / -11) et référence `kid`/JWKS",
-            "content": "Substitution des clés embarquées par des identifiants `kid` résolus sur JWKS, taille d'en-tête constante O(1) de 4 757 o à 6 514 o sous ML-DSA-65/87 et relèvement préventif des tampons à ≥ 32 Ko."
+            "content": "Substitution des clés embarquées par des identifiants `kid` résolus sur JWKS, taille d'en-tête constante O(1) de 4 757 o à 6 514 o sous ML-DSA-65/87 et relèvement préventif des tampons à ≥ 32 Kio."
           }
         ],
         "numbered_flows": [
           "① Reproduire localement l'amplification ML-DSA-65/87 sur le banc Python `pqc_http431.py` pour mesurer le seuil HTTP 431 de chaque passerelle.",
           "② Retirer les certificats et clés publiques embarqués dans les jetons au profit de références `kid` résolues sur un cache JWKS.",
-          "③ Porter les tampons d'en-têtes des mandataires inverses et des AI Gateways à ≥ 32 Ko dès le Palier P1.",
+          "③ Porter les tampons d'en-têtes des mandataires inverses et des AI Gateways à ≥ 32 Kio dès le Palier P1.",
           "④ Basculer la propagation intra-domaine vers des Transaction Tokens CBOR-COSE O(1) (RFC 9964 / -11, 4 757 o–6 514 o) à la porte POR-007."
         ],
         "color_legend": [
@@ -6512,7 +6512,7 @@
           },
           {
             "color_token": "Bleu infrastructure (#1D4ED8)",
-            "meaning": "Tampons passerelle ≥ 32 Ko vérifiés dès le Palier P1 (EXIG-SEC-27, POR-007)"
+            "meaning": "Tampons passerelle ≥ 32 Kio vérifiés dès le Palier P1 (EXIG-SEC-27, POR-007)"
           }
         ],
         "key_takeaway_box": "Le déploiement des signatures post-quantiques sans adaptation du transport bloque les passerelles dès le deuxième saut d'agent; les références `kid`/JWKS et les Transaction Tokens O(1) préviennent la panne HTTP 431."
@@ -6544,7 +6544,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-18-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-18-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3146,
+        "compendium_md_line": 3173,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
         "source_file_line": 122
       }
@@ -6656,7 +6656,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3233,
+        "compendium_md_line": 3262,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
         "source_file_line": 35
       }
@@ -6750,7 +6750,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3258,
+        "compendium_md_line": 3287,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
         "source_file_line": 60
       }
@@ -6829,7 +6829,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3320,
+        "compendium_md_line": 3349,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
         "source_file_line": 122
       }
@@ -6944,7 +6944,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3401,
+        "compendium_md_line": 3430,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
         "source_file_line": 39
       }
@@ -7023,7 +7023,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3413,
+        "compendium_md_line": 3442,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
         "source_file_line": 51
       }
@@ -7131,7 +7131,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-20-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-20-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3515,
+        "compendium_md_line": 3544,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
         "source_file_line": 153
       }
@@ -7237,7 +7237,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3610,
+        "compendium_md_line": 3639,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
         "source_file_line": 37
       }
@@ -7324,7 +7324,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3631,
+        "compendium_md_line": 3660,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
         "source_file_line": 58
       }
@@ -7434,7 +7434,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3661,
+        "compendium_md_line": 3690,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
         "source_file_line": 88
       }
@@ -7545,7 +7545,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3744,
+        "compendium_md_line": 3773,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
         "source_file_line": 41
       }
@@ -7583,7 +7583,7 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Voûte de débogage « bris de glace » (≤ 14 jours, tranchant CAD26 sur C27)",
+            "label": "Voûte de débogage « bris de glace » (≤ 14 jours, tranchant CAD26 sur la règle de rétention DC-C27 (≤ 14 jours))",
             "content": "Capture exceptionnelle sous double autorisation chiffrée en juridiction avec purge irréversible automatique sous 14 jours au plus (EXIG-OBS-08)."
           },
           {
@@ -7649,7 +7649,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3781,
+        "compendium_md_line": 3810,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
         "source_file_line": 78
       }
@@ -7754,7 +7754,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-22-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-22-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3852,
+        "compendium_md_line": 3881,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
         "source_file_line": 149
       }
@@ -7859,7 +7859,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3921,
+        "compendium_md_line": 3950,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
         "source_file_line": 37
       }
@@ -7963,7 +7963,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4013,
+        "compendium_md_line": 4042,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
         "source_file_line": 129
       }
@@ -8050,7 +8050,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-23-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-23-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4026,
+        "compendium_md_line": 4055,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
         "source_file_line": 142
       }
@@ -8170,7 +8170,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4111,
+        "compendium_md_line": 4140,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
         "source_file_line": 50
       }
@@ -8271,7 +8271,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4140,
+        "compendium_md_line": 4169,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
         "source_file_line": 79
       }
@@ -8376,7 +8376,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4155,
+        "compendium_md_line": 4184,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
         "source_file_line": 94
       }
@@ -8473,7 +8473,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4266,
+        "compendium_md_line": 4295,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
         "source_file_line": 70
       }
@@ -8586,7 +8586,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4280,
+        "compendium_md_line": 4309,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
         "source_file_line": 84
       }
@@ -8691,7 +8691,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-25-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-25-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4311,
+        "compendium_md_line": 4340,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
         "source_file_line": 115
       }
@@ -8795,7 +8795,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4410,
+        "compendium_md_line": 4439,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
         "source_file_line": 61
       }
@@ -8901,7 +8901,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4442,
+        "compendium_md_line": 4471,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
         "source_file_line": 93
       }
@@ -8995,9 +8995,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-26-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-26-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4458,
+        "compendium_md_line": 4489,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
-        "source_file_line": 109
+        "source_file_line": 111
       }
     },
     {
@@ -9011,7 +9011,7 @@
       "themes_vulgarized": [
         "criteres-evaluation-fournisseurs-grille"
       ],
-      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54, MCP, A2A a2a-tck et export FOCUS 1.4+)",
+      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54 du Tome 2 / Tableau 27.1, MCP, A2A a2a-tck et export FOCUS 1.4+)",
       "insertion_point": "Chapitre 27 — à l'issue de la famille FAM_D09_03_02 (thème criteres-evaluation-fournisseurs-grille)",
       "target_audiences": [
         "Direction / Métier",
@@ -9021,8 +9021,8 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce diagramme décisionnel démontre aux responsables des achats, aux juristes et aux architectes qu'aucune allégation commerciale ne suffit à qualifier un fournisseur d'IA (EXIG-APP-04) : le soumissionnaire doit franchir en banc d'essai réel sept portes éliminatoires sur huit (MCP 2026-07-28, A2A 1.0 `a2a-tck`, latence mesurée sous politiques actives, export OTLP et FOCUS 1.4+, identité sans clé statique et arrêt indépendant) avant d'obtenir sa note pondérée dans la grille du Tableau 54.",
-      "vulgarization_angle": "Modéliser l'appel d'offres comme un banc de qualification séquentiel rigoureux où sept non-conformités éliminatoires excluent immédiatement le soumissionnaire avant même la comparaison commerciale ou l'évaluation pondérée de 0 à 3 du Tableau 54.",
+      "pedagogical_objective": "Ce diagramme décisionnel démontre aux responsables des achats, aux juristes et aux architectes qu'aucune allégation commerciale ne suffit à qualifier un fournisseur d'IA (EXIG-APP-04) : le soumissionnaire doit franchir en banc d'essai réel sept portes éliminatoires sur huit (MCP 2026-07-28, A2A 1.0 `a2a-tck`, latence mesurée sous politiques actives, export OTLP et FOCUS 1.4+, identité sans clé statique et arrêt indépendant) avant d'obtenir sa note pondérée dans la grille du Tableau 54 du Tome 2 (Tableau 27.1).",
+      "vulgarization_angle": "Modéliser l'appel d'offres comme un banc de qualification séquentiel rigoureux où sept non-conformités éliminatoires excluent immédiatement le soumissionnaire avant même la comparaison commerciale ou l'évaluation pondérée de 0 à 3 du Tableau 54 du Tome 2 (Tableau 27.1).",
       "visual_blueprint": {
         "zones": [
           {
@@ -9037,14 +9037,14 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Sas 3 — Notation pondérée Tableau 54 (échelle 0 à 3, 7 critères éliminatoires sur 8)",
+            "label": "Sas 3 — Notation pondérée Tableau 54 du Tome 2 / Tableau 27.1 (échelle 0 à 3, 7 critères éliminatoires sur 8)",
             "content": "Seuls les candidats ne présentant aucune note éliminatoire sont classés selon les pondérations techniques, juridiques, de sécurité et de réversibilité."
           }
         ],
         "numbered_flows": [
           "① Soumettre le cahier des charges EXIG-APP : tout refus d'une clause DOIT entraîne un rejet automatique immédiat.",
           "② Placer la solution en banc d'essai pour démontrer les protocoles ouverts (MCP, A2A `a2a-tck`), la télémétrie (OTLP et FOCUS 1.4+) et l'arrêt indépendant.",
-          "③ Mesurer la latence P50 et P99 avec les garde-fous de sécurité actifs (et non en configuration dépouillée) puis coter les 8 critères de 0 à 3 (Tableau 54).",
+          "③ Mesurer la latence P50 et P99 avec les garde-fous de sécurité actifs (et non en configuration dépouillée) puis coter les 8 critères de 0 à 3 (Tableau 54 du Tome 2 / Tableau 27.1).",
           "④ Exiger zéro échec sur les 7 critères éliminatoires avant d'autoriser la négociation financière finale."
         ],
         "color_legend": [
@@ -9058,7 +9058,7 @@
           },
           {
             "color_token": "Vert éligible (#047857)",
-            "meaning": "Candidat qualifié pour le classement pondéré final (Tableau 54)"
+            "meaning": "Candidat qualifié pour le classement pondéré final (Tableau 54 du Tome 2 / Tableau 27.1)"
           }
         ],
         "key_takeaway_box": "Les déclarations d'interopérabilité et de réversibilité des fournisseurs demeurent inopposables sans preuve empirique : l'exigence EXIG-APP-04 impose une validation reproductible en banc d'essai avant toute signature contractuelle."
@@ -9073,9 +9073,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-01.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-01.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4539,
+        "compendium_md_line": 4572,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
-        "source_file_line": 45
+        "source_file_line": 47
       }
     },
     {
@@ -9152,9 +9152,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4568,
+        "compendium_md_line": 4601,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
-        "source_file_line": 74
+        "source_file_line": 76
       }
     },
     {
@@ -9238,9 +9238,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-27-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-27-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4589,
+        "compendium_md_line": 4622,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
-        "source_file_line": 95
+        "source_file_line": 97
       }
     },
     {
@@ -9353,7 +9353,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4692,
+        "compendium_md_line": 4725,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
         "source_file_line": 66
       }
@@ -9458,7 +9458,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4724,
+        "compendium_md_line": 4757,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
         "source_file_line": 98
       }
@@ -9476,7 +9476,7 @@
         "eclats-sectoriels-extrapoles",
         "vertical-financier-durci"
       ],
-      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2/3",
+      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2–4",
       "insertion_point": "Chapitre 28 — à l'issue de la famille FAM_D10_01_02 (Terrain canadien et délimitation probante)",
       "target_audiences": [
         "Direction / Métier",
@@ -9485,7 +9485,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif délimite avec rigueur ce qui est démontré sur pièces dans le corpus et ce qui relève de la transposition illustrative : d'une part, les dix institutions canadiennes documentées en 2025–2026 (classes 5+4+1) et le socle financier et logiciel vérifié (BCA, CRE-IA, Borealis-Bench) ; d'autre part, les extrapolations explicitement balisées en santé (HL7 FHIR R4), en milieu manufacturier (IEC 62443) et en énergie ou mines (NERC CIP, SIL 2/3) où toute commande autonome directe demeure interdite.",
+      "pedagogical_objective": "Ce comparatif délimite avec rigueur ce qui est démontré sur pièces dans le corpus et ce qui relève de la transposition illustrative : d'une part, les dix institutions canadiennes documentées en 2025–2026 (classes 5+4+1) et le socle financier et logiciel vérifié (BCA, CRE-IA, Borealis-Bench) ; d'autre part, les extrapolations explicitement balisées en santé (HL7 FHIR R4), en milieu manufacturier (IEC 62443) et en énergie ou mines (NERC CIP, SIL 2–4) où toute commande autonome directe demeure interdite.",
       "vulgarization_angle": "Tracer une ligne de démarcation nette entre le périmètre financier canadien vérifié (dix institutions bancaires et assurantielles ainsi que six facteurs de durcissement) et les transpositions non financières balisées comme purement illustratives.",
       "visual_blueprint": {
         "zones": [
@@ -9501,14 +9501,14 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Périmètre extrapolé (Illustratif uniquement) — Santé FHIR et IT/OT critique SIL 2/3",
-            "content": "Dossiers de santé HL7 FHIR R4, usine BEL de Trois-Rivières (IEC 62443), réseaux NERC CIP et systèmes instrumentés de sécurité IEC 61511 SIL 2/3 : lecture seule et jumeau numérique déterministe uniquement, zéro actionnement autonome direct."
+            "label": "Périmètre extrapolé (Illustratif uniquement) — Santé FHIR et IT/OT critique SIL 2–4",
+            "content": "Dossiers de santé HL7 FHIR R4, usine BEL de Trois-Rivières (IEC 62443), réseaux NERC CIP et systèmes instrumentés de sécurité IEC 61511 SIL 2–4 : lecture seule et jumeau numérique déterministe uniquement, zéro actionnement autonome direct."
           }
         ],
         "numbered_flows": [
           "① Classer chaque constat de production canadien 2025–2026 selon son niveau de preuve documentaire (5 accès complets, 4 accès dégradés et 1 source secondaire).",
           "② Appliquer le socle démontré (CRE-IA v1.2, Note AMF IA, Borealis-Bench) exclusivement à la finance réglementée et au génie logiciel déterministe.",
-          "③ Étiqueter explicitement tout cas relevant de la santé (HL7 FHIR), du milieu manufacturier (IEC 62443) ou de l'énergie (SIL 2/3) comme extrapolation illustrative exigeant une preuve propre.",
+          "③ Étiqueter explicitement tout cas relevant de la santé (HL7 FHIR), du milieu manufacturier (IEC 62443) ou de l'énergie (SIL 2–4) comme extrapolation illustrative exigeant une preuve propre.",
           "④ Maintenir en périphérie IT/OT un sas strict en lecture seule et jumeau numérique déterministe interdisant tout actionnement direct sur automate."
         ],
         "color_legend": [
@@ -9522,10 +9522,10 @@
           },
           {
             "color_token": "Gris balisé (#64748B)",
-            "meaning": "Extrapolations illustratives (HL7 FHIR R4, IEC 62443, NERC CIP, SIL 2/3 sans action directe)"
+            "meaning": "Extrapolations illustratives (HL7 FHIR R4, IEC 62443, NERC CIP, SIL 2–4 sans action directe)"
           }
         ],
-        "key_takeaway_box": "La rigueur probante impose une frontière nette : les mesures et pièces réglementaires du compendium démontrent la finance réglementée et le génie logiciel déterministe, tandis que la santé FHIR et les installations SIL 2/3 demeurent des transpositions illustratives sans actionnement direct sur équipement."
+        "key_takeaway_box": "La rigueur probante impose une frontière nette : les mesures et pièces réglementaires du compendium démontrent la finance réglementée et le génie logiciel déterministe, tandis que la santé FHIR et les installations SIL 2–4 demeurent des transpositions illustratives sans actionnement direct sur équipement."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -9562,7 +9562,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4762,
+        "compendium_md_line": 4795,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
         "source_file_line": 136
       }
@@ -9607,7 +9607,7 @@
           {
             "zone_id": "Z3",
             "label": "Blueprint 3 — `bp3_orchestration_multi_agents_b2b` (Tome 6 section 14.2, Fig. 54) : maillage fédéré",
-            "content": "Interopérabilité A2A 1.0, pile AGNTCY/SLIM (OASF), Event Mesh CloudEvents et délégation OBO à deux sauts (C13, C20), tous validés à la porte G0 sur 5 SBB et C01–C40 (socle C1–C8 et 565 contrôles)."
+            "content": "Interopérabilité A2A 1.0 (C13–C14), pile AGNTCY/SLIM (OASF), Event Mesh CloudEvents, audit (C20) et délégation OBO à deux sauts (C24, C26), tous validés à la porte G0 sur 5 SBB et C01–C40 (socle C1–C8 et 565 contrôles)."
           }
         ],
         "numbered_flows": [
@@ -9683,9 +9683,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4856,
+        "compendium_md_line": 4893,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
-        "source_file_line": 76
+        "source_file_line": 78
       }
     },
     {
@@ -9787,9 +9787,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4879,
+        "compendium_md_line": 4916,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
-        "source_file_line": 99
+        "source_file_line": 101
       }
     },
     {
@@ -9813,7 +9813,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma précise le double statut du Groupe Boréal Inc. dans le corpus : il constitue un fil rouge pédagogique précieux pour démontrer l'assemblage de quatre flux complets (crédit, paiement Lynx, banque ouverte C-15, assurance vie FHIR), mais ses données chiffrées narratives fictives sont formellement exclues de toute valeur probante (DC-P11, DC-P12, C27) et remplacées par les 108 blocs d'exécution reproductibles de Borealis-Bench au Tome 8.",
+      "pedagogical_objective": "Ce schéma précise le double statut du Groupe Boréal Inc. dans le corpus : il constitue un fil rouge pédagogique précieux pour démontrer l'assemblage de quatre flux complets (crédit, paiement Lynx, banque ouverte C-15, assurance vie FHIR), mais ses données chiffrées narratives fictives sont formellement exclues de toute valeur probante (DC-P11, DC-P12, règle documentaire DC-C27) et remplacées par les 108 blocs d'exécution reproductibles de Borealis-Bench au Tome 8.",
       "vulgarization_angle": "Mettre en regard une maquette architecturale à vocation pédagogique (Groupe Boréal BEL, BCA et BSN) et un laboratoire d'essai reproductible (Borealis-Bench à 108 blocs CI), séparés par le filtre d'hygiène probante DC-P11 et DC-P12.",
       "visual_blueprint": {
         "zones": [
@@ -9824,7 +9824,7 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Filtre d'exclusion probante (DC-P11, DC-P12, C27, CA-10)",
+            "label": "Filtre d'exclusion probante (DC-P11, DC-P12, règle documentaire DC-C27, CA-10)",
             "content": "Interdiction absolue de citer les chiffres fictifs (tels que 6,8 G$ CAD, 14 500 employés ou des économies estimées) à titre de preuve empirique dans les décisions d'audit ou d'homologation."
           },
           {
@@ -9846,7 +9846,7 @@
           },
           {
             "color_token": "Rouge exclusion (#B91C1C)",
-            "meaning": "Règle d'exclusion DC-P11, DC-P12 et C27 proscrivant l'usage des chiffres fictifs en preuve"
+            "meaning": "Règle d'exclusion DC-P11, DC-P12 et règle documentaire DC-C27 proscrivant l'usage des chiffres fictifs en preuve"
           },
           {
             "color_token": "Vert vérifié (#047857)",
@@ -9898,9 +9898,9 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4931,
+        "compendium_md_line": 4968,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
-        "source_file_line": 151
+        "source_file_line": 153
       }
     },
     {
@@ -10027,7 +10027,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4994,
+        "compendium_md_line": 5031,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
         "source_file_line": 47
       }
@@ -10043,7 +10043,7 @@
       "themes_vulgarized": [
         "anti-patrons-agentiques"
       ],
-      "title": "Verrou d'architecture : les 10 antipatrons bloquants (EXIG-ORC-29, AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
+      "title": "Verrou d'architecture : les 10 motifs bloquants d'EXIG-ORC-29 (AP-01, AP-06–AP-09, AP-12 parmi AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
       "insertion_point": "Chapitre 30 — en ouverture de la famille FAM_D10_03_02 (thème anti-patrons-agentiques)",
       "target_audiences": [
         "Direction / Métier",
@@ -10053,7 +10053,7 @@
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
       "pedagogical_objective": "Cet arbre décisionnel aide les architectes et membres du comité ARB à détecter les défauts structurels qui compromettent les déploiements agentiques : employer un LLM pour un calcul déterministe, multiplier les agents sans justification, exposer une API OpenAPI 1:1 en 50 outils MCP, partager un état mutable au sein d'un essaim non borné, inscrire les règles de sécurité dans un prompt ou modéliser l'agent comme un acteur humain en ArchiMate. Chaque détection entraîne un blocage ARB net et oriente vers son contre-patron sûr.",
-      "vulgarization_angle": "Structurer la revue d'architecture (ARB) en un filtrage séquentiel à trois barrages sans dérogation : si la tâche est déterministe, si la topologie viole AP-01 à AP-12 (EXIG-ORC-29) ou si la vue ArchiMate confond agent et employé (Tableau 44.2), la validation est refusée avec renvoi vers le patron conforme.",
+      "vulgarization_angle": "Structurer la revue d'architecture (ARB) en un filtrage séquentiel à trois barrages sans dérogation : si la tâche est déterministe, si la topologie viole AP-01 à AP-12 (EXIG-ORC-29) ou si la vue ArchiMate confond agent et employé (Tableau 44.2 du Tome 6), la validation est refusée avec renvoi vers le patron conforme.",
       "visual_blueprint": {
         "zones": [
           {
@@ -10063,25 +10063,25 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Filtre 2 — Les 10 antipatrons d'orchestration bloquants (EXIG-ORC-29 et AP-01..AP-12)",
-            "content": "Multiagent injustifié, découpage par rôle abstrait, état mutable partagé, contexte gonflé, état en mémoire volatile, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence, Prompt-as-Policy, Tool Sprawl et lancement sans EvalOps (OWASP ASI02, ASI03, ASI08 et ASI09)."
+            "label": "Filtre 2 — Les 10 motifs bloquants d'EXIG-ORC-29 et les 12 codes AP-01..AP-12",
+            "content": "Multi-agent injustifié, découpage par rôle abstrait, état mutable partagé, contexte gonflé, état en mémoire volatile, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence, Prompt-as-Policy, Tool Sprawl et lancement sans EvalOps (OWASP ASI02, ASI03, ASI08 et ASI09)."
           },
           {
             "zone_id": "Z3",
-            "label": "Filtre 3 — 9 antipatrons ArchiMate (Tableau 44.2) et levée des 3 homonymies",
+            "label": "Filtre 3 — 9 anti-patrons ArchiMate (Tableau 44.2 du Tome 6) et levée des 3 homonymies",
             "content": "Interdiction de modéliser l'agent en acteur humain ou de laisser une exigence orpheline ; désambiguïsation explicite d'AgentMesh (Solace par rapport à Solo.io), de Fabrique (section 43.1) et d'ACP Sun Life."
           }
         ],
         "numbered_flows": [
-          "① Vérifier d'abord si un workflow déterministe ou une API classique résout le besoin : à défaut seulement, justifier le recours à l'agent sous EXIG-ORC-29.",
-          "② Contrôler l'architecture au regard des dix antipatrons AP-01 à AP-12 (état isolé, écrivain unique, façades métier de 5 à 12 outils, politiques hors prompt).",
-          "③ Valider les modèles ArchiMate contre le Tableau 44.2 (stéréotype cognitif dédié, chaîne de traçabilité complète jusqu'aux couches C1–C8).",
-          "④ Prononcer un rejet bloquant en comité ARB dès qu'un seul antipatron est relevé, avec réorientation obligatoire vers l'un des 8 patrons autorisés."
+          "① Vérifier d'abord si un flux de travail déterministe ou une API classique résout le besoin : à défaut seulement, justifier le recours à l'agent sous EXIG-ORC-29.",
+          "② Contrôler l'architecture au regard des dix motifs d'EXIG-ORC-29 et des douze codes AP-01 à AP-12 (état isolé, écrivain unique, façades métier de 5 à 12 outils, politiques hors prompt).",
+          "③ Valider les modèles ArchiMate contre le Tableau 44.2 du Tome 6 (stéréotype cognitif dédié, chaîne de traçabilité complète jusqu'aux couches C1–C8).",
+          "④ Prononcer un rejet bloquant en comité ARB dès qu'un seul anti-patron est relevé, avec réorientation obligatoire vers l'un des 8 patrons autorisés."
         ],
         "color_legend": [
           {
             "color_token": "Rouge bloquant (#B91C1C)",
-            "meaning": "Rejet ARB sans dérogation (EXIG-ORC-29, AP-01 à AP-12, Tableau 44.2, OWASP ASI)"
+            "meaning": "Rejet ARB sans dérogation (EXIG-ORC-29, AP-01 à AP-12, Tableau 44.2 du Tome 6, OWASP ASI)"
           },
           {
             "color_token": "Ambre garde-fou (#D97706)",
@@ -10110,7 +10110,7 @@
           "title": "Les neuf anti-patrons du Tableau 44.2 et leur regroupement (le neuvième consistant à réexpliquer la prose protocolaire ou réglementaire des chapitres amont dans une vue).",
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-44.3 - Les neuf anti-patrons du Tableau 44.2 et leur regroupement.puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-44.3.svg",
-          "role_note": "Regroupe visuellement les neuf antipatrons de modélisation ArchiMate du Tableau 44.2."
+          "role_note": "Regroupe visuellement les neuf anti-patrons de modélisation ArchiMate du Tableau 44.2 du Tome 6."
         },
         {
           "tome_id": "T6",
@@ -10118,7 +10118,7 @@
           "title": "Comparaison structurelle entre l’anti-patron Swagger-to-MCP 1:1 et l’architecture ACI consolidée",
           "source_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-14 - Comparaison structurelle entre l'anti-patron Swagger-to-MCP 1 - 1.puml",
           "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-14.svg",
-          "role_note": "Compare l'antipatron destructeur Swagger-to-MCP 1:1 à la conception par façades d'intention ACI consolidées."
+          "role_note": "Compare l'anti-patron destructeur Swagger-to-MCP 1:1 à la conception par façades d'intention ACI consolidées."
         }
       ],
       "compendium_figure": {
@@ -10129,7 +10129,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5043,
+        "compendium_md_line": 5080,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
         "source_file_line": 96
       }
@@ -10241,7 +10241,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5073,
+        "compendium_md_line": 5110,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
         "source_file_line": 126
       }
@@ -10346,7 +10346,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-01.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5148,
+        "compendium_md_line": 5185,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
         "source_file_line": 58
       }
@@ -10458,7 +10458,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5174,
+        "compendium_md_line": 5211,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
         "source_file_line": 84
       }
@@ -10572,7 +10572,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5196,
+        "compendium_md_line": 5233,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
         "source_file_line": 106
       }
@@ -10601,7 +10601,7 @@
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
       "pedagogical_objective": "La direction perçoit immédiatement comment prévenir la friction entre l'orientation de portefeuille et l'improvisation technique : l'Architecte d'entreprise (AE) gouverne la finalité et l'investissement (52 capacités, CPO, trois lignes de défense) tandis que l'Architecte de solutions (AS) garantit l'invariance technique (passerelle, OPA, Saga, JCS) au moyen de six décisions conjointes et d'un modèle en étoile où la plateforme centrale délivre une seule fois les garde-fous communs.",
-      "vulgarization_angle": "Représenter l'organisation comme un mécanisme à moyeu central unique (Centre d'excellence et trois plans transversaux) relié aux rayons métiers par un propriétaire nominatif (SIRH 72 heures) et un unique responsable imputable A par activité RACI.",
+      "vulgarization_angle": "Représenter l'organisation comme un mécanisme à moyeu central unique (Centre d'excellence et trois plans transversaux) relié aux rayons métiers par un propriétaire nominatif (SIRH : intérim et relève < 72 heures, rétrogradation < 60 s POR-015) et un unique responsable imputable A par activité RACI.",
       "visual_blueprint": {
         "zones": [
           {
@@ -10617,7 +10617,7 @@
           {
             "zone_id": "Z3",
             "label": "Rayons métiers fédérés et trois lignes de défense (12 rôles, RACI à A unique)",
-            "content": "Propriétaire métier nominatif couplé au SIRH (rétrogradation sous 72 heures au départ), séparation préparation/approbation (EXIG-GOV-03), 2e ligne proportionnée E-23 et audit indépendant de 3e ligne."
+            "content": "Propriétaire métier nominatif couplé au SIRH (intérim et relève sous 72 heures au départ, rétrogradation automatique en moins de 60 s selon POR-015 en l'absence de suppléant actif), séparation préparation/approbation (EXIG-GOV-03), 2e ligne proportionnée E-23 et audit indépendant de 3e ligne."
           }
         ],
         "numbered_flows": [
@@ -10677,7 +10677,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5281,
+        "compendium_md_line": 5318,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
         "source_file_line": 43
       }
@@ -10780,7 +10780,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5309,
+        "compendium_md_line": 5346,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
         "source_file_line": 71
       }
@@ -10875,7 +10875,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-32-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-32-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5341,
+        "compendium_md_line": 5378,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
         "source_file_line": 103
       }
@@ -10956,7 +10956,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5432,
+        "compendium_md_line": 5469,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
         "source_file_line": 42
       }
@@ -11029,7 +11029,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5450,
+        "compendium_md_line": 5487,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
         "source_file_line": 60
       }
@@ -11098,7 +11098,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5462,
+        "compendium_md_line": 5499,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
         "source_file_line": 72
       }
@@ -11136,7 +11136,7 @@
           {
             "zone_id": "Z2",
             "label": "Socle multi-régulateurs unifié (BSIF E-23, AMF, Loi 25, EU AI Act)",
-            "content": "Table de correspondance croisant les 305 EXIG-*, les 75 points PRR et les 15 portes POR en 41 rubriques d'homologation afin qu'une même preuve réponde aux quatre cadres juridiques."
+            "content": "Table de correspondance croisant les 305 EXIG-*, les 75 points PRR et les 15 portes POR en 43 rubriques d'homologation (Annexe D) afin qu'une même preuve réponde aux quatre cadres juridiques."
           },
           {
             "zone_id": "Z3",
@@ -11193,7 +11193,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5583,
+        "compendium_md_line": 5620,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
         "source_file_line": 72
       }
@@ -11221,7 +11221,7 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Cet arbre de décision permet à tout chef de projet ou juriste de trancher rapidement deux questions fondamentales : l'outil interne ou acquis est-il assujetti au cadre (oui dès qu'il dispose d'une capacité d'appel d'outil ou d'action, règle du doute incluse), et quels livrables doivent être constitués avant le pilote (la fiche d'agent JSON Tableau 63, la grille d'applicabilité A.1–A.8 et la sélection protocolaire fondée sur les sept fiches validées).",
+      "pedagogical_objective": "Cet arbre de décision permet à tout chef de projet ou juriste de trancher rapidement deux questions fondamentales : l'outil interne ou acquis est-il assujetti au cadre (oui dès qu'il dispose d'une capacité d'appel d'outil ou d'action, règle du doute incluse), et quels livrables doivent être constitués avant le pilote (la fiche d'agent JSON Tableau 63 du Tome 2, la grille d'applicabilité A.1–A.8 et la sélection protocolaire fondée sur les sept fiches validées).",
       "vulgarization_angle": "Structurer la portée juridique et documentaire en guichet d'orientation méthodique : une question filtre (« L'outil agit-il ? »), trois degrés RFC 2119 (DOIT, NE DOIT PAS, DEVRAIT), la séparation nette entre loi externe et choix interne, puis deux formulaires normatifs obligatoires.",
       "visual_blueprint": {
         "zones": [
@@ -11232,8 +11232,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Trois étapes de dossier : Fiche d'agent (Annexe B) et Grille (A.1–A.8)",
-            "content": "Enrichissement progressif de la fiche JSON Tableau 63 (Proposition → Conception → Pilote) et sélection des 305 exigences filtrées par profil dans les sections A.1 à A.8."
+            "label": "Trois étapes de dossier : Fiche d'agent (Annexe B du Tome 2) et Grille (A.1–A.8)",
+            "content": "Enrichissement progressif de la fiche JSON Tableau 63 du Tome 2 (Proposition → Conception → Pilote) et sélection des 305 exigences filtrées par profil dans les sections A.1 à A.8."
           },
           {
             "zone_id": "Z3",
@@ -11243,7 +11243,7 @@
         ],
         "numbered_flows": [
           "① Appliquer la règle du doute : si le logiciel peut appeler un outil ou agir sur un système, il entre dans le périmètre CRE-IA.",
-          "② Ouvrir la fiche d'agent (Annexe B / Tableau 63) dès la phase Proposition et l'enrichir jusqu'au jalon Pilote.",
+          "② Ouvrir la fiche d'agent (Annexe B / Tableau 63 du Tome 2) dès la phase Proposition et l'enrichir jusqu'au jalon Pilote.",
           "③ Sélectionner les exigences applicables au moyen de la grille A.1–A.8 en distinguant les obligations légales externes des choix internes.",
           "④ Valider les choix d'interface par rapport aux sept fiches protocoles et aux trois grilles probatoires du Tome 3."
         ],
@@ -11254,7 +11254,7 @@
           },
           {
             "color_token": "Vert dossier (#047857)",
-            "meaning": "Livrables obligatoires : fiche d'agent Tableau 63 et grille d'homologation A.1–A.8"
+            "meaning": "Livrables obligatoires : fiche d'agent Tableau 63 du Tome 2 et grille d'homologation A.1–A.8"
           },
           {
             "color_token": "Gris référence (#475569)",
@@ -11290,7 +11290,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-02.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-02.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5601,
+        "compendium_md_line": 5638,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
         "source_file_line": 90
       }
@@ -11337,7 +11337,7 @@
           }
         ],
         "numbered_flows": [
-          "① Soumettre la fiche ADR 2027-B001 et l'inventaire des preuves associées aux 75 points PRR (domaines S, R, O, G et F).",
+          "① Soumettre la fiche ADR-2027-B001 et l'inventaire des preuves associées aux 75 points PRR (domaines S, R, O, G et F).",
           "② Évaluer mécaniquement les 24 points [BLOQUANT] dans `evalops_prr` : aucune case manquante n'est contournable.",
           "③ Vérifier la présence conjointe des `5 SBB` et du niveau de preuve ([N] normatif, [M] mesuré, [É] éditeur, [S] synthèse).",
           "④ Délivrer le passeport d'homologation uniquement si le code de sortie `0` et l'absence de toute anomalie bloquante sont confirmés."
@@ -11377,7 +11377,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-34-03.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-34-03.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5621,
+        "compendium_md_line": 5658,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
         "source_file_line": 110
       }
@@ -11464,7 +11464,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5732,
+        "compendium_md_line": 5773,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
         "source_file_line": 34
       }
@@ -11491,7 +11491,7 @@
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
       "pedagogical_objective": "Ce schéma montre comment cinq composants demeurés à l'état conceptuel au Tableau 12 du Tome 2 deviennent des blocs logiciels vérifiables : un coffre sans secret statique, un moteur de garde-fous OPA fermé par défaut et une approbation humaine signée au Plan A (contrôle), puis un registre d'audit immuable SCITT/SLH-DSA et un contrôleur budgétaire en arithmétique `Decimal` exacte au Plan B (preuve et FinOps).",
-      "vulgarization_angle": "Comparer les `5 SBB` aux cinq organes de sûreté qui complètent l'ossature du Tableau 12 : le coffre d'identités, le filtre déterministe OPA et la double validation humaine CIBA (Plan A), associés au registre d'audit scellé et au compteur financier exempt d'erreur d'arrondi (Plan B).",
+      "vulgarization_angle": "Comparer les `5 SBB` aux cinq organes de sûreté qui complètent l'ossature du Tableau 12 du Tome 2 : le coffre d'identités, le filtre déterministe OPA et la double validation humaine CIBA (Plan A), associés au registre d'audit scellé et au compteur financier exempt d'erreur d'arrondi (Plan B).",
       "visual_blueprint": {
         "zones": [
           {
@@ -11526,7 +11526,7 @@
             "meaning": "Deux SBB du Plan B garantissant l'audit immuable (SCITT/SLH-DSA) et l'exactitude `Decimal`"
           }
         ],
-        "key_takeaway_box": "Les cinq composants du Tableau 12 dépassent désormais le stade de la spécification abstraite : chacun est implémenté en Python et OPA avec une couverture systématique de tests négatifs."
+        "key_takeaway_box": "Les cinq composants du Tableau 12 du Tome 2 dépassent désormais le stade de la spécification abstraite : chacun est implémenté en Python et OPA avec une couverture systématique de tests négatifs."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -11563,7 +11563,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-02.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5756,
+        "compendium_md_line": 5797,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
         "source_file_line": 58
       }
@@ -11580,7 +11580,7 @@
         "calibration-feds-ema",
         "contrats-types-executes-ci-annexe-c"
       ],
-      "title": "Preuve synthétique bornée DC-P12 (FEDS/EMA C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8",
+      "title": "Preuve synthétique bornée DC-P12 (FEDS/EMA DC-C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8",
       "insertion_point": "Chapitre 35 — § 35.2.2 Calibration synthétique FEDS/EMA (DC-P12), vecteurs tiers et contrats types exécutés C.1–C.8 (après le thème `contrats-types-executes-ci-annexe-c`)",
       "target_audiences": [
         "AE / AS",
@@ -11595,7 +11595,7 @@
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Banc quantitatif `feds-ema/` sous plafond `DC-P12` (`C07 = 65,0 %`)",
+            "label": "Banc quantitatif `feds-ema/` sous plafond `DC-P12` (`DC-C07 = 65,0 %`)",
             "content": "4 000 tirages Monte Carlo (cinq seuils [S] : POR-003 < 10 secondes à 99,95 %, ≤ 10–12 outils en L3/L4, CIBA < 60 secondes, rétention de 45 jours, `pass^5` de 99 % au regard de 95 %), 3 000 tirages LHS EMA et charges sectorielles (49,59 à 95,78/100) ; aucune étude humaine."
           },
           {
@@ -11605,7 +11605,7 @@
           }
         ],
         "numbered_flows": [
-          "① Exécuter les simulations FEDS et EMA avec une graine figée (`seed=20261119`) tout en affichant la borne épistémique `C07 = 65 %` (`DC-P12`).",
+          "① Exécuter les simulations FEDS et EMA avec une graine figée (`seed=20261119`) tout en affichant la borne épistémique `DC-C07 = 65 %` (`DC-P12`).",
           "② Injecter les seuils [S] calibrés (coupe-circuit < 10 secondes, rétention de 45 jours, `pass^5`) dans le banc hermétique EvalOps (`mock MCP`).",
           "③ Valider en CI les contrats C.1 à C.8 sous JSON Schema Draft 2020-12 crypto-agile sans rompre le chaînage d'audit C.8.",
           "④ Préparer le remplacement sans coupure de `ES256` vers `ML-DSA-65` et `ML-DSA-87` sur les mêmes contrats d'enveloppe."
@@ -11632,7 +11632,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-03.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5837,
+        "compendium_md_line": 5878,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
         "source_file_line": 139
       }
@@ -11667,7 +11667,7 @@
           {
             "zone_id": "Z1",
             "label": "Fermeture de `DIV-02` par liens typés `DC-P07` (Tome 4 / Tome 5 ↔ Tome 2)",
-            "content": "52/52 CAP et 24/24 PEX (13 spécialisations et 11 comblements) raccordées aux 305 EXIG-* v1.2 ; trois rectifications de l'Annexe E.1 (modèles et confinement en Couche 3, absence de Couche Connaissance, journal en Couche 6) et consigne de la dissonance D6/D7."
+            "content": "52/52 CAP et 24/24 PEX en v1.2 (5 directes, 12 extensions et 7 comblements, contre 13/11 en v1.1) raccordées aux 305 EXIG-* v1.2 ; trois rectifications de l'Annexe E.1 (modèles et confinement en Couche 3, absence de Couche Connaissance, journal en Couche 6) et consigne de la dissonance D6/D7."
           },
           {
             "zone_id": "Z2",
@@ -11729,7 +11729,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-01.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-01.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5919,
+        "compendium_md_line": 5960,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
         "source_file_line": 45
       }
@@ -11802,7 +11802,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-02.svg",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-02.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5941,
+        "compendium_md_line": 5982,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
         "source_file_line": 67
       }
@@ -11900,7 +11900,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-03.puml",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-03.svg",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5991,
+        "compendium_md_line": 6032,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
         "source_file_line": 117
       }
@@ -11929,8 +11929,8 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce schéma procure une vision claire de la fraîcheur documentaire et du statut juridique de la collection : un protocole de péremption à 30 jours (Annexe N, Annexe H et unification v1.2, registres S-001 à S-159 et 999 notices) prévient l'obsolescence silencieuse du corpus ; la chaîne `Sources/gabarit-pdf/` compile uniformément les huit volumes (4 542 pages Typst, 319 diagrammes) et affiche de manière opposable les licences CC BY 4.0 / MIT ainsi que la clause consultative de non-avis (`DC-P01`, `AO-05`, `EF-06`).",
-      "vulgarization_angle": "Coupler la boucle d'entretien chronologique (détection d'événement → réouverture de la source primaire → mise à jour v1.2 et Annexe N) à la chaîne de publication produisant les huit volumes Typst revêtus des licences et de la clause de non-avis.",
+      "pedagogical_objective": "Ce schéma procure une vision claire de la fraîcheur documentaire et du statut juridique de la collection : un protocole de péremption à 30 jours (Annexe N et Annexe H du corpus source et unification v1.2, registres S-001 à S-159 et 999 notices) prévient l'obsolescence silencieuse du corpus ; la chaîne `Sources/gabarit-pdf/` compile uniformément les huit volumes (4 542 pages Typst, 319 diagrammes) et affiche de manière opposable les licences CC BY 4.0 / MIT ainsi que la clause consultative de non-avis (`DC-P01`, `AO-05`, `EF-06`).",
+      "vulgarization_angle": "Coupler la boucle d'entretien chronologique (détection d'événement → réouverture de la source primaire → mise à jour v1.2 et Annexe N du corpus source) à la chaîne de publication produisant les huit volumes Typst revêtus des licences et de la clause de non-avis.",
       "visual_blueprint": {
         "zones": [
           {
@@ -11958,7 +11958,7 @@
         "color_legend": [
           {
             "color_token": "Turquoise veille (#0F766E)",
-            "meaning": "Boucle de revalidation à 30 jours (Annexe N, Annexe H v1.2, registres B et I)"
+            "meaning": "Boucle de revalidation à 30 jours (Annexe N et Annexe H v1.2 du corpus source, registres B et I)"
           },
           {
             "color_token": "Bleu édition (#1E40AF)",
@@ -11995,7 +11995,7 @@
           "title": "Vue synthétique par Livre du gel unique (27 juillet 2026) et exemples d’événements de péremption qui l’entament (le transfert de gouvernance du protocole de paiement AP2 touchant les ch. 10, 16, 36 et 49 ; voir le Tableau 50.1 pour les quatorze événements complets et l’Annexe N pour le détail des passes de revalidation post-gel).",
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-50.3 - Vue synthétique par Livre du gel unique (27 juillet 2026).puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.3.svg",
-          "role_note": "Fournit la vue synthétique par Livre des impacts de péremption post-gel (Tableau 50.1 et Annexe N)."
+          "role_note": "Fournit la vue synthétique par Livre des impacts de péremption post-gel (Tableau 50.1 et Annexe N du Tome 1)."
         }
       ],
       "compendium_figure": {
@@ -12006,7 +12006,7 @@
         "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-04.mmd",
         "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-04.png",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 6011,
+        "compendium_md_line": 6052,
         "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
         "source_file_line": 137
       }

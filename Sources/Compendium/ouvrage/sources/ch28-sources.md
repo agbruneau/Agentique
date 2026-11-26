@@ -94,6 +94,28 @@
 - **Empreinte SHA-256 (LF) :** `cb7d7cb818867ced911cda9762c78fabf51ddd10b47b1adc7de0b2920fa94ff6` (`103145` octets, `14892` mots)
 - **Synthèse factuelle vérifiée :** Mémoire de maîtrise (Milsom, Univ. d'Édimbourg, déc. 2025, arXiv:2512.02230) évaluant la fiabilité des agents LLM sur des flux de gestion de patrimoine et mesurant la dégradation en chaîne.
 
+### [9] SRC-060 — Règlement (UE) 2024/1689 (EU AI Act)
+
+- **Auteurs / Émetteur :** Parlement européen et Conseil de l'Union européenne
+- **Date de publication :** `2024-07-12`
+- **Organisme / Revue :** Journal officiel de l'Union européenne
+- **Identifiant :** `CELEX:32024R1689`
+- **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-060.txt`, score AACODS `12.0/12`)
+- **URL d'origine :** https://publications.europa.eu/resource/cellar/dc8116a1-3fe6-11ef-865a-01aa75ed71a1.0009.01/DOC_1
+- **Empreinte SHA-256 (LF) :** `e0a79e4f278c88177206c60458fad1f06c74fc80d6b23e404ef523c290346477` (`711317` octets, `102754` mots)
+- **Synthèse factuelle vérifiée :** Règlement (UE) 2024/1689 (EU AI Act) publié au JOUE fixant les obligations de transparence (art. 50), de gouvernance humaine (art. 14), de QMS (art. 17) et le calendrier d'application (art. 113).
+
+### [10] SRC-110 — Guideline B-15: Climate Risk Management
+
+- **Auteurs / Émetteur :** Office of the Superintendent of Financial Institutions (OSFI / BSIF)
+- **Date de publication :** `2025-03-07`
+- **Organisme / Revue :** OSFI Canada
+- **Identifiant :** `OSFI-B15`
+- **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-110.txt`, score AACODS `12.0/12`)
+- **URL d'origine :** https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/climate-risk-management
+- **Empreinte SHA-256 (LF) :** `8136e1e002181ca17e41c4492105da441a3b316d8fccb6289665c35ed11d8946` (`48790` octets, `6901` mots)
+- **Synthèse factuelle vérifiée :** Ligne directrice B-15 du BSIF (7 mars 2025) sur la gestion des risques climatiques fixant les exigences de divulgation d'émissions GES (dont la portée 3 prévue pour l'exercice 2028) applicables aux institutions financières fédérales.
+
 ---
 
 ## Exclusions en statut F (`AO-01` — hors preuve)

@@ -170,32 +170,32 @@
             "unit_id": "ch07",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1240,
-            "reference": "Partie III · Chapitre 07 — Protocoles verticaux outil-modèle : épinglage MCP 2026-07-28, façades d'intention et intégrité SHA-256 (L1240–L1429)"
+            "line_start": 1241,
+            "reference": "Partie III · Chapitre 07 — Protocoles verticaux outil-modèle : épinglage MCP 2026-07-28, façades d'intention et intégrité SHA-256 (L1241–L1430)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch07",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1244,
-            "reference": "Partie III · § 7.1 Rupture verticale, épinglage MCP 2026-07-28 et résolution DISC-05 (L1244–L1274)"
+            "line_start": 1245,
+            "reference": "Partie III · § 7.1 Rupture verticale, épinglage MCP 2026-07-28 et résolution DISC-05 (L1245–L1275)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch07",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1275,
-            "reference": "Partie III · § 7.2 Architecture de la couche verticale : transport sans état, façades d'intention et intégrité SHA-256 (L1275–L1394)"
+            "line_start": 1276,
+            "reference": "Partie III · § 7.2 Architecture de la couche verticale : transport sans état, façades d'intention et intégrité SHA-256 (L1276–L1395)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch07",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1395,
-            "reference": "Partie III · § 7.3 Synthèse opérationnelle, livrables et frontières du Chapitre 07 (L1395–L1413)"
+            "line_start": 1396,
+            "reference": "Partie III · § 7.3 Synthèse opérationnelle, livrables et frontières du Chapitre 07 (L1396–L1414)"
           },
           {
             "part_id": "P03",
@@ -218,8 +218,8 @@
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -234,7 +234,7 @@
       "targeted_content": {
         "scope_and_objectives": "Ce chapitre encadre les protocoles horizontaux d'agent à agent (A2A v1.0.1, AGNTCY/SLIM, ANP), la séparation stricte entre délégation de tâches opaques, flux d'interface humain-agent (AG-UI, A2UI, WebRTC), connecteurs B2B (EDC/ODRL/vLEI) et protocoles de commerce ou de paiement agentique (AP2, x402, MPP) jusqu'à l'atteinte de leur maturité réglementaire et cryptographique.",
         "key_requirements_and_objectives": [
-          "PRI-003 / EXIG-INT-04 / EXIG-INT-05 / EXIG-A2A-01..15 : le protocole A2A v1.0.1 est strictement réservé à la délégation entre agents autonomes franchissant des domaines ou des équipes distincts (à l'exclusion de l'usage CRUD déguisé et de l'orchestration intra-workflow) ; il impose la vérification JWS/JCS (RFC 8785) de chaque Agent Card, des gardes anti-SSRF sur les notifications poussées et le bornage du blocage CI a2a-tck aux tests stables sur deux versions (EXIG-A2A-14).",
+          "PRI-003 / EXIG-INT-04 / EXIG-INT-05 / EXIG-A2A-01..15 : le protocole A2A v1.0.1 est strictement réservé à la délégation entre agents autonomes franchissant des domaines ou des équipes distincts (à l'exclusion de l'usage CRUD déguisé et de l'orchestration intra-flux de travail) ; il impose la vérification JWS/JCS (RFC 8785) de chaque Agent Card, des gardes anti-SSRF sur les notifications poussées et le bornage du blocage CI a2a-tck aux tests stables sur deux versions (EXIG-A2A-14).",
           "EXIG-INT-20 / EXIG-INT-21 / CAP-012 : les composants OASF et ADS d'AGNTCY demeurent au statut Évaluer (strictement subordonnés au catalogue d'entreprise comme source de vérité) tandis que le transport SLIM (MLS RFC 9420) reste au statut Surveiller hors des flux réglementés jusqu'à ratification par l'AAIF.",
           "EXIG-INT-22 / CAP-026 / P3 (S-090, S-091) : AP2 v0.2 (Intent/Cart/Payment Mandates SD-JWT), l'ACP commercial, UCP, x402 et MPP sont cantonnés au statut Surveiller hors données réelles et paiements irréversibles tant que l'ancrage normatif FIDO, le règlement sur les rails canadiens (Lynx/RTR) et le régime de responsabilité en cas de mandat détourné ne sont pas établis.",
           "EXIG-ARC-03 / ADR-007 / CAP-001 : le transport d'état AG-UI (STATE_DELTA JSON Patch RFC 6902 avec test de révision) est dissocié de la projection visuelle en catalogue fermé déclaratif A2UI ou en iframe isolée MCP-UI, en interdisant toute génération de HTML/JavaScript libre et en réservant WebRTC (< 200 ms) à l'audio industriel encadré.",
@@ -307,8 +307,8 @@
               {
                 "theme_node_id": "THM_fusion-acp-collision-terminologique",
                 "canonical_slug": "fusion-acp-collision-terminologique",
-                "theme_title": "Fusion de l'ACP protocolaire dans A2A et désambiguïsation « ACP / agentic control plane » à quatre branches",
-                "content_specification": "Le sigle « ACP » ne peut jamais être employé sans qualificatif explicite, conformément à l'analyse à quatre branches du Tableau 7.3 : (a) ACP protocolaire IBM/BeeAI fusionné dans A2A le 29 août 2025 (obsolète), (b) Agentic Control Plane de consortium, (c) offre commerciale IBM et (d) composante ACP non élucidée d'AGNTCY. Les dépendances existantes font l'objet d'une sortie ordonnée par adaptateurs.",
+                "theme_title": "Fusion de l'ACP protocolaire dans A2A et désambiguïsation « ACP / agentic control plane » à cinq acceptions",
+                "content_specification": "Le sigle « ACP » ne peut jamais être employé sans qualificatif explicite, conformément à l'analyse à cinq acceptions (quatre branches documentaires et ACP commercial) du Tableau 7.3 : (a) ACP protocolaire IBM/BeeAI fusionné dans A2A le 29 août 2025 (obsolète), (b) Agentic Control Plane de consortium, (c) offre commerciale IBM et (d) composante ACP non élucidée d'AGNTCY. Les dépendances existantes font l'objet d'une sortie ordonnée par adaptateurs.",
                 "identifiers_and_norms": [
                   "ACP",
                   "A2A",
@@ -374,7 +374,7 @@
           "Les contrats A2A v1.0.1 sont vérifiés par signatures JWS canonisées JCS (RFC 8785), bornage anti-SSRF et porte d'intégration continue restreinte aux tests stables d'a2a-tck (EXIG-A2A-14).",
           "Un registre de veille protocolaire maintient AP2 v0.2, SLIM, ANP, x402 et MPP aux statuts Surveiller ou Évaluer, sous révision trimestrielle et avec interdiction de tout trafic de production P3 (EXIG-INT-22).",
           "Un catalogue fermé de composants A2UI/MCP-UI validé en intégration continue s'articule avec le moteur AG-UI JSON Patch (RFC 6902) afin de garantir une tolérance zéro envers le code exécutable arbitraire (EXIG-ARC-03).",
-          "Un dossier de désambiguïsation architecturale proscrit l'emploi de sigles ambigus (notamment les quatre branches d'ACP) et atteste la réversibilité des adaptateurs de sortie (DEC-001)."
+          "Un dossier de désambiguïsation architecturale proscrit l'emploi de sigles ambigus (notamment les cinq acceptions d'ACP) et atteste la réversibilité des adaptateurs de sortie (DEC-001)."
         ],
         "cross_chapter_interrelations": [
           {
@@ -433,32 +433,32 @@
             "unit_id": "ch08",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1430,
-            "reference": "Partie III · Chapitre 08 — Protocoles horizontaux pair-à-pair : A2A v1.0.1, pile AGNTCY/SLIM, paiements AP2 et fédération B2B (L1430–L1610)"
+            "line_start": 1431,
+            "reference": "Partie III · Chapitre 08 — Protocoles horizontaux pair-à-pair : A2A v1.0.1, pile AGNTCY/SLIM, paiements AP2 et fédération B2B (L1431–L1611)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch08",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1434,
-            "reference": "Partie III · § 8.1 Axe horizontal pair-à-pair, non-substituabilité et désambiguïsation ACP (L1434–L1465)"
+            "line_start": 1435,
+            "reference": "Partie III · § 8.1 Axe horizontal pair-à-pair, non-substituabilité et désambiguïsation ACP (L1435–L1466)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch08",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1466,
-            "reference": "Partie III · § 8.2 Délégation A2A, piles fédérées, paiements AP2 et fédération B2B (L1466–L1566)"
+            "line_start": 1467,
+            "reference": "Partie III · § 8.2 Délégation A2A, piles fédérées, paiements AP2 et fédération B2B (L1467–L1567)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch08",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1567,
-            "reference": "Partie III · § 8.3 Interfaces humain-agent sûres, livrables et frontières du Chapitre 08 (L1567–L1597)"
+            "line_start": 1568,
+            "reference": "Partie III · § 8.3 Interfaces humain-agent sûres, livrables et frontières du Chapitre 08 (L1568–L1598)"
           },
           {
             "part_id": "P03",
@@ -593,7 +593,7 @@
                 "theme_node_id": "THM_passerelle-mcp-ai-gateway",
                 "canonical_slug": "passerelle-mcp-ai-gateway",
                 "theme_title": "Passerelle d'agents bidirectionnelle PEP à neuf contrôles ordonnés et budget Borealis-Bench",
-                "content_specification": "Une passerelle PEP bidirectionnelle en échec fermé (CAP-022, EXIG-ARC-01, EXIG-IAM-17..18) s'interpose sur tout flux MCP, A2A et P2/P3 pour exécuter neuf contrôles séquentiels : (1) AuthN SVID/mTLS/DPoP, (2) catalogue et empreinte SHA-256, (3) PDP N1–N4/P0–P3, (4) schéma I-JSON et garde anti-injection bilingue, (5) jeton jti lié à h=SHA-256(JCS), (6) quotas, (7) échange RFC 8693 et pré-audit EXIG-OBS-11 avant P2/P3, (8) masquage RP et retrait P3/envoi selon la Règle de deux (EXIG-SEC-06), et (9) émission d'un span OTel/JCS, l'ensemble étant étalonné à 52,85 µs p50 sous Borealis-Bench.",
+                "content_specification": "Une passerelle PEP bidirectionnelle en échec fermé (CAP-022, EXIG-ARC-01, EXIG-IAM-17..18) s'interpose sur tout flux MCP, A2A et P2/P3 pour exécuter neuf contrôles séquentiels : (1) AuthN SVID/mTLS/DPoP, (2) catalogue et empreinte SHA-256, (3) PDP N0–N4/P0–P3, (4) conformité syntaxique I-JSON (RFC 7493), validation structurelle JSON Schema Draft 2020-12 et garde anti-injection bilingue, (5) jeton jti lié à h=SHA-256(JCS), (6) quotas, (7) échange RFC 8693 et pré-audit EXIG-OBS-11 avant P2/P3, (8) masquage RP et retrait P3/envoi selon la Règle de deux (EXIG-SEC-06), et (9) émission d'un span OTel/JCS, l'ensemble étant étalonné à 52,85 µs p50 sous Borealis-Bench.",
                 "identifiers_and_norms": [
                   "CAP-022",
                   "EXIG-ARC-01",
@@ -730,32 +730,32 @@
             "unit_id": "ch09",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1611,
-            "reference": "Partie III · Chapitre 09 — Passerelles PEP à neuf contrôles, découverte gouvernée, routage d'inférence et anti-verrouillage (L1611–L1787)"
+            "line_start": 1612,
+            "reference": "Partie III · Chapitre 09 — Passerelles PEP à neuf contrôles, découverte gouvernée, routage d'inférence et anti-verrouillage (L1612–L1791)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch09",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1615,
-            "reference": "Partie III · § 9.1 Médiation bidirectionnelle PEP à neuf contrôles et séparation des plans (L1615–L1661)"
+            "line_start": 1616,
+            "reference": "Partie III · § 9.1 Médiation bidirectionnelle PEP à neuf contrôles et séparation des plans (L1616–L1662)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch09",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1662,
-            "reference": "Partie III · § 9.2 Découverte gouvernée, matrice compensatoire et routage d'inférence (L1662–L1755)"
+            "line_start": 1663,
+            "reference": "Partie III · § 9.2 Découverte gouvernée, matrice compensatoire et routage d'inférence (L1663–L1758)"
           },
           {
             "part_id": "P03",
             "unit_id": "ch09",
             "tome_id": "P03",
             "file": "Compendium/Compendium.md",
-            "line_start": 1756,
-            "reference": "Partie III · § 9.3 Synthèse opérationnelle, livrables et frontières du Chapitre 09 (L1756–L1774)"
+            "line_start": 1759,
+            "reference": "Partie III · § 9.3 Synthèse opérationnelle, livrables et frontières du Chapitre 09 (L1759–L1777)"
           },
           {
             "part_id": "P03",
@@ -763,7 +763,7 @@
             "tome_id": "P03",
             "file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 09.md (L1–L163)"
+            "reference": "Source modulaire : Chapitre 09.md (L1–L165)"
           },
           {
             "part_id": "LIM",
@@ -778,16 +778,16 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -997,32 +997,32 @@
             "unit_id": "ch10",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1790,
-            "reference": "Partie IV · Chapitre 10 — Sémantique métier, ontologies financières, contrats de données ODCS et compilation du contexte (L1790–L1924)"
+            "line_start": 1794,
+            "reference": "Partie IV · Chapitre 10 — Sémantique métier, ontologies financières, contrats de données ODCS et compilation du contexte (L1794–L1937)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch10",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1796,
-            "reference": "Partie IV · § 10.1 Problématique sémantique, écart accord-compréhension et données prêtes pour l'agent (L1796–L1811)"
+            "line_start": 1798,
+            "reference": "Partie IV · § 10.1 Problématique sémantique, écart accord-compréhension et données prêtes pour l'agent (L1798–L1813)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch10",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1812,
-            "reference": "Partie IV · § 10.2 Architecture sémantique, contrats ODCS et compilation déterministe du contexte (L1812–L1894)"
+            "line_start": 1814,
+            "reference": "Partie IV · § 10.2 Architecture sémantique, contrats ODCS et compilation déterministe du contexte (L1814–L1907)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch10",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1895,
-            "reference": "Partie IV · § 10.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables (L1895–L1913)"
+            "line_start": 1908,
+            "reference": "Partie IV · § 10.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables (L1908–L1926)"
           },
           {
             "part_id": "P04",
@@ -1030,7 +1030,7 @@
             "tome_id": "P04",
             "file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 10.md (L1–L123)"
+            "reference": "Source modulaire : Chapitre 10.md (L1–L132)"
           },
           {
             "part_id": "LIM",
@@ -1088,7 +1088,7 @@
                 "theme_node_id": "THM_memoire-partagee-concurrence-effacement",
                 "canonical_slug": "memoire-partagee-concurrence-effacement",
                 "theme_title": "Concurrence de mémoire partagée, portabilité et effacement crypto-sélectif",
-                "content_specification": "Les écritures concurrentes et contradictions sémantiques sont arbitrées au moyen du patron écrivain unique, du verrouillage optimiste, de la supersession temporelle et d'une vérification de portée à chaque lecture (ADR-010). Le dispositif pallie l'absence de standard d'exportation ou de portabilité mémorielle et déploie l'effacement crypto-sélectif (Crypto-Shredding) afin de concilier journaux immuables, faits dérivés et droit à l'oubli (RGPD art. 17, Loi 25).",
+                "content_specification": "Les écritures concurrentes et contradictions sémantiques sont arbitrées au moyen du patron écrivain unique, du verrouillage optimiste, de la supersession temporelle et d'une vérification de portée à chaque lecture (ADR-010). Le dispositif pallie l'absence de standard d'exportation ou de portabilité mémorielle et déploie l'effacement crypto-sélectif (Crypto-Shredding sur les charges épisodiques, payloads documentaires et partitions au repos, complété par exclusion pré-récupération et purge physique asynchrone des vecteurs HNSW/IVFFlat) afin de concilier journaux immuables, faits dérivés et droit à l'oubli (RGPD art. 17, Loi 25).",
                 "identifiers_and_norms": [
                   "RGPD art. 17",
                   "Loi 25",
@@ -1169,7 +1169,7 @@
             "relation_type": "attenuation_risque",
             "target_chapter_number": 25,
             "target_slug": "efvp-transfert-hors-quebec",
-            "synthesis": "La localisation contrôlée, le Crypto-Shredding et la purge bi-temporelle assurent la maîtrise des renseignements personnels conservés en mémoire."
+            "synthesis": "La localisation contrôlée, le Crypto-Shredding (payloads et partitions avec purge asynchrone des vecteurs indexés) et la purge bi-temporelle assurent la maîtrise des renseignements personnels conservés en mémoire."
           },
           {
             "direction": "sortante",
@@ -1206,32 +1206,32 @@
             "unit_id": "ch11",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1925,
-            "reference": "Partie IV · Chapitre 11 — Mémoire CoALA à quatre compartiments isolés, bi-temporalité auditable et filtrage ACL pré-récupération (L1925–L2052)"
+            "line_start": 1938,
+            "reference": "Partie IV · Chapitre 11 — Mémoire CoALA à quatre compartiments isolés, bi-temporalité auditable et filtrage ACL pré-récupération (L1938–L2066)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch11",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1931,
-            "reference": "Partie IV · § 11.1 Gouvernance de la mémoire longue et refus du stockage indifférencié (L1931–L1944)"
+            "line_start": 1942,
+            "reference": "Partie IV · § 11.1 Gouvernance de la mémoire longue et refus du stockage indifférencié (L1942–L1955)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch11",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 1945,
-            "reference": "Partie IV · § 11.2 Compartimentation CoALA, bi-temporalité et filtrage ACL pré-récupération (L1945–L2018)"
+            "line_start": 1956,
+            "reference": "Partie IV · § 11.2 Compartimentation CoALA, bi-temporalité et filtrage ACL pré-récupération (L1956–L2032)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch11",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 2019,
-            "reference": "Partie IV · § 11.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables (L2019–L2041)"
+            "line_start": 2033,
+            "reference": "Partie IV · § 11.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables (L2033–L2055)"
           },
           {
             "part_id": "P04",
@@ -1239,7 +1239,7 @@
             "tome_id": "P04",
             "file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 11.md (L1–L116)"
+            "reference": "Source modulaire : Chapitre 11.md (L1–L117)"
           },
           {
             "part_id": "LIM",
@@ -1353,7 +1353,7 @@
                 "theme_node_id": "THM_six-substrats-etat-souverainete",
                 "canonical_slug": "six-substrats-etat-souverainete",
                 "theme_title": "Cartographie et maîtrise juridictionnelle des six substrats d'état (PRI-011, CAP-032, POR-002)",
-                "content_specification": "L'architecture distingue la résidence physique du contrôle juridictionnel (CLOUD Act) et prescrit l'inventaire, le cloisonnement et le chiffrement HYOK sous clés exclusives de l'institution sur l'ensemble des six substrats (ADR-027, PRI-011, CAP-032, POR-002) : (1) modèle et configuration, (2) contexte volatil KV-cache GPU, (3) mémoire longue, (4) état durable, (5) traces et voûte d'audit, et (6) secrets et clés KMS/HSM/SPIFFE.",
+                "content_specification": "L'architecture distingue la résidence physique du contrôle juridictionnel (CLOUD Act) et prescrit l'inventaire, le cloisonnement et le chiffrement HYOK sous clés exclusives de l'institution sur l'ensemble des six substrats (ADR-027 couvrant les six substrats et Cognitive DR, PRI-011, CAP-032, POR-002) : (1) modèle et configuration, (2) contexte volatil KV-cache GPU, (3) mémoire longue, (4) état durable, (5) traces et voûte d'audit, et (6) secrets et clés KMS/HSM/SPIFFE.",
                 "identifiers_and_norms": [
                   "PRI-011",
                   "CAP-032",
@@ -1450,32 +1450,32 @@
             "unit_id": "ch12",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 2053,
-            "reference": "Partie IV · Chapitre 12 — Encapsulation patrimoniale déterministe (EBCDIC/COMP-3), extinction CUA, sas OT et six substrats d'état (L2053–L2182)"
+            "line_start": 2067,
+            "reference": "Partie IV · Chapitre 12 — Encapsulation patrimoniale déterministe (EBCDIC/COMP-3), extinction CUA, sas OT et six substrats d'état (L2067–L2197)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch12",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 2059,
-            "reference": "Partie IV · § 12.1 Préservation des cœurs transactionnels et principes de l'encapsulation déterministe (L2059–L2072)"
+            "line_start": 2071,
+            "reference": "Partie IV · § 12.1 Préservation des cœurs transactionnels et principes de l'encapsulation déterministe (L2071–L2084)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch12",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 2073,
-            "reference": "Partie IV · § 12.2 Couche anti-corruption, extinction CUA, sas OT et souveraineté des six substrats (L2073–L2149)"
+            "line_start": 2085,
+            "reference": "Partie IV · § 12.2 Couche anti-corruption, extinction CUA, sas OT et souveraineté des six substrats (L2085–L2164)"
           },
           {
             "part_id": "P04",
             "unit_id": "ch12",
             "tome_id": "P04",
             "file": "Compendium/Compendium.md",
-            "line_start": 2150,
-            "reference": "Partie IV · § 12.3 Contrat d'exigences, validation PRR et invariants exécutables (L2150–L2172)"
+            "line_start": 2165,
+            "reference": "Partie IV · § 12.3 Contrat d'exigences, validation PRR et invariants exécutables (L2165–L2187)"
           },
           {
             "part_id": "P04",
@@ -1483,7 +1483,7 @@
             "tome_id": "P04",
             "file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 12.md (L1–L119)"
+            "reference": "Source modulaire : Chapitre 12.md (L1–L120)"
           },
           {
             "part_id": "LIM",

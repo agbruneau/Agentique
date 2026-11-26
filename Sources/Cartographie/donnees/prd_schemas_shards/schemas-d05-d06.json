@@ -29,8 +29,8 @@
         "enveloppes-bpmn-cas-routine",
         "paradigme-apm-autonomie-encadree"
       ],
-      "title": "L'échelle de sobriété OO1–OO4 et l'encapsulation BPMN/APM : conditionner le multi-agents au gain démontré",
-      "insertion_point": "Chapitre 13 (section 13.2.1 — Arbre de sobriété OO1–OO4 et APM)",
+      "title": "L'arbre de sobriété, la grille d'autorité OO1–OO4 et l'encapsulation BPMN/APM : conditionner le multi-agents au gain démontré",
+      "insertion_point": "Chapitre 13 (section 13.2.1 — Arbre de sobriété, autorité OO1–OO4 et APM)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -38,14 +38,14 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma explique aux dirigeants, aux juristes et aux architectes pourquoi un système agentique d'entreprise ne débute jamais par une multiplication d'agents : l'arbre de sobriété privilégie d'abord la règle déterministe (OO1) puis le flux structuré (OO2), avant d'encapsuler un agent unique (OO3) dans une enveloppe BPMN/APM ou d'autoriser le multi-agents (OO4) uniquement lorsque le gain en constance pass^k et en coût par résultat (CPO) compense le surcoût de 3× à 15× en jetons.",
-      "vulgarization_angle": "L'échelle OO1→OO4 est présentée comme une gradation d'outillage industriel : privilégier l'automate à règle fixe (OO1) ou la séquence déterministe bornée (OO2) avant d'encadrer un spécialiste unique dans un périmètre de sécurité BPMN/frame local (OO3) ou de mobiliser une équipe coordonnée (OO4), avec bascule réglementaire obligatoire OO2→OO3 dès qu'une décision opposable ou un dommage irréversible survient.",
+      "pedagogical_objective": "Ce schéma explique aux dirigeants, aux juristes et aux architectes pourquoi un système agentique d'entreprise ne débute jamais par une multiplication d'agents : l'arbre de sobriété privilégie d'abord la règle déterministe (N0) puis le flux structuré fixe, avant de confier la commande au cadre déterministe (OO3/OO4 plutôt qu'aux régimes libres OO1/OO2) pour encapsuler un agent unique dans une enveloppe BPMN/APM ou autoriser le multi-agents uniquement lorsque le gain en constance pass^k et en coût par résultat (CPO) compense le surcoût de 3× à 15× en jetons.",
+      "vulgarization_angle": "L'arbre de sobriété en quatre paliers et la grille d'autorité OO1–OO4 sont dissociés : privilégier l'automate à règle fixe (N0) ou la séquence déterministe bornée avant d'encadrer un spécialiste unique dans un périmètre BPMN/frame local ou de mobiliser une équipe coordonnée, avec bascule réglementaire obligatoire OO2→OO3 vers la commande déterministe du cadre (OO3/OO4) dès qu'une décision opposable ou un dommage irréversible survient.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Paliers déterministes par défaut (OO1 Code/DMN → OO2 Chaîne structurée)",
-            "content": "Règles fixes, calculs financiers exacts et flux de travail prévisibles à coût marginal minimal; ces paliers deviennent toutefois proscrits dès que les trois critères cumulatifs C26 § 29.4.1 (issue opposable, trace exigible par un tiers, dommage non réparable par reprise) imposent l'encadrement OO3."
+            "label": "Paliers déterministes par défaut (N0 Code/DMN → Chaîne structurée fixe)",
+            "content": "Règles fixes, calculs financiers exacts et flux de travail prévisibles à coût marginal minimal; ces paliers deviennent toutefois proscrits dès que les trois critères cumulatifs C26 § 29.4.1 (issue opposable, trace exigible par un tiers, dommage non réparable par reprise) imposent la commande déterministe par le cadre (OO3/OO4, proscrivant OO1/OO2)."
           },
           {
             "zone_id": "Z2",
@@ -54,28 +54,28 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Porte probatoire vers OO4 (Multi-agents homologué EXIG-ORC-01/02)",
+            "label": "Porte probatoire vers le multi-agents homologué (EXIG-ORC-01/02)",
             "content": "Franchissement réservé aux tâches décomposables démontrant une supériorité statistique mesurée (IC 95 %, pass^k et CPO) face au seuil de saturation (~45 %) et à l'effet Ringelmann multi-agents."
           }
         ],
         "numbered_flows": [
-          "① Vérifier d'abord si une règle déterministe (OO1) ou un graphe fixe (OO2) répond au besoin sans recourir à l'IA générative.",
-          "② Évaluer le seuil réglementaire C26 § 29.4.1 : en présence d'une issue opposable et d'un dommage non réparable par reprise, basculer impérativement vers OO3 encadré.",
+          "① Vérifier d'abord si une règle déterministe (N0) ou un graphe fixe répond au besoin sans recourir à l'IA générative.",
+          "② Évaluer le seuil réglementaire C26 § 29.4.1 : en présence d'une issue opposable et d'un dommage non réparable par reprise, proscrire OO1/OO2 et basculer impérativement vers un cadre déterministe OO3/OO4.",
           "③ Encapsuler l'agent unique dans un sous-processus BPMN/CMMN/Routine et des frames locaux APM qui bornent ses marges d'initiative.",
-          "④ Autoriser le collectif multi-agents OO4 uniquement sur preuve chiffrée de constance pass^k et de CPO surpassant le surcoût de 3× à 15× en jetons."
+          "④ Autoriser le collectif multi-agents sous cadre OO3/OO4 uniquement sur preuve chiffrée de constance pass^k et de CPO surpassant le surcoût de 3× à 15× en jetons."
         ],
         "color_legend": [
           {
             "color_token": "Bleu acier (#1D4ED8)",
-            "meaning": "Automatisation déterministe sobre et peu coûteuse (OO1 et OO2)"
+            "meaning": "Automatisation déterministe sobre et peu coûteuse (N0 et graphe fixe)"
           },
           {
             "color_token": "Vert forêt (#047857)",
-            "meaning": "Agent unique encadré par capsule BPMN/APM et bascule réglementaire OO3"
+            "meaning": "Agent unique encadré par capsule BPMN/APM et commande déterministe OO3/OO4"
           },
           {
             "color_token": "Ambre contrôle (#D97706)",
-            "meaning": "Collectif multi-agents OO4 subordonné à une preuve financière et statistique"
+            "meaning": "Collectif multi-agents homologué (OO3/OO4) subordonné à une preuve financière et statistique"
           }
         ],
         "key_takeaway_box": "Une architecture d'entreprise demeure déterministe partout où cela suffit et n'active l'autonomie que dans une capsule strictement mesurée."
@@ -559,7 +559,7 @@
           "① Soumettre une mission discrète typée via MCP depuis l'orchestrateur métier, en excluant tout ordre moteur continu.",
           "② Contrôler dans le sas industriel la signature TUF/Sigstore du paquet ainsi que le statut du verrou de consignation LOTO.",
           "③ Convertir la mission autorisée vers le bus temps réel ROS 2/DDS selon un cycle de 10 à 30 ms.",
-          "④ Vérifier à chaque milliseconde les limites cinématiques dans l'arbitre matériel Simplex et reprendre la main en ≤ 1 ms au moindre dépassement d'enveloppe."
+          "④ Vérifier à chaque milliseconde les limites cinématiques dans l'arbitre matériel Simplex et reprendre la main en ≤ 1 ms dès d_LiDAR(t) < d_sécurité(t) (au moindre dépassement d'enveloppe)."
         ],
         "color_legend": [
           {
@@ -922,7 +922,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif établit pourquoi l'attribution d'un compte humain ou d'un secret technique partagé à des agents (désormais 82 fois plus nombreux que les employés) rompt toute imputabilité juridique et sécuritaire : les protocoles historiques reposaient sur la présence d'un humain derrière un navigateur. L'organisation déploie alors le couple Blueprint/Instance parrainé au SIRH (transfert < 72 h sur départ), proscrit tout secret statique et soumet chaque solution à la grille Q-A..Q-E.",
+      "pedagogical_objective": "Ce comparatif établit pourquoi l'attribution d'un compte humain ou d'un secret technique partagé à des agents (désormais 82 fois plus nombreux que les employés) rompt toute imputabilité juridique et sécuritaire : les protocoles historiques reposaient sur la présence d'un humain derrière un navigateur. L'organisation déploie alors le couple Blueprint/Instance parrainé au SIRH (intérim et relève < 72 h sur départ, rétrogradation < 60 s selon POR-015 sans suppléant actif), proscrit tout secret statique et soumet chaque solution à la grille Q-A..Q-E.",
       "vulgarization_angle": "L'évolution consiste à remplacer des clés passe-partout anonymes par une accréditation nominative d'agent rattachée au dossier d'un répondant humain au registre RH, révoquée automatiquement lors d'un mouvement de personnel et auditée selon cinq questions cumulatives.",
       "visual_blueprint": {
         "zones": [
@@ -933,8 +933,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS — Identité NHI propre Blueprint/Instance et parrainage SIRH (< 72 h)",
-            "content": "Chaque agent et chaque environnement dispose d'un identifiant non réattribuable, relié au gestionnaire de secrets (injection hors LLM) sur socle OAuth 2.1 / BCP 240 / FAPI 2.0, avec réaffectation < 72 h au départ du parrain."
+            "label": "APRÈS — Identité NHI propre Blueprint/Instance et parrainage SIRH (< 72 h / < 60 s POR-015)",
+            "content": "Chaque agent et chaque environnement dispose d'un identifiant non réattribuable, relié au gestionnaire de secrets (injection hors LLM) sur socle OAuth 2.0 (BCP 240 / RFC 9700, préparant OAuth 2.1) / FAPI 2.0, avec intérim et réaffectation < 72 h au départ du parrain (et rétrogradation automatique < 60 s selon POR-015 sans suppléant actif)."
           },
           {
             "zone_id": "Z3",
@@ -945,7 +945,7 @@
         "numbered_flows": [
           "① Proscrire tout compte humain partagé ainsi que toute clé statique dans le code ou le contexte LLM (EXIG-IAM-03..07).",
           "② Créer une fiche Agent Identity Blueprint puis instancier une identité NHI distincte par environnement (hors production et en production).",
-          "③ Rattacher l'instance au double parrainage métier et technique dans le SIRH avec suspension ou transfert automatique en moins de 72 h.",
+          "③ Rattacher l'instance au double parrainage métier et technique dans le SIRH avec intérim et transfert sous 72 h au départ, ou rétrogradation automatique en moins de 60 s selon POR-015.",
           "④ Évaluer l'architecture au crible Q-A..Q-E sur le socle OAuth 2.1 / BCP 240 (PKCE, mTLS/DPoP, FAPI 2.0)."
         ],
         "color_legend": [
@@ -1607,14 +1607,14 @@
           {
             "zone_id": "Z3",
             "label": "Défense hybride immédiate et rescellement probatoire ≤ 5 ans (EXIG-SEC-28)",
-            "content": "Échange de clés hybride TLS 1.3 / MLS X25519MLKEM768 sur tunnels gRPC SLIM et rescellement ≤ 5 ans des journaux, cartes et mandats (≥ 7 ans) sous arbre SCITT (RFC 9943) + SLH-DSA."
+            "content": "Échange de clés hybride TLS 1.3 / MLS (RFC 9420) avec extension X25519MLKEM768 sur tunnels gRPC SLIM et rescellement ≤ 5 ans des journaux, cartes et mandats (≥ 7 ans) sous arbre SCITT (RFC 9943) + SLH-DSA."
           }
         ],
         "numbered_flows": [
           "① Dresser l'inventaire cryptographique CBOM complet des certificats, jetons, cartes A2A et archives longues (> 5 ans).",
           "② Calculer l'urgence selon Mosca (x durée de valeur probante + y délai de migration > z horizon quantique) sur la fenêtre 2026–2029.",
           "③ Exiger la crypto-agilité (algorithme nommé, schéma versionné ES256/ML-DSA, procédure de retrait) dans toute acquisition IAM dès 2027.",
-          "④ Déployer TLS/MLS hybride (X25519MLKEM768) et resceller périodiquement (≤ 5 ans) les preuves longues en SCITT + SLH-DSA (EXIG-SEC-28)."
+          "④ Déployer TLS 1.3 / MLS (RFC 9420) avec extension hybride X25519MLKEM768 et resceller périodiquement (≤ 5 ans) les preuves longues en SCITT + SLH-DSA (EXIG-SEC-28)."
         ],
         "color_legend": [
           {
@@ -1697,25 +1697,25 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce comparatif met en évidence un obstacle d'infrastructure critique lors de l'adoption post-quantique : une signature ML-DSA pèse 50 à 72 fois plus lourd qu'une signature classique (3 309 o pour ML-DSA-65, 4 627 o pour ML-DSA-87). Empilées dans les en-têtes HTTP sur deux à cinq sauts d'agents (20–165 Ko), ces signatures franchissent immédiatement la limite de 8 192 octets des mandataires inverses (rejet HTTP 431). Le passage au format CBOR-COSE en taille constante O(1) conjugué aux références `kid`/JWKS maintient la charge entre 4 757 o et 6 514 o.",
-      "vulgarization_angle": "L'empilement linéaire de signatures post-quantiques dans les en-têtes HTTP s'apparente au transport de dossiers 70 fois plus volumineux qui saturent le contrôle d'accès dès le deuxième relais (HTTP 431 à 8 Ko), par opposition à un jeton compact CBOR-COSE à encombrement constant O(1) muni d'un identifiant de clé (`kid` JWKS).",
+      "pedagogical_objective": "Ce comparatif met en évidence un obstacle d'infrastructure critique lors de l'adoption post-quantique : une signature ML-DSA pèse 50 à 72 fois plus lourd qu'une signature classique (3 309 o pour ML-DSA-65, 4 627 o pour ML-DSA-87). Empilées dans les en-têtes HTTP sur deux à cinq sauts d'agents (20–165 Kio), ces signatures franchissent immédiatement la limite de 8 192 octets des mandataires inverses (rejet HTTP 431). Le passage au format CBOR-COSE en taille constante O(1) conjugué aux références `kid`/JWKS maintient la charge entre 4 757 o et 6 514 o.",
+      "vulgarization_angle": "L'empilement linéaire de signatures post-quantiques dans les en-têtes HTTP s'apparente au transport de dossiers 70 fois plus volumineux qui saturent le contrôle d'accès dès le deuxième relais (HTTP 431 à 8 Kio), par opposition à un jeton compact CBOR-COSE à encombrement constant O(1) muni d'un identifiant de clé (`kid` JWKS).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "AVANT — Chaîne JWT/DPoP en O(sauts) dépassant le plafond HTTP 431 (8 192 o)",
-            "content": "Signatures ML-DSA-65 (3 309 o) et ML-DSA-87 (4 627 o) atteignant 20–35 Ko dès deux sauts (jusqu'à 165 Ko à cinq sauts sur la Campagne 4 Borealis-Bench / `pqc_http431.py`), provoquant le rejet par Nginx et Envoy."
+            "content": "Signatures ML-DSA-65 (3 309 o) et ML-DSA-87 (4 627 o) atteignant 20–35 Kio dès deux sauts (jusqu'à 165 Kio à cinq sauts sur la Campagne 4 Borealis-Bench / `pqc_http431.py`), provoquant le rejet par Nginx et Envoy."
           },
           {
             "zone_id": "Z2",
             "label": "APRÈS — Transaction Tokens CBOR-COSE O(1) (RFC 9964 / -11) et référence `kid`/JWKS",
-            "content": "Substitution des clés embarquées par des identifiants `kid` résolus sur JWKS, taille d'en-tête constante O(1) de 4 757 o à 6 514 o sous ML-DSA-65/87 et relèvement préventif des tampons à ≥ 32 Ko."
+            "content": "Substitution des clés embarquées par des identifiants `kid` résolus sur JWKS, taille d'en-tête constante O(1) de 4 757 o à 6 514 o sous ML-DSA-65/87 et relèvement préventif des tampons à ≥ 32 Kio."
           }
         ],
         "numbered_flows": [
           "① Reproduire localement l'amplification ML-DSA-65/87 sur le banc Python `pqc_http431.py` pour mesurer le seuil HTTP 431 de chaque passerelle.",
           "② Retirer les certificats et clés publiques embarqués dans les jetons au profit de références `kid` résolues sur un cache JWKS.",
-          "③ Porter les tampons d'en-têtes des mandataires inverses et des AI Gateways à ≥ 32 Ko dès le Palier P1.",
+          "③ Porter les tampons d'en-têtes des mandataires inverses et des AI Gateways à ≥ 32 Kio dès le Palier P1.",
           "④ Basculer la propagation intra-domaine vers des Transaction Tokens CBOR-COSE O(1) (RFC 9964 / -11, 4 757 o–6 514 o) à la porte POR-007."
         ],
         "color_legend": [
@@ -1729,7 +1729,7 @@
           },
           {
             "color_token": "Bleu infrastructure (#1D4ED8)",
-            "meaning": "Tampons passerelle ≥ 32 Ko vérifiés dès le Palier P1 (EXIG-SEC-27, POR-007)"
+            "meaning": "Tampons passerelle ≥ 32 Kio vérifiés dès le Palier P1 (EXIG-SEC-27, POR-007)"
           }
         ],
         "key_takeaway_box": "Le déploiement des signatures post-quantiques sans adaptation du transport bloque les passerelles dès le deuxième saut d'agent; les références `kid`/JWKS et les Transaction Tokens O(1) préviennent la panne HTTP 431."

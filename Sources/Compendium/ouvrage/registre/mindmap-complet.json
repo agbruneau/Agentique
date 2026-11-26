@@ -108,7 +108,7 @@
       "domain_id": "D04",
       "order": 4,
       "title": "Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)",
-      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments mémoriels isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
+      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
       "color": "#059669",
       "subdomains_canonical": [
         "Sémantique métier, ontologies et compilation de contexte",
@@ -258,7 +258,7 @@
       "domain_id": "D09",
       "order": 9,
       "title": "Droit, régulation prudentielle (QC, CA, UE, int.) et contrats",
-      "summary": "Obligations applicables et jalons vérifiés : Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et NI 31-103, LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité.",
+      "summary": "Obligations applicables et jalons vérifiés : Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et Règlement 31-103 (NI 31-103), LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité.",
       "color": "#7c3aed",
       "subdomains_canonical": [
         "Droit québécois et prudentiel financier canadien",
@@ -343,7 +343,7 @@
       "domain_id": "D12",
       "order": 12,
       "title": "Homologation vérifiable, trousse exécutable, concordance et Wyvern/G0–G5",
-      "summary": "Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100%, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis.",
+      "summary": "Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100 %, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis.",
       "color": "#64748b",
       "subdomains_canonical": [
         "Exigences CRE-IA-2026-01, PRR-75 et 24 portes bloquantes",
@@ -670,7 +670,7 @@
       "subdomain": null,
       "family": null,
       "title": "Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)",
-      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments mémoriels isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
+      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -1131,7 +1131,7 @@
       "subdomain": null,
       "family": null,
       "title": "Droit, régulation prudentielle (QC, CA, UE, int.) et contrats",
-      "summary": "Obligations applicables et jalons vérifiés : Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et NI 31-103, LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité.",
+      "summary": "Obligations applicables et jalons vérifiés : Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et Règlement 31-103 (NI 31-103), LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -1405,7 +1405,7 @@
       "subdomain": null,
       "family": null,
       "title": "Homologation vérifiable, trousse exécutable, concordance et Wyvern/G0–G5",
-      "summary": "Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100%, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis.",
+      "summary": "Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100 %, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -4948,8 +4948,8 @@
       "node_kind": "family",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
-      "title": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+      "family": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
+      "title": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
       "summary": "Famille thématique regroupant 5 thèmes au sein du sous-domaine « Architecture de référence, plans et noyau possédé ».",
       "autonomy_levels": [
         "L0",
@@ -6475,7 +6475,7 @@
         "opacité A2A",
         "patrons-orchestration",
         "arbre-decision",
-        "multiagent",
+        "multi-agent",
         "evaluateur-optimiseur",
         "clavardage-groupe",
         "finops",
@@ -9754,7 +9754,7 @@
         "mast",
         "maillage-libre",
         "etat-partage",
-        "antipatrons",
+        "anti-patrons",
         "OpenAPI 1:1",
         "plan consultatif",
         "registre-façade",
@@ -11380,8 +11380,8 @@
       "domain_id": "D01",
       "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Paradigme des Systèmes d'agentivité",
-      "title": "Écart pilote-production, étude MAP et statistiques d'adoption 2026-2027",
-      "summary": "Confrontation des enquêtes déclaratives (McKinsey 40 % pour les grandes organisations contre 22 % pour les plus petites, EBIT stable à 37 %) et des offices statistiques (~20 % d'usage IA au Canada/UE/É.-U.) à l'étude académique MAP (68 % < 10 étapes avant humain, 16/20 workflows prédéfinis, 74 % évaluation humaine) et à la prévision Gartner (> 40 % d'annulations d'ici fin 2027).",
+      "title": "Écart pilote-production, étude MAP et statistiques d'adoption 2025–2026",
+      "summary": "Confrontation des enquêtes déclaratives (McKinsey 40 % pour les grandes organisations contre 22 % pour les plus petites, EBIT stable à 37 %) et des offices statistiques (~20 % d'usage IA au Canada/UE/É.-U.) à l'étude académique MAP (68 % < 10 étapes avant humain, 16/20 flux de travail prédéfinis, 74 % évaluation humaine) et à la prévision Gartner (> 40 % d'annulations d'ici fin 2027).",
       "autonomy_levels": [
         "L1",
         "L2"
@@ -11466,7 +11466,7 @@
       "subdomain": "Rupture épistémique et Systèmes d'agentivité",
       "family": "Paradigme des Systèmes d'agentivité",
       "title": "Taxonomie des systèmes d'IA composés et 5 archétypes d'acteurs",
-      "summary": "Distinction en 5 paliers (LLM augmenté, workflow agentique, agent, système multi-agents, système d'IA composé) selon qui décide du chemin, complétée en mise en œuvre par la séparation en 5 archétypes fonctionnels (interface, spécialiste de domaine, travailleur de tâche, orchestrateur, méta-gouverneur) proscrivant le super-agent universel.",
+      "summary": "Distinction en 5 paliers (LLM augmenté, flux de travail agentique, agent, système multi-agents, système d'IA composé) selon qui décide du chemin, complétée en mise en œuvre par la séparation en 5 archétypes fonctionnels (interface, spécialiste de domaine, travailleur de tâche, orchestrateur, méta-gouverneur) proscrivant le super-agent universel.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -11483,7 +11483,7 @@
       "horizon": "2026-2027",
       "tags": [
         "taxonomie",
-        "workflow par rapport à agent",
+        "flux de travail par rapport à agent",
         "5 archétypes",
         "système composé"
       ],
@@ -11881,7 +11881,7 @@
       "subdomain": "Fiabilité probabiliste et loi de Lusser",
       "family": "Loi de Lusser et erreurs en cascade",
       "title": "Rupture entre validité syntaxique et erreurs sémantiques silencieuses",
-      "summary": "L'assemblage d'agents individuellement sûrs ne garantit pas la sûreté du graphe composé (non-compositionnalité H-24, §37.3) : dans les flux financiers multi-étapes, la fiabilité globale s'effondre par propagation en cascade (arXiv:2512.02230, §34.6.2) et par comportements émergents non prédictibles (§49.10). Même avec des protocoles techniquement conformes, des divergences sémantiques (montant hors taxes et montant toutes taxes comprises) ou une coordination multiagent sans goulot de validation amplifient les erreurs jusqu'à 17,2× (Google Research) et déclenchent le risque OWASP ASI08 (Cascading Failures). Contrairement aux microservices é…",
+      "summary": "L'assemblage d'agents individuellement sûrs ne garantit pas la sûreté du graphe composé (non-compositionnalité H-24, §37.3) : dans les flux financiers multi-étapes, la fiabilité globale s'effondre par propagation en cascade (arXiv:2512.02230, §34.6.2) et par comportements émergents non prédictibles (§49.10). Même avec des protocoles techniquement conformes, des divergences sémantiques (montant hors taxes et montant toutes taxes comprises) ou une coordination multi-agent sans goulot de validation amplifient les erreurs jusqu'à 17,2× (Google Research) et déclenchent le risque OWASP ASI08 (Cascading Failures). Contrairement aux microservices é…",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -12217,7 +12217,7 @@
         "t7-u0004"
       ],
       "occurrence_count": 20,
-      "relation_degree": 16
+      "relation_degree": 15
     },
     {
       "node_id": "THM_loi-de-lusser",
@@ -14818,7 +14818,7 @@
         "t8-u0010"
       ],
       "occurrence_count": 2,
-      "relation_degree": 1
+      "relation_degree": 2
     },
     {
       "node_id": "THM_pont-reglementation-frames-deterministes",
@@ -16178,7 +16178,7 @@
       "node_kind": "theme",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+      "family": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
       "title": "Plan de contrôle d'agents, registre gouverné et distinction avec le catalogue interne",
       "summary": "L'entreprise conserve la maîtrise du plan de contrôle d'agents (§43.4) et sépare deux objets d'autorités distinctes (tableau 41.2) : le catalogue interne de découverte (équipes produit) et le registre gouverné d'inventaire/conformité (ch. 15, §25.5, §41.3, §47.12), tout en dissociant la couche d'exécution hors périmètre de la fabrique (§41.8). Séparation entre le plan de contrôle (registre de référence, fournisseur d'identité, moteur de politiques, observabilité, budgets) qui décide et le plan de données (passerelles, runtimes) qui applique sur un chemin obligé, sous 3 conditions (non-contournement, registre faisant autorité, preuve tracée…",
       "autonomy_levels": [
@@ -16407,7 +16407,7 @@
           "tome_id": "T5",
           "file": "Tomes/Tome 5 - Synthèse exécutive et concordance architecturale.md",
           "chapter": "Synthèse exécutive — Dix thèses, deux rôles et une trajectoire AE / AS",
-          "section": "4. Noyau possédé (`42 CAP` vs `10`) et trajectoire `90 j → 18 mois → P1–P3`",
+          "section": "4. Noyau possédé (`42 CAP invariantes / 52` vs `10` conditionnelles) et trajectoire `90 j → 18 mois → P1–P3`",
           "line_start": 119,
           "line_end": 127,
           "role_in_tome": "synthese",
@@ -16502,7 +16502,7 @@
       "node_kind": "theme",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+      "family": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
       "title": "Modèle à 5 couches + 3 volets, séparation ABB → SBB et règles ArchiMate 4",
       "summary": "Le chapitre 44 transpose l'architecture agentique en ArchiMate 4.0 (Open Group C260, 27 avr. 2026; équivalences 3.2) via 7 patrons (Specialization + Profils, W172), une chaîne réglementaire traçable zéro orpheline Driver → Assessment → Requirement (<<regulatory-requirement>>) → exécution (§44.6) et 9 anti-patrons (tableau 44.2). Découpage normatif de l'entreprise agentique en 6 couches (Canaux, Orchestration/État, Agents/Exécution cognitive, Médiation/Connectivité, Outils/Données, Systèmes d'enregistrement) et 3 plans transversaux mutualisés (A Identité/Sécurité, B Observabilité/Évaluation/FinOps, C Gouvernance/Registre), avec correspondan…",
       "autonomy_levels": [
@@ -16752,7 +16752,7 @@
       "node_kind": "theme",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+      "family": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
       "title": "Sort des 31 ADR de 2027 (8/7/16) et les 12 décisions neutres DEC-001 à DEC-012",
       "summary": "Audite les 31 fiches ADR-001 à ADR-031 issues des volets non sourcés du Compendium 2027 : 8 sont maintenues comme invariants (ADR-001, 002, 003, 008, 011, 017, 025, 029), 7 sont placées sous révision sur signal SIG-* (ADR-004, 005, 018, 021, 024, 027, 031) et 16 sont généralisées sans nom de produit en 12 décisions neutres DEC-001 à DEC-012 (avec gabarit YAML minimal).",
       "autonomy_levels": [
@@ -16909,7 +16909,7 @@
       "node_kind": "theme",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+      "family": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
       "title": "Interchangeabilité et transférabilité, dépôts d'actifs et clauses de sortie",
       "summary": "Distinction entre interchangeabilité protocolaire (appeler via MCP/A2A) et transférabilité (déplacer graphe, état, mémoire et configuration). Ancrage réglementaire dans le chapitre VI du Règlement européen 2023/2854 (Data Act) et la ligne directrice B-10 du BSIF, traduit en 9 clauses contractuelles vérifiables par essai de sortie.",
       "autonomy_levels": [
@@ -17008,7 +17008,7 @@
       "node_kind": "theme",
       "domain_id": "D02",
       "subdomain": "Architecture de référence, plans et noyau possédé",
-      "family": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+      "family": "Noyau de contrôle possédé (42 CAP invariantes / 52) et 31 ADR",
       "title": "Registre des 31 décisions d'architecture (ADR-001 à ADR-031) et gabarit CI/CD",
       "summary": "Socle prescriptif de 31 ADR acceptées (dont 16 assorties d'une réserve d'alignement sur l'exposé sourcé) et gabarit YAML versionné imposant plafond d'autonomie L0–L4, empreinte réglementaire, enveloppe CPO, seuil pass^5 et coupe-circuit SOC.",
       "autonomy_levels": [
@@ -17206,7 +17206,7 @@
       "subdomain": "Architecture de référence, plans et noyau possédé",
       "family": "Cadres TOGAF / ArchiMate et 6 couches",
       "title": "Architecture de référence à 6 couches et 2 piliers transversaux",
-      "summary": "Synthèse architecturale du compendium en 6 couches horizontales (connectivité/plan de données, sémantique/mémoire, coordination A2A/AGNTCY, orchestration durable/événements, interface HITL/HOTL, gouvernance/commerce/conformité) traversées par 2 piliers (Zero-Trust/NHI et AgentOps/FinOps), confrontée aux modèles Lu, Megagon, SALLMA, CSA et Futurum.",
+      "summary": "Synthèse architecturale du compendium en 6 couches horizontales (connectivité/plan de données, sémantique/mémoire, coordination A2A/AGNTCY, orchestration durable/événements, interface HITL/HOTL, gouvernance/commerce/conformité) traversées par 2 piliers (Zero Trust/NHI et AgentOps/FinOps), confrontée aux modèles Lu, Megagon, SALLMA, CSA et Futurum.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -17771,7 +17771,7 @@
       "subdomain": "Protocoles verticaux outil-modèle (MCP)",
       "family": "Spécification MCP et façades d'intention",
       "title": "Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027",
-      "summary": "Anatomie du protocole vertical hôte/client/serveur en JSON-RPC 2.0 (cinq jalons de novembre 2024 à juillet 2026). La révision ratifiée `2026-07-28` institue un cœur sans état (suppression des sessions et de la poignée de main), remplace les requêtes serveur-vers-client par le patron MRTR (`input_required`), déprécie racines/échantillonnage/journalisation/RFC 7591 avec fenêtre de 12 mois, bascule les tâches asynchrones en extension officielle et conserve la réserve F-01 (« cadre d'autorisation, jamais sécurisé »). Adopté transversalement par les frameworks (§23.1–23.4) et la passerelle ContextForge (§45.2), MCP (version 2026-07-28, révision…",
+      "summary": "Anatomie du protocole vertical hôte/client/serveur en JSON-RPC 2.0 (cinq jalons de novembre 2024 à juillet 2026). La révision ratifiée `2026-07-28` institue un cœur sans état (suppression des sessions et de la poignée de main), remplace les requêtes serveur-vers-client par le patron MRTR (`input_required`), déprécie racines/échantillonnage/journalisation/RFC 7591 avec fenêtre de 12 mois, bascule les tâches asynchrones en extension officielle et conserve la réserve F-01 (« cadre d'autorisation, jamais sécurisé »). Adopté transversalement par les cadriciels (§23.1–23.4) et la passerelle ContextForge (§45.2), MCP (version 2026-07-28, révision…",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -23031,7 +23031,7 @@
         "t6-u0126"
       ],
       "occurrence_count": 23,
-      "relation_degree": 12
+      "relation_degree": 11
     },
     {
       "node_id": "THM_contrats-donnees-write-audit-publish",
@@ -25617,8 +25617,8 @@
       "domain_id": "D05",
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Arbre de sobriété OO1–OO4 et APM",
-      "title": "Arbre de sobriété (N0 → flux → agent unique → multiagent) et bascule réglementaire OO2 → OO3",
-      "summary": "Le chapitre 22 fonde la hiérarchie OO1 (code déterministe), OO2 (chaîne / graphe structuré), OO3 (agent encadré) et OO4 (collectif multi-agents) autour de 5 propriétés et 7 critères (Rinderle-Ma F-37). Le Tome 1b cartographie ces options aux frameworks GA (§23.5), aux contraintes réglementaires (§29.4), aux couches d'architecture (§43.2) et aux KPI de risque de modèle (§46.1). Formalise l'arbre de décision minimaliste (règle déterministe DMN/code N0 → flux déterministe → agent unique outillé → multiagent sur gain mesuré pass^k et CPO). Localise « la main qui commande » selon OO1–OO4 (APM) et proscrit OO1–OO2 dès que les 3 conditions cumula…",
+      "title": "Arbre de sobriété (N0 → flux → agent unique → multi-agent) et bascule réglementaire OO2 → OO3",
+      "summary": "Le chapitre 22 fonde la hiérarchie OO1 (code déterministe), OO2 (chaîne / graphe structuré), OO3 (agent encadré) et OO4 (collectif multi-agents) autour de 5 propriétés et 7 critères (Rinderle-Ma F-37). Le Tome 1b cartographie ces options aux cadriciels GA (§23.5), aux contraintes réglementaires (§29.4), aux couches d'architecture (§43.2) et aux KPI de risque de modèle (§46.1). Formalise l'arbre de décision minimaliste (règle déterministe DMN/code N0 → flux déterministe → agent unique outillé → multi-agent sur gain mesuré pass^k et CPO). Localise « la main qui commande » selon OO1–OO4 (APM) et proscrit OO1–OO2 dès que les 3 conditions cumula…",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -25975,8 +25975,8 @@
       "domain_id": "D05",
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Topologies multi-agents, cadriciels et MAST",
-      "title": "Catalogue fermé des 8 patrons autorisés + 1 variante et proscription des 10 antipatrons",
-      "summary": "Arbitrage structurant : la chorégraphie maximise le découplage mais rend l'état global inobservable, alors que l'auditabilité exigée devant un tiers régulateur favorise l'orchestration centralisée (prémisse léguée au ch. 29). Décline cet arbitrage dans les quatre topologies multi-agents (étoile, chaîne, arbre, graphe — Tableau 6.1), le patron orchestrateur-travailleurs et la tension créée par l'opacité voulue d'A2A. Règle de sobriété (EXIG-ORC-01/02) exigeant de justifier l'insuffisance des options plus simples et de prouver le gain du multiagent (IC 95 % + valeur monétaire face au surcoût de 3–10× en jetons) parmi 8 patrons autorisés et 1…",
+      "title": "Catalogue fermé des 8 patrons autorisés + 1 variante et proscription des 10 anti-patrons",
+      "summary": "Arbitrage structurant : la chorégraphie maximise le découplage mais rend l'état global inobservable, alors que l'auditabilité exigée devant un tiers régulateur favorise l'orchestration centralisée (prémisse léguée au ch. 29). Décline cet arbitrage dans les quatre topologies multi-agents (étoile, chaîne, arbre, graphe — Tableau 6.1), le patron orchestrateur-travailleurs et la tension créée par l'opacité voulue d'A2A. Règle de sobriété (EXIG-ORC-01/02) exigeant de justifier l'insuffisance des options plus simples et de prouver le gain du multi-agent (IC 95 % + valeur monétaire face au surcoût de 3–10× en jetons) parmi 8 patrons autorisés et 1…",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -26007,7 +26007,7 @@
         "opacité A2A",
         "patrons-orchestration",
         "arbre-decision",
-        "multiagent",
+        "multi-agent",
         "evaluateur-optimiseur",
         "clavardage-groupe",
         "finops",
@@ -26338,7 +26338,7 @@
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Topologies multi-agents, cadriciels et MAST",
       "title": "Cadriciels d'orchestration (LangGraph, CrewAI, MAF, ADK, DSPy) et portabilité aux frontières",
-      "summary": "Convergence des cadriciels vers deux étages (boucle d'agent + workflow explicite à graphe) et distinction entre bibliothèque de primitives et harnais préconfiguré. Établit la périssabilité rapide des SDK, l'analyse empirique des bogues (409 et 5 669 rapports, 24,7 % liés à l'intégration modèle) et le report de la portabilité aux frontières MCP/A2A.",
+      "summary": "Convergence des cadriciels vers deux étages (boucle d'agent + flux de travail explicite à graphe) et distinction entre bibliothèque de primitives et harnais préconfiguré. Établit la périssabilité rapide des SDK, l'analyse empirique des bogues (409 et 5 669 rapports, 24,7 % liés à l'intégration modèle) et le report de la portabilité aux frontières MCP/A2A.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -26832,8 +26832,8 @@
       "domain_id": "D05",
       "subdomain": "Sobriété OO1–OO4 et topologies d'orchestration",
       "family": "Topologies multi-agents, cadriciels et MAST",
-      "title": "Frameworks GA d'orchestration : Microsoft Agent Framework, LangGraph, Confluent, Temporal et CrewAI",
-      "summary": "Le chapitre 23 recense avec dates vérifiées l'état GA des frameworks : Microsoft Agent Framework 1.0 (GA 3 avr. 2026, F-15), LangGraph Platform / LangSmith Deployment (GA 14 mai 2025, frontière commerciale/OSS F-32), Confluent Kafka/Flink pour agents (GA 19 mai 2026, acquisition IBM 17 mars 2026), ainsi que Temporal [C] et CrewAI (A2A [B] / MCP [C]).",
+      "title": "Cadriciels GA d'orchestration : Microsoft Agent Framework, LangGraph, Confluent, Temporal et CrewAI",
+      "summary": "Le chapitre 23 recense avec dates vérifiées l'état GA des cadriciels : Microsoft Agent Framework 1.0 (GA 3 avr. 2026, F-15), LangGraph Platform / LangSmith Deployment (GA 14 mai 2025, frontière commerciale/OSS F-32), Confluent Kafka/Flink pour agents (GA 19 mai 2026, acquisition IBM 17 mars 2026), ainsi que Temporal [C] et CrewAI (A2A [B] / MCP [C]).",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -27351,7 +27351,7 @@
         "t6-u0165"
       ],
       "occurrence_count": 2,
-      "relation_degree": 2
+      "relation_degree": 3
     },
     {
       "node_id": "THM_pont-ia-physique-ros2-simplex",
@@ -27489,7 +27489,7 @@
       "subdomain": "Exécution durable, idempotence et Saga compensatoire",
       "family": "Exécution durable (Temporal) et résilience",
       "title": "Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)",
-      "summary": "L'exécution durable ancre les flux longs dans des moteurs persistants (BPMN durable / workflow-as-code §22.5, Temporal §23.4), soutient le confinement et l'imputation en réponse à incident (§39.3), tout en se heurtant à l'impossibilité d'un retour arrière simple sur les artefacts à état et effets externes (§47.11). Persistance obligatoire après chaque transition pour les tâches à écriture, attente ou multi-étapes (Temporal, Step Functions, LangGraph PostgresSaver), magasins de points de contrôle traités comme frontière de confiance, reprise déterministe sans réexécution d'effets et clé d'idempotence dérivée en SHA-256 JCS de la tâche racin…",
+      "summary": "L'exécution durable ancre les flux longs dans des moteurs persistants (BPMN durable / flux de travail-as-code §22.5, Temporal §23.4), soutient le confinement et l'imputation en réponse à incident (§39.3), tout en se heurtant à l'impossibilité d'un retour arrière simple sur les artefacts à état et effets externes (§47.11). Persistance obligatoire après chaque transition pour les tâches à écriture, attente ou multi-étapes (Temporal, Step Functions, LangGraph PostgresSaver), magasins de points de contrôle traités comme frontière de confiance, reprise déterministe sans réexécution d'effets et clé d'idempotence dérivée en SHA-256 JCS de la tâche racin…",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -28001,7 +28001,7 @@
       "subdomain": "Exécution durable, idempotence et Saga compensatoire",
       "family": "Idempotence JCS et Saga compensatoire",
       "title": "Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28",
-      "summary": "Pose les bornes théoriques indépassables pour les services et les agents distribués : impossibilité de livraison exactement-une-fois (contournée par livraison au-moins-une-fois + traitement idempotent), théorème CAP (Gilbert & Lynch, 2002), impossibilité FLP (1985) et blocage du 2PC. Retient le patron Saga (Garcia-Molina & Salem, 1987) orchestrée ou chorégraphiée par compensations et cohérence éventuelle, avec patrons de résilience (disjoncteur, cloisonnement) et notations OMG (BPMN ISO/IEC 19510, DMN, CMMN). Contrairement aux workflows statiques, les trajectoires d'agents créent des séquences d'effets imprévues à la compilation : la secti…",
+      "summary": "Pose les bornes théoriques indépassables pour les services et les agents distribués : impossibilité de livraison exactement-une-fois (contournée par livraison au-moins-une-fois + traitement idempotent), théorème CAP (Gilbert & Lynch, 2002), impossibilité FLP (1985) et blocage du 2PC. Retient le patron Saga (Garcia-Molina & Salem, 1987) orchestrée ou chorégraphiée par compensations et cohérence éventuelle, avec patrons de résilience (disjoncteur, cloisonnement) et notations OMG (BPMN ISO/IEC 19510, DMN, CMMN). Contrairement aux flux de travail statiques, les trajectoires d'agents créent des séquences d'effets imprévues à la compilation : la secti…",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -30208,8 +30208,8 @@
       "domain_id": "D06",
       "subdomain": "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
       "family": "Attestation SPIFFE/SPIRE, DID/VC et vLEI",
-      "title": "Agent Card signée A2A v1.0.0 : intégrité par JWS/JCS, ancrage hors protocole et absence d'horloge",
-      "summary": "Audit sur pièce de la signature de l'Agent Card (v1.0.0 du 12 mars 2026) : JWS (RFC 7515) sur contenu canonicalisé (RFC 8785) avec membre `signatures` exclu. Démontre l'intégrité relative à une clé, jamais l'appartenance organisationnelle : apposition MAY / vérification SHOULD, en-tête limité à 4 clés (`alg`, `typ`, `kid`, `jku` facultatif, sans `nbf`/`iat`/`exp`), 14 champs sans durée de validité ni révocation, magasin de clés facultatif non spécifié, et aucune gouvernance des clés dans `SECURITY.md` ni la charte TSC.",
+      "title": "Agent Card signée A2A v1.0.1 : intégrité par JWS/JCS, ancrage hors protocole et absence d'horloge",
+      "summary": "Audit sur pièce de la signature de l'Agent Card (v1.0.0 du 12 mars 2026) : JWS (RFC 7515) sur contenu canonisé (RFC 8785) avec membre `signatures` exclu. Démontre l'intégrité relative à une clé, jamais l'appartenance organisationnelle : apposition MAY / vérification SHOULD, en-tête limité à 4 clés (`alg`, `typ`, `kid`, `jku` facultatif, sans `nbf`/`iat`/`exp`), 14 champs sans durée de validité ni révocation, magasin de clés facultatif non spécifié, et aucune gouvernance des clés dans `SECURITY.md` ni la charte TSC.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -33201,7 +33201,7 @@
         "t7-u0083"
       ],
       "occurrence_count": 26,
-      "relation_degree": 19
+      "relation_degree": 17
     },
     {
       "node_id": "THM_tool-poisoning-rug-pull",
@@ -33576,7 +33576,7 @@
         "t6-u0126"
       ],
       "occurrence_count": 22,
-      "relation_degree": 13
+      "relation_degree": 12
     },
     {
       "node_id": "THM_non-compositionnalite-surete-surface-attaques",
@@ -33686,7 +33686,7 @@
         "t1-u0338"
       ],
       "occurrence_count": 5,
-      "relation_degree": 3
+      "relation_degree": 5
     },
     {
       "node_id": "THM_chaine-approvisionnement-agent-skills",
@@ -33772,7 +33772,7 @@
         "t3-u0451"
       ],
       "occurrence_count": 3,
-      "relation_degree": 2
+      "relation_degree": 3
     },
     {
       "node_id": "THM_taxonomie-attaques-identite-mandataire-confus",
@@ -37606,8 +37606,8 @@
       "domain_id": "D08",
       "subdomain": "Observabilité OTel GenAI et double couloir probatoire",
       "family": "Double couloir PII, JCS et scellage SCITT",
-      "title": "Canonicalisation JCS (RFC 8785) pour la signature et reconstruction vérifiable des Agent Cards",
-      "summary": "Mécanisme normatif imposé par la spécification A2A v1.0.0 avant toute signature JWS (RFC 7515) : le contenu JSON de la carte DOIT être canonicalisé selon RFC 8785 (*JSON Canonicalization Scheme*), le membre `signatures` étant exclu pour éviter la circularité, et le vérificateur re-canonicalise la carte reçue afin de reconstruire la charge utile sans la transporter.",
+      "title": "Canonisation JCS (RFC 8785) pour la signature et reconstruction vérifiable des Agent Cards",
+      "summary": "Mécanisme normatif imposé par la spécification A2A v1.0.0/v1.0.1 avant toute signature JWS (RFC 7515) : le contenu JSON de la carte DOIT être canonisé selon RFC 8785 (*JSON Canonicalization Scheme*), le membre `signatures` étant exclu pour éviter la circularité, et le vérificateur re-canonise la carte reçue afin de reconstruire la charge utile sans la transporter.",
       "autonomy_levels": [
         "L1",
         "L2",
@@ -37625,7 +37625,7 @@
       "tags": [
         "JCS",
         "RFC 8785",
-        "canonicalisation",
+        "canonisation",
         "RFC 7515",
         "reconstruction de charge"
       ],
@@ -39902,7 +39902,7 @@
         "t7-u0083"
       ],
       "occurrence_count": 23,
-      "relation_degree": 12
+      "relation_degree": 11
     },
     {
       "node_id": "THM_ligne-directrice-amf",
@@ -40521,7 +40521,7 @@
         "t5-u0081"
       ],
       "occurrence_count": 15,
-      "relation_degree": 1
+      "relation_degree": 2
     },
     {
       "node_id": "THM_efvp-transfert-hors-quebec",
@@ -40824,7 +40824,7 @@
       "domain_id": "D09",
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Prudentiel canadien : BSIF E-23, ACVM et LSAC",
-      "title": "Architecture prudentielle fédérale : BSIF E-23 (1er mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033",
+      "title": "Architecture prudentielle fédérale : BSIF E-23 (1ᵉʳ mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033",
       "summary": "Publiée le 11 septembre 2025 pour prise d'effet le 1ᵉʳ mai 2027 (PROGRAMMÉ). Rédigée au *should* (« attendu par », 0 occurrence de *must* au corps anglais), elle attend un inventaire complet des modèles à risque inhérent non négligeable et une surveillance continue visant « autonomous decision making, autonomous re-parametrization » (8 occurrences d'« autonom* », 0 occurrence d'« agentique/agent/orchestration » — couverture agentique inférée par les analystes). S'y ajoute le bulletin quantique du BSIF de mars 2026 sans échéance propre. Publiée en version finale le 11 septembre 2025 avec entrée en vigueur le 1ᵉʳ mai 2027, E-23 adopte une dé…",
       "autonomy_levels": [
         "L0",
@@ -41254,7 +41254,7 @@
       "domain_id": "D09",
       "subdomain": "Droit québécois et prudentiel financier canadien",
       "family": "Prudentiel canadien : BSIF E-23, ACVM et LSAC",
-      "title": "Encadrement des valeurs mobilières : Avis ACVM 11-348, Règlement 31-103 et règles OCRI",
+      "title": "Encadrement des valeurs mobilières : Avis ACVM 11-348, Règlement 31-103 (NI 31-103) et règles OCRI",
       "summary": "Publié le 5 décembre 2024 pour les marchés de capitaux canadiens : précise que les lois existantes sur les valeurs mobilières s'appliquent aux systèmes d'IA sans créer ni modifier d'exigence légale nouvelle, et adopte une définition couvrant des niveaux variables d'autonomie et d'adaptativité après déploiement (portée strictement bornée aux marchés de capitaux). Publié le 5 décembre 2024 sans créer de nouvelle règle formelle, l'Avis 11-348 couvre l'ensemble des acteurs de marché selon 7 catégories (§28.1), comporte un écart vérifié EN/FR sur l'adaptativité post-déploiement (CA-5, §28.2) et n'a reçu aucune suite publiée après la clôture de…",
       "autonomy_levels": [
         "L1",
@@ -43779,7 +43779,7 @@
       "subdomain": "Cinq profils financiers réglementés et 24 PEX",
       "family": "Cinq profils financiers réglementés (M-14 à M-18)",
       "title": "Déclinaison comparative des cinq profils financiers réglementés et 24 propositions d'exigence (PEX)",
-      "summary": "Le chapitre 34 instancie le socle sur cinq secteurs sans re-dérivation : banque (détail, gros, crédit MISMO), assurance de dommages (grille 3 axes §34.2.2, ACORD/Shift/CCC/Tractable), assurance de personnes (HL7 FHIR), gestion de patrimoine/actifs (Morgan Stanley, BlackRock, Wealthsimple, sanction SEC 9 M$) et services technologiques financiers, avec 7 questions ouvertes (tableau 34.2). Consolide la mise à l'épreuve transversale de l'architecture cible à travers les cinq profils financiers (M-14 à M-18 ; T5 ch. 10.2) et les 24 propositions sectorielles PEX-001 à PEX-044 (13 spécialisations de CAD26 + 11 comblements de lacunes 2026). Démont…",
+      "summary": "Le chapitre 34 instancie le socle sur cinq secteurs sans re-dérivation : banque (détail, gros, crédit MISMO), assurance de dommages (grille 3 axes §34.2.2, ACORD/Shift/CCC/Tractable), assurance de personnes (HL7 FHIR), gestion de patrimoine/actifs (Morgan Stanley, BlackRock, Wealthsimple, sanction SEC 9 M$) et services technologiques financiers, avec 7 questions ouvertes (tableau 34.2). Consolide la mise à l'épreuve transversale de l'architecture cible à travers les cinq profils financiers (M-14 à M-18 ; T5 ch. 10.2) et les 24 propositions d'exigence PEX-001 à PEX-044 (5 directes + 12 extensions + 7 comblements en v1.2, contre 13 + 11 en v1.1). Démont…",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -44289,7 +44289,7 @@
       "subdomain": "Cinq profils financiers réglementés et 24 PEX",
       "family": "Cinq profils financiers réglementés (M-14 à M-18)",
       "title": "Profil Gestion de patrimoine et valeurs mobilières (M-15, PEX-011..015) : convenance OCRI 3400 et OEO 3241",
-      "summary": "Décline le cadre pour courtiers OCRI, gestionnaires de portefeuille et IFM (charge FEDS 49,59 / 100), démontrant que le Stade 4 n'est pas universel (D2 plafonné aux Stades 2–3). Impose via PEX-011 à PEX-015 : le rattachement non délégable de la convenance à une personne physique inscrite (OCRI 3400/1103(2), ACVM 11-348) ; la double barrière OEO bloquant recommandations et ordres automatisés clients (OCRI 3240/3241) ; la pré-approbation superviseur, l'anti-AI washing et l'archive 7 ans (3600/3803) ; l'exclusion des rétrofacturations interdites au 1er octobre 2028 ; et le calcul Decimal exact quotidien des frais (NI 31-103).",
+      "summary": "Décline le cadre pour courtiers OCRI, gestionnaires de portefeuille et IFM (charge FEDS 49,59 / 100), démontrant que le Stade 4 n'est pas universel (D2 plafonné aux Stades 2–3). Impose via PEX-011 à PEX-015 : le rattachement non délégable de la convenance à une personne physique inscrite (OCRI 3400/1103(2), ACVM 11-348) ; la double barrière OEO bloquant recommandations et ordres automatisés clients (OCRI 3240/3241) ; la pré-approbation superviseur, l'anti-AI washing et l'archive 7 ans (3600/3803) ; l'exclusion des rétrofacturations interdites au 1ᵉʳ octobre 2028 ; et le calcul Decimal exact quotidien des frais (Règlement 31-103 (NI 31-103)).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -46363,8 +46363,8 @@
       "domain_id": "D10",
       "subdomain": "Usine logicielle GitOps et anti-patrons agentiques",
       "family": "Catalogue des anti-patrons agentiques",
-      "title": "Proscription des 10 antipatrons d'orchestration (EXIG-ORC-29) et des 5 exclusions architecturales",
-      "summary": "Le Tome 1b recense les erreurs récurrentes à proscrire : 9 anti-patrons de modélisation ArchiMate (tableau 44.2 dont l'exigence orpheline ou l'agent modélisé en humain), l'usage de MCP en substitut d'API transactionnelle (§31.2.6), l'agentification de tâches purement déterministes (§43.2) et les collisions d'homonymies (AgentMesh §37.0, Fabrique §43.1, Sun Life ACP §35.8). Interdiction sans dérogation de dix défauts de conception recensés au Tableau 26 (multiagent injustifié, découpage par type de travail, état mutable partagé, contexte gonflé, état en mémoire de processus, maillage libre sans plafond, chaîne d'écritures sans saga/idempote…",
+      "title": "Proscription des 10 anti-patrons d'orchestration (EXIG-ORC-29) et des 5 exclusions architecturales",
+      "summary": "Le Tome 1b recense les erreurs récurrentes à proscrire : 9 anti-patrons de modélisation ArchiMate (tableau 44.2 dont l'exigence orpheline ou l'agent modélisé en humain), l'usage de MCP en substitut d'API transactionnelle (§31.2.6), l'agentification de tâches purement déterministes (§43.2) et les collisions d'homonymies (AgentMesh §37.0, Fabrique §43.1, Sun Life ACP §35.8). Interdiction sans dérogation de dix défauts de conception recensés au Tableau 26 (multi-agent injustifié, découpage par type de travail, état mutable partagé, contexte gonflé, état en mémoire de processus, maillage libre sans plafond, chaîne d'écritures sans saga/idempote…",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -46394,7 +46394,7 @@
         "mast",
         "maillage-libre",
         "etat-partage",
-        "antipatrons",
+        "anti-patrons",
         "OpenAPI 1:1",
         "plan consultatif",
         "registre-façade",
@@ -47268,7 +47268,7 @@
       "domain_id": "D11",
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Trajectoires adaptatives DAPP, portes POR et signaux SIG",
-      "title": "Quinze portes d'homologation de trajectoire (POR-001 à POR-016)",
+      "title": "Quinze portes d'homologation de trajectoire (POR-001 à POR-016, sans POR-010)",
       "summary": "Portes sur preuves système conditionnant le franchissement des Paliers P1 (POR-001..004), P2 (POR-005..009), P3 (POR-011..014) et la rétrogradation transversale (< 60 s POR-015, revue CPO POR-016).",
       "autonomy_levels": [
         "L1",
@@ -47404,7 +47404,7 @@
       "domain_id": "D11",
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Trajectoires adaptatives DAPP, portes POR et signaux SIG",
-      "title": "Rampe tactique 90 jours → 18 mois soudée aux Paliers P1–P3 (2028–2035) et les 10 thèses T1–T10",
+      "title": "Rampe tactique 90 jours → 18 mois soudée aux Paliers P1–P3 (2028–2035), arrimée aux thèses T1–T10 de ch32",
       "summary": "Sonde la continuité entre la rampe tactique immédiate (J1 90 jours Fondations N0–N1 → J2 9 mois Plateforme → J3 18 mois Niveau 3 Défini / Stade 2, arrimée aux dates 2027) et les trois paliers DAPP : P1 (2028–2029, fonder le contrôle, 14+1 INI, POR-001..004 → Stade 2), P2 (2030–2032, étendre sans perdre la preuve + fenêtre PQC G7, 9+7 INI, POR-005..009 → Stade 3) et P3 (2033–2035, ouvrir sélectivement post-temporisation 2033, 4+6 INI, POR-011..014 → Stade 3/4 sélectif), le tout structuré par les 10 thèses T1–T10 de T5.",
       "autonomy_levels": [
         "L0",
@@ -47562,7 +47562,7 @@
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Trajectoires adaptatives DAPP, portes POR et signaux SIG",
       "title": "Feuille de route 2027–2030 (4 phases, J1–J5, J2a), plan des 90 jours et 16 indicateurs",
-      "summary": "Planification progressive sur 4 phases (Fondations 0–3m N0/N1 → Plateforme 3–9m N2/N3 bornés → Industrialisation 9–18m N3 interdomaines → Mise à l'échelle 18m+ N4) calée sur les jalons externes (E-23 1er mai 2027, migration MCP 28 juillet 2027, J2a 1er novembre 2027 avant RIA annexe III 2 décembre 2027, ISO 42001 J4/J5); plan détaillé des 90 premiers jours en 13 semaines, 16 indicateurs mesurés et 11 risques de mise en œuvre avec parades.",
+      "summary": "Planification progressive sur 4 phases (Fondations 0–3m N0/N1 → Plateforme 3–9m N2/N3 bornés → Industrialisation 9–18m N3 interdomaines → Mise à l'échelle 18m+ N4) calée sur les jalons externes (E-23 1ᵉʳ mai 2027, migration MCP 28 juillet 2027, J2a 1ᵉʳ novembre 2027 avant RIA annexe III 2 décembre 2027, ISO 42001 J4/J5); plan détaillé des 90 premiers jours en 13 semaines, 16 indicateurs mesurés et 11 risques de mise en œuvre avec parades.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -47786,7 +47786,7 @@
       "subdomain": "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
       "family": "Trajectoires adaptatives DAPP, portes POR et signaux SIG",
       "title": "Six priorités irréductibles des 90 premiers jours et chronologie réglementaire/PQC 2026–2035",
-      "summary": "Prérequis impératifs avant toute autonomie en écriture : inventaire/responsable unique, coupe-circuits et plafonds hors modèle, bannissement des secrets statiques, couloir lecture seule typé, pilotage CPO/compétences et socle d'audit unifié avant le 1er mai 2027, arrimés à la chronologie consolidée 2026–2035.",
+      "summary": "Prérequis impératifs avant toute autonomie en écriture : inventaire/responsable unique, coupe-circuits et plafonds hors modèle, bannissement des secrets statiques, couloir lecture seule typé, pilotage CPO/compétences et socle d'audit unifié avant le 1ᵉʳ mai 2027, arrimés à la chronologie consolidée 2026–2035.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -50525,7 +50525,7 @@
       "domain_id": "D12",
       "subdomain": "Exigences CRE-IA-2026-01, PRR-75 et 24 portes bloquantes",
       "family": "Grille PRR-75, 24 portes bloquantes et fiche 2027-B001",
-      "title": "Grille d'homologation des 305 exigences (Annexe A) et gabarit normatif de fiche d'agent (Annexe B)",
+      "title": "Grille d'homologation des 305 exigences (Tome 2 Annexe A) et gabarit normatif de fiche d'agent (Tome 2 Annexe B)",
       "summary": "Outils d'application obligatoires au cycle de vie : la grille d'homologation (sections A.1–A.8) regroupe les 305 exigences par condition d'applicabilité avec marquage explicite des points non dérogeables (`EXIG-GOV-17`) et preuve liée; le gabarit de fiche d'agent (Tableau 63 + extrait JSON) fixe le contenu normatif minimal exigible à chaque étape (Proposition, Conception, Pilote).",
       "autonomy_levels": [
         "L0",
@@ -50811,7 +50811,7 @@
       "domain_id": "D12",
       "subdomain": "Trousse exécutable Tome 8 et vecteurs tiers",
       "family": "Trousse exécutable Python/OPA et 5 SBB",
-      "title": "Cinq blocs de solution critiques (5 SBB du Tableau 12) et fiche 2027-B001",
+      "title": "Cinq blocs de solution critiques (5 SBB du Tableau 12 du Tome 2) et fiche 2027-B001",
       "summary": "Implémentation de référence en Tome 8 des 5 SBB laissés vides au Tableau 12 du Tome 2 (secrets_vault, guardrails_engine, signed_human_approval_service, immutable_audit_ledger, finops_budget_quota_controller) et validateur YAML/JSON Schema 2027-B001.",
       "autonomy_levels": [
         "L2",
@@ -51105,7 +51105,7 @@
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Concordance inter-tomes (DIV-02 et 5 discordances)",
       "title": "Fermeture de DIV-02 : soudure des 4 volumes (2 541 p.), 52 CAP + 24 PEX → 305 EXIG-* v1.2",
-      "summary": "Documente la fermeture vérifiée de la lacune initiale DIV-02 (corpus_2026_absent en PD28) par inspection directe de CAD26 (CRE-IA-2026-01 v1.2) et Note AMF IA (49 p.). Raccorde le pivot 5 couches + 3 volets aux 6 vraies couches de CAD26 §5.2 (rectifiant 3 hypothèses d'Annexe E.1 : modèles/confinement en Couche 3, pas de Couche 3 Connaissance, enregistrement en Couche 6). Relie 52/52 CAP et 24/24 PEX (13 spécialisations + 11 comblements de lacunes 2026) aux 305 EXIG-* par liens typés DC-P07 (couverture_directe, ancrage_extension, comble_lacune_2026), et rectifie 4 coquilles de CAD26 v1.1 et la dissonance D6/D7 entre M-12 et M-15/M-18. Arbit…",
+      "summary": "Documente la fermeture vérifiée de la lacune initiale DIV-02 (corpus_2026_absent en PD28) par inspection directe de CAD26 (CRE-IA-2026-01 v1.2) et Note AMF IA (49 p.). Raccorde le pivot 5 couches + 3 volets aux 6 vraies couches de CAD26 §5.2 (rectifiant 3 hypothèses d'Annexe E.1 : modèles/confinement en Couche 3, pas de Couche 3 Connaissance, enregistrement en Couche 6). Relie 52/52 CAP et 24/24 PEX (en v1.2 : 5 couvertures directes, 12 extensions et 7 comblements de lacunes 2026, remplaçant le bilan 13 + 11 de v1.1) aux 305 EXIG-* par liens typés DC-P07 (couverture_directe, ancrage_extension, comble_lacune_2026), et rectifie 4 coquilles de CAD26 v1.1 et la dissonance D6/D7 entre M-12 et M-15/M-18. Arbit…",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -51564,8 +51564,8 @@
       "domain_id": "D12",
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Concordance inter-tomes (DIV-02 et 5 discordances)",
-      "title": "Glossaire bilingue fr-CA/en et conventions terminologiques (Annexe E)",
-      "summary": "Tableau 65 réunissant les définitions synthétiques, les sigles (A2A, AAIF, CIBA, EIF, EFVP, FinOps, MCP, NHI, OBO, ODD, PEP, RIA, SVID, SMIA) et les équivalents anglais en vigueur dans l'ensemble du cadre normatif `CRE-IA-2026-01`, subordonnés au corps et au Tableau 7 en cas d'écart.",
+      "title": "Glossaire bilingue fr-CA/en et conventions terminologiques (Tome 2 Annexe E)",
+      "summary": "Tableau 65 réunissant les définitions synthétiques, les sigles (A2A, AAIF, CIBA, EIF, EFVP, FinOps, MCP, NHI, OBO, ODD, PEP, RIA, SVID, SMIA) et les équivalents anglais en vigueur dans l'ensemble du cadre normatif `CRE-IA-2026-01`, subordonnés au corps et au Tableau 7 du Tome 2 en cas d'écart.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -52721,8 +52721,8 @@
       "domain_id": "D12",
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Protocole Wyvern, G0–G5, Typst et clause non-avis",
-      "title": "Actualisation de novembre 2026 (Annexe H) et unification normative v1.2 (DC-P08, 305 EXIG-*)",
-      "summary": "Suivi méthodologique et unification : contrôle 24/24 des dépendances datées au 1er novembre 2026 + échantillonnage stratifié (n≥8/24), errata prouvés (Tableau 72 : 9 sièges A2A, calendrier MCP SEP-3398, erratum RTR 9 novembre), intégration en v1.2 (19 novembre 2026, DC-P08) des 12 `EXIG-AMF` en attente au Tableau 71 et des 6 exigences PQC/ACVM/RTR/EN 18286:2026 portant le socle à 305 exigences.",
+      "title": "Actualisation de novembre 2026 (Tome 2 Annexe H) et unification normative v1.2 (DC-P08, 305 EXIG-*)",
+      "summary": "Suivi méthodologique et unification : contrôle 24/24 des dépendances datées au 1ᵉʳ novembre 2026 + échantillonnage stratifié (n≥8/24), errata prouvés (Tableau 72 : 9 sièges A2A, calendrier MCP SEP-3398, erratum RTR 9 novembre), intégration en v1.2 (19 novembre 2026, DC-P08) des 12 `EXIG-AMF` en attente au Tableau 71 et des 6 exigences PQC/ACVM/RTR/EN 18286:2026 portant le socle à 305 exigences.",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -52812,7 +52812,7 @@
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Protocole Wyvern, G0–G5, Typst et clause non-avis",
       "title": "Péremption (14 événements), seuil 30 jours et actualisation complète du 1ᵉʳ novembre 2026",
-      "summary": "Le chapitre 50 recense 14 événements de péremption entre la date de gel du socle et novembre 2026 (tableau 50.1) et fixe un protocole de revalidation en 3 temps avec seuil de fraîcheur à 30 jours (§50.3). L'Annexe N exécute ce protocole au 1ᵉʳ novembre 2026 ([AN-1]–[AN-27], tableau N.1/N.2), délimitant explicitement ce qui est revalidé et ce qui ne l'est pas (§N.4).",
+      "summary": "Le chapitre 50 recense 14 événements de péremption entre la date de gel du socle et novembre 2026 (tableau 50.1) et fixe un protocole de revalidation en 3 temps avec seuil de fraîcheur à 30 jours (§50.3). L'Annexe N du Tome 1 exécute ce protocole au 1ᵉʳ novembre 2026 ([AN-1]–[AN-27], tableau N.1/N.2), délimitant explicitement ce qui est revalidé et ce qui ne l'est pas (§N.4).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -52890,8 +52890,8 @@
       "domain_id": "D12",
       "subdomain": "Concordance inter-tomes (DIV-02, DISC-01..05) et Wyvern G0–G5",
       "family": "Protocole Wyvern, G0–G5, Typst et clause non-avis",
-      "title": "Registre des 159 sources S-001..S-159 (Annexe B) et 999 notices consolidées du Vol. I (Annexe I)",
-      "summary": "L'Annexe B recense 159 sources numérotées (S-001–S-046 Vol. II, S-047–S-142 Vol. III, S-143–S-159 Vol. I) qualifiées selon l'échelle [A]/[B]/[C]. L'Annexe I consolide et déduplique 1 263 notices en 999 entrées vérifiables propres au Vol. I (I.1), tout en expliquant méthodologiquement l'exclusion des Vol. II et III (I.2).",
+      "title": "Registre des 159 sources S-001..S-159 (Tome 1 Annexe B) et 999 notices consolidées du Vol. I (Tome 1 Annexe I)",
+      "summary": "L'Annexe B du Tome 1 recense 159 sources numérotées (S-001–S-046 Vol. II, S-047–S-142 Vol. III, S-143–S-159 Vol. I) qualifiées selon l'échelle [A]/[B]/[C]. L'Annexe I du Tome 1 consolide et déduplique 1 263 notices en 999 entrées vérifiables propres au Vol. I (I.1), tout en expliquant méthodologiquement l'exclusion des Vol. II et III (I.2).",
       "autonomy_levels": [
         "L0",
         "L1",
@@ -53141,10 +53141,10 @@
     },
     {
       "relation_id": "REL_0011",
-      "source": "THM_agntcy-slim",
-      "target": "THM_contrats-interfaces-catalogue-entreprise",
-      "source_slug": "agntcy-slim",
-      "target_slug": "contrats-interfaces-catalogue-entreprise",
+      "source": "THM_contrats-interfaces-catalogue-entreprise",
+      "target": "THM_agntcy-slim",
+      "source_slug": "contrats-interfaces-catalogue-entreprise",
+      "target_slug": "agntcy-slim",
       "type": "encadrement_normatif",
       "label": "Subordonne OASF/ADS au catalogue d'entreprise",
       "justification": "EXIG-INT-20 et EXIG-INT-21 limitent AGNTCY aux pilotes (OASF/ADS en Évaluer, SLIM en Surveiller) dérivés du seul catalogue.",
@@ -53363,10 +53363,10 @@
     },
     {
       "relation_id": "REL_0024",
-      "source": "THM_anti-verrouillage-standards",
-      "target": "THM_bsif-e-23",
-      "source_slug": "anti-verrouillage-standards",
-      "target_slug": "bsif-e-23",
+      "source": "THM_bsif-e-23",
+      "target": "THM_anti-verrouillage-standards",
+      "source_slug": "bsif-e-23",
+      "target_slug": "anti-verrouillage-standards",
       "type": "encadrement_normatif",
       "label": "Exigences de diligence de tiers dans les institutions réglementées",
       "justification": "Le passage des protocoles sous fondations neutres et licences permissives transforme le dossier de risque de tiers d'une prospective sur un éditeur vers un constat de gouvernance (ch. 7 §7.3–7.4).",
@@ -53380,10 +53380,10 @@
     },
     {
       "relation_id": "REL_0025",
-      "source": "THM_anti-verrouillage-standards",
-      "target": "THM_clauses-contractuelles-normatives-app",
-      "source_slug": "anti-verrouillage-standards",
-      "target_slug": "clauses-contractuelles-normatives-app",
+      "source": "THM_clauses-contractuelles-normatives-app",
+      "target": "THM_anti-verrouillage-standards",
+      "source_slug": "clauses-contractuelles-normatives-app",
+      "target_slug": "anti-verrouillage-standards",
       "type": "operationnalisation",
       "label": "Inscrit la réversibilité dans les 10 clauses",
       "justification": "EXIG-APP-07 à EXIG-APP-16 traduisent PRIN-09 et EXIG-ARC-21 en obligations contractuelles opposables.",
@@ -53397,10 +53397,10 @@
     },
     {
       "relation_id": "REL_0026",
-      "source": "THM_anti-verrouillage-standards",
-      "target": "THM_criteres-evaluation-fournisseurs-grille",
-      "source_slug": "anti-verrouillage-standards",
-      "target_slug": "criteres-evaluation-fournisseurs-grille",
+      "source": "THM_criteres-evaluation-fournisseurs-grille",
+      "target": "THM_anti-verrouillage-standards",
+      "source_slug": "criteres-evaluation-fournisseurs-grille",
+      "target_slug": "anti-verrouillage-standards",
       "type": "operationnalisation",
       "label": "Vérifie portabilité et identité avant achat",
       "justification": "Le déplacement du verrouillage vers les plateformes se traduit par les critères éliminatoires de conformité protocolaire, identité et réversibilité (§ 13.1–13.4).",
@@ -53626,12 +53626,12 @@
     },
     {
       "relation_id": "REL_0039",
-      "source": "THM_arbre-sobriete-oo1-oo4",
-      "target": "THM_frameworks-orchestration-entreprise",
-      "source_slug": "arbre-sobriete-oo1-oo4",
-      "target_slug": "frameworks-orchestration-entreprise",
+      "source": "THM_frameworks-orchestration-entreprise",
+      "target": "THM_arbre-sobriete-oo1-oo4",
+      "source_slug": "frameworks-orchestration-entreprise",
+      "target_slug": "arbre-sobriete-oo1-oo4",
       "type": "operationnalisation",
-      "label": "Portage des options OO1–OO4 dans les frameworks GA",
+      "label": "Portage des options OO1–OO4 dans les cadriciels GA",
       "justification": "Le tableau 23.2 positionne Microsoft Agent Framework, LangGraph Platform, Confluent Kafka/Flink, Temporal et CrewAI sur l'échelle OO1–OO4.",
       "tomes": [
         "T1"
@@ -53685,7 +53685,7 @@
       "target_slug": "protocole-a2a",
       "type": "tension_arbitrage",
       "label": "Sobriété agent unique face au surcoût multi-agents (-70 % à +80,8 %)",
-      "justification": "L'orchestrateur multi-agents n'est autorisé que sur gain net mesuré en pass^k et CPO, la majorité des tâches séquentielles couplées se dégradant sous multiagent.",
+      "justification": "L'orchestrateur multi-agents n'est autorisé que sur gain net mesuré en pass^k et CPO, la majorité des tâches séquentielles couplées se dégradant sous multi-agent.",
       "tomes": [
         "T5"
       ],
@@ -53696,10 +53696,10 @@
     },
     {
       "relation_id": "REL_0043",
-      "source": "THM_arbre-sobriete-oo1-oo4",
-      "target": "THM_topologies-patrons-orchestration",
-      "source_slug": "arbre-sobriete-oo1-oo4",
-      "target_slug": "topologies-patrons-orchestration",
+      "source": "THM_topologies-patrons-orchestration",
+      "target": "THM_arbre-sobriete-oo1-oo4",
+      "source_slug": "topologies-patrons-orchestration",
+      "target_slug": "arbre-sobriete-oo1-oo4",
       "type": "operationnalisation",
       "label": "Déploiement OO3/OO4 via les 8 patrons homologués",
       "justification": "La bascule réglementaire OO2 → OO3 se concrétise exclusivement par l'un des 8 patrons fermés (ou la variante à ≤ 3 agents) sous enveloppe déterministe.",
@@ -53781,10 +53781,10 @@
     },
     {
       "relation_id": "REL_0048",
-      "source": "THM_architecture-reference-six-couches-pc1-pc5",
-      "target": "THM_blueprints-reference-multisectoriels",
-      "source_slug": "architecture-reference-six-couches-pc1-pc5",
-      "target_slug": "blueprints-reference-multisectoriels",
+      "source": "THM_blueprints-reference-multisectoriels",
+      "target": "THM_architecture-reference-six-couches-pc1-pc5",
+      "source_slug": "blueprints-reference-multisectoriels",
+      "target_slug": "architecture-reference-six-couches-pc1-pc5",
       "type": "operationnalisation",
       "label": "Instanciation des 6 couches et PC1–PC5 dans le blueprint C1–C8",
       "justification": "Le ch. 45 matérialise les couches unifiées et points de contrôle du ch. 43 sur le portefeuille IBM (ContextForge, watsonx.governance, MQ PQC) et Boréalis.",
@@ -53926,7 +53926,7 @@
       "target_slug": "profil-gestion-patrimoine-m15",
       "type": "encadrement_normatif",
       "label": "Responsabilité inscrite, OEO et rétrofacturations 2028",
-      "justification": "L'Avis ACVM 11-348, NI 31-103 et les règles OCRI 3240/3241/3400/3600/3803 dictent directement les verrous de PEX-011 à PEX-015.",
+      "justification": "L'Avis ACVM 11-348, Règlement 31-103 (NI 31-103) et les règles OCRI 3240/3241/3400/3600/3803 dictent directement les verrous de PEX-011 à PEX-015.",
       "tomes": [
         "T4",
         "T5"
@@ -53961,7 +53961,7 @@
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "projection_temporelle",
       "label": "Jalons valeurs mobilières 2026 → 2028 → veille SIG-105",
-      "justification": "Projette les exigences patrimoniales du coût quotidien (2026) et de la fin des rétrofacturations (1er octobre 2028) vers la veille SIG-105 sur d'éventuelles règles contraignantes OCRI/ACVM.",
+      "justification": "Projette les exigences patrimoniales du coût quotidien (2026) et de la fin des rétrofacturations (1ᵉʳ octobre 2028) vers la veille SIG-105 sur d'éventuelles règles contraignantes OCRI/ACVM.",
       "tomes": [
         "T4",
         "T5"
@@ -53996,7 +53996,7 @@
       "source_slug": "banc-evalops-hermetique",
       "target_slug": "criteres-qos-cout-precision-latence",
       "type": "operationnalisation",
-      "label": "Mesure reproductiblement latence PEP, conformité A2A et coût",
+      "label": "Mesure de manière reproductible latence PEP, conformité A2A et coût",
       "justification": "Borealis-Bench (Campagnes 1 et 3), OpenEnv, AgentArcEval et la trousse TCK A2A traduisent les budgets QoS et les 5 critères du compendium en mesures vérifiées en CI (ch. 23.8, 24.5, 26.9).",
       "tomes": [
         "T3"
@@ -54257,10 +54257,10 @@
     },
     {
       "relation_id": "REL_0075",
-      "source": "THM_bsif-e-23",
-      "target": "THM_banc-evalops-hermetique",
-      "source_slug": "bsif-e-23",
-      "target_slug": "banc-evalops-hermetique",
+      "source": "THM_banc-evalops-hermetique",
+      "target": "THM_bsif-e-23",
+      "source_slug": "banc-evalops-hermetique",
+      "target_slug": "bsif-e-23",
       "type": "operationnalisation",
       "label": "Validation indépendante continue E-23",
       "justification": "Le banc scellé OpenEnv/`tau-bench` de 2e ligne et le relèvement `pass^5 >= 0,97` automatisent l'homologation BSIF E-23 des révisions mineures SemVer+Intent (Ch. 34.10, 38.8).",
@@ -54331,7 +54331,7 @@
       "target_slug": "echelle-autonomie-l0-l4",
       "type": "encadrement_normatif",
       "label": "Impose inventaire, matérialité et contrôle par palier dès mai 2027",
-      "justification": "La ligne directrice BSIF E-23 (entrée en vigueur 1er mai 2027) exige la qualification formelle du niveau d'autonomie, la validation continue et la maîtrise des agents autoapprenants (ch. 0.1, 0.4, 25.9). | La ligne directrice BSIF E-23 impose d'intensifier les contrôles, la validation indépendante et la fréquence de revue selon la matérialité et l'autonomie de l'agent (Ch. 38.3, 38.9).",
+      "justification": "La ligne directrice BSIF E-23 (entrée en vigueur 1ᵉʳ mai 2027) exige la qualification formelle du niveau d'autonomie, la validation continue et la maîtrise des agents autoapprenants (ch. 0.1, 0.4, 25.9). | La ligne directrice BSIF E-23 impose d'intensifier les contrôles, la validation indépendante et la fréquence de revue selon la matérialité et l'autonomie de l'agent (Ch. 38.3, 38.9).",
       "tomes": [
         "T3",
         "T4",
@@ -54352,7 +54352,7 @@
       "target_slug": "gouvernance-duale-ae-as",
       "type": "encadrement_normatif",
       "label": "Impose inventaire, validation 2LoD et propriété sur le cycle de vie",
-      "justification": "La directive BSIF E-23 (en vigueur le 1er mai 2027) et le bulletin de juillet 2026 obligent à proportionner l'homologation (R1–R4), nommer un propriétaire et maintenir des solutions de repli manuel.",
+      "justification": "La directive BSIF E-23 (en vigueur le 1ᵉʳ mai 2027) et le bulletin de juillet 2026 obligent à proportionner l'homologation (R1–R4), nommer un propriétaire et maintenir des solutions de repli manuel.",
       "tomes": [
         "T6",
         "T7",
@@ -54371,7 +54371,7 @@
       "target_slug": "ligne-directrice-amf",
       "type": "concordance_inter_tomes",
       "label": "Pendant québécois AMF de l'arrimage fédéral E-23",
-      "justification": "EXIG-AMF-05 et EXIG-AMF-06 constituent l'équivalent québécois d'EXIG-CON-12 pour le répertoire des modèles et la prise d'effet au 1er mai 2027.",
+      "justification": "EXIG-AMF-05 et EXIG-AMF-06 constituent l'équivalent québécois d'EXIG-CON-12 pour le répertoire des modèles et la prise d'effet au 1ᵉʳ mai 2027.",
       "tomes": [
         "T2"
       ],
@@ -54417,10 +54417,10 @@
     },
     {
       "relation_id": "REL_0084",
-      "source": "THM_bsif-e-23",
-      "target": "THM_pont-reglementation-frames-deterministes",
-      "source_slug": "bsif-e-23",
-      "target_slug": "pont-reglementation-frames-deterministes",
+      "source": "THM_pont-reglementation-frames-deterministes",
+      "target": "THM_bsif-e-23",
+      "source_slug": "pont-reglementation-frames-deterministes",
+      "target_slug": "bsif-e-23",
       "type": "operationnalisation",
       "label": "Traduction des attentes E-23 en frames déterministes",
       "justification": "Le ch. 29 (tableau 29.1) traduit les attentes de BSIF E-23 (inventaire, suivi continu, traçabilité) en contraintes architecturales et frames vérifiables.",
@@ -54439,8 +54439,8 @@
       "source_slug": "bsif-e-23",
       "target_slug": "priorites-90-jours-gouvernance",
       "type": "projection_temporelle",
-      "label": "Dicte le verrouillage du socle avant le 1er mai 2027",
-      "justification": "L'entrée en vigueur prochaine de BSIF E-23 au 1er mai 2027 impose d'unifier l'inventaire, les propriétaires d'agents et le journal probatoire dès les 90 premiers jours.",
+      "label": "Dicte le verrouillage du socle avant le 1ᵉʳ mai 2027",
+      "justification": "L'entrée en vigueur prochaine de BSIF E-23 au 1ᵉʳ mai 2027 impose d'unifier l'inventaire, les propriétaires d'agents et le journal probatoire dès les 90 premiers jours.",
       "tomes": [
         "T7",
         "T8"
@@ -54505,13 +54505,13 @@
     },
     {
       "relation_id": "REL_0089",
-      "source": "THM_bsif-e-23",
-      "target": "THM_registre-agents-cycle-de-vie-et-attestations",
-      "source_slug": "bsif-e-23",
-      "target_slug": "registre-agents-cycle-de-vie-et-attestations",
+      "source": "THM_registre-agents-cycle-de-vie-et-attestations",
+      "target": "THM_bsif-e-23",
+      "source_slug": "registre-agents-cycle-de-vie-et-attestations",
+      "target_slug": "bsif-e-23",
       "type": "operationnalisation",
       "label": "Utilise le registre d'entreprise comme inventaire E-23",
-      "justification": "EXIG-CON-12 ancre l'inventaire des modèles à risque non négligeable (échéance 1er mai 2027) directement dans le registre d'entreprise et les revues EXIG-GOV-12.",
+      "justification": "EXIG-CON-12 ancre l'inventaire des modèles à risque non négligeable (échéance 1ᵉʳ mai 2027) directement dans le registre d'entreprise et les revues EXIG-GOV-12.",
       "tomes": [
         "T2"
       ],
@@ -54579,7 +54579,7 @@
       "target_slug": "trajectoire-90j-18m-p1-p3",
       "type": "projection_temporelle",
       "label": "Cadencement par les jalons fermes 2027, 2028, 2029 et 2033",
-      "justification": "Aligne la rampe 90 j–18 m et P1–P3 sur les dates fermes [D] : 1er mai 2027 (E-23/AMF), 2 décembre 2027 (RIA Annexe III), octobre/fin 2028 (NI 31-103 / B-15), 15 mars 2029 (TLS 47 j) et 30 juin 2033 (temporisation fédérale).",
+      "justification": "Aligne la rampe 90 j–18 m et P1–P3 sur les dates fermes [D] : 1ᵉʳ mai 2027 (E-23/AMF), 2 décembre 2027 (RIA Annexe III), octobre/fin 2028 (Règlement 31-103 (NI 31-103) / B-15), 15 mars 2029 (TLS 47 j) et 30 juin 2033 (temporisation fédérale).",
       "tomes": [
         "T4",
         "T5"
@@ -54596,8 +54596,8 @@
       "source_slug": "bsif-e-23",
       "target_slug": "trajectoires-adaptatives-dapp",
       "type": "projection_temporelle",
-      "label": "Jalon prudentiel canadien du 1er mai 2027",
-      "justification": "L'entrée en vigueur simultanée de BSIF E-23 et de la ligne directrice AMF au 1er mai 2027 impose d'achever inventaires, cotes de matérialité et validation 2e ligne avant mi-2027 (Ch. 38.3, 49.4, Annexe D.4).",
+      "label": "Jalon prudentiel canadien du 1ᵉʳ mai 2027",
+      "justification": "L'entrée en vigueur simultanée de BSIF E-23 et de la ligne directrice AMF au 1ᵉʳ mai 2027 impose d'achever inventaires, cotes de matérialité et validation 2e ligne avant mi-2027 (Ch. 38.3, 49.4, Annexe D.4).",
       "tomes": [
         "T3"
       ],
@@ -54625,10 +54625,10 @@
     },
     {
       "relation_id": "REL_0096",
-      "source": "THM_cadre-eif-4-couches",
-      "target": "THM_contrats-interfaces-catalogue-entreprise",
-      "source_slug": "cadre-eif-4-couches",
-      "target_slug": "contrats-interfaces-catalogue-entreprise",
+      "source": "THM_contrats-interfaces-catalogue-entreprise",
+      "target": "THM_cadre-eif-4-couches",
+      "source_slug": "contrats-interfaces-catalogue-entreprise",
+      "target_slug": "cadre-eif-4-couches",
       "type": "operationnalisation",
       "label": "Impose revue 4 niveaux et accords d'interface",
       "justification": "EXIG-INT-01 à EXIG-INT-03 ancrent la revue EIF, le vocabulaire et l'accord de changement dans les contrats inscrits au catalogue.",
@@ -54642,10 +54642,10 @@
     },
     {
       "relation_id": "REL_0097",
-      "source": "THM_cadre-eif-4-couches",
-      "target": "THM_eu-ai-act",
-      "source_slug": "cadre-eif-4-couches",
-      "target_slug": "eu-ai-act",
+      "source": "THM_eu-ai-act",
+      "target": "THM_cadre-eif-4-couches",
+      "source_slug": "eu-ai-act",
+      "target_slug": "cadre-eif-4-couches",
       "type": "encadrement_normatif",
       "label": "Basculement vers l'obligation légale via l'Interoperable Europe Act",
       "justification": "Le règlement (UE) 2024/903 érige l'évaluation préalable d'interopérabilité en obligation juridique depuis le 12 janvier 2025 pour les services publics transfrontaliers européens (ch. 1 §1.2.3).",
@@ -54680,8 +54680,8 @@
       "target": "THM_protocole-a2a",
       "source_slug": "cadre-eif-4-couches",
       "target_slug": "protocole-a2a",
-      "type": "operationnalisation",
-      "label": "A2A matérialise l'interopérabilité organisationnelle entre pairs",
+      "type": "encadrement_normatif",
+      "label": "Cadre EIF structurant l'interopérabilité organisationnelle d'A2A",
       "justification": "A2A franchit les frontières organisationnelles de la pile canonique par la délégation de tâches entre agents autonomes sans intégration préalable (ch. 1 §1.1.2, ch. 8 §8.4.3).",
       "tomes": [
         "T1"
@@ -54697,8 +54697,8 @@
       "target": "THM_protocole-mcp",
       "source_slug": "cadre-eif-4-couches",
       "target_slug": "protocole-mcp",
-      "type": "operationnalisation",
-      "label": "MCP matérialise les paliers technique et syntaxique sur l'axe vertical",
+      "type": "encadrement_normatif",
+      "label": "Cadre EIF structurant les paliers technique et syntaxique de MCP",
       "justification": "MCP incarne la couche technique et syntaxique du modèle en couches (réduisant N×M à N+M), tout en laissant ouverte la couche sémantique (ch. 1 §1.1.2, ch. 8 §8.1.1).",
       "tomes": [
         "T1"
@@ -54893,8 +54893,8 @@
       "source_slug": "canonicalisation-jcs-rfc8785",
       "target_slug": "signature-agent-card-ancrage",
       "type": "attenuation_risque",
-      "label": "Canonicalisation RFC 8785 fiabilisant la vérification JWS",
-      "justification": "La canonicalisation déterministe JCS garantit que le vérificateur reconstruit exactement les octets signés de l'Agent Card malgré la sérialisation JSON (ch. 15 §15.1.1).",
+      "label": "Canonisation RFC 8785 fiabilisant la vérification JWS",
+      "justification": "La canonisation déterministe JCS garantit que le vérificateur reconstruit exactement les octets signés de l'Agent Card malgré la sérialisation JSON (ch. 15 §15.1.1).",
       "tomes": [
         "T1"
       ],
@@ -55071,7 +55071,7 @@
       "target_slug": "execution-durable-temporal",
       "type": "dependance_technique",
       "label": "Reprise durable et ordonnancement d'événements asynchrones",
-      "justification": "Les pipelines agentiques découplés (§23.3–23.4, §22.5) reposent sur des journaux durables et moteurs de workflow-as-code pour résister aux pannes. | EXIG-EVT-08 impose la déduplication sur l'identité CloudEvents et la clé transmise au système cible pour compenser la livraison au moins une fois.",
+      "justification": "Les pipelines agentiques découplés (§23.3–23.4, §22.5) reposent sur des journaux durables et moteurs de flux de travail-as-code pour résister aux pannes. | EXIG-EVT-08 impose la déduplication sur l'identité CloudEvents et la clé transmise au système cible pour compenser la livraison au moins une fois.",
       "tomes": [
         "T1",
         "T2"
@@ -55137,12 +55137,12 @@
     },
     {
       "relation_id": "REL_0125",
-      "source": "THM_cinq-blocs-sbb-tableau-12",
-      "target": "THM_trousse-executable-tome-8",
-      "source_slug": "cinq-blocs-sbb-tableau-12",
-      "target_slug": "trousse-executable-tome-8",
+      "source": "THM_trousse-executable-tome-8",
+      "target": "THM_cinq-blocs-sbb-tableau-12",
+      "source_slug": "trousse-executable-tome-8",
+      "target_slug": "cinq-blocs-sbb-tableau-12",
       "type": "operationnalisation",
-      "label": "Comble exécutablement les 5 emplacements SBB du Tableau 12",
+      "label": "Comble de façon exécutable les 5 emplacements SBB du Tableau 12 du Tome 2",
       "justification": "Implémentation de référence en Tome 8 des 5 SBB laissés vides au Tableau 12 du Tome 2 (secrets_vault, guardrails_engine, signed_human_approval_service, immutable_audit_ledger, finops_budget_quota_controller) et validateur YAML/JSON Schema 2027-B001.",
       "tomes": [
         "T8"
@@ -55398,8 +55398,8 @@
       "source_slug": "concordance-inter-tomes-div02",
       "target_slug": "profils-financiers-5-secteurs",
       "type": "concordance_inter_tomes",
-      "label": "Raccordement des 24 PEX (13 spéc. + 11 comblements)",
-      "justification": "T5 Annexe A.4 et T4 Annexe D résorbent le statut corpus_2026_absent des 24 PEX en 13 spécialisations de CAD26 et 11 comblements de lacunes sectorielles.",
+      "label": "Raccordement des 24 PEX en v1.2 (5 directes + 12 extensions + 7 comblements, contre 13 + 11 en v1.1)",
+      "justification": "Tome 5 Annexe A.4 et la clôture v1.2 (305 exigences, §28.1.1 et §36.1.1) résorbent le statut corpus_2026_absent des 24 PEX en 5 couvertures directes, 12 extensions et 7 comblements de lacunes sectorielles (remplaçant le bilan 13 + 11 de v1.1).",
       "tomes": [
         "T4",
         "T5"
@@ -55748,7 +55748,7 @@
       "target_slug": "dette-semantique-ontologies",
       "type": "attenuation_risque",
       "label": "Exactitude Decimal COMP-3 sans IEEE 754",
-      "justification": "Le transcodage EBCDIC et la conversion COMP-3 en arithmétique décimale exacte écartent les erreurs silencieuses d'arrondi binaire sur grands livres et frais NI 31-103.",
+      "justification": "Le transcodage EBCDIC et la conversion COMP-3 en arithmétique décimale exacte écartent les erreurs silencieuses d'arrondi binaire sur grands livres et frais Règlement 31-103 (NI 31-103).",
       "tomes": [
         "T4",
         "T5"
@@ -55816,8 +55816,8 @@
       "target": "THM_protocole-mcp",
       "source_slug": "couche-anti-corruption-acl",
       "target_slug": "protocole-mcp",
-      "type": "operationnalisation",
-      "label": "Encapsulation RPG/SAP derrière façade MCP",
+      "type": "dependance_technique",
+      "label": "Encapsulation RPG/SAP exposée derrière une façade MCP",
       "justification": "Les façades MCP spécialisées traduisent les appels normalisés en appels BAPI/RPG tout en gérant `QSYS2.SET_CLIENT_INFO`, l'idempotence ACID et le bulkhead (Ch. 30.10, 43.8).",
       "tomes": [
         "T3"
@@ -55846,10 +55846,10 @@
     },
     {
       "relation_id": "REL_0165",
-      "source": "THM_cout-non-interop-dette-integration",
-      "target": "THM_choregraphie-event-mesh",
-      "source_slug": "cout-non-interop-dette-integration",
-      "target_slug": "choregraphie-event-mesh",
+      "source": "THM_choregraphie-event-mesh",
+      "target": "THM_cout-non-interop-dette-integration",
+      "source_slug": "choregraphie-event-mesh",
+      "target_slug": "cout-non-interop-dette-integration",
       "type": "operationnalisation",
       "label": "Event Mesh opérationnalisant le découplage spatial et temporel",
       "justification": "L'Event Mesh, CloudEvents et le patron Outbox réalisent le découplage complet entre producteurs et consommateurs à travers régions et organisations (ch. 1 §1.3.4, §1.5.3).",
@@ -55863,10 +55863,10 @@
     },
     {
       "relation_id": "REL_0166",
-      "source": "THM_cout-non-interop-dette-integration",
-      "target": "THM_contrats-api-versionnement-conformite",
-      "source_slug": "cout-non-interop-dette-integration",
-      "target_slug": "contrats-api-versionnement-conformite",
+      "source": "THM_contrats-api-versionnement-conformite",
+      "target": "THM_cout-non-interop-dette-integration",
+      "source_slug": "contrats-api-versionnement-conformite",
+      "target_slug": "cout-non-interop-dette-integration",
       "type": "operationnalisation",
       "label": "Invariant découplage-contrat-évolution matérialisé par les API",
       "justification": "Les contrats OpenAPI/AsyncAPI, les en-têtes `Deprecation`/`Sunset` et le *consumer-driven contract testing* rendent opératoire l'invariant d'intégration (ch. 1 §1.4.2, ch. 3 §3.4.2–3.4.3).",
@@ -56135,8 +56135,8 @@
       "source_slug": "dette-cognitive-vs-technique",
       "target_slug": "anti-patrons-agentiques",
       "type": "concordance_inter_tomes",
-      "label": "Dette M×N et antipatrons Adapter Spaghetti / vernis",
-      "justification": "Les antipatrons Adapter Spaghetti et Agent-Washing/LLM-for-Everything matérialisent la dette technique de connecteurs dédiés et d'appels LLM injustifiés dans les portefeuilles (Ch. 43.7, 43.8).",
+      "label": "Dette M×N et anti-patrons Adapter Spaghetti / vernis",
+      "justification": "Les anti-patrons Adapter Spaghetti et Agent-Washing/LLM-for-Everything matérialisent la dette technique de connecteurs dédiés et d'appels LLM injustifiés dans les portefeuilles (Ch. 43.7, 43.8).",
       "tomes": [
         "T3"
       ],
@@ -56570,8 +56570,8 @@
       "target": "THM_tool-poisoning-rug-pull",
       "source_slug": "ecart-accord-protocolaire-comprehension",
       "target_slug": "tool-poisoning-rug-pull",
-      "type": "amplification_synergie",
-      "label": "Absence de vérification de comportement amplifiant le risque de description trompeuse",
+      "type": "tension_arbitrage",
+      "label": "Validité syntaxique des schémas face au risque de description trompeuse",
       "justification": "Puisque les schémas contraignent la forme mais non l'effet réel décrit en prose, l'écart description/comportement facilite autant l'erreur bénigne que le tool poisoning (ch. 9 §9.4.2).",
       "tomes": [
         "T1"
@@ -56600,10 +56600,10 @@
     },
     {
       "relation_id": "REL_0208",
-      "source": "THM_echanges-intentions-contrats-probabilistes",
-      "target": "THM_evaluation-agentique-bancs-capacite",
-      "source_slug": "echanges-intentions-contrats-probabilistes",
-      "target_slug": "evaluation-agentique-bancs-capacite",
+      "source": "THM_evaluation-agentique-bancs-capacite",
+      "target": "THM_echanges-intentions-contrats-probabilistes",
+      "source_slug": "evaluation-agentique-bancs-capacite",
+      "target_slug": "echanges-intentions-contrats-probabilistes",
       "type": "operationnalisation",
       "label": "Vérification statistique des contrats comportementaux probabilistes",
       "justification": "Les contrats comportementaux probabilistes (Bhardwaj, 2026) sont évalués par essais répétés et métriques de réussite à l'exécution plutôt que par schéma statique (ch. 7 §7.1.5, ch. 9 §9.5.1).",
@@ -56808,10 +56808,10 @@
     },
     {
       "relation_id": "REL_0220",
-      "source": "THM_efvp-transfert-hors-quebec",
-      "target": "THM_clauses-contractuelles-normatives-app",
-      "source_slug": "efvp-transfert-hors-quebec",
-      "target_slug": "clauses-contractuelles-normatives-app",
+      "source": "THM_clauses-contractuelles-normatives-app",
+      "target": "THM_efvp-transfert-hors-quebec",
+      "source_slug": "clauses-contractuelles-normatives-app",
+      "target_slug": "efvp-transfert-hors-quebec",
       "type": "operationnalisation",
       "label": "Constitue l'entente écrite art. 17 et encadre le CLOUD Act",
       "justification": "Les clauses 4, 5 et 6 (EXIG-APP-10..12) fournissent les engagements écrits art. 17/18.3 de la Loi sur le privé et les garanties anti-entraînement.",
@@ -56988,7 +56988,7 @@
       "target_slug": "partition-hybride-80-20",
       "type": "operationnalisation",
       "label": "Matérialise le contrôle déterministe en BPMN 2.0 / CMMN / Routine",
-      "justification": "Les sous-processus ad hoc Camunda (fromAi, plafond 10 appels), tâches agent UiPath Maestro et workflows Routine incarnent la séparation contrôle déterministe / cellule bornée (ch. 16.11, 17.2–17.4).",
+      "justification": "Les sous-processus ad hoc Camunda (fromAi, plafond 10 appels), tâches agent UiPath Maestro et flux de travail Routine incarnent la séparation contrôle déterministe / cellule bornée (ch. 16.11, 17.2–17.4).",
       "tomes": [
         "T3"
       ],
@@ -57077,12 +57077,12 @@
     },
     {
       "relation_id": "REL_0235",
-      "source": "THM_erreurs-silencieuses-cascade",
-      "target": "THM_choregraphie-event-mesh",
-      "source_slug": "erreurs-silencieuses-cascade",
-      "target_slug": "choregraphie-event-mesh",
+      "source": "THM_choregraphie-event-mesh",
+      "target": "THM_pathologies-reactives-backpressure",
+      "source_slug": "choregraphie-event-mesh",
+      "target_slug": "pathologies-reactives-backpressure",
       "type": "attenuation_risque",
-      "label": "Coupe les boucles par compteur de sauts",
+      "label": "Coupe les boucles d'écho et tempêtes d'événements par compteur de sauts",
       "justification": "Les extensions `xagenthopcount`/`xagentmaxhops` et le plafond par trace coupent déterministement les tempêtes d'événements (EXIG-EVT-06).",
       "tomes": [
         "T2"
@@ -57094,12 +57094,12 @@
     },
     {
       "relation_id": "REL_0236",
-      "source": "THM_erreurs-silencieuses-cascade",
-      "target": "THM_dette-semantique-ontologies",
-      "source_slug": "erreurs-silencieuses-cascade",
-      "target_slug": "dette-semantique-ontologies",
+      "source": "THM_validation-json-schema-ambigu-escalade",
+      "target": "THM_erreurs-silencieuses-cascade",
+      "source_slug": "validation-json-schema-ambigu-escalade",
+      "target_slug": "erreurs-silencieuses-cascade",
       "type": "attenuation_risque",
-      "label": "Prévient les écarts sémantiques par schémas typés",
+      "label": "Prévient les écarts sémantiques et structurels par schémas typés",
       "justification": "L'ancrage des schémas JSON Schema 2020-12 dans le vocabulaire métier et SemVer majeur prévient les erreurs que le transport ne voit pas (§ 6.1, EXIG-INT-02).",
       "tomes": [
         "T2"
@@ -57111,13 +57111,13 @@
     },
     {
       "relation_id": "REL_0237",
-      "source": "THM_erreurs-silencieuses-cascade",
-      "target": "THM_topologies-patrons-orchestration",
-      "source_slug": "erreurs-silencieuses-cascade",
-      "target_slug": "topologies-patrons-orchestration",
-      "type": "encadrement_normatif",
-      "label": "Impose la preuve mesurée avant multiagent",
-      "justification": "L'amplification d'erreur de 17,2× et les surcoûts 3–10× justifient EXIG-ORC-01 et EXIG-ORC-02 avant toute topologie multiagent (§ 7.1).",
+      "source": "THM_topologies-patrons-orchestration",
+      "target": "THM_erreurs-silencieuses-cascade",
+      "source_slug": "topologies-patrons-orchestration",
+      "target_slug": "erreurs-silencieuses-cascade",
+      "type": "attenuation_risque",
+      "label": "Catalogue fermé et preuve mesurée limitant les cascades d'erreurs",
+      "justification": "L'amplification d'erreur de 17,2× et les surcoûts 3–10× justifient EXIG-ORC-01 et EXIG-ORC-02 avant toute topologie multi-agent (§ 7.1).",
       "tomes": [
         "T2"
       ],
@@ -57182,10 +57182,10 @@
     },
     {
       "relation_id": "REL_0241",
-      "source": "THM_eu-ai-act",
-      "target": "THM_clauses-contractuelles-normatives-app",
-      "source_slug": "eu-ai-act",
-      "target_slug": "clauses-contractuelles-normatives-app",
+      "source": "THM_clauses-contractuelles-normatives-app",
+      "target": "THM_eu-ai-act",
+      "source_slug": "clauses-contractuelles-normatives-app",
+      "target_slug": "eu-ai-act",
       "type": "operationnalisation",
       "label": "Impose l'accord écrit art. 25(4) avec les tiers",
       "justification": "EXIG-CON-15 et la clause 9 (EXIG-APP-15) requièrent un accord écrit avec tout fournisseur de composants intégrés à un système à haut risque.",
@@ -57256,7 +57256,7 @@
       "target_slug": "modele-maturite-5-niveaux-dimensions",
       "type": "projection_temporelle",
       "label": "Cale la conformité SMQ EN 18286 sur J2a et J3",
-      "justification": "La norme harmonisée EN 18286:2026 s'impose au jalon J2a (1er novembre 2027) avant l'entrée en vigueur de l'annexe III du RIA le 2 décembre 2027 (EXIG-CON-30).",
+      "justification": "La norme harmonisée EN 18286:2026 s'impose au jalon J2a (1ᵉʳ novembre 2027) avant l'entrée en vigueur de l'annexe III du RIA le 2 décembre 2027 (EXIG-CON-30).",
       "tomes": [
         "T2"
       ],
@@ -57339,10 +57339,10 @@
     },
     {
       "relation_id": "REL_0250",
-      "source": "THM_eu-ai-act",
-      "target": "THM_supervision-hitl-hotl-abstention",
-      "source_slug": "eu-ai-act",
-      "target_slug": "supervision-hitl-hotl-abstention",
+      "source": "THM_supervision-hitl-hotl-abstention",
+      "target": "THM_eu-ai-act",
+      "source_slug": "supervision-hitl-hotl-abstention",
+      "target_slug": "eu-ai-act",
       "type": "operationnalisation",
       "label": "Contrôle humain effectif art. 14 par HOTL",
       "justification": "L'ergonomie différentielle HOTL (forçage cognitif, plafond 33/quart, tests canaris ASI09) et le bouton d'arrêt SOC concrétisent l'article 14 de l'EU AI Act (Ch. 35.1, 41.9).",
@@ -57382,7 +57382,7 @@
       "source_slug": "evaluation-agentique-bancs-capacite",
       "target_slug": "constance-pass-k",
       "type": "operationnalisation",
-      "label": "Τ-bench et HAL opérationnalisent l'évaluation à coût et consistance contrôlés",
+      "label": "τ-bench et HAL opérationnalisent l'évaluation à coût et consistance contrôlés",
       "justification": "τ-bench introduit la métrique pass^k et le Holistic Agent Leaderboard mesure la performance à budget égal pour corriger les biais des scores isolés (ch. 6 §6.3.3, §6.4.2).",
       "tomes": [
         "T1"
@@ -57416,7 +57416,7 @@
       "source_slug": "execution-durable-temporal",
       "target_slug": "approbation-ciba",
       "type": "dependance_technique",
-      "label": "Suspend sans coût le workflow sur awakeable jusqu'au retour CIBA",
+      "label": "Suspend sans coût le flux de travail sur awakeable jusqu'au retour CIBA",
       "justification": "Dans les flux T3/T4 (Extrait 18.1, ch. 18.10–18.12), Temporal met l'exécution en veille à coût nul pendant plusieurs jours et revalide mandat et état du monde à réception du signal CIBA.",
       "tomes": [
         "T3"
@@ -57434,7 +57434,7 @@
       "target_slug": "choregraphie-event-mesh",
       "type": "amplification_synergie",
       "label": "Unit sagas multi-jours déterministes et bus événementiel découplé",
-      "justification": "Coupler Temporal (reprise et mémoire de workflow long) avec Kafka/Solace + CloudEvents 1.0 (ch. 18.12, 19.8) permet des transactions inter-divisions à la fois durables et faiblement couplées.",
+      "justification": "Coupler Temporal (reprise et mémoire de flux de travail long) avec Kafka/Solace + CloudEvents 1.0 (ch. 18.12, 19.8) permet des transactions inter-divisions à la fois durables et faiblement couplées.",
       "tomes": [
         "T3"
       ],
@@ -57505,7 +57505,7 @@
       "target_slug": "semantique-effet-idempotence-uetr",
       "type": "tension_arbitrage",
       "label": "Illusion du rollback logiciel face à l'irréversibilité métier",
-      "justification": "Les sections 47.11 et 48.3 soulignent que la reprise technique d'un workflow ou d'un artefact à état ne peut annuler un engagement financier irréversible sans saga.",
+      "justification": "Les sections 47.11 et 48.3 soulignent que la reprise technique d'un flux de travail ou d'un artefact à état ne peut annuler un engagement financier irréversible sans saga.",
       "tomes": [
         "T1"
       ],
@@ -57522,7 +57522,7 @@
       "target_slug": "supervision-hitl-hotl-abstention",
       "type": "amplification_synergie",
       "label": "Pérennise les attentes humaines longues sans coût actif",
-      "justification": "Les mécanismes Signals et Awakeables permettent de suspendre un workflow des jours sous SLA pour révision humaine HOTL sans immobiliser de mémoire ni perdre l'état.",
+      "justification": "Les mécanismes Signals et Awakeables permettent de suspendre un flux de travail des jours sous SLA pour révision humaine HOTL sans immobiliser de mémoire ni perdre l'état.",
       "tomes": [
         "T6"
       ],
@@ -57533,10 +57533,10 @@
     },
     {
       "relation_id": "REL_0261",
-      "source": "THM_exigences-cre-ia-305",
-      "target": "THM_banc-evalops-hermetique",
-      "source_slug": "exigences-cre-ia-305",
-      "target_slug": "banc-evalops-hermetique",
+      "source": "THM_banc-evalops-hermetique",
+      "target": "THM_exigences-cre-ia-305",
+      "source_slug": "banc-evalops-hermetique",
+      "target_slug": "exigences-cre-ia-305",
       "type": "operationnalisation",
       "label": "Vérifie syntaxiquement les 108 blocs CI et badges probatoires DC-P11",
       "justification": "Le registre Borealis-Bench/ci-audit-108-blocs/registre-108-blocs.json automatise le contrôle des 90 blocs exécutés en CI (83,3 %) sur les 108 extraits du Tome 3 (Ouverture 0.5).",
@@ -57556,7 +57556,7 @@
       "target_slug": "catalogue-31-adr-12-dec",
       "type": "concordance_inter_tomes",
       "label": "Réconciliation 305 EXIG-* × 75 PRR × 31 ADR → 12 DEC",
-      "justification": "T5 Annexes B et C soudent les 31 ADR de C27, les 12 DEC de T4, les 75 PRR et les 305 EXIG-* en une grille d'homologation unique à 41 rubriques.",
+      "justification": "T5 Annexes B et C soudent les 31 ADR de C27, les 12 DEC de T4, les 75 PRR et les 305 EXIG-* en une grille d'homologation unique à 43 rubriques (41 rubriques initiales de T5 étendues en v1.2).",
       "tomes": [
         "T4",
         "T5"
@@ -57568,10 +57568,10 @@
     },
     {
       "relation_id": "REL_0263",
-      "source": "THM_exigences-cre-ia-305",
-      "target": "THM_grille-homologation-et-fiche-agent",
-      "source_slug": "exigences-cre-ia-305",
-      "target_slug": "grille-homologation-et-fiche-agent",
+      "source": "THM_grille-homologation-et-fiche-agent",
+      "target": "THM_exigences-cre-ia-305",
+      "source_slug": "grille-homologation-et-fiche-agent",
+      "target_slug": "exigences-cre-ia-305",
       "type": "operationnalisation",
       "label": "Projette les 305 exigences dans la grille d'homologation",
       "justification": "L'Annexe A regroupe les 305 exigences de l'Annexe D en points vérifiables et bloque tout passage en production hors conformité ou dérogation.",
@@ -57590,7 +57590,7 @@
       "source_slug": "exigences-cre-ia-305",
       "target_slug": "ligne-directrice-amf",
       "type": "concordance_inter_tomes",
-      "label": "Comblement partiel en Annexe N de la lacune de contenu AMF du socle",
+      "label": "Comblement partiel en Tome 1 Annexe N de la lacune de contenu AMF du socle",
       "justification": "Le report de la Note AMF IA (CRE-IA-2026-01-QC, Annexe N.3) ferme partiellement la lacune ouverte aux ch. 27, 42 et §49.12 (§10.4).",
       "tomes": [
         "T1"
@@ -57739,10 +57739,10 @@
     },
     {
       "relation_id": "REL_0273",
-      "source": "THM_federation-multi-plateformes-gravite",
-      "target": "THM_soc-soar-coupe-circuit",
-      "source_slug": "federation-multi-plateformes-gravite",
-      "target_slug": "soc-soar-coupe-circuit",
+      "source": "THM_soc-soar-coupe-circuit",
+      "target": "THM_federation-multi-plateformes-gravite",
+      "source_slug": "soc-soar-coupe-circuit",
+      "target_slug": "federation-multi-plateformes-gravite",
       "type": "attenuation_risque",
       "label": "Prévient les boucles circulaires de webhooks inter-SaaS",
       "justification": "Le vecteur signé anti-boucle et la détection d'oscillation (Extrait 27.3 sur agentgateway) coupent les réentrances infinies entre Agentforce, ServiceNow, SAP Joule et Copilot Studio (ch. 27.8).",
@@ -57761,8 +57761,8 @@
       "source_slug": "feuille-de-route-phases-90-jours-indicateurs",
       "target_slug": "bsif-e-23",
       "type": "projection_temporelle",
-      "label": "Impose l'inventaire E-23 au 1er mai 2027 sans glissement",
-      "justification": "Les règles de progression de la section 15.1 traitent E-23 (1er mai 2027) et RIA annexe III (J2a, 1er novembre 2027) comme des échéances externes incompressibles.",
+      "label": "Impose l'inventaire E-23 au 1ᵉʳ mai 2027 sans glissement",
+      "justification": "Les règles de progression de la section 15.1 traitent E-23 (1ᵉʳ mai 2027) et RIA annexe III (J2a, 1ᵉʳ novembre 2027) comme des échéances externes incompressibles.",
       "tomes": [
         "T2"
       ],
@@ -57948,8 +57948,8 @@
       "target": "THM_observabilite-otel-genai",
       "source_slug": "finops-focus-cpo",
       "target_slug": "observabilite-otel-genai",
-      "type": "operationnalisation",
-      "label": "Impute les coûts et le carbone via OTel + FOCUS v1.4",
+      "type": "amplification_synergie",
+      "label": "Imputation conjointe des coûts et du carbone via OTel et FOCUS v1.4",
       "justification": "L'association des spans OpenTelemetry GenAI et du schéma FOCUS v1.4 étendu carbone (CAP-046) opérationnalise le calcul exact du CPO.",
       "tomes": [
         "T6",
@@ -58124,7 +58124,7 @@
       "source_slug": "glossaire-normatif-tome-2",
       "target_slug": "distinction-agent-flux-ambiant",
       "type": "concordance_inter_tomes",
-      "label": "Aligne les définitions bilingues fr-CA/en sur le Tableau 7",
+      "label": "Aligne les définitions bilingues fr-CA/en sur le Tableau 7 du Tome 2",
       "justification": "L'Annexe E unifie la terminologie et les équivalents anglais tout en subordonnant les entrées abrégées au Tableau 7 et au corps.",
       "tomes": [
         "T2"
@@ -58153,10 +58153,10 @@
     },
     {
       "relation_id": "REL_0297",
-      "source": "THM_gouvernance-acces-rag-ancrage",
-      "target": "THM_loi-25-article-12-1",
-      "source_slug": "gouvernance-acces-rag-ancrage",
-      "target_slug": "loi-25-article-12-1",
+      "source": "THM_loi-25-article-12-1",
+      "target": "THM_gouvernance-acces-rag-ancrage",
+      "source_slug": "loi-25-article-12-1",
+      "target_slug": "gouvernance-acces-rag-ancrage",
       "type": "encadrement_normatif",
       "label": "Traçabilité des sources requise pour justifier les décisions",
       "justification": "La citation affirmation par affirmation et le cloisonnement RBAC/ABAC soutiennent l'obligation d'expliquer les renseignements personnels et paramètres ayant mené à la décision (ch. 5 §5.4.2, ch. 17 §17.4).",
@@ -58456,7 +58456,7 @@
       "target_slug": "execution-durable-temporal",
       "type": "encadrement_normatif",
       "label": "Impose la revalidation du mandat et de la révocation au réveil",
-      "justification": "Dans Temporal (Extrait 18.4, ch. 18.10–18.11), un workflow réveillé après hibernation multi-jours doit revalider cryptographiquement que le mandat utilisateur et la NHI ne sont pas révoqués.",
+      "justification": "Dans Temporal (Extrait 18.4, ch. 18.10–18.11), un flux de travail réveillé après hibernation multi-jours doit revalider cryptographiquement que le mandat utilisateur et la NHI ne sont pas révoqués.",
       "tomes": [
         "T3"
       ],
@@ -58501,10 +58501,10 @@
     },
     {
       "relation_id": "REL_0317",
-      "source": "THM_identite-non-humaine-nhi",
-      "target": "THM_spiffe-spire-attestation",
-      "source_slug": "identite-non-humaine-nhi",
-      "target_slug": "spiffe-spire-attestation",
+      "source": "THM_spiffe-spire-attestation",
+      "target": "THM_identite-non-humaine-nhi",
+      "source_slug": "spiffe-spire-attestation",
+      "target_slug": "identite-non-humaine-nhi",
       "type": "operationnalisation",
       "label": "Délivre l'identité sans secret statique via SVID/OIDC",
       "justification": "EXIG-IAM-04 et EXIG-IAM-05 éliminent clés d'API et secrets statiques par l'attestation cryptographique de plateforme (X.509-SVID, JWT-SVID, OIDC).",
@@ -58535,12 +58535,12 @@
     },
     {
       "relation_id": "REL_0319",
-      "source": "THM_injection-indirecte-prompt",
-      "target": "THM_confinement-shadi-sandbox",
-      "source_slug": "injection-indirecte-prompt",
-      "target_slug": "confinement-shadi-sandbox",
+      "source": "THM_confinement-shadi-sandbox",
+      "target": "THM_non-compositionnalite-surete-surface-attaques",
+      "source_slug": "confinement-shadi-sandbox",
+      "target_slug": "non-compositionnalite-surete-surface-attaques",
       "type": "attenuation_risque",
-      "label": "Confine l'exécution du code généré après lecture non fiable",
+      "label": "Confine l'exécution de code généré hors réseau et sans secret",
       "justification": "Une injection amenant l'agent à écrire du code est contenue par la microVM sans réseau ni secret et par la porte statique anti-`eval` (EXIG-SEC-08 à EXIG-SEC-17).",
       "tomes": [
         "T2"
@@ -58586,12 +58586,12 @@
     },
     {
       "relation_id": "REL_0322",
-      "source": "THM_injection-indirecte-prompt",
-      "target": "THM_regle-de-deux-opa",
-      "source_slug": "injection-indirecte-prompt",
-      "target_slug": "regle-de-deux-opa",
+      "source": "THM_regle-de-deux-opa",
+      "target": "THM_non-compositionnalite-surete-surface-attaques",
+      "source_slug": "regle-de-deux-opa",
+      "target_slug": "non-compositionnalite-surete-surface-attaques",
       "type": "attenuation_risque",
-      "label": "Rompt la triade létale face à l'injection présumée",
+      "label": "Rompt la triade létale dans les sessions composées multi-outils",
       "justification": "Comme aucun détecteur n'élimine l'injection (EXIG-SEC-05), EXIG-SEC-04 et EXIG-SEC-06 cassent la triade létale de façon déterministe hors modèle.",
       "tomes": [
         "T2"
@@ -58671,10 +58671,10 @@
     },
     {
       "relation_id": "REL_0327",
-      "source": "THM_iso-iec-42001-nist",
-      "target": "THM_banc-evalops-hermetique",
-      "source_slug": "iso-iec-42001-nist",
-      "target_slug": "banc-evalops-hermetique",
+      "source": "THM_banc-evalops-hermetique",
+      "target": "THM_iso-iec-42001-nist",
+      "source_slug": "banc-evalops-hermetique",
+      "target_slug": "iso-iec-42001-nist",
       "type": "operationnalisation",
       "label": "Cycle PDCA ISO 42001 câblé en CI/CD",
       "justification": "Les phases Plan-Do-Check-Act d'ISO/IEC 42001 et les fonctions NIST AI RMF deviennent exécutables via le registre, les portes Cedar/OPA et les suites `tau-bench` (Ch. 38.8).",
@@ -58709,10 +58709,10 @@
     },
     {
       "relation_id": "REL_0329",
-      "source": "THM_iso-iec-42001-nist",
-      "target": "THM_exigences-cre-ia-305",
-      "source_slug": "iso-iec-42001-nist",
-      "target_slug": "exigences-cre-ia-305",
+      "source": "THM_exigences-cre-ia-305",
+      "target": "THM_iso-iec-42001-nist",
+      "source_slug": "exigences-cre-ia-305",
+      "target_slug": "iso-iec-42001-nist",
       "type": "operationnalisation",
       "label": "Fédère les preuves des 305 EXIG-* dans un index unique",
       "justification": "EXIG-CON-18 et le Tableau 50 rattachent chaque preuve de la plateforme aux identifiants EXIG-* pour satisfaire simultanément Loi 25, BSIF, RIA, NIST et ISO 42001.",
@@ -58906,7 +58906,7 @@
       "target_slug": "banc-evalops-hermetique",
       "type": "encadrement_normatif",
       "label": "Encadre l'équité bilingue et la non-substitution d'avis",
-      "justification": "L'exigence EXIG-AMF-11 (reliée au repère attendu du 1er mai 2027 sous réserve AIBanks.ca) est testée par paires métamorphiques bilingues FR/EN et divulgation non-avis.",
+      "justification": "L'exigence EXIG-AMF-11 (reliée au repère attendu du 1ᵉʳ mai 2027 sous réserve AIBanks.ca) est testée par paires métamorphiques bilingues FR/EN et divulgation non-avis.",
       "tomes": [
         "T7",
         "T8"
@@ -58923,8 +58923,8 @@
       "source_slug": "ligne-directrice-amf",
       "target_slug": "bsif-e-23",
       "type": "concordance_inter_tomes",
-      "label": "Synchronise les échéances prudentielles du 1er mai 2027 Québec/fédéral",
-      "justification": "L'Ouverture (0.1 et 0.4) met en regard l'entrée en vigueur du BSIF E-23 et l'alignement de la ligne directrice AMF (Note AMF IA / 12 EXIG-AMF) au 1er mai 2027.",
+      "label": "Synchronise les échéances prudentielles du 1ᵉʳ mai 2027 Québec/fédéral",
+      "justification": "L'Ouverture (0.1 et 0.4) met en regard l'entrée en vigueur du BSIF E-23 et l'alignement de la ligne directrice AMF (Note AMF IA / 12 EXIG-AMF) au 1ᵉʳ mai 2027.",
       "tomes": [
         "T3"
       ],
@@ -58941,7 +58941,7 @@
       "target_slug": "exigences-cre-ia-305",
       "type": "encadrement_normatif",
       "label": "Raccorde 41 attentes AMF et 12 EXIG-AMF à CRE-IA-2026-01-QC",
-      "justification": "La Synthèse de l'Ouverture et la section 0.4 rattachent explicitement les attentes de l'AMF (1er mai 2027, source PDF primaire en statut F) aux exigences traçables du référentiel CRE-IA. | Les 41 attentes de Note AMF IA (échéance 1er mai 2027) deviennent 12 exigences opposables EXIG-AMF-01..12 au sein des 305 EXIG-* de CRE-IA-2026-01 v1.2.",
+      "justification": "La Synthèse de l'Ouverture et la section 0.4 rattachent explicitement les attentes de l'AMF (1ᵉʳ mai 2027, source PDF primaire en statut F) aux exigences traçables du référentiel CRE-IA. | Les 41 attentes de Note AMF IA (échéance 1ᵉʳ mai 2027) deviennent 12 exigences opposables EXIG-AMF-01..12 au sein des 305 EXIG-* de CRE-IA-2026-01 v1.2.",
       "tomes": [
         "T3",
         "T4",
@@ -58961,7 +58961,7 @@
       "target_slug": "gouvernance-interne-registre-trois-lignes",
       "type": "encadrement_normatif",
       "label": "41 attentes AMF et 12 EXIG-AMF obligatoires",
-      "justification": "Le profil `CRE-IA-2026-01-QC` (`EXIG-AMF-01` à `EXIG-AMF-12`) impose un membre de haute direction imputable, un répertoire centralisé SIA, l'équité et la divulgation au 1er mai 2027 (Ch. 38.3).",
+      "justification": "Le profil `CRE-IA-2026-01-QC` (`EXIG-AMF-01` à `EXIG-AMF-12`) impose un membre de haute direction imputable, un répertoire centralisé SIA, l'équité et la divulgation au 1ᵉʳ mai 2027 (Ch. 38.3).",
       "tomes": [
         "T3"
       ],
@@ -58972,10 +58972,10 @@
     },
     {
       "relation_id": "REL_0344",
-      "source": "THM_ligne-directrice-amf",
-      "target": "THM_pont-reglementation-frames-deterministes",
-      "source_slug": "ligne-directrice-amf",
-      "target_slug": "pont-reglementation-frames-deterministes",
+      "source": "THM_pont-reglementation-frames-deterministes",
+      "target": "THM_ligne-directrice-amf",
+      "source_slug": "pont-reglementation-frames-deterministes",
+      "target_slug": "ligne-directrice-amf",
       "type": "operationnalisation",
       "label": "Traduction de la ligne directrice AMF vers les frames",
       "justification": "La table 29.1 convertit les attentes de gouvernance et de contrôle de la Ligne directrice IA de l'AMF en propriétés déterministes d'exécution.",
@@ -59092,12 +59092,12 @@
     },
     {
       "relation_id": "REL_0351",
-      "source": "THM_loi-25-article-12-1",
-      "target": "THM_double-couloir-probatoire-pii",
-      "source_slug": "loi-25-article-12-1",
-      "target_slug": "double-couloir-probatoire-pii",
+      "source": "THM_double-couloir-probatoire-pii",
+      "target": "THM_droit-effacement-portabilite-loi-25",
+      "source_slug": "double-couloir-probatoire-pii",
+      "target_slug": "droit-effacement-portabilite-loi-25",
       "type": "operationnalisation",
-      "label": "Explicabilité et effacement via DEK client",
+      "label": "Effacement vérifiable via clé DEK client en double couloir probatoire",
       "justification": "La voûte forensique à chiffrement par dossier client (DEK sous KMS) permet de reconstituer les facteurs de décision Loi 25 art. 12.1 puis d'effacer par destruction de clé (Ch. 33.10).",
       "tomes": [
         "T3"
@@ -59126,10 +59126,10 @@
     },
     {
       "relation_id": "REL_0353",
-      "source": "THM_loi-25-article-12-1",
-      "target": "THM_pont-reglementation-frames-deterministes",
-      "source_slug": "loi-25-article-12-1",
-      "target_slug": "pont-reglementation-frames-deterministes",
+      "source": "THM_pont-reglementation-frames-deterministes",
+      "target": "THM_loi-25-article-12-1",
+      "source_slug": "pont-reglementation-frames-deterministes",
+      "target_slug": "loi-25-article-12-1",
       "type": "operationnalisation",
       "label": "Traduction de l'article 12.1 en pistes d'explication et révision",
       "justification": "Le ch. 29 impose aux frames la production déterministe des motifs, facteurs et mécanismes de rectification/révision exigés par l'art. 12.1.",
@@ -59308,10 +59308,10 @@
     },
     {
       "relation_id": "REL_0363",
-      "source": "THM_matrice-protocoles-exigences-reglementaires",
-      "target": "THM_maillage-agents-pep-pdp-zero-trust",
-      "source_slug": "matrice-protocoles-exigences-reglementaires",
-      "target_slug": "maillage-agents-pep-pdp-zero-trust",
+      "source": "THM_maillage-agents-pep-pdp-zero-trust",
+      "target": "THM_matrice-protocoles-exigences-reglementaires",
+      "source_slug": "maillage-agents-pep-pdp-zero-trust",
+      "target_slug": "matrice-protocoles-exigences-reglementaires",
       "type": "operationnalisation",
       "label": "Comblement des zones Z1–Z5 par les couches de maillage et gouvernance",
       "justification": "Les zones de compensation Z1–Z5 identifiées au ch. 42 s'implémentent au sein du maillage PEP/PDP, du passeport et de l'observabilité probatoire.",
@@ -59398,7 +59398,7 @@
       "target": "THM_efvp-transfert-hors-quebec",
       "source_slug": "memoire-coala-4-tiroirs",
       "target_slug": "efvp-transfert-hors-quebec",
-      "type": "encadrement_normatif",
+      "type": "operationnalisation",
       "label": "Localise les magasins mémoire et plongements RP",
       "justification": "EXIG-CON-05 et EXIG-CON-10 imposent de cartographier le lieu de traitement des mémoires/index et de borner la rétention des plongements vectoriels traités comme RP.",
       "tomes": [
@@ -59502,8 +59502,8 @@
       "target": "THM_raisonnement-inference-limites-planification",
       "source_slug": "modele-comme-juge-biais-calibration",
       "target_slug": "raisonnement-inference-limites-planification",
-      "type": "amplification_synergie",
-      "label": "Trace de raisonnement infidèle trompant les juges automatisés",
+      "type": "tension_arbitrage",
+      "label": "Traces de raisonnement plausibles face à la fiabilité des juges automatisés",
       "justification": "L'infidélité de la chaîne de pensée (Turpin 2023, Korbak 2025) permet à un agent de produire une justification plausible qui trompe le modèle-juge lors de l'évaluation de trajectoire (ch. 4 §4.3.4, ch. 6 §6.3.2).",
       "tomes": [
         "T1"
@@ -59587,8 +59587,8 @@
       "target": "THM_injection-indirecte-prompt",
       "source_slug": "non-compositionnalite-surete-surface-attaques",
       "target_slug": "injection-indirecte-prompt",
-      "type": "amplification_synergie",
-      "label": "Composition multi-serveurs reconstituant la triade létale",
+      "type": "tension_arbitrage",
+      "label": "Modularité multi-serveurs face à la reconstitution émergente de la triade létale",
       "justification": "Trois serveurs ou agents individuellement bénins (données privées, ingestion externe, requête sortante) reconstituent ensemble la triade létale amplifiée au niveau de l'orchestrateur (ch. 11 §11.1.2).",
       "tomes": [
         "T1"
@@ -59604,8 +59604,8 @@
       "target": "THM_modes-echecs-emergents-frontiere",
       "source_slug": "non-compositionnalite-surete-surface-attaques",
       "target_slug": "modes-echecs-emergents-frontiere",
-      "type": "amplification_synergie",
-      "label": "Cumul des erreurs en langage naturel le long des délégations",
+      "type": "tension_arbitrage",
+      "label": "Souplesse du langage naturel face au cumul silencieux d'erreurs",
       "justification": "Une erreur sémantique plausible émise par un agent amont franchit les contrôles syntaxiques et se mémorise en aval, amplifiant les cascades d'erreurs sur long horizon (ch. 11 §11.2.2).",
       "tomes": [
         "T1"
@@ -59651,10 +59651,10 @@
     },
     {
       "relation_id": "REL_0383",
-      "source": "THM_noyau-controle-possede-cap",
-      "target": "THM_fabrique-agents-certification-reemission",
-      "source_slug": "noyau-controle-possede-cap",
-      "target_slug": "fabrique-agents-certification-reemission",
+      "source": "THM_fabrique-agents-certification-reemission",
+      "target": "THM_noyau-controle-possede-cap",
+      "source_slug": "fabrique-agents-certification-reemission",
+      "target_slug": "noyau-controle-possede-cap",
       "type": "operationnalisation",
       "label": "Mise en œuvre du registre gouverné via la fabrique d'agents",
       "justification": "Les gabarits gouvernés, le registre (§41.3) et la barrière d'admission (§41.4) concrétisent le noyau de contrôle d'entreprise.",
@@ -59771,10 +59771,10 @@
     },
     {
       "relation_id": "REL_0390",
-      "source": "THM_observabilite-otel-genai",
-      "target": "THM_eu-ai-act",
-      "source_slug": "observabilite-otel-genai",
-      "target_slug": "eu-ai-act",
+      "source": "THM_eu-ai-act",
+      "target": "THM_observabilite-otel-genai",
+      "source_slug": "eu-ai-act",
+      "target_slug": "observabilite-otel-genai",
       "type": "encadrement_normatif",
       "label": "Auditabilité opposable inspirée de PSD2 et des obligations d'interface",
       "justification": "L'obligation d'interfaces ouvertes journalisées dans PSD2 illustre la forme d'une auditabilité opposable à un tiers que l'observabilité distribuée doit soutenir (ch. 3 §3.4.6).",
@@ -59984,10 +59984,10 @@
     },
     {
       "relation_id": "REL_0402",
-      "source": "THM_partition-hybride-80-20",
-      "target": "THM_topologies-patrons-orchestration",
-      "source_slug": "partition-hybride-80-20",
-      "target_slug": "topologies-patrons-orchestration",
+      "source": "THM_topologies-patrons-orchestration",
+      "target": "THM_partition-hybride-80-20",
+      "source_slug": "topologies-patrons-orchestration",
+      "target_slug": "partition-hybride-80-20",
       "type": "operationnalisation",
       "label": "Place le flux déterministe en patron par défaut",
       "justification": "PRIN-08 et EXIG-ORC-01 érigent le flux déterministe à étapes agentiques en patron 1 par défaut dans l'arbre de décision (§ 7.2, § 7.3).",
@@ -60525,10 +60525,10 @@
     },
     {
       "relation_id": "REL_0433",
-      "source": "THM_post-quantique-ml-dsa-slh-dsa",
-      "target": "THM_bsif-e-23",
-      "source_slug": "post-quantique-ml-dsa-slh-dsa",
-      "target_slug": "bsif-e-23",
+      "source": "THM_bsif-e-23",
+      "target": "THM_post-quantique-ml-dsa-slh-dsa",
+      "source_slug": "bsif-e-23",
+      "target_slug": "post-quantique-ml-dsa-slh-dsa",
       "type": "encadrement_normatif",
       "label": "Distinction des calendriers PQC face au bulletin quantique BSIF",
       "justification": "Le ch. 21 §21.8 établit que le décret US 14412 (2030/2031) et ITSM.40.001 (2031/2035) ne lient pas les institutions financières canadiennes, tandis que le bulletin BSIF de mars 2026 ne fixe aucune échéance propre.",
@@ -60858,10 +60858,10 @@
     },
     {
       "relation_id": "REL_0452",
-      "source": "THM_profils-financiers-5-secteurs",
-      "target": "THM_profil-banque-m14",
-      "source_slug": "profils-financiers-5-secteurs",
-      "target_slug": "profil-banque-m14",
+      "source": "THM_profil-banque-m14",
+      "target": "THM_profils-financiers-5-secteurs",
+      "source_slug": "profil-banque-m14",
+      "target_slug": "profils-financiers-5-secteurs",
       "type": "operationnalisation",
       "label": "Déclinaison bancaire du socle transversal des 5 profils",
       "justification": "Le profil Banque spécialise le cadre transversal des 5 profils financiers via PEX-001 à PEX-005.",
@@ -60876,10 +60876,10 @@
     },
     {
       "relation_id": "REL_0453",
-      "source": "THM_profils-financiers-5-secteurs",
-      "target": "THM_profil-groupe-diversifie-m18",
-      "source_slug": "profils-financiers-5-secteurs",
-      "target_slug": "profil-groupe-diversifie-m18",
+      "source": "THM_profil-groupe-diversifie-m18",
+      "target": "THM_profils-financiers-5-secteurs",
+      "source_slug": "profil-groupe-diversifie-m18",
+      "target_slug": "profils-financiers-5-secteurs",
       "type": "operationnalisation",
       "label": "Synthèse comparative et extension conglomérale",
       "justification": "M-18.12 confronte les quatre sous-secteurs pour établir la règle de mutualisation technique sans données clients du groupe diversifié.",
@@ -61037,10 +61037,10 @@
     },
     {
       "relation_id": "REL_0462",
-      "source": "THM_protocole-ap2",
-      "target": "THM_approbation-ciba",
-      "source_slug": "protocole-ap2",
-      "target_slug": "approbation-ciba",
+      "source": "THM_approbation-ciba",
+      "target": "THM_protocole-ap2",
+      "source_slug": "approbation-ciba",
+      "target_slug": "protocole-ap2",
       "type": "encadrement_normatif",
       "label": "Soumet tout paiement agentique à l'approbation P3 signée",
       "justification": "EXIG-INT-22 classe P3 tout paiement déclenché par un agent (AP2/ACP/UCP) et exige une approbation humaine signée par transaction.",
@@ -61244,10 +61244,10 @@
     },
     {
       "relation_id": "REL_0474",
-      "source": "THM_protocole-mcp",
-      "target": "THM_passerelle-mcp-ai-gateway",
-      "source_slug": "protocole-mcp",
-      "target_slug": "passerelle-mcp-ai-gateway",
+      "source": "THM_passerelle-mcp-ai-gateway",
+      "target": "THM_protocole-mcp",
+      "source_slug": "passerelle-mcp-ai-gateway",
+      "target_slug": "protocole-mcp",
       "type": "operationnalisation",
       "label": "Médiation et contrôle de trafic MCP par passerelle IA",
       "justification": "Les passerelles API/IA (ContextForge, agentgateway, §24.1, §45.2) servent les appels MCP tout en appliquant limitation de débit, cache et journalisation. | EXIG-MCP-01 et EXIG-MCP-08 obligent Streamable HTTP + TLS derrière la passerelle pour tout environnement serveur.",
@@ -61422,10 +61422,10 @@
     },
     {
       "relation_id": "REL_0484",
-      "source": "THM_protocole-wyvern-g0-g5",
-      "target": "THM_trousse-executable-tome-8",
-      "source_slug": "protocole-wyvern-g0-g5",
-      "target_slug": "trousse-executable-tome-8",
+      "source": "THM_trousse-executable-tome-8",
+      "target": "THM_protocole-wyvern-g0-g5",
+      "source_slug": "trousse-executable-tome-8",
+      "target_slug": "protocole-wyvern-g0-g5",
       "type": "operationnalisation",
       "label": "Scelle les 14 extraits par SHA-256 et vérifie 4 vecteurs tiers",
       "justification": "Le contrat CA-G0-SYNC et la barrière G0 lient mécaniquement le code exécuté et les suites tierces (RFC 8785, ACVP, a2a-tck, OWASP SRC-055) au texte du manuel.",
@@ -61675,8 +61675,8 @@
       "target": "THM_injection-indirecte-prompt",
       "source_slug": "rails-paiement-commerce-agentique",
       "target_slug": "injection-indirecte-prompt",
-      "type": "amplification_synergie",
-      "label": "Injection détournant l'agent pour signer un mandat de paiement valide",
+      "type": "tension_arbitrage",
+      "label": "Automatisation des mandats de paiement face au détournement par injection indirecte",
       "justification": "L'évaluation *Whispers of Wealth* (Debi et coll., 2026) montre qu'une injection d'invite amène l'agent à signer cryptographiquement un mandat AP2 malveillant parfaitement conforme (ch. 10 §10.3.4).",
       "tomes": [
         "T1"
@@ -61778,8 +61778,8 @@
       "source_slug": "referentiel-annexes-protocoles-chronologie",
       "target_slug": "decisions-architecture-adr-001-031",
       "type": "concordance_inter_tomes",
-      "label": "Synthèse des chapitres 1–47 dans Annexes B/C/F",
-      "justification": "Les annexes B, C et F synthétisent les protocoles (ch. 5–10), grilles d'interopérabilité/orchestration/plateforme (ch. 3, 16–27) et les 31 ADR des volets Mise en œuvre (Annexes B, C, F).",
+      "label": "Synthèse historique issue du Tome 3 (chapitres 1–47, Annexes B/C/F)",
+      "justification": "Les annexes B, C et F du Tome 3 synthétisent les protocoles (ch. 5–10), grilles d'interopérabilité/orchestration/plateforme (ch. 3, 16–27) et les 31 ADR des volets Mise en œuvre (Tome 3 Annexes B, C, F).",
       "tomes": [
         "T3"
       ],
@@ -62469,8 +62469,8 @@
       "source_slug": "signature-agent-card-ancrage",
       "target_slug": "canonicalisation-jcs-rfc8785",
       "type": "dependance_technique",
-      "label": "Signature JWS exigeant la canonicalisation JCS RFC 8785",
-      "justification": "La spécification A2A v1.0.0 impose obligatoirement (MUST) la canonicalisation RFC 8785 avant d'apposer ou de vérifier la signature JWS RFC 7515 (ch. 15 §15.1.1).",
+      "label": "Signature JWS exigeant la canonisation JCS RFC 8785",
+      "justification": "La spécification A2A v1.0.0/v1.0.1 impose obligatoirement (MUST) la canonisation RFC 8785 avant d'apposer ou de vérifier la signature JWS RFC 7515 (ch. 15 §15.1.1).",
       "tomes": [
         "T1"
       ],
@@ -63090,10 +63090,10 @@
     },
     {
       "relation_id": "REL_0579",
-      "source": "THM_systems-of-agency",
-      "target": "THM_contrats-interfaces-catalogue-entreprise",
-      "source_slug": "systems-of-agency",
-      "target_slug": "contrats-interfaces-catalogue-entreprise",
+      "source": "THM_contrats-interfaces-catalogue-entreprise",
+      "target": "THM_systems-of-agency",
+      "source_slug": "contrats-interfaces-catalogue-entreprise",
+      "target_slug": "systems-of-agency",
       "type": "operationnalisation",
       "label": "Ramène N×M intégrations à N+M contrats",
       "justification": "Le catalogue unique et les protocoles communs remplacent la prolifération N×M des connecteurs (§ 2.3, Fig. 2).",
@@ -63147,8 +63147,8 @@
       "source_slug": "taxonomie-attaques-identite-mandataire-confus",
       "target_slug": "non-compositionnalite-surete-surface-attaques",
       "type": "concordance_inter_tomes",
-      "label": "Articulation ch. 5 / ch. 11 / ch. 19 / ch. 37 sur triade létale et composition",
-      "justification": "Le ch. 19 pose le siège unique de la triade létale (après renvoi du ch. 5), le ch. 11 en traite l'amplification inter-protocoles et le §19.4 renvoie la défaillance pure de composition au ch. 37 §37.3.",
+      "label": "Articulation Tome 1 ch. 5 / ch. 11 / ch. 19 et ch. 37 sur triade létale et composition",
+      "justification": "Dans le Tome 1, le ch. 19 pose le siège unique de la triade létale (après renvoi du ch. 5), le ch. 11 en traite l'amplification inter-protocoles et le § 19.4 renvoie la défaillance pure de composition au ch. 37 § 37.3.",
       "tomes": [
         "T1"
       ],
@@ -63194,12 +63194,12 @@
     },
     {
       "relation_id": "REL_0585",
-      "source": "THM_tool-poisoning-rug-pull",
-      "target": "THM_epinglage-schemas-mcp",
-      "source_slug": "tool-poisoning-rug-pull",
-      "target_slug": "epinglage-schemas-mcp",
+      "source": "THM_epinglage-schemas-mcp",
+      "target": "THM_chaine-approvisionnement-agent-skills",
+      "source_slug": "epinglage-schemas-mcp",
+      "target_slug": "chaine-approvisionnement-agent-skills",
       "type": "attenuation_risque",
-      "label": "Bloque les substitutions de définitions par empreinte SHA-256",
+      "label": "Bloque les substitutions silencieuses de manifestes et définitions par empreinte SHA-256",
       "justification": "EXIG-MCP-20 et EXIG-SEC-18 calculent le SHA-256 JCS des outils à chaque `tools/list` et avant exécution pour neutraliser le rug pull.",
       "tomes": [
         "T2"
@@ -63285,8 +63285,8 @@
       "source_slug": "topologies-patrons-orchestration",
       "target_slug": "systems-of-agency",
       "type": "operationnalisation",
-      "label": "Structure la couche System of Action en 6 patrons bornés",
-      "justification": "Les 6 topologies du ch. 16.10–16.11 (superviseur/routeur, Planificateur-Exécuteur-Critique, DAG typé, tableau noir, Contract Net sur A2A, hybride BPMN/DMN) réalisent l'exécution multi-étapes du System of Action.",
+      "label": "Structure la couche System of Action en 8 patrons bornés (+ 1 variante débat)",
+      "justification": "Le catalogue fermé des 8 topologies autorisées et sa variante débat encadrée (Chapitre 13, Tableau 13.2, ADR-011, EXIG-ORC-03) structurent l'exécution du System of Action.",
       "tomes": [
         "T3"
       ],
@@ -63771,7 +63771,7 @@
       "directionality": "directed",
       "color": "#0d9488",
       "dash_pattern": "dashed",
-      "semantic_rule": "source est mis en œuvre ou rendu testable par target (ou inversement selon étiquetage explicite)"
+      "semantic_rule": "source met en œuvre, concrétise ou rend testable target"
     },
     {
       "type_id": "encadrement_normatif",
@@ -63820,165 +63820,215 @@
     }
   ],
   "relation_type_counts": {
-    "operationnalisation": 132,
-    "amplification_synergie": 63,
-    "dependance_technique": 93,
+    "operationnalisation": 129,
+    "amplification_synergie": 59,
+    "dependance_technique": 94,
     "encadrement_normatif": 82,
-    "tension_arbitrage": 62,
-    "attenuation_risque": 81,
+    "tension_arbitrage": 67,
+    "attenuation_risque": 82,
     "projection_temporelle": 52,
     "concordance_inter_tomes": 51
   },
   "top_hubs": [
     {
-      "node_id": "THM_bsif-e-23",
       "slug": "bsif-e-23",
-      "title": "Architecture prudentielle fédérale : BSIF E-23 (1er mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033",
-      "degree": 30
+      "title": "Architecture prudentielle fédérale : BSIF E-23 (1ᵉʳ mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033",
+      "domain_id": "D09",
+      "degree": 30,
+      "in_degree": 9,
+      "out_degree": 21
     },
     {
-      "node_id": "THM_protocole-mcp",
       "slug": "protocole-mcp",
       "title": "Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027",
-      "degree": 25
+      "domain_id": "D03",
+      "degree": 25,
+      "in_degree": 15,
+      "out_degree": 10
     },
     {
-      "node_id": "THM_passerelle-mcp-ai-gateway",
       "slug": "passerelle-mcp-ai-gateway",
       "title": "Passerelle d'agents bidirectionnelle PEP à 9 contrôles ordonnés et budget Borealis-Bench",
-      "degree": 24
+      "domain_id": "D03",
+      "degree": 24,
+      "in_degree": 10,
+      "out_degree": 14
     },
     {
-      "node_id": "THM_finops-focus-cpo",
       "slug": "finops-focus-cpo",
       "title": "Pilotage économique au coût complet par résultat conforme (CPO), FOCUS 1.4 et disjoncteurs",
-      "degree": 24
+      "domain_id": "D08",
+      "degree": 24,
+      "in_degree": 18,
+      "out_degree": 6
     },
     {
-      "node_id": "THM_exigences-cre-ia-305",
       "slug": "exigences-cre-ia-305",
       "title": "Porte unique d'homologation : 305 EXIG-* v1.2 × 75 PRR (24 bloquants) × 15 POR et 10 interdits GOV-17",
-      "degree": 23
+      "domain_id": "D12",
+      "degree": 23,
+      "in_degree": 18,
+      "out_degree": 5
     },
     {
-      "node_id": "THM_post-quantique-ml-dsa-slh-dsa",
       "slug": "post-quantique-ml-dsa-slh-dsa",
       "title": "Transition post-quantique (FIPS 203/204/205, NIST IR 8547), choc HTTP 431 (50–72×) et CBOR-COSE",
-      "degree": 21
+      "domain_id": "D06",
+      "degree": 21,
+      "in_degree": 11,
+      "out_degree": 10
     },
     {
-      "node_id": "THM_delegation-obo-deux-sauts",
       "slug": "delegation-obo-deux-sauts",
       "title": "Rupture au deuxième saut (RFC 8693 §4.1), délégation atténuée ≤ 2 sauts et DPoP/mTLS",
-      "degree": 21
+      "domain_id": "D06",
+      "degree": 21,
+      "in_degree": 13,
+      "out_degree": 8
     },
     {
-      "node_id": "THM_anti-verrouillage-standards",
-      "slug": "anti-verrouillage-standards",
-      "title": "Confinement anti-verrouillage SaaS (EXIG-ARC-21), catalogues déclaratifs C1 et statut AP2/AGNTCY",
-      "degree": 20
-    },
-    {
-      "node_id": "THM_supervision-hitl-hotl-abstention",
       "slug": "supervision-hitl-hotl-abstention",
       "title": "Ergonomie anti-complaisance (ASI09), vue différentielle et distinction entre PC3 et art. 12.1",
-      "degree": 20
+      "domain_id": "D02",
+      "degree": 20,
+      "in_degree": 9,
+      "out_degree": 11
     },
     {
-      "node_id": "THM_injection-indirecte-prompt",
-      "slug": "injection-indirecte-prompt",
-      "title": "Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % contre 84 %) et tests FR/EN",
-      "degree": 19
+      "slug": "anti-verrouillage-standards",
+      "title": "Confinement anti-verrouillage SaaS (EXIG-ARC-21), catalogues déclaratifs C1 et statut AP2/AGNTCY",
+      "domain_id": "D03",
+      "degree": 20,
+      "in_degree": 16,
+      "out_degree": 4
     },
     {
-      "node_id": "THM_protocole-a2a",
-      "slug": "protocole-a2a",
-      "title": "Non-substituabilité entre outil et pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)",
-      "degree": 18
-    },
-    {
-      "node_id": "THM_observabilite-otel-genai",
       "slug": "observabilite-otel-genai",
       "title": "Télémétrie OpenTelemetry v1.41.0 épinglée (face à v1.44.0 Development) et jointure trace ↔ mandat",
-      "degree": 18
+      "domain_id": "D08",
+      "degree": 18,
+      "in_degree": 7,
+      "out_degree": 11
     },
     {
-      "node_id": "THM_echelle-autonomie-l0-l4",
-      "slug": "echelle-autonomie-l0-l4",
-      "title": "Gouvernance matricielle : 8 domaines D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3",
-      "degree": 17
+      "slug": "protocole-a2a",
+      "title": "Non-substituabilité entre outil et pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)",
+      "domain_id": "D03",
+      "degree": 18,
+      "in_degree": 12,
+      "out_degree": 6
     },
     {
-      "node_id": "THM_eu-ai-act",
       "slug": "eu-ai-act",
       "title": "Droit européen applicable par effet extraterritorial : AI Act (Annexe III décembre 2027), Data Act et DORA",
-      "degree": 17
+      "domain_id": "D09",
+      "degree": 17,
+      "in_degree": 4,
+      "out_degree": 13
     },
     {
-      "node_id": "THM_erreurs-silencieuses-cascade",
-      "slug": "erreurs-silencieuses-cascade",
-      "title": "Rupture entre validité syntaxique et erreurs sémantiques silencieuses",
-      "degree": 16
+      "slug": "echelle-autonomie-l0-l4",
+      "title": "Gouvernance matricielle : 8 domaines D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3",
+      "domain_id": "D02",
+      "degree": 17,
+      "in_degree": 11,
+      "out_degree": 6
     },
     {
-      "node_id": "THM_ligne-directrice-amf",
-      "slug": "ligne-directrice-amf",
-      "title": "Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F",
-      "degree": 15
+      "slug": "injection-indirecte-prompt",
+      "title": "Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % contre 84 %) et tests FR/EN",
+      "domain_id": "D07",
+      "degree": 17,
+      "in_degree": 15,
+      "out_degree": 2
     },
     {
-      "node_id": "THM_banc-evalops-hermetique",
       "slug": "banc-evalops-hermetique",
       "title": "Évaluation continue E1–E3 (pass^k), juge calibré et abaissement d'autonomie sur dérive SLO",
-      "degree": 15
+      "domain_id": "D08",
+      "degree": 15,
+      "in_degree": 5,
+      "out_degree": 10
     },
     {
-      "node_id": "THM_did-vc-passeport-agent",
+      "slug": "ligne-directrice-amf",
+      "title": "Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F",
+      "domain_id": "D09",
+      "degree": 15,
+      "in_degree": 7,
+      "out_degree": 8
+    },
+    {
       "slug": "did-vc-passeport-agent",
       "title": "Identité légale vérifiable GLEIF vLEI, lacune KYA (0/9) et encadrement des agents externes",
-      "degree": 15
+      "domain_id": "D06",
+      "degree": 15,
+      "in_degree": 10,
+      "out_degree": 5
     },
     {
-      "node_id": "THM_execution-durable-temporal",
-      "slug": "execution-durable-temporal",
-      "title": "Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)",
-      "degree": 14
+      "slug": "erreurs-silencieuses-cascade",
+      "title": "Rupture entre validité syntaxique et erreurs sémantiques silencieuses",
+      "domain_id": "D01",
+      "degree": 15,
+      "in_degree": 15,
+      "out_degree": 0
     },
     {
-      "node_id": "THM_saga-compensatoire",
-      "slug": "saga-compensatoire",
-      "title": "Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28",
-      "degree": 14
-    },
-    {
-      "node_id": "THM_scellage-jcs-scitt",
-      "slug": "scellage-jcs-scitt",
-      "title": "Journal d'audit à 5 éléments canonisé RFC 8785 (JCS), ancré chaque heure et scellé SCITT + SLH-DSA",
-      "degree": 14
-    },
-    {
-      "node_id": "THM_identite-non-humaine-nhi",
-      "slug": "identite-non-humaine-nhi",
-      "title": "Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes",
-      "degree": 14
-    },
-    {
-      "node_id": "THM_soc-soar-coupe-circuit",
       "slug": "soc-soar-coupe-circuit",
       "title": "Coupe-circuit hiérarchisé (< 10 s POR-003 contre 15 min CAD26), SSF/CAEP et rétrogradation < 60 s",
-      "degree": 14
+      "domain_id": "D07",
+      "degree": 14,
+      "in_degree": 3,
+      "out_degree": 11
     },
     {
-      "node_id": "THM_spiffe-spire-attestation",
-      "slug": "spiffe-spire-attestation",
-      "title": "Attestations cryptographiques éphémères SPIFFE X.509-SVID, OIDC et veille WIMSE / OAuth 2.1",
-      "degree": 13
+      "slug": "execution-durable-temporal",
+      "title": "Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)",
+      "domain_id": "D05",
+      "degree": 14,
+      "in_degree": 7,
+      "out_degree": 7
     },
     {
-      "node_id": "THM_trajectoires-adaptatives-dapp",
-      "slug": "trajectoires-adaptatives-dapp",
-      "title": "Parcours adaptatifs DAPP sans probabilité (A/B/C), modélisation EMA et portefeuille 43 INI / 15 POR / 27 SIG",
-      "degree": 13
+      "slug": "saga-compensatoire",
+      "title": "Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28",
+      "domain_id": "D05",
+      "degree": 14,
+      "in_degree": 8,
+      "out_degree": 6
+    },
+    {
+      "slug": "identite-non-humaine-nhi",
+      "title": "Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes",
+      "domain_id": "D06",
+      "degree": 14,
+      "in_degree": 10,
+      "out_degree": 4
+    },
+    {
+      "slug": "scellage-jcs-scitt",
+      "title": "Journal d'audit à 5 éléments canonisé RFC 8785 (JCS), ancré chaque heure et scellé SCITT + SLH-DSA",
+      "domain_id": "D08",
+      "degree": 14,
+      "in_degree": 11,
+      "out_degree": 3
+    },
+    {
+      "slug": "rag-agentique-contexte",
+      "title": "Compilateur déterministe du contexte (ACL amont), Agent Skills signés et sas WAP ODCS v3",
+      "domain_id": "D04",
+      "degree": 13,
+      "in_degree": 5,
+      "out_degree": 8
+    },
+    {
+      "slug": "double-couloir-probatoire-pii",
+      "title": "Architecture à double couloir PII et séparation des trois magasins réglementés",
+      "domain_id": "D08",
+      "degree": 13,
+      "in_degree": 6,
+      "out_degree": 7
     }
   ],
   "concordance_matrix": [

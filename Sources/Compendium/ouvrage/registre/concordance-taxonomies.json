@@ -4,7 +4,7 @@
   "div_02": {
     "id": "DIV-02",
     "source": "Tome 5 — Synthèse exécutive et concordance architecturale (§ Liminaire, Ch. 2, Annexe A)",
-    "objet": "Résorption de la lacune corpus_2026_absent entre CAD26 (CRE-IA-2026-01 v1.2, 6 couches et 3 plans) et PD28 (5 couches C1–C5 et 3 volets Plans A–C)",
+    "objet": "Résorption de la lacune corpus_2026_absent entre CAD26 (Cadre de référence 2026 / Tome 2, CRE-IA-2026-01 v1.2, 6 couches et 3 plans) et PD28 (Plan directeur 2028 / T5 = Tome 5, 5 couches C1–C5 et 3 volets Plans A–C) ; concordance des cotes C26 (Tome 1) et C27 (Tome 3)",
     "statut": "Fermée sur pièce",
     "trois_rectifications": [
       "Rectification 1 : les modèles et le confinement siègent en Couche 3 de CAD26 (Agents et exécution cognitive, et non en Couche 6 supposée), soit C5 modeles.",
@@ -30,8 +30,14 @@
       ],
       "exigences_cad26_v1_2": 305,
       "extensions_pex": 24,
-      "pex_specialisations": 13,
-      "pex_comblements_lacunes_2026": 11
+      "pex_v1_2_ventilation": {
+        "couvertures_directes": 5,
+        "extensions_specialisees": 12,
+        "comblements_lacunes": 7
+      },
+      "pex_specialisations_v1_1": 13,
+      "pex_comblements_lacunes_v1_1": 11,
+      "note_ventilation_pex": "En CRE-IA-2026-01 v1.2 (305 exigences), les 24 propositions PEX couvrent 5 raccordements directs, 12 extensions spécialisées et 7 comblements de lacunes (remplaçant le bilan 13 spécialisations et 11 comblements hérité de v1.1)."
     }
   },
   "decoupages_architecturaux_t5_a1": [
@@ -45,24 +51,24 @@
     },
     {
       "Modèle pivot (5 couches + 3 volets)": "C2. agents-orchestration (durable, sagas, A2A)",
-      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 2 : Orchestration et état + volet Agents (C3)",
-      "Écart DIV-02 corrigé": "Sépare Orchestration (C2) et Agents (C3)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 2 : Orchestration et état + volet Agents (Couche 3)",
+      "Écart DIV-02 corrigé": "Sépare Orchestration (Couche 2) et Agents (Couche 3)",
       "C26 ch. 43": "C3 Orchestration (OO1–OO4, PC1–PC3, Z2 [S]), C1 A2A",
       "C27 § 0.1": "C4 durable + C3 horizontale",
       "Rattachement CAP / EXIG": "CAP-007..014 ; EXIG-ARC-02, 05..07, 13, EXIG-INT-04, 05, 11, 22, EXIG-ORC-01..30, EXIG-A2A-01..15, EXIG-EVT-01..10, EXIG-AUT-17"
     },
     {
       "Modèle pivot (5 couches + 3 volets)": "C3. contexte-connaissance (sémantique, mémoire CoALA)",
-      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Travail (C2), procédurale (C3), Couche 5 : Outils et données",
-      "Écart DIV-02 corrigé": "Nulle C3 Connaissance (placée en C5)",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Travail (Couche 2), procédurale (Couche 3), Couche 5 : Outils et données",
+      "Écart DIV-02 corrigé": "Nulle Couche 3 Connaissance (placée en Couche 5)",
       "C26 ch. 43": "Nulle couche dédiée (Tab. 43.1 [S]) ; ch. 2, Z5, PC4 [S]",
       "C27 § 0.1": "C2 Sémantique, contexte, mémoire",
       "Rattachement CAP / EXIG": "CAP-015..021 ; EXIG-ARC-16, 22..25, EXIG-INT-01, 02, 12..16, 19"
     },
     {
       "Modèle pivot (5 couches + 3 volets)": "C4. acces (passerelle PEP, patrimoine, OT)",
-      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "C4 Médiation et connectivité, C5 Outils et données, C6 Systèmes d’enregistrement",
-      "Écart DIV-02 corrigé": "C4 Médiation, C5 Outils, C6 Enregistrement",
+      "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 4 Médiation et connectivité, Couche 5 Outils et données, Couche 6 Systèmes d’enregistrement",
+      "Écart DIV-02 corrigé": "Couche 4 Médiation, Couche 5 Outils, Couche 6 Enregistrement",
       "C26 ch. 43": "C4 Maillage (ch. 37), C1 MCP, Z4 [S]",
       "C27 § 0.1": "C1 IT/OT + C3 fédération",
       "Rattachement CAP / EXIG": "CAP-022..028 ; EXIG-ARC-01, 11, 12, 14, 15, 17, 18, 21, EXIG-INT-03, 06, 07, EXIG-MCP-01..22"
@@ -70,7 +76,7 @@
     {
       "Modèle pivot (5 couches + 3 volets)": "C5. modeles (inférence, substrats, bacs)",
       "CAD26 § 5.2–5.3 (6 vraies couches + 3 plans)": "Couche 3 : Agents et exécution cognitive (passerelle modèles, confinement)",
-      "Écart DIV-02 corrigé": "Modèles et bacs en C3, non C6",
+      "Écart DIV-02 corrigé": "Modèles et bacs en Couche 3, non Couche 6",
       "C26 ch. 43": "Nulle couche modèles/bacs (Tab. 43.1 [S]) ; PC5/Z5 [S] en C4",
       "C27 § 0.1": "Socle silicium, confinement, inférence",
       "Rattachement CAP / EXIG": "CAP-029..034 ; EXIG-ARC-08..10, EXIG-SEC-08..17"
@@ -233,7 +239,7 @@
       "volume_variants": [
         {
           "volume": "Vol. 2 (2 - Cadre de Référence.md)",
-          "definition": "Six couches techniques horizontales traversées par trois plans transversaux A (identité, autorisation, garde-fous, approbation), B (télémétrie, évaluation, audit, FinOps) et C (transport/outillage).",
+          "definition": "Six couches techniques horizontales (Couche 1 à Couche 6) traversées par trois plans transversaux : A (identité, autorisation, garde-fous, approbation), B (télémétrie, évaluation, audit, FinOps) et C (gouvernance et registre, ch. 11–13 ; CAP-047–CAP-052).",
           "corpus_ref": "2 - Cadre de Référence.md L1029-L1092, L1360-L1361"
         },
         {
@@ -247,7 +253,7 @@
           "corpus_ref": "5 - Memoire.md L98"
         }
       ],
-      "canonical_vol8_choice": "Les quatre modules techniques de la trousse exécutable d'homologation ancrent leurs composants dans les Plans A (policy_saga/opa_runner.py avec politiques Rego policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr) et C (harness_proto) du Cadre 2026 tout en exposant le noyau déterministe en quatre modules exécutables.",
+      "canonical_vol8_choice": "Les quatre modules techniques de la trousse exécutable d'homologation ancrent leurs composants dans les Plans A (policy_saga/opa_runner.py avec politiques Rego policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr pour télémétrie/audit/évaluation), C (validateurs PRR/ADR d'evalops_prr pour gouvernance et registre) et les couches techniques Couche 1 / Couche 2 / Couche 4 (C1/C2/C4) du Cadre 2026 (harness_proto pour l'accès, l'orchestration et la médiation protocolaire) tout en exposant le noyau déterministe en quatre modules exécutables.",
       "liminaire_section": "0.2",
       "rationale": "Aligne directement l'architecture exécutable d'homologation (Partie XII du Compendium, Chapitres 34 à 36) sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des tomes antérieurs (Tomes 2 à 7)."
     },
@@ -289,5 +295,11 @@
       "liminaire_section": "0.2",
       "rationale": "Élimine toute ambiguïté d'implémentation entre la prose historique de 2025 et les contrôles bloquants EXIG-MCP-03/11/15/16/18/19/20 vérifiés en G0."
     }
-  ]
+  ],
+  "convention_sigles": {
+    "CAD26": "Cadre de référence 2026 (Tome 2, CRE-IA-2026-01 v1.2, 6 couches et 3 plans)",
+    "PD28_T5": "Plan directeur 2028 (T5 = Tome 5, 5 couches C1–C5 et 3 volets Plans A–C)",
+    "C26": "Compendium 2026 (Tome 1)",
+    "C27": "Compendium 2027 (Tome 3)"
+  }
 }

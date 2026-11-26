@@ -8,13 +8,13 @@ Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine é
 
 ## Contenu du répertoire
 
-- [**`prd.md`**](prd.md) : référentiel directeur d'exigences produit, d'architecture et d'homologation (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes `A–E`, `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes `1` à `8`, `7 560` lignes, `270 382` mots).
+- [**`prd.md`**](prd.md) : référentiel directeur d'exigences produit, d'architecture et d'homologation (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes `A–E`, `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes `1` à `8`, `7 573` lignes, `271 694` mots).
 - **`ouvrage/`** : atelier complet de rédaction, d'ancrage probatoire et d'assemblage publiant vers [`../../Compendium/`](../../Compendium/README.md) :
   - `specs/` : manifeste normatif (`manifest.json`, `42` unités, `180 000` mots cibles) et protocole de collecte ouverte (`protocole-mlr-compendium.json`, gel au `2 décembre 2026`).
   - `manuscrit/` : `00 - Liminaire.md`, `12` parties (`36` chapitres) et `5` annexes déterministes (`13 - Annexes/Annexe A..E.md`).
   - `schemas/` : `115` sources iconographiques (`52` `.puml`, `23` `.mmd`, `40` `.svg`) et leurs rendus compilés sous `schemas/rendus/`.
-  - `sources/` et `recherche/` : `37` bases documentaires fermées (`ch00..ch36-sources.md`), corpus primaire ouvert `L+` haché `SHA-256` et registre d'exclusions `Statut F`.
-  - `registre/` : `7` registres JSON SSOT (`mindmap-complet.json`, `specifications-lplus.json`, `matrice-exig-prr-c40.json`, `concordance-taxonomies.json`, `ancres-chronologiques.json`, `faits-empiriques.json`, `glossaire-termes.json` à `56` vedettes dont **`Agentivité des systèmes`**).
+  - `sources/` et `recherche/` : `37` bibliographies fermées (`ch00..ch36-sources.md`, liminaire et `36` chapitres), corpus primaire ouvert `L+` haché `SHA-256` et registre d'exclusions `Statut F`.
+  - `registre/` : `7` registres JSON SSOT (`mindmap-complet.json`, `specifications-lplus.json`, `matrice-exig-prr-c40.json` à `52 CAP` dont `42 CAP` invariantes sur `52`, `concordance-taxonomies.json`, `ancres-chronologiques.json` à `77` jalons uniques après déduplication des `9` doublons, `faits-empiriques.json`, `glossaire-termes.json` à `56` vedettes dont **`Agentivité des systèmes`**).
   - `ancrage/` et `aq/` : `37` journaux d'audit atomique `G2`, rapport `G0` (`rapports-g0.json`), doubles recollations `G3`, journaux `G4`/`G5`.
   - `outils/` : `14` fichiers — `9` scripts Python déterministes (`_communs.py`, `verifie_specs.py`, `collecte_mlr_ouverte.py`, `compile_schemas_compendium.py`, `execute_g0.py`, `genere_annexes.py`, `echantillon_aq.py`, `verifie_manuscrit.py`, `assemble_livre.py`) et `5` suites `pytest` totalisant `43` tests (`test_collecte_mlr.py`, `test_compile_schemas.py`, `test_execute_g0.py`, `test_outillage_aq.py`, `test_verifie_specs.py`).
 
@@ -22,8 +22,8 @@ Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine é
 
 ## Livrables publiés (`../../Compendium/`)
 
-- [`Compendium.pdf`](../../Compendium/Compendium.pdf) : `837` pages (`Typst 6,14 × 9,21 po`, `23 175 718` octets).
-- [`Compendium.md`](../../Compendium/Compendium.md) : édition Markdown consolidée (`1 868 863` octets, `8 408` lignes, `241 759` mots, `42` unités, `115` figures).
+- [`Compendium.pdf`](../../Compendium/Compendium.pdf) : `852` pages (`Typst 6,14 × 9,21 po`, `23 733 259` octets).
+- [`Compendium.md`](../../Compendium/Compendium.md) : édition Markdown consolidée (`1 906 515` octets, `8 532` lignes, `246 518` mots, `42` unités, `37` bibliographies, `115` figures).
 
 ---
 

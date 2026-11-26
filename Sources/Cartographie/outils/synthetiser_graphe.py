@@ -318,7 +318,20 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
     for t in terms_all:
         terms_by_owner.setdefault(t.get("chapitre_proprietaire", ""), []).append(t)
 
-    # Reconstruire NODE_ROOT + les 379 nœuds de mindmap-complet.json (= 380 nœuds exacts)
+    # Reconstruire NODE_ROOT + les nœuds de mindmap-complet.json
+    cm_pivots = pivots["collection_metrics"]
+    pdf_pages = cm_pivots["compendium_pdf_pages"]
+    units_cnt = len(manifest["units"])
+    schemas_cnt = len(comp_inv["figures"])
+    doms_cnt = len(mm["domains"])
+    chaps_cnt = len(mm["subdomains"])
+    fams_cnt = len(mm["families"])
+    themes_cnt = len(mm["themes"])
+    rels_cnt = len(mm["relations"])
+    gloss_cnt = len(terms_all)
+    lplus_cnt = cm_pivots.get("sources_l_plus", 135)
+    jalons_cnt = (pivots.get("chronologie_2023_2035") or {}).get("total_jalons", 77)
+
     domain_node_ids = [d["node_id"] for d in mm["domains"]]
     root_node: dict[str, Any] = {
         "node_id": "NODE_ROOT",
@@ -330,11 +343,12 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
         "domain_id": None,
         "subdomain": None,
         "family": None,
-        "title": "Compendium de l'entreprise agentique (837 pages · 42 unités · 115 schémas)",
+        "title": f"Compendium de l'entreprise agentique ({pdf_pages} pages · {units_cnt} unités · {schemas_cnt} schémas)",
         "summary": (
-            "Cartographie intégrale du Compendium de l'entreprise agentique : 12 domaines (D01–D12), "
-            "36 chapitres, 71 familles, 260 thèmes, 616 interrelations systémiques, 115 schémas compilés, "
-            "56 vedettes du glossaire (dont l'agentivité des systèmes), 135 sources L+ et homologation Wyvern G0–G5."
+            f"Cartographie intégrale du Compendium de l'entreprise agentique : {doms_cnt} domaines (D01–D12), "
+            f"{chaps_cnt} chapitres, {fams_cnt} familles, {themes_cnt} thèmes, {rels_cnt} interrelations systémiques, "
+            f"{schemas_cnt} schémas compilés, {gloss_cnt} vedettes du glossaire (dont l'agentivité des systèmes), "
+            f"{lplus_cnt} sources L+, {jalons_cnt} jalons chronologiques uniques et homologation Wyvern G0–G5."
         ),
         "autonomy_levels": ["L0", "L1", "L2", "L3", "L4"],
         "roles": ["AE", "AS", "RSSI", "Juridique", "SRE", "Direction"],

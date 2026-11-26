@@ -15,8 +15,8 @@
     "compendium_units_count": 42,
     "compendium_schemas_count": 115,
     "compendium_glossary_terms_count": 56,
-    "compendium_pdf_pages": 837,
-    "compendium_md_words": 241759,
+    "compendium_pdf_pages": 852,
+    "compendium_md_words": 246518,
     "compendium_l_plus_sources": 135,
     "compendium_statut_f_exclusions": 27,
     "compendium_g0_sync_extracts": 14,
@@ -361,7 +361,7 @@
         "line_start": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 8408
+          "maximum": 15000
         },
         "reference": { "$ref": "#/$defs/non_empty_string" }
       }

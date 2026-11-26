@@ -55,7 +55,7 @@
 - **Auteurs / Émetteur :** Anders Rundgren, Bret Jordan, Samuel Erdtman
 - **Date de publication :** `2020-06`
 - **Organisme / Revue :** IETF RFC Editor (Independent Submission)
-- **Identifiant :** `RFC8785`
+- **Identifiant :** `RFC 8785`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-077.txt`, score AACODS `11.0/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8785.txt
 - **Empreinte SHA-256 (LF) :** `be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642` (`36840` octets, `5011` mots)

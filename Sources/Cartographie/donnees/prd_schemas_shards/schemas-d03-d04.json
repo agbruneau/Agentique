@@ -319,7 +319,7 @@
         "fusion-acp-collision-terminologique",
         "protocole-anp-did-wba"
       ],
-      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches",
+      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches documentaires et ACP commercial (cinq acceptions)",
       "insertion_point": "Chapitre 08 §08.2.1 — Protocole pair-à-pair A2A et ANP",
       "target_audiences": [
         "Direction / Métier",
@@ -349,7 +349,7 @@
           }
         ],
         "numbered_flows": [
-          "① Qualifier l'appel : s'il correspond à une API transactionnelle déterministe, proscrire A2A et le dialogue libre MCP au profit d'une API classique ou du palier OO1.",
+          "① Qualifier l'appel : s'il correspond à une API transactionnelle déterministe, proscrire A2A et le dialogue libre MCP au profit d'une API classique ou d'un automate déterministe N0.",
           "② Lorsqu'un agent invoque un outil borné sous son propre plan d'exécution, employer MCP 2026-07-28 sur l'axe vertical.",
           "③ Lorsqu'un agent délègue une mission asynchrone à un pair autonome d'un autre domaine sans inspecter son raisonnement interne, activer A2A v1.0.1 sous signature JWS/JCS et zones Z1–Z5.",
           "④ Rejeter ANP v1.2 (dont le méta-protocole négocié à la volée demeure non auditable) et proscrire tout emploi du sigle « ACP » nu dans les contrats et architectures."
@@ -382,7 +382,7 @@
           "title": "Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.",
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-07.5 - Les quatre branches de la collision ACP - (agentic) control.puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.5.svg",
-          "role_note": "Lève la collision terminologique à quatre branches entourant le sigle ACP."
+          "role_note": "Lève la collision terminologique à cinq acceptions entourant le sigle ACP."
         },
         {
           "tome_id": "T2",
@@ -627,7 +627,7 @@
           {
             "zone_id": "Z1",
             "label": "Contrôles ALLER (1 à 7 et pré-audit EXIG-OBS-11)",
-            "content": "La chaîne aller exécute successivement : (1) SVID/mTLS/DPoP et débit ; (2) catalogue et empreinte SHA-256 ; (3) décision PDP N1–N4/P0–P3 ; (4) schéma I-JSON et garde anti-injection bilingue ; (5) jeton jti lié à h=SHA-256(JCS) ; (6) quotas ; (7) échange RFC 8693 (zéro secret au LLM) et pré-audit avant P2/P3."
+            "content": "La chaîne aller exécute successivement : (1) SVID/mTLS/DPoP et débit ; (2) catalogue et empreinte SHA-256 ; (3) décision PDP N0–N4/P0–P3 ; (4) conformité I-JSON (RFC 7493), validation JSON Schema Draft 2020-12 et garde anti-injection bilingue ; (5) jeton jti lié à h=SHA-256(JCS) ; (6) quotas ; (7) échange RFC 8693 (zéro secret au LLM) et pré-audit avant P2/P3."
           },
           {
             "zone_id": "Z2",
@@ -1414,7 +1414,7 @@
           {
             "zone_id": "Z3",
             "label": "Purge sélective vérifiable (Loi 25 art. 23 et RGPD art. 17)",
-            "content": "La révocation de la clé de chiffrement par entité (Crypto-Shredding) et l'invalidation en cascade des faits dérivés effacent les données personnelles sans rompre la structure globale du graphe."
+            "content": "La révocation de la clé de chiffrement par entité (Crypto-Shredding sur les payloads et charges épisodiques) et l'invalidation en cascade des faits dérivés, suivies de la purge physique asynchrone des vecteurs HNSW/IVFFlat, effacent les données personnelles sans rompre la structure globale du graphe."
           }
         ],
         "numbered_flows": [

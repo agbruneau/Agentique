@@ -168,6 +168,17 @@
 - **Synthèse factuelle vérifiée :** Dépôt réglementaire SEC Form 10-Q de Microsoft Corporation (semestre clos le 31 déc. 2025, T2 FY2026) servant de série historique de comparaison des investissements CapEx.
 - **Audit d'accès réseau (`2026-11-25`) :** Dépôt public officiel SEC EDGAR (domaine public) ; le sondage direct sous `User-Agent` générique retourne `HTTP 403` conformément à la SEC EDGAR Fair Access Policy (exige un en-tête `User-Agent` déclaré organisation + courriel, `https://www.sec.gov/os/accessing-edgar-data`). Texte intégral archivé et vérifié au bit près par empreinte `SHA-256` locale (`c840108cea5228ca58c45ebbcda9000ca0f69d6fb33f511ef89f983a849bcd3c`).
 
+### [15] SRC-068 — Guideline B-10: Third-Party Risk Management
+
+- **Auteurs / Émetteur :** Office of the Superintendent of Financial Institutions (OSFI / BSIF)
+- **Date de publication :** `2023-04-30`
+- **Organisme / Revue :** OSFI Canada
+- **Identifiant :** `OSFI-B10`
+- **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-068.txt`, score AACODS `12.0/12`)
+- **URL d'origine :** https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline
+- **Empreinte SHA-256 (LF) :** `db7ccc401ea3b392f22b42c75b63d657eb95cd1c6ab5ccf2d55551bf9be01625` (`55115` octets, `7859` mots)
+- **Synthèse factuelle vérifiée :** Ligne directrice B-10 du BSIF (2023) sur la gestion des risques liés aux tiers imposant inventaire des sous-traitants, continuité d'activité et clauses de réversibilité.
+
 ---
 
 ## Exclusions en statut F (`AO-01` — hors preuve)

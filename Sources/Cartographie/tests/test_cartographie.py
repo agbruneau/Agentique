@@ -1,10 +1,10 @@
 """Suite de tests automatisés pour la cartographie interactive du Compendium Agentique.
 
 Couvre :
-- l'extraction structurelle CommonMark stricte des 15 sections du Compendium (`R`, `LIM`, `P01`–`P12`, `ANN`, 42 unités, 401 titres dans `Compendium/Compendium.md`, 8 408 lignes) ;
+- l'extraction structurelle CommonMark stricte des 15 sections du Compendium (`R`, `LIM`, `P01`–`P12`, `ANN`, 42 unités, 403 titres dans `Compendium/Compendium.md`, 8 532 lignes) ;
 - l'absence de faux positifs dans les blocs de code clôturés et la couverture des identifiants `SCH-*`, `SRC-*`, `POR-*`, `SIG-*`, `INI-*` ;
 - la complétude des 115 schémas compilés du Compendium (`52` PlantUML, `23` Mermaid, `40` SVG) ;
-- l'intégrité du graphe transversal (`380` nœuds dont `260` thèmes, `616` relations, `180` cellules de matrice, `56` vedettes glossaire, `135` `L+`, `27` `Statut F`, `14` `CA-G0-SYNC`, `37/37` `G2`, `837` pages PDF) ;
+- l'intégrité du graphe transversal (`380` nœuds dont `260` thèmes, `616` relations, `180` cellules de matrice, `56` vedettes glossaire, `135` `L+`, `27` `Statut F`, `14` `CA-G0-SYNC`, `37/37` `G2`, `852` pages PDF) ;
 - la suppression définitive de l'ancienne carte `MindMap - Cartographie thématique du Corpus.html` et de `donnees/shards/` ;
 - l'échappement sûr du JSON embarqué dans `<script>` et l'autonomie `file://` stricte (`0` CDN / requête réseau) ;
 - la validation syntaxique et fonctionnelle DOM complète des `5` vues sous `Node.js`.
@@ -121,14 +121,14 @@ def test_structure_covers_compendium_15_sections_and_42_units() -> None:
     assert data["totals"]["files"] == 15
     assert data["totals"]["sections"] == 15
     assert data["totals"]["compendium_units_mapped"] == 42
-    assert data["totals"]["compendium_lines"] == 8408
-    assert data["totals"]["compendium_headings"] == 401
+    assert data["totals"]["compendium_lines"] == 8532
+    assert data["totals"]["compendium_headings"] == 403
     assert len(data["files"]) == 15
     assert [f["tome_id"] for f in data["files"]] == expected_sections
 
     comp_md_path = REPO_ROOT / "Compendium" / "Compendium.md"
     comp_lines = comp_md_path.read_text(encoding="utf-8").splitlines()
-    assert len(comp_lines) == 8408
+    assert len(comp_lines) == 8532
     _, _, comp_code_lines = es.parse_markdown_lines(comp_lines)
 
     mapped_units: set[str] = set()
@@ -165,7 +165,7 @@ def test_structure_covers_compendium_15_sections_and_42_units() -> None:
         total_headings += len(flat)
 
     assert len(mapped_units) == 42
-    assert compendium_headings == 401
+    assert compendium_headings == 403
     assert data["totals"]["lines"] == total_lines
     assert data["totals"]["words"] == total_words
     assert data["totals"]["headings"] == total_headings
@@ -267,18 +267,18 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         assert len(occs) >= 1, f"Thème sans occurrence Compendium : {n['node_id']}"
         for occ in occs:
             assert occ["file"] == "Compendium/Compendium.md", f"Occurrence hors Compendium.md : {occ}"
-            assert 1 <= occ["line_start"] <= occ["line_end"] <= 8408
+            assert 1 <= occ["line_start"] <= occ["line_end"] <= 8532
             assert (REPO_ROOT / occ["source_file"]).is_file(), f"source_file absent : {occ['source_file']}"
 
     # Matrice de concordance 12 x 15 = 180 cellules
     cmat = bundle.get("concordance_matrix") or []
     assert len(cmat) == 180
 
-    # Pivots Compendium (glossaire 56, 135 L+, 27 Statut F, 14 CA-G0-SYNC, 37/37 G2, 837 p.)
+    # Pivots Compendium (glossaire 56, 135 L+, 27 Statut F, 14 CA-G0-SYNC, 37/37 G2, 852 p.)
     pivots = bundle["pivots"]
     assert pivots["div_02"] is not None
     assert len(pivots["reconciliations"]) == 5
-    assert len(pivots["timeline"]) == 86
+    assert len(pivots["timeline"]) == 77
     assert len(pivots["traceability_matrix"]) == 237
     assert len({x["id"] for x in pivots["traceability_matrix"]}) == 237
     assert pivots.get("matrix_totals") == {
@@ -304,7 +304,7 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     assert len(pivots.get("faits_empiriques_16") or []) == 16
     assert len(pivots.get("specifications_lplus_57") or []) == 57
     assert len(pivots.get("statut_f_exclus_27") or []) == 27
-    assert (pivots.get("collection_metrics") or {}).get("compendium_pdf_pages") == 837
+    assert (pivots.get("collection_metrics") or {}).get("compendium_pdf_pages") == 852
 
     bundle_raw = bundle_path.read_text(encoding="utf-8")
     assert r"\$" not in bundle_raw
@@ -441,7 +441,7 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
 
     if (idx.nodes.length !== 380) throw new Error("Nombre de nœuds != 380: " + idx.nodes.length);
     if (idx.relations.length !== 616) throw new Error("Nombre de relations != 616: " + idx.relations.length);
-    if (idx.structFlat.length !== 406) throw new Error("Titres H1-H6 != 406: " + idx.structFlat.length);
+    if (idx.structFlat.length !== 408) throw new Error("Titres H1-H6 != 408: " + idx.structFlat.length);
     if (!idx.glossaryTerms || idx.glossaryTerms.length !== 56) throw new Error("Glossaire != 56");
 
     const s1 = eng.searchCorpus(idx, "Lusser", 10);

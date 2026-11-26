@@ -400,7 +400,7 @@ def test_compendium_production_socle_registries_and_37_sources() -> None:
     ]
 
     ancres = json.loads((reg_dir / "ancres-chronologiques.json").read_text(encoding="utf-8"))
-    assert len(ancres["anchors"]) == 86
+    assert len(ancres["anchors"]) == 77
 
     # Verification des 37 bases documentaires ch00..ch36-sources.md
     src_head_re = re.compile(r"^(?:#{1,4}|[-*+])?\s*\[(\d+)\](?:\s+(SRC-\d+))?", re.MULTILINE)

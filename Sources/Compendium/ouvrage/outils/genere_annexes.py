@@ -56,6 +56,11 @@ def _end_period(text: str) -> str:
     return f"{s}."
 
 
+def _fmt_int(n: int) -> str:
+    """Formate un entier avec espace séparateur de milliers dès 1 000 (norme fr-CA)."""
+    return f"{int(n):,}".replace(",", " ")
+
+
 def _plural(count: int, singular: str, plural: str | None = None) -> str:
     if count in (0, 1):
         return f"{count} {singular}"
@@ -95,18 +100,46 @@ def _is_pre_freeze_date(date_val: object, freeze_iso: str) -> bool:
     return year <= f_year
 
 
-def _anchor_sort_key(anchor: dict, freeze_iso: str) -> tuple[int, str, str]:
-    """Trie les jalons : pré-gel ISO d'abord, puis post-gel ISO, puis horizons DAPP/relatifs."""
+def _anchor_sort_key(anchor: dict, freeze_iso: str) -> tuple[int, str, int, str]:
+    """Trie chronologiquement les jalons : pré-gel ISO, post-gel datés (ISO/Fin YYYY/YYYY–ZZZZ), puis DAPP."""
     d = str(anchor.get("date", "")).strip()
     k = str(anchor.get("key", ""))
     if _is_pre_freeze_date(d, freeze_iso):
-        return (0, d, k)
-    if _ISO_DATE_STRICT_RE.fullmatch(d):
-        return (1, d, k)
+        m_iso = _ISO_DATE_STRICT_RE.fullmatch(d)
+        if m_iso:
+            yr = m_iso.group(1)
+            mo = m_iso.group(2) or "12"
+            dy = m_iso.group(3)
+            if dy is None:
+                m_kday = re.match(rf"^{yr}-{mo}-(\d{{2}})\b", k)
+                dy = m_kday.group(1) if m_kday else "31"
+            return (0, f"{yr}-{mo}-{dy}", 0, k)
+        return (0, d, 0, k)
+    m_iso = _ISO_DATE_STRICT_RE.fullmatch(d)
+    if m_iso:
+        yr = m_iso.group(1)
+        mo = m_iso.group(2) or "12"
+        dy = m_iso.group(3)
+        if dy is None:
+            m_kday = re.match(rf"^{yr}-{mo}-(\d{{2}})\b", k)
+            dy = m_kday.group(1) if m_kday else "31"
+        return (1, f"{yr}-{mo}-{dy}", 0, k)
+    m_fin = re.match(r"^Fin\s+(20\d{2})$", d, re.IGNORECASE)
+    if m_fin:
+        return (1, f"{m_fin.group(1)}-12-31", 1, k)
+    m_rng = re.match(r"^(20\d{2})[–-](20\d{2})$", d)
+    if m_rng:
+        return (1, f"{m_rng.group(2)}-12-31", 2, k)
     m_yr = re.search(r"\b(20\d{2})\b", d)
     if m_yr:
-        return (2, m_yr.group(1) + "-" + d, k)
-    return (3, k, d)
+        return (1, f"{m_yr.group(1)}-12-31", 3, k)
+    m_jalon = re.search(r"\bJ(\d+)\b", d)
+    if m_jalon:
+        return (2, "0", int(m_jalon.group(1)), k)
+    m_palier = re.search(r"\bPalier\s+(\d+)\b", d, re.IGNORECASE)
+    if m_palier:
+        return (2, "1", int(m_palier.group(1)), k)
+    return (2, f"2:{d}", 0, k)
 
 
 def _fix_fr_ca_punctuation_outside_code(seg: str) -> str:
@@ -118,8 +151,12 @@ def _fix_fr_ca_punctuation_outside_code(seg: str) -> str:
     s = re.sub(r"\bOn-Behalf-Of\b", "`On-Behalf-Of`", s)
     s = _LINE_RANGE_RE.sub(r"\1–\2", s)
     s = re.sub(r" +([,.])", r"\1", s)
+    s = re.sub(r"[ \t]+\)", ")", s)
     s = re.sub(r"(?<![\w.])\.\.(?!\.)", ".", s)
     s = re.sub(r"(?<=[a-zàâäéèêëîïôöùûüç»\)])\.\.(?!\.)", ".", s)
+    s = re.sub(r"\bantipatrons\b", "anti-patrons", s)
+    s = re.sub(r"\bantipatron\b", "anti-patron", s)
+    s = re.sub(r"\b1er\b", "1ᵉʳ", s)
 
     def _fix_line(line: str) -> str:
         if re.match(r"^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?\s*$", line):
@@ -146,8 +183,13 @@ def _sanitize_fr_ca(text: str) -> str:
         lambda m: "Système d'agentivité" if m.group(0).lower().startswith("system ") else "Systèmes d'agentivité",
         text,
     )
+    out = out.replace("\u2019", "'").replace("\u2018", "'")
     out = out.replace("policies_opa/opa_runner.py", "policy_saga/opa_runner.py")
     out = out.replace("policies_opa.opa_runner", "policy_saga.opa_runner")
+    out = out.replace("\U0001d458", "k")
+    out = out.replace("quatre compartiments mémoriels isolés", "quatre compartiments isolés")
+    out = out.replace("exécutablement", "de façon exécutable")
+    out = out.replace("reproductiblement", "de manière reproductible")
     out = _RAW_MARKER_RE.sub("", out)
     out = _EN_PCT_RE.sub(r"\1,\2 %", out)
 
@@ -389,6 +431,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         t_rows.append(
             [f"`{ch['id']}`", f"`{ch.get('domain_id', '')}`", f"`{sub_id}`", f"{fams}/{thms}", str(occ), tomes_str, schs]
         )
+    total_occ = sum(int(r[4]) for r in t_rows)
     table_trace = (
         _md_table(
             ["Ch.", "Domaine", "Sous-domaine (`node_id`)", "Fam./Thm.", "Occ.", "Tomes", "Schémas"],
@@ -396,13 +439,16 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             t_rows,
         )
         + "\n\n*Tableau A.1 — Table maîtresse de traçabilité des trente-six chapitres, sous-domaines `SUB_Dxx_yy`, "
-        "soixante et onze familles, deux cent soixante thèmes et cent onze schémas de chapitres.*"
+        "soixante et onze familles, deux cent soixante thèmes et cent onze schémas de chapitres.*\n\n"
+        f"Dans ce tableau, `R` désigne le fichier sommaire `Tomes/README.md` (rattaché aux chapitres `ch35` et `ch36`), "
+        f"et la colonne `Occ.` mesure le total des occurrences thématiques par sous-domaine dans le graphe MindMap "
+        f"({_fmt_int(total_occ)} au total, distinct du cumul des cellules par tome `D01`–`D12` × `T1`–`T8` présenté en Annexe B)."
     )
 
     anc_summary = (
         f"La barrière `G2` totalise **{len(metrics['ancrage_files'])}/37 journaux d'ancrage Wyvern**, "
         f"passant de **{metrics['ancrage_init']}** assertions initialement validées à "
-        f"**{metrics['ancrage_fin']}** assertions `supportées` (`100,0 %` après rectifications)."
+        f"**{_fmt_int(metrics['ancrage_fin'])}** assertions `supportées` (`100,0 %` après rectifications)."
         if metrics["ancrage_files"]
         else "Les trente-sept bases fermées encadrent la vérification atomique `G2` sur l'ensemble des chapitres."
     )
@@ -410,7 +456,14 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     cat_parts = [f"`{k}` ({v})" for k, v in sorted(cat_counts.items(), key=lambda x: (-x[1], x[0]))]
 
     # §3 — Synthèse complète des 12 domaines D01..D12 en prose continue (zéro éviction)
-    dom_blocks = ["## 3. Ventilation analytique des douze domaines (`D01`–`D12`) et de leurs soixante et onze familles"]
+    total_dom_studies = sum(dom_sources.get(did, 0) for did in chapters_by_dom)
+    dom_blocks = [
+        "## 3. Ventilation analytique des douze domaines (`D01`–`D12`) et de leurs soixante et onze familles",
+        (
+            f"Note méthodologique : les comptes d'études `L+` indexées par domaine totalisent **{total_dom_studies} rattachements** "
+            f"non disjoints, une même pièce parmi les **{len(sources)} sources uniques `L+`** pouvant alimenter plusieurs domaines."
+        ),
+    ]
     for did in sorted(chapters_by_dom.keys()):
         dmeta = dom_meta_by_id.get(did, {})
         dchs = chapters_by_dom[did]
@@ -459,7 +512,9 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
 
     # §5 — Exclusions statut F et propriété terminologique (TOUJOURS présente)
     reason_counts = Counter(str(b.get("reason") or b.get("block_reason") or "contrôle d'accès") for b in blocked)
-    terms_by_ch = Counter(str(t.get("chapitre_proprietaire", "")) for t in terms)
+    terms_by_ch: dict[str, list[dict]] = defaultdict(list)
+    for t in terms:
+        terms_by_ch[str(t.get("chapitre_proprietaire", ""))].append(t)
     statut_f_sec = (
         "## 5. Exclusions `statut F` (`AO-01`) et propriété terminologique\n\n"
         + (
@@ -472,8 +527,9 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             if blocked
             else "Aucune ressource en `statut F` n'est consignée dans cette instance ; la politique `AO-01` demeure active sans contournement. "
         )
-        + f"Par ailleurs, les **{len(terms)} vedettes** du glossaire bilingue `fr-CA / en` sont réparties sans chevauchement "
-        f"sur **{len(terms_by_ch)} chapitres propriétaires** vérifiés sous `CA-07`."
+        + f"Par ailleurs, les **{len(terms)} vedettes** du glossaire bilingue `fr-CA / en` (`registre/glossaire-termes.json`) "
+        f"sont réparties sans chevauchement sur **{len(terms_by_ch)} chapitres propriétaires** vérifiés sous `CA-07` "
+        "(inventaire complet en section 7)."
     )
 
     required = [
@@ -501,16 +557,15 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         statut_f_sec,
     ]
 
-    # Expansions analytiques déterministes en prose fluide (pour atteindre la cible si corpus compact)
+    # Expansions analytiques de réserve (uniquement si un corpus réduit de test est sous min_words)
     expansions: list[str] = []
-    for ch in chapters:
-        uid = ch["id"]
-        sub_node = sub_by_id.get(str(ch.get("subdomain_id", "")), {})
-        sub_lbl = sub_node.get("subdomain", ch.get("title", uid))
-        th_titles = [thm_by_id[tid].get("title", tid) for tid in ch.get("themes", []) if tid in thm_by_id]
+    for did in sorted(chapters_by_dom.keys()):
+        dchs = chapters_by_dom[did]
+        uids_str = ", ".join(f"`{c['id']}`" for c in dchs)
+        subs_str = ", ".join(f"`{c.get('subdomain_id', '')}`" for c in dchs)
         expansions.append(
-            f"Le chapitre `{uid}` couvre le sous-domaine `{ch.get('subdomain_id', '')}` ({sub_lbl}) et porte en "
-            f"propriété exclusive {len(th_titles)} thèmes canoniques : {', '.join(th_titles)}."
+            f"En bilan synthétique du domaine `{did}`, les unités {uids_str} "
+            f"assurent la traçabilité complète des sous-domaines {subs_str}."
         )
 
     prose = _assemble_complete_prose(
@@ -555,6 +610,11 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             bib_lines.append(
                 f"- `statut F` : `{b.get('url', '')}` ({b.get('reason') or b.get('block_reason') or 'bloqué'})."
             )
+    if terms_by_ch:
+        bib_lines.extend(["", f"### Propriété terminologique : {len(terms)} vedettes sur {len(terms_by_ch)} chapitres (`CA-07`)", ""])
+        for owner_ch in sorted(terms_by_ch.keys()):
+            t_labels = ", ".join(f"« {t.get('fr', '')} » (*{t.get('en', '')}*)" for t in terms_by_ch[owner_ch])
+            bib_lines.append(f"- **`{owner_ch}`** : {t_labels}.")
     if anc_details:
         bib_lines.extend(["", "### Bilan des journaux d'ancrage `G2` par unité", ""])
         for d in anc_details:
@@ -605,6 +665,8 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     for tname, cnt in type_counts.most_common():
         rt = rel_types.get(tname, {})
         rule = str(rt.get("semantic_rule", rt.get("description", ""))).replace("|", "/")
+        rule = re.sub(r"\bsource\b", "`source`", rule)
+        rule = re.sub(r"\btarget\b", "`cible`", rule)
         pct = f"{(cnt / total_rel) * 100.0:.1f} %".replace(".", ",")
         t_rows.append([f"`{tname}`", str(cnt), pct, rule])
     type_table = (
@@ -638,27 +700,41 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             )
         hub_paras.append(f"**Rangs {start + 1} à {start + len(grp)} :** " + " ; ".join(parts) + ".")
 
-    # §3 — Corridors inter-domaines et densité T1..T8
+    # §3 — Corridors inter-domaines et densité T1..T8 (+ R)
     tome_occ: Counter[str] = Counter()
     tome_nodes: Counter[str] = Counter()
+    r_occ = 0
     for cell in mm.get("concordance_matrix", []):
         tid = str(cell.get("tome_id", ""))
         if tid.startswith("T"):
             tome_occ[tid] += int(cell.get("occurrence_count", 0))
             tome_nodes[tid] += int(cell.get("node_count", 0))
+        elif tid == "R" and cell.get("granularity") == "domain":
+            r_occ += int(cell.get("occurrence_count", 0))
+    total_t_occ = sum(tome_occ.values())
     tome_summary = (
-        ", ".join(f"`{t}` ({tome_nodes[t]} rattachements, {tome_occ[t]} occurrences)" for t in sorted(tome_occ.keys()))
+        ", ".join(f"`{t}` ({_fmt_int(tome_nodes[t])} rattachements, {_fmt_int(tome_occ[t])} occurrences)" for t in sorted(tome_occ.keys()))
         if tome_occ
         else "concordance indexée sur les huit tomes antérieurs"
     )
+    r_note = (
+        f" (totalisant **{_fmt_int(total_t_occ)} occurrences** sur `T1`–`T8`, plus `{r_occ}` occurrences sur `R` `Tomes/README.md`, "
+        "dont les comptes bruts par tome se distinguent des `1 931` occurrences agrégées par sous-domaine au Tableau A.1)"
+        if tome_occ and r_occ
+        else ""
+    )
+    sorted_pairs = sorted(dom_pair_counts.items(), key=lambda x: (-x[1], x[0][0], x[0][1]))
+    cutoff_pair = sorted_pairs[14][1] if len(sorted_pairs) >= 15 else (sorted_pairs[-1][1] if sorted_pairs else 0)
+    top_pairs = [p for p in sorted_pairs if p[1] >= cutoff_pair]
     pair_segs = [
         f"`{sd}`→`{td}` ({_plural(cnt, 'liaison')}, {dom_meta_by_id.get(sd, {}).get('title', sd)} vers {dom_meta_by_id.get(td, {}).get('title', td)})"
-        for (sd, td), cnt in dom_pair_counts.most_common(15)
+        for (sd, td), cnt in top_pairs
     ]
     corridors_sec = (
         "## 3. Corridors inter-domaines dominants et densité sur les huit tomes (`T1`–`T8`)\n\n"
-        f"L'empreinte transversale sur les huit tomes antérieurs totalise {tome_summary}. "
-        "Les quinze corridors inter-domaines les plus denses relient les couples suivants : "
+        f"L'empreinte transversale sur les huit tomes antérieurs totalise {tome_summary}{r_note}. "
+        f"Les {len(top_pairs)} corridors inter-domaines les plus denses (seuil ≥ {cutoff_pair} liaisons, ex-æquo inclus) "
+        "relient les couples suivants : "
         + " ; ".join(pair_segs)
         + "."
     )
@@ -700,7 +776,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     causal_paras = [
         "## 5. Dynamique causale des sept autres classes d'interrelations (`D01`–`D12`)",
         (
-            "Outre les tensions d'arbitrage, les cinq cent cinquante-quatre autres arêtes du graphe structurent "
+            f"Outre les {len(tensions)} tensions d'arbitrage, les {len(relations) - len(tensions)} autres arêtes du graphe structurent "
             "l'opérationnalisation exécutable, les dépendances techniques, l'encadrement normatif, l'atténuation des "
             "risques, les synergies, les projections `2026–2035` et les concordances entre tomes. La totalité des "
             f"**{len(relations)} relations** est restituée sans aucune coupure en section 6."
@@ -709,13 +785,16 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     for tid, tlabel in other_types:
         subset = [r for r in relations if r.get("type") == tid]
         by_sd = Counter(thm_by_slug.get(r.get("source_slug", ""), {}).get("domain_id", "D00") for r in subset)
-        top_doms = ", ".join(f"`{d}` ({c})" for d, c in by_sd.most_common(5))
+        sorted_sd = sorted(by_sd.items(), key=lambda x: (-x[1], x[0]))
+        cutoff_sd = sorted_sd[4][1] if len(sorted_sd) >= 5 else (sorted_sd[-1][1] if sorted_sd else 0)
+        top_sd = [(d, c) for d, c in sorted_sd if c >= cutoff_sd]
+        top_doms = ", ".join(f"`{d}` ({c})" for d, c in top_sd)
         sample_edges = ", ".join(
             f"`{r.get('relation_id')}` (`{r.get('source_slug')}` vers `{r.get('target_slug')}`)"
             for r in subset[:5]
         )
         causal_paras.append(
-            f"**{tlabel} (`{tid}`, {len(subset)} arêtes) :** domaines moteurs {top_doms}. "
+            f"**{tlabel} (`{tid}`, {len(subset)} arêtes) :** domaines moteurs (ex-æquo inclus) {top_doms}. "
             f"Liaisons représentatives : {sample_edges}."
         )
 
@@ -798,8 +877,14 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             )
         extra.append("")
 
-    extra.extend([f"## 7. Table complète des degrés relationnels des {len(deg)} thèmes", ""])
-    for slug, dval in deg.most_common():
+    sorted_deg = sorted(deg.items(), key=lambda x: (-x[1], -out_deg.get(x[0], 0), x[0]))
+    extra.extend([
+        f"## 7. Table complète des degrés relationnels des {len(deg)} thèmes",
+        "",
+        "Tri canonique appliqué : degré total décroissant, puis arêtes sortantes décroissantes, puis slug alphabétique (`(-degré, -sortantes, slug)`).",
+        "",
+    ])
+    for slug, dval in sorted_deg:
         dom = thm_by_slug.get(slug, {}).get("domain_id", "D00")
         extra.append(
             f"- **`{slug}`** (`{dom}`) : degré `{dval}` (sortantes : {out_deg.get(slug, 0)} ; entrantes : {in_deg.get(slug, 0)})."
@@ -840,18 +925,28 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     if div02:
         rects = " ; ".join(str(x).rstrip(".") for x in div02.get("trois_rectifications", []))
         coq = " ; ".join(str(x).rstrip(".") for x in div02.get("quatre_coquilles_cad26_v1_1_rectifiees", []))
+        bilan = div02.get("bilan_chiffre", {})
+        pex_v12 = bilan.get("pex_v1_2_ventilation", {})
+        pex_note = (
+            f" Ventilation des {bilan.get('extensions_pex', 24)} `PEX` en `v1.2` (`{bilan.get('exigences_cad26_v1_2', 305)}` exigences) : "
+            f"`{pex_v12.get('couvertures_directes', 5)}` couvertures directes, "
+            f"`{pex_v12.get('extensions_specialisees', 12)}` extensions et "
+            f"`{pex_v12.get('comblements_lacunes', 7)}` comblements (contre `13` spécialisations et `11` comblements en `v1.1`)."
+            if pex_v12
+            else ""
+        )
         div02_sec = (
             "## 1. Fermeture structurale `DIV-02` et soudure des taxonomies\n\n"
             f"**Objet :** {_end_period(div02.get('objet', ''))} Statut : {div02.get('statut', 'Fermée sur pièce')}. "
             f"Trois rectifications structurales sont appliquées : {_end_period(rects)} "
-            f"Quatre coquilles de `CAD26 v1.1` sont également rectifiées : {_end_period(coq)}"
+            f"Quatre coquilles de `CAD26 v1.1` sont également rectifiées : {_end_period(coq)}{pex_note}"
         )
     else:
         div02_sec = (
             "## 1. Fermeture structurale `DIV-02` et soudure des taxonomies\n\n"
             "La fermeture `DIV-02` unifie le cadre de référence à six couches (`CAD26`) et le plan directeur à cinq "
             "couches (`PD28`) avec les cinquante-deux capacités (`42` invariantes et `10` conditionnelles), les vingt-quatre "
-            "propositions sectorielles (`PEX`) et les trois cent cinq exigences exécutables de `CRE-IA-2026-01 v1.2`."
+            "propositions d'exigence (`PEX`) et les trois cent cinq exigences exécutables de `CRE-IA-2026-01 v1.2`."
         )
 
     # §3 — Analyse synthétique des 5 discordances en prose continue (sans dupliquer mot pour mot le Tableau C.1)
@@ -891,7 +986,7 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             "et les six classes d'actes (`Classes 1–6`) mises en correspondance avec `N0–N4`, `L0–L4` et `P0–P3`."
         )
 
-    # §5 — Séparation chronologique STRICTE (parseur ISO exact : 12 pré-gel vs 74 post-gel)
+    # §5 — Séparation chronologique STRICTE (parseur ISO exact sur les 77 jalons uniques)
     past_or_freeze = [a for a in anchors if _is_pre_freeze_date(a.get("date"), freeze_iso)]
     future_anchors = [a for a in anchors if not _is_pre_freeze_date(a.get("date"), freeze_iso)]
     jur_counts = Counter(_normalize_jurisdiction(a.get("jurisdiction", "International")) for a in anchors)
@@ -915,7 +1010,14 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         words = str(raw or "").strip().split()
         if len(words) <= max_words:
             return " ".join(words).rstrip(".")
-        return " ".join(words[:max_words]).rstrip(".,;:") + "…"
+        cut = " ".join(words[:max_words]).rstrip(".,;:")
+        while cut.count("(") > cut.count(")"):
+            pos = cut.rfind("(")
+            if pos > 20:
+                cut = cut[:pos].rstrip(".,;: ")
+            else:
+                cut += ")"
+        return cut + "…"
 
     pre_prose = (
         " ; ".join(
@@ -966,7 +1068,7 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     cmat = [
         c
         for c in mm.get("concordance_matrix", [])
-        if c.get("granularity") == "domain" and str(c.get("tome_id", "")).startswith("T")
+        if c.get("granularity") == "domain" and (str(c.get("tome_id", "")).startswith("T") or c.get("tome_id") == "R")
     ]
     cm_prose = ""
     if cmat:
@@ -977,10 +1079,19 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         if by_dom_cmat:
             dom_bits = []
             for did in sorted(by_dom_cmat.keys()):
-                cells = sorted(by_dom_cmat[did], key=lambda x: str(x.get("tome_id", "")))
-                parts_txt = ", ".join(f"`{c['tome_id']}` ({c.get('node_count', 0)} nœuds, {c.get('occurrence_count', 0)} occ.)" for c in cells)
-                dom_bits.append(f"le domaine `{did}` s'ancre sur {parts_txt}")
-            cm_prose = "\n\n### Ventilation inter-tomes par domaine (`D01`–`D12` × `T1`–`T8`)\n\n" + " ; ".join(dom_bits) + "."
+                cells = sorted(
+                    by_dom_cmat[did],
+                    key=lambda x: (1 if x.get("tome_id") == "R" else 0, str(x.get("tome_id", ""))),
+                )
+                parts_txt = ", ".join(
+                    f"`{c['tome_id']}` ({c.get('node_count', 0)} nœuds, {c.get('occurrence_count', 0)} occ.)"
+                    for c in cells
+                )
+                tot_dom_occ = sum(int(c.get("occurrence_count", 0)) for c in cells)
+                has_r = any(c.get("tome_id") == "R" for c in cells)
+                tot_suffix = f" (total {tot_dom_occ} occ., incluant `R` `Tomes/README.md`)" if has_r else ""
+                dom_bits.append(f"le domaine `{did}` s'ancre sur {parts_txt}{tot_suffix}")
+            cm_prose = "\n\n### Ventilation inter-tomes par domaine (`D01`–`D12` × `T1`–`T8` et `R`)\n\n" + " ; ".join(dom_bits) + "."
 
     sec6 = (
         f"## 6. Grandeurs empiriques ancrées ({len(facts)}), projections temporelles ({len(proj_rels)}) et matrice inter-tomes\n\n"
@@ -1196,7 +1307,10 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"**{prr.get('conditional_count', 0)} conditionnels** et **{prr.get('elevated_medium_count', 0)} élevés ou moyens** "
         f"({len(non_blocking) or 51} points non bloquants intégralement restitués en section 10). "
         "Les quarante critères `C01–C40` des trois blueprints se ventilent en **`18` `BLOQUANT`**, **`15` `OBLIGATOIRE`** "
-        "et **`7` `RECOMMANDÉ`**.\n\n"
+        "et **`7` `RECOMMANDÉ`**. "
+        "Par convention de désambiguïsation des notations `C*`, `C1–C5` désigne les cinq couches du modèle pivot (`PD28`), "
+        "`C1–C6` les six couches sectorielles (`C26`), `C1–C8` les huit strates techniques des trois blueprints (`ch29`), "
+        "`C01–C40` les quarante critères d'homologation et `C.1–C.8` les contrats de l'Annexe C du `Tome 8`.\n\n"
         f"{bp_prose} {sbb_prose}\n\n{blk_prose}"
     )
 
@@ -1213,11 +1327,12 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             for p in pex24
         )
         sec6 = (
-            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`) et vingt-quatre propositions sectorielles ({pex_span})\n\n"
+            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`) et vingt-quatre propositions d'exigence ({pex_span})\n\n"
             f"Les **{len(cap52)} capacités** (dépliées intégralement en section 9) se répartissent par statut "
             f"({', '.join(f'`{k}` : {v}' for k, v in sorted(cap_stat.items()))}) "
             f"et par palier ({', '.join(f'`{k}` : {v}' for k, v in sorted(cap_pal.items()))}). "
-            f"Les **{len(pex24)} extensions `PEX`** ({pex_span}) couvrent les cinq profils sectoriels ("
+            f"Les **{len(pex24)} propositions d'exigence `PEX`** ({pex_span}, numérotées par dizaines de profil : "
+            "`001–005`, `011–015`, `021–025`, `031–035`, `041–044`) couvrent les cinq profils sectoriels ("
             + ", ".join(f"{k} : {v}" for k, v in pex_sec.most_common())
             + ") : "
             + pex_prose
@@ -1225,9 +1340,9 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         )
     else:
         sec6 = (
-            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`) et vingt-quatre propositions sectorielles ({pex_span})\n\n"
+            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`) et vingt-quatre propositions d'exigence ({pex_span})\n\n"
             "Les cinquante-deux capacités (`42` invariantes du noyau possédé et `10` conditionnelles) et les vingt-quatre "
-            "propositions sectorielles (`PEX-001` à `PEX-044` couvrant banque, assurance, gestion de patrimoine, marchés "
+            "propositions d'exigence (`PEX-001` à `PEX-044` couvrant banque, assurance, gestion de patrimoine, marchés "
             "et coopératives financières) ancrent la traçabilité réglementaire du Compendium."
         )
 
@@ -1287,6 +1402,21 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         if r.get("type") in {"operationnalisation", "encadrement_normatif", "attenuation_risque"}
     ]
     op_cnt = Counter(r.get("type", "") for r in op_rels)
+    chapters = [u for u in manifest.get("units", []) if u.get("kind") == "chapter"]
+    front = next((u for u in manifest.get("units", []) if u.get("kind") == "frontmatter"), None)
+    sync_units = sorted({item.get("unit", "") for item in synced_cat if item.get("unit")})
+    lim_concepts = ", ".join(f"`{c}`" for c in (front or {}).get("owned_concepts", [])) if front else ""
+    lim_note = (
+        f"En amont des trente-six chapitres, le `00-liminaire` introduit les concepts directeurs transversaux ({lim_concepts})."
+        if lim_concepts
+        else "En amont des trente-six chapitres, le `00-liminaire` pose le cadre directeur transversal."
+    )
+    ch_cov_segs = []
+    for ch in chapters:
+        concepts = ", ".join(f"`{c}`" for c in ch.get("owned_concepts", []))
+        sync_tag = ", `CA-G0-SYNC`" if ch["id"] in sync_units else ""
+        ch_cov_segs.append(f"`{ch['id']}` (`{ch.get('domain_id')}`{sync_tag}) : {concepts}")
+
     sec8 = (
         "## 8. Chaîne d'étanchéité `G0`–`G5`, double recollation `G3` et liaisons d'opérationnalisation\n\n"
         "Les deux passes de recollation à l'aveugle portent chacune sur cent quarante-huit items répartis en quatre "
@@ -1295,7 +1425,10 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"Par ailleurs, le graphe relie l'architecture exécutable aux exigences par **{len(op_rels)} liaisons** "
         f"(`operationnalisation` : {op_cnt.get('operationnalisation', 0)}, "
         f"`encadrement_normatif` : {op_cnt.get('encadrement_normatif', 0)}, "
-        f"`attenuation_risque` : {op_cnt.get('attenuation_risque', 0)}), intégralement listées dans l'Annexe B (section 6)."
+        f"`attenuation_risque` : {op_cnt.get('attenuation_risque', 0)}), intégralement listées dans l'Annexe B (section 6).\n\n"
+        f"### Couverture exclusive des concepts par unité (`00-liminaire` et `ch01`–`ch36`)\n\n"
+        f"{lim_note}\n\n"
+        + "\n\n".join(f"- **{seg}**." for seg in ch_cov_segs)
     )
 
     required = [
@@ -1330,9 +1463,7 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         sec8,
     ]
 
-    # Expansions analytiques en prose fluide (couverture chapitres et opérations du graphe)
-    chapters = [u for u in manifest.get("units", []) if u.get("kind") == "chapter"]
-    sync_units = sorted({item.get("unit", "") for item in synced_cat if item.get("unit")})
+    # Expansions analytiques en prose fluide (opérations du graphe par type et domaine)
     thm_by_slug = {t["canonical_slug"]: t for t in mm.get("themes", []) if "canonical_slug" in t}
     by_type_dom: dict[str, list[dict]] = defaultdict(list)
     for r in op_rels:
@@ -1340,18 +1471,17 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         by_type_dom[f"{r.get('type')}:{sd}"].append(r)
 
     expansions: list[str] = []
-    for ch in chapters:
-        concepts = ", ".join(f"`{c}`" for c in ch.get("owned_concepts", []))
-        sync_tag = " avec ancrage `CA-G0-SYNC` actif" if ch["id"] in sync_units else ""
-        expansions.append(
-            f"L'unité `{ch['id']}` (`{ch.get('domain_id')}`{sync_tag}), intitulée « {ch.get('title', '')} », "
-            f"assure la couverture exclusive des concepts {concepts}."
-        )
     for key, items in sorted(by_type_dom.items()):
         rtype, did = key.split(":", 1)
         ex_list = ", ".join(f"`{r.get('relation_id')}` (`{r.get('source_slug')}` vers `{r.get('target_slug')}`)" for r in items[:6])
         expansions.append(
             f"Sur l'axe `{did}`, la catégorie `{rtype}` rassemble {_plural(len(items), 'liaison')}, notamment {ex_list}."
+        )
+    for r in op_rels:
+        sd = thm_by_slug.get(r.get("source_slug", ""), {}).get("domain_id", "D00")
+        expansions.append(
+            f"La liaison `{r.get('relation_id')}` (`{r.get('type')}`, `{sd}`) relie `{r.get('source_slug')}` "
+            f"à `{r.get('target_slug')}` : {_end_period(r.get('label', ''))}"
         )
 
     prose = _assemble_complete_prose(
@@ -1401,15 +1531,42 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             f"- **`{m.get('id')}`** (`{m.get('family')}`, `{m.get('criticality')}`, `{m.get('owner_chapter')}`) → "
             f"`{m.get('trousse_module')}.{m.get('implementation_symbol')}` (`{m.get('pytest_nodeid')}`)."
         )
+    blocking_ids = {str(b.get("prr_id", "")).strip() for b in blocking}
+
+    def _format_prr_codes(raw: object) -> str:
+        parts = [p.strip() for p in str(raw or "").split(",") if p.strip()]
+        formatted = []
+        for p in parts:
+            has_star = "*" in p
+            code = p.replace("\\*", "").replace("*", "").strip()
+            if has_star or code in blocking_ids:
+                formatted.append(f"`{code}`*")
+            else:
+                formatted.append(f"`{code}`")
+        return ", ".join(formatted)
+
     if grille_c1:
-        extra.extend(["", f"### Grille unifiée `EXIG / PRR / Portes` ({len(grille_c1)} rubriques)", ""])
+        extra.extend([
+            "",
+            f"### Grille unifiée `EXIG / PRR / Portes` ({len(grille_c1)} rubriques)",
+            "",
+            "*Note : l'astérisque (`*`) placé hors backticks signale une porte `PRR` bloquante (`24` critères bloquants en `PRR-75`).*",
+            "",
+        ])
         for g in grille_c1:
+            prr_fmt = _format_prr_codes(g.get("Codes PRR", ""))
             extra.append(
                 f"- **`{g.get('Rubrique')}`** — {g.get('Contrôle d’homologation', '')} : "
-                f"`{g.get('Exigences (EXIG-*)', '')}` ; PRR : `{g.get('Codes PRR', '')}` ; Portes : `{g.get('Portes', '')}`."
+                f"`{g.get('Exigences (EXIG-*)', '')}` ; PRR : {prr_fmt} ; Portes : `{g.get('Portes', '')}`."
             )
     if ini43:
-        extra.extend(["", f"### Portefeuille prospectif déplié : {len(ini43)} initiatives `INI-*`, {len(por15)} portes `POR-*` et {len(sig27)} signaux `SIG-*`", ""])
+        extra.extend([
+            "",
+            f"### Portefeuille prospectif déplié : {len(ini43)} initiatives `INI-*`, {len(por15)} portes `POR-*` et {len(sig27)} signaux `SIG-*`",
+            "",
+            "*Conventions de plages : `INI-001`–`029` initiatives sans regret et `INI-041`–`054` conditionnelles (`030`–`040` réservés) ; `POR-001`–`016` sans `POR-010` (`15` portes actives) ; `SIG-001`–`017` technologiques et `SIG-101`–`110` réglementaires/sectorielles.*",
+            "",
+        ])
         for ini in ini43:
             extra.append(
                 f"- **`{ini.get('ini_id')}`** (`{ini.get('palier')}`, `{ini.get('nature')}`, signal `{ini.get('signal')}`) : {_end_period(ini.get('titre', ''))}"
@@ -1612,7 +1769,7 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"{guides_prose}\n\n"
         "### Ventilation par domaine (`Liminaire`, `D01`–`D12`) et moteur\n\n"
         + " ; ".join(dom_segs)
-        + "."
+        + " (soit `260` thèmes distincts sur `D01`–`D12`, les `28` thèmes du `Liminaire` constituant une reprise panoramique transversale)."
     )
 
     required = [

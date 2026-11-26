@@ -226,7 +226,7 @@
                 "theme_node_id": "THM_services-bancaires-consommateurs-c15",
                 "canonical_slug": "services-bancaires-consommateurs-c15",
                 "theme_title": "Projet de loi C-15 (Banque du Canada) et absence vérifiée de standard technique",
-                "content_specification": "Analyse du projet de loi fédéral C-15 (26 mars 2026) sur les services bancaires axés sur les consommateurs, qui abroge la loi partielle de 2024 et confie l'accréditation et la supervision à la Banque du Canada (sections 32.1 et 32.2 ; règlement prépublié le 27 juin 2026, section 32.3). Cette analyse s'appuie sur la vérification négative de degré 1 (section 32.4, reconfirmée dans la Gazette du Canada I/II en Annexe N) démontrant qu'aucun standard technique n'est encore désigné, ce qui impose de découpler le Flux 3 bancaire ouvert (section 45.13) derrière une couche d'abstraction évolutive.",
+                "content_specification": "Analyse du projet de loi fédéral C-15 (26 mars 2026) sur les services bancaires axés sur les consommateurs, qui abroge la loi partielle de 2024 et confie l'accréditation et la supervision à la Banque du Canada (sections 32.1 et 32.2 ; règlement prépublié le 27 juin 2026, section 32.3). Cette analyse s'appuie sur la vérification négative de degré 1 (section 32.4, reconfirmée dans la Gazette du Canada I/II en Annexe N du corpus source) démontrant qu'aucun standard technique n'est encore désigné, ce qui impose de découpler le Flux 3 bancaire ouvert (section 45.13) derrière une couche d'abstraction évolutive.",
                 "identifiers_and_norms": [
                   "Projet de loi C-15 (LSAC)",
                   "Gazette I/II",
@@ -349,32 +349,32 @@
             "unit_id": "ch25",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4197,
-            "reference": "Partie IX · Chapitre 25 — Droit québécois et cadre prudentiel financier canadien (L4197–L4349)"
+            "line_start": 4226,
+            "reference": "Partie IX · Chapitre 25 — Droit québécois et cadre prudentiel financier canadien (L4226–L4378)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch25",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4205,
-            "reference": "Partie IX · § 25.1 Résumé exécutif : Loi 25, échéance du 1er mai 2027 et mosaïque canadienne (L4205–L4216)"
+            "line_start": 4234,
+            "reference": "Partie IX · § 25.1 Résumé exécutif : Loi 25, échéance du 1er mai 2027 et mosaïque canadienne (L4234–L4245)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch25",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4217,
-            "reference": "Partie IX · § 25.2 Droit québécois et cadre prudentiel canadien (L4217–L4314)"
+            "line_start": 4246,
+            "reference": "Partie IX · § 25.2 Droit québécois et cadre prudentiel canadien (L4246–L4343)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch25",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4315,
-            "reference": "Partie IX · § 25.3 Synthèse architecturale, livrables et portes de contrôle (L4315–L4337)"
+            "line_start": 4344,
+            "reference": "Partie IX · § 25.3 Synthèse architecturale, livrables et portes de contrôle (L4344–L4366)"
           },
           {
             "part_id": "P09",
@@ -405,24 +405,24 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -539,7 +539,7 @@
                 "theme_node_id": "THM_iso-iec-42001-nist",
                 "canonical_slug": "iso-iec-42001-nist",
                 "theme_title": "Cadres internationaux : portée limitée d'ISO/IEC 42001 (statut F), NIST AI RMF et IMDA v1.5",
-                "content_specification": "Fédère la gouvernance opérationnelle autour de NIST AI RMF 1.0 (Gouverner, Cartographier, Mesurer, Gérer ; publications AI 100-1, AI 600-1 et NIST CAISI), d'ISO/IEC 42001:2023 (SMIA, complété par ISO/IEC 42005, 22989, 23894, 5338, DIS 42102–42105 et FDIS 24970) et du cadre IMDA 2026 : déclaration de tolérance au risque approuvée par la direction (EXIG-CON-17), table de correspondance du Tableau 50, index unique de preuves (EXIG-CON-18) et évaluation d'impact unifiée (EXIG-CON-26). Sous la règle AO-01 au Tome 8, la norme ISO/IEC 42001 (payante et inaccessible en HTTP 403) passe en statut F et cède la place dans le dossier probatoire L+ aux normes européennes ouvertes EN 18286:2026.",
+                "content_specification": "Fédère la gouvernance opérationnelle autour de NIST AI RMF 1.0 (Gouverner, Cartographier, Mesurer, Gérer ; publications AI 100-1, AI 600-1 et NIST CAISI), d'ISO/IEC 42001:2023 (SMIA, complété par ISO/IEC 42005, 22989, 23894, 5338, DIS 42102–42105 et FDIS 24970) et du cadre IMDA 2026 : déclaration de tolérance au risque approuvée par la direction (EXIG-CON-17), table de correspondance du Tableau 50 du Tome 2, index unique de preuves (EXIG-CON-18) et évaluation d'impact unifiée (EXIG-CON-26). Sous la règle AO-01 au Tome 8, la norme ISO/IEC 42001 (payante et inaccessible en HTTP 403) passe en statut F et cède la place dans le dossier probatoire L+ aux normes européennes ouvertes EN 18286:2026.",
                 "identifiers_and_norms": [
                   "ISO/IEC 42001:2023 (statut F)",
                   "ISO/IEC 42005:2025",
@@ -632,7 +632,7 @@
           }
         ],
         "deliverables_and_verification": [
-          "Matrice réglementaire transjuridictionnelle unifiée et index unique des preuves (Tableau 50 et EXIG-CON-18) rattachant chaque exigence EXIG-CON aux textes ouverts vérifiés (EN 18286:2026 et actes CELEX relatifs à l'EU AI Act, à DORA et au Data Act).",
+          "Matrice réglementaire transjuridictionnelle unifiée et index unique des preuves (Tableau 50 du Tome 2 et EXIG-CON-18) rattachant chaque exigence EXIG-CON aux textes ouverts vérifiés (EN 18286:2026 et actes CELEX relatifs à l'EU AI Act, à DORA et au Data Act).",
           "Moteur de politiques OPA/Cedar vérifiant automatiquement la classe de risque EXIG-CON-02 et bloquant tout dépassement des plafonds d'autonomie N2, N3 ou N4 avant l'inscription au registre.",
           "Playbook SOAR de réponse aux incidents S1–S4 éprouvé en exercice à sec, démontrant le gel des artefacts d'état, le maintien du canal de compensation et le respect des horloges réglementaires de 24 heures et 72 heures.",
           "Audit d'infrastructure SEAL attestant le géorepérage des six substrats d'état, la détention souveraine des clés HYOK hors d'atteinte du fournisseur infonuagique (classe C2) et l'attestation distante des enclaves GPU TEE (classe C3)."
@@ -671,7 +671,7 @@
             "relation_type": "encadrement_normatif",
             "target_chapter_number": 34,
             "target_slug": "exigences-cre-ia-305",
-            "synthesis": "La section 14.3 de CAD26 situe ISO/IEC 42001:2023 (balisée en statut F) comme couvrant la seule dimension de gouvernance, laquelle doit être complétée par NIST AI RMF 1.0 (AI 600-1, 7.2.4.1) et les preuves techniques des 305 EXIG-* sous-tendant les critères C37, C40 et la fiche ADR 2027-B001."
+            "synthesis": "La section 14.3 de CAD26 situe ISO/IEC 42001:2023 (balisée en statut F) comme couvrant la seule dimension de gouvernance, laquelle doit être complétée par NIST AI RMF 1.0 (AI 600-1, 7.2.4.1) et les preuves techniques des 305 EXIG-* sous-tendant les critères C37, C40 et la fiche ADR-2027-B001."
           },
           {
             "direction": "entrante",
@@ -706,7 +706,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 36,
             "target_slug": "peremption-revalidation-annexe-n",
-            "synthesis": "L'Annexe N et la section 49.1 distinguent l'entrée en vigueur déjà effective de l'article 50 de l'EU AI Act (août 2026) du report opéré par le Digital Omnibus (UE) 2026/1744 pour les systèmes à haut risque (décembre 2027 et août 2028)."
+            "synthesis": "L'Annexe N et la section 49.1 du corpus source distinguent l'entrée en vigueur déjà effective de l'article 50 de l'EU AI Act (août 2026) du report opéré par le Digital Omnibus (UE) 2026/1744 pour les systèmes à haut risque (décembre 2027 et août 2028)."
           }
         ],
         "corpus_anchors": [
@@ -715,32 +715,32 @@
             "unit_id": "ch26",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4350,
-            "reference": "Partie IX · Chapitre 26 — Réglementation européenne et référentiels internationaux (L4350–L4494)"
+            "line_start": 4379,
+            "reference": "Partie IX · Chapitre 26 — Réglementation européenne et référentiels internationaux (L4379–L4525)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch26",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4358,
-            "reference": "Partie IX · § 26.1 Résumé exécutif : portée extraterritoriale, classification unique et coffre souverain (L4358–L4371)"
+            "line_start": 4387,
+            "reference": "Partie IX · § 26.1 Résumé exécutif : portée extraterritoriale, classification unique et coffre souverain (L4387–L4400)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch26",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4372,
-            "reference": "Partie IX · § 26.2 Droit européen et référentiels internationaux (L4372–L4461)"
+            "line_start": 4401,
+            "reference": "Partie IX · § 26.2 Droit européen et référentiels internationaux (L4401–L4492)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch26",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4462,
-            "reference": "Partie IX · § 26.3 Synthèse architecturale, livrables et portes de contrôle (L4462–L4484)"
+            "line_start": 4493,
+            "reference": "Partie IX · § 26.3 Synthèse architecturale, livrables et portes de contrôle (L4493–L4515)"
           },
           {
             "part_id": "P09",
@@ -748,7 +748,7 @@
             "tome_id": "P09",
             "file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 26.md (L1–L134)"
+            "reference": "Source modulaire : Chapitre 26.md (L1–L136)"
           },
           {
             "part_id": "LIM",
@@ -771,8 +771,8 @@
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           }
         ]
       }
@@ -783,12 +783,12 @@
       "domain_id": "D09",
       "subdomain_node_id": "SUB_D09_03",
       "representative_title": "Approvisionnement réversible et clauses contractuelles",
-      "executive_summary": "Le chapitre 27 établit la doctrine d'approvisionnement réversible et la gouvernance contractuelle des fournisseurs d'agents, de modèles et d'infrastructure infonuagique afin d'éliminer l'enfermement propriétaire et l'ambiguïté de responsabilité juridique. En amont, aucune allégation commerciale ne saurait suffire (EXIG-APP-04) : les soumissionnaires font l'objet d'une évaluation empirique en banc d'essai portant sur MCP, A2A 1.0 (suite `a2a-tck`), la latence sous politiques actives, l'export OTLP et FOCUS 1.4+, la fédération d'identité et l'arrêt d'urgence, sanctionnée par une grille pondérée comportant sept critères éliminatoires sur huit (Tableau 54). Sur le plan contractuel, toute acquisition ou reconduction intègre dix clauses minimales obligatoires (EXIG-APP-07 à EXIG-APP-16) couvrant la portabilité des cartes et protocoles, la délégation RFC 8693, la télémétrie et l'explicabilité, l'interdiction d'entraînement sur les données (Loi 25, article 18.3), la localisation et l'ÉFVP (article 17) face au CLOUD Act, la notification d'incident sous 24 heures (4 heures pour les IFF), le droit d'audit BSIF B-10, le plan de réversibilité sans frais aligné sur l'EU Data Act (12 janvier 2027), l'accord écrit de l'EU AI Act article 25(4) et la révocation directe des identités NHI. Enfin, le chapitre encadre le mandat apparent (Moffatt c. Air Canada), les contrats B2B autonomes (LCCJTI/LUCE), la prévention de la collusion algorithmique et les exclusions d'assurance.",
+      "executive_summary": "Le chapitre 27 établit la doctrine d'approvisionnement réversible et la gouvernance contractuelle des fournisseurs d'agents, de modèles et d'infrastructure infonuagique afin d'éliminer l'enfermement propriétaire et l'ambiguïté de responsabilité juridique. En amont, aucune allégation commerciale ne saurait suffire (EXIG-APP-04) : les soumissionnaires font l'objet d'une évaluation empirique en banc d'essai portant sur MCP, A2A v1.0.1 (suite `a2a-tck`), la latence sous politiques actives, l'export OTLP et FOCUS 1.4+, la fédération d'identité et l'arrêt d'urgence, sanctionnée par une grille pondérée comportant sept critères éliminatoires sur huit (Tableau 54 du Tome 2 / Tableau 27.1). Sur le plan contractuel, toute acquisition ou reconduction intègre dix clauses minimales obligatoires (EXIG-APP-07 à EXIG-APP-16) couvrant la portabilité des cartes et protocoles, la délégation RFC 8693, la télémétrie et l'explicabilité, l'interdiction d'entraînement sur les données (Loi 25, article 18.3), la localisation et l'ÉFVP (article 17) face au CLOUD Act, la notification d'incident sous 24 heures (4 heures pour les IFF), le droit d'audit BSIF B-10, le plan de réversibilité sans frais aligné sur l'EU Data Act (12 janvier 2027), l'accord écrit de l'EU AI Act article 25(4) et la révocation directe des identités NHI. Enfin, le chapitre encadre le mandat apparent (Moffatt c. Air Canada), les contrats B2B autonomes (LCCJTI/LUCE), la prévention de la collusion algorithmique et les exclusions d'assurance.",
       "targeted_content": {
         "scope_and_objectives": "Convertir l'indépendance technologique (CAP-051) et la maîtrise de la responsabilité juridique B2B en critères éliminatoires d'appel d'offres et en dix clauses contractuelles impératives vérifiées annuellement à la porte POR-016.",
         "key_requirements_and_objectives": [
-          "EXIG-APP-01 à EXIG-APP-06 et EXIG-APP-17 (CAP-051, INI-014, PRR O-15) : toute sélection fondée sur une simple déclaration fournisseur EST PROSCRITE ; les candidats DOIVENT réussir en banc d'essai la grille pondérée du Tableau 54 (7 critères éliminatoires sur 8, sans aucune dérogation aux clauses DOIT).",
-          "EXIG-APP-07 à EXIG-APP-10 (portabilité et transparence) : les contrats DOIVENT imposer la portabilité A2A 1.0 et MCP avec délégation RFC 8693 sans secret statique, l'export OTLP et FOCUS 1.4+, le dossier d'explicabilité exportable sous 10 jours et conservé 1 an, ainsi que l'interdiction absolue d'entraînement sur les traces ou données d'entreprise (Loi 25, article 18.3).",
+          "EXIG-APP-01 à EXIG-APP-06 et EXIG-APP-17 (CAP-051, INI-014, PRR O-15) : toute sélection fondée sur une simple déclaration fournisseur EST PROSCRITE ; les candidats DOIVENT réussir en banc d'essai la grille pondérée du Tableau 54 du Tome 2 (repris au Tableau 27.1) (7 critères éliminatoires sur 8, sans aucune dérogation aux clauses DOIT).",
+          "EXIG-APP-07 à EXIG-APP-10 (portabilité et transparence) : les contrats DOIVENT imposer la portabilité A2A v1.0.1 et MCP avec délégation RFC 8693 sans secret statique, l'export OTLP et FOCUS 1.4+, le dossier d'explicabilité exportable sous 10 jours et conservé 1 an, ainsi que l'interdiction absolue d'entraînement sur les traces ou données d'entreprise (Loi 25, article 18.3).",
           "EXIG-APP-11 à EXIG-APP-16 (conformité, audit et sortie) : les ententes DOIVENT contractualiser la localisation et les préavis de 90 jours (Loi 25, article 17, CLOUD Act), la notification d'incident (24 heures, et 4 heures pour les IFF), le droit d'audit BSIF B-10, d'équipe rouge et d'accès SBOM, la réversibilité sans pénalité avec assistance de 6 mois et destruction attestée, l'accord écrit EU AI Act article 25(4) et la révocation directe des NHI sous 24 heures.",
           "EU Data Act (12 janvier 2027) et DORA : l'approvisionnement DOIT imposer des fenêtres de dépréciation de 12 mois, la suppression des frais de sortie infonuagiques et le maintien de cibles souveraines pour atténuer le risque de concentration sur trois hyperscalers.",
           "Responsabilité et mandat B2B (Californie AB-316 article 1714.46, Moffatt c. Air Canada, Directive UE 2024/2853, LCCJTI/LUCE, G-14) : l'organisation DOIT combler l'écart entre autorité réelle et mandat apparent au moyen d'avenants bilatéraux, de mandats AP2 plafonnés, de verrous anti-collusion tarifaire et de l'audit des exclusions d'assurance Verisk/ISO."
@@ -870,7 +870,7 @@
           {
             "family_node_id": "FAM_D09_03_02",
             "family_title": "Grille d'évaluation des fournisseurs et souveraineté infonuagique",
-            "family_overview": "Cette famille formalise la méthode d'évaluation technique des fournisseurs par banc d'essai et grille éliminatoire (Tableau 54), complétée par le cadre juridique du mandat apparent, des contrats B2B autonomes (LCCJTI/LUCE) et de la prévention anti-collusion.",
+            "family_overview": "Cette famille formalise la méthode d'évaluation technique des fournisseurs par banc d'essai et grille éliminatoire (Tableau 54 du Tome 2 / Tableau 27.1), complétée par le cadre juridique du mandat apparent, des contrats B2B autonomes (LCCJTI/LUCE) et de la prévention anti-collusion.",
             "themes_targeted": [
               {
                 "theme_node_id": "THM_responsabilite-mandat-contrats-b2b",
@@ -894,11 +894,11 @@
                 "theme_node_id": "THM_criteres-evaluation-fournisseurs-grille",
                 "canonical_slug": "criteres-evaluation-fournisseurs-grille",
                 "theme_title": "Évaluation et grille pondérée des fournisseurs (7 critères éliminatoires, preuves en banc d'essai)",
-                "content_specification": "Proscrit toute sélection fondée sur des allégations commerciales (EXIG-APP-04) et exige des preuves reproductibles en banc d'essai : conformité à MCP 2026-07-28 et à A2A 1.0 (`a2a-tck`), mesure des latences P50 et P99 sous politiques actives, export OTLP et FOCUS 1.4+, fédération d'identité sans clé statique et capacité d'interruption indépendante (EXIG-APP-03 à EXIG-APP-06, EXIG-APP-17). L'évaluation impose la notation sur la grille pondérée du Tableau 54 (échelle de 0 à 3, sept critères éliminatoires sur huit et rejet automatique en cas de refus d'une clause DOIT).",
+                "content_specification": "Proscrit toute sélection fondée sur des allégations commerciales (EXIG-APP-04) et exige des preuves reproductibles en banc d'essai : conformité à MCP 2026-07-28 et à A2A 1.0 (`a2a-tck`), mesure des latences P50 et P99 sous politiques actives, export OTLP et FOCUS 1.4+, fédération d'identité sans clé statique et capacité d'interruption indépendante (EXIG-APP-03 à EXIG-APP-06, EXIG-APP-17). L'évaluation impose la notation sur la grille pondérée du Tableau 54 du Tome 2 (repris au Tableau 27.1) (échelle de 0 à 3, sept critères éliminatoires sur huit et rejet automatique en cas de refus d'une clause DOIT).",
                 "identifiers_and_norms": [
                   "EXIG-APP-03..06",
                   "EXIG-APP-17",
-                  "Tableau 54 (7 critères éliminatoires)",
+                  "Tableau 54 du Tome 2 / Tableau 27.1 (7 critères éliminatoires)",
                   "a2a-tck",
                   "FOCUS 1.4+",
                   "EXIG-APP-*",
@@ -967,32 +967,32 @@
             "unit_id": "ch27",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4495,
-            "reference": "Partie IX · Chapitre 27 — Approvisionnement réversible et clauses contractuelles (L4495–L4624)"
+            "line_start": 4526,
+            "reference": "Partie IX · Chapitre 27 — Approvisionnement réversible et clauses contractuelles (L4526–L4657)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch27",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4503,
-            "reference": "Partie IX · § 27.1 Résumé exécutif : banc d'essai éliminatoire, dix clauses et mandat apparent (L4503–L4510)"
+            "line_start": 4534,
+            "reference": "Partie IX · § 27.1 Résumé exécutif : banc d'essai éliminatoire, dix clauses et mandat apparent (L4534–L4541)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch27",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4511,
-            "reference": "Partie IX · § 27.2 Évaluation éliminatoire, clauses de réversibilité et responsabilité B2B (L4511–L4592)"
+            "line_start": 4542,
+            "reference": "Partie IX · § 27.2 Évaluation éliminatoire, clauses de réversibilité et responsabilité B2B (L4542–L4625)"
           },
           {
             "part_id": "P09",
             "unit_id": "ch27",
             "tome_id": "P09",
             "file": "Compendium/Compendium.md",
-            "line_start": 4593,
-            "reference": "Partie IX · § 27.3 Synthèse architecturale, livrables et portes de contrôle (L4593–L4615)"
+            "line_start": 4626,
+            "reference": "Partie IX · § 27.3 Synthèse architecturale, livrables et portes de contrôle (L4626–L4648)"
           },
           {
             "part_id": "P09",
@@ -1000,7 +1000,7 @@
             "tome_id": "P09",
             "file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 27.md (L1–L120)"
+            "reference": "Source modulaire : Chapitre 27.md (L1–L122)"
           },
           {
             "part_id": "LIM",
@@ -1032,10 +1032,10 @@
         "scope_and_objectives": "Valider la portabilité de l'architecture cible sur cinq sous-secteurs financiers réglementés grâce aux 24 propositions PEX-001 à PEX-044, au tampon déterministe RTR ISO 20022 et à l'observation empirique du marché canadien, tout en bornant rigoureusement le champ probatoire.",
         "key_requirements_and_objectives": [
           "PEX-001 à PEX-005 et EXIG-CON-29 (M-14 Banque et RTR) : proscrire le grattage d'écran (LSAC, article 171), appliquer hors modèle la muraille bancassurance (Loi sur les banques, article 416), maintenir les livres comptables au Canada et imposer sur les virements irrévocables RTR ISO 20022 `pacs.008` un tampon déterministe hors modèle (validation `Decimal` exacte, idempotence UETR, contrôles antifraude synchrones et approbation humaine P3 liée au condensat JCS avec rétention ≥ 30 s).",
-          "PEX-011 à PEX-015 et EXIG-CON-27/28 (M-15 Patrimoine) : plafonner le conseil D2 aux Stades 2–3, rattacher toute évaluation de convenance à une personne physique inscrite (OCRI 3400 et 1103(2)), dresser une double barrière d'exécution sans conseil OEO (OCRI 3240 et 3241), assurer la pré-approbation et l'archivage 7 ans (3600 et 3803), exclure les rétrofacturations interdites au 1er octobre 2028 et calculer les frais en arithmétique `Decimal` exacte (Norme canadienne 31-103).",
+          "PEX-011 à PEX-015 et EXIG-CON-27/28 (M-15 Patrimoine) : plafonner le conseil D2 aux Stades 2–3, rattacher toute évaluation de convenance à une personne physique inscrite (OCRI 3400 et 1103(2)), dresser une double barrière d'exécution sans conseil OEO (OCRI 3240 et 3241), assurer la pré-approbation et l'archivage 7 ans (3600 et 3803), exclure les rétrofacturations de commissions interdites au 1er octobre 2028 et calculer les frais en arithmétique `Decimal` exacte (Norme canadienne 31-103).",
           "PEX-021 à PEX-025 (M-16 Assurance de personnes) : caviarder de manière déterministe avant mémoire et inférence toute donnée génétique (L.C. 2017, ch. 3), attester le consentement sociosanitaire (L.Q. 2023, c. 5), exiger une révision humaine qualifiée avant tout refus vital, encadrer les sociétés mandataires MGA et protéger les dossiers sur 20 à 40 ans contre le déchiffrement post-quantique.",
           "PEX-031 à PEX-035 (M-17 IARD) : pré-homologuer l'élasticité catastrophique (B-9/E-21) sans refus automatique hors expert en sinistres, générer de façon déterministe les formulaires automobiles approuvés (Loi sur les assureurs, article 71), comparer ≥ 3 assureurs hors groupe en courtage (LDPSF, article 38), isoler les photographies de sinistres par un sas multimodal et valider les modèles de catastrophe et d'émissions BSIF B-15.",
-          "PEX-041 à PEX-044 (M-18 Groupe financier diversifié) et délimitation probatoire : mutualiser le socle technique sans données clients sous ententes BSIF B-10, bloquer tout échange inter-filiales sans étiquette d'entité juridique ni jeton cryptographique de consentement exprès, désagréger les livres par personne morale et baliser les cas santé FHIR et industriels IT/OT SIL 2/3 comme extrapolations purement illustratives."
+          "PEX-041 à PEX-044 (M-18 Groupe financier diversifié) et délimitation probatoire : mutualiser le socle technique sans données clients sous ententes BSIF B-10, bloquer tout échange inter-filiales sans étiquette d'entité juridique ni jeton cryptographique de consentement exprès, désagréger les livres par personne morale et baliser les cas santé FHIR et industriels IT/OT SIL 2–4 comme extrapolations purement illustratives."
         ],
         "families_and_themes": [
           {
@@ -1047,7 +1047,7 @@
                 "theme_node_id": "THM_profils-financiers-5-secteurs",
                 "canonical_slug": "profils-financiers-5-secteurs",
                 "theme_title": "Déclinaison comparative des cinq profils financiers réglementés et 24 propositions d'exigence (PEX)",
-                "content_specification": "Synthèse transversale multi-tomes (Tome 1 chapitre 34, Tome 4 M-14 à M-19 et Annexe C, Tome 5 chapitre 10.2 et Annexe A, Tome 7 chapitre 10.4) démontrant l'instanciation sans re-dérivation sur cinq sous-secteurs financiers (banque MISMO, IARD ACORD, assurance de personnes HL7 FHIR, patrimoine CDM et technologie financière) face à sept questions ouvertes (Tableau 34.2) et clôturant la divergence DIV-02 au moyen de 24 propositions PEX-001 à PEX-044 (13 spécialisations et 11 comblements réglementaires couvrant notamment les articles 415 et 416 ainsi que la Partie XI de la Loi sur les banques).",
+                "content_specification": "Synthèse transversale multi-tomes (Tome 1 chapitre 34, Tome 4 M-14 à M-19 et Annexe C, Tome 5 chapitre 10.2 et Annexe A, Tome 7 chapitre 10.4) démontrant l'instanciation sans re-dérivation sur cinq sous-secteurs financiers (banque MISMO, IARD ACORD, assurance de personnes HL7 FHIR, patrimoine CDM et technologie financière) face à sept questions ouvertes (Tableau 34.2) et clôturant la divergence DIV-02 au moyen de 24 propositions PEX-001 à PEX-044 (5 couvertures directes, 12 extensions et 7 comblements réglementaires en v1.2, contre 13 spécialisations et 11 comblements en v1.1, couvrant notamment les articles 415 et 416 ainsi que la Partie XI de la Loi sur les banques).",
                 "identifiers_and_norms": [
                   "PEX-001..044",
                   "DIV-02",
@@ -1139,7 +1139,7 @@
                 "theme_node_id": "THM_profil-gestion-patrimoine-m15",
                 "canonical_slug": "profil-gestion-patrimoine-m15",
                 "theme_title": "Profil Gestion de patrimoine et valeurs mobilières (M-15, PEX-011..015) : convenance OCRI 3400 et OEO 3241",
-                "content_specification": "Profil sectoriel Courtiers OCRI, gestionnaires de portefeuille et gestionnaires de fonds d'investissement (M-15, charge FEDS de 49,59 / 100 ; PEX-011 à PEX-015, EXIG-CON-27, EXIG-CON-28, ANC-101, ANC-105, SIG-105), démontrant le plafonnement du conseil D2 aux Stades 2–3. Il impose l'imputabilité non délégable de la convenance à une personne physique inscrite (OCRI 3400 et 1103(2), ACVM 11-348), la double barrière d'exécution sans conseil (OEO) bloquant les recommandations et ordres automatisés des clients (OCRI 3240 et 3241), la pré-approbation par superviseur, la lutte contre l'AI washing et l'archivage 7 ans (OCRI 3600 et 3803), l'exclusion des rétrofacturations interdites au 1er octobre 2028 et le calcul quotidien exact des frais en arithmétique `Decimal` (Norme canadienne 31-103).",
+                "content_specification": "Profil sectoriel Courtiers OCRI, gestionnaires de portefeuille et gestionnaires de fonds d'investissement (M-15, charge FEDS de 49,59 / 100 ; PEX-011 à PEX-015, EXIG-CON-27, EXIG-CON-28, ANC-101, ANC-105, SIG-105), démontrant le plafonnement du conseil D2 aux Stades 2–3. Il impose l'imputabilité non délégable de la convenance à une personne physique inscrite (OCRI 3400 et 1103(2), ACVM 11-348), la double barrière d'exécution sans conseil (OEO) bloquant les recommandations et ordres automatisés des clients (OCRI 3240 et 3241), la pré-approbation par superviseur, la lutte contre l'AI washing et l'archivage 7 ans (OCRI 3600 et 3803), l'exclusion des rétrofacturations de commissions interdites au 1er octobre 2028 et le calcul quotidien exact des frais en arithmétique `Decimal` (Norme canadienne 31-103).",
                 "identifiers_and_norms": [
                   "M-15",
                   "PEX-011..015",
@@ -1187,11 +1187,11 @@
                 "theme_node_id": "THM_eclats-sectoriels-extrapoles",
                 "canonical_slug": "eclats-sectoriels-extrapoles",
                 "theme_title": "Délimitation stricte entre finance/génie logiciel et extrapolations sectorielles (santé FHIR, IT/OT SIL, M&A)",
-                "content_specification": "Établit la frontière méthodologique stricte dès l'Ouverture du Tome 3 (chapitres 0, 5, 16, 18 et 28) : seul le périmètre des services financiers réglementés (BCA, CRE-IA-2026-01 v1.2, Note AMF IA) et du contrôle logiciel déterministe (Borealis-Bench) est démontré sur preuves opposables. Les déclinaisons en santé (HL7 FHIR R4), en automatisation industrielle IT/OT (usine BEL de Trois-Rivières, IEC 62443), dans le secteur de l'énergie et des mines (NERC CIP, IEC 61511 SIL 2/3, avec proscription de tout actionnement autonome direct) et en fusions-acquisitions sont explicitement balisées comme des extrapolations illustratives.",
+                "content_specification": "Établit la frontière méthodologique stricte dès l'Ouverture du Tome 3 (chapitres 0, 5, 16, 18 et 28) : seul le périmètre des services financiers réglementés (BCA, CRE-IA-2026-01 v1.2, Note AMF IA) et du contrôle logiciel déterministe (Borealis-Bench) est démontré sur preuves opposables. Les déclinaisons en santé (HL7 FHIR R4), en automatisation industrielle IT/OT (usine BEL de Trois-Rivières, IEC 62443), dans le secteur de l'énergie et des mines (NERC CIP, IEC 61511 SIL 2–4, avec proscription de tout actionnement autonome direct) et en fusions-acquisitions sont explicitement balisées comme des extrapolations illustratives.",
                 "identifiers_and_norms": [
                   "CRE-IA-2026-01 v1.2",
                   "HL7 FHIR R4",
-                  "IEC 61511 SIL 2/3",
+                  "IEC 61511 SIL 2–4",
                   "IEC 62443",
                   "NERC CIP"
                 ]
@@ -1243,7 +1243,7 @@
           "Dossier de traçabilité PEX-001 à PEX-044 (Annexe A du Tome 5 et Annexe D du Tome 4) démontrant la couverture intégrale des contraintes LSAC 171, Loi sur les banques 416, OCRI 3240 et 3400, L.C. 2017 ch. 3, LDPSF 38 et BSIF B-10 intra-groupe.",
           "Banc d'essai déterministe du tampon Paiements Canada RTR (EXIG-CON-29) validant la précision `Decimal` exacte sur `pacs.008`, l'unicité par UETR et clé d'idempotence ainsi que l'expiration de signature JCS sous P3.",
           "Jeux d'essais sectoriels automatisés vérifiant le caviardage génétique pré-mémoire, le blocage OEO en gestion de patrimoine, la comparaison neutre d'au moins 3 assureurs en courtage et l'isolation stricte des étiquettes d'entité juridique dans le conglomérat M-18.",
-          "Registre vérifié des cas de terrain canadiens 2025–2026 et tableau de démarcation probatoire séparant explicitement le périmètre démontré finance et Borealis-Bench des illustrations santé FHIR et industrielles SIL 2/3."
+          "Registre vérifié des cas de terrain canadiens 2025–2026 et tableau de démarcation probatoire séparant explicitement le périmètre démontré finance et Borealis-Bench des illustrations santé FHIR et industrielles SIL 2–4."
         ],
         "cross_chapter_interrelations": [
           {
@@ -1265,7 +1265,7 @@
             "relation_type": "encadrement_normatif",
             "target_chapter_number": 12,
             "target_slug": "encapsulation-patrimoine-it-ot",
-            "synthesis": "Le balisage méthodologique de l'Ouverture et du chapitre 28.9 cantonne l'environnement IT/OT (IEC 62443 et IEC 61511 SIL 2/3) au rang d'extrapolation illustrative tout en y proscrivant l'actionnement autonome direct."
+            "synthesis": "Le balisage méthodologique de l'Ouverture et du chapitre 28.9 cantonne l'environnement IT/OT (IEC 62443 et IEC 61511 SIL 2–4) au rang d'extrapolation illustrative tout en y proscrivant l'actionnement autonome direct."
           },
           {
             "direction": "sortante",
@@ -1286,7 +1286,7 @@
             "relation_type": "encadrement_normatif",
             "target_chapter_number": 25,
             "target_slug": "avis-acvm-11-348",
-            "synthesis": "L'Avis ACVM 11-348, la Norme canadienne 31-103 et les règles OCRI 3240, 3241, 3400, 3600 et 3803 dictent directement les verrous normatifs de PEX-011 à PEX-015, incluant l'interdiction des rétrofacturations en 2028."
+            "synthesis": "L'Avis ACVM 11-348, la Norme canadienne 31-103 et les règles OCRI 3240, 3241, 3400, 3600 et 3803 dictent directement les verrous normatifs de PEX-011 à PEX-015, incluant l'interdiction des rétrofacturations de commissions en 2028."
           },
           {
             "direction": "entrante",
@@ -1314,7 +1314,7 @@
             "relation_type": "concordance_inter_tomes",
             "target_chapter_number": 36,
             "target_slug": "concordance-inter-tomes-div02",
-            "synthesis": "L'Annexe A.4 du Tome 5 et l'Annexe D du Tome 4 résorbent le statut `corpus_2026_absent` des 24 PEX en 13 spécialisations issues de CAD26 et 11 comblements de lacunes sectorielles."
+            "synthesis": "L'Annexe A.4 du Tome 5 et l'Annexe D du Tome 4 résorbent le statut `corpus_2026_absent` des 24 PEX en 5 couvertures directes, 12 extensions et 7 comblements de lacunes sectorielles en v1.2 (contre 13 spécialisations issues de CAD26 et 11 comblements en v1.1)."
           }
         ],
         "corpus_anchors": [
@@ -1323,32 +1323,32 @@
             "unit_id": "ch28",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4627,
-            "reference": "Partie X · Chapitre 28 — Cinq profils financiers réglementés et 24 propositions PEX (L4627–L4780)"
+            "line_start": 4660,
+            "reference": "Partie X · Chapitre 28 — Cinq profils financiers réglementés et 24 propositions PEX (L4660–L4815)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch28",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4635,
-            "reference": "Partie X · § 28.1 Cinq profils financiers réglementés et 24 propositions PEX (DIV-02) (L4635–L4700)"
+            "line_start": 4668,
+            "reference": "Partie X · § 28.1 Cinq profils financiers réglementés et 24 propositions PEX (DIV-02) (L4668–L4733)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch28",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4701,
-            "reference": "Partie X · § 28.2 Durcissement financier, rail RTR ISO 20022 et terrain canadien 2025–2026 (L4701–L4752)"
+            "line_start": 4734,
+            "reference": "Partie X · § 28.2 Durcissement financier, rail RTR ISO 20022 et terrain canadien 2025–2026 (L4734–L4785)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch28",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4753,
-            "reference": "Partie X · § 28.3 Frontière probante face aux extrapolations et schémas de vulgarisation (L4753–L4769)"
+            "line_start": 4786,
+            "reference": "Partie X · § 28.3 Frontière probante face aux extrapolations et schémas de vulgarisation (L4786–L4802)"
           },
           {
             "part_id": "P10",
@@ -1371,16 +1371,16 @@
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -1456,11 +1456,14 @@
                 "theme_node_id": "THM_blueprint-3-maillage-b2b",
                 "canonical_slug": "blueprint-3-maillage-b2b",
                 "theme_title": "Blueprint 3 — Maillage inter-départemental et B2B (`bp3_orchestration_multi_agents_b2b`)",
-                "content_specification": "Troisième blueprint fédéré inter-départemental et B2B (Tome 6 section 14.2, identifié `bp3_orchestration_multi_agents_b2b` au Tome 8 chapitre 04). Il orchestre des agents hétérogènes au moyen d'A2A 1.0, d'AGNTCY/SLIM (schémas OASF), d'un maillage événementiel CloudEvents Event Mesh et d'une délégation OBO à deux sauts conforme à la RFC 8693 (C13, C20), validé mécaniquement sur cinq SBB et les critères C01–C40.",
+                "content_specification": "Troisième blueprint fédéré inter-départemental et B2B (Tome 6 section 14.2, identifié `bp3_orchestration_multi_agents_b2b` au Tome 8 chapitre 04). Il orchestre des agents hétérogènes au moyen d'A2A 1.0 (C13–C14), d'AGNTCY/SLIM (schémas OASF), d'un maillage événementiel CloudEvents Event Mesh, de la traçabilité d'audit (C20) et d'une délégation OBO à deux sauts conforme à la RFC 8693 (C24, C26), validé mécaniquement sur cinq SBB et les critères C01–C40.",
                 "identifiers_and_norms": [
                   "bp3_orchestration_multi_agents_b2b",
                   "C13",
+                  "C14",
                   "C20",
+                  "C24",
+                  "C26",
                   "C01–C40",
                   "A2A / AGNTCY-SLIM / OASF"
                 ]
@@ -1476,7 +1479,7 @@
                 "theme_node_id": "THM_fil-rouge-groupe-boreal-bel",
                 "canonical_slug": "fil-rouge-groupe-boreal-bel",
                 "theme_title": "Exclusion probante du cas fictif Groupe Boréal Inc. et banc reproductible Borealis-Bench",
-                "content_specification": "Déroule le fil rouge structurant Groupe Boréal Inc. (BEL, BCA, BSN ; rationalisation de 47 initiatives et 19 agents fantômes en une Fabrique Agentique dotée de serveurs MCP métier, d'un maillage A2A+SLIM MLS et de quatre flux Boréalis aux sections 45.11 à 45.14 : crédit assisté, paiement Lynx, banque ouverte C-15, sinistres et souscription FHIR), tout en prononçant formellement l'exclusion probante de toute donnée chiffrée fictive (C27, DC-P11, DC-P12, CA-10) et son remplacement intégral par le banc reproductible Borealis-Bench (108 blocs CI, ADR-003, ADR-014, ADR-027, ADR-029).",
+                "content_specification": "Déroule le fil rouge structurant Groupe Boréal Inc. (BEL, BCA, BSN ; rationalisation de 47 initiatives et 19 agents fantômes en une Fabrique Agentique dotée de serveurs MCP métier, d'un maillage A2A+SLIM MLS et de quatre flux Boréalis aux sections 45.11 à 45.14 : crédit assisté, paiement Lynx, banque ouverte C-15, sinistres et souscription FHIR), tout en prononçant formellement l'exclusion probante de toute donnée chiffrée fictive (règle documentaire DC-C27, DC-P11, DC-P12, CA-10) et son remplacement intégral par le banc reproductible Borealis-Bench (108 blocs CI, ADR-003, ADR-014, ADR-027, ADR-029).",
                 "identifiers_and_norms": [
                   "Boréalis (BEL/BCA/BSN)",
                   "Borealis-Bench (108 blocs CI)",
@@ -1513,7 +1516,7 @@
                 "theme_node_id": "THM_reprise-sinistre-cognitif-continuite",
                 "canonical_slug": "reprise-sinistre-cognitif-continuite",
                 "theme_title": "Reprise après sinistre cognitif (Cognitive DR, cible RTO < 15 minutes, RPO = 0)",
-                "content_specification": "Plan de continuité après sinistre cognitif (Cognitive DR, ADR-027, F-07, R-11) ciblant un RTO < 15 minutes et un RPO = 0 face à la panne, à la dépréciation soudaine ou au blocage d'un fournisseur de modèle frontière : couche d'abstraction Open Responses sans SDK propriétaire, double profil précompilé et validé en CI/CD, grappe souveraine à poids ouverts pré-chauffée (vLLM/SGLang sur embeddings internes ouverts) et resserrement automatique de 15 à 25 % des seuils de validation humaine HOTL en régime dégradé.",
+                "content_specification": "Plan de continuité après sinistre cognitif (Cognitive DR, ADR-027 (six substrats et Cognitive DR), F-07, R-11) ciblant un RTO < 15 minutes et un RPO = 0 face à la panne, à la dépréciation soudaine ou au blocage d'un fournisseur de modèle frontière : couche d'abstraction Open Responses sans SDK propriétaire, double profil précompilé et validé en CI/CD, grappe souveraine à poids ouverts pré-chauffée (vLLM/SGLang sur embeddings internes ouverts) et resserrement automatique de 15 à 25 % des seuils de validation humaine HOTL en régime dégradé.",
                 "identifiers_and_norms": [
                   "ADR-027 (Cognitive DR)",
                   "RTO < 15 min / RPO = 0",
@@ -1621,7 +1624,7 @@
             "relation_type": "concordance_inter_tomes",
             "target_chapter_number": 35,
             "target_slug": "calibration-feds-ema",
-            "synthesis": "Les deux tomes excluent les chiffrages fictifs du Groupe Boréal Inc. (C27, section 0.5) et y substituent les mesures reproductibles de Borealis-Bench et du cadre FEDS/EMA."
+            "synthesis": "Les deux tomes excluent les chiffrages fictifs du Groupe Boréal Inc. (règle documentaire DC-C27, section 0.5) et y substituent les mesures reproductibles de Borealis-Bench et du cadre FEDS/EMA."
           }
         ],
         "corpus_anchors": [
@@ -1630,32 +1633,32 @@
             "unit_id": "ch29",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4781,
-            "reference": "Partie X · Chapitre 29 — Trois blueprints de référence et cas Groupe Boréal (BEL) (L4781–L4947)"
+            "line_start": 4816,
+            "reference": "Partie X · Chapitre 29 — Trois blueprints de référence et cas Groupe Boréal (BEL) (L4816–L4984)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch29",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4789,
-            "reference": "Partie X · § 29.1 Trois blueprints multisectoriels (C01–C40, 5 SBB) et couche C1–C8 (L4789–L4864)"
+            "line_start": 4826,
+            "reference": "Partie X · § 29.1 Trois blueprints multisectoriels (C01–C40, 5 SBB) et couche C1–C8 (L4826–L4901)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch29",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4865,
-            "reference": "Partie X · § 29.2 Fédération multi-SaaS, reprise Cognitive DR et réseau B2B Palier 3 (L4865–L4906)"
+            "line_start": 4902,
+            "reference": "Partie X · § 29.2 Fédération multi-SaaS, reprise Cognitive DR et réseau B2B Palier 3 (L4902–L4943)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch29",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4907,
-            "reference": "Partie X · § 29.3 Fil rouge Groupe Boréal (BEL/BCA/BSN), exclusion DC-P11/DC-P12 et Borealis-Bench (L4907–L4936)"
+            "line_start": 4944,
+            "reference": "Partie X · § 29.3 Fil rouge Groupe Boréal (BEL/BCA/BSN), exclusion DC-P11/DC-P12 et Borealis-Bench (L4944–L4973)"
           },
           {
             "part_id": "P10",
@@ -1663,7 +1666,7 @@
             "tome_id": "P10",
             "file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 29.md (L1–L155)"
+            "reference": "Source modulaire : Chapitre 29.md (L1–L157)"
           },
           {
             "part_id": "LIM",
@@ -1678,8 +1681,8 @@
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           }
         ]
       }
@@ -1690,14 +1693,14 @@
       "domain_id": "D10",
       "subdomain_node_id": "SUB_D10_03",
       "representative_title": "Usine logicielle GitOps et anti-patrons agentiques",
-      "executive_summary": "Le chapitre 30 spécifie l'outillage industriel, le modèle organisationnel et les interdictions structurelles permettant de passer du prototype isolé à un parc d'agents fiable et révocable. Il formalise la fabrique d'agents (gabarits gouvernés, barrière de certification à l'admission au maillage, boucle de réémission sur dérive et gestion du risque de point de défaillance unique), le passage à l'échelle sur trois plans avec un Centre d'excellence hub-and-spoke (LCIM) ainsi que l'Internal Agentic Platform (IAP) offrant des Golden Paths (Backstage, Kratix, Crossplane), un GitOps cognitif co-versionné (code, prompts, schémas OASF/MCP, politiques OPA et banc EvalOps sous signature SLSA/Sigstore) et des livraisons progressives Shadow, Canary et Blue-Green. Face à l'asymétrie des dix plateformes SaaS (ouvertes sur le fil mais fermées sur le plan de contrôle), il définit le modèle de maturité AAGMM (M1–M5) cadencé à 90, 180 et 360 jours (portes ARB 1–3) et érige en verrous bloquants les dix antipatrons d'orchestration (EXIG-ORC-29, AP-01 à AP-12), cinq exclusions architecturales et neuf antipatrons ArchiMate.",
+      "executive_summary": "Le chapitre 30 spécifie l'outillage industriel, le modèle organisationnel et les interdictions structurelles permettant de passer du prototype isolé à un parc d'agents fiable et révocable. Il formalise la fabrique d'agents (gabarits gouvernés, barrière de certification à l'admission au maillage, boucle de réémission sur dérive et gestion du risque de point de défaillance unique), le passage à l'échelle sur trois plans avec un Centre d'excellence hub-and-spoke (LCIM) ainsi que l'Internal Agentic Platform (IAP) offrant des Golden Paths (Backstage, Kratix, Crossplane), un GitOps cognitif co-versionné (code, prompts, schémas OASF/MCP, politiques OPA et banc EvalOps sous signature SLSA/Sigstore) et des livraisons progressives Shadow, Canary et Blue-Green. Face à l'asymétrie des dix plateformes SaaS (ouvertes sur le fil mais fermées sur le plan de contrôle), il définit le modèle de maturité AAGMM (M1–M5) cadencé à 90, 180 et 360 jours (portes ARB 1–3) et érige en verrous bloquants les dix motifs d'anti-patrons d'orchestration (EXIG-ORC-29, AP-01 à AP-12), cinq exclusions architecturales et neuf anti-patrons ArchiMate.",
       "targeted_content": {
-        "scope_and_objectives": "Industrialiser la production, la certification et la réémission du parc d'agents au moyen d'une Internal Agentic Platform (IAP) GitOps, tout en verrouillant les portes d'architecture contre les dix antipatrons d'orchestration et la captivité des plateformes SaaS tierces.",
+        "scope_and_objectives": "Industrialiser la production, la certification et la réémission du parc d'agents au moyen d'une Internal Agentic Platform (IAP) GitOps, tout en verrouillant les portes d'architecture contre les dix motifs d'anti-patrons d'orchestration et la captivité des plateformes SaaS tierces.",
         "key_requirements_and_objectives": [
           "Fabrique d'agents et barrière de certification (sections 41.1 à 41.6, PC1–PC5) : tout agent DOIT être créé à partir de gabarits gouvernés versionnés, franchir la passe d'admission avant d'entrer dans le maillage, déclencher une réémission automatisée en cas de dérive et intégrer les mesures d'atténuation du point de défaillance unique (section 41.6).",
           "Plateforme IAP et GitOps cognitif (C33, C35, C36, OpenGitOps v1.0.0, SLSA v1.2) : l'IAP DOIT exposer des Golden Paths pré-câblés (NHI, OTel, OPA), co-versionner dans Git le code, les prompts, les schémas MCP/OASF, les politiques et les jeux EvalOps signés, et imposer le Worker Versioning Temporal lors des déploiements Canary et Blue-Green.",
           "Évaluation asymétrique des plateformes tierces (10 plateformes SaaS sur TCK A2A et Borealis-Bench) : tout agent hébergé dans une suite SaaS tierce DOIT être classé selon quatre statuts gradués (inventorié, observé, gouverné, jamais de plein droit) tout en conservant le registre, les politiques et la facturation dans le noyau possédé.",
-          "EXIG-ORC-29 et Tableau 44.2 (AP-01 à AP-12, OWASP ASI02, ASI03, ASI08 et ASI09, ADR-001, ADR-005, ADR-009, ADR-011) : le comité ARB DOIT rejeter sans dérogation les dix antipatrons d'orchestration (multiagent injustifié, état mutable partagé, contexte gonflé, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence), les 9 défauts ArchiMate, l'agentification de tâches déterministes et l'emploi de MCP en substitut d'API transactionnelle.",
+          "EXIG-ORC-29 et Tableau 44.2 du Tome 6 (AP-01 à AP-12, OWASP ASI02, ASI03, ASI08 et ASI09, ADR-001, ADR-005, ADR-009, ADR-011) : le comité ARB DOIT rejeter sans dérogation les dix motifs d'anti-patrons d'orchestration d'EXIG-ORC-29 (dont AP-01, AP-06–AP-09, AP-12 au sein des 12 codes AP-01 à AP-12 : multi-agent injustifié, état mutable partagé, contexte gonflé, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence), les 9 défauts ArchiMate, l'agentification de tâches déterministes et l'emploi de MCP en substitut d'API transactionnelle.",
           "Modèle AAGMM M1–M5 et feuille de route sur 360 jours (jalons ARB 1–3) : la transformation DOIT être séquencée en trois horizons : J0–J90 (assainissement, inventaire et AI Gateway), J90–J180 (IAP, NHI et banc EvalOps) et J180–J360 (fédération A2A, sortie du RPA par Strangler Fig et refacturation Chargeback FinOps)."
         ],
         "families_and_themes": [
@@ -1722,11 +1725,11 @@
                 "theme_node_id": "THM_fabrique-agents-certification-reemission",
                 "canonical_slug": "fabrique-agents-certification-reemission",
                 "theme_title": "Fabrique d'agents : gabarit gouverné, barrière d'admission, réémission et risque de concentration",
-                "content_specification": "Construction doctrinale originale sans source externe directe (Tome 1, chapitre 41 et section 49.14, zéro entrée S-*) qui distingue la fabrique industrielle de ses trois homonymes (Tableau 41.1). Elle déplace les exigences de conformité vers des gabarits partagés pré-certifiés, soumet tout agent entrant dans le maillage à une barrière d'admission bloquante (section 41.4), déclenche la réémission automatisée lors d'une dérive en production (section 41.5) et documente le dilemme du point de défaillance unique (section 41.6) ainsi que quatre conditions empiriques de réfutation (Tableau 41.3, PC1–PC5).",
+                "content_specification": "Construction doctrinale originale sans source externe directe (Tome 1, chapitre 41 et section 49.14, zéro entrée S-*) qui distingue la fabrique industrielle de ses trois homonymes (Tableau 41.1 du Tome 6). Elle déplace les exigences de conformité vers des gabarits partagés pré-certifiés, soumet tout agent entrant dans le maillage à une barrière d'admission bloquante (section 41.4), déclenche la réémission automatisée lors d'une dérive en production (section 41.5) et documente le dilemme du point de défaillance unique (section 41.6) ainsi que quatre conditions empiriques de réfutation (Tableau 41.3 du Tome 6, PC1–PC5).",
                 "identifiers_and_norms": [
                   "Fabrique d'agents (§41)",
                   "PC1–PC5",
-                  "Tableau 41.1 / 41.3",
+                  "Tableau 41.1 du Tome 6 / 41.3",
                   "Fabrique"
                 ]
               },
@@ -1763,17 +1766,17 @@
           {
             "family_node_id": "FAM_D10_03_02",
             "family_title": "Catalogue des anti-patrons agentiques et feuille de route",
-            "family_overview": "Cette famille formalise les verrous négatifs d'architecture (EXIG-ORC-29, AP-01 à AP-12, antipatrons ArchiMate et levée des homonymies) ainsi que la trajectoire de maturité M1–M5 (AAGMM) orchestrée sur 90, 180 et 360 jours sous jalons ARB 1–3.",
+            "family_overview": "Cette famille formalise les verrous négatifs d'architecture (EXIG-ORC-29, AP-01 à AP-12, anti-patrons ArchiMate et levée des homonymies) ainsi que la trajectoire de maturité M1–M5 (AAGMM) orchestrée sur 90, 180 et 360 jours sous jalons ARB 1–3.",
             "themes_targeted": [
               {
                 "theme_node_id": "THM_anti-patrons-agentiques",
                 "canonical_slug": "anti-patrons-agentiques",
-                "theme_title": "Proscription des 10 antipatrons d'orchestration (EXIG-ORC-29) et des 5 exclusions architecturales",
-                "content_specification": "Catalogue impératif des erreurs structurelles proscrites sans dérogation : les dix défauts de conception et d'orchestration du Tableau 26 / EXIG-ORC-29 (AP-01 à AP-12 : multiagent injustifié, découpage par type de travail, état mutable partagé, contexte gonflé, état en mémoire de processus, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence, Prompt-as-Policy, Tool Sprawl, absence d'EvalOps ; risques OWASP ASI02, ASI03, ASI08 et ASI09), les neuf antipatrons ArchiMate (Tableau 44.2, dont l'exigence orpheline et l'agent modélisé comme un humain), cinq exclusions (ADR-001, ADR-005, ADR-009, ADR-011), l'usage de MCP en substitut d'API transactionnelle (section 31.2.6), l'agentification de tâches déterministes (section 43.2) et la levée des homonymies (AgentMesh, Fabrique et ACP).",
+                "theme_title": "Proscription des 10 motifs d'anti-patrons d'orchestration (EXIG-ORC-29) et des 5 exclusions architecturales",
+                "content_specification": "Catalogue impératif des erreurs structurelles proscrites sans dérogation : les dix motifs de conception et d'orchestration d'EXIG-ORC-29 (Tableau 26 du Tome 2, dont AP-01, AP-06–AP-09, AP-12) et les douze codes AP-01 à AP-12 (multi-agent injustifié, découpage par type de travail, état mutable partagé, contexte gonflé, état en mémoire de processus, maillage libre sans plafond, chaîne d'écritures sans saga ni idempotence, Prompt-as-Policy, Tool Sprawl, absence d'EvalOps ; risques OWASP ASI02, ASI03, ASI08 et ASI09), les neuf anti-patrons ArchiMate (Tableau 44.2 du Tome 6, dont l'exigence orpheline et l'agent modélisé comme un humain), cinq exclusions (ADR-001, ADR-005, ADR-009, ADR-011), l'usage de MCP en substitut d'API transactionnelle (section 31.2.6), l'agentification de tâches déterministes (section 43.2) et la levée des homonymies (AgentMesh, Fabrique et ACP).",
                 "identifiers_and_norms": [
                   "EXIG-ORC-29",
                   "AP-01..AP-12",
-                  "Tableau 44.2",
+                  "Tableau 44.2 du Tome 6",
                   "OWASP ASI02/03/08/09",
                   "ADR-001/005/009/011",
                   "ADR-001",
@@ -1820,7 +1823,7 @@
         "deliverables_and_verification": [
           "Gabarits Golden Path (Backstage, Kratix, Crossplane) et pipeline GitOps cognitif co-versionné produisant des artefacts signés SLSA v1.2 et Sigstore validés sur banc EvalOps avant toute promotion Canary.",
           "Porte bloquante de certification à l'entrée du maillage vérifiant les quatre conditions de la fabrique, le score de triage brownfield (`DECOMMISSION`, `QUARANTINE_L1`, `REMEDIATE`, `PROMOTE`) et l'absence de point de défaillance unique non mitigé.",
-          "Liste de contrôle bloquante ARB (AP-01 à AP-12 et Tableau 44.2) intégrée à la revue d'architecture et rejetant automatiquement tout essaim non borné, état partagé mutable, super-agent monolithique ou écriture non idempotente.",
+          "Liste de contrôle bloquante ARB (AP-01 à AP-12 et Tableau 44.2 du Tome 6) intégrée à la revue d'architecture et rejetant automatiquement tout essaim non borné, état partagé mutable, super-agent monolithique ou écriture non idempotente.",
           "Tableau de bord de maturité AAGMM (M1–M5) et plan d'exécution jalonné ARB 1 (J90), ARB 2 (J180) et ARB 3 (J360) incluant l'inventaire des plateformes SaaS tierces et le plan de retrait du RPA."
         ],
         "cross_chapter_interrelations": [
@@ -1901,32 +1904,32 @@
             "unit_id": "ch30",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4948,
-            "reference": "Partie X · Chapitre 30 — Usine logicielle GitOps et anti-patrons agentiques (L4948–L5088)"
+            "line_start": 4985,
+            "reference": "Partie X · Chapitre 30 — Usine logicielle GitOps et anti-patrons agentiques (L4985–L5125)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch30",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 4956,
-            "reference": "Partie X · § 30.1 Usine logicielle IAP, fabrique d'agents et asymétrie des suites SaaS (L4956–L5002)"
+            "line_start": 4993,
+            "reference": "Partie X · § 30.1 Usine logicielle IAP, fabrique d'agents et asymétrie des suites SaaS (L4993–L5039)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch30",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 5003,
-            "reference": "Partie X · § 30.2 Catalogue bloquant des anti-patrons agentiques (EXIG-ORC-29, AP-01–AP-12) (L5003–L5046)"
+            "line_start": 5040,
+            "reference": "Partie X · § 30.2 Catalogue bloquant des anti-patrons agentiques (EXIG-ORC-29, AP-01–AP-12) (L5040–L5083)"
           },
           {
             "part_id": "P10",
             "unit_id": "ch30",
             "tome_id": "P10",
             "file": "Compendium/Compendium.md",
-            "line_start": 5047,
-            "reference": "Partie X · § 30.3 Modèle de maturité AAGMM (M1–M5) et feuille de route à 360 jours (L5047–L5078)"
+            "line_start": 5084,
+            "reference": "Partie X · § 30.3 Modèle de maturité AAGMM (M1–M5) et feuille de route à 360 jours (L5084–L5115)"
           },
           {
             "part_id": "P10",
@@ -1949,8 +1952,8 @@
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           }
         ]
       }

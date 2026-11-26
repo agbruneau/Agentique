@@ -348,9 +348,9 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
     assert not bad_ranges, f"Plage Lxxx-Lyyy sans tiret demi-cadratin dans prd.md : {bad_ranges[:3]}"
     assert not bad_backticks_tok, f"Jeton technique sans backticks dans prd.md : {bad_backticks_tok[:3]}"
 
-    # Annexe C : 86 jalons consolidés sans doubles parenthèses DAPP
+    # Annexe C : 77 jalons consolidés sans doubles parenthèses DAPP
     ann_c_idx = next(i for i, ln in enumerate(prd_lines) if ln.startswith("#### Jalons chronologiques consolidés"))
-    assert "86 jalons" in prd_lines[ann_c_idx]
+    assert "77 jalons" in prd_lines[ann_c_idx]
     ann_c_rows = []
     for ln in prd_lines[ann_c_idx + 4 :]:
         if not ln.startswith("|"):
@@ -358,7 +358,7 @@ def test_prd_compiled_exhaustiveness_and_anchors() -> None:
         date_cell = ln.split("|")[1].strip().strip("`")
         assert "((" not in date_cell and "))" not in date_cell, f"Parenthèses doubles DAPP dans date Annexe C : {ln}"
         ann_c_rows.append(ln)
-    assert len(ann_c_rows) == 86
+    assert len(ann_c_rows) == 77
 
     # Annexe D : 237 entrées uniques sans identifiant dupliqué
     ann_d_mat_idx = next(i for i, ln in enumerate(prd_lines) if ln.startswith("#### Matrice intégrale de traçabilité"))
@@ -490,7 +490,7 @@ def test_prd_links_in_readmes_valid() -> None:
     assert f"`{prd_words_cnt:,}".replace(",", " ") in carto_readme
     assert f"`{mm_bytes:,}".replace(",", " ") in carto_readme
     assert f"`{pw_bytes:,}".replace(",", " ") in carto_readme
-    assert "`86` jalons" in carto_readme
+    assert "`77` jalons" in carto_readme
     assert "`237` entrées uniques" in carto_readme
     assert "`115`" in carto_readme
 
@@ -546,9 +546,9 @@ def test_prd_web_data_json_and_parity() -> None:
     ann_b = next(a for a in data["annexes"] if a["annexe_code"] == "B")
     ann_c = next(a for a in data["annexes"] if a["annexe_code"] == "C")
     ann_d = next(a for a in data["annexes"] if a["annexe_code"] == "D")
-    assert len(ann_b["tensions"]) == 62
+    assert len(ann_b["tensions"]) == 67
     assert len(ann_c["reconciliations"]) == 5
-    assert len(ann_c["timeline"]) == 86
+    assert len(ann_c["timeline"]) == 77
     assert len(ann_d["matrix_all"]) == 237
     assert len({x["id"] for x in ann_d["matrix_all"]}) == 237
     assert ann_d.get("matrix_totals") == {

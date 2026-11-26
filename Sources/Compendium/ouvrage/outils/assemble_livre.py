@@ -113,12 +113,12 @@ def _unescape_dollars_outside_fences(md_text: str) -> str:
 
 
 def _gfm_slug(heading: str) -> str:
-    """Calcule l'ancre GFM standard d'un titre Markdown."""
-    s = unicodedata.normalize("NFC", heading).strip().lower()
-    s = re.sub(r"`([^`]+)`", r"\1", s)
-    s = re.sub(r"[^\w\s-]", "", s, flags=re.UNICODE)
-    s = re.sub(r"\s+", "-", s)
-    return s.strip("-")
+    """Calcule l'ancre GFM standard d'un titre Markdown (conserve les tirets consécutifs)."""
+    s = unicodedata.normalize("NFC", heading).strip()
+    s = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", s)
+    s = s.replace("`", "").replace("*", "").strip().lower()
+    s = re.sub(r"[^\w -]", "", s, flags=re.UNICODE)
+    return s.replace(" ", "-")
 
 
 def _build_gfm_toc(body_only: str) -> str:

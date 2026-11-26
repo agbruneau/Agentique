@@ -3639,8 +3639,8 @@
         var lic = col.licences || {};
         html.push(
           "<li><strong>Édition Compendium &amp; licences :</strong> " +
-            "<code>" + escapeHtml(col.total_pdf_pages || 837) + "</code> pages PDF Typst (" + escapeHtml(col.typst_format || "8,5 × 11 po") + ") · " +
-            "<code>" + escapeHtml(col.total_compendium_schemas || 115) + "</code> schémas Compendium compilés (+" + escapeHtml(col.total_historical_tome_diagrams || 319) + " figures historiques Tomes) · " +
+            "<code>" + escapeHtml(col.compendium_pdf_pages || col.total_pdf_pages || 852) + "</code> pages PDF Typst (" + escapeHtml(col.typst_format || "8,5 × 11 po") + ") · " +
+            "<code>" + escapeHtml(col.compendium_schemas || col.total_compendium_schemas || 115) + "</code> schémas Compendium compilés (+" + escapeHtml(col.total_historical_tome_diagrams || 319) + " figures historiques Tomes) · " +
             "Licences : <code>" + escapeHtml(lic.texte_figures_registres || "CC-BY-4.0") + "</code> (textes/figures) et <code>" + escapeHtml(lic.code_scripts_trousse || "MIT") + "</code> (code/trousse) · " +
             "Statut juridique : <code>" + escapeHtml(col.statut_juridique || "non-avis (DC-P01 / DC-P12 / AO-05)") + "</code>.</li>"
         );
@@ -4360,8 +4360,8 @@
         if (elKpis) {
           var cmeta = idx.compendiumMeta || {};
           elKpis.innerHTML =
-            '<span class="kpi-pill"><strong>' + escapeHtml(cmeta.pdf_pages || 837) + "</strong> p. PDF</span>" +
-            '<span class="kpi-pill"><strong>' + Number(cmeta.words || 241759).toLocaleString("fr-CA") + "</strong> mots · <strong>" + escapeHtml(cmeta.editorial_units || 42) + "</strong> unités</span>" +
+            '<span class="kpi-pill"><strong>' + escapeHtml(cmeta.pdf_pages || 852) + "</strong> p. PDF</span>" +
+            '<span class="kpi-pill"><strong>' + Number(cmeta.words || 246518).toLocaleString("fr-CA") + "</strong> mots · <strong>" + escapeHtml(cmeta.editorial_units || 42) + "</strong> unités</span>" +
             '<span class="kpi-pill"><strong>' + idx.counts.parties + "</strong> domaines</span>" +
             '<span class="kpi-pill"><strong>' + idx.counts.chapters + "</strong> chapitres</span>" +
             '<span class="kpi-pill"><strong>' + idx.counts.themes + "</strong> thèmes</span>" +

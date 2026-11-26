@@ -308,7 +308,7 @@
       "domain_id": "D02",
       "subdomain_id": "SUB_D02_03",
       "file": "manuscrit/02 - Partie II/Chapitre 06.md",
-      "title": "Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP) et douze décisions neutres",
+      "title": "Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP invariantes / 52) et douze décisions neutres",
       "target_words": 5380,
       "min_words": 4950,
       "max_words": 5810,
@@ -1299,7 +1299,7 @@
       "domain_id": "D11",
       "subdomain_id": "SUB_D11_01",
       "file": "manuscrit/11 - Partie XI/Chapitre 31.md",
-      "title": "Chapitre 31 — Prospective stratégique 2027–2035, trajectoires adaptatives DAPP et portes d'homologation",
+      "title": "Chapitre 31 — Prospective stratégique 2028–2035, trajectoires adaptatives DAPP et portes d'homologation",
       "target_words": 5190,
       "min_words": 4775,
       "max_words": 5605,
@@ -1454,7 +1454,7 @@
       "domain_id": "D12",
       "subdomain_id": "SUB_D12_02",
       "file": "manuscrit/12 - Partie XII/Chapitre 35.md",
-      "title": "Chapitre 35 — Trousse exécutable (Python/OPA), 5 SBB du Tableau 12, vecteurs tiers et calibration FEDS/EMA",
+      "title": "Chapitre 35 — Trousse exécutable (Python/OPA), 5 SBB du Tableau 12 du Tome 2, vecteurs tiers et calibration FEDS/EMA",
       "target_words": 4050,
       "min_words": 3726,
       "max_words": 4374,
@@ -1877,7 +1877,7 @@
       "engine": "svg",
       "notation": "Infographie SVG bilingue métier-tech",
       "status": "",
-      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP 2027 et passage aux engagements observables",
+      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP et passage aux engagements observables",
       "families_covered": [
         "FAM_D01_01_01"
       ],
@@ -2205,7 +2205,7 @@
       "engine": "mmd",
       "notation": "Mermaid",
       "status": "",
-      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches",
+      "title": "Loi de non-substituabilité (MCP, A2A v1.0.1 et ANP) et désambiguïsation ACP à quatre branches documentaires et ACP commercial (cinq acceptions)",
       "families_covered": [
         "FAM_D03_02_01"
       ],
@@ -3029,7 +3029,7 @@
       "engine": "svg",
       "notation": "Infographie SVG bilingue métier-tech",
       "status": "",
-      "title": "Compte à rebours de 278 jours vers le 1er mai 2027 : convergence entre BSIF E-23 et Note AMF IA (EXIG-AMF-01..12 sous statut F)",
+      "title": "Compte à rebours de 278 jours vers le 1ᵉʳ mai 2027 : convergence entre BSIF E-23 et Note AMF IA (EXIG-AMF-01..12 sous statut F)",
       "families_covered": [
         "FAM_D09_01_01",
         "FAM_D09_01_02"
@@ -3110,7 +3110,7 @@
       "engine": "mmd",
       "notation": "Mermaid",
       "status": "",
-      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54, MCP, A2A a2a-tck et export FOCUS 1.4+)",
+      "title": "Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54 du Tome 2, MCP, A2A a2a-tck et export FOCUS 1.4+)",
       "families_covered": [
         "FAM_D09_03_02"
       ],
@@ -3270,7 +3270,7 @@
       "engine": "mmd",
       "notation": "Mermaid",
       "status": "",
-      "title": "Verrou d'architecture : les 10 antipatrons bloquants (EXIG-ORC-29, AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
+      "title": "Verrou d'architecture : les 10 anti-patrons bloquants (EXIG-ORC-29, AP-01..AP-12) et 9 défauts ArchiMate face aux patrons sûrs",
       "families_covered": [
         "FAM_D10_03_02"
       ],
@@ -3317,7 +3317,7 @@
       "engine": "mmd",
       "notation": "Mermaid",
       "status": "",
-      "title": "Rampe des 90 premiers jours aux jalons J1–J5 face aux trois horloges et échéances 2027–2035",
+      "title": "Rampe des 90 premiers jours aux jalons J1–J5 face aux trois horloges et échéances 2028–2035",
       "families_covered": [
         "FAM_D11_01_01"
       ],
@@ -3503,7 +3503,7 @@
       "engine": "puml",
       "notation": "PlantUML",
       "status": "",
-      "title": "Les cinq blocs critiques du Tableau 12 (5 SBB) matérialisés dans la trousse exécutable",
+      "title": "Les cinq blocs critiques du Tableau 12 du Tome 2 (5 SBB) matérialisés dans la trousse exécutable",
       "families_covered": [
         "FAM_D12_02_01"
       ],

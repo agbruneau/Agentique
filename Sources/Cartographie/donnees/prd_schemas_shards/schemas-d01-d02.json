@@ -129,7 +129,7 @@
         "echanges-intentions-contrats-probabilistes",
         "systems-of-agency"
       ],
-      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP 2027 et passage aux engagements observables",
+      "title": "Mirage de l'« agent washing » face à la réalité terrain MAP et passage aux engagements observables",
       "insertion_point": "Chapitre 01 (§ 01.2.1 — Paradigme des Systèmes d'agentivité, après le thème `etat-des-lieux-adoption-map-2027`)",
       "target_audiences": [
         "Direction / Métier",
@@ -480,18 +480,18 @@
           {
             "zone_id": "Z2",
             "label": "Exigence de constance (`pass^k = p^k`) et courbe HAL coût/précision",
-            "content": "EXIG-EVA-03 impose k ≥ 3 minimal et k ≥ 5 critique (cible pass^5 ≥ 0,95 à 0,99 [S] sous ADR-022 / PRR F-15) arbitrée face au coût sur la courbe HAL."
+            "content": "EXIG-EVA-03 impose k ≥ 3 minimal et k ≥ 5 critique (cible pass^5 ≥ 0,95 en qualification générale (ADR-022) et ≥ 0,99 [S] avant distillation SLM (PRR F-15)) arbitrée face au coût sur la courbe HAL."
           },
           {
             "zone_id": "Z3",
             "label": "Porte statistique CI/CD : banc hermétique et borne unilatérale de Wilson à 95 %",
-            "content": "Exécution isolée (`evalops_prr/wilson_bounds.py`, C31) avec n ≥ ceil(3/p) essais indépendants sur ≥ 50 scénarios (EXIG-EVA-02) ou ≥ 100 [S] (PRR O-04)."
+            "content": "Exécution isolée (`evalops_prr/wilson_bounds.py`, C31) avec le plancher conservateur de la règle des trois n ≥ ceil(3/p) essais indépendants garantissant la borne < p sur ≥ 50 scénarios (EXIG-EVA-02) ou ≥ 100 [S] (PRR O-04)."
           }
         ],
         "numbered_flows": [
           "① Exclure les scores `pass@1` et les palmarès publics externes lors des revues de mise en production.",
           "② Exécuter chaque scénario critique k fois de façon indépendante (k = 3 à 5) sur un banc hermétique sans appel réel aux SoR.",
-          "③ Calculer la borne inférieure de Wilson à 95 % (n ≥ ceil(3/p)) pour attester statistiquement la constance.",
+          "③ Appliquer le plancher de la règle des trois (n ≥ ceil(3/p)) et calculer la borne unilatérale de Wilson à 95 % pour attester statistiquement la constance.",
           "④ Bloquer automatiquement le déploiement si `pass^5` passe sous le seuil de classe de risque et surveiller la dérive d'horizon METR."
         ],
         "color_legend": [
@@ -569,7 +569,7 @@
           {
             "zone_id": "Z3",
             "label": "Évaluation selon les cinq critères permanents (C04)",
-            "content": "Arbitrage systématique selon la neutralité de gouvernance, le déterminisme des frontières, la tolérance aux pannes, le coût marginal CPO et le coût de sortie."
+            "content": "Arbitrage systématique selon la neutralité de gouvernance, le déterminisme des frontières, la tolérance aux pannes, le coût complet par résultat conforme (CPO) et le coût de sortie."
           }
         ],
         "numbered_flows": [
@@ -1392,7 +1392,7 @@
         "architecture-reference-six-couches-pc1-pc5"
       ],
       "title": "Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`",
-      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `cadre-togaf-archimate-4-plans`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR, après le thème `cadre-togaf-archimate-4-plans`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1499,7 +1499,7 @@
         "clauses-sortie-portabilite-interchangeabilite"
       ],
       "title": "Posséder son noyau (42 capacités invariantes par rapport à 10 sur signal), gravité des données et neuf clauses de sortie",
-      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `noyau-controle-possede-cap`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR, après le thème `noyau-controle-possede-cap`)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1507,13 +1507,13 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle n'active que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS selon la gravité des données tout en verrouillant la réversibilité (Data Act et BSIF B-10).",
+      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes sur 52 : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle n'active que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS selon la gravité des données tout en verrouillant la réversibilité (Data Act et BSIF B-10).",
       "vulgarization_angle": "Distinguer les infrastructures foncières, les titres de propriété et les instruments de mesure (noyau possédé) des équipements loués ou remplaçables (modèles d'inférence), tout en exigeant un protocole de migration contractuel testé annuellement.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Trois conditions du plan de contrôle et les 42 CAP invariantes (DISC-03)",
+            "label": "Trois conditions du plan de contrôle et les 42 CAP invariantes sur 52 (DISC-03)",
             "content": "Chemin réseau obligé (PEP), registre à 7 états faisant seul autorité (distinct du catalogue produit) et preuve immuable hors modèle ; 17 CAP au plan de contrôle + 25 points de coupure financés dès P1."
           },
           {
@@ -1536,7 +1536,7 @@
         "color_legend": [
           {
             "color_token": "Bleu ardoise (#1B4F72)",
-            "meaning": "Noyau de contrôle possédé (42 CAP invariantes sous trois conditions d'effectivité)"
+            "meaning": "Noyau de contrôle possédé (42 CAP invariantes sur 52 sous trois conditions d'effectivité)"
           },
           {
             "color_token": "Or ambré (#B45309)",
@@ -1609,7 +1609,7 @@
         "principes-architecture-pri-001-015"
       ],
       "title": "Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit",
-      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP) et 31 ADR, après le thème `catalogue-31-adr-12-dec`)",
+      "insertion_point": "Chapitre 06 (§ 06.2.1 — Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR, après le thème `catalogue-31-adr-12-dec`)",
       "target_audiences": [
         "Juridique / Conformité",
         "AE / AS",

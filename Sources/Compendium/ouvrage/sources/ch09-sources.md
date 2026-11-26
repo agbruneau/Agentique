@@ -22,7 +22,7 @@
 - **Auteurs / Émetteur :** Michael B. Jones, Anthony Nadalin, Brian Campbell, John Bradley, Chuck Mortimore
 - **Date de publication :** `2020-01`
 - **Organisme / Revue :** IETF RFC Editor
-- **Identifiant :** `RFC8693`
+- **Identifiant :** `RFC 8693`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-041.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8693.txt
 - **Empreinte SHA-256 (LF) :** `22f271006669060ee5142350371ee70ed30bba6db93a9d8b43d897d462586a6f` (`56867` octets, `7815` mots)
@@ -33,7 +33,7 @@
 - **Auteurs / Émetteur :** Anders Rundgren, Bret Jordan, Samuel Erdtman
 - **Date de publication :** `2020-06`
 - **Organisme / Revue :** IETF RFC Editor (Independent Submission)
-- **Identifiant :** `RFC8785`
+- **Identifiant :** `RFC 8785`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-077.txt`, score AACODS `11.0/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8785.txt
 - **Empreinte SHA-256 (LF) :** `be00e8aeddaf91fcf40b1c5ecaa33f2d627dac1e3c338e80a1eb0445e31af642` (`36840` octets, `5011` mots)
@@ -115,6 +115,17 @@
 - **URL d'origine :** https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline
 - **Empreinte SHA-256 (LF) :** `db7ccc401ea3b392f22b42c75b63d657eb95cd1c6ab5ccf2d55551bf9be01625` (`55115` octets, `7859` mots)
 - **Synthèse factuelle vérifiée :** Ligne directrice B-10 du BSIF (2023) sur la gestion des risques liés aux tiers imposant inventaire des sous-traitants, continuité d'activité et clauses de réversibilité.
+
+### [11] SRC-004 — RFC 7493: The I-JSON Message Format
+
+- **Auteurs / Émetteur :** Tim Bray (Ed.)
+- **Date de publication :** `2015-03`
+- **Organisme / Revue :** IETF Standards Track
+- **Identifiant :** `RFC 7493`
+- **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-004.txt`, score AACODS `11.5/12`)
+- **URL d'origine :** https://www.rfc-editor.org/rfc/rfc7493.txt
+- **Empreinte SHA-256 (LF) :** `79cf90d87551d63e750c72b383876c2617311a31fb5a9e0f72dc69f3dcb9600e` (`11483` octets, `1941` mots)
+- **Synthèse factuelle vérifiée :** Profil I-JSON (Internet JSON) Standards Track interdisant les clés dupliquées, les valeurs NaN/Infinity, les surrogates UTF-8 isolés et les ambiguïtés de précision numérique : socle normatif du filtrage syntaxique préalable à la validation JSON Schema.
 
 ---
 

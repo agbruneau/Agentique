@@ -10,7 +10,7 @@
       "chapter_code": "CH-31",
       "domain_id": "D11",
       "subdomain_node_id": "SUB_D11_01",
-      "representative_title": "Prospective stratégique 2027–2035, trajectoires adaptatives DAPP et portes d'homologation",
+      "representative_title": "Prospective stratégique 2028–2035, trajectoires adaptatives DAPP et portes d'homologation",
       "executive_summary": "Ce chapitre encadre la planification stratégique et technique sous incertitude profonde de 2026 à 2035, en excluant l'attribution de probabilités subjectives aux évolutions du marché, des standards ou de la réglementation. Il arrime la rampe tactique immédiate — articulée autour des six priorités irréductibles des 90 premiers jours, des phases de 0 à 18 mois et d'un modèle de maturité cumulatif à cinq niveaux — aux trois paliers DAPP du Plan Directeur (P1 pour 2028–2029, P2 pour 2030–2032 et P3 pour 2033–2035), lesquels sont gouvernés par 43 initiatives, 15 portes fondées sur des preuves système (POR-001 à POR-016) et 27 signaux avancés (SIG-001 à SIG-110). En modélisation exploratoire EMA sous le plafond épistémique DC-P12, le parcours B s'impose comme décision robuste (taux de satisfaction de 92,53 %, regret p95 nul), avec bifurcation conditionnelle vers le scénario C dès le franchissement du seuil X34 ≥ 0,386. Enfin, le tri épistémique entre les statuts PROGRAMMÉ, PROJETÉ et SPÉCULATIF établit une démarcation rigoureuse entre les échéances contraignantes (BSIF E-23 au 1er mai 2027, EU AI Act Annexe III au 2 décembre 2027, certificats TLS de 47 jours au 15 mars 2029, fenêtre PQC 2030–2035 et clause canadienne du 30 juin 2033), les paris de recherche et la saturation des capacités mesurée par METR.",
       "targeted_content": {
         "scope_and_objectives": "Définir l'architecture décisionnelle temporelle pilotant le déploiement gradué de l'agentivité des systèmes, des fondations immédiates (de 0 à 90 jours, jalons J1 à J5 et J2a) au déploiement pluriannuel 2028–2035 selon trois scénarios contrastés (A Socle étendu, B Archipel propriétaire, C Blocs souverains), sans jamais présumer d'une trajectoire unique ni privilégier un fournisseur particulier. Ce périmètre couvre la méthode DAPP couplée aux boucles STPA, le portefeuille de 43 initiatives, 15 portes et 27 signaux, le tri prospectif des feuilles de route, la veille des capacités frontières (METR) ainsi que la transmission transparente de plus de 40 lacunes résiduelles.",
@@ -241,7 +241,7 @@
             "relation_type": "operationnalisation",
             "target_chapter_number": 6,
             "target_slug": "noyau-controle-possede-cap",
-            "synthesis": "Traduit la maîtrise du noyau de contrôle (42 capacités CAP) en six fondations immédiates des 90 premiers jours avant toute attribution de droit d'écriture en production."
+            "synthesis": "Traduit la maîtrise du noyau de contrôle (42 capacités CAP invariantes sur 52) en six fondations immédiates des 90 premiers jours avant toute attribution de droit d'écriture en production."
           },
           {
             "direction": "sortante",
@@ -264,32 +264,32 @@
             "unit_id": "ch31",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5091,
-            "reference": "Partie XI · Chapitre 31 — Prospective stratégique 2027–2035, trajectoires adaptatives DAPP et portes d'homologation (L5091–L5238)"
-          },
-          {
-            "part_id": "P11",
-            "unit_id": "ch31",
-            "tome_id": "P11",
-            "file": "Compendium/Compendium.md",
-            "line_start": 5099,
-            "reference": "Partie XI · § 31.1 Planification adaptative sous incertitude profonde et collision des trois horloges (L5099–L5127)"
-          },
-          {
-            "part_id": "P11",
-            "unit_id": "ch31",
-            "tome_id": "P11",
-            "file": "Compendium/Compendium.md",
             "line_start": 5128,
-            "reference": "Partie XI · § 31.2 Architecture décisionnelle temporelle : `43 INI × 15 POR × 27 SIG` et boussole prospective (L5128–L5204)"
+            "reference": "Partie XI · Chapitre 31 — Prospective stratégique 2028–2035, trajectoires adaptatives DAPP et portes d'homologation (L5128–L5275)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch31",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5205,
-            "reference": "Partie XI · § 31.3 Synthèse opératoire, exigences `EXIG-DAPP-01..06` et frontières d'architecture (L5205–L5225)"
+            "line_start": 5136,
+            "reference": "Partie XI · § 31.1 Planification adaptative sous incertitude profonde et collision des trois horloges (L5136–L5164)"
+          },
+          {
+            "part_id": "P11",
+            "unit_id": "ch31",
+            "tome_id": "P11",
+            "file": "Compendium/Compendium.md",
+            "line_start": 5165,
+            "reference": "Partie XI · § 31.2 Architecture décisionnelle temporelle : `43 INI × 15 POR × 27 SIG` et boussole prospective (L5165–L5241)"
+          },
+          {
+            "part_id": "P11",
+            "unit_id": "ch31",
+            "tome_id": "P11",
+            "file": "Compendium/Compendium.md",
+            "line_start": 5242,
+            "reference": "Partie XI · § 31.3 Synthèse opératoire, exigences `EXIG-DAPP-01..06` et frontières d'architecture (L5242–L5262)"
           },
           {
             "part_id": "P11",
@@ -312,16 +312,16 @@
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -336,7 +336,7 @@
       "targeted_content": {
         "scope_and_objectives": "Institutionnaliser la gouvernance de l'agentivité des systèmes en structurant l'imputabilité humaine, les dérogations, la gestion du cycle de vie des agents et des serveurs MCP, ainsi que les parades organisationnelles contre les sept modes d'échec internes du plan. Ce chapitre délimite avec précision le partage des responsabilités entre les 1re, 2e et 3e lignes de défense et établit les bornes juridiques actuelles du règlement des litiges B2B et B2C automatisés.",
         "key_requirements_and_objectives": [
-          "EXIG-GOV-RACI : Tout agent interne, SaaS ou tiers ainsi que tout serveur MCP DOIT disposer d'un propriétaire métier nominatif (parrain couplé au SIRH avec rétrogradation sous 72 heures en cas de vacance) et d'une matrice RACI n'attribuant qu'un seul rôle imputable (A) par activité (EXIG-GOV-04).",
+          "EXIG-GOV-RACI : Tout agent interne, SaaS ou tiers ainsi que tout serveur MCP DOIT disposer d'un propriétaire métier nominatif (parrain couplé au SIRH avec intérim du suppléant et relève sous 72 heures en cas de vacance, puis rétrogradation automatique en moins de 60 secondes selon POR-015 en l'absence de suppléant actif ou passé ce délai) et d'une matrice RACI n'attribuant qu'un seul rôle imputable (A) par activité (EXIG-GOV-04).",
           "EXIG-GOV-CYCLE : Chaque actif agentique DOIT être inscrit au registre d'entreprise à sept états avant l'émission de tout justificatif de production (EXIG-GOV-08) et soumis à une réconciliation mensuelle multi-sources plaçant tout agent fantôme en quarantaine immédiate (EXIG-GOV-10).",
           "EXIG-GOV-ATTEST : Le parrain métier DOIT réattester chaque agent tous les 12 mois (tous les 6 mois en classe élevée) et déclencher le retrait formel accompagné d'une preuve de révocation et d'un préavis minimal de 60 jours (EXIG-GOV-12 à EXIG-GOV-14).",
           "EXIG-GOV-DEROG : Toute dérogation écrite DOIT être assortie de mesures compensatoires et limitée à au plus 6 mois, renouvelable une seule fois (≤ 90 jours en classe faible par délégation de l'AE), sans aucune dispense tolérée sur les 10 interdictions d'EXIG-GOV-17 et avec régularisation de la cohorte existante sous 5 jours ouvrables.",
@@ -367,7 +367,7 @@
                 "theme_node_id": "THM_modele-operationnel-hub-and-spoke",
                 "canonical_slug": "modele-operationnel-hub-and-spoke",
                 "theme_title": "Modèle opérationnel Hub-and-Spoke : Centre d'excellence et propriétaires métiers SIRH",
-                "content_specification": "Répartit les responsabilités entre un Centre d'excellence central (socle plateforme, sécurité, ontologies, FinOps) et des cellules métiers fédérées imputables de leurs résultats opérationnels et de leur CPO. Exige pour chaque agent un propriétaire métier nominatif couplé au SIRH, déclenchant une rétrogradation d'autonomie sous 72 heures en cas de vacance de poste, et coordonne un tandem RH-IT chargé de reconvertir les coordonnateurs vers des rôles de superviseurs HOTL.",
+                "content_specification": "Répartit les responsabilités entre un Centre d'excellence central (socle plateforme, sécurité, ontologies, FinOps) et des cellules métiers fédérées imputables de leurs résultats opérationnels et de leur CPO. Exige pour chaque agent un propriétaire métier nominatif couplé au SIRH, assurant l'intérim du suppléant et la relève sous 72 heures en cas de vacance, avec rétrogradation automatique d'autonomie en moins de 60 secondes (POR-015) pour tout agent sans suppléant actif ou passé ce délai, et coordonne un tandem RH-IT chargé de reconvertir les coordonnateurs vers des rôles de superviseurs HOTL.",
                 "identifiers_and_norms": [
                   "Hub-and-Spoke",
                   "CoE",
@@ -485,7 +485,7 @@
             "relation_type": "operationnalisation",
             "target_chapter_number": 24,
             "target_slug": "finops-focus-cpo",
-            "synthesis": "Rattache chaque boucle agentique de l'organisation Hub-and-Spoke à un propriétaire métier nominatif (SIRH 72 heures) imputable de son enveloppe FinOps et de son coût par résultat conforme (CPO)."
+            "synthesis": "Rattache chaque boucle agentique de l'organisation Hub-and-Spoke à un propriétaire métier nominatif (SIRH : intérim et relève sous 72 heures, rétrogradation < 60 s selon POR-015) imputable de son enveloppe FinOps et de son coût par résultat conforme (CPO)."
           },
           {
             "direction": "entrante",
@@ -529,32 +529,32 @@
             "unit_id": "ch32",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5239,
-            "reference": "Partie XI · Chapitre 32 — Gouvernance duale AE ↔ AS, modèle en étoile à trois lignes, cycle de vie et sept pièges endogènes (L5239–L5390)"
+            "line_start": 5276,
+            "reference": "Partie XI · Chapitre 32 — Gouvernance duale AE ↔ AS, modèle en étoile à trois lignes, cycle de vie et sept pièges endogènes (L5276–L5427)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch32",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5247,
-            "reference": "Partie XI · § 32.1 Gouvernance duale `AE ↔ AS`, modèle en étoile et usine logicielle (L5247–L5284)"
+            "line_start": 5284,
+            "reference": "Partie XI · § 32.1 Gouvernance duale `AE ↔ AS`, modèle en étoile et usine logicielle (L5284–L5321)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch32",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5285,
-            "reference": "Partie XI · § 32.2 Cycle de vie à sept états, dérogations bornées, sept pièges endogènes et litiges `AP2` (L5285–L5349)"
+            "line_start": 5322,
+            "reference": "Partie XI · § 32.2 Cycle de vie à sept états, dérogations bornées, sept pièges endogènes et litiges `AP2` (L5322–L5386)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch32",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5350,
-            "reference": "Partie XI · § 32.3 Synthèse opératoire, exigences `EXIG-GOV` et frontières d'architecture (L5350–L5379)"
+            "line_start": 5387,
+            "reference": "Partie XI · § 32.3 Synthèse opératoire, exigences `EXIG-GOV` et frontières d'architecture (L5387–L5416)"
           },
           {
             "part_id": "P11",
@@ -577,8 +577,8 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           }
         ]
       }
@@ -705,32 +705,32 @@
             "unit_id": "ch33",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5391,
-            "reference": "Partie XI · Chapitre 33 — Préservation du capital humain, parade à l'approbation réflexe et maintien du repli manuel (L5391–L5509)"
+            "line_start": 5428,
+            "reference": "Partie XI · Chapitre 33 — Préservation du capital humain, parade à l'approbation réflexe et maintien du repli manuel (L5428–L5546)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch33",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5399,
-            "reference": "Partie XI · § 33.1 Paradoxe automatisation–augmentation, érosion de la relève et perte du repli manuel (L5399–L5425)"
+            "line_start": 5436,
+            "reference": "Partie XI · § 33.1 Paradoxe automatisation–augmentation, érosion de la relève et perte du repli manuel (L5436–L5462)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch33",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5426,
-            "reference": "Partie XI · § 33.2 Verrous anti-complaisance, cas témoins à l'aveugle et sanctuarisation du vivier junior (L5426–L5479)"
+            "line_start": 5463,
+            "reference": "Partie XI · § 33.2 Verrous anti-complaisance, cas témoins à l'aveugle et sanctuarisation du vivier junior (L5463–L5516)"
           },
           {
             "part_id": "P11",
             "unit_id": "ch33",
             "tome_id": "P11",
             "file": "Compendium/Compendium.md",
-            "line_start": 5480,
-            "reference": "Partie XI · § 33.3 Synthèse opératoire, exigences `EXIG-HUM-01..05` et frontières d'architecture (L5480–L5497)"
+            "line_start": 5517,
+            "reference": "Partie XI · § 33.3 Synthèse opératoire, exigences `EXIG-HUM-01..05` et frontières d'architecture (L5517–L5534)"
           },
           {
             "part_id": "P11",
@@ -757,7 +757,7 @@
       "domain_id": "D12",
       "subdomain_node_id": "SUB_D12_01",
       "representative_title": "Référentiel d'homologation unifié : 305 exigences CRE-IA-2026-01, interdits GOV-17 et grille PRR-75",
-      "executive_summary": "Ce chapitre établit la porte d'homologation unique conditionnant la mise en production de tout système agentique. Il consolide le référentiel normatif CRE-IA-2026-01 v1.2 (source unique `exigences.json` regroupant 305 exigences vérifiables, soit 255 DOIT, 34 NE DOIT PAS et 16 DEVRAIT réparties sur 16 préfixes, intégrant les 12 exigences EXIG-AMF issues de CRE-IA-2026-01-QC et six ajouts PQC, ACVM, RTR et EN 18286:2026), la grille d'homologation pré-production PRR en 75 points (cinq domaines S, R, O, G et F dont 24 points [BLOQUANT]) ainsi que le gabarit YAML et JSON Schema ADR 2027-B001. La force normative inspirée de RFC 2119 applique la règle du doute dès qu'un composant appelle un outil, tout en séparant explicitement les obligations légales externes des politiques internes. Un noyau dur de dix interdictions absolues (EXIG-GOV-17) exclut toute dispense sur les contrôles critiques (niveau NX proscrit, CIBA exigé en P3, zéro token passthrough, Règle de deux, chaîne d'audit intègre), complété par la grille d'applicabilité Annexe A, le gabarit de fiche d'agent Annexe B et le référentiel synoptique des sept fiches protocoles. L'ensemble du dispositif borne formellement l'agentivité des systèmes (*system agency*) avant la mise en service afin qu'aucun modèle ne dispose de pouvoirs d'action non vérifiés ni de dérogation aux dix interdictions critiques.",
+      "executive_summary": "Ce chapitre établit la porte d'homologation unique conditionnant la mise en production de tout système agentique. Il consolide le référentiel normatif CRE-IA-2026-01 v1.2 (source unique `exigences.json` regroupant 305 exigences vérifiables, soit 255 DOIT, 34 NE DOIT PAS et 16 DEVRAIT réparties sur 16 préfixes, intégrant les 12 exigences EXIG-AMF issues de CRE-IA-2026-01-QC et six ajouts PQC, ACVM, RTR et EN 18286:2026), la grille d'homologation pré-production PRR en 75 points (cinq domaines S, R, O, G et F dont 24 points [BLOQUANT]) ainsi que le gabarit YAML et JSON Schema ADR-2027-B001. La force normative inspirée de RFC 2119 applique la règle du doute dès qu'un composant appelle un outil, tout en séparant explicitement les obligations légales externes des politiques internes. Un noyau dur de dix interdictions absolues (EXIG-GOV-17) exclut toute dispense sur les contrôles critiques (niveau NX proscrit, CIBA exigé en P3, zéro token passthrough, Règle de deux, chaîne d'audit intègre), complété par la grille d'applicabilité Annexe A, le gabarit de fiche d'agent Annexe B et le référentiel synoptique des sept fiches protocoles. L'ensemble du dispositif borne formellement l'agentivité des systèmes (*system agency*) avant la mise en service afin qu'aucun modèle ne dispose de pouvoirs d'action non vérifiés ni de dérogation aux dix interdictions critiques.",
       "targeted_content": {
         "scope_and_objectives": "Fournir l'ensemble des règles, grilles, fiches et critères bloquants permettant d'homologuer et de borner l'agentivité des systèmes (*system agency*) pour tout agent interne, acquis ou tiers (niveaux L0 à L4) avant sa mise en service. Ce chapitre réunit le socle CRE-IA-2026-01 v1.2, la liste fermée EXIG-GOV-17, les 75 points PRR (Annexe G du Tome 3 et Annexe B du Tome 8) ainsi que l'appareil documentaire de référence des annexes protocolaires.",
         "key_requirements_and_objectives": [
@@ -778,7 +778,7 @@
                 "theme_node_id": "THM_exigences-cre-ia-305",
                 "canonical_slug": "exigences-cre-ia-305",
                 "theme_title": "Socle consolidé CRE-IA-2026-01 v1.2 : 305 EXIG-* (`exigences.json`) × PRR-75 × 15 POR",
-                "content_specification": "Consolide dans la source unique `exigences.json` les 305 exigences vérifiables (255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT) sous 16 préfixes (`EXIG-ARC` à `EXIG-APP`), en intégrant en version 1.2 (19 novembre 2026, décision DC-P08) les 12 exigences EXIG-AMF issues des 41 attentes de la Note AMF IA (CRE-IA-2026-01-QC, 31 octobre 2026) ainsi que six exigences PQC, ACVM, RTR et EN 18286:2026. Relie en une archive probatoire unique les 75 points PRR (24 bloquants), les 15 portes POR, les 31 ADR et les 41 rubriques d'homologation.",
+                "content_specification": "Consolide dans la source unique `exigences.json` les 305 exigences vérifiables (255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT) sous 16 préfixes (`EXIG-ARC` à `EXIG-APP`), en intégrant en version 1.2 (19 novembre 2026, décision DC-P08) les 12 exigences EXIG-AMF issues des 41 attentes de la Note AMF IA (CRE-IA-2026-01-QC, 31 octobre 2026) ainsi que six exigences PQC, ACVM, RTR et EN 18286:2026. Relie en une archive probatoire unique les 75 points PRR (24 bloquants), les 15 portes POR, les 31 ADR et les 43 rubriques d'homologation (Annexe D).",
                 "identifiers_and_norms": [
                   "CRE-IA-2026-01 v1.2",
                   "CRE-IA-2026-01-QC",
@@ -804,7 +804,7 @@
                 "theme_node_id": "THM_portee-et-force-normative-cre-ia",
                 "canonical_slug": "portee-et-force-normative-cre-ia",
                 "theme_title": "Portée fonctionnelle, règle du doute, force normative RFC 2119 et distinction interne/externe",
-                "content_specification": "Délimite l'assujettissement au cadre selon la capacité d'appeler un outil ou d'agir (agents internes, acquis ou tiers), en soumettant tout cas ambigu au registre par application de la règle du doute. Déploie trois degrés normatifs inspirés de RFC 2119 (DOIT, NE DOIT PAS, DEVRAIT/peut), impose l'indicatif dans les blocs exécutables, structure la lecture par rôle (Tableau 2) et trace une frontière rigoureuse entre obligations légales externes et choix internes d'architecture.",
+                "content_specification": "Délimite l'assujettissement au cadre selon la capacité d'appeler un outil ou d'agir (agents internes, acquis ou tiers), en soumettant tout cas ambigu au registre par application de la règle du doute. Déploie trois degrés normatifs inspirés de RFC 2119 (DOIT, NE DOIT PAS, DEVRAIT/peut), impose l'indicatif dans les blocs exécutables, structure la lecture par rôle (Tableau 2 de CRE-IA-2026-01) et trace une frontière rigoureuse entre obligations légales externes et choix internes d'architecture.",
                 "identifiers_and_norms": [
                   "RFC 2119",
                   "PRIN-01..12",
@@ -823,7 +823,7 @@
                 "theme_node_id": "THM_homologation-prr-75-points",
                 "canonical_slug": "homologation-prr-75-points",
                 "theme_title": "Grille pré-production PRR en 75 points (24 [BLOQUANT], cinq domaines S/R/O/G/F)",
-                "content_specification": "Définit le référentiel PRR-75 opposable aux systèmes L2–L4 (Annexe G du Tome 3) : 75 contrôles vérifiables par artefact de preuve répartis en cinq grilles de 15 points — S-01 à S-15 (NHI, Règle de deux, CaMeL, sandbox, CAEP, CIBA), R-01 à R-15 (harnais, idempotence, Saga, confinement multilocataire), O-01 à O-15 (OTel, PII, FOCUS/CPO), G-01 à G-15 (ADR 2027-B001, Loi 25 et EU AI Act, SCITT/SLH-DSA) et F-01 à F-15 (BSIF, SRE) — qualifiés [N], [M], [É] ou [S] et verrouillés par 24 portes [BLOQUANT] exécutées dans `evalops_prr`.",
+                "content_specification": "Définit le référentiel PRR-75 opposable aux systèmes L2–L4 (Annexe G du Tome 3) : 75 contrôles vérifiables par artefact de preuve répartis en cinq grilles de 15 points — S-01 à S-15 (NHI, Règle de deux, CaMeL, sandbox, CAEP, CIBA), R-01 à R-15 (harnais, idempotence, Saga, confinement multilocataire), O-01 à O-15 (OTel, PII, FOCUS/CPO), G-01 à G-15 (ADR-2027-B001, Loi 25 et EU AI Act, SCITT/SLH-DSA) et F-01 à F-15 (BSIF, SRE) — qualifiés [N], [M], [É] ou [S] et verrouillés par 24 portes [BLOQUANT] exécutées dans `evalops_prr`.",
                 "identifiers_and_norms": [
                   "PRR-75",
                   "24 [BLOQUANT]",
@@ -852,12 +852,12 @@
                 "theme_node_id": "THM_grille-homologation-et-fiche-agent",
                 "canonical_slug": "grille-homologation-et-fiche-agent",
                 "theme_title": "Grille d'applicabilité des 305 exigences (Annexe A) et fiche d'agent (Annexe B)",
-                "content_specification": "Prescrit les deux formulaires normatifs obligatoires au cycle de vie (Annexes A et B du Tome 2) : la grille d'homologation (sections A.1 à A.8, 41 rubriques) classe les 305 exigences EXIG-* par condition d'applicabilité, signale explicitement chaque point non dérogeable (`EXIG-GOV-17`) et rattache la preuve attendue ; le gabarit de fiche d'agent (Tableau 63 et extrait JSON) impose le dossier minimal vérifié aux jalons Proposition, Conception et Pilote avant toute exposition.",
+                "content_specification": "Prescrit les deux formulaires normatifs obligatoires au cycle de vie (Annexes A et B du Tome 2) : la grille d'homologation (sections A.2 à A.8, 43 rubriques en Annexe D, étendant les 41 rubriques initiales de Tome 5 Annexe C.1) classe les 305 exigences EXIG-* par condition d'applicabilité, signale explicitement chaque point non dérogeable (`EXIG-GOV-17`) et rattache la preuve attendue ; le gabarit de fiche d'agent (Tableau 63 et extrait JSON) impose le dossier minimal vérifié aux jalons Proposition, Conception et Pilote avant toute exposition.",
                 "identifiers_and_norms": [
                   "EXIG-GOV-07",
                   "EXIG-GOV-11",
                   "EXIG-GOV-17",
-                  "Tableau 63"
+                  "Tableau 63 du Tome 2"
                 ]
               }
             ]
@@ -867,7 +867,7 @@
           "Export source unique `exigences.json` v1.2 regroupant les 305 exigences vérifiables (255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT) et les 10 interdictions d'EXIG-GOV-17.",
           "Grille d'homologation remplie (sections A.1 à A.8) associée à une fiche d'agent JSON conforme au Tableau 63 (Annexe B du Tome 2).",
           "Matrice d'évidence PRR-75 attestant les 24 portes [BLOQUANT] (S-01 à S-15, R-01 à R-14, O-02 et O-09, G-01 à G-15, F-04 et F-14) au moyen d'artefacts CI et de journaux signés.",
-          "Fiche ADR 2027-B001 validée mécaniquement sans erreur contre `schemas/adr_2027_b001.schema.json`.",
+          "Fiche ADR-2027-B001 validée mécaniquement sans erreur contre `schemas/adr_2027_b001.schema.json`.",
           "Dossier de référence protocolaire couvrant les sept protocoles, les trois grilles d'évaluation, la chronologie 2024–2028 et l'index des 27 standards."
         ],
         "cross_chapter_interrelations": [
@@ -890,7 +890,7 @@
             "relation_type": "concordance_inter_tomes",
             "target_chapter_number": 6,
             "target_slug": "catalogue-31-adr-12-dec",
-            "synthesis": "Unifie les 305 EXIG-*, les 75 points PRR, les 31 ADR (Tome 6) et les 12 décisions du Tome 4 en une seule grille d'homologation à 41 rubriques."
+            "synthesis": "Unifie les 305 EXIG-*, les 75 points PRR, les 31 ADR (Tome 6) et les 12 décisions du Tome 4 en une seule grille d'homologation à 43 rubriques (Annexe D)."
           },
           {
             "direction": "sortante",
@@ -904,7 +904,7 @@
             "relation_type": "operationnalisation",
             "target_chapter_number": 35,
             "target_slug": "trousse-executable-tome-8",
-            "synthesis": "Les validateurs Python (`evalops_prr/prr_validators.py`) et les politiques OPA de la trousse du Tome 8 convertissent les 24 points PRR bloquants et le gabarit ADR 2027-B001 en contrôles automatisés produisant un code de sortie 0."
+            "synthesis": "Les validateurs Python (`evalops_prr/prr_validators.py`) et les politiques OPA de la trousse du Tome 8 convertissent les 24 points PRR bloquants et le gabarit ADR-2027-B001 en contrôles automatisés produisant un code de sortie 0."
           },
           {
             "direction": "entrante",
@@ -934,32 +934,32 @@
             "unit_id": "ch34",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5512,
-            "reference": "Partie XII · Chapitre 34 — Référentiel d'homologation unifié : 305 exigences CRE-IA-2026-01, interdits GOV-17 et grille PRR-75 (L5512–L5698)"
+            "line_start": 5549,
+            "reference": "Partie XII · Chapitre 34 — Référentiel d'homologation unifié : 305 exigences CRE-IA-2026-01, interdits GOV-17 et grille PRR-75 (L5549–L5739)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch34",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5533,
-            "reference": "Partie XII · § 34.1 Socle consolidé CRE-IA-2026-01 v1.2 (305 EXIG-*), dix interdictions GOV-17 et force normative RFC 2119 (L5533–L5586)"
+            "line_start": 5570,
+            "reference": "Partie XII · § 34.1 Socle consolidé CRE-IA-2026-01 v1.2 (305 EXIG-*), dix interdictions GOV-17 et force normative RFC 2119 (L5570–L5623)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch34",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5587,
-            "reference": "Partie XII · § 34.2 Grille d'homologation PRR-75, 24 portes bloquantes, fiche d'agent et annexes protocolaires (L5587–L5664)"
+            "line_start": 5624,
+            "reference": "Partie XII · § 34.2 Grille d'homologation PRR-75, 24 portes bloquantes, fiche d'agent et annexes protocolaires (L5624–L5703)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch34",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5665,
-            "reference": "Partie XII · § 34.3 Synthèse transversale, livrables et portes de contrôle (L5665–L5686)"
+            "line_start": 5704,
+            "reference": "Partie XII · § 34.3 Synthèse transversale, livrables et portes de contrôle (L5704–L5727)"
           },
           {
             "part_id": "P12",
@@ -967,7 +967,7 @@
             "tome_id": "P12",
             "file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
             "line_start": 1,
-            "reference": "Source modulaire : Chapitre 34.md (L1–L174)"
+            "reference": "Source modulaire : Chapitre 34.md (L1–L178)"
           },
           {
             "part_id": "LIM",
@@ -982,16 +982,16 @@
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -1002,7 +1002,7 @@
       "domain_id": "D12",
       "subdomain_node_id": "SUB_D12_02",
       "representative_title": "Trousse exécutable (Python/OPA), 5 SBB du Tableau 12, vecteurs tiers et calibration FEDS/EMA",
-      "executive_summary": "Ce chapitre opère le passage de la norme en prose à la preuve logicielle exécutable et reproductible hors ligne avec code de sortie 0. Il décrit l'architecture bicéphale du Tome 8 séparant le manuel sous licence CC BY 4.0 (extraits bornés à ≤ 40 lignes) de la trousse exécutable MIT (`8 - Manuel/trousse/`) structurée en quatre paquets Python 3.12+ et politiques OPA/Rego v1.22.4 (`harness_proto`, `authz_pqc_audit`, `policy_saga`/`policies_opa`, `evalops_prr`). La barrière logicielle `G0` (`execute_g0.py`) vérifie 83/83 tests `pytest`, 45/45 cas OPA à 100 % de couverture sous `default allow := false`, 21 validations sur 13 schémas JSON Schema Draft 2020-12 stricts, la conformité SPDX MIT sur 50 fichiers, le contrat `CA-G0-SYNC` (14 extraits scellés par SHA-256) et quatre suites officielles de vecteurs tiers (RFC 8785, NIST ACVP FIPS 204/205, a2a-tck 1.0.0.alpha3, OWASP SRC-055). Il livre enfin les implémentations de référence des `5 SBB` du Tableau 12, audite en CI les huit contrats types C.1–C.8 crypto-agiles et encadre les calibrations Monte Carlo FEDS/EMA sous le plafond épistémique `DC-P12` (C07 = 65 %).",
+      "executive_summary": "Ce chapitre opère le passage de la norme en prose à la preuve logicielle exécutable et reproductible hors ligne avec code de sortie 0. Il décrit l'architecture bicéphale du Tome 8 séparant le manuel sous licence CC BY 4.0 (extraits bornés à ≤ 40 lignes) de la trousse exécutable MIT (`8 - Manuel/trousse/`) structurée en quatre paquets Python 3.12+ et politiques OPA/Rego v1.22.4 (`harness_proto`, `authz_pqc_audit`, `policy_saga`/`policies_opa`, `evalops_prr`). La barrière logicielle `G0` (`execute_g0.py`) vérifie 83/83 tests `pytest`, 45/45 cas OPA à 100 % de couverture sous `default allow := false`, 21 validations sur 13 schémas JSON Schema Draft 2020-12 stricts, la conformité SPDX MIT sur 50 fichiers, le contrat `CA-G0-SYNC` (14 extraits scellés par SHA-256) et quatre suites officielles de vecteurs tiers (RFC 8785, NIST ACVP FIPS 204/205, a2a-tck 1.0.0.alpha3, OWASP SRC-055). Il livre enfin les implémentations de référence des `5 SBB` du Tableau 12, audite en CI les huit contrats types C.1–C.8 crypto-agiles et encadre les calibrations Monte Carlo FEDS/EMA sous le plafond épistémique `DC-P12` (DC-C07 = 65 %).",
       "targeted_content": {
         "scope_and_objectives": "Spécifier l'outillage logiciel portable (Windows et Linux), les validateurs JSON et OPA, les vecteurs tiers de non-circularité, les cinq blocs fonctionnels critiques (`5 SBB`), les huit contrats exécutés C.1–C.8 et la calibration quantitative synthétique. Ce périmètre demeure strictement borné par `DC-01` et `DC-P12` : il repose exclusivement sur des doublures hermétiques (`mock MCP servers`) sans modèle payant, sans essai humain ni connexion à un System of Record réel.",
         "key_requirements_and_objectives": [
@@ -1011,7 +1011,7 @@
           "EXIG-EXEC-03 : La chaîne d'approvisionnement logicielle DOIT épingler les 18 paquets dans `requirements.lock` par empreinte SHA-256 (`--require-hashes`), vérifier la licence SPDX `MIT` sur les 50 fichiers (en rejetant notamment `slh-dsa` sous licence LGPL) et sceller les 14 extraits `CA-G0-SYNC` octet pour octet.",
           "EXIG-EXEC-04 : La non-circularité des preuves DOIT être garantie par le passage des quatre suites officielles de vecteurs tiers (`RFC 8785 JCS`, `NIST FIPS 204/205 ACVP`, `a2a-tck 1.0.0.alpha3` et `OWASP SRC-055 ASI01–ASI10`).",
           "EXIG-EXEC-05 : Les `5 SBB` demeurés sans implémentation au Tableau 12 (`secrets_vault`, `guardrails_engine`, `signed_human_approval_service`, `immutable_audit_ledger`, `finops_budget_quota_controller` en arithmétique `Decimal`) et les contrats C.1–C.8 (`ES256`, `ML-DSA-65`, `ML-DSA-87`) DOIVENT être couverts par des tests automatisés positifs et négatifs.",
-          "EXIG-EXEC-06 : Toute calibration Monte Carlo (`FEDS`, 4 000 tirages) ou exploratoire (`EMA`, 3 000 tirages LHS) DOIT porter l'étiquette `DC-P12` (plafond épistémique `C07 = 65 %`) et NE DOIT JAMAIS être présentée comme une étude empirique humaine."
+          "EXIG-EXEC-06 : Toute calibration Monte Carlo (`FEDS`, 4 000 tirages) ou exploratoire (`EMA`, 3 000 tirages LHS) DOIT porter l'étiquette `DC-P12` (plafond épistémique `DC-C07 = 65 %`) et NE DOIT JAMAIS être présentée comme une étude empirique humaine."
         ],
         "families_and_themes": [
           {
@@ -1067,16 +1067,16 @@
           {
             "family_node_id": "FAM_D12_02_02",
             "family_title": "Calibration synthétique FEDS/EMA (DC-P12), vecteurs tiers et contrats types exécutés C.1–C.8",
-            "family_overview": "Encadre les preuves quantitatives artificielles sous plafond épistémique C07 = 65 % (Monte Carlo FEDS, EMA à 3 000 tirages LHS) ainsi que l'audit mécanique CI (RFC 8785, schémas crypto-agiles ES256 et ML-DSA) des huit contrats types C.1–C.8 sur un scénario d'achat.",
+            "family_overview": "Encadre les preuves quantitatives artificielles sous plafond épistémique DC-C07 = 65 % (Monte Carlo FEDS, EMA à 3 000 tirages LHS) ainsi que l'audit mécanique CI (RFC 8785, schémas crypto-agiles ES256 et ML-DSA) des huit contrats types C.1–C.8 sur un scénario d'achat.",
             "themes_targeted": [
               {
                 "theme_node_id": "THM_calibration-feds-ema",
                 "canonical_slug": "calibration-feds-ema",
-                "theme_title": "Calibration synthétique FEDS/EMA (DC-P12, plafond C07 = 65 %) sur seuils, parcours et profils",
-                "content_specification": "Isolé sous l'étiquette stricte `DC-P12` (zéro essai humain ni System of Record réel, plafond épistémique C07 = 65,0 %), le banc `feds-ema/` (`seed=20261119`) exécute 4 000 tirages Monte Carlo calibrant cinq seuils [S] (arrêt POR-003 < 10 secondes à 99,95 %, ≤ 10–12 outils en L3/L4, SLA CIBA < 60 secondes, rétention chaude portée de 30 à 45 jours, `pass^5` ≥ 99 % en contrôle au regard de ≥ 95 % en génératif), 3 000 réplications LHS EMA et la charge normalisée des cinq profils financiers (de 49,59 à 95,78 / 100).",
+                "theme_title": "Calibration synthétique FEDS/EMA (DC-P12, plafond DC-C07 = 65 %) sur seuils, parcours et profils",
+                "content_specification": "Isolé sous l'étiquette stricte `DC-P12` (zéro essai humain ni System of Record réel, plafond épistémique DC-C07 = 65,0 %), le banc `feds-ema/` (`seed=20261119`) exécute 4 000 tirages Monte Carlo calibrant cinq seuils [S] (arrêt POR-003 < 10 secondes à 99,95 %, ≤ 10–12 outils en L3/L4, SLA CIBA < 60 secondes, rétention chaude portée de 30 à 45 jours, `pass^5` ≥ 99 % en contrôle au regard de ≥ 95 % en génératif), 3 000 réplications LHS EMA et la charge normalisée des cinq profils financiers (de 49,59 à 95,78 / 100).",
                 "identifiers_and_norms": [
                   "DC-P12",
-                  "C07 = 65 %",
+                  "DC-C07 = 65 %",
                   "FEDS",
                   "EMA",
                   "Monte Carlo",
@@ -1103,7 +1103,7 @@
         "deliverables_and_verification": [
           "Trousse exécutable complète sous licence `MIT` comprenant `harness_proto/`, `authz_pqc_audit/`, `policy_saga/`, `policies_opa/` et `evalops_prr/`.",
           "Rapport horodaté `aq/rapports-g0.json` attestant le code de sortie 0 (`83/83 pytest`, `45/45 OPA 100 %`, quatre suites de vecteurs `PASS`, audit SPDX `MIT PASS`, 14 empreintes SHA-256 `CA-G0-SYNC`).",
-          "Implémentation testable des `5 SBB` du Tableau 12 et du validateur YAML/JSON `2027-B001` rattachés à `matrice-exig-prr-c40.json`.",
+          "Implémentation testable des `5 SBB` du Tableau 12 et du validateur YAML/JSON `ADR-2027-B001` rattachés à `matrice-exig-prr-c40.json`.",
           "Jeux d'essais CI des huit contrats C.1–C.8 (scénario à 12 480 $) avec canonisation RFC 8785 SHA-256 et schémas crypto-agiles Draft 2020-12.",
           "Banc reproductible `feds-ema/` (`seed=20261119`) produisant les seuils [S], les regrets EMA et la charge normalisée des cinq profils (49,59 à 95,78 / 100)."
         ],
@@ -1171,32 +1171,32 @@
             "unit_id": "ch35",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5699,
-            "reference": "Partie XII · Chapitre 35 — Trousse exécutable (Python/OPA), 5 SBB du Tableau 12, vecteurs tiers et calibration FEDS/EMA (L5699–L5874)"
+            "line_start": 5740,
+            "reference": "Partie XII · Chapitre 35 — Trousse exécutable (Python/OPA), 5 SBB du Tableau 12, vecteurs tiers et calibration FEDS/EMA (L5740–L5915)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch35",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5713,
-            "reference": "Partie XII · § 35.1 Architecture bicéphale du Tome 8, barrière logicielle G0 (`execute_g0.py`) et cinq SBB du Tableau 12 (L5713–L5771)"
+            "line_start": 5754,
+            "reference": "Partie XII · § 35.1 Architecture bicéphale du Tome 8, barrière logicielle G0 (`execute_g0.py`) et cinq SBB du Tableau 12 (L5754–L5812)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch35",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5772,
-            "reference": "Partie XII · § 35.2 Calibration synthétique FEDS/EMA (DC-P12), vecteurs tiers et contrats types exécutés C.1–C.8 (L5772–L5840)"
+            "line_start": 5813,
+            "reference": "Partie XII · § 35.2 Calibration synthétique FEDS/EMA (DC-P12), vecteurs tiers et contrats types exécutés C.1–C.8 (L5813–L5881)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch35",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5841,
-            "reference": "Partie XII · § 35.3 Synthèse transversale, livrables et portes de contrôle (L5841–L5860)"
+            "line_start": 5882,
+            "reference": "Partie XII · § 35.3 Synthèse transversale, livrables et portes de contrôle (L5882–L5901)"
           },
           {
             "part_id": "P12",
@@ -1219,8 +1219,8 @@
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           }
         ]
       }
@@ -1231,16 +1231,16 @@
       "domain_id": "D12",
       "subdomain_node_id": "SUB_D12_03",
       "representative_title": "Concordance inter-tomes (DIV-02, DISC-01 à DISC-05), régime probatoire Wyvern G0–G5 et clause non-avis",
-      "executive_summary": "Ce chapitre verrouille l'intégrité épistémique, terminologique et éditoriale du Compendium complet (42 unités éditoriales assemblées en 837 pages PDF via `Sources/gabarit-pdf/`, 241 759 mots Markdown et 115 schémas compilés raccordés aux 319 diagrammes sources des 8 tomes, avec 56 vedettes du glossaire dont l'agentivité des systèmes, *system agency*). Il documente la fermeture vérifiée de la divergence DIV-02 reliant les 52 capacités CAP et 24 extensions PEX aux 305 exigences EXIG-* v1.2, la résolution des cinq discordances inter-volumes DISC-01 à DISC-05 (échelle L0–L4, criticités BLOQUANT, OBLIGATOIRE et RECOMMANDE avec paliers P0–P3, correspondance des quatre modules avec les Plans A, B et C, neutralité ArchiMate, épinglage MCP 2026-07-28 `5f5440bb`), ainsi que la réconciliation interne et la distinction terminologique stricte entre Systèmes d'agentivité (`SoA`) et l'agentivité des systèmes. Sur le plan probatoire, il codifie la chaîne d'assurance qualité Wyvern et les barrières G0–G5 et CA-16 : ancrage sur 135 sources ouvertes `L+` hachées SHA-256, consignation rigoureuse de 27 exclusions en `Statut F` sans contournement (`AO-01` et `A4`), hiérarchie `[A]/[B]/[C]` à trois degrés d'absence, 37/37 journaux Wyvern `G2`, 14 extraits scellés `CA-G0-SYNC`, licences duales `CC BY 4.0` et `MIT`, et clause consultative de non-avis juridique (`DC-P01`, `AO-05` et `EF-06`).",
+      "executive_summary": "Ce chapitre verrouille l'intégrité épistémique, terminologique et éditoriale du Compendium complet (42 unités éditoriales assemblées en 852 pages PDF via `Sources/gabarit-pdf/`, 246 518 mots Markdown et 115 schémas compilés raccordés aux 319 diagrammes sources des 8 tomes, avec 56 vedettes du glossaire dont l'agentivité des systèmes, *system agency*). Il documente la fermeture vérifiée de la divergence DIV-02 reliant les 52 capacités CAP et 24 extensions PEX aux 305 exigences EXIG-* v1.2, la résolution des cinq discordances inter-volumes DISC-01 à DISC-05 (échelle L0–L4, criticités BLOQUANT, OBLIGATOIRE et RECOMMANDE avec paliers P0–P3, correspondance des quatre modules avec les Plans A, B et C, neutralité ArchiMate, épinglage MCP 2026-07-28 `5f5440bb`), ainsi que la réconciliation interne et la distinction terminologique stricte entre Systèmes d'agentivité (`SoA`) et l'agentivité des systèmes. Sur le plan probatoire, il codifie la chaîne d'assurance qualité Wyvern et les barrières G0–G5 et CA-16 : ancrage sur 135 sources ouvertes `L+` hachées SHA-256, consignation rigoureuse de 27 exclusions en `Statut F` sans contournement (`AO-01` et `A4`), hiérarchie `[A]/[B]/[C]` à trois degrés d'absence, 37/37 journaux Wyvern `G2`, 14 extraits scellés `CA-G0-SYNC`, licences duales `CC BY 4.0` et `MIT`, et clause consultative de non-avis juridique (`DC-P01`, `AO-05` et `EF-06`).",
       "targeted_content": {
-        "scope_and_objectives": "Garantir qu'aucune contradiction taxonomique, terminologique (notamment entre Systèmes d'agentivité `SoA` et l'agentivité des systèmes, *system agency*), divergence protocolaire ou extrapolation juridique ne subsiste au sein du Compendium (42 unités, 837 pages PDF, 241 759 mots) ni dans les artefacts destinés à l'architecture d'entreprise. Ce chapitre couvre les tables de passage inter-tomes, les règles d'audit des sources (`L+`, `Statut F`, `[A]/[B]/[C]`, `CA-16`), la chaîne de rendu `Sources/gabarit-pdf/` et le positionnement consultatif strictement non-avis.",
+        "scope_and_objectives": "Garantir qu'aucune contradiction taxonomique, terminologique (notamment entre Systèmes d'agentivité `SoA` et l'agentivité des systèmes, *system agency*), divergence protocolaire ou extrapolation juridique ne subsiste au sein du Compendium (42 unités, 852 pages PDF, 246 518 mots) ni dans les artefacts destinés à l'architecture d'entreprise. Ce chapitre couvre les tables de passage inter-tomes, les règles d'audit des sources (`L+`, `Statut F`, `[A]/[B]/[C]`, `CA-16`), la chaîne de rendu `Sources/gabarit-pdf/` et le positionnement consultatif strictement non-avis.",
         "key_requirements_and_objectives": [
           "EXIG-CONC-01 : Tout livrable du Compendium DOIT appliquer sans ambiguïté la table canonique de passage DISC-01 à DISC-05 (Liminaire § 0.2) et le pont typé DIV-02 reliant 52 CAP et 24 PEX aux 305 exigences CRE-IA-2026-01 v1.2.",
           "EXIG-CONC-02 : Toute source juridique, normative ou scientifique appuyant un fait central DOIT reposer sur un texte intégral ouvert `L+` haché SHA-256 (135 sources `L+` authentifiées au Compendium) ; tout accès bloqué (HTTP 403, 429 ou accès payant) DOIT être consigné en `Statut F` (27 exclusions) sous `AO-01` / `A4` sans contournement.",
           "EXIG-CONC-03 : L'assemblage documentaire DOIT respecter les barrières G0–G5 avec double recollation à l'aveugle CA-16 / G3 sur textes bruts `L+`, validation atomique Wyvern sur 100 % des assertions actives (37/37 journaux `G2`), 14 extraits scellés `CA-G0-SYNC` et génération mécanique des annexes sans saisie manuelle (`CA-17`).",
           "EXIG-CONC-04 : Tout énoncé négatif ou silencieux DOIT qualifier explicitement son niveau selon les trois degrés d'absence et la réserve cryptographique F-01 (« démontre » plutôt que « promet »), tandis que les dépendances datées DOIVENT suivre le protocole de péremption et le seuil de fraîcheur de 30 jours.",
           "EXIG-CONC-05 : L'ensemble du Compendium DOIT afficher de manière opposable la clause de non-avis juridique (`DC-P01` / `AO-05`), la démarcation entre secteur privé et secteur public (`EF-06`), la délimitation synthétique `DC-P12` et les licences `CC BY 4.0` (textes et figures) et `MIT` (code).",
-          "EXIG-CONC-06 : La compilation finale DOIT produire les livrables synchronisés `Compendium/Compendium.md` (241 759 mots, 8 408 lignes) et `Compendium/Compendium.pdf` (837 pages via `Sources/gabarit-pdf/`, 115 schémas compilés raccordés aux 319 diagrammes sources), validés à `0` erreur par `verifie_manuscrit.py --strict --check-deliverables` et les 43 tests d'outillage."
+          "EXIG-CONC-06 : La compilation finale DOIT produire les livrables synchronisés `Compendium/Compendium.md` (246 518 mots, 8 532 lignes) et `Compendium/Compendium.pdf` (852 pages via `Sources/gabarit-pdf/`, 115 schémas compilés raccordés aux 319 diagrammes sources), validés à `0` erreur par `verifie_manuscrit.py --strict --check-deliverables` et les 43 tests d'outillage."
         ],
         "families_and_themes": [
           {
@@ -1252,7 +1252,7 @@
                 "theme_node_id": "THM_concordance-inter-tomes-div02",
                 "canonical_slug": "concordance-inter-tomes-div02",
                 "theme_title": "Fermeture de DIV-02 : soudure 52 CAP + 24 PEX → 305 EXIG-* v1.2 et quatre découpages",
-                "content_specification": "Documente la fermeture vérifiée de la lacune `DIV-02` par inspection directe de CAD26 v1.2 et de la Note AMF IA (49 pages). Raccorde les quatre découpages architecturaux du corpus (en rectifiant trois suppositions de l'Annexe E.1 du Tome 4 : modèles et confinement en Couche 3, absence de Couche Connaissance, journalisation en Couche 6), relie 52/52 CAP et 24/24 PEX (13 spécialisations et 11 comblements de lacunes) aux 305 EXIG-* au moyen de `DC-P07`, corrige quatre coquilles de CAD26 v1.1 et consigne la dissonance D6/D7 entre M-12 et M-15/M-18.",
+                "content_specification": "Documente la fermeture vérifiée de la lacune `DIV-02` par inspection directe de CAD26 v1.2 et de la Note AMF IA (49 pages). Raccorde les quatre découpages architecturaux du corpus (en rectifiant trois suppositions de l'Annexe E.1 du Tome 4 : modèles et confinement en Couche 3, absence de Couche Connaissance, journalisation en Couche 6), relie 52/52 CAP et 24/24 PEX (5 couvertures directes, 12 extensions et 7 comblements de lacunes en v1.2, contre 13 spécialisations et 11 comblements en v1.1) aux 305 EXIG-* au moyen de `DC-P07`, corrige quatre coquilles de CAD26 v1.1 et consigne la dissonance D6/D7 entre M-12 et M-15/M-18.",
                 "identifiers_and_norms": [
                   "DIV-02",
                   "DC-P07",
@@ -1366,8 +1366,8 @@
               {
                 "theme_node_id": "THM_gabarit-typst-edition-4542-pages",
                 "canonical_slug": "gabarit-typst-edition-4542-pages",
-                "theme_title": "Gabarit éditorial `Sources/gabarit-pdf/` et chaîne de compilation du Compendium (`837` pages PDF)",
-                "content_specification": "Unifie la fabrication typographique et documentaire du Compendium par `Sources/gabarit-pdf/` et `assemble_livre.py` : `837` pages PDF physiques (`23 175 718` octets) et `Compendium.md` (`1 868 863` octets, `8 408` lignes, `241 759` mots), `115` schémas compilés raccordés aux `319` diagrammes d'origine (253 PlantUML `.svg` et 66 Mermaid `.png`), normalisation `LF` sans BOM avant hachage SHA-256, `56` vedettes du glossaire dont `Agentivité des systèmes` et inspection `G5` / `verifie_manuscrit.py --strict` à `0` erreur.",
+                "theme_title": "Gabarit éditorial `Sources/gabarit-pdf/` et chaîne de compilation du Compendium (`852` pages PDF)",
+                "content_specification": "Unifie la fabrication typographique et documentaire du Compendium par `Sources/gabarit-pdf/` et `assemble_livre.py` : `852` pages PDF physiques (`23 733 259` octets) et `Compendium.md` (`1 906 515` octets, `8 532` lignes, `246 518` mots), `115` schémas compilés raccordés aux `319` diagrammes d'origine (253 PlantUML `.svg` et 66 Mermaid `.png`), normalisation `LF` sans BOM avant hachage SHA-256, `56` vedettes du glossaire dont `Agentivité des systèmes` et inspection `G5` / `verifie_manuscrit.py --strict` à `0` erreur.",
                 "identifiers_and_norms": [
                   "Typst 6,14×9,21 po",
                   "4 542 pages",
@@ -1419,8 +1419,8 @@
               {
                 "theme_node_id": "THM_peremption-revalidation-annexe-n",
                 "canonical_slug": "peremption-revalidation-annexe-n",
-                "theme_title": "Protocole de péremption (14 événements, seuil de 30 jours) et actualisation Annexe N",
-                "content_specification": "Recense au chapitre 50 du Tome 1 quatorze événements de péremption survenus entre la date de gel du 27 juillet 2026 et novembre 2026 (Tableau 50.1) et formalise un protocole de revalidation en trois temps assorti d'un seuil de fraîcheur de 30 jours (§ 50.3). L'Annexe N exécute ce protocole au 1er novembre 2026 (`[AN-1]` à `[AN-27]`, Tableaux N.1 et N.2), actualisant MCP/SEP-3398, PQC NIST IR 8547 Final, EU AI Act et Note AMF IA tout en délimitant (§ N.4) ce qui demeure non revalidé.",
+                "theme_title": "Protocole de péremption (14 événements, seuil de 30 jours) et actualisation Annexe N (corpus source)",
+                "content_specification": "Recense au chapitre 50 du Tome 1 quatorze événements de péremption survenus entre la date de gel du 27 juillet 2026 et novembre 2026 (Tableau 50.1) et formalise un protocole de revalidation en trois temps assorti d'un seuil de fraîcheur de 30 jours (§ 50.3). L'Annexe N du corpus source exécute ce protocole au 1er novembre 2026 (`[AN-1]` à `[AN-27]`, Tableaux N.1 et N.2), actualisant MCP/SEP-3398, PQC NIST IR 8547 Final, EU AI Act et Note AMF IA tout en délimitant (§ N.4) ce qui demeure non revalidé.",
                 "identifiers_and_norms": [
                   "Tableau 50.1",
                   "Seuil 30 jours",
@@ -1448,7 +1448,7 @@
           "Table canonique de passage `concordance-taxonomies.json` (DISC-01 à DISC-05) et tables de concordance DIV-02 (52 CAP + 24 PEX → 305 EXIG-* v1.2).",
           "Registres vérifiés des 135 sources ouvertes `L+` SHA-256 (`manifeste-sources-sha256.json`), des 27 exclusions `Statut F` (`registre-statut-f.json`) et des 56 vedettes du glossaire (`glossaire-termes.json` dont `Agentivité des systèmes`).",
           "Journaux d'assurance qualité Wyvern (`37/37` journaux `G2`), doubles recollations stratifiées à froid `G3` / `CA-16`, 14 extraits scellés `CA-G0-SYNC`, critiques `G4` et rapports `G0–G5`.",
-          "Chaîne de production `Sources/gabarit-pdf/` et `assemble_livre.py` délivrant `Compendium/Compendium.pdf` (837 pages, 23 175 718 octets, 115 schémas compilés raccordés aux 319 figures sources) et `Compendium/Compendium.md` (241 759 mots).",
+          "Chaîne de production `Sources/gabarit-pdf/` et `assemble_livre.py` délivrant `Compendium/Compendium.pdf` (852 pages, 23 733 259 octets, 115 schémas compilés raccordés aux 319 figures sources) et `Compendium/Compendium.md` (246 518 mots).",
           "Avis juridique et licence normalisés (`DC-P01`, `DC-P12`, `AO-05`, `EF-06`, `CC BY 4.0`, `MIT`) contrôlés mécaniquement par `verifie_manuscrit.py --strict --check-deliverables`."
         ],
         "cross_chapter_interrelations": [
@@ -1499,7 +1499,7 @@
             "relation_type": "projection_temporelle",
             "target_chapter_number": 26,
             "target_slug": "eu-ai-act",
-            "synthesis": "Distingue au § 49.1 et à l'Annexe N l'entrée en vigueur déjà effective de l'article 50 (2 août 2026) des échéances reportées par le Règlement (UE) 2026/1744 (2 décembre 2027 pour l'Annexe III, 2 août 2028 pour l'Annexe I)."
+            "synthesis": "Distingue au § 49.1 et à l'Annexe N du corpus source l'entrée en vigueur déjà effective de l'article 50 (2 août 2026) des échéances reportées par le Règlement (UE) 2026/1744 (2 décembre 2027 pour l'Annexe III, 2 août 2028 pour l'Annexe I)."
           },
           {
             "direction": "sortante",
@@ -1522,32 +1522,32 @@
             "unit_id": "ch36",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5875,
-            "reference": "Partie XII · Chapitre 36 — Concordance inter-tomes (DIV-02, DISC-01 à DISC-05), régime probatoire Wyvern G0–G5 et clause non-avis (L5875–L6053)"
+            "line_start": 5916,
+            "reference": "Partie XII · Chapitre 36 — Concordance inter-tomes (DIV-02, DISC-01 à DISC-05), régime probatoire Wyvern G0–G5 et clause non-avis (L5916–L6094)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch36",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5891,
-            "reference": "Partie XII · § 36.1 Concordance inter-tomes (DIV-02), résolution DISC-01 à DISC-05, glossaire et réconciliation interne (L5891–L5952)"
+            "line_start": 5932,
+            "reference": "Partie XII · § 36.1 Concordance inter-tomes (DIV-02), résolution DISC-01 à DISC-05, glossaire et réconciliation interne (L5932–L5993)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch36",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 5953,
-            "reference": "Partie XII · § 36.2 Chaîne probatoire Wyvern, G0–G5, Statut F / L+, gabarit Typst (4 542 pages) et clause non-avis (L5953–L6014)"
+            "line_start": 5994,
+            "reference": "Partie XII · § 36.2 Chaîne probatoire Wyvern, G0–G5, Statut F / L+, gabarit Typst (4 542 pages) et clause non-avis (L5994–L6055)"
           },
           {
             "part_id": "P12",
             "unit_id": "ch36",
             "tome_id": "P12",
             "file": "Compendium/Compendium.md",
-            "line_start": 6015,
-            "reference": "Partie XII · § 36.3 Synthèse transversale, livrables et portes de contrôle (L6015–L6038)"
+            "line_start": 6056,
+            "reference": "Partie XII · § 36.3 Synthèse transversale, livrables et portes de contrôle (L6056–L6079)"
           },
           {
             "part_id": "P12",
@@ -1578,32 +1578,32 @@
             "unit_id": "annexe-a",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6056,
-            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
+            "line_start": 6097,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6097–L6512)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }

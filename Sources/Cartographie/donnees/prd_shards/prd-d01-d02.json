@@ -89,7 +89,7 @@
                 "theme_node_id": "THM_taxonomie-acteurs-agentiques",
                 "canonical_slug": "taxonomie-acteurs-agentiques",
                 "theme_title": "Taxonomie des systèmes d'IA composés et cinq archétypes d'acteurs",
-                "content_specification": "Toute solution doit être classée dans la taxonomie à 5 paliers (LLM augmenté, workflow agentique, agent unique, système multi-agents, système d'IA composé sur L0–L3) en fonction exclusive de l'entité qui détermine le prochain pas d'exécution. En architecture logicielle, les acteurs DOIVENT être scindés selon cinq archétypes fonctionnels à privilèges disjoints (interface, spécialiste de domaine, travailleur de tâche, orchestrateur et méta-gouverneur), tout super-agent monolithique cumulant domaine, outillage, interface et gouvernance étant proscrit.",
+                "content_specification": "Toute solution doit être classée dans la taxonomie à 5 paliers (LLM augmenté, flux de travail agentique, agent unique, système multi-agents, système d'IA composé sur L0–L4) en fonction exclusive de l'entité qui détermine le prochain pas d'exécution. En architecture logicielle, les acteurs DOIVENT être scindés selon cinq archétypes fonctionnels à privilèges disjoints (interface, spécialiste de domaine, travailleur de tâche, orchestrateur et méta-gouverneur), tout super-agent monolithique cumulant domaine, outillage, interface et gouvernance étant proscrit.",
                 "identifiers_and_norms": [
                   "L0",
                   "L1",
@@ -280,7 +280,7 @@
             "tome_id": "P01",
             "file": "Compendium/Compendium.md",
             "line_start": 221,
-            "reference": "Partie I · § 1.1 Paradigme des Systèmes d'agentivité : rupture en boucle fermée, constats `MAP 2027` et contrats comportementaux (L221–L297)"
+            "reference": "Partie I · § 1.1 Paradigme des Systèmes d'agentivité : rupture en boucle fermée, constats `MAP` et contrats comportementaux (L221–L297)"
           },
           {
             "part_id": "P01",
@@ -327,16 +327,16 @@
             "unit_id": "annexe-a",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6056,
-            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
+            "line_start": 6097,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6097–L6512)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -353,7 +353,7 @@
         "key_requirements_and_objectives": [
           "EXIG-D01-02.1 (Rupture de cascade et invariants sémantiques) : Tout pipeline multi-étapes DOIT interposer des assertions sémantiques déterministes et des plafonds anti-boucle (xagenthopcount / xagentmaxhops) entre ses maillons afin d'intercepter les erreurs plausibles émises sous HTTP 200 OK (EXIG-INT-02, EXIG-EVT-06, OWASP ASI08).",
           "EXIG-D01-02.2 (Bornage contre la loi de Lusser) : Toute séquence dépassant une étape cognitive isolée DOIT encapsuler les transitions et validations critiques dans une machine à états déterministe (ADR-002, CAP-007) de manière à contenir la décroissance R = p^n et à prévenir les 14 modes d'échec MAST.",
-          "EXIG-D01-02.3 (Qualification obligatoire par constance pass^k et Wilson) : Toute promotion d'un agent de classe 2 à 5 DOIT substituer la constance pass^k (k ≥ 3 minimal, k ≥ 5 pour les flux critiques sous EXIG-EVA-03) aux métriques pass@1/pass@k, avec validation par borne inférieure de Wilson à 95 % (n ≥ ceil(3/p), pass^5 ≥ 0,95 à 0,99 [S] selon la criticité) sur un banc interne d'au moins 50 scénarios (EXIG-EVA-02, ≥ 100 [S] sous PRR O-04).",
+          "EXIG-D01-02.3 (Qualification obligatoire par constance pass^k et Wilson) : Toute promotion d'un agent de classe 2 à 5 DOIT substituer la constance pass^k (k ≥ 3 minimal, k ≥ 5 pour les flux critiques sous EXIG-EVA-03) aux métriques pass@1/pass@k, avec validation conjointe par borne unilatérale de Wilson à 95 % et plancher conservateur de la règle des trois (n ≥ ceil(3/p), pass^5 ≥ 0,95 en qualification générale ADR-022/G2 et ≥ 0,99 [S] avant distillation SLM sous PRR F-15) sur un banc interne d'au moins 50 scénarios (EXIG-EVA-02, ≥ 100 [S] sous PRR O-04).",
           "EXIG-D01-02.4 (Justification du multi-agents face au rédacteur unique) : Aucune topologie multi-agents NE DOIT être retenue sans démonstration empirique sur banc interne d'un gain net en pass^k et en coût complet par résultat conforme au regard de l'agent unique à contexte continu (EXIG-ORC-01, EXIG-ORC-02), compte tenu du surcoût d'environ 15× et d'une amplitude de performance allant de −70,0 % à +80,8 %.",
           "EXIG-D01-02.5 (Veille de portée METR et seuils de fiabilité) : Toute délégation portant sur des tâches longues DOIT être dimensionnée d'après la portée mesurée à un seuil de constance d'au moins 80 % (~3,1 h sur METR v1.1 par rapport à ~17,4 h à 50 %) et réévaluée sur banc interne sans accorder foi aux palmarès publics dont plus de 25 % des tâches sont viciées."
         ],
@@ -425,7 +425,7 @@
                 "theme_node_id": "THM_constance-pass-k",
                 "canonical_slug": "constance-pass-k",
                 "theme_title": "Primauté de la constance pass^k sur pass@k et transfert de techniques",
-                "content_specification": "Les métriques pass@1 et pass@k doivent être proscrites des portes d'homologation en production au profit de la constance multi-essais pass^k (τ-bench : succès simultané sur l'ensemble des k trajectoires indépendantes, s'effondrant sous 25 % à pass^8). En intégration et déploiement continus (CI/CD), le banc hermétique DOIT exiger k ≥ 3 au minimum et k ≥ 5 pour les flux critiques (EXIG-EVA-03, cible pass^5 ≥ 0,95 à 0,99 [S] sous ADR-022 / PRR F-15), validée par la borne inférieure unilatérale de Wilson à 95 % avec n ≥ ceil(3/p) essais indépendants (`wilson_bounds.py`, C31) sur un banc interne d'au moins 50 scénarios (EXIG-EVA-02, ≥ 100 [S] sous PRR O-04). Les palmarès publics (dont plus de 25 % des tâches sur 168 bancs sont viciées) doivent être rejetés et le compromis coût/précision doit être piloté sur la courbe HAL.",
+                "content_specification": "Les métriques pass@1 et pass@k doivent être proscrites des portes d'homologation en production au profit de la constance multi-essais pass^k (τ-bench : succès simultané sur l'ensemble des k trajectoires indépendantes, s'effondrant sous 25 % à pass^8). En intégration et déploiement continus (CI/CD), le banc hermétique DOIT exiger k ≥ 3 au minimum et k ≥ 5 pour les flux critiques (EXIG-EVA-03, cible pass^5 ≥ 0,95 en qualification générale sous ADR-022 et ≥ 0,99 [S] avant distillation SLM sous PRR F-15), validée conjointement par la borne unilatérale de Wilson à 95 % et le plancher conservateur de la règle des trois n ≥ ceil(3/p) essais indépendants (`wilson_bounds.py`, C31) sur un banc interne d'au moins 50 scénarios (EXIG-EVA-02, ≥ 100 [S] sous PRR O-04). Les palmarès publics (dont plus de 25 % des tâches sur 168 bancs sont viciées) doivent être rejetés et le compromis coût/précision doit être piloté sur la courbe HAL.",
                 "identifiers_and_norms": [
                   "pass^k",
                   "pass@k",
@@ -604,8 +604,8 @@
             "unit_id": "annexe-a",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6056,
-            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
+            "line_start": 6097,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6097–L6512)"
           }
         ]
       }
@@ -869,7 +869,7 @@
             "tome_id": "P01",
             "file": "Compendium/Compendium.md",
             "line_start": 515,
-            "reference": "Partie I · Chapitre 03 — Économie cognitive de Coase, matrices de portefeuille et quadruple dette agentique (L515–L686)"
+            "reference": "Partie I · Chapitre 03 — Économie cognitive de Coase, matrices de portefeuille et quadruple dette agentique (L515–L687)"
           },
           {
             "part_id": "P01",
@@ -916,8 +916,8 @@
             "unit_id": "annexe-a",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6056,
-            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
+            "line_start": 6097,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6097–L6512)"
           }
         ]
       }
@@ -949,7 +949,7 @@
                 "theme_node_id": "THM_harnais-deterministe-8-etapes",
                 "canonical_slug": "harnais-deterministe-8-etapes",
                 "theme_title": "Enveloppe déterministe, séparation System of Action / Systems of Record et cinq horloges",
-                "content_specification": "Toute invocation de modèle doit être encadrée par `DeterministicHarness` (`harness_proto/pipeline.py`, critères C09, C10 et R-01), qui exécute huit jalons séquentiels audités (`step_trace`) autour d'un unique appel `4_model` : `1_size_utf8` (≤ 65 536 octets, `allow_nan=False`), `2_input` (`_INPUT_SCHEMA`), `3_ctx` (clés justificatives triées), `4_model`, `5_schema` (`JSON Schema Draft 2020-12`, `strict: true` / XGrammar), `6_grounding` (`_check_grounding` et plafonds), `7_repair` (`max_repair_retries = 2`, 3 appels au plus avant `ESCALADED`) et `8_seal` (`output_sha256` par JCS SHA-256). Le System of Action DOIT être isolé des Systems of Record (`ADR-001`, zéro SQL direct, `EXIG-ARC-14`, `EXIG-ARC-17`, `EXIG-ARC-18`) tout en gouvernant cinq horloges de versionnage asynchrones (modèle, invites, outils, politiques et harnais).",
+                "content_specification": "Toute invocation de modèle doit être encadrée par `DeterministicHarness` (`harness_proto/pipeline.py`, critères C09, C10 et R-01), qui exécute huit jalons séquentiels audités (`step_trace`) autour de l'invocation initiale `4_model` (et d'au plus deux reprises ciblées en `7_repair`) : `1_size_utf8` (≤ 65 536 octets, `allow_nan=False`), `2_input` (`_INPUT_SCHEMA`), `3_ctx` (clés justificatives triées), `4_model`, `5_schema` (`JSON Schema Draft 2020-12`, `strict: true` / XGrammar), `6_grounding` (`_check_grounding` et plafonds), `7_repair` (`max_repair_retries = 2`, 3 appels au plus avant `ESCALADED`) et `8_seal` (`output_sha256` par JCS SHA-256). Le System of Action DOIT être isolé des Systems of Record (`ADR-001`, zéro SQL direct, `EXIG-ARC-14`, `EXIG-ARC-17`, `EXIG-ARC-18`) tout en gouvernant cinq horloges de versionnage asynchrones (modèle, invites, outils, politiques et harnais).",
                 "identifiers_and_norms": [
                   "JSON Schema Draft 2020-12",
                   "RFC 8785 (JCS)",
@@ -972,7 +972,7 @@
                 "theme_node_id": "THM_partition-hybride-80-20",
                 "canonical_slug": "partition-hybride-80-20",
                 "theme_title": "Primauté du contrôle et enveloppe déterministe autour du raisonnement probabiliste",
-                "content_specification": "L'heuristique d'ingénierie 80/20 — qui ne constitue pas une constante empirique mesurée — doit régir la conception : le code déterministe possédé (~80 %) assure le routage de processus, les machines à états durables (`OO1`/`OO2`/`N0`/`DMN`), l'arithmétique décimale exacte, les autorisations et les invariants d'intégrité, tandis que le calcul probabiliste (~20 %) demeure confiné dans des cellules agentiques `OO3`/`OO4` strictement bornées pour les seules tâches d'interprétation ou de synthèse sémantique (`PRI-001`, `PRI-002`, `PRIN-08`, `ADR-002`, `EXIG-ORC-01`, `DISC-01`, `CAP-007`).",
+                "content_specification": "L'heuristique d'ingénierie 80/20 — qui ne constitue pas une constante empirique mesurée — doit régir la conception : le code déterministe possédé (~80 %) assure le routage de processus, les machines à états durables (`N0`/`DMN`), l'arithmétique décimale exacte, les autorisations et les invariants d'intégrité, tandis que le calcul probabiliste (~20 %) demeure confiné dans des cellules agentiques `OO3`/`OO4` strictement bornées pour les seules tâches d'interprétation ou de synthèse sémantique (`PRI-001`, `PRI-002`, `PRIN-08`, `ADR-002`, `EXIG-ORC-01`, `DISC-01`, `CAP-007`).",
                 "identifiers_and_norms": [
                   "OO1",
                   "OO2",
@@ -1022,7 +1022,7 @@
                 "theme_node_id": "THM_usine-logicielle-agentic-sdlc",
                 "canonical_slug": "usine-logicielle-agentic-sdlc",
                 "theme_title": "Usine logicielle agentique (AST/SCIP), séparation des devoirs et Figuier étrangleur",
-                "content_specification": "Au sein du SDLC agentique (`ADR-029`, `CAP-052`, `F-11`, `F-12`), les identités SPIFFE de l'agent spécificateur/oracle et de l'agent bâtisseur isolé sans accès Internet (`INTERNAL_ARTIFACTORY_ONLY`) doivent être séparées, avec interdiction technique pour le bâtisseur d'écrire dans `specs/**`, `tests/**` et les workflows CI. L'analyse du code s'appuie sur des arbres syntaxiques (AST) et des index de symboles SCIP régénérés à chaque commit ; le code produit est vérifié par tests par propriétés et tests de mutation (modèle Meta ACH, cible calibrée par module excluant les mutants équivalents, par exemple `minMutationKillScore: 0.88`). La modernisation RPG/COBOL repose sur un parseur ANTLR/Tree-sitter biparti, un oracle Golden Master + Z3 (`10k–100k` cas), une arithmétique décimale exacte (`rust_decimal` / `Decimal`), une façade MCP avec Outbox/Debezium (< 200 ms) et le Shadow Mirroring (0,00 $ d'écart sur au moins 100 000 transactions durant un cycle d'affaires complet).",
+                "content_specification": "Au sein du SDLC agentique (`ADR-029`, `CAP-052`, `F-11`, `F-12`), les identités SPIFFE de l'agent spécificateur/oracle et de l'agent bâtisseur isolé sans accès Internet (`INTERNAL_ARTIFACTORY_ONLY`) doivent être séparées, avec interdiction technique pour le bâtisseur d'écrire dans `specs/**`, `tests/**` et les flux de travail CI. L'analyse du code s'appuie sur des arbres syntaxiques (AST) et des index de symboles SCIP régénérés à chaque commit ; le code produit est vérifié par tests par propriétés et tests de mutation (modèle Meta ACH, cible calibrée par module excluant les mutants équivalents, par exemple `minMutationKillScore: 0.88`). La modernisation RPG/COBOL repose sur un parseur ANTLR/Tree-sitter biparti, un oracle Golden Master + Z3 (`10k–100k` cas), une arithmétique décimale exacte (`rust_decimal` / `Decimal`), une façade MCP avec Outbox/Debezium (< 200 ms) et le Shadow Mirroring (0,00 $ d'écart sur au moins 100 000 transactions durant un cycle d'affaires complet).",
                 "identifiers_and_norms": [
                   "ADR-029",
                   "CAP-052",
@@ -1157,7 +1157,7 @@
             "relation_type": "operationnalisation",
             "target_chapter_number": 13,
             "target_slug": "arbre-sobriete-oo1-oo4",
-            "synthesis": "La Figure 43.2 et le § 22.1 concrétisent la frontière entre déterminisme et agentivité en imposant les options OO1/OO2 partout où l'incertitude sémantique ne justifie pas OO3/OO4."
+            "synthesis": "La Figure 43.2 et le § 22.1 concrétisent la frontière entre déterminisme et agentivité en imposant le code déterministe sans agent (`N0`/`DMN`) lorsque cela suffit, et le pilotage par cadre déterministe (`OO3`/`OO4`) plutôt que par agent libre (`OO1`/`OO2`) dès qu'une incertitude sémantique encadrée est requise."
           },
           {
             "direction": "sortante",
@@ -1187,32 +1187,32 @@
             "unit_id": "ch04",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 689,
-            "reference": "Partie II · Chapitre 04 — Partition hybride 80/20, harnais déterministe à huit étapes et usine logicielle (L689–L893)"
+            "line_start": 690,
+            "reference": "Partie II · Chapitre 04 — Partition hybride 80/20, harnais déterministe à huit étapes et usine logicielle (L690–L894)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch04",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 693,
-            "reference": "Partie II · § 4.1 De la théorie de la fiabilité à l'enveloppe hybride 80/20 (L693–L708)"
+            "line_start": 694,
+            "reference": "Partie II · § 4.1 De la théorie de la fiabilité à l'enveloppe hybride 80/20 (L694–L709)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch04",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 709,
-            "reference": "Partie II · § 4.2 Architecture du harnais déterministe, séparation contrôleur–exécuteur et usine logicielle (L709–L861)"
+            "line_start": 710,
+            "reference": "Partie II · § 4.2 Architecture du harnais déterministe, séparation contrôleur–exécuteur et usine logicielle (L710–L862)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch04",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 862,
-            "reference": "Partie II · § 4.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L862–L882)"
+            "line_start": 863,
+            "reference": "Partie II · § 4.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L863–L883)"
           },
           {
             "part_id": "P02",
@@ -1235,24 +1235,24 @@
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -1287,7 +1287,7 @@
                 "identifiers_and_norms": [
                   "N0-N4",
                   "NX interdit",
-                  "L0-L4",
+                  "L0–L4",
                   "D1-D8",
                   "Stades 0-4",
                   "Classes 1-6",
@@ -1432,7 +1432,7 @@
             "relation_type": "amplification_synergie",
             "target_chapter_number": 15,
             "target_slug": "execution-durable-temporal",
-            "synthesis": "Les mécanismes `Signals` et `Awakeables` permettent de suspendre un workflow durant plusieurs jours sous accord de niveau de service (SLA) pour révision humaine HOTL sans immobiliser de mémoire ni perdre l'état."
+            "synthesis": "Les mécanismes `Signals` et `Awakeables` permettent de suspendre un flux de travail durant plusieurs jours sous accord de niveau de service (SLA) pour révision humaine HOTL sans immobiliser de mémoire ni perdre l'état."
           },
           {
             "direction": "sortante",
@@ -1490,32 +1490,32 @@
             "unit_id": "ch05",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 894,
-            "reference": "Partie II · Chapitre 05 — Échelle d'autonomie unifiée N0–N4/L0–L4, règle du maillon et supervision anti-complaisance (L894–L1034)"
+            "line_start": 895,
+            "reference": "Partie II · Chapitre 05 — Échelle d'autonomie unifiée N0–N4/L0–L4, règle du maillon et supervision anti-complaisance (L895–L1035)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch05",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 898,
-            "reference": "Partie II · § 5.1 L'autonomie comme décision d'architecture par configuration (L898–L911)"
+            "line_start": 899,
+            "reference": "Partie II · § 5.1 L'autonomie comme décision d'architecture par configuration (L899–L912)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch05",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 912,
-            "reference": "Partie II · § 5.2 Gradation d'autonomie, propagation stricte et supervision anti-complaisance (L912–L1001)"
+            "line_start": 913,
+            "reference": "Partie II · § 5.2 Gradation d'autonomie, propagation stricte et supervision anti-complaisance (L913–L1002)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch05",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 1002,
-            "reference": "Partie II · § 5.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L1002–L1021)"
+            "line_start": 1003,
+            "reference": "Partie II · § 5.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L1003–L1022)"
           },
           {
             "part_id": "P02",
@@ -1538,8 +1538,8 @@
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           }
         ]
       }
@@ -1549,12 +1549,12 @@
       "chapter_code": "CH-06",
       "domain_id": "D02",
       "subdomain_node_id": "SUB_D02_03",
-      "representative_title": "Architecture de référence unifiée, noyau possédé (42 CAP) et douze décisions neutres",
+      "representative_title": "Architecture de référence unifiée, noyau possédé (42 CAP invariantes sur 52) et douze décisions neutres",
       "executive_summary": "Ce chapitre arrête l'ossature d'architecture d'entreprise permettant aux architectes d'entreprise et de solutions de gouverner un parc agentique sans captivité fournisseur. En fermant sur pièce la divergence DIV-02, le PRD soude les six couches normatives de 2026 aux cinq couches C1–C5 et aux trois volets A, B et C, puis réconcilie les quatre plans du noyau possédé (Registre/NHI, Passerelle/Routeur, Mémoire gouvernée et Journal durable) sous DISC-03 et ArchiMate 4.0 C260 (DISC-04). Face à l'obsolescence rapide des SDK (< 12 mois) et aux suites SaaS fermées sur le contrôle, l'institution sanctuarise 42 capacités invariantes sans regret et réserve 10 capacités conditionnelles activées uniquement sur signal SIG-* vérifié. Elle impose le pont ABB vers SBB (EXIG-ARC-20/21), la hiérarchie normative des 12 PRIN et 15 PRI, les budgets QoS, les 9 clauses de sortie du Data Act et de BSIF B-10, la maturité N1–N5 avec score patrimonial S_ready (c_sec ≥ 60), et convertit les 31 fiches ADR en 8 invariants, 7 veilles et 12 contrats neutres DEC-001 à DEC-012.",
       "targeted_content": {
         "scope_and_objectives": "Fournir le modèle architectural cible unifié (DIV-02, DISC-03, DISC-04) ; délimiter la frontière entre le noyau de contrôle possédé (42 capacités invariantes gouvernant l'agentivité des systèmes) et les briques substituables (ABB → SBB et 10 capacités conditionnelles) ; arrêter les principes d'arbitrage normatif (PRIN-01..12, PRI-001..015) ; généraliser les 31 ADR en 12 contrats DEC ; et encadrer la portabilité contractuelle ainsi que le diagnostic patrimonial N1–N5.",
         "key_requirements_and_objectives": [
-          "EXIG-D02-03.1 (Effectivité du plan de contrôle et noyau possédé 42 CAP) : L'institution DOIT détenir en propre son noyau de contrôle (schémas, politiques, clés, registre, double couloir et passerelles, soit 42 capacités invariantes dont 17 au plan de contrôle et 25 points de coupure) sous trois conditions cumulatives : un chemin réseau obligé (PEP), un registre unique faisant autorité (distinct du catalogue de découverte) et une preuve immuable hors modèle (EXIG-ARC-01, EXIG-ARC-19, EXIG-GOV-07..08).",
+          "EXIG-D02-03.1 (Effectivité du plan de contrôle et noyau possédé de 42 CAP invariantes sur 52) : L'institution DOIT détenir en propre son noyau de contrôle (schémas, politiques, clés, registre, double couloir et passerelles, soit 42 capacités invariantes dont 17 au plan de contrôle et 25 points de coupure) sous trois conditions cumulatives : un chemin réseau obligé (PEP), un registre unique faisant autorité (distinct du catalogue de découverte) et une preuve immuable hors modèle (EXIG-ARC-01, EXIG-ARC-19, EXIG-GOV-07..08).",
           "EXIG-D02-03.2 (Traçabilité ABB → SBB et gravité des données) : Toute solution soumise à l'homologation DOIT documenter 100 % de ses blocs ABB → SBB conformes aux standards (révisés trimestriellement sous EXIG-GOV-18, toute dérogation étant bornée à ≤ 6 mois ou 90 jours sous EXIG-GOV-16), confiner tout agent SaaS mono-silo sous les contrôles cumulatifs EXIG-ARC-21 et rapatrier toute orchestration inter-silos dans le moteur durable possédé avec étiquette d'entité légale (EXIG-ARC-02, EXIG-CON-06).",
           "EXIG-D02-03.3 (Ordre d'arbitrage normatif et modélisation ArchiMate 4) : Tout conflit entre principes DOIT être tranché selon la hiérarchie CAD26 § 4.3 (Droit applicable > 10 interdits EXIG-GOV-17 > DOIT sur DEVRAIT > PRIN-03..07,10,12 > PRIN-01,02,08,09,11) ; tout modèle ArchiMate 4.0 (C260) DOIT typer l'agent en «Cognitive Actor» (Application Component, et jamais Business Actor) sans aucun élément «regulatory-requirement» orphelin.",
           "EXIG-D02-03.4 (Neutralisation des 31 ADR en 12 DEC et séparation outil/pair) : L'architecture cible DOIT maintenir les 8 ADR invariants, surveiller les 7 ADR sous signal SIG-* et substituer aux 16 ADR liées à des produits les 12 contrats fonctionnels neutres DEC-001 à DEC-012, tout en préservant la non-substituabilité entre appel d'outil vertical (MCP, erreurs actionnables) et délégation horizontale (A2A, PRI-003).",
@@ -1564,7 +1564,7 @@
         "families_and_themes": [
           {
             "family_node_id": "FAM_D02_03_01",
-            "family_title": "Noyau de contrôle possédé (42 CAP) et 31 ADR",
+            "family_title": "Noyau de contrôle possédé (42 CAP invariantes sur 52) et 31 ADR",
             "family_overview": "Cette famille consacre la souveraineté architecturale de l'institution face aux plateformes et aux contrats tiers. Elle soude les modèles en couches (DIV-02, ArchiMate 4.0 C260), délimite le noyau de contrôle possédé en quatre plans (42 capacités invariantes par rapport à 10 conditionnelles sur signal), convertit les 31 ADR de 2027 en 12 contrats fonctionnels neutres DEC-001..012 et garantit une réversibilité effective par la distinction entre interchangeabilité et transférabilité ainsi que par neuf clauses de sortie vérifiées.",
             "themes_targeted": [
               {
@@ -1672,7 +1672,7 @@
                 "theme_node_id": "THM_architecture-reference-6-couches-2-piliers",
                 "canonical_slug": "architecture-reference-6-couches-2-piliers",
                 "theme_title": "Architecture de référence à six couches et deux piliers transversaux",
-                "content_specification": "L'architecture doit appliquer la grille à 6 couches horizontales du Tome 3 (connectivité/plan de données, sémantique/mémoire, coordination `A2A`/`AGNTCY`, orchestration durable/événements, interface `HITL`/`HOTL`, gouvernance/commerce/conformité) traversée par 2 piliers transversaux (*Zero-Trust/NHI* et *AgentOps/FinOps*), en respectant la loi de non-substituabilité entre appel vertical d'outil et délégation horizontale à un pair (§ 11.12, `PRI-003`) et en situant l'ossature par rapport aux modèles de référence Lu et coll., Megagon, SALLMA, CSA et Futurum.",
+                "content_specification": "L'architecture doit appliquer la grille à 6 couches horizontales du Tome 3 (connectivité/plan de données, sémantique/mémoire, coordination `A2A`/`AGNTCY`, orchestration durable/événements, interface `HITL`/`HOTL`, gouvernance/commerce/conformité) traversée par 2 piliers transversaux (*Zero Trust/NHI* et *AgentOps/FinOps*), en respectant la loi de non-substituabilité entre appel vertical d'outil et délégation horizontale à un pair (§ 11.12, `PRI-003`) et en situant l'ossature par rapport aux modèles de référence Lu et coll., Megagon, SALLMA, CSA et Futurum.",
                 "identifiers_and_norms": [
                   "ISO/IEC 25010",
                   "6 couches + 2 piliers",
@@ -1686,7 +1686,7 @@
                 "theme_node_id": "THM_architecture-reference-six-couches-pc1-pc5",
                 "canonical_slug": "architecture-reference-six-couches-pc1-pc5",
                 "theme_title": "Architecture de référence unifiée à six couches et points de contrôle PC1–PC5",
-                "content_specification": "La traçabilité interne du Tome 1 doit être assurée en fusionnant les vues à 4 et 3 couches dans les 6 couches unifiées du Tableau 43.1, en levant la collision terminologique entre fabrique d'identités et fabrique d'agents, et en imposant cinq points de contrôle opposables sans passeport d'agent (`PC1` avis horodaté `Loi 25 art. 12.1`, `PC2` trace d'instance `Z1`, `PC3` arrêt préventif humain `Z2`, `PC4` frontière adaptation par rapport à évolution `Z3` sous `ACVM 11-348` et `BSIF E-23`, `PC5` confinement local `Z5`, outre `Z4` pour l'abstraction d'outil), complétés par la matrice `LCIM` à 4 paliers (Tableau 43.4).",
+                "content_specification": "La traçabilité interne du Tome 1 doit être assurée en fusionnant les vues à 4 et 3 couches dans les 6 couches unifiées du Tableau 43.1 du Tome 1, en levant la collision terminologique entre fabrique d'identités et fabrique d'agents, et en imposant cinq points de contrôle opposables sans passeport d'agent (`PC1` avis horodaté `Loi 25 art. 12.1`, `PC2` trace d'instance `Z1`, `PC3` arrêt préventif humain `Z2`, `PC4` frontière adaptation par rapport à évolution `Z3` sous `ACVM 11-348` et `BSIF E-23`, `PC5` confinement local `Z5`, outre `Z4` pour l'abstraction d'outil), complétés par la matrice `LCIM` à 4 paliers (Tableau 43.4 du Tome 1).",
                 "identifiers_and_norms": [
                   "PC1",
                   "PC2",
@@ -1695,15 +1695,15 @@
                   "PC5",
                   "Z1-Z5",
                   "LCIM",
-                  "Tableau 43.1",
-                  "Tableau 43.2"
+                  "Tableau 43.1 du Tome 1",
+                  "Tableau 43.2 du Tome 1"
                 ]
               },
               {
                 "theme_node_id": "THM_criteres-qos-cout-precision-latence",
                 "canonical_slug": "criteres-qos-cout-precision-latence",
                 "theme_title": "Critères d'évaluation technologique et budgets QoS (coût, précision et latence)",
-                "content_specification": "Toute brique technologique et toute décision de routage doivent être évaluées selon les cinq critères permanents de l'ouvrage (neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût marginal en latence et jetons, coût de sortie). Au plan de données, des budgets QoS explicites par classe de tâche (plafond coût/jetons, plancher de précision et constance `pass^k`, cible de latence p99) DOIVENT être mesurés de façon reproductible en intégration continue via `Borealis-Bench`, `OpenEnv`, `AgentArcEval` et la trousse `TCK A2A`.",
+                "content_specification": "Toute brique technologique et toute décision de routage doivent être évaluées selon les cinq critères permanents de l'ouvrage (neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût complet par résultat conforme (CPO), coût de sortie). Au plan de données, des budgets QoS explicites par classe de tâche (plafond coût/jetons, plancher de précision et constance `pass^k`, cible de latence p99) DOIVENT être mesurés de façon reproductible en intégration continue via `Borealis-Bench`, `OpenEnv`, `AgentArcEval` et la trousse `TCK A2A`.",
                 "identifiers_and_norms": [
                   "5 critères permanents (T3 §0.4)",
                   "Budgets QoS (§23.6)",
@@ -1876,32 +1876,32 @@
             "unit_id": "ch06",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 1035,
-            "reference": "Partie II · Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP) et douze décisions neutres (L1035–L1237)"
+            "line_start": 1036,
+            "reference": "Partie II · Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP invariantes sur 52) et douze décisions neutres (L1036–L1238)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch06",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 1039,
-            "reference": "Partie II · § 6.1 Souveraineté architecturale et fermeture de la divergence DIV-02 (L1039–L1052)"
+            "line_start": 1040,
+            "reference": "Partie II · § 6.1 Souveraineté architecturale et fermeture de la divergence DIV-02 (L1040–L1053)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch06",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 1053,
-            "reference": "Partie II · § 6.2 Architecture cible, noyau possédé, principes d'arbitrage et maturité (L1053–L1203)"
+            "line_start": 1054,
+            "reference": "Partie II · § 6.2 Architecture cible, noyau possédé, principes d'arbitrage et maturité (L1054–L1204)"
           },
           {
             "part_id": "P02",
             "unit_id": "ch06",
             "tome_id": "P02",
             "file": "Compendium/Compendium.md",
-            "line_start": 1204,
-            "reference": "Partie II · § 6.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L1204–L1226)"
+            "line_start": 1205,
+            "reference": "Partie II · § 6.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation (L1205–L1227)"
           },
           {
             "part_id": "P02",
@@ -1924,24 +1924,24 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-c",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7434,
-            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7434–L7741)"
+            "line_start": 7509,
+            "reference": "Annexe C — Réconciliations inter-tomes (DIV-02, DISC-01 à DISC-05) et calendrier vérifié 2023–2035 (L7509–L7807)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }

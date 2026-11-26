@@ -116,7 +116,7 @@
     {
       "id": "FACT-HYPERSCALER-CAPEX-2026",
       "metric": "Dépenses d'investissement (CapEx) 2026 d'Alphabet, Amazon, Meta et Microsoft",
-      "value": "496,7 G\\$ US décaissés en trésorerie sur 9 mois calendaires 2026 (132,0 Alphabet, 175,7 Amazon, 83,1 Meta, 106,0 Microsoft); fourchette annualisée 2026 strictement dérivée des dépôts SEC de 683,7 à 693,7 G\\$ US en trésorerie hors baux financiers Microsoft, ou environ 703 à 713 G\\$ US baux financiers Microsoft inclus (~220 G\\$ chez Amazon et 135 à 145 G\\$ chez Meta, location-financement incluse)",
+      "value": "496,7 G\\$ US décaissés en trésorerie sur 9 mois calendaires 2026 (496,723 non arrondis ; composantes arrondies : 132,0 Alphabet, 175,7 Amazon, 83,1 Meta, 106,0 Microsoft); fourchette annualisée 2026 strictement dérivée des dépôts SEC de 683,7 à 693,7 G\\$ US en trésorerie hors baux financiers Microsoft, ou environ 703 à 713 G\\$ US baux financiers Microsoft inclus (~220 G\\$ chez Amazon et 135 à 145 G\\$ chez Meta, location-financement incluse)",
       "source": "Dépôts SEC EDGAR Q3 2026 / FY2026 : Alphabet 8-K (SRC-103), Amazon 8-K (SRC-104), Meta 8-K (SRC-105), Microsoft 10-Q/10-K (SRC-106..SRC-108)",
       "owner_chapter": "ch03",
       "statut_preuve": "l_plus",
@@ -136,7 +136,7 @@
     {
       "id": "FACT-JUNIOR-DEV-CONTRACTION",
       "metric": "Évolution de l'emploi des développeurs logiciels âgés de 22 à 25 ans aux États-Unis (synthèse depuis 2024 vs pic fin 2022 – sept. 2025)",
-      "value": "Recul de près de 20 % depuis le pic de fin 2022 jusqu'à septembre 2025 (formulé « depuis 2024 » en synthèse, ~16 % d'écart relatif et -11 % aux universités américaines de 4 ans au § 4.4)",
+      "value": "Recul de près de 20 % depuis le pic de fin 2022 jusqu'à septembre 2025 au § 4.4 de l'AI Index 2026 (SRC-008) (formulé « depuis 2024 » en synthèse, ~16 % d'écart relatif et -11 % aux universités américaines de 4 ans)",
       "source": "Stanford HAI, Artificial Intelligence Index Report 2026 (arXiv:2606.15708)",
       "owner_chapter": "ch33",
       "statut_preuve": "l_plus",

@@ -11,7 +11,7 @@
 - **Auteurs / Émetteur :** Michael B. Jones, Anthony Nadalin, Brian Campbell, John Bradley, Chuck Mortimore
 - **Date de publication :** `2020-01`
 - **Organisme / Revue :** IETF RFC Editor
-- **Identifiant :** `RFC8693`
+- **Identifiant :** `RFC 8693`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-041.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8693.txt
 - **Empreinte SHA-256 (LF) :** `22f271006669060ee5142350371ee70ed30bba6db93a9d8b43d897d462586a6f` (`56867` octets, `7815` mots)
@@ -33,7 +33,7 @@
 - **Auteurs / Émetteur :** Torsten Lodderstedt, Justin Richer, Brian Campbell
 - **Date de publication :** `2023-05`
 - **Organisme / Revue :** IETF RFC Editor
-- **Identifiant :** `RFC9396`
+- **Identifiant :** `RFC 9396`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-042.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc9396.txt
 - **Empreinte SHA-256 (LF) :** `e334d06f14081317caf9d457dcbffeae877c5e5009f2452d2f11adcd47d68f6b` (`55352` octets, `7380` mots)
@@ -44,7 +44,7 @@
 - **Auteurs / Émetteur :** Daniel Fett, Brian Campbell, John Bradley, Torsten Lodderstedt et al.
 - **Date de publication :** `2023-09`
 - **Organisme / Revue :** IETF RFC Editor
-- **Identifiant :** `RFC9449`
+- **Identifiant :** `RFC 9449`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-043.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc9449.txt
 - **Empreinte SHA-256 (LF) :** `5e0267f9b8801cc882ec1dcb1d1d220cbe8cb38bbe428362cd1c8a2b33ef30e0` (`83632` octets, `12014` mots)

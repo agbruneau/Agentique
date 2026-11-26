@@ -88,7 +88,7 @@
 - **Auteurs / Émetteur :** Henk Birkholz, Antoine Delignat-Lavaud, Cedric Fournet, Yogesh Deshpande, Steve Lasker
 - **Date de publication :** `2026-06`
 - **Organisme / Revue :** IETF RFC Editor
-- **Identifiant :** `RFC9943`
+- **Identifiant :** `RFC 9943`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-044.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc9943.txt
 - **Empreinte SHA-256 (LF) :** `1ed0ffb4007b7986d5d3ff4da1a0489d5b9d71c5eae4cd89a7f48ae650a19fef` (`65473` octets, `9449` mots)
@@ -99,7 +99,7 @@
 - **Auteurs / Émetteur :** Simon Josefsson, Ilari Liusvaara
 - **Date de publication :** `2017-01`
 - **Organisme / Revue :** IRTF / IETF RFC Editor
-- **Identifiant :** `RFC8032`
+- **Identifiant :** `RFC 8032`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-076.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc8032.txt
 - **Empreinte SHA-256 (LF) :** `29c43d9f68a78933e16355eba485ce654fb7256858b69f8d1f02af9ea40e25cc` (`87266` octets, `12059` mots)

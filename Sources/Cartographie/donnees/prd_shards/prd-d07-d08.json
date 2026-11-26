@@ -276,32 +276,32 @@
             "unit_id": "ch19",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3199,
-            "reference": "Partie VII · Chapitre 19 — Surface d'attaque protocolaire, menaces OWASP ASI01–10 et chaîne logistique d'outils (L3199–L3362)"
+            "line_start": 3228,
+            "reference": "Partie VII · Chapitre 19 — Surface d'attaque protocolaire, menaces OWASP ASI01–10 et chaîne logistique d'outils (L3228–L3391)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch19",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3209,
-            "reference": "Partie VII · § 19.1 Résumé exécutif : trois surfaces non composables et quatre verrous préventifs (L3209–L3218)"
+            "line_start": 3238,
+            "reference": "Partie VII · § 19.1 Résumé exécutif : trois surfaces non composables et quatre verrous préventifs (L3238–L3247)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch19",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3219,
-            "reference": "Partie VII · § 19.2 Surface d'attaque protocolaire et modélisation multicouche (L3219–L3331)"
+            "line_start": 3248,
+            "reference": "Partie VII · § 19.2 Surface d'attaque protocolaire et modélisation multicouche (L3248–L3360)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch19",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3332,
-            "reference": "Partie VII · § 19.3 Synthèse architecturale, livrables et portes de contrôle (L3332–L3352)"
+            "line_start": 3361,
+            "reference": "Partie VII · § 19.3 Synthèse architecturale, livrables et portes de contrôle (L3361–L3381)"
           },
           {
             "part_id": "P07",
@@ -324,16 +324,16 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -344,7 +344,7 @@
       "domain_id": "D07",
       "subdomain_node_id": "SUB_D07_02",
       "representative_title": "Politiques hors modèle OPA/Rego/Cedar, Règle de deux et séparation contrôle/données CaMeL",
-      "executive_summary": "Ce chapitre concrétise le principe directeur PRI-005, selon lequel un modèle de langage ne constitue jamais sa propre frontière de sécurité. L'ensemble des autorisations, plafonds monétaires, murailles de conformité et invariances d'exécution DOIVENT être déportés hors de l'invite (proscription de l'antipatron AP-10) vers un point de décision de politiques (PDP) déterministe exécuté en échec fermé à chaque arête par une passerelle PEP obligatoire. Le dispositif combine l'arbitrage opérationnel OPA/Rego v1 (verrouillé par `default allow := false` et vérifié à 100 % sur 45 cas en barrière G0) et Cedar (sémantique `forbid` prioritaire, entiers 64 bits, vérification SMT via AuthZEN en < 1,5 ms). Pour neutraliser les injections indirectes non résolubles au niveau du modèle, l'architecture applique la Règle de deux sur toute session composée (EXIG-SEC-06, `rule_of_two.rego`), complétée par la séparation stricte contrôle/données CaMeL (EXIG-SEC-07, `camel_taint.rego`, blocage du blanchiment A2A), l'analyse de sûreté STAMP/STPA et le confinement des agents SRE autonomes sans shell libre (paliers R0–R3 sous Cedar).",
+      "executive_summary": "Ce chapitre concrétise le principe directeur PRI-005, selon lequel un modèle de langage ne constitue jamais sa propre frontière de sécurité. L'ensemble des autorisations, plafonds monétaires, murailles de conformité et invariances d'exécution DOIVENT être déportés hors de l'invite (proscription de l'anti-patron AP-10) vers un point de décision de politiques (PDP) déterministe exécuté en échec fermé à chaque arête par une passerelle PEP obligatoire. Le dispositif combine l'arbitrage opérationnel OPA/Rego v1 (verrouillé par `default allow := false` et vérifié à 100 % sur 45 cas en barrière G0) et Cedar (sémantique `forbid` prioritaire, entiers 64 bits, vérification SMT via AuthZEN en < 1,5 ms). Pour neutraliser les injections indirectes non résolubles au niveau du modèle, l'architecture applique la Règle de deux sur toute session composée (EXIG-SEC-06, `rule_of_two.rego`), complétée par la séparation stricte contrôle/données CaMeL (EXIG-SEC-07, `camel_taint.rego`, blocage du blanchiment A2A), l'analyse de sûreté STAMP/STPA et le confinement des agents SRE autonomes sans shell libre (paliers R0–R3 sous Cedar).",
       "targeted_content": {
         "scope_and_objectives": "Le périmètre englobe le bornage hors modèle de l'agentivité des systèmes par l'externalisation en Policy-as-Code des règles d'autorisation et de sûreté (OPA/Rego, Cedar, CEL) au cœur du maillage Zero Trust PEP/PDP (« jamais confiance au graphe » selon NIST SP 800-207), l'évaluation sur session composée de la Règle de deux ainsi que la séparation structurelle contrôle/données CaMeL. L'objectif consiste à garantir qu'aucune injection indirecte, erreur sémantique ou collusion multi-agents ne puisse contourner les autorisations, provoquer d'exfiltration sur la triade létale ni exécuter de commande arbitraire.",
         "key_requirements_and_objectives": [
@@ -364,7 +364,7 @@
                 "theme_node_id": "THM_politiques-opa-rego-hors-modele",
                 "canonical_slug": "politiques-opa-rego-hors-modele",
                 "theme_title": "Évaluation déterministe des politiques hors modèle (OPA/Cedar, PRI-005, CAP-037, DEC-009)",
-                "content_specification": "Ce thème impose la séparation stricte entre le raisonnement LLM et le moteur de politiques (PRI-005, antipatron AP-10). Aucune consigne en langage naturel ne vaut autorisation : les plafonds financiers, la séparation des tâches, les paliers P0–P3 et les murailles réglementaires DOIVENT être exprimés en Policy-as-Code versionné et traverser obligatoirement la passerelle PEP (`agentgateway`). L'architecture articule OPA Rego v1 en barrière d'admission CI/CD (ainsi qu'en moteur G0) et Cedar (sémantique `forbid` prioritaire, entiers 64 bits sans flottants, preuve SMT) évalué en < 1,5 ms via AuthZEN 1.0 sur chaque arête réseau mTLS.",
+                "content_specification": "Ce thème impose la séparation stricte entre le raisonnement LLM et le moteur de politiques (PRI-005, anti-patron AP-10). Aucune consigne en langage naturel ne vaut autorisation : les plafonds financiers, la séparation des tâches, les paliers P0–P3 et les murailles réglementaires DOIVENT être exprimés en Policy-as-Code versionné et traverser obligatoirement la passerelle PEP (`agentgateway`). L'architecture articule OPA Rego v1 en barrière d'admission CI/CD (ainsi qu'en moteur G0) et Cedar (sémantique `forbid` prioritaire, entiers 64 bits sans flottants, preuve SMT) évalué en < 1,5 ms via AuthZEN 1.0 sur chaque arête réseau mTLS.",
                 "identifiers_and_norms": [
                   "OPA",
                   "Rego",
@@ -617,32 +617,32 @@
             "unit_id": "ch20",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3363,
-            "reference": "Partie VII · Chapitre 20 — Politiques hors modèle OPA/Rego/Cedar, Règle de deux et séparation contrôle/données CaMeL (L3363–L3573)"
+            "line_start": 3392,
+            "reference": "Partie VII · Chapitre 20 — Politiques hors modèle OPA/Rego/Cedar, Règle de deux et séparation contrôle/données CaMeL (L3392–L3602)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch20",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3373,
-            "reference": "Partie VII · § 20.1 Résumé exécutif : externaliser l'autorité, fermer par défaut et briser la triade (L3373–L3382)"
+            "line_start": 3402,
+            "reference": "Partie VII · § 20.1 Résumé exécutif : externaliser l'autorité, fermer par défaut et briser la triade (L3402–L3411)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch20",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3383,
-            "reference": "Partie VII · § 20.2 Moteurs de politiques déterministes, Règle de deux et isolation CaMeL (L3383–L3543)"
+            "line_start": 3412,
+            "reference": "Partie VII · § 20.2 Moteurs de politiques déterministes, Règle de deux et isolation CaMeL (L3412–L3572)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch20",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3544,
-            "reference": "Partie VII · § 20.3 Synthèse architecturale, livrables et portes de contrôle (L3544–L3563)"
+            "line_start": 3573,
+            "reference": "Partie VII · § 20.3 Synthèse architecturale, livrables et portes de contrôle (L3573–L3592)"
           },
           {
             "part_id": "P07",
@@ -665,16 +665,16 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           }
         ]
       }
@@ -917,32 +917,32 @@
             "unit_id": "ch21",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3574,
-            "reference": "Partie VII · Chapitre 21 — Confinement éphémère (SHADI/microVM/WASI), enclaves TEE/HYOK et coupe-circuit SOC/SOAR (L3574–L3701)"
+            "line_start": 3603,
+            "reference": "Partie VII · Chapitre 21 — Confinement éphémère (SHADI/microVM/WASI), enclaves TEE/HYOK et coupe-circuit SOC/SOAR (L3603–L3730)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch21",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3584,
-            "reference": "Partie VII · § 21.1 Résumé exécutif : caisson étanche, souveraineté réaliste et frein d'urgence sélectif (L3584–L3593)"
+            "line_start": 3613,
+            "reference": "Partie VII · § 21.1 Résumé exécutif : caisson étanche, souveraineté réaliste et frein d'urgence sélectif (L3613–L3622)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch21",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3594,
-            "reference": "Partie VII · § 21.2 Confinement matériel, enclaves et boucle défensive SOC/SOAR (L3594–L3670)"
+            "line_start": 3623,
+            "reference": "Partie VII · § 21.2 Confinement matériel, enclaves et boucle défensive SOC/SOAR (L3623–L3699)"
           },
           {
             "part_id": "P07",
             "unit_id": "ch21",
             "tome_id": "P07",
             "file": "Compendium/Compendium.md",
-            "line_start": 3671,
-            "reference": "Partie VII · § 21.3 Synthèse architecturale, livrables et portes de contrôle (L3671–L3692)"
+            "line_start": 3700,
+            "reference": "Partie VII · § 21.3 Synthèse architecturale, livrables et portes de contrôle (L3700–L3721)"
           },
           {
             "part_id": "P07",
@@ -965,8 +965,8 @@
             "unit_id": "annexe-d",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 7742,
-            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7742–L8298)"
+            "line_start": 7808,
+            "reference": "Annexe D — Homologation exécutable G0–G5, matrice EXIG / CAP / PRR-75 / C01–C40 / 5 SBB, licences et statut non-avis (L7808–L8422)"
           }
         ]
       }
@@ -985,7 +985,7 @@
           "EXIG-OBS-07..10 (PRR O-02) : Appliquer le double couloir PII avec liste fermée de métadonnées et caviardage déterministe bilingue FR/EN (NAS, IBAN, courriel, HMAC-SHA256 poivré, aucun RP dans `baggage`); confiner tout débogage brut exceptionnel dans une voûte chiffrée sous double accord purgée en ≤ 14 jours.",
           "EXIG-OBS-11..13 / EXIG-SEC-28 / EXIG-GOV-17 (CAP-040, CAP-049, PRR G-15) : Consigner avant tout relais P2/P3 en échec fermé l'enregistrement C.8 à 5 éléments canonisé RFC 8785 (JCS), chaîné (`precedent_sha256`), ancré chaque heure hors domaine via SCITT (RFC 9943) et rescellé ≤ 5 ans en SLH-DSA (FIPS 205), conservé ≥ 24 mois (et jusqu'à 40 ans en assurance vie/rentes).",
           "EXIG-CON-09 : Maintenir un dossier de décision chiffré par clé DEK client sous KMS (≥ 1 an) permettant à la fois la restitution des facteurs décisionnels prévus à l'article 12.1 de la Loi 25 et l'effacement ciblé par destruction de clé.",
-          "AIBOM / RFC 8785 : Assurer la provenance des 5 composants livrés d'un agent (CycloneDX 1.7, SPDX 3.0.1, SLSA v1.2, 5+1 horloges incluant invites et politiques) et exiger la canonicalisation JCS avant toute signature JWS d'Agent Card A2A."
+          "AIBOM / RFC 8785 : Assurer la provenance des 5 composants livrés d'un agent (CycloneDX 1.7, SPDX 3.0.1, SLSA v1.2, 5+1 horloges incluant invites et politiques) et exiger la canonisation JCS avant toute signature JWS d'Agent Card A2A."
         ],
         "families_and_themes": [
           {
@@ -997,7 +997,7 @@
                 "theme_node_id": "THM_observabilite-otel-genai",
                 "canonical_slug": "observabilite-otel-genai",
                 "theme_title": "Télémétrie OpenTelemetry v1.41.0 épinglée (au regard de v1.44.0 Development) et jointure trace ↔ mandat",
-                "content_specification": "Ce thème érige l'observabilité distribuée en condition d'interopérabilité et d'imputabilité (EXIG-OBS-01..06, PRI-013, CAP-042, ADR-021). Puisque les 85 attributs du registre OpenTelemetry GenAI v1.44.0 demeurent au statut Development et omettent les champs de délégation (lacune F-96 flotte, lacune 21), l'ensemble des agents, passerelles et moteurs DOIVENT émettre en OTLP vers un collecteur OTel v1.41.0 épinglé derrière une table de correspondance, propager W3C Trace Context via `_meta` MCP (SEP-414), A2A et CloudEvents sans RP dans `baggage`, injecter les 4 clés de jointure trace ↔ mandat (Tableau 41), mesurer les 5 SLI cognitifs (TCR, TER, tours, amplification, désaveu HOTL ainsi que le détecteur de `livelock`) et retenir 100 % des anomalies par échantillonnage en queue.",
+                "content_specification": "Ce thème érige l'observabilité distribuée en condition d'interopérabilité et d'imputabilité (EXIG-OBS-01..06, PRI-013, CAP-042, ADR-021). Puisque les 85 attributs du registre OpenTelemetry GenAI v1.44.0 demeurent au statut Development et omettent les champs de délégation (lacune F-96 flotte, lacune 21), l'ensemble des agents, passerelles et moteurs DOIVENT émettre en OTLP vers un collecteur OTel v1.41.0 épinglé derrière une table de correspondance, propager W3C Trace Context via `_meta` MCP (SEP-414), A2A et CloudEvents sans RP dans `baggage`, injecter les 4 clés de jointure trace ↔ mandat (Tableau 41 du Tome 1), mesurer les 5 SLI cognitifs (TCR, TER, tours, amplification, désaveu HOTL ainsi que le détecteur de `livelock`) et retenir 100 % des anomalies par échantillonnage en queue.",
                 "identifiers_and_norms": [
                   "OpenTelemetry",
                   "W3C Trace Context",
@@ -1052,7 +1052,7 @@
           {
             "family_node_id": "FAM_D08_01_02",
             "family_title": "Double couloir PII, JCS et scellage SCITT",
-            "family_overview": "Cette famille définit l'ingénierie probatoire à trois magasins séparés : télémétrie opérationnelle caviardée, journal d'audit immuable canonisé JCS et ancré SCITT/SLH-DSA, dossier de décision Loi 25, et canonicalisation déterministe RFC 8785 pour l'ensemble des signatures cryptographiques du corpus.",
+            "family_overview": "Cette famille définit l'ingénierie probatoire à trois magasins séparés : télémétrie opérationnelle caviardée, journal d'audit immuable canonisé JCS et ancré SCITT/SLH-DSA, dossier de décision Loi 25, et canonisation déterministe RFC 8785 pour l'ensemble des signatures cryptographiques du corpus.",
             "themes_targeted": [
               {
                 "theme_node_id": "THM_double-couloir-probatoire-pii",
@@ -1127,8 +1127,8 @@
               {
                 "theme_node_id": "THM_canonicalisation-jcs-rfc8785",
                 "canonical_slug": "canonicalisation-jcs-rfc8785",
-                "theme_title": "Canonicalisation JCS (RFC 8785) pour la signature et la reconstruction vérifiable des Agent Cards",
-                "content_specification": "Ce thème applique l'exigence normative MUST d'A2A v1.0.0 imposant la canonicalisation RFC 8785 (à l'exclusion du membre `signatures`) avant toute signature JWS (RFC 7515) d'Agent Card, permettant au vérificateur de reconstruire exactement les octets signés sans fragilité de sérialisation entre langages et de détecter toute altération.",
+                "theme_title": "Canonisation JCS (RFC 8785) pour la signature et la reconstruction vérifiable des Agent Cards",
+                "content_specification": "Ce thème applique l'exigence normative MUST d'A2A v1.0.0 imposant la canonisation RFC 8785 (à l'exclusion du membre `signatures`) avant toute signature JWS (RFC 7515) d'Agent Card, permettant au vérificateur de reconstruire exactement les octets signés sans fragilité de sérialisation entre langages et de détecter toute altération.",
                 "identifiers_and_norms": [
                   "RFC 8785",
                   "RFC 7515",
@@ -1237,7 +1237,7 @@
             "relation_type": "attenuation_risque",
             "target_chapter_number": 16,
             "target_slug": "signature-agent-card-ancrage",
-            "synthesis": "[canonicalisation-jcs-rfc8785 → signature-agent-card-ancrage] Fiabilisation de la vérification JWS par canonicalisation RFC 8785 : La canonicalisation déterministe JCS garantit que le vérificateur reconstruit exactement les octets signés de l'Agent Card malgré les écarts de sérialisation JSON (chapitre 15, section 15.1.1)."
+            "synthesis": "[canonicalisation-jcs-rfc8785 → signature-agent-card-ancrage] Fiabilisation de la vérification JWS par canonisation RFC 8785 : La canonisation déterministe JCS garantit que le vérificateur reconstruit exactement les octets signés de l'Agent Card malgré les écarts de sérialisation JSON (chapitre 15, section 15.1.1)."
           },
           {
             "direction": "sortante",
@@ -1260,32 +1260,32 @@
             "unit_id": "ch22",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3704,
-            "reference": "Partie VIII · Chapitre 22 — Observabilité OpenTelemetry GenAI, double couloir PII et scellage probatoire JCS/SCITT + SLH-DSA (L3704–L3884)"
+            "line_start": 3733,
+            "reference": "Partie VIII · Chapitre 22 — Observabilité OpenTelemetry GenAI, double couloir PII et scellage probatoire JCS/SCITT + SLH-DSA (L3733–L3913)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch22",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3712,
-            "reference": "Partie VIII · § 22.1 Résumé exécutif : instrumentation stabilisée et séparation physique des preuves (L3712–L3719)"
+            "line_start": 3741,
+            "reference": "Partie VIII · § 22.1 Résumé exécutif : instrumentation stabilisée et séparation physique des preuves (L3741–L3748)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch22",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3720,
-            "reference": "Partie VIII · § 22.2 Télémétrie distribuée, provenance et scellage probatoire (L3720–L3855)"
+            "line_start": 3749,
+            "reference": "Partie VIII · § 22.2 Télémétrie distribuée, provenance et scellage probatoire (L3749–L3884)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch22",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3856,
-            "reference": "Partie VIII · § 22.3 Synthèse architecturale, livrables et portes de contrôle (L3856–L3873)"
+            "line_start": 3885,
+            "reference": "Partie VIII · § 22.3 Synthèse architecturale, livrables et portes de contrôle (L3885–L3902)"
           },
           {
             "part_id": "P08",
@@ -1316,16 +1316,16 @@
             "unit_id": "annexe-b",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6440,
-            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6440–L7433)"
+            "line_start": 6513,
+            "reference": "Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages (L6513–L7508)"
           },
           {
             "part_id": "ANN",
             "unit_id": "annexe-e",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 8299,
-            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8299–L8408)"
+            "line_start": 8423,
+            "reference": "Annexe E — Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus (L8423–L8532)"
           }
         ]
       }
@@ -1580,32 +1580,32 @@
             "unit_id": "ch23",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3885,
-            "reference": "Partie VIII · Chapitre 23 — Banc EvalOps hermétique (E1–E3), bornes de Wilson, tests métamorphiques FR/EN et distillation contrôlée (L3885–L4061)"
+            "line_start": 3914,
+            "reference": "Partie VIII · Chapitre 23 — Banc EvalOps hermétique (E1–E3), bornes de Wilson, tests métamorphiques FR/EN et distillation contrôlée (L3914–L4090)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch23",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3893,
-            "reference": "Partie VIII · § 23.1 Résumé exécutif : validation hermétique, rigueur statistique et distillation bornée (L3893–L3900)"
+            "line_start": 3922,
+            "reference": "Partie VIII · § 23.1 Résumé exécutif : validation hermétique, rigueur statistique et distillation bornée (L3922–L3929)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch23",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 3901,
-            "reference": "Partie VIII · § 23.2 Qualification E1–E3, dimensionnement de Wilson, invariance sans oracle et distillation (L3901–L4029)"
+            "line_start": 3930,
+            "reference": "Partie VIII · § 23.2 Qualification E1–E3, dimensionnement de Wilson, invariance sans oracle et distillation (L3930–L4058)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch23",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 4030,
-            "reference": "Partie VIII · § 23.3 Synthèse architecturale, livrables et portes de contrôle (L4030–L4050)"
+            "line_start": 4059,
+            "reference": "Partie VIII · § 23.3 Synthèse architecturale, livrables et portes de contrôle (L4059–L4079)"
           },
           {
             "part_id": "P08",
@@ -1636,8 +1636,8 @@
             "unit_id": "annexe-a",
             "tome_id": "ANN",
             "file": "Compendium/Compendium.md",
-            "line_start": 6056,
-            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6056–L6439)"
+            "line_start": 6097,
+            "reference": "Annexe A — Table maîtresse de traçabilité MindMap → PRD (12 domaines, 36 chapitres, 71 familles, 260 thèmes) (L6097–L6512)"
           }
         ]
       }
@@ -1668,7 +1668,7 @@
                 "theme_node_id": "THM_finops-focus-cpo",
                 "canonical_slug": "finops-focus-cpo",
                 "theme_title": "Pilotage économique au coût complet par résultat conforme (CPO), FOCUS 1.4 et disjoncteurs",
-                "content_specification": "Ce thème substitue le coût complet par résultat conforme en $ CA (CPO en `Decimal` exact incluant reprises, échecs et charge HOTL, EXIG-FIN-01..10, PRI-014, CAP-045, ADR-023) au tarif trompeur du million de jetons (antipatrons AP-03, inflation de 4× à 15× Hadfield, > 97 % de relecture, incident de boucle à 41 000 $ CAD en 11 heures). Il impose des enveloppes atomiques à la passerelle (repli SLM à 70 %, alerte à 80 %, arrêt propre à 100 % hors Saga), un préfixe d'invite stable pour le cache KV (1/10 à 1/40 du prix), des lots asynchrones (−50 %), la conversion des licences SaaS (multiplicateur ≤ 1,25), la facturation FOCUS v1.4/1.5 et la séquence Showback (POR-004) → Chargeback et déclassement après deux périodes déficitaires (POR-009/016).",
+                "content_specification": "Ce thème substitue le coût complet par résultat conforme en $ CA (CPO en `Decimal` exact incluant reprises, échecs et charge HOTL, EXIG-FIN-01..10, PRI-014, CAP-045, ADR-023) au tarif trompeur du million de jetons (anti-patrons AP-03, inflation de 4× à 15× Hadfield, > 97 % de relecture, incident de boucle à 41 000 $ CAD en 11 heures). Il impose des enveloppes atomiques à la passerelle (repli SLM à 70 %, alerte à 80 %, arrêt propre à 100 % hors Saga), un préfixe d'invite stable pour le cache KV (1/10 à 1/40 du prix), des lots asynchrones (−50 %), la conversion des licences SaaS (multiplicateur ≤ 1,25), la facturation FOCUS v1.4/1.5 et la séquence Showback (POR-004) → Chargeback et déclassement après deux périodes déficitaires (POR-009/016).",
                 "identifiers_and_norms": [
                   "FOCUS v1.4",
                   "15× vs 4×",
@@ -1814,7 +1814,7 @@
             "relation_type": "amplification_synergie",
             "target_chapter_number": 13,
             "target_slug": "arbre-sobriete-oo1-oo4",
-            "synthesis": "[arbre-sobriete-oo1-oo4 → finops-focus-cpo] Réduction substantielle du coût par résultat grâce à la sobriété d'orchestration : Le choix prioritaire de OO1/OO2 lorsque suffisant (sections 22.1 et 43.2) et l'évitement du multi-agent superflu (15× jetons, section 40.5) amplifient directement la performance FinOps CPO."
+            "synthesis": "[arbre-sobriete-oo1-oo4 → finops-focus-cpo] Réduction substantielle du coût par résultat grâce à la sobriété d'orchestration : Le choix prioritaire du code déterministe et du graphe fixe (N0) lorsque suffisant, et la commande déterministe OO3/OO4 plutôt qu'OO1/OO2 (sections 22.1 et 43.2) et l'évitement du multi-agent superflu (15× jetons, section 40.5) amplifient directement la performance FinOps CPO."
           },
           {
             "direction": "entrante",
@@ -1879,32 +1879,32 @@
             "unit_id": "ch24",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 4062,
-            "reference": "Partie VIII · Chapitre 24 — SRE agentique, FinOps FOCUS v1.4 au Cost-per-Outcome, routage frugal et comptabilité carbone (L4062–L4194)"
+            "line_start": 4091,
+            "reference": "Partie VIII · Chapitre 24 — SRE agentique, FinOps FOCUS v1.4 au Cost-per-Outcome, routage frugal et comptabilité carbone (L4091–L4223)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch24",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 4070,
-            "reference": "Partie VIII · § 24.1 Résumé exécutif : gouverner par le coût complet, la frugalité et l'opposabilité (L4070–L4077)"
+            "line_start": 4099,
+            "reference": "Partie VIII · § 24.1 Résumé exécutif : gouverner par le coût complet, la frugalité et l'opposabilité (L4099–L4106)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch24",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 4078,
-            "reference": "Partie VIII · § 24.2 Ingénierie FinOps FOCUS, plan d'inférence frugal et SRE agentique (L4078–L4167)"
+            "line_start": 4107,
+            "reference": "Partie VIII · § 24.2 Ingénierie FinOps FOCUS, plan d'inférence frugal et SRE agentique (L4107–L4196)"
           },
           {
             "part_id": "P08",
             "unit_id": "ch24",
             "tome_id": "P08",
             "file": "Compendium/Compendium.md",
-            "line_start": 4168,
-            "reference": "Partie VIII · § 24.3 Synthèse architecturale, livrables et portes de contrôle (L4168–L4185)"
+            "line_start": 4197,
+            "reference": "Partie VIII · § 24.3 Synthèse architecturale, livrables et portes de contrôle (L4197–L4214)"
           },
           {
             "part_id": "P08",

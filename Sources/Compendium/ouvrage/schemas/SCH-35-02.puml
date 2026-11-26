@@ -58,7 +58,7 @@ skinparam nodesep 22
 skinparam ranksep 26
 skinparam padding 7
 
-title Les cinq blocs critiques du Tableau 12 (5 SBB) dans la trousse exécutable
+title Les cinq blocs critiques du Tableau 12 du Tome 2 (5 SBB) dans la trousse exécutable
 package "Z1 : Plan A (Contrôle préventif) — 3 SBB actifs" {
   rectangle "SBB-SECRETS-VAULT\nobo_dpop.py (0 token passthrough)" as SBB1 <<danger>>
   rectangle "SBB-GUARDRAILS-ENGINE\nOpaPolicyEngine (100 % default allow := false)" as SBB2 <<danger>>

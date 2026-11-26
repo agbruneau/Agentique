@@ -1,19 +1,19 @@
 # Annexe B — Cartographie analytique des 616 interrelations systémiques, nœuds carrefours et arbitrages
 
-Cette annexe compile mécaniquement la topologie complète des **616 interrelations typées** reliant les **260 thèmes** du Compendium répartis sur douze domaines (`D01`–`D12`). Le degré moyen s'établit à **4,74** arêtes par thème ; **391 liaisons (63,5 %)** franchissent une frontière de domaine tandis que **225 liaisons (36,5 %)** consolident la cohérence interne d'un même domaine.
+Cette annexe compile mécaniquement la topologie complète des **616 interrelations typées** reliant les **260 thèmes** du Compendium répartis sur douze domaines (`D01`–`D12`). Le degré moyen s'établit à **4,74** arêtes par thème ; **390 liaisons (63,3 %)** franchissent une frontière de domaine tandis que **226 liaisons (36,7 %)** consolident la cohérence interne d'un même domaine.
 
 ## 1. Répartition et sémantique des huit types canoniques d'interrelations
 
 |Type d'interrelation|Effectif|Part|Règle sémantique|
 |---|---:|---:|---|
-|`operationnalisation`|132|21,4 %|source est mis en œuvre ou rendu testable par target (ou inversement selon étiquetage explicite)|
-|`dependance_technique`|93|15,1 %|source dépend de target comme prérequis architectural ou cryptographique|
-|`encadrement_normatif`|82|13,3 %|source (cadre légal/normatif) encadre et contraint target|
-|`attenuation_risque`|81|13,1 %|source atténue ou neutralise la vulnérabilité ou dérive représentée par target|
-|`amplification_synergie`|63|10,2 %|source amplifie l'efficacité, la fiabilité ou l'impact de target|
-|`tension_arbitrage`|62|10,1 %|source entre en tension ou exige un arbitrage explicite face à target|
-|`projection_temporelle`|52|8,4 %|source projette ou prépare sa transition vers target sur l'horizon temporel|
-|`concordance_inter_tomes`|51|8,3 %|source et target s'alignent ou se réconcilient entre plusieurs tomes (ex. DIV-02, DISC-01..05)|
+|`operationnalisation`|129|20,9 %|`source` met en œuvre, concrétise ou rend testable `cible`|
+|`dependance_technique`|94|15,3 %|`source` dépend de `cible` comme prérequis architectural ou cryptographique|
+|`encadrement_normatif`|82|13,3 %|`source` (cadre légal/normatif) encadre et contraint `cible`|
+|`attenuation_risque`|82|13,3 %|`source` atténue ou neutralise la vulnérabilité ou dérive représentée par `cible`|
+|`tension_arbitrage`|67|10,9 %|`source` entre en tension ou exige un arbitrage explicite face à `cible`|
+|`amplification_synergie`|59|9,6 %|`source` amplifie l'efficacité, la fiabilité ou l'impact de `cible`|
+|`projection_temporelle`|52|8,4 %|`source` projette ou prépare sa transition vers `cible` sur l'horizon temporel|
+|`concordance_inter_tomes`|51|8,3 %|`source` et `cible` s'alignent ou se réconcilient entre plusieurs tomes (ex. DIV-02, DISC-01..05)|
 
 *Tableau B.1 — Distribution et sémantique des huit types canoniques d'interrelations sur les six cent seize liaisons du graphe.*
 
@@ -21,21 +21,21 @@ Cette annexe compile mécaniquement la topologie complète des **616 interrelati
 
 Les vingt-cinq nœuds carrefours concentrent l'essentiel du couplage transversal entre l'architecture déterministe, la sécurité protocolaire, l'observabilité probatoire et la conformité prudentielle.
 
-**Rangs 1 à 5 :** rang 1, `bsif-e-23` (D09, degré 30, 22 sortantes et 8 entrantes, Architecture prudentielle fédérale : BSIF E-23 (1er mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033) ; rang 2, `protocole-mcp` (D03, degré 25, 11 sortantes et 14 entrantes, Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027) ; rang 3, `passerelle-mcp-ai-gateway` (D03, degré 24, 13 sortantes et 11 entrantes, Passerelle d'agents bidirectionnelle PEP à 9 contrôles ordonnés et budget Borealis-Bench) ; rang 4, `finops-focus-cpo` (D08, degré 24, 6 sortantes et 18 entrantes, Pilotage économique au coût complet par résultat conforme (CPO), FOCUS 1.4 et disjoncteurs) ; rang 5, `exigences-cre-ia-305` (D12, degré 23, 6 sortantes et 17 entrantes, Porte unique d'homologation : 305 EXIG-* v1.2 × 75 PRR (24 bloquants) × 15 POR et 10 interdits GOV-17).
+**Rangs 1 à 5 :** rang 1, `bsif-e-23` (D09, degré 30, 21 sortantes et 9 entrantes, Architecture prudentielle fédérale : BSIF E-23 (1ᵉʳ mai 2027), B-10/B-13/E-21/B-15 et temporisation 2033) ; rang 2, `protocole-mcp` (D03, degré 25, 10 sortantes et 15 entrantes, Protocole MCP (2026-07-28) sans état, ≤ 15 outils d'intention et bascule juillet 2027) ; rang 3, `passerelle-mcp-ai-gateway` (D03, degré 24, 14 sortantes et 10 entrantes, Passerelle d'agents bidirectionnelle PEP à 9 contrôles ordonnés et budget Borealis-Bench) ; rang 4, `finops-focus-cpo` (D08, degré 24, 6 sortantes et 18 entrantes, Pilotage économique au coût complet par résultat conforme (CPO), FOCUS 1.4 et disjoncteurs) ; rang 5, `exigences-cre-ia-305` (D12, degré 23, 5 sortantes et 18 entrantes, Porte unique d'homologation : 305 EXIG-* v1.2 × 75 PRR (24 bloquants) × 15 POR et 10 interdits GOV-17).
 
-**Rangs 6 à 10 :** rang 6, `post-quantique-ml-dsa-slh-dsa` (D06, degré 21, 11 sortantes et 10 entrantes, Transition post-quantique (FIPS 203/204/205, NIST IR 8547), choc HTTP 431 (50–72×) et CBOR-COSE) ; rang 7, `delegation-obo-deux-sauts` (D06, degré 21, 8 sortantes et 13 entrantes, Rupture au deuxième saut (RFC 8693 §4.1), délégation atténuée ≤ 2 sauts et DPoP/mTLS) ; rang 8, `anti-verrouillage-standards` (D03, degré 20, 7 sortantes et 13 entrantes, Confinement anti-verrouillage SaaS (EXIG-ARC-21), catalogues déclaratifs C1 et statut AP2/AGNTCY) ; rang 9, `supervision-hitl-hotl-abstention` (D02, degré 20, 10 sortantes et 10 entrantes, Ergonomie anti-complaisance (ASI09), vue différentielle et distinction entre PC3 et art. 12.1) ; rang 10, `injection-indirecte-prompt` (D07, degré 19, 4 sortantes et 15 entrantes, Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % contre 84 %) et tests FR/EN).
+**Rangs 6 à 10 :** rang 6, `post-quantique-ml-dsa-slh-dsa` (D06, degré 21, 10 sortantes et 11 entrantes, Transition post-quantique (FIPS 203/204/205, NIST IR 8547), choc HTTP 431 (50–72×) et CBOR-COSE) ; rang 7, `delegation-obo-deux-sauts` (D06, degré 21, 8 sortantes et 13 entrantes, Rupture au deuxième saut (RFC 8693 §4.1), délégation atténuée ≤ 2 sauts et DPoP/mTLS) ; rang 8, `supervision-hitl-hotl-abstention` (D02, degré 20, 11 sortantes et 9 entrantes, Ergonomie anti-complaisance (ASI09), vue différentielle et distinction entre PC3 et art. 12.1) ; rang 9, `anti-verrouillage-standards` (D03, degré 20, 4 sortantes et 16 entrantes, Confinement anti-verrouillage SaaS (EXIG-ARC-21), catalogues déclaratifs C1 et statut AP2/AGNTCY) ; rang 10, `observabilite-otel-genai` (D08, degré 18, 11 sortantes et 7 entrantes, Télémétrie OpenTelemetry v1.41.0 épinglée (face à v1.44.0 Development) et jointure trace ↔ mandat).
 
-**Rangs 11 à 15 :** rang 11, `protocole-a2a` (D03, degré 18, 6 sortantes et 12 entrantes, Non-substituabilité entre outil et pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)) ; rang 12, `observabilite-otel-genai` (D08, degré 18, 12 sortantes et 6 entrantes, Télémétrie OpenTelemetry v1.41.0 épinglée (face à v1.44.0 Development) et jointure trace ↔ mandat) ; rang 13, `echelle-autonomie-l0-l4` (D02, degré 17, 6 sortantes et 11 entrantes, Gouvernance matricielle : 8 domaines D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3) ; rang 14, `eu-ai-act` (D09, degré 17, 13 sortantes et 4 entrantes, Droit européen applicable par effet extraterritorial : AI Act (Annexe III décembre 2027), Data Act et DORA) ; rang 15, `erreurs-silencieuses-cascade` (D01, degré 16, 3 sortantes et 13 entrantes, Rupture entre validité syntaxique et erreurs sémantiques silencieuses).
+**Rangs 11 à 15 :** rang 11, `protocole-a2a` (D03, degré 18, 6 sortantes et 12 entrantes, Non-substituabilité entre outil et pair, protocole A2A v1.0.1 et asymétrie 0/15 (Z1–Z5)) ; rang 12, `eu-ai-act` (D09, degré 17, 13 sortantes et 4 entrantes, Droit européen applicable par effet extraterritorial : AI Act (Annexe III décembre 2027), Data Act et DORA) ; rang 13, `echelle-autonomie-l0-l4` (D02, degré 17, 6 sortantes et 11 entrantes, Gouvernance matricielle : 8 domaines D1–D8 × Stades 0–4 × Classes 1–6 × N0–N4/P0–P3) ; rang 14, `injection-indirecte-prompt` (D07, degré 17, 2 sortantes et 15 entrantes, Modélisation des menaces OWASP ASI01–10 / MITRE ATLAS, isolation CaMeL (77 % contre 84 %) et tests FR/EN) ; rang 15, `banc-evalops-hermetique` (D08, degré 15, 10 sortantes et 5 entrantes, Évaluation continue E1–E3 (pass^k), juge calibré et abaissement d'autonomie sur dérive SLO).
 
-**Rangs 16 à 20 :** rang 16, `ligne-directrice-amf` (D09, degré 15, 9 sortantes et 6 entrantes, Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F) ; rang 17, `banc-evalops-hermetique` (D08, degré 15, 7 sortantes et 8 entrantes, Évaluation continue E1–E3 (pass^k), juge calibré et abaissement d'autonomie sur dérive SLO) ; rang 18, `did-vc-passeport-agent` (D06, degré 15, 5 sortantes et 10 entrantes, Identité légale vérifiable GLEIF vLEI, lacune KYA (0/9) et encadrement des agents externes) ; rang 19, `execution-durable-temporal` (D05, degré 14, 7 sortantes et 7 entrantes, Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)) ; rang 20, `saga-compensatoire` (D05, degré 14, 6 sortantes et 8 entrantes, Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28).
+**Rangs 16 à 20 :** rang 16, `ligne-directrice-amf` (D09, degré 15, 8 sortantes et 7 entrantes, Encadrement AMF Québec : Note AMF IA (41 attentes → 12 EXIG-AMF-01..12), lois d'assurance et statut F) ; rang 17, `did-vc-passeport-agent` (D06, degré 15, 5 sortantes et 10 entrantes, Identité légale vérifiable GLEIF vLEI, lacune KYA (0/9) et encadrement des agents externes) ; rang 18, `erreurs-silencieuses-cascade` (D01, degré 15, 0 sortantes et 15 entrantes, Rupture entre validité syntaxique et erreurs sémantiques silencieuses) ; rang 19, `soc-soar-coupe-circuit` (D07, degré 14, 11 sortantes et 3 entrantes, Coupe-circuit hiérarchisé (< 10 s POR-003 contre 15 min CAD26), SSF/CAEP et rétrogradation < 60 s) ; rang 20, `execution-durable-temporal` (D05, degré 14, 7 sortantes et 7 entrantes, Exécution durable hors processus, idempotence JCS SHA-256 et revalidation au réveil (TOCTOU)).
 
-**Rangs 21 à 25 :** rang 21, `scellage-jcs-scitt` (D08, degré 14, 3 sortantes et 11 entrantes, Journal d'audit à 5 éléments canonisé RFC 8785 (JCS), ancré chaque heure et scellé SCITT + SLH-DSA) ; rang 22, `identite-non-humaine-nhi` (D06, degré 14, 5 sortantes et 9 entrantes, Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes) ; rang 23, `soc-soar-coupe-circuit` (D07, degré 14, 10 sortantes et 4 entrantes, Coupe-circuit hiérarchisé (< 10 s POR-003 contre 15 min CAD26), SSF/CAEP et rétrogradation < 60 s) ; rang 24, `spiffe-spire-attestation` (D06, degré 13, 5 sortantes et 8 entrantes, Attestations cryptographiques éphémères SPIFFE X.509-SVID, OIDC et veille WIMSE / OAuth 2.1) ; rang 25, `trajectoires-adaptatives-dapp` (D11, degré 13, 3 sortantes et 10 entrantes, Parcours adaptatifs DAPP sans probabilité (A/B/C), modélisation EMA et portefeuille 43 INI / 15 POR / 27 SIG).
+**Rangs 21 à 25 :** rang 21, `saga-compensatoire` (D05, degré 14, 6 sortantes et 8 entrantes, Patron Saga à point pivot, tampon d'irréversibilité et canal de compensation dédié EXIG-ORC-28) ; rang 22, `identite-non-humaine-nhi` (D06, degré 14, 4 sortantes et 10 entrantes, Diagnostic Q-A..Q-E (0/15), identités non humaines (NHI) parrainées et bannissement des secrets fixes) ; rang 23, `scellage-jcs-scitt` (D08, degré 14, 3 sortantes et 11 entrantes, Journal d'audit à 5 éléments canonisé RFC 8785 (JCS), ancré chaque heure et scellé SCITT + SLH-DSA) ; rang 24, `rag-agentique-contexte` (D04, degré 13, 8 sortantes et 5 entrantes, Compilateur déterministe du contexte (ACL amont), Agent Skills signés et sas WAP ODCS v3) ; rang 25, `double-couloir-probatoire-pii` (D08, degré 13, 7 sortantes et 6 entrantes, Architecture à double couloir PII et séparation des trois magasins réglementés).
 
 ## 3. Corridors inter-domaines dominants et densité sur les huit tomes (`T1`–`T8`)
 
-L'empreinte transversale sur les huit tomes antérieurs totalise `T1` (246 rattachements, 844 occurrences), `T2` (162 rattachements, 344 occurrences), `T3` (230 rattachements, 1458 occurrences), `T4` (164 rattachements, 398 occurrences), `T5` (192 rattachements, 312 occurrences), `T6` (122 rattachements, 156 occurrences), `T7` (136 rattachements, 192 occurrences), `T8` (128 rattachements, 148 occurrences). Les quinze corridors inter-domaines les plus denses relient les couples suivants : `D09`→`D11` (14 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Prospective 2028–2035, trajectoires DAPP et capital humain) ; `D09`→`D10` (13 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Architectures sectorielles, blueprints et cas métier) ; `D03`→`D06` (12 liaisons, Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2) vers Identité non humaine (NHI), chaîne de mandat et post-quantique) ; `D09`→`D02` (12 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)) ; `D10`→`D02` (11 liaisons, Architectures sectorielles, blueprints et cas métier vers Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)) ; `D09`→`D08` (9 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme) ; `D12`→`D02` (9 liaisons, Homologation vérifiable, trousse exécutable, concordance et Wyvern/G0–G5 vers Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)) ; `D03`→`D07` (9 liaisons, Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2) vers Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC) ; `D04`→`D07` (8 liaisons, Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT) vers Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC) ; `D02`→`D01` (8 liaisons, Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4) vers Fondements épistémiques, économiques et rupture agentique) ; `D06`→`D08` (7 liaisons, Identité non humaine (NHI), chaîne de mandat et post-quantique vers Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme) ; `D08`→`D01` (7 liaisons, Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme vers Fondements épistémiques, économiques et rupture agentique) ; `D02`→`D10` (6 liaisons, Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4) vers Architectures sectorielles, blueprints et cas métier) ; `D09`→`D06` (6 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Identité non humaine (NHI), chaîne de mandat et post-quantique) ; `D09`→`D04` (6 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)).
+L'empreinte transversale sur les huit tomes antérieurs totalise `T1` (246 rattachements, 844 occurrences), `T2` (162 rattachements, 344 occurrences), `T3` (230 rattachements, 1 458 occurrences), `T4` (164 rattachements, 398 occurrences), `T5` (192 rattachements, 312 occurrences), `T6` (122 rattachements, 156 occurrences), `T7` (136 rattachements, 192 occurrences), `T8` (128 rattachements, 148 occurrences) (totalisant **3 852 occurrences** sur `T1`–`T8`, plus `5` occurrences sur `R` `Tomes/README.md`, dont les comptes bruts par tome se distinguent des `1 931` occurrences agrégées par sous-domaine au Tableau A.1). Les 15 corridors inter-domaines les plus denses (seuil ≥ 7 liaisons, ex-æquo inclus) relient les couples suivants : `D09`→`D10` (13 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Architectures sectorielles, blueprints et cas métier) ; `D09`→`D11` (13 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Prospective 2028–2035, trajectoires DAPP et capital humain) ; `D10`→`D02` (13 liaisons, Architectures sectorielles, blueprints et cas métier vers Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)) ; `D03`→`D06` (11 liaisons, Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2) vers Identité non humaine (NHI), chaîne de mandat et post-quantique) ; `D02`→`D01` (9 liaisons, Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4) vers Fondements épistémiques, économiques et rupture agentique) ; `D03`→`D07` (9 liaisons, Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2) vers Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC) ; `D09`→`D03` (9 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2)) ; `D12`→`D02` (9 liaisons, Homologation vérifiable, trousse exécutable, concordance et Wyvern/G0–G5 vers Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)) ; `D04`→`D07` (8 liaisons, Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT) vers Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC) ; `D08`→`D01` (8 liaisons, Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme vers Fondements épistémiques, économiques et rupture agentique) ; `D09`→`D02` (8 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)) ; `D06`→`D08` (7 liaisons, Identité non humaine (NHI), chaîne de mandat et post-quantique vers Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme) ; `D09`→`D04` (7 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)) ; `D09`→`D06` (7 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Identité non humaine (NHI), chaîne de mandat et post-quantique) ; `D09`→`D08` (7 liaisons, Droit, régulation prudentielle (QC, CA, UE, int.) et contrats vers Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme).
 
-## 4. Synthèse analytique des 62 arbitrages structurels (`tension_arbitrage`)
+## 4. Synthèse analytique des 67 arbitrages structurels (`tension_arbitrage`)
 
 Les tensions d'arbitrage identifient les compromis architecturaux où l'optimisation locale d'une couche dégrade une garantie de sécurité, de conformité ou de sobriété. Chaque arbitrage est instruit avant toute dérogation et intégralement restitué avec ses extrémités dans le catalogue exhaustif de la section 6.
 
@@ -43,17 +43,17 @@ Les tensions d'arbitrage identifient les compromis architecturaux où l'optimisa
 
 **Domaine `D02` (9 arbitrages) :** liaisons `REL_0215`, `REL_0398`, `REL_0515`, `REL_0568`, `REL_0569`, `REL_0570`, `REL_0571`, `REL_0572`, `REL_0573`, illustrées par `echelle-autonomie-l0-l4` vers `supervision-hitl-hotl-abstention` (Montée en autonomie bornée contre capacité cognitive de supervision humaine).
 
-**Domaine `D03` (8 arbitrages) :** liaisons `REL_0014`, `REL_0152`, `REL_0404`, `REL_0459`, `REL_0460`, `REL_0476`, `REL_0523`, `REL_0615`, illustrées par `agntcy-slim` vers `protocole-a2a` (Positionnement officiel d'AGNTCY nuancé par chevauchement tiers sur ACP).
+**Domaine `D03` (9 arbitrages) :** liaisons `REL_0014`, `REL_0152`, `REL_0404`, `REL_0459`, `REL_0460`, `REL_0476`, `REL_0498`, `REL_0523`, `REL_0615`, illustrées par `agntcy-slim` vers `protocole-a2a` (Positionnement officiel d'AGNTCY nuancé par chevauchement tiers sur ACP).
 
-**Domaine `D04` (4 arbitrages) :** liaisons `REL_0142`, `REL_0183`, `REL_0366`, `REL_0495`, illustrées par `confinement-cua-patrimoine-sans-api` vers `couche-anti-corruption-acl` (Tolère CUA à ≤ 8 % sous bail 12 mois contre refactoring MCP durable).
+**Domaine `D04` (5 arbitrages) :** liaisons `REL_0142`, `REL_0183`, `REL_0206`, `REL_0366`, `REL_0495`, illustrées par `confinement-cua-patrimoine-sans-api` vers `couche-anti-corruption-acl` (Tolère CUA à ≤ 8 % sous bail 12 mois contre refactoring MCP durable).
 
 **Domaine `D05` (7 arbitrages) :** liaisons `REL_0042`, `REL_0124`, `REL_0259`, `REL_0288`, `REL_0530`, `REL_0531`, `REL_0589`, illustrées par `arbre-sobriete-oo1-oo4` vers `protocole-a2a` (Sobriété agent unique face au surcoût multi-agents (-70 % à +80,8 %)).
 
 **Domaine `D06` (6 arbitrages) :** liaisons `REL_0018`, `REL_0117`, `REL_0323`, `REL_0438`, `REL_0439`, `REL_0560`, illustrées par `annuaires-commerciaux-risque-standard-de-fait` vers `anti-verrouillage-standards` (Adoption immédiate d'annuaires propriétaires par rapport à l'attente de normes neutres).
 
-**Domaine `D07` (4 arbitrages) :** liaisons `REL_0144`, `REL_0320`, `REL_0358`, `REL_0511`, illustrées par `confinement-opensandbox-firecracker-wasi` vers `anti-verrouillage-standards` (Isolation stricte face à la latence et à la complexité KVM).
+**Domaine `D07` (6 arbitrages) :** liaisons `REL_0144`, `REL_0320`, `REL_0358`, `REL_0379`, `REL_0380`, `REL_0511`, illustrées par `confinement-opensandbox-firecracker-wasi` vers `anti-verrouillage-standards` (Isolation stricte face à la latence et à la complexité KVM).
 
-**Domaine `D08` (4 arbitrages) :** liaisons `REL_0063`, `REL_0201`, `REL_0282`, `REL_0613`, illustrées par `banc-evalops-hermetique` vers `finops-focus-cpo` (Coût de simulation face au risque d'erreur en production).
+**Domaine `D08` (5 arbitrages) :** liaisons `REL_0063`, `REL_0201`, `REL_0282`, `REL_0374`, `REL_0613`, illustrées par `banc-evalops-hermetique` vers `finops-focus-cpo` (Coût de simulation face au risque d'erreur en production).
 
 **Domaine `D09` (2 arbitrages) :** liaisons `REL_0226`, `REL_0557`, illustrées par `efvp-transfert-hors-quebec` vers `systems-of-agency` (Souveraineté des données financières face à l'accès aux modèles de pointe).
 
@@ -65,32 +65,32 @@ Les tensions d'arbitrage identifient les compromis architecturaux où l'optimisa
 
 ## 5. Dynamique causale des sept autres classes d'interrelations (`D01`–`D12`)
 
-Outre les tensions d'arbitrage, les cinq cent cinquante-quatre autres arêtes du graphe structurent l'opérationnalisation exécutable, les dépendances techniques, l'encadrement normatif, l'atténuation des risques, les synergies, les projections `2026–2035` et les concordances entre tomes. La totalité des **616 relations** est restituée sans aucune coupure en section 6.
+Outre les 67 tensions d'arbitrage, les 549 autres arêtes du graphe structurent l'opérationnalisation exécutable, les dépendances techniques, l'encadrement normatif, l'atténuation des risques, les synergies, les projections `2026–2035` et les concordances entre tomes. La totalité des **616 relations** est restituée sans aucune coupure en section 6.
 
-**Opérationnalisation (`operationnalisation`, 132 arêtes) :** domaines moteurs `D03` (18), `D12` (15), `D08` (15), `D02` (14), `D10` (14). Liaisons représentatives : `REL_0001` (`actualisation-novembre-2026-unification-v1-2` vers `exigences-cre-ia-305`), `REL_0002` (`actualisation-novembre-2026-unification-v1-2` vers `ligne-directrice-amf`), `REL_0003` (`actualisation-novembre-2026-unification-v1-2` vers `tampon-deterministe-rtr-iso20022`), `REL_0004` (`adaptateur-mcp-streamable-http-sep-3398` vers `protocole-mcp`), `REL_0007` (`agent-card-decouverte` vers `protocole-a2a`).
+**Opérationnalisation (`operationnalisation`, 129 arêtes) :** domaines moteurs (ex-æquo inclus) `D08` (19), `D10` (16), `D02` (15), `D03` (15), `D12` (15). Liaisons représentatives : `REL_0001` (`actualisation-novembre-2026-unification-v1-2` vers `exigences-cre-ia-305`), `REL_0002` (`actualisation-novembre-2026-unification-v1-2` vers `ligne-directrice-amf`), `REL_0003` (`actualisation-novembre-2026-unification-v1-2` vers `tampon-deterministe-rtr-iso20022`), `REL_0004` (`adaptateur-mcp-streamable-http-sep-3398` vers `protocole-mcp`), `REL_0007` (`agent-card-decouverte` vers `protocole-a2a`).
 
-**Dépendances techniques (`dependance_technique`, 93 arêtes) :** domaines moteurs `D03` (26), `D06` (17), `D08` (12), `D04` (9), `D10` (8). Liaisons représentatives : `REL_0006` (`agent-card-decouverte` vers `protocole-a2a`), `REL_0008` (`agent-card-decouverte` vers `signature-agent-card-ancrage`), `REL_0009` (`agntcy-slim` vers `agent-card-decouverte`), `REL_0012` (`agntcy-slim` vers `post-quantique-ml-dsa-slh-dsa`), `REL_0016` (`agntcy-slim` vers `spiffe-spire-attestation`).
+**Dépendances techniques (`dependance_technique`, 94 arêtes) :** domaines moteurs (ex-æquo inclus) `D03` (26), `D06` (17), `D08` (12), `D04` (10), `D10` (8). Liaisons représentatives : `REL_0006` (`agent-card-decouverte` vers `protocole-a2a`), `REL_0008` (`agent-card-decouverte` vers `signature-agent-card-ancrage`), `REL_0009` (`agntcy-slim` vers `agent-card-decouverte`), `REL_0012` (`agntcy-slim` vers `post-quantique-ml-dsa-slh-dsa`), `REL_0016` (`agntcy-slim` vers `spiffe-spire-attestation`).
 
-**Encadrement normatif (`encadrement_normatif`, 82 arêtes) :** domaines moteurs `D09` (54), `D12` (8), `D03` (5), `D02` (4), `D08` (3). Liaisons représentatives : `REL_0011` (`agntcy-slim` vers `contrats-interfaces-catalogue-entreprise`), `REL_0024` (`anti-verrouillage-standards` vers `bsif-e-23`), `REL_0053` (`avis-acvm-11-348` vers `echelle-autonomie-l0-l4`), `REL_0054` (`avis-acvm-11-348` vers `identite-non-humaine-nhi`), `REL_0056` (`avis-acvm-11-348` vers `profil-gestion-patrimoine-m15`).
+**Encadrement normatif (`encadrement_normatif`, 82 arêtes) :** domaines moteurs (ex-æquo inclus) `D09` (59), `D12` (8), `D02` (4), `D03` (4), `D06` (2), `D08` (2). Liaisons représentatives : `REL_0011` (`contrats-interfaces-catalogue-entreprise` vers `agntcy-slim`), `REL_0024` (`bsif-e-23` vers `anti-verrouillage-standards`), `REL_0053` (`avis-acvm-11-348` vers `echelle-autonomie-l0-l4`), `REL_0054` (`avis-acvm-11-348` vers `identite-non-humaine-nhi`), `REL_0056` (`avis-acvm-11-348` vers `profil-gestion-patrimoine-m15`).
 
-**Atténuation de risque (`attenuation_risque`, 81 arêtes) :** domaines moteurs `D07` (20), `D04` (13), `D06` (12), `D05` (9), `D02` (8). Liaisons représentatives : `REL_0017` (`alignement-deceptif-red-teaming-adversarial` vers `defense-hors-modele-camel-confinement`), `REL_0019` (`anti-patrons-agentiques` vers `dette-cognitive-vs-technique`), `REL_0027` (`anti-verrouillage-standards` vers `dette-cognitive-vs-technique`), `REL_0028` (`anti-verrouillage-standards` vers `fusion-acp-collision-terminologique`), `REL_0029` (`anti-verrouillage-standards` vers `pieges-gouvernance`).
+**Atténuation de risque (`attenuation_risque`, 82 arêtes) :** domaines moteurs (ex-æquo inclus) `D07` (20), `D04` (13), `D06` (12), `D05` (11), `D02` (9). Liaisons représentatives : `REL_0017` (`alignement-deceptif-red-teaming-adversarial` vers `defense-hors-modele-camel-confinement`), `REL_0019` (`anti-patrons-agentiques` vers `dette-cognitive-vs-technique`), `REL_0027` (`anti-verrouillage-standards` vers `dette-cognitive-vs-technique`), `REL_0028` (`anti-verrouillage-standards` vers `fusion-acp-collision-terminologique`), `REL_0029` (`anti-verrouillage-standards` vers `pieges-gouvernance`).
 
-**Amplification de synergie (`amplification_synergie`, 63 arêtes) :** domaines moteurs `D03` (11), `D08` (8), `D07` (7), `D04` (7), `D06` (6). Liaisons représentatives : `REL_0005` (`agent-card-decouverte` vers `agntcy-slim`), `REL_0013` (`agntcy-slim` vers `protocole-a2a`), `REL_0021` (`anti-patrons-agentiques` vers `partition-hybride-80-20`), `REL_0033` (`approbation-ciba` vers `saga-compensatoire`), `REL_0034` (`approbation-ciba` vers `scellage-jcs-scitt`).
+**Amplification de synergie (`amplification_synergie`, 59 arêtes) :** domaines moteurs (ex-æquo inclus) `D03` (10), `D08` (8), `D04` (6), `D05` (6), `D06` (6). Liaisons représentatives : `REL_0005` (`agent-card-decouverte` vers `agntcy-slim`), `REL_0013` (`agntcy-slim` vers `protocole-a2a`), `REL_0021` (`anti-patrons-agentiques` vers `partition-hybride-80-20`), `REL_0033` (`approbation-ciba` vers `saga-compensatoire`), `REL_0034` (`approbation-ciba` vers `scellage-jcs-scitt`).
 
-**Projections temporelles (`projection_temporelle`, 52 arêtes) :** domaines moteurs `D11` (17), `D09` (10), `D06` (7), `D03` (5), `D01` (5). Liaisons représentatives : `REL_0030` (`anti-verrouillage-standards` vers `tri-prospectif-peremption-feuilles-route`), `REL_0058` (`avis-acvm-11-348` vers `trajectoires-adaptatives-dapp`), `REL_0078` (`bsif-e-23` vers `did-vc-passeport-agent`), `REL_0085` (`bsif-e-23` vers `priorites-90-jours-gouvernance`), `REL_0093` (`bsif-e-23` vers `trajectoire-90j-18m-p1-p3`).
+**Projections temporelles (`projection_temporelle`, 52 arêtes) :** domaines moteurs (ex-æquo inclus) `D11` (17), `D09` (10), `D06` (7), `D01` (5), `D03` (5). Liaisons représentatives : `REL_0030` (`anti-verrouillage-standards` vers `tri-prospectif-peremption-feuilles-route`), `REL_0058` (`avis-acvm-11-348` vers `trajectoires-adaptatives-dapp`), `REL_0078` (`bsif-e-23` vers `did-vc-passeport-agent`), `REL_0085` (`bsif-e-23` vers `priorites-90-jours-gouvernance`), `REL_0093` (`bsif-e-23` vers `trajectoire-90j-18m-p1-p3`).
 
-**Concordances inter-tomes (`concordance_inter_tomes`, 51 arêtes) :** domaines moteurs `D12` (27), `D09` (6), `D02` (3), `D10` (3), `D01` (3). Liaisons représentatives : `REL_0044` (`architecture-collection-tome-1-preambule` vers `cout-non-interop-dette-integration`), `REL_0045` (`architecture-collection-tome-1-preambule` vers `regime-preuve-trois-degres-absence`), `REL_0047` (`architecture-reference-6-couches-2-piliers` vers `noyau-controle-possede-cap`), `REL_0055` (`avis-acvm-11-348` vers `maillage-reglementaire-international`), `REL_0070` (`blueprints-reference-multisectoriels` vers `concordance-inter-tomes-div02`).
+**Concordances inter-tomes (`concordance_inter_tomes`, 51 arêtes) :** domaines moteurs (ex-æquo inclus) `D12` (27), `D09` (6), `D01` (3), `D02` (3), `D10` (3). Liaisons représentatives : `REL_0044` (`architecture-collection-tome-1-preambule` vers `cout-non-interop-dette-integration`), `REL_0045` (`architecture-collection-tome-1-preambule` vers `regime-preuve-trois-degres-absence`), `REL_0047` (`architecture-reference-6-couches-2-piliers` vers `noyau-controle-possede-cap`), `REL_0055` (`avis-acvm-11-348` vers `maillage-reglementaire-international`), `REL_0070` (`blueprints-reference-multisectoriels` vers `concordance-inter-tomes-div02`).
 
 ### Densité relationnelle par domaine source (`D01`–`D12`)
 
-`D01` totalise 25 arêtes sortantes (`tension_arbitrage` (6), `projection_temporelle` (5), `operationnalisation` (4), `amplification_synergie` (3), `concordance_inter_tomes` (3), `attenuation_risque` (2), `dependance_technique` (1), `encadrement_normatif` (1)) ; `D02` totalise 50 arêtes sortantes (`operationnalisation` (14), `tension_arbitrage` (9), `attenuation_risque` (8), `dependance_technique` (7), `amplification_synergie` (5), `encadrement_normatif` (4), `concordance_inter_tomes` (3)) ; `D03` totalise 80 arêtes sortantes (`dependance_technique` (26), `operationnalisation` (18), `amplification_synergie` (11), `tension_arbitrage` (8), `attenuation_risque` (7), `encadrement_normatif` (5), `projection_temporelle` (5)) ; `D04` totalise 43 arêtes sortantes (`attenuation_risque` (13), `dependance_technique` (9), `amplification_synergie` (7), `tension_arbitrage` (4), `operationnalisation` (4), `concordance_inter_tomes` (2), `projection_temporelle` (2), `encadrement_normatif` (2)) ; `D05` totalise 40 arêtes sortantes (`operationnalisation` (12), `attenuation_risque` (9), `tension_arbitrage` (7), `amplification_synergie` (6), `dependance_technique` (6)) ; `D06` totalise 60 arêtes sortantes (`dependance_technique` (17), `attenuation_risque` (12), `operationnalisation` (9), `projection_temporelle` (7), `tension_arbitrage` (6), `amplification_synergie` (6), `encadrement_normatif` (2), `concordance_inter_tomes` (1)) ; `D07` totalise 44 arêtes sortantes (`attenuation_risque` (20), `amplification_synergie` (7), `operationnalisation` (6), `tension_arbitrage` (4), `dependance_technique` (3), `concordance_inter_tomes` (2), `projection_temporelle` (1), `encadrement_normatif` (1)) ; `D08` totalise 51 arêtes sortantes (`operationnalisation` (15), `dependance_technique` (12), `amplification_synergie` (8), `attenuation_risque` (6), `tension_arbitrage` (4), `encadrement_normatif` (3), `concordance_inter_tomes` (2), `projection_temporelle` (1)) ; `D09` totalise 91 arêtes sortantes (`encadrement_normatif` (54), `operationnalisation` (14), `projection_temporelle` (10), `concordance_inter_tomes` (6), `dependance_technique` (2), `amplification_synergie` (2), `tension_arbitrage` (2), `attenuation_risque` (1)) ; `D10` totalise 39 arêtes sortantes (`operationnalisation` (14), `dependance_technique` (8), `tension_arbitrage` (6), `amplification_synergie` (4), `concordance_inter_tomes` (3), `attenuation_risque` (2), `encadrement_normatif` (1), `projection_temporelle` (1)) ; `D11` totalise 34 arêtes sortantes (`projection_temporelle` (17), `operationnalisation` (7), `tension_arbitrage` (4), `concordance_inter_tomes` (2), `attenuation_risque` (1), `amplification_synergie` (1), `encadrement_normatif` (1), `dependance_technique` (1)) ; `D12` totalise 59 arêtes sortantes (`concordance_inter_tomes` (27), `operationnalisation` (15), `encadrement_normatif` (8), `amplification_synergie` (3), `projection_temporelle` (3), `tension_arbitrage` (2), `dependance_technique` (1)).
+`D01` totalise 18 arêtes sortantes (`tension_arbitrage` (6), `projection_temporelle` (5), `amplification_synergie` (3), `concordance_inter_tomes` (3), `dependance_technique` (1)) ; `D02` totalise 52 arêtes sortantes (`operationnalisation` (15), `tension_arbitrage` (9), `attenuation_risque` (9), `dependance_technique` (7), `amplification_synergie` (5), `encadrement_normatif` (4), `concordance_inter_tomes` (3)) ; `D03` totalise 77 arêtes sortantes (`dependance_technique` (26), `operationnalisation` (15), `amplification_synergie` (10), `tension_arbitrage` (9), `attenuation_risque` (8), `projection_temporelle` (5), `encadrement_normatif` (4)) ; `D04` totalise 42 arêtes sortantes (`attenuation_risque` (13), `dependance_technique` (10), `amplification_synergie` (6), `tension_arbitrage` (5), `operationnalisation` (4), `concordance_inter_tomes` (2), `projection_temporelle` (2)) ; `D05` totalise 44 arêtes sortantes (`operationnalisation` (14), `attenuation_risque` (11), `tension_arbitrage` (7), `amplification_synergie` (6), `dependance_technique` (6)) ; `D06` totalise 60 arêtes sortantes (`dependance_technique` (17), `attenuation_risque` (12), `operationnalisation` (9), `projection_temporelle` (7), `tension_arbitrage` (6), `amplification_synergie` (6), `encadrement_normatif` (2), `concordance_inter_tomes` (1)) ; `D07` totalise 45 arêtes sortantes (`attenuation_risque` (20), `operationnalisation` (7), `tension_arbitrage` (6), `amplification_synergie` (5), `dependance_technique` (3), `concordance_inter_tomes` (2), `projection_temporelle` (1), `encadrement_normatif` (1)) ; `D08` totalise 55 arêtes sortantes (`operationnalisation` (19), `dependance_technique` (12), `amplification_synergie` (8), `attenuation_risque` (6), `tension_arbitrage` (5), `concordance_inter_tomes` (2), `encadrement_normatif` (2), `projection_temporelle` (1)) ; `D09` totalise 89 arêtes sortantes (`encadrement_normatif` (59), `projection_temporelle` (10), `operationnalisation` (7), `concordance_inter_tomes` (6), `dependance_technique` (2), `amplification_synergie` (2), `tension_arbitrage` (2), `attenuation_risque` (1)) ; `D10` totalise 40 arêtes sortantes (`operationnalisation` (16), `dependance_technique` (8), `tension_arbitrage` (6), `amplification_synergie` (4), `concordance_inter_tomes` (3), `attenuation_risque` (1), `encadrement_normatif` (1), `projection_temporelle` (1)) ; `D11` totalise 35 arêtes sortantes (`projection_temporelle` (17), `operationnalisation` (8), `tension_arbitrage` (4), `concordance_inter_tomes` (2), `attenuation_risque` (1), `amplification_synergie` (1), `encadrement_normatif` (1), `dependance_technique` (1)) ; `D12` totalise 59 arêtes sortantes (`concordance_inter_tomes` (27), `operationnalisation` (15), `encadrement_normatif` (8), `amplification_synergie` (3), `projection_temporelle` (3), `tension_arbitrage` (2), `dependance_technique` (1)).
 
-Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérationnelle entre les carrefours principaux : rang 26 `couche-anti-corruption-acl` (`D04`, degré 13, 6 sortantes et 7 entrantes) ; rang 27 `double-couloir-probatoire-pii` (`D08`, degré 13, 6 sortantes et 7 entrantes) ; rang 28 `rag-agentique-contexte` (`D04`, degré 13, 8 sortantes et 5 entrantes) ; rang 29 `tool-poisoning-rug-pull` (`D07`, degré 13, 2 sortantes et 11 entrantes) ; rang 30 `partition-hybride-80-20` (`D02`, degré 12, 5 sortantes et 7 entrantes) ; rang 31 `topologies-patrons-orchestration` (`D05`, degré 12, 4 sortantes et 8 entrantes) ; rang 32 `politiques-opa-rego-hors-modele` (`D07`, degré 12, 4 sortantes et 8 entrantes) ; rang 33 `dette-semantique-ontologies` (`D04`, degré 12, 5 sortantes et 7 entrantes) ; rang 34 `loi-25-article-12-1` (`D09`, degré 12, 7 sortantes et 5 entrantes) ; rang 35 `approbation-ciba` (`D06`, degré 11, 6 sortantes et 5 entrantes) ; rang 36 `noyau-controle-possede-cap` (`D02`, degré 11, 4 sortantes et 7 entrantes) ; rang 37 `constance-pass-k` (`D01`, degré 11, 2 sortantes et 9 entrantes) ; rang 38 `iso-iec-42001-nist` (`D09`, degré 11, 9 sortantes et 2 entrantes) ; rang 39 `protocole-ap2` (`D03`, degré 11, 6 sortantes et 5 entrantes) ; rang 40 `agntcy-slim` (`D03`, degré 10, 8 sortantes et 2 entrantes) ; rang 41 `anti-patrons-agentiques` (`D10`, degré 10, 5 sortantes et 5 entrantes) ; rang 42 `blueprints-reference-multisectoriels` (`D10`, degré 10, 4 sortantes et 6 entrantes) ; rang 43 `protocole-wyvern-g0-g5` (`D12`, degré 10, 5 sortantes et 5 entrantes) ; rang 44 `concordance-inter-tomes-div02` (`D12`, degré 10, 6 sortantes et 4 entrantes) ; rang 45 `choregraphie-event-mesh` (`D05`, degré 10, 5 sortantes et 5 entrantes) ; rang 46 `systems-of-agency` (`D01`, degré 10, 4 sortantes et 6 entrantes) ; rang 47 `efvp-transfert-hors-quebec` (`D09`, degré 10, 7 sortantes et 3 entrantes) ; rang 48 `gouvernance-duale-ae-as` (`D11`, degré 9, 2 sortantes et 7 entrantes) ; rang 49 `memoire-coala-4-tiroirs` (`D04`, degré 9, 7 sortantes et 2 entrantes) ; rang 50 `agent-card-decouverte` (`D03`, degré 8, 4 sortantes et 4 entrantes).
+Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérationnelle entre les carrefours principaux : rang 26 `couche-anti-corruption-acl` (`D04`, degré 13, 6 sortantes et 7 entrantes) ; rang 27 `double-couloir-probatoire-pii` (`D08`, degré 13, 7 sortantes et 6 entrantes) ; rang 28 `rag-agentique-contexte` (`D04`, degré 13, 8 sortantes et 5 entrantes) ; rang 29 `partition-hybride-80-20` (`D02`, degré 12, 4 sortantes et 8 entrantes) ; rang 30 `topologies-patrons-orchestration` (`D05`, degré 12, 7 sortantes et 5 entrantes) ; rang 31 `politiques-opa-rego-hors-modele` (`D07`, degré 12, 4 sortantes et 8 entrantes) ; rang 32 `tool-poisoning-rug-pull` (`D07`, degré 12, 1 sortantes et 11 entrantes) ; rang 33 `approbation-ciba` (`D06`, degré 11, 7 sortantes et 4 entrantes) ; rang 34 `noyau-controle-possede-cap` (`D02`, degré 11, 3 sortantes et 8 entrantes) ; rang 35 `constance-pass-k` (`D01`, degré 11, 2 sortantes et 9 entrantes) ; rang 36 `iso-iec-42001-nist` (`D09`, degré 11, 7 sortantes et 4 entrantes) ; rang 37 `dette-semantique-ontologies` (`D04`, degré 11, 5 sortantes et 6 entrantes) ; rang 38 `loi-25-article-12-1` (`D09`, degré 11, 6 sortantes et 5 entrantes) ; rang 39 `protocole-ap2` (`D03`, degré 11, 5 sortantes et 6 entrantes) ; rang 40 `agntcy-slim` (`D03`, degré 10, 7 sortantes et 3 entrantes) ; rang 41 `anti-patrons-agentiques` (`D10`, degré 10, 5 sortantes et 5 entrantes) ; rang 42 `blueprints-reference-multisectoriels` (`D10`, degré 10, 5 sortantes et 5 entrantes) ; rang 43 `protocole-wyvern-g0-g5` (`D12`, degré 10, 4 sortantes et 6 entrantes) ; rang 44 `concordance-inter-tomes-div02` (`D12`, degré 10, 6 sortantes et 4 entrantes) ; rang 45 `choregraphie-event-mesh` (`D05`, degré 10, 7 sortantes et 3 entrantes) ; rang 46 `systems-of-agency` (`D01`, degré 10, 3 sortantes et 7 entrantes) ; rang 47 `efvp-transfert-hors-quebec` (`D09`, degré 10, 6 sortantes et 4 entrantes) ; rang 48 `gouvernance-duale-ae-as` (`D11`, degré 9, 2 sortantes et 7 entrantes) ; rang 49 `memoire-coala-4-tiroirs` (`D04`, degré 9, 7 sortantes et 2 entrantes) ; rang 50 `agent-card-decouverte` (`D03`, degré 8, 4 sortantes et 4 entrantes).
 
 <!-- BIBLIOGRAPHIE_BRUTE_DEBUT -->
 ## 6. Catalogue intégral des 616 interrelations typées (`REL_0001`–`REL_0616`)
 
-### `operationnalisation` (132 relations)
+### `operationnalisation` (129 relations)
 
 - **`REL_0001`** (`D12` → `D12`, `actualisation-novembre-2026-unification-v1-2` → `exigences-cre-ia-305`) : Intègre 18 exigences et porte le registre de 287 à 305.
 - **`REL_0002`** (`D12` → `D09`, `actualisation-novembre-2026-unification-v1-2` → `ligne-directrice-amf`) : Absorbe les reports de la Note AMF IA en exigences normatives.
@@ -99,26 +99,24 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0007`** (`D03` → `D03`, `agent-card-decouverte` → `protocole-a2a`) : Catalogue interne gouvernant la 4e opération (approuver).
 - **`REL_0010`** (`D03` → `D03`, `agntcy-slim` → `agent-card-decouverte`) : Schémas OASF et annuaire distribué AGNTCY.
 - **`REL_0015`** (`D03` → `D06`, `agntcy-slim` → `registres-gouvernes-trois-modeles`) : Service d'annuaire AGNTCY ADS spécifiant le magasin fédéré.
-- **`REL_0025`** (`D03` → `D09`, `anti-verrouillage-standards` → `clauses-contractuelles-normatives-app`) : Inscrit la réversibilité dans les 10 clauses.
-- **`REL_0026`** (`D03` → `D09`, `anti-verrouillage-standards` → `criteres-evaluation-fournisseurs-grille`) : Vérifie portabilité et identité avant achat.
-- **`REL_0039`** (`D05` → `D05`, `arbre-sobriete-oo1-oo4` → `frameworks-orchestration-entreprise`) : Portage des options OO1–OO4 dans les frameworks GA.
+- **`REL_0025`** (`D09` → `D03`, `clauses-contractuelles-normatives-app` → `anti-verrouillage-standards`) : Inscrit la réversibilité dans les 10 clauses.
+- **`REL_0026`** (`D09` → `D03`, `criteres-evaluation-fournisseurs-grille` → `anti-verrouillage-standards`) : Vérifie portabilité et identité avant achat.
+- **`REL_0039`** (`D05` → `D05`, `frameworks-orchestration-entreprise` → `arbre-sobriete-oo1-oo4`) : Portage des options OO1–OO4 dans les cadriciels GA.
 - **`REL_0040`** (`D05` → `D02`, `arbre-sobriete-oo1-oo4` → `partition-hybride-80-20`) : Sélection OO1–OO4 pour maintenir le déterminisme par défaut.
-- **`REL_0043`** (`D05` → `D05`, `arbre-sobriete-oo1-oo4` → `topologies-patrons-orchestration`) : Déploiement OO3/OO4 via les 8 patrons homologués.
-- **`REL_0048`** (`D02` → `D10`, `architecture-reference-six-couches-pc1-pc5` → `blueprints-reference-multisectoriels`) : Instanciation des 6 couches et PC1–PC5 dans le blueprint C1–C8.
+- **`REL_0043`** (`D05` → `D05`, `topologies-patrons-orchestration` → `arbre-sobriete-oo1-oo4`) : Déploiement OO3/OO4 via les 8 patrons homologués.
+- **`REL_0048`** (`D10` → `D02`, `blueprints-reference-multisectoriels` → `architecture-reference-six-couches-pc1-pc5`) : Instanciation des 6 couches et PC1–PC5 dans le blueprint C1–C8.
 - **`REL_0059`** (`D08` → `D01`, `banc-evalops-hermetique` → `constance-pass-k`) : Exécution CI/CD E1–E3 de la constance pass^k.
-- **`REL_0060`** (`D08` → `D02`, `banc-evalops-hermetique` → `criteres-qos-cout-precision-latence`) : Mesure reproductiblement latence PEP, conformité A2A et coût.
+- **`REL_0060`** (`D08` → `D02`, `banc-evalops-hermetique` → `criteres-qos-cout-precision-latence`) : Mesure de manière reproductible latence PEP, conformité A2A et coût.
 - **`REL_0062`** (`D08` → `D08`, `banc-evalops-hermetique` → `finops-focus-cpo`) : Sélectionne le plus petit modèle suffisant sur jeu de référence.
 - **`REL_0066`** (`D12` → `D12`, `barriere-logicielle-g0-execute-g0` → `protocole-wyvern-g0-g5`) : Ancre logicielle à exit 0 en amont des barrières éditoriales G1–G5.
 - **`REL_0067`** (`D10` → `D10`, `blueprint-1-assistant-sor` → `blueprints-reference-multisectoriels`) : Instanciation du Blueprint 1 orienté systèmes d'enregistrement.
 - **`REL_0068`** (`D10` → `D10`, `blueprint-2-enclave-rag-acl` → `blueprints-reference-multisectoriels`) : Instanciation souveraine à haute confidentialité avec RAG ACL.
 - **`REL_0069`** (`D10` → `D10`, `blueprint-3-maillage-b2b` → `blueprints-reference-multisectoriels`) : Instanciation du maillage inter-départemental et B2B.
 - **`REL_0072`** (`D10` → `D02`, `blueprints-reference-multisectoriels` → `noyau-controle-possede-cap`) : Instancie les 4 plans en 3 architectures complètes.
-- **`REL_0075`** (`D09` → `D08`, `bsif-e-23` → `banc-evalops-hermetique`) : Validation indépendante continue E-23.
-- **`REL_0084`** (`D09` → `D02`, `bsif-e-23` → `pont-reglementation-frames-deterministes`) : Traduction des attentes E-23 en frames déterministes.
-- **`REL_0089`** (`D09` → `D11`, `bsif-e-23` → `registre-agents-cycle-de-vie-et-attestations`) : Utilise le registre d'entreprise comme inventaire E-23.
-- **`REL_0096`** (`D03` → `D03`, `cadre-eif-4-couches` → `contrats-interfaces-catalogue-entreprise`) : Impose revue 4 niveaux et accords d'interface.
-- **`REL_0099`** (`D03` → `D03`, `cadre-eif-4-couches` → `protocole-a2a`) : A2A matérialise l'interopérabilité organisationnelle entre pairs.
-- **`REL_0100`** (`D03` → `D03`, `cadre-eif-4-couches` → `protocole-mcp`) : MCP matérialise les paliers technique et syntaxique sur l'axe vertical.
+- **`REL_0075`** (`D08` → `D09`, `banc-evalops-hermetique` → `bsif-e-23`) : Validation indépendante continue E-23.
+- **`REL_0084`** (`D02` → `D09`, `pont-reglementation-frames-deterministes` → `bsif-e-23`) : Traduction des attentes E-23 en frames déterministes.
+- **`REL_0089`** (`D11` → `D09`, `registre-agents-cycle-de-vie-et-attestations` → `bsif-e-23`) : Utilise le registre d'entreprise comme inventaire E-23.
+- **`REL_0096`** (`D03` → `D03`, `contrats-interfaces-catalogue-entreprise` → `cadre-eif-4-couches`) : Impose revue 4 niveaux et accords d'interface.
 - **`REL_0101`** (`D02` → `D10`, `cadre-togaf-archimate-4-plans` → `blueprints-reference-multisectoriels`) : Formalisation ArchiMate du blueprint d'entreprise.
 - **`REL_0102`** (`D02` → `D12`, `cadre-togaf-archimate-4-plans` → `exigences-cre-ia-305`) : Formalise les contrôles EA/SA dans le gabarit ADR.
 - **`REL_0106`** (`D05` → `D05`, `cadriciels-orchestration-portabilite` → `topologies-patrons-orchestration`) : Implémente les graphes d'état et équipes en LangGraph/CrewAI/MAF/ADK.
@@ -126,15 +124,14 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0113`** (`D02` → `D02`, `catalogue-31-adr-12-dec` → `cadre-togaf-archimate-4-plans`) : Conversion des ADR en 12 contrats neutres DEC.
 - **`REL_0114`** (`D08` → `D08`, `caviardage-pii-rp-bilingue` → `double-couloir-probatoire-pii`) : Met en œuvre le couloir opérationnel sans PII du double couloir.
 - **`REL_0123`** (`D05` → `D05`, `choregraphie-event-mesh` → `saga-compensatoire`) : Exécute la compensation probabiliste par CloudEvents et Outbox.
-- **`REL_0125`** (`D12` → `D12`, `cinq-blocs-sbb-tableau-12` → `trousse-executable-tome-8`) : Comble exécutablement les 5 emplacements SBB du Tableau 12.
+- **`REL_0125`** (`D12` → `D12`, `trousse-executable-tome-8` → `cinq-blocs-sbb-tableau-12`) : Comble de façon exécutable les 5 emplacements SBB du Tableau 12 du Tome 2.
 - **`REL_0127`** (`D09` → `D09`, `classes-risque-agents-et-plafonds` → `iso-iec-42001-nist`) : Déclenche l'évaluation d'impact unifiée en classe élevée.
 - **`REL_0148`** (`D07` → `D07`, `confinement-shadi-sandbox` → `politiques-opa-rego-hors-modele`) : Applique le refus réseau par défaut au niveau manifeste.
 - **`REL_0157`** (`D12` → `D08`, `contrats-types-executes-ci-annexe-c` → `scellage-jcs-scitt`) : Démontre en CI la chaîne cryptographique JCS SHA-256.
 - **`REL_0158`** (`D07` → `D07`, `controle-surete-stamp-stpa` → `soc-soar-coupe-circuit`) : Convertit l'analyse STPA en coupe-circuits et signaux.
-- **`REL_0163`** (`D04` → `D03`, `couche-anti-corruption-acl` → `protocole-mcp`) : Encapsulation RPG/SAP derrière façade MCP.
 - **`REL_0164`** (`D04` → `D01`, `couche-anti-corruption-acl` → `systems-of-agency`) : Relie le System of Action aux SoR IBM i et z/OS via MCP.
-- **`REL_0165`** (`D01` → `D05`, `cout-non-interop-dette-integration` → `choregraphie-event-mesh`) : Event Mesh opérationnalisant le découplage spatial et temporel.
-- **`REL_0166`** (`D01` → `D03`, `cout-non-interop-dette-integration` → `contrats-api-versionnement-conformite`) : Invariant découplage-contrat-évolution matérialisé par les API.
+- **`REL_0165`** (`D05` → `D01`, `choregraphie-event-mesh` → `cout-non-interop-dette-integration`) : Event Mesh opérationnalisant le découplage spatial et temporel.
+- **`REL_0166`** (`D03` → `D01`, `contrats-api-versionnement-conformite` → `cout-non-interop-dette-integration`) : Invariant découplage-contrat-évolution matérialisé par les API.
 - **`REL_0171`** (`D02` → `D12`, `decisions-architecture-adr-001-031` → `homologation-prr-75-points`) : De l'ADR aux 75 preuves PRR pré-production.
 - **`REL_0187`** (`D06` → `D06`, `did-vc-passeport-agent` → `delegation-obo-deux-sauts`) : Chaîne de mandat comme troisième pièce du passeport.
 - **`REL_0188`** (`D06` → `D03`, `did-vc-passeport-agent` → `protocole-a2a`) : Ancre l'identité légale des pairs A2A inter-firmes.
@@ -143,20 +140,19 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0194`** (`D02` → `D02`, `distinction-agent-flux-ambiant` → `partition-hybride-80-20`) : Sépare N0 déterministe et boucle agentique.
 - **`REL_0200`** (`D08` → `D09`, `double-couloir-probatoire-pii` → `loi-25-article-12-1`) : Alimente le dossier de décision art. 12.1 hors télémétrie.
 - **`REL_0203`** (`D08` → `D08`, `double-couloir-probatoire-pii` → `scellage-jcs-scitt`) : Scelle les enregistrements d'audit sans exposer le contenu.
-- **`REL_0208`** (`D01` → `D08`, `echanges-intentions-contrats-probabilistes` → `evaluation-agentique-bancs-capacite`) : Vérification statistique des contrats comportementaux probabilistes.
+- **`REL_0208`** (`D08` → `D01`, `evaluation-agentique-bancs-capacite` → `echanges-intentions-contrats-probabilistes`) : Vérification statistique des contrats comportementaux probabilistes.
 - **`REL_0209`** (`D07` → `D07`, `echec-ferme-opa-default-deny` → `politiques-opa-rego-hors-modele`) : Garantit le mode fermé strict des politiques OPA/Rego.
-- **`REL_0220`** (`D09` → `D09`, `efvp-transfert-hors-quebec` → `clauses-contractuelles-normatives-app`) : Constitue l'entente écrite art. 17 et encadre le CLOUD Act.
+- **`REL_0220`** (`D09` → `D09`, `clauses-contractuelles-normatives-app` → `efvp-transfert-hors-quebec`) : Constitue l'entente écrite art. 17 et encadre le CLOUD Act.
 - **`REL_0230`** (`D05` → `D02`, `enveloppes-bpmn-cas-routine` → `partition-hybride-80-20`) : Matérialise le contrôle déterministe en BPMN 2.0 / CMMN / Routine.
-- **`REL_0241`** (`D09` → `D09`, `eu-ai-act` → `clauses-contractuelles-normatives-app`) : Impose l'accord écrit art. 25(4) avec les tiers.
-- **`REL_0250`** (`D09` → `D02`, `eu-ai-act` → `supervision-hitl-hotl-abstention`) : Contrôle humain effectif art. 14 par HOTL.
-- **`REL_0252`** (`D08` → `D01`, `evaluation-agentique-bancs-capacite` → `constance-pass-k`) : Τ-bench et HAL opérationnalisent l'évaluation à coût et consistance contrôlés.
+- **`REL_0241`** (`D09` → `D09`, `clauses-contractuelles-normatives-app` → `eu-ai-act`) : Impose l'accord écrit art. 25(4) avec les tiers.
+- **`REL_0250`** (`D02` → `D09`, `supervision-hitl-hotl-abstention` → `eu-ai-act`) : Contrôle humain effectif art. 14 par HOTL.
+- **`REL_0252`** (`D08` → `D01`, `evaluation-agentique-bancs-capacite` → `constance-pass-k`) : τ-bench et HAL opérationnalisent l'évaluation à coût et consistance contrôlés.
 - **`REL_0258`** (`D05` → `D05`, `execution-durable-temporal` → `saga-compensatoire`) : Fournit persistance et reprise aux étapes et compensations.
-- **`REL_0261`** (`D12` → `D08`, `exigences-cre-ia-305` → `banc-evalops-hermetique`) : Vérifie syntaxiquement les 108 blocs CI et badges probatoires DC-P11.
-- **`REL_0263`** (`D12` → `D12`, `exigences-cre-ia-305` → `grille-homologation-et-fiche-agent`) : Projette les 305 exigences dans la grille d'homologation.
+- **`REL_0261`** (`D08` → `D12`, `banc-evalops-hermetique` → `exigences-cre-ia-305`) : Vérifie syntaxiquement les 108 blocs CI et badges probatoires DC-P11.
+- **`REL_0263`** (`D12` → `D12`, `grille-homologation-et-fiche-agent` → `exigences-cre-ia-305`) : Projette les 305 exigences dans la grille d'homologation.
 - **`REL_0270`** (`D03` → `D03`, `facades-mcp-intention-metier` → `protocole-mcp`) : Adapte MCP à la production par 5–12 outils métier et structuredContent.
 - **`REL_0272`** (`D10` → `D02`, `federation-multi-plateformes-gravite` → `noyau-controle-possede-cap`) : Applique le noyau possédé sur 5 suites SaaS via un plan neutre.
 - **`REL_0279`** (`D10` → `D02`, `fil-rouge-groupe-boreal-bel` → `architecture-reference-6-couches-2-piliers`) : Illustre l'architecture 6 couches et 2 piliers de bout en bout.
-- **`REL_0285`** (`D08` → `D08`, `finops-focus-cpo` → `observabilite-otel-genai`) : Impute les coûts et le carbone via OTel + FOCUS v1.4.
 - **`REL_0286`** (`D08` → `D08`, `finops-focus-cpo` → `plan-inference-routage-carbone`) : Pilotage du routage frugal et des lots par le CPO.
 - **`REL_0292`** (`D12` → `D12`, `gabarit-typst-edition-4542-pages` → `protocole-wyvern-g0-g5`) : Matérialise l'assurance qualité G1–G5 et l'édition unifiée du corpus.
 - **`REL_0298`** (`D11` → `D02`, `gouvernance-duale-ae-as` → `noyau-controle-possede-cap`) : Exploitation en étoile à 3 lignes du noyau possédé.
@@ -167,25 +163,26 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0304`** (`D06` → `D06`, `grille-cinq-questions-identite` → `signature-agent-card-ancrage`) : Épreuve de la grille Q-A..Q-E sur l'Agent Card signée.
 - **`REL_0305`** (`D06` → `D07`, `grille-cinq-questions-identite` → `taxonomie-attaques-identite-mandataire-confus`) : Grille utilisée comme axe de tri des attaques identitaires.
 - **`REL_0306`** (`D02` → `D10`, `grille-evaluation-maturite-n1-n5` → `anti-patrons-agentiques`) : Moteur Python de détection et triage N1–N5.
-- **`REL_0317`** (`D06` → `D06`, `identite-non-humaine-nhi` → `spiffe-spire-attestation`) : Délivre l'identité sans secret statique via SVID/OIDC.
+- **`REL_0317`** (`D06` → `D06`, `spiffe-spire-attestation` → `identite-non-humaine-nhi`) : Délivre l'identité sans secret statique via SVID/OIDC.
 - **`REL_0318`** (`D08` → `D09`, `indicateurs-agentops-horizon-tache` → `feuille-route-1er-mai-2027`) : Traduction des métriques AgentOps en KPI de risque de modèle.
-- **`REL_0327`** (`D09` → `D08`, `iso-iec-42001-nist` → `banc-evalops-hermetique`) : Cycle PDCA ISO 42001 câblé en CI/CD.
-- **`REL_0329`** (`D09` → `D12`, `iso-iec-42001-nist` → `exigences-cre-ia-305`) : Fédère les preuves des 305 EXIG-* dans un index unique.
-- **`REL_0344`** (`D09` → `D02`, `ligne-directrice-amf` → `pont-reglementation-frames-deterministes`) : Traduction de la ligne directrice AMF vers les frames.
-- **`REL_0351`** (`D09` → `D08`, `loi-25-article-12-1` → `double-couloir-probatoire-pii`) : Explicabilité et effacement via DEK client.
-- **`REL_0353`** (`D09` → `D02`, `loi-25-article-12-1` → `pont-reglementation-frames-deterministes`) : Traduction de l'article 12.1 en pistes d'explication et révision.
+- **`REL_0327`** (`D08` → `D09`, `banc-evalops-hermetique` → `iso-iec-42001-nist`) : Cycle PDCA ISO 42001 câblé en CI/CD.
+- **`REL_0329`** (`D12` → `D09`, `exigences-cre-ia-305` → `iso-iec-42001-nist`) : Fédère les preuves des 305 EXIG-* dans un index unique.
+- **`REL_0344`** (`D02` → `D09`, `pont-reglementation-frames-deterministes` → `ligne-directrice-amf`) : Traduction de la ligne directrice AMF vers les frames.
+- **`REL_0351`** (`D08` → `D09`, `double-couloir-probatoire-pii` → `droit-effacement-portabilite-loi-25`) : Effacement vérifiable via clé DEK client en double couloir probatoire.
+- **`REL_0353`** (`D02` → `D09`, `pont-reglementation-frames-deterministes` → `loi-25-article-12-1`) : Traduction de l'article 12.1 en pistes d'explication et révision.
 - **`REL_0359`** (`D07` → `D07`, `maillage-agents-pep-pdp-zero-trust` → `politiques-opa-rego-hors-modele`) : Application par le PEP des décisions OPA/CEL du PDP.
-- **`REL_0363`** (`D03` → `D07`, `matrice-protocoles-exigences-reglementaires` → `maillage-agents-pep-pdp-zero-trust`) : Comblement des zones Z1–Z5 par les couches de maillage et gouvernance.
+- **`REL_0363`** (`D07` → `D03`, `maillage-agents-pep-pdp-zero-trust` → `matrice-protocoles-exigences-reglementaires`) : Comblement des zones Z1–Z5 par les couches de maillage et gouvernance.
+- **`REL_0368`** (`D04` → `D09`, `memoire-coala-4-tiroirs` → `efvp-transfert-hors-quebec`) : Localise les magasins mémoire et plongements RP.
 - **`REL_0370`** (`D04` → `D02`, `memoire-coala-4-tiroirs` → `patrons-boucle-mono-agent-codeact`) : Boucles mono-agent instanciant le cycle cognitif CoALA.
 - **`REL_0371`** (`D04` → `D04`, `memoire-coala-4-tiroirs` → `rag-agentique-contexte`) : Alimente le compilateur de contexte depuis blocs Letta et graphe Graphiti.
 - **`REL_0376`** (`D10` → `D04`, `modele-maturite-feuille-360j` → `coexistence-bpm-ipaas-rpa`) : Planifie la sortie du RPA et le Strangler Fig sur 360 jours.
 - **`REL_0377`** (`D11` → `D08`, `modele-operationnel-hub-and-spoke` → `finops-focus-cpo`) : Refacturation et propriété budgétaire métier.
-- **`REL_0383`** (`D02` → `D10`, `noyau-controle-possede-cap` → `fabrique-agents-certification-reemission`) : Mise en œuvre du registre gouverné via la fabrique d'agents.
+- **`REL_0383`** (`D10` → `D02`, `fabrique-agents-certification-reemission` → `noyau-controle-possede-cap`) : Mise en œuvre du registre gouverné via la fabrique d'agents.
 - **`REL_0384`** (`D02` → `D02`, `noyau-controle-possede-cap` → `principes-architecture-pri-001-015`) : Matérialisation des 15 PRI en 52 capacités cibles.
 - **`REL_0394`** (`D08` → `D08`, `observabilite-otel-genai` → `finops-focus-cpo`) : Capture jetons, latences et attributions de coûts par résultat.
 - **`REL_0395`** (`D08` → `D08`, `observabilite-otel-genai` → `indicateurs-agentops-horizon-tache`) : Agrégation des traces OTel vers la grille minimale AgentOps.
 - **`REL_0401`** (`D02` → `D03`, `partition-hybride-80-20` → `routage-cognitif-hybride-3-paliers`) : Parcimonie cognitive par arbre et routeur.
-- **`REL_0402`** (`D02` → `D05`, `partition-hybride-80-20` → `topologies-patrons-orchestration`) : Place le flux déterministe en patron par défaut.
+- **`REL_0402`** (`D05` → `D02`, `topologies-patrons-orchestration` → `partition-hybride-80-20`) : Place le flux déterministe en patron par défaut.
 - **`REL_0403`** (`D03` → `D03`, `passerelle-mcp-ai-gateway` → `anti-verrouillage-standards`) : Rend substituables les fournisseurs de modèles et outils.
 - **`REL_0411`** (`D03` → `D07`, `passerelle-mcp-ai-gateway` → `politiques-opa-rego-hors-modele`) : Exécute les 9 contrôles PEP par appel.
 - **`REL_0417`** (`D12` → `D12`, `peremption-revalidation-annexe-n` → `exigences-cre-ia-305`) : Intégration datée de la Note AMF IA lors de la revalidation.
@@ -197,13 +194,13 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0448`** (`D10` → `D02`, `profil-assurance-personnes-m16` → `echelle-autonomie-l0-l4`) : Verrous vie/santé et PEX-021..025.
 - **`REL_0449`** (`D10` → `D02`, `profil-banque-m14` → `echelle-autonomie-l0-l4`) : Déclinaison bancaire D1–D8 et PEX-001..005.
 - **`REL_0450`** (`D10` → `D02`, `profil-gestion-patrimoine-m15` → `echelle-autonomie-l0-l4`) : Plafonnement patrimoine D2 et PEX-011..015.
-- **`REL_0452`** (`D10` → `D10`, `profils-financiers-5-secteurs` → `profil-banque-m14`) : Déclinaison bancaire du socle transversal des 5 profils.
-- **`REL_0453`** (`D10` → `D10`, `profils-financiers-5-secteurs` → `profil-groupe-diversifie-m18`) : Synthèse comparative et extension conglomérale.
+- **`REL_0452`** (`D10` → `D10`, `profil-banque-m14` → `profils-financiers-5-secteurs`) : Déclinaison bancaire du socle transversal des 5 profils.
+- **`REL_0453`** (`D10` → `D10`, `profil-groupe-diversifie-m18` → `profils-financiers-5-secteurs`) : Synthèse comparative et extension conglomérale.
 - **`REL_0457`** (`D03` → `D03`, `protocole-a2a` → `cadre-eif-4-couches`) : Concrétise l'échange syntaxique entre pairs opaques.
 - **`REL_0469`** (`D03` → `D03`, `protocole-mcp` → `cadre-eif-4-couches`) : Concrétise les couches technique et syntaxique agent-outil.
 - **`REL_0471`** (`D03` → `D04`, `protocole-mcp` → `couche-anti-corruption-acl`) : Expose les API existantes en outils orientés tâche.
-- **`REL_0474`** (`D03` → `D03`, `protocole-mcp` → `passerelle-mcp-ai-gateway`) : Médiation et contrôle de trafic MCP par passerelle IA.
-- **`REL_0484`** (`D12` → `D12`, `protocole-wyvern-g0-g5` → `trousse-executable-tome-8`) : Scelle les 14 extraits par SHA-256 et vérifie 4 vecteurs tiers.
+- **`REL_0474`** (`D03` → `D03`, `passerelle-mcp-ai-gateway` → `protocole-mcp`) : Médiation et contrôle de trafic MCP par passerelle IA.
+- **`REL_0484`** (`D12` → `D12`, `trousse-executable-tome-8` → `protocole-wyvern-g0-g5`) : Scelle les 14 extraits par SHA-256 et vérifie 4 vecteurs tiers.
 - **`REL_0486`** (`D05` → `D05`, `protocoles-ressources-physiques-lap` → `saga-compensatoire`) : Transpose bail exclusif et barrière paramétrique aux points de non-retour.
 - **`REL_0489`** (`D11` → `D11`, `quinze-portes-homologation-por` → `trajectoires-adaptatives-dapp`) : Jalons de validation par preuves système de la trajectoire DAPP.
 - **`REL_0512`** (`D02` → `D06`, `regle-maillon-plus-eleve` → `approbation-ciba`) : Déclenche le jeton signé hors bande pour P3.
@@ -213,10 +210,10 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0538`** (`D05` → `D05`, `semantique-effet-idempotence-uetr` → `saga-compensatoire`) : Instrumentation des effets d'écriture pour compensation saga.
 - **`REL_0549`** (`D07` → `D09`, `soc-soar-coupe-circuit` → `incidents-agentiques-et-notification-multiregime`) : Exécute la contention immédiate en temps 1 des incidents.
 - **`REL_0577`** (`D09` → `D09`, `systeme-qualite-en-18286-dora-cra` → `eu-ai-act`) : Concrétise les exigences QMS et résilience de l'EU AI Act.
-- **`REL_0579`** (`D01` → `D03`, `systems-of-agency` → `contrats-interfaces-catalogue-entreprise`) : Ramène N×M intégrations à N+M contrats.
+- **`REL_0579`** (`D03` → `D01`, `contrats-interfaces-catalogue-entreprise` → `systems-of-agency`) : Ramène N×M intégrations à N+M contrats.
 - **`REL_0584`** (`D08` → `D08`, `tests-metamorphiques-fr-en-sans-oracle` → `banc-evalops-hermetique`) : Complète les bancs pass^k/Wilson par tests sans oracle FR/EN.
 - **`REL_0588`** (`D05` → `D05`, `topologies-patrons-orchestration` → `contexte-minimal-delegation-interagents`) : Borne la délégation à 2 niveaux et structure les échanges.
-- **`REL_0590`** (`D05` → `D01`, `topologies-patrons-orchestration` → `systems-of-agency`) : Structure la couche System of Action en 6 patrons bornés.
+- **`REL_0590`** (`D05` → `D01`, `topologies-patrons-orchestration` → `systems-of-agency`) : Structure la couche System of Action en 8 patrons bornés (+ 1 variante débat).
 - **`REL_0593`** (`D11` → `D11`, `trajectoire-90j-18m-p1-p3` → `trajectoires-adaptatives-dapp`) : Cadencement des 43 INI et 15 POR sur P1–P3.
 - **`REL_0602`** (`D12` → `D12`, `trousse-executable-tome-8` → `exigences-cre-ia-305`) : Exécute les 24 PRR, 5 SBB, 2027-B001 et C01–C40 à exit 0.
 - **`REL_0603`** (`D12` → `D02`, `trousse-executable-tome-8` → `partition-hybride-80-20`) : Code le harnais 80/20 dans harness_proto/.
@@ -225,7 +222,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0609`** (`D02` → `D02`, `validation-json-schema-ambigu-escalade` → `harnais-deterministe-8-etapes`) : Contrat de schéma et porte d'escalade du harnais 8 étapes.
 - **`REL_0616`** (`D03` → `D03`, `web-agentique-webmcp-webbotauth` → `protocole-mcp`) : Étend l'exposition d'outils côté navigateur et canaux web.
 
-### `dependance_technique` (93 relations)
+### `dependance_technique` (94 relations)
 
 - **`REL_0006`** (`D03` → `D03`, `agent-card-decouverte` → `protocole-a2a`) : Découverte A2A par Agent Card.
 - **`REL_0008`** (`D03` → `D06`, `agent-card-decouverte` → `signature-agent-card-ancrage`) : Authenticité de la découverte liée à la signature JWS.
@@ -246,6 +243,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0155`** (`D03` → `D03`, `contrats-interfaces-catalogue-entreprise` → `passerelle-mcp-ai-gateway`) : Alimente la liste d'autorisation de la passerelle.
 - **`REL_0156`** (`D12` → `D06`, `contrats-types-executes-ci-annexe-c` → `post-quantique-ml-dsa-slh-dsa`) : Publie le schéma crypto-agile ES256/ML-DSA-65/ML-DSA-87.
 - **`REL_0162`** (`D04` → `D05`, `couche-anti-corruption-acl` → `execution-durable-temporal`) : Vérifie l'idempotence via service cible ou adaptateur.
+- **`REL_0163`** (`D04` → `D03`, `couche-anti-corruption-acl` → `protocole-mcp`) : Encapsulation RPG/SAP exposée derrière une façade MCP.
 - **`REL_0168`** (`D09` → `D09`, `criteres-evaluation-fournisseurs-grille` → `clauses-contractuelles-normatives-app`) : Conditionne l'admissibilité à l'acceptation des clauses DOIT.
 - **`REL_0169`** (`D06` → `D06`, `crypto-agilite-migration-pqc` → `inventaire-revocation-asymetrie`) : Migration PQC bloquée par l'absence de retrait cryptographique.
 - **`REL_0170`** (`D06` → `D06`, `crypto-agilite-migration-pqc` → `post-quantique-ml-dsa-slh-dsa`) : Migration vers les primitives normalisées FIPS 203/204/205.
@@ -262,7 +260,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0227`** (`D04` → `D04`, `encapsulation-patrimoine-it-ot` → `couche-anti-corruption-acl`) : Migration des CUA vers adaptateurs MCP décimaux.
 - **`REL_0228`** (`D04` → `D06`, `encapsulation-patrimoine-it-ot` → `spiffe-spire-attestation`) : Authentifie le passage de la zone IT à l'IDMZ niveau 3.5.
 - **`REL_0232`** (`D03` → `D03`, `epinglage-schemas-mcp` → `protocole-mcp`) : S'ancre sur Streamable HTTP 2026-07-28.
-- **`REL_0254`** (`D05` → `D06`, `execution-durable-temporal` → `approbation-ciba`) : Suspend sans coût le workflow sur awakeable jusqu'au retour CIBA.
+- **`REL_0254`** (`D05` → `D06`, `execution-durable-temporal` → `approbation-ciba`) : Suspend sans coût le flux de travail sur awakeable jusqu'au retour CIBA.
 - **`REL_0256`** (`D05` → `D04`, `execution-durable-temporal` → `couche-anti-corruption-acl`) : S'appuie sur l'idempotence devant les SoR.
 - **`REL_0257`** (`D05` → `D05`, `execution-durable-temporal` → `saga-compensatoire`) : Persiste l'état, la clé d'idempotence et le journal de compensation.
 - **`REL_0267`** (`D10` → `D08`, `fabrique-agents-certification-reemission` → `cycle-vie-operationnel-derives-gitops`) : Pipeline GitOps de réémission et promotion des gabarits.
@@ -314,7 +312,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0527`** (`D05` → `D05`, `saga-compensatoire` → `execution-durable-temporal`) : Sagas adossées au journal d'état durable.
 - **`REL_0534`** (`D08` → `D08`, `scellage-jcs-scitt` → `double-couloir-probatoire-pii`) : Séparation physique entre audit JCS et traces OTel.
 - **`REL_0535`** (`D08` → `D08`, `scellage-jcs-scitt` → `observabilite-otel-genai`) : Corrèle le grand livre C.8 aux traces via lacune 21.
-- **`REL_0543`** (`D06` → `D08`, `signature-agent-card-ancrage` → `canonicalisation-jcs-rfc8785`) : Signature JWS exigeant la canonicalisation JCS RFC 8785.
+- **`REL_0543`** (`D06` → `D08`, `signature-agent-card-ancrage` → `canonicalisation-jcs-rfc8785`) : Signature JWS exigeant la canonisation JCS RFC 8785.
 - **`REL_0566`** (`D02` → `D06`, `supervision-hitl-hotl-abstention` → `approbation-ciba`) : Appuie les files Réviser sur des jetons signés.
 - **`REL_0576`** (`D04` → `D06`, `synchronisation-edge-crdt` → `spiffe-spire-attestation`) : Attestation SPIRE locale sur TPM en coupure WAN.
 - **`REL_0606`** (`D02` → `D07`, `usine-logicielle-agentic-sdlc` → `confinement-opensandbox-firecracker-wasi`) : Compilation isolée anti-slopsquatting.
@@ -323,8 +321,8 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 
 ### `encadrement_normatif` (82 relations)
 
-- **`REL_0011`** (`D03` → `D03`, `agntcy-slim` → `contrats-interfaces-catalogue-entreprise`) : Subordonne OASF/ADS au catalogue d'entreprise.
-- **`REL_0024`** (`D03` → `D09`, `anti-verrouillage-standards` → `bsif-e-23`) : Exigences de diligence de tiers dans les institutions réglementées.
+- **`REL_0011`** (`D03` → `D03`, `contrats-interfaces-catalogue-entreprise` → `agntcy-slim`) : Subordonne OASF/ADS au catalogue d'entreprise.
+- **`REL_0024`** (`D09` → `D03`, `bsif-e-23` → `anti-verrouillage-standards`) : Exigences de diligence de tiers dans les institutions réglementées.
 - **`REL_0053`** (`D09` → `D02`, `avis-acvm-11-348` → `echelle-autonomie-l0-l4`) : Rattachement réglementaire sur l'autonomie et l'adaptativité en valeurs mobilières.
 - **`REL_0054`** (`D09` → `D06`, `avis-acvm-11-348` → `identite-non-humaine-nhi`) : Encadrement des systèmes autonomes sur les marchés de capitaux.
 - **`REL_0056`** (`D09` → `D10`, `avis-acvm-11-348` → `profil-gestion-patrimoine-m15`) : Responsabilité inscrite, OEO et rétrofacturations 2028.
@@ -343,7 +341,9 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0091`** (`D09` → `D02`, `bsif-e-23` → `regle-maillon-plus-eleve`) : Fonde la propagation de criticité aux maillons amont.
 - **`REL_0092`** (`D09` → `D02`, `bsif-e-23` → `supervision-hitl-hotl-abstention`) : Surveillance continue attendue face aux limites du réviseur humain.
 - **`REL_0095`** (`D09` → `D10`, `bsif-e-23` → `vertical-financier-durci`) : Qualification réglementaire de l'inférence agentique comme modèle.
-- **`REL_0097`** (`D03` → `D09`, `cadre-eif-4-couches` → `eu-ai-act`) : Basculement vers l'obligation légale via l'Interoperable Europe Act.
+- **`REL_0097`** (`D09` → `D03`, `eu-ai-act` → `cadre-eif-4-couches`) : Basculement vers l'obligation légale via l'Interoperable Europe Act.
+- **`REL_0099`** (`D03` → `D03`, `cadre-eif-4-couches` → `protocole-a2a`) : Cadre EIF structurant l'interopérabilité organisationnelle d'A2A.
+- **`REL_0100`** (`D03` → `D03`, `cadre-eif-4-couches` → `protocole-mcp`) : Cadre EIF structurant les paliers technique et syntaxique de MCP.
 - **`REL_0128`** (`D09` → `D09`, `classes-risque-agents-et-plafonds` → `ligne-directrice-amf`) : Rompt la circularité entre classe et cote de modèle AMF.
 - **`REL_0129`** (`D12` → `D09`, `clause-non-avis-licences` → `bsif-e-23`) : Distinction stricte secteur privé et administrations publiques.
 - **`REL_0130`** (`D12` → `D12`, `clause-non-avis-licences` → `exigences-cre-ia-305`) : Qualifie CRE-IA et Tome 3 comme consultatifs sans homologation humaine (DC-P01).
@@ -358,7 +358,6 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0222`** (`D09` → `D04`, `efvp-transfert-hors-quebec` → `memoire-coala-4-tiroirs`) : Impose l'ÉFVP préalable et la portabilité/purge des RP.
 - **`REL_0224`** (`D09` → `D04`, `efvp-transfert-hors-quebec` → `rag-agentique-contexte`) : Restriction transfrontalière sur l'indexation et les inférences hors Québec.
 - **`REL_0225`** (`D09` → `D04`, `efvp-transfert-hors-quebec` → `six-substrats-etat-souverainete`) : ÉFVP préalable et encadrement des 6 substrats.
-- **`REL_0237`** (`D01` → `D05`, `erreurs-silencieuses-cascade` → `topologies-patrons-orchestration`) : Impose la preuve mesurée avant multiagent.
 - **`REL_0239`** (`D09` → `D03`, `eu-ai-act` → `anti-verrouillage-standards`) : Impose la réversibilité infonuagique via l'EU Data Act.
 - **`REL_0240`** (`D09` → `D09`, `eu-ai-act` → `approvisionnement-reversible-contrats`) : Article 25(4) RIA et article 29 Data Act en EXIG-APP.
 - **`REL_0242`** (`D09` → `D02`, `eu-ai-act` → `decisions-architecture-adr-001-031`) : Obligations art. 50 et Annexe III sur les ADR.
@@ -370,7 +369,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0249`** (`D09` → `D02`, `eu-ai-act` → `supervision-hitl-hotl-abstention`) : Rend obligatoire la supervision effective et le bouton d'arrêt (art. 14).
 - **`REL_0265`** (`D12` → `D07`, `exigences-cre-ia-305` → `politiques-opa-rego-hors-modele`) : Traduit les exigences CRE-IA en garde-fous déterministes vérifiables.
 - **`REL_0287`** (`D08` → `D11`, `finops-focus-cpo` → `registre-agents-cycle-de-vie-et-attestations`) : Déclenche la revue de valeur après 2 mois hors cible.
-- **`REL_0297`** (`D04` → `D09`, `gouvernance-acces-rag-ancrage` → `loi-25-article-12-1`) : Traçabilité des sources requise pour justifier les décisions.
+- **`REL_0297`** (`D09` → `D04`, `loi-25-article-12-1` → `gouvernance-acces-rag-ancrage`) : Traçabilité des sources requise pour justifier les décisions.
 - **`REL_0307`** (`D12` → `D11`, `grille-homologation-et-fiche-agent` → `regime-derogations-et-transition-cohorte`) : Projette point par point les interdits de EXIG-GOV-17.
 - **`REL_0314`** (`D06` → `D05`, `identite-non-humaine-nhi` → `execution-durable-temporal`) : Impose la revalidation du mandat et de la révocation au réveil.
 - **`REL_0326`** (`D09` → `D03`, `iso-iec-42001-nist` → `anti-verrouillage-standards`) : Fixe le cadre PDCA et révèle l'absence de norme ISO dédiée aux agents.
@@ -390,13 +389,12 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0354`** (`D09` → `D08`, `loi-25-article-12-1` → `scellage-jcs-scitt`) : Exige la traçabilité des facteurs et paramètres.
 - **`REL_0355`** (`D09` → `D02`, `loi-25-article-12-1` → `supervision-hitl-hotl-abstention`) : Obligation légale de révision humaine et d'information sous la Loi 25.
 - **`REL_0362`** (`D09` → `D10`, `maillage-reglementaire-international` → `vertical-financier-durci`) : Triple qualification simultanée modèle, TIC DORA et marché.
-- **`REL_0368`** (`D04` → `D09`, `memoire-coala-4-tiroirs` → `efvp-transfert-hors-quebec`) : Localise les magasins mémoire et plongements RP.
 - **`REL_0373`** (`D03` → `D12`, `metriques-soutien-vs-production` → `regime-preuve-trois-degres-absence`) : Règle anti-amalgame sur les décomptes auto-déclarés de soutien.
 - **`REL_0389`** (`D08` → `D08`, `observabilite-otel-genai` → `double-couloir-probatoire-pii`) : Sépare métadonnées OTel et contenu PII hors télémétrie.
-- **`REL_0390`** (`D08` → `D09`, `observabilite-otel-genai` → `eu-ai-act`) : Auditabilité opposable inspirée de PSD2 et des obligations d'interface.
+- **`REL_0390`** (`D09` → `D08`, `eu-ai-act` → `observabilite-otel-genai`) : Auditabilité opposable inspirée de PSD2 et des obligations d'interface.
 - **`REL_0432`** (`D12` → `D12`, `portee-et-force-normative-cre-ia` → `exigences-cre-ia-305`) : Définit la force juridique RFC 2119 des 305 blocs.
-- **`REL_0433`** (`D06` → `D09`, `post-quantique-ml-dsa-slh-dsa` → `bsif-e-23`) : Distinction des calendriers PQC face au bulletin quantique BSIF.
-- **`REL_0462`** (`D03` → `D06`, `protocole-ap2` → `approbation-ciba`) : Soumet tout paiement agentique à l'approbation P3 signée.
+- **`REL_0433`** (`D09` → `D06`, `bsif-e-23` → `post-quantique-ml-dsa-slh-dsa`) : Distinction des calendriers PQC face au bulletin quantique BSIF.
+- **`REL_0462`** (`D06` → `D03`, `approbation-ciba` → `protocole-ap2`) : Soumet tout paiement agentique à l'approbation P3 signée.
 - **`REL_0483`** (`D12` → `D09`, `protocole-wyvern-g0-g5` → `ligne-directrice-amf`) : Exclut les portails bloqués (lautorite.qc.ca) en statut F.
 - **`REL_0508`** (`D11` → `D11`, `registre-agents-cycle-de-vie-et-attestations` → `regime-derogations-et-transition-cohorte`) : Gère dérogations, quarantaines et cohorte transitoire.
 - **`REL_0513`** (`D02` → `D02`, `regle-maillon-plus-eleve` → `echelle-autonomie-l0-l4`) : Étend le périmètre de sécurité du maillon le plus élevé en amont.
@@ -406,7 +404,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0583`** (`D07` → `D12`, `taxonomie-owasp-asi-mcp-maestro` → `homologation-prr-75-points`) : Couverture ASI01–ASI10 exigée au PRR.
 - **`REL_0610`** (`D09` → `D09`, `vide-federal-ia-c27-c36` → `bsif-e-23`) : Report de la charge réglementaire sur les régulateurs sectoriels.
 
-### `attenuation_risque` (81 relations)
+### `attenuation_risque` (82 relations)
 
 - **`REL_0017`** (`D07` → `D07`, `alignement-deceptif-red-teaming-adversarial` → `defense-hors-modele-camel-confinement`) : Évaluation adversariale quantifiant les angles morts défensifs.
 - **`REL_0019`** (`D10` → `D01`, `anti-patrons-agentiques` → `dette-cognitive-vs-technique`) : Éradique les 12 modes d'échec structurels en ARB.
@@ -417,7 +415,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0037`** (`D11` → `D11`, `approbation-reflexe-biais-automatisation` → `pieges-gouvernance`) : Parade ergonomique et organisationnelle contre l'approbation réflexe.
 - **`REL_0041`** (`D05` → `D05`, `arbre-sobriete-oo1-oo4` → `pathologies-reactives-backpressure`) : Prévient les échecs MAST et l'effet Ringelmann.
 - **`REL_0061`** (`D08` → `D01`, `banc-evalops-hermetique` → `erreurs-silencieuses-cascade`) : Détection pass^k et chaos pré-production.
-- **`REL_0111`** (`D08` → `D06`, `canonicalisation-jcs-rfc8785` → `signature-agent-card-ancrage`) : Canonicalisation RFC 8785 fiabilisant la vérification JWS.
+- **`REL_0111`** (`D08` → `D06`, `canonicalisation-jcs-rfc8785` → `signature-agent-card-ancrage`) : Canonisation RFC 8785 fiabilisant la vérification JWS.
 - **`REL_0120`** (`D05` → `D01`, `choregraphie-event-mesh` → `erreurs-silencieuses-cascade`) : Retient les effets irréversibles via le tampon à fenêtre de grâce.
 - **`REL_0141`** (`D07` → `D04`, `confidentialite-materielle-tee-hyok` → `six-substrats-etat-souverainete`) : Séquestre HYOK, TEE et continuité bimodèle.
 - **`REL_0143`** (`D04` → `D07`, `confinement-cua-patrimoine-sans-api` → `injection-indirecte-prompt`) : Verrouille les zones d'écran et touches destructrices des CUA.
@@ -439,18 +437,19 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0231`** (`D03` → `D03`, `epinglage-schemas-mcp` → `protocole-mcp`) : Condensats SHA-256 contre le rug-pull MCP.
 - **`REL_0233`** (`D03` → `D07`, `epinglage-schemas-mcp` → `tool-poisoning-rug-pull`) : Épinglage et liste d'admission contre le rug-pull MCP.
 - **`REL_0234`** (`D03` → `D07`, `ergonomie-aci-anti-swagger` → `tool-poisoning-rug-pull`) : Réduit la confusion d'outils (AP-04).
-- **`REL_0235`** (`D01` → `D05`, `erreurs-silencieuses-cascade` → `choregraphie-event-mesh`) : Coupe les boucles par compteur de sauts.
-- **`REL_0236`** (`D01` → `D04`, `erreurs-silencieuses-cascade` → `dette-semantique-ontologies`) : Prévient les écarts sémantiques par schémas typés.
+- **`REL_0235`** (`D05` → `D05`, `choregraphie-event-mesh` → `pathologies-reactives-backpressure`) : Coupe les boucles d'écho et tempêtes d'événements par compteur de sauts.
+- **`REL_0236`** (`D02` → `D01`, `validation-json-schema-ambigu-escalade` → `erreurs-silencieuses-cascade`) : Prévient les écarts sémantiques et structurels par schémas typés.
+- **`REL_0237`** (`D05` → `D01`, `topologies-patrons-orchestration` → `erreurs-silencieuses-cascade`) : Catalogue fermé et preuve mesurée limitant les cascades d'erreurs.
 - **`REL_0253`** (`D08` → `D07`, `evaluation-continue-derives` → `tool-poisoning-rug-pull`) : Détection continue en production de la dérive silencieuse d'outil.
-- **`REL_0273`** (`D10` → `D07`, `federation-multi-plateformes-gravite` → `soc-soar-coupe-circuit`) : Prévient les boucles circulaires de webhooks inter-SaaS.
+- **`REL_0273`** (`D07` → `D10`, `soc-soar-coupe-circuit` → `federation-multi-plateformes-gravite`) : Prévient les boucles circulaires de webhooks inter-SaaS.
 - **`REL_0283`** (`D08` → `D01`, `finops-focus-cpo` → `erreurs-silencieuses-cascade`) : Disjoncteur budgétaire anti-emballement.
 - **`REL_0296`** (`D04` → `D07`, `gouvernance-acces-rag-ancrage` → `injection-indirecte-prompt`) : Filtrage RBAC/ABAC par fragment et attribution vérifiable.
 - **`REL_0308`** (`D02` → `D01`, `harnais-deterministe-8-etapes` → `constance-pass-k`) : Élève la constance multi-essais vers pass^5 ≥ 95 %.
 - **`REL_0309`** (`D02` → `D01`, `harnais-deterministe-8-etapes` → `erreurs-silencieuses-cascade`) : Intercepte les sorties plausibles mais invalides avant propagation.
 - **`REL_0315`** (`D06` → `D06`, `identite-non-humaine-nhi` → `kya-verification-agent-tiers`) : Suppression des secrets statiques et traçabilité du cycle de vie NHI.
-- **`REL_0319`** (`D07` → `D07`, `injection-indirecte-prompt` → `confinement-shadi-sandbox`) : Confine l'exécution du code généré après lecture non fiable.
+- **`REL_0319`** (`D07` → `D07`, `confinement-shadi-sandbox` → `non-compositionnalite-surete-surface-attaques`) : Confine l'exécution de code généré hors réseau et sans secret.
 - **`REL_0321`** (`D07` → `D01`, `injection-indirecte-prompt` → `erreurs-silencieuses-cascade`) : Rupture de cascade ASI01 → ASI08.
-- **`REL_0322`** (`D07` → `D07`, `injection-indirecte-prompt` → `regle-de-deux-opa`) : Rompt la triade létale face à l'injection présumée.
+- **`REL_0322`** (`D07` → `D07`, `regle-de-deux-opa` → `non-compositionnalite-surete-surface-attaques`) : Rompt la triade létale dans les sessions composées multi-outils.
 - **`REL_0367`** (`D04` → `D09`, `memoire-coala-4-tiroirs` → `efvp-transfert-hors-quebec`) : Isolation et oubli bi-temporel sous Loi 25.
 - **`REL_0369`** (`D04` → `D07`, `memoire-coala-4-tiroirs` → `injection-indirecte-prompt`) : Contrôle et étiquette les écritures en mémoire.
 - **`REL_0372`** (`D04` → `D07`, `memoire-partagee-concurrence-effacement` → `injection-indirecte-prompt`) : Bloque l'empoisonnement persistant de mémoire (OWASP ASI06).
@@ -486,11 +485,81 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0565`** (`D02` → `D06`, `supervision-hitl-hotl-abstention` → `approbation-ciba`) : Neutralise la fatigue d'approbation de 93 % sur les points critiques.
 - **`REL_0567`** (`D02` → `D11`, `supervision-hitl-hotl-abstention` → `atrophie-competences-humaines`) : Vue différentielle et quotas contre le clic réflexe.
 - **`REL_0574`** (`D02` → `D01`, `supervision-hitl-hotl-abstention` → `rupture-modele-conversationnel-agent-boucle`) : Libération humaine H-31 sur les actions irréversibles.
-- **`REL_0585`** (`D07` → `D03`, `tool-poisoning-rug-pull` → `epinglage-schemas-mcp`) : Bloque les substitutions de définitions par empreinte SHA-256.
+- **`REL_0585`** (`D03` → `D07`, `epinglage-schemas-mcp` → `chaine-approvisionnement-agent-skills`) : Bloque les substitutions silencieuses de manifestes et définitions par empreinte SHA-256.
 - **`REL_0587`** (`D05` → `D10`, `topologies-patrons-orchestration` → `anti-patrons-agentiques`) : Proscrit le maillage libre et les écritures concurrentes.
 - **`REL_0608`** (`D02` → `D01`, `usine-logicielle-agentic-sdlc` → `dette-cognitive-vs-technique`) : Résorption patrimoniale RPG/COBOL sous oracle.
 
-### `amplification_synergie` (63 relations)
+### `tension_arbitrage` (67 relations)
+
+- **`REL_0014`** (`D03` → `D03`, `agntcy-slim` → `protocole-a2a`) : Positionnement officiel d'AGNTCY nuancé par chevauchement tiers sur ACP.
+- **`REL_0018`** (`D06` → `D03`, `annuaires-commerciaux-risque-standard-de-fait` → `anti-verrouillage-standards`) : Adoption immédiate d'annuaires propriétaires par rapport à l'attente de normes neutres.
+- **`REL_0020`** (`D10` → `D03`, `anti-patrons-agentiques` → `facades-mcp-intention-metier`) : Oppose le mappage rapide OpenAPI 1:1 à la conception par intention.
+- **`REL_0022`** (`D10` → `D01`, `anti-patrons-agentiques` → `taxonomie-acteurs-agentiques`) : Proscrit le super-agent universel face aux 5 archétypes spécialisés.
+- **`REL_0023`** (`D10` → `D05`, `anti-patrons-agentiques` → `topologies-patrons-orchestration`) : Condamne la « salle virtuelle » libre au profit de graphes bornés.
+- **`REL_0042`** (`D05` → `D03`, `arbre-sobriete-oo1-oo4` → `protocole-a2a`) : Sobriété agent unique face au surcoût multi-agents (-70 % à +80,8 %).
+- **`REL_0049`** (`D11` → `D01`, `atrophie-competences-humaines` → `economie-industrialisation-cognitive`) : Paradoxe productivité immédiate et érosion de la relève.
+- **`REL_0051`** (`D11` → `D11`, `atrophie-competences-humaines` → `trajectoires-adaptatives-dapp`) : Gain d'automatisation et maintien du vivier humain.
+- **`REL_0063`** (`D08` → `D08`, `banc-evalops-hermetique` → `finops-focus-cpo`) : Coût de simulation face au risque d'erreur en production.
+- **`REL_0109`** (`D12` → `D11`, `calibration-feds-ema` → `trajectoires-adaptatives-dapp`) : Optimisation du TCO (Scénario A) face à la robustesse minimax (Scénario B).
+- **`REL_0117`** (`D06` → `D06`, `certificats-tls-47-jours` → `post-quantique-ml-dsa-slh-dsa`) : Collision rotation TLS 47 jours et taille PQC sur passerelles.
+- **`REL_0124`** (`D05` → `D05`, `choregraphie-event-mesh` → `topologies-patrons-orchestration`) : Arbitre l'autonomie événementielle face à la maîtrise transactionnelle.
+- **`REL_0142`** (`D04` → `D04`, `confinement-cua-patrimoine-sans-api` → `couche-anti-corruption-acl`) : Tolère CUA à ≤ 8 % sous bail 12 mois contre refactoring MCP durable.
+- **`REL_0144`** (`D07` → `D03`, `confinement-opensandbox-firecracker-wasi` → `anti-verrouillage-standards`) : Isolation stricte face à la latence et à la complexité KVM.
+- **`REL_0150`** (`D01` → `D08`, `constance-pass-k` → `finops-focus-cpo`) : Arbitre le coût de vérification face à la fiabilité requise.
+- **`REL_0152`** (`D03` → `D03`, `contrats-api-versionnement-conformite` → `anti-verrouillage-standards`) : Paradoxe du verrouillage inverse sur l'interface de fait OpenAI.
+- **`REL_0183`** (`D04` → `D04`, `dette-semantique-ontologies` → `ecart-accord-protocolaire-comprehension`) : Expressivité ontologique coûteuse face à la souplesse fragile en prose.
+- **`REL_0201`** (`D08` → `D08`, `double-couloir-probatoire-pii` → `observabilite-otel-genai`) : Diagnostic complet face à la minimisation Loi 25 et RGPD.
+- **`REL_0206`** (`D04` → `D07`, `ecart-accord-protocolaire-comprehension` → `tool-poisoning-rug-pull`) : Validité syntaxique des schémas face au risque de description trompeuse.
+- **`REL_0215`** (`D02` → `D02`, `echelle-autonomie-l0-l4` → `supervision-hitl-hotl-abstention`) : Montée en autonomie bornée contre capacité cognitive de supervision humaine.
+- **`REL_0218`** (`D01` → `D03`, `economie-industrialisation-cognitive` → `anti-verrouillage-standards`) : Arbitre vitesse des agents SaaS et contrôle architectural.
+- **`REL_0219`** (`D01` → `D01`, `economie-jetons-routage-slm` → `raisonnement-inference-limites-planification`) : Arbitrage coût des jetons de réflexion face au gain de qualité à l'inférence.
+- **`REL_0226`** (`D09` → `D01`, `efvp-transfert-hors-quebec` → `systems-of-agency`) : Souveraineté des données financières face à l'accès aux modèles de pointe.
+- **`REL_0259`** (`D05` → `D05`, `execution-durable-temporal` → `semantique-effet-idempotence-uetr`) : Illusion du rollback logiciel face à l'irréversibilité métier.
+- **`REL_0268`** (`D10` → `D01`, `fabrique-agents-certification-reemission` → `erreurs-silencieuses-cascade`) : Centralisation productive face au risque de point de défaillance unique.
+- **`REL_0282`** (`D08` → `D01`, `finops-focus-cpo` → `dette-cognitive-vs-technique`) : Baisse du prix du jeton face à l'explosion du CPO par relecture.
+- **`REL_0288`** (`D05` → `D03`, `frameworks-orchestration-entreprise` → `anti-verrouillage-standards`) : Frontière commerciale des plateformes managées face à la portabilité ouverte.
+- **`REL_0311`** (`D01` → `D03`, `hierarchie-preuves-etudes-cas` → `protocole-a2a`) : Spécifications stables face à la rareté des preuves en production.
+- **`REL_0320`** (`D07` → `D01`, `injection-indirecte-prompt` → `constance-pass-k`) : Coût d'utilité de la sécurité CaMeL (77 % contre 84 %).
+- **`REL_0323`** (`D06` → `D06`, `inventaire-revocation-asymetrie` → `spiffe-spire-attestation`) : Durée de vie courte (24 h) comme substitut partiel à la révocation.
+- **`REL_0358`** (`D07` → `D08`, `maillage-agents-pep-pdp-zero-trust` → `finops-focus-cpo`) : Surcoût de latence, complexité et inférence des contrôles par arête.
+- **`REL_0366`** (`D04` → `D06`, `memoire-coala-4-tiroirs` → `did-vc-passeport-agent`) : Apprentissage continu en production face à la validité datée du passeport.
+- **`REL_0374`** (`D08` → `D01`, `modele-comme-juge-biais-calibration` → `raisonnement-inference-limites-planification`) : Traces de raisonnement plausibles face à la fiabilité des juges automatisés.
+- **`REL_0379`** (`D07` → `D07`, `non-compositionnalite-surete-surface-attaques` → `injection-indirecte-prompt`) : Modularité multi-serveurs face à la reconstitution émergente de la triade létale.
+- **`REL_0380`** (`D07` → `D05`, `non-compositionnalite-surete-surface-attaques` → `modes-echecs-emergents-frontiere`) : Souplesse du langage naturel face au cumul silencieux d'erreurs.
+- **`REL_0398`** (`D02` → `D01`, `partition-hybride-80-20` → `constance-pass-k`) : Compromis coût en jetons / précision / latence (courbe HAL).
+- **`REL_0404`** (`D03` → `D03`, `passerelle-mcp-ai-gateway` → `anti-verrouillage-standards`) : Portabilité par passerelle de médiation contre plus petit dénominateur commun.
+- **`REL_0420`** (`D11` → `D11`, `pieges-gouvernance` → `gouvernance-duale-ae-as`) : Sur-ingénierie de 2e ligne et prolifération du Shadow AI.
+- **`REL_0421`** (`D11` → `D02`, `pieges-gouvernance` → `partition-hybride-80-20`) : Rigueur du contrôle face à la sur-ingénierie et aux agents fantômes.
+- **`REL_0423`** (`D10` → `D01`, `plateforme-iap-gitops-cognitif` → `dette-cognitive-vs-technique`) : Immuabilité Git face à l'édition dynamique des prompts.
+- **`REL_0426`** (`D10` → `D02`, `plateformes-saas-et-asymetrie-tiers` → `noyau-controle-possede-cap`) : Fermeture du plan de contrôle SaaS contre gouvernance souveraine.
+- **`REL_0438`** (`D06` → `D06`, `post-quantique-ml-dsa-slh-dsa` → `delegation-obo-deux-sauts`) : Poids des signatures ML-DSA face à la limite des en-têtes HTTP 431.
+- **`REL_0439`** (`D06` → `D03`, `post-quantique-ml-dsa-slh-dsa` → `passerelle-mcp-ai-gateway`) : Taille des signatures post-quantiques face aux contraintes réseau.
+- **`REL_0459`** (`D03` → `D08`, `protocole-a2a` → `journalisation-probatoire-audit`) : Découverte ouverte fédérée face à la gouvernance des clés et à l'imputation.
+- **`REL_0460`** (`D03` → `D05`, `protocole-a2a` → `topologies-patrons-orchestration`) : Opacité voulue d'A2A contre exigence d'auditabilité réglementaire.
+- **`REL_0476`** (`D03` → `D03`, `protocole-mcp` → `protocole-a2a`) : Frontière floue entre tâches asynchrones MCP et délégation A2A.
+- **`REL_0480`** (`D12` → `D12`, `protocole-wyvern-g0-g5` → `clause-non-avis-licences`) : Exhaustivité automatisée et absence de relecture humaine.
+- **`REL_0495`** (`D04` → `D07`, `rag-agentique-contexte` → `injection-indirecte-prompt`) : Agrandir la fenêtre dilue l'attention et élargit la surface ASI01.
+- **`REL_0498`** (`D03` → `D07`, `rails-paiement-commerce-agentique` → `injection-indirecte-prompt`) : Automatisation des mandats de paiement face au détournement par injection indirecte.
+- **`REL_0511`** (`D07` → `D02`, `regle-de-deux-opa` → `supervision-hitl-hotl-abstention`) : Accroît le volume d'approbations après contamination.
+- **`REL_0515`** (`D02` → `D10`, `regle-maillon-plus-eleve` → `profil-groupe-diversifie-m18`) : Mutualisation du socle technique face au cloisonnement des filiales.
+- **`REL_0523`** (`D03` → `D01`, `routage-cognitif-hybride-3-paliers` → `constance-pass-k`) : Économie SLM face au risque de baisse de précision et de constance.
+- **`REL_0530`** (`D05` → `D07`, `saga-compensatoire` → `soc-soar-coupe-circuit`) : Arrêt d'urgence et intégrité comptable des sagas en vol.
+- **`REL_0531`** (`D05` → `D10`, `saga-compensatoire` → `tampon-deterministe-rtr-iso20022`) : Interdit la compensation a posteriori sur virements RTR irrévocables.
+- **`REL_0557`** (`D09` → `D08`, `souverainete-espaces-donnees-tee-hyok` → `finops-focus-cpo`) : Souveraineté, HYOK et TEE face au coût et à la disponibilité.
+- **`REL_0560`** (`D06` → `D06`, `spiffe-spire-attestation` → `did-vc-passeport-agent`) : Infrastructure centralisée intra-domaine (SPIFFE) face à la portabilité écosystémique (DID).
+- **`REL_0568`** (`D02` → `D11`, `supervision-hitl-hotl-abstention` → `atrophie-competences-humaines`) : Automatisation de routine et maintien du discernement et de la relève junior.
+- **`REL_0569`** (`D02` → `D02`, `supervision-hitl-hotl-abstention` → `criteres-qos-cout-precision-latence`) : Oppose latence opérationnelle et exigence d'approbation humaine.
+- **`REL_0570`** (`D02` → `D02`, `supervision-hitl-hotl-abstention` → `echelle-autonomie-l0-l4`) : Vitesse d'autonomie et fatigue d'approbation.
+- **`REL_0571`** (`D02` → `D01`, `supervision-hitl-hotl-abstention` → `erreurs-silencieuses-cascade`) : Charge d'approbation humaine face au biais de complaisance.
+- **`REL_0572`** (`D02` → `D09`, `supervision-hitl-hotl-abstention` → `loi-25-article-12-1`) : Évite l'approbation nominale qui rend la décision automatisée.
+- **`REL_0573`** (`D02` → `D03`, `supervision-hitl-hotl-abstention` → `matrice-protocoles-exigences-reglementaires`) : Paradoxe de l'inversement sur l'intervention humaine.
+- **`REL_0575`** (`D01` → `D02`, `surcout-multi-agent-debat-mast` → `separation-controleur-executeur-determinisme`) : Contexte isolé multi-agents (15×) face au rédacteur unique continu.
+- **`REL_0578`** (`D01` → `D03`, `systems-of-agency` → `anti-verrouillage-standards`) : Déplace le verrouillage vers les plateformes.
+- **`REL_0589`** (`D05` → `D08`, `topologies-patrons-orchestration` → `finops-focus-cpo`) : Arbitre gain F1 réflexif/multi-agents contre explosion de coût 4x–15x.
+- **`REL_0613`** (`D08` → `D04`, `volant-distillation-dspy-multilora` → `memoire-bi-temporelle-et-purge`) : Apprentissage sur traces face au risque de fuite et de biais.
+- **`REL_0615`** (`D03` → `D03`, `web-agentique-webmcp-webbotauth` → `protocole-ap2`) : Oppose l'authentification par origine HTTP à la preuve d'intention signée.
+
+### `amplification_synergie` (59 relations)
 
 - **`REL_0005`** (`D03` → `D03`, `agent-card-decouverte` → `agntcy-slim`) : Unit découverte signée et routage chiffré fédéré.
 - **`REL_0013`** (`D03` → `D03`, `agntcy-slim` → `protocole-a2a`) : Fédération annuaire et canal MLS pour A2A.
@@ -512,20 +581,17 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0167`** (`D01` → `D01`, `couts-transaction-coase` → `systems-of-agency`) : Accélère la recomposition des processus inter-entreprises.
 - **`REL_0186`** (`D04` → `D04`, `dette-semantique-ontologies` → `rag-agentique-contexte`) : Cache KV accru par préfixes ontologiques stables.
 - **`REL_0205`** (`D09` → `D09`, `droit-effacement-portabilite-loi-25` → `loi-25-article-12-1`) : Complète l'art. 12.1 Loi 25 sur la gouvernance mémorielle.
-- **`REL_0206`** (`D04` → `D07`, `ecart-accord-protocolaire-comprehension` → `tool-poisoning-rug-pull`) : Absence de vérification de comportement amplifiant le risque de description trompeuse.
 - **`REL_0213`** (`D02` → `D10`, `echelle-autonomie-l0-l4` → `fil-rouge-groupe-boreal-bel`) : Déploiement progressif sécurisé par paliers L0–L3.
 - **`REL_0255`** (`D05` → `D05`, `execution-durable-temporal` → `choregraphie-event-mesh`) : Unit sagas multi-jours déterministes et bus événementiel découplé.
 - **`REL_0260`** (`D05` → `D02`, `execution-durable-temporal` → `supervision-hitl-hotl-abstention`) : Pérennise les attentes humaines longues sans coût actif.
 - **`REL_0271`** (`D10` → `D02`, `federation-multi-plateformes-gravite` → `clauses-sortie-portabilite-interchangeabilite`) : Allie fédération par gravité technique et réversibilité contractuelle.
 - **`REL_0278`** (`D05` → `D11`, `fiabilite-coordination-taxonomie-mast` → `gouvernance-duale-ae-as`) : Relie les 14 modes d'échec MAST à l'imputabilité organisationnelle.
+- **`REL_0285`** (`D08` → `D08`, `finops-focus-cpo` → `observabilite-otel-genai`) : Imputation conjointe des coûts et du carbone via OTel et FOCUS v1.4.
 - **`REL_0324`** (`D04` → `D04`, `iso-20022-lynx-rtr` → `dette-semantique-ontologies`) : Réduction de la dette sémantique par messagerie financière normalisée.
 - **`REL_0336`** (`D08` → `D05`, `journalisation-probatoire-audit` → `semantique-effet-idempotence-uetr`) : Bouclage complet de la preuve entre intention d'appel et effet financier.
 - **`REL_0349`** (`D09` → `D09`, `loi-25-article-12-1` → `avis-acvm-11-348`) : Cumule explicabilité client, dossier 7 ans et personne inscrite.
 - **`REL_0357`** (`D03` → `D03`, `maillage-agentique-trois-acceptions` → `passerelle-mcp-ai-gateway`) : Combine plan de données passerelle, dorsale événementielle et identité.
 - **`REL_0365`** (`D04` → `D04`, `memoire-coala-4-tiroirs` → `dette-semantique-ontologies`) : Croise faits bi-temporels Graphiti et vocabulaire causal Apache Ossie.
-- **`REL_0374`** (`D08` → `D01`, `modele-comme-juge-biais-calibration` → `raisonnement-inference-limites-planification`) : Trace de raisonnement infidèle trompant les juges automatisés.
-- **`REL_0379`** (`D07` → `D07`, `non-compositionnalite-surete-surface-attaques` → `injection-indirecte-prompt`) : Composition multi-serveurs reconstituant la triade létale.
-- **`REL_0380`** (`D07` → `D05`, `non-compositionnalite-surete-surface-attaques` → `modes-echecs-emergents-frontiere`) : Cumul des erreurs en langage naturel le long des délégations.
 - **`REL_0382`** (`D02` → `D03`, `noyau-controle-possede-cap` → `anti-verrouillage-standards`) : Permet de remplacer un modèle en quelques jours.
 - **`REL_0385`** (`D08` → `D08`, `observabilite-otel-genai` → `banc-evalops-hermetique`) : Alimente les golden datasets par les traces de production.
 - **`REL_0391`** (`D08` → `D08`, `observabilite-otel-genai` → `evaluation-continue-derives`) : Télémétrie structurée alimentant l'évaluation continue et la détection de dérive.
@@ -541,7 +607,6 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0488`** (`D01` → `D01`, `quadruple-dette-agentique` → `dette-cognitive-vs-technique`) : Engrenage composé de la dette cognitive et technique.
 - **`REL_0493`** (`D04` → `D08`, `rag-agentique-contexte` → `finops-focus-cpo`) : Préfixe KV-cache fixe réduisant le coût de relecture.
 - **`REL_0496`** (`D04` → `D04`, `rag-agentique-contexte` → `memoire-coala-4-tiroirs`) : Mutualisation de la pile hybride entre mémoire long terme et RAG.
-- **`REL_0498`** (`D03` → `D07`, `rails-paiement-commerce-agentique` → `injection-indirecte-prompt`) : Injection détournant l'agent pour signer un mandat de paiement valide.
 - **`REL_0517`** (`D10` → `D08`, `reprise-sinistre-cognitif-continuite` → `volant-distillation-dspy-multilora`) : Mutualisation GPU entre SLM quotidiens et DR.
 - **`REL_0518`** (`D06` → `D06`, `requetes-riches-rar-txn-tokens` → `delegation-obo-deux-sauts`) : Précision de portée RAR et compacité O(1) des jetons OBO.
 - **`REL_0520`** (`D05` → `D08`, `resilience-orchestration-repli-plafonds` → `finops-focus-cpo`) : Unifie les 5 plafonds d'exécution avec l'enveloppe budgétaire.
@@ -556,79 +621,14 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0607`** (`D02` → `D04`, `usine-logicielle-agentic-sdlc` → `couche-anti-corruption-acl`) : Extinction des CUA par modernisation MCP.
 - **`REL_0614`** (`D08` → `D03`, `volant-distillation-dspy-multilora` → `routage-cognitif-hybride-3-paliers`) : Distillation alimentant le palier 1 SLM.
 
-### `tension_arbitrage` (62 relations)
-
-- **`REL_0014`** (`D03` → `D03`, `agntcy-slim` → `protocole-a2a`) : Positionnement officiel d'AGNTCY nuancé par chevauchement tiers sur ACP.
-- **`REL_0018`** (`D06` → `D03`, `annuaires-commerciaux-risque-standard-de-fait` → `anti-verrouillage-standards`) : Adoption immédiate d'annuaires propriétaires par rapport à l'attente de normes neutres.
-- **`REL_0020`** (`D10` → `D03`, `anti-patrons-agentiques` → `facades-mcp-intention-metier`) : Oppose le mappage rapide OpenAPI 1:1 à la conception par intention.
-- **`REL_0022`** (`D10` → `D01`, `anti-patrons-agentiques` → `taxonomie-acteurs-agentiques`) : Proscrit le super-agent universel face aux 5 archétypes spécialisés.
-- **`REL_0023`** (`D10` → `D05`, `anti-patrons-agentiques` → `topologies-patrons-orchestration`) : Condamne la « salle virtuelle » libre au profit de graphes bornés.
-- **`REL_0042`** (`D05` → `D03`, `arbre-sobriete-oo1-oo4` → `protocole-a2a`) : Sobriété agent unique face au surcoût multi-agents (-70 % à +80,8 %).
-- **`REL_0049`** (`D11` → `D01`, `atrophie-competences-humaines` → `economie-industrialisation-cognitive`) : Paradoxe productivité immédiate et érosion de la relève.
-- **`REL_0051`** (`D11` → `D11`, `atrophie-competences-humaines` → `trajectoires-adaptatives-dapp`) : Gain d'automatisation et maintien du vivier humain.
-- **`REL_0063`** (`D08` → `D08`, `banc-evalops-hermetique` → `finops-focus-cpo`) : Coût de simulation face au risque d'erreur en production.
-- **`REL_0109`** (`D12` → `D11`, `calibration-feds-ema` → `trajectoires-adaptatives-dapp`) : Optimisation du TCO (Scénario A) face à la robustesse minimax (Scénario B).
-- **`REL_0117`** (`D06` → `D06`, `certificats-tls-47-jours` → `post-quantique-ml-dsa-slh-dsa`) : Collision rotation TLS 47 jours et taille PQC sur passerelles.
-- **`REL_0124`** (`D05` → `D05`, `choregraphie-event-mesh` → `topologies-patrons-orchestration`) : Arbitre l'autonomie événementielle face à la maîtrise transactionnelle.
-- **`REL_0142`** (`D04` → `D04`, `confinement-cua-patrimoine-sans-api` → `couche-anti-corruption-acl`) : Tolère CUA à ≤ 8 % sous bail 12 mois contre refactoring MCP durable.
-- **`REL_0144`** (`D07` → `D03`, `confinement-opensandbox-firecracker-wasi` → `anti-verrouillage-standards`) : Isolation stricte face à la latence et à la complexité KVM.
-- **`REL_0150`** (`D01` → `D08`, `constance-pass-k` → `finops-focus-cpo`) : Arbitre le coût de vérification face à la fiabilité requise.
-- **`REL_0152`** (`D03` → `D03`, `contrats-api-versionnement-conformite` → `anti-verrouillage-standards`) : Paradoxe du verrouillage inverse sur l'interface de fait OpenAI.
-- **`REL_0183`** (`D04` → `D04`, `dette-semantique-ontologies` → `ecart-accord-protocolaire-comprehension`) : Expressivité ontologique coûteuse face à la souplesse fragile en prose.
-- **`REL_0201`** (`D08` → `D08`, `double-couloir-probatoire-pii` → `observabilite-otel-genai`) : Diagnostic complet face à la minimisation Loi 25 et RGPD.
-- **`REL_0215`** (`D02` → `D02`, `echelle-autonomie-l0-l4` → `supervision-hitl-hotl-abstention`) : Montée en autonomie bornée contre capacité cognitive de supervision humaine.
-- **`REL_0218`** (`D01` → `D03`, `economie-industrialisation-cognitive` → `anti-verrouillage-standards`) : Arbitre vitesse des agents SaaS et contrôle architectural.
-- **`REL_0219`** (`D01` → `D01`, `economie-jetons-routage-slm` → `raisonnement-inference-limites-planification`) : Arbitrage coût des jetons de réflexion face au gain de qualité à l'inférence.
-- **`REL_0226`** (`D09` → `D01`, `efvp-transfert-hors-quebec` → `systems-of-agency`) : Souveraineté des données financières face à l'accès aux modèles de pointe.
-- **`REL_0259`** (`D05` → `D05`, `execution-durable-temporal` → `semantique-effet-idempotence-uetr`) : Illusion du rollback logiciel face à l'irréversibilité métier.
-- **`REL_0268`** (`D10` → `D01`, `fabrique-agents-certification-reemission` → `erreurs-silencieuses-cascade`) : Centralisation productive face au risque de point de défaillance unique.
-- **`REL_0282`** (`D08` → `D01`, `finops-focus-cpo` → `dette-cognitive-vs-technique`) : Baisse du prix du jeton face à l'explosion du CPO par relecture.
-- **`REL_0288`** (`D05` → `D03`, `frameworks-orchestration-entreprise` → `anti-verrouillage-standards`) : Frontière commerciale des plateformes managées face à la portabilité ouverte.
-- **`REL_0311`** (`D01` → `D03`, `hierarchie-preuves-etudes-cas` → `protocole-a2a`) : Spécifications stables face à la rareté des preuves en production.
-- **`REL_0320`** (`D07` → `D01`, `injection-indirecte-prompt` → `constance-pass-k`) : Coût d'utilité de la sécurité CaMeL (77 % contre 84 %).
-- **`REL_0323`** (`D06` → `D06`, `inventaire-revocation-asymetrie` → `spiffe-spire-attestation`) : Durée de vie courte (24 h) comme substitut partiel à la révocation.
-- **`REL_0358`** (`D07` → `D08`, `maillage-agents-pep-pdp-zero-trust` → `finops-focus-cpo`) : Surcoût de latence, complexité et inférence des contrôles par arête.
-- **`REL_0366`** (`D04` → `D06`, `memoire-coala-4-tiroirs` → `did-vc-passeport-agent`) : Apprentissage continu en production face à la validité datée du passeport.
-- **`REL_0398`** (`D02` → `D01`, `partition-hybride-80-20` → `constance-pass-k`) : Compromis coût en jetons / précision / latence (courbe HAL).
-- **`REL_0404`** (`D03` → `D03`, `passerelle-mcp-ai-gateway` → `anti-verrouillage-standards`) : Portabilité par passerelle de médiation contre plus petit dénominateur commun.
-- **`REL_0420`** (`D11` → `D11`, `pieges-gouvernance` → `gouvernance-duale-ae-as`) : Sur-ingénierie de 2e ligne et prolifération du Shadow AI.
-- **`REL_0421`** (`D11` → `D02`, `pieges-gouvernance` → `partition-hybride-80-20`) : Rigueur du contrôle face à la sur-ingénierie et aux agents fantômes.
-- **`REL_0423`** (`D10` → `D01`, `plateforme-iap-gitops-cognitif` → `dette-cognitive-vs-technique`) : Immuabilité Git face à l'édition dynamique des prompts.
-- **`REL_0426`** (`D10` → `D02`, `plateformes-saas-et-asymetrie-tiers` → `noyau-controle-possede-cap`) : Fermeture du plan de contrôle SaaS contre gouvernance souveraine.
-- **`REL_0438`** (`D06` → `D06`, `post-quantique-ml-dsa-slh-dsa` → `delegation-obo-deux-sauts`) : Poids des signatures ML-DSA face à la limite des en-têtes HTTP 431.
-- **`REL_0439`** (`D06` → `D03`, `post-quantique-ml-dsa-slh-dsa` → `passerelle-mcp-ai-gateway`) : Taille des signatures post-quantiques face aux contraintes réseau.
-- **`REL_0459`** (`D03` → `D08`, `protocole-a2a` → `journalisation-probatoire-audit`) : Découverte ouverte fédérée face à la gouvernance des clés et à l'imputation.
-- **`REL_0460`** (`D03` → `D05`, `protocole-a2a` → `topologies-patrons-orchestration`) : Opacité voulue d'A2A contre exigence d'auditabilité réglementaire.
-- **`REL_0476`** (`D03` → `D03`, `protocole-mcp` → `protocole-a2a`) : Frontière floue entre tâches asynchrones MCP et délégation A2A.
-- **`REL_0480`** (`D12` → `D12`, `protocole-wyvern-g0-g5` → `clause-non-avis-licences`) : Exhaustivité automatisée et absence de relecture humaine.
-- **`REL_0495`** (`D04` → `D07`, `rag-agentique-contexte` → `injection-indirecte-prompt`) : Agrandir la fenêtre dilue l'attention et élargit la surface ASI01.
-- **`REL_0511`** (`D07` → `D02`, `regle-de-deux-opa` → `supervision-hitl-hotl-abstention`) : Accroît le volume d'approbations après contamination.
-- **`REL_0515`** (`D02` → `D10`, `regle-maillon-plus-eleve` → `profil-groupe-diversifie-m18`) : Mutualisation du socle technique face au cloisonnement des filiales.
-- **`REL_0523`** (`D03` → `D01`, `routage-cognitif-hybride-3-paliers` → `constance-pass-k`) : Économie SLM face au risque de baisse de précision et de constance.
-- **`REL_0530`** (`D05` → `D07`, `saga-compensatoire` → `soc-soar-coupe-circuit`) : Arrêt d'urgence et intégrité comptable des sagas en vol.
-- **`REL_0531`** (`D05` → `D10`, `saga-compensatoire` → `tampon-deterministe-rtr-iso20022`) : Interdit la compensation a posteriori sur virements RTR irrévocables.
-- **`REL_0557`** (`D09` → `D08`, `souverainete-espaces-donnees-tee-hyok` → `finops-focus-cpo`) : Souveraineté, HYOK et TEE face au coût et à la disponibilité.
-- **`REL_0560`** (`D06` → `D06`, `spiffe-spire-attestation` → `did-vc-passeport-agent`) : Infrastructure centralisée intra-domaine (SPIFFE) face à la portabilité écosystémique (DID).
-- **`REL_0568`** (`D02` → `D11`, `supervision-hitl-hotl-abstention` → `atrophie-competences-humaines`) : Automatisation de routine et maintien du discernement et de la relève junior.
-- **`REL_0569`** (`D02` → `D02`, `supervision-hitl-hotl-abstention` → `criteres-qos-cout-precision-latence`) : Oppose latence opérationnelle et exigence d'approbation humaine.
-- **`REL_0570`** (`D02` → `D02`, `supervision-hitl-hotl-abstention` → `echelle-autonomie-l0-l4`) : Vitesse d'autonomie et fatigue d'approbation.
-- **`REL_0571`** (`D02` → `D01`, `supervision-hitl-hotl-abstention` → `erreurs-silencieuses-cascade`) : Charge d'approbation humaine face au biais de complaisance.
-- **`REL_0572`** (`D02` → `D09`, `supervision-hitl-hotl-abstention` → `loi-25-article-12-1`) : Évite l'approbation nominale qui rend la décision automatisée.
-- **`REL_0573`** (`D02` → `D03`, `supervision-hitl-hotl-abstention` → `matrice-protocoles-exigences-reglementaires`) : Paradoxe de l'inversement sur l'intervention humaine.
-- **`REL_0575`** (`D01` → `D02`, `surcout-multi-agent-debat-mast` → `separation-controleur-executeur-determinisme`) : Contexte isolé multi-agents (15×) face au rédacteur unique continu.
-- **`REL_0578`** (`D01` → `D03`, `systems-of-agency` → `anti-verrouillage-standards`) : Déplace le verrouillage vers les plateformes.
-- **`REL_0589`** (`D05` → `D08`, `topologies-patrons-orchestration` → `finops-focus-cpo`) : Arbitre gain F1 réflexif/multi-agents contre explosion de coût 4x–15x.
-- **`REL_0613`** (`D08` → `D04`, `volant-distillation-dspy-multilora` → `memoire-bi-temporelle-et-purge`) : Apprentissage sur traces face au risque de fuite et de biais.
-- **`REL_0615`** (`D03` → `D03`, `web-agentique-webmcp-webbotauth` → `protocole-ap2`) : Oppose l'authentification par origine HTTP à la preuve d'intention signée.
-
 ### `projection_temporelle` (52 relations)
 
 - **`REL_0030`** (`D03` → `D11`, `anti-verrouillage-standards` → `tri-prospectif-peremption-feuilles-route`) : Obsolescence en quatre mois de la feuille de route d'Ehtesham et coll.
 - **`REL_0058`** (`D09` → `D11`, `avis-acvm-11-348` → `trajectoires-adaptatives-dapp`) : Jalons valeurs mobilières 2026 → 2028 → veille SIG-105.
 - **`REL_0078`** (`D09` → `D06`, `bsif-e-23` → `did-vc-passeport-agent`) : Échéance PROGRAMMÉE du 1ᵉʳ mai 2027 devançant la normalisation du passeport.
-- **`REL_0085`** (`D09` → `D11`, `bsif-e-23` → `priorites-90-jours-gouvernance`) : Dicte le verrouillage du socle avant le 1er mai 2027.
+- **`REL_0085`** (`D09` → `D11`, `bsif-e-23` → `priorites-90-jours-gouvernance`) : Dicte le verrouillage du socle avant le 1ᵉʳ mai 2027.
 - **`REL_0093`** (`D09` → `D11`, `bsif-e-23` → `trajectoire-90j-18m-p1-p3`) : Cadencement par les jalons fermes 2027, 2028, 2029 et 2033.
-- **`REL_0094`** (`D09` → `D11`, `bsif-e-23` → `trajectoires-adaptatives-dapp`) : Jalon prudentiel canadien du 1er mai 2027.
+- **`REL_0094`** (`D09` → `D11`, `bsif-e-23` → `trajectoires-adaptatives-dapp`) : Jalon prudentiel canadien du 1ᵉʳ mai 2027.
 - **`REL_0098`** (`D03` → `D11`, `cadre-eif-4-couches` → `horizon-2027-2032-tri-prospectif`) : Transition de la standardisation syntaxique vers le verrou sémantique-pragmatique.
 - **`REL_0118`** (`D06` → `D11`, `certificats-tls-47-jours` → `trajectoires-adaptatives-dapp`) : Projette les jalons TLS 100 j (2027) et 47 jours (2029).
 - **`REL_0151`** (`D01` → `D11`, `constance-pass-k` → `horizon-2027-2032-tri-prospectif`) : Doublement de l'horizon de tâche déléguée et impact organisationnel.
@@ -638,7 +638,7 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0238`** (`D01` → `D11`, `etat-des-lieux-adoption-map-2027` → `trajectoire-consolidation-standards-2027-2028`) : Projette l'écart pilote-production vers trois horloges et H1–H6.
 - **`REL_0245`** (`D09` → `D11`, `eu-ai-act` → `modele-maturite-5-niveaux-dimensions`) : Cale la conformité SMQ EN 18286 sur J2a et J3.
 - **`REL_0251`** (`D09` → `D11`, `eu-ai-act` → `trajectoires-adaptatives-dapp`) : Échéancier impératif 2026–2031 (Omnibus).
-- **`REL_0274`** (`D11` → `D09`, `feuille-de-route-phases-90-jours-indicateurs` → `bsif-e-23`) : Impose l'inventaire E-23 au 1er mai 2027 sans glissement.
+- **`REL_0274`** (`D11` → `D09`, `feuille-de-route-phases-90-jours-indicateurs` → `bsif-e-23`) : Impose l'inventaire E-23 au 1ᵉʳ mai 2027 sans glissement.
 - **`REL_0275`** (`D11` → `D03`, `feuille-de-route-phases-90-jours-indicateurs` → `protocole-mcp`) : Fixe l'échéance de migration MCP au 28 juillet 2027.
 - **`REL_0276`** (`D09` → `D09`, `feuille-route-1er-mai-2027` → `bsif-e-23`) : Préparation sur 278 jours vers l'entrée en vigueur du 1ᵉʳ mai 2027.
 - **`REL_0277`** (`D09` → `D11`, `feuille-route-1er-mai-2027` → `horizon-2027-2032-tri-prospectif`) : Extension du jalon 2027 vers la grappe réglementaire 2027–2032.
@@ -691,9 +691,9 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0135`** (`D12` → `D02`, `concordance-inter-tomes-div02` → `cadre-togaf-archimate-4-plans`) : Soudure 5 couches+3 volets ↔ 6 couches CAD26 §5.2.
 - **`REL_0136`** (`D12` → `D02`, `concordance-inter-tomes-div02` → `echelle-autonomie-l0-l4`) : Réconcilie L0–L4 et les criticités (DISC-01, DISC-02).
 - **`REL_0138`** (`D12` → `D02`, `concordance-inter-tomes-div02` → `noyau-controle-possede-cap`) : Pont typé DC-P07 des 52 CAP vers 305 EXIG-*.
-- **`REL_0139`** (`D12` → `D10`, `concordance-inter-tomes-div02` → `profils-financiers-5-secteurs`) : Raccordement des 24 PEX (13 spéc. + 11 comblements).
+- **`REL_0139`** (`D12` → `D10`, `concordance-inter-tomes-div02` → `profils-financiers-5-secteurs`) : Raccordement des 24 PEX en v1.2 (5 directes + 12 extensions + 7 comblements, contre 13 + 11 en v1.1).
 - **`REL_0140`** (`D12` → `D03`, `concordance-inter-tomes-div02` → `protocole-mcp`) : Tranche MCP 2025-11-25 (T7) et 2026-07-28 (T6/T8) (DISC-05).
-- **`REL_0181`** (`D01` → `D10`, `dette-cognitive-vs-technique` → `anti-patrons-agentiques`) : Dette M×N et antipatrons Adapter Spaghetti / vernis.
+- **`REL_0181`** (`D01` → `D10`, `dette-cognitive-vs-technique` → `anti-patrons-agentiques`) : Dette M×N et anti-patrons Adapter Spaghetti / vernis.
 - **`REL_0182`** (`D04` → `D02`, `dette-semantique-ontologies` → `catalogue-31-adr-12-dec`) : Résolution en DEC-003 de la dissonance ADR-009.
 - **`REL_0196`** (`D11` → `D11`, `dix-theses-t1-t10-tome-5` → `gouvernance-duale-ae-as`) : Formalise le contrat doctrinal croisé entre AE et AS.
 - **`REL_0198`** (`D08` → `D12`, `double-couloir-probatoire-pii` → `exigences-cre-ia-305`) : Primeur CAD26 ≤ 14 jours sur C27 14–30 j.
@@ -701,16 +701,16 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0212`** (`D02` → `D12`, `echelle-autonomie-l0-l4` → `concordance-inter-tomes-div02`) : Pont des échelles Stades 0–4, L0–L4, N0–N4 et LCIM.
 - **`REL_0217`** (`D10` → `D10`, `eclats-sectoriels-extrapoles` → `fil-rouge-groupe-boreal-bel`) : Délimite la branche démontrée BCA/BSN des extrapolations BEL/usine.
 - **`REL_0262`** (`D12` → `D02`, `exigences-cre-ia-305` → `catalogue-31-adr-12-dec`) : Réconciliation 305 EXIG-* × 75 PRR × 31 ADR → 12 DEC.
-- **`REL_0264`** (`D12` → `D09`, `exigences-cre-ia-305` → `ligne-directrice-amf`) : Comblement partiel en Annexe N de la lacune de contenu AMF du socle.
+- **`REL_0264`** (`D12` → `D09`, `exigences-cre-ia-305` → `ligne-directrice-amf`) : Comblement partiel en Tome 1 Annexe N de la lacune de contenu AMF du socle.
 - **`REL_0266`** (`D12` → `D12`, `exigences-cre-ia-305` → `protocole-wyvern-g0-g5`) : Comble l'Annexe D du Tome 6 par l'Annexe A du Tome 8.
 - **`REL_0280`** (`D10` → `D02`, `fil-rouge-groupe-boreal-bel` → `decisions-architecture-adr-001-031`) : Fil rouge transversal validant les ADR.
 - **`REL_0293`** (`D01` → `D03`, `genealogie-eai-soa-fipa-llm` → `cadre-eif-4-couches`) : Relie vingt ans d'architecture EAI/SOA/FIPA aux 5 niveaux EIF+LCIM.
-- **`REL_0295`** (`D12` → `D02`, `glossaire-normatif-tome-2` → `distinction-agent-flux-ambiant`) : Aligne les définitions bilingues fr-CA/en sur le Tableau 7.
+- **`REL_0295`** (`D12` → `D02`, `glossaire-normatif-tome-2` → `distinction-agent-flux-ambiant`) : Aligne les définitions bilingues fr-CA/en sur le Tableau 7 du Tome 2.
 - **`REL_0299`** (`D11` → `D01`, `gouvernance-duale-ae-as` → `systems-of-agency`) : Raccorde les parcours AE/AS et CISO aux fiches ADR-001..ADR-031.
 - **`REL_0312`** (`D12` → `D12`, `homologation-prr-75-points` → `protocole-probatoire-l-plus-statut-f`) : Forces probatoires [N]/[M]/[É]/[S] sur PRR-75.
 - **`REL_0333`** (`D09` → `D11`, `iso-iec-42001-nist` → `modele-maturite-5-niveaux-dimensions`) : Arrime les niveaux 2 à 5 aux articles ISO 42001 et NIST.
 - **`REL_0338`** (`D06` → `D03`, `kya-verification-agent-tiers` → `matrice-protocoles-exigences-reglementaires`) : Croisement systématique de la grille 5Q avec la matrice protocoles × normes.
-- **`REL_0341`** (`D09` → `D09`, `ligne-directrice-amf` → `bsif-e-23`) : Synchronise les échéances prudentielles du 1er mai 2027 Québec/fédéral.
+- **`REL_0341`** (`D09` → `D09`, `ligne-directrice-amf` → `bsif-e-23`) : Synchronise les échéances prudentielles du 1ᵉʳ mai 2027 Québec/fédéral.
 - **`REL_0346`** (`D09` → `D12`, `ligne-directrice-amf` → `protocole-probatoire-l-plus-statut-f`) : Statut F Cloudflare + raccord CRE-IA-2026-01-QC.
 - **`REL_0356`** (`D01` → `D01`, `loi-de-lusser` → `constance-pass-k`) : Convergence Lusser et décroissance (c/n)^k.
 - **`REL_0364`** (`D04` → `D03`, `mediation-b2b-esb-traducteurs` → `passerelle-mcp-ai-gateway`) : Continuité des patrons de médiation de l'ESB/B2B aux passerelles agentiques.
@@ -722,203 +722,204 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`REL_0500`** (`D12` → `D02`, `reconciliation-inter-volumes-tome1` → `architecture-reference-six-couches-pc1-pc5`) : Unification des architectures en 4 et 3 couches en 6 couches communes.
 - **`REL_0501`** (`D12` → `D02`, `reconciliation-inter-volumes-tome1` → `echelle-autonomie-l0-l4`) : Désambiguïsation des trois échelles homonymes de maturité/autonomie.
 - **`REL_0502`** (`D12` → `D12`, `reconciliation-inter-volumes-tome1` → `peremption-revalidation-annexe-n`) : Inventaire consolidé des lacunes résiduelles et registre de gel.
-- **`REL_0504`** (`D12` → `D02`, `referentiel-annexes-protocoles-chronologie` → `decisions-architecture-adr-001-031`) : Synthèse des chapitres 1–47 dans Annexes B/C/F.
+- **`REL_0504`** (`D12` → `D02`, `referentiel-annexes-protocoles-chronologie` → `decisions-architecture-adr-001-031`) : Synthèse historique issue du Tome 3 (chapitres 1–47, Annexes B/C/F).
 - **`REL_0505`** (`D12` → `D03`, `regime-preuve-trois-degres-absence` → `protocole-ap2`) : Arbitrage des volumes I, II et III sur la gouvernance d'AP2 (S-090 et S-091).
 - **`REL_0506`** (`D12` → `D03`, `regime-preuve-trois-degres-absence` → `protocole-mcp`) : Revalidation en bloc de la révision MCP 2026-07-28 entre gel et publication.
 - **`REL_0507`** (`D12` → `D07`, `regime-preuve-trois-degres-absence` → `tool-poisoning-rug-pull`) : Comblement partiel en [C] par le Vol. I de la lacune attaques du Vol. II.
 - **`REL_0509`** (`D12` → `D12`, `registre-sources-tracees-annexe-b` → `clause-non-avis-licences`) : Alignement entre traçabilité des sources [A/B/C] et posture non-avis.
 - **`REL_0546`** (`D07` → `D12`, `soc-soar-coupe-circuit` → `exigences-cre-ia-305`) : Réconciliation < 10 s (PRR S-14 / POR-003) et 15 min (CAD26).
-- **`REL_0582`** (`D07` → `D07`, `taxonomie-attaques-identite-mandataire-confus` → `non-compositionnalite-surete-surface-attaques`) : Articulation ch. 5 / ch. 11 / ch. 19 / ch. 37 sur triade létale et composition.
+- **`REL_0582`** (`D07` → `D07`, `taxonomie-attaques-identite-mandataire-confus` → `non-compositionnalite-surete-surface-attaques`) : Articulation Tome 1 ch. 5 / ch. 11 / ch. 19 et ch. 37 sur triade létale et composition.
 
 ## 7. Table complète des degrés relationnels des 260 thèmes
 
-- **`bsif-e-23`** (`D09`) : degré `30` (sortantes : 22 ; entrantes : 8).
-- **`protocole-mcp`** (`D03`) : degré `25` (sortantes : 11 ; entrantes : 14).
-- **`passerelle-mcp-ai-gateway`** (`D03`) : degré `24` (sortantes : 13 ; entrantes : 11).
+Tri canonique appliqué : degré total décroissant, puis arêtes sortantes décroissantes, puis slug alphabétique (`(-degré, -sortantes, slug)`).
+
+- **`bsif-e-23`** (`D09`) : degré `30` (sortantes : 21 ; entrantes : 9).
+- **`protocole-mcp`** (`D03`) : degré `25` (sortantes : 10 ; entrantes : 15).
+- **`passerelle-mcp-ai-gateway`** (`D03`) : degré `24` (sortantes : 14 ; entrantes : 10).
 - **`finops-focus-cpo`** (`D08`) : degré `24` (sortantes : 6 ; entrantes : 18).
-- **`exigences-cre-ia-305`** (`D12`) : degré `23` (sortantes : 6 ; entrantes : 17).
-- **`post-quantique-ml-dsa-slh-dsa`** (`D06`) : degré `21` (sortantes : 11 ; entrantes : 10).
+- **`exigences-cre-ia-305`** (`D12`) : degré `23` (sortantes : 5 ; entrantes : 18).
+- **`post-quantique-ml-dsa-slh-dsa`** (`D06`) : degré `21` (sortantes : 10 ; entrantes : 11).
 - **`delegation-obo-deux-sauts`** (`D06`) : degré `21` (sortantes : 8 ; entrantes : 13).
-- **`anti-verrouillage-standards`** (`D03`) : degré `20` (sortantes : 7 ; entrantes : 13).
-- **`supervision-hitl-hotl-abstention`** (`D02`) : degré `20` (sortantes : 10 ; entrantes : 10).
-- **`injection-indirecte-prompt`** (`D07`) : degré `19` (sortantes : 4 ; entrantes : 15).
+- **`supervision-hitl-hotl-abstention`** (`D02`) : degré `20` (sortantes : 11 ; entrantes : 9).
+- **`anti-verrouillage-standards`** (`D03`) : degré `20` (sortantes : 4 ; entrantes : 16).
+- **`observabilite-otel-genai`** (`D08`) : degré `18` (sortantes : 11 ; entrantes : 7).
 - **`protocole-a2a`** (`D03`) : degré `18` (sortantes : 6 ; entrantes : 12).
-- **`observabilite-otel-genai`** (`D08`) : degré `18` (sortantes : 12 ; entrantes : 6).
-- **`echelle-autonomie-l0-l4`** (`D02`) : degré `17` (sortantes : 6 ; entrantes : 11).
 - **`eu-ai-act`** (`D09`) : degré `17` (sortantes : 13 ; entrantes : 4).
-- **`erreurs-silencieuses-cascade`** (`D01`) : degré `16` (sortantes : 3 ; entrantes : 13).
-- **`ligne-directrice-amf`** (`D09`) : degré `15` (sortantes : 9 ; entrantes : 6).
-- **`banc-evalops-hermetique`** (`D08`) : degré `15` (sortantes : 7 ; entrantes : 8).
+- **`echelle-autonomie-l0-l4`** (`D02`) : degré `17` (sortantes : 6 ; entrantes : 11).
+- **`injection-indirecte-prompt`** (`D07`) : degré `17` (sortantes : 2 ; entrantes : 15).
+- **`banc-evalops-hermetique`** (`D08`) : degré `15` (sortantes : 10 ; entrantes : 5).
+- **`ligne-directrice-amf`** (`D09`) : degré `15` (sortantes : 8 ; entrantes : 7).
 - **`did-vc-passeport-agent`** (`D06`) : degré `15` (sortantes : 5 ; entrantes : 10).
+- **`erreurs-silencieuses-cascade`** (`D01`) : degré `15` (sortantes : 0 ; entrantes : 15).
+- **`soc-soar-coupe-circuit`** (`D07`) : degré `14` (sortantes : 11 ; entrantes : 3).
 - **`execution-durable-temporal`** (`D05`) : degré `14` (sortantes : 7 ; entrantes : 7).
 - **`saga-compensatoire`** (`D05`) : degré `14` (sortantes : 6 ; entrantes : 8).
+- **`identite-non-humaine-nhi`** (`D06`) : degré `14` (sortantes : 4 ; entrantes : 10).
 - **`scellage-jcs-scitt`** (`D08`) : degré `14` (sortantes : 3 ; entrantes : 11).
-- **`identite-non-humaine-nhi`** (`D06`) : degré `14` (sortantes : 5 ; entrantes : 9).
-- **`soc-soar-coupe-circuit`** (`D07`) : degré `14` (sortantes : 10 ; entrantes : 4).
-- **`spiffe-spire-attestation`** (`D06`) : degré `13` (sortantes : 5 ; entrantes : 8).
-- **`trajectoires-adaptatives-dapp`** (`D11`) : degré `13` (sortantes : 3 ; entrantes : 10).
-- **`couche-anti-corruption-acl`** (`D04`) : degré `13` (sortantes : 6 ; entrantes : 7).
-- **`double-couloir-probatoire-pii`** (`D08`) : degré `13` (sortantes : 6 ; entrantes : 7).
 - **`rag-agentique-contexte`** (`D04`) : degré `13` (sortantes : 8 ; entrantes : 5).
-- **`tool-poisoning-rug-pull`** (`D07`) : degré `13` (sortantes : 2 ; entrantes : 11).
-- **`partition-hybride-80-20`** (`D02`) : degré `12` (sortantes : 5 ; entrantes : 7).
-- **`topologies-patrons-orchestration`** (`D05`) : degré `12` (sortantes : 4 ; entrantes : 8).
+- **`double-couloir-probatoire-pii`** (`D08`) : degré `13` (sortantes : 7 ; entrantes : 6).
+- **`couche-anti-corruption-acl`** (`D04`) : degré `13` (sortantes : 6 ; entrantes : 7).
+- **`spiffe-spire-attestation`** (`D06`) : degré `13` (sortantes : 6 ; entrantes : 7).
+- **`trajectoires-adaptatives-dapp`** (`D11`) : degré `13` (sortantes : 3 ; entrantes : 10).
+- **`topologies-patrons-orchestration`** (`D05`) : degré `12` (sortantes : 7 ; entrantes : 5).
+- **`partition-hybride-80-20`** (`D02`) : degré `12` (sortantes : 4 ; entrantes : 8).
 - **`politiques-opa-rego-hors-modele`** (`D07`) : degré `12` (sortantes : 4 ; entrantes : 8).
-- **`dette-semantique-ontologies`** (`D04`) : degré `12` (sortantes : 5 ; entrantes : 7).
-- **`loi-25-article-12-1`** (`D09`) : degré `12` (sortantes : 7 ; entrantes : 5).
-- **`approbation-ciba`** (`D06`) : degré `11` (sortantes : 6 ; entrantes : 5).
-- **`noyau-controle-possede-cap`** (`D02`) : degré `11` (sortantes : 4 ; entrantes : 7).
+- **`tool-poisoning-rug-pull`** (`D07`) : degré `12` (sortantes : 1 ; entrantes : 11).
+- **`approbation-ciba`** (`D06`) : degré `11` (sortantes : 7 ; entrantes : 4).
+- **`iso-iec-42001-nist`** (`D09`) : degré `11` (sortantes : 7 ; entrantes : 4).
+- **`loi-25-article-12-1`** (`D09`) : degré `11` (sortantes : 6 ; entrantes : 5).
+- **`dette-semantique-ontologies`** (`D04`) : degré `11` (sortantes : 5 ; entrantes : 6).
+- **`protocole-ap2`** (`D03`) : degré `11` (sortantes : 5 ; entrantes : 6).
+- **`noyau-controle-possede-cap`** (`D02`) : degré `11` (sortantes : 3 ; entrantes : 8).
 - **`constance-pass-k`** (`D01`) : degré `11` (sortantes : 2 ; entrantes : 9).
-- **`iso-iec-42001-nist`** (`D09`) : degré `11` (sortantes : 9 ; entrantes : 2).
-- **`protocole-ap2`** (`D03`) : degré `11` (sortantes : 6 ; entrantes : 5).
-- **`agntcy-slim`** (`D03`) : degré `10` (sortantes : 8 ; entrantes : 2).
-- **`anti-patrons-agentiques`** (`D10`) : degré `10` (sortantes : 5 ; entrantes : 5).
-- **`blueprints-reference-multisectoriels`** (`D10`) : degré `10` (sortantes : 4 ; entrantes : 6).
-- **`protocole-wyvern-g0-g5`** (`D12`) : degré `10` (sortantes : 5 ; entrantes : 5).
+- **`agntcy-slim`** (`D03`) : degré `10` (sortantes : 7 ; entrantes : 3).
+- **`choregraphie-event-mesh`** (`D05`) : degré `10` (sortantes : 7 ; entrantes : 3).
 - **`concordance-inter-tomes-div02`** (`D12`) : degré `10` (sortantes : 6 ; entrantes : 4).
-- **`choregraphie-event-mesh`** (`D05`) : degré `10` (sortantes : 5 ; entrantes : 5).
-- **`systems-of-agency`** (`D01`) : degré `10` (sortantes : 4 ; entrantes : 6).
-- **`efvp-transfert-hors-quebec`** (`D09`) : degré `10` (sortantes : 7 ; entrantes : 3).
-- **`gouvernance-duale-ae-as`** (`D11`) : degré `9` (sortantes : 2 ; entrantes : 7).
+- **`efvp-transfert-hors-quebec`** (`D09`) : degré `10` (sortantes : 6 ; entrantes : 4).
+- **`anti-patrons-agentiques`** (`D10`) : degré `10` (sortantes : 5 ; entrantes : 5).
+- **`blueprints-reference-multisectoriels`** (`D10`) : degré `10` (sortantes : 5 ; entrantes : 5).
+- **`protocole-wyvern-g0-g5`** (`D12`) : degré `10` (sortantes : 4 ; entrantes : 6).
+- **`systems-of-agency`** (`D01`) : degré `10` (sortantes : 3 ; entrantes : 7).
 - **`memoire-coala-4-tiroirs`** (`D04`) : degré `9` (sortantes : 7 ; entrantes : 2).
+- **`gouvernance-duale-ae-as`** (`D11`) : degré `9` (sortantes : 2 ; entrantes : 7).
 - **`agent-card-decouverte`** (`D03`) : degré `8` (sortantes : 4 ; entrantes : 4).
+- **`cadre-eif-4-couches`** (`D03`) : degré `8` (sortantes : 3 ; entrantes : 5).
 - **`dette-cognitive-vs-technique`** (`D01`) : degré `8` (sortantes : 1 ; entrantes : 7).
-- **`cadre-eif-4-couches`** (`D03`) : degré `8` (sortantes : 5 ; entrantes : 3).
-- **`atrophie-competences-humaines`** (`D11`) : degré `7` (sortantes : 3 ; entrantes : 4).
-- **`clause-non-avis-licences`** (`D12`) : degré `7` (sortantes : 4 ; entrantes : 3).
 - **`avis-acvm-11-348`** (`D09`) : degré `7` (sortantes : 6 ; entrantes : 1).
-- **`trajectoire-90j-18m-p1-p3`** (`D11`) : degré `7` (sortantes : 3 ; entrantes : 4).
+- **`trousse-executable-tome-8`** (`D12`) : degré `7` (sortantes : 6 ; entrantes : 1).
+- **`clause-non-avis-licences`** (`D12`) : degré `7` (sortantes : 4 ; entrantes : 3).
+- **`epinglage-schemas-mcp`** (`D03`) : degré `7` (sortantes : 4 ; entrantes : 3).
+- **`atrophie-competences-humaines`** (`D11`) : degré `7` (sortantes : 3 ; entrantes : 4).
 - **`fil-rouge-groupe-boreal-bel`** (`D10`) : degré `7` (sortantes : 3 ; entrantes : 4).
-- **`trousse-executable-tome-8`** (`D12`) : degré `7` (sortantes : 4 ; entrantes : 3).
-- **`epinglage-schemas-mcp`** (`D03`) : degré `7` (sortantes : 3 ; entrantes : 4).
-- **`arbre-sobriete-oo1-oo4`** (`D05`) : degré `6` (sortantes : 6 ; entrantes : 0).
-- **`profils-financiers-5-secteurs`** (`D10`) : degré `6` (sortantes : 3 ; entrantes : 3).
-- **`regle-maillon-plus-eleve`** (`D02`) : degré `6` (sortantes : 4 ; entrantes : 2).
+- **`trajectoire-90j-18m-p1-p3`** (`D11`) : degré `7` (sortantes : 3 ; entrantes : 4).
+- **`confinement-shadi-sandbox`** (`D07`) : degré `6` (sortantes : 5 ; entrantes : 1).
+- **`arbre-sobriete-oo1-oo4`** (`D05`) : degré `6` (sortantes : 4 ; entrantes : 2).
 - **`cadre-togaf-archimate-4-plans`** (`D02`) : degré `6` (sortantes : 4 ; entrantes : 2).
-- **`confinement-shadi-sandbox`** (`D07`) : degré `6` (sortantes : 4 ; entrantes : 2).
+- **`regle-maillon-plus-eleve`** (`D02`) : degré `6` (sortantes : 4 ; entrantes : 2).
 - **`encapsulation-patrimoine-it-ot`** (`D04`) : degré `6` (sortantes : 3 ; entrantes : 3).
-- **`regle-de-deux-opa`** (`D07`) : degré `6` (sortantes : 2 ; entrantes : 4).
-- **`registres-gouvernes-trois-modeles`** (`D06`) : degré `5` (sortantes : 0 ; entrantes : 5).
-- **`pieges-gouvernance`** (`D11`) : degré `5` (sortantes : 2 ; entrantes : 3).
+- **`regle-de-deux-opa`** (`D07`) : degré `6` (sortantes : 3 ; entrantes : 3).
+- **`profils-financiers-5-secteurs`** (`D10`) : degré `6` (sortantes : 1 ; entrantes : 5).
+- **`fabrique-agents-certification-reemission`** (`D10`) : degré `5` (sortantes : 4 ; entrantes : 1).
+- **`peremption-revalidation-annexe-n`** (`D12`) : degré `5` (sortantes : 4 ; entrantes : 1).
 - **`tri-prospectif-peremption-feuilles-route`** (`D11`) : degré `5` (sortantes : 4 ; entrantes : 1).
 - **`regime-preuve-trois-degres-absence`** (`D12`) : degré `5` (sortantes : 3 ; entrantes : 2).
-- **`registre-agents-cycle-de-vie-et-attestations`** (`D11`) : degré `5` (sortantes : 1 ; entrantes : 4).
-- **`fabrique-agents-certification-reemission`** (`D10`) : degré `5` (sortantes : 3 ; entrantes : 2).
-- **`kya-verification-agent-tiers`** (`D06`) : degré `5` (sortantes : 2 ; entrantes : 3).
 - **`routage-cognitif-hybride-3-paliers`** (`D03`) : degré `5` (sortantes : 3 ; entrantes : 2).
-- **`peremption-revalidation-annexe-n`** (`D12`) : degré `5` (sortantes : 4 ; entrantes : 1).
-- **`signature-agent-card-ancrage`** (`D06`) : degré `4` (sortantes : 1 ; entrantes : 3).
-- **`contrats-interfaces-catalogue-entreprise`** (`D03`) : degré `4` (sortantes : 1 ; entrantes : 3).
-- **`clauses-contractuelles-normatives-app`** (`D09`) : degré `4` (sortantes : 0 ; entrantes : 4).
-- **`horizon-2027-2032-tri-prospectif`** (`D11`) : degré `4` (sortantes : 0 ; entrantes : 4).
+- **`kya-verification-agent-tiers`** (`D06`) : degré `5` (sortantes : 2 ; entrantes : 3).
+- **`non-compositionnalite-surete-surface-attaques`** (`D07`) : degré `5` (sortantes : 2 ; entrantes : 3).
+- **`pieges-gouvernance`** (`D11`) : degré `5` (sortantes : 2 ; entrantes : 3).
+- **`registre-agents-cycle-de-vie-et-attestations`** (`D11`) : degré `5` (sortantes : 2 ; entrantes : 3).
+- **`registres-gouvernes-trois-modeles`** (`D06`) : degré `5` (sortantes : 0 ; entrantes : 5).
 - **`certificats-tls-47-jours`** (`D06`) : degré `4` (sortantes : 4 ; entrantes : 0).
-- **`decisions-architecture-adr-001-031`** (`D02`) : degré `4` (sortantes : 1 ; entrantes : 3).
-- **`semantique-effet-idempotence-uetr`** (`D05`) : degré `4` (sortantes : 2 ; entrantes : 2).
-- **`frontiere-capacites-metr-veille`** (`D11`) : degré `4` (sortantes : 3 ; entrantes : 1).
+- **`contrats-interfaces-catalogue-entreprise`** (`D03`) : degré `4` (sortantes : 4 ; entrantes : 0).
 - **`grille-cinq-questions-identite`** (`D06`) : degré `4` (sortantes : 4 ; entrantes : 0).
-- **`taxonomie-attaques-identite-mandataire-confus`** (`D07`) : degré `4` (sortantes : 1 ; entrantes : 3).
-- **`harnais-deterministe-8-etapes`** (`D02`) : degré `4` (sortantes : 3 ; entrantes : 1).
-- **`maillage-agents-pep-pdp-zero-trust`** (`D07`) : degré `4` (sortantes : 3 ; entrantes : 1).
+- **`maillage-agents-pep-pdp-zero-trust`** (`D07`) : degré `4` (sortantes : 4 ; entrantes : 0).
 - **`reconciliation-inter-volumes-tome1`** (`D12`) : degré `4` (sortantes : 4 ; entrantes : 0).
+- **`clauses-contractuelles-normatives-app`** (`D09`) : degré `4` (sortantes : 3 ; entrantes : 1).
+- **`frontiere-capacites-metr-veille`** (`D11`) : degré `4` (sortantes : 3 ; entrantes : 1).
+- **`harnais-deterministe-8-etapes`** (`D02`) : degré `4` (sortantes : 3 ; entrantes : 1).
 - **`volant-distillation-dspy-multilora`** (`D08`) : degré `4` (sortantes : 3 ; entrantes : 1).
+- **`semantique-effet-idempotence-uetr`** (`D05`) : degré `4` (sortantes : 2 ; entrantes : 2).
+- **`decisions-architecture-adr-001-031`** (`D02`) : degré `4` (sortantes : 1 ; entrantes : 3).
+- **`signature-agent-card-ancrage`** (`D06`) : degré `4` (sortantes : 1 ; entrantes : 3).
+- **`taxonomie-attaques-identite-mandataire-confus`** (`D07`) : degré `4` (sortantes : 1 ; entrantes : 3).
+- **`horizon-2027-2032-tri-prospectif`** (`D11`) : degré `4` (sortantes : 0 ; entrantes : 4).
 - **`actualisation-novembre-2026-unification-v1-2`** (`D12`) : degré `3` (sortantes : 3 ; entrantes : 0).
-- **`architecture-collection-tome-1-preambule`** (`D12`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`cout-non-interop-dette-integration`** (`D01`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`plan-inference-routage-carbone`** (`D08`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`pont-reglementation-frames-deterministes`** (`D02`) : degré `3` (sortantes : 0 ; entrantes : 3).
-- **`priorites-90-jours-gouvernance`** (`D11`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`production-agentique-canadienne-2025-2026`** (`D10`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`profil-groupe-diversifie-m18`** (`D10`) : degré `3` (sortantes : 0 ; entrantes : 3).
-- **`vertical-financier-durci`** (`D10`) : degré `3` (sortantes : 0 ; entrantes : 3).
 - **`calibration-feds-ema`** (`D12`) : degré `3` (sortantes : 3 ; entrantes : 0).
-- **`catalogue-31-adr-12-dec`** (`D02`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`plateforme-iap-gitops-cognitif`** (`D10`) : degré `3` (sortantes : 3 ; entrantes : 0).
+- **`pont-reglementation-frames-deterministes`** (`D02`) : degré `3` (sortantes : 3 ; entrantes : 0).
+- **`souverainete-espaces-donnees-tee-hyok`** (`D09`) : degré `3` (sortantes : 3 ; entrantes : 0).
+- **`usine-logicielle-agentic-sdlc`** (`D02`) : degré `3` (sortantes : 3 ; entrantes : 0).
+- **`architecture-collection-tome-1-preambule`** (`D12`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`classes-risque-agents-et-plafonds`** (`D09`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`confinement-opensandbox-firecracker-wasi`** (`D07`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`crypto-agilite-migration-pqc`** (`D06`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`homologation-prr-75-points`** (`D12`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`ecart-accord-protocolaire-comprehension`** (`D04`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`trajectoire-consolidation-standards-2027-2028`** (`D11`) : degré `3` (sortantes : 1 ; entrantes : 2).
 - **`distinction-agent-flux-ambiant`** (`D02`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`memoire-bi-temporelle-et-purge`** (`D04`) : degré `3` (sortantes : 0 ; entrantes : 3).
-- **`modele-maturite-5-niveaux-dimensions`** (`D11`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`evaluation-continue-derives`** (`D08`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`federation-multi-plateformes-gravite`** (`D10`) : degré `3` (sortantes : 3 ; entrantes : 0).
+- **`federation-multi-plateformes-gravite`** (`D10`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`feuille-de-route-phases-90-jours-indicateurs`** (`D11`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`feuille-route-1er-mai-2027`** (`D09`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`maillage-b2b-federe-edc-odrl`** (`D03`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`protocole-probatoire-l-plus-statut-f`** (`D12`) : degré `3` (sortantes : 1 ; entrantes : 2).
 - **`iso-20022-lynx-rtr`** (`D04`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`journalisation-probatoire-audit`** (`D08`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`matrice-protocoles-exigences-reglementaires`** (`D03`) : degré `3` (sortantes : 1 ; entrantes : 2).
-- **`non-compositionnalite-surete-surface-attaques`** (`D07`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`modes-echecs-emergents-frontiere`** (`D05`) : degré `3` (sortantes : 0 ; entrantes : 3).
-- **`plateforme-iap-gitops-cognitif`** (`D10`) : degré `3` (sortantes : 3 ; entrantes : 0).
+- **`priorites-90-jours-gouvernance`** (`D11`) : degré `3` (sortantes : 2 ; entrantes : 1).
 - **`socle-iam-federe-oauth-fapi`** (`D06`) : degré `3` (sortantes : 2 ; entrantes : 1).
-- **`souverainete-espaces-donnees-tee-hyok`** (`D09`) : degré `3` (sortantes : 3 ; entrantes : 0).
-- **`usine-logicielle-agentic-sdlc`** (`D02`) : degré `3` (sortantes : 3 ; entrantes : 0).
-- **`tampon-deterministe-rtr-iso20022`** (`D10`) : degré `2` (sortantes : 0 ; entrantes : 2).
-- **`defense-hors-modele-camel-confinement`** (`D07`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`annuaires-commerciaux-risque-standard-de-fait`** (`D06`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`facades-mcp-intention-metier`** (`D03`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`criteres-evaluation-fournisseurs-grille`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`frameworks-orchestration-entreprise`** (`D05`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`pathologies-reactives-backpressure`** (`D05`) : degré `2` (sortantes : 0 ; entrantes : 2).
-- **`architecture-reference-6-couches-2-piliers`** (`D02`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`architecture-reference-six-couches-pc1-pc5`** (`D02`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`economie-industrialisation-cognitive`** (`D01`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`modele-operationnel-hub-and-spoke`** (`D11`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`maillage-reglementaire-international`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`profil-gestion-patrimoine-m15`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`criteres-qos-cout-precision-latence`** (`D02`) : degré `2` (sortantes : 0 ; entrantes : 2).
-- **`clauses-sortie-portabilite-interchangeabilite`** (`D02`) : degré `2` (sortantes : 0 ; entrantes : 2).
-- **`plateformes-saas-et-asymetrie-tiers`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`profil-assurance-personnes-m16`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`gouvernance-raci-modele-en-etoile`** (`D11`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`canonicalisation-jcs-rfc8785`** (`D08`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`chaine-approvisionnement-agent-skills`** (`D07`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`six-substrats-etat-souverainete`** (`D04`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`catalogue-31-adr-12-dec`** (`D02`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`chaine-approvisionnement-agent-skills`** (`D07`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`ecart-accord-protocolaire-comprehension`** (`D04`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`evaluation-continue-derives`** (`D08`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`homologation-prr-75-points`** (`D12`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`maillage-b2b-federe-edc-odrl`** (`D03`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`modele-maturite-5-niveaux-dimensions`** (`D11`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`plan-inference-routage-carbone`** (`D08`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`production-agentique-canadienne-2025-2026`** (`D10`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`profil-groupe-diversifie-m18`** (`D10`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`protocole-probatoire-l-plus-statut-f`** (`D12`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`trajectoire-consolidation-standards-2027-2028`** (`D11`) : degré `3` (sortantes : 1 ; entrantes : 2).
+- **`cout-non-interop-dette-integration`** (`D01`) : degré `3` (sortantes : 0 ; entrantes : 3).
+- **`matrice-protocoles-exigences-reglementaires`** (`D03`) : degré `3` (sortantes : 0 ; entrantes : 3).
+- **`memoire-bi-temporelle-et-purge`** (`D04`) : degré `3` (sortantes : 0 ; entrantes : 3).
+- **`modes-echecs-emergents-frontiere`** (`D05`) : degré `3` (sortantes : 0 ; entrantes : 3).
+- **`pathologies-reactives-backpressure`** (`D05`) : degré `3` (sortantes : 0 ; entrantes : 3).
+- **`vertical-financier-durci`** (`D10`) : degré `3` (sortantes : 0 ; entrantes : 3).
 - **`confinement-cua-patrimoine-sans-api`** (`D04`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`contrats-api-versionnement-conformite`** (`D03`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`contrats-api-versionnement-conformite`** (`D03`) : degré `2` (sortantes : 2 ; entrantes : 0).
 - **`contrats-donnees-write-audit-publish`** (`D04`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`sre-autonome-rayon-impact-cedar`** (`D07`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`contrats-types-executes-ci-annexe-c`** (`D12`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`inventaire-revocation-asymetrie`** (`D06`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`referentiel-annexes-protocoles-chronologie`** (`D12`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`provenance-artefacts-aibom-5-horloges`** (`D08`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`donnees-pretes-agents-odcs-openlineage`** (`D04`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`echanges-intentions-contrats-probabilistes`** (`D01`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`evaluation-agentique-bancs-capacite`** (`D08`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`criteres-evaluation-fournisseurs-grille`** (`D09`) : degré `2` (sortantes : 2 ; entrantes : 0).
 - **`eclats-sectoriels-extrapoles`** (`D10`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`raisonnement-inference-limites-planification`** (`D01`) : degré `2` (sortantes : 0 ; entrantes : 2).
-- **`grille-homologation-et-fiche-agent`** (`D12`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`pont-ia-physique-ros2-simplex`** (`D05`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`evaluation-agentique-bancs-capacite`** (`D08`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`frameworks-orchestration-entreprise`** (`D05`) : degré `2` (sortantes : 2 ; entrantes : 0).
 - **`genealogie-eai-soa-fipa-llm`** (`D01`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`gouvernance-acces-rag-ancrage`** (`D04`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`grille-homologation-et-fiche-agent`** (`D12`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`profil-banque-m14`** (`D10`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`reprise-sinistre-cognitif-continuite`** (`D10`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`services-bancaires-consommateurs-c15`** (`D09`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`validation-json-schema-ambigu-escalade`** (`D02`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`web-agentique-webmcp-webbotauth`** (`D03`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`annuaires-commerciaux-risque-standard-de-fait`** (`D06`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`architecture-reference-6-couches-2-piliers`** (`D02`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`canonicalisation-jcs-rfc8785`** (`D08`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`defense-hors-modele-camel-confinement`** (`D07`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`donnees-pretes-agents-odcs-openlineage`** (`D04`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`droit-effacement-portabilite-loi-25`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`echanges-intentions-contrats-probabilistes`** (`D01`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`economie-industrialisation-cognitive`** (`D01`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`facades-mcp-intention-metier`** (`D03`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`gouvernance-acces-rag-ancrage`** (`D04`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`gouvernance-interne-registre-trois-lignes`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`regime-derogations-et-transition-cohorte`** (`D11`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`gouvernance-raci-modele-en-etoile`** (`D11`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`indicateurs-agentops-horizon-tache`** (`D08`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`profil-assurance-dommages-m17`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`memoire-partagee-concurrence-effacement`** (`D04`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`inventaire-revocation-asymetrie`** (`D06`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`loi-de-lusser`** (`D01`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`maillage-reglementaire-international`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`memoire-partagee-concurrence-effacement`** (`D04`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`modele-maturite-feuille-360j`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`responsabilite-mandat-contrats-b2b`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`profil-banque-m14`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`modele-operationnel-hub-and-spoke`** (`D11`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`plateformes-saas-et-asymetrie-tiers`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`pont-ia-physique-ros2-simplex`** (`D05`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`profil-assurance-dommages-m17`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`profil-assurance-personnes-m16`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`profil-gestion-patrimoine-m15`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`protocole-anp-did-wba`** (`D03`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`protocoles-interfaces-agui-a2ui-webrtc`** (`D03`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`revue-litterature-mlr-prisma`** (`D01`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`reprise-sinistre-cognitif-continuite`** (`D10`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`provenance-artefacts-aibom-5-horloges`** (`D08`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`referentiel-annexes-protocoles-chronologie`** (`D12`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`reseaux-b2b-federes-p3`** (`D10`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`resilience-orchestration-repli-plafonds`** (`D05`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`responsabilite-mandat-contrats-b2b`** (`D09`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`revue-litterature-mlr-prisma`** (`D01`) : degré `2` (sortantes : 1 ; entrantes : 1).
 - **`separation-controleur-executeur-determinisme`** (`D02`) : degré `2` (sortantes : 1 ; entrantes : 1).
-- **`services-bancaires-consommateurs-c15`** (`D09`) : degré `2` (sortantes : 2 ; entrantes : 0).
-- **`web-agentique-webmcp-webbotauth`** (`D03`) : degré `2` (sortantes : 2 ; entrantes : 0).
+- **`sre-autonome-rayon-impact-cedar`** (`D07`) : degré `2` (sortantes : 1 ; entrantes : 1).
+- **`architecture-reference-six-couches-pc1-pc5`** (`D02`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`clauses-sortie-portabilite-interchangeabilite`** (`D02`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`criteres-qos-cout-precision-latence`** (`D02`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`raisonnement-inference-limites-planification`** (`D01`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`regime-derogations-et-transition-cohorte`** (`D11`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`six-substrats-etat-souverainete`** (`D04`) : degré `2` (sortantes : 0 ; entrantes : 2).
+- **`tampon-deterministe-rtr-iso20022`** (`D10`) : degré `2` (sortantes : 0 ; entrantes : 2).
 - **`adaptateur-mcp-streamable-http-sep-3398`** (`D03`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`alignement-deceptif-red-teaming-adversarial`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`taxonomie-acteurs-agentiques`** (`D01`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`fusion-acp-collision-terminologique`** (`D03`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`approbation-reflexe-biais-automatisation`** (`D11`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`architecture-outils-fiables-erreurs-actionnables`** (`D02`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`formats-echange-registres-schemas`** (`D04`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`audit-validation-sources-121-449`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`barriere-logicielle-g0-execute-g0`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`blueprint-1-assistant-sor`** (`D10`) : degré `1` (sortantes : 1 ; entrantes : 0).
@@ -929,27 +930,21 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`canal-compensation-isole-outbox`** (`D05`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`canonisation-deterministe-jcs`** (`D08`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`caviardage-pii-rp-bilingue`** (`D08`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`cinq-blocs-sbb-tableau-12`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`cinq-discordances-inter-volumes-tome-8`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`clauses-reversibilite-cloud-souverain`** (`D09`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`comptabilite-carbone-cap-046-bsif-b15`** (`D08`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`confidentialite-materielle-tee-hyok`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`controle-surete-stamp-stpa`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`couts-transaction-coase`** (`D01`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`profil-oauth-9700-et-liaison-expediteur`** (`D06`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`dimensionnement-wilson-evalops`** (`D08`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`dix-interdictions-exig-gov-17`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`dix-theses-t1-t10-tome-5`** (`D11`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`douze-principes-directeurs-prin`** (`D02`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`droit-effacement-portabilite-loi-25`** (`D09`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`echec-ferme-opa-default-deny`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`economie-jetons-routage-slm`** (`D01`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`enveloppes-bpmn-cas-routine`** (`D05`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`ergonomie-aci-anti-swagger`** (`D03`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`etat-des-lieux-adoption-map-2027`** (`D01`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`approvisionnement-reversible-contrats`** (`D09`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`responsabilite-litiges-commerce-agentique`** (`D11`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`cycle-vie-operationnel-derives-gitops`** (`D08`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`fiabilite-coordination-taxonomie-mast`** (`D05`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`gabarit-typst-edition-4542-pages`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`glossaire-normatif-tome-2`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
@@ -958,15 +953,11 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`liaison-jetons-dpop-mtls`** (`D06`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`maillage-agentique-trois-acceptions`** (`D03`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`mediation-b2b-esb-traducteurs`** (`D04`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`patrons-boucle-mono-agent-codeact`** (`D02`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`metriques-soutien-vs-production`** (`D03`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`modele-comme-juge-biais-calibration`** (`D08`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`coexistence-bpm-ipaas-rpa`** (`D04`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`negociation-b2b-diplomate-evaluateur`** (`D05`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`principes-architecture-pri-001-015`** (`D02`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`paradigme-apm-autonomie-encadree`** (`D05`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`portee-et-force-normative-cre-ia`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`passage-echelle-parc-agents`** (`D10`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`propagation-acl-memoire-silo`** (`D04`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`protocoles-ressources-physiques-lap`** (`D05`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`quadruple-dette-agentique`** (`D01`) : degré `1` (sortantes : 1 ; entrantes : 0).
@@ -975,21 +966,32 @@ Les nœuds relais de second rang (rangs 26 à 50) assurent la médiation opérat
 - **`red-teaming-continu-empoisonnement-memoire`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`registre-sources-tracees-annexe-b`** (`D12`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`requetes-riches-rar-txn-tokens`** (`D06`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`plan-donnees-inference-kv-cache`** (`D03`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`sanctuarisation-vivier-junior-reprise`** (`D11`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`saturation-http-431-ml-dsa-kid`** (`D06`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`separation-controle-donnees-camel`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`incidents-agentiques-et-notification-multiregime`** (`D09`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`rupture-modele-conversationnel-agent-boucle`** (`D01`) : degré `1` (sortantes : 0 ; entrantes : 1).
 - **`surcout-multi-agent-debat-mast`** (`D01`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`synchronisation-edge-crdt`** (`D04`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`systeme-qualite-en-18286-dora-cra`** (`D09`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`taxonomie-owasp-asi-mcp-maestro`** (`D07`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`tests-metamorphiques-fr-en-sans-oracle`** (`D08`) : degré `1` (sortantes : 1 ; entrantes : 0).
-- **`contexte-minimal-delegation-interagents`** (`D05`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`marche-ia-agentique-dispersion`** (`D01`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`saga-dix-scenarios-fautes`** (`D05`) : degré `1` (sortantes : 0 ; entrantes : 1).
-- **`validation-json-schema-ambigu-escalade`** (`D02`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`vide-federal-ia-c27-c36`** (`D09`) : degré `1` (sortantes : 1 ; entrantes : 0).
 - **`vingt-sept-signaux-veille-sig`** (`D11`) : degré `1` (sortantes : 1 ; entrantes : 0).
+- **`approvisionnement-reversible-contrats`** (`D09`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`cinq-blocs-sbb-tableau-12`** (`D12`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`coexistence-bpm-ipaas-rpa`** (`D04`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`contexte-minimal-delegation-interagents`** (`D05`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`cycle-vie-operationnel-derives-gitops`** (`D08`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`formats-echange-registres-schemas`** (`D04`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`fusion-acp-collision-terminologique`** (`D03`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`incidents-agentiques-et-notification-multiregime`** (`D09`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`marche-ia-agentique-dispersion`** (`D01`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`passage-echelle-parc-agents`** (`D10`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`patrons-boucle-mono-agent-codeact`** (`D02`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`plan-donnees-inference-kv-cache`** (`D03`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`principes-architecture-pri-001-015`** (`D02`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`profil-oauth-9700-et-liaison-expediteur`** (`D06`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`responsabilite-litiges-commerce-agentique`** (`D11`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`rupture-modele-conversationnel-agent-boucle`** (`D01`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`saga-dix-scenarios-fautes`** (`D05`) : degré `1` (sortantes : 0 ; entrantes : 1).
+- **`taxonomie-acteurs-agentiques`** (`D01`) : degré `1` (sortantes : 0 ; entrantes : 1).
 <!-- BIBLIOGRAPHIE_BRUTE_FIN -->

@@ -63,7 +63,7 @@ package "Z1 : Source unique exigences.json v1.2 (305 règles)" {
   rectangle "305 EXIG-* sous 16 préfixes\n255 DOIT · 34 NE DOIT PAS · 16 DEVRAIT\n(+ 12 EXIG-AMF & 6 ajouts v1.2)" as EXIG <<det>>
 }
 package "Z2 : Socle multi-régulateurs unifié" {
-  rectangle "Table de correspondance unifiée\n305 EXIG-* × 75 PRR × 15 POR\nen 41 rubriques d'homologation" as MAP <<det>>
+  rectangle "Table de correspondance unifiée\n305 EXIG-* × 75 PRR × 15 POR\nen 43 rubriques d'homologation" as MAP <<det>>
   rectangle "Dossier probatoire unique\nAMF + BSIF E-23 + Loi 25 + EU AI Act" as DOSS <<ok>>
 }
 package "Z3 : Noyau dur non dérogeable — 10 interdits EXIG-GOV-17" {
@@ -76,7 +76,7 @@ EXIG --> GOV17 : ② filtre prioritaire
 GOV17 --> VETO : tout manquement bloque
 DOSS --> VETO : vérifie conformité
 legend bottom
-  **Bleu socle** : référentiel CRE-IA v1.2 (305 exigences, 16 préfixes) et matrice 41 rubriques
+  **Bleu socle** : référentiel CRE-IA v1.2 (305 exigences, 16 préfixes) et matrice 43 rubriques
   **Vert preuve** : dossier probatoire unique couvrant Loi 25, BSIF E-23, AMF et EU AI Act
   **Rouge veto** : dix lignes rouges absolues d'EXIG-GOV-17 (zéro dérogation tolérée)
 end legend

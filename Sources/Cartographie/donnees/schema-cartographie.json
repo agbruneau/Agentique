@@ -3,10 +3,10 @@
   "schema_version": "2.0.0",
   "lang": "fr-CA",
   "title": "Schéma formel de la cartographie thématique et structurelle du Compendium agentique",
-  "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 115 schémas compilés et de la matrice de concordance pour le Compendium (837 pages PDF, 56 termes glossaire, 135 sources L+, gel du 2 décembre 2026).",
+  "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 115 schémas compilés et de la matrice de concordance pour le Compendium (852 pages PDF, 56 termes glossaire, 135 sources L+, gel du 2 décembre 2026).",
   "corpus_scope": {
-    "compendium_pdf_pages": 837,
-    "compendium_markdown_lines": 8408,
+    "compendium_pdf_pages": 852,
+    "compendium_markdown_lines": 8532,
     "compendium_units": 42,
     "compendium_sections": 15,
     "compendium_schemas": 115,
@@ -21,7 +21,7 @@
     "historical_tome_diagrams": 319,
     "total_markdown_files": 2,
     "total_tomes": 8,
-    "total_pdf_pages": 837,
+    "total_pdf_pages": 852,
     "total_diagrams": 115,
     "files": [
       {
@@ -438,7 +438,7 @@
       "directionality": "directed",
       "color": "#0d9488",
       "dash_pattern": "dashed",
-      "semantic_rule": "source est mis en œuvre ou rendu testable par target (ou inversement selon étiquetage explicite)"
+      "semantic_rule": "source met en œuvre, concrétise ou rend testable target"
     },
     {
       "type_id": "encadrement_normatif",

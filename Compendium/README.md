@@ -10,15 +10,15 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 
 | Livrable | Format | Volume mesuré | Description |
 |---|---|---|---|
-| [**Compendium.pdf**](Compendium.pdf) | PDF (`Typst 6,14 × 9,21 po`) | `837` pages · `23 175 718` octets | Édition imprimable et navigable avec table des matières, `115` figures intégrées et notice opposable `non-avis` |
-| [**Compendium.md**](Compendium.md) | Markdown UTF-8 (`LF`) | `1 868 863` octets · `8 408` lignes · `241 759` mots (`180 000` mots de prose cible, `42` unités) | Édition Markdown intégrale synchronisée avec table des matières `GFM`, `37` bibliographies de chapitre et `5` annexes |
+| [**Compendium.pdf**](Compendium.pdf) | PDF (`Typst 6,14 × 9,21 po`) | `852` pages · `23 733 259` octets | Édition imprimable et navigable avec table des matières, `115` figures intégrées et notice opposable `non-avis` |
+| [**Compendium.md**](Compendium.md) | Markdown UTF-8 (`LF`) | `1 906 515` octets · `8 532` lignes · `246 518` mots (`180 000` mots de prose cible, `42` unités) | Édition Markdown intégrale synchronisée avec table des matières `GFM`, `37` bibliographies (liminaire et `36` chapitres) et `5` annexes |
 
 ---
 
 ## Architecture et périmètre de l'ouvrage
 
 - **Liminaire et `12` parties (`D01`–`D12`)** : `36` chapitres (`ch01`–`ch36`) sans chevauchement conceptuel, couvrant `71` familles et `260` thèmes issus de [`prd.md`](../Sources/Compendium/prd.md).
-- **`5` annexes déterministes (`A`–`E`)** : traçabilité `MindMap → PRD`, cartographie des `616` interrelations et arbitrages, réconciliations inter-tomes (`DIV-02`, `DISC-01`–`DISC-05`) et calendrier `2023–2035`, bilan d'homologation `G0–G5` (`305 EXIG-*`, `52 CAP`, `24 PEX`, `PRR-75`, `C01–C40`, `5 SBB`) et catalogue des `115` schémas raccordés aux `319` diagrammes des huit tomes.
+- **`5` annexes déterministes (`A`–`E`)** : traçabilité `MindMap → PRD`, cartographie des `616` interrelations et arbitrages, réconciliations inter-tomes (`DIV-02`, `DISC-01`–`DISC-05`) et calendrier `2023–2035` (`77` jalons uniques après déduplication des `9` doublons), bilan d'homologation `G0–G5` (`305 EXIG-*`, `52 CAP` dont `42 CAP` invariantes sur `52`, `24 PEX`, `PRR-75`, `C01–C40`, `5 SBB`) et catalogue des `115` schémas raccordés aux `319` diagrammes des huit tomes.
 - **`115` schémas de vulgarisation (`SCH-00-01` à `SCH-36-04`)** : `52` diagrammes `PlantUML` (`.svg`), `23` diagrammes `Mermaid` (`.png` `300 DPI`) et `40` infographies `SVG` bilingues métier-tech.
 - **Chaîne de preuve `Wyvern G0–G5`** : `135` sources primaires ouvertes `L+` (`0,0 %` `METADATA_ONLY`), consignation `Statut F` sans contournement (`AO-01`), `14` extraits scellés `CA-G0-SYNC` liés à la trousse exécutable du Tome 8, double recollation stratifiée à l'aveugle (`148/148` par passe) et inspection visuelle de `100 %` des pages PDF.
 
@@ -30,7 +30,7 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 |---|---|---|---|
 | **Liminaire** | Vue d'ensemble | `00` | Sommaire exécutif global, doctrine hybride `80/20`, concordance inter-tomes et panorama visuel |
 | **Partie I** | `D01` | `ch01`–`ch03` | Rupture épistémique, loi de Lusser, constance `pass^k` et économie cognitive de Coase |
-| **Partie II** | `D02` | `ch04`–`ch06` | Architecture hybride `80/20`, autonomie graduée `L0–L4`, noyau possédé (`42 CAP`) et `12` décisions neutres |
+| **Partie II** | `D02` | `ch04`–`ch06` | Architecture hybride `80/20`, autonomie graduée `L0–L4`, noyau possédé (`42 CAP` invariantes sur `52`) et `12` décisions neutres |
 | **Partie III** | `D03` | `ch07`–`ch09` | Tissu conjonctif protocolaire (`MCP 2026-07-28`, `A2A v1.0.1`, `AP2`, `AGNTCY/SLIM`), passerelles `PEP` et anti-verrouillage |
 | **Partie IV** | `D04` | `ch10`–`ch12` | Sémantique métier (`ODCS`), mémoire `CoALA` à quatre compartiments, encapsulation `ACL/OT` et `6` substrats d'état |
 | **Partie V** | `D05` | `ch13`–`ch15` | Sobriété d'orchestration `OO1–OO4`, chorégraphie `Event Mesh`, exécution durable et sagas à canal isolé |

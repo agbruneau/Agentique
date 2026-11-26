@@ -34,11 +34,11 @@ La correspondance entre stades organisationnels et niveaux individuels empêche 
 
 | Classe d'actes | Échelle `N0–N4` / `L0–L4` | Paliers d'outils permis | Régime de contrôle et d'approbation minimal |
 |---|---|---|---|
-| Hors classe (flux fixe) | `N0` / `L0` déterministe | Code fixe hors agent | Tests logiciels et revue de code (`OO1`/`OO2`) |
+| Hors classe (flux fixe) | `N0` / `L0` déterministe | Code fixe hors agent | Tests logiciels et revue de code (hors échelle agentique `OO1–OO4` ou activité déterministe en `OO3`) |
 | `Classe 1` : Lecture et analyse | `N1` / `L1` consultatif | `P0`–`P1` uniquement | Filtrage `ACL` préalable et télémétrie caviardée |
 | `Classe 2` : Action réversible bornée | `N3` sous `ODD` (`faible`/`modérée`) ou `N2` (`élevée`) | `P0`–`P2` sous seuils | Clé d'idempotence, saga compensable, revue échantillonnée (`5 %` / `1 %`) |
 | `Classe 3` : Effet matériel coûteux | `N2` par défaut (`N3` sous seuil strict) | `P2` plafonné | Approbation signée `JCS` `SHA-256` au-delà du seuil |
-| `Classe 4` : Acte irréversible critique | `P3` jamais exécuté seul (même en `N4`) | `P3` sous verrou | Approbation hors bande `CIBA`/`FIDO2` liée à `h` (`≤ 15` min), `2` signataires en élevée |
+| `Classe 4` : Acte irréversible critique | `N2` avec validation (jamais autonome sur `P3`, même en `N4`) | `P3` sous verrou | Approbation hors bande `CIBA`/`FIDO2` liée à `h` (`≤ 15` min), `2` signataires en élevée |
 | `Classe 5` : Décision visant personne | Plafond `N2` (`Classe élevée` `EXIG-CON-02`) | `P1`–`P2` sous cadre | Avis Loi 25 art. `12.1`, facteurs, révision humaine, dossier `≥ 1` an [5] |
 | `Classe 6` : Hors mandat (`NX`) | `NX` interdit sans dérogation | Aucun (`EXIG-GOV-17`) | Blocage déterministe hors modèle et coupe-circuit immédiat |
 
@@ -108,12 +108,12 @@ Dès qu'une décision affecte une personne sans réexamen substantiel, le dispos
 
 ## 5.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation
 
-La mise en œuvre du régime d'autonomie graduée se résume dans cinq exigences vérifiables (`EXIG-D02-02.1` à `EXIG-D02-02.5`), strictement encadrées par la clause `non-avis` (`AO-05`) au gel du `2 décembre 2026` ([1] à [10]) sans constituer une opinion juridique. À cet égard, quatre ressources externes inaccessibles lors de la collecte — l'article `PMC3240751` bloqué par défi `CAPTCHA`, le portail `lautorite.qc.ca` (`HTTP 403`), la page `genai.owasp.org` (`HTTP 403`, compensée intégralement par le document officiel `CC BY-SA 4.0` archivé en texte intégral [10]) et le portail `legisquebec` (`HTTP 403`, compensé par la loi sanctionnée en texte intégral [5]) — restent exclues en `statut F`.
+La mise en œuvre du régime d'autonomie graduée se résume dans cinq exigences vérifiables de synthèse propres au chapitre (`EXIG-D02-02.1` à `EXIG-D02-02.5`, distinctes des `305` règles `CRE-IA-2026-01 v1.2` sous `16` préfixes), strictement encadrées par la clause `non-avis` (`AO-05`) au gel du `2 décembre 2026` ([1] à [10]) sans constituer une opinion juridique. À cet égard, quatre ressources externes inaccessibles lors de la collecte — l'article `PMC3240751` bloqué par défi `CAPTCHA`, le portail `lautorite.qc.ca` (`HTTP 403`), la page `genai.owasp.org` (`HTTP 403`, compensée intégralement par le document officiel `CC BY-SA 4.0` archivé en texte intégral [10]) et le portail `legisquebec` (`HTTP 403`, compensé par la loi sanctionnée en texte intégral [5]) — restent exclues en `statut F`.
 
 | Exigence | Objet normatif | Contrôle exécutable et seuil | Ancrage et portée |
 |---|---|---|---|
 | `EXIG-D02-02.1` | Plafond inscrit, `ODD` et interdit `NX` | Niveau `N1`–`N4` minimal, zéro `NX`, zéro `Stade 4` en `D2`/`D6` | `EXIG-AUT-01..05`, `EXIG-GOV-17` |
-| `EXIG-D02-02.2` | Triple exclusion et garde ambiante | Blocage d'écriture sans approbation pour agent ambiant `< N4` | `Tableau 7`, `EXIG-IAM-03..05`, `CH-16` |
+| `EXIG-D02-02.2` | Triple exclusion et garde ambiante | Blocage d'écriture sans approbation pour agent ambiant `< N4` | `Tome 2, Tableau 7`, `EXIG-IAM-03..05`, `CH-16` |
 | `EXIG-D02-02.3` | Union stricte, règle d'or et *High-Water Mark* | `OPA` sur `deployment-footprint.yaml`, `≤ N2` sur cumul, mode fermé | `EXIG-AUT-07..11`, `CAP-048`, `CH-20` |
 | `EXIG-D02-02.4` | Approbation hors bande `CIBA`/`JCS` | `h = SHA-256(JCS(...))`, `≤ 15` min, `jti` unique, zéro oui textuel | `EXIG-AUT-09`, `EXIG-AUT-12..16`, `CH-17` |
 | `EXIG-D02-02.5` | Anti-complaisance `ASI09` et art. `12.1` | Écran différentiel `I-JSON`, `≤ 33`/quart, `3 %`–`5 %` canaris, revue `5 %`/`1 %`, archive `≥ 1` an | `EXIG-AUT-19..23`, `POR-014`/`015`, `INI-043` |

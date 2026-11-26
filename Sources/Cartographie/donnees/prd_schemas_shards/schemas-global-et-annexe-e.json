@@ -37,7 +37,7 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP et harnais à 8 étapes",
+            "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP invariantes sur 52 et harnais à 8 étapes",
             "content": "Routage à états, validation par JSON Schema Draft 2020-12, calculs financiers en type Decimal, caviardage préalable des renseignements personnels, passerelle PEP/AI Gateway et mécanisme d'abstention typée AMBIGU_ESCALADE."
           },
           {
@@ -150,7 +150,7 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement d'une action agentique à travers cinq contrôles infalsifiables, depuis la requête initiale d'un usager jusqu'à l'écriture dans un système métier, sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement les points d'application de l'identité attestée (NHI/OBO), du refus par défaut (OPA et Règle de deux), de la journalisation scellée (double couloir) ainsi que des obligations issues de la Loi 25, de la ligne directrice BSIF E-23 et de l'EU AI Act.",
+      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement d'une action agentique à travers neuf contrôles infalsifiables (sept à l'aller, deux au retour), depuis la requête initiale d'un usager jusqu'à l'écriture dans un système métier, sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement les points d'application de l'identité attestée (NHI/OBO), du refus par défaut (OPA et Règle de deux), de la journalisation scellée (double couloir) ainsi que des obligations issues de la Loi 25, de la ligne directrice BSIF E-23 et de l'EU AI Act.",
       "vulgarization_angle": "Modéliser la chaîne protocolaire et réglementaire sous la forme d'une enceinte douanière à cinq sas séquentiels : vérification de l'identité du mandataire et de l'étendue bornée du mandat, inspection des charges utiles hors de la sphère du modèle, apposition d'un sceau probatoire immuable et commande de révocation immédiate.",
       "visual_blueprint": {
         "zones": [
@@ -298,7 +298,7 @@
         "color_legend": [
           {
             "color_token": "Vert sauge (#15803D)",
-            "meaning": "Socle invariant sans regret (90 j – 18 mois, 42 CAP possédées et niveaux L0–L2 encadrés)"
+            "meaning": "Socle invariant sans regret (90 j – 18 mois, 42 CAP invariantes sur 52 possédées et niveaux L0–L2 encadrés)"
           },
           {
             "color_token": "Or ambré (#B45309)",
@@ -408,12 +408,12 @@
           {
             "zone_id": "Z2",
             "label": "Boucle de maîtrise EvalOps et FinOps — Mesure au résultat métier conforme",
-            "content": "Bancs hermétiques E1–E3 (borne de Wilson n ≥ ceil(3/p), pass^5 ≥ 99 % pour la distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
+            "content": "Bancs hermétiques E1–E3 (règle des trois n ≥ ceil(3/p) garantissant la borne de Wilson < p, pass^5 ≥ 99 % pour la distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
           },
           {
             "zone_id": "Z3",
             "label": "Porte d'homologation mécanique G0–G5 — Exigence probatoire intégrale",
-            "content": "Matrice unifiée 305 EXIG-* CRE-IA v1.2 × PRR-75 (dont 24 portes [BLOQUANT]) × 40 critères blueprints C01–C40 × 5 SBB du Tableau 12, sanctionnée par la chaîne d'assurance qualité G0–G5 et la fiche 2027-B001."
+            "content": "Matrice unifiée 305 EXIG-* CRE-IA v1.2 × PRR-75 (dont 24 portes [BLOQUANT]) × 40 critères blueprints C01–C40 × 5 SBB du Tableau 12 du Tome 2, sanctionnée par la chaîne d'assurance qualité G0–G5 et la fiche 2027-B001."
           }
         ],
         "numbered_flows": [

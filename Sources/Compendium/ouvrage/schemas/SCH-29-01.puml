@@ -66,10 +66,10 @@ package "Z2 : Blueprint 2 — bp2_rag_entreprise_acl (T6 Fig. 55)" {
   rectangle "Enclave souveraine Zero-Egress\nAI Gateway locale, Qdrant + OpenFGA ACL\n& microVM sans sortie (C15, C16)" as BP2 <<det>>
 }
 package "Z3 : Blueprint 3 — bp3_orchestration_multi_agents_b2b (T6 Fig. 54)" {
-  rectangle "Maillage fédéré inter-entreprises\nA2A 1.0, AGNTCY/SLIM (OASF),\nEvent Mesh & OBO 2 sauts (C13, C20)" as BP3 <<det>>
+  rectangle "Maillage fédéré inter-entreprises\nA2A v1.0.1, AGNTCY/SLIM (OASF),\nEvent Mesh & OBO 2 sauts (C13, C20)" as BP3 <<det>>
 }
 package "Socle unifié C1–C8 (565 contrôles) et validation porte G0" {
-  rectangle "5 briques SBB du Tableau 12\nVault, OPA, CIBA, Audit WORM, FinOps" as SBB <<ok>>
+  rectangle "5 briques SBB du Tableau 12 (Tome 2)\nVault, OPA, CIBA, Audit WORM, FinOps" as SBB <<ok>>
   rectangle "Batterie G0 : 40 critères C01–C40\nNote concordance : T6 Fig. 54 ↔ bp3\net T6 Fig. 55 ↔ bp2" as G0 <<ok>>
 }
 BP1 --> SBB : ①–② assemble sur C1–C8

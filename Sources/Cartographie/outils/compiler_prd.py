@@ -12,7 +12,7 @@ Assemble :
 - ``Cartographie/donnees/prd_shards/prd-d11-d12.json``
 
 Vérifie l'exhaustivité stricte (12 domaines, 36 chapitres/sous-domaines, 71 familles,
-260 thèmes, 4 annexes A–D, 0 placeholder, 100 % ancres GFM et liens Corpus valides)
+260 thèmes, 5 annexes A–E, 0 placeholder, 100 % ancres GFM et liens Corpus valides)
 et génère ``prd.md`` à la racine du dépôt.
 """
 
@@ -316,6 +316,84 @@ def load_and_validate_inputs(
     return bundle, global_shard, all_chapters
 
 
+def build_compendium_heading_spans(repo_root: Path) -> list[tuple[int, int, int, str]]:
+    """Indexe les titres H1–H4 de ``Compendium/Compendium.md`` avec leurs plages de lignes réelles."""
+    comp_path = repo_root / "Compendium" / "Compendium.md"
+    if not comp_path.is_file():
+        return []
+    comp_lines = comp_path.read_text(encoding="utf-8").splitlines()
+    hdrs: list[tuple[int, int, str]] = []
+    in_code = False
+    fence = "`" * 3
+    for idx, line in enumerate(comp_lines, 1):
+        if line.strip().startswith(fence):
+            in_code = not in_code
+        elif not in_code:
+            m = re.match(r"^(#{1,4})\s+(.+?)\s*$", line)
+            if m:
+                hdrs.append((idx, len(m.group(1)), m.group(2)))
+    spans: list[tuple[int, int, int, str]] = []
+    for pos, (ln, lvl, title) in enumerate(hdrs):
+        end = len(comp_lines)
+        for ln2, lvl2, _ in hdrs[pos + 1 :]:
+            if lvl2 <= lvl:
+                end = ln2 - 1
+                break
+        spans.append((ln, end, lvl, title))
+    return spans
+
+
+def resolve_corpus_anchor(
+    anc: dict[str, Any],
+    repo_root: Path,
+    comp_spans: list[tuple[int, int, int, str]],
+    mod_line_counts: dict[str, int],
+) -> tuple[int, str]:
+    """Recale dynamiquement ``line_start`` et la plage ``(Lxxx–Lyyy)`` contre ``Compendium.md`` et les sources modulaires."""
+    fpath = str(anc["file"]).strip()
+    ref_clean = _clean_prd_prose(anc.get("reference", ""))
+    raw_ls = anc.get("line_start")
+    fallback_ls = int(raw_ls) if isinstance(raw_ls, int) and int(raw_ls) > 0 else 0
+    if not fallback_ls:
+        line_m = re.search(r"\bL(\d+)\s*[–-]\s*L?\d+", ref_clean) or re.search(r"\bL([1-9]\d*)\b", ref_clean)
+        fallback_ls = int(line_m.group(1)) if line_m else 0
+
+    if fpath != "Compendium/Compendium.md":
+        if fpath not in mod_line_counts:
+            mod_p = repo_root / fpath
+            mod_line_counts[fpath] = len(mod_p.read_text(encoding="utf-8").splitlines()) if mod_p.is_file() else 0
+        nlines = mod_line_counts[fpath]
+        if nlines > 0:
+            ref_clean = re.sub(r"\(L\d+[–-]L?\d+\)", f"(L1–L{nlines})", ref_clean)
+        return fallback_ls or 1, ref_clean
+
+    if not comp_spans:
+        return fallback_ls, ref_clean
+
+    found: tuple[int, int, int, str] | None = None
+    m_sec = re.search(r"§\s*(\d+\.\d+)", ref_clean)
+    m_ch = re.search(r"Chapitre\s+0?(\d+)", ref_clean)
+    m_ann = re.search(r"Annexe\s+([A-E])\s*—", ref_clean)
+    cands: list[tuple[int, int, int, str]] = []
+    if m_sec:
+        cands = [s for s in comp_spans if s[3].startswith(m_sec.group(1) + " ")]
+    elif m_ch:
+        cands = [s for s in comp_spans if s[2] == 2 and s[3].startswith(f"Chapitre {int(m_ch.group(1)):02d} —")]
+    elif m_ann:
+        cands = [s for s in comp_spans if s[2] == 2 and s[3].startswith(f"Annexe {m_ann.group(1)} —")]
+    elif "Liminaire" in ref_clean:
+        cands = [s for s in comp_spans if s[2] == 1 and s[3].startswith("Liminaire —")]
+
+    if len(cands) == 1:
+        found = cands[0]
+    if found is None:
+        return fallback_ls, ref_clean
+
+    new_ls, new_le = found[0], found[1]
+    updated_ref = re.sub(r"\(L\d+[–-]L?\d+\)", f"(L{new_ls}–L{new_le})", ref_clean)
+    return new_ls, updated_ref
+
+
 def _render_schema_block(schema: dict[str, Any]) -> list[str]:
     """Rend un bloc Markdown détaillé pour un schéma ``SCH-*`` sans émettre de titre ``H5``."""
     lines: list[str] = []
@@ -584,8 +662,8 @@ def render_annexe_tables(
         pyt_chk = g0_rep.get("pytest_check") or {}
         sch_chk = g0_rep.get("schema_validation") or {}
         lines.append(
-            f"- **Ouvrage maître Compendium (`2026-12-02`)** : `{col.get('compendium_pdf_pages', 837)}` pages PDF (`Compendium/Compendium.pdf`), "
-            f"`{col.get('compendium_md_words', 241759)}` mots (`{col.get('compendium_md_lines', 8408)}` lignes, `{col.get('compendium_units', 42)}` unités, "
+            f"- **Ouvrage maître Compendium (`2026-12-02`)** : `{col.get('compendium_pdf_pages', 852)}` pages PDF (`Compendium/Compendium.pdf`), "
+            f"`{col.get('compendium_md_words', 246518)}` mots (`{col.get('compendium_md_lines', 8532)}` lignes, `{col.get('compendium_units', 42)}` unités, "
             f"`{col.get('compendium_schemas', 115)}` schémas compilés)."
         )
         lines.append(
@@ -1183,17 +1261,16 @@ def build_prd_markdown(
             body_lines.append("|---|---|---|")
             norm_anchors: list[tuple[int, int, str, str, str, str]] = []
             seen_anc_keys: set[tuple[str, str, str]] = set()
+            comp_spans = getattr(compile_prd, "_comp_spans_cache", None)
+            if comp_spans is None:
+                comp_spans = build_compendium_heading_spans(repo_root)
+                setattr(compile_prd, "_comp_spans_cache", comp_spans)
+            mod_line_counts: dict[str, int] = getattr(compile_prd, "_mod_lines_cache", {})
+            setattr(compile_prd, "_mod_lines_cache", mod_line_counts)
             for anc in tc.get("corpus_anchors", []):
                 part_id = str(anc.get("part_id") or anc.get("section_id") or anc.get("tome_id") or "").strip()
                 fpath = str(anc["file"]).strip()
-                ref_clean = _clean_prd_prose(anc.get("reference", ""))
-                if isinstance(anc.get("line_start"), int) and int(anc["line_start"]) > 0:
-                    line_start_int = int(anc["line_start"])
-                else:
-                    line_m = re.search(r"\bL(\d+)\s*[–-]\s*L?\d+", ref_clean) or re.search(
-                        r"\bL([1-9]\d*)\b", ref_clean
-                    )
-                    line_start_int = int(line_m.group(1)) if line_m else 0
+                line_start_int, ref_clean = resolve_corpus_anchor(anc, repo_root, comp_spans, mod_line_counts)
                 akey = (part_id, fpath, ref_clean)
                 if akey in seen_anc_keys:
                     continue
@@ -1388,8 +1465,8 @@ def build_prd_markdown(
     toc_lines.extend(["", "---", ""])
 
     col_metrics = (raw_pivots.get("collection_metrics") or {})
-    comp_pages = int(col_metrics.get("compendium_pdf_pages", 837))
-    comp_words = int(col_metrics.get("compendium_md_words", 241759))
+    comp_pages = int(col_metrics.get("compendium_pdf_pages", 852))
+    comp_words = int(col_metrics.get("compendium_md_words", 246518))
     comp_units = int(col_metrics.get("compendium_units", 42))
     comp_secs = int(col_metrics.get("compendium_sections", 15))
     comp_sch = int(col_metrics.get("compendium_schemas", 115))

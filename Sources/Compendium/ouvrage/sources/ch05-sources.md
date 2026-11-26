@@ -99,7 +99,7 @@
 - **Auteurs / Émetteur :** Torsten Lodderstedt, Justin Richer, Brian Campbell
 - **Date de publication :** `2023-05`
 - **Organisme / Revue :** IETF RFC Editor
-- **Identifiant :** `RFC9396`
+- **Identifiant :** `RFC 9396`
 - **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-042.txt`, score AACODS `11.5/12`)
 - **URL d'origine :** https://www.rfc-editor.org/rfc/rfc9396.txt
 - **Empreinte SHA-256 (LF) :** `e334d06f14081317caf9d457dcbffeae877c5e5009f2452d2f11adcd47d68f6b` (`55352` octets, `7380` mots)
