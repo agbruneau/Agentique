@@ -159,7 +159,7 @@ Le [**Compendium de l'entreprise agentique**](Compendium/README.md) ([`Compendiu
 
 ### 5.2 Les 8 Tomes thématiques ([`Tomes/`](Tomes/README.md))
 
-Les huit tomes de la collection (`PDF` au format unifié `6,14 × 9,21 po` et `Markdown` intégral) sont regroupés dans [`Tomes/`](Tomes/README.md), et leurs chapitres découpés, diagrammes et outils résident dans [`Sources/Tomes/`](Sources/Tomes/README.md) :
+Les huit tomes de la collection (`PDF` au format unifié `6,14 × 9,21 po` et `Markdown` intégral) sont regroupés dans [`Tomes/`](Tomes/README.md), et leurs sources de diagrammes, ateliers éditoriaux (Tomes 7 et 8) et outils résident dans [`Sources/Tomes/`](Sources/Tomes/README.md) :
 
 | Tome | Ouvrage publié (`Tomes/`) | Sources (`Sources/Tomes/`) | À quoi sert ce tome ? | Pages | Figures |
 |---|---|---|---|---:|---:|
@@ -175,7 +175,7 @@ Les huit tomes de la collection (`PDF` au format unifié `6,14 × 9,21 po` et `M
 ### 5.3 Les composants sources de publication ([`Sources/`](Sources/README.md))
 
 - [`Sources/Compendium/`](Sources/Compendium/README.md) : usine éditoriale [`ouvrage/`](Sources/Compendium/ouvrage/) produisant `Compendium/Compendium.pdf` et `Compendium/Compendium.md` (`12` parties `D01–D12`, `36` chapitres, `5` annexes `A–E` et `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes).
-- [`Sources/Tomes/`](Sources/Tomes/README.md) : les `8` dossiers sources des Tomes (`Tome 1` à `Tome 8`) contenant les chapitres découpés, les sources et rendus des `319` diagrammes, l'outillage d'assemblage des Tomes 7 et 8, ainsi que la trousse logicielle exécutable [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) (`4` modules `Python 3.12+`, `3` politiques `OPA / Rego`, `13` schémas `JSON Schema`, vecteurs de test officiels, `83` tests automatisés `pytest` et `45` tests `OPA` à `100 %` de couverture).
+- [`Sources/Tomes/`](Sources/Tomes/README.md) : les `8` dossiers sources des Tomes (`Tome 1` à `Tome 8`) regroupant les sources et rendus des `319` diagrammes, les manuscrits et l'outillage d'assemblage des Tomes 7 et 8, ainsi que la trousse logicielle exécutable [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) (`4` modules `Python 3.12+`, `3` politiques `OPA / Rego`, `13` schémas `JSON Schema`, vecteurs de test officiels, `83` tests automatisés `pytest` et `45` tests `OPA` à `100 %` de couverture).
 - [`Sources/Cartographie/`](Sources/Cartographie/README.md) : cartographie thématique et navigateur de lecture interactif du **Compendium** (**4 vues dynamiques** dans [`MindMap - Cartographie thématique du Compendium.html`](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) couvrant `15` sections, `42` unités, `380` nœuds, `616` interrelations, `115` schémas prévisualisables, `56` vedettes du glossaire, `5` parcours guidés et ancrage direct `Compendium.pdf#page=N`, 100 % hors ligne sous `file://`).
 - [`Sources/gabarit-pdf/`](Sources/gabarit-pdf/README.md) : le gabarit `Typst` commun (`6,14 × 9,21 po`), le catalogue `volumes.json` et les scripts permettant de recompiler les diagrammes, le Compendium et les huit Tomes.
 

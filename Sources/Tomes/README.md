@@ -2,7 +2,7 @@
 
 [Compendium (`Compendium/`)](../../Compendium/README.md) · [Retour à l'index principal du dépôt](../../README.md) · [Composants sources (`Sources/`)](../README.md) · [Tomes publiés (`Tomes/`)](../../Tomes/README.md) · [`Sources/Cartographie/`](../Cartographie/README.md) · [MindMap HTML](../Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) · [`Sources/gabarit-pdf/`](../gabarit-pdf/README.md)
 
-Ce répertoire regroupe les **8 dossiers sources** des ouvrages de la collection (`Tome 1` à `Tome 8`) : chapitres découpés en Markdown, sources et rendus des **319 diagrammes** (`253` PlantUML `.svg`, `66` Mermaid `.png`), spécifications, rapports d'assurance qualité des tomes 7 et 8, ainsi que la trousse logicielle exécutable du tome 8 ([`Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md)).
+Ce répertoire regroupe les **8 dossiers sources** des ouvrages de la collection (`Tome 1` à `Tome 8`) : sources et rendus des **319 diagrammes** (`253` PlantUML `.svg`, `66` Mermaid `.png`), manuscrits, spécifications et rapports d'assurance qualité des tomes 7 et 8, ainsi que la trousse logicielle exécutable du tome 8 ([`Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md)).
 
 Les **16 fichiers intégraux consolidés** (`8` PDF au format unifié `6,14 × 9,21 po` et `8` Markdown complets) sont rassemblés dans [`../../Tomes/`](../../Tomes/README.md), et le gabarit `Typst` ainsi que les scripts de compilation communs résident dans [`../gabarit-pdf/`](../gabarit-pdf/README.md).
 
@@ -21,5 +21,5 @@ Les **16 fichiers intégraux consolidés** (`8` PDF au format unifié `6,14 × 9
 
 ## Organisation interne
 
-- **Tomes 1 à 6** : chaque dossier contient les liminaires (`00 - *.md`), les parties numérotées (`01` à `11`) munies de leur propre `README.md`, ainsi que `Diagrammes/` (sources `.puml`/`.mmd` et rendus `.svg`/`.png` dans `Diagrammes/rendus/`).
+- **Tomes 1 à 6** : chaque dossier contient le sommaire paginé `README.md` ainsi que `Diagrammes/` (sources `.puml`/`.mmd` et rendus `.svg`/`.png` dans `Diagrammes/rendus/`), les textes complets résidant dans [`../../Tomes/`](../../Tomes/README.md).
 - **Tomes 7 et 8** : chaque dossier regroupe le manuscrit (`manuscrit/`), les spécifications (`specs/`), les registres (`registre/`), le corpus probant ouvert (`recherche/`), les sources par unité (`sources/`), les sources locales hors Git (`sources-locales/`), l'ancrage atomique Wyvern (`ancrage/`), l'assurance qualité (`aq/`), les diagrammes (`diagrammes/`), les scripts d'assemblage et de vérification (`outils/`) et, pour le Tome 8, la trousse logicielle exécutable (`trousse/`).
