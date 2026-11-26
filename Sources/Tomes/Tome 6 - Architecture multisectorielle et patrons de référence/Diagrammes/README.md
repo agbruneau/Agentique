@@ -5,7 +5,7 @@ Index des 59 diagrammes extraits et reconstruits depuis `Tome 6 - Architecture m
 - **Total des diagrammes** : 59
 - **PlantUML (`.puml`)** : 56 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 3 (rendus haute résolution `.png` dans `rendus/`)
-- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 6` (génère `rendus/Fig-XX.svg` / `.png` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
+- **Compilation** : `python -B Sources/gabarit-pdf/compile_diagrams.py --volume 6` (génère `rendus/Fig-XX.svg` / `.png` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

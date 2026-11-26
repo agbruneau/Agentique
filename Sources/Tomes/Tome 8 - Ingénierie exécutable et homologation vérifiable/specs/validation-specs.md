@@ -1,6 +1,6 @@
 # Journal de validation des spécifications — Tome 8 (`v1.0` → `v1.1`, 22 novembre 2026)
 
-Revue indépendante intégrale du dossier `specs/` (issu de `specs-volume-8/`) (sommaire du volume : [`README.md`](../README.md)) : [`prd.md`](prd.md), [`charte-editoriale.md`](charte-editoriale.md), [`toc.md`](toc.md), [`architecture-trousse-g0.md`](architecture-trousse-g0.md), [`contrat-aq.md`](contrat-aq.md), [`plan-production-aq.md`](plan-production-aq.md) et [`prompt-lancement.md`](prompt-lancement.md). **Régime : Production.**
+Revue indépendante intégrale du dossier `specs/` (issu de `specs-volume-8/`) (sommaire du volume : [`README.md`](../README.md)) : `prd.md` *(archivé hors dépôt)*, [`charte-editoriale.md`](charte-editoriale.md), [`toc.md`](toc.md), [`architecture-trousse-g0.md`](architecture-trousse-g0.md), [`contrat-aq.md`](contrat-aq.md), `plan-production-aq.md` *(archivé hors dépôt)* et [`prompt-lancement.md`](prompt-lancement.md). **Régime : Production.**
 
 - **Ouvrage spécifié :** *Tome 8 — Ingénierie exécutable et homologation vérifiable* — *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
 - **Crédit d'auteur :** **André-Guy Bruneau, M.Sc IT** · **Date de gel des faits :** `2 décembre 2026` (`2026-12-02`) · **Parution visée :** `janvier 2027`

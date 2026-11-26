@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-26T14:01:58.259108+00:00",
+  "generated_at": "2026-11-26T15:09:21.090023+00:00",
   "lang": "fr-CA",
   "schema": {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -1647,7 +1647,7 @@
   "totals": {
     "files": 15,
     "lines": 8587,
-    "words": 247274,
+    "words": 247281,
     "headings": 408,
     "nodes": 380,
     "theme_nodes": 260,
@@ -8606,14 +8606,12 @@
         "p11-u0006",
         "p11-u0024",
         "p11-u0025",
-        "p11-u0026",
-        "r-u0004"
+        "p11-u0026"
       ],
       "occurrence_count": 15,
       "relation_degree": 0,
       "chapter_id": "ch33",
       "parts_present": [
-        "R",
         "LIM",
         "P02",
         "P08",
@@ -18062,13 +18060,11 @@
         "p11-u0006",
         "p11-u0024",
         "p11-u0025",
-        "p11-u0026",
-        "r-u0004"
+        "p11-u0026"
       ],
       "occurrence_count": 15,
       "relation_degree": 0,
       "parts_present": [
-        "R",
         "LIM",
         "P02",
         "P08",
@@ -59714,12 +59710,14 @@
         "p02-u0019",
         "p11-u0006",
         "p11-u0007",
-        "p11-u0012"
+        "p11-u0012",
+        "r-u0004"
       ],
       "occurrence_count": 5,
       "relation_degree": 3,
       "owner_chapter": "ch31",
       "parts_present": [
+        "R",
         "P02",
         "P11",
         "ANN"
@@ -62014,14 +62012,12 @@
         "p02-u0012",
         "p11-u0006",
         "p11-u0024",
-        "p11-u0026",
-        "r-u0004"
+        "p11-u0026"
       ],
       "occurrence_count": 5,
       "relation_degree": 7,
       "owner_chapter": "ch33",
       "parts_present": [
-        "R",
         "P02",
         "P11",
         "ANN"
@@ -68003,7 +67999,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "LIM",
         "P01",
         "P02",
@@ -68028,7 +68023,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P03",
         "P06",
@@ -68620,7 +68614,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P09",
         "P11",
@@ -68894,6 +68887,7 @@
       ],
       "weight": 1,
       "parts": [
+        "R",
         "P02",
         "P09",
         "P11",
@@ -77585,6 +77579,7 @@
       ],
       "weight": 1,
       "parts": [
+        "R",
         "P02",
         "P10",
         "P11",
@@ -77608,6 +77603,7 @@
       ],
       "weight": 1,
       "parts": [
+        "R",
         "P02",
         "P11",
         "P12",
@@ -79712,7 +79708,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "LIM",
         "P02",
         "P11",
@@ -80544,7 +80539,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P11",
         "ANN"
@@ -80567,7 +80561,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P11",
         "ANN"
@@ -88668,17 +88661,17 @@
       ],
       "top_node_ids": [
         "THM_trajectoires-adaptatives-dapp",
-        "THM_atrophie-competences-humaines"
+        "THM_priorites-90-jours-gouvernance"
       ],
       "sample_identifiers": [
-        "ADR-025",
-        "BoC-SAP-2026-22",
-        "Brynjolfsson",
-        "CAP-048",
+        "BSIF E-23",
         "DAPP",
         "DOI:10.1007/978-3-030-05252-2_4",
-        "Dir. 2019/882",
-        "EU AI Act art. 14"
+        "H1",
+        "H4",
+        "H5",
+        "H6",
+        "INI-001"
       ]
     },
     {
@@ -101889,7 +101882,7 @@
   },
   "structure": {
     "schema_version": "2.0.0",
-    "generated_at": "2026-11-26T14:01:45.275354+00:00",
+    "generated_at": "2026-11-26T15:09:04.277687+00:00",
     "generator": "Sources/Cartographie/outils/extraire_structure.py",
     "totals": {
       "files": 15,
@@ -101898,7 +101891,7 @@
       "compendium_lines": 8532,
       "compendium_headings": 403,
       "lines": 8587,
-      "words": 247274,
+      "words": 247281,
       "headings": 408,
       "headings_by_level": {
         "H1": 15,
@@ -101921,7 +101914,7 @@
         "line_start": 1,
         "line_end": 55,
         "line_count": 55,
-        "word_count": 756,
+        "word_count": 763,
         "reading_minutes": 3,
         "pdf_page_start": null,
         "pdf_page_end": null,
@@ -101965,7 +101958,7 @@
             "title": "Compendium de l'entreprise agentique",
             "line_start": 1,
             "line_end": 55,
-            "word_count": 756,
+            "word_count": 763,
             "own_word_count": 86,
             "reading_minutes": 3,
             "pdf_page_start": null,
@@ -102025,13 +102018,13 @@
                 "title": "Architecture et périmètre de l'ouvrage",
                 "line_start": 18,
                 "line_end": 26,
-                "word_count": 168,
-                "own_word_count": 168,
+                "word_count": 175,
+                "own_word_count": 175,
                 "reading_minutes": 1,
                 "pdf_page_start": null,
                 "pdf_page_end": null,
                 "guiding_question": null,
-                "excerpt": "**Liminaire et `12` parties (`D01`–`D12`)** : `36` chapitres (`ch01`–`ch36`) sans chevauchement conceptuel, couvrant `71` familles et `260` thèmes structurés dans la MindMap HTML. **`5` annexes déterministes (`A`–`E`)** : traçabilité `MindMap → PRD`, cartographie des `616` interrelations et arbitrages, réconciliations inter-tomes (`DIV-02`, `DISC-01`–`DISC-05`) et calendrier `2023–2035` (`77` jalons uniques après déduplication des `9` doublons), bilan…",
+                "excerpt": "**Liminaire et `12` parties (`D01`–`D12`)** : `36` chapitres (`ch01`–`ch36`) sans chevauchement conceptuel, couvrant `71` familles et `260` thèmes structurés dans la MindMap HTML. **`5` annexes déterministes (`A`–`E`)** : traçabilité thématique `MindMap` et socle probatoire (`Annexe A`), cartographie des `616` interrelations et arbitrages, réconciliations inter-tomes (`DIV-02`, `DISC-01`–`DISC-05`) et calendrier `2018–2035` (noyau réglementaire…",
                 "part_title": null,
                 "compendium_unit_id": null,
                 "source_file": null,

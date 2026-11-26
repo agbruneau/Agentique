@@ -5,7 +5,7 @@ Index des 8 diagrammes extraits et reconstruits depuis `Tome 5 - Synthèse exéc
 - **Total des diagrammes** : 8
 - **PlantUML (`.puml`)** : 8 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 0
-- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 5` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
+- **Compilation** : `python -B Sources/gabarit-pdf/compile_diagrams.py --volume 5` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

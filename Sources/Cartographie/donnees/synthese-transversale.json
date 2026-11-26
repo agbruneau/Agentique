@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-11-26T14:01:56Z",
+  "generated_at": "2026-11-26T15:09:18Z",
   "lang": "fr-CA",
   "generator": "Sources/Cartographie/outils/synthetiser_graphe.py",
   "totals": {
@@ -7014,14 +7014,12 @@
         "p11-u0006",
         "p11-u0024",
         "p11-u0025",
-        "p11-u0026",
-        "r-u0004"
+        "p11-u0026"
       ],
       "occurrence_count": 15,
       "relation_degree": 0,
       "chapter_id": "ch33",
       "parts_present": [
-        "R",
         "LIM",
         "P02",
         "P08",
@@ -16470,13 +16468,11 @@
         "p11-u0006",
         "p11-u0024",
         "p11-u0025",
-        "p11-u0026",
-        "r-u0004"
+        "p11-u0026"
       ],
       "occurrence_count": 15,
       "relation_degree": 0,
       "parts_present": [
-        "R",
         "LIM",
         "P02",
         "P08",
@@ -58122,12 +58118,14 @@
         "p02-u0019",
         "p11-u0006",
         "p11-u0007",
-        "p11-u0012"
+        "p11-u0012",
+        "r-u0004"
       ],
       "occurrence_count": 5,
       "relation_degree": 3,
       "owner_chapter": "ch31",
       "parts_present": [
+        "R",
         "P02",
         "P11",
         "ANN"
@@ -60422,14 +60420,12 @@
         "p02-u0012",
         "p11-u0006",
         "p11-u0024",
-        "p11-u0026",
-        "r-u0004"
+        "p11-u0026"
       ],
       "occurrence_count": 5,
       "relation_degree": 7,
       "owner_chapter": "ch33",
       "parts_present": [
-        "R",
         "P02",
         "P11",
         "ANN"
@@ -66411,7 +66407,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "LIM",
         "P01",
         "P02",
@@ -66436,7 +66431,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P03",
         "P06",
@@ -67028,7 +67022,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P09",
         "P11",
@@ -67302,6 +67295,7 @@
       ],
       "weight": 1,
       "parts": [
+        "R",
         "P02",
         "P09",
         "P11",
@@ -75993,6 +75987,7 @@
       ],
       "weight": 1,
       "parts": [
+        "R",
         "P02",
         "P10",
         "P11",
@@ -76016,6 +76011,7 @@
       ],
       "weight": 1,
       "parts": [
+        "R",
         "P02",
         "P11",
         "P12",
@@ -78120,7 +78116,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "LIM",
         "P02",
         "P11",
@@ -78952,7 +78947,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P11",
         "ANN"
@@ -78975,7 +78969,6 @@
       ],
       "weight": 1,
       "parts": [
-        "R",
         "P02",
         "P11",
         "ANN"
@@ -87076,17 +87069,17 @@
       ],
       "top_node_ids": [
         "THM_trajectoires-adaptatives-dapp",
-        "THM_atrophie-competences-humaines"
+        "THM_priorites-90-jours-gouvernance"
       ],
       "sample_identifiers": [
-        "ADR-025",
-        "BoC-SAP-2026-22",
-        "Brynjolfsson",
-        "CAP-048",
+        "BSIF E-23",
         "DAPP",
         "DOI:10.1007/978-3-030-05252-2_4",
-        "Dir. 2019/882",
-        "EU AI Act art. 14"
+        "H1",
+        "H4",
+        "H5",
+        "H6",
+        "INI-001"
       ]
     },
     {

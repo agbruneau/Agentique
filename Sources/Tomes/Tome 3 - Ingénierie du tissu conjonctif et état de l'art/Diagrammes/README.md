@@ -5,7 +5,7 @@ Index des 68 diagrammes extraits et reconstruits depuis `Tome 3 - Ingénierie du
 - **Total des diagrammes** : 68
 - **PlantUML (`.puml`)** : 68 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 0
-- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 3` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
+- **Compilation** : `python -B Sources/gabarit-pdf/compile_diagrams.py --volume 3` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

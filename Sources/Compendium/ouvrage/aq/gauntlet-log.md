@@ -1,6 +1,6 @@
 # Journal d'homologation `G4` (`gauntlet-loop` à l'aveugle)
 
-- **Barre nommée, récupérable et comparable :** [Compendium/prd.md](file:///c:/Github/Agentique/Compendium/prd.md) (§ 1–5 *Sommaire exécutif global*, référentiels `01.2` / `36.2` et descriptifs ciblés par chapitre)
+- **Barre nommée, récupérable et comparable :** `Compendium/prd.md` *(étalon historique archivé hors dépôt)* (§ 1–5 *Sommaire exécutif global*, référentiels `01.2` / `36.2` et descriptifs ciblés par chapitre)
 - **Protocole d'étanchéité (`AO-07`, `CA-15`) :** exécution intégrale hors tableau `swarm` via `invoke_subagent` ; critiques `research` neufs à chaque tour sans accès aux chemins sources, à `manifest.json` ni aux journaux des bâtisseurs ; comparaison binaire forcée (`A` ou `B`) en ordre alterné puis inversé au Tour 2.
 - **Plafond budgétaire et arrêt :** convergence atteinte en `2` tours (`37/37` au Tour 1 ; `20/20` en ordre inversé au Tour 2).
 

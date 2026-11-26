@@ -5,7 +5,7 @@ Index des 6 diagrammes extraits et reconstruits depuis `Tome 4 - Prospective str
 - **Total des diagrammes** : 6
 - **PlantUML (`.puml`)** : 6 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 0
-- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 4` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
+- **Compilation** : `python -B Sources/gabarit-pdf/compile_diagrams.py --volume 4` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

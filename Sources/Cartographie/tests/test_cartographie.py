@@ -431,7 +431,7 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
 
 
 def test_markdown_relative_links_valid() -> None:
-    md_files = [
+    top_readmes = [
         REPO_ROOT / "README.md",
         REPO_ROOT / "Compendium" / "README.md",
         REPO_ROOT / "Tomes" / "README.md",
@@ -441,10 +441,18 @@ def test_markdown_relative_links_valid() -> None:
         CARTO_DIR / "README.md",
         REPO_ROOT / "Sources" / "gabarit-pdf" / "README.md",
     ]
+    all_readmes = sorted(REPO_ROOT.rglob("README.md"))
+    assert len(all_readmes) >= len(top_readmes)
+
     link_re = re.compile(r"\[[^\]]+\]\(([^)#]+)(?:#[^)]*)?\)")
-    for md_path in md_files:
+    top_set = set(top_readmes)
+    for md_path in all_readmes:
         assert md_path.is_file()
-        content = md_path.read_text(encoding="utf-8")
+        raw_bytes = md_path.read_bytes()
+        assert not raw_bytes.startswith(b"\xef\xbb\xbf"), f"BOM UTF-8 détecté dans {md_path}"
+        assert b"\r\n" not in raw_bytes, f"Fins de ligne CRLF détectées dans {md_path}"
+
+        content = raw_bytes.decode("utf-8")
         checked = 0
         for raw_target in link_re.findall(content):
             if raw_target.startswith(("http://", "https://", "mailto:")):
@@ -452,7 +460,8 @@ def test_markdown_relative_links_valid() -> None:
             target_path = (md_path.parent / unquote(raw_target)).resolve()
             assert target_path.exists(), f"Lien cassé dans {md_path}: {raw_target}"
             checked += 1
-        assert checked >= 2
+        if md_path in top_set:
+            assert checked >= 2
 
 
 # ---------------------------------------------------------------------------

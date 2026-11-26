@@ -60,3 +60,12 @@ Toutes les `834` pages de `Compendium.pdf` recompilé à l'issue de la campagne 
 ## 4. Verdict de clôture
 
 Le Compendium satisfait intégralement aux critères éditoriaux, normatifs, visuels et d'autonomie documentaire (`CA-01` à `CA-22`, `G0`–`G5`) : **0 défaut bloquant** sur les `834` pages PDF, le HTML autonome, le Markdown consolidé et les `115` schémas.
+
+---
+
+## 5. Actualisation de consolidation finale (post-audit et stabilisation de la release)
+
+- **Livrables finaux publiés (`Compendium/`)** : `Compendium/Compendium.pdf` (`852` pages physiques, `23 733 259` octets) et `Compendium/Compendium.md` (`1 906 515` octets, `8 532` lignes, `246 518` mots).
+- **Retrait de `Compendium.html` et de l'écosystème PRD (`prd.md`, `PRD Web`)** : remplacés par l'application autonome 4 vues `Sources/Cartographie/MindMap - Cartographie thématique du Compendium.html` fonctionnant hors ligne sous `file://`.
+- **Déduplication chronologique** : suppression des `9` doublons portant la chronologie consolidée à `77` jalons uniques (`2018–2035`, noyau réglementaire `2023–2035`).
+- **Conformité mécanique vérifiée** : `verifie_specs.py` et `verifie_manuscrit.py --strict --check-deliverables` passent avec `0` erreur et `43/43` tests `pytest` réussissent.

@@ -5,7 +5,7 @@ Index des 28 diagrammes extraits et reconstruits depuis `Tome 2 - Cadre normatif
 - **Total des diagrammes** : 28
 - **PlantUML (`.puml`)** : 25 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 3 (rendus haute résolution `.png` dans `rendus/`)
-- **Compilation** : `python Sources/gabarit-pdf/compile_diagrams.py --volume 2` (génère `rendus/Figure-XX.svg` / `.png` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
+- **Compilation** : `python -B Sources/gabarit-pdf/compile_diagrams.py --volume 2` (génère `rendus/Figure-XX.svg` / `.png` injectés dans le PDF unifié via [`Sources/gabarit-pdf/`](../../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

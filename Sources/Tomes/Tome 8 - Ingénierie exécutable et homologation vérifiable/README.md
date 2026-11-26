@@ -2,7 +2,7 @@
 
 *Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
 
-[Retour à l'index principal du dépôt](../../../README.md) · [Compendium](../../../Compendium/README.md) · [PRD maître](../../Compendium/prd.md) · [Sources des tomes (`Sources/Tomes/`)](../README.md) · [Tomes publiés (`Tomes/`)](../../../Tomes/README.md) · [Composants sources (`Sources/`)](../../README.md) · [Trousse logicielle exécutable (`trousse/`)](trousse/README.md)
+[Retour à l'index principal du dépôt](../../../README.md) · [Compendium](../../../Compendium/README.md) · [MindMap HTML](../../Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) · [Sources des tomes (`Sources/Tomes/`)](../README.md) · [Tomes publiés (`Tomes/`)](../../../Tomes/README.md) · [Composants sources (`Sources/`)](../../README.md) · [Trousse logicielle exécutable (`trousse/`)](trousse/README.md)
 
 > **État actuel** : **Ouvrage livré et vérifié (`v1.0`)** — Auteur : **André-Guy Bruneau, M.Sc IT**; gel des faits : **2 décembre 2026** (`2026-12-02`); édition de référence : **janvier 2027** (horizon `2026–2035`); licences `CC-BY-4.0` (texte et figures) et `MIT` (`trousse/` et outillage `outils/`).
 >
