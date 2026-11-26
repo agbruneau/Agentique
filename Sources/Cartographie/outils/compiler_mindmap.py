@@ -16,11 +16,11 @@ Produit :
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from datetime import datetime, timezone
 import json
 from pathlib import Path
 import re
-import sys
 from typing import Any, Callable
 
 PAGE_TITLE = "MindMap — Cartographie thématique du Compendium Agentique"
@@ -28,6 +28,18 @@ TOME_ORDER: dict[str, int] = {
     "R": 0, "LIM": 1, "P01": 2, "P02": 3, "P03": 4, "P04": 5, "P05": 6,
     "P06": 7, "P07": 8, "P08": 9, "P09": 10, "P10": 11, "P11": 12, "P12": 13, "ANN": 14,
     "T1": 21, "T2": 22, "T3": 23, "T4": 24, "T5": 25, "T6": 26, "T7": 27, "T8": 28,
+}
+
+TOME_RANK: dict[str, int] = dict(TOME_ORDER)
+
+# Correspondance entre les 6 repères généraux README et les clés canoniques L+
+README_TO_CANONICAL_KEYS: dict[str, list[str]] = {
+    "Depuis sept. 2023": ["2026-LOI25-ART12-1"],
+    "Depuis août 2026": ["2026-08-02-EU-AI-ACT-ART50"],
+    "Mars 2027 → Mars 2029": ["2027-03-15-TLS-100J", "2029-03-15-TLS-47J"],
+    "1er mai 2027": ["2027-05-01-BSIF-E23-AMF"],
+    "2027–2028": ["2027-12-02-EU-AI-ACT-ANNEXE-III", "2028-08-02-EU-AI-ACT-ANNEXE-I"],
+    "2030–2035": ["2030-2035-G7-PQC-FINANCE"],
 }
 
 
@@ -226,6 +238,351 @@ def escape_json_for_script(json_str: str) -> str:
     )
 
 
+def _clean_text(value: Any) -> str:
+    """Supprime ``\\$``, normalise plages ``Lxxx–Lyyy``, flèches, comparateurs et « Systèmes d'agentivité » hors code."""
+    s = str(value or "").replace(r"\$", "$").strip()
+    s = re.sub(r"\bL([1-9]\d*)-L?([1-9]\d*)\b", r"L\1–L\2", s)
+
+    def _clean_outside_code(seg: str) -> str:
+        chunks = re.split(r"(<code\b[^>]*>.*?</code>)", seg, flags=re.IGNORECASE | re.DOTALL)
+        for idx in range(0, len(chunks), 2):
+            part = chunks[idx]
+            part = part.replace("<->", "↔").replace("->", "→")
+            part = (
+                part.replace("Systems of Agency", "Systèmes d'agentivité")
+                .replace("System of Agency", "Système d'agentivité")
+                .replace("systems of agency", "systèmes d'agentivité")
+            )
+            part = re.sub(r"(?<![<>=])<=(?!=)", "≤", part)
+            part = re.sub(r"(?<![<>=])>=(?!=)", "≥", part)
+            chunks[idx] = part
+        return "".join(chunks)
+
+    return map_outside_inline_code(s, _clean_outside_code)
+
+
+def _timeline_sort_key(date_str: str, tier: int, cadre: str) -> tuple[int, int, str]:
+    """Clé de tri chronologique déterministe 2018 → 2035 pour la chronologie maîtresse."""
+    s = date_str.strip()
+    if s.startswith("Immédiat"):
+        return (20261124, tier, cadre)
+    if s.startswith("2027 —"):
+        return (20270900, tier, cadre)
+    if s.startswith("Fin 2027"):
+        return (20271230, tier, cadre)
+    if s.startswith("Fin 2028"):
+        return (20281231, tier, cadre)
+    if s.startswith("2028–2029"):
+        return (20280100, tier, cadre)
+    if s.startswith("2030–2032"):
+        return (20300100, tier, cadre)
+    if s.startswith("2030–2035"):
+        return (20300101, tier, cadre)
+    if s.startswith("2033–2035"):
+        return (20330100, tier, cadre)
+    m_full = re.search(r"(\d{4})-(\d{2})-(\d{2})", s)
+    if m_full:
+        return (int(m_full.group(1)) * 10000 + int(m_full.group(2)) * 100 + int(m_full.group(3)), tier, cadre)
+    m_ym = re.search(r"(\d{4})-(\d{2})", s)
+    if m_ym:
+        return (int(m_ym.group(1)) * 10000 + int(m_ym.group(2)) * 100 + 2, tier, cadre)
+    m_y = re.search(r"(\d{4})", s)
+    if m_y:
+        return (int(m_y.group(1)) * 10000 + 101, tier, cadre)
+    return (99999999, tier, cadre)
+
+
+def _format_dapp_date(horizon: str, phase: str) -> str:
+    """Formate une phase DAPP sans parenthèses doubles imbriquées."""
+    h = _clean_text(horizon)
+    p = _clean_text(phase)
+    if " : " in p:
+        left, right = p.split(" : ", 1)
+        left_clean = left.replace(" — ", " · ").strip()
+        p_fmt = f"{left_clean} ({right.strip()})"
+    else:
+        p_fmt = p.replace("(", "").replace(")", "").strip()
+    return f"{h} — {p_fmt}" if h else p_fmt
+
+
+def _build_consolidated_timeline(raw_pivots: dict[str, Any], pivots: dict[str, Any]) -> list[dict[str, Any]]:
+    """Construit la chronologie maîtresse dédupliquée et triée chronologiquement (2018 → 2035)."""
+    chrono = raw_pivots.get("chronologie_2023_2035") or {}
+    if not chrono:
+        tl = list(pivots.get("timeline") or [])
+        return sorted(tl, key=lambda e: _timeline_sort_key(e.get("date", ""), 1, e.get("cadre", "")))
+
+    merged_by_key: dict[str, dict[str, Any]] = {}
+    alias_to_entry: dict[str, dict[str, Any]] = {}
+
+    def register_aliases(anc: dict[str, Any], primary_key: str, entry: dict[str, Any]) -> None:
+        alias_to_entry[primary_key] = entry
+        for al in anc.get("aliases") or []:
+            if al:
+                alias_to_entry.setdefault(str(al), entry)
+
+    def upsert_l_plus(anc: dict[str, Any], origin_tag: str) -> None:
+        key = anc["key"]
+        date_val = "2026-08-02" if anc.get("date") == "2026-08" else _clean_text(anc.get("date", ""))
+        cadre = f"{_clean_text(anc.get('label', ''))} ({_clean_text(anc.get('jurisdiction', ''))})"
+        impact = _clean_text(anc.get("commentaire_annexe") or anc.get("nature", ""))
+        file_path = anc.get("compendium_file") or "Compendium/Compendium.md"
+        line_start = int(anc.get("compendium_line_start") or 7434)
+        chaps = list(anc.get("chapters") or [])
+        part_tags = [origin_tag] if not chaps else chaps[:4]
+        if key not in merged_by_key:
+            merged_by_key[key] = {
+                "date": date_val,
+                "cadre": cadre,
+                "impact_parts": [impact] if impact else [],
+                "tomes": list(dict.fromkeys(part_tags)),
+                "file": file_path,
+                "line_start": line_start,
+                "source_group": f"Compendium Annexe C ({origin_tag})",
+                "_tier": 0,
+            }
+        else:
+            entry = merged_by_key[key]
+            for pt in part_tags:
+                if pt not in entry["tomes"]:
+                    entry["tomes"].append(pt)
+            if impact and impact not in entry["impact_parts"]:
+                entry["impact_parts"].append(impact)
+        register_aliases(anc, key, merged_by_key[key])
+
+    for anc in chrono.get("ancres_t7_l_plus", []):
+        upsert_l_plus(anc, "L+ T7/Compendium")
+    for anc in chrono.get("ancres_t8_l_plus", []):
+        upsert_l_plus(anc, "L+ T8/Compendium")
+
+    t4_items: list[dict[str, Any]] = []
+    for anc in chrono.get("ancres_t4_67", []):
+        ch_list = anc.get("chapters") or ["ch25"]
+        impact = _clean_text(anc.get("enonce", ""))
+        t4_entry = {
+            "date": _clean_text(anc.get("echeance", "")),
+            "cadre": f"{anc.get('id', '')} · {_clean_text(anc.get('juridiction', ''))} ({_clean_text(anc.get('axe', ''))})",
+            "impact_parts": [impact] if impact else [],
+            "tomes": list(dict.fromkeys(ch_list[:4])),
+            "file": anc.get("compendium_file") or "Compendium/Compendium.md",
+            "line_start": int(anc.get("compendium_line_start") or 7434),
+            "source_group": "Compendium Annexe C (Ch. 25–26, 31)",
+            "_tier": 2,
+        }
+        t4_items.append(t4_entry)
+        register_aliases(anc, str(anc.get("id", "")), t4_entry)
+
+    for rep in chrono.get("six_reperes_readme", []):
+        ech = _clean_text(rep.get("echeance", ""))
+        target_keys = README_TO_CANONICAL_KEYS.get(ech, [])
+        rep_resume = _clean_text(rep.get("resume", ""))
+        matched = False
+        for tk in target_keys:
+            target_entry = alias_to_entry.get(tk)
+            if target_entry is not None:
+                matched = True
+                if "LIM" not in target_entry["tomes"]:
+                    target_entry["tomes"].append("LIM")
+                if rep_resume and rep_resume[:45] not in " ".join(target_entry["impact_parts"]):
+                    target_entry["impact_parts"].append(rep_resume)
+        if not matched:
+            merged_by_key[f"README-{ech}"] = {
+                "date": ech,
+                "cadre": _clean_text(rep.get("cadre", "")),
+                "impact_parts": [rep_resume] if rep_resume else [],
+                "tomes": ["LIM", "ANN"],
+                "file": "Compendium/Compendium.md",
+                "line_start": 165,
+                "source_group": "Repères clés (§ 0.5 / Annexe C)",
+                "_tier": 0,
+            }
+
+    events: list[dict[str, Any]] = []
+    for item in [*merged_by_key.values(), *t4_items]:
+        tomes_sorted = sorted(item["tomes"], key=lambda t: (TOME_RANK.get(t, 99), str(t)))
+        impact_str = " · ".join(item["impact_parts"][:2])
+        events.append(
+            {
+                "date": item["date"],
+                "cadre": item["cadre"],
+                "impact": impact_str,
+                "tomes": tomes_sorted,
+                "file": item["file"],
+                "line_start": item["line_start"],
+                "source_group": item["source_group"],
+                "_tier": item["_tier"],
+            }
+        )
+
+    for pal in chrono.get("rampe_et_paliers_dapp_t5", []):
+        events.append(
+            {
+                "date": _format_dapp_date(pal.get("horizon", ""), pal.get("phase", "")),
+                "cadre": f"DAPP · {_clean_text(pal.get('stade', ''))}",
+                "impact": _clean_text(pal.get("jalons", "")),
+                "tomes": ["ch31", "ch32"],
+                "file": pal.get("compendium_file") or "Compendium/Compendium.md",
+                "line_start": int(pal.get("compendium_line_start") or 5091),
+                "source_group": "Trajectoire DAPP (Ch. 31 / Annexe C)",
+                "_tier": 1,
+            }
+        )
+
+    events.sort(key=lambda e: _timeline_sort_key(e["date"], e.pop("_tier"), e["cadre"]))
+    return events
+
+
+def _build_unified_matrix(
+    raw_pivots: dict[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
+    """Construit la matrice unifiée dédupliquée (237 entrées uniques, 0 ID en double)."""
+    raw_mat = raw_pivots.get("matrices") or {}
+    t8_exec = raw_mat.get("tome8_executable") or {}
+    m95 = t8_exec.get("matrice_exig_prr_c40_95") or []
+    t8_by_id: dict[str, dict[str, Any]] = {row["id"]: row for row in m95 if row.get("id")}
+
+    unified: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+
+    def add_entry(entry: dict[str, Any]) -> None:
+        eid = entry["id"]
+        if eid in seen_ids:
+            raise ValueError(f"Identifiant dupliqué dans la matrice unifiée : {eid}")
+        seen_ids.add(eid)
+        unified.append(entry)
+
+    for sbb in t8_exec.get("cinq_sbb_tableau_12") or []:
+        sid = sbb.get("sbb_id", "")
+        t8_row = t8_by_id.get(sid)
+        t8_ref = f" · `{t8_row['pytest_nodeid']}`" if t8_row and t8_row.get("pytest_nodeid") else ""
+        add_entry(
+            {
+                "id": sid,
+                "family": f"5 SBB ({sbb.get('plan', '')})",
+                "title": f"{_clean_text(sbb.get('slot', ''))}{t8_ref}",
+                "module": _clean_text(sbb.get("module_t8", "")),
+                "anchor": t8_row.get("corpus_anchor", "T2 Tableau 12 / T8 Annexe B") if t8_row else "T2 Tableau 12 / T8 Annexe B",
+            }
+        )
+
+    prr = raw_mat.get("prr_75") or {}
+    for item in prr.get("items") or []:
+        pid = item.get("prr_id", "")
+        t8_row = t8_by_id.get(pid)
+        proof = _clean_text(item.get("artefact_preuve", ""))
+        anchor = f"Grille {item.get('grid', '')}"
+        if t8_row:
+            test_sym = t8_row.get("pytest_nodeid") or t8_row.get("rego_rule") or ""
+            mod = f"{t8_row.get('trousse_module', '')}.{t8_row.get('implementation_symbol', '')}".strip(".")
+            proof = f"{proof} · Test Tome 8 : `{test_sym}` (`{mod}`)" if test_sym else proof
+            if t8_row.get("corpus_anchor"):
+                anchor = f"{anchor} · {_clean_text(t8_row['corpus_anchor'])}"
+        add_entry(
+            {
+                "id": pid,
+                "family": f"PRR-75 ({_clean_text(item.get('criticite', ''))})",
+                "title": _clean_text(item.get("point_controle", "")),
+                "module": proof,
+                "anchor": anchor,
+            }
+        )
+
+    for row in m95:
+        if row.get("family") == "C40":
+            add_entry(
+                {
+                    "id": row["id"],
+                    "family": f"C40 ({row.get('criticality', '')})",
+                    "title": _clean_text(row.get("pytest_nodeid") or row.get("rego_rule") or ""),
+                    "module": f"{row.get('trousse_module', '')}.{row.get('implementation_symbol', '')}".strip("."),
+                    "anchor": _clean_text(row.get("corpus_anchor", "")),
+                }
+            )
+
+    for cap in raw_mat.get("cap_52") or []:
+        cid = cap.get("cap_id", "")
+        exigs = ", ".join(cap.get("exigences_cad26", [])[:6])
+        mod = exigs or _clean_text(cap.get("type_rattachement_cad26", ""))
+        t8_row = t8_by_id.get(cid)
+        anchor = _clean_text(cap.get("emplacement", ""))
+        if t8_row:
+            mod = f"{mod} · Test Tome 8 : `{t8_row.get('pytest_nodeid', '')}`"
+            anchor = f"{anchor} · {_clean_text(t8_row.get('corpus_anchor', ''))}"
+        add_entry(
+            {
+                "id": cid,
+                "family": f"CAP ({_clean_text(cap.get('statut', ''))} · {_clean_text(cap.get('palier', ''))})",
+                "title": _clean_text(cap.get("nom") or cap.get("intitule_condense", "")),
+                "module": mod,
+                "anchor": anchor,
+            }
+        )
+
+    for pex in raw_mat.get("pex_24") or []:
+        add_entry(
+            {
+                "id": pex.get("pex_id", ""),
+                "family": f"PEX ({_clean_text(pex.get('sous_secteur', ''))})",
+                "title": _clean_text(pex.get("titre", "")),
+                "module": ", ".join(pex.get("exigences_cad26", [])[:5]),
+                "anchor": _clean_text(pex.get("chapitre_t4", "")),
+            }
+        )
+
+    for row in m95:
+        if row.get("family") in ("EXIG", "ADR_TEMPLATE"):
+            add_entry(
+                {
+                    "id": row["id"],
+                    "family": f"{row['family']} ({row.get('criticality', '')})",
+                    "title": _clean_text(row.get("pytest_nodeid") or row.get("rego_rule") or ""),
+                    "module": f"{row.get('trousse_module', '')}.{row.get('implementation_symbol', '')}".strip("."),
+                    "anchor": _clean_text(row.get("corpus_anchor", "")),
+                }
+            )
+
+    exig_meta = raw_mat.get("exig_cre_ia_2026_v1_2") or {}
+    for fam in exig_meta.get("familles") or []:
+        if isinstance(fam, dict):
+            add_entry(
+                {
+                    "id": fam.get("prefixe") or fam.get("code", ""),
+                    "family": "CRE-IA-2026-01 (Famille EXIG)",
+                    "title": _clean_text(fam.get("titre") or fam.get("domaine") or ""),
+                    "module": f"{fam.get('nombre', fam.get('count', ''))} exigences",
+                    "anchor": "T2 Annexe D / T5 Annexe A",
+                }
+            )
+
+    fam_buckets: dict[str, list[dict[str, Any]]] = {}
+    subfam_counts: Counter[str] = Counter()
+    for item in unified:
+        fam_full = str(item.get("family") or "Autre")
+        fam_top = fam_full.split(" (")[0].strip()
+        fam_buckets.setdefault(fam_top, []).append(item)
+        subfam_counts[fam_full] += 1
+
+    matrix_distribution = [
+        {
+            "family": fam_top,
+            "count": len(fam_buckets[fam_top]),
+            "subfamilies": [
+                {"name": sf, "count": cnt}
+                for sf, cnt in sorted(subfam_counts.items())
+                if sf.split(" (")[0].strip() == fam_top
+            ],
+        }
+        for fam_top in sorted(fam_buckets, key=lambda k: (-len(fam_buckets[k]), k))
+    ]
+
+    summary_counts = {
+        "unique_entries": len(unified),
+        "tome8_executable_tests": len(m95),
+        "shared_ids_merged": len(m95) + 5 + len(prr.get("items") or []) + len(raw_mat.get("cap_52") or []) + len(raw_mat.get("pex_24") or []) + len(exig_meta.get("familles") or []) - len(unified),
+    }
+    return unified, matrix_distribution, summary_counts
+
+
 def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
     """Normalise les pivots de concordance pour les 4 sous-onglets de la Vue 4."""
     disc_block = raw_pivots.get("discordances_resolues") or {}
@@ -271,14 +628,6 @@ def normalize_pivots(raw_pivots: dict[str, Any]) -> dict[str, Any]:
     raw_mat = raw_pivots.get("matrices") or {}
 
     if raw_tl and raw_mat:
-        tools_str = str(Path(__file__).resolve().parent)
-        if tools_str not in sys.path:
-            sys.path.insert(0, tools_str)
-        from preparer_donnees_prd_web import (  # noqa: E402
-            _build_consolidated_timeline,
-            _build_unified_matrix,
-        )
-
         tl_unified = _build_consolidated_timeline(raw_pivots, {"timeline": []})
         timeline = [
             {
@@ -536,13 +885,6 @@ def compile_mindmap(repo_root: Path) -> tuple[Path, Path, dict[str, Any]]:
 
     bundle = build_mindmap_bundle(schema, structure, pivots, synthese)
 
-    outils_str = str(outils_dir)
-    if outils_str not in sys.path:
-        sys.path.insert(0, outils_str)
-    from preparer_donnees_prd_web import build_prd_web_payload  # noqa: E402
-
-    bundle["prd"] = build_prd_web_payload(repo_root, bundle=bundle)
-
     data_out = donnees_dir / "corpus-mindmap-data.json"
     data_out.write_text(
         json.dumps(bundle, ensure_ascii=False, indent=2) + "\n",
@@ -598,14 +940,12 @@ def main() -> int:
 
     data_out, html_out, bundle = compile_mindmap(args.repo_root.resolve())
     t = bundle["totals"]
-    prd_c = len((bundle.get("prd") or {}).get("chapters") or [])
     print(
         f"Compilation réussie : {t['theme_nodes']} thèmes ({t['nodes']} nœuds), "
         f"{t['relations']} interrelations, {t['headings']} titres H1–H6, "
         f"{len(bundle['pivots']['reconciliations'])} discordances, "
         f"{len(bundle['pivots']['timeline'])} jalons, "
-        f"{len(bundle['pivots']['traceability_matrix'])} entrées traçabilité, "
-        f"{prd_c} chapitres PRD -> "
+        f"{len(bundle['pivots']['traceability_matrix'])} entrées traçabilité -> "
         f"{data_out} & {html_out} ({html_out.stat().st_size} octets)"
     )
     return 0

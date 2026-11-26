@@ -124,28 +124,25 @@
       padding: 1px 5px;
     }
 
-    .inspector-body, .struct-list-pane, .prd-toc-list, .prd-reader, .matrix-view,
+    .inspector-body, .struct-list-pane, .matrix-view,
     .search-dropdown, .path-results, .table-wrap {
       overscroll-behavior: contain;
       scrollbar-width: thin;
       scrollbar-color: var(--border-strong) transparent;
     }
     .inspector-body::-webkit-scrollbar, .struct-list-pane::-webkit-scrollbar,
-    .prd-toc-list::-webkit-scrollbar, .prd-reader::-webkit-scrollbar,
     .matrix-view::-webkit-scrollbar, .search-dropdown::-webkit-scrollbar,
     .path-results::-webkit-scrollbar, .table-wrap::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     .inspector-body::-webkit-scrollbar-thumb, .struct-list-pane::-webkit-scrollbar-thumb,
-    .prd-toc-list::-webkit-scrollbar-thumb, .prd-reader::-webkit-scrollbar-thumb,
     .matrix-view::-webkit-scrollbar-thumb, .search-dropdown::-webkit-scrollbar-thumb,
     .path-results::-webkit-scrollbar-thumb, .table-wrap::-webkit-scrollbar-thumb {
       background: var(--border-strong);
       border-radius: 999px;
     }
     .inspector-body::-webkit-scrollbar-track, .struct-list-pane::-webkit-scrollbar-track,
-    .prd-toc-list::-webkit-scrollbar-track, .prd-reader::-webkit-scrollbar-track,
     .matrix-view::-webkit-scrollbar-track, .search-dropdown::-webkit-scrollbar-track,
     .path-results::-webkit-scrollbar-track, .table-wrap::-webkit-scrollbar-track {
       background: transparent;
@@ -1402,336 +1399,6 @@
       font-size: 12.5px;
     }
 
-    /* View 5 PRD Maître */
-    .prd-view {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      overflow: hidden;
-    }
-    .prd-toolbar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 6px 12px;
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border-subtle);
-      flex-shrink: 0;
-      min-width: 0;
-    }
-    .prd-body {
-      flex: 1 1 auto;
-      display: flex;
-      min-height: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .prd-toc-pane {
-      width: 320px;
-      max-width: 38%;
-      border-right: 1px solid var(--border-hairline);
-      background: var(--bg-surface);
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      flex-shrink: 0;
-    }
-    .prd-toc-pane.hidden {
-      display: none;
-    }
-    .prd-toc-mobile-head {
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-2);
-      padding: var(--space-2) 10px;
-      border-bottom: 1px solid var(--border-hairline);
-      background: var(--bg-surface-2);
-      font-weight: 700;
-      font-size: 12px;
-      flex-shrink: 0;
-    }
-    .prd-toc-filter-wrap {
-      padding: var(--space-2) 10px;
-      border-bottom: 1px solid var(--border-hairline);
-      background: var(--bg-surface-2);
-      flex-shrink: 0;
-    }
-    .prd-toc-controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-1);
-      margin-top: 6px;
-      flex-wrap: wrap;
-    }
-    .prd-toc-list {
-      flex: 1 1 auto;
-      overflow-y: auto;
-      padding: var(--space-2);
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .prd-toc-group {
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface-2);
-      flex-shrink: 0;
-    }
-    .prd-toc-part-head {
-      display: flex;
-      align-items: flex-start;
-      gap: 4px;
-      padding: 2px;
-    }
-    .prd-toc-part-toggle {
-      width: 22px;
-      height: 22px;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 11px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .prd-toc-part-toggle:hover {
-      background: var(--bg-surface-3);
-      color: var(--text-main);
-    }
-    .prd-toc-part-head .prd-toc-item {
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-    .prd-toc-item {
-      display: block;
-      padding: 5px 8px;
-      font-size: 12px;
-      cursor: pointer;
-      border-radius: 4px;
-      line-height: 1.35;
-      word-break: break-word;
-      flex-shrink: 0;
-    }
-    .prd-toc-item:hover {
-      background: var(--bg-surface-3);
-    }
-    .prd-toc-item.active {
-      background: var(--accent-soft);
-      color: var(--accent-text);
-      font-weight: 650;
-    }
-    .prd-toc-item.prd-dimmed {
-      opacity: 0.45;
-    }
-    .prd-toc-sub {
-      padding-left: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      padding-bottom: 4px;
-    }
-    .prd-toc-sub.collapsed {
-      display: none;
-    }
-    .prd-toc-sub .prd-toc-item {
-      font-size: 11.5px;
-      padding: 3px 6px;
-    }
-    .prd-toc-fam {
-      padding-left: 14px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-    .prd-reader {
-      flex: 1 1 auto;
-      overflow-y: auto;
-      padding: var(--space-4) 28px 44px 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-4);
-      min-width: 0;
-    }
-    .prd-reader > * {
-      width: 100%;
-      max-width: 940px;
-    }
-    .prd-reader p,
-    .prd-reader li {
-      font-size: 15px;
-      line-height: 1.68;
-      text-wrap: pretty;
-      max-width: 72ch;
-    }
-    .prd-reading-nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-2);
-      flex-wrap: wrap;
-      padding: var(--space-2) var(--space-3);
-      background: var(--hud-bg);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid var(--border-hairline);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-    .prd-breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      color: var(--text-muted);
-      min-width: 0;
-    }
-    .prd-breadcrumb strong {
-      color: var(--text-main);
-    }
-    .prd-crumb-link {
-      border: none;
-      background: transparent;
-      padding: 1px 4px;
-      border-radius: 4px;
-      color: var(--accent-text);
-      font-weight: 600;
-      font-size: 12px;
-    }
-    .prd-crumb-link:hover {
-      background: var(--bg-surface-2);
-    }
-    .prd-reading-actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      flex-shrink: 0;
-    }
-    .prd-meta-footer {
-      margin-top: var(--space-3);
-      padding-top: var(--space-2);
-      border-top: 1px solid var(--border-hairline);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .tome-concordance-details {
-      margin-top: var(--space-2);
-      border: 1px solid var(--border-hairline);
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface-2);
-      padding: 6px var(--space-2);
-    }
-    .tome-concordance-details > summary {
-      cursor: pointer;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--text-muted);
-      user-select: none;
-    }
-    .tome-concordance-details[open] > summary {
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-    .prd-hero {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-      box-shadow: var(--shadow-sm);
-    }
-    .prd-hero h1 {
-      margin: 0 0 6px 0;
-      font-size: 20px;
-      line-height: 1.3;
-      letter-spacing: -0.015em;
-    }
-    .prd-section-card h2,
-    .prd-section-card h3,
-    .prd-family-block h4 {
-      letter-spacing: -0.015em;
-    }
-    .tech-tag {
-      display: inline-flex;
-      align-items: center;
-      font-family: var(--font-mono);
-      font-variant-numeric: tabular-nums;
-      font-size: 11px;
-      color: var(--text-subtle);
-      background: var(--bg-surface-2);
-      padding: 1px 6px;
-      border-radius: 4px;
-    }
-    .prd-section-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 16px 18px;
-      box-shadow: var(--shadow-sm);
-      scroll-margin-top: 12px;
-    }
-    .prd-section-card.prd-highlight,
-    .prd-theme-card.prd-highlight,
-    .prd-family-block.prd-highlight {
-      outline: 2.5px solid var(--accent);
-      box-shadow: var(--shadow-md);
-    }
-    .prd-section-card.prd-match,
-    .prd-theme-card.prd-match {
-      border-color: var(--accent);
-    }
-    .prd-section-card.prd-dimmed,
-    .prd-theme-card.prd-dimmed {
-      opacity: 0.36;
-    }
-    .prd-card-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .prd-card-actions {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-      flex-shrink: 0;
-    }
-    .prd-family-block {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-left: 3px solid var(--accent);
-      background: var(--bg-surface-2);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      scroll-margin-top: 12px;
-    }
-    .prd-theme-card {
-      margin-top: 10px;
-      padding: 12px 14px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      scroll-margin-top: 12px;
-    }
-    .prd-list {
-      margin: 6px 0 10px 18px;
-      padding: 0;
-    }
-    .prd-list li {
-      margin-bottom: 5px;
-      line-height: 1.66;
-    }
     .schema-preview-details {
       margin: 6px 0;
       border: 1px solid var(--border-subtle);
@@ -1802,12 +1469,6 @@
       .struct-sidebar {
         width: 280px;
       }
-      .prd-toc-pane {
-        width: 280px;
-      }
-      .prd-reader {
-        padding: 16px 20px 36px 20px;
-      }
     }
 
     @media (max-width: 960px) {
@@ -1822,15 +1483,15 @@
         min-width: 160px;
         max-width: none;
       }
-      .canvas-toolbar, .prd-toolbar {
+      .canvas-toolbar {
         flex-wrap: nowrap;
         overflow-x: auto;
         scrollbar-width: none;
       }
-      .canvas-toolbar > *, .prd-toolbar > * {
+      .canvas-toolbar > * {
         flex-shrink: 0;
       }
-      .canvas-toolbar::-webkit-scrollbar, .prd-toolbar::-webkit-scrollbar {
+      .canvas-toolbar::-webkit-scrollbar {
         display: none;
       }
       .drawer-backdrop.open {
@@ -1859,10 +1520,7 @@
       .mobile-only-btn {
         display: inline-flex;
       }
-      .prd-toc-mobile-head {
-        display: flex;
-      }
-      .struct-sidebar, .prd-toc-pane {
+      .struct-sidebar {
         position: absolute;
         left: 0;
         top: 0;
@@ -1871,9 +1529,6 @@
         max-width: none;
         z-index: 38;
         box-shadow: var(--shadow-md);
-      }
-      .prd-reader {
-        padding: 14px 16px 32px 16px;
       }
       .matrix-view {
         padding: 12px;
@@ -1924,7 +1579,7 @@
         padding-right: 10px;
       }
       .view-tab, .topbar .btn, .canvas-toolbar .btn, .canvas-toolbar .seg-btn,
-      .prd-toolbar .btn, .prd-toolbar .seg-btn, .subtabs .btn,
+      .subtabs .btn,
       .filter-select, .search-input, .zoom-hud .btn {
         min-height: 36px;
       }
@@ -1967,9 +1622,6 @@
         right: 10px;
         max-width: calc(100% - 20px);
       }
-      .prd-reader {
-        padding: 12px 12px 28px 12px;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1997,12 +1649,12 @@
         background: #ffffff !important;
         color: #000000 !important;
       }
-      .topbar, .inspector, .prd-toolbar, .prd-toc-pane, .prd-reading-nav, .canvas-tooltip, .prd-card-actions,
+      .topbar, .inspector, .canvas-tooltip,
       .canvas-toolbar, .zoom-hud, .legend-hud, .path-bar, .path-results, .subtabs, .drawer-backdrop,
       .struct-sidebar, .struct-list-pane, .skip-link {
         display: none !important;
       }
-      .app-shell, .workspace, .stage-container, .view-panel.active, .struct-body, .prd-view, .prd-body, .prd-reader, .matrix-view {
+      .app-shell, .workspace, .stage-container, .view-panel.active, .struct-body, .matrix-view {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -2026,13 +1678,13 @@
         width: 100% !important;
         height: 620px !important;
       }
-      .prd-section-card, .card {
+      .card {
         box-shadow: none !important;
         background: #ffffff !important;
         color: #000000 !important;
         border-color: #cbd5e1 !important;
       }
-      .prd-theme-card, .prd-hero, .occ-card, .rel-card {
+      .occ-card, .rel-card {
         break-inside: avoid;
         box-shadow: none !important;
         background: #ffffff !important;
@@ -2070,7 +1722,6 @@
           <button class="view-tab" role="tab" tabindex="-1" data-view="structure" aria-selected="false">2 · Structure Intégrale</button>
           <button class="view-tab" role="tab" tabindex="-1" data-view="synaptic" aria-selected="false">3 · Graphe Synaptique &amp; Chemins</button>
           <button class="view-tab" role="tab" tabindex="-1" data-view="concordance" aria-selected="false">4 · Concordance, Glossaire &amp; Preuves</button>
-          <button class="view-tab" role="tab" tabindex="-1" data-view="prd" aria-selected="false">5 · PRD Maître</button>
         </nav>
         <div class="topbar-nav-tools">
           <div class="search-wrap">
@@ -2255,43 +1906,6 @@
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="glossary_evidence">Glossaire (56) &amp; Socle probatoire L+</button>
             </div>
             <div id="c4-content"></div>
-          </div>
-        </section>
-
-        <!-- VUE 5 : PRD Maître interactif -->
-        <section id="view-prd" class="view-panel" aria-label="PRD Maître du Corpus Agentique">
-          <div class="prd-view">
-            <div class="prd-toolbar">
-              <div class="seg-group" role="group" aria-label="Mode de lecture PRD">
-                <button class="seg-btn active" data-prd-mode="targeted">Chapitre ciblé</button>
-                <button class="seg-btn" data-prd-mode="full">Document intégral</button>
-              </div>
-              <span class="toolbar-sep" aria-hidden="true"></span>
-              <button id="prd-toggle-toc-btn" class="btn btn-sm active" aria-expanded="true" title="Afficher ou masquer la table des matières PRD">TDM latérale</button>
-              <button id="prd-print-btn" class="btn btn-sm" title="Imprimer ou exporter en PDF">Imprimer / PDF</button>
-              <span class="toolbar-sep" aria-hidden="true"></span>
-              <a id="prd-standalone-link" class="btn btn-sm" href="PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html" target="_blank" rel="noopener">Page PRD autonome ↗</a>
-              <a id="prd-source-md-link" class="btn btn-sm" href="../../Sources/Compendium/prd.md" target="_blank" rel="noopener">prd.md ↗</a>
-              <span id="prd-stats-pill" class="kpi-pill" style="margin-left:auto;"></span>
-            </div>
-            <div class="prd-body">
-              <div id="prd-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
-              <aside id="prd-toc-pane" class="prd-toc-pane" aria-label="Table des matières du PRD">
-                <div class="prd-toc-mobile-head">
-                  <span>Table des matières PRD</span>
-                  <button id="prd-toc-close-btn" type="button" class="btn btn-sm mobile-only-btn" aria-label="Fermer la table des matières">✕</button>
-                </div>
-                <div class="prd-toc-filter-wrap">
-                  <input id="prd-toc-filter" class="search-input" type="search" placeholder="Filtrer TDM (Partie, Ch., Famille, Annexe…)" autocomplete="off" aria-label="Filtrer la table des matières PRD" style="padding-right:10px;" />
-                  <div class="prd-toc-controls">
-                    <span id="prd-toc-count" style="font-size:11px;color:var(--text-muted);"></span>
-                    <button id="prd-toc-expand-all-btn" type="button" class="btn btn-sm" style="padding:2px 7px;font-size:10.5px;">Tout déplier</button>
-                  </div>
-                </div>
-                <div id="prd-toc-list" class="prd-toc-list"></div>
-              </aside>
-              <div id="prd-reader" class="prd-reader" tabindex="0"></div>
-            </div>
           </div>
         </section>
       </main>
@@ -2609,149 +2223,8 @@
         });
       });
 
-      // Index PRD Web (Vue 5 & pont bidirectionnel)
-      var prd = data.prd && typeof data.prd === "object" ? data.prd : null;
-      var prdPartyByDom = Object.create(null);
-      var prdChapterByNum = Object.create(null);
-      var prdAnnexeByCode = Object.create(null);
-      var prdSchemaById = Object.create(null);
-      var prdSchemasByNodeId = Object.create(null);
-      var prdAllSchemas = [];
-      var prdLookup = (prd && prd.lookup) ? prd.lookup : { node_id_to_prd: {}, slug_to_chapter: {}, domain_to_part: {} };
-
-      function addPrdSchemaIndex(nid, sch) {
-        if (!nid || !sch) return;
-        if (!prdSchemasByNodeId[nid]) prdSchemasByNodeId[nid] = [];
-        for (var i = 0; i < prdSchemasByNodeId[nid].length; i++) {
-          if (prdSchemasByNodeId[nid][i].schema_id === sch.schema_id) return;
-        }
-        prdSchemasByNodeId[nid].push(sch);
-      }
-
-      function registerPrdSchema(sch, cnumOverride) {
-        if (!sch || !sch.schema_id) return;
-        var cnum = cnumOverride != null ? Number(cnumOverride) : Number(sch.chapter_number || 0);
-        prdSchemaById[sch.schema_id] = sch;
-        prdAllSchemas.push(sch);
-        if (sch.subdomain_node_id) addPrdSchemaIndex(sch.subdomain_node_id, sch);
-        (sch.families_covered || []).forEach(function (fid) { addPrdSchemaIndex(fid, sch); });
-        (sch.themes_vulgarized || []).forEach(function (slug) {
-          var tn = nodeBySlug[slug];
-          if (tn) addPrdSchemaIndex(tn.node_id, sch);
-        });
-        searchDocs.push({
-          kind: "prd-schema",
-          id: sch.schema_id,
-          chapter_number: cnum,
-          title: sch.schema_id + " — " + (sch.title || ""),
-          subtitle: "PRD · Schéma (" + (cnum === 0 ? "Panorama" : ("Ch. " + pad2(cnum))) + ") · " + (sch.recommended_notation || ""),
-          domain_id: sch.domain_id,
-          norm: normalizeText([
-            sch.schema_id,
-            sch.title,
-            sch.visual_archetype,
-            sch.recommended_notation,
-            sch.reuse_status,
-            sch.pedagogical_objective,
-            sch.vulgarization_angle,
-            (sch.families_covered || []).join(" "),
-            (sch.themes_vulgarized || []).join(" ")
-          ].join(" "))
-        });
-      }
-
-      if (prd) {
-        var execSum = prd.executive_summary || {};
-        (execSum.sections || []).forEach(function (sec, sIdx) {
-          var sid = sec.id || ("exec-" + (sIdx + 1));
-          searchDocs.push({
-            kind: "prd-exec",
-            id: sid,
-            title: sec.heading || ("Section " + (sIdx + 1)),
-            subtitle: "PRD · Sommaire exécutif global",
-            norm: normalizeText([sec.heading, sec.body_md, (sec.paragraphs || []).join(" ")].join(" "))
-          });
-        });
-        if (Array.isArray(execSum.vulgarization_schemas) && execSum.vulgarization_schemas.length) {
-          searchDocs.push({
-            kind: "prd-exec",
-            id: "exec-panorama",
-            title: "Panorama visuel directeur — Schémas de vulgarisation transversaux",
-            subtitle: "PRD · Sommaire exécutif · 4 schémas SCH-00",
-            norm: normalizeText("panorama visuel directeur schemas vulgarisation transversaux " + execSum.vulgarization_schemas.map(function (s) { return s.schema_id + " " + s.title; }).join(" "))
-          });
-          execSum.vulgarization_schemas.forEach(function (sch) { registerPrdSchema(sch, 0); });
-        }
-
-        (prd.parties || []).forEach(function (p) {
-          prdPartyByDom[p.domain_id] = p;
-          if (p.part_number != null) prdPartyByDom[String(p.part_number)] = p;
-          var pTitle = "Partie " + (p.part_roman || p.part_number) + " — " + (p.representative_part_title || "");
-          searchDocs.push({
-            kind: "prd-part",
-            id: p.domain_id,
-            title: pTitle,
-            subtitle: "PRD · " + p.domain_id + " · " + (p.chapter_numbers || []).length + " chapitres",
-            domain_id: p.domain_id,
-            norm: normalizeText([pTitle, p.domain_id, p.part_summary, p.domain_node_id].join(" "))
-          });
-        });
-
-        (prd.chapters || []).forEach(function (ch) {
-          var cnum = Number(ch.chapter_number);
-          prdChapterByNum[cnum] = ch;
-          var tc = ch.targeted_content || {};
-          var chTitle = "Chapitre " + pad2(cnum) + " — " + (ch.representative_title || "");
-          var hayCh = [
-            chTitle,
-            ch.chapter_code,
-            ch.domain_id,
-            ch.subdomain_node_id,
-            ch.executive_summary,
-            tc.scope_and_objectives,
-            (tc.key_requirements_and_objectives || []).join(" "),
-            (tc.deliverables_and_verification || []).join(" ")
-          ].join(" ");
-          searchDocs.push({
-            kind: "prd-chapter",
-            id: String(cnum),
-            chapter_number: cnum,
-            title: chTitle,
-            subtitle: "PRD · " + (ch.chapter_code || ("CH-" + pad2(cnum))) + " · " + (ch.domain_id || ""),
-            domain_id: ch.domain_id,
-            norm: normalizeText(hayCh)
-          });
-
-          (tc.families_and_themes || []).forEach(function (fam) {
-            searchDocs.push({
-              kind: "prd-family",
-              id: fam.family_node_id,
-              chapter_number: cnum,
-              title: fam.family_title,
-              subtitle: "PRD · Ch. " + pad2(cnum) + " · Famille " + (fam.family_code || fam.family_node_id),
-              domain_id: ch.domain_id,
-              norm: normalizeText([fam.family_title, fam.family_node_id, fam.family_code, fam.family_overview].join(" "))
-            });
-          });
-          (ch.vulgarization_schemas || []).forEach(function (sch) { registerPrdSchema(sch, cnum); });
-        });
-
-        (prd.annexes || []).forEach(function (ann) {
-          prdAnnexeByCode[ann.annexe_code] = ann;
-          var aTitle = "Annexe " + ann.annexe_code + " — " + (ann.representative_title || "").replace(/^Annexe\s+[A-E]\s*[—–:-]?\s*/i, "");
-          searchDocs.push({
-            kind: "prd-annexe",
-            id: ann.annexe_code,
-            title: aTitle,
-            subtitle: "PRD · Annexe normée",
-            norm: normalizeText([aTitle, ann.annexe_code, ann.executive_summary, ann.targeted_content_description].join(" "))
-          });
-        });
-      }
-
       // Index glossaire Compendium (56 vedettes dont Agentivité des systèmes)
       var glossaryTerms = (pivots.glossaire_pivot && pivots.glossaire_pivot.glossaire_compendium_56) ||
-        (prd && Array.isArray(prd.glossary) ? prd.glossary : []) ||
         (pivots.glossaire_pivot && pivots.glossaire_pivot.vedettes_t8) || [];
       glossaryTerms.forEach(function (gt) {
         var gfr = gt.fr || "";
@@ -2810,14 +2283,6 @@
         searchDocs: searchDocs,
         glossaryTerms: glossaryTerms,
         pivots: pivots,
-        prd: prd,
-        prdPartyByDom: prdPartyByDom,
-        prdChapterByNum: prdChapterByNum,
-        prdAnnexeByCode: prdAnnexeByCode,
-        prdSchemaById: prdSchemaById,
-        prdSchemasByNodeId: prdSchemasByNodeId,
-        prdAllSchemas: prdAllSchemas,
-        prdLookup: prdLookup,
         facets: {
           autonomy: Array.from(facetAutonomy).sort(),
           roles: Array.from(facetRoles).sort(),
@@ -2845,12 +2310,7 @@
         if (!ok) continue;
         var titleNorm = normalizeText(doc.title);
         var score = doc.kind === "theme" ? 20
-          : (doc.kind === "glossary" ? 19
-          : (doc.kind === "prd-chapter" ? 18
-          : (doc.kind === "prd-part" ? 17
-          : (doc.kind === "prd-schema" ? 16
-          : (doc.kind === "prd-family" ? 15
-          : (doc.kind && doc.kind.indexOf("prd-") === 0 ? 14 : 5))))));
+          : (doc.kind === "glossary" ? 19 : 5);
         if (titleNorm.indexOf(q) !== -1) score += 40;
         if (titleNorm.indexOf(terms[0]) === 0) score += 15;
         scored.push({ doc: doc, score: score });
@@ -3358,127 +2818,6 @@
       return positions;
     }
 
-    function resolveNodeToPrdTarget(indexes, nodeId) {
-      if (!indexes || !nodeId) return null;
-      var lookupMap = (indexes.prdLookup && indexes.prdLookup.node_id_to_prd) || {};
-      if (lookupMap[nodeId]) return Object.assign({}, lookupMap[nodeId]);
-      var n = indexes.nodeById ? indexes.nodeById[nodeId] : null;
-      if (!n) return null;
-      if (n.node_kind === "domain") {
-        return { kind: "domain", domain_id: n.domain_id, section_id: "part-" + n.domain_id };
-      }
-      var slugToCh = (indexes.prdLookup && indexes.prdLookup.slug_to_chapter) || {};
-      if (n.canonical_slug && slugToCh[n.canonical_slug]) {
-        return {
-          kind: "theme",
-          domain_id: n.domain_id,
-          chapter_number: Number(slugToCh[n.canonical_slug]),
-          theme_node_id: nodeId
-        };
-      }
-      var chs = (indexes.prd && indexes.prd.chapters) || [];
-      for (var i = 0; i < chs.length; i++) {
-        var ch = chs[i];
-        if (ch.subdomain_node_id === nodeId) {
-          return { kind: "subdomain", domain_id: ch.domain_id, chapter_number: Number(ch.chapter_number) };
-        }
-        var fams = (ch.targeted_content && ch.targeted_content.families_and_themes) || [];
-        for (var j = 0; j < fams.length; j++) {
-          if (fams[j].family_node_id === nodeId) {
-            return {
-              kind: "family",
-              domain_id: ch.domain_id,
-              chapter_number: Number(ch.chapter_number),
-              family_node_id: nodeId
-            };
-          }
-        }
-      }
-      return null;
-    }
-
-    function resolveStructUnitToPrdTarget(indexes, unitId) {
-      if (!indexes || !unitId) return null;
-      var directThemes = (indexes.themesByStructUnit && indexes.themesByStructUnit[unitId]) || [];
-      for (var i = 0; i < directThemes.length; i++) {
-        var hit = resolveNodeToPrdTarget(indexes, directThemes[i]);
-        if (hit) return hit;
-      }
-      var chapMeta = indexes.chapterByUnitId && indexes.chapterByUnitId[unitId];
-      if (chapMeta && Array.isArray(chapMeta.themes_addressed)) {
-        for (var j = 0; j < chapMeta.themes_addressed.length; j++) {
-          var tn = indexes.nodeBySlug && indexes.nodeBySlug[chapMeta.themes_addressed[j]];
-          if (tn) {
-            var hit2 = resolveNodeToPrdTarget(indexes, tn.node_id);
-            if (hit2) return hit2;
-          }
-        }
-      }
-      var u2ch = (indexes.prdLookup && indexes.prdLookup.unit_id_to_chapter) || {};
-      if (u2ch[unitId] != null) {
-        var chNum = Number(u2ch[unitId]);
-        var chObj = indexes.prdChapterByNum && indexes.prdChapterByNum[chNum];
-        return {
-          kind: "subdomain",
-          domain_id: chObj ? chObj.domain_id : null,
-          chapter_number: chNum,
-          section_id: "ch-" + pad2(chNum)
-        };
-      }
-      var u = indexes.structUnitById && indexes.structUnitById[unitId];
-      if (u && indexes.nodes) {
-        for (var k = 0; k < indexes.nodes.length; k++) {
-          var n = indexes.nodes[k];
-          if (n.node_kind !== "theme" || !Array.isArray(n.occurrences)) continue;
-          for (var m = 0; m < n.occurrences.length; m++) {
-            var occ = n.occurrences[m];
-            if (occ.tome_id === u.tome_id && occ.line_start <= u.line_end && (occ.line_end || occ.line_start) >= u.line_start) {
-              var hit3 = resolveNodeToPrdTarget(indexes, n.node_id);
-              if (hit3) return hit3;
-            }
-          }
-        }
-      }
-      return null;
-    }
-
-    function computePrdFilterState(indexes, filters) {
-      var filtered = filterNodesAndRelations(indexes, filters || {});
-      var active = filtered.active;
-      var matchingChapters = new Set();
-      var matchingDomains = new Set();
-      var matchingThemes = new Set();
-      var matchingRels = new Set();
-      filtered.relations.forEach(function (r) { matchingRels.add(r.type); });
-
-      var chs = (indexes.prd && indexes.prd.chapters) || [];
-      chs.forEach(function (ch) {
-        var cnum = Number(ch.chapter_number);
-        var tc = ch.targeted_content || {};
-        var chHasMatch = !active;
-        (tc.families_and_themes || []).forEach(function (fam) {
-          (fam.themes_targeted || []).forEach(function (th) {
-            if (!active || filtered.matchingNodeIds.has(th.theme_node_id)) {
-              matchingThemes.add(th.theme_node_id);
-              chHasMatch = true;
-            }
-          });
-        });
-        if (chHasMatch) {
-          matchingChapters.add(cnum);
-          matchingDomains.add(ch.domain_id);
-        }
-      });
-
-      return {
-        active: active,
-        matchingNodeIds: filtered.matchingNodeIds,
-        matchingChapters: matchingChapters,
-        matchingDomains: matchingDomains,
-        matchingThemes: matchingThemes
-      };
-    }
-
     function collectDescendantThemeIds(indexes, nodeId) {
       if (!indexes || !nodeId || !indexes.nodeById) return [];
       var root = indexes.nodeById[nodeId];
@@ -3503,15 +2842,6 @@
       return out;
     }
 
-    function normalizePrdExecId(secId) {
-      var raw = String(secId || "").trim();
-      if (!raw || raw === "exec") return "exec";
-      if (/^(?:exec-)?panorama$/i.test(raw)) return "exec-panorama";
-      var m = raw.match(/^(?:exec-|sec-)?(\d{1,2})$/i);
-      if (m) return "exec-" + pad2(Number(m[1]));
-      return raw;
-    }
-
     // =========================================================================
     // 4. Exposition globale pour tests & audit Node.js
     // =========================================================================
@@ -3523,10 +2853,6 @@
       prdInlineHtml: prdInlineHtml,
       parseLocationHash: parseLocationHash,
       collectDescendantThemeIds: collectDescendantThemeIds,
-      normalizePrdExecId: normalizePrdExecId,
-      resolveNodeToPrdTarget: resolveNodeToPrdTarget,
-      resolveStructUnitToPrdTarget: resolveStructUnitToPrdTarget,
-      computePrdFilterState: computePrdFilterState,
       buildIndexes: buildIndexes,
       searchCorpus: searchCorpus,
       filterNodesAndRelations: filterNodesAndRelations,
@@ -3600,16 +2926,7 @@
         c4Tab: "heatmap",
         c4GroupBy: "domain",
         c4Metric: "occurrences",
-        c4SelectedCell: null,
-        // Vue 5 PRD
-        prdMode: "targeted",
-        prdFocusKind: "exec",
-        prdFocusId: "exec",
-        prdHighlightId: null,
-        prdTocFilter: "",
-        prdExpandedParts: new Set(),
-        prdShowToc: !isInitialDrawer,
-        prdAnnDShowAll: false
+        c4SelectedCell: null
       };
 
       function isDrawerViewport() {
@@ -3721,8 +3038,6 @@
         if (inspBd) inspBd.classList.toggle("open", Boolean(drawerMode && insp && !insp.classList.contains("collapsed")));
         var stBd = document.getElementById("st-backdrop");
         if (stBd) stBd.classList.toggle("open", Boolean(drawerMode && state.stShowList));
-        var prdBd = document.getElementById("prd-backdrop");
-        if (prdBd) prdBd.classList.toggle("open", Boolean(drawerMode && state.prdShowToc));
       }
 
       // Expansion initiale Vue 1 (5 niveaux réels : Niv.1=1, Niv.2=13 [défaut], Niv.3=49, Niv.4=120, Niv.5=380)
@@ -3884,7 +3199,7 @@
       function renderKpis() {
         var strip = document.getElementById("kpi-strip");
         var themeCount = idx.nodes.filter(function (n) { return n.node_kind === "theme"; }).length;
-        var cmeta = (idx.prd && idx.prd.compendium_meta) || (idx.pivots && idx.pivots.collection_metrics) || {};
+        var cmeta = (idx.pivots && idx.pivots.collection_metrics) || {};
         var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 852);
         var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 246518);
         var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || 42);
@@ -4151,8 +3466,7 @@
         html.push('</div>');
 
         html.push('<div class="chip-row">');
-        html.push('<button class="btn btn-sm primary" id="insp-goto-prd">Lire dans le PRD →</button>');
-        html.push('<button class="btn btn-sm" id="insp-goto-mm">Voir MindMap</button>');
+        html.push('<button class="btn btn-sm primary" id="insp-goto-mm">Voir MindMap</button>');
         html.push('<button class="btn btn-sm" id="insp-goto-sy">Voir Graphe (1 saut)</button>');
         html.push('<button class="btn btn-sm" id="insp-set-a">Départ A</button>');
         html.push('<button class="btn btn-sm" id="insp-set-b">Arrivée B</button>');
@@ -4183,52 +3497,6 @@
           });
           if (n.identifiers.length > 28) html.push('<span class="chip">+' + (n.identifiers.length - 28) + '</span>');
           html.push('</div></div>');
-        }
-
-        if (idx.prd && (n.node_kind === "domain" || n.node_kind === "subdomain" || n.node_kind === "family" || n.node_kind === "theme")) {
-          var schSeen = Object.create(null);
-          var schItems = [];
-          function pushInspSch(s) {
-            if (!s || !s.schema_id || schSeen[s.schema_id]) return;
-            schSeen[s.schema_id] = true;
-            schItems.push(s);
-          }
-          (idx.prdSchemasByNodeId[n.node_id] || []).forEach(pushInspSch);
-          if (n.node_kind === "domain" && Array.isArray(n.compendium_schemas)) {
-            n.compendium_schemas.forEach(function (sid) {
-              if (idx.prdSchemaById[sid]) pushInspSch(idx.prdSchemaById[sid]);
-            });
-          }
-          if (n.node_kind === "subdomain" || n.node_kind === "theme") {
-            var schTarget = resolveNodeToPrdTarget(idx, n.node_id);
-            if (schTarget && schTarget.chapter_number && idx.prdChapterByNum[schTarget.chapter_number]) {
-              (idx.prdChapterByNum[schTarget.chapter_number].vulgarization_schemas || []).forEach(pushInspSch);
-            }
-          }
-          if (schItems.length) {
-            html.push('<div class="inspector-section"><div class="section-label">Schémas compilés du Compendium (' + schItems.length + ')</div><div style="display:flex;flex-direction:column;gap:5px;">');
-            schItems.forEach(function (sc) {
-              var rl = sc.reuse_status === "reemploi_direct" ? "Réemploi direct" : (sc.reuse_status === "creation_originale" ? "Création originale" : "Adaptation vulgarisée");
-              var cRend = sc.compendium_rendered_path ? compendiumAssetHref(sc.compendium_rendered_path) : "";
-              var cSrc = sc.compendium_source_path ? compendiumAssetHref(sc.compendium_source_path) : "";
-              html.push(
-                '<div class="rel-card" role="button" tabindex="0" data-insp-prd-schema="' + escapeHtml(sc.schema_id) + '" data-insp-prd-ch="' + escapeHtml(sc.chapter_number || 0) + '" style="border-left-color:var(--accent);padding:6px 8px;">' +
-                  '<div style="display:flex;justify-content:space-between;gap:6px;align-items:center;">' +
-                    '<strong class="mono" style="font-size:11.5px;">' + escapeHtml(sc.schema_id) + '</strong>' +
-                    '<span class="chip">' + escapeHtml(rl) + '</span>' +
-                  '</div>' +
-                  '<div style="font-size:12px;">' + prdInlineHtml(sc.title || "") + '</div>' +
-                  ((cRend || cSrc)
-                    ? '<div class="chip-row" style="margin-top:4px;">' +
-                        (cRend ? '<a class="chip clickable mono" href="' + escapeHtml(cRend) + '" target="_blank" rel="noopener">Rendu compilé ↗</a>' : '') +
-                        (cSrc ? '<a class="chip clickable mono" href="' + escapeHtml(cSrc) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
-                      '</div>'
-                    : '') +
-                '</div>'
-              );
-            });
-            html.push('</div></div>');
-          }
         }
 
         // Occurrences et liens Compendium
@@ -4326,20 +3594,6 @@
             selectThemeNode(jid, true);
           });
         });
-        body.querySelectorAll("[data-insp-prd-schema]").forEach(function (el) {
-          el.addEventListener("click", function (ev) {
-            if (ev && ev.target && typeof ev.target.closest === "function" && ev.target.closest("a, button")) return;
-            jumpToPrdTarget({
-              kind: "schema",
-              schema_id: el.getAttribute("data-insp-prd-schema"),
-              chapter_number: Number(el.getAttribute("data-insp-prd-ch") || 0)
-            });
-          });
-        });
-        var bPrd = document.getElementById("insp-goto-prd");
-        if (bPrd) bPrd.addEventListener("click", function () {
-          jumpToPrdByNodeId(n.node_id);
-        });
         var bMm = document.getElementById("insp-goto-mm");
         if (bMm) bMm.addEventListener("click", function () {
           ensureThemeNodeVisibleUnderFilters(n.node_id);
@@ -4415,13 +3669,11 @@
         if (chapMeta && chapMeta.summary) {
           html.push('<p style="margin:4px 0;font-size:12.5px;color:var(--text-muted);">' + prdInlineHtml(chapMeta.summary) + '</p>');
         }
-        var prdStructTarget = resolveStructUnitToPrdTarget(idx, u.unit_id);
         html.push('<div class="chip-row">');
         html.push('<a class="btn btn-sm primary" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">Ouvrir ' + escapeHtml(truncate(u.filename || u.file, 26)) + ' #L' + u.line_start + '</a>');
         if (u.source_file) {
           html.push('<a class="btn btn-sm" href="' + escapeHtml(corpusHref(u.source_file, 1)) + '" target="_blank" rel="noopener">Manuscrit source ↗</a>');
         }
-        html.push('<button class="btn btn-sm" id="insp-struct-goto-prd">Lire dans le PRD →</button>');
         html.push('</div>');
 
         html.push('<div class="inspector-section"><div class="section-label">Thèmes associés (' + linkedIds.length + ')</div>');
@@ -4451,10 +3703,6 @@
         body.scrollTop = 0;
         setInspectorOpen(true);
         bindKeyboardActivation(body);
-        var bStructPrd = document.getElementById("insp-struct-goto-prd");
-        if (bStructPrd) bStructPrd.addEventListener("click", function () {
-          jumpToPrdTarget(prdStructTarget || { kind: "exec" });
-        });
         body.querySelectorAll("[data-jump-theme]").forEach(function (el) {
           el.addEventListener("click", function () {
             switchView("mindmap");
@@ -5575,14 +4823,13 @@
 
         if (state.c4Tab === "glossary_evidence") {
           var gTerms = idx.glossaryTerms || [];
-          var socle = (idx.prd && idx.prd.socle_probatoire) || {};
           var compG0 = (idx.pivots.bilans_aq && idx.pivots.bilans_aq.compendium_g0_g5) || {};
-          var facts16 = socle.faits_empiriques || idx.pivots.faits_empiriques_16 || compG0.faits_empiriques_16 || [];
-          var specs57 = socle.specifications_lplus || idx.pivots.specifications_lplus_57 || compG0.specifications_lplus_57 || [];
-          var statF27 = socle.statut_f_excluded || idx.pivots.statut_f_exclus_27 || [];
-          var sync14 = socle.ca_g0_sync_catalog || compG0.ca_g0_sync_catalog || [];
-          var wyv37 = socle.wyvern_g2_unites || compG0.wyvern_g2_unites || [];
-          var lplusCnt = socle.sources_l_plus_count || compG0.sources_l_plus || 135;
+          var facts16 = idx.pivots.faits_empiriques_16 || compG0.faits_empiriques_16 || [];
+          var specs57 = idx.pivots.specifications_lplus_57 || compG0.specifications_lplus_57 || [];
+          var statF27 = idx.pivots.statut_f_exclus_27 || [];
+          var sync14 = compG0.ca_g0_sync_catalog || [];
+          var wyv37 = compG0.wyvern_g2_unites || [];
+          var lplusCnt = compG0.sources_l_plus || 135;
 
           var gq = state.c4GlossaryQuery || "";
           var gqNorm = normalizeText(gq).trim();
@@ -5610,18 +4857,12 @@
             var cLine = gt.compendium_md_line || 1;
             var isSa = normalizeText(gt.fr || "").indexOf("agentivite des systemes") !== -1;
             var ownerCode = String(gt.chapitre_proprietaire || "");
-            var chMatch = ownerCode.match(/^ch(\d{2})$/i);
-            var ownerCell = chMatch
-              ? '<button type="button" class="btn btn-sm mono" data-gloss-jump-ch="' + Number(chMatch[1]) + '">' + escapeHtml(ownerCode) + '</button>'
-              : (ownerCode === "00-liminaire"
-                  ? '<button type="button" class="btn btn-sm mono" data-gloss-jump-exec="exec">' + escapeHtml(ownerCode) + '</button>'
-                  : escapeHtml(ownerCode));
             gHtml.push(
               '<tr' + (isSa ? ' style="background:var(--accent-soft);"' : '') + '>' +
                 '<td><strong>' + prdInlineHtml(gt.fr || "") + '</strong></td>' +
                 '<td class="mono">' + escapeHtml(gt.en || "") + '</td>' +
                 '<td class="prose-col">' + prdInlineHtml(gt.definition || "") + '</td>' +
-                '<td class="mono">' + ownerCell + '</td>' +
+                '<td class="mono">' + escapeHtml(ownerCode) + '</td>' +
                 '<td class="mono">' + escapeHtml(gt.source_l_plus_id || "") + '</td>' +
                 '<td><a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a></td>' +
               '</tr>'
@@ -5665,16 +4906,6 @@
           }
 
           container.innerHTML = gHtml.join("");
-          container.querySelectorAll("[data-gloss-jump-ch]").forEach(function (btn) {
-            btn.addEventListener("click", function () {
-              jumpToPrdTarget({ kind: "subdomain", chapter_number: Number(btn.getAttribute("data-gloss-jump-ch")) });
-            });
-          });
-          container.querySelectorAll("[data-gloss-jump-exec]").forEach(function (btn) {
-            btn.addEventListener("click", function () {
-              jumpToPrdTarget({ kind: "exec" });
-            });
-          });
           var glInput = document.getElementById("c4-gloss-search");
           if (glInput) {
             glInput.addEventListener("input", function (ev) {
@@ -5692,1406 +4923,6 @@
       }
 
       // =========================================================================
-      // VUE 5 : PRD Maître interactif & Pont bidirectionnel MindMap <-> PRD
-      // =========================================================================
-      function jumpToPrdTarget(target) {
-        if (!target) {
-          state.prdFocusKind = "exec";
-          state.prdFocusId = "exec";
-          state.prdHighlightId = null;
-          switchView("prd");
-          return;
-        }
-        var chNum = target.chapter_number != null ? Number(target.chapter_number) : null;
-        if (target.kind === "schema" || target.schema_id) {
-          var scObj = (idx.prdSchemaById && target.schema_id) ? idx.prdSchemaById[target.schema_id] : null;
-          var scCh = chNum != null ? chNum : (scObj ? Number(scObj.chapter_number || 0) : 0);
-          if (scCh === 0) {
-            state.prdFocusKind = "exec";
-            state.prdFocusId = "exec";
-            state.prdHighlightId = (scObj && scObj.schema_id) || target.schema_id || "exec-panorama";
-          } else {
-            state.prdFocusKind = "chapter";
-            state.prdFocusId = scCh;
-            state.prdHighlightId = (scObj && scObj.schema_id) || target.schema_id || ("ch-" + pad2(scCh) + "-schemas");
-          }
-        } else if (target.kind === "glossary") {
-          state.prdFocusKind = "glossary";
-          state.prdFocusId = target.focus_id || "glossary";
-          state.prdHighlightId = "glossary";
-        } else if (target.kind === "annexe" || target.annexe_code) {
-          state.prdFocusKind = "annexe";
-          state.prdFocusId = target.annexe_code || "A";
-          state.prdHighlightId = "ann-" + state.prdFocusId;
-        } else if (target.kind === "domain" || (!chNum && target.domain_id && idx.prdPartyByDom[target.domain_id])) {
-          state.prdFocusKind = "part";
-          state.prdFocusId = target.domain_id;
-          state.prdHighlightId = "part-" + target.domain_id;
-        } else if (target.kind === "exec" || (!chNum && target.section_id)) {
-          state.prdFocusKind = "exec";
-          state.prdFocusId = "exec";
-          state.prdHighlightId = target.section_id ? normalizePrdExecId(target.section_id) : null;
-        } else if (chNum && idx.prdChapterByNum[chNum]) {
-          state.prdFocusKind = "chapter";
-          state.prdFocusId = chNum;
-          state.prdHighlightId = target.focus_schemas
-            ? ("ch-" + pad2(chNum) + "-schemas")
-            : (target.theme_node_id || target.family_node_id || ("ch-" + pad2(chNum)));
-        } else if (target.domain_id && idx.prdPartyByDom[target.domain_id]) {
-          state.prdFocusKind = "part";
-          state.prdFocusId = target.domain_id;
-          state.prdHighlightId = "part-" + target.domain_id;
-        } else {
-          state.prdFocusKind = "exec";
-          state.prdFocusId = "exec";
-          state.prdHighlightId = null;
-        }
-        switchView("prd");
-      }
-
-      function jumpToPrdByNodeId(nodeId) {
-        var target = resolveNodeToPrdTarget(idx, nodeId);
-        jumpToPrdTarget(target || { kind: "exec" });
-      }
-
-      function syncStandalonePrdLink() {
-        var a = document.getElementById("prd-standalone-link");
-        if (!a) return;
-        var base = "PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html";
-        var params = [];
-        if (state.prdHighlightId && /^SCH-/.test(state.prdHighlightId)) {
-          params.push("sch=" + encodeURIComponent(state.prdHighlightId));
-        } else if (state.prdFocusKind === "chapter" && state.prdFocusId) {
-          if (state.prdHighlightId && /^THM_/.test(state.prdHighlightId)) {
-            params.push("thm=" + encodeURIComponent(state.prdHighlightId));
-          } else if (state.prdHighlightId && /^FAM_/.test(state.prdHighlightId)) {
-            params.push("fam=" + encodeURIComponent(state.prdHighlightId));
-          } else if (state.prdHighlightId === ("ch-" + pad2(state.prdFocusId) + "-schemas")) {
-            params.push("ch=" + pad2(state.prdFocusId));
-            params.push("schemas=1");
-          } else {
-            params.push("ch=" + pad2(state.prdFocusId));
-          }
-        } else if (state.prdFocusKind === "part" && state.prdFocusId) {
-          params.push("part=" + encodeURIComponent(state.prdFocusId));
-        } else if (state.prdFocusKind === "annexe" && state.prdFocusId) {
-          params.push("annexe=" + encodeURIComponent(state.prdFocusId));
-        } else if (state.prdFocusKind === "glossary") {
-          params.push("glossary=1");
-        } else if (state.prdHighlightId === "exec-panorama") {
-          params.push("sec=panorama");
-        } else if (state.prdHighlightId && state.prdHighlightId !== "exec") {
-          params.push("sec=" + encodeURIComponent(state.prdHighlightId));
-        }
-        if (state.prdMode === "full") params.push("mode=full");
-        a.setAttribute("href", base + (params.length ? ("#" + params.join("&")) : ""));
-      }
-
-      var PRD_REUSE_LABELS = {
-        reemploi_direct: "Réemploi direct",
-        adaptation_vulgarisee: "Adaptation vulgarisée",
-        creation_originale: "Création originale"
-      };
-      var PRD_REUSE_COLORS = {
-        reemploi_direct: "#16a34a",
-        adaptation_vulgarisee: "#2563eb",
-        creation_originale: "#7c3aed"
-      };
-
-      function renderVulgarizationSchemaCardHtml(sc) {
-        var sid = sc.schema_id || "";
-        var rRaw = sc.reuse_status || "adaptation_vulgarisee";
-        var rLbl = PRD_REUSE_LABELS[rRaw] || rRaw;
-        var rColor = PRD_REUSE_COLORS[rRaw] || "#2563eb";
-        var vb = sc.visual_blueprint || {};
-        var isHl = state.prdHighlightId === sid ? " prd-highlight" : "";
-        var html = [];
-        html.push('<div class="prd-theme-card' + isHl + '" data-prd-eid="' + escapeHtml(sid) + '" style="border-left:4px solid ' + escapeHtml(rColor) + ';">');
-        html.push('<div class="prd-card-head" style="margin-bottom:5px;"><div>');
-        html.push('<div class="chip-row" style="margin-bottom:4px;">');
-        html.push('<span class="chip mono"><strong>' + escapeHtml(sid) + '</strong></span>');
-        html.push('<span class="chip" style="border-color:' + escapeHtml(rColor) + ';color:' + escapeHtml(rColor) + ';">' + escapeHtml(rLbl) + '</span>');
-        html.push('<span class="chip">' + prdInlineHtml(sc.visual_archetype || "") + '</span>');
-        html.push('<span class="chip mono">' + escapeHtml(sc.recommended_notation || "") + '</span>');
-        html.push('</div>');
-        html.push('<strong style="font-size:13.5px;">' + prdInlineHtml(sc.title || "") + '</strong>');
-        html.push('</div></div>');
-        if ((sc.target_audiences || []).length || sc.insertion_point) {
-          html.push('<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;"><strong>Publics :</strong> ' + prdInlineHtml((sc.target_audiences || []).join(", ")) + (sc.insertion_point ? (" · <strong>Insertion :</strong> " + prdInlineHtml(sc.insertion_point)) : "") + '</div>');
-        }
-        if ((sc.families_covered || []).length || (sc.themes_vulgarized || []).length) {
-          html.push('<div class="chip-row" style="margin-bottom:5px;">');
-          (sc.families_covered || []).forEach(function (fid) { html.push('<span class="chip mono">' + escapeHtml(fid) + '</span>'); });
-          (sc.themes_vulgarized || []).forEach(function (sl) { html.push('<span class="chip mono">' + escapeHtml(sl) + '</span>'); });
-          html.push('</div>');
-        }
-        if (sc.pedagogical_objective) {
-          html.push('<p style="margin:4px 0;line-height:1.48;"><strong>Objectif pédagogique (10 s) :</strong> ' + prdInlineHtml(sc.pedagogical_objective) + '</p>');
-        }
-        if (sc.vulgarization_angle) {
-          html.push('<p style="margin:4px 0;line-height:1.48;"><strong>Angle de vulgarisation :</strong> ' + prdInlineHtml(sc.vulgarization_angle) + '</p>');
-        }
-        if ((vb.zones || []).length || (vb.numbered_flows || []).length || (vb.color_legend || []).length || vb.key_takeaway_box) {
-          html.push('<div style="margin:6px 0;padding:8px 10px;background:var(--bg-surface-2);border-radius:var(--radius-sm);font-size:12px;">');
-          if ((vb.zones || []).length) {
-            html.push('<div style="margin-bottom:4px;"><strong>Zones :</strong> ' + vb.zones.map(function (z) {
-              return '<span class="mono">[' + escapeHtml(z.zone_id || "") + ']</span> <strong>' + prdInlineHtml(z.label || "") + '</strong> : ' + prdInlineHtml(z.content || "");
-            }).join(" · ") + '</div>');
-          }
-          if ((vb.numbered_flows || []).length) {
-            html.push('<div style="margin-bottom:4px;"><strong>Flux numérotés :</strong><ul class="prd-list" style="margin-top:2px;">' + vb.numbered_flows.map(function (fl) {
-              return '<li>' + prdInlineHtml(fl) + '</li>';
-            }).join("") + '</ul></div>');
-          }
-          if ((vb.color_legend || []).length) {
-            html.push('<div style="margin-bottom:4px;"><strong>Légende couleur :</strong> ' + vb.color_legend.map(function (c) {
-              return '<strong>' + prdInlineHtml(c.color_token || "") + '</strong> = ' + prdInlineHtml(c.meaning || "");
-            }).join(" ; ") + '</div>');
-          }
-          if (vb.key_takeaway_box) {
-            html.push('<div style="padding:4px 8px;border-left:3px solid var(--accent);background:var(--bg-surface);">' + prdInlineHtml(vb.key_takeaway_box) + '</div>');
-          }
-          html.push('</div>');
-        }
-        var compRend = sc.compendium_rendered_path ? compendiumAssetHref(sc.compendium_rendered_path) : "";
-        var compSrc = sc.compendium_source_path ? compendiumAssetHref(sc.compendium_source_path) : "";
-        var compLine = sc.compendium_md_line || null;
-        if (compRend || compSrc) {
-          var openPreview = (state.prdMode !== "full" || state.prdHighlightId === sid) ? " open" : "";
-          html.push(
-            '<div class="occ-card" style="margin:6px 0;padding:6px 8px;">' +
-              '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">' +
-                '<span><strong class="mono">Rendu compilé Compendium</strong> (' + escapeHtml(sc.compendium_unit || "") + ' · ' + escapeHtml(sc.compendium_engine || "") + ')</span>' +
-                '<span class="chip-row">' +
-                  (compRend ? '<a class="chip clickable mono" href="' + escapeHtml(compRend) + '" target="_blank" rel="noopener">Rendu compilé ↗</a>' : '') +
-                  (compSrc ? '<a class="chip clickable mono" href="' + escapeHtml(compSrc) + '" target="_blank" rel="noopener">Source schéma ↗</a>' : '') +
-                  (compLine ? '<a class="chip clickable mono" href="' + escapeHtml(corpusHref(sc.compendium_md_file || "Compendium/Compendium.md", compLine)) + '" target="_blank" rel="noopener">Compendium #L' + compLine + '</a>' : '') +
-                '</span>' +
-              '</div>' +
-              (compRend
-                ? '<details class="schema-preview-details"' + openPreview + '>' +
-                    '<summary>Aperçu visuel du schéma compilé (' + escapeHtml(sid) + ')</summary>' +
-                    '<div class="schema-preview-frame">' +
-                      '<a href="' + escapeHtml(compRend) + '" target="_blank" rel="noopener" title="Ouvrir le schéma en taille réelle">' +
-                        '<img loading="lazy" class="schema-preview-img" src="' + escapeHtml(compRend) + '" alt="' + escapeHtml(sid + " — " + String(sc.title || "").replace(/[`*]/g, "")) + '" />' +
-                      '</a>' +
-                    '</div>' +
-                  '</details>'
-                : '') +
-            '</div>'
-          );
-        }
-        var figs = Array.isArray(sc.linked_tome_figures) ? sc.linked_tome_figures : [];
-        if (figs.length === 0) {
-          html.push('<div class="prd-meta-footer"><span style="font-size:11.5px;color:var(--text-muted);">Création originale pure (aucune figure préexistante dans les Tomes 1–8).</span></div>');
-        } else {
-          html.push('<details class="tome-concordance-details"><summary>Concordance historique Tomes 1–8 (' + figs.length + ')</summary>');
-          html.push('<div style="display:flex;flex-direction:column;gap:4px;">');
-          figs.forEach(function (fg) {
-            var rHref = fg.rendered_path ? tomeAssetHref(fg.rendered_path) : "";
-            var sHref = fg.source_path ? tomeAssetHref(fg.source_path) : "";
-            html.push(
-              '<div class="occ-card" style="padding:5px 8px;">' +
-                '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">' +
-                  '<span><strong class="mono">' + escapeHtml((fg.tome_id || "") + " · " + (fg.fig_id || "")) + '</strong> — <span>' + prdInlineHtml(fg.title || "") + '</span></span>' +
-                  '<span class="chip-row">' +
-                    (rHref ? '<a class="chip clickable mono" href="' + escapeHtml(rHref) + '" target="_blank" rel="noopener">Rendu ↗</a>' : '') +
-                    (sHref ? '<a class="chip clickable mono" href="' + escapeHtml(sHref) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
-                  '</span>' +
-                '</div>' +
-                (fg.role_note ? '<div style="font-size:11.5px;color:var(--text-muted);margin-top:2px;">' + prdInlineHtml(fg.role_note) + '</div>' : '') +
-              '</div>'
-            );
-          });
-          html.push('</div></details>');
-        }
-        html.push('</div>');
-        return html.join("");
-      }
-
-      function renderPrdBridgeButtons(nodeId, compact) {
-        if (!nodeId || !idx.nodeById[nodeId]) return "";
-        var cls = compact ? "btn btn-sm" : "btn btn-sm";
-        return (
-          '<span class="prd-card-actions">' +
-            '<button class="' + cls + '" data-prd-jump-mm="' + escapeHtml(nodeId) + '" title="Ouvrir et centrer dans la MindMap">MindMap</button>' +
-            '<button class="' + cls + '" data-prd-jump-sy="' + escapeHtml(nodeId) + '" title="Ouvrir dans le Graphe Synaptique (1 saut)">Graphe</button>' +
-          '</span>'
-        );
-      }
-
-      function renderPrdExecHtml(prd) {
-        var meta = prd.meta || {};
-        var exec = prd.executive_summary || {};
-        var sections = exec.sections || [];
-        var dynParts = (prd.parties || []).length;
-        var dynChs = (prd.chapters || []).length;
-        var dynFams = (prd.chapters || []).reduce(function (acc, c) {
-          return acc + (((c.targeted_content && c.targeted_content.families_and_themes) || []).length);
-        }, 0);
-        var dynThemes = (prd.chapters || []).reduce(function (acc, c) {
-          return acc + ((c.targeted_content && c.targeted_content.families_and_themes) || []).reduce(function (a2, f) {
-            return a2 + ((f.themes_targeted || []).length);
-          }, 0);
-        }, 0);
-        var dynRels = idx.relations.length;
-        var dynAnn = (prd.annexes || []).length;
-        var dynSchemas = Number(meta.schemas_count || (idx.prdAllSchemas || []).length || 0);
-        var lineStr = meta.line_count ? Number(meta.line_count).toLocaleString("fr-CA") + " lignes" : "—";
-        var wordStr = meta.word_count ? Number(meta.word_count).toLocaleString("fr-CA") + " mots" : "—";
-        var html = [];
-        html.push(
-          '<div class="prd-hero">' +
-            '<div class="chip-row" style="margin-bottom:8px;">' +
-              '<span class="chip">Version ' + escapeHtml(meta.version || "1.0.0") + '</span>' +
-              '<span class="chip mono">' + escapeHtml(meta.date || "2026-11-24") + '</span>' +
-              '<span class="chip">' + escapeHtml(meta.domains_count || dynParts || idx.domains.length) + ' domaines</span>' +
-              '<span class="chip">' + escapeHtml(meta.chapters_count || dynChs) + ' chapitres</span>' +
-              '<span class="chip">' + escapeHtml(meta.families_count || dynFams) + ' familles</span>' +
-              '<span class="chip">' + escapeHtml(meta.themes_count || dynThemes) + ' thèmes</span>' +
-              '<span class="chip">' + escapeHtml(meta.relations_count || dynRels) + ' interrelations</span>' +
-              '<span class="chip">' + escapeHtml(meta.annexes_count || dynAnn) + ' annexes</span>' +
-              '<span class="chip">' + escapeHtml(dynSchemas) + ' schémas</span>' +
-            '</div>' +
-            '<h1>' + prdInlineHtml(meta.prd_title || "Référentiel directeur") + '</h1>' +
-            '<p style="margin:0 0 6px 0;color:var(--text-muted);">' + prdInlineHtml(meta.prd_subtitle || "") + '</p>' +
-            '<div style="font-size:11.5px;color:var(--text-muted);">Statut : ' + prdInlineHtml(meta.status || "") + ' · Source : <span class="mono">' + escapeHtml(meta.source_md || "../../Sources/Compendium/prd.md") + '</span> (' + lineStr + ', ' + wordStr + ')</div>' +
-          '</div>'
-        );
-
-        html.push('<div class="prd-section-card" data-prd-eid="exec">');
-        html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">' + prdInlineHtml(exec.title || "Sommaire exécutif global") + '</h2>');
-        if (exec.lead) html.push('<p style="margin:0 0 10px 0;">' + prdInlineHtml(exec.lead) + '</p>');
-        sections.forEach(function (sec, i) {
-          var sid = sec.id || ("exec-" + (i + 1));
-          var isHl = state.prdHighlightId === sid;
-          html.push('<div class="prd-family-block' + (isHl ? " prd-highlight" : "") + '" data-prd-eid="' + escapeHtml(sid) + '">');
-          html.push('<h3 style="margin:0 0 6px 0;font-size:14.5px;">' + prdInlineHtml(sec.heading || "") + '</h3>');
-          var paras = Array.isArray(sec.paragraphs) && sec.paragraphs.length ? sec.paragraphs : String(sec.body_md || "").split(/\n\n+/);
-          paras.forEach(function (pTxt) {
-            var trimmed = String(pTxt || "").trim();
-            if (!trimmed || trimmed.charAt(0) === "|") return;
-            html.push('<p style="margin:4px 0 6px 0;">' + prdInlineHtml(trimmed) + '</p>');
-          });
-          if (sec.kpi_table && Array.isArray(sec.kpi_table.headers) && Array.isArray(sec.kpi_table.rows)) {
-            html.push('<div class="table-wrap" style="margin-top:8px;"><table class="data-table"><thead><tr>');
-            sec.kpi_table.headers.forEach(function (h) { html.push('<th>' + prdInlineHtml(h) + '</th>'); });
-            html.push('</tr></thead><tbody>');
-            sec.kpi_table.rows.forEach(function (row) {
-              html.push('<tr>');
-              row.forEach(function (cell) { html.push('<td>' + prdInlineHtml(cell) + '</td>'); });
-              html.push('</tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          html.push('</div>');
-        });
-        if (Array.isArray(exec.vulgarization_schemas) && exec.vulgarization_schemas.length) {
-          var panHl = state.prdHighlightId === "exec-panorama" ? " prd-highlight" : "";
-          html.push('<div class="prd-family-block' + panHl + '" data-prd-eid="exec-panorama">');
-          html.push('<h3 style="margin:0 0 8px 0;font-size:15px;">Panorama visuel directeur — Schémas de vulgarisation transversaux (' + exec.vulgarization_schemas.length + ' schémas SCH-00)</h3>');
-          exec.vulgarization_schemas.forEach(function (sc) {
-            html.push(renderVulgarizationSchemaCardHtml(sc));
-          });
-          html.push('</div>');
-        }
-        html.push('</div>');
-
-        if (state.prdMode === "targeted") {
-          html.push('<div class="prd-section-card"><h3 style="margin:0 0 10px 0;font-size:15px;">Accès rapide aux ' + dynParts + ' Parties &amp; ' + dynAnn + ' Annexes</h3><div class="cards-grid">');
-          (prd.parties || []).forEach(function (p) {
-            html.push(
-              '<div class="card" style="padding:10px 12px;">' +
-                '<div class="chip-row" style="margin-bottom:4px;"><span class="chip mono">' + escapeHtml(p.domain_id) + '</span><span class="chip">Partie ' + escapeHtml(p.part_roman) + '</span><span class="chip">' + (p.chapter_numbers || []).length + ' ch.</span></div>' +
-                '<div style="font-weight:700;font-size:13px;margin-bottom:4px;">' + prdInlineHtml(p.representative_part_title) + '</div>' +
-                '<p style="margin:0 0 8px 0;font-size:12px;color:var(--text-muted);">' + prdInlineHtml(truncate(p.part_summary, 150)) + '</p>' +
-                '<div class="chip-row">' +
-                  '<button class="btn btn-sm primary" data-prd-jump-part="' + escapeHtml(p.domain_id) + '">Ouvrir Partie ' + escapeHtml(p.part_roman) + '</button>' +
-                  renderPrdBridgeButtons(p.domain_node_id, true) +
-                '</div>' +
-              '</div>'
-            );
-          });
-          html.push('</div></div>');
-        }
-        return html.join("");
-      }
-
-      function renderPrdPartyCardHtml(p, fState) {
-        var dim = fState.active && !fState.matchingDomains.has(p.domain_id) ? " prd-dimmed" : (fState.active ? " prd-match" : "");
-        var hl = state.prdHighlightId === ("part-" + p.domain_id) ? " prd-highlight" : "";
-        var cleanTitle = String(p.representative_part_title || "").replace(/^Partie\s+[IVXLCDM]+\s*[—–:-]?\s*/i, "");
-        var html = [];
-        html.push('<div class="prd-section-card' + dim + hl + '" data-prd-eid="part-' + escapeHtml(p.domain_id) + '" style="border-left:4px solid var(--accent);">');
-        html.push('<div class="prd-card-head"><div>');
-        html.push('<div class="chip-row" style="margin-bottom:5px;"><span class="chip mono">' + escapeHtml(p.domain_id) + '</span><span class="chip mono">' + escapeHtml(p.domain_node_id || ("DOM_" + p.domain_id)) + '</span><span class="chip">Partie ' + escapeHtml(p.part_roman) + '</span></div>');
-        html.push('<h2 style="margin:0;font-size:17px;">Partie ' + escapeHtml(p.part_roman) + ' — ' + escapeHtml(p.domain_id) + ' : ' + prdInlineHtml(cleanTitle) + '</h2>');
-        html.push('</div>' + renderPrdBridgeButtons(p.domain_node_id, false) + '</div>');
-        html.push('<p style="margin:4px 0 8px 0;">' + prdInlineHtml(p.part_summary || "") + '</p>');
-        if (Array.isArray(p.key_identifiers) && p.key_identifiers.length) {
-          html.push('<div class="chip-row" style="margin-bottom:8px;">');
-          p.key_identifiers.forEach(function (k) { html.push('<span class="chip mono">' + escapeHtml(k) + '</span>'); });
-          html.push('</div>');
-        }
-        if (state.prdMode === "targeted" && state.prdFocusKind === "part") {
-          html.push('<div class="chip-row">');
-          (p.chapter_numbers || []).forEach(function (cn) {
-            var chObj = idx.prdChapterByNum[Number(cn)];
-            html.push('<button class="btn btn-sm" data-prd-jump-ch="' + cn + '">Ch. ' + pad2(cn) + (chObj ? " · " + prdInlineHtml(truncate(chObj.representative_title, 42)) : "") + '</button>');
-          });
-          html.push('</div>');
-        }
-        html.push('</div>');
-        return html.join("");
-      }
-
-      function renderPrdChapterHtml(ch, fState) {
-        var cnum = Number(ch.chapter_number);
-        var tc = ch.targeted_content || {};
-        var fams = tc.families_and_themes || [];
-        var eid = "ch-" + pad2(cnum);
-        var chDim = fState.active && !fState.matchingChapters.has(cnum) ? " prd-dimmed" : (fState.active ? " prd-match" : "");
-        var chHl = state.prdHighlightId === eid ? " prd-highlight" : "";
-        var cleanTitle = String(ch.representative_title || "").replace(/^Chapitre\s+0?\d+\s*[—–:-]?\s*/i, "");
-
-        var html = [];
-        html.push('<article class="prd-section-card' + chDim + chHl + '" data-prd-eid="' + escapeHtml(eid) + '">');
-        html.push('<div class="prd-card-head"><div>');
-        var chSecs = (Array.isArray(ch.parts_present) && ch.parts_present.length) ? ch.parts_present : (ch.tomes_present || []);
-        html.push(
-          '<div class="chip-row" style="margin-bottom:5px;">' +
-            '<span class="chip mono">' + escapeHtml(ch.chapter_code || ("CH-" + pad2(cnum))) + '</span>' +
-            '<span class="chip mono">' + escapeHtml(ch.domain_id) + '</span>' +
-            '<span class="chip mono">' + escapeHtml(ch.subdomain_node_id) + '</span>' +
-            (chSecs.map(function (t) { return '<span class="chip">' + escapeHtml(t) + '</span>'; }).join("")) +
-            ((ch.autonomy_levels || []).map(function (a) { return '<span class="chip mono">' + escapeHtml(a) + '</span>'; }).join("")) +
-          '</div>'
-        );
-        var totalChs = (idx.prd && idx.prd.chapters) ? idx.prd.chapters.length : 36;
-        html.push('<h2 style="margin:0;font-size:17px;">Chapitre ' + pad2(cnum) + ' — ' + prdInlineHtml(cleanTitle) + '</h2>');
-        html.push('</div><div class="prd-card-actions">');
-        if (state.prdMode === "targeted") {
-          if (cnum > 1) html.push('<button class="btn btn-sm" data-prd-jump-ch="' + (cnum - 1) + '">← Ch. ' + pad2(cnum - 1) + '</button>');
-          if (cnum < totalChs) html.push('<button class="btn btn-sm" data-prd-jump-ch="' + (cnum + 1) + '">Ch. ' + pad2(cnum + 1) + ' →</button>');
-        }
-        html.push(renderPrdBridgeButtons(ch.subdomain_node_id, false) + '</div></div>');
-
-        // XX.1 Résumé
-        html.push('<div style="margin-top:8px;"><h3 style="margin:0 0 4px 0;font-size:14.5px;">' + pad2(cnum) + '.1 Résumé</h3>');
-        html.push('<p style="margin:0;">' + prdInlineHtml(ch.executive_summary || "") + '</p></div>');
-
-        // XX.2 Descriptif du contenu ciblé
-        html.push('<div style="margin-top:12px;"><h3 style="margin:0 0 4px 0;font-size:14.5px;">' + pad2(cnum) + '.2 Descriptif du contenu ciblé</h3>');
-        if (tc.scope_and_objectives) {
-          html.push('<p style="margin:4px 0 6px 0;">' + prdInlineHtml(tc.scope_and_objectives) + '</p>');
-        }
-        if (Array.isArray(tc.key_requirements_and_objectives) && tc.key_requirements_and_objectives.length) {
-          html.push('<div class="section-label" style="margin-top:8px;">Exigences et objectifs vérifiables (' + tc.key_requirements_and_objectives.length + ')</div><ul class="prd-list">');
-          tc.key_requirements_and_objectives.forEach(function (req) {
-            html.push('<li>' + prdInlineHtml(req) + '</li>');
-          });
-          html.push('</ul>');
-        }
-
-        // Familles & Thèmes
-        fams.forEach(function (fam, k) {
-          var famHl = state.prdHighlightId === fam.family_node_id ? " prd-highlight" : "";
-          html.push('<div class="prd-family-block' + famHl + '" data-prd-eid="' + escapeHtml(fam.family_node_id) + '">');
-          html.push('<div class="prd-card-head" style="margin-bottom:4px;"><div>');
-          html.push('<h4 style="margin:0;font-size:14px;">' + pad2(cnum) + '.2.' + (k + 1) + ' ' + prdInlineHtml(fam.family_title || "") + '</h4>');
-          html.push('<div style="font-size:11.5px;color:var(--text-muted);"><span class="mono">' + escapeHtml(fam.family_node_id) + '</span></div>');
-          html.push('</div>' + renderPrdBridgeButtons(fam.family_node_id, true) + '</div>');
-          if (fam.family_overview) html.push('<p style="margin:4px 0 8px 0;font-size:12.5px;color:var(--text-muted);line-height:1.45;">' + prdInlineHtml(fam.family_overview) + '</p>');
-
-          (fam.themes_targeted || []).forEach(function (th) {
-            var thMatch = !fState.active || fState.matchingThemes.has(th.theme_node_id);
-            var thCls = (fState.active ? (thMatch ? " prd-match" : " prd-dimmed") : "") + (state.prdHighlightId === th.theme_node_id ? " prd-highlight" : "");
-            html.push('<div class="prd-theme-card' + thCls + '" data-prd-eid="' + escapeHtml(th.theme_node_id) + '">');
-            html.push('<div class="prd-card-head" style="margin-bottom:4px;"><div>');
-            html.push('<strong style="font-size:14px;">' + prdInlineHtml(th.theme_title || "") + '</strong> ');
-            html.push('<span class="tech-tag">' + escapeHtml(th.theme_node_id) + '</span> <span class="tech-tag">' + escapeHtml(th.canonical_slug || "") + '</span>');
-            html.push('</div>' + renderPrdBridgeButtons(th.theme_node_id, true) + '</div>');
-            html.push('<p style="margin:6px 0 0 0;">' + prdInlineHtml(th.content_specification || "") + '</p>');
-
-            html.push('<div class="prd-meta-footer">');
-            html.push('<div class="chip-row">');
-            if ((th.autonomy_levels || []).length) html.push('<span class="chip mono">Autonomie : ' + escapeHtml(th.autonomy_levels.join(", ")) + '</span>');
-            if ((th.roles || []).length) html.push('<span class="chip">Rôles : ' + escapeHtml(th.roles.join(", ")) + '</span>');
-            if (th.horizon) html.push('<span class="chip">Horizon : ' + escapeHtml(th.horizon) + '</span>');
-            var thSecs = (Array.isArray(th.parts_present) && th.parts_present.length) ? th.parts_present : (th.tomes_present || []);
-            if (thSecs.length) html.push('<span class="chip">Sections : ' + escapeHtml(thSecs.join(", ")) + '</span>');
-            (th.identifiers_and_norms || []).forEach(function (idStr) {
-              html.push('<span class="chip mono">' + escapeHtml(idStr) + '</span>');
-            });
-            html.push('</div>');
-
-            if (Array.isArray(th.direct_anchors) && th.direct_anchors.length) {
-              html.push('<div class="chip-row">');
-              th.direct_anchors.forEach(function (anc) {
-                var href = corpusHref(anc.file, anc.line_start);
-                var lbl = anc.label || (anc.tome_id + " L" + anc.line_start + (anc.line_end ? "–L" + anc.line_end : ""));
-                html.push('<a class="chip clickable mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(lbl) + '</a>');
-              });
-              html.push('</div>');
-            }
-            html.push('</div>');
-            html.push('</div>');
-          });
-          html.push('</div>');
-        });
-
-        // Livrables
-        if (Array.isArray(tc.deliverables_and_verification) && tc.deliverables_and_verification.length) {
-          html.push('<div class="section-label" style="margin-top:12px;">Livrables et critères d\'acceptation</div><ul class="prd-list">');
-          tc.deliverables_and_verification.forEach(function (d) { html.push('<li>' + prdInlineHtml(d) + '</li>'); });
-          html.push('</ul>');
-        }
-
-        // Interrelations systémiques
-        if (Array.isArray(tc.cross_chapter_interrelations) && tc.cross_chapter_interrelations.length) {
-          html.push('<div class="section-label" style="margin-top:12px;">Interrelations systémiques (' + tc.cross_chapter_interrelations.length + ')</div><div style="display:flex;flex-direction:column;gap:5px;">');
-          tc.cross_chapter_interrelations.forEach(function (rel) {
-            var arrow = rel.direction === "entrante" ? "←" : "→";
-            var rt = idx.relTypeById[rel.relation_type] || { label: rel.label || rel.relation_type, color: "#2563eb" };
-            var rtLbl = (rt && rt.label) ? rt.label : (rel.label || rel.relation_type);
-            var targetSlugsStr = (Array.isArray(rel.target_slugs) && rel.target_slugs.length) ? rel.target_slugs.join(", ") : (rel.target_slug || "");
-            html.push(
-              '<div class="rel-card" role="button" tabindex="0" data-prd-jump-ch="' + escapeHtml(rel.target_chapter_number) + '" data-prd-hl="' + escapeHtml(rel.target_node_id || "") + '" style="border-left-color:' + escapeHtml(rt.color) + ';margin:0;">' +
-                '<div style="display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap;">' +
-                  '<span style="color:' + escapeHtml(rt.color) + ';font-weight:700;font-size:11.5px;">' + arrow + ' ' + escapeHtml(rtLbl) + ' — Ch. ' + pad2(rel.target_chapter_number) + ' · ' + prdInlineHtml(rel.target_chapter_title || "") + '</span>' +
-                  '<span class="chip mono">' + escapeHtml(targetSlugsStr) + '</span>' +
-                '</div>' +
-                '<div style="color:var(--text-muted);font-size:12px;">' + prdInlineHtml(rel.synthesis || rel.label || "") + '</div>' +
-              '</div>'
-            );
-          });
-          html.push('</div>');
-        }
-
-        // Ancrages dans le Compendium
-        if (Array.isArray(tc.corpus_anchors) && tc.corpus_anchors.length) {
-          html.push('<div class="section-label" style="margin-top:12px;">Ancrages dans le Compendium (' + tc.corpus_anchors.length + ')</div>');
-          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Section</th><th>Source Compendium</th><th>Référence</th></tr></thead><tbody>');
-          tc.corpus_anchors.forEach(function (anc) {
-            var href = corpusHref(anc.file, anc.line_start);
-            var fname = String(anc.file || "").split("/").pop();
-            var pid = anc.part_id || anc.tome_id || "";
-            html.push(
-              '<tr>' +
-                '<td class="mono"><strong>' + escapeHtml(pid) + '</strong></td>' +
-                '<td><a class="mono" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + escapeHtml(fname) + (anc.line_start ? "#L" + anc.line_start : "") + '</a></td>' +
-                '<td>' + prdInlineHtml(anc.reference || "") + '</td>' +
-              '</tr>'
-            );
-          });
-          html.push('</tbody></table></div>');
-        }
-
-        if (Array.isArray(ch.vulgarization_schemas) && ch.vulgarization_schemas.length) {
-          var schSecEid = "ch-" + pad2(cnum) + "-schemas";
-          var schSecHl = state.prdHighlightId === schSecEid ? " prd-highlight" : "";
-          html.push('<div class="prd-family-block' + schSecHl + '" data-prd-eid="' + escapeHtml(schSecEid) + '" style="margin-top:14px;">');
-          html.push('<h4 style="margin:0 0 6px 0;font-size:14.5px;">' + pad2(cnum) + '.3 Schémas de vulgarisation à intégrer (' + ch.vulgarization_schemas.length + ')</h4>');
-          ch.vulgarization_schemas.forEach(function (sc) {
-            html.push(renderVulgarizationSchemaCardHtml(sc));
-          });
-          html.push('</div>');
-        }
-
-        html.push('</div></article>');
-        return html.join("");
-      }
-
-      function renderPrdAnnexeHtml(ann) {
-        var ac = ann.annexe_code;
-        var cleanTitle = String(ann.representative_title || "").replace(/^Annexe\s+[A-E]\s*[—–:-]?\s*/i, "");
-        var eid = "ann-" + ac;
-        var html = [];
-        html.push('<article class="prd-section-card' + (state.prdHighlightId === eid ? " prd-highlight" : "") + '" data-prd-eid="' + escapeHtml(eid) + '">');
-        html.push('<div class="chip-row" style="margin-bottom:5px;"><span class="chip mono">Annexe ' + escapeHtml(ac) + '</span></div>');
-        html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">Annexe ' + escapeHtml(ac) + ' — ' + prdInlineHtml(cleanTitle) + '</h2>');
-        html.push('<h3 style="margin:6px 0 4px 0;font-size:14.5px;">Annexe ' + escapeHtml(ac) + '.1 Résumé</h3>');
-        html.push('<p style="margin:0 0 8px 0;">' + prdInlineHtml(ann.executive_summary || "") + '</p>');
-        html.push('<h3 style="margin:6px 0 4px 0;font-size:14.5px;">Annexe ' + escapeHtml(ac) + '.2 Descriptif du contenu ciblé</h3>');
-        html.push('<p style="margin:0 0 10px 0;">' + prdInlineHtml(ann.targeted_content_description || "") + '</p>');
-
-        if (ac === "A" && Array.isArray(ann.traceability_table)) {
-          var annADoms = (idx.prd && idx.prd.parties ? idx.prd.parties.length : idx.domains.length) || 0;
-          var annAChs = ann.traceability_table.length;
-          var annAFams = ann.traceability_table.reduce(function (s, r) { return s + (Number(r.families_count) || 0); }, 0);
-          var annAThms = ann.traceability_table.reduce(function (s, r) { return s + (Number(r.themes_count) || 0); }, 0);
-          html.push('<h4 style="margin:10px 0 6px 0;">Table maîtresse MindMap (' + annADoms + ' Domaines / ' + annAChs + ' Chapitres / ' + annAFams + ' Familles / ' + annAThms + ' Thèmes)</h4>');
-          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Ch.</th><th>Domaine</th><th>Sous-domaine</th><th>Titre du chapitre PRD</th><th>Fam.</th><th>Thèmes</th><th>Occ.</th><th>Sections</th></tr></thead><tbody>');
-          ann.traceability_table.forEach(function (r) {
-            var rSecs = (Array.isArray(r.parts_present) && r.parts_present.length) ? r.parts_present : (r.tomes_present || []);
-            html.push(
-              '<tr>' +
-                '<td><button class="btn btn-sm" data-prd-jump-ch="' + r.chapter_number + '">' + pad2(r.chapter_number) + '</button></td>' +
-                '<td class="mono">' + escapeHtml(r.domain_id) + '</td>' +
-                '<td class="mono">' + escapeHtml(r.subdomain_node_id) + '</td>' +
-                '<td>' + prdInlineHtml(r.representative_title) + '</td>' +
-                '<td>' + r.families_count + '</td>' +
-                '<td>' + r.themes_count + '</td>' +
-                '<td>' + r.occurrence_count + '</td>' +
-                '<td>' + escapeHtml(rSecs.join(", ")) + '</td>' +
-              '</tr>'
-            );
-          });
-          html.push('</tbody></table></div>');
-        } else if (ac === "B") {
-          if (Array.isArray(ann.relation_types_stats)) {
-            html.push('<h4 style="margin:10px 0 6px 0;">Répartition des interrelations par type canonique</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Type</th><th>Libellé</th><th>Total</th><th>Direction</th><th>Règle sémantique</th></tr></thead><tbody>');
-            ann.relation_types_stats.forEach(function (rt) {
-              html.push('<tr><td class="mono">' + escapeHtml(rt.type_id) + '</td><td>' + escapeHtml(rt.label) + '</td><td><strong>' + rt.count + '</strong></td><td>' + escapeHtml(rt.directionality || "") + '</td><td>' + prdInlineHtml(rt.semantic_rule || "") + '</td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          if (Array.isArray(ann.top_hubs)) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Top ' + ann.top_hubs.length + ' des nœuds carrefours</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>#</th><th>Nœud</th><th>Domaine</th><th>Ch.</th><th>Degré</th><th>Actions</th></tr></thead><tbody>');
-            ann.top_hubs.forEach(function (h) {
-              html.push(
-                '<tr>' +
-                  '<td>' + h.rank + '</td>' +
-                  '<td><strong>' + prdInlineHtml(h.title) + '</strong> <span class="mono">(' + escapeHtml(h.canonical_slug) + ')</span></td>' +
-                  '<td class="mono">' + escapeHtml(h.domain_id) + '</td>' +
-                  '<td><button class="btn btn-sm" data-prd-jump-ch="' + h.chapter_number + '" data-prd-hl="' + escapeHtml(h.node_id) + '">Ch. ' + pad2(h.chapter_number) + '</button></td>' +
-                  '<td><strong>' + h.relation_degree + '</strong></td>' +
-                  '<td>' + renderPrdBridgeButtons(h.node_id, true) + '</td>' +
-                '</tr>'
-              );
-            });
-            html.push('</tbody></table></div>');
-          }
-          if (Array.isArray(ann.tensions)) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Tensions d\'arbitrage structurantes (' + ann.tensions.length + ' relations tension_arbitrage)</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Source</th><th>Cible</th><th>Intitulé</th><th>Justification</th></tr></thead><tbody>');
-            ann.tensions.forEach(function (t) {
-              html.push(
-                '<tr>' +
-                  '<td><button class="btn btn-sm mono" data-prd-jump-ch="' + t.source_chapter_number + '" data-prd-hl="' + escapeHtml(t.source_node_id) + '">' + escapeHtml(t.source_slug) + '</button></td>' +
-                  '<td><button class="btn btn-sm mono" data-prd-jump-ch="' + t.target_chapter_number + '" data-prd-hl="' + escapeHtml(t.target_node_id) + '">' + escapeHtml(t.target_slug) + '</button></td>' +
-                  '<td>' + prdInlineHtml(t.label) + '</td>' +
-                  '<td>' + prdInlineHtml(t.justification) + '</td>' +
-                '</tr>'
-              );
-            });
-            html.push('</tbody></table></div>');
-          }
-        } else if (ac === "C") {
-          if (ann.div_02) {
-            var d2 = ann.div_02;
-            html.push('<div class="card" style="border-left:4px solid #7c3aed;margin:8px 0;"><div class="chip-row"><span class="chip mono">DIV-02</span><span class="chip">' + escapeHtml(d2.statut || "Fermée") + '</span></div><h4 style="margin:6px 0 4px 0;">' + prdInlineHtml(d2.title || "") + '</h4>');
-            if (Array.isArray(d2.rectifications)) {
-              html.push('<ul class="prd-list">' + d2.rectifications.map(function (r) { return '<li>' + prdInlineHtml(r) + '</li>'; }).join("") + '</ul>');
-            }
-            if (d2.file) html.push('<a class="mono" href="' + escapeHtml(corpusHref(d2.file, d2.line_start || 74)) + '" target="_blank" rel="noopener">' + (d2.file === "Compendium/Compendium.md" ? "Compendium #L" : "Tome 5 #L") + (d2.line_start || 74) + '</a>');
-            html.push('</div>');
-          }
-          if (Array.isArray(ann.reconciliations)) {
-            html.push('<h4 style="margin:10px 0 6px 0;">Cinq discordances inter-volumes (DISC-01 à DISC-05)</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Sujet</th><th>Choix canonique (Compendium)</th><th>Source</th></tr></thead><tbody>');
-            ann.reconciliations.forEach(function (rec) {
-              html.push('<tr><td class="mono">' + escapeHtml(rec.id) + '</td><td>' + prdInlineHtml(rec.title) + '</td><td>' + prdInlineHtml(rec.resolution) + '</td><td><a class="mono" href="' + escapeHtml(corpusHref(rec.file, rec.line_start || 74)) + '" target="_blank" rel="noopener">' + escapeHtml(rec.section || "Compendium § 0.2") + '</a></td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          if (Array.isArray(ann.timeline)) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Chronologie consolidée 2023–2035 (' + ann.timeline.length + ' jalons)</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Échéance</th><th>Cadre / Jalon</th><th>Portée concrète</th><th>Sections</th></tr></thead><tbody>');
-            ann.timeline.forEach(function (ev) {
-              var secTxt = (ev.tomes || []).join(", ");
-              var evLink = ev.file ? '<a class="mono" href="' + escapeHtml(corpusHref(ev.file, ev.line_start || 1)) + '" target="_blank" rel="noopener">' + escapeHtml(secTxt || "Compendium") + '</a>' : escapeHtml(secTxt);
-              html.push('<tr><td class="mono" style="white-space:nowrap;">' + prdInlineHtml(ev.date) + '</td><td><strong>' + prdInlineHtml(ev.cadre) + '</strong></td><td>' + prdInlineHtml(ev.impact) + '</td><td>' + evLink + '</td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-        } else if (ac === "D") {
-          var bil = ann.bilans_aq || {};
-          var cg = bil.compendium_g0_g5 || {};
-          var t8g = bil.tome_8_g0_g5 || {};
-          var rapG0 = cg.rapports_g0 || {};
-          var opaPass = (rapG0.opa_check && rapG0.opa_check.tests_passed) || t8g.opa_tests_passed || "PASS";
-          var pyPass = (rapG0.pytest_check && rapG0.pytest_check.passed) || t8g.pytest_passed || "PASS";
-          var g0Stat = rapG0.overall_status || t8g.overall_status || "PASS";
-          var col = (idx.prd && idx.prd.compendium_meta && Object.keys(idx.prd.compendium_meta).length) ? idx.prd.compendium_meta : (ann.collection_metrics || {});
-          var lPlus = cg.sources_l_plus || t8g.sources_l_plus || 135;
-          var statF = cg.statut_f_exclus || t8g.statut_f_exclus || 27;
-          var syncN = cg.ca_g0_sync_count || t8g.synced_excerpts_count || 14;
-          var wyvN = cg.wyvern_g2_unites_count || t8g.wyvern_g2_units || 37;
-          var glossN = col.glossaire_vedettes || (idx.glossaryTerms ? idx.glossaryTerms.length : 56);
-          var factsN = (cg.faits_empiriques_16 ? cg.faits_empiriques_16.length : 16);
-          var specsN = (cg.specifications_lplus_57 ? cg.specifications_lplus_57.length : 57);
-          var lic = col.licences;
-          var licStr = (lic && typeof lic === "object")
-            ? ((lic.texte_figures_registres || "CC-BY-4.0") + " / " + (lic.code_scripts_trousse || "MIT"))
-            : String(lic || "CC-BY-4.0 / MIT");
-          html.push('<ul class="prd-list">');
-          html.push('<li><strong>Homologation Compendium (G0–G5)</strong> : statut G0 <code>' + escapeHtml(g0Stat) + '</code> · pytest : <code>' + escapeHtml(pyPass) + '</code> · OPA/Rego : <code>' + escapeHtml(opaPass) + '</code> · <code>' + escapeHtml(syncN) + '</code> extraits CA-G0-SYNC · gel <code>' + escapeHtml(cg.freeze_date || col.freeze_date || "2026-12-02") + '</code></li>');
-          html.push('<li><strong>Socle probatoire vérifié</strong> : <code>' + escapeHtml(lPlus) + '</code> sources <code>L+</code> (' + escapeHtml(statF) + ' Statut F exclus, politique <code>AO-01</code>) · Wyvern G2 : <code>' + escapeHtml(wyvN) + '/' + escapeHtml(wyvN) + '</code> unités · <code>' + escapeHtml(factsN) + '</code> faits empiriques · <code>' + escapeHtml(specsN) + '</code> spécifications L+ · <code>' + escapeHtml(glossN) + '</code> vedettes glossaire</li>');
-          html.push('<li><strong>Édition &amp; licences Compendium</strong> : <code>' + escapeHtml(col.compendium_pdf_pages || col.total_pdf_pages || 852) + '</code> pages PDF · <code>' + escapeHtml(col.compendium_schemas || col.total_compendium_schemas || 115) + '</code> schémas Compendium (+ <code>' + escapeHtml(col.total_historical_tome_diagrams || 319) + '</code> figures Tomes) · ' + prdInlineHtml(licStr) + ' · ' + prdInlineHtml(col.statut_juridique || "non-avis (DC-P01 / DC-P12 / AO-05)") + '</li>');
-          html.push('</ul>');
-
-          var allMat = Array.isArray(ann.matrix_all) ? ann.matrix_all : [];
-          var sampleMat = Array.isArray(ann.matrix_sample) ? ann.matrix_sample : [];
-          var matTotals = ann.matrix_totals || {};
-          var uniqueMatCount = matTotals.unique_entries || allMat.length || sampleMat.length;
-          if (Array.isArray(ann.matrix_distribution)) {
-            var totalsExtra = matTotals.tome8_executable_tests
-              ? (" · " + matTotals.tome8_executable_tests + " tests exécutables Tome 8, " + (matTotals.shared_ids_merged || 0) + " IDs fusionnés sans doublon")
-              : "";
-            html.push('<h4 style="margin:10px 0 6px 0;">Distribution complète des ' + uniqueMatCount + ' entrées uniques de traçabilité' + totalsExtra + '</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Famille</th><th>Entrées</th><th>Détail par criticité / catégorie</th></tr></thead><tbody>');
-            ann.matrix_distribution.forEach(function (d) {
-              var subTxt = (d.subfamilies || []).map(function (s) { return s.name + " (" + s.count + ")"; }).join(", ");
-              html.push('<tr><td class="mono"><strong>' + escapeHtml(d.family) + '</strong></td><td><strong>' + d.count + '</strong></td><td>' + prdInlineHtml(subTxt) + '</td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          var hasSampleToggle = sampleMat.length > 0 && allMat.length > sampleMat.length;
-          var shownMat = (hasSampleToggle && !state.prdAnnDShowAll) ? sampleMat : (allMat.length ? allMat : sampleMat);
-          if (shownMat.length) {
-            html.push(
-              '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0 6px 0;flex-wrap:wrap;">' +
-                '<h4 style="margin:0;">Matrice de traçabilité (' + shownMat.length + ' / ' + (allMat.length || sampleMat.length) + ' entrées uniques)</h4>' +
-                (hasSampleToggle
-                  ? '<button class="btn btn-sm" id="prd-annd-toggle-btn">' + (state.prdAnnDShowAll ? "Revenir à l'extrait stratifié (" + sampleMat.length + ")" : "Afficher les " + allMat.length + " entrées") + '</button>'
-                  : '') +
-              '</div>'
-            );
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Famille</th><th>Intitulé / Règle / Test</th><th>Module</th><th>Ancrage</th></tr></thead><tbody>');
-            shownMat.forEach(function (m) {
-              html.push('<tr><td class="mono"><strong>' + escapeHtml(m.id) + '</strong></td><td>' + prdInlineHtml(m.family) + '</td><td>' + prdInlineHtml(m.title) + '</td><td class="mono">' + prdInlineHtml(m.module) + '</td><td>' + prdInlineHtml(m.anchor) + '</td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          if (ann.exig_cre_ia && Array.isArray(ann.exig_cre_ia.familles)) {
-            html.push('<h4 style="margin:12px 0 6px 0;">' + ann.exig_cre_ia.familles.length + ' familles normatives ' + escapeHtml(ann.exig_cre_ia.code_norme || "CRE-IA-2026-01") + ' (' + (ann.exig_cre_ia.total || 305) + ' EXIG-*)</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Préfixe</th><th>Famille</th><th>Emplacement Tome 2</th><th>Nombre</th></tr></thead><tbody>');
-            ann.exig_cre_ia.familles.forEach(function (f) {
-              html.push('<tr><td class="mono">' + escapeHtml(f.prefixe) + '</td><td>' + prdInlineHtml(f.titre) + '</td><td>' + prdInlineHtml(f.emplacement_t2) + '</td><td><strong>' + f.nombre + '</strong></td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          if (Array.isArray(ann.five_sbb)) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Cinq blocs normalisés (5 SBB) et trois blueprints (C01–C40)</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Bloc SBB</th><th>Rôle</th><th>Plan</th><th>Module Tome 8</th></tr></thead><tbody>');
-            ann.five_sbb.forEach(function (s) {
-              html.push('<tr><td class="mono">' + escapeHtml(s.sbb_id) + '</td><td class="mono">' + escapeHtml(s.slot) + '</td><td>' + escapeHtml(s.plan) + '</td><td class="mono">' + escapeHtml(s.module_t8) + '</td></tr>');
-            });
-            html.push('</tbody></table></div>');
-          }
-          if (ann.blueprints_c40) {
-            var bps = ann.blueprints_c40.blueprints || [];
-            var brk = ann.blueprints_c40.c40_breakdown || {};
-            html.push('<ul class="prd-list" style="margin-top:8px;">');
-            bps.forEach(function (b) { html.push('<li><strong class="mono">' + escapeHtml(b.blueprint_id) + '</strong> : ' + prdInlineHtml(b.ref_tome6) + '</li>'); });
-            html.push('<li><strong>Répartition des ' + (brk.total || 40) + ' critères C01–C40</strong> : BLOQUANT ' + (brk.BLOQUANT || 0) + ', OBLIGATOIRE ' + (brk.OBLIGATOIRE || 0) + ', RECOMMANDE ' + (brk.RECOMMANDE || 0) + '</li>');
-            html.push('</ul>');
-          }
-        } else if (ac === "E") {
-          var sStats = ann.summary_stats || {};
-          var tcCov = ann.tome_figures_coverage || {};
-          var catAll = Array.isArray(ann.catalogue_all) ? ann.catalogue_all : [];
-          var invInfo = ann.tome_inventory_summary || {};
-          var invFigs = Array.isArray(invInfo.figures) ? invInfo.figures : [];
-          var distList = Array.isArray(ann.domain_chapter_distribution) ? ann.domain_chapter_distribution : [];
-          var totalSchE = Number(sStats.total_schemas || catAll.length || 115);
-
-          if (Array.isArray(ann.editorial_guidelines) && ann.editorial_guidelines.length) {
-            html.push('<ul class="prd-list">');
-            ann.editorial_guidelines.forEach(function (gl) { html.push('<li>' + prdInlineHtml(gl) + '</li>'); });
-            html.push('</ul>');
-          }
-
-          var byReuse = sStats.by_reuse_status || {};
-          var byArch = sStats.by_visual_archetype || {};
-          var byNot = sStats.by_recommended_notation || {};
-          var byAud = sStats.by_target_audience || {};
-          html.push('<h4 style="margin:10px 0 6px 0;">Synthèse statistique des ' + totalSchE + ' schémas de vulgarisation (' + (byReuse.reemploi_direct || 0) + ' / ' + (byReuse.adaptation_vulgarisee || 0) + ' / ' + (byReuse.creation_originale || 0) + ')</h4>');
-          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Dimension</th><th>Catégorie</th><th>Schémas</th><th>Part (sur ' + totalSchE + ')</th></tr></thead><tbody>');
-          function pushStatRows(dimLabel, obj, labelsMap) {
-            Object.keys(obj || {}).forEach(function (k) {
-              var cnt = Number(obj[k] || 0);
-              var pct = ((100 * cnt) / Math.max(1, totalSchE)).toFixed(1).replace(".", ",") + " %";
-              var lbl = (labelsMap && labelsMap[k]) ? labelsMap[k] : k;
-              html.push('<tr><td>' + escapeHtml(dimLabel) + '</td><td>' + prdInlineHtml(lbl) + '</td><td><strong>' + cnt + '</strong></td><td class="mono">' + pct + '</td></tr>');
-            });
-          }
-          pushStatRows("Statut de réutilisation", byReuse, PRD_REUSE_LABELS);
-          pushStatRows("Archétype visuel", byArch, null);
-          pushStatRows("Notation recommandée", byNot, null);
-          pushStatRows("Public cible (multi-public)", byAud, null);
-          html.push('</tbody></table></div>');
-
-          var byTomeCov = tcCov.by_tome || {};
-          html.push('<h4 style="margin:12px 0 6px 0;">Couverture des ' + (tcCov.total_inventory_figures || 319) + ' figures des Tomes 1 à 8 (' + (tcCov.inventory_plantuml_svg || 253) + ' PlantUML/SVG · ' + (tcCov.inventory_mermaid_png || 66) + ' Mermaid/PNG)</h4>');
-          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Tome</th><th>Inventaire</th><th>PlantUML / SVG</th><th>Mermaid / PNG</th><th>Figures uniques liées</th><th>Non liées</th><th>Liens totaux</th><th>Couverture</th></tr></thead><tbody>');
-          ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"].forEach(function (tid) {
-            var ts = byTomeCov[tid] || {};
-            html.push(
-              '<tr>' +
-                '<td class="mono"><strong>' + tid + '</strong></td>' +
-                '<td>' + Number(ts.inventory_total || 0) + '</td>' +
-                '<td>' + Number(ts.inventory_plantuml || 0) + '</td>' +
-                '<td>' + Number(ts.inventory_mermaid || 0) + '</td>' +
-                '<td><strong>' + Number(ts.unique_linked_count || 0) + '</strong></td>' +
-                '<td>' + Number(ts.unlinked_count || 0) + '</td>' +
-                '<td>' + Number(ts.total_links_count || 0) + '</td>' +
-                '<td class="mono">' + Number(ts.coverage_percent || 0).toFixed(2).replace(".", ",") + ' %</td>' +
-              '</tr>'
-            );
-          });
-          html.push(
-            '<tr style="font-weight:700;background:var(--bg-surface-2);">' +
-              '<td>Total T1–T8</td>' +
-              '<td>' + Number(tcCov.total_inventory_figures || 319) + '</td>' +
-              '<td>' + Number(tcCov.inventory_plantuml_svg || 253) + '</td>' +
-              '<td>' + Number(tcCov.inventory_mermaid_png || 66) + '</td>' +
-              '<td>' + Number(tcCov.unique_linked_figures_count || 0) + '</td>' +
-              '<td>' + Number(tcCov.unlinked_figures_count || 0) + '</td>' +
-              '<td>' + Number(tcCov.total_figure_links_count || 0) + '</td>' +
-              '<td class="mono">' + Number(tcCov.coverage_percent || 0).toFixed(2).replace(".", ",") + ' %</td>' +
-            '</tr>'
-          );
-          html.push('</tbody></table></div>');
-
-          if (distList.length) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Répartition par Domaine (D01–D12) et Chapitre (01–36)</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Domaine</th><th>Intitulé</th><th>Chapitres</th><th>Familles</th><th>Thèmes</th><th>Schémas</th><th>Identifiants</th></tr></thead><tbody>');
-            distList.forEach(function (dd) {
-              var isGlob = dd.domain_id === "GLOBAL";
-              var domBtn = isGlob
-                ? '<button class="btn btn-sm mono" data-prd-jump-exec="exec-panorama">GLOBAL</button>'
-                : '<button class="btn btn-sm mono" data-prd-jump-part="' + escapeHtml(dd.domain_id) + '">' + escapeHtml(dd.domain_id) + '</button>';
-              var chBtns = isGlob
-                ? '<button class="btn btn-sm" data-prd-jump-exec="exec-panorama">Panorama</button>'
-                : (dd.chapters || []).map(function (cn) {
-                    return '<button class="btn btn-sm" data-prd-jump-ch="' + cn + '" data-prd-hl="ch-' + pad2(cn) + '-schemas">Ch. ' + pad2(cn) + '</button>';
-                  }).join(" ");
-              html.push(
-                '<tr>' +
-                  '<td>' + domBtn + '</td>' +
-                  '<td>' + prdInlineHtml(dd.domain_title || "") + '</td>' +
-                  '<td><div class="chip-row">' + chBtns + '</div></td>' +
-                  '<td>' + Number(dd.families_count || 0) + '</td>' +
-                  '<td>' + Number(dd.themes_count || 0) + '</td>' +
-                  '<td><strong>' + Number(dd.schemas_count || 0) + '</strong></td>' +
-                  '<td class="mono">' + escapeHtml((dd.schema_ids || []).join(", ")) + '</td>' +
-                '</tr>'
-              );
-            });
-            html.push('</tbody></table></div>');
-          }
-
-          if (catAll.length) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Catalogue directeur intégral des ' + catAll.length + ' schémas de vulgarisation</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Portée</th><th>Titre &amp; insertion</th><th>Archétype &amp; notation</th><th>Publics &amp; statut</th><th>Figures Tomes 1–8</th></tr></thead><tbody>');
-            catAll.forEach(function (sc) {
-              var cnumS = Number(sc.chapter_number || 0);
-              var scopeBtn = cnumS === 0
-                ? '<button class="btn btn-sm mono" data-prd-jump-sch="' + escapeHtml(sc.schema_id) + '">GLOBAL</button>'
-                : '<button class="btn btn-sm mono" data-prd-jump-ch="' + cnumS + '" data-prd-hl="' + escapeHtml(sc.schema_id) + '">CH-' + pad2(cnumS) + '</button>';
-              var famsLine = (sc.families_covered || []).length ? ('<div class="mono" style="font-size:10.5px;margin-top:2px;">' + escapeHtml(sc.families_covered.join(", ")) + '</div>') : '';
-              var rLbl = PRD_REUSE_LABELS[sc.reuse_status] || sc.reuse_status || "";
-              var figs = Array.isArray(sc.linked_tome_figures) ? sc.linked_tome_figures : [];
-              var figsCell = figs.length === 0
-                ? '<span style="color:var(--text-muted);">Création originale pure</span>'
-                : figs.map(function (fg) {
-                    var rPath = fg.compendium_rendered_path || fg.rendered_path;
-                    var sPath = fg.compendium_source_path || fg.source_path;
-                    var rUrl = rPath ? tomeAssetHref(rPath) : "";
-                    var sUrl = sPath ? tomeAssetHref(sPath) : "";
-                    var cLine = fg.compendium_md_line ? (' <a class="mono" href="' + escapeHtml(corpusHref(fg.compendium_md_file || "Compendium/Compendium.md", fg.compendium_md_line)) + '" target="_blank" rel="noopener">[#L' + fg.compendium_md_line + ']</a>') : '';
-                    return '<div style="margin-bottom:2px;"><span class="mono">' + escapeHtml((fg.tome_id || "") + " · " + (fg.fig_id || "")) + '</span> ' +
-                      (rUrl ? '<a class="mono" href="' + escapeHtml(rUrl) + '" target="_blank" rel="noopener">[Rendu]</a> ' : '') +
-                      (sUrl ? '<a class="mono" href="' + escapeHtml(sUrl) + '" target="_blank" rel="noopener">[Source]</a>' : '') +
-                      cLine +
-                    '</div>';
-                  }).join("");
-              html.push(
-                '<tr>' +
-                  '<td class="mono"><strong>' + escapeHtml(sc.schema_id) + '</strong></td>' +
-                  '<td>' + scopeBtn + famsLine + '</td>' +
-                  '<td><strong>' + prdInlineHtml(sc.title || "") + '</strong><div style="font-size:11px;color:var(--text-muted);">' + prdInlineHtml(sc.insertion_point || "") + '</div></td>' +
-                  '<td>' + prdInlineHtml(sc.visual_archetype || "") + '<div class="mono" style="font-size:11px;">' + escapeHtml(sc.recommended_notation || "") + '</div></td>' +
-                  '<td><div>' + prdInlineHtml((sc.target_audiences || []).join(", ")) + '</div><span class="chip">' + escapeHtml(rLbl) + '</span></td>' +
-                  '<td>' + figsCell + '</td>' +
-                '</tr>'
-              );
-            });
-            html.push('</tbody></table></div>');
-          }
-
-          if (invFigs.length) {
-            html.push('<h4 style="margin:12px 0 6px 0;">Inventaire complet des ' + invFigs.length + ' figures des Tomes 1 à 8</h4>');
-            html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>Tome</th><th>Figure</th><th>Notation</th><th>Titre</th><th>Schémas PRD</th><th>Fichiers Sources/Tomes/</th></tr></thead><tbody>');
-            invFigs.forEach(function (fg) {
-              var rUrl = fg.rendered_path ? tomeAssetHref(fg.rendered_path) : "";
-              var sUrl = fg.source_path ? tomeAssetHref(fg.source_path) : "";
-              var schIds = Array.isArray(fg.linked_schema_ids) ? fg.linked_schema_ids : [];
-              var schHtml = schIds.length
-                ? schIds.map(function (sid) {
-                    return '<button class="btn btn-sm mono" data-prd-jump-sch="' + escapeHtml(sid) + '">' + escapeHtml(sid) + '</button>';
-                  }).join(" ")
-                : '<span style="color:var(--text-muted);">—</span>';
-              html.push(
-                '<tr>' +
-                  '<td class="mono"><strong>' + escapeHtml(fg.tome_id || "") + '</strong></td>' +
-                  '<td class="mono">' + escapeHtml(fg.fig_id || "") + '</td>' +
-                  '<td class="mono">' + escapeHtml(fg.notation || "") + '</td>' +
-                  '<td>' + prdInlineHtml(fg.title || "") + '</td>' +
-                  '<td><div class="chip-row">' + schHtml + '</div></td>' +
-                  '<td class="mono">' +
-                    (rUrl ? '<a href="' + escapeHtml(rUrl) + '" target="_blank" rel="noopener">Rendu ↗</a> ' : '') +
-                    (sUrl ? '<a href="' + escapeHtml(sUrl) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
-                  '</td>' +
-                '</tr>'
-              );
-            });
-            html.push('</tbody></table></div>');
-          }
-        }
-        html.push('</article>');
-        return html.join("");
-      }
-
-      function renderPrdGlossaryHtml() {
-        var gTerms = idx.glossaryTerms || [];
-        var socle = (idx.prd && idx.prd.socle_probatoire) || {};
-        var compG0 = (idx.pivots.bilans_aq && idx.pivots.bilans_aq.compendium_g0_g5) || {};
-        var facts16 = socle.faits_empiriques || idx.pivots.faits_empiriques_16 || compG0.faits_empiriques_16 || [];
-        var specs57 = socle.specifications_lplus || idx.pivots.specifications_lplus_57 || compG0.specifications_lplus_57 || [];
-        var statF27 = socle.statut_f_excluded || idx.pivots.statut_f_exclus_27 || [];
-        var sync14 = socle.ca_g0_sync_catalog || compG0.ca_g0_sync_catalog || [];
-        var wyv37 = socle.wyvern_g2_unites || compG0.wyvern_g2_unites || [];
-        var lplusCnt = socle.sources_l_plus_count || compG0.sources_l_plus || 135;
-        var isHl = state.prdHighlightId === "glossary" ? " prd-highlight" : "";
-
-        var html = [];
-        html.push('<article class="prd-section-card' + isHl + '" data-prd-eid="glossary">');
-        html.push('<div class="chip-row" style="margin-bottom:6px;">');
-        html.push('<span class="chip mono">Glossaire (' + gTerms.length + ')</span>');
-        html.push('<span class="chip"><strong>' + lplusCnt + '</strong> sources L+ (0,0 % METADATA_ONLY)</span>');
-        html.push('<span class="chip"><strong>' + statF27.length + '</strong> Statut F (AO-01)</span>');
-        html.push('<span class="chip"><strong>' + facts16.length + '</strong> faits empiriques</span>');
-        html.push('<span class="chip"><strong>' + specs57.length + '</strong> spécifications L+</span>');
-        html.push('<span class="chip"><strong>' + sync14.length + '</strong> CA-G0-SYNC</span>');
-        html.push('<span class="chip"><strong>' + wyv37.length + '/37</strong> Wyvern G2</span>');
-        html.push('</div>');
-        html.push('<h2 style="margin:0 0 8px 0;font-size:17px;">Glossaire normatif Compendium (' + gTerms.length + ' vedettes) &amp; Socle probatoire L+</h2>');
-        html.push('<div style="display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap;">');
-        html.push('<input id="prd-gloss-filter" class="search-input" style="max-width:360px;" type="search" placeholder="Filtrer le glossaire (Agentivité des systèmes, OBO, MCP, ch01…)" aria-label="Filtrer le glossaire PRD" />');
-        html.push('<span id="prd-gloss-count" class="kpi-pill"><strong>' + gTerms.length + '</strong> / ' + gTerms.length + ' vedettes</span>');
-        html.push('</div>');
-        html.push('<div class="table-wrap"><table class="data-table" id="prd-v5-glossary-table"><thead><tr><th>Terme (fr-CA)</th><th>Équivalent (en)</th><th>Définition normative</th><th>Propriétaire</th><th>Source L+</th><th>Compendium</th></tr></thead><tbody>');
-        gTerms.forEach(function (gt) {
-          var cLine = gt.compendium_md_line || 1;
-          var isSa = normalizeText(gt.fr || "").indexOf("agentivite des systemes") !== -1;
-          var ownerCode = String(gt.chapitre_proprietaire || "");
-          var chMatch = ownerCode.match(/^ch(\d{2})$/i);
-          var ownerCell = chMatch
-            ? '<button type="button" class="btn btn-sm mono" data-prd-jump-ch="' + Number(chMatch[1]) + '">' + escapeHtml(ownerCode) + '</button>'
-            : (ownerCode === "00-liminaire"
-                ? '<button type="button" class="btn btn-sm mono" data-prd-jump-exec="exec">' + escapeHtml(ownerCode) + '</button>'
-                : escapeHtml(ownerCode));
-          html.push(
-            '<tr' + (isSa ? ' style="background:var(--accent-soft);"' : '') + '>' +
-              '<td><strong>' + prdInlineHtml(gt.fr || "") + '</strong></td>' +
-              '<td class="mono">' + escapeHtml(gt.en || "") + '</td>' +
-              '<td>' + prdInlineHtml(gt.definition || "") + '</td>' +
-              '<td class="mono">' + ownerCell + '</td>' +
-              '<td class="mono">' + escapeHtml(gt.source_l_plus_id || "") + '</td>' +
-              '<td><a class="mono" href="' + escapeHtml(corpusHref(gt.compendium_md_file || "Compendium/Compendium.md", cLine)) + '" target="_blank" rel="noopener">L' + cLine + '</a></td>' +
-            '</tr>'
-          );
-        });
-        html.push('</tbody></table></div>');
-        if (facts16.length) {
-          html.push('<h4 style="margin:12px 0 6px 0;">Faits empiriques vérifiés L+ (' + facts16.length + ')</h4>');
-          html.push('<div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Métrique</th><th>Valeur vérifiée</th><th>Source L+</th></tr></thead><tbody>');
-          facts16.forEach(function (fc) {
-            html.push('<tr><td class="mono"><strong>' + escapeHtml(fc.id || "") + '</strong></td><td>' + prdInlineHtml(fc.metric || "") + '</td><td>' + prdInlineHtml(fc.value || "") + '</td><td class="mono">' + escapeHtml(fc.source_l_plus_id || fc.source || "") + '</td></tr>');
-          });
-          html.push('</tbody></table></div>');
-        }
-        if (specs57.length) {
-          html.push('<details class="schema-preview-details" style="margin-top:10px;"><summary>Catalogue des ' + specs57.length + ' spécifications ouvertes L+ (SHA-256)</summary>');
-          html.push('<div class="table-wrap" style="margin-top:6px;"><table class="data-table"><thead><tr><th>ID</th><th>Titre</th><th>Version / Tag</th><th>Licence</th><th>Source L+</th></tr></thead><tbody>');
-          specs57.forEach(function (sp) {
-            html.push('<tr><td class="mono"><strong>' + escapeHtml(sp.spec_id || "") + '</strong></td><td>' + prdInlineHtml(sp.title || "") + '</td><td class="mono">' + escapeHtml(sp.version_or_tag || "") + '</td><td class="mono">' + escapeHtml(sp.license_spdx || "") + '</td><td class="mono">' + escapeHtml(sp.source_l_plus_id || "") + '</td></tr>');
-          });
-          html.push('</tbody></table></div></details>');
-        }
-        html.push('</article>');
-        return html.join("");
-      }
-
-      function renderPrdToc(fState) {
-        var tocPane = document.getElementById("prd-toc-pane");
-        var tocList = document.getElementById("prd-toc-list");
-        var tocCount = document.getElementById("prd-toc-count");
-        var tocBtn = document.getElementById("prd-toggle-toc-btn");
-        if (tocBtn) {
-          tocBtn.classList.toggle("active", state.prdShowToc);
-          tocBtn.setAttribute("aria-expanded", state.prdShowToc ? "true" : "false");
-        }
-        if (!tocList || !idx.prd) return;
-        if (tocPane) tocPane.classList.toggle("hidden", !state.prdShowToc);
-        syncDrawerBackdrops();
-
-        var q = normalizeText(state.prdTocFilter || "").trim();
-        var prd = idx.prd;
-        var html = [];
-        var shown = 0;
-
-        var activeDomId = null;
-        if (state.prdFocusKind === "part" && state.prdFocusId) {
-          activeDomId = state.prdFocusId;
-        } else if (state.prdFocusKind === "chapter" && idx.prdChapterByNum[Number(state.prdFocusId)]) {
-          activeDomId = idx.prdChapterByNum[Number(state.prdFocusId)].domain_id;
-        }
-        if (activeDomId && state.prdLastAutoExpandedDom !== activeDomId) {
-          state.prdExpandedParts.add(activeDomId);
-          state.prdLastAutoExpandedDom = activeDomId;
-        }
-
-        function matchQ(txt) {
-          return !q || normalizeText(txt).indexOf(q) !== -1;
-        }
-
-        // Sommaire exécutif
-        var exec = prd.executive_summary || {};
-        var execSecs = exec.sections || [];
-        var execSchs = exec.vulgarization_schemas || [];
-        var matchedExecSecs = execSecs.filter(function (s) { return matchQ(s.heading); });
-        var panMatch = execSchs.length > 0 && matchQ("Panorama visuel directeur schemas vulgarisation transversaux " + execSchs.map(function (s) { return s.schema_id + " " + s.title; }).join(" "));
-        if (matchQ(exec.title || "Sommaire exécutif global") || matchedExecSecs.length || panMatch) {
-          shown++;
-          html.push('<div class="prd-toc-group">');
-          html.push('<div class="prd-toc-item' + (state.prdFocusKind === "exec" ? " active" : "") + '" role="button" tabindex="0" data-toc-exec="exec"><strong>Sommaire exécutif global</strong></div>');
-          html.push('<div class="prd-toc-sub">');
-          (q ? matchedExecSecs : execSecs).forEach(function (s, i) {
-            var sid = s.id || ("exec-" + (i + 1));
-            shown++;
-            html.push('<div class="prd-toc-item' + (state.prdHighlightId === sid ? " active" : "") + '" role="button" tabindex="0" data-toc-exec="' + escapeHtml(sid) + '">' + prdInlineHtml(s.heading) + '</div>');
-          });
-          if (execSchs.length && (!q || panMatch)) {
-            shown++;
-            html.push('<div class="prd-toc-item' + (state.prdHighlightId === "exec-panorama" ? " active" : "") + '" role="button" tabindex="0" data-toc-exec="exec-panorama">Panorama visuel directeur (' + execSchs.length + ')</div>');
-          }
-          html.push('</div></div>');
-        }
-
-        // 12 Parties (repliables/dépliables) -> 36 Chapitres -> 71 Familles
-        var allPartyIds = (prd.parties || []).map(function (p) { return p.domain_id; });
-        var expandAllBtn = document.getElementById("prd-toc-expand-all-btn");
-        if (expandAllBtn) {
-          var allOpen = allPartyIds.length > 0 && allPartyIds.every(function (did) { return state.prdExpandedParts.has(did); });
-          expandAllBtn.textContent = allOpen ? "Tout replier" : "Tout déplier";
-        }
-        (prd.parties || []).forEach(function (p) {
-          var pLabel = "Partie " + p.part_roman + " — " + p.domain_id + " : " + String(p.representative_part_title || "").replace(/^Partie\s+[IVXLCDM]+\s*[—–:-]?\s*/i, "");
-          var pSelfMatch = matchQ(pLabel);
-          var chRows = [];
-          (p.chapter_numbers || []).forEach(function (cnum) {
-            var ch = idx.prdChapterByNum[Number(cnum)];
-            if (!ch) return;
-            var chLabel = "Ch. " + pad2(cnum) + " — " + String(ch.representative_title || "").replace(/^Chapitre\s+0?\d+\s*[—–:-]?\s*/i, "");
-            var fams = (ch.targeted_content && ch.targeted_content.families_and_themes) || [];
-            var schs = ch.vulgarization_schemas || [];
-            var matchedFams = fams.filter(function (f) {
-              if (matchQ(f.family_title + " " + f.family_node_id)) return true;
-              return (f.themes_targeted || []).some(function (th) {
-                return matchQ((th.theme_title || "") + " " + (th.canonical_slug || "") + " " + (th.theme_node_id || ""));
-              });
-            });
-            var schMatch = schs.some(function (sc) { return matchQ(sc.schema_id + " " + sc.title + " schemas vulgarisation"); });
-            var chSelfHay = chLabel + " Chapitre " + pad2(cnum) + " " + (ch.chapter_code || "") + " " + ch.domain_id + " " + ch.subdomain_node_id;
-            if (pSelfMatch || matchQ(chSelfHay) || matchedFams.length || schMatch) {
-              chRows.push({
-                ch: ch,
-                label: chLabel,
-                fams: q && !matchQ(chSelfHay) && !pSelfMatch ? matchedFams : fams,
-                showSchemas: schs.length > 0 && (!q || pSelfMatch || matchQ(chSelfHay) || schMatch)
-              });
-            }
-          });
-          if (pSelfMatch || chRows.length) {
-            shown++;
-            var isPartOpen = Boolean(q) || state.prdExpandedParts.has(p.domain_id);
-            html.push('<div class="prd-toc-group">');
-            html.push(
-              '<div class="prd-toc-part-head">' +
-                '<button type="button" class="prd-toc-part-toggle" data-toc-part-toggle="' + escapeHtml(p.domain_id) + '" aria-expanded="' + (isPartOpen ? "true" : "false") + '" title="' + (isPartOpen ? "Replier la partie" : "Déplier la partie") + '">' + (isPartOpen ? "▾" : "▸") + '</button>' +
-                '<div class="prd-toc-item' + ((state.prdFocusKind === "part" && state.prdFocusId === p.domain_id) || activeDomId === p.domain_id ? " active" : "") + '" role="button" tabindex="0" data-toc-part="' + escapeHtml(p.domain_id) + '"><strong>' + prdInlineHtml(pLabel) + '</strong></div>' +
-              '</div>'
-            );
-            html.push('<div class="prd-toc-sub' + (isPartOpen ? "" : " collapsed") + '">');
-            chRows.forEach(function (row) {
-              var cnum = Number(row.ch.chapter_number);
-              var isChActive = state.prdFocusKind === "chapter" && Number(state.prdFocusId) === cnum;
-              var dimCls = fState.active && !fState.matchingChapters.has(cnum) ? " prd-dimmed" : "";
-              shown++;
-              html.push('<div class="prd-toc-item' + (isChActive ? " active" : "") + dimCls + '" role="button" tabindex="0" data-toc-ch="' + cnum + '">' + prdInlineHtml(row.label) + '</div>');
-              row.fams.forEach(function (fam) {
-                shown++;
-                html.push('<div class="prd-toc-item prd-toc-fam' + (state.prdHighlightId === fam.family_node_id ? " active" : "") + '" role="button" tabindex="0" data-toc-ch="' + cnum + '" data-toc-hl="' + escapeHtml(fam.family_node_id) + '">└ ' + prdInlineHtml(fam.family_title) + '</div>');
-              });
-              if (row.showSchemas) {
-                var schTocEid = "ch-" + pad2(cnum) + "-schemas";
-                var schCnt = (row.ch.vulgarization_schemas || []).length;
-                shown++;
-                html.push('<div class="prd-toc-item prd-toc-fam' + (state.prdHighlightId === schTocEid ? " active" : "") + '" role="button" tabindex="0" data-toc-ch="' + cnum + '" data-toc-hl="' + escapeHtml(schTocEid) + '">└ ' + pad2(cnum) + '.3 Schémas de vulgarisation (' + schCnt + ')</div>');
-              }
-            });
-            html.push('</div></div>');
-          }
-        });
-
-        // 5 Annexes A..E
-        var annRows = (prd.annexes || []).filter(function (ann) {
-          return matchQ("Annexe " + ann.annexe_code + " " + (ann.representative_title || ""));
-        });
-        if (annRows.length) {
-          html.push('<div class="prd-toc-group">');
-          annRows.forEach(function (ann) {
-            shown++;
-            var cleanA = String(ann.representative_title || "").replace(/^Annexe\s+[A-E]\s*[—–:-]?\s*/i, "");
-            var isAct = state.prdFocusKind === "annexe" && state.prdFocusId === ann.annexe_code;
-            html.push('<div class="prd-toc-item' + (isAct ? " active" : "") + '" role="button" tabindex="0" data-toc-ann="' + escapeHtml(ann.annexe_code) + '"><strong>Annexe ' + escapeHtml(ann.annexe_code) + '</strong> — ' + prdInlineHtml(cleanA) + '</div>');
-          });
-          html.push('</div>');
-        }
-
-        // Glossaire (56) & Socle probatoire L+ (toujours visible)
-        var glossCountToc = (idx.glossaryTerms && idx.glossaryTerms.length) || 56;
-        shown++;
-        var isGlossAct = state.prdFocusKind === "glossary";
-        html.push('<div class="prd-toc-group">');
-        html.push('<div class="prd-toc-item' + (isGlossAct ? " active" : "") + '" role="button" tabindex="0" data-toc-gloss="1"><strong>Glossaire (' + glossCountToc + ') &amp; Socle probatoire L+</strong></div>');
-        html.push('</div>');
-
-        tocList.innerHTML = html.length ? html.join("") : '<div class="empty-state">Aucune entrée TDM correspondante.</div>';
-        bindKeyboardActivation(tocList);
-        if (tocCount) tocCount.textContent = shown + " entrées TDM affichées";
-
-        function closePrdTocIfDrawer() {
-          if (isDrawerViewport() && state.prdShowToc) {
-            state.prdShowToc = false;
-          }
-        }
-        tocList.querySelectorAll("[data-toc-part-toggle]").forEach(function (btn) {
-          btn.addEventListener("click", function (ev) {
-            ev.stopPropagation();
-            var did = btn.getAttribute("data-toc-part-toggle");
-            if (state.prdExpandedParts.has(did)) state.prdExpandedParts.delete(did);
-            else state.prdExpandedParts.add(did);
-            renderPrdToc(fState);
-          });
-        });
-        tocList.querySelectorAll("[data-toc-exec]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            var sid = el.getAttribute("data-toc-exec");
-            closePrdTocIfDrawer();
-            jumpToPrdTarget({ kind: "exec", section_id: sid });
-          });
-        });
-        tocList.querySelectorAll("[data-toc-part]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            closePrdTocIfDrawer();
-            jumpToPrdTarget({ kind: "domain", domain_id: el.getAttribute("data-toc-part") });
-          });
-        });
-        tocList.querySelectorAll("[data-toc-ch]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            var cn = Number(el.getAttribute("data-toc-ch"));
-            var hl = el.getAttribute("data-toc-hl");
-            state.prdFocusKind = "chapter";
-            state.prdFocusId = cn;
-            state.prdHighlightId = hl || ("ch-" + pad2(cn));
-            closePrdTocIfDrawer();
-            renderPrdView(true);
-          });
-        });
-        tocList.querySelectorAll("[data-toc-ann]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            closePrdTocIfDrawer();
-            jumpToPrdTarget({ kind: "annexe", annexe_code: el.getAttribute("data-toc-ann") });
-          });
-        });
-        tocList.querySelectorAll("[data-toc-gloss]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            closePrdTocIfDrawer();
-            jumpToPrdTarget({ kind: "glossary" });
-          });
-        });
-      }
-
-      function renderPrdView(scrollToHighlight) {
-        var reader = document.getElementById("prd-reader");
-        var statsPill = document.getElementById("prd-stats-pill");
-        if (!reader) return;
-
-        if (!idx.prd) {
-          reader.innerHTML = '<div class="empty-state">Données PRD non présentes dans ce bundle.</div>';
-          if (statsPill) statsPill.textContent = "PRD indisponible";
-          return;
-        }
-
-        var prd = idx.prd;
-        var fState = computePrdFilterState(idx, state.filters);
-        updateFilterStatus(filterNodesAndRelations(idx, state.filters));
-        var totalParts = (prd.parties || []).length;
-        var totalCh = (prd.chapters || []).length;
-        var totalFam = (prd.chapters || []).reduce(function (acc, c) {
-          return acc + (((c.targeted_content && c.targeted_content.families_and_themes) || []).length);
-        }, 0);
-        var totalThemes = (prd.chapters || []).reduce(function (acc, c) {
-          return acc + ((c.targeted_content && c.targeted_content.families_and_themes) || []).reduce(function (a2, f) {
-            return a2 + ((f.themes_targeted || []).length);
-          }, 0);
-        }, 0);
-        var totalAnn = (prd.annexes || []).length;
-        var totalSchemas = Number((prd.meta && prd.meta.schemas_count) || (idx.prdAllSchemas || []).length || 0);
-        if (statsPill) {
-          statsPill.textContent = fState.active
-            ? (fState.matchingChapters.size + " / " + totalCh + " chapitres · " + fState.matchingThemes.size + " / " + totalThemes + " thèmes actifs")
-            : (totalParts + " parties · " + totalCh + " chapitres · " + totalFam + " familles · " + totalThemes + " thèmes · " + totalAnn + " annexes · " + totalSchemas + " schémas");
-        }
-
-        renderPrdToc(fState);
-        syncStandalonePrdLink();
-
-        function buildPrdReadingNavHtml() {
-          var crumbs = ['<button type="button" class="prd-crumb-link" data-prd-jump-exec="exec">PRD Maître</button>'];
-          var prevAttrs = "";
-          var nextAttrs = "";
-          if (state.prdMode === "full") {
-            crumbs.push('<span>›</span><strong>Document intégral</strong>');
-          } else {
-            var seq = [{ kind: "exec", label: "Sommaire" }];
-            (prd.chapters || []).forEach(function (c) {
-              seq.push({ kind: "chapter", id: Number(c.chapter_number), label: "Ch. " + pad2(c.chapter_number) });
-            });
-            (prd.annexes || []).forEach(function (a) {
-              seq.push({ kind: "annexe", id: a.annexe_code, label: "Annexe " + a.annexe_code });
-            });
-            seq.push({ kind: "glossary", label: "Glossaire" });
-
-            var curPos = -1;
-            if (state.prdFocusKind === "exec") {
-              crumbs.push('<span>›</span><strong>Sommaire exécutif</strong>');
-              curPos = 0;
-            } else if (state.prdFocusKind === "part" && idx.prdPartyByDom[state.prdFocusId]) {
-              var pObj = idx.prdPartyByDom[state.prdFocusId];
-              crumbs.push('<span>›</span><strong>Partie ' + escapeHtml(pObj.part_roman) + ' (' + escapeHtml(pObj.domain_id) + ')</strong>');
-              var pList = prd.parties || [];
-              var pIdx = pList.findIndex(function (px) { return px.domain_id === pObj.domain_id; });
-              if (pIdx > 0) prevAttrs = 'data-prd-jump-part="' + escapeHtml(pList[pIdx - 1].domain_id) + '"';
-              else if (pIdx === 0) prevAttrs = 'data-prd-jump-exec="exec"';
-              var firstCh = (pObj.chapter_numbers && pObj.chapter_numbers.length) ? Number(pObj.chapter_numbers[0]) : null;
-              if (firstCh) nextAttrs = 'data-prd-jump-ch="' + firstCh + '"';
-              else if (pIdx >= 0 && pIdx < pList.length - 1) nextAttrs = 'data-prd-jump-part="' + escapeHtml(pList[pIdx + 1].domain_id) + '"';
-            } else if (state.prdFocusKind === "chapter" && idx.prdChapterByNum[Number(state.prdFocusId)]) {
-              var chObj = idx.prdChapterByNum[Number(state.prdFocusId)];
-              var pParent = idx.prdPartyByDom[chObj.domain_id];
-              if (pParent) {
-                crumbs.push('<span>›</span><button type="button" class="prd-crumb-link" data-prd-jump-part="' + escapeHtml(pParent.domain_id) + '">Partie ' + escapeHtml(pParent.part_roman) + ' (' + escapeHtml(pParent.domain_id) + ')</button>');
-              }
-              crumbs.push('<span>›</span><strong>Chapitre ' + pad2(chObj.chapter_number) + '</strong>');
-              curPos = seq.findIndex(function (s) { return s.kind === "chapter" && s.id === Number(chObj.chapter_number); });
-            } else if (state.prdFocusKind === "annexe" && idx.prdAnnexeByCode[state.prdFocusId]) {
-              crumbs.push('<span>›</span><strong>Annexe ' + escapeHtml(state.prdFocusId) + '</strong>');
-              curPos = seq.findIndex(function (s) { return s.kind === "annexe" && s.id === state.prdFocusId; });
-            } else if (state.prdFocusKind === "glossary") {
-              crumbs.push('<span>›</span><strong>Glossaire &amp; Socle probatoire</strong>');
-              curPos = seq.length - 1;
-            }
-            if (curPos >= 0) {
-              function itemToAttrs(it) {
-                if (!it) return "";
-                if (it.kind === "exec") return 'data-prd-jump-exec="exec"';
-                if (it.kind === "chapter") return 'data-prd-jump-ch="' + it.id + '"';
-                if (it.kind === "annexe") return 'data-prd-jump-ann="' + escapeHtml(it.id) + '"';
-                if (it.kind === "glossary") return 'data-prd-jump-gloss="1"';
-                return "";
-              }
-              if (curPos > 0) prevAttrs = itemToAttrs(seq[curPos - 1]);
-              if (curPos < seq.length - 1) nextAttrs = itemToAttrs(seq[curPos + 1]);
-            }
-          }
-          var navBtns = [];
-          if (state.prdMode === "targeted") {
-            navBtns.push('<button type="button" class="btn btn-sm" ' + (prevAttrs || "disabled") + '>← Précédent</button>');
-            navBtns.push('<button type="button" class="btn btn-sm" ' + (nextAttrs || "disabled") + '>Suivant →</button>');
-          }
-          navBtns.push('<button type="button" id="prd-scroll-top-btn" class="btn btn-sm btn-ghost" title="Remonter en haut de la lecture">↑ Haut</button>');
-          return '<nav class="prd-reading-nav" aria-label="Navigation de lecture PRD"><div class="prd-breadcrumb">' + crumbs.join(" ") + '</div><div class="prd-reading-actions">' + navBtns.join("") + '</div></nav>';
-        }
-
-        var bodyParts = [buildPrdReadingNavHtml()];
-        if (fState.active && fState.matchingChapters.size === 0) {
-          bodyParts.push(
-            '<div class="empty-state prd-empty-filter" style="margin-bottom:12px;">' +
-              '<strong>Aucun chapitre ni thème ne correspond aux filtres actifs</strong> (' + fState.matchingChapters.size + ' / ' + totalCh + ' chapitres · ' + fState.matchingThemes.size + ' / ' + totalThemes + ' thèmes).' +
-              '<div style="margin-top:8px;"><button class="btn btn-sm primary" data-prd-reset-filters="1">Réinitialiser les filtres</button></div>' +
-            '</div>'
-          );
-        }
-        if (state.prdMode === "full") {
-          bodyParts.push(renderPrdExecHtml(prd));
-          (prd.parties || []).forEach(function (p) {
-            bodyParts.push(renderPrdPartyCardHtml(p, fState));
-            (p.chapter_numbers || []).forEach(function (cnum) {
-              var ch = idx.prdChapterByNum[Number(cnum)];
-              if (ch) bodyParts.push(renderPrdChapterHtml(ch, fState));
-            });
-          });
-          (prd.annexes || []).forEach(function (ann) {
-            bodyParts.push(renderPrdAnnexeHtml(ann));
-          });
-          bodyParts.push(renderPrdGlossaryHtml());
-        } else {
-          if (state.prdFocusKind === "part" && idx.prdPartyByDom[state.prdFocusId]) {
-            var partObj = idx.prdPartyByDom[state.prdFocusId];
-            bodyParts.push(renderPrdPartyCardHtml(partObj, fState));
-            (partObj.chapter_numbers || []).forEach(function (cnum) {
-              var chP = idx.prdChapterByNum[Number(cnum)];
-              if (chP) bodyParts.push(renderPrdChapterHtml(chP, fState));
-            });
-          } else if (state.prdFocusKind === "chapter" && idx.prdChapterByNum[Number(state.prdFocusId)]) {
-            var chTarget = idx.prdChapterByNum[Number(state.prdFocusId)];
-            var parentPart = idx.prdPartyByDom[chTarget.domain_id];
-            if (parentPart) bodyParts.push(renderPrdPartyCardHtml(parentPart, fState));
-            bodyParts.push(renderPrdChapterHtml(chTarget, fState));
-          } else if (state.prdFocusKind === "annexe" && idx.prdAnnexeByCode[state.prdFocusId]) {
-            bodyParts.push(renderPrdAnnexeHtml(idx.prdAnnexeByCode[state.prdFocusId]));
-          } else if (state.prdFocusKind === "glossary") {
-            bodyParts.push(renderPrdGlossaryHtml());
-          } else {
-            bodyParts.push(renderPrdExecHtml(prd));
-          }
-        }
-
-        reader.innerHTML = bodyParts.join("");
-        bindKeyboardActivation(reader);
-        reader.querySelectorAll("[data-prd-reset-filters]").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var resetBtn = document.getElementById("reset-filters-btn");
-            if (resetBtn) resetBtn.click();
-          });
-        });
-
-        reader.querySelectorAll("[data-prd-jump-mm]").forEach(function (btn) {
-          btn.addEventListener("click", function (ev) {
-            ev.stopPropagation();
-            var nid = btn.getAttribute("data-prd-jump-mm");
-            ensureThemeNodeVisibleUnderFilters(nid);
-            switchView("mindmap");
-            selectThemeNode(nid, true);
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-sy]").forEach(function (btn) {
-          btn.addEventListener("click", function (ev) {
-            ev.stopPropagation();
-            var nid = btn.getAttribute("data-prd-jump-sy");
-            ensureThemeNodeVisibleUnderFilters(nid);
-            state.syEgo = "1";
-            state.syPositions = null;
-            state.selectedKind = "theme";
-            state.selectedId = nid;
-            document.querySelectorAll("[data-sy-ego]").forEach(function (b) {
-              b.classList.toggle("active", b.getAttribute("data-sy-ego") === "1");
-            });
-            switchView("synaptic");
-            selectThemeNode(nid, true);
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-ch]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            var cn = Number(el.getAttribute("data-prd-jump-ch"));
-            var hl = el.getAttribute("data-prd-hl");
-            state.prdFocusKind = "chapter";
-            state.prdFocusId = cn;
-            state.prdHighlightId = hl || ("ch-" + pad2(cn));
-            renderPrdView(true);
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-part]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            jumpToPrdTarget({ kind: "domain", domain_id: el.getAttribute("data-prd-jump-part") });
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-sch]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            jumpToPrdTarget({ kind: "schema", schema_id: el.getAttribute("data-prd-jump-sch") });
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-exec]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            jumpToPrdTarget({ kind: "exec", section_id: el.getAttribute("data-prd-jump-exec") || "exec-panorama" });
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-ann]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            jumpToPrdTarget({ kind: "annexe", annexe_code: el.getAttribute("data-prd-jump-ann") });
-          });
-        });
-        reader.querySelectorAll("[data-prd-jump-gloss]").forEach(function (el) {
-          el.addEventListener("click", function () {
-            jumpToPrdTarget({ kind: "glossary" });
-          });
-        });
-        var prdScrollTopBtn = document.getElementById("prd-scroll-top-btn");
-        if (prdScrollTopBtn) {
-          prdScrollTopBtn.addEventListener("click", function () {
-            reader.scrollTop = 0;
-          });
-        }
-        var annDToggleBtn = document.getElementById("prd-annd-toggle-btn");
-        if (annDToggleBtn) {
-          annDToggleBtn.addEventListener("click", function () {
-            state.prdAnnDShowAll = !state.prdAnnDShowAll;
-            renderPrdView(false);
-          });
-        }
-        var prdGlossFilterEl = document.getElementById("prd-gloss-filter");
-        if (prdGlossFilterEl) {
-          prdGlossFilterEl.addEventListener("input", function (ev) {
-            var qg = normalizeText(ev.target.value || "").trim();
-            var tbl = document.getElementById("prd-v5-glossary-table");
-            var cnt = document.getElementById("prd-gloss-count");
-            if (!tbl || !tbl.querySelectorAll) return;
-            var rowsG = tbl.querySelectorAll("tbody tr");
-            var visG = 0;
-            rowsG.forEach(function (tr) {
-              var okG = !qg || normalizeText(tr.textContent || "").indexOf(qg) !== -1;
-              tr.style.display = okG ? "" : "none";
-              if (okG) visG++;
-            });
-            if (cnt) cnt.innerHTML = "<strong>" + visG + "</strong> / " + rowsG.length + " vedettes";
-          });
-        }
-
-        if (scrollToHighlight && state.prdHighlightId) {
-          var targetEl = reader.querySelector('[data-prd-eid="' + state.prdHighlightId + '"]');
-          if (targetEl && typeof targetEl.getBoundingClientRect === "function" && typeof reader.getBoundingClientRect === "function") {
-            var rRect = reader.getBoundingClientRect();
-            var tRect = targetEl.getBoundingClientRect();
-            reader.scrollTop = Math.max(0, reader.scrollTop + (tRect.top - rRect.top) - 12);
-          } else if (targetEl && typeof targetEl.scrollIntoView === "function") {
-            targetEl.scrollIntoView({ block: "start" });
-          } else {
-            reader.scrollTop = 0;
-          }
-        } else if (scrollToHighlight) {
-          reader.scrollTop = 0;
-        }
-      }
-
-      // =========================================================================
       // Recherche plein-texte (Ctrl+K) & Export SVG / JSON
       // =========================================================================
       var searchInput = document.getElementById("global-search");
@@ -7100,12 +4931,6 @@
       var SEARCH_CATEGORY_LABELS = {
         theme: "Thème",
         glossary: "Glossaire",
-        "prd-chapter": "Chapitre",
-        "prd-part": "Partie",
-        "prd-schema": "Schéma",
-        "prd-family": "Famille",
-        "prd-annexe": "Annexe",
-        "prd-exec": "Sommaire",
         structure: "Structure"
       };
 
@@ -7128,7 +4953,7 @@
           return;
         }
         searchDropdown.innerHTML = headerHtml + results.map(function (r, i) {
-          var icon = r.kind === "theme" ? "◆" : (r.kind && r.kind.indexOf("prd-") === 0 ? "▣" : "§");
+          var icon = r.kind === "theme" ? "◆" : "§";
           var catLabel = SEARCH_CATEGORY_LABELS[r.kind] || "Structure";
           return (
             '<div class="search-item' + (i === 0 ? " active" : "") + '" role="button" tabindex="0" data-res-kind="' + escapeHtml(r.kind) + '" data-res-id="' + escapeHtml(r.id) + '">' +
@@ -7160,18 +4985,6 @@
                 b.classList.toggle("active", b.getAttribute("data-c4-tab") === "glossary_evidence");
               });
               switchView("concordance");
-            } else if (kind === "prd-exec") {
-              jumpToPrdTarget({ kind: "exec", section_id: rid });
-            } else if (kind === "prd-part") {
-              jumpToPrdTarget({ kind: "domain", domain_id: rid });
-            } else if (kind === "prd-chapter") {
-              jumpToPrdTarget({ kind: "subdomain", chapter_number: Number(rid) });
-            } else if (kind === "prd-family") {
-              jumpToPrdByNodeId(rid);
-            } else if (kind === "prd-schema") {
-              jumpToPrdTarget({ kind: "schema", schema_id: rid });
-            } else if (kind === "prd-annexe") {
-              jumpToPrdTarget({ kind: "annexe", annexe_code: rid });
             } else {
               switchView("structure");
               selectStructUnit(rid, true);
@@ -7218,7 +5031,7 @@
       }
 
       document.getElementById("export-svg-btn").addEventListener("click", function () {
-        if (state.activeView === "concordance" || state.activeView === "prd") return;
+        if (state.activeView === "concordance") return;
         var svgId = state.activeView === "structure" ? "st-svg" : (state.activeView === "synaptic" ? "sy-svg" : "mm-svg");
         var svg = document.getElementById(svgId);
         if (!svg) return;
@@ -7291,12 +5104,9 @@
         state.activeView = viewName;
         if (isDrawerViewport()) {
           state.stShowList = false;
-          state.prdShowToc = false;
           setInspectorOpen(false);
         } else {
-          if (viewName === "prd") {
-            setInspectorOpen(false);
-          } else if (viewName === "concordance") {
+          if (viewName === "concordance") {
             if (!state.c4SelectedCell) setInspectorOpen(false);
           } else if (viewName === "mindmap" || viewName === "structure" || viewName === "synaptic") {
             if (state.inspectorManualOpen !== false) setInspectorOpen(true);
@@ -7304,7 +5114,7 @@
           syncDrawerBackdrops();
         }
         var expSvgBtn = document.getElementById("export-svg-btn");
-        if (expSvgBtn) expSvgBtn.disabled = (viewName === "concordance" || viewName === "prd");
+        if (expSvgBtn) expSvgBtn.disabled = (viewName === "concordance");
         document.querySelectorAll(".view-tab").forEach(function (t) {
           var isA = t.getAttribute("data-view") === viewName;
           t.classList.toggle("active", isA);
@@ -7318,7 +5128,6 @@
         else if (viewName === "structure") renderStructureView(!state.stLastPositions || Object.keys(state.stLastPositions).length === 0);
         else if (viewName === "synaptic") renderSynapticGraph(!state.syPositions);
         else if (viewName === "concordance") renderConcordanceView();
-        else if (viewName === "prd") renderPrdView(true);
       }
 
       document.querySelectorAll(".view-tab").forEach(function (btn) {
@@ -7382,7 +5191,6 @@
         else if (state.activeView === "structure") renderStructureView(true);
         else if (state.activeView === "synaptic") renderSynapticGraph(true);
         else if (state.activeView === "concordance") renderConcordanceView();
-        else if (state.activeView === "prd") renderPrdView(false);
         else updateFilterStatus(filtered);
       }
 
@@ -7568,43 +5376,6 @@
         });
       }
 
-      // Contrôles Vue 5 (PRD Maître)
-      document.querySelectorAll("[data-prd-mode]").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          state.prdMode = btn.getAttribute("data-prd-mode") || "targeted";
-          document.querySelectorAll("[data-prd-mode]").forEach(function (b) { b.classList.toggle("active", b === btn); });
-          renderPrdView(true);
-        });
-      });
-      var prdTocToggleBtn = document.getElementById("prd-toggle-toc-btn");
-      if (prdTocToggleBtn) {
-        prdTocToggleBtn.addEventListener("click", function () {
-          state.prdShowToc = !state.prdShowToc;
-          prdTocToggleBtn.classList.toggle("active", state.prdShowToc);
-          prdTocToggleBtn.setAttribute("aria-expanded", state.prdShowToc ? "true" : "false");
-          renderPrdToc(computePrdFilterState(idx, state.filters));
-        });
-      }
-      var prdTocCloseBtn = document.getElementById("prd-toc-close-btn");
-      if (prdTocCloseBtn) {
-        prdTocCloseBtn.addEventListener("click", function () {
-          state.prdShowToc = false;
-          renderPrdToc(computePrdFilterState(idx, state.filters));
-        });
-      }
-      var prdTocExpandAllBtn = document.getElementById("prd-toc-expand-all-btn");
-      if (prdTocExpandAllBtn) {
-        prdTocExpandAllBtn.addEventListener("click", function () {
-          var parties = (idx.prd && idx.prd.parties) || [];
-          var allOpen = parties.length > 0 && parties.every(function (p) { return state.prdExpandedParts.has(p.domain_id); });
-          if (allOpen) {
-            state.prdExpandedParts.clear();
-          } else {
-            parties.forEach(function (p) { state.prdExpandedParts.add(p.domain_id); });
-          }
-          renderPrdToc(computePrdFilterState(idx, state.filters));
-        });
-      }
       function prepareDomForPrint() {
         document.querySelectorAll("details.schema-preview-details, details.ann-details, details.tome-concordance-details").forEach(function (d) {
           if (!d.open) {
@@ -7628,33 +5399,6 @@
       if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
         window.addEventListener("beforeprint", prepareDomForPrint);
         window.addEventListener("afterprint", restoreDomAfterPrint);
-      }
-      var prdPrintBtn = document.getElementById("prd-print-btn");
-      if (prdPrintBtn) {
-        prdPrintBtn.addEventListener("click", function () {
-          if (typeof window === "undefined" || typeof window.print !== "function") return;
-          var pending = prepareDomForPrint();
-          if (pending.length > 0 && typeof Promise !== "undefined") {
-            Promise.race([
-              Promise.all(pending.map(function (img) {
-                return new Promise(function (res) {
-                  img.addEventListener("load", res, { once: true });
-                  img.addEventListener("error", res, { once: true });
-                });
-              })),
-              new Promise(function (res) { setTimeout(res, 600); })
-            ]).then(function () { window.print(); });
-          } else {
-            window.print();
-          }
-        });
-      }
-      var prdTocFilterEl = document.getElementById("prd-toc-filter");
-      if (prdTocFilterEl) {
-        prdTocFilterEl.addEventListener("input", function (e) {
-          state.prdTocFilter = e.target.value || "";
-          renderPrdToc(computePrdFilterState(idx, state.filters));
-        });
       }
 
       // Zoom HUD & Inspecteur toggle & Légende toggle
@@ -7727,13 +5471,6 @@
           renderStructureView(false);
         });
       }
-      var prdBackdropEl = document.getElementById("prd-backdrop");
-      if (prdBackdropEl) {
-        prdBackdropEl.addEventListener("click", function () {
-          state.prdShowToc = false;
-          renderPrdToc(computePrdFilterState(idx, state.filters));
-        });
-      }
 
       var mmLegendToggle = document.getElementById("mm-legend-toggle");
       if (mmLegendToggle) {
@@ -7768,11 +5505,6 @@
               renderStructureView(false);
               return;
             }
-            if (state.activeView === "prd" && state.prdShowToc) {
-              state.prdShowToc = false;
-              renderPrdToc(computePrdFilterState(idx, state.filters));
-              return;
-            }
           }
         }
         if (document.activeElement && (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "SELECT")) {
@@ -7794,40 +5526,6 @@
       function applyHashNavigation(hashStr) {
         var p = parseLocationHash(hashStr);
         if (!p || Object.keys(p).length === 0) return false;
-        if (p.view === "prd" || (!p.view && (p.ch || p.thm || p.fam || p.part || p.annexe || p.sec || p.sch || p.schemas || p.glossary !== undefined || p.glossaire !== undefined))) {
-          if (p.mode === "full" || p.mode === "targeted") {
-            state.prdMode = p.mode;
-            document.querySelectorAll("[data-prd-mode]").forEach(function (b) {
-              b.classList.toggle("active", b.getAttribute("data-prd-mode") === state.prdMode);
-            });
-          }
-          if (p.glossary !== undefined || p.glossaire !== undefined) {
-            jumpToPrdTarget({ kind: "glossary", focus_id: p.glossary || p.glossaire || "glossary" });
-          } else if (p.sch) {
-            jumpToPrdTarget({ kind: "schema", schema_id: p.sch });
-          } else if (p.thm) {
-            var tn = idx.nodeById[p.thm] || idx.nodeBySlug[p.thm];
-            jumpToPrdByNodeId(tn ? tn.node_id : p.thm);
-          } else if (p.fam) {
-            jumpToPrdByNodeId(p.fam);
-          } else if (p.ch) {
-            jumpToPrdTarget({
-              kind: "subdomain",
-              chapter_number: Number(String(p.ch).replace(/^CH-/i, "")),
-              focus_schemas: Boolean(p.schemas)
-            });
-          } else if (p.part) {
-            var domArg = /^\d+$/.test(String(p.part)) ? ("D" + pad2(Number(p.part))) : String(p.part).toUpperCase();
-            jumpToPrdTarget({ kind: "domain", domain_id: domArg });
-          } else if (p.annexe) {
-            jumpToPrdTarget({ kind: "annexe", annexe_code: String(p.annexe).toUpperCase() });
-          } else if (p.sec) {
-            jumpToPrdTarget({ kind: "exec", section_id: normalizePrdExecId(p.sec) });
-          } else {
-            jumpToPrdTarget({ kind: "exec" });
-          }
-          return true;
-        }
         if (p.view === "synaptic") {
           if (p.ego && (p.ego === "all" || p.ego === "1" || p.ego === "2")) {
             state.syEgo = p.ego;
@@ -7878,8 +5576,6 @@
           switchView: switchView,
           selectThemeNode: selectThemeNode,
           selectStructUnit: selectStructUnit,
-          jumpToPrdTarget: jumpToPrdTarget,
-          jumpToPrdByNodeId: jumpToPrdByNodeId,
           applyHashNavigation: applyHashNavigation,
           getState: function () { return state; }
         };
@@ -7899,11 +5595,6 @@
       if (stToggleInit) {
         stToggleInit.classList.toggle("active", state.stShowList);
         stToggleInit.setAttribute("aria-expanded", state.stShowList ? "true" : "false");
-      }
-      var prdToggleInit = document.getElementById("prd-toggle-toc-btn");
-      if (prdToggleInit) {
-        prdToggleInit.classList.toggle("active", state.prdShowToc);
-        prdToggleInit.setAttribute("aria-expanded", state.prdShowToc ? "true" : "false");
       }
       var initHash = (typeof window !== "undefined" && window.location && window.location.hash) ? window.location.hash : "";
       var hadHashNav = applyHashNavigation(initHash);
@@ -7926,14 +5617,12 @@
             wasDrawerViewport = nowDrawer;
             if (nowDrawer) {
               state.stShowList = false;
-              state.prdShowToc = false;
               setInspectorOpen(false);
               if (!isAnyFilterActive(state.filters)) state.filtersOpen = false;
               state.mmLegendCollapsed = true;
             } else {
               state.stShowList = true;
-              state.prdShowToc = true;
-              if (state.activeView === "prd" || (state.activeView === "concordance" && !state.c4SelectedCell)) {
+              if (state.activeView === "concordance" && !state.c4SelectedCell) {
                 setInspectorOpen(false);
               } else if (state.inspectorManualOpen !== false) {
                 setInspectorOpen(true);
@@ -7944,7 +5633,6 @@
             syncFiltersToggleUI();
             syncLegendUI();
             if (state.activeView === "structure") renderStructureView(false);
-            else if (state.activeView === "prd") renderPrdToc(computePrdFilterState(idx, state.filters));
           } else {
             syncDrawerBackdrops();
           }

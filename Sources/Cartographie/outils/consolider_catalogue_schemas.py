@@ -21,10 +21,13 @@ from typing import Any
 import jsonschema
 
 TOOLS_DIR = Path(__file__).resolve().parent
-if str(TOOLS_DIR) not in sys.path:
-    sys.path.insert(0, str(TOOLS_DIR))
 
-import compiler_prd as cp  # noqa: E402
+
+def expected_chapter_number(domain_id: str, subdomain_node_id: str) -> int:
+    """Calcule le numéro de chapitre canonique (1..36) d'un sous-domaine."""
+    dom_num = int(domain_id[1:])
+    sub_num = int(subdomain_node_id.split("_")[-1])
+    return (dom_num - 1) * 3 + sub_num
 
 SCHEMA_SHARD_FILENAMES: tuple[str, ...] = (
     "schemas-global-et-annexe-e.json",
@@ -111,7 +114,7 @@ def build_catalogue_schemas_payload(
     expected_fams_by_chapter: dict[int, set[str]] = {}
     sub_by_chapter: dict[int, dict[str, Any]] = {}
     for sub_id, sub_node in subs_by_id.items():
-        cnum = cp.expected_chapter_number(sub_node["domain_id"], sub_id)
+        cnum = expected_chapter_number(sub_node["domain_id"], sub_id)
         expected_fams_by_chapter[cnum] = set(sub_node.get("children_ids") or [])
         sub_by_chapter[cnum] = sub_node
 
@@ -167,7 +170,7 @@ def build_catalogue_schemas_payload(
                     raise ValueError(f"{fn}/{sid}: métadonnées globales invalides")
                 all_global_schemas.append(item)
             else:
-                exp_num = cp.expected_chapter_number(dom_id, sub_id)
+                exp_num = expected_chapter_number(dom_id, sub_id)
                 if exp_num != cnum:
                     raise ValueError(f"{fn}/{sid}: incohérence {dom_id}/{sub_id} -> {exp_num} != {cnum}")
                 fams = item["families_covered"]

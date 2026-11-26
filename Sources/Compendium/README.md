@@ -1,14 +1,13 @@
 # Sources du Compendium (`Sources/Compendium/`)
 
-[Accueil du dépôt](../../README.md) · [Compendium publié (`../../Compendium/`)](../../Compendium/README.md) · [Tomes publiés (`../../Tomes/`)](../../Tomes/README.md) · [Index des sources (`../`)](../README.md) · [Cartographie (`../Cartographie/`)](../Cartographie/README.md) · [Référentiel directeur (`prd.md`)](prd.md) · [PRD Web](../Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](../Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html)
+[Accueil du dépôt](../../README.md) · [Compendium publié (`../../Compendium/`)](../../Compendium/README.md) · [Tomes publiés (`../../Tomes/`)](../../Tomes/README.md) · [Index des sources (`../`)](../README.md) · [Cartographie (`../Cartographie/`)](../Cartographie/README.md) · [MindMap HTML](../Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html)
 
-Ce répertoire regroupe les spécifications maîtresses (`prd.md`) et l'usine éditoriale `ouvrage/` qui produit, vérifie et publie le **Compendium de l'entreprise agentique** vers [`../../Compendium/Compendium.pdf`](../../Compendium/Compendium.pdf) et [`../../Compendium/Compendium.md`](../../Compendium/Compendium.md).
+Ce répertoire regroupe l'usine éditoriale `ouvrage/` qui produit, vérifie et publie le **Compendium de l'entreprise agentique** vers [`../../Compendium/Compendium.pdf`](../../Compendium/Compendium.pdf) et [`../../Compendium/Compendium.md`](../../Compendium/Compendium.md).
 
 ---
 
 ## Contenu du répertoire
 
-- [**`prd.md`**](prd.md) : référentiel directeur d'exigences produit, d'architecture et d'homologation (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `5` annexes `A–E`, `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes `1` à `8`, `7 573` lignes, `271 694` mots).
 - **`ouvrage/`** : atelier complet de rédaction, d'ancrage probatoire et d'assemblage publiant vers [`../../Compendium/`](../../Compendium/README.md) :
   - `specs/` : manifeste normatif (`manifest.json`, `42` unités, `180 000` mots cibles) et protocole de collecte ouverte (`protocole-mlr-compendium.json`, gel au `2 décembre 2026`).
   - `manuscrit/` : `00 - Liminaire.md`, `12` parties (`36` chapitres) et `5` annexes déterministes (`13 - Annexes/Annexe A..E.md`).

@@ -1,6 +1,6 @@
 # Composants sources et fabrique éditoriale (`Sources`)
 
-[Index principal du dépôt](../README.md) · [Compendium publié (`../Compendium/`)](../Compendium/README.md) · [Tomes publiés (`../Tomes/`)](../Tomes/README.md) · [PRD maître](Compendium/prd.md) · [PRD Web](Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html)
+[Index principal du dépôt](../README.md) · [Compendium publié (`../Compendium/`)](../Compendium/README.md) · [Tomes publiés (`../Tomes/`)](../Tomes/README.md) · [MindMap HTML](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html)
 
 Ce répertoire regroupe tous les **composants sources, schémas, données cartographiques et outils de compilation** servant à fabriquer, assembler et vérifier les PDF publiés et leurs fichiers Markdown correspondants dans [`../Compendium/`](../Compendium/README.md) et [`../Tomes/`](../Tomes/README.md).
 
@@ -8,9 +8,9 @@ Ce répertoire regroupe tous les **composants sources, schémas, données cartog
 
 | Sous-dossier | Rôle dans la chaîne éditoriale | Cible publiée |
 |---|---|---|
-| [`Compendium/`](Compendium/README.md) | Référentiel directeur [`prd.md`](Compendium/prd.md) et usine éditoriale [`ouvrage/`](Compendium/ouvrage/) (`12` parties, `36` chapitres, `5` annexes `A–E`, `115` schémas de vulgarisation et contrôles AQ `G0`–`G5`) | [`../Compendium/`](../Compendium/README.md) (`Compendium.pdf`, `Compendium.md`) |
+| [`Compendium/`](Compendium/README.md) | Usine éditoriale [`ouvrage/`](Compendium/ouvrage/) (`12` parties, `36` chapitres, `5` annexes `A–E`, `115` schémas de vulgarisation et contrôles AQ `G0`–`G5`) | [`../Compendium/`](../Compendium/README.md) (`Compendium.pdf`, `Compendium.md`) |
 | [`Tomes/`](Tomes/README.md) | Dossiers sources des **Tomes 1 à 8** (chapitres découpés, `319` diagrammes `.puml`/`.mmd` et rendus `.svg`/`.png`, spécifications et AQ des tomes 7–8, et trousse logicielle exécutable [`Tome 8.../trousse/`](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md)) | [`../Tomes/`](../Tomes/README.md) (`Tome 1..8.{pdf,md}`) |
-| [`Cartographie/`](Cartographie/README.md) | Graphe thématique transversal du Compendium (`15` sections, `42` unités, `380` nœuds, `616` interrelations, `56` vedettes du glossaire), compilateur du [`prd.md`](Compendium/prd.md), [`MindMap HTML`](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) et [`PRD Web`](Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) autonomes hors ligne | [`Sources/Compendium/prd.md`](Compendium/prd.md) et vues HTML autonomes |
+| [`Cartographie/`](Cartographie/README.md) | Graphe thématique transversal du Compendium (`15` sections, `42` unités, `380` nœuds, `616` interrelations, `56` vedettes du glossaire) et [`MindMap HTML`](Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) autonome hors ligne (`4` vues) | [`Cartographie/`](Cartographie/README.md) et MindMap HTML autonome |
 | [`gabarit-pdf/`](gabarit-pdf/README.md) | Gabarit `Typst` unifié `6,14 × 9,21 po` ([`gabarit-collection.typ`](gabarit-pdf/gabarit-collection.typ)), catalogue [`volumes.json`](gabarit-pdf/volumes.json) couvrant le Compendium (`0`) et les Tomes `1`–`8`, et scripts de compilation PDF/diagrammes | [`../Compendium/`](../Compendium/README.md) et [`../Tomes/`](../Tomes/README.md) |
 
 ## Commandes PowerShell rapides de recompilation PDF et Markdown
@@ -34,16 +34,13 @@ python -B Sources/Compendium/ouvrage/outils/assemble_livre.py --all
 python -B "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py" --all
 python -B "Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py" --all
 
-# Régénération intégrale de Cartographie/, prd.md, MindMap HTML et PRD Web HTML (dans l'ordre exact en 9 étapes)
+# Régénération intégrale de Cartographie/ et de la MindMap HTML 4 vues (dans l'ordre exact en 6 étapes)
 python -B Sources/Cartographie/outils/extraire_structure.py
 python -B Sources/Cartographie/outils/inventorier_schemas_compendium.py
 python -B Sources/Cartographie/outils/extraire_pivots_compendium.py
 python -B Sources/Cartographie/outils/synthetiser_graphe.py
 python -B Sources/Cartographie/outils/consolider_catalogue_schemas.py
-python -B Sources/Cartographie/outils/compiler_prd.py
-python -B Sources/Cartographie/outils/preparer_donnees_prd_web.py
 python -B Sources/Cartographie/outils/compiler_mindmap.py
-python -B Sources/Cartographie/outils/compiler_prd_web.py
 # (Optionnel : python -B Sources/Cartographie/outils/inventorier_diagrammes_tomes.py pour la concordance historique 319 figures)
 ```
 

@@ -78,16 +78,8 @@
     "../../../Tomes/Tome 7 - Gouverner l'industrialisation cognitive.md",
     "../../../Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable.md"
   ],
-  "stylistic_benchmarks_for_gauntlet": [
-    "../prd.md"
-  ],
-  "stylistic_benchmark_sections": {
-    "../prd.md": [
-      "1",
-      "2",
-      "5"
-    ]
-  },
+  "stylistic_benchmarks_for_gauntlet": [],
+  "stylistic_benchmark_sections": {},
   "units": [
     {
       "id": "00-liminaire",

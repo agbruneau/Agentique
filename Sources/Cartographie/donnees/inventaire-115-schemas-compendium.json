@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-26T12:52:48Z",
+  "generated_at": "2026-11-26T13:06:25Z",
   "generator": "Sources/Cartographie/outils/inventorier_schemas_compendium.py",
   "manifest_source": "Sources/Compendium/ouvrage/specs/manifest.json",
   "compendium_md_source": "Compendium/Compendium.md",

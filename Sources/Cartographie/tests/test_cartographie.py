@@ -7,7 +7,7 @@ Couvre :
 - l'intégrité du graphe transversal (`380` nœuds dont `260` thèmes, `616` relations, `180` cellules de matrice, `56` vedettes glossaire, `135` `L+`, `27` `Statut F`, `14` `CA-G0-SYNC`, `37/37` `G2`, `852` pages PDF) ;
 - la suppression définitive de l'ancienne carte `MindMap - Cartographie thématique du Corpus.html` et de `donnees/shards/` ;
 - l'échappement sûr du JSON embarqué dans `<script>` et l'autonomie `file://` stricte (`0` CDN / requête réseau) ;
-- la validation syntaxique et fonctionnelle DOM complète des `5` vues sous `Node.js`.
+- la validation syntaxique et fonctionnelle DOM complète des `4` vues sous `Node.js`.
 """
 
 from __future__ import annotations
@@ -326,21 +326,22 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
 
     pivots_raw = json.loads((DONNEES_DIR / "pivots-concordance.json").read_text(encoding="utf-8"))
     assert not _has_backtick_key(pivots_raw), "Clé littérale avec backtick dans pivots-concordance.json"
-    prd_web_path = DONNEES_DIR / "prd-web-data.json"
-    if prd_web_path.is_file():
-        assert bundle["prd"] == json.loads(prd_web_path.read_text(encoding="utf-8"))
+    assert "prd" not in bundle
+    for removed_path in (
+        REPO_ROOT / "Sources" / "Compendium" / "prd.md",
+        CARTO_DIR / "PRD - Référentiel directeur de l'entreprise agentique.html",
+        DONNEES_DIR / "prd-web-data.json",
+        DONNEES_DIR / "schema-prd-shard.json",
+        DONNEES_DIR / "prd_shards",
+        CARTO_DIR / "outils" / "compiler_prd.py",
+        CARTO_DIR / "outils" / "preparer_donnees_prd_web.py",
+        CARTO_DIR / "outils" / "compiler_prd_web.py",
+        CARTO_DIR / "outils" / "template_prd_web.html",
+        CARTO_DIR / "tests" / "test_prd.py",
+        REPO_ROOT / "Compendium" / "audit.md",
+    ):
+        assert not removed_path.exists(), f"Artefact supprimé toujours présent : {removed_path}"
     assert b"\r\n" not in HTML_PATH.read_bytes(), "CRLF détecté dans MindMap HTML"
-
-    prd = bundle.get("prd") or {}
-    assert len(prd.get("parties", [])) == 12
-    assert len(prd.get("chapters", [])) == 36
-    assert len(prd.get("annexes", [])) == 5
-    assert len(prd.get("glossary", [])) == 56
-    lookup = prd.get("lookup") or {}
-    assert len(lookup.get("node_id_to_prd", {})) == 379
-    assert len(lookup.get("slug_to_chapter", {})) == 260
-    assert len(lookup.get("domain_to_part", {})) == 12
-    assert len(lookup.get("unit_id_to_chapter", {})) == 42
 
 
 # ---------------------------------------------------------------------------
@@ -367,8 +368,10 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert "<!--" not in embedded_raw
     assert "\u2028" not in embedded_raw
     assert "\u2029" not in embedded_raw
-    assert 'data-view="prd"' in html
-    assert "5 · PRD Maître" in html
+    assert 'data-view="prd"' not in html
+    assert "5 · PRD Maître" not in html
+    for v_name in ("mindmap", "structure", "synaptic", "concordance"):
+        assert f'data-view="{v_name}"' in html
     parsed = json.loads(embedded_raw)
     assert parsed["totals"]["files"] == 15
 
@@ -516,37 +519,18 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
       throw new Error("Filtre 2023–2035 (en-dash) vide");
     }
 
-    // Fonctions pures Vue 5 PRD & indexation recherche PRD
-    const pHash = eng.parseLocationHash("#view=prd&ch=05&thm=loi-de-lusser");
-    if (pHash.view !== "prd" || pHash.ch !== "05" || pHash.thm !== "loi-de-lusser") {
+    // Fonctions pures transversales & indexation recherche
+    const pHash = eng.parseLocationHash("#view=concordance&tab=glossary_evidence&q=MCP");
+    if (pHash.view !== "concordance" || pHash.tab !== "glossary_evidence" || pHash.q !== "MCP") {
       throw new Error("parseLocationHash invalide: " + JSON.stringify(pHash));
     }
-    const prdHit = eng.resolveNodeToPrdTarget(idx, "THM_loi-de-lusser");
-    if (!prdHit || Number(prdHit.chapter_number) !== 2) {
-      throw new Error("resolveNodeToPrdTarget THM_loi-de-lusser invalide: " + JSON.stringify(prdHit));
-    }
-    const unitHit = eng.resolveStructUnitToPrdTarget(idx, "p01-u0013");
-    if (!unitHit || Number(unitHit.chapter_number) !== 2) {
-      throw new Error("resolveStructUnitToPrdTarget p01-u0013 invalide: " + JSON.stringify(unitHit));
-    }
-    const prdFilt = eng.computePrdFilterState(idx, { domain: "D07" });
-    if (!prdFilt.active || prdFilt.matchingChapters.size !== 3) {
-      throw new Error("computePrdFilterState D07 != 3 chapitres: " + prdFilt.matchingChapters.size);
-    }
-    const sPrdCh = eng.searchCorpus(idx, "Chapitre 05", 15);
-    if (!sPrdCh.some(d => d.kind === "prd-chapter")) {
-      throw new Error("searchCorpus ne remonte aucun prd-chapter");
-    }
-    const sPrdAnn = eng.searchCorpus(idx, "Annexe B", 15);
-    if (!sPrdAnn.some(d => d.kind === "prd-annexe")) {
-      throw new Error("searchCorpus ne remonte aucune prd-annexe");
+    const sThm = eng.searchCorpus(idx, "Lusser", 15);
+    if (!sThm.some(d => d.kind === "theme")) {
+      throw new Error("searchCorpus('Lusser') ne remonte aucun theme");
     }
     const d07Themes = eng.collectDescendantThemeIds(idx, "DOM_D07");
     if (d07Themes.length < 15 || !d07Themes.every(tid => idx.nodeById[tid].domain_id === "D07")) {
       throw new Error("collectDescendantThemeIds DOM_D07 invalide: " + d07Themes.length);
-    }
-    if (eng.normalizePrdExecId("1") !== "exec-01" || eng.normalizePrdExecId("sec-3") !== "exec-03") {
-      throw new Error("normalizePrdExecId invalide");
     }
     """
 
@@ -572,9 +556,6 @@ def test_html_css_specificity_and_svg_export_styles() -> None:
     assert ".mm-toggle-text{" in html
     assert ".mm-node.dimmed{" in html or ".mm-node.dimmed {" in html
     assert ".mm-edge.dimmed{" in html or ".mm-edge.dimmed {" in html
-    assert 'id="prd-stats-pill" class="kpi-pill"' in html
-    m_toc_grp = re.search(r"\.prd-toc-group\s*\{([^}]+)\}", html)
-    assert m_toc_grp is not None and "flex-shrink: 0" in m_toc_grp.group(1)
     assert ".canvas-toolbar" in html and ".stage-container" in html
     assert ".view-toolbar" not in html and ".main-canvas-area" not in html
     m_print = re.search(r"@media\s+print\s*\{([\s\S]+?)\n\s{4}\}", html)
@@ -589,18 +570,15 @@ def test_html_css_specificity_and_svg_export_styles() -> None:
     assert ".skip-link" in html
     m_td_domain = re.search(r"td\.domain-col\s*\{([^}]+)\}", html)
     assert m_td_domain is not None and "position: sticky" in m_td_domain.group(1)
-    assert "tome-concordance-details" in html
     m_print_fn = re.search(r"function\s+prepareDomForPrint\s*\(\)\s*\{([\s\S]*?)\n\s{6}\}", html)
-    assert m_print_fn is not None and "details.tome-concordance-details" in m_print_fn.group(1)
-    m_rnav = re.search(r"\.prd-reading-nav\s*\{([^}]+)\}", html)
-    assert m_rnav is not None and "position: sticky" in m_rnav.group(1)
+    assert m_print_fn is not None and "details.ann-details" in m_print_fn.group(1)
     assert 'id="active-filters-strip"' in html
     readme_bytes = (CARTO_DIR / "README.md").read_bytes()
     assert not readme_bytes.startswith(b"\xef\xbb\xbf") and b"\r\n" not in readme_bytes
     assert not HTML_PATH.read_bytes().startswith(b"\xef\xbb\xbf") and b"\r\n" not in HTML_PATH.read_bytes()
 
 
-def test_nodejs_all_five_views_dom_smoke() -> None:
+def test_nodejs_all_four_views_dom_smoke() -> None:
     node_exe = shutil.which("node")
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
@@ -666,8 +644,6 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
       "mm-toggle-edges-btn", "mm-expand-linked-btn", "st-toggle-list-btn",
       "st-expand-chapters-btn", "st-collapse-tomes-btn", "sy-reheat-btn", "path-find-btn", "path-swap-btn",
       "path-clear-btn", "path-directed", "inspector-toggle-btn", "mm-legend-toggle",
-      "prd-toc-pane", "prd-toc-filter", "prd-toc-count", "prd-toc-list", "prd-reader", "prd-stats-pill",
-      "prd-toggle-toc-btn", "prd-print-btn", "prd-standalone-link",
       "top-compendium-md-link", "top-compendium-pdf-link", "c4-gloss-search", "c4-gloss-body", "c4-gloss-count"
     ];
     const byId = {};
@@ -677,7 +653,7 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     byId["top-compendium-md-link"].setAttribute("href", "../../Compendium/Compendium.md");
     byId["top-compendium-pdf-link"].setAttribute("href", "../../Compendium/Compendium.pdf");
 
-    const viewTabs = ["mindmap", "structure", "synaptic", "concordance", "prd"].map(v => {
+    const viewTabs = ["mindmap", "structure", "synaptic", "concordance"].map(v => {
       const b = makeEl("button");
       b.setAttribute("data-view", v);
       return b;
@@ -711,7 +687,7 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
       globalThis: {}
     };
     sandbox.globalThis = sandbox;
-    new vm.Script(jsMatch[1], { filename: "runtime_all5_smoke.js" }).runInNewContext(sandbox);
+    new vm.Script(jsMatch[1], { filename: "runtime_all4_smoke.js" }).runInNewContext(sandbox);
 
     const app = sandbox.CartographieApp;
     const eng = sandbox.CartographieEngine;
@@ -731,7 +707,7 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
       throw new Error("Inspecteur devrait être ouvert par défaut en Vue 1 sur desktop");
     }
 
-    // 1. Vues 1, 2, 3, 4 + repli auto de l'inspecteur en concordance/prd
+    // 1. Vues 1, 2, 3, 4 + repli auto de l'inspecteur en concordance
     for (const vt of viewTabs.slice(0, 4)) vt.click();
     if (!byId["inspector"].classList.contains("collapsed")) {
       throw new Error("Inspecteur devrait se replier automatiquement en Vue 4 concordance sans cellule sélectionnée");
@@ -759,6 +735,8 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
         !byId["c4-content"].innerHTML.includes("<strong>1</strong> / 56 vedettes")) {
       throw new Error("Filtre #c4-gloss-search défaillant");
     }
+    byId["c4-gloss-search"].value = "";
+    byId["c4-gloss-search"].dispatch("input");
 
     // Liens en-tête Compendium
     if (!byId["top-compendium-md-link"].getAttribute("href").includes("Compendium/Compendium.md") ||
@@ -778,90 +756,45 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     const fullCount = byId["sy-svg"].children[0].children.length;
     if (fullCount < 800) throw new Error("Vue 3 désynchronisée après reset hors vue: " + fullCount);
 
-    // 2. Vue 5 PRD Maître intégrée & liens Compendium + SCH-15-03 + Agentivité des systèmes
-    app.switchView("concordance");
-    if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en concordance");
-    app.switchView("prd");
+    // 2. Vue 4 Concordance, Glossaire & Socle probatoire + liens Compendium + inspecteur latéral
+    app.applyHashNavigation("#view=concordance&tab=glossary_evidence");
     if (!byId["inspector"].classList.contains("collapsed")) {
-      throw new Error("Inspecteur devrait se replier automatiquement en Vue 5 prd");
+      throw new Error("Inspecteur devrait rester replié en Vue 4 glossary_evidence");
     }
-    if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en prd");
-    if (!byId["prd-stats-pill"].textContent.includes("260 thèmes")) {
-      throw new Error("Statistiques Vue 5 incomplètes: " + byId["prd-stats-pill"].textContent);
+    if (!byId["export-svg-btn"].disabled) throw new Error("export-svg-btn devrait être désactivé en concordance");
+    const c4Html = byId["c4-content"].innerHTML;
+    for (const marker of ["Agentivité des systèmes", "135", "27", "14", "37/37"]) {
+      if (!c4Html.includes(marker)) throw new Error("Marqueur absent en Vue 4 glossary_evidence: " + marker);
     }
+    const c4NoCode = c4Html.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
+    if (c4NoCode.includes("`")) throw new Error("Backtick brut détecté hors <code> dans Vue 4");
+    if (/(^|[\s(>])\*\*[^\s*](?:[^*\n]*?[^\s*])?\*\*(?=[\s.,;:!?<)]|$)/.test(c4NoCode)) {
+      throw new Error("**gras** brut détecté dans Vue 4");
+    }
+    if (c4Html.includes("\\$")) throw new Error("Literal backslash-dollar dans Vue 4");
+    if (/\bsynthetise\b/i.test(c4Html)) throw new Error("Synthetise sans accent détecté en Vue 4");
 
-    app.getState().prdMode = "full";
-    app.switchView("prd");
-    const fullHtml = byId["prd-reader"].innerHTML;
-    for (const marker of [
-      "Partie I — D01", "Partie XII — D12", "Chapitre 01 —", "Chapitre 36 —",
-      "Annexe A —", "Annexe B —", "Annexe C —", "Annexe D —", "Annexe E —",
-      "THM_loi-de-lusser", "Panorama visuel directeur", "01.3 Schémas de vulgarisation à intégrer",
-      "36.3 Schémas de vulgarisation à intégrer", "237 entrées uniques", "135"
-    ]) {
-      if (!fullHtml.includes(marker)) throw new Error("Marqueur absent en Vue 5 mode intégral: " + marker);
-    }
-
-    // Hygiène DOM Vue 5 (0 backtick hors <code>, 0 **gras**, 0 \$, 0 synthetise)
-    const fullNoCode = fullHtml.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, "");
-    if (fullNoCode.includes("`")) throw new Error("Backtick brut détecté hors <code> dans Vue 5");
-    if (/(^|[\s(>])\*\*[^\s*](?:[^*\n]*?[^\s*])?\*\*(?=[\s.,;:!?<)]|$)/.test(fullNoCode)) {
-      throw new Error("**gras** brut détecté dans Vue 5");
-    }
-    if (fullHtml.includes("\\$")) throw new Error("Literal backslash-dollar dans Vue 5");
-    if (/\bsynthetise\b/i.test(fullHtml)) throw new Error("Synthetise sans accent détecté en Vue 5");
-
-    // 115 schémas Compendium + liens ../../Compendium/Compendium.md et ../../Sources/Compendium/ouvrage/schemas/rendus/
-    const prdData = JSON.parse(jsonMatch[1]).prd;
-    const mmSchemas = (prdData.executive_summary.vulgarization_schemas || []).map(s => s.schema_id)
-      .concat(prdData.chapters.flatMap(c => (c.vulgarization_schemas || []).map(s => s.schema_id)));
-    if (mmSchemas.length !== 115) throw new Error("MindMap != 115 schémas");
-    for (const sid of mmSchemas) {
-      if (!fullHtml.includes(sid)) throw new Error("Schéma manquant en Vue 5 MindMap: " + sid);
-    }
-
-    const compMdHrefs = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Compendium\/Compendium\.md[^"]*)"/g), m => m[1]);
-    if (compMdHrefs.length < 36) throw new Error("Liens ../../Compendium/Compendium.md insuffisants en Vue 5: " + compMdHrefs.length);
-    const compSchemaRendus = Array.from(fullHtml.matchAll(/href="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"#]+)"/g), m => m[1]);
-    if (compSchemaRendus.length < 100) throw new Error("Liens ../../Sources/Compendium/ouvrage/schemas/rendus/ insuffisants: " + compSchemaRendus.length);
-    for (const rawHref of new Set([...compMdHrefs.map(u => u.split("#")[0]), ...compSchemaRendus])) {
+    const compMdHrefs = Array.from(c4Html.matchAll(/href="(\.\.\/\.\.\/Compendium\/Compendium\.md[^"]*)"/g), m => m[1]);
+    if (compMdHrefs.length < 36) throw new Error("Liens ../../Compendium/Compendium.md insuffisants en Vue 4: " + compMdHrefs.length);
+    for (const rawHref of new Set(compMdHrefs.map(u => u.split("#")[0]))) {
       const diskPath = fsPath.resolve(fsPath.dirname(process.argv[1]), decodeURIComponent(rawHref));
       if (!fs.existsSync(diskPath)) throw new Error("Lien Compendium cassé sur disque: " + diskPath);
     }
 
-    // Inspecteur latéral + saut PRD + Ctrl+K SCH-15-03
-    app.getState().prdMode = "targeted";
+    // Inspecteur latéral + recherche Ctrl+K Agentivité des systèmes
     app.selectThemeNode("THM_loi-de-lusser", true);
     const inspHtml = byId["inspector-body"].innerHTML;
-    if (!inspHtml.includes("insp-goto-prd") ||
-        !inspHtml.includes("Schémas compilés du Compendium") ||
-        !inspHtml.includes("Occurrences vérifiées dans le Compendium") ||
-        !inspHtml.includes("SCH-02-")) {
+    if (!inspHtml.includes("insp-goto-mm") ||
+        !inspHtml.includes("Occurrences vérifiées dans le Compendium")) {
       throw new Error("Inspecteur thème incomplet");
     }
-    app.jumpToPrdByNodeId("THM_loi-de-lusser");
-    if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 2) {
-      throw new Error("Saut thème -> PRD défaillant");
-    }
     const mmIdx = eng.buildIndexes(JSON.parse(jsonMatch[1]));
-    const schHits = eng.searchCorpus(mmIdx, "SCH-15-03", 10);
-    if (!schHits.some(h => h.kind === "prd-schema" && h.id === "SCH-15-03")) {
-      throw new Error("searchCorpus('SCH-15-03') n'a pas retourné prd-schema");
-    }
     const agHits = eng.searchCorpus(mmIdx, "Agentivité des systèmes", 10);
     if (!agHits.some(h => h.kind === "glossary")) {
       throw new Error("searchCorpus('Agentivité des systèmes') n'a pas retourné glossary");
     }
-    app.applyHashNavigation("#sch=SCH-15-03");
-    if (app.getState().activeView !== "prd" || Number(app.getState().prdFocusId) !== 15 || app.getState().prdHighlightId !== "SCH-15-03") {
-      throw new Error("Hash #sch=SCH-15-03 défaillant dans MindMap");
-    }
 
-    // Non-régression saut DOM_D01 -> Partie I (D01), Replier aux 15 sections, Déplier cibles liées sur DOM_D01, hash concordance tab
-    app.jumpToPrdByNodeId("DOM_D01");
-    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "part" || app.getState().prdFocusId !== "D01") {
-      throw new Error("Saut DOM_D01 -> PRD Partie I défaillant: " + JSON.stringify(app.getState()));
-    }
+    // Non-régression : Replier aux 15 sections, Déplier cibles liées sur DOM_D01, hash concordance tab
     app.switchView("mindmap");
     if (byId["inspector"].classList.contains("collapsed")) {
       throw new Error("Inspecteur devrait se rouvrir au retour en Vue 1 mindmap");
@@ -885,10 +818,6 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
     if (app.getState().activeView !== "concordance" || app.getState().c4Tab !== "glossary_evidence") {
       throw new Error("Hash #view=concordance&tab=glossary_evidence défaillant");
     }
-    const schemaImgs = Array.from(fullHtml.matchAll(/<img[^>]+src="(\.\.\/\.\.\/Sources\/Compendium\/ouvrage\/schemas\/rendus\/[^"]+)"/g), m => m[1]);
-    if (schemaImgs.length !== 115) {
-      throw new Error("Prévisualisations <img> des 115 schémas manquantes en Vue 5: " + schemaImgs.length);
-    }
 
     // Non-régression : 5 niveaux distincts Niv. 1..5 (1, 13, 49, 120, 380 nœuds)
     app.switchView("mindmap");
@@ -900,36 +829,6 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
         throw new Error(`Niv. ${i + 1} attendu ${expectedCounts[i]} nœuds, obtenu: ${byId["mm-stats-pill"].textContent}`);
       }
     }
-
-    // Non-régression : Glossaire intégré en Vue 5 (mode intégral + hash #view=prd&glossary=1 + TDM + recherche TDM par thème)
-    if (!fullHtml.includes("prd-v5-glossary-table")) {
-      throw new Error("Mode intégral Vue 5 omet le glossaire #prd-v5-glossary-table");
-    }
-    if (!fullHtml.includes('class="prd-reading-nav"')) {
-      throw new Error("Mode intégral Vue 5 omet .prd-reading-nav");
-    }
-    if (!fullHtml.includes('<details class="tome-concordance-details"')) {
-      throw new Error("Mode intégral Vue 5 omet <details class=\"tome-concordance-details\">");
-    }
-    if (!byId["prd-toc-list"].innerHTML.includes("data-toc-gloss")) {
-      throw new Error("TDM Vue 5 omet l'entrée Glossaire [data-toc-gloss]");
-    }
-    app.applyHashNavigation("#view=prd&glossary=1");
-    if (app.getState().activeView !== "prd" || app.getState().prdFocusKind !== "glossary" || !byId["prd-reader"].innerHTML.includes("prd-v5-glossary-table")) {
-      throw new Error("Navigation #view=prd&glossary=1 défaillante en Vue 5");
-    }
-    byId["prd-toc-filter"].value = "loi-de-lusser";
-    byId["prd-toc-filter"].dispatch("input");
-    if (!byId["prd-toc-list"].innerHTML.includes("Ch. 02 —")) {
-      throw new Error("Filtre TDM Vue 5 ne trouve pas Ch. 02 via le slug thème loi-de-lusser");
-    }
-    byId["prd-toc-filter"].value = "Chapitre 02";
-    byId["prd-toc-filter"].dispatch("input");
-    if (!byId["prd-toc-list"].innerHTML.includes("Ch. 02 —")) {
-      throw new Error("Filtre TDM Vue 5 ne trouve pas Ch. 02 via 'Chapitre 02'");
-    }
-    byId["prd-toc-filter"].value = "";
-    byId["prd-toc-filter"].dispatch("input");
 
     // Non-régression : mise à jour de #filter-summary en Vue 2 et Vue 4 (glossary_evidence), synchro bidirectionnelle #st-file-select <-> #f-tome, et levée auto de filtre bloquant
     app.switchView("structure");
@@ -961,4 +860,4 @@ def test_nodejs_all_five_views_dom_smoke() -> None:
         encoding="utf-8",
         check=False,
     )
-    assert proc.returncode == 0, f"Échec DOM smoke 5 vues Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
+    assert proc.returncode == 0, f"Échec DOM smoke 4 vues Node.js:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"

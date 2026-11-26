@@ -1,6 +1,6 @@
 # Interopérabilité et Orchestration en Entreprise Agentique
 
-*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du référentiel ([`Compendium/`](Compendium/README.md) ([PDF](Compendium/Compendium.pdf) · [MD](Compendium/Compendium.md)) · [`Tomes/`](Tomes/README.md) (`8` ouvrages regroupés) · [`Sources/`](Sources/README.md) (composants sources PDF/MD) · [`prd.md`](Sources/Compendium/prd.md) · [MindMap HTML](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) · [PRD Web](Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) · Compendium (`852` p.) + `8` tomes (`4 542` p.) · `5 394` pages · horizon 2024–2035)*
+*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du référentiel ([`Compendium/`](Compendium/README.md) ([PDF](Compendium/Compendium.pdf) · [MD](Compendium/Compendium.md)) · [`Tomes/`](Tomes/README.md) (`8` ouvrages regroupés) · [`Sources/`](Sources/README.md) (composants sources PDF/MD) · [MindMap HTML](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) · Compendium (`852` p.) + `8` tomes (`4 542` p.) · `5 394` pages · horizon 2024–2035)*
 
 ---
 
@@ -174,9 +174,9 @@ Les huit tomes de la collection (`PDF` au format unifié `6,14 × 9,21 po` et `M
 
 ### 5.3 Les composants sources de publication ([`Sources/`](Sources/README.md))
 
-- [`Sources/Compendium/`](Sources/Compendium/README.md) : référentiel directeur [`prd.md`](Sources/Compendium/prd.md) (`12` domaines `D01–D12`, `36` chapitres, `71` familles, `260` thèmes, `616` interrelations et `5` annexes normatives `A–E` incluant `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes, compilé par [`compiler_prd.py`](Sources/Cartographie/outils/compiler_prd.py)) et usine éditoriale [`ouvrage/`](Sources/Compendium/ouvrage/) produisant `Compendium/Compendium.pdf` et `Compendium/Compendium.md`.
+- [`Sources/Compendium/`](Sources/Compendium/README.md) : usine éditoriale [`ouvrage/`](Sources/Compendium/ouvrage/) produisant `Compendium/Compendium.pdf` et `Compendium/Compendium.md` (`12` parties `D01–D12`, `36` chapitres, `5` annexes `A–E` et `115` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes).
 - [`Sources/Tomes/`](Sources/Tomes/README.md) : les `8` dossiers sources des Tomes (`Tome 1` à `Tome 8`) contenant les chapitres découpés, les sources et rendus des `319` diagrammes, l'outillage d'assemblage des Tomes 7 et 8, ainsi que la trousse logicielle exécutable [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) (`4` modules `Python 3.12+`, `3` politiques `OPA / Rego`, `13` schémas `JSON Schema`, vecteurs de test officiels, `83` tests automatisés `pytest` et `45` tests `OPA` à `100 %` de couverture).
-- [`Sources/Cartographie/`](Sources/Cartographie/README.md) : cartographie thématique et structurelle interactive complète du **Compendium** (**5 vues dynamiques** dans [`MindMap - Cartographie thématique du Compendium.html`](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) couvrant `15` sections, `42` unités, `380` nœuds, `616` interrelations et `56` vedettes du glossaire, ainsi que le lecteur autonome [`PRD - Référentiel directeur de l'entreprise agentique.html`](Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html), 100 % hors ligne sous `file://`).
+- [`Sources/Cartographie/`](Sources/Cartographie/README.md) : cartographie thématique et structurelle interactive complète du **Compendium** (**4 vues dynamiques** dans [`MindMap - Cartographie thématique du Compendium.html`](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) couvrant `15` sections, `42` unités, `380` nœuds, `616` interrelations et `56` vedettes du glossaire, 100 % hors ligne sous `file://`).
 - [`Sources/gabarit-pdf/`](Sources/gabarit-pdf/README.md) : le gabarit `Typst` commun (`6,14 × 9,21 po`), le catalogue `volumes.json` et les scripts permettant de recompiler les diagrammes, le Compendium et les huit Tomes.
 
 ---
@@ -187,7 +187,7 @@ Inutile de lire les milliers de pages dans l'ordre : entrez par le **Compendium*
 
 ### Porte d'entrée principale — Le Compendium en un seul ouvrage unifié
 1. Lire le **Liminaire** du [**Compendium**](Compendium/README.md) ([`Compendium.pdf`](Compendium/Compendium.pdf) · [`Compendium.md`](Compendium/Compendium.md)) pour saisir en une lecture la doctrine `80/20`, la carte des `12` domaines `D01–D12`, le Panorama visuel directeur et les repères de gouvernance `2023–2035`.
-2. Explorer visuellement les thèmes et leurs interrelations dans la [**MindMap HTML**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) ou le [**PRD Web**](Sources/Cartographie/PRD%20-%20R%C3%A9f%C3%A9rentiel%20directeur%20de%20l%27entreprise%20agentique.html) (`file://` hors ligne).
+2. Explorer visuellement les thèmes et leurs interrelations dans la [**MindMap HTML**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`file://` hors ligne).
 
 ### Parcours A — Comprendre l'essentiel sans bagage pointu *(~45 minutes)*
 1. Lire l'introduction (**Liminaire**) du **Tome 7** ([PDF p. 5–18](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.pdf) · [MD](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md)).
