@@ -557,7 +557,7 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                 "annexe-b": ["topologies-oo1-oo4-catalogue-ferme", "boucle-fermee-defaillances-mast"],
                 "annexe-c": ["concordance-div-02", "discordance-disc-01-a-05"],
                 "annexe-d": ["exigences-cre-ia-305", "grille-prr-75-portes-bloquantes"],
-                "annexe-e": ["schemas-vulgarisation-115", "gabarit-typst-edition-4542-pages"],
+                "annexe-e": ["gabarit-typst-edition-4542-pages", "protocole-wyvern-g0-g5"],
             }.get(uid, ["systems-of-agency"])
             valid_slugs = [
                 sl for sl in fallback_slugs
@@ -721,7 +721,7 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                 node["pdf_page_start"] = 1
                 node["pdf_page_end"] = pdf_pages
                 node["word_count"] = cm_pivots.get("compendium_md_words")
-                node["reading_minutes"] = max(1, round(int(cm_pivots.get("compendium_md_words") or 246518) / 220))
+                node["reading_minutes"] = max(1, round(int(cm_pivots.get("compendium_md_words") or 247622) / 220))
                 node["guiding_question"] = lim_um.get("guiding_question")
                 node["excerpt"] = lim_um.get("excerpt", "")
 

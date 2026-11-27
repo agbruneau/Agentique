@@ -4,7 +4,7 @@
 Parse en CommonMark strict :
 - ``Compendium/README.md`` (section ``R``)
 - ``Compendium/Compendium.md`` découpé selon ses 14 sections ``H1`` (``LIM``, ``P01``..``P12``, ``ANN``)
-en conservant les numéros de lignes exacts ``1..8408`` de ``Compendium/Compendium.md`` et en
+en conservant les numéros de lignes exacts ``1..8670`` de ``Compendium/Compendium.md`` et en
 rattachant chaque unité (``00-liminaire``, ``ch01..ch36``, ``annexe-a..annexe-e``) à son
 ``compendium_unit_id`` et à son ``source_file`` déclarés dans ``manifest.json``.
 

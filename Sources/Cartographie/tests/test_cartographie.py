@@ -221,6 +221,12 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
 
     schema = bundle["schema"]
+    scope = schema["corpus_scope"]
+    assert scope["compendium_pdf_pages"] == 871
+    assert scope["compendium_markdown_lines"] == 8670
+    assert scope["compendium_schemas"] == 139
+    assert scope["total_pdf_pages"] == 871
+    assert scope["total_diagrams"] == 139
     nodes = bundle["nodes"]
     relations = bundle["relations"]
     chapters = bundle["chapters"]
@@ -417,6 +423,7 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
         assert f'data-view="{v_name}"' in html
     parsed = json.loads(embedded_raw)
     assert parsed["totals"]["files"] == 15
+    assert parsed["schema"]["corpus_scope"]["compendium_schemas"] == 139
 
     html_without_json = html[: json_match.start(1)] + html[json_match.end(1) :]
     assert not re.search(r"<script[^>]+src\s*=", html_without_json, re.IGNORECASE)
@@ -428,6 +435,8 @@ def test_html_standalone_no_external_cdn_and_safe_json() -> None:
     assert not re.search(r"\bsynthetise\b", html_without_json, re.IGNORECASE)
     assert "mm-xray-btn" not in html_without_json
     assert "Mode Rayon X" not in html_without_json
+    assert "Galerie 115" not in html_without_json
+    assert "115 schémas" not in html
 
 
 def test_markdown_relative_links_valid() -> None:
@@ -947,12 +956,16 @@ def test_nodejs_all_four_views_dom_smoke() -> None:
 
     app.applyHashNavigation("#view=concordance&tab=schemas_gallery");
     const galHtml = byId["c4-content"].innerHTML;
-    if (!galHtml.includes("SCH-00-01") || !galHtml.includes("Compendium.pdf#page=")) {
+    if (!galHtml.includes("SCH-00-01") || !galHtml.includes("SCH-00-05") || !galHtml.includes("SCH-AB-01") || !galHtml.includes("SCH-AC-01") || !galHtml.includes("SCH-AD-01") || !galHtml.includes("Compendium.pdf#page=")) {
       throw new Error("Onglet Vue 4 schemas_gallery incomplet");
     }
     app.openSchemaModal("SCH-00-01");
     if (byId["schema-modal-backdrop"].classList.contains("hidden") || !byId["schema-modal-body"].innerHTML.includes("SCH-00-01")) {
       throw new Error("Modale schéma SCH-00-01 non ouverte");
+    }
+    app.openSchemaModal("SCH-AB-01");
+    if (byId["schema-modal-backdrop"].classList.contains("hidden") || !byId["schema-modal-body"].innerHTML.includes("SCH-AB-01")) {
+      throw new Error("Modale schéma SCH-AB-01 non ouverte");
     }
 
     if (!app.activateReadingPath("essentiel", 1) || app.getState().activeTourId !== "essentiel" || byId["reading-path-banner"].classList.contains("hidden")) {

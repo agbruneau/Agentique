@@ -69,3 +69,11 @@ Le Compendium satisfait intégralement aux critères éditoriaux, normatifs, vis
 - **Retrait de `Compendium.html` et de l'écosystème PRD (`prd.md`, `PRD Web`)** : remplacés par l'application autonome 4 vues `Sources/Cartographie/MindMap - Cartographie thématique du Compendium.html` fonctionnant hors ligne sous `file://`.
 - **Déduplication chronologique** : suppression des `9` doublons portant la chronologie consolidée à `77` jalons uniques (`2018–2035`, noyau réglementaire `2023–2035`).
 - **Conformité mécanique vérifiée** : `verifie_specs.py` et `verifie_manuscrit.py --strict --check-deliverables` passent avec `0` erreur et `43/43` tests `pytest` réussissent.
+
+---
+
+## 6. Actualisation d'extension iconographique (`115 → 139` schémas)
+
+- **Livrables finaux publiés (`Compendium/`)** : `Compendium/Compendium.pdf` (`871` pages physiques, `24 465 497` octets, `403` signets TOC) et `Compendium/Compendium.md` (`1 916 679` octets, `8 670` lignes, `247 622` mots, `404` titres `H1–H4`, `Figure 1` à `Figure 139`).
+- **Extension du catalogue de schémas (`139/139`, `--strict`)** : `58` diagrammes `PlantUML` (`.svg`), `23` diagrammes `Mermaid` (`.png` `300 DPI`) et `58` infographies `.svg` bilingues métier-tech répartis en `5` schémas globaux (`SCH-00-01` à `SCH-00-05`), `131` schémas de chapitres (`ch01`–`ch36`) et `3` schémas d'annexes (`SCH-AB-01`, `SCH-AC-01`, `SCH-AD-01`), portant la couverture des Tomes à `285/319` figures uniques (`375` liens, `89,34 %`) et publiant `Sources/Compendium/ouvrage/manuscrit/13 - Annexes/Annexe E - Catalogue des 139 schemas et 319 figures.md`.
+- **Inspection visuelle et synchronisation** : inspection visuelle directe sur les `25` pages PDF ciblées (`24` nouveaux schémas et `SCH-19-03`) avec `0` défaut bloquant, synchronisation complète de `Sources/Cartographie/` (`inventaire-139-schemas-compendium.json`, `schema-cartographie.json` et `MindMap - Cartographie thématique du Compendium.html`) et validation des portes mécaniques (`verifie_specs.py`, `compile_schemas_compendium.py --check-only --strict`, `execute_g0.py --verify-sync-manifest`, `verifie_manuscrit.py --strict --check-deliverables` et suites `pytest`).

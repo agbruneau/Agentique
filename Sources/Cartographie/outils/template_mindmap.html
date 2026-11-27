@@ -3612,8 +3612,8 @@
         var strip = document.getElementById("kpi-strip");
         var themeCount = idx.nodes.filter(function (n) { return n.node_kind === "theme"; }).length;
         var cmeta = (idx.pivots && idx.pivots.collection_metrics) || {};
-        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 852);
-        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 246518);
+        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 871);
+        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 247622);
         var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || 42);
         var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || 139);
         var totalTerms = Number(cmeta.glossary_terms_count || cmeta.glossary_terms || idx.glossaryTerms.length || 56);
@@ -4230,7 +4230,7 @@
         if (nodeSchemas.length) {
           html.push(renderSchemaCardsHtml(nodeSchemas.slice(0, 8)));
           if (nodeSchemas.length > 8) {
-            html.push('<div style="font-size:11.5px;color:var(--text-muted);">+' + (nodeSchemas.length - 8) + ' autre(s) schéma(s) visibles dans l\'onglet Vue 4 « Galerie 115 schémas ».</div>');
+            html.push('<div style="font-size:11.5px;color:var(--text-muted);">+' + (nodeSchemas.length - 8) + ' autre(s) schéma(s) visibles dans l\'onglet Vue 4 « Galerie ' + ((idx.schemas && idx.schemas.length) || 139) + ' schémas ».</div>');
           }
         }
 

@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-27T12:50:48.423946+00:00",
+  "generated_at": "2026-11-27T13:19:35.896041+00:00",
   "lang": "fr-CA",
   "schema": {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "schema_version": "2.0.0",
     "lang": "fr-CA",
     "title": "Schéma formel de la cartographie thématique et structurelle du Compendium agentique",
-    "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 115 schémas compilés et de la matrice de concordance pour le Compendium (852 pages PDF, 56 termes glossaire, 135 sources L+, gel du 2 décembre 2026).",
+    "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 139 schémas compilés et de la matrice de concordance pour le Compendium (871 pages PDF, 56 termes glossaire, 135 sources L+, gel du 2 décembre 2026).",
     "corpus_scope": {
-      "compendium_pdf_pages": 852,
-      "compendium_markdown_lines": 8532,
+      "compendium_pdf_pages": 871,
+      "compendium_markdown_lines": 8670,
       "compendium_units": 42,
       "compendium_sections": 15,
-      "compendium_schemas": 115,
+      "compendium_schemas": 139,
       "glossary_terms": 56,
       "sources_l_plus": 135,
       "statut_f_excluded": 27,
@@ -25,8 +25,8 @@
       "historical_tome_diagrams": 319,
       "total_markdown_files": 2,
       "total_tomes": 8,
-      "total_pdf_pages": 852,
-      "total_diagrams": 115,
+      "total_pdf_pages": 871,
+      "total_diagrams": 139,
       "files": [
         {
           "tome_id": "R",
@@ -102751,7 +102751,7 @@
   },
   "structure": {
     "schema_version": "2.0.0",
-    "generated_at": "2026-11-27T12:50:32.920649+00:00",
+    "generated_at": "2026-11-27T13:19:18.024054+00:00",
     "generator": "Sources/Cartographie/outils/extraire_structure.py",
     "totals": {
       "files": 15,

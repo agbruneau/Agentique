@@ -221,7 +221,7 @@ def _parse_compendium_metrics(
     if pdf_pages <= 0:
         readme_txt = (repo_root / "Compendium" / "README.md").read_text(encoding="utf-8")
         m_pages = re.search(r"`(\d{3,4})`\s*pages", readme_txt)
-        pdf_pages = int(m_pages.group(1)) if m_pages else 852
+        pdf_pages = int(m_pages.group(1)) if m_pages else 871
 
     figs = manifest["figures"]
     by_engine = Counter(f["engine"] for f in figs)

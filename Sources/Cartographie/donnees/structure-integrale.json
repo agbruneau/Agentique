@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-11-27T12:50:32.920649+00:00",
+  "generated_at": "2026-11-27T13:19:18.024054+00:00",
   "generator": "Sources/Cartographie/outils/extraire_structure.py",
   "totals": {
     "files": 15,

@@ -2,9 +2,9 @@
 # SPDX-License-Identifier: MIT
 """Indexeur PDF déterministe pour ``Compendium/Compendium.pdf``.
 
-Aligne les `403` titres de ``Compendium/Compendium.md`` sur les `402` signets TOC
-du PDF (plus la Table des matières) et localise la page exacte des `115` figures
-``SCH-00-01`` à ``SCH-36-04`` ainsi que toute ligne arbitraire.
+Aligne les `404` titres de ``Compendium/Compendium.md`` sur les `403` signets TOC
+du PDF (plus la Table des matières) et localise la page exacte des `139` figures
+``SCH-00-01`` à ``SCH-AD-01`` ainsi que toute ligne arbitraire.
 """
 
 from __future__ import annotations
