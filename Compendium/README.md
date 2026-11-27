@@ -10,16 +10,16 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 
 | Livrable | Format | Volume mesuré | Description |
 |---|---|---|---|
-| [**Compendium.pdf**](Compendium.pdf) | PDF (`Typst 6,14 × 9,21 po`) | `852` pages · `23 733 259` octets | Édition imprimable et navigable avec table des matières, `115` figures intégrées et notice opposable `non-avis` |
-| [**Compendium.md**](Compendium.md) | Markdown UTF-8 (`LF`) | `1 906 515` octets · `8 532` lignes · `246 518` mots (`180 000` mots de prose cible, `42` unités) | Édition Markdown intégrale synchronisée avec table des matières `GFM`, `37` bibliographies (liminaire et `36` chapitres) et `5` annexes |
+| [**Compendium.pdf**](Compendium.pdf) | PDF (`Typst 6,14 × 9,21 po`) | `871` pages · `24 465 497` octets | Édition imprimable et navigable avec table des matières, `139` figures intégrées et notice opposable `non-avis` |
+| [**Compendium.md**](Compendium.md) | Markdown UTF-8 (`LF`) | `1 916 679` octets · `8 670` lignes · `247 622` mots (`180 000` mots de prose cible, `42` unités) | Édition Markdown intégrale synchronisée avec table des matières `GFM`, `37` bibliographies (liminaire et `36` chapitres) et `5` annexes |
 
 ---
 
 ## Architecture et périmètre de l'ouvrage
 
 - **Liminaire et `12` parties (`D01`–`D12`)** : `36` chapitres (`ch01`–`ch36`) sans chevauchement conceptuel, couvrant `71` familles et `260` thèmes structurés dans la [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html).
-- **`5` annexes déterministes (`A`–`E`)** : traçabilité thématique `MindMap` et socle probatoire (`Annexe A`), cartographie des `616` interrelations et arbitrages, réconciliations inter-tomes (`DIV-02`, `DISC-01`–`DISC-05`) et calendrier `2018–2035` (noyau réglementaire `2023–2035`, `77` jalons uniques après déduplication des `9` doublons), bilan d'homologation `G0–G5` (`305 EXIG-*`, `52 CAP` dont `42 CAP` invariantes sur `52`, `24 PEX`, `PRR-75`, `C01–C40`, `5 SBB`) et catalogue des `115` schémas raccordés aux `319` diagrammes des huit tomes.
-- **`115` schémas de vulgarisation (`SCH-00-01` à `SCH-36-04`)** : `52` diagrammes `PlantUML` (`.svg`), `23` diagrammes `Mermaid` (`.png` `300 DPI`) et `40` infographies `SVG` bilingues métier-tech.
+- **`5` annexes déterministes (`A`–`E`)** : traçabilité thématique `MindMap` et socle probatoire (`Annexe A`), cartographie des `616` interrelations et arbitrages, réconciliations inter-tomes (`DIV-02`, `DISC-01`–`DISC-05`) et calendrier `2018–2035` (noyau réglementaire `2023–2035`, `77` jalons uniques après déduplication des `9` doublons), bilan d'homologation `G0–G5` (`305 EXIG-*`, `52 CAP` dont `42 CAP` invariantes sur `52`, `24 PEX`, `PRR-75`, `C01–C40`, `5 SBB`) et catalogue des `139` schémas raccordés aux `319` diagrammes des huit tomes.
+- **`139` schémas de vulgarisation (`SCH-00-01` à `SCH-AD-01`)** : `58` diagrammes `PlantUML` (`.svg`), `23` diagrammes `Mermaid` (`.png` `300 DPI`) et `58` infographies `SVG` bilingues métier-tech (`5` panoramas liminaires, `131` chapitres, `3` annexes).
 - **Chaîne de preuve `Wyvern G0–G5`** : `135` sources primaires ouvertes `L+` (`0,0 %` `METADATA_ONLY`), consignation `Statut F` sans contournement (`AO-01`), `14` extraits scellés `CA-G0-SYNC` liés à la trousse exécutable du Tome 8, double recollation stratifiée à l'aveugle (`148/148` par passe) et inspection visuelle de `100 %` des pages PDF.
 
 ---
@@ -46,8 +46,8 @@ Le **Compendium de l'entreprise agentique** est le traité unifié d'architectur
 
 ## Navigation et ressources associées
 
-- **Usine éditoriale et sources** : [`../Sources/Compendium/README.md`](../Sources/Compendium/README.md) (manuscrit `42` unités, `115` schémas, sources `L+`, registres SSOT et outillage Python de vérification et d'assemblage).
-- **Cartographie thématique et navigateur de lecture** : [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`4` vues autonomes hors ligne avec ancrage direct `Compendium.pdf#page=N`, extraits éditoriaux, `5` parcours de lecture guidés — ex. [Parcours Essentiel](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=essentiel) — et [Galerie des `115` schémas](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=concordance&tab=schemas_gallery)).
+- **Usine éditoriale et sources** : [`../Sources/Compendium/README.md`](../Sources/Compendium/README.md) (manuscrit `42` unités, `139` schémas, sources `L+`, registres SSOT et outillage Python de vérification et d'assemblage).
+- **Cartographie thématique et navigateur de lecture** : [MindMap HTML](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`4` vues autonomes hors ligne avec ancrage direct `Compendium.pdf#page=N`, extraits éditoriaux, `5` parcours de lecture guidés — ex. [Parcours Essentiel](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=essentiel) — et [Galerie des `139` schémas](../Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=concordance&tab=schemas_gallery)).
 - **Collection des huit tomes** : [`../Tomes/README.md`](../Tomes/README.md) (`Tome 1` à `Tome 8` en PDF et Markdown).
 
 ---

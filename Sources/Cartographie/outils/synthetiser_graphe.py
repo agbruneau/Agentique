@@ -6,7 +6,7 @@ Construit ``Sources/Cartographie/donnees/synthese-transversale.json`` à partir 
 - du manifeste ``Sources/Compendium/ouvrage/specs/manifest.json`` (`42` unités)
 - du glossaire ``Sources/Compendium/ouvrage/registre/glossaire-termes.json`` (`56` vedettes dont « Agentivité des systèmes »)
 - de ``Sources/Cartographie/donnees/structure-integrale.json`` (`15` sections, `Compendium.md`)
-- de ``Sources/Cartographie/donnees/inventaire-115-schemas-compendium.json`` (`115` schémas)
+- de ``Sources/Cartographie/donnees/inventaire-139-schemas-compendium.json`` (`139` schémas)
 - de ``Sources/Cartographie/donnees/pivots-concordance.json``
 - de ``Sources/Cartographie/donnees/schema-cartographie.json``
 
@@ -313,7 +313,7 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
     gloss = json.loads((ouv / "registre" / "glossaire-termes.json").read_text(encoding="utf-8"))
     schema_carto = json.loads((donnees / "schema-cartographie.json").read_text(encoding="utf-8"))
     struct_data = json.loads((donnees / "structure-integrale.json").read_text(encoding="utf-8"))
-    comp_inv = json.loads((donnees / "inventaire-115-schemas-compendium.json").read_text(encoding="utf-8"))
+    comp_inv = json.loads((donnees / "inventaire-139-schemas-compendium.json").read_text(encoding="utf-8"))
     pivots = json.loads((donnees / "pivots-concordance.json").read_text(encoding="utf-8"))
 
     comp_lines = (repo_root / "Compendium" / "Compendium.md").read_text(encoding="utf-8").splitlines()

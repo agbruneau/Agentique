@@ -34,7 +34,7 @@ La mise en œuvre opérationnelle exige d'abord un inventaire complet de `100,0 
 
 ![Compte à rebours TLS 2027–2029 (100 j → 47 j) : éradiquer la collision cryptographique par ACME dès le Palier 1](../../schemas/rendus/SCH-18-01.png)
 
-*Figure 58 — SCH-18-01 : Frise du raccourcissement CA/Browser Forum SC-081v3 (200 j → 100 j le 15 mars 2027 → 47 j le 15 mars 2029) illustrant le piège de collision sur billets manuels et l'automatisation ACME (RFC 8555) / Envoy SDS dès le Palier 1.*
+*Figure 68 — SCH-18-01 : Frise du raccourcissement CA/Browser Forum SC-081v3 (200 j → 100 j le 15 mars 2027 → 47 j le 15 mars 2029) illustrant le piège de collision sur billets manuels et l'automatisation ACME (RFC 8555) / Envoy SDS dès le Palier 1.*
 
 ### 18.2.2 Transition post-quantique ML-DSA / SLH-DSA
 
@@ -63,7 +63,7 @@ Sur le plan de l'archivage probatoire, les journaux `C.8`, les cartes `AgentCard
 
 ![Horloge post-quantique multi-sources (NIST IR 8547 2030/2035), fenêtre de Mosca 2026–2029 et rescellement SCITT](../../schemas/rendus/SCH-18-02.svg)
 
-*Figure 59 — SCH-18-02 : Frise distinguant les calendriers officiels 2024–2035 (NIST FIPS 203/204/205, NIST IR 8547, ITSM.40.001, G7), la fenêtre d'action inverse de Mosca (2026–2029) et les trois conditions de crypto-agilité jusqu'au rescellement SCITT + SLH-DSA.*
+*Figure 69 — SCH-18-02 : Frise distinguant les calendriers officiels 2024–2035 (NIST FIPS 203/204/205, NIST IR 8547, ITSM.40.001, G7), la fenêtre d'action inverse de Mosca (2026–2029) et les trois conditions de crypto-agilité jusqu'au rescellement SCITT + SLH-DSA.*
 
 Toutefois, le passage des signatures classiques aux signatures post-quantiques `ML-DSA` (`FIPS 204`, sérialisées pour JOSE et COSE par la RFC 9964 de mai 2026) déclenche un goulet d'étranglement physique majeur dans les chaînes de délégation multi-sauts : le **choc d'en-têtes HTTP 431** (*Request Header Fields Too Large*) [2, 7]. Alors qu'une signature `Ed25519` conforme à la RFC 8032 occupe exactement `64` octets et une signature `ECDSA P-256` (`ES256`) également `64` octets, les signatures `ML-DSA` affichent des tailles fixes de `2 420` octets pour `ML-DSA-44`, `3 309` octets pour `ML-DSA-65` (~52× `Ed25519`) et `4 627` octets pour `ML-DSA-87` (~72× `Ed25519`), auxquelles s'ajoutent des clés publiques atteignant `1 952` octets (`ML-DSA-65`) et `2 592` octets (`ML-DSA-87`) [2, 7, 9].
 
@@ -121,13 +121,13 @@ Troisièmement, cette mesure unitaire d'en-tête (`Authorization` ou `Txn-Token`
 
 ![Choc d'en-têtes HTTP 431 sous ML-DSA (50–72×) : passer des chaînes O(sauts) aux Transaction Tokens O(1) et kid/JWKS](../../schemas/rendus/SCH-18-03.png)
 
-*Figure 60 — SCH-18-03 : Comparatif avant/après démontrant l'explosion linéaire des en-têtes HTTP sous ML-DSA-65/87 (rejet HTTP 431 > 8 192 o) et sa neutralisation en taille constante O(1) (4 757–6 514 o) par Transaction Tokens CBOR-COSE, références kid/JWKS et tampons ≥ 32 Kio.*
+*Figure 70 — SCH-18-03 : Comparatif avant/après démontrant l'explosion linéaire des en-têtes HTTP sous ML-DSA-65/87 (rejet HTTP 431 > 8 192 o) et sa neutralisation en taille constante O(1) (4 757–6 514 o) par Transaction Tokens CBOR-COSE, références kid/JWKS et tampons ≥ 32 Kio.*
 
 Les normes ISO payantes (portail `iso.org` en statut `F`, Annexe A) restent exclues : les transitions reposent sur les normes ouvertes NIST, IETF, *CA/Browser Forum* et les vecteurs `G0` [1, 2, 3, 4, 6, 7].
 
 ## 18.3 Synthèse des schémas, livrables, exigences probatoires et trois invariants exécutables
 
-Les trois figures du chapitre matérialisent la trajectoire cryptographique complète : la Figure 58 (`SCH-18-01`) trace le raccourcissement `TLS` à `47` jours sous `ACME` en section `18.2.1`, la Figure 59 (`SCH-18-02`) distingue les calendriers post-quantiques et la fenêtre de Mosca jusqu'au rescellement `SCITT` + `SLH-DSA`, et la Figure 60 (`SCH-18-03`) oppose le choc `HTTP 431` à la neutralisation `O(1)` en section `18.2.2`.
+Les trois figures du chapitre matérialisent la trajectoire cryptographique complète : la Figure 68 (`SCH-18-01`) trace le raccourcissement `TLS` à `47` jours sous `ACME` en section `18.2.1`, la Figure 69 (`SCH-18-02`) distingue les calendriers post-quantiques et la fenêtre de Mosca jusqu'au rescellement `SCITT` + `SLH-DSA`, et la Figure 70 (`SCH-18-03`) oppose le choc `HTTP 431` à la neutralisation `O(1)` en section `18.2.2`.
 
 Sur le plan transversal, le présent chapitre reçoit les tunnels `SLIM`/`MLS` issus du tissu horizontal (← Chapitre 08), le séquencement `DAPP` `P1`–`P3` (→ Chapitre 31), les schémas JSON versionnés (→ Chapitre 35) et les règles d'actualisation à 30 jours du corpus source (`Annexe N` du corpus, → Chapitre 36). En retour, il projette les exigences de tampons et de latence sur `AI Gateway` (← Chapitre 09), impose le renouvellement post-quantique des autorités `SVID` et `AgentCard` (← Chapitre 16) et gouverne la bascule vers les `Transaction Tokens O(1)` (← Chapitre 17). Il prescrit également le rescellement des journaux sans reconstruire le double couloir (→ Chapitre 22), prépare les liaisons `IDMZ` et B2B (→ Chapitre 25) et alimente `DEC-012` ainsi que les signaux `SIG-009`, `SIG-010`, `SIG-011` et `SIG-012` (→ Chapitre 31).
 

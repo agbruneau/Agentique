@@ -40,11 +40,11 @@ En cohérence avec le principe de moindre privilège et avec la défense contre 
 
 *Tableau 1.1 — Répartition des cinq archétypes fonctionnels de la strate `System of Action`.*
 
-Cette séparation en cinq archétypes facilite également le ciblage économique et sécuritaire des modèles : un agent d'interface ou un travailleur de tâche répétitive s'accommode souvent d'un modèle léger à faible latence, tandis qu'un spécialiste de domaine mobilise une capacité sémantique plus riche sous le contrôle indépendant du méta-gouverneur. La *Figure 5* illustre le passage du copilote passif à la boucle `System of Action` ainsi que l'articulation entre les cinq paliers de trajectoire et les cinq archétypes spécialisés.
+Cette séparation en cinq archétypes facilite également le ciblage économique et sécuritaire des modèles : un agent d'interface ou un travailleur de tâche répétitive s'accommode souvent d'un modèle léger à faible latence, tandis qu'un spécialiste de domaine mobilise une capacité sémantique plus riche sous le contrôle indépendant du méta-gouverneur. La *Figure 6* illustre le passage du copilote passif à la boucle `System of Action` ainsi que l'articulation entre les cinq paliers de trajectoire et les cinq archétypes spécialisés.
 
 ![Du copilote passif à la boucle System of Action : cinq paliers d'autonomie de trajectoire et cinq archétypes sans super-agent](../../schemas/rendus/SCH-01-01.svg)
 
-*Figure 5 — SCH-01-01 : Comparaison entre l'assistant mono-tour sans actionneur (`Z1`), la boucle fermée `PEAS` / `POMDP` isolée des livres comptables (`Z2`) et la séparation en cinq archétypes à privilèges disjoints (`Z3`).*
+*Figure 6 — SCH-01-01 : Comparaison entre l'assistant mono-tour sans actionneur (`Z1`), la boucle fermée `PEAS` / `POMDP` isolée des livres comptables (`Z2`) et la séparation en cinq archétypes à privilèges disjoints (`Z3`).*
 
 ### 1.1.3 Écart pilote-production, étude `MAP` et règle « soutien n'est pas production »
 
@@ -72,11 +72,11 @@ Parallèlement, l'architecture récuse l'héritage mentaliste des protocoles mul
 
 Cette transition vers l'observabilité externe transforme la gouvernance des défaillances en exploitation. Lorsqu'un engagement social n'est pas tenu dans le délai imparti, la couche d'orchestration constate objectivement le manquement contractuel à partir des journaux de messages et déclenche la compensation ou l'escalade prévue, sans devoir interpréter les pondérations internes ni les motifs textuels du modèle défaillant. Chaque acteur conserve ainsi une frontière claire d'imputabilité vis-à-vis des équipes d'exploitation et des autorités de contrôle.
 
-La *Figure 6* résume ce double déplacement : dissiper le mirage de l'« *agent washing* » par les données terrain `MAP` et ancrer les échanges sur des engagements observables mesurables.
+La *Figure 7* résume ce double déplacement : dissiper le mirage de l'« *agent washing* » par les données terrain `MAP` et ancrer les échanges sur des engagements observables mesurables.
 
 ![Mirage de l'« agent washing » face à la réalité terrain MAP et passage aux engagements observables](../../schemas/rendus/SCH-01-02.svg)
 
-*Figure 6 — SCH-01-02 : Confrontation entre le discours promotionnel et les constats empiriques `MAP` / Statistique Canada / Deloitte (`Z1`), application de la règle « soutien n'est pas production » (`Z2`) et transition vers les contrats comportementaux et engagements observables (`Z3`).*
+*Figure 7 — SCH-01-02 : Confrontation entre le discours promotionnel et les constats empiriques `MAP` / Statistique Canada / Deloitte (`Z1`), application de la règle « soutien n'est pas production » (`Z2`) et transition vers les contrats comportementaux et engagements observables (`Z3`).*
 
 > **Trois invariants exécutables — Chapitre 1**
 > 1. **Isolement strict `System of Action`** — Tout acteur agentique s'exécute dans la strate `SoA` (`ADR-001`) derrière des interfaces typées, sans jamais émettre de requête SQL directe vers les `Systems of Record` (`SoR`).
@@ -94,6 +94,12 @@ Les auteurs démontrent que les modèles de langage autorégressifs ne savent ni
 Le modèle linguistique demeure en revanche un générateur heuristique précieux d'idées de plans ou de traduction vers des représentations formelles, à condition impérative d'être inséré dans un cadre hybride **`LLM-Modulo`** (contrasté avec une simple traduction unidirectionnelle `LLM+P`) [3]. Dans cette architecture bicéphale, le modèle linguistique propose des plans candidats, des modèles de domaine approximatifs ou des reformulations syntaxiques, tandis qu'une batterie de **vérificateurs et critiques externes déterministes** — fondés sur des validateurs formels tel `VAL`, des solveurs ou des règles métier codées — contrôle la correction, détecte les contradictions et renvoie des contre-exemples structurés [3]. L'itération ne s'achève que lorsque tous les critiques stricts certifient l'admissibilité du plan ou déclenchent un repli vers une autorité humaine. Cette interaction bidirectionnelle confère à l'ensemble la souplesse linguistique du modèle et la garantie formelle du vérificateur.
 
 Cette limite fondamentale se double d'une vulnérabilité critique concernant la transparence : l'infidélité et la fragilité de monitorabilité de la trace de raisonnement (signalées également dans la veille du Tome 1 via `arXiv:2507.11473`, hors base `L+` directe de ce chapitre). D'une part, un modèle incapable de vérifier formellement ses propres solutions peut rejeter une réponse juste ou produire une justification spécieuse [3] ; d'autre part, le référentiel OWASP documente comment une injection indirecte de consignes (`ASI01`) ou une défaillance en cascade (`ASI08`) peut détourner les objectifs d'un acteur tout en produisant des sorties apparemment conformes ou en dissimulant des erreurs à la supervision [9]. Par conséquent, la trace de raisonnement discursif (`Chain-of-Thought`) NE DOIT JAMAIS tenir lieu ni de mécanisme de sécurité, ni de piste d'audit opposable devant un régulateur. Seuls font foi les journaux déterministes des entrées, des schémas validés, des appels d'outils autorisés et des vérifications externes.
+
+La *Figure 8* oppose l'effondrement des planificateurs sous obfuscation à la boucle vérifiée `LLM-Modulo`.
+
+![Effondrement sur PlanBench Mystery BW et boucle bidirectionnelle LLM-Modulo avec critiques externes](../../schemas/rendus/SCH-01-04.svg)
+
+*Figure 8 — SCH-01-04 : Chute de `PlanBench` vers `0 %`–`0,16 %` sous `Mystery BW` (`Z1`) et boucle bidirectionnelle `LLM-Modulo` (`Z2`).*
 
 ### 1.2.2 Hiérarchie probante à six niveaux et revue multivocale `PRISMA-ScR` (`MLR`)
 
@@ -118,11 +124,11 @@ En complément de cette hiérarchie, la veille documentaire relie deux étages r
 
 Lors de la consolidation finale du Compendium sous `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`, la collecte ouverte sur onze interfaces (`arXiv`, `Crossref`, `HAL`, `DOAJ`, `Europe PMC`, `IETF`, `NIST`, `GitHub`, `EUR-Lex`, `BSIF`, `Statistique Canada`) a été strictement resserrée en base fermée `L+`. Toute ressource bloquée ou payante demeure en statut F sans contournement (`27` exclusions à l'échelle du traité, dont `3` ici : Gartner, Statistique Canada HTML `11-621-m` et `genai.owasp.org`). La collecte réunit ainsi `135` textes intégraux `L+` archivés sous empreinte `SHA-256` (`AACODS` de `9,0/12` à `12,0/12`, moyenne `11,13/12`, `0,0 %` `METADATA_ONLY`), dont `9` sources primaires pour ce chapitre (`AACODS` `9,5/12` à `11,5/12`).
 
-Cette rigueur méthodologique alimente directement les douze domaines d'investigation du traité (`D01` à `D12`). En proscrivant l'inclusion d'articles jugés uniquement sur leur résumé, l'institution élimine la reprise de chiffres spectaculaires hors de leurs conditions expérimentales et rattache chaque affirmation retenue à un texte intégral horodaté et vérifiable. La *Figure 7* (`SCH-01-03`) illustre ce tamisage probatoire articulant l'entonnoir documentaire (`W3.2` vers la base fermée `L+` de `135` textes), la pyramide empirique à six niveaux et le filtre formel `LLM-Modulo` interdisant l'exécution directe d'une trace `Chain-of-Thought` non vérifiée.
+Cette rigueur méthodologique alimente directement les douze domaines d'investigation du traité (`D01` à `D12`). En proscrivant l'inclusion d'articles jugés uniquement sur leur résumé, l'institution élimine la reprise de chiffres spectaculaires hors de leurs conditions expérimentales et rattache chaque affirmation retenue à un texte intégral horodaté et vérifiable. La *Figure 9* (`SCH-01-03`) illustre ce tamisage probatoire articulant l'entonnoir documentaire (`W3.2` vers la base fermée `L+` de `135` textes), la pyramide empirique à six niveaux et le filtre formel `LLM-Modulo` interdisant l'exécution directe d'une trace `Chain-of-Thought` non vérifiée.
 
 ![Tamiser la preuve : pyramide à six niveaux, filtre PRISMA-ScR W3.2 et vérificateur externe LLM-Modulo](../../schemas/rendus/SCH-01-03.svg)
 
-*Figure 7 — SCH-01-03 : Chaîne de filtrage probatoire articulant la collecte ouverte `PRISMA-ScR` (`Z1`), la pyramide empirique à six niveaux (`Z2`) et la boucle de vérification formelle externe `LLM-Modulo` (`Z3`).*
+*Figure 9 — SCH-01-03 : Chaîne de filtrage probatoire articulant la collecte ouverte `PRISMA-ScR` (`Z1`), la pyramide empirique à six niveaux (`Z2`) et la boucle de vérification formelle externe `LLM-Modulo` (`Z3`).*
 
 ## 1.3 Synthèse opératoire, exigences `D01-01` et frontières d'architecture
 

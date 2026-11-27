@@ -12,7 +12,7 @@ flowchart TD
     EXEC["Exécution bornée autorisée<br/>(source fiable attestée)"]:::ok
   end
   subgraph Z3["Z3 : Harnais Red Team bilingue FR/EN CI/CD"]
-    RT["④ Attaquant adaptatif FR/EN CI/CD<br/>(EXIG-SEC-24) · ASR_action = 0,0 %"]:::det
+    RT["④ Attaquant adaptatif FR/EN CI/CD<br/>(EXIG-SEC-24) · ASR_plan > 0 % → PEP → ASR_action = 0,0 %"]:::det
   end
   IN -.-> HMAC --> TAX --> MEM -.-> CEDAR
   CEDAR -->|Oui| BLOC

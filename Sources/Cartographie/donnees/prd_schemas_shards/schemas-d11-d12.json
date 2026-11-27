@@ -312,6 +312,70 @@
       ]
     },
     {
+      "schema_id": "SCH-31-04",
+      "chapter_number": 31,
+      "domain_id": "D11",
+      "subdomain_node_id": "SUB_D11_01",
+      "families_covered": [
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "trajectoires-adaptatives-dapp",
+        "tri-prospectif-peremption-feuilles-route"
+      ],
+      "title": "Arbitrage minimax EMA (3 000 LHS) des scénarios A, B et C sous plafond DC-P12",
+      "insertion_point": "Chapitre 31 §31.1.2 — juste après le Tableau 31.1 confrontant les scénarios A, B et C",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS"
+      ],
+      "visual_archetype": "Arbre de décision opérationnel",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette planche visualise les résultats quantitatifs de l'analyse exploratoire EMA (3 000 tirages par hypercube latin, graine figée 20261119) résumés au Tableau 31.1 : l'arbitrage minimax montrant pourquoi le Scénario A (TCO minimal 1,233 mais regret p95 de 13,858) cède devant le Scénario B (92,53 % de satisfaction, 95,70 % gagnés, regret p95 nul), et le seuil de bascule X34 ≥ 0,386 vers C, sous bandeau explicite DC-P12 (65,0 %).",
+      "vulgarization_angle": "Rendre visible en un graphique à deux axes le piège de l'optimisation au moindre TCO apparent face à la robustesse minimax sous incertitude profonde.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Plan TCO normalisé vs Regret p95 et Taux de satisfaction (3 000 LHS)",
+            "content": "Positionnement des trois parcours : A Socle étendu (TCO 1,233 ; 18,10 % ; regret p95 = 13,858 ; verrouillage 53,25), B Archipel propriétaire (TCO 1,458 ; 92,53 % ; 95,70 % gagnés ; regret p95 = 0,000), C Blocs souverains (TCO 1,901 ; 18,33 % ; regret p95 = 6,835)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Point de bascule adaptatif X34 ≥ 0,386 et découplage ADR-004",
+            "content": "Zone d'activation conditionnelle vers les capacités souveraines C lors d'un choc réglementaire ou géopolitique sans refonte protocolaire."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Bandeau épistémique obligatoire DC-P12 (plafond synthétique DC-C07 = 65,0 %)",
+            "content": "Avertissement explicite rappelant le caractère exclusivement artificiel du modèle EMA (zéro étude empirique de production)."
+          }
+        ],
+        "numbered_flows": [
+          "① Optimiser le seul coût nominal (A, 1,233) expose à un regret maximal (13,858) en cas de divergence réglementaire ou de capture.",
+          "② Le parcours robuste B (Archipel modulaire gouverné) absorbe 95,70 % des futurs à regret p95 nul malgré un surcoût modéré (1,458).",
+          "③ Le seuil simulé X34 ≥ 0,386 déclenche le basculement préparé vers C (Blocs souverains) sous isolation ADR-004."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Regret extrême et verrouillage élevé des stratégies vulnérables (A et C non préparé)"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Dominance minimax du Scénario B (satisfaction 92,53 %, regret p95 nul)"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Bandeau de prudence DC-P12 (plafond 65,0 %) et seuil adaptatif X34 ≥ 0,386"
+          }
+        ],
+        "key_takeaway_box": "Face à l'incertitude profonde, le scénario le moins cher sur papier s'effondre au pire cas : l'architecture robuste maximise les futurs acceptables à regret p95 nul (sous réserve DC-P12)."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
+    },
+    {
       "schema_id": "SCH-32-01",
       "chapter_number": 32,
       "domain_id": "D11",
@@ -761,6 +825,71 @@
           }
         ],
         "key_takeaway_box": "Un plan de continuité manuel qui n'est jamais exercé hors ligne demeure théorique ; la règle INI-043 préserve la compétence humaine active avant la survenue d'une crise."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
+    },
+    {
+      "schema_id": "SCH-33-04",
+      "chapter_number": 33,
+      "domain_id": "D11",
+      "subdomain_node_id": "SUB_D11_03",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "atrophie-competences-humaines",
+        "sanctuarisation-vivier-junior-reprise"
+      ],
+      "title": "Courbes en ciseaux : gains de productivité 0–12 mois vs érosion du repli à 3–5 ans",
+      "insertion_point": "Chapitre 33 §33.1.2 — à la fin de la section sur la vulnérabilité prudentielle du repli manuel",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS"
+      ],
+      "visual_archetype": "Boucle de rétroaction et contrôle",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette double trajectoire en ciseaux transpose visuellement le paradoxe automatisation–augmentation au-delà du Tableau 33.1 : l'envolée des gains de productivité mesurés à court terme (+26,08 % tâches Cui et coll. ; −40 % temps / +18 % qualité Noy & Zhang) croise la contraction tendancielle du vivier d'entrée (−20 % développeurs 22–25 ans Stanford HAI, −18 % d'embauches anticipées à 3 ans Banque du Canada) menaçant le repli manuel exigé par BSIF E-23 / B-10 et EU AI Act art. 15(4).",
+      "vulgarization_angle": "Illustrer le décalage temporel pervers entre une prime de vélocité immédiate (trimestre 1–4) et une crise différée de relève et de continuité manuelle (années 3–5).",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Horizons 0–12 mois : gains immédiats sur tâches assistées",
+            "content": "Courbe ascendante de productivité (+26,08 % tâches sur 4 867 développeurs ; −40 % temps / +18 % qualité sur 453 professionnels) concentrée sur les profils juniors."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Horizons 1–5 ans : érosion du vivier junior et de la mémoire transactive",
+            "content": "Courbe descendante documentée (−20 % emploi 22–25 ans É.-U. Stanford HAI ; −11 % inscriptions ; 18 % des entreprises Canada et 21 % des ≥ 20 employés freinant l'embauche à 3 ans selon SAP 2026-22)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Zone critique de rupture du repli manuel (BSIF E-23 / EU AI Act art. 15(4))",
+            "content": "Intersection mettant en péril la capacité réelle d'opérer sans agent et l'accessibilité des interfaces de secours si la pratique profonde n'est pas sanctuarisée."
+          }
+        ],
+        "numbered_flows": [
+          "① À court terme, la délégation des dossiers simples dope la vélocité apparente tout en retirant la pratique formatrice aux recrues.",
+          "② Entre 1 et 3 ans, le rétrécissement de l'embauche junior et l'atrophie des spécialistes creusent un déficit de relève qualifiée.",
+          "③ En panne majeure à 3–5 ans, un plan de repli manuel non exercé devient inopérant au regard de BSIF E-23, B-10 et EU AI Act art. 15(4)."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Turquoise (#0F766E)",
+            "meaning": "Gains initiaux de productivité et réduction des délais sur 0–12 mois"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Contraction du vivier d'entrée, perte de mémoire transactive et rupture de repli"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Zone de croisement critique déclenchant quotas formateurs et exercices sans agent"
+          }
+        ],
+        "key_takeaway_box": "Supprimer les tâches de premier niveau accélère la première année mais détruit le vivier qui devrait assurer le repli manuel réglementaire trois ans plus tard."
       },
       "reuse_status": "creation_originale",
       "linked_tome_figures": []
@@ -1228,6 +1357,79 @@
       "linked_tome_figures": []
     },
     {
+      "schema_id": "SCH-35-04",
+      "chapter_number": 35,
+      "domain_id": "D12",
+      "subdomain_node_id": "SUB_D12_02",
+      "families_covered": [
+        "FAM_D12_02_02"
+      ],
+      "themes_vulgarized": [
+        "contrats-types-executes-ci-annexe-c",
+        "trousse-executable-tome-8"
+      ],
+      "title": "Fil d'exécution des huit contrats C.1 à C.8 sur l'achat de 12 480 $",
+      "insertion_point": "Chapitre 35 §35.2 — juste après les quatre puces décrivant les contrats C.1 à C.8 et avant la synthèse de fin de section",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Parcours séquentiel illustré",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette planche déroule de bout en bout le scénario concret de commande d'achat de 12 480 $ émis par l'agent agt-achats-indirects@1.2.0 à travers les huit contrats typés de l'Annexe C du Tome 2 (C.1 à C.8), montrant comment s'enchaînent catalogue épinglé, messagerie A2A/CloudEvents, jeton délégué OBO, double approbation CIBA liée à action_sha256 h, décrémentation budgétaire et journal d'audit crypto-agile.",
+      "vulgarization_angle": "Donner chair aux schémas JSON abstraits C.1–C.8 en suivant une même transaction réelle à 12 480 $ franchissant le seuil de 5 000 $ jusqu'à sa trace immuable.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Préparation et contexte fédéré : C.2, C.1, C.3, C.4 et C.5",
+            "content": "Chargement du catalogue épinglé SHA-256 (C.2), contrat MCP 2026-07-28 (C.1), AgentCard signée (C.3), trace W3C CloudEvents (C.4) et jeton délégué OBO (C.5)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Franchissement du seuil 5 000 $ → Double visa hors bande C.6",
+            "content": "Calcul déterministe passerelle du condensat RFC 8785 action_sha256 h pour 12 480 $ et double signature CIBA hors bande apb-5e19c2 + apb-91d4e8 distincte de at+jwt."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Clôture budgétaire C.7 et journal crypto-agile C.8",
+            "content": "Décrémentation arithmétique Decimal EXIG-ORC-26 dans C.7 et écriture chaînée C.8 sous schémas Draft 2020-12 acceptant ES256, ML-DSA-65 et ML-DSA-87."
+          }
+        ],
+        "numbered_flows": [
+          "① L'agent agt-achats-indirects@1.2.0 prépare la demande 12 480 $ sous contrats validés C.1–C.5.",
+          "② Comme 12 480 $ > 5 000 $, la passerelle calcule le hash canonique h et exige deux approbations C.6 hors bande distinctes.",
+          "③ Une fois scellée, l'opération décrémente l'enveloppe C.7 en Decimal exact et grave l'enregistrement crypto-agile C.8."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Contrats d'admission, protocole MCP/A2A et contexte OBO (C.1–C.5)"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Sas humain C.6 à double signature CIBA scellée sur action_sha256"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Enveloppe Decimal C.7 et journal immuable crypto-agile C.8"
+          }
+        ],
+        "key_takeaway_box": "Sur un même achat de 12 480 $, huit schémas exécutés en CI prouvent qu'aucune somme > 5 000 $ ne passe sans double approbation liée au hash exact h et audit crypto-agile."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T2",
+          "fig_id": "Figure 23",
+          "title": "Enveloppe budgétaire d’une tâche. L’enveloppe se décrémente à chaque étape; à 80 % d’un plafond, le responsable technique est alerté; à 100 %, l’exécution s’arrête proprement et passe en escalade. Les étapes simples vont au modèle compact, la planification au modèle de raisonnement. L’enveloppe porte les cinq dimensions de l’EXIG-ORC-26 : étapes ou itérations, appels d’outils, jetons, coût et durée. Source : cadre CRE-IA-2026-01; valeurs illustratives.",
+          "source_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-23 - Enveloppe budgétaire d'une tâche.puml",
+          "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-23.svg",
+          "role_note": "Détaille la mécanique d'enveloppe budgétaire à cinq dimensions matérialisée dans le contrat C.7."
+        }
+      ]
+    },
+    {
       "schema_id": "SCH-36-01",
       "chapter_number": 36,
       "domain_id": "D12",
@@ -1550,6 +1752,180 @@
           "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-50.3 - Vue synthétique par Livre du gel unique (27 juillet 2026).puml",
           "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-50.3.svg",
           "role_note": "Fournit la vue synthétique par Livre des impacts de péremption post-gel (Tableau 50.1 et Annexe N du Tome 1)."
+        }
+      ]
+    },
+    {
+      "schema_id": "SCH-36-05",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "subdomain_node_id": "SUB_D12_03",
+      "families_covered": [
+        "FAM_D12_03_02"
+      ],
+      "themes_vulgarized": [
+        "regime-preuve-trois-degres-absence",
+        "protocole-probatoire-l-plus-statut-f",
+        "protocole-wyvern-g0-g5"
+      ],
+      "title": "Boussole unifiée de l'appareil probatoire et désambiguïsation des homonymes [A]/[C]/[D]",
+      "insertion_point": "Chapitre 36 §36.2.1 — à la fin de la section exposant l'hygiène probatoire L+, Statut F et les trois degrés d'absence",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette synthèse visuelle exclusivement hébergée au Chapitre 36 réunit les quatre grilles probatoires du corpus : nature d'appui ([N]/[M]/[É]/[S]), vérification documentaire ([L+]/[A]/[B]/[C] et Statut F), qualification temporelle ([D]/[A]/[C] vs PROGRAMMÉ/PROJETÉ/SPÉCULATIF) et trois degrés d'absence, avec une alerte explicite sur les marqueurs homonymes [A], [C] et [D].",
+      "vulgarization_angle": "Empêcher toute confusion entre le [A] d'une source arbitrée et le [A] temporel anticipé, ou entre un fait absent du corpus et un fait négatif démontré dans le monde réel.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Grille 1 : Nature probatoire ([N]/[M]/[É]/[S]) et Grille 2 : Source ([L+]/[A]/[B]/[C] · Statut F)",
+            "content": "Séparation des fondements légaux/empiriques/protocolaires/analytiques et du statut d'extraction SHA-256 (AACODS ≥ 9/12, vote adversarial [A], exclusion AO-01 Statut F)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Grille 3 : Temporalité ([D]/[A]/[C] et PROGRAMMÉ/PROJETÉ/SPÉCULATIF) et Grille 4 : Degrés d'absence 1–3",
+            "content": "Distinction entre état gelé, feuille de route et projection, ainsi qu'entre fait négatif borné (1), négation source (2) et simple silence documentaire (3)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Encadré d'alerte : homonymes critiques [A], [C] et [D]",
+            "content": "Mise en garde formelle opposant [A]/[C]/[D] temporels (§3.1.2) à [A]/[B]/[C] d'audit documentaire et [D] sur pièce (§36.2.1)."
+          }
+        ],
+        "numbered_flows": [
+          "① Toute source bloquée s'arrête sans contournement en Statut F (included_in_evidence: false).",
+          "② Chaque affirmation combine sa nature [N]/[M]/[É]/[S], son grade d'ouverture [L+]/[A]/[B] et sa temporalité.",
+          "③ Tout silence détecté est classé au degré 1, 2 ou 3 sans jamais déduire une inexistence à partir d'une absence de document."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Preuves primaires vérifiées [L+], [A], [N], [D] et statut acquis"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Sources secondaires [B], spécifications [É], mesures [M] et degré d'absence"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Exclusion Statut F, source [C] interdite en preuve centrale et collision d'homonymes"
+          }
+        ],
+        "key_takeaway_box": "Quatre grilles orthogonales et la vigilance sur les homonymes [A]/[C]/[D] protègent la rigueur du traité : l'analyse distingue toujours ce qui est lu, mesuré, daté ou simplement silencieux."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 42.2",
+          "title": "Les trois espèces de vide, et le renversement qu’elles produisent.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-42.2 - Les trois espèces de vide, et le renversement qu'elles produisent.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-42.2.svg",
+          "role_note": "Caractérise les trois espèces d'absence ou de vide documentaire et prévient les inférences fautives."
+        },
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 46.2",
+          "title": "Les jalons externes à surveiller et les trois statuts prospectifs du § 49.0.1 : PROGRAMMÉ, PROJETÉ (dont les cibles simplement « annoncées » sont un sous-cas sans force opposable) et SPÉCULATIF.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-46.2 - Les jalons externes à surveiller et les trois statuts.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-46.2.svg",
+          "role_note": "Articule la distinction temporelle stricte entre PROGRAMMÉ, PROJETÉ et SPÉCULATIF."
+        }
+      ]
+    },
+    {
+      "schema_id": "SCH-36-06",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "subdomain_node_id": "SUB_D12_03",
+      "families_covered": [
+        "FAM_D12_03_01"
+      ],
+      "themes_vulgarized": [
+        "concordance-inter-tomes-div02",
+        "reconciliation-inter-volumes-tome1",
+        "cinq-discordances-inter-volumes-tome-8"
+      ],
+      "title": "Pierre de Rosette des cinq découpages en couches et trois rectifications DIV-02",
+      "insertion_point": "Chapitre 36 §36.1.1 — juste après la table d'arrimage textuelle entre C1–C5, Plans A–C et Couches 1–6 CAD26",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Métaphore architecturale en couches",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette table visuelle de correspondance plusieurs-à-plusieurs met en regard les cinq découpages architecturaux historiques de la collection (Tome 5 C1–C5 + Plans A–C, CAD26 Couches 1–6 + Plans A–C, Tome 1 à 6 couches, Tome 6 vs Tome 7 à 4 plans DISC-03 et socle ch29 C1–C8) en matérialisant les trois rectifications factuelles de DIV-02.",
+      "vulgarization_angle": "Offrir une véritable Pierre de Rosette alignant en colonnes les strates de chaque tome afin qu'aucune revue d'architecture ne confonde par exemple la Couche 3 Modèles de CAD26 avec les SoR en Couche 6.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Colonnes alignées des cinq découpages du corpus",
+            "content": "Alignement bijectif entre le modèle pivot C1–C5 (+ Plans A, B, C), les Couches 1–6 de CAD26 (+ Plans), les 6 couches du Tome 1, la répartition DISC-03 Plans A–D du Tome 8 et les 8 strates C1–C8 du ch29."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Trois rectifications factuelles de l'inspection directe DIV-02",
+            "content": "Flux explicites corrigeant : Rectification 1 Modèles/sandbox déplacés en Couche 3 (non Couche 6) ; Rectification 2 Connaissance C3 éclatée sur Couches 2, 3 et 5 ; Rectification 3 SoR fixés en Couche 6 (non Couche 5)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Raccordement des 4 paquets Tome 8 (DISC-03) et des 5 CAP hors CAD26 directe",
+            "content": "Lien exact vers harness_proto, policy_saga, authz_pqc_audit, evalops_prr et isolement des capacités CAP-025, 028, 033, 046 et 052."
+          }
+        ],
+        "numbered_flows": [
+          "① C1–C5 et les trois Plans A–C se projettent exactement sur les Couches 1–6 et Plans A–C de CAD26.",
+          "② Les trois rectifications DIV-02 corrigent l'emplacement des modèles (C3), de la connaissance (C2+C3+C5) et des SoR (C6).",
+          "③ DISC-03 raccorde sans perte les 4 plans SI (Tome 6) aux 4 paquets exécutables et aux 8 strates C1–C8."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Découpages alignés du modèle pivot, du Tome 1 et du socle C1–C8"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Trois rectifications critiques de DIV-02 (Modèles C3, Connaissance C2/C3/C5, SoR C6)"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Arrimage vérifié DISC-03 des paquets Tome 8 et des 52 CAP"
+          }
+        ],
+        "key_takeaway_box": "Cinq découpages historiques cohabitent sans perte sémantique dès l'ancrage des modèles en Couche 3, de la connaissance sur C2/C3/C5 et des SoR en Couche 6."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 43.1",
+          "title": "Les six couches de l’architecture de référence unifiée : ce que chacune tient et ce qu’elle ne porte pas (voir le Tableau 43.1).",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-43.1 - Les six couches de l'architecture de référence unifiée - ce.mmd",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-43.1.png",
+          "role_note": "Pose la réconciliation canonique des six couches de l'architecture unifiée au sein du Tome 1."
+        },
+        {
+          "tome_id": "T3",
+          "fig_id": "Fig. 36",
+          "title": "Vue en couches à l’échelle de l’entreprise : cinq couches et un plan de contrôle transversal qui réunit registre, identité, politique, observabilité et budgets. Ce découpage est une synthèse propre au chapitre, calée sur celui du compendium.",
+          "source_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-36 - Vue en couches à l'échelle de l'entreprise - cinq couches et un plan.puml",
+          "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-36.svg",
+          "role_note": "Formalise la vue d'entreprise en cinq couches et plan de contrôle transversal alignée sur le Compendium."
+        },
+        {
+          "tome_id": "T4",
+          "fig_id": "Fig. 2",
+          "title": "Modèle de référence à cinq couches et plan de contrôle à trois volets",
+          "source_path": "Sources/Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/Fig-02 - Modèle de référence à cinq couches et plan de contrôle à trois volets.puml",
+          "rendered_path": "Sources/Tomes/Tome 4 - Prospective stratégique et trajectoire 2028-2035/Diagrammes/rendus/Fig-02.svg",
+          "role_note": "Relie le modèle de référence à cinq couches et le plan de contrôle à trois volets."
         }
       ]
     }

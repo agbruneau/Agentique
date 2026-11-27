@@ -1,0 +1,53 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 18
+skinparam ranksep 26
+skinparam padding 7
+
+top to bottom direction
+title Double qualification (BSIF E-23 ∩ BSIF B-10) et six facteurs de durcissement financier
+
+package "Z1 — Patron-signature du domaine financier : double qualification obligatoire" {
+  rectangle "① Volet Modèle : BSIF E-23\n(en vigueur le 1er mai 2027)\nInventaire, cotation de risque, dérive et arrêt" as M1 <<indigo>>
+  rectangle "Même Système d'agentivité\ndoublé d'un registre unique coordonné\n(aucun outil tiers n'en dispense)" as CORE <<det>>
+  rectangle "② Volet Tiers TIC : BSIF B-10\nEntentes intra-groupe, plans de sortie,\nréversibilité et dépendance fournisseur" as M2 <<blue>>
+  M1 --> CORE : Qualification modèle
+  M2 --> CORE : Qualification tiers
+}
+
+package "Z2 — Six facteurs structurels de durcissement en finance" {
+  rectangle "1. Irréversibilité de règlement\nSéparation préparation IA / libération\n(RTR / paiements sans Saga auto)" as F1 <<red>>
+  rectangle "2. Risque systémique & corrélation\nAmplification procyclique partagée\n(travaux FSB / BoE / ESRB)" as F2 <<red>>
+  rectangle "3. Responsabilité & conduite\nImputabilité sans personnalité morale\n(jurisprudence Moffatt, règle non-avis AO-05)" as F3 <<amber>>
+  rectangle "4. Fraude & LBC-AML\nÉvasion de seuils et ingénierie sociale\n(plafonds et contrôles synchrones)" as F4 <<amber>>
+  rectangle "5. Standardisation des contrôles\nTaxonomie FINOS AI Governance v2.0\net fiabilité de flux en patrimoine" as F5 <<green>>
+}
+
+CORE --> F1
+CORE --> F2
+CORE --> F3
+CORE --> F4
+CORE --> F5
+
+legend bottom
+  **Indigo / Bleu / Ardoise** : Double qualification simultanée sous BSIF E-23 (modèle) et BSIF B-10 (tiers TIC)
+  **Rouge / Ambre** : Facteurs critiques d'irréversibilité, risque systémique, conduite juridique et fraude/LBC
+  **Vert émeraude** : Standardisation vérifiable FINOS v2.0 et schémas contraints de bout en bout
+end legend
+@enduml

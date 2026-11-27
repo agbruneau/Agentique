@@ -32,11 +32,11 @@ La dimension temporelle accentue encore cette contrainte. L'étude de Kwa et col
 
 Un système qui réussit un travail de longue haleine une fois sur deux reste inutilisable sans supervision constante ; dès que la norme opérationnelle impose au moins quatre réussites sur cinq, la durée maximale délégable en autonomie se réduit sévèrement. La fiabilité exigée en milieu financier réglementé impose donc de segmenter tout processus long par des points de contrôle déterministes.
 
-La *Figure 8* met en regard le piège syntaxique du statut `HTTP 200 OK`, la courbe multiplicative de la loi de Lusser et les coupures déterministes qui contiennent l'amplification des erreurs.
+La *Figure 10* met en regard le piège syntaxique du statut `HTTP 200 OK`, la courbe multiplicative de la loi de Lusser et les coupures déterministes qui contiennent l'amplification des erreurs.
 
 ![Loi de Lusser et piège du HTTP 200 OK : pourquoi 94 % de précision par étape chute à 53,9 % sur dix pas](../../schemas/rendus/SCH-02-01.svg)
 
-*Figure 8 — SCH-02-01 : Comparaison entre panne franche `HTTP 500` et cascade silencieuse `HTTP 200 OK` (`Z1`), courbe multiplicative \(R = p^n\) (`Z2`) et interposition de machines à états et compteurs de sauts (`Z3`).*
+*Figure 10 — SCH-02-01 : Comparaison entre panne franche `HTTP 500` et cascade silencieuse `HTTP 200 OK` (`Z1`), courbe multiplicative \(R = p^n\) (`Z2`) et interposition de machines à états et compteurs de sauts (`Z3`).*
 
 ### 2.1.3 Arbitrage entre collectif multi-agents (~`15×` jetons) et rédacteur unique continu
 
@@ -50,11 +50,11 @@ Plusieurs cadriciels et protocoles multi-agents — tels `AutoGen` (`AG2`), `Met
 
 En conséquence, les exigences `EXIG-ORC-01` et `EXIG-ORC-02` interdisent d'adopter une topologie multi-agents par défaut. L'architecte DOIT démontrer empiriquement, sur un banc d'essais interne représentatif, un gain net en constance et en coût complet par résultat conforme par rapport à l'agent unique bien outillé avant d'introduire toute orchestration multi-acteurs. Ce bilan comparatif consigne la consommation de jetons, la latence d'exécution, le taux de reprises et la couverture des quatorze modes `MAST` [4].
 
-La *Figure 9* synthétise la répartition des `14` modes d'échec `MAST` et l'arbre d'arbitrage opposant l'agent unique continu au collectif à `15×` le coût.
+La *Figure 11* synthétise la répartition des `14` modes d'échec `MAST` et l'arbre d'arbitrage opposant l'agent unique continu au collectif à `15×` le coût.
 
 ![Autopsie des 14 pannes MAST (1 642 traces) et arbitrage : agent unique continu par rapport au collectif à 15× le coût](../../schemas/rendus/SCH-02-02.svg)
 
-*Figure 9 — SCH-02-02 : Ventilation des `14` défaillances `MAST` sur `1 642` traces (`Z1`), arbitrage face au surcoût `15×` et à l'effet Ringelmann (`Z2`), et critères `EXIG-ORC-01` / `EXIG-ORC-02` (`Z3`).*
+*Figure 11 — SCH-02-02 : Ventilation des `14` défaillances `MAST` sur `1 642` traces (`Z1`), arbitrage face au surcoût `15×` et à l'effet Ringelmann (`Z2`), et critères `EXIG-ORC-01` / `EXIG-ORC-02` (`Z3`).*
 
 > **Trois invariants exécutables — Chapitre 2**
 > 1. **Rupture déterministe inter-étapes** — Chaque transition entre étapes probabilistes traverse une assertion métier typée et un compteur `xagenthopcount` / `xagentmaxhops` afin de stopper les cascades `ASI08` sous `HTTP 200 OK`.
@@ -85,11 +85,17 @@ Trois vérifications complètent ce socle statistique. Premièrement, les scéna
 
 Ces exigences s'imposent face aux ordres de grandeur financiers de `2026`. Sur les `9` premiers mois calendaires de `2026`, les dépôts SEC d'Alphabet (`132,0 G$ US`), Amazon (`175,7 G$ US`), Meta (`83,1 G$ US`) et Microsoft (`106,0 G$ US`) totalisent `496,7 G$ US` de CapEx en trésorerie. L'annualisation atteint ainsi `683,7` à `693,7 G$ US` hors baux Microsoft ou `703` à `713 G$ US` baux inclus (`~220 G$ US` chez Amazon, `135` à `145 G$ US` chez Meta ; dépôts SEC détaillés aux références `9` à `14` du Chapitre 03). En regard, les synthèses ouvertes du Chapitre 03 situent le marché de l'IA agentique entre `5,3` et `9,9 G$ US` en `2026`, `7,8` et `14,1 G$ US` en `2027` et `24,5` et `40,6` (ou `45,0`) `G$ US` en `2030`. Cet écart entre investissement d'infrastructure et marché applicatif confirme que seule une ingénierie de fiabilité mesurable protège du gaspillage de capital ; sans contrôle statistique `pass^k` et sans bornage `METR`, les déploiements consomment des jetons sans atteindre la fiabilité de production [5, 6, 7].
 
-La *Figure 10* illustre ce basculement vers `pass^k` et la porte statistique de Wilson à `95 %`.
+La *Figure 12* illustre ce basculement vers `pass^k` et la porte statistique de Wilson à `95 %`.
 
 ![De l'essai ponctuel (pass@1) à la constance industrielle (pass^k ≥ 0,95 et borne de Wilson à 95 %)](../../schemas/rendus/SCH-02-03.svg)
 
-*Figure 10 — SCH-02-03 : Rejet des métriques `pass@k` et des bancs contaminés (`Z1`), exigence `pass^k` arbitrée sur la courbe coût-précision `HAL` (`Z2`), et validation CI/CD par borne unilatérale de Wilson à `95 %` (`Z3`).*
+*Figure 12 — SCH-02-03 : Rejet des métriques `pass@k` et des bancs contaminés (`Z1`), exigence `pass^k` arbitrée sur la courbe coût-précision `HAL` (`Z2`), et validation CI/CD par borne unilatérale de Wilson à `95 %` (`Z3`).*
+
+La *Figure 13* trace cette divergence mathématique et les bornes statistiques associées.
+
+![Courbes pass@k vs pass^k, frontière de Pareto HAL et dimensionnement unilatéral de Wilson à 95 %](../../schemas/rendus/SCH-02-04.svg)
+
+*Figure 13 — SCH-02-04 : Courbes `pass@k` contre `pass^k`, frontière coût-précision `HAL` et dimensionnement de Wilson (`n = 300` contre `381`).*
 
 ## 2.3 Synthèse opératoire, exigences `D01-02` et frontières d'architecture
 

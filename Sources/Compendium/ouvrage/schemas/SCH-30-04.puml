@@ -1,0 +1,56 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 20
+skinparam ranksep 26
+skinparam padding 7
+
+top to bottom direction
+title Modèle opérationnel Team Topologies et ArchiMate reliant l'IAP aux trois blueprints
+
+package "Z1 — Équipes alignées sur les flux métier (Stream-Aligned)" {
+  rectangle "① Équipe Flux bp1 (SoR)\nLogique métier & façades MCP\n(Temporal HA + OBO)" as B1 <<blue>>
+  rectangle "② Équipe Flux bp2 (Enclave RAG)\nCorpus confidentiels Zero-Egress\n(OpenFGA + microVM)" as B2 <<blue>>
+  rectangle "③ Équipe Flux bp3 (Maillage B2B)\nChaînes A2A v1.0.1 + Event Mesh\n(CloudEvents + AsyncAPI)" as B3 <<blue>>
+}
+
+package "Z2 — Cellule habilitante CoE et gouvernance ARB" {
+  rectangle "④ Cellule habilitante & CoE\nAccompagnement EvalOps / Wilson,\nFinOps FOCUS, 2LoD et LCIM" as COE <<amber>>
+  rectangle "⑤ Comité d'architecture ARB\nPortes bloquantes AAGMM :\nJ90 (ARB 1) → J180 (ARB 2) → J360 (ARB 3)" as ARB <<det>>
+  COE --> ARB : Critères de passage
+}
+
+package "Z3 — Équipe Plateforme interne IAP (X-as-a-Service)" {
+  rectangle "⑥ Golden Paths en libre-service\nPortail Backstage · Kratix Promises · Crossplane\n(voie conforme plus rapide que le Shadow AI)" as GP <<green>>
+  rectangle "⑦ Noyau possédé & GitOps quintette\nAI/MCP Gateway · Identité NHI/SPIFFE · OTel\nOpenGitOps + SLSA v1.2 + Cosign + Argo CD" as IAP <<teal>>
+  GP --> IAP : Provisionne automatiquement
+}
+
+B1 --> GP : Consomme X-as-a-Service
+B2 --> GP : Consomme X-as-a-Service
+B3 --> GP : Consomme X-as-a-Service
+COE .[#B45309].> B1 : Habilitation
+COE .[#B45309].> B2 : Habilitation
+COE .[#B45309].> B3 : Habilitation
+ARB --> IAP : Bloque non-conformité (C32–C36)
+
+legend bottom
+  **Bleu** : Équipes alignées sur les flux propriétaires de la logique métier (bp1, bp2, bp3)
+  **Vert / Turquoise** : Équipe Plateforme IAP servie X-as-a-Service (Golden Paths + GitOps SLSA v1.2)
+  **Ambre / Bleu ardoise** : Cellule habilitante CoE (2LoD, EvalOps, FinOps) et portes ARB J90/J180/J360
+end legend
+@enduml

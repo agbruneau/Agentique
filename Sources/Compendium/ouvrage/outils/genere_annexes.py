@@ -432,6 +432,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             [f"`{ch['id']}`", f"`{ch.get('domain_id', '')}`", f"`{sub_id}`", f"{fams}/{thms}", str(occ), tomes_str, schs]
         )
     total_occ = sum(int(r[4]) for r in t_rows)
+    ch_figs_cnt = sum(1 for f in manifest.get("figures", []) if str(f.get("unit", "")).startswith("ch"))
     table_trace = (
         _md_table(
             ["Ch.", "Domaine", "Sous-domaine (`node_id`)", "Fam./Thm.", "Occ.", "Tomes", "Schémas"],
@@ -439,7 +440,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             t_rows,
         )
         + "\n\n*Tableau A.1 — Table maîtresse de traçabilité des trente-six chapitres, sous-domaines `SUB_Dxx_yy`, "
-        "soixante et onze familles, deux cent soixante thèmes et cent onze schémas de chapitres.*\n\n"
+        f"soixante et onze familles, deux cent soixante thèmes et {ch_figs_cnt} schémas de chapitres.*\n\n"
         f"Dans ce tableau, `R` désigne le fichier sommaire `Tomes/README.md` (rattaché aux chapitres `ch35` et `ch36`), "
         f"et la colonne `Occ.` mesure le total des occurrences thématiques par sous-domaine dans le graphe MindMap "
         f"({_fmt_int(total_occ)} au total, distinct du cumul des cellules par tome `D01`–`D12` × `T1`–`T8` présenté en Annexe B)."
@@ -623,6 +624,17 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     return f"{prose.rstrip()}\n\n{_sanitize_fr_ca(chr(10).join(bib_lines))}\n"
 
 
+def _format_annex_figure(manifest: dict, schema_id: str, caption_body: str, alt_fallback: str) -> str:
+    """Formate l'image et la légende numérotée d'un schéma rattaché à une annexe."""
+    figs = manifest.get("figures", [])
+    fig_num_by_id = {f["id"]: idx for idx, f in enumerate(figs, start=1)}
+    fig_meta = next((f for f in figs if f.get("id") == schema_id), {})
+    alt = str(fig_meta.get("title") or alt_fallback).strip()
+    fnum = fig_num_by_id.get(schema_id)
+    prefix = f"Figure {fnum} — {schema_id}" if fnum else schema_id
+    return f"![{alt}](../../schemas/rendus/{schema_id}.svg)\n\n*{prefix} : {caption_body}*"
+
+
 def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict) -> str:
     mm = metrics["mindmap"]
     relations = mm.get("relations", [])
@@ -730,13 +742,26 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"`{sd}`→`{td}` ({_plural(cnt, 'liaison')}, {dom_meta_by_id.get(sd, {}).get('title', sd)} vers {dom_meta_by_id.get(td, {}).get('title', td)})"
         for (sd, td), cnt in top_pairs
     ]
+    fig_num_by_id_b = {f["id"]: idx for idx, f in enumerate(manifest.get("figures", []), start=1)}
+    ab_num = fig_num_by_id_b.get("SCH-AB-01", "AB-01")
+    ab_fig_block = _format_annex_figure(
+        manifest,
+        "SCH-AB-01",
+        (
+            f"Matrice thermique `12×12` des liaisons inter-domaines (`D01`–`D12`), répartition empilée des "
+            f"huit types d'interrelations sur les {len(relations)} arêtes et classement des quinze principaux "
+            "carrefours relationnels (`mindmap-complet.json`)."
+        ),
+        "Matrice thermique 12×12, huit types d'interrelations et quinze carrefours du graphe",
+    )
     corridors_sec = (
         "## 3. Corridors inter-domaines dominants et densité sur les huit tomes (`T1`–`T8`)\n\n"
         f"L'empreinte transversale sur les huit tomes antérieurs totalise {tome_summary}{r_note}. "
         f"Les {len(top_pairs)} corridors inter-domaines les plus denses (seuil ≥ {cutoff_pair} liaisons, ex-æquo inclus) "
         "relient les couples suivants : "
         + " ; ".join(pair_segs)
-        + "."
+        + f". La Figure {ab_num} visualise cette matrice `12×12` croisée aux huit types d'interrelations et aux quinze nœuds carrefours dominants.\n\n"
+        + ab_fig_block
     )
 
     # §4 — Synthèse analytique des 62 arbitrages structurels (tension_arbitrage)
@@ -1038,6 +1063,18 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         if future_by_horizon
         else "Aucune échéance future indexée dans cette instance."
     )
+    fig_num_by_id_c = {f["id"]: idx for idx, f in enumerate(manifest.get("figures", []), start=1)}
+    ac_num = fig_num_by_id_c.get("SCH-AC-01", "AC-01")
+    ac_fig_block = _format_annex_figure(
+        manifest,
+        "SCH-AC-01",
+        (
+            f"Frise comparée des {len(anchors)} jalons (`2018–2035`) répartis en cinq couloirs juridictionnels, "
+            f"avec ligne de gel au {metrics['freeze_date']} séparant les {len(past_or_freeze)} jalons acquis des "
+            f"{len(future_anchors)} échéances futures (`ancres-chronologiques.json`)."
+        ),
+        "Frise chronologique des 77 jalons 2018–2035 en cinq couloirs juridictionnels",
+    )
     sec5 = (
         f"## 5. Calendrier vérifié (`2018–2035`) : acquis au gel ({len(past_or_freeze)}) contre échéances futures ({len(future_anchors)})\n\n"
         f"Tout jalon daté de manière ISO antérieure ou égale au {metrics['freeze_date']} est traité comme fait établi "
@@ -1049,7 +1086,9 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"### Jalons établis jusqu'au gel du {metrics['freeze_date']} ({len(past_or_freeze)} jalons)\n\n"
         f"{pre_prose}\n\n"
         f"### Synthèse des échéances post-gel et trajectoire `DAPP` ({len(future_anchors)} jalons, dépliés en section 7)\n\n"
-        f"{fut_prose}"
+        f"{fut_prose}\n\n"
+        f"La Figure {ac_num} réunit ces cinq couloirs juridictionnels de part et d'autre de la date de gel.\n\n"
+        + ac_fig_block
     )
 
     # §6 — Grandeurs empiriques, projections temporelles et matrice inter-tomes
@@ -1378,6 +1417,20 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         if (ini43 or por15 or sig27)
         else ""
     )
+    fig_num_by_id_d = {f["id"]: idx for idx, f in enumerate(manifest.get("figures", []), start=1)}
+    ad_num = fig_num_by_id_d.get("SCH-AD-01", "AD-01")
+    exig_total_num = exig.get("total", 305) if isinstance(exig, dict) else 305
+    prr_blocking_num = prr.get("blocking_count", 24) if isinstance(prr, dict) else 24
+    ad_fig_block = _format_annex_figure(
+        manifest,
+        "SCH-AD-01",
+        (
+            f"Ventilation quantitative des {exig_total_num} exigences `EXIG-*` sur les seize préfixes normatifs, "
+            f"croisée aux {prr_blocking_num} portes bloquantes `PRR-75` (`S/R/O/G/F`) et aux {len(mappings)} liaisons "
+            "exécutables de la barrière `G0` (`matrice-exig-prr-c40.json`)."
+        ),
+        "Ventilation des 305 exigences EXIG-* croisée aux 24 portes PRR-75 et aux 95 liaisons G0",
+    )
     sec7 = (
         f"## 7. Liaisons exécutables `G0` ({len(mappings)}), spécifications `L+` ({len(specs)}) et portefeuille `DAPP`\n\n"
         "Les liaisons exécutables se répartissent par module de la trousse : "
@@ -1385,6 +1438,8 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         + "."
         + (f"\n\n{spec_para}" if spec_para else "")
         + (f"\n\n{dapp_para}" if dapp_para else "")
+        + f"\n\nLa Figure {ad_num} illustre la ventilation par préfixe des {exig_total_num} exigences face aux {prr_blocking_num} portes bloquantes et aux {len(mappings)} contrôles `G0`.\n\n"
+        + ad_fig_block
     )
 
     # §8 — Chaîne G0–G5 et double recollation stratifiée G3
@@ -1449,7 +1504,7 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         ),
         (
             "## 2. Clause `non-avis` et régime dual de licences (`CC-BY-4.0` / `MIT`)\n\n"
-            "Le présent traité et ses cent quinze schémas sont diffusés sous licence **`CC-BY-4.0`**, tandis que "
+            f"Le présent traité et ses **{len(manifest.get('figures', []))} schémas** sont diffusés sous licence **`CC-BY-4.0`**, tandis que "
             "l'outillage déterministe d'homologation et la trousse compagnon (`Tome 8`) relèvent de la licence **`MIT`**. "
             f"Conformément au statut `non-avis` arrêté au {metrics['freeze_date']}, l'ouvrage constitue une référence technique "
             "pédagogique et ne tient lieu ni d'avis juridique, ni de certification réglementaire, ni d'homologation sur un "
@@ -1604,7 +1659,11 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
 
     cat_by_id: dict[str, dict] = {}
     if cat_schemas:
-        for sc in cat_schemas.get("global_schemas", []) + cat_schemas.get("chapter_schemas", []):
+        for sc in (
+            cat_schemas.get("global_schemas", [])
+            + cat_schemas.get("chapter_schemas", [])
+            + cat_schemas.get("annex_schemas", [])
+        ):
             if sc.get("schema_id"):
                 cat_by_id[sc["schema_id"]] = sc
 
@@ -1616,7 +1675,7 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         if f["id"] in cat_by_id
     )
 
-    # §1 — Concordance avec les 319 figures des Tomes 1–8 + taux de couverture 267/319 = 83,70 %
+    # §1 — Concordance avec les 319 figures des Tomes 1–8
     if inv_319 and isinstance(inv_319.get("totals"), dict):
         tot_inv = inv_319["totals"]
         by_tome = tot_inv.get("by_tome", {})
@@ -1631,27 +1690,26 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             t_rows.append(
                 [f"`{tid}`", str(td.get("total", 0)), str(td.get("PlantUML", 0)), str(td.get("Mermaid", 0)), str(linked_c), str(unlinked_c), pct_c]
             )
-        cov_pct_global = f"{float(cov.get('coverage_percent', 83.7)):.2f} %".replace(".", ",")
+        cov_pct_global = f"{float(cov.get('coverage_percent', 88.4)):.2f} %".replace(".", ",")
         tome_sec = (
             f"## 1. Concordance avec les {tot_inv.get('total_figures', 319)} figures des Tomes `1` à `8` "
-            f"(couverture `{cov.get('unique_linked_figures_count', 267)}/{tot_inv.get('total_figures', 319)}` = `{cov_pct_global}`)\n\n"
+            f"(couverture `{cov.get('unique_linked_figures_count', 282)}/{tot_inv.get('total_figures', 319)}` = `{cov_pct_global}`)\n\n"
             f"L'inventaire du Corpus recense **{tot_inv.get('total_figures', 319)} figures** "
             f"(`{tot_inv.get('plantuml_svg', 253)}` `PlantUML` et `{tot_inv.get('mermaid_png', 66)}` `Mermaid`, zéro fichier manquant), "
-            f"dont **{cov.get('unique_linked_figures_count', 267)} figures liées** ({cov.get('total_figure_links_count', 356)} rattachements) "
-            f"et **{cov.get('unlinked_figures_count', 52)} figures synthétisées** par consolidation thématique.\n\n"
+            f"dont **{cov.get('unique_linked_figures_count', 282)} figures liées** ({cov.get('total_figure_links_count', 374)} rattachements) "
+            f"et **{cov.get('unlinked_figures_count', 37)} figures consolidées** par synthèse thématique.\n\n"
             + _md_table(
                 ["Tome", "Total", "PlantUML (SVG)", "Mermaid (PNG)", "Liées", "Non liées", "Couverture"],
                 ["---", "---:", "---:", "---:", "---:", "---:", "---:"],
                 t_rows,
             )
-            + "\n\n*Tableau E.1 — Répartition et taux de couverture des trois cent dix-neuf figures des Tomes `1` à `8` dans les cent quinze schémas du Compendium.*"
+            + f"\n\n*Tableau E.1 — Répartition et couverture des `319` figures des Tomes `1` à `8` dans les `{len(figs)}` schémas du Compendium.*"
         )
     else:
         tome_sec = (
-            "## 1. Concordance avec les 319 figures des Tomes `1` à `8` (couverture `267/319` = `83,70 %`)\n\n"
-            "Les cent quinze schémas de vulgarisation du Compendium synthétisent les trois cent dix-neuf figures "
-            "existantes des huit tomes antérieurs (`253` `PlantUML` et `66` `Mermaid`, dont `267` figures directement "
-            "liées et `52` consolidées par fusion thématique) en respectant le plafond de quatorze nœuds et "
+            f"## 1. Concordance avec les 319 figures des Tomes `1` à `8`\n\n"
+            f"Les **{len(figs)} schémas** de vulgarisation synthétisent les trois cent dix-neuf figures "
+            "existantes des huit tomes antérieurs (`253` `PlantUML` et `66` `Mermaid`) en respectant le plafond de quatorze nœuds et "
             "l'orientation bilingue métier-technique."
         )
 
@@ -1665,23 +1723,23 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             a_rows.append([aname, str(acnt), apct])
         arch_table = (
             _md_table(["Archétype visuel", "Schémas", "Part"], ["---", "---:", "---:"], a_rows)
-            + "\n\n*Tableau E.2 — Répartition des cent quinze schémas selon les huit archétypes visuels canoniques.*"
+            + f"\n\n*Tableau E.2 — Répartition des `{len(figs)}` schémas selon les huit archétypes visuels canoniques.*"
         )
     else:
         arch_table = (
-            "Les cent quinze schémas s'organisent autour de huit archétypes visuels canoniques "
+            f"Les **{len(figs)} schémas** s'organisent autour de huit archétypes visuels canoniques "
             "(parcours séquentiel, comparatif avant/après, métaphore en couches, matrice de risques, arbre décisionnel, "
             "boucle de rétroaction, échelle de maturité et frise chronologique)."
         )
     aud_note = (
-        "Couverture des quatre publics cibles : "
-        + ", ".join(f"{k} ({v} schémas)" for k, v in sorted(aud_map.items(), key=lambda x: (-x[1], x[0])))
+        "Publics cibles : "
+        + ", ".join(f"{k} ({v})" for k, v in sorted(aud_map.items(), key=lambda x: (-x[1], x[0])))
         + "."
         if aud_map
         else "Les quatre publics cibles (`AE/AS`, `Direction/Métier`, `Ingénierie/RSSI/SRE`, `Juridique/Conformité`) sont couverts sur chaque partie."
     )
     reuse_note = (
-        " Modes de production : " + ", ".join(f"`{k}` ({v})" for k, v in reuse_counts.most_common()) + "."
+        " Modes : " + ", ".join(f"`{k}` ({v})" for k, v in reuse_counts.most_common()) + "."
         if reuse_counts
         else ""
     )
@@ -1690,7 +1748,7 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"{arch_table}\n\n{aud_note}{reuse_note}"
     )
 
-    # §3 — 4 schémas panoramiques du Liminaire (Figure 1 .. Figure 4) en prose structurée
+    # §3 — Schémas panoramiques du Liminaire
     lim_figs = [f for f in figs if f.get("unit") == "00-liminaire"]
     lim_segs = []
     for f in lim_figs:
@@ -1701,26 +1759,38 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             if linked
             else ""
         )
-        lim_segs.append(f"**Figure {fnum}** (`{f['id']}`, `{f.get('engine')}`), {str(f.get('title', '')).rstrip('.')}{linked_str}")
+        lim_segs.append(f"**Figure {fnum}** (`{f['id']}/{f.get('engine')}`), {str(f.get('title', '')).rstrip('.')}{linked_str}")
+    lim_first_id = min((f["id"] for f in lim_figs), default="SCH-00-01")
+    lim_last_id = max((f["id"] for f in lim_figs), default="SCH-00-05")
+    lim_last_num = fig_num_by_id[lim_figs[-1]["id"]] if lim_figs else 5
     lim_sec = (
-        "## 3. Quatre schémas panoramiques du Liminaire (`Figure 1` à `Figure 4`, `SCH-00-01` à `SCH-00-04`)\n\n"
+        f"## 3. Schémas panoramiques du Liminaire (`{len(lim_figs)}` figures, `Figure 1` à `Figure {lim_last_num}`, `{lim_first_id}` à `{lim_last_id}`)\n\n"
         + " ; ".join(lim_segs)
         + "."
     )
 
-    # §4 — Catalogue analytique INTÉGRAL des 111 schémas sur TOUTES les 12 Parties I..XII (Figure 5..Figure 115)
-    # Rédigé en paragraphes par Partie pour préserver 100 % des 12 Parties (y compris Partie XII / D12)
-    # tout en gardant un écart pp - vm minimal !
+    # §4 — Catalogue analytique des schémas de chapitres (Parties I..XII) et des Annexes B..D
     figs_by_part: dict[str, list[dict]] = defaultdict(list)
+    ch_figs: list[dict] = []
+    ann_figs: list[dict] = []
     for f in figs:
         uid = f.get("unit", "")
         if uid == "00-liminaire":
             continue
+        if uid.startswith("annexe-"):
+            ann_figs.append(f)
+            continue
+        ch_figs.append(f)
         part = units_by_id.get(uid, {}).get("part", "XII")
         figs_by_part[part].append(f)
 
     roman_order = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
-    cat_part_blocks = ["## 4. Catalogue analytique intégral des cent onze schémas de chapitres (`Parties I` à `XII`, `Figure 5` à `Figure 115`)"]
+    ch_first_num = fig_num_by_id[ch_figs[0]["id"]] if ch_figs else 6
+    ch_last_num = fig_num_by_id[ch_figs[-1]["id"]] if ch_figs else len(figs)
+    ann_note_hdr = f" et des Annexes (`{len(ann_figs)}` schémas)" if ann_figs else ""
+    cat_part_blocks = [
+        f"## 4. Catalogue analytique des `{len(ch_figs)}` schémas de chapitres (`Parties I` à `XII`, `Figure {ch_first_num}` à `Figure {ch_last_num}`){ann_note_hdr}"
+    ]
     for part in roman_order:
         pfigs = figs_by_part.get(part, [])
         if not pfigs:
@@ -1729,31 +1799,36 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f_start = fig_num_by_id[pfigs[0]["id"]]
         f_end = fig_num_by_id[pfigs[-1]["id"]]
         items_prose = " ; ".join(
-            f"**Figure {fig_num_by_id[f['id']]}** (`{f['id']}`, `{f['unit']}`, `{f.get('engine')}`), {str(f.get('title', '')).rstrip('.')}"
+            f"**Figure {fig_num_by_id[f['id']]}** (`{f['id']}`/`{f['unit']}`/`{f.get('engine')}`), {str(f.get('title', '')).rstrip('.')}"
             for f in pfigs
         )
         cat_part_blocks.append(
             f"### {ptitle} ({len(pfigs)} schémas, `Figure {f_start}` à `Figure {f_end}`)\n\n"
             f"{items_prose}."
         )
-
-    # §5 — Règles d'homologation iconographique (quadruple preuve [N]/[M]/[É]/[S] préservée !) + ventilation D01..D12
-    ed_guides = (cat_schemas or {}).get("annexe_e", {}).get("editorial_guidelines", [])
-    guides_prose = (
-        " ".join(_end_period(g) for g in ed_guides)
-        if ed_guides
-        else (
-            "Chaque diagramme respecte un plafond strict de quatorze nœuds lisibles. "
-            "Chaque source `PlantUML` est validée par `-failfast2` et `UTF-8` avant export SVG, "
-            "chaque diagramme `Mermaid` est compilé à `300 DPI` (largeur minimale `200 px`, hauteur `150 px`) "
-            "et chaque infographie `SVG` bilingue métier-technique est contrôlée par analyseur XML strict. "
-            "Les badges de quadruple preuve `[N]/[M]/[É]/[S]` sont préservés sans amputation typographique."
+    if ann_figs:
+        af_start = fig_num_by_id[ann_figs[0]["id"]]
+        af_end = fig_num_by_id[ann_figs[-1]["id"]]
+        ann_items_prose = " ; ".join(
+            f"**Figure {fig_num_by_id[f['id']]}** (`{f['id']}`/`{f['unit']}`/`{f.get('engine')}`), {str(f.get('title', '')).rstrip('.')}"
+            for f in ann_figs
         )
+        cat_part_blocks.append(
+            f"### Annexes B à D ({len(ann_figs)} schémas, `Figure {af_start}` à `Figure {af_end}`)\n\n"
+            f"{ann_items_prose}."
+        )
+
+    # §5 — Règles d'homologation iconographique (condensées pour respecter CA-01) + ventilation par domaine
+    guides_prose = (
+        "Chaque diagramme respecte `4` à `14` nœuds (`data-node` en `SVG`), les normes `fr-CA`, "
+        "l'exclusion des marqueurs entre crochets hors `CH-36`, le lien aux `319` figures sources "
+        "et la quadruple preuve `N/M/É/S` (`PlantUML -failfast2`, `Mermaid 300 DPI`, `SVG` XML strict)."
     )
     dom_figs: dict[str, list[dict]] = defaultdict(list)
     for f in figs:
         u = units_by_id.get(f.get("unit", ""), {})
-        did = u.get("domain_id") or ("Liminaire" if f.get("unit") == "00-liminaire" else "Autre")
+        uid_f = f.get("unit", "")
+        did = u.get("domain_id") or ("Liminaire" if uid_f == "00-liminaire" else ("Annexes" if uid_f.startswith("annexe-") else "Autre"))
         dom_figs[did].append(f)
     dom_segs = []
     for did in sorted(dom_figs.keys()):
@@ -1761,15 +1836,15 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         eng_cnt = Counter(str(x.get("engine", "")) for x in dlist)
         thm_set = sorted({t for x in dlist for t in x.get("themes_vulgarized", [])})
         dom_segs.append(
-            f"`{did}` ({len(dlist)} schémas, `puml` {eng_cnt.get('puml', 0)}, `mmd` {eng_cnt.get('mmd', 0)}, "
-            f"`svg` {eng_cnt.get('svg', 0)}, {len(thm_set)} thèmes vulgarisés)"
+            f"`{did}` ({len(dlist)} : `puml` {eng_cnt.get('puml', 0)}, `mmd` {eng_cnt.get('mmd', 0)}, "
+            f"`svg` {eng_cnt.get('svg', 0)}, {len(thm_set)} thèmes)"
         )
     sec5 = (
         "## 5. Règles d'homologation iconographique (`CA-08`, `CA-22`) et ventilation par domaine\n\n"
         f"{guides_prose}\n\n"
-        "### Ventilation par domaine (`Liminaire`, `D01`–`D12`) et moteur\n\n"
+        "### Ventilation par domaine (`Liminaire`, `D01`–`D12`, `Annexes`) et moteur\n\n"
         + " ; ".join(dom_segs)
-        + " (soit `260` thèmes distincts sur `D01`–`D12`, les `28` thèmes du `Liminaire` constituant une reprise panoramique transversale)."
+        + f" (couvrant `260` thèmes distincts sur `D01`–`D12` ; les `{len(lim_figs)}` schémas du `Liminaire` et les `{len(ann_figs)}` schémas d'annexes offrent une synthèse transversale)."
     )
 
     required = [
@@ -1808,10 +1883,10 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         unit_meta["target_words"],
     )
 
-    # Table de correspondance inverse Corpus (319 figures -> 115 schémas) — ZÉRO doublon avec §3–§4 !
+    # Table de correspondance inverse Corpus (319 figures -> N schémas) — ZÉRO doublon avec §3–§4 !
     extra = [
         "<!-- BIBLIOGRAPHIE_BRUTE_DEBUT -->",
-        "## 6. Correspondance inverse des 319 figures du Corpus (`T1`–`T8`) vers les 115 schémas du Compendium",
+        f"## 6. Correspondance inverse des 319 figures du Corpus (`T1`–`T8`) vers les {len(figs)} schémas du Compendium",
         "",
     ]
     if isinstance(cov, dict) and cov.get("by_tome"):

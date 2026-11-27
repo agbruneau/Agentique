@@ -45,7 +45,7 @@ Les sept patrons de modélisation associés verrouillent ainsi la traçabilité 
 
 ![Fermeture DIV-02 : le modèle unifié à cinq couches et trois volets, ArchiMate 4.0 et points de contrôle PC1–PC5](../../schemas/rendus/SCH-06-01.svg)
 
-*Figure 20 — SCH-06-01 : Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`.*
+*Figure 26 — SCH-06-01 : Fermeture `DIV-02` : le modèle unifié à cinq couches et trois volets, `ArchiMate 4.0` et points de contrôle `PC1–PC5`.*
 
 Au cœur de cette architecture, la sanctuarisation du **noyau de contrôle déterministe** — en cohérence avec la notion de garde-fous techniques (*AI harnessing*) formulée par le bulletin technologique du BSIF [5] — empêche que les fournisseurs de modèles ou de plateformes infonuagiques n'exercent le monopole sur la logique métier. L'effectivité réelle de ce plan de contrôle repose sur trois conditions non dérogeables (`EXIG-ARC-01`, `EXIG-GOV-07`, `EXIG-GOV-08`, `EXIG-OBS-11`, `EXIG-OBS-12`) :
 
@@ -69,11 +69,11 @@ La maîtrise du noyau reste toutefois incomplète sans une doctrine explicite de
 
 Pour contrer ce risque de captivité, la gestion des tiers s'appuie sur la ligne directrice `B-10` du BSIF [4], qui exige un inventaire complet des sous-traitants, la continuité d'activité et des plans de sortie ordonnée comme sous contrainte. Ces obligations convergent avec les repères de portabilité et d'interdiction des frais de changement de fournisseur issus du Chapitre VI du Règlement `(UE) 2023/2854` (*Data Act*, consigne doctrinale `ANC-003` du Tome 3 § 27.5 sans texte intégral `L+` propre ici, applicable depuis le `12 septembre 2025` avec transition de `30` jours civils à `7` mois et interdiction des frais au `12 janvier 2027`, sous clause `non-avis`).
 
-Ensemble, ces deux cadres fondent les neuf clauses de négociation du Tome 3 (illustrées à la Figure 21) et leur consolidation en **dix clauses contractuelles minimales** (`EXIG-APP-07` à `EXIG-APP-16`, détaillées au chapitre 27). Celles-ci imposent l'exportabilité complète en formats ouverts sans perte sémantique, une assistance bornée durant la migration, le plafonnement puis la suppression des frais de sortie et un avis écrit préalable en cas de recours ou de substitution de sous-traitant (`BSIF B-10` [4]). Elles exigent également l'accès garanti aux journaux probatoires, la réversibilité des clés de chiffrement, l'effacement vérifiable post-migration, la ségrégation des environnements et le droit d'exécuter un test réel de bascule hors ligne chaque année (`POR-016`).
+Ensemble, ces deux cadres fondent les neuf clauses de négociation du Tome 3 (illustrées à la Figure 27) et leur consolidation en **dix clauses contractuelles minimales** (`EXIG-APP-07` à `EXIG-APP-16`, détaillées au chapitre 27). Celles-ci imposent l'exportabilité complète en formats ouverts sans perte sémantique, une assistance bornée durant la migration, le plafonnement puis la suppression des frais de sortie et un avis écrit préalable en cas de recours ou de substitution de sous-traitant (`BSIF B-10` [4]). Elles exigent également l'accès garanti aux journaux probatoires, la réversibilité des clés de chiffrement, l'effacement vérifiable post-migration, la ségrégation des environnements et le droit d'exécuter un test réel de bascule hors ligne chaque année (`POR-016`).
 
 ![Posséder son noyau (42 capacités invariantes par rapport à 10 sur signal), gravité des données et dix clauses de sortie (neuf clauses Tome 3)](../../schemas/rendus/SCH-06-02.svg)
 
-*Figure 21 — SCH-06-02 : Posséder son noyau (`42` capacités invariantes par rapport à `10` sur signal), gravité des données et clauses de sortie (`9` clauses de négociation Tome 3 consolidées en `10` `EXIG-APP-07..16`).*
+*Figure 27 — SCH-06-02 : Posséder son noyau (`42` capacités invariantes par rapport à `10` sur signal), gravité des données et clauses de sortie (`9` clauses de négociation Tome 3 consolidées en `10` `EXIG-APP-07..16`).*
 
 Sur la base de ce noyau possédé, l'architecture passe en revue les **`31` décisions d'architecture de 2027** (`ADR-001` à `ADR-031`) afin d'en préserver les invariants tout en éliminant toute dépendance nominative envers des produits commerciaux ou des projets encore immatures. L'audit applique un tri systématique selon la ventilation **`8 / 7 / 16`** :
 
@@ -106,7 +106,7 @@ L'articulation entre les huit `ADR` invariantes, les sept `ADR` sous veille et l
 
 ![Pyramide d'arbitrage (12 PRIN / 15 PRI) et conversion des 31 ADR de 2027 en 12 DEC sans nom de produit](../../schemas/rendus/SCH-06-03.png)
 
-*Figure 22 — SCH-06-03 : Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit.*
+*Figure 28 — SCH-06-03 : Pyramide d'arbitrage (`12 PRIN` / `15 PRI`) et conversion des `31 ADR` de 2027 en `12 DEC` sans nom de produit.*
 
 ### 6.2.2 Six couches, principes d'arbitrage, ergonomie d'outils et maturité patrimoniale N1–N5
 
@@ -165,7 +165,7 @@ La fonction indicatrice \(\mathbb{I}(c_{\text{sec}} \ge 60)\) joue un rôle de v
 
 ![Maturité N1–N5, diagnostic patrimonial S_ready (c_sec ≥ 60), ergonomie d'outils et budgets QoS](../../schemas/rendus/SCH-06-04.svg)
 
-*Figure 23 — SCH-06-04 : Maturité `N1–N5`, diagnostic patrimonial `S_ready` (`c_sec ≥ 60`), ergonomie d'outils et budgets `QoS`.*
+*Figure 29 — SCH-06-04 : Maturité `N1–N5`, diagnostic patrimonial `S_ready` (`c_sec ≥ 60`), ergonomie d'outils et budgets `QoS`.*
 
 ## 6.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation
 

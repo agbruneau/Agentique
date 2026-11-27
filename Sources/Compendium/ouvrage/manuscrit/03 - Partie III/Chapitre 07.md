@@ -27,6 +27,12 @@ Le présent chapitre exerce la propriété exclusive des six volets thématiques
 
 *Tableau 7.1 — Échelonnement des révisions MCP et jalons de gouvernance jusqu'en juillet 2027.*
 
+La *Figure 30* retrace cette trajectoire jusqu'au `28 juillet 2027` et le cycle de vie `SEP-2596`.
+
+![Frise MCP 2024–2027, automate SEP-2596 à trois états et cadence semestrielle SEP-3398](../../schemas/rendus/SCH-07-04.svg)
+
+*Figure 30 — SCH-07-04 : Évolution `MCP` (`2024–2027`), automate `SEP-2596` et adaptation `SEP-3398` derrière `McpTransportAdapter`.*
+
 > **Trois invariants exécutables — Chapitre 07**
 >
 > 1. **Transport sans état épinglé et isolé** : Tout serveur MCP de production DOIT opérer en `MCP 2026-07-28` sans état sur `Streamable HTTP` derrière `McpTransportAdapter`, avec rejet immédiat de `HTTP+SSE` en production (`DISC-05`, `EXIG-MCP-08` ; grâce transitoire `SEP-2596` de trois mois après le 22 novembre 2026), concordance vérifiée des en-têtes `Mcp-Method` et `Mcp-Name` (`EXIG-MCP-15`, code `-32020`) et migration complète hors de `MCP 2025-11-25` au plus tard le 28 juillet 2027 (`EXIG-MCP-22`).
@@ -51,13 +57,13 @@ En complément, la séparation entre l'interface `McpTransportAdapter` et le har
 
 Le transport local `stdio`, qui demeure utile sur poste de développement pour outiller un environnement isolé, reste strictement confiné hors serveur et interdit pour tout appel porteur de secrets ou de données réglementées (`EXIG-MCP-08`). Par ailleurs, la conformité au profil minimal du cadre `CRE-IA-2026-01` exige la désactivation par défaut de toutes les extensions non promues au cœur — notamment les tâches asynchrones (`io.modelcontextprotocol/tasks`, issue de `SEP-2663`, repère hors socle `L+`), les compétences distribuées ou les cartes serveur, dont le cycle *Experimental/Beta/Stable* relève de `SEP-3392` (`EXIG-MCP-04`). Aucune extension ne peut être activée en production sans inscription nominative sur une liste d'admission approuvée par l'architecture de sécurité.
 
-La normalisation du tuyau de transport s'accompagne d'un cantonnement rigoureux des protocoles émergents du Web agentique, illustrés à la Figure 24 et recensés dans la veille du corpus source `Tome 3` (chapitre 9, hors socle `L+` de ce chapitre, à confirmer à la source primaire). Aucune de ces quatre propositions ne constitue une norme adoptée à la date de gel. Le rapport communautaire W3C `WebMCP` (`document.modelContext`, à l'essai sur un seul moteur, sans vérification de sincérité) expose des actions déclaratives côté navigateur ; il reste sans confiance implicite et ne contourne jamais la passerelle interne. Le prototype `NLWeb` (`/ask`, démonstration de faisabilité) DOIT être filtré contre l'injection indirecte (Chapitre 19).
+La normalisation du tuyau de transport s'accompagne d'un cantonnement rigoureux des protocoles émergents du Web agentique, illustrés à la Figure 31 et recensés dans la veille du corpus source `Tome 3` (chapitre 9, hors socle `L+` de ce chapitre, à confirmer à la source primaire). Aucune de ces quatre propositions ne constitue une norme adoptée à la date de gel. Le rapport communautaire W3C `WebMCP` (`document.modelContext`, à l'essai sur un seul moteur, sans vérification de sincérité) expose des actions déclaratives côté navigateur ; il reste sans confiance implicite et ne contourne jamais la passerelle interne. Le prototype `NLWeb` (`/ask`, démonstration de faisabilité) DOIT être filtré contre l'injection indirecte (Chapitre 19).
 
 La signature HTTP `Web Bot Auth` (brouillon IETF 01 sur `RFC 9421` et clés `JWKS`) prouve uniquement l'origine cryptographique d'un client automatisé, sans établir l'intention métier ni la délégation humaine (Chapitre 08). Quant aux fichiers Markdown `llms.txt` (proposés en septembre 2024), la veille du corpus source `Tome 3` (étude fournisseur Ahrefs de juin 2026 sur 137 210 domaines techniques, repère hors socle `L+` à confirmer à la source primaire) rapporte que 28 % en publient un valide mais que 97 % n'ont reçu aucune requête sur le mois observé. Tout investissement spécifique sur `llms.txt` est donc écarté, hors génération automatisée depuis la documentation existante.
 
 ![MCP 2026-07-28 sans état, adaptateur SEP-3398 et confinement des surfaces Web agentiques](../../schemas/rendus/SCH-07-01.svg)
 
-*Figure 24 — SCH-07-01 : Architecture du transport sans état MCP 2026-07-28 derrière McpTransportAdapter et confinement des surfaces Web agentiques.*
+*Figure 31 — SCH-07-01 : Architecture du transport sans état MCP 2026-07-28 derrière McpTransportAdapter et confinement des surfaces Web agentiques.*
 
 Au-dessus du transport, la qualité d'exécution d'un **Système d'agentivité** dépend directement de l'ergonomie de son interface agent-ordinateur (*Agent-Computer Interface*, ACI) (`ADR-005`, `CAP-023`, `EXIG-MCP-06`) [1]. L'erreur la plus répandue lors des premiers prototypes consiste à brancher un convertisseur automatique sur une spécification OpenAPI existante pour transformer mécaniquement chaque route REST (`GET`, `POST`, `PUT`, `DELETE`) en outil MCP distinct. Cet anti-patron, catalogué `AP-04` (*Swagger-to-MCP 1:1*), produit couramment plus de cinquante outils granulaires par domaine.
 
@@ -67,11 +73,11 @@ Pour prévenir cette dérive, chaque serveur MCP d'entreprise DOIT exposer des f
 
 La conception de ces façades conjugue les primitives normatives de `schema.ts` [1, 4] et les règles exécutables du cadre `CRE-IA-2026-01` (`EXIG-MCP-07`, `EXIG-MCP-19`). Premièrement, la sortie privilégie l'objet typé `structuredContent` validé contre `outputSchema` en `JSON Schema Draft 2020-12` (dialecte par défaut de MCP `2026-07-28`) [1, 4], complété par la discipline stricte du harnais (Chapitre 04) qui impose `additionalProperties: false` et la déclaration explicite des champs requis. Deuxièmement, plutôt que d'asphyxier le contexte du modèle par des pièces volumineuses, le serveur utilise la primitive `resource_link` (`uri`, type MIME et nom/titre) définie dans `schema.ts` [1, 4], déclenchée systématiquement dès que la charge utile dépasse 8 Ko selon la règle architecturale du corpus source `Tome 3` (§ 5).
 
-Troisièmement, la discipline interne exige une clé d'idempotence explicite sur toute façade d'écriture, tandis que toute façade de lecture sur collection impose une pagination bornée par `cursor` [1, 4]. Quatrièmement, lorsque le modèle fournit un paramètre invalide, la réponse d'exécution d'outil (`isError: true`) renvoie un message d'erreur cognitif actionnable indiquant le champ fautif et la contrainte violée [1, 4] (`EXIG-MCP-07`). Enfin, pour des catalogues étendus ou des analyses multi-appels, le corpus source (`Tome 2 § 6.5` et `Tome 6 § 4.2.3`) documente le chargement différé côté passerelle ou harnais (*Dynamic Toolsets* / *Tool Search*) et le *Code Mode* exécuté en bac à sable isolé sans accès réseau direct (Chapitre 21), comme l'illustre la Figure 25.
+Troisièmement, la discipline interne exige une clé d'idempotence explicite sur toute façade d'écriture, tandis que toute façade de lecture sur collection impose une pagination bornée par `cursor` [1, 4]. Quatrièmement, lorsque le modèle fournit un paramètre invalide, la réponse d'exécution d'outil (`isError: true`) renvoie un message d'erreur cognitif actionnable indiquant le champ fautif et la contrainte violée [1, 4] (`EXIG-MCP-07`). Enfin, pour des catalogues étendus ou des analyses multi-appels, le corpus source (`Tome 2 § 6.5` et `Tome 6 § 4.2.3`) documente le chargement différé côté passerelle ou harnais (*Dynamic Toolsets* / *Tool Search*) et le *Code Mode* exécuté en bac à sable isolé sans accès réseau direct (Chapitre 21), comme l'illustre la Figure 32.
 
 ![Anti-patron Swagger-to-MCP 1:1 face aux façades d'intention ACI (≤ 15 outils métier et Code Mode)](../../schemas/rendus/SCH-07-02.svg)
 
-*Figure 25 — SCH-07-02 : Comparaison entre l'anti-patron Swagger-to-MCP 1:1 (AP-04) et les façades d'intention ACI plafonnées à 15 outils.*
+*Figure 32 — SCH-07-02 : Comparaison entre l'anti-patron Swagger-to-MCP 1:1 (AP-04) et les façades d'intention ACI plafonnées à 15 outils.*
 
 | Critère d'architecture | Anti-patron `AP-04` (Swagger-to-MCP 1:1) | Façade d'intention ACI (`ADR-005` / `EXIG-MCP-06`) |
 |---|---|---|
@@ -101,13 +107,13 @@ De plus, toute annotation `x-mcp-header` [1, 2] dans `inputSchema` est inspecté
 
 Simultanément, la spécification MCP `2026-07-28` [1, 4] et l'exigence `EXIG-MCP-14` imposent de traiter l'ensemble des annotations déclaratives fournies par le serveur (`readOnlyHint`, `destructiveHint`, titres, icônes ou URL descriptives) comme des entrées non fiables. Jamais un indicateur `readOnlyHint: true` déclaré par un serveur externe ne peut justifier une dispense d'autorisation ou d'approbation humaine : seul fait foi le palier inscrit au catalogue interne. De même, les notifications asynchrones `notifications/tools/list_changed` ne déclenchent jamais d'actualisation automatique en production sans repasser par la file de réapprobation cryptographique.
 
-La défense cryptographique de la définition d'outil se double d'une barrière stricte sur le transport et les en-têtes, illustrée à la Figure 26. Sur `Streamable HTTP`, les en-têtes `MCP-Protocol-Version`, `Mcp-Method` et `Mcp-Name` permettent aux passerelles et pare-feu applicatifs de router et de filtrer les requêtes sans désérialiser l'intégralité du graphe JSON [2]. Une faille classique de contournement survient lorsqu'un appelant soumet des en-têtes bénins pour franchir le filtre périmétrique tout en dissimulant une méthode ou un outil sensible dans le corps `JSON-RPC 2.0`.
+La défense cryptographique de la définition d'outil se double d'une barrière stricte sur le transport et les en-têtes, illustrée à la Figure 33. Sur `Streamable HTTP`, les en-têtes `MCP-Protocol-Version`, `Mcp-Method` et `Mcp-Name` permettent aux passerelles et pare-feu applicatifs de router et de filtrer les requêtes sans désérialiser l'intégralité du graphe JSON [2]. Une faille classique de contournement survient lorsqu'un appelant soumet des en-têtes bénins pour franchir le filtre périmétrique tout en dissimulant une méthode ou un outil sensible dans le corps `JSON-RPC 2.0`.
 
 L'exigence `EXIG-MCP-15` impose donc de vérifier la concordance exacte entre les en-têtes HTTP normalisés (tout en-tête dupliqué divergent étant rejeté) et les champs `params._meta`, `method` et `params.name` du corps JSON-RPC, en bloquant toute discordance par un code dédié (`-32020`) [2]. De plus, toute clé `_meta` non reconnue ou absente de la liste d'autorisation du catalogue est purgée (`EXIG-MCP-16`), à l'exception de la version de protocole et des clés explicitement approuvées comme le contexte de traçage distribué.
 
 ![Scellement SHA-256 et défense OAuth des outils MCP contre le rug-pull et les 102 failles NVD](../../schemas/rendus/SCH-07-03.svg)
 
-*Figure 26 — SCH-07-03 : Articulation du scellement SHA-256 JCS, du contrôle d'en-têtes et de la défense OAuth 2.1 sur les outils MCP.*
+*Figure 33 — SCH-07-03 : Articulation du scellement SHA-256 JCS, du contrôle d'en-têtes et de la défense OAuth 2.1 sur les outils MCP.*
 
 L'extrait exécutable `G0-EX-CH01-03` ci-après, extrait mécaniquement et scellé depuis le module `mcp_pinning.py` de la trousse homologuée en barrière `G0`, concrétise ces deux verrous déterministes. La fonction `verify_tools_list_against_catalog` trie les outils, calcule leur empreinte `JCS SHA-256`, détecte toute dérive et bascule le serveur en suspension au premier écart, tandis que `validate_mcp_headers` bloque toute divergence entre en-têtes HTTP et corps `JSON-RPC 2.0` (`-32020`) avant de purger `_meta`.
 

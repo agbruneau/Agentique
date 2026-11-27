@@ -307,6 +307,80 @@
       ]
     },
     {
+      "schema_id": "SCH-07-04",
+      "chapter_number": 7,
+      "domain_id": "D03",
+      "subdomain_node_id": "SUB_D03_01",
+      "families_covered": [
+        "FAM_D03_01_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-mcp",
+        "adaptateur-mcp-streamable-http-sep-3398"
+      ],
+      "title": "Frise d'évolution MCP (2024–2027), cycle SEP-2596 et cadence SEP-3398",
+      "insertion_point": "Chapitre 07 §7.1 — juste après le Tableau 7.1 et avant les Trois invariants exécutables",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Frise chronologique et jalons",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette frise retrace les huit dates clés du protocole MCP entre novembre 2024 et juillet 2027 (bascule HTTP+SSE → Streamable HTTP, retrait du batching, témoin historique 2025-11-25, épinglage sans état 2026-07-28, fenêtres SEP-2596 et SEP-3398) tout en montrant l'automate à trois états du cycle de vie et la couche d'isolation McpTransportAdapter.",
+      "vulgarization_angle": "Transformer la chronologie dense des révisions MCP et des deux SEP de gouvernance en une feuille de route lisible révélant les fenêtres de grâce et le rôle tampon de l'adaptateur.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Chronologie des révisions 2024–2026 et résolution DISC-05",
+            "content": "Jalons de 2024-11-05 (HTTP+SSE initial), 2025-03-26 (Streamable HTTP + grâce), retrait du JSON-RPC batching, 2025-11-25 (témoin historique à sessions) vers l'épinglage 2026-07-28 sans état."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Échéances 2027 : cadence SEP-3398 et grâce SEP-2596",
+            "content": "Chevauchement de 2 mois janvier–mars 2027 menant à la livraison du 30 mars 2027 (SEP-3398) puis butoir ferme du 28 juillet 2027 (EXIG-MCP-22, 12 mois SEP-2596)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Automate SEP-2596 et isolation McpTransportAdapter",
+            "content": "Cycle à 3 états Active → Deprecated (≥ 12 mois, 90 j si risque actif, 3 mois HTTP+SSE) → Removed derrière McpTransportAdapter."
+          }
+        ],
+        "numbered_flows": [
+          "① HTTP+SSE et l'état implicite Mcp-Session-Id sont bannis en production au profit de Streamable HTTP sans état (2026-07-28).",
+          "② SEP-2596 protège les équipes contre les retraits brutaux grâce à une fenêtre de 12 mois (3 mois pour HTTP+SSE déjà déprécié).",
+          "③ SEP-3398 impose une cadence semestrielle prévisible en mars et septembre absorbée par McpTransportAdapter."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Transports retirés ou dépréciés (HTTP+SSE, batching, sessions 2025-11-25)"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Spécification épinglée MCP 2026-07-28 et adaptateur isolant le métier"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Jalons de gouvernance 2027 (SEP-3398 au 30 mars, SEP-2596 / EXIG-MCP-22 au 28 juillet)"
+          }
+        ],
+        "key_takeaway_box": "Dissocier la logique métier derrière McpTransportAdapter absorbe la cadence semestrielle SEP-3398 et respecte la bascule du 28 juillet 2027 sans refonte applicative."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 7.3",
+          "title": "Dix-sept mois : les lancements, puis les passages sous fondation — et l’ordre s’inverse pour les trois protocoles nés propriétaires (l’ACP protocolaire étant né sous fondation dès mars 2025).",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-07.3 - Dix-sept mois - les lancements, puis les passages sous fondation.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-07.3.svg",
+          "role_note": "Positionne les 17 mois de lancements protocolaires et les passages sous gouvernance de fondation."
+        }
+      ]
+    },
+    {
       "schema_id": "SCH-08-01",
       "chapter_number": 8,
       "domain_id": "D03",
@@ -596,6 +670,94 @@
           "source_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/Figure-09 - Délégation A2A avec appel MCP et approbation humaine.puml",
           "rendered_path": "Sources/Tomes/Tome 2 - Cadre normatif et exigences d'architecture/Diagrammes/rendus/Figure-09.svg",
           "role_note": "Montre le maintien des approbateurs humains hors du canal d'interface manipulable."
+        }
+      ]
+    },
+    {
+      "schema_id": "SCH-08-04",
+      "chapter_number": 8,
+      "domain_id": "D03",
+      "subdomain_node_id": "SUB_D03_02",
+      "families_covered": [
+        "FAM_D03_02_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-a2a"
+      ],
+      "title": "Primitives A2A v1.0.1 (AgentCard, Task, Part, Artifact) et machine à 9 états",
+      "insertion_point": "Chapitre 08 §8.2.1 — après le paragraphe décrivant les quatre primitives et les 9 valeurs TaskState de a2a.proto",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Parcours séquentiel illustré",
+      "recommended_notation": "PlantUML",
+      "pedagogical_objective": "Ce diagramme comble l'absence des primitives Part et Artifact et des neuf valeurs exactes de TaskState dans les vues antérieures. Il relie l'AgentCard signée JWS ES256 sur JCS au modèle d'échange (Message, Part typée text/raw/data/url, Artifact immuable), à la machine à 9 états irrévocables de a2a.proto et aux trois liaisons d'exécution (synchrone, SSE, webhook anti-SSRF).",
+      "vulgarization_angle": "Montrer concrètement comment s'emboîtent la carte d'identité, la tâche asynchrone, les pièces typées et les canaux de notification dans une délégation A2A opaque et vérifiable.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Découverte et signature AgentCard (JWS ES256 + JCS RFC 8785)",
+            "content": "Validation de la carte publique ou étendue via AgentCardAdapter et contrôle anti-SSRF préalables à toute soumission."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Modèle d'unité de travail : Task, Message, Part et Artifact",
+            "content": "Agrégation par contextId et taskId de messages contenant des Part typées (text, raw, data, url) aboutissant à un Artifact terminal immuable."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Automate complet a2a.proto à 9 TaskState et trois modes de transport",
+            "content": "Cycle SUBMITTED → WORKING avec suspensions INPUT_REQUIRED / AUTH_REQUIRED (plus UNSPECIFIED) vers quatre états terminaux irrévocables (COMPLETED, FAILED, CANCELED, REJECTED) sur JSON-RPC, gRPC ou HTTP+JSON via SSE ou webhook authentifié."
+          }
+        ],
+        "numbered_flows": [
+          "① L'appelant valide d'abord la signature JWS ES256 de l'AgentCard (et écarte OAuth password/implicit).",
+          "② Il soumet une Task porteuse d'un Message composé de Part typées dans un contextId corrélé.",
+          "③ La machine d'état progresse via SSE ou webhook authentifié avec suspensions bornées avant un verdict terminal interdisant tout nouveau message."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Primitives contractuelles A2A v1.0.1 et enveloppe contextId"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "États actifs, flux SSE / gRPC et production d'Artifact immuable"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Gardes anti-SSRF webhook, lacune CARD-SIGN a2a-tck et états terminaux irrévocables"
+          }
+        ],
+        "key_takeaway_box": "L'opacité interne entre pairs A2A impose un contrat complet : AgentCard signée en entrée, cycle fermé à 9 états TaskState et livrables Artifact immuables sans retour en arrière."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 8.4",
+          "title": "L’auto-description et l’unité de travail de l’axe horizontal : la carte, la tâche, le message.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-08.4 - L'auto-description et l'unité de travail de l'axe horizontal.mmd",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-08.4.png",
+          "role_note": "Structure l'auto-description et l'unité de travail horizontale : carte, tâche, message et parties."
+        },
+        {
+          "tome_id": "T3",
+          "fig_id": "Fig. 13",
+          "title": "Cycle de vie complet d’une tâche asynchrone A2A v1.0 : découverte, négociation multi-tours, streaming SSE et notifications push signées.",
+          "source_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/Fig-13 - Cycle de vie complet d'une tâche asynchrone A2A v1.0 - découverte.puml",
+          "rendered_path": "Sources/Tomes/Tome 3 - Ingénierie du tissu conjonctif et état de l'art/Diagrammes/rendus/Fig-13.svg",
+          "role_note": "Détaille le cycle complet de négociation multi-tours, streaming SSE et notifications push signées."
+        },
+        {
+          "tome_id": "T6",
+          "fig_id": "Fig. 19",
+          "title": "Séquence protocolaire A2A v1.0 : AgentCard signée, SSE, interruption et webhook",
+          "source_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-19 - Séquence protocolaire A2A v1.0 - AgentCard signée, SSE, interruption.puml",
+          "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-19.svg",
+          "role_note": "Illustre la séquence protocolaire A2A de bout en bout incluant interruption et webhook authentifié."
         }
       ]
     },
@@ -1270,6 +1432,67 @@
           "role_note": "Assemble recherche hybride RRF, GraphRAG et Text-to-SQL gouverné en patron de référence."
         }
       ]
+    },
+    {
+      "schema_id": "SCH-10-04",
+      "chapter_number": 10,
+      "domain_id": "D04",
+      "subdomain_node_id": "SUB_D04_01",
+      "families_covered": [
+        "FAM_D04_01_01"
+      ],
+      "themes_vulgarized": [
+        "contrats-donnees-write-audit-publish",
+        "donnees-pretes-agents-odcs-openlineage",
+        "dette-semantique-ontologies"
+      ],
+      "title": "Cinq points de rupture ACL sur entrepôt de données et verrous OBO / RLS / WAP",
+      "insertion_point": "Chapitre 10 §10.2.1 — juste après la liste des 5 points de rupture potentiels d'héritage ACL",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE",
+        "Juridique / Conformité"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "PlantUML",
+      "pedagogical_objective": "Ce diagramme détaille les cinq chemins exacts par lesquels les droits d'accès (ACL) d'un utilisateur se brisent entre un serveur MCP d'entrepôt analytique et les tables sous-jacentes, en associant à chaque faille la contre-mesure déterministe correspondante (identité déléguée OBO, marquage asynchrone d'indexation, cloisonnement de cache par locataire, filtrage RLS/colonnes et propagation de révocation).",
+      "vulgarization_angle": "Montrer concrètement aux architectes de données comment une simple vue pré-agrégée ou un compte technique partagé annule toutes les autorisations amont si les cinq verrous ne sont pas bouclés de bout en bout.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Les cinq points de rupture d'héritage ACL",
+            "content": "Identification des failles (1) compte de service partagé, (2) file asynchrone ou indexation non marquée sub/act, (3) cache sémantique pré-agrégé partagé, (4) jointures SQL inter-sources sans RLS et (5) révocation non propagée."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Architecture défensive OBO, WAP Iceberg/Nessie et filtrage RLS",
+            "content": "Chaîne d'étanchéité propagée de l'échange RFC 8693 jusqu'aux politiques RLS / colonnes, avec branches de quarantaine Write-Audit-Publish (ODCS) et étiquettes d'entité juridique (Loi 25)."
+          }
+        ],
+        "numbered_flows": [
+          "① Toute requête MCP interdit le repli sur un compte de service technique et propage le mandat nominatif sub/act (EXIG-ARC-16).",
+          "② Les files d'indexation et caches sémantiques conservent la clé de locataire et de mandat plutôt que d'agréger à plat.",
+          "③ L'entrepôt applique le filtrage ligne/colonne (RLS), bloque la quarantaine WAP hors seuil et évince les caches dès révocation."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Cinq vecteurs d'élargissement silencieux ou de fuite inter-locataires ACL"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Contre-mesures obligatoires : OBO nominal, clé locataire, RLS et révocation immédiate"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Sas WAP Iceberg/Nessie, lignage OpenLineage et étiquettes d'entité juridique"
+          }
+        ],
+        "key_takeaway_box": "L'autorisation au niveau de l'outil MCP ne protège rien si les vues matérialisées, caches, indexations asynchrones et jointures SQL brisent l'héritage ACL en aval."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
     },
     {
       "schema_id": "SCH-11-01",

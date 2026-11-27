@@ -1,0 +1,54 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 20
+skinparam ranksep 26
+skinparam padding 7
+
+top to bottom direction
+title Rupture au 2e saut RFC 8693, intersection monotone RAR et Txn-Token O(1)
+
+package "Z1 — Angle mort RFC 8693 §4.1 : rupture au 2e saut inter-domaines" {
+  rectangle "① Mandant humain (sub) → Saut 1 (act)\nJeton initial émis vers orchestrateur" as N1 <<det>>
+  rectangle "② Saut 2 inter-domaines sans contrôle\nRFC 8693 §1 hors portée : serveur aval lit\nsub + dernier acteur, perd l'amont act/may_act" as N2 <<red>>
+  N1 -right-> N2 : Relais opaque non renégocié
+}
+
+package "Z2 — Parade inter-domaines : PEP + STS sous RFC 9700 (hops ≤ 2)" {
+  rectangle "③ Échange explicite STS + SPIFFE\nclient_assertion SVID · aud strict (RFC 8707)\nRejet TOKEN_PASSTHROUGH et MAX_HOPS > 2" as N3 <<blue>>
+  rectangle "④ Intersection monotone à 3 ensembles\nDroits = Mandant (sub) ∩ Gabarit agent (act)\n∩ Tâche RAR (RFC 9396) · exp ≤ parent_exp" as N4 <<green>>
+  rectangle "⑤ Liaison expéditeur obligatoire\nDPoP (cnf jkt/htm/htu/ath/jti) ou mTLS\nTTL ≤ 15 min · zéro mot de passe / implicite" as N5 <<green>>
+  N3 --> N4 : Portée réduite
+  N4 -right-> N5 : Preuve par requête
+}
+
+package "Z3 — Parade intra-domaine : Jeton de transaction O(1)" {
+  rectangle "⑥ Transaction Token Service (TTS)\nÉvite l'empilement linéaire de signatures OBO\ndans un même domaine de confiance" as N6 <<indigo>>
+  rectangle "⑦ Txn-Token (-11) condensé O(1)\nScelle sub, txn, req_wl et tctx JCS SHA-256\nPrévient troncature HTTP 431 (pqc_http431)" as N7 <<det>>
+  N6 -right-> N7 : Empreinte constante
+}
+
+N2 .[#047857].> N3 : Remédiation frontière externe
+N5 --> N6 : Relais interne borné
+
+legend bottom
+  **Rouge brique** : Rupture de visibilité au 2e saut RFC 8693 §4.1 et relais direct proscrit
+  **Vert émeraude / Bleu** : Contrôles PEP/STS (hops ≤ 2, aud RFC 8707, intersection RAR, DPoP/mTLS ≤ 15 min)
+  **Indigo / Bleu ardoise** : Jeton de transaction intra-domaine Txn-Token (-11) à taille O(1) via JCS SHA-256
+end legend
+@enduml

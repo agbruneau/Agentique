@@ -2097,7 +2097,7 @@
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="timeline">Chronologie 2018–2035 (77 jalons)</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="traceability">Matrice EXIG / CAP / PRR / C01–C40 / SBB (237)</button>
               <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="glossary_evidence">Glossaire (56) &amp; Socle probatoire L+</button>
-              <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="schemas_gallery">Galerie 115 schémas</button>
+              <button class="btn" role="tab" aria-selected="false" tabindex="-1" data-c4-tab="schemas_gallery">Galerie 139 schémas</button>
             </div>
             <div id="c4-content"></div>
           </div>
@@ -2489,7 +2489,7 @@
         });
       });
 
-      // Index des 115 schémas de vulgarisation
+      // Index des 139 schémas de vulgarisation
       var schemasList = Array.isArray(data.schemas) ? data.schemas : [];
       var schemaById = Object.create(null);
       var schemasByUnit = Object.create(null);
@@ -3615,7 +3615,7 @@
         var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 852);
         var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 246518);
         var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || 42);
-        var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || 115);
+        var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || 139);
         var totalTerms = Number(cmeta.glossary_terms_count || cmeta.glossary_terms || idx.glossaryTerms.length || 56);
         var totalLplus = Number(cmeta.lplus_sources_count || cmeta.sources_l_plus || 135);
         strip.innerHTML = [
@@ -5765,7 +5765,7 @@
           var sAud = state.c4SchemaAudience || "";
 
           var domOpts = ['<option value="">Tous les domaines</option>'];
-          ['GLOBAL'].concat(idx.domains.map(function (d) { return d.domain_id; })).forEach(function (did) {
+          ['GLOBAL', 'ANNEXE'].concat(idx.domains.map(function (d) { return d.domain_id; })).forEach(function (did) {
             domOpts.push('<option value="' + escapeHtml(did) + '"' + (sDom === did ? ' selected' : '') + '>' + escapeHtml(did) + '</option>');
           });
           var audSet = new Set();

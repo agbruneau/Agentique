@@ -72,7 +72,7 @@ def _normalize_image_paths(
     def _repl(match: re.Match[str]) -> str:
         alt = match.group(1)
         raw_path = match.group(2).strip()
-        m_sch = re.search(r"(SCH-\d{2}-\d{2}|Fig-\d{2})", raw_path)
+        m_sch = re.search(r"(SCH-(?:\d{2}|A[A-E])-\d{2}|Fig-\d{2})", raw_path)
         if m_sch:
             fid = m_sch.group(1)
             ext = fig_ext_map.get(fid, "svg")

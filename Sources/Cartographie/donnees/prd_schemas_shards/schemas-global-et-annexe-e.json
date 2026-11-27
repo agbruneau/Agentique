@@ -497,23 +497,95 @@
           "role_note": "Formalise l'arbre décisionnel mécanique des 24 [BLOQUANT] PRR, de 2027-B001, des 5 SBB et des contrats C01–C40."
         }
       ]
+    },
+    {
+      "schema_id": "SCH-00-05",
+      "chapter_number": 0,
+      "domain_id": "GLOBAL",
+      "subdomain_node_id": "ROOT",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "architecture-collection-tome-1-preambule",
+        "exigences-cre-ia-305",
+        "partition-hybride-80-20",
+        "protocole-mcp",
+        "finops-focus-cpo"
+      ],
+      "title": "Carte maîtresse des douze Parties, quinze corridors dominants et quatre parcours",
+      "insertion_point": "Liminaire §0.3 — après les trois paragraphes exposant les 12 domaines, 616 interrelations et 12 Parties",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Métaphore architecturale en couches",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette carte d'orientation générale permet à tout lecteur d'embrasser d'un regard l'architecture modulaire des 12 domaines orthogonaux (36 chapitres, 71 familles, 260 thèmes), d'identifier les quinze corridors d'interrelations comptant au moins sept liaisons transversales dans le registre MindMap et de sélectionner l'un des quatre parcours de lecture ciblés selon son rôle décisionnel.",
+      "vulgarization_angle": "Présenter le traité non comme un manuel linéaire à lire de la première à la dernière page, mais comme un plan de réseau métropolitain reliant quatre grands blocs architecturaux par quinze artères critiques et quatre itinéraires dédiés par profil.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Quatre blocs et douze Parties (D01–D12, CH-01..CH-36)",
+            "content": "Regroupement des douze domaines en quatre ensembles : Fondations et contrôle (D01–D02), Tissu conjonctif et exécution (D03–D05), Confiance et pilotage (D06–D08), Conformité et livraison (D09–D12)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Quinze corridors structurants (≥ 7 liaisons dans MindMap)",
+            "content": "Mise en relief des axes dominants, notamment D10↔D02 (13), D09→D10 (13), D09→D11 (13), D03→D06 (11), D03→D07 (9), D09→D03 (9), D12→D02 (9) et D02→D01 (9), issus directement du registre MindMap."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Quatre itinéraires de lecture par profil métier et technique",
+            "content": "Rubans chronologiques guidant Direction / Métier, Architectes AE / AS, Ingénierie / RSSI / SRE et Juridique / Conformité vers les chapitres et annexes prioritaires."
+          }
+        ],
+        "numbered_flows": [
+          "① Les domaines D01–D02 posent la contrainte mathématique de Lusser et le noyau déterministe de 42 capacités invariantes.",
+          "② Les domaines D03–D05 et D06–D08 reçoivent l'encadrement prudentiel D09 et convergent vers les blueprints D10 et les trajectoires D11.",
+          "③ Le domaine D12 ancre l'homologation exécutable G0–G5 vers les cinq annexes déterministes A–E."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Fondations doctrinales, partition 80/20 et noyau possédé (D01–D02)"
+          },
+          {
+            "color_token": "Turquoise (#0F766E)",
+            "meaning": "Tissu conjonctif protocolaire, sémantique et exécution durable (D03–D05)"
+          },
+          {
+            "color_token": "Indigo (#4338CA)",
+            "meaning": "Sécurité identitaire, politiques hors modèle, observabilité et FinOps (D06–D08)"
+          },
+          {
+            "color_token": "Ambre (#B45309)",
+            "meaning": "Droit, déploiement sectoriel, trajectoire et preuve exécutable (D09–D12)"
+          }
+        ],
+        "key_takeaway_box": "Douze domaines orthogonaux et quinze corridors à haute densité transforment 36 chapitres en quatre parcours actionnables selon le mandat de chaque lecteur."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
     }
   ],
   "annexe_e": {
     "annexe_code": "E",
     "representative_title": "Plan directeur et catalogue intégral des schémas de vulgarisation à intégrer et correspondance avec les 319 figures du Corpus",
-    "executive_summary": "Cette cinquième annexe établit le plan directeur visuel permettant à chaque lecteur — dirigeant métier, juriste, architecte d'entreprise, architecte de solutions ou ingénieur SRE/RSSI — d'appréhender avec rigueur et immédiateté l'architecture, les risques, les obligations réglementaires et les mécanismes de contrôle du PRD sans devoir parcourir d'emblée l'intégralité du corpus normatif. Elle rassemble les 4 schémas directeurs du Sommaire exécutif global (SCH-00-01 à SCH-00-04) ainsi que les schémas de vulgarisation rattachés aux 36 chapitres (CH-01 à CH-36), couvrant 100 % des 71 familles thématiques et établissant une table de correspondance bidirectionnelle avec les 319 figures sources vérifiées sur disque dans Sources/Tomes/ (253 PlantUML/SVG et 66 Mermaid/PNG).",
-    "targeted_content_description": "Catalogue intégral généré depuis Sources/Cartographie/donnees/prd_schemas_shards/schemas-*.json et Sources/Cartographie/donnees/inventaire-319-diagrammes.json exposant : (1) le tableau maître des 4 schémas transversaux SCH-00-01 à SCH-00-04 et de l'ensemble des schémas SCH-01-xx à SCH-36-xx (identifiant, chapitre, domaine, familles couvertes, archétype visuel, notation recommandée, publics cibles, statut de réutilisation, point d'insertion dans prd.md et fiche pédagogique complète : objectif pédagogique, angle de vulgarisation, maquette par zones, flux numérotés ① ② ③, légende chromatique et synthèse doctrinale), et (2) la matrice d'inventaire et de concordance complète des 319 diagrammes d'origine des Tomes 1 à 8 assortie de liens vérifiés vers les sources .puml/.mmd et les rendus .svg/.png.",
+    "executive_summary": "Cette cinquième annexe établit le plan directeur visuel permettant à chaque lecteur — dirigeant métier, juriste, architecte d'entreprise, architecte de solutions ou ingénieur SRE/RSSI — d'appréhender avec rigueur et immédiateté l'architecture, les risques, les obligations réglementaires et les mécanismes de contrôle du PRD sans devoir parcourir d'emblée l'intégralité du corpus normatif. Elle rassemble les 5 schémas directeurs du Sommaire exécutif global (SCH-00-01 à SCH-00-05), les 131 schémas rattachés aux 36 chapitres (CH-01 à CH-36) et les 3 schémas transversaux des Annexes B–D (SCH-AB-01, SCH-AC-01, SCH-AD-01) — soit 139 schémas au total —, couvrant 100 % des 71 familles thématiques et établissant une table de correspondance bidirectionnelle avec les 319 figures sources vérifiées sur disque dans Sources/Tomes/ (253 PlantUML/SVG et 66 Mermaid/PNG).",
+    "targeted_content_description": "Catalogue intégral généré depuis Sources/Cartographie/donnees/prd_schemas_shards/schemas-*.json et Sources/Cartographie/donnees/inventaire-319-diagrammes.json exposant : (1) le tableau maître des 5 schémas transversaux SCH-00-01 à SCH-00-05, des 131 schémas CH-01 à CH-36 et des 3 schémas d'annexes SCH-AB-01, SCH-AC-01 et SCH-AD-01 (identifiant, chapitre ou annexe, domaine, familles couvertes, archétype visuel, notation recommandée, publics cibles, statut de réutilisation, point d'insertion et fiche pédagogique complète : objectif pédagogique, angle de vulgarisation, maquette par zones, flux numérotés ① ② ③, légende chromatique et synthèse doctrinale), et (2) la matrice d'inventaire et de concordance complète des 319 diagrammes d'origine des Tomes 1 à 8 assortie de liens vérifiés vers les sources .puml/.mmd et les rendus .svg/.png.",
     "editorial_guidelines": [
       "Chaque schéma de vulgarisation vise une saisie rigoureuse et immédiate de l'intention architecturale et des mécanismes de contrôle par un lecteur non technicien.",
       "Tout acronyme ou terme technique spécialisé (MCP, A2A, OBO, OPA, Saga, CPO, Wilson, PRR-75) est systématiquement accompagné de l'explicitation de son rôle métier.",
       "Toute fiche de schéma est rédigée en français canadien (`fr-CA`) technique, précis, professionnel, soutenu et fluide, sur un ton strictement neutre de calibre universitaire : proscription du pronom « on », des accroches chronométriques promotionnelles, des métaphores familières et des abréviations relâchées hors code, avec emploi exclusif de l'appellation normée « Systèmes d'agentivité » et des symboles typographiques Unicode (`→`, `↔`, `≤`, `≥`, `–`).",
       "Les synthèses finales de schémas sont formulées sans préfixe injonctif redondant sous l'intitulé « Synthèse doctrinale », en préservant intégralement les chiffres, seuils, identifiants et marqueurs normatifs RFC 2119 du référentiel.",
-      "Chaque chapitre CH-01 à CH-36 reçoit de 1 à 4 schémas dont l'union des champs families_covered couvre 100 % des FAM_* du chapitre.",
+      "Chaque chapitre CH-01 à CH-36 reçoit de 1 à 6 schémas dont l'union des champs families_covered couvre 100 % des FAM_* du chapitre, complétés par les schémas d'annexes SCH-AB-01, SCH-AC-01 et SCH-AD-01.",
       "Tout schéma classé en réemploi direct ou en adaptation vulgarisée référence au moins une figure existante vérifiée dans inventaire-319-diagrammes.json, sans aucun lien orphelin."
     ],
     "coverage_targets": {
-      "global_schemas": 4,
+      "global_schemas": 5,
+      "annex_schemas": 3,
       "chapters_covered": 36,
       "families_coverage_ratio": 1.0,
       "total_tome_figures": 319,
@@ -528,5 +600,220 @@
       "Publics cibles et statut de réutilisation",
       "Figures Tomes 1–8 associées (`.puml`/`.mmd` et rendus)"
     ]
-  }
+  },
+  "annex_schemas": [
+    {
+      "schema_id": "SCH-AB-01",
+      "chapter_number": 0,
+      "annex_id": "annexe-b",
+      "domain_id": "ANNEXE",
+      "subdomain_node_id": "ANNEXE",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "architecture-collection-tome-1-preambule",
+        "exigences-cre-ia-305",
+        "bsif-e-23",
+        "protocole-mcp"
+      ],
+      "title": "Matrice thermique 12×12 des 616 interrelations et quinze nœuds carrefours",
+      "insertion_point": "Annexe B §3 — après le tableau des quinze premiers corridors D×D",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette synthèse visuelle générée depuis le registre canonique MindMap condense la matrice 12×12 des 616 interrelations typées entre domaines, la répartition exacte des huit natures de liens et le classement des quinze thèmes carrefours à plus fort degré relationnel afin de hiérarchiser les chantiers transversaux.",
+      "vulgarization_angle": "Transformer 25 lignes de carrefours et 96 comptages textuels de l'Annexe B en une carte thermique 12×12 assortie d'un histogramme proportionnel des huit types d'arêtes et du palmarès des 15 nœuds pivots.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Matrice thermique D01–D12 × D01–D12 (616 liaisons)",
+            "content": "Grille carrée colorée par intensité de couplage entre domaine source et domaine cible, mettant en évidence les pôles D09 (droit), D02 (contrôle), D03 (protocoles) et D10 (déploiement)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Ventilation exacte des huit types d'interrelations",
+            "content": "Barres proportionnelles calculées sur le SSOT : opérationnalisation (129), dépendance technique (94), encadrement normatif (82), atténuation de risque (82), tension d'arbitrage (67), synergie (59), projection temporelle (52) et concordance (51)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Top 15 des nœuds carrefours par degré relationnel",
+            "content": "Classement horizontal allant de BSIF E-23 et MCP jusqu'à OWASP ASI et OBO/DPoP pour objectiver les points de convergence inter-chapitres."
+          }
+        ],
+        "numbered_flows": [
+          "① La lecture en ligne révèle les domaines émetteurs d'exigences normatives et structurelles (D09, D03, D02).",
+          "② La lecture en colonne expose les domaines récepteurs critiques (D10, D02, D11) nécessitant une gouvernance coordonnée.",
+          "③ Le palmarès des 15 carrefours relie directement la densité topologique aux priorités d'arbitrage architectural."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu profond (#1E3A8A)",
+            "meaning": "Couplages forts ≥ 9 liaisons dans la matrice D×D"
+          },
+          {
+            "color_token": "Turquoise (#0F766E)",
+            "meaning": "Relations d'opérationnalisation et de synergie technique"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Encadrement normatif, atténuation de risque et tensions d'arbitrage"
+          }
+        ],
+        "key_takeaway_box": "Quarante pour cent des corridors de haut volume gravitent autour de quatre pôles : droit prudentiel (D09), exosquelette de contrôle (D02), protocoles (D03) et blueprints (D10)."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
+    },
+    {
+      "schema_id": "SCH-AC-01",
+      "chapter_number": 0,
+      "annex_id": "annexe-c",
+      "domain_id": "ANNEXE",
+      "subdomain_node_id": "ANNEXE",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "referentiel-annexes-protocoles-chronologie",
+        "trajectoires-adaptatives-dapp",
+        "concordance-inter-tomes-div02"
+      ],
+      "title": "Frise maîtresse des 77 jalons 2018–2035 en cinq couloirs juridictionnels",
+      "insertion_point": "Annexe C §5 — avant le tableau des 11 repères déjà effectifs pré-gel",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS"
+      ],
+      "visual_archetype": "Frise chronologique et jalons",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette frise temporelle unifiée situe les 77 ancres chronologiques de l'Annexe C de 2018 à 2035 à travers cinq couloirs juridictionnels et normatifs, en traçant une césure nette au gel documentaire du 2 décembre 2026 entre les 11 jalons déjà entrés en vigueur et les 66 échéances futures.",
+      "vulgarization_angle": "Remplacer l'énumération séquentielle des jalons de 16 juridictions et standards par une ligne de temps synchronisée en cinq couloirs parallèles distinguant visuellement acquis exécutoires, cibles programmées et horizons projetés.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Mur de gel documentaire (2 décembre 2026) et 11 acquis pré-gel",
+            "content": "Zone amont consolidant les 11 repères déjà en vigueur avant gel : Loi 25 art. 12.1, DORA UE, Lynx ISO 20022, DORS/2026-133, EU AI Act art. 50, A2A v1.0.1 et MCP 2026-07-28."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Mur d'échéances programmées 2027–2029 en 5 couloirs",
+            "content": "Alignment visuel de Québec / Canada fédéral (BSIF E-23 le 1er mai 2027, CAD26), Union européenne (Omnibus 2026/1744 au 2 décembre 2027, Annexe I au 2 août 2028) et PKI / Standards (CA/Browser SC-081v3 100 j puis 47 j, SEP-3398, SEP-2596)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Bascule post-quantique G7 et trajectoire 2030–2035",
+            "content": "Projection des échéances PQC FIPS 204/205 et de l'ouverture conditionnelle des paliers DAPP P1–P3 jusqu'à 2035 sous distinction PROGRAMMÉ, PROJETÉ et SPÉCULATIF."
+          }
+        ],
+        "numbered_flows": [
+          "① Le seuil vertical du 2 décembre 2026 sépare mécaniquement le droit effectif des jalons post-gel.",
+          "② La convergence de mars à décembre 2027 entre TLS 100 j, SEP-3398, BSIF E-23, SEP-2596 et Omnibus UE crée le goulot d'exécution prioritaire.",
+          "③ L'horizon 2029–2035 programme les renouvellements PKI à 47 j et la transition cryptographique post-quantique G7."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "11 jalons effectifs ou acquis avant le 2 décembre 2026"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Échéances réglementaires et protocolaires programmées 2027–2029"
+          },
+          {
+            "color_token": "Indigo (#4338CA)",
+            "meaning": "Jalons projetés à moyen et long terme 2029–2035 (PQC, DAPP)"
+          }
+        ],
+        "key_takeaway_box": "Entre mars et décembre 2027 convergent cinq butoirs incompressibles — CA/Browser, SEP-3398, BSIF E-23, SEP-2596 et EU AI Act — rendant la convergence architecturale urgente dès 2026."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 46.2",
+          "title": "Les jalons externes à surveiller et les trois statuts prospectifs du § 49.0.1 : PROGRAMMÉ, PROJETÉ (dont les cibles simplement « annoncées » sont un sous-cas sans force opposable) et SPÉCULATIF.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-46.2 - Les jalons externes à surveiller et les trois statuts.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-46.2.svg",
+          "role_note": "Distinction stricte entre les statuts prospectifs PROGRAMMÉ, PROJETÉ et SPÉCULATIF adoptée sur la frise."
+        },
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 49.2",
+          "title": "La grappe d’échéances 2027-2035 : la concentration d’engagements datés en 2027-2028 (statut PROGRAMMÉ, avec le rail RTR en PROGRAMMÉ conditionnel) et les jalons visés d’identité et de post-quantique au-delà (statut PROJETÉ au gel).",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-49.2 - La grappe d'échéances 2027-2035 - la concentration d'engagements.mmd",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-49.2.png",
+          "role_note": "Visualisation de la grappe d'échéances réglementaires et post-quantiques concentrées entre 2027 et 2035."
+        }
+      ]
+    },
+    {
+      "schema_id": "SCH-AD-01",
+      "chapter_number": 0,
+      "annex_id": "annexe-d",
+      "domain_id": "ANNEXE",
+      "subdomain_node_id": "ANNEXE",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "exigences-cre-ia-305",
+        "homologation-prr-75-points",
+        "barriere-logicielle-g0-execute-g0",
+        "cinq-blocs-sbb-tableau-12"
+      ],
+      "title": "Ventilation des 305 exigences CRE-IA, 24 portes bloquantes PRR et 95 liaisons G0",
+      "insertion_point": "Annexe D §7 — après le tableau récapitulatif des cinq blocs critiques 5 SBB",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette planche quantitative rend lisible l'anatomie exacte du référentiel d'homologation : la distribution des 305 exigences CRE-IA v1.2 à travers leurs seize préfixes fonctionnels, la concentration des 24 portes bloquantes de PRR-75 sur cinq volets et les 95 liaisons vérifiées mécaniquement dès la barrière G0.",
+      "vulgarization_angle": "Compléter le tableau dense de l'Annexe D par trois graphiques proportionnels montrant où pèsent réellement les 305 règles, les 24 verrous éliminatoires de mise en production et les 95 contrôles automatisés de la trousse.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Distribution des 305 exigences CRE-IA v1.2 en 16 préfixes",
+            "content": "Barres horizontales classant ORC (30), CON (30), SEC (28), ARC (25), INT (23), AUT (23), MCP (22), IAM (21), GOV (20) jusqu'à EVA (6)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Anatomie des 24 portes bloquantes PRR-75",
+            "content": "Répartition exacte des critères éliminatoires : Sécurité (8), Gouvernance (7), Résilience (5), Observabilité (2) et FinOps (2)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Couverture exécutable G0 : 95 liaisons vérifiées en CI/CD",
+            "content": "Synthèse des 40 critères C01–C40, 24 portes PRR, 24 exigences liées, 5 SBB du Tableau 12 du Tome 2, CAP-048 et gabarit 2027-B001."
+          }
+        ],
+        "numbered_flows": [
+          "① L'orchestration, le confinement, la sécurité et l'architecture concentrent à eux seuls près de la moitié des 305 exigences.",
+          "② Sur les 75 points PRR, 24 verrous non négociables (dont 15 en Sécurité et Gouvernance) bloquent toute mise en production.",
+          "③ Les 95 mappages G0 traduisent ces prescriptions documentaires en 83 tests pytest et 45 assertions OPA vérifiables à exit 0."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Répartition quantitative des 16 familles d'exigences CRE-IA v1.2"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "24 portes bloquantes PRR-75 non contournables"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "95 liaisons automatisées dans la barrière logicielle G0"
+          }
+        ],
+        "key_takeaway_box": "Sur 305 règles normatives et 75 points PRR, 24 portes bloquantes et 95 liaisons exécutées dès G0 transforment la conformité en verdict binaire reproductible."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
+    }
+  ]
 }

@@ -1,0 +1,60 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+.indigo { BackgroundColor #EEF2FF; LineColor #4338CA; LineThickness 2.2; FontColor #312E81; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+top to bottom direction
+title Primitives A2A v1.0.1 (AgentCard, Task, Message/Part, Artifact) et machine à 9 états
+
+package "Z1 — Découverte et validation cryptographique (G0)" {
+  rectangle "① Carte d'agent (AgentCard)\nJWS ES256 sur JCS RFC 8785\njku/kid épinglés (EXIG-A2A-02)" as N1 <<det>>
+  rectangle "Adaptateur & gardes A2A\nAgentCardAdapter (v1.1.0-rc → 1.0)\nAnti-SSRF webhook + contrôle CARD-SIGN" as N2 <<red>>
+  N1 -right-> N2 : Vérification bloquante
+}
+
+package "Z2 — Unité d'échange typée et modes de liaison" {
+  rectangle "② Tâche (Task) & contextId\nCorréle les échanges asynchrones\nsur JSON-RPC, gRPC ou HTTP+JSON" as N3 <<blue>>
+  rectangle "③ Message & parties (Part)\nParties typées : text, raw,\ndata (JSON), url (URI vérifiée)" as N4 <<teal>>
+  rectangle "Modes d'interaction\nSynchrone · SSE continu\nou webhook push authentifié" as N5 <<indigo>>
+  N3 -right-> N4
+  N4 -right-> N5
+}
+
+package "Z3 — Machine complète à 9 états TaskState et livrables" {
+  rectangle "Entrée & exécution\nTASK_STATE_SUBMITTED →\nTASK_STATE_WORKING\n(+ TASK_STATE_UNSPECIFIED)" as N6 <<det>>
+  rectangle "Suspensions bornées\nINPUT_REQUIRED ou\nAUTH_REQUIRED\n(reprise multi-tours)" as N7 <<amber>>
+  rectangle "Quatre états terminaux irrévocables\nCOMPLETED · FAILED · CANCELED ·\nREJECTED (zéro nouveau message)" as N8 <<red>>
+  rectangle "④ Livrable (Artifact)\nObjet immuable produit en sortie\ncomposé de Part typées vérifiées" as N9 <<green>>
+  N6 -right-> N7 : Précision / mandat
+  N7 -left-> N6 : Reprise authentifiée
+  N6 --> N8 : Verdict irrévocable
+  N8 -right-> N9 : Production certifiée
+}
+
+N2 --> N3 : Admission vers pair opaque
+N4 --> N6 : Soumission typée
+
+legend bottom
+  **Bleu ardoise / Indigo** : Carte signée, contexte Task/contextId et profils de liaison JSON-RPC / gRPC / HTTP+JSON
+  **Vert émeraude / Turquoise** : Parties typées (Part) et livrables immuables (Artifact) produits en sortie
+  **Ambre / Rouge brique** : Suspensions INPUT/AUTH_REQUIRED, gardes anti-SSRF et états terminaux irrévocables
+end legend
+@enduml

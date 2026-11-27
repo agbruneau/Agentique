@@ -38,7 +38,7 @@ Cette centralisation porte toutefois un risque de concentration et de point de d
 
 Le passage du pilote au parc industriel s'opère simultanément sur trois plans d'intégration : l'intégration applicative, la gouvernance des données et la collaboration humain-agent inter-équipes. Pour éviter que l'infrastructure partagée ne devienne un goulot, l'organisation adopte une gouvernance fédérée en étoile (*hub-and-spoke*) animée par un Centre d'excellence (`CoE`) adossé aux niveaux d'interopérabilité conceptuelle (`LCIM`), qui veille notamment à maîtriser la contention des ressources d'inférence GPU lorsque plusieurs domaines sollicitent simultanément les mêmes modèles.
 
-Techniquement, ce modèle organisationnel s'incarne dans une **Internal Agentic Platform (`IAP`)** — déclinaison agentique de la plateforme minimale viable (*Thinnest Viable Platform*) — liée aux contrôles `G0` de validation des blueprints (`C32`, `C33`, `C36`) et d'`ADR-2027-B001` (`C35`) à l'Annexe D. Comme l'illustre la *Figure 94*, l'`IAP` offre aux équipes métiers des **Golden Paths** exécutables en libre-service combinant, selon la pile de référence retenue au traité (`dossier source Tome 6`, section 13.1), un portail développeur (`Backstage`), un orchestrateur déclaratif de capacités (`Kratix Promises`) et un plan de contrôle d'infrastructure (`Crossplane`). Tout agent amorcé sur un *Golden Path* reçoit automatiquement une identité non humaine sans secret statique, une instrumentation `OpenTelemetry`, le routage par l'`AI Gateway` et la passerelle `MCP`, ainsi qu'une suite `EvalOps` initiale. La voie conforme devient ainsi plus rapide que le contournement parallèle (*Shadow AI*).
+Techniquement, ce modèle organisationnel s'incarne dans une **Internal Agentic Platform (`IAP`)** — déclinaison agentique de la plateforme minimale viable (*Thinnest Viable Platform*) — liée aux contrôles `G0` de validation des blueprints (`C32`, `C33`, `C36`) et d'`ADR-2027-B001` (`C35`) à l'Annexe D. Comme l'illustre la *Figure 109*, l'`IAP` offre aux équipes métiers des **Golden Paths** exécutables en libre-service combinant, selon la pile de référence retenue au traité (`dossier source Tome 6`, section 13.1), un portail développeur (`Backstage`), un orchestrateur déclaratif de capacités (`Kratix Promises`) et un plan de contrôle d'infrastructure (`Crossplane`). Tout agent amorcé sur un *Golden Path* reçoit automatiquement une identité non humaine sans secret statique, une instrumentation `OpenTelemetry`, le routage par l'`AI Gateway` et la passerelle `MCP`, ainsi qu'une suite `EvalOps` initiale. La voie conforme devient ainsi plus rapide que le contournement parallèle (*Shadow AI*).
 
 La chaîne de livraison repose sur le **`GitOps` cognitif**, qui transpose au traité (`dossier source Tome 6`, section 13.3) les principes d'`OpenGitOps v1.0.0` aux systèmes non déterministes. Elle co-versionne dans un dépôt Git unique cinq artefacts indissociables : le code déterministe `80/20`, les invites et hyperparamètres (verrouillés par revue et tests différentiels sur les classes critiques), les contrats `OASF` et `MCP`, les politiques `OPA`/`Rego` [3] et les bancs `EvalOps`. Les descripteurs `server.json` sont validés contre le schéma `server.schema.json` du registre, tandis que les schémas de contrats du harnais sont vérifiés sous `JSON Schema Draft 2020-12` [5] afin d'exiger typage et champs stricts face aux dérives silencieuses. Ce couplage résout le dilemme entre l'édition dynamique d'invites en interface web (utile sur les assistants à faible risque) et la traçabilité réglementaire stricte : en production critique (`R3–R4`), toute modification d'invite ouvre une demande d'intégration validée avant fusion et épingle une révision immuable.
 
@@ -46,12 +46,18 @@ Dans la pile de référence du traité (`dossier source Tome 6`, sections 13.3�
 
 ![Chaîne d'industrialisation IAP et fabrique d'agents : Golden Paths GitOps cognitif, barrière d'admission et asymétrie des 10 suites SaaS](../../schemas/rendus/SCH-30-01.svg)
 
-*Figure 94 — SCH-30-01 : Articulation entre les `Golden Paths` `IAP` du Centre d'excellence (`Z1`), la chaîne `GitOps` cognitif sous `SLSA v1.2` et boucle de réémission sous surveillance `SPOF` (`Z2`), et l'encadrement des dix suites `SaaS` tierces hors du plein droit (`Z3`).*
+*Figure 109 — SCH-30-01 : Articulation entre les `Golden Paths` `IAP` du Centre d'excellence (`Z1`), la chaîne `GitOps` cognitif sous `SLSA v1.2` et boucle de réémission sous surveillance `SPOF` (`Z2`), et l'encadrement des dix suites `SaaS` tierces hors du plein droit (`Z3`).*
 
 > **Trois invariants exécutables — Chapitre 30**
 > 1. **Noyau possédé face aux suites SaaS et GitOps quintette (`C32`, `C33`, `C35`, `C36`)** — Maintenir le registre, les politiques `OPA` et la facturation dans le noyau possédé (`4` statuts pour les agents tiers, jamais de plein droit), et co-versionner sous `OpenGitOps v1.0.0` et `SLSA v1.2` code, invites, schémas, politiques et banc `EvalOps`.
 > 2. **Rejet bloquant ARB par défaut (`EXIG-ORC-29`, `AP-01` à `AP-12`, `Tableau 44.2` du Tome 1)** — Refuser par défaut, sauf dérogation formelle documentée (`EXIG-ORC-29`), toute architecture présentant l'un des `10` motifs d'orchestration d'`EXIG-ORC-29` ou des `12` codes `AP-01` à `AP-12` (multi-agents injustifié, état mutable partagé, *Prompt-as-Policy*, *Tool Sprawl*, absence d'`EvalOps`), le mappage `Swagger-to-MCP 1:1`, une tâche purement déterministe ou un défaut `ArchiMate` confondant agent et acteur humain.
 > 3. **Séquencement AAGMM à trois portes (`J90`, `J180`, `J360`)** — Subordonner l'ouverture de la fédération `A2A` (`ARB 3`) à la clôture préalable de l'inventaire et de la passerelle (`ARB 1` à `J90`) puis des identités `NHI` et du banc `EvalOps` (`ARB 2` à `J180`), en plafonnant la maturité globale sur la dimension la plus faible.
+
+La *Figure 110* complète la chaîne technique par la topologie organisationnelle *Team Topologies*.
+
+![Topologie Team Topologies et ArchiMate reliant l'IAP aux trois blueprints sectoriels](../../schemas/rendus/SCH-30-04.svg)
+
+*Figure 110 — SCH-30-04 : Organisation *Team Topologies* et `ArchiMate` reliant Plateforme `IAP`, `CoE`/`ARB` et équipes `bp1`–`bp3`.*
 
 ## 30.2 Catalogue bloquant des anti-patrons agentiques (EXIG-ORC-29, AP-01–AP-12)
 
@@ -91,11 +97,11 @@ Parallèlement, le filtrage `ARB` lève trois homonymies sources de confusions c
 2. **`Fabrique`** sépare strictement la fabrique d'agents (`dossier source Tome 1, § 41`, usine logicielle à gabarits) de la fabrique d'identité (`dossier source Tome 1, § 43.1`, autorité d'émission cryptographique) ainsi que du patron logiciel *factory*.
 3. **`ACP`** impose de distinguer le défunt protocole *Agent Communication Protocol* (fusionné dans `A2A`) du plan de contrôle agentique d'un consortium d'institutions financières et de télécommunications (dont un acteur canadien) et de l'*Agentic Commerce Protocol*.
 
-Sur le plan documentaire, la veille du présent chapitre consigne également en statut bloqué les portails `gartner.com`, `mckinsey.com` et `genai.owasp.org` (erreurs `HTTP 403` ou expiration réseau sans contournement), en compensant le référentiel de sécurité par l'édition complète `CC BY-SA 4.0` archivée en texte intégral [1] et en attribuant l'estimation d'abandon de `40 %` des projets à sa reprise secondaire vérifiée [7]. La *Figure 95* formalise cette revue `ARB` comme un entonnoir séquentiel à trois filtres de blocage par défaut (sous réserve des dérogations formelles prévues par `EXIG-ORC-29`).
+Sur le plan documentaire, la veille du présent chapitre consigne également en statut bloqué les portails `gartner.com`, `mckinsey.com` et `genai.owasp.org` (erreurs `HTTP 403` ou expiration réseau sans contournement), en compensant le référentiel de sécurité par l'édition complète `CC BY-SA 4.0` archivée en texte intégral [1] et en attribuant l'estimation d'abandon de `40 %` des projets à sa reprise secondaire vérifiée [7]. La *Figure 111* formalise cette revue `ARB` comme un entonnoir séquentiel à trois filtres de blocage par défaut (sous réserve des dérogations formelles prévues par `EXIG-ORC-29`).
 
 ![Verrou d'architecture : les 10 motifs d'orchestration (EXIG-ORC-29), 12 anti-patrons bloquants (AP-01..AP-12) et 9 défauts ArchiMate du Tableau 44.2 du Tome 1 face aux patrons sûrs](../../schemas/rendus/SCH-30-02.png)
 
-*Figure 95 — SCH-30-02 : Pipeline de rejet bloquant `ARB` en trois filtres séquentiels couvrant les exclusions amont (`Z1`), les `10` motifs d'orchestration `EXIG-ORC-29` intégrés aux `12` codes `AP-01` à `AP-12` (`Z2`), et les neuf défauts `ArchiMate` du `Tableau 44.2` (Tome 1) ainsi que les homonymies (`Z3`).*
+*Figure 111 — SCH-30-02 : Pipeline de rejet bloquant `ARB` en trois filtres séquentiels couvrant les exclusions amont (`Z1`), les `10` motifs d'orchestration `EXIG-ORC-29` intégrés aux `12` codes `AP-01` à `AP-12` (`Z2`), et les neuf défauts `ArchiMate` du `Tableau 44.2` (Tome 1) ainsi que les homonymies (`Z3`).*
 
 ## 30.3 Modèle de maturité AAGMM (M1–M5) et feuille de route à 360 jours
 
@@ -121,10 +127,10 @@ Pour prévenir toute fuite en avant — telle que l'ouverture de maillages `A2A`
 
 Cette discipline trimestrielle garantit que les échanges multi-agents n'ouvrent qu'après maîtrise de l'inventaire, des passerelles, des identités non humaines et de l'évaluation continue.
 
-La *Figure 96* récapitule cette trajectoire à `90`, `180` et `360` jours reliant `AAGMM`, sortie *Strangler Fig* et maillon le plus faible.
+La *Figure 112* récapitule cette trajectoire à `90`, `180` et `360` jours reliant `AAGMM`, sortie *Strangler Fig* et maillon le plus faible.
 
 ![Échelle de maturité AAGMM (M1 → M5) et feuille de route à 90, 180 et 360 jours sous portes ARB 1–3 et sortie Strangler Fig du RPA](../../schemas/rendus/SCH-30-03.svg)
 
-*Figure 96 — SCH-30-03 : Trajectoire d'industrialisation sur trois horizons (`J0–J90` sous `ARB 1` en `Z1`, `J90–J180` sous `ARB 2` au palier `M3` en `Z2`, `J180–J360` sous `ARB 3` vers `M4–M5` avec retrait `Strangler Fig` du `RPA` en `Z3`) et gains issus des `750` simulations rapportées par Acharya.*
+*Figure 112 — SCH-30-03 : Trajectoire d'industrialisation sur trois horizons (`J0–J90` sous `ARB 1` en `Z1`, `J90–J180` sous `ARB 2` au palier `M3` en `Z2`, `J180–J360` sous `ARB 3` vers `M4–M5` avec retrait `Strangler Fig` du `RPA` en `Z3`) et gains issus des `750` simulations rapportées par Acharya.*
 
 Avec la clôture de la Partie X (`D10`, ← Chapitre 29), l'entreprise dispose de profils sectoriels conformes, de trois blueprints de référence et d'une usine `IAP` encadrée contre les anti-patrons. La **Partie XI (`D11`)** inscrit cette capacité dans le temps long `2028–2035` via les trajectoires adaptatives `DAPP`, la gouvernance duale `AE ↔ AS` et la préservation du capital humain (→ Partie XI, Chapitre 31).

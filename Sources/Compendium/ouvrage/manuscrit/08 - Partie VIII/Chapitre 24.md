@@ -36,7 +36,7 @@ Pour empêcher toute dérive nocturne ou attaque par épuisement de portefeuille
 
 Sur les `20 %` de charge cognitive restants après déport déterministe (`80/20`, ← Chapitre 04), le plan d'inférence derrière alias logiques (`CAP-029`, `DEC-006`, `EXIG-ARC-08`, `EXIG-ARC-09`, `EXIG-FIN-06` à `EXIG-FIN-08`) empile quatre leviers de sobriété vérifiés :
 
-- **Routage frugal à trois paliers qualifié en `E2`** : chaque étape est adressée via un alias logique (jamais un identifiant de modèle codé en dur) vers le plus petit modèle homologué atteignant les seuils de constance `pass^k` (`EXIG-FIN-06`). Comme l'argumentent Belcak et collaborateurs (`arXiv:2506.02153`, juin 2025), des petits modèles spécialisés (`SLM`) suffisent pour la majorité des sous-tâches agentiques répétitives et bornées [5]. Leurs trois études de cas estiment `40 %` à `70 %` de requêtes transférables (`40 %` sur *Open Operator*, `60 %` sur *MetaGPT*, `70 %` sur *Cradle*), avec une économie de calcul, de latence et d'énergie de `10×` à `30×` pour `7` milliards de paramètres face à `70–175` milliards [5]. Les taux de `73 %` à `86 %` du cas synthétique Boréal (Figure 76) restent des cibles illustratives hors preuve empirique, réservant les modèles frontières aux arbitrages complexes. Sur déclenchement des signaux d'échelle (`SIG-015`, `SIG-016`), la distillation `Multi-LoRA` sous porte `pass^5` (← Chapitre 23) renforce cette part locale (`CAP-034`).
+- **Routage frugal à trois paliers qualifié en `E2`** : chaque étape est adressée via un alias logique (jamais un identifiant de modèle codé en dur) vers le plus petit modèle homologué atteignant les seuils de constance `pass^k` (`EXIG-FIN-06`). Comme l'argumentent Belcak et collaborateurs (`arXiv:2506.02153`, juin 2025), des petits modèles spécialisés (`SLM`) suffisent pour la majorité des sous-tâches agentiques répétitives et bornées [5]. Leurs trois études de cas estiment `40 %` à `70 %` de requêtes transférables (`40 %` sur *Open Operator*, `60 %` sur *MetaGPT*, `70 %` sur *Cradle*), avec une économie de calcul, de latence et d'énergie de `10×` à `30×` pour `7` milliards de paramètres face à `70–175` milliards [5]. Les taux de `73 %` à `86 %` du cas synthétique Boréal (Figure 87) restent des cibles illustratives hors preuve empirique, réservant les modèles frontières aux arbitrages complexes. Sur déclenchement des signaux d'échelle (`SIG-015`, `SIG-016`), la distillation `Multi-LoRA` sous porte `pass^5` (← Chapitre 23) renforce cette part locale (`CAP-034`).
 - **Ordonnancement par affinité `KV-cache` et préfixe fixe** : les invites sont assemblées du plus stable au plus variable (outils `MCP` triés, instructions système, documents récurrents, requête) pour maximiser le réemploi clé-valeur (jusqu'à `~90 %` d'abattement selon les grilles fournisseurs du repérage antérieur, soit `1/10` à `1/40` du tarif d'entrée, mesuré par `gen_ai.usage.cache_read.input_tokens` [2, 3]). L'ordonnanceur dirige les requêtes partageant un préfixe vers la réplique chaude correspondante (`TTFT` réduit), et toute baisse de plus de `20` points en cache sur `7` jours ouvre une analyse (`EXIG-FIN-07`).
 - **Cache sémantique vectoriel borné** : pour les requêtes consultatives homogènes, une recherche par similarité cosinus sous contrôle d'accès `ACL` et durée de vie courte évite l'appel au modèle lors de répétitions exactes ou quasi exactes (sans taux d'économie préjugé sans mesure locale).
 - **Traitement par lots asynchrones et arbitrage capacité** : les charges différables jusqu'à `24` heures basculent vers les lots asynchrones (`-50 %` selon les grilles fournisseurs du repérage antérieur, `EXIG-FIN-08`). Pour les charges `24/7`, un socle en unités de débit provisionnées (`PTU`) garantit la latence nominale tout en débordant (*spillover*) vers le paiement à l'usage (`PAYG`) lors des pointes.
@@ -49,7 +49,7 @@ Ensuite, la gouvernance applique une trajectoire de responsabilisation en deux t
 
 ![Du prix trompeur du jeton au Cost-per-Outcome (CPO FOCUS v1.4) : cascade frugale, disjoncteur 80 % / 100 % et carbone BSIF B-15](../../schemas/rendus/SCH-24-01.svg)
 
-*Figure 76 — SCH-24-01 : Comparatif opposant l'inflation volumétrique du tarif facial au jeton (Z1, scénario illustratif Boréal à `41 000 $ CA`) à l'architecture frugale par alias logiques, cache KV et cascade SLM 40–70 % (cible Boréal 73–86 %, Z2), pilotée en Decimal exact sur FOCUS v1.4 carbone avec disjoncteurs 70 % / 80 % / 100 % hors Saga et déclassement après deux trimestres déficitaires (Z3).*
+*Figure 87 — SCH-24-01 : Comparatif opposant l'inflation volumétrique du tarif facial au jeton (Z1, scénario illustratif Boréal à `41 000 $ CA`) à l'architecture frugale par alias logiques, cache KV et cascade SLM 40–70 % (cible Boréal 73–86 %, Z2), pilotée en Decimal exact sur FOCUS v1.4 carbone avec disjoncteurs 70 % / 80 % / 100 % hors Saga et déclassement après deux trimestres déficitaires (Z3).*
 
 | Levier FinOps / Carbone | Mécanisme et contrat technique | Gain ou seuil vérifié | Règle d'arbitrage et exigence |
 |---|---|---|---|
@@ -78,7 +78,7 @@ Toute modification soumise par requête de fusion traverse obligatoirement les p
 
 ![GitOps agentique à trois objets indissociables (agent + outil + politique) : déployer et revenir en arrière sans altérer l'existant](../../schemas/rendus/SCH-24-02.svg)
 
-*Figure 77 — SCH-24-02 : Chaîne GitOps agentique réunissant le triplet indissociable agent + outil + politique (Z1), les portes CI E1–E2 et la promotion fantôme → canari avec épinglage Temporal (Z2), et le retour arrière atomique sur seuil de réévaluation (Z3).*
+*Figure 88 — SCH-24-02 : Chaîne GitOps agentique réunissant le triplet indissociable agent + outil + politique (Z1), les portes CI E1–E2 et la promotion fantôme → canari avec épinglage Temporal (Z2), et le retour arrière atomique sur seuil de réévaluation (Z3).*
 
 Reste à relier les capteurs techniques quotidiens d'exploitation aux exigences de gouvernance des dirigeants et des organismes de réglementation canadiens et québécois (`BSIF E-23` prenant effet le `1er mai 2027` et repère attendu côté `AMF` sous réserve documentaire `statut F`, → Chapitre 25). Pour combler le fossé entre métriques de bas niveau et gestion du risque de modèle, l'architecture instaure une **grille minimale AgentOps à quatre familles d'indicateurs** (construction d'auteur du Tome 1 § 40.2). Celle-ci inclut explicitement deux grandeurs d'attention humaine `HOTL` — le temps effectif d'examen avant approbation et le taux d'approbation sans modification — pour détecter l'acquiescement mécanique (taux de `~93 %` rapporté par un éditeur sur son agent de programmation hors socle `L+`, → Chapitre 33).
 
@@ -93,7 +93,7 @@ Une fois ces quatre manques instrumentés en propre, les capteurs `AgentOps` ali
 
 ![Tableau de bord du conseil : traduire la grille minimale AgentOps (4 familles) en KPI de risque de modèle BSIF E-23 et AMF](../../schemas/rendus/SCH-24-03.png)
 
-*Figure 78 — SCH-24-03 : Arbre de traduction reliant la grille minimale AgentOps à quatre familles (Z1) aux quatre lacunes d'instrumentation comblées par le noyau possédé (Z2, Tableau 24.2) pour alimenter les KPI prudentiels BSIF E-23 et AMF (Z3).*
+*Figure 89 — SCH-24-03 : Arbre de traduction reliant la grille minimale AgentOps à quatre familles (Z1) aux quatre lacunes d'instrumentation comblées par le noyau possédé (Z2, Tableau 24.2) pour alimenter les KPI prudentiels BSIF E-23 et AMF (Z3).*
 
 | Famille `AgentOps` | Grandeurs techniques mesurées | Manque comblé par le noyau possédé | KPI prudentiel `BSIF E-23` / `AMF` (`1er mai 2027`) |
 |---|---|---|---|
@@ -103,6 +103,12 @@ Une fois ces quatre manques instrumentés en propre, les capteurs `AgentOps` ali
 | **4. Économie unitaire et carbone** | `CPO` `Decimal` (`FOCUS v1.4`), cache `KV`, `x_energy_kwh`, `x_carbon_gco2e` [1, 4] | Rapprochement `gen_ai.usage.*` + `cost_center` ↔ factures `FOCUS` [1, 2, 3] | Revue de valeur (`EXIG-FIN-10`), plans de sortie `B-10` [6] et portée 3 `B-15` [4] |
 
 *Tableau 24.2 — Correspondance entre la grille minimale AgentOps à quatre familles et les indicateurs prudentiels BSIF E-23 / AMF.*
+
+La *Figure 90* rassemble sur une règle logarithmique ces dix ordres de grandeur temporels.
+
+![Échelle logarithmique unifiée des horloges SRE, coupe-circuits, rétentions et échéances PKI/PQC](../../schemas/rendus/SCH-24-04.svg)
+
+*Figure 90 — SCH-24-04 : Échelle logarithmique des horloges opérationnelles de `50 µs` (`PEP`) à `2035` (`PQC`).*
 
 ## 24.3 Synthèse architecturale, livrables et portes de contrôle
 

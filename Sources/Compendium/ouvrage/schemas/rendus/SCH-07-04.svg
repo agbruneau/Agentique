@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 868" width="1200" height="868">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="868" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-07-04 — Frise d'évolution MCP (2024–2027), cycle SEP-2596 et cadence SEP-3398</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Échelonnement de HTTP+SSE à MCP 2026-07-28 sans état · DISC-05 · Adaptation T1 Figure 7.3 · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="1160" height="268" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="1160" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · Chronologie normative MCP (novembre 2024 → juillet 2027) et bascule DISC-05</text>
+    <line x1="65" y1="230" x2="1135" y2="230" stroke="#1B4F72" stroke-width="3.2"/>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="142" width="1132" height="210" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <line x1="70" y1="246" x2="1130" y2="246" stroke="#1B4F72" stroke-width="3"/>
+      <circle cx="95" cy="246" r="8" fill="#B91C1C" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="95" y1="238" x2="95" y2="212" stroke="#B91C1C" stroke-width="1.4"/>
+      <rect x="33" y="152" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.3"/>
+      <text x="95" y="169" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#B91C1C">2024-11-05</text>
+      <text x="95" y="185" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">HTTP+SSE initial</text>
+      <text x="95" y="200" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">(GET + POST banni)</text>
+      <circle cx="240" cy="246" r="8" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="240" y1="254" x2="240" y2="280" stroke="#1D4ED8" stroke-width="1.4"/>
+      <rect x="178" y="280" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.3"/>
+      <text x="240" y="297" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#1D4ED8">2025-03-26</text>
+      <text x="240" y="313" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">Streamable HTTP</text>
+      <text x="240" y="328" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Remplace HTTP+SSE</text>
+      <circle cx="385" cy="246" r="8" fill="#D97706" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="385" y1="238" x2="385" y2="212" stroke="#D97706" stroke-width="1.4"/>
+      <rect x="323" y="152" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#D97706" stroke-width="1.3"/>
+      <text x="385" y="169" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#D97706">2025-06-18</text>
+      <text x="385" y="185" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">Retrait batching</text>
+      <text x="385" y="200" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Rupture → besoin SEP</text>
+      <circle cx="530" cy="246" r="8" fill="#B91C1C" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="530" y1="254" x2="530" y2="280" stroke="#B91C1C" stroke-width="1.4"/>
+      <rect x="468" y="280" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.3"/>
+      <text x="530" y="297" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#B91C1C">2025-11-25</text>
+      <text x="530" y="313" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">Témoin historique</text>
+      <text x="530" y="328" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Mcp-Session-Id (DISC-05)</text>
+      <circle cx="685" cy="246" r="8" fill="#047857" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="685" y1="238" x2="685" y2="212" stroke="#047857" stroke-width="1.4"/>
+      <rect x="623" y="152" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#047857" stroke-width="1.3"/>
+      <text x="685" y="169" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#047857">2026-07-28</text>
+      <text x="685" y="185" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">MCP ÉPINGLÉ</text>
+      <text x="685" y="200" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Sans état · EXIG-MCP-01</text>
+      <circle cx="830" cy="246" r="8" fill="#4338CA" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="830" y1="254" x2="830" y2="280" stroke="#4338CA" stroke-width="1.4"/>
+      <rect x="768" y="280" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#4338CA" stroke-width="1.3"/>
+      <text x="830" y="297" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#4338CA">2026-10 / 11</text>
+      <text x="830" y="313" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">SEP-3398 &amp; SEP-2596</text>
+      <text x="830" y="328" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Finalisation gouvernance</text>
+      <circle cx="975" cy="246" r="8" fill="#D97706" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="975" y1="238" x2="975" y2="212" stroke="#D97706" stroke-width="1.4"/>
+      <rect x="913" y="152" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#D97706" stroke-width="1.3"/>
+      <text x="975" y="169" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#D97706">2027-03-30</text>
+      <text x="975" y="185" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">Cadence SEP-3398</text>
+      <text x="975" y="200" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Chevauchement 2 mois</text>
+      <circle cx="1105" cy="246" r="8" fill="#B91C1C" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="1105" y1="254" x2="1105" y2="280" stroke="#B91C1C" stroke-width="1.4"/>
+      <rect x="1043" y="280" width="124" height="58" rx="6" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.3"/>
+      <text x="1105" y="297" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#B91C1C">2027-07-28</text>
+      <text x="1105" y="313" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#0F2942">BUTOIR MCP-22</text>
+      <text x="1105" y="328" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">Fin 12 mois SEP-2596</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="20" y="378" width="590" height="212" rx="10" fill="#F8FAFC" stroke="#D97706" stroke-width="1.8"/>
+    <rect x="20" y="378" width="590" height="34" rx="10" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+    <text x="34" y="400" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#78350F">Z2 · Cycle de vie formel SEP-2596 (3 états)</text>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="34" y="424" width="152" height="118" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="46" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#064E3B">Active</text>
+      <text x="46" y="464" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">Version Current</text>
+      <text x="46" y="480" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">(2026-07-28).</text>
+      <text x="46" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">Usage production.</text>
+    </g>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="218" y="424" width="198" height="118" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+      <text x="230" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#78350F">Deprecated</text>
+      <text x="230" y="464" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">≥ 12 mois depuis Current</text>
+      <text x="230" y="480" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">(90 j si risque actif).</text>
+      <text x="230" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">3 mois grâce HTTP+SSE.</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="448" y="424" width="148" height="118" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="460" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#7F1D1D">Removed</text>
+      <text x="460" y="464" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">Retrait définitif.</text>
+      <text x="460" y="480" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">Rejet en passerelle</text>
+      <text x="460" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">et erreur -32020.</text>
+    </g>
+    <line x1="186" y1="482" x2="216" y2="482" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrow-amber)"/>
+    <line x1="416" y1="482" x2="446" y2="482" stroke="#B91C1C" stroke-width="2.2" marker-end="url(#arrow-red)"/>
+    <text x="315" y="572" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#78350F">Fin des retraits abrupts type batching 2025 ; préavis minimal garanti d'un an.</text>
+  </g>
+  <g id="zone-Z3">
+    <rect x="624" y="378" width="556" height="212" rx="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="1.8"/>
+    <rect x="624" y="378" width="556" height="34" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.5"/>
+    <text x="638" y="400" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Z3 · Cadence semestrielle SEP-3398 &amp; McpTransportAdapter</text>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="638" y="424" width="250" height="148" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+      <text x="650" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">McpTransportAdapter</text>
+      <text x="650" y="464" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Isole la logique métier (façades ≤ 15)</text>
+      <text x="650" y="480" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">des révisions de transport semestrielles</text>
+      <text x="650" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">(dernier mardi mars / septembre).</text>
+      <text x="650" y="512" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Chevauchement 2 mois jan.–mars.</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="914" y="424" width="252" height="148" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="926" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#064E3B">Enveloppe sans état 2026-07-28</text>
+      <text x="926" y="464" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Streamable HTTP pur + JSON-RPC 2.0.</text>
+      <text x="926" y="480" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">params._meta auto-descriptif ·</text>
+      <text x="926" y="496" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Mcp-Method &amp; Mcp-Name vérifiés ·</text>
+      <text x="926" y="512" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Basculer hors 2025-11-25 ≤ 2027-07-28.</text>
+    </g>
+    <line x1="888" y1="498" x2="912" y2="498" stroke="#047857" stroke-width="2.2" marker-end="url(#arrow-green)"/>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="602" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="624" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="644" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① DISC-05 bannit HTTP+SSE (2024-11-05) et les sessions 2025-11-25 au</text>
+    <text x="34" y="660" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">profit de MCP 2026-07-28 sans état.</text>
+    <text x="610" y="644" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② SEP-2596 impose un cycle Active → Deprecated (≥ 12 mois) →</text>
+    <text x="610" y="660" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">Removed, avec 3 mois de grâce transitoire.</text>
+    <text x="34" y="686" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ SEP-3398 fixe une cadence semestrielle prévisible dès le 30 mars</text>
+    <text x="34" y="702" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">2027 avec deux mois de chevauchement.</text>
+    <text x="610" y="686" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ L'adaptateur McpTransportAdapter protège les façades métier</text>
+    <text x="610" y="702" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">jusqu'à l'échéance EXIG-MCP-22 du 28 juillet 2027.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="730" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="743" width="18" height="18" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="60" y="756" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Transports obsolètes et retrait définitif</text>
+    <rect x="411" y="743" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+    <text x="437" y="756" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Dépréciation SEP-2596 &amp; jalon SEP-3398</text>
+    <rect x="788" y="743" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="814" y="756" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Cible sans état MCP 2026-07-28 &amp; adaptateur</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="784" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="806" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="826" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Encapsuler le protocole derrière McpTransportAdapter rend la cadence semestrielle SEP-3398 indolore et sécurise la migration avant</text>
+    <text x="36" y="843" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">le 28 juillet 2027.</text>
+  </g>
+</svg>

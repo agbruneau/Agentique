@@ -1504,6 +1504,88 @@
       ]
     },
     {
+      "schema_id": "SCH-17-04",
+      "chapter_number": 17,
+      "domain_id": "D06",
+      "subdomain_node_id": "SUB_D06_02",
+      "families_covered": [
+        "FAM_D06_02_01"
+      ],
+      "themes_vulgarized": [
+        "delegation-obo-deux-sauts",
+        "requetes-riches-rar-txn-tokens",
+        "liaison-jetons-dpop-mtls"
+      ],
+      "title": "Rupture au deuxième saut RFC 8693, intersection RAR et Txn-Token O(1)",
+      "insertion_point": "Chapitre 17 §17.2.1 — après le Tableau 17.1 clôturant l'articulation OAuth 2.0 / RFC 9700",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Parcours séquentiel illustré",
+      "recommended_notation": "PlantUML",
+      "pedagogical_objective": "Ce schéma élucide pourquoi la RFC 8693 standard laisse un angle mort dès le deuxième saut inter-domaines (absence de vérification mécanique amont sur act/may_act), puis oppose deux réponses architecturales complémentaires : la chaîne OBO plafonnée à deux sauts sous intersection monotone RAR (mandant ∩ agent ∩ tâche) et le Jeton de transaction intra-domaine Txn-Token condensé en taille constante O(1) par JCS SHA-256.",
+      "vulgarization_angle": "Visualiser côte à côte la dégradation de visibilité d'un relais OAuth au 2e saut et le double mécanisme qui la répare : restriction géométrique des droits inter-domaines et empreinte O(1) intra-domaine.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Angle mort RFC 8693 : rupture au deuxième saut inter-domaines",
+            "content": "Perte de traçabilité normative sur la chaîne act/may_act dès franchissement d'une passerelle PEP vers un second orchestrateur sans renégociation STS."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Plafond hops ≤ 2, intersection monotone RAR et preuve DPoP / mTLS",
+            "content": "Règle PEP + STS : aud RFC 8707 strict, exp ≤ parent_exp (TTL ≤ 15 min), client_assertion SPIFFE et intersection mandant ∩ gabarit agent ∩ tâche (authorization_details RFC 9396)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Jeton de transaction intra-domaine Txn-Token (-11) à empreinte O(1)",
+            "content": "Au sein d'un même domaine de confiance, le TTS scelle sub, txn, req_wl et tctx haché JCS SHA-256, prévenant HTTP 431 et préparant l'enveloppe post-quantique."
+          }
+        ],
+        "numbered_flows": [
+          "① À chaque frontière externe, la passerelle refuse tout jeton sans aud dédiée (TOKEN_PASSTHROUGH_AUD_MISMATCH) ou dépassant deux sauts (MAX_HOPS_EXCEEDED).",
+          "② Le STS calcule l'intersection monotone des droits via RAR (RFC 9396) sans jamais prolonger l'expiration parente.",
+          "③ En interne, le Txn-Token maintient une taille O(1) via JCS SHA-256 pour éviter l'encombrement d'en-têtes jusqu'aux dépôts."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Rupture de visibilité au 2e saut, passage de jeton et dépassement d'audience/expiration"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Invariants validate_obo_delegation, intersection monotone RAR et Txn-Token O(1)"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Acteurs SPIFFE/NHI, passerelle PEP, STS et Transaction Token Service (TTS)"
+          }
+        ],
+        "key_takeaway_box": "Entre domaines, la chaîne OBO plafonne à deux sauts et réduit les droits par intersection ; en interne, le Txn-Token fige le contexte en O(1) jusqu'aux dépôts."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 17.2",
+          "title": "Trois mécanismes, et le rang que chacun accorde à la chaîne de délégation.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-17.2 - Trois mécanismes, et le rang que chacun accorde à la chaîne.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-17.2.svg",
+          "role_note": "Compare les trois mécanismes de délégation et le rang effectif accordé à la chaîne de mandats."
+        },
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 37.8",
+          "title": "Ce que le maillage voit de la chaîne de mandat, et ce qu’il ne peut pas suppléer.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-37.8 - Ce que le maillage voit de la chaîne de mandat, et ce qu'il ne.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-37.8.svg",
+          "role_note": "Délimite exactement ce que le maillage observe de la chaîne de mandat et ce qu'il ne peut suppléer."
+        }
+      ]
+    },
+    {
       "schema_id": "SCH-18-01",
       "chapter_number": 18,
       "domain_id": "D06",

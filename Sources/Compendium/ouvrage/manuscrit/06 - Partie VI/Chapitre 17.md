@@ -43,7 +43,7 @@ En marge de ce socle ratifié, le repérage de veille du traité (Tome 1 § 17.6
 
 ![Délégation OBO à deux sauts (RFC 8693), réduction monotone RAR, preuve DPoP/mTLS et profil RFC 9700 (≤ 15 min)](../../schemas/rendus/SCH-17-01.svg)
 
-*Figure 55 — SCH-17-01 : Séquence normative de délégation OBO à deux sauts maximum prohibant le passage de jeton, calculant l'intersection monotone via RAR et vérifiant la preuve cryptographique DPoP/mTLS sous profil RFC 9700 (TTL ≤ 15 min).*
+*Figure 64 — SCH-17-01 : Séquence normative de délégation OBO à deux sauts maximum prohibant le passage de jeton, calculant l'intersection monotone via RAR et vérifiant la preuve cryptographique DPoP/mTLS sous profil RFC 9700 (TTL ≤ 15 min).*
 
 La conformité de cette barrière OBO et DPoP ne relève pas d'une simple intention documentaire : elle est implémentée et vérifiée de façon déterministe à la porte `G0` par le module `obo_dpop.py` de la trousse compagnon (couvert par `test_authz_pqc_audit.py` au sein des `23` tests du paquet `authz_pqc_audit` et des `83/83` tests `pytest` de la trousse au rapport de scellage). L'extrait synchronisé `G0-EX-CH02-01` (identifiant de scellage `CA-G0-SYNC` issu de la numérotation interne du Tome 8, Annexe D) ci-dessous présente la fonction `validate_obo_delegation` exécutée par la passerelle `PEP` pour rejeter tout relais de jeton (`TOKEN_PASSTHROUGH_AUD_MISMATCH`), toute absence d'identité `NHI` (`MISSING_NHI_ACTOR`), tout dépassement de la borne de deux sauts (`MAX_HOPS_EXCEEDED`), toute prolongation temporelle illicite (`EXP_EXTENSION_FORBIDDEN`) ainsi que toute anomalie ou rejeu de preuve `DPoP` [1, 2, 4].
 
@@ -95,6 +95,12 @@ Une frontière stricte sépare toutefois ce socle vérifié en `G0` de la prescr
 
 *Tableau 17.1 — Articulation normative des standards OAuth 2.0 (BCP 240 / RFC 9700, préparant OAuth 2.1) dans la délégation OBO à deux sauts.*
 
+La *Figure 65* illustre la rupture au deuxième saut et la complémentarité entre `OBO`/`RAR` et `Txn-Token`.
+
+![Rupture au deuxième saut RFC 8693, intersection monotone RAR et Jeton de transaction O(1)](../../schemas/rendus/SCH-17-04.svg)
+
+*Figure 65 — SCH-17-04 : Angle mort au deuxième saut `RFC 8693` (`Z1`), réduction `RAR` à `hops ≤ 2` (`Z2`) et `Txn-Token` `O(1)` (`Z3`).*
+
 ### 17.2.2 Approbation CIBA, KYA et révocation SSF/CAEP
 
 Même rigoureusement bornée par RFC 8693 et DPoP, la délégation autonome s'arrête devant le seuil des actes irréversibles ou à matérialité financière élevée (`EXIG-AUT-09` à `EXIG-AUT-16`, `ADR-012`, `ADR-015`, `CAP-002`, `PRR S-10`, `PRR S-14`, `PRR S-15`, `SBB-SIGNED-HUMAN-APPROVAL`) [5]. Dans ce périmètre — couvrant toute action `P3` (dont les paiements agentiques `AP2`, `ACP` ou `UCP`, ← Chapitre 08) et les opérations `P2` hors seuil en classe élevée —, une confirmation conversationnelle (« Oui, exécute ») n'offre aucune valeur probante. Une injection indirecte peut altérer les paramètres entre l'affichage et l'appel réel, tandis que le clic local favorise la fatigue d'approbation (← Chapitre 05).
@@ -125,7 +131,7 @@ def compute_action_hash_h(
 
 ![Approbation humaine hors bande CIBA + FIDO2 liée à l'empreinte JCS (h) : scellement cryptographique de l'acte](../../schemas/rendus/SCH-17-02.svg)
 
-*Figure 56 — SCH-17-02 : Séquence d'approbation hors bande OpenID Connect CIBA + FIDO2 imposant le filtre I-JSON (RFC 7493), le calcul du condensat h = SHA-256(JCS(...)), le contrôle de séparation des tâches et la rétention du jeton au PEP hors du modèle.*
+*Figure 66 — SCH-17-02 : Séquence d'approbation hors bande OpenID Connect CIBA + FIDO2 imposant le filtre I-JSON (RFC 7493), le calcul du condensat h = SHA-256(JCS(...)), le contrôle de séparation des tâches et la rétention du jeton au PEP hors du modèle.*
 
 Si la chaîne OBO et le scellement CIBA sécurisent les exécutions internes, l'admission d'agents tiers inter-entreprises (*Know Your Agent*, **KYA**) révèle un déficit normatif critique. Neuf chantiers ont été recensés dans six organismes internationaux (relevé du traité, Tome 1 § 18.1) :
 
@@ -152,7 +158,7 @@ De plus, à la date du gel, aucun standard agentique ratifié n'offre de **révo
 
 ![Angles morts B2B : 0/9 norme KYA ratifiée et asymétrie émission/révocation compensée par SSF/CAEP](../../schemas/rendus/SCH-17-03.svg)
 
-*Figure 57 — SCH-17-03 : Matrice des angles morts B2B (zéro norme KYA ratifiée sur neuf chantiers, asymétrie sur dix mécanismes de révocation) et parades immédiates par contrats Q-A..Q-E, TTL ≤ 15 min et automate SSF/CAEP.*
+*Figure 67 — SCH-17-03 : Matrice des angles morts B2B (zéro norme KYA ratifiée sur neuf chantiers, asymétrie sur dix mécanismes de révocation) et parades immédiates par contrats Q-A..Q-E, TTL ≤ 15 min et automate SSF/CAEP.*
 
 L'architecture compense cette asymétrie par la combinaison de deux mécanismes éprouvés. D'une part, la contrainte stricte de durée courte (`TTL ≤ 15 min` en `P2`/`P3`, `EXIG-IAM-15`) limite la fenêtre d'exposition résiduelle en cohérence avec les cycles `TLS` raccourcis (`100` jours au 15 mars 2027 puis `47` jours au 15 mars 2029) et avec la fenêtre de transition post-quantique `2030–2035` traités au chapitre suivant (→ Chapitre 18). D'autre part, un automate déterministe se branche sur les standards finalisés le 29 août 2025 **OpenID Shared Signals Framework (SSF 1.0)** et **Continuous Access Evaluation Profile (CAEP 1.0)** pour diffuser en temps réel des événements de sécurité (`SET`) vers chaque passerelle [9, 10].
 
@@ -173,7 +179,7 @@ Enfin, raccourcir un justificatif `SPIFFE` à `24` heures — tel *Google Cloud 
 
 ## 17.3 Synthèse des schémas, livrables, exigences probatoires et trois invariants exécutables
 
-Les trois figures du chapitre structurent la chaîne de délégation et de retrait : la Figure 55 (`SCH-17-01`) trace l'échange `OBO` à deux sauts et la liaison `DPoP`/`mTLS` en section `17.2.1`, la Figure 56 (`SCH-17-02`) détaille le scellement `CIBA` + `FIDO2` sur `h = SHA-256(JCS(...))` au `PEP`, et la Figure 57 (`SCH-17-03`) relie les angles morts `KYA` (`0/9`) et l'asymétrie de révocation à l'automate `SSF`/`CAEP` en section `17.2.2`.
+Les trois figures du chapitre structurent la chaîne de délégation et de retrait : la Figure 64 (`SCH-17-01`) trace l'échange `OBO` à deux sauts et la liaison `DPoP`/`mTLS` en section `17.2.1`, la Figure 66 (`SCH-17-02`) détaille le scellement `CIBA` + `FIDO2` sur `h = SHA-256(JCS(...))` au `PEP`, et la Figure 67 (`SCH-17-03`) relie les angles morts `KYA` (`0/9`) et l'asymétrie de révocation à l'automate `SSF`/`CAEP` en section `17.2.2`.
 
 Le dispositif de délégation et d'approbation consomme directement les attestations `SPIFFE`/`SVID` et la grille `Q-A`..`Q-E` (← Chapitre 16), l'ergonomie anti-complaisance et la règle du maillon le plus élevé (← Chapitre 05), les mandats de paiement `AP2`/`A2A` (← Chapitre 08), les contrôles de la passerelle `PEP` (← Chapitre 09), l'héritage `ACL` des contrats `ODCS` (← Chapitre 10), la mise en veille `awakeable` durable (← Chapitre 15) et le précédent institutionnel `eIDAS 2.0` (→ Chapitre 26).
 

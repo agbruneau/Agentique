@@ -188,7 +188,7 @@ def _validate_populated_registries(
 
 
 def validate_specs(book_dir: Path) -> list[str]:
-    """Valide intégralement `Sources/Compendium/ouvrage/specs/` (42 unités, 180 000 mots, 71 fam., 260 thèmes, 115 schémas, CA-01..CA-22)."""
+    """Valide intégralement `Sources/Compendium/ouvrage/specs/` (42 unités, 180 000 mots, 71 fam., 260 thèmes, 139 schémas, CA-01..CA-22)."""
     errors: list[str] = []
     book_dir = Path(book_dir)
     specs_dir = book_dir / "specs"
@@ -320,7 +320,7 @@ def validate_specs(book_dir: Path) -> list[str]:
     if len(all_owned) != len(set(all_owned)):
         errors.append("Collision dans owned_concepts entre plusieurs unites narratives")
 
-    # 4. part_titles, deliverables, g3_seeds, synced_excerpts_catalog, 115 schémas
+    # 4. part_titles, deliverables, g3_seeds, synced_excerpts_catalog, 139 schémas
     part_titles = manifest.get("part_titles", {})
     if set(part_titles.keys()) != set(_ROMAN_PARTS):
         errors.append(f"part_titles attendu pour I..XII, trouve : {sorted(part_titles.keys())}")
@@ -351,8 +351,8 @@ def validate_specs(book_dir: Path) -> list[str]:
                 errors.append(f"Extrait CA-G0-SYNC {ex.get('id')} depasse 40 L : {ex.get('max_lines')}")
 
     figures = manifest.get("figures", [])
-    if len(figures) != 115:
-        errors.append(f"Catalogue des schemas attendu = 115, trouve = {len(figures)}")
+    if len(figures) != 139:
+        errors.append(f"Catalogue des schemas attendu = 139, trouve = {len(figures)}")
     declared_figs = {f["id"]: f for f in figures if "id" in f}
     if len(declared_figs) != len(figures):
         errors.append("Identifiants de schemas dupliques dans manifest.json")
@@ -360,7 +360,7 @@ def validate_specs(book_dir: Path) -> list[str]:
     if sorted(assigned_figs) != sorted(declared_figs.keys()):
         errors.append("Desaccord entre les schemas assignes aux unites et manifest.json['figures']")
     for fid, fmeta in declared_figs.items():
-        if not re.fullmatch(r"SCH-\d{2}-\d{2}", fid):
+        if not re.fullmatch(r"SCH-(?:\d{2}|A[A-E])-\d{2}", fid):
             errors.append(f"Identifiant de schema invalide : {fid!r}")
         if fmeta.get("engine") not in {"puml", "mmd", "svg"}:
             errors.append(f"Moteur invalide pour {fid} : {fmeta.get('engine')!r}")
@@ -444,7 +444,7 @@ def main() -> int:
         return 1
     print(
         "OK : Specifications Compendium valides (42 unites = 180 000 mots, 71 familles, "
-        "260 themes disjoints, 115 schemas SCH-00-01..SCH-36-04, 14 extraits CA-G0-SYNC, CA-01..CA-22)."
+        "260 themes disjoints, 139 schemas SCH-00-01..SCH-AD-01, 14 extraits CA-G0-SYNC, CA-01..CA-22)."
     )
     return 0
 

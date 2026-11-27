@@ -1,0 +1,54 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 20
+skinparam ranksep 26
+skinparam padding 7
+
+top to bottom direction
+title Cinq points de rupture d'héritage ACL sur entrepôt et verrous OBO / RLS / WAP
+
+package "Z1 — Cinq vecteurs de fuite d'habilitation ACL" {
+  rectangle "① Compte de service partagé\nRepli vers identité technique\nou usurpation entre mandants" as F1 <<red>>
+  rectangle "② Indexation asynchrone opaque\nPerte de la chaîne sub/act\ndans files différées et vecteurs" as F2 <<red>>
+  rectangle "③ Cache sémantique pré-agrégé\nRéutilisation de vues matérialisées\nsans clé de locataire" as F3 <<red>>
+  rectangle "④ Jointures SQL non filtrées\nRequête inter-tables dépourvue\nde filtrage ligne / colonne (RLS)" as F4 <<red>>
+  rectangle "⑤ Révocation non propagée\nMaintien de jeton actif ou\nd'appartenance expirée en cache" as F5 <<red>>
+}
+
+package "Z2 — Verrous déterministes et sas WAP (EXIG-ARC-16)" {
+  rectangle "Verrou OBO nominatif (RFC 8693)\nPropage sub/act + audience stricte\n(aucun compte technique partagé)" as G1 <<green>>
+  rectangle "Sas Write-Audit-Publish (WAP)\nBranches Iceberg / Nessie isolées,\ncontrat ODCS v3.2.0 et OpenLineage" as G2 <<det>>
+  rectangle "Cloisonnement & caches tagués\nÉtiquettes entité juridique (Loi 25),\nclé locataire et indexation marquée" as G3 <<teal>>
+  rectangle "Entrepôt filtré RLS & éviction\nPolitiques ligne/colonne (RLS),\nsignal staleness et purge sur retrait" as G4 <<green>>
+  G1 -right-> G2 : Identité propagée
+  G2 --> G3 : Données prêtes
+  G3 -right-> G4 : Lecture filtrée
+}
+
+F1 .[#B91C1C].> G1 : Bloqué par
+F2 .[#B91C1C].> G3 : Neutralisé par
+F3 .[#B91C1C].> G3 : Partitionné par
+F4 .[#B91C1C].> G4 : Verrouillé par
+F5 .[#B91C1C].> G4 : Purgé par
+
+legend bottom
+  **Rouge brique** : Cinq points de rupture d'héritage ACL ciblés par tests d'intrusion actifs
+  **Vert émeraude / Turquoise** : Chaîne d'étanchéité OBO nominative, clés locataires, RLS et purge de révocation
+  **Bleu ardoise** : Quarantaine transactionnelle Write-Audit-Publish (Iceberg/Nessie) et lignage ODCS
+end legend
+@enduml

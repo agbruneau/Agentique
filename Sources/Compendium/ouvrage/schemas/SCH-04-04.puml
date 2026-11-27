@@ -1,0 +1,58 @@
+@startuml
+<style>
+document { BackgroundColor #FFFFFF; }
+.det { BackgroundColor #EBF2F7; LineColor #1B4F72; LineThickness 2.2; FontColor #0F2942; }
+.blue { BackgroundColor #EFF6FF; LineColor #1D4ED8; LineThickness 2.2; FontColor #1E3A8A; }
+.prob { BackgroundColor #FFF5E0; LineColor #D97706; LineThickness 2.0; LineStyle 5; FontColor #451A03; }
+.amber { BackgroundColor #FFFBEB; LineColor #B45309; LineThickness 2.0; FontColor #451A03; }
+.green { BackgroundColor #ECFDF5; LineColor #047857; LineThickness 2.2; FontColor #064E3B; }
+.teal { BackgroundColor #F0FDFA; LineColor #0F766E; LineThickness 2.2; FontColor #134E4A; }
+.red { BackgroundColor #FEF2F2; LineColor #B91C1C; LineThickness 2.2; FontColor #7F1D1D; }
+package { BackgroundColor #F8FAFC; LineColor #64748B; LineThickness 1.2; FontColor #334155; }
+legend { BackgroundColor #FFFFFF; LineColor #CBD5E1; FontColor #1E293B; FontSize 11; }
+</style>
+hide stereotype
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
+skinparam padding 7
+
+top to bottom direction
+title Topologie des quatre patrons mono-agents encapsulés sous harnais 80/20
+
+package "Z1 — Planification itérative vs graphe découplé" {
+  rectangle "① ReAct : boucle itérative\nRéinjecte l'historique complet à chaque pas\n(usage exploratoire sous plafond strict)" as N1 <<prob>>
+  rectangle "② ReWOO / LLMCompiler : graphe DAG\nPlanifie avant les observations :\n−5× jetons et +4 % précision HotpotQA" as N2 <<det>>
+  rectangle "Exécuteur parallèle d'outils\nValidation préalable des variables liées" as N3 <<blue>>
+  N2 --> N3 : Résolution du graphe
+}
+
+package "Z2 — Rétroaction bornée sous oracle externe" {
+  rectangle "③ Reflexion / Self-Refine\nBoucle critique-correction sur trace d'échec\n(plafond strict de reprises)" as N4 <<amber>>
+  rectangle "Oracle externe déterministe\nTests unitaires ou validateur formel\n(zéro auto-validation en chambre d'écho)" as N5 <<green>>
+  N4 --> N5 : Trace soumise
+  N5 .[#047857].> N4 : Contre-exemple borné
+}
+
+package "Z3 — Unification exécutable sous confinement" {
+  rectangle "④ CodeAct : code Python unifié\n+20 % réussite et −30 % d'actions\nsur M3ToolEval sans verbiage JSON" as N6 <<teal>>
+  rectangle "Bac à sable microVM / WASI\nZéro privilège ambiant et\naucun accès réseau sortant (CH-21)" as N7 <<green>>
+  N6 --> N7 : Confinement obligatoire
+}
+
+rectangle "Harnais déterministe 80/20 (PRIN-08)\nGarde le contrôle de transition hors modèle" as N8 <<det>>
+N1 --> N8
+N3 --> N8
+N5 --> N8
+N7 --> N8
+
+legend bottom
+  **Bleu ardoise / Indigo** : Graphe découplé ReWOO/LLMCompiler et harnais déterministe 80/20
+  **Ambre / Pointillé** : Boucle itérative ReAct ou Reflexion exigeant un plafonnement strict
+  **Vert émeraude / Turquoise** : Oracle externe déterministe et confinement matériel microVM / WASI sans réseau
+end legend
+@enduml

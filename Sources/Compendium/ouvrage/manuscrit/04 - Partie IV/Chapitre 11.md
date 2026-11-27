@@ -37,11 +37,11 @@ Le troisième compartiment, la **mémoire sémantique** (`CAD26 C5`), héberge l
 
 *Tableau 11.1 — Régime de gouvernance, d'isolation et de risque des quatre compartiments mémoriels CoALA.*
 
-Cette compartimentation fonctionne à la manière d'un coffre d'archives doté de quatre tiroirs munis de serrures indépendantes, comme le représente la Figure 37 (`SCH-11-01`). Seule l'équipe d'ingénierie détient la clé de mise à jour du tiroir procédural via l'intégration continue. Lorsqu'un agent interroge ses souvenirs épisodiques ou sémantiques, tout élément restitué conserve une étiquette explicite de contenu non fiable : il éclaire le raisonnement de l'étape courante sans jamais pouvoir contourner une interdiction de politique hors modèle ni déclencher une écriture critique.
+Cette compartimentation fonctionne à la manière d'un coffre d'archives doté de quatre tiroirs munis de serrures indépendantes, comme le représente la Figure 46 (`SCH-11-01`). Seule l'équipe d'ingénierie détient la clé de mise à jour du tiroir procédural via l'intégration continue. Lorsqu'un agent interroge ses souvenirs épisodiques ou sémantiques, tout élément restitué conserve une étiquette explicite de contenu non fiable : il éclaire le raisonnement de l'étape courante sans jamais pouvoir contourner une interdiction de politique hors modèle ni déclencher une écriture critique.
 
 ![Architecture des quatre mémoires CoALA isolées (zéro écriture partagée) et échelle de risque](../../schemas/rendus/SCH-11-01.svg)
 
-*Figure 37 — SCH-11-01 : Architecture des quatre mémoires CoALA isolées (zéro écriture partagée) et échelle de risque.*
+*Figure 46 — SCH-11-01 : Architecture des quatre mémoires CoALA isolées (zéro écriture partagée) et échelle de risque.*
 
 Lorsque plusieurs instances d'agents concourent au traitement d'un même dossier client ou d'un même processus, l'architecture interdit absolument tout partage en écriture entre agents ou entre serveurs `MCP` sur un même registre mémoriel (`EXIG-ARC-25`, `ADR-010`). Si deux agents écrivaient directement dans la même base, des conditions de concurrence silencieuses produiraient des contradictions sémantiques, des pertes de mises à jour et des vecteurs de contamination croisée. Par exemple, si un agent de tarification met à jour la catégorie de risque d'un assuré pendant qu'un agent de gestion des sinistres réécrit le même profil à partir d'un résumé antérieur, l'absence de contrôle de version efface la mise à jour la plus récente sans lever d'exception. Toute mutation en mémoire épisodique ou sémantique transite donc par un point **écrivain unique** appliquant un verrouillage optimiste par numéro de version ainsi qu'une vérification de portée à chaque lecture.
 
@@ -55,9 +55,9 @@ Au-delà de la sécurité d'écriture, l'exploitation en secteur financier soul�
 
 ![Mémoire bi-temporelle (BSIF E-23), concurrence multi-agents et effacement crypto-sélectif (Loi 25 art. 23)](../../schemas/rendus/SCH-11-02.svg)
 
-*Figure 38 — SCH-11-02 : Mémoire bi-temporelle (BSIF E-23), concurrence multi-agents et effacement crypto-sélectif (Loi 25 art. 23).*
+*Figure 47 — SCH-11-02 : Mémoire bi-temporelle (BSIF E-23), concurrence multi-agents et effacement crypto-sélectif (Loi 25 art. 23).*
 
-Comme l'illustre la Figure 38 (`SCH-11-02`), la bi-temporalité fonctionne à la manière d'un grand livre comptable à deux colonnes de dates. Chaque arête mémorisée enregistre d'une part son intervalle de validité métier (`valid_from` et `valid_to`), qui précise quand le fait était exact dans le monde réel, et d'autre part son horodatage système (`system_time` ou date d'ingestion), qui consigne quand le Système d'agentivité en a pris connaissance. Lors d'un audit `BSIF E-23` [5] ou d'un recours fondé sur l'article `12.1` de la Loi 25 [3], l'inspecteur peut reconstituer à l'instant exact de la décision contestée l'état des connaissances disponibles.
+Comme l'illustre la Figure 47 (`SCH-11-02`), la bi-temporalité fonctionne à la manière d'un grand livre comptable à deux colonnes de dates. Chaque arête mémorisée enregistre d'une part son intervalle de validité métier (`valid_from` et `valid_to`), qui précise quand le fait était exact dans le monde réel, et d'autre part son horodatage système (`system_time` ou date d'ingestion), qui consigne quand le Système d'agentivité en a pris connaissance. Lors d'un audit `BSIF E-23` [5] ou d'un recours fondé sur l'article `12.1` de la Loi 25 [3], l'inspecteur peut reconstituer à l'instant exact de la décision contestée l'état des connaissances disponibles.
 
 Les bancs d'évaluation académiques sur la mémoire longue (`LongMemEval` et `LoCoMo`, recensés à titre de repères d'état de l'art au corpus source `Tome 1 § 5.2.2`, hors corpus probatoire primaire du chapitre) soulignent la nécessité d'une modélisation temporelle explicite : sur des séquences comportant des mises à jour chronologiques ou des faits contradictoires, la consolidation plate échoue à arbitrer les révisions, là où l'indexation bi-temporelle résout les contradictions par supersession explicite. Cependant, l'immuabilité d'un graphe bi-temporel entre directement en conflit avec l'obligation de destruction ou d'anonymisation prévue au titre de l'article `23` de la loi modifiée par la Loi 25 [3], qui fait écho aux exigences européennes du `RGPD` (`UE 2016/679`) évoquées dans le bilan de la `CAI` [4] et instruites au Chapitre 26.
 
@@ -87,11 +87,11 @@ Deuxièmement, lorsque le filtre `ACL` amont exclut les pièces requises ou que 
 
 Enfin, la chaîne d'intégration continue dissocie rigoureusement deux familles de métriques lors de l'évaluation du sous-système mémoriel et `RAG`, afin d'empêcher qu'un générateur éloquent ne dissimule un récupérateur défaillant. La qualité de la recherche sous contrainte `ACL` est mesurée par le rappel aux `K` premiers rangs (`Recall@K`), qui vérifie si les bons fragments autorisés atteignent effectivement la fenêtre contextuelle. La fidélité générative — ancrage factuel dans les extraits fournis, absence d'hallucination et pertinence de la réponse — est mesurée séparément à l'aide de bancs tels que `RAGAS`, `ARES` et les protocoles `CRAG`.
 
-En pratique d'ingénierie, cette dissociation impose d'exécuter en amont des jeux d'essai vérifiant explicitement les frontières d'habilitation : une même requête soumise sous deux profils d'identité distincts doit produire deux ensembles de fragments rigoureusement disjoints pour les données protégées. Si un fragment restreint apparaît dans le jeu retourné avant l'étape de génération, le test échoue en intégration continue et bloque la promotion du pipeline. La Figure 39 (`SCH-11-03`) rassemble cette séquence complète, de l'identité déléguée jusqu'au banc d'évaluation dissocié.
+En pratique d'ingénierie, cette dissociation impose d'exécuter en amont des jeux d'essai vérifiant explicitement les frontières d'habilitation : une même requête soumise sous deux profils d'identité distincts doit produire deux ensembles de fragments rigoureusement disjoints pour les données protégées. Si un fragment restreint apparaît dans le jeu retourné avant l'étape de génération, le test échoue en intégration continue et bloque la promotion du pipeline. La Figure 48 (`SCH-11-03`) rassemble cette séquence complète, de l'identité déléguée jusqu'au banc d'évaluation dissocié.
 
 ![Filtrage RBAC/ABAC pré-récupération (OpenFGA/RLS), modèles Silo/Bridge/Pool et évaluation RAG](../../schemas/rendus/SCH-11-03.svg)
 
-*Figure 39 — SCH-11-03 : Filtrage RBAC/ABAC pré-récupération (OpenFGA/RLS), modèles Silo/Bridge/Pool et évaluation RAG.*
+*Figure 48 — SCH-11-03 : Filtrage RBAC/ABAC pré-récupération (OpenFGA/RLS), modèles Silo/Bridge/Pool et évaluation RAG.*
 
 ## 11.3 Contrat d'exigences, frontières inter-chapitres et invariants exécutables
 

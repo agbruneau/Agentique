@@ -29,11 +29,11 @@ De son côté, le paquet `evalops_prr/` complète l'évaluation statistique par 
 
 Cette structuration en quatre paquets porte une contrainte d'hygiène stricte (`EXIG-EXEC-03`) sur la chaîne d'approvisionnement logicielle. L'environnement Python vérifie par `--require-hashes` l'intégralité des `17` paquets verrouillés dans `requirements.lock`, et l'outil d'audit `SPDX` contrôle les `18` distributions Python inspectées dans l'environnement virtuel ainsi que les en-têtes de licence des `50` fichiers sources. Tout module copyleft fort (`GPL`, `AGPL`, `LGPL` ou `SSPL`) est immédiatement rejeté, raison pour laquelle le paquet tiers `slh-dsa` (`LGPL-3.0-or-later`, identifié dans la spécification interne d'architecture `G0` hors sources `L+`) a été proscrit dès la barrière `G0` au profit de l'implémentation interne `authz_pqc_audit/slh_dsa_fips205.py` (`MIT`) conforme à `FIPS 205` [4].
 
-Afin d'empêcher tout extrait décoratif dans la documentation, le contrat `CA-G0-SYNC` exige que chacun des `14` extraits publiés (`G0-EX-CH01-01` à `G0-EX-CH04-03`, dont `G0-EX-CH04-03` au Chapitre 34 et `G0-EX-CH04-01` ci-après) provienne directement d'un fichier de la trousse dans une tranche d'au plus `40` lignes et porte un condensat `SHA-256` normalisé `LF` concordant au bit près avec le rapport scellé `G0`. Cette architecture est synthétisée à la *Figure 109*, qui illustre la liaison cryptographique entre la tête documentaire `CC BY 4.0`, les quatre modules `MIT`, les quatre suites de vecteurs tiers et le verrouillage `execute_g0.py` à `exit 0`.
+Afin d'empêcher tout extrait décoratif dans la documentation, le contrat `CA-G0-SYNC` exige que chacun des `14` extraits publiés (`G0-EX-CH01-01` à `G0-EX-CH04-03`, dont `G0-EX-CH04-03` au Chapitre 34 et `G0-EX-CH04-01` ci-après) provienne directement d'un fichier de la trousse dans une tranche d'au plus `40` lignes et porte un condensat `SHA-256` normalisé `LF` concordant au bit près avec le rapport scellé `G0`. Cette architecture est synthétisée à la *Figure 127*, qui illustre la liaison cryptographique entre la tête documentaire `CC BY 4.0`, les quatre modules `MIT`, les quatre suites de vecteurs tiers et le verrouillage `execute_g0.py` à `exit 0`.
 
 ![Architecture bicéphale du Tome 8 : manuel CC BY 4.0, quatre modules Python/OPA MIT et barrière G0 à exit 0](../../schemas/rendus/SCH-35-01.svg)
 
-*Figure 109 — SCH-35-01 : Architecture bicéphale du Tome 8 reliant la tête éditoriale `CC BY 4.0` (`14` extraits `CA-G0-SYNC`), les quatre modules `MIT` sous `Python 3.12+` et `OPA v1.22.4`, les quatre suites de vecteurs tiers et la barrière `execute_g0.py` à `exit 0`.*
+*Figure 127 — SCH-35-01 : Architecture bicéphale du Tome 8 reliant la tête éditoriale `CC BY 4.0` (`14` extraits `CA-G0-SYNC`), les quatre modules `MIT` sous `Python 3.12+` et `OPA v1.22.4`, les quatre suites de vecteurs tiers et la barrière `execute_g0.py` à `exit 0`.*
 
 L'exécution déterministe de `execute_g0.py` couvre six familles de vérifications auditées et horodatées au rapport scellé `G0`, dont le bilan exact au gel figure au *Tableau 35.1*. Sur le plan des suites tierces indépendantes (`vectors-manifest.json`, `50` fichiers), chaque jeu vérifie un maillon critique sans circularité entre l'oracle et l'implémentation :
 
@@ -53,11 +53,11 @@ L'exécution déterministe de `execute_g0.py` couvre six familles de vérificati
 
 *Tableau 35.1 — Bilan vérifié de la barrière logicielle G0 (`execute_g0.py`, code de sortie 0).*
 
-En parallèle de ce verrouillage `G0`, la trousse résout une lacune structurante du `Tableau 12` du cadre de référence (`dossier source Tome 2, 2 - Cadre de Référence.md`), où cinq blocs de solution critiques (`5 SBB`) étaient demeurés sans exemple retenu ni code compagnon exécutable. Comme l'illustre la *Figure 110*, trois de ces blocs arment le Plan A (contrôle préventif avant exécution) et deux arment le Plan B (preuve immuable et comptabilité exacte), tous testés en scénarios positifs et négatifs et reliés aux portes `PRR-75` ainsi qu'au validateur `validate_adr_2027_b001` (`evalops_prr/prr_validators.py`).
+En parallèle de ce verrouillage `G0`, la trousse résout une lacune structurante du `Tableau 12` du cadre de référence (`dossier source Tome 2, 2 - Cadre de Référence.md`), où cinq blocs de solution critiques (`5 SBB`) étaient demeurés sans exemple retenu ni code compagnon exécutable. Comme l'illustre la *Figure 128*, trois de ces blocs arment le Plan A (contrôle préventif avant exécution) et deux arment le Plan B (preuve immuable et comptabilité exacte), tous testés en scénarios positifs et négatifs et reliés aux portes `PRR-75` ainsi qu'au validateur `validate_adr_2027_b001` (`evalops_prr/prr_validators.py`).
 
 ![Les cinq blocs critiques du Tableau 12 du Tome 2 (5 SBB) matérialisés dans la trousse exécutable](../../schemas/rendus/SCH-35-02.svg)
 
-*Figure 110 — SCH-35-02 : Matérialisation des cinq blocs critiques du `Tableau 12` (Tome 2) (`5 SBB`) répartis entre le Plan A préventif (`SBB-SECRETS-VAULT`, `SBB-GUARDRAILS-ENGINE`, `SBB-SIGNED-HUMAN-APPROVAL`) et le Plan B probatoire et financier (`SBB-IMMUTABLE-AUDIT-LEDGER`, `SBB-FINOPS-BUDGET-QUOTA`), raccordés aux validateurs `2027-B001`.*
+*Figure 128 — SCH-35-02 : Matérialisation des cinq blocs critiques du `Tableau 12` (Tome 2) (`5 SBB`) répartis entre le Plan A préventif (`SBB-SECRETS-VAULT`, `SBB-GUARDRAILS-ENGINE`, `SBB-SIGNED-HUMAN-APPROVAL`) et le Plan B probatoire et financier (`SBB-IMMUTABLE-AUDIT-LEDGER`, `SBB-FINOPS-BUDGET-QUOTA`), raccordés aux validateurs `2027-B001`.*
 
 Le *Tableau 35.2* détaille la correspondance exacte entre chaque bloc `SBB`, le module de la trousse qui l'implémente, son test de rejet négatif et les garanties qu'il fournit à l'architecture d'entreprise. À titre d'exemple, `SBB-FINOPS-BUDGET-QUOTA` rejette par `TypeError` tout montant transmis en flottant binaire (`float`) ou booléen (`bool`) afin d'éradiquer à la source les erreurs d'arrondi monétaire dans les décomptes `CPO` et `FOCUS v1.4`. De son côté, `SBB-GUARDRAILS-ENGINE` neutralise le piège classique de l'évaluation « indéfinie » dans `Rego` en imposant `default allow := false` en tête de chaque paquet et en exigeant une couverture de branches à `100,0 %` via `opa test --coverage --format=json` [9, 10].
 
@@ -134,11 +134,17 @@ Cette validation continue prépare les échéances réglementaires et cryptograp
 
 Sur le plan opérationnel, l'exécution de ces huit contrats `C.1` à `C.8` (et de leurs schémas associés) démontre trois propriétés décisives pour les architectes de solutions. Premièrement, la passerelle calcule elle-même le condensat canonique `action_sha256` et l'écran de validation humain à partir des arguments structurés, empêchant tout texte généré par le modèle de tromper l'approbateur. Deuxièmement, le type de jeton d'approbation reste distinct du jeton d'accès (`at+jwt`), bloquant toute substitution d'autorisation. Troisièmement, la transition d'`ES256` vers `ML-DSA-65` ou `ML-DSA-87` préserve l'intégrité du schéma `Draft 2020-12` sans casser l'enchaînement cryptographique du journal `C.8` [1, 3, 7].
 
-La *Figure 111* met en regard ce banc de simulation borné `DC-P12` et la chaîne d'audit `C.1–C.8` crypto-agile.
+La *Figure 129* met en regard ce banc de simulation borné `DC-P12` et la chaîne d'audit `C.1–C.8` crypto-agile.
 
 ![Preuve synthétique bornée DC-P12 (FEDS/EMA DC-C07 = 65 %) et chaîne CI des 8 contrats crypto-agiles C.1–C.8](../../schemas/rendus/SCH-35-03.svg)
 
-*Figure 111 — SCH-35-03 : Mise en regard du banc quantitatif synthétique `feds-ema/` (`seed=20261119`, plafond épistémique `DC-P12` à `DC-C07 = 65,0 %`, zéro étude humaine) et de la chaîne des huit contrats `C.1–C.8` (dont le scénario d'achat de `12 480 $` sur `C.1`, `C.2`, `C.6–C.8`) sous schémas crypto-agiles `ES256` / `ML-DSA-65` / `ML-DSA-87`.*
+*Figure 129 — SCH-35-03 : Mise en regard du banc quantitatif synthétique `feds-ema/` (`seed=20261119`, plafond épistémique `DC-P12` à `DC-C07 = 65,0 %`, zéro étude humaine) et de la chaîne des huit contrats `C.1–C.8` (dont le scénario d'achat de `12 480 $` sur `C.1`, `C.2`, `C.6–C.8`) sous schémas crypto-agiles `ES256` / `ML-DSA-65` / `ML-DSA-87`.*
+
+La *Figure 130* déroule ce fil transactionnel de `12 480 $` à travers les huit contrats `C.1–C.8`.
+
+![Fil d'exécution des huit contrats C.1 à C.8 sur l'achat de 12 480 CAD](../../schemas/rendus/SCH-35-04.svg)
+
+*Figure 130 — SCH-35-04 : Enchaînement de bout en bout des huit contrats `C.1–C.8` sur l'achat de `12 480 $` sous double visa `C.6`.*
 
 ## 35.3 Synthèse transversale, livrables et portes de contrôle
 

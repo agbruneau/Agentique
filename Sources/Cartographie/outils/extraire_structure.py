@@ -82,7 +82,7 @@ ATX_HEADING_RE = re.compile(r"^ {0,3}(#{1,6})(?:[ \t]+(.*?))?[ \t]*$")
 TRAILING_HASH_RE = re.compile(r"[ \t]+#+[ \t]*$")
 
 IDENTIFIER_PATTERNS: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\bSCH-\d{2}-\d{2}\b"),
+    re.compile(r"\bSCH-(?:\d{2}|A[A-E])-\d{2}\b"),
     re.compile(r"\bSRC-\d{3}\b"),
     re.compile(r"\bPOR-\d{3}\b"),
     re.compile(r"\bSIG-\d{3}\b"),

@@ -81,7 +81,7 @@ def build_catalogue_schemas_payload(
     shards_dir = donnees_dir / "prd_schemas_shards"
     schema_path = donnees_dir / "schema-prd-vulgarisation.json"
     inv_path = donnees_dir / "inventaire-319-diagrammes.json"
-    comp_inv_path = donnees_dir / "inventaire-115-schemas-compendium.json"
+    comp_inv_path = donnees_dir / "inventaire-139-schemas-compendium.json"
 
     if bundle is None:
         synthese_path = donnees_dir / "synthese-transversale.json"
@@ -120,11 +120,37 @@ def build_catalogue_schemas_payload(
 
     all_global_schemas: list[dict[str, Any]] = []
     all_chapter_schemas: list[dict[str, Any]] = []
+    all_annex_schemas: list[dict[str, Any]] = []
     annexe_e_block: dict[str, Any] = {}
     seen_schema_ids: set[str] = set()
     fams_covered_by_chapter: dict[int, set[str]] = {}
     all_covered_slugs: set[str] = set()
     linked_schemas_by_uid: dict[str, list[str]] = {}
+
+    def _validate_themes_and_links(src_fn: str, item: dict[str, Any]) -> None:
+        sid_local = item["schema_id"]
+        for slug in item["themes_vulgarized"]:
+            if slug not in themes_by_slug:
+                raise ValueError(f"{src_fn}/{sid_local}: canonical_slug inconnu {slug}")
+            all_covered_slugs.add(slug)
+
+        for lf in item["linked_tome_figures"]:
+            uid = f"{lf['tome_id']}:{lf['fig_id']}"
+            if uid not in inv_by_uid:
+                raise ValueError(f"{src_fn}/{sid_local}: figure Tome introuvable dans l'inventaire : {uid}")
+            inv_f = inv_by_uid[uid]
+            for field in ("title", "source_path", "rendered_path"):
+                if lf[field] != inv_f[field]:
+                    raise ValueError(
+                        f"{src_fn}/{sid_local}: divergence sur {uid}.{field} : {lf[field]!r} != {inv_f[field]!r}"
+                    )
+            src_p = repo_root / lf["source_path"]
+            ren_p = repo_root / lf["rendered_path"]
+            if not src_p.is_file():
+                raise FileNotFoundError(f"{src_fn}/{sid_local}: source_path manquant sur disque : {src_p}")
+            if not ren_p.is_file():
+                raise FileNotFoundError(f"{src_fn}/{sid_local}: rendered_path manquant sur disque : {ren_p}")
+            linked_schemas_by_uid.setdefault(uid, []).append(sid_local)
 
     for fn in SCHEMA_SHARD_FILENAMES:
         sp = shards_dir / fn
@@ -145,6 +171,15 @@ def build_catalogue_schemas_payload(
             annexe_e_block = shard_obj["annexe_e"]
             expected_domains_in_shard = {"GLOBAL"}
             expected_chapters_in_shard = {0}
+            for item in shard_obj.get("annex_schemas") or []:
+                sid = item["schema_id"]
+                if sid in seen_schema_ids:
+                    raise ValueError(f"Identifiant schema_id dupliqué : {sid}")
+                seen_schema_ids.add(sid)
+                if int(item["chapter_number"]) != 0 or item["domain_id"] != "ANNEXE" or item["subdomain_node_id"] != "ANNEXE" or item["families_covered"] != []:
+                    raise ValueError(f"{fn}/{sid}: métadonnées d'annexe invalides")
+                _validate_themes_and_links(fn, item)
+                all_annex_schemas.append(item)
         else:
             expected_domains_in_shard = set(shard_obj["domains_covered"])
             expected_chapters_in_shard = {int(c) for c in shard_obj["chapters_covered"]}
@@ -184,36 +219,17 @@ def build_catalogue_schemas_payload(
                 fams_covered_by_chapter.setdefault(cnum, set()).update(fams)
                 all_chapter_schemas.append(item)
 
-            for slug in item["themes_vulgarized"]:
-                if slug not in themes_by_slug:
-                    raise ValueError(f"{fn}/{sid}: canonical_slug inconnu {slug}")
-                all_covered_slugs.add(slug)
-
-            for lf in item["linked_tome_figures"]:
-                uid = f"{lf['tome_id']}:{lf['fig_id']}"
-                if uid not in inv_by_uid:
-                    raise ValueError(f"{fn}/{sid}: figure Tome introuvable dans l'inventaire : {uid}")
-                inv_f = inv_by_uid[uid]
-                for field in ("title", "source_path", "rendered_path"):
-                    if lf[field] != inv_f[field]:
-                        raise ValueError(
-                            f"{fn}/{sid}: divergence sur {uid}.{field} : {lf[field]!r} != {inv_f[field]!r}"
-                        )
-                src_p = repo_root / lf["source_path"]
-                ren_p = repo_root / lf["rendered_path"]
-                if not src_p.is_file():
-                    raise FileNotFoundError(f"{fn}/{sid}: source_path manquant sur disque : {src_p}")
-                if not ren_p.is_file():
-                    raise FileNotFoundError(f"{fn}/{sid}: rendered_path manquant sur disque : {ren_p}")
-                linked_schemas_by_uid.setdefault(uid, []).append(sid)
+            _validate_themes_and_links(fn, item)
 
         if seen_chapters_in_shard != expected_chapters_in_shard:
             raise ValueError(
                 f"{fn}: chapitres incomplets : {sorted(seen_chapters_in_shard)} != {sorted(expected_chapters_in_shard)}"
             )
 
-    if len(all_global_schemas) != 4:
-        raise ValueError(f"Attendu 4 schémas globaux SCH-00-*, obtenu {len(all_global_schemas)}")
+    if len(all_global_schemas) != 5:
+        raise ValueError(f"Attendu 5 schémas globaux SCH-00-*, obtenu {len(all_global_schemas)}")
+    if len(all_annex_schemas) != 3:
+        raise ValueError(f"Attendu 3 schémas d'annexes SCH-A*-*, obtenu {len(all_annex_schemas)}")
     if set(fams_covered_by_chapter.keys()) != set(range(1, 37)):
         missing_chs = sorted(set(range(1, 37)) - set(fams_covered_by_chapter.keys()))
         raise ValueError(f"Chapitres non couverts : {missing_chs}")
@@ -233,7 +249,8 @@ def build_catalogue_schemas_payload(
 
     all_global_schemas.sort(key=lambda s: s["schema_id"])
     all_chapter_schemas.sort(key=lambda s: (int(s["chapter_number"]), s["schema_id"]))
-    all_schemas = all_global_schemas + all_chapter_schemas
+    all_annex_schemas.sort(key=lambda s: s["schema_id"])
+    all_schemas = all_global_schemas + all_chapter_schemas + all_annex_schemas
 
     # Statistiques synthétiques
     reuse_order = schema_vulg["enums"]["reuse_status"]
@@ -247,7 +264,7 @@ def build_catalogue_schemas_payload(
     audience_counts = Counter(aud for s in all_schemas for aud in s["target_audiences"])
 
     by_domain: dict[str, dict[str, Any]] = {}
-    for dom_key in ["GLOBAL"] + [f"D{i:02d}" for i in range(1, 13)]:
+    for dom_key in ["GLOBAL", "ANNEXE"] + [f"D{i:02d}" for i in range(1, 13)]:
         d_schemas = [s for s in all_schemas if s["domain_id"] == dom_key]
         d_fams = sorted({fid for s in d_schemas for fid in s["families_covered"]})
         d_chs = sorted({int(s["chapter_number"]) for s in d_schemas})
@@ -260,8 +277,8 @@ def build_catalogue_schemas_payload(
 
     by_chapter: list[dict[str, Any]] = []
     for cnum in range(0, 37):
-        c_schemas = [s for s in all_schemas if int(s["chapter_number"]) == cnum]
         if cnum == 0:
+            c_schemas = list(all_global_schemas)
             by_chapter.append(
                 {
                     "chapter_number": 0,
@@ -274,6 +291,7 @@ def build_catalogue_schemas_payload(
                 }
             )
         else:
+            c_schemas = [s for s in all_chapter_schemas if int(s["chapter_number"]) == cnum]
             sub_node = sub_by_chapter[cnum]
             c_fams = sorted({fid for s in c_schemas for fid in s["families_covered"]})
             by_chapter.append(
@@ -292,6 +310,7 @@ def build_catalogue_schemas_payload(
         "total_schemas": len(all_schemas),
         "global_schemas_count": len(all_global_schemas),
         "chapter_schemas_count": len(all_chapter_schemas),
+        "annex_schemas_count": len(all_annex_schemas),
         "chapters_covered_count": len(fams_covered_by_chapter),
         "families_covered_count": len(total_covered_fams),
         "families_total_count": len(fams_by_id),
@@ -388,7 +407,7 @@ def build_catalogue_schemas_payload(
 
     comp_by_part: dict[str, int] = {}
     if comp_inv_by_id:
-        for item in all_global_schemas + all_chapter_schemas:
+        for item in all_schemas:
             cfig = comp_inv_by_id.get(item["schema_id"])
             if cfig:
                 part_id = cfig["part_id"]
@@ -422,10 +441,11 @@ def build_catalogue_schemas_payload(
         "generator": "Sources/Cartographie/outils/consolider_catalogue_schemas.py",
         "source_shards": [f"Sources/Cartographie/donnees/prd_schemas_shards/{fn}" for fn in SCHEMA_SHARD_FILENAMES],
         "source_inventory": "Sources/Cartographie/donnees/inventaire-319-diagrammes.json",
-        "source_compendium_inventory": "Sources/Cartographie/donnees/inventaire-115-schemas-compendium.json",
+        "source_compendium_inventory": "Sources/Cartographie/donnees/inventaire-139-schemas-compendium.json",
         "compendium_schemas_summary": compendium_schemas_summary,
         "global_schemas": all_global_schemas,
         "chapter_schemas": all_chapter_schemas,
+        "annex_schemas": all_annex_schemas,
         "annexe_e": annexe_e_block,
         "summary_stats": summary_stats,
         "tome_figures_coverage": tome_figures_coverage,
@@ -466,7 +486,7 @@ def main() -> int:
     tc = payload["tome_figures_coverage"]
     print(
         f"Catalogue consolidé -> {out_path} : {st['total_schemas']} schémas "
-        f"({st['global_schemas_count']} SCH-00 + {st['chapter_schemas_count']} SCH-01..36), "
+        f"({st['global_schemas_count']} SCH-00 + {st['chapter_schemas_count']} SCH-01..36 + {st['annex_schemas_count']} Annexes), "
         f"{st['chapters_covered_count']}/36 chapitres, {st['families_covered_count']}/71 familles, "
         f"{tc['unique_linked_figures_count']}/{tc['total_inventory_figures']} figures uniques des Tomes "
         f"({tc['total_figure_links_count']} liens, {tc['coverage_percent']} %)."

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 856" width="1200" height="856">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="856" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-02-04 — Courbes pass@k vs pass^k, frontière de Pareto HAL et dimensionnement Wilson</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Constance p^k (τ-bench), Pareto coût-précision (HAL) et borne unilatérale 95 % (EXIG-EVA-03) · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="386" height="480" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="386" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · pass@k vs pass^k (k = 1..8)</text>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="32" y="142" width="362" height="352" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <line x1="74" y1="168" x2="74" y2="438" stroke="#475569" stroke-width="1.5"/>
+      <line x1="74" y1="438" x2="372" y2="438" stroke="#475569" stroke-width="1.5"/>
+      <line x1="74" y1="438" x2="372" y2="438" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="68" y="442" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">0%</text>
+      <line x1="74" y1="373" x2="372" y2="373" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="68" y="377" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">25%</text>
+      <line x1="74" y1="308" x2="372" y2="308" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="68" y="312" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">50%</text>
+      <line x1="74" y1="243" x2="372" y2="243" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="68" y="247" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">75%</text>
+      <line x1="74" y1="178" x2="372" y2="178" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="68" y="182" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">100%</text>
+      <text x="74" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=1</text>
+      <text x="115" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=2</text>
+      <text x="156" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=3</text>
+      <text x="197" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=4</text>
+      <text x="238" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=5</text>
+      <text x="279" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=6</text>
+      <text x="320" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=7</text>
+      <text x="361" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#475569">k=8</text>
+      <polyline fill="none" stroke="#1D4ED8" stroke-width="2.6" points="74.0,278.9 115.0,217.1 156.0,193.2 197.0,183.9 238.0,180.3 279.0,178.9 320.0,178.3 361.0,178.1"/>
+      <polyline fill="none" stroke="#047857" stroke-width="2.6" points="74.0,191.0 115.0,203.3 156.0,215.1 197.0,226.2 238.0,236.8 279.0,246.9 320.0,256.4 361.0,265.5"/>
+      <polyline fill="none" stroke="#B91C1C" stroke-width="2.6" points="74.0,278.9 115.0,340.6 156.0,378.4 197.0,401.5 238.0,415.7 279.0,424.3 320.0,429.6 361.0,432.9"/>
+      <circle cx="74.0" cy="278.9" r="3.2" fill="#1D4ED8"/>
+      <circle cx="115.0" cy="217.1" r="3.2" fill="#1D4ED8"/>
+      <circle cx="156.0" cy="193.2" r="3.2" fill="#1D4ED8"/>
+      <circle cx="197.0" cy="183.9" r="3.2" fill="#1D4ED8"/>
+      <circle cx="238.0" cy="180.3" r="3.2" fill="#1D4ED8"/>
+      <circle cx="279.0" cy="178.9" r="3.2" fill="#1D4ED8"/>
+      <circle cx="320.0" cy="178.3" r="3.2" fill="#1D4ED8"/>
+      <circle cx="361.0" cy="178.1" r="3.2" fill="#1D4ED8"/>
+      <circle cx="74.0" cy="191.0" r="3.2" fill="#047857"/>
+      <circle cx="115.0" cy="203.3" r="3.2" fill="#047857"/>
+      <circle cx="156.0" cy="215.1" r="3.2" fill="#047857"/>
+      <circle cx="197.0" cy="226.2" r="3.2" fill="#047857"/>
+      <circle cx="238.0" cy="236.8" r="3.2" fill="#047857"/>
+      <circle cx="279.0" cy="246.9" r="3.2" fill="#047857"/>
+      <circle cx="320.0" cy="256.4" r="3.2" fill="#047857"/>
+      <circle cx="361.0" cy="265.5" r="3.2" fill="#047857"/>
+      <circle cx="74.0" cy="278.9" r="3.2" fill="#B91C1C"/>
+      <circle cx="115.0" cy="340.6" r="3.2" fill="#B91C1C"/>
+      <circle cx="156.0" cy="378.4" r="3.2" fill="#B91C1C"/>
+      <circle cx="197.0" cy="401.5" r="3.2" fill="#B91C1C"/>
+      <circle cx="238.0" cy="415.7" r="3.2" fill="#B91C1C"/>
+      <circle cx="279.0" cy="424.3" r="3.2" fill="#B91C1C"/>
+      <circle cx="320.0" cy="429.6" r="3.2" fill="#B91C1C"/>
+      <circle cx="361.0" cy="432.9" r="3.2" fill="#B91C1C"/>
+      <text x="195" y="166" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#1D4ED8">pass@k (p=0,612) → 99,9 %</text>
+      <text x="180" y="295" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#047857">pass^k (p=0,95) : 77,4 % à k=5</text>
+      <text x="188" y="382" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#B91C1C">pass^k (p=0,612) &lt; 25 % dès k=4..8</text>
+      <text x="213" y="480" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#334155">τ-bench (61,2 % détail) : chute sous 25 % à pass^8</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="32" y="502" width="362" height="64" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="44" y="523" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#064E3B">Seuil production : pass^5 ≥ 0,95 (≥ 0,99 SLM)</text>
+      <text x="44" y="542" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Impose p unitaire ≥ 99,0 %–99,8 % sur banc hermétique</text>
+      <text x="44" y="558" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">pour tenir 5 exécutions consécutives conformes.</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="416" y="98" width="378" height="480" rx="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="1.8"/>
+    <rect x="416" y="98" width="378" height="34" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.5"/>
+    <text x="430" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Z2 · Frontière de Pareto HAL (21 730 runs)</text>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="428" y="142" width="354" height="352" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <line x1="468" y1="168" x2="468" y2="438" stroke="#475569" stroke-width="1.5"/>
+      <line x1="468" y1="438" x2="764" y2="438" stroke="#475569" stroke-width="1.5"/>
+      <text x="616" y="458" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Coût d'inférence (échelle log : 1× → 10×)</text>
+      <text x="480" y="184" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Précision (%)</text>
+      <path d="M 488 370 Q 520 260 578 232 T 650 225" fill="none" stroke="#047857" stroke-width="2.8"/>
+      <circle cx="488" cy="370" r="5.5" fill="#047857"/>
+      <circle cx="534" cy="272" r="5.5" fill="#047857"/>
+      <circle cx="578" cy="232" r="6" fill="#047857"/>
+      <circle cx="650" cy="225" r="5.5" fill="#047857"/>
+      <text x="580" y="216" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#047857">Frontière de Pareto HAL</text>
+      <rect x="665" y="242" width="90" height="115" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <circle cx="695" cy="275" r="5" fill="#B91C1C"/>
+      <circle cx="728" cy="296" r="5" fill="#B91C1C"/>
+      <circle cx="712" cy="328" r="5" fill="#B91C1C"/>
+      <text x="710" y="378" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">Coût ~10× dominé</text>
+      <text x="710" y="392" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="9.8" fill="#B91C1C">sur 8/9 bancs</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="428" y="502" width="354" height="64" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+      <text x="440" y="523" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#78350F">Rejet des classements contaminés</text>
+      <text x="440" y="542" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Seuls 2/9 bancs avaient un harnais uniforme ;</text>
+      <text x="440" y="558" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">exiger un banc hermétique interne vérifié.</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="804" y="98" width="376" height="480" rx="10" fill="#F8FAFC" stroke="#4338CA" stroke-width="1.8"/>
+    <rect x="804" y="98" width="376" height="34" rx="10" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.5"/>
+    <text x="818" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#312E81">Z3 · Dimensionnement statistique Wilson 95 %</text>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="818" y="144" width="348" height="100" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8" stroke-dasharray="6,4"/>
+      <text x="830" y="165" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">① Intervalle de Wald à 0 échec : 0,00 %</text>
+      <text x="830" y="184" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Défaut mathématique à f = 0 : donne une</text>
+      <text x="830" y="200" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">marge d'erreur nulle fallacieuse (proscrit).</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="818" y="256" width="348" height="114" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="830" y="277" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">② Wilson unilatéral 95 % (z = 1,644854)</text>
+      <text x="830" y="296" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">n ≥ ⌈3 / p⌉ : pour p = 1 % → n = 300 distincts.</text>
+      <text x="830" y="312" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Borne obtenue : 0,8938 % &lt; 1 % (conforme G0).</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="818" y="382" width="348" height="106" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+      <text x="830" y="403" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#78350F">③ Wilson bilatéral (z = 1,96)</text>
+      <text x="830" y="422" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">À n = 300 et 0 échec : 1,2643 % &gt; 1 %.</text>
+      <text x="830" y="438" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Exige ~381 scénarios pour passer sous 1 %.</text>
+    </g>
+    <g id="node-8" class="node" data-node="true">
+      <rect x="818" y="500" width="348" height="66" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+      <text x="830" y="521" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">CI E2 (50–100 × k=5) ≠ 300 cas distincts</text>
+      <text x="830" y="540" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.1" fill="#1E293B">k répétitions vérifient pass^k ; l'homologation</text>
+      <text x="830" y="556" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.1" fill="#1E293B">p ≤ 1 % exige 300 scénarios indépendants distincts.</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="590" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="612" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="632" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① pass@k mesure un succès ponctuel optimiste, alors que pass^k = p^k</text>
+    <text x="34" y="648" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">traduit la fiabilité exigée en production.</text>
+    <text x="610" y="632" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② La frontière de Pareto HAL exclut les configurations 10× plus</text>
+    <text x="610" y="648" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">onéreuses qui n'augmentent pas la précision.</text>
+    <text x="34" y="674" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ L'estimation de Wald s'effondre à zéro échec ; seule la borne de</text>
+    <text x="34" y="690" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">Wilson unilatérale n ≥ ⌈3/p⌉ reste conservatrice.</text>
+    <text x="610" y="674" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Démontrer un taux d'échec &lt; 1 % impose 300 scénarios indépendants</text>
+    <text x="610" y="690" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">distincts sans répétition artificielle.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="718" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="731" width="18" height="18" rx="4" fill="#1D4ED8" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="60" y="744" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Courbe optimiste pass@k</text>
+    <rect x="411" y="731" width="18" height="18" rx="4" fill="#047857" stroke="#047857" stroke-width="2"/>
+    <text x="437" y="744" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Cible constance pass^k, Pareto optimal &amp; Wilson n=300</text>
+    <rect x="788" y="731" width="18" height="18" rx="4" fill="#B91C1C" stroke="#B91C1C" stroke-width="2"/>
+    <text x="814" y="744" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Effondrement pass^k, zone dominée 10× &amp; biais Wald</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="772" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="794" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="814" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Un essai réussi sur k ne prouve pas un agent fiable : la porte CI exige constance pass^k, efficience sur la frontière HAL et 300</text>
+    <text x="36" y="831" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">scénarios distincts sous borne de Wilson.</text>
+  </g>
+</svg>

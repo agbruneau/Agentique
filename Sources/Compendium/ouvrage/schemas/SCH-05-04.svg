@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 882" width="1200" height="882">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="882" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-05-04 — Carte de désambiguïsation des sept familles de préfixes et échelles homonymes</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Prévention des collisions transversales (N, L, P, D, E, M et sept variantes de C) · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="1160" height="502" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="1160" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · Carte de désambiguïsation des sept familles de préfixes et échelles homonymes (propriétaire explicite par chapitre)</text>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="32" y="144" width="155" height="388" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+      <rect x="32" y="144" width="155" height="48" rx="8" fill="#1B4F72"/>
+      <text x="109" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">N &amp; L</text>
+      <text x="109" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">Autonomie vs Maturité</text>
+      <text x="40" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• N0–N4 / L0–L4 : autonomie</text>
+      <text x="40" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  configurée (CH-05, DISC-01)</text>
+      <text x="40" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• N0/L0 code déterministe fixe</text>
+      <text x="40" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• N1–N5 : maturité (CH-06)</text>
+      <text x="40" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• L0–L3 : graduation T1</text>
+      <text x="40" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• NX (Classe 6) : INTERDIT</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="195" y="144" width="155" height="388" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.8"/>
+      <rect x="195" y="144" width="155" height="48" rx="8" fill="#0F766E"/>
+      <text x="272" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">P</text>
+      <text x="272" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">Outils, DAPP &amp; Paliers</text>
+      <text x="203" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• P0–P3 : criticité d'outils</text>
+      <text x="203" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  (lecture → P3 CIBA, CH-05)</text>
+      <text x="203" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• P1–P3 : DAPP Paliers horizon</text>
+      <text x="203" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  2027–2035 (CH-31, DISC-02)</text>
+      <text x="203" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• Paliers 1–4 : coupe-circuit</text>
+      <text x="203" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  chirurgical (CH-21)</text>
+      <text x="203" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• Paliers 1–3 : routage (CH-09)</text>
+    </g>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="358" y="144" width="155" height="388" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.8"/>
+      <rect x="358" y="144" width="155" height="48" rx="8" fill="#4338CA"/>
+      <text x="435" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">D</text>
+      <text x="435" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">Domaines vs Grille CH-05</text>
+      <text x="366" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• D01–D12 : 12 domaines</text>
+      <text x="366" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  MindMap (Parties I à XII)</text>
+      <text x="366" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• D1–D8 : 8 domaines métier</text>
+      <text x="366" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  de criticité (CH-05)</text>
+      <text x="366" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• Ex. : D2 conseil &amp; D6 LBC</text>
+      <text x="366" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  interdits en B2B auto</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="521" y="144" width="155" height="388" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <rect x="521" y="144" width="155" height="48" rx="8" fill="#B45309"/>
+      <text x="598" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">E</text>
+      <text x="598" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">EvalOps, Érosion &amp; BSIF</text>
+      <text x="529" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• E1–E3 : 3 étages banc</text>
+      <text x="529" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  EvalOps (PR, CI, Prod · CH-23)</text>
+      <text x="529" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• E1–E5 : boucle érosion</text>
+      <text x="529" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  cognitive humaine (CH-33)</text>
+      <text x="529" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• BSIF E-23 / E-21 : lignes</text>
+      <text x="529" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  directrices (1er mai 2027)</text>
+    </g>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="684" y="144" width="155" height="388" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <rect x="684" y="144" width="155" height="48" rx="8" fill="#B91C1C"/>
+      <text x="761" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">M</text>
+      <text x="761" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">Profils vs AAGMM</text>
+      <text x="692" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• M-14..M-18 : 5 profils</text>
+      <text x="692" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  financiers durcis (CH-28)</text>
+      <text x="692" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  (Banque, Patrim., Assur.)</text>
+      <text x="692" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• M1–M5 : niveaux modèle</text>
+      <text x="692" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  de maturité AAGMM (CH-30)</text>
+      <text x="692" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• Ne jamais permuter le</text>
+      <text x="692" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  trait d'union normatif</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="847" y="144" width="155" height="388" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <rect x="847" y="144" width="155" height="48" rx="8" fill="#047857"/>
+      <text x="924" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">C (Arch.)</text>
+      <text x="924" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">Couches &amp; C260</text>
+      <text x="855" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C1–C5 : modèle pivot +</text>
+      <text x="855" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  Plans A/B/C (CH-06/36)</text>
+      <text x="855" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C1–C6 : 6 couches CAD26</text>
+      <text x="855" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  et secteurs (T2/DIV-02)</text>
+      <text x="855" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C1–C8 : 8 strates outils</text>
+      <text x="855" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  cadre 565 ex. (CH-29)</text>
+      <text x="855" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C260 : ArchiMate 4.0</text>
+      <text x="855" y="354" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  (arbitrage DISC-04)</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="1010" y="144" width="155" height="388" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.8"/>
+      <rect x="1010" y="144" width="155" height="48" rx="8" fill="#6D28D9"/>
+      <text x="1087" y="167" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">C (Exéc.)</text>
+      <text x="1087" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#F8FAFC">Critères &amp; Contrats</text>
+      <text x="1018" y="214" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C01–C40 : 40 critères G0</text>
+      <text x="1018" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  blueprints (CH-29/Ann.D)</text>
+      <text x="1018" y="254" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C.1–C.8 : 8 contrats CI</text>
+      <text x="1018" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  cas 12 480 $ (CH-35)</text>
+      <text x="1018" y="294" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C04 grille porte CH-03</text>
+      <text x="1018" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  vs critère C04 en C01–C40</text>
+      <text x="1018" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">• C26/C27 : OBO &amp; PQC</text>
+      <text x="1018" y="354" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#0F2942">  au banc exécutable C40</text>
+    </g>
+    <g id="node-8" class="node" data-node="true">
+      <rect x="32" y="542" width="1136" height="52" rx="8" fill="#FFFFFF" stroke="#1B4F72" stroke-width="1.8"/>
+      <text x="44" y="563" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#0F2942">Règle d'hygiène DISC-01 à DISC-04 : aucune abréviation nue (C, P, N, M, D, E) sans préfixe ou chapitre propriétaire</text>
+      <text x="44" y="582" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Tout code Rego, schéma JSON et contrat utilise exclusivement l'identifiant canonique tranché en concordance (Annexe C et CH-36).</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="616" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="638" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="658" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① N0–N4/L0–L4 gouvernent l'autonomie d'exécution (CH-05), distincts</text>
+    <text x="34" y="674" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">de N1–N5 et M1–M5 de maturité.</text>
+    <text x="610" y="658" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Les paliers d'outils P0–P3 (CH-05) restent strictement séparés des</text>
+    <text x="610" y="674" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">paliers DAPP P1–P3 et disjoncteurs 1–4.</text>
+    <text x="34" y="700" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ La lettre C recouvre sept usages distincts allant de C1–C5 (pivot)</text>
+    <text x="34" y="716" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">à C01–C40 (G0) et C.1–C.8 (contrats CI).</text>
+    <text x="610" y="700" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ La table DISC-01..05 tranche mécaniquement ces homonymies dans la</text>
+    <text x="610" y="716" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">trousse exécutable.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="744" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="757" width="18" height="18" rx="4" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="60" y="770" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Échelles d'autonomie &amp; outils (N, L, P)</text>
+    <rect x="411" y="757" width="18" height="18" rx="4" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="437" y="770" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Domaines, évaluation &amp; profils (D, E, M)</text>
+    <rect x="788" y="757" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="814" y="770" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Sept acceptions architecturales et CI de C</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="798" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="820" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="840" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Désambiguïser dès le Liminaire et le Chapitre 05 les sept lettres homonymes élimine les erreurs d'interprétation entre échelles de</text>
+    <text x="36" y="857" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">risque, couches et critères G0.</text>
+  </g>
+</svg>

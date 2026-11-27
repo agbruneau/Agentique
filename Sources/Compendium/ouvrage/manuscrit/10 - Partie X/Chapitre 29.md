@@ -32,6 +32,12 @@ Le contrôle de cohérence interne (`dossier source Tome 1 § 45.15`) exige en o
 
 *Tableau 29.1 — Instanciation exécutable des cinq briques `SBB` du `Tableau 12` (*dossier source Tome 2*) validées mécaniquement à la porte `G0`.*
 
+La *Figure 104* relie Naissance, Vie et Mort d'un agent aux strates `C1–C8`.
+
+![Cycle Naissance, Vie et Mort d'un agent sur les strates C1–C8](../../schemas/rendus/SCH-29-04.svg)
+
+*Figure 104 — SCH-29-04 : Continuité du cycle Naissance, Vie et Mort sur les strates `C1–C8` (`§ 45.15` du Tome 1).*
+
 ### 29.1.2 Blueprint 1 : traitement transactionnel réglementé orienté SoR (bp1_assistant_interne)
 
 Le **Blueprint 1 (`bp1_assistant_interne`)** répond aux processus internes réglementés orientés *Systems of Record* (`SoR`) tels que la pré-adjudication de crédit commercial, l'instruction de sinistres ou la vérification de conformité, relevant de la Loi 25 (article `12.1` [6]) et de la ligne directrice `BSIF E-23` [5]. Ce patron correspond directement à la section `14.1` du *dossier source Tome 6*. Son architecture dissocie la planification probabiliste de l'engagement comptable sur quatre plans découplés :
@@ -73,11 +79,11 @@ En synthèse comparative, aucun grand groupe ne doit enfermer l'ensemble de son 
 
 *Tableau 29.2 — Matrice comparative des trois blueprints de référence (`bp1` à `bp3`), concordance `Tome 6 ↔ Tome 8` et propriétés vérifiées.*
 
-La *Figure 91* met en regard ces trois topologies normalisées, leur ancrage sur le socle commun de strates `C1–C8` (illustré par le cadre à `565` exigences) et les `5 SBB`, ainsi que le contrôle mécanique final des `40` critères `C01–C40` à la porte `G0`.
+La *Figure 105* met en regard ces trois topologies normalisées, leur ancrage sur le socle commun de strates `C1–C8` (illustré par le cadre à `565` exigences) et les `5 SBB`, ainsi que le contrôle mécanique final des `40` critères `C01–C40` à la porte `G0`.
 
 ![Anatomie comparée des trois blueprints de référence (bp1 SoR, bp2 enclave RAG ACL, bp3 maillage B2B) sur C1–C8 et C01–C40](../../schemas/rendus/SCH-29-01.svg)
 
-*Figure 91 — SCH-29-01 : Comparaison des blueprints `bp1_assistant_interne` (`Z1`, `Tome 6 § 14.1`), `bp2_rag_entreprise_acl` (`Z2`, `Tome 6 § 14.3`) et `bp3_orchestration_multi_agents_b2b` (`Z3`, `Tome 6 § 14.2`) assemblés sur les strates `C1–C8` (socle d'illustration à `565` contrôles), les `5 SBB` du `Tableau 12` (Tome 2) et la validation mécanique `C01–C40` en `G0`.*
+*Figure 105 — SCH-29-01 : Comparaison des blueprints `bp1_assistant_interne` (`Z1`, `Tome 6 § 14.1`), `bp2_rag_entreprise_acl` (`Z2`, `Tome 6 § 14.3`) et `bp3_orchestration_multi_agents_b2b` (`Z3`, `Tome 6 § 14.2`) assemblés sur les strates `C1–C8` (socle d'illustration à `565` contrôles), les `5 SBB` du `Tableau 12` (Tome 2) et la validation mécanique `C01–C40` en `G0`.*
 
 > **Trois invariants exécutables — Chapitre 29**
 > 1. **Validation mécanique des blueprints et permutation explicite (`C01–C40`, `5 SBB`)** — Aucun gabarit `bp1`, `bp2` ou `bp3` n'est recevable sans renseigner les `5` emplacements `SBB` du `Tableau 12` (Tome 2) et couvrir `C01` à `C40` dans `evalops_prr/prr_validators.py`, en respectant le mappage `Tome 6 § 14.2 ↔ bp3` et `Tome 6 § 14.3 ↔ bp2`.
@@ -90,7 +96,7 @@ La *Figure 91* met en regard ces trois topologies normalisées, leur ancrage sur
 
 Une grande entreprise n'élit jamais un orchestrateur unique ; elle hérite simultanément de cinq écosystèmes applicatifs majeurs : `Salesforce Agentforce` (CRM), `ServiceNow` (ITSM/FSM), `SAP Joule` sur `S/4HANA` (ERP et grand livre), `Microsoft Copilot Studio` (bureautique collaboratrice) et `Workday` (capital humain). Laisser chacun de ces « jardins clos » interroger librement les API voisines crée une double pathologie : un maillage quadratique ingouvernable et une fuite des invariants métier, fiscaux ou de confidentialité (par exemple l'exportation de dossiers salariaux `Workday` sous la Loi 25 [6]).
 
-La décision d'architecture `ADR-015` résout cette pluralité par la **fédération gouvernée par gravité des données**, illustrée dans la zone `Z1` de la *Figure 92*. Pour toute tâche sollicitant plusieurs domaines, l'orchestrateur calcule l'affinité gravitationnelle selon la part d'écritures, d'invariants critiques et d'obligations de résidence portés par chaque progiciel. Trois règles déterministes en découlent :
+La décision d'architecture `ADR-015` résout cette pluralité par la **fédération gouvernée par gravité des données**, illustrée dans la zone `Z1` de la *Figure 106*. Pour toute tâche sollicitant plusieurs domaines, l'orchestrateur calcule l'affinité gravitationnelle selon la part d'écritures, d'invariants critiques et d'obligations de résidence portés par chaque progiciel. Trois règles déterministes en découlent :
 
 - **Localité intra-domaine (`≥ 85 %` d'appels locaux)** : lorsqu'une tâche porte quasi exclusivement sur un seul système d'enregistrement, le spécialiste natif de cette suite orchestre l'exécution localement près de ses données, préservant les permissions fines et réduisant la consommation de crédits unitaires `SaaS`.
 - **Enrichissement ponctuel en lecture** : un agent d'une suite ne lit un statut dans un silo voisin qu'à travers la passerelle neutre `agentgateway` et un serveur `MCP` en lecture seule, sans transfert d'orchestration.
@@ -100,13 +106,13 @@ Dans ce plan neutre, la chaîne d'identité propage le contexte utilisateur depu
 
 ![Fédération multi-SaaS par gravité (≥ 85 % local), reprise Cognitive DR (RTO < 15 minutes) et sas B2B Palier 3 (vLEI / Diplomate ↔ Évaluateur)](../../schemas/rendus/SCH-29-02.png)
 
-*Figure 92 — SCH-29-02 : Boucle de stabilité d'un parc fédéré articulant l'ancrage local par gravité des données (`Z1`, `ADR-015`), la bascule souveraine `Cognitive DR` visant un `RTO < 15` minutes (`Z2`, `ADR-027`) et les quatre verrous du sas `B2B` au Palier 3 (`Z3`, `POR-013`).*
+*Figure 106 — SCH-29-02 : Boucle de stabilité d'un parc fédéré articulant l'ancrage local par gravité des données (`Z1`, `ADR-015`), la bascule souveraine `Cognitive DR` visant un `RTO < 15` minutes (`Z2`, `ADR-027`) et les quatre verrous du sas `B2B` au Palier 3 (`Z3`, `POR-013`).*
 
 ### 29.2.2 Reprise après sinistre cognitif (Cognitive DR, ADR-027)
 
 Rétablir la connectivité réseau après la panne prolongée, la saturation tarifaire ou le retrait brutal d'un fournisseur de modèle frontière ne suffit pas à rétablir le comportement sûr d'un agent. Basculer à chaud sans préparation vers un modèle à poids ouverts d'une autre famille modifie la verbosité, brise la structure `JSON` des appels `MCP` et accroît les faux positifs d'escalade. La décision `ADR-027` (`Cognitive DR`, liée aux contrôles de reprise `F-07` et `R-11` du cadre, `dossier source Tome 3 § 46.11–46.13`) érige donc la continuité cognitive en discipline d'exploitation testée par exercice de bascule trimestriel (ou au moins annuel), autour d'une cible de conception sans source externe d'un temps de reprise `RTO < 15` minutes et d'une perte transactionnelle nulle (`RPO = 0`).
 
-Quatre mécanismes matériels et logiciels du profil `ADR-027` garantissent cette bascule (`Z2` de la *Figure 92*) :
+Quatre mécanismes matériels et logiciels du profil `ADR-027` garantissent cette bascule (`Z2` de la *Figure 106*) :
 
 1. **Abstraction `Open Responses` et purge des états opaques** : aucun code métier n'importe le kit propriétaire d'un fournisseur infonuagique. Les appels passent par l'enveloppe ouverte `Open Responses`. Lorsqu'une interruption survient, l'adaptateur écarte les blocs de délibération chiffrés du fournisseur défaillant et reconstruit le fil d'exécution du modèle de relève en s'appuyant uniquement sur le journal canonique des événements et des réponses d'outils validées.
 2. **Double profil précompilé et validé en CI/CD** : chaque agent critique est homologué sous un profil nominal et un profil jumeau compilé pour la grappe souveraine à poids ouverts (`vLLM` ou `SGLang`, décodage contraint `MCP`). Sous `ADR-027` (`dossier source Tome 3 § 46.11`), l'homologation CI/CD exige `pass^5_DR ≥ 0,94 · pass^5_nominal`. Dans la zone intermédiaire `[0,90 · pass^5_nominal ; 0,94 · pass^5_nominal[`, le modèle est recalé à l'homologation nominale mais autorisé en bascule d'urgence (`cognitive_dr_switch.py`) sous plafonds `HOTL` resserrés (`−15 %` à `−25 %`, multiplicateur `0,80`), alors que sous le plancher `0,90 · pass^5_nominal`, le contrôleur dévie vers la file humaine (`SAFE_HOLD_L2_HUMAN_QUEUE`).
@@ -117,9 +123,15 @@ La formule opérationnelle du temps de reprise cognitif (`dossier source Tome 3 
 
 Ce budget cible de `15` minutes, éprouvé lors d'exercices périodiques de débranchement du fournisseur principal (`ADR-027`), vise à instrumenter la résilience opérationnelle et la maîtrise des dépendances externes attendues par `BSIF E-23` [5] (en articulation avec la gestion du risque lié aux tiers de `BSIF B-10`), sans que ni le délai de `15` minutes ni la périodicité d'exercice ne figurent textuellement dans `E-23` [5].
 
+La *Figure 107* chronomètre cette bascule `Cognitive DR` et les seuils `pass^5_DR`.
+
+![Chronogramme Cognitive DR sous RTO < 15 minutes et bandes pass^5_DR](../../schemas/rendus/SCH-29-05.svg)
+
+*Figure 107 — SCH-29-05 : Chronogramme `Cognitive DR` (`T+30 s`, `T+3 min`, `T+12 min`) et trois bandes `pass^5_DR` (`ADR-027`).*
+
 ### 29.2.3 Ouverture conditionnelle aux réseaux B2B fédérés au Palier 3 (POR-013)
 
-L'automatisation inter-organisations entièrement fédérée demeure strictement proscrite en conseil, vente et convenance (`D2`, incluant la gestion de patrimoine) ainsi qu'en conformité, lutte contre le blanchiment et gestion des risques (`D6`). Pour les autres domaines, son ouverture est différée au **Palier 3 (`horizon 2033–2035`)** sous la porte `POR-013` et subordonnée au franchissement vérifié des signaux d'observatoire `SIG-007` et `SIG-110` (`Z3` de la *Figure 92*). Conformément à l'arbitrage `DEC-012` et aux initiatives `INI-046`, `INI-047` et `INI-048`, tout échange `B2B` autonome requiert quatre verrous cumulatifs :
+L'automatisation inter-organisations entièrement fédérée demeure strictement proscrite en conseil, vente et convenance (`D2`, incluant la gestion de patrimoine) ainsi qu'en conformité, lutte contre le blanchiment et gestion des risques (`D6`). Pour les autres domaines, son ouverture est différée au **Palier 3 (`horizon 2033–2035`)** sous la porte `POR-013` et subordonnée au franchissement vérifié des signaux d'observatoire `SIG-007` et `SIG-110` (`Z3` de la *Figure 106*). Conformément à l'arbitrage `DEC-012` et aux initiatives `INI-046`, `INI-047` et `INI-048`, tout échange `B2B` autonome requiert quatre verrous cumulatifs :
 
 1. **Identité légale vérifiable `GLEIF vLEI` et rôle `OOR` (`CAP-041`)** : chaque partie prouve son existence morale et le mandat de son représentant officiel par la chaîne cryptographique ouverte `vLEI` (`ISO 17442-3`, écosystème `KERI`/`ACDC`) [1], la sous-page institutionnelle de gouvernance renvoyant une erreur `HTTP 404` demeurant consignée en `statut F` (`AO-01`, hors preuve) compensé par les spécifications techniques ouvertes [1].
 2. **Connecteurs `Dataspace` et contrats d'usage `ODRL 2.2` (`CAP-027`)** : aucune donnée sensible ne circule hors d'un connecteur exécutant de manière déterministe les politiques d'usage, de durée et de finalité exprimées en `ODRL 2.2`.
@@ -148,10 +160,10 @@ De plus, la portabilité contractuelle des actifs ouverts (`agents`, compétence
 
 *Tableau 29.3 — Frontière d'hygiène probante (`DC-P11` / `DC-P12`) séparant le fil rouge pédagogique `Groupe Boréal Inc.` des preuves exécutables de `Borealis-Bench`.*
 
-La *Figure 93* illustre ce filtrage probant obligatoire qui convertit une narration pédagogique multi-divisions en un contrat de preuves CI reproductibles avant toute décision d'homologation.
+La *Figure 108* illustre ce filtrage probant obligatoire qui convertit une narration pédagogique multi-divisions en un contrat de preuves CI reproductibles avant toute décision d'homologation.
 
 ![Du fil rouge illustratif Groupe Boréal Inc. (BEL/BCA/BSN) au banc reproductible Borealis-Bench (108 blocs CI, DC-P11 et DC-P12)](../../schemas/rendus/SCH-29-03.svg)
 
-*Figure 93 — SCH-29-03 : Séparation entre le rôle pédagogique du fil rouge `Groupe Boréal Inc.` (`Z1`), le filtre rouge d'exclusion des métriques fictives `DC-P11`/`DC-P12` et de la règle documentaire `DC-C27` (`Z2`) et les `108` blocs CI exécutables de `Borealis-Bench` (`Z3`).*
+*Figure 108 — SCH-29-03 : Séparation entre le rôle pédagogique du fil rouge `Groupe Boréal Inc.` (`Z1`), le filtre rouge d'exclusion des métriques fictives `DC-P11`/`DC-P12` et de la règle documentaire `DC-C27` (`Z2`) et les `108` blocs CI exécutables de `Borealis-Bench` (`Z3`).*
 
-Les trois blueprints normalisés, leur résilience fédérée et les contrats reproductibles de `Borealis-Bench` fournissent l'architecture de référence. Le Chapitre 30 décrit maintenant l'usine logicielle qui les produit, les certifie et les maintient en production à l'échelle — une *Internal Agentic Platform* (`IAP`) sous `GitOps` cognitif — tout en érigeant en barrages bloquants les anti-patrons qui font échouer les déploiements.
+Ces trois blueprints et les contrats `Borealis-Bench` préparent le Chapitre 30, consacré à l'usine `Internal Agentic Platform` (`IAP`) sous `GitOps` cognitif et aux anti-patrons bloquants.

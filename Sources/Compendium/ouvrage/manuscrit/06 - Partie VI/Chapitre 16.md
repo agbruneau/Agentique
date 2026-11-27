@@ -47,7 +47,7 @@ La discipline d'évaluation de cette grille (construction analytique du Tome 1, 
 
 ![Fin des secrets fixes (ratio 82:1) : identité NHI parrainée au SIRH et audit par les cinq questions (Q-A à Q-E)](../../schemas/rendus/SCH-16-01.svg)
 
-*Figure 52 — SCH-16-01 : Comparatif avant/après illustrant l'éradication des secrets statiques au profit du couple Blueprint/Instance parrainé au SIRH (< 72 h) sur socle OAuth 2.0 (BCP 240 / RFC 9700) et son évaluation selon la grille séquentielle Q-A à Q-E.*
+*Figure 61 — SCH-16-01 : Comparatif avant/après illustrant l'éradication des secrets statiques au profit du couple Blueprint/Instance parrainé au SIRH (< 72 h) sur socle OAuth 2.0 (BCP 240 / RFC 9700) et son évaluation selon la grille séquentielle Q-A à Q-E.*
 
 Avant d'envisager la fédération inter-agents, l'entreprise DOIT assainir son socle IAM existant autour de protocoles éprouvés qui déplacent la confiance du périmètre réseau vers chaque message signé (`AAA` : authentification, autorisation, imputabilité). Dans cette pile, SAML 2.0 demeure cantonné à la fédération d'authentification d'usagers par assertions signées et ne doit pas être détourné en véhicule d'autorisation fine entre agents logiciels. OpenID Connect (OIDC) fournit la couche d'identité fédérée sur OAuth 2.0, tandis que les pratiques d'autorisation déléguée s'alignent impérativement sur la norme IETF BCP 240 / RFC 9700 publiée en janvier 2025 [6].
 
@@ -80,7 +80,7 @@ Pour combler cette absence d'horloge interne dans `a2a_card.py` — qui évalue 
 
 ![Cartes A2A, annuaires commerciaux et trois modèles de registres : distinguer ce qui est signé de ce qui fait foi](../../schemas/rendus/SCH-16-02.svg)
 
-*Figure 53 — SCH-16-02 : Matrice des risques et garde-fous distinguant les angles morts natifs de l'AgentCard signée JWS/JCS, les trois modèles de registres et l'encapsulation des annuaires commerciaux.*
+*Figure 62 — SCH-16-02 : Matrice des risques et garde-fous distinguant les angles morts natifs de l'AgentCard signée JWS/JCS, les trois modèles de registres et l'encapsulation des annuaires commerciaux.*
 
 ### 16.2.2 Attestation SPIFFE/SPIRE, DID/VC et vLEI
 
@@ -120,13 +120,13 @@ Le passage effectif au Palier 3 demeure toutefois conditionnel et gouverné par 
 
 ![Attestations éphémères SPIFFE/SPIRE (1 h) en interne et trajectoire conditionnelle vLEI / passeport B2B](../../schemas/rendus/SCH-16-03.svg)
 
-*Figure 54 — SCH-16-03 : Architecture en trois couches séparant le socle SPIFFE/SPIRE opérationnel en interne (TTL 1 h), les quatre substituts provisoires du passeport d'agent à l'horizon du 1er mai 2027 et l'activation conditionnelle GLEIF vLEI / W3C VC 2.0 au Palier 3.*
+*Figure 63 — SCH-16-03 : Architecture en trois couches séparant le socle SPIFFE/SPIRE opérationnel en interne (TTL 1 h), les quatre substituts provisoires du passeport d'agent à l'horizon du 1er mai 2027 et l'activation conditionnelle GLEIF vLEI / W3C VC 2.0 au Palier 3.*
 
 Les restrictions d'accès web (portails OWASP, `gleif.org` et AMF en statut `F`, détaillées en Annexe A) sont compensées par les publications libres officielles OWASP [9, 10] et GLEIF/WebOfTrust [5], tandis que le jalon AMF du 1er mai 2027 n'est cité qu'à titre indicatif via la source secondaire `AIBanks.ca` [12].
 
 ## 16.3 Synthèse des schémas, livrables, exigences probatoires et trois invariants exécutables
 
-Les trois figures du chapitre illustrent la montée en assurance identitaire : la Figure 52 (`SCH-16-01`) oppose les secrets statiques au couple `Blueprint`/`Instance` parrainé au SIRH en section `16.2.1`, la Figure 53 (`SCH-16-02`) caractérise les angles morts des cartes `A2A` et des trois modèles de registres, et la Figure 54 (`SCH-16-03`) articule `SPIFFE/SPIRE` interne et trajectoire `vLEI` en section `16.2.2`.
+Les trois figures du chapitre illustrent la montée en assurance identitaire : la Figure 61 (`SCH-16-01`) oppose les secrets statiques au couple `Blueprint`/`Instance` parrainé au SIRH en section `16.2.1`, la Figure 62 (`SCH-16-02`) caractérise les angles morts des cartes `A2A` et des trois modèles de registres, et la Figure 63 (`SCH-16-03`) articule `SPIFFE/SPIRE` interne et trajectoire `vLEI` en section `16.2.2`.
 
 La mise en œuvre du socle d'identité non humaine s'articule avec les chapitres voisins selon des frontières étanches. En entrée, le chapitre consomme la distinction agent/humain établie en gouvernance d'autonomie (← Chapitre 05), les besoins d'autorisation des outils MCP (← Chapitre 07), les canaux `SLIM`/`AGNTCY` et `EDC`/`ODRL` (← Chapitre 08), les contrats de découverte (← Chapitre 09), les exigences `IDMZ` et périphériques `TPM 2.0` (← Chapitre 12), les contraintes d'attente durable (← Chapitre 15) ainsi que les attentes prudentielles canadiennes et québécoises (→ Chapitre 25).
 

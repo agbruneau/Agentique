@@ -34,7 +34,7 @@ La non-compositionnalité frappe autant l'agent unique que les architectures dis
 
 ![La triade létale et la non-compositionnalité de la sûreté : pourquoi assembler trois outils innocents crée une faille d'exfiltration](../../schemas/rendus/SCH-19-01.svg)
 
-*Figure 61 — SCH-19-01 : Reconstitution de la triade létale au cœur de la fenêtre d'attention d'un modèle à partir de trois capacités bénignes isolées (lecture externe, données privées, canal sortant) et désamorçage en amont par pré-lecteur SLM sans outil (`EXIG-SEC-03`/`05`) et suivi CaMeL.*
+*Figure 71 — SCH-19-01 : Reconstitution de la triade létale au cœur de la fenêtre d'attention d'un modèle à partir de trois capacités bénignes isolées (lecture externe, données privées, canal sortant) et désamorçage en amont par pré-lecteur SLM sans outil (`EXIG-SEC-03`/`05`) et suivi CaMeL.*
 
 Face à cette indistinction des jetons, de nombreux déploiements s'appuient sur des parades probabilistes : délimitation lexicale (*Spotlighting*) [3], injonctions répétées en invite système [3], ou classifieur auxiliaire (tel *Prompt Shields*, cité à titre illustratif au `Tome 2 § 9.6`) [3, 5]. Or l'analyse théorique (notamment l'équivalence entre détection adversariale et classification robuste rappelée dans [3]) et les tests adverses montrent que ces filtres cèdent devant les formulations obliques, l'encodage `Base64` ou les attaques adaptatives [3, 5]. L'exigence `EXIG-SEC-05` (`Tome 2 § 9.6`) proscrit donc ces détecteurs comme barrière unique [3, 5].
 
@@ -59,7 +59,7 @@ Le même risque frappe les paquets `Agent Skills` (`SKILL.md`). Malgré la divul
 
 ![Outils MCP empoisonnés, « rug-pull » et Agent Skills vulnérables : le menu modifié en cuisine après l'inspection](../../schemas/rendus/SCH-19-02.svg)
 
-*Figure 62 — SCH-19-02 : Contraste entre la chaîne logistique publique mutable (40,58 % de dérives silencieuses MCP et 26,1 % de motifs vulnérables sur Skills selon le relevé Tome 3 sous le défaut F-52) et le registre interne verrouillé par empreinte SHA-256 JCS vérifiée à la passerelle PEP avant chaque appel.*
+*Figure 72 — SCH-19-02 : Contraste entre la chaîne logistique publique mutable (40,58 % de dérives silencieuses MCP et 26,1 % de motifs vulnérables sur Skills selon le relevé Tome 3 sous le défaut F-52) et le registre interne verrouillé par empreinte SHA-256 JCS vérifiée à la passerelle PEP avant chaque appel.*
 
 Pour éradiquer les mutations silencieuses et les substitutions de code, les exigences du cadre (`EXIG-MCP-20`, `EXIG-SEC-18` à `EXIG-SEC-22`, `Tome 2 § 6.5` et `§ 9.8`) édictent cinq obligations bloquantes :
 
@@ -121,7 +121,7 @@ L'architecture impose une matrice normative couvrant les quatre déplacements pr
 
 ![Mandataire confus, matrice OWASP ASI01–10 / MAESTRO et suivi de teinte HMAC : verrouiller l'identité et teinter la donnée douteuse](../../schemas/rendus/SCH-19-03.png)
 
-*Figure 63 — SCH-19-03 : Enchaînement défensif unifiant le classement par maillons identitaires Q-A..Q-D sur la matrice OWASP ASI01–10 / MAESTRO, l'apposition d'un sceau de teinte UNTRUSTED_EXTERNAL contre l'empoisonnement ASI06 (OPA en G0, cible HMAC/Cedar Tome 3) et le harnais Red Team bilingue FR/EN en intégration continue.*
+*Figure 73 — SCH-19-03 : Enchaînement défensif unifiant le classement par maillons identitaires Q-A..Q-D sur la matrice OWASP ASI01–10 / MAESTRO, l'apposition d'un sceau de teinte UNTRUSTED_EXTERNAL contre l'empoisonnement ASI06 (OPA en G0, cible HMAC/Cedar Tome 3) et le harnais Red Team bilingue FR/EN en intégration continue.*
 
 L'opérationnalisation contre l'empoisonnement différé (`ASI06`) et le blanchiment de frontière distingue nettement le socle scellé en `G0` de l'architecture cible du `Tome 3`. En `G0`, la défense repose sur `policy_saga/taint_camel.py` (`SessionTaintTracker` isolé par `tenant_id`, copie fonctionnelle via `record_tool_output` et `delegate_taint_envelope`) et sur `policies_opa/camel_taint.rego` (`default allow := false`, `control_flow_source == "TRUSTED_PLAN"`), sans signature `HMAC` ni moteur `Cedar` (exclu de `G0` pour sobriété portable) [1, 5]. Dans la cible de production hors `G0` du `Tome 3` (§ 31.9, § 31.11, § 32.7), la passerelle `PEP` (`agentgateway`) scelle l'étiquette `taint = UNTRUSTED_EXTERNAL` par `HMAC` avec un secret détenu hors du modèle (à l'instar du secret passerelle vérifié côté `PEP`, ou de `hmac_key` pour le caviardage `G0`). Ce sceau est vérifié avant de transmettre `context.sessionTaint` à une clause `Cedar` inconditionnelle `forbid` bloquant les écritures mémorielles ou outils sensibles et plaçant l'entrée en quarantaine (← Chapitre 11) [1, 5].
 

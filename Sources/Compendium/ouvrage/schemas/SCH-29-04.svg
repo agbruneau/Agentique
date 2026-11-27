@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 881" width="1200" height="881">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="881" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-29-04 — Cycle Naissance, Vie et Mort d'un agent d'entreprise sur les strates C1–C8</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Continuité du cycle de vie (§45.15 Tome 1) · 565 contrôles C1–C8 · Adaptation T1 Figure 45.2 · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="1160" height="505" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="1160" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1–Z3 · Continuité du cycle de vie d'un agent d'entreprise à travers les strates C1–C8</text>
+    <g id="node-strata" class="node" data-node="true">
+      <rect x="34" y="142" width="142" height="446" rx="8" fill="#F1F5F9" stroke="#475569" stroke-width="1.4"/>
+      <text x="105" y="164" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">8 Strates C1–C8</text>
+      <rect x="42" y="178" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="202" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C1 Exposition</text>
+      <rect x="42" y="228" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="252" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C2 Intégration</text>
+      <rect x="42" y="278" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="302" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C3 Messagerie</text>
+      <rect x="42" y="328" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="352" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C4 Données</text>
+      <rect x="42" y="378" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="402" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C5 Exéc. agent</text>
+      <rect x="42" y="428" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="452" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C6 Gouvernance</text>
+      <rect x="42" y="478" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="502" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C7 Observabilité</text>
+      <rect x="42" y="528" width="126" height="40" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="105" y="552" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E293B">C8 Socle souv.</text>
+    </g>
+    <rect x="190" y="142" width="314" height="446" rx="8" fill="#FFFFFF" stroke="#047857" stroke-width="1.6"/>
+    <rect x="190" y="142" width="314" height="44" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.4"/>
+    <text x="347" y="162" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">1. Naissance</text>
+    <text x="347" y="179" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#064E3B">Admission atomique sans acte disjoint</text>
+    <g id="node-n1" class="node" data-node="true">
+      <rect x="204" y="200" width="286" height="110" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="216" y="221" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">C1–C3 : Publication des contrats</text>
+      <text x="216" y="240" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Façades MCP 2026-07-28, cartes</text>
+      <text x="216" y="256" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">A2A signées ES256, routes gateway.</text>
+    </g>
+    <g id="node-n2" class="node" data-node="true">
+      <rect x="204" y="326" width="286" height="110" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="216" y="347" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">C4–C5 : Allocation &amp; 5 SBB</text>
+      <text x="216" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Équipe Golden Path IAP, gabarit</text>
+      <text x="216" y="382" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">borné + ODD et secrets sans clé.</text>
+    </g>
+    <g id="node-n3" class="node" data-node="true">
+      <rect x="204" y="452" width="286" height="110" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="216" y="473" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">C6–C8 : Catalogue ≠ Registre</text>
+      <text x="216" y="492" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Admission bloquante PC1–PC5,</text>
+      <text x="216" y="508" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">entrée opposable + SPIFFE SVID.</text>
+    </g>
+    <line x1="504" y1="365" x2="520" y2="365" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+    <rect x="522" y="142" width="314" height="446" rx="8" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="1.6"/>
+    <rect x="522" y="142" width="314" height="44" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.4"/>
+    <text x="679" y="162" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">2. Vie opérationnelle</text>
+    <text x="679" y="179" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E3A8A">Délégation, traces et rotation coordonnée</text>
+    <g id="node-v1" class="node" data-node="true">
+      <rect x="536" y="200" width="286" height="110" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="548" y="221" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#1E3A8A">C1–C3 : Trafic gouverné</text>
+      <text x="548" y="240" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">En-têtes Mcp-Method / Mcp-Name,</text>
+      <text x="548" y="256" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">délégation OBO hops ≤ 2 + DPoP.</text>
+    </g>
+    <g id="node-v2" class="node" data-node="true">
+      <rect x="536" y="326" width="286" height="110" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="548" y="347" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#1E3A8A">C4–C5 : Filtrage &amp; Temporal</text>
+      <text x="548" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">ACL/RLS en lecture, compensation</text>
+      <text x="548" y="382" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Saga, contrôle continu pass^k.</text>
+    </g>
+    <g id="node-v3" class="node" data-node="true">
+      <rect x="536" y="452" width="286" height="110" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="548" y="473" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#1E3A8A">C6–C8 : Télémétrie &amp; crypto-agilité</text>
+      <text x="548" y="492" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Traces OTel GenAI 4 clés, rotation</text>
+      <text x="548" y="508" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">PKI et bascule vers PQC.</text>
+    </g>
+    <line x1="836" y1="365" x2="852" y2="365" stroke="#475569" stroke-width="2.4" marker-end="url(#arrow)"/>
+    <rect x="854" y="142" width="314" height="446" rx="8" fill="#FFFFFF" stroke="#B91C1C" stroke-width="1.6"/>
+    <rect x="854" y="142" width="314" height="44" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.4"/>
+    <text x="1011" y="162" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7F1D1D">3. Mort &amp; Archivage</text>
+    <text x="1011" y="179" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#7F1D1D">Révocation propagée &amp; imputabilité totale</text>
+    <g id="node-m1" class="node" data-node="true">
+      <rect x="868" y="200" width="286" height="110" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="880" y="221" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">C1–C3 : Coupure d'accès immédiate</text>
+      <text x="880" y="240" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Révocation SSF/CAEP propagée</text>
+      <text x="880" y="256" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">et rejet au PEP &lt; 10 s.</text>
+    </g>
+    <g id="node-m2" class="node" data-node="true">
+      <rect x="868" y="326" width="286" height="110" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="880" y="347" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">C4–C5 : Extinction des baux</text>
+      <text x="880" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Clôture Temporal, purge caches et</text>
+      <text x="880" y="382" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">retrait d'admission du maillage.</text>
+    </g>
+    <g id="node-m3" class="node" data-node="true">
+      <rect x="868" y="452" width="286" height="110" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="880" y="473" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">C6–C8 : Scellement WORM</text>
+      <text x="880" y="492" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Désactivation au registre ; archive</text>
+      <text x="880" y="508" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">SCITT / WORM imputable au mandant.</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="615" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="637" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="657" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① À la naissance, enregistrement au registre, mandat SPIFFE et</text>
+    <text x="34" y="673" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">droits passent d'un bloc la porte d'admission.</text>
+    <text x="610" y="657" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② En vie, la délégation OBO, le filtrage RLS/ACL et les traces OTel</text>
+    <text x="610" y="673" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">restent corrélés à travers C1–C8.</text>
+    <text x="34" y="699" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ La rotation des clés et la migration PQC s'exécutent sans rompre</text>
+    <text x="34" y="715" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">la traçabilité ni le versionnement Temporal.</text>
+    <text x="610" y="699" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ À la mort, la révocation SSF/CAEP ferme toutes les strates et</text>
+    <text x="610" y="715" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">scelle l'historique immuable en WORM.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="743" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="756" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="60" y="769" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Naissance : enregistrement, SPIFFE &amp; admission</text>
+    <rect x="411" y="756" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="437" y="769" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Vie : OBO, télémétrie OTel &amp; crypto-agilité</text>
+    <rect x="788" y="756" width="18" height="18" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="814" y="769" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Mort : révocation propagée &amp; archive WORM</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="797" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="819" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="839" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">L'imputabilité d'un agent exige un ancrage continu de sa naissance à son retrait : catalogue, passerelles, identités et journaux</text>
+    <text x="36" y="856" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">agissent de concert sur C1–C8.</text>
+  </g>
+</svg>

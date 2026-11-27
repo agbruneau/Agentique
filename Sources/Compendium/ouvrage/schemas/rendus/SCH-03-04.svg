@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 871" width="1200" height="871">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="871" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-03-04 — Matrice coasienne 2×2 et dispersion marché vs CapEx 2026 et maturité réelle</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Économies d'agents (Tomašev) · CapEx SEC 2026 · enquêtes StatCan / Banque du Canada / Deloitte · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="560" height="495" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="560" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · Matrice coasienne 2×2 des économies d'agents (Tomašev et coll.)</text>
+    <text x="310" y="156" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#0F2942">Perméabilité envers l'économie humaine réelle →</text>
+    <text x="195" y="176" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#475569">Imperméable (bac clos)</text>
+    <text x="435" y="176" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">Perméable (marché réel)</text>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="72" y="190" width="238" height="178" rx="8" fill="#F1F5F9" stroke="#64748B" stroke-width="1.8"/>
+      <text x="84" y="211" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#334155">Émergente × Imperméable</text>
+      <text x="84" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• Sandbox expérimentale fermée.</text>
+      <text x="84" y="246" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• Risques confinés aux simulations</text>
+      <text x="84" y="262" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">  sans impact comptable ni tiers.</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="322" y="190" width="244" height="178" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8" stroke-dasharray="6,4"/>
+      <text x="334" y="211" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">Émergente × Perméable (DANGER)</text>
+      <text x="334" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Erreurs corrélées Flash Crash 2010.</text>
+      <text x="334" y="246" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Collusion tacite RL sur prix (+33 % max</text>
+      <text x="334" y="262" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">  au hasard en jeux GPT-4 Turbo).</text>
+      <text x="334" y="278" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Pièges à agents &amp; HFN asymétrique.</text>
+    </g>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="72" y="382" width="238" height="178" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="84" y="403" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#1E3A8A">Conçue × Imperméable</text>
+      <text x="84" y="422" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• Bancs internes hermétiques.</text>
+      <text x="84" y="438" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• Utile pour tester contrats et</text>
+      <text x="84" y="454" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">  garde-fous hors production.</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="322" y="382" width="244" height="178" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="334" y="403" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">Conçue × Perméable (CIBLE)</text>
+      <text x="334" y="422" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Identifiants DID / VC vérifiables.</text>
+      <text x="334" y="438" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Garde-fous préalables et budgets.</text>
+      <text x="334" y="454" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Imputabilité juridique claire (Hadfield).</text>
+      <text x="334" y="470" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Registres d'audit immuables.</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="594" y="98" width="586" height="286" rx="10" fill="#F8FAFC" stroke="#D97706" stroke-width="1.8"/>
+    <rect x="594" y="98" width="586" height="34" rx="10" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+    <text x="608" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#78350F">Z2 · Dispersion 1–59 des prévisions face au CapEx SEC 2026 (G$ US)</text>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="608" y="142" width="558" height="228" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="618" y="166" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0F2942">CapEx ann. 2026 (4 acteurs SEC)</text>
+      <rect x="618" y="171" width="210" height="14" rx="3" fill="#B91C1C"/>
+      <text x="834" y="182" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">703–713 G$ US (baux inclus)</text>
+      <text x="618" y="208" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0F2942">CapEx 9M 2026 SEC (trésorerie)</text>
+      <rect x="618" y="213" width="170" height="14" rx="3" fill="#DC2626"/>
+      <text x="794" y="224" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#DC2626">496,7 G$ (AMZN 175,7 · GOOG 132 · MSFT 106 · META 83)</text>
+      <text x="618" y="250" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0F2942">6 périmètres dispersion 2025 (×59)</text>
+      <rect x="618" y="255" width="96" height="14" rx="3" fill="#D97706"/>
+      <text x="720" y="266" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#D97706">1,5 (Omdia) → 88,2 G$ (Gartner)</text>
+      <text x="618" y="292" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0F2942">Prévisions ouvertes L+ 2030</text>
+      <rect x="618" y="297" width="68" height="14" rx="3" fill="#1D4ED8"/>
+      <text x="692" y="308" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#1D4ED8">24,5–40,6 G$ US (Deloitte 35–45 G$)</text>
+      <text x="618" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0F2942">Marché ouvert L+ 2026 (2027)</text>
+      <rect x="618" y="339" width="36" height="14" rx="3" fill="#047857"/>
+      <text x="660" y="350" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#047857">5,3–9,9 G$ US (7,8–14,1 G$ en 2027)</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="594" y="394" width="586" height="199" rx="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="1.8"/>
+    <rect x="594" y="394" width="586" height="34" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.5"/>
+    <text x="608" y="416" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Z3 · Adoption opérationnelle mesurée et marquage de dossier sans crochets</text>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="608" y="438" width="272" height="142" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="620" y="459" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#1E3A8A">Adoption réelle vérifiée (L+)</text>
+      <text x="620" y="478" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• StatCan T2 2026 : 19,2 % usage IA.</text>
+      <text x="620" y="494" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• Banque du Canada : 8 % opérationnel</text>
+      <text x="620" y="510" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">  significatif (21 % modéré).</text>
+      <text x="620" y="526" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• Deloitte É.-U. : 12 % ROI &lt; 3 ans en</text>
+      <text x="620" y="542" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">  agentique (contre 45 % base).</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="892" y="438" width="274" height="142" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="904" y="459" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">Discipline N / M / É / S · D / A / C</text>
+      <text x="904" y="478" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• N : droit/305 EXIG · M : études pairs.</text>
+      <text x="904" y="494" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• É : specs ouvertes · S : analytique.</text>
+      <text x="904" y="510" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• D : acquis · A : anticipé · C : projeté.</text>
+      <text x="904" y="526" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">• Juger sur le CPO réel, jamais sur le TAM.</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="605" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="627" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="647" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① L'entreprise réglementée bâtit un espace Conçue × Perméable sous</text>
+    <text x="34" y="663" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">DID/VC et rejette l'espace Émergente × Perméable.</text>
+    <text x="610" y="647" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Une dispersion méthodologique de 1 à 59 sépare six périmètres</text>
+    <text x="610" y="663" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">incompatibles (1,5 à 88,2 G$ US dès 2025).</text>
+    <text x="34" y="689" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ Le CapEx des quatre hyperscalers (496,7 G$ en 9M, 703–713 G$</text>
+    <text x="34" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">annualisés) contraste avec un marché ouvert de 5,3–9,9 G$.</text>
+    <text x="610" y="689" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Avec 8 % d'usage opérationnel au Canada et 12 % de ROI rapide,</text>
+    <text x="610" y="705" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">seul le CPO validé N / M / É / S fonde l'investissement.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="733" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="746" width="18" height="18" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="60" y="759" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">CapEx massif et quadrant Émergente × Perméable risqué</text>
+    <rect x="411" y="746" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="437" y="759" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Cible Conçue × Perméable, fourchettes L+ et preuve CPO</text>
+    <rect x="788" y="746" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="814" y="759" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Maturité réelle StatCan / Banque du Canada</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="787" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="809" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="829" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">L'effondrement des coûts cognitifs impose d'ancrer la décision dans la matrice Conçue × Perméable et le CPO transactionnel plutôt</text>
+    <text x="36" y="846" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">que dans des prévisions de marché dispersées.</text>
+  </g>
+</svg>

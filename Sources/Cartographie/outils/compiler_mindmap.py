@@ -936,12 +936,12 @@ def _build_schemas_catalog(
     comp_inv: dict[str, Any] | None,
     cat_schemas: dict[str, Any] | None,
 ) -> list[dict[str, Any]]:
-    """Fusionne l'inventaire vérifié des 115 schémas et les métadonnées pédagogiques."""
+    """Fusionne l'inventaire vérifié des 139 schémas et les métadonnées pédagogiques."""
     if not comp_inv:
         return []
     cat_by_id: dict[str, dict[str, Any]] = {}
     if cat_schemas:
-        for grp in ("global_schemas", "chapter_schemas"):
+        for grp in ("global_schemas", "chapter_schemas", "annex_schemas"):
             for item in cat_schemas.get(grp) or []:
                 sid = item.get("schema_id")
                 if sid:
@@ -1155,7 +1155,7 @@ def compile_mindmap(repo_root: Path) -> tuple[Path, Path, dict[str, Any]]:
     structure = json.loads((donnees_dir / "structure-integrale.json").read_text(encoding="utf-8"))
     pivots = json.loads((donnees_dir / "pivots-concordance.json").read_text(encoding="utf-8"))
     synthese = json.loads((donnees_dir / "synthese-transversale.json").read_text(encoding="utf-8"))
-    comp_inv_path = donnees_dir / "inventaire-115-schemas-compendium.json"
+    comp_inv_path = donnees_dir / "inventaire-139-schemas-compendium.json"
     cat_schemas_path = donnees_dir / "catalogue-schemas-prd.json"
     comp_inv = json.loads(comp_inv_path.read_text(encoding="utf-8")) if comp_inv_path.is_file() else None
     cat_schemas = json.loads(cat_schemas_path.read_text(encoding="utf-8")) if cat_schemas_path.is_file() else None

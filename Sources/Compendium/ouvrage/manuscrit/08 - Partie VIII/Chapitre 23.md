@@ -36,7 +36,7 @@ L'usine déploie ce contrôle dans un banc `EvalOps` hermétique à trois étage
 
 ![Banc EvalOps hermétique E1–E3, constance pass^k et borne de Wilson (≥ 300 essais)](../../schemas/rendus/SCH-23-01.svg)
 
-*Figure 73 — SCH-23-01 : Parcours EvalOps hermétique articulant l'étage CI E1 et l'arène isolée E2 contre doublures MockMcpServer sous contrainte pass^k (k ≥ 3 ; k ≥ 5 critique) et borne de Wilson (Z1), la promotion SemVer+Intent fantôme puis canari (Z2) et la surveillance E3 avec rétrogradation après trois mois hors SLO (Z3).*
+*Figure 84 — SCH-23-01 : Parcours EvalOps hermétique articulant l'étage CI E1 et l'arène isolée E2 contre doublures MockMcpServer sous contrainte pass^k (k ≥ 3 ; k ≥ 5 critique) et borne de Wilson (Z1), la promotion SemVer+Intent fantôme puis canari (Z2) et la surveillance E3 avec rétrogradation après trois mois hors SLO (Z3).*
 
 Toutefois, obtenir zéro défaillance sur un petit banc de `30` ou `60` cas ne prouve pas statistiquement que la probabilité d'échec reste sous `1 %`. L'exigence `EXIG-EVA-03` impose donc un dimensionnement exact fondé sur le manuel statistique du `NIST/SEMATECH` (chapitre `7.2.4.1`) [1] et sur l'analyse de McGrath et Burke dédiée aux probabilités d'événements rares (`arXiv:2109.02516`) [2]. Ces travaux montrent que l'intervalle asymptotique classique de Wald s'effondre aux faibles taux d'échec : lorsque aucun échec n'est observé, l'estimation de variance s'annule et produit une borne supérieure illusoire de `0,0 %`, tandis que pour de très faibles proportions non nulles, sa borne inférieure devient négative [1, 2]. McGrath et Burke rappellent en outre que sur des événements rares, la précision doit être calibrée relativement à la magnitude de `p` (\(\epsilon_R = \epsilon / p\)) plutôt qu'en écart absolu [2].
 
@@ -128,7 +128,7 @@ En exploitation continue (`E3`), la surveillance outillée (recourant à des pla
 
 ![Évaluer sans oracle unique : invariance bilingue FR/EN, juges IA étalonnés (kappa ≥ 0,6) et sentinelle des 3+1 dérives](../../schemas/rendus/SCH-23-02.svg)
 
-*Figure 74 — SCH-23-02 : Articulation des quatre relations métamorphiques FR/EN sans oracle (Z1), de l'encadrement asynchrone des juges IA hétérogènes à kappa ≥ 0,6 (Z2) et de la sentinelle des 3+1 dérives en exploitation (Z3).*
+*Figure 85 — SCH-23-02 : Articulation des quatre relations métamorphiques FR/EN sans oracle (Z1), de l'encadrement asynchrone des juges IA hétérogènes à kappa ≥ 0,6 (Z2) et de la sentinelle des 3+1 dérives en exploitation (Z3).*
 
 Enfin, lorsque le volume d'un flux stabilisé justifie de réduire la facture d'inférence et la latence tout en renforçant la souveraineté locale, la recette cible **`ADR-031`** (`PRR F-15`, acceptée sous réserve de validation empirique au `Tome 3 § 47.20–47.22`) formalise un **volant de distillation contrôlée** `DSPy` → `Multi-LoRA`. Plutôt que d'entretenir des invites monolithiques rédigées à la main — qui cassent dès qu'un fournisseur modifie son modèle — les ingénieurs déclarent des signatures typées optimisées par programme (`DSPy` / `MIPROv2`), puis distillent les compétences vers des petits modèles spécialisés (`SLM 3B–8B`).
 
@@ -141,7 +141,7 @@ Sur le plan matériel et économique, l'architecture cible mutualise un tronc ge
 
 ![Le volant de distillation DSPy → Multi-LoRA : transformer les dossiers validés en petits modèles spécialisés 10× plus sobres](../../schemas/rendus/SCH-23-03.svg)
 
-*Figure 75 — SCH-23-03 : Boucle fermée cible du volant de distillation DSPy → Multi-LoRA (ADR-031, objectif illustratif 10× plus sobre à valider) reliant la collecte assainie Loi 25 et canaris Carlini (Z1) à l'affinage SFT+DPO sous seuil de volume V_min (Z2), la porte pass^5 ≥ 99 % et la sentinelle ombre à 2 % du trafic (Z3).*
+*Figure 86 — SCH-23-03 : Boucle fermée cible du volant de distillation DSPy → Multi-LoRA (ADR-031, objectif illustratif 10× plus sobre à valider) reliant la collecte assainie Loi 25 et canaris Carlini (Z1) à l'affinage SFT+DPO sous seuil de volume V_min (Z2), la porte pass^5 ≥ 99 % et la sentinelle ombre à 2 % du trafic (Z3).*
 
 ## 23.3 Synthèse architecturale, livrables et portes de contrôle
 

@@ -40,7 +40,7 @@ Sur ces traces normalisées et enrichies, la plateforme calcule en continu cinq 
 
 ![Enregistreur de vol OpenTelemetry GenAI (v1.41.0 épinglée), jointure trace ↔ mandat et AIBOM à 5+1 horloges](../../schemas/rendus/SCH-22-01.svg)
 
-*Figure 70 — SCH-22-01 : Architecture de l'enregistreur de vol OpenTelemetry GenAI combinant la propagation `_meta` sans renseignement personnel (Z1), le collecteur épinglé v1.41.0 à jointure trace ↔ mandat à quatre clés (Z2) et la nomenclature AIBOM à 5+1 horloges (Z3).*
+*Figure 81 — SCH-22-01 : Architecture de l'enregistreur de vol OpenTelemetry GenAI combinant la propagation `_meta` sans renseignement personnel (Z1), le collecteur épinglé v1.41.0 à jointure trace ↔ mandat à quatre clés (Z2) et la nomenclature AIBOM à 5+1 horloges (Z3).*
 
 Tracer une exécution sans savoir quelle version exacte d'invite, d'outil ou de politique a gouverné l'agent à cet instant rend toutefois l'analyse post-incident incomplète. Contrairement à un micro-service classique dont la version se résume à une empreinte de binaire, un agent d'entreprise assemble cinq constituants soumis à des cadences d'évolution indépendantes — souvent gouvernées par des acteurs externes distincts — auxquels s'ajoute l'horloge propre du harnais d'exécution (`5+1` horloges) :
 
@@ -77,7 +77,7 @@ Un bus de journaux unique ne peut satisfaire simultanément ces impératifs : s'
 
 ![Le double couloir PII : diagnostiquer les pannes en production sans enfreindre la Loi 25 ni le RGPD](../../schemas/rendus/SCH-22-02.svg)
 
-*Figure 71 — SCH-22-02 : Séparation physique en couloir 1 opérationnel caviardé FR/EN (Z1), voûte forensique « bris de glace » à purge automatique à J+14 (Z2) et dossier de décision Loi 25 art. 12.1 sous clé DEK client effaçable (Z3).*
+*Figure 82 — SCH-22-02 : Séparation physique en couloir 1 opérationnel caviardé FR/EN (Z1), voûte forensique « bris de glace » à purge automatique à J+14 (Z2) et dossier de décision Loi 25 art. 12.1 sous clé DEK client effaçable (Z3).*
 
 Au sein du couloir 1, le filtrage ne repose jamais sur un modèle de langage auxiliaire — trop lent et faillible face aux variations linguistiques — mais sur une double barrière déterministe (`EXIG-OBS-09`). D'une part, la fonction `map_span_attributes` applique une liste fermée d'attributs autorisés (`DEFAULT_ALLOWED_ATTRS`), rejette tout préfixe interdit (`enterprise.`, `otel.`), exige les quatre clés de jointure trace ↔ mandat (`lacune 21`) et supprime toute clé contenant `approver` ou `approbateur` afin de ne pas exposer l'identité des valideurs humains aux consoles `SRE`. Sous les constantes par défaut de `G0`, le filtre `_RAW_BAN` porte sur la clé canonique `ck` sans revalidation explicite sur `mk` ni contrôle de valeur sur `target_dialect`, contrairement à `_map_with_table`. Elle purge de plus neuf attributs porteurs de charges textuelles brutes : les messages d'entrée (`gen_ai.input.messages`) et réponses générées (`gen_ai.output.messages`), les directives système (`gen_ai.system_instructions`), les arguments (`gen_ai.tool.call.arguments`) et résultats d'outils (`gen_ai.tool.call.result`), les requêtes et enregistrements mémoire (`gen_ai.memory.query.text`, `gen_ai.memory.records`), ainsi que les requêtes et documents de recherche (`gen_ai.retrieval.query.text`, `gen_ai.retrieval.documents`).
 
@@ -148,7 +148,7 @@ Le service retient la variante compacte `SLH-DSA-SHA2-128s`, produisant des sign
 
 ![Notaire cryptographique à 5 éléments : canonisation JCS (RFC 8785), ancrage Merkle SCITT et rescellement SLH-DSA](../../schemas/rendus/SCH-22-03.png)
 
-*Figure 72 — SCH-22-03 : Chaîne notariale à cinq éléments combinant enregistrement C.8 hors agent et canonisation JCS RFC 8785 (Z1), chaînage WORM et ancrage Merkle SCITT horaire (Z2), et rescellement post-quantique SLH-DSA FIPS 205 tous les ≤ 5 ans (Z3).*
+*Figure 83 — SCH-22-03 : Chaîne notariale à cinq éléments combinant enregistrement C.8 hors agent et canonisation JCS RFC 8785 (Z1), chaînage WORM et ancrage Merkle SCITT horaire (Z2), et rescellement post-quantique SLH-DSA FIPS 205 tous les ≤ 5 ans (Z3).*
 
 ## 22.3 Synthèse architecturale, livrables et portes de contrôle
 

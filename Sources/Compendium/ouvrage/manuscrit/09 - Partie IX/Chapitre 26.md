@@ -60,7 +60,7 @@ Sur le troisième axe (*Conduite de marché, LBC et produits*), selon les repèr
 
 ![Triple qualification et calendrier européen : EU AI Act et Digital Omnibus 2026/1744, EN 18286:2026, DORA et CRA](../../schemas/rendus/SCH-26-01.svg)
 
-*Figure 82 — SCH-26-01 : Matrice de triple qualification d'un agent financier (Modèle et SMQ ouvert EN 18286:2026 en Z1, Actif TIC critique DORA/CRA/eIDAS en Z2, Marché et responsabilité en Z3) croisée avec le Digital Omnibus (UE) 2026/1744.*
+*Figure 94 — SCH-26-01 : Matrice de triple qualification d'un agent financier (Modèle et SMQ ouvert EN 18286:2026 en Z1, Actif TIC critique DORA/CRA/eIDAS en Z2, Marché et responsabilité en Z3) croisée avec le Digital Omnibus (UE) 2026/1744.*
 
 ### 26.2.2 Référentiels internationaux : NIST, ISO/IEC 42001, IMDA, G7 et souveraineté cognitive
 
@@ -92,7 +92,7 @@ En quatrième lieu, les incidents agentiques `S1`–`S4` suivent une **riposte e
 
 ![Boucle de maîtrise PDCA : plafonds par pire cas (EXIG-CON-02), index unique NIST/ISO/IMDA et riposte aux incidents S1–S4](../../schemas/rendus/SCH-26-02.png)
 
-*Figure 83 — SCH-26-02 : Couplage du régime nominal (plafonds EXIG-CON-02, dorsale PDCA unifiée sous EN 18286:2026 et index EXIG-CON-18) avec la boucle d'urgence en cinq temps pour incidents S1–S4 et les horloges légales cumulatives (24 h BSIF, 2/10/15 j RIA, 72 h cible RGPD/CAI).*
+*Figure 95 — SCH-26-02 : Couplage du régime nominal (plafonds EXIG-CON-02, dorsale PDCA unifiée sous EN 18286:2026 et index EXIG-CON-18) avec la boucle d'urgence en cinq temps pour incidents S1–S4 et les horloges légales cumulatives (24 h BSIF, 2/10/15 j RIA, 72 h cible RGPD/CAI).*
 
 Toutefois, la gouvernance documentaire et l'index de preuves restent insuffisants si les données régulées quittent la juridiction de contrôle par un angle mort d'infrastructure. Selon le repérage juridique du `dossier source Tome 3 § 37.1` (hors corpus `L+` fermé de ce chapitre) relatif au `U.S. CLOUD Act` (`18 U.S.C. § 2713`), une région infonuagique localisée physiquement au Canada ou en Europe règle la **résidence** mais ne résout pas le **contrôle juridictionnel** tant que l'exploitant soumis à un droit étranger conserve la capacité technique de déchiffrer la mémoire vive. Inversement, selon le même repérage `dossier source Tome 3`, l'article 32 du *Data Act* européen (`Règlement (UE) 2023/2854`, applicable depuis septembre 2025) oblige les fournisseurs à prévenir tout transfert conflictuel non fondé sur un accord international.
 
@@ -110,7 +110,7 @@ En `Classe-S3`, la vérification distante des registres `PCR` (*Platform Configu
 
 ![Souveraineté cognitive et coffre matériel : géorepérage des 6 couches d'état, grille SEAL, HYOK HMAC-FPE et GPU TEE](../../schemas/rendus/SCH-26-03.svg)
 
-*Figure 84 — SCH-26-03 : Architecture de souveraineté cognitive articulant la grille SEAL-0..4, le géorepérage des six substrats d'état et les boucliers matériels Classe-S2 (C2 sur le schéma, HYOK HMAC-FPE, RTT ≤ 35 ms) et Classe-S3 (C3 sur le schéma, enclaves CPU/GPU TEE avec attestation distante et limite TEE.fail).*
+*Figure 96 — SCH-26-03 : Architecture de souveraineté cognitive articulant la grille SEAL-0..4, le géorepérage des six substrats d'état et les boucliers matériels Classe-S2 (C2 sur le schéma, HYOK HMAC-FPE, RTT ≤ 35 ms) et Classe-S3 (C3 sur le schéma, enclaves CPU/GPU TEE avec attestation distante et limite TEE.fail).*
 
 ## 26.3 Synthèse architecturale, livrables et portes de contrôle
 

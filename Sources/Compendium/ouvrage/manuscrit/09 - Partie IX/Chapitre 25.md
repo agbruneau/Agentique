@@ -69,7 +69,7 @@ Sur le plan interne (dossier source `Tome 2 § 12.10`, `ANC-112`/`ANC-113`, sous
 
 ![Parcours Loi 25 complet : ÉFVP préalable (articles 3.3 et 17), décision selon l'article 12.1 (PC3) et crypto-effacement CoALA/RAG (articles 23 et 27)](../../schemas/rendus/SCH-25-01.svg)
 
-*Figure 79 — SCH-25-01 : Corridor réglementaire de la Loi 25 illustrant les trois postes séquentiels (ÉFVP et blocage hors Québec sur trois chemins, déclenchement de l'article 12.1 et révision au point d'arrêt PC3, puis portabilité structurée et crypto-effacement DEK dans CoALA et RAG).*
+*Figure 91 — SCH-25-01 : Corridor réglementaire de la Loi 25 illustrant les trois postes séquentiels (ÉFVP et blocage hors Québec sur trois chemins, déclenchement de l'article 12.1 et révision au point d'arrêt PC3, puis portabilité structurée et crypto-effacement DEK dans CoALA et RAG).*
 
 ### 25.2.2 Cadre prudentiel canadien : BSIF E-23, ACVM et LSAC
 
@@ -83,7 +83,7 @@ La Ligne directrice **E-21** sur la résilience opérationnelle et l'avis du BSI
 
 ![Compte à rebours de 278 jours vers le 1er mai 2027 : convergence entre BSIF E-23 et Note AMF IA (EXIG-AMF-01..12 sous statut F)](../../schemas/rendus/SCH-25-02.svg)
 
-*Figure 80 — SCH-25-02 : Frise opérationnelle de 278 jours (27 juillet 2026 → 1er mai 2027) montrant la convergence des chantiers BSIF E-23 et AMF (EXIG-AMF-01..12), avec balisage explicite en statut F du portail lautorite.qc.ca.*
+*Figure 92 — SCH-25-02 : Frise opérationnelle de 278 jours (27 juillet 2026 → 1er mai 2027) montrant la convergence des chantiers BSIF E-23 et AMF (EXIG-AMF-01..12), avec balisage explicite en statut F du portail lautorite.qc.ca.*
 
 Pour converger vers l'échéance du 1er mai 2027 fixée par BSIF E-23 [3] et attendue pour l'AMF (source secondaire `AIBanks.ca`, portail AMF en `statut F` [7]), le cadre découpe la préparation en une feuille de route interne de **278 jours** (27 juillet 2026 au 1er mai 2027, dossier source `Tome 1 § 25.1`). Aux jours `0` à `90` (*Inventorier*), l'institution recense agents, modèles et API tierces avec parrain imputable [3, 4]. Aux jours `90` à `180` (*Coter et encadrer*), la deuxième ligne fixe la cote de risque inhérent incluant l'autonomie [3], associe `EXIG-AMF` le cas échéant et bloque toute promotion sans validation indépendante [3]. Jusqu'au 1er mai 2027 puis au jalon interne du `30 septembre 2027` (`ANC-113`), les équipes raccordent `AgentOps` aux seuils de dérive tout en suivant cinq jalons externes (`MCP 2026-07-28`, `C-15`, Rail en temps réel `RTR`, `OTel GenAI` et transition post-quantique `2030–2035`).
 
@@ -114,7 +114,7 @@ Pour empêcher la fragmentation des contrôles entre consoles propriétaires (`E
 
 ![Mosaïque canadienne en l'absence de loi générale : vide C-27/C-36, ACVM 11-348, banque ouverte C-15 et registre à trois lignes IIA](../../schemas/rendus/SCH-25-03.svg)
 
-*Figure 81 — SCH-25-03 : Architecture de conformité canadienne face au vide législatif C-27/C-36, combinant les quatre filets actifs (Loi 25, BSIF E-23, AMF et ACVM 11-348), l'adaptateur abstrait C-15 et le registre unifié à six portes et trois lignes de l'IIA.*
+*Figure 93 — SCH-25-03 : Architecture de conformité canadienne face au vide législatif C-27/C-36, combinant les quatre filets actifs (Loi 25, BSIF E-23, AMF et ACVM 11-348), l'adaptateur abstrait C-15 et le registre unifié à six portes et trois lignes de l'IIA.*
 
 ## 25.3 Synthèse architecturale, livrables et portes de contrôle
 

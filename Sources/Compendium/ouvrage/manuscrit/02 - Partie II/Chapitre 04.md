@@ -86,7 +86,13 @@ Cet enchaînement s'articule impérativement avec une discipline de gestion du c
 
 ![Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte AMBIGU_ESCALADE](../../schemas/rendus/SCH-04-01.svg)
 
-*Figure 14 — SCH-04-01 : Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte `AMBIGU_ESCALADE`.*
+*Figure 18 — SCH-04-01 : Anatomie du harnais 80/20 à huit étapes : l'enveloppe déterministe et la porte `AMBIGU_ESCALADE`.*
+
+La *Figure 19* complète ce harnais en schématisant la topologie des quatre patrons mono-agents du *Tableau 4.1*.
+
+![Topologie comparée des quatre patrons mono-agents ReAct, ReWOO, Reflexion et CodeAct sous harnais](../../schemas/rendus/SCH-04-04.svg)
+
+*Figure 19 — SCH-04-04 : Topologie comparée de `ReAct`, `ReWOO`/`LLMCompiler`, `Reflexion` sur oracle externe et `CodeAct` en `microVM`/`WASI`.*
 
 ### 4.2.2 Pont réglementaire, test à trois conditions et contrats JSON Schema Draft 2020-12
 
@@ -153,7 +159,7 @@ La distinction sémantique entre les statuts de ce contrat mérite une attention
 
 ![Traduction réglementaire (Tome 1, Tableau 29.1), test à trois conditions et choix de boucle ReAct / ReWOO / CodeAct](../../schemas/rendus/SCH-04-02.svg)
 
-*Figure 15 — SCH-04-02 : Traduction réglementaire (`Tome 1`, `Tableau 29.1`), test à trois conditions et choix de boucle ReAct / ReWOO / CodeAct.*
+*Figure 20 — SCH-04-02 : Traduction réglementaire (`Tome 1`, `Tableau 29.1`), test à trois conditions et choix de boucle ReAct / ReWOO / CodeAct.*
 
 ### 4.2.3 Usine logicielle agentique, muraille Oracle–Bâtisseur et Shadow Mirroring
 
@@ -169,7 +175,7 @@ Une fois validé hors ligne contre l'oracle `Golden Master`, le nouveau service 
 
 ![Usine logicielle agentique (AST/SCIP), muraille Oracle–Bâtisseur et bascule RPG/COBOL en Shadow Mirroring](../../schemas/rendus/SCH-04-03.svg)
 
-*Figure 16 — SCH-04-03 : Usine logicielle agentique (`AST`/`SCIP`), muraille Oracle–Bâtisseur et bascule `RPG`/`COBOL` en `Shadow Mirroring`.*
+*Figure 21 — SCH-04-03 : Usine logicielle agentique (`AST`/`SCIP`), muraille Oracle–Bâtisseur et bascule `RPG`/`COBOL` en `Shadow Mirroring`.*
 
 ## 4.3 Exigences vérifiables, interfaces systémiques et livrables d'acceptation
 

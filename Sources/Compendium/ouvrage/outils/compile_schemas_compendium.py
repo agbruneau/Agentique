@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Validation et compilation stricte des 115 schémas du Compendium (CA-08 / CA-22)."""
+"""Validation et compilation stricte des 139 schémas du Compendium (CA-08 / CA-22)."""
 
 from __future__ import annotations
 
@@ -15,10 +15,10 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-EXPECTED_TOTAL_SCHEMAS = 115
-EXPECTED_PUML_COUNT = 52
+EXPECTED_TOTAL_SCHEMAS = 139
+EXPECTED_PUML_COUNT = 58
 EXPECTED_MMD_COUNT = 23
-EXPECTED_SVG_COUNT = 40
+EXPECTED_SVG_COUNT = 58
 EXPECTED_FAMILIES_COUNT = 71
 
 MIN_NODES_PER_SCHEMA = 4
@@ -481,10 +481,14 @@ def count_schema_elements(source_path: Path, notation: str) -> int:
 
 
 def load_catalog(catalog_path: Path | None = None) -> list[dict]:
-    """Charge la liste ordonnée des 115 schémas depuis `catalogue-schemas-prd.json`."""
+    """Charge la liste ordonnée des 139 schémas depuis `catalogue-schemas-prd.json`."""
     path = catalog_path or _default_catalog_path()
     data = json.loads(path.read_text(encoding="utf-8"))
-    return list(data.get("global_schemas", [])) + list(data.get("chapter_schemas", []))
+    return (
+        list(data.get("global_schemas", []))
+        + list(data.get("chapter_schemas", []))
+        + list(data.get("annex_schemas", []))
+    )
 
 
 def _notation_source_ext(notation: str) -> str:
@@ -887,8 +891,8 @@ def compile_schemas(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Valide et compile les 115 schémas du Compendium (52 PlantUML .svg, "
-            "23 Mermaid .png 300 DPI et 40 infographies SVG bilingues métier-tech)."
+            "Valide et compile les 139 schémas du Compendium (58 PlantUML .svg, "
+            "23 Mermaid .png 300 DPI et 58 infographies SVG bilingues métier-tech)."
         )
     )
     parser.add_argument(
@@ -909,7 +913,7 @@ def main(argv: list[str] | None = None) -> int:
         "--strict",
         action="store_true",
         default=True,
-        help="Active la validation stricte (115/115 schémas, 4..14 nœuds, 71/71 familles, rendus propres)",
+        help="Active la validation stricte (139/139 schémas, 4..14 nœuds, 71/71 familles, rendus propres)",
     )
     parser.add_argument(
         "--no-strict",

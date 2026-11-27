@@ -1,36 +1,37 @@
 {
   "schema_version": "1.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-26T15:09:06Z",
+  "generated_at": "2026-11-27T12:48:33Z",
   "generator": "Sources/Cartographie/outils/inventorier_schemas_compendium.py",
   "manifest_source": "Sources/Compendium/ouvrage/specs/manifest.json",
   "compendium_md_source": "Compendium/Compendium.md",
   "totals": {
-    "figures_count": 115,
-    "verified_sources_on_disk": 115,
-    "verified_renders_on_disk": 115,
-    "verified_compendium_lines": 115,
-    "verified_source_file_lines": 115,
-    "verified_pdf_pages": 115,
+    "figures_count": 139,
+    "verified_sources_on_disk": 139,
+    "verified_renders_on_disk": 139,
+    "verified_compendium_lines": 139,
+    "verified_source_file_lines": 139,
+    "verified_pdf_pages": 139,
     "by_engine": {
       "mmd": 23,
-      "puml": 52,
-      "svg": 40
+      "puml": 58,
+      "svg": 58
     },
     "by_part": {
-      "LIM": 4,
-      "P01": 9,
-      "P02": 10,
-      "P03": 10,
-      "P04": 9,
+      "ANN": 3,
+      "LIM": 5,
+      "P01": 12,
+      "P02": 12,
+      "P03": 12,
+      "P04": 10,
       "P05": 9,
-      "P06": 9,
-      "P07": 9,
-      "P08": 9,
+      "P06": 10,
+      "P07": 10,
+      "P08": 10,
       "P09": 9,
-      "P10": 9,
-      "P11": 9,
-      "P12": 10
+      "P10": 13,
+      "P11": 11,
+      "P12": 13
     }
   },
   "figures": [
@@ -64,6 +65,35 @@
       "source_file_line": 53
     },
     {
+      "schema_id": "SCH-00-05",
+      "unit": "00-liminaire",
+      "part_id": "LIM",
+      "chapter_number": 0,
+      "domain_id": "GLOBAL",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Carte maîtresse des douze Parties, quinze corridors dominants et quatre parcours",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "architecture-collection-tome-1-preambule",
+        "exigences-cre-ia-305",
+        "partition-hybride-80-20",
+        "protocole-mcp",
+        "finops-focus-cpo"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-00-05.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-00-05.svg",
+      "source_bytes": 21734,
+      "rendered_bytes": 21734,
+      "sha256_source": "a9e75d10ed0c81ed80bb55ca4c34b55bc07a963ffe26fd4317bd65394ce682d1",
+      "sha256_rendered": "a9e75d10ed0c81ed80bb55ca4c34b55bc07a963ffe26fd4317bd65394ce682d1",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 142,
+      "pdf_page": 15,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
+      "source_file_line": 69
+    },
+    {
       "schema_id": "SCH-00-02",
       "unit": "00-liminaire",
       "part_id": "LIM",
@@ -90,10 +120,10 @@
       "sha256_source": "483567dc4df8426c779710c63db2901be52c901f4cad71890ec0993a1212889e",
       "sha256_rendered": "0256181ea045d703226816800e211aeb5021952a1a491efc87dc2edd18ccfd7f",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 142,
-      "pdf_page": 15,
+      "compendium_md_line": 148,
+      "pdf_page": 16,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
-      "source_file_line": 69
+      "source_file_line": 75
     },
     {
       "schema_id": "SCH-00-03",
@@ -121,10 +151,10 @@
       "sha256_source": "fda5a44687cf95d8f162ef92d1a84fb3f1d1a0485534c8e214c6e8100fa210e2",
       "sha256_rendered": "fda5a44687cf95d8f162ef92d1a84fb3f1d1a0485534c8e214c6e8100fa210e2",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 177,
-      "pdf_page": 18,
+      "compendium_md_line": 183,
+      "pdf_page": 19,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
-      "source_file_line": 104
+      "source_file_line": 110
     },
     {
       "schema_id": "SCH-00-04",
@@ -153,10 +183,10 @@
       "sha256_source": "2609d591aacc7980114ee9d3c05bde43855c33c640e2dc4f4f2a7e69ce42062c",
       "sha256_rendered": "b3bdb3489caefb82d4a908fd49dd4a9d4241c22cc26c60427d90acc61b1b5f04",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 183,
-      "pdf_page": 19,
+      "compendium_md_line": 189,
+      "pdf_page": 20,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/00 - Liminaire.md",
-      "source_file_line": 110
+      "source_file_line": 116
     },
     {
       "schema_id": "SCH-01-01",
@@ -182,8 +212,8 @@
       "sha256_source": "94de08c5185506245fa787969c7bd960fb477a874015834f860f440752f95978",
       "sha256_rendered": "92bc91eb0f2c27e353afb3b901627d1a8010fb1d2110663c06fd31f8717e3388",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 257,
-      "pdf_page": 29,
+      "compendium_md_line": 263,
+      "pdf_page": 30,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
       "source_file_line": 45
     },
@@ -211,10 +241,38 @@
       "sha256_source": "74c71855144b324f61c26cf3303a9c19cd7e7234b4c11b7ce5adc0f6db9415be",
       "sha256_rendered": "74c71855144b324f61c26cf3303a9c19cd7e7234b4c11b7ce5adc0f6db9415be",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 289,
-      "pdf_page": 33,
+      "compendium_md_line": 295,
+      "pdf_page": 34,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
       "source_file_line": 77
+    },
+    {
+      "schema_id": "SCH-01-04",
+      "unit": "ch01",
+      "part_id": "P01",
+      "chapter_number": 1,
+      "domain_id": "D01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Effondrement des planificateurs sous obfuscation (Mystery BW) et boucle LLM-Modulo",
+      "families_covered": [
+        "FAM_D01_01_01"
+      ],
+      "themes_vulgarized": [
+        "raisonnement-inference-limites-planification",
+        "rupture-modele-conversationnel-agent-boucle"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-01-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-01-04.svg",
+      "source_bytes": 15401,
+      "rendered_bytes": 15401,
+      "sha256_source": "f908e63ba082814c54e97e2102f8a651e9b6069bb1399c705e8f749f12b0b291",
+      "sha256_rendered": "f908e63ba082814c54e97e2102f8a651e9b6069bb1399c705e8f749f12b0b291",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 318,
+      "pdf_page": 37,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
+      "source_file_line": 100
     },
     {
       "schema_id": "SCH-01-03",
@@ -240,10 +298,10 @@
       "sha256_source": "cca3942567f4cc7027426ebff1c0c1325ad54bddc9cb7e6c777ef795c947f14b",
       "sha256_rendered": "c43abc67816200271e4c2d53f7def1e05c55d83f301468a161f6efa748dfa020",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 335,
-      "pdf_page": 37,
+      "compendium_md_line": 347,
+      "pdf_page": 39,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 01.md",
-      "source_file_line": 123
+      "source_file_line": 129
     },
     {
       "schema_id": "SCH-02-01",
@@ -268,8 +326,8 @@
       "sha256_source": "b414033166eb2d874d11f23d450c68b185182ee6b0cbb295630fb5a4d1957348",
       "sha256_rendered": "b414033166eb2d874d11f23d450c68b185182ee6b0cbb295630fb5a4d1957348",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 405,
-      "pdf_page": 46,
+      "compendium_md_line": 417,
+      "pdf_page": 48,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
       "source_file_line": 37
     },
@@ -296,8 +354,8 @@
       "sha256_source": "fd791e854252b0c0932d112282061fed551472bf1c58398d7662bf250532853f",
       "sha256_rendered": "f5a50603dfb2bd80d9f9480ecaa3257682f669b8d05006d2a4d3e8b32225baf2",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 423,
-      "pdf_page": 48,
+      "compendium_md_line": 435,
+      "pdf_page": 50,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
       "source_file_line": 55
     },
@@ -323,10 +381,67 @@
       "sha256_source": "ab4e953b762ed3e04fa98c72e99ec7d30612d64340d6406edae129a259954083",
       "sha256_rendered": "38bc1fe9eb6d571e07856883c7202f1d9a8ecf7d42100c1cc0cdeb607687a3d6",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 458,
-      "pdf_page": 52,
+      "compendium_md_line": 470,
+      "pdf_page": 54,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
       "source_file_line": 90
+    },
+    {
+      "schema_id": "SCH-02-04",
+      "unit": "ch02",
+      "part_id": "P01",
+      "chapter_number": 2,
+      "domain_id": "D01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Courbes pass@k vs pass^k, frontière de Pareto HAL et dimensionnement Wilson",
+      "families_covered": [
+        "FAM_D01_02_02"
+      ],
+      "themes_vulgarized": [
+        "constance-pass-k",
+        "loi-de-lusser"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-02-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-02-04.svg",
+      "source_bytes": 16952,
+      "rendered_bytes": 16952,
+      "sha256_source": "22a99d9ab5fa485b0b2c8dd7640d0412372619eeff9557f3e0110eebab19dd0e",
+      "sha256_rendered": "22a99d9ab5fa485b0b2c8dd7640d0412372619eeff9557f3e0110eebab19dd0e",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 476,
+      "pdf_page": 55,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md",
+      "source_file_line": 96
+    },
+    {
+      "schema_id": "SCH-03-04",
+      "unit": "ch03",
+      "part_id": "P01",
+      "chapter_number": 3,
+      "domain_id": "D01",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Matrice coasienne 2×2 et dispersion marché vs CapEx 2026 et maturité réelle",
+      "families_covered": [
+        "FAM_D01_03_01"
+      ],
+      "themes_vulgarized": [
+        "couts-transaction-coase",
+        "marche-ia-agentique-dispersion",
+        "economie-industrialisation-cognitive"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-03-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-03-04.svg",
+      "source_bytes": 14468,
+      "rendered_bytes": 14468,
+      "sha256_source": "adc61e86a775df30db3364915038f85259c22f914935a784a2ab35bc0fb8efb0",
+      "sha256_rendered": "adc61e86a775df30db3364915038f85259c22f914935a784a2ab35bc0fb8efb0",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 580,
+      "pdf_page": 64,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
+      "source_file_line": 48
     },
     {
       "schema_id": "SCH-03-01",
@@ -352,10 +467,10 @@
       "sha256_source": "4f09a1b9d753f0b8771fae4c44e604f6f0bc2415ca2b2228fb03ca2f61938ad6",
       "sha256_rendered": "23b298db9a0a37c58e181f511990d21520542791df3448efb2322cb650484357",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 578,
-      "pdf_page": 63,
+      "compendium_md_line": 602,
+      "pdf_page": 66,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
-      "source_file_line": 64
+      "source_file_line": 70
     },
     {
       "schema_id": "SCH-03-02",
@@ -382,10 +497,10 @@
       "sha256_source": "4d88c9366f4efaa7d7c4c6dfff6021ae5191fe7a27dcac8ba2dd0f837e6b85b0",
       "sha256_rendered": "4d88c9366f4efaa7d7c4c6dfff6021ae5191fe7a27dcac8ba2dd0f837e6b85b0",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 622,
-      "pdf_page": 67,
+      "compendium_md_line": 646,
+      "pdf_page": 71,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
-      "source_file_line": 108
+      "source_file_line": 114
     },
     {
       "schema_id": "SCH-03-03",
@@ -410,10 +525,10 @@
       "sha256_source": "d1c173849eddde8f5e66abd6f97e5f7eff98ebcdc88ed2c63dcaa7613a3e5ede",
       "sha256_rendered": "7fe3f056b68540d56ba9929b807e08ba4ca061403a3b1e5afaa5b59ea6ef51ec",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 647,
-      "pdf_page": 71,
+      "compendium_md_line": 671,
+      "pdf_page": 74,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md",
-      "source_file_line": 133
+      "source_file_line": 139
     },
     {
       "schema_id": "SCH-04-01",
@@ -440,10 +555,38 @@
       "sha256_source": "1a0793ea03a52f4f00efc5994fc90d718d00a35ca2eef572be3d34074e928d72",
       "sha256_rendered": "1a0793ea03a52f4f00efc5994fc90d718d00a35ca2eef572be3d34074e928d72",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 776,
-      "pdf_page": 83,
+      "compendium_md_line": 800,
+      "pdf_page": 86,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
       "source_file_line": 87
+    },
+    {
+      "schema_id": "SCH-04-04",
+      "unit": "ch04",
+      "part_id": "P02",
+      "chapter_number": 4,
+      "domain_id": "D02",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Topologie comparée des quatre patrons mono-agents (ReAct, ReWOO, Reflexion, CodeAct)",
+      "families_covered": [
+        "FAM_D02_01_01"
+      ],
+      "themes_vulgarized": [
+        "patrons-boucle-mono-agent-codeact",
+        "separation-controleur-executeur-determinisme"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-04-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-04-04.svg",
+      "source_bytes": 3005,
+      "rendered_bytes": 15114,
+      "sha256_source": "f5e63ead19131e0355094eaee202244d806998a8f6d16888577912f9e334d0de",
+      "sha256_rendered": "8ccd693930ea058adb52ef640a1dab02b585db91f884b0513c6d6e1df6800b4e",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 806,
+      "pdf_page": 86,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
+      "source_file_line": 93
     },
     {
       "schema_id": "SCH-04-02",
@@ -470,10 +613,10 @@
       "sha256_source": "9953ce946127d5d4085d57af879bd37e0c1cc329843393b03a47cadc221f7c56",
       "sha256_rendered": "6a2d88c9b75d01fec235a939013739dbc91edb5ce166be429ec43dbc7604b845",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 843,
-      "pdf_page": 88,
+      "compendium_md_line": 873,
+      "pdf_page": 91,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
-      "source_file_line": 154
+      "source_file_line": 160
     },
     {
       "schema_id": "SCH-04-03",
@@ -497,10 +640,38 @@
       "sha256_source": "6b870eed722f44ddfe13dce024b1920220511fb6205c516e661081ee20481f4e",
       "sha256_rendered": "6dbf9173354130c686a9564d64be86804f6ee78ec510d2b4231a15a80e8438d9",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 859,
-      "pdf_page": 91,
+      "compendium_md_line": 889,
+      "pdf_page": 94,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 04.md",
-      "source_file_line": 170
+      "source_file_line": 176
+    },
+    {
+      "schema_id": "SCH-05-04",
+      "unit": "ch05",
+      "part_id": "P02",
+      "chapter_number": 5,
+      "domain_id": "D02",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Carte de désambiguïsation des sept familles de préfixes et échelles homonymes",
+      "families_covered": [
+        "FAM_D02_02_01"
+      ],
+      "themes_vulgarized": [
+        "echelle-autonomie-l0-l4",
+        "regle-maillon-plus-eleve"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-05-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-05-04.svg",
+      "source_bytes": 16491,
+      "rendered_bytes": 16491,
+      "sha256_source": "fae4d2226c590c95e56e55276aa538df5b217abca835e812481a3fab8a0d0695",
+      "sha256_rendered": "fae4d2226c590c95e56e55276aa538df5b217abca835e812481a3fab8a0d0695",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 945,
+      "pdf_page": 100,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
+      "source_file_line": 21
     },
     {
       "schema_id": "SCH-05-01",
@@ -524,10 +695,10 @@
       "sha256_source": "e8b67e5d08b44f728bae3904f7161af3bb2e9cb619b98316cf1bfc9396b4c338",
       "sha256_rendered": "e8b67e5d08b44f728bae3904f7161af3bb2e9cb619b98316cf1bfc9396b4c338",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 941,
-      "pdf_page": 99,
+      "compendium_md_line": 977,
+      "pdf_page": 103,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
-      "source_file_line": 47
+      "source_file_line": 53
     },
     {
       "schema_id": "SCH-05-02",
@@ -551,10 +722,10 @@
       "sha256_source": "c8d08b9522c45b8cc161e0de6c799eab66f262b6886e082a6ebaf9306740d6ae",
       "sha256_rendered": "28281efb20b376ebc93f5d585bda83407c0fce3aac423200ce3fc18a1dff5df9",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 957,
-      "pdf_page": 101,
+      "compendium_md_line": 993,
+      "pdf_page": 105,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
-      "source_file_line": 63
+      "source_file_line": 69
     },
     {
       "schema_id": "SCH-05-03",
@@ -579,10 +750,10 @@
       "sha256_source": "8b202735314d992846f8eefb24b754ceaf858d4a983f7b9424219619a539ace4",
       "sha256_rendered": "3db0532c50e19ead2bcd5fc6b00fefff08a3bf18b00627361ed4af54127b2fb5",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 986,
-      "pdf_page": 105,
+      "compendium_md_line": 1022,
+      "pdf_page": 109,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md",
-      "source_file_line": 92
+      "source_file_line": 98
     },
     {
       "schema_id": "SCH-06-01",
@@ -609,8 +780,8 @@
       "sha256_source": "c62ee43f4fee4cb88acf20278045a30d2f0a2c4f6f332fd5e7a1bda623bc7e9e",
       "sha256_rendered": "c62ee43f4fee4cb88acf20278045a30d2f0a2c4f6f332fd5e7a1bda623bc7e9e",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1081,
-      "pdf_page": 113,
+      "compendium_md_line": 1117,
+      "pdf_page": 117,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
       "source_file_line": 46
     },
@@ -637,8 +808,8 @@
       "sha256_source": "f88cec036b421e2ac0a223f50267170ef72f1b7f881129353f0fe333211b04b1",
       "sha256_rendered": "516d38de7b62afcc5882b0896a9b425b4503389621a4f23576937ad2d2cfa95a",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1109,
-      "pdf_page": 117,
+      "compendium_md_line": 1145,
+      "pdf_page": 121,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
       "source_file_line": 74
     },
@@ -668,8 +839,8 @@
       "sha256_source": "58b705271d3e59fcb42928e4063ede9fa35f90a34304f23fc05ab740ddde0b06",
       "sha256_rendered": "4a4d0465c0fa543309488903b314c5af3ef5df8486d7b68aeef1656d8c80c89b",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1142,
-      "pdf_page": 120,
+      "compendium_md_line": 1178,
+      "pdf_page": 124,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
       "source_file_line": 107
     },
@@ -697,10 +868,38 @@
       "sha256_source": "6e6c6dab895a3e4167798977ed849f64a8e14952fa5c7f593d6c130eb7fc8cc3",
       "sha256_rendered": "603680039d59c4b39dfbd3b40707d7a9abafbc1a54cc418cfd8df30311b155ff",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1201,
-      "pdf_page": 126,
+      "compendium_md_line": 1237,
+      "pdf_page": 130,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md",
       "source_file_line": 166
+    },
+    {
+      "schema_id": "SCH-07-04",
+      "unit": "ch07",
+      "part_id": "P03",
+      "chapter_number": 7,
+      "domain_id": "D03",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Frise d'évolution MCP (2024–2027), cycle SEP-2596 et cadence SEP-3398",
+      "families_covered": [
+        "FAM_D03_01_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-mcp",
+        "adaptateur-mcp-streamable-http-sep-3398"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-07-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-07-04.svg",
+      "source_bytes": 17105,
+      "rendered_bytes": 17105,
+      "sha256_source": "f3fb384f58ec95e570ee0897ec29a14d15f0826537bea4f3413497da151dd8c1",
+      "sha256_rendered": "f3fb384f58ec95e570ee0897ec29a14d15f0826537bea4f3413497da151dd8c1",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1308,
+      "pdf_page": 138,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
+      "source_file_line": 32
     },
     {
       "schema_id": "SCH-07-01",
@@ -726,10 +925,10 @@
       "sha256_source": "f0c0eef690dcff4688edb48970382dd95bf1d928fe3d21dc4a19a9629da4736c",
       "sha256_rendered": "c05307319da3bc0840963199b02cc32a031e75c76524dee420d0eb11726e445f",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1298,
-      "pdf_page": 137,
+      "compendium_md_line": 1340,
+      "pdf_page": 142,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
-      "source_file_line": 58
+      "source_file_line": 64
     },
     {
       "schema_id": "SCH-07-02",
@@ -755,10 +954,10 @@
       "sha256_source": "d4f6eedfa76162fc3490051985ea43252e4571b9bea032e1d6e9b58f717406f6",
       "sha256_rendered": "d4f6eedfa76162fc3490051985ea43252e4571b9bea032e1d6e9b58f717406f6",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1312,
-      "pdf_page": 139,
+      "compendium_md_line": 1354,
+      "pdf_page": 144,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
-      "source_file_line": 72
+      "source_file_line": 78
     },
     {
       "schema_id": "SCH-07-03",
@@ -783,10 +982,10 @@
       "sha256_source": "386dec03b65f609b034fc0d5712e3a4991996cfdefa4c8675bd485b869c52363",
       "sha256_rendered": "da4cacde9e65754e964995da1c1ddd93c439525723b5b3fd997091586b626808",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1348,
-      "pdf_page": 143,
+      "compendium_md_line": 1390,
+      "pdf_page": 148,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 07.md",
-      "source_file_line": 108
+      "source_file_line": 114
     },
     {
       "schema_id": "SCH-08-01",
@@ -812,10 +1011,37 @@
       "sha256_source": "9e9bd8a9250ac827f3871a87757f7792c873c8baccf596117a08e2db0bfc9708",
       "sha256_rendered": "1b0ee1346cb82dfd120ea10cd1a39485e44c25d7f17a0bd4488235e6a0be5389",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1473,
-      "pdf_page": 152,
+      "compendium_md_line": 1515,
+      "pdf_page": 157,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
       "source_file_line": 43
+    },
+    {
+      "schema_id": "SCH-08-04",
+      "unit": "ch08",
+      "part_id": "P03",
+      "chapter_number": 8,
+      "domain_id": "D03",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Primitives A2A v1.0.1 (AgentCard, Task, Part, Artifact) et machine à 9 états",
+      "families_covered": [
+        "FAM_D03_02_01"
+      ],
+      "themes_vulgarized": [
+        "protocole-a2a"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-08-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-08-04.svg",
+      "source_bytes": 3232,
+      "rendered_bytes": 17302,
+      "sha256_source": "a49497303c64ed3ab21e46d9f19b6e089738fbc9cbff998fb299a8a2ee1bfe13",
+      "sha256_rendered": "ba31e2bff2172de1f119afab677b6f86b7568d7377a1fb6b4a37e70496bbd524",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1525,
+      "pdf_page": 159,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
+      "source_file_line": 53
     },
     {
       "schema_id": "SCH-08-02",
@@ -843,10 +1069,10 @@
       "sha256_source": "252f3380c54fc8f0815c4f1b35ce931ee91e8c0a29e7cc334db33558f4f46475",
       "sha256_rendered": "252f3380c54fc8f0815c4f1b35ce931ee91e8c0a29e7cc334db33558f4f46475",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1555,
-      "pdf_page": 159,
+      "compendium_md_line": 1603,
+      "pdf_page": 165,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
-      "source_file_line": 125
+      "source_file_line": 131
     },
     {
       "schema_id": "SCH-08-03",
@@ -871,10 +1097,10 @@
       "sha256_source": "e2ed4a71a55f2742ab12887d5c86d6a8ccaef2ae88685f2614ebb3dafe9ecf16",
       "sha256_rendered": "6f99ee1778ddf386984128a3cd1c0d9f13323473e56eb9f5affd321605696958",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1578,
-      "pdf_page": 162,
+      "compendium_md_line": 1626,
+      "pdf_page": 168,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 08.md",
-      "source_file_line": 148
+      "source_file_line": 154
     },
     {
       "schema_id": "SCH-09-01",
@@ -899,8 +1125,8 @@
       "sha256_source": "ce1cb366ec675eb434f1181f3ec8d7e9557cf43743558fd3c588ed77c7285c2f",
       "sha256_rendered": "e6e4d563f28bfa641d346b70c02c488445ec40d1276232c5ad82c4db928a3efc",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1630,
-      "pdf_page": 167,
+      "compendium_md_line": 1678,
+      "pdf_page": 173,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
       "source_file_line": 19
     },
@@ -930,8 +1156,8 @@
       "sha256_source": "ebd09a9f1ec01351e89f0d43ff0522585e7bd1144c32827af10c6d3688309699",
       "sha256_rendered": "ebd09a9f1ec01351e89f0d43ff0522585e7bd1144c32827af10c6d3688309699",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1691,
-      "pdf_page": 173,
+      "compendium_md_line": 1739,
+      "pdf_page": 179,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
       "source_file_line": 80
     },
@@ -959,8 +1185,8 @@
       "sha256_source": "1b2b9cf22342d4336350ff708961287eecd77cc84c4bb5b2646377890db6c443",
       "sha256_rendered": "1b2b9cf22342d4336350ff708961287eecd77cc84c4bb5b2646377890db6c443",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1717,
-      "pdf_page": 176,
+      "compendium_md_line": 1765,
+      "pdf_page": 182,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
       "source_file_line": 106
     },
@@ -987,8 +1213,8 @@
       "sha256_source": "9374dc8c23424f0aacdda5318e6f7003ee18b45ce0d3c8a9445a79b9b83ee082",
       "sha256_rendered": "773e2bbf43b7083c4b8d7ab6de1f2f574bb28b050bea9178078ed0e6d2da4f2c",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1735,
-      "pdf_page": 179,
+      "compendium_md_line": 1783,
+      "pdf_page": 185,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/03 - Partie III/Chapitre 09.md",
       "source_file_line": 124
     },
@@ -1016,8 +1242,8 @@
       "sha256_source": "4c666d5c804fdf8d47a144b9eb017ba050e47d6ecdf0f0b65e39277f26f92478",
       "sha256_rendered": "4eb40602b52b4d241754fc3e358205f7513f008fd5ab3755899635a37ba08cb9",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1828,
-      "pdf_page": 189,
+      "compendium_md_line": 1876,
+      "pdf_page": 195,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
       "source_file_line": 35
     },
@@ -1045,10 +1271,39 @@
       "sha256_source": "f11b1048a61d1e38988feea10e0f40dcda1a4d4a3dbd3598999e6abe235166c2",
       "sha256_rendered": "6909cb3c9a1fd2e53e97e76ac5c459f68270efdc3fea7bd24dfe55c14e866f61",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1857,
-      "pdf_page": 192,
+      "compendium_md_line": 1905,
+      "pdf_page": 198,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
       "source_file_line": 64
+    },
+    {
+      "schema_id": "SCH-10-04",
+      "unit": "ch10",
+      "part_id": "P04",
+      "chapter_number": 10,
+      "domain_id": "D04",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Cinq points de rupture ACL sur entrepôt de données et verrous OBO / RLS / WAP",
+      "families_covered": [
+        "FAM_D04_01_01"
+      ],
+      "themes_vulgarized": [
+        "contrats-donnees-write-audit-publish",
+        "donnees-pretes-agents-odcs-openlineage",
+        "dette-semantique-ontologies"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-10-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-10-04.svg",
+      "source_bytes": 2984,
+      "rendered_bytes": 16379,
+      "sha256_source": "23f8c921c06253a8ab06737606cf536323d790fd2ef334d6ad08bd6cd9883fc2",
+      "sha256_rendered": "9b72d7e2950386e2eff9806795ab6478fa22f878c1e098b563bc6f1851faf1c3",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 1921,
+      "pdf_page": 200,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
+      "source_file_line": 80
     },
     {
       "schema_id": "SCH-10-03",
@@ -1072,10 +1327,10 @@
       "sha256_source": "ae9cd98ed9e07245c727e1084902dfc02c64662058bee42c2d8823230d3e9376",
       "sha256_rendered": "09d8fc30a664003e876b024e7f54488e3c73c9b70f8f0efe0ae6ef109eb4329d",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1896,
-      "pdf_page": 196,
+      "compendium_md_line": 1950,
+      "pdf_page": 203,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 10.md",
-      "source_file_line": 103
+      "source_file_line": 109
     },
     {
       "schema_id": "SCH-11-01",
@@ -1099,8 +1354,8 @@
       "sha256_source": "d87b2b71091fce4aaadfc7ec7eb6de5836cf3dbe17701fead7ffae1a8da8a192",
       "sha256_rendered": "91058f95c71d9a1c5277e00e14dab24bd713cedc93d1528a6f0301fa08098b8b",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1979,
-      "pdf_page": 205,
+      "compendium_md_line": 2033,
+      "pdf_page": 212,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
       "source_file_line": 42
     },
@@ -1128,8 +1383,8 @@
       "sha256_source": "5761f1101cde7563264546bdbec3573aa5959a18da5b1dd9a9ec9f5dcc3c1868",
       "sha256_rendered": "580da2fc989eebd8556bf5d3355aca7717f0b1d9c58ec76c642f234a43b5c607",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 1993,
-      "pdf_page": 208,
+      "compendium_md_line": 2047,
+      "pdf_page": 215,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
       "source_file_line": 56
     },
@@ -1157,8 +1412,8 @@
       "sha256_source": "69a7de41974476f0d5c13bbd9b17d2cf313a2446ca044308e5b8f85b0a84d668",
       "sha256_rendered": "1e2b7972bd9f3c7d64327b066d466c3f66f6dd547f46f81de9686daccf28449a",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2029,
-      "pdf_page": 212,
+      "compendium_md_line": 2083,
+      "pdf_page": 219,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 11.md",
       "source_file_line": 92
     },
@@ -1186,8 +1441,8 @@
       "sha256_source": "9e4c96e4274fddad81a9a4962d73d581d127ca5dc37eb44b3891c97de4db90fd",
       "sha256_rendered": "e83f1e2c30418dfedf3d90f052c542fb684bb8ad6f8f9f25ac4e2b29f03168aa",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2114,
-      "pdf_page": 220,
+      "compendium_md_line": 2168,
+      "pdf_page": 227,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
       "source_file_line": 48
     },
@@ -1216,8 +1471,8 @@
       "sha256_source": "e1a27d6e174bef718e2cccd04d6aec5a5c310e2c3f1dbecd216d4bd882ba9391",
       "sha256_rendered": "a64cb46959e8693902bf1ae2e2770cbe1a503aadbe69e8caecf41ae210ec4534",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2136,
-      "pdf_page": 224,
+      "compendium_md_line": 2190,
+      "pdf_page": 231,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
       "source_file_line": 70
     },
@@ -1243,8 +1498,8 @@
       "sha256_source": "193c1269644996b149477c03953458e92a8b8a2bf1d13b13af4ec4b5ed6b1198",
       "sha256_rendered": "193c1269644996b149477c03953458e92a8b8a2bf1d13b13af4ec4b5ed6b1198",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2161,
-      "pdf_page": 226,
+      "compendium_md_line": 2215,
+      "pdf_page": 233,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/04 - Partie IV/Chapitre 12.md",
       "source_file_line": 95
     },
@@ -1272,8 +1527,8 @@
       "sha256_source": "353493ddd06da43dabab2cb1a9625a8481a15f1f38587383620a4e529a6a3fab",
       "sha256_rendered": "353493ddd06da43dabab2cb1a9625a8481a15f1f38587383620a4e529a6a3fab",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2243,
-      "pdf_page": 237,
+      "compendium_md_line": 2297,
+      "pdf_page": 244,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
       "source_file_line": 44
     },
@@ -1301,8 +1556,8 @@
       "sha256_source": "eb948ca49bb0907e4dca9284abf0b76f29a872946b8acc9199c21fc1464b80e6",
       "sha256_rendered": "eb948ca49bb0907e4dca9284abf0b76f29a872946b8acc9199c21fc1464b80e6",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2283,
-      "pdf_page": 241,
+      "compendium_md_line": 2337,
+      "pdf_page": 248,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
       "source_file_line": 84
     },
@@ -1331,8 +1586,8 @@
       "sha256_source": "c38006df863c11b91fd489aef626382aa05ec9fa856c4f0f3831c9b96e1d5866",
       "sha256_rendered": "91914f6e7e94558f4f18b0cbd92959f90366dfa549698bd731c05c2cf76769c0",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2311,
-      "pdf_page": 245,
+      "compendium_md_line": 2365,
+      "pdf_page": 252,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 13.md",
       "source_file_line": 112
     },
@@ -1358,8 +1613,8 @@
       "sha256_source": "d15dd5320a8f85a120228c65694b84c35eb5af12c579a7f970ce6e3aa291177d",
       "sha256_rendered": "d15dd5320a8f85a120228c65694b84c35eb5af12c579a7f970ce6e3aa291177d",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2395,
-      "pdf_page": 254,
+      "compendium_md_line": 2449,
+      "pdf_page": 261,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
       "source_file_line": 41
     },
@@ -1386,8 +1641,8 @@
       "sha256_source": "861d0d6ba1035c1a8e2cd0dd710f841f354142e8a074da317b91987f2e9be3fd",
       "sha256_rendered": "580bbdf610a5ce9aa5a3ee42015fbb19f788c744026897bc1edb6ab9b3d50c1d",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2416,
-      "pdf_page": 257,
+      "compendium_md_line": 2470,
+      "pdf_page": 264,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
       "source_file_line": 62
     },
@@ -1413,8 +1668,8 @@
       "sha256_source": "14b87602c2e17ac1581915a7cbef9d8268bc4ed84e64d7f1fd6315ec4da9bfc0",
       "sha256_rendered": "625507e394cf9caceaad8820ece0474465974ef91316178832033ed4bfd04e02",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2441,
-      "pdf_page": 260,
+      "compendium_md_line": 2495,
+      "pdf_page": 267,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 14.md",
       "source_file_line": 87
     },
@@ -1441,8 +1696,8 @@
       "sha256_source": "23e877178a86eb94254792842593bb7e9b8f8c179be94070bae0d390ed64bf57",
       "sha256_rendered": "23e877178a86eb94254792842593bb7e9b8f8c179be94070bae0d390ed64bf57",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2526,
-      "pdf_page": 270,
+      "compendium_md_line": 2580,
+      "pdf_page": 277,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
       "source_file_line": 40
     },
@@ -1470,8 +1725,8 @@
       "sha256_source": "7bdd02c86babc9e0f17ea4eab35e388654d421c17d4a5e0a86149f9e535bdb12",
       "sha256_rendered": "d3c1a8f20a7439679479c2c52c7ab10900a36638b4a96d56386c3387e1d1a6a8",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2552,
-      "pdf_page": 274,
+      "compendium_md_line": 2606,
+      "pdf_page": 281,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
       "source_file_line": 66
     },
@@ -1500,8 +1755,8 @@
       "sha256_source": "8741bb8b5e08781795757ecfe1e64a0731b1dca9eec9856639b081dd1d4bf31e",
       "sha256_rendered": "a0f06f07246daecf0e8bdbcc798549183a81bbdca0010e396d0dddc73b5f0526",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2635,
-      "pdf_page": 279,
+      "compendium_md_line": 2689,
+      "pdf_page": 286,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/05 - Partie V/Chapitre 15.md",
       "source_file_line": 149
     },
@@ -1529,8 +1784,8 @@
       "sha256_source": "1f419505f23d225d4ca2c41fa33370ab2bf808f2b74421e5e8ccbd533cd27612",
       "sha256_rendered": "1f419505f23d225d4ca2c41fa33370ab2bf808f2b74421e5e8ccbd533cd27612",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2717,
-      "pdf_page": 289,
+      "compendium_md_line": 2771,
+      "pdf_page": 296,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
       "source_file_line": 48
     },
@@ -1559,8 +1814,8 @@
       "sha256_source": "73594ef646b47158ea858067c4ff81859c3e965a9447b44d965fb9df6aaa9850",
       "sha256_rendered": "73594ef646b47158ea858067c4ff81859c3e965a9447b44d965fb9df6aaa9850",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2750,
-      "pdf_page": 293,
+      "compendium_md_line": 2804,
+      "pdf_page": 300,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
       "source_file_line": 81
     },
@@ -1587,8 +1842,8 @@
       "sha256_source": "83d91e225b8c8fc998d8919120bd696effe09961f3182166d593d18cbeb1284e",
       "sha256_rendered": "16a7afae64d5daaec26fd9a2110ba1040e29046d629c622fd7b2810dcf31e289",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2790,
-      "pdf_page": 297,
+      "compendium_md_line": 2844,
+      "pdf_page": 304,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 16.md",
       "source_file_line": 121
     },
@@ -1617,10 +1872,39 @@
       "sha256_source": "f38ccdb952d2167dba79ef41bd3e68e9751e0a63276d67ed323e97c9c31ed18f",
       "sha256_rendered": "a9f4bc9e09e0656a7801557efc0c9dfe003c94990fab5d0050707e1a3dd3cbfd",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2879,
-      "pdf_page": 307,
+      "compendium_md_line": 2933,
+      "pdf_page": 314,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
       "source_file_line": 44
+    },
+    {
+      "schema_id": "SCH-17-04",
+      "unit": "ch17",
+      "part_id": "P06",
+      "chapter_number": 17,
+      "domain_id": "D06",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Rupture au deuxième saut RFC 8693, intersection RAR et Txn-Token O(1)",
+      "families_covered": [
+        "FAM_D06_02_01"
+      ],
+      "themes_vulgarized": [
+        "delegation-obo-deux-sauts",
+        "requetes-riches-rar-txn-tokens",
+        "liaison-jetons-dpop-mtls"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-17-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-17-04.svg",
+      "source_bytes": 3032,
+      "rendered_bytes": 14192,
+      "sha256_source": "01337303b4f4f85c6f21f96f55e79d83cadb351f251e09d64882a97c52ce9e03",
+      "sha256_rendered": "45655ebfa045820e442cceb9d3a1e6a4ed10820394764659f0e4c045c38c891e",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 2989,
+      "pdf_page": 316,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
+      "source_file_line": 100
     },
     {
       "schema_id": "SCH-17-02",
@@ -1644,10 +1928,10 @@
       "sha256_source": "52816a44387a0feb2413fd997fb2735f72f59a0fbcf912c57b3bb9defc79c57e",
       "sha256_rendered": "478a5b3db7e5b9ba8c0460ce965cebf7d9050b758fa59aad2bdf5c499836225c",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2961,
-      "pdf_page": 311,
+      "compendium_md_line": 3021,
+      "pdf_page": 319,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
-      "source_file_line": 126
+      "source_file_line": 132
     },
     {
       "schema_id": "SCH-17-03",
@@ -1672,10 +1956,10 @@
       "sha256_source": "947067fe147623a9b67638862e44177dcc1327f6641c27f20ff9c08959f5d5c4",
       "sha256_rendered": "947067fe147623a9b67638862e44177dcc1327f6641c27f20ff9c08959f5d5c4",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 2988,
-      "pdf_page": 314,
+      "compendium_md_line": 3048,
+      "pdf_page": 322,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 17.md",
-      "source_file_line": 153
+      "source_file_line": 159
     },
     {
       "schema_id": "SCH-18-01",
@@ -1699,8 +1983,8 @@
       "sha256_source": "d88e185178de602f982feefc85b5964cc7364d521b759d28b5126c72f28a41f4",
       "sha256_rendered": "d6217f539be8030ec8f9b868852d3bfbbffa6060a4ab23bdc6b528d2902a6e51",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3086,
-      "pdf_page": 323,
+      "compendium_md_line": 3146,
+      "pdf_page": 331,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
       "source_file_line": 35
     },
@@ -1727,8 +2011,8 @@
       "sha256_source": "8b5550c586a953adc6f937581c90917c6c79be2c629450ab781172b7994bf77f",
       "sha256_rendered": "8b5550c586a953adc6f937581c90917c6c79be2c629450ab781172b7994bf77f",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3115,
-      "pdf_page": 327,
+      "compendium_md_line": 3175,
+      "pdf_page": 335,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
       "source_file_line": 64
     },
@@ -1755,8 +2039,8 @@
       "sha256_source": "2db4b1a42e6a30d8ea286a258f5a4ebcaa5939e4037cc991afd393624640b498",
       "sha256_rendered": "321355cc1da78d5a0d36b0ba1b23eb464038f718e2616f7c75f023337142bc54",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3173,
-      "pdf_page": 329,
+      "compendium_md_line": 3233,
+      "pdf_page": 337,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/06 - Partie VI/Chapitre 18.md",
       "source_file_line": 122
     },
@@ -1783,8 +2067,8 @@
       "sha256_source": "22e3d8b17720143d9ed221987b9692dab30b77aba1f038e9377c1e9d5d584f87",
       "sha256_rendered": "22e3d8b17720143d9ed221987b9692dab30b77aba1f038e9377c1e9d5d584f87",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3262,
-      "pdf_page": 338,
+      "compendium_md_line": 3322,
+      "pdf_page": 346,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
       "source_file_line": 35
     },
@@ -1811,8 +2095,8 @@
       "sha256_source": "99df57954c1d446d469bfe0c162fba732f6f982e34bf4043238336aa9b820d9e",
       "sha256_rendered": "329b204c13931ddad1165161906c1536070f30dc528e5a77836f5b66d8433af4",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3287,
-      "pdf_page": 341,
+      "compendium_md_line": 3347,
+      "pdf_page": 349,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
       "source_file_line": 60
     },
@@ -1835,13 +2119,13 @@
       ],
       "source_path": "Sources/Compendium/ouvrage/schemas/SCH-19-03.mmd",
       "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-19-03.png",
-      "source_bytes": 1859,
-      "rendered_bytes": 221343,
-      "sha256_source": "cf177c98209c69eecea9222c16b993e6f8892565fa1048f63f651a5e981b1ef4",
-      "sha256_rendered": "30f4c8ae48a4b34e57fe7cbb78cd1322daf9a6ee31bd8a1c193b665f5f3e13e2",
+      "source_bytes": 1886,
+      "rendered_bytes": 227028,
+      "sha256_source": "3013f038a51088ed9633c14e2ba9a82c5693988806ad42591a81366ed727d4cc",
+      "sha256_rendered": "9aa72e1a75ccfdc2be230179f3da5f1c10a4755bb124d0e27355a36e81621ab1",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3349,
-      "pdf_page": 347,
+      "compendium_md_line": 3409,
+      "pdf_page": 355,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md",
       "source_file_line": 122
     },
@@ -1871,8 +2155,8 @@
       "sha256_source": "4f92a464a98701e3b1b27314aa0d2434c25fe5d911bb4489065a62d02c3d4d80",
       "sha256_rendered": "aa995d4f56414f658e66567ac55abd5e857ee1abace95fea9854f9775f493ac7",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3430,
-      "pdf_page": 356,
+      "compendium_md_line": 3490,
+      "pdf_page": 364,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
       "source_file_line": 39
     },
@@ -1900,8 +2184,8 @@
       "sha256_source": "eb16f1a6ab57e9e06870f3dc2a76fb6e79ab4605629fd698fd784e3725552d79",
       "sha256_rendered": "733d623f34fd7c8ae1e63e3dbdf396f7b65e8bcfa39f06efb709a7ef22416515",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3442,
-      "pdf_page": 358,
+      "compendium_md_line": 3502,
+      "pdf_page": 366,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
       "source_file_line": 51
     },
@@ -1929,8 +2213,8 @@
       "sha256_source": "5c588df2ac802b6563752896417c36deddae21f74d40efad8e30eed1c7df595c",
       "sha256_rendered": "5c588df2ac802b6563752896417c36deddae21f74d40efad8e30eed1c7df595c",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3544,
-      "pdf_page": 364,
+      "compendium_md_line": 3604,
+      "pdf_page": 372,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 20.md",
       "source_file_line": 153
     },
@@ -1957,8 +2241,8 @@
       "sha256_source": "f49ed52735dd4e3fb30d8af48d445286420dc6882d107a8ab2599d72bf39e376",
       "sha256_rendered": "f49ed52735dd4e3fb30d8af48d445286420dc6882d107a8ab2599d72bf39e376",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3639,
-      "pdf_page": 374,
+      "compendium_md_line": 3699,
+      "pdf_page": 382,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
       "source_file_line": 37
     },
@@ -1984,8 +2268,8 @@
       "sha256_source": "5c3b3b821885cb65e6e8690b851e9f141670475d276ca37e02b0ba303d14feff",
       "sha256_rendered": "b78b76088b2e93bf0ec071bf82d7bcb35ccca172f440be5b51f84b0763b74ee8",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3660,
-      "pdf_page": 377,
+      "compendium_md_line": 3720,
+      "pdf_page": 385,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
       "source_file_line": 58
     },
@@ -2011,10 +2295,38 @@
       "sha256_source": "6d45462a8dfb773d3bcd2ba5f75b6389f13d61a4e69053df62788c345c6e37d5",
       "sha256_rendered": "000c4760401f55cf09bda41b3af88b9ea5df2f79755c3243a1ffcde618b893be",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3690,
-      "pdf_page": 380,
+      "compendium_md_line": 3750,
+      "pdf_page": 388,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
       "source_file_line": 88
+    },
+    {
+      "schema_id": "SCH-21-04",
+      "unit": "ch21",
+      "part_id": "P07",
+      "chapter_number": 21,
+      "domain_id": "D07",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Quatre paliers de rayon d'impact du coupe-circuit et automate à cinq états",
+      "families_covered": [
+        "FAM_D07_03_02"
+      ],
+      "themes_vulgarized": [
+        "soc-soar-coupe-circuit",
+        "confinement-opensandbox-firecracker-wasi"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-21-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-21-04.svg",
+      "source_bytes": 13440,
+      "rendered_bytes": 13440,
+      "sha256_source": "2d1c36caf529e10f1246b4a9c2681b67e7ba3ef74f30e167d47ce6d676da9cbc",
+      "sha256_rendered": "2d1c36caf529e10f1246b4a9c2681b67e7ba3ef74f30e167d47ce6d676da9cbc",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 3762,
+      "pdf_page": 389,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md",
+      "source_file_line": 100
     },
     {
       "schema_id": "SCH-22-01",
@@ -2039,8 +2351,8 @@
       "sha256_source": "eb680dd820416ed5d9d468f080d8b7230e0381147b578333b45bf26b870203c2",
       "sha256_rendered": "d83d486c839590fc68dc2be6405bbc2d40306fac5dce32ad65ca09720c1d36bb",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3773,
-      "pdf_page": 391,
+      "compendium_md_line": 3839,
+      "pdf_page": 400,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
       "source_file_line": 41
     },
@@ -2067,8 +2379,8 @@
       "sha256_source": "c140409ee6e6731bab1cfbf3d6ab80e422881263d322b993c0d6eb2a69bd6e29",
       "sha256_rendered": "c140409ee6e6731bab1cfbf3d6ab80e422881263d322b993c0d6eb2a69bd6e29",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3810,
-      "pdf_page": 395,
+      "compendium_md_line": 3876,
+      "pdf_page": 404,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
       "source_file_line": 78
     },
@@ -2097,8 +2409,8 @@
       "sha256_source": "70f11f78171c3b738d6c09ab367cffc9e59ace90a1fb329bceffca774cec9259",
       "sha256_rendered": "dfb599243e79155b714b94b46a793d03b013e9dd4f1acbfae64e3c579548e620",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3881,
-      "pdf_page": 400,
+      "compendium_md_line": 3947,
+      "pdf_page": 409,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md",
       "source_file_line": 149
     },
@@ -2126,8 +2438,8 @@
       "sha256_source": "42cf259f4de9e5a0ddb998681310f6cb20fd475782551c598a6e50eb1d6b4633",
       "sha256_rendered": "2da089206cf72d59058e4c23cd81faebc505788ae553894609b7ec373065e8bc",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 3950,
-      "pdf_page": 409,
+      "compendium_md_line": 4016,
+      "pdf_page": 418,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
       "source_file_line": 37
     },
@@ -2155,8 +2467,8 @@
       "sha256_source": "cb1e54429f24ed0a33b29b41dd3052a7f9d897ed028bb05f87c09361220fc276",
       "sha256_rendered": "cb1e54429f24ed0a33b29b41dd3052a7f9d897ed028bb05f87c09361220fc276",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4042,
-      "pdf_page": 416,
+      "compendium_md_line": 4108,
+      "pdf_page": 425,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
       "source_file_line": 129
     },
@@ -2182,8 +2494,8 @@
       "sha256_source": "96200451ab34b6da9fe9bf4a21770e340137f420dc822dfbbc517de3667b8898",
       "sha256_rendered": "633da4d3ea0dbfbecc9fd9f1bb77ad7658c2f3900f9cd42c1a2ada642388c636",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4055,
-      "pdf_page": 418,
+      "compendium_md_line": 4121,
+      "pdf_page": 427,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md",
       "source_file_line": 142
     },
@@ -2211,8 +2523,8 @@
       "sha256_source": "0db7a3f69d9b0cf4baf0ee101b08a18c237ce5df198f84042b70d332049c7191",
       "sha256_rendered": "0db7a3f69d9b0cf4baf0ee101b08a18c237ce5df198f84042b70d332049c7191",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4140,
-      "pdf_page": 428,
+      "compendium_md_line": 4206,
+      "pdf_page": 437,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
       "source_file_line": 50
     },
@@ -2238,8 +2550,8 @@
       "sha256_source": "330c62e24b7341a09fc8e22941f531f2a19fd37f64f25e71948aa63721fedcfc",
       "sha256_rendered": "7c583b5ace2ad2ae4c27c19d749b2ace1facf5f4378c1049cd4aa8a63555cbb0",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4169,
-      "pdf_page": 431,
+      "compendium_md_line": 4235,
+      "pdf_page": 440,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
       "source_file_line": 79
     },
@@ -2267,10 +2579,40 @@
       "sha256_source": "0c96e86c8cdd786def3c979edf6af581b441d86fc228fd88d441224ccdcba70a",
       "sha256_rendered": "056e7e1d50d63fb82a8b50d07a912aeac5c2d4a911adc22a6bf89aad2380ce91",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4184,
-      "pdf_page": 433,
+      "compendium_md_line": 4250,
+      "pdf_page": 442,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
       "source_file_line": 94
+    },
+    {
+      "schema_id": "SCH-24-04",
+      "unit": "ch24",
+      "part_id": "P08",
+      "chapter_number": 24,
+      "domain_id": "D08",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Échelle logarithmique des horloges SRE, coupe-circuits, rétentions et échéances",
+      "families_covered": [
+        "FAM_D08_03_02",
+        "FAM_D08_03_01"
+      ],
+      "themes_vulgarized": [
+        "indicateurs-agentops-horizon-tache",
+        "cycle-vie-operationnel-derives-gitops",
+        "finops-focus-cpo"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-24-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-24-04.svg",
+      "source_bytes": 14892,
+      "rendered_bytes": 14892,
+      "sha256_source": "05ff56bcc897f2e586c37aa6bf484eeb3c1f33402e626639a773fd9ff2071fa4",
+      "sha256_rendered": "05ff56bcc897f2e586c37aa6bf484eeb3c1f33402e626639a773fd9ff2071fa4",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4265,
+      "pdf_page": 443,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md",
+      "source_file_line": 109
     },
     {
       "schema_id": "SCH-25-01",
@@ -2296,8 +2638,8 @@
       "sha256_source": "a2fb90b71944617e3d2eb5c3b1af958161dbfaf1f93d37d8e0192752e8dae30a",
       "sha256_rendered": "101e235befebd962740a591b69a9e32063ab2434c49296fdd4403f098a09b602",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4295,
-      "pdf_page": 445,
+      "compendium_md_line": 4367,
+      "pdf_page": 455,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
       "source_file_line": 70
     },
@@ -2326,8 +2668,8 @@
       "sha256_source": "c80dcdbd5faade0af0f7d6b2cc4ae5bf3c54f7f5e21ddb9a8e8e85d5490502cd",
       "sha256_rendered": "c80dcdbd5faade0af0f7d6b2cc4ae5bf3c54f7f5e21ddb9a8e8e85d5490502cd",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4309,
-      "pdf_page": 447,
+      "compendium_md_line": 4381,
+      "pdf_page": 457,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
       "source_file_line": 84
     },
@@ -2356,8 +2698,8 @@
       "sha256_source": "2332f719658bd7808d2f59efc2918912eef3f824eab81afc4c716505c58677a7",
       "sha256_rendered": "2332f719658bd7808d2f59efc2918912eef3f824eab81afc4c716505c58677a7",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4340,
-      "pdf_page": 451,
+      "compendium_md_line": 4412,
+      "pdf_page": 461,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 25.md",
       "source_file_line": 115
     },
@@ -2385,8 +2727,8 @@
       "sha256_source": "d4f4a8212976451783db6b1fa02ea571ae52fb27f5da37954bb1fb317beff585",
       "sha256_rendered": "d4f4a8212976451783db6b1fa02ea571ae52fb27f5da37954bb1fb317beff585",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4439,
-      "pdf_page": 462,
+      "compendium_md_line": 4511,
+      "pdf_page": 472,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
       "source_file_line": 61
     },
@@ -2415,8 +2757,8 @@
       "sha256_source": "20642299999ec3e788a126f26c32b49dd3d78bc39e88fe68f236336060e0900d",
       "sha256_rendered": "1da0dbf0e805bd41c9ec43dab209066bd2e4ab10c0670b32b04a76d8ece1bdd7",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4471,
-      "pdf_page": 465,
+      "compendium_md_line": 4543,
+      "pdf_page": 475,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
       "source_file_line": 93
     },
@@ -2442,8 +2784,8 @@
       "sha256_source": "c7cef3bc65156882725a20f3d52065aeacbf8b728b501656435a23520b045ef6",
       "sha256_rendered": "2fce740e24b31bcc54e45d62aab4458dda760bd3de9757dd70dd7cf8a55c0255",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4489,
-      "pdf_page": 468,
+      "compendium_md_line": 4561,
+      "pdf_page": 478,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 26.md",
       "source_file_line": 111
     },
@@ -2469,8 +2811,8 @@
       "sha256_source": "17c56087c116a5b7a741eef973d0716925e7aee39200d31ed0b74002abcdaf6a",
       "sha256_rendered": "d0c6966d6342d8f9f1b805b575587374b5f91cdcb366b758d8b994cf059c5e3e",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4572,
-      "pdf_page": 477,
+      "compendium_md_line": 4644,
+      "pdf_page": 487,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
       "source_file_line": 47
     },
@@ -2498,8 +2840,8 @@
       "sha256_source": "ec333b28a3806a39112f1c6526d7b39e3307dd12d8529e2555a076050d091bb4",
       "sha256_rendered": "ec333b28a3806a39112f1c6526d7b39e3307dd12d8529e2555a076050d091bb4",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4601,
-      "pdf_page": 480,
+      "compendium_md_line": 4673,
+      "pdf_page": 490,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
       "source_file_line": 76
     },
@@ -2525,8 +2867,8 @@
       "sha256_source": "ab69ccbf760e9f73c2acf34e32cf65c2841717ef572370d11ea028d348da6924",
       "sha256_rendered": "7cce0223ea75aa0826b11655d07620a8c0bb2622f0a99a9f39b2a0be04370a07",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4622,
-      "pdf_page": 483,
+      "compendium_md_line": 4694,
+      "pdf_page": 493,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/09 - Partie IX/Chapitre 27.md",
       "source_file_line": 97
     },
@@ -2557,10 +2899,38 @@
       "sha256_source": "95005456239586ce885ee5570905dbe1397ae4a9aab2edc75f27536fc7d63b58",
       "sha256_rendered": "95005456239586ce885ee5570905dbe1397ae4a9aab2edc75f27536fc7d63b58",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4725,
-      "pdf_page": 495,
+      "compendium_md_line": 4797,
+      "pdf_page": 505,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
       "source_file_line": 66
+    },
+    {
+      "schema_id": "SCH-28-04",
+      "unit": "ch28",
+      "part_id": "P10",
+      "chapter_number": 28,
+      "domain_id": "D10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Double qualification (BSIF E-23 ∩ BSIF B-10) et six facteurs de durcissement financier",
+      "families_covered": [
+        "FAM_D10_01_01"
+      ],
+      "themes_vulgarized": [
+        "vertical-financier-durci",
+        "profils-financiers-5-secteurs"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-28-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-28-04.svg",
+      "source_bytes": 2928,
+      "rendered_bytes": 14542,
+      "sha256_source": "33fd66b425447d33ad2fa97cca7a126e500f74bb05dc45d2e937267f4a004f37",
+      "sha256_rendered": "39f9e3661ab5d4ec3297abba8ab597330285b9b7b555a1b557b030a78f690f51",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4818,
+      "pdf_page": 507,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
+      "source_file_line": 87
     },
     {
       "schema_id": "SCH-28-02",
@@ -2587,10 +2957,10 @@
       "sha256_source": "f01405ac963160fea7faa3b3596113eeb79cd1683d746eca0b57dacec46d297d",
       "sha256_rendered": "af83d3e932623eb5fb9a359dc1230b8d1a09061e3e144b158955c3f7e31670a3",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4757,
-      "pdf_page": 499,
+      "compendium_md_line": 4835,
+      "pdf_page": 510,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
-      "source_file_line": 98
+      "source_file_line": 104
     },
     {
       "schema_id": "SCH-28-03",
@@ -2616,10 +2986,38 @@
       "sha256_source": "e7eb7d4b7bf715a34af5e55c470060c3c696354f440377aef01a8b81730c779c",
       "sha256_rendered": "e7eb7d4b7bf715a34af5e55c470060c3c696354f440377aef01a8b81730c779c",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4795,
-      "pdf_page": 503,
+      "compendium_md_line": 4873,
+      "pdf_page": 514,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 28.md",
-      "source_file_line": 136
+      "source_file_line": 142
+    },
+    {
+      "schema_id": "SCH-29-04",
+      "unit": "ch29",
+      "part_id": "P10",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Cycle Naissance, Vie et Mort d'un agent d'entreprise sur les strates C1–C8",
+      "families_covered": [
+        "FAM_D10_02_01"
+      ],
+      "themes_vulgarized": [
+        "blueprints-reference-multisectoriels",
+        "federation-multi-plateformes-gravite"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-04.svg",
+      "source_bytes": 15359,
+      "rendered_bytes": 15359,
+      "sha256_source": "6ee7ed6f2d82afc8622c8620f9311ff241c6337a4902a8b14542c9991c5b7eaf",
+      "sha256_rendered": "6ee7ed6f2d82afc8622c8620f9311ff241c6337a4902a8b14542c9991c5b7eaf",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 4930,
+      "pdf_page": 520,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+      "source_file_line": 37
     },
     {
       "schema_id": "SCH-29-01",
@@ -2646,10 +3044,10 @@
       "sha256_source": "f0825b68184f8f4bef759b9e5a32e64dd9cf66ace5ab7c3bdfa00a445487090a",
       "sha256_rendered": "0607682605d0db1d26080aba4007a47e8a862c5341e033d30db375ae4998ac46",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4893,
-      "pdf_page": 514,
+      "compendium_md_line": 4977,
+      "pdf_page": 525,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
-      "source_file_line": 78
+      "source_file_line": 84
     },
     {
       "schema_id": "SCH-29-02",
@@ -2675,10 +3073,38 @@
       "sha256_source": "f0162ab7d84cd453a538fc555281108a0709feaf0a1aa071116b698e34e137ad",
       "sha256_rendered": "5377a5d6e59a4bd302259770ddda84e5e88c1320827b720bfff80cd1790e762a",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4916,
-      "pdf_page": 516,
+      "compendium_md_line": 5000,
+      "pdf_page": 528,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
-      "source_file_line": 101
+      "source_file_line": 107
+    },
+    {
+      "schema_id": "SCH-29-05",
+      "unit": "ch29",
+      "part_id": "P10",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Chronogramme Cognitive DR (RTO < 15 min) et bandes d'homologation pass^5_DR",
+      "families_covered": [
+        "FAM_D10_02_02"
+      ],
+      "themes_vulgarized": [
+        "reprise-sinistre-cognitif-continuite",
+        "federation-multi-plateformes-gravite"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-29-05.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-29-05.svg",
+      "source_bytes": 13940,
+      "rendered_bytes": 13940,
+      "sha256_source": "de6885941b315f83ec50c20ea6e7768a7545f094e51182253cb62419706b35d6",
+      "sha256_rendered": "de6885941b315f83ec50c20ea6e7768a7545f094e51182253cb62419706b35d6",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5021,
+      "pdf_page": 530,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
+      "source_file_line": 128
     },
     {
       "schema_id": "SCH-29-03",
@@ -2702,10 +3128,10 @@
       "sha256_source": "045eb25a6ddd2e76f5d3023aa671126ba1fa30d1a65a67976e106ce7a46d8042",
       "sha256_rendered": "045eb25a6ddd2e76f5d3023aa671126ba1fa30d1a65a67976e106ce7a46d8042",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 4968,
-      "pdf_page": 521,
+      "compendium_md_line": 5058,
+      "pdf_page": 534,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 29.md",
-      "source_file_line": 153
+      "source_file_line": 165
     },
     {
       "schema_id": "SCH-30-01",
@@ -2732,10 +3158,39 @@
       "sha256_source": "e8db552f4e57112d92a1b8c065898bbffd2ed3db4430e1f3d4134e6ce2f8478d",
       "sha256_rendered": "76ac8089c1558bdceb2eb208739d589752566473249c0282d4046ac4db0e95fa",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5031,
-      "pdf_page": 530,
+      "compendium_md_line": 5121,
+      "pdf_page": 542,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
       "source_file_line": 47
+    },
+    {
+      "schema_id": "SCH-30-04",
+      "unit": "ch30",
+      "part_id": "P10",
+      "chapter_number": 30,
+      "domain_id": "D10",
+      "engine": "puml",
+      "notation": "PlantUML",
+      "title": "Topologie organisationnelle Team Topologies et ArchiMate reliant l'IAP aux blueprints",
+      "families_covered": [
+        "FAM_D10_03_01"
+      ],
+      "themes_vulgarized": [
+        "plateforme-iap-gitops-cognitif",
+        "passage-echelle-parc-agents",
+        "fabrique-agents-certification-reemission"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-30-04.puml",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-30-04.svg",
+      "source_bytes": 2884,
+      "rendered_bytes": 16049,
+      "sha256_source": "66a74d31188d3bdaa666802a3527f7ffbc10b50b9a70b8c7a4c047be86652843",
+      "sha256_rendered": "593853a0aa9ccde9cb95a4061fc27a900f470043fca00a520794a20d274aed91",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5132,
+      "pdf_page": 543,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
+      "source_file_line": 58
     },
     {
       "schema_id": "SCH-30-02",
@@ -2759,10 +3214,10 @@
       "sha256_source": "fd4df7926a386bcde9fdc4f5e250a49298b001e54fbe95f95937f579d1f344d7",
       "sha256_rendered": "f79e707b709d5e5ec74818e1d43ee18b903acb1fd7bc89309f978f97edd0ae2d",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5080,
-      "pdf_page": 535,
+      "compendium_md_line": 5176,
+      "pdf_page": 548,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
-      "source_file_line": 96
+      "source_file_line": 102
     },
     {
       "schema_id": "SCH-30-03",
@@ -2788,10 +3243,38 @@
       "sha256_source": "05bc200949bed7b0d5aa8b9655eac3610655b6ea24424f42d12ba9cbcfa3673f",
       "sha256_rendered": "05bc200949bed7b0d5aa8b9655eac3610655b6ea24424f42d12ba9cbcfa3673f",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5110,
-      "pdf_page": 538,
+      "compendium_md_line": 5206,
+      "pdf_page": 551,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/10 - Partie X/Chapitre 30.md",
-      "source_file_line": 126
+      "source_file_line": 132
+    },
+    {
+      "schema_id": "SCH-31-04",
+      "unit": "ch31",
+      "part_id": "P11",
+      "chapter_number": 31,
+      "domain_id": "D11",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Arbitrage minimax EMA (3 000 LHS) des scénarios A, B et C sous plafond DC-P12",
+      "families_covered": [
+        "FAM_D11_01_01"
+      ],
+      "themes_vulgarized": [
+        "trajectoires-adaptatives-dapp",
+        "tri-prospectif-peremption-feuilles-route"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-31-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-31-04.svg",
+      "source_bytes": 13277,
+      "rendered_bytes": 13277,
+      "sha256_source": "8574b32ac6c5a9440d53c0fe5045c86e87269877f58868ff44a9ab714d7241b3",
+      "sha256_rendered": "8574b32ac6c5a9440d53c0fe5045c86e87269877f58868ff44a9ab714d7241b3",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5263,
+      "pdf_page": 558,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
+      "source_file_line": 40
     },
     {
       "schema_id": "SCH-31-01",
@@ -2818,10 +3301,10 @@
       "sha256_source": "05d22c1de24d8de1c42c2ae3994d93d2db0d6a916ec045f73c70915b2106bc9f",
       "sha256_rendered": "05d22c1de24d8de1c42c2ae3994d93d2db0d6a916ec045f73c70915b2106bc9f",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5185,
-      "pdf_page": 548,
+      "compendium_md_line": 5287,
+      "pdf_page": 561,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
-      "source_file_line": 58
+      "source_file_line": 64
     },
     {
       "schema_id": "SCH-31-02",
@@ -2847,10 +3330,10 @@
       "sha256_source": "94caf08249efc9405d348aa2bd09c27172f86f13404d6a23ce06e5e79a9a92b6",
       "sha256_rendered": "cd8f67210cedb2f4d92d43de3c96fb29f3c83246d6b64bc527cc4faf544e2890",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5211,
-      "pdf_page": 551,
+      "compendium_md_line": 5313,
+      "pdf_page": 565,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
-      "source_file_line": 84
+      "source_file_line": 90
     },
     {
       "schema_id": "SCH-31-03",
@@ -2878,10 +3361,10 @@
       "sha256_source": "d39241b041c8fa2daded2b5360b96c9f8f5b3a1952e911c1bbd041c971a52f07",
       "sha256_rendered": "66c3784bef6237e07874ff201a2c5539d6d2437ec1785873af902caa8dcbf2e1",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5233,
-      "pdf_page": 555,
+      "compendium_md_line": 5335,
+      "pdf_page": 569,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 31.md",
-      "source_file_line": 106
+      "source_file_line": 112
     },
     {
       "schema_id": "SCH-32-01",
@@ -2908,8 +3391,8 @@
       "sha256_source": "ff7d95364144022f43042d3df903f4b8db76d21eef0eacc18f025a7670ee8078",
       "sha256_rendered": "2be073e85c10e3ecc3a240eec02ebf7c3b6c892b16ac285c19b870e990581c9f",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5318,
-      "pdf_page": 565,
+      "compendium_md_line": 5420,
+      "pdf_page": 579,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
       "source_file_line": 43
     },
@@ -2936,8 +3419,8 @@
       "sha256_source": "b6dd3402ee4a6db118d00c3f5e558a986fa2f7d217c612ef5bf6d76b33c81fd1",
       "sha256_rendered": "d5e424483db30381bea309b2383310ecdc33bd54fe0caf107fdfe71f18c18077",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5346,
-      "pdf_page": 569,
+      "compendium_md_line": 5448,
+      "pdf_page": 583,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
       "source_file_line": 71
     },
@@ -2964,10 +3447,38 @@
       "sha256_source": "88d7632c7fc6269e2965d31f9a39a18450bc30c6684bea4c4dcd217b5d547ee8",
       "sha256_rendered": "88d7632c7fc6269e2965d31f9a39a18450bc30c6684bea4c4dcd217b5d547ee8",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5378,
-      "pdf_page": 572,
+      "compendium_md_line": 5480,
+      "pdf_page": 586,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 32.md",
       "source_file_line": 103
+    },
+    {
+      "schema_id": "SCH-33-04",
+      "unit": "ch33",
+      "part_id": "P11",
+      "chapter_number": 33,
+      "domain_id": "D11",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Courbes en ciseaux : gains de productivité 0–12 mois vs érosion du repli à 3–5 ans",
+      "families_covered": [
+        "FAM_D11_03_01"
+      ],
+      "themes_vulgarized": [
+        "atrophie-competences-humaines",
+        "sanctuarisation-vivier-junior-reprise"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-33-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-33-04.svg",
+      "source_bytes": 12602,
+      "rendered_bytes": 12602,
+      "sha256_source": "3193fa5b896a7521beadaa6295b0fec40c55c22f97b47824a16f28dadf8e0c48",
+      "sha256_rendered": "3193fa5b896a7521beadaa6295b0fec40c55c22f97b47824a16f28dadf8e0c48",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5567,
+      "pdf_page": 595,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
+      "source_file_line": 38
     },
     {
       "schema_id": "SCH-33-01",
@@ -2991,10 +3502,10 @@
       "sha256_source": "c8455a377f861bd2baedd12518e77f04d8396415b4ca3ff292145b1283810473",
       "sha256_rendered": "6cb37abb22b754631b13901f895beca85c48cac301921f3b8a0b227df62a7541",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5469,
-      "pdf_page": 581,
+      "compendium_md_line": 5577,
+      "pdf_page": 596,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
-      "source_file_line": 42
+      "source_file_line": 48
     },
     {
       "schema_id": "SCH-33-02",
@@ -3018,10 +3529,10 @@
       "sha256_source": "927915dada615fdc49da5cd00a714d9c30ebebe15483e91c8da4429cb19c9e86",
       "sha256_rendered": "927915dada615fdc49da5cd00a714d9c30ebebe15483e91c8da4429cb19c9e86",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5487,
-      "pdf_page": 584,
+      "compendium_md_line": 5595,
+      "pdf_page": 599,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
-      "source_file_line": 60
+      "source_file_line": 66
     },
     {
       "schema_id": "SCH-33-03",
@@ -3046,10 +3557,10 @@
       "sha256_source": "fb93f93a61204e6dfacdf77a8b57150311f4256f7d9542c30fa89e7877011929",
       "sha256_rendered": "76b1a62c535d88878e5c99377bcb4e4461105471b6b00f60874ea256b38ba4af",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5499,
-      "pdf_page": 586,
+      "compendium_md_line": 5607,
+      "pdf_page": 600,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md",
-      "source_file_line": 72
+      "source_file_line": 78
     },
     {
       "schema_id": "SCH-34-01",
@@ -3074,8 +3585,8 @@
       "sha256_source": "48f54b002c377c21e2560a9c7b1d40fdf3d2fc9885cc7107bab729a75cc7bdc3",
       "sha256_rendered": "5fd8cb68ed640e181f1d92d8bf0d0b1e4ce6cbf931b524fa81c9025dd05c5d7b",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5620,
-      "pdf_page": 598,
+      "compendium_md_line": 5728,
+      "pdf_page": 613,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
       "source_file_line": 72
     },
@@ -3104,8 +3615,8 @@
       "sha256_source": "e635f32b10f8fc61a7a038b517db98401fb1806a9d6f2fec441902793c2f76d5",
       "sha256_rendered": "bd0b6f6aed99474e7025002e76b683fa056cdfb06ac41825e9d3df273b800a1d",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5638,
-      "pdf_page": 601,
+      "compendium_md_line": 5746,
+      "pdf_page": 616,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
       "source_file_line": 90
     },
@@ -3132,8 +3643,8 @@
       "sha256_source": "b5d4dd71c728973318fcc3a4d326a6868111d252b3e858c42e984a9e9ff7028e",
       "sha256_rendered": "47b9f17d3a936b6253bd663d5fdefca3f5bb2438adf84cfa982c9229846b2790",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5658,
-      "pdf_page": 603,
+      "compendium_md_line": 5766,
+      "pdf_page": 618,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md",
       "source_file_line": 110
     },
@@ -3160,8 +3671,8 @@
       "sha256_source": "f6821e63ca89da25a8772737ac08cf50a5e68e8b9fca3ee378d400c9cc3ccb12",
       "sha256_rendered": "567144fe42df52f2652343d266fa555f4a6f049446f4aabe2826f3e311bda6f3",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5773,
-      "pdf_page": 613,
+      "compendium_md_line": 5881,
+      "pdf_page": 628,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
       "source_file_line": 34
     },
@@ -3188,8 +3699,8 @@
       "sha256_source": "249e9e218acd608ff56a78ae0aa069dbb6fcd9460df513ab5fa233f4a0e78e57",
       "sha256_rendered": "ba73c87aa6c2dc0612c1b996cf75368900fe8def02ac3a03c0c33c755f35d20a",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5797,
-      "pdf_page": 616,
+      "compendium_md_line": 5905,
+      "pdf_page": 631,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
       "source_file_line": 58
     },
@@ -3216,10 +3727,67 @@
       "sha256_source": "7d4762bed7740979738a0063279f9cc662e77d874ae16abd79ba8ade52a3a4a2",
       "sha256_rendered": "7d4762bed7740979738a0063279f9cc662e77d874ae16abd79ba8ade52a3a4a2",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5878,
-      "pdf_page": 622,
+      "compendium_md_line": 5986,
+      "pdf_page": 637,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
       "source_file_line": 139
+    },
+    {
+      "schema_id": "SCH-35-04",
+      "unit": "ch35",
+      "part_id": "P12",
+      "chapter_number": 35,
+      "domain_id": "D12",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Fil d'exécution des huit contrats C.1 à C.8 sur l'achat de 12 480 $",
+      "families_covered": [
+        "FAM_D12_02_02"
+      ],
+      "themes_vulgarized": [
+        "contrats-types-executes-ci-annexe-c",
+        "trousse-executable-tome-8"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-35-04.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-35-04.svg",
+      "source_bytes": 14568,
+      "rendered_bytes": 14568,
+      "sha256_source": "36dcae9d1fed3334308a85533ba51267e97a89f00d75edc247d26391d7c66546",
+      "sha256_rendered": "36dcae9d1fed3334308a85533ba51267e97a89f00d75edc247d26391d7c66546",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 5992,
+      "pdf_page": 638,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 35.md",
+      "source_file_line": 145
+    },
+    {
+      "schema_id": "SCH-36-06",
+      "unit": "ch36",
+      "part_id": "P12",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Pierre de Rosette des cinq découpages en couches et trois rectifications DIV-02",
+      "families_covered": [
+        "FAM_D12_03_01"
+      ],
+      "themes_vulgarized": [
+        "concordance-inter-tomes-div02",
+        "reconciliation-inter-volumes-tome1",
+        "cinq-discordances-inter-volumes-tome-8"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-06.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-06.svg",
+      "source_bytes": 17523,
+      "rendered_bytes": 17523,
+      "sha256_source": "4a09f50415f6d2e794584cc615f076233fb7b38eb36f7211a250c8a30f16dab4",
+      "sha256_rendered": "4a09f50415f6d2e794584cc615f076233fb7b38eb36f7211a250c8a30f16dab4",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 6068,
+      "pdf_page": 647,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+      "source_file_line": 39
     },
     {
       "schema_id": "SCH-36-01",
@@ -3246,10 +3814,10 @@
       "sha256_source": "6ef4e28be1bad97927f8b72da29c3fc2bcd01025e9bd57d4b1c87111e9fce8df",
       "sha256_rendered": "3fe5b2022a29fa94f44ff21d669e1946bbc1eea54551936d8166ecd69c209a9e",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5960,
-      "pdf_page": 632,
+      "compendium_md_line": 6080,
+      "pdf_page": 649,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
-      "source_file_line": 45
+      "source_file_line": 51
     },
     {
       "schema_id": "SCH-36-02",
@@ -3273,10 +3841,39 @@
       "sha256_source": "3b35c84490cd1e796bc175b36ced6ebfa44cdc83387e8dd256943a52b10977dd",
       "sha256_rendered": "3b35c84490cd1e796bc175b36ced6ebfa44cdc83387e8dd256943a52b10977dd",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 5982,
-      "pdf_page": 634,
+      "compendium_md_line": 6102,
+      "pdf_page": 651,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
-      "source_file_line": 67
+      "source_file_line": 73
+    },
+    {
+      "schema_id": "SCH-36-05",
+      "unit": "ch36",
+      "part_id": "P12",
+      "chapter_number": 36,
+      "domain_id": "D12",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Boussole unifiée de l'appareil probatoire et désambiguïsation des homonymes [A]/[C]/[D]",
+      "families_covered": [
+        "FAM_D12_03_02"
+      ],
+      "themes_vulgarized": [
+        "regime-preuve-trois-degres-absence",
+        "protocole-probatoire-l-plus-statut-f",
+        "protocole-wyvern-g0-g5"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-36-05.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-36-05.svg",
+      "source_bytes": 13044,
+      "rendered_bytes": 13044,
+      "sha256_source": "26765b4bdab597d9a5e91037872b7d002417c4f162e6d2cadfca9c137c74aa4f",
+      "sha256_rendered": "26765b4bdab597d9a5e91037872b7d002417c4f162e6d2cadfca9c137c74aa4f",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 6135,
+      "pdf_page": 655,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
+      "source_file_line": 106
     },
     {
       "schema_id": "SCH-36-03",
@@ -3303,10 +3900,10 @@
       "sha256_source": "c76cf4b769c1a0c8a0d797f1d89b810894b1d81c97d5adb690ff0a6184bf4ab1",
       "sha256_rendered": "b33b028b11a271864ba49a227a57c823180e07bf0c3e1ef3496a3a1b6dd7dce3",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 6032,
-      "pdf_page": 640,
+      "compendium_md_line": 6158,
+      "pdf_page": 657,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
-      "source_file_line": 117
+      "source_file_line": 129
     },
     {
       "schema_id": "SCH-36-04",
@@ -3334,10 +3931,93 @@
       "sha256_source": "dbc34bf64918ac579b165a200ba190b88b0a3f49b2ac105999f04b48da802f9b",
       "sha256_rendered": "792eea7352d946c69344c80c1157e8bbf5e188375cf0d5e55fa6aef3c82f1fe7",
       "compendium_md_file": "Compendium/Compendium.md",
-      "compendium_md_line": 6052,
-      "pdf_page": 643,
+      "compendium_md_line": 6178,
+      "pdf_page": 660,
       "source_file": "Sources/Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 36.md",
-      "source_file_line": 137
+      "source_file_line": 149
+    },
+    {
+      "schema_id": "SCH-AB-01",
+      "unit": "annexe-b",
+      "part_id": "ANN",
+      "chapter_number": 0,
+      "domain_id": "ANNEXE",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Matrice thermique 12×12 des 616 interrelations et quinze nœuds carrefours",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "architecture-collection-tome-1-preambule",
+        "exigences-cre-ia-305",
+        "bsif-e-23",
+        "protocole-mcp"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-AB-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-AB-01.svg",
+      "source_bytes": 58356,
+      "rendered_bytes": 58356,
+      "sha256_source": "a8da41aafcc8399f4d7d608eae58472f939e4d8a291eb9c5eb80f1e9b722c4fe",
+      "sha256_rendered": "a8da41aafcc8399f4d7d608eae58472f939e4d8a291eb9c5eb80f1e9b722c4fe",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 6676,
+      "pdf_page": 709,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/13 - Annexes/Annexe B - Cartographie des 616 interrelations et arbitrages.md",
+      "source_file_line": 38
+    },
+    {
+      "schema_id": "SCH-AC-01",
+      "unit": "annexe-c",
+      "part_id": "ANN",
+      "chapter_number": 0,
+      "domain_id": "ANNEXE",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Frise maîtresse des 77 jalons 2018–2035 en cinq couloirs juridictionnels",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "referentiel-annexes-protocoles-chronologie",
+        "trajectoires-adaptatives-dapp",
+        "concordance-inter-tomes-div02"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-AC-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-AC-01.svg",
+      "source_bytes": 23906,
+      "rendered_bytes": 23906,
+      "sha256_source": "4e905d020892dd6b4ffab23114b9e3012bfd7e94e90e1f23e1755f6c990c5daa",
+      "sha256_rendered": "4e905d020892dd6b4ffab23114b9e3012bfd7e94e90e1f23e1755f6c990c5daa",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 7699,
+      "pdf_page": 777,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/13 - Annexes/Annexe C - Reconciliations inter-tomes et calendrier 2023-2035.md",
+      "source_file_line": 61
+    },
+    {
+      "schema_id": "SCH-AD-01",
+      "unit": "annexe-d",
+      "part_id": "ANN",
+      "chapter_number": 0,
+      "domain_id": "ANNEXE",
+      "engine": "svg",
+      "notation": "Infographie SVG bilingue métier-tech",
+      "title": "Ventilation des 305 exigences CRE-IA, 24 portes bloquantes PRR et 95 liaisons G0",
+      "families_covered": [],
+      "themes_vulgarized": [
+        "exigences-cre-ia-305",
+        "homologation-prr-75-points",
+        "barriere-logicielle-g0-execute-g0",
+        "cinq-blocs-sbb-tableau-12"
+      ],
+      "source_path": "Sources/Compendium/ouvrage/schemas/SCH-AD-01.svg",
+      "rendered_path": "Sources/Compendium/ouvrage/schemas/rendus/SCH-AD-01.svg",
+      "source_bytes": 19556,
+      "rendered_bytes": 19556,
+      "sha256_source": "0148e00bd2728abcadeb7d10193f6003cd43e869da3b89f83647150b32d6e9fc",
+      "sha256_rendered": "0148e00bd2728abcadeb7d10193f6003cd43e869da3b89f83647150b32d6e9fc",
+      "compendium_md_file": "Compendium/Compendium.md",
+      "compendium_md_line": 8001,
+      "pdf_page": 814,
+      "source_file": "Sources/Compendium/ouvrage/manuscrit/13 - Annexes/Annexe D - Homologation G0-G5 et matrice EXIG-PRR-C40.md",
+      "source_file_line": 58
     }
   ]
 }

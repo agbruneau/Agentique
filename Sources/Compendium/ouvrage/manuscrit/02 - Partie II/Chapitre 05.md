@@ -16,6 +16,12 @@ Le présent chapitre (domaine `D02`) établit l'armature normative permettant de
 > 2. **Règle du maillon le plus élevé et règle d'or `≤ N2` (`EXIG-AUT-07..11`, `CAP-048`)** : toute chaîne multi-agents hérite des contrôles du maillon aval le plus critique sans étendre les droits d'écriture en amont, plafonne à `N2` tout cumul d'impact élevé, d'irréversibilité et de détection lente, et applique à la passerelle l'union la plus stricte en échec fermé.
 > 3. **Hors bande `CIBA`/`JCS` et vue différentielle (`EXIG-AUT-12..23`)** : nulle action de palier `P3` ne s'exécute sans jeton cryptographique hors bande (`CIBA` [8], `FIDO2`, `RFC 9396` [9]) lié au condensat `SHA-256` (`JCS`), présenté sur un écran différentiel hors modèle à cadence plafonnée (`≤ 33` dossiers par quart) et strictement distinct de la révision prévue à l'article `12.1` [5].
 
+La *Figure 22* lève les collisions de préfixes entre échelles, domaines et strates de l'ouvrage.
+
+![Carte de désambiguïsation des sept familles de préfixes homonymes N, L, P, D, E, M et C](../../schemas/rendus/SCH-05-04.svg)
+
+*Figure 22 — SCH-05-04 : Désambiguïsation des sept familles homonymes (`N`, `L`, `P`, `D`, `E`, `M` et sept acceptions de `C`).*
+
 ## 5.2 Gradation d'autonomie, propagation stricte et supervision anti-complaisance
 
 ### 5.2.1 Échelle unifiée N0–N4/L0–L4 et règle du maillon le plus élevé
@@ -46,7 +52,7 @@ La correspondance entre stades organisationnels et niveaux individuels empêche 
 
 ![L'escalier d'autonomie unifié N0–N4 / L0–L4, l'interdit NX et la matrice D1–D8 × Classes 1–6](../../schemas/rendus/SCH-05-01.svg)
 
-*Figure 17 — SCH-05-01 : L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`.*
+*Figure 23 — SCH-05-01 : L'escalier d'autonomie unifié `N0–N4` / `L0–L4`, l'interdit `NX` et la matrice `D1–D8` × `Classes 1–6`.*
 
 Dans une architecture distribuée, gouverner chaque agent isolément ne suffit pas. Un contournement classique consiste à placer un agent faiblement habilité (`L1` en lecture documentaire) en amont d'un agent critique (`L3` en décision opérationnelle), dans l'espoir de soustraire le premier aux exigences rigoureuses de conformité. Si l'agent `L1` ingère une donnée altérée ou mal résumée puis la transmet en texte libre à l'agent `L3`, la défaillance se propage directement à la décision finale sans avoir subi de contrôle proportionné à l'enjeu aval.
 
@@ -62,7 +68,7 @@ Troisièmement, à l'exécution, la passerelle applique l'**union la plus strict
 
 ![Règle du maillon le plus élevé (High-Water Mark) et règle d'or ≤ N2 dans un graphe multi-agents](../../schemas/rendus/SCH-05-02.png)
 
-*Figure 18 — SCH-05-02 : Règle du maillon le plus élevé (« High-Water Mark ») et règle d'or `≤ N2` dans un graphe multi-agents.*
+*Figure 24 — SCH-05-02 : Règle du maillon le plus élevé (« High-Water Mark ») et règle d'or `≤ N2` dans un graphe multi-agents.*
 
 ### 5.2.2 Distinction des régimes d'agent et supervision anti-complaisance
 
@@ -91,7 +97,7 @@ L'articulation de ces règles évite autant le goulot d'une validation humaine s
 
 ![Prévenir la validation réflexe (ASI09) : circuit CIBA/JCS, vue différentielle et distinction PC3 / Loi 25](../../schemas/rendus/SCH-05-03.svg)
 
-*Figure 19 — SCH-05-03 : Prévenir la validation réflexe (`ASI09`) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25.*
+*Figure 25 — SCH-05-03 : Prévenir la validation réflexe (`ASI09`) : circuit `CIBA`/`JCS`, vue différentielle et distinction `PC3` / Loi 25.*
 
 Enfin, l'architecture trace une séparation juridique et opérationnelle infranchissable entre l'arrêt préventif `PC3` (`HITL` ou `CIBA` avant effet `P3`) et le régime des décisions fondées exclusivement sur un traitement automatisé visé à l'article `12.1` de la Loi 25 du Québec [5] (en vigueur depuis le `22 septembre 2023`). Cette distinction rejoint la gouvernance humaine de l'article `14` du Règlement `(UE) 2024/1689` [3], dont le modificatif `(UE) 2026/1744` reporte au plus tard au `2 décembre 2027` l'échéance de l'Annexe III [4]. Selon `EXIG-CON-08`, insérer une validation superficielle à haut débit pour contourner l'article `12.1` échoue à prévenir les erreurs tout en exposant l'institution à une requalification réglementaire.
 

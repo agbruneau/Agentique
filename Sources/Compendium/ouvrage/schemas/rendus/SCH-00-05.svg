@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 967" width="1200" height="967">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="967" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-00-05 — Carte maîtresse des douze Parties, quinze corridors dominants et quatre parcours</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Vue d'orientation transversale calculée depuis mindmap-complet.json · 36 chapitres · 616 interrelations · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="1160" height="294" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="1160" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · Les 12 domaines orthogonaux (D01–D12 : 36 chapitres, 71 familles, 260 thèmes)</text>
+    <rect x="34" y="140" width="274" height="240" rx="8" fill="#FFFFFF" stroke="#1B4F72" stroke-width="1.2"/>
+    <text x="44" y="158" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">Fondations &amp; Contrôle</text>
+    <g id="node-D01" class="node" data-node="true">
+      <rect x="44" y="168" width="254" height="61" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+      <text x="56" y="189" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">D01 · Fondations &amp; Lusser</text>
+      <text x="56" y="208" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-01..03 | 6 fam. · 20 thèmes</text>
+    </g>
+    <g id="node-D02" class="node" data-node="true">
+      <rect x="44" y="237" width="254" height="61" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+      <text x="56" y="258" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">D02 · Contrôle 80/20 &amp; L0–L4</text>
+      <text x="56" y="277" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-04..06 | 6 fam. · 23 thèmes</text>
+    </g>
+    <g id="node-D03" class="node" data-node="true">
+      <rect x="44" y="306" width="254" height="61" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+      <text x="56" y="327" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">D03 · Protocoles MCP &amp; A2A</text>
+      <text x="56" y="346" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-07..09 | 6 fam. · 25 thèmes</text>
+    </g>
+    <rect x="320" y="140" width="274" height="240" rx="8" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.2"/>
+    <text x="330" y="158" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#134E4A">Tissu, Sagas &amp; Identité</text>
+    <g id="node-D04" class="node" data-node="true">
+      <rect x="330" y="168" width="254" height="61" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.8"/>
+      <text x="342" y="189" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#134E4A">D04 · Données, Mémoire &amp; SoR</text>
+      <text x="342" y="208" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-10..12 | 6 fam. · 19 thèmes</text>
+    </g>
+    <g id="node-D05" class="node" data-node="true">
+      <rect x="330" y="237" width="254" height="61" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.8"/>
+      <text x="342" y="258" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#134E4A">D05 · Orchestration &amp; Sagas</text>
+      <text x="342" y="277" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-13..15 | 6 fam. · 20 thèmes</text>
+    </g>
+    <g id="node-D06" class="node" data-node="true">
+      <rect x="330" y="306" width="254" height="61" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.8"/>
+      <text x="342" y="327" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#134E4A">D06 · Identité NHI, OBO &amp; PQC</text>
+      <text x="342" y="346" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-16..18 | 6 fam. · 19 thèmes</text>
+    </g>
+    <rect x="606" y="140" width="274" height="240" rx="8" fill="#FFFFFF" stroke="#4338CA" stroke-width="1.2"/>
+    <text x="616" y="158" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#312E81">Sécurité, Obs. &amp; Droit</text>
+    <g id="node-D07" class="node" data-node="true">
+      <rect x="616" y="168" width="254" height="61" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.8"/>
+      <text x="628" y="189" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#312E81">D07 · Sécurité, OPA &amp; Sandbox</text>
+      <text x="628" y="208" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-19..21 | 6 fam. · 20 thèmes</text>
+    </g>
+    <g id="node-D08" class="node" data-node="true">
+      <rect x="616" y="237" width="254" height="61" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.8"/>
+      <text x="628" y="258" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#312E81">D08 · OTel, EvalOps &amp; FinOps</text>
+      <text x="628" y="277" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-22..24 | 6 fam. · 20 thèmes</text>
+    </g>
+    <g id="node-D09" class="node" data-node="true">
+      <rect x="616" y="306" width="254" height="61" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.8"/>
+      <text x="628" y="327" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#312E81">D09 · Conformité &amp; Droit</text>
+      <text x="628" y="346" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-25..27 | 6 fam. · 23 thèmes</text>
+    </g>
+    <rect x="892" y="140" width="274" height="240" rx="8" fill="#FFFFFF" stroke="#B45309" stroke-width="1.2"/>
+    <text x="902" y="158" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">Déploiement &amp; Preuves</text>
+    <g id="node-D10" class="node" data-node="true">
+      <rect x="902" y="168" width="254" height="61" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <text x="914" y="189" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">D10 · Secteurs &amp; Blueprints</text>
+      <text x="914" y="208" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-28..30 | 6 fam. · 24 thèmes</text>
+    </g>
+    <g id="node-D11" class="node" data-node="true">
+      <rect x="902" y="237" width="254" height="61" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <text x="914" y="258" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">D11 · Trajectoire DAPP &amp; Humain</text>
+      <text x="914" y="277" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-31..33 | 5 fam. · 22 thèmes</text>
+    </g>
+    <g id="node-D12" class="node" data-node="true">
+      <rect x="902" y="306" width="254" height="61" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <text x="914" y="327" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">D12 · PRR-75, G0–G5 &amp; Wyvern</text>
+      <text x="914" y="346" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#1E293B">CH-34..36 | 6 fam. · 25 thèmes</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="20" y="402" width="1160" height="148" rx="10" fill="#F8FAFC" stroke="#D97706" stroke-width="1.8"/>
+    <rect x="20" y="402" width="1160" height="34" rx="10" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+    <text x="34" y="424" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#78350F">Z2 · Quinze corridors dominants (≥ 7 liaisons · 616 interrelations typées dans MindMap)</text>
+    <rect x="34" y="446" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="36" y="448" width="105" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="44" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D10 → D02</text>
+    <text x="209" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">13 l.</text>
+    <rect x="263" y="446" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="265" y="448" width="105" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="273" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D10</text>
+    <text x="438" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">13 l.</text>
+    <rect x="492" y="446" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="494" y="448" width="105" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="502" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D11</text>
+    <text x="667" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">13 l.</text>
+    <rect x="721" y="446" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="723" y="448" width="88" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="731" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D03 → D06</text>
+    <text x="896" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">11 l.</text>
+    <rect x="950" y="446" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="952" y="448" width="72" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="960" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D03</text>
+    <text x="1125" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">9 l.</text>
+    <rect x="34" y="478" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="36" y="480" width="72" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="44" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D12 → D02</text>
+    <text x="209" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">9 l.</text>
+    <rect x="263" y="478" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="265" y="480" width="72" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="273" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D03 → D07</text>
+    <text x="438" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">9 l.</text>
+    <rect x="492" y="478" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="494" y="480" width="72" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="502" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D02 → D01</text>
+    <text x="667" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">9 l.</text>
+    <rect x="721" y="478" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="723" y="480" width="64" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="731" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D02</text>
+    <text x="896" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">8 l.</text>
+    <rect x="950" y="478" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="952" y="480" width="64" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="960" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D08 → D01</text>
+    <text x="1125" y="495" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">8 l.</text>
+    <rect x="34" y="510" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="36" y="512" width="64" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="44" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D04 → D07</text>
+    <text x="209" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">8 l.</text>
+    <rect x="263" y="510" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="265" y="512" width="56" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="273" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D06 → D08</text>
+    <text x="438" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">7 l.</text>
+    <rect x="492" y="510" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="494" y="512" width="56" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="502" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D06</text>
+    <text x="667" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">7 l.</text>
+    <rect x="721" y="510" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="723" y="512" width="56" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="731" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D04</text>
+    <text x="896" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">7 l.</text>
+    <rect x="950" y="510" width="218" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="952" y="512" width="56" height="22" rx="4" fill="#FEF3C7"/>
+    <text x="960" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">D09 → D08</text>
+    <text x="1125" y="527" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">7 l.</text>
+  </g>
+  <g id="zone-Z3">
+    <rect x="20" y="560" width="1160" height="146" rx="10" fill="#F8FAFC" stroke="#047857" stroke-width="1.8"/>
+    <rect x="20" y="560" width="1160" height="34" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+    <text x="34" y="582" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">Z3 · Quatre parcours de lecture recommandés selon le profil décisionnel</text>
+    <rect x="34" y="600" width="8" height="16" rx="2" fill="#047857"/>
+    <text x="50" y="612" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">Direction / Métier :</text>
+    <text x="232" y="612" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" fill="#334155">D01 (Fondations) → D02 (80/20 &amp; L0–L4) → D08 (CPO/FinOps) → D10 (Secteurs) → D11 (DAPP) → D12 (G0–G5)</text>
+    <rect x="34" y="624" width="8" height="16" rx="2" fill="#1D4ED8"/>
+    <text x="50" y="636" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">Architecture (AE / AS) :</text>
+    <text x="232" y="636" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" fill="#334155">D02 (42 CAP) → D03 (MCP/A2A/PEP) → D04 (Données/RAG) → D05 (Sagas) → D10 (bp1–bp3) → D12 (C01–C40)</text>
+    <rect x="34" y="648" width="8" height="16" rx="2" fill="#4338CA"/>
+    <text x="50" y="660" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">Ingénierie / RSSI / SRE :</text>
+    <text x="232" y="660" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" fill="#334155">D04 (ACL/WAP) → D06 (NHI/OBO/PQC) → D07 (OPA/Sandbox) → D08 (OTel/Wilson/SRE) → D12 (Trousse G0)</text>
+    <rect x="34" y="672" width="8" height="16" rx="2" fill="#B45309"/>
+    <text x="50" y="684" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">Juridique / Conformité :</text>
+    <text x="232" y="684" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" fill="#334155">D01 (Preuve L+) → D05 (Loi 25 art. 12.1) → D09 (BSIF E-23 / EU AI Act / DORA) → Annexe C (77 ancres) → Annexe D</text>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="718" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="740" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="760" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Les domaines D01–D02 établissent les limites probabilistes et le</text>
+    <text x="34" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">noyau déterministe de 42 capacités invariantes.</text>
+    <text x="610" y="760" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Les couloirs D09 (droit) et D03 (protocoles) irriguent massivement</text>
+    <text x="610" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">D10 (blueprints) et D11 (trajectoires).</text>
+    <text x="34" y="802" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ Le pôle D12 scelle l'exécution vérifiable G0–G5 et raccorde les</text>
+    <text x="34" y="818" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">cinq annexes A–E aux lecteurs cibles.</text>
+    <text x="610" y="802" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Chaque rôle suit un ruban dédié sans devoir lire séquentiellement</text>
+    <text x="610" y="818" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">l'ensemble des 36 chapitres.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="846" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="859" width="18" height="18" rx="4" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
+    <text x="60" y="872" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Fondations &amp; Contrôle (D01–D03)</text>
+    <rect x="317" y="859" width="18" height="18" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="343" y="872" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Tissu &amp; Identité (D04–D06)</text>
+    <rect x="600" y="859" width="18" height="18" rx="4" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="626" y="872" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Sécurité, Obs. &amp; Droit (D07–D09)</text>
+    <rect x="883" y="859" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+    <text x="909" y="872" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Blueprints &amp; Preuves (D10–D12)</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="900" width="1160" height="51" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="922" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="942" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Douze domaines orthogonaux et quinze corridors majeurs structurent un graphe unique navigable selon quatre itinéraires décisionnels.</text>
+  </g>
+</svg>

@@ -112,17 +112,17 @@ def _populate_synthetic_compendium(tmp_path: Path) -> Path:
 
 def test_catalog_quotas_and_100pct_family_coverage() -> None:
     all_schemas = load_catalog(CATALOG_PATH)
-    assert EXPECTED_TOTAL_SCHEMAS == 115
-    assert EXPECTED_PUML_COUNT == 52
+    assert EXPECTED_TOTAL_SCHEMAS == 139
+    assert EXPECTED_PUML_COUNT == 58
     assert EXPECTED_MMD_COUNT == 23
-    assert EXPECTED_SVG_COUNT == 40
+    assert EXPECTED_SVG_COUNT == 58
     assert MIN_NODES_PER_SCHEMA == 4
     assert MAX_NODES_PER_SCHEMA == 14
 
-    assert len(all_schemas) == 115
-    assert sum(1 for s in all_schemas if s["recommended_notation"] == "PlantUML") == 52
+    assert len(all_schemas) == 139
+    assert sum(1 for s in all_schemas if s["recommended_notation"] == "PlantUML") == 58
     assert sum(1 for s in all_schemas if s["recommended_notation"] == "Mermaid") == 23
-    assert sum(1 for s in all_schemas if s["recommended_notation"] == "Infographie SVG bilingue métier-tech") == 40
+    assert sum(1 for s in all_schemas if s["recommended_notation"] == "Infographie SVG bilingue métier-tech") == 58
 
     covered_fams = {fid for s in all_schemas for fid in s.get("families_covered", [])}
     assert len(covered_fams) == 71
@@ -160,19 +160,19 @@ C --> D
     assert len(extract_svg_elements(svg)) == 5
 
 
-def test_synthetic_115_schemas_pass_strict_check_only(tmp_path: Path) -> None:
+def test_synthetic_139_schemas_pass_strict_check_only(tmp_path: Path) -> None:
     book = _populate_synthetic_compendium(tmp_path)
     errors = compile_schemas(book, catalog_path=CATALOG_PATH, strict=True, check_only=True)
     assert errors == []
 
 
-def test_schema_factory_enforces_115_quota_and_14_nodes(tmp_path: Path) -> None:
+def test_schema_factory_enforces_139_quota_and_14_nodes(tmp_path: Path) -> None:
     book = _populate_synthetic_compendium(tmp_path)
 
-    # 1. Suppression d'une source -> quota 115 non atteint
+    # 1. Suppression d'une source -> quota 139 non atteint
     (book / "schemas" / "SCH-00-01.svg").unlink()
     errors_missing = compile_schemas(book, catalog_path=CATALOG_PATH, strict=True, check_only=True)
-    assert any("SCH-00-01" in e and ("manquant" in e.lower() or "115" in e) for e in errors_missing)
+    assert any("SCH-00-01" in e and ("manquant" in e.lower() or "139" in e) for e in errors_missing)
 
     # 2. Restauration puis depassement de densite (> 14 noeuds) sur PUML, MMD et SVG
     (book / "schemas" / "SCH-00-01.svg").write_text(_make_valid_svg_infographic(15), encoding="utf-8", newline="\n")

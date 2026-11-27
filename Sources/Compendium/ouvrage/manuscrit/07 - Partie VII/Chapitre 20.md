@@ -38,7 +38,7 @@ Par cette sémantique en échec fermé, `OPA/Rego` borne mathématiquement **l'a
 
 ![Le modèle n'est jamais juge et partie : politiques hors modèle OPA/Rego/Cedar à refus par défaut au poste-frontière PEP](../../schemas/rendus/SCH-20-01.svg)
 
-*Figure 64 — SCH-20-01 : Séparation stricte entre la zone cognitive probabiliste (LLM et enquête SRE R0), la passerelle PEP obligatoire en mTLS (« jamais confiance au graphe ») et le moteur PDP déterministe OPA/Rego scellé en G0 complété hors G0 par la cible Cedar (< 1,5 ms).*
+*Figure 74 — SCH-20-01 : Séparation stricte entre la zone cognitive probabiliste (LLM et enquête SRE R0), la passerelle PEP obligatoire en mTLS (« jamais confiance au graphe ») et le moteur PDP déterministe OPA/Rego scellé en G0 complété hors G0 par la cible Cedar (< 1,5 ms).*
 
 La transposition de l'architecture `Zero Trust` au maillage d'agents exige également de clarifier la terminologie industrielle et de maîtriser le coût d'infrastructure par arête. L'analyse des offres dites *AgentMesh* distingue trois acceptions : maillage réseau `PEP` (`Solo.io` avec `agentgateway` et `AuthZEN`), dorsale événementielle asynchrone (`Solace Agent Mesh`) et bibliothèque de confiance inter-agents (← Chapitre 09 ; complétées en repérage hors `L+` par `AWS Bedrock AgentCore` et le confinement `Docker`).
 
@@ -50,7 +50,7 @@ Ces dérives proviennent d'un modèle de processus interne erroné (par exemple 
 
 ![Pourquoi un filtre IA ne protège pas d'un attaquant adaptatif : sûreté système STAMP/STPA et comportements déviants mesurés](../../schemas/rendus/SCH-20-02.png)
 
-*Figure 65 — SCH-20-02 : Arbre de décision opposant les filtres probabilistes isolés — vulnérables aux attaques adaptatives et aux comportements déviants — à la traduction des boucles dangereuses STAMP/STPA en verrous déterministes OPA/Cedar et disjoncteurs.*
+*Figure 75 — SCH-20-02 : Arbre de décision opposant les filtres probabilistes isolés — vulnérables aux attaques adaptatives et aux comportements déviants — à la traduction des boucles dangereuses STAMP/STPA en verrous déterministes OPA/Cedar et disjoncteurs.*
 
 Pour convertir cette approche systémique en contrôles vérifiables, chaque analyse `STPA` recense les actions de contrôle dangereuses propres au domaine métier et les traduit directement en règles `OPA`/`Cedar` et en seuils de coupe-circuit (→ Chapitre 21). À l'inverse, s'en remettre à un second `LLM` ou à un classifieur probabiliste auxiliaire échoue devant l'asymétrie fondamentale de l'évaluation adaptative (principes de `Tome 1 § 6.5.3` et `Tome 3 § 32.5` ; *The Attacker Moves Second*) et devant le constat des travaux `L+` [5, 7]. Ces filtres demeurent heuristiques et peuvent être contournés dès qu'un adversaire adapte ses entrées après déploiement, sans jamais pouvoir contourner une interdiction évaluée hors modèle sur des attributs vérifiés [5, 7].
 
@@ -152,7 +152,7 @@ Conjointement, le retrait dynamique des capacités d'exfiltration sur session co
 
 ![La Règle de deux et le marquage CaMeL : retirer l'outil d'envoi dès que l'agent lit une source externe douteuse](../../schemas/rendus/SCH-20-03.svg)
 
-*Figure 66 — SCH-20-03 : Couplage déterministe entre la Règle de deux sur session composée (retrait des outils `[C]` dès `[A]` + `[B]`, médiane `PEP` cumulée de `52,85 µs` en Campagne 1 de `Borealis-Bench`) et la séparation CaMeL (contrôle connexe `C6` à `64,01 µs` en moyenne) avec propagation inter-agents de la teinte jusqu'à remise à zéro ou visa CIBA/JCS h.*
+*Figure 76 — SCH-20-03 : Couplage déterministe entre la Règle de deux sur session composée (retrait des outils `[C]` dès `[A]` + `[B]`, médiane `PEP` cumulée de `52,85 µs` en Campagne 1 de `Borealis-Bench`) et la séparation CaMeL (contrôle connexe `C6` à `64,01 µs` en moyenne) avec propagation inter-agents de la teinte jusqu'à remise à zéro ou visa CIBA/JCS h.*
 
 L'application de la séparation contrôle/données trouve une illustration opérationnelle critique dans l'architecture du **SRE autonome** régie par la décision `ADR-030` (remédiation face au défaut `F-14`). Les journaux de production, alertes et traces ingérés lors d'un incident proviennent fréquemment de requêtes d'usagers ou de charges externes susceptibles de receler des injections indirectes de consignes. Accorder un accès en ligne de commande libre (`bash` ou `kubectl exec`) à un agent de dépannage revient à placer la triade létale au cœur de l'infrastructure critique.
 

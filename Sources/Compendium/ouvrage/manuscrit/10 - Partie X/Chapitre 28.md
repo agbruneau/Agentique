@@ -61,11 +61,11 @@ Sur le plan contractuel, `PEX-043` encadre la plateforme partagée par des enten
 
 *Tableau 28.2 — Synthèse normative et architecturale des profils `M-16` (Assurance de personnes), `M-17` (Assurance de dommages) et `M-18` (Groupe financier diversifié).*
 
-La *Figure 88* synthétise cette architecture conglomérale à cinq ailes spécialisées reposant sur un socle technique commun, illustrant comment les `24` verrous `PEX` s'exécutent dans le code déterministe sans fragmenter l'infrastructure.
+La *Figure 100* synthétise cette architecture conglomérale à cinq ailes spécialisées reposant sur un socle technique commun, illustrant comment les `24` verrous `PEX` s'exécutent dans le code déterministe sans fragmenter l'infrastructure.
 
 ![Carte des cinq profils financiers réglementés (M-14..M-18) et 24 verrous PEX : mutualiser le socle, cloisonner les données clients](../../schemas/rendus/SCH-28-01.svg)
 
-*Figure 88 — SCH-28-01 : Répartition des cinq profils financiers (`M-14` à `M-18`), de leurs charges `FEDS` calibrées et de leurs cloisons juridiques non délégables (`PEX-001` à `PEX-044`) autour d'un noyau technique mutualisé (`52/52 CAP`, clôture `DIV-02`).*
+*Figure 100 — SCH-28-01 : Répartition des cinq profils financiers (`M-14` à `M-18`), de leurs charges `FEDS` calibrées et de leurs cloisons juridiques non délégables (`PEX-001` à `PEX-044`) autour d'un noyau technique mutualisé (`52/52 CAP`, clôture `DIV-02`).*
 
 > **Trois invariants exécutables — Chapitre 28**
 > 1. **Cloisonnement juridique et mutualisation sans données (`PRI-010`, `PEX-041` à `PEX-044`)** — Mutualiser les passerelles, l'identité non humaine et la télémétrie sous ententes intra-groupe `BSIF B-10`, tout en propageant une étiquette immuable d'entité juridique et un jeton de consentement exprès distinct avant tout transfert entre filiales.
@@ -82,11 +82,17 @@ Le troisième facteur concerne la **responsabilité juridique et de conduite**. 
 
 Le cinquième facteur réside dans l'exposition accrue à la **fraude et à la lutte contre le blanchiment de capitaux (`LBC-AML`)**, où des agents mal cloisonnés deviennent des vecteurs d'évasion de seuils ou d'ingénierie sociale automatisée. Enfin, le sixième facteur porte sur la **standardisation ouverte des contrôles sectoriels** illustrée par *FINOS AI Governance Framework v2.0* (`dossier source Tome 1 § 31.3.3`, hors `L+`), qui confronte les contrôles de modèle à une taxonomie vérifiable. L'étude empirique de Milsom (`arXiv:2512.02230`) conclut de son côté que les agents LLM en gestion de patrimoine sont limités moins par le raisonnement arithmétique que par la fiabilité de bout en bout des flux et la dérive d'autonomie, justifiant des schémas contraints [8].
 
+La *Figure 101* synthétise ce patron-signature de double qualification au cœur des six facteurs sectoriels.
+
+![Double qualification BSIF E-23 et B-10 entourée des six facteurs de durcissement financier](../../schemas/rendus/SCH-28-04.svg)
+
+*Figure 101 — SCH-28-04 : Patron de double qualification (`BSIF E-23` ∩ `BSIF B-10`) et six facteurs de durcissement financier.*
+
 ### 28.2.2 Tampon déterministe hors modèle sur le rail RTR ISO 20022 (EXIG-CON-29)
 
 L'articulation entre l'irréversibilité financière et l'exécution durable trouve sa concrétisation la plus rigoureuse dans l'exigence `EXIG-CON-29`, ajoutée à la version `1.2` de `CRE-IA-2026-01` lors de l'actualisation de novembre `2026`. Le **Rail en temps réel (`RTR`) de Paiements Canada** — dont la cible de mise en production du `9 novembre 2026` et la spécification `ISO 20022` (`pacs.008` pour les virements de crédit, `camt.*` pour les avis de trésorerie) proviennent du repérage interne (`dossier source Tome 2` et `Tome 4`, hors `L+`) — vise un règlement irrévocable en quelques secondes. Cette propriété annule l'hypothèse fondamentale du patron Saga examiné au Chapitre 15 : une fois le message `pacs.008` acquitté sur le rail, aucune transaction compensatoire automatique ne peut annuler le transfert de fonds ; seul un processus contentieux de recouvrement interbancaire demeure envisageable, sans garantie d'issue.
 
-En conséquence, `EXIG-CON-29` (`PEX-004`) interdit formellement à tout agent probabiliste de détenir un droit de soumission directe vers l'adaptateur `RTR`. Comme le détaille la *Figure 89*, l'agent demeure cantonné dans la zone amont d'observation et de synthèse, où il rédige une proposition structurée d'ordre `pacs.008`. Cette proposition doit traverser un **tampon déterministe hors modèle** codé intégralement en logiciel traditionnel et exécutant quatre contrôles synchrones bloquants avant toute libération :
+En conséquence, `EXIG-CON-29` (`PEX-004`) interdit formellement à tout agent probabiliste de détenir un droit de soumission directe vers l'adaptateur `RTR`. Comme le détaille la *Figure 102*, l'agent demeure cantonné dans la zone amont d'observation et de synthèse, où il rédige une proposition structurée d'ordre `pacs.008`. Cette proposition doit traverser un **tampon déterministe hors modèle** codé intégralement en logiciel traditionnel et exécutant quatre contrôles synchrones bloquants avant toute libération :
 
 1. **Validation syntaxique, sémantique et décimale exacte** : contrôle contre le schéma `ISO 20022` (`EXIG-CON-29`) et conversion monétaire en arithmétique décimale exacte (`Decimal`, sans flottant binaire `IEEE-754`) dans la trousse du Tome 8 (`policy_saga/decimal_money.py`).
 2. **Idempotence racine et suivi `UETR`** : génération et vérification d'une clé d'idempotence liée à l'identifiant unique de transaction de bout en bout (*Unique End-to-End Transaction Reference*, `UETR`) afin d'empêcher tout double paiement lors de reprises réseau.
@@ -97,7 +103,7 @@ Sur le plan temporel, le tampon dissocie deux fenêtres complémentaires entre `
 
 ![Frontière d'irréversibilité financière : tampon déterministe Paiements Canada RTR (pacs.008, EXIG-CON-29) face à la compensation impossible](../../schemas/rendus/SCH-28-02.svg)
 
-*Figure 89 — SCH-28-02 : Séparation entre la zone probabiliste amont (`Z1`), le tampon déterministe `EXIG-CON-29` en arithmétique `Decimal` et `UETR` (`Z2`) et le sas humain `P3` sur condensat `JCS` avec rétention `≥ 30` s avant l'émission irrévocable `pacs.008` (`Z3`).*
+*Figure 102 — SCH-28-02 : Séparation entre la zone probabiliste amont (`Z1`), le tampon déterministe `EXIG-CON-29` en arithmétique `Decimal` et `UETR` (`Z2`) et le sas humain `P3` sur condensat `JCS` avec rétention `≥ 30` s avant l'émission irrévocable `pacs.008` (`Z3`).*
 
 ### 28.2.3 Bilan empirique des dix institutions canadiennes (2025–2026)
 
@@ -131,11 +137,11 @@ Une discipline d'ingénierie rigoureuse interdit de projeter mécaniquement des 
 - **Le périmètre démontré sur pièces** couvre exclusivement les services financiers réglementés (`BCA`, référentiel `CRE-IA-2026-01 v1.2` et profil québécois `AMF IA`) ainsi que l'infrastructure logicielle déterministe vérifiée mécaniquement en barrière `G0` par la trousse exécutable du `dossier source Tome 8` (`policy_saga`, `policies_opa`, `authz_pqc_audit`, `evalops_prr` : `83/83` tests `pytest` et `45/45` tests `OPA` à `100,0 %`). Ce bilan est complété par les campagnes synthétiques `FEDS` documentées aux `dossier source Tome 4` et `Tome 5` (`Borealis-Bench`, absent du disque au `dossier source Tome 8`).
 - **Le périmètre extrapolé à titre purement illustratif** englobe les scénarios cliniques de santé utilisant `HL7 FHIR R4` (distincts du simple format d'échange assurantiel sous `M-16`), l'automatisation manufacturière `IT/OT` inspirée de l'usine `BEL` de Trois-Rivières sous `IEC 62443`, ainsi que les environnements énergétiques et miniers soumis à `NERC CIP` ou aux systèmes instrumentés de sécurité `IEC 61511 SIL 2/3`.
 
-Dans ces domaines non financiers, aucune validation clinique primaire ni aucune certification de sûreté fonctionnelle n'est revendiquée. Par mesure de précaution absolue, toute projection en milieu clinique impose la revue humaine intégrale par un professionnel de la santé habilité, tandis que tout raccordement `IT/OT` vers des automates programmables (`OPC UA`, `MQTT Sparkplug`) demeure confiné à un sas unidirectionnel en **lecture seule** adossé à un jumeau numérique déterministe : l'actionnement autonome direct sur équipement physique ou dispositif médical reste formellement proscrit. La *Figure 90* matérialise cette ligne de démarcation épistémique entre le terrain financier canadien vérifié et les extrapolations illustratives.
+Dans ces domaines non financiers, aucune validation clinique primaire ni aucune certification de sûreté fonctionnelle n'est revendiquée. Par mesure de précaution absolue, toute projection en milieu clinique impose la revue humaine intégrale par un professionnel de la santé habilité, tandis que tout raccordement `IT/OT` vers des automates programmables (`OPC UA`, `MQTT Sparkplug`) demeure confiné à un sas unidirectionnel en **lecture seule** adossé à un jumeau numérique déterministe : l'actionnement autonome direct sur équipement physique ou dispositif médical reste formellement proscrit. La *Figure 103* matérialise cette ligne de démarcation épistémique entre le terrain financier canadien vérifié et les extrapolations illustratives.
 
 ![Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2/3](../../schemas/rendus/SCH-28-03.svg)
 
-*Figure 90 — SCH-28-03 : Démarcation probatoire entre le bilan vérifié des dix institutions canadiennes (`5+4+1`, `6` facteurs de durcissement, `Z1`), le sas de non-importation mécanique (`Z2`) et les extrapolations illustratives cliniques en santé `HL7 FHIR R4` (distinctes de `M-16`) et `IT/OT SIL 2/3` en lecture seule (`Z3`).*
+*Figure 103 — SCH-28-03 : Démarcation probatoire entre le bilan vérifié des dix institutions canadiennes (`5+4+1`, `6` facteurs de durcissement, `Z1`), le sas de non-importation mécanique (`Z2`) et les extrapolations illustratives cliniques en santé `HL7 FHIR R4` (distinctes de `M-16`) et `IT/OT SIL 2/3` en lecture seule (`Z3`).*
 
 Les trois classes d'accès documentaire et les cinq dispositifs de gouvernance réels éclairent ainsi le fossé qui subsiste en `2026` entre la diffusion rapide d'assistants internes et l'homologation d'une boucle décisionnelle autonome. Sur le plan réglementaire, la date du `1er mai 2027` marque un point de convergence critique pour les institutions fédérales sous `BSIF E-23` [2] et pour le secteur financier québécois attendu sous la ligne directrice de l'AMF (source secondaire `AIBanks.ca`, portail AMF en statut `F` [5]), tandis que la date du `1er octobre 2028` verrouille la conformité rémunératoire en gestion de patrimoine [6]. L'alignement des `24 PEX` sur le socle `CRE-IA-2026-01 v1.2` évite aux équipes de réinventer des contrôles spécifiques à chaque sous-secteur lorsque ces échéances deviennent opposables.
 

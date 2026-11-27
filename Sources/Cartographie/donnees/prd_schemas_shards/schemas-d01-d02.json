@@ -275,6 +275,80 @@
       ]
     },
     {
+      "schema_id": "SCH-01-04",
+      "chapter_number": 1,
+      "domain_id": "D01",
+      "subdomain_node_id": "SUB_D01_01",
+      "families_covered": [
+        "FAM_D01_01_01"
+      ],
+      "themes_vulgarized": [
+        "raisonnement-inference-limites-planification",
+        "rupture-modele-conversationnel-agent-boucle"
+      ],
+      "title": "Effondrement des planificateurs sous obfuscation (Mystery BW) et boucle LLM-Modulo",
+      "insertion_point": "Chapitre 01 §1.2.1 — après le paragraphe sur la boucle hybride bidirectionnelle LLM-Modulo et l'infidélité du Chain-of-Thought",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Comparatif Avant / Après",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette infographie oppose visuellement la chute drastique des taux de réussite de trois grands modèles sur PlanBench lorsque les noms d'actions sont obfusqués (Mystery BW) à la stabilité offerte par l'architecture bidirectionnelle LLM-Modulo, où le modèle génère des hypothèses que des critiques déterministes (VAL, solveurs, règles métier) valident ou rejettent par contre-exemples.",
+      "vulgarization_angle": "Démystifier l'illusion du raisonnement autonome en temps d'inférence : comparer un simple changement d'étiquettes lexicales qui ramène la réussite à ~0 % contre un cycle proposition–vérification formelle.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Chute expérimentale sous obfuscation (PlanBench → Mystery BW)",
+            "content": "Barres appariées comparant Blocksworld standard contre Mystery BW : GPT-4 (34,6 % → 0,16 %), GPT-4o (35,5 % → 0 %) et Claude-3-Opus (59,3 % → 0 %), et moyenne IPC de ~12 %."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Traduction unidirectionnelle LLM+P vs boucle bidirectionnelle LLM-Modulo",
+            "content": "Contraste structurel entre une passe aveugle sans rétroaction et une boucle itérative où un vérificateur externe VAL renvoie des contre-exemples structurés."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Règle d'auditabilité hors Chain-of-Thought",
+            "content": "Encadré rappelant que la trace textuelle de pensée ne constitue ni preuve réglementaire ni mécanisme de sécurité ; seuls les journaux déterministes des critiques font foi."
+          }
+        ],
+        "numbered_flows": [
+          "① Sans vérificateur externe, l'obfuscation sémantique brise la récupération statistique de motifs mémorisés.",
+          "② Le modèle propose des plans candidats transmis aux critiques déterministes et solveurs formels (VAL).",
+          "③ Chaque rejet renvoie un contre-exemple structuré jusqu'à certification complète ou escalade humaine."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Taux d'échec et effondrement proche de 0 % sous obfuscation Mystery BW"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Performance nominale initiale sur domaine lexicalement familier"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Vérification formelle bidirectionnelle LLM-Modulo et journal opposable"
+          }
+        ],
+        "key_takeaway_box": "Un modèle linguistique récupère des motifs plus qu'il ne planifie formellement : seule la critique externe déterministe (LLM-Modulo) garantit l'admissibilité d'un plan."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T7",
+          "fig_id": "Fig-02",
+          "title": "Moteurs composés de l'industrialisation cognitive et quatre voies post-AGI",
+          "source_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-02.puml",
+          "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-02.svg",
+          "role_note": "Relie les limites de fiabilité du raisonnement pur aux quatre voies d'encadrement de l'industrialisation cognitive."
+        }
+      ]
+    },
+    {
       "schema_id": "SCH-02-01",
       "chapter_number": 2,
       "domain_id": "D01",
@@ -529,6 +603,71 @@
           "role_note": "Illustre le banc hermétique CI/CD exécutant `pass^k` et la borne de Wilson n ≥ 3/p."
         }
       ]
+    },
+    {
+      "schema_id": "SCH-02-04",
+      "chapter_number": 2,
+      "domain_id": "D01",
+      "subdomain_node_id": "SUB_D01_02",
+      "families_covered": [
+        "FAM_D01_02_02"
+      ],
+      "themes_vulgarized": [
+        "constance-pass-k",
+        "loi-de-lusser"
+      ],
+      "title": "Courbes pass@k vs pass^k, frontière de Pareto HAL et dimensionnement Wilson",
+      "insertion_point": "Chapitre 02 §2.2.2 — avant le paragraphe de synthèse introduisant la figure suivante et la section 2.3",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Échelle graduée de maturité / autonomie",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Ce triptyque mathématique trace avec exactitude la divergence exponentielle entre pass@k (1 − (1 − p)^k, optimiste dès qu'un essai réussit) et la constance pass^k (p^k, chutant de 61,2 % à moins de 25 % à k = 8), l'inefficacité de modèles 10× plus chers hors frontière de Pareto HAL, et le dimensionnement statistique de Wilson (n = 300 unilatéral à 0,8938 % contre n = 381 bilatéral).",
+      "vulgarization_angle": "Rendre palpables par de vraies courbes mathématiques trois notions abstraites qui gouvernent toute porte CI/CD EvalOps et le budget d'inférence.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Divergence mathématique pass@k vs pass^k (k = 1..8)",
+            "content": "Courbes exactes pour p = 0,612 (détail τ-bench) et p = 0,95 : pass@k tend rapidement vers 100 % tandis que pass^k décroît géométriquement sous 25 % à k = 8."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Frontière de Pareto HAL coût vs précision",
+            "content": "Plan coût log contre précision illustrant les zones dominées où un effort de raisonnement ~10× plus onéreux stagne hors de l'enveloppe optimale sur 8 bancs sur 9."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Borne de Wilson 95 % : règle des trois (n = 300 vs 381)",
+            "content": "Comparaison entre l'erreur nulle fallacieuse de Wald, l'intervalle unilatéral à 95 % (0,8938 % < 1 % dès n = 300) et bilatéral (1,2643 % à 300 ; seuil à 381)."
+          }
+        ],
+        "numbered_flows": [
+          "① Pour k essais indépendants, mesurer au moins un succès (pass@k) masque la dérive en production mesurée par pass^k.",
+          "② Le pilotage économique sélectionne uniquement les architectures situées sur la frontière de Pareto HAL.",
+          "③ L'homologation d'un taux maximal d'échec inférieur à 1 % impose 300 scénarios indépendants distincts sans défaillance."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Cibles robustes : constance pass^k ≥ 0,95–0,99 et frontière de Pareto optimale"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Indicateur optimiste pass@k ou dimensionnement statistique de Wilson"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Effondrement multi-essais, zone sous-optimale 10× plus coûteuse et biais de Wald"
+          }
+        ],
+        "key_takeaway_box": "Pour un agent en production, seule la constance p^k compte : 300 scénarios distincts sans échec démontrent moins de 1 % d'erreur là où pass@k crée un faux sentiment de sûreté."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
     },
     {
       "schema_id": "SCH-03-01",
@@ -823,6 +962,81 @@
       ]
     },
     {
+      "schema_id": "SCH-03-04",
+      "chapter_number": 3,
+      "domain_id": "D01",
+      "subdomain_node_id": "SUB_D01_03",
+      "families_covered": [
+        "FAM_D01_03_01"
+      ],
+      "themes_vulgarized": [
+        "couts-transaction-coase",
+        "marche-ia-agentique-dispersion",
+        "economie-industrialisation-cognitive"
+      ],
+      "title": "Matrice coasienne 2×2 et dispersion marché vs CapEx 2026 et maturité réelle",
+      "insertion_point": "Chapitre 03 §3.1.2 — à la fin de la section après l'analyse de l'économie de la preuve et des écarts de marché",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Ce schéma met en regard la matrice 2×2 des économies d'agents de Tomašev (origine émergente/conçue × perméabilité) et l'écart vertigineux entre les 496,7 G$ US de CapEx 9M 2026 (703–713 G$ US annualisés), la dispersion de 1 à 59 des prévisions commerciales sur six périmètres emboîtés et l'adoption opérationnelle réelle (8 % Banque du Canada, 12 % ROI Deloitte sous 3 ans).",
+      "vulgarization_angle": "Armer un comité d'investissement contre les chiffres de marché gonflés en opposant sur une même planche la carte des risques coasiens, l'échelle du CapEx réel et la modeste maturité opérationnelle vérifiée.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Matrice 2×2 des économies d'agents (Tomašev et coll.)",
+            "content": "Croisement Origine (Émergente vs Conçue) × Perméabilité (Imperméable vs Perméable) isolant le quadrant dangereux (Flash Crash, collusion, pièges) face au quadrant cible Conçue × Perméable."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Dispersion 1 à 59 sur six périmètres face au CapEx SEC 2026",
+            "content": "Échelle comparative montrant les 6 périmètres (1,5 G$ Omdia à 88,2 G$ Gartner, 5,3–9,9 G$ ouverts en 2026, 24,5–40,6 G$ en 2030) face aux 496,7 G$ US (9M) et 703–713 G$ US annualisés."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Maturité vérifiée et grille de preuve N / M / É / S · D / A / C",
+            "content": "Indicateurs réels (19,2 % usage IA StatCan, 8 % opérationnel BdC, 12 % ROI Deloitte) assortis du marquage probatoire exigé pour approuver un dossier d'affaires."
+          }
+        ],
+        "numbered_flows": [
+          "① L'entreprise réglementée rejette l'espace Émergent × Perméable et exige une infrastructure contractuelle DID/VC conçue a priori.",
+          "② Les comparaisons d'investissement rapportent les fourchettes ouvertes vérifiées (5,3–9,9 G$) au CapEx d'infrastructure et à l'usage réel (8 %).",
+          "③ Tout dossier d'affaires qualifie chaque chiffre par sa nature (N / M / É / S) et sa portée temporelle (D / A / C) sur le CPO."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Quadrant Émergente × Perméable, risques systémiques et chiffres non audités"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Quadrant cible Conçue × Perméable et fourchettes L+ vérifiées"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "CapEx SEC documenté, enquêtes nationales et métriques de preuve CPO"
+          }
+        ],
+        "key_takeaway_box": "Entre 703 G$ US de CapEx et 8 % d'usage opérationnel réel, un investissement agentique se juge sur le CPO transactionnel et la matrice Conçue × Perméable, jamais sur une taille de marché agrégée."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T7",
+          "fig_id": "Fig-03",
+          "title": "Six périmètres emboîtés du marché agentique face aux investissements d'infrastructure",
+          "source_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-03.puml",
+          "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-03.svg",
+          "role_note": "Fournit la décomposition en six périmètres emboîtés expliquant l'écart de 1 à 59 entre prévisions d'analystes."
+        }
+      ]
+    },
+    {
       "schema_id": "SCH-04-01",
       "chapter_number": 4,
       "domain_id": "D02",
@@ -1107,6 +1321,71 @@
       ]
     },
     {
+      "schema_id": "SCH-04-04",
+      "chapter_number": 4,
+      "domain_id": "D02",
+      "subdomain_node_id": "SUB_D02_01",
+      "families_covered": [
+        "FAM_D02_01_01"
+      ],
+      "themes_vulgarized": [
+        "patrons-boucle-mono-agent-codeact",
+        "separation-controleur-executeur-determinisme"
+      ],
+      "title": "Topologie comparée des quatre patrons mono-agents (ReAct, ReWOO, Reflexion, CodeAct)",
+      "insertion_point": "Chapitre 04 §4.2.1 — juste après le Tableau 4.1 arbitrant les patrons mono-agents",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Comparatif Avant / Après",
+      "recommended_notation": "PlantUML",
+      "pedagogical_objective": "Ce diagramme complète le Tableau 4.1 en illustrant les flux structurels des quatre patrons mono-agents encapsulables sous harnais : la boucle itérative coûteuse de ReAct, le graphe acyclique découplé de ReWOO/LLMCompiler (jusqu'à 5× moins de jetons), le branchement d'un oracle externe dans Reflexion contre l'auto-validation, et l'exécution unifiée CodeAct confinée en microVM/WASI sans réseau.",
+      "vulgarization_angle": "Montrer graphiquement pourquoi quatre boucles qui paraissent similaires consomment des budgets de jetons et exigent des barrières de confinement radicalement différents.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Boucle séquentielle ReAct et graphe découplé ReWOO / LLMCompiler",
+            "content": "Opposition entre réinjection complète du contexte à chaque observation dans ReAct et planification en DAG à variables liées (−5× jetons, +4 % précision HotpotQA) dans ReWOO."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Rétroaction vérifiée Reflexion / Self-Refine sur oracle externe",
+            "content": "Boucle critique bornée par plafond d'essais interdisant explicitement au modèle d'agir comme son propre oracle de test."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Action exécutable CodeAct en bac à sable microVM / WASI",
+            "content": "Unification des appels en code Python (+20 % réussite, −30 % d'actions) isolé sans accès réseau sortant sous contrôle du harnais."
+          }
+        ],
+        "numbered_flows": [
+          "① ReAct alterne pensée et outil en réaccumulant l'historique lorsque la dépendance reste exploratoire.",
+          "② ReWOO et LLMCompiler figent un DAG de dépendances prévisible avant d'appeler les outils en parallèle.",
+          "③ Reflexion n'accepte une reprise que sur trace d'un oracle externe déterministe, jamais par auto-critique.",
+          "④ CodeAct délègue la composition programmatique à une microVM/WASI dépourvue de sortie réseau."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Patrons de planification bornée (ReAct, ReWOO / LLMCompiler)"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Oracle externe déterministe et sas de confinement microVM / WASI"
+          },
+          {
+            "color_token": "Ambre doré (#D97706)",
+            "meaning": "Plafonds de tours et blocage réseau sortant"
+          }
+        ],
+        "key_takeaway_box": "Le choix du patron mono-agent découle de la prévisibilité des dépendances et impose toujours soit un oracle externe borné, soit une microVM sans réseau."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
+    },
+    {
       "schema_id": "SCH-05-01",
       "chapter_number": 5,
       "domain_id": "D02",
@@ -1376,6 +1655,72 @@
           "role_note": "Pose la séquence réglementaire complète de l'article 12.1 de la Loi 25."
         }
       ]
+    },
+    {
+      "schema_id": "SCH-05-04",
+      "chapter_number": 5,
+      "domain_id": "D02",
+      "subdomain_node_id": "SUB_D02_02",
+      "families_covered": [
+        "FAM_D02_02_01"
+      ],
+      "themes_vulgarized": [
+        "echelle-autonomie-l0-l4",
+        "regle-maillon-plus-eleve"
+      ],
+      "title": "Carte de désambiguïsation des sept familles de préfixes et échelles homonymes",
+      "insertion_point": "Chapitre 05 §5.1 — après les Trois invariants exécutables introduisant la section 5.2",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Échelle graduée de maturité / autonomie",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette carte de référence lève toute collision de notation à travers le traité en rangeant côte à côte les sept lettres préfixes sources d'ambiguïté (N, P, D, E, M, L et les sept variantes de C) avec leur signification exacte, leur domaine de valeurs et le chapitre ou la décision de concordance qui en détient la propriété.",
+      "vulgarization_angle": "Offrir un aide-mémoire instantané à sept colonnes évitant de confondre par exemple C1–C5 (architecture pivot) avec C1–C8 (strates d'outillage) ou P0–P3 (outils) avec P1–P3 (paliers DAPP).",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Collisions d'échelles d'autonomie, d'outils et de maturité (N, L, P, M)",
+            "content": "Séparation nette entre N0–N4 / L0–L4 (autonomie), N1–N5 (maturité ch06) et M1–M5 (AAGMM) contre M-14..M-18 (profils financiers), ainsi que P0–P3 (outils) vs P1–P3 (DAPP et paliers)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Collisions de domaines, d'évaluation et d'incidents (D, E)",
+            "content": "Distinction entre D01–D12 (domaines), D1–D8 (grille ch05), et entre E1–E3 (EvalOps), E1–E5 (érosion humaine) et E-23 (ligne BSIF)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Désambiguïsation des sept familles de C (DISC-01 à DISC-04)",
+            "content": "Tableau visuel des 7 usages de C : C1–C5 (pivot), C1–C6 (secteurs), C1–C8 (ch29), C01–C40 (blueprints G0), C.1–C.8 (contrats), C26/C27 (banc C40) et C260 (ArchiMate 4.0)."
+          }
+        ],
+        "numbered_flows": [
+          "① Chaque lettre préfixe est indexée à son chapitre propriétaire et à son arbitrage DISC-* canonique.",
+          "② Le code couleur sépare autonomie/outils, architecture/données, évaluation/risque et homologation exécutable.",
+          "③ L'architecte vérifie systématiquement la famille C ou P avant de rédiger une politique OPA ou un contrat."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Autonomie, maturité et capacités (N, L, M)"
+          },
+          {
+            "color_token": "Turquoise (#0F766E)",
+            "meaning": "Domaines, évaluation et paliers (D, E, P)"
+          },
+          {
+            "color_token": "Indigo (#4338CA)",
+            "meaning": "Sept familles critiques de la lettre C"
+          }
+        ],
+        "key_takeaway_box": "Un préfixe nu sans contexte porte à collision : rattacher chaque sigle N, P, D, E, M ou C à son propriétaire supprime les erreurs de seuils en revue d'architecture."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
     },
     {
       "schema_id": "SCH-06-01",

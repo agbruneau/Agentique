@@ -36,7 +36,7 @@ Cet isolement en caissons éphémères (`Firecracker`/`WASI`) dépourvus de sort
 
 ![Du cloisonnement poreux au caisson étanche éphémère : exécution du code généré en microVM Firecracker / WASI sans réseau ni secrets](../../schemas/rendus/SCH-21-01.svg)
 
-*Figure 67 — SCH-21-01 : Échelle des frontières d'isolation proscrivant les conteneurs à noyau partagé (runc) au profit de WASI 0.2, gVisor et des microVM Firecracker (< 15 ms), articulée sur les quatre verrous cumulatifs OpenSandbox / SHADI incluant le journal d'exécution immuable hors bac (EXIG-SEC-16).*
+*Figure 77 — SCH-21-01 : Échelle des frontières d'isolation proscrivant les conteneurs à noyau partagé (runc) au profit de WASI 0.2, gVisor et des microVM Firecracker (< 15 ms), articulée sur les quatre verrous cumulatifs OpenSandbox / SHADI incluant le journal d'exécution immuable hors bac (EXIG-SEC-16).*
 
 Quel que soit le moteur d'isolation sélectionné, la solidité du caisson repose sur quatre verrous cumulatifs et non négociables (`EXIG-SEC-12` à `EXIG-SEC-16`), doublés d'une porte statique séparant génération et exécution (`EXIG-SEC-17`) :
 
@@ -57,7 +57,7 @@ Une rigueur probatoire stricte interdit toutefois d'ériger les `TEE` en garanti
 
 ![Enclaves TEE, clés HYOK et continuité bimodèle : préserver la souveraineté sur GPU partagé malgré TEE.fail](../../schemas/rendus/SCH-21-02.svg)
 
-*Figure 68 — SCH-21-02 : Architecture de souveraineté cognitive associant le séquestre de clés HYOK (RTT ≤ 35 ms) aux enclaves matérielles CPU/GPU attestées (TDX, SEV-SNP, NVIDIA CC), tout en intégrant la limite physique DDR5 TEE.fail par la bascule trimestrielle vers une grappe souveraine à poids ouverts.*
+*Figure 78 — SCH-21-02 : Architecture de souveraineté cognitive associant le séquestre de clés HYOK (RTT ≤ 35 ms) aux enclaves matérielles CPU/GPU attestées (TDX, SEV-SNP, NVIDIA CC), tout en intégrant la limite physique DDR5 TEE.fail par la bascule trimestrielle vers une grappe souveraine à poids ouverts.*
 
 ### 21.2.2 Défense SOC/SOAR, analyse de contrôle STPA et coupe-circuit hiérarchisé
 
@@ -87,13 +87,19 @@ La maîtrise des délais d'intervention requiert de concilier deux horizons temp
 
 ![Coupe-circuits hiérarchisés (< 10 s / 0,050 ms), révocation SSF/CAEP et repli < 60 s : stopper l'emballement sans briser les sagas](../../schemas/rendus/SCH-21-03.svg)
 
-*Figure 69 — SCH-21-03 : Boucle complète de détection AISPM/AIDR et d'intervention SOAR montrant le passage à l'état FORCED_OPEN (< 10 s au PEP / 0,050 ms local), l'éviction SSF/CAEP (≤ 15 min), le repli vers N2/L0 (< 60 s) et le maintien ouvert du canal de compensation Saga EXIG-ORC-28.*
+*Figure 79 — SCH-21-03 : Boucle complète de détection AISPM/AIDR et d'intervention SOAR montrant le passage à l'état FORCED_OPEN (< 10 s au PEP / 0,050 ms local), l'éviction SSF/CAEP (≤ 15 min), le repli vers N2/L0 (< 60 s) et le maintien ouvert du canal de compensation Saga EXIG-ORC-28.*
 
 Une contrainte d'intégrité comptable domine l'architecture du coupe-circuit : **l'arrêt d'urgence de la voie avant NE DOIT JAMAIS interrompre le canal de compensation isolé `Saga`** (`EXIG-ORC-17`, `EXIG-ORC-28`, ← Chapitre 15). Lorsqu'un agent financier engagé dans une séquence multi-étapes est stoppé par le coupe-circuit à mi-parcours d'une écriture réversible avant le point pivot, couper aveuglément toutes ses permissions laisserait des débits ou réservations orphelins dans les systèmes d'enregistrement. En séparant physiquement l'identité et le budget de la voie de compensation (`EXIG-ORC-28`) et en gelant simplement la progression avant de l'automate `Temporal` sans détruire les microVMs ni les journaux, l'organisation permet aux opérations inverses idempotentes d'achever proprement l'annulation tout en conservant intactes les preuves numériques pour l'examen post-incident et la notification des incidents majeurs prévus par `DORA` (art. `11`–`12` et `19`, → Chapitre 26) [6].
 
 Sur le plan opérationnel, le coupe-circuit `SOC/SOAR` à quatre paliers (`< 10 s` au `PEP`, rétrogradation `< 60 s` vers `N2`/`L0`, maintien du canal `Saga`) assure l'endiguement dynamique de **l'agentivité des systèmes** face aux pertes de contrôle `STPA` [2] tout en satisfaisant aux exigences `DORA` [6].
 
 Enfin, la fiabilité de ces coupe-circuits et des bascules de souveraineté ne se décrète pas : l'exigence `EXIG-SEC-23` impose des **exercices trimestriels chronométrés** validant en conditions réelles le respect des seuils `< 10 s` (`POR-003`), `< 60 s` (`POR-015`) et de bascule bimodèle (`POR-006`), complétés par un exercice annuel complet de `Red Team` impliquant les équipes de sécurité, d'exploitation `SRE` et de gouvernance des risques.
+
+La *Figure 80* réunit ces quatre paliers concentriques et l'automate à cinq états préservant `Saga`.
+
+![Quatre anneaux de rayon d'impact du coupe-circuit et automate à cinq états préservant Saga EXIG-ORC-28](../../schemas/rendus/SCH-21-04.svg)
+
+*Figure 80 — SCH-21-04 : Quatre paliers concentriques (`Z1`), automate complet à cinq états (`Z2`) et sanctuaire `Saga EXIG-ORC-28` (`Z3`).*
 
 ## 21.3 Synthèse architecturale, livrables et portes de contrôle
 

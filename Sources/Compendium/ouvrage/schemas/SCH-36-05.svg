@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 932" width="1200" height="932">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="932" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-36-05 — Boussole unifiée de l'appareil probatoire et désambiguïsation [A]/[C]/[D]</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Quatre grilles épistémiques (Tome 1 &amp; Tome 2) · Statut F (AO-01) · Trois degrés d'absence · Chapitre 36 seul autorisé CA-02 · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="1160" height="210" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="1160" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · Grilles 1 &amp; 2 — Nature d'appui ([N]/[M]/[É]/[S]) et Hygiène d'ouverture ([L+]/[A]/[B]/[C] &amp; Statut F)</text>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="144" width="558" height="150" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="46" y="165" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1E3A8A">Grille 1 · Nature de l'énoncé architectural</text>
+      <text x="46" y="184" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [N] Normatif / Légal : lois, BSIF E-23, Loi 25, 305 EXIG-*.</text>
+      <text x="46" y="200" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [M] Mesuré / Empirique : études évaluées par les pairs &amp; bancs.</text>
+      <text x="46" y="216" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [É] Éditeur / Spécification : standards ouverts MCP, A2A, RFC.</text>
+      <text x="46" y="232" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [S] Synthèse modélisée : calculs FEDS/EMA (hors cas fictif Boréal).</text>
+    </g>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="608" y="144" width="558" height="150" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="620" y="165" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#064E3B">Grille 2 · Grade d'audit documentaire (AO-01)</text>
+      <text x="620" y="184" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [L+] : texte intégral ouvert vérifié, SHA-256 LF, AACODS ≥ 9,0/12.</text>
+      <text x="620" y="200" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [A] / [B] : primaire votée par 3 juges adversariaux / primaire ouverte.</text>
+      <text x="620" y="216" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• [C] / Cat. C : simple repérage, INTERDIT en appui d'un fait central.</text>
+      <text x="620" y="232" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">• Statut F : accès bloqué (HTTP 403/CAPTCHA) → zéro contournement !</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="20" y="318" width="1160" height="198" rx="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="1.8"/>
+    <rect x="20" y="318" width="1160" height="34" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.5"/>
+    <text x="34" y="340" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Z2 · Grilles 3 &amp; 4 — Qualification temporelle et Trois degrés d'absence</text>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="34" y="364" width="368" height="138" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <text x="46" y="385" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">Grille 3a · Horizon [D] / [A] / [C]</text>
+      <text x="46" y="404" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• [D] : acquis vérifié au 2 déc. 2026.</text>
+      <text x="46" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• [A] : feuille de route anticipée.</text>
+      <text x="46" y="436" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• [C] : projection conditionnelle.</text>
+      <text x="46" y="452" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">(Introduit au §3.1.2 · Annexe C).</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="416" y="364" width="368" height="138" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.8"/>
+      <text x="428" y="385" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#312E81">Grille 3b · Statuts prospectifs T1</text>
+      <text x="428" y="404" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• PROGRAMMÉ : date légale ferme.</text>
+      <text x="428" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• PROJETÉ : cible non contraignante.</text>
+      <text x="428" y="436" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• SPÉCULATIF : extrapolation non</text>
+      <text x="428" y="452" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">  opposable (Fig. 46.2 Tome 1).</text>
+    </g>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="798" y="364" width="368" height="138" rx="8" fill="#F1F5F9" stroke="#475569" stroke-width="1.8"/>
+      <text x="810" y="385" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0F2942">Grille 4 · Trois degrés d'absence</text>
+      <text x="810" y="404" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Degré 1 : négation par balayage borné.</text>
+      <text x="810" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Degré 2 : réserve dans la source.</text>
+      <text x="810" y="436" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">• Degré 3 : silence du corpus seul</text>
+      <text x="810" y="452" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">  (ne prouve jamais l'inexistence).</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="20" y="526" width="1160" height="128" rx="10" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.8"/>
+    <rect x="20" y="526" width="1160" height="34" rx="10" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.5"/>
+    <text x="34" y="548" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7F1D1D">Z3 · Alerte critique de lecture : levée de collision des homonymes [A], [C] et [D]</text>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="34" y="570" width="368" height="72" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="46" y="591" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">Homonyme [A]</text>
+      <text x="46" y="610" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Grille 2 : source primaire votée.</text>
+      <text x="46" y="626" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Grille 3a : anticipé post-gel (§3.1.2).</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="416" y="570" width="368" height="72" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="428" y="591" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">Homonyme [C]</text>
+      <text x="428" y="610" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Grille 2 : repérage seul (exclu).</text>
+      <text x="428" y="626" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Grille 3a : conditionnel (§3.1.2).</text>
+    </g>
+    <g id="node-8" class="node" data-node="true">
+      <rect x="798" y="570" width="368" height="72" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="810" y="591" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">Homonyme [D]</text>
+      <text x="810" y="610" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Grille 2 (PRR) : documenté sur pièce.</text>
+      <text x="810" y="626" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Grille 3a : état acquis au gel (§3.1.2).</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="666" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="688" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="708" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Toute source bloquée est consignée Statut F (included_in_evidence:</text>
+    <text x="34" y="724" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">false) sans contournement ni dégradation.</text>
+    <text x="610" y="708" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Chaque fait combine sa nature ([N]/[M]/[É]/[S]), son ouverture</text>
+    <text x="610" y="724" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">([L+]/[A]/[B]) et sa temporalité ferme.</text>
+    <text x="34" y="750" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ Les trois degrés d'absence empêchent de transformer un silence</text>
+    <text x="34" y="766" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">documentaire (degré 3) en négation factuelle.</text>
+    <text x="610" y="750" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ L'alerte inférieure évite toute confusion entre les sigles</text>
+    <text x="610" y="766" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">homonymes [A], [C] et [D] des Grilles 2 et 3.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="794" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="807" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="60" y="820" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Grilles 1 &amp; 2 : nature &amp; ouverture [L+]</text>
+    <rect x="411" y="807" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+    <text x="437" y="820" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Grilles 3 &amp; 4 : temporalité &amp; absence 1–3</text>
+    <rect x="788" y="807" width="18" height="18" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="814" y="820" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Homonymes critiques [A] / [C] / [D] &amp; Statut F</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="848" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="870" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="890" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Réservée au Chapitre 36 (CA-02), cette boussole sépare toujours ce qui est vérifié sur texte [L+], daté [D]/[A]/[C] ou absent du</text>
+    <text x="36" y="907" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">corpus.</text>
+  </g>
+</svg>

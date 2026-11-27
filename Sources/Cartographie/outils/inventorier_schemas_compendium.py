@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Inventorie les 115 schémas compilés du Compendium (SCH-00-01 à SCH-36-04).
+"""Inventorie les 139 schémas compilés du Compendium (SCH-00-01 à SCH-AD-01).
 
 Vérifie :
-- le catalogue des 115 figures dans ``Sources/Compendium/ouvrage/specs/manifest.json``
-- la présence sur disque de 115/115 fichiers sources dans ``Sources/Compendium/ouvrage/schemas/``
-- la présence sur disque de 115/115 rendus dans ``Sources/Compendium/ouvrage/schemas/rendus/``
+- le catalogue des 139 figures dans ``Sources/Compendium/ouvrage/specs/manifest.json``
+- la présence sur disque de 139/139 fichiers sources dans ``Sources/Compendium/ouvrage/schemas/``
+- la présence sur disque de 139/139 rendus dans ``Sources/Compendium/ouvrage/schemas/rendus/``
 - la ligne exacte d'inclusion de chaque figure dans ``Compendium/Compendium.md``
   et dans son unité source ``Sources/Compendium/ouvrage/manuscrit/...``
 
-Produit ``Sources/Cartographie/donnees/inventaire-115-schemas-compendium.json``.
+Produit ``Sources/Cartographie/donnees/inventaire-139-schemas-compendium.json``.
 """
 
 from __future__ import annotations
@@ -56,6 +56,7 @@ PART_TO_DOMAIN_ID: dict[str, str] = {
     "P10": "D10",
     "P11": "D11",
     "P12": "D12",
+    "ANN": "ANNEXE",
 }
 
 ENGINE_TO_RENDER_EXT: dict[str, str] = {
@@ -136,7 +137,7 @@ def _locate_figure_line(
 
 
 def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
-    """Construit l'inventaire vérifié des 115 schémas du Compendium."""
+    """Construit l'inventaire vérifié des 139 schémas du Compendium."""
     from index_pdf_compendium import CompendiumPdfIndex  # noqa: E402
 
     ouvrage_dir = repo_root / "Sources" / "Compendium" / "ouvrage"
@@ -156,8 +157,8 @@ def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
 
     units_by_id: dict[str, dict[str, Any]] = {u["id"]: u for u in manifest["units"]}
     figures_raw: list[dict[str, Any]] = manifest["figures"]
-    if len(figures_raw) != 115:
-        raise ValueError(f"Nombre de figures attendu = 115, trouvé {len(figures_raw)}")
+    if len(figures_raw) != 139:
+        raise ValueError(f"Nombre de figures attendu = 139, trouvé {len(figures_raw)}")
 
     source_files_on_disk = {
         p.resolve()
@@ -283,8 +284,8 @@ def build_compendium_schemas_inventory(repo_root: Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    """Point d'entrée CLI générant ``Sources/Cartographie/donnees/inventaire-115-schemas-compendium.json``."""
-    parser = argparse.ArgumentParser(description="Inventorie les 115 schémas compilés du Compendium.")
+    """Point d'entrée CLI générant ``Sources/Cartographie/donnees/inventaire-139-schemas-compendium.json``."""
+    parser = argparse.ArgumentParser(description="Inventorie les 139 schémas compilés du Compendium.")
     parser.add_argument(
         "--repo-root",
         type=Path,
@@ -300,14 +301,14 @@ def main() -> int:
     args = parser.parse_args()
 
     repo_root = args.repo_root.resolve()
-    out_path = args.output or (repo_root / "Sources" / "Cartographie" / "donnees" / "inventaire-115-schemas-compendium.json")
+    out_path = args.output or (repo_root / "Sources" / "Cartographie" / "donnees" / "inventaire-139-schemas-compendium.json")
     payload = build_compendium_schemas_inventory(repo_root)
     serialized = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
     out_path.write_text(serialized, encoding="utf-8", newline="\n")
     t = payload["totals"]
     print(
-        f"Inventaire Compendium -> {out_path} : {t['figures_count']}/115 figures, "
-        f"{t['verified_sources_on_disk']}/115 sources, {t['verified_renders_on_disk']}/115 rendus, "
+        f"Inventaire Compendium -> {out_path} : {t['figures_count']}/139 figures, "
+        f"{t['verified_sources_on_disk']}/139 sources, {t['verified_renders_on_disk']}/139 rendus, "
         f"moteurs={t['by_engine']}"
     )
     return 0

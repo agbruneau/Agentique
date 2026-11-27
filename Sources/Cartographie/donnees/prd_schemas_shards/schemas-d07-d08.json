@@ -799,6 +799,70 @@
       ]
     },
     {
+      "schema_id": "SCH-21-04",
+      "chapter_number": 21,
+      "domain_id": "D07",
+      "subdomain_node_id": "SUB_D07_03",
+      "families_covered": [
+        "FAM_D07_03_02"
+      ],
+      "themes_vulgarized": [
+        "soc-soar-coupe-circuit",
+        "confinement-opensandbox-firecracker-wasi"
+      ],
+      "title": "Quatre paliers de rayon d'impact du coupe-circuit et automate à cinq états",
+      "insertion_point": "Chapitre 21 §21.2.2 — après le Tableau 21.1 détaillant le coupe-circuit hiérarchisé et la rétrogradation",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette planche complète la séquence temporelle SCH-21-03 en représentant les quatre cercles concentriques de confinement du coupe-circuit hiérarchisé (du simple run jusqu'au domaine entier) ainsi que l'automate déterministe complet à cinq états (CLOSED, HALF_OPEN, OPEN, DEGRADED, FORCED_OPEN) préservant explicitement l'ouverture du canal de compensation Saga EXIG-ORC-28.",
+      "vulgarization_angle": "Montrer comment un arrêt d'urgence reste chirurgical — isoler d'abord un outil ou un gabarit déviant avant de couper la région — tout en laissant ouverte la voie inverse comptable.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Cibles concentriques des quatre paliers de rayon d'impact",
+            "content": "Empilement gradué : Palier 1 Saga ou tâche isolée → Palier 2 Connecteur MCP ou outil → Palier 3 Classe par ClusterSPIFFEID → Palier 4 Domaine ou région complète."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Automate complet à cinq états déterministes",
+            "content": "Transitions gouvernées entre CLOSED, HALF_OPEN, OPEN, DEGRADED (repli POR-015 N2/L0 < 60 s) et FORCED_OPEN (< 10 s cible PEP, 0,050 ms local)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Sanctuaire comptable du canal de compensation Saga EXIG-ORC-28",
+            "content": "Séparation d'identité NHI et maintien ouvert de la voie de compensation idempotente pendant le gel des mutations avant et des microVM."
+          }
+        ],
+        "numbered_flows": [
+          "① L'analyse de contrôle STPA et la télémétrie AISPM/AIDR déclenchent le palier minimal proportionnel à l'incident.",
+          "② Le coupe-circuit bascule l'automate vers DEGRADED ou FORCED_OPEN sous 10 s au PEP puis propage l'éviction SSF/CAEP en ≤ 15 min.",
+          "③ Le canal isolé Saga demeure ouvert afin d'annuler proprement les écritures réversibles sans corrompre la comptabilité."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Régime nominal CLOSED et sanctuaire de compensation Saga maintenu ouvert"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Graduation chirurgicale Paliers 1–2, test HALF_OPEN et repli DEGRADED < 60 s"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Arrêt dur OPEN / FORCED_OPEN (< 10 s PEP) et éviction de domaine Palier 4"
+          }
+        ],
+        "key_takeaway_box": "Un arrêt d'urgence efficace frappe au plus petit rayon utile sur cinq états déterministes, tout en sanctuarisant le canal de compensation Saga contre les écritures orphelines."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
+    },
+    {
       "schema_id": "SCH-22-01",
       "chapter_number": 22,
       "domain_id": "D08",
@@ -1631,6 +1695,73 @@
           "role_note": "Relie les mesures de routage cognitif hybride à trois paliers sur `agentgateway` à la télémétrie d'exploitation."
         }
       ]
+    },
+    {
+      "schema_id": "SCH-24-04",
+      "chapter_number": 24,
+      "domain_id": "D08",
+      "subdomain_node_id": "SUB_D08_03",
+      "families_covered": [
+        "FAM_D08_03_02",
+        "FAM_D08_03_01"
+      ],
+      "themes_vulgarized": [
+        "indicateurs-agentops-horizon-tache",
+        "cycle-vie-operationnel-derives-gitops",
+        "finops-focus-cpo"
+      ],
+      "title": "Échelle logarithmique des horloges SRE, coupe-circuits, rétentions et échéances",
+      "insertion_point": "Chapitre 24 §24.2.2 — après les quatre prérequis d'instrumentation et avant la figure tableau de bord du conseil",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Frise chronologique et jalons",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette règle logarithmique unifie sur dix ordres de grandeur les horizons temporels dispersés à travers le traité : de la coupure microseconde à la passerelle PEP (50 µs en C1 / bail ≤ 5 s) aux délais de bascule humaine et technique (< 10 s, < 60 s, ≤ 15 min), puis aux fenêtres SRE burn-rate (5 min–3 j), obligations légales (30 s RTR, 72 h incident), rétentions chaudes (30/45 j), PKI (47 j) et PQC (2030–2035).",
+      "vulgarization_angle": "Transformer une vingtaine de chiffres temporels éparpillés sur quinze chapitres en une règle graduée logarithmique permettant à l'ingénieur SRE et au RSSI d'aligner leurs minuteurs.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Réflexes temps réel (50 µs à 60 s)",
+            "content": "Coupure PEP Borealis-Bench C1 (50 µs), bail court (≤ 5 s), plafond POR-003 (< 10 s), rétention RTR (≥ 30 s) et rétrogradation N2/L0 ou CIBA (< 60 s)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Budgets d'erreur SRE et continuité d'exploitation (5 min à 72 h)",
+            "content": "Fenêtres burn-rate (5 min/1 h à 14,4×, 30 min/6 h à 6×, 6 h/3 j à 1×), durée maximale OBO/CIBA/RTO DR/SSF (≤ 15 min) et notification incident (72 h Loi 25/DORA)."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Cycle de rétention, certificats et modernisation PQC (14 j à 2035)",
+            "content": "Bris de glace (14 j), péremption veille / rétention chaude (30 j → 45 j), certificats TLS 2029 (47 j), coexistence sémantique (60 j) et bascule G7 PQC (2030–2035)."
+          }
+        ],
+        "numbered_flows": [
+          "① La séparation entre attaque automatisée et revue humaine impose des disjoncteurs automatiques en microsecondes/secondes.",
+          "② Les budgets d'erreur multi-fenêtres évitent la fatigue d'alerte tout en déclenchant l'escalade avant épuisement du SLO 99,9 %.",
+          "③ L'exploitation raccorde directement les baux courts d'exécution aux rétentions d'audit 45 j et au renouvellement PKI 47 j."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Horloges de sécurité critique et coupe-circuits temps réel (≤ 60 s)"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Budgets SRE burn-rate, bascules DR, évictions OBO/SSF et notifications 72 h"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Rétentions chaudes (30/45 j), certificats TLS (47 j) et trajectoire PQC 2035"
+          }
+        ],
+        "key_takeaway_box": "Gouverner des Systèmes d'agentivité revient à synchroniser dix ordres de grandeur temporels, de 50 microsecondes au PEP jusqu'à dix ans pour la cryptographie post-quantique."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
     }
   ]
 }

@@ -36,7 +36,7 @@ def test_real_specs_are_valid() -> None:
     assert validate_specs(REAL_BOOK_DIR) == []
 
 
-def test_manifest_exposes_42_units_180k_71_fam_260_thm_115_schemas() -> None:
+def test_manifest_exposes_42_units_180k_71_fam_260_thm_139_schemas() -> None:
     manifest = json.loads((REAL_BOOK_DIR / "specs" / "manifest.json").read_text(encoding="utf-8"))
     assert len(manifest["units"]) == 42
     assert manifest["word_budget"]["total_target"] == 180000
@@ -49,10 +49,10 @@ def test_manifest_exposes_42_units_180k_71_fam_260_thm_115_schemas() -> None:
     assert len(chapters) == 36
     assert sum(len(u.get("families", [])) for u in chapters) == 71
     assert sum(len(u.get("themes", [])) for u in chapters) == 260
-    assert len(manifest["figures"]) == 115
-    assert sum(1 for f in manifest["figures"] if f["engine"] == "puml") == 52
+    assert len(manifest["figures"]) == 139
+    assert sum(1 for f in manifest["figures"] if f["engine"] == "puml") == 58
     assert sum(1 for f in manifest["figures"] if f["engine"] == "mmd") == 23
-    assert sum(1 for f in manifest["figures"] if f["engine"] == "svg") == 40
+    assert sum(1 for f in manifest["figures"] if f["engine"] == "svg") == 58
 
 
 def test_detects_word_budget_drift_and_missing_unit(tmp_path: Path) -> None:
@@ -131,7 +131,7 @@ def test_detects_missing_schema_or_invalid_deliverables(tmp_path: Path) -> None:
     manifest_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     errors = validate_specs(clone)
-    assert any("115" in e for e in errors)
+    assert any("139" in e for e in errors)
     assert any("deliverables" in e for e in errors)
 
 

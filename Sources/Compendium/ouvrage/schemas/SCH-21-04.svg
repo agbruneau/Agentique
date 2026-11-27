@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 878" width="1200" height="878">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="878" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-21-04 — Quatre paliers de rayon d'impact du coupe-circuit et automate à cinq états</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Graduation chirurgicale STPA/AISPM · délais POR-003/015 · maintien du canal Saga EXIG-ORC-28 · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="560" height="502" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="560" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · Quatre paliers concentriques de rayon d'impact du coupe-circuit chirurgical</text>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="142" width="532" height="444" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <circle cx="300" cy="360" r="196" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2.2"/>
+      <circle cx="300" cy="360" r="150" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+      <circle cx="300" cy="360" r="104" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <circle cx="300" cy="360" r="56" fill="#ECFDF5" stroke="#047857" stroke-width="2.2"/>
+      <rect x="92" y="170" width="416" height="20" rx="5" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1"/>
+      <text x="300" y="184" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#7F1D1D">Palier 4 · Domaine ou région (FORCED_OPEN S1/S2)</text>
+      <rect x="116" y="216" width="368" height="20" rx="5" fill="#FFFBEB" stroke="#D97706" stroke-width="1"/>
+      <text x="300" y="230" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#78350F">Palier 3 · Blueprint (ClusterSPIFFEID)</text>
+      <rect x="150" y="264" width="300" height="20" rx="5" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1"/>
+      <text x="300" y="278" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1E3A8A">Palier 2 · Connecteur MCP / outil</text>
+      <text x="300" y="356" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#064E3B">Palier 1</text>
+      <text x="300" y="372" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#064E3B">Saga isolée</text>
+      <text x="300" y="574" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Contenir la perte de contrôle STPA au plus petit rayon utile sans paralyser l'entreprise</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="594" y="98" width="586" height="336" rx="10" fill="#F8FAFC" stroke="#0F766E" stroke-width="1.8"/>
+    <rect x="594" y="98" width="586" height="34" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.5"/>
+    <text x="608" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#134E4A">Z2 · Automate déterministe complet à cinq états (EXIG-SEC-26)</text>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="614" y="154" width="152" height="74" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="626" y="175" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#064E3B">CLOSED</text>
+      <text x="626" y="194" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Nominal ; trafic</text>
+      <text x="626" y="210" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">autorisé sous PEP.</text>
+    </g>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="810" y="154" width="162" height="74" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="822" y="175" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1E3A8A">HALF_OPEN</text>
+      <text x="822" y="194" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Sonde bornée de</text>
+      <text x="822" y="210" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">réadmission test.</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="1006" y="154" width="154" height="74" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+      <text x="1018" y="175" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">OPEN</text>
+      <text x="1018" y="194" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Suspension locale</text>
+      <text x="1018" y="210" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">dès dérive STPA.</text>
+    </g>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="640" y="294" width="240" height="118" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <text x="652" y="315" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">DEGRADED (POR-015)</text>
+      <text x="652" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Rétrogradation &lt; 60 s</text>
+      <text x="652" y="350" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">vers palier N2 ou L0.</text>
+      <text x="652" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Service critique préservé.</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="914" y="294" width="246" height="118" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="926" y="315" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#7F1D1D">FORCED_OPEN (POR-003)</text>
+      <text x="926" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Coupure PEP &lt; 10 s cible</text>
+      <text x="926" y="350" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">(0,050 ms max local C1).</text>
+      <text x="926" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Éviction SSF ≤ 15 min.</text>
+    </g>
+    <line x1="766" y1="191" x2="808" y2="191" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="972" y1="191" x2="1004" y2="191" stroke="#D97706" stroke-width="2" marker-end="url(#arrow-amber)"/>
+    <line x1="1080" y1="228" x2="1050" y2="292" stroke="#B91C1C" stroke-width="2.2" marker-end="url(#arrow-red)"/>
+    <line x1="890" y1="228" x2="770" y2="292" stroke="#D97706" stroke-width="2" marker-end="url(#arrow-amber)"/>
+    <line x1="710" y1="292" x2="690" y2="230" stroke="#047857" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  </g>
+  <g id="zone-Z3">
+    <rect x="594" y="444" width="586" height="156" rx="10" fill="#F8FAFC" stroke="#047857" stroke-width="1.8"/>
+    <rect x="594" y="444" width="586" height="34" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+    <text x="608" y="466" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">Z3 · Sanctuaire de compensation Saga et preuves forensiques (EXIG-ORC-28)</text>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="614" y="490" width="260" height="92" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="626" y="511" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">Voie avant GELÉE (zéro mutation)</text>
+      <text x="626" y="530" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">microVM &amp; file Temporal gelées</text>
+      <text x="626" y="546" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">(10/10 en Borealis-Bench C1) pour</text>
+      <text x="626" y="562" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">préserver les preuves DORA.</text>
+    </g>
+    <g id="node-8" class="node" data-node="true">
+      <rect x="900" y="490" width="260" height="92" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="912" y="511" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">Canal inverse Saga OUVERT</text>
+      <text x="912" y="530" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Identité NHI &amp; budget séparés :</text>
+      <text x="912" y="546" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">achève l'annulation idempotente</text>
+      <text x="912" y="562" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">sans réservation orpheline.</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="612" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="634" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="654" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Les paliers 1 à 4 proportionnent l'arrêt de la tâche isolée (1)</text>
+    <text x="34" y="670" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">jusqu'au domaine complet (4).</text>
+    <text x="610" y="654" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② L'automate gère cinq états complets, séparant la sonde HALF_OPEN</text>
+    <text x="610" y="670" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">du mode DEGRADED (&lt; 60 s) et de FORCED_OPEN (&lt; 10 s).</text>
+    <text x="34" y="696" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ La coupure locale PEP (&lt; 10 s cible, 0,050 ms mesuré C1) précède</text>
+    <text x="34" y="712" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">la diffusion fédérée SSF/CAEP (≤ 15 min).</text>
+    <text x="610" y="696" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ L'arrêt de la voie avant ne coupe jamais le canal de compensation</text>
+    <text x="610" y="712" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">Saga EXIG-ORC-28 afin d'éviter les écritures orphelines.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="740" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="753" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="60" y="766" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Palier 1, état nominal CLOSED &amp; canal Saga ouvert</text>
+    <rect x="411" y="753" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+    <text x="437" y="766" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Paliers 2–3, sonde HALF_OPEN &amp; repli DEGRADED &lt; 60 s</text>
+    <rect x="788" y="753" width="18" height="18" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="814" y="766" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Palier 4 &amp; arrêt d'urgence FORCED_OPEN &lt; 10 s</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="794" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="816" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="836" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Couper chirurgicalement sur cinq états tout en maintenant ouvert le canal de compensation Saga concilie sûreté immédiate (&lt; 10 s) et</text>
+    <text x="36" y="853" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">intégrité comptable.</text>
+  </g>
+</svg>

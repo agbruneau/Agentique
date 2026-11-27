@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 942" width="1200" height="942">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="942" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-AC-01 — Frise maîtresse des 77 jalons 2018–2035 en cinq couloirs juridictionnels</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Extraction directe d'ancres-chronologiques.json · 11 acquis pré-gel vs 66 échéances post-gel · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="1160" height="566" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="1160" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1–Z3 · Frise des 77 jalons (2018–2035) : 11 acquis pré-gel vs 66 échéances post-gel</text>
+    <rect x="480" y="140" width="548" height="440" fill="#FFFBEB" opacity="0.5"/>
+    <line x1="480" y1="140" x2="480" y2="590" stroke="#B91C1C" stroke-width="2.4" stroke-dasharray="6,3"/>
+    <rect x="396" y="138" width="168" height="22" rx="5" fill="#B91C1C"/>
+    <text x="480" y="153" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#FFFFFF">GEL : 2 déc. 2026 (11 | 66)</text>
+    <line x1="240" y1="164" x2="240" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="240" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2018</text>
+    <line x1="318" y1="164" x2="318" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="318" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2023</text>
+    <line x1="365" y1="164" x2="365" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="365" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2026</text>
+    <line x1="555" y1="164" x2="555" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="555" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2027-05</text>
+    <line x1="785" y1="164" x2="785" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="785" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2028-08</text>
+    <line x1="862" y1="164" x2="862" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="862" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2029-03</text>
+    <line x1="970" y1="164" x2="970" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="970" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">2030–35</text>
+    <line x1="1104" y1="164" x2="1104" y2="584" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="1104" y="600" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#475569">DAPP P1–P3</text>
+    <g id="node-lane-1" class="node" data-node="true">
+      <rect x="34" y="166" width="1132" height="75" rx="7" fill="#ECFDF5" stroke="#047857" stroke-width="1.3"/>
+      <rect x="34" y="166" width="218" height="75" rx="7" fill="#FFFFFF" stroke="#047857" stroke-width="1.3"/>
+      <text x="44" y="196" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#047857">Québec (Loi 25, CAI, MCN)</text>
+      <text x="44" y="216" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#334155">7 ancres au registre</text>
+      <line x1="258" y1="203" x2="1152" y2="203" stroke="#047857" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="247.0" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="322.2" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="329.4" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="345.1" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="363.8" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="406.7" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="453.1" cy="203" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="315" cy="203" r="5.5" fill="#047857" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="315" y="193" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">Loi 25 art. 12.1 (2023-09)</text>
+      <circle cx="425" cy="203" r="5.5" fill="#047857" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="425" y="219" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">CAI mai 2026</text>
+      <circle cx="650" cy="203" r="5.5" fill="#D97706" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="650" y="197" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">Profil AMF IA / E-23</text>
+    </g>
+    <g id="node-lane-2" class="node" data-node="true">
+      <rect x="34" y="249" width="1132" height="75" rx="7" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.3"/>
+      <rect x="34" y="249" width="218" height="75" rx="7" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="1.3"/>
+      <text x="44" y="279" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">Canada / ACVM / AMF / US</text>
+      <text x="44" y="299" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#334155">25 ancres au registre</text>
+      <line x1="258" y1="286" x2="1152" y2="286" stroke="#1D4ED8" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="353.3" cy="286" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="365.0" cy="286" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="494.5" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="494.5" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="539.8" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="554.9" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="554.9" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="629.7" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="675.4" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="675.4" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="720.9" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="811.5" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="855.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="855.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="883.3" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="940.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="940.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="982.4" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="982.4" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="982.4" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1025.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1025.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1025.0" cy="286" r="4.2" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="375" cy="286" r="5.5" fill="#047857" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="375" y="276" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">31-103 ACVM (2026-01)</text>
+      <circle cx="558" cy="286" r="5.5" fill="#B91C1C" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="558" y="276" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">BSIF E-23 (2027-05-01)</text>
+      <circle cx="615" cy="286" r="5.5" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="615" y="303" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">LSAC / PQC féd.</text>
+      <circle cx="955" cy="286" r="5.5" fill="#4338CA" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="955" y="280" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">Loi banques 2033-06</text>
+    </g>
+    <g id="node-lane-3" class="node" data-node="true">
+      <rect x="34" y="332" width="1132" height="75" rx="7" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.3"/>
+      <rect x="34" y="332" width="218" height="75" rx="7" fill="#FFFFFF" stroke="#4338CA" stroke-width="1.3"/>
+      <text x="44" y="362" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#4338CA">Union européenne (AI Act, DORA)</text>
+      <text x="44" y="382" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#334155">25 ancres au registre</text>
+      <line x1="258" y1="369" x2="1152" y2="369" stroke="#4338CA" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="438.3" cy="369" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="479.9" cy="369" r="4.2" fill="#047857" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="483.4" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="494.3" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="500.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="600.7" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="615.8" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="638.3" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="661.1" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="665.5" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="683.6" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="781.8" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="781.8" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="801.4" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="871.6" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="928.3" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="956.6" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="984.9" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1025.0" cy="369" r="4.2" fill="#4338CA" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="415" cy="369" r="5.5" fill="#047857" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="415" y="359" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">AI Act art. 50 (2026-08)</text>
+      <circle cx="695" cy="369" r="5.5" fill="#B91C1C" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="695" y="359" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">Omnibus Ann. III (2027-12)</text>
+      <circle cx="795" cy="369" r="5.5" fill="#4338CA" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="795" y="386" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">Ann. I (2028-08)</text>
+    </g>
+    <g id="node-lane-4" class="node" data-node="true">
+      <rect x="34" y="415" width="1132" height="75" rx="7" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.3"/>
+      <rect x="34" y="415" width="218" height="75" rx="7" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.3"/>
+      <text x="44" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">Standards / PKI / PQC (MCP, IETF, G7)</text>
+      <text x="44" y="465" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#334155">14 ancres au registre</text>
+      <line x1="258" y1="452" x2="1152" y2="452" stroke="#0F766E" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="494.3" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="531.6" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="539.1" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="539.6" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="584.4" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="598.5" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="610.6" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="675.4" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="690.5" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="720.7" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="860.8" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="968.3" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1025.0" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="970.0" cy="452" r="4.2" fill="#0F766E" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="535" cy="452" r="5.5" fill="#B91C1C" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="535" y="442" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">TLS 100j + SEP-3398 (2027-03)</text>
+      <circle cx="628" cy="452" r="5.5" fill="#0F766E" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="628" y="469" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">MCP 12m SEP-2596 (2027-07)</text>
+      <circle cx="868" cy="452" r="5.5" fill="#0F766E" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="868" y="442" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">TLS 47j (2029-03)</text>
+      <circle cx="975" cy="452" r="5.5" fill="#4338CA" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="975" y="469" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">G7/NIST PQC 2030–35</text>
+    </g>
+    <g id="node-lane-5" class="node" data-node="true">
+      <rect x="34" y="498" width="1132" height="75" rx="7" fill="#FFFBEB" stroke="#B45309" stroke-width="1.3"/>
+      <rect x="34" y="498" width="218" height="75" rx="7" fill="#FFFFFF" stroke="#B45309" stroke-width="1.3"/>
+      <text x="44" y="528" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B45309">Entreprise DAPP (J1–J3, P1–P3)</text>
+      <text x="44" y="548" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#334155">6 ancres au registre</text>
+      <line x1="258" y1="535" x2="1152" y2="535" stroke="#B45309" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="1110.0" cy="535" r="4.2" fill="#B45309" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1110.0" cy="535" r="4.2" fill="#B45309" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1110.0" cy="535" r="4.2" fill="#B45309" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1110.0" cy="535" r="4.2" fill="#B45309" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1110.0" cy="535" r="4.2" fill="#B45309" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1110.0" cy="535" r="4.2" fill="#B45309" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="1085" cy="535" r="5.5" fill="#B45309" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="1085" y="523" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">J1 (90 j) · J2 (9 m) · J3 (18 m)</text>
+      <circle cx="1104" cy="535" r="5.5" fill="#4338CA" stroke="#FFFFFF" stroke-width="1.4"/>
+      <text x="1104" y="551" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0F2942">P1 · P2 · P3 (2027–2035)</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="34" y="610" width="366" height="44" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+      <text x="46" y="631" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#78350F">PROGRAMMÉ (engagements datés 2027–2029)</text>
+      <text x="46" y="650" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">SC-081v3, SEP-3398/2596, BSIF E-23, EU Omnibus.</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="412" y="610" width="366" height="44" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.8"/>
+      <text x="424" y="631" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#312E81">PROJETÉ (feuilles de route 2029–2035)</text>
+      <text x="424" y="650" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Transition G7/NIST PQC, IETF DAWN/AGENTPROTO.</text>
+    </g>
+    <g id="node-8" class="node" data-node="true">
+      <rect x="790" y="610" width="376" height="44" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="802" y="631" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#064E3B">ACQUIS PRÉ-GEL (11 jalons effectifs ≤ 2026-12-02)</text>
+      <text x="802" y="650" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">Loi 25, DORA, art. 50 AI Act, MCP 2026-07-28, Lynx.</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="676" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="698" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="718" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Le mur du 2 décembre 2026 isole mécaniquement les 11 acquis</text>
+    <text x="34" y="734" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">pré-gel des 66 cibles futures.</text>
+    <text x="610" y="718" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Entre mars et décembre 2027 convergent TLS 100 j, SEP-3398, BSIF</text>
+    <text x="610" y="734" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">E-23, SEP-2596 et EU AI Act Annexe III.</text>
+    <text x="34" y="760" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ L'axe 2029–2035 programme les certificats à 47 j, la révision</text>
+    <text x="34" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">bancaire 2033 et la bascule PQC G7/NIST.</text>
+    <text x="610" y="760" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Le cinquième couloir cale les rampes internes J1–J3 et les portes</text>
+    <text x="610" y="776" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">conditionnelles P1–P3.</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="804" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="817" width="18" height="18" rx="4" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+    <text x="60" y="830" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">11 jalons acquis pré-gel (≤ 2026-12-02)</text>
+    <rect x="411" y="817" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+    <text x="437" y="830" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Jalons programmés 2027–2029</text>
+    <rect x="788" y="817" width="18" height="18" rx="4" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
+    <text x="814" y="830" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Horizons projetés 2030–2035 &amp; Paliers P1–P3</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="858" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="880" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="900" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">De mars à décembre 2027 se forme le principal mur d'exécution réglementaire et protocolaire, rendant critique le découplage</text>
+    <text x="36" y="917" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">préalable derrière adaptateurs.</text>
+  </g>
+</svg>

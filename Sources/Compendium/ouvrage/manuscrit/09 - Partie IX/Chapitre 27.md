@@ -46,7 +46,7 @@ Bien que testé par essai reproductible (`EXIG-APP-04`), le critère `Performanc
 
 ![Banc d'essai éliminatoire des fournisseurs : 7 critères bloquants sur 8 (Tableau 54 du Tome 2 repris au Tableau 27.1, MCP, A2A a2a-tck et export FOCUS 1.4+)](../../schemas/rendus/SCH-27-01.png)
 
-*Figure 85 — SCH-27-01 : Arbre de qualification éliminatoire des fournisseurs en trois sas, excluant d'office les promesses déclaratives (EXIG-APP-04) et les refus de clauses DOIT avant l'exécution du banc d'essai (MCP, a2a-tck, P50/P99 sous politiques, OTLP, FOCUS 1.4+) et le classement pondéré du Tableau 27.1 (Tableau 54 du Tome 2).*
+*Figure 97 — SCH-27-01 : Arbre de qualification éliminatoire des fournisseurs en trois sas, excluant d'office les promesses déclaratives (EXIG-APP-04) et les refus de clauses DOIT avant l'exécution du banc d'essai (MCP, a2a-tck, P50/P99 sous politiques, OTLP, FOCUS 1.4+) et le classement pondéré du Tableau 27.1 (Tableau 54 du Tome 2).*
 
 Une fois le candidat qualifié en banc d'essai, le contrat d'acquisition ou de renouvellement incorpore obligatoirement **dix clauses normatives non dérogeables** du cadre (`EXIG-APP-07` à `EXIG-APP-16`), appuyées sur les assises légales et prudentielles applicables [1, 2, 4] et complétées par l'interdiction absolue de toute stipulation contraire à `EXIG-GOV-17`. Une dérogation exceptionnelle à un délai interne ou à un critère technique (écart contractuel approuvé par le comité pour la durée du contrat) reste strictement interdite sur les engagements reprenant des obligations légales impératives (articles 17 et 18.3 de la Loi 25 [1], ou points `EXIG-GOV-17` prohibant par exemple les actions `P3` sans approbation). Ces dix clauses forment le bouclier opérationnel de l'organisation :
 
@@ -75,7 +75,7 @@ Sur le plan stratégique, ces dix clauses luttent contre la concentration sur le
 
 ![Bouclier d'approvisionnement réversible : les 10 clauses minimales EXIG-APP-07..16 et le droit de sortie annuel POR-016](../../schemas/rendus/SCH-27-02.svg)
 
-*Figure 86 — SCH-27-02 : Comparatif Avant / Après opposant un contrat infonuagique captif au bouclier des dix clauses non dérogeables EXIG-APP-07..16 (deux piliers juridiques et techniques) et à l'exercice annuel de sortie POR-016.*
+*Figure 98 — SCH-27-02 : Comparatif Avant / Après opposant un contrat infonuagique captif au bouclier des dix clauses non dérogeables EXIG-APP-07..16 (deux piliers juridiques et techniques) et à l'exercice annuel de sortie POR-016.*
 
 ### 27.2.2 Mandat apparent, contrats B2B autonomes et prévention des risques juridiques
 
@@ -96,7 +96,7 @@ Quatre garde-fous juridiques et architecturaux s'imposent dès lors pour maîtri
 
 ![Écart du mandat apparent B2B : responsabilité (Moffatt c. Air Canada, AB-316), contrats LCCJTI/LUCE et anti-collusion](../../schemas/rendus/SCH-27-03.svg)
 
-*Figure 87 — SCH-27-03 : Représentation de l'écart juridique entre autorité réelle configurée et autorité apparente perçue par les tiers (risque Moffatt c. Air Canada et AB-316), et des quatre garde-fous B2B (avenants LCCJTI/LUCE, mandats AP2 plafonnés, anti-collusion PRR G-14 et audit des exclusions d'assurance).*
+*Figure 99 — SCH-27-03 : Représentation de l'écart juridique entre autorité réelle configurée et autorité apparente perçue par les tiers (risque Moffatt c. Air Canada et AB-316), et des quatre garde-fous B2B (avenants LCCJTI/LUCE, mandats AP2 plafonnés, anti-collusion PRR G-14 et audit des exclusions d'assurance).*
 
 ## 27.3 Synthèse architecturale, livrables et portes de contrôle
 

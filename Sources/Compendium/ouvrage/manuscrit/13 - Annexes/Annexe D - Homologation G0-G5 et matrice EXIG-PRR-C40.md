@@ -19,7 +19,7 @@ Répartition `pytest` par module : `tests/test_authz_pqc_audit.py` (23), `tests/
 
 ## 2. Clause `non-avis` et régime dual de licences (`CC-BY-4.0` / `MIT`)
 
-Le présent traité et ses cent quinze schémas sont diffusés sous licence **`CC-BY-4.0`**, tandis que l'outillage déterministe d'homologation et la trousse compagnon (`Tome 8`) relèvent de la licence **`MIT`**. Conformément au statut `non-avis` arrêté au 2 décembre 2026, l'ouvrage constitue une référence technique pédagogique et ne tient lieu ni d'avis juridique, ni de certification réglementaire, ni d'homologation sur un système d'enregistrement en exploitation réelle.
+Le présent traité et ses **139 schémas** sont diffusés sous licence **`CC-BY-4.0`**, tandis que l'outillage déterministe d'homologation et la trousse compagnon (`Tome 8`) relèvent de la licence **`MIT`**. Conformément au statut `non-avis` arrêté au 2 décembre 2026, l'ouvrage constitue une référence technique pédagogique et ne tient lieu ni d'avis juridique, ni de certification réglementaire, ni d'homologation sur un système d'enregistrement en exploitation réelle.
 
 ## 3. Inventaire des 14 extraits scellés `CA-G0-SYNC` (`CA-20`)
 
@@ -52,6 +52,12 @@ Les liaisons exécutables se répartissent par module de la trousse : `authz_pqc
 Les **57 spécifications techniques ouvertes `L+`** (inventaire complet en section 11) se ventilent par maturité (`FINAL_STANDARD` : 38, `REGULATION_IN_FORCE` : 5, `IETF_WORKING_GROUP_DRAFT` : 4, `SPEC_DEVELOPMENT` : 3, `FIPS_STANDARD` : 3, `RC_OR_ALPHA` : 2, `IETF_INDIVIDUAL_DRAFT` : 1, `REGULATION_ADOPTED_FUTURE` : 1) et par licence (`IETF-Trust` : 27, `Apache-2.0` : 10, `MIT` : 6, `NIST-PD` : 3, `OIDF-Spec` : 3, `EU-Public-Domain` : 3, `Canada-OGL` : 2, `CC-BY-4.0` : 1, `BSD-3-Clause` : 1, `QC-Public-Domain` : 1).
 
 Le portefeuille prospectif `DAPP` (renvoyé depuis le Chapitre 31) est intégralement déplié en section 12 : **43 initiatives `INI-*`**, **15 portes `POR-*`** et **27 signaux `SIG-*`**, accompagnés des **43 rubriques** de la grille unifiée `EXIG / PRR / Portes`.
+
+La Figure 139 illustre la ventilation par préfixe des 305 exigences face aux 24 portes bloquantes et aux 95 contrôles `G0`.
+
+![Ventilation des 305 exigences CRE-IA, 24 portes bloquantes PRR et 95 liaisons G0](././schemas/rendus/SCH-AD-01.svg)
+
+*Figure 139 — SCH-AD-01 : Ventilation quantitative des 305 exigences `EXIG-*` sur les seize préfixes normatifs, croisée aux 24 portes bloquantes `PRR-75` (`S/R/O/G/F`) et aux 95 liaisons exécutables de la barrière `G0` (`matrice-exig-prr-c40.json`).*
 
 ## 8. Chaîne d'étanchéité `G0`–`G5`, double recollation `G3` et liaisons d'opérationnalisation
 
@@ -156,14 +162,6 @@ Sur l'axe `D11`, la catégorie `attenuation_risque` rassemble 1 liaison, notamme
 Sur l'axe `D02`, la catégorie `encadrement_normatif` rassemble 4 liaisons, notamment `REL_0193` (`distinction-agent-flux-ambiant` vers `identite-non-humaine-nhi`), `REL_0204` (`douze-principes-directeurs-prin` vers `exigences-cre-ia-305`), `REL_0211` (`echelle-autonomie-l0-l4` vers `classes-risque-agents-et-plafonds`), `REL_0513` (`regle-maillon-plus-eleve` vers `echelle-autonomie-l0-l4`).
 
 Sur l'axe `D03`, la catégorie `encadrement_normatif` rassemble 4 liaisons, notamment `REL_0011` (`contrats-interfaces-catalogue-entreprise` vers `agntcy-slim`), `REL_0099` (`cadre-eif-4-couches` vers `protocole-a2a`), `REL_0100` (`cadre-eif-4-couches` vers `protocole-mcp`), `REL_0373` (`metriques-soutien-vs-production` vers `regime-preuve-trois-degres-absence`).
-
-Sur l'axe `D06`, la catégorie `encadrement_normatif` rassemble 2 liaisons, notamment `REL_0314` (`identite-non-humaine-nhi` vers `execution-durable-temporal`), `REL_0462` (`approbation-ciba` vers `protocole-ap2`).
-
-Sur l'axe `D07`, la catégorie `encadrement_normatif` rassemble 1 liaison, notamment `REL_0583` (`taxonomie-owasp-asi-mcp-maestro` vers `homologation-prr-75-points`).
-
-Sur l'axe `D08`, la catégorie `encadrement_normatif` rassemble 2 liaisons, notamment `REL_0287` (`finops-focus-cpo` vers `registre-agents-cycle-de-vie-et-attestations`), `REL_0389` (`observabilite-otel-genai` vers `double-couloir-probatoire-pii`).
-
-Sur l'axe `D09`, la catégorie `encadrement_normatif` rassemble 59 liaisons, notamment `REL_0024` (`bsif-e-23` vers `anti-verrouillage-standards`), `REL_0053` (`avis-acvm-11-348` vers `echelle-autonomie-l0-l4`), `REL_0054` (`avis-acvm-11-348` vers `identite-non-humaine-nhi`), `REL_0056` (`avis-acvm-11-348` vers `profil-gestion-patrimoine-m15`), `REL_0057` (`avis-acvm-11-348` vers `profils-financiers-5-secteurs`), `REL_0074` (`bsif-e-23` vers `atrophie-competences-humaines`).
 
 <!-- BIBLIOGRAPHIE_BRUTE_DEBUT -->
 ## 9. Inventaire intégral des 52 capacités (`CAP-001`–`CAP-052`)

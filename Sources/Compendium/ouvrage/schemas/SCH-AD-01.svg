@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 896" width="1200" height="896">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <rect id="bg-canvas" x="0" y="0" width="1200" height="896" fill="#FFFFFF"/>
+  <g id="header-bar">
+    <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
+    <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-AD-01 — Ventilation des 305 exigences CRE-IA, 24 portes bloquantes PRR et 95 liaisons G0</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Extraction directe de matrice-exig-prr-c40.json · Systèmes d'agentivité (fr-CA)</text>
+  </g>
+  <g id="zone-Z1">
+    <rect x="20" y="98" width="590" height="520" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="20" y="98" width="590" height="34" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="34" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E3A8A">Z1 · 305 exigences CRE-IA v1.2 (255 DOIT · 34 NE DOIT PAS · 16 DEV.)</text>
+    <g id="node-1" class="node" data-node="true">
+      <rect x="34" y="142" width="562" height="464" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="44" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-CON</text>
+      <text x="128" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Risques, conformité &amp; droit</text>
+      <rect x="315" y="156" width="235" height="15" rx="3" fill="#1B4F72"/>
+      <text x="558" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1B4F72">30</text>
+      <text x="44" y="196" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-ORC</text>
+      <text x="128" y="196" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Orchestration &amp; bornes</text>
+      <rect x="315" y="184" width="235" height="15" rx="3" fill="#1B4F72"/>
+      <text x="558" y="196" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1B4F72">30</text>
+      <text x="44" y="224" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-SEC</text>
+      <text x="128" y="224" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Menaces agents &amp; défenses</text>
+      <rect x="315" y="212" width="219" height="15" rx="3" fill="#1B4F72"/>
+      <text x="542" y="224" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1B4F72">28</text>
+      <text x="44" y="252" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-ARC</text>
+      <text x="128" y="252" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Architecture de référence</text>
+      <rect x="315" y="240" width="195" height="15" rx="3" fill="#1B4F72"/>
+      <text x="518" y="252" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1B4F72">25</text>
+      <text x="44" y="280" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-AUT</text>
+      <text x="128" y="280" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Autonomie &amp; supervision</text>
+      <rect x="315" y="268" width="180" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="503" y="280" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">23</text>
+      <text x="44" y="308" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-INT</text>
+      <text x="128" y="308" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Interopérabilité &amp; contrats</text>
+      <rect x="315" y="296" width="180" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="503" y="308" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">23</text>
+      <text x="44" y="336" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-MCP</text>
+      <text x="128" y="336" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Model Context Protocol</text>
+      <rect x="315" y="324" width="172" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="495" y="336" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">22</text>
+      <text x="44" y="364" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-IAM</text>
+      <text x="128" y="364" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Zéro confiance, NHI &amp; OBO</text>
+      <rect x="315" y="352" width="164" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="487" y="364" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">21</text>
+      <text x="44" y="392" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-GOV</text>
+      <text x="128" y="392" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Gouvernance &amp; cycle de vie</text>
+      <rect x="315" y="380" width="156" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="479" y="392" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">20</text>
+      <text x="44" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-APP</text>
+      <text x="128" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Approvisionnement &amp; clauses</text>
+      <rect x="315" y="408" width="133" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="456" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">17</text>
+      <text x="44" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-A2A</text>
+      <text x="128" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Protocole pair Agent2Agent</text>
+      <rect x="315" y="436" width="117" height="15" rx="3" fill="#1D4ED8"/>
+      <text x="440" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">15</text>
+      <text x="44" y="476" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-OBS</text>
+      <text x="128" y="476" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Traçage &amp; journal d'audit</text>
+      <rect x="315" y="464" width="101" height="15" rx="3" fill="#0F766E"/>
+      <text x="424" y="476" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">13</text>
+      <text x="44" y="504" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-AMF</text>
+      <text x="128" y="504" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Profil AMF IA (Québec)</text>
+      <rect x="315" y="492" width="94" height="15" rx="3" fill="#0F766E"/>
+      <text x="417" y="504" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">12</text>
+      <text x="44" y="532" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-EVT</text>
+      <text x="128" y="532" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Maillage événementiel</text>
+      <rect x="315" y="520" width="78" height="15" rx="3" fill="#0F766E"/>
+      <text x="401" y="532" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">10</text>
+      <text x="44" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-FIN</text>
+      <text x="128" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">FinOps &amp; coûts unitaires</text>
+      <rect x="315" y="548" width="78" height="15" rx="3" fill="#0F766E"/>
+      <text x="401" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">10</text>
+      <text x="44" y="588" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F2942">EXIG-EVA</text>
+      <text x="128" y="588" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#475569">Évaluation continue EvalOps</text>
+      <rect x="315" y="576" width="47" height="15" rx="3" fill="#0F766E"/>
+      <text x="370" y="588" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">6</text>
+    </g>
+  </g>
+  <g id="zone-Z2">
+    <rect x="624" y="98" width="556" height="250" rx="10" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.8"/>
+    <rect x="624" y="98" width="556" height="34" rx="10" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.5"/>
+    <text x="638" y="120" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7F1D1D">Z2 · Concentration des 24 portes bloquantes PRR-75 (sur 75 points · 15 par grille)</text>
+    <g id="node-2" class="node" data-node="true">
+      <rect x="638" y="142" width="528" height="194" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+      <text x="650" y="170" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">S · Sécurité</text>
+      <rect x="795" y="157" width="260" height="18" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <rect x="795" y="157" width="138" height="18" rx="4" fill="#B91C1C"/>
+      <text x="1064" y="170" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#B91C1C">8 BLOQ. / 15</text>
+      <text x="650" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">G · Gouvernance</text>
+      <rect x="795" y="191" width="260" height="18" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <rect x="795" y="191" width="121" height="18" rx="4" fill="#D97706"/>
+      <text x="1064" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#D97706">7 BLOQ. / 15</text>
+      <text x="650" y="238" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">R · Résilience</text>
+      <rect x="795" y="225" width="260" height="18" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <rect x="795" y="225" width="86" height="18" rx="4" fill="#1D4ED8"/>
+      <text x="1064" y="238" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#1D4ED8">5 BLOQ. / 15</text>
+      <text x="650" y="272" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">O · Observabilité</text>
+      <rect x="795" y="259" width="260" height="18" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <rect x="795" y="259" width="34" height="18" rx="4" fill="#0F766E"/>
+      <text x="1064" y="272" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#0F766E">2 BLOQ. / 15</text>
+      <text x="650" y="306" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0F2942">F · FinOps</text>
+      <rect x="795" y="293" width="260" height="18" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <rect x="795" y="293" width="34" height="18" rx="4" fill="#4338CA"/>
+      <text x="1064" y="306" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#4338CA">2 BLOQ. / 15</text>
+    </g>
+  </g>
+  <g id="zone-Z3">
+    <rect x="624" y="358" width="556" height="260" rx="10" fill="#F8FAFC" stroke="#047857" stroke-width="1.8"/>
+    <rect x="624" y="358" width="556" height="34" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+    <text x="638" y="380" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#064E3B">Z3 · Anatomie des 95 liaisons exécutables à la barrière G0</text>
+    <g id="node-3" class="node" data-node="true">
+      <rect x="638" y="402" width="258" height="64" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="650" y="423" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#0F2942">C40 Blueprints (40)</text>
+      <text x="650" y="442" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Critères C01–C40 vérifiés</text>
+      <text x="650" y="458" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">sur bp1, bp2 et bp3 (DIV-02).</text>
+    </g>
+    <g id="node-4" class="node" data-node="true">
+      <rect x="908" y="402" width="258" height="64" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="920" y="423" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#0F2942">PRR Bloquants (24)</text>
+      <text x="920" y="442" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">24/24 portes éliminatoires</text>
+      <text x="920" y="458" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">traduites en tests bloquants.</text>
+    </g>
+    <g id="node-5" class="node" data-node="true">
+      <rect x="638" y="476" width="258" height="64" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.8"/>
+      <text x="650" y="497" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#0F2942">Exigences clés (24)</text>
+      <text x="650" y="516" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">Règles CRE-IA v1.2 scellées</text>
+      <text x="650" y="532" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">avec assertions comportementales.</text>
+    </g>
+    <g id="node-6" class="node" data-node="true">
+      <rect x="908" y="476" width="258" height="64" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="1.8"/>
+      <text x="920" y="497" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#0F2942">5 SBB + CAP + ADR (7)</text>
+      <text x="920" y="516" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">5 SBB Tome 2, CAP-048,</text>
+      <text x="920" y="532" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.3" fill="#1E293B">et gabarit ADR-2027-B001.</text>
+    </g>
+    <g id="node-7" class="node" data-node="true">
+      <rect x="638" y="550" width="528" height="56" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="1.8"/>
+      <text x="650" y="571" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#064E3B">Preuve mécanique G0 (rapport de scellage à exit 0)</text>
+      <text x="650" y="590" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">83/83 tests pytest · 45/45 assertions OPA Rego (100,0 %) · 50/50 vecteurs tiers (4 suites) · 14/14 CA-G0-SYNC.</text>
+    </g>
+  </g>
+  <g id="flows-bar">
+    <rect x="20" y="630" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="34" y="652" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
+    <text x="34" y="672" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① ORC (30), CON (30), SEC (28) et ARC (25) concentrent 37 % des 305</text>
+    <text x="34" y="688" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">exigences normatives CRE-IA v1.2.</text>
+    <text x="610" y="672" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Sécurité (8) et Gouvernance (7) totalisent 15 des 24 portes</text>
+    <text x="610" y="688" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">bloquantes éliminatoires de la grille PRR-75.</text>
+    <text x="34" y="714" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ La barrière G0 exécute 95 liaisons formelles couvrant C01–C40, 24</text>
+    <text x="34" y="730" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">PRR, 24 EXIG et les 5 SBB.</text>
+    <text x="610" y="714" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Tout échec sur l'un de ces 95 contrôles maintient la mise en</text>
+    <text x="610" y="730" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">production fermée (exit ≠ 0).</text>
+  </g>
+  <g id="legend-bar">
+    <rect x="20" y="758" width="1160" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="34" y="771" width="18" height="18" rx="4" fill="#1B4F72" stroke="#1B4F72" stroke-width="2"/>
+    <text x="60" y="784" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">Distribution des 305 exigences CRE-IA v1.2</text>
+    <rect x="411" y="771" width="18" height="18" rx="4" fill="#B91C1C" stroke="#B91C1C" stroke-width="2"/>
+    <text x="437" y="784" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">24 portes bloquantes PRR-75</text>
+    <rect x="788" y="771" width="18" height="18" rx="4" fill="#047857" stroke="#047857" stroke-width="2"/>
+    <text x="814" y="784" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#1E293B">95 liaisons exécutables en G0 (pytest + OPA)</text>
+  </g>
+  <g id="takeaway-box">
+    <rect x="20" y="812" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
+    <text x="36" y="834" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
+    <text x="36" y="854" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">La conformité cesse d'être déclarative : 305 exigences, 24 verrous bloquants et 95 liaisons G0 imposent un verdict binaire avant</text>
+    <text x="36" y="871" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">toute mise en exploitation.</text>
+  </g>
+</svg>

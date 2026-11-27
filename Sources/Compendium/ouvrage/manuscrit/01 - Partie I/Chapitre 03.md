@@ -43,6 +43,12 @@ La qualification temporelle sépare parallèlement le droit ou l'état acquis à
 
 En outre, cette discipline probatoire prévient l'inflation artificielle des retours sur investissement calculés sur des scénarios idéaux. En obligeant chaque promoteur de projet à étiqueter séparément ce qui relève d'une exigence légale contraignante (`[N]`), d'une mesure expérimentale arbitrée (`[M]`), d'une spécification ouverte (`[É]`) ou d'une hypothèse architecturale (`[S]`), le comité d'investissement distingue clairement les fondations certaines des paris prospectifs. Les quatre dettes cumulatives de parc documentées au *Tableau 3.2* — croissance quadratique des connecteurs `N×M` par rapport à `N+M`, prolifération non gouvernée des identités non humaines et dérive silencieuse des serveurs `MCP` (`40,58 %` [4]), perte de traçabilité des décisions et absence d'oracles de test — sont ainsi chiffrées dès l'étude d'opportunité plutôt que découvertes après coup en production.
 
+La *Figure 14* confronte la matrice coasienne à la dispersion de marché, au `CapEx` `2026` et à la maturité vérifiée.
+
+![Matrice coasienne 2x2 et choc d'échelle entre six périmètres de marché, CapEx 2026 et adoption réelle](../../schemas/rendus/SCH-03-04.svg)
+
+*Figure 14 — SCH-03-04 : Matrice coasienne `2×2` (`Z1`), dispersion `1`–`59` face aux `703–713 G$ US` de `CapEx` (`Z2`) et adoption réelle (`Z3`).*
+
 ### 3.1.3 Arbitrage `Acheter` / `Assembler` / `Construire` et routage frugal `SLM` / `LLM`
 
 Sous l'effet composé de la croissance du calcul effectif (`~10×` par an selon les séries documentées au Chapitre 01) et de la baisse des tarifs d'inférence (`5×` à `13×` par an à score constant), les éditeurs de suites logicielles proposent des agents préintégrés séduisants à court terme. Toutefois, ces offres adoptent fréquemment une posture « ouverte sur le fil, fermée sur le plan de contrôle » : elles acceptent des connecteurs standardisés en périphérie, mais enferment l'état de session, l'identité, les règles d'autorisation et les journaux d'audit dans un jardin clos propriétaire (modèle dit *bowling-shoe* par opposition à l'architecture *Bring Your Own* contrôlée par l'institution [1]). En milieu réglementé, où `63 %` des `413` praticiens et dirigeants interrogés par DataRobot en `2026` indiquent que leur organisation exige un déploiement sur site pour l'IA agentique — le mode hybride affichant parallèlement la plus forte croissance projetée à `44,85 %` par an sur `2027–2032` [7] —, cette captivité entre en conflit direct avec les plans de sortie exigés par la ligne directrice `BSIF B-10` [15].
@@ -59,11 +65,11 @@ Pour éviter ce piège, toute initiative DOIT franchir un **arbre décisionnel �
 
 *Tableau 3.1 — Arbre décisionnel à cinq portes `Acheter` / `Assembler` / `Construire` (grille portefeuille `C04`).*
 
-La *Figure 11* articule la bascule coasienne vers le quadrant « Conçue × Perméable », le filtrage de la dispersion des études de marché et l'arbre à cinq portes aboutissant aux cinq critères permanents.
+La *Figure 15* articule la bascule coasienne vers le quadrant « Conçue × Perméable », le filtrage de la dispersion des études de marché et l'arbre à cinq portes aboutissant aux cinq critères permanents.
 
 ![Économie coasienne, piège des jardins clos SaaS et arbre à cinq portes Acheter / Assembler / Construire](../../schemas/rendus/SCH-03-01.png)
 
-*Figure 11 — SCH-03-01 : Arbitrage stratégique combinant quadrant coasien « Conçue × Perméable » (`Z1`), arbre à cinq portes `Acheter` / `Assembler` / `Construire` (`Z2`) et évaluation selon les cinq critères permanents (grille `C04`, `Z3`).*
+*Figure 15 — SCH-03-01 : Arbitrage stratégique combinant quadrant coasien « Conçue × Perméable » (`Z1`), arbre à cinq portes `Acheter` / `Assembler` / `Construire` (`Z2`) et évaluation selon les cinq critères permanents (grille `C04`, `Z3`).*
 
 Sur le plan de l'économie opérationnelle des jetons, l'optimisation ne peut compter sur la seule baisse du prix facial au million de jetons. Dans un pipeline multi-tours où les jetons d'entrée représentent couramment plus de `97 %` du volume traité, la relecture répétée de l'historique conversationnel, du contexte et des définitions d'outils à chaque itération engendre une croissance quadratique des coûts d'entrée, amplifiée par trois multiplicateurs : les itérations en boucle, la topologie d'échange entre acteurs et les définitions d'outils facturées à chaque tour. S'y ajoutent les budgets de jetons de réflexion cachés facturés en sortie sur les modèles raisonneurs, ainsi que la dette d'évolution inter-versions inhérente à l'apprentissage par renforcement vérifiable lorsque les schémas d'outils changent.
 
@@ -103,11 +109,11 @@ Enfin, la **dette de couplage global** verrouille l'organisation. Lorsque la log
 
 *Tableau 3.2 — Mécanisme de la quadruple dette agentique et parades normatives.*
 
-La *Figure 12* illustre cet engrenage à quatre roues dentées ainsi que sa neutralisation par la discipline probatoire `[N]/[M]/[É]/[S]`, l'externalisation des règles d'intention et le routage frugal vers des `SLM`.
+La *Figure 16* illustre cet engrenage à quatre roues dentées ainsi que sa neutralisation par la discipline probatoire `[N]/[M]/[É]/[S]`, l'externalisation des règles d'intention et le routage frugal vers des `SLM`.
 
 ![Engrenage de la quadruple dette agentique, preuve N / M / É / S et économie des jetons SLM/LLM](../../schemas/rendus/SCH-03-02.svg)
 
-*Figure 12 — SCH-03-02 : Boucle fermée de la quadruple dette agentique (`Z1`), bouclier épistémique `[N]/[M]/[É]/[S]` et sortie de la prose vers des contrats versionnés (`Z2`), et régulation économique par `SLM` et `KV-cache` (`Z3`).*
+*Figure 16 — SCH-03-02 : Boucle fermée de la quadruple dette agentique (`Z1`), bouclier épistémique `[N]/[M]/[É]/[S]` et sortie de la prose vers des contrats versionnés (`Z2`), et régulation économique par `SLM` et `KV-cache` (`Z3`).*
 
 ### 3.2.2 Coût quadratique de non-interopérabilité, généalogie `EAI`–`FIPA` et invariant à quatre termes
 
@@ -128,11 +134,11 @@ Pour pérenniser cette réduction combinatoire de `N×M` intégrations vers `N+M
 
 L'application systématique de ces quatre termes protège les processus durables contre l'obsolescence des cadriciels : un modèle ou progiciel se remplace sans briser l'exécution ni la traçabilité prudentielle, tout en simplifiant la rotation des secrets `NHI` et l'audit des flux inter-domaines.
 
-La *Figure 13* visualise cette transition de vingt connecteurs fragiles à neuf contrats ouverts sous l'invariant à quatre termes et l'héritage `EAI` → `SOA` → `API` → `EDA`.
+La *Figure 17* visualise cette transition de vingt connecteurs fragiles à neuf contrats ouverts sous l'invariant à quatre termes et l'héritage `EAI` → `SOA` → `API` → `EDA`.
 
 ![De vingt connecteurs fragiles (N×M) à neuf contrats ouverts (N+M) : vingt ans d'intégration et l'invariant à quatre termes](../../schemas/rendus/SCH-03-03.svg)
 
-*Figure 13 — SCH-03-03 : Comparatif entre maillage quadratique `N×M` et leçon de l'échec `FIPA-ACL` (`Z1`), bus linéaire `N+M` issu de quatre générations d'intégration (`Z2`) et socle de l'invariant à quatre termes (`Z3`).*
+*Figure 17 — SCH-03-03 : Comparatif entre maillage quadratique `N×M` et leçon de l'échec `FIPA-ACL` (`Z1`), bus linéaire `N+M` issu de quatre générations d'intégration (`Z2`) et socle de l'invariant à quatre termes (`Z3`).*
 
 ## 3.3 Synthèse opératoire, exigences `D01-03` et frontières d'architecture
 

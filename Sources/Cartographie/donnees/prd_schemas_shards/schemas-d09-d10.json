@@ -1059,6 +1059,75 @@
       ]
     },
     {
+      "schema_id": "SCH-28-04",
+      "chapter_number": 28,
+      "domain_id": "D10",
+      "subdomain_node_id": "SUB_D10_01",
+      "families_covered": [
+        "FAM_D10_01_01"
+      ],
+      "themes_vulgarized": [
+        "vertical-financier-durci",
+        "profils-financiers-5-secteurs"
+      ],
+      "title": "Double qualification (BSIF E-23 ∩ BSIF B-10) et six facteurs de durcissement financier",
+      "insertion_point": "Chapitre 28 §28.2.1 — juste après la présentation des six facteurs de durcissement financier",
+      "target_audiences": [
+        "Direction / Métier",
+        "Juridique / Conformité",
+        "AE / AS"
+      ],
+      "visual_archetype": "Matrice visuelle de risques et garde-fous",
+      "recommended_notation": "PlantUML",
+      "pedagogical_objective": "Ce schéma met en relief le patron-signature du secteur financier — la double qualification simultanée d'un Système d'agentivité comme modèle au sens de BSIF E-23 et comme actif tiers technologique sous BSIF B-10 — tout en le situant au centre des six facteurs de durcissement exposés en §28.2.1 (finalité irrévocable, risque systémique, responsabilité civile illustrée par Moffatt c. Air Canada, fraude/LBC et FINOS AI Governance v2.0).",
+      "vulgarization_angle": "Montrer en un diagramme central pourquoi aucun outil commercial ne libère une banque ou un assureur de tenir deux registres réglementaires coordonnés sur un même agent.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Noyau de double qualification prudentielle (BSIF E-23 ∩ BSIF B-10)",
+            "content": "Intersection obligatoire de l'agent comme Modèle (inventaire, cotation de risque, dérive, suivi continu dès le 1er mai 2027) et comme Tiers TIC (ententes intra-groupe, plans de sortie, réversibilité)."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Couronne des six facteurs de durcissement financier",
+            "content": "Articulation des facteurs : (1) irréversibilité de règlement, (2) risque systémique procyclique FSB/BoE/ESRB, (3) imputabilité de conduite, (4) double qualification, (5) fraude/LBC-AML et (6) standardisation FINOS / fiabilité de bout en bout."
+          }
+        ],
+        "numbered_flows": [
+          "① Un même composant agentique inscrit au registre déclenche simultanément les contrôles de modèle E-23 et de tiers B-10.",
+          "② Les six facteurs sectoriels durcissent le socle horizontal par une séparation stricte entre préparation probabiliste et exécution déterministe.",
+          "③ Aucun fournisseur externe ne dégage l'institution de l'imputabilité juridique ni de la preuve de réversibilité."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Indigo (#4338CA)",
+            "meaning": "Volet modèle : ligne directrice BSIF E-23 et surveillance continue"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Volet tiers TIC : ligne directrice BSIF B-10, contrats et plans de sortie"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Facteurs d'irréversibilité, fraude/LBC et risque systémique exigeant un tampon déterministe"
+          }
+        ],
+        "key_takeaway_box": "En finance réglementée, chaque agent cumule deux chapeaux : un modèle à homologuer sous E-23 et un actif tiers réversible sous B-10."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 31.2",
+          "title": "La double-qualification : l’agent comme modèle et comme tiers TIC.",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-31.2 - La double-qualification - l'agent comme modèle et comme tiers TIC.puml",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-31.2.svg",
+          "role_note": "Formalise le concept fondateur de double qualification simultanée modèle et tiers TIC."
+        }
+      ]
+    },
+    {
       "schema_id": "SCH-29-01",
       "chapter_number": 29,
       "domain_id": "D10",
@@ -1357,6 +1426,144 @@
           "role_note": "Matérialise le banc EvalOps hermétique reproductible qui substitue des mesures CI vérifiables à toute estimation fictive."
         }
       ]
+    },
+    {
+      "schema_id": "SCH-29-04",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "subdomain_node_id": "SUB_D10_02",
+      "families_covered": [
+        "FAM_D10_02_01"
+      ],
+      "themes_vulgarized": [
+        "blueprints-reference-multisectoriels",
+        "federation-multi-plateformes-gravite"
+      ],
+      "title": "Cycle Naissance, Vie et Mort d'un agent d'entreprise sur les strates C1–C8",
+      "insertion_point": "Chapitre 29 §29.1.1 — juste après le paragraphe sur la continuité du cycle de vie (§45.15 du Tome 1)",
+      "target_audiences": [
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Parcours séquentiel illustré",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette frise matricielle croise les trois phases continues du cycle de vie d'un agent (Naissance, Vie opérationnelle, Mort et archivage) avec les huit strates techniques C1–C8 du socle unifié, afin d'empêcher que l'enregistrement au catalogue, l'attribution des droits et l'émission cryptographique restent trois actes disjoints sans ancrage commun ni propagation de révocation.",
+      "vulgarization_angle": "Montrer verticalement ce qui se passe à travers les 8 strates C1–C8 à chaque étape d'existence d'un agent, de son enregistrement initial jusqu'à son retrait définitif.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Phase Naissance — Inscription, mandat et jetons vérifiables",
+            "content": "Création coordonnée sur C1–C8 : gabarit gouverné, enregistrement au catalogue distinct du registre opposable, attribution SPIFFE/NHI et admission bloquante."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Phase Vie — Délégation OBO, télémétrie OTel et rotation crypto-agile",
+            "content": "Exécution routée via C1–C5 et surveillée en C6–C8 : échanges RFC 8693 par arête, traces OpenTelemetry GenAI, évaluation continue et rotation de clés sans rupture."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Phase Mort — Révocation propagée, désactivation et archive probatoire",
+            "content": "Suppression coordonnée sur toutes les strates : révocation SSF/CAEP, retrait d'admission au maillage, purge des accès et scellement immuable WORM imputable."
+          }
+        ],
+        "numbered_flows": [
+          "① À la naissance, le registre, l'identité NHI et les règles OPA naissent d'un même commit atomique.",
+          "② En exploitation, chaque strate C1–C8 maintient l'isolation des secrets et exporte la télémétrie corrélée par identifiant.",
+          "③ Au retrait, la révocation coupe simultanément passerelles et maillage tout en préservant l'archive probatoire imputable au mandant."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Naissance gouvernée et validation d'admission sur C1–C8"
+          },
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Vie opérationnelle, rotation cryptographique et télémétrie continue"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Mort d'agent, propagation de révocation et scellement WORM"
+          }
+        ],
+        "key_takeaway_box": "Un agent n'est gouvernable que si sa naissance, sa délégation en vie et sa révocation à la mort s'ancrent de manière continue dans les huit strates C1–C8."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T1",
+          "fig_id": "Figure 45.2",
+          "title": "Naissance, vie et mort d’un agent d’entreprise (convention graphique des frises : nœud plein = temps outillé ; nœud ouvert = temps le moins outillé ou à venir).",
+          "source_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/Figure-45.2 - Naissance, vie et mort d'un agent d'entreprise.mmd",
+          "rendered_path": "Sources/Tomes/Tome 1 - Confiance protocolaire et encadrement financier/Diagrammes/rendus/Figure-45.2.png",
+          "role_note": "Établit le fil chronologique Naissance, vie et mort d'un agent d'entreprise transposé sur les strates C1–C8."
+        }
+      ]
+    },
+    {
+      "schema_id": "SCH-29-05",
+      "chapter_number": 29,
+      "domain_id": "D10",
+      "subdomain_node_id": "SUB_D10_02",
+      "families_covered": [
+        "FAM_D10_02_02"
+      ],
+      "themes_vulgarized": [
+        "reprise-sinistre-cognitif-continuite",
+        "federation-multi-plateformes-gravite"
+      ],
+      "title": "Chronogramme Cognitive DR (RTO < 15 min) et bandes d'homologation pass^5_DR",
+      "insertion_point": "Chapitre 29 §29.2.2 — juste après l'exposé des jalons T+30 s, T+3 min, T+12 min et des seuils pass^5_DR",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Frise chronologique et jalons",
+      "recommended_notation": "Infographie SVG bilingue métier-tech",
+      "pedagogical_objective": "Cette planche visuelle détaille la mécanique quantitative du Cognitive DR (ADR-027) omise des vues globales : le chronogramme séquentiel de bascule respectant RTO < 15 minutes et RPO = 0 (T+30 s quiescence et purge Open Responses, T+3 min préchargement NVMe ≤ 180 s, T+12 min validation Canary vLLM/SGLang) et l'arbitre à trois bandes pass^5_DR / pass^5_nominal pilotant le resserrement HOTL ou la file humaine.",
+      "vulgarization_angle": "Rendre concrète la continuité cognitive d'urgence comme un plan de vol chronométré couplé à un feu tricolore statistique qui interdit de basculer vers un modèle de secours dégradé sans filet.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Déclenchement cognitive_dr_switch.py et T+30 s (RPO = 0)",
+            "content": "Détection automatique (taux d'erreur ≥ 0,08, p95_ttft_ms ≥ 12 000 ou ≥ 25 erreurs 429/5xx), quiescence Temporal et purge des blocs de raisonnement opaques via Open Responses."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Bascule passerelle & NVMe (T+3 min) puis validation Canary (T+12 min)",
+            "content": "Préchargement des poids ouverts en ≤ 180 s sur grappe vLLM/SGLang, embeddings internes permanents (100 % interrogeables) et vérification schémas MCP avant cible RTO < 15 min."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Arbitre de parité pass^5_DR face à pass^5_nominal",
+            "content": "Trois bandes : ≥ 0,94 × nominal (homologation complète), [0,90 ; 0,94[ × nominal (urgence sous HOTL resserré de −15 % à −25 %, facteur 0,80), et < 0,90 × nominal (SAFE_HOLD_L2_HUMAN_QUEUE)."
+          }
+        ],
+        "numbered_flows": [
+          "① Sur défaillance du fournisseur principal, l'adaptateur Open Responses purge les états opaques sans perte d'état Temporal (RPO = 0).",
+          "② Le préchargement NVMe (≤ 180 s) et les embeddings ouverts précompilés restaurent la grappe souveraine vLLM/SGLang avant le jalon T+12 min.",
+          "③ L'indice pass^5_DR décide automatiquement entre reprise normale, plafond HOTL resserré (0,80) ou routage vers la file humaine."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Parité pass^5_DR ≥ 0,94 · pass^5_nominal et reprise validée < 15 min"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Zone intermédiaire [0,90 ; 0,94[ : bascule d'urgence sous HOTL × 0,80"
+          },
+          {
+            "color_token": "Corail (#B91C1C)",
+            "meaning": "Seuil de déclenchement sinistre ou plancher < 0,90 vers file humaine"
+          }
+        ],
+        "key_takeaway_box": "Une reprise après sinistre cognitif se teste comme un basculement mécanique < 15 min sous contrôle de parité pass^5_DR, jamais comme une substitution improvisée de modèle."
+      },
+      "reuse_status": "creation_originale",
+      "linked_tome_figures": []
     },
     {
       "schema_id": "SCH-30-01",
@@ -1662,6 +1869,81 @@
           "source_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/Fig-22.mmd",
           "rendered_path": "Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-22.png",
           "role_note": "Fournit une vue synthétique immédiatement actionnable pour la direction sur les jalons 90, 180 et 360 jours."
+        }
+      ]
+    },
+    {
+      "schema_id": "SCH-30-04",
+      "chapter_number": 30,
+      "domain_id": "D10",
+      "subdomain_node_id": "SUB_D10_03",
+      "families_covered": [
+        "FAM_D10_03_01"
+      ],
+      "themes_vulgarized": [
+        "plateforme-iap-gitops-cognitif",
+        "passage-echelle-parc-agents",
+        "fabrique-agents-certification-reemission"
+      ],
+      "title": "Topologie organisationnelle Team Topologies et ArchiMate reliant l'IAP aux blueprints",
+      "insertion_point": "Chapitre 30 §30.1.3 — après le paragraphe sur la chaîne GitOps cognitif et SLSA v1.2, avant l'invariant exécutable",
+      "target_audiences": [
+        "Direction / Métier",
+        "AE / AS",
+        "Ingénierie / RSSI / SRE"
+      ],
+      "visual_archetype": "Métaphore architecturale en couches",
+      "recommended_notation": "PlantUML",
+      "pedagogical_objective": "Ce schéma complète la chaîne technique SCH-30-01 en exposant la topologie humaine d'exécution inspirée de Team Topologies et d'ArchiMate : l'équipe Plateforme exposant les Golden Paths IAP en libre-service X-as-a-Service, la Cellule habilitante accompagnant EvalOps/FinOps/2LoD, et les Équipes alignées sur les flux métier livrant sur bp1, bp2 et bp3 sans contourner la voie pavée.",
+      "vulgarization_angle": "Montrer qui construit, qui habilite et qui consomme la plateforme interne agentique afin que la voie conforme devienne organisationnellement plus rapide que le Shadow AI.",
+      "visual_blueprint": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "label": "Équipes alignées sur les flux métier (bp1, bp2, bp3)",
+            "content": "Équipes produits propriétaires de la logique métier et des façades MCP, consommant les Golden Paths en libre-service sans administrer les grappes ni contourner la gouvernance."
+          },
+          {
+            "zone_id": "Z2",
+            "label": "Cellule habilitante & Centre d'excellence CoE (EvalOps, FinOps, 2LoD)",
+            "content": "Accompagnement temporaire sur les contrats OASF/MCP, politiques OPA/Rego, bancs Wilson et critères de maturité AAGMM J90–J360."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Équipe Plateforme IAP (X-as-a-Service : Backstage, Kratix, Crossplane, SLSA)",
+            "content": "Fourniture automatisée des identités NHI sans secret statique, passerelle MCP, Argo CD + Cosign et Worker Versioning Temporal."
+          }
+        ],
+        "numbered_flows": [
+          "① Les équipes alignées sur les flux demandent un gabarit de service via les Golden Paths de l'IAP (X-as-a-Service).",
+          "② L'équipe Plateforme provisionne automatiquement identité SPIFFE, télémétrie OTel, passerelle MCP et chaîne SLSA v1.2 / GitOps quintette.",
+          "③ La cellule habilitante CoE transfère l'autonomie sur EvalOps/FinOps et lève les goulots avant réintégration aux comités ARB."
+        ],
+        "color_legend": [
+          {
+            "color_token": "Bleu ardoise (#1B4F72)",
+            "meaning": "Équipes alignées sur les flux métier et blueprints sectoriels bp1–bp3"
+          },
+          {
+            "color_token": "Vert émeraude (#047857)",
+            "meaning": "Équipe Plateforme IAP (X-as-a-Service) et Golden Paths automatisés"
+          },
+          {
+            "color_token": "Ambre (#D97706)",
+            "meaning": "Cellule habilitante CoE, 2LoD et contrôle bloquant d'admission ARB"
+          }
+        ],
+        "key_takeaway_box": "L'IAP réussit par la topologie d'équipes : si le Golden Path est servi X-as-a-Service avec identité et EvalOps intégrés, les équipes métier abandonnent d'elles-mêmes le Shadow AI."
+      },
+      "reuse_status": "adaptation_vulgarisee",
+      "linked_tome_figures": [
+        {
+          "tome_id": "T6",
+          "fig_id": "Fig. 56",
+          "title": "Modèle opérationnel ArchiMate et topologie d’équipes Team Topologies reliant l’IAP aux trois blueprints sectoriels",
+          "source_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/Fig-56 - Modèle opérationnel ArchiMate et topologie d'équipes Team Topologies.puml",
+          "rendered_path": "Sources/Tomes/Tome 6 - Architecture multisectorielle et patrons de référence/Diagrammes/rendus/Fig-56.svg",
+          "role_note": "Structure le modèle opérationnel ArchiMate et la topologie Team Topologies entre IAP et blueprints sectoriels."
         }
       ]
     }

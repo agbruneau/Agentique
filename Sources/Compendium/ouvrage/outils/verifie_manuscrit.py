@@ -3,7 +3,7 @@
 """Barrière déterministe G1 du Compendium (`verifie_manuscrit.py`).
 
 Contrôle CA-01..CA-12, CA-17, CA-20 (CA-G0-SYNC), CA-21 (owned_concepts),
-CA-22 (charte fr-CA + 115 schémas) et AO-03.
+CA-22 (charte fr-CA + 139 schémas) et AO-03.
 """
 
 from __future__ import annotations
@@ -67,7 +67,7 @@ _HTML_ENTITY_RE = re.compile(r"&(?:#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]+);")
 _INLINE_MATH_RE = re.compile(r"\\\(.*?\\\)|\\\[.*?\\\]", re.DOTALL)
 _DECIMAL_DOT_RE = re.compile(r"(?<=\d)\.(?=\d)")
 _SECTION_REF_RE = re.compile(r"§\s*\d+(?:\.\d+)*")
-_CAPTION_FIG_RE = re.compile(r"^\*Figure\s+(?:SCH-\d{2}-\d{2}|\d+)\s*[—–-]")
+_CAPTION_FIG_RE = re.compile(r"^\*Figure\s+(?:SCH-(?:\d{2}|A[A-E])-\d{2}|\d+)\s*[—–-]")
 _CAPTION_TAB_DOT_RE = re.compile(r"^\*Tableau\s+(\d+)\.(\d+)\s*[—–-]")
 _CAPTION_TAB_BARE_RE = re.compile(r"^\*Tableau\s+(\d+)\s*[—–-]")
 
@@ -746,6 +746,48 @@ def _check_ca02_unit(
     return errors
 
 
+def _check_unit_figures(lines: list[str], offset: int, ufile: str, unit_meta: dict) -> list[str]:
+    """Vérifie l'inclusion et l'ordre exact des figures assignées à une unité."""
+    errors: list[str] = []
+    expected_figs: list[str] = list(unit_meta.get("figures", []))
+    included_figs: list[str] = []
+    joined_body = "\n".join(lines)
+    for lidx, line in enumerate(lines):
+        for m_img in re.finditer(r"!\[([^\]]*)\]\(([^)]+)\)", line):
+            m_fid = re.search(r"(SCH-(?:\d{2}|A[A-E])-\d{2})\.(?:svg|png)", m_img.group(2))
+            if not m_fid:
+                continue
+            fid = m_fid.group(1)
+            included_figs.append(fid)
+            caption_found = False
+            checked = 0
+            for j in range(lidx + 1, min(len(lines), lidx + 6)):
+                nxt = lines[j].strip()
+                if not nxt:
+                    continue
+                checked += 1
+                if _CAPTION_FIG_RE.match(nxt) and (fid in nxt or re.match(r"^\*Figure\s+\d+", nxt)):
+                    caption_found = True
+                    break
+                if checked >= 2:
+                    break
+            if not caption_found:
+                errors.append(
+                    f"[CA-04] Legende `*Figure {fid} — ...*` manquante apres l'inclusion de {fid} dans {ufile} (ligne {offset + lidx + 1})"
+                )
+
+    for fid in expected_figs:
+        if fid not in included_figs and fid not in joined_body:
+            errors.append(f"[CA-04] Schema assigne {fid} non reference dans {ufile}")
+        elif fid not in included_figs:
+            errors.append(f"[CA-04] Schema assigne {fid} sans inclusion Markdown `![...](...{fid}.svg/.png)` dans {ufile}")
+    if expected_figs and included_figs != expected_figs:
+        errors.append(
+            f"[CA-04] Ordre ou liste d'inclusion des schemas incorrect dans {ufile} : {included_figs} != {expected_figs}"
+        )
+    return errors
+
+
 def _check_ca04_unit(text: str, unit_meta: dict) -> list[str]:
     uid = unit_meta["id"]
     ufile = unit_meta["file"]
@@ -778,41 +820,7 @@ def _check_ca04_unit(text: str, unit_meta: dict) -> list[str]:
         if not re.search(r"^>\s*\*\*Trois invariants exécutables", body, re.MULTILINE):
             errors.append(f"[CA-04] Encadre `> **Trois invariants exécutables — Chapitre {num}**` manquant dans {ufile}")
 
-    expected_figs: list[str] = list(unit_meta.get("figures", []))
-    included_figs: list[str] = []
-    for lidx, line in enumerate(lines):
-        for m_img in re.finditer(r"!\[([^\]]*)\]\(([^)]+)\)", line):
-            m_fid = re.search(r"(SCH-\d{2}-\d{2})\.(?:svg|png)", m_img.group(2))
-            if not m_fid:
-                continue
-            fid = m_fid.group(1)
-            included_figs.append(fid)
-            caption_found = False
-            checked = 0
-            for j in range(lidx + 1, min(len(lines), lidx + 6)):
-                nxt = lines[j].strip()
-                if not nxt:
-                    continue
-                checked += 1
-                if _CAPTION_FIG_RE.match(nxt) and (fid in nxt or re.match(r"^\*Figure\s+\d+", nxt)):
-                    caption_found = True
-                    break
-                if checked >= 2:
-                    break
-            if not caption_found:
-                errors.append(
-                    f"[CA-04] Legende `*Figure {fid} — ...*` manquante apres l'inclusion de {fid} dans {ufile} (ligne {offset + lidx + 1})"
-                )
-
-    for fid in expected_figs:
-        if fid not in included_figs and fid not in body:
-            errors.append(f"[CA-04] Schema assigne {fid} non reference dans {ufile}")
-        elif fid not in included_figs:
-            errors.append(f"[CA-04] Schema assigne {fid} sans inclusion Markdown `![...](...{fid}.svg/.png)` dans {ufile}")
-    if expected_figs and included_figs != expected_figs:
-        errors.append(
-            f"[CA-04] Ordre ou liste d'inclusion des schemas incorrect dans {ufile} : {included_figs} != {expected_figs}"
-        )
+    errors.extend(_check_unit_figures(lines, offset, ufile, unit_meta))
 
     chapter_prefix = 0 if uid == "00-liminaire" else int(uid[2:])
     sep_indices = [i for i, ln in enumerate(lines) if _TABLE_SEP_RE.match(ln)]
@@ -1221,7 +1229,7 @@ def _check_ca21_owned_concepts(manifest: dict, unit_texts: dict[str, str], check
 
 
 def _check_ca08_schemas(root: Path, manifest: dict, strict: bool = True) -> list[str]:
-    """Contrôle CA-08 & CA-22 (115/115 schémas sources + rendus valides)."""
+    """Contrôle CA-08 & CA-22 (139/139 schémas sources + rendus valides)."""
     try:
         import compile_schemas_compendium as csc  # type: ignore[import-not-found]
         if hasattr(csc, "compile_schemas"):
@@ -1232,8 +1240,8 @@ def _check_ca08_schemas(root: Path, manifest: dict, strict: bool = True) -> list
 
     errors: list[str] = []
     figures = manifest.get("figures", [])
-    if strict and len(figures) != 115:
-        errors.append(f"[CA-08] [CA-22] Nombre de schémas attendu = 115, trouvé {len(figures)}")
+    if strict and len(figures) != 139:
+        errors.append(f"[CA-08] [CA-22] Nombre de schémas attendu = 139, trouvé {len(figures)}")
 
     sch_dir = root / "schemas"
     rendus_dir = sch_dir / "rendus"
@@ -1504,6 +1512,10 @@ def check_manuscrit(
             errors.extend(_check_ca04_unit(text, u))
             errors.extend(_check_ca05_unit(text, u, wb, strict=strict))
             errors.extend(_check_ca10_unit(text, u, root))
+        elif u.get("figures"):
+            ann_body, ann_off = _strip_yaml_and_preserve_lines(text)
+            ann_body = _mask_fenced_code_preserving_lines(ann_body)
+            errors.extend(_check_unit_figures(ann_body.split("\n"), ann_off, ufile, u))
 
     errors.extend(_check_ca21_owned_concepts(manifest, unit_texts, check_global=(unit_id is None)))
 

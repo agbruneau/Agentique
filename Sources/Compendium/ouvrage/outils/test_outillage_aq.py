@@ -423,7 +423,7 @@ def _create_populated_compendium(tmp_path: Path) -> Path:
                 newline="\n",
             )
 
-    # 115 schémas + rendus
+    # 139 schémas + rendus
     sch_dir = book_dir / "schemas"
     rendus_dir = sch_dir / "rendus"
     rendus_dir.mkdir(parents=True)
