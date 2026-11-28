@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 16 — Identités non humaines parrainées, attestations SPIFFE/SPIRE et fondations d'identité décentralisée
+# Base documentaire fermée — Chapitre 16 — Identités non humaines parrainées (SIRH/IdP), attestations SPIFFE/SPIRE et fédération inter-entreprises (DID/VC, vLEI)
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

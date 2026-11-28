@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-AD-01 — Ventilation des 305 exigences CRE-IA, 24 portes bloquantes PRR et 95 liaisons G0</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Extraction directe de matrice-exig-prr-c40.json · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Extraction directe de matrice-exig-prr-c40.json · Interopérabilité &amp; automatisation agentique (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="590" height="520" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>

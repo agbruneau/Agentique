@@ -1022,7 +1022,7 @@ def _check_ca06_and_ca22_charter(
                 errors.append(f"[CA-22] Pronom indefini 'on'/'l'on' proscrit hors code et citations dans {unit_file} (ligne {lineno})")
             if _SYSTEMS_OF_AGENCY_RE.search(no_urls):
                 errors.append(
-                    f"[CA-22] Anglicisme 'Systems of Agency' proscrit (utiliser 'Systèmes d'agentivité') dans {unit_file} (ligne {lineno})"
+                    f"[CA-22] Anglicisme 'Systems of Agency' proscrit (utiliser 'automatisation agentique' ou 'Systèmes d'agentivité') dans {unit_file} (ligne {lineno})"
                 )
             if _ASCII_ARROW_RE.search(no_inline):
                 errors.append(f"[CA-22] Flèche ASCII (-> / <->) proscrite hors code dans {unit_file} (ligne {lineno})")

@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 30 — Usine logicielle GitOps et anti-patrons agentiques
+# Base documentaire fermée — Chapitre 30 — Industrialisation GitOps de l'automatisation agentique, asymétrie des suites d'entreprise, anti-patrons bloquants et sortie du RPA
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

@@ -537,8 +537,9 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"# {unit_meta['title']}",
         (
             f"Cette annexe consolidée est générée mécaniquement à la date de gel du {metrics['freeze_date']} (`CA-17`) "
-            "à partir du plan directeur du Compendium, du registre MindMap, du glossaire bilingue, du manifeste "
-            "`SHA-256` des sources ouvertes `L+`, du registre des exclusions `statut F` et des journaux d'ancrage `G2`."
+            "à partir du manifeste du traité *Interopérabilité et automatisation agentique des systèmes d'entreprise*, "
+            "du registre MindMap, du glossaire bilingue, du manifeste `SHA-256` des sources ouvertes `L+`, "
+            "du registre des exclusions `statut F` et des journaux d'ancrage `G2`."
         ),
         (
             f"Le socle documentaire fermé recense **{len(sources)} sources primaires ouvertes `L+`** hachées `SHA-256` "
@@ -693,10 +694,11 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
 
     # §2 — Numérotation continue (corrige le saut ## 1. -> ## 3.) en prose structurée par tranches
     hub_paras = [
-        "## 2. Analyse des vingt-cinq nœuds carrefours à plus fort degré relationnel",
+        "## 2. Analyse des vingt-cinq nœuds carrefours d'interopérabilité et d'automatisation",
         (
-            "Les vingt-cinq nœuds carrefours concentrent l'essentiel du couplage transversal entre l'architecture "
-            "déterministe, la sécurité protocolaire, l'observabilité probatoire et la conformité prudentielle."
+            "Les vingt-cinq nœuds carrefours concentrent l'essentiel du couplage transversal entre la médiation "
+            "d'interopérabilité protocolaire et sémantique (`D03`–`D04`), le confinement déterministe de l'automatisation "
+            "(`D02`, `D05`, `D07`, `D08`) et la gouvernance multi-juridictions des systèmes d'entreprise (`D09`–`D12`)."
         ),
     ]
     for start in range(0, min(25, len(top_hubs)), 5):
@@ -842,8 +844,9 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         f"# {unit_meta['title']}",
         (
             f"Cette annexe compile mécaniquement la topologie complète des "
-            f"**{len(relations)} interrelations typées** reliant les **{len(mm.get('themes', []))} thèmes** "
-            f"du Compendium répartis sur douze domaines (`D01`–`D12`). Le degré moyen s'établit à "
+            f"**{len(relations)} interrelations typées** d'interopérabilité, d'automatisation et de gouvernance reliant "
+            f"les **{len(mm.get('themes', []))} thèmes** du traité *Interopérabilité et automatisation agentique des systèmes d'entreprise* "
+            f"répartis sur douze domaines (`D01`–`D12`). Le degré moyen s'établit à "
             f"**{f'{avg_deg:.2f}'.replace('.', ',')}** arêtes par thème ; **{inter_dom} liaisons "
             f"({f'{inter_pct:.1f}'.replace('.', ',')} %)** franchissent une frontière de domaine tandis que "
             f"**{intra_dom} liaisons ({f'{intra_pct:.1f}'.replace('.', ',')} %)** consolident la cohérence interne d'un même domaine."
@@ -942,8 +945,8 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         sec_lbl = _format_compendium_section(c.get("liminaire_section", "0.2"))
         c_rows.append([f"`{c.get('discordance_id')}`", _clean_tome_refs(c.get("topic")), choice, sec_lbl])
     conc_table = (
-        _md_table(["ID", "Sujet", "Décision canonique Compendium", "Emplacement Compendium"], ["---", "---", "---", "---"], c_rows)
-        + "\n\n*Tableau C.1 — Synthèse des cinq réconciliations inter-tomes (`DISC-01` à `DISC-05`) appliquées dans le Compendium.*"
+        _md_table(["ID", "Sujet", "Décision canonique du traité", "Emplacement Compendium"], ["---", "---", "---", "---"], c_rows)
+        + "\n\n*Tableau C.1 — Synthèse des cinq réconciliations inter-tomes (`DISC-01` à `DISC-05`) appliquées aux systèmes d'entreprise dans le présent traité unifié.*"
     )
 
     div02 = conc_data.get("div_02", {})
@@ -1046,7 +1049,7 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
 
     pre_prose = (
         " ; ".join(
-            f"`{a.get('date')}` **`{a.get('key')}`** ({_normalize_jurisdiction(a.get('jurisdiction', ''))}) — {_short_label(a.get('label', ''), 16)}"
+            f"`{a.get('date')}` **`{a.get('key')}`** ({_normalize_jurisdiction(a.get('jurisdiction', ''))}) — {_short_label(a.get('label', ''), 11)}"
             for a in past_or_freeze
         )
         + "."
@@ -1144,9 +1147,10 @@ def _render_annexe_c(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     required = [
         f"# {unit_meta['title']}",
         (
-            f"Cette annexe consolide mécaniquement la fermeture `DIV-02` (`52 CAP + 24 PEX → 305 EXIG-*`), "
-            f"les **{len(concs)} réconciliations `DISC-01`–`DISC-05`**, "
-            f"les **{len(facts)} grandeurs empiriques ancrées** et le calendrier des **{len(anchors)} jalons vérifiés** "
+            f"Cette annexe consolide mécaniquement la soudure architecturale et terminologique entre les huit tomes "
+            f"historiques du Corpus et le traité unifié *Interopérabilité et automatisation agentique des systèmes d'entreprise* : "
+            f"fermeture `DIV-02` (`52 CAP + 24 PEX → 305 EXIG-*`), **{len(concs)} réconciliations `DISC-01`–`DISC-05`**, "
+            f"**{len(facts)} grandeurs empiriques ancrées** et calendrier des **{len(anchors)} jalons vérifiés** "
             f"({len(past_or_freeze)} acquis au gel du {metrics['freeze_date']} et {len(future_anchors)} échéances post-gel ou paliers `DAPP`)."
         ),
         div02_sec,
@@ -1366,12 +1370,17 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
             for p in pex24
         )
         sec6 = (
-            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`) et vingt-quatre propositions d'exigence ({pex_span})\n\n"
+            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`), tronc multisectoriel et vingt-quatre propositions d'exigence ({pex_span})\n\n"
             f"Les **{len(cap52)} capacités** (dépliées intégralement en section 9) se répartissent par statut "
             f"({', '.join(f'`{k}` : {v}' for k, v in sorted(cap_stat.items()))}) "
-            f"et par palier ({', '.join(f'`{k}` : {v}' for k, v in sorted(cap_pal.items()))}). "
-            f"Les **{len(pex24)} propositions d'exigence `PEX`** ({pex_span}, numérotées par dizaines de profil : "
-            "`001–005`, `011–015`, `021–025`, `031–035`, `041–044`) couvrent les cinq profils sectoriels ("
+            f"et par palier ({', '.join(f'`{k}` : {v}' for k, v in sorted(cap_pal.items()))}) : le tronc multisectoriel "
+            "invariant de quarante-deux capacités possédées encadre tout système d'entreprise (`ERP`, `CRM`, `SIRH`, "
+            "`ITSM`, `SCM`, portes bloquantes `R-01` sur l'inviolabilité des systèmes d'enregistrement et `F-14` sur le "
+            "sas `IT/OT`), tandis que dix capacités conditionnelles (`CAP-026` à `CAP-028`, fédération `B2B`, post-quantique "
+            "avancé) s'activent par profil d'exposition. "
+            f"À l'étage de haute régulation prudentielle, les **{len(pex24)} propositions d'exigence `PEX`** ({pex_span}, "
+            "numérotées par dizaines de profil : `001–005`, `011–015`, `021–025`, `031–035`, `041–044`) et les douze "
+            "`EXIG-AMF` constituent l'étalon sectoriel couvrant les cinq profils réglementés ("
             + ", ".join(f"{k} : {v}" for k, v in pex_sec.most_common())
             + ") : "
             + pex_prose
@@ -1379,10 +1388,11 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         )
     else:
         sec6 = (
-            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`) et vingt-quatre propositions d'exigence ({pex_span})\n\n"
-            "Les cinquante-deux capacités (`42` invariantes du noyau possédé et `10` conditionnelles) et les vingt-quatre "
-            "propositions d'exigence (`PEX-001` à `PEX-044` couvrant banque, assurance, gestion de patrimoine, marchés "
-            "et coopératives financières) ancrent la traçabilité réglementaire du Compendium."
+            f"## 6. Cinquante-deux capacités (`CAP-001`–`CAP-052`), tronc multisectoriel et vingt-quatre propositions d'exigence ({pex_span})\n\n"
+            "Les cinquante-deux capacités distinguent un tronc multisectoriel invariant de quarante-deux capacités du noyau "
+            "possédé applicable à tous les systèmes d'entreprise et dix capacités conditionnelles activées par profil, "
+            "tandis que les vingt-quatre propositions d'exigence (`PEX-001` à `PEX-044` couvrant banque, assurance, "
+            "gestion de patrimoine, marchés et coopératives financières) constituent l'étalon de haute régulation."
         )
 
     # §7 — Liaisons exécutables G0 par module + 57 specs L+ + portefeuille DAPP
@@ -1489,8 +1499,10 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     required = [
         f"# {unit_meta['title']}",
         (
-            f"Cette annexe publie le bilan exécutable des barrières `G0`–`G5`, la matrice unifiée de traçabilité "
-            f"(**{len(mappings)} liaisons exécutables `G0`** reliant `305 EXIG-*`, `52 CAP`, `24 PEX`, "
+            f"Cette annexe publie le bilan exécutable des barrières `G0`–`G5` appliquées à l'homologation des systèmes "
+            f"d'entreprise, la matrice unifiée de traçabilité (**{len(mappings)} liaisons exécutables `G0`** reliant "
+            f"`305 EXIG-*` — dont un tronc multisectoriel universel de `291` exigences incluant `87` exigences "
+            f"d'interopérabilité et `84` exigences d'encadrement d'automatisation — `52 CAP`, `24 PEX`, "
             "`PRR-75` dont `24` bloquantes, `C01–C40` et `5 SBB`), les extraits scellés `CA-G0-SYNC`, le catalogue des "
             f"**{len(specs)} spécifications ouvertes `L+`** et la clause `non-avis` (`AO-05`)."
         ),
@@ -1504,11 +1516,12 @@ def _render_annexe_d(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
         ),
         (
             "## 2. Clause `non-avis` et régime dual de licences (`CC-BY-4.0` / `MIT`)\n\n"
-            f"Le présent traité et ses **{len(manifest.get('figures', []))} schémas** sont diffusés sous licence **`CC-BY-4.0`**, tandis que "
+            f"Le présent traité *Interopérabilité et automatisation agentique des systèmes d'entreprise* et ses **{len(manifest.get('figures', []))} schémas** sont diffusés sous licence **`CC-BY-4.0`**, tandis que "
             "l'outillage déterministe d'homologation et la trousse compagnon (`Tome 8`) relèvent de la licence **`MIT`**. "
             f"Conformément au statut `non-avis` arrêté au {metrics['freeze_date']}, l'ouvrage constitue une référence technique "
-            "pédagogique et ne tient lieu ni d'avis juridique, ni de certification réglementaire, ni d'homologation sur un "
-            "système d'enregistrement en exploitation réelle."
+            "pédagogique couvrant l'ensemble des systèmes d'entreprise (`ERP`, `CRM`, `SIRH`, `ITSM`, `SCM`, cœurs transactionnels "
+            "et interfaces `IT/OT`) ainsi que l'étalon prudentiel de haute régulation, mais ne tient lieu ni d'avis juridique, ni de "
+            "certification réglementaire, ni d'homologation sur un système d'enregistrement ou d'exploitation réelle."
         ),
         sec3,
         sec4,
@@ -1703,7 +1716,7 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
                 ["---", "---:", "---:", "---:", "---:", "---:", "---:"],
                 t_rows,
             )
-            + f"\n\n*Tableau E.1 — Répartition et couverture des `319` figures des Tomes `1` à `8` dans les `{len(figs)}` schémas du Compendium.*"
+            + f"\n\n*Tableau E.1 — Répartition et couverture des `319` figures des Tomes `1` à `8` dans les `{len(figs)}` schémas d'architecture des systèmes d'entreprise du Compendium.*"
         )
     else:
         tome_sec = (
@@ -1850,10 +1863,11 @@ def _render_annexe_e(root: Path, unit_meta: dict, manifest: dict, metrics: dict)
     required = [
         f"# {unit_meta['title']}",
         (
-            f"Cette annexe recense de manière déterministe les **{len(figs)} schémas de vulgarisation** "
+            f"Cette annexe recense de manière déterministe les **{len(figs)} schémas d'architecture et de vulgarisation** "
+            f"du traité *Interopérabilité et automatisation agentique des systèmes d'entreprise* "
             f"(`Figure 1` à `Figure {len(figs)}` : `{n_puml}` `PlantUML`, `{n_mmd}` `Mermaid`, `{n_svg}` infographies `SVG`) "
-            "couvrant `100,0 %` des `71` familles et `260` thèmes du Compendium, en concordance directe avec les `319` "
-            "figures des Tomes `1` à `8`."
+            "couvrant `100,0 %` des `71` familles et `260` thèmes des douze domaines, en concordance directe avec les `319` "
+            "figures historiques des Tomes `1` à `8`."
         ),
         tome_sec,
         arch_sec,

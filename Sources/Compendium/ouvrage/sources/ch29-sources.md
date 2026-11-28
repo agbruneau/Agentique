@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 29 — Trois blueprints de référence et cas Groupe Boréal (BEL)
+# Base documentaire fermée — Chapitre 29 — Trois blueprints d'intégration des systèmes d'entreprise (C01–C40), fédération multi-SaaS et cas multisectoriel Groupe Boréal (BEL/BCA/BSN)
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

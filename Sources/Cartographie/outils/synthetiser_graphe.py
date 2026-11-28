@@ -260,10 +260,11 @@ def _enrich_system_agency(node: dict[str, Any]) -> None:
     if nid == "DOM_D01":
         if "agentivité des systèmes" not in node["summary"].lower():
             node["summary"] = (
-                "Passage des copilotes passifs aux Systèmes d'agentivité et maîtrise de "
-                "l'agentivité des systèmes (system agency), loi de fiabilité de Lusser, "
-                "erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, "
-                "coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique."
+                "Passage de l'automatisation déterministe (L0) et des copilotes passifs à "
+                "l'automatisation agentique des systèmes d'entreprise (strate SoA subordonnée aux SoR, SoE et OT) "
+                "et maîtrise de l'agentivité des systèmes (system agency), loi de fiabilité de Lusser, "
+                "cascades inter-systèmes, constance multi-essais pass^k par rapport à pass@1, "
+                "économie de l'interopérabilité de Coase et quadruple dette agentique."
             )
         for t in ("agentivite-des-systemes", "system-agency"):
             if t not in node["tags"]:
@@ -271,8 +272,8 @@ def _enrich_system_agency(node: dict[str, Any]) -> None:
     elif nid == "SUB_D01_01":
         node["summary"] = (
             "Sous-domaine de D01 consacré à l'agentivité des systèmes (system agency), "
-            "à la rupture épistémique du modèle conversationnel vers la boucle d'action "
-            "et à la stratification SoR / SoE / SoA."
+            "au passage de l'automatisation déterministe (L0) vers l'automatisation agentique en boucle fermée "
+            "et à l'architecture SoR–SoE–SoA des systèmes d'entreprise."
         )
         for t in ("agentivite-des-systemes", "system-agency"):
             if t not in node["tags"]:
@@ -280,7 +281,8 @@ def _enrich_system_agency(node: dict[str, Any]) -> None:
     elif nid == "FAM_D01_01_01":
         node["summary"] = (
             "Famille thématique regroupant les fondements de l'agentivité des systèmes "
-            "(system agency), des Systèmes d'agentivité et du passage aux déploiements bornés en production."
+            "(system agency), de l'automatisation agentique (strate d'action SoA) et du raccordement borné "
+            "aux systèmes d'entreprise en production."
         )
         for t in ("agentivite-des-systemes", "system-agency"):
             if t not in node["tags"]:
@@ -288,15 +290,16 @@ def _enrich_system_agency(node: dict[str, Any]) -> None:
     elif nid == "THM_systems-of-agency":
         node["title"] = (
             "Agentivité des systèmes (system agency) et constat empirique de fin 2026 : "
-            "soutien par rapport à la production et déploiements bornés"
+            "automatisation agentique bornée des systèmes d'entreprise"
         )
         node["summary"] = (
             "Fondement conceptuel de l'agentivité des systèmes (system agency) : degré mesurable et borné "
-            "d'initiative conféré à un acteur cognitif au sein des Systèmes d'agentivité (SoA), distinct "
-            "des systèmes d'enregistrement (SoR) et d'engagement (SoE). Analyse empirique fin 2026 : "
+            "d'initiative conféré à l'automatisation agentique (strate SoA) en aval de l'automatisation "
+            "déterministe (L0) et en amont des systèmes d'enregistrement (SoR : ERP, SIRH, SCM), "
+            "d'engagement (SoE : CRM, ITSM) et industriels (OT). Analyse empirique fin 2026 : "
             "écart entre usage exploratoire et exploitation maîtrisée (> 40 % d'annulations d'ici 2027 "
             "selon Gartner, 95 % des pilotes sans ROI chiffré selon MIT NANDA, trajectoire énergétique AIE "
-            "415 → 945 TWh) et réduction N×M vers N+M contrats gouvernés."
+            "415 → 945 TWh) et réduction N×M vers N+M contrats d'interopérabilité gouvernés."
         )
         for t in ("agentivite-des-systemes", "system-agency"):
             if t not in node["tags"]:
@@ -367,10 +370,10 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
         "domain_id": None,
         "subdomain": None,
         "family": None,
-        "title": f"Compendium de l'entreprise agentique ({pdf_pages} pages · {units_cnt} unités · {schemas_cnt} schémas)",
+        "title": f"Interopérabilité et automatisation agentique des systèmes d'entreprise ({pdf_pages} pages · {units_cnt} unités · {schemas_cnt} schémas)",
         "summary": (
-            f"Cartographie intégrale du Compendium de l'entreprise agentique : {doms_cnt} domaines (D01–D12), "
-            f"{chaps_cnt} chapitres, {fams_cnt} familles, {themes_cnt} thèmes, {rels_cnt} interrelations systémiques, "
+            f"Cartographie intégrale du traité « Interopérabilité et automatisation agentique des systèmes d'entreprise » (Compendium) : "
+            f"{doms_cnt} domaines (D01–D12), {chaps_cnt} chapitres, {fams_cnt} familles, {themes_cnt} thèmes, {rels_cnt} interrelations systémiques, "
             f"{schemas_cnt} schémas compilés, {gloss_cnt} vedettes du glossaire (dont l'agentivité des systèmes), "
             f"{lplus_cnt} sources L+, {jalons_cnt} jalons chronologiques uniques et homologation Wyvern G0–G5."
         ),
@@ -378,7 +381,7 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
         "roles": ["AE", "AS", "RSSI", "Juridique", "SRE", "Direction"],
         "horizons": ["2023-2035"],
         "horizon": "2023-2035",
-        "tags": ["compendium-integral", "80/20", "DAPP", "Wyvern", "agentivite-des-systemes"],
+        "tags": ["compendium-integral", "interoperabilite", "automatisation-agentique", "systemes-entreprise", "80/20", "DAPP", "Wyvern", "agentivite-des-systemes"],
         "identifiers": ["CRE-IA-2026-01", "PRR-75", "C01–C40", "DIV-02", "G0–G5"],
         "roles_in_tome": ["synthese", "fondation", "architecture", "etat_de_l_art", "patron", "norme", "gouvernance", "prospective", "executable"],
         "tomes_present": ["R", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
@@ -614,7 +617,7 @@ def build_synthese_payload(repo_root: Path) -> dict[str, Any]:
                     readme_summary_uid = rc["unit_id"]
                     break
         readme_sec_for_score = {
-            "norm_title": _norm("Compendium de l'entreprise agentique Sommaire des douze parties"),
+            "norm_title": _norm("Interopérabilité et automatisation agentique des systèmes d'entreprise Compendium Sommaire des douze parties"),
             "norm_body": _norm(r_text),
             "identifiers": set(es.detect_identifiers(r_text)),
         }

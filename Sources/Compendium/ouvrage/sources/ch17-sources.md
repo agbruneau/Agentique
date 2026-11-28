@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 17 — Chaîne de mandat OBO à deux sauts, approbation cryptographique CIBA, KYA tiers et asymétrie de révocation
+# Base documentaire fermée — Chapitre 17 — Délégation fédérée OBO à deux sauts, gestion d'exception cryptographique CIBA, KYA B2B et révocation SSF/CAEP
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

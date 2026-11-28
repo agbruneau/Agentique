@@ -106,9 +106,9 @@
   "research_questions_and_queries": [
     {
       "id": "D01",
-      "theme": "Rupture épistémique, loi de Lusser, constance pass^k, économie cognitive de Coase et quadruple dette agentique",
+      "theme": "Continuum d'automatisation déterministe–agentique (L0 règles/BPM/iPaaS/RPA vers L1–L4), rupture épistémique, loi de Lusser, constance pass^k, économie de l'interopérabilité de Coase et quadruple dette agentique",
       "min_included_studies": 3,
-      "queries": ["\"Lusser\" OR \"pass^k\" OR \"MAST\" LLM multi-agent failure rate", "Coase transaction costs AI agents cognitive debt"]
+      "queries": ["\"Lusser\" OR \"pass^k\" OR \"MAST\" LLM multi-agent failure rate", "Coase transaction costs AI agents cognitive debt", "(\"enterprise automation\" OR \"robotic process automation\" OR \"business process management\" OR \"Systems of Record\") agentic AI"]
     },
     {
       "id": "D02",
@@ -118,21 +118,21 @@
     },
     {
       "id": "D03",
-      "theme": "Protocoles MCP 2026-07-28, A2A v1.0.1, AGNTCY/SLIM, paiements AP2, passerelles PEP et anti-verrouillage SaaS",
+      "theme": "Interopérabilité protocolaire d'entreprise : MCP 2026-07-28, A2A v1.0.1, OpenAPI/AsyncAPI, AGNTCY/SLIM, paiements AP2, passerelles PEP et anti-verrouillage SaaS",
       "min_included_studies": 3,
-      "queries": ["\"Model Context Protocol\" tool pinning schema drift", "\"Agent2Agent\" A2A AgentCard AI gateway PEP"]
+      "queries": ["\"Model Context Protocol\" tool pinning schema drift", "\"Agent2Agent\" A2A AgentCard AI gateway PEP", "(\"OpenAPI\" OR \"AsyncAPI\" OR \"enterprise interoperability\" OR \"ISO 11354\") AI agent protocol"]
     },
     {
       "id": "D04",
-      "theme": "Ontologies financières FIBO/ISO 20022, contrats ODCS, mémoire CoALA bi-temporelle, ACL et encapsulation patrimoniale IT/OT",
+      "theme": "Interopérabilité sémantique d'entreprise (schémas canoniques, FIBO/ISO 20022, contrats ODCS), mémoire CoALA et encapsulation des systèmes patrimoniaux (ERP, mainframe EBCDIC, EDI, sas IT/OT)",
       "min_included_studies": 3,
-      "queries": ["CoALA memory architecture temporal knowledge graph ACL RAG", "anti-corruption layer mainframe EBCDIC OT gateway AI agent"]
+      "queries": ["CoALA memory architecture temporal knowledge graph ACL RAG", "anti-corruption layer mainframe EBCDIC OT gateway AI agent", "(\"ERP\" OR \"OPC UA\" OR \"ISA-95\" OR \"Anti-Corruption Layer\") semantic interoperability ODCS"]
     },
     {
       "id": "D05",
-      "theme": "Orchestration sobre OO1–OO4, chorégraphie Event Mesh CloudEvents, exécution durable et Sagas compensatoires",
+      "theme": "Sobriété d'automatisation OO1–OO4 (enveloppes BPMN/iPaaS), chorégraphie Event Mesh CloudEvents, exécution durable et Sagas compensables inter-systèmes",
       "min_included_studies": 3,
-      "queries": ["\"Saga\" \"Transactional Outbox\" idempotency AI agent", "CloudEvents AsyncAPI event-driven multi-agent orchestration"]
+      "queries": ["\"Saga\" \"Transactional Outbox\" idempotency AI agent", "CloudEvents AsyncAPI event-driven multi-agent orchestration", "(\"BPMN\" OR \"iPaaS\" OR \"choreography\") durable execution enterprise workflow"]
     },
     {
       "id": "D06",
@@ -154,15 +154,15 @@
     },
     {
       "id": "D09",
-      "theme": "Droit québécois (Loi 25, AMF), cadre prudentiel canadien (BSIF E-23, ACVM), EU AI Act, DORA et réversibilité contractuelle",
+      "theme": "Droit transversal des décisions automatisées et de la portabilité (Loi 25, EU AI Act, Data Act), cadre prudentiel canadien (BSIF E-23, AMF, ACVM), DORA et réversibilité contractuelle",
       "min_included_studies": 3,
-      "queries": ["\"OSFI E-23\" OR \"BSIF E-23\" OR \"Loi 25\" automated decision", "\"EU AI Act\" \"DORA\" \"EN 18286\" AI governance"]
+      "queries": ["\"OSFI E-23\" OR \"BSIF E-23\" OR \"Loi 25\" automated decision data portability", "\"EU AI Act\" \"DORA\" \"Data Act\" \"EN 18286\" AI governance"]
     },
     {
       "id": "D10",
-      "theme": "Architectures financières réglementées, trois blueprints C01–C40, GitOps cognitif et anti-patrons agentiques",
+      "theme": "Intégration aux systèmes d'entreprise critiques (ERP, CRM, SIRH, ITSM, OT), étalon prudentiel réglementé (24 PEX), blueprints C01–C40 et usine GitOps",
       "min_included_studies": 3,
-      "queries": ["financial services AI agent reference architecture GitOps", "enterprise AI agent anti-patterns production blueprint"]
+      "queries": ["enterprise systems ERP CRM ITSM OT AI agent reference architecture GitOps", "financial services AI agent reference architecture anti-patterns production blueprint"]
     },
     {
       "id": "D11",

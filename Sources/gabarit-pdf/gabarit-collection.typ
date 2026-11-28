@@ -46,17 +46,18 @@
   }
 }
 
-#let format-running-header(content) = {
+#let format-running-header(content, max-len: 64) = {
+  let split-threshold = calc.max(54, max-len - 10)
   let t = extract-plain-text(content)
   let cl = t.clusters()
-  if cl.len() > 54 and t.contains(" : ") {
+  if cl.len() > split-threshold and t.contains(" : ") {
     let short = t.split(" : ").first()
-    truncate-header-words(short, 64)
-  } else if cl.len() > 54 and t.contains(" ? ") {
+    truncate-header-words(short, max-len)
+  } else if cl.len() > split-threshold and t.contains(" ? ") {
     let short = t.split(" ? ").first() + " ?"
-    truncate-header-words(short, 64)
+    truncate-header-words(short, max-len)
   } else {
-    truncate-header-words(t, 64)
+    truncate-header-words(t, max-len)
   }
 }
 
@@ -171,6 +172,7 @@
         hyphenate: false,
       )[#title]
       #if has-content(subtitle) [
+        #show "(non-avis)": box[(non-avis)]
         #v(0.22in)
         #text(
           font: ("Libertinus Serif", "Georgia"),
@@ -243,6 +245,7 @@
     )[
       #set par(justify: false)
       #set text(hyphenate: false)
+      #show "(non-avis)": box[(non-avis)]
       #v(1.2in)
       #align(center)[
         #text(size: 20pt, weight: "bold", fill: rgb("#132238"), hyphenate: false)[#title]
@@ -310,11 +313,11 @@
         h.level == 1 or _is-h2-chapter(t, chapter-prefixes, numbered-h2-chapters)
       })
       let current = if calc.even(pnum) {
-        title
+        format-running-header(title, max-len: 78)
       } else if majors.len() > 0 {
         format-running-header(majors.last().body)
       } else {
-        title
+        format-running-header(title, max-len: 78)
       }
       set text(font: ("Segoe UI", "Libertinus Serif"), size: 7.8pt, fill: rgb("#64748B"), hyphenate: false)
       set par(justify: false)

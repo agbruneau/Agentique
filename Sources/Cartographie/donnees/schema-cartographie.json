@@ -2,11 +2,11 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "title": "Schéma formel de la cartographie thématique et structurelle du Compendium agentique",
-  "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 139 schémas compilés et de la matrice de concordance pour le Compendium (871 pages PDF, 56 termes glossaire, 135 sources L+, gel du 2 décembre 2026).",
+  "title": "Schéma formel de la cartographie thématique et structurelle — Interopérabilité et automatisation agentique des systèmes d'entreprise (Compendium)",
+  "description": "Définition canonique des 12 domaines (D01–D12), des 8 types d'interrelations, de la hiérarchie MindMap à 5 niveaux (380 nœuds, 616 relations), des 15 sections structurelles du Compendium (R, LIM, P01–P12, ANN), des 42 unités éditoriales, des 139 schémas compilés et de la matrice de concordance pour le traité « Interopérabilité et automatisation agentique des systèmes d'entreprise » (872 pages PDF, 56 vedettes glossaire, 135 sources L+, gel du 2 décembre 2026).",
   "corpus_scope": {
-    "compendium_pdf_pages": 871,
-    "compendium_markdown_lines": 8670,
+    "compendium_pdf_pages": 872,
+    "compendium_markdown_lines": 8638,
     "compendium_units": 42,
     "compendium_sections": 15,
     "compendium_schemas": 139,
@@ -21,105 +21,105 @@
     "historical_tome_diagrams": 319,
     "total_markdown_files": 2,
     "total_tomes": 8,
-    "total_pdf_pages": 871,
+    "total_pdf_pages": 872,
     "total_diagrams": 139,
     "files": [
       {
         "tome_id": "R",
         "section_id": "R",
         "file": "Compendium/README.md",
-        "title": "Compendium de l'entreprise agentique (Index éditorial)",
+        "title": "Interopérabilité et automatisation agentique des systèmes d'entreprise (Index éditorial)",
         "role_default": "synthese"
       },
       {
         "tome_id": "LIM",
         "section_id": "LIM",
         "file": "Compendium/Compendium.md",
-        "title": "Liminaire — Sommaire exécutif global, doctrine hybride 80/20, concordance inter-tomes et Panorama visuel directeur",
+        "title": "Liminaire — Sommaire exécutif : interopérabilité, automatisation agentique des systèmes d'entreprise, doctrine 80/20 et Panorama directeur",
         "role_default": "synthese"
       },
       {
         "tome_id": "P01",
         "section_id": "P01",
         "file": "Compendium/Compendium.md",
-        "title": "Partie I — D01 : Rupture épistémique, limites probabilistes et économie cognitive des Systèmes d'agentivité",
+        "title": "Partie I — D01 : Fondements de l'automatisation agentique, fiabilité probabiliste et économie de l'interopérabilité d'entreprise",
         "role_default": "fondation"
       },
       {
         "tome_id": "P02",
         "section_id": "P02",
         "file": "Compendium/Compendium.md",
-        "title": "Partie II — D02 : Architecture d'entreprise hybride 80/20, autonomie graduée L0–L4 et noyau de contrôle possédé",
+        "title": "Partie II — D02 : Architecture hybride 80/20 des systèmes d'entreprise, continuum d'automatisation L0–L4 et noyau d'interopérabilité possédé",
         "role_default": "architecture"
       },
       {
         "tome_id": "P03",
         "section_id": "P03",
         "file": "Compendium/Compendium.md",
-        "title": "Partie III — D03 : Tissu conjonctif protocolaire, découverte fédérée et prévention du verrouillage SaaS",
+        "title": "Partie III — D03 : Interopérabilité protocolaire verticale et horizontale (MCP, A2A), passerelles d'entreprise PEP et anti-verrouillage SaaS",
         "role_default": "etat_de_l_art"
       },
       {
         "tome_id": "P04",
         "section_id": "P04",
         "file": "Compendium/Compendium.md",
-        "title": "Partie IV — D04 : Gouvernance sémantique, mémoire CoALA à quatre tiroirs et encapsulation patrimoniale ACL/OT",
+        "title": "Partie IV — D04 : Interopérabilité sémantique canonique, mémoire CoALA à quatre tiroirs et intégration patrimoniale (SoR, ERP, ACL, OT)",
         "role_default": "etat_de_l_art"
       },
       {
         "tome_id": "P05",
         "section_id": "P05",
         "file": "Compendium/Compendium.md",
-        "title": "Partie V — D05 : Orchestration sobre OO1–OO4, chorégraphie événementielle et exécution durable Saga",
+        "title": "Partie V — D05 : Automatisation agentique sobre (OO1–OO4), interopérabilité événementielle et exécution durable Saga inter-systèmes",
         "role_default": "patron"
       },
       {
         "tome_id": "P06",
         "section_id": "P06",
         "file": "Compendium/Compendium.md",
-        "title": "Partie VI — D06 : Identités non humaines (NHI), délégation OBO atténuée, PKI 47 jours et transition post-quantique",
+        "title": "Partie VI — D06 : Identités non humaines (NHI) fédérées aux IdP/SIRH, délégation OBO inter-systèmes, automatisation PKI 47 jours et post-quantique",
         "role_default": "norme"
       },
       {
         "tome_id": "P07",
         "section_id": "P07",
         "file": "Compendium/Compendium.md",
-        "title": "Partie VII — D07 : Défense hors modèle, politiques OPA/Rego, Règle de deux et confinement déterministe",
+        "title": "Partie VII — D07 : Sécurité hors modèle des connecteurs d'entreprise, politiques interopérables OPA/Cedar, Règle de deux et coupe-circuit SOAR",
         "role_default": "gouvernance"
       },
       {
         "tome_id": "P08",
         "section_id": "P08",
         "file": "Compendium/Compendium.md",
-        "title": "Partie VIII — D08 : Observabilité probatoire, bancs EvalOps hermétiques et pilotage FinOps au résultat conforme",
+        "title": "Partie VIII — D08 : Interopérabilité télémétrique OpenTelemetry/SCITT, qualification EvalOps CI/CD et pilotage SRE/FinOps au résultat conforme",
         "role_default": "gouvernance"
       },
       {
         "tome_id": "P09",
         "section_id": "P09",
         "file": "Compendium/Compendium.md",
-        "title": "Partie IX — D09 : Conformité juridique et prudentielle multi-juridictions (QC, CA, UE, int.) et réversibilité contractuelle",
+        "title": "Partie IX — D09 : Conformité multi-juridictions des décisions automatisées (QC, CA, UE, int.), portabilité et réversibilité contractuelle",
         "role_default": "norme"
       },
       {
         "tome_id": "P10",
         "section_id": "P10",
         "file": "Compendium/Compendium.md",
-        "title": "Partie X — D10 : Architectures sectorielles réglementées, trois blueprints C01–C40 et usine logicielle GitOps",
+        "title": "Partie X — D10 : Profils sectoriels des systèmes d'entreprise, trois blueprints d'intégration C01–C40 et industrialisation GitOps",
         "role_default": "patron"
       },
       {
         "tome_id": "P11",
         "section_id": "P11",
         "file": "Compendium/Compendium.md",
-        "title": "Partie XI — D11 : Prospective 2028–2035, trajectoires adaptatives DAPP, gouvernance AE/AS et capital humain",
+        "title": "Partie XI — D11 : Trajectoires d'interopérabilité et d'automatisation 2028–2035 (DAPP), gouvernance d'entreprise AE/AS et repli humain",
         "role_default": "prospective"
       },
       {
         "tome_id": "P12",
         "section_id": "P12",
         "file": "Compendium/Compendium.md",
-        "title": "Partie XII — D12 : Homologation vérifiable, trousse exécutable du Tome 8, concordance inter-tomes et chaîne Wyvern G0–G5",
+        "title": "Partie XII — D12 : Homologation vérifiable des systèmes d'entreprise (CRE-IA / PRR-75), trousse exécutable du Tome 8 et chaîne Wyvern G0–G5",
         "role_default": "executable"
       },
       {
@@ -163,11 +163,11 @@
     {
       "domain_id": "D01",
       "order": 1,
-      "title": "Fondements épistémiques, économiques et rupture agentique",
-      "summary": "Passage des copilotes passifs aux Systèmes d'agentivité et maîtrise de l'agentivité des systèmes (system agency), loi de fiabilité de Lusser, erreurs silencieuses en cascade, constance multi-essais pass^k par rapport à pass@1, coûts de transaction cognitifs de Coase et distinction entre dette cognitive et dette technique.",
+      "title": "Fondements de l'automatisation agentique, fiabilité probabiliste et économie de l'interopérabilité d'entreprise",
+      "summary": "Passage de l'automatisation déterministe (L0) et des copilotes passifs à l'automatisation agentique des systèmes d'entreprise (strate SoA subordonnée aux SoR, SoE et OT) et maîtrise de l'agentivité des systèmes (system agency), loi de Lusser, cascades inter-systèmes, constance pass^k, économie de l'interopérabilité de Coase et quadruple dette agentique.",
       "color": "#2563eb",
       "subdomains_canonical": [
-        "Rupture épistémique et Systèmes d'agentivité",
+        "Rupture épistémique, automatisation agentique et architecture SoR–SoE–SoA",
         "Fiabilité probabiliste et loi de Lusser",
         "Économie de Coase et dettes agentiques"
       ],
@@ -184,8 +184,8 @@
     {
       "domain_id": "D02",
       "order": 2,
-      "title": "Architecture d'entreprise, partition 80/20 et échelle d'autonomie (L0–L4)",
-      "summary": "Séparation entre exosquelette déterministe (80 %) et nœuds cognitifs (20 %), échelle L0–L4 et règle du maillon le plus élevé, supervision HITL/HOTL et abstention, harnais déterministe à 8 étapes sous JSON Schema strict, modélisation TOGAF/ArchiMate, 4 plans, 6 couches et DIV-02, noyau de contrôle possédé (42 CAP invariantes et 10 conditionnelles) et arbitrage entre achat, assemblage et construction.",
+      "title": "Architecture hybride 80/20 des systèmes d'entreprise, continuum d'automatisation (L0–L4) et noyau possédé",
+      "summary": "Continuum d'automatisation L0–L4, séparation entre exosquelette déterministe (80 %) et nœuds cognitifs (20 %), règle du maillon le plus élevé, supervision HITL/HOTL et abstention, harnais contractuel à 8 étapes sous JSON Schema strict devant ERP/CRM/SIRH/SCM/ITSM, modélisation TOGAF/ArchiMate, 4 plans, 6 couches et DIV-02, noyau d'interopérabilité possédé (42 CAP invariantes et 10 conditionnelles) et arbitrage achat, assemblage et construction.",
       "color": "#0284c7",
       "subdomains_canonical": [
         "Partition hybride 80/20 et harnais déterministe",
@@ -206,8 +206,8 @@
     {
       "domain_id": "D03",
       "order": 3,
-      "title": "Interopérabilité protocolaire, découverte et passerelles (MCP, A2A, AGNTCY, AP2)",
-      "summary": "Cadre EIF à 4 couches, protocole vertical MCP avec épinglage cryptographique SHA-256 des schémas, protocole horizontal A2A et cartes AgentCard signées, initiatives AGNTCY/SLIM et AP2, Open Responses/SKILL.md, registres de découverte, passerelle PEP/AI Gateway à 9 contrôles et prévention du verrouillage fournisseur.",
+      "title": "Interopérabilité protocolaire verticale et horizontale (MCP, A2A), passerelles PEP et anti-verrouillage SaaS",
+      "summary": "Cadre d'interopérabilité EIF/LCIM, protocole vertical MCP 2026-07-28 avec façades d'intention d'entreprise et épinglage cryptographique SHA-256 des schémas, protocole horizontal A2A v1.0.1 et cartes AgentCard signées, piles AGNTCY/SLIM et AP2, interfaces AG-UI/A2UI, registres de découverte, passerelle d'entreprise PEP à 9 contrôles adossée aux API Gateways/iPaaS et prévention du verrouillage SaaS.",
       "color": "#0d9488",
       "subdomains_canonical": [
         "Protocoles verticaux outil-modèle (MCP)",
@@ -230,13 +230,13 @@
     {
       "domain_id": "D04",
       "order": 4,
-      "title": "Sémantique métier, contexte, mémoire CoALA et intégration patrimoniale (ACL/OT)",
-      "summary": "Dette sémantique et ontologies métier (FIBO), compilation déterministe du contexte et RAG agentique, architecture mémorielle CoALA à quatre compartiments mémoriels isolés, propagation ACL en amont et effacement vérifiable (bi-temporalité), façade anti-corruption (ACL) devant ERP/SAP/Mainframe/BPM/RPA, encapsulation IT/OT et cloisonnement des 6 substrats d'état.",
+      "title": "Interopérabilité sémantique, mémoire CoALA et intégration des systèmes d'entreprise (SoR, ERP, ACL, OT)",
+      "summary": "Interopérabilité sémantique canonique et ontologies multisectorielles (MDM ERP/CRM/SCM, FHIR, OPC UA, FIBO/ISO 20022) sous contrats ODCS, compilation du contexte, mémoire CoALA à quatre compartiments sans Shadow SoR, filtrage ACL et bi-temporalité, encapsulation patrimoniale (ERP/Mainframe/EDI), transition BPM/RPA vers MCP, confinement CUA, sas IT/OT et 6 substrats.",
       "color": "#059669",
       "subdomains_canonical": [
-        "Sémantique métier, ontologies et compilation de contexte",
+        "Interopérabilité sémantique, ontologies sectorielles et compilation du contexte",
         "Mémoire CoALA, bi-temporalité et filtrage ACL",
-        "Encapsulation patrimoniale, IT/OT et 6 substrats"
+        "Encapsulation des systèmes patrimoniaux (ERP/SoR), sas IT/OT et 6 substrats"
       ],
       "key_identifiers": ["CoALA", "ACL", "FIBO", "EBCDIC", "COMP-3", "CUA", "OPC UA", "WAP", "ODCS"],
       "pivot_slugs": [
@@ -250,8 +250,8 @@
     {
       "domain_id": "D05",
       "order": 5,
-      "title": "Orchestration hybride, chorégraphie événementielle et exécution durable (Saga)",
-      "summary": "Arbre de sobriété OO1–OO4, 8 patrons de topologies multi-agents et lois d'échelle, dorsale événementielle CloudEvents/AsyncAPI, exécution durable (Temporal/Restate), idempotence JCS SHA-256, sémantique d'effet, Saga compensatoire autour d'un point pivot avec canal de compensation isolé et suite de 10 scénarios de fautes.",
+      "title": "Automatisation agentique sobre (OO1–OO4), interopérabilité événementielle et exécution durable (Saga)",
+      "summary": "Continuum d'automatisation et sobriété OO1–OO4 (règles L0 et enveloppes BPMN avant multi-agents), 8 topologies homologuées et 14 défaillances MAST, dorsale CloudEvents/AsyncAPI et passerelle IT/OT, exécution durable (Temporal/Restate), idempotence JCS SHA-256, corrélation UUIDv7/UETR, Sagas compensables à point pivot et canal isolé, 10 scénarios de fautes.",
       "color": "#16a34a",
       "subdomains_canonical": [
         "Sobriété OO1–OO4 et topologies d'orchestration",
@@ -270,8 +270,8 @@
     {
       "domain_id": "D06",
       "order": 6,
-      "title": "Identité non humaine (NHI), chaîne de mandat et post-quantique",
-      "summary": "OAuth 2.1/OIDC/SCIM, identités non humaines (NHI) éphémères sans secret statique, attestation SPIFFE/SPIRE, DID/VC/vLEI et passeport d'agent, grille des 5 questions et KYA, délégation atténuée au 2e saut (RFC 8693 OBO, RFC 9449 DPoP, RFC 9396 RAR), approbation hors bande CIBA+FIDO2, cycles TLS 100 j / 47 j et transition post-quantique ML-DSA/ML-KEM/SLH-DSA.",
+      "title": "Identités non humaines (NHI) fédérées aux IdP/SIRH, délégation OBO, PKI 47 jours et post-quantique",
+      "summary": "Fédération OAuth 2.1/OIDC/SCIM aux IdP/SIRH d'entreprise, identités non humaines (NHI) éphémères sans secret statique, attestation SPIFFE/SPIRE, DID/VC/vLEI et passeport d'agent, KYA B2B, délégation atténuée au 2e saut (RFC 8693 OBO, RFC 9449 DPoP, RFC 9396 RAR), gestion d'exception CIBA+FIDO2, automatisation PKI 100 j / 47 j et agilité post-quantique ML-DSA/ML-KEM/SLH-DSA sans rejet HTTP 431.",
       "color": "#d97706",
       "subdomains_canonical": [
         "Identité non humaine (NHI) et attestation SPIFFE/vLEI",
@@ -293,8 +293,8 @@
     {
       "domain_id": "D07",
       "order": 7,
-      "title": "Sécurité hors modèle, confinement déterministe (OPA, Règle de deux) et défense SOC",
-      "summary": "Asymétrie capacité/sûreté, injection indirecte de consignes, tool poisoning et dérive silencieuse (rug pull), mandataire confus et kill chain multi-agents (OWASP ASI01–ASI10), politiques déterministes hors modèle OPA/Rego (default allow := false), Règle de deux et séparation contrôle/données CaMeL, confinement sans réseau sortant (SHADI/microVM/WASI), TEE, SOC/SOAR, coupe-circuit (< 10 s) et Red Team.",
+      "title": "Sécurité hors modèle des connecteurs d'entreprise, politiques OPA/Cedar, Règle de deux et coupe-circuit SOAR",
+      "summary": "Surfaces d'attaque de l'interopérabilité protocolaire (MCP/A2A), injection indirecte de consignes, tool poisoning et dérive silencieuse (OWASP ASI01–ASI10), politiques interopérables hors modèle (OPA/Rego, Cedar, AuthZEN), Règle de deux et séparation contrôle/données CaMeL, confinement sans réseau sortant (SHADI/microVM/WASI), TEE/HYOK et coupe-circuit SOC/SOAR (< 10 s) vers repli déterministe L0.",
       "color": "#dc2626",
       "subdomains_canonical": [
         "Menaces agentiques et surface d'attaque protocolaire",
@@ -314,8 +314,8 @@
     {
       "domain_id": "D08",
       "order": 8,
-      "title": "Observabilité probatoire, EvalOps hermétique et FinOps au résultat conforme",
-      "summary": "Télémétrie OpenTelemetry GenAI sans contenu brut, double couloir probatoire (métadonnées caviardées PII/RP par opposition à la voûte d'audit scellée JCS RFC 8785, SCITT RFC 9943 et SLH-DSA), banc EvalOps hermétique à 3 paliers E1–E3, constance pass^k, bornes statistiques de Wilson (≥ 3/p), tests métamorphiques bilingues FR/EN, SRE et budgets d'erreur, ainsi que FinOps FOCUS v1.4 piloté par le coût complet par résultat conforme (CPO) et la cascade SLM/LLM.",
+      "title": "Interopérabilité télémétrique OpenTelemetry/SCITT, qualification EvalOps CI/CD et pilotage FinOps",
+      "summary": "Continuité télémétrique OpenTelemetry GenAI sans contenu brut vers les APM/SIEM d'entreprise, double couloir probatoire PII/RP et voûte d'audit scellée (JCS RFC 8785, SCITT RFC 9943, SLH-DSA), banc EvalOps hermétique E1–E3, constance pass^k, bornes statistiques de Wilson (≥ 3/p), tests métamorphiques FR/EN, SRE GitOps et FinOps FOCUS v1.4 piloté par le coût par résultat conforme (CPO vs automatisation L0).",
       "color": "#ea580c",
       "subdomains_canonical": [
         "Observabilité OTel GenAI et double couloir probatoire",
@@ -334,11 +334,11 @@
     {
       "domain_id": "D09",
       "order": 9,
-      "title": "Droit, régulation prudentielle (QC, CA, UE, int.) et contrats",
-      "summary": "Obligations applicables et jalons vérifiés : Québec (Loi 25 art. 12.1 et art. 17 ÉFVP, CAI, AMF Ligne directrice IA et 12 EXIG-AMF), Canada fédéral (BSIF E-23 mai 2027, B-10, B-13, B-15, E-21, ACVM Avis 11-348 et NI 31-103, LSAC, vide fédéral C-27/C-36), Europe (EU AI Act art. 50 / Annexe III / EN 18286, RGPD, DORA, CRA, Data Act), repères internationaux (ISO/IEC 42001 statut F, NIST AI RMF, IMDA, G7) et clauses contractuelles de réversibilité.",
+      "title": "Conformité multi-juridictions des décisions automatisées (QC, CA, UE, int.), portabilité et réversibilité contractuelle",
+      "summary": "Obligations transversales et sectorielles sur les systèmes d'entreprise : Québec (Loi 25 art. 12.1 décisions automatisées, art. 17 ÉFVP, art. 27 portabilité, cadres MCN/SCT, R-22.1 santé, étalon AMF et 12 EXIG-AMF), Canada (BSIF E-23 mai 2027, B-10/B-13/B-15, ACVM 11-348, NI 31-103, LSAC), Europe (EU AI Act, DORA, CRA, NIS 2, Data Act) et 10 clauses de réversibilité.",
       "color": "#7c3aed",
       "subdomains_canonical": [
-        "Droit québécois et prudentiel financier canadien",
+        "Droit québécois des décisions automatisées, portabilité et étalon prudentiel canadien",
         "Réglementation européenne et référentiels internationaux",
         "Approvisionnement réversible et clauses contractuelles"
       ],
@@ -356,12 +356,12 @@
     {
       "domain_id": "D10",
       "order": 10,
-      "title": "Architectures sectorielles, blueprints et cas métier",
-      "summary": "Déclinaison des 5 profils financiers (Banque, Gestion de patrimoine, Assurance de personnes, Assurance de dommages, Groupe financier diversifié) et 24 PEX, 3 blueprints multisectoriels et fédérés de référence (couvrant C01–C40 et 5 SBB), cas fil rouge Groupe Boréal Inc. (BEL : SAP S/4HANA, WMS, SOX — balisé comme illustratif et fictif), usine GitOps et 12 anti-patrons agentiques.",
+      "title": "Profils sectoriels des systèmes d'entreprise, trois blueprints d'intégration C01–C40 et industrialisation GitOps",
+      "summary": "Matrice sectorielle à deux étages : étalon financier haute régulation (5 profils M-14 à M-18 et 24 PEX) et transposition contrôlée aux 5 autres verticaux d'entreprise, 3 blueprints C01–C40 et 5 SBB, cas illustratif Groupe Boréal Inc. (BEL industrie/logistique, BCA finance/assurance, BSN services numériques), usine GitOps, 12 anti-patrons et sortie du RPA.",
       "color": "#db2777",
       "subdomains_canonical": [
-        "Cinq profils financiers réglementés et 24 PEX",
-        "Trois blueprints de référence et cas Groupe Boréal BEL",
+        "Matrice sectorielle des systèmes d'entreprise (étalon financier M-14..M-18, 24 PEX et transposition)",
+        "Trois blueprints d'intégration des systèmes d'entreprise et cas Groupe Boréal (BEL/BCA/BSN)",
         "Usine logicielle GitOps et anti-patrons agentiques"
       ],
       "key_identifiers": ["PEX-001..044", "C01–C40", "bp1..bp3", "BEL", "SOX", "GitOps"],
@@ -375,8 +375,8 @@
     {
       "domain_id": "D11",
       "order": 11,
-      "title": "Prospective 2028–2035, trajectoires DAPP et capital humain",
-      "summary": "Scénarios prospectifs 2028–2035, planification adaptative DAPP (43 initiatives sans regret et conditionnelles, 15 portes POR, 27 signaux SIG), rampe 90 jours / 180 jours / 18 mois et Paliers P1–P3, 52 capacités CAP-*, 31 ADR et 12 DEC, gouvernance duale AE ↔ AS (10 thèses T1–T10, 6 décisions conjointes, 3 lignes de maîtrise), 7 pièges de gouvernance, prévention de l'atrophie des compétences humaines et du vivier junior, et contraintes énergétiques et de marché.",
+      "title": "Trajectoires d'interopérabilité et d'automatisation 2028–2035 (DAPP), gouvernance d'entreprise AE/AS et repli humain",
+      "summary": "Scénarios d'interopérabilité et d'automatisation 2028–2035, planification adaptative DAPP (43 initiatives INI, 15 portes POR, 27 signaux SIG), rampe 90 j / 9 mois / 18 mois et Paliers P1–P3, 52 CAP, gouvernance duale AE ↔ AS en étoile multi-divisions (thèses T1–T10, 3 lignes, registre 7 états), 7 pièges, parade au biais ASI09, vivier junior et repli manuel L0.",
       "color": "#4f46e5",
       "subdomains_canonical": [
         "Scénarios 2028–2035, trajectoires DAPP et portes POR/SIG",
@@ -394,8 +394,8 @@
     {
       "domain_id": "D12",
       "order": 12,
-      "title": "Homologation vérifiable, trousse exécutable, concordance et Wyvern/G0–G5",
-      "summary": "Socle normatif CRE-IA-2026-01 v1.2 (305 EXIG-*), grille unifiée PRR-75 dont 24 portes bloquantes, fiche 2027-B001, 5 SBB et C01–C40, trousse logicielle exécutable Python 3.12+/OPA/JSON Schema 2020-12 du Tome 8 (83 pytest, 45 OPA 100%, 4 suites de vecteurs tiers), fermeture de DIV-02 et résolution des 5 discordances DISC-01..05, protocole d'ancrage atomique Wyvern, sources L+ SHA-256, statut F, chaîne G0–G5, CA-16, gabarit Typst (4 542 pages, 319 diagrammes), licences CC-BY-4.0/MIT et clause non-avis.",
+      "title": "Homologation vérifiable des systèmes d'entreprise (CRE-IA / PRR-75), trousse exécutable du Tome 8 et chaîne Wyvern G0–G5",
+      "summary": "Référentiel d'homologation des systèmes d'entreprise CRE-IA-2026-01 v1.2 (305 EXIG-* dont 291 formant le tronc multisectoriel), grille PRR-75 (24 bloquantes), fiche ADR 2027-B001, 5 SBB et C01–C40, trousse exécutable Python/OPA du Tome 8 (83 pytest, 45 OPA 100 %, 4 vecteurs tiers), fermeture DIV-02 et DISC-01..05, ancrage Wyvern G0–G5 sur 135 sources L+ SHA-256, licences CC-BY-4.0/MIT et clause non-avis.",
       "color": "#64748b",
       "subdomains_canonical": [
         "Exigences CRE-IA-2026-01, PRR-75 et 24 portes bloquantes",
@@ -490,14 +490,14 @@
     {
       "depth": 0,
       "node_kind": "root",
-      "label": "Racine Corpus",
-      "description": "Nœud racine unique représentant l'ensemble de la collection (8 tomes, 9 fichiers Markdown, 4 542 pages, 319 diagrammes)."
+      "label": "Racine Compendium",
+      "description": "Nœud racine unique représentant le traité unifié « Interopérabilité et automatisation agentique des systèmes d'entreprise » (Compendium : 15 sections, 42 unités, 139 schémas compilés) et sa concordance avec les 8 Tomes historiques."
     },
     {
       "depth": 1,
       "node_kind": "domain",
       "label": "Domaines D01–D12",
-      "description": "Les 12 domaines canoniques de l'architecture et de la gouvernance agentique."
+      "description": "Les 12 domaines canoniques de l'interopérabilité, de l'automatisation agentique et de la gouvernance des systèmes d'entreprise."
     },
     {
       "depth": 2,
@@ -675,6 +675,6 @@
     "Intégrité référentielle à 100 % des 616 arêtes (REL_0001..REL_0616) : chaque source et chaque target existe dans les nœuds synthétisés, sans auto-boucle (source != target).",
     "Chaque arête porte un type appartenant aux 8 types canoniques et une justification non vide.",
     "Zéro unité éditoriale (00-liminaire, ch01..ch36, annexe-a..annexe-e) orpheline : chaque unité du Compendium est reliée à des nœuds thématiques existants et à des occurrences vérifiées dans Compendium/Compendium.md.",
-    "Hiérarchie MindMap complète à 5 niveaux (profondeurs 0 à 4) sans cycle ni nœud détaché, avec intégration explicite de l'agentivité des systèmes (system agency) dans D01."
+    "Hiérarchie MindMap complète à 5 niveaux (profondeurs 0 à 4) sans cycle ni nœud détaché, avec intégration explicite de l'interopérabilité des systèmes d'entreprise, du continuum d'automatisation L0–L4 et de l'agentivité des systèmes (system agency) dans D01."
   ]
 }

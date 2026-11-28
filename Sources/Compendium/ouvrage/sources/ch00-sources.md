@@ -1,4 +1,4 @@
-# Base documentaire fermée — Liminaire — Sommaire exécutif global, doctrine hybride 80/20, concordance inter-tomes et Panorama visuel directeur
+# Base documentaire fermée — Liminaire — Sommaire exécutif : interopérabilité, automatisation agentique des systèmes d'entreprise, doctrine 80/20 et Panorama directeur
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

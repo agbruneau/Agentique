@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 33 — Préservation du capital humain, parade à l'approbation réflexe et maintien du repli manuel
+# Base documentaire fermée — Chapitre 33 — Gouvernance de l'automatisation agentique face au facteur humain : biais d'automatisation (ASI09), vivier junior et maintien du repli manuel vers les systèmes d'entreprise
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

@@ -4,19 +4,19 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-13-01</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Arbre de décision opérationnel</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Arbre de sobriété (N0 → multi-agents), autorité OO1–OO4 et capsules BPMN/APM :</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">conditionner le multi-agents au gain démontré</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Spectre continu d'automatisation (L0 SQL/DMN/RPA/BPMN → OO1–OO4) :</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">capsules hybrides BPMN/APM et porte probatoire du multi-agents</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#1D4ED8"/>
-  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1D4ED8">Z1 — Deux axes distincts : sobriété (EXIG-ORC-01) et autorité OO1–OO4 (Tome 1 § 22.1)</text>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#1D4ED8">Z1 — Continuum de sobriété (L0 déterministe = 0 jeton LLM → EXIG-ORC-01) et autorité OO1–OO4 (Tome 1 § 22.1)</text>
   <g id="node-1" class="node" data-node="true">
     <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">Sobriété : N0 / Code pur → Flux structuré</text>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#1E3A8A">L0 : SQL, règles DMN, RPA &amp; BPMN (0 jeton)</text>
     <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#1D4ED8" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Règles DMN, calculs exacts et graphes fixes</text>
-    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Privilégiés par défaut avant toute IA</text>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Automatismes déterministes et flux fixes d'entreprise</text>
+    <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Exigés par défaut avant toute boucle LLM</text>
   </g>
   <g id="node-2" class="node" data-node="true">
     <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
@@ -39,10 +39,10 @@
   </g>
   <g id="node-4" class="node" data-node="true">
     <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
-    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#064E3B">Capsule OO3 : BPMN / CMMN / Routine</text>
+    <text x="429.7" y="332" font-size="13" font-weight="bold" fill="#064E3B">Capsule OO3 : BPMN + agent borné</text>
     <line x1="429.7" y1="344" x2="770.3" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Sous-processus fromAi plafonné à 10 appels</text>
-    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Agent unique encadré par moteur déterministe</text>
+    <text x="429.7" y="358" font-size="11.8" fill="#1E293B">Tâche BPMN/CMMN fromAi ≤ 10 appels</text>
+    <text x="429.7" y="374" font-size="11.8" fill="#1E293B">Le moteur déterministe gouverne l'agent</text>
   </g>
   <g id="node-5" class="node" data-node="true">
     <rect x="795.3" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
@@ -55,7 +55,7 @@
 <g id="zone-Z3" class="zone">
   <rect x="28" y="422" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
   <rect x="28" y="422" width="8" height="136" rx="4" fill="#B45309"/>
-  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#B45309">Z3 — Porte probatoire vers le multi-agents (EXIG-ORC-02 · sous cadre OO3/OO4)</text>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#B45309">Z3 — Porte probatoire vers OO4 multi-agents (EXIG-ORC-02 · dernier recours sous cadre OO3/OO4)</text>
   <g id="node-6" class="node" data-node="true">
     <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
     <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#451A03">Porte statistique IC 95 % &amp; CPO</text>
@@ -65,41 +65,41 @@
   </g>
   <g id="node-7" class="node" data-node="true">
     <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
-    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#451A03">Collectif multi-agents homologué (ADR-011)</text>
+    <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#451A03">OO4 · Multi-agents homologué (ADR-011)</text>
     <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#B45309" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Couvre 1,6×–6,2× (et 10×–45× en débat)</text>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Dernier recours couvrant 1,6×–6,2× (10×–45× débat)</text>
     <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Sous contrôle de l'effet Ringelmann</text>
   </g>
 </g>
 <g id="flows-box">
   <rect x="28" y="572" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
   <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
-  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Appliquer la sobriété : code déterministe (N0/DMN) ou flux fixe avant de</text>
-  <text x="42.0" y="627" font-size="11.5" fill="#334155">recourir à l'IA générative.</text>
+  <text x="42.0" y="612" font-size="11.5" fill="#334155">① Épuiser d'abord le palier L0 (SQL, règles DMN, RPA stable, BPMN = 0 jeton LLM)</text>
+  <text x="42.0" y="627" font-size="11.5" fill="#334155">avant toute automatisation agentique.</text>
   <text x="609.0" y="612" font-size="11.5" fill="#334155">② Évaluer C26 § 29.4.1 : si positif, proscrire OO1–OO2 (pilotage agent) et</text>
   <text x="609.0" y="627" font-size="11.5" fill="#334155">basculer vers un cadre OO3 ou OO4.</text>
-  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Encapsuler l'agent unique en OO3/OO4 (BPMN fromAi ≤ 10 appels, CMMN, Routine</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Encapsuler l'agent unique en OO3 (BPMN fromAi ≤ 10 appels, CMMN, Routine</text>
   <text x="42.0" y="665" font-size="11.5" fill="#334155">et frames locaux APM).</text>
-  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Autoriser le multi-agents uniquement sur preuve pass^k et CPO couvrant le</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Autoriser OO4 multi-agents uniquement sur preuve pass^k et CPO couvrant le</text>
   <text x="609.0" y="665" font-size="11.5" fill="#334155">surcoût 1,6×–6,2× (10×–45× en débat).</text>
 </g>
 <g id="legend-box">
   <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
   <rect x="42.0" y="715" width="14" height="14" rx="3" fill="#1D4ED8"/>
-  <text x="62.0" y="726" font-size="11" fill="#1E293B">Sobriété déterministe (N0/flux fixe) ; rouge = OO1–OO2</text>
+  <text x="62.0" y="726" font-size="11" fill="#1E293B">Palier L0 (SQL/DMN/RPA/BPMN, 0 jeton) ; rouge = OO1–OO2</text>
   <text x="62.0" y="741" font-size="11" fill="#1E293B">proscrits sous C26 § 29.4.1</text>
   <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#047857"/>
   <text x="438.7" y="726" font-size="11" fill="#1E293B">Bascule OO2 → OO3/OO4 : moteur déterministe et</text>
-  <text x="438.7" y="741" font-size="11" fill="#1E293B">capsules BPMN/APM</text>
+  <text x="438.7" y="741" font-size="11" fill="#1E293B">capsules BPMN + agent</text>
   <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#D97706"/>
-  <text x="815.3" y="726" font-size="11" fill="#1E293B">Collectif multi-agents subordonné à preuve statistique</text>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Collectif OO4 multi-agents en dernier recours sur preuve</text>
   <text x="815.3" y="741" font-size="11" fill="#1E293B">pass^k et CPO (EXIG-ORC-02)</text>
 </g>
 <g id="takeaway-box">
   <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
   <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
   <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
-  <text x="44" y="812" font-size="11.5" fill="#1E293B">Une architecture d'entreprise demeure déterministe partout où cela suffit et n'active l'autonomie que dans une capsule strictement</text>
-  <text x="44" y="828" font-size="11.5" fill="#1E293B">mesurée.</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">L'automatisation des systèmes d'entreprise forme un continuum : épuiser le socle L0 sans jeton (SQL, DMN, RPA, BPMN), encapsuler</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">l'agent dans un processus déterministe OO3, et réserver le multi-agents OO4 aux gains statistiques démontrés.</text>
 </g>
 </svg>

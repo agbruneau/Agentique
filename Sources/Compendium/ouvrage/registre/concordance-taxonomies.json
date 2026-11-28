@@ -140,7 +140,7 @@
   ],
   "echelles_autonomie_classes_t5_a2": [
     {
-      "Classe d’acte (PD28)": "Hors classe (flux fixe)",
+      "Classe d’acte (PD28)": "Hors classe (flux fixe : règles, BPMN, iPaaS, RPA stable)",
       "Niveau × Palier (CAD26 ch. 8)": "N0 Déterministe sans choix modèle",
       "C27 (L0–L4)": "L0 déterministe",
       "C26 (OO / Q)": "OO3 pur / code [S]",
@@ -192,7 +192,7 @@
   "concordances": [
     {
       "discordance_id": "DISC-01",
-      "topic": "Échelle d'autonomie L0–L4 : flux purement déterministe sans IA vs lecture/synthèse assistée par IA",
+      "topic": "Échelle d'autonomie L0–L4 et continuum d'automatisation : flux déterministes sans IA (règles, BPM, iPaaS, RPA) vs automatisation agentique",
       "volume_variants": [
         {
           "volume": "Vol. 3 (3 - Compendium 2027.md)",
@@ -205,9 +205,9 @@
           "corpus_ref": "7 - Livre.md L184-L202"
         }
       ],
-      "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (Liminaire § 0.2 et Chapitre 36) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
+      "canonical_vol8_choice": "Conservation de l'échelle L0–L4 graduant les droits de mutation et de sortie sur les systèmes d'entreprise, en distinguant le socle L0 hors modèle (règles, DMN, BPMN 2.0, iPaaS, RPA stable ; Liminaire § 0.2, Ch. 36) du profil L0–L1 en lecture seule.",
       "liminaire_section": "0.2",
-      "rationale": "Empêche le déploiement d'agents probabilistes sur des flux où un script déterministe sans modèle suffit, tout en rendant les profils OPA (politiques Rego policies_opa évaluées par policy_saga/opa_runner.py) homogènes entre le cadre normatif et les chapitres pratiques du Compendium."
+      "rationale": "Empêche la sur-agentification de flux relevant d'une automatisation déterministe classique (règles, BPMN, iPaaS, RPA stable) tout en unifiant les profils Rego (policies_opa via policy_saga/opa_runner.py) à travers le Compendium."
     },
     {
       "discordance_id": "DISC-02",
@@ -253,9 +253,9 @@
           "corpus_ref": "5 - Memoire.md L98"
         }
       ],
-      "canonical_vol8_choice": "Les quatre modules techniques de la trousse exécutable d'homologation ancrent leurs composants dans les Plans A (policy_saga/opa_runner.py avec politiques Rego policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr pour télémétrie/audit/évaluation), C (validateurs PRR/ADR d'evalops_prr pour gouvernance et registre) et les couches techniques Couche 1 / Couche 2 / Couche 4 (C1/C2/C4) du Cadre 2026 (harness_proto pour l'accès, l'orchestration et la médiation protocolaire) tout en exposant le noyau déterministe en quatre modules exécutables.",
+      "canonical_vol8_choice": "Les quatre modules de la trousse s'ancrent dans les Plans A (policy_saga/opa_runner.py, policies_opa, authz_pqc_audit), B (otel_pii_mapper, audit_scitt_focus, evalops_prr), C (validateurs PRR/ADR) et les couches C1/C2/C4 (harness_proto), gouvernant l'interface entre strate agentique (SoA) et systèmes d'entreprise (SoR, SoE, OT).",
       "liminaire_section": "0.2",
-      "rationale": "Aligne directement l'architecture exécutable d'homologation (Partie XII du Compendium, Chapitres 34 à 36) sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des tomes antérieurs (Tomes 2 à 7)."
+      "rationale": "Aligne l'homologation exécutable (Partie XII, Ch. 34–36) et l'interface SoA ↔ systèmes d'entreprise (SoR, SoE, OT) sur les 5 emplacements SBB du Cadre de Référence sans briser l'héritage des Tomes 2 à 7."
     },
     {
       "discordance_id": "DISC-04",

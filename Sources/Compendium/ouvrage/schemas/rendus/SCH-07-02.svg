@@ -4,38 +4,38 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-07-02</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Comparatif Avant / Après</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Anti-patron Swagger-to-MCP 1:1 face aux façades d'intention ACI (≤ 15 outils</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">métier et Code Mode)</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Anti-patron OpenAPI/Swagger-to-MCP 1:1 sur ERP/ITSM face aux façades</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">d'intention métier ACI (≤ 15 outils et Code Mode)</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
-  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — AVANT (Anti-patron AP-04) — Miroir brut Swagger-to-MCP 1:1 (&gt; 50 outils)</text>
+  <text x="46" y="144" font-size="13.5" font-weight="bold" fill="#B91C1C">Z1 — AVANT (Anti-patron AP-04) — Miroir brut OpenAPI/Swagger-to-MCP 1:1 sur ERP, ITSM ou CRM (&gt; 50–300 routes)</text>
   <g id="node-1" class="node" data-node="true">
     <rect x="42.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
-    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Exposition brute &gt; 50 routes CRUD</text>
+    <text x="53.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Exposition brute &gt; 50–300 routes CRUD</text>
     <line x1="53.0" y1="194" x2="582.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Conversion automatique REST → MCP</text>
+    <text x="53.0" y="208" font-size="11.8" fill="#1E293B">Conversion 1:1 OpenAPI d'ERP / ITSM / CRM</text>
     <text x="53.0" y="224" font-size="11.8" fill="#1E293B">Sature la fenêtre d'attention du modèle</text>
   </g>
   <g id="node-2" class="node" data-node="true">
     <rect x="607.0" y="160" width="551.0" height="86" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
     <text x="618.0" y="182" font-size="13" font-weight="bold" fill="#7F1D1D">Échecs d'enchaînement &amp; surcoût</text>
     <line x1="618.0" y1="194" x2="1147.0" y2="194" stroke="#B91C1C" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Jointures partielles erronées</text>
+    <text x="618.0" y="208" font-size="11.8" fill="#1E293B">Jointures inter-tables SoR erronées</text>
     <text x="618.0" y="224" font-size="11.8" fill="#1E293B">Charges brutes explosant le budget jetons</text>
   </g>
 </g>
 <g id="zone-Z2" class="zone">
   <rect x="28" y="272" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
   <rect x="28" y="272" width="8" height="136" rx="4" fill="#047857"/>
-  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#047857">Z2 — APRÈS (Cible ACI / ADR-005) — Façades d'intention métier (5–12 outils, plafond à 15)</text>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#047857">Z2 — APRÈS (Cible ACI / ADR-005) — Façades d'intention métier sur systèmes d'entreprise (5–12 outils, plafond à 15)</text>
   <g id="node-3" class="node" data-node="true">
     <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
     <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#064E3B">5–12 façades d'intention (≤ 15)</text>
     <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
     <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Seuil d'alerte à 15 (EXIG-ORC-09)</text>
-    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Chargement Dynamic Toolsets</text>
+    <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Façades métier sur SoR · Dynamic Toolsets</text>
   </g>
   <g id="node-4" class="node" data-node="true">
     <rect x="418.7" y="310" width="362.7" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
@@ -55,20 +55,20 @@
 <g id="flows-box">
   <rect x="28" y="422" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
   <text x="42" y="444" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
-  <text x="42.0" y="462" font-size="11.5" fill="#334155">① Avant (AP-04) : le convertisseur injecte plus de 50 définitions REST brutes dans</text>
-  <text x="42.0" y="477" font-size="11.5" fill="#334155">le contexte à chaque tour.</text>
+  <text x="42.0" y="462" font-size="11.5" fill="#334155">① Avant (AP-04) : le convertisseur OpenAPI 1:1 injecte des dizaines de routes CRUD</text>
+  <text x="42.0" y="477" font-size="11.5" fill="#334155">d'ERP, CRM ou ITSM dans le contexte à chaque tour.</text>
   <text x="609.0" y="462" font-size="11.5" fill="#334155">② L'agent échoue sur des appels atomiques partiels et reçoit des charges brutes</text>
   <text x="609.0" y="477" font-size="11.5" fill="#334155">saturant les jetons.</text>
-  <text x="42.0" y="500" font-size="11.5" fill="#334155">③ Après (ACI / ADR-005) : la façade expose 5–12 outils d'intention (≤ 15) et active</text>
-  <text x="42.0" y="515" font-size="11.5" fill="#334155">Dynamic Toolsets ou Code Mode.</text>
+  <text x="42.0" y="500" font-size="11.5" fill="#334155">③ Après (ACI / ADR-005) : la façade expose 5–12 intentions métier (≤ 15) devant</text>
+  <text x="42.0" y="515" font-size="11.5" fill="#334155">les SoR et active Dynamic Toolsets ou Code Mode.</text>
   <text x="609.0" y="500" font-size="11.5" fill="#334155">④ Le serveur retourne structuredContent ou un pointeur resource_link (&gt; 8 Ko) avec</text>
   <text x="609.0" y="515" font-size="11.5" fill="#334155">erreur actionnable.</text>
 </g>
 <g id="legend-box">
   <rect x="28" y="554" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
   <rect x="42.0" y="565" width="14" height="14" rx="3" fill="#B91C1C"/>
-  <text x="62.0" y="576" font-size="11" fill="#1E293B">Anti-patron Swagger-to-MCP 1:1 (AP-04 : &gt; 50 outils,</text>
-  <text x="62.0" y="591" font-size="11" fill="#1E293B">surcoûts)</text>
+  <text x="62.0" y="576" font-size="11" fill="#1E293B">Anti-patron OpenAPI-to-MCP 1:1 (AP-04 : ERP/ITSM,</text>
+  <text x="62.0" y="591" font-size="11" fill="#1E293B">&gt; 50 outils)</text>
   <rect x="418.7" y="565" width="14" height="14" rx="3" fill="#047857"/>
   <text x="438.7" y="576" font-size="11" fill="#1E293B">Façades d'intention ACI conformes (≤ 15 outils,</text>
   <text x="438.7" y="591" font-size="11" fill="#1E293B">resource_link)</text>
@@ -79,7 +79,7 @@
   <rect x="28" y="624" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
   <rect x="28" y="624" width="6" height="68" rx="3" fill="#1B4F72"/>
   <text x="44" y="644" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
-  <text x="44" y="662" font-size="11.5" fill="#1E293B">Un serveur MCP d'entreprise ne transpose pas une API technique point par point : il expose au plus 15 intentions métier explicites qui</text>
-  <text x="44" y="678" font-size="11.5" fill="#1E293B">préservent le budget de jetons et orientent l'agent de manière déterministe.</text>
+  <text x="44" y="662" font-size="11.5" fill="#1E293B">L'interopérabilité MCP ne recopie jamais en 1:1 les centaines d'endpoints OpenAPI d'un ERP, CRM ou ITSM : elle expose au plus 15</text>
+  <text x="44" y="678" font-size="11.5" fill="#1E293B">façades d'intention métier qui préservent le budget de jetons et guident l'action de manière déterministe.</text>
 </g>
 </svg>

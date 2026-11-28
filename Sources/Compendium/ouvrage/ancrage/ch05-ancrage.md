@@ -1,6 +1,6 @@
 # Journal d'ancrage atomique Wyvern — Chapitre 05 (`Chapitre 05.md`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md` (`ch05`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 05.md` (`ch05`, `3 977` mots, plage `[3 552, 4 168]` — *Chapitre 05 — Continuum d'automatisation N0–N4/L0–L4, propagation inter-systèmes du maillon le plus élevé et supervision anti-complaisance*)
 - **Agent auditeur :** `wyvern-05` (auditeur atomique Wyvern neuf, barrière `G2` selon `AO-07`)
 - **Base fermée autorisée :** `Compendium/ouvrage/sources/ch05-sources.md` (`[1]`–`[10]`), textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt`, registres `Compendium/ouvrage/registre/*.json`, exclusions `Compendium/ouvrage/recherche/registre-statut-f.json`, spécifications `Compendium/ouvrage/specs/{manifest.json,protocole-mlr-compendium.json}`, rapport `Compendium/ouvrage/aq/rapports-g0.json` et renvois internes vérifiés dans `Corpus/Tome 1..8*.md`
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
@@ -164,3 +164,18 @@
   - *Preuve primaire :* `SRC-066.txt` (`[2]`, `L27`, `L65`, `L175`), `SRC-055.txt` (`[10]`, `L237–L242`).
   - Verdict : supporté
 - **Contrôle `REV-05` :** `3 798` mots (`verifie_manuscrit.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch05 --strict` = `exit 0`. **Verdict final : `38 / 38` (`100,0 %` supporté).**
+
+---
+
+## Mise à jour d'adaptation éditoriale (`Vague 2` — continuum N0–N4/L0–L4 et propagation inter-systèmes)
+
+- **C05-V2-01 (`L1–L9`, `L29`, `L69`, `§ 5.1`, `§ 5.2.1`, `§ 5.2.2`)** — Nouveau titre, question directrice, vedettes `Autonomie bornée` et `règle du maillon le plus élevé`, définition explicite de `N0`/`L0` comme socle d'automatisation déterministe d'entreprise (`DMN`, `BPMN 2.0`, `iPaaS`, lots `ERP`, `RPA` fixe) et démarcation entre traitement événementiel `CDC`/`EDA` `N0` et agent ambiant `N4`.
+  - *Preuve primaire :* `specs/manifest.json` (`ch05`), `registre/glossaire-termes.json`, `registre/concordance-taxonomies.json` (`DISC-01`).
+  - Verdict : supporté
+- **C05-V2-02 (`L35–L57`, `L111–L119`, `§ 5.2.1`, `Tableaux 5.1 et 5.3`)** — Formulation multisectorielle des huit domaines d'affaires `D1–D8` (`CRM`, devis, `ERP`, `SIRH`, `SCM`, `GRC`, achats, `ITSM`/`OT`, avec instanciation financière de haute assurance sous `DISC-02`) et illustration de la propagation inter-systèmes du maillon le plus élevé (`CRM Classe 2 → ERP/SCM Classe 4`).
+  - *Preuve primaire :* `registre/concordance-taxonomies.json` (`DISC-02`), `SRC-065.txt` (`[1]`), `SRC-060.txt` (`[3]`), `SRC-055.txt` (`[10]`, `ASI01`).
+  - Verdict : supporté
+- **C05-V2-03 (`L75`, `L96`, `§ 5.2.2`)** — Mise en valeur du contexte industriel de l'étude `AL-Ali` et coll. (`[7]`, simulateur de maintenance prédictive : `12,36 %`, `0,8 %` et `> 15 %` sous forte cadence) et rappel de la portée transversale de l'article `12.1` de la Loi 25 (`[5]`) sur toute entreprise privée.
+  - *Preuve primaire :* `SRC-073.txt` (`[7]`, `L46, L212, L355, L408`), `SRC-063.txt` (`[5]`, `L1542–L1555`).
+  - Verdict : supporté
+- **Contrôle `Vague 2` :** `3 977` mots (`verifie_manuscrit.py`) dans `[3 552, 4 168]`, `10 / 10` sources `L+` citées, `0` erreur `CA-01..CA-22`. **Verdict final : `41 / 41` (`100,0 %` supporté).**

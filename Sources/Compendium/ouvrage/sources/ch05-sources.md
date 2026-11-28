@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 05 — Échelle d'autonomie unifiée N0–N4/L0–L4, règle du maillon et supervision anti-complaisance
+# Base documentaire fermée — Chapitre 05 — Continuum d'automatisation N0–N4/L0–L4, propagation inter-systèmes du maillon le plus élevé et supervision anti-complaisance
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

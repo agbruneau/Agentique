@@ -30,7 +30,7 @@
         "taxonomie-acteurs-agentiques"
       ],
       "title": "Du copilote passif à la boucle System of Action : cinq paliers d'autonomie de trajectoire et cinq archétypes sans super-agent",
-      "insertion_point": "Chapitre 01 (§ 01.2.1 — Paradigme des Systèmes d'agentivité, après le thème `rupture-modele-conversationnel-agent-boucle`)",
+      "insertion_point": "Chapitre 01 (§ 01.1 — De l'automatisation déterministe à l'automatisation agentique des systèmes d'entreprise, après `rupture-modele-conversationnel-agent-boucle`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -38,7 +38,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma permet à la direction de distinguer avec précision un assistant conversationnel mono-tour sans effet de bord d'un agent opérant en boucle fermée (PEAS/BDI/POMDP) sur les systèmes de l'entreprise. Il illustre pourquoi chaque cas d'usage est classé selon cinq paliers (du LLM augmenté au système composé) et pourquoi l'architecture spécialise cinq rôles fonctionnels plutôt que de concevoir un super-agent omniscient.",
+      "pedagogical_objective": "Ce schéma permet à la direction et aux architectes de distinguer un assistant conversationnel mono-tour sans effet de bord d'une couche d'automatisation agentique — System of Action (SoA, explicitement distingué de l'architecture orientée services SOA traitée au Chapitre 03) — opérant en boucle bornée (PEAS/BDI/POMDP) entre les Systems of Engagement (SoE) et les Systems of Record (ERP, CRM, SIRH, ITSM). Il rappelle le socle déterministe L0 préalable aux cinq paliers et la spécialisation en cinq archétypes à privilèges disjoints.",
       "vulgarization_angle": "Opposer un terminal de consultation passive (délivrant un texte à l'écran sans actionneur) à un atelier industriel structuré où chaque poste spécialisé (interface, spécialiste de domaine, opérateur de tâche, orchestrateur et inspecteur de conformité) dispose d'un outillage borné sous contrat.",
       "visual_blueprint": {
         "zones": [
@@ -49,8 +49,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Après — Strate System of Action (SoA) en boucle PEAS / POMDP bornée",
-            "content": "Boucle perception → raisonnement → action → observation conforme à ADR-001 (zéro SQL direct sur les SoR) et satisfaisant les sept critères vérifiables de production."
+            "label": "Après — Couche d'automatisation agentique : System of Action (SoA ≠ SOA) en boucle PEAS / POMDP bornée",
+            "content": "Relie SoE → couche d'automatisation agentique (SoA) → SoR d'entreprise (ERP, CRM, SIRH, ITSM) via PEP et ACL conformément à ADR-001 (zéro SQL direct), après arbitrage du socle déterministe L0 et classement en cinq paliers."
           },
           {
             "zone_id": "Z3",
@@ -59,9 +59,9 @@
           }
         ],
         "numbered_flows": [
-          "① Un événement ou un utilisateur sollicite la strate System of Engagement (SoE), qui transmet une intention structurée au System of Action (SoA).",
+          "① Un événement ou un utilisateur sollicite la strate System of Engagement (SoE), qui transmet une intention structurée à la couche d'automatisation agentique (SoA ≠ SOA).",
           "② L'architecture classe le besoin selon les cinq paliers (selon que le code fixe ou la boucle décide du chemin) avant d'activer un archétype spécialisé.",
-          "③ L'agent exécute une boucle bornée (PEAS / BDI / POMDP) sous contrainte d'optimalité limitée sans accéder directement aux tables des Systems of Record (SoR).",
+          "③ L'agent exécute une boucle bornée (PEAS / BDI / POMDP) via outils d'intention PEP/ACL sans requête SQL directe vers les Systems of Record (ERP, CRM, SIRH, ITSM).",
           "④ Le méta-gouverneur et le registre d'inventaire vérifient la condition d'arrêt et scellent la trace à chaque itération."
         ],
         "color_legend": [
@@ -78,7 +78,7 @@
             "meaning": "Systems of Record (SoR) protégés et critère d'arrêt déterministe vérifié"
           }
         ],
-        "key_takeaway_box": "Un agent ne constitue pas un simple dialogue automatisé, mais un opérateur en boucle capable d'effets irréversibles ; l'entreprise isole donc la couche d'action (SoA) des livres comptables (SoR) et proscrit tout super-agent universel."
+        "key_takeaway_box": "Un agent en production opère dans une couche d'automatisation bornée (System of Action, SoA — distincte de SOA) intercalée entre SoE et SoR (ERP, CRM, SIRH, ITSM), sans super-agent universel."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -130,7 +130,7 @@
         "systems-of-agency"
       ],
       "title": "Mirage de l'« agent washing » face à la réalité terrain MAP et passage aux engagements observables",
-      "insertion_point": "Chapitre 01 (§ 01.2.1 — Paradigme des Systèmes d'agentivité, après le thème `etat-des-lieux-adoption-map-2027`)",
+      "insertion_point": "Chapitre 01 (§ 01.1 — Adoption réelle terrain MAP, diffusion multisectorielle et engagements observables, après `etat-des-lieux-adoption-map-2027`)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS"
@@ -144,7 +144,7 @@
           {
             "zone_id": "Z1",
             "label": "Discours déclaratif face à la réalité statistique de 2026–2027",
-            "content": "Sondages d'usage général (Statistique Canada 19,2 % / 40,4 % en finance ; McKinsey 40 % des grandes organisations) confrontés à l'étude MAP (68 % ≤ 10 étapes, 16/20 flux fixes, 74 % de revue humaine) et à 95 % de projets sans ROI chiffré."
+            "content": "Sondages multisectoriels (Statistique Canada : 42,3 % information, 40,4 % finance, 30,0 % santé, 13,1 % fabrication, RPA 5,0 %) confrontés à l'étude terrain MAP sur 26 domaines (68 % ≤ 10 étapes, 80 % flux structurés, 74 % revue humaine) et à 95 % de pilotes sans ROI chiffré."
           },
           {
             "zone_id": "Z2",
@@ -691,7 +691,7 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Cet arbre éclaire la décision d'investissement de la direction : bien que le calcul chute d'environ 10× par an et comprime les coûts de recherche et de négociation (Coase), les estimations de marché varient d'un facteur de 1 à 59 et les agents SaaS captifs (« ouverts sur le fil, fermés sur le contrôle ») entravent la réversibilité. L'arbre privilégie donc par défaut l'assemblage sur standards ouverts.",
+      "pedagogical_objective": "Cet arbre décisionnel structure l'arbitrage d'investissement en plaçant en tête une Porte 0 de sobriété déterministe (vérifier si une règle codée, une API, un workflow BPMN ou un automatisme RPA L0 suffit sans LLM) avant d'évaluer l'achat, l'assemblage ou la construction. Il protège l'entreprise contre l'enfermement dans les jardins clos SaaS (CRM, ERP, ITSM, SIRH « ouverts sur le fil, fermés sur le plan de contrôle ») en privilégiant par défaut l'assemblage hybride 80/20 sur standards ouverts.",
       "vulgarization_angle": "Comparer l'agent préintégré d'un éditeur à un équipement captif utilisable uniquement dans l'enceinte du fournisseur, par opposition à l'assemblage de composants normalisés sur un châssis détenu en propre par l'entreprise.",
       "visual_blueprint": {
         "zones": [
@@ -702,8 +702,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Arbre à cinq portes : Acheter (SaaS), Assembler (défaut) ou Construire",
-            "content": "Portes 1–3 : si le cas est non critique, l'achat SaaS n'est autorisé que si le plan de contrôle et la sortie B-10 sont ouverts ; Portes 4–5 : tout flux critique est assemblé sur standards ouverts (80/20), la construction interne demeurant réservée au différenciant souverain."
+            "label": "Porte préalable L0 puis arbre à cinq portes : Acheter (SaaS ouvert), Assembler (défaut 80/20) ou Construire",
+            "content": "Porte 0 : rester en automatisme déterministe L0 (API, BPMN, RPA) si aucune délibération n'est requise ; Portes 1–3 : confiner tout silo SaaS (CRM, ERP, ITSM, SIRH) fermé sur le plan de contrôle ou la sortie B-10 ; Portes 4–5 : assembler par défaut sur MCP, A2A, CloudEvents et exécution durable."
           },
           {
             "zone_id": "Z3",
@@ -713,8 +713,8 @@
         ],
         "numbered_flows": [
           "① Écarter toute prévision de marché dispersée (6 périmètres emboîtés) au profit du coût complet par résultat conforme (CPO).",
-          "② Vérifier si le cas d'usage est banalisé (monosilo) ou critique et transversal pour le mandat.",
-          "③ Geler ou confiner en lecture seule tout agent SaaS « ouvert sur le fil mais fermé sur le plan de contrôle ».",
+          "② Franchir d'abord la Porte 0 (un flux L0 API/BPMN/RPA suffit-il à 0 jeton ?), puis distinguer les besoins monosilo des flux critiques transversaux.",
+          "③ Rejeter ou confiner en lecture seule tout agent de suite SaaS (CRM, ERP, ITSM, SIRH) fermé sur le plan de contrôle ou dépourvu de réversibilité B-10.",
           "④ Assembler par défaut sur protocoles ouverts (MCP, A2A, CloudEvents, Temporal) autour du noyau possédé."
         ],
         "color_legend": [
@@ -731,7 +731,7 @@
             "meaning": "Construction interne souveraine réservée aux actifs différenciants et secrets métier"
           }
         ],
-        "key_takeaway_box": "L'ouverture des connecteurs ne garantit pas la liberté de sortie ; pour tout flux critique, l'institution assemble des modèles substituables autour d'un plan de contrôle dont elle conserve l'entière maîtrise."
+        "key_takeaway_box": "Toute décision débute par le filtre déterministe L0 ; au-delà, l'entreprise évite les silos SaaS captifs (CRM, ERP, ITSM, SIRH) en assemblant des modèles substituables autour d'un plan de contrôle possédé."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -883,7 +883,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce comparatif montre pourquoi les intégrations point-à-point croissent financièrement selon N(N−1)/2 et comment un catalogue de contrats normalisés ramène quatre agents et cinq systèmes de 20 liaisons à 9 contrats réutilisables. Il relie vingt ans d'architecture d'intégration (EAI, SOA, REST, EDA, FIPA-ACL) aux quatre termes permanents : découplage, contrat, évolution et exploitation.",
+      "pedagogical_objective": "Ce comparatif démontre pourquoi les connecteurs point-à-point entre agents et silos applicatifs (ERP, CRM, ITSM) croissent selon N(N−1)/2 et comment un bus de contrats ouverts ramène quatre agents et cinq systèmes de 20 liaisons fragiles à 9 contrats réutilisables (N+M). Il inscrit MCP, A2A et CloudEvents dans la filiation directe de vingt ans d'intégration d'entreprise (EAI → ESB/SOA → REST/iPaaS → EDA) autour de l'invariant à quatre termes : découplage, contrat, évolution et exploitation.",
       "vulgarization_angle": "Opposer un câblage artisanal point-à-point incompatible à un bus de distribution normalisé où chaque équipement se raccorde au tableau central au moyen de quatre spécifications immuables.",
       "visual_blueprint": {
         "zones": [
@@ -894,8 +894,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Après — Bus de contrats ouverts N+M et héritage EAI → SOA → API → EDA",
-            "content": "Chaque agent et chaque système publie un contrat unique derrière la passerelle et le catalogue sur HTTP, gRPC ou CloudEvents."
+            "label": "Après — Bus de contrats ouverts N+M dans la filiation ESB/SOA → REST/iPaaS → MCP/A2A",
+            "content": "Capitalisation sur vingt ans d'intégration d'entreprise (EAI, ESB/SOA Service-Oriented Architecture, REST/iPaaS, EDA) : chaque acteur publie un contrat ouvert unique (MCP, A2A, OpenAPI/gRPC, CloudEvents) derrière le PEP, l'API Gateway et le catalogue."
           },
           {
             "zone_id": "Z3",
@@ -1059,14 +1059,14 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma concrétise la règle hybride 80/20 en code exécutable (`harness_proto/pipeline.py`) : sept étapes déterministes encerclent une unique étape probabiliste (`4_model`) sous contrat JSON Schema Draft 2020-12 strict (`additionalProperties: false`, zéro `$ref` réseau). Dès qu'une pièce s'avère ambiguë ou qu'un calcul dévie, le modèle s'abstient explicitement via `AMBIGU_ESCALADE` sans jamais extrapoler ni écrire en SQL.",
+      "pedagogical_objective": "Ce schéma matérialise l'architecture hybride 80/20 en code exécutable (`harness_proto/pipeline.py`) raccordé aux systèmes d'entreprise (ERP, CRM, SIRH, ITSM) : sept étapes déterministes encerclent une unique étape probabiliste (`4_model`) sous contrat JSON Schema Draft 2020-12 strict. En cas d'ambiguïté ou d'écart d'ancrage Decimal, le harnais déclenche `AMBIGU_ESCALADE` sans jamais extrapoler ni écrire directement dans les tables SoR.",
       "vulgarization_angle": "Représenter une chaîne d'inspection métrologique de haute précision où le modèle d'IA n'occupe qu'un seul poste d'analyse optique encadré par sept contrôles mécaniques, avec une voie de dérivation dédiée aux cas ambigus destinée à la révision humaine.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Sas d'entrée déterministe (jalons `1_size_utf8` à `3_ctx`)",
-            "content": "Re-sérialisation UTF-8 ≤ 64 Kio (`allow_nan=False`), validation `_INPUT_SCHEMA` et construction triée du contexte borné (coût modèle nul sur rejet précoce `VALIDATION_FAILED`)."
+            "content": "Normalisation des événements issus des connecteurs d'entreprise (ERP, CRM, SIRH, ITSM), re-sérialisation UTF-8 ≤ 64 Kio (`allow_nan=False`), validation `_INPUT_SCHEMA` et assemblage trié du contexte borné (0 jeton consommé sur rejet précoce)."
           },
           {
             "zone_id": "Z2",
@@ -1076,7 +1076,7 @@
           {
             "zone_id": "Z3",
             "label": "Sas de sortie, porte d'abstention et sceau d'audit (jalons `5_schema` à `8_seal`)",
-            "content": "Validateur de schéma, ancrage `_check_grounding` (arithmétique `Decimal` en unités mineures, `allowed_grounding_ids`), issue explicite `AMBIGU_ESCALADE` ou `DONNEES_INSUFFISANTES` et empreinte JCS SHA-256."
+            "content": "Validation de schéma, contrôle d'ancrage `_check_grounding` (arithmétique `Decimal` exacte, `allowed_grounding_ids`), porte d'abstention `AMBIGU_ESCALADE`, sceau JCS SHA-256 et routage vers les façades MCP/PEP des SoR (ERP, CRM, SIRH, ITSM)."
           }
         ],
         "numbered_flows": [
@@ -1099,7 +1099,7 @@
             "meaning": "Issue d'abstention typée `AMBIGU_ESCALADE` et sceau d'audit JCS SHA-256"
           }
         ],
-        "key_takeaway_box": "Le modèle propose, le harnais dispose : grâce aux sept étapes déterministes et à la porte AMBIGU_ESCALADE, aucune sortie invalide ou fabriquée ne parvient aux systèmes financiers."
+        "key_takeaway_box": "Le modèle propose, le harnais dispose : sept jalons déterministes et la porte AMBIGU_ESCALADE garantissent qu'aucune sortie non vérifiée n'atteint les systèmes d'entreprise (ERP, CRM, SIRH, ITSM)."
       },
       "reuse_status": "reemploi_direct",
       "linked_tome_figures": [
@@ -1258,14 +1258,14 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce parcours décrit comment déléguer la génération ou la modernisation de code patrimonial (COBOL/RPG) à des agents sans exposer l'entreprise aux erreurs d'arrondi financier ni à l'auto-validation : l'agent qui rédige les tests ne peut jamais modifier le code, et le nouveau service s'exécute en double miroir jusqu'à prouver un écart de 0,00 $ sur au moins 100 000 transactions réelles.",
+      "pedagogical_objective": "Ce parcours montre comment industrialiser la modernisation de cœurs patrimoniaux multisectoriels (RPG/COBOL, ABAP/ERP, PL/SQL, DB2) sans auto-validation ni erreur d'arrondi : la muraille SPIFFE sépare l'Agent Spécificateur (oracle Golden Master/Z3) de l'Agent Bâtisseur isolé, puis le comparateur Shadow Mirroring vérifie une parité exacte (0,00 $ d'écart sur ≥ 100 000 transactions) avant bascule graduelle sur Outbox/CDC.",
       "vulgarization_angle": "Comparer l'usine logicielle à la séparation stricte entre le bureau de normalisation (qui scelle les épreuves d'homologation) et l'atelier d'assemblage isolé de tout réseau externe, suivie d'une marche en parallèle durant un cycle comptable complet.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Séparation des devoirs SPIFFE : Agent Spécificateur face à l'Agent Bâtisseur isolé",
-            "content": "Le Spécificateur analyse AST/SCIP et rédige spécifications + oracle Golden Master/Z3 (10k–100k cas) sans écrire de code ; le Bâtisseur code en Rust, Go ou Java en arithmétique `Decimal` exacte sans accès réseau ni écriture dans `specs/**` ou `tests/**`."
+            "content": "Analyse AST/SCIP et ANTLR/Tree-sitter sur patrimoine RPG/COBOL, ABAP/ERP, PL/SQL et DB2 ; le Spécificateur fige l'oracle Golden Master/Z3 tandis que le Bâtisseur code en Rust, Go ou Java (`Decimal` exact) sans réseau ni accès en écriture aux tests."
           },
           {
             "zone_id": "Z2",
@@ -1275,7 +1275,7 @@
           {
             "zone_id": "Z3",
             "label": "Figuier étrangleur patrimonial et comparateur Shadow Mirroring",
-            "content": "Exécution parallèle du cœur RPG/COBOL et du service MCP moderne via comparateur `Decimal` (`0,00 $` d'écart sur `N >= 100 000` transactions durant un cycle complet), suivie d'une bascule progressive avec Outbox/Debezium < 200 ms."
+            "content": "Exécution parallèle des cœurs patrimoniaux (RPG/COBOL, ABAP/ERP, PL/SQL) et du service MCP moderne sous comparateur `Decimal` (`0,00 $` d'écart sur `N >= 100 000` transactions), puis bascule Strangler Fig alimentée par Outbox/CDC < 200 ms éteignant les écrans RPA/CUA."
           }
         ],
         "numbered_flows": [
@@ -1745,7 +1745,7 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce plan architectural réconcilie les découpages des quatre volumes sources (fermeture de DIV-02) : cinq couches horizontales d'exécution (`C1–C5`) traversées par trois volets de contrôle (`Plans A, B, C`), raccordées aux six vraies couches normatives de 2026 ainsi qu'aux cinq points d'arrêt `PC1–PC5`. L'architecte dispose ainsi d'une méthode univoque pour modéliser l'agent en `ArchiMate 4.0` sans rupture de traçabilité réglementaire.",
+      "pedagogical_objective": "Ce plan réconcilie les découpages architecturaux du corpus (fermeture DIV-02) autour des systèmes d'entreprise : cinq couches horizontales (`C1–C5`, avec `C2 Orchestration` durable et `C4 Accès` couvrant passerelles PEP, patrimoine ERP/CRM/SIRH/ITSM et sas OT jusqu'aux SoR en Couche 6) traversées par trois volets (`Plans A, B, C`) et cinq points d'arrêt `PC1–PC5`, modélisés rigoureusement sous `TOGAF` (`ABB → SBB`) et `ArchiMate 4.0`.",
       "vulgarization_angle": "Structurer l'architecture comme un châssis d'ingénierie à cinq strates d'exécution traversées par trois colonnes de gouvernance (Sécurité/Identité, Observabilité/FinOps, Registre/Conformité) et verrouillées par cinq points d'inspection obligatoires `PC1–PC5`.",
       "visual_blueprint": {
         "zones": [
@@ -1852,7 +1852,7 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma trace la frontière financière et juridique entre ce que l'entreprise DOIT posséder (42 capacités invariantes sur 52 : registre, identité, politiques, passerelles, double couloir probatoire), ce qu'elle n'active que sur signal (`10` capacités conditionnelles), et la manière de confiner les agents des suites SaaS selon la gravité des données tout en verrouillant la réversibilité (Data Act et BSIF B-10).",
+      "pedagogical_objective": "Ce schéma trace la frontière patrimoniale et contractuelle entre le noyau de contrôle que l'entreprise DOIT posséder (42 capacités invariantes sur 52), les 10 capacités conditionnelles activées sur signal `SIG-*`, et l'ancrage de gravité des données autour des SoR d'entreprise (ERP, CRM, SIRH, ITSM, ≥ 85 % local) complété par les clauses de sortie et de réversibilité éprouvées annuellement (`EXIG-APP-07..16`, `BSIF B-10`, `Data Act`).",
       "vulgarization_angle": "Distinguer les infrastructures foncières, les titres de propriété et les instruments de mesure (noyau possédé) des équipements loués ou remplaçables (modèles d'inférence), tout en exigeant un protocole de migration contractuel testé annuellement.",
       "visual_blueprint": {
         "zones": [
@@ -1868,8 +1868,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Gravité des données (`EXIG-ARC-21`) et transférabilité réelle (9 clauses B-10 / Data Act)",
-            "content": "Confinement mono-silo des agents SaaS, rapatriement inter-silos sous étiquette d'entité légale (EXIG-CON-06), dépôt Git des actifs (`SKILL.md`) et 9 clauses vérifiées par essai annuel de sortie (UE 2023/2854)."
+            "label": "Gravité autour des SoR d'entreprise (`EXIG-ARC-21`) et clauses de sortie (`EXIG-APP-07..16`)",
+            "content": "Ancrage de gravité ≥ 85 % près des SoR (ERP, CRM, SIRH, ITSM) sans liaison latérale inter-silos SaaS, actifs versionnés sous Git (`SKILL.md`, OPA) et clauses contractuelles de sortie (restitution en formats ouverts et test annuel de réversibilité B-10 / UE Data Act)."
           }
         ],
         "numbered_flows": [

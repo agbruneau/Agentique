@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-01-04 — Effondrement des planificateurs sous obfuscation (Mystery BW) et boucle LLM-Modulo</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Données empiriques PlanBench (Kambhampati et coll.) &amp; architecture hybride à critiques déterministes · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Données empiriques PlanBench (Kambhampati et coll.) &amp; architecture hybride à critiques déterministes · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="560" height="490" rx="10" fill="#F8FAFC" stroke="#B91C1C" stroke-width="1.8"/>

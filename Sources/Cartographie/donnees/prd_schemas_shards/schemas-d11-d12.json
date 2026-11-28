@@ -805,7 +805,7 @@
           {
             "zone_id": "Z2",
             "label": "Game Days de reprise manuelle (POR-009 et POR-014) et plans de sortie B-10 / E-21",
-            "content": "Simulation programmée de coupure complète du plan cognitif : traitement des dossiers bruts par les équipes, chronométrage du débit dégradé et vérification des obligations d'accessibilité (Dir. 2019/882)."
+            "content": "Simulation programmée de coupure complète du plan cognitif : maintien obligatoire d'interfaces transactionnelles déterministes L0 accessibles (EN 301 549 / WCAG 2.1 AA) sur les SoR (ERP, CRM, ITSM, MES), chronométrage du débit dégradé et exercices sous Dir. 2019/882."
           }
         ],
         "numbered_flows": [
@@ -915,7 +915,7 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma montre comment une archive probatoire unique (`exigences.json` v1.2) évite la duplication des dossiers de conformité pour la Loi 25, l'AMF (12 EXIG-AMF issues des 41 attentes), le BSIF E-23 et l'EU AI Act : les 305 exigences se répartissent par domaine technique, tandis que dix interdictions absolues (EXIG-GOV-17) ferment automatiquement l'accès à la production sans aucune dispense possible.",
+      "pedagogical_objective": "Ce schéma montre comment une archive probatoire unique (`exigences.json` v1.2) évite la duplication des dossiers d'homologation des systèmes d'entreprise pour la Loi 25, l'EU AI Act, le BSIF E-23 et l'AMF : 291 exigences sur 305 forment le tronc multisectoriel universel (dont 87 exigences d'interopérabilité et 84 d'encadrement de l'automatisation), complétées par les profils sectoriels et dix interdictions absolues (EXIG-GOV-17).",
       "vulgarization_angle": "Comparer le référentiel à un code de construction unifié à trois strates : la charpente normative (16 familles EXIG-*), les dix interdictions coupe-feu non dérogeables (EXIG-GOV-17) et le dossier probatoire unique qui satisfait simultanément les régulateurs québécois, canadiens et européens.",
       "visual_blueprint": {
         "zones": [

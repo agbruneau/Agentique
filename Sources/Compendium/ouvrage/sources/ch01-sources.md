@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 01 — Rupture épistémique, Systèmes d'agentivité et fondements des acteurs autonomes
+# Base documentaire fermée — Chapitre 01 — De l'automatisation déterministe à l'automatisation agentique des systèmes d'entreprise : boucle fermée, contrats comportementaux et hiérarchie probante
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

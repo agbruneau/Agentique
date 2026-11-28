@@ -1,18 +1,18 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 21 (`ch21`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md` (`3 973` mots de prose, plage `[3 552, 4 168]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 21.md` (`4 086` mots de prose selon `verifie_manuscrit`, plage `[3 552, 4 168]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch21-sources.md` (`[1]`–`[6]` en statut `L+`, `1` exclusion `statut F` sur `genai.owasp.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-{055,058,062,087,088,095}.txt` ; registres `Compendium/ouvrage/registre/*.json` ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json` et trousse `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-8`
 - **Passe G2 initiale (supportés)** : 10
 - **Rectifications appliquées lors de la passe G2** : 26
-- **Verdict final — supportés** : 38 / 38 (100,0 %)
+- **Verdict final — supportés** : 39 / 39 (100,0 %)
 
 ---
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 21.md`
 
-Toutes les formulations méritant réancrage ou gain de précision lors de la passe initiale ont été reformulées et réancrées directement dans [Chapitre 21.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/07%20-%20Partie%20VII/Chapitre%2021.md), sans altérer les invariants `CA-01`..`CA-22`, en préservant la vedette propriétaire du glossaire (`analyse de contrôle STPA`), les `owned_concepts`, l'ensemble des renvois `[1]`–`[6]` et le calibrage (`4 110` mots dans `[3 552, 4 168]`, `0` erreur `G1 --strict`) :
+Toutes les formulations méritant réancrage ou gain de précision lors de la passe initiale ont été reformulées et réancrées directement dans [Chapitre 21.md](file:///c:/Github/Agentique/Sources/Compendium/ouvrage/manuscrit/07%20-%20Partie%20VII/Chapitre%2021.md), sans altérer les invariants `CA-01`..`CA-22`, en préservant la vedette propriétaire du glossaire (`analyse de contrôle STPA`), les `owned_concepts`, l'ensemble des renvois `[1]`–`[6]` et le calibrage (`4 086` mots dans `[3 552, 4 168]`, `0` erreur `G1 --strict`) :
 
 1. **Séparation entre contrat exécutable `G0`, exigences `EXIG-*` et repérages hors `L+` (`L5`, `L13`–`L15`, `L25`–`L31`, `L39`–`L44`, `L94`, `L100`, `L108`) :** distinction explicite entre le contrat déclaratif vérifié en `G0` (`schemas/sandbox_manifest.schema.json`, `policy_saga/sandbox_manifest.py`, `policies_opa/sandbox_confinement.rego` avec `network.mode == "none"`, blocage `IMDS` + `11` plages `IANA`, `env_secrets == []`, `read_only_root == true`, `allow_shell == false`, délais `30 s` / `1 200 s` / `3 600 s`, règle `default allow := false` `[3]` et `opa test --coverage` à `100,0 %` sur `45` tests `[4]` + `18` tests dans `test_policy_saga.py`), l'arithmétique `Decimal` portée séparément par `policy_saga/decimal_money.py`, la porte statique `AST` anti-`eval` (`EXIG-SEC-17`, alignée sur `OWASP ASI05` `[1]`), et les technologies issues du repérage antérieur des tomes (`OpenSandbox`, `SHADI`, `Firecracker`/`Kata` cible `< 15 ms`, `gVisor`, `WASI 0.2`, `MCP-UI`, notation `defaultEgress: DENY_ALL`) non archivées en `L+` dans le socle du chapitre.
 2. **Portée exacte de `SRC-095.txt` (`[5]`), `TEE`/`HYOK` et `TEE.fail` (`L17`, `L46`–`L50`, `L101`, `L109`) :** précision que l'admission attestée démontrée par Metere `[5]` porte sur les serveurs d'outils `MCP` et que son application aux mesures `PCR` des enclaves CPU/GPU relève d'une analogie architecturale ; qualification explicite de `Intel TDX`, `AMD SEV-SNP`, `NVIDIA Confidential Computing`, de la cible `RTT ≤ 35 ms` (`AWS XKS`) et de l'attaque `DDR5` `TEE.fail` (`< 1 000 \$ US` sur la page des auteurs au repérage `Tome 3 § 46.2`) comme éléments de repérage antérieur hors socle `L+`, tout en retirant le renvoi hors portée `[5]` des `11` plages `IANA` (`L39`).
@@ -20,11 +20,11 @@ Toutes les formulations méritant réancrage ou gain de précision lors de la pa
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources `L+` (`C21-01` à `C21-38`)
+## 2. Inventaire atomique et confrontation aux sources `L+` (`C21-01` à `C21-39`)
 
 ### Section introductive — Titre, question directrice et cadrage (`L1–L9`)
 
-- **C21-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant le confinement physique du code généré et tiers (`SHADI`/microVM/`WASI`), la souveraineté matérielle `TEE`/`HYOK` et l'interruption rapide d'un agent déviant sans rompre l'intégrité des sagas en cours.
+- **C21-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant le confinement matériel du code généré et des outils tiers (`SHADI`/microVM/`WASI`), le raccordement du séquestre de clés d'entreprise aux enclaves `TEE`/`HYOK` et l'orchestration par `SOAR` d'un coupe-circuit sélectif repliant en moins de soixante secondes l'automatisation vers un flux déterministe `L0` sans corrompre les sagas en cours.
   - **Appui vérifié :** `Compendium/ouvrage/specs/manifest.json` (`ch21`, `D07`, `SUB_D07_03`, `owned_concepts`), `Compendium/ouvrage/registre/mindmap-complet.json`.
   - **Passe initiale :** Conforme · **Action :** aucune · **Verdict : supporté**
 
@@ -180,6 +180,10 @@ Toutes les formulations méritant réancrage ou gain de précision lors de la pa
   - **Appui vérifié :** `Corpus/Tome 2` (`L4568–4587`), `Compendium/prd.md` (`L3964`), `SRC-055.txt` (`ASI05`, `ASI10`), `schemas/SCH-21-01.svg`, `schemas/SCH-21-02.puml`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
 
-- **C21-38 (`L35`, `L94`)** — *Affirmation :* Les caissons éphémères (`Firecracker`/`WASI` sans réseau contre `ASI05` `[1]`) et le coupe-circuit `SOC/SOAR` à quatre paliers (`< 10 s` au `PEP`, rétrogradation `< 60 s` vers `N2`/`L0`, maintien du canal `Saga`) assurent l'endiguement matériel et opérationnel de l'agentivité des systèmes face aux pertes de contrôle `STPA` `[2]` et aux exigences `DORA` `[6]`.
+- **C21-38 (`L35`, `L94`)** — *Affirmation :* Les caissons éphémères (`Firecracker`/`WASI` sans réseau contre `ASI05` `[1]`) et le coupe-circuit `SIEM`/`SOAR` à quatre paliers (`< 10 s` au `PEP`, repli `< 60 s` vers le flux déterministe `L0` ou `N2`, maintien du canal `Saga`) assurent l'endiguement matériel et opérationnel de l'agentivité des systèmes d'entreprise face aux pertes de contrôle `STPA` `[2]` et aux exigences de résilience telles que `DORA` `[6]`.
   - **Appui vérifié :** `SRC-055.txt` `[1]` (`ASI05`, `L762–779`), `SRC-058.txt` `[2]` (`L953–966`), `SRC-062.txt` `[6]` (`art. 10–12, 19`), `sandbox_confinement.rego`, `Chapitre 21.md` (`L35`, `L94`).
   - **Ajout concept agentivité des systèmes :** intégré et vérifié · **Verdict : supporté**
+
+- **C21-39 (`L1–L7`, `L17–L21`, `L52–L54`, `L68–L77`, `L83–L84`, `L92`, `L108`, `L116`)** — *Affirmation :* Alignement sur la souveraineté d'entreprise `HYOK`/`TEE` et la continuité d'automatisation `SIEM`/`SOAR` vers repli `L0` : séquestre `HYOK` sur site via `KMS`/`HSM` d'entreprise (`CAP-033`, repérage `Tome 3 § 46.3` hors `L+`), boucle interopérable `OTel`/`AISPM` → `SIEM`/`SOAR` (`Sentinel`, `Splunk`, `Chronicle` qualifiés hors `L+`) abaissant le `PEP` en `< 10 s` (`POR-003`) et repliant le processus vers son flux déterministe `L0` (`BPMN`/`API`) ou `N2` en `< 60 s` (`POR-015`) sans interrompre le canal `Saga` (`EXIG-ORC-28`) sur les `SoR` (`ERP`, `CRM`, `WMS`, `ITSM`), et ouverture multisectorielle érigeant `DORA` (art. `10`–`12`, `19` `[6]`) en étalon réglementaire transposable aux infrastructures critiques d'entreprise.
+  - **Appui vérifié :** `specs/manifest.json` (`ch21.title`), `matrice-exig-prr-c40.json` (`CAP-033`, `CAP-039`, `POR-003`, `POR-015`), `SRC-058.txt` `[2]`, `SRC-062.txt` `[6]`, `Corpus/Tome 2` (`EXIG-ORC-17/28`), `Corpus/Tome 3` (`§ 24.5`, `§ 46.2–46.3`).
+  - **Adaptation interopérabilité et automatisation d'entreprise :** intégré et vérifié · **Verdict : supporté**

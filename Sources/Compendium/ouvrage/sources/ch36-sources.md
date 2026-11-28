@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 36 — Concordance inter-tomes (DIV-02, DISC-01 à DISC-05), régime probatoire Wyvern G0–G5 et clause non-avis
+# Base documentaire fermée — Chapitre 36 — Concordance inter-tomes des systèmes d'entreprise (DIV-02, DISC-01 à DISC-05), régime probatoire Wyvern G0–G5 et clause non-avis
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

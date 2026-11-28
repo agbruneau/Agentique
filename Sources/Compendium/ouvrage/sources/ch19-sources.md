@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 19 — Surface d'attaque protocolaire, menaces OWASP ASI01–10 et chaîne logistique d'outils
+# Base documentaire fermée — Chapitre 19 — Surfaces d'attaque de l'interopérabilité protocolaire (MCP/A2A), menaces OWASP ASI01–10 et chaîne logistique d'outils
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

@@ -25,35 +25,35 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Couche anticorruption MCP (EBCDIC/COMP-3 Decimal exact), médiation B2B/EDI et Strangler Fig
+title Continuum patrimonial : façade MCP (≥ 92 %), CDC/EDI, transition BPMN/RPA → CUA (≤ 8 %) et Purdue
 
-package "Z1 — Façade MCP anticorruption hors modèle (EXIG-ARC-14..18 / DEC-008)" {
-  rectangle "① Outils d'intention métier bornés\n(zéro CRUD 1:1 · zéro SQL direct)" as N1 <<det>>
+package "Z1 — Façade MCP anticorruption ≥ 92 % hors modèle (EXIG-ARC-14..18 / DEC-008)" {
+  rectangle "① Outils d'intention métier bornés (MCP ≥ 92 %)\n(zéro CRUD 1:1 · zéro SQL direct sur ERP/SoR)" as N1 <<det>>
   rectangle "Propagation QSYS2.SET_CLIENT_INFO\n& clé d'idempotence cible" as N2 <<det>>
   N1 --> N2
 }
 
-package "Z2 — Moteur déterministe de traduction exacte (PEX-015)" {
+package "Z2 — Traduction déterministe exacte (PEX-015), CDC/Outbox et médiation EDI/BAPI" {
   rectangle "② Transcodage EBCDIC (CP037/CP1147) ↔ UTF-8\n& Packed Decimal COMP-3 → Decimal (zéro float)" as N3 <<det>>
-  rectangle "Formatage trames fixes\nCICS COMMAREA · SAP BAPI · EDI X12" as N4 <<det>>
-  database "③ Réplica CDC / CQRS Debezium\n(protège MIPS mainframe en lecture)" as N5 <<green>>
+  rectangle "Formatage trames fixes & B2B\nCICS COMMAREA · SAP BAPI · EDI X12/EDIFACT" as N4 <<det>>
+  database "③ Réplica CDC / CQRS Debezium & sas Purdue\n(protège MIPS mainframe & isole réseau OT)" as N5 <<green>>
   N2 --> N3
   N3 --> N4
   N2 --> N5
 }
 
-package "Z3 — Cœurs SoR, BPMN 2.0 / iPaaS et Strangler Fig en 4 stades" {
-  database "Cœurs SoR préservés + tests Golden Master\n(IBM i, z/OS, SAP, parité SOX)" as N6 <<green>>
+package "Z3 — Cœurs SoR, BPMN 2.0 / iPaaS et continuum Strangler Fig (MCP → CDC/EDI → RPA → CUA)" {
+  database "Cœurs SoR préservés + tests Golden Master\n(IBM i, z/OS, SAP, ERP/CRM/WMS, parité SOX)" as N6 <<green>>
   rectangle "④ Coexistence BPMN 2.0 / iPaaS\n(Camunda/Zeebe · réconciliation EDI/ESB)" as N7 <<green>>
-  rectangle "Trajectoire Strangler Fig (4 stades)\nextinction progressive du RPA fragile" as N8 <<prob>>
+  rectangle "Strangler Fig (4 stades) : MCP ≥ 92 % → CDC/EDI\n→ RPA encadré → CUA ≤ 8 % (extinction ≤ 12 mois)" as N8 <<prob>>
   N4 --> N6 : Écriture idempotente
   N5 --> N6
   N7 .[#D97706].> N8
 }
 
 legend bottom
-  **Bleu ardoise** : Adaptateur déterministe anticorruption (EBCDIC, COMP-3 Decimal, CDC/CQRS)
-  **Vert émeraude** : Cœurs transactionnels préservés (IBM i, z/OS, SAP, BPMN 2.0) et Golden Master
-  **Ambre pointillé** : Migration progressive Strangler Fig en 4 stades et retrait du RPA
+  **Bleu ardoise** : Adaptateur anticorruption MCP ≥ 92 % (EBCDIC, COMP-3 Decimal, CDC/Outbox, EDI)
+  **Vert émeraude** : Cœurs transactionnels préservés (IBM i, z/OS, ERP, BPMN 2.0) et sas Purdue
+  **Ambre pointillé** : Migration Strangler Fig (retrait graduel du RPA et extinction CUA ≤ 8 %)
 end legend
 @enduml

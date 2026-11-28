@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 21 — Confinement éphémère (SHADI/microVM/WASI), enclaves TEE/HYOK et coupe-circuit SOC/SOAR
+# Base documentaire fermée — Chapitre 21 — Confinement éphémère (SHADI/microVM/WASI), souveraineté TEE/HYOK et coupe-circuit automatisé SOC/SOAR vers repli L0
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

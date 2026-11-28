@@ -1,18 +1,18 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 22 (`ch22`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md` (`4 538` mots de prose selon `verifie_manuscrit.count_prose_words()`, `4 796` selon `parser_plan.count_prose_words()`, plage `[4 251, 4 989]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 22.md` (`4 799` mots de prose selon `verifie_manuscrit.count_prose_words()`, plage `[4 251, 4 989]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch22-sources.md` (`[1]`–`[8]` en statut `L+`, `2` exclusions `statut F` sur `legisquebec.gouv.qc.ca` et `genai.owasp.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` (`SRC-037`, `SRC-089`, `SRC-090`, `SRC-077`, `SRC-044`, `SRC-018`, `SRC-063`, `SRC-055`) ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json`, `authz_pqc_audit/{otel_pii_mapper.py,audit_scitt_focus.py,slh_dsa_fips205.py}`, `tests/test_authz_pqc_audit.py`) ; repérage interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b4-1`
 - **Passe G2 initiale (supportés)** : 13
 - **Rectifications appliquées lors de la passe G2 :** 20
-- **Verdict final — supportés :** 33 / 33 (100,0 %)
+- **Verdict final — supportés :** 35 / 35 (100,0 %)
 
 ---
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 22.md`
 
-Toutes les formulations divergentes, sur-attribuées à une source `[k]` ou issues de spécifications et bancs hors corpus `L+` fermé relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 22.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/08%20-%20Partie%20VIII/Chapitre%2022.md), sans modifier le bloc scellé `CA-G0-SYNC` (`G0-EX-CH02-04`, lignes `88–121`), en préservant les invariants `CA-01`..`CA-22`, le fait `FACT-OTEL-GENAI-ATTRS`, les cinq ancres chronologiques rattachées à `ch22`, les vedettes de glossaire (`Double couloir probatoire`, `télémétrie à double couloir`), les `owned_concepts`, les renvois `[1]`–`[8]` et le calibrage (`4 538` / `4 796` mots dans `[4 251, 4 989]`) :
+Toutes les formulations divergentes, sur-attribuées à une source `[k]` ou issues de spécifications et bancs hors corpus `L+` fermé relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 22.md](file:///c:/Github/Agentique/Sources/Compendium/ouvrage/manuscrit/08%20-%20Partie%20VIII/Chapitre%2022.md), sans modifier le bloc scellé `CA-G0-SYNC` (`G0-EX-CH02-04`, lignes `88–121`), en préservant les invariants `CA-01`..`CA-22`, le fait `FACT-OTEL-GENAI-ATTRS`, les ancres chronologiques rattachées à `ch22`, les vedettes de glossaire (`Double couloir probatoire`, `télémétrie à double couloir`), les `owned_concepts`, les renvois `[1]`–`[8]` et le calibrage (`4 799` mots dans `[4 251, 4 989]`) :
 
 1. **Conventions `OpenTelemetry GenAI`, `W3C Trace Context` et `NO_CONTENT` (`L11`, `L21`, `L23`, `L25`, `L29–L39`, `Tableau 22.1`) :** distinction entre le statut réel dans `SRC-089.txt` (`[2]`, `v1.41.0` : `50` `Development`, `10` `Deprecated`, `0` `Stable`) et `SRC-090.txt` (`[3]`, `85` `Development`) ; retrait des renvois `[1]` / `[1, 2]` erronés sur `W3C Trace Context` (`55` car., `ff`, `32` membres), `SEP-414` (`params._meta`), *span link*, `OTEL_SEMCONV_STABILITY_OPT_IN`, `OTEL_INSTRUMENTATION_GENAI_CAPTURE_CONTENT=NO_CONTENT` et `{mcp.method.name}` (rattachés au cadre `EXIG-OBS-01..05`, `EXIG-OBS-10`, `Tome 2 § 10.1–10.2` et aux chapitres `07`/`14`) ; rattachement exact de `create_agent`, `invoke_agent`, `invoke_workflow` et `execute_tool` à `[1]` (`SRC-037.txt`) et du statut `Opt-In` par défaut à `[1, 2, 3]` ; qualification de `gen_ai.client.token.usage` comme métrique issue du `Tome 2 § 10.1` intégrée dans `otel_pii_mapper.py`.
 2. **Provenance `AIBOM` `5+1` horloges et référentiels externes (`L13`, `L64`) :** qualification explicite du modèle à `5+1` horloges et de l'inspection des cinq référentiels (`CycloneDX 1.7`, `SPDX 3.0.1`, `in-toto`, `SLSA v1.2`, `NIST SP 800-218A`) comme relevant du relevé comparatif du traité (`Tome 1 § 47.1–47.2`, hors base `L+` fermée de ce chapitre, `[5]` mentionnant les quatre premiers à titre illustratif).
@@ -21,15 +21,15 @@ Toutes les formulations divergentes, sur-attribuées à une source `[k]` ou issu
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources `L+` (`C22-01` à `C22-33`)
+## 2. Inventaire atomique et confrontation aux sources `L+` (`C22-01` à `C22-35`)
 
 ### Ouverture et Section 22.1 — Titre, question directrice, introduction et résumé exécutif (`L1–L15`)
 
-- **C22-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant l'observabilité `OpenTelemetry GenAI` malgré son instabilité, la séparation sans `RP` en télémétrie courante et la valeur probatoire à long terme via `JCS`/`SCITT` + `SLH-DSA`.
+- **C22-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant l'interopérabilité télémétrique `OpenTelemetry GenAI` vers les chaînes `APM`, `SIEM` et d'audit d'entreprise malgré son instabilité, le caviardage opérationnel bilingue (`Loi 25`) et le scellage probatoire décennal `JCS`/`SCITT` + `SLH-DSA`.
   - **Appui vérifié :** `specs/manifest.json` (`ch22`, `D08`, `SUB_D08_01`), structure `§ 22.1`–`§ 22.3`.
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C22-02 (`L5`)** — *Affirmation :* Distinction entre sondes HTTP traditionnelles et défaillances silencieuses des **Systèmes d'agentivité** (`MCP`, contexte obsolète) ; risque de fuite de `RP` et de sanctions sévères sous la Loi 25 `[7]`.
+- **C22-02 (`L5`)** — *Affirmation :* Distinction entre sondes HTTP traditionnelles et défaillances silencieuses des processus d'entreprise automatisés par agents (`MCP` vers `ERP` ou `CRM`, contexte obsolète) ; risque de fuite de `RP` dans les collecteurs `APM` et `SIEM` partagés et de sanctions sévères sous la Loi 25 `[7]`.
   - **Appui vérifié :** `SRC-063.txt` (`L1542–1555`, `L2283–2333`), `Corpus/Tome 5` (`L1195`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
@@ -166,3 +166,7 @@ Toutes les formulations divergentes, sur-attribuées à une source `[k]` ou issu
 - **C22-34 (`REV-04`, `PRD-L3-009/010`, `PRD-L4-002`)** — *Affirmation :* Intégration des repères secondaires PRD (`PRIN-06`, lacune flotte `F-96`, `FINOS AI Governance v2.0` et `watsonx.governance` qualifiés hors base `L+` du chapitre, `PRR R-07` sur `JCS`), correction `SCH-22-02.svg` (`Rend`) et `SCH-22-01.puml` (`60 ↔ 85 attr. gen_ai.*`, `horloge harnais`), nettoyage `\$` dans backticks (`10 M$ CA`, `15 000 $ CA`, `25 M$ CA`) et numérotation `Figure 70`..`Figure 72`.
   - **Appui vérifié :** `Compendium/prd.md` (`L4134–4168`), `schemas/SCH-22-01.puml`, `schemas/SCH-22-02.svg`, `SRC-063.txt`, `SRC-077.txt`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
+
+- **C22-35 (`L1–L13`, `L17`, `L27`, `L37`, `L60`, `L72`, `L128`, `L145`, `L155–L157`)** — *Affirmation :* Interopérabilité télémétrique de bout en bout (`W3C Trace Context` reliant portail métier, agent, `PEP`, `MCP` et requêtes `REST`/`SQL` sur `ERP`, `CRM`, `ITSM` ; quatre clés `ca.entreprise.*` de `G0-EX-CH02-04` préservé à l'octet) vers les collecteurs `APM` (`Datadog`, `Dynatrace`, `Grafana Tempo`, `Elastic` qualifiés hors `L+`), les corrélateurs `SIEM` (`Sentinel`, `Splunk` hors `L+`), l'`ITSM` et les outils `ITFM`/`ERP` (`cost_center`) ; séparation des droits entre exploitants `SRE`/`APM`/`SIEM` et auditeurs habilités (`Loi 25` art. `12.1` `[7]`, clé `DEK` sous `KMS`) ; et élargissement multisectoriel des durées probatoires `WORM` (`6–7` ans fiscal `ERP`, `5–7` ans `OCRI`, `10–25` ans clinique/pharma, `10–30` ans industriel, `20–40` ans vie/rentes) articulé avec l'échéance `fin 2028` et `SLH-DSA` `[6]`.
+  - **Appui vérifié :** `specs/manifest.json` (`ch22.title`), `otel_pii_mapper.py`, `ancres-chronologiques.json` (`fin 2028`), `SRC-089.txt` `[2]`, `SRC-090.txt` `[3]`, `SRC-018.txt` `[6]`, `SRC-063.txt` `[7]`, `Corpus/Tome 2` (`§ 10.1–10.3`), `Corpus/Tome 5` (`§ 8.1–8.2`).
+  - **Adaptation interopérabilité et automatisation d'entreprise :** intégré et vérifié · **Verdict : supporté**

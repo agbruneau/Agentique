@@ -1,11 +1,11 @@
 # Journal d'ancrage atomique Wyvern — Chapitre 02
 
-- **Unité :** `ch02` (`Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md`)
+- **Unité :** `ch02` (`Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 02.md` — *Chapitre 02 — Fiabilité de l'automatisation agentique face au déterminisme : loi de Lusser, cascades inter-systèmes et constance pass^k*)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch02-sources.md` (`9` sources intégrales `L+`, `SHA-256`)
 - **Registres vérifiés :** `registre/faits-empiriques.json`, `registre/ancres-chronologiques.json`, `registre/glossaire-termes.json`
 - **Auditeur :** `wyvern-02` (barrière indépendante `G2`, `AO-07`, régime Production)
 - **Date d'audit :** 2026-11-25 (gel factuel : `2026-12-02`)
-- **Volume final vérifié :** `4 082` mots de prose `G1` (plage `[3 552, 4 168]`)
+- **Volume final vérifié :** `3 969` mots de prose `G1` (plage `[3 552, 4 168]`)
 
 ## Synthèse quantitative de l'audit
 
@@ -277,3 +277,18 @@
   - Verdict : supporté
 
 - **Contrôle `REV-04` :** `3 683` mots (`verifie_manuscrit.py`) / `3 938` mots (`parser_plan.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch02 --strict` = `exit 0`, **100,0 % supporté**.
+
+---
+
+## Mise à jour d'adaptation éditoriale (`Vague 2` — fiabilité comparée face au déterminisme et cascades inter-systèmes)
+
+- **C02-V2-01 (`L1–L15`, `§ 2.1.1`)** : Nouveau titre et question directrice opposant la fiabilité déterministe des bus transactionnels à la dégradation en série des boucles agentiques, présence de la vedette propriétaire `loi de Lusser`, et illustration de la distorsion sémantique silencieuse sous `HTTP 200 OK` (`OWASP ASI08` `[9]`) le long d'une chaîne `EDI`/`CRM` → `ERP` → `SCM` → `ITSM`.
+  - Preuve : `specs/manifest.json` (`ch02`), `registre/glossaire-termes.json` (`loi de Lusser`), `SRC-055.txt` (`[9]`, `ASI08: Cascading Failures`).
+  - Verdict : supporté
+- **C02-V2-02 (`L27–L31`, `L98–L105`, `§ 2.1.2`, `Tableau 2.1`)** : Comparaison mathématique des trois régimes d'automatisation sous le produit en série de `NIST/SEMATECH § 8.1.8.1` (`[1]`) : flux déterministe `BPMN`/`iPaaS` à appels `API` typés (\(p \ge 0{,}9999\), conservant \(R_{50} \approx 99{,}5\ \%\) sur `50` étapes), script `RPA` d'interface tombant à `0 %` dès une mutation non anticipée du `DOM`, et chaîne d'agent `LLM` (\(0{,}94^{10} \approx 53{,}9\ \%\) / `53,86 %`, \(0{,}95^{15} \approx 46{,}3\ \%\), \(0{,}94^{20} \approx 29{,}0\ \%\)).
+  - Preuve : `SRC-024.txt` (`[1]`, `§ 8.1.8.1`), `registre/faits-empiriques.json` (`FACT-LUSSER-10-STEPS`), vérification arithmétique directe (\(0{,}9999^{50} = 0{,}99501\), \(0{,}94^{20} = 0{,}28999\)).
+  - Verdict : supporté
+- **C02-V2-03 (`L49`, `L68–L72`, `L107–L115`, `§ 2.1.3`, `§ 2.2.1`, `Tableau 2.2`)** : Exigence de vérifier d'abord si une orchestration déterministe `OO3`/`BPMN` ou un mono-agent continu suffit avant tout collectif multi-agents (`EXIG-ORC-01`, `EXIG-ORC-02`, `MAST` `[4]`), et mise en relief de la portée multisectorielle native de `τ-bench` (`[6]`, commerce de détail `61,2 %` chutant sous `25 %` en `pass^8`, transport aérien `35,2 %`) pour tout déploiement d'entreprise.
+  - Preuve : `SRC-028.txt` (`[4]`), `SRC-029.txt` (`[6]`, `L17–L19, L396–L398, L488`).
+  - Verdict : supporté
+- **Contrôle `Vague 2` :** `3 969` mots (`verifie_manuscrit.py`) dans `[3 552, 4 168]`, `9 / 9` sources `L+` citées, `0` erreur `CA-01..CA-22`. **Verdict final : `47 / 47` (`100,0 %` supporté).**

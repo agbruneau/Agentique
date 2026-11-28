@@ -1,132 +1,118 @@
-# Interopérabilité et Orchestration en Entreprise Agentique
+# Interopérabilité et automatisation agentique des systèmes d'entreprise
 
-*Guide vulgarisé des concepts, de leurs liens et des parcours de lecture du référentiel ([`Compendium/`](Compendium/README.md) ([PDF](Compendium/Compendium.pdf) · [MD](Compendium/Compendium.md)) · [`Tomes/`](Tomes/README.md) (`8` ouvrages regroupés) · [`Sources/`](Sources/README.md) (composants sources PDF/MD) · [MindMap HTML](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) · Compendium (`871` p.) + `8` tomes (`4 542` p.) · `5 413` pages · horizon 2024–2035)*
+*Traité unifié d'architecture hybride, de gouvernance hors modèle et d'homologation vérifiable (non-avis)*
+
+*Navigation rapide : [`Compendium/`](Compendium/README.md) ([PDF](Compendium/Compendium.pdf) · [MD](Compendium/Compendium.md)) · [`Tomes/`](Tomes/README.md) (`8` tomes historiques figés) · [`Sources/`](Sources/README.md) (usine éditoriale et gabarit) · [MindMap HTML](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`4` vues hors ligne) · Compendium (`872` p.) + `8` tomes (`4 542` p.) · `5 414` pages · horizon `2023–2035`*
 
 ---
 
 ## En bref : de quoi parle ce dépôt ?
 
-Jusqu'à récemment, utiliser l'intelligence artificielle au travail ressemblait à un dialogue avec un **conseiller en salle d'attente** : un employé posait une question à un assistant conversationnel, relisait la réponse, corrigeait les maladresses, puis saisissait lui-même l'information dans les logiciels de l'entreprise. Sans qu'on le mesure toujours, **l'humain servait de filet de sécurité**.
+Dans la réalité opérationnelle d'une organisation, l'intelligence artificielle n'arrive pas sur une page blanche : elle rencontre un **parc existant de systèmes d'entreprise** hétérogènes — progiciels comptables et achats (`ERP`), gestion de la relation client (`CRM`), ressources humaines (`SIRH`), chaîne logistique (`SCM`/`WMS`), gestion des services TI (`ITSM`), cœurs transactionnels patrimoniaux (`z/OS`, `IBM i`, `EDI`) et environnements industriels cyber-physiques (`OT`/`SCADA`/`MES`).
 
-L'**entreprise agentique** commence au moment où l'on retire cet intermédiaire systématique pour confier à des logiciels dotés d'IA — des **agents** — le soin de lire un dossier, d'enchaîner plusieurs étapes, d'appeler des outils informatiques et d'**agir directement** dans les systèmes de gestion. Ce basculement fait émerger **l'agentivité des systèmes** : une propriété d'action qui découle de l'assemblage sociotechnique complet (modèles, protocoles, mémoire, règles déterministes et supervision) et reste strictement bornée hors modèle.
+Tant qu'un employé interrogeait un assistant conversationnel isolé puis recopiait lui-même le résultat dans le progiciel métier, **l'humain absorbait les erreurs du modèle et les écarts de format entre applications**. Dès que l'on connecte des agents logiciels en boucle fermée pour lire un dossier dans un système, appliquer des règles et muter un état transactionnel dans un autre, trois exigences indissociables gouvernent l'architecture :
 
-Ce changement déplace complètement le problème. La difficulté n'est plus d'avoir un modèle qui rédige bien, mais d'encadrer un programme capable de se tromper avec aplomb. À travers un traité maître unifié — le [**Compendium de l'entreprise agentique**](Compendium/README.md) ([`Compendium.pdf`](Compendium/Compendium.pdf), **871 pages**, **139 schémas**) — appuyé par huit tomes thématiques réunis dans [`Tomes/`](Tomes/README.md) (**4 542 pages**, **319 diagrammes**) et une trousse logicielle testable dans [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md), ce dépôt défend et démontre une idée simple :
+1. **L'interopérabilité de bout en bout (`6` strates `EIF` / `LCIM`)** — Aucun agent ne peut traverser plusieurs systèmes d'entreprise sans contrats explicites couvrant le transport (`MCP 2026-07-28`, `A2A v1.0.1`, `Event Mesh`, `API Gateway`, `iPaaS`), la syntaxe stricte (`JSON Schema Draft 2020-12`, `ODCS v3.2.0`), la sémantique métier canonique (`MDM`, `UBL`/`GS1`, `HL7 FHIR`, `OPC UA`, `FIBO`/`ISO 20022`), la pragmatique transactionnelle (`Saga` compensable, identité `NHI` et délégation `OBO`), la télémétrie probatoire (`OpenTelemetry`, `SCITT`, `FOCUS v1.4`) et la réversibilité contractuelle.
+2. **Le continuum d'automatisation (`L0 → L1–L4`)** — L'**automatisation agentique** ne remplace pas l'automatisation déterministe (`L0`) : elle la prolonge uniquement là où l'ambiguïté non structurée l'exige. **Règle de subsidiarité** : zéro jeton `LLM` lorsqu'une contrainte `SQL`, une table de décision `DMN`, une politique `OPA/Rego`, un flux `iPaaS`/`EDI`, un processus `BPMN 2.0` ou une `RPA` déterministe stable résout le cas à moindre risque et moindre coût.
+3. **La maîtrise hors modèle de l'agentivité des systèmes (*system agency*)** — L'initiative conférée à la strate d'action (`SoA`) reste strictement subordonnée aux systèmes d'enregistrement (`SoR`), d'engagement (`SoE`) et industriels (`OT`) sur six verticaux d'entreprise, avec le secteur financier réglementé comme étalon prudentiel de haute assurance (*high-water mark*).
 
-> **L'idée maîtresse (la règle du `80/20`)** — Pour qu'un système d'agents soit fiable, rentable et conforme à la loi, il faut séparer **« ce qui parle »** (~`20 %` : les modèles d'IA, utiles pour comprendre du texte flou ou résumer, mais faillibles et vite remplacés) de **« ce qui décide et en répond »** (~`80 %` : une ossature logicielle classique et prévisible que l'entreprise maîtrise, qui vérifie les règles d'affaires, limite les permissions, permet d'annuler une erreur et conserve les preuves).
+À travers son ouvrage maître unifié — [**Interopérabilité et automatisation agentique des systèmes d'entreprise**](Compendium/README.md) ([`Compendium.pdf`](Compendium/Compendium.pdf), **872 pages**, **139 schémas**) — appuyé par l'archive historique des huit tomes dans [`Tomes/`](Tomes/README.md) (**4 542 pages**, **319 diagrammes**) et la trousse logicielle exécutable dans [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md), ce référentiel démontre une règle cardinale :
+
+> **La partition hybride `80/20`** — Pour qu'une automatisation traversant les systèmes d'entreprise soit fiable, rentable et homologable, **`80 %` du flux** (routage, validation `JSON Schema`, permissions `PEP`/`OPA`, calculs exacts, idempotence, compensation `Saga` et preuve d'audit) doit demeurer dans un **exosquelette déterministe possédé par l'entreprise**, qui encadre **`20 %` de cellules cognitives bornées** vouées à l'interprétation contextuelle avec droit explicite d'abstention vers l'humain.
 
 ---
 
 ## Sommaire
 
-1. [Pourquoi brancher directement une IA aux outils de l'entreprise échoue](#1-pourquoi-brancher-directement-une-ia-aux-outils-de-lentreprise-échoue)
-2. [Comment tout s'emboîte : la carte des concepts](#2-comment-tout-semboîte--la-carte-des-concepts)
+1. [Pourquoi brancher directement un agent aux progiciels d'entreprise échoue](#1-pourquoi-brancher-directement-un-agent-aux-progiciels-dentreprise-échoue)
+2. [Comment tout s'emboîte : l'architecture d'ensemble](#2-comment-tout-semboîte--larchitecture-densemble)
 3. [Les six briques essentielles expliquées simplement](#3-les-six-briques-essentielles-expliquées-simplement)
 4. [Aide-mémoire : 12 termes clés en langage clair](#4-aide-mémoire--12-termes-clés-en-langage-clair)
 5. [Que contient ce dépôt ?](#5-que-contient-ce-dépôt-)
-6. [Par où commencer selon votre objectif ?](#6-par-où-commencer-selon-votre-objectif-)
+6. [Par où commencer selon votre rôle ?](#6-par-où-commencer-selon-votre-rôle-)
 7. [Grandes échéances (2023–2035), portée consultative et licences](#7-grandes-échéances-20232035-portée-consultative-et-licences)
 
 ---
 
-## 1. Pourquoi brancher directement une IA aux outils de l'entreprise échoue
+## 1. Pourquoi brancher directement un agent aux progiciels d'entreprise échoue
 
-Avant d'aborder les solutions techniques, trois constats concrets expliquent pourquoi une démonstration impressionnante échoue souvent dès la mise en production ([**Compendium**](Compendium/Compendium.md), Partie I, ch. 01–03; [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md), Partie I; [**Tome 5**](Tomes/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.md), ch. 1).
+Trois lois vérifiées expliquent l'écart entre un prototype conversationnel séduisant et l'exploitation industrielle sur un parc `ERP` / `CRM` / `SCM` / `ITSM` ([**Compendium**](Compendium/Compendium.md), Partie I, ch. 01–03).
 
-### 1.1 L'effet domino des petites erreurs
-Lorsqu'une tâche demande d'enchaîner plusieurs étapes à la suite, les risques d'erreur se multiplient au lieu de s'additionner (**loi de Lusser**). Si un agent réussit chaque étape à `94 %` — un score qui paraît excellent en démo —, une chaîne autonome de `10` étapes sans contrôle intermédiaire ne réussit sans faute que dans **`54 %` des cas** (0,94¹⁰ ≈ 53,9 %), soit à peine mieux qu'un tirage à pile ou face.
+### 1.1 La loi de Lusser face au déterminisme inter-systèmes
+Dans un flux classique `BPMN` ou `iPaaS` bien typé ($p \ge 0{,}9999$), cinquante étapes composent avec plus de `99,5 %` de succès. À l'inverse, dans une chaîne d'étapes probabilistes non vérifiées, les fiabilités se multiplient (**loi de Lusser**, $R = p^n$) : un agent réussissant chaque pas à `94 %` tombe à **`53,9 %` de réussite sans faute** au bout de `10` étapes (`0,94¹⁰`). Deux phénomènes aggravent cette dérive entre progiciels :
+- **La cascade silencieuse (`HTTP 200 OK`)** : un connecteur peut accepter une charge utile techniquement valide mais sémantiquement erronée (devise, unité logistique, hors taxes vs TTC), propageant la corruption du `CRM` vers l'`ERP` puis le `WMS` sans lever d'exception.
+- **L'écart entre `pass@1` et `pass^k`** : réussir une fois en démonstration (`pass@1`) ne suffit pas en exploitation comptable, clinique, industrielle ou financière ; seule compte la constance répétée sur le même cas métier (`pass^k`).
 
-Deux particularités des modèles de langage aggravent cet effet domino :
-- **L'erreur convaincante et silencieuse** : un logiciel classique qui échoue s'arrête avec un code d'erreur net. Un modèle probabiliste qui se trompe produit souvent une phrase très crédible qui contamine les étapes suivantes sans déclencher d'alarme.
-- **Réussir une fois n'est pas réussir toujours** : les classements publics mesurent souvent si un modèle réussit *au moins une fois* (`pass@1`). Une banque, un assureur ou un service public a besoin de l'inverse : qu'il réussisse **à chaque exécution** du même cas métier (`pass^k`). C'est pourquoi, en production réelle, la majorité des agents efficaces exécutent peu d'étapes d'affilée et suivent un parcours balisé.
+### 1.2 L'économie de l'interopérabilité (Coase) et le piège des silos d'agents captifs
+Chaque éditeur de suite d'entreprise (`ERP`, `CRM`, `SIRH`, `ITSM`, bureautique) commercialise désormais ses propres agents intégrés. Si l'entreprise délègue l'orchestration de bout en bout (*Order-to-Cash*, *Procure-to-Pay*, *Joiner-Mover-Leaver*) à ces jardins clos :
+- elle remplace l'intégration point-à-point $N \times M$ par des **silos cognitifs incompatibles**, facturés à la tâche et dépourvus de piste d'audit unifiée ;
+- elle accumule une **quadruple dette agentique** (technique, sémantique, cognitive/d'intention et réglementaire) lorsque les règles d'affaires migrent subrepticement dans des invites propriétaires non versionnées.
+La réponse architecturale consiste à imposer $N + M$ contrats ouverts (`MCP`, `A2A`, `CloudEvents`, `ODCS`) autour d'un **noyau d'interopérabilité possédé** (`42` capacités `CAP` invariantes sur `52`).
 
-### 1.2 Les coûts cachés et le piège des jardins clos
-L'économiste Ronald Coase montrait qu'une organisation existe pour réduire les coûts de coordination, de négociation et de vérification. Avec les agents, deux pièges économiques apparaissent :
-- **La facture cachée des reprises** : même si le prix brut des modèles baisse rapidement, un agent mal encadré qui tourne en boucle, relit cent fois le même historique et oblige un humain à réparer ses erreurs après coup coûte plus cher que le processus manuel initial.
-- **Les silos d'agents fournisseurs** : chaque grand éditeur logiciel (`CRM`, `ERP`, bureautique) propose désormais ses propres agents intégrés. Si l'entreprise leur abandonne la logique d'ensemble, elle remplace ses anciens silos informatiques par des **jardins clos** incapables de se comprendre ni de fournir une trace d'audit unique. D'où l'intérêt d'**assembler sur des standards ouverts** autour d'un centre de contrôle que l'entreprise possède.
-
-### 1.3 Un modèle plus intelligent n'est pas plus sûr
-Rendre un modèle plus performant ne corrige pas sa vulnérabilité de base ([**Compendium**](Compendium/Compendium.md), Partie VII, ch. 19; [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md), ch. 08). Un modèle de langage lit dans un seul et même flux vos instructions légitimes et les documents venus de l'extérieur (courriels, formulaires, pièces jointes, pages web). Un texte externe malveillant peut donc glisser une consigne cachée qui détourne l'agent (**injection indirecte**). La sécurité ne peut jamais reposer sur une simple phrase « sois prudent » dans le prompt : elle doit être imposée par du code classique **à l'extérieur du modèle**.
+### 1.3 Un modèle plus capable ne remplace jamais un contrôle d'accès hors modèle
+Un modèle de langage traite dans le même espace de représentation les consignes système et les données externes non fiables (courriels fournisseurs, tickets `ITSM`, pièces jointes `GED`, pages web). Une **injection indirecte de consignes** peut donc détourner un agent doté de permissions excessives ([**Compendium**](Compendium/Compendium.md), Partie VII, ch. 19–20). La sécurité ne repose jamais sur le prompt : elle s'exécute **hors modèle** dans des passerelles déterministes (`PEP`, `OPA/Rego`, `Cedar`).
 
 ---
 
-## 2. Comment tout s'emboîte : la carte des concepts
+## 2. Comment tout s'emboîte : l'architecture d'ensemble
 
-Les concepts de ce référentiel ne sont pas une liste d'achats technologiques : **chaque brique a été conçue pour corriger la limite de la précédente**.
+Chaque couche du traité répond au risque résiduel de la couche précédente pour raccorder sans corruption la strate cognitive aux systèmes d'entreprise :
 
 ```mermaid
 flowchart TD
-    P0["Point de départ : un modèle d'IA est utile mais faillible et influençable"]
-    P1["1. Doser l'autonomie (L0 à L4) et encadrer chaque appel dans un harnais 80/20"]
-    P2["2. Relier aux outils et aux données via des standards ouverts (MCP, A2A) et un sens métier commun"]
-    P3["3. Garder des flux sobres et pouvoir annuler proprement en cas de panne (exécution durable et Saga)"]
-    P4["4. Identifier chaque agent (NHI), réduire ses droits à chaque saut et faire signer les actes critiques"]
-    P5["5. Bloquer les manipulations hors du modèle (OPA, Règle de deux) avant toute action"]
-    P6["6. Tracer les preuves, mesurer le coût réel et préserver le jugement humain jusqu'en 2035"]
+    P0["Socle L0 déterministe : SQL, DMN, OPA, BPMN 2.0, iPaaS/EDI et RPA stable = 0 jeton LLM"]
+    P1["1. Continuum L0–L4 et harnais contractuel 80/20 devant ERP, CRM, SIRH, SCM, ITSM et OT"]
+    P2["2. Interopérabilité ouverte : façades MCP, délégation A2A, passerelles PEP, sémantique ODCS et ACL"]
+    P3["3. Automatisation sobre (OO1–OO4), enveloppes BPMN, Event Mesh et Sagas compensables"]
+    P4["4. Identités non humaines (NHI) liées aux SIRH/IdP, délégation OBO, CIBA et PKI 47 j / post-quantique"]
+    P5["5. Défense hors modèle (OPA/Cedar, Règle de deux), confinement CUA/microVM et repli L0 en < 60 s"]
+    P6["6. Télémétrie OTel/SCITT, EvalOps/FinOps CPO, conformité QC/CA/UE, DAPP 2035 et homologation G0–G5"]
 
     P0 --> P1 --> P2 --> P3 --> P4 --> P5 --> P6
 ```
-
-**Comment lire cet enchaînement ?**
-1. Comme le modèle peut se tromper *(Point de départ)*, on commence par **limiter son droit d'agir** selon la gravité de la tâche et par vérifier strictement ses entrées et sorties *(Brique 1)*.
-2. Une fois encadré, l'agent doit consulter les données et appeler des outils **sans dépendre d'un seul fournisseur** ni confondre les termes du métier *(Brique 2)*.
-3. Dès qu'une tâche comporte plusieurs étapes, il faut éviter les bavardages inutiles entre agents et prévoir **comment revenir en arrière** si une étape échoue *(Brique 3)*.
-4. Lorsqu'un agent agit au nom d'un employé ou d'un client, il faut savoir exactement **qui a demandé quoi** et empêcher qu'un sous-agent hérite de droits trop larges *(Brique 4)*.
-5. Même bien identifié, un agent peut lire un document piégé : un **gardien externe** vérifie donc chaque action avant qu'elle ne s'exécute *(Brique 5)*.
-6. Enfin, l'organisation doit pouvoir **prouver cette maîtrise** aux vérificateurs et aux régulateurs, maîtriser ses coûts complets et éviter que ses équipes ne perdent leur savoir-faire *(Brique 6)*.
 
 ---
 
 ## 3. Les six briques essentielles expliquées simplement
 
-### 3.1 Doser l'autonomie (`L0` à `L4`) et encadrer le modèle (le harnais `80/20`)
-Appeler « agent » aussi bien un outil de résumé qu'un programme capable de virer de l'argent crée de graves malentendus. L'architecture classe donc les systèmes non pas selon leur « intelligence », mais selon **ce qu'on les autorise à modifier** :
+### 3.1 Situer chaque flux sur le continuum `L0` à `L4` et l'encapsuler dans un harnais `80/20`
+Plutôt que d'« agentifier » aveuglément un processus existant, l'architecture qualifie d'abord son niveau d'autonomie selon ses effets de bord sur les systèmes d'enregistrement (`SoR`) :
 
-| Niveau | Rôle de l'agent | Peut-il modifier les systèmes ? | Place de l'humain |
+| Niveau | Régime d'automatisation | Effet sur les systèmes d'entreprise (`SoR` / `SoE` / `OT`) | Rôle de l'humain et de l'exosquelette |
 |---|---|---|---|
-| **`L0`** | Règle informatique fixe ou lecture/résumé seul | Non, aucune écriture autonome | Consulte le résultat (et l'on préfère du code sans IA si une règle fixe suffit) |
-| **`L1`** | Copilote (assistant supervisé) | Prépare un brouillon sans l'envoyer | Relit, corrige et déclenche lui-même l'action (*humain dans la boucle*) |
-| **`L2`** | Exécutant encadré sur une tâche simple | Oui, une action étroite et facile à annuler | Définit le cadre; le logiciel vérifie le format strict des données |
-| **`L3`** | Coordinateur de plusieurs étapes | Oui, tant que tout reste annulable avant l'étape finale | Supervise les alertes et exceptions (*humain sur la boucle*) |
-| **`L4`** | Action critique ou engageante vers l'extérieur | Oui, derrière un verrou fort | Signe une approbation explicite sur le détail exact de l'opération |
+| **`L0`** | Automatisme déterministe pur (`SQL`, `DMN`, `OPA`, `BPMN`, `iPaaS`/`EDI`) ou lecture sans action | Zéro écriture décidée par un modèle probabiliste | Le code déterministe exécute `100 %` de la règle (`0` jeton `LLM`) |
+| **`L1`** | Copilote / assistant supervisé sur poste de travail | Prépare un brouillon ou extrait structuré sans muter le `SoR` | L'humain relit, valide et déclenche l'écriture (*HITL*) |
+| **`L2`** | Automatisation agentique bornée sur tâche circonscrite | Écriture étroite, idempotente et immédiatement réversible | Harnais `JSON Schema` strict et plafonds déterministes |
+| **`L3`** | Automatisation multi-étapes inter-systèmes sous `Saga` | Mutations provisoires compensables jusqu'au *point pivot* | Supervision sur exception (*HOTL*) et compensation isolée |
+| **`L4`** | Acte critique ou irréversible (`ERP`, virement, commande externe) | Engagement externe derrière sas pré-engagement déterministe | Signature hors bande `CIBA`/`FIDO2` liée au hachage exact (`C.6`) |
 
-Deux règles simples accompagnent cette échelle :
-- **La règle du maillon le plus élevé** : si un petit agent de lecture (`L0` ou `L1`) résume des courriels pour alimenter directement un agent qui prend des décisions importantes (`L3` ou `L4`), le premier doit être sécurisé et surveillé aussi sérieusement que le second — sans jamais recevoir ses permissions d'écriture.
-- **Le harnais logiciel (`80/20`)** : on ne demande jamais à un modèle de langage de faire des calculs comptables de tête ni d'appliquer seul la loi. Le code classique (`80 %`) gère les calculs exacts, l'ordre des étapes et la validation des formats (`JSON Schema`), tandis que le modèle (`20 %`) extrait ou synthétise l'information avec un droit explicite de dire **« cas ambigu, j'escalade à un humain »**.
-- *Pour aller plus loin* : [**Compendium**](Compendium/Compendium.md) (Parties I–II), [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md) (ch. 01 et 04), [**Tome 6**](Tomes/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.md) (ch. 1 à 3), [**Tome 8**](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.md) (ch. 01).
+- **Règle du maillon le plus élevé** : un agent de lecture (`L0`/`L1`) dont la synthèse alimente sans filtre humain une décision `L3`/`L4` hérite des exigences de sécurité et de qualification du maillon aval, sans jamais recevoir ses droits d'écriture.
+- *Référence* : [**Compendium**](Compendium/Compendium.md) (Parties I–II, ch. 01–06).
 
-### 3.2 Connecter sans s'enfermer : `MCP`, `A2A`, vocabulaire métier et mémoire
-Pour relier un agent au reste de l'entreprise sans créer un plat de spaghettis informatique, il faut distinguer comment il communique et comment il comprend le métier :
-- **`MCP` (*Model Context Protocol*) — la prise universelle vers les outils** : joue le rôle d'un adaptateur standard entre un agent et un outil (base de données, calendrier, calculateur). Par prudence, une passerelle d'entreprise vérifie que la fiche descriptive de l'outil n'a pas été modifiée en douce entre deux mises à jour.
-- **`A2A` (*Agent2Agent*) — le dialogue entre agents indépendants** : permet à un agent de confier une demande à l'agent d'une autre équipe ou d'un partenaire externe sans lui ouvrir sa mémoire interne ni ses propres outils.
-- **Le dictionnaire métier commun et la façade de protection (`ACL`)** : échanger des messages techniquement valides ne sert à rien si deux départements ne calculent pas le « revenu net » ou le « client actif » de la même façon. Une couche sémantique unifie ces définitions, et une **couche anti-corruption** protège les systèmes centraux historiques (`ERP`, grands systèmes centraux) pour éviter d'exposer des centaines d'interfaces techniques brutes au modèle.
-- **Une mémoire rangée en quatre tiroirs (`CoALA`)** : plutôt que de tout mélanger, l'architecture sépare *(1)* le brouillon de la tâche en cours, *(2)* le journal des échanges passés, *(3)* les connaissances durables de l'entreprise et *(4)* les procédures approuvées, en respectant les droits d'accès et le droit à l'effacement des données personnelles.
-- *Pour aller plus loin* : [**Compendium**](Compendium/Compendium.md) (Parties III–IV), [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md) (ch. 05), [**Tome 6**](Tomes/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.md) (ch. 04 à 06), [**Tome 3**](Tomes/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.md) (Parties II et III).
+### 3.2 Interopérer sans verrouillage : `MCP`, `A2A`, passerelles `PEP`, sémantique `ODCS` et patrimoine `ACL`/`OT`
+- **Interopérabilité verticale (`MCP`) et horizontale (`A2A`)** : `MCP 2026-07-28` expose `≤ 15` façades d'intention métier (au lieu de centaines d'endpoints `OpenAPI` bruts d'`ERP` ou d'`ITSM`) avec épinglage `SHA-256` anti-dérive, tandis qu'`A2A v1.0.1` fédère les agents inter-domaines et `B2B` via des `AgentCard` signées derrière une passerelle d'entreprise `PEP` à neuf contrôles.
+- **Sémantique canonique (`ODCS`), mémoire `CoALA` et encapsulation patrimoniale** : des contrats de données `ODCS v3.2.0` alignent les dialectes `ERP`/`CRM`/`SCM`/`FHIR`/`OPC UA`/`ISO 20022` ; la mémoire `CoALA` à quatre tiroirs respecte les `ACL` en amont sans créer de *Shadow SoR* ; une **couche anti-corruption (`ACL`)** protège les mainframes (`COBOL`/`RPG`) et `ERP`, confine transitoirement les agents d'interface (`CUA ≤ 8 %`, bail maximal de `12` mois) et impose une diode/sas lecture seule `Purdue IDMZ` devant les systèmes industriels `OT` (`SIL 2/3`).
+- *Référence* : [**Compendium**](Compendium/Compendium.md) (Parties III–IV, ch. 07–12).
 
-### 3.3 Orchestrer avec retenue et savoir revenir en arrière (`Saga`)
-Faire discuter librement cinq agents entre eux donne rarement un meilleur résultat : les études recensées montrent que cela augmente surtout les coûts, la lenteur et la propagation d'erreurs.
-- **L'arbre de sobriété** : toujours privilégier dans l'ordre *(1)* un programme classique sans IA, *(2)* un enchaînement fixe d'étapes simples, *(3)* **un seul agent bien outillé** (éventuellement relu par un second composant vérificateur), et ne recourir à *(4)* plusieurs agents spécialisés que lorsque le gain est mesuré.
-- **Exécution durable et `Saga` compensatoire** : un dossier réel peut attendre un document pendant deux jours ou subir une coupure réseau à la 3e étape. Un moteur d'**exécution durable** sauvegarde l'avancement à chaque pas, attache un numéro unique à chaque action pour ne jamais facturer ou écrire deux fois la même chose (**idempotence**), et prévoit pour chaque étape provisoire son **geste d'annulation automatique** (**Saga**) tant que l'étape finale irréversible (*point pivot*) n'est pas franchie.
-- *Pour aller plus loin* : [**Compendium**](Compendium/Compendium.md) (Partie V), [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md) (ch. 06), [**Tome 2**](Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md) (ch. 7), [**Tome 8**](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.md) (ch. 03).
+### 3.3 Automatiser avec sobriété (`OO1–OO4`), enveloppes `BPMN` et exécution durable `Saga`
+- **Arbre de sobriété d'orchestration** : privilégier systématiquement `L0` (code/règles), puis `OO1` (chaîne fixe), `OO2` (agent unique outillé), `OO3` (**patron cible par défaut** : enveloppe déterministe `BPMN 2.0` ou workflow durable appelant localement un agent borné), et réserver `OO4` (collectif multi-agents) aux cas où le gain net surpasse l'effet Ringelmann et les défaillances `MAST`.
+- **Event Mesh, idempotence et `Saga` compensable** : sur `CloudEvents`/`AsyncAPI` et moteurs durables (`Temporal`, `Restate`), chaque mutation porte une clé d'idempotence canonisée (`JCS RFC 8785`) et chaque étape avant le *point pivot* dispose d'une compensation exécutée par un canal isolé (`EXIG-ORC-28`).
+- *Référence* : [**Compendium**](Compendium/Compendium.md) (Partie V, ch. 13–15).
 
-### 3.4 Savoir qui agit : identité de l'agent, délégation réduite et futur post-quantique
-Lorsqu'une employée demande à un agent A de traiter un dossier, et que cet agent A sollicite un service B, deux mauvaises pratiques sont à proscrire : donner un compte administrateur partagé à l'agent (on ne sait plus quel humain est à l'origine de l'acte) ou transmettre tel quel le jeton d'accès complet de l'employée (le service B obtiendrait tous ses droits).
-- **Une identité propre et des droits réduits à chaque saut** : chaque agent possède sa propre **identité non humaine (`NHI`)** temporaire. À chaque délégation (`OAuth On-Behalf-Of`), il reçoit un laissez-passer **limité à la seule sous-tâche demandée**, tout en conservant la trace du demandeur humain initial.
-- **Signer l'acte exact (`CIBA`)** : pour une opération sensible, l'humain ne clique pas sur un simple bouton « OK » vague; il valide sur un canal séparé le résumé exact et verrouillé des paramètres (montant, destinataire, compte).
-- **Préparer demain** : l'architecture automatise le renouvellement très fréquent des certificats de sécurité (qui passeront à `47` jours d'ici 2029) et prépare la transition vers des signatures cryptographiques résistantes aux futurs ordinateurs quantiques (**post-quantique**).
-- *Pour aller plus loin* : [**Compendium**](Compendium/Compendium.md) (Partie VI), [**Tome 1**](Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.md) (Livre II), [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md) (ch. 07), [**Tome 8**](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.md) (ch. 02).
+### 3.4 Fédérer les identités non humaines (`NHI`) aux `SIRH`/`IdP` et préparer le post-quantique
+- **Cycle de vie `NHI` et délégation `OBO` à deux sauts** : chaque agent reçoit une identité non humaine (`NHI`) éphémère rattachée à un propriétaire dans le `SIRH`/`IdP` (`SPIFFE`/`SPIRE`, `SCIM`), échange ses jetons par délégation atténuée (`RFC 8693 OBO`, `DPoP`, `RAR`) sans jamais relayer le jeton maître de l'employé, et soumet les actes `P3` à une approbation cryptographique hors bande (`CIBA`).
+- **Automatisation `PKI` à `47` jours et agilité post-quantique** : renouvellement `ACME`/`SDS` sans coupure et migration vers `ML-KEM`, `ML-DSA` et `SLH-DSA` par jetons de référence (`Txn-Token`) évitant le rejet `HTTP 431` sur les passerelles d'entreprise.
+- *Référence* : [**Compendium**](Compendium/Compendium.md) (Partie VI, ch. 16–18).
 
-### 3.5 Sécuriser hors du modèle, observer sans exposer et compter le vrai coût
-Puisqu'un modèle peut être trompé par un texte piégé, les verrous critiques sont placés en dehors de lui :
-- **La Règle de deux (gardien externe `OPA`)** : avant d'exécuter un outil, un moteur de règles indépendant vérifie une loi de bon sens : **un agent ne peut jamais cumuler dans la même session (1) la lecture de contenus externes non fiables, (2) l'accès à des données confidentielles et (3) la capacité d'écrire dans un système critique ou d'envoyer des données à l'extérieur**.
-- **Le double couloir de journaux** : pour concilier dépannage technique et protection de la vie privée (`Loi 25`, `RGPD`), un premier couloir enregistre la performance technique **sans renseignements personnels**, tandis qu'un second registre scellé et restreint conserve la preuve complète en cas d'audit ou de litige.
-- **Tester hors ligne (`EvalOps`) et compter au résultat réel (`FinOps`)** : avant d'aller en production, l'agent est mis à l'épreuve sur des centaines de cas simulés (y compris des tentatives de piégeage en français et en anglais). Une fois en service, on ne mesure pas son coût au prix de mille mots générés, mais au **coût complet par dossier traité conformément sans reprise humaine**.
-- *Pour aller plus loin* : [**Compendium**](Compendium/Compendium.md) (Parties VII–VIII), [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md) (ch. 08 et 09), [**Tome 2**](Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md) (ch. 9 et 10), [**Tome 8**](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.md) (ch. 03 et 04).
+### 3.5 Gouverner hors modèle (`OPA`, Règle de deux), replier vers `L0` et mesurer le vrai coût (`CPO`)
+- **Politiques interopérables hors modèle et coupe-circuit** : `OPA/Rego`, `Cedar` et `AuthZEN` imposent la **Règle de deux** (interdiction de cumuler entrée externe non fiable, accès sensible et capacité d'écriture/exfiltration) et le suivi de contamination `CaMeL`. En cas d'alerte `SOC`/`SOAR`, le coupe-circuit abaisse la passerelle `PEP` en `< 10 s` et bascule le processus métier vers son **flux déterministe `L0` en `< 60 s`**.
+- **Télémétrie `OpenTelemetry`/`SCITT`, `EvalOps` et `FinOps FOCUS`** : double couloir séparant observabilité opérationnelle sans `PII` et voûte probatoire scellée ; qualification `CI/CD` hermétique (`E1–E3`, bornes de Wilson, tests métamorphiques `FR/EN`) ; pilotage économique au **coût par résultat conforme (`CPO`)** comparé en continu à la variante déterministe `L0`.
+- *Référence* : [**Compendium**](Compendium/Compendium.md) (Parties VII–VIII, ch. 19–24).
 
-### 3.6 Respecter la loi, investir sans regret (`2026–2035`) et préserver les compétences humaines
-L'analyse des lois et règlements adoptés au Québec, au Canada et en Europe mène à un constat rassurant et exigeant à la fois ([**Compendium**](Compendium/Compendium.md), Parties IX et XI; [**Tome 4**](Tomes/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.md); [**Tome 7**](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md), Partie IV) : **aucun texte n'oblige une organisation à automatiser par agent; toutes les obligations portent sur la transparence, l'inventaire des systèmes, le contrôle des fournisseurs et le droit à une révision humaine réelle**.
-- **Repères légaux concrets** : au Québec, l'article 12.1 de la **`Loi 25`** oblige à informer toute personne visée par une décision exclusivement automatisée, à lui en expliquer les critères sur demande et à lui permettre de faire réviser cette décision par un humain habilité. Dans le secteur financier canadien et québécois, la ligne directrice **`BSIF E-23`** et le cadre de l'**`AMF`** (mai 2027) exigent un inventaire complet des modèles et agents, une évaluation des risques et un responsable clairement désigné. En Europe, l'**`EU AI Act`** encadre la transparence et les systèmes à haut risque.
-- **Investir sans regret malgré l'incertitude (`DAPP`)** : personne ne sait quel modèle ou quel fournisseur dominera en 2032. La méthode des **trajectoires adaptatives** consiste à bâtir dès aujourd'hui les fondations « sans regret » (identité, passerelles ouvertes, gouvernance, pistes d'audit) qui resteront utiles dans tous les scénarios, et à n'engager les options plus spécialisées que lorsque des signaux précis se confirment.
-- **Protéger le savoir-faire humain** : si les agents traitent `100 %` des cas courants, deux dangers guettent l'entreprise : les validateurs humains finissent par approuver machinalement l'écran sans vérifier (*biais d'automatisation*), et les recrues juniors n'apprennent plus le métier sur des cas simples — privant l'organisation de ses experts seniors de demain. Garder une part volontaire de pratique humaine formatrice fait donc partie intégrante de l'architecture.
+### 3.6 Conformité multisectorielle, trajectoires `DAPP 2028–2035` et homologation exécutable `G0–G5`
+- **Deux étages réglementaires et sectoriels** : un tronc universel applicable à tout système d'entreprise (`Loi 25` art. `12.1` et `27` portabilité, `EU AI Act`, `RGPD`, `CRA`, `NIS 2`, `Data Act`, clauses de sortie `SaaS`) coiffé d'un étalon de haute régulation (`BSIF E-23`/`B-10`/`B-13`, `AMF`, `DORA`, `SOX`, `SIL` industriel, santé `FHIR`) décliné en `3` blueprints `C01–C40` et sur le groupe tricéphale illustratif *Groupe Boréal Inc.* (`BEL` industrie/logistique, `BCA` finance/assurance, `BSN` services numériques).
+- **Planification `DAPP`, repli humain et preuve exécutable** : trajectoires adaptatives `2028–2035`, préservation du vivier junior et maintien d'interfaces manuelles `L0` directement opérables sur les `SoR`, le tout vérifié par les `305` exigences `CRE-IA-2026-01`, la grille `PRR-75` et la trousse logicielle exécutable du Tome 8 (`G0–G5`).
+- *Référence* : [**Compendium**](Compendium/Compendium.md) (Parties IX–XII, ch. 25–36, et Annexes `A–E`).
 
 ---
 
@@ -134,34 +120,34 @@ L'analyse des lois et règlements adoptés au Québec, au Canada et en Europe m�
 
 | Terme | En une phrase simple |
 |---|---|
-| **Règle du `80/20`** | Confier `80 %` du travail (règles, calculs, permissions, suivi) à du code classique prévisible et `20 %` (lecture et synthèse de texte) au modèle d'IA. |
-| **Loi de Lusser** | Règle mathématique montrant que de petites erreurs répétées d'étape en étape font chuter très vite la fiabilité globale d'une chaîne autonome. |
-| **Constance `pass^k`** | Capacité d'un agent à réussir le même cas métier plusieurs fois de suite sans erreur, par opposition à un coup d'éclat isolé (`pass@1`). |
-| **Échelle `L0` à `L4`** | Classement d'un agent selon ce qu'il a le droit de modifier dans les systèmes de l'entreprise, de la simple lecture (`L0`) à l'acte critique sous signature (`L4`). |
-| **Harnais d'agent** | Enveloppe logicielle qui vérifie les données à l'entrée et à la sortie du modèle, limite le nombre d'essais et passe la main à un humain en cas de doute. |
-| **`MCP` et `A2A`** | Deux standards ouverts complémentaires : `MCP` branche un agent sur ses **outils**, tandis que `A2A` fait dialoguer **deux agents** entre eux. |
-| **Couche anti-corruption (`ACL`)** | Façade qui traduit proprement les demandes vers les logiciels centraux existants (`ERP`, systèmes patrimoniaux) sans exposer leur complexité interne à l'IA. |
-| **Exécution durable et `Saga`** | Mécanisme qui mémorise l'avancement d'un processus long et sait annuler proprement les étapes déjà faites si un blocage survient avant la fin. |
-| **Identité non humaine (`NHI`)** | Carte d'identité numérique temporaire propre à chaque agent, évitant les mots de passe partagés et réduisant les permissions à chaque délégation. |
-| **Règle de deux (`OPA`)** | Garde-fou externe interdisant de réunir en même temps données externes potentiellement piégées, secrets internes et pouvoir d'action vers l'extérieur. |
-| **Coût par résultat conforme** | Vrai coût d'un dossier réussi du premier coup et conforme aux règles, en comptant l'IA, l'infrastructure, les reprises et le temps de supervision humaine. |
-| **Trajectoires `DAPP`** | Façon de planifier jusqu'en 2035 en séparant les fondations utiles dans tous les cas (« sans regret ») des investissements activés seulement sur signaux concrets. |
+| **Continuum `L0–L4`** | Règle ordonnant d'épuiser d'abord l'automatisation déterministe sans IA (`L0` : `SQL`, `DMN`, `BPMN`, `iPaaS`) avant d'introduire des agents gradués (`L1` à `L4`). |
+| **Partition `80/20`** | Confier `80 %` du flux (contrats, permissions, calculs, compensation, audit) à du code déterministe possédé et `20 %` à des appels cognitifs bornés. |
+| **Loi de Lusser** | Loi multiplicative ($R = p^n$) expliquant pourquoi une chaîne d'agents sans validation déterministe intermédiaire s'effondre dès quelques sauts inter-systèmes. |
+| **Constance `pass^k`** | Capacité d'une automatisation agentique à réussir `k` exécutions consécutives du même cas métier sans dérive, par opposition à un succès isolé (`pass@1`). |
+| **Harnais déterministe** | Enveloppe logicielle à `8` jalons validant les schémas `JSON Schema`, bornant les essais et déclenchant l'abstention vers un humain en cas d'ambiguïté. |
+| **`MCP` et `A2A`** | Protocoles ouverts complémentaires : `MCP` normalise l'accès vertical aux outils et façades métier, tandis qu'`A2A` fédère le dialogue horizontal entre agents. |
+| **Sémantique `ODCS` et `ACL`** | Contrats de données métier unifiant le sens des entités entre `ERP`/`CRM`/`SCM` et façade anti-corruption isolant les cœurs patrimoniaux et `OT`. |
+| **Sobriété `OO1–OO4` et `Saga`** | Discipline privilégiant une enveloppe déterministe `BPMN`/durable (`OO3`) munie de compensations isolées (`Saga`) plutôt qu'un essaim libre d'agents. |
+| **Identité non humaine (`NHI`)** | Identité cryptographique éphémère propre à chaque agent, fédérée au `SIRH`/`IdP` et réduisant ses droits à chaque délégation `OBO`. |
+| **Règle de deux (`OPA`)** | Garde-fou hors modèle interdisant de cumuler données externes non fiables, accès à des secrets métier et pouvoir d'écriture ou d'exfiltration. |
+| **Coût par résultat conforme (`CPO`)** | Coût complet d'une transaction métier réussie sans reprise ni non-conformité, systématiquement mis en concurrence avec un flux déterministe `L0`. |
+| **Trajectoires `DAPP`** | Planification adaptative `2028–2035` distinguant les fondations d'interopérabilité « sans regret » des bascules activées sur signaux objectifs (`POR`/`SIG`). |
 
 ---
 
 ## 5. Que contient ce dépôt ?
 
-Le dépôt sépare clairement les **publications finales prêtes à lire** ([`Compendium/`](Compendium/README.md) et [`Tomes/`](Tomes/README.md)) des **composants sources servant à les fabriquer et à les vérifier** ([`Sources/`](Sources/README.md)).
+Le dépôt sépare les **éditions publiées prêtes à lire** ([`Compendium/`](Compendium/README.md) et [`Tomes/`](Tomes/README.md)) des **composants sources servant à les compiler et à les homologuer** ([`Sources/`](Sources/README.md)).
 
-### 5.1 L'ouvrage maître : Le Compendium de l'entreprise agentique ([`Compendium/`](Compendium/README.md))
+### 5.1 L'ouvrage maître unifié ([`Compendium/`](Compendium/README.md))
 
-Le [**Compendium de l'entreprise agentique**](Compendium/README.md) ([`Compendium.pdf`](Compendium/Compendium.pdf) · [`Compendium.md`](Compendium/Compendium.md)) consolide en **un seul traité unifié** (format `6,14 × 9,21 po`, `871` pages physiques, `247 622` mots dans le Markdown consolidé, `12` parties couvrant les domaines `D01–D12`, `36` chapitres, `37` bibliographies — liminaire et `36` chapitres —, `5` annexes normatives `A–E`, `42` `CAP` invariantes sur `52` et `139` schémas de vulgarisation) l'ensemble des travaux d'architecture, de gouvernance, de sécurité hors modèle, de conformité réglementaire et d'homologation vérifiable du référentiel.
+Le traité [**Interopérabilité et automatisation agentique des systèmes d'entreprise**](Compendium/README.md) — *Traité unifié d'architecture hybride, de gouvernance hors modèle et d'homologation vérifiable (non-avis)* — est publié sous les chemins canoniques stables [`Compendium/Compendium.pdf`](Compendium/Compendium.pdf) et [`Compendium/Compendium.md`](Compendium/Compendium.md) (*Compendium* désignant le Volume `0` unifié de la collection). Au format `6,14 × 9,21 po`, il réunit en `872` pages physiques (`25 300 905` octets PDF, `8 638` lignes, `1 924 974` octets et `247 581` mots dans le Markdown consolidé, `42` unités éditoriales : Liminaire, `12` parties `D01–D12` en `36` chapitres, `37` bibliographies fermées sur `135` sources `L+` hachées `SHA-256`, `5` annexes déterministes `A–E` et `139` schémas compilés) la référence architecturale, méthodologique et probatoire actuelle du dépôt.
 
-### 5.2 Les 8 Tomes thématiques ([`Tomes/`](Tomes/README.md))
+### 5.2 L'archive historique figée des 8 Tomes thématiques ([`Tomes/`](Tomes/README.md))
 
-Les huit tomes de la collection (`PDF` au format unifié `6,14 × 9,21 po` et `Markdown` intégral) sont regroupés dans [`Tomes/`](Tomes/README.md), et leurs sources de diagrammes, ateliers éditoriaux (Tomes 7 et 8) et outils résident dans [`Sources/Tomes/`](Sources/Tomes/README.md) :
+> **Statut d'archive historique en lecture seule** — Les huit tomes ci-dessous (`4 542` pages, `319` diagrammes) constituent le corpus préparatoire figé dont l'ouvrage maître ([`Compendium/`](Compendium/README.md)) opère la synthèse, la généralisation multisectorielle aux systèmes d'entreprise et la réconciliation formelle (`DIV-02`, `DISC-01` à `DISC-05`). Leurs titres, leur pagination et leurs sources dans [`Sources/Tomes/`](Sources/Tomes/README.md) demeurent scellés à l'identique ; la trousse logicielle [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) est consommée en lecture seule par la barrière `G0` du Compendium (`14/14` extraits `CA-G0-SYNC`).
 
-| Tome | Ouvrage publié (`Tomes/`) | Sources (`Sources/Tomes/`) | À quoi sert ce tome ? | Pages | Figures |
+| Tome | Ouvrage publié (`Tomes/`) | Sources (`Sources/Tomes/`) | Rôle historique dans le corpus | Pages | Figures |
 |---|---|---|---|---:|---:|
 | **Tome 1** | [`Confiance protocolaire et encadrement financier`](Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) · [MD](Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.md) | [Dossier](Sources/Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier/README.md) | **Explorer les bases** : protocoles, chaîne d'identité, orchestration et droit financier canadien et québécois | 1 135 | [118](Sources/Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier/Diagrammes/README.md) |
 | **Tome 2** | [`Cadre normatif et exigences d'architecture`](Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.pdf) · [MD](Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md) | [Dossier](Sources/Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture/README.md) | **Encadrer** : norme interne d'entreprise (`12` principes, `305` exigences vérifiables et grille d'homologation) | 534 | [28](Sources/Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture/Diagrammes/README.md) |
@@ -174,40 +160,22 @@ Les huit tomes de la collection (`PDF` au format unifié `6,14 × 9,21 po` et `M
 
 ### 5.3 Les composants sources de publication ([`Sources/`](Sources/README.md))
 
-- [`Sources/Compendium/`](Sources/Compendium/README.md) : usine éditoriale [`ouvrage/`](Sources/Compendium/ouvrage/) produisant `Compendium/Compendium.pdf` et `Compendium/Compendium.md` (`12` parties `D01–D12`, `36` chapitres, `5` annexes `A–E` et `139` schémas de vulgarisation raccordés aux `319` diagrammes des Tomes).
-- [`Sources/Tomes/`](Sources/Tomes/README.md) : les `8` dossiers sources des Tomes (`Tome 1` à `Tome 8`) regroupant les sources et rendus des `319` diagrammes, les manuscrits et l'outillage d'assemblage des Tomes 7 et 8, ainsi que la trousse logicielle exécutable [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) (`4` modules `Python 3.12+`, `3` politiques `OPA / Rego`, `13` schémas `JSON Schema`, vecteurs de test officiels, `83` tests automatisés `pytest` et `45` tests `OPA` à `100 %` de couverture).
-- [`Sources/Cartographie/`](Sources/Cartographie/README.md) : cartographie thématique et navigateur de lecture interactif du **Compendium** (**4 vues dynamiques** dans [`MindMap - Cartographie thématique du Compendium.html`](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) couvrant `15` sections, `42` unités, `380` nœuds, `616` interrelations, `139` schémas prévisualisables, `56` vedettes du glossaire, `5` parcours guidés et ancrage direct `Compendium.pdf#page=N`, 100 % hors ligne sous `file://`).
-- [`Sources/gabarit-pdf/`](Sources/gabarit-pdf/README.md) : le gabarit `Typst` commun (`6,14 × 9,21 po`), le catalogue `volumes.json` et les scripts permettant de recompiler les diagrammes, le Compendium et les huit Tomes.
+- [`Sources/Compendium/`](Sources/Compendium/README.md) : usine éditoriale [`ouvrage/`](Sources/Compendium/ouvrage/) produisant `Compendium/Compendium.pdf` et `Compendium/Compendium.md` (`12` parties `D01–D12`, `36` chapitres, `5` annexes `A–E`, `7` registres SSOT et `139` schémas raccordés aux `319` diagrammes historiques).
+- [`Sources/Cartographie/`](Sources/Cartographie/README.md) : navigateur interactif hors ligne ([`MindMap - Cartographie thématique du Compendium.html`](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html), `4` vues dynamiques, `15` sections, `42` unités, `380` nœuds, `616` interrelations, `139` schémas prévisualisables, `56` vedettes du glossaire, `5` parcours guidés et ancrage direct `Compendium.pdf#page=N`).
+- [`Sources/gabarit-pdf/`](Sources/gabarit-pdf/README.md) : gabarit `Typst` partagé (`6,14 × 9,21 po`), catalogue `volumes.json` (`0` Compendium et `1–8` Tomes) et scripts de compilation.
+- [`Sources/Tomes/`](Sources/Tomes/README.md) : dossiers sources figés des Tomes `1` à `8` (`319` diagrammes, ateliers des Tomes `7` et `8` et trousse exécutable [`trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) à `83` tests `pytest` et `45` tests `OPA`).
 
 ---
 
-## 6. Par où commencer selon votre objectif ?
+## 6. Par où commencer selon votre rôle ?
 
-Inutile de lire les milliers de pages dans l'ordre : entrez par le **Compendium** pour une vue unifiée, puis approfondissez dans [`Tomes/`](Tomes/README.md) selon votre besoin.
+Entrez directement par l'ouvrage maître ([`Compendium/`](Compendium/README.md)) et ses **cinq parcours guidés interactifs** dans la [**MindMap HTML**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`file://` hors ligne), puis consultez les tomes historiques pour l'encadrement sectoriel approfondi :
 
-### Porte d'entrée principale — Le Compendium en un seul ouvrage unifié
-1. Lire le **Liminaire** du [**Compendium**](Compendium/README.md) ([`Compendium.pdf`](Compendium/Compendium.pdf) · [`Compendium.md`](Compendium/Compendium.md)) pour saisir en une lecture la doctrine `80/20`, la carte des `12` domaines `D01–D12`, le Panorama visuel directeur et les repères de gouvernance `2023–2035`.
-2. Explorer visuellement les thèmes, les [`139` schémas](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=concordance&tab=schemas_gallery) et ouvrir directement chaque page du PDF via la [**MindMap HTML**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html) (`file://` hors ligne — parcours guidés : [Essentiel](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=essentiel), [AE Stratégie](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=ae-strategie), [AS Ingénierie](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=as-ingenierie), [RSSI Sécurité](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=rssi-securite), [Juridique 2035](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=juridique-2035)).
-
-### Parcours A — Comprendre l'essentiel sans bagage pointu *(~45 minutes)*
-1. Lire l'introduction (**Liminaire**) du **Tome 7** ([PDF p. 5–18](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.pdf) · [MD](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.md)).
-2. Parcourir la **Synthèse exécutive** du **Tome 5** ([PDF p. 9–13](Tomes/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.pdf) · [MD](Tomes/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.md)).
-3. Poursuivre avec les chapitres 01 à 03 du **Tome 7** ([PDF p. 19–68](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.pdf)) et son glossaire bilingue en Annexe A ([PDF p. 232–238](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.pdf)).
-
-### Parcours B — Cadrer une stratégie ou une architecture d'entreprise
-1. Lire les Parties I et V du **Tome 6** ([PDF p. 10–57 et 217–265](Tomes/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.pdf) · [MD](Tomes/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.md)) pour la règle du `80/20`, les `12` anti-patrons et la feuille de route `90 / 180 / 360` jours.
-2. Consulter le **Tome 5** ([PDF](Tomes/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.pdf) · [MD](Tomes/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.md), `175` pages) pour organiser le travail entre architecture d'entreprise et architecture de solutions.
-3. Utiliser la grille d'homologation du **Tome 2** (Sommaire [PDF p. 9–13](Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.pdf) et Annexe A dès la p. 396 · [MD](Tomes/Tome%202%20-%20Cadre%20normatif%20et%20exigences%20d%27architecture.md)).
-
-### Parcours C — Concevoir une solution technique et exécuter le code
-1. Étudier les trois architectures types au chapitre 14 du **Tome 6** ([PDF p. 235–250](Tomes/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.pdf)), puis approfondir un sujet précis dans le **Tome 3** ([PDF](Tomes/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.pdf) · [MD](Tomes/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.md)).
-2. Lire les quatre chapitres techniques du **Tome 8** ([PDF](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.pdf) · [MD](Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.md)).
-3. Ouvrir [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/README.md`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) pour lancer les tests `pytest` et `OPA` sur votre poste.
-
-### Parcours D — Vérifier les enjeux juridiques, financiers et l'horizon 2035
-1. Lire la Partie IV du **Tome 7** ([PDF p. 183–230](Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.pdf)) sur les obligations Québec–Canada–Europe et la préservation des compétences.
-2. Parcourir le **Tome 4** pour la prospective `2028–2035` ([PDF p. 52–149](Tomes/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.pdf) · [MD](Tomes/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.md)) et les cinq profils financiers — banque, patrimoine, assurance de personnes, assurance de dommages et groupe diversifié ([PDF p. 245–323](Tomes/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.pdf)).
-3. Pour le détail réglementaire canadien/québécois et la revue scientifique, consulter le Livre III du **Tome 1** ([PDF p. 506–716](Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) · [MD](Tomes/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.md)) et la Partie X du **Tome 3** ([PDF p. 1 157–1 242](Tomes/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.pdf) · [MD](Tomes/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.md)).
+1. [**Parcours Essentiel — Interopérabilité, 80/20 & Systèmes d'entreprise**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=essentiel) *(Direction & tous publics — `7` unités)* : `Liminaire`, `ch01` (continuum `L0` → agentique), `ch02` (loi de Lusser et `pass^k`), `ch04` (harnais `80/20`), `ch07` (façades `MCP`), `ch13` (sobriété `OO1–OO4`) et `Annexe E` ([galerie des `139` schémas](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=concordance&tab=schemas_gallery)).
+2. [**Architecte d'Entreprise (AE) — Systèmes d'entreprise, Anti-verrouillage & Portefeuille**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=ae-strategie) *(`9` unités)* : `Liminaire`, `ch03` (économie de Coase), `ch06` (noyau possédé `42 CAP`), `ch09` (passerelles `PEP` et anti-verrouillage `SaaS`), `ch10` (sémantique canonique), `ch27` (réversibilité contractuelle), `ch28` (matrice sectorielle), `ch30` (`GitOps` et sortie du `RPA`) et `ch31` (`DAPP 2028–2035`).
+3. [**Architecte de Solutions (AS) — Interopérabilité MCP/A2A, Patrimoine & Automatisation Saga**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=as-ingenierie) *(`11` unités)* : `ch04`, `ch07`–`ch15` (contrats `MCP`/`A2A`, `PEP`, `ODCS`, mémoire `CoALA`, encapsulation `ERP`/`ACL`/`OT`, `OO1–OO4`, `Event Mesh`, `Saga` à canal isolé) et `ch29` (`3` blueprints `C01–C40` et cas *Groupe Boréal*). Pour exécuter le code compagnon : [`Tome 8 .../trousse/README.md`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md).
+4. [**RSSI & Sécurité — Identité NHI, Passerelles PEP & Sûreté des systèmes d'entreprise**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=rssi-securite) *(`9` unités)* : `ch09`, `ch16`–`ch22` (`NHI`/`SIRH`, `OBO`/`CIBA`, `PKI 47` j et post-quantique, `OWASP ASI01–10`, `OPA`/`Cedar`/Règle de deux/`CaMeL`, confinement et coupe-circuit vers `L0`, `OTel`/`SCITT`) et `ch24` (`SRE`/`FinOps`).
+5. [**Juridique, Conformité & Homologation vérifiable des systèmes d'entreprise**](Sources/Cartographie/MindMap%20-%20Cartographie%20th%C3%A9matique%20du%20Compendium.html#view=mindmap&tour=juridique-2035) *(`9` unités)* : `ch05` (anti-complaisance), `ch25`–`ch26` (`Loi 25` art. `12.1`/`27`, étalon `BSIF E-23`/`AMF`, `EU AI Act`/`DORA`/`CRA`/`Data Act`), `ch33` (repli manuel `L0`), `ch34`–`ch36` (`CRE-IA`, trousse exécutable, `Wyvern G0–G5`) et `Annexes C–D`.
 
 ---
 
@@ -215,17 +183,17 @@ Inutile de lire les milliers de pages dans l'ordre : entrez par le **Compendium*
 
 ### Six repères temporels structurants
 
-| Échéance | Cadre concerné | Ce que cela change concrètement |
+| Échéance | Cadre concerné | Impact concret sur les systèmes d'entreprise |
 |---|---|---|
-| **Depuis sept. 2023** | Québec (`Loi 25`, art. 12.1) | Obligation d'informer la personne visée par une décision exclusivement automatisée, d'expliquer les critères et d'offrir une révision humaine |
-| **Depuis août 2026** | Union européenne (`EU AI Act`, art. 50) | Obligations de transparence lorsqu'un utilisateur interagit avec une IA ou du contenu généré |
-| **Mars 2027 → Mars 2029** | Sécurité web (`TLS` public) | Durée de vie maximale des certificats réduite à `100` jours puis `47` jours : renouvellement automatique obligatoire |
-| **1er mai 2027** | Canada et Québec (`BSIF E-23` et `AMF`) | Inventaire complet, évaluation des risques et responsable désigné pour les modèles et systèmes autonomes en finance |
-| **2027–2028** | Union européenne (`EU AI Act`) | Entrée en application progressive des exigences renforcées sur les systèmes d'IA à haut risque |
-| **2030–2035** | Secteur financier `G7` et normes `NIST` | Migration coordonnée vers la cryptographie post-quantique pour protéger les identités et les archives de longue durée |
+| **Depuis sept. 2023** | Québec (`Loi 25`, art. `12.1` et `27`) | Transparence, explication des paramètres et droit de révision humaine pour toute décision exclusivement automatisée ; portabilité structurée des renseignements |
+| **Depuis août 2026** | Union européenne (`EU AI Act`, art. `50`) | Marquage et transparence obligatoires des interactions assistées par IA sur les systèmes d'engagement (`SoE`) |
+| **Mars 2027 → Mars 2029** | Passerelles et `PKI` publique (`SC-081v3`) | Durée maximale des certificats `TLS` abaissée à `100` jours puis `47` jours : automatisation `ACME`/`SDS` indispensable |
+| **1er mai 2027** | Étalon canadien et québécois (`BSIF E-23` / `AMF`) | Inventaire exhaustif, classification de matérialité et gouvernance hors modèle des systèmes automatisés et agentiques (étalon haute assurance) |
+| **2027–2028** | Union européenne (`EU AI Act`, Annexes III et I) | Application progressive des exigences sur les systèmes d'entreprise et composants de sécurité à haut risque (`2 déc. 2027` / `2 août 2028`) |
+| **2030–2035** | Transition post-quantique (`G7` / `NIST` / `CST`) | Migration coordonnée vers `ML-KEM`, `ML-DSA` et `SLH-DSA` pour les identités `NHI`, passerelles `PEP` et archives probatoires |
 
 ### Avertissement éditorial, transparence et licences
 
-- **Portée consultative (`non-avis`)** : ce dépôt est un ensemble pédagogique, architectural et technique. Il ne constitue **ni un avis juridique, ni un conseil réglementaire personnalisé, ni un audit ou une certification de conformité** (`BSIF E-23`, `AMF`, `Loi 25`, `ISO/IEC 42001`). La trousse logicielle [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) fonctionne uniquement hors ligne sur des données synthétiques et des simulateurs.
-- **Sources vérifiables et production par agents d'IA** : les textes et faits s'appuient sur des sources primaires publiques vérifiées sans contournement de restrictions d'accès. Les tomes **1 à 6** (référence : novembre 2026) documentent une rédaction et des recoupements réalisés par pipelines d'agents d'IA sans relecture humaine intégrale. Le **Compendium** ainsi que les tomes **7** et **8** (gel des faits : 2 décembre 2026; édition : janvier 2027) ont été conçus et cadrés par **André-Guy Bruneau, M.Sc IT**, et intégralement rédigés, codés et vérifiés par des agents d'IA à travers les contrôles automatisés et contradictoires documentés dans [`Sources/Compendium/ouvrage/aq/`](Sources/Compendium/ouvrage/aq/), [`Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/aq/`](Sources/Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive/aq/) et [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/aq/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/aq/).
-- **Licences** : les textes et figures du **Compendium** et des tomes **2 à 5**, **7** et **8** sont diffusés sous licence **`CC-BY-4.0`**, et les scripts ainsi que la trousse [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) sous licence **`MIT`** (les tomes 1 et 6 ne comportent pas de mention de licence en page de titre).
+- **Portée consultative (`non-avis`)** : ce dépôt constitue un référentiel architectural, méthodologique et pédagogique. Il ne fournit **ni avis juridique, ni conseil réglementaire personnalisé, ni audit ou certification de conformité** (`Loi 25`, `EU AI Act`, `BSIF E-23`, `AMF`, `DORA`, `ISO/IEC 42001`). La trousse logicielle [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) s'exécute exclusivement hors ligne sur des données synthétiques et des simulateurs.
+- **Sources vérifiables et ingénierie éditoriale** : les assertions factuelles du Compendium sont ancrées sur `135` sources primaires publiques ouvertes `L+` hachées `SHA-256` sans contournement de restrictions d'accès (`27` exclusions `Statut F` consignées). Les tomes **1 à 6** (novembre 2026) constituent une archive exploratoire produite par pipelines d'agents sans relecture humaine intégrale. Le traité maître ([`Compendium/`](Compendium/README.md)) ainsi que les tomes **7** et **8** (gel des faits : `2 décembre 2026` ; parution : `janvier 2027`) ont été conçus et cadrés par **André-Guy Bruneau, M.Sc IT**, et rédigés, codés et audités contradictoirement par agents sous les barrières automatisées documentées dans [`Sources/Compendium/ouvrage/aq/`](Sources/Compendium/ouvrage/aq/), [`Sources/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/aq/`](Sources/Tomes/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive/aq/) et [`Sources/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/aq/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/aq/).
+- **Licences** : textes, registres et figures du **Compendium** et des tomes **2 à 5**, **7** et **8** sous licence **`CC-BY-4.0`** ; scripts d'outillage et trousse exécutable [`trousse/`](Sources/Tomes/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/trousse/README.md) sous licence **`MIT`** (les tomes `1` et `6` historiques ne comportent pas de mention de licence en page de titre).

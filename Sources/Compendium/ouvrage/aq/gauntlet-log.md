@@ -1,8 +1,9 @@
 # Journal d'homologation `G4` (`gauntlet-loop` à l'aveugle)
 
+- **Ouvrage homologué :** *Interopérabilité et automatisation agentique des systèmes d'entreprise — Traité unifié d'architecture hybride, de gouvernance hors modèle et d'homologation vérifiable (non-avis)*
 - **Barre nommée, récupérable et comparable :** `Compendium/prd.md` *(étalon historique archivé hors dépôt)* (§ 1–5 *Sommaire exécutif global*, référentiels `01.2` / `36.2` et descriptifs ciblés par chapitre)
 - **Protocole d'étanchéité (`AO-07`, `CA-15`) :** exécution intégrale hors tableau `swarm` via `invoke_subagent` ; critiques `research` neufs à chaque tour sans accès aux chemins sources, à `manifest.json` ni aux journaux des bâtisseurs ; comparaison binaire forcée (`A` ou `B`) en ordre alterné puis inversé au Tour 2.
-- **Plafond budgétaire et arrêt :** convergence atteinte en `2` tours (`37/37` au Tour 1 ; `20/20` en ordre inversé au Tour 2).
+- **Plafond budgétaire et arrêt :** convergence atteinte en `2` tours (`37/37` au Tour 1 ; `20/20` en ordre inversé au Tour 2), prolongée par le contrôle contradictoire d'adaptation intégrale au nouveau titre directeur (`42/42` unités conformes sous `verifie_manuscrit` et `parser_plan`).
 
 ---
 
@@ -90,3 +91,10 @@ Résultat global : **`20 / 20` victoires des unités révisées (`100,0 %`)** ma
 ## 4. Clôture de barrière `G4`
 
 - **Verdict `G4` :** **VALIDÉE** (convergence `37/37` au Tour 1 et `20/20` au Tour 2 en ordre inversé ; l'intégralité des micro-raccords inter-chapitres détectés au Tour 2 est versée au mandat du `lisseur-editorial` en Task 8 `G5`).
+
+---
+
+## 5. Actualisation d'édition — Adaptation intégrale « Interopérabilité et automatisation agentique des systèmes d'entreprise »
+
+- **Périmètre vérifié :** refonte doctrinale, terminologique et multisectorielle des `37` unités narratives (`00-liminaire` et `ch01`–`ch36`), des `7` registres JSON SSOT (`56` vedettes `CA-07` incluant les `6` nouvelles vedettes canoniques), des `139` schémas (`58` bandeaux `.svg` et `31` refontes structurelles sous budget `4..14` nœuds) et des `5` Annexes déterministes `A` à `E` (`CA-17`), à corpus primaire `L+` invariant (`135` sources `SHA-256`, `27` exclusions `Statut F`, `14/14` extraits scellés `CA-G0-SYNC` intacts).
+- **Contrôles indépendants exécutés :** validation contradictoire par trois vérificateurs dédiés (`verif-socle-schemas`, `verif-ms-a` sur `00-liminaire` et `ch01`–`ch18`, `verif-ms-b` sur `ch19`–`ch36`), suivie des barrières `G0` (`execute_g0.py --verify-sync-manifest`, `PASS` `exit 0`), `G1` (`verifie_manuscrit.py --strict`, `0` erreur sur `42/42` unités sous `verifie_manuscrit` et `parser_plan`), `G2` (`37/37` journaux d'ancrage à `100,0 %` supportés) et `G3` (`148/148` sur `seed=20270901` et `148/148` sur `seed=20270902`, `0` chevauchement).

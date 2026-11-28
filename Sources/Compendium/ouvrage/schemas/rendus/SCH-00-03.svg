@@ -4,9 +4,9 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-00-03</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Frise chronologique et jalons</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Trajectoire adaptative 2026–2035 et paliers d'autonomie L0–L4 sous gouvernance</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">duale AE ↔ AS</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Trajectoire adaptative 2026–2035 et continuum d'automatisation L0–L4</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">sous gouvernance duale AE ↔ AS des systèmes d'entreprise</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="152" rx="10" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="152" rx="4" fill="#1D4ED8"/>
@@ -79,13 +79,13 @@
 <g id="zone-Z3" class="zone">
   <rect x="28" y="454" width="1144" height="136" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
   <rect x="28" y="454" width="8" height="136" rx="4" fill="#047857"/>
-  <text x="46" y="476" font-size="13.5" font-weight="bold" fill="#047857">Z3 — Bande inférieure — Échelle graduée L0–L4 et préservation du capital humain (INI-043)</text>
+  <text x="46" y="476" font-size="13.5" font-weight="bold" fill="#047857">Z3 — Bande inférieure — Continuum d'automatisation (L0 → L1–L4) et préservation du capital humain (INI-043)</text>
   <g id="node-9" class="node" data-node="true">
     <rect x="42.0" y="492" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
-    <text x="53.0" y="514" font-size="13" font-weight="bold" fill="#064E3B">L0–L1 · Lecture &amp; suggestion</text>
+    <text x="53.0" y="514" font-size="13" font-weight="bold" fill="#064E3B">L0 déterministe → L1 suggestion</text>
     <line x1="53.0" y1="526" x2="393.7" y2="526" stroke="#047857" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="540" font-size="11.8" fill="#1E293B">Automatisation sans écriture</text>
-    <text x="53.0" y="556" font-size="11.8" fill="#1E293B">Rampe initiale sans regret</text>
+    <text x="53.0" y="540" font-size="11.8" fill="#1E293B">L0 : règles, BPMN, RPA/API (0 jeton)</text>
+    <text x="53.0" y="556" font-size="11.8" fill="#1E293B">En amont de L1 → L4 · sans écriture IA</text>
   </g>
   <g id="node-10" class="node" data-node="true">
     <rect x="418.7" y="492" width="362.7" height="86" rx="8" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
@@ -105,8 +105,8 @@
 <g id="flows-box">
   <rect x="28" y="604" width="1144" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
   <text x="42" y="626" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
-  <text x="42.0" y="644" font-size="11.5" fill="#334155">① Déployer le noyau invariant sans regret (J1 90 j → J3 18 mois) en L0–L1 pour</text>
-  <text x="42.0" y="659" font-size="11.5" fill="#334155">satisfaire aux échéances 2026–2027.</text>
+  <text x="42.0" y="644" font-size="11.5" fill="#334155">① Épuiser le socle déterministe (L0 : règles, BPMN, RPA/API) avant la rampe</text>
+  <text x="42.0" y="659" font-size="11.5" fill="#334155">sans regret L1 (J1 90 j → J3 18 mois) sur 2026–2027.</text>
   <text x="609.0" y="644" font-size="11.5" fill="#334155">② N'autoriser chaque palier P1–P3 qu'à l'ouverture de sa porte POR sous contrôle</text>
   <text x="609.0" y="659" font-size="11.5" fill="#334155">conjoint AE (portefeuille) ↔ AS (harnais).</text>
   <text x="42.0" y="682" font-size="11.5" fill="#334155">③ Plafonner l'autonomie courante à ≤ L2 et activer le quota formateur INI-043 dès le</text>

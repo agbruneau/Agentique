@@ -25,20 +25,20 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Hiérarchie MCP (≥ 92 %) → RPA → CUA confiné (12 mois) et sas OT/Edge (Purdue, Simplex, CRDT)
+title Continuum MCP ≥ 92 % → CDC/EDI → RPA → CUA ≤ 8 % (12 mois) et sas industriel IT/OT (Purdue, Simplex)
 
-package "Z1 — Hiérarchie sans API (ADR-016) et extinction CUA à 12 mois" {
-  rectangle "① MCP (≥ 92 %) → RPA déterministe\n(grattage client externe proscrit PEX-001)" as N1 <<green>>
-  rectangle "② Exception CUA interne (≤ 8 %)\nCaviardage PII, double OCR, blocage touches" as N2 <<prob>>
-  rectangle "Compte à rebours 12 mois (INI-015)\n→ Interdiction totale à POR-008" as N3 <<red>>
+package "Z1 — Continuum patrimonial sans API (ADR-016) et extinction CUA à 12 mois" {
+  rectangle "① MCP ≥ 92 % → CDC/EDI → RPA déterministe\n(grattage client externe proscrit PEX-001)" as N1 <<green>>
+  rectangle "② Exception CUA interne confinée (≤ 8 %)\nCaviardage PII, double OCR, blocage touches" as N2 <<prob>>
+  rectangle "Compte à rebours ≤ 12 mois (INI-015)\n→ Interdiction totale à POR-008" as N3 <<red>>
   N1 --> N2 : Si absence API
   N2 .[#D97706].> N3 : Extinction ≤ 12 mois
 }
 
-package "Z2 — Sas OT en lecture seule (Purdue / IEC 62443-3-3 SL-3, CAP-028)" {
-  database "Réplica IDMZ niveau 3.5 (lecture seule)\ndevant OPC UA & MQTT Sparkplug B" as N4 <<green>>
+package "Z2 — Sas industriel IT/OT (Purdue / IEC 62443-3-3 SL-3, CAP-028 : ERP ↔ MES ↔ SCADA)" {
+  database "Réplica IDMZ niveau 3.5 Purdue (lecture seule)\ndevant OPC UA, AAS & MQTT Sparkplug B" as N4 <<green>>
   rectangle "③ Agrégation FFT/RMS & validation\njumeau numérique FMI 3.0 Ed25519" as N5 <<det>>
-  rectangle "Arbitre matériel Simplex\n(rejet écriture directe PLC/SCADA)" as N6 <<green>>
+  rectangle "Arbitre matériel Simplex & exclusion SIL 2+\n(rejet écriture directe PLC/SCADA)" as N6 <<green>>
   N4 --> N5
   N5 --> N6
 }
@@ -52,6 +52,6 @@ package "Z3 — Cellule Edge Local-First déconnectée (ADR-028 / 72 h)" {
 legend bottom
   **Rouge** : Interdictions absolues (grattage externe LSAC, écriture PLC/SCADA, CUA > 12 mois)
   **Ambre pointillé** : Dérogation transitoire CUA confinée (≤ 8 %) et cellule Edge 72 h
-  **Vert émeraude** : Cible durable MCP (≥ 92 %), réplica IDMZ et arbitre Simplex
+  **Vert émeraude** : Continuum durable MCP ≥ 92 % / CDC / EDI, réplica Purdue IDMZ 3.5 et Simplex
 end legend
 @enduml

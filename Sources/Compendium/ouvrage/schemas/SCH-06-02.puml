@@ -25,7 +25,7 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Posséder son noyau (42 CAP invariantes face à 10 sur signal), gravité et 10 clauses de sortie (9 T3)
+title Posséder son noyau (42 CAP invariantes face à 10 sur signal), gravité SoR et clauses de sortie
 
 package "Z1 — Trois conditions du plan de contrôle et 42 CAP invariantes (DISC-03)" {
   rectangle "3 conditions d'effectivité : PEP obligé,\nregistre à 7 états et preuve hors modèle" as N1 <<det>>
@@ -40,18 +40,18 @@ package "Z2 — Dix capacités conditionnelles sur signal SIG-*" {
   N3 .[#B45309].> N4 : Signal SIG-* vérifié
 }
 
-package "Z3 — Gravité des données (EXIG-ARC-21) et 10 clauses de sortie EXIG-APP-07..16" {
-  rectangle "Confinement mono-silo des suites SaaS\n(gravité ≥ 85 % local · zéro lien latéral)" as N5 <<det>>
-  rectangle "Dépôt Git des actifs (SKILL.md)\n(interchangeabilité ≠ transférabilité)" as N6 <<green>>
-  rectangle "10 clauses EXIG-APP-07..16 (9 T3 / B-10)\n(test annuel de sortie prouvé)" as N7 <<green>>
-  N2 --> N5 : ③ Appliquer EXIG-ARC-21
+package "Z3 — Gravité autour des SoR d'entreprise (EXIG-ARC-21) et clauses de sortie (EXIG-APP-07..16)" {
+  rectangle "Ancrage de gravité sur les SoR (ERP, CRM, SIRH, ITSM)\n(≥ 85 % local · confinement SaaS mono-silo, zéro lien latéral)" as N5 <<det>>
+  rectangle "Dépôt Git des actifs (SKILL.md, politiques OPA)\n(interchangeabilité ≠ transférabilité d'état)" as N6 <<green>>
+  rectangle "10 clauses de sortie EXIG-APP-07..16 (9 T3 / B-10 / Data Act)\n(restitution formats ouverts & test annuel de réversibilité)" as N7 <<green>>
+  N2 --> N5 : ③ Appliquer gravité SoR (EXIG-ARC-21)
   N5 --> N6 : ④ Préserver actifs
   N6 --> N7
 }
 
 legend bottom
-  **Bleu ardoise** : Noyau de contrôle possédé (42 CAP invariantes sous 3 conditions)
+  **Bleu ardoise** : Noyau possédé (42 CAP invariantes) et gravité autour des SoR d'entreprise (≥ 85 % local)
   **Or ambré** : Dix capacités conditionnelles activées uniquement sur signal SIG-*
-  **Vert émeraude** : Actifs transférables sous Git et 10 clauses de sortie (9 T3) éprouvées
+  **Vert émeraude** : Actifs transférables sous Git et clauses de sortie (BSIF B-10 / Data Act) éprouvées
 end legend
 @enduml

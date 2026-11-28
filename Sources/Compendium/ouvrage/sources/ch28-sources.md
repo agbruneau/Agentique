@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 28 — Cinq profils financiers réglementés et 24 propositions PEX
+# Base documentaire fermée — Chapitre 28 — Matrice sectorielle des systèmes d'entreprise : étalon financier (M-14 à M-18, 24 PEX), sas d'irréversibilité et transposition multisectorielle
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

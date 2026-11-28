@@ -1,10 +1,11 @@
-"""Suite de tests automatisés pour la cartographie interactive du Compendium Agentique.
+"""Suite de tests automatisés pour la cartographie interactive du Compendium
+« Interopérabilité et automatisation agentique des systèmes d'entreprise ».
 
 Couvre :
-- l'extraction structurelle CommonMark stricte des 15 sections du Compendium (`R`, `LIM`, `P01`–`P12`, `ANN`, 42 unités, 404 titres dans `Compendium/Compendium.md`, 8 670 lignes) ;
+- l'extraction structurelle CommonMark stricte des 15 sections du Compendium (`R`, `LIM`, `P01`–`P12`, `ANN`, 42 unités, titres et lignes lus dynamiquement sur `Compendium/Compendium.md`) ;
 - l'absence de faux positifs dans les blocs de code clôturés et la couverture des identifiants `SCH-*`, `SRC-*`, `POR-*`, `SIG-*`, `INI-*` ;
 - la complétude des 139 schémas compilés du Compendium (`58` PlantUML, `23` Mermaid, `58` SVG) ;
-- l'intégrité du graphe transversal (`380` nœuds dont `260` thèmes, `616` relations, `180` cellules de matrice, `56` vedettes glossaire, `135` `L+`, `27` `Statut F`, `14` `CA-G0-SYNC`, `37/37` `G2`, `871` pages PDF) ;
+- l'intégrité du graphe transversal (`380` nœuds dont `260` thèmes, `616` relations, `180` cellules de matrice, `56` vedettes glossaire, `135` `L+`, `27` `Statut F`, `14` `CA-G0-SYNC`, `37/37` `G2`, pages PDF mesurées dynamiquement sur `Compendium/Compendium.pdf`) ;
 - la suppression définitive de l'ancienne carte `MindMap - Cartographie thématique du Corpus.html` et de `donnees/shards/` ;
 - l'échappement sûr du JSON embarqué dans `<script>` et l'autonomie `file://` stricte (`0` CDN / requête réseau) ;
 - la validation syntaxique et fonctionnelle DOM complète des `4` vues sous `Node.js`.
@@ -41,6 +42,15 @@ def _walk_struct_tree(nodes: list[dict]) -> list[dict]:
         out.append(n)
         out.extend(_walk_struct_tree(n.get("children", [])))
     return out
+
+
+def _actual_compendium_pdf_pages() -> int:
+    import pymupdf
+
+    pdf_path = REPO_ROOT / "Compendium" / "Compendium.pdf"
+    assert pdf_path.is_file(), f"Compendium.pdf introuvable : {pdf_path}"
+    with pymupdf.open(pdf_path) as doc:
+        return int(doc.page_count)
 
 
 # ---------------------------------------------------------------------------
@@ -118,18 +128,24 @@ def test_structure_covers_compendium_15_sections_and_42_units() -> None:
         "R", "LIM", "P01", "P02", "P03", "P04", "P05", "P06",
         "P07", "P08", "P09", "P10", "P11", "P12", "ANN",
     ]
+    comp_md_path = REPO_ROOT / "Compendium" / "Compendium.md"
+    comp_lines = comp_md_path.read_text(encoding="utf-8").splitlines()
+    actual_md_lines = len(comp_lines)
+    actual_pdf_pages = _actual_compendium_pdf_pages()
+    raw_comp_headings, _, comp_code_lines = es.parse_markdown_lines(comp_lines)
+    actual_comp_headings = len(raw_comp_headings)
+
+    assert actual_md_lines >= 7000
+    assert actual_pdf_pages >= 700
+    assert actual_comp_headings >= 350
+
     assert data["totals"]["files"] == 15
     assert data["totals"]["sections"] == 15
     assert data["totals"]["compendium_units_mapped"] == 42
-    assert data["totals"]["compendium_lines"] == 8670
-    assert data["totals"]["compendium_headings"] == 404
+    assert data["totals"]["compendium_lines"] == actual_md_lines
+    assert data["totals"]["compendium_headings"] == actual_comp_headings
     assert len(data["files"]) == 15
     assert [f["tome_id"] for f in data["files"]] == expected_sections
-
-    comp_md_path = REPO_ROOT / "Compendium" / "Compendium.md"
-    comp_lines = comp_md_path.read_text(encoding="utf-8").splitlines()
-    assert len(comp_lines) == 8670
-    _, _, comp_code_lines = es.parse_markdown_lines(comp_lines)
 
     mapped_units: set[str] = set()
     all_identifiers: set[str] = set()
@@ -159,7 +175,7 @@ def test_structure_covers_compendium_15_sections_and_42_units() -> None:
                 p0 = node.get("pdf_page_start")
                 p1 = node.get("pdf_page_end")
                 assert isinstance(p0, int) and isinstance(p1, int), f"Pages PDF manquantes sur {node['unit_id']}"
-                assert 1 <= p0 <= p1 <= 871, f"Plage PDF invalide sur {node['unit_id']}: {p0}..{p1}"
+                assert 1 <= p0 <= p1 <= actual_pdf_pages, f"Plage PDF invalide sur {node['unit_id']}: {p0}..{p1}"
                 if node.get("kind") in ("chapter", "liminaire") and node.get("compendium_unit_id"):
                     assert node.get("excerpt"), f"Extrait vide sur {node['compendium_unit_id']}"
                     if (node.get("level") == 1 and node.get("kind") == "liminaire") or node.get("kind") == "chapter":
@@ -174,7 +190,7 @@ def test_structure_covers_compendium_15_sections_and_42_units() -> None:
         total_headings += len(flat)
 
     assert len(mapped_units) == 42
-    assert compendium_headings == 404
+    assert compendium_headings == actual_comp_headings
     assert data["totals"]["lines"] == total_lines
     assert data["totals"]["words"] == total_words
     assert data["totals"]["headings"] == total_headings
@@ -202,12 +218,13 @@ def test_inventaire_139_schemas_compendium_complete() -> None:
     figs = inv["figures"]
     assert len(figs) == 139
     comp_line_count = len((REPO_ROOT / "Compendium" / "Compendium.md").read_text(encoding="utf-8").splitlines())
+    actual_pdf_pages = _actual_compendium_pdf_pages()
     for fg in figs:
         assert (REPO_ROOT / fg["source_path"]).is_file(), f"Source absente : {fg['source_path']}"
         assert (REPO_ROOT / fg["rendered_path"]).is_file(), f"Rendu absent : {fg['rendered_path']}"
         assert (REPO_ROOT / fg["source_file"]).is_file(), f"Manuscrit absent : {fg['source_file']}"
         assert 1 <= int(fg["compendium_md_line"]) <= comp_line_count
-        assert 1 <= int(fg["pdf_page"]) <= 871
+        assert 1 <= int(fg["pdf_page"]) <= actual_pdf_pages
         src_lines = len((REPO_ROOT / fg["source_file"]).read_text(encoding="utf-8").splitlines())
         assert 1 <= int(fg["source_file_line"]) <= src_lines
 
@@ -220,12 +237,22 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     assert bundle_path.is_file()
     bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
 
+    comp_lines_disk = (REPO_ROOT / "Compendium" / "Compendium.md").read_text(encoding="utf-8").splitlines()
+    actual_md_lines = len(comp_lines_disk)
+    actual_pdf_pages = _actual_compendium_pdf_pages()
+    lim_heading_line = next(
+        (idx for idx, ln in enumerate(comp_lines_disk, start=1) if ln.startswith("# Liminaire ")),
+        1,
+    )
+    schema_on_disk = json.loads((DONNEES_DIR / "schema-cartographie.json").read_text(encoding="utf-8"))
+
     schema = bundle["schema"]
+    assert schema == schema_on_disk
     scope = schema["corpus_scope"]
-    assert scope["compendium_pdf_pages"] == 871
-    assert scope["compendium_markdown_lines"] == 8670
+    assert scope["compendium_pdf_pages"] == actual_pdf_pages
+    assert scope["compendium_markdown_lines"] == actual_md_lines
     assert scope["compendium_schemas"] == 139
-    assert scope["total_pdf_pages"] == 871
+    assert scope["total_pdf_pages"] == actual_pdf_pages
     assert scope["total_diagrams"] == 139
     nodes = bundle["nodes"]
     relations = bundle["relations"]
@@ -285,50 +312,57 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
         assert any(o.get("is_primary") for o in occs), f"Thème sans occurrence maîtresse is_primary : {n['node_id']}"
         for occ in occs:
             assert occ["file"] == "Compendium/Compendium.md", f"Occurrence hors Compendium.md : {occ}"
-            assert 1 <= occ["line_start"] <= occ["line_end"] <= 8670
-            assert 1 <= int(occ.get("pdf_page_start") or 0) <= 871
+            assert 1 <= occ["line_start"] <= occ["line_end"] <= actual_md_lines
+            assert 1 <= int(occ.get("pdf_page_start") or 0) <= actual_pdf_pages
             assert (REPO_ROOT / occ["source_file"]).is_file(), f"source_file absent : {occ['source_file']}"
 
     # 100 % des 120 nœuds macro (root/domain/subdomain/family) ont un ancrage structurel et PDF direct
     for n in nodes:
         if n["node_kind"] != "theme":
             assert n.get("primary_struct_unit_id"), f"primary_struct_unit_id manquant sur {n['node_id']}"
-            assert 1 <= int(n.get("pdf_page_start") or 0) <= 871
+            assert 1 <= int(n.get("pdf_page_start") or 0) <= actual_pdf_pages
 
     # 139 schémas intégrés + 5 parcours de lecture guidés
     schemas_cat = bundle.get("schemas") or []
     assert len(schemas_cat) == 139
     for sc in schemas_cat:
-        assert 1 <= int(sc.get("pdf_page") or 0) <= 871
+        assert 1 <= int(sc.get("pdf_page") or 0) <= actual_pdf_pages
         assert (REPO_ROOT / sc["rendered_path"]).is_file()
 
     reading_paths = bundle.get("reading_paths") or []
     assert len(reading_paths) == 5
+    assert [rp["path_id"] for rp in reading_paths] == [
+        "essentiel",
+        "ae-strategie",
+        "as-ingenierie",
+        "rssi-securite",
+        "juridique-2035",
+    ]
     for rp in reading_paths:
         assert rp["steps_count"] >= 5 and rp["total_minutes"] > 0
         for stp in rp["steps"]:
-            assert 1 <= int(stp.get("pdf_page_start") or 0) <= 871
+            assert 1 <= int(stp.get("pdf_page_start") or 0) <= actual_pdf_pages
             assert stp.get("representative_node_id") in node_by_id
 
     # Matrice de concordance 12 x 15 = 180 cellules
     cmat = bundle.get("concordance_matrix") or []
     assert len(cmat) == 180
 
-    # Pivots Compendium (glossaire 56, 135 L+, 27 Statut F, 14 CA-G0-SYNC, 37/37 G2, 871 p.)
+    # Pivots Compendium (glossaire 56, 135 L+, 27 Statut F, 14 CA-G0-SYNC, 37/37 G2, pages PDF réelles)
     pivots = bundle["pivots"]
     assert pivots["div_02"] is not None
-    assert 1 <= int(pivots["div_02"].get("pdf_page") or 0) <= 871
+    assert 1 <= int(pivots["div_02"].get("pdf_page") or 0) <= actual_pdf_pages
     assert len(pivots["reconciliations"]) == 5
     for rec in pivots["reconciliations"]:
-        assert 1 <= int(rec.get("pdf_page") or 0) <= 871
+        assert 1 <= int(rec.get("pdf_page") or 0) <= actual_pdf_pages
     assert len(pivots["timeline"]) == 77
     for ev in pivots["timeline"]:
-        assert 1 <= int(ev.get("pdf_page") or 0) <= 871
+        assert 1 <= int(ev.get("pdf_page") or 0) <= actual_pdf_pages
     assert len(pivots["traceability_matrix"]) == 237
     for tr in pivots["traceability_matrix"]:
         assert tr.get("compendium_unit_id")
-        assert int(tr.get("compendium_line_start") or 0) >= 74
-        assert 1 <= int(tr.get("pdf_page") or 0) <= 871
+        assert lim_heading_line <= int(tr.get("compendium_line_start") or 0) <= actual_md_lines
+        assert 1 <= int(tr.get("pdf_page") or 0) <= actual_pdf_pages
     assert len({x["id"] for x in pivots["traceability_matrix"]}) == 237
     assert pivots.get("matrix_totals") == {
         "unique_entries": 237,
@@ -353,7 +387,7 @@ def test_bundle_graph_referential_and_coverage_integrity() -> None:
     assert len(pivots.get("faits_empiriques_16") or []) == 16
     assert len(pivots.get("specifications_lplus_57") or []) == 57
     assert len(pivots.get("statut_f_exclus_27") or []) == 27
-    assert (pivots.get("collection_metrics") or {}).get("compendium_pdf_pages") == 871
+    assert (pivots.get("collection_metrics") or {}).get("compendium_pdf_pages") == actual_pdf_pages
 
     bundle_raw = bundle_path.read_text(encoding="utf-8")
     assert r"\$" not in bundle_raw
@@ -481,10 +515,19 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     if node_exe is None:
         pytest.skip("Node.js non disponible dans l'environnement")
 
+    readme_headings, _, _ = es.parse_markdown_lines(
+        (REPO_ROOT / "Compendium" / "README.md").read_text(encoding="utf-8").splitlines()
+    )
+    comp_headings, _, _ = es.parse_markdown_lines(
+        (REPO_ROOT / "Compendium" / "Compendium.md").read_text(encoding="utf-8").splitlines()
+    )
+    expected_total_headings = len(readme_headings) + len(comp_headings)
+
     node_script = r"""
     const fs = require("fs");
     const vm = require("vm");
     const html = fs.readFileSync(process.argv[1], "utf8");
+    const expectedHeadings = Number(process.argv[2]);
     const jsonMatch = html.match(/<script[^>]*id="corpus-mindmap-data"[^>]*>([\s\S]*?)<\/script>/);
     if (!jsonMatch) throw new Error("JSON embarqué introuvable");
     const data = JSON.parse(jsonMatch[1]);
@@ -505,7 +548,9 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
 
     if (idx.nodes.length !== 380) throw new Error("Nombre de nœuds != 380: " + idx.nodes.length);
     if (idx.relations.length !== 616) throw new Error("Nombre de relations != 616: " + idx.relations.length);
-    if (idx.structFlat.length !== 409) throw new Error("Titres H1-H6 != 409: " + idx.structFlat.length);
+    if (idx.structFlat.length !== expectedHeadings || expectedHeadings < 350) {
+      throw new Error("Titres H1-H6 != " + expectedHeadings + ": " + idx.structFlat.length);
+    }
     if (!idx.glossaryTerms || idx.glossaryTerms.length !== 56) throw new Error("Glossaire != 56");
 
     const s1 = eng.searchCorpus(idx, "Lusser", 10);
@@ -608,7 +653,7 @@ def test_nodejs_syntax_and_functional_smoke() -> None:
     """
 
     proc = subprocess.run(
-        [node_exe, "-e", node_script, str(HTML_PATH)],
+        [node_exe, "-e", node_script, str(HTML_PATH), str(expected_total_headings)],
         stdin=subprocess.DEVNULL,
         capture_output=True,
         text=True,

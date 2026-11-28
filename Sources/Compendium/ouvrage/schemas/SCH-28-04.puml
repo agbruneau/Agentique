@@ -21,17 +21,17 @@ skinparam ranksep 26
 skinparam padding 7
 
 top to bottom direction
-title Double qualification (BSIF E-23 ∩ BSIF B-10) et six facteurs de durcissement financier
+title Étalon haute régulation (BSIF E-23 ∩ BSIF B-10, M-14..M-18) et transposition multisectorielle
 
-package "Z1 — Patron-signature du domaine financier : double qualification obligatoire" {
+package "Z1 — Étalon financier (M-14 à M-18, 24 PEX) : double qualification obligatoire" {
   rectangle "① Volet Modèle : BSIF E-23\n(en vigueur le 1er mai 2027)\nInventaire, cotation de risque, dérive et arrêt" as M1 <<indigo>>
-  rectangle "Même Système d'agentivité\ndoublé d'un registre unique coordonné\n(aucun outil tiers n'en dispense)" as CORE <<det>>
+  rectangle "Même dispositif d'automatisation agentique\n(Système d'agentivité au sens Ch. 01)\ndoublé d'un registre unique coordonné" as CORE <<det>>
   rectangle "② Volet Tiers TIC : BSIF B-10\nEntentes intra-groupe, plans de sortie,\nréversibilité et dépendance fournisseur" as M2 <<blue>>
   M1 --> CORE : Qualification modèle
   M2 --> CORE : Qualification tiers
 }
 
-package "Z2 — Six facteurs structurels de durcissement en finance" {
+package "Z2 — Six facteurs structurels de durcissement de l'étalon financier" {
   rectangle "1. Irréversibilité de règlement\nSéparation préparation IA / libération\n(RTR / paiements sans Saga auto)" as F1 <<red>>
   rectangle "2. Risque systémique & corrélation\nAmplification procyclique partagée\n(travaux FSB / BoE / ESRB)" as F2 <<red>>
   rectangle "3. Responsabilité & conduite\nImputabilité sans personnalité morale\n(jurisprudence Moffatt, règle non-avis AO-05)" as F3 <<amber>>
@@ -39,14 +39,19 @@ package "Z2 — Six facteurs structurels de durcissement en finance" {
   rectangle "5. Standardisation des contrôles\nTaxonomie FINOS AI Governance v2.0\net fiabilité de flux en patrimoine" as F5 <<green>>
 }
 
+package "Z3 — Transposition multisectorielle balisée (noyau 42/52 CAP sous DC-P11 / DC-P12)" {
+  rectangle "Transposition contrôlée hors finance (sans actionnement direct SIL 2+) :\nSanté clinique (DSE / HL7 FHIR R4) · Industrie IT/OT (MES / ERP / Purdue)\nSecteur public (MCN / SCT) & Logistique B2B" as T1 <<blue>>
+}
+
 CORE --> F1
 CORE --> F2
 CORE --> F3
 CORE --> F4
 CORE --> F5
+F3 --> T1 : Transposition 42/52 CAP (DC-P11/P12)
 
 legend bottom
-  **Indigo / Bleu / Ardoise** : Double qualification simultanée sous BSIF E-23 (modèle) et BSIF B-10 (tiers TIC)
+  **Indigo / Bleu / Ardoise** : Double qualification BSIF E-23 ∩ B-10 et transposition multisectorielle (DSE/FHIR, MES/ERP/OT, secteur public)
   **Rouge / Ambre** : Facteurs critiques d'irréversibilité, risque systémique, conduite juridique et fraude/LBC
   **Vert émeraude** : Standardisation vérifiable FINOS v2.0 et schémas contraints de bout en bout
 end legend

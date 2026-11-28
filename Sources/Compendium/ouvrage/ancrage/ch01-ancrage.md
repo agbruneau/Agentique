@@ -1,6 +1,6 @@
 # Journal d'ancrage Wyvern G2 — Chapitre 01 (`ch01`)
 
-- **Unité auditée :** [Chapitre 01.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/01%20-%20Partie%20I/Chapitre%2001.md) (`4 836` mots, plage `[4 251, 4 989]`)
+- **Unité auditée :** [Chapitre 01.md](file:///c:/Github/Agentique/Sources/Compendium/ouvrage/manuscrit/01%20-%20Partie%20I/Chapitre%2001.md) (`4 946` mots, plage `[4 251, 4 989]` — *Chapitre 01 — De l'automatisation déterministe à l'automatisation agentique des systèmes d'entreprise : boucle fermée, contrats comportementaux et hiérarchie probante*)
 - **Base documentaire fermée :** [ch01-sources.md](file:///c:/Github/Agentique/Compendium/ouvrage/sources/ch01-sources.md) (`[1]`–`[9]` en statut `L+`, `3` exclusions `statut F`) ; registres `registre/{ancres-chronologiques, faits-empiriques, glossaire-termes}.json` ; protocole `specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; manifeste `recherche/manifeste-sources-sha256.json` (`135` sources `L+`) et `recherche/registre-statut-f.json` (`27` exclusions)
 - **Date de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-01`
@@ -197,3 +197,21 @@
   - **Verdict : supporté**
 
 - **Contrôle `REV-05` :** `4 682` mots (`verifie_manuscrit.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch01 --strict` = `exit 0`. **Verdict final : `41 / 41` (`100,0 %` supporté).**
+
+---
+
+## Mise à jour d'adaptation éditoriale (`Vague 2` — continuum déterministe-agentique et interopérabilité d'entreprise)
+
+- **C01-V2-01 (`L1–L23`, `§ 1.1.1`)** — *Affirmation :* Nouveau titre et question directrice inscrivant la boucle fermée dans le passage de l'automatisation déterministe à l'automatisation agentique des systèmes d'entreprise ; distinction explicite entre `SoA` (*System of Action*) et `SOA` (*Service-Oriented Architecture*) ; élargissement des `SoE`/`SoR` (`ERP`, `CRM`, `SIRH`, `SCM`, `ITSM`, `PLM`) et formulation de la réduction `N×M → N+M` comme première loi d'interopérabilité.
+  - **Appui vérifié :** `specs/manifest.json` (`ch01`), `registre/glossaire-termes.json` (`industrialisation cognitive`, `Système d'agentivité`, `Agentivité des systèmes`), `registre/matrice-exig-prr-c40.json` (`ADR-001`).
+  - **Verdict : supporté**
+- **C01-V2-02 (`L27–L47`, `§ 1.1.2`, `Tableau 1.1`, `SCH-01-01`)** — *Affirmation :* Positionnement du palier de référence `0` (`L0`/`N0` : moteurs `DMN`, orchestrations `BPMN 2.0`, flux `iPaaS` et `RPA` stable sans modèle en boucle) en amont des cinq paliers d'autonomie de trajectoire, ouverture multisectorielle de l'archétype *Spécialiste de domaine* (`Tableau 1.1`) et mise à jour de la légende `SCH-01-01`.
+  - **Appui vérifié :** `registre/concordance-taxonomies.json` (`DISC-01`), `schemas/SCH-01-01.puml`.
+  - **Verdict : supporté**
+- **C01-V2-03 (`L51–L59`, `§ 1.1.3`)** — *Affirmation :* Ventilation multisectorielle et applicative de Statistique Canada T2 2026 (`33-10-1167-01` `[6]` : `19,2 %` global et `14,5 %` au premier trimestre historique, `42,3 %` industrie culturelle et information, `40,4 %` finance et assurances, `32,4 %` conseil scientifique et technique, `30,0 %` santé, `19,2 %` détail, `13,1 %` usine ; `28,2 %` agents virtuels, `13,7 %` décisions automatisées, `5,0 %` `RPA`) et articulation avec le socle déterministe `L0` mis en évidence par le *Tech Value Survey* de Deloitte `[5]` (`28 %`/`12 %` face à `80 %`/`45 %`).
+  - **Appui vérifié :** `SRC-014.txt` (`L3, L6, L14, L18, L83, L123, L163, L183, L223, L263`), `SRC-011.txt` (`L469, L515–L555`), `faits-empiriques.json` (`FACT-STATCAN-IA-2026`).
+  - **Verdict : supporté**
+- **C01-V2-04 (`L65–L137`, `§ 1.1.4`, `§ 1.2`, `Tableaux 1.2–1.3`)** — *Affirmation :* Ancrage des contrats comportementaux probabilistes et des engagements sociaux observables dans l'interopérabilité inter-systèmes (`ERP`/`SCM`, `ITSM`, `SIRH`, finance), analogie entre l'obfuscation `Mystery BW` sur `PlanBench` (`[3]`) et les dialectes propriétaires `ERP`/`SCM`, et portée transversale des *Tableaux 1.2* et *1.3* sur les systèmes transactionnels critiques d'entreprise (la banque et l'assurance constituant l'étalon de haute assurance `[1, 5]`).
+  - **Appui vérifié :** `SRC-121.txt` (`[3]`, `L172–L248`), `SRC-027.txt` (`[1]`), `SRC-011.txt` (`[5]`), `specs/manifest.json`.
+  - **Verdict : supporté**
+- **Contrôle `Vague 2` :** `4 946` mots (`verifie_manuscrit.py`) dans `[4 251, 4 989]`, `9 / 9` sources `L+` citées, `0` erreur `CA-01..CA-22`. **Verdict final : `45 / 45` (`100,0 %` supporté).**

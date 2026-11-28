@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-AB-01 — Matrice thermique 12×12 des 616 interrelations et quinze nœuds carrefours</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Calcul intégral sur mindmap-complet.json · degrés entrants/sortants · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Calcul intégral sur mindmap-complet.json · degrés entrants/sortants · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="566" height="566" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
@@ -449,10 +449,10 @@
   <g id="flows-bar">
     <rect x="20" y="670" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
     <text x="34" y="692" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
-    <text x="34" y="712" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Les lignes exposent la projection normative et technique (D09,</text>
-    <text x="34" y="728" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">D03, D02) sur l'ensemble du portefeuille.</text>
-    <text x="610" y="712" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Les colonnes montrent la convergence massive des dépendances vers</text>
-    <text x="610" y="728" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">D02 (contrôle), D10 (blueprints) et D11 (trajectoire).</text>
+    <text x="34" y="712" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① Les lignes exposent la projection normative et d'interopérabilité</text>
+    <text x="34" y="728" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">(D09, D03, D02) sur l'ensemble du portefeuille.</text>
+    <text x="610" y="712" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Les colonnes montrent la convergence vers D02 (80/20), D05</text>
+    <text x="610" y="728" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">(automatisation/Sagas), D10 (systèmes d'entreprise) et D11.</text>
     <text x="34" y="754" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ L'opérationnalisation (129) et la dépendance technique (94)</text>
     <text x="34" y="770" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">dominent les 8 types d'interrelations.</text>
     <text x="610" y="754" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">④ Les cinq premiers carrefours (BSIF E-23, MCP, PEP, FinOps CPO et</text>
@@ -470,7 +470,7 @@
   <g id="takeaway-box">
     <rect x="20" y="852" width="1160" height="68" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="1.8"/>
     <text x="36" y="874" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
-    <text x="36" y="894" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Quatre pôles concentrent le couplage du système : l'encadrement prudentiel (D09), le contrôle 80/20 (D02), les protocoles (D03) et</text>
-    <text x="36" y="911" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">le déploiement (D10).</text>
+    <text x="36" y="894" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">Quatre pôles concentrent le couplage de l'ouvrage : la conformité (D09), le contrôle 80/20 (D02), l'interopérabilité (D03) et</text>
+    <text x="36" y="911" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" fill="#1E293B">les systèmes d'entreprise (D10), articulés à l'automatisation durable (D05).</text>
   </g>
 </svg>

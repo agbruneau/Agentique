@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 13 — Sobriété d'orchestration OO1–OO4, catalogue fermé des topologies et maîtrise des défaillances MAST
+# Base documentaire fermée — Chapitre 13 — Automatisation agentique sobre (OO1–OO4), enveloppes BPMN, topologies d'orchestration homologuées et maîtrise des défaillances MAST
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

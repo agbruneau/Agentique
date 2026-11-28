@@ -25,7 +25,7 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Chaîne de confiance protocolaire et juridique de bout en bout
+title Chaîne de confiance protocolaire et juridique de bout en bout vers les systèmes d'entreprise (SoR)
 
 package "Z1 — Identité et mandat sans secret statique (D06)" {
   actor "Usager / service mandant" as N1 <<purple>>
@@ -40,10 +40,10 @@ package "Z2 — Passerelle PEP à 9 contrôles et séparation protocolaire (D03 
   rectangle "Règle de deux & provenance CaMeL\n(coupe-circuit SOC < 10 s)" as N7 <<red>>
 }
 
-package "Z3 — Voûte probatoire et socle multi-juridictions (D08 + D09)" {
+package "Z3 — Voûte probatoire, socle multi-juridictions et systèmes d'entreprise (D08 + D09 + SoR)" {
   database "Double couloir OTel GenAI\n(zéro PII opérationnelle)" as N8 <<blue>>
   database "Registre JCS / SCITT scellé\n(Loi 25, BSIF E-23, AMF, AI Act)" as N9 <<blue>>
-  rectangle "Système d'enregistrement (SoR)\n(écriture idempotente autorisée)" as N10 <<det>>
+  rectangle "Systèmes d'entreprise & couche ACL (SoR)\nERP / CRM / SIRH / ITSM / Mainframe / OT\n(écriture idempotente autorisée)" as N10 <<det>>
 }
 
 N1 --> N2 : ① Jeton de mandat borné (RAR)
@@ -53,13 +53,13 @@ N5 --> N6 : Vérifie refus par défaut
 N6 --> N7 : Contrôle triade & CaMeL
 N5 --> N3 : ④ Impact sensible (CIBA/FIDO2)
 N3 --> N5 : Jeton lié à h = SHA-256(JCS)
-N5 --> N10 : Exécution autorisée
+N5 --> N10 : Exécution via ACL (idempotente)
 N5 --> N8 : ⑤ Trace OTel caviardée
 N8 --> N9 : Scellement probatoire unifié
 
 legend bottom
   **Violet** : Identité cryptographique et mandat atténué (NHI, OBO, DPoP, CIBA)
   **Rouge** : Verrous hors modèle à échec fermé (PEP, OPA, Règle de deux, coupe-circuit SOC)
-  **Bleu** : Preuve d'audit et traçabilité unifiée (OTel, JCS/SCITT, Loi 25, BSIF E-23)
+  **Bleu / Ardoise** : Preuve unifiée (OTel, JCS/SCITT) et systèmes d'entreprise SoR (ERP, CRM, SIRH, ITSM, Mainframe, OT)
 end legend
 @enduml

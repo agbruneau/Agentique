@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-21-04 — Quatre paliers de rayon d'impact du coupe-circuit et automate à cinq états</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Graduation chirurgicale STPA/AISPM · délais POR-003/015 · maintien du canal Saga EXIG-ORC-28 · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Graduation chirurgicale STPA/AISPM · délais POR-003/015 · maintien du canal Saga EXIG-ORC-28 · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="560" height="502" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
@@ -90,7 +90,7 @@
     <g id="node-7" class="node" data-node="true">
       <rect x="614" y="490" width="260" height="92" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="1.8"/>
       <text x="626" y="511" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.2" font-weight="bold" fill="#7F1D1D">Voie avant GELÉE (zéro mutation)</text>
-      <text x="626" y="530" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">microVM &amp; file Temporal gelées</text>
+      <text x="626" y="530" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">microVM &amp; file durable gelées</text>
       <text x="626" y="546" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">(10/10 en Borealis-Bench C1) pour</text>
       <text x="626" y="562" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.2" fill="#1E293B">préserver les preuves DORA.</text>
     </g>

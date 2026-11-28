@@ -1,21 +1,21 @@
 %%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 26, 'padding': 12}}}%%
 flowchart TB
-  subgraph Z1["Z1 · Arbre de non-substituabilité (PRI-003)"]
+  subgraph Z1["Z1 · Interopérabilité tripartite non substituable (PRI-003 : API/iPaaS/EDA ↔ MCP ↔ A2A)"]
     direction TB
-    N1{"Appel déterministe sans LLM ?"}:::det
-    N2["① API classique / flux N0–L0<br/>(proscrire A2A et MCP libre)"]:::det
-    N3{"② Outil borné sous plan local<br/>ou pair opaque externe ?"}:::det
-    N4["Axe vertical : MCP 2026-07-28<br/>(≤ 15 outils d'intention)"]:::det
+    N1{"Appel déterministe inter-systèmes sans LLM ?"}:::det
+    N2["① Flux N0–L0 : API REST/gRPC, iPaaS ou Event Mesh<br/>(proscrire A2A et dialogue MCP libre)"]:::det
+    N3{"② Outil système borné sous plan local<br/>ou pair autonome inter-domaines (CRM/SCM/ERP) ?"}:::det
+    N4["Axe vertical outil-système : MCP 2026-07-28<br/>(≤ 15 façades d'intention métier)"]:::det
     N1 -->|"Oui"| N2
     N1 -->|"Non"| N3
     N3 -->|"Outil local"| N4
   end
 
-  subgraph Z2["Z2 · Cycle A2A v1.0.1 et rejet ANP"]
+  subgraph Z2["Z2 · Axe horizontal A2A v1.0.1 (inter-domaines / B2B) et rejet ANP"]
     direction TB
     N5["③ Délégation horizontale A2A v1.0.1<br/>(submitted → working → input-required)"]:::green
-    N6["Garde-fous Z1–Z5 obligatoires<br/>(signature JWS/JCS et anti-SSRF)"]:::green
-    N7["④ Rejet ANP v1.2 (méta-protocole<br/>négocié à la volée non auditable)"]:::warn
+    N6["Garde-fous Z1–Z5 obligatoires<br/>(Agent Card JWS/JCS et anti-SSRF)"]:::green
+    N7["④ Rejet ANP v1.2 en production<br/>(méta-protocole négocié à la volée non auditable)"]:::warn
     N5 --> N6
   end
 
@@ -31,7 +31,7 @@ flowchart TB
 
   subgraph LEG["Légende"]
     direction LR
-    L_DET["Trait plein : routage normatif API / MCP / A2A"]:::green
+    L_DET["Trait plein : non-substituabilité API/iPaaS/EDA · MCP · A2A"]:::green
     L_PROB["Trait pointillé : protocole rejeté ou sigle ambigu"]:::warn
     L_DET ~~~ L_PROB
   end

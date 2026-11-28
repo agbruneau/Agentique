@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 32 — Gouvernance duale AE ↔ AS, modèle en étoile à trois lignes, cycle de vie et sept pièges endogènes
+# Base documentaire fermée — Chapitre 32 — Gouvernance duale AE ↔ AS des systèmes d'entreprise : modèle Hub-and-Spoke, registre d'interopérabilité et d'automatisation, RACI et sept pièges
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

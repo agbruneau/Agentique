@@ -25,10 +25,10 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Usine logicielle (AST/SCIP), muraille Oracle–Bâtisseur et bascule Shadow Mirroring
+title Usine logicielle (AST/SCIP), muraille Oracle–Bâtisseur et modernisation patrimoniale vers Outbox/CDC
 
 package "Z1 — Séparation des devoirs SPIFFE : Spécificateur face au Bâtisseur" {
-  rectangle "Parseur AST/SCIP & ANTLR/Tree-sitter\n(DB2 / RPG / COBOL)" as N1 <<indigo>>
+  rectangle "Parseur AST/SCIP & ANTLR/Tree-sitter\n(RPG/COBOL · ABAP/ERP · PL/SQL · DB2)" as N1 <<indigo>>
   rectangle "Agent Spécificateur (SPIFFE)\nRédige specs + oracle Golden Master / Z3 (10k–100k)" as N2 <<indigo>>
   rectangle "Agent Bâtisseur confiné (sans réseau)\nCode en Rust/Go/Java · Decimal exact (zéro specs/tests)" as N3 <<det>>
   N1 --> N2 : ① Verrouiller oracle
@@ -44,18 +44,18 @@ package "Z2 — Barrière de vérification : propriétés et mutation" {
   N5 --> N6
 }
 
-package "Z3 — Figuier étrangleur et comparateur Shadow Mirroring" {
-  rectangle "Cœur patrimonial RPG/COBOL\npar rapport au service MCP moderne" as N7 <<green>>
-  rectangle "Comparateur de parité Decimal\n(0,00 $ d'écart sur ≥ 100 000 tx)" as N8 <<green>>
-  rectangle "Bascule graduelle & Outbox/CDC < 200 ms\n(extinction des écrans CUA)" as N9 <<green>>
+package "Z3 — Figuier étrangleur patrimonial et comparateur Shadow Mirroring" {
+  rectangle "Cœurs patrimoniaux (RPG/COBOL, ABAP/ERP, PL/SQL)\nen parallèle du service MCP moderne" as N7 <<green>>
+  rectangle "Comparateur de parité Decimal & métier\n(0,00 $ d'écart sur ≥ 100 000 tx)" as N8 <<green>>
+  rectangle "Bascule graduelle & Outbox/CDC < 200 ms\n(extinction progressive des écrans RPA/CUA)" as N9 <<green>>
   N6 --> N7 : ④ Shadow Mirroring
   N7 --> N8
   N8 --> N9
 }
 
 legend bottom
-  **Indigo** : Agent Spécificateur / Oracle indépendant et suite Golden Master / Z3
-  **Bleu ardoise** : Agent Bâtisseur confiné sans réseau et service en arithmétique Decimal
-  **Vert émeraude** : Comparateur Shadow Mirroring (0,00 $ d'écart) et réplication CDC
+  **Indigo** : Agent Spécificateur / Oracle indépendant (RPG/COBOL, ABAP/ERP, PL/SQL) et suite Golden Master / Z3
+  **Bleu ardoise** : Agent Bâtisseur confiné sans réseau et service moderne en arithmétique Decimal exacte
+  **Vert émeraude** : Comparateur Shadow Mirroring (0,00 $ d'écart) et réplication Outbox/CDC < 200 ms
 end legend
 @enduml

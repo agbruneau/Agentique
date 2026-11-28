@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 07 — Protocoles verticaux outil-modèle : épinglage MCP 2026-07-28, façades d'intention et intégrité SHA-256
+# Base documentaire fermée — Chapitre 07 — Interopérabilité verticale outil-système : épinglage MCP 2026-07-28, façades d'intention d'entreprise et intégrité SHA-256
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

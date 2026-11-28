@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-02-04 — Courbes pass@k vs pass^k, frontière de Pareto HAL et dimensionnement Wilson</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Constance p^k (τ-bench), Pareto coût-précision (HAL) et borne unilatérale 95 % (EXIG-EVA-03) · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Constance p^k (τ-bench), Pareto coût-précision (HAL) et borne unilatérale 95 % (EXIG-EVA-03) · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="386" height="480" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>

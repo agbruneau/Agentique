@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 18 — Agilité cryptographique, cycles TLS à 47 jours et transition post-quantique ML-DSA/SLH-DSA
+# Base documentaire fermée — Chapitre 18 — Automatisation PKI à 47 jours (ACME/SDS), agilité post-quantique ML-DSA/SLH-DSA et compatibilité des passerelles HTTP
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

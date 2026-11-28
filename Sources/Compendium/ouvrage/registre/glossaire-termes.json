@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "freeze_date": "2026-12-02",
-  "description": "Glossaire normatif bilingue fr-CA / en du Compendium (vedettes consolidées avec chapitre propriétaire unique et ancrage L+).",
+  "description": "Glossaire normatif bilingue fr-CA / en du traité « Interopérabilité et automatisation agentique des systèmes d'entreprise » (vedettes consolidées avec chapitre propriétaire unique et ancrage L+).",
   "terms": [
     {
       "fr": "Autonomie bornée",
@@ -30,7 +30,7 @@
     {
       "fr": "Harnais déterministe",
       "en": "Deterministic Harness",
-      "definition": "Enveloppe de code exécutée hors du LLM appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, réparation bornée et escalade explicite.",
+      "definition": "Enveloppe d'exécution durcie hors du LLM isolant le modèle et appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, plafonds de tours et de budget, réparation bornée, médiation d'outils et escalade explicite.",
       "chapitre_proprietaire": "ch04",
       "source_l_plus_id": "SRC-021",
       "statut_preuve": "l_plus"
@@ -46,7 +46,7 @@
     {
       "fr": "Dérive silencieuse",
       "en": "Silent Drift (Rug Pull)",
-      "definition": "Modification non déclarée de la description ou du schéma d'un outil MCP entre versions, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
+      "definition": "Modification non déclarée de la description, du schéma ou du comportement d'un serveur d'outils MCP sous un même identifiant logique après approbation, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
       "chapitre_proprietaire": "ch07",
       "source_l_plus_id": "SRC-057",
       "statut_preuve": "l_plus"
@@ -102,15 +102,15 @@
     {
       "fr": "Double couloir probatoire",
       "en": "Dual Evidence Pipeline",
-      "definition": "Séparation stricte entre la télémétrie opérationnelle OTel caviardée sans contenu brut et le journal d'audit immuable canonisé JCS/SCITT.",
+      "definition": "Séparation stricte entre la télémétrie opérationnelle OTel à faible latence caviardée sans contenu brut et le journal d'audit probatoire immuable horodaté et canonisé JCS/SCITT.",
       "chapitre_proprietaire": "ch22",
-      "source_l_plus_id": "SRC-044",
+      "source_l_plus_id": "SRC-037, SRC-044",
       "statut_preuve": "l_plus"
     },
     {
       "fr": "Coût par résultat conforme",
       "en": "Cost Per Compliant Outcome (CPO)",
-      "definition": "Indicateur FinOps calculant en arithmétique décimale exacte (FOCUS v1.4) le coût total rapporté au nombre d'exécutions validées sans violation.",
+      "definition": "Indicateur FinOps (sigle CPO) calculant en arithmétique décimale exacte (FOCUS v1.4) le coût complet d'une exécution métier validée sans violation — inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
       "chapitre_proprietaire": "ch24",
       "source_l_plus_id": "SRC-023",
       "statut_preuve": "l_plus"
@@ -142,9 +142,9 @@
     {
       "fr": "Saga compensable",
       "en": "Compensable Saga",
-      "definition": "Enchaînement durable d'actions atomiques muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses isolées jusqu'au point pivot.",
+      "definition": "Enchaînement durable d'actions atomiques sans verrou distribué muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses acheminées sur un canal isolé jusqu'au point pivot.",
       "chapitre_proprietaire": "ch15",
-      "source_l_plus_id": "SRC-006",
+      "source_l_plus_id": "SRC-006, SRC-033",
       "statut_preuve": "l_plus"
     },
     {
@@ -166,7 +166,7 @@
     {
       "fr": "Constance pass^k",
       "en": "pass^k Consistency",
-      "definition": "Probabilité empirique qu'un agent réussisse l'ensemble de k exécutions indépendantes consécutives d'une même tâche, distinguée de pass@k.",
+      "definition": "Probabilité empirique qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production par opposition à pass@k.",
       "chapitre_proprietaire": "ch23",
       "source_l_plus_id": "SRC-029",
       "statut_preuve": "l_plus"
@@ -190,7 +190,7 @@
     {
       "fr": "Porte PRR bloquante",
       "en": "Blocking Production Readiness Gate",
-      "definition": "Critère bloquant issu des 24 points [BLOQUANT] du Compendium 2027 et de la fiche 2027-B001 conditionnant la mise en production.",
+      "definition": "Critère bloquant issu des 24 points [BLOQUANT] du dossier Tome 3 (Compendium 2027) et de la fiche 2027-B001 conditionnant la mise en production.",
       "chapitre_proprietaire": "ch34",
       "source_l_plus_id": "SRC-067",
       "statut_preuve": "l_plus"
@@ -198,7 +198,7 @@
     {
       "fr": "tissu conjonctif agentique",
       "en": "agentic connective tissue",
-      "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et de l'orchestration déterministe reliant agents spécialisés, patrimoine applicatif, partenaires externes et superviseurs humains.",
+      "definition": "Architecture d'interopérabilité multicouche (protocolaire, contractuelle, sémantique, événementielle et identitaire) et de contrôle d'exécution reliant l'automatisation agentique au continuum déterministe (règles, BPM, iPaaS, RPA) ainsi qu'aux systèmes d'entreprise (SoR, SoE, ERP, CRM, SIRH, ITSM, OT) et aux superviseurs humains.",
       "chapitre_proprietaire": "00-liminaire",
       "source_l_plus_id": "SRC-039",
       "statut_preuve": "l_plus"
@@ -214,9 +214,9 @@
     {
       "fr": "industrialisation cognitive",
       "en": "cognitive industrialization",
-      "definition": "Standardisation, automatisation à grande échelle et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement.",
+      "definition": "Standardisation et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement, déplaçant le goulot d'étranglement vers l'interopérabilité, la gouvernance hors modèle et la sûreté des mutations sur les systèmes d'entreprise.",
       "chapitre_proprietaire": "ch01",
-      "source_l_plus_id": "SRC-001",
+      "source_l_plus_id": "SRC-001, SRC-027",
       "statut_preuve": "l_plus"
     },
     {
@@ -241,14 +241,6 @@
       "definition": "Écosystème d'agents autonomes coordonnés par des mécanismes d'enchères, d'entiercement, de réputation et d'audit qui réalisent des échanges économiques à haute fréquence sous mandat humain.",
       "chapitre_proprietaire": "ch03",
       "source_l_plus_id": "SRC-096",
-      "statut_preuve": "l_plus"
-    },
-    {
-      "fr": "harnais d'agent",
-      "en": "agent harness",
-      "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil.",
-      "chapitre_proprietaire": "ch04",
-      "source_l_plus_id": "SRC-021",
       "statut_preuve": "l_plus"
     },
     {
@@ -278,7 +270,7 @@
     {
       "fr": "interopérabilité verticale et horizontale",
       "en": "vertical and horizontal interoperability",
-      "definition": "Séparation entre les protocoles verticaux reliant un agent à ses outils et les protocoles horizontaux coordonnant la délégation asynchrone entre agents de domaines ou d'organisations distincts.",
+      "definition": "Séparation entre les protocoles verticaux (MCP) raccordant un agent aux façades d'intention, API et adaptateurs encapsulant les systèmes d'entreprise (ERP, CRM, SIRH, ITSM, SoR, OT) sous passerelle PEP, et les protocoles horizontaux (A2A) coordonnant la délégation asynchrone inter-domaines et B2B.",
       "chapitre_proprietaire": "ch07",
       "source_l_plus_id": "SRC-072, SRC-083",
       "statut_preuve": "l_plus"
@@ -286,15 +278,15 @@
     {
       "fr": "couche anti-corruption",
       "en": "Anti-Corruption Layer",
-      "definition": "Façade déterministe (sigle ACL) placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes.",
+      "definition": "Façade déterministe (sigle ACL) placée devant les systèmes d'enregistrement patrimoniaux (mainframes COBOL/EBCDIC, ERP, CRM, SIRH, passerelles EDI) pour traduire les schémas historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre toute requête ou mutation directe du modèle.",
       "chapitre_proprietaire": "ch12",
-      "source_l_plus_id": "SRC-070",
+      "source_l_plus_id": "SRC-021, SRC-070",
       "statut_preuve": "l_plus"
     },
     {
       "fr": "couche sémantique métier",
       "en": "enterprise semantic layer",
-      "definition": "Registre gouverné de définitions univoques des entités, métriques, agrégations et invariants juridiques ancrant les agents sur un sens métier commun plutôt que sur des schémas bruts.",
+      "definition": "Registre gouverné de définitions univoques harmonisant les entités, unités, états et invariants métiers entre systèmes d'entreprise hétérogènes (ERP, CRM, SCM, SIRH, industrie, santé, finance ISO 20022/FIBO) afin que deux composants échangeant un schéma valide partagent un sens commun.",
       "chapitre_proprietaire": "ch10",
       "source_l_plus_id": "SRC-021",
       "statut_preuve": "l_plus"
@@ -310,17 +302,9 @@
     {
       "fr": "exécution durable",
       "en": "durable execution",
-      "definition": "Orchestration persistant chaque étape et réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits.",
+      "definition": "Mécanisme déterministe de machine à états hors processus persistant chaque transition, appel de système d'entreprise et réponse d'inférence dans un journal d'événements rejouable afin de reprendre une tâche longue après panne sans dupliquer les effets de bord déjà produits.",
       "chapitre_proprietaire": "ch15",
       "source_l_plus_id": "SRC-034",
-      "statut_preuve": "l_plus"
-    },
-    {
-      "fr": "saga à point pivot",
-      "en": "pivot-transaction saga",
-      "definition": "Séquence de transactions locales sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une compensation idempotente acheminée sur un canal dédié.",
-      "chapitre_proprietaire": "ch15",
-      "source_l_plus_id": "SRC-033",
       "statut_preuve": "l_plus"
     },
     {
@@ -372,43 +356,11 @@
       "statut_preuve": "l_plus"
     },
     {
-      "fr": "dérive silencieuse d'outil",
-      "en": "silent tool drift",
-      "definition": "Altération discrète des descriptions, schémas ou comportements d'un serveur d'outils sous un même identifiant logique après approbation, créant un vecteur d'empoisonnement de la chaîne d'approvisionnement.",
-      "chapitre_proprietaire": "ch07",
-      "source_l_plus_id": "SRC-057",
-      "statut_preuve": "l_plus"
-    },
-    {
       "fr": "analyse de contrôle STPA",
       "en": "System-Theoretic Process Analysis",
       "definition": "Méthode de sûreté système dérivée de STAMP (sigle STPA) recensant les actions de contrôle dangereuses et défauts de rétroaction entre agents, logiciels déterministes et superviseurs humains.",
       "chapitre_proprietaire": "ch21",
       "source_l_plus_id": "SRC-058",
-      "statut_preuve": "l_plus"
-    },
-    {
-      "fr": "constance multi-essais",
-      "en": "pass^k consistency",
-      "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production plutôt que la réussite ponctuelle.",
-      "chapitre_proprietaire": "ch23",
-      "source_l_plus_id": "SRC-029",
-      "statut_preuve": "l_plus"
-    },
-    {
-      "fr": "coût complet par résultat conforme",
-      "en": "Cost per Compliant Outcome",
-      "definition": "Métrique économique (sigle CPO) mesurant le coût total d'une transaction métier menée sans erreur : inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
-      "chapitre_proprietaire": "ch24",
-      "source_l_plus_id": "SRC-023",
-      "statut_preuve": "l_plus"
-    },
-    {
-      "fr": "télémétrie à double couloir",
-      "en": "dual-lane telemetry",
-      "definition": "Observabilité séparant la télémétrie opérationnelle à faible latence des preuves canoniques horodatées et hachées dédiées à l'audit réglementaire et à la relecture d'incidents.",
-      "chapitre_proprietaire": "ch22",
-      "source_l_plus_id": "SRC-037",
       "statut_preuve": "l_plus"
     },
     {
@@ -436,9 +388,57 @@
       "statut_preuve": "l_plus"
     },
     {
+      "fr": "Automatisation agentique",
+      "en": "Agentic Automation",
+      "definition": "Modalité d'automatisation dans laquelle une boucle cognitive bornée planifie, sélectionne des outils typés et traite les cas ambigus à l'intérieur d'un exosquelette déterministe, en complément et non en remplacement des automatismes déterministes (L0).",
+      "chapitre_proprietaire": "00-liminaire",
+      "source_l_plus_id": "SRC-027, SRC-101, SRC-122",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Continuum d'automatisation",
+      "en": "Enterprise Automation Continuum",
+      "definition": "Graduation ordonnée reliant les automatismes déterministes sans modèle (L0 : code, SQL, politiques OPA, DMN, BPM/BPMN, iPaaS, RPA fixe) aux niveaux d'autonomie assistée et déléguée (L1–L4) selon la prévisibilité du flux et la réversibilité des effets.",
+      "chapitre_proprietaire": "ch04",
+      "source_l_plus_id": "SRC-027, SRC-066, SRC-101",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Système d'entreprise",
+      "en": "Enterprise System",
+      "definition": "Application sociotechnique critique soutenant les opérations d'une organisation — systèmes d'enregistrement (SoR : ERP, grands livres, SIRH, PLM), systèmes d'engagement (SoE : CRM, portails), plateformes transverses (ITSM, SCM) et systèmes industriels (OT/SCADA) — soumise à des invariants d'intégrité, de sécurité et de conformité.",
+      "chapitre_proprietaire": "ch06",
+      "source_l_plus_id": "SRC-055, SRC-066, SRC-122",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Interopérabilité sémantique et pragmatique",
+      "en": "Semantic and Pragmatic Interoperability",
+      "definition": "Capacité de systèmes d'entreprise et d'agents hétérogènes à préserver non seulement la validité syntaxique des messages échangés, mais aussi la signification univoque des concepts métiers, des unités, de la bi-temporalité et de l'effet d'état attendu.",
+      "chapitre_proprietaire": "ch10",
+      "source_l_plus_id": "SRC-021, SRC-035, SRC-083",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Sobriété d'orchestration",
+      "en": "Orchestration Sobriety (OO1–OO4)",
+      "definition": "Discipline d'architecture imposant de résoudre tout processus d'entreprise par le palier le plus simple qui satisfait l'objectif — flux déterministe (OO1), appel enrichi unique (OO2) ou agent unique outillé (OO3) — avant d'autoriser un collectif multi-agents (OO4).",
+      "chapitre_proprietaire": "ch13",
+      "source_l_plus_id": "SRC-011, SRC-027, SRC-032",
+      "statut_preuve": "l_plus"
+    },
+    {
+      "fr": "Sas déterministe IT/OT et confinement CUA",
+      "en": "Deterministic IT/OT Airlock and CUA Confinement",
+      "definition": "Double dispositif de sûreté frontalière combinant l'isolation physique ou logique entre le système d'information (IT) et les équipements industriels (OT, interdisant toute commande directe hors automate déterministe ou arbitre Simplex) et l'encadrement dérogatoire en microVM éphémère (bail maximal de 12 mois) des agents pilotant l'écran de progiciels sans API (CUA).",
+      "chapitre_proprietaire": "ch12",
+      "source_l_plus_id": "SRC-008, SRC-010, SRC-055, SRC-058, SRC-101",
+      "statut_preuve": "l_plus"
+    },
+    {
       "fr": "Système d'agentivité",
       "en": "System of Agency / System of Action (SoA)",
-      "definition": "Couche applicative d'action orchestrée par des agents spécialisés encadrés par un exosquelette déterministe, distincte des systèmes d'engagement (SoE) et des systèmes d'enregistrement (SoR).",
+      "definition": "Strate applicative d'action (SoA) mettant en œuvre une automatisation agentique sous exosquelette déterministe, subordonnée aux contrats d'interopérabilité et aux règles d'intégrité des systèmes d'enregistrement (SoR), des systèmes d'engagement (SoE) et des environnements opérationnels (OT).",
       "chapitre_proprietaire": "ch01",
       "source_l_plus_id": "SRC-027, SRC-122",
       "statut_preuve": "l_plus"
@@ -446,7 +446,7 @@
     {
       "fr": "Agentivité des systèmes",
       "en": "system agency",
-      "definition": "Propriété émergente, composite et bornée par laquelle un système sociotechnique complet exécute des tâches multi-étapes grâce au couplage d'un modèle cognitif, d'un harnais déterministe, d'outils vérifiés, d'une mémoire gouvernée, d'une identité non humaine et d'une supervision humaine, plutôt que par les seuls poids d'un modèle.",
+      "definition": "Propriété émergente, composite et bornée par laquelle un système d'entreprise exécute des processus multi-étapes grâce au couplage vérifiable entre automatismes déterministes, modèles cognitifs, protocoles d'interopérabilité, outils typés, mémoire gouvernée, identité non humaine et supervision humaine, plutôt que par les seuls poids d'un modèle.",
       "chapitre_proprietaire": "ch01",
       "source_l_plus_id": "SRC-001, SRC-122, SRC-123",
       "statut_preuve": "l_plus"

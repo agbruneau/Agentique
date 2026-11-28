@@ -1,6 +1,7 @@
 # Rapport de lissage éditorial (`G5`) et d'inspection visuelle intégrale (`CA-16`)
 
-- **Rôle exécutant :** `inspecteur-visuel` (`T9-S3`) et `revise-outils-livrables` (`REV-05` — actualisation post-révision `PRD`)
+- **Ouvrage inspecté :** *Interopérabilité et automatisation agentique des systèmes d'entreprise — Traité unifié d'architecture hybride, de gouvernance hors modèle et d'homologation vérifiable (non-avis)*
+- **Rôle exécutant :** `inspecteur-visuel` (`T9-S3`), `revise-outils-livrables` (`REV-05`) et `assemblage-aq-pdf` (`Vague 3A` — édition adaptée)
 - **Date de référence et de gel :** `2 décembre 2026` (`2026-12-02`)
 - **Livrables inspectés (post-révision `REV-05`) :**
   - `Compendium/ouvrage/livrables/Compendium.pdf` (`23 123 417` octets, `834` pages, `400` signets)
@@ -77,3 +78,17 @@ Le Compendium satisfait intégralement aux critères éditoriaux, normatifs, vis
 - **Livrables finaux publiés (`Compendium/`)** : `Compendium/Compendium.pdf` (`871` pages physiques, `24 465 497` octets, `403` signets TOC) et `Compendium/Compendium.md` (`1 916 679` octets, `8 670` lignes, `247 622` mots, `404` titres `H1–H4`, `Figure 1` à `Figure 139`).
 - **Extension du catalogue de schémas (`139/139`, `--strict`)** : `58` diagrammes `PlantUML` (`.svg`), `23` diagrammes `Mermaid` (`.png` `300 DPI`) et `58` infographies `.svg` bilingues métier-tech répartis en `5` schémas globaux (`SCH-00-01` à `SCH-00-05`), `131` schémas de chapitres (`ch01`–`ch36`) et `3` schémas d'annexes (`SCH-AB-01`, `SCH-AC-01`, `SCH-AD-01`), portant la couverture des Tomes à `285/319` figures uniques (`375` liens, `89,34 %`) et publiant `Sources/Compendium/ouvrage/manuscrit/13 - Annexes/Annexe E - Catalogue des 139 schemas et 319 figures.md`.
 - **Inspection visuelle et synchronisation** : inspection visuelle directe sur les `25` pages PDF ciblées (`24` nouveaux schémas et `SCH-19-03`) avec `0` défaut bloquant, synchronisation complète de `Sources/Cartographie/` (`inventaire-139-schemas-compendium.json`, `schema-cartographie.json` et `MindMap - Cartographie thématique du Compendium.html`) et validation des portes mécaniques (`verifie_specs.py`, `compile_schemas_compendium.py --check-only --strict`, `execute_g0.py --verify-sync-manifest`, `verifie_manuscrit.py --strict --check-deliverables` et suites `pytest`).
+
+---
+
+## 7. Actualisation d'adaptation intégrale — « Interopérabilité et automatisation agentique des systèmes d'entreprise »
+
+- **Appareil titulaire et collection vérifiés (`Compendium/Compendium.pdf` et `Compendium/Compendium.md`)** :
+  - **Titre principal (`70` caractères)** : *Interopérabilité et automatisation agentique des systèmes d'entreprise* (composé sans césure en `3` lignes équilibrées en couverture `p. 1` et en faux-titre intérieur `p. 2`, et sur `1` ligne unique dans les `405` en-têtes courants pairs).
+  - **Sous-titre canonique (`104` caractères)** : *Traité unifié d'architecture hybride, de gouvernance hors modèle et d'homologation vérifiable (non-avis)* (`(non-avis)` rendu insécable sur une seule ligne en couverture `p. 1` et faux-titre `p. 2` via `#show "(non-avis)": box[(non-avis)]`).
+  - **Bannière de collection** : `COLLECTION ARCHITECTURE & INTEROPÉRABILITÉ DES SYSTÈMES D'ENTREPRISE · COMPENDIUM`.
+- **Métriques finales exactes des livrables publiés** :
+  - **`Compendium/Compendium.pdf`** : `872` pages physiques (`25 300 905` octets), `403` signets TOC, `810` en-têtes courants pairs/impairs sur `1` ligne (`405` + `405`), `Figure 1` à `Figure 139` séquentielles, `0` caractère `U+FFFD`, `0` débordement `bbox`, `0` artifice LaTeX/Typst brut.
+  - **`Compendium/Compendium.md`** : `1 924 974` octets, `8 638` lignes, `247 581` mots totaux (`len(md_text.split())`), `404` titres `H1–H4` dont `403` titres hors TDM en bijection stricte `1:1` avec les `403` signets PDF (`CompendiumPdfIndex.from_repo` validé sans écart).
+  - **Manuscrit (`42` unités)** : `183 655` mots prose (`count_prose_words` dans `[165 600, 194 400]`), ventilés en `169 017` mots sur les `37` unités narratives et `14 638` mots sur les `5` Annexes déterministes (`Annexe A = 3 112`, `Annexe B = 2 366`, `Annexe C = 2 912`, `Annexe D = 2 810`, `Annexe E = 3 438`).
+- **Barrières `G0`–`G5` et suites de tests** : `execute_g0.py --verify-sync-manifest` (`PASS`, `exit 0`), double recollation stratifiée disjointe `G3` (`seed=20270901` : `148/148` ; `seed=20270902` : `148/148`, `0` chevauchement), `verifie_manuscrit.py --strict --check-deliverables` (`0` erreur) et `62/62` tests `pytest` d'ouvrage et de gabarit PDF (`43` + `19`) réussis.

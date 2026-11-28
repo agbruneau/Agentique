@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 04 — Partition hybride 80/20, harnais déterministe à huit étapes et usine logicielle
+# Base documentaire fermée — Chapitre 04 — Continuum d'automatisation, partition hybride 80/20, harnais contractuel à huit étapes et modernisation des systèmes d'entreprise
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

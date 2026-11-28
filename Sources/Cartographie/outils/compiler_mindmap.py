@@ -28,7 +28,7 @@ TOOLS_DIR = Path(__file__).resolve().parent
 if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
-PAGE_TITLE = "MindMap — Cartographie thématique du Compendium Agentique"
+PAGE_TITLE = "MindMap — Interopérabilité et automatisation agentique des systèmes d'entreprise (Compendium)"
 TOME_ORDER: dict[str, int] = {
     "R": 0, "LIM": 1, "P01": 2, "P02": 3, "P03": 4, "P04": 5, "P05": 6,
     "P06": 7, "P07": 8, "P08": 9, "P09": 10, "P10": 11, "P11": 12, "P12": 13, "ANN": 14,
@@ -988,38 +988,38 @@ def _build_reading_paths(
     specs = [
         {
             "path_id": "essentiel",
-            "title": "Parcours Essentiel — Découverte & Doctrine 80/20",
+            "title": "Parcours Essentiel — Interopérabilité, 80/20 & Systèmes d'entreprise",
             "audience": "Direction · Décideurs · Tous publics",
-            "description": "Comprendre la rupture agentique, la loi de Lusser, la partition hybride 80/20 et l'échelle d'autonomie L0–L4.",
-            "units": ["00-liminaire", "ch01", "ch02", "ch04", "ch05"],
+            "description": "Saisir le continuum d'automatisation L0–L4, la loi de Lusser, la partition hybride 80/20, l'interopérabilité MCP, la sobriété OO1–OO4 et le panorama des systèmes d'entreprise.",
+            "units": ["00-liminaire", "ch01", "ch02", "ch04", "ch07", "ch13", "annexe-e"],
         },
         {
             "path_id": "ae-strategie",
-            "title": "Architecte d'entreprise — Portefeuille, Souveraineté & DAPP",
-            "audience": "Architecte d'entreprise (AE)",
-            "description": "Cadrer le noyau possédé (42 CAP), l'arbitrage Acheter/Assembler/Construire, la réversibilité et la trajectoire 2028–2035.",
-            "units": ["00-liminaire", "ch03", "ch06", "ch27", "ch31", "ch32", "ch34"],
+            "title": "Architecte d'Entreprise (AE) — Systèmes d'entreprise, Anti-verrouillage & Portefeuille",
+            "audience": "Architecte d'entreprise (AE) · Direction TI",
+            "description": "Gouverner l'économie de l'interopérabilité, le noyau possédé (42 CAP sur 52), les passerelles PEP, la sémantique canonique, la matrice sectorielle et la trajectoire DAPP 2028–2035.",
+            "units": ["00-liminaire", "ch03", "ch06", "ch09", "ch10", "ch27", "ch28", "ch30", "ch31"],
         },
         {
             "path_id": "as-ingenierie",
-            "title": "Architecte de solutions — Protocoles, Sagas & Trousse",
+            "title": "Architecte de Solutions (AS) — Interopérabilité MCP/A2A, Patrimoine & Automatisation Saga",
             "audience": "Architecte de solutions (AS) · Ingénierie",
-            "description": "Assembler les harnais 80/20, MCP 2026-07-28, A2A v1.0.1, mémoire CoALA, exécution durable Saga et trousse Tome 8.",
-            "units": ["ch04", "ch07", "ch08", "ch11", "ch13", "ch15", "ch35"],
+            "description": "Concevoir les harnais 80/20, façades MCP et délégations A2A, passerelles PEP, contrats ODCS, mémoire CoALA, encapsulation ERP/ACL/OT, sobriété OO1–OO4, Event Mesh, Sagas et blueprints C01–C40.",
+            "units": ["ch04", "ch07", "ch08", "ch09", "ch10", "ch11", "ch12", "ch13", "ch14", "ch15", "ch29"],
         },
         {
             "path_id": "rssi-securite",
-            "title": "RSSI & Défense hors modèle — NHI, OPA, Confinement & PQC",
+            "title": "RSSI & Sécurité — Identité NHI, Passerelles PEP & Sûreté des systèmes d'entreprise",
             "audience": "RSSI · Cybersécurité · SRE",
-            "description": "Verrouiller les identités NHI/OBO/CIBA, appliquer la Règle de deux sous OPA/Rego, confiner l'exécution et préparer le PQC.",
-            "units": ["ch09", "ch16", "ch17", "ch18", "ch19", "ch20", "ch21"],
+            "description": "Verrouiller les passerelles PEP à neuf contrôles, fédérer les identités NHI/OBO/CIBA, automatiser la PKI 47 jours et le post-quantique, appliquer OPA/Cedar et la Règle de deux, confiner vers L0 et sceller l'audit.",
+            "units": ["ch09", "ch16", "ch17", "ch18", "ch19", "ch20", "ch21", "ch22", "ch24"],
         },
         {
             "path_id": "juridique-2035",
-            "title": "Juridique & Conformité — Loi 25, BSIF E-23, EU AI Act & Humain",
+            "title": "Juridique, Conformité & Homologation vérifiable des systèmes d'entreprise",
             "audience": "Juridique · Conformité · Audit",
-            "description": "Relier observabilité probatoire, obligations QC/CA/UE, profils financiers, calendrier 2023–2035 et préservation du capital humain.",
-            "units": ["ch22", "ch25", "ch26", "ch28", "ch31", "ch33", "annexe-c"],
+            "description": "Articuler supervision anti-complaisance, Loi 25 (art. 12.1 et 27), étalon BSIF E-23/AMF, EU AI Act/DORA/Data Act, maintien du repli humain L0, référentiel CRE-IA/PRR-75 et homologation exécutable G0–G5.",
+            "units": ["ch05", "ch25", "ch26", "ch33", "ch34", "ch35", "ch36", "annexe-c", "annexe-d"],
         },
     ]
 

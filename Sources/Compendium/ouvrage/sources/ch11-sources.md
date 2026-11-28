@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 11 — Mémoire CoALA à quatre compartiments isolés, bi-temporalité auditable et filtrage ACL pré-récupération
+# Base documentaire fermée — Chapitre 11 — Gouvernance de la mémoire agentique CoALA face aux systèmes d'enregistrement, bi-temporalité et filtrage ACL pré-récupération
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

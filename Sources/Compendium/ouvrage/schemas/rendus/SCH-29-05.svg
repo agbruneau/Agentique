@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-29-05 — Chronogramme Cognitive DR (RTO &lt; 15 min) et bandes d'homologation pass^5_DR</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Continuité multimodèle ADR-027 · abstraction Open Responses · grappe souveraine vLLM/SGLang · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Continuité multimodèle ADR-027 · abstraction Open Responses · grappe souveraine vLLM/SGLang · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="1160" height="290" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>
@@ -36,7 +36,7 @@
       <rect x="322" y="146" width="268" height="130" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
       <text x="334" y="167" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#78350F">T+30 s · Quiescence &amp; Purge</text>
       <text x="334" y="186" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Mise en quiescence activités</text>
-      <text x="334" y="202" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Temporal en vol (RPO = 0).</text>
+      <text x="334" y="202" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">durables en vol (RPO = 0).</text>
       <text x="334" y="218" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">Purge blocs opaques via</text>
       <text x="334" y="234" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.4" fill="#1E293B">enveloppe Open Responses.</text>
     </g>
@@ -102,8 +102,8 @@
   <g id="flows-bar">
     <rect x="20" y="608" width="1160" height="118" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
     <text x="34" y="630" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F2942">Flux numérotés :</text>
-    <text x="34" y="650" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① cognitive_dr_switch.py met Temporal en quiescence (RPO = 0) et</text>
-    <text x="34" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">purge les états opaques en T+30 s via Open Responses.</text>
+    <text x="34" y="650" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">① cognitive_dr_switch.py met l'exécution durable en quiescence (RPO = 0)</text>
+    <text x="34" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">et purge les états opaques en T+30 s via Open Responses.</text>
     <text x="610" y="650" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">② Les poids de secours préchargent depuis disques NVMe en ≤ 180 s</text>
     <text x="610" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">sur embeddings ouverts permanents (100 % prêts).</text>
     <text x="34" y="692" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#334155">③ Après validation Canary à T+12 min, le trafic reprend sous RTO &lt;</text>

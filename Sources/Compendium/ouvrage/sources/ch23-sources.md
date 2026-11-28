@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 23 — Banc EvalOps hermétique (E1–E3), bornes de Wilson, tests métamorphiques FR/EN et distillation contrôlée
+# Base documentaire fermée — Chapitre 23 — Qualification CI/CD de l'automatisation (EvalOps E1–E3), bornes de Wilson, tests métamorphiques FR/EN et distillation
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

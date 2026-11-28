@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 31 — Prospective stratégique 2027–2035, trajectoires adaptatives DAPP et portes d'homologation
+# Base documentaire fermée — Chapitre 31 — Trajectoires d'interopérabilité et d'automatisation 2028–2035 : planification adaptative DAPP, scénarios A/B/C et portes d'homologation
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

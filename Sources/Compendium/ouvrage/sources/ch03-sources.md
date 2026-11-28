@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 03 — Économie cognitive de Coase, matrices de portefeuille et quadruple dette agentique
+# Base documentaire fermée — Chapitre 03 — Économie de l'interopérabilité (Coase), arbitrage face aux silos applicatifs et quadruple dette de l'automatisation agentique
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

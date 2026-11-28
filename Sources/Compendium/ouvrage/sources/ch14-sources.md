@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 14 — Chorégraphie Event Mesh sur CloudEvents/AsyncAPI, contrôle des boucles et passerelle vers l'IA physique
+# Base documentaire fermée — Chapitre 14 — Interopérabilité événementielle (Event Mesh CloudEvents/AsyncAPI), régulation anti-tempête et passerelle cyber-physique IT/OT
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

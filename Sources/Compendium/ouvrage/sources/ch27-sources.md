@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 27 — Approvisionnement réversible et clauses contractuelles
+# Base documentaire fermée — Chapitre 27 — Approvisionnement réversible, interopérabilité contractuelle et responsabilité de l'automatisation B2B
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

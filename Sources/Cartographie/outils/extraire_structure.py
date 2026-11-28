@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Extracteur structurel intégral du Compendium de l'entreprise agentique (CommonMark strict).
+"""Extracteur structurel intégral du Compendium — Interopérabilité et automatisation agentique des systèmes d'entreprise (CommonMark strict).
 
 Parse en CommonMark strict :
 - ``Compendium/README.md`` (section ``R``)
 - ``Compendium/Compendium.md`` découpé selon ses 14 sections ``H1`` (``LIM``, ``P01``..``P12``, ``ANN``)
-en conservant les numéros de lignes exacts ``1..8670`` de ``Compendium/Compendium.md`` et en
+en conservant les numéros de lignes exacts ``1..N`` de ``Compendium/Compendium.md`` et en
 rattachant chaque unité (``00-liminaire``, ``ch01..ch36``, ``annexe-a..annexe-e``) à son
 ``compendium_unit_id`` et à son ``source_file`` déclarés dans ``manifest.json``.
 
@@ -537,7 +537,11 @@ def extract_corpus_structure(repo_root: Path) -> dict[str, Any]:
     r_text = readme_path.read_text(encoding="utf-8")
     r_lines = r_text.splitlines()
     r_headings, r_fenced, r_code = parse_markdown_lines(r_lines)
-    r_title = r_headings[0][2] if r_headings else "Compendium de l'entreprise agentique"
+    r_title = (
+        r_headings[0][2]
+        if r_headings
+        else "Interopérabilité et automatisation agentique des systèmes d'entreprise"
+    )
     r_sec, r_fcnt = _build_section_payload(
         section_id="R",
         rel_path=readme_rel,

@@ -25,7 +25,7 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Passerelle d'agents bidirectionnelle (PEP) à neuf contrôles ordonnés et budget Borealis-Bench
+title Passerelle d'agents bidirectionnelle (PEP) à neuf contrôles articulée à l'API Gateway / iPaaS d'entreprise
 
 together {
   rectangle "Cellule appelante\nSPIFFE SVID + sub/act\nModèle sans clés (IAM-06)" as N1 <<det>>
@@ -47,6 +47,7 @@ together {
   rectangle "CloudEvents 1.0.2\nAsyncAPI · maxhops = 4" as N9 <<det>>
 }
 
+rectangle "API Gateway Nord-Sud, iPaaS & Event Mesh d'entreprise existants\n(façades ERP, CRM, SIRH, ITSM — zéro contournement de gouvernance API)" as N12 <<blue>>
 rectangle "Règle de deux (EXIG-SEC-04) & retrait anti-exfiltration (EXIG-SEC-06)\nEntrée non fiable + Accès sensible → retrait immédiat outils d'envoi et P3" as N10 <<red>>
 rectangle "Désambiguïsation du maillage (3 acceptions)\nRéseau (Istio/agentgateway) · Dorsale (Solace) · Confiance (AgentMesh, alpha)" as N11 <<gray>>
 
@@ -56,11 +57,13 @@ N3 <--> N4
 N6 <--> N7
 N6 <--> N8
 N6 <--> N9
+N7 <--> N12
+N9 <--> N12
 N6 --> N10 : Marquage irréversible session
-N9 -[hidden]right-> N11
+N12 -[hidden]right-> N11
 
 legend bottom
-  **Bleu ardoise** : Contrôles aller 1 à 7 de la passerelle PEP en échec fermé
+  **Bleu ardoise / Bleu** : Contrôles aller 1 à 7 du PEP articulés en amont de l'API Gateway / iPaaS d'entreprise
   **Rouge** : Verrou de session Règle de deux (retrait P3/envoi) et arrêt immédiat
   **Vert émeraude** : Filtrage retour (contrôles 8 et 9), pré-audit P2/P3 et OTel
 end legend

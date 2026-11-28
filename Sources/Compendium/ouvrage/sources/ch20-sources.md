@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 20 — Politiques hors modèle OPA/Rego/Cedar, Règle de deux et séparation contrôle/données CaMeL
+# Base documentaire fermée — Chapitre 20 — Interopérabilité des politiques hors modèle (OPA/Rego, Cedar, AuthZEN), Règle de deux et séparation contrôle/données CaMeL
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

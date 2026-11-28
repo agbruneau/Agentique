@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 25 — Droit québécois et cadre prudentiel financier canadien
+# Base documentaire fermée — Chapitre 25 — Droit québécois des décisions automatisées, portabilité des données et étalon prudentiel canadien
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

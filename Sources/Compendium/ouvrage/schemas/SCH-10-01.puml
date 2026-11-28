@@ -25,19 +25,19 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies FIBO et registres
+title Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies multisectorielles et ODCS
 
-package "Z1 — AVANT (Piège syntaxe ≠ sens) : SQL libre et prose ambiguë" {
-  rectangle "Validation JSON Schema réussie\nmais calculs Ventes ≠ Finances" as N1 <<red>>
+package "Z1 — AVANT (Piège syntaxe ≠ sens) : SQL libre et prose ambiguë inter-silos" {
+  rectangle "Validation JSON Schema réussie mais calculs divergents\n(CRM Ventes ≠ ERP Finances · stock WMS ≠ stock SCM)" as N1 <<red>>
   rectangle "SQL libre & prose ambiguë\n(détection écart ≤ 27,9 % · force illocutoire perdue)" as N2 <<red>>
   N1 .[#B91C1C].> N2 : ① Erreur sémantique silencieuse
 }
 
-package "Z2 — APRÈS (PRI-008 / DEC-003) : Couche sémantique neutre et ontologies" {
-  rectangle "② Couche sémantique neutre (DEC-003)\nMétriques nommées versionnées (60 j coexistence)" as N3 <<det>>
+package "Z2 — APRÈS (PRI-008 / DEC-003) : Couche sémantique neutre, contrats ODCS et ontologies" {
+  rectangle "② Couche sémantique neutre (DEC-003) & contrats ODCS\nMétriques nommées versionnées (60 j coexistence)" as N3 <<det>>
   rectangle "③ Validation fermée SHACL\n(distinguée d'OWL 2 monde ouvert)" as N4 <<green>>
-  rectangle "Ontologies établies\nFIBO, ISO 20022, BIAN, CDM/DRR, HL7 FHIR" as N5 <<green>>
-  rectangle "④ Registres de compatibilité schémas\nProtobuf, Avro, Arrow" as N6 <<det>>
+  rectangle "Référentiels & ontologies multisectoriels\nGS1 / UBL (SCM) · ISA-95 / OPC UA (industrie)\nHL7 FHIR (santé) · FIBO / ISO 20022 / BIAN (finance)" as N5 <<green>>
+  rectangle "④ Registres de compatibilité & MDM\nProtobuf, Avro, Arrow (ERP / CRM / SIRH)" as N6 <<det>>
   N2 --> N3 : Interdit SQL libre
   N3 --> N4
   N4 --> N5
@@ -45,8 +45,8 @@ package "Z2 — APRÈS (PRI-008 / DEC-003) : Couche sémantique neutre et ontolo
 }
 
 legend bottom
-  **Rouge** : Erreur sémantique silencieuse (message bien formé mais calcul erroné)
-  **Bleu ardoise** : Couche sémantique analytique neutre (DEC-003) et registres
-  **Vert émeraude** : Validation fermée SHACL sur ontologies établies (FIBO, ISO 20022)
+  **Rouge** : Erreur sémantique silencieuse inter-progiciels (message valide mais calcul métier erroné)
+  **Bleu ardoise** : Couche sémantique neutre (DEC-003), contrats ODCS et registres MDM
+  **Vert émeraude** : Validation fermée SHACL (GS1/UBL, ISA-95/OPC UA, HL7 FHIR, FIBO/ISO 20022)
 end legend
 @enduml

@@ -25,25 +25,25 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Du copilote passif à la boucle System of Action (5 paliers et 5 archétypes)
+title Du copilote passif à la couche d'automatisation agentique : SoE → System of Action (SoA ≠ SOA) → SoR
 
-package "Z1 — Avant : Modèle conversationnel isolé (un tour)" {
-  actor "Utilisateur (SoE)" as N1 <<gray>>
+package "Z1 — Avant : Modèle conversationnel isolé (un tour sans effet de bord)" {
+  actor "Utilisateur / portail (SoE)" as N1 <<gray>>
   rectangle "Assistant mono-tour\n(texte sans effet de bord)" as N2 <<gray>>
-  rectangle "Recopie manuelle\n(zéro actionneur ni trace)" as N3 <<gray>>
+  rectangle "Recopie manuelle vers le SI\n(zéro actionneur ni trace)" as N3 <<gray>>
   N1 --> N2 : Demande
   N2 --> N3 : Réponse isolée
 }
 
-package "Z2 — Après : System of Action (SoA) en boucle PEAS / POMDP" {
-  rectangle "Intention structurée (SoE → SoA)\nClassement en 5 paliers" as N4 <<det>>
-  rectangle "Boucle PEAS / BDI / POMDP\n(optimalité bornée)" as N5 <<prob>>
-  rectangle "Outils bornés via PEP\n(ADR-001 : zéro SQL direct)" as N6 <<det>>
-  database "Systems of Record (SoR)\nprotégés" as N7 <<green>>
+package "Z2 — Après : Couche d'automatisation agentique — System of Action (SoA, distinct de SOA Ch. 03)" {
+  rectangle "Intention structurée (SoE → SoA)\nSocle L0 préalable puis 5 paliers" as N4 <<det>>
+  rectangle "Boucle PEAS / BDI / POMDP\n(automatisation agentique bornée)" as N5 <<prob>>
+  rectangle "Outils d'intention via PEP & ACL\n(ADR-001 : zéro SQL direct)" as N6 <<det>>
+  database "Systems of Record (SoR)\nERP · CRM · SIRH · ITSM" as N7 <<green>>
   N4 --> N5 : ①② Intention & palier
   N5 .[#D97706].> N6 : ③ Propose action
   N6 --> N5 : Observation bornée
-  N6 --> N7 : Écriture contrôlée
+  N6 --> N7 : Écriture contrôlée SoR
 }
 
 package "Z3 — Cinq archétypes fonctionnels (sans super-agent)" {
@@ -55,7 +55,7 @@ package "Z3 — Cinq archétypes fonctionnels (sans super-agent)" {
 
 legend bottom
   **Gris** : Assistant conversationnel mono-tour sans actionneur
-  **Bleu ardoise / pointillé ambre** : Strate System of Action (SoA) et boucle bornée
-  **Vert émeraude** : Systems of Record (SoR) protégés et critère d'arrêt vérifié
+  **Bleu ardoise / pointillé ambre** : Couche d'automatisation agentique — System of Action (SoA ≠ architecture SOA)
+  **Vert émeraude** : Systèmes d'entreprise SoR (ERP, CRM, SIRH, ITSM) protégés et arrêt vérifié
 end legend
 @enduml

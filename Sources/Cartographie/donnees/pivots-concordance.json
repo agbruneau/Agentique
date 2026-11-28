@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
   "lang": "fr-CA",
-  "generated_at": "2026-11-27T13:19:21Z",
+  "generated_at": "2026-11-28T01:48:30Z",
   "generator": "Sources/Cartographie/outils/extraire_pivots_compendium.py",
   "freeze_dates": {
     "compendium": "2026-12-02 (parution janvier 2027)",
@@ -9,14 +9,14 @@
     "tomes_7_et_8": "2026-12-02 (gel unifié du Compendium)"
   },
   "collection_metrics": {
-    "compendium_title": "Compendium de l'entreprise agentique",
+    "compendium_title": "Interopérabilité et automatisation agentique des systèmes d'entreprise",
     "compendium_pdf_file": "Compendium/Compendium.pdf",
     "compendium_md_file": "Compendium/Compendium.md",
-    "compendium_pdf_pages": 871,
-    "compendium_pdf_bytes": 24465497,
-    "compendium_md_bytes": 1916679,
-    "compendium_md_lines": 8670,
-    "compendium_md_words": 247622,
+    "compendium_pdf_pages": 872,
+    "compendium_pdf_bytes": 25300905,
+    "compendium_md_bytes": 1924974,
+    "compendium_md_lines": 8638,
+    "compendium_md_words": 247581,
     "compendium_units": 42,
     "compendium_sections": 15,
     "compendium_schemas": 139,
@@ -32,8 +32,8 @@
     "total_tomes": 8,
     "total_markdown_files": 2,
     "total_consolidated_files": 2,
-    "total_pdf_pages": 871,
-    "total_pdf_bytes": 24465497,
+    "total_pdf_pages": 872,
+    "total_pdf_bytes": 25300905,
     "total_diagrams": 139,
     "historical_tomes_pdf_pages": 4542,
     "historical_tomes_diagrams": 319,
@@ -53,7 +53,7 @@
         "tome_id": "R",
         "part_id": "R",
         "file": "Compendium/README.md",
-        "title": "Index éditorial du Compendium",
+        "title": "Interopérabilité et automatisation agentique des systèmes d'entreprise (Index éditorial)",
         "units": [],
         "line_start": 1,
         "pdf_page_start": null,
@@ -63,193 +63,193 @@
         "tome_id": "LIM",
         "part_id": "LIM",
         "file": "Compendium/Compendium.md",
-        "title": "Liminaire — Sommaire exécutif global, doctrine 80/20 et panorama visuel",
+        "title": "Liminaire — Sommaire exécutif : interopérabilité, automatisation agentique des systèmes d'entreprise, doctrine 80/20 et Panorama directeur",
         "units": [
           "00-liminaire"
         ],
         "line_start": 74,
-        "pdf_page_start": 7,
-        "pdf_page_end": 23
+        "pdf_page_start": 8,
+        "pdf_page_end": 25
       },
       {
         "tome_id": "P01",
         "part_id": "P01",
         "part_roman": "I",
         "file": "Compendium/Compendium.md",
-        "title": "Partie I — D01 : Rupture épistémique, limites probabilistes et économie cognitive des Systèmes d'agentivité",
+        "title": "Partie I — D01 : Fondements de l'automatisation agentique, fiabilité probabiliste et économie de l'interopérabilité d'entreprise",
         "units": [
           "ch01",
           "ch02",
           "ch03"
         ],
-        "line_start": 219,
-        "pdf_page_start": 25,
-        "pdf_page_end": 77
+        "line_start": 221,
+        "pdf_page_start": 27,
+        "pdf_page_end": 78
       },
       {
         "tome_id": "P02",
         "part_id": "P02",
         "part_roman": "II",
         "file": "Compendium/Compendium.md",
-        "title": "Partie II — D02 : Architecture d'entreprise hybride 80/20, autonomie graduée L0–L4 et noyau de contrôle possédé",
+        "title": "Partie II — D02 : Architecture hybride 80/20 des systèmes d'entreprise, continuum d'automatisation L0–L4 et noyau d'interopérabilité possédé",
         "units": [
           "ch04",
           "ch05",
           "ch06"
         ],
-        "line_start": 714,
-        "pdf_page_start": 79,
-        "pdf_page_end": 133
+        "line_start": 716,
+        "pdf_page_start": 80,
+        "pdf_page_end": 134
       },
       {
         "tome_id": "P03",
         "part_id": "P03",
         "part_roman": "III",
         "file": "Compendium/Compendium.md",
-        "title": "Partie III — D03 : Tissu conjonctif protocolaire, découverte fédérée et prévention du verrouillage SaaS",
+        "title": "Partie III — D03 : Interopérabilité protocolaire verticale et horizontale (MCP, A2A), passerelles d'entreprise PEP et anti-verrouillage SaaS",
         "units": [
           "ch07",
           "ch08",
           "ch09"
         ],
-        "line_start": 1277,
-        "pdf_page_start": 135,
-        "pdf_page_end": 189
+        "line_start": 1279,
+        "pdf_page_start": 136,
+        "pdf_page_end": 190
       },
       {
         "tome_id": "P04",
         "part_id": "P04",
         "part_roman": "IV",
         "file": "Compendium/Compendium.md",
-        "title": "Partie IV — D04 : Gouvernance sémantique, mémoire CoALA à quatre tiroirs et encapsulation patrimoniale ACL/OT",
+        "title": "Partie IV — D04 : Interopérabilité sémantique canonique, mémoire CoALA à quatre tiroirs et intégration patrimoniale (SoR, ERP, ACL, OT)",
         "units": [
           "ch10",
           "ch11",
           "ch12"
         ],
-        "line_start": 1842,
-        "pdf_page_start": 191,
-        "pdf_page_end": 237
+        "line_start": 1841,
+        "pdf_page_start": 192,
+        "pdf_page_end": 238
       },
       {
         "tome_id": "P05",
         "part_id": "P05",
         "part_roman": "V",
         "file": "Compendium/Compendium.md",
-        "title": "Partie V — D05 : Orchestration sobre OO1–OO4, chorégraphie événementielle et exécution durable Saga",
+        "title": "Partie V — D05 : Automatisation agentique sobre (OO1–OO4), interopérabilité événementielle et exécution durable Saga inter-systèmes",
         "units": [
           "ch13",
           "ch14",
           "ch15"
         ],
-        "line_start": 2254,
-        "pdf_page_start": 239,
-        "pdf_page_end": 289
+        "line_start": 2253,
+        "pdf_page_start": 240,
+        "pdf_page_end": 293
       },
       {
         "tome_id": "P06",
         "part_id": "P06",
         "part_roman": "VI",
         "file": "Compendium/Compendium.md",
-        "title": "Partie VI — D06 : Identités non humaines (NHI), délégation OBO atténuée, PKI 47 jours et transition post-quantique",
+        "title": "Partie VI — D06 : Identités non humaines (NHI) fédérées aux IdP/SIRH, délégation OBO inter-systèmes, automatisation PKI 47 jours et post-quantique",
         "units": [
           "ch16",
           "ch17",
           "ch18"
         ],
-        "line_start": 2724,
-        "pdf_page_start": 291,
-        "pdf_page_end": 341
+        "line_start": 2725,
+        "pdf_page_start": 295,
+        "pdf_page_end": 346
       },
       {
         "tome_id": "P07",
         "part_id": "P07",
         "part_roman": "VII",
         "file": "Compendium/Compendium.md",
-        "title": "Partie VII — D07 : Défense hors modèle, politiques OPA/Rego, Règle de deux et confinement déterministe",
+        "title": "Partie VII — D07 : Sécurité hors modèle des connecteurs d'entreprise, politiques interopérables OPA/Cedar, Règle de deux et coupe-circuit SOAR",
         "units": [
           "ch19",
           "ch20",
           "ch21"
         ],
-        "line_start": 3288,
-        "pdf_page_start": 343,
-        "pdf_page_end": 392
+        "line_start": 3289,
+        "pdf_page_start": 348,
+        "pdf_page_end": 399
       },
       {
         "tome_id": "P08",
         "part_id": "P08",
         "part_roman": "VIII",
         "file": "Compendium/Compendium.md",
-        "title": "Partie VIII — D08 : Observabilité probatoire, bancs EvalOps hermétiques et pilotage FinOps au résultat conforme",
+        "title": "Partie VIII — D08 : Interopérabilité télémétrique OpenTelemetry/SCITT, qualification EvalOps CI/CD et pilotage SRE/FinOps au résultat conforme",
         "units": [
           "ch22",
           "ch23",
           "ch24"
         ],
-        "line_start": 3799,
-        "pdf_page_start": 394,
-        "pdf_page_end": 446
+        "line_start": 3800,
+        "pdf_page_start": 401,
+        "pdf_page_end": 453
       },
       {
         "tome_id": "P09",
         "part_id": "P09",
         "part_roman": "IX",
         "file": "Compendium/Compendium.md",
-        "title": "Partie IX — D09 : Conformité juridique et prudentielle multi-juridictions (QC, CA, UE, int.) et réversibilité contractuelle",
+        "title": "Partie IX — D09 : Conformité multi-juridictions des décisions automatisées (QC, CA, UE, int.), portabilité et réversibilité contractuelle",
         "units": [
           "ch25",
           "ch26",
           "ch27"
         ],
-        "line_start": 4298,
-        "pdf_page_start": 448,
-        "pdf_page_end": 496
+        "line_start": 4301,
+        "pdf_page_start": 455,
+        "pdf_page_end": 504
       },
       {
         "tome_id": "P10",
         "part_id": "P10",
         "part_roman": "X",
         "file": "Compendium/Compendium.md",
-        "title": "Partie X — D10 : Architectures sectorielles réglementées, trois blueprints C01–C40 et usine logicielle GitOps",
+        "title": "Partie X — D10 : Profils sectoriels des systèmes d'entreprise, trois blueprints d'intégration C01–C40 et industrialisation GitOps",
         "units": [
           "ch28",
           "ch29",
           "ch30"
         ],
-        "line_start": 4732,
-        "pdf_page_start": 498,
-        "pdf_page_end": 552
+        "line_start": 4731,
+        "pdf_page_start": 506,
+        "pdf_page_end": 556
       },
       {
         "tome_id": "P11",
         "part_id": "P11",
         "part_roman": "XI",
         "file": "Compendium/Compendium.md",
-        "title": "Partie XI — D11 : Prospective 2028–2035, trajectoires adaptatives DAPP, gouvernance AE/AS et capital humain",
+        "title": "Partie XI — D11 : Trajectoires d'interopérabilité et d'automatisation 2028–2035 (DAPP), gouvernance d'entreprise AE/AS et repli humain",
         "units": [
           "ch31",
           "ch32",
           "ch33"
         ],
-        "line_start": 5224,
-        "pdf_page_start": 554,
-        "pdf_page_end": 604
+        "line_start": 5202,
+        "pdf_page_start": 558,
+        "pdf_page_end": 605
       },
       {
         "tome_id": "P12",
         "part_id": "P12",
         "part_roman": "XII",
         "file": "Compendium/Compendium.md",
-        "title": "Partie XII — D12 : Homologation vérifiable, trousse exécutable du Tome 8, concordance inter-tomes et chaîne Wyvern G0–G5",
+        "title": "Partie XII — D12 : Homologation vérifiable des systèmes d'entreprise (CRE-IA / PRR-75), trousse exécutable du Tome 8 et chaîne Wyvern G0–G5",
         "units": [
           "ch34",
           "ch35",
           "ch36"
         ],
-        "line_start": 5657,
-        "pdf_page_start": 606,
-        "pdf_page_end": 664
+        "line_start": 5635,
+        "pdf_page_start": 607,
+        "pdf_page_end": 665
       },
       {
         "tome_id": "ANN",
@@ -263,9 +263,9 @@
           "annexe-d",
           "annexe-e"
         ],
-        "line_start": 6223,
-        "pdf_page_start": 666,
-        "pdf_page_end": 871
+        "line_start": 6203,
+        "pdf_page_start": 667,
+        "pdf_page_end": 872
       }
     ],
     "decoupages_architecturaux_t5_a1": [
@@ -368,7 +368,7 @@
     ],
     "echelles_autonomie_classes_t5_a2": [
       {
-        "Classe d’acte (PD28)": "Hors classe (flux fixe)",
+        "Classe d’acte (PD28)": "Hors classe (flux fixe : règles, BPMN, iPaaS, RPA stable)",
         "Niveau × Palier (CAD26 ch. 8)": "N0 Déterministe sans choix modèle",
         "C27 (L0–L4)": "L0 déterministe",
         "C26 (OO / Q)": "OO3 pur / code [S]",
@@ -418,12 +418,12 @@
       }
     ],
     "source_registry": "Sources/Compendium/ouvrage/registre/concordance-taxonomies.json",
-    "compendium_anchor_line": 7639
+    "compendium_anchor_line": 7617
   },
   "discordances_resolues": {
     "div_02_tome_5": {
       "id": "DIV-02",
-      "source": "Compendium/Compendium.md (§ 0.2, Ch. 36, Annexe C · L96) & Sources/Compendium/ouvrage/registre/concordance-taxonomies.json",
+      "source": "Compendium/Compendium.md (§ 0.2, Ch. 36, Annexe C · L98) & Sources/Compendium/ouvrage/registre/concordance-taxonomies.json",
       "objet": "Résorption de la lacune corpus_2026_absent entre CAD26 (Cadre de référence 2026 / Tome 2, CRE-IA-2026-01 v1.2, 6 couches et 3 plans) et PD28 (Plan directeur 2028 / T5 = Tome 5, 5 couches C1–C5 et 3 volets Plans A–C) ; concordance des cotes C26 (Tome 1) et C27 (Tome 3)",
       "statut": "Fermée sur pièce",
       "trois_rectifications": [
@@ -460,17 +460,17 @@
         "note_ventilation_pex": "En CRE-IA-2026-01 v1.2 (305 exigences), les 24 propositions PEX couvrent 5 raccordements directs, 12 extensions spécialisées et 7 comblements de lacunes (remplaçant le bilan 13 spécialisations et 11 comblements hérité de v1.1)."
       },
       "compendium_file": "Compendium/Compendium.md",
-      "compendium_line_start": 96,
-      "compendium_annexe_c_line": 7639,
-      "compendium_pdf_page": 10,
-      "compendium_annexe_c_pdf_page": 771
+      "compendium_line_start": 98,
+      "compendium_annexe_c_line": 7617,
+      "compendium_pdf_page": 11,
+      "compendium_annexe_c_pdf_page": 773
     },
     "cinq_discordances_tome_8": {
       "source": "Compendium/Compendium.md (§ 0.2, Chapitre 36, Annexe C) & Sources/Compendium/ouvrage/registre/concordance-taxonomies.json",
       "entries": [
         {
           "discordance_id": "DISC-01",
-          "topic": "Échelle d'autonomie L0–L4 : flux purement déterministe sans IA vs lecture/synthèse assistée par IA",
+          "topic": "Échelle d'autonomie L0–L4 et continuum d'automatisation : flux déterministes sans IA (règles, BPM, iPaaS, RPA) vs automatisation agentique",
           "volume_variants": [
             {
               "volume": "Vol. 3 (3 - Compendium 2027.md)",
@@ -483,14 +483,14 @@
               "corpus_ref": "7 - Livre.md L184–L202"
             }
           ],
-          "canonical_vol8_choice": "Conservation de l'échelle L0–L4 comme gradation des droits de mutation et de sortie externe, avec distinction explicite entre cas exclus purement déterministes sans modèle (Liminaire § 0.2 et Chapitre 36) et profil L0–L1 en lecture seule sans écriture ni exfiltration.",
+          "canonical_vol8_choice": "Conservation de l'échelle L0–L4 graduant les droits de mutation et de sortie sur les systèmes d'entreprise, en distinguant le socle L0 hors modèle (règles, DMN, BPMN 2.0, iPaaS, RPA stable ; Liminaire § 0.2, Ch. 36) du profil L0–L1 en lecture seule.",
           "liminaire_section": "0.2",
-          "rationale": "Empêche le déploiement d'agents probabilistes sur des flux où un script déterministe sans modèle suffit, tout en rendant les profils OPA (politiques Rego policies_opa évaluées par policy_saga/opa_runner.py) homogènes entre le cadre normatif et les chapitres pratiques du Compendium.",
+          "rationale": "Empêche la sur-agentification de flux relevant d'une automatisation déterministe classique (règles, BPMN, iPaaS, RPA stable) tout en unifiant les profils Rego (policies_opa via policy_saga/opa_runner.py) à travers le Compendium.",
           "compendium_file": "Compendium/Compendium.md",
-          "compendium_line_start": 96,
-          "compendium_annexe_c_line": 7639,
-          "compendium_pdf_page": 10,
-          "compendium_annexe_c_pdf_page": 771
+          "compendium_line_start": 98,
+          "compendium_annexe_c_line": 7617,
+          "compendium_pdf_page": 11,
+          "compendium_annexe_c_pdf_page": 773
         },
         {
           "discordance_id": "DISC-02",
@@ -516,10 +516,10 @@
           "liminaire_section": "0.2",
           "rationale": "Supprime les collisions d'échelles dans le code Rego et JSON Schema tout en préservant une traçabilité exacte vers les critères C05–C06 et les plans pluriannuels antérieurs.",
           "compendium_file": "Compendium/Compendium.md",
-          "compendium_line_start": 117,
-          "compendium_annexe_c_line": 7652,
-          "compendium_pdf_page": 12,
-          "compendium_annexe_c_pdf_page": 772
+          "compendium_line_start": 119,
+          "compendium_annexe_c_line": 7630,
+          "compendium_pdf_page": 14,
+          "compendium_annexe_c_pdf_page": 774
         },
         {
           "discordance_id": "DISC-03",
@@ -541,14 +541,14 @@
               "corpus_ref": "5 - Memoire.md L98"
             }
           ],
-          "canonical_vol8_choice": "Les quatre modules techniques de la trousse exécutable d'homologation ancrent leurs composants dans les Plans A (policy_saga/opa_runner.py avec politiques Rego policies_opa, authz_pqc_audit coffre/approbation), B (otel_pii_mapper, audit_scitt_focus, evalops_prr pour télémétrie/audit/évaluation), C (validateurs PRR/ADR d'evalops_prr pour gouvernance et registre) et les couches techniques Couche 1 / Couche 2 / Couche 4 (C1/C2/C4) du Cadre 2026 (harness_proto pour l'accès, l'orchestration et la médiation protocolaire) tout en exposant le noyau déterministe en quatre modules exécutables.",
+          "canonical_vol8_choice": "Les quatre modules de la trousse s'ancrent dans les Plans A (policy_saga/opa_runner.py, policies_opa, authz_pqc_audit), B (otel_pii_mapper, audit_scitt_focus, evalops_prr), C (validateurs PRR/ADR) et les couches C1/C2/C4 (harness_proto), gouvernant l'interface entre strate agentique (SoA) et systèmes d'entreprise (SoR, SoE, OT).",
           "liminaire_section": "0.2",
-          "rationale": "Aligne directement l'architecture exécutable d'homologation (Partie XII du Compendium, Chapitres 34 à 36) sur les 5 emplacements SBB vérifiés du Cadre de Référence sans briser l'héritage architectural des tomes antérieurs (Tomes 2 à 7).",
+          "rationale": "Aligne l'homologation exécutable (Partie XII, Ch. 34–36) et l'interface SoA ↔ systèmes d'entreprise (SoR, SoE, OT) sur les 5 emplacements SBB du Cadre de Référence sans briser l'héritage des Tomes 2 à 7.",
           "compendium_file": "Compendium/Compendium.md",
-          "compendium_line_start": 118,
-          "compendium_annexe_c_line": 7653,
-          "compendium_pdf_page": 12,
-          "compendium_annexe_c_pdf_page": 772
+          "compendium_line_start": 120,
+          "compendium_annexe_c_line": 7631,
+          "compendium_pdf_page": 14,
+          "compendium_annexe_c_pdf_page": 774
         },
         {
           "discordance_id": "DISC-04",
@@ -569,10 +569,10 @@
           "liminaire_section": "0.2",
           "rationale": "Préserve l'ouverture licence MIT et l'interopérabilité des diagrammes PlantUML/Mermaid exécutables sans dépendance à un modeleur commercial.",
           "compendium_file": "Compendium/Compendium.md",
-          "compendium_line_start": 119,
-          "compendium_annexe_c_line": 7654,
-          "compendium_pdf_page": 13,
-          "compendium_annexe_c_pdf_page": 772
+          "compendium_line_start": 121,
+          "compendium_annexe_c_line": 7632,
+          "compendium_pdf_page": 14,
+          "compendium_annexe_c_pdf_page": 774
         },
         {
           "discordance_id": "DISC-05",
@@ -593,10 +593,10 @@
           "liminaire_section": "0.2",
           "rationale": "Élimine toute ambiguïté d'implémentation entre la prose historique de 2025 et les contrôles bloquants EXIG-MCP-03/11/15/16/18/19/20 vérifiés en G0.",
           "compendium_file": "Compendium/Compendium.md",
-          "compendium_line_start": 96,
-          "compendium_annexe_c_line": 7639,
-          "compendium_pdf_page": 10,
-          "compendium_annexe_c_pdf_page": 771
+          "compendium_line_start": 98,
+          "compendium_annexe_c_line": 7617,
+          "compendium_pdf_page": 11,
+          "compendium_annexe_c_pdf_page": 773
         }
       ]
     }
@@ -620,8 +620,8 @@
         "commentaire_annexe": "Jalon ANC-120 (Tome 4, code QC-03, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-119",
@@ -639,8 +639,8 @@
         "commentaire_annexe": "Jalon ANC-119 (Tome 4, code QC-02, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-114",
@@ -670,8 +670,8 @@
           "2026-LOI25-ART12-1"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-115",
@@ -689,8 +689,8 @@
         "commentaire_annexe": "Jalon ANC-115 (Tome 4, code QC-CAI-LOI25, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-121",
@@ -708,15 +708,15 @@
         "commentaire_annexe": "Jalon ANC-121 (Tome 4, code ACVM-11-348, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-117",
         "date": "2025-12-03",
         "nature": "réglementation",
         "jurisdiction": "Québec (MCN)",
-        "label": "Adoption par le ministère de la Cybersécurité et du Numérique du Québec de l’Arrêté 2025-02 du 3 décembre 2025 édictant l’Énoncé de principes pour une utilisation responsable de l’intelligence artificielle applicable aux organismes publics (administrations publiques du Québec, remplaçant l’Arrêté 2024-02 du 27 juin 2024; sans effet obligatoire sur les institutions financières privées).",
+        "label": "Adoption par le ministère de la Cybersécurité et du Numérique du Québec de l’Arrêté 2025-02 du 3 décembre 2025 édictant l’Énoncé de principes pour une utilisation responsable de l’intelligence artificielle applicable aux organismes publics (administrations publiques du Québec, remplaçant l’Arrêté 2024-02 du 27 juin 2024), sans lier les entreprises privées (industrielles, commerciales, numériques ou financières).",
         "chapters": [
           "ch25",
           "ch26",
@@ -727,8 +727,8 @@
         "commentaire_annexe": "Jalon ANC-117 (Tome 4, code QC-MCN-ENONCE-IA, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-101",
@@ -746,8 +746,8 @@
         "commentaire_annexe": "Jalon ANC-101 (Tome 4, code N-06, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "ANC-116",
@@ -765,8 +765,8 @@
         "commentaire_annexe": "Jalon ANC-116 (Tome 4, code QC-CAI-RAPPORT-2026, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "key": "2026-08-02-EU-AI-ACT-ART50",
@@ -786,15 +786,15 @@
         "commentaire_annexe": "Vérifié aux art. 50 et 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements du Règlement (UE) 2026/1744 (SRC-061).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 778
       },
       {
         "key": "ANC-118",
         "date": "2026-09-15",
         "nature": "réglementation",
         "jurisdiction": "Québec (MCN)",
-        "label": "Publication en 2026 par le ministère de la Cybersécurité et du Numérique du Québec du Guide sur l’utilisation responsable de l’intelligence artificielle agentique destiné aux organismes publics (administrations publiques du Québec; consacre le principe de proportionnalité d’autonomie sans lier les institutions financières privées).",
+        "label": "Publication en 2026 par le ministère de la Cybersécurité et du Numérique du Québec du Guide sur l’utilisation responsable de l’intelligence artificielle agentique destiné aux organismes publics (administrations publiques du Québec), consacrant le principe de proportionnalité d’autonomie sans lier les entreprises privées (industrielles, commerciales, numériques ou financières).",
         "chapters": [
           "ch25",
           "ch26",
@@ -805,8 +805,8 @@
         "commentaire_annexe": "Jalon ANC-118 (Tome 4, code QC-MCN-GUIDE-AGENTIQUE, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 778
       },
       {
         "key": "ANC-001",
@@ -824,8 +824,8 @@
         "commentaire_annexe": "Jalon ANC-001 (Tome 4, code P-02, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 778
       },
       {
         "key": "ANC-002",
@@ -843,8 +843,8 @@
         "commentaire_annexe": "Jalon ANC-002 (Tome 4, code P-07, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-022",
@@ -862,8 +862,8 @@
         "commentaire_annexe": "Jalon ANC-022 (Tome 4, code P-13, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-031",
@@ -881,8 +881,8 @@
         "commentaire_annexe": "Jalon ANC-031 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-045",
@@ -900,8 +900,8 @@
         "commentaire_annexe": "Jalon ANC-045 (Tome 4, code P-29, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-102",
@@ -919,8 +919,8 @@
         "commentaire_annexe": "Jalon ANC-102 (Tome 4, code N-07, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-003",
@@ -938,8 +938,8 @@
         "commentaire_annexe": "Jalon ANC-003 (Tome 4, code P-08, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-023",
@@ -965,8 +965,8 @@
           "2027-03-15-TLS-100J"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "2027-03-30-MCP-SEP-3398",
@@ -984,8 +984,8 @@
         "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-024",
@@ -1003,8 +1003,8 @@
         "commentaire_annexe": "Jalon ANC-024 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-032",
@@ -1022,8 +1022,8 @@
         "commentaire_annexe": "Jalon ANC-032 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-103",
@@ -1048,8 +1048,8 @@
           "2027-05-01-BSIF-E23-AMF"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-112",
@@ -1074,8 +1074,8 @@
           "2027-05-01-BSIF-E23-AMF"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7740,
-        "pdf_page": 783
+        "compendium_line_start": 7718,
+        "pdf_page": 785
       },
       {
         "key": "ANC-025",
@@ -1093,8 +1093,8 @@
         "commentaire_annexe": "Jalon ANC-025 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7741,
-        "pdf_page": 784
+        "compendium_line_start": 7719,
+        "pdf_page": 786
       },
       {
         "key": "2027-07-28-MCP-MIGRATION",
@@ -1112,8 +1112,8 @@
         "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7742,
-        "pdf_page": 784
+        "compendium_line_start": 7720,
+        "pdf_page": 786
       },
       {
         "key": "ANC-004",
@@ -1131,8 +1131,8 @@
         "commentaire_annexe": "Jalon ANC-004 (Tome 4, code P-01, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7743,
-        "pdf_page": 784
+        "compendium_line_start": 7721,
+        "pdf_page": 786
       },
       {
         "key": "ANC-026",
@@ -1150,8 +1150,8 @@
         "commentaire_annexe": "Jalon ANC-026 (Tome 4, code P-11, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7744,
-        "pdf_page": 784
+        "compendium_line_start": 7722,
+        "pdf_page": 786
       },
       {
         "key": "ANC-005",
@@ -1169,8 +1169,8 @@
         "commentaire_annexe": "Jalon ANC-005 (Tome 4, code P-02, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7745,
-        "pdf_page": 784
+        "compendium_line_start": 7723,
+        "pdf_page": 786
       },
       {
         "key": "ANC-113",
@@ -1188,8 +1188,8 @@
         "commentaire_annexe": "Jalon ANC-113 (Tome 4, code QC-AMF-NOTE-2026, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7746,
-        "pdf_page": 784
+        "compendium_line_start": 7724,
+        "pdf_page": 786
       },
       {
         "key": "ANC-006",
@@ -1207,8 +1207,8 @@
         "commentaire_annexe": "Jalon ANC-006 (Tome 4, code P-06, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7747,
-        "pdf_page": 784
+        "compendium_line_start": 7725,
+        "pdf_page": 786
       },
       {
         "key": "ANC-007",
@@ -1233,8 +1233,8 @@
           "2027-12-02-EU-AI-ACT-ANNEXE-III"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7748,
-        "pdf_page": 785
+        "compendium_line_start": 7726,
+        "pdf_page": 787
       },
       {
         "key": "ANC-008",
@@ -1252,8 +1252,8 @@
         "commentaire_annexe": "Jalon ANC-008 (Tome 4, code P-05, cible fournisseurs), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7749,
-        "pdf_page": 785
+        "compendium_line_start": 7727,
+        "pdf_page": 787
       },
       {
         "key": "ANC-027",
@@ -1271,8 +1271,8 @@
         "commentaire_annexe": "Jalon ANC-027 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7750,
-        "pdf_page": 785
+        "compendium_line_start": 7728,
+        "pdf_page": 787
       },
       {
         "key": "ANC-033",
@@ -1290,8 +1290,8 @@
         "commentaire_annexe": "Jalon ANC-033 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7751,
-        "pdf_page": 785
+        "compendium_line_start": 7729,
+        "pdf_page": 787
       },
       {
         "key": "ANC-104",
@@ -1309,8 +1309,8 @@
         "commentaire_annexe": "Jalon ANC-104 (Tome 4, code T-20, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7752,
-        "pdf_page": 785
+        "compendium_line_start": 7730,
+        "pdf_page": 787
       },
       {
         "key": "ANC-009",
@@ -1328,8 +1328,8 @@
         "commentaire_annexe": "Jalon ANC-009 (Tome 4, code P-04, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-028",
@@ -1347,8 +1347,8 @@
         "commentaire_annexe": "Jalon ANC-028 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-029",
@@ -1366,8 +1366,8 @@
         "commentaire_annexe": "Jalon ANC-029 (Tome 4, code P-16, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-034",
@@ -1385,8 +1385,8 @@
         "commentaire_annexe": "Jalon ANC-034 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-010",
@@ -1411,8 +1411,8 @@
           "2028-08-02-EU-AI-ACT-ANNEXE-I"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-011",
@@ -1430,8 +1430,8 @@
         "commentaire_annexe": "Jalon ANC-011 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-012",
@@ -1449,8 +1449,8 @@
         "commentaire_annexe": "Jalon ANC-012 (Tome 4, code P-05, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-105",
@@ -1474,8 +1474,8 @@
           "2028-10-01-GESTION-PATRIMOINE-RETROFACTURATION"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-106",
@@ -1500,8 +1500,8 @@
           "2028-12-31-BSIF-B15-PORTEE3"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7761,
-        "pdf_page": 787
+        "compendium_line_start": 7739,
+        "pdf_page": 789
       },
       {
         "key": "ANC-107",
@@ -1519,8 +1519,8 @@
         "commentaire_annexe": "Jalon ANC-107 (Tome 4, code N-07, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-030",
@@ -1546,8 +1546,8 @@
           "2029-03-15-TLS-47J"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-013",
@@ -1565,8 +1565,8 @@
         "commentaire_annexe": "Jalon ANC-013 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-108",
@@ -1584,8 +1584,8 @@
         "commentaire_annexe": "Jalon ANC-108 (Tome 4, code N-12, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-035",
@@ -1603,8 +1603,8 @@
         "commentaire_annexe": "Jalon ANC-035 (Tome 4, code P-21, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-014",
@@ -1622,8 +1622,8 @@
         "commentaire_annexe": "Jalon ANC-014 (Tome 4, code P-02, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-015",
@@ -1641,8 +1641,8 @@
         "commentaire_annexe": "Jalon ANC-015 (Tome 4, code P-06, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-016",
@@ -1660,8 +1660,8 @@
         "commentaire_annexe": "Jalon ANC-016 (Tome 4, code P-07, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-017",
@@ -1679,8 +1679,8 @@
         "commentaire_annexe": "Jalon ANC-017 (Tome 4, code P-05, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-018",
@@ -1698,8 +1698,8 @@
         "commentaire_annexe": "Jalon ANC-018 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-036",
@@ -1717,8 +1717,8 @@
         "commentaire_annexe": "Jalon ANC-036 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-037",
@@ -1736,8 +1736,8 @@
         "commentaire_annexe": "Jalon ANC-037 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "ANC-019",
@@ -1755,8 +1755,8 @@
         "commentaire_annexe": "Jalon ANC-019 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7774,
-        "pdf_page": 789
+        "compendium_line_start": 7752,
+        "pdf_page": 791
       },
       {
         "key": "ANC-038",
@@ -1774,8 +1774,8 @@
         "commentaire_annexe": "Jalon ANC-038 (Tome 4, code N-11, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7775,
-        "pdf_page": 789
+        "compendium_line_start": 7753,
+        "pdf_page": 791
       },
       {
         "key": "ANC-039",
@@ -1793,8 +1793,8 @@
         "commentaire_annexe": "Jalon ANC-039 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7776,
-        "pdf_page": 789
+        "compendium_line_start": 7754,
+        "pdf_page": 791
       },
       {
         "key": "ANC-020",
@@ -1812,8 +1812,8 @@
         "commentaire_annexe": "Jalon ANC-020 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7777,
-        "pdf_page": 790
+        "compendium_line_start": 7755,
+        "pdf_page": 792
       },
       {
         "key": "ANC-040",
@@ -1831,8 +1831,8 @@
         "commentaire_annexe": "Jalon ANC-040 (Tome 4, code P-24, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7778,
-        "pdf_page": 790
+        "compendium_line_start": 7756,
+        "pdf_page": 792
       },
       {
         "key": "ANC-109",
@@ -1856,8 +1856,8 @@
           "2033-06-30-LOIS-FINANCIERES-CANADA"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7779,
-        "pdf_page": 790
+        "compendium_line_start": 7757,
+        "pdf_page": 792
       },
       {
         "key": "ANC-110",
@@ -1881,8 +1881,8 @@
           "2033-06-30-LOIS-FINANCIERES-CANADA"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7780,
-        "pdf_page": 790
+        "compendium_line_start": 7758,
+        "pdf_page": 792
       },
       {
         "key": "ANC-111",
@@ -1906,8 +1906,8 @@
           "2033-06-30-LOIS-FINANCIERES-CANADA"
         ],
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7781,
-        "pdf_page": 790
+        "compendium_line_start": 7759,
+        "pdf_page": 792
       },
       {
         "key": "ANC-021",
@@ -1925,8 +1925,8 @@
         "commentaire_annexe": "Jalon ANC-021 (Tome 4, code P-01, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7782,
-        "pdf_page": 790
+        "compendium_line_start": 7760,
+        "pdf_page": 792
       },
       {
         "key": "ANC-046",
@@ -1944,8 +1944,8 @@
         "commentaire_annexe": "Jalon ANC-046 (Tome 4, code P-31, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7783,
-        "pdf_page": 791
+        "compendium_line_start": 7761,
+        "pdf_page": 793
       },
       {
         "key": "ANC-041",
@@ -1963,8 +1963,8 @@
         "commentaire_annexe": "Jalon ANC-041 (Tome 4, code P-23, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7784,
-        "pdf_page": 791
+        "compendium_line_start": 7762,
+        "pdf_page": 793
       },
       {
         "key": "ANC-042",
@@ -1982,8 +1982,8 @@
         "commentaire_annexe": "Jalon ANC-042 (Tome 4, code P-21, cible administrations), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7785,
-        "pdf_page": 791
+        "compendium_line_start": 7763,
+        "pdf_page": 793
       },
       {
         "key": "ANC-043",
@@ -2001,8 +2001,8 @@
         "commentaire_annexe": "Jalon ANC-043 (Tome 4, code P-24, cible institutions), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7786,
-        "pdf_page": 791
+        "compendium_line_start": 7764,
+        "pdf_page": 793
       },
       {
         "key": "ANC-044",
@@ -2020,8 +2020,8 @@
         "commentaire_annexe": "Jalon ANC-044 (Tome 4, code P-25, cible tous), réancré L+ pour le Compendium.",
         "origin": "T4",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7787,
-        "pdf_page": 791
+        "compendium_line_start": 7765,
+        "pdf_page": 793
       },
       {
         "key": "2030-2035-G7-PQC-FINANCE",
@@ -2045,8 +2045,8 @@
         "commentaire_annexe": "Vérifié dans G7-CEG Quantum Transition Roadmap (SRC-052) et NIST IR 8547 (SRC-051).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7788,
-        "pdf_page": 791
+        "compendium_line_start": 7766,
+        "pdf_page": 793
       },
       {
         "key": "DAPP-T5-01",
@@ -2064,8 +2064,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : Immédiat), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "DAPP-T5-02",
@@ -2083,8 +2083,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2027), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "DAPP-T5-03",
@@ -2102,8 +2102,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : Fin 2027), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "DAPP-T5-04",
@@ -2121,8 +2121,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2028–2029), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "DAPP-T5-05",
@@ -2140,8 +2140,8 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2030–2032), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "DAPP-T5-06",
@@ -2159,40 +2159,40 @@
         "commentaire_annexe": "Rampe/Palier DAPP Tome 5 (horizon : 2033–2035), ancré sur Haasnoot et al. (DAPP, SRC-112) et BSIF E-23 (SRC-065).",
         "origin": "T5_DAPP",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       }
     ],
     "six_reperes_readme": [
       {
         "echeance": "Depuis sept. 2023",
-        "cadre": "Québec (Loi 25, art. 12.1)",
-        "resume": "Obligation d'informer la personne visée par une décision exclusivement automatisée, d'expliquer les paramètres principaux et d'offrir une révision humaine."
+        "cadre": "Québec (Loi 25, art. 12.1 et art. 27)",
+        "resume": "Obligation transversale d'informer la personne visée par une décision exclusivement automatisée, d'expliquer les paramètres principaux, d'offrir une révision humaine et d'assurer la portabilité structurée des renseignements."
       },
       {
         "echeance": "Depuis août 2026",
         "cadre": "Union européenne (EU AI Act, art. 50)",
-        "resume": "Obligations de transparence et de marquage des interactions synthétiques en application depuis le 2 août 2026 (avec aménagement transitoire art. 111 au 2 déc. 2026)."
+        "resume": "Obligations transversales de transparence et de marquage des interactions synthétiques en application depuis le 2 août 2026 sur les systèmes d'engagement (avec aménagement transitoire art. 111 au 2 déc. 2026)."
       },
       {
         "echeance": "Mars 2027 → Mars 2029",
-        "cadre": "PKI publique (CA/Browser Forum SC-081v3)",
-        "resume": "Réduction graduelle de la durée maximale des certificats TLS à 100 jours (mars 2027) puis 47 jours (15 mars 2029)."
+        "cadre": "PKI publique et passerelles d'entreprise (CA/Browser Forum SC-081v3)",
+        "resume": "Réduction graduelle de la durée maximale des certificats TLS à 100 jours (mars 2027) puis 47 jours (15 mars 2029), imposant l'automatisation PKI ACME/SDS de bout en bout."
       },
       {
         "echeance": "1er mai 2027",
-        "cadre": "Canada fédéral (BSIF E-23 / AMF)",
-        "resume": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF sur la gestion du risque de modèle et gouvernance prudente des modèles IA/agentiques."
+        "cadre": "Étalon prudentiel canadien et québécois (BSIF E-23 / AMF)",
+        "resume": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF et du cadre AMF : inventaire, matérialité et gouvernance hors modèle des systèmes automatisés et agentiques (étalon haute assurance)."
       },
       {
         "echeance": "2027–2028",
-        "cadre": "Union européenne (EU AI Act, Annexes III et I)",
-        "resume": "Échéances d'application étendues des systèmes à haut risque (2 décembre 2027 Annexe III ; 2 août 2028 Annexe I selon Règlement UE 2026/1744)."
+        "cadre": "Union européenne (EU AI Act, Annexes III et I / Digital Omnibus)",
+        "resume": "Échéances d'application étendues des systèmes d'entreprise et composants industriels à haut risque (2 décembre 2027 Annexe III ; 2 août 2028 Annexe I selon Règlement UE 2026/1744)."
       },
       {
         "echeance": "2030–2035",
-        "cadre": "Transition post-quantique G7 / NIST / CSE ITSP.40.111",
-        "resume": "Bascules planifiées vers ML-KEM / ML-DSA / SLH-DSA et interdiction des schémas RSA/ECDSA classiques à l'horizon 2030–2035."
+        "cadre": "Transition post-quantique G7 / NIST / CST ITSP.40.111",
+        "resume": "Bascules coordonnées vers ML-KEM / ML-DSA / SLH-DSA sur les identités non humaines (NHI), passerelles PEP et voûtes d'audit longue durée des systèmes d'entreprise à l'horizon 2030–2035."
       }
     ],
     "rampe_et_paliers_dapp_t5": [
@@ -2203,8 +2203,8 @@
         "stade": "N0–N1 / Stade 1",
         "jalons": "Fondations (N0–N1 / Stade 1) : Inventaire en 5 jours ouvrables, zéro clé fixe, passerelle de modèles, ÉFVP et coupe-circuit.",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776,
+        "compendium_line_start": 7673,
+        "pdf_page": 778,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2214,8 +2214,8 @@
         "stade": "Stade 2 partiel",
         "jalons": "Plateforme (Stade 2 partiel) : Passerelle PEP, JCS/CIBA, certificats TLS 100 jours (15 mars 2027 D), BSIF E-23 et AMF IA (1er mai 2027 D), MCP 2026-07-28 (28 juillet 2027 D).",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776,
+        "compendium_line_start": 7673,
+        "pdf_page": 778,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2225,8 +2225,8 @@
         "stade": "Niveau 3 Défini / Stade 2",
         "jalons": "Industrialisation (Niveau 3 Défini / Stade 2) : EU AI Act Annexe III (2 décembre 2027 D), sagas compensatoires et bancs d'évaluation E1–E3.",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776,
+        "compendium_line_start": 7673,
+        "pdf_page": 778,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2236,8 +2236,8 @@
         "stade": "Trajectoire DAPP",
         "jalons": "P1 (Stade 2 (14 initiatives sans regret et 1 conditionnelle, POR-001..004)) : 6 substrats, showback CPO, fin des rétrofacturations NI 31-103 (1er octobre 2028 D), BSIF B-15 portée 3 (fin 2028 D), TLS 1.3 hybride et TLS 47 jours (15 mars 2029 D).",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776,
+        "compendium_line_start": 7673,
+        "pdf_page": 778,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2247,8 +2247,8 @@
         "stade": "Trajectoire DAPP",
         "jalons": "P2 (Stade 3 (9 initiatives sans regret et 7 conditionnelles, POR-005..009)) : Sémantique, bi-temporalité, repli bimodèle, API ouvertes, chargeback CPO et porte POR-007 (ML-DSA kid, SCITT) sur la fenêtre G7 2030–2032 A.",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776,
+        "compendium_line_start": 7673,
+        "pdf_page": 778,
         "source_l_plus_id": "SRC-112, SRC-065"
       },
       {
@@ -2258,8 +2258,8 @@
         "stade": "Trajectoire DAPP",
         "jalons": "P3 (Stade 3 / Stade 4 sélectif (4 initiatives sans regret et 6 conditionnelles, POR-011..014)) : Post-temporisation des lois financières du Canada (30 juin 2033 D), mandats vLEI (POR-013), cryptographie post-quantique financière G7 2035 A sous POR-015 (< 60 s) et POR-016.",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776,
+        "compendium_line_start": 7673,
+        "pdf_page": 778,
         "source_l_plus_id": "SRC-112, SRC-065"
       }
     ],
@@ -2283,8 +2283,8 @@
         "commentaire_annexe": "Vérifié aux art. 50 et 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements du Règlement (UE) 2026/1744 (SRC-061).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 778
       },
       {
         "key": "2027-03-30-MCP-SEP-3398",
@@ -2302,8 +2302,8 @@
         "commentaire_annexe": "Vérifié dans SEP-3398 (Status: Accepted, SRC-082) : report de la cible de déc. 2026 au dernier mardi de mars 2027 (30 mars 2027).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "key": "2027-07-28-MCP-MIGRATION",
@@ -2321,8 +2321,8 @@
         "commentaire_annexe": "Vérifié dans SEP-2596 (Status: Final, fenêtre >= 12 mois à compter de la publication de la révision Current 2026-07-28, SRC-081).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7742,
-        "pdf_page": 784
+        "compendium_line_start": 7720,
+        "pdf_page": 786
       },
       {
         "key": "2030-2035-G7-PQC-FINANCE",
@@ -2346,8 +2346,8 @@
         "commentaire_annexe": "Vérifié dans G7-CEG Quantum Transition Roadmap (SRC-052) et NIST IR 8547 (SRC-051).",
         "origin": "T8",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7788,
-        "pdf_page": 791
+        "compendium_line_start": 7766,
+        "pdf_page": 793
       }
     ],
     "ancres_t4_67": [
@@ -2365,8 +2365,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-119",
@@ -2382,8 +2382,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-114",
@@ -2409,8 +2409,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-115",
@@ -2426,8 +2426,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-121",
@@ -2443,8 +2443,8 @@
         ],
         "source_l_plus_id": "SRC-071, SRC-065",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-117",
@@ -2452,7 +2452,7 @@
         "echeance": "2025-12-03",
         "axe": "réglementation",
         "juridiction": "Québec (MCN)",
-        "enonce": "Adoption par le ministère de la Cybersécurité et du Numérique du Québec de l’Arrêté 2025-02 du 3 décembre 2025 édictant l’Énoncé de principes pour une utilisation responsable de l’intelligence artificielle applicable aux organismes publics (administrations publiques du Québec, remplaçant l’Arrêté 2024-02 du 27 juin 2024; sans effet obligatoire sur les institutions financières privées).",
+        "enonce": "Adoption par le ministère de la Cybersécurité et du Numérique du Québec de l’Arrêté 2025-02 du 3 décembre 2025 édictant l’Énoncé de principes pour une utilisation responsable de l’intelligence artificielle applicable aux organismes publics (administrations publiques du Québec, remplaçant l’Arrêté 2024-02 du 27 juin 2024), sans lier les entreprises privées (industrielles, commerciales, numériques ou financières).",
         "chapters": [
           "ch25",
           "ch26",
@@ -2460,8 +2460,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 775
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-101",
@@ -2477,8 +2477,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-116",
@@ -2494,8 +2494,8 @@
         ],
         "source_l_plus_id": "SRC-064",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 777
       },
       {
         "id": "ANC-118",
@@ -2503,7 +2503,7 @@
         "echeance": "2026-09-15",
         "axe": "réglementation",
         "juridiction": "Québec (MCN)",
-        "enonce": "Publication en 2026 par le ministère de la Cybersécurité et du Numérique du Québec du Guide sur l’utilisation responsable de l’intelligence artificielle agentique destiné aux organismes publics (administrations publiques du Québec; consacre le principe de proportionnalité d’autonomie sans lier les institutions financières privées).",
+        "enonce": "Publication en 2026 par le ministère de la Cybersécurité et du Numérique du Québec du Guide sur l’utilisation responsable de l’intelligence artificielle agentique destiné aux organismes publics (administrations publiques du Québec), consacrant le principe de proportionnalité d’autonomie sans lier les entreprises privées (industrielles, commerciales, numériques ou financières).",
         "chapters": [
           "ch25",
           "ch26",
@@ -2511,8 +2511,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 778
       },
       {
         "id": "ANC-001",
@@ -2528,8 +2528,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7691,
-        "pdf_page": 776
+        "compendium_line_start": 7669,
+        "pdf_page": 778
       },
       {
         "id": "ANC-002",
@@ -2545,8 +2545,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-022",
@@ -2562,8 +2562,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-031",
@@ -2579,8 +2579,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-045",
@@ -2596,8 +2596,8 @@
         ],
         "source_l_plus_id": "SRC-014, SRC-015",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-102",
@@ -2613,8 +2613,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-003",
@@ -2630,8 +2630,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-023",
@@ -2653,8 +2653,8 @@
         ],
         "source_l_plus_id": "SRC-053",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-024",
@@ -2670,8 +2670,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-032",
@@ -2687,8 +2687,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-103",
@@ -2709,8 +2709,8 @@
         ],
         "source_l_plus_id": "SRC-065, SRC-066, SRC-071",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-112",
@@ -2731,8 +2731,8 @@
         ],
         "source_l_plus_id": "SRC-071, SRC-065",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7740,
-        "pdf_page": 783
+        "compendium_line_start": 7718,
+        "pdf_page": 785
       },
       {
         "id": "ANC-025",
@@ -2748,8 +2748,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7741,
-        "pdf_page": 784
+        "compendium_line_start": 7719,
+        "pdf_page": 786
       },
       {
         "id": "ANC-004",
@@ -2765,8 +2765,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7743,
-        "pdf_page": 784
+        "compendium_line_start": 7721,
+        "pdf_page": 786
       },
       {
         "id": "ANC-026",
@@ -2782,8 +2782,8 @@
         ],
         "source_l_plus_id": "SRC-081, SRC-082",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7744,
-        "pdf_page": 784
+        "compendium_line_start": 7722,
+        "pdf_page": 786
       },
       {
         "id": "ANC-005",
@@ -2799,8 +2799,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7745,
-        "pdf_page": 784
+        "compendium_line_start": 7723,
+        "pdf_page": 786
       },
       {
         "id": "ANC-113",
@@ -2816,8 +2816,8 @@
         ],
         "source_l_plus_id": "SRC-071, SRC-065",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7746,
-        "pdf_page": 784
+        "compendium_line_start": 7724,
+        "pdf_page": 786
       },
       {
         "id": "ANC-006",
@@ -2833,8 +2833,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7747,
-        "pdf_page": 784
+        "compendium_line_start": 7725,
+        "pdf_page": 786
       },
       {
         "id": "ANC-007",
@@ -2855,8 +2855,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-067",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7748,
-        "pdf_page": 785
+        "compendium_line_start": 7726,
+        "pdf_page": 787
       },
       {
         "id": "ANC-008",
@@ -2872,8 +2872,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7749,
-        "pdf_page": 785
+        "compendium_line_start": 7727,
+        "pdf_page": 787
       },
       {
         "id": "ANC-027",
@@ -2889,8 +2889,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7750,
-        "pdf_page": 785
+        "compendium_line_start": 7728,
+        "pdf_page": 787
       },
       {
         "id": "ANC-033",
@@ -2906,8 +2906,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7751,
-        "pdf_page": 785
+        "compendium_line_start": 7729,
+        "pdf_page": 787
       },
       {
         "id": "ANC-104",
@@ -2923,8 +2923,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7752,
-        "pdf_page": 785
+        "compendium_line_start": 7730,
+        "pdf_page": 787
       },
       {
         "id": "ANC-009",
@@ -2940,8 +2940,8 @@
         ],
         "source_l_plus_id": "SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-028",
@@ -2957,8 +2957,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-029",
@@ -2974,8 +2974,8 @@
         ],
         "source_l_plus_id": "SRC-133, SRC-041",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-034",
@@ -2991,8 +2991,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-010",
@@ -3013,8 +3013,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-011",
@@ -3030,8 +3030,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-012",
@@ -3047,8 +3047,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-105",
@@ -3068,8 +3068,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-106",
@@ -3090,8 +3090,8 @@
         ],
         "source_l_plus_id": "SRC-065, SRC-066, SRC-110",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7761,
-        "pdf_page": 787
+        "compendium_line_start": 7739,
+        "pdf_page": 789
       },
       {
         "id": "ANC-107",
@@ -3107,8 +3107,8 @@
         ],
         "source_l_plus_id": "SRC-111",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-030",
@@ -3130,8 +3130,8 @@
         ],
         "source_l_plus_id": "SRC-053",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-013",
@@ -3147,8 +3147,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-108",
@@ -3164,8 +3164,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-035",
@@ -3181,8 +3181,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-014",
@@ -3198,8 +3198,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-015",
@@ -3215,8 +3215,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-016",
@@ -3232,8 +3232,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-017",
@@ -3249,8 +3249,8 @@
         ],
         "source_l_plus_id": "SRC-060, SRC-061, SRC-062",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-018",
@@ -3266,8 +3266,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-036",
@@ -3283,8 +3283,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-037",
@@ -3300,8 +3300,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7695,
-        "pdf_page": 776
+        "compendium_line_start": 7673,
+        "pdf_page": 778
       },
       {
         "id": "ANC-019",
@@ -3317,8 +3317,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7774,
-        "pdf_page": 789
+        "compendium_line_start": 7752,
+        "pdf_page": 791
       },
       {
         "id": "ANC-038",
@@ -3334,8 +3334,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7775,
-        "pdf_page": 789
+        "compendium_line_start": 7753,
+        "pdf_page": 791
       },
       {
         "id": "ANC-039",
@@ -3351,8 +3351,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7776,
-        "pdf_page": 789
+        "compendium_line_start": 7754,
+        "pdf_page": 791
       },
       {
         "id": "ANC-020",
@@ -3368,8 +3368,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7777,
-        "pdf_page": 790
+        "compendium_line_start": 7755,
+        "pdf_page": 792
       },
       {
         "id": "ANC-040",
@@ -3385,8 +3385,8 @@
         ],
         "source_l_plus_id": "SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7778,
-        "pdf_page": 790
+        "compendium_line_start": 7756,
+        "pdf_page": 792
       },
       {
         "id": "ANC-109",
@@ -3406,8 +3406,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7779,
-        "pdf_page": 790
+        "compendium_line_start": 7757,
+        "pdf_page": 792
       },
       {
         "id": "ANC-110",
@@ -3427,8 +3427,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7780,
-        "pdf_page": 790
+        "compendium_line_start": 7758,
+        "pdf_page": 792
       },
       {
         "id": "ANC-111",
@@ -3448,8 +3448,8 @@
         ],
         "source_l_plus_id": "SRC-070, SRC-114",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7781,
-        "pdf_page": 790
+        "compendium_line_start": 7759,
+        "pdf_page": 792
       },
       {
         "id": "ANC-021",
@@ -3465,8 +3465,8 @@
         ],
         "source_l_plus_id": "SRC-060",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7782,
-        "pdf_page": 790
+        "compendium_line_start": 7760,
+        "pdf_page": 792
       },
       {
         "id": "ANC-046",
@@ -3482,8 +3482,8 @@
         ],
         "source_l_plus_id": "SRC-063, SRC-066",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7783,
-        "pdf_page": 791
+        "compendium_line_start": 7761,
+        "pdf_page": 793
       },
       {
         "id": "ANC-041",
@@ -3499,8 +3499,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7784,
-        "pdf_page": 791
+        "compendium_line_start": 7762,
+        "pdf_page": 793
       },
       {
         "id": "ANC-042",
@@ -3516,8 +3516,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7785,
-        "pdf_page": 791
+        "compendium_line_start": 7763,
+        "pdf_page": 793
       },
       {
         "id": "ANC-043",
@@ -3533,8 +3533,8 @@
         ],
         "source_l_plus_id": "SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7786,
-        "pdf_page": 791
+        "compendium_line_start": 7764,
+        "pdf_page": 793
       },
       {
         "id": "ANC-044",
@@ -3550,8 +3550,8 @@
         ],
         "source_l_plus_id": "SRC-051, SRC-052",
         "compendium_file": "Compendium/Compendium.md",
-        "compendium_line_start": 7787,
-        "pdf_page": 791
+        "compendium_line_start": 7765,
+        "pdf_page": 793
       }
     ]
   },
@@ -4528,7 +4528,7 @@
       },
       {
         "cap_id": "CAP-016",
-        "nom": "Médiation sémantique canonique vers les standards de données financiers et d’assurance",
+        "nom": "Médiation sémantique canonique vers les standards de données sectoriels et d’entreprise (ISO 20022, FIBO, EDI/UBL, FHIR, ISA-95)",
         "intitule_condense": "Médiation vers standards sectoriels",
         "emplacement": "contexte-connaissance",
         "statut": "invariante",
@@ -10047,7 +10047,7 @@
         {
           "unit_id": "ch01",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch01-ancrage.md",
-          "word_count": 4836,
+          "word_count": 4946,
           "supported_claims": 41,
           "total_claims": 41,
           "strict_passed": true,
@@ -10056,16 +10056,16 @@
         {
           "unit_id": "ch02",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch02-ancrage.md",
-          "word_count": 4082,
-          "supported_claims": null,
-          "total_claims": null,
+          "word_count": 3969,
+          "supported_claims": 47,
+          "total_claims": 47,
           "strict_passed": true,
           "control_summary": "`3 683` mots (`verifie_manuscrit.py`) / `3 938` mots (`parser_plan.py`) dans `[3 552, 4 168]`, `verifie_manuscrit.py --unit ch02 --strict` = `exit 0`, **100,0 % supporté**."
         },
         {
           "unit_id": "ch03",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch03-ancrage.md",
-          "word_count": 4726,
+          "word_count": 4659,
           "supported_claims": 53,
           "total_claims": 53,
           "strict_passed": true,
@@ -10074,16 +10074,16 @@
         {
           "unit_id": "ch04",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch04-ancrage.md",
-          "word_count": 4432,
-          "supported_claims": 56,
-          "total_claims": 56,
+          "word_count": 4275,
+          "supported_claims": 57,
+          "total_claims": 57,
           "strict_passed": true,
-          "control_summary": "`4 507` mots (`verifie_manuscrit.py`) dans `[4 076, 4 784]`, `verifie_manuscrit.py --unit ch04 --strict` = `exit 0`. **Verdict final : `56 / 56` (`100,0 %` supporté).**"
+          "control_summary": ""
         },
         {
           "unit_id": "ch05",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch05-ancrage.md",
-          "word_count": 77,
+          "word_count": 3977,
           "supported_claims": 38,
           "total_claims": 38,
           "strict_passed": true,
@@ -10092,7 +10092,7 @@
         {
           "unit_id": "ch06",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch06-ancrage.md",
-          "word_count": 5279,
+          "word_count": 5621,
           "supported_claims": 53,
           "total_claims": 53,
           "strict_passed": true,
@@ -10105,7 +10105,7 @@
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
-          "control_summary": "`4 262` mots (`verifie_manuscrit.py`) / `4 434` mots (`parser_plan.py`) dans `[3 901, 4 579]`, `verifie_manuscrit.py --unit ch07 --strict` = `exit 0`, **100,0 % supporté**."
+          "control_summary": "`verifie_manuscrit.py --unit ch07 --strict` = `exit 0`, **100,0 % supporté**."
         },
         {
           "unit_id": "ch08",
@@ -10114,7 +10114,7 @@
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
-          "control_summary": "`4 489` mots (`verifie_manuscrit.py`) / `4 676` mots (`parser_plan.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch08 --strict` = `exit 0`, **100,0 % supporté**."
+          "control_summary": "`verifie_manuscrit.py --unit ch08 --strict` = `exit 0`, **100,0 % supporté**."
         },
         {
           "unit_id": "ch09",
@@ -10128,7 +10128,7 @@
         {
           "unit_id": "ch10",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch10-ancrage.md",
-          "word_count": 4435,
+          "word_count": null,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10137,7 +10137,7 @@
         {
           "unit_id": "ch11",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch11-ancrage.md",
-          "word_count": 4048,
+          "word_count": null,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10146,7 +10146,7 @@
         {
           "unit_id": "ch12",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch12-ancrage.md",
-          "word_count": 4417,
+          "word_count": null,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10155,7 +10155,7 @@
         {
           "unit_id": "ch13",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch13-ancrage.md",
-          "word_count": 4835,
+          "word_count": 5356,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10164,7 +10164,7 @@
         {
           "unit_id": "ch14",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch14-ancrage.md",
-          "word_count": 3628,
+          "word_count": 3790,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10173,7 +10173,7 @@
         {
           "unit_id": "ch15",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch15-ancrage.md",
-          "word_count": 4321,
+          "word_count": 4547,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10182,7 +10182,7 @@
         {
           "unit_id": "ch16",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch16-ancrage.md",
-          "word_count": 4773,
+          "word_count": 4863,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10191,7 +10191,7 @@
         {
           "unit_id": "ch17",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch17-ancrage.md",
-          "word_count": 4435,
+          "word_count": 4657,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10200,7 +10200,7 @@
         {
           "unit_id": "ch18",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch18-ancrage.md",
-          "word_count": 3786,
+          "word_count": 3935,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10209,7 +10209,7 @@
         {
           "unit_id": "ch19",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch19-ancrage.md",
-          "word_count": 4491,
+          "word_count": 4669,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10218,7 +10218,7 @@
         {
           "unit_id": "ch20",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch20-ancrage.md",
-          "word_count": 4806,
+          "word_count": 4991,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10227,7 +10227,7 @@
         {
           "unit_id": "ch21",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch21-ancrage.md",
-          "word_count": 3973,
+          "word_count": 4086,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10236,7 +10236,7 @@
         {
           "unit_id": "ch22",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch22-ancrage.md",
-          "word_count": 4538,
+          "word_count": 4799,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10245,7 +10245,7 @@
         {
           "unit_id": "ch23",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch23-ancrage.md",
-          "word_count": 4351,
+          "word_count": 4542,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10254,7 +10254,7 @@
         {
           "unit_id": "ch24",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch24-ancrage.md",
-          "word_count": 4032,
+          "word_count": 4067,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10263,7 +10263,7 @@
         {
           "unit_id": "ch25",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch25-ancrage.md",
-          "word_count": 5026,
+          "word_count": 5239,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10272,7 +10272,7 @@
         {
           "unit_id": "ch26",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch26-ancrage.md",
-          "word_count": 4513,
+          "word_count": 4570,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10281,7 +10281,7 @@
         {
           "unit_id": "ch27",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch27-ancrage.md",
-          "word_count": 4010,
+          "word_count": 4231,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10290,7 +10290,7 @@
         {
           "unit_id": "ch28",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch28-ancrage.md",
-          "word_count": 4876,
+          "word_count": 4729,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10299,7 +10299,7 @@
         {
           "unit_id": "ch29",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch29-ancrage.md",
-          "word_count": 4645,
+          "word_count": 4335,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10308,7 +10308,7 @@
         {
           "unit_id": "ch30",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch30-ancrage.md",
-          "word_count": 4186,
+          "word_count": 4435,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10317,7 +10317,7 @@
         {
           "unit_id": "ch31",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch31-ancrage.md",
-          "word_count": 5168,
+          "word_count": 5256,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10326,7 +10326,7 @@
         {
           "unit_id": "ch32",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch32-ancrage.md",
-          "word_count": 4499,
+          "word_count": 4795,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10335,7 +10335,7 @@
         {
           "unit_id": "ch33",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch33-ancrage.md",
-          "word_count": 3699,
+          "word_count": 3623,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10344,7 +10344,7 @@
         {
           "unit_id": "ch34",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch34-ancrage.md",
-          "word_count": 4223,
+          "word_count": 4247,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10353,7 +10353,7 @@
         {
           "unit_id": "ch35",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch35-ancrage.md",
-          "word_count": 3994,
+          "word_count": 4210,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10362,7 +10362,7 @@
         {
           "unit_id": "ch36",
           "journal_file": "Sources/Compendium/ouvrage/ancrage/ch36-ancrage.md",
-          "word_count": 5610,
+          "word_count": 6065,
           "supported_claims": null,
           "total_claims": null,
           "strict_passed": true,
@@ -10371,7 +10371,7 @@
       ],
       "rapports_g0": {
         "schema_version": "1.0.0",
-        "executed_at": "2026-11-25T17:26:57Z",
+        "executed_at": "2026-11-28T01:32:05Z",
         "freeze_date": "2026-12-02",
         "platform": {
           "os": "windows-amd64",
@@ -11547,8 +11547,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 931,
-        "pdf_page": 98
+        "compendium_md_line": 933,
+        "pdf_page": 97
       },
       {
         "fr": "Clause non-avis",
@@ -11559,7 +11559,7 @@
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
         "compendium_md_line": 78,
-        "pdf_page": 7
+        "pdf_page": 8
       },
       {
         "fr": "Statut F",
@@ -11569,19 +11569,19 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 6032,
-        "pdf_page": 642
+        "compendium_md_line": 6016,
+        "pdf_page": 643
       },
       {
         "fr": "Harnais déterministe",
         "en": "Deterministic Harness",
-        "definition": "Enveloppe de code exécutée hors du LLM appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, réparation bornée et escalade explicite.",
+        "definition": "Enveloppe d'exécution durcie hors du LLM isolant le modèle et appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, plafonds de tours et de budget, réparation bornée, médiation d'outils et escalade explicite.",
         "chapitre_proprietaire": "ch04",
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 714,
-        "pdf_page": 79
+        "compendium_md_line": 734,
+        "pdf_page": 82
       },
       {
         "fr": "Partition 80/20",
@@ -11591,19 +11591,19 @@
         "source_l_plus_id": "SRC-027",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 722,
-        "pdf_page": 79
+        "compendium_md_line": 724,
+        "pdf_page": 80
       },
       {
         "fr": "Dérive silencieuse",
         "en": "Silent Drift (Rug Pull)",
-        "definition": "Modification non déclarée de la description ou du schéma d'un outil MCP entre versions, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
+        "definition": "Modification non déclarée de la description, du schéma ou du comportement d'un serveur d'outils MCP sous un même identifiant logique après approbation, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
         "chapitre_proprietaire": "ch07",
         "source_l_plus_id": "SRC-057",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1372,
-        "pdf_page": 145
+        "compendium_md_line": 1374,
+        "pdf_page": 146
       },
       {
         "fr": "Épinglage cryptographique",
@@ -11613,8 +11613,8 @@
         "source_l_plus_id": "SRC-077",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1376,
-        "pdf_page": 146
+        "compendium_md_line": 1378,
+        "pdf_page": 147
       },
       {
         "fr": "Carte d'agent",
@@ -11624,8 +11624,8 @@
         "source_l_plus_id": "SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1483,
-        "pdf_page": 154
+        "compendium_md_line": 1485,
+        "pdf_page": 155
       },
       {
         "fr": "Identité non humaine",
@@ -11635,8 +11635,8 @@
         "source_l_plus_id": "SRC-046",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2726,
-        "pdf_page": 291
+        "compendium_md_line": 2727,
+        "pdf_page": 295
       },
       {
         "fr": "Passage de jeton",
@@ -11646,8 +11646,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2894,
-        "pdf_page": 309
+        "compendium_md_line": 2895,
+        "pdf_page": 314
       },
       {
         "fr": "Jeton de transaction",
@@ -11657,8 +11657,8 @@
         "source_l_plus_id": "SRC-013",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2904,
-        "pdf_page": 310
+        "compendium_md_line": 2905,
+        "pdf_page": 315
       },
       {
         "fr": "Preuve d'action C.6",
@@ -11668,30 +11668,30 @@
         "source_l_plus_id": "SRC-045",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2906,
-        "pdf_page": 310
+        "compendium_md_line": 2907,
+        "pdf_page": 315
       },
       {
         "fr": "Double couloir probatoire",
         "en": "Dual Evidence Pipeline",
-        "definition": "Séparation stricte entre la télémétrie opérationnelle OTel caviardée sans contenu brut et le journal d'audit immuable canonisé JCS/SCITT.",
+        "definition": "Séparation stricte entre la télémétrie opérationnelle OTel à faible latence caviardée sans contenu brut et le journal d'audit probatoire immuable horodaté et canonisé JCS/SCITT.",
         "chapitre_proprietaire": "ch22",
-        "source_l_plus_id": "SRC-044",
+        "source_l_plus_id": "SRC-037, SRC-044",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3809,
-        "pdf_page": 395
+        "compendium_md_line": 3810,
+        "pdf_page": 402
       },
       {
         "fr": "Coût par résultat conforme",
         "en": "Cost Per Compliant Outcome (CPO)",
-        "definition": "Indicateur FinOps calculant en arithmétique décimale exacte (FOCUS v1.4) le coût total rapporté au nombre d'exécutions validées sans violation.",
+        "definition": "Indicateur FinOps (sigle CPO) calculant en arithmétique décimale exacte (FOCUS v1.4) le coût complet d'une exécution métier validée sans violation — inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
         "chapitre_proprietaire": "ch24",
         "source_l_plus_id": "SRC-023",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4163,
-        "pdf_page": 431
+        "compendium_md_line": 4166,
+        "pdf_page": 438
       },
       {
         "fr": "Règle de deux",
@@ -11701,8 +11701,8 @@
         "source_l_plus_id": "SRC-087",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3452,
-        "pdf_page": 359
+        "compendium_md_line": 3453,
+        "pdf_page": 365
       },
       {
         "fr": "Contamination CaMeL",
@@ -11712,8 +11712,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3458,
-        "pdf_page": 359
+        "compendium_md_line": 3459,
+        "pdf_page": 366
       },
       {
         "fr": "Échec en mode fermé",
@@ -11723,19 +11723,19 @@
         "source_l_plus_id": "SRC-088",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3458,
-        "pdf_page": 359
+        "compendium_md_line": 3459,
+        "pdf_page": 365
       },
       {
         "fr": "Saga compensable",
         "en": "Compensable Saga",
-        "definition": "Enchaînement durable d'actions atomiques muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses isolées jusqu'au point pivot.",
+        "definition": "Enchaînement durable d'actions atomiques sans verrou distribué muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses acheminées sur un canal isolé jusqu'au point pivot.",
         "chapitre_proprietaire": "ch15",
-        "source_l_plus_id": "SRC-006",
+        "source_l_plus_id": "SRC-006, SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2552,
+        "pdf_page": 277
       },
       {
         "fr": "Point pivot",
@@ -11745,8 +11745,8 @@
         "source_l_plus_id": "SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2552,
+        "pdf_page": 277
       },
       {
         "fr": "Canal de compensation isolé",
@@ -11756,19 +11756,19 @@
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2542,
+        "pdf_page": 276
       },
       {
         "fr": "Constance pass^k",
         "en": "pass^k Consistency",
-        "definition": "Probabilité empirique qu'un agent réussisse l'ensemble de k exécutions indépendantes consécutives d'une même tâche, distinguée de pass@k.",
+        "definition": "Probabilité empirique qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production par opposition à pass@k.",
         "chapitre_proprietaire": "ch23",
         "source_l_plus_id": "SRC-029",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
+        "compendium_md_line": 3995,
+        "pdf_page": 421
       },
       {
         "fr": "Borne de Wilson",
@@ -11778,8 +11778,8 @@
         "source_l_plus_id": "SRC-022",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
+        "compendium_md_line": 3995,
+        "pdf_page": 421
       },
       {
         "fr": "Test métamorphique sans oracle",
@@ -11789,30 +11789,30 @@
         "source_l_plus_id": "SRC-092",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
+        "compendium_md_line": 3995,
+        "pdf_page": 421
       },
       {
         "fr": "Porte PRR bloquante",
         "en": "Blocking Production Readiness Gate",
-        "definition": "Critère bloquant issu des 24 points [BLOQUANT] du Compendium 2027 et de la fiche 2027-B001 conditionnant la mise en production.",
+        "definition": "Critère bloquant issu des 24 points [BLOQUANT] du dossier Tome 3 (Compendium 2027) et de la fiche 2027-B001 conditionnant la mise en production.",
         "chapitre_proprietaire": "ch34",
         "source_l_plus_id": "SRC-067",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5669,
-        "pdf_page": 607
+        "compendium_md_line": 5647,
+        "pdf_page": 608
       },
       {
         "fr": "tissu conjonctif agentique",
         "en": "agentic connective tissue",
-        "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et de l'orchestration déterministe reliant agents spécialisés, patrimoine applicatif, partenaires externes et superviseurs humains.",
+        "definition": "Architecture d'interopérabilité multicouche (protocolaire, contractuelle, sémantique, événementielle et identitaire) et de contrôle d'exécution reliant l'automatisation agentique au continuum déterministe (règles, BPM, iPaaS, RPA) ainsi qu'aux systèmes d'entreprise (SoR, SoE, ERP, CRM, SIRH, ITSM, OT) et aux superviseurs humains.",
         "chapitre_proprietaire": "00-liminaire",
         "source_l_plus_id": "SRC-039",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 100,
-        "pdf_page": 11
+        "compendium_md_line": 102,
+        "pdf_page": 12
       },
       {
         "fr": "règle du maillon le plus élevé",
@@ -11822,19 +11822,19 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 935,
-        "pdf_page": 98
+        "compendium_md_line": 937,
+        "pdf_page": 97
       },
       {
         "fr": "industrialisation cognitive",
         "en": "cognitive industrialization",
-        "definition": "Standardisation, automatisation à grande échelle et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement.",
+        "definition": "Standardisation et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement, déplaçant le goulot d'étranglement vers l'interopérabilité, la gouvernance hors modèle et la sûreté des mutations sur les systèmes d'entreprise.",
         "chapitre_proprietaire": "ch01",
-        "source_l_plus_id": "SRC-001",
+        "source_l_plus_id": "SRC-001, SRC-027",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 223,
-        "pdf_page": 25
+        "compendium_md_line": 225,
+        "pdf_page": 27
       },
       {
         "fr": "loi de Lusser",
@@ -11844,8 +11844,8 @@
         "source_l_plus_id": "SRC-024",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 381,
-        "pdf_page": 44
+        "compendium_md_line": 383,
+        "pdf_page": 45
       },
       {
         "fr": "coût de transaction cognitif",
@@ -11855,8 +11855,8 @@
         "source_l_plus_id": "SRC-097",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 543,
-        "pdf_page": 60
+        "compendium_md_line": 545,
+        "pdf_page": 61
       },
       {
         "fr": "économie d'agents virtuels",
@@ -11866,19 +11866,8 @@
         "source_l_plus_id": "SRC-096",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 551,
-        "pdf_page": 61
-      },
-      {
-        "fr": "harnais d'agent",
-        "en": "agent harness",
-        "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil.",
-        "chapitre_proprietaire": "ch04",
-        "source_l_plus_id": "SRC-021",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 732,
-        "pdf_page": 81
+        "compendium_md_line": 553,
+        "pdf_page": 62
       },
       {
         "fr": "noyau de contrôle déterministe",
@@ -11888,7 +11877,7 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1074,
+        "compendium_md_line": 1080,
         "pdf_page": 114
       },
       {
@@ -11899,8 +11888,8 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 631,
-        "pdf_page": 69
+        "compendium_md_line": 633,
+        "pdf_page": 71
       },
       {
         "fr": "quadruple dette agentique",
@@ -11910,41 +11899,41 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 533,
-        "pdf_page": 59
+        "compendium_md_line": 541,
+        "pdf_page": 61
       },
       {
         "fr": "interopérabilité verticale et horizontale",
         "en": "vertical and horizontal interoperability",
-        "definition": "Séparation entre les protocoles verticaux reliant un agent à ses outils et les protocoles horizontaux coordonnant la délégation asynchrone entre agents de domaines ou d'organisations distincts.",
+        "definition": "Séparation entre les protocoles verticaux (MCP) raccordant un agent aux façades d'intention, API et adaptateurs encapsulant les systèmes d'entreprise (ERP, CRM, SIRH, ITSM, SoR, OT) sous passerelle PEP, et les protocoles horizontaux (A2A) coordonnant la délégation asynchrone inter-domaines et B2B.",
         "chapitre_proprietaire": "ch07",
         "source_l_plus_id": "SRC-072, SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1283,
-        "pdf_page": 135
+        "compendium_md_line": 1285,
+        "pdf_page": 136
       },
       {
         "fr": "couche anti-corruption",
         "en": "Anti-Corruption Layer",
-        "definition": "Façade déterministe (sigle ACL) placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes.",
+        "definition": "Façade déterministe (sigle ACL) placée devant les systèmes d'enregistrement patrimoniaux (mainframes COBOL/EBCDIC, ERP, CRM, SIRH, passerelles EDI) pour traduire les schémas historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre toute requête ou mutation directe du modèle.",
         "chapitre_proprietaire": "ch12",
-        "source_l_plus_id": "SRC-070",
+        "source_l_plus_id": "SRC-021, SRC-070",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2131,
-        "pdf_page": 223
+        "compendium_md_line": 2130,
+        "pdf_page": 224
       },
       {
         "fr": "couche sémantique métier",
         "en": "enterprise semantic layer",
-        "definition": "Registre gouverné de définitions univoques des entités, métriques, agrégations et invariants juridiques ancrant les agents sur un sens métier commun plutôt que sur des schémas bruts.",
+        "definition": "Registre gouverné de définitions univoques harmonisant les entités, unités, états et invariants métiers entre systèmes d'entreprise hétérogènes (ERP, CRM, SCM, SIRH, industrie, santé, finance ISO 20022/FIBO) afin que deux composants échangeant un schéma valide partagent un sens commun.",
         "chapitre_proprietaire": "ch10",
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1860,
-        "pdf_page": 193
+        "compendium_md_line": 1859,
+        "pdf_page": 194
       },
       {
         "fr": "blanchiment de frontière",
@@ -11954,30 +11943,19 @@
         "source_l_plus_id": "SRC-055",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3300,
-        "pdf_page": 344
+        "compendium_md_line": 3291,
+        "pdf_page": 348
       },
       {
         "fr": "exécution durable",
         "en": "durable execution",
-        "definition": "Orchestration persistant chaque étape et réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits.",
+        "definition": "Mécanisme déterministe de machine à états hors processus persistant chaque transition, appel de système d'entreprise et réponse d'inférence dans un journal d'événements rejouable afin de reprendre une tâche longue après panne sans dupliquer les effets de bord déjà produits.",
         "chapitre_proprietaire": "ch15",
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2541,
-        "pdf_page": 273
-      },
-      {
-        "fr": "saga à point pivot",
-        "en": "pivot-transaction saga",
-        "definition": "Séquence de transactions locales sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une compensation idempotente acheminée sur un canal dédié.",
-        "chapitre_proprietaire": "ch15",
-        "source_l_plus_id": "SRC-033",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2542,
+        "pdf_page": 276
       },
       {
         "fr": "clé d'idempotence transactionnelle",
@@ -11987,8 +11965,8 @@
         "source_l_plus_id": "SRC-036",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2552,
+        "pdf_page": 277
       },
       {
         "fr": "effet Ringelmann multi-agents",
@@ -11998,8 +11976,8 @@
         "source_l_plus_id": "SRC-032",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2276,
-        "pdf_page": 241
+        "compendium_md_line": 2275,
+        "pdf_page": 242
       },
       {
         "fr": "délégation au nom du mandant",
@@ -12009,8 +11987,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2904,
-        "pdf_page": 310
+        "compendium_md_line": 2905,
+        "pdf_page": 315
       },
       {
         "fr": "crypto-agilité post-quantique",
@@ -12020,8 +11998,8 @@
         "source_l_plus_id": "SRC-050, SRC-051",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3126,
-        "pdf_page": 329
+        "compendium_md_line": 3127,
+        "pdf_page": 334
       },
       {
         "fr": "injection indirecte de consignes",
@@ -12031,8 +12009,8 @@
         "source_l_plus_id": "SRC-054",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3290,
-        "pdf_page": 343
+        "compendium_md_line": 3291,
+        "pdf_page": 348
       },
       {
         "fr": "séparation par construction entre contrôle et données",
@@ -12042,19 +12020,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3458,
-        "pdf_page": 369
-      },
-      {
-        "fr": "dérive silencieuse d'outil",
-        "en": "silent tool drift",
-        "definition": "Altération discrète des descriptions, schémas ou comportements d'un serveur d'outils sous un même identifiant logique après approbation, créant un vecteur d'empoisonnement de la chaîne d'approvisionnement.",
-        "chapitre_proprietaire": "ch07",
-        "source_l_plus_id": "SRC-057",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1376,
-        "pdf_page": 145
+        "compendium_md_line": 3459,
+        "pdf_page": 375
       },
       {
         "fr": "analyse de contrôle STPA",
@@ -12064,41 +12031,8 @@
         "source_l_plus_id": "SRC-058",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3724,
-        "pdf_page": 385
-      },
-      {
-        "fr": "constance multi-essais",
-        "en": "pass^k consistency",
-        "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production plutôt que la réussite ponctuelle.",
-        "chapitre_proprietaire": "ch23",
-        "source_l_plus_id": "SRC-029",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
-      },
-      {
-        "fr": "coût complet par résultat conforme",
-        "en": "Cost per Compliant Outcome",
-        "definition": "Métrique économique (sigle CPO) mesurant le coût total d'une transaction métier menée sans erreur : inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
-        "chapitre_proprietaire": "ch24",
-        "source_l_plus_id": "SRC-023",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4167,
-        "pdf_page": 432
-      },
-      {
-        "fr": "télémétrie à double couloir",
-        "en": "dual-lane telemetry",
-        "definition": "Observabilité séparant la télémétrie opérationnelle à faible latence des preuves canoniques horodatées et hachées dédiées à l'audit réglementaire et à la relecture d'incidents.",
-        "chapitre_proprietaire": "ch22",
-        "source_l_plus_id": "SRC-037",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3811,
-        "pdf_page": 395
+        "compendium_md_line": 3725,
+        "pdf_page": 391
       },
       {
         "fr": "décision fondée exclusivement sur un traitement automatisé",
@@ -12108,8 +12042,8 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4308,
-        "pdf_page": 448
+        "compendium_md_line": 4311,
+        "pdf_page": 456
       },
       {
         "fr": "approbation réflexe",
@@ -12119,8 +12053,8 @@
         "source_l_plus_id": "SRC-073",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5530,
-        "pdf_page": 591
+        "compendium_md_line": 5510,
+        "pdf_page": 593
       },
       {
         "fr": "trajectoire adaptative sous seuils",
@@ -12130,30 +12064,96 @@
         "source_l_plus_id": "SRC-112",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5228,
-        "pdf_page": 554
+        "compendium_md_line": 5206,
+        "pdf_page": 559
+      },
+      {
+        "fr": "Automatisation agentique",
+        "en": "Agentic Automation",
+        "definition": "Modalité d'automatisation dans laquelle une boucle cognitive bornée planifie, sélectionne des outils typés et traite les cas ambigus à l'intérieur d'un exosquelette déterministe, en complément et non en remplacement des automatismes déterministes (L0).",
+        "chapitre_proprietaire": "00-liminaire",
+        "source_l_plus_id": "SRC-027, SRC-101, SRC-122",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 74,
+        "pdf_page": 8
+      },
+      {
+        "fr": "Continuum d'automatisation",
+        "en": "Enterprise Automation Continuum",
+        "definition": "Graduation ordonnée reliant les automatismes déterministes sans modèle (L0 : code, SQL, politiques OPA, DMN, BPM/BPMN, iPaaS, RPA fixe) aux niveaux d'autonomie assistée et déléguée (L1–L4) selon la prévisibilité du flux et la réversibilité des effets.",
+        "chapitre_proprietaire": "ch04",
+        "source_l_plus_id": "SRC-027, SRC-066, SRC-101",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 716,
+        "pdf_page": 80
+      },
+      {
+        "fr": "Système d'entreprise",
+        "en": "Enterprise System",
+        "definition": "Application sociotechnique critique soutenant les opérations d'une organisation — systèmes d'enregistrement (SoR : ERP, grands livres, SIRH, PLM), systèmes d'engagement (SoE : CRM, portails), plateformes transverses (ITSM, SCM) et systèmes industriels (OT/SCADA) — soumise à des invariants d'intégrité, de sécurité et de conformité.",
+        "chapitre_proprietaire": "ch06",
+        "source_l_plus_id": "SRC-055, SRC-066, SRC-122",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1080,
+        "pdf_page": 114
+      },
+      {
+        "fr": "Interopérabilité sémantique et pragmatique",
+        "en": "Semantic and Pragmatic Interoperability",
+        "definition": "Capacité de systèmes d'entreprise et d'agents hétérogènes à préserver non seulement la validité syntaxique des messages échangés, mais aussi la signification univoque des concepts métiers, des unités, de la bi-temporalité et de l'effet d'état attendu.",
+        "chapitre_proprietaire": "ch10",
+        "source_l_plus_id": "SRC-021, SRC-035, SRC-083",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1847,
+        "pdf_page": 192
+      },
+      {
+        "fr": "Sobriété d'orchestration",
+        "en": "Orchestration Sobriety (OO1–OO4)",
+        "definition": "Discipline d'architecture imposant de résoudre tout processus d'entreprise par le palier le plus simple qui satisfait l'objectif — flux déterministe (OO1), appel enrichi unique (OO2) ou agent unique outillé (OO3) — avant d'autoriser un collectif multi-agents (OO4).",
+        "chapitre_proprietaire": "ch13",
+        "source_l_plus_id": "SRC-011, SRC-027, SRC-032",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2263,
+        "pdf_page": 241
+      },
+      {
+        "fr": "Sas déterministe IT/OT et confinement CUA",
+        "en": "Deterministic IT/OT Airlock and CUA Confinement",
+        "definition": "Double dispositif de sûreté frontalière combinant l'isolation physique ou logique entre le système d'information (IT) et les équipements industriels (OT, interdisant toute commande directe hors automate déterministe ou arbitre Simplex) et l'encadrement dérogatoire en microVM éphémère (bail maximal de 12 mois) des agents pilotant l'écran de progiciels sans API (CUA).",
+        "chapitre_proprietaire": "ch12",
+        "source_l_plus_id": "SRC-008, SRC-010, SRC-055, SRC-058, SRC-101",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2134,
+        "pdf_page": 226
       },
       {
         "fr": "Système d'agentivité",
         "en": "System of Agency / System of Action (SoA)",
-        "definition": "Couche applicative d'action orchestrée par des agents spécialisés encadrés par un exosquelette déterministe, distincte des systèmes d'engagement (SoE) et des systèmes d'enregistrement (SoR).",
+        "definition": "Strate applicative d'action (SoA) mettant en œuvre une automatisation agentique sous exosquelette déterministe, subordonnée aux contrats d'interopérabilité et aux règles d'intégrité des systèmes d'enregistrement (SoR), des systèmes d'engagement (SoE) et des environnements opérationnels (OT).",
         "chapitre_proprietaire": "ch01",
         "source_l_plus_id": "SRC-027, SRC-122",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 221,
-        "pdf_page": 25
+        "compendium_md_line": 227,
+        "pdf_page": 27
       },
       {
         "fr": "Agentivité des systèmes",
         "en": "system agency",
-        "definition": "Propriété émergente, composite et bornée par laquelle un système sociotechnique complet exécute des tâches multi-étapes grâce au couplage d'un modèle cognitif, d'un harnais déterministe, d'outils vérifiés, d'une mémoire gouvernée, d'une identité non humaine et d'une supervision humaine, plutôt que par les seuls poids d'un modèle.",
+        "definition": "Propriété émergente, composite et bornée par laquelle un système d'entreprise exécute des processus multi-étapes grâce au couplage vérifiable entre automatismes déterministes, modèles cognitifs, protocoles d'interopérabilité, outils typés, mémoire gouvernée, identité non humaine et supervision humaine, plutôt que par les seuls poids d'un modèle.",
         "chapitre_proprietaire": "ch01",
         "source_l_plus_id": "SRC-001, SRC-122, SRC-123",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 247,
-        "pdf_page": 28
+        "compendium_md_line": 249,
+        "pdf_page": 30
       }
     ],
     "vedettes_t8": [
@@ -12165,8 +12165,8 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 931,
-        "pdf_page": 98
+        "compendium_md_line": 933,
+        "pdf_page": 97
       },
       {
         "fr": "Clause non-avis",
@@ -12177,7 +12177,7 @@
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
         "compendium_md_line": 78,
-        "pdf_page": 7
+        "pdf_page": 8
       },
       {
         "fr": "Statut F",
@@ -12187,19 +12187,19 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 6032,
-        "pdf_page": 642
+        "compendium_md_line": 6016,
+        "pdf_page": 643
       },
       {
         "fr": "Harnais déterministe",
         "en": "Deterministic Harness",
-        "definition": "Enveloppe de code exécutée hors du LLM appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, réparation bornée et escalade explicite.",
+        "definition": "Enveloppe d'exécution durcie hors du LLM isolant le modèle et appliquant séquentiellement validation d'entrée, ancrage, contrôle strict de schéma, plafonds de tours et de budget, réparation bornée, médiation d'outils et escalade explicite.",
         "chapitre_proprietaire": "ch04",
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 714,
-        "pdf_page": 79
+        "compendium_md_line": 734,
+        "pdf_page": 82
       },
       {
         "fr": "Partition 80/20",
@@ -12209,19 +12209,19 @@
         "source_l_plus_id": "SRC-027",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 722,
-        "pdf_page": 79
+        "compendium_md_line": 724,
+        "pdf_page": 80
       },
       {
         "fr": "Dérive silencieuse",
         "en": "Silent Drift (Rug Pull)",
-        "definition": "Modification non déclarée de la description ou du schéma d'un outil MCP entre versions, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
+        "definition": "Modification non déclarée de la description, du schéma ou du comportement d'un serveur d'outils MCP sous un même identifiant logique après approbation, détectée par comparaison d'empreinte SHA-256 canonisée JCS.",
         "chapitre_proprietaire": "ch07",
         "source_l_plus_id": "SRC-057",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1372,
-        "pdf_page": 145
+        "compendium_md_line": 1374,
+        "pdf_page": 146
       },
       {
         "fr": "Épinglage cryptographique",
@@ -12231,8 +12231,8 @@
         "source_l_plus_id": "SRC-077",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1376,
-        "pdf_page": 146
+        "compendium_md_line": 1378,
+        "pdf_page": 147
       },
       {
         "fr": "Carte d'agent",
@@ -12242,8 +12242,8 @@
         "source_l_plus_id": "SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1483,
-        "pdf_page": 154
+        "compendium_md_line": 1485,
+        "pdf_page": 155
       },
       {
         "fr": "Identité non humaine",
@@ -12253,8 +12253,8 @@
         "source_l_plus_id": "SRC-046",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2726,
-        "pdf_page": 291
+        "compendium_md_line": 2727,
+        "pdf_page": 295
       },
       {
         "fr": "Passage de jeton",
@@ -12264,8 +12264,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2894,
-        "pdf_page": 309
+        "compendium_md_line": 2895,
+        "pdf_page": 314
       },
       {
         "fr": "Jeton de transaction",
@@ -12275,8 +12275,8 @@
         "source_l_plus_id": "SRC-013",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2904,
-        "pdf_page": 310
+        "compendium_md_line": 2905,
+        "pdf_page": 315
       },
       {
         "fr": "Preuve d'action C.6",
@@ -12286,30 +12286,30 @@
         "source_l_plus_id": "SRC-045",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2906,
-        "pdf_page": 310
+        "compendium_md_line": 2907,
+        "pdf_page": 315
       },
       {
         "fr": "Double couloir probatoire",
         "en": "Dual Evidence Pipeline",
-        "definition": "Séparation stricte entre la télémétrie opérationnelle OTel caviardée sans contenu brut et le journal d'audit immuable canonisé JCS/SCITT.",
+        "definition": "Séparation stricte entre la télémétrie opérationnelle OTel à faible latence caviardée sans contenu brut et le journal d'audit probatoire immuable horodaté et canonisé JCS/SCITT.",
         "chapitre_proprietaire": "ch22",
-        "source_l_plus_id": "SRC-044",
+        "source_l_plus_id": "SRC-037, SRC-044",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3809,
-        "pdf_page": 395
+        "compendium_md_line": 3810,
+        "pdf_page": 402
       },
       {
         "fr": "Coût par résultat conforme",
         "en": "Cost Per Compliant Outcome (CPO)",
-        "definition": "Indicateur FinOps calculant en arithmétique décimale exacte (FOCUS v1.4) le coût total rapporté au nombre d'exécutions validées sans violation.",
+        "definition": "Indicateur FinOps (sigle CPO) calculant en arithmétique décimale exacte (FOCUS v1.4) le coût complet d'une exécution métier validée sans violation — inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
         "chapitre_proprietaire": "ch24",
         "source_l_plus_id": "SRC-023",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4163,
-        "pdf_page": 431
+        "compendium_md_line": 4166,
+        "pdf_page": 438
       },
       {
         "fr": "Règle de deux",
@@ -12319,8 +12319,8 @@
         "source_l_plus_id": "SRC-087",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3452,
-        "pdf_page": 359
+        "compendium_md_line": 3453,
+        "pdf_page": 365
       },
       {
         "fr": "Contamination CaMeL",
@@ -12330,8 +12330,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3458,
-        "pdf_page": 359
+        "compendium_md_line": 3459,
+        "pdf_page": 366
       },
       {
         "fr": "Échec en mode fermé",
@@ -12341,19 +12341,19 @@
         "source_l_plus_id": "SRC-088",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3458,
-        "pdf_page": 359
+        "compendium_md_line": 3459,
+        "pdf_page": 365
       },
       {
         "fr": "Saga compensable",
         "en": "Compensable Saga",
-        "definition": "Enchaînement durable d'actions atomiques muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses isolées jusqu'au point pivot.",
+        "definition": "Enchaînement durable d'actions atomiques sans verrou distribué muni d'un journal Outbox, de clés d'idempotence et d'opérations inverses acheminées sur un canal isolé jusqu'au point pivot.",
         "chapitre_proprietaire": "ch15",
-        "source_l_plus_id": "SRC-006",
+        "source_l_plus_id": "SRC-006, SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2552,
+        "pdf_page": 277
       },
       {
         "fr": "Point pivot",
@@ -12363,8 +12363,8 @@
         "source_l_plus_id": "SRC-033",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2552,
+        "pdf_page": 277
       },
       {
         "fr": "Canal de compensation isolé",
@@ -12374,19 +12374,19 @@
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2542,
+        "pdf_page": 276
       },
       {
         "fr": "Constance pass^k",
         "en": "pass^k Consistency",
-        "definition": "Probabilité empirique qu'un agent réussisse l'ensemble de k exécutions indépendantes consécutives d'une même tâche, distinguée de pass@k.",
+        "definition": "Probabilité empirique qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production par opposition à pass@k.",
         "chapitre_proprietaire": "ch23",
         "source_l_plus_id": "SRC-029",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
+        "compendium_md_line": 3995,
+        "pdf_page": 421
       },
       {
         "fr": "Borne de Wilson",
@@ -12396,8 +12396,8 @@
         "source_l_plus_id": "SRC-022",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
+        "compendium_md_line": 3995,
+        "pdf_page": 421
       },
       {
         "fr": "Test métamorphique sans oracle",
@@ -12407,30 +12407,30 @@
         "source_l_plus_id": "SRC-092",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
+        "compendium_md_line": 3995,
+        "pdf_page": 421
       },
       {
         "fr": "Porte PRR bloquante",
         "en": "Blocking Production Readiness Gate",
-        "definition": "Critère bloquant issu des 24 points [BLOQUANT] du Compendium 2027 et de la fiche 2027-B001 conditionnant la mise en production.",
+        "definition": "Critère bloquant issu des 24 points [BLOQUANT] du dossier Tome 3 (Compendium 2027) et de la fiche 2027-B001 conditionnant la mise en production.",
         "chapitre_proprietaire": "ch34",
         "source_l_plus_id": "SRC-067",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5669,
-        "pdf_page": 607
+        "compendium_md_line": 5647,
+        "pdf_page": 608
       },
       {
         "fr": "tissu conjonctif agentique",
         "en": "agentic connective tissue",
-        "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et de l'orchestration déterministe reliant agents spécialisés, patrimoine applicatif, partenaires externes et superviseurs humains.",
+        "definition": "Architecture d'interopérabilité multicouche (protocolaire, contractuelle, sémantique, événementielle et identitaire) et de contrôle d'exécution reliant l'automatisation agentique au continuum déterministe (règles, BPM, iPaaS, RPA) ainsi qu'aux systèmes d'entreprise (SoR, SoE, ERP, CRM, SIRH, ITSM, OT) et aux superviseurs humains.",
         "chapitre_proprietaire": "00-liminaire",
         "source_l_plus_id": "SRC-039",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 100,
-        "pdf_page": 11
+        "compendium_md_line": 102,
+        "pdf_page": 12
       },
       {
         "fr": "règle du maillon le plus élevé",
@@ -12440,19 +12440,19 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 935,
-        "pdf_page": 98
+        "compendium_md_line": 937,
+        "pdf_page": 97
       },
       {
         "fr": "industrialisation cognitive",
         "en": "cognitive industrialization",
-        "definition": "Standardisation, automatisation à grande échelle et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement.",
+        "definition": "Standardisation et baisse exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement, déplaçant le goulot d'étranglement vers l'interopérabilité, la gouvernance hors modèle et la sûreté des mutations sur les systèmes d'entreprise.",
         "chapitre_proprietaire": "ch01",
-        "source_l_plus_id": "SRC-001",
+        "source_l_plus_id": "SRC-001, SRC-027",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 223,
-        "pdf_page": 25
+        "compendium_md_line": 225,
+        "pdf_page": 27
       },
       {
         "fr": "loi de Lusser",
@@ -12462,8 +12462,8 @@
         "source_l_plus_id": "SRC-024",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 381,
-        "pdf_page": 44
+        "compendium_md_line": 383,
+        "pdf_page": 45
       },
       {
         "fr": "coût de transaction cognitif",
@@ -12473,8 +12473,8 @@
         "source_l_plus_id": "SRC-097",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 543,
-        "pdf_page": 60
+        "compendium_md_line": 545,
+        "pdf_page": 61
       },
       {
         "fr": "économie d'agents virtuels",
@@ -12484,19 +12484,8 @@
         "source_l_plus_id": "SRC-096",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 551,
-        "pdf_page": 61
-      },
-      {
-        "fr": "harnais d'agent",
-        "en": "agent harness",
-        "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil.",
-        "chapitre_proprietaire": "ch04",
-        "source_l_plus_id": "SRC-021",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 732,
-        "pdf_page": 81
+        "compendium_md_line": 553,
+        "pdf_page": 62
       },
       {
         "fr": "noyau de contrôle déterministe",
@@ -12506,7 +12495,7 @@
         "source_l_plus_id": "SRC-066",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1074,
+        "compendium_md_line": 1080,
         "pdf_page": 114
       },
       {
@@ -12517,8 +12506,8 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 631,
-        "pdf_page": 69
+        "compendium_md_line": 633,
+        "pdf_page": 71
       },
       {
         "fr": "quadruple dette agentique",
@@ -12528,41 +12517,41 @@
         "source_l_plus_id": "SRC-040",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 533,
-        "pdf_page": 59
+        "compendium_md_line": 541,
+        "pdf_page": 61
       },
       {
         "fr": "interopérabilité verticale et horizontale",
         "en": "vertical and horizontal interoperability",
-        "definition": "Séparation entre les protocoles verticaux reliant un agent à ses outils et les protocoles horizontaux coordonnant la délégation asynchrone entre agents de domaines ou d'organisations distincts.",
+        "definition": "Séparation entre les protocoles verticaux (MCP) raccordant un agent aux façades d'intention, API et adaptateurs encapsulant les systèmes d'entreprise (ERP, CRM, SIRH, ITSM, SoR, OT) sous passerelle PEP, et les protocoles horizontaux (A2A) coordonnant la délégation asynchrone inter-domaines et B2B.",
         "chapitre_proprietaire": "ch07",
         "source_l_plus_id": "SRC-072, SRC-083",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1283,
-        "pdf_page": 135
+        "compendium_md_line": 1285,
+        "pdf_page": 136
       },
       {
         "fr": "couche anti-corruption",
         "en": "Anti-Corruption Layer",
-        "definition": "Façade déterministe (sigle ACL) placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes.",
+        "definition": "Façade déterministe (sigle ACL) placée devant les systèmes d'enregistrement patrimoniaux (mainframes COBOL/EBCDIC, ERP, CRM, SIRH, passerelles EDI) pour traduire les schémas historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre toute requête ou mutation directe du modèle.",
         "chapitre_proprietaire": "ch12",
-        "source_l_plus_id": "SRC-070",
+        "source_l_plus_id": "SRC-021, SRC-070",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2131,
-        "pdf_page": 223
+        "compendium_md_line": 2130,
+        "pdf_page": 224
       },
       {
         "fr": "couche sémantique métier",
         "en": "enterprise semantic layer",
-        "definition": "Registre gouverné de définitions univoques des entités, métriques, agrégations et invariants juridiques ancrant les agents sur un sens métier commun plutôt que sur des schémas bruts.",
+        "definition": "Registre gouverné de définitions univoques harmonisant les entités, unités, états et invariants métiers entre systèmes d'entreprise hétérogènes (ERP, CRM, SCM, SIRH, industrie, santé, finance ISO 20022/FIBO) afin que deux composants échangeant un schéma valide partagent un sens commun.",
         "chapitre_proprietaire": "ch10",
         "source_l_plus_id": "SRC-021",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1860,
-        "pdf_page": 193
+        "compendium_md_line": 1859,
+        "pdf_page": 194
       },
       {
         "fr": "blanchiment de frontière",
@@ -12572,30 +12561,19 @@
         "source_l_plus_id": "SRC-055",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3300,
-        "pdf_page": 344
+        "compendium_md_line": 3291,
+        "pdf_page": 348
       },
       {
         "fr": "exécution durable",
         "en": "durable execution",
-        "definition": "Orchestration persistant chaque étape et réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits.",
+        "definition": "Mécanisme déterministe de machine à états hors processus persistant chaque transition, appel de système d'entreprise et réponse d'inférence dans un journal d'événements rejouable afin de reprendre une tâche longue après panne sans dupliquer les effets de bord déjà produits.",
         "chapitre_proprietaire": "ch15",
         "source_l_plus_id": "SRC-034",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2541,
-        "pdf_page": 273
-      },
-      {
-        "fr": "saga à point pivot",
-        "en": "pivot-transaction saga",
-        "definition": "Séquence de transactions locales sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une compensation idempotente acheminée sur un canal dédié.",
-        "chapitre_proprietaire": "ch15",
-        "source_l_plus_id": "SRC-033",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2542,
+        "pdf_page": 276
       },
       {
         "fr": "clé d'idempotence transactionnelle",
@@ -12605,8 +12583,8 @@
         "source_l_plus_id": "SRC-036",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2553,
-        "pdf_page": 274
+        "compendium_md_line": 2552,
+        "pdf_page": 277
       },
       {
         "fr": "effet Ringelmann multi-agents",
@@ -12616,8 +12594,8 @@
         "source_l_plus_id": "SRC-032",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2276,
-        "pdf_page": 241
+        "compendium_md_line": 2275,
+        "pdf_page": 242
       },
       {
         "fr": "délégation au nom du mandant",
@@ -12627,8 +12605,8 @@
         "source_l_plus_id": "SRC-041",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 2904,
-        "pdf_page": 310
+        "compendium_md_line": 2905,
+        "pdf_page": 315
       },
       {
         "fr": "crypto-agilité post-quantique",
@@ -12638,8 +12616,8 @@
         "source_l_plus_id": "SRC-050, SRC-051",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3126,
-        "pdf_page": 329
+        "compendium_md_line": 3127,
+        "pdf_page": 334
       },
       {
         "fr": "injection indirecte de consignes",
@@ -12649,8 +12627,8 @@
         "source_l_plus_id": "SRC-054",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3290,
-        "pdf_page": 343
+        "compendium_md_line": 3291,
+        "pdf_page": 348
       },
       {
         "fr": "séparation par construction entre contrôle et données",
@@ -12660,19 +12638,8 @@
         "source_l_plus_id": "SRC-007",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3458,
-        "pdf_page": 369
-      },
-      {
-        "fr": "dérive silencieuse d'outil",
-        "en": "silent tool drift",
-        "definition": "Altération discrète des descriptions, schémas ou comportements d'un serveur d'outils sous un même identifiant logique après approbation, créant un vecteur d'empoisonnement de la chaîne d'approvisionnement.",
-        "chapitre_proprietaire": "ch07",
-        "source_l_plus_id": "SRC-057",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 1376,
-        "pdf_page": 145
+        "compendium_md_line": 3459,
+        "pdf_page": 375
       },
       {
         "fr": "analyse de contrôle STPA",
@@ -12682,41 +12649,8 @@
         "source_l_plus_id": "SRC-058",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3724,
-        "pdf_page": 385
-      },
-      {
-        "fr": "constance multi-essais",
-        "en": "pass^k consistency",
-        "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité réelle en production plutôt que la réussite ponctuelle.",
-        "chapitre_proprietaire": "ch23",
-        "source_l_plus_id": "SRC-029",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3992,
-        "pdf_page": 414
-      },
-      {
-        "fr": "coût complet par résultat conforme",
-        "en": "Cost per Compliant Outcome",
-        "definition": "Métrique économique (sigle CPO) mesurant le coût total d'une transaction métier menée sans erreur : inférence, réessais, évaluation, sécurité, conformité et supervision humaine.",
-        "chapitre_proprietaire": "ch24",
-        "source_l_plus_id": "SRC-023",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4167,
-        "pdf_page": 432
-      },
-      {
-        "fr": "télémétrie à double couloir",
-        "en": "dual-lane telemetry",
-        "definition": "Observabilité séparant la télémétrie opérationnelle à faible latence des preuves canoniques horodatées et hachées dédiées à l'audit réglementaire et à la relecture d'incidents.",
-        "chapitre_proprietaire": "ch22",
-        "source_l_plus_id": "SRC-037",
-        "statut_preuve": "l_plus",
-        "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 3811,
-        "pdf_page": 395
+        "compendium_md_line": 3725,
+        "pdf_page": 391
       },
       {
         "fr": "décision fondée exclusivement sur un traitement automatisé",
@@ -12726,8 +12660,8 @@
         "source_l_plus_id": "SRC-063",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 4308,
-        "pdf_page": 448
+        "compendium_md_line": 4311,
+        "pdf_page": 456
       },
       {
         "fr": "approbation réflexe",
@@ -12737,8 +12671,8 @@
         "source_l_plus_id": "SRC-073",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5530,
-        "pdf_page": 591
+        "compendium_md_line": 5510,
+        "pdf_page": 593
       },
       {
         "fr": "trajectoire adaptative sous seuils",
@@ -12748,30 +12682,96 @@
         "source_l_plus_id": "SRC-112",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 5228,
-        "pdf_page": 554
+        "compendium_md_line": 5206,
+        "pdf_page": 559
+      },
+      {
+        "fr": "Automatisation agentique",
+        "en": "Agentic Automation",
+        "definition": "Modalité d'automatisation dans laquelle une boucle cognitive bornée planifie, sélectionne des outils typés et traite les cas ambigus à l'intérieur d'un exosquelette déterministe, en complément et non en remplacement des automatismes déterministes (L0).",
+        "chapitre_proprietaire": "00-liminaire",
+        "source_l_plus_id": "SRC-027, SRC-101, SRC-122",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 74,
+        "pdf_page": 8
+      },
+      {
+        "fr": "Continuum d'automatisation",
+        "en": "Enterprise Automation Continuum",
+        "definition": "Graduation ordonnée reliant les automatismes déterministes sans modèle (L0 : code, SQL, politiques OPA, DMN, BPM/BPMN, iPaaS, RPA fixe) aux niveaux d'autonomie assistée et déléguée (L1–L4) selon la prévisibilité du flux et la réversibilité des effets.",
+        "chapitre_proprietaire": "ch04",
+        "source_l_plus_id": "SRC-027, SRC-066, SRC-101",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 716,
+        "pdf_page": 80
+      },
+      {
+        "fr": "Système d'entreprise",
+        "en": "Enterprise System",
+        "definition": "Application sociotechnique critique soutenant les opérations d'une organisation — systèmes d'enregistrement (SoR : ERP, grands livres, SIRH, PLM), systèmes d'engagement (SoE : CRM, portails), plateformes transverses (ITSM, SCM) et systèmes industriels (OT/SCADA) — soumise à des invariants d'intégrité, de sécurité et de conformité.",
+        "chapitre_proprietaire": "ch06",
+        "source_l_plus_id": "SRC-055, SRC-066, SRC-122",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1080,
+        "pdf_page": 114
+      },
+      {
+        "fr": "Interopérabilité sémantique et pragmatique",
+        "en": "Semantic and Pragmatic Interoperability",
+        "definition": "Capacité de systèmes d'entreprise et d'agents hétérogènes à préserver non seulement la validité syntaxique des messages échangés, mais aussi la signification univoque des concepts métiers, des unités, de la bi-temporalité et de l'effet d'état attendu.",
+        "chapitre_proprietaire": "ch10",
+        "source_l_plus_id": "SRC-021, SRC-035, SRC-083",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 1847,
+        "pdf_page": 192
+      },
+      {
+        "fr": "Sobriété d'orchestration",
+        "en": "Orchestration Sobriety (OO1–OO4)",
+        "definition": "Discipline d'architecture imposant de résoudre tout processus d'entreprise par le palier le plus simple qui satisfait l'objectif — flux déterministe (OO1), appel enrichi unique (OO2) ou agent unique outillé (OO3) — avant d'autoriser un collectif multi-agents (OO4).",
+        "chapitre_proprietaire": "ch13",
+        "source_l_plus_id": "SRC-011, SRC-027, SRC-032",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2263,
+        "pdf_page": 241
+      },
+      {
+        "fr": "Sas déterministe IT/OT et confinement CUA",
+        "en": "Deterministic IT/OT Airlock and CUA Confinement",
+        "definition": "Double dispositif de sûreté frontalière combinant l'isolation physique ou logique entre le système d'information (IT) et les équipements industriels (OT, interdisant toute commande directe hors automate déterministe ou arbitre Simplex) et l'encadrement dérogatoire en microVM éphémère (bail maximal de 12 mois) des agents pilotant l'écran de progiciels sans API (CUA).",
+        "chapitre_proprietaire": "ch12",
+        "source_l_plus_id": "SRC-008, SRC-010, SRC-055, SRC-058, SRC-101",
+        "statut_preuve": "l_plus",
+        "compendium_md_file": "Compendium/Compendium.md",
+        "compendium_md_line": 2134,
+        "pdf_page": 226
       },
       {
         "fr": "Système d'agentivité",
         "en": "System of Agency / System of Action (SoA)",
-        "definition": "Couche applicative d'action orchestrée par des agents spécialisés encadrés par un exosquelette déterministe, distincte des systèmes d'engagement (SoE) et des systèmes d'enregistrement (SoR).",
+        "definition": "Strate applicative d'action (SoA) mettant en œuvre une automatisation agentique sous exosquelette déterministe, subordonnée aux contrats d'interopérabilité et aux règles d'intégrité des systèmes d'enregistrement (SoR), des systèmes d'engagement (SoE) et des environnements opérationnels (OT).",
         "chapitre_proprietaire": "ch01",
         "source_l_plus_id": "SRC-027, SRC-122",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 221,
-        "pdf_page": 25
+        "compendium_md_line": 227,
+        "pdf_page": 27
       },
       {
         "fr": "Agentivité des systèmes",
         "en": "system agency",
-        "definition": "Propriété émergente, composite et bornée par laquelle un système sociotechnique complet exécute des tâches multi-étapes grâce au couplage d'un modèle cognitif, d'un harnais déterministe, d'outils vérifiés, d'une mémoire gouvernée, d'une identité non humaine et d'une supervision humaine, plutôt que par les seuls poids d'un modèle.",
+        "definition": "Propriété émergente, composite et bornée par laquelle un système d'entreprise exécute des processus multi-étapes grâce au couplage vérifiable entre automatismes déterministes, modèles cognitifs, protocoles d'interopérabilité, outils typés, mémoire gouvernée, identité non humaine et supervision humaine, plutôt que par les seuls poids d'un modèle.",
         "chapitre_proprietaire": "ch01",
         "source_l_plus_id": "SRC-001, SRC-122, SRC-123",
         "statut_preuve": "l_plus",
         "compendium_md_file": "Compendium/Compendium.md",
-        "compendium_md_line": 247,
-        "pdf_page": 28
+        "compendium_md_line": 249,
+        "pdf_page": 30
       }
     ]
   },

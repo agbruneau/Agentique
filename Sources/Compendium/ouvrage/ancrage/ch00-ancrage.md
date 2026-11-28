@@ -1,6 +1,6 @@
 # Journal d'ancrage atomique Wyvern — Chapitre 00 (`00 - Liminaire.md`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/00 - Liminaire.md` (`00-liminaire`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/00 - Liminaire.md` (`00-liminaire` — *Liminaire — Sommaire exécutif : interopérabilité, automatisation agentique des systèmes d'entreprise, doctrine 80/20 et Panorama directeur*)
 - **Agent auditeur :** `wyvern-00` (auditeur atomique Wyvern neuf, barrière `G2` selon `AO-07`, distinct de la rédaction)
 - **Base fermée autorisée :** `Compendium/ouvrage/sources/ch00-sources.md` (`[1]`–`[19]`), textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt`, registres SSOT `Compendium/ouvrage/registre/{ancres-chronologiques.json, faits-empiriques.json, concordance-taxonomies.json, matrice-exig-prr-c40.json, mindmap-complet.json, glossaire-termes.json}`, manifestes `Compendium/ouvrage/recherche/{manifeste-sources-sha256.json, registre-statut-f.json}`, schémas `Compendium/ouvrage/schemas/SCH-00-01..04` et rapport `Compendium/ouvrage/aq/rapports-g0.json`
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
@@ -262,3 +262,24 @@
   - *Preuve primaire :* `SRC-027.txt` (`[1]`, `L38–L40`, `L149–L151`), `SRC-055.txt` (`[8]`, `L237–L242`), `SRC-066.txt` (`[12]`, `L27`, `L65`, `L175`).
   - Verdict : supporté
 - **Contrôle `REV-05` :** `3 831` mots (`verifie_manuscrit.py`) dans `[3 680, 4 320]`, `verifie_manuscrit.py --unit 00-liminaire --strict` = `exit 0`. **Verdict final : `68 / 68` (`100,0 %` supporté).**
+
+---
+
+## 5. Mise à jour d'adaptation éditoriale (`Vague 2` — interopérabilité et automatisation agentique des systèmes d'entreprise)
+
+- **L00-V2-01 (`L1–L9`)** — *Énoncé :* Nouveau titre directeur, question directrice centrée sur l'interopérabilité et l'automatisation agentique des systèmes d'entreprise, élargissement de la **Clause non-avis** aux audits TI et à l'homologation d'interopérabilité, et présence des trois vedettes propriétaires (`Clause non-avis`, `tissu conjonctif agentique`, `Automatisation agentique`).
+  - *Preuve primaire :* `specs/manifest.json` (`00-liminaire`), `registre/glossaire-termes.json` (`Clause non-avis`, `tissu conjonctif agentique`, `Automatisation agentique`), `SRC-055.txt` (`[8]`), `SRC-065.txt` (`[13]`), `SRC-063.txt` (`[14]`), `SRC-060.txt` (`[15]`).
+  - Verdict : supporté
+- **L00-V2-02 (`L13`, `§ 0.1`)** — *Énoncé :* Tripartition entre automatisation déterministe sans modèle (`L0`/`N0` : moteurs de règles `DMN`, processus `BPMN 2.0`, flux `iPaaS`/`EDI` typés, scripts `RPA`), assistance conversationnelle périphérique et **automatisation agentique** en boucle fermée (`L1–L4`, strate des **Systèmes d'agentivité**) `[1, 12]`.
+  - *Preuve primaire :* `registre/concordance-taxonomies.json` (`DISC-01`), `SRC-027.txt` (`[1]`), `SRC-066.txt` (`[12]`).
+  - Verdict : supporté
+- **L00-V2-03 (`L15–L17`, `§ 0.1`)** — *Énoncé :* Ventilation sectorielle SCIAN et applicative de Statistique Canada T2 2026 (`33-10-1167-01` `[5]` : `19,2 %` global, `42,3 %` industrie culturelle et information, `40,4 %` finance et assurance, `32,4 %` services professionnels, `30,0 %` santé, `19,2 %` détail, `13,1 %` industrie manufacturière ; `28,2 %` agents virtuels, `24,8 %` grands modèles, `13,7 %` décisions automatisées, `5,0 %` `RPA`) et résultats de l'enquête *Tech Value Survey* citée dans Deloitte `TMT Predictions 2026` (`[4]` : `28 %` de maturité et `12 %` de rendement attendu sous trois ans avec agents contre `80 %` et `45 %` pour l'automatisation seule).
+  - *Preuve primaire :* `SRC-014.txt` (`L3, L6, L9, L14, L18, L83, L123, L163, L183, L223, L263`), `SRC-011.txt` (`L469`, `L515–L555`).
+  - Verdict : supporté
+- **L00-V2-04 (`L29–L57`, `§ 0.2`, `Tableau 0.1`, `SCH-00-01`)** — *Énoncé :* Redéfinition du **tissu conjonctif agentique** reliant `SoE` (`CRM`, portails), `System of Action` coopérant avec `API Gateways`, `BPMN 2.0`, `iPaaS` et `CDC` sans connecteurs `N×M`, et `SoR` (`ERP`, `SIRH`, `SCM`, `ITSM`, `z/OS`, `IBM i`, périphérie `OT`) ; précision de `DISC-01`/`DISC-02` et nouveau titre/légende de `SCH-00-01`.
+  - *Preuve primaire :* `specs/manifest.json` (`figures` `SCH-00-01`), `schemas/rendus/SCH-00-01.svg`, `registre/concordance-taxonomies.json` (`DISC-01`, `DISC-02`), `registre/glossaire-termes.json`.
+  - Verdict : supporté
+- **L00-V2-05 (`L63–L122`, `§ 0.3`–`§ 0.5`, `Tableau 0.2`)** — *Énoncé :* Panorama d'interopérabilité des Parties I à XII (`6` profils sectoriels coiffés par l'étalon financier `24 PEX`), exercices annuels de reprise directe sur les `SoR` sous `INI-043` (`Tableau 0.2`) et articulation à deux étages de la frise `2023–2035` (socle transversal `Loi 25` `[14]`, `EU AI Act` `[15]`, `PKI`/`MCP`/`PQC` `[9, 10, 16]` et jalons sectoriels `BSIF E-23` `[13]`, `ACVM 31-103`, `BSIF B-15`).
+  - *Preuve primaire :* `specs/manifest.json` (`part_titles`), `registre/matrice-exig-prr-c40.json` (`INI-043`, `pex_24`), `registre/ancres-chronologiques.json`.
+  - Verdict : supporté
+- **Contrôle `Vague 2` :** `4 196` mots (`verifie_manuscrit.py`) dans `[3 680, 4 320]`, `19 / 19` sources `L+` citées, `0` erreur `CA-01..CA-22`. **Verdict final : `73 / 73` (`100,0 %` supporté).**

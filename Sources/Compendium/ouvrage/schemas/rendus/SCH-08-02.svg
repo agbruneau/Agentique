@@ -4,9 +4,9 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-08-02</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Métaphore architecturale en couches</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Commerce agentique (AP2, x402, MPP) face aux rails financiers et à la</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">fédération B2B (AGNTCY / ODRL / vLEI)</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Interopérabilité B2B (EDI, SCM, achats sous vLEI / ODRL 2.2) et commerce</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">agentique en veille (AP2, x402, MPP) face aux rails déterministes</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#B45309"/>
@@ -48,20 +48,20 @@
 <g id="zone-Z3" class="zone">
   <rect x="28" y="422" width="1144" height="136" rx="10" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="1.5"/>
   <rect x="28" y="422" width="8" height="136" rx="4" fill="#6D28D9"/>
-  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#6D28D9">Z3 — Strate B2B contractuelle au Palier 3 (ADR-026) — vLEI, Dataspace EDC et ODRL 2.2</text>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#6D28D9">Z3 — Strate B2B contractuelle d'entreprise (ADR-026) — Flux EDI/SCM, GLEIF vLEI, Dataspace EDC et ODRL 2.2</text>
   <g id="node-5" class="node" data-node="true">
     <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
-    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#4C1D95">Preuve légale GLEIF vLEI &amp; ODRL 2.2</text>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#4C1D95">Preuve GLEIF vLEI, EDI/SCM &amp; ODRL 2.2</text>
     <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#6D28D9" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Connecteur Dataspace EDC vérifiant</text>
-    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">l'identité légale OOR et la licence</text>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Dataspace EDC pour achats, EDI &amp; chaîne SCM</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Vérifie l'identité légale OOR et la licence</text>
   </g>
   <g id="node-6" class="node" data-node="true">
     <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
     <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Scission Diplomate / Évaluateur</text>
     <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Diplomate externe sans secret</text>
-    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Évaluateur interne &amp; rail bancaire sûr</text>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Diplomate externe B2B sans secret interne</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Évaluateur interne → ERP/SCM &amp; rail bancaire sûr</text>
   </g>
 </g>
 <g id="flows-box">
@@ -71,10 +71,10 @@
   <text x="42.0" y="627" font-size="11.5" fill="#334155">sans approbation FIDO2/CIBA.</text>
   <text x="609.0" y="612" font-size="11.5" fill="#334155">② Au sein d'AGNTCY, l'annuaire ADS reste subordonné au registre interne pendant que</text>
   <text x="609.0" y="627" font-size="11.5" fill="#334155">SLIM chiffre le transport via MLS.</text>
-  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ En fédération B2B (2033–2035), le connecteur Dataspace contrôle vLEI et ODRL 2.2</text>
-  <text x="42.0" y="665" font-size="11.5" fill="#334155">avant échange avec le Diplomate.</text>
-  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ L'Évaluateur interne valide marges et non-collusion avant tout règlement sur le</text>
-  <text x="609.0" y="665" font-size="11.5" fill="#334155">rail bancaire déterministe.</text>
+  <text x="42.0" y="650" font-size="11.5" fill="#334155">③ En fédération B2B (EDI, approvisionnement, SCM), le connecteur Dataspace valide</text>
+  <text x="42.0" y="665" font-size="11.5" fill="#334155">vLEI et ODRL 2.2 avant échange avec le Diplomate.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ L'Évaluateur interne contrôle prix, stocks et non-collusion avant validation sur</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">l'ERP achat ou le rail bancaire déterministe.</text>
 </g>
 <g id="legend-box">
   <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
@@ -82,17 +82,17 @@
   <text x="62.0" y="726" font-size="11" fill="#1E293B">Protocoles en veille ou évaluation hors production</text>
   <text x="62.0" y="741" font-size="11" fill="#1E293B">(AP2, ADS, SLIM)</text>
   <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#6D28D9"/>
-  <text x="438.7" y="726" font-size="11" fill="#1E293B">Cadre juridique B2B et consentement (vLEI, ODRL 2.2,</text>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Interopérabilité B2B (EDI/SCM, vLEI, ODRL 2.2,</text>
   <text x="438.7" y="741" font-size="11" fill="#1E293B">litiges)</text>
   <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
-  <text x="815.3" y="726" font-size="11" fill="#1E293B">Contrôle déterministe interne (catalogue, Évaluateur,</text>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Contrôle déterministe interne (ERP/SCM, Évaluateur,</text>
   <text x="815.3" y="741" font-size="11" fill="#1E293B">rail bancaire)</text>
 </g>
 <g id="takeaway-box">
   <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
   <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
   <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
-  <text x="44" y="812" font-size="11.5" fill="#1E293B">La signature technique d'une commande par un agent ne fonde ni responsabilité juridique claire ni droit au remboursement : AP2 et x402</text>
-  <text x="44" y="828" font-size="11.5" fill="#1E293B">demeurent en veille tant que la gouvernance FIDO et le droit des litiges ne sont pas établis.</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">En fédération B2B (EDI, approvisionnement, SCM), l'interopérabilité repose sur vLEI, ODRL 2.2 et les rails ERP/bancaires déterministes,</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">tandis qu'AP2 et x402 demeurent en veille tant que la gouvernance FIDO et le droit des litiges ne sont pas établis.</text>
 </g>
 </svg>

@@ -18,7 +18,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="72" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="17.5" font-weight="bold" fill="#FFFFFF">SCH-AC-01 — Frise maîtresse des 77 jalons 2018–2035 en cinq couloirs juridictionnels</text>
-    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Extraction directe d'ancres-chronologiques.json · 11 acquis pré-gel vs 66 échéances post-gel · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" fill="#CBD5E1">Extraction directe d'ancres-chronologiques.json · 11 acquis pré-gel vs 66 échéances post-gel · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="98" width="1160" height="566" rx="10" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.8"/>

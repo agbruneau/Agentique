@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 35 — Trousse exécutable (Python/OPA), 5 SBB du Tableau 12, vecteurs tiers et calibration FEDS/EMA
+# Base documentaire fermée — Chapitre 35 — Trousse logicielle exécutable d'interopérabilité et d'automatisation (Python/OPA), cinq blocs SBB, vecteurs tiers et contrats C.1–C.8
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

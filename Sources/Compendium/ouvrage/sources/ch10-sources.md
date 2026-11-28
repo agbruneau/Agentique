@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 10 — Sémantique métier, ontologies financières, contrats de données ODCS et compilation du contexte
+# Base documentaire fermée — Chapitre 10 — Interopérabilité sémantique d'entreprise, schémas canoniques métier, contrats ODCS et compilation déterministe du contexte
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

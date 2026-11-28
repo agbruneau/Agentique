@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 34 — Référentiel d'homologation unifié : 305 exigences CRE-IA-2026-01, interdits GOV-17 et grille PRR-75
+# Base documentaire fermée — Chapitre 34 — Référentiel d'homologation des systèmes d'entreprise : 305 exigences CRE-IA-2026-01, dix interdits GOV-17, grille PRR-75 et fiche ADR 2027-B001
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

@@ -1,6 +1,6 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 03 (`ch03`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md`
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/01 - Partie I/Chapitre 03.md` (`4 659` mots, plage `[4 251, 4 989]` — *Chapitre 03 — Économie de l'interopérabilité (Coase), arbitrage face aux silos applicatifs et quadruple dette de l'automatisation agentique*)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch03-sources.md` (`[1]`–`[14]`, statut `L+` au gel du `2 décembre 2026`) et `Compendium/ouvrage/recherche/corpus_l_plus/*.txt`
 - **Auditeur Wyvern neuf (`AO-07`) :** `wyvern-03`
 - **Passe G2 initiale (supportés) :** 23 / 50 (46,0 %)
@@ -292,3 +292,18 @@
   - **Verdict :** `Verdict : supporté`
 
 - **Contrôle `REV-05` :** `4 726` mots (`verifie_manuscrit.py`) dans `[4 251, 4 989]`, `verifie_manuscrit.py --unit ch03 --strict` = `exit 0`. **Verdict final : `53 / 53` (`100,0 %` supporté).**
+
+---
+
+## Mise à jour d'adaptation éditoriale (`Vague 2` — économie de l'interopérabilité et arbitrage face aux silos applicatifs)
+
+- **C03-V2-01 (`L1–L21`, `§ 3.1.1`)** — Nouveau titre, question directrice, conservation des quatre vedettes propriétaires (`coût de transaction cognitif`, `économie d'agents virtuels`, `dette cognitive et d'intention`, `quadruple dette agentique`) et raccord organique entre le quadrant « conçue × perméable » (`[2, 3]`) et l'interopérabilité contractuelle `N+M` reliant domaines `ERP`, `CRM`, `SCM` et partenaires `B2B` sans captivité fournisseur (`[1]`).
+  - **Confrontation :** `specs/manifest.json` (`ch03`), `registre/glossaire-termes.json`, `SRC-097.txt` (`[1]`), `SRC-096.txt` (`[2]`), `SRC-098.txt` (`[3]`).
+  - **Verdict :** `Verdict : supporté`
+- **C03-V2-02 (`L27`, `L38–L42`, `§ 3.1.2`)** — Ventilation sectorielle ouverte de `Mordor Intelligence` (`[7]` : `9,89 G$ US` en `2026` dont `19,03 %` en banque-finance-assurance `BFSI`, aux côtés de la fabrication et de l'`IIoT`, de l'automobile à `45,35 %` de TCAC `2027–2032`, de la santé, du détail et de l'automatisation autonome de processus), et comparaison obligatoire du `CPO` (`EXIG-FIN-01`, `CAP-045`) à une référence déterministe `L0` (`iPaaS`, `BPMN` ou traitement existant).
+  - **Confrontation :** `SRC-101.txt` (`[7]`, `L87, L187, L189, L442–L468`), `registre/matrice-exig-prr-c40.json` (`EXIG-FIN-01`, `CAP-045`).
+  - **Verdict :** `Verdict : supporté`
+- **C03-V2-03 (`L46–L58`, `L104–L138`, `§ 3.1.3`, `§ 3.2.2`, `Tableaux 3.1 et 3.3`)** — Filtrage préalable d'éligibilité `L0` avant l'arbre décisionnel `C04`, encadrement des agents captifs de suites `ERP`/`CRM`/`ITSM`/`SIRH` sous clauses de sortie `BSIF B-10` et portabilité `EU Data Act` (`ANC-003`) au *Tableau 3.1*, couplage des façades `MCP`/`A2A` aux `API Gateways` et bus `iPaaS` existants (`N+M`), et explicitation d'`EXIG-D01-03.4` sur l'externalisation des règles inter-systèmes hors des invites (`[6]`).
+  - **Confrontation :** `registre/matrice-exig-prr-c40.json` (`C04`), `registre/ancres-chronologiques.json` (`ANC-003`), `SRC-068.txt` (`BSIF B-10`), `SRC-040.txt` (`[6]`).
+  - **Verdict :** `Verdict : supporté`
+- **Contrôle `Vague 2` :** `4 659` mots (`verifie_manuscrit.py`) dans `[4 251, 4 989]`, `14 / 14` sources `L+` citées, `0` erreur `CA-01..CA-22`. **Verdict final : `56 / 56` (`100,0 %` supporté).**

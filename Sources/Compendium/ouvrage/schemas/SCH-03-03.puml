@@ -25,19 +25,19 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title De vingt connecteurs fragiles (N×M) à neuf contrats ouverts (N+M) et invariant à 4 termes
+title De vingt connecteurs fragiles (N×M) à neuf contrats ouverts (N+M) : ESB/SOA → REST/iPaaS → MCP/A2A
 
-package "Z1 — Avant : Maillage point-à-point N×M et échec FIPA-ACL" {
-  rectangle "Coût quadratique C = (1+δ)(N×M)\nConnecteurs dédiés redondants" as N1 <<red>>
-  rectangle "Leçon FIPA-ACL SC00061G\n(désaccord HTTP & taxe ontologique)" as N2 <<red>>
+package "Z1 — Avant : Maillage point-à-point N×M inter-silos et échec FIPA-ACL" {
+  rectangle "Coût quadratique C = (1+δ)(N×M)\nConnecteurs dédiés par silo (ERP, CRM, ITSM)" as N1 <<red>>
+  rectangle "Leçon FIPA-ACL SC00061G\n(désaccord HTTP & taxe ontologique préalable)" as N2 <<red>>
   N1 .[#DC2626].> N2 : ① Explosion N(N−1)/2
 }
 
-package "Z2 — Après : Bus de contrats ouverts N+M (EAI → SOA → API → EDA)" {
-  rectangle "Héritage EAI · SOA · REST · EDA\n(sans lourdeur FIPA-ACL)" as N3 <<det>>
-  rectangle "Contrat unique par acteur (N+M)\nsur HTTP, gRPC ou CloudEvents" as N4 <<det>>
-  rectangle "Passerelle PEP & catalogue unique" as N5 <<det>>
-  N2 --> N3 : ② Capitaliser 4 générations
+package "Z2 — Après : Bus de contrats ouverts N+M (ESB/SOA → REST/iPaaS → MCP/A2A)" {
+  rectangle "20 ans d'intégration : EAI · ESB/SOA\nREST/iPaaS · EDA (sans lourdeur FIPA-ACL)" as N3 <<det>>
+  rectangle "Contrat unique par acteur (N+M)\nMCP · A2A · OpenAPI/gRPC · CloudEvents" as N4 <<det>>
+  rectangle "Passerelle PEP, API Gateway & catalogue unique" as N5 <<det>>
+  N2 --> N3 : ② Capitaliser ESB/SOA → REST/iPaaS
   N3 --> N4 : ③ Publier N+M contrats
   N4 --> N5
 }
@@ -50,8 +50,8 @@ package "Z3 — Socle de l'invariant à quatre termes (Tome 1 § 1.0.2)" {
 }
 
 legend bottom
-  **Corail alerte** : Maillage quadratique N×M non gouverné et dette d'intégration
-  **Bleu ardoise** : Contrats ouverts linéaires N+M et catalogue commun
+  **Corail alerte** : Maillage quadratique N×M non gouverné et dette d'intégration inter-silos
+  **Bleu ardoise** : Contrats linéaires N+M (ESB/SOA Service-Oriented Architecture → REST/iPaaS → MCP/A2A)
   **Vert émeraude** : Invariant à quatre termes assurant la pérennité sans réécriture
 end legend
 @enduml

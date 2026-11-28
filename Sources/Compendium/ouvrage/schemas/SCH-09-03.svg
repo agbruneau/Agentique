@@ -4,9 +4,9 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-09-03</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Matrice visuelle de risques et garde-fous</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Asymétrie 0/15, zones compensatoires Z1–Z5, strates EIF/LCIM et bouclier</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">anti-verrouillage SaaS (EXIG-ARC-21)</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Quatre strates EIF et échelle LCIM face à l'asymétrie 0/15 : zones Z1–Z5</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">et bouclier d'interopérabilité anti-verrouillage SaaS (EXIG-ARC-21)</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
@@ -29,7 +29,7 @@
 <g id="zone-Z2" class="zone">
   <rect x="28" y="272" width="1144" height="136" rx="10" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="1.5"/>
   <rect x="28" y="272" width="8" height="136" rx="4" fill="#6D28D9"/>
-  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#6D28D9">Z2 — Cinq zones de compensation Z1–Z5 et grille EIF / LCIM</text>
+  <text x="46" y="294" font-size="13.5" font-weight="bold" fill="#6D28D9">Z2 — Ossature d'interopérabilité à 4 strates EIF (technique, sémantique, org., juridique), LCIM et zones Z1–Z5</text>
   <g id="node-3" class="node" data-node="true">
     <rect x="42.0" y="310" width="551.0" height="86" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
     <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#4C1D95">Z1 Trace · Z2 Arrêt · Z3 Verrou</text>
@@ -39,19 +39,19 @@
   </g>
   <g id="node-4" class="node" data-node="true">
     <rect x="607.0" y="310" width="551.0" height="86" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
-    <text x="618.0" y="332" font-size="13" font-weight="bold" fill="#4C1D95">Z4 Abstraction &amp; Z5 Maillage</text>
+    <text x="618.0" y="332" font-size="13" font-weight="bold" fill="#4C1D95">Z4 Abstraction &amp; Z5 Strates EIF / LCIM</text>
     <line x1="618.0" y1="344" x2="1147.0" y2="344" stroke="#6D28D9" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="618.0" y="358" font-size="11.8" fill="#1E293B">Z4 abstraction bancaire (CAP-026)</text>
-    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Z5 filtrage et couches EIF / LCIM</text>
+    <text x="618.0" y="358" font-size="11.8" fill="#1E293B">Z4 abstraction SoR / sectorielle (CAP-026)</text>
+    <text x="618.0" y="374" font-size="11.8" fill="#1E293B">Z5 maillage : 4 strates EIF &amp; alignement LCIM</text>
   </g>
 </g>
 <g id="zone-Z3" class="zone">
   <rect x="28" y="422" width="1144" height="136" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
   <rect x="28" y="422" width="8" height="136" rx="4" fill="#1B4F72"/>
-  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#1B4F72">Z3 — Bouclier anti-verrouillage EXIG-ARC-21 sur les suites SaaS</text>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#1B4F72">Z3 — Bouclier d'interopérabilité EXIG-ARC-21 sur les suites SaaS d'entreprise (ERP, CRM, ITSM, SIRH)</text>
   <g id="node-5" class="node" data-node="true">
     <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EBF2F7" stroke="#1B4F72" stroke-width="2"/>
-    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Confinement des suites SaaS</text>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#0F2942">Confinement des suites SaaS (ERP/CRM/ITSM)</text>
     <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#1B4F72" stroke-opacity="0.35" stroke-width="1"/>
     <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Transit obligé par passerelle PEP</text>
     <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Identité dédiée · exportation OTel</text>
@@ -69,8 +69,8 @@
   <text x="42" y="594" font-size="12.5" font-weight="bold" fill="#0F2942">Flux d'exécution et de contrôle</text>
   <text x="42.0" y="612" font-size="11.5" fill="#334155">① Le constat 0/15 démontre que la conformité protocolaire MCP/A2A ne satisfait</text>
   <text x="42.0" y="627" font-size="11.5" fill="#334155">aucune exigence E-23, AMF ou Loi 25.</text>
-  <text x="609.0" y="612" font-size="11.5" fill="#334155">② L'institution active les cinq zones Z1–Z5 hors du fil protocolaire pour couvrir</text>
-  <text x="609.0" y="627" font-size="11.5" fill="#334155">les couches EIF sémantique et juridique.</text>
+  <text x="609.0" y="612" font-size="11.5" fill="#334155">② Les cinq zones Z1–Z5 complètent le fil technique par les strates EIF</text>
+  <text x="609.0" y="627" font-size="11.5" fill="#334155">sémantique, organisationnelle et juridique (LCIM).</text>
   <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Toute suite SaaS « ouverte sur le fil, fermée sur le contrôle » est cantonnée par</text>
   <text x="42.0" y="665" font-size="11.5" fill="#334155">les contrôles EXIG-ARC-21.</text>
   <text x="609.0" y="650" font-size="11.5" fill="#334155">④ L'alignement sur AAIF, WIMSE et CAISI garantit la portabilité neutre face aux</text>
@@ -82,7 +82,7 @@
   <text x="62.0" y="726" font-size="11" fill="#1E293B">Quinze croisements sans lien documenté (0/15) et risque</text>
   <text x="62.0" y="741" font-size="11" fill="#1E293B">SaaS</text>
   <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#6D28D9"/>
-  <text x="438.7" y="726" font-size="11" fill="#1E293B">Cinq zones compensatoires Z1–Z5 et couche juridique EIF</text>
+  <text x="438.7" y="726" font-size="11" fill="#1E293B">Quatre strates EIF, niveaux LCIM et zones Z1–Z5</text>
   <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#1B4F72"/>
   <text x="815.3" y="726" font-size="11" fill="#1E293B">Contrôles anti-verrouillage EXIG-ARC-21 et noyau</text>
   <text x="815.3" y="741" font-size="11" fill="#1E293B">possédé (CAP-013)</text>
@@ -91,7 +91,7 @@
   <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
   <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
   <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
-  <text x="44" y="812" font-size="11.5" fill="#1E293B">L'adoption d'un protocole ouvert ne confère ni conformité au droit canadien ni indépendance envers un fournisseur : les zones Z1–Z5</text>
-  <text x="44" y="828" font-size="11.5" fill="#1E293B">assurent l'opposabilité juridique et EXIG-ARC-21 préserve la réversibilité.</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">L'interopérabilité des systèmes d'entreprise exige les quatre strates EIF et l'alignement pragmatique LCIM : le fil MCP/A2A ne suffit</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">pas sans les zones compensatoires Z1–Z5 (0/15) et le bouclier de réversibilité EXIG-ARC-21 face aux suites SaaS.</text>
 </g>
 </svg>

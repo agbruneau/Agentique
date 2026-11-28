@@ -25,12 +25,12 @@ skinparam ranksep 28
 skinparam padding 7
 
 top to bottom direction
-title Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) et observation ISO 20022 (Lynx/RTR)
+title Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0), référentiels sectoriels et ISO 20022 (Lynx/RTR)
 
-package "Z1 — Sas Write-Audit-Publish (Iceberg/Nessie et ODCS v3.2.0)" {
-  rectangle "① Write : branche isolée de quarantaine\n(invisible aux agents d'entreprise)" as N1 <<amber>>
+package "Z1 — Sas Write-Audit-Publish multi-systèmes (Iceberg/Nessie & ODCS v3.2.0)" {
+  rectangle "① Write : branche isolée de quarantaine\nFlux ERP/CRM · GS1/UBL · HL7 FHIR · ISA-95/OPC UA · FIBO" as N1 <<amber>>
   rectangle "② Audit : contrôleur sémantique ODCS v3.2.0\n(unités, dérive PSI, fraîcheur, OpenLineage)" as N2 <<amber>>
-  rectangle "Publish : données certifiées au catalogue" as N3 <<green>>
+  rectangle "Publish : données certifiées au catalogue d'entreprise" as N3 <<green>>
   N1 --> N2
   N2 --> N3 : Promotion validée
 }
@@ -40,8 +40,8 @@ package "Z2 — Exposition gouvernée sous identité du mandant (EXIG-ARC-16)" {
   N3 --> N4
 }
 
-package "Z3 — Rails canadiens ISO 20022 (Lynx achevé et RTR reporté)" {
-  rectangle "Rail Lynx (migration achevée nov. 2025)\nPaiement grande valeur ISO 20022" as N5 <<green>>
+package "Z3 — Barrière d'irréversibilité : étalon ISO 20022 (Lynx achevé, RTR reporté), ERP & OT" {
+  rectangle "Rail Lynx ISO 20022 (migration achevée nov. 2025)\n& grands livres ERP / consignes OT" as N5 <<green>>
   rectangle "Rail RTR (reporté après 4 cibles)\nRèglement n° 10 DORS/2026-133 (août 2026)" as N6 <<amber>>
   rectangle "④ Barrière d'irréversibilité (Tome 1 § 45.12)\nObservation et préparation sans exécution autonome" as N7 <<red>>
   N4 --> N7
@@ -50,8 +50,8 @@ package "Z3 — Rails canadiens ISO 20022 (Lynx achevé et RTR reporté)" {
 }
 
 legend bottom
-  **Ambre** : Branche de quarantaine Write-Audit et rail RTR en attente
-  **Vert émeraude** : Données certifiées ODCS v3.2.0 (Publish) et rail Lynx opérationnel
-  **Rouge** : Barrière d'irréversibilité (aucune exécution autonome sur Lynx, zéro compte service)
+  **Ambre** : Branche de quarantaine Write-Audit (flux sectoriels) et rail RTR en attente
+  **Vert émeraude** : Données certifiées ODCS v3.2.0 (Publish) et rail Lynx ISO 20022 opérationnel
+  **Rouge** : Barrière d'irréversibilité (aucune exécution autonome sur Lynx, ERP critique ou OT)
 end legend
 @enduml

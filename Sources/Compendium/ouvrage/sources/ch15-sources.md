@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 15 — Exécution durable hors processus, idempotence JCS, sémantique d'effet et sagas à canal isolé
+# Base documentaire fermée — Chapitre 15 — Automatisation durable hors processus, idempotence JCS inter-systèmes et sagas compensables à canal isolé
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

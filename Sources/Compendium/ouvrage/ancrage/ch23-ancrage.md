@@ -1,18 +1,18 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 23 (`ch23`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md` (`4 351` mots de prose `verifie_manuscrit`, `4 720` mots `parser_plan`, plage `[4 076, 4 784]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 23.md` (`4 542` mots de prose `verifie_manuscrit`, plage `[4 076, 4 784]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch23-sources.md` (`[1]`–`[8]` en statut `L+`, `2` exclusions `statut F`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json`) et trousse `Tome 8` (`evalops_prr/`, `policies_opa/`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b4-2`
 - **Passe G2 initiale (supportés) :** 14
 - **Rectifications appliquées lors de la passe G2 :** 18
-- **Verdict final — supportés :** 32 / 32 (100,0 %)
+- **Verdict final — supportés :** 34 / 34 (100,0 %)
 
 ---
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 23.md`
 
-Toutes les formulations divergentes, sur-affirmées ou insuffisamment attribuées relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 23.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/08%20-%20Partie%20VIII/Chapitre%2023.md), sans toucher au bloc scellé `CA-G0-SYNC` (`G0-EX-CH04-02`, lignes `74–102`), en préservant les `owned_concepts` (`banc-evalops-hermetique`, `evaluation-agentique-bancs-capacite`, `dimensionnement-wilson-evalops`, `volant-distillation-dspy-multilora`, `tests-metamorphiques-fr-en-sans-oracle`, `evaluation-continue-derives`, `modele-comme-juge-biais-calibration`), les vedettes du glossaire, l'ensemble des renvois `[1]`–`[8]` et le calibrage (`4 351` / `4 720` mots dans `[4 076, 4 784]`) :
+Toutes les formulations divergentes, sur-affirmées ou insuffisamment attribuées relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 23.md](file:///c:/Github/Agentique/Sources/Compendium/ouvrage/manuscrit/08%20-%20Partie%20VIII/Chapitre%2023.md), sans toucher au bloc scellé `CA-G0-SYNC` (`G0-EX-CH04-02`, lignes `74–102`), en préservant les `owned_concepts` (`banc-evalops-hermetique`, `evaluation-agentique-bancs-capacite`, `dimensionnement-wilson-evalops`, `volant-distillation-dspy-multilora`, `tests-metamorphiques-fr-en-sans-oracle`, `evaluation-continue-derives`, `modele-comme-juge-biais-calibration`), les vedettes du glossaire, l'ensemble des renvois `[1]`–`[8]` et le calibrage (`4 542` mots dans `[4 076, 4 784]`) :
 
 1. **Ancrage exact des études `MAP`, `HAL`, `τ-bench` et `MORTAR` (`L5`, `L23`, `L25`, `L66`) :** rattachement de l'étude `MAP` (`74 %` d'évaluation humaine dans la boucle, rareté des bancs formels et expertise nuancée, `SRC-027.txt`) au `Chapitre 01` et dissociation de l'exigence d'équité bilingue (`EXIG-SEC-24`, `EXIG-AMF-11`) des renvois `[3, 4]` ; alignement des observations de `HAL` (`SRC-030.txt` : recherche sur *HuggingFace*, fuites de données sur certains échafaudages, score nul sur abstentions prudentes) et séparation des bancs vérifiés dans `[3, 4]` (`SWE-bench`, *Online Mind2Web*, `τ-bench`, `BFCL` cité dans `[3]`, `GAIA`) de ceux cités au `Tome 1 § 6.3.3` (`WebArena`, `OSWorld`) ; clarification que `∼35 %` sur `τ-airline` mesure `pass^1` (et non `pass^8`) et ajout des proportions d'échecs vérifiées dans `SRC-029.txt` (`∼55 %` arguments/informations erronés, `25 %` infractions aux règles) ; correction de `MORTAR` (`SRC-092.txt`) pour décrire ses sept perturbations au niveau du dialogue (permutation, réduction, duplication de tours et combinaisons, sans reformulation sémantique) et qualifier `75,8 %` contre `60,8 %` (`METAL`) comme précision des défauts détectés (`+24,6 %` relatif).
 2. **Séparation entre corpus `L+` fermé et littérature / cibles du `Corpus` (`L15`, `L27`, `L29`, `L34`, `L41`, `L68`, `L115`–`L127`) :** attribution explicite au `Tome 6 § 11.2.1–11.2.2` et à `evaluate_trajectory` de la grille `task`/`trial`/`transcript`/`outcome` et des modes `EXACT`/`IN_ORDER`/`ANY_ORDER` ; qualification de `AgentArcEval` (étude de cas unique, `Tome 3 § 23.8`) et de `PRR O-04` (cible durcie calibrée par criticité) ; correction du balisage mathématique \(\epsilon_R = \epsilon / p\) ; qualification de la suite `G0` sur vecteurs synthétiques (`L68`) ; rattachement explicite des quatre biais des juges (`Tome 1 § 6.3.2`), des treize modèles juges et du *criteria drift* (`Tome 6 § 11.2.4`) ainsi que de `Microsoft Foundry` (`11` évaluateurs dont `5` en préversion au `2 juin 2026`) et `Langfuse` (`Tome 1 § 39.1`) à l'index interne hors corpus `L+` fermé ; alignement exact de `F-23`, `F-52` et `H-12` sur `Tome 1 § 39.2` et `Tome 6 § 11.3.3` (`MMD`).
@@ -20,11 +20,11 @@ Toutes les formulations divergentes, sur-affirmées ou insuffisamment attribuée
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources `L+` (`C23-01` à `C23-32`)
+## 2. Inventaire atomique et confrontation aux sources `L+` (`C23-01` à `C23-34`)
 
 ### Section 23.0 — Titre, question directrice et cadrage introductif (`L1–L7`)
 
-- **C23-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice couvrant les bancs hermétiques `E1–E3`, les bornes de Wilson, les tests métamorphiques `FR`/`EN` et la distillation contrôlée du sous-domaine `SUB_D08_02`.
+- **C23-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice couvrant la qualification statistique en `CI/CD` de l'automatisation agentique sur doublures hermétiques `E1–E3` des systèmes d'entreprise, les bornes de Wilson, l'invariance métamorphique bilingue `FR`/`EN` sans oracle et la distillation vers modèles spécialisés (`SUB_D08_02`).
   - **Appui vérifié :** `specs/manifest.json` (`ch23`, `D08`, `SUB_D08_02`, `owned_concepts`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
@@ -163,3 +163,7 @@ Toutes les formulations divergentes, sur-affirmées ou insuffisamment attribuée
 - **C23-33 (`REV-04`, `PRD-L3-011/012/013`, `PRD-L4-002`)** — *Affirmation :* Nettoyage des `5` échappements `\$` dans backticks (`40 000 $ US`, `0,90 $ CA`, `0,50 $ CA`), uniformisation `Figure 73`..`Figure 75`, et corrections de schémas `SCH-23-01.puml` (`k ≥ 3 ; k ≥ 5 critique`), `SCH-23-02.svg` (`Pare les biais de position et longueur`) et `SCH-23-03.puml` (distinction seuil volume `V_min`, porte `pass^5 ≥ 99 %` / écart `≤ 1 %` et sentinelle ombre `2 %` / alerte `> 1,5 pt`).
   - **Appui vérifié :** `Corpus/Tome 3` (`ADR-031`, `Extrait 47.10`), `schemas/SCH-23-01.puml`, `schemas/SCH-23-02.svg`, `schemas/SCH-23-03.puml`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
+
+- **C23-34 (`L1–L11`, `L17`, `L25`, `L33–L35`, `L49`, `L56`, `L68–L70`, `L111`, `L133`, `L156`)** — *Affirmation :* Alignement sur la qualification `CI/CD` de l'automatisation d'entreprise (`EvalOps E1–E3`) : contraste de répétabilité face à un automate déterministe `L0` (`pass^1 = pass^k`), exécution `E1` en pipeline `CI/CD` (`< 5 min`, `0 $` d'appel modèle ; `GitHub Actions`, `GitLab CI`, `Azure DevOps` qualifiés d'exemples hors `L+`), doublures déterministes `MockMcpServer` des connecteurs `SoR` (`ERP`, `CRM`, `ITSM`, `SIRH`, `WMS`, conflits d'idempotence `HTTP 409`, exactitude `Decimal` sur quantités, barèmes `ERP`, tolérances industrielles et soldes), repli `< 60 s` vers le palier supervisé ou le flux déterministe `L0` (`POR-015`), et ancrage multisectoriel de l'équité bilingue `FR`/`EN` au Québec et au Canada (`CRM`, `SIRH`, portails publics, `EXIG-SEC-24`, `EXIG-AMF-11`, `2 août 2026`), avec préservation à l'octet de `G0-EX-CH04-02` (`metamorphic.py`).
+  - **Appui vérifié :** `specs/manifest.json` (`ch23.title`), `evalops_prr/{mock_mcp_harness.py,wilson_bounds.py,metamorphic.py}`, `ancres-chronologiques.json` (`2026-08-02-EU-AI-ACT-ART50`), `SRC-029.txt` `[3]`, `SRC-030.txt` `[4]`, `SRC-055.txt` `[8]`, `Corpus/Tome 2` (`EXIG-EVA-01..06`).
+  - **Adaptation interopérabilité et automatisation d'entreprise :** intégré et vérifié · **Verdict : supporté**

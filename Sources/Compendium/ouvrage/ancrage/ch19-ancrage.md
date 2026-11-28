@@ -1,18 +1,18 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 19 (`ch19`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md` (`4 491` mots de prose selon `parser_plan` / `verifie_manuscrit`, plage `[4 076, 4 784]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/07 - Partie VII/Chapitre 19.md` (`4 669` mots de prose selon `verifie_manuscrit`, plage `[4 076, 4 784]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch19-sources.md` (`[1]`–`[7]` en statut `L+`, `1` exclusion `statut F` sur `genai.owasp.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json` et `Tomes/Tome 8 .../trousse/`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b3-6`
 - **Passe G2 initiale (supportés)** : 9
 - **Rectifications appliquées lors de la passe G2 :** 30
-- **Verdict final — supportés :** 41 / 41 (100,0 %)
+- **Verdict final — supportés :** 42 / 42 (100,0 %)
 
 ---
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 19.md`
 
-Toutes les formulations demandant un resserrement documentaire à la passe initiale ont été directement rectifiées dans [Chapitre 19.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/07%20-%20Partie%20VII/Chapitre%2019.md), sans altérer les invariants `CA-01`..`CA-22`, en préservant les vedettes propriétaires `blanchiment de frontière` et `injection indirecte de consignes`, les `owned_concepts`, l'ensemble des renvois `[1]`–`[7]` et le calibrage (`4 381` mots dans `[4 076, 4 784]`, barrière `G1 --unit ch19 --strict` passée à `0` erreur) :
+Toutes les formulations demandant un resserrement documentaire à la passe initiale ont été directement rectifiées dans [Chapitre 19.md](file:///c:/Github/Agentique/Sources/Compendium/ouvrage/manuscrit/07%20-%20Partie%20VII/Chapitre%2019.md), sans altérer les invariants `CA-01`..`CA-22`, en préservant les vedettes propriétaires `blanchiment de frontière` et `injection indirecte de consignes`, les `owned_concepts`, l'ensemble des renvois `[1]`–`[7]` et le calibrage (`4 669` mots dans `[4 076, 4 784]`, barrière `G1 --unit ch19 --strict` passée à `0` erreur) :
 
 1. **Séparation stricte entre corpus `L+` (`[1]`–`[7]`) et relevés internes du `Corpus` (`L7`, `L15`, `L17`, `L29`, `L33`, `L50`, `L56`, `L58`, `L92`–`L95`, Tableaux 19.1 et 19.2) :** requalification explicite, comme relevés internes hors archive `L+` de ce chapitre, de `CVE-2025-32711` (`Tome 1 § 11.1.3`), des boutons préremplis (« résumer avec l'IA », `Tome 3 § 14.5`), de l'expression *agent session smuggling* (`Tome 1 § 19.6`), de `AML.T0104` / `AML.T0053` / `AML.M0027` et `UNC6395` (`Tome 1 § 19.1`), de `F-52` (`Tome 1 § 39.2.1`), des `304` redirections / `212` comptes GitHub (`Tome 3 § 8.8`), des `102` fiches `NVD` (`Tome 3 § 49.7`), des `CVE-2025-6514` / `49596` / `54136`, de `MINJA` (`Tome 3 § 14.5`) et de `26,1 %` sur `31 132` compétences `Agent Skills` (`Tome 3 § 13.3`, analyse statique sans confirmation d'exploitation).
 2. **Correction du rattachement statistique `OR = 2,96` (`L15`, `L54`, Tableau 19.1) :** rattachement exact du rapport de cotes `OR = 2,96` (IC `95 % [2,56 ; 3,42]` sur `6 699` serveurs multi-versions scannés) à la dérive sémantique silencieuse (`40,58 %`, IC `[39,57 ; 41,61]`) plutôt qu'aux redirections d'hôte (`4,16 %`), conformément à `SRC-057.txt` (`L21–22`, `L639–641`).
@@ -21,11 +21,11 @@ Toutes les formulations demandant un resserrement documentaire à la passe initi
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources (`C19-01` à `C19-41`)
+## 2. Inventaire atomique et confrontation aux sources (`C19-01` à `C19-42`)
 
 ### Ouverture et Résumé exécutif (`L1–L21`)
 
-- **C19-01 (`L1–L3`)** — *Affirmation :* Titre et question directrice cadrant la caractérisation des surfaces d'attaque non composables des Systèmes d'agentivité (injection indirecte, mutations silencieuses d'outils et de mémoire) et l'établissement de contrôles préventifs vérifiables avant production.
+- **C19-01 (`L1–L3`)** — *Affirmation :* Titre et question directrice cadrant la caractérisation des surfaces d'attaque non composables ouvertes par l'interconnexion protocolaire (`MCP`/`A2A`) des systèmes d'entreprise (injection indirecte, dérives silencieuses de connecteurs et blanchiment de frontière inter-agents) et l'établissement de verrous déterministes d'intégrité et de provenance avant mise en production.
   - **Appui vérifié :** `specs/manifest.json` (`ch19`, `D07`, `SUB_D07_01`), `SRC-055.txt` (`[1]`), `SRC-057.txt` (`[4]`), `SRC-002.txt` (`[5]`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
@@ -191,6 +191,10 @@ Toutes les formulations demandant un resserrement documentaire à la passe initi
   - **Appui vérifié :** `Compendium/prd.md` (`L3612–3641`), `Corpus/Tome 2` (`§ 9.6`), `Corpus/Tome 3` (`§ 31.1`, `§ 31.8`), `schemas/SCH-19-01.svg`, `schemas/SCH-19-03.mmd`.
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
 
-- **C19-41 (`L31`, `L99`)** — *Affirmation :* La non-compositionnalité de la triade létale éclaire l'agentivité des systèmes comme propriété émergente de l'assemblage (outils, mémoire, délégations) activant *Excessive Agency* (`ASI01`–`ASI03` `[1, 5]`) ; Barrett et coll. (`[7]`, `SRC-058` `L953–966`) identifient l'agentivité (*agency*), la conscience de situation et les buts instrumentaux comme facteurs systémiques de perte de contrôle lorsque des données externes détournent les outils légitimes du mandataire confus (`ASI01`–`ASI03` `[1, 5, 7]`).
+- **C19-41 (`L31`, `L99`)** — *Affirmation :* La non-compositionnalité de la triade létale éclaire l'agentivité des systèmes d'entreprise connectés comme propriété émergente de l'assemblage (connecteurs métiers, mémoire, délégations) activant *Excessive Agency* (`ASI01`–`ASI03` `[1, 5]`) ; Barrett et coll. (`[7]`, `SRC-058` `L953–966`) identifient l'agentivité (*agency*), la conscience de situation et les buts instrumentaux comme facteurs systémiques de perte de contrôle lorsque des données externes détournent les connecteurs légitimes du mandataire confus (`ASI01`–`ASI03` `[1, 5, 7]`).
   - **Appui vérifié :** `SRC-055.txt` `[1]` (`ASI01`–`ASI03`, `Excessive Agency` `L237`, `L430`, `L485`, `L551`), `SRC-002.txt` `[5]` (`§ 3`), `SRC-058.txt` `[7]` (`L953–966`), `Chapitre 19.md` (`L31`, `L99`).
   - **Ajout concept agentivité des systèmes :** intégré et vérifié · **Verdict : supporté**
+
+- **C19-42 (`L1–L9`, `L13`, `L21`, `L25–L37`, `L64`, `L68`, `L90–L92`, `L101–L105`, `L136`)** — *Affirmation :* Alignement sur les surfaces d'attaque de l'interopérabilité protocolaire (`MCP`/`A2A`) et de l'automatisation agentique des systèmes d'entreprise : opposition au graphe d'appels figé d'un automate déterministe `L0` (`BPMN`/`iPaaS`), exemplification de la triade létale `` `[A]` `` / `` `[B]` `` / `` `[C]` `` sur les connecteurs métiers (`ITSM`, `CRM`, `ERP`, `SIRH`, `SMTP`/webhooks `[1, 5]`, `Figure 71`), préfixage par domaine de confiance d'entreprise (`EXIG-SEC-19/21`), illustration du contournement `RBAC`/`CRUD` par jeton partagé (`Q-A`, `Tome 1 § 19.1` hors `L+`), propagation obligatoire d'étiquettes de teinte hors modèle sur `MCP` et `A2A` (`EXIG-SEC-25`) et corrélation `OpenTelemetry` vers `SIEM`/`SOAR` (`ADR-019`).
+  - **Appui vérifié :** `specs/manifest.json` (`ch19.title`), `SRC-055.txt` `[1]`, `SRC-054.txt` `[3]`, `SRC-002.txt` `[5]`, `SRC-058.txt` `[7]`, `Corpus/Tome 1` (`§ 19.1`), `Corpus/Tome 2` (`§ 9.6`, `EXIG-SEC-19/21/25`), `Corpus/Tome 3` (`§ 31.1`, `ADR-019`).
+  - **Adaptation interopérabilité et automatisation d'entreprise :** intégré et vérifié · **Verdict : supporté**

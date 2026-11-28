@@ -1,6 +1,6 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 33 (`ch33`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md` (`3 699` mots de prose `verifie_manuscrit` / `3 906` mots `parser_plan`, plage `[3 377, 3 963]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/11 - Partie XI/Chapitre 33.md` (`3 623` mots de prose `verifie_manuscrit` / `3 855` mots `parser_plan`, plage `[3 377, 3 963]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch33-sources.md` (`[1]`–`[9]` en statut `L+`, `3` exclusions `statut F`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` (incluant `SRC-040`, `SRC-055`, `SRC-063`, `SRC-064`, `SRC-066`, `SRC-068` archivés en `L+`) ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json`) ; spécification `Compendium/prd.md` (`CH-33`) et index heuristique interne `Corpus/Tome 1..7*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b5-4`
@@ -12,7 +12,7 @@
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 33.md`
 
-Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 33.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/11%20-%20Partie%20XI/Chapitre%2033.md), en préservant les `owned_concepts` (`atrophie-competences-humaines`, `sanctuarisation-vivier-junior-reprise`, `approbation-reflexe-biais-automatisation`), les renvois `[1]`–`[9]` de `ch33-sources.md`, la cohérence des schémas `SCH-33-01..03`, le calibrage (`3 699` mots dans `[3 377, 3 963]`) et la barrière `G1` (`0` erreur) :
+Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 33.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/11%20-%20Partie%20XI/Chapitre%2033.md), en préservant les `owned_concepts` (`atrophie-competences-humaines`, `sanctuarisation-vivier-junior-reprise`, `approbation-reflexe-biais-automatisation`), les renvois `[1]`–`[9]` de `ch33-sources.md`, la cohérence des schémas `SCH-33-01..03`, le calibrage (`3 623` mots dans `[3 377, 3 963]`) et la barrière `G1` (`0` erreur) :
 
 1. **Exclusions `statut F` et compensations `L+` (`L7`) :** correction de l'attribution des renvois compensatoires (`[3, 4]` pour le biais d'automatisation face à `pmc.ncbi.nlm.nih.gov` bloqué `g-recaptcha`, `SRC-063` `L.Q. 2021, c. 25` et `SRC-064` CAI `2026` en `L+` face à `legisquebec.gouv.qc.ca` `HTTP 403`, et retrait probatoire de `hbs.edu` `HTTP 403` selon `ch33-sources.md`).
 2. **Paradoxe automatisation–augmentation, Stanford HAI et Banque du Canada (`L15`, `L17`, `L19`, `Tableau 33.1`) :**
@@ -26,16 +26,17 @@ Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées
    - Ancrage exact de la *Loi 25* (`L.Q. 2021, c. 25`, `SRC-063.txt`, `SRC-064.txt`) sur le texte sanctionné (`art. 12.1`, `90.1(5°)`, `90.12`, `91`), mention explicite de la clause `AO-05` pour l'analyse du risque de requalification et respect des règles `CA-03`/`CA-05` ;
    - Dissociation dans l'`EU AI Act` (`[8]`, `SRC-060.txt`) des articles `14(4)(b)`, `14(4)(d)–(e)` et `26(2)`, et ancrage de l'accessibilité `(UE) 2019/882` sur l'article `16(l)` (`[8]`) en précisant que son texte autonome reste hors corpus `L+` de ce chapitre ;
    - Rattachement des *manual fallbacks* et du rappel sur les sorties d'IA comme intrants d'analyse au bulletin technologique du BSIF du `13 juillet 2026` (`SRC-066.txt` en `L+`) conjointement à `E-23` (`1er mai 2027` `[9]`, `SRC-065.txt`) et `B-10` (`SRC-068.txt` en `L+`), tout en distinguant la périodicité normative interne d'`EXIG-HUM-04` (`POR-009`, `POR-014`).
+5. **Adaptation éditoriale au titre directeur *Interopérabilité et automatisation agentique des systèmes d'entreprise* (`L1`, `L3`, `L15`, `L34`, `L52`–`L54`, `L64`, `L72`, `L76`, `Tableau 33.2`, `L94`, `Tableau 33.3`) :** synchronisation exacte de `L1` sur `specs/manifest.json` (`ch33`), remplacement des deux occurrences d'« agentivité des systèmes » par « l'automatisation agentique des processus d'entreprise » tout en préservant « agentivité humaine » (`[1, 7]`), explicitation de l'obligation de maintenir sur les `SoR` (`ERP`, `CRM`, `ITSM`, `SIRH`, `MES`) des interfaces transactionnelles déterministes `L0` directement opérables sans agent et accessibles (`Dir. 2019/882` via `art. 16(l)` `[8]`), précision du seuil `INI-043` `> 70,0 %` (`70 %`), maintien de la vedette `CA-07` `approbation réflexe` (`OWASP ASI09`) et du fait `FACT-JUNIOR-DEV-CONTRACTION`, et valorisation multisectorielle (maintenance industrielle `[3]`, génie logiciel `[4, 6, 7]`, économie globale `[2]`).
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources `L+` (`C33-01` à `C33-28`)
+## 2. Inventaire atomique et confrontation aux sources `L+` (`C33-01` à `C33-29`)
 
 ### Section 33.0 — Titre, question directrice et cadrage méthodologique (`L1–L7`)
 
-- **C33-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant la prévention de l'atrophie de la relève junior, la parade à l'approbation réflexe et le maintien du repli manuel.
+- **C33-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant la gouvernance de l'automatisation agentique face au facteur humain : biais d'automatisation et approbation réflexe (`ASI09` / `Loi 25` art. `12.1`), préservation du vivier junior et maintien du repli manuel déterministe (`L0`) vers les systèmes d'entreprise.
   - **Appui vérifié :** `specs/manifest.json` (`ch33`, `D11`, `SUB_D11_03`), `Compendium/prd.md` (`CH-33`, `L6058–6060`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** conforme · **Action :** aligné sur `manifest.json` (Vague 2) · **Verdict : supporté**
 
 - **C33-02 (`L5`)** — *Affirmation :* L'automatisation cognitive absorbe les dossiers ordinaires, réduit le terrain d'apprentissage des analystes, expose les valideurs à entériner machinalement des synthèses persuasives et menace simultanément la reprise manuelle et la conformité en cas de supervision décorative.
   - **Appui vérifié :** `Compendium/prd.md` (`CH-33`, `L6064`), `Corpus/Tome 7` (`§ 11.2–11.4`, `L1629–1715`).
@@ -77,9 +78,9 @@ Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées
   - **Appui vérifié :** `SRC-060.txt` (`[8]`, `L3902–3908`), `SRC-065.txt` (`[9]`, `L31`, `L457`, `L475`), `SRC-066.txt` (`L3`, `L9`, `L113–117`, `L131`), `SRC-068.txt` (`L417–461`).
   - **Passe initiale :** écart rectifié · **Action :** précisé la date `1er mai 2027` de `[9]`, rattaché explicitement les *manual fallbacks* au bulletin `SRC-066` (`L+`) et à `B-10` (`SRC-068`, `L+`), et scindé la phrase (`CA-05`) · **Verdict : supporté**
 
-- **C33-11 (`L34`)** — *Affirmation :* Un repli manuel non exercé perd son effectivité ; l'article `16(l)` de l'`EU AI Act` exige que les systèmes à haut risque soient conformes aux directives `(UE) 2016/2102` et `(UE) 2019/882` (`[8]`, leurs textes autonomes restant hors corpus `L+` du chapitre), ce qui fonde l'exigence architecturale du traité de préserver l'accessibilité sur les interfaces de secours destinées à la clientèle.
-  - **Appui vérifié :** `SRC-060.txt` (`[8]`, `L3951–3952`), `Compendium/prd.md` (`L6076`, `L6116`), `Corpus/Tome 1` (`L12509`).
-  - **Passe initiale :** écart rectifié · **Action :** ancré l'accessibilité sur `art. 16(l)` `[8]` en signalant l'absence du texte autonome de `(UE) 2019/882` dans la base `L+` du chapitre · **Verdict : supporté**
+- **C33-11 (`L34`)** — *Affirmation :* Un repli manuel non exercé perd son effectivité ; la résilience exige que les `SoR` (`ERP`, `CRM`, `ITSM`, `SIRH`, `MES`) conservent des interfaces transactionnelles déterministes (`L0`) directement opérables sans agent et accessibles conformément aux directives `(UE) 2016/2102` et `(UE) 2019/882` visées à l'article `16(l)` de l'`EU AI Act` (`[8]`, leurs textes autonomes restant hors corpus `L+` du chapitre).
+  - **Appui vérifié :** `SRC-060.txt` (`[8]`, `L3951–3952`), `SRC-066.txt` (`L117` *manual fallbacks*), `Compendium/prd.md` (`L6076`, `L6116`), `Corpus/Tome 1` (`L12509`).
+  - **Passe initiale :** écart rectifié · **Action :** explicité le maintien d'interfaces `L0` directement opérables sur les `SoR` et ancré l'accessibilité sur `art. 16(l)` `[8]` · **Verdict : supporté**
 
 ### Section 33.2.1 — Boucle d'érosion, approbation réflexe et risque juridique (`L36–L62`, Figures 103–104)
 
@@ -125,7 +126,7 @@ Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées
   - **Appui vérifié :** `Compendium/prd.md` (`L6076`), `Corpus/Tome 3` (`L21852`, `L21917`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C33-22 (`L70`)** — *Affirmation :* Pour opérationnaliser les attentes de plans de contingence, de repli manuel et de résilience posées par `BSIF E-23`, `B-10`, `E-21`, le bulletin de `juillet 2026` et `EU AI Act` art. `15(4)` (`[8, 9]`), l'exigence interne `EXIG-HUM-04` impose des *game days* au moins annuels (`≥ 1/an`, semestriels sur les fonctions critiques) sans agent (`L0`, `POR-009`, `POR-014`), prouvant une bascule technique en `< 60 s` (`POR-015` : rétrogradation vers la validation synchrone `N2` ou repli déterministe sans agent `L0`) et contrôlant débit dégradé, sortie de tiers et accessibilité (`Dir. 2019/882` via `art. 16(l)` `[8]`).
+- **C33-22 (`L70`)** — *Affirmation :* Pour opérationnaliser les attentes de plans de contingence, de repli manuel et de résilience posées par `BSIF E-23` (`[9]`), `B-10`, `E-21` et le bulletin de `juillet 2026` (`← Chapitre 25`) ainsi que `EU AI Act` art. `15(4)` (`[8]`), l'exigence interne `EXIG-HUM-04` impose des *game days* au moins annuels (`≥ 1/an`, semestriels sur les fonctions critiques) sans agent (`L0`, `POR-009`, `POR-014`), prouvant une bascule technique en `< 60 s` (`POR-015` : rétrogradation vers la validation synchrone `N2` ou repli déterministe sans agent `L0`) et contrôlant débit dégradé, sortie de tiers et accessibilité (`Dir. 2019/882` via `art. 16(l)` `[8]`).
   - **Appui vérifié :** `SRC-060.txt` (`[8]`, `art. 15(4)`, `art. 16(l)`), `SRC-065.txt` (`[9]`, `Principe 3.6`), `SRC-066.txt` (`L117`), `SRC-068.txt` (`L417–461`), `Compendium/prd.md` (`L6075`), `registre/matrice-exig-prr-c40.json` (`POR-009`, `POR-014`, `POR-015`).
   - **Passe initiale :** écart rectifié · **Action :** ajoutée la preuve de bascule `< 60 s` (`POR-015`) et `≥ 1/an` (`post-G4`), et harmonisée l'articulation `N2` ou `L0` (lissage G5) · **Verdict : supporté**
 
@@ -155,6 +156,6 @@ Toutes les formulations divergentes, sur-attribuées ou insuffisamment sourcées
   - **Appui vérifié :** `Compendium/prd.md` (`L6097–6100`), `specs/manifest.json` (`ch34`, Partie XII).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C33-29 (`L15`, `L58`, § 33.1.1 & § 33.2.1 — ajout *system agency*)** — *Affirmation :* La revue de Chandra et Michel (`[7]`) qualifie le basculement agentique de délégation d'autorité à des artefacts agentiques, mettant l'expansion de l'agentivité des systèmes en tension directe avec la préservation de l'agentivité humaine suivie par l'*AI Index 2026* (`[1]`) ; sans écrans différentiels `CIBA`, cas témoins, quota manuel `INI-043` (`> 70 %`) ni exercices de repli `L0`, cette expansion atrophie la relève et dégrade la supervision en approbation réflexe (`[3, 4]`).
+- **C33-29 (`L15`, `L64`, § 33.1.1 & § 33.2.1 — cadrage Vague 2)** — *Affirmation :* La revue de Chandra et Michel (`[7]`) qualifie le basculement agentique de délégation d'autorité à des artefacts agentiques, mettant l'expansion de l'automatisation agentique des processus d'entreprise en tension directe avec la préservation de l'agentivité humaine suivie par l'*AI Index 2026* (`[1]`) ; sans écrans différentiels `CIBA`, cas témoins, quota manuel `INI-043` (`> 70,0 %`) ni exercices de repli `L0` sur les `SoR`, cette expansion atrophie la relève et dégrade la supervision en approbation réflexe (`[3, 4]`).
   - **Appui vérifié :** `SRC-113.txt` (`[7]`, `L88–94`, `L113–119`, `L319–323`), `SRC-008.txt` (`[1]`, `L16360–16372`), `SRC-073.txt` (`[3]`, `L322–357`), `SRC-075.txt` (`[4]`, `L387–554`).
-  - **Passe *system agency* :** intégré et vérifié · **Verdict : supporté**
+  - **Passe Vague 2 :** intégré et vérifié · **Verdict : supporté**

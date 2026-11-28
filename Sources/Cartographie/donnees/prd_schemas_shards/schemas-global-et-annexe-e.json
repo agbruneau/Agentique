@@ -17,8 +17,8 @@
         "noyau-controle-possede-cap",
         "harnais-deterministe-8-etapes"
       ],
-      "title": "Architecture de l'entreprise agentique : exosquelette déterministe à 80 % encadrant 20 % de cognition probabiliste",
-      "insertion_point": "Sommaire exécutif global — après le paragraphe §2 (Doctrine architecturale 80/20, échelle d'autonomie L0–L4 et harnais déterministe)",
+      "title": "Interopérabilité et automatisation agentique des systèmes d'entreprise : exosquelette déterministe à 80 % encadrant 20 % de cognition probabiliste",
+      "insertion_point": "Liminaire § 0.2 — après la présentation de la doctrine hybride 80/20, du continuum d'automatisation L0–L4 sur systèmes d'entreprise et de la concordance (Tableau 0.1)",
       "target_audiences": [
         "Direction / Métier",
         "AE / AS",
@@ -26,8 +26,8 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma permet à un dirigeant ou à un architecte de saisir d'emblée qu'un agent d'entreprise ne relève ni d'un assistant conversationnel autonome ni d'un progiciel rigide : 80 % du système constituent une charpente déterministe détenue par l'organisation (règles métier, contrôles d'accès, traçabilité et validation), tandis que le modèle d'IA demeure confiné aux 20 % centraux dédiés à la classification, à la synthèse et à la proposition d'actions. L'illustration met en évidence l'insertion rigoureuse de cette couche des Systèmes d'agentivité entre les interfaces usagers (SoE) et les systèmes d'enregistrement patrimoniaux (SoR), sans dépendance propriétaire.",
-      "vulgarization_angle": "Mettre en parallèle l'architecture hybride 80/20 et une infrastructure ferroviaire guidée sur rails déterministes (aiguillages, signalisation et freinage d'urgence), au sein de laquelle le modèle probabiliste agit comme système d'aide à la navigation plutôt que comme conducteur dépourvu de freins.",
+      "pedagogical_objective": "Ce schéma frontispice permet à un dirigeant ou à un architecte de saisir d'emblée le triptyque directeur de l'ouvrage : l'automatisation agentique des systèmes d'entreprise ne relève ni d'un assistant conversationnel sans frein ni d'un script RPA fragile. Quatre-vingts pour cent du dispositif forment un exosquelette déterministe possédé par l'organisation (règles métier L0, calculs Decimal exacts, contrats d'interopérabilité et passerelles PEP), encadrant 20 % de cognition probabiliste substituable pour raccorder sans dépendance propriétaire les interfaces usagers (SoE) aux systèmes d'enregistrement et opérationnels (ERP, CRM, SIRH, ITSM, SCM, core métier et OT).",
+      "vulgarization_angle": "Mettre en parallèle l'architecture hybride 80/20 et une infrastructure ferroviaire d'entreprise guidée sur rails déterministes (aiguillages L0, signalisation protocolaire MCP/A2A et freinage d'urgence PEP), où le modèle probabiliste opère comme aide à la décision bornée entre les canaux d'engagement (SoE) et les systèmes d'entreprise (SoR / OT).",
       "visual_blueprint": {
         "zones": [
           {
@@ -37,8 +37,8 @@
           },
           {
             "zone_id": "Z2",
-            "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : noyau de 42 CAP invariantes sur 52 et harnais à 8 étapes",
-            "content": "Routage à états, validation par JSON Schema Draft 2020-12, calculs financiers en type Decimal, caviardage préalable des renseignements personnels, passerelle PEP/AI Gateway et mécanisme d'abstention typée AMBIGU_ESCALADE."
+            "label": "Strate médiane — Exosquelette déterministe possédé (80 %) : règles métier L0, 42 CAP invariantes et harnais à 8 étapes",
+            "content": "Règles métier L0, calculs en type Decimal exact, contrats JSON Schema Draft 2020-12, caviardage préalable des renseignements personnels, passerelle PEP/AI Gateway et mécanisme d'abstention typée AMBIGU_ESCALADE."
           },
           {
             "zone_id": "Z3",
@@ -47,8 +47,8 @@
           },
           {
             "zone_id": "Z4",
-            "label": "Strate inférieure — Systems of Record (SoR) protégés par couches anti-corruption (ACL)",
-            "content": "Progiciels ERP, systèmes bancaires et d'assurance, bases documentaires CoALA et automates IT/OT accessibles exclusivement par l'entremise de façades d'intention validées."
+            "label": "Strate inférieure — Interopérabilité protocolaire (MCP/A2A/ACL) et systèmes d'entreprise (SoR / OT)",
+            "content": "Progiciels ERP, CRM, SIRH, ITSM, SCM et core métier, mémoire CoALA et équipements industriels IT/OT accessibles exclusivement par façades d'intention MCP, délégations A2A et couches anti-corruption (ACL)."
           }
         ],
         "numbered_flows": [
@@ -71,7 +71,7 @@
             "meaning": "Porte humaine et validation déterministe (HITL, JSON Schema et AMBIGU_ESCALADE)"
           }
         ],
-        "key_takeaway_box": "L'entreprise ne délègue jamais la souveraineté de ses actifs ni l'autorité d'exécution au modèle d'IA : les 80 % d'infrastructure déterministe assurent la fiabilité, l'auditabilité et le remplacement des fournisseurs de modèles sans refonte du socle métier."
+        "key_takeaway_box": "Triptyque architectural : l'interopérabilité contractuelle ouverte (MCP/A2A/CloudEvents) et l'automatisation déterministe à 80 % (L0, Decimal, PEP) encadrent les 20 % d'agentique probabiliste afin de préserver l'intégrité et la réversibilité des systèmes d'entreprise."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -150,7 +150,7 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement d'une action agentique à travers neuf contrôles infalsifiables (sept à l'aller, deux au retour), depuis la requête initiale d'un usager jusqu'à l'écriture dans un système métier, sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement les points d'application de l'identité attestée (NHI/OBO), du refus par défaut (OPA et Règle de deux), de la journalisation scellée (double couloir) ainsi que des obligations issues de la Loi 25, de la ligne directrice BSIF E-23 et de l'EU AI Act.",
+      "pedagogical_objective": "Ce schéma retrace avec clarté le cheminement de bout en bout d'une action agentique à travers neuf contrôles infalsifiables (sept à l'aller, deux au retour), depuis le mandat initial jusqu'à l'écriture idempotente via couche ACL dans les systèmes d'entreprise (ERP, CRM, SIRH, ITSM, Mainframe, OT), sans jamais s'en remettre aux garanties déclaratives du modèle. Les équipes juridiques et de sécurité y repèrent immédiatement l'identité attestée (SPIFFE/OBO), le refus par défaut (OPA et Règle de deux) et la voûte probatoire (Loi 25, BSIF E-23, EU AI Act).",
       "vulgarization_angle": "Modéliser la chaîne protocolaire et réglementaire sous la forme d'une enceinte douanière à cinq sas séquentiels : vérification de l'identité du mandataire et de l'étendue bornée du mandat, inspection des charges utiles hors de la sphère du modèle, apposition d'un sceau probatoire immuable et commande de révocation immédiate.",
       "visual_blueprint": {
         "zones": [
@@ -166,8 +166,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Voûte probatoire et socle multi-juridictions (D08 + D09)",
-            "content": "Double couloir OTel GenAI exempt de PII opérationnelle et registre JCS/SCITT scellé satisfaisant simultanément aux exigences de la Loi 25 (art. 12.1, ÉFVP), de BSIF E-23, de l'AMF et de l'EU AI Act."
+            "label": "Voûte probatoire, socle multi-juridictions et systèmes d'entreprise (D08 + D09 + SoR)",
+            "content": "Double couloir OTel GenAI exempt de PII opérationnelle, registre JCS/SCITT scellé (Loi 25, BSIF E-23, AMF, EU AI Act) et exécution idempotente via ACL vers les systèmes d'entreprise cibles (ERP, CRM, SIRH, ITSM, Mainframe et sas OT)."
           }
         ],
         "numbered_flows": [
@@ -269,7 +269,7 @@
       ],
       "visual_archetype": "Frise chronologique et jalons",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette frise bilingue métier-architecture démontre que l'entreprise ne bascule pas vers l'autonomie intégrale de manière abrupte : elle déploie d'abord un socle sans regret sur 90 jours à 18 mois, puis n'ouvre progressivement les paliers P1 à P3 jusqu'en 2035 qu'à la suite de validations empiriques (15 portes POR) et de l'observation de signaux externes (27 SIG). Elle relie explicitement chaque horizon aux échéances juridiques et cryptographiques (Loi 25, arrimage AMF/BSIF E-23 au 1er mai 2027, TLS 47 j, EU AI Act 2026–2028, PQC G7 2030–2035) tout en soulignant la sanctuarisation des compétences humaines (INI-043).",
+      "pedagogical_objective": "Cette frise bilingue métier-architecture démontre que l'entreprise ne bascule jamais de manière abrupte vers l'autonomie : elle ancre d'abord son socle d'automatisation déterministe préalable (L0 : règles codées, BPMN, RPA/API sans écriture modèle) et son noyau sans regret sur 90 jours à 18 mois, avant d'ouvrir graduellement les paliers L1 à L4 et P1 à P3 jusqu'en 2035 sous condition de preuves (15 portes POR, 27 signaux SIG), en alignement avec les échéances réglementaires et la préservation des compétences humaines (INI-043).",
       "vulgarization_angle": "Réunir sur un axe temporel unique 2026–2035 les trois vagues de déploiement (rampe tactique, P1, P2 et P3), les paliers de l'échelle L0–L4 et les échéances réglementaires faisant office de seuils de franchissement arbitrés conjointement par le binôme AE ↔ AS.",
       "visual_blueprint": {
         "zones": [
@@ -285,8 +285,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Bande inférieure — Échelle graduée L0–L4 et préservation du capital humain (INI-043)",
-            "content": "Progression maîtrisée L0 (lecture et suggestion) → L1 → L2 (plafond sans validation renforcée) → L3/L4 sous porte humaine obligatoire, quota de dossiers formateurs dès > 70 % d'automatisation (INI-043) et exercices périodiques de reprise manuelle."
+            "label": "Bande inférieure — Continuum d'automatisation L0 → L1–L4 et préservation du capital humain (INI-043)",
+            "content": "Socle déterministe préalable L0 (règles métier, BPMN, RPA/API sans écriture autonome) suivi de l'escalade graduée L1 → L2 (plafond courant) → L3/L4 sous porte humaine obligatoire, quota formateur dès > 70 % d'automatisation (INI-043) et repli manuel périodique."
           }
         ],
         "numbered_flows": [
@@ -396,8 +396,8 @@
       ],
       "visual_archetype": "Boucle de rétroaction et contrôle",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Ce schéma établit le lien analytique entre l'économie réelle d'un système agentique (FinOps), la démonstration statistique de sa fiabilité (EvalOps) et les 24 portes bloquantes qui conditionnent son accès à la production. Un responsable financier ou un RSSI y constate sans ambiguïté pourquoi la consommation incontrôlée de jetons au sein d'un collectif non borné érode simultanément la marge et la fiabilité (loi de Lusser), et comment le harnais déterministe, la mesure du Cost-per-Outcome (CPO), la distillation vers des SLM et la chaîne G0–G5 rétablissent la soutenabilité.",
-      "vulgarization_angle": "Opposer la spirale de dérive économique et opérationnelle (chaîne probabiliste non bornée × amplification de jetons 15× × évaluation manuelle) à la boucle de maîtrise fondée sur les preuves (harnais 80/20 → banc EvalOps pass^k/Wilson → disjoncteur CPO FOCUS v1.4 → homologation 24 [BLOQUANT] PRR-75 / G0–G5).",
+      "pedagogical_objective": "Ce schéma relie l'économie réelle de l'automatisation agentique (FinOps), la preuve statistique de sa fiabilité (EvalOps) et les 24 portes bloquantes qui gouvernent la mise en production sur les systèmes d'entreprise. Il montre comment éviter la dérive de Lusser et l'inflation multi-agents (15×) en comparant systématiquement le coût complet par résultat conforme (CPO sous FOCUS v1.4) au coût marginal d'une automatisation déterministe L0 (API, BPMN, RPA) avant toute homologation G0–G5.",
+      "vulgarization_angle": "Opposer la dérive probabiliste non bornée (loi de Lusser × inflation 15×) à la boucle de maîtrise fondée sur les preuves : priorité L0 et harnais 80/20 → banc EvalOps pass^k/Wilson → arbitrage du CPO FOCUS v1.4 face au coût API/BPMN/RPA L0 → verdict mécanique PRR-75 / G0–G5.",
       "visual_blueprint": {
         "zones": [
           {
@@ -408,7 +408,7 @@
           {
             "zone_id": "Z2",
             "label": "Boucle de maîtrise EvalOps et FinOps — Mesure au résultat métier conforme",
-            "content": "Bancs hermétiques E1–E3 (règle des trois n ≥ ceil(3/p) garantissant la borne de Wilson < p, pass^5 ≥ 99 % pour la distillation SLM), facturation FOCUS v1.4 en $ CA par résultat conforme (CPO), alerte FinOps à 80 % et coupure atomique à 100 %."
+            "content": "Priorité aux flux déterministes L0 (API, BPMN, RPA), bancs hermétiques E1–E3 (n ≥ ceil(3/p) de Wilson, pass^5 ≥ 99 % pour distillation SLM), compteur CPO FOCUS v1.4 ($ CA / résultat conforme) comparé au coût unitaire L0, alerte FinOps à 80 % et coupure atomique à 100 %."
           },
           {
             "zone_id": "Z3",
@@ -419,7 +419,7 @@
         "numbered_flows": [
           "① Le harnais 80/20 fragmente les tâches longues afin de contenir la dégradation exponentielle de Lusser et de réduire les reprises coûteuses.",
           "② Les bancs hermétiques EvalOps mesurent la constance multi-essais pass^k ainsi que le dimensionnement statistique de Wilson préalablement à toute promotion ou distillation vers des SLM frugaux.",
-          "③ La passerelle comptabilise le coût complet en $ CA par résultat conforme (CPO sous FOCUS v1.4) et déclenche une coupure automatique à 100 % du plafond budgétaire (alerte préalable à 80 %).",
+          "③ La passerelle mesure le coût complet en $ CA par résultat conforme (CPO sous FOCUS v1.4), le confronte au coût d'un flux déterministe L0 (API/BPMN/RPA) et coupe à 100 % du budget.",
           "④ Seules les versions satisfaisant aux 24 portes [BLOQUANT] de PRR-75, aux 5 SBB sous barrière G0 et à l'ensemble des contrôles G0–G5 obtiennent l'autorisation de mise en exploitation."
         ],
         "color_legend": [
@@ -521,14 +521,14 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette carte d'orientation générale permet à tout lecteur d'embrasser d'un regard l'architecture modulaire des 12 domaines orthogonaux (36 chapitres, 71 familles, 260 thèmes), d'identifier les quinze corridors d'interrelations comptant au moins sept liaisons transversales dans le registre MindMap et de sélectionner l'un des quatre parcours de lecture ciblés selon son rôle décisionnel.",
+      "pedagogical_objective": "Cette carte maîtresse permet à tout lecteur d'embrasser l'architecture modulaire des 12 domaines orthogonaux (36 chapitres, 71 familles, 260 thèmes) structurant l'interopérabilité et l'automatisation agentique des systèmes d'entreprise, de repérer les quinze corridors d'interrelations dominants (≥ 7 liens) et de suivre l'un des quatre itinéraires de lecture adaptés à son rôle.",
       "vulgarization_angle": "Présenter le traité non comme un manuel linéaire à lire de la première à la dernière page, mais comme un plan de réseau métropolitain reliant quatre grands blocs architecturaux par quinze artères critiques et quatre itinéraires dédiés par profil.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Quatre blocs et douze Parties (D01–D12, CH-01..CH-36)",
-            "content": "Regroupement des douze domaines en quatre ensembles : Fondations et contrôle (D01–D02), Tissu conjonctif et exécution (D03–D05), Confiance et pilotage (D06–D08), Conformité et livraison (D09–D12)."
+            "content": "Regroupement des douze domaines en quatre ensembles : Fondations et architecture 80/20 (D01–D02), Interopérabilité MCP/A2A/PEP, Sémantique & Patrimoine et Automatisation, Orchestration & Sagas (D03–D05), Identité NHI, Sécurité et Pilotage (D06–D08), Conformité, Systèmes d'entreprise & Blueprints, Prospective et Homologation (D09–D12)."
           },
           {
             "zone_id": "Z2",
@@ -538,7 +538,7 @@
           {
             "zone_id": "Z3",
             "label": "Quatre itinéraires de lecture par profil métier et technique",
-            "content": "Rubans chronologiques guidant Direction / Métier, Architectes AE / AS, Ingénierie / RSSI / SRE et Juridique / Conformité vers les chapitres et annexes prioritaires."
+            "content": "Quatre itinéraires guidant Direction / Découverte (interopérabilité, 80/20 et systèmes d'entreprise), Architectes AE / AS (anti-verrouillage, MCP/A2A et Sagas), Ingénierie / RSSI / SRE (NHI, PEP et sûreté) et Juridique / Conformité (Loi 25, EU AI Act et homologation G0–G5)."
           }
         ],
         "numbered_flows": [
@@ -578,7 +578,7 @@
     "editorial_guidelines": [
       "Chaque schéma de vulgarisation vise une saisie rigoureuse et immédiate de l'intention architecturale et des mécanismes de contrôle par un lecteur non technicien.",
       "Tout acronyme ou terme technique spécialisé (MCP, A2A, OBO, OPA, Saga, CPO, Wilson, PRR-75) est systématiquement accompagné de l'explicitation de son rôle métier.",
-      "Toute fiche de schéma est rédigée en français canadien (`fr-CA`) technique, précis, professionnel, soutenu et fluide, sur un ton strictement neutre de calibre universitaire : proscription du pronom « on », des accroches chronométriques promotionnelles, des métaphores familières et des abréviations relâchées hors code, avec emploi exclusif de l'appellation normée « Systèmes d'agentivité » et des symboles typographiques Unicode (`→`, `↔`, `≤`, `≥`, `–`).",
+      "Toute fiche de schéma est rédigée en français canadien (`fr-CA`) technique, précis, professionnel, soutenu et fluide, sur un ton strictement neutre de calibre universitaire : proscription du pronom « on », des accroches chronométriques promotionnelles, des métaphores familières et des abréviations relâchées hors code, avec alignement des bandeaux d'en-tête `.svg` sur le triptyque « Systèmes d'entreprise » et « Interopérabilité & automatisation agentique » (l'appellation normée « Système d'agentivité » qualifiant spécifiquement la strate d'action définie au Chapitre 01) ainsi qu'emploi rigoureux des symboles typographiques Unicode (`→`, `↔`, `≤`, `≥`, `–`).",
       "Les synthèses finales de schémas sont formulées sans préfixe injonctif redondant sous l'intitulé « Synthèse doctrinale », en préservant intégralement les chiffres, seuils, identifiants et marqueurs normatifs RFC 2119 du référentiel.",
       "Chaque chapitre CH-01 à CH-36 reçoit de 1 à 6 schémas dont l'union des champs families_covered couvre 100 % des FAM_* du chapitre, complétés par les schémas d'annexes SCH-AB-01, SCH-AC-01 et SCH-AD-01.",
       "Tout schéma classé en réemploi direct ou en adaptation vulgarisée référence au moins une figure existante vérifiée dans inventaire-319-diagrammes.json, sans aucun lien orphelin."
@@ -630,7 +630,7 @@
           {
             "zone_id": "Z1",
             "label": "Matrice thermique D01–D12 × D01–D12 (616 liaisons)",
-            "content": "Grille carrée colorée par intensité de couplage entre domaine source et domaine cible, mettant en évidence les pôles D09 (droit), D02 (contrôle), D03 (protocoles) et D10 (déploiement)."
+            "content": "Grille carrée colorée par intensité de couplage entre domaine source et domaine cible, mettant en évidence les pôles D09 (conformité), D02 (contrôle 80/20), D03 (interopérabilité protocolaire), D05 (automatisation et Sagas) et D10 (systèmes d'entreprise et blueprints)."
           },
           {
             "zone_id": "Z2",
@@ -662,7 +662,7 @@
             "meaning": "Encadrement normatif, atténuation de risque et tensions d'arbitrage"
           }
         ],
-        "key_takeaway_box": "Quarante pour cent des corridors de haut volume gravitent autour de quatre pôles : droit prudentiel (D09), exosquelette de contrôle (D02), protocoles (D03) et blueprints (D10)."
+        "key_takeaway_box": "Quarante pour cent des corridors de haut volume gravitent autour des pôles de conformité (D09), d'exosquelette 80/20 (D02), d'interopérabilité protocolaire (D03), d'automatisation (D05) et de systèmes d'entreprise (D10)."
       },
       "reuse_status": "creation_originale",
       "linked_tome_figures": []

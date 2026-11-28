@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 06 — Architecture de référence unifiée, noyau possédé (42 CAP) et douze décisions neutres
+# Base documentaire fermée — Chapitre 06 — Architecture de référence des systèmes d'entreprise, noyau d'interopérabilité possédé (42 CAP sur 52) et maturité patrimoniale
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

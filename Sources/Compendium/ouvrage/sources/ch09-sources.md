@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 09 — Passerelles PEP à neuf contrôles, découverte gouvernée, routage d'inférence et anti-verrouillage
+# Base documentaire fermée — Chapitre 09 — Passerelles d'entreprise PEP à neuf contrôles, catalogue de contrats, routage d'inférence et anti-verrouillage SaaS
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

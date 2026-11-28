@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 08 — Protocoles horizontaux pair-à-pair : A2A v1.0.1, pile AGNTCY/SLIM, paiements AP2 et fédération B2B
+# Base documentaire fermée — Chapitre 08 — Interopérabilité horizontale inter-domaines et B2B : A2A v1.0.1, piles AGNTCY/SLIM, fédération logistique et interfaces AG-UI/A2UI
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

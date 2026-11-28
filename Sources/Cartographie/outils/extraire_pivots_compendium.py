@@ -301,12 +301,19 @@ def _build_concordance_section(
 
     lim_line = unit_spans["00-liminaire"][0]
     lim_p0, lim_p1 = _pdf_span_for_units(["00-liminaire"], lim_line)
+    lim_unit = next((u for u in manifest["units"] if u.get("id") == "00-liminaire"), {})
+    lim_title = _clean_text(
+        lim_unit.get(
+            "title",
+            "Liminaire — Sommaire exécutif : interopérabilité, automatisation agentique des systèmes d'entreprise, doctrine 80/20 et Panorama directeur",
+        )
+    )
     compendium_parts: list[dict[str, Any]] = [
         {
             "tome_id": "R",
             "part_id": "R",
             "file": "Compendium/README.md",
-            "title": "Index éditorial du Compendium",
+            "title": "Interopérabilité et automatisation agentique des systèmes d'entreprise (Index éditorial)",
             "units": [],
             "line_start": 1,
             "pdf_page_start": None,
@@ -316,7 +323,7 @@ def _build_concordance_section(
             "tome_id": "LIM",
             "part_id": "LIM",
             "file": "Compendium/Compendium.md",
-            "title": "Liminaire — Sommaire exécutif global, doctrine 80/20 et panorama visuel",
+            "title": lim_title,
             "units": ["00-liminaire"],
             "line_start": lim_line,
             "pdf_page_start": lim_p0,
@@ -504,33 +511,33 @@ def _build_chronology(
     six_reperes_readme = [
         {
             "echeance": "Depuis sept. 2023",
-            "cadre": "Québec (Loi 25, art. 12.1)",
-            "resume": "Obligation d'informer la personne visée par une décision exclusivement automatisée, d'expliquer les paramètres principaux et d'offrir une révision humaine.",
+            "cadre": "Québec (Loi 25, art. 12.1 et art. 27)",
+            "resume": "Obligation transversale d'informer la personne visée par une décision exclusivement automatisée, d'expliquer les paramètres principaux, d'offrir une révision humaine et d'assurer la portabilité structurée des renseignements.",
         },
         {
             "echeance": "Depuis août 2026",
             "cadre": "Union européenne (EU AI Act, art. 50)",
-            "resume": "Obligations de transparence et de marquage des interactions synthétiques en application depuis le 2 août 2026 (avec aménagement transitoire art. 111 au 2 déc. 2026).",
+            "resume": "Obligations transversales de transparence et de marquage des interactions synthétiques en application depuis le 2 août 2026 sur les systèmes d'engagement (avec aménagement transitoire art. 111 au 2 déc. 2026).",
         },
         {
             "echeance": "Mars 2027 → Mars 2029",
-            "cadre": "PKI publique (CA/Browser Forum SC-081v3)",
-            "resume": "Réduction graduelle de la durée maximale des certificats TLS à 100 jours (mars 2027) puis 47 jours (15 mars 2029).",
+            "cadre": "PKI publique et passerelles d'entreprise (CA/Browser Forum SC-081v3)",
+            "resume": "Réduction graduelle de la durée maximale des certificats TLS à 100 jours (mars 2027) puis 47 jours (15 mars 2029), imposant l'automatisation PKI ACME/SDS de bout en bout.",
         },
         {
             "echeance": "1er mai 2027",
-            "cadre": "Canada fédéral (BSIF E-23 / AMF)",
-            "resume": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF sur la gestion du risque de modèle et gouvernance prudente des modèles IA/agentiques.",
+            "cadre": "Étalon prudentiel canadien et québécois (BSIF E-23 / AMF)",
+            "resume": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF et du cadre AMF : inventaire, matérialité et gouvernance hors modèle des systèmes automatisés et agentiques (étalon haute assurance).",
         },
         {
             "echeance": "2027–2028",
-            "cadre": "Union européenne (EU AI Act, Annexes III et I)",
-            "resume": "Échéances d'application étendues des systèmes à haut risque (2 décembre 2027 Annexe III ; 2 août 2028 Annexe I selon Règlement UE 2026/1744).",
+            "cadre": "Union européenne (EU AI Act, Annexes III et I / Digital Omnibus)",
+            "resume": "Échéances d'application étendues des systèmes d'entreprise et composants industriels à haut risque (2 décembre 2027 Annexe III ; 2 août 2028 Annexe I selon Règlement UE 2026/1744).",
         },
         {
             "echeance": "2030–2035",
-            "cadre": "Transition post-quantique G7 / NIST / CSE ITSP.40.111",
-            "resume": "Bascules planifiées vers ML-KEM / ML-DSA / SLH-DSA et interdiction des schémas RSA/ECDSA classiques à l'horizon 2030–2035.",
+            "cadre": "Transition post-quantique G7 / NIST / CST ITSP.40.111",
+            "resume": "Bascules coordonnées vers ML-KEM / ML-DSA / SLH-DSA sur les identités non humaines (NHI), passerelles PEP et voûtes d'audit longue durée des systèmes d'entreprise à l'horizon 2030–2035.",
         },
     ]
 

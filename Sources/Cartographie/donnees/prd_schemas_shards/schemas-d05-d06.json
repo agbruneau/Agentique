@@ -38,14 +38,14 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma explique aux dirigeants, aux juristes et aux architectes pourquoi un système agentique d'entreprise ne débute jamais par une multiplication d'agents : l'arbre de sobriété privilégie d'abord la règle déterministe (N0) puis le flux structuré fixe, avant de confier la commande au cadre déterministe (OO3/OO4 plutôt qu'aux régimes libres OO1/OO2) pour encapsuler un agent unique dans une enveloppe BPMN/APM ou autoriser le multi-agents uniquement lorsque le gain en constance pass^k et en coût par résultat (CPO) compense le surcoût de 3× à 15× en jetons.",
+      "pedagogical_objective": "Ce schéma inscrit la sobriété d'orchestration dans le spectre continu d'automatisation d'entreprise : privilégier d'abord le Niveau 0 déterministe (SQL, règles DMN, RPA stable, workflow BPMN pur = 0 jeton LLM), évaluer OO1/OO2 uniquement hors impact opposable, encapsuler l'agent borné dans une capsule hybride OO3 (sous-processus BPMN/CMMN et frames APM), et réserver le multi-agents OO4 au dernier recours démontrant un gain statistique pass^k et CPO face au surcoût de 3× à 15×.",
       "vulgarization_angle": "L'arbre de sobriété en quatre paliers et la grille d'autorité OO1–OO4 sont dissociés : privilégier l'automate à règle fixe (N0) ou la séquence déterministe bornée avant d'encadrer un spécialiste unique dans un périmètre BPMN/frame local ou de mobiliser une équipe coordonnée, avec bascule réglementaire obligatoire OO2→OO3 vers la commande déterministe du cadre (OO3/OO4) dès qu'une décision opposable ou un dommage irréversible survient.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Paliers déterministes par défaut (N0 Code/DMN → Chaîne structurée fixe)",
-            "content": "Règles fixes, calculs financiers exacts et flux de travail prévisibles à coût marginal minimal; ces paliers deviennent toutefois proscrits dès que les trois critères cumulatifs C26 § 29.4.1 (issue opposable, trace exigible par un tiers, dommage non réparable par reprise) imposent la commande déterministe par le cadre (OO3/OO4, proscrivant OO1/OO2)."
+            "label": "Niveau 0 d'automatisation déterministe (SQL / DMN / RPA / BPMN pur = 0 jeton LLM) et filtre OO1/OO2",
+            "content": "Exécution à coût d'inférence nul par règles SQL/DMN, iPaaS, RPA déterministe ou BPMN pur ; bascule obligatoire de OO1/OO2 vers la commande déterministe du cadre (OO3/OO4) dès qu'apparaissent les trois critères C26 § 29.4.1 (issue opposable, trace exigible, dommage irréversible)."
           },
           {
             "zone_id": "Z2",
@@ -146,7 +146,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette comparaison démontre pourquoi les échanges libres entre agents (salle virtuelle ou essaims sans plafond) provoquent une croissance quadratique O(n²) des coûts et compromettent l'auditabilité, alors que le catalogue fermé des huit patrons autorisés (ADR-011, EXIG-ORC-03..10) impose un orchestrateur responsable, des bornes strictes (≤ 2 sauts, ≤ 3 tours) et une portabilité garantie aux frontières MCP/A2A indépendamment du cadriciel retenu (LangGraph, MAF, CrewAI).",
+      "pedagogical_objective": "Cette comparaison oppose les essaims libres en O(n²) au catalogue fermé des huit topologies homologuées (ADR-011) articulé avec des moteurs d'automatisation et d'orchestration substituables : moteurs de workflow d'entreprise (BPMN 2.0, exécution durable) et graphes d'agents coopèrent exclusivement par contrats ouverts MCP et A2A sans verrouillage SDK.",
       "vulgarization_angle": "L'opposition met en regard une enceinte ouverte où tous les agents dialoguent sans ordre du jour (coût quadratique, dette SDK et dix anti-patrons d'EXIG-ORC-29) et une chaîne d'assemblage dotée de huit circuits balisés ainsi que d'interfaces normalisées MCP/A2A interchangeables.",
       "visual_blueprint": {
         "zones": [
@@ -162,8 +162,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Frontière de portabilité — Protocoles MCP et A2A isolant les cadriciels en disponibilité générale",
-            "content": "Microsoft Agent Framework 1.0, LangGraph Platform, Confluent Flink, Temporal et CrewAI échangent exclusivement par MCP et A2A afin qu'un changement de SDK n'altère jamais les contrats métier."
+            "label": "Moteurs d'automatisation et d'orchestration substituables aux frontières MCP et A2A",
+            "content": "Interopérabilité native entre moteurs de processus d'entreprise (BPMN 2.0, Temporal, Confluent Flink) et cadriciels d'agents (MAF 1.0, LangGraph, CrewAI) isolés derrière des contrats MCP et A2A afin qu'un remplacement d'outil n'affecte jamais le domaine métier."
           }
         ],
         "numbered_flows": [
@@ -361,7 +361,7 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette représentation en couches permet aux décideurs et aux architectes de saisir le patron hybride cible d'entreprise : plutôt que d'autoriser des appels directs ou des cascades incontrôlées entre agents, les faits métier sont consignés en premier lieu dans un journal événementiel immuable (Kafka, Solace PubSub+, NATS JetStream sous contrat AsyncAPI 3.0.0 et enveloppe CloudEvents 1.0.2 ≤ 64 Ko, sans renseignement personnel direct), tandis qu'un orchestrateur régule les enchaînements inter-domaines.",
+      "pedagogical_objective": "Cette vue en couches illustre l'interopérabilité événementielle hybride des systèmes d'entreprise : chaque mutation métier (commande ERP, réservation WMS, dossier CRM ou ticket ITSM) est scellée atomiquement par Transactional Outbox + CDC dans un journal immuable Event Mesh (CloudEvents 1.0.2 ≤ 64 Ko, AsyncAPI 3.0.0, zéro PII en attribut, `xagentmaxhops = 4`), combinant chorégraphie locale réactive et macro-orchestration inter-domaines.",
       "vulgarization_angle": "L'Event Mesh s'apparente à un réseau de triage ferroviaire régi par des bordereaux normalisés (CloudEvents ≤ 64 Ko, compteur de correspondances `xagentmaxhops = 4`) : chaque gare régionale traite ses aiguillages locaux avec souplesse, tandis que le poste central gouverne tous les trajets inter-régions.",
       "visual_blueprint": {
         "zones": [
@@ -618,7 +618,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif met en lumière la fragilité d'un agent exécuté en mémoire vive — qui perd son état ou dédouble ses écritures au moindre redémarrage ou dépassement de délai HTTP 429 — par rapport à un moteur d'exécution durable (Temporal, Restate, Dapr). Ce dernier journalise chaque transition hors processus, met les attentes humaines en veille à coût nul (`awakeable`), revalide les droits au réveil contre les failles TOCTOU et impose cinq plafonds stricts (EXIG-ORC-26).",
+      "pedagogical_objective": "Ce comparatif oppose la fragilité d'une boucle volatile en mémoire vive à un moteur d'exécution durable (Temporal, Restate, Dapr) pilotant des transactions distribuées inter-systèmes (commande ERP ↔ stock WMS ↔ notification CRM ↔ grand livre via Outbox/CDC et compensations Saga) : journalisation hors processus sans rejeu LLM payant, mise en veille `awakeable` à CPU nul, revalidation TOCTOU au réveil et cinq plafonds EXIG-ORC-26.",
       "vulgarization_angle": "L'architecture oppose un processus travaillant sans mémoire persistante — contraint de tout recommencer ou de facturer deux fois la même opération en cas de coupure réseau — à un registre notarié à chaque étape, capable de reprendre exactement au point d'arrêt après plusieurs jours de veille tout en vérifiant derechef les habilitations.",
       "visual_blueprint": {
         "zones": [

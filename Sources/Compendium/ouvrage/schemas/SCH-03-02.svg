@@ -4,7 +4,7 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-03-02</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Boucle de rétroaction et contrôle</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
 <text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Engrenage de la quadruple dette agentique, preuve N / M / É / S et économie</text>
 <text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">des jetons SLM/LLM</text>
 <g id="zone-Z1" class="zone">

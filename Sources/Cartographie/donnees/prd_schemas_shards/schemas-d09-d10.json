@@ -308,7 +308,7 @@
         "maillage-reglementaire-international",
         "systeme-qualite-en-18286-dora-cra"
       ],
-      "title": "Triple qualification et calendrier européen : EU AI Act et Digital Omnibus 2026/1744, EN 18286:2026, DORA et CRA",
+      "title": "Triple qualification européenne des systèmes d'entreprise : EU AI Act et Digital Omnibus 2026/1744, EN 18286:2026, DORA/NIS 2 et CRA",
       "insertion_point": "Chapitre 26 — à l'issue de la famille FAM_D09_02_01 (Droit de l'Union européenne : EU AI Act, DORA, CRA et EN 18286:2026)",
       "target_audiences": [
         "Direction / Métier",
@@ -317,7 +317,7 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce tableau visuel montre aux équipes juridiques et d'architecture qu'un seul agent financier à portée internationale déclenche simultanément trois qualifications distinctes — modèle décisionnel (BSIF E-23, US SR 26-2, UK SS1/23), actif TIC critique (DORA, CRA) et conformité de marché/LBC (MiFID II, AMLR) — tout en distinguant les obligations européennes déjà actives (article 50 de l'EU AI Act, DORA) des reports du Digital Omnibus 2026/1744 pour le haut risque (décembre 2027 et août 2028) et de la présomption de conformité ouverte par EN 18286:2026.",
+      "pedagogical_objective": "Ce tableau visuel démontre aux équipes juridiques et d'architecture qu'une automatisation agentique raccordée aux systèmes d'entreprise (SIRH, ERP, CRM, MES ou cœurs financiers) à portée européenne déclenche simultanément trois qualifications — système d'IA réglementé (EU AI Act art. 50 actif, Annexe III emploi/crédit au 2 déc. 2027, Annexe I machines/médical au 2 août 2028, EN 18286:2026), actif numérique critique et interopérable (DORA, NIS 2, CRA SBOM, Interoperable Europe Act, Data Act) et responsabilité sectorielle ou produit (Directive 2024/2853, AMLR).",
       "vulgarization_angle": "Croiser trois régimes réglementaires applicables simultanément à un même agent (Modèle, TIC, Marché) avec un échéancier à double détente distinguant l'obligation déjà en vigueur de l'effet extraterritorial reporté.",
       "visual_blueprint": {
         "zones": [
@@ -357,7 +357,7 @@
             "meaning": "Socle technique unificateur EN 18286:2026 (EXIG-CON-30) et tests DORA/SBOM"
           }
         ],
-        "key_takeaway_box": "Un même agent financier cumule trois qualifications réglementaires simultanées (modèle décisionnel, actif TIC critique et conformité de marché) : fonder le système de management sur la norme ouverte EN 18286:2026 couvre d'emblée le volet qualité européen et alimente l'index unique des preuves."
+        "key_takeaway_box": "Tout système d'entreprise automatisé opérant dans l'espace européen cumule trois qualifications (IA/modèle, cyber-résilience DORA/NIS 2/CRA et responsabilité produit/marché) fédérées dans un index probatoire unique adossé à la norme ouverte EN 18286:2026."
       },
       "reuse_status": "adaptation_vulgarisee",
       "linked_tome_figures": [
@@ -786,7 +786,7 @@
         "profil-assurance-dommages-m17",
         "profil-groupe-diversifie-m18"
       ],
-      "title": "Carte des cinq profils financiers réglementés (M-14..M-18) et 24 verrous PEX : mutualiser le socle, cloisonner les données clients",
+      "title": "Matrice sectorielle des systèmes d'entreprise : étalon des cinq profils réglementés (M-14..M-18, 24 PEX), noyau invariant et transposition multisectorielle",
       "insertion_point": "Chapitre 28 — à l'issue de la famille FAM_D10_01_01 (Cinq profils financiers réglementés M-14 à M-18)",
       "target_audiences": [
         "Direction / Métier",
@@ -795,7 +795,7 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette matrice démontre aux dirigeants de groupes financiers et aux architectes qu'une banque, un courtier en patrimoine, un assureur vie, un assureur dommages et un conglomérat ne peuvent partager ni les mêmes plafonds d'autonomie ni les mêmes données, tout en réutilisant un socle technique commun. Elle aligne les cinq profils (M-14 à M-18), leurs charges FEDS (49,59 à 95,78) et leurs verrous sectoriels non négociables (PEX-001 à PEX-044).",
+      "pedagogical_objective": "Cette matrice illustre comment le noyau invariant d'interopérabilité et de contrôle (42/52 CAP) se décline sur les cinq profils financiers de haute régulation (M-14 à M-18, charges FEDS 49,59 à 95,78 et 24 verrous PEX-001..044) érigés en étalon *high-water mark*, tout en posant les principes de cloisonnement par entité juridique et de transposition structurée vers les systèmes d'entreprise cliniques, industriels, logistiques et publics.",
       "vulgarization_angle": "Représenter un ensemble financier à cinq ailes spécialisées reposant sur des fondations techniques partagées, séparées par des cloisons légales étanches (muraille bancassurance 416, étiquette d'entité juridique M-18 et consentement exprès PEX-042).",
       "visual_blueprint": {
         "zones": [
@@ -887,7 +887,7 @@
         "vertical-financier-durci",
         "profil-banque-m14"
       ],
-      "title": "Frontière d'irréversibilité financière : tampon déterministe Paiements Canada RTR (pacs.008, EXIG-CON-29) face à la compensation impossible",
+      "title": "Sas déterministe pré-engagement devant acte irréversible : étalon Paiements Canada RTR (pacs.008, EXIG-CON-29) et transposition ERP/EDI/OT",
       "insertion_point": "Chapitre 28 — au niveau des thèmes tampon-deterministe-rtr-iso20022 et profil-banque-m14 (FAM_D10_01_02)",
       "target_audiences": [
         "Direction / Métier",
@@ -896,7 +896,7 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce parcours séquentiel montre aux dirigeants bancaires et aux architectes pourquoi un virement acheminé sur le rail Paiements Canada RTR (ISO 20022 `pacs.008`, en production à compter de novembre 2026) ne peut recourir au patron de compensation a posteriori par Saga : une fois émis, le règlement est irrévocable en temps réel. L'agent demeure en amont et dépose uniquement une proposition structurée dans un tampon déterministe hors modèle (EXIG-CON-29) vérifiant le schéma décimal exact, l'antifraude, l'idempotence UETR et l'approbation P3 liée au condensat JCS.",
+      "pedagogical_objective": "Ce parcours séquentiel érige le tampon déterministe Paiements Canada RTR (`ISO 20022 pacs.008`, EXIG-CON-29) en patron universel de sas pré-engagement devant tout système d'entreprise à effet irrévocable (virement temps réel, ordre d'achat EDI ferme, libération douanière ou consigne industrielle MES/OT) : lorsque la compensation Saga a posteriori est impossible, l'agent s'arrête à la préparation pendant que le sas hors modèle valide `Decimal`, idempotence UETR et signature humaine P3/JCS.",
       "vulgarization_angle": "Opposer une transaction réversible par compensation a posteriori (Saga) au déclenchement irrévocable sur le rail RTR `pacs.008`, nécessairement précédé d'un sas de validation déterministe à quatre verrous et d'une fenêtre de rétention minimale de 30 secondes.",
       "visual_blueprint": {
         "zones": [
@@ -979,7 +979,7 @@
         "eclats-sectoriels-extrapoles",
         "vertical-financier-durci"
       ],
-      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et frontière probante face aux extrapolations santé FHIR et industrielles SIL 2–4",
+      "title": "Terrain canadien vérifié (10 institutions 2025–2026) et règles de transposition probatoire vers la santé (HL7 FHIR), l'industrie IT/OT (SIL 2/3), la logistique et le secteur public",
       "insertion_point": "Chapitre 28 — à l'issue de la famille FAM_D10_01_02 (Terrain canadien et délimitation probante)",
       "target_audiences": [
         "Direction / Métier",
@@ -988,7 +988,7 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif délimite avec rigueur ce qui est démontré sur pièces dans le corpus et ce qui relève de la transposition illustrative : d'une part, les dix institutions canadiennes documentées en 2025–2026 (classes 5+4+1) et le socle financier et logiciel vérifié (BCA, CRE-IA, Borealis-Bench) ; d'autre part, les extrapolations explicitement balisées en santé (HL7 FHIR R4), en milieu manufacturier (IEC 62443) et en énergie ou mines (NERC CIP, SIL 2–4) où toute commande autonome directe demeure interdite.",
+      "pedagogical_objective": "Ce comparatif articule la visibilité architecturale des systèmes d'entreprise multisectoriels avec une hygiène probatoire stricte (DC-P11, DC-P12) : d'un côté, le terrain canadien vérifié sur pièces (10 institutions 5+4+1, CRE-IA, Borealis-Bench) ; de l'autre, les transpositions structurées en santé clinique (DSE / HL7 FHIR R4), en industrie manufacturière et énergie (MES / ERP / sas Purdue IEC 62443, exclusion SIL 2–4), en logistique B2B et dans le secteur public, explicitement balisées comme illustratives tant qu'une preuve sectorielle propre n'est pas produite.",
       "vulgarization_angle": "Tracer une ligne de démarcation nette entre le périmètre financier canadien vérifié (dix institutions bancaires et assurantielles ainsi que six facteurs de durcissement) et les transpositions non financières balisées comme purement illustratives.",
       "visual_blueprint": {
         "zones": [
@@ -1004,8 +1004,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Périmètre extrapolé (Illustratif uniquement) — Santé FHIR et IT/OT critique SIL 2–4",
-            "content": "Dossiers de santé HL7 FHIR R4, usine BEL de Trois-Rivières (IEC 62443), réseaux NERC CIP et systèmes instrumentés de sécurité IEC 61511 SIL 2–4 : lecture seule et jumeau numérique déterministe uniquement, zéro actionnement autonome direct."
+            "label": "Transpositions multisectorielles balisées (DC-P11 / DC-P12) — Santé DSE/FHIR, Industrie MES/ERP/OT, Public et B2B",
+            "content": "Dossiers cliniques DSE / HL7 FHIR R4, couplage manufacturier MES / ERP / SCADA sous sas Purdue IEC 62443 et NERC CIP (lecture seule et jumeau numérique, zéro actionnement autonome sur SIS SIL 2–4), gestion publique de dossiers et chaînes logistiques B2B."
           }
         ],
         "numbered_flows": [
@@ -1079,19 +1079,24 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma met en relief le patron-signature du secteur financier — la double qualification simultanée d'un Système d'agentivité comme modèle au sens de BSIF E-23 et comme actif tiers technologique sous BSIF B-10 — tout en le situant au centre des six facteurs de durcissement exposés en §28.2.1 (finalité irrévocable, risque systémique, responsabilité civile illustrée par Moffatt c. Air Canada, fraude/LBC et FINOS AI Governance v2.0).",
+      "pedagogical_objective": "Ce schéma présente le patron-signature de l'étalon haute régulation (M-14 à M-18) — la double qualification simultanée d'un même dispositif d'automatisation agentique (Système d'agentivité au sens du Chapitre 01) comme modèle sous BSIF E-23 et comme actif tiers TIC sous BSIF B-10 — au cœur des six facteurs de durcissement financier, assorti des règles de transposition du noyau 42/52 CAP vers la santé (DSE/FHIR), l'industrie (MES/ERP/OT) et le secteur public sous réserve DC-P11/DC-P12.",
       "vulgarization_angle": "Montrer en un diagramme central pourquoi aucun outil commercial ne libère une banque ou un assureur de tenir deux registres réglementaires coordonnés sur un même agent.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Noyau de double qualification prudentielle (BSIF E-23 ∩ BSIF B-10)",
-            "content": "Intersection obligatoire de l'agent comme Modèle (inventaire, cotation de risque, dérive, suivi continu dès le 1er mai 2027) et comme Tiers TIC (ententes intra-groupe, plans de sortie, réversibilité)."
+            "content": "Intersection obligatoire sur un même dispositif d'automatisation agentique (Système d'agentivité au sens Ch. 01) entre le volet Modèle (BSIF E-23 au 1er mai 2027) et le volet Tiers TIC (BSIF B-10 : ententes intra-groupe, plans de sortie et réversibilité)."
           },
           {
             "zone_id": "Z2",
             "label": "Couronne des six facteurs de durcissement financier",
             "content": "Articulation des facteurs : (1) irréversibilité de règlement, (2) risque systémique procyclique FSB/BoE/ESRB, (3) imputabilité de conduite, (4) double qualification, (5) fraude/LBC-AML et (6) standardisation FINOS / fiabilité de bout en bout."
+          },
+          {
+            "zone_id": "Z3",
+            "label": "Transposition multisectorielle contrôlée du noyau 42/52 CAP (DC-P11 / DC-P12)",
+            "content": "Déclinaison balisée hors finance vers la santé clinique (DSE / HL7 FHIR R4), l'industrie IT/OT (MES / ERP / sas Purdue sans action directe SIL 2+), le secteur public (MCN / SCT) et la logistique B2B."
           }
         ],
         "numbered_flows": [
@@ -1150,24 +1155,24 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Cette vue architecturale permet à un directeur technique ou à un architecte de sélectionner le gabarit prêt à déployer adapté au besoin métier — assistant transactionnel sur systèmes centraux SoR (`bp1`), enclave documentaire souveraine Zero-Egress avec filtrage d'accès avant génération RAG ACL (`bp2`) ou collaboration multi-agents B2B via A2A, SLIM et Event Mesh (`bp3`) — tout en montrant leur unification sur les huit couches C1–C8 (565 contrôles) et à la porte mécanique G0 (5 SBB et C01–C40).",
+      "pedagogical_objective": "Cette vue architecturale guide le choix entre les trois blueprints multisectoriels prêts à déployer — en conservant intacts leurs identifiants scellés au Tome 8 : `bp1_assistant_interne` raccordé aux SoR (Intranet, ITSM, ERP, SIRH), `bp2_rag_entreprise_acl` en enclave Zero-Egress (GED, CRM, ERP sous ACL OpenFGA) et `bp3_orchestration_multi_agents_b2b` pour la fédération inter-entreprises (SCM, approvisionnement et finance) — assemblés sur C1–C8 (565 contrôles) et validés en G0 sur C01–C40.",
       "vulgarization_angle": "Présenter trois architectures modulaires assemblées à partir des mêmes huit strates C1–C8 et des mêmes cinq briques SBB : le guichet transactionnel encadré (`bp1`), l'enclave hermétique sans sortie réseau (`bp2`) et le nœud d'échange fédéré inter-entreprises (`bp3`).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Blueprint 1 — `bp1_assistant_interne` (Tome 6 section 14.1, Fig. 53) : transactionnel orienté SoR",
-            "content": "Orchestration durable Temporal, adaptateurs MCP SoR sans SQL direct, passerelle MCP avec échange de jetons OBO et journalisation probatoire WORM."
+            "content": "Raccordement transactionnel aux systèmes d'entreprise (Intranet, ITSM, ERP, SIRH) sous exécution durable Temporal, façades MCP sans SQL direct, échange OBO et audit WORM."
           },
           {
             "zone_id": "Z2",
             "label": "Blueprint 2 — `bp2_rag_entreprise_acl` (Tome 6 section 14.3, Fig. 55) : enclave souveraine Zero-Egress",
-            "content": "AI Gateway locale, recherche vectorielle Qdrant filtrée en amont par OpenFGA ACL (C15, C16) et confinement microVM sans sortie réseau."
+            "content": "Recherche documentaire souveraine sur corpus d'entreprise (GED, CRM, ERP) via AI Gateway locale, index Qdrant filtré en amont par OpenFGA ACL (C15, C16) et microVM sans sortie réseau."
           },
           {
             "zone_id": "Z3",
             "label": "Blueprint 3 — `bp3_orchestration_multi_agents_b2b` (Tome 6 section 14.2, Fig. 54) : maillage fédéré",
-            "content": "Interopérabilité A2A 1.0 (C13–C14), pile AGNTCY/SLIM (OASF), Event Mesh CloudEvents, audit (C20) et délégation OBO à deux sauts (C24, C26), tous validés à la porte G0 sur 5 SBB et C01–C40 (socle C1–C8 et 565 contrôles)."
+            "content": "Fédération inter-entreprises (chaîne logistique SCM et finance) via A2A v1.0.1 (C13–C14), pile AGNTCY/SLIM (OASF), Event Mesh CloudEvents, OBO 2 sauts et validation mécanique G0 sur 5 SBB et C01–C40."
           }
         ],
         "numbered_flows": [
@@ -1349,14 +1354,14 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce schéma précise le double statut du Groupe Boréal Inc. dans le corpus : il constitue un fil rouge pédagogique précieux pour démontrer l'assemblage de quatre flux complets (crédit, paiement Lynx, banque ouverte C-15, assurance vie FHIR), mais ses données chiffrées narratives fictives sont formellement exclues de toute valeur probante (DC-P11, DC-P12, règle documentaire DC-C27) et remplacées par les 108 blocs d'exécution reproductibles de Borealis-Bench au Tome 8.",
+      "pedagogical_objective": "Ce schéma explicite la complémentarité entre le conglomérat multisectoriel illustratif Groupe Boréal Inc. — mobilisant ses trois filiales `BEL` (manufacturier/logistique ERP, WMS et sas IT/OT), `BCA` (finance et assurance) et `BSN` (services numériques RAG ACL et B2B) — et le banc reproductible Borealis-Bench (108 blocs CI), séparés par le filtre d'exclusion probatoire DC-P11 et DC-P12.",
       "vulgarization_angle": "Mettre en regard une maquette architecturale à vocation pédagogique (Groupe Boréal BEL, BCA et BSN) et un laboratoire d'essai reproductible (Borealis-Bench à 108 blocs CI), séparés par le filtre d'hygiène probante DC-P11 et DC-P12.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Rôle pédagogique du fil rouge Groupe Boréal Inc. (BEL, BCA, BSN — section 0.5 et sections 45.7 à 45.14)",
-            "content": "Rationalisation de 47 initiatives (19 agents fantômes) par une Fabrique Agentique déployant L0–L3 et quatre flux : crédit où le processus commande, Lynx où l'agent observe, accès C-15 prospectif et souscription ou sinistres vie."
+            "content": "Maquette multisectorielle rationnalisant 47 initiatives (19 agents fantômes) à travers BEL (ERP/WMS sous `bp1`, *Source-to-Pay* sous `bp3`, sas IT/OT CAP-028), BCA (crédit, observation Lynx, sinistres) et BSN (documentation sous `bp2`, partenaires B2B sous `bp3`)."
           },
           {
             "zone_id": "Z2",
@@ -1801,17 +1806,17 @@
           {
             "zone_id": "Z1",
             "label": "Horizon 1 (J0–J90, Porte ARB 1) — M1 → M2 : assainissement, inventaire et AI Gateway",
-            "content": "Recensement des agents fantômes, moratoire sur la création de nouveaux robots RPA fragiles et déploiement du point d'entrée unique AI Gateway et MCP."
+            "content": "Inventaire exhaustif des automates RPA existants et des agents fantômes, moratoire sur le nouveau RPA fragile et déploiement du point d'entrée unique AI Gateway / PEP."
           },
           {
             "zone_id": "Z2",
             "label": "Horizon 2 (J90–J180, Porte ARB 2) — M3 Défini : IAP, NHI et EvalOps continu",
-            "content": "Déploiement des Golden Paths IAP, migration vers des identités NHI sans secret fixe, banc EvalOps hermétique et amorçage de la migration patrimoniale Strangler Fig."
+            "content": "Industrialisation des Golden Paths IAP, identités NHI sans secret statique, banc EvalOps hermétique et déploiement des façades MCP / BPMN amorçant la relève Strangler Fig."
           },
           {
             "zone_id": "Z3",
             "label": "Horizon 3 (J180–J360, Porte ARB 3) — M4 → M5 Governance-as-Code",
-            "content": "Fédération A2A gouvernée, décommissionnement progressif du RPA, refacturation Chargeback FinOps et automatisation complète des preuves (cible -94,3 % d'étalement et -96,4 % d'incidents en simulations)."
+            "content": "Retrait Strangler Fig des bots RPA fragiles au profit de flux API/iPaaS/BPMN/MCP, fédération A2A gouvernée, Chargeback FinOps et preuves Governance-as-Code (-94,3 % d'étalement en simulations)."
           }
         ],
         "numbered_flows": [

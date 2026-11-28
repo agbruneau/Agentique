@@ -1883,7 +1883,7 @@
       <div class="topbar-row topbar-primary">
         <div class="brand">
           <span class="brand-mark">CA</span>
-          <span class="brand-title">Cartographie du Compendium Agentique</span>
+          <span class="brand-title">Interopérabilité et automatisation agentique des systèmes d'entreprise</span>
         </div>
         <div class="kpi-strip" id="kpi-strip"></div>
         <div class="topbar-actions" style="margin-left:auto;">
@@ -3612,10 +3612,12 @@
         var strip = document.getElementById("kpi-strip");
         var themeCount = idx.nodes.filter(function (n) { return n.node_kind === "theme"; }).length;
         var cmeta = (idx.pivots && idx.pivots.collection_metrics) || {};
-        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || 871);
-        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || 247622);
-        var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || 42);
-        var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || 139);
+        var scopeFallback = (idx.schema && idx.schema.corpus_scope) || {};
+        var structTotals = (rawData && rawData.totals) || {};
+        var totalPages = Number(cmeta.pdf_pages || cmeta.compendium_pdf_pages || scopeFallback.compendium_pdf_pages || 0);
+        var totalWords = Number(cmeta.words || cmeta.compendium_md_words || structTotals.words || 0);
+        var totalUnits = Number(cmeta.editorial_units || cmeta.compendium_units || scopeFallback.compendium_units || 42);
+        var totalSchemas = Number(cmeta.compiled_schemas || cmeta.compendium_schemas || scopeFallback.compendium_schemas || 139);
         var totalTerms = Number(cmeta.glossary_terms_count || cmeta.glossary_terms || idx.glossaryTerms.length || 56);
         var totalLplus = Number(cmeta.lplus_sources_count || cmeta.sources_l_plus || 135);
         strip.innerHTML = [
@@ -4789,7 +4791,7 @@
 
         nodesMap["STRUCT_ROOT"] = {
           id: "STRUCT_ROOT",
-          title: "Compendium Agentique (15 sections · 42 unités)",
+          title: "Interopérabilité et automatisation agentique des systèmes d'entreprise (15 sections · 42 unités)",
           sub: (idx.structFlat.length || 0) + " sections H1–H6",
           color: "#2563eb",
           level: 0

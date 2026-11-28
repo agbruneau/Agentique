@@ -9,7 +9,7 @@
   <g id="header-bar">
     <rect x="20" y="16" width="1160" height="74" rx="10" fill="#0F2942"/>
     <text x="38" y="44" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">SCH-35-03 — Preuve synthétique bornée DC-P12 et chaîne CI des 8 contrats C.1–C.8</text>
-    <text x="38" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" fill="#CBD5E1">Séparation nette entre simulation FEDS/EMA (65,0 %) et validation crypto-agile en CI · Systèmes d'agentivité (fr-CA)</text>
+    <text x="38" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" fill="#CBD5E1">Séparation nette entre simulation FEDS/EMA (65,0 %) et validation crypto-agile en CI · Systèmes d'entreprise (fr-CA)</text>
   </g>
   <g id="zone-Z1">
     <rect x="20" y="104" width="571" height="446" rx="10" fill="#F8FAFC" stroke="#D97706" stroke-width="1.8"/>

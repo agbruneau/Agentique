@@ -58,18 +58,18 @@ skinparam nodesep 22
 skinparam ranksep 26
 skinparam padding 7
 
-title Frontière d'irréversibilité financière : tampon déterministe RTR (pacs.008, EXIG-CON-29)
-package "Z1 : Zone amont — Agent cognitif (observation)" {
-  rectangle "Agent financier probabiliste\nAnalyse demande & prépare\nprojet d'ordre ISO 20022 pacs.008" as AGT <<prob>>
-  rectangle "Interdiction de soumission directe\nAucune écriture vers le rail RTR" as STOP <<danger>>
+title Sas déterministe pré-engagement (EXIG-CON-29) : étalon RTR (pacs.008) et SoR irréversibles
+package "Z1 : Zone amont — Agent cognitif (observation et préparation)" {
+  rectangle "Agent probabiliste amont\nAnalyse demande & prépare projet d'ordre\n(ISO 20022 pacs.008 · EDI ferme · consigne OT)" as AGT <<prob>>
+  rectangle "Interdiction de soumission directe\nAucune écriture vers RTR ou SoR irréversible" as STOP <<danger>>
 }
 package "Z2 : Tampon déterministe hors modèle (EXIG-CON-29)" {
-  rectangle "Validation ISO 20022 & Decimal\npacs.008 / camt.* sans virgule flottante" as DEC <<det>>
-  rectangle "Idempotence UETR & antifraude\nContrôles synchrones de liquidité" as UETR <<det>>
+  rectangle "Validation ISO 20022 / contrat & Decimal\npacs.008 / camt.* sans virgule flottante" as DEC <<det>>
+  rectangle "Idempotence UETR & antifraude\nContrôles synchrones de seuils et liquidité" as UETR <<det>>
 }
-package "Z3 : Sas humain P3 et rail irrévocable RTR" {
+package "Z3 : Sas humain P3 et exécution irrévocable (RTR / EDI / OT)" {
   actor "Approbateur habilité (P3)\nSignature cryptographique sur condensat\nJCS (rétention ≥ 30 s)" as P3 <<ok>>
-  rectangle "Adaptateur bancaire déterministe\nÉmission vers Paiements Canada RTR\n(irrévocable, 0 compensation Saga)" as RTR <<danger>>
+  rectangle "Adaptateur déterministe cible\nÉmission vers Paiements Canada RTR / SoR\n(irrévocable, 0 compensation Saga)" as RTR <<danger>>
   rectangle "Rejet propre (0 sortie réseau)\nSi tampon ou approbateur refuse" as REJ <<det>>
 }
 AGT .[#B45309].> DEC : ① dépose proposition structurée
@@ -81,7 +81,7 @@ UETR --> REJ : contrôle échoué
 P3 --> REJ : refus humain
 legend bottom
   **Ambre proposition** : agent cognitif amont sans pouvoir d'émission directe
-  **Bleu tampon** : tampon déterministe EXIG-CON-29 (Decimal exact, UETR, antifraude, liquidité)
-  **Rouge irréversibilité** : sas P3/JCS ≥ 30 s vers rail RTR pacs.008 sans compensation a posteriori
+  **Bleu tampon** : sas déterministe pré-engagement EXIG-CON-29 (Decimal exact, UETR, seuils)
+  **Rouge irréversibilité** : sas P3/JCS ≥ 30 s devant RTR pacs.008 et tout SoR sans compensation Saga
 end legend
 @enduml

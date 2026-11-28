@@ -150,18 +150,18 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce comparatif démontre aux décideurs et aux équipes produit pourquoi la transposition mécanique de chaque route REST ou Swagger en outil MCP (anti-patron AP-04) sature l'agent sous plus de 50 appels techniques et accroît la consommation de jetons, alors qu'une façade d'intention ACI de 5 à 12 outils métier réduit les erreurs et fiabilise le retour JSON structuré.",
+      "pedagogical_objective": "Ce comparatif démontre pourquoi la conversion automatique 1:1 d'un catalogue OpenAPI/Swagger d'ERP, d'ITSM ou de CRM (centaines d'endpoints CRUD/OData/BAPI) en outils MCP (anti-patron AP-04) sature l'attention du modèle et multiplie les erreurs de jointure, alors qu'une façade d'intention ACI (≤ 15 outils métier) consommatrice de l'API Gateway / iPaaS existant encapsule la logique déterministe L0 et fiabilise le retour `structuredContent`.",
       "vulgarization_angle": "La comparaison oppose un poste de pilotage encombré de 60 interrupteurs électriques élémentaires (Swagger-to-MCP 1:1) à un pupitre de 6 commandes d'intention claire (« Approuver dossier », « Consulter solde ») dotées de témoins typés (structuredContent) et de bordereaux de renvoi pour les pièces volumineuses (resource_link > 8 Ko).",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "AVANT (Anti-patron AP-04) — Miroir brut Swagger-to-MCP 1:1 (> 50 outils)",
-            "content": "L'exposition mécanique de dizaines de routes CRUD atomiques sature la fenêtre d'attention du modèle, multiplie les erreurs de jointure et alourdit les coûts d'inférence."
+            "label": "AVANT (Anti-patron AP-04) — Miroir brut OpenAPI/Swagger-to-MCP 1:1 sur ERP / ITSM / CRM (> 50 endpoints)",
+            "content": "L'exposition directe des routes CRUD, OData ou BAPI d'un progiciel d'entreprise sature la fenêtre contextuelle, casse les invariants transactionnels et gonfle les jetons."
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS (Cible ACI) — Façades d'intention métier (5–12 outils, plafond à 15)",
+            "label": "APRÈS (Cible ACI) — Façades d'intention métier (5–12 outils, plafond ≤ 15) en aval de l'API Gateway / iPaaS",
             "content": "L'agrégation métier expose des sorties typées structuredContent (JSON Schema 2020-12), une clé d'idempotence, des pointeurs resource_link dès > 8 Ko, le chargement Dynamic Toolsets et des erreurs cognitives guidant la reprise."
           }
         ],
@@ -402,14 +402,14 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "Mermaid",
-      "pedagogical_objective": "Cet arbre de décision prévient l'écueil fréquent des projets pilotes qui traitent un agent autonome comme un simple outil ou sollicitent une API transactionnelle par dialogue libre. Il permet de trancher en trois critères quand recourir à un appel déterministe, à MCP ou à A2A v1.0.1 (entre pairs opaques), tout en justifiant l'exclusion d'ANP en production et l'interdiction du sigle ambigu « ACP ».",
+      "pedagogical_objective": "Cet arbre d'interopérabilité tripartite non substituable (PRI-003) permet aux architectes de trancher sans ambiguïté entre trois régimes : (1) appel déterministe sans LLM via API REST/gRPC, iPaaS ou Event Mesh (N0–L0), (2) invocation verticale d'un outil borné via MCP 2026-07-28, et (3) délégation horizontale asynchrone entre domaines d'entreprise autonomes (CRM ↔ SCM ↔ ERP) ou partenaires B2B via A2A v1.0.1, tout en justifiant le rejet d'ANP en production et la désambiguïsation des cinq acceptions d'ACP.",
       "vulgarization_angle": "La règle d'attribution distingue l'outillage de l'interlocuteur autonome : l'agent actionne un instrument borné au moyen de MCP (outil sans délibération propre), délègue un dossier complet à un pair d'un autre domaine via A2A (tâche suivie sans ingérence dans son raisonnement interne) et bannit tout acronyme homonyme tel qu'« ACP » dépourvu de qualificatif explicite.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
-            "label": "Critères de décision (PRI-003 : contrôle et opacité)",
-            "content": "Trois critères binaires orientent le routage : un appel déterministe sans LLM relève d'une API classique ; une fonction outillée locale ou verticale relève de MCP ; une délégation asynchrone inter-domaines vers un pair opaque relève d'A2A v1.0.1."
+            "label": "Interopérabilité tripartite non substituable (PRI-003 : API/iPaaS/Event Mesh ↔ MCP ↔ A2A)",
+            "content": "Tout flux déterministe inter-systèmes reste sur API, iPaaS ou Event Mesh (N0–L0) ; l'outillage borné sous plan local emprunte MCP ; seule la délégation asynchrone vers un pair autonome opaque (autre domaine métier ou partenaire B2B) active A2A v1.0.1."
           },
           {
             "zone_id": "Z2",
@@ -509,7 +509,7 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Ce diagramme clarifie à l'intention des directions financières et juridiques pourquoi les protocoles de paiement par agent (AP2, x402, MPP) et les réseaux B2B (AGNTCY, Dataspace) demeurent strictement cantonnés en veille (statut Surveiller ou Évaluer) : un mandat cryptographiquement valide peut couvrir un achat non intentionnel (Whispers of Wealth) que les mécanismes actuels de règlement des litiges ne savent pas trancher.",
+      "pedagogical_objective": "Ce diagramme articule les flux d'entreprise B2B multisectoriels (approvisionnement SCM *Procure-to-Pay*, coexistence EDI X12/EDIFACT et résolution d'exceptions sous identité légale vLEI, Dataspace EDC et contrats ODRL 2.2) avec le cantonnement en veille des protocoles de paiement agentique (AP2, x402, MPP) face aux rails bancaires déterministes (Lynx, cartes).",
       "vulgarization_angle": "L'architecture superpose trois strates analogues à un ordre bancaire certifié en trois volets : la chaîne d'intention client (mandats Intent/Cart/Payment AP2 maintenus en veille), la messagerie inter-entreprises chiffrée (AGNTCY/SLIM, passeport légal vLEI et licence ODRL), et le rail bancaire déterministe (Lynx et réseaux de cartes) qui conserve seul l'autorité de débiter les comptes.",
       "visual_blueprint": {
         "zones": [
@@ -525,8 +525,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Strate B2B contractuelle au Palier 3 (ADR-026) — vLEI, Dataspace EDC et ODRL 2.2",
-            "content": "L'identité légale GLEIF vLEI/OOR s'articule avec les connecteurs Dataspace vérifiant le contrat d'usage ODRL 2.2 et avec la scission entre Diplomate (externe sans secret) et Évaluateur (interne anti-collusion)."
+            "label": "Strate B2B contractuelle multisectorielle (ADR-026) — EDI/SCM, vLEI, Dataspace EDC et ODRL 2.2",
+            "content": "Coexistence entre flux EDI déterministes à haut débit et négociation d'exceptions SCM/approvisionnement sous identité légale GLEIF vLEI/OOR, connecteurs Dataspace vérifiant la licence ODRL 2.2 et séparation stricte entre Diplomate externe et Évaluateur interne anti-collusion."
           }
         ],
         "numbered_flows": [
@@ -782,7 +782,7 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce diagramme démontre le rôle central du point d'application PEP bidirectionnel en échec fermé : chaque appel MCP, A2A ou action sensible franchit sept contrôles à l'aller et deux filtres au retour en moins d'une milliseconde en processus (52,85 µs p50 sur Borealis-Bench), tout en appliquant la Règle de deux sans jamais exposer de secrets au modèle.",
+      "pedagogical_objective": "Ce diagramme démontre comment la passerelle d'agents bidirectionnelle (PEP) à neuf contrôles en échec fermé s'articule en amont et en complément de l'API Gateway Nord-Sud, de l'iPaaS et de l'Event Mesh d'entreprise existants (sans jamais contourner la gouvernance API des ERP, CRM, SIRH et ITSM), avec une latence médiane de 52,85 µs sur Borealis-Bench et l'application déterministe de la Règle de deux.",
       "vulgarization_angle": "La passerelle PEP opère comme un sas de haute sécurité à neuf postes séquentiels : vérification de l'accréditation, du registre homologué, des droits, du contenu, du contreseing humain, des quotas et injection finale du jeton d'accès à l'aller ; masquage des renseignements personnels et verrouillage des outils d'envoi en cas de contamination au retour.",
       "visual_blueprint": {
         "zones": [
@@ -798,8 +798,8 @@
           },
           {
             "zone_id": "Z3",
-            "label": "Plan de performance et désambiguïsation AgentMesh",
-            "content": "L'étalonnage Borealis-Bench atteint 52,85 µs p50 (coupe-circuit POR-003 en 0,050 ms maximum) et distingue nettement le maillage réseau (Istio/agentgateway), la dorsale événementielle (Solace) et la bibliothèque de confiance."
+            "label": "Articulation API Gateway / iPaaS d'entreprise, budget Borealis-Bench et désambiguïsation du maillage",
+            "content": "Les flux MCP et CloudEvents validés par le PEP consomment les façades gouvernées de l'API Gateway et de l'iPaaS existants (52,85 µs p50, coupe-circuit POR-003 ≤ 0,050 ms), en distinguant maillage réseau (Istio/agentgateway), dorsale événementielle (Solace) et confiance."
           }
         ],
         "numbered_flows": [
@@ -988,7 +988,7 @@
       ],
       "visual_archetype": "Matrice visuelle de risques et garde-fous",
       "recommended_notation": "Infographie SVG bilingue métier-tech",
-      "pedagogical_objective": "Cette matrice révèle aux comités juridiques et de direction l'angle mort majeur des standards techniques : aucun des 15 croisements entre MCP/A2A/AP2 et les cinq cadres financiers canadiens ne répond à la question d'imputabilité juridique (« qui en répond ? »). Elle associe chaque lacune aux cinq zones de compensation architecturale Z1–Z5 et expose les verrous EXIG-ARC-21 empêchant l'enfermement propriétaire SaaS.",
+      "pedagogical_objective": "Cette matrice démontre que les protocoles ouverts (MCP, A2A, AP2) ne couvrent que les strates basses d'interopérabilité et affichent 0 lien natif sur 15 avec les exigences d'imputabilité réglementaire. Elle déploie les quatre strates du cadre européen EIF et l'échelle LCIM comme ossature d'interopérabilité des systèmes d'entreprise (zones compensatoires Z1–Z5, abstraction ouverte des cœurs transactionnels CAP-026) et verrouille les suites SaaS (ERP, CRM, SIRH, ITSM) sous EXIG-ARC-21.",
       "vulgarization_angle": "Les protocoles forment une infrastructure routière normalisée (couches technique et syntaxique EIF) qui n'emporte ni code juridique ni couverture d'assurance : cinq postes compensatoires Z1–Z5 comblent ces lacunes hors protocole, tandis que des clauses de réversibilité EXIG-ARC-21 empêchent les suites commerciales de verrouiller l'écosystème interne.",
       "visual_blueprint": {
         "zones": [
@@ -1000,7 +1000,7 @@
           {
             "zone_id": "Z2",
             "label": "Cinq zones de compensation Z1–Z5 et grille EIF / LCIM",
-            "content": "La couverture des couches sémantique, organisationnelle et juridique EIF/LCIM repose sur : Z1 trace d'instance, Z2 arrêt humain suspensif, Z3 blocage d'auto-modification, Z4 abstraction bancaire ouverte (CAP-026) et Z5 filtrage par maillage."
+            "content": "Alignement des quatre strates EIF (technique, syntaxique, sémantique, organisationnelle/juridique) et de LCIM via cinq zones : Z1 trace d'instance, Z2 arrêt humain suspensif, Z3 blocage d'auto-modification, Z4 abstraction ouverte des cœurs transactionnels et bancaires (CAP-026) et Z5 filtrage par maillage."
           },
           {
             "zone_id": "Z3",
@@ -1165,8 +1165,8 @@
         "ecart-accord-protocolaire-comprehension",
         "formats-echange-registres-schemas"
       ],
-      "title": "Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies FIBO et registres",
-      "insertion_point": "Chapitre 10 §10.2.1 — Ontologies métier (FIBO), écart accord-compréhension et registres de schémas",
+      "title": "Même schéma JSON, sens différents : couche sémantique neutre (DEC-003), ontologies multisectorielles (MDM, FHIR, OPC UA, FIBO/ISO 20022) et registres",
+      "insertion_point": "Chapitre 10 §10.2.1 — Couche sémantique neutre (DEC-003), ontologies multisectorielles et registres de schémas",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1174,19 +1174,19 @@
       ],
       "visual_archetype": "Comparatif Avant / Après",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce comparatif met en évidence un piège invisible aux contrôles syntaxiques : deux agents échangent un message JSON parfaitement valide tout en calculant différemment « revenu » ou « ratio de solvabilité » sans lever aucune erreur (la détection automatique plafonnant à 27,9 %). Il démontre comment une couche sémantique analytique neutre (DEC-003) et des ontologies validées en monde clos (SHACL sur FIBO) suppriment cette erreur silencieuse.",
+      "pedagogical_objective": "Ce comparatif met en évidence un piège majeur d'interopérabilité entre systèmes d'entreprise : deux progiciels (CRM Ventes et ERP Finances, ou WMS et SCM) échangent un JSON syntaxiquement valide tout en calculant différemment « revenu » ou « stock allouable » (détection automatique ≤ 27,9 %). Il montre comment la couche sémantique neutre (DEC-003), les contrats ODCS et la validation fermée SHACL sur référentiels multisectoriels (GS1/UBL, ISA-95/OPC UA, HL7 FHIR, FIBO/ISO 20022) éliminent toute erreur sémantique silencieuse.",
       "vulgarization_angle": "Une erreur de syntaxe équivaut à une enveloppe déchirée rejetée par le service postal, alors qu'une erreur sémantique silencieuse correspond à une lettre dûment affranchie contenant une facture en dollars américains lue en dollars canadiens — une divergence que seul un référentiel officiel unique de définitions (couche sémantique DEC-003) permet d'éliminer.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "AVANT (Piège syntaxe ≠ sens) — SQL libre et prose ambiguë",
-            "content": "La validation JSON Schema réussit alors que les calculs divergent entre Ventes et Finances ; la détection automatique d'écart plafonne à 27,9 % et la force illocutoire (FIPA-ACL par rapport à MCP) est perdue."
+            "content": "Validation JSON Schema réussie mais calculs divergents entre silos (CRM Ventes ≠ ERP Finances, stock brut WMS ≠ stock net SCM) ; SQL libre ambigu, détection automatique plafonnant à 27,9 % et perte de force illocutoire."
           },
           {
             "zone_id": "Z2",
-            "label": "APRÈS (PRI-008 / DEC-003) — Couche sémantique neutre, ontologies et registres",
-            "content": "Les formules sont versionnées comme du code (60 jours de coexistence SIG-110, sans couplage à Apache Ossie 0.1.1), la validation SHACL (monde clos) se distingue d'OWL 2 (monde ouvert) sur FIBO/ISO 20022 et les registres encadrent Protobuf/Avro."
+            "label": "APRÈS (PRI-008 / DEC-003) — Couche sémantique neutre, contrats ODCS et référentiels multisectoriels",
+            "content": "Métriques versionnées (60 j de coexistence SIG-110), contrats ODCS, validation SHACL en monde clos adossée aux référentiels sectoriels (GS1/UBL en logistique, ISA-95/OPC UA en industrie, HL7 FHIR en santé, FIBO/ISO 20022/BIAN en finance) et registres MDM Protobuf/Avro/Arrow."
           }
         ],
         "numbered_flows": [
@@ -1260,8 +1260,8 @@
         "donnees-pretes-agents-odcs-openlineage",
         "iso-20022-lynx-rtr"
       ],
-      "title": "Données prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) et observation ISO 20022 (Lynx et RTR)",
-      "insertion_point": "Chapitre 10 §10.2.1 — Contrats ODCS v3.2.0, Write-Audit-Publish et rails ISO 20022 canadiens",
+      "title": "Données d'entreprise prêtes pour agents : sas Write-Audit-Publish (ODCS v3.2.0) sur ERP/CRM/SCM et réplica d'observation ISO 20022 (Lynx et RTR)",
+      "insertion_point": "Chapitre 10 §10.2.1 — Contrats ODCS v3.2.0, sas Write-Audit-Publish multisectoriel et barrière d'irréversibilité (étalon ISO 20022)",
       "target_audiences": [
         "Direction / Métier",
         "Juridique / Conformité",
@@ -1270,14 +1270,14 @@
       ],
       "visual_archetype": "Parcours séquentiel illustré",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce parcours séquentiel démontre comment empêcher qu'un agent ne consomme des données périmées ou corrompues grâce au sas de quarantaine Write-Audit-Publish sous contrat ODCS v3.2.0, tout en clarifiant pour les décideurs financiers l'état vérifié des rails canadiens ISO 20022 (Lynx migré, RTR reporté sans lancement confirmé, Règlement n° 10 en vigueur et agent cantonné à l'observation).",
+      "pedagogical_objective": "Ce parcours séquentiel montre comment garantir la qualité sémantique des données issues de systèmes hétérogènes (ERP/CRM, GS1/UBL, HL7 FHIR, ISA-95/OPC UA, FIBO) grâce au sas de quarantaine Write-Audit-Publish sous contrat ODCS v3.2.0, tout en illustrant par l'étalon canadien ISO 20022 (Lynx migré en nov. 2025, RTR reporté sous DORS/2026-133) la barrière d'observation sans exécution autonome devant tout noyau transactionnel ou industriel irréversible.",
       "vulgarization_angle": "Le patron Write-Audit-Publish fonctionne comme l'inspection sanitaire d'un entrepôt : chaque arrivage séjourne en chambre de quarantaine isolée (branche Iceberg/Nessie) jusqu'à certification du contrat ODCS et de sa fraîcheur avant toute mise à disposition, tandis que sur le rail bancaire Lynx, l'agent examine les bordereaux sans jamais détenir le pouvoir de signer le virement.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Sas Write-Audit-Publish (Iceberg/Nessie et ODCS v3.2.0 / PRR F-13)",
-            "content": "L'ingestion s'opère sur branche isolée avec validation déterministe des unités, des dérives PSI, du signal staleness et du lignage OpenLineage préalablement à la publication au catalogue."
+            "content": "Ingestion en quarantaine isolée des flux d'entreprise (ERP/CRM, GS1/UBL, HL7 FHIR, ISA-95/OPC UA, FIBO) avec contrôle déterministe ODCS v3.2.0 (unités, dérive PSI, fraîcheur staleness et lignage OpenLineage) avant publication au catalogue."
           },
           {
             "zone_id": "Z2",
@@ -1789,7 +1789,7 @@
       ],
       "visual_archetype": "Métaphore architecturale en couches",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Ce schéma rassure les directions bancaires et d'assurance : l'intégration d'agents n'exige ni la réécriture des grands livres IBM i, z/OS ou SAP, ni l'exposition de la comptabilité aux approximations des nombres flottants. La façade MCP anticorruption convertit de façon déterministe EBCDIC et COMP-3 en Decimal exact, protège les quotas MIPS et pilote le remplacement graduel des flux fragiles selon le patron Strangler Fig en quatre stades.",
+      "pedagogical_objective": "Ce schéma démontre aux directions TI et métier que l'intégration agentique ne requiert aucune réécriture risquée des cœurs transactionnels (IBM i, z/OS, ERP SAP, CRM, WMS) : la façade MCP anticorruption (≥ 92 %) convertit EBCDIC et COMP-3 en Decimal exact, s'appuie sur des réplicas CDC/Outbox et des traducteurs EDI/BAPI, isole le périmètre Purdue OT et orchestre avec BPMN 2.0 / iPaaS l'extinction graduelle du RPA et des CUA (≤ 8 %) en quatre stades Strangler Fig.",
       "vulgarization_angle": "La couche anticorruption agit comme un traducteur-comptable assermenté posté devant un coffre mainframe : elle converse en messages modernes MCP côté agent, convertit chaque centime COMP-3 sans erreur d'arrondi côté COBOL/SAP, absorbe les rafales de lecture (CQRS/CDC) et remplace progressivement les anciens automates RPA sans rupture de service.",
       "visual_blueprint": {
         "zones": [
@@ -1801,12 +1801,12 @@
           {
             "zone_id": "Z2",
             "label": "Moteur déterministe de traduction exacte (PEX-015)",
-            "content": "Le moteur exécute le transcodage EBCDIC (CP037 / CP1147) ↔ UTF-8, la conversion Packed Decimal COMP-3 → Decimal exact (excluant IEEE 754) et le formatage des trames fixes CICS COMMAREA, SAP BAPI et EDI X12."
+            "content": "Transcodage EBCDIC (CP037 / CP1147) ↔ UTF-8, conversion Packed Decimal COMP-3 → Decimal exact (zéro IEEE 754), formatage CICS COMMAREA, SAP BAPI et EDI X12/EDIFACT, réplica CDC/CQRS Debezium et isolation de lecture Purdue."
           },
           {
             "zone_id": "Z3",
             "label": "Coexistence BPMN 2.0 / iPaaS et trajectoire Strangler Fig (quatre stades)",
-            "content": "Les moteurs Camunda/Zeebe sont préservés en sous-processus ad hoc, les pertes sémantiques EDI/ESB sont réconciliées et le RPA fragile est retiré graduellement en quatre stades (ombre, recommandation, action bornée, autonomie)."
+            "content": "Cœurs SoR (IBM i, z/OS, ERP, CRM, WMS) préservés sous Golden Master, orchestration maître BPMN 2.0 / iPaaS et continuum Strangler Fig en quatre stades : MCP ≥ 92 % → CDC/EDI → RPA encadré → CUA ≤ 8 % (extinction ≤ 12 mois)."
           }
         ],
         "numbered_flows": [
@@ -1891,19 +1891,19 @@
       ],
       "visual_archetype": "Arbre de décision opérationnel",
       "recommended_notation": "PlantUML",
-      "pedagogical_objective": "Cet arbre décisionnel fixe une règle d'arbitrage limpide devant les écrans dépourvus d'API (5250/Citrix) et les équipements industriels OT : aucun grattage client externe (LSAC art. 171), CUA interne cantonné à ≤ 8 % sous bail d'extinction de 12 mois jusqu'à POR-008, et confinement intégral des capteurs industriels derrière un sas en lecture seule (Purdue SL-3), un jumeau numérique et un arbitre matériel Simplex.",
+      "pedagogical_objective": "Cet arbre décisionnel gouverne le continuum complet d'intégration sans API et la frontière industrielle IT/OT : priorité durable à MCP (≥ 92 %), CDC/Outbox et EDI, suivis du RPA déterministe transitoire et de l'exception CUA confinée (≤ 8 %, bail d'extinction de 12 mois jusqu'à POR-008, zéro grattage externe PEX-001) ; côté usine et énergie (ERP ↔ MES ↔ SCADA), isolation stricte en IDMZ niveau 3.5 Purdue, jumeau FMI 3.0, arbitre matériel Simplex et cellules Edge CRDT 72 h.",
       "vulgarization_angle": "Les automates d'écran CUA s'assimilent à une mesure transitoire strictement datée à 12 mois, tandis que la frontière OT opère comme une vitre d'observation blindée : l'agent consulte la télémétrie sur un réplica en lecture seule sans jamais actionner directement les commandes physiques d'une installation.",
       "visual_blueprint": {
         "zones": [
           {
             "zone_id": "Z1",
             "label": "Hiérarchie sans API (ADR-016) et extinction CUA à 12 mois",
-            "content": "La progression MCP (≥ 92 %) → RPA déterministe → CUA visuel (≤ 8 %) s'applique sous harnais (caviardage PII Loi 25, blocage des touches destructrices, double lecture OCR) avec interdiction totale à POR-008, le grattage client étant proscrit (PEX-001)."
+            "content": "Continuum ordonné MCP typé (≥ 92 %) → CDC/Outbox & EDI → RPA déterministe → dérogation visuelle CUA (≤ 8 % en microVM, caviardage PII Loi 25, double OCR, blocage touches) assortie d'un bail d'extinction ≤ 12 mois (INI-015 → POR-008)."
           },
           {
             "zone_id": "Z2",
-            "label": "Sas OT en lecture seule (Purdue / IEC 62443-3-3 SL-3, CAP-028)",
-            "content": "Hors champ financier démontré, la télémétrie passe par un réplica en IDMZ niveau 3.5 devant OPC UA (IEC 62541) et MQTT Sparkplug B, avec agrégation FFT/RMS, validation sur jumeau FMI 3.0 Ed25519 et arbitre matériel Simplex."
+            "label": "Sas industriel IT/OT en lecture seule (Purdue IDMZ 3.5 / IEC 62443-3-3 SL-3, CAP-028 : ERP ↔ MES ↔ SCADA)",
+            "content": "Couplage industriel sécurisé : réplica en lecture seule en IDMZ niveau 3.5 devant OPC UA, AAS et MQTT Sparkplug B, agrégation FFT/RMS, validation sur jumeau numérique FMI 3.0 signé Ed25519, arbitre matériel Simplex et exclusion absolue des boucles SIS ≥ SIL 2."
           },
           {
             "zone_id": "Z3",

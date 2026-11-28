@@ -58,15 +58,15 @@ skinparam nodesep 22
 skinparam ranksep 26
 skinparam padding 7
 
-title Anatomie comparée des 3 blueprints (bp1 SoR, bp2 enclave RAG, bp3 maillage B2B)
+title Anatomie comparée des 3 blueprints d'entreprise (bp1 SoR, bp2 enclave RAG ACL, bp3 maillage B2B)
 package "Z1 : Blueprint 1 — bp1_assistant_interne (T6 Fig. 53)" {
-  rectangle "Transactionnel orienté SoR\nTemporal, MCP sans SQL direct,\nOBO et journal WORM" as BP1 <<det>>
+  rectangle "Transactionnel orienté SoR (Intranet / ITSM / ERP / SIRH)\nTemporal, MCP sans SQL direct,\nOBO et journal WORM" as BP1 <<det>>
 }
 package "Z2 : Blueprint 2 — bp2_rag_entreprise_acl (T6 Fig. 55)" {
-  rectangle "Enclave souveraine Zero-Egress\nAI Gateway locale, Qdrant + OpenFGA ACL\n& microVM sans sortie (C15, C16)" as BP2 <<det>>
+  rectangle "Enclave souveraine Zero-Egress (GED / CRM / ERP ACL)\nAI Gateway locale, Qdrant + OpenFGA ACL\n& microVM sans sortie (C15, C16)" as BP2 <<det>>
 }
 package "Z3 : Blueprint 3 — bp3_orchestration_multi_agents_b2b (T6 Fig. 54)" {
-  rectangle "Maillage fédéré inter-entreprises\nA2A v1.0.1, AGNTCY/SLIM (OASF),\nEvent Mesh & OBO 2 sauts (C13, C20)" as BP3 <<det>>
+  rectangle "Maillage fédéré inter-entreprises (SCM / Finance)\nA2A v1.0.1, AGNTCY/SLIM (OASF),\nEvent Mesh & OBO 2 sauts (C13, C20)" as BP3 <<det>>
 }
 package "Socle unifié C1–C8 (565 contrôles) et validation porte G0" {
   rectangle "5 briques SBB du Tableau 12 (Tome 2)\nVault, OPA, CIBA, Audit WORM, FinOps" as SBB <<ok>>
@@ -77,8 +77,8 @@ BP2 --> SBB : ①–② assemble sur C1–C8
 BP3 --> SBB : ①–② assemble sur C1–C8
 SBB --> G0 : ③–④ valide C01–C40
 legend bottom
-  **Bleu architecture** : trois blueprints normalisés couvrant SoR (bp1), enclave RAG (bp2) et B2B (bp3)
+  **Bleu architecture** : trois blueprints couvrant Intranet/ITSM/ERP (bp1), GED/CRM/ERP ACL (bp2) et SCM/Finance B2B (bp3)
   **Vert porte G0** : socle commun C1–C8 (565 contrôles), 5 SBB et validation mécanique C01–C40
-  **Synthèse doctrinale** : trois gabarits validés en G0 suffisent pour couvrir l'ensemble des besoins sans pile ad hoc.
+  **Synthèse doctrinale** : trois gabarits validés en G0 suffisent pour couvrir l'ensemble des systèmes d'entreprise sans pile ad hoc.
 end legend
 @enduml

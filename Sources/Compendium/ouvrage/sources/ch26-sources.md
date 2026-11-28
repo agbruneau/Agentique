@@ -1,4 +1,4 @@
-# Base documentaire fermée — Chapitre 26 — Réglementation européenne et référentiels internationaux
+# Base documentaire fermée — Chapitre 26 — Réglementation européenne (AI Act, DORA, CRA, NIS 2), référentiels internationaux et souveraineté des systèmes d'entreprise
 
 **Protocole :** `MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0` (`AO-01` / `AO-02` stricts)
 **Date de gel :** 2 décembre 2026 (`2026-12-02`)

@@ -1,6 +1,6 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 34 (`ch34`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md` (`4 223` mots de prose selon `verifie_manuscrit`, `4 480` selon `parser_plan`, plage `[3 901, 4 579]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/12 - Partie XII/Chapitre 34.md` (`4 247` mots de prose selon `verifie_manuscrit`, `4 509` selon `parser_plan`, plage `[3 901, 4 579]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch34-sources.md` (`[1]`–`[9]` en statut `L+`, `3` exclusions `statut F`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt` ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`) et spécifications `Compendium/prd.md` (`EXIG-HOM-01..06`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b5-5`
@@ -12,11 +12,12 @@
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 34.md`
 
-Toutes les formulations divergentes ou insuffisamment délimitées relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 34.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/12%20-%20Partie%20XII/Chapitre%2034.md), sans altérer le bloc scellé `G0-EX-CH04-03`, les invariants `CA-01`–`CA-22`, les `owned_concepts` (`exigences-cre-ia-305`, `dix-interdictions-exig-gov-17`, `portee-et-force-normative-cre-ia`, `homologation-prr-75-points`, `referentiel-annexes-protocoles-chronologie`, `grille-homologation-et-fiche-agent`), l'ensemble des renvois `[1]`–`[9]` ni le calibrage (`4 223` / `4 480` mots dans `[3 901, 4 579]`) :
+Toutes les formulations divergentes ou insuffisamment délimitées relevées lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 34.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/12%20-%20Partie%20XII/Chapitre%2034.md), sans altérer le bloc scellé `G0-EX-CH04-03`, les invariants `CA-01`–`CA-22`, les `owned_concepts` (`exigences-cre-ia-305`, `dix-interdictions-exig-gov-17`, `portee-et-force-normative-cre-ia`, `homologation-prr-75-points`, `referentiel-annexes-protocoles-chronologie`, `grille-homologation-et-fiche-agent`), l'ensemble des renvois `[1]`–`[9]` ni le calibrage (`4 247` / `4 509` mots dans `[3 901, 4 579]`) :
 
 1. **Portée exacte des renvois `[1]`–`[9]` et attribution de la Loi 25 (`L7`, `L15`, `L19`, `L22`, `L64`, `L70`, `L156`, `L178`) :** retrait du renvoi `[8]` (`AIBanks.ca` `SRC-071.txt`, qui ne traite pas de la Loi 25) sur l'article `12.1` de `LQ 2021, c. 25` (`RLRQ, c. P-39.1`), réancré sur le registre `L+` du traité (`SRC-063` dans `ancres-chronologiques.json` et `← Chapitre 25`) avec scission en deux phrases conformes à `CA-05` ; retrait des renvois `[6, 7]` hors sujet sur `OPA/Rego` et `journal signé` à `L15` (rattachés à `G0` et `[1]`) ; distinction claire de la portée propre de `[1]` (`JSON Schema Draft 2020-12`), `[2]` (`OWASP ASI01–ASI10`), `[9]` (`RFC 2119`) et de la fenêtre `PQC` `2030–2035` (`← Chapitre 18`).
 2. **Rectification de fond sur `EXIG-CON-28`, `Annexe A/B` et le corpus `Tome 3` (`L28`, `L74`, `L82`, `L88`, `L90`–`L92`) :** correction de l'objet erroné attribué à `EXIG-CON-28` (« secteur des assurances » remplacé par la véracité des déclarations et l'interdiction de l'« AI washing » sous `ACVM 11-348` selon `Tome 2 § 12.10`) ; qualification de la Note `AMF IA` (`CRE-IA-2026-01-QC`, `31 octobre 2026`) face au `statut F` de `lautorite.qc.ca` `[8]` ; distinction entre `EXIG-GOV-07` (`Annexe B`, fiche d'agent) et `EXIG-GOV-11` (`Annexe A`, grille d'homologation), et entre les `57` points bruts de `Tome 2 Annexe A` et leur regroupement en `41` rubriques avec `POR` dans `Tome 5 Annexe C.1` ; qualification du glossaire du `Tome 3 Annexe A` comme glossaire d'usage non normatif (le glossaire normatif siégeant en `Tome 2 Annexe E`), et précision que seuls `agentproto` et `dawn` ont été créés en octobre 2026 (contrairement aux livrables et révisions `OAuth 2.1` et `WIMSE`).
 3. **Rectification factuelle du `Tableau 34.2` (`PRR-75` bloquants) et du schéma `Adr2027B001` (`L104`, `L108`, `L156`) :** correction de `S-15` (remplacement d'« approbation `P3` » — qui relève de `S-10` conditionnel — par « séparation des tâches `SoD` » conforme à `matrice-exig-prr-c40.json` et `Tome 3 Annexe G`), de `F-14` (remplacement d'« couverture et tests `C01–C40` / `SBB` » par « confinement du SRE autonome sous `Cedar`/`OPA` »), et de `F-04` (résidence juridictionnelle des couches d'état) ; distinction entre le champ `minimum_eval_gate` du schéma `Adr2027B001` et la convention `pass^5`.
+4. **Adaptation éditoriale au titre directeur *Interopérabilité et automatisation agentique des systèmes d'entreprise* (`L1`, `L3`, `L5`, `L24`, `L26`, `L94`, `L152`, `L176`–`L178`) :** synchronisation exacte de `L1` sur `specs/manifest.json` (`ch34`), mise en relief des `87` exigences d'interopérabilité et de réversibilité (`28,5 %` sur `INT/MCP/A2A/EVT/APP`), des `84` exigences d'automatisation bornée (`ARC/ORC/AUT/EVA`) et du tronc multisectoriel universel de `291/305` exigences (hors `EXIG-AMF-01..12` et `EXIG-CON-28..29` activées par profil via `A.1–A.8`), maintien intact à l'octet près de l'extrait scellé `G0-EX-CH04-03` (`L116–L150`, `adr_2027_b001.schema.json`), maintien de la vedette `CA-07` `Porte PRR bloquante` (`L13`), et qualification multisectorielle de `bsif_e23_materiality` en prose (`L152`, `L178`) comme proxy normalisé de criticité du risque de modèle hors finance fédérale.
 
 ---
 
@@ -24,9 +25,9 @@ Toutes les formulations divergentes ou insuffisamment délimitées relevées lor
 
 ### Section 34.0 & 34.1 — Titre, ouverture et résumé exécutif (`L1–L22`)
 
-- **C34-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice unifiant `305` exigences `CRE-IA-2026-01`, `10` interdictions `EXIG-GOV-17` et la grille `PRR-75`.
+- **C34-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice unifiant `305` exigences `CRE-IA-2026-01`, `10` interdictions `EXIG-GOV-17`, la grille `PRR-75` et la fiche `ADR 2027-B001` pour homologuer toute intégration agentique dans les systèmes d'entreprise.
   - **Appui vérifié :** `specs/manifest.json` (`ch34`, `D12`, `SUB_D12_01`), `registre/matrice-exig-prr-c40.json` (`exig_cre_ia_v1_2`, `prr_75`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** conforme · **Action :** aligné sur `manifest.json` (Vague 2) · **Verdict : supporté**
 
 - **C34-02 (`L5`)** — *Affirmation :* Ouverture de la Partie XII (`D12`) soudant norme prescrite, preuve logicielle hors ligne et traçabilité éditoriale pour tout composant doté d'une capacité d'action (interne, acquis sur étagère ou tiers).
   - **Appui vérifié :** `Corpus/Tome 2` (`§ 1.2`, `L426`), `Compendium/prd.md` (`EXIG-HOM-01`).
@@ -66,9 +67,9 @@ Toutes les formulations divergentes ou insuffisamment délimitées relevées lor
   - **Appui vérifié :** `Corpus/Tome 2` (`L44`, `§ 12.10`, `L6133–L6263`, `L8751`), `SRC-067/069.txt` (`[6, 7]`), `SRC-071.txt` (`[8]`).
   - **Passe initiale :** écart rectifié · **Action :** corrigé l'objet d'`EXIG-CON-28` en véracité et anti-« AI washing » `ACVM 11-348` (au lieu de « secteur des assurances ») et qualifié la Note interne `AMF IA` avec `[8]` · **Verdict : supporté**
 
-- **C34-11 (`L30–L51`, Tableau 34.1)** — *Affirmation :* Ventilation quantitative des `305` exigences (`255 DOIT`, `34 NE DOIT PAS`, `16 DEVRAIT` `[9]`) sous `16` préfixes (`25+23+22+15+10+30+23+21+28+13+6+10+20+30+12+17 = 305`) et croisement avec `75 PRR`, `15 POR`, `31 ADR` et `41` rubriques.
+- **C34-11 (`L26–L47`, Tableau 34.1)** — *Affirmation :* Ventilation quantitative des `305` exigences (`255 DOIT`, `34 NE DOIT PAS`, `16 DEVRAIT` `[9]`) sous `16` préfixes (`25+23+22+15+10+30+23+21+28+13+6+10+20+30+12+17 = 305`, dont `87` d'interopérabilité/réversibilité soit `28,5 %` sur `INT/MCP/A2A/EVT/APP`, `84` d'automatisation sur `ARC/ORC/AUT/EVA`, et `291/305` formant le tronc multisectoriel universel hors `EXIG-AMF-01..12` et `EXIG-CON-28..29`), croisée avec `75 PRR`, `15 POR`, `31 ADR` et `43` rubriques.
   - **Appui vérifié :** `registre/matrice-exig-prr-c40.json` (`repartition_force`, `familles_comptes`, `grille_unifiee_t5_annexe_c1`), `SRC-125.txt` (`[9]`).
-  - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
+  - **Passe initiale :** conforme · **Action :** explicité les sous-totaux `87` (`28,5 %`), `84` et `291/305` (Vague 2) · **Verdict : supporté**
 
 - **C34-12 (`L53–L63`)** — *Affirmation :* Noyau non dérogeable `EXIG-GOV-17` (interdictions `1` à `9` alignées sur `46 ND` : `EXIG-AUT-03`, `09`, `12`, `13`, `EXIG-IAM-08`, `09`, `12`, `EXIG-MCP-11`, `EXIG-GOV-01..15`, `EXIG-AUT-01`, `02`, `EXIG-CON-02`, `EXIG-AUT-07`, `EXIG-SEC-06`, `EXIG-OBS-11`).
   - **Appui vérifié :** `registre/matrice-exig-prr-c40.json` (`dix_interdictions_sans_derogation_gov_17`), `Corpus/Tome 5` (`Annexe C.2`).
@@ -120,9 +121,9 @@ Toutes les formulations divergentes ou insuffisamment délimitées relevées lor
   - **Appui vérifié :** `aq/rapports-g0.json` (`L169–L175`), `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/schemas/adr_2027_b001.schema.json`, `verifie_manuscrit.py` (`CA-20`).
   - **Passe initiale :** conforme · **Action :** aucune · **Verdict : supporté**
 
-- **C34-24 (`L156`)** — *Affirmation :* Cinq garde-fous de `Adr2027B001` (`additionalProperties: false` `[1]`, `owners` sous `EXIG-GOV-01`, `risk_and_autonomy` `L0`–`L4` / `OWASP ASI01–ASI10` `[2]` / `bsif_e23_materiality` `[5]` / `quebec_law25_automated_decision` `← Chapitre 25` / `eu_ai_act_tier` `[3, 4]`, `technical_invariants` dont `max_cost_per_outcome_cad > 0` et `minimum_eval_gate` tel `pass^5`, `fallback_and_killswitch` et `review_trigger`).
+- **C34-24 (`L152`–`L154`)** — *Affirmation :* Cinq garde-fous de `Adr2027B001` (`additionalProperties: false` `[1]`, `owners` sous `EXIG-GOV-01`, `risk_and_autonomy` `L0`–`L4` / `OWASP ASI01–ASI10` `[2]` / `quebec_law25_automated_decision` `← Chapitre 25` et `eu_ai_act_tier` `[3, 4]` multisectoriels, tandis que `bsif_e23_materiality` `[5]` sert hors finance de proxy normalisé de criticité du risque de modèle, `technical_invariants` dont `max_cost_per_outcome_cad > 0` et `minimum_eval_gate` tel `pass^5`, `fallback_and_killswitch` et `review_trigger`).
   - **Appui vérifié :** `adr_2027_b001.schema.json`, `SRC-021/055/060/061/065.txt` (`[1, 2, 3, 4, 5]`), `Compendium/prd.md` (`EXIG-HOM-04`).
-  - **Passe initiale :** écart rectifié · **Action :** retiré `[8]` sur `quebec_law25_automated_decision` et distingué le nom de champ `minimum_eval_gate` de la convention `pass^5` · **Verdict : supporté**
+  - **Passe initiale :** écart rectifié · **Action :** qualifié l'usage multisectoriel de `bsif_e23_materiality` sans altérer le fichier scellé `G0-EX-CH04-03` (Vague 2) · **Verdict : supporté**
 
 ### Section 34.3 — Synthèse transversale, livrables et invariants (`L158–L178`, Tableau 34.3)
 

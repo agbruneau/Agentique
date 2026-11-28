@@ -4,9 +4,9 @@
 <rect id="header-bg" x="0" y="0" width="1200" height="104" fill="#0F2942"/>
 <rect x="28" y="14" width="110" height="24" rx="5" fill="#1D4ED8"/><text x="83" y="31" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">SCH-13-02</text>
 <rect x="148" y="14" width="330" height="24" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1"/><text x="313" y="31" text-anchor="middle" font-size="12" fill="#E2E8F0">Comparatif Avant / Après</text>
-<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'agentivité · fr-CA</text>
-<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Catalogue fermé des huit topologies autorisées et portabilité des cadriciels</text>
-<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">aux frontières MCP/A2A</text>
+<text x="1172" y="31" text-anchor="end" font-size="11" fill="#93C5FD">Systèmes d'entreprise · fr-CA</text>
+<text x="28" y="62" font-size="18" font-weight="bold" fill="#FFFFFF">Catalogue fermé des huit topologies autorisées et portabilité des moteurs</text>
+<text x="28" y="86" font-size="18" font-weight="bold" fill="#FFFFFF">d'automatisation BPMN et graphes d'agents sous MCP/A2A</text>
 <g id="zone-Z1" class="zone">
   <rect x="28" y="122" width="1144" height="136" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
   <rect x="28" y="122" width="8" height="136" rx="4" fill="#B91C1C"/>
@@ -34,7 +34,7 @@
     <rect x="42.0" y="310" width="362.7" height="86" rx="8" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
     <text x="53.0" y="332" font-size="13" font-weight="bold" fill="#134E4A">Patrons séquentiels &amp; parallèles</text>
     <line x1="53.0" y1="344" x2="393.7" y2="344" stroke="#0F766E" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Flux fixe · chaîne · routage</text>
+    <text x="53.0" y="358" font-size="11.8" fill="#1E293B">Flux fixe BPMN · chaîne · routage</text>
     <text x="53.0" y="374" font-size="11.8" fill="#1E293B">Parallélisation à écrivain unique</text>
   </g>
   <g id="node-4" class="node" data-node="true">
@@ -55,20 +55,20 @@
 <g id="zone-Z3" class="zone">
   <rect x="28" y="422" width="1144" height="136" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"/>
   <rect x="28" y="422" width="8" height="136" rx="4" fill="#4338CA"/>
-  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#4338CA">Z3 — Frontière de portabilité — Protocoles MCP et A2A isolant les cadriciels</text>
+  <text x="46" y="444" font-size="13.5" font-weight="bold" fill="#4338CA">Z3 — Interopérabilité des moteurs — Workflow BPMN, exécution durable et graphes d'agents sous MCP/A2A</text>
   <g id="node-6" class="node" data-node="true">
     <rect x="42.0" y="460" width="551.0" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
-    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#312E81">Moteurs d'orchestration substituables</text>
+    <text x="53.0" y="482" font-size="13" font-weight="bold" fill="#312E81">Moteurs d'automatisation &amp; d'orchestration substituables</text>
     <line x1="53.0" y1="494" x2="582.0" y2="494" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Cadriciels en disponibilité générale</text>
-    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Aucune logique métier liée au SDK</text>
+    <text x="53.0" y="508" font-size="11.8" fill="#1E293B">Workflow BPMN 2.0, durables &amp; graphes d'agents</text>
+    <text x="53.0" y="524" font-size="11.8" fill="#1E293B">Aucune logique métier liée à un SDK captif</text>
   </g>
   <g id="node-7" class="node" data-node="true">
     <rect x="607.0" y="460" width="551.0" height="86" rx="8" fill="#EEF2FF" stroke="#4338CA" stroke-width="2"/>
     <text x="618.0" y="482" font-size="13" font-weight="bold" fill="#312E81">Interfaces périphériques MCP &amp; A2A</text>
     <line x1="618.0" y1="494" x2="1147.0" y2="494" stroke="#4338CA" stroke-opacity="0.35" stroke-width="1"/>
-    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Échanges exclusifs par contrats ouverts</text>
-    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Remplacement de cadriciel sans refonte</text>
+    <text x="618.0" y="508" font-size="11.8" fill="#1E293B">Interopérabilité native entre BPMN et agents</text>
+    <text x="618.0" y="524" font-size="11.8" fill="#1E293B">Remplacement de moteur sans refonte des SoR</text>
   </g>
 </g>
 <g id="flows-box">
@@ -80,8 +80,8 @@
   <text x="609.0" y="627" font-size="11.5" fill="#334155">et itérations (≤ 3).</text>
   <text x="42.0" y="650" font-size="11.5" fill="#334155">③ Transmettre les documents volumineux par référence URI (Claim-Check) et ancrer</text>
   <text x="42.0" y="665" font-size="11.5" fill="#334155">l'objectif (Goal Pinning).</text>
-  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Exposer uniquement des interfaces MCP et A2A en périphérie pour préserver la</text>
-  <text x="609.0" y="665" font-size="11.5" fill="#334155">substituabilité des cadriciels.</text>
+  <text x="609.0" y="650" font-size="11.5" fill="#334155">④ Coupler moteurs de workflow BPMN/durables et graphes d'agents uniquement via</text>
+  <text x="609.0" y="665" font-size="11.5" fill="#334155">des frontières MCP et A2A substituables.</text>
 </g>
 <g id="legend-box">
   <rect x="28" y="704" width="1144" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
@@ -90,14 +90,14 @@
   <rect x="418.7" y="715" width="14" height="14" rx="3" fill="#0F766E"/>
   <text x="438.7" y="726" font-size="11" fill="#1E293B">Huit patrons fermés ADR-011 bornés par écrivain unique</text>
   <rect x="795.3" y="715" width="14" height="14" rx="3" fill="#4338CA"/>
-  <text x="815.3" y="726" font-size="11" fill="#1E293B">Frontières portables MCP et A2A contre l'obsolescence</text>
-  <text x="815.3" y="741" font-size="11" fill="#1E293B">SDK</text>
+  <text x="815.3" y="726" font-size="11" fill="#1E293B">Moteurs BPMN/durables et graphes isolés par MCP/A2A</text>
+  <text x="815.3" y="741" font-size="11" fill="#1E293B">portables</text>
 </g>
 <g id="takeaway-box">
   <rect x="28" y="774" width="1144" height="68" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
   <rect x="28" y="774" width="6" height="68" rx="3" fill="#1B4F72"/>
   <text x="44" y="794" font-size="12" font-weight="bold" fill="#0F2942">Synthèse doctrinale</text>
-  <text x="44" y="812" font-size="11.5" fill="#1E293B">Les cadriciels évoluent rapidement, mais un catalogue fermé à huit patrons adossé aux frontières MCP et A2A préserve l'auditabilité et</text>
-  <text x="44" y="828" font-size="11.5" fill="#1E293B">l'indépendance technologique.</text>
+  <text x="44" y="812" font-size="11.5" fill="#1E293B">Coupler moteurs de workflow d'entreprise (BPMN, exécution durable) et graphes d'agents derrière des contrats ouverts MCP et A2A</text>
+  <text x="44" y="828" font-size="11.5" fill="#1E293B">sous un catalogue fermé à huit patrons garantit l'auditabilité et la substituabilité technologique.</text>
 </g>
 </svg>

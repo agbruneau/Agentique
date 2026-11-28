@@ -7,26 +7,26 @@ flowchart TB
     N1 -.->|"① Filtrer par CPO"| N2
   end
 
-  subgraph Z2["Z2 · Arbre à cinq portes Acheter / Assembler / Construire"]
+  subgraph Z2["Z2 · Porte préalable L0 puis arbre Acheter / Assembler / Construire"]
     direction TB
-    N3{"Porte 1 : Flux critique<br/>ou transversal ?"}:::det
-    N4{"Portes 2–3 : Plan de contrôle<br/>et sortie B-10 ouverts ?"}:::det
+    N3{"Porte 0 : Règle/API/BPMN/RPA L0 suffit ?<br/>Sinon Porte 1 : Flux critique / transversal ?"}:::det
+    N4{"Portes 2–3 : Silo SaaS (CRM/ERP/ITSM/SIRH)<br/>ouvert sur contrôle et sortie B-10 ?"}:::det
     N5["ACHETER (SaaS ouvert autorisé)<br/>Export états, journaux et sortie B-10"]:::det
-    N10["Rejet ou confinement lecture seule<br/>(BSIF B-10 · plan de contrôle fermé)"]:::warn
+    N10["Rejet / confinement lecture seule<br/>(Jardin clos CRM/ERP/ITSM/SIRH · B-10)"]:::warn
     N6{"Portes 4–5 : Actif différenciant<br/>souverain exclusif ?"}:::det
-    N7["ASSEMBLER (défaut 80/20)<br/>MCP, A2A, CloudEvents, Temporal"]:::green
+    N7["ASSEMBLER (défaut hybride 80/20)<br/>Socle L0 + MCP, A2A, CloudEvents, Temporal"]:::green
     N8["CONSTRUIRE (souverain)<br/>Actif métier cœur et secrets"]:::blue
-    N3 -->|"Non"| N4
+    N3 -->|"Non critique (hors L0)"| N4
     N4 -->|"Ouvert"| N5
     N4 -->|"③ Fermé"| N10
-    N3 -->|"② Oui"| N6
+    N3 -->|"② Critique (hors L0)"| N6
     N6 -->|"④ Défaut (Non)"| N7
     N6 -->|"Oui"| N8
   end
 
   subgraph Z3["Z3 · Cinq critères permanents (C04)"]
     direction TB
-    N9["Neutralité · Déterminisme · Tolérance<br/>Coût marginal CPO · Coût de sortie"]:::det
+    N9["Neutralité · Priorité déterministe L0 · Tolérance<br/>Coût marginal CPO · Coût de sortie"]:::det
   end
 
   N2 --> N3
@@ -36,8 +36,8 @@ flowchart TB
 
   subgraph LEG["Légende"]
     direction LR
-    L_DET["Trait plein : décision et posture souveraine"]:::green
-    L_PROB["Trait pointillé : quadrant émergent / piège captif"]:::warn
+    L_DET["Trait plein : arbitrage L0 et posture souveraine"]:::green
+    L_PROB["Trait pointillé : quadrant émergent / silo SaaS captif"]:::warn
     L_DET ~~~ L_PROB
   end
 

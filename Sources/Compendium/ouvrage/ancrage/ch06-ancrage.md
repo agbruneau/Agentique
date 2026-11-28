@@ -1,6 +1,6 @@
 # Journal d'ancrage atomique Wyvern — Chapitre 06 (`Chapitre 06.md`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md` (`ch06`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/02 - Partie II/Chapitre 06.md` (`ch06`, `5 621` mots, plage `[4 950, 5 810]` — *Chapitre 06 — Architecture de référence des systèmes d'entreprise, noyau d'interopérabilité possédé (42 CAP sur 52) et maturité patrimoniale*)
 - **Agent auditeur :** `wyvern-b2-1` (auditeur atomique Wyvern neuf, barrière `G2` selon `AO-07`)
 - **Base fermée autorisée :** `Compendium/ouvrage/sources/ch06-sources.md` (`[1]`–`[8]`), textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-*.txt`, registres `Compendium/ouvrage/registre/*.json`, exclusions `Compendium/ouvrage/recherche/registre-statut-f.json`, spécifications `Compendium/ouvrage/specs/{manifest.json,protocole-mlr-compendium.json}`, rapport `Compendium/ouvrage/aq/rapports-g0.json`, schéma `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/schemas/adr_2027_b001.schema.json` et renvois internes vérifiés dans `Corpus/Tome 1..8*.md`
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
@@ -209,3 +209,15 @@
   - *Preuve primaire :* `SRC-066.txt` (`[5]`, `L27`, `L69–L73`, `L175`), `SRC-055.txt` (`[8]`, `L237–L242`), `registre/matrice-exig-prr-c40.json` (`42` capacités invariantes).
   - Verdict : supporté
 - **Contrôle `REV-05` :** `5 380` mots (`verifie_manuscrit.py`) dans `[4 950, 5 810]`, `verifie_manuscrit.py --unit ch06 --strict` = `exit 0`. **Verdict final : `53 / 53` (`100,0 %` supporté).**
+
+---
+
+## Mise à jour d'adaptation éditoriale (`Vague 2` — architecture de référence des systèmes d'entreprise et noyau d'interopérabilité)
+
+- **C06-V2-01 (`L1–L17`, `L40`, `L60`, `L68`, `§ 6.1`, `§ 6.2.1`)** — Nouveau titre, question directrice, vedettes propriétaires `noyau de contrôle déterministe` et `Système d'entreprise`, typage `ArchiMate` de `«Cognitive Actor»` en `Application Component` au côté des `ERP`/`CRM`/`BPM`/`iPaaS` (`DISC-04`), confinement des agents captifs `CRM`/`ERP`/`SIRH`/`ITSM` sous `EXIG-ARC-21`, et articulation entre l'étalon `BSIF B-10` (`[4]`) et la portabilité `EU Data Act` (`ANC-003`).
+  - *Preuve primaire :* `specs/manifest.json` (`ch06`), `registre/glossaire-termes.json` (`noyau de contrôle déterministe`, `Système d'entreprise`), `registre/concordance-taxonomies.json` (`DISC-04`), `SRC-068.txt` (`[4]`), `registre/ancres-chronologiques.json` (`ANC-003`).
+  - Verdict : supporté
+- **C06-V2-02 (`L85`, `L99`, `L152–L162`, `L183–L187`, `§ 6.2.1`, `§ 6.2.2`, `§ 6.3`, `Tableau 6.2`)** — Élargissement de `DEC-003` aux schémas canoniques d'entreprise et ontologies métier (dont `ISO 20022` en finance), explicitation du critère `C07` sur la coexistence avec `BPMN 2.0`, `iPaaS`/`ESB` et le retrait `RPA` (*Strangler Fig* `C08`), extension de `S_ready` à l'ensemble du parc applicatif avec mise en relief du verdict `DECOMMISSION` vers `L0`, et transition vers le tissu conjonctif protocolaire de la Partie III (`D03`).
+  - *Preuve primaire :* `registre/matrice-exig-prr-c40.json` (`DEC-003`, `C07`, `C08`), `Corpus/Tome 3 § 45` (`S_ready`), `Corpus/Tome 4 § 13.3`.
+  - Verdict : supporté
+- **Contrôle `Vague 2` :** `5 621` mots (`verifie_manuscrit.py`) dans `[4 950, 5 810]`, `8 / 8` sources `L+` citées, `0` erreur `CA-01..CA-22`. **Verdict final : `55 / 55` (`100,0 %` supporté).**

@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "freeze_date": "2026-12-02",
-  "description": "Matrice unifiée SSOT : 305 EXIG-* CRE-IA-2026-01 v1.2 (255 DOIT / 34 NE_DOIT_PAS / 16 DEVRAIT), 52 CAP, 24 PEX, PRR-75 (24 BLOQUANT), 3 blueprints C01-C40, 5 SBB et 95 liaisons exécutables G0.",
+  "description": "Matrice unifiée SSOT des systèmes d'entreprise : tronc transversal (287 exigences génériques, 42 CAP invariantes, PRR-75 dont 24 BLOQUANT, 3 blueprints SoR/ACL/B2B C01-C40, 5 SBB) et modules sectoriels haute régulation (10 CAP conditionnelles, 12 EXIG-AMF, 6 ajouts sectoriels, 24 PEX) sur 305 EXIG-* CRE-IA-2026-01 v1.2 (255 DOIT / 34 NE_DOIT_PAS / 16 DEVRAIT) et 95 liaisons exécutables G0.",
   "exig_cre_ia_v1_2": {
     "code_norme": "CRE-IA-2026-01 v1.2",
     "total": 305,
@@ -974,7 +974,7 @@
     },
     {
       "cap_id": "CAP-016",
-      "nom": "Médiation sémantique canonique vers les standards de données financiers et d’assurance",
+      "nom": "Médiation sémantique canonique vers les standards de données sectoriels et d’entreprise (ISO 20022, FIBO, EDI/UBL, FHIR, ISA-95)",
       "intitule_condense": "Médiation vers standards sectoriels",
       "emplacement": "contexte-connaissance",
       "statut": "invariante",

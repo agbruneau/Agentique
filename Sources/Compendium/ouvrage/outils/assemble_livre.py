@@ -407,7 +407,10 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
     lic_escaped = _escape_typst_content(meta["license_text"])
     deliv = manifest.get("deliverables", {})
     pdf_title = str(deliv.get("pdf_title") or meta["title"])
-    pdf_collection = str(deliv.get("pdf_collection") or "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · COMPENDIUM")
+    pdf_collection = str(
+        deliv.get("pdf_collection")
+        or "COLLECTION ARCHITECTURE & INTEROPÉRABILITÉ DES SYSTÈMES D'ENTREPRISE · COMPENDIUM"
+    )
     typst_source = render_typst_document(
         body_typst,
         {

@@ -1,18 +1,18 @@
 # Journal d'ancrage atomique Wyvern G2 — Chapitre 24 (`ch24`)
 
-- **Unité auditée :** `Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md` (`4 032` mots de prose `verifie_manuscrit` / `4 311` mots `parser_plan`, plage `[3 726, 4 374]`)
+- **Unité auditée :** `Compendium/ouvrage/manuscrit/08 - Partie VIII/Chapitre 24.md` (`4 067` mots de prose `verifie_manuscrit`, plage `[3 726, 4 374]`)
 - **Base documentaire fermée :** `Compendium/ouvrage/sources/ch24-sources.md` (`[1]`–`[6]` en statut `L+`, `2` exclusions `statut F` sur `gartner.com` et `iso.org`) ; textes intégraux `Compendium/ouvrage/recherche/corpus_l_plus/SRC-{023,068,089,090,110,123}.txt` ; registres `Compendium/ouvrage/registre/*.json` ; protocole `Compendium/ouvrage/specs/protocole-mlr-compendium.json` (`MLR-PRISMA-SCR-COMPENDIUM-2027-V1.0`) ; barrière `G0` (`Compendium/ouvrage/aq/rapports-g0.json` et trousse `Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/trousse/`) ; index heuristique interne `Corpus/Tome 1..8*.md` (`AO-02`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Auditeur indépendant (`AO-07`) :** `wyvern-b4-3`
 - **Passe G2 initiale (supportés)** : 8
 - **Rectifications appliquées lors de la passe G2 :** 25
-- **Verdict final — supportés :** 33 / 33 (100,0 %)
+- **Verdict final — supportés :** 35 / 35 (100,0 %)
 
 ---
 
 ## 1. Synthèse des rectifications appliquées dans `Chapitre 24.md`
 
-Toutes les formulations divergentes, sur-généralisées ou rattachées à des repérages hors corpus `L+` fermé lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 24.md](file:///c:/Github/Agentique/Compendium/ouvrage/manuscrit/08%20-%20Partie%20VIII/Chapitre%2024.md), sans altérer les invariants `CA-01`..`CA-22`, en préservant les `owned_concepts` (`finops-focus-cpo`, `plan-inference-routage-carbone`, `comptabilite-carbone-cap-046-bsif-b15`, `cycle-vie-operationnel-derives-gitops`, `indicateurs-agentops-horizon-tache`), les vedettes propriétaires du glossaire (`Coût par résultat conforme`, `coût complet par résultat conforme`), l'ensemble des renvois `[1]`–`[6]` et le calibrage (`4 032` mots `verifie_manuscrit` / `4 311` mots `parser_plan` dans `[3 726, 4 374]`, `0` erreur `G1 --strict`) :
+Toutes les formulations divergentes, sur-généralisées ou rattachées à des repérages hors corpus `L+` fermé lors de la passe initiale ont été réancrées ou reformulées directement dans [Chapitre 24.md](file:///c:/Github/Agentique/Sources/Compendium/ouvrage/manuscrit/08%20-%20Partie%20VIII/Chapitre%2024.md), sans altérer les invariants `CA-01`..`CA-22`, en préservant les `owned_concepts` (`finops-focus-cpo`, `plan-inference-routage-carbone`, `comptabilite-carbone-cap-046-bsif-b15`, `cycle-vie-operationnel-derives-gitops`, `indicateurs-agentops-horizon-tache`), les vedettes propriétaires du glossaire (`Coût par résultat conforme`, `coût complet par résultat conforme`), l'ensemble des renvois `[1]`–`[6]` et le calibrage (`4 067` mots `verifie_manuscrit` dans `[3 726, 4 374]`, `0` erreur `G1 --strict`) :
 
 1. **Routage `SLM` (`Belcak et coll.` `[5]`) vs cibles fictives Boréal (`L13`, `L39`, `Figure 1`, `Tableau 24.1`, `Tableau 24.3`, `L122`) :** remplacement de l'affirmation attribuant `73 %` à `86 %` à l'entreprise et à `[5]` (`SRC-123.txt`) par les fourchettes réellement documentées dans `SRC-123.txt` (`40 %` à `70 %` de requêtes transférables sur *Open Operator* `40 %`, *MetaGPT* `60 %` et *Cradle* `70 %` ; économie estimée de `10×` à `30×` pour un `SLM` de `7` milliards de paramètres face à un `LLM` de `70–175` milliards). Les taux de `73 %` et `86 %` présents dans `SCH-24-01.svg` proviennent du scénario fictif *Groupe Boréal* (`Tome 3 § 44.10, § 47.21`) et sont désormais explicitement qualifiés de cibles illustratives hors preuve empirique.
 2. **Spécification `FOCUS v1.4` (`[1]`), colonne héritée `ProviderName`, extensions `x_` et `OTel GenAI` (`[2, 3]`) (`L11`, `L15`, `L29`, `L40`, `L44`, `L46`, `Tableau 24.1`, `L87`, `L90`, `Tableau 24.2`, `L121`) :** rectification de la mention erronée présentant `ProviderName` comme « en transition vers `ServiceProviderName`/`HostProviderName` (`v1.4`/`v1.5`) », alors que `SRC-023.txt` (`L5237`) confirme que `ProviderName` a déjà été retirée en `v1.3` et que seul le schéma strict `G0` `focus_carbon_record.schema.json` la conserve comme champ hérité ; dissociation stricte entre le mécanisme d'extension `x_` de `FOCUS v1.4` `[1]`, les champs `x_energy_kwh`/`x_carbon_gco2e` (`CAP-046` en `G0`) et le calculateur `compute_cpo_and_focus` (`audit_scitt_focus.py`) qui somme `EffectiveCost` et `BilledCost` ; dissociation de `cache_creation` (`v1.41.0` `[2]`) et `cache_write` (`semantic-conventions-genai` `[3]`), retrait du renvoi hors portée `[2, 3]` sur les rabais tarifaires `~90 %` (`1/10` à `1/40`), et alignement de la description d'`OTel GenAI` (`L87`, `Tableau 24.2`) sur une instrumentation unitaire avec `gen_ai.agent.name` sans énumération globale de parc.
@@ -20,11 +20,11 @@ Toutes les formulations divergentes, sur-généralisées ou rattachées à des r
 
 ---
 
-## 2. Inventaire atomique et confrontation aux sources `L+` (`C24-01` à `C24-33`)
+## 2. Inventaire atomique et confrontation aux sources `L+` (`C24-01` à `C24-35`)
 
 ### Section introductive — Titre, question directrice et cadrage (`L1–L7`)
 
-- **C24-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant le pilotage économique au `Cost-per-Outcome` (`FOCUS v1.4`), les disjoncteurs budgétaires atomiques, le routage frugal à affinité de cache et la comptabilité carbone opposable jusqu'aux indicateurs prudentiels du conseil.
+- **C24-01 (`L1`, `L3`)** — *Affirmation :* Titre et question directrice encadrant le raccordement `FOCUS v1.4` aux systèmes `ITFM` et `ERP` pour arbitrer au `Cost-per-Outcome` (`CPO`) face à l'automatisation déterministe `L0` et au traitement manuel, le routage frugal `SLM`, la gouvernance `SRE GitOps` et la comptabilité carbone.
   - **Appui vérifié :** `specs/manifest.json` (`ch24`, `D08`, `SUB_D08_03`, `owned_concepts`), `registre/mindmap-complet.json`.
   - **Passe initiale :** Conforme · **Action :** aucune · **Verdict : supporté**
 
@@ -167,3 +167,7 @@ Toutes les formulations divergentes, sur-généralisées ou rattachées à des r
 - **C24-34 (`REV-04`, `PRD-L3-014/015/023`, `PRD-L4-002`)** — *Affirmation :* Uniformisation monétaire `41 000 $ CA` (nettoyage `\$ CAD`), ajout des repères `EF-13`, `POR-003` et veille `FOCUS v1.5`, correction de `SCH-24-01.svg` (retrait de l'erreur `Chargeback après 2 trimestres`, exception `hors Saga` à `100 %`, qualification Boréal) et `SCH-24-03.mmd` (`Tableau 24.2` au lieu de numéros Tome 1), et numérotation `Figure 76`..`Figure 78` (incluant renvoi interne).
   - **Appui vérifié :** `Compendium/prd.md` (`L4476–4485`), `schemas/SCH-24-01.svg`, `schemas/SCH-24-03.mmd`, `Corpus/Tome 2` (`EXIG-FIN-10`, `L5203`).
   - **Passe REV-04 :** intégré et vérifié · **Verdict : supporté**
+
+- **C24-35 (`L1–L3`, `L7`, `L11–L17`, `L23`, `L27`, `L44–L48`, `L52`, `L56–L63`, `L77`, `L83`, `L87`, `L92–L105`, `L115–L129`)** — *Affirmation :* Alignement sur l'interopérabilité `FinOps FOCUS v1.4` (`ITFM`/`ERP`), l'arbitrage d'automatisation et la gouvernance multisectorielle des risques : déversement `FOCUS v1.4` `[1]` vers les outils `ITFM` (`Apptio`, `CloudHealth` qualifiés hors `L+`) et la comptabilité analytique `ERP` (`SAP CO`, `Oracle Financials` hors `L+`), arbitrage tripartite du `CPO` `Decimal` face au coût unitaire d'une automatisation déterministe `L0` (`API`/`iPaaS`/`DMN`/`BPMN`/`RPA`) et au traitement manuel avec repli en `L0` (`POR-016`) sauf abaissement par routage `SLM` `[5]`, dérive illustrative `SaaS` (`41 000 $ CA` à `97 400 $ CA/mois` scénario Boréal hors `L+`), couplage `GitOps` au contrôle de changement `CAB`/`ITSM` et réconciliation du dénominateur `CAP-047` avec la `CMDB`/`ITAM` (`ServiceNow` hors `L+`), ainsi qu'articulation multisectorielle des bilans carbone `ESG` (`GHG Protocol`, `IFRS S2` hors `L+` + `BSIF B-15` `[4]`) et des comités des risques d'entreprise (`BSIF E-23`, `B-10` `[6]`, `AMF`).
+  - **Appui vérifié :** `specs/manifest.json` (`ch24.title`), `audit_scitt_focus.py`, `focus_carbon_record.schema.json`, `matrice-exig-prr-c40.json` (`CAP-045/046/047`, `POR-004/009/016`), `SRC-023.txt` `[1]`, `SRC-089/090.txt` `[2, 3]`, `SRC-110.txt` `[4]`, `SRC-123.txt` `[5]`, `SRC-068.txt` `[6]`, `Corpus/Tome 2` (`§ 10.5`), `Corpus/Tome 3` (`§ 40.1`, `§ 44.10`).
+  - **Adaptation interopérabilité et automatisation d'entreprise :** intégré et vérifié · **Verdict : supporté**
